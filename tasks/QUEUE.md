@@ -1,26 +1,36 @@
 # Task queue — claim before you build (AGENTS.md §2)
 
-Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>` · `done`
+Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>` · `blocked <YYYY-MM-DD>` · `done`
 
 ## Phase 0 — Foundations
-- [ ] `open` Rule on docs/OPEN_ISSUES.md items 1–2 (GEON parent ruling; PIC-12 vs 19-county canonical geography) — OWNER ONLY (John)
-- [ ] `open` Fold scoping reports (source/count reconciliation, Summit pilot) into docs/ after coordinator synthesis
+- [x] `done 2026-10-28` GEON parent ruling (OPEN_ISSUES item 1): John ruled GEON is its own company (ORG-000010, HQ Westlake, ultimate parent SK Capital Partners); docs/SCHEMA.md §5.2 updated, item resolved
+- [ ] `open` PIC-12 vs 19-county canonical geography (OPEN_ISSUES item 2) — OWNER ONLY (John); county stored on every record meanwhile, region applied at report time (AGENTS.md §8)
+- [x] `done 2026-10-28` Fold scoping reports (source/count reconciliation, Summit pilot) into docs/ after coordinator synthesis — live as docs/SOURCE_COUNT_RECONCILIATION.md and docs/SUMMIT_COUNTY_PILOT.md
 - [ ] `open` Add tombstone parent record: Chromaflo Technologies → successor Vibrantz (ORG-000007)
 
 ## Phase 1 — PIC-12 core (Rings 1–2)
-- [ ] `open` Summit County: convert the ~99-candidate pilot list to tiered records (staging = tier U/C, promote on verification)
-- [ ] `open` Cuyahoga County candidate harvest (same multi-source method as Summit pilot)
+- [x] `done 2026-10-28` Summit County: convert the ~99-candidate pilot list to tiered records (staging = tier U/C, promote on verification) — 94 organizations converted (ORG-000011–ORG-000104, incl. OMNOVA tombstone), promoted to repo
+- [x] `done 2026-10-28` Cuyahoga County candidate harvest (same multi-source method as Summit pilot) — 73 candidates; 62 new organizations converted (ORG-000105–ORG-000166) plus sites under seeded/staged parents, promoted to repo
+- [x] `done 2026-10-28` Rubber PIC-12 harvest + conversion (ACS Rubber Division / Ohio Rubber Group / Thomasnet) — 37 organizations (ORG-000167–ORG-000203, incl. Eliokem tombstone) + 41 sites, promoted to repo
+- [x] `done 2026-10-28` Staging→repo promotion + ecosystem seed ID renumber (ORG-000101–103 → ORG-000501–503) — repo data files hold 189 organizations / 218 sites / 18 ecosystem / 10 inclusion-log rows, scripts/validate.py passing, remote read-back verified identical to local
+- [x] `done 2026-10-28` Grok team Ohio list received + reconciled vs repo; PIC-12 verified batch converted to staging — 433 organizations / 467 sites (ORG-000206–ORG-000641, tiers C 188 / U 245 orgs) in staging grok-pic12/, staging only, awaiting verification wave 2
 - [x] `done 2026-10-28` Plastics News account audit (final): free registered account ("Greater Akron Chamber GAC", no subscription). Per-list audit of all 27 Data Center items: 15 lists RENDER FULLY for viewing (injection 612 records, 6-processor index 1,310, thermoformers 204, pipe/profile 198, compounders 196, recyclers 184, film/sheet 174, blow 101, roto 103, LSR 75, associations 224, family-owned 175) with pagination + company search. Downloads still require All Access ($499/yr); tables show HQ location + plant counts, not plant addresses. Mold/Tool Makers list (433) is BROKEN ("LIST UNAVAILABLE"), 11 items are download-only snapshots. First-pass "fully paywalled" verdict was a load-timing error (JS tables), corrected same day — full matrix in staging plastics-news-access-audit.md. All Access decision: DEFERRED (view access + Data Axle spine cover Phase 1; revisit only if plant-address Excel files are needed)
-- [ ] `open` Plastics News rankings pull — Ohio processors (DISCOVERY ONLY per AGENTS.md §5: verify each against primary/public source before any row ships)
-- [ ] `open` Ask JobsOhio / Shale Crescent USA for their cleaned 616-company Ohio dataset (documented 326199 definition) — costs one email; draft for John's approval before sending
-- [ ] `open` Library spine pull: Data Axle Reference Solutions via Cleveland Public Library / Cuyahoga County PL card (250-record download cap per search — batch by NAICS x county). Akron-Summit PL carries AtoZ Databases instead
+- [ ] `claimed:spaghetti 2026-10-28` Plastics News rankings pull — Ohio processors (DISCOVERY ONLY per AGENTS.md §5: verify each against primary/public source before any row ships) — IN PROGRESS: 6-Processor Index (list 993) 800/1,310 rows and Injection Molders (list 438) 400/612 rows transcribed to local staging raw (never committed); round 6 running; remaining rendering lists follow only after 993/438 reconcile to their stated totals
+- [ ] `open` Ask JobsOhio / Shale Crescent USA for their cleaned 616-company Ohio dataset (documented 326199 definition) — costs one email; draft for John's approval before sending — DRAFT WRITTEN (to Nathan Lord, President, Shale Crescent USA); held for John's send approval 2026-10-28, nothing sent
+- [ ] `blocked 2026-10-28` Library spine pull: Data Axle Reference Solutions via Cleveland Public Library / Cuyahoga County PL card (250-record download cap per search — batch by NAICS x county). Akron-Summit PL carries AtoZ Databases instead — BLOCKED: OPLIN suspended the Cleveland Public Library proxy profile ("temporarily suspended due to heavy usage") 12:52 PM 2026-10-28, still suspended at the 4:40 PM retry; zero counts/downloads obtained. Next levers (owner decision): wait for the suspension to lift, OPLIN support email, or an alternate library gateway
+- [ ] `open` Verification wave 2 — Grok PIC-12 staging batch (433 orgs): name-variant sweep vs repo first (DayGlo case), then tier-raising verification, multi-source/high-confidence first
+- [ ] `open` Hankook duplicate merge (ORG-000167 vs ORG-000204) — prepared fix, awaiting owner pick
+- [ ] `open` Kenda ATC county parcel check (Summit County Fiscal Office) to resolve Green/Summit vs North Canton/Stark
 - [ ] `open` Rubber: Rubber News is a SEPARATE Crain subscription (no evidence John's Plastics News login bundles it) and has no equivalent downloadable data center — rubber (NAICS 3262) is the thinnest segment; use ACS Rubber Division + Ohio Rubber Group + Thomasnet + QCEW denominators
 - [ ] `open` Sites pass for seed orgs: full site lists with street addresses for the 9 seeded parents
 
 ## Phase 2 — Rest of Ohio (Rings 1–2), then Ring 3 statewide
 - [ ] `open` County-by-county harvest, benchmarked against Census CBP / BLS QCEW establishment counts per NAICS per county (coverage audit: found ÷ expected)
+- [ ] `claimed:spaghetti 2026-10-28` Grok rest-of-Ohio verified conversion to staging (642 verified rows / 589 parents not in the Atlas, from the Grok team's 2026-10-28 Ohio list)
+- [ ] `claimed:spaghetti 2026-10-28` PIC-12 coverage audit vs QCEW/CBP denominators (staging working/denominators_pic12.csv; single-source QCEW benchmark: PIC-12 NAICS 326 = 353 establishments, 2023)
 
 ## Phase 3 — Ecosystem (Ring 5) + Ring 4 test pass
+- [ ] `claimed:spaghetti 2026-10-28` Grok ecosystem conversion to staging (134 net-new statewide rows from the Grok list's ecosystem set, 48 of them in PIC-12)
 - [ ] `open` Universities/CTE/workforce, associations, EDOs for PIC-12, then Ohio
 - [ ] `open` Ring 4 candidates: apply the 2-of-3 test, log every decision in inclusion_log.csv
 
