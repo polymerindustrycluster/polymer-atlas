@@ -36,6 +36,7 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 ## Phase 3 — Ecosystem (Ring 5) + Ring 4 test pass
 - [ ] `claimed:spaghetti 2026-10-28` Grok ecosystem conversion to staging (134 net-new statewide rows from the Grok list's ecosystem set, 48 of them in PIC-12)
 - [x] `done 2026-10-28` Ecosystem named-program test + promotion: all 118 staged ecosystem records classified (27 PASS named-program, 87 generalist, 4 wrong-type); the 35 promote-ready records (26 named-program + 9 Ring 5 generalists) promoted to repo ecosystem.csv in batch 2 — watchlist (54), excluded (27), re-ring candidate ORG-001261, and duplicate-of-repo ORG-001302 stay staged
+- [x] `done 2026-10-28` Repo integration batch 3 (SearXNG lane packets): Chemionics website corrected to chemionics.com; none_found websites set (D & D Plastics, Acme Pattern Works, Custom Plastic Extrusions, Lamson & Sessions, GroundScape, ASTI); CF Extrusion address updated; Rapid Mold renamed Rapid Mold Repair & Machine Co. with Erie PA disambiguation; Cleveland Polymer + Akron Surface Technologies tombstoned as acquired (sites closed); LyondellBasell SITE-000033 closed per WARN (eff. 2023-12-15); Tahoma Rubber casino-spam domain cleared; 22 ultimate-parent fills applied
 - [ ] `open` Universities/CTE/workforce, associations, EDOs for PIC-12, then Ohio
 - [ ] `open` Ring 4 candidates: apply the 2-of-3 test, log every decision in inclusion_log.csv
 
