@@ -30,3 +30,12 @@ coordinator for human ruling. Do not treat them as settled.
    into docs/ once the coordinator's synthesis is accepted: headline
    findings — Summit pilot found ~99 candidates from 4 source types;
    coverage and overlap stats to be summarized here after review.
+5. **CI workflow file missing from the GitHub repo (2026-10-28).** The
+   scaffold's `.github/workflows/validate.yml` exists locally but the
+   Muse GitHub App has no Workflows permission, so it cannot create
+   workflow files (403). Add it by web upload (repo → Add file → Create
+   new file → path `.github/workflows/validate.yml`, content in the
+   local scaffold) or accept manual `python3 scripts/validate.py` runs
+   as the gate until then. Note also: this app's git-trees endpoint
+   returns 403, so bulk snapshot pushes fail — file-by-file contents
+   uploads are the working write path.
