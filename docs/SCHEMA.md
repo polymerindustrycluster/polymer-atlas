@@ -1,12 +1,15 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.2 — 2026-10-29 (ADOPTED by the owner 2026-10-29; applied
-2026-10-29 after integration pass 10, against the post-pass-10 repo)
+**Version:** v1.3 — 2026-10-29 (the v1.3 increment to the combined v1.2 revision:
+§4.6 drift fix, institutional identifiers, and the programs table; owner directed
+the increment 2026-10-29 per the schema-v1.3 note reconciliation; applied
+2026-10-29 in the schema v1.3 micro-pass, against the post-network-application repo)
 **Status:** This document defines classification and record structure. It does not contain the company list.
 **Change basis:** v1.1 (decision memo 2026-10-29 §1, option (a): Tier 1 + Tier 2) and v1.2
 (repo change proposals S1–S4, 2026-10-29) adopted together as one dated revision. New or
 changed text in this revision is marked **[v1.1]** / **[v1.2]** at the paragraph or row level.
+The v1.3 increment's text is marked **[v1.3]** the same way.
 Sections without a mark are carried from v1.0 unchanged.
 **Scope:** Northeast Ohio primary; Ohio statewide secondary; national for parents, OEMs, and ecosystem entities with an Ohio footprint or direct PIC relevance.
 
@@ -422,13 +425,15 @@ Use for Ring 5 only. Ecosystem entities get a Parent-shaped record PLUS this ext
 |---|---|---|---|
 | All Parent MUST fields (org_id, legal_name, entity_type=`nonprofit/academic/government`, ring=5, HQ address+county, website, description, sources, tier, last_verified, status, pic_relevance) | — | **MUST** | Same backbone — one dedupe system for all entities |
 | `ecosystem_subtype` | enum §1 Ring 5 | **MUST** | |
-| `polymer_program_name` + `polymer_program_url` | string/URL | **MUST** if claimed | The named program is the inclusion evidence; "has a chemistry department" is not a program name |
+| `polymer_program_name` + `polymer_program_url` | string/URL | **MUST** if claimed | The named program is the inclusion evidence; "has a chemistry department" is not a program name. Since v1.3 the field is live in the data: validator rule V-13 fails an institution-grain row claiming `polymer_program=true` with no URL, and fails a URL on a row claiming false (no orphan evidence). Once the institution has program rows in `data/programs.csv` (§4.11), this field and `polymer_program_name` are the generated rollup defined there — the URL of the institution's lead program row. |
 | `polymer_program` | boolean | **MUST** | False allowed only for NE Ohio generalists (see §1) |
 | `generalist` | boolean | **MUST** | True for county EDOs, general workforce boards, Ohio MEP, etc. |
 | `services_offered[]` | controlled: `degrees` \| `certificates` \| `apprenticeship` \| `incumbent_worker_training` \| `rd_facilities_access` \| `testing_access` \| `funding_grants` \| `funding_capital` \| `site_selection` \| `convening_events` \| `k12_outreach` \| `technical_assistance` | **MUST** (≥1) | |
 | `geography_served` | enum + counties[] | **MUST** | `site_local` \| `county` \| `ne_ohio` \| `ohio` \| `national` \| `international` |
 | `member_or_open_to` | string | Nice | E.g., association membership criteria, lab access model |
 | `parent_institution_org_id` | FK, nullable | Nice→MUST if center-within-university | E.g., a polymer center inside a university: center may be its own Ecosystem record linked to the university Parent — see §5.2 |
+| `ipeds_unitid` | string (6 digits) | university_college rows | The institution's UNITID in the IPEDS Institutional Characteristics directory (NCES). An identity join key only: it asserts *which institution this record is*, never that a program exists — program claims are decided by the named-program test on the institution's own pages (§4.11), and third-party/IPEDS program attributions are leads, not evidence (Lakeland rule, Phase B 2026-10-29). |
+| `ror_id` | string (canonical URI `https://ror.org/…`) | university_college rows | The institution's Research Organization Registry record. Same doctrine as `ipeds_unitid`: identity evidence, never activity or program evidence. Validator V-14 confines both fields to `university_college` rows and enforces their uniqueness across the file — the same campus cannot be entered twice under two names. |
 
 
 **[v1.2] Record grains (proposal S2, as drafted by Phase A).** Ecosystem records carry a
@@ -436,6 +441,13 @@ grain discriminator, `record_grain`: `institution` | `program` | `office`. All e
 ecosystem rows backfill to `record_grain=institution` at application. (Naming reading,
 flagged in the implementation plan: proposal S2 wrote `entity_grain`; the landed Phase A
 draft — the more specific, later text — uses `record_grain`, and `record_grain` governs.)
+
+> **[v1.3]** Program-grain records move to their own table, `data/programs.csv`
+> (§4.11). `record_grain` on ecosystem narrows to `institution` | `office`;
+> a program-grain row in ecosystem.csv is a validator error (V-8 as amended).
+> Office grain is unchanged. The program-only grain columns retired from
+> ecosystem.csv at the migration are listed in §4.11; their values live in
+> the programs table.
 
 **Program records** (`record_grain=program`) — a named degree, center, certificate, or
 apprenticeship; the program, not the university, is the unit an introduction targets:
@@ -512,7 +524,7 @@ professor passes** — adopting this section creates no records.
 | `person_id` | string, immutable, `PERSON-######` | Never reused |
 | `full_name` | string | As published on the institution's page |
 | `institution_org_id` | FK → organizations ∪ ecosystem | **MUST** |
-| `program_org_id` | FK → program-grain ecosystem record, nullable | Where the public page ties the person to a held program |
+| `program_org_id` | FK → `data/programs.csv` (§4.11), nullable. (At v1.2 this pointed at program-grain ecosystem records; programs moved to their own table at v1.3 and the reference follows them. Validator V-11 as amended.) | Where the public page ties the person to a held program |
 | `role` | controlled | The institution's own styling, recorded verbatim in `role_as_published`; the controlled value is one of: `professor` \| `associate_professor` \| `assistant_professor` \| `research_professor` \| `center_director_professor` (directors/program leads qualify **only** if they also hold a publicly stated professor title) |
 | `role_as_published` | string | The institution's exact words — never normalized or inferred |
 | `research_specialties[]` | §3.1/§3.2 vocab first, §3.5 supplement where needed | As publicly stated on the cited page |
@@ -552,6 +564,76 @@ Membership is published **only** where it is already public (AGENTS.md §5.x as 
   the same verification standard as every record. Member elevation (badge,
   members-first sort, members-only filter) is a **presentation rule** in generated
   outputs (§4.10's SQLite view), never a data privilege.
+
+### 4.11 Program records **[v1.3]** (`data/programs.csv`)
+
+One row per named program at an institution — the unit an introduction
+actually targets. Programs were ecosystem `record_grain=program` rows at
+v1.2; since v1.3 they live in this table. Offices remain ecosystem
+office-grain rows (§4.6); institutions remain ecosystem institution rows
+(or organization records), and this table keys to them.
+
+| Field | Type | v1.3? | Notes |
+|---|---|---|---|
+| `program_id` | string, immutable, `PROG-######` | **MUST** | Never reused; allocated at integration only |
+| `institution_org_id` | FK → organizations ∪ ecosystem | **MUST** | The institution the program belongs to |
+| `program_name` | string | **MUST** | As the institution styles it; the named program is the Ring 5 inclusion evidence |
+| `program_type` | enum | **MUST** | `degree` \| `certificate` \| `apprenticeship` \| `center` \| `training` \| `lab_facility` \| `course` — exactly one; a center that also grants degrees is `center`, with the degrees in `credential_types[]` |
+| `credential_types[]` | enum[] | MUST only for `degree`/`certificate`/`apprenticeship` types | `phd` · `ms` · `bs` · `aas_associate` · `certificate` · `registered_apprenticeship` · `incumbent_worker_training` · `noncredit_workforce` (the v1.2 conditioning carries over: centers grant no credentials and carry it empty by design) |
+| `level[]` | enum[] | **MUST** | `certificate` \| `associate` \| `bachelor` \| `master` \| `doctorate` \| `none`. Derived from `credential_types[]` by the fixed map (phd→doctorate, ms→master, bs→bachelor, aas_associate→associate, certificate→certificate; apprenticeship/training credentials map to none); validator V-15 enforces the derivation, so the two fields cannot drift |
+| `cip_code` | string `NN.NNNN` (CIP-2020) | nullable | **Data, never evidence** — see the inclusion rule below. Carries `cip_source_type` (`institution_published` \| `ipeds_listing` \| `researcher_inferred`), the §2.1 provenance grammar applied to CIP; the pair is recorded together or not at all |
+| `unit_department` | string | Nice | The administering school/department/unit, as published |
+| `description_1line` | string | **MUST** | Backbone parity with ecosystem records |
+| `url` | URL | **MUST** | The program's own public page (Tier A primary source) |
+| `public_door_url` | URL | **MUST** | The program's public contact/admissions/partnership page — never a person's email (§6) |
+| `first_year_awarded` / `last_year_awarded` / `latest_completions` / `completions_year` | year / year / integer / year | degree rows only, nullable | IPEDS Completions data, populated only by a completions pull keyed on the institution's `ipeds_unitid` (§4.6) × `cip_code`, and cited to that pull in `sources[]`. Never estimated; `latest_completions` requires `completions_year` |
+| `specialty_processes[]` / `specialty_materials[]` | §3.1 / §3.2 vocab | as evidenced | Never inferred beyond the program's own page. Characterization facilities fill neither — they tag `research_areas[characterization_methods]` (§3.5) |
+| `research_areas[]` | §3.5 supplement | research programs only | §3 terms first wherever they honestly fit |
+| `engagement_modes[]` | enum[] | **MUST** (≥1) | The §4.6 program-grain set. Grain rule (Phase A): degree pages publish student-facing modes only; center pages publish employer-facing modes — a degree record carrying only student-facing modes is complete, not thin |
+| `apprenticeship_registered` | boolean | training/apprenticeship types | From the public DOL/state apprenticeship registry only |
+| `employer_custom_training` | boolean | training types | Institution states it will run a cohort for one employer |
+| `admissions_status` | enum | program types | `admitting` \| `not_admitting` \| `unknown` — a link's liveness ≠ a program's liveness; training/program records require an admissions-status check at verification |
+| `facilities_note` | free text, sourced | Nice | Publicly stated labs/equipment |
+| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount |
+| `geography_served` | §4.6 vocab | **MUST** | Workforce programs are place-bound; research programs are not |
+| `city` / `state` / `county` | string | **MUST** | The campus locality as published; Ohio rows follow the physical-address county rule. Defaults to the institution's values; multi-campus systems carry per-campus values |
+| backbone (`status`, `sources[]`, `verification_tier`, `last_verified`, `pic_relevance`, `created_by`, `notes`) | §4.2/§4.6 | **MUST** | Tier grammar at this grain: the institution's own program page = A-equivalent; state registry / accreditor / association directory = B; lone aggregator = C |
+
+**Inclusion rule (the named-program test, restated for this grain).** A
+program row is created only when, on the institution's own public pages or
+official catalog: (a) a program, center, institute, or credential is named
+and is polymer, plastics, rubber, composites, or coatings **by name**; or
+(b) a degree or certificate's own published description names a **polymer
+track, concentration, or research area**; or (c) a **facility or service
+states polymer** materials, processes, or characterization services as its
+offer (`program_type=lab_facility`). A CIP code never satisfies (a)–(c): an
+IPEDS or third-party program attribution is a discovery lead, and a program
+so attributed that the institution's own catalog does not carry is not a
+program (Lakeland rule, Phase B 2026-10-29). A single named course is
+recordable (`program_type=course`) but does not by itself make its
+institution pass §4.6's named-program test. `admissions_status` is a
+verification field, never an inclusion criterion. Borderline calls are
+logged in the inclusion log (Appendix A) with the prong cited; institution-
+level seam cases (a polymer track inside a general degree) stay flagged as
+seams until the owner rules — a program row never settles a seam by landing.
+
+**The rollup.** An institution's ecosystem `polymer_program_name` is a
+generated rollup of its program rows in this table: the non-tombstoned
+rows' `program_name` values, ordered by program_type precedence (degree,
+center, certificate, apprenticeship, training, lab_facility, course) then
+name, joined with `"; "`. Its `polymer_program_url` (§4.6) is the `url` of
+the first row in that order. The rollup binds only when at least one program
+row exists; an institution claiming a program with no rows yet keeps its
+existing text and is reported by the validator (V-16) as an un-decomposed
+claim — a visible pending state, not an error.
+
+**Migration note.** The v1.2 program-grain columns on ecosystem.csv
+(`program_name`, `program_type`, `credential_types`, `program_url`,
+`specialty_processes`, `specialty_materials`, `research_areas`,
+`engagement_modes`, `apprenticeship_registered`, `employer_custom_training`,
+`admissions_status`, `facilities_note`, `scale_band`) are retired at this
+revision; program values live in this table. `parent_institution_org_id`,
+`public_door_url`, and the office-grain columns remain on ecosystem.csv.
 
 ## 5. Entity Resolution Rules — Dedupe Identically
 
@@ -637,3 +719,4 @@ Controlled vocabularies (§3) and Ring rules (§1) change only by a dated revisi
 - **v1.0 — 2026-10-28.** Initial design (rings, NAICS map, §3 vocabularies, record schema, resolution rules).
 - **v1.1 — adopted 2026-10-29 as part of the combined v1.2 revision.** Tier 1: `street_address` on sites; site `latitude`/`longitude` + `geocode_precision`; external registry-ID link table (§4.8); `year_founded`; `stock_ticker`. Tier 2: `employee_band`, `ownership_type`, `certifications` on organizations. (Decision memo 2026-10-29 §1, option (a).)
 - **v1.2 — 2026-10-29 (this text).** People records — professors only, public facts only, CRM never a source (§4.9); program/office record grains on ecosystem (§4.6 extension) with the §3.5 research-areas supplement under the §3-first rule; PIC membership fields + spanning member table, website-public only (§4.10); `pic_relationship_stage` retired from the public files (§4.3). (Repo change proposals S1–S4; connections trio approval 2026-10-29; Phase A calibration fixes integrated: conditioned `credential_types`, `admissions_status`, the engagement-mode grain rule.)
+- **v1.3 — 2026-10-29 (drafted; dated at application).** §4.6 drift fix: `polymer_program_url` column lands in ecosystem.csv with validator rule V-13 (MUST-if-claimed enforced at institution grain, with a dated pending list for unsourced claims); `ipeds_unitid` + `ror_id` identifier columns on university_college rows (V-14; identity join keys only — IPEDS/ROR assert identity, never program existence). Program records move from ecosystem grain rows to `data/programs.csv` (§4.11; V-15/V-16), adding `cip_code` with provenance, `level`, `unit_department`, and IPEDS completions fields to the v1.2 program grain; `program_type` gains `lab_facility` and `course` (apprenticeship retained); the `polymer_program_name`/`polymer_program_url` fields become the generated rollup of an institution's program rows; the inclusion rule is restated with the Lakeland rule (a CIP attribution is never program evidence); §4.9's `program_org_id` re-points to the programs table.

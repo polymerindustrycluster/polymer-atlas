@@ -16,6 +16,13 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
 - [v1.2] members.csv: MBR ids, record_class/FK discipline, flag cross-check
 - [v1.2] ecosystem record_grain + program/office grain checks
 - [v1.2] people.csv: exact header, no contact fields, CRM-source tripwire
+- [v1.3] ecosystem §4.6 drift fix: an institution-grain polymer_program=true
+  claim must carry polymer_program_url (dated FLAGGED exception list warns,
+  never blocks); parent_institution_org_id FK + self-parent check
+- [v1.3] ipeds_unitid / ror_id confined to university_college rows, unique
+- [v1.3] programs.csv discipline (PROG ids, FK, type/credential/level/CIP/
+  completions) and institution rollups recomputed and compared; program
+  grain in ecosystem.csv is an error; people.program_org_id → programs.csv
 """
 import csv, re, sys
 from datetime import datetime
@@ -74,7 +81,14 @@ ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internship
               "testing_characterization_access", "lab_facility_access", "licensing_tech_transfer",
               "training_seats_open_enrollment", "customized_employer_training"}
 OFFICE_MODES = {"licensing", "sponsored_research", "startup_formation", "materials_transfer", "facility_access"}
-PROGRAM_TYPES = {"degree", "certificate", "apprenticeship", "center", "training"}
+PROGRAM_TYPES = {"degree", "certificate", "apprenticeship", "center", "training",
+                 "lab_facility", "course"}  # lab_facility + course added at v1.3 (V-8 amendment note)
+LEVEL_MAP = {"phd": "doctorate", "ms": "master", "bs": "bachelor",
+             "aas_associate": "associate", "certificate": "certificate",
+             "registered_apprenticeship": None, "incumbent_worker_training": None,
+             "noncredit_workforce": None}
+LEVELS = {"certificate", "associate", "bachelor", "master", "doctorate", "none"}
+CIP_SOURCE_TYPES = {"institution_published", "ipeds_listing", "researcher_inferred"}
 ROLES = {"professor", "associate_professor", "assistant_professor", "research_professor",
          "center_director_professor"}
 PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_lsr_silicone",
@@ -118,6 +132,7 @@ eco_fields, eco = load("ecosystem.csv")
 link_fields, links = load("registry_links.csv", new_file=True)
 member_fields, members = load("members.csv", new_file=True)
 people_fields, people = load("people.csv", new_file=True)
+prog_fields, programs = load("programs.csv", new_file=True)
 
 # V-2: retired column must not ship
 for fname, fields in (("organizations.csv", org_fields), ("ecosystem.csv", eco_fields)):
@@ -172,54 +187,37 @@ eco_ids = {r["org_id"].strip() for r in eco}
 all_ids = org_ids | eco_ids
 
 # V-8/V-9/V-10: ecosystem grains + membership
+# [v1.3 amendment] record_grain narrows to institution|office: program records
+# live in data/programs.csv (§4.11), and the v1.2 program-grain columns are
+# retired — their substance is enforced on programs.csv by V-15.
 eco_by_id = {}
 eco_member_true = set()
-ECO_NEW = ("record_grain", "program_name", "parent_institution_org_id", "program_type",
-           "credential_types", "program_url", "specialty_processes", "specialty_materials",
-           "research_areas", "engagement_modes", "apprenticeship_registered",
-           "employer_custom_training", "admissions_status", "facilities_note", "scale_band",
-           "public_door_url", "office_name", "tto_url", "industry_partnership_modes",
-           "technology_areas", "pic_member", "member_since", "membership_source_url")
+ECO_NEW = ("record_grain", "parent_institution_org_id", "public_door_url",
+           "office_name", "tto_url", "industry_partnership_modes",
+           "technology_areas", "pic_member", "member_since", "membership_source_url",
+           "polymer_program_url", "ipeds_unitid", "ror_id")
+ECO_RETIRED_V13 = ("program_name", "program_type", "credential_types", "program_url",
+                   "specialty_processes", "specialty_materials", "research_areas",
+                   "engagement_modes", "apprenticeship_registered",
+                   "employer_custom_training", "admissions_status", "facilities_note",
+                   "scale_band")
 for col in ECO_NEW:
     if col not in eco_fields:
-        errors.append(f"ecosystem.csv: missing v1.2 column {col}")
+        errors.append(f"ecosystem.csv: missing schema column {col}")
+for col in ECO_RETIRED_V13:
+    if col in eco_fields:
+        errors.append(f"ecosystem.csv: {col} present — program-grain columns retired at schema v1.3; program records live in data/programs.csv")
 for i, r in enumerate(eco, 2):
     oid = r["org_id"].strip()
     eco_by_id[oid] = r
     grain = (r.get("record_grain") or "").strip()
-    if grain not in {"institution", "program", "office"}:
-        errors.append(f"ecosystem.csv:{i} {oid} record_grain must be institution/program/office")
+    if grain == "program":
+        errors.append(f"ecosystem.csv:{i} {oid} record_grain=program — program records live in data/programs.csv since v1.3 (V-8 as amended)")
+    elif grain not in {"institution", "office"}:
+        errors.append(f"ecosystem.csv:{i} {oid} record_grain must be institution/office")
     check_membership("ecosystem.csv", i, r, oid)
     if (r.get("pic_member") or "").strip() == "true":
         eco_member_true.add(oid)
-    if grain == "program":
-        for col in ("program_name", "program_url", "public_door_url"):
-            if not (r.get(col) or "").strip():
-                errors.append(f"ecosystem.csv:{i} {oid} program record without {col}")
-        parent = (r.get("parent_institution_org_id") or "").strip()
-        if not parent or parent not in all_ids:
-            errors.append(f"ecosystem.csv:{i} {oid} program parent_institution_org_id missing/dangling")
-        ptype = (r.get("program_type") or "").strip()
-        if ptype not in PROGRAM_TYPES:
-            errors.append(f"ecosystem.csv:{i} {oid} program_type {ptype!r} not in enum")
-        creds = vals(r.get("credential_types"))
-        if ptype in {"degree", "certificate", "apprenticeship"} and not creds:
-            errors.append(f"ecosystem.csv:{i} {oid} credential_types required for program_type {ptype}")
-        for c in creds:
-            if c not in CREDENTIALS:
-                errors.append(f"ecosystem.csv:{i} {oid} credential_types value {c!r} not in enum")
-        modes = vals(r.get("engagement_modes"))
-        if not modes:
-            errors.append(f"ecosystem.csv:{i} {oid} program record without engagement_modes")
-        for m in modes:
-            if m not in ENGAGEMENT:
-                errors.append(f"ecosystem.csv:{i} {oid} engagement_modes value {m!r} not in enum")
-        for a in vals(r.get("research_areas")):
-            if a not in RESEARCH_VOCAB:
-                errors.append(f"ecosystem.csv:{i} {oid} research_areas value {a!r} not in §3.1/§3.2/§3.5 vocabulary")
-        adm = (r.get("admissions_status") or "").strip()
-        if adm and adm not in {"admitting", "not_admitting", "unknown"}:
-            errors.append(f"ecosystem.csv:{i} {oid} admissions_status {adm!r} not in enum")
     if grain == "office":
         for col in ("office_name", "tto_url", "public_door_url"):
             if not (r.get(col) or "").strip():
@@ -233,6 +231,82 @@ for i, r in enumerate(eco, 2):
         for m in modes:
             if m not in OFFICE_MODES:
                 errors.append(f"ecosystem.csv:{i} {oid} industry_partnership_modes value {m!r} not in enum")
+
+# V-13 [v1.3]: ecosystem §4.6 institution-grain drift fix
+# (design drift_fix_design.md rule V-12, renumbered: the applied sequence
+# already ran to V-12 at v1.2, so the v1.3 rules continue it — design V-12 →
+# applied V-13, V-13 → V-14, V-14 → V-15, V-15 → V-16.)
+# Dated FLAGGED exception list from drift_backfill_packet.csv: these orgs
+# claim a polymer program but no program page of their own is in evidence
+# yet. They WARN, never block; an org leaves the list only when its value
+# lands. Settling fact = the evidence that resolves the entry.
+V13_URL_PENDING = {
+    "ORG-001211": "AFRL's own page for the Polymer Matrix Composite Materials and Processing Research Team (or its parent Materials and Manufacturing Directorate polymer page) on afrl.af.mil. Current evidence is a GovTribe contract record — not a program page.",
+    "ORG-001212": "The museum's own Polymer Palooza program/event page URL. Current evidence is the PIC homepage (a partner listing), not the program's page.",
+    "ORG-001213": "Akron Public Schools' own Zipping to STEM program page URL. Current evidence is a Greater Akron Chamber cluster-update article — a partner's page, not the program's.",
+    "ORG-001217": "America Makes' own EARTH project page URL. WP1 NAV-011 evidence is the institute homepage; the named project's page is not in evidence.",
+    "ORG-001224": "Barberton City Schools' own Polymer Pathway page URL. Current evidence is the funder initiative's page (greaterakronchamber.org/goodjobschallenge) — the initiative's page, not the schools' pathway page.",
+    "ORG-001225": "The Polymer Pathway program page (the foundation's own page, or the schools' pathway page adopted as the program's public page). Current evidence is the funder initiative's page only.",
+    "ORG-001230": "The chamber's own APEX (Advanced Polymer and Manufacturing Excellence) program page URL. Current evidence is the Good Jobs Challenge initiative page, not the APEX page.",
+    "ORG-001247": "The foundation's own Once Upon a Polymer program page URL. Current evidence is a NEO-SMART partners listing.",
+    "ORG-001264": "NASA Glenn's own Polymers Branch page URL (nasa.gov/glenn). Current evidence is an NTRS technical-report PDF — a publication, not the branch's page.",
+    "ORG-001278": "ODOD's own Ohio Innovation Hubs program page URL (development.ohio.gov). Current evidence is a PIC news post and an ODOD news release — announcements, not the program page.",
+    "ORG-001299": "Sinclair's own program page for the AAS in Industrial Engineering Technology, Plastics and Composites Option (sinclair.edu). Current evidence is a campusprogram.com aggregator page — aggregators cannot carry a MUST field.",
+    "ORG-001310": "Terra State's own page for its plastics program (terra.edu). Current evidence is aggregator listings only (collegesimply, campusprogram).",
+    "ORG-001311": "The Tire Society's own conference page URL (Annual Conference on Tire Science and Technology). The record carries no website at all; its only evidence URL is a chamber directory listing.",
+}
+V13_PENDING_SINCE = "2026-10-29"
+for i, r in enumerate(eco, 2):
+    oid = r["org_id"].strip()
+    if (r.get("record_grain") or "").strip() != "institution":
+        continue
+    pp = (r.get("polymer_program") or "").strip()
+    url = (r.get("polymer_program_url") or "").strip()
+    if pp == "true":
+        if not url:
+            if oid in V13_URL_PENDING:
+                warnings.append(f"ecosystem.csv:{i} {oid} polymer_program=true without polymer_program_url — pending since {V13_PENDING_SINCE}; settles with: {V13_URL_PENDING[oid]}")
+            else:
+                errors.append(f"ecosystem.csv:{i} {oid} polymer_program=true without polymer_program_url")
+        else:
+            purl = urlparse(url)
+            if purl.scheme not in {"http", "https"} or not purl.hostname:
+                errors.append(f"ecosystem.csv:{i} {oid} polymer_program_url is not an http(s) URL")
+            if oid in V13_URL_PENDING:
+                errors.append(f"ecosystem.csv:{i} {oid} carries a polymer_program_url but is still on the V-13 pending list — remove it from V13_URL_PENDING")
+    elif pp == "false" and url:
+        errors.append(f"ecosystem.csv:{i} {oid} polymer_program_url on a polymer_program=false row (orphan evidence)")
+    parent = (r.get("parent_institution_org_id") or "").strip()
+    if parent:
+        if parent == oid:
+            errors.append(f"ecosystem.csv:{i} {oid} is its own parent_institution")
+        elif parent not in all_ids:
+            errors.append(f"ecosystem.csv:{i} {oid} parent_institution_org_id {parent!r} dangling")
+
+# V-14 [v1.3]: ecosystem institutional identifiers
+# (design identifiers_design.md rule V-13, renumbered.) No completeness
+# error: a university_college row without identifiers is legal; absence is
+# visible in the file, not a validation failure.
+seen_ipeds, seen_ror = {}, {}
+for i, r in enumerate(eco, 2):
+    oid = r["org_id"].strip()
+    sub = (r.get("ecosystem_subtype") or "").strip()
+    ip = (r.get("ipeds_unitid") or "").strip()
+    rr = (r.get("ror_id") or "").strip()
+    if (ip or rr) and sub != "university_college":
+        errors.append(f"ecosystem.csv:{i} {oid} carries institutional identifiers but subtype is {sub!r} (identifiers are university_college-scoped)")
+    if ip:
+        if not re.fullmatch(r"\d{6}", ip):
+            errors.append(f"ecosystem.csv:{i} {oid} ipeds_unitid {ip!r} is not a 6-digit IPEDS UnitID")
+        if ip in seen_ipeds:
+            errors.append(f"ecosystem.csv:{i} {oid} ipeds_unitid duplicates {seen_ipeds[ip]}")
+        seen_ipeds[ip] = oid
+    if rr:
+        if not re.fullmatch(r"https://ror\.org/[0-9a-z]{9}", rr):
+            errors.append(f"ecosystem.csv:{i} {oid} ror_id {rr!r} is not a canonical ROR URI")
+        if rr in seen_ror:
+            errors.append(f"ecosystem.csv:{i} {oid} ror_id duplicates {seen_ror[rr]}")
+        seen_ror[rr] = oid
 
 # V-5: sites new columns
 for col in ("street_address", "latitude", "longitude", "geocode_precision"):
@@ -347,6 +421,128 @@ if member_org_links != org_member_true:
 if member_eco_links != eco_member_true:
     errors.append(f"members.csv/ecosystem.csv pic_member drift: table links {sorted(member_eco_links - eco_member_true)} unflagged; flags {sorted(eco_member_true - member_eco_links)} unlinked")
 
+# V-15 [v1.3]: programs.csv
+# (design programs_table_design.md rule V-14, renumbered.)
+PROGRAM_FIELDS = ["program_id", "institution_org_id", "program_name", "program_type",
+    "credential_types", "level", "cip_code", "cip_source_type", "unit_department",
+    "description_1line", "url", "public_door_url", "first_year_awarded",
+    "last_year_awarded", "latest_completions", "completions_year",
+    "specialty_processes", "specialty_materials", "research_areas",
+    "engagement_modes", "apprenticeship_registered", "employer_custom_training",
+    "admissions_status", "facilities_note", "scale_band", "geography_served",
+    "city", "state", "county", "status", "sources", "verification_tier",
+    "last_verified", "pic_relevance", "created_by", "notes"]
+if prog_fields != PROGRAM_FIELDS:
+    errors.append(f"programs.csv: header must be exactly the §4.11 field set, got {prog_fields}")
+program_ids = set()
+programs_by_inst = {}
+for i, r in enumerate(programs, 2):
+    pid = (r.get("program_id") or "").strip()
+    if not re.fullmatch(r"PROG-\d{6}", pid):
+        errors.append(f"programs.csv:{i} bad program_id {pid!r}")
+    if pid in program_ids:
+        errors.append(f"programs.csv:{i} duplicate program_id {pid}")
+    program_ids.add(pid)
+    inst = (r.get("institution_org_id") or "").strip()
+    if inst not in all_ids:
+        errors.append(f"programs.csv:{i} {pid} institution_org_id {inst!r} dangling")
+    programs_by_inst.setdefault(inst, []).append(r)
+    ptype = (r.get("program_type") or "").strip()
+    if ptype not in PROGRAM_TYPES:
+        errors.append(f"programs.csv:{i} {pid} program_type {ptype!r} not in §4.11 enum")
+    creds = vals(r.get("credential_types"))
+    if ptype in {"degree", "certificate", "apprenticeship"} and not creds:
+        errors.append(f"programs.csv:{i} {pid} credential_types required for program_type {ptype}")
+    for c in creds:
+        if c not in CREDENTIALS:
+            errors.append(f"programs.csv:{i} {pid} credential_types value {c!r} not in enum")
+    lev = vals(r.get("level"))
+    for lv in lev:
+        if lv not in LEVELS:
+            errors.append(f"programs.csv:{i} {pid} level value {lv!r} not in §4.11 enum")
+    derived = {LEVEL_MAP[c] for c in creds if LEVEL_MAP.get(c)} or {"none"}
+    if set(lev) != derived:
+        errors.append(f"programs.csv:{i} {pid} level {sorted(set(lev))} != derivation {sorted(derived)} from credential_types")
+    cip = (r.get("cip_code") or "").strip()
+    cst = (r.get("cip_source_type") or "").strip()
+    if cip:
+        if not re.fullmatch(r"\d{2}\.\d{4}", cip):
+            errors.append(f"programs.csv:{i} {pid} cip_code {cip!r} is not NN.NNNN")
+        if cst not in CIP_SOURCE_TYPES:
+            errors.append(f"programs.csv:{i} {pid} cip_code without a valid cip_source_type")
+    elif cst:
+        errors.append(f"programs.csv:{i} {pid} cip_source_type without cip_code")
+    comp = {c: (r.get(c) or "").strip() for c in
+            ("first_year_awarded", "last_year_awarded", "latest_completions", "completions_year")}
+    if any(comp.values()) and ptype != "degree":
+        errors.append(f"programs.csv:{i} {pid} completions fields on a non-degree program")
+    for c in ("first_year_awarded", "last_year_awarded", "completions_year"):
+        if comp[c] and not re.fullmatch(r"\d{4}", comp[c]):
+            errors.append(f"programs.csv:{i} {pid} {c} is not a 4-digit year")
+    if comp["latest_completions"]:
+        try:
+            if int(comp["latest_completions"]) < 0:
+                errors.append(f"programs.csv:{i} {pid} latest_completions is negative")
+        except ValueError:
+            errors.append(f"programs.csv:{i} {pid} latest_completions is not an integer")
+        if not comp["completions_year"]:
+            errors.append(f"programs.csv:{i} {pid} latest_completions without completions_year")
+    for col in ("url", "public_door_url"):
+        if not (r.get(col) or "").strip():
+            errors.append(f"programs.csv:{i} {pid} without {col}")
+    modes = vals(r.get("engagement_modes"))
+    if not modes:
+        errors.append(f"programs.csv:{i} {pid} without engagement_modes")
+    for m in modes:
+        if m not in ENGAGEMENT:
+            errors.append(f"programs.csv:{i} {pid} engagement_modes value {m!r} not in enum")
+    for a in vals(r.get("specialty_processes")):
+        if a not in PROCESSES:
+            errors.append(f"programs.csv:{i} {pid} specialty_processes value {a!r} not in §3.1 vocabulary")
+    for a in vals(r.get("specialty_materials")):
+        if a not in MATERIALS:
+            errors.append(f"programs.csv:{i} {pid} specialty_materials value {a!r} not in §3.2 vocabulary")
+    for a in vals(r.get("research_areas")):
+        if a not in RESEARCH_VOCAB:
+            errors.append(f"programs.csv:{i} {pid} research_areas value {a!r} not in §3.1/§3.2/§3.5 vocabulary")
+    adm = (r.get("admissions_status") or "").strip()
+    if adm and adm not in {"admitting", "not_admitting", "unknown"}:
+        errors.append(f"programs.csv:{i} {pid} admissions_status {adm!r} not in enum")
+    if not (r.get("sources") or "").strip():
+        errors.append(f"programs.csv:{i} {pid} has no source")
+    if (r.get("verification_tier") or "").strip() not in {"A", "B", "C", "U"}:
+        errors.append(f"programs.csv:{i} {pid} bad verification_tier")
+    if (r.get("verification_tier") or "").strip() in {"A", "B"} and not (r.get("last_verified") or "").strip():
+        errors.append(f"programs.csv:{i} {pid} tier A/B without last_verified")
+
+# V-16 [v1.3]: program rollup + cross-file consistency
+# (design programs_table_design.md rule V-15, renumbered; scoped to
+# institution-grain rows — the §4.11 rollup binds institutions. Office-grain
+# anchors carry no rollup fields; a program row keyed to an office record
+# (e.g. ORG-002121) is checked by V-15's FK rule only.)
+TYPE_PREC = {"degree": 0, "center": 1, "certificate": 2, "apprenticeship": 3,
+             "training": 4, "lab_facility": 5, "course": 6}
+for i, r in enumerate(eco, 2):
+    oid = r["org_id"].strip()
+    if (r.get("record_grain") or "").strip() != "institution":
+        continue
+    P = [p for p in programs_by_inst.get(oid, [])
+         if (p.get("status") or "").strip() != "tombstoned"]
+    pp = (r.get("polymer_program") or "").strip()
+    if P:
+        srt = sorted(P, key=lambda p: (TYPE_PREC[(p.get("program_type") or "").strip()],
+                                       (p.get("program_name") or "").strip().lower()))
+        expect_name = "; ".join((p.get("program_name") or "").strip() for p in srt)
+        expect_url = (srt[0].get("url") or "").strip()
+        if (r.get("polymer_program_name") or "").strip() != expect_name:
+            errors.append(f"ecosystem.csv:{i} {oid} polymer_program_name drifts from the §4.11 rollup of its program rows")
+        if (r.get("polymer_program_url") or "").strip() != expect_url:
+            errors.append(f"ecosystem.csv:{i} {oid} polymer_program_url drifts from the §4.11 rollup of its program rows")
+        if pp == "false":
+            errors.append(f"ecosystem.csv:{i} {oid} polymer_program=false alongside program rows (contradiction)")
+    elif pp == "true":
+        warnings.append(f"ecosystem.csv:{i} {oid} claims a polymer program with no program rows — un-decomposed claim (V-16)")
+
 # V-11: people
 PEOPLE_FIELDS = ["person_id", "full_name", "institution_org_id", "program_org_id", "role",
                  "role_as_published", "research_specialties", "public_profile_url", "sources",
@@ -367,8 +563,8 @@ for i, r in enumerate(people, 2):
     if (r.get("institution_org_id") or "").strip() not in all_ids:
         errors.append(f"people.csv:{i} {pid} institution_org_id dangling")
     prog = (r.get("program_org_id") or "").strip()
-    if prog and (prog not in eco_by_id or (eco_by_id[prog].get("record_grain") or "").strip() != "program"):
-        errors.append(f"people.csv:{i} {pid} program_org_id does not resolve to a program-grain record")
+    if prog and prog not in program_ids:
+        errors.append(f"people.csv:{i} {pid} program_org_id does not resolve to a programs.csv record (V-11 as amended at v1.3)")
     if (r.get("role") or "").strip() not in ROLES:
         errors.append(f"people.csv:{i} {pid} role not in §4.9 enum")
     if not (r.get("role_as_published") or "").strip():
@@ -388,7 +584,8 @@ for w in warnings:
 for e in errors:
     print(f"ERROR {e}")
 print(f"\n{len(orgs)} organizations, {len(sites)} sites, {len(eco)} ecosystem rows, "
-      f"{len(links)} registry links, {len(members)} member rows, {len(people)} people rows checked.")
+      f"{len(links)} registry links, {len(members)} member rows, {len(people)} people rows, "
+      f"{len(programs)} program rows checked.")
 if errors:
     print(f"FAILED with {len(errors)} error(s).")
     sys.exit(1)

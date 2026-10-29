@@ -9,7 +9,7 @@ OUT = ROOT / "build" / "polymer-atlas.db"
 TABLES = {"organizations": "organizations.csv", "sites": "sites.csv",
           "ecosystem": "ecosystem.csv", "inclusion_log": "inclusion_log.csv",
           "registry_links": "registry_links.csv", "members": "members.csv",
-          "people": "people.csv"}
+          "people": "people.csv", "programs": "programs.csv"}
 
 OUT.parent.mkdir(exist_ok=True)
 if OUT.exists():
@@ -42,6 +42,14 @@ SELECT m.member_row_id,
 FROM members m
 LEFT JOIN organizations o ON m.record_class = 'organization' AND o.org_id = m.org_id
 LEFT JOIN ecosystem e ON m.record_class = 'ecosystem' AND e.org_id = m.org_id""")
+# [v1.3] Program layer: program rows joined to the institution's legal_name
+# (institutions live in ecosystem or organizations).
+con.execute("""CREATE VIEW institution_programs AS
+SELECT p.*,
+       COALESCE(e.legal_name, o.legal_name) AS institution_name
+FROM programs p
+LEFT JOIN ecosystem e ON e.org_id = p.institution_org_id
+LEFT JOIN organizations o ON o.org_id = p.institution_org_id""")
 # Supporting indexes for the v1.1/v1.2 structures.
 for stmt in (
     "CREATE INDEX idx_org_pic_member ON organizations(pic_member)",
@@ -51,6 +59,8 @@ for stmt in (
     "CREATE INDEX idx_members_org ON members(org_id)",
     "CREATE INDEX idx_people_inst ON people(institution_org_id)",
     "CREATE INDEX idx_sites_street ON sites(street_address)",
+    "CREATE INDEX idx_programs_inst ON programs(institution_org_id)",
+    "CREATE INDEX idx_programs_type ON programs(program_type)",
 ):
     con.execute(stmt)
 con.commit(); con.close()
