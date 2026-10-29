@@ -64,7 +64,14 @@ for i, r in enumerate(sites, 2):
     if r["org_id"].strip() not in all_ids:
         errors.append(f"sites.csv:{i} {sid} org_id {r['org_id']!r} not found")
     if r["state"].strip() == "OH" and not r["county"].strip():
-        errors.append(f"sites.csv:{i} {sid} Ohio site without county")
+        # Owner ruling 2026-10-29: a blank county is permitted ONLY when the
+        # site is explicitly queued for the parcel layer (notes carry the
+        # marker "parcel candidate queue"). Any other blank Ohio county is
+        # an error — the exception marks a pending state, never missing data.
+        if "parcel candidate queue" in r["notes"]:
+            warnings.append(f"sites.csv:{i} {sid} Ohio site without county (parcel candidate queue — permitted, owner ruling 2026-10-29)")
+        else:
+            errors.append(f"sites.csv:{i} {sid} Ohio site without county")
     if r["verification_tier"].strip() not in {"A", "B", "C", "U"}:
         errors.append(f"sites.csv:{i} {sid} bad verification_tier")
     if not r["sources"].strip():
