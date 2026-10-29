@@ -1,11 +1,25 @@
 # PIC-12 Coverage Report — Atlas establishments vs. official denominators
 
-**Computed 2026-10-29** from the local repo copy at its post-integration-pass-5
-state (1,273 organizations / 1,445 sites / 56 ecosystem records; org tiers
-A 425 / B 657 / C 77 / U 114). **Publication status: this state is NOT yet on
-GitHub** — the combined pass-4+5 push is pending owner approval, and the
-public repo still shows the pass-3 state (325 organizations / 411 sites /
-54 ecosystem). Every number below describes the local files, and says so.
+**Update (2026-10-29, integration pass 7):** Recomputed from the local
+repo at its post-integration-pass-7 state (1,403 organizations / 1,582
+sites / 57 ecosystem records; org tiers A 514 / B 769 / C 94 / U 26).
+Headline PIC-12 NAICS 326 coverage (unit: establishments — Atlas sites,
+operating status active/unknown; denominator QCEW 2023, 367): primary
+cut (tiers A–C) **143 (39.0%) → 180 (49.0%)**; recorded cut (any tier)
+**216 (58.9%) → 253 (68.9%)**. Basis note: the "before" figures are this
+report's previously published figures, computed at its post-pass-5
+basis; by the same cuts the post-pass-6 local file already stood at
+145 / 218, so the deltas above are doc-to-doc, not pass-7-only. Every
+Atlas figure in the tables below has been recomputed at the post-pass-7
+state; denominators are unchanged. The FIPS correction note below is
+retained verbatim.
+
+**Computed 2026-10-29** from the local repo copy at its post-integration-pass-7
+state (1,403 organizations / 1,582 sites / 57 ecosystem records; org tiers
+A 514 / B 769 / C 94 / U 26). **Publication status: this state is NOT yet on
+GitHub** — the pass-7 push is pending central validation, and the
+public repo shows the post-pass-6 state (1,285 organizations / 1,458 sites /
+56 ecosystem). Every number below describes the local files, and says so.
 
 **Denominators:** BLS QCEW 2023, annual-average establishments, private
 ownership (`own_code=5`), as compiled in
@@ -62,12 +76,12 @@ re-validated against the fresh pull and are unchanged.
 
 | NAICS family | Atlas primary cut (sites) | Atlas recorded cut (sites) | QCEW 2023 denominator (establishments, PIC-12) | Primary coverage | Recorded coverage |
 |---|---|---|---|---|---|
-| **326** Plastics & rubber products | **143** | **216** | **367** | **39.0%** | **58.9%** |
-| 3261 Plastics products | 106 | 155 | 283 | 37.5% | 54.8% |
-| 3262 Rubber products | 37 | 61 | 84 | 44.0% | 72.6% |
-| **3252** Resin, synthetic rubber, fibers (325211+325212+325220) | **21** | **28** | **52** | **40.4%** | **53.8%** |
-| **3259** Other chemical products (incl. 325991) | **20** | **26** | **62–63** | **31.7–32.3%** | **41.3–41.9%** |
-| 325991 Custom compounding (subset of 3259) | 17 | 22 | *no official denominator* | — | — |
+| **326** Plastics & rubber products | **180** | **253** | **367** | **49.0%** | **68.9%** |
+| 3261 Plastics products | 137 | 186 | 283 | 48.4% | 65.7% |
+| 3262 Rubber products | 43 | 67 | 84 | 51.2% | 79.8% |
+| **3252** Resin, synthetic rubber, fibers (325211+325212+325220) | **24** | **31** | **52** | **46.2%** | **59.6%** |
+| **3259** Other chemical products (incl. 325991) | **26** | **32** | **62–63** | **41.3–41.9%** | **50.8–51.6%** |
+| 325991 Custom compounding (subset of 3259) | 18 | 23 | *no official denominator* | — | — |
 
 - 325991 has **no official 6-digit anchor** (denominators notes caveat 7):
   the denominators file's per-county cells for 325991 sum to 16 published
@@ -82,8 +96,8 @@ re-validated against the fresh pull and are unchanged.
   establishment from this family's PIC-12 cells), so the coverage figures
   are stated as ranges across the two sums.
 - Statewide context (same cuts, same sources): Atlas primary-cut NAICS-326
-  sites in Ohio = 375 of QCEW Ohio 890 (**42.1%**); 3252-family 55 of 115
-  (47.8%); 3259-family 32 of 153 (20.9%). PIC-12's 326 coverage (39.0%
+  sites in Ohio = 450 of QCEW Ohio 890 (**50.6%**); 3252-family 59 of 115
+  (51.3%); 3259-family 40 of 153 (26.1%). PIC-12's 326 coverage (49.0%
   primary) is in line with the statewide figure — the PIC-12 build is not
   systematically ahead of the rest-of-Ohio build at verified tiers.
 
@@ -96,19 +110,19 @@ every county carries a percentage.
 
 | County | Atlas primary | Atlas recorded | QCEW 326 | Primary % | Recorded % | of which QCEW 3261 / 3262 |
 |---|---|---|---|---|---|---|
-| Ashtabula | 11 | 15 | 21 | 52.4% | 71.4% | 17 / 4 |
-| Cuyahoga | 18 | 35 | 65 | 27.7% | 53.8% | 58 / 7 |
-| Geauga | 11 | 17 | 28 | 39.3% | 60.7% | 21 / 7 |
-| Lake | 9 | 12 | 23 | 39.1% | 52.2% | 17 / 6 |
-| Lorain | 13 | 13 | 18 | 72.2% | 72.2% | 15 / 3 |
-| Mahoning | 7 | 10 | 19 | 36.8% | 52.6% | 17 / 2 |
-| Medina | 8 | 12 | 21 | 38.1% | 57.1% | 12 / 9 |
-| Portage | 10 | 20 | 35 | 28.6% | 57.1% | 27 / 8 |
-| Stark | 14 | 17 | 30 | 46.7% | 56.7% | 27 / 3 |
-| Summit | 34 | 55 | 76 | 44.7% | 72.4% | 48 / 28 |
+| Ashtabula | 15 | 19 | 21 | 71.4% | 90.5% | 17 / 4 |
+| Cuyahoga | 24 | 41 | 65 | 36.9% | 63.1% | 58 / 7 |
+| Geauga | 13 | 19 | 28 | 46.4% | 67.9% | 21 / 7 |
+| Lake | 12 | 15 | 23 | 52.2% | 65.2% | 17 / 6 |
+| Lorain | 16 | 16 | 18 | 88.9% | 88.9% | 15 / 3 |
+| Mahoning | 8 | 11 | 19 | 42.1% | 57.9% | 17 / 2 |
+| Medina | 9 | 13 | 21 | 42.9% | 61.9% | 12 / 9 |
+| Portage | 18 | 28 | 35 | 51.4% | 80.0% | 27 / 8 |
+| Stark | 17 | 20 | 30 | 56.7% | 66.7% | 27 / 3 |
+| Summit | 38 | 59 | 76 | 50.0% | 77.6% | 48 / 28 |
 | Trumbull | 2 | 3 | 13 | 15.4% | 23.1% | 11 / 2 |
-| Wayne | 6 | 7 | 18 | 33.3% | 38.9% | 13 / 5 |
-| **PIC-12** | **143** | **216** | **367** | **39.0%** | **58.9%** | **283 / 84** |
+| Wayne | 8 | 9 | 18 | 44.4% | 50.0% | 13 / 5 |
+| **PIC-12** | **180** | **253** | **367** | **49.0%** | **68.9%** | **283 / 84** |
 
 Read on the outliers:
 
@@ -117,16 +131,17 @@ Read on the outliers:
   214.3%). That was an artifact, not a measurement: the denominators had
   been read from BLS area 39005 (Ashland County) instead of 39007
   (Ashtabula). Against the true denominator of 21, Ashtabula stands at
-  52.4% primary / 71.4% recorded — an ordinary mid-coverage county with a
-  small genuine discovery gap (6 establishments) plus 4 Tier U sites of
-  backlog. See the correction note at the head of this report and
+  71.4% primary / 90.5% recorded (post-pass-7 recomputation) — a
+  well-covered county with a small genuine discovery gap (2 establishments)
+  plus 4 Tier U sites of backlog. See the correction note at the head of this report and
   `denominators_notes.md` §3.5.
 - **Trumbull is the thinnest county in PIC-12** (15.4% primary / 23.1%
   recorded) — a genuine discovery gap, not a backlog artifact: there are
   only 3 recorded NAICS-326 sites against 13 expected.
-- **Cuyahoga is the largest absolute gap**: 18 primary / 35 recorded
+- **Cuyahoga is the largest absolute gap**: 24 primary / 41 recorded
   against 65 expected. It holds the region's biggest denominator and its
-  coverage is backlog-shaped (half the recorded sites are still Tier U).
+  coverage is backlog-shaped (17 of the recorded NAICS-326 sites are
+  still Tier U).
 
 ## 4. Upstream detail — 325211 / 325212 / 325991 by county (no ratios)
 
@@ -142,30 +157,30 @@ context, not denominators.
 | County | 325211 Atlas | 325211 denom. cell | 325212 Atlas | 325212 denom. cell | 325991 Atlas | 325991 denom. cell |
 |---|---|---|---|---|---|---|
 | Ashtabula | 0 | 1 (QCEW) | 0 | suppressed | 1 | suppressed |
-| Cuyahoga | 5 | 16 (CBP) | 0 | 3 (QCEW) | 3 | 1 (QCEW) |
+| Cuyahoga | 6 | 16 (CBP) | 0 | 3 (QCEW) | 3 | 1 (QCEW) |
 | Geauga | 2 | 3 (QCEW) | 0 | 4 (QCEW) | 0 | 1 (QCEW) |
 | Lake | 2 | 4 (CBP) | 0 | suppressed | 1 | suppressed |
 | Lorain | 2 | 4 (CBP) | 0 | suppressed | 3 | 3 (QCEW) |
 | Mahoning | 0 | suppressed | 0 | suppressed | 0 | suppressed |
-| Medina | 1 | 3 (CBP) | 0 | 1 (QCEW) | 0 | suppressed |
+| Medina | 2 | 3 (CBP) | 0 | 1 (QCEW) | 0 | suppressed |
 | Portage | 2 | 3 (QCEW) | 1 | 2 (QCEW) | 2 | 3 (CBP) |
-| Stark | 0 | suppressed | 0 | 1 (QCEW) | 2 | 2 (QCEW) |
+| Stark | 0 | suppressed | 0 | 1 (QCEW) | 3 | 2 (QCEW) |
 | Summit | 2 | 8 (CBP) | 1 | 4 (CBP) | 5 | 5 (CBP) |
-| Trumbull | 1 | suppressed | 0 | suppressed | 0 | suppressed |
+| Trumbull | 2 | suppressed | 0 | suppressed | 0 | suppressed |
 | Wayne | 0 | 1 (QCEW) | 2 | 1 (QCEW) | 0 | 1 (QCEW) |
-| **PIC-12** | **17** | *43 published + 3 suppressed counties* | **4** | *16 published + 5 suppressed counties* | **17** | *16 published + 5 suppressed counties* |
+| **PIC-12** | **20** | *43 published + 3 suppressed counties* | **4** | *16 published + 5 suppressed counties* | **18** | *16 published + 5 suppressed counties* |
 
 ## 5. Scope — where the two sides do not measure the same thing
 
 - **Atlas scope exceeds the denominators' scope.** The QCEW denominators
   cover only establishments whose *primary* NAICS is 326/3252/3259.
-  The Atlas's 367 primary-cut PIC-12 sites decompose as: **184** carrying
-  a 326/3252/3259 primary NAICS (the only sites that enter §2), **74**
+  The Atlas's 443 primary-cut PIC-12 sites decompose as: **230** carrying
+  a 326/3252/3259 primary NAICS (the only sites that enter §2), **102**
   carrying a primary NAICS outside those families (machinery,
-  distribution, testing, services), and **109** carrying no primary
-  NAICS at all. By ring, the same 367 are Ring 1: 188, Ring 2: 73,
-  Ring 3: 64, Ring 4: 34, Ring 5: 3, ring unassigned: 5. Everything
-  outside the 184 has no denominator in this framework and is never
+  distribution, testing, services), and **111** carrying no primary
+  NAICS at all. By ring, the same 443 are Ring 1: 229, Ring 2: 93,
+  Ring 3: 74, Ring 4: 38, Ring 5: 4, ring unassigned: 5. Everything
+  outside the 230 has no denominator in this framework and is never
   ratioed.
 - **Denominator scope exceeds the Atlas's scope.** QCEW counts every
   UI-covered establishment in the code, including establishments of firms
@@ -174,9 +189,9 @@ context, not denominators.
   NAICS-based list, including this one), and establishments that closed
   between 2023 and 2026. A coverage figure below 100% is therefore the
   expected steady state, not a defect to be explained away.
-- **Classification is not shared.** Of the 143 primary-cut PIC-12
-  NAICS-326 sites, the NAICS provenance is: directory-assigned 108,
-  researcher-inferred 26, government-filing 9, company-disclosed 0.
+- **Classification is not shared.** Of the 180 primary-cut PIC-12
+  NAICS-326 sites, the NAICS provenance is: directory-assigned 112,
+  researcher-inferred 58, government-filing 10, company-disclosed 0.
   QCEW/Census assign primary NAICS independently; the denominators notes
   (§4.3) show the two official systems disagreeing with each other on the
   same rubber shops (e.g., Summit 326299: CBP 20 vs. QCEW 9). Some of the
@@ -186,12 +201,12 @@ context, not denominators.
 ## 6. How to quote this
 
 - ✅ "The Atlas's verified PIC-12 file (sites, operating status
-  active/unknown, tiers A–C) covers 143 of the 367 plastics and rubber
+  active/unknown, tiers A–C) covers 180 of the 367 plastics and rubber
   manufacturing establishments QCEW counted in the 12 counties in 2023 —
-  39.0%; counting every recorded candidate including unverified Tier U
-  rows, 216 (58.9%)."
+  49.0%; counting every recorded candidate including unverified Tier U
+  rows, 253 (68.9%)."
 - ✅ "Rubber (3262) is the best-covered PIC-12 segment at verified tiers:
-  37 of 84 (44.0%). Custom compounding (325991) has 17 verified PIC-12
+  43 of 84 (51.2%). Custom compounding (325991) has 18 verified PIC-12
   sites; no official denominator exists for that code."
 - ❌ Do not quote a single "coverage" number without its cut (primary vs.
   recorded), its unit (establishments/sites), and its denominator
@@ -204,14 +219,14 @@ context, not denominators.
 
 ## 7. Known gaps (quantified)
 
-1. **Tier U backlog (the largest single gap).** 370 recorded PIC-12 sites
+1. **Tier U backlog (the largest single gap).** 366 recorded PIC-12 sites
    (operating status active/unknown) sit at Tier U and are excluded from
-   the primary cut — the primary cut (367 sites) is barely half the
-   recorded PIC-12 universe (737 sites). Statewide the excluded Tier U
-   count is 643 sites. Closing this gap is verification work, not
+   the primary cut — the primary cut (443 sites) is 55% of the
+   recorded PIC-12 universe (809 sites). Statewide the excluded Tier U
+   count is 637 sites. Closing this gap is verification work, not
    discovery work.
-2. **Blank NAICS.** 109 of 367 primary-cut PIC-12 sites (29.7%) — and
-   366 of 737 recorded PIC-12 sites (49.7%) — carry no `naics_primary`
+2. **Blank NAICS.** 111 of 443 primary-cut PIC-12 sites (25.1%) — and
+   364 of 809 recorded PIC-12 sites (45.0%) — carry no `naics_primary`
    and are invisible to every NAICS-matched ratio in this report. Some
    are genuinely outside the denominator families; until they are coded,
    the split is unknown, so all §2 ratios are computed only over
@@ -239,7 +254,7 @@ context, not denominators.
    situs hit per site. Until then, county-level counts in §3 carry this
    uncertainty inside them.
 5. **Thin counties.** Trumbull (3 recorded NAICS-326 sites vs. 13
-   expected) and Wayne (7 vs. 18) are discovery gaps; Cuyahoga (35
+   expected) and Wayne (9 vs. 18) are discovery gaps; Cuyahoga (41
    recorded vs. 65) is principally a verification-backlog gap (see §3).
 6. **Suppressed denominator cells.** 97 of the denominators file's 240
    county × code cells are published by neither CBP nor QCEW and are
@@ -253,7 +268,8 @@ context, not denominators.
 ---
 
 *Method note: all Atlas figures were computed directly from
-`data/sites.csv` at the post-pass-5 local state on 2026-10-29; PIC-12
+`data/sites.csv` at the post-pass-5 local state on 2026-10-29, and
+recomputed at the post-pass-7 local state on 2026-10-29; PIC-12
 county membership per AGENTS.md §8; denominator aggregates per
 `staging/working/denominators_notes.md` §3.3–§3.4 (QCEW 2023, private
 ownership, annual averages; Ashtabula and derived totals as corrected

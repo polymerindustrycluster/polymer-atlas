@@ -30,6 +30,7 @@ kind of database should be able to reuse this page wholesale.
 | Source | Class | Public access pattern | What it is good for here | Standing |
 |---|---|---|---|---|
 | US EPA Facility Registry Service (FRS) | Government dataset | Free bulk state files | Facility addresses, ZIPs, counties, and government-filed industry codes for the regulated subset; a second source for existence | Core pipeline |
+| EPA FRS — SIC-code sideways pull | Government dataset | Free bulk state files | Re-querying the registry by legacy SIC codes catches facilities whose modern industry code files them outside the sector (a rubber-products plant coded as apparel). Leads only: measured verification rate under 8% — the SIC witness is noisy in both directions | Leads only |
 | US EPA Toxics Release Inventory (TRI) | Government dataset | Free per-state annual files | **Dated** evidence a facility operated in a reporting year; facility-reported parent companies | Core pipeline |
 | US EPA ECHO | Government dataset | Free web exports | Dated compliance, inspection, and permit activity — the currency cross-check on registry matches | Planned complement |
 | Ohio WARN notices (ODJFS) | Government dataset | Free compiled files + per-notice PDFs | Closure/layoff status evidence for larger employers; notices queue adjudication, they never auto-close a record | Core pipeline |
@@ -44,10 +45,15 @@ kind of database should be able to reuse this page wholesale.
 | Census County Business Patterns + BLS QCEW | Government statistics | Free published files | The denominators: official establishment counts by county × industry that every coverage claim is measured against | Denominators |
 | Census batch geocoder + TIGERweb | Government geospatial | Free batch + point services | Coordinates for every site; authoritative county resolution for disputed addresses | Core pipeline |
 | County auditor / parcel records | Government dataset | Free per-county GIS | Settling county disputes — parcel and tax-district evidence outranks geocode centroids | Targeted use |
+| County parcel fabrics + statewide parcel layer (OGRIP) | Government dataset | Free per-county GIS services + one statewide layer | Systematic discovery and county settlement: industrial land-use parcels joined on physical address surface plants directories miss, and parcel records settle a site's county from its land, not its mailing city. Parcel owners are leads only (often a realty LLC, never assumed to be the operator); the statewide layer publishes no owner field and its coverage is uneven, so its misses settle nothing | Core pipeline |
 | State Secretary of State business search | Registry | Free per-entity lookup | Legal existence and entity status — the settling fact for "does this entity legally exist" (not whether it operates) | Core pipeline |
 | Economic-development announcements (state jobs agency, tax-credit authority minutes) | Government announcements | Free public releases + minutes | New-plant and expansion discovery; tax-credit amendments uniquely record cancellations and moves — negative evidence most sources never publish | Monitoring |
 | Trade & business press monitoring (news aggregation, wire RSS feeds) | News | Free RSS / public APIs | Event monitoring: openings, expansions, closures, renames — regional and trade press carry the private-company events the wires miss | Monitoring |
 | Job postings (state job board) | Jobs | Free public search | A production-role posting by the direct employer, in the plant's locality, is a dated operating signal | Liveness evidence |
+| SBA Paycheck Protection Program (PPP) loan data | Government dataset | Free bulk FOIA release | Small-shop discovery where directories are thinnest: a loan is dated existence evidence at a stated address under a borrower-reported industry code. Vintage 2020–21 — a loan proves a firm existed then, not that it operates now, so every candidate still needs a current witness. Sole-proprietor rows are excluded by rule (they carry personal names); demographic fields are never carried. Measured verification rate ~38% in the core plastics/rubber/resin codes; distribution and testing codes verified at 0% and are corroboration-only | Discovery (core codes) |
+| Ohio Tax Credit Authority — Jobs Creation Tax Credit meeting minutes | Government announcements | Free public minutes (some scanned, OCR'd) | Project approvals name the company, the locality, and the job commitments behind expansions and new plants — the highest-precision discovery list we have measured (~41% verified). Coverage has gaps: not every meeting's minutes are retrievable | Discovery |
+| Ohio EPA industrial stormwater general-permit coverage list | Government dataset | Free public permit records | Facilities holding industrial stormwater coverage are operating industrial sites by definition; the permittee list is a discovery floor for regulated plants (measured verification rate ~20%). The sector screen is partial — an unscreened residue remains, so the list understates rather than overstates | Discovery |
+| US DOL Form 5500 / 5500-SF filings (EFAST2) | Government filings | Free public database | An employer's benefit-plan filing proves an employer address with active plan participants as of the filing date — dated operating evidence for exactly the small private firms the web misses. It proves an employer address, not a plant, and absence is weak (small employers may file the short form or be exempt). Run as the standing check before any record is rejected for closure or no-establishment | Core pipeline |
 | US bills of lading (import records) | Trade data | Free-tier web service | Importer/distributor discovery and shipment-recency activity evidence for import-dependent firms | Planned |
 | Association member directories (rubber, adhesives, composites, mold builders, processors) | Association | Public lists/PDFs where published; member-gated elsewhere | Discovery of small and mid-size firms other sources under-cover, and an independent second source family for corroboration. Membership proves membership — never activity by itself | Core pipeline where public |
 | Trade-show exhibitor lists | Trade shows | Public rosters/directories, snapshotted per edition | Exhibiting is a dated, market-facing activity attestation with the exhibitor's own-words description — strong ring-classification evidence. Rosters are perishable: snapshot the current edition or lose it | Core pipeline |
@@ -64,6 +70,11 @@ kind of database should be able to reuse this page wholesale.
   material surfaces through aggregation.
 - **Used-equipment marketplace listings as a closure signal** — a reseller's
   warehouse location is not the seller's plant; the provenance fails.
+- **Building permits as company discovery** — a permit names an applicant or
+  a contractor, never the operator of the finished plant. Measured directly:
+  57 permit-derived candidates produced zero verifications. Permits remain
+  useful as corroboration for a record another source produced, and for
+  nothing else.
 - **OpenStreetMap name queries for company discovery** — structurally blind:
   a name-keyword query can only find firms whose names contain sector words,
   which excludes most large employers by construction.
@@ -84,8 +95,11 @@ measure different things:
   BLS QCEW 2023, private ownership. This is the source of the "~900" rumor;
   it is an establishment count for one sector code, not a company count for
   "the polymer industry."
-- **996 companies** — a regional cluster strategic-framework figure whose
-  method is not published; treated as a claim, not a census.
+- **996 companies** — a regional cluster strategic-framework figure.
+  Reproduced exactly as Census CBP 2016 Ohio establishments under NAICS
+  326 + 325211 + 325212 + 325991 — an establishment count under a wider
+  code set, at 2016 vintage, relabeled "companies." Derivation in
+  `docs/SOURCE_COUNT_RECONCILIATION.md`.
 - **616 companies** — a 2022 onshoring study's hand-cleaned count, screened
   from 1,100+ raw commercial-database records for a single sub-code. The
   cleaning ratio is the lesson: a raw pull for one sub-code returned more
@@ -146,6 +160,13 @@ measure different things:
    verification.
 10. **Co-location is not identity.** Shared buildings, industrial parks, and
     adjacent addresses on one campus are adjudication items, not merges.
+11. **Denominator geography errors masquerade as findings.** A county code
+    misread in a denominators file (one county's FIPS code read as its
+    neighbor's) manufactured a phantom 157–214% "over-coverage" county and
+    understated the whole region's coverage until the denominators were
+    re-derived against the statistical agencies' own area titles. Coverage
+    ratios are only as trustworthy as the geography underneath them; verify
+    the codes before publishing the percentages.
 
 ## How records are built from these sources
 
