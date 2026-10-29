@@ -1,5 +1,26 @@
 # PIC-12 Coverage Report — Atlas establishments vs. official denominators
 
+**Update (2026-10-29, integration pass 11):** Recomputed from the local
+repo at its post-integration-pass-11 state (1,829 organization rows /
+1,940 sites; org tiers A 624 / B 990 / C 163 / U 12). Headline PIC-12
+NAICS 326 coverage (unit: establishments — Atlas sites, operating status
+active/unknown; denominator QCEW 2023, 367): primary cut (tiers A–C)
+**412 (112.3%) → 415 (113.1%)**; recorded cut (any tier) **428 (116.6%)
+→ 431 (117.4%)**. Statewide NAICS 326 primary coverage: **787 (88.4%) →
+804 (90.3%)** of the QCEW Ohio denominator of 890. Pass 11 applied the
+wave-11 consolidated-requeue resolutions (42 organization creations +
+held-record upgrades), the dedupe sweep's merges and site retirements,
+the blind-audit-5 LSP Technologies closure, two county corrections, and
+the Quality Plastics site creation; the Hankook merge, the A3
+co-location set, the B5-fenced records, and the contested Cast Nylons
+operator rows were held for owner ruling or targeted re-verification.
+The pass-11 prep projected 417 / 806; the actuals land 2 lower in each
+cut because two further tabled in-frame retirements (SITE-000180,
+SITE-001849) were applied as tabled — the motions govern, and the
+deltas are itemized in the pass-11 integration journal (staging). The
+decomposition prose below analyzes the pass-10 frame and carries
+structurally: the frame effect it explains is unchanged in kind.
+
 **Update (2026-10-29, integration pass 10):** Recomputed from the local
 repo at its post-integration-pass-10 state (1,785 organizations / 1,896
 sites / 58 ecosystem records; org tiers A 621 / B 969 / C 170 / U 25).
@@ -93,7 +114,7 @@ re-validated against the fresh pull and are unchanged.
 
 | NAICS family | Atlas primary cut (sites) | Atlas recorded cut (sites) | QCEW 2023 denominator (establishments, PIC-12) | Primary coverage | Recorded coverage |
 |---|---|---|---|---|---|
-| **326** Plastics & rubber products | **412** | **428** | **367** | **112.3%** | **116.6%** |
+| **326** Plastics & rubber products | **415** | **431** | **367** | **113.1%** | **117.4%** |
 | 3261 Plastics products | 317 | 329 | 283 | 112.0% | 116.3% |
 | 3262 Rubber products | 95 | 99 | 84 | 113.1% | 117.9% |
 | **3252** Resin, synthetic rubber, fibers (325211+325212+325220) | **39** | **44** | **52** | **75.0%** | **84.6%** |
@@ -113,7 +134,7 @@ re-validated against the fresh pull and are unchanged.
   establishment from this family's PIC-12 cells), so the coverage figures
   are stated as ranges across the two sums.
 - Statewide context (same cuts, same sources): Atlas primary-cut NAICS-326
-  sites in Ohio = 787 of QCEW Ohio 890 (**88.4%**); 3252-family 79 of 115
+  sites in Ohio = 804 of QCEW Ohio 890 (**90.3%**); 3252-family 79 of 115
   (68.7%); 3259-family 72 of 153 (47.1%). PIC-12's 326 coverage (112.3%
   primary, with the frame decomposition above) runs ahead of the statewide figure.
 
@@ -138,7 +159,7 @@ every county carries a percentage.
 | Summit | 94 | 100 | 76 | 123.7% | 131.6% | 48 / 28 |
 | Trumbull | 5 | 5 | 13 | 38.5% | 38.5% | 11 / 2 |
 | Wayne | 13 | 13 | 18 | 72.2% | 72.2% | 13 / 5 |
-| **PIC-12** | **412** | **428** | **367** | **112.3%** | **116.6%** | **283 / 84** |
+| **PIC-12** | **415** | **431** | **367** | **113.1%** | **117.4%** | **283 / 84** |
 
 Read on the outliers:
 
