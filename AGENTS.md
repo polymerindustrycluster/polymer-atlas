@@ -71,6 +71,19 @@ public source (company website, SEC / Ohio SOS / SAM.gov filing,
 government data, association directory, trade-press news reporting of a
 specific event) and cited to *that* source.
 
+### 5.1 PIC membership
+
+**PIC membership.** Membership status is published in the Atlas only
+where it is already public: a record may carry the public membership
+flag only for a member **findable on the public PIC website member
+list**, and the record's `sources` cite that public list. The PIC CRM
+is a private, internal system: it may be used to reconcile the
+website list against the Atlas internally, but it is never the cited
+source for a membership fact, and no membership information that
+exists only in the CRM is published. Where the website list and the
+CRM disagree, the website governs what publishes and the discrepancy
+is an internal reconciliation item, not a publishable fact.
+
 ## 6. Privacy
 
 No personal data. No individual emails, direct-dial phones, or home
@@ -78,6 +91,19 @@ addresses — ever. Public business switchboard numbers and generic
 contact pages only, and only where a schema field exists for them.
 Ownership demographics (woman/minority/veteran-owned) only when
 self-disclosed by a primary or authoritative source; never inferred.
+
+**People records.** The Atlas may carry records for **professors** —
+and only professors — where every field is an independently public
+professional fact: name, institution, role, research specialty, and a
+public lab or profile URL, each cited to its public source in the
+record's `sources`. A professor is recorded only when those facts are
+public; no record is created from, or corroborated by, any private
+system. In particular, **the PIC CRM is never a source for people
+records**: people held in the CRM are not recorded, exported, or
+exposed in the Atlas, and CRM-only information about a person never
+enters a record. Personal contact data (individual emails, direct-dial
+phones, home addresses) remains barred for people records exactly as
+for every other record class.
 
 ## 7. Counting honesty
 

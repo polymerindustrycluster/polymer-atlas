@@ -1,8 +1,13 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.0 — 2026-10-28
-**Status:** Design only. This document defines classification and record structure. It does not contain the company list.
+**Version:** v1.2 — 2026-10-29 (ADOPTED by the owner 2026-10-29; applied
+2026-10-29 after integration pass 10, against the post-pass-10 repo)
+**Status:** This document defines classification and record structure. It does not contain the company list.
+**Change basis:** v1.1 (decision memo 2026-10-29 §1, option (a): Tier 1 + Tier 2) and v1.2
+(repo change proposals S1–S4, 2026-10-29) adopted together as one dated revision. New or
+changed text in this revision is marked **[v1.1]** / **[v1.2]** at the paragraph or row level.
+Sections without a mark are carried from v1.0 unchanged.
 **Scope:** Northeast Ohio primary; Ohio statewide secondary; national for parents, OEMs, and ecosystem entities with an Ohio footprint or direct PIC relevance.
 
 **How to use this document:** A researcher classifying a new entity should be able to (1) assign a Ring in <2 minutes using §1, (2) assign NAICS + provenance using §2, (3) tag processes/materials/markets from the controlled vocabularies in §3 only — no free-text inventions, and (4) create a record that dedupes identically to another researcher's record using §5.
@@ -286,6 +291,39 @@ Because ~900 Ohio polymer firms is the reported scale, NAICS-only discovery will
 
 ---
 
+### 3.5 Research areas — supplement for program / office / people records **[v1.2]**
+
+**§3-first rule (binding on taggers):** use a §3.1/§3.2 term wherever it honestly fits;
+a supplement term is used only when no §3 term states the specialty. The supplement is
+not a parallel system. It applies to `research_areas[]` on program, office, and people
+records (§4.6, §4.9); company records do not use it. Source: Phase A program schema
+draft (2026-10-29), adopted with this revision. Calibration finding carried with the
+vocabulary: `characterization_methods` is load-bearing — characterization facilities
+(electron microscopy / analytical) have no §3.1 process term, and this term is the
+only honest tag for them.
+
+| Term | Definition |
+|---|---|
+| `polymer_physics` | Structure–property relations, thermodynamics, and statistical mechanics of polymer systems |
+| `rheology` | Flow and deformation behavior of polymer melts, solutions, and soft solids |
+| `polymer_synthesis` | Design and execution of polymerization reactions and polymer architectures |
+| `degradation_biodegradation` | Environmental, thermal, and biological breakdown of polymers and its measurement |
+| `recycling_circularity` | Mechanical/chemical recycling science, design-for-recycling, and circular material systems |
+| `composites_mechanics` | Mechanics, damage, and durability of polymer-matrix composite materials |
+| `membranes_separations` | Polymer membranes and barrier/separation science |
+| `biomedical_polymers` | Polymers for medical devices, drug delivery, and tissue engineering |
+| `additive_manufacturing_science` | Materials and process science of polymer additive manufacturing (beyond operating the process) |
+| `characterization_methods` | Development or expert application of analytical methods for polymer structure/properties |
+| `sustainable_feedstocks` | Bio-based, waste-derived, or low-carbon feedstocks for polymer production |
+| `elastomer_science` | Rubber elasticity, vulcanization chemistry, and elastomer network science |
+
+§3-first examples: a processing professor is tagged `injection_molding` (§3.1), not a
+supplement term; a coatings formulator is `coating_formulation` (§3.1) +
+`adhesives_sealants` (§3.2); biodegradation research takes
+`degradation_biodegradation` because no §3 term states it.
+
+---
+
 ## 4. Record Schema
 
 ### 4.1 Verification tiers (applies per-record; per-field source in `field_sources`)
@@ -307,6 +345,11 @@ Promotion rule: C → B requires a second independent source or one B source. B 
 
 Tags (multi-select): `current_member` · `former_member` · `potential_member` · `prospect_active_outreach` · `partner` · `sponsor_funder` · `customer_of_members` · `supplier_to_members` · `workforce_pipeline` · `research_partner` · `watchlist` · `not_a_fit` · `do_not_contact`
 Plus single-select `pic_relationship_stage`: `uncontacted` | `identified` | `engaged` | `member_partner` | `lapsed` | `excluded`.
+**[v1.2] `pic_relationship_stage` is RETIRED from the public files at this revision.** It is
+relationship data, not public data: the column is removed from `organizations.csv` at
+application, its values are archived in staging (never deleted), and no public file may
+carry it again. `pic_relevance[]` tags and `pic_relevance_note` are unaffected. Membership
+*status* is a separate, public fact governed by §4.10 — it is not relationship data.
 `watchlist` + `not_a_fit` require a one-line `pic_relevance_note` stating why (e.g., GOJO/STERIS rulings).
 
 ### 4.4 Level A — Parent Organization
@@ -331,6 +374,11 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `processes[]` / `materials[]` / `markets_served[]` | controlled vocab §3 | **MUST** (at least processes OR materials non-empty) | Parent = union of sites, but do not backfill a site's process to Parent unless Parent claims it corporately — note in field source |
 | `employee_band_global` / `employee_band_ohio` | enum | Nice (Ohio band = MUST if known) | Bands: `1-9` \| `10-49` \| `50-99` \| `100-249` \| `250-499` \| `500-999` \| `1000-4999` \| `5000+` \| `unknown`. Never store a precise headcount as fact; if a source gives one, store band + `employee_count_source_date` |
 | `founded_year` | integer | Nice | |
+| `year_founded` **[v1.1]** | integer | Nice | ADOPTED NAME for the founding-year field: `year_founded` supersedes the v1.0 draft label `founded_year` above (the two rows are one field; the v1.1 adoption text governs the name). Legal-entity formation year where a source states it; multi-inception conflicts (e.g., rename years) stay unresolved in notes until a formation convention is ruled — never silently pick one. |
+| `stock_ticker` **[v1.1]** | string | Nice | Exchange ticker for public orgs, **always with an as-of date in `field_sources`** — tickers are dated claims (a delisted ticker persisted in Wikidata is the known failure). Public parents only; never inferred. |
+| `employee_band` **[v1.1]** | enum §4.4 bands | Nice (Ohio band = MUST if known) | The adopted Tier-2 band field. READING (flagged in the implementation plan): the existing populated column `employee_band_ohio` is this field's Ohio instance and is NOT duplicated by a second column; CRM-banked employee counts land in `employee_band_ohio` as banded values with provenance (see the migration notes). `employee_band_global` remains as defined above. |
+| `ownership_type` **[v1.1]** | enum | Nice | `public_company` \| `private_company` \| `private_equity_portfolio` \| `family_owned` \| `employee_owned` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown`. Distinct from `entity_type` (legal form): this records control. Only from a primary/authoritative source; never inferred from size or name. (Vocabulary proposed in the implementation package — the adoption named the field, not its values.) |
+| `certifications[]` **[v1.1]** | controlled vocab §3.4 | Nice | Promoted from the §3.4 nice-to-have list to a stored column on organizations. Values only from §3.4; self-disclosed or certificate-evidenced only. |
 | `website` | URL | **MUST** if exists; explicit `none_found` otherwise | Own domain only; a LinkedIn page goes in `sources`, not `website` |
 | `description_1line` | string ≤180 chars | **MUST** | Researcher-written, factual, no marketing copy-paste: "Custom injection molder, medical + automotive, Akron" |
 | `pic_relevance[]` / `pic_relationship_stage` / `pic_relevance_note` | §4.3 | **MUST** | At minimum `potential_member` / `partner` / `watchlist` / `not_a_fit` |
@@ -353,6 +401,9 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `site_name` | string | **MUST** | As signed/listed: "Avient — Avon Lake Plant". Default = `{Parent trade name} — {City}` |
 | `site_type` | enum | **MUST** | `manufacturing_plant` \| `hq_only` \| `hq_and_plant` \| `rd_center` \| `lab_testing` \| `warehouse_distribution` \| `sales_office` \| `tool_shop` \| `recycling_facility` \| `training_center` \| `campus` \| `virtual_incubator` |
 | `address_street/city/state/zip` + `county` + `lat_lon` (optional in v1) | structured | **MUST** (lat/lon Nice) | Physical address, not PO Box if a physical address exists. County MUST be from address geocode/official source |
+| `street_address` **[v1.1]** | string | **MUST** if known | The street component as its own column (in the CSV it is the single `street_address` column alongside `city`/`state`/`zip`). This is the address-first matching key the v1.0 layout lacked: street addresses previously lived only inside notes, which capped every address join. Backfilled ONLY from named sources already on the record (own-site address, filing, parcel record) — no unsourced bulk backfill. |
+| `latitude` / `longitude` **[v1.1]** | decimal | Nice | From the Census batch geocoder or the coordinates supplement; always paired with `geocode_precision`. |
+| `geocode_precision` **[v1.1]** | enum | MUST if lat/lon present | `rooftop` \| `parcel` \| `address_interpolated` \| `zip_centroid` \| `city_centroid`. A centroid value never corrects a recorded county and is never presented as a rooftop location. |
 | `ring_primary` (site-level) | enum 1–5 | **MUST** | May differ from Parent (Parker rule) |
 | `naics_primary` + provenance | §2.1 | **MUST** | Site NAICS often differs from Parent NAICS — never copy Parent NAICS to site without a site source or `researcher_inferred` flag |
 | `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB |
@@ -379,11 +430,128 @@ Use for Ring 5 only. Ecosystem entities get a Parent-shaped record PLUS this ext
 | `member_or_open_to` | string | Nice | E.g., association membership criteria, lab access model |
 | `parent_institution_org_id` | FK, nullable | Nice→MUST if center-within-university | E.g., a polymer center inside a university: center may be its own Ecosystem record linked to the university Parent — see §5.2 |
 
+
+**[v1.2] Record grains (proposal S2, as drafted by Phase A).** Ecosystem records carry a
+grain discriminator, `record_grain`: `institution` | `program` | `office`. All existing
+ecosystem rows backfill to `record_grain=institution` at application. (Naming reading,
+flagged in the implementation plan: proposal S2 wrote `entity_grain`; the landed Phase A
+draft — the more specific, later text — uses `record_grain`, and `record_grain` governs.)
+
+**Program records** (`record_grain=program`) — a named degree, center, certificate, or
+apprenticeship; the program, not the university, is the unit an introduction targets:
+
+| Field | Type | v1.2? | Notes |
+|---|---|---|---|
+| `program_name` | string | **MUST** | As the institution styles it; the named program is the Ring 5 inclusion evidence |
+| `parent_institution_org_id` | FK → institution record (organizations ∪ ecosystem) | **MUST** | §4.6's `parent_institution_org_id`, promoted to MUST at this grain |
+| `program_type` | enum | **MUST** | `degree` \| `certificate` \| `apprenticeship` \| `center` \| `training` — exactly one; a center that also grants degrees is `center`, with the degrees in `credential_types[]` |
+| `credential_types[]` | enum[] | MUST **only for** `degree`/`certificate`/`apprenticeship` types | `phd` · `ms` · `bs` · `aas_associate` · `certificate` · `registered_apprenticeship` · `incumbent_worker_training` · `noncredit_workforce`. **Calibration fix (Phase A, 2026-10-29): as an unconditional MUST this field failed every center in the sample (0/7 grant credentials); it is therefore conditioned on program type, and `center`/`training` records carry it empty by design.** |
+| `program_url` | URL | **MUST** | The program's own public page (Tier A primary source) |
+| `specialty_processes[]` / `specialty_materials[]` | §3.1 / §3.2 vocab | as evidenced | Never inferred beyond the program's own page. Characterization facilities fill neither — they tag `research_areas[characterization_methods]` (§3.5) |
+| `research_areas[]` | §3.5 supplement | research programs only | §3 terms first wherever they honestly fit |
+| `engagement_modes[]` | enum[] | **MUST** (≥1) | Extends §4.6 `services_offered[]`: `research_collaboration` · `student_projects_capstone` · `internships_coops` · `testing_characterization_access` · `lab_facility_access` · `licensing_tech_transfer` · `training_seats_open_enrollment` · `customized_employer_training`. **Grain rule (Phase A calibration): degree pages publish student-facing modes only; center pages publish employer-facing modes. A degree record carrying only student-facing modes is complete, not thin — the skew is a fact about the source.** |
+| `apprenticeship_registered` | boolean | training/apprenticeship types | From the public DOL/state apprenticeship registry only |
+| `employer_custom_training` | boolean | training types | Institution states it will run a cohort for one employer |
+| `admissions_status` | enum | training/program types | `admitting` \| `not_admitting` \| `unknown` — Phase A calibration rider: a link's liveness ≠ a program's liveness; training records require an admissions-status check at verification |
+| `facilities_note` | free text, sourced | Nice | Publicly stated labs/equipment |
+| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Calibration: enrollment bands filled 0/12 — pages publish outcomes instead; expect this field to stay sparse |
+| `public_door_url` | URL | **MUST** | The program's public contact/admissions/partnership **page** — never a person's email (§6) |
+
+**Office records** (`record_grain=office`) — a university's tech-transfer / licensing
+office, under its institution record:
+
+| Field | Type | v1.2? | Notes |
+|---|---|---|---|
+| `office_name` | string | **MUST** | As the university styles it |
+| `parent_institution_org_id` | FK | **MUST** | Grain rules from Phase A calibration: an independent R&D institute that licenses its own IP (Battelle class) is office-grain under itself as parent; a cross-institution portal (DOE Lab Partnering Service class) is a national-channel office; hospital/system offices that present as sections or venture arms pass if they *function as the licensing door on an own page* — a standalone site is not required |
+| `tto_url` | URL | **MUST** | The office's own public page — the door |
+| `industry_partnership_modes[]` | enum[] | **MUST** (≥1) | `licensing` · `sponsored_research` · `startup_formation` · `materials_transfer` · `facility_access`, from the office's own published offer |
+| `technology_areas[]` | §3.1/§3.2 vocab where they map; sourced free text otherwise | as evidenced | The office's stated portfolio themes |
+| `public_door_url` | URL | **MUST** | Generic industry-contact page. **Office phone numbers are never carried** — §6 permits public switchboards only where a schema field exists; no such field exists at this grain |
+
+Program and office records keep the §4.6 backbone (Parent MUST fields, `sources[]`,
+`verification_tier`, `last_verified`, `status`, `pic_relevance`). Tier grammar at these
+grains: the institution's own program/office page = A-equivalent; state registry /
+accreditor / association directory = B; lone aggregator = C.
+
 ### 4.7 v1 Must-Have Summary (the "no record ships without these" gate)
 
 A v1 record is **complete** only if it has: legal name, trade names (or explicit empty), entity type, ring_primary (+ Ring 4 test if Ring 4, + subtype if Ring 3/5), HQ/site address with **county**, NAICS primary **with provenance block**, at least one of processes/materials, 1-line description, website or `none_found`, status, ≥1 source, verification tier, last_verified, PIC relevance + stage, and creator ID. Everything else is enrichment. An incomplete candidate lives in a staging queue with `verification_tier=U` — it is not counted in headline totals.
 
 ---
+
+### 4.8 External registry-ID link table **[v1.1]** (`data/registry_links.csv`)
+
+Registry identity is recorded **once**, in its own table, instead of being re-derived
+every wave. One row per (organization, registry, identifier); multi-value by design —
+an org may hold several LEIs and they are never collapsed to one.
+
+| Field | Type | Notes |
+|---|---|---|
+| `org_id` | FK → organizations ∪ ecosystem | **MUST** |
+| `registry` | enum | `LEI` \| `OHIO_SOS_CHARTER` \| `WIKIDATA` \| `SEC_CIK` \| `SEC_CIK_PARENT_FILER` \| `FRS` \| `TRI_TRIFID` \| `FDA_FEI` \| `EIN_NONPROFIT` (extensible only by dated revision) |
+| `registry_id` | string | Verbatim as the registry carries it (charter numbers verbatim incl. leading zeros; CIKs zero-padded to 10) |
+| `match_basis` | string | How the match was established, e.g. `gleif_exact_confident`, `wikidata_confident_match`, `edgar_ex21_subsidiary_of_filer:<filer name>` — a guarded no-hit is never recorded as a negative fact |
+| `as_of` | date | The date the registry record was retrieved/verified |
+
+Seed population: the adjudicated GLEIF / Wikidata / EDGAR crosswalk (141 of its 142
+seed orgs carry into the table at application; the one holdout is named in the
+implementation package's match audit). Non-hits are provenance only — the table never
+records "unregistered" or "no parent". EIN appears only via ProPublica for nonprofits
+(`EIN_NONPROFIT`); EIN yield from GLEIF/Wikidata/EDGAR was zero and no bulk EIN source
+is adopted. FRS / TRI / FDA registries join by the same mechanics when a wave produces
+org-keyed matches — no rows are minted speculatively.
+
+### 4.9 People records **[v1.2]** (`data/people.csv`) — professors only
+
+Structure adopted at this revision; **records are built only in their own scoped
+professor passes** — adopting this section creates no records.
+
+| Field | Type | Notes |
+|---|---|---|
+| `person_id` | string, immutable, `PERSON-######` | Never reused |
+| `full_name` | string | As published on the institution's page |
+| `institution_org_id` | FK → organizations ∪ ecosystem | **MUST** |
+| `program_org_id` | FK → program-grain ecosystem record, nullable | Where the public page ties the person to a held program |
+| `role` | controlled | The institution's own styling, recorded verbatim in `role_as_published`; the controlled value is one of: `professor` \| `associate_professor` \| `assistant_professor` \| `research_professor` \| `center_director_professor` (directors/program leads qualify **only** if they also hold a publicly stated professor title) |
+| `role_as_published` | string | The institution's exact words — never normalized or inferred |
+| `research_specialties[]` | §3.1/§3.2 vocab first, §3.5 supplement where needed | As publicly stated on the cited page |
+| `public_profile_url` | URL | Their own faculty/lab page |
+| `sources[]` | public citations only | **MUST**, ≥1 per record, every field traceable to a public university/program/lab page |
+| `verification_tier` / `last_verified` | §4.1 | Shortest refresh leash in the layer; a vanished/changed profile downgrades the record to U |
+
+**Hard constraints (validator-enforced):** no email, phone, or address field exists in
+this class; the PIC CRM is **not an admissible source** — no field, name, or record's
+existence may derive from CRM data, and there is no CRM export/extract/cross-check step
+for people anywhere in the pipeline; researchers, staff scientists, and postdocs are
+not recorded; removal on request is honored at the next pass.
+
+### 4.10 PIC membership **[v1.2]**
+
+Membership is published **only** where it is already public (AGENTS.md §5.x as amended):
+
+- On organizations and ecosystem records: `pic_member` (boolean), `member_since`
+  (year, nullable), `membership_source_url`. `membership_source_url` is **required
+  when `pic_member` is true and admissible only as a public PIC website member-list
+  URL** — the validator rejects any other source class for this field. `member_since`
+  is populated **only where the public source states it**; a join year known only from
+  the CRM stays blank. CRM-derived values are inadmissible by construction.
+- The spanning record lives in **`data/members.csv`**, the member table: one row per
+  website-listed member, spanning organizations ∪ ecosystem ∪ member-only rows
+  (members with no Atlas record — ecosystem-class, government, service-class, and
+  unresolved-display-name members — exist as member-only rows and never enter the
+  company census by virtue of membership). Columns: `member_row_id` (`MBR-######`),
+  `display_name` (as displayed), `member_tier` (as displayed, e.g. `Investing
+  Partners` / `Cornerstone Partners`), `record_class`
+  (`organization` | `ecosystem` | `member_only`), `org_id` (FK, nullable — null iff
+  `record_class=member_only`), `member_since`, `membership_source_url`,
+  `snapshot_date`, `notes`.
+- The website list is the source of record, refreshed by snapshot → diff →
+  assert-first packets (monthly + event-driven; full reconciliation, not sampling).
+  A roster listing proves membership, never current operation — member records follow
+  the same verification standard as every record. Member elevation (badge,
+  members-first sort, members-only filter) is a **presentation rule** in generated
+  outputs (§4.10's SQLite view), never a data privilege.
 
 ## 5. Entity Resolution Rules — Dedupe Identically
 
@@ -461,3 +629,11 @@ Every borderline decision that is NOT obvious from §1 — every Ring 4 test, ev
 Controlled vocabularies (§3) and Ring rules (§1) change only by a dated revision to this document. Researchers who encounter a misfit use `*_other_note` + flag it; they do not improvise tags or rings. Review other-notes monthly; promote recurring notes into the vocabulary with a version bump.
 
 *End of v1.0 design.*
+
+---
+
+## Revision history
+
+- **v1.0 — 2026-10-28.** Initial design (rings, NAICS map, §3 vocabularies, record schema, resolution rules).
+- **v1.1 — adopted 2026-10-29 as part of the combined v1.2 revision.** Tier 1: `street_address` on sites; site `latitude`/`longitude` + `geocode_precision`; external registry-ID link table (§4.8); `year_founded`; `stock_ticker`. Tier 2: `employee_band`, `ownership_type`, `certifications` on organizations. (Decision memo 2026-10-29 §1, option (a).)
+- **v1.2 — 2026-10-29 (this text).** People records — professors only, public facts only, CRM never a source (§4.9); program/office record grains on ecosystem (§4.6 extension) with the §3.5 research-areas supplement under the §3-first rule; PIC membership fields + spanning member table, website-public only (§4.10); `pic_relationship_stage` retired from the public files (§4.3). (Repo change proposals S1–S4; connections trio approval 2026-10-29; Phase A calibration fixes integrated: conditioned `credential_types`, `admissions_status`, the engagement-mode grain rule.)
