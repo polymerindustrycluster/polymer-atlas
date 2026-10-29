@@ -18,6 +18,18 @@ because of cell withholding (denominators notes §3–§4). The denominators fil
 mixes CBP and QCEW cell-by-cell at 6-digit detail; per its caveat 1, mixed
 sums are never used as denominators here.
 
+**Correction (2026-10-29):** the denominators compilation originally read
+Ashtabula County from BLS area 39005 — which is Ashland County; Ashtabula is
+39007. Every "Ashtabula" denominator in the first version of this report was
+Ashland data. The denominators file and notes have been corrected from a
+fresh QCEW pull (see `denominators_notes.md` §3.5), and this report's
+Ashtabula row, the PIC-12 totals, and all ratios derived from them have been
+corrected in step: the PIC-12 NAICS 326 denominator is **367**, not 353, and
+headline coverage is **39.0%** primary / **58.9%** recorded, not 40.5% /
+61.2%. The Ashtabula ratios published earlier (157% / 214%) were artifacts
+of the FIPS slip and are withdrawn. All other counties' figures were
+re-validated against the fresh pull and are unchanged.
+
 ---
 
 ## 1. Units and filters (read before quoting anything)
@@ -50,22 +62,28 @@ sums are never used as denominators here.
 
 | NAICS family | Atlas primary cut (sites) | Atlas recorded cut (sites) | QCEW 2023 denominator (establishments, PIC-12) | Primary coverage | Recorded coverage |
 |---|---|---|---|---|---|
-| **326** Plastics & rubber products | **143** | **216** | **353** | **40.5%** | **61.2%** |
-| 3261 Plastics products | 106 | 155 | 271 | 39.1% | 57.2% |
-| 3262 Rubber products | 37 | 61 | 82 | 45.1% | 74.4% |
+| **326** Plastics & rubber products | **143** | **216** | **367** | **39.0%** | **58.9%** |
+| 3261 Plastics products | 106 | 155 | 283 | 37.5% | 54.8% |
+| 3262 Rubber products | 37 | 61 | 84 | 44.0% | 72.6% |
 | **3252** Resin, synthetic rubber, fibers (325211+325212+325220) | **21** | **28** | **52** | **40.4%** | **53.8%** |
-| **3259** Other chemical products (incl. 325991) | **20** | **26** | **63** | **31.7%** | **41.3%** |
+| **3259** Other chemical products (incl. 325991) | **20** | **26** | **62–63** | **31.7–32.3%** | **41.3–41.9%** |
 | 325991 Custom compounding (subset of 3259) | 17 | 22 | *no official denominator* | — | — |
 
 - 325991 has **no official 6-digit anchor** (denominators notes caveat 7):
-  the denominators file's per-county cells for 325991 sum to 17 published
-  establishments across 8 counties, but that sum mixes CBP and QCEW cells
-  and 4 county cells are suppressed (unknown, not zero), so it is a
+  the denominators file's per-county cells for 325991 sum to 16 published
+  establishments across 7 counties, but that sum mixes CBP and QCEW cells
+  and 5 county cells are suppressed (unknown, not zero), so it is a
   mixed-source lower bound, **not** a denominator. No ratio is quoted. The
   county detail is in §4.
+- The 3259 PIC-12 denominator is carried as **62–63**: the fresh-pull
+  county cells sum to 62; the originally compiled total was 63. The
+  one-establishment difference is annual-average rounding across cells
+  (compounded by the §3.5 county correction, which removed one
+  establishment from this family's PIC-12 cells), so the coverage figures
+  are stated as ranges across the two sums.
 - Statewide context (same cuts, same sources): Atlas primary-cut NAICS-326
   sites in Ohio = 375 of QCEW Ohio 890 (**42.1%**); 3252-family 55 of 115
-  (47.8%); 3259-family 32 of 153 (20.9%). PIC-12's 326 coverage (40.5%
+  (47.8%); 3259-family 32 of 153 (20.9%). PIC-12's 326 coverage (39.0%
   primary) is in line with the statewide figure — the PIC-12 build is not
   systematically ahead of the rest-of-Ohio build at verified tiers.
 
@@ -78,7 +96,7 @@ every county carries a percentage.
 
 | County | Atlas primary | Atlas recorded | QCEW 326 | Primary % | Recorded % | of which QCEW 3261 / 3262 |
 |---|---|---|---|---|---|---|
-| Ashtabula | 11 | 15 | 7 | 157.1% | 214.3% | 5 / 2 |
+| Ashtabula | 11 | 15 | 21 | 52.4% | 71.4% | 17 / 4 |
 | Cuyahoga | 18 | 35 | 65 | 27.7% | 53.8% | 58 / 7 |
 | Geauga | 11 | 17 | 28 | 39.3% | 60.7% | 21 / 7 |
 | Lake | 9 | 12 | 23 | 39.1% | 52.2% | 17 / 6 |
@@ -90,20 +108,19 @@ every county carries a percentage.
 | Summit | 34 | 55 | 76 | 44.7% | 72.4% | 48 / 28 |
 | Trumbull | 2 | 3 | 13 | 15.4% | 23.1% | 11 / 2 |
 | Wayne | 6 | 7 | 18 | 33.3% | 38.9% | 13 / 5 |
-| **PIC-12** | **143** | **216** | **353** | **40.5%** | **61.2%** | **271 / 82** |
+| **PIC-12** | **143** | **216** | **367** | **39.0%** | **58.9%** | **283 / 84** |
 
 Read on the outliers:
 
-- **Ashtabula exceeds its denominator in both cuts.** The denominator is
-  7 establishments — the smallest in PIC-12 — so QCEW's ±2 annual-average
-  rounding alone swings the ratio by ~±29 points, and three years of
-  vintage drift (2023 → 2026) plus classification differences (Atlas NAICS
-  assignments across this comparison are predominantly directory-assigned
-  — 108 of the 143 primary-cut PIC-12 326 sites; Census/BLS assign
-  primary NAICS from payroll/product data, and the denominators notes §4.3
-  document the same plant landing in different 6-digit codes across
-  official sources) do the rest. Treat Ashtabula as "at or above the
-  published 2023 count," not as a precise 157%.
+- **Ashtabula — corrected 2026-10-29.** The first version of this report
+  showed Ashtabula exceeding its denominator in both cuts (157.1% /
+  214.3%). That was an artifact, not a measurement: the denominators had
+  been read from BLS area 39005 (Ashland County) instead of 39007
+  (Ashtabula). Against the true denominator of 21, Ashtabula stands at
+  52.4% primary / 71.4% recorded — an ordinary mid-coverage county with a
+  small genuine discovery gap (6 establishments) plus 4 Tier U sites of
+  backlog. See the correction note at the head of this report and
+  `denominators_notes.md` §3.5.
 - **Trumbull is the thinnest county in PIC-12** (15.4% primary / 23.1%
   recorded) — a genuine discovery gap, not a backlog artifact: there are
   only 3 recorded NAICS-326 sites against 13 expected.
@@ -116,14 +133,15 @@ Read on the outliers:
 Atlas column = primary-cut sites with that `naics_primary`. Denominator
 column = the denominators file's cell for that county × code, with its
 source; **suppressed cells are shown as "suppressed — unknown," never as
-zero** (100 of the file's 240 cells are suppressed in both sources). No
+zero** (97 of the file's 240 cells are suppressed in both sources, as
+corrected 2026-10-29). No
 percentages are computed in this table: the cells mix CBP and QCEW by
 design (denominators notes §2), so per the file's caveat 1 they are
 context, not denominators.
 
 | County | 325211 Atlas | 325211 denom. cell | 325212 Atlas | 325212 denom. cell | 325991 Atlas | 325991 denom. cell |
 |---|---|---|---|---|---|---|
-| Ashtabula | 0 | 1 (QCEW) | 0 | suppressed | 1 | 1 (QCEW) |
+| Ashtabula | 0 | 1 (QCEW) | 0 | suppressed | 1 | suppressed |
 | Cuyahoga | 5 | 16 (CBP) | 0 | 3 (QCEW) | 3 | 1 (QCEW) |
 | Geauga | 2 | 3 (QCEW) | 0 | 4 (QCEW) | 0 | 1 (QCEW) |
 | Lake | 2 | 4 (CBP) | 0 | suppressed | 1 | suppressed |
@@ -135,7 +153,7 @@ context, not denominators.
 | Summit | 2 | 8 (CBP) | 1 | 4 (CBP) | 5 | 5 (CBP) |
 | Trumbull | 1 | suppressed | 0 | suppressed | 0 | suppressed |
 | Wayne | 0 | 1 (QCEW) | 2 | 1 (QCEW) | 0 | 1 (QCEW) |
-| **PIC-12** | **17** | *43 published + 3 suppressed counties* | **4** | *16 published + 6 suppressed counties* | **17** | *17 published + 4 suppressed counties* |
+| **PIC-12** | **17** | *43 published + 3 suppressed counties* | **4** | *16 published + 5 suppressed counties* | **17** | *16 published + 5 suppressed counties* |
 
 ## 5. Scope — where the two sides do not measure the same thing
 
@@ -168,18 +186,18 @@ context, not denominators.
 ## 6. How to quote this
 
 - ✅ "The Atlas's verified PIC-12 file (sites, operating status
-  active/unknown, tiers A–C) covers 143 of the 353 plastics and rubber
+  active/unknown, tiers A–C) covers 143 of the 367 plastics and rubber
   manufacturing establishments QCEW counted in the 12 counties in 2023 —
-  40.5%; counting every recorded candidate including unverified Tier U
-  rows, 216 (61.2%)."
+  39.0%; counting every recorded candidate including unverified Tier U
+  rows, 216 (58.9%)."
 - ✅ "Rubber (3262) is the best-covered PIC-12 segment at verified tiers:
-  37 of 82 (45.1%). Custom compounding (325991) has 17 verified PIC-12
+  37 of 84 (44.0%). Custom compounding (325991) has 17 verified PIC-12
   sites; no official denominator exists for that code."
 - ❌ Do not quote a single "coverage" number without its cut (primary vs.
   recorded), its unit (establishments/sites), and its denominator
   (QCEW 2023).
 - ❌ Do not quote the 325991 figure against the denominators file's
-  17-cell sum — that sum is mixed-source with suppressed cells and is not
+  16-cell sum — that sum is mixed-source with suppressed cells and is not
   a denominator, however tidy the coincidence looks.
 - ❌ Do not convert any figure here into "companies." One company with
   three PIC-12 plants is three establishments in every number above.
@@ -223,9 +241,10 @@ context, not denominators.
 5. **Thin counties.** Trumbull (3 recorded NAICS-326 sites vs. 13
    expected) and Wayne (7 vs. 18) are discovery gaps; Cuyahoga (35
    recorded vs. 65) is principally a verification-backlog gap (see §3).
-6. **Suppressed denominator cells.** 100 of the denominators file's 240
+6. **Suppressed denominator cells.** 97 of the denominators file's 240
    county × code cells are published by neither CBP nor QCEW and are
-   recorded as suppressed, not zero (denominators notes §5). At 6-digit
+   recorded as suppressed, not zero (denominators notes §5, as corrected
+   2026-10-29). At 6-digit
    detail (tire codes 326211/326212 in 10 of 12 counties; 326191 nearly
    everywhere) there is often **no denominator at all** — Atlas records
    in those cells stand on their own evidence and are never "over
@@ -237,7 +256,8 @@ context, not denominators.
 `data/sites.csv` at the post-pass-5 local state on 2026-10-29; PIC-12
 county membership per AGENTS.md §8; denominator aggregates per
 `staging/working/denominators_notes.md` §3.3–§3.4 (QCEW 2023, private
-ownership, annual averages) and per-cell values per
+ownership, annual averages; Ashtabula and derived totals as corrected
+2026-10-29, §3.5) and per-cell values per
 `staging/working/denominators_pic12.csv`. Companion reconciliation of the
 statewide published figures (890 / 996 / 616) is in
 `docs/SOURCE_COUNT_RECONCILIATION.md`.*
