@@ -218,6 +218,11 @@ eco_ids = {r["org_id"].strip() for r in eco}
 all_ids = org_ids | eco_ids
 
 # V-8/V-9/V-10: ecosystem grains + membership
+# [pass-15 waiver, owner ruling 2026-10-30] Merged-status ecosystem tombstones that name a
+# programs.csv successor are EXEMPT from the SCHEMA §4.6 ecosystem_subtype MUST (see the waiver
+# text in docs/SCHEMA.md §4.6). No subtype check is enforced here today; this note records
+# that the exemption is deliberate, so a future subtype check must exempt status=merged rows
+# whose notes name a PROG- successor rather than flagging them.
 # [v1.3 amendment] record_grain narrows to institution|office: program records
 # live in data/programs.csv (§4.11), and the v1.2 program-grain columns are
 # retired — their substance is enforced on programs.csv by V-15.
@@ -275,7 +280,6 @@ V13_URL_PENDING = {
     "ORG-001211": "AFRL's own page for the Polymer Matrix Composite Materials and Processing Research Team (or its parent Materials and Manufacturing Directorate polymer page) on afrl.af.mil. Current evidence is a GovTribe contract record — not a program page.",
     "ORG-001212": "The museum's own Polymer Palooza program/event page URL. Current evidence is the PIC homepage (a partner listing), not the program's page.",
     "ORG-001213": "Akron Public Schools' own Zipping to STEM program page URL. Current evidence is a Greater Akron Chamber cluster-update article — a partner's page, not the program's.",
-    "ORG-001217": "America Makes' own EARTH project page URL. WP1 NAV-011 evidence is the institute homepage; the named project's page is not in evidence.",
     "ORG-001224": "Barberton City Schools' own Polymer Pathway page URL. Current evidence is the funder initiative's page (greaterakronchamber.org/goodjobschallenge) — the initiative's page, not the schools' pathway page.",
     "ORG-001225": "The Polymer Pathway program page (the foundation's own page, or the schools' pathway page adopted as the program's public page). Current evidence is the funder initiative's page only.",
     "ORG-001230": "The chamber's own APEX (Advanced Polymer and Manufacturing Excellence) program page URL. Current evidence is the Good Jobs Challenge initiative page, not the APEX page.",
