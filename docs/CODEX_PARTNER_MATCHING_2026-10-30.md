@@ -1,5 +1,7 @@
 # Read-only site / program topical-fit pilot
 
+> **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
+
 **Draft PR:** https://github.com/polymerindustrycluster/polymer-atlas/pull/5  
 **Source snapshot:** main `b67b1924368d60b45a0cb49134ae81ce6b1b0d8c`, 2026-10-30 at 16:37 UTC (repaired main).  
 **Scope:** current committed canonical data only. No dependency on unmerged enrichment PRs #2 or #3. No canonical CSV, status, tier, vocabulary or relationship changes; no new IDs. This is a read-only analytical view, not a research verdict packet or an introduction authorization.
