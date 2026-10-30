@@ -1,0 +1,428 @@
+{
+  "base_commit": "f928257aa92ce7b91f781183d00035c752663349",
+  "scope": "10 PA organization-pair review candidates; no canonical mutations",
+  "cases": [
+    {
+      "case_id": "PA-01",
+      "disposition": "hold_registry_asset_identity",
+      "canonical_action": "none",
+      "finding": "Current company privacy page identifies Westlake Plastics Company at 490 W. Lenni Road. Existing IWTP record describes a wastewater permit, not a separate company. The fresh company page does not resolve the permit identifier or boundary.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://www.westlakeplastics.com/privacy-policy/"
+      ],
+      "required_next_step": "Retrieve exact IWTP permit/FRS identity; if same operator, tombstone duplicate organization and separately decide whether the treatment asset is a distinct establishment. Preserve Mayfield site.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002472",
+          "name": "Westlake Plastics Co.",
+          "sha256": "c4dc4fb78bdb90e0603d643236e4ec14c6a948125bf9a231f51d43c6c64452eb"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002473",
+          "name": "Westlake Plastics Iwtp",
+          "sha256": "aa32caa2c042a8aa1c726279ad9612ccc9840119c99a1eab019cdf254beabf28"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002457",
+          "name": "Westlake Plastics Co.",
+          "sha256": "cd7da9bfc999065b8b77abb513e64c2bd7b04c424cc450651a705ac609d0f5c7"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002458",
+          "name": "Westlake Plastics Co. - Mayfield",
+          "sha256": "ef4861cf5996c90590d7a79e75b395b1f2c620520b9f8e8fed6146b808cf7301"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002459",
+          "name": "Westlake Plastics Iwtp",
+          "sha256": "beb8bd10884902604d52e598c4ce186b7bb09a6c4b875a5a77a4311d27449a6d"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Retrieve exact IWTP permit/FRS identity; if same operator, tombstone duplicate organization and separately decide whether the treatment asset is a distinct establishment. Preserve Mayfield site."
+    },
+    {
+      "case_id": "PA-02",
+      "disposition": "propose_parent_consolidation_hold_site",
+      "canonical_action": "none",
+      "finding": "Fresh Pannier Graphics page gives 345 Oak Road and fiberglass/gel-coat panels. Both records cite that business; one retains 1239 Oak Road and conflicting Ring 4/NAICS. Same web domain is a lead, not proof of legal identity.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://www.panniergraphics.com/"
+      ],
+      "required_next_step": "Verify legal division/parent and 1239-address history; consolidate only after resolving site disposition, ring and NAICS independently.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002358",
+          "name": "Pannier Corp.",
+          "sha256": "53822a5843c7cfd9d85ef7354e011f52d38b9fbe356770ecbd269cacab82e43f"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002359",
+          "name": "Pannier Graphic Div.",
+          "sha256": "7680131fa304606106bdc369a4485bd3e8cbc2d032abbd2b88fff4503cc3c29c"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002336",
+          "name": "Pannier Corp. - Gibsonia",
+          "sha256": "273dd8f52564765ca920bea05ead2119d27d0087f8c0450bc961e6dbf3c2a4b0"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002337",
+          "name": "Pannier Graphic Div.",
+          "sha256": "6cb38ad934c233525e89c8c180ddea9f5089589476f2f4eb7a2492f4144053c2"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Verify legal division/parent and 1239-address history; consolidate only after resolving site disposition, ring and NAICS independently."
+    },
+    {
+      "case_id": "PA-03",
+      "disposition": "propose_parent_consolidation_preserve_sites",
+      "canonical_action": "none",
+      "finding": "Fresh MI location pages describe separate Gratz and Hegins plants, with addresses 760 W. Market Street and 79 Park Lane. Organization grain appears split by plant; different Inc/LLC legal names remain unresolved.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://miwindows.com/gratz-location",
+        "https://miwindows.com/hegins-location"
+      ],
+      "required_next_step": "Verify legal operator lineage before consolidating organizations. Never collapse these distinct plants.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002367",
+          "name": "Mi Windows And Doors LLC - Gratz",
+          "sha256": "6da43641baa10df74432e092c69b9ab76b6bbc6881a3bb0d2293616f5289e574"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002401",
+          "name": "Mi Windows & Doors Inc.",
+          "sha256": "cfa2a06c86d5093a915386755fabe0d9fb35bd4fe2e8056700d62833103f13ad"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002345",
+          "name": "Mi Windows And Doors LLC - Gratz",
+          "sha256": "89eaefef83397f2466899195433f1e6317ca0799f37b2f77de5b331dad1d3c2d"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002381",
+          "name": "Mi Windows & Doors Inc.",
+          "sha256": "c8b83092ecd727ca10d01a7ce44834706b123cfb031fbc90ca74790adf57c9ea"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Verify legal operator lineage before consolidating organizations. Never collapse these distinct plants."
+    },
+    {
+      "case_id": "PA-04",
+      "disposition": "propose_parent_consolidation_hold_address",
+      "canonical_action": "none",
+      "finding": "Fresh M&Q site identifies M&Q Packaging LLC and manufacturing address P.O. Box 180, Earl Street, Schuylkill Haven. Existing older-name record has malformed P.O. Box 1803 Earl St. A numeric street address cannot be inferred by splitting that string.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://mqplastics.com/"
+      ],
+      "required_next_step": "Verify legal predecessor/successor relationship and physical street number; retain evidence, do not manufacture 3 Earl Street from postal text.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002652",
+          "name": "M & Q Plastic Products Corporation",
+          "sha256": "dff9f050e2e7ec95b192cae65dc2d56764d2329401f56416a405e7badc1885cf"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002752",
+          "name": "M&Q Packaging LLC",
+          "sha256": "42d101e4b3333c3858517b73ab5b24a3dd5e86c612912e2a7eb923c14a5130c2"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002642",
+          "name": "M & Q Plastic Products Corporation",
+          "sha256": "b73a93d85b7297f43e8046fff261e7ef38de9dc76aa4a96223cb4050d54a32d5"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002829",
+          "name": "M&Q Packaging LLC - Schuylkill Haven",
+          "sha256": "fe79318a9e7c32de27f1d01421318880997443c790bbd50a5d0c7ba803671ff6"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Verify legal predecessor/successor relationship and physical street number; retain evidence, do not manufacture 3 Earl Street from postal text."
+    },
+    {
+      "case_id": "PA-05",
+      "disposition": "keep_separate_review_hq",
+      "canonical_action": "none",
+      "finding": "Fresh Arkema page explicitly distinguishes Arkema Inc. in Radnor PA from Bostik Inc. in Wauwatosa WI. Shared arkema.com is not a merge key here. Existing HQs King of Prussia/Birdsboro conflict with the primary page.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://www.arkema.com/usa/en/united-states/arkema-united-states/at-a-glance/"
+      ],
+      "required_next_step": "Keep organizations separate. Prepare evidenced HQ corrections and Bostik PA-to-WI shard move; resolve county/parent grain in a separate integration.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-000683",
+          "name": "Bostik, Inc.",
+          "sha256": "70882f39aeeea069e23690b140bedeefa78587be1cf17e36648648ad8f68b14b"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002224",
+          "name": "Arkema Inc.",
+          "sha256": "77ac7e4f3a7b53389529b9ece13e8e772efb7e62fc761d49e90cdc812f51b03e"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-000734",
+          "name": "Ashland — Ashland",
+          "sha256": "f507673d6f96faa279755f319ff36d0b22890097f83efa70aa4c61beeeb0c514"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-001532",
+          "name": "Bostik — Columbus",
+          "sha256": "950ef87cf28666516f0d9767d49e3251060b2d92fd48e318b2a8de515bf55a0d"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002189",
+          "name": "Arkema Inc. - Birdsboro",
+          "sha256": "af57443a8f4ed12ac06cc28d784bc2db75f467f707d207814b909bb3df8caed0"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002190",
+          "name": "Arkema Inc.",
+          "sha256": "134263e60dd9d6472247ecd3af230ac9afa5fbbb370bb7a515c4d3bd4388d3d7"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002688",
+          "name": "Arkema Inc. - West Chester",
+          "sha256": "509318c10d006fd5a971f672b8bb36791f9afbe4b0c9187fdeaa84a935bf8031"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Keep organizations separate. Prepare evidenced HQ corrections and Bostik PA-to-WI shard move; resolve county/parent grain in a separate integration."
+    },
+    {
+      "case_id": "PA-06",
+      "disposition": "hold_historical_site_liveness",
+      "canonical_action": "none",
+      "finding": "Fresh SIMONA homepage gives Archbald. Company announcement dated 2014-10-22 calls Hazleton a former plant and describes expected equipment/personnel integration into Archbald by end-2014. This contradicts unqualified reliance on old Hazleton directory data but does not establish the actual closure date or absence of later reopening.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://simona-america.com/",
+        "https://www.simona.de/fileadmin/user_upload/Medien/Mediacenter/Presse/2014/2014-10-22-SIMONA-and-Boltaron-unite-North-American-operations.pdf"
+      ],
+      "required_next_step": "Priority liveness check for Hazleton and legal-entity continuity; do not invent a 2014 closure date or merge Boltaron/PMC.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002193",
+          "name": "Simona America Inc.",
+          "sha256": "310b675762a5a8e293dbc6bce583bfcab8017c0a288c310959e06263df15c5b6"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002399",
+          "name": "Simona America Incorporated",
+          "sha256": "96ccac78da320fe106fad9bb2b8f6311fc0a907db76a4f626387a8826e429ac4"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002155",
+          "name": "Simona America Inc.",
+          "sha256": "3247de45c106f3db47253a95680e6ce350f287a72826e8ae5a45db309e759522"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002379",
+          "name": "Simona America Incorporated",
+          "sha256": "1d530ab46a7443869dfa43b103d14215a322182dab04cdd9b6092e44c2412410"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Priority liveness check for Hazleton and legal-entity continuity; do not invent a 2014 closure date or merge Boltaron/PMC."
+    },
+    {
+      "case_id": "PA-07",
+      "disposition": "propose_parent_consolidation_preserve_sites",
+      "canonical_action": "none",
+      "finding": "Fresh Ultra-Poly history identifies its 2012 Berwick compounding plant; contact page identifies Ultra-Poly Corporation at Portland. Separate parent rows appear to reflect two locations of one business, but current Berwick operation needs plant-specific confirmation.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://ultrapoly.com/about/",
+        "https://ultrapoly.com/contactus/"
+      ],
+      "required_next_step": "Resolve legal operator and current Berwick liveness; preserve distinct Portland/Berwick sites when consolidating parent grain.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002218",
+          "name": "Ultra-Poly Corporation",
+          "sha256": "382bc0863d337d0f590ae860492d245e519ade1831cc554a37e061d9654efcbf"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002619",
+          "name": "Ultra Poly Corp. - Portland",
+          "sha256": "36a93924839c89bff6559b8866acbf4b9f1e5a4c1b5c6544c4e4bbc871dc3332"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002182",
+          "name": "Ultra-Poly Corporation",
+          "sha256": "461345a1184c1bd9200412895ab3617b4f18552f9f57ed2547f244620251e39e"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002609",
+          "name": "Ultra Poly Corp. - Portland",
+          "sha256": "12d08912108bce1b3387fe2b5e88065690a2a334727726345ab84b47cca85942"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Resolve legal operator and current Berwick liveness; preserve distinct Portland/Berwick sites when consolidating parent grain."
+    },
+    {
+      "case_id": "PA-08",
+      "disposition": "hold_mailing_vs_facility_address",
+      "canonical_action": "none",
+      "finding": "Fresh Luicana contact page gives Boyertown, but presents a remodeling business. Government search found permit 39-00025 for Macungie facility with Boyertown mailing address; that permit page is a discovery lead until opened. Existing Boyertown manufacturing assertion may conflate applicant mail with facility location.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://www.luicanauniquedesign.com/",
+        "https://www.luicanauniquedesign.com/contact"
+      ],
+      "required_next_step": "Open permit 39-00025 and verify situs/operator before any organization merge or Boyertown manufacturing status change.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002232",
+          "name": "Luicana Industries, Inc.",
+          "sha256": "19db488f8f1e0bd7853048d94c5cd4aa5ca18e0dd156ecfe14c9a7e720d41a0c"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002489",
+          "name": "Luicana Ind Inc.",
+          "sha256": "415df8b60a248bb0cdc80cbc707670e2ea34e2643aa2f5e2b8a5e34857803398"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002200",
+          "name": "Luicana Industries, Inc.",
+          "sha256": "fb8ccf44d89d50fe3f524b967037a2c5afd4268cab1ee1272cdf2d64856e347f"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002476",
+          "name": "Luicana Ind Inc. - MacUngie Fac",
+          "sha256": "eb7967f4507f8be6601be3ee13148e3f9fdb6a984bd661d67a838a59825067d1"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Open permit 39-00025 and verify situs/operator before any organization merge or Boyertown manufacturing status change."
+    },
+    {
+      "case_id": "PA-09",
+      "disposition": "superseded_by_upstream_pass18",
+      "canonical_action": "none",
+      "finding": "Upstream pass18 f928257 already merged ORG-002260 into held ORG-002261 and retired SITE-002229 as duplicate of SITE-002230. This packet does not propose repeating or reversing that decision.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://www.jmeagle.com/sites/default/files/PME-MeadvillePA.pdf"
+      ],
+      "required_next_step": "No duplicate action remains. Preserve upstream tombstones and surviving records; any separate campus-boundary research is a new task.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002260",
+          "name": "J-M Manufacturing Co. Inc.",
+          "sha256": "aed17063d34e818eaa03b7378218328764559e349716b146fd17f883dd987bbd"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002261",
+          "name": "Jm Manufacturing Company, Inc.",
+          "sha256": "ff0ebd339be6ff82eef4c61ce223e969ab99c488a9646033ec060175ec743c22"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002229",
+          "name": "J-M Manufacturing Co. Inc.",
+          "sha256": "183b179675dcb0dee39ba46bca32714f04532b315a39ab43a6b99ec8e9b0186a"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002230",
+          "name": "Jm Manufacturing Company, Inc.",
+          "sha256": "a5a7d00d2cfdd7bfaaabc3b7be0a98038fcc6f56fdc0143a3b3604daf9a395af"
+        }
+      ],
+      "verdict": "DUPLICATE_OF",
+      "settling_fact": "No duplicate action remains. Preserve upstream tombstones and surviving records; any separate campus-boundary research is a new task.",
+      "duplicate_of": "ORG-002261",
+      "upstream_resolution_commit": "f928257aa92ce7b91f781183d00035c752663349"
+    },
+    {
+      "case_id": "PA-10",
+      "disposition": "hold_access_and_site_boundary",
+      "canonical_action": "none",
+      "finding": "Existing records identify Rehrig Pacific and Bldg 2 at 1738/1739 W. 20th Street. Fresh own-site locations and OSHA pages were inaccessible; no new identity/liveness claim is asserted. Building number does not establish a separate company, but adjacency does not establish one site.",
+      "observed_date": "2026-10-30",
+      "sources": [
+        "https://www.rehrigpacific.com/locations/",
+        "https://www.osha.gov/pls/imis/establishment.inspection_detail?id=1073421.015"
+      ],
+      "required_next_step": "Obtain accessible primary operator/campus evidence, then decide organization consolidation and site grouping independently.",
+      "records": [
+        {
+          "table": "organizations",
+          "id": "ORG-002318",
+          "name": "Rehrig Pacific",
+          "sha256": "df0e139ef79ffa0237f67e908523acaaebe262c42fe3007edac11871c40c6844"
+        },
+        {
+          "table": "organizations",
+          "id": "ORG-002319",
+          "name": "Rehrig Pacific Bldg 2",
+          "sha256": "767e7f99e1e2793b352f2abde1213823da4e67d1810c8087f2db59254eea4f24"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002296",
+          "name": "Rehrig Pacific",
+          "sha256": "2ead0e18d0daa11cf6e72e7a84d6551caa47355c1ff3d4275cc36c5e4cfd35b5"
+        },
+        {
+          "table": "sites",
+          "id": "SITE-002297",
+          "name": "Rehrig Pacific Bldg 2",
+          "sha256": "914b7f481add7e265b1dd80a0c11df5662856c320b351ca2cddd9a4746499929"
+        }
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Obtain accessible primary operator/campus evidence, then decide organization consolidation and site grouping independently."
+    }
+  ],
+  "protocol_recheck": "Pass18 drift caught by guard; PA09 superseded, other9cases exact fingerprints unchanged."
+}
