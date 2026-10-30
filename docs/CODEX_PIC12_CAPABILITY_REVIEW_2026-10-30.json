@@ -1,0 +1,650 @@
+{
+  "researcher": "Orlando / verify_atlas_site_capabilities",
+  "base_commit": "3036121b0245bee1e6b1c8f46ed63c0a39821226",
+  "observed_date": "2026-10-30",
+  "scope": "20 selected PIC-12 sites researched in read-only stage; final PR appends 36 capability rows for 10 existing sites after integrator allocation. Other 10 sites held. No canonical site/org edits; IDs reserved provisionally on this PR branch only.",
+  "source_policy": "Freshly read publicly accessible first-party pages; paraphrased facts, no CRM/licensed lists; source publication date distinct from observation date.",
+  "ready_candidates": [
+    {
+      "site_id": "SITE-000072",
+      "org_id": "ORG-000072",
+      "name": "CIMA Plastics",
+      "disclosed_address": "2146 Enterprise Parkway, Twinsburg OH",
+      "source_urls": [
+        "https://www.cimaplastics.com/",
+        "https://www.cimaplastics.com/capabilities.shtml",
+        "https://www.cimaplastics.com/materials.shtml"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Company identifies its 40000-square-foot Twinsburg facility, 85\u2013600-ton injection machines, component production, and processed thermoplastic resins.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "injection_molding"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "molded_parts"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "thermoplastics"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "polypropylene_pp"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "abs"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "polyethylene_pe"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "polystyrene_ps_hips"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "nylon_pa"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "acetal_pom"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "polycarbonate_pc"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "polyurethane_pu"
+        }
+      ],
+      "integration_caveat": "Legacy-looking site retrieved today; do not infer operating-status or current certification from retrieval.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000462",
+        "CAP-000463",
+        "CAP-000464",
+        "CAP-000465",
+        "CAP-000466",
+        "CAP-000467",
+        "CAP-000468",
+        "CAP-000469",
+        "CAP-000470",
+        "CAP-000471",
+        "CAP-000472"
+      ]
+    },
+    {
+      "site_id": "SITE-000082",
+      "org_id": "ORG-000082",
+      "name": "Merryweather Foam",
+      "disclosed_address": "11 Brown Street, Barberton OH",
+      "source_urls": [
+        "https://www.merryweather.com/industries/industrial-industry/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Company explicitly lists Barberton among three foam fabrication facilities and says the facilities have the same processes.",
+      "capabilities": [
+        {
+          "capability_type": "product_form",
+          "capability_term": "foam_products"
+        }
+      ],
+      "integration_caveat": "Foam fabrication lacks a seeded process term. Do not fabricate one or add materials from corporate-only descriptions.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000473"
+      ]
+    },
+    {
+      "site_id": "SITE-000107",
+      "org_id": "ORG-000108",
+      "name": "HP Manufacturing",
+      "disclosed_address": "3705 Carnegie Avenue, Cleveland OH",
+      "source_urls": [
+        "https://www.hpmanufacturing.com/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Company describes integrated 110000-square-foot production under one roof at its Cleveland address and illustrates OEM components made in polycarbonate.",
+      "capabilities": [
+        {
+          "capability_type": "material",
+          "capability_term": "polycarbonate_pc"
+        }
+      ],
+      "integration_caveat": "Machining/fabrication are not seeded process terms. Other listed polymers may be distributed stock rather than processed materials, so excluded.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000474"
+      ]
+    },
+    {
+      "site_id": "SITE-000117",
+      "org_id": "ORG-000118",
+      "name": "GSH Industries",
+      "disclosed_address": "15242 Foltz Industrial Parkway, Strongsville OH",
+      "source_urls": [
+        "https://www.gshindustries.com/",
+        "https://www.gshindustries.com/cleveland-plastic-extrusions/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "FAQ ties extrusion and injection services to Strongsville; extrusion page identifies the same plant and describes plastic profiles and tubes.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "extrusion"
+        },
+        {
+          "capability_type": "process",
+          "capability_term": "injection_molding"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "pipe_profile"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "tubing"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "molded_parts"
+        }
+      ],
+      "integration_caveat": "Exclude aluminum-only extrusion evidence and generic supplier lists; no rotational-molding inference.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000475",
+        "CAP-000476",
+        "CAP-000477",
+        "CAP-000478",
+        "CAP-000479"
+      ]
+    },
+    {
+      "site_id": "SITE-000119",
+      "org_id": "ORG-000120",
+      "name": "Molding Dynamics",
+      "disclosed_address": "7009 Krick Road, Bedford OH",
+      "source_urls": [
+        "https://www.moldingdynamics.net/capabilities"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Capability page explicitly places 22 injection presses and thermoplastic part production at its 40000-square-foot Bedford facility.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "injection_molding"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "thermoplastics"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "molded_parts"
+        }
+      ],
+      "integration_caveat": "Extrusion appears as a secondary service without equivalent plant attribution; excluded.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000480",
+        "CAP-000481",
+        "CAP-000482"
+      ]
+    },
+    {
+      "site_id": "SITE-000179",
+      "org_id": "ORG-000172",
+      "name": "Graphic Arts Rubber",
+      "disclosed_address": "101 Ascot Parkway, Cuyahoga Falls OH",
+      "source_urls": [
+        "https://www.graphicartsrubber.com/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Company identifies its Cuyahoga Falls 44000-square-foot open-mill mixing and calendering operation, producing custom rubber compounds including silicone families.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "rubber_mixing_compounding"
+        },
+        {
+          "capability_type": "process",
+          "capability_term": "calendering"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "elastomers_rubber"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "custom_compounds"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "silicones"
+        }
+      ],
+      "integration_caveat": "Molding compounds are not proof this site molds parts. Strip/slab descriptions do not settle film_sheet versus sheet_plate.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000483",
+        "CAP-000484",
+        "CAP-000485",
+        "CAP-000486",
+        "CAP-000487"
+      ]
+    },
+    {
+      "site_id": "SITE-000222",
+      "org_id": "ORG-000209",
+      "name": "ABC Plastics",
+      "disclosed_address": "140 West Drive, Lodi OH",
+      "source_urls": [
+        "https://www.abcplasticslodi.com/about",
+        "https://www.abcplasticslodi.com/contact"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Own pages describe in-house custom injection molding and spool/reel manufacture, and identify the company location in Lodi.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "injection_molding"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "molded_parts"
+        }
+      ],
+      "integration_caveat": "Site attribution combines in-house manufacturing with own location page; weaker than an explicit plant sentence. Integrator may hold if exact-address tie is insufficient.",
+      "integration_decision": "hold",
+      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR."
+    },
+    {
+      "site_id": "SITE-000224",
+      "org_id": "ORG-000211",
+      "name": "Additive Engineering Solutions",
+      "disclosed_address": "990 Evans Avenue, Akron OH",
+      "source_urls": [
+        "https://additiveeng.com/service/large-scale-3d-printing/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Own service page describes five in-house large-format printers using thermoplastic composites and gives Akron operating address.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "additive_manufacturing_polymer"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "thermoplastics"
+        }
+      ],
+      "integration_caveat": "Large-format process maps to the existing umbrella term, not a new term. Do not claim current certification from a certificate that expired September 2026.",
+      "integration_decision": "hold",
+      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR."
+    },
+    {
+      "site_id": "SITE-000234",
+      "org_id": "ORG-000220",
+      "name": "Akron Coating and Adhesives",
+      "disclosed_address": "365 Stanton Avenue, Akron OH",
+      "source_urls": [
+        "https://akroncoating.com/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Own homepage identifies Akron production, blending/dispersion services, and custom industrial adhesives at its Stanton Avenue address.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "compounding"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "adhesives_sealants"
+        }
+      ],
+      "integration_caveat": "Toll coating is application, not coating formulation. Current address is 365; do not import an older 367 Stanton document address.",
+      "integration_decision": "hold",
+      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR."
+    },
+    {
+      "site_id": "SITE-000240",
+      "org_id": "ORG-000226",
+      "name": "ALTTRAN",
+      "disclosed_address": "5285 Hudson Drive, Hudson OH",
+      "source_urls": [
+        "https://alttran.com/",
+        "https://alttran.com/contact/",
+        "https://alttran.com/wp-content/uploads/2025/07/ALTTRAN-Production-Employees.pdf"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Company describes black/color rubber-compound production lines; own Hudson/Stow operator posting confirms mixing equipment, and contact page gives mailing/delivery address.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "rubber_mixing_compounding"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "elastomers_rubber"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "custom_compounds"
+        }
+      ],
+      "integration_caveat": "Application examples such as hoses and seals are not finished products manufactured here. Posting URL dated July 2025; retrieval is October 2026.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000488",
+        "CAP-000489",
+        "CAP-000490"
+      ]
+    },
+    {
+      "site_id": "SITE-000245",
+      "org_id": "ORG-000231",
+      "name": "Apollo Plastics",
+      "disclosed_address": "7555 Tyler Boulevard Unit 11, Mentor OH",
+      "source_urls": [
+        "https://apolloplastics.net/"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Company page combines its Mentor address with twelve 15\u2013500-ton injection machines, custom molded parts, and PVC processing.",
+      "capabilities": [
+        {
+          "capability_type": "process",
+          "capability_term": "injection_molding"
+        },
+        {
+          "capability_type": "product_form",
+          "capability_term": "molded_parts"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "pvc"
+        }
+      ],
+      "integration_caveat": "TPR not mapped automatically to TPE/TPU. Retrieval does not independently prove business liveness.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000491",
+        "CAP-000492",
+        "CAP-000493"
+      ]
+    },
+    {
+      "site_id": "SITE-001889",
+      "org_id": "ORG-001856",
+      "name": "NovationSi",
+      "disclosed_address": "25 Foundation Place, Barberton OH",
+      "source_urls": [
+        "https://novationsi.com/media/2025/06/Basic-Form-Survey-Info_NSi_20250616.pdf"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Own June 16, 2025 questionnaire locates research/manufacturing space in its Barberton building and names custom liquid-silicone-rubber compounds among manufactured products.",
+      "capabilities": [
+        {
+          "capability_type": "material",
+          "capability_term": "silicones"
+        },
+        {
+          "capability_type": "material",
+          "capability_term": "custom_compounds"
+        }
+      ],
+      "integration_caveat": "Do not reproduce personal contacts or taxpayer identifiers in the PDF. Source effective date 2025-06-16; no active certification claim.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000494",
+        "CAP-000495"
+      ]
+    },
+    {
+      "site_id": "SITE-003465",
+      "org_id": "ORG-001466",
+      "name": "Henkel",
+      "disclosed_address": "7405 Production Drive, Mentor OH",
+      "source_urls": [
+        "https://www.henkel-northamerica.com/spotlight/2025-31-01-a-view-from-henkel-north-america-mentor-2025046"
+      ],
+      "observed_date": "2026-10-30",
+      "provenance": "company_disclosed",
+      "plant_specific_basis": "Own January 31, 2025 plant feature explicitly attributes construction adhesive/sealant production and formulation mixing to the Mentor plant.",
+      "capabilities": [
+        {
+          "capability_type": "material",
+          "capability_term": "adhesives_sealants"
+        },
+        {
+          "capability_type": "process",
+          "capability_term": "adhesive_sealant_formulation"
+        }
+      ],
+      "integration_caveat": "Address is existing atlas address; source identifies Mentor plant by city, not street. Published 2025-01-31, retrieved 2026-10-30.",
+      "integration_decision": "append",
+      "allocated_capability_ids": [
+        "CAP-000496",
+        "CAP-000497"
+      ]
+    }
+  ],
+  "held_sites": [
+    {
+      "site_id": "SITE-000037",
+      "name": "HKB Enterprises",
+      "reason": "Own-source website unavailable; provisional HQ grain unresolved.",
+      "integration_decision": "hold"
+    },
+    {
+      "site_id": "SITE-000040",
+      "name": "Spectrum Plastics",
+      "reason": "www/non-www splastics.com timed out; no fresh readable primary evidence.",
+      "integration_decision": "hold"
+    },
+    {
+      "site_id": "SITE-000041",
+      "name": "Next Generation Plastics",
+      "reason": "Current own source identifies Fairlawn office, not existing Akron plant. Do not assign recycling to office or move site implicitly.",
+      "integration_decision": "hold"
+    },
+    {
+      "site_id": "SITE-000056",
+      "name": "CF Extrusion Technologies",
+      "reason": "Machinery supplier/HQ; unreadable own page and no manufacturing-process evidence. Supplying extruders is not polymer extrusion.",
+      "integration_decision": "hold"
+    },
+    {
+      "site_id": "SITE-000114",
+      "name": "Cuyahoga Plastics",
+      "reason": "Own about page explicitly says TWO locations; Euclid contact address does not locate molding or compounding operations. Hold pending plant-specific split.",
+      "source_url": "https://cuyahogaplastics.com/about-us/",
+      "integration_decision": "hold"
+    },
+    {
+      "site_id": "SITE-000125",
+      "name": "CPI Precision Plastics/Cardinal Products",
+      "reason": "Own website unavailable; no fresh readable primary evidence.",
+      "integration_decision": "hold"
+    },
+    {
+      "site_id": "SITE-000134",
+      "name": "Novagard",
+      "reason": "Corporate pages show silicone/foam manufacturing and 5109 Hamilton footer but existing record has 2720 E79th address conflict. No exact plant allocation established; certificate fetch failed.",
+      "source_url": "https://novagard.com/about/",
+      "integration_decision": "hold"
+    }
+  ],
+  "integration": {
+    "task": "PIC-12 capability enrichment",
+    "branch": "agent/codex/pic12-capability-enrichment",
+    "allocation_authority": "Sole integrator build_atlas_quality_prs assigned CAP-000462 onward after confirming maximum CAP-000461",
+    "allocated_range": [
+      "CAP-000462",
+      "CAP-000497"
+    ],
+    "added_capability_rows": 36,
+    "enriched_existing_sites": 10,
+    "held_sites": 10,
+    "duplicate_candidates_skipped": [],
+    "canonical_changes": "Append-only site_capabilities.csv; no sites, organizations, evidence.csv, classifications, liveness, or IDs changed. Capability claims carry their own section 4.15 proof; no site/org must-have claims created or changed.",
+    "baseline_capability_sha256": "273b4f47e4556693bad0fd737c34ba271e6dcda96b79fd3037489765f215c56a",
+    "baseline_capability_max_id": "CAP-000461",
+    "frozen_identity_rows": [
+      {
+        "kind": "site",
+        "id": "SITE-000072",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "c33e8ed41ccc0479b35d4b0fdc513fd9f156dd3e863bb88c7498465b21794b44"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000082",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "1ed328fc9ccab17ba42914e3ad269928dd834d9c9de7fe32ab33f2f6ab7b558f"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000107",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "34799581cfa0fc770f6f7f3e40a2433a1b634b83b745818288ec378a13a62496"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000117",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "2441dba70ca29831011bc54878ab9b11b89396e4e23fcc8bb8e6d12cffae0587"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000119",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "8c9f4334d95e13e0387b28ef1476b6f936dcdfd9f459d5d29da82ad5f9b41a7b"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000179",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "d36107a600f0f7bf980432ceb84b38196a3d9cc1c1ec3988fe020cdb7d2aca45"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000240",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "0d158333c9913b742b91f0d4dd748302bf3dd44567f73c7909fcaa9e4c9ed253"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-000245",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "e55692715279132e3304c34b48a644fc0f88c32fcc71896bb45de029eeba31be"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-001889",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "eaa16222124896de53b0913dc224ffb56379c295b0ac2459fdf64680f2a6885f"
+      },
+      {
+        "kind": "site",
+        "id": "SITE-003465",
+        "shard": "data/sites_OH.csv",
+        "row_sha256": "5b26bc7f6486c24e24e8b8e3826947ebcc841274cbbaa07ef3d7f9ffe745ef0c"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000072",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "90a24648b4f635a3bd16e5ce7cffbcb67a8e38b74a01baf2a886616561d8aa41"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000082",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "26bda1dd8379009c4830c1ac1cf431617b5797c20c0cc894731da498530ae80d"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000108",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "99f556d9be9c12b70510294037e603247d78a0e200897c7749ec2975444d490a"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000118",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "581817b8bba4cdb0d0ac69f4a2e40606372e696ea72a3f3eecd4fde0e9169fa5"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000120",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "a126a136b3f039f38c0cbe6f33b0e75bf08dd93d7f67f8b3b9b623ab9eadd85d"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000172",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "19ffc9edb69b43de5f751c3bd0a13964faa0c37cc569fd6ff62e789fe281b63d"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000226",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "7f4bf9cc127a79237767a4687fc590e24a9d6711a8b4a9dbca7389581bb8f643"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-000231",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "394e92e8f01e9b6ee23b063c8373dca6a66c24740e10077d95a605aecd110649"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-001466",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "63912d515af14398db3ee011cd502050ab9904f6165b27e7faa9548be23445e3"
+      },
+      {
+        "kind": "org",
+        "id": "ORG-001856",
+        "shard": "data/organizations_OH.csv",
+        "row_sha256": "38ac210a179322caef0e3120e991440bfbfef2d889a8a317f5523818044ff2b9"
+      }
+    ],
+    "premerge_checks": [
+      "Fetch latest main and both workstream branches; inspect open PRs for allocations. Never merge or push main automatically.",
+      "Compare selected site and org row hashes using sorted-key compact JSON. Any parent, identity, address or site-grain drift requires review before applying.",
+      "Confirm added CAP IDs remain unoccupied on target; if any collision, integrator allocates next-free IDs and updates CSV and this manifest together.",
+      "For each proposed row, check latest target for a live (site_id, capability_type, term) twin. Do not duplicate or overwrite it; reconcile evidence through integrator.",
+      "Check source availability and any conflicting newer plant evidence; publication dates are not observation dates or operating-status evidence.",
+      "Rebase/reapply append-only changes, then rerun validate.py and build_sqlite.py. Review diff and source notes; publish PR only, no direct main commit."
+    ],
+    "validation": {
+      "validate.py": "PASS (exit 0); existing warnings retained",
+      "build_sqlite.py": "PASS (exit 0); 497 capability rows built; generated artifacts excluded",
+      "append_only": "Original site_capabilities.csv byte prefix preserved exactly",
+      "existing_record_changes": "No site, organization or evidence rows changed; verification tier changes 0"
+    },
+    "pull_request": "https://github.com/polymerindustrycluster/polymer-atlas/pull/2",
+    "allocation_scope": "CAP-000462\u2013CAP-000497 is a branch-only provisional reservation, not a main-branch ID lock. Recheck current upstream allocations immediately before merge; integrator must renumber collisions and update this manifest together. Baseline main: 3036121b0245bee1e6b1c8f46ed63c0a39821226."
+  }
+}
