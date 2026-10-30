@@ -35,6 +35,8 @@ The standing PA same-street queue (Tredegar, CPG/Scranton, Taylor, Eastman/Synth
 
 - Full baseline and final `scripts/validate.py`: passed with existing warnings.
 - `scripts/build_sqlite.py`: passed; build outputs remain uncommitted.
-- `python3 -m unittest discover -s tests -p 'test_review_packet.py'`: six regression tests cover unchanged records, changed values, missing IDs, duplicate IDs, shard moves and rejection of automatic actions.
+- `python3 -m unittest discover -s scripts/tests -p 'test_review_packet.py'`: six regression tests cover unchanged records, changed values, missing IDs, duplicate IDs, shard moves and rejection of automatic actions.
 - Packet preflight: all references match the baseline.
 - Remote CI is not claimed; this repository currently has no workflow file.
+
+Protocol recheck: main9d7a33f merged, no data drift. All cases use STILL_UNCERTAIN with settling facts (even keep-separate has unresolved HQ/site correction). No data files edited, no backup required. Integrator of record: codex-dot.

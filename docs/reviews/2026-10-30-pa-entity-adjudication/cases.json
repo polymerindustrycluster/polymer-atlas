@@ -43,7 +43,9 @@
           "name": "Westlake Plastics Iwtp",
           "sha256": "beb8bd10884902604d52e598c4ce186b7bb09a6c4b875a5a77a4311d27449a6d"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Retrieve exact IWTP permit/FRS identity; if same operator, tombstone duplicate organization and separately decide whether the treatment asset is a distinct establishment. Preserve Mayfield site."
     },
     {
       "case_id": "PA-02",
@@ -80,7 +82,9 @@
           "name": "Pannier Graphic Div.",
           "sha256": "6cb38ad934c233525e89c8c180ddea9f5089589476f2f4eb7a2492f4144053c2"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Verify legal division/parent and 1239-address history; consolidate only after resolving site disposition, ring and NAICS independently."
     },
     {
       "case_id": "PA-03",
@@ -118,7 +122,9 @@
           "name": "Mi Windows & Doors Inc.",
           "sha256": "c8b83092ecd727ca10d01a7ce44834706b123cfb031fbc90ca74790adf57c9ea"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Verify legal operator lineage before consolidating organizations. Never collapse these distinct plants."
     },
     {
       "case_id": "PA-04",
@@ -155,7 +161,9 @@
           "name": "M&Q Packaging LLC - Schuylkill Haven",
           "sha256": "fe79318a9e7c32de27f1d01421318880997443c790bbd50a5d0c7ba803671ff6"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Verify legal predecessor/successor relationship and physical street number; retain evidence, do not manufacture 3 Earl Street from postal text."
     },
     {
       "case_id": "PA-05",
@@ -183,13 +191,13 @@
         {
           "table": "sites",
           "id": "SITE-000734",
-          "name": "Ashland \u2014 Ashland",
+          "name": "Ashland — Ashland",
           "sha256": "f507673d6f96faa279755f319ff36d0b22890097f83efa70aa4c61beeeb0c514"
         },
         {
           "table": "sites",
           "id": "SITE-001532",
-          "name": "Bostik \u2014 Columbus",
+          "name": "Bostik — Columbus",
           "sha256": "950ef87cf28666516f0d9767d49e3251060b2d92fd48e318b2a8de515bf55a0d"
         },
         {
@@ -210,7 +218,9 @@
           "name": "Arkema Inc. - West Chester",
           "sha256": "509318c10d006fd5a971f672b8bb36791f9afbe4b0c9187fdeaa84a935bf8031"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Keep organizations separate. Prepare evidenced HQ corrections and Bostik PA-to-WI shard move; resolve county/parent grain in a separate integration."
     },
     {
       "case_id": "PA-06",
@@ -248,7 +258,9 @@
           "name": "Simona America Incorporated",
           "sha256": "1d530ab46a7443869dfa43b103d14215a322182dab04cdd9b6092e44c2412410"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Priority liveness check for Hazleton and legal-entity continuity; do not invent a 2014 closure date or merge Boltaron/PMC."
     },
     {
       "case_id": "PA-07",
@@ -286,7 +298,9 @@
           "name": "Ultra Poly Corp. - Portland",
           "sha256": "12d08912108bce1b3387fe2b5e88065690a2a334727726345ab84b47cca85942"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Resolve legal operator and current Berwick liveness; preserve distinct Portland/Berwick sites when consolidating parent grain."
     },
     {
       "case_id": "PA-08",
@@ -324,7 +338,9 @@
           "name": "Luicana Ind Inc. - MacUngie Fac",
           "sha256": "eb7967f4507f8be6601be3ee13148e3f9fdb6a984bd661d67a838a59825067d1"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Open permit 39-00025 and verify situs/operator before any organization merge or Boyertown manufacturing status change."
     },
     {
       "case_id": "PA-09",
@@ -361,7 +377,9 @@
           "name": "Jm Manufacturing Company, Inc.",
           "sha256": "a5a7d00d2cfdd7bfaaabc3b7be0a98038fcc6f56fdc0143a3b3604daf9a395af"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Resolve legal names and map Franklin Plant to exact certified site; preserve distinct 15659/15661 locations until boundary established."
     },
     {
       "case_id": "PA-10",
@@ -399,7 +417,10 @@
           "name": "Rehrig Pacific Bldg 2",
           "sha256": "914b7f481add7e265b1dd80a0c11df5662856c320b351ca2cddd9a4746499929"
         }
-      ]
+      ],
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Obtain accessible primary operator/campus evidence, then decide organization consolidation and site grouping independently."
     }
-  ]
+  ],
+  "protocol_recheck": "main9d7a33f AGENTS-only update; no canonical drift"
 }

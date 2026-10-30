@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-SPEC = importlib.util.spec_from_file_location('review', Path(__file__).resolve().parents[1] / 'scripts/check_review_packet.py')
+SPEC = importlib.util.spec_from_file_location('review', Path(__file__).resolve().parents[1] / 'check_review_packet.py')
 review = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(review)
 
