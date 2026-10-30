@@ -103,4 +103,4 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 
 
 ## Codex PR lane — PA entity-grain adjudication (2026-10-30)
-- [ ] `claimed:codex-dot 2026-10-30` Review 10 Pennsylvania duplicate/operator candidates; source-backed proposed dispositions, no automatic canonical merges or ID allocation. Branch: `agent/codex/pa-entity-adjudication`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
+- [ ] `in-pr:codex-dot 2026-10-30` Review 10 Pennsylvania duplicate/operator candidates; source-backed proposed dispositions, no automatic canonical merges or ID allocation. Branch: `agent/codex/pa-entity-adjudication`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
