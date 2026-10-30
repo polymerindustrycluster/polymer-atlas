@@ -6,6 +6,15 @@ These rules exist so parallel work merges instead of colliding. They are
 not suggestions. If a rule blocks your task, stop and flag it in your PR —
 do not work around it.
 
+## Start here
+
+Read this file first, then `docs/SCHEMA.md`, then `tasks/QUEUE.md` —
+in that order, before touching anything. The merged `*_all.csv`
+exports and the SQLite database are generated artifacts: never edit
+them and never commit a hand-modified one. Never commit anything
+produced in a local staging or workshop area; only changes under
+`data/`, `docs/`, `scripts/`, and `tasks/` travel.
+
 ## 1. Where truth lives
 
 - The CSVs in `data/` are canonical. Organizations and sites are
@@ -18,6 +27,11 @@ do not work around it.
   `docs/SCHEMA.md`. Vocabulary/ring changes require a dated schema
   revision in that file — never improvise a new tag, ring, or status
   value inline. Use the `*_other_note` / notes field and flag it.
+- **Derived fields are hands-off.** `tier1_qualifier` is refreshed by
+  the derivation procedure, in its canonical basis formats — never
+  hand-edit it. Coordinates (`lat` / `lon`, `geocode_precision`) are
+  reference data: never evidence, and never an input to a
+  verification tier.
 
 ## 2. How work happens
 
@@ -61,6 +75,34 @@ do not work around it.
    campaign push carries the same record in its pass journal and its
    snapshot-log entry instead of a PR description; a push without that
    record is a protocol violation even if the data validates.
+7. **Swim lanes: lanes produce packets; one integrator writes.** Research
+   and verification work runs as packet lanes: a lane produces verdict
+   and evidence packets and **never edits files under `data/`**. Only a
+   designated integrator of record applies packets to data files — one
+   writer per file at a time (different files may be held
+   concurrently), with pre-pass backups of every edited file and a pass
+   journal. ID allocation, cross-shard moves, and dedupe decisions stay
+   serialized through the integrator of record, in campaign mode too.
+   Work by outside harnesses on wave-scale research arrives as packets
+   on the branch, not as data edits; small single-purpose data PRs
+   remain as rule 4 allows.
+8. **Verdict grammar.** Lane verdicts are exactly: **VERIFIED**;
+   **REJECT**, with the deciding fact; **STILL_UNCERTAIN**, with the
+   named fact that would settle it; **DUPLICATE_OF**, whose chain must
+   terminate at a held record. The effort cap is ~6 primary-source
+   fetches per organization — when the budget is spent without a
+   primary signal, the verdict is STILL_UNCERTAIN. A failed fetch
+   (403, timeout, bot wall, empty result) is an availability signal
+   about the route — never evidence of absence, closure, or
+   non-existence. Before any REJECT for closure or no-establishment,
+   run the Form 5500 check (bulk EFAST2): a sponsor filing blocks the
+   reject only when the filing's address **is** the establishment in
+   question. A TRI parent name never overrides the Atlas parent of
+   record.
+9. **Owner rulings are never self-ruled.** Scope, ring, and vocabulary
+   questions are owner rulings: propose them as battery items with a
+   recommendation and the evidence, and hold the work they gate. Do
+   not settle them inside a task, a lane, or a PR.
 
 *Revision note — 2026-10-29 (owner ruling C2): §2 amended to formalize the
 campaign mode under which integration passes 4–11, the schema v1.1+v1.2
@@ -85,15 +127,33 @@ contributions. No other section is amended by this revision.*
 5. No hit → create the record at tier **U** or **C**, and note in the PR
    which searches you ran.
 
+**IDs — allocate from the maximum, never fill a gap.** Before creating
+records, scan **all** shards of the target table and allocate above the
+tree-wide maximum ID in that table. Row counts are not the maximum:
+gaps exist and are permanent. Never reuse an ID — including a
+tombstoned one — and never fill a gap.
+
 When in doubt, **do not merge** — create/link and flag for review.
 A false merge destroys data; a false split is cheap to fix.
 Never delete a record: closed/acquired/merged entities are tombstoned
 (`status` + `status_date` + source + `successor_org_id` where applicable).
 
+**Status changes need dated evidence.** An operating-status change
+requires dated primary or near-primary evidence: a company statement,
+a WARN notice (an announcement) **plus** a dated outcome record, a
+regulatory action, or dated trade-press reporting. A WARN notice
+alone settles nothing. A final Form 5500 filing is a plan fact, never
+a status change. An organization flagged `monitor_watch` is
+re-verified when the watch fires — a hit queues re-verification and
+never auto-changes a status.
+
 A record’s shard is a function of its HQ (organizations) or physical
 state (sites) — see SCHEMA.md Appendix C. Correcting that fact moves
 the record in the same pass; never leave a record in a shard its fields
-contradict.
+contradict. Site shards exist for US states, plus any the schema later
+adds by dated revision: an establishment outside that set has **no
+lawful shard** — hold it and flag it for an owner/schema ruling; never
+force-place it into a US shard or the residual.
 
 ## 4. Provenance — no naked facts
 
@@ -109,6 +169,27 @@ contradict.
   vocabularies in `docs/SCHEMA.md` only.
 - County is required for every Ohio site, from the physical address —
   never inferred from the mailing city (ZIP codes straddle boundaries).
+- Date fields carry a full ISO date or are empty. A year-only value
+  is invalid.
+- **Evidence contract.** A create integrates only with evidence rows
+  in `data/evidence.csv` covering its existence and scope claims at
+  minimum, per SCHEMA.md §4.13, which also sets the per-source-class
+  tier ceilings. A platform or roster category is a discovery lead:
+  it can never support a scope claim.
+- **Relationships are generated, not authored.** `parent_of`,
+  `successor_of`, and `merged_into` edges in `data/relationships.csv`
+  are generated from the organization columns and parity-checked
+  (validator V-27) — never hand-author them. The only authored
+  exceptions are those created by a dated owner ruling recorded in
+  SCHEMA.md §4.14. `member_of` edges **are** authored — for
+  association membership only, sourced to a public directory
+  snapshot. PIC membership is never carried by `member_of`; §5.1
+  governs it.
+- **Registry identifiers must be verified at the source.** A registry
+  ID (TRI TRIFID, FRS, or similar) may be recorded as a link only
+  after it is verified against the source system's own extract or
+  record. An identifier that appears only in this project's own
+  files is a phantom and mints nothing.
 
 ## 5. Licensed sources — the hard line
 
@@ -155,6 +236,10 @@ enters a record. Personal contact data (individual emails, direct-dial
 phones, home addresses) remains barred for people records exactly as
 for every other record class.
 
+**Event participation.** Rows in `data/event_participation.csv` name
+organizations only. A speaker is recorded as their employer
+organization, never as an individual.
+
 ## 7. Counting honesty
 
 Any count you state — in a PR, a README, a report — must name its unit
@@ -171,3 +256,16 @@ protocol violation.
   Until the repo owner rules, tag records with the **county** and let
   reports apply either definition — do not hard-code a region into a
   record.
+
+*Revision note — 2026-10-30 (swim-lanes amendment): the Start-here
+block is added (amendment item 11); §1 gains the derived-fields
+rule; §2 gains rules 7–9 (packet lanes and the single integrator of
+record, the verdict grammar with its effort cap and Form 5500 gate,
+and the bar on self-ruled scope questions); §3 gains the ID-allocation
+rule, the status-change evidence standard, and the foreign-site hold;
+§4 gains the ISO-date rule, the evidence contract, the relationships
+parity rule, and the registry phantom rule; §6 gains the
+event-participation grain. The owner confirmed the same day that
+§2 rule 3 stands for all non-orchestrator harnesses: branch/PR only,
+with no campaign-mode grant. No data file is changed by this
+revision.*
