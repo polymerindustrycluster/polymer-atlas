@@ -1,6 +1,6 @@
 # Blind audit 8 — TRI-era creations
 
-**Status: sample not drawn; required wave-class mapping unavailable. No audit verdicts or error rates are claimed.**
+**Status: authoritative map v2 validated; 65-record sample frozen 2026-10-30 22:59:07 UTC. Five blind verification batches are in progress. No audit error rates are claimed yet.**
 
 Draft PR: https://github.com/polymerindustrycluster/polymer-atlas/pull/9
 
@@ -12,16 +12,14 @@ Draft PR: https://github.com/polymerindustrycluster/polymer-atlas/pull/9
 - Pinned `scripts/validate.py`: **PASS**. Pinned SQLite build: **PASS** (logs alongside this report).
 - Main rechecked 2026-10-30 21:37 UTC: unchanged.
 
-## Sampling blocker (not an audit finding)
+## Resolved preparation blockers and frozen design
 
-Independent creation-history extraction establishes 2,199 organization/site records first created across integration passes 20–25: **682 organization records and 1,517 site records**. This is the broad pass-era frame, not yet the final TRI-origin audit population: pass 20 also includes SC and Q01/Q02 work. The public repository does not supply the authoritative P0–P4 wave-class mapping required by F1. P001–P036 packet numbers must not be substituted for P0–P4 wave classes. Neither pass number nor present-day record tier is a valid undocumented substitute for creation wave/tier.
+See `RESUMPTION.md` for the explicit metadata-pin transition and map-duplicate diagnostic, and `SAMPLING_STATUS.md` for the complete sampling method. Original data pin remains unchanged. Corrected metadata pin is `bf7857a7826ba62cdcf67af3ba718c3d5a9b32be`; no canonical data changed.
 
-The requested design is a reproducible stratified random sample of approximately 65 records, stratified by **creation tier × P0–P4 wave class**, with extra selection probability for Tier C and P4 single-facility organizations. Drawing against a pass-only proxy would not satisfy that design. The sample therefore remains unselected; source notes and record evidence remain unseen by the verifier. An independent sampler owns the sealed metadata. The verifier's protocol was frozen before any draw in `PROTOCOL.md`.
+The creation frame is **2,199 unique records: 682 organizations + 1,517 sites**. The author's original reconstruction was correct. Map v1 counted five watch-marker rows twice; the owner confirmed the error and published v2. Excluding 227 NOT_TRI records yields **1,972 TRI-eligible creations**. P0 has no creations and no synthetic stratum.
 
-**Required input:** an accessible authoritative worklist/export mapping the relevant pass 20–25 creations (or resolvable facility/organization identities) to P0, P1, P2, P3, P4, including the TRI-origin eligibility needed to separate mixed pass-20 records. The parent task requested this input on 2026-10-30 at approximately 21:35 UTC. A supplied backup exceeded the connector's 256 MiB limit; that refusal is not bypassed by this lane.
-
-Once supplied, the independent sampler will seal a population manifest and draw, release only identity search keys, and the verifier will complete/freeze the entire sample before inspecting recorded evidence. This draft will then be updated with per-record verdicts, named field/creation errors, unresolved cases, per-stratum denominators and rates, and corrections proposed to the integrator.
+The fixed-seed stratified draw selected **65 distinct records**, now assigned to five organization-grouped batches of 13 for independent public-source verification. `DRAW_MANIFEST.json` freezes input/output hashes. Existing evidence/notes, creation tiers and wave classes remain sealed from verifiers until every independent verdict is frozen. Findings, comparison grades and rates will be added only afterward.
 
 ## Historical comparison reserved until measured
 
-User/task supplied baselines: audit 6, **0/37 creation errors** and **12/37 field errors**; audit 7, **58/65 agreement**. These are different audit populations/designs and are not evidence about the undrawn audit-8 sample. No trend or quality-improvement conclusion is possible yet.
+User/task supplied baselines: audit 6, **0/37 creation errors** and **12/37 field errors**; audit 7, **58/65 agreement**. These are different audit populations/designs and are not evidence about the audit-8 sample. No trend or quality-improvement conclusion is possible yet.

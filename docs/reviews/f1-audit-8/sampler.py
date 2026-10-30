@@ -3,7 +3,8 @@ from pathlib import Path
 import argparse,random,math
 parser=argparse.ArgumentParser()
 parser.add_argument('--repo',default='.')
-parser.add_argument('--wave-map',help='CSV: record_id,wave_class (P0–P4 or explicit NOT_TRI)')
+parser.add_argument('--wave-map',help='CSV: record_id,tri_class (P0–P4 or explicit NOT_TRI)')
+parser.add_argument('--allow-identical-map-duplicates',action='store_true',help='Use only after explicit approval; identical repeated mapping rows collapse by record_id.')
 parser.add_argument('--output-dir',default='/tmp/f1-sampling')
 a=parser.parse_args()
 ROOT=Path(a.repo).resolve()
@@ -27,26 +28,41 @@ assert set(ends)==set(range(20,26)),'Missing complete pass-end snapshot'
 first=next(l.split()[0] for l in logs if re.search(r'Pass 20 body 1 of ',l)); previous=records(first+'^')
 sitecounts=collections.Counter(x['row']['org_id'] for x in allrows.values() if x['table']=='sites')
 pop=[]
-for p,sha in sorted(ends.items()):
- current=records(sha)
- for rid in sorted(current.keys()-previous.keys()):
-  x=current[rid];r=x['row'];pop.append({'record_id':rid,'table':x['table'],'creation_pass':p,'creation_sha':sha,'creation_tier':r['verification_tier'],'wave_class':None,'single_facility_organization':x['table']=='organizations' and sitecounts[rid]==1,'row_at_creation':r,'row_at_pin':allrows[rid]['row']})
- previous=current
+seen=set(previous)
+for line in logs:
+ sha,msg=line.split(' ',1)
+ m=re.match(r'Pass (2[0-5]) body ',msg)
+ if not m:continue
+ p=int(m[1])
+ for f in git('diff-tree','--no-commit-id','--name-only','-r',sha).splitlines():
+  if not re.fullmatch(r'data/(organizations|sites)_[A-Z]+\.csv',f):continue
+  table='sites' if '/sites_' in f else 'organizations'
+  for r in csv.DictReader(io.StringIO(git('show',sha+':'+f))):
+   rid=r['site_id' if table=='sites' else 'org_id']
+   if rid in seen:continue
+   seen.add(rid)
+   pop.append({'record_id':rid,'table':table,'creation_pass':p,'creation_sha':sha,'creation_tier':r['verification_tier'],'wave_class':None,'single_facility_organization':table=='organizations' and sitecounts[rid]==1,'row_at_creation':r,'row_at_pin':allrows[rid]['row']})
 # This program parses creation notes only for storage in the sealed comparison frame.
 # It never parses data/evidence.csv; verifier-facing output has an explicit allowlist.
 meta=[{k:v for k,v in x.items() if k not in ('row_at_creation','row_at_pin')} for x in pop]
 files={f:hashlib.sha256(git('show',PIN+':'+f).encode()).hexdigest() for f in git('ls-tree','-r','--name-only',PIN,'data').splitlines()}
-frame={'pin':PIN,'population_definition':'All organization/site IDs first introduced in complete integration passes 20–25, ID-set difference from prior complete pass. Includes non-TRI SC/Q01/Q02 creations in pass20. No status filter.','pass_end_shas':ends,'population':meta,'file_sha256':files}
+frame={'pin':PIN,'population_definition':'All organization/site IDs first introduced in integration passes 20–25. Creation tier is read at the first appearance commit, not the pass-end or current tier. Includes non-TRI SC/Q01/Q02 creations in pass20. No status filter.','pass_end_shas':ends,'population':meta,'file_sha256':files}
 (OUT/'population_metadata_sealed.json').write_text(json.dumps(frame,indent=2)+'\n')
 (OUT/'comparison_records_sealed.json').write_text(json.dumps(pop,indent=2)+'\n')
 print('Population:',len(pop),'records. Creation tiers and source notes are withheld from verifier manifest.')
 if not a.wave_map:
  print('BLOCKED: P0–P4 wave map is absent. No draw performed; no identities released.');raise SystemExit(2)
-wm={}
+wm={};mapping_rows={};duplicates=[]
 for r in csv.DictReader(open(a.wave_map)):
- assert r['record_id'] not in wm,'Duplicate mapping ID'
- assert r['wave_class'] in ['P0','P1','P2','P3','P4','NOT_TRI'],'Unrecognized wave class'
- wm[r['record_id']]=r['wave_class']
+ rid=r['record_id'];cl=r.get('tri_class',r.get('wave_class'))
+ assert cl in ['P0','P1','P2','P3','P4','NOT_TRI'],'Unrecognized wave class'
+ if rid in wm:
+  assert a.allow_identical_map_duplicates and r==mapping_rows[rid],'Duplicate mapping ID (not authorized or conflicting)'
+  duplicates.append(rid);continue
+ wm[rid]=cl;mapping_rows[rid]=r
+assert set(wm)=={x['record_id'] for x in pop},'Map/frame ID-set mismatch'
+for x in pop:
+ assert int(mapping_rows[x['record_id']]['creation_pass'])==x['creation_pass'],'Creation pass mismatch'
 missing=[x['record_id'] for x in pop if x['record_id'] not in wm]
 if missing:
  print('BLOCKED:',len(missing),'population records lack explicit wave class. No draw performed.');raise SystemExit(2)
@@ -83,5 +99,16 @@ for x in selected:
  r=x['row_at_pin'];org=allrows[r['org_id']]['row'];site=x['table']=='sites'
  identity.append({'record_id':x['record_id'],'table':x['table'],'name':r['site_name'] if site else r['legal_name'],'street_address':r.get('street_address','') if site else '', 'city':r['city'] if site else r['hq_city'],'state':r['state'] if site else r['hq_state'],'zip':r.get('zip','') if site else '', 'associated_org_name':org['legal_name'],'website':org.get('website','')})
 (OUT/'identity_only.json').write_text(json.dumps(identity,indent=2)+'\n')
-(OUT/'sampling_sealed.json').write_text(json.dumps({'seed':seed,'pin':PIN,'wave_map_sha256':hashlib.sha256(Path(a.wave_map).read_bytes()).hexdigest(),'strata':[{'key':k,'population_n':len(strata[k]),'sample_n':allocation[k]} for k in keys],'sample':selected},indent=2)+'\n')
+(OUT/'sampling_sealed.json').write_text(json.dumps({'seed':seed,'pin':PIN,'collapsed_identical_duplicate_ids':duplicates,'wave_map_sha256':hashlib.sha256(Path(a.wave_map).read_bytes()).hexdigest(),'strata':[{'key':k,'population_n':len(strata[k]),'sample_n':allocation[k]} for k in keys],'sample':selected},indent=2)+'\n')
 print('Draw complete:',len(identity),'records. Keep sampling_sealed.json and comparison_records_sealed.json hidden until all blind verdicts are frozen.')
+
+# Group identity-only records by associated organization before batch assignment.
+# Largest groups first, greedy lightest-bin assignment; never split an org.
+groups=collections.defaultdict(list)
+for row in identity:groups[row['associated_org_name']].append(row)
+batches=[[] for _ in range(5)]
+for name,group in sorted(groups.items(),key=lambda kv:(-len(kv[1]),kv[0])):
+ target=min(range(5),key=lambda i:(len(batches[i]),i));batches[target].extend(group)
+for i,batch in enumerate(batches,1):
+ (OUT/f'identity_batch_{i}.json').write_text(json.dumps(batch,indent=2)+'\n')
+print('Batch sizes:',[len(b) for b in batches])
