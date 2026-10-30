@@ -1,0 +1,141 @@
+{
+  "baseline_commit": "3036121b0245bee1e6b1c8f46ed63c0a39821226",
+  "observed_date": "2026-10-30",
+  "read_only_research": false,
+  "proposals": [
+    {
+      "program_id": "PROG-000001",
+      "program_name": "Plastics Engineering Technology",
+      "verdict": "VERIFIED",
+      "original_values": {
+        "url": "https://www.shawnee.edu/areas-study/college-business-engineering-technology/engineering-technologies/bachelor-degrees/plastics-engineering-technology",
+        "public_door_url": "https://www.shawnee.edu/areas-study/college-business-engineering-technology/engineering-technologies/bachelor-degrees/plastics-engineering-technology",
+        "unit_department": "",
+        "facilities_note": "",
+        "last_verified": "2026-10-29"
+      },
+      "proposed_values": {
+        "url": "https://www.shawnee.edu/academics/college-business-engineering-technology/engineering-technology/bachelor/plastics-engineering-technology/",
+        "public_door_url": "https://www.shawnee.edu/academics/college-business-engineering-technology/engineering-technology/bachelor/plastics-engineering-technology/",
+        "unit_department": "Department of Engineering Technology, College of Business and Engineering Technology",
+        "facilities_note": "Plastics processing instruction at the Advanced Technology Center on the Portsmouth main campus.",
+        "last_verified": "2026-10-30"
+      },
+      "append_sources": [
+        "https://www.shawnee.edu/academics/college-business-engineering-technology/engineering-technology/bachelor/plastics-engineering-technology/"
+      ],
+      "append_notes": "2026-10-30 program review: replaced obsolete program URL (HTTP 404) with current institutional page. Application instructions and internships remain published. Current page does not specify processing subtypes; no specialty tags inferred. Catalog endpoint returned HTTP 403; no CIP/completions added.",
+      "retain_tier": "A",
+      "source_observation_method": "Opened institution public page through web tool on 2026-10-30; no search-preview-only claims."
+    },
+    {
+      "program_id": "PROG-000002",
+      "program_name": "Plastics Technician Training",
+      "verdict": "VERIFIED",
+      "original_values": {
+        "unit_department": "",
+        "specialty_processes": "",
+        "specialty_materials": "",
+        "facilities_note": "",
+        "last_verified": "2026-10-29"
+      },
+      "proposed_values": {
+        "unit_department": "Workforce Development",
+        "specialty_processes": "extrusion_film_blown;injection_molding",
+        "specialty_materials": "thermoplastics;polyethylene_pe",
+        "facilities_note": "PTEC 1103 laboratory teaches blown-film line operation and injection molding setup and troubleshooting.",
+        "last_verified": "2026-10-30"
+      },
+      "append_sources": [],
+      "append_notes": "2026-10-30 program review: specialties are supported by the prerequisite Plastics Technician curriculum itself (PTEC 1102/1103), not inferred solely from the follow-on certificates. On-demand offer supports retained admitting status.",
+      "retain_tier": "A",
+      "source_observation_method": "Opened institution public page through web tool on 2026-10-30; no search-preview-only claims."
+    },
+    {
+      "program_id": "PROG-000008",
+      "program_name": "Akron Polymer Training Services",
+      "verdict": "VERIFIED",
+      "original_values": {
+        "specialty_processes": "",
+        "specialty_materials": "",
+        "last_verified": "2026-10-29"
+      },
+      "proposed_values": {
+        "specialty_processes": "injection_molding;rubber_extrusion;rubber_molding_injection;rubber_mixing_compounding;blow_molding",
+        "specialty_materials": "elastomers_rubber;thermoplastics;adhesives_sealants;coatings",
+        "last_verified": "2026-10-30"
+      },
+      "append_sources": [
+        "https://www.uakron.edu/apts/custom-training",
+        "https://www.uakron.edu/apts/courses/"
+      ],
+      "append_notes": "2026-10-30 program review: custom syllabus names plastics injection molding and rubber extrusion, injection molding and compounding. Published 2026/2027 course list includes blow molding, thermoplastics, rubber, adhesives and coatings. Generic plastics extrusion is not forced into an unsupported subtype. Training program research_areas left empty.",
+      "retain_tier": "A",
+      "source_observation_method": "Opened institution public page through web tool on 2026-10-30; no search-preview-only claims."
+    },
+    {
+      "program_id": "PROG-000024",
+      "program_name": "Polymer Institute",
+      "verdict": "VERIFIED",
+      "original_values": {
+        "unit_department": "",
+        "specialty_processes": "",
+        "specialty_materials": "pet_petg",
+        "research_areas": "",
+        "facilities_note": "",
+        "last_verified": "2026-10-29"
+      },
+      "proposed_values": {
+        "unit_department": "College of Engineering",
+        "specialty_processes": "polymerization;injection_molding;blow_molding;compounding_extrusion",
+        "specialty_materials": "thermoplastics;pet_petg",
+        "research_areas": "characterization_methods;recycling_circularity;sustainable_feedstocks",
+        "facilities_note": "Published resources include polymerization reactors, injection and blow molding machines, twin-screw extrusion and microcompounding equipment. Characterization resources are identified as a partnership with CMSC.",
+        "last_verified": "2026-10-30"
+      },
+      "append_sources": [
+        "https://www.utoledo.edu/engineering/polymer-institute/resources.html",
+        "https://www.utoledo.edu/engineering/polymer-institute/research.html"
+      ],
+      "append_notes": "2026-10-30 program review: facility capabilities derive from named equipment, while chemical-recycling and bio-based-monomer research are stated on the institute research page. No public self-service access or training enrollment is inferred; research_collaboration retained. Generic extrusion is not assigned an end-product subtype.",
+      "retain_tier": "A",
+      "source_observation_method": "Opened institution public page through web tool on 2026-10-30; no search-preview-only claims."
+    },
+    {
+      "program_id": "PROG-000014",
+      "program_name": "Kent State AMLCI Characterization Facility",
+      "verdict": "VERIFIED",
+      "original_values": {
+        "unit_department": "",
+        "facilities_note": "Comprehensive series of instruments for structural/physical/chemical/electrical characterization of soft matter and devices (institution-published)",
+        "last_verified": "2026-10-29"
+      },
+      "proposed_values": {
+        "unit_department": "Advanced Materials and Liquid Crystal Institute",
+        "facilities_note": "Open-access facility on the ground floor of the north wing of the Liquid Crystal and Materials Sciences Building. Published tools include TEM/SEM, AFM, FTIR, particle-size/zeta-potential analysis, rheometry and DSC.",
+        "last_verified": "2026-10-30"
+      },
+      "append_sources": [
+        "https://www.kent.edu/amlci/characterization-facility-tools"
+      ],
+      "append_notes": "2026-10-30 program review: facility and equipment pages rechecked. Existing characterization_methods and testing/lab-access modes retained. Characterization equipment does not establish manufacturing-process or material-production specialties.",
+      "retain_tier": "A",
+      "source_observation_method": "Opened institution public page through web tool on 2026-10-30; no search-preview-only claims."
+    }
+  ],
+  "integration": {
+    "integrator": "codex-dot",
+    "allocated_evidence_ids": "EVD-003713\u2013EVD-003732",
+    "ecosystem_rollup": {
+      "org_id": "ORG-001298",
+      "field": "polymer_program_url",
+      "before": "https://www.shawnee.edu/areas-study/college-business-engineering-technology/engineering-technologies/bachelor-degrees/plastics-engineering-technology",
+      "after": "https://www.shawnee.edu/academics/college-business-engineering-technology/engineering-technology/bachelor/plastics-engineering-technology/",
+      "verification_tier_retained": "C",
+      "last_verified_retained": "2026-10-28"
+    },
+    "baseline": "3036121b0245bee1e6b1c8f46ed63c0a39821226",
+    "upstream_recheck": "9d7a33f5e2d69d4a4e5d053f3e1e89f1faf6ee99; AGENTS-only update, no data drift",
+    "backup": "Original files available immutably at baseline data/programs.csv, data/ecosystem.csv and data/evidence.csv; local prepass backups retained outside repo."
+  }
+}

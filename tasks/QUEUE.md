@@ -103,4 +103,6 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 
 
 ## Codex PR lane — Ohio program enrichment (2026-10-30)
-- [ ] `claimed:codex-dot 2026-10-30` Verify 5 existing Ohio programs for structured specialties and public program facts; no inferred CIP/completions and no private CRM data. Branch: `agent/codex/ohio-program-enrichment`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
+- [ ] `in-pr:codex-dot 2026-10-30` Verify 5 existing Ohio programs for structured specialties and public program facts; no inferred CIP/completions and no private CRM data. Branch: `agent/codex/ohio-program-enrichment`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
+
+- PR #3 delivery: docs-only exact reviewed application patch for five programs plus Shawnee URL rollup and20evidence rows. Canonical data unchanged; integrator must recheck hashes and provisional EVD-003713–003732 before applying. https://github.com/polymerindustrycluster/polymer-atlas/pull/3
