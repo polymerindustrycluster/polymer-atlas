@@ -1,0 +1,5218 @@
+{
+  "method_version": 1,
+  "input_sha256": {
+    "blind_batch_1_results.json": "a6fec7ebb2d7ad09afc00979350b386725aa040dbe02bb6e55f6d3823f2b5011",
+    "blind_batch_2_results.json": "18487e7327edc7ce48f7c014243d863754ac60fa375bddbedc97fc65385139a5",
+    "blind_batch_3_results.json": "b556a4e3405d2454839f2a36ad9939b69bfc075e68650547d760ad534fa6b845",
+    "blind_batch_4_results.json": "69cc3e2f55d000f5c7fadf8184de9106de392a7c55eafc0a9cd837b9e5f74d17",
+    "blind_batch_5_results.json": "41509ad7e71f802cb4a9d654cb48410f1a8ebac7ce41b2797e55c285aa3e69cb"
+  },
+  "input_observations": 321,
+  "input_unique_urls": 137,
+  "included_observations": 286,
+  "excluded_observations_count": 35,
+  "draft_rows": 275,
+  "draft_unique_urls": 129,
+  "draft_records": 63,
+  "counts_by_claim": {
+    "activity": 70,
+    "address": 76,
+    "code": 9,
+    "existence": 43,
+    "liveness": 25,
+    "parent": 40,
+    "scope": 12
+  },
+  "counts_by_class": {
+    "directory": 10,
+    "government_filing": 55,
+    "own_site": 187,
+    "registry": 23
+  },
+  "counts_by_effect": {
+    "supports_B": 265,
+    "supports_C": 10
+  },
+  "normalizations": [
+    {
+      "observation": "blind_batch_1_results.json:ORG-004269:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004269:observations[1]",
+      "original_field": "hq_city;hq_state",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "hq_city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004269:observations[2]",
+      "original_field": "mailing_address",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "mailing_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004269:observations[3]",
+      "original_field": "polymer_scope;materials",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "materials",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004269:observations[4]",
+      "original_field": "current_activity",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-10-20",
+      "normalized": [
+        {
+          "field": "current_activity",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-20",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005510:observations[0]",
+      "original_field": "street_address;city;state;zip",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005510:observations[1]",
+      "original_field": "operator;site_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "site_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004036:observations[0]",
+      "original_field": "legal_name;hq_address;hq_city;hq_state",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004036:observations[1]",
+      "original_field": "polymer_scope;processes",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-02-06",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "registry",
+          "observed_date": "2024-02-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2024-02-06",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004252:observations[0]",
+      "original_field": "legal_name;hq_city;hq_state;hq_address",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004252:observations[1]",
+      "original_field": "polymer_scope",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-02-29",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2024-02-29",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004252:observations[2]",
+      "original_field": "ownership_event",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-02-29",
+      "normalized": [
+        {
+          "field": "ownership_event",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2024-02-29",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004034:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-06-26",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "registry",
+          "observed_date": "2025-06-26",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004034:observations[1]",
+      "original_field": "city;state;contact_address",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "contact_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004034:observations[2]",
+      "original_field": "polymer_scope;processes",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004034:observations[3]",
+      "original_field": "manufacturing_addresses",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-06-26",
+      "normalized": [
+        {
+          "field": "manufacturing_addresses",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2025-06-26",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004590:observations[0]",
+      "original_field": "legal_name;contact_address;city;state",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "contact_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004590:observations[1]",
+      "original_field": "polymer_scope;manufacturing_locations",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "manufacturing_locations",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-004756:observations[0]",
+      "original_field": "operator;street_address;city;state;county",
+      "original_claim_type": "identity",
+      "original_source_class": "government",
+      "original_source_date": "2022-11-29",
+      "normalized": [
+        {
+          "field": "operator",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-004756:observations[1]",
+      "original_field": "polymer_scope;site_processes",
+      "original_claim_type": "scope",
+      "original_source_class": "government",
+      "original_source_date": "2022-11-29",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "site_processes",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2022-11-29",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-004756:observations[2]",
+      "original_field": "current_site_listing",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "current_site_listing",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004620:observations[0]",
+      "original_field": "legal_name;city;state;contact_address",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "contact_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004620:observations[1]",
+      "original_field": "polymer_scope;processes;manufacturing_location",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "manufacturing_location",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004080:observations[0]",
+      "original_field": "name;address;polymer_scope",
+      "original_claim_type": "scope",
+      "original_source_class": "directory",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_C"
+        },
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005235:observations[0]",
+      "original_field": "street_address;city;state;zip;products",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "products",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005235:observations[1]",
+      "original_field": "facility_activity;identity_event",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "facility_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "identity_event",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005235:observations[2]",
+      "original_field": "operator_name;polymer_scope",
+      "original_claim_type": "scope",
+      "original_source_class": "directory",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004123:observations[0]",
+      "original_field": "legal_name;hq_address;hq_city;hq_state;website",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "hq_state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "website",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004123:observations[1]",
+      "original_field": "polymer_scope",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:ORG-004123:observations[2]",
+      "original_field": "group_identity",
+      "original_claim_type": "identity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "group_identity",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005843:observations[0]",
+      "original_field": "operator;street_address;city;state;county",
+      "original_claim_type": "identity",
+      "original_source_class": "government",
+      "original_source_date": "2024-07-24",
+      "normalized": [
+        {
+          "field": "operator",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005843:observations[1]",
+      "original_field": "polymer_scope;site_processes;naics_primary;naics_primary_source_type",
+      "original_claim_type": "scope",
+      "original_source_class": "government",
+      "original_source_date": "2024-07-24",
+      "normalized": [
+        {
+          "field": "polymer_scope",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "site_processes",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "naics_primary",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2024-07-24",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[4]",
+      "original_field": "zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004651:observations[7]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[4]",
+      "original_field": "zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004642:observations[7]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[4]",
+      "original_field": "zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-09-24",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "registry",
+          "observed_date": "2024-09-24",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-09-24",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2024-09-24",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005050:observations[7]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004367:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004367:observations[1]",
+      "original_field": "published_business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "published_business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004367:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004367:observations[3]",
+      "original_field": "process_description",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "process_description",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004367:observations[4]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004378:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004378:observations[1]",
+      "original_field": "published_business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "published_business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004378:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004378:observations[4]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[4]",
+      "original_field": "zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005717:observations[7]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[4]",
+      "original_field": "county",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "activity",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[7]",
+      "original_field": "ultimate_parent_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "ultimate_parent_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005406:observations[8]",
+      "original_field": "operating_observation",
+      "original_claim_type": "liveness",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-03-28",
+      "normalized": [
+        {
+          "field": "operating_observation",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "observed_date": "2024-03-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[4]",
+      "original_field": "zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "government_filing",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[7]",
+      "original_field": "processes",
+      "original_claim_type": "activity",
+      "original_source_class": "government_filing",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004664:observations[8]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[0]",
+      "original_field": "published_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "published_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[1]",
+      "original_field": "hq_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[2]",
+      "original_field": "hq_city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "hq_city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[3]",
+      "original_field": "hq_state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "hq_state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[4]",
+      "original_field": "hq_zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "hq_zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[5]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-11-17",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2025-11-17",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004060:observations[6]",
+      "original_field": "operating_observation",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-11-17",
+      "normalized": [
+        {
+          "field": "operating_observation",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2025-11-17",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[1]",
+      "original_field": "published_current_business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "published_current_business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[2]",
+      "original_field": "historical_permitted_address",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "historical_permitted_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[3]",
+      "original_field": "county",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[4]",
+      "original_field": "parent_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-01-31",
+      "normalized": [
+        {
+          "field": "parent_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-01-31",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[5]",
+      "original_field": "primary_activity",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[6]",
+      "original_field": "historical_scope",
+      "original_claim_type": "scope",
+      "original_source_class": "government_filing",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "historical_scope",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-004762:observations[7]",
+      "original_field": "operating_observation",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-01-31",
+      "normalized": [
+        {
+          "field": "operating_observation",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-01-31",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[2]",
+      "original_field": "city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[3]",
+      "original_field": "state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[4]",
+      "original_field": "zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[5]",
+      "original_field": "operator_group",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "operator_group",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[6]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[8]",
+      "original_field": "operating_observation",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-15",
+      "normalized": [
+        {
+          "field": "operating_observation",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2024-05-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004039:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004039:observations[1]",
+      "original_field": "published_business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "published_business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004039:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004039:observations[3]",
+      "original_field": "ultimate_parent_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "ultimate_parent_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004039:observations[4]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "2015-03-25",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2015-03-25",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[1]",
+      "original_field": "hq_city",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2015-03-25",
+      "normalized": [
+        {
+          "field": "hq_city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2015-03-25",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[2]",
+      "original_field": "hq_state",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2015-03-25",
+      "normalized": [
+        {
+          "field": "hq_state",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2015-03-25",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[3]",
+      "original_field": "parent_brand_relationship",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "parent_brand_relationship",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[4]",
+      "original_field": "material",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "material",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[5]",
+      "original_field": "primary_activity",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004485:observations[6]",
+      "original_field": "operating_status",
+      "original_claim_type": "liveness",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operating_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004332:observations[0]",
+      "original_field": "name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004332:observations[1]",
+      "original_field": "business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004332:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004332:observations[3]",
+      "original_field": "website",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "website",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004346:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-06-28",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "registry",
+          "observed_date": "2024-06-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004346:observations[1]",
+      "original_field": "hq_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-06-28",
+      "normalized": [
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2024-06-28",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004346:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-06-28",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2024-06-28",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005642:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-23",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "registry",
+          "observed_date": "2024-05-23",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005642:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-23",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2024-05-23",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005642:observations[2]",
+      "original_field": "city_state_zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-23",
+      "normalized": [
+        {
+          "field": "city_state_zip",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2024-05-23",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005642:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-23",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2024-05-23",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005642:observations[4]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-05-23",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "registry",
+          "observed_date": "2024-05-23",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005862:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005862:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005862:observations[2]",
+      "original_field": "city_state_zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city_state_zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005862:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "directory",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005862:observations[4]",
+      "original_field": "processes",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-004995:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-16",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-16",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-004995:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-16",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-16",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-004995:observations[2]",
+      "original_field": "city_state_zip",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-16",
+      "normalized": [
+        {
+          "field": "city_state_zip",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-16",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-004995:observations[3]",
+      "original_field": "county",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-16",
+      "normalized": [
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-16",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-004995:observations[4]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-09-02",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2025-09-02",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-004995:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-16",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-16",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004537:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004537:observations[1]",
+      "original_field": "business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004537:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "2012-08-25",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2012-08-25",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004537:observations[3]",
+      "original_field": "product_forms",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "product_forms",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004546:observations[0]",
+      "original_field": "name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004546:observations[1]",
+      "original_field": "legal_name_as_filed",
+      "original_claim_type": "existence",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-14",
+      "normalized": [
+        {
+          "field": "legal_name_as_filed",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-14",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004546:observations[2]",
+      "original_field": "business_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "business_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004546:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004546:observations[4]",
+      "original_field": "alternate_zip",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-07-14",
+      "normalized": [
+        {
+          "field": "alternate_zip",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-07-14",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004549:observations[0]",
+      "original_field": "name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004549:observations[1]",
+      "original_field": "hq_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004549:observations[2]",
+      "original_field": "manufacturing_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "manufacturing_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004549:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004549:observations[4]",
+      "original_field": "website",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "website",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004125:observations[0]",
+      "original_field": "name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004125:observations[1]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004125:observations[2]",
+      "original_field": "mailing_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "mailing_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004125:observations[3]",
+      "original_field": "website",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "website",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004489:observations[0]",
+      "original_field": "name_as_filed",
+      "original_claim_type": "existence",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27",
+      "normalized": [
+        {
+          "field": "name_as_filed",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004489:observations[1]",
+      "original_field": "business_address",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27",
+      "normalized": [
+        {
+          "field": "business_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004489:observations[2]",
+      "original_field": "county",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27",
+      "normalized": [
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004489:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004489:observations[4]",
+      "original_field": "naics_as_printed",
+      "original_claim_type": "code",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27",
+      "normalized": [
+        {
+          "field": "naics_as_printed",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004489:observations[5]",
+      "original_field": "regulatory_activity_date",
+      "original_claim_type": "activity",
+      "original_source_class": "government_filing",
+      "original_source_date": "2025-01-21",
+      "normalized": [
+        {
+          "field": "regulatory_activity_date",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2025-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005817:observations[0]",
+      "original_field": "site_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "site_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005817:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005817:observations[2]",
+      "original_field": "city_state_zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city_state_zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005817:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005817:observations[4]",
+      "original_field": "zip_corroboration",
+      "original_claim_type": "address",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-03-11",
+      "normalized": [
+        {
+          "field": "zip_corroboration",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-03-11",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005817:observations[5]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004586:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "existence",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004586:observations[1]",
+      "original_field": "manufacturing_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "manufacturing_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004586:observations[2]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004586:observations[3]",
+      "original_field": "parent_history",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "parent_history",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004586:observations[4]",
+      "original_field": "facility_start_year",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "facility_start_year",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005567:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "parent",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005567:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005567:observations[2]",
+      "original_field": "city_state_zip",
+      "original_claim_type": "address",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "city_state_zip",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005567:observations[3]",
+      "original_field": "primary_activity",
+      "original_claim_type": "scope",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "primary_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005567:observations[4]",
+      "original_field": "manufacturing_recruitment",
+      "original_claim_type": "activity",
+      "original_source_class": "own_site",
+      "original_source_date": "",
+      "normalized": [
+        {
+          "field": "manufacturing_recruitment",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005291:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-08-25",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "registry",
+          "observed_date": "2025-08-25",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005291:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-08-25",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2025-08-25",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005291:observations[2]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-08-25",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2025-08-25",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005498:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-10-14",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-14",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005498:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-10-14",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-14",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005498:observations[2]",
+      "original_field": "products",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-10-14",
+      "normalized": [
+        {
+          "field": "products",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-14",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005498:observations[4]",
+      "original_field": "operator_history",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "operator_history",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2023-04-24",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2023-04-24",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[1]",
+      "original_field": "organization_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2023-04-24",
+      "normalized": [
+        {
+          "field": "organization_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2023-04-24",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[2]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-10-07",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-07",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[3]",
+      "original_field": "status",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-10-07",
+      "normalized": [
+        {
+          "field": "status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-07",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[4]",
+      "original_field": "polymer_relevance",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-10-07",
+      "normalized": [
+        {
+          "field": "polymer_relevance",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "observed_date": "2026-10-07",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[5]",
+      "original_field": "materials",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2021 (release)",
+      "normalized": [
+        {
+          "field": "materials",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005582:observations[0]",
+      "original_field": "city",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2018-10-26",
+      "normalized": [
+        {
+          "field": "city",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2018-10-26",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005582:observations[1]",
+      "original_field": "activity",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "Phoenix capability reference 2024-04-08; compilation includes 2026 entries",
+      "normalized": [
+        {
+          "field": "activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005582:observations[3]",
+      "original_field": "material_quality_activity",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2018-10-26",
+      "normalized": [
+        {
+          "field": "material_quality_activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2018-10-26",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-01-21",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2026-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-01-21",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[2]",
+      "original_field": "county",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-01-21",
+      "normalized": [
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[3]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-01-21",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2026-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[4]",
+      "original_field": "sic",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-01-21",
+      "normalized": [
+        {
+          "field": "sic",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2026-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[5]",
+      "original_field": "status",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-01-21",
+      "normalized": [
+        {
+          "field": "status",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "observed_date": "2026-01-21",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-04-02",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "registry",
+          "observed_date": "2026-04-02",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-04-02",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2026-04-02",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[2]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-04-02",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2026-04-02",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[4]",
+      "original_field": "parent_relationship",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "parent_relationship",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[5]",
+      "original_field": "site_contact_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "site_contact_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004596:observations[0]",
+      "original_field": "name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "primary_manufacturer_document_hosted_by_third_party",
+      "original_source_date": "2023-06-20",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2023-06-20",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004596:observations[1]",
+      "original_field": "organization_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "primary_manufacturer_document_hosted_by_third_party",
+      "original_source_date": "2023-06-20",
+      "normalized": [
+        {
+          "field": "organization_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2023-06-20",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004596:observations[2]",
+      "original_field": "products",
+      "original_claim_type": "source_reported",
+      "original_source_class": "primary_manufacturer_document_hosted_by_third_party",
+      "original_source_date": "2023-06-20",
+      "normalized": [
+        {
+          "field": "products",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2023-06-20",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004047:observations[0]",
+      "original_field": "organization_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "organization_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004047:observations[1]",
+      "original_field": "organization_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "organization_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004047:observations[2]",
+      "original_field": "historic_process",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2003-12-04",
+      "normalized": [
+        {
+          "field": "historic_process",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2003-12-04",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004047:observations[3]",
+      "original_field": "products",
+      "original_claim_type": "source_reported",
+      "original_source_class": "commercial_reseller",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "products",
+          "claim_type": "activity",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27; case closed 2024-01-18",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27; case closed 2024-01-18",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[2]",
+      "original_field": "naics_primary",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27; case closed 2024-01-18",
+      "normalized": [
+        {
+          "field": "naics_primary",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[3]",
+      "original_field": "sic",
+      "original_claim_type": "source_reported",
+      "original_source_class": "government_filing",
+      "original_source_date": "2023-07-27; case closed 2024-01-18",
+      "normalized": [
+        {
+          "field": "sic",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2023-07-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[4]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "2018-10-08",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2018-10-08",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[5]",
+      "original_field": "current_location_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "directory",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "current_location_name",
+          "claim_type": "existence",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[6]",
+      "original_field": "naics_alternate",
+      "original_claim_type": "source_reported",
+      "original_source_class": "directory",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "naics_alternate",
+          "claim_type": "code",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005945:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005945:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005945:observations[2]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005945:observations[3]",
+      "original_field": "status",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004058:observations[0]",
+      "original_field": "legal_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004058:observations[1]",
+      "original_field": "hq_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "hq_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004058:observations[2]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004058:observations[3]",
+      "original_field": "brands",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "brands",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004058:observations[4]",
+      "original_field": "status",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005838:observations[0]",
+      "original_field": "operator_name",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005838:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005838:observations[2]",
+      "original_field": "products",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "products",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005838:observations[3]",
+      "original_field": "processes",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "processes",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005838:observations[4]",
+      "original_field": "status",
+      "original_claim_type": "source_reported",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004989:observations[0]",
+      "original_field": "address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004989:observations[1]",
+      "original_field": "activity_status",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2026-01-29",
+      "normalized": [
+        {
+          "field": "activity_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-01-29",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004746:observations[0]",
+      "original_field": "operator_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-10-03",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2024-10-03",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2024-10-03",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004746:observations[1]",
+      "original_field": "naics_primary",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2024-10-03",
+      "normalized": [
+        {
+          "field": "naics_primary",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2024-10-03",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004746:observations[2]",
+      "original_field": "activity_materials",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2015-10-27",
+      "normalized": [
+        {
+          "field": "activity_materials",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2015-10-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004746:observations[3]",
+      "original_field": "county",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2015-10-27",
+      "normalized": [
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2015-10-27",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004746:observations[4]",
+      "original_field": "current_presence",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "current_presence",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004911:observations[0]",
+      "original_field": "current_operator_brand",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-07-10",
+      "normalized": [
+        {
+          "field": "current_operator_brand",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2025-07-10",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004911:observations[1]",
+      "original_field": "site",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "site",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004911:observations[2]",
+      "original_field": "address_county",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2015",
+      "normalized": [
+        {
+          "field": "address_county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004911:observations[3]",
+      "original_field": "naics_primary",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2015",
+      "normalized": [
+        {
+          "field": "naics_primary",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004911:observations[4]",
+      "original_field": "activity",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2021-07-07",
+      "normalized": [
+        {
+          "field": "activity",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "observed_date": "2021-07-07",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005695:observations[0]",
+      "original_field": "address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005695:observations[1]",
+      "original_field": "activity",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005695:observations[2]",
+      "original_field": "facility_history",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "facility_history",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004828:observations[0]",
+      "original_field": "address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004828:observations[1]",
+      "original_field": "operator_county",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "county",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004828:observations[2]",
+      "original_field": "naics_primary",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "naics_primary",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004828:observations[3]",
+      "original_field": "activity_materials",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2023-06-09",
+      "normalized": [
+        {
+          "field": "activity_materials",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2023-06-09",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005870:observations[0]",
+      "original_field": "operator_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2020-10-12",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2020-10-12",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2020-10-12",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005870:observations[1]",
+      "original_field": "activity_materials",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity_materials",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005870:observations[2]",
+      "original_field": "product",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2020-10-12",
+      "normalized": [
+        {
+          "field": "product",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2020-10-12",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004202:observations[0]",
+      "original_field": "identity_ownership",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "legal_name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "parent_relationship",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004202:observations[1]",
+      "original_field": "activity",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004202:observations[2]",
+      "original_field": "manufacturing_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "manufacturing_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004202:observations[3]",
+      "original_field": "operating_presence",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2024-02-07",
+      "normalized": [
+        {
+          "field": "operating_presence",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2024-02-07",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004450:observations[0]",
+      "original_field": "hq_city_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "hq_city_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004450:observations[1]",
+      "original_field": "activity_materials",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity_materials",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004087:observations[0]",
+      "original_field": "name_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004087:observations[1]",
+      "original_field": "activity_materials",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity_materials",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004053:observations[0]",
+      "original_field": "name_hq",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004053:observations[1]",
+      "original_field": "activity_materials",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity_materials",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004843:observations[0]",
+      "original_field": "operator",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "operator",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004843:observations[1]",
+      "original_field": "street_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004843:observations[2]",
+      "original_field": "address_variant",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "address_variant",
+          "claim_type": "address",
+          "source_class": "registry",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004843:observations[3]",
+      "original_field": "activity",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "activity",
+          "claim_type": "activity",
+          "source_class": "registry",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005635:observations[0]",
+      "original_field": "site_identity",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2023-11-15",
+      "normalized": [
+        {
+          "field": "site_identity",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2023-11-15",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005635:observations[1]",
+      "original_field": "activity_status",
+      "original_claim_type": "source_stated",
+      "original_source_class": "own_site",
+      "original_source_date": "2025-05-14",
+      "normalized": [
+        {
+          "field": "activity_status",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "observed_date": "2025-05-14",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005635:observations[2]",
+      "original_field": "street_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "directory",
+      "original_source_date": "undated",
+      "normalized": [
+        {
+          "field": "street_address",
+          "claim_type": "address",
+          "source_class": "directory",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005305:observations[0]",
+      "original_field": "operator_address_county",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2026-10-22",
+      "normalized": [
+        {
+          "field": "operator_name",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-22",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "observed_date": "2026-10-22",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005305:observations[1]",
+      "original_field": "historical_name_address",
+      "original_claim_type": "source_stated",
+      "original_source_class": "company_document_third_party_host",
+      "original_source_date": "2014",
+      "normalized": [
+        {
+          "field": "name",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        },
+        {
+          "field": "address",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "observed_date": "2026-10-30",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005305:observations[2]",
+      "original_field": "naics_primary",
+      "original_claim_type": "source_stated",
+      "original_source_class": "government_filing",
+      "original_source_date": "2018-07-18",
+      "normalized": [
+        {
+          "field": "naics_primary",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "observed_date": "2018-07-18",
+          "tier_effect": "supports_B"
+        }
+      ]
+    }
+  ],
+  "excluded_observations": [
+    {
+      "observation": "blind_batch_1_results.json:SITE-005510:observations[2]",
+      "field": "polymer_product",
+      "source_url": "https://www.bullfrogspas.com/construction/",
+      "reason": "Company-wide product construction does not establish sampled plant material/process."
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005513:observations[0]",
+      "field": "alternate_company_address",
+      "source_url": "https://www.bbb.org/us/az/phoenix/profile/wholesale-pet-supplies/conceptual-creations-llc-1126-1000005855",
+      "reason": "Different establishment; cannot evidence sampled plant identity/address."
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005843:observations[2]",
+      "field": "relocation_plan",
+      "source_url": "https://www.tceq.texas.gov/assets/public/permitting/air/reports/applications/35574-tc.pdf",
+      "reason": "Conditional relocation is not a dated closure/liveness outcome; retain in blind review."
+    },
+    {
+      "observation": "blind_batch_1_results.json:SITE-005843:observations[3]",
+      "field": "current_company_manufacturing_location;current_company_name",
+      "source_url": "https://terra-vaults.com/",
+      "reason": "Different city/establishment; do not attach as sampled-site address or liveness."
+    },
+    {
+      "observation": "blind_batch_2_results.json:ORG-004378:observations[3]",
+      "field": "processes",
+      "source_url": "https://www.coulterone.com/",
+      "reason": "Researcher classification proposal, not source-stated vocabulary."
+    },
+    {
+      "observation": "blind_batch_2_results.json:SITE-005309:observations[7]",
+      "field": "employee_band_site",
+      "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+      "reason": "Headcount is a Nice-field observation, not a witnessed primary activity; retained in frozen observations."
+    },
+    {
+      "observation": "blind_batch_3_results.json:ORG-004346:observations[3]",
+      "field": "certification",
+      "source_url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+      "reason": "Certification/qualification/legal standing is not itself operating activity; no suitable primary-activity claim asserted."
+    },
+    {
+      "observation": "blind_batch_3_results.json:SITE-005862:observations[5]",
+      "field": "site_certification_claim",
+      "source_url": "https://www.chemtrusion.com/aboutus.htm",
+      "reason": "Certification/qualification/legal standing is not itself operating activity; no suitable primary-activity claim asserted."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005291:observations[3]",
+      "field": "status",
+      "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+      "reason": "Certification/qualification/legal standing is not itself operating activity; no suitable primary-activity claim asserted."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005291:observations[4]",
+      "field": "ring_recommendation",
+      "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005498:observations[3]",
+      "field": "status",
+      "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+      "reason": "Certification/qualification/legal standing is not itself operating activity; no suitable primary-activity claim asserted."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005498:observations[5]",
+      "field": "ring_recommendation",
+      "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004227:observations[6]",
+      "field": "ring_recommendation",
+      "source_url": "https://jobs.baxter.com/en/job/bajos-de-haina/eng-ii-plastic-process/152/99452805200",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005582:observations[2]",
+      "field": "products",
+      "source_url": "https://www.rtx.com/collinsaerospace/what-we-do/industries/business-aviation/cabin/evacuation-systems",
+      "reason": "Group product family not a plant-specific manufacturing witness."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004878:observations[6]",
+      "field": "ring_recommendation",
+      "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[3]",
+      "field": "status",
+      "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+      "reason": "Certification/qualification/legal standing is not itself operating activity; no suitable primary-activity claim asserted."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005924:observations[6]",
+      "field": "ring_recommendation",
+      "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004596:observations[3]",
+      "field": "ring_recommendation",
+      "source_url": "https://www.wohlcoatings.com/wp-content/uploads/2024/11/A-13Y-743-SDS.pdf",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004047:observations[4]",
+      "field": "parent_relationship_candidate",
+      "source_url": "https://www.buyritebeauty.com/brands/marble-products/",
+      "reason": "Potential relationship lacks settled factual linkage."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-004771:observations[7]",
+      "field": "ring_recommendation",
+      "source_url": "https://www.amesburytruth.com/careers/documents/Urethane%20Machine%20Operator.pdf",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005945:observations[4]",
+      "field": "ring_recommendation",
+      "source_url": "https://ryvec.com/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:ORG-004058:observations[5]",
+      "field": "ring_recommendation",
+      "source_url": "https://www.sinclair-rush.com/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005838:observations[5]",
+      "field": "ring_recommendation",
+      "source_url": "https://www.synmarandcastech.com/solid-surface/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005618:observations[0]",
+      "field": "organization_scope",
+      "source_url": "https://www.toraypmc.com/",
+      "reason": "Group scope cannot establish sampled establishment activity."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005618:observations[1]",
+      "field": "other_address",
+      "source_url": "https://rmadocs.venturacounty.gov/images/pdf/eh/record-search/cupa_facilities.pdf",
+      "reason": "Other establishment address, not sampled establishment."
+    },
+    {
+      "observation": "blind_batch_4_results.json:SITE-005618:observations[2]",
+      "field": "contact_page_result",
+      "source_url": "https://www.toraypmc.com/contact-us",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004989:observations[2]",
+      "field": "ring",
+      "source_url": "https://americanexcelsior.com/news/american-excelsior-company-invests-2-0-million-in-urethane-foam-molding-expansion-at-their-sheboygan-wisconsin-facility/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004746:observations[5]",
+      "field": "ring",
+      "source_url": "https://extapps.dec.ny.gov/data/dar/afs/permits/929400020400001_r0.pdf",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004911:observations[5]",
+      "field": "ring",
+      "source_url": "https://www.opportunitylouisiana.gov/news/continental-structural-plastics-announces-webster-parish-expansion",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005695:observations[3]",
+      "field": "ring",
+      "source_url": "https://completehomeconcepts.com/marble/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-004828:observations[4]",
+      "field": "ring",
+      "source_url": "https://assets.danfoss.com/approvals/latest/517571/ID531143369300-0101.pdf",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004450:observations[2]",
+      "field": "ring",
+      "source_url": "https://mwcooling.com/products/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004087:observations[2]",
+      "field": "ring",
+      "source_url": "https://www.rsprocessing.com/",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:ORG-004053:observations[2]",
+      "field": "ring",
+      "source_url": "https://www.sekisuivoltek.com/about/employment/production-operator",
+      "reason": "Researcher inference or fetch observation, not independently witnessed fact."
+    },
+    {
+      "observation": "blind_batch_5_results.json:SITE-005305:observations[3]",
+      "field": "product_context",
+      "source_url": "https://linatex.dk/wp-content/uploads/2018/05/Linatex-premium-rubber-1.pdf",
+      "reason": "Group-wide products do not establish sampled establishment manufacture."
+    }
+  ]
+}

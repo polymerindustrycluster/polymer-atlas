@@ -1,0 +1,1339 @@
+{
+  "batch": 4,
+  "accessed_date": "2026-10-30",
+  "blindness_statement": "Read only identity_batch_4.json and required AGENTS/SCHEMA/QUEUE. No canonical record/evidence rows, sealed sampler evaluation metadata or other audit results read. Existing identity names/address/domain were search keys only. Verdicts are independent and frozen before comparison.",
+  "method": "Search results used as discovery only; substantive pages/documents opened. Source dates preserved; undated pages are not dated production inspections. primary_fetch_count counts distinct primary resource routes including failed attempts; repeated open/find of same resource is one route. Commercial reseller and EDC directory excluded from primary count. No closure/nonexistence REJECT, so EFAST2 reject gate was not invoked. Ring values are recommendations applying existing schema, not new owner rulings. Unresolved legal/parent questions not self-settled.",
+  "records": [
+    {
+      "record_id": "SITE-005291",
+      "verdict": "VERIFIED",
+      "reason": "Company-hosted third-party certificate identifies the Harrisonville manufacturing establishment and epoxy product scope.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "ACCI Specialty Materials LLC",
+          "claim_type": "source_reported",
+          "summary": "Certificate holder names the LLC.",
+          "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+          "source_name": "Intertek ISO 14001 certificate, ACCI-hosted",
+          "source_class": "own_site",
+          "source_date": "2025-08-25",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "1701 West Vine Street, Harrisonville, MO 64701",
+          "claim_type": "source_reported",
+          "summary": "Certificate main-site address.",
+          "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+          "source_name": "Intertek ISO 14001 certificate, ACCI-hosted",
+          "source_class": "own_site",
+          "source_date": "2025-08-25",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Manufacture and distribution of epoxy curing agents, specialty epoxy resins and additives",
+          "claim_type": "source_reported",
+          "summary": "Certificate scope explicitly identifies polymer materials manufacture.",
+          "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+          "source_name": "Intertek ISO 14001 certificate, ACCI-hosted",
+          "source_class": "own_site",
+          "source_date": "2025-08-25",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "certified operating scope; certificate valid through 2028-08-24",
+          "claim_type": "source_reported",
+          "summary": "Certification supports activity as of issuance, not a real-time production inspection.",
+          "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+          "source_name": "Intertek ISO 14001 certificate, ACCI-hosted",
+          "source_class": "own_site",
+          "source_date": "2025-08-25",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 2,
+          "claim_type": "researcher_inferred",
+          "summary": "Formulated epoxy materials fit existing Ring 2 rule; recommendation, not a new owner ruling.",
+          "source_url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+          "source_name": "Intertek ISO 14001 certificate, ACCI-hosted",
+          "source_class": "own_site",
+          "source_date": "2025-08-25",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Obtain establishment-specific NAICS filing or infer with explicit provenance."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Geographic/permit source explicitly naming county."
+        },
+        {
+          "field": "subtype",
+          "settling_fact": "Distinguish standalone resin polymerization from formulation with process permit."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://ac-catalysts.com/DOCS/NEWS/0223117_LLC_14001.pdf",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://dnr.mo.gov/sites/dnr/files/vfc/2023/09/main/acci-specialty-materials%2C%20092023-005.pdf",
+          "outcome": "failed route; inaccessible",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://dnr.mo.gov/sites/dnr/files/vfc/2023/09/main/acci-specialty-materials-harrisonville%2C%20092023-005.pdf",
+          "outcome": "failed route; cache miss",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "SITE-005498",
+      "verdict": "VERIFIED",
+      "reason": "DLA identifies Amrize as a qualified coating manufacturer and plant at the exact Houston address; history independently explains the legacy ITW name.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "AMRIZE BUILDING ENVELOPE LLC",
+          "claim_type": "source_reported",
+          "summary": "DLA manufacturer and plant listing, CAGE 1ACS6.",
+          "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+          "source_name": "DLA Qualified Products Database, MIL-PRF-24667C",
+          "source_class": "government_filing",
+          "source_date": "2026-10-14",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "12055 Cutten Rd, Houston, TX 77066-1813",
+          "claim_type": "source_reported",
+          "summary": "Government product-qualification listing identifies this plant address.",
+          "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+          "source_name": "DLA Qualified Products Database, MIL-PRF-24667C",
+          "source_class": "government_filing",
+          "source_date": "2026-10-14",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "products",
+          "value": "Nonskid coating systems, primers and toppings",
+          "claim_type": "source_reported",
+          "summary": "MIL-PRF-24667C qualification lists manufacturer products; not evidence of every corporate product at Houston.",
+          "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+          "source_name": "DLA Qualified Products Database, MIL-PRF-24667C",
+          "source_class": "government_filing",
+          "source_date": "2026-10-14",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "active qualification / SAM active at listing date",
+          "claim_type": "source_reported",
+          "summary": "DLA listing reports green certification and no stop-ship; this is administrative activity, not a site visit.",
+          "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+          "source_name": "DLA Qualified Products Database, MIL-PRF-24667C",
+          "source_class": "government_filing",
+          "source_date": "2026-10-14",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "operator_history",
+          "value": "ITW acquisition 2005; Holcim acquisition October 2022; Amrize separation June 2025",
+          "claim_type": "source_reported",
+          "summary": "Company history explains ITW/Amrize lineage. Its Norcross production statement is NOT attributed to Houston.",
+          "source_url": "https://tackytape.com/about-us/",
+          "source_name": "Tacky Tape corporate history",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 2,
+          "claim_type": "researcher_inferred",
+          "summary": "Industrial coating formulation fits existing Ring 2 category; exact onsite process detail remains unproven.",
+          "source_url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+          "source_name": "DLA Qualified Products Database, MIL-PRF-24667C",
+          "source_class": "government_filing",
+          "source_date": "2026-10-14",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Establishment filing explicitly disclosing code and provenance."
+        },
+        {
+          "field": "processes",
+          "settling_fact": "Houston-specific technical sheet or permit explaining actual coating manufacturing steps."
+        },
+        {
+          "field": "county",
+          "settling_fact": "County-specific government address evidence."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://qpldocs.dla.mil/search/print_govt_mfg.aspx?govt=26694926",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://tackytape.com/about-us/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "ORG-004227",
+      "verdict": "VERIFIED",
+      "reason": "Named legal entity is independently located in Deerfield; its own current job posting explicitly names Baxter Healthcare Corporation and captive plastic-process engineering.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "Baxter Healthcare Corporation",
+          "claim_type": "source_reported",
+          "summary": "Privacy notice identifies legal data controller, separately from collective affiliates.",
+          "source_url": "https://econnect.baxter.com/cornerstone/Privacy_English.html",
+          "source_name": "Baxter Healthcare Corporation privacy notice",
+          "source_class": "own_site",
+          "source_date": "2023-04-24",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "organization_address",
+          "value": "One Baxter Parkway, Deerfield, Illinois 60015",
+          "claim_type": "source_reported",
+          "summary": "Legal-entity contact location; not separately asserted as a manufacturing site.",
+          "source_url": "https://econnect.baxter.com/cornerstone/Privacy_English.html",
+          "source_name": "Baxter Healthcare Corporation privacy notice",
+          "source_class": "own_site",
+          "source_date": "2023-04-24",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Injection molding and extrusion; plastic-part manufacturing engineering",
+          "claim_type": "source_reported",
+          "summary": "Job explicitly names Baxter Healthcare Corporation team, Haina plant and corporate plastic projects.",
+          "source_url": "https://jobs.baxter.com/en/job/bajos-de-haina/eng-ii-plastic-process/152/99452805200",
+          "source_name": "Baxter Eng II Plastic Process job 207562",
+          "source_class": "own_site",
+          "source_date": "2026-10-07",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "current engineering recruitment October 2026",
+          "claim_type": "source_reported",
+          "summary": "Dated company posting provides a current organizational activity signal.",
+          "source_url": "https://jobs.baxter.com/en/job/bajos-de-haina/eng-ii-plastic-process/152/99452805200",
+          "source_name": "Baxter Eng II Plastic Process job 207562",
+          "source_class": "own_site",
+          "source_date": "2026-10-07",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "polymer_relevance",
+          "value": "Captive plastic-process equipment selection, manufacturing sequences and process development",
+          "claim_type": "source_reported",
+          "summary": "Organization-level A evidence and plastics decision responsibility are direct; no inference of a Deerfield molding plant.",
+          "source_url": "https://jobs.baxter.com/en/job/bajos-de-haina/eng-ii-plastic-process/152/99452805200",
+          "source_name": "Baxter Eng II Plastic Process job 207562",
+          "source_class": "own_site",
+          "source_date": "2026-10-07",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "materials",
+          "value": "VIAFLO proprietary container not made with PVC, DEHP or natural rubber latex",
+          "claim_type": "source_reported",
+          "summary": "Product material exclusions establish material-selection relevance; do not infer actual resin from exclusions.",
+          "source_url": "https://investor.baxter.com/investors/events-and-news/news/press-release-details/2021/Baxter-Announces-U.S.-FDA-Approval-and-Launch-of-Ready-to-use-Cardiovascular-Medicine-Norepinephrine-in-Premix-Formulation/default.aspx",
+          "source_name": "Baxter VIAFLO norepinephrine launch",
+          "source_class": "own_site",
+          "source_date": "2021 (release)",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 4,
+          "claim_type": "researcher_inferred",
+          "summary": "Diversified medical OEM; A supported by captive processes/plastics engineers and C by process/equipment decisions at Haina. Organization-level recommendation only; no new geographic or grain ruling.",
+          "source_url": "https://jobs.baxter.com/en/job/bajos-de-haina/eng-ii-plastic-process/152/99452805200",
+          "source_name": "Baxter Eng II Plastic Process job 207562",
+          "source_class": "own_site",
+          "source_date": "2026-10-07",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "hq_city",
+          "settling_fact": "Current corporate filing explicitly calling the Deerfield address headquarters; privacy notice is only legal contact."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Legal-entity NAICS filing; no corporate code inferred from one plant."
+        },
+        {
+          "field": "ring4_test",
+          "settling_fact": "Owner confirmation if organization-level A/C evidence from foreign captive manufacturing is insufficient under this nationwide frame."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://econnect.baxter.com/cornerstone/Privacy_English.html",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://jobs.baxter.com/en/job/bajos-de-haina/eng-ii-plastic-process/152/99452805200",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://investor.baxter.com/investors/events-and-news/news/press-release-details/2021/Baxter-Announces-U.S.-FDA-Approval-and-Launch-of-Ready-to-use-Cardiovascular-Medicine-Norepinephrine-in-Premix-Formulation/default.aspx",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.baxter.com/our-story/our-businesses",
+          "outcome": "failed route; inaccessible",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 4
+    },
+    {
+      "record_id": "SITE-005582",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Settling fact: an accessible exact-address source linking 3414 S 5th Street to current evacuation-system operations and polymer-material manufacture/specification. Phoenix operations are supported, but the exact establishment and material test were not independently settled within six primary routes.",
+      "observations": [
+        {
+          "field": "city",
+          "value": "Phoenix, Arizona",
+          "claim_type": "source_reported",
+          "summary": "Supplier-quality manual identifies Phoenix evacuation systems operation, historically Goodrich and UTAS.",
+          "source_url": "https://www.rtx.com/collinsaerospace/-/media/CA/suppliers/hutc/a-9000-rev-l.pdf?hash=E06D8B4C596C74FDAEC129B2B4E498DC&rev=eb76693d2a5b4fa98980c8dae0a00cc2",
+          "source_name": "UTAS/Goodrich A-9000 Revision L",
+          "source_class": "own_site",
+          "source_date": "2018-10-26",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "activity",
+          "value": "Evacuation-slide maintenance capability in Phoenix",
+          "claim_type": "source_reported",
+          "summary": "Many slide part numbers list Phoenix MRO; street address is not supplied.",
+          "source_url": "https://prd-sc102-cdn.rtx.com/-/media/ca/support/interiors/collins-aerospace-interiors-mro-capability-list.pdf?hash=12BB977BFBD3AB043C7EC7327082DBC8&rev=44c6a335e75f4c25a4f2c24755993cc6",
+          "source_name": "Collins Interiors MRO Capability List Rev V",
+          "source_class": "own_site",
+          "source_date": "Phoenix capability reference 2024-04-08; compilation includes 2026 entries",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "products",
+          "value": "Inflatable slides, slide/rafts and life rafts using lightweight fabric",
+          "claim_type": "source_reported",
+          "summary": "Company product page supports aircraft safety use but does not disclose polymer composition.",
+          "source_url": "https://www.rtx.com/collinsaerospace/what-we-do/industries/business-aviation/cabin/evacuation-systems",
+          "source_name": "Collins Evacuation Systems",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "material_quality_activity",
+          "value": "Fabric acceptance testing and retained fabric samples",
+          "claim_type": "source_reported",
+          "summary": "Supplier controls establish material specification context, not proof of onsite polymer transformation.",
+          "source_url": "https://www.rtx.com/collinsaerospace/-/media/CA/suppliers/hutc/a-9000-rev-l.pdf?hash=E06D8B4C596C74FDAEC129B2B4E498DC&rev=eb76693d2a5b4fa98980c8dae0a00cc2",
+          "source_name": "UTAS/Goodrich A-9000 Revision L",
+          "source_class": "own_site",
+          "source_date": "2018-10-26",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "street_address",
+          "settling_fact": "Company certificate, permit or filing that explicitly ties 3414 S 5th St to the operation."
+        },
+        {
+          "field": "polymer_scope",
+          "settling_fact": "Site-specific coated-fabric/resin process evidence or complete Ring 4 2-of-3 evidence."
+        },
+        {
+          "field": "operator_name",
+          "settling_fact": "Current exact-establishment operating legal entity."
+        },
+        {
+          "field": "status",
+          "settling_fact": "Current exact-address operations source."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Address-specific filing with code provenance."
+        },
+        {
+          "field": "ring",
+          "settling_fact": "Do not settle until actual material/process and establishment linkage is established."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.rtx.com/collinsaerospace/-/media/CA/suppliers/hutc/a-9000-rev-l.pdf?hash=E06D8B4C596C74FDAEC129B2B4E498DC&rev=eb76693d2a5b4fa98980c8dae0a00cc2",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://prd-sc102-cdn.rtx.com/-/media/ca/support/interiors/collins-aerospace-interiors-mro-capability-list.pdf?hash=12BB977BFBD3AB043C7EC7327082DBC8&rev=44c6a335e75f4c25a4f2c24755993cc6",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.rtx.com/collinsaerospace/what-we-do/industries/business-aviation/cabin/evacuation-systems",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.airbus.com/sites/g/files/jlcbta136/files/2023-04/Airbus-Approved-suppliers-list.pdf",
+          "outcome": "failed route; 404",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://downloads.regulations.gov/FAA-2011-0223-0013/attachment_3.pdf",
+          "outcome": "failed route; 403",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.maricopa.gov/DocumentCenter/View/4973/2011-Periodic-Emissions-Inventory-Ozone-PDF",
+          "outcome": "failed route; 404",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 6
+    },
+    {
+      "record_id": "SITE-004878",
+      "verdict": "VERIFIED",
+      "reason": "Recent government permit notice explicitly identifies polystyrene-insulation manufacturing at the exact Channahon address.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "DDP Specialty Electronic Materials US LLC",
+          "claim_type": "source_reported",
+          "summary": "Notice names this entity; legal suffix/number is transcribed from the independent source, not normalized to the supplied search key.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "26332 South Frontage Road West, Channahon, IL 60410",
+          "claim_type": "source_reported",
+          "summary": "Facility location in draft discharge-permit notice.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "county",
+          "value": "Will",
+          "claim_type": "source_reported",
+          "summary": "Notice names Will County.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Extruded polystyrene insulation manufacturing",
+          "claim_type": "source_reported",
+          "summary": "Explicit manufacturing description.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "sic",
+          "value": "3086",
+          "claim_type": "source_reported",
+          "summary": "Government notice code, not NAICS.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "operating facility represented in 2026 permit reissuance application",
+          "claim_type": "source_reported",
+          "summary": "Draft notice supports ongoing regulated activity; does not establish final permit issuance.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 1,
+          "claim_type": "researcher_inferred",
+          "summary": "Physical extrusion of polymer insulation meets existing Ring 1 test.",
+          "source_url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "source_name": "Illinois EPA draft NPDES IL0037851 public notice",
+          "source_class": "government_filing",
+          "source_date": "2026-01-21",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "operator_legal_linkage",
+          "settling_fact": "Filing resolving exact subsidiary legal designation and any US 5 relationship; no parent reassignment inferred."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "NAICS disclosure or explicit researcher inference; SIC 3086 is not a NAICS code."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://webapps.illinois.gov/EPA/WebSiteApi/api/PublicNotices/GetDocument/35206",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "SITE-005924",
+      "verdict": "VERIFIED",
+      "reason": "Current certificate and company contact page establish exact Germantown polymer-material manufacturing site, with independent company history linking KitPackers and Ellsworth.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "ResinLab LLC",
+          "claim_type": "source_reported",
+          "summary": "Certificate identifies holder.",
+          "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+          "source_name": "DNV ResinLab ISO 9001 certificate, company-hosted",
+          "source_class": "own_site",
+          "source_date": "2026-04-02",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "N109 W13300 Ellsworth Drive, Germantown, WI 53022",
+          "claim_type": "source_reported",
+          "summary": "Certified manufacturing address.",
+          "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+          "source_name": "DNV ResinLab ISO 9001 certificate, company-hosted",
+          "source_class": "own_site",
+          "source_date": "2026-04-02",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Design, development and manufacture of encapsulants, adhesives and specialty polymers",
+          "claim_type": "source_reported",
+          "summary": "Certificate scope for industrial/electronics applications.",
+          "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+          "source_name": "DNV ResinLab ISO 9001 certificate, company-hosted",
+          "source_class": "own_site",
+          "source_date": "2026-04-02",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "certificate valid 2026-04-07 through 2029-04-06",
+          "claim_type": "source_reported",
+          "summary": "Current certification with manufacturing scope.",
+          "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+          "source_name": "DNV ResinLab ISO 9001 certificate, company-hosted",
+          "source_class": "own_site",
+          "source_date": "2026-04-02",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "parent_relationship",
+          "value": "Ellsworth acquired KitPackers in 1984; ResinLab division and KitPackers combined operations; both moved to Germantown in 2012",
+          "claim_type": "source_reported",
+          "summary": "Company chronology supports brand/division relationship, not legal-merger identity.",
+          "source_url": "https://www.kitpackers.com/about/history/",
+          "source_name": "KitPackers company history",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "site_contact_address",
+          "value": "N109 W13300 Ellsworth Drive, Germantown, WI 53022",
+          "claim_type": "source_reported",
+          "summary": "Current contact page corroborates location.",
+          "source_url": "https://www.resinlab.com/contact-us/",
+          "source_name": "ResinLab contact page",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 2,
+          "claim_type": "researcher_inferred",
+          "summary": "Formulated polymers sold by chemistry/performance fit existing Ring 2 rule.",
+          "source_url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+          "source_name": "DNV ResinLab ISO 9001 certificate, company-hosted",
+          "source_class": "own_site",
+          "source_date": "2026-04-02",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Establishment-specific NAICS provenance."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Explicit county source."
+        },
+        {
+          "field": "operator_legal_linkage",
+          "settling_fact": "Legal filing if a unique operator must distinguish ResinLab LLC and KitPackers shared operations."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.kitpackers.com/about/history/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.resinlab.com/wp-content/uploads/2018/06/ResinLab-ISO-Certification.pdf",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.resinlab.com/contact-us/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004596",
+      "verdict": "VERIFIED",
+      "reason": "Manufacturer-authored safety sheet names Kempen Paint Company and its East Carondelet address and commercial enamel product; confirms organization existence and coating-manufacturer scope.",
+      "observations": [
+        {
+          "field": "name",
+          "value": "Kempen Paint Company",
+          "claim_type": "source_reported",
+          "summary": "SDS identifies manufacturer rather than an anonymous reseller.",
+          "source_url": "https://www.wohlcoatings.com/wp-content/uploads/2024/11/A-13Y-743-SDS.pdf",
+          "source_name": "Kempen-authored Yellow Enamel A13Y743 SDS, Wohl-hosted",
+          "source_class": "primary_manufacturer_document_hosted_by_third_party",
+          "source_date": "2023-06-20",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "organization_address",
+          "value": "2500 State Street, East Carondelet, IL 62240",
+          "claim_type": "source_reported",
+          "summary": "Manufacturer address; not automatically corporate headquarters.",
+          "source_url": "https://www.wohlcoatings.com/wp-content/uploads/2024/11/A-13Y-743-SDS.pdf",
+          "source_name": "Kempen-authored Yellow Enamel A13Y743 SDS, Wohl-hosted",
+          "source_class": "primary_manufacturer_document_hosted_by_third_party",
+          "source_date": "2023-06-20",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "products",
+          "value": "Yellow enamel coating A13Y743 for professional use",
+          "claim_type": "source_reported",
+          "summary": "Authored product safety documentation supplies direct coating-product evidence.",
+          "source_url": "https://www.wohlcoatings.com/wp-content/uploads/2024/11/A-13Y-743-SDS.pdf",
+          "source_name": "Kempen-authored Yellow Enamel A13Y743 SDS, Wohl-hosted",
+          "source_class": "primary_manufacturer_document_hosted_by_third_party",
+          "source_date": "2023-06-20",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 2,
+          "claim_type": "researcher_inferred",
+          "summary": "Industrial enamel manufacturer falls under existing paints/coatings category; binder chemistry is not disclosed and is not invented.",
+          "source_url": "https://www.wohlcoatings.com/wp-content/uploads/2024/11/A-13Y-743-SDS.pdf",
+          "source_name": "Kempen-authored Yellow Enamel A13Y743 SDS, Wohl-hosted",
+          "source_class": "primary_manufacturer_document_hosted_by_third_party",
+          "source_date": "2023-06-20",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "status",
+          "settling_fact": "Recent operating or shipment evidence after the 2023 SDS."
+        },
+        {
+          "field": "hq_city",
+          "settling_fact": "Source explicitly designating the manufacturer contact as headquarters."
+        },
+        {
+          "field": "materials",
+          "settling_fact": "Technical sheet identifying functional resin/binder, if required for narrower Ring 2 categorization."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Entity-specific code disclosure or explicit inference."
+        },
+        {
+          "field": "website",
+          "settling_fact": "Own official domain; document is hosted by Wohl, which alone does not prove parentage."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.wohlcoatings.com/wp-content/uploads/2024/11/A-13Y-743-SDS.pdf",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "ORG-004047",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Settling fact: manufacturer-authored material/process documentation tying Marble Products Wichita to polymer-bound cultured-marble production, and owner decision if division-versus-parent grain matters. Existence is corroborated; resin composition was not independently established from primary sources.",
+      "observations": [
+        {
+          "field": "organization_name",
+          "value": "Marble Products",
+          "claim_type": "source_reported",
+          "summary": "Takara Belmont own locations page lists Marble Products among offices/locations.",
+          "source_url": "https://beauty.takarabelmont.com/showrooms/",
+          "source_name": "Takara Belmont Offices and Locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "organization_address",
+          "value": "2080 S. Edwards Street, Wichita, KS 67213",
+          "claim_type": "source_reported",
+          "summary": "Current own-network location listing.",
+          "source_url": "https://beauty.takarabelmont.com/showrooms/",
+          "source_name": "Takara Belmont Offices and Locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "historic_process",
+          "value": "Shampoo basin manufacturing",
+          "claim_type": "source_reported",
+          "summary": "2003 government notice identifies Marble Products as owner/operator of the Wichita plant; old evidence is not current production proof.",
+          "source_url": "https://www.kssos.org/publications/register/2003/Vol_22_No_49_December_4_2003_p_2049-2072.pdf",
+          "source_name": "Kansas Register air-permit public notice",
+          "source_class": "government_filing",
+          "source_date": "2003-12-04",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "products",
+          "value": "Cultured-marble shampoo bowls",
+          "claim_type": "source_reported",
+          "summary": "Commercial seller describes product line and division relationship; labeled secondary, not manufacturer disclosure.",
+          "source_url": "https://www.buyritebeauty.com/brands/marble-products/",
+          "source_name": "Buy-Rite Beauty Marble Products brand catalog",
+          "source_class": "commercial_reseller",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "parent_relationship_candidate",
+          "value": "Takara Belmont division",
+          "claim_type": "source_reported",
+          "summary": "Reseller explicitly calls the brand a division; own-network listing corroborates association but not exact legal form.",
+          "source_url": "https://www.buyritebeauty.com/brands/marble-products/",
+          "source_name": "Buy-Rite Beauty Marble Products brand catalog",
+          "source_class": "commercial_reseller",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "polymer_scope",
+          "settling_fact": "Manufacturer technical sheet confirming resin-bonded cultured-marble manufacturing rather than inferred from a generic material name."
+        },
+        {
+          "field": "legal_name",
+          "settling_fact": "Corporate filing resolving Co/Inc/division legal identity."
+        },
+        {
+          "field": "grain",
+          "settling_fact": "Owner resolution if parent-only hierarchy treats a Takara division as non-separate; no DUPLICATE_OF without held terminal."
+        },
+        {
+          "field": "status",
+          "settling_fact": "Recent explicit manufacturer production evidence."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Provenance-bearing NAICS source."
+        },
+        {
+          "field": "hq_city",
+          "settling_fact": "Source explicitly designating Wichita as headquarters, not merely a location."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://beauty.takarabelmont.com/showrooms/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.kssos.org/publications/register/2003/Vol_22_No_49_December_4_2003_p_2049-2072.pdf",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.buyritebeauty.com/brands/marble-products/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://beauty.takarabelmont.com/products/100-marble/",
+          "outcome": "failed route; inaccessible",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "SITE-004771",
+      "verdict": "VERIFIED",
+      "reason": "Government inspection establishes exact Statesville establishment; company job document independently establishes urethane forming operations there. Current local directory lists Quanex at the same address.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "Amesbury Group Inc.",
+          "claim_type": "source_reported",
+          "summary": "OSHA inspected establishment legal name.",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1686492.015",
+          "source_name": "OSHA inspection 1686492.015",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27; case closed 2024-01-18",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "125 Amesbury Truth Dr, Statesville, NC 28625",
+          "claim_type": "source_reported",
+          "summary": "Inspection site address; mailing ZIP is separately 28677, not substituted.",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1686492.015",
+          "source_name": "OSHA inspection 1686492.015",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27; case closed 2024-01-18",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "naics_primary",
+          "value": "326199",
+          "claim_type": "source_reported",
+          "summary": "government_filing provenance; OSHA establishment code, not company disclosure.",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1686492.015",
+          "source_name": "OSHA inspection 1686492.015",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27; case closed 2024-01-18",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "sic",
+          "value": "3089",
+          "claim_type": "source_reported",
+          "summary": "Government inspection code.",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1686492.015",
+          "source_name": "OSHA inspection 1686492.015",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27; case closed 2024-01-18",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Urethane forming lines, molds, chemical mixing and foams",
+          "claim_type": "source_reported",
+          "summary": "Statesville-specific company manufacturing role; dated 2018 and not independently refreshed by a new process permit.",
+          "source_url": "https://www.amesburytruth.com/careers/documents/Urethane%20Machine%20Operator.pdf",
+          "source_name": "AmesburyTruth Statesville Urethane Machine Operator",
+          "source_class": "own_site",
+          "source_date": "2018-10-08",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "current_location_name",
+          "value": "Quanex",
+          "claim_type": "source_reported",
+          "summary": "Local EDC lists Quanex at 125 Amesbury Truth Drive.",
+          "source_url": "https://iredelledc.com/business/",
+          "source_name": "Iredell EDC business directory",
+          "source_class": "directory",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "naics_alternate",
+          "value": "332321",
+          "claim_type": "source_reported",
+          "summary": "directory_assigned provenance; directory code differs from historical OSHA code. No automatic code-error conclusion.",
+          "source_url": "https://iredelledc.com/business/",
+          "source_name": "Iredell EDC business directory",
+          "source_class": "directory",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 1,
+          "claim_type": "researcher_inferred",
+          "summary": "Polymer foaming/forming meets existing Ring 1 test.",
+          "source_url": "https://www.amesburytruth.com/careers/documents/Urethane%20Machine%20Operator.pdf",
+          "source_name": "AmesburyTruth Statesville Urethane Machine Operator",
+          "source_class": "own_site",
+          "source_date": "2018-10-08",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "status",
+          "settling_fact": "Current manufacturing-process confirmation; OSHA case closure is NOT a plant closure."
+        },
+        {
+          "field": "operator_legal_linkage",
+          "settling_fact": "Current legal filing explaining Amesbury Group/Quanex relationship at this establishment."
+        },
+        {
+          "field": "naics_primary_current",
+          "settling_fact": "Current process-specific filing resolving OSHA 326199 versus EDC 332321; both provenance labels retained."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1686492.015",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://iredelledc.com/business/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.amesburytruth.com/careers/documents/Urethane%20Machine%20Operator.pdf",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-005945",
+      "verdict": "VERIFIED",
+      "reason": "Company page directly connects Anaheim manufacturing location to liquid pigment dispersions and polyurethane binders.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "Ryvec Inc.",
+          "claim_type": "source_reported",
+          "summary": "Corporate page identifies manufacturer.",
+          "source_url": "https://ryvec.com/",
+          "source_name": "Ryvec corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "251 E. Palais Rd, Anaheim, CA 92805",
+          "claim_type": "source_reported",
+          "summary": "Company location/contact address.",
+          "source_url": "https://ryvec.com/",
+          "source_name": "Ryvec corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Manufacture of liquid pigment dispersions and moisture-cured aromatic polyurethane binders",
+          "claim_type": "source_reported",
+          "summary": "Company discusses manufacturing and laboratory capacity and its 1996 move with 2001 adjacent-building expansion.",
+          "source_url": "https://ryvec.com/",
+          "source_name": "Ryvec corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "active public manufacturer offering; undated page",
+          "claim_type": "source_reported",
+          "summary": "Current accessible product and contact offering is not a dated plant inspection.",
+          "source_url": "https://ryvec.com/",
+          "source_name": "Ryvec corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 2,
+          "claim_type": "researcher_inferred",
+          "summary": "Polymer binders and pigment dispersions fit existing formulation category.",
+          "source_url": "https://ryvec.com/",
+          "source_name": "Ryvec corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Entity/establishment-specific code provenance."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Government county address source."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://ryvec.com/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "ORG-004058",
+      "verdict": "VERIFIED",
+      "reason": "Own corporate and locations pages identify Sinclair & Rush as a plastic multiprocessor with Arnold headquarters and multiple processing sites.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "Sinclair & Rush Inc.",
+          "claim_type": "source_reported",
+          "summary": "Corporate site identifies business and manufacturing brands.",
+          "source_url": "https://www.sinclair-rush.com/",
+          "source_name": "Sinclair & Rush corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "hq_address",
+          "value": "111 Manufacturers Drive, Arnold, MO 63010",
+          "claim_type": "source_reported",
+          "summary": "Locations page explicitly designates headquarters.",
+          "source_url": "https://www.sinclair-rush.com/locations/",
+          "source_name": "Sinclair & Rush locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Thermoforming, dip molding, injection molding, thermoplastic extrusion and foam extrusion",
+          "claim_type": "source_reported",
+          "summary": "Site-by-site capabilities: Arnold thermoforming/dip/injection; Fenton extrusion. Not all processes assigned to HQ building.",
+          "source_url": "https://www.sinclair-rush.com/locations/",
+          "source_name": "Sinclair & Rush locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "brands",
+          "value": "StockCap; VisiPak; GripWorks; Indepak",
+          "claim_type": "source_reported",
+          "summary": "Own corporate brand portfolio; no duplicate IDs inferred.",
+          "source_url": "https://www.sinclair-rush.com/",
+          "source_name": "Sinclair & Rush corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "active multinational plastic-products offering",
+          "claim_type": "source_reported",
+          "summary": "Undated own page supports current marketing activity.",
+          "source_url": "https://www.sinclair-rush.com/",
+          "source_name": "Sinclair & Rush corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 1,
+          "claim_type": "researcher_inferred",
+          "summary": "Plastic products are company marketed identity; matches existing Ring 1 headline-product test.",
+          "source_url": "https://www.sinclair-rush.com/",
+          "source_name": "Sinclair & Rush corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Organization-level NAICS provenance; multiple processes do not justify an unlabeled code."
+        },
+        {
+          "field": "hq_county",
+          "settling_fact": "Explicit county/address authority."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.sinclair-rush.com/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.sinclair-rush.com/locations/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-005838",
+      "verdict": "VERIFIED",
+      "reason": "Own pages tie Jonesboro location to custom fabrication and describe solid-surface material as mineral/pigment/resin composite.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "Synmar & Castech",
+          "claim_type": "source_reported",
+          "summary": "Company name on manufacturer/fabricator site; exact legal suffix not supplied.",
+          "source_url": "https://www.synmarandcastech.com/",
+          "source_name": "Synmar & Castech corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "street_address",
+          "value": "8750 Roberts Road, Jonesboro, GA 30238",
+          "claim_type": "source_reported",
+          "summary": "Company footer/contact location.",
+          "source_url": "https://www.synmarandcastech.com/",
+          "source_name": "Synmar & Castech corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "products",
+          "value": "Custom cast-marble bathroom products and solid-surface countertops",
+          "claim_type": "source_reported",
+          "summary": "Own product range includes sinks and shower/bath products.",
+          "source_url": "https://www.synmarandcastech.com/cast-marble/",
+          "source_name": "Synmar & Castech cast-marble products",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "processes",
+          "value": "Custom fabrication of mineral-, pigment- and resin-based solid surface",
+          "claim_type": "source_reported",
+          "summary": "Own page describes composition and custom shaping; does not claim it manufactures Wilsonart feedstock.",
+          "source_url": "https://www.synmarandcastech.com/solid-surface/",
+          "source_name": "Synmar & Castech solid-surface fabrication",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "status",
+          "value": "active public product/contact offering; undated",
+          "claim_type": "source_reported",
+          "summary": "COVID-era appointment notice means webpage freshness is not independent proof of recent onsite production.",
+          "source_url": "https://www.synmarandcastech.com/",
+          "source_name": "Synmar & Castech corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "ring_recommendation",
+          "value": 1,
+          "claim_type": "researcher_inferred",
+          "summary": "Shaping/fabrication of resin-containing solid surface fits existing Ring 1 fabrication test.",
+          "source_url": "https://www.synmarandcastech.com/solid-surface/",
+          "source_name": "Synmar & Castech solid-surface fabrication",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "legal_name",
+          "settling_fact": "Business filing for exact operating entity."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Establishment-specific NAICS source."
+        },
+        {
+          "field": "status_current",
+          "settling_fact": "Dated recent operating signal at Jonesboro."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Government county address source."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.synmarandcastech.com/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.synmarandcastech.com/cast-marble/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.synmarandcastech.com/solid-surface/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "SITE-005618",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Settling fact: exact-address establishment evidence linking Toray to 460 Calle San Pablo Unit B and its actual process. Company-wide composites activity and a different Camarillo address do not verify this sampled site.",
+      "observations": [
+        {
+          "field": "organization_scope",
+          "value": "Carbon/glass fiber-reinforced thermoplastic composite materials and formed components",
+          "claim_type": "source_reported",
+          "summary": "Own company site describes prepregs, laminates, forming and other composite processing; not localized to the sampled address.",
+          "source_url": "https://www.toraypmc.com/",
+          "source_name": "Toray Performance Materials corporate site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "other_address",
+          "value": "1150 Calle Suerte, Camarillo",
+          "claim_type": "source_reported",
+          "summary": "County lists Toray Performance Materials Corp, facility FA0005428, at this DIFFERENT address. This neither disproves nor replaces the sampled site.",
+          "source_url": "https://rmadocs.venturacounty.gov/images/pdf/eh/record-search/cupa_facilities.pdf",
+          "source_name": "Ventura County CUPA facilities listing",
+          "source_class": "government_filing",
+          "source_date": "2024-09-30",
+          "accessed_date": "2026-10-30"
+        },
+        {
+          "field": "contact_page_result",
+          "value": "No exact sampled-address corroboration obtained",
+          "claim_type": "research_observation",
+          "summary": "Page opened but did not settle 460 Calle San Pablo. Absence in page is not nonexistence evidence.",
+          "source_url": "https://www.toraypmc.com/contact-us",
+          "source_name": "Toray Performance Materials contact page",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30"
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "street_address",
+          "settling_fact": "Dated Toray permit, lease, certificate or location page explicitly naming 460 Calle San Pablo Unit B."
+        },
+        {
+          "field": "operator_name",
+          "settling_fact": "Exact-site operating entity and any legacy name documented by permit/filing."
+        },
+        {
+          "field": "processes",
+          "settling_fact": "Exact-site manufacturing, warehouse or other function; no corporate-scope inheritance."
+        },
+        {
+          "field": "status",
+          "settling_fact": "Dated exact-address operating signal."
+        },
+        {
+          "field": "ring",
+          "settling_fact": "Exact-establishment process evidence before ring recommendation."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Exact-establishment NAICS source."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.toraypmc.com/",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.toraypmc.com/contact-us",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://rmadocs.venturacounty.gov/images/pdf/eh/record-search/cupa_facilities.pdf",
+          "outcome": "opened; substantive page/document text inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    }
+  ]
+}

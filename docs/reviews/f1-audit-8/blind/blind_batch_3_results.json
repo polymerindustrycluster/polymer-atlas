@@ -1,0 +1,1416 @@
+{
+  "audit": "F1 blind audit8",
+  "batch": 3,
+  "blindness": "Only identity_batch_3.json and governing instructions consulted; no canonical data/evidence rows, sealed sampling metadata, prior verification packets or source notes read. Search keys are not evidence.",
+  "observation_date": "2026-10-30",
+  "verdict_definition": "VERIFIED establishes independent existence and polymer scope only; unresolved field facts remain explicit and must not be graded agreement automatically.",
+  "effort_accounting": "Primary fetch counts count distinct primary page retrievals plus route retries. Reopening already retrieved text for line inspection and local PDF rendering are not additional sources. Public port directory is separate corroboration. All13records received independent source review.",
+  "records": [
+    {
+      "record_id": "ORG-004332",
+      "verdict": "VERIFIED",
+      "reason": "ABT publicly offers precast polymer-concrete drainage products under its own identity at a Troutman business address; polymer product scope is directly disclosed.",
+      "observations": [
+        {
+          "field": "name",
+          "value": "ABT",
+          "claim_type": "existence",
+          "summary": "Own catalog is branded ABT.",
+          "source_url": "https://abtdrains.com/catalog/",
+          "source_name": "ABT public product catalog",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "business_address",
+          "value": "259 Murdock Rd, Troutman, NC28166",
+          "claim_type": "address",
+          "summary": "Own catalog supplies this business contact address.",
+          "source_url": "https://abtdrains.com/catalog/",
+          "source_name": "ABT public product catalog",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Precast polymer-concrete drainage products, including PolyDrain",
+          "claim_type": "scope",
+          "summary": "Own product category makes polymer-concrete product scope explicit.",
+          "source_url": "https://abtdrains.com/catalog/poly-drain-precast-polymer-concrete-draingage",
+          "source_name": "ABT precast polymer-concrete product category",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "website",
+          "value": "https://abtdrains.com/",
+          "claim_type": "existence",
+          "summary": "Company-domain catalog confirms identity.",
+          "source_url": "https://abtdrains.com/catalog/",
+          "source_name": "ABT public product catalog",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "hq_address",
+          "settling_fact": "An explicit headquarters designation; a business contact/manufacturing address is not silently promoted to HQ."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://abtdrains.com/catalog/",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://abtdrains.com/catalog/poly-drain-precast-polymer-concrete-draingage",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://abtdrains.com/",
+          "outcome": "retrieved homepage; drainage manufacturer identity, no additional dated facts used",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004346",
+      "verdict": "VERIFIED",
+      "reason": "The company-published multi-site certificate explicitly identifies American Renolit Corporation HQ and manufacture of plastic films.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "American Renolit Corporation",
+          "claim_type": "existence",
+          "summary": "Named certified organization.",
+          "source_url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+          "source_name": "American Renolit published Bureau Veritas certificate US019775",
+          "source_class": "own_site",
+          "source_date": "2024-06-28",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Company-hosted third-party certification; certificate expires 2027-08-06, not proof every intervening operating day."
+        },
+        {
+          "field": "hq_address",
+          "value": "1207 E. Lincolnway, LaPorte, IN46350, USA",
+          "claim_type": "address",
+          "summary": "Certificate site1 is explicitly marked HQ.",
+          "source_url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+          "source_name": "American Renolit published Bureau Veritas certificate US019775",
+          "source_class": "own_site",
+          "source_date": "2024-06-28",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Company-hosted third-party certification; certificate expires 2027-08-06, not proof every intervening operating day."
+        },
+        {
+          "field": "primary_activity",
+          "value": "Plastic-film manufacture, design, sales, warehousing and distribution",
+          "claim_type": "scope",
+          "summary": "HQ certified scope includes film manufacture; second site301 Enterprise Drive is distribution/warehouse only.",
+          "source_url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+          "source_name": "American Renolit published Bureau Veritas certificate US019775",
+          "source_class": "own_site",
+          "source_date": "2024-06-28",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Company-hosted third-party certification; certificate expires 2027-08-06, not proof every intervening operating day."
+        },
+        {
+          "field": "certification",
+          "value": "ISO9001:2015; US019775, expires2027-08-06",
+          "claim_type": "activity",
+          "summary": "Certificate provides a dated manufacturing-scope witness, not audit-date daily-operation proof.",
+          "source_url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+          "source_name": "American Renolit published Bureau Veritas certificate US019775",
+          "source_class": "own_site",
+          "source_date": "2024-06-28",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Company-hosted third-party certification; certificate expires 2027-08-06, not proof every intervening operating day."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        }
+      ],
+      "primary_fetch_count": 1,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "SITE-005642",
+      "verdict": "VERIFIED",
+      "reason": "Bakelite company-hosted BSI certificate ties resin manufacture specifically to6200 Campground Road Louisville, not merely to corporate capabilities.",
+      "observations": [
+        {
+          "field": "site_name",
+          "value": "Bakelite Synthetics",
+          "claim_type": "existence",
+          "summary": "Certificate names this Louisville establishment.",
+          "source_url": "https://bakelite.com/wp-content/uploads/2024/12/ISO-9001-Certificate_06-09-2027EN-Louisville-KY.pdf",
+          "source_name": "Bakelite published BSI certificate FM740334",
+          "source_class": "own_site",
+          "source_date": "2024-05-23",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Effective 2024-06-10, expires 2027-06-09. Third-party certification hosted by the company."
+        },
+        {
+          "field": "street_address",
+          "value": "6200 Campground Road",
+          "claim_type": "address",
+          "summary": "Site-specific certificate address.",
+          "source_url": "https://bakelite.com/wp-content/uploads/2024/12/ISO-9001-Certificate_06-09-2027EN-Louisville-KY.pdf",
+          "source_name": "Bakelite published BSI certificate FM740334",
+          "source_class": "own_site",
+          "source_date": "2024-05-23",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Effective 2024-06-10, expires 2027-06-09. Third-party certification hosted by the company."
+        },
+        {
+          "field": "city_state_zip",
+          "value": "Louisville, KY40216",
+          "claim_type": "address",
+          "summary": "Site-specific certificate locality.",
+          "source_url": "https://bakelite.com/wp-content/uploads/2024/12/ISO-9001-Certificate_06-09-2027EN-Louisville-KY.pdf",
+          "source_name": "Bakelite published BSI certificate FM740334",
+          "source_class": "own_site",
+          "source_date": "2024-05-23",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Effective 2024-06-10, expires 2027-06-09. Third-party certification hosted by the company."
+        },
+        {
+          "field": "primary_activity",
+          "value": "Manufacture and delivery of phenolic/amino resins plus formaldehyde derivatives",
+          "claim_type": "scope",
+          "summary": "Certificate distinguishes Louisville activities from Riegelwood activities.",
+          "source_url": "https://bakelite.com/wp-content/uploads/2024/12/ISO-9001-Certificate_06-09-2027EN-Louisville-KY.pdf",
+          "source_name": "Bakelite published BSI certificate FM740334",
+          "source_class": "own_site",
+          "source_date": "2024-05-23",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Effective 2024-06-10, expires 2027-06-09. Third-party certification hosted by the company."
+        },
+        {
+          "field": "operator_name",
+          "value": "Bakelite Synthetics",
+          "claim_type": "parent",
+          "summary": "This is the operator style on the certificate; legal relationship to Bakelite Chemicals is not separately established.",
+          "source_url": "https://bakelite.com/wp-content/uploads/2024/12/ISO-9001-Certificate_06-09-2027EN-Louisville-KY.pdf",
+          "source_name": "Bakelite published BSI certificate FM740334",
+          "source_class": "own_site",
+          "source_date": "2024-05-23",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Effective 2024-06-10, expires 2027-06-09. Third-party certification hosted by the company."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        },
+        {
+          "field": "org_id/operator_legal_link",
+          "settling_fact": "A legal-entity/operating-name record connecting Bakelite Synthetics to the supplied Bakelite Chemicals organization."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://bakelite.com/wp-content/uploads/2024/12/ISO-9001-Certificate_06-09-2027EN-Louisville-KY.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://bakelite.com/",
+          "outcome": "retrieved corporate homepage; not propagated as site evidence",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://louisvilleky.gov/sites/default/files/2025-12/20250902-rtc-Bakelite.pdf",
+          "outcome": "403 Forbidden; availability failure only; snippet not used",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "SITE-005862",
+      "verdict": "VERIFIED",
+      "reason": "Chemtrusion lists the exact Jeffersonville address, names the location in manufacturing recruitment, and a port tenant directory specifically identifies resin processing there.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "Chemtrusion",
+          "claim_type": "parent",
+          "summary": "Company lists the Jeffersonville establishment under its own name.",
+          "source_url": "https://www.chemtrusion.com/contactProcess.php",
+          "source_name": "Chemtrusion contact addresses",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "street_address",
+          "value": "1403 Port Rd.",
+          "claim_type": "address",
+          "summary": "Exact street independently retrieved.",
+          "source_url": "https://www.chemtrusion.com/contactProcess.php",
+          "source_name": "Chemtrusion contact addresses",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "city_state_zip",
+          "value": "Jeffersonville, IN47130-8411",
+          "claim_type": "address",
+          "summary": "Own contact page supplies locality and ZIP+4.",
+          "source_url": "https://www.chemtrusion.com/contactProcess.php",
+          "source_name": "Chemtrusion contact addresses",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Plastic resin processing at1403 Port Road",
+          "claim_type": "scope",
+          "summary": "Port directory explicitly attaches processing activity to this address; it separately lists Mytex distribution at the shared address.",
+          "source_url": "https://www.anacostia.com/wp-content/uploads/2022/06/JeffersonvillePortFlyer.pdf",
+          "source_name": "Port of Indiana Jeffersonville tenant directory hosted by Anacostia",
+          "source_class": "directory",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Undated directory; historical corroboration, not current plant-operation proof."
+        },
+        {
+          "field": "processes",
+          "value": "Blending, mixing and extrusion in compounded-product manufacturing",
+          "claim_type": "activity",
+          "summary": "Company recruiting text identifies these activities and invites applications to Jeffersonville and Houston; exact equipment allocation not asserted.",
+          "source_url": "https://www.chemtrusion.com/careers.htm",
+          "source_name": "Chemtrusion manufacturing careers",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "site_certification_claim",
+          "value": "Jeffersonville: TS16949:2016, certificate62320",
+          "claim_type": "activity",
+          "summary": "Company specifically identifies the Jeffersonville operation; no claim that certificate is independently current.",
+          "source_url": "https://www.chemtrusion.com/aboutus.htm",
+          "source_name": "Chemtrusion about and site certifications",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.chemtrusion.com/contactProcess.php",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.chemtrusion.com/aboutus.htm",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.chemtrusion.com/careers.htm",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.anacostia.com/wp-content/uploads/2022/06/JeffersonvillePortFlyer.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.chemtrusion.com/",
+          "outcome": "retrieved home page; company-wide scope only",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.chemtrusion.com/news.htm",
+          "outcome": "retrieved; generic industry links, no added site evidence",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 5,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "SITE-004995",
+      "verdict": "VERIFIED",
+      "reason": "NC DEQ2026 notice identifies Covation Kinston at the exact Grifton address and county; Covation2025 disclosure explicitly ties Kinston to Sorona polymer production.",
+      "observations": [
+        {
+          "field": "site_name",
+          "value": "Covation Biomaterials Kinston Plant",
+          "claim_type": "existence",
+          "summary": "Dated renewal notice names this facility.",
+          "source_url": "https://www.deq.nc.gov/news/events/comment-period-opens-covation-biomaterials-kinston-plant-npdes-wastewater-permit-no-nc0003760",
+          "source_name": "NC DEQ Covation Kinston NPDES renewal notice",
+          "source_class": "government_filing",
+          "source_date": "2026-07-16",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "street_address",
+          "value": "4693 Highway11 North",
+          "claim_type": "address",
+          "summary": "NC DEQ exact facility location.",
+          "source_url": "https://www.deq.nc.gov/news/events/comment-period-opens-covation-biomaterials-kinston-plant-npdes-wastewater-permit-no-nc0003760",
+          "source_name": "NC DEQ Covation Kinston NPDES renewal notice",
+          "source_class": "government_filing",
+          "source_date": "2026-07-16",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "city_state_zip",
+          "value": "Grifton, NC28530",
+          "claim_type": "address",
+          "summary": "Government location, not a mailing-city inference.",
+          "source_url": "https://www.deq.nc.gov/news/events/comment-period-opens-covation-biomaterials-kinston-plant-npdes-wastewater-permit-no-nc0003760",
+          "source_name": "NC DEQ Covation Kinston NPDES renewal notice",
+          "source_class": "government_filing",
+          "source_date": "2026-07-16",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "county",
+          "value": "Lenoir",
+          "claim_type": "address",
+          "summary": "DEQ explicitly locates this wastewater-treatment plant in Lenoir County.",
+          "source_url": "https://www.deq.nc.gov/news/events/comment-period-opens-covation-biomaterials-kinston-plant-npdes-wastewater-permit-no-nc0003760",
+          "source_name": "NC DEQ Covation Kinston NPDES renewal notice",
+          "source_class": "government_filing",
+          "source_date": "2026-07-16",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Sorona PTT polymer manufacture at Kinston",
+          "claim_type": "scope",
+          "summary": "Owner release identifies Kinston production line start and2018 capacity expansion; presented within continuing Sorona business.",
+          "source_url": "https://covationbio.com/press-releases/sorona-registered-trademark-polymer-marks-25-years-of-sustainable-innovation-with-release-of-new-life-cycle-assessment-results-at-intertextile-shanghai",
+          "source_name": "Covation Sorona 25th-anniversary release",
+          "source_class": "own_site",
+          "source_date": "2025-09-02",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "operator_name",
+          "value": "Covation Biomaterials",
+          "claim_type": "parent",
+          "summary": "Current renewal applicant is the Covation Kinston plant.",
+          "source_url": "https://www.deq.nc.gov/news/events/comment-period-opens-covation-biomaterials-kinston-plant-npdes-wastewater-permit-no-nc0003760",
+          "source_name": "NC DEQ Covation Kinston NPDES renewal notice",
+          "source_class": "government_filing",
+          "source_date": "2026-07-16",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.deq.nc.gov/news/events/comment-period-opens-covation-biomaterials-kinston-plant-npdes-wastewater-permit-no-nc0003760",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://covationbio.com/press-releases/sorona-registered-trademark-polymer-marks-25-years-of-sustainable-innovation-with-release-of-new-life-cycle-assessment-results-at-intertextile-shanghai",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://covationbio.com/",
+          "outcome": "retrieved home page; company polymer portfolio not substituted for site evidence",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004537",
+      "verdict": "VERIFIED",
+      "reason": "Electri-Glass own site and visually read technical drawing establish the company at Jackson and its fiberglass-reinforced polyester products.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "Electri-Glass, Inc.",
+          "claim_type": "existence",
+          "summary": "Own identity in logo and contact block.",
+          "source_url": "https://www.electri-glass.com/",
+          "source_name": "Electri-Glass product home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "business_address",
+          "value": "63 Compass Drive, Jackson, TN38301",
+          "claim_type": "address",
+          "summary": "Own site business contact address.",
+          "source_url": "https://www.electri-glass.com/",
+          "source_name": "Electri-Glass product home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Composite hillholder/premanufactured wall made of fiberglass-reinforced polyester",
+          "claim_type": "scope",
+          "summary": "Technical product drawing visually read; material is explicit.",
+          "source_url": "https://www.electri-glass.com/download/EGHH-494632_07_15.pdf",
+          "source_name": "Electri-Glass composite hillholder drawing EGHH-494632",
+          "source_class": "own_site",
+          "source_date": "2012-08-25",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "HTTP200 download, Poppler rendered page 1, visually read",
+          "source_note": "web.open returned zero text and screenshot cache miss; actual PDF fetched HTTP200 and visually read. Old drawing remains linked public product documentation; its date is not current operating evidence."
+        },
+        {
+          "field": "product_forms",
+          "value": "Electrical distribution transformer pads, vaults and cabinet bases",
+          "claim_type": "activity",
+          "summary": "Current public product offer, undated.",
+          "source_url": "https://www.electri-glass.com/",
+          "source_name": "Electri-Glass product home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "hq_address",
+          "settling_fact": "An explicit headquarters designation; a business contact/manufacturing address is not silently promoted to HQ."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.electri-glass.com/",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.electri-glass.com/download/EGHH-494632_07_15.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "HTTP200 download, Poppler rendered page 1, visually read"
+        },
+        {
+          "url": "https://www.electri-glass.com/download/EGHH-494632_07_15.pdf",
+          "outcome": "web parser0lines and screenshot cache miss; alternate ordinary HTTP200 retrieval succeeded, PDF visually inspected",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004546",
+      "verdict": "VERIFIED",
+      "reason": "Jewell Hudgens own page directly discloses rubber/polyurethane roller manufacturing and custom urethane casting; FMCSA independently matches the Machine Co name to its street.",
+      "observations": [
+        {
+          "field": "name",
+          "value": "Jewell Hudgens, Inc.",
+          "claim_type": "existence",
+          "summary": "Own public operating style.",
+          "source_url": "https://jewellhudgens.com/",
+          "source_name": "Jewell Hudgens own company home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "legal_name_as_filed",
+          "value": "JEWELL HUDGENS MACHINE CO",
+          "claim_type": "existence",
+          "summary": "Government carrier filing names supplied identity at same street.",
+          "source_url": "https://safer.fmcsa.dot.gov/query.asp?original_query_param=NAME&original_query_string=JEWELL+HUDGENS+MACHINE+CO&query_param=USDOT&query_string=340293&query_type=queryCarrierSnapshot&searchtype=ANY",
+          "source_name": "FMCSA SAFER USDOT340293 Jewell Hudgens Machine Co",
+          "source_class": "government_filing",
+          "source_date": "2026-07-14",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "MCS150 form date2025-02-12. Active carrier status is not manufacturing liveness proof."
+        },
+        {
+          "field": "business_address",
+          "value": "1107 North Raguet, Lufkin, TX75904",
+          "claim_type": "address",
+          "summary": "Own physical-address block distinguished from PO-box mailing block.",
+          "source_url": "https://jewellhudgens.com/",
+          "source_name": "Jewell Hudgens own company home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Rubber/polyurethane industrial rollers and custom-cast urethane parts",
+          "claim_type": "scope",
+          "summary": "Explicit primary offer supports polymer-processing relevance.",
+          "source_url": "https://jewellhudgens.com/",
+          "source_name": "Jewell Hudgens own company home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "alternate_zip",
+          "value": "75903",
+          "claim_type": "address",
+          "summary": "FMCSA physical-address ZIP conflicts with own-site75904; no ZIP correction settled.",
+          "source_url": "https://safer.fmcsa.dot.gov/query.asp?original_query_param=NAME&original_query_string=JEWELL+HUDGENS+MACHINE+CO&query_param=USDOT&query_string=340293&query_type=queryCarrierSnapshot&searchtype=ANY",
+          "source_name": "FMCSA SAFER USDOT340293 Jewell Hudgens Machine Co",
+          "source_class": "government_filing",
+          "source_date": "2026-07-14",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "MCS150 form date2025-02-12. Active carrier status is not manufacturing liveness proof."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "hq_address",
+          "settling_fact": "An explicit headquarters designation; a business contact/manufacturing address is not silently promoted to HQ."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        },
+        {
+          "field": "legal_name_and_zip",
+          "settling_fact": "State entity/legal-name history and USPS/parcel-address confirmation to reconcile Inc./Machine Co and ZIP75904/75903."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://jewellhudgens.com/",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://safer.fmcsa.dot.gov/query.asp?original_query_param=NAME&original_query_string=JEWELL+HUDGENS+MACHINE+CO&query_param=USDOT&query_string=340293&query_type=queryCarrierSnapshot&searchtype=ANY",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        }
+      ],
+      "primary_fetch_count": 2,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004549",
+      "verdict": "VERIFIED",
+      "reason": "Mallard Creek Polymers own site identifies water-based emulsion-polymer manufacturing and explicitly distinguishes corporate office from manufacturing facility.",
+      "observations": [
+        {
+          "field": "name",
+          "value": "Mallard Creek Polymers",
+          "claim_type": "existence",
+          "summary": "Own operating name.",
+          "source_url": "https://www.mcpolymers.com/",
+          "source_name": "Mallard Creek Polymers own home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "hq_address",
+          "value": "8901 Research Drive, Charlotte, NC28262",
+          "claim_type": "address",
+          "summary": "Explicit corporate-office designation.",
+          "source_url": "https://offers.mcpolymers.com/about/contact-us",
+          "source_name": "Mallard Creek Polymers corporate-office and plant addresses",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "manufacturing_address",
+          "value": "2800 Morehead Road, Charlotte, NC28262",
+          "claim_type": "address",
+          "summary": "Separate manufacturing address, not conflated with HQ.",
+          "source_url": "https://offers.mcpolymers.com/about/contact-us",
+          "source_name": "Mallard Creek Polymers corporate-office and plant addresses",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Water-based emulsion-polymer manufacturing and custom specialty formulations",
+          "claim_type": "scope",
+          "summary": "Explicit own disclosure.",
+          "source_url": "https://www.mcpolymers.com/",
+          "source_name": "Mallard Creek Polymers own home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "website",
+          "value": "https://www.mcpolymers.com/",
+          "claim_type": "existence",
+          "summary": "Working www host; bare host failed in web tool.",
+          "source_url": "https://www.mcpolymers.com/",
+          "source_name": "Mallard Creek Polymers own home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.mcpolymers.com/",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://offers.mcpolymers.com/about/contact-us",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://mcpolymers.com/",
+          "outcome": "web tool inaccessible; www host worked; no absence inference",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004125",
+      "verdict": "VERIFIED",
+      "reason": "Premier Foam own website directly describes specialty foam manufacture and industries served; contact address is explicitly mailing-only.",
+      "observations": [
+        {
+          "field": "name",
+          "value": "Premier Foam",
+          "claim_type": "existence",
+          "summary": "Own public identity.",
+          "source_url": "https://www.premierfoaminc.com/",
+          "source_name": "Premier Foam official home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Specialty foam manufacture for bedding, furniture, packaging, marine and technical applications",
+          "claim_type": "scope",
+          "summary": "Own stated manufacturing offer; drainable and energy-absorbing foam also disclosed.",
+          "source_url": "https://www.premierfoaminc.com/",
+          "source_name": "Premier Foam official home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "mailing_address",
+          "value": "374 Corinth Road, Newnan, GA30263",
+          "claim_type": "address",
+          "summary": "Mailing address only; not promoted to headquarters.",
+          "source_url": "https://www.premierfoaminc.com/contact.htm",
+          "source_name": "Premier Foam contact page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Explicitly a mailing address, not an asserted headquarters."
+        },
+        {
+          "field": "website",
+          "value": "https://www.premierfoaminc.com/",
+          "claim_type": "existence",
+          "summary": "Working own site.",
+          "source_url": "https://www.premierfoaminc.com/",
+          "source_name": "Premier Foam official home page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "hq_address",
+          "settling_fact": "An explicit headquarters designation; a business contact/manufacturing address is not silently promoted to HQ."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        },
+        {
+          "field": "legal_name",
+          "settling_fact": "Company legal footer or state filing establishing exact Inc. suffix."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.premierfoaminc.com/",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.premierfoaminc.com/contact.htm",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.premierfoaminc.com/about.htm",
+          "outcome": "retrieved but image-dominated; no readable additional facts",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004489",
+      "verdict": "VERIFIED",
+      "reason": "NC DEQ independently identifies the Royale/Royal Comfort Seating operation in Taylorsville and explicitly describes foam cutting/fabrication; exact LLC versus Inc. legal styling remains unresolved.",
+      "observations": [
+        {
+          "field": "name_as_filed",
+          "value": "Royal/Royale Comfort Seating, Inc. - PlantNo.1",
+          "claim_type": "existence",
+          "summary": "Review varies Royal/Royale but identifies same facility0200089.",
+          "source_url": "https://www.deq.nc.gov/media/41338/download?attachment=",
+          "source_name": "NC DEQ Royal Comfort Seating application0200089.22B renewal review",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Date of last inspection; draft review contains unfilled issue dates and later2023 chronology. Not a final issued permit. Facility address140 in this later review."
+        },
+        {
+          "field": "business_address",
+          "value": "140 Alspaugh Dam Road, Taylorsville, NC28681",
+          "claim_type": "address",
+          "summary": "Later review prints140;2018review printed141, so preserve chronology rather than arbitrary normalization.",
+          "source_url": "https://www.deq.nc.gov/media/41338/download?attachment=",
+          "source_name": "NC DEQ Royal Comfort Seating application0200089.22B renewal review",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Date of last inspection; draft review contains unfilled issue dates and later2023 chronology. Not a final issued permit. Facility address140 in this later review."
+        },
+        {
+          "field": "county",
+          "value": "Alexander",
+          "claim_type": "address",
+          "summary": "Permit review explicitly gives county for establishment.",
+          "source_url": "https://www.deq.nc.gov/media/41338/download?attachment=",
+          "source_name": "NC DEQ Royal Comfort Seating application0200089.22B renewal review",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Date of last inspection; draft review contains unfilled issue dates and later2023 chronology. Not a final issued permit. Facility address140 in this later review."
+        },
+        {
+          "field": "primary_activity",
+          "value": "Foam cutting and gluing into upholstered-furniture cushions",
+          "claim_type": "scope",
+          "summary": "Agency describes foam fabrication, not merely furniture sales.",
+          "source_url": "https://www.deq.nc.gov/media/41338/download?attachment=",
+          "source_name": "NC DEQ Royal Comfort Seating application0200089.22B renewal review",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Date of last inspection; draft review contains unfilled issue dates and later2023 chronology. Not a final issued permit. Facility address140 in this later review."
+        },
+        {
+          "field": "naics_as_printed",
+          "value": "32614 / Polystyrene Foam Product Manufacturing",
+          "claim_type": "code",
+          "summary": "Recorded verbatim5-digit code/title from agency draft; do not sharpen to six digits or propagate site code as corporate primary.",
+          "source_url": "https://www.deq.nc.gov/media/41338/download?attachment=",
+          "source_name": "NC DEQ Royal Comfort Seating application0200089.22B renewal review",
+          "source_class": "government_filing",
+          "source_date": "2023-07-27",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Date of last inspection; draft review contains unfilled issue dates and later2023 chronology. Not a final issued permit. Facility address140 in this later review."
+        },
+        {
+          "field": "regulatory_activity_date",
+          "value": "2025-01-21",
+          "claim_type": "activity",
+          "summary": "Agency assessment continues to identify this named plant; not proof of audit-date operations.",
+          "source_url": "https://www.deq.nc.gov/media/47308/download?attachment=",
+          "source_name": "NC DEQ civil penalty assessment list Aug2024-Jan2025",
+          "source_class": "government_filing",
+          "source_date": "2025-01-21",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "Assessment of recordkeeping violation names plant1; regulatory contact, not independent proof of manufacture on audit date."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "hq_address",
+          "settling_fact": "An explicit headquarters designation; a business contact/manufacturing address is not silently promoted to HQ."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        },
+        {
+          "field": "legal_name",
+          "settling_fact": "State registry/official entity record resolving supplied LLC versus government Inc. operating style."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Current company/government corporate-grain six-digit code; draft site code32614 is not an automatic corporate assignment."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://files.nc.gov/ncdeq/Air%20Quality/permits/2018_Public_Notice_Documents/Draft_Reviews/20180523_Royal_Comfort_rev.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.deq.nc.gov/media/41338/download?attachment=",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.deq.nc.gov/media/47308/download?attachment=",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        }
+      ],
+      "primary_fetch_count": 3,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "SITE-005817",
+      "verdict": "VERIFIED",
+      "reason": "Scougal own history specifically identifies McCarran as a bridge-bearing manufacturing plant and lists885 Denmark Drive; current MDOT corroborates address and polymer-bearing product class.",
+      "observations": [
+        {
+          "field": "site_name",
+          "value": "Scougal Rubber McCarran manufacturing plant",
+          "claim_type": "existence",
+          "summary": "Own company history identifies plant opened2010 for bridge-bearing production.",
+          "source_url": "https://www.scougalrubber.com/company",
+          "source_name": "Scougal Rubber company and locations page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "street_address",
+          "value": "885 Denmark Dr",
+          "claim_type": "address",
+          "summary": "Own location listing.",
+          "source_url": "https://www.scougalrubber.com/company",
+          "source_name": "Scougal Rubber company and locations page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "city_state_zip",
+          "value": "McCarran, NV89437",
+          "claim_type": "address",
+          "summary": "Own site uses89437; identity key uses89434, which is not treated as truth.",
+          "source_url": "https://www.scougalrubber.com/company",
+          "source_name": "Scougal Rubber company and locations page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Bridge bearing manufacture and molded rubber products",
+          "claim_type": "scope",
+          "summary": "McCarran-specific history establishes plant scope, not company-wide propagation.",
+          "source_url": "https://www.scougalrubber.com/company",
+          "source_name": "Scougal Rubber company and locations page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "zip_corroboration",
+          "value": "89437",
+          "claim_type": "address",
+          "summary": "Maryland DOT2026producer list agrees89437; other search-discovered DOT lists use89434 but were not opened and not counted as evidence.",
+          "source_url": "https://www.roads.maryland.gov/OMT/bearingse.pdf",
+          "source_name": "Maryland DOT elastomeric structural bearing producer list",
+          "source_class": "government_filing",
+          "source_date": "2026-03-11",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": "McCarran status Plant Evaluation Required, not evidence of closure."
+        },
+        {
+          "field": "operator_name",
+          "value": "Scougal Rubber",
+          "claim_type": "parent",
+          "summary": "Own site names company operation.",
+          "source_url": "https://www.scougalrubber.com/company",
+          "source_name": "Scougal Rubber company and locations page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        },
+        {
+          "field": "zip",
+          "settling_fact": "USPS/address-exact postal record or operator clarification to settle89437 versus the search-key89434; no correction solely from city name."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.scougalrubber.com/company",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        },
+        {
+          "url": "https://www.roads.maryland.gov/OMT/bearingse.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        }
+      ],
+      "primary_fetch_count": 2,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "ORG-004586",
+      "verdict": "VERIFIED",
+      "reason": "SWARCO own company profile names the Colorado Paint LLC and its traffic-paint/adhesive manufacturing operation in Aurora.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "SWARCO Colorado Paint, LLC",
+          "claim_type": "existence",
+          "summary": "Official group-company profile.",
+          "source_url": "https://www.swarco.com/companies/swarco-colorado-paint-llc",
+          "source_name": "Swarco Colorado Paint company page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "manufacturing_address",
+          "value": "2851 Walden Street, Aurora, CO80011",
+          "claim_type": "address",
+          "summary": "Explicit manufacturing facility; warehouse separately17900 E32nd Avenue Suite40.",
+          "source_url": "https://www.swarco.com/companies/swarco-colorado-paint-llc",
+          "source_name": "Swarco Colorado Paint company page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "primary_activity",
+          "value": "Manufacture of waterborne/solventborne traffic paints, multicomponent systems and adhesives",
+          "claim_type": "scope",
+          "summary": "Own explicit manufactured-product scope.",
+          "source_url": "https://www.swarco.com/companies/swarco-colorado-paint-llc",
+          "source_name": "Swarco Colorado Paint company page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "parent_history",
+          "value": "SWARCO AMERICA acquired Colorado Paint CompanyII in2008",
+          "claim_type": "parent",
+          "summary": "Historical acquisition statement, not unqualified current immediate-parent hierarchy.",
+          "source_url": "https://www.swarco.com/companies/swarco-colorado-paint-llc",
+          "source_name": "Swarco Colorado Paint company page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        },
+        {
+          "field": "facility_start_year",
+          "value": "2019",
+          "claim_type": "activity",
+          "summary": "Manufacturing facility construction year stated; not legal formation year.",
+          "source_url": "https://www.swarco.com/companies/swarco-colorado-paint-llc",
+          "source_name": "Swarco Colorado Paint company page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "web.open",
+          "source_note": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "hq_address",
+          "settling_fact": "An explicit headquarters designation; a business contact/manufacturing address is not silently promoted to HQ."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.swarco.com/companies/swarco-colorado-paint-llc",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "web.open"
+        }
+      ],
+      "primary_fetch_count": 1,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    },
+    {
+      "record_id": "SITE-005567",
+      "verdict": "VERIFIED",
+      "reason": "Visually read company-issued Baltimore recruitment PDF identifies Tnemec at2300 Edgewater and expressly states protective-coating manufacture in Baltimore.",
+      "observations": [
+        {
+          "field": "operator_name",
+          "value": "Tnemec Company, Inc.",
+          "claim_type": "parent",
+          "summary": "Company-issued plant recruitment contact block.",
+          "source_url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "source_name": "Tnemec Baltimore maintenance-technician posting",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "HTTP200 download, Poppler rendered page1, visually read",
+          "source_note": "Undated document. web.open returned zero text and screenshot cache miss; actual PDF fetched HTTP200 and visually read."
+        },
+        {
+          "field": "street_address",
+          "value": "2300 Edgewater Ave.",
+          "claim_type": "address",
+          "summary": "Exact street visually read on PDF page1.",
+          "source_url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "source_name": "Tnemec Baltimore maintenance-technician posting",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "HTTP200 download, Poppler rendered page1, visually read",
+          "source_note": "Undated document. web.open returned zero text and screenshot cache miss; actual PDF fetched HTTP200 and visually read."
+        },
+        {
+          "field": "city_state_zip",
+          "value": "Baltimore, Maryland21222",
+          "claim_type": "address",
+          "summary": "Exact locality visually read.",
+          "source_url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "source_name": "Tnemec Baltimore maintenance-technician posting",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "HTTP200 download, Poppler rendered page1, visually read",
+          "source_note": "Undated document. web.open returned zero text and screenshot cache miss; actual PDF fetched HTTP200 and visually read."
+        },
+        {
+          "field": "primary_activity",
+          "value": "Protective coating manufacture",
+          "claim_type": "scope",
+          "summary": "Document explicitly lists Baltimore among manufacturing facilities, not distribution centers.",
+          "source_url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "source_name": "Tnemec Baltimore maintenance-technician posting",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "HTTP200 download, Poppler rendered page1, visually read",
+          "source_note": "Undated document. web.open returned zero text and screenshot cache miss; actual PDF fetched HTTP200 and visually read."
+        },
+        {
+          "field": "manufacturing_recruitment",
+          "value": "Full-time Baltimore maintenance technician for production equipment",
+          "claim_type": "activity",
+          "summary": "Undated company job document supports plant manufacturing role but not a dated job-open assertion.",
+          "source_url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "source_name": "Tnemec Baltimore maintenance-technician posting",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "retrieval_method": "HTTP200 download, Poppler rendered page1, visually read",
+          "source_note": "Undated document. web.open returned zero text and screenshot cache miss; actual PDF fetched HTTP200 and visually read."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-disclosed or government-stated NAICS at this record grain; no directory or inferred code is silently treated as stated."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A parcel or address-specific authoritative county determination; mailing city is not county evidence."
+        },
+        {
+          "field": "status",
+          "settling_fact": "A dated current operating observation at this record grain; a live undated page or unexpired certificate alone does not establish daily operation."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "outcome": "retrieved and read",
+          "date": "2026-10-30",
+          "method": "HTTP200 download, Poppler rendered page1, visually read"
+        },
+        {
+          "url": "https://tnemec.com/documents/1119/Baltimore-_Maintenance_Tech_Tnemec_Career_Posting.pdf",
+          "outcome": "web parser0lines and screenshot cache miss; ordinary HTTP200 download and visual PDF inspection succeeded",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2,
+      "verdict_scope": "Independent existence and polymer scope at named grain; not a claim that all must-have fields or current operating status are settled."
+    }
+  ]
+}

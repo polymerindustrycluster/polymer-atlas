@@ -1,0 +1,28 @@
+{
+  "creation_data_pin": "eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05",
+  "map_pin": "bf7857a7826ba62cdcf67af3ba718c3d5a9b32be",
+  "map_sha256": "86e78616b3c4aac23ceb143fd724acc3e287a64ce9b9071b08088249ec0b8fd7",
+  "draw_frozen_utc": "2026-10-30T22:59:07Z",
+  "draw_n": 65,
+  "population_n": 2199,
+  "eligible_n": 1972,
+  "excluded_not_tri_n": 227,
+  "batch_sizes": [
+    13,
+    13,
+    13,
+    13,
+    13
+  ],
+  "files": {
+    "comparison_records_sealed.json": "d60ec64a6eb1822012548d12d625001e138713344e63e00a5503db6f823ad9db",
+    "identity_batch_1.json": "fc6cf8de7d380939255c01d2b22bd85adc5944c940a4130dd4b72a6f1ec4dd22",
+    "identity_batch_2.json": "564e981ce3ece8c59c1a7f9c434746bf94ddc8ec8641b71b780df79f3da77140",
+    "identity_batch_3.json": "ab774e27da11c46695b1a1a7af28f0d1aee6601604c428f0cfd00f92f74fadb3",
+    "identity_batch_4.json": "fe79ffcb6086948bbab75d24d1d144f9e78b6f46b09dd8becca4292d9263f06c",
+    "identity_batch_5.json": "2f66baf223003ee4431859cadf46c581277b2a7ddb1dba90b1f8e8575cdad55e",
+    "identity_only.json": "06b0740758119aae80d4c98bb956e6020aa75445992f3d4fb2bc7a6ba996c63f",
+    "population_metadata_sealed.json": "c8e24ec37d0608e9f14cbba212f59789c973eb765c77495f01230ccf508faa47",
+    "sampling_sealed.json": "94f15d7f83744e99695d4d5ebf6cd096b722f318662e6b101ea0be4ef82b51fa"
+  }
+}

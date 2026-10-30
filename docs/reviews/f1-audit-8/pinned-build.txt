@@ -1,0 +1,17 @@
+organizations: 4179 rows from shards organizations_AL 17, organizations_AR 12, organizations_AZ 7, organizations_CA 86, organizations_CO 15, organizations_CT 30, organizations_DE 14, organizations_FL 49, organizations_GA 74, organizations_IA 15, organizations_ID 5, organizations_IL 90, organizations_IN 93, organizations_INTL 31, organizations_KS 26, organizations_KY 29, organizations_LA 14, organizations_MA 45, organizations_MD 8, organizations_ME 4, organizations_MI 123, organizations_MN 42, organizations_MO 33, organizations_MS 11, organizations_MT 3, organizations_NC 91, organizations_ND 3, organizations_NE 5, organizations_NH 11, organizations_NJ 65, organizations_NM 3, organizations_NV 6, organizations_NY 52, organizations_OH 1797, organizations_OK 13, organizations_OR 20, organizations_PA 643, organizations_RI 13, organizations_SC 57, organizations_SD 5, organizations_TN 46, organizations_TX 154, organizations_US 163, organizations_UT 11, organizations_VA 23, organizations_VT 3, organizations_WA 18, organizations_WI 86, organizations_WV 12, organizations_WY 3
+sites: 5770 rows from shards sites_AL 56, sites_AR 41, sites_AZ 24, sites_CA 138, sites_CO 24, sites_CT 46, sites_DE 9, sites_FL 82, sites_GA 139, sites_IA 37, sites_ID 10, sites_IL 160, sites_IN 171, sites_INTL 8, sites_KS 48, sites_KY 78, sites_LA 64, sites_MA 72, sites_MD 25, sites_ME 8, sites_MI 173, sites_MN 64, sites_MO 83, sites_MS 45, sites_MT 5, sites_NC 181, sites_ND 4, sites_NE 17, sites_NH 15, sites_NJ 89, sites_NM 4, sites_NV 17, sites_NY 79, sites_OH 2009, sites_OK 29, sites_OR 33, sites_PA 777, sites_PR 2, sites_RI 18, sites_SC 120, sites_SD 7, sites_TN 104, sites_TX 369, sites_UT 20, sites_VA 62, sites_VT 4, sites_WA 39, sites_WI 127, sites_WV 30, sites_WY 4
+ecosystem: 206 rows
+inclusion_log: 83 rows
+registry_links: 2373 rows
+members: 60 rows
+people: 73 rows
+programs: 73 rows
+events: 71 rows
+event_participation: 782 rows
+evidence: 12876 rows
+relationships: 335 rows
+site_capabilities: 497 rows
+ref_codes: 79 rows
+ref_code_map: 39 rows
+code_assignments: 61 rows
+Built /workspace/scratch/476f38d3e773/f1-blind-audit/build/polymer-atlas.db
