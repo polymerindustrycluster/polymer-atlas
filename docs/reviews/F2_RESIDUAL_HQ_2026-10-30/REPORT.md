@@ -1,7 +1,7 @@
 # F2 — residual headquarters evidence packet
 
-**163 of 163 pinned organizations researched: 52 HQ_FOUND, 111 STILL_UNKNOWN.**
-The 52 findings have unallocated address-evidence drafts. No canonical values changed; no county is proposed. This is a bounded public-source research pass, not a claim that all headquarters are resolved.
+**163 of 163 pinned organizations researched: 50 HQ_FOUND, 113 STILL_UNKNOWN.**
+The 50 findings have unallocated address-evidence drafts. No canonical values changed; no county is proposed. This is a bounded public-source research pass, not a claim that all headquarters are resolved.
 
 ## Authority and baseline
 
@@ -23,7 +23,7 @@ No county is inferred from city, ZIP, mailing address, service area or parent HQ
 
 The per-organization source ledger names the witness, URL, observation date, retrieval date, access route, concise paraphrase and settling fact. Additional witnesses supplied by helpers are retained in `additional_sources_json`. ISO observation dates do not invent a day for year/month-only documents; coarse dates stay in prose. The shared retrieval date is 2026-10-30.
 
-Research used public web search-index page extractions and direct public pages/PDFs where accessible. A page URL in the ledger is not a representation that a direct HTTP fetch succeeded: indexed page text was often the available witness. Availability failures, empty searches and unrelated lookalikes never mean closure or nonexistence. No private systems, logins, outbound communications or paid datasets were used.
+Research used public web search-index page extractions for discovery and direct public pages/PDFs for supporting evidence. Every retained HQ_FOUND witness was successfully opened and its actual page/PDF body read; no supporting evidence draft rests only on a search preview. Per-row access_method records this final source gate. A page URL in the ledger is not a representation that a direct HTTP fetch succeeded: for STILL_UNKNOWN rows, indexed text may be only a discovery lead and never supports an evidence draft. Availability failures, empty searches and unrelated lookalikes never mean closure or nonexistence. No private systems, logins, outbound communications or paid datasets were used.
 
 The bounded effort budget is approximately six primary routes/documents per organization, not a six-request minimum. `primary_fetches` records research's primary-page attempts/witness checks (including failures), not search-engine queries, retries of the same cached extraction, or a network-audit counter. Zero means an exact-name search produced no usable primary route, not that the organization was excluded. Two such rows, Pro-Tect Plastics and Eagle Plastics Inc, explicitly retain that limitation and the exact identity/HQ fact needed.
 
@@ -37,13 +37,14 @@ This is a triage-grade source-backed draft: indexed extraction may omit context;
 - Amerityre and Jacuzzi contradictory own pages remain held; inaccessible routes are not adverse status findings.
 - DiversiTech's 2013 HQ brochure, Premier Foam's May2008 policy, and Neutron's 2006 court HQ are held for current confirmation rather than promoted on historical evidence alone.
 - RPS Composites Inc has a source-backed Canadian HQ candidate (Mahone Bay, NS). Its eventual shard is an integrator decision under Appendix C, not a US-state substitution.
+- Wabash's indexed Lafayette HQ lead is held because the directly opened dynamic page does not render the HQ entry; alternate routes failed. ELANTAS PDG's historical HQ is held because the current direct page names ELANTAS North America LLC instead.
 - Spears' own January2020 corporate-office certificate agrees with current company contact, but currentness still merits integration recheck.
 
 ## Files and verification
 
 - `verdicts.csv`: exactly 163 population outcomes, original identity, proposed city/state/country, rationale and settling facts.
 - `source_ledger.csv`: one named source-route record per organization plus supplemental-source JSON.
-- `evidence_draft.csv`: 52 schema-shaped address drafts; evidence_id deliberately empty. No existence/scope/status assertion or canonical tier upgrade.
+- `evidence_draft.csv`: 50 schema-shaped address drafts; evidence_id deliberately empty. No existence/scope/status assertion or canonical tier upgrade.
 - `original_rows.csv`: all immutable baseline rows and compact sorted-JSON SHA256 fingerprints.
 - `manifest.json`: pin, counts and SHA256 for CSV artifacts.
 - `guard_packet.py`: read-only exact coverage, FK, no-ID, verdict, date, class ceiling, original fingerprint, manifest and queue/data-isolation checks.
@@ -57,4 +58,4 @@ python3 docs/reviews/F2_RESIDUAL_HQ_2026-10-30/guard_packet.py
 
 ## Remaining action
 
-**Action:** integrator review; **target:** these 52 HQ candidates and 111 settling facts; **reason:** packet lane cannot adjudicate grain, allocate evidence IDs, move shards or apply canonical updates; **status:** held for review, not a publication blocker. No claim is made that the 111 unknown HQs were found.
+**Action:** integrator review; **target:** these 50 HQ candidates and 113 settling facts; **reason:** packet lane cannot adjudicate grain, allocate evidence IDs, move shards or apply canonical updates; **status:** held for review, not a publication blocker. No claim is made that the 113 unknown HQs were found.
