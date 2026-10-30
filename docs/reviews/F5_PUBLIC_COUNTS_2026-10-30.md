@@ -1,5 +1,7 @@
 # F5 public-count audit — pinned post-TRI snapshot
 
+> **23:22 UTC continuation:** The [reconciliation addendum](F5_RECONCILIATION_ADDENDUM_2026-10-30.md) verifies the newly published creation map at current main. Coverage/denominator and full campaign-ledger gaps remain explicitly open; canonical data is unchanged.
+
 Pin: `eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05`, observed 2026-10-30 21:32 UTC.
 This is a read-only count audit, not fresh entity verification. No canonical data,
 schema, status, tier, identifier or relationship was changed.
