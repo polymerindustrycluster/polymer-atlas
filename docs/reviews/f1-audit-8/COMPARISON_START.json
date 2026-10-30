@@ -1,0 +1,6 @@
+{
+  "started_utc": "2026-10-30T23:08:24.164508+00:00",
+  "verdict_freeze_sha256": "390a7905becad3f52a6e49623333dd3ec15473bf5caa51ff826b0ca95b5f859f",
+  "all65_frozen_before_unseal": true,
+  "original_evidence_rows_read": 172
+}

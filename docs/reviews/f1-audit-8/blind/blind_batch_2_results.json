@@ -1,0 +1,1529 @@
+{
+  "audit": "F1 audit8 blind batch2",
+  "observed_date": "2026-10-30",
+  "blindness": "Only identity_batch_2.json and governing instructions read; no canonical record fields, evidence rows, source notes or peer audit packets inspected.",
+  "verdict_scope": "VERIFIED means independently supported identity/existence and polymer-related activity at indicated grain, not blanket confirmation of every mandatory field or current legal status. Unresolved fields are explicit.",
+  "budget_method": "primary_fetch_count counts distinct primary-source URLs attempted, including failures. Reopening/find navigation inside already-fetched artifacts is not counted as an additional source. FutureFoam two records share two-URL organization budget. All supported facts come from opened sources, not search previews.",
+  "records": [
+    {
+      "record_id": "SITE-004651",
+      "verdict": "VERIFIED",
+      "reason": "Own facility page independently establishes an operating Future Foam pouring facility at the named locality and polymer-foam scope. Address is recorded exactly as published; no street-suffix equivalence assumption.",
+      "observations": [
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "Future Foam \u2014 Newton",
+          "claim_type": "existence",
+          "summary": "Company names this location in its own facility network."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "520 South Payton Street",
+          "claim_type": "address",
+          "summary": "The location-specific page supplies the street address."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Newton",
+          "claim_type": "address",
+          "summary": "Published facility locality."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "KS",
+          "claim_type": "address",
+          "summary": "Published state."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "zip",
+          "value": "67114",
+          "claim_type": "address",
+          "summary": "Published postal code."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Future Foam",
+          "claim_type": "parent",
+          "summary": "The company publishes the facility as its own."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Foam pouring; Bedding, medical, marine, specialty seating and molded applications",
+          "claim_type": "scope",
+          "summary": "The plant-specific page states pouring capability and its application specialties."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/newton-ks/",
+          "source_name": "Future Foam \u2014 Newton facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active offer observed",
+          "claim_type": "liveness",
+          "summary": "Live facility listing solicits customer collaboration; not a dated production-volume attestation."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "county",
+          "settling_fact": "An address-exact official county or parcel record."
+        },
+        {
+          "field": "ring_primary",
+          "settling_fact": "Classify the foam-pouring activity under the schema; no original ring value was viewed."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.futurefoam.com/facility/newton-ks/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "SITE-004642",
+      "verdict": "VERIFIED",
+      "reason": "Own facility page independently establishes an operating Future Foam pouring facility at the named locality and polymer-foam scope. Address is recorded exactly as published; no street-suffix equivalence assumption.",
+      "observations": [
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "Future Foam \u2014 Mansfield",
+          "claim_type": "existence",
+          "summary": "Company names this location in its own facility network."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "47 Maple Street",
+          "claim_type": "address",
+          "summary": "The location-specific page supplies the street address."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Mansfield",
+          "claim_type": "address",
+          "summary": "Published facility locality."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "MA",
+          "claim_type": "address",
+          "summary": "Published state."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "zip",
+          "value": "02048",
+          "claim_type": "address",
+          "summary": "Published postal code."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Future Foam",
+          "claim_type": "parent",
+          "summary": "The company publishes the facility as its own."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Foam pouring; Bedding",
+          "claim_type": "scope",
+          "summary": "The plant-specific page states pouring capability and its application specialties."
+        },
+        {
+          "source_url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "source_name": "Future Foam \u2014 Mansfield facility",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active offer observed",
+          "claim_type": "liveness",
+          "summary": "Live facility listing solicits customer collaboration; not a dated production-volume attestation."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "county",
+          "settling_fact": "An address-exact official county or parcel record."
+        },
+        {
+          "field": "ring_primary",
+          "settling_fact": "Classify the foam-pouring activity under the schema; no original ring value was viewed."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.futurefoam.com/facility/mansfield-ma/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "SITE-005050",
+      "verdict": "VERIFIED",
+      "reason": "Company-hosted certification appendix and own RFQ independently tie the Conover plant to elastomeric foam manufacturing.",
+      "observations": [
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "source_name": "Armacell Conover RFQ form",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "Armacell LLC \u2014 Conover plant",
+          "claim_type": "existence",
+          "summary": "Own RFQ identifies the plant."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "source_name": "Armacell Conover RFQ form",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "1004 Keisler Road",
+          "claim_type": "address",
+          "summary": "The plant form supplies its delivery address."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "source_name": "Armacell Conover RFQ form",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Conover",
+          "claim_type": "address",
+          "summary": "Published locality."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "source_name": "Armacell Conover RFQ form",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "NC",
+          "claim_type": "address",
+          "summary": "Published state."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "source_name": "Armacell Conover RFQ form",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "zip",
+          "value": "28613",
+          "claim_type": "address",
+          "summary": "Published postal code."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/01/17/0152984_ENG_Armacell%20LLC.pdf",
+          "source_name": "Intertek certificate 0152984, hosted by Armacell",
+          "source_class": "own_site",
+          "source_date": "2024-09-24",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Armacell LLC",
+          "claim_type": "parent",
+          "summary": "Certification appendix names the operating company at Conover."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/01/17/0152984_ENG_Armacell%20LLC.pdf",
+          "source_name": "Intertek certificate 0152984, hosted by Armacell",
+          "source_class": "own_site",
+          "source_date": "2024-09-24",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Manufacturing and distribution of open/closed-cell elastomeric foam and custom-mixed elastomeric foam products",
+          "claim_type": "scope",
+          "summary": "Plant-specific certificate scope is foam manufacture, not generic parent capability."
+        },
+        {
+          "source_url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "source_name": "Armacell Conover RFQ form",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active commercial offer observed",
+          "claim_type": "liveness",
+          "summary": "RFQ form offers made-to-specification plant profiles."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-exact official county record."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.armacell.com/sites/default/files/2025/01/17/0152984_ENG_Armacell%20LLC.pdf",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.armacell.com/sites/default/files/2025/03/28/RFQ_Form_-_Conover.pdf",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "ORG-004367",
+      "verdict": "VERIFIED",
+      "reason": "Own publications identify Central Marble Products Inc as a producer of cultured marble/onyx/granite fixtures and describe its own curing manufacture; existence and shaped cast-product scope are supported.",
+      "observations": [
+        {
+          "source_url": "https://www.centralmarbleproducts.com/",
+          "source_name": "Central Marble Products company home",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "legal_name",
+          "value": "Central Marble Products, Inc.",
+          "claim_type": "existence",
+          "summary": "Name as self-published, not an independently retrieved state incorporation record."
+        },
+        {
+          "source_url": "https://www.centralmarbleproducts.com/",
+          "source_name": "Central Marble Products company home",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "published_business_address",
+          "value": "1266 105th St. NW, Rice, MN 56367",
+          "claim_type": "address",
+          "summary": "Physical contact address is distinguished from the PO Box printed beside it; headquarters designation is not explicit."
+        },
+        {
+          "source_url": "https://www.centralmarbleproducts.com/",
+          "source_name": "Central Marble Products company home",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Production of cultured marble, onyx and granite bathroom and building fixtures",
+          "claim_type": "scope",
+          "summary": "Own site describes production, rather than installation alone."
+        },
+        {
+          "source_url": "https://www.centralmarbleproducts.com/faqs.html",
+          "source_name": "Central Marble Products FAQ and warranty",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "process_description",
+          "value": "Manufactures cultured-marble tops that cure and shrink",
+          "claim_type": "activity",
+          "summary": "FAQ discusses its own manufacturing sizing to accommodate curing shrinkage."
+        },
+        {
+          "source_url": "https://www.centralmarbleproducts.com/faqs.html",
+          "source_name": "Central Marble Products FAQ and warranty",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active offer observed",
+          "claim_type": "liveness",
+          "summary": "Live warranty/showroom and manufacturer instructions; copyright year is not treated as operating date."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "hq_designation",
+          "settling_fact": "Explicit headquarters designation for the Rice physical address."
+        },
+        {
+          "field": "specific_polymer_resin",
+          "settling_fact": "Own product composition disclosure; cast-polymer scope is classified from cultured-marble product identity, not a stated resin recipe."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-exact official county record."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.centralmarbleproducts.com/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.centralmarbleproducts.com/faqs.html",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.centralmarbleproducts.com/online-catalog.pdf",
+          "outcome": "Timeout on attempted PDF open; availability failure only, not absence evidence",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004378",
+      "verdict": "VERIFIED",
+      "reason": "Own company page independently proves plastic-packaging coating/metallization services and a Middlebury business address. It applies finishes; this is not evidence that it formulates coatings.",
+      "observations": [
+        {
+          "source_url": "https://www.coulterone.com/",
+          "source_name": "Coulter LLC \u2014 company services and contact page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "legal_name",
+          "value": "Coulter, LLC",
+          "claim_type": "existence",
+          "summary": "Name as self-published in page title."
+        },
+        {
+          "source_url": "https://www.coulterone.com/",
+          "source_name": "Coulter LLC \u2014 company services and contact page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "published_business_address",
+          "value": "209 York Drive, Middlebury, IN 46540",
+          "claim_type": "address",
+          "summary": "Company contact block publishes this address."
+        },
+        {
+          "source_url": "https://www.coulterone.com/",
+          "source_name": "Coulter LLC \u2014 company services and contact page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Vacuum/silver metallization, custom painting and spray coatings for packaging, including plastic",
+          "claim_type": "scope",
+          "summary": "Page explicitly identifies plastic substrates and packaging applications."
+        },
+        {
+          "source_url": "https://www.coulterone.com/",
+          "source_name": "Coulter LLC \u2014 company services and contact page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "processes",
+          "value": "coating_applying; printing_decorating_plastics (classification proposal only)",
+          "claim_type": "activity",
+          "summary": "Observed activity is surface finishing; any controlled-tag assignment remains an integrator decision."
+        },
+        {
+          "source_url": "https://www.coulterone.com/",
+          "source_name": "Coulter LLC \u2014 company services and contact page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active offer observed",
+          "claim_type": "liveness",
+          "summary": "Company advertises current service and quotation offer."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "hq_designation",
+          "settling_fact": "Explicit headquarters identification rather than contact address alone."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-exact official county record."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.coulterone.com/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "SITE-005717",
+      "verdict": "VERIFIED",
+      "reason": "Own site ties EMCO-Williams business at the exact address to cast cultured-marble products using polyester resin and molds; current business offer is observed. Evidence supports manufacture/fabrication, not merely natural-stone distribution.",
+      "observations": [
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "EMCO-Williams Inc. \u2014 Sevierville",
+          "claim_type": "existence",
+          "summary": "Business identifies itself and its single published location."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "1030 Old Knoxville Highway",
+          "claim_type": "address",
+          "summary": "Page header/footer publish the address."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Sevierville",
+          "claim_type": "address",
+          "summary": "Published locality."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "TN",
+          "claim_type": "address",
+          "summary": "Published state."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "zip",
+          "value": "37862",
+          "claim_type": "address",
+          "summary": "Published postal code."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Emco-Williams, Inc.",
+          "claim_type": "parent",
+          "summary": "Own manufacturer warranty identifies company."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Cultured marble fixtures made with polyester resin, mineral filler, casting molds and polyester gel coat",
+          "claim_type": "scope",
+          "summary": "Own product page describes material chemistry and manufacturing route, with company warranty."
+        },
+        {
+          "source_url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "source_name": "EMCO-Williams cultured marble product/manufacture page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active offer observed",
+          "claim_type": "liveness",
+          "summary": "Current product/services and repair-at-business warranty offer."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-exact official county record."
+        },
+        {
+          "field": "site_specific_casting_confirmation",
+          "settling_fact": "A permit or plant-specific statement explicitly locates casting equipment at 1030 Old Knoxville; present support combines single-address business and own manufacture offer."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.emco-williams.com/marble-shower-enclosures",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "SITE-005406",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Existence/address/operator are supported by TCEQ, but this unit makes ethylene oxide and ethylene glycols, not demonstrated polymer resin or formulation. Owner scope boundary or specific qualifying polymer activity is required; not a closure/no-establishment rejection.",
+      "observations": [
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "Clear Lake Plant",
+          "claim_type": "existence",
+          "summary": "TCEQ identifies RN111909503, project372035."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "9502 Bayport Blvd # C",
+          "claim_type": "address",
+          "summary": "Exact physical location supplied by agency."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Pasadena",
+          "claim_type": "address",
+          "summary": "Agency names nearest city."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "TX",
+          "claim_type": "address",
+          "summary": "Texas regulatory facility."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "county",
+          "value": "Harris",
+          "claim_type": "address",
+          "summary": "Explicit county in official technical review."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Indorama Ventures (Oxide & Glycols) LLC",
+          "claim_type": "parent",
+          "summary": "Agency identifies the company operating the production unit."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Ethylene oxide oxidation/purification and ethylene glycol hydrolysis/distillation",
+          "claim_type": "activity",
+          "summary": "Agency process description establishes intermediates manufacture, not polymerization."
+        },
+        {
+          "source_url": "https://sustainability.indoramaventures.com/en/sustainability-knowledge-sharing/circular-economy/landing-page",
+          "source_name": "Indorama Ventures circular-economy account of IVOG",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "ultimate_parent_name",
+          "value": "Indorama Ventures",
+          "claim_type": "parent",
+          "summary": "Company describes IVOG as wholly owned."
+        },
+        {
+          "source_url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "source_name": "TCEQ PBR175841 technical review, project372035",
+          "source_class": "government_filing",
+          "source_date": "2024-03-28",
+          "accessed_date": "2026-10-30",
+          "field": "operating_observation",
+          "value": "Operating EO/EG unit in 2024 application",
+          "claim_type": "liveness",
+          "summary": "Dated modification application describes existing unit and maintenance piping changes."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "scope/ring_primary",
+          "settling_fact": "Plant-specific qualifying polymer formulation/production evidence or owner ruling on EO/EG precursor inclusion; no boundary self-ruling."
+        },
+        {
+          "field": "current_liveness",
+          "settling_fact": "Dated recent operation record for this exact establishment."
+        },
+        {
+          "field": "immediate_parent_link",
+          "settling_fact": "Legal ownership chain establishing the precise held-parent linkage, not merely group ownership."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876634",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://sustainability.indoramaventures.com/en/sustainability-knowledge-sharing/circular-economy/landing-page",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-004664",
+      "verdict": "VERIFIED",
+      "reason": "Current company site and dated EPA permit fact sheet independently establish polyethylene resin production at the exact Clinton street address.",
+      "observations": [
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "LyondellBasell Clinton Complex",
+          "claim_type": "existence",
+          "summary": "Own site identifies operating complex."
+        },
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "3400 Anamosa Road",
+          "claim_type": "address",
+          "summary": "Company supplies physical street."
+        },
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Clinton",
+          "claim_type": "address",
+          "summary": "Published locality."
+        },
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "IA",
+          "claim_type": "address",
+          "summary": "Published state."
+        },
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "zip",
+          "value": "52732",
+          "claim_type": "address",
+          "summary": "Published postal code."
+        },
+        {
+          "source_url": "https://www.epa.gov/ia/equistar-chemicals-lp-facility-clinton-iowa-fact-sheet-may-2018",
+          "source_name": "EPA Equistar Clinton facility fact sheet (May2018; comment period begins2018-05-01)",
+          "source_class": "government_filing",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Equistar Chemicals, LP",
+          "claim_type": "parent",
+          "summary": "EPA identifies the legal facility operator in 2018; current company page carries LyondellBasell group identity."
+        },
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Ethylene, propylene, LDPE, HDPE and tie-layer resin production",
+          "claim_type": "scope",
+          "summary": "Company identifies site outputs including polyethylene resins."
+        },
+        {
+          "source_url": "https://www.epa.gov/ia/equistar-chemicals-lp-facility-clinton-iowa-fact-sheet-may-2018",
+          "source_name": "EPA Equistar Clinton facility fact sheet (May2018; comment period begins2018-05-01)",
+          "source_class": "government_filing",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "processes",
+          "value": "Polyethylene production followed by extrusion and pelletizing",
+          "claim_type": "activity",
+          "summary": "EPA describes the physical polymer processing steps."
+        },
+        {
+          "source_url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "source_name": "LyondellBasell Clinton site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active facility offer observed",
+          "claim_type": "liveness",
+          "summary": "Current corporate plant page describes current production."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-exact official county record."
+        },
+        {
+          "field": "current_legal_operator",
+          "settling_fact": "Recent permit corroborating Equistar legal operator; 2018 identity is dated and not silently advanced."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/clinton-site/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.epa.gov/ia/equistar-chemicals-lp-facility-clinton-iowa-fact-sheet-may-2018",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "ORG-004060",
+      "verdict": "VERIFIED",
+      "reason": "Own HQ page and dated production announcement independently establish Monument Chemical and polymer-polyol production.",
+      "observations": [
+        {
+          "source_url": "https://monumentchemical.com/contact",
+          "source_name": "Monument Chemical corporate contact and locations",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "published_name",
+          "value": "Monument Chemical",
+          "claim_type": "existence",
+          "summary": "Current company name; legal LLC suffix not independently settled by opened source."
+        },
+        {
+          "source_url": "https://monumentchemical.com/contact",
+          "source_name": "Monument Chemical corporate contact and locations",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "hq_address",
+          "value": "6510 Telecom Drive, #425",
+          "claim_type": "address",
+          "summary": "Explicit corporate headquarters address."
+        },
+        {
+          "source_url": "https://monumentchemical.com/contact",
+          "source_name": "Monument Chemical corporate contact and locations",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "hq_city",
+          "value": "Indianapolis",
+          "claim_type": "address",
+          "summary": "Explicit HQ locality."
+        },
+        {
+          "source_url": "https://monumentchemical.com/contact",
+          "source_name": "Monument Chemical corporate contact and locations",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "hq_state",
+          "value": "IN",
+          "claim_type": "address",
+          "summary": "Explicit HQ state."
+        },
+        {
+          "source_url": "https://monumentchemical.com/contact",
+          "source_name": "Monument Chemical corporate contact and locations",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "hq_zip",
+          "value": "46278",
+          "claim_type": "address",
+          "summary": "Explicit HQ postal code."
+        },
+        {
+          "source_url": "https://monumentchemical.com/our-stories-events/monument-chemical-launches-poly-co2-high-performance-polyols-from-captured-carbon",
+          "source_name": "Monument Chemical Poly-CO2 production announcement",
+          "source_class": "own_site",
+          "source_date": "2025-11-17",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Polycarbonate-ether polyols for polyurethane production",
+          "claim_type": "scope",
+          "summary": "Own dated announcement reports production beginning at its Kentucky site; this supports organization scope only."
+        },
+        {
+          "source_url": "https://monumentchemical.com/our-stories-events/monument-chemical-launches-poly-co2-high-performance-polyols-from-captured-carbon",
+          "source_name": "Monument Chemical Poly-CO2 production announcement",
+          "source_class": "own_site",
+          "source_date": "2025-11-17",
+          "accessed_date": "2026-10-30",
+          "field": "operating_observation",
+          "value": "Polyol pilot production begun in November2025",
+          "claim_type": "liveness",
+          "summary": "Dated company announcement describes started production, not only planned construction."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "legal_name_suffix",
+          "settling_fact": "Company legal footer or state filing explicitly stating Monument Chemical LLC."
+        },
+        {
+          "field": "hq_county",
+          "settling_fact": "Address-exact official county record."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://monumentchemical.com/contact",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://monumentchemical.com/our-stories-events/monument-chemical-launches-poly-co2-high-performance-polyols-from-captured-carbon",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-004762",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Fuel-containment operation and rubber-manufacturing history are independently supported, but current667 and historical669 addresses are not conclusively resolved to one establishment. Do not treat an address variant as a proven wrong record or reject.",
+      "observations": [
+        {
+          "source_url": "https://rockmartfc.com/",
+          "source_name": "Rockmart Fuel Containment own site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operator_name",
+          "value": "Rockmart Fuel Containment, LLC",
+          "claim_type": "existence",
+          "summary": "Own site describes fuel-cell manufacturing; legal styling is corroborated by HEICO filing."
+        },
+        {
+          "source_url": "https://heico.com/heico-subsidiaries/",
+          "source_name": "HEICO subsidiary directory",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "published_current_business_address",
+          "value": "667 Goodyear Ave, Rockmart, GA 30153",
+          "claim_type": "address",
+          "summary": "Current parent-company directory address."
+        },
+        {
+          "source_url": "https://geos.epd.georgia.gov/GA/GEOS/Public/EnSuite/Shared/pages/util/StreamDoc.ashx?id=943037&type=PERMIT_FILLED_OBJECT",
+          "source_name": "Georgia EPD Meggitt Rockmart permit fact sheet (March2020; day unstated)",
+          "source_class": "government_filing",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "historical_permitted_address",
+          "value": "669 Goodyear Street, Rockmart, GA",
+          "claim_type": "address",
+          "summary": "Historical Meggitt aircraft-rubber facility permit address."
+        },
+        {
+          "source_url": "https://geos.epd.georgia.gov/GA/GEOS/Public/EnSuite/Shared/pages/util/StreamDoc.ashx?id=943037&type=PERMIT_FILLED_OBJECT",
+          "source_name": "Georgia EPD Meggitt Rockmart permit fact sheet (March2020; day unstated)",
+          "source_class": "government_filing",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "county",
+          "value": "Polk",
+          "claim_type": "address",
+          "summary": "Agency explicitly identifies county."
+        },
+        {
+          "source_url": "https://heicocorporation.gcs-web.com/static-files/3ef7bf43-03db-4101-b2e7-714e3713ff10",
+          "source_name": "HEICO Form10-Q, quarter ended2026-01-31",
+          "source_class": "own_site",
+          "source_date": "2026-01-31",
+          "accessed_date": "2026-10-30",
+          "field": "parent_name",
+          "value": "HEICO Electronic Technologies Group",
+          "claim_type": "parent",
+          "summary": "Filing reports January2026 acquisition and renaming of Axillon fuel-containment business."
+        },
+        {
+          "source_url": "https://rockmartfc.com/",
+          "source_name": "Rockmart Fuel Containment own site",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Hand-built crashworthy and ballistically tolerant fuel cells",
+          "claim_type": "activity",
+          "summary": "Own company description."
+        },
+        {
+          "source_url": "https://geos.epd.georgia.gov/GA/GEOS/Public/EnSuite/Shared/pages/util/StreamDoc.ashx?id=943037&type=PERMIT_FILLED_OBJECT",
+          "source_name": "Georgia EPD Meggitt Rockmart permit fact sheet (March2020; day unstated)",
+          "source_class": "government_filing",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "historical_scope",
+          "value": "Aircraft rubber manufacturing",
+          "claim_type": "scope",
+          "summary": "Georgia agency describes the historical facility manufacturing class."
+        },
+        {
+          "source_url": "https://heicocorporation.gcs-web.com/static-files/3ef7bf43-03db-4101-b2e7-714e3713ff10",
+          "source_name": "HEICO Form10-Q, quarter ended2026-01-31",
+          "source_class": "own_site",
+          "source_date": "2026-01-31",
+          "accessed_date": "2026-10-30",
+          "field": "operating_observation",
+          "value": "Acquired operating fuel-containment business in January2026",
+          "claim_type": "liveness",
+          "summary": "Company filing includes acquired operations in consolidated results."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "address_identity",
+          "settling_fact": "Current facility permit or parcel/campus record tying667GoodyearAve and669GoodyearStreet to the same operating establishment."
+        },
+        {
+          "field": "current_site_polymer_scope",
+          "settling_fact": "Current plant-specific fuel-cell material/manufacturing description connecting the historical rubber process to the renamed establishment."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://rockmartfc.com/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://heico.com/heico-subsidiaries/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://heicocorporation.gcs-web.com/static-files/3ef7bf43-03db-4101-b2e7-714e3713ff10",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://geos.epd.georgia.gov/GA/GEOS/Public/EnSuite/Shared/pages/util/StreamDoc.ashx?id=943037&type=PERMIT_FILLED_OBJECT",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 4
+    },
+    {
+      "record_id": "SITE-005309",
+      "verdict": "VERIFIED",
+      "reason": "Plant-specific company fact sheet independently establishes Bristol production of polyimides and high-temperature thermoplastics at the exact address.",
+      "observations": [
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "site_name",
+          "value": "Saint-Gobain Omniseal Solutions \u2014 Bristol",
+          "claim_type": "existence",
+          "summary": "Plant fact sheet identifies business and locality."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "street_address",
+          "value": "386 Metacom Ave",
+          "claim_type": "address",
+          "summary": "Plant address from company fact sheet."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "city",
+          "value": "Bristol",
+          "claim_type": "address",
+          "summary": "Published locality."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "state",
+          "value": "RI",
+          "claim_type": "address",
+          "summary": "Published state."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "zip",
+          "value": "02809",
+          "claim_type": "address",
+          "summary": "Published postal code."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "operator_group",
+          "value": "Saint-Gobain, Omniseal Solutions",
+          "claim_type": "parent",
+          "summary": "Company-issued plant document identifies business grouping; exact legal operator suffix not asserted."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Meldin polyimides and high-temperature thermoplastics production",
+          "claim_type": "scope",
+          "summary": "Document specifically lists products made at Bristol."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "employee_band_site",
+          "value": "100-249",
+          "claim_type": "activity",
+          "summary": "Banded from company statement of121 employees, as of2024-05-15."
+        },
+        {
+          "source_url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "source_name": "Saint-Gobain Bristol plant fact sheet",
+          "source_class": "own_site",
+          "source_date": "2024-05-15",
+          "accessed_date": "2026-10-30",
+          "field": "operating_observation",
+          "value": "Plant manufacturing activity reported2024-05-15",
+          "claim_type": "liveness",
+          "summary": "Dated fact sheet is an activity floor, not proof of uninterrupted later operation."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "current_liveness",
+          "settling_fact": "A newer dated plant operating observation if current2026status is required."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-exact official county record."
+        },
+        {
+          "field": "legal_operator",
+          "settling_fact": "Recent permit or company legal statement identifying exact legal operating entity."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.saint-gobain-northamerica.com/sites/default/files/2024-10/OmnisealSolutionsMobility_Bristol_RI.pdf",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "ORG-004039",
+      "verdict": "VERIFIED",
+      "reason": "Own US and parent-company pages independently identify SumiRiko Tennessee as a manufacturer of rubber anti-vibration components, hoses and urethane products, with published Midway address.",
+      "observations": [
+        {
+          "source_url": "https://www.sumitomoriko.co.jp/company/globalnetwork/",
+          "source_name": "Sumitomo Riko global network",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "legal_name",
+          "value": "SumiRiko Tennessee, Inc.",
+          "claim_type": "existence",
+          "summary": "Parent network names this legal entity."
+        },
+        {
+          "source_url": "https://www.sumitomoriko.co.jp/company/globalnetwork/",
+          "source_name": "Sumitomo Riko global network",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "published_business_address",
+          "value": "199 Pottertown Road, Midway, TN 37809",
+          "claim_type": "address",
+          "summary": "Parent-company directory assigns the address to Tennessee entity."
+        },
+        {
+          "source_url": "https://us.sumiriko.com/",
+          "source_name": "SumiRiko US operations and products",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Manufactures anti-vibration rubber parts, rubber/plastic automotive hoses and urethane sound-reduction products",
+          "claim_type": "scope",
+          "summary": "US corporate site specifically attributes activities to SumiRiko Tennessee."
+        },
+        {
+          "source_url": "https://us.sumiriko.com/",
+          "source_name": "SumiRiko US operations and products",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "ultimate_parent_name",
+          "value": "Sumitomo Riko Company Limited",
+          "claim_type": "parent",
+          "summary": "US operations identify their group affiliation."
+        },
+        {
+          "source_url": "https://us.sumiriko.com/",
+          "source_name": "SumiRiko US operations and products",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active manufacturing offer observed",
+          "claim_type": "liveness",
+          "summary": "Current company pages describe ongoing manufacture and supply."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "hq_designation",
+          "settling_fact": "Explicit headquarters label for the Midway address rather than network office/plant listing."
+        },
+        {
+          "field": "hq_county",
+          "settling_fact": "Address-exact official county record."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://us.sumiriko.com/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://us.sumiriko.com/company-profile/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.sumitomoriko.co.jp/company/globalnetwork/",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004485",
+      "verdict": "VERIFIED",
+      "reason": "Company-issued historical announcement identifies The ROHO Group Inc and Belleville headquarters; current parent publications establish continuing ROHO neoprene-cushion manufacturing identity. No legal-entity merger/dissolution inference is made.",
+      "observations": [
+        {
+          "source_url": "https://news.cision.com/se/permobil-ab/r/permobil-acquires-roho,c9745498",
+          "source_name": "Permobil-issued ROHO acquisition announcement",
+          "source_class": "own_site",
+          "source_date": "2015-03-25",
+          "accessed_date": "2026-10-30",
+          "field": "legal_name",
+          "value": "The ROHO Group, Inc.",
+          "claim_type": "existence",
+          "summary": "Exact acquired-company name in issuer announcement; historical identity, not a new corporate-registry check."
+        },
+        {
+          "source_url": "https://news.cision.com/se/permobil-ab/r/permobil-acquires-roho,c9745498",
+          "source_name": "Permobil-issued ROHO acquisition announcement",
+          "source_class": "own_site",
+          "source_date": "2015-03-25",
+          "accessed_date": "2026-10-30",
+          "field": "hq_city",
+          "value": "Belleville",
+          "claim_type": "address",
+          "summary": "Announcement explicitly identifies headquarters locality in2015."
+        },
+        {
+          "source_url": "https://news.cision.com/se/permobil-ab/r/permobil-acquires-roho,c9745498",
+          "source_name": "Permobil-issued ROHO acquisition announcement",
+          "source_class": "own_site",
+          "source_date": "2015-03-25",
+          "accessed_date": "2026-10-30",
+          "field": "hq_state",
+          "value": "IL",
+          "claim_type": "address",
+          "summary": "Historical HQ state."
+        },
+        {
+          "source_url": "https://www.permobil.com/our-brands/roho",
+          "source_name": "Permobil ROHO brand page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "parent_brand_relationship",
+          "value": "ROHO is a Permobil brand",
+          "claim_type": "parent",
+          "summary": "Current company brand page corroborates group continuity; exact current legal chain not established."
+        },
+        {
+          "source_url": "https://www.permobil.com/products/seating-positioning/cushioning-products/roho/standard-series/roho-high-profile-single-compartment-cushion",
+          "source_name": "Permobil ROHO high-profile product",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "material",
+          "value": "neoprene",
+          "claim_type": "scope",
+          "summary": "Own product page states cushion material."
+        },
+        {
+          "source_url": "https://hub.permobil.com/blog/flowing-air-roho-cushions",
+          "source_name": "Permobil ROHO manufacturing explainer",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "primary_activity",
+          "value": "Manufacture of neoprene air-cell cushions in Belleville",
+          "claim_type": "activity",
+          "summary": "Company explainer explicitly connects material, manufacturing and locality."
+        },
+        {
+          "source_url": "https://www.permobil.com/our-brands/roho",
+          "source_name": "Permobil ROHO brand page",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "field": "operating_status",
+          "value": "active product offer observed",
+          "claim_type": "liveness",
+          "summary": "Current parent product catalogue offers ROHO products."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company-stated or government-stated primary NAICS with provenance; no NAICS is inferred in this blind packet."
+        },
+        {
+          "field": "current_legal_name",
+          "settling_fact": "Current company/state filing reconciling The ROHO Group Inc with ROHO Inc operating name; no automatic merge/reject."
+        },
+        {
+          "field": "current_hq_street",
+          "settling_fact": "Current primary headquarters address; historical and product contact locations must not be conflated."
+        },
+        {
+          "field": "hq_county",
+          "settling_fact": "Address-exact official county record after HQ address resolved."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.permobil.com/our-brands/roho",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.permobil.com/products/seating-positioning/cushioning-products/roho/standard-series/roho-high-profile-single-compartment-cushion",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://hub.permobil.com/blog/flowing-air-roho-cushions",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://news.cision.com/se/permobil-ab/r/permobil-acquires-roho,c9745498",
+          "outcome": "opened; substantive source read",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.gsaadvantage.gov/ref_text/V797D70215/10GK7Q.3W6X2E_V797D70215_V797D-70215-6-24-2025-738900.PDF",
+          "outcome": "404 on attempted PDF open; availability failure only, not absence evidence",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 5
+    }
+  ]
+}

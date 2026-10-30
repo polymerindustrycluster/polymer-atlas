@@ -1,0 +1,1086 @@
+{
+  "batch": 5,
+  "accessed_date": "2026-10-30",
+  "blindness": "Only assigned identity batch plus instructions/schema/queue and independently obtained public sources read. No canonical rows, original evidence, sealed metadata or other packets consulted. Identity keys were untrusted search locators. No original-verdict comparisons performed.",
+  "method": "Unique primary document routes counted, including failed routes; repeat find/open of same document not new primary source. Search snippets excluded as evidence. Status is affirmative presence evidence, not an assertion all fields are error-free. No REJECT verdicts; Form5500 rejection gate not triggered. Ring values are applications of existing tests, not new scope rulings.",
+  "records": [
+    {
+      "record_id": "SITE-004989",
+      "verdict": "VERIFIED",
+      "reason": "Own current location and dated operating urethane-foam line establish the site and physical polymer production.",
+      "observations": [
+        {
+          "field": "address",
+          "value": "3127 S 31st St, Sheboygan WI 53081",
+          "claim_type": "source_stated",
+          "source_url": "https://americanexcelsior.com/national-locations/",
+          "source_name": "American Excelsior national locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "activity_status",
+          "value": "Urethane-foam molding; expansion line operational January 2025",
+          "claim_type": "source_stated",
+          "source_url": "https://americanexcelsior.com/news/american-excelsior-company-invests-2-0-million-in-urethane-foam-molding-expansion-at-their-sheboygan-wisconsin-facility/",
+          "source_name": "American Excelsior Sheboygan expansion",
+          "source_class": "own_site",
+          "source_date": "2026-01-29",
+          "accessed_date": "2026-10-30",
+          "summary": "January 2026 announcement describes completed expansion, not merely a plan."
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://americanexcelsior.com/news/american-excelsior-company-invests-2-0-million-in-urethane-foam-molding-expansion-at-their-sheboygan-wisconsin-facility/",
+          "source_name": "American Excelsior Sheboygan expansion",
+          "source_class": "own_site",
+          "source_date": "2026-01-29",
+          "accessed_date": "2026-10-30",
+          "summary": "Physical foam molding meets existing schema Ring 1 test."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Government establishment code or explicitly sourced process-based inference"
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-linked government jurisdiction record"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://americanexcelsior.com/news/american-excelsior-company-invests-2-0-million-in-urethane-foam-molding-expansion-at-their-sheboygan-wisconsin-facility/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://americanexcelsior.com/national-locations/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://americanexcelsior.com/contact/",
+          "outcome": "failed fetch; no absence inference",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "SITE-004746",
+      "verdict": "VERIFIED",
+      "reason": "Current company base listing plus exact-address OSHA and historical process permit identify the Sanborn polyurethane seat-pad establishment.",
+      "observations": [
+        {
+          "field": "operator_address",
+          "value": "Archem America Inc.; 6350 Inducon Dr East, Sanborn NY 14132",
+          "claim_type": "source_stated",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1779260.015",
+          "source_name": "OSHA inspection 1779260.015",
+          "source_class": "government_filing",
+          "source_date": "2024-10-03",
+          "accessed_date": "2026-10-30",
+          "summary": "Inspection case closure is not establishment closure."
+        },
+        {
+          "field": "naics_primary",
+          "value": "326150",
+          "claim_type": "source_stated",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1779260.015",
+          "source_name": "OSHA inspection 1779260.015",
+          "source_class": "government_filing",
+          "source_date": "2024-10-03",
+          "accessed_date": "2026-10-30",
+          "summary": "Government-assigned establishment NAICS, not company-disclosed."
+        },
+        {
+          "field": "activity_materials",
+          "value": "Polyurethane foam seat pads; TDI/MDI/polyol, molding and heat curing",
+          "claim_type": "source_stated",
+          "source_url": "https://extapps.dec.ny.gov/data/dar/afs/permits/929400020400001_r0.pdf",
+          "source_name": "New York DEC permit 9-2940-00204/00001",
+          "source_class": "government_filing",
+          "source_date": "2015-10-27",
+          "accessed_date": "2026-10-30",
+          "summary": "Historical permit expired October 2025; not represented as current authorization."
+        },
+        {
+          "field": "county",
+          "value": "Niagara",
+          "claim_type": "source_stated",
+          "source_url": "https://extapps.dec.ny.gov/data/dar/afs/permits/929400020400001_r0.pdf",
+          "source_name": "New York DEC permit",
+          "source_class": "government_filing",
+          "source_date": "2015-10-27",
+          "accessed_date": "2026-10-30",
+          "summary": "Town of Wheatfield; Sanborn mailing city."
+        },
+        {
+          "field": "current_presence",
+          "value": "Archem America Sanborn manufacturing base",
+          "claim_type": "source_stated",
+          "source_url": "https://www.archem.inc/about/bases/",
+          "source_name": "Archem corporate bases",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://extapps.dec.ny.gov/data/dar/afs/permits/929400020400001_r0.pdf",
+          "source_name": "New York DEC permit",
+          "source_class": "government_filing",
+          "source_date": "2015-10-27",
+          "accessed_date": "2026-10-30",
+          "summary": "Foam manufacture fits existing Ring 1 test."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "current_permit",
+          "settling_fact": "Renewal or current authorization if needed; expired historical permit does not show cessation"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1779260.015",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://extapps.dec.ny.gov/data/dar/afs/permits/929400020400001_r0.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.archem.inc/about/bases/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.archem.inc/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.archem.inc/recruit/acj/environment/office/",
+          "outcome": "timeout; availability only",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 5
+    },
+    {
+      "record_id": "SITE-004911",
+      "verdict": "VERIFIED",
+      "reason": "Current CSP Sarepta listing and state reporting of existing composite production support establishment and polymer scope.",
+      "observations": [
+        {
+          "field": "current_operator_brand",
+          "value": "CSP; previously Teijin Automotive Technologies; CSP name effective July 2025",
+          "claim_type": "source_stated",
+          "source_url": "https://www.thecsp.com/news-articles/csp-is-back",
+          "source_name": "CSP is back",
+          "source_class": "own_site",
+          "source_date": "2025-07-10",
+          "accessed_date": "2026-10-30",
+          "summary": "Brand history does not establish every legal-entity rename."
+        },
+        {
+          "field": "site",
+          "value": "Sarepta, Louisiana",
+          "claim_type": "source_stated",
+          "source_url": "https://www.thecsp.com/about",
+          "source_name": "CSP About",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "address_county",
+          "value": "26755 US Hwy 371, Sarepta; Webster Parish",
+          "claim_type": "source_stated",
+          "source_url": "https://www.opportunitylouisiana.gov/wp-content/uploads/docs/ci_boardincentiveapprovals2015.pdf",
+          "source_name": "Louisiana incentive approvals 2015",
+          "source_class": "government_filing",
+          "source_date": "2015",
+          "accessed_date": "2026-10-30",
+          "summary": "Historical exact-address official record."
+        },
+        {
+          "field": "naics_primary",
+          "value": "336211",
+          "claim_type": "source_stated",
+          "source_url": "https://www.opportunitylouisiana.gov/wp-content/uploads/docs/ci_boardincentiveapprovals2015.pdf",
+          "source_name": "Louisiana incentive approvals 2015",
+          "source_class": "government_filing",
+          "source_date": "2015",
+          "accessed_date": "2026-10-30",
+          "summary": "Historical government-assigned code; not company-disclosed or independently refreshed."
+        },
+        {
+          "field": "activity",
+          "value": "Lightweight automotive composite underbodies and bumpers",
+          "claim_type": "source_stated",
+          "source_url": "https://www.opportunitylouisiana.gov/news/continental-structural-plastics-announces-webster-parish-expansion",
+          "source_name": "Louisiana Economic Development Sarepta expansion",
+          "source_class": "government_filing",
+          "source_date": "2021-07-07",
+          "accessed_date": "2026-10-30",
+          "summary": "Article distinguishes existing production from planned expansion."
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://www.opportunitylouisiana.gov/news/continental-structural-plastics-announces-webster-parish-expansion",
+          "source_name": "Louisiana Economic Development",
+          "source_class": "government_filing",
+          "source_date": "2021-07-07",
+          "accessed_date": "2026-10-30",
+          "summary": "Composite molding meets Ring 1 test."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "legal_operator",
+          "settling_fact": "Current corporate or permit document identifying the Sarepta legal operating entity"
+        },
+        {
+          "field": "street_address_current",
+          "settling_fact": "Current address-specific company or government confirmation of the historically documented street"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.thecsp.com/about",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.thecsp.com/news-articles/csp-is-back",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.opportunitylouisiana.gov/wp-content/uploads/docs/ci_boardincentiveapprovals2015.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.opportunitylouisiana.gov/news/continental-structural-plastics-announces-webster-parish-expansion",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.thecsp.com/about/contact",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 5
+    },
+    {
+      "record_id": "SITE-005695",
+      "verdict": "VERIFIED",
+      "reason": "Own site explicitly describes Riverside manufacturing of cast/cured cultured marble and gel-coated products, not merely retail sale.",
+      "observations": [
+        {
+          "field": "address",
+          "value": "4380 Belgium Blvd, Riverside MO 64150",
+          "claim_type": "source_stated",
+          "source_url": "https://completehomeconcepts.com/marble/",
+          "source_name": "Complete Home Concepts cultured marble",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "activity",
+          "value": "Manufactures molded, cured and polished cultured-marble/Granitex bathroom products with gel coating",
+          "claim_type": "source_stated",
+          "source_url": "https://completehomeconcepts.com/marble/",
+          "source_name": "Complete Home Concepts cultured marble",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "facility_history",
+          "value": "Riverside facility built in 2007; acquired marble manufacturing shop and equipment in 1999",
+          "claim_type": "source_stated",
+          "source_url": "https://completehomeconcepts.com/about-us/",
+          "source_name": "Complete Home Concepts About",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://completehomeconcepts.com/marble/",
+          "source_name": "Complete Home Concepts cultured marble",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Casting and curing resin-composite articles supports existing Ring 1 processing test; exact resin chemistry not stated."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "material_family",
+          "settling_fact": "Company specification or SDS naming the actual resin; do not assume polyester from generic cultured-marble practice"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Process-specific code with explicit provenance"
+        },
+        {
+          "field": "legal_operator",
+          "settling_fact": "Corporate record confirming exact legal suffix"
+        },
+        {
+          "field": "county",
+          "settling_fact": "Official jurisdiction for this address"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://completehomeconcepts.com/marble/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://completehomeconcepts.com/about-us/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-004828",
+      "verdict": "VERIFIED",
+      "reason": "DNV hose approval identifies Mountain Home production and a current certificate plus Arkansas regulator independently establish the location/operator.",
+      "observations": [
+        {
+          "field": "address",
+          "value": "1830 South College Spur, Mountain Home AR 72653",
+          "claim_type": "source_stated",
+          "source_url": "https://assets.danfoss.com/approvals/latest/582477/ID488137032413-0501.pdf",
+          "source_name": "DNV certificate on Danfoss site",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Appendix explicitly lists Mountain Home Manufacturing Plant."
+        },
+        {
+          "field": "operator_county",
+          "value": "Danfoss Power Solutions II LLC; Baxter County",
+          "claim_type": "source_stated",
+          "source_url": "https://adeq.state.ar.us/home/pdssql/p_facil_details.aspx?AFIN=0300021&AFINDash=03-00021",
+          "source_name": "Arkansas DEQ AFIN 03-00021",
+          "source_class": "government_filing",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Regulator uses 1830 Hwy 201 S Spur street variant."
+        },
+        {
+          "field": "naics_primary",
+          "value": "326291",
+          "claim_type": "source_stated",
+          "source_url": "https://adeq.state.ar.us/home/pdssql/p_facil_details.aspx?AFIN=0300021&AFINDash=03-00021",
+          "source_name": "Arkansas DEQ AFIN 03-00021",
+          "source_class": "government_filing",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Government-assigned code; retain provenance rather than silently replacing with hose-specific inference."
+        },
+        {
+          "field": "activity_materials",
+          "value": "Production of hoses with synthetic-rubber inner and cover",
+          "claim_type": "source_stated",
+          "source_url": "https://assets.danfoss.com/approvals/latest/517571/ID531143369300-0101.pdf",
+          "source_name": "DNV type approval TAP00002GC",
+          "source_class": "own_site",
+          "source_date": "2023-06-09",
+          "accessed_date": "2026-10-30",
+          "summary": "Issued June 2023, validity to April 2027; production place Mountain Home."
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://assets.danfoss.com/approvals/latest/517571/ID531143369300-0101.pdf",
+          "source_name": "DNV type approval",
+          "source_class": "own_site",
+          "source_date": "2023-06-09",
+          "accessed_date": "2026-10-30",
+          "summary": "Rubber hose manufacture fits existing Ring 1 test."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "street_alias",
+          "settling_fact": "Official address normalization to confirm Hwy 201 S Spur/South College Spur equivalence; both primary sources identify Mountain Home plant"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://assets.danfoss.com/approvals/latest/517571/ID531143369300-0101.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://assets.danfoss.com/approvals/latest/582477/ID488137032413-0501.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://adeq.state.ar.us/home/pdssql/p_facil_details.aspx?AFIN=0300021&AFINDash=03-00021",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "SITE-005870",
+      "verdict": "VERIFIED",
+      "reason": "Own manufacturer SDS and company description tie polymeric resin products to the Calvert City manufacturing hub and exact address.",
+      "observations": [
+        {
+          "field": "operator_address",
+          "value": "Estron Chemical Inc.; 807 North Main St, Calvert City KY 42029",
+          "claim_type": "source_stated",
+          "source_url": "https://estron.com/wp-content/uploads/2016/01/GMA-300G-10-12-20-GHS-SDS.pdf",
+          "source_name": "Estron GMA-300G SDS",
+          "source_class": "own_site",
+          "source_date": "2020-10-12",
+          "accessed_date": "2026-10-30",
+          "summary": "Manufacturer identification rather than reseller listing."
+        },
+        {
+          "field": "activity_materials",
+          "value": "Acrylic resin, coating binders/co-resins/crosslinkers and polymer additives; Calvert City manufacturing hub",
+          "claim_type": "source_stated",
+          "source_url": "https://estron.com/about-estron/",
+          "source_name": "Estron About",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "product",
+          "value": "Solid acrylic resin for powder coatings",
+          "claim_type": "source_stated",
+          "source_url": "https://estron.com/wp-content/uploads/2016/01/GMA-300G-10-12-20-GHS-SDS.pdf",
+          "source_name": "Estron GMA-300G SDS",
+          "source_class": "own_site",
+          "source_date": "2020-10-12",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "ring",
+          "settling_fact": "Site-specific process distinguishing standalone resin polymerization (Ring 1) from formulation/compounding (Ring 2)"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Process-specific code and named provenance"
+        },
+        {
+          "field": "county",
+          "settling_fact": "Address-linked official jurisdiction"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://estron.com/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://estron.com/about-estron/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://estron.com/wp-content/uploads/2016/01/GMA-300G-10-12-20-GHS-SDS.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004202",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Existence is established, but sources describe ethylene feedstock production, not polymer manufacture. Settling fact: polymer-specific qualifying activity/customer predominance or an owner-approved scope ruling for this monomer producer.",
+      "observations": [
+        {
+          "field": "identity_ownership",
+          "value": "LACC LLC; 50/50 joint venture of Lotte Chemical USA and Westlake",
+          "claim_type": "source_stated",
+          "source_url": "https://lottechemusa.com/our-companies/lacc-llc/",
+          "source_name": "Lotte Chemical USA LACC profile",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "activity",
+          "value": "Makes ethylene from ethane; supplies ethylene feedstock to Westlake and LC USA",
+          "claim_type": "source_stated",
+          "source_url": "https://lottechemusa.com/our-companies/lacc-llc/",
+          "source_name": "Lotte Chemical USA LACC profile",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Downstream products include polymers but that does not establish LACC itself polymerizes them."
+        },
+        {
+          "field": "manufacturing_address",
+          "value": "2200 Bayou D’Inde Pass, Westlake LA 70669",
+          "claim_type": "source_stated",
+          "source_url": "https://lottechemusa.com/contact/locations/",
+          "source_name": "Lotte Chemical USA locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "This is explicitly a manufacturing-complex address, not proven headquarters."
+        },
+        {
+          "field": "operating_presence",
+          "value": "Leadership announcement covers LACC at Westlake manufacturing facility",
+          "claim_type": "source_stated",
+          "source_url": "https://lottechemusa.com/lotte-chemical-usa-corporation-announces-leadership-changes/",
+          "source_name": "Lotte Chemical USA leadership announcement",
+          "source_class": "own_site",
+          "source_date": "2024-02-07",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "scope_ring",
+          "settling_fact": "Owner ruling or direct qualifying polymer activity/polymer-customer predominance evidence; no exclusion based on failed searches"
+        },
+        {
+          "field": "hq_city",
+          "settling_fact": "Source explicitly identifying LACC headquarters rather than copying manufacturing location or parent Houston HQ"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Named government/company code or transparent inference"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://lottechemusa.com/our-companies/lacc-llc/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://lottechemusa.com/contact/locations/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://lottechemusa.com/lotte-chemical-usa-corporation-announces-leadership-changes/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004450",
+      "verdict": "VERIFIED",
+      "reason": "The company explicitly manufactures FRP parts in-house and names its world headquarters; polymer transformation is established at organizational grain.",
+      "observations": [
+        {
+          "field": "hq_city_address",
+          "value": "Chickasha, Oklahoma; 1156 E Highway 19, Chickasha OK 73018",
+          "claim_type": "source_stated",
+          "source_url": "https://mwcooling.com/",
+          "source_name": "Midwest Cooling Towers homepage",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "World headquarters explicitly named Chickasha, not inferred from a plant or contact alone."
+        },
+        {
+          "field": "activity_materials",
+          "value": "In-house fiberglass-reinforced-plastic components; fiberglass fan stacks, pultruded reinforced-polyester decking and fabricated FRP parts",
+          "claim_type": "source_stated",
+          "source_url": "https://mwcooling.com/products/",
+          "source_name": "Midwest Cooling Towers products",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://mwcooling.com/products/",
+          "source_name": "Midwest Cooling Towers products",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Manufacture of composite parts meets existing Ring 1 test."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "legal_name",
+          "settling_fact": "Official corporate record confirming legal suffix"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Process-appropriate code with provenance"
+        },
+        {
+          "field": "county",
+          "settling_fact": "Official address jurisdiction"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://mwcooling.com/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://mwcooling.com/about-us/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://mwcooling.com/products/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://mwcooling.com/capabilities/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://mwcooling.com/products/",
+          "outcome": "second open of same page; no additional source",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 4
+    },
+    {
+      "record_id": "ORG-004087",
+      "verdict": "VERIFIED",
+      "reason": "Own company page describes rubber-compound manufacture and installed mixing equipment, establishing polymer-processing organizational identity.",
+      "observations": [
+        {
+          "field": "name_address",
+          "value": "R&S Processing Co. Inc.; 15712 Illinois Ave, Paramount CA 90723",
+          "claim_type": "source_stated",
+          "source_url": "https://www.rsprocessing.com/",
+          "source_name": "R&S Processing",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "activity_materials",
+          "value": "Custom rubber compounds; internal mixers, rubber mills and silicone mills",
+          "claim_type": "source_stated",
+          "source_url": "https://www.rsprocessing.com/",
+          "source_name": "R&S Processing",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "ring",
+          "value": "2",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://www.rsprocessing.com/",
+          "source_name": "R&S Processing",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Marketed identity is custom rubber compounding; apply existing Ring 2 parent rule."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "hq_city",
+          "settling_fact": "Explicit headquarters designation; Paramount is a confirmed business address only"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Sourced establishment/company code or documented process inference"
+        },
+        {
+          "field": "county",
+          "settling_fact": "Official address jurisdiction"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.rsprocessing.com/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 1
+    },
+    {
+      "record_id": "ORG-004053",
+      "verdict": "VERIFIED",
+      "reason": "Parent corporate directory explicitly identifies entity, head office and foam manufacture; own operational recruitment corroborates product/process.",
+      "observations": [
+        {
+          "field": "name_hq",
+          "value": "SEKISUI VOLTEK LLC; head office 17 Allen Ave, Coldwater MI 49036",
+          "claim_type": "source_stated",
+          "source_url": "https://www.sekisuichemical.com/company/americas/1363645_38605.html",
+          "source_name": "SEKISUI Chemical Americas company directory",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "activity_materials",
+          "value": "Manufacture and sale of polyolefin foam; closed-cell crosslinked foam and oven-operation roles",
+          "claim_type": "source_stated",
+          "source_url": "https://www.sekisuivoltek.com/about/employment/production-operator",
+          "source_name": "SEKISUI Voltek production operator posting",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "ring",
+          "value": "1",
+          "claim_type": "researcher_inferred",
+          "source_url": "https://www.sekisuivoltek.com/about/employment/production-operator",
+          "source_name": "SEKISUI Voltek production operator posting",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Manufacture of foam articles fits existing Ring 1 test."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "Government-assigned code or transparent foam-process inference"
+        },
+        {
+          "field": "county",
+          "settling_fact": "Official headquarters-address jurisdiction"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.sekisuichemical.com/company/americas/1363645_38605.html",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.sekisuivoltek.com/about/employment/production-operator",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-004843",
+      "verdict": "VERIFIED",
+      "reason": "Current company location and plant-specific SGS certificate establish the Borger specialty-polymers establishment and manufacturing scope.",
+      "observations": [
+        {
+          "field": "operator",
+          "value": "Syensqo Specialty Polymers USA LLC",
+          "claim_type": "source_stated",
+          "source_url": "https://www.syensqo.com/en/syensqo-around-the-world/usa",
+          "source_name": "Syensqo USA locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "street_address",
+          "value": "600 Spur 119 N, Borger TX 79007",
+          "claim_type": "source_stated",
+          "source_url": "https://www.syensqo.com/en/syensqo-around-the-world/usa",
+          "source_name": "Syensqo USA locations",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": ""
+        },
+        {
+          "field": "address_variant",
+          "value": "600 Spur 119 East, Borger TX 79007",
+          "claim_type": "source_stated",
+          "source_url": "https://www.syensqo.com/sites/g/files/alwlxe161/files/2026-02/Syensqo%20Specialty%20Polymers_Global_ISO%209001_EXP%2008-Jan-2028.pdf",
+          "source_name": "SGS ISO9001 US22/00000202 Issue4",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Certificate uses East while company location uses N; retain conflict rather than silently normalize."
+        },
+        {
+          "field": "activity",
+          "value": "Manufacture of engineering thermoplastic resins and compounds",
+          "claim_type": "source_stated",
+          "source_url": "https://www.syensqo.com/sites/g/files/alwlxe161/files/2026-02/Syensqo%20Specialty%20Polymers_Global_ISO%209001_EXP%2008-Jan-2028.pdf",
+          "source_name": "SGS ISO9001 US22/00000202 Issue4",
+          "source_class": "own_site",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Plant-specific certification scope; certificate valid to January 2028."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "street_direction",
+          "settling_fact": "Authoritative address normalization settling North versus East"
+        },
+        {
+          "field": "ring",
+          "settling_fact": "Exact site process distinguishing polymerization from compounding under existing ring rules"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Named code provenance"
+        },
+        {
+          "field": "legal_name_transition",
+          "settling_fact": "Dated corporate record establishing Solvay-to-Syensqo legal-name transition, if needed"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.syensqo.com/en/syensqo-around-the-world/usa",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.syensqo.com/sites/g/files/alwlxe161/files/2026-02/Syensqo%20Specialty%20Polymers_Global_ISO%209001_EXP%2008-Jan-2028.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-005635",
+      "verdict": "VERIFIED",
+      "reason": "Company links Fiber Center plans to Kimberly Park and a later dated announcement confirms actual opening and polymer/fiber pilot operations; public directory supplies street number.",
+      "observations": [
+        {
+          "field": "site_identity",
+          "value": "Kimberly Park site in Dalton selected for Fiber Center of Excellence",
+          "claim_type": "source_stated",
+          "source_url": "https://www.techmerpm.com/techmer-pm-announces-plans-for-fiber-center-of-excellence/",
+          "source_name": "Techmer PM Fiber Center plans",
+          "source_class": "own_site",
+          "source_date": "2023-11-15",
+          "accessed_date": "2026-10-30",
+          "summary": "2023 plan alone is not proof of completion."
+        },
+        {
+          "field": "activity_status",
+          "value": "CoLab at Dalton Fiber Center opened May 2025; polymer/fiber pilot plant, application/color laboratory and design center",
+          "claim_type": "source_stated",
+          "source_url": "https://www.techmerpm.com/techmer-pm-unveils-colab-and-fibertech-connect/",
+          "source_name": "Techmer PM CoLab launch",
+          "source_class": "own_site",
+          "source_date": "2025-05-14",
+          "accessed_date": "2026-10-30",
+          "summary": "Dated outcome confirms actual opening after earlier plan."
+        },
+        {
+          "field": "street_address",
+          "value": "1727 Kimberly Park Dr, Dalton",
+          "claim_type": "source_stated",
+          "source_url": "https://craft.co/techmer-pm/locations",
+          "source_name": "Craft Techmer PM locations",
+          "source_class": "directory",
+          "source_date": "undated",
+          "accessed_date": "2026-10-30",
+          "summary": "Secondary address corroboration; ZIP absent from this opened page."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "zip",
+          "settling_fact": "Primary current address record resolving exact ZIP"
+        },
+        {
+          "field": "site_type_ring",
+          "settling_fact": "Site-specific mix of production versus R&D functions; do not automatically label commercial compounding factory from parent identity"
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "Site-specific code with provenance"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.techmerpm.com/techmer-pm-announces-plans-for-fiber-center-of-excellence/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.techmerpm.com/techmer-pm-unveils-colab-and-fibertech-connect/",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://craft.co/techmer-pm/locations",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://cms1files.revize.com/whitfield/Documents/Government/BOC%20Meeting%20Minutes/2024%2C%20June%20Permits%5B91%5D.pdf",
+          "outcome": "404; no absence inference",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "SITE-005305",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Exact-address Weir/Linatex establishment and rubber-product relevance are established. Settling fact: opened site-specific primary description proving current rubber production or other qualifying polymer function at 3459 South 700 West; group product brochure cannot assign plant process.",
+      "observations": [
+        {
+          "field": "operator_address_county",
+          "value": "Weir Minerals Inc.; 3459 S 700 W, Salt Lake City UT 84119; Salt Lake County",
+          "claim_type": "source_stated",
+          "source_url": "https://noistatus.deq.utah.gov/status",
+          "source_name": "Utah DEQ permit status",
+          "source_class": "government_filing",
+          "source_date": "2026-10-22",
+          "accessed_date": "2026-10-30",
+          "summary": "Project N105550009, NOI received October 22, 2026; application status is not proof of a particular production process."
+        },
+        {
+          "field": "historical_name_address",
+          "value": "Weir Minerals Linatex Salt Lake City, formerly Rubber Engineering; 3459 South 700 West, Salt Lake City UT 84119",
+          "claim_type": "source_stated",
+          "source_url": "https://linatex.dk/wp-content/uploads/2018/05/Linatex-premium-rubber-1.pdf",
+          "source_name": "Weir Linatex premium rubber brochure, distributor-hosted",
+          "source_class": "company_document_third_party_host",
+          "source_date": "2014",
+          "accessed_date": "2026-10-30",
+          "summary": "Company-authored historical brochure names this office; product specifications are group-wide."
+        },
+        {
+          "field": "naics_primary",
+          "value": "333911",
+          "claim_type": "source_stated",
+          "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1330886.015",
+          "source_name": "OSHA inspection 1330886.015",
+          "source_class": "government_filing",
+          "source_date": "2018-07-18",
+          "accessed_date": "2026-10-30",
+          "summary": "Historical government-assigned pump-equipment code; OSHA ZIP84104 differs from current DEQ84119. Case closure is not plant closure."
+        },
+        {
+          "field": "product_context",
+          "value": "Linatex premium natural rubber sheets and molded components",
+          "claim_type": "source_stated",
+          "source_url": "https://linatex.dk/wp-content/uploads/2018/05/Linatex-premium-rubber-1.pdf",
+          "source_name": "Weir Linatex premium rubber brochure",
+          "source_class": "company_document_third_party_host",
+          "source_date": "2014",
+          "accessed_date": "2026-10-30",
+          "summary": "Does not itself establish which items are manufactured at Salt Lake City."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "site_activity_scope",
+          "settling_fact": "Fetchable company annual-report passage or current address-specific permit specifying rubber production; search snippet was excluded from evidence"
+        },
+        {
+          "field": "ring",
+          "settling_fact": "Site-specific polymer function sufficient for existing ring test"
+        },
+        {
+          "field": "current_naics",
+          "settling_fact": "Current process-appropriate establishment code with named provenance"
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1330886.015",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://noistatus.deq.utah.gov/status",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://linatex.dk/wp-content/uploads/2018/05/Linatex-premium-rubber-1.pdf",
+          "outcome": "opened substantive page",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.global.weir/newsroom/global-news/josh-cherry-qa/",
+          "outcome": "opened shell only; no substantive body",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.global.weir/salt-lake-city-case-study",
+          "outcome": "cache miss",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.global.weir/globalassets/investors/reporting-centre/2024/2023-annual-report/weir-group-2023-annual-report.pdf",
+          "outcome": "fetch rejected: content length 10837212 too large; no absence inference",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://financialfilings.com/filings/weir-group-plc/annual-report/2024/46836297/",
+          "outcome": "timeout; secondary-host fallback failed",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 6
+    }
+  ]
+}

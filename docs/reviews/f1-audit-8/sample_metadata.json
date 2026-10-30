@@ -1,0 +1,1329 @@
+{
+  "seed": "polymer-atlas-audit8-eceead3-2026-10-30-v1",
+  "pin": "eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05",
+  "wave_map_sha256": "86e78616b3c4aac23ceb143fd724acc3e287a64ce9b9071b08088249ec0b8fd7",
+  "strata": [
+    {
+      "key": [
+        "A",
+        "P1",
+        "organizations",
+        true
+      ],
+      "population_n": 3,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "A",
+        "P1",
+        "sites",
+        false
+      ],
+      "population_n": 9,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "A",
+        "P2",
+        "organizations",
+        true
+      ],
+      "population_n": 5,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "A",
+        "P3",
+        "organizations",
+        false
+      ],
+      "population_n": 11,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "A",
+        "P3",
+        "organizations",
+        true
+      ],
+      "population_n": 22,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "A",
+        "P3",
+        "sites",
+        false
+      ],
+      "population_n": 55,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "A",
+        "P4",
+        "organizations",
+        true
+      ],
+      "population_n": 65,
+      "sample_n": 2
+    },
+    {
+      "key": [
+        "A",
+        "P4",
+        "sites",
+        false
+      ],
+      "population_n": 63,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P1",
+        "organizations",
+        false
+      ],
+      "population_n": 2,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P1",
+        "organizations",
+        true
+      ],
+      "population_n": 3,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "population_n": 319,
+      "sample_n": 6
+    },
+    {
+      "key": [
+        "B",
+        "P2",
+        "organizations",
+        false
+      ],
+      "population_n": 4,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P2",
+        "organizations",
+        true
+      ],
+      "population_n": 11,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P2",
+        "sites",
+        false
+      ],
+      "population_n": 141,
+      "sample_n": 2
+    },
+    {
+      "key": [
+        "B",
+        "P3",
+        "organizations",
+        false
+      ],
+      "population_n": 71,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P3",
+        "organizations",
+        true
+      ],
+      "population_n": 101,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "population_n": 330,
+      "sample_n": 6
+    },
+    {
+      "key": [
+        "B",
+        "P4",
+        "organizations",
+        false
+      ],
+      "population_n": 2,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "population_n": 184,
+      "sample_n": 7
+    },
+    {
+      "key": [
+        "B",
+        "P4",
+        "sites",
+        false
+      ],
+      "population_n": 165,
+      "sample_n": 3
+    },
+    {
+      "key": [
+        "C",
+        "P1",
+        "sites",
+        false
+      ],
+      "population_n": 81,
+      "sample_n": 4
+    },
+    {
+      "key": [
+        "C",
+        "P2",
+        "organizations",
+        true
+      ],
+      "population_n": 1,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "C",
+        "P2",
+        "sites",
+        false
+      ],
+      "population_n": 18,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "C",
+        "P3",
+        "organizations",
+        false
+      ],
+      "population_n": 6,
+      "sample_n": 1
+    },
+    {
+      "key": [
+        "C",
+        "P3",
+        "organizations",
+        true
+      ],
+      "population_n": 58,
+      "sample_n": 3
+    },
+    {
+      "key": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "population_n": 117,
+      "sample_n": 6
+    },
+    {
+      "key": [
+        "C",
+        "P4",
+        "organizations",
+        true
+      ],
+      "population_n": 40,
+      "sample_n": 4
+    },
+    {
+      "key": [
+        "C",
+        "P4",
+        "sites",
+        false
+      ],
+      "population_n": 85,
+      "sample_n": 5
+    }
+  ],
+  "sample": [
+    {
+      "record_id": "ORG-004620",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "1d7716767c98f3c88140d84f4163c34d3018de4b",
+      "creation_tier": "A",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "A",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03076923076923077
+    },
+    {
+      "record_id": "SITE-005050",
+      "table": "sites",
+      "creation_pass": 22,
+      "creation_sha": "41a1e95eda8bcba2a4df6a4ea77db408770f2a64",
+      "creation_tier": "B",
+      "wave_class": "P2",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P2",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.014184397163120567
+    },
+    {
+      "record_id": "ORG-004549",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "391b52adcb8bbfbcc0a7c221e3159ebf6977cdb4",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "ORG-004087",
+      "table": "organizations",
+      "creation_pass": 22,
+      "creation_sha": "030d51870b1f3242fd48c536186865ab8771a71b",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P3",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.009900990099009901
+    },
+    {
+      "record_id": "SITE-005406",
+      "table": "sites",
+      "creation_pass": 23,
+      "creation_sha": "95d5c92e570bcf65bc070fbfa61d9ad44d9580f6",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "SITE-004843",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.018808777429467086
+    },
+    {
+      "record_id": "ORG-004058",
+      "table": "organizations",
+      "creation_pass": 22,
+      "creation_sha": "030d51870b1f3242fd48c536186865ab8771a71b",
+      "creation_tier": "B",
+      "wave_class": "P2",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P2",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.09090909090909091
+    },
+    {
+      "record_id": "SITE-005843",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "b6062141f2ba6980b6a948031f1be1fd3787ee71",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.058823529411764705
+    },
+    {
+      "record_id": "ORG-004036",
+      "table": "organizations",
+      "creation_pass": 20,
+      "creation_sha": "ec4775143d552da99050ae3e421015b2bec6e50b",
+      "creation_tier": "A",
+      "wave_class": "P1",
+      "single_facility_organization": true,
+      "stratum": [
+        "A",
+        "P1",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.3333333333333333
+    },
+    {
+      "record_id": "SITE-004878",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "C",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.04938271604938271
+    },
+    {
+      "record_id": "SITE-005838",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "b6062141f2ba6980b6a948031f1be1fd3787ee71",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "ORG-004123",
+      "table": "organizations",
+      "creation_pass": 23,
+      "creation_sha": "19fb3ca8c9da594261a97cf502d62e6b3bc73c97",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P3",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.05172413793103448
+    },
+    {
+      "record_id": "SITE-005291",
+      "table": "sites",
+      "creation_pass": 23,
+      "creation_sha": "19fb3ca8c9da594261a97cf502d62e6b3bc73c97",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05128205128205128
+    },
+    {
+      "record_id": "SITE-004651",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "A",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "A",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.1111111111111111
+    },
+    {
+      "record_id": "ORG-004047",
+      "table": "organizations",
+      "creation_pass": 22,
+      "creation_sha": "030d51870b1f3242fd48c536186865ab8771a71b",
+      "creation_tier": "C",
+      "wave_class": "P2",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P2",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 1.0
+    },
+    {
+      "record_id": "ORG-004227",
+      "table": "organizations",
+      "creation_pass": 23,
+      "creation_sha": "6970c2c1d678777b4f4a239c391e22fbe7641003",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "organizations",
+        false
+      ],
+      "inclusion_probability": 0.16666666666666666
+    },
+    {
+      "record_id": "SITE-004828",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "C",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.04938271604938271
+    },
+    {
+      "record_id": "SITE-005582",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "ORG-004346",
+      "table": "organizations",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        false
+      ],
+      "inclusion_probability": 0.5
+    },
+    {
+      "record_id": "ORG-004537",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "391b52adcb8bbfbcc0a7c221e3159ebf6977cdb4",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "ORG-004034",
+      "table": "organizations",
+      "creation_pass": 20,
+      "creation_sha": "29978a3441fadf8ef9405b9b3d83b6af4f1b9fcc",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P1",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.3333333333333333
+    },
+    {
+      "record_id": "SITE-005635",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "SITE-005498",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "SITE-004771",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "C",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.04938271604938271
+    },
+    {
+      "record_id": "SITE-004989",
+      "table": "sites",
+      "creation_pass": 22,
+      "creation_sha": "41a1e95eda8bcba2a4df6a4ea77db408770f2a64",
+      "creation_tier": "C",
+      "wave_class": "P2",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P2",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05555555555555555
+    },
+    {
+      "record_id": "ORG-004080",
+      "table": "organizations",
+      "creation_pass": 22,
+      "creation_sha": "030d51870b1f3242fd48c536186865ab8771a71b",
+      "creation_tier": "A",
+      "wave_class": "P3",
+      "single_facility_organization": true,
+      "stratum": [
+        "A",
+        "P3",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.045454545454545456
+    },
+    {
+      "record_id": "SITE-005513",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05128205128205128
+    },
+    {
+      "record_id": "ORG-004367",
+      "table": "organizations",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.1
+    },
+    {
+      "record_id": "SITE-004911",
+      "table": "sites",
+      "creation_pass": 22,
+      "creation_sha": "41a1e95eda8bcba2a4df6a4ea77db408770f2a64",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.018808777429467086
+    },
+    {
+      "record_id": "SITE-005945",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "b6062141f2ba6980b6a948031f1be1fd3787ee71",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.058823529411764705
+    },
+    {
+      "record_id": "ORG-004332",
+      "table": "organizations",
+      "creation_pass": 24,
+      "creation_sha": "7acc1a549b00af8cc160fafb610efdc0f94457a9",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "ORG-004053",
+      "table": "organizations",
+      "creation_pass": 22,
+      "creation_sha": "030d51870b1f3242fd48c536186865ab8771a71b",
+      "creation_tier": "A",
+      "wave_class": "P2",
+      "single_facility_organization": true,
+      "stratum": [
+        "A",
+        "P2",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.2
+    },
+    {
+      "record_id": "SITE-005817",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "17109257aeb1b8945b36adddca55cdcbf51d6769",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.058823529411764705
+    },
+    {
+      "record_id": "ORG-004586",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "1d7716767c98f3c88140d84f4163c34d3018de4b",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "SITE-005870",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "17109257aeb1b8945b36adddca55cdcbf51d6769",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "ORG-004039",
+      "table": "organizations",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "organizations",
+        false
+      ],
+      "inclusion_probability": 0.5
+    },
+    {
+      "record_id": "SITE-005235",
+      "table": "sites",
+      "creation_pass": 23,
+      "creation_sha": "95d5c92e570bcf65bc070fbfa61d9ad44d9580f6",
+      "creation_tier": "A",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "A",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "SITE-005567",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "SITE-005924",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "17109257aeb1b8945b36adddca55cdcbf51d6769",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    },
+    {
+      "record_id": "ORG-004060",
+      "table": "organizations",
+      "creation_pass": 22,
+      "creation_sha": "41a1e95eda8bcba2a4df6a4ea77db408770f2a64",
+      "creation_tier": "B",
+      "wave_class": "P2",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P2",
+        "organizations",
+        false
+      ],
+      "inclusion_probability": 0.25
+    },
+    {
+      "record_id": "SITE-005305",
+      "table": "sites",
+      "creation_pass": 23,
+      "creation_sha": "95d5c92e570bcf65bc070fbfa61d9ad44d9580f6",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05128205128205128
+    },
+    {
+      "record_id": "ORG-004590",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "1d7716767c98f3c88140d84f4163c34d3018de4b",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.1
+    },
+    {
+      "record_id": "SITE-004642",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.018808777429467086
+    },
+    {
+      "record_id": "ORG-004269",
+      "table": "organizations",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "A",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "A",
+        "P3",
+        "organizations",
+        false
+      ],
+      "inclusion_probability": 0.09090909090909091
+    },
+    {
+      "record_id": "SITE-004995",
+      "table": "sites",
+      "creation_pass": 22,
+      "creation_sha": "41a1e95eda8bcba2a4df6a4ea77db408770f2a64",
+      "creation_tier": "B",
+      "wave_class": "P2",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P2",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.014184397163120567
+    },
+    {
+      "record_id": "ORG-004378",
+      "table": "organizations",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "SITE-004756",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.018808777429467086
+    },
+    {
+      "record_id": "SITE-005618",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05128205128205128
+    },
+    {
+      "record_id": "ORG-004125",
+      "table": "organizations",
+      "creation_pass": 23,
+      "creation_sha": "19fb3ca8c9da594261a97cf502d62e6b3bc73c97",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P3",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.05172413793103448
+    },
+    {
+      "record_id": "SITE-005717",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "17109257aeb1b8945b36adddca55cdcbf51d6769",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.058823529411764705
+    },
+    {
+      "record_id": "SITE-005862",
+      "table": "sites",
+      "creation_pass": 25,
+      "creation_sha": "b6062141f2ba6980b6a948031f1be1fd3787ee71",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.058823529411764705
+    },
+    {
+      "record_id": "ORG-004489",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "391b52adcb8bbfbcc0a7c221e3159ebf6977cdb4",
+      "creation_tier": "A",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "A",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03076923076923077
+    },
+    {
+      "record_id": "SITE-005510",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05128205128205128
+    },
+    {
+      "record_id": "ORG-004485",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "391b52adcb8bbfbcc0a7c221e3159ebf6977cdb4",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "SITE-004664",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.018808777429467086
+    },
+    {
+      "record_id": "ORG-004252",
+      "table": "organizations",
+      "creation_pass": 23,
+      "creation_sha": "19fb3ca8c9da594261a97cf502d62e6b3bc73c97",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "organizations",
+        false
+      ],
+      "inclusion_probability": 0.014084507042253521
+    },
+    {
+      "record_id": "ORG-004546",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "391b52adcb8bbfbcc0a7c221e3159ebf6977cdb4",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.1
+    },
+    {
+      "record_id": "SITE-004762",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "B",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.018808777429467086
+    },
+    {
+      "record_id": "SITE-004746",
+      "table": "sites",
+      "creation_pass": 21,
+      "creation_sha": "b801b0b02ced24939ea8845518ccd7c291952ca6",
+      "creation_tier": "C",
+      "wave_class": "P1",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P1",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.04938271604938271
+    },
+    {
+      "record_id": "ORG-004450",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "1d7716767c98f3c88140d84f4163c34d3018de4b",
+      "creation_tier": "B",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "B",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.03804347826086957
+    },
+    {
+      "record_id": "ORG-004202",
+      "table": "organizations",
+      "creation_pass": 23,
+      "creation_sha": "6970c2c1d678777b4f4a239c391e22fbe7641003",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P3",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.05172413793103448
+    },
+    {
+      "record_id": "ORG-004596",
+      "table": "organizations",
+      "creation_pass": 25,
+      "creation_sha": "391b52adcb8bbfbcc0a7c221e3159ebf6977cdb4",
+      "creation_tier": "C",
+      "wave_class": "P4",
+      "single_facility_organization": true,
+      "stratum": [
+        "C",
+        "P4",
+        "organizations",
+        true
+      ],
+      "inclusion_probability": 0.1
+    },
+    {
+      "record_id": "SITE-005695",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "A",
+      "wave_class": "P4",
+      "single_facility_organization": false,
+      "stratum": [
+        "A",
+        "P4",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.015873015873015872
+    },
+    {
+      "record_id": "SITE-005309",
+      "table": "sites",
+      "creation_pass": 23,
+      "creation_sha": "95d5c92e570bcf65bc070fbfa61d9ad44d9580f6",
+      "creation_tier": "C",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "C",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.05128205128205128
+    },
+    {
+      "record_id": "SITE-005642",
+      "table": "sites",
+      "creation_pass": 24,
+      "creation_sha": "c7e4260af777df33951fb56357bff713bfacf42b",
+      "creation_tier": "B",
+      "wave_class": "P3",
+      "single_facility_organization": false,
+      "stratum": [
+        "B",
+        "P3",
+        "sites",
+        false
+      ],
+      "inclusion_probability": 0.01818181818181818
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+2026-10-30T23:03:53Z
+PASS: reran sampler.py against v2 map pinned bf7857a7826ba62cdcf67af3ba718c3d5a9b32be into /tmp/f1-reproduction.
+All nine outputs named in DRAW_MANIFEST.json reproduce byte-identically against their frozen SHA-256 hashes.
+Comparison/sampling/population contents were not displayed to coordinator/verifiers during this check.

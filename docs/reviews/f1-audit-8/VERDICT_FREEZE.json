@@ -1,0 +1,17 @@
+{
+  "frozen_utc": "2026-10-30T23:08:00.662367+00:00",
+  "stage": "ALL 65 independent verdicts frozen before opening original source notes/evidence or sealed sampling strata",
+  "files": {
+    "blind/blind_batch_1_results.json": "a6fec7ebb2d7ad09afc00979350b386725aa040dbe02bb6e55f6d3823f2b5011",
+    "blind/blind_batch_2_results.json": "18487e7327edc7ce48f7c014243d863754ac60fa375bddbedc97fc65385139a5",
+    "blind/blind_batch_3_results.json": "b556a4e3405d2454839f2a36ad9939b69bfc075e68650547d760ad534fa6b845",
+    "blind/blind_batch_4_results.json": "69cc3e2f55d000f5c7fadf8184de9106de392a7c55eafc0a9cd837b9e5f74d17",
+    "blind/blind_batch_5_results.json": "41509ad7e71f802cb4a9d654cb48410f1a8ebac7ce41b2797e55c285aa3e69cb"
+  },
+  "independent_verdict_counts": {
+    "VERIFIED": 55,
+    "STILL_UNCERTAIN": 10
+  },
+  "comparison_started": false,
+  "disposition": "Immutable blind observations; post-freeze grades are separate artifacts and do not overwrite these."
+}

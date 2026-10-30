@@ -1,0 +1,901 @@
+{
+  "batch": 1,
+  "accessed_date": "2026-10-30",
+  "blindness_statement": "Only identity manifest and repository instructions read. Existing record evidence, notes, tiers, classifications and sealed metadata were not read. Search keys are not evidence. Verdicts concern existence/scope, not validation of every field. No original-record comparison or data edits performed.",
+  "fetch_count_policy": "Unique primary URL attempts per organization; Bullfrog shared six attempts shown on both records, not twelve. Failed and unreadable fetches logged, not negative evidence. Search discovery queries not counted as primary page fetches. Directory fetches excluded from primary counts.",
+  "ring_note": "Sources establish polymer activities; no new owner scope, grain, ring or vocabulary ruling is made. Ring classification and original-field comparison remain coordinator work.",
+  "records": [
+    {
+      "record_id": "ORG-004269",
+      "verdict": "VERIFIED",
+      "reason": "Organization existence and polymer-product scope independently established; optional fields below remain unresolved.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "Bullfrog International LC",
+          "claim_type": "identity",
+          "source_url": "https://www.bullfrogspas.com/history/",
+          "source_name": "Bullfrog company history",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "History names the organization and establishment in 1996."
+        },
+        {
+          "field": "hq_city;hq_state",
+          "value": "Herriman;UT",
+          "claim_type": "identity",
+          "source_url": "https://www.bullfrogspas.com/history/",
+          "source_name": "Bullfrog company history",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "History says headquarters and manufacturing moved into the Herriman facility in early 2020."
+        },
+        {
+          "field": "mailing_address",
+          "value": "7017 West 11800 South, Herriman, UT 84096",
+          "claim_type": "identity",
+          "source_url": "https://www.bullfrogspas.com/contact/",
+          "source_name": "Bullfrog contact",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Explicit mailing address, not independently treated as a physical-headquarters street address."
+        },
+        {
+          "field": "polymer_scope;materials",
+          "value": "Spas with acrylic shells and molded ABS structural components",
+          "claim_type": "scope",
+          "source_url": "https://www.bullfrogspas.com/construction/",
+          "source_name": "Bullfrog construction",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Describes polymer-based spa structure and shells; does not establish which parts each plant molds."
+        },
+        {
+          "field": "current_activity",
+          "value": "Manufacturing recruitment in Herriman",
+          "claim_type": "liveness",
+          "source_url": "https://bullfrogspas.applicantpro.com/iframe/mobile/4249868.html",
+          "source_name": "Bullfrog employer job posting",
+          "source_class": "own_site",
+          "source_date": "2026-10-20",
+          "accessed_date": "2026-10-30",
+          "summary": "Dated employer posting describes hot-tub assembly and testing at the Herriman headquarters."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "county",
+          "settling_fact": "A physical-address county witness, rather than a mailing-city inference."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.bullfrogspas.com/sv/dealers/factory-store-bluffdale/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://bullfrogspas.applicantpro.com/iframe/mobile/4249868.html",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/history/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/construction/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/contact/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 6
+    },
+    {
+      "record_id": "SITE-005510",
+      "verdict": "VERIFIED",
+      "reason": "Actual Bluffdale manufacturing establishment and polymer-product scope established by company history and exact-address factory-store page; current detailed processes not fully established.",
+      "observations": [
+        {
+          "field": "street_address;city;state;zip",
+          "value": "668 West 14600 South;Bluffdale;UT;84065",
+          "claim_type": "identity",
+          "source_url": "https://www.bullfrogspas.com/sv/dealers/factory-store-bluffdale/",
+          "source_name": "Bullfrog factory store Bluffdale",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Own factory-store page identifies address and co-location with factory. Its old headquarters language is superseded by company history."
+        },
+        {
+          "field": "operator;site_activity",
+          "value": "Bullfrog International;Swim Series manufacturing",
+          "claim_type": "scope",
+          "source_url": "https://www.bullfrogspas.com/history/",
+          "source_name": "Bullfrog company history",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "History records conversion of Bluffdale facilities to Swim Series production in 2022; headquarters moved to Herriman in 2020."
+        },
+        {
+          "field": "polymer_product",
+          "value": "Spa construction uses acrylic shells and ABS components",
+          "claim_type": "scope",
+          "source_url": "https://www.bullfrogspas.com/construction/",
+          "source_name": "Bullfrog construction",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Company product construction supports polymer relevance; not a claim that specific molding operations occur at Bluffdale."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "current_operating_status;site_processes",
+          "settling_fact": "A dated current Bluffdale production statement or inspection; 2022 activity is established, exact 2026 processes are not."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Authoritative physical-address county source."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.bullfrogspas.com/sv/dealers/factory-store-bluffdale/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://bullfrogspas.applicantpro.com/iframe/mobile/4249868.html",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/history/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/construction/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bullfrogspas.com/contact/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 6
+    },
+    {
+      "record_id": "ORG-004036",
+      "verdict": "VERIFIED",
+      "reason": "Legal identity, headquarters and PVC-film manufacturing scope established.",
+      "observations": [
+        {
+          "field": "legal_name;hq_address;hq_city;hq_state",
+          "value": "Arlon Graphics LLC;200 Boysenberry Lane;Placentia;CA",
+          "claim_type": "identity",
+          "source_url": "https://www.arlon.com/na_en/contact",
+          "source_name": "Arlon contact",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Explicit corporate-headquarters designation, ZIP 92870."
+        },
+        {
+          "field": "polymer_scope;processes",
+          "value": "Roll-to-roll PVC film design and manufacture",
+          "claim_type": "scope",
+          "source_url": "https://www.arlon.com/assets/docs/Arlon_ISO_9001_2015_Certificate_65804_Effective_02052024.pdf",
+          "source_name": "BSI FM 65804 certificate hosted by Arlon",
+          "source_class": "own_site",
+          "source_date": "2024-02-06",
+          "accessed_date": "2026-10-30",
+          "summary": "Certificate identifies Arlon Graphics LLC and Placentia address; effective 2024-02-06, expiry 2027-02-05. Third-party certification hosted by subject."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.arlon.com/assets/docs/Arlon_ISO_9001_2015_Certificate_65804_Effective_02052024.pdf",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.arlon.com/na_en/contact",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.arlon.com/eu_de/press/arlon-india-pvt-ltd-partners-with-idea-works-pvt-limited-for-india-distribu/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004252",
+      "verdict": "VERIFIED",
+      "reason": "Specialty tire manufacturer exists. Precise own-site headquarters is Franklin; acquisition release uses broader Nashville description.",
+      "observations": [
+        {
+          "field": "legal_name;hq_city;hq_state;hq_address",
+          "value": "The Carlstar Group LLC;Franklin;TN;725 Cool Springs Blvd Suite 500, 37067",
+          "claim_type": "identity",
+          "source_url": "https://connect.carlstargroup.com/about",
+          "source_name": "Carlstar company contact/about",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Explicit headquarters designation. Older ownership history on this page is not treated as current ownership."
+        },
+        {
+          "field": "polymer_scope",
+          "value": "Manufactures specialty tires and wheels",
+          "claim_type": "scope",
+          "source_url": "https://ir.titan-intl.com/news-and-events/news-releases/press-release-details/2024/Titan-International-Inc.-Acquires-Carlstar-Group-LLC/default.aspx",
+          "source_name": "Titan acquisition announcement",
+          "source_class": "own_site",
+          "source_date": "2024-02-29",
+          "accessed_date": "2026-10-30",
+          "summary": "Buyer describes acquired company and operating plants."
+        },
+        {
+          "field": "ownership_event",
+          "value": "Titan International acquired Carlstar Group LLC",
+          "claim_type": "identity",
+          "source_url": "https://ir.titan-intl.com/news-and-events/news-releases/press-release-details/2024/Titan-International-Inc.-Acquires-Carlstar-Group-LLC/default.aspx",
+          "source_name": "Titan acquisition announcement",
+          "source_class": "own_site",
+          "source_date": "2024-02-29",
+          "accessed_date": "2026-10-30",
+          "summary": "Completed acquisition announcement; not a proposed Atlas relationship or ID. The release calls Carlstar Nashville-based, less precise than its Franklin headquarters address."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://connect.carlstargroup.com/about",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://ir.titan-intl.com/news-and-events/news-releases/press-release-details/2024/Titan-International-Inc.-Acquires-Carlstar-Group-LLC/default.aspx",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-005513",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Settling fact: a primary/public establishment-specific witness connecting Conceptual Creations to polymer manufacturing at 3820 N 38th Avenue, Phoenix. No absence or closure inference.",
+      "observations": [
+        {
+          "field": "alternate_company_address",
+          "value": "Conceptual Creations LLC, 2830 N 29th Ave, Phoenix AZ 85009",
+          "claim_type": "identity",
+          "source_url": "https://www.bbb.org/us/az/phoenix/profile/wholesale-pet-supplies/conceptual-creations-llc-1126-1000005855",
+          "source_name": "BBB business profile",
+          "source_class": "directory",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Public profile identifies pet-accessory business at a different address. It does not establish the sampled 38th Avenue plant or polymer manufacture."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "site_existence;operator;polymer_scope",
+          "settling_fact": "Exact 3820 N 38th Avenue primary production/inspection record; a different-address directory listing does not settle this."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://ccpetproducts.com/",
+          "outcome": "inaccessible",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.phoenix.gov/content/dam/phoenix/waterservicessite/documents/ms4_phase_i_%20annual_report_2021-22.pdf",
+          "outcome": "404; not evidence",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.bbb.org/us/az/phoenix/profile/wholesale-pet-supplies/conceptual-creations-llc-1126-1000005855",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "ORG-004034",
+      "verdict": "VERIFIED",
+      "reason": "Rubber/polyurethane manufacturer independently verified. Current own footer and certification name Durable Products LLC; no legal-conversion date inferred.",
+      "observations": [
+        {
+          "field": "legal_name",
+          "value": "Durable Products LLC",
+          "claim_type": "identity",
+          "source_url": "https://durableproductsinc.com/wp-content/uploads/2025/11/IATF16949-10000432-DP-LLC.pdf",
+          "source_name": "DQS IATF certificate hosted by Durable",
+          "source_class": "own_site",
+          "source_date": "2025-06-26",
+          "accessed_date": "2026-10-30",
+          "summary": "Certificate revised 2025-06-26 names LLC; validity to 2027-03-06. Own current footer likewise names LLC."
+        },
+        {
+          "field": "city;state;contact_address",
+          "value": "Crossville;TN;65 Highland St, 38555",
+          "claim_type": "identity",
+          "source_url": "https://durableproductsinc.com/",
+          "source_name": "Durable company website",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Contact address; not explicitly declared headquarters."
+        },
+        {
+          "field": "polymer_scope;processes",
+          "value": "Rubber and polyurethane products; compression molding, RIM polyurethane, rubber extrusion and die cutting",
+          "claim_type": "scope",
+          "source_url": "https://durableproductsinc.com/",
+          "source_name": "Durable company website",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Company describes its custom manufactured products and processes."
+        },
+        {
+          "field": "manufacturing_addresses",
+          "value": "137 Dayton Spur Road, Crossville TN 38555;177 Keyes St, Crossville TN 38557",
+          "claim_type": "scope",
+          "source_url": "https://durableproductsinc.com/wp-content/uploads/2025/11/IATF16949-10000432-DP-LLC.pdf",
+          "source_name": "DQS IATF certificate hosted by Durable",
+          "source_class": "own_site",
+          "source_date": "2025-06-26",
+          "accessed_date": "2026-10-30",
+          "summary": "Certified rubber-component manufacturing site and extended manufacturing address."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "hq_street_address",
+          "settling_fact": "Explicit headquarters designation; current contact and certified manufacturing addresses differ."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://durableproductsinc.com/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://durableproductsinc.com/wp-content/uploads/2025/11/IATF16949-10000432-DP-LLC.pdf",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "ORG-004590",
+      "verdict": "VERIFIED",
+      "reason": "Company and polymer-coating/spray-foam manufacturing scope established.",
+      "observations": [
+        {
+          "field": "legal_name;contact_address;city;state",
+          "value": "General Coatings Manufacturing Corp.;1220 E North Ave, 93725;Fresno;CA",
+          "claim_type": "identity",
+          "source_url": "https://generalcoatings.net/contact-us/",
+          "source_name": "General Coatings contact",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Company contact address; not explicitly a headquarters label."
+        },
+        {
+          "field": "polymer_scope;manufacturing_locations",
+          "value": "Spray foam, roof coatings and primers;Fresno, Santa Fe Springs and Arlington",
+          "claim_type": "scope",
+          "source_url": "https://generalcoatings.net/about-us/",
+          "source_name": "General Coatings about",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Own description identifies manufacturing and polymer-related coating families, including acrylic, silicone, polyurea and urethane."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "hq_designation",
+          "settling_fact": "Explicit corporate headquarters statement distinguishing contact location from plant address."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://generalcoatings.net/about-us/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://generalcoatings.net/contact-us/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-004756",
+      "verdict": "VERIFIED",
+      "reason": "Government onsite inspection establishes exact Lear plant and polyurethane molding, corroborated by live own supplier-location page.",
+      "observations": [
+        {
+          "field": "operator;street_address;city;state;county",
+          "value": "Lear Corporation;505 Hoover St;Farwell;MI;Clare",
+          "claim_type": "identity",
+          "source_url": "https://www.egle.state.mi.us/aps/downloads/srn/B7294/B7294_SAR_20221129.pdf",
+          "source_name": "Michigan EGLE inspection B7294",
+          "source_class": "government",
+          "source_date": "2022-11-29",
+          "accessed_date": "2026-10-30",
+          "summary": "Inspection explicitly identifies plant location and county."
+        },
+        {
+          "field": "polymer_scope;site_processes",
+          "value": "Molded polyurethane automotive seating/headrests/armrests;onsite polyol blending and foaming",
+          "claim_type": "scope",
+          "source_url": "https://www.egle.state.mi.us/aps/downloads/srn/B7294/B7294_SAR_20221129.pdf",
+          "source_name": "Michigan EGLE inspection B7294",
+          "source_class": "government",
+          "source_date": "2022-11-29",
+          "accessed_date": "2026-10-30",
+          "summary": "Inspector describes four production lines and onsite operations; dated observation, not assumed 2026 throughput."
+        },
+        {
+          "field": "current_site_listing",
+          "value": "Farwell, Michigan, USA seating location",
+          "claim_type": "liveness",
+          "source_url": "https://www.lear.com/edi-guidelines/farwell",
+          "source_name": "Lear EDI supplier guideline",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Live own site identifies Farwell seating location; not a recent dated production inspection."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "latest_specific_operations",
+          "settling_fact": "Current dated inspection or production statement if exact 2026 operating detail is required."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.egle.state.mi.us/aps/downloads/srn/B7294/B7294_SAR_20221129.pdf",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.lear.com/edi-guidelines/farwell",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://jobs.mitalent.org/job-seeker/job-details/JobCode/408909411",
+          "outcome": "403; not evidence",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    },
+    {
+      "record_id": "ORG-004620",
+      "verdict": "VERIFIED",
+      "reason": "Company identity, Corinth manufacturing location and polymer film/laminate scope independently established.",
+      "observations": [
+        {
+          "field": "legal_name;city;state;contact_address",
+          "value": "Mississippi Polymers Inc.;Corinth;MS;2733 South Harper Road, 38834",
+          "claim_type": "identity",
+          "source_url": "https://www.mississippipolymers.com/pvc-film-manufacturers-contact/",
+          "source_name": "Mississippi Polymers contact",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Company contact address and name."
+        },
+        {
+          "field": "polymer_scope;processes;manufacturing_location",
+          "value": "PVC/polyolefin films, laminates and coated fabrics;calendering;Corinth Mississippi",
+          "claim_type": "scope",
+          "source_url": "https://www.mississippipolymers.com/expanded-vinyl/",
+          "source_name": "Mississippi Polymers expanded vinyl",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Company describes its 500,000-square-foot Corinth manufacturing facility and custom films."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "hq_designation",
+          "settling_fact": "Explicit headquarters statement if headquarters street rather than company contact address is needed."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.mississippipolymers.com/expanded-vinyl/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.mississippipolymers.com/pvc-film-manufacturers-contact/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "ORG-004080",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Settling fact: current primary confirmation of Rahco legal identity and rubber manufacturing. Six primary routes failed; chamber supports the business but is not a primary signal. Failure is availability only.",
+      "observations": [
+        {
+          "field": "name;address;polymer_scope",
+          "value": "Rahco Rubber Inc.;1633 Birchwood Ave, Des Plaines IL 60018;custom compounding and precision rubber-component manufacture",
+          "claim_type": "scope",
+          "source_url": "https://business.dpchamber.com/list/member/rahco-rubber-inc-5321",
+          "source_name": "Des Plaines Chamber business profile",
+          "source_class": "directory",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Descriptive public business profile, not merely category membership. Older certification text is not treated as current certification."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "primary_existence;primary_polymer_scope",
+          "settling_fact": "Accessible current own-site or dated government manufacturing record identifying Rahco and its activity."
+        },
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://rahco-rubber.com/",
+          "outcome": "400/timeout",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://rahco-rubber.com/about-us/news/",
+          "outcome": "503",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://rahco-rubber.com/contact-us/",
+          "outcome": "503",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.rahco-rubber.com/",
+          "outcome": "inaccessible",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.rahco-rubber.com/about-us/",
+          "outcome": "inaccessible",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://rahco-rubber.com/our-services/",
+          "outcome": "inaccessible",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://business.dpchamber.com/list/member/rahco-rubber-inc-5321",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 6
+    },
+    {
+      "record_id": "SITE-005235",
+      "verdict": "VERIFIED",
+      "reason": "Own Fenwick manufacturing/facility disclosure and descriptive public polymer-product profile jointly establish site existence and scope. No inaccessible PDF used as evidence.",
+      "observations": [
+        {
+          "field": "street_address;city;state;zip;products",
+          "value": "93 Nettie Fenwick Road;Fenwick;WV;26202-4000;pneumatic and electrothermal deicing products",
+          "claim_type": "identity",
+          "source_url": "https://www.iceshield.com/",
+          "source_name": "Ice Shield company website",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Own site identifies Fenwick location and product families."
+        },
+        {
+          "field": "facility_activity;identity_event",
+          "value": "Engineering/manufacturing facility;Loar acquired SMR Technologies assets in 2019",
+          "claim_type": "scope",
+          "source_url": "https://www.iceshield.com/About",
+          "source_name": "Ice Shield company about",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Own history links SMR Technologies assets and Fenwick manufacturing. Event year only, no invented transaction day."
+        },
+        {
+          "field": "operator_name;polymer_scope",
+          "value": "SMR Technologies / Ice Shield;polymer-based aerospace products including deicers and specialized composites",
+          "claim_type": "scope",
+          "source_url": "https://www.aero-expo.de/messe-branchen/ausstellerverzeichnis/aussteller?id=87801093",
+          "source_name": "AERO 2026 descriptive exhibitor profile",
+          "source_class": "directory",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Detailed company description and exact Fenwick address, not inference from exhibition category or roster presence."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        },
+        {
+          "field": "current_legal_entity_suffix",
+          "settling_fact": "Current registry or own legal disclosure settling the exact SMR operator legal suffix after asset acquisition."
+        },
+        {
+          "field": "county",
+          "settling_fact": "Authoritative physical-address county witness."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://iceshield.com/",
+          "outcome": "400/timeout",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://eda.wv.gov/wp-content/uploads/2024/03/SMR-Technologies-Final-Approval.pdf",
+          "outcome": "retrieved but unreadable body; not substantive evidence",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://dep.wv.gov/daq/permitting/titlevpermits/Documents/May%202017/SMR%202-19-14%20SM01%20FP.pdf",
+          "outcome": "404",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://iceshield.com/Document/8",
+          "outcome": "cache miss",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.iceshield.com/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.iceshield.com/About",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.aero-expo.de/messe-branchen/ausstellerverzeichnis/aussteller?id=87801093",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 6
+    },
+    {
+      "record_id": "ORG-004123",
+      "verdict": "VERIFIED",
+      "reason": "Own company identity, explicit Houston headquarters and polymer-chemical scope established.",
+      "observations": [
+        {
+          "field": "legal_name;hq_address;hq_city;hq_state;website",
+          "value": "Sterling Specialty Chemicals LLC;575 N Dairy Ashford Suite 720, 77079;Houston;TX;https://www.sterlingspec.com/",
+          "claim_type": "identity",
+          "source_url": "https://www.sterlingspec.com/",
+          "source_name": "Sterling Specialty Chemicals website",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Own page labels headquarters and legal company name."
+        },
+        {
+          "field": "polymer_scope",
+          "value": "Polymer solutions for oilfield/water treatment, including polyacrylamides",
+          "claim_type": "scope",
+          "source_url": "https://www.sterlingspec.com/",
+          "source_name": "Sterling Specialty Chemicals website",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Polymer-based products and applications explicitly marketed; no inferred corporate NAICS."
+        },
+        {
+          "field": "group_identity",
+          "value": "Praana Group company",
+          "claim_type": "identity",
+          "source_url": "https://www.sterlingspec.com/about-us/",
+          "source_name": "Sterling about",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Own history describes 2024 acquisition of Kemira oil-and-gas business and polymer expansion. No exact transaction date or Atlas parent ID assigned."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "naics_primary",
+          "settling_fact": "A company disclosure or government filing stating the six-digit code; no corporate code inferred from products."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.sterlingspec.com/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.sterlingspec.com/about-us/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 2
+    },
+    {
+      "record_id": "SITE-005843",
+      "verdict": "STILL_UNCERTAIN",
+      "reason": "Historical exact-address polymer manufacturing verified. Current Fort Worth operating status is unsettled: government file states planned move, while current company site advertises Gainesville manufacturing. No closure REJECT; no Form 5500 check performed.",
+      "observations": [
+        {
+          "field": "operator;street_address;city;state;county",
+          "value": "Terra-Vaults Inc.;4701 S Edgewood Ter;Fort Worth;TX;Tarrant",
+          "claim_type": "identity",
+          "source_url": "https://www.tceq.texas.gov/assets/public/permitting/air/publicnotice/35574sob.pdf",
+          "source_name": "TCEQ O4487 statement of basis",
+          "source_class": "government",
+          "source_date": "2024-07-24",
+          "accessed_date": "2026-10-30",
+          "summary": "Statement of basis identifies Fort Worth facility."
+        },
+        {
+          "field": "polymer_scope;site_processes;naics_primary;naics_primary_source_type",
+          "value": "Polymer concrete storage vaults;styrene resin mixed with aggregate, molded/cured and finished;326199;government_filing",
+          "claim_type": "scope",
+          "source_url": "https://www.tceq.texas.gov/assets/public/permitting/air/publicnotice/35574sob.pdf",
+          "source_name": "TCEQ O4487 statement of basis",
+          "source_class": "government",
+          "source_date": "2024-07-24",
+          "accessed_date": "2026-10-30",
+          "summary": "Government explicitly assigns code and describes actual facility manufacturing; high confidence code provenance."
+        },
+        {
+          "field": "relocation_plan",
+          "value": "Fort Worth operations planned to terminate once Gainesville plant is permitted and operating",
+          "claim_type": "liveness",
+          "source_url": "https://www.tceq.texas.gov/assets/public/permitting/air/reports/applications/35574-tc.pdf",
+          "source_name": "TCEQ application file, public involvement plan pp. 11–13",
+          "source_class": "government",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Applicant states conditional relocation plan. Compiled file includes 2024 correspondence; exact plan issue date not established. Not a dated outcome."
+        },
+        {
+          "field": "current_company_manufacturing_location;current_company_name",
+          "value": "Gainesville TX, 1304 Corporate Drive 76240;Terra-Vaults LLC",
+          "claim_type": "liveness",
+          "source_url": "https://terra-vaults.com/",
+          "source_name": "Terra-Vaults company website",
+          "source_class": "own_site",
+          "source_date": "",
+          "accessed_date": "2026-10-30",
+          "summary": "Current company page advertises Gainesville-made polymer concrete products and LLC footer; does not give Fort Worth cessation date."
+        }
+      ],
+      "unresolved_fields": [
+        {
+          "field": "current_fort_worth_operating_status",
+          "settling_fact": "Dated outcome confirming continued or ceased operations at 4701 S Edgewood Ter; before any closure/no-establishment REJECT, bulk EFAST2 sponsor-address check is also required."
+        },
+        {
+          "field": "current_exact_operator_legal_form",
+          "settling_fact": "Registry or dated company disclosure linking Inc. permit holder and LLC current website, without assuming a legal conversion."
+        }
+      ],
+      "fetch_log": [
+        {
+          "url": "https://www.tceq.texas.gov/assets/public/permitting/air/publicnotice/35574sob.pdf",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://terra-vaults.com/",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        },
+        {
+          "url": "https://www.tceq.texas.gov/assets/public/permitting/air/reports/applications/35574-tc.pdf",
+          "outcome": "opened",
+          "date": "2026-10-30"
+        }
+      ],
+      "primary_fetch_count": 3
+    }
+  ]
+}

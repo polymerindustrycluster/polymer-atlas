@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-30T23:19:16.243335+00:00",
+  "creation_data_pin": "eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05",
+  "authoritative_map_pin": "bf7857a7826ba62cdcf67af3ba718c3d5a9b32be",
+  "observed_main_sha": "4a406991c9466b10896f17913f9995b541b39713",
+  "drift_from_map_pin": [
+    "AGENTS.md"
+  ],
+  "drift_classification": "policy-only: AGENTS \u00a72 rule10 derived-frame discipline; read, not absorbed into branch. Data/schema/queue unchanged.",
+  "canonical_data_tree_at_all_three_pins": "10d3144d9c3527d3ca9d819586af7d3b9197a2e1",
+  "data_diff": "empty",
+  "canonical_validator": "PASS",
+  "sqlite_builder": "PASS",
+  "packet_check": "PASS:65samples/65frozenverdicts/65grades;275ID-free drafts",
+  "git_diff_check": "PASS",
+  "python_syntax": "PASS",
+  "map_unique_record_ids": 2199,
+  "map_per_pass_unique_counts": {
+    "20": 273,
+    "21": 287,
+    "22": 323,
+    "23": 443,
+    "24": 385,
+    "25": 488
+  },
+  "map_population_crosscheck": "Sampler independently reconstructs git first-appearance IDs, asserts map/frame ID-set equality and creation-pass equality; no allocation marker counting.",
+  "map_sha256": "86e78616b3c4aac23ceb143fd724acc3e287a64ce9b9071b08088249ec0b8fd7",
+  "independent_review": "Parent reviewer independently reproduced all nine sampling outputs, all frozen verdict hashes, five derived artifacts and raw/weighted rates; confirmed both field-discrepancy witnesses and final report. A mistaken comparator company name was corrected to Jewell Hudgens before publication. Remote review follows publication.",
+  "remote_readback_requirement": "After branch publication, fetch exact new commit and compare every packet file byte-for-byte; report resulting SHA and result in PR body/handoff.",
+  "canonical_mutations": 0,
+  "allocated_ids": 0,
+  "merged": false
+}
