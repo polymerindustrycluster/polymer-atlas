@@ -629,7 +629,7 @@ PART_FIELDS = ["participation_id", "event_id", "org_id", "edition_year", "editio
 SUBJECT_VOCAB = {"plastics_general", "rubber_elastomers", "compounding_formulation",
                  "recycling_circularity", "composites", "tooling_molds",
                  "plastics_processing_technology", "polyurethanes", "silicones",
-                 "foams", "adhesives_sealants", "cluster_convening"}
+                 "foams", "adhesives_sealants", "cluster_convening", "coatings_finishing"}
 EVENT_FORMATS = {"expo", "conference", "technical_conference", "summit", "meeting_series"}
 CADENCES = {"annual", "biennial", "triennial", "irregular"}
 HOME_REGIONS = {"ne_ohio", "ohio", "national_us", "international"}
