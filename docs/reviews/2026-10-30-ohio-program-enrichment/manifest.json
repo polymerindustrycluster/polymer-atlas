@@ -1,0 +1,24 @@
+{
+  "base_commit": "f928257aa92ce7b91f781183d00035c752663349",
+  "applied_to_pr_data": false,
+  "provisional_evidence_range": "EVD-006673\u2013EVD-006692",
+  "prior_range": "EVD-003713\u2013EVD-003732 superseded; occupied by upstream pass18",
+  "files": [
+    {
+      "path": "data/programs.csv",
+      "before_sha256": "8dbaea3726b9ff2cb3e2349ddc3201c15467e4cf598f353b369946d9a6188932",
+      "after_sha256": "a99d2ed8c6f7c22c6a6ab7071275d28fc91becfd666378eea0ac624c58b29e7d"
+    },
+    {
+      "path": "data/ecosystem.csv",
+      "before_sha256": "b4120959857961eecba72284f98087d5936c048d20887778ec6f204eba3e64b8",
+      "after_sha256": "d76a8d2d588f967290c385e03a5b7926d4491f2d42d96c635b38f1abadcfa9f7"
+    },
+    {
+      "path": "data/evidence.csv",
+      "before_sha256": "50b0ad2dafad4d51fc62814a554f0b1d1ef9f543d7aac65011cd53c81003b64f",
+      "after_sha256": "494a05e2d97a99257178de4cf91682e231166e5c462ded065bb0c09532917689"
+    }
+  ],
+  "patch_sha256": "c35b27e56f487eb9ccae350d2b7c26f43d02ba7e0e9c00f19950c7e47afd3e41"
+}
