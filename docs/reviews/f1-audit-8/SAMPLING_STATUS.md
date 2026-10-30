@@ -65,8 +65,9 @@ The sampler can see creation metadata/notes. Verifiers receive only
 `identity_only.json` or their `identity_batch_N.json`: ID, table, name, physical
 site address/locality, associated organization name and website. These identity
 facts are unavoidable exposure and are not independent verification evidence.
-Sources, notes, tiers, classes and prior claims stay sealed until every independent
-verdict is frozen. `DRAW_MANIFEST.json` publishes hashes without revealing those
+Sources, notes, tiers and the per-record class manifest were withheld until every independent
+verdict was frozen. A post-freeze transparency note in `BLINDNESS_LIMITATION.md` records
+possible Carlstar P3 exposure through inherited owner instructions, not through the sampler. `DRAW_MANIFEST.json` publishes hashes without revealing those
 values. No record IDs are allocated; no canonical data is edited.
 
 ## Map correction before sampling

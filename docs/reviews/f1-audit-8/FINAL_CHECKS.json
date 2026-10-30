@@ -29,5 +29,6 @@
   "remote_readback_requirement": "After branch publication, fetch exact new commit and compare every packet file byte-for-byte; report resulting SHA and result in PR body/handoff.",
   "canonical_mutations": 0,
   "allocated_ids": 0,
-  "merged": false
+  "merged": false,
+  "blindness_clarification": "Original evidence/source notes remained sealed until all verdicts froze. Carlstar P3 class could be known from inherited owner map-correction context; disclosed in BLINDNESS_LIMITATION.md, no redraw or verdict changes."
 }
