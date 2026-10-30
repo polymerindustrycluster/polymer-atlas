@@ -679,7 +679,7 @@
       "Rebase/reapply append-only changes, then rerun validate.py and build_sqlite.py. Review diff and source notes; publish PR only, no direct main commit."
     ],
     "validation": {
-      "validate.py": "PASS (exit 0); existing warnings retained",
+      "validate.py": "Original3036121-based tree PASS; latest f928257-based tree FAIL49 inherited errors (identical to baseline). See latest_upstream_reconciliation.",
       "build_sqlite.py": "PASS (exit 0); 497 capability rows built; generated artifacts excluded",
       "append_only": "Original site_capabilities.csv byte prefix preserved exactly",
       "existing_record_changes": "No site, organization or evidence rows changed; verification tier changes 0"
@@ -693,6 +693,27 @@
       "path": "/workspace/scratch/476f38d3e773/atlas-site-research/backups/site_capabilities.before-pic12-3036121.csv",
       "sha256": "273b4f47e4556693bad0fd737c34ba271e6dcda96b79fd3037489765f215c56a",
       "timing": "Reconstructed from immutable baseline3036121 after application, during protocol reconciliation; not represented as a contemporaneous pre-pass filesystem backup. Original bytes were checked before append and byte-prefix preservation verified after application."
+    },
+    "latest_upstream_reconciliation": {
+      "base_commit": "f928257aa92ce7b91f781183d00035c752663349",
+      "checked_date": "2026-10-30",
+      "selected_site_org_fingerprint_checks": 20,
+      "identity_drift": [],
+      "duplicate_live_tuples": [],
+      "capability_id_collisions": [],
+      "upstream_capability_max": "CAP-000461",
+      "upstream_capability_rows": 461,
+      "proposed_capability_rows": 36,
+      "combined_capability_rows": 497,
+      "preserved_upstream_capability_bytes": 157590,
+      "publication_scope": "Only four PR-owned paths; no upstream pass18 data copied into publication tree.",
+      "validation": {
+        "validate.py": "FAIL: 49 errors, identical to isolated pristine f928257 baseline; zero additional errors from PR",
+        "build_sqlite.py": "PASS: 497 capability rows",
+        "baseline_log": "/tmp/atlas-pass18-baseline-validator.log",
+        "pr_log": "/tmp/atlas-cap-validator.log",
+        "publication_gate": "Hold ready-to-merge status pending upstream repair and clean validation; no unrelated data repairs in this PR"
+      }
     }
   }
 }

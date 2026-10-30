@@ -13,3 +13,11 @@
 - Publication: connector publication belongs to the integrator; no local push, main mutation, or merge authorization. PR remains for human review and merge.
 
 Source URLs, bounded facts, publication/observation distinctions, all 20 decisions, identity-row hashes, and premerge checks are in `CODEX_PIC12_CAPABILITY_REVIEW_2026-10-30.json`.
+
+## Latest upstream reconciliation — 2026-10-30 15:59 UTC
+
+Merged pass18 main `f928257`. All 20 frozen identity fingerprints (10 sites and 10 organizations) match the research baseline; no affected-row holds are required for identity drift. Upstream still contains 461 capability rows with maximum CAP-000461, and none of the 36 proposed tuples or allocated IDs collide. Its original capability bytes are still preserved exactly. Only the four PR-owned paths are intended for connector publication, not pass18's upstream data changes.
+
+Validation is **currently blocked by 49 upstream errors**: the proposed tree and an isolated pristine f928257 worktree produce the exact same error multiset; zero extra errors are introduced by this PR. Missing organization foreign keys are among the errors. Logs: `/tmp/atlas-cap-validator.log` and `/tmp/atlas-pass18-baseline-validator.log`. SQLite build succeeds with 497 capability rows. Latest checked dataset totals: 3485 organizations, 4244 sites, 6640 evidence rows, 331 relationships, and 782 participation rows.
+
+Do not describe this latest tree as validation-passed or ready to merge. Await upstream repair and rerun the gate; this capability PR makes no unrelated fixes. The earlier clean validation result applies only to its earlier baseline.
