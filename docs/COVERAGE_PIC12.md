@@ -1,5 +1,8 @@
 # PIC-12 Coverage Report — Atlas establishments vs. official denominators
 
+> **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
+> **Quotation correction:** 81 primary versus 85 recorded Cuyahoga sites implies **4**, not 5, excluded-tier rows. Old examples saying “covers X of Y” compare unmatched frames, not matched establishments. Current PIC-12 NAICS-326 numerators are 423/437; the old denominator extract is unavailable for independent reproduction.
+
 **Update (2026-10-29, integration pass 12):** Recomputed from the local
 repo at its post-integration-pass-12 state (1832 organization rows /
 1943 sites; org tiers A 621 / B 993 / C 164 / U 11). Headline PIC-12
