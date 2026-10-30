@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+date: Fri, 30 Oct 2026 21:35:41 GMT
+
+HTTP/2 200 
+date: Fri, 30 Oct 2026 21:35:59 GMT
+content-type: text/plain
+content-length: 251295
+x-frame-options: DENY
+cache-control: private, no-store
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+x-xss-protection: 1;mode=block
+content-disposition: attachment; filename=GeocodeResults.csv
+vary: Origin
+x-envoy-upstream-service-time: 17996
+server: envoy
+
