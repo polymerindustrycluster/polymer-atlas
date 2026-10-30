@@ -103,6 +103,27 @@ produced in a local staging or workshop area; only changes under
    questions are owner rulings: propose them as battery items with a
    recommendation and the evidence, and hold the work they gate. Do
    not settle them inside a task, a lane, or a PR.
+10. **Derived frames and extracts.** Any sampling frame, extract,
+    count, or other derived product built from build metadata (pass
+    allocation files, journals, packet design files) must:
+    a. whitelist the exact creation classes in that pass's own
+       vocabulary — marker and annotation classes (e.g.
+       `org_create_watch`, `org_edit_*`, `*_no_create`,
+       `site_note_append`, `next_free_*`) and flips, repoints, and
+       folds are never creations;
+    b. assert record-ID uniqueness before the product is used or
+       published;
+    c. reconcile its per-pass (or per-source) counts against the
+       published counts it claims to represent — and stop and
+       investigate any conflicting count, including one reported by
+       another harness, rather than explain the discrepancy away.
+    (Origin: the F1 class-map v1 double-count of the five watch orgs,
+    2026-10-30 — an `org_create_watch` marker row was counted as a
+    second creation; the lane's own lower count was the correct one.)
+
+*Revision note — 2026-10-30: §2 rule 10 added (derived-frame discipline),
+after the F1 class-map correction. No other section is amended by this
+revision.*
 
 *Revision note — 2026-10-29 (owner ruling C2): §2 amended to formalize the
 campaign mode under which integration passes 4–11, the schema v1.1+v1.2
