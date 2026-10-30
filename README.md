@@ -26,10 +26,15 @@ and every unit separately, and never publishes a bare headline number.**
   attached to GitHub Releases. Never edit the .db file directly — binary
   files cannot be merged when five agents work in parallel.
 - Three record levels:
-  - `data/organizations.csv` — one row per parent organization
-  - `data/sites.csv` — one row per physical establishment (plant, HQ, R&D
+  - `data/organizations_<TAG>.csv` — one row per parent organization,
+    sharded by HQ state (SCHEMA Appendix C)
+  - `data/sites_<TAG>.csv` — one row per physical establishment (plant, HQ, R&D
     center, lab, warehouse). **This is the unit PIC maps and counts.**
   - `data/ecosystem.csv` — Ring 5 entities (schools, associations, EDOs…)
+- `data/events.csv` — recurring industry event series (SCHEMA §4.12)
+- `data/event_participation.csv` — harvested per-edition participation (exhibitor / sponsor / speaker / organizer / host) for held organizations
+- Canonical = the shards; merged `organizations_all.csv` / `sites_all.csv`
+  exports are generated release artifacts (in `build/`), never committed to `data/`.
 - `data/inclusion_log.csv` — every borderline include/exclude decision,
   with the rule cited. This log is how 10 researchers stay consistent.
 

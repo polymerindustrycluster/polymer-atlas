@@ -8,8 +8,12 @@ do not work around it.
 
 ## 1. Where truth lives
 
-- The CSVs in `data/` are canonical. SQLite is generated
-  (`scripts/build_sqlite.py`); never edit or commit a hand-modified .db.
+- The CSVs in `data/` are canonical. Organizations and sites are
+  stored as per-state shards (`data/organizations_<TAG>.csv`,
+  `data/sites_<TAG>.csv`) under the placement function in SCHEMA.md
+  Appendix C; every other table is a single file. SQLite and the
+  merged `*_all.csv` exports are generated (`scripts/build_sqlite.py`);
+  never edit or commit a hand-modified .db or a merged export.
 - Schema, ring rules, NAICS map, and controlled vocabularies live in
   `docs/SCHEMA.md`. Vocabulary/ring changes require a dated schema
   revision in that file — never improvise a new tag, ring, or status
@@ -68,11 +72,13 @@ contributions. No other section is amended by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
-1. Search `organizations.csv` by **website domain** — same domain =
+1. Search the organization shards (`organizations_*.csv`, all of
+   them) by **website domain** — same domain =
    presumptive same parent.
 2. Search by **normalized name** (lowercase; strip Inc/LLC/Corp/Co/The
    and punctuation).
-3. Search `sites.csv` by **street address** — one address = one site,
+3. Search the site shards (`sites_*.csv`, all of them) by **street
+   address** — one address = one site,
    owned by the *operator* (who runs the process), never the brand owner.
 4. Search trade_names / notes for rebrands and acquisitions; follow
    `successor_org_id`.
@@ -83,6 +89,11 @@ When in doubt, **do not merge** — create/link and flag for review.
 A false merge destroys data; a false split is cheap to fix.
 Never delete a record: closed/acquired/merged entities are tombstoned
 (`status` + `status_date` + source + `successor_org_id` where applicable).
+
+A record’s shard is a function of its HQ (organizations) or physical
+state (sites) — see SCHEMA.md Appendix C. Correcting that fact moves
+the record in the same pass; never leave a record in a shard its fields
+contradict.
 
 ## 4. Provenance — no naked facts
 

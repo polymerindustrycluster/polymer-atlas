@@ -126,18 +126,49 @@ RESEARCH_SUPPLEMENT = {"polymer_physics", "rheology", "polymer_synthesis", "degr
                        "sustainable_feedstocks", "elastomer_science"}
 RESEARCH_VOCAB = PROCESSES | MATERIALS | RESEARCH_SUPPLEMENT
 
-org_fields, orgs = load("organizations.csv")
-site_fields, sites = load("sites.csv")
+# [pass 14 Stage C] Shard discovery (SCHEMA Appendix C): organizations and
+# sites load as the union of their per-state shards. Pre-existing checks run
+# over the union unchanged and keep the logical table names in messages;
+# the shard rules V-34..V-38 below use the real file names.
+def load_union(prefix):
+    files = sorted(DATA.glob(f"{prefix}_*.csv"))
+    if not files:
+        errors.append(f"{prefix}: no shard files found (Appendix C layout)")
+        return [], [], {}
+    all_fields, all_rows, per_file = None, [], {}
+    for f in files:
+        flds, rows = load(f.name)
+        if all_fields is None:
+            all_fields = flds
+        per_file[f.name] = (flds, rows)
+        all_rows.extend(rows)
+    return all_fields, all_rows, per_file
+org_fields, orgs, ORG_SHARDS = load_union("organizations")
+site_fields, sites, SITE_SHARDS = load_union("sites")
 eco_fields, eco = load("ecosystem.csv")
 link_fields, links = load("registry_links.csv", new_file=True)
 member_fields, members = load("members.csv", new_file=True)
 people_fields, people = load("people.csv", new_file=True)
 prog_fields, programs = load("programs.csv", new_file=True)
+event_fields, events = load("events.csv", new_file=True)
+part_fields, participation = load("event_participation.csv", new_file=True)
+evd_fields, evidence = load("evidence.csv", new_file=True)
+rel_fields, relationships = load("relationships.csv", new_file=True)
+cap_fields, capabilities = load("site_capabilities.csv", new_file=True)
 
 # V-2: retired column must not ship
 for fname, fields in (("organizations.csv", org_fields), ("ecosystem.csv", eco_fields)):
     if "pic_relationship_stage" in fields:
         errors.append(f"{fname}: pic_relationship_stage present — retired at schema v1.2; values are archived in staging; the column must not ship")
+
+# V-3b [v1.6]: new columns on organizations + sites
+for col in ("last_activity_evidence_date", "liveness_signal", "monitor_watch",
+            "tier1_qualifier", "tier1_qualifier_basis"):
+    if col not in org_fields:
+        errors.append(f"organizations.csv: missing v1.6 column {col}")
+for col in ("county_source", "site_group_id"):
+    if col not in site_fields:
+        errors.append(f"sites.csv: missing v1.6 column {col}")
 
 # V-3: organizations new columns
 for col in ("year_founded", "stock_ticker", "ownership_type", "certifications",
@@ -579,13 +610,468 @@ for i, r in enumerate(people, 2):
     if (r.get("verification_tier") or "").strip() in {"A", "B"} and not (r.get("last_verified") or "").strip():
         errors.append(f"people.csv:{i} {pid} tier A/B without last_verified")
 
+
+# V-17..V-21 [v1.5]: events layer (SCHEMA §4.12)
+EVENT_FIELDS = ["event_id", "name", "trade_names", "organizer_name", "organizer_org_id",
+                "event_format", "cadence", "cadence_note", "typical_timing", "home_city",
+                "home_state", "home_region", "geography_note", "subject_scope",
+                "subject_note", "event_url", "status", "status_date", "status_source",
+                "sources", "verification_tier", "last_verified", "pic_relevance",
+                "created_by", "notes"]
+PART_FIELDS = ["participation_id", "event_id", "org_id", "edition_year", "edition_name",
+               "role", "role_detail", "edition_dates", "edition_city", "edition_state",
+               "evidence_source_name", "evidence_source_url", "evidence_date", "sources",
+               "verification_tier", "last_verified", "created_by", "notes"]
+SUBJECT_VOCAB = {"plastics_general", "rubber_elastomers", "compounding_formulation",
+                 "recycling_circularity", "composites", "tooling_molds",
+                 "plastics_processing_technology", "polyurethanes", "silicones",
+                 "foams", "adhesives_sealants", "cluster_convening"}
+EVENT_FORMATS = {"expo", "conference", "technical_conference", "summit", "meeting_series"}
+CADENCES = {"annual", "biennial", "triennial", "irregular"}
+HOME_REGIONS = {"ne_ohio", "ohio", "national_us", "international"}
+ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host"}
+EVENT_STATUSES = {"active", "active_idled_partial", "idled", "closed", "acquired",
+                  "merged", "relocated_in_scope", "relocated_out_of_scope",
+                  "pre_revenue", "unknown"}
+USPS = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL",
+        "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT",
+        "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI",
+        "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "DC"}
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+PHONE_RE = re.compile(r"(\(\d{3}\)\s*|\b\d{3}[-.])\d{3}[-.]\d{4}\b")
+if events or participation:
+    if event_fields != EVENT_FIELDS:
+        errors.append("events.csv: header does not match the v1.5 field set (V-17)")
+    if part_fields != PART_FIELDS:
+        errors.append("event_participation.csv: header does not match the v1.5 field set (V-17)")
+ALL_ORG_IDS = {r["org_id"] for r in orgs} | {r["org_id"] for r in eco}
+evt_ids = set()
+for i, r in enumerate(events, 2):
+    eid = r["event_id"]
+    if not re.fullmatch(r"EVT-\d{6}", eid or ""):
+        errors.append(f"events.csv:{i} {eid} event_id does not match EVT-###### (V-17)")
+    if eid in evt_ids:
+        errors.append(f"events.csv:{i} {eid} duplicate event_id (V-17)")
+    evt_ids.add(eid)
+    if r["cadence"] not in CADENCES:
+        errors.append(f"events.csv:{i} {eid} bad cadence (V-17)")
+    if (r["cadence"] == "irregular") != bool((r["cadence_note"] or "").strip()):
+        errors.append(f"events.csv:{i} {eid} cadence_note present iff cadence=irregular (V-17)")
+    if r["home_region"] not in HOME_REGIONS:
+        errors.append(f"events.csv:{i} {eid} bad home_region (V-17)")
+    if r["event_format"] not in EVENT_FORMATS:
+        errors.append(f"events.csv:{i} {eid} bad event_format (V-17)")
+    subs = vals(r["subject_scope"])
+    if not subs or not set(subs) <= SUBJECT_VOCAB:
+        errors.append(f"events.csv:{i} {eid} subject_scope empty or outside the \u00a74.12.1 vocabulary (V-17)")
+    fk = (r["organizer_org_id"] or "").strip()
+    if fk and fk not in ALL_ORG_IDS:
+        errors.append(f"events.csv:{i} {eid} organizer_org_id {fk} does not resolve (V-17)")
+    if not fk and not (r["organizer_name"] or "").strip():
+        errors.append(f"events.csv:{i} {eid} organizer_org_id and organizer_name both empty (V-17)")
+    if r["status"] not in EVENT_STATUSES:
+        errors.append(f"events.csv:{i} {eid} bad status (V-17)")
+    if r["status"] != "active" and (not r["status_date"] or not r["status_source"]):
+        errors.append(f"events.csv:{i} {eid} non-active status without status_date/status_source (V-17)")
+    if (r["verification_tier"] or "").strip() not in {"A", "B", "C"}:
+        errors.append(f"events.csv:{i} {eid} verification_tier must be A/B/C \u2014 a series row is never U (V-17)")
+    for fld in ("notes", "evidence_source_name"):
+        pass
+    if EMAIL_RE.search(r["notes"] or "") or PHONE_RE.search(r["notes"] or ""):
+        errors.append(f"events.csv:{i} {eid} contact-pattern string in notes (V-21)")
+evp_ids = set(); evp_tuples = set()
+for i, r in enumerate(participation, 2):
+    pid = r["participation_id"]
+    if not re.fullmatch(r"EVP-\d{6}", pid or ""):
+        errors.append(f"event_participation.csv:{i} {pid} participation_id does not match EVP-###### (V-18)")
+    if pid in evp_ids:
+        errors.append(f"event_participation.csv:{i} {pid} duplicate participation_id (V-18)")
+    evp_ids.add(pid)
+    if r["event_id"] not in evt_ids:
+        errors.append(f"event_participation.csv:{i} {pid} event_id does not resolve (V-18)")
+    if r["org_id"] not in ALL_ORG_IDS:
+        errors.append(f"event_participation.csv:{i} {pid} org_id does not resolve (V-18)")
+    tup = (r["event_id"], r["org_id"], r["edition_year"], r["role"])
+    if tup in evp_tuples:
+        errors.append(f"event_participation.csv:{i} {pid} duplicate (event_id, org_id, edition_year, role) tuple (V-18)")
+    evp_tuples.add(tup)
+    if r["role"] not in ROLES:
+        errors.append(f"event_participation.csv:{i} {pid} bad role (V-19)")
+    try:
+        yr = int(r["edition_year"])
+        if not (1990 <= yr <= 2029):
+            errors.append(f"event_participation.csv:{i} {pid} edition_year out of range (V-20)")
+    except (TypeError, ValueError):
+        errors.append(f"event_participation.csv:{i} {pid} edition_year not an integer (V-20)")
+    st = (r["edition_state"] or "").strip()
+    if st and st not in USPS and len(st) <= 2:
+        warnings.append(f"event_participation.csv:{i} {pid} edition_state shape suspect (V-20)")
+    for fld in ("role_detail", "notes", "evidence_source_name"):
+        if EMAIL_RE.search(r[fld] or "") or PHONE_RE.search(r[fld] or ""):
+            errors.append(f"event_participation.csv:{i} {pid} contact-pattern string in {fld} (V-21)")
+
+
+# V-22..V-33 [v1.6]: evidence, relationships, liveness, tier-1, capabilities, site fields
+EVD_FIELDS = ["evidence_id", "record_table", "record_id", "claim_type", "claim_detail",
+              "source_class", "source_ref", "observed_date", "tier_effect",
+              "created_by", "notes"]
+REL_FIELDS = ["relationship_id", "from_org_id", "relationship_type", "to_org_id",
+              "effective_from", "effective_to", "basis", "source_ref", "created_by",
+              "notes"]
+CAP_FIELDS = ["capability_id", "site_id", "org_id", "capability_type", "term",
+              "provenance", "source_ref", "observed_date", "withdrawn_date",
+              "created_by", "notes"]
+CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness", "code"}
+SOURCE_CLASSES = {"own_site", "government_filing", "registry", "directory", "press",
+                  "platform_category", "harvest_roster"}
+TIER_EFFECTS = {"supports_A", "supports_B", "supports_C", "contradicts"}
+CLASS_CEIL = {"own_site": "supports_A", "government_filing": "supports_A",
+              "registry": "supports_B", "directory": "supports_B", "press": "supports_B",
+              "harvest_roster": "supports_B", "platform_category": "supports_C"}
+EFF_RANK = {"supports_C": 1, "supports_B": 2, "supports_A": 3}
+REL_TYPES = {"parent_of", "successor_of", "dba_of", "spun_off_from", "member_of", "merged_into"}
+CAP_MATERIAL = {"thermoplastics", "thermosets", "elastomers_rubber",
+                "thermoplastic_elastomers_tpe_tpu", "thermoplastic_olefin_tpo",
+                "silicones", "fluoropolymers", "polyethylene_pe", "polypropylene_pp",
+                "pvc", "pet_petg", "polystyrene_ps_hips", "polycarbonate_pc", "nylon_pa",
+                "abs", "acetal_pom", "polyurethane_pu", "epoxy", "bioplastics_biobased",
+                "recycled_content_pcr_pir", "custom_compounds",
+                "inks_colorants_masterbatch", "coatings", "adhesives_sealants"}
+CAP_PROCESS = {"injection_molding", "blow_molding", "extrusion", "thermoforming",
+               "rotational_molding", "compression_molding", "rubber_molding",
+               "rubber_mixing_compounding", "compounding", "color_masterbatch",
+               "calendering", "composites_pultrusion", "reaction_injection_molding",
+               "additive_manufacturing_polymer", "polymerization",
+               "recycling_mechanical", "coating_formulation",
+               "adhesive_sealant_formulation"}
+CAP_PRODUCT = {"film_sheet", "sheet_plate", "pipe_profile", "tubing", "medical_tubing",
+               "hose_belting", "foam_products", "fiber_filament", "bottles_containers",
+               "bags_pouches", "molded_parts", "wire_cable", "gaskets_seals", "tires",
+               "flooring"}
+CAP_VOCAB = {"material": CAP_MATERIAL, "process": CAP_PROCESS, "product_form": CAP_PRODUCT}
+LIVENESS_SIGNALS = {"operating_evidence", "closure_signature", "sos_confirmed_closed",
+                    "sos_active"}
+QUAL_ORDER = ["public_parent", "tri_reporter", "employees_250plus", "national_footprint"]
+COUNTY_SOURCES = {"parcel", "physical_address", "geocoder_centroid", "directory"}
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+def _is_date(s):
+    if not DATE_RE.match(s or ""):
+        return False
+    try:
+        datetime.strptime(s, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+TABLE_IDS = {"organizations": {r["org_id"] for r in orgs},
+             "sites": {r["site_id"] for r in sites},
+             "ecosystem": {r["org_id"] for r in eco},
+             "programs": {r["program_id"] for r in programs}}
+TABLE_TIER = {}
+for _t, _rows, _idc in (("organizations", orgs, "org_id"), ("sites", sites, "site_id"),
+                        ("ecosystem", eco, "org_id"), ("programs", programs, "program_id")):
+    for _r in _rows:
+        TABLE_TIER[(_t, _r[_idc])] = (_r.get("verification_tier") or "").strip()
+MUST_HAVE = {"organizations": {"existence", "address", "scope", "code"},
+             "sites": {"existence", "address", "scope", "code", "parent"},
+             "ecosystem": {"existence", "address", "scope"},
+             "programs": {"existence", "scope"}}
+STATUS_BY_ID = {r["org_id"]: (r.get("status") or "").strip() for r in orgs}
+SITE_STATUS = {r["site_id"]: (r.get("operating_status") or "").strip() for r in sites}
+def must_have_for(table, rid):
+    mh = set(MUST_HAVE[table])
+    if table == "programs":
+        prow = next((r for r in programs if r["program_id"] == rid), None)
+        if prow and (prow.get("cip_code") or "").strip():
+            mh.add("code")
+    if table == "organizations" and STATUS_BY_ID.get(rid) == "active":
+        mh |= {"activity", "liveness"}
+    if table == "sites" and SITE_STATUS.get(rid) == "active":
+        mh |= {"activity", "liveness"}
+    return mh
+# V-22 evidence structural
+if evidence or True:
+    if evd_fields != EVD_FIELDS:
+        errors.append("evidence.csv: header does not match the \u00a74.13 field set (V-22)")
+    evd_ids = set()
+    for i, r in enumerate(evidence, 2):
+        eid = r["evidence_id"]
+        if not re.fullmatch(r"EVD-\d{6}", eid or ""):
+            errors.append(f"evidence.csv:{i} {eid} evidence_id does not match EVD-###### (V-22)")
+        if eid in evd_ids:
+            errors.append(f"evidence.csv:{i} {eid} duplicate evidence_id (V-22)")
+        evd_ids.add(eid)
+        rt = r["record_table"]
+        if rt not in TABLE_IDS:
+            errors.append(f"evidence.csv:{i} {eid} bad record_table (V-22)")
+        elif r["record_id"] not in TABLE_IDS[rt]:
+            errors.append(f"evidence.csv:{i} {eid} record_id does not resolve in {rt} (V-22)")
+        if r["claim_type"] not in CLAIM_TYPES:
+            errors.append(f"evidence.csv:{i} {eid} bad claim_type (V-22)")
+        sc = r["source_class"]
+        if sc not in SOURCE_CLASSES:
+            errors.append(f"evidence.csv:{i} {eid} bad source_class (V-22)")
+        te = r["tier_effect"]
+        if te not in TIER_EFFECTS:
+            errors.append(f"evidence.csv:{i} {eid} bad tier_effect (V-22)")
+        elif te != "contradicts" and sc in CLASS_CEIL and EFF_RANK[te] > EFF_RANK[CLASS_CEIL[sc]]:
+            errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
+        if sc in ("registry", "directory") and r["claim_type"] == "address" and te == "supports_B":
+            errors.append(f"evidence.csv:{i} {eid} registry/directory address alone caps at supports_C (V-22)")
+        if not (r["source_ref"] or "").strip() or not (r["claim_detail"] or "").strip():
+            errors.append(f"evidence.csv:{i} {eid} source_ref and claim_detail must be non-empty (V-22)")
+        if not _is_date(r["observed_date"]) or r["observed_date"] > "2026-12-31":
+            errors.append(f"evidence.csv:{i} {eid} observed_date invalid or in the future (V-22)")
+        if not (r["created_by"] or "").strip():
+            errors.append(f"evidence.csv:{i} {eid} created_by empty (V-22)")
+        # V-23 admissibility
+        sref = (r["source_ref"] or "")
+        if re.search(r"verdict|working/|packets/|integration-pass", sref, re.I):
+            errors.append(f"evidence.csv:{i} {eid} source_ref points at our own verdict/packet/journal files \u2014 phantom shape (V-23)")
+        if re.search(r"plastics news|rubber news|dun & bradstreet|\bD&B\b|data axle|zoominfo", sref, re.I):
+            errors.append(f"evidence.csv:{i} {eid} source_ref names a licensed-class source \u2014 discovery provenance belongs in notes (V-23)")
+        if sc == "registry" and "raw/" not in (sref + " " + (r["notes"] or "")) and not re.search(r"fetched \d{4}-\d{2}-\d{2}", r["notes"] or ""):
+            errors.append(f"evidence.csv:{i} {eid} registry source_ref carries no raw/ extract pointer and no dated live-fetch marker (V-23)")
+    # V-23(b) PMIR bar + V-25 tier restatement
+    from collections import defaultdict as _dd
+    by_record = _dd(list)
+    for r in evidence:
+        by_record[(r["record_table"], r["record_id"])].append(r)
+    for (rt, rid), rows_ in by_record.items():
+        scope_rows = [x for x in rows_ if x["claim_type"] == "scope"]
+        if scope_rows and all(x["source_class"] == "platform_category" for x in scope_rows):
+            errors.append(f"evidence: {rt} {rid} scope claim rests on platform_category rows alone \u2014 unevidenced (V-23, PMIR bar)")
+        tier = TABLE_TIER.get((rt, rid), "")
+        if tier in ("A", "B"):
+            for claim in must_have_for(rt, rid):
+                crows = [x for x in rows_ if x["claim_type"] == claim]
+                sup = [x for x in crows if x["tier_effect"] != "contradicts"]
+                con = [x for x in crows if x["tier_effect"] == "contradicts"]
+                if con:
+                    newest_sup = max((x["observed_date"] for x in sup), default="")
+                    if any(x["observed_date"] >= newest_sup for x in con):
+                        errors.append(f"evidence: {rt} {rid} must-have claim {claim} is contradicted at tier {tier} \u2014 cap is C until resolved (V-25)")
+                        continue
+                if sup:
+                    strongest = max(EFF_RANK[x["tier_effect"]] for x in sup)
+                    if strongest == 1 and tier in ("A", "B"):
+                        errors.append(f"evidence: {rt} {rid} must-have claim {claim} supported only at C strength but tier is {tier} (V-25)")
+                    elif strongest == 2 and tier == "A":
+                        errors.append(f"evidence: {rt} {rid} must-have claim {claim} supported only at B strength but tier is A (V-25)")
+# V-24 liveness (organizations)
+for i, r in enumerate(orgs, 2):
+    sig = (r.get("liveness_signal") or "").strip()
+    if sig and sig not in LIVENESS_SIGNALS:
+        errors.append(f"organizations.csv:{i} {r['org_id']} bad liveness_signal (V-24)")
+    if (r.get("monitor_watch") or "").strip() not in ("true", "false"):
+        errors.append(f"organizations.csv:{i} {r['org_id']} monitor_watch must be explicit true/false (V-24)")
+    lad = (r.get("last_activity_evidence_date") or "").strip()
+    if lad and not _is_date(lad):
+        errors.append(f"organizations.csv:{i} {r['org_id']} last_activity_evidence_date not a date (V-24)")
+    if lad and (r.get("last_verified") or "") and lad > r["last_verified"]:
+        warnings.append(f"organizations.csv:{i} {r['org_id']} last_activity_evidence_date later than last_verified (V-24)")
+    if (r.get("status") or "").strip() == "active" and sig == "closure_signature" and (r.get("monitor_watch") or "").strip() == "true":
+        if "Settling fact:" not in (r.get("notes") or ""):
+            errors.append(f"organizations.csv:{i} {r['org_id']} active + closure_signature + watched without a named Settling fact: in notes (V-24)")
+    if sig == "sos_confirmed_closed" and (r.get("status") or "").strip() == "active":
+        errors.append(f"organizations.csv:{i} {r['org_id']} sos_confirmed_closed standing next to status=active (V-24)")
+# V-26..V-28 relationships
+if rel_fields != REL_FIELDS:
+    errors.append("relationships.csv: header does not match the \u00a74.14.1 field set (V-26)")
+rel_ids = set(); rel_tuples = set()
+for i, r in enumerate(relationships, 2):
+    rid = r["relationship_id"]
+    if not re.fullmatch(r"REL-\d{6}", rid or ""):
+        errors.append(f"relationships.csv:{i} {rid} relationship_id does not match REL-###### (V-26)")
+    if rid in rel_ids:
+        errors.append(f"relationships.csv:{i} {rid} duplicate relationship_id (V-26)")
+    rel_ids.add(rid)
+    if r["relationship_type"] not in REL_TYPES:
+        errors.append(f"relationships.csv:{i} {rid} bad relationship_type (V-26)")
+    if r["from_org_id"] == r["to_org_id"]:
+        errors.append(f"relationships.csv:{i} {rid} self-edge (V-26)")
+    tup = (r["from_org_id"], r["relationship_type"], r["to_org_id"])
+    if tup in rel_tuples:
+        errors.append(f"relationships.csv:{i} {rid} duplicate edge tuple (V-26)")
+    rel_tuples.add(tup)
+    if not (r["basis"] or "").strip() or not (r["source_ref"] or "").strip() or not (r["created_by"] or "").strip():
+        errors.append(f"relationships.csv:{i} {rid} basis/source_ref/created_by must be non-empty (V-26)")
+    for ep in ("from_org_id", "to_org_id"):
+        if r[ep] not in ALL_ORG_IDS:
+            errors.append(f"relationships.csv:{i} {rid} {ep} {r[ep]} does not resolve \u2014 both endpoints must be held (V-27)")
+    for dc in ("effective_from", "effective_to"):
+        if r[dc] and not _is_date(r[dc]):
+            errors.append(f"relationships.csv:{i} {rid} {dc} not an ISO date (V-28)")
+    if r["effective_from"] and r["effective_to"] and r["effective_to"] < r["effective_from"]:
+        errors.append(f"relationships.csv:{i} {rid} effective_to before effective_from (V-28)")
+gen_parent = {(r["parent_org_id"], "parent_of", r["org_id"]) for r in orgs if (r.get("parent_org_id") or "").strip()}
+gen_succ = {(r["org_id"], "successor_of", r["successor_org_id"]) for r in orgs if (r.get("successor_org_id") or "").strip() and r["status"] == "acquired"}
+gen_merg = {(r["org_id"], "merged_into", r["successor_org_id"]) for r in orgs if (r.get("successor_org_id") or "").strip() and r["status"] == "merged"}
+held_parent = {(r["from_org_id"], r["relationship_type"], r["to_org_id"]) for r in relationships if r["relationship_type"] == "parent_of"}
+held_succ = {(r["from_org_id"], r["relationship_type"], r["to_org_id"]) for r in relationships if r["relationship_type"] == "successor_of"}
+held_merg = {(r["from_org_id"], r["relationship_type"], r["to_org_id"]) for r in relationships if r["relationship_type"] == "merged_into"}
+if held_parent != gen_parent:
+    errors.append(f"relationships.csv: parent_of edges drift from parent_org_id columns (missing {sorted(gen_parent - held_parent)}, extra {sorted(held_parent - gen_parent)}) (V-27)")
+if held_succ != gen_succ:
+    errors.append(f"relationships.csv: successor_of edges drift from successor_org_id columns (V-27)")
+if held_merg != gen_merg:
+    errors.append(f"relationships.csv: merged_into edges drift from successor_org_id columns (V-27)")
+# V-29 tier-1 qualifier (structure = error; basis/drift = warning)
+LINKS_BY_ORG = {}
+for _l in links:
+    LINKS_BY_ORG.setdefault(_l["org_id"], []).append(_l)
+SITES_BY_ORG = {}
+for _s in sites:
+    SITES_BY_ORG.setdefault(_s["org_id"], []).append(_s)
+def derive_tier1_set(r):
+    vals = set()
+    if (r.get("stock_ticker") or "").strip():
+        vals.add("public_parent")
+    for _l in LINKS_BY_ORG.get(r["org_id"], []):
+        if _l["registry"] in ("SEC_CIK", "SEC_CIK_PARENT_FILER"):
+            vals.add("public_parent")
+        if _l["registry"] == "TRI_TRIFID":
+            vals.add("tri_reporter")
+    if (r.get("employee_band_ohio") or "").strip() in ("250-499", "500-999", "1000-4999", "5000+"):
+        vals.add("employees_250plus")
+    _states = {s["state"] for s in SITES_BY_ORG.get(r["org_id"], []) if s["operating_status"] != "closed" and s["state"]}
+    if len(_states) >= 3:
+        vals.add("national_footprint")
+    return vals
+for i, r in enumerate(orgs, 2):
+    raw_q = (r.get("tier1_qualifier") or "").strip()
+    qvals = [x.strip() for x in raw_q.split(";") if x.strip()] if raw_q else []
+    if any(x not in QUAL_ORDER for x in qvals):
+        errors.append(f"organizations.csv:{i} {r['org_id']} tier1_qualifier value outside the enum (V-29)")
+    if len(qvals) != len(set(qvals)):
+        errors.append(f"organizations.csv:{i} {r['org_id']} tier1_qualifier duplicate value (V-29)")
+    if qvals != [x for x in QUAL_ORDER if x in qvals]:
+        errors.append(f"organizations.csv:{i} {r['org_id']} tier1_qualifier values out of the fixed order (V-29)")
+    if qvals and not (r.get("tier1_qualifier_basis") or "").strip():
+        warnings.append(f"organizations.csv:{i} {r['org_id']} tier1_qualifier non-empty with empty basis (V-29)")
+    derived = derive_tier1_set(r)
+    if set(qvals) != derived:
+        warnings.append(f"organizations.csv:{i} {r['org_id']} tier1_qualifier drift: stored {sorted(qvals)} vs derived {sorted(derived)} (V-29)")
+# V-30/V-31 capabilities
+if cap_fields != CAP_FIELDS:
+    errors.append("site_capabilities.csv: header does not match the \u00a74.15 field set (V-30)")
+cap_ids = set(); cap_tuples = set()
+SITE_ORG = {s["site_id"]: s["org_id"] for s in sites}
+for i, r in enumerate(capabilities, 2):
+    cid = r["capability_id"]
+    if not re.fullmatch(r"CAP-\d{6}", cid or ""):
+        errors.append(f"site_capabilities.csv:{i} {cid} capability_id does not match CAP-###### (V-30)")
+    if cid in cap_ids:
+        errors.append(f"site_capabilities.csv:{i} {cid} duplicate capability_id (V-30)")
+    cap_ids.add(cid)
+    ct = r["capability_type"]
+    if ct not in CAP_VOCAB:
+        errors.append(f"site_capabilities.csv:{i} {cid} bad capability_type (V-30)")
+    elif r["term"] not in CAP_VOCAB[ct]:
+        errors.append(f"site_capabilities.csv:{i} {cid} term {r['term']} not in the \u00a73.6 vocabulary for {ct} (V-30)")
+    if r["provenance"] not in ("company_disclosed", "government_filing"):
+        errors.append(f"site_capabilities.csv:{i} {cid} provenance outside the two-value enum \u2014 the PMIR rule is structural here (V-30)")
+    if not (r["source_ref"] or "").strip():
+        errors.append(f"site_capabilities.csv:{i} {cid} source_ref empty (V-30)")
+    if not _is_date(r["observed_date"]) or r["observed_date"] > "2026-12-31":
+        errors.append(f"site_capabilities.csv:{i} {cid} observed_date invalid or in the future (V-30)")
+    if r["withdrawn_date"] and not _is_date(r["withdrawn_date"]):
+        errors.append(f"site_capabilities.csv:{i} {cid} withdrawn_date not a date (V-30)")
+    if r["site_id"] not in SITE_ORG:
+        errors.append(f"site_capabilities.csv:{i} {cid} site_id does not resolve (V-31)")
+    elif r["org_id"] != SITE_ORG[r["site_id"]]:
+        errors.append(f"site_capabilities.csv:{i} {cid} org_id does not equal the site row's org_id (V-31)")
+    tup = (r["site_id"], r["capability_type"], r["term"])
+    if tup in cap_tuples:
+        errors.append(f"site_capabilities.csv:{i} {cid} duplicate (site_id, capability_type, term) tuple (V-31)")
+    cap_tuples.add(tup)
+# V-32/V-33 site fields
+GROUP_MEMBERS = {}
+for i, s in enumerate(sites, 2):
+    cs = (s.get("county_source") or "").strip()
+    if cs:
+        if cs not in COUNTY_SOURCES:
+            errors.append(f"sites.csv:{i} {s['site_id']} bad county_source (V-32)")
+        if not (s.get("county") or "").strip():
+            errors.append(f"sites.csv:{i} {s['site_id']} county_source set with empty county (V-32)")
+        if cs == "geocoder_centroid" and (s.get("geocode_precision") or "").strip() not in ("zip_centroid", "city_centroid"):
+            errors.append(f"sites.csv:{i} {s['site_id']} county_source=geocoder_centroid without centroid geocode_precision (V-32)")
+    gid = (s.get("site_group_id") or "").strip()
+    if gid:
+        if not re.fullmatch(r"GRP-\d{6}", gid):
+            errors.append(f"sites.csv:{i} {s['site_id']} site_group_id does not match GRP-###### (V-32)")
+        GROUP_MEMBERS.setdefault(gid, []).append(s)
+for gid, members_ in GROUP_MEMBERS.items():
+    if len(members_) < 2:
+        errors.append(f"sites.csv: site group {gid} is a singleton \u2014 a group must hold >=2 sites at application close (V-33)")
+    if len({(m["city"], m["state"]) for m in members_}) != 1:
+        errors.append(f"sites.csv: site group {gid} members do not share city+state (V-33)")
+
+
+# V-34..V-38 [pass 14] shard layout (SCHEMA Appendix C)
+USPS_ALL = {"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID",
+            "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS",
+            "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK",
+            "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV",
+            "WI", "WY", "DC", "AS", "GU", "MP", "PR", "VI"}
+def _org_shard_of(r):
+    st = (r.get("hq_state") or "").strip().upper()
+    c = (r.get("hq_country") or "").strip().upper()
+    if st in USPS_ALL:
+        return st
+    if c not in ("", "US", "USA", "UNITED STATES"):
+        return "INTL"
+    return "US"
+def _site_shard_of(r):
+    st = (r.get("state") or "").strip().upper()
+    return st if st in USPS_ALL else None
+for _fname, (_flds, _rows) in sorted(ORG_SHARDS.items()):
+    _tag = _fname[len("organizations_"):-len(".csv")]
+    if _tag not in USPS_ALL and _tag not in ("INTL", "US"):
+        errors.append(f"{_fname}: shard tag {_tag} is not a USPS code, INTL, or US (V-34)")
+    if _flds != org_fields:
+        errors.append(f"{_fname}: header diverges from the table's shard header set (V-34)")
+    _ids = [r["org_id"] for r in _rows]
+    if _ids != sorted(_ids):
+        errors.append(f"{_fname}: org_ids not strictly ascending (V-36)")
+    for r in _rows:
+        if _org_shard_of(r) != _tag:
+            errors.append(f"{_fname}: {r['org_id']} placement mismatch \u2014 computed shard {_org_shard_of(r)} != file tag {_tag}; correct the HQ fact and move the record in the same pass (Appendix C \u00a74), never auto-move (V-35)")
+for _fname, (_flds, _rows) in sorted(SITE_SHARDS.items()):
+    _tag = _fname[len("sites_"):-len(".csv")]
+    if _tag in ("INTL", "US"):
+        errors.append(f"{_fname}: sites carry no INTL or residual shard (Appendix C \u00a72.1) (V-35)")
+    elif _tag not in USPS_ALL:
+        errors.append(f"{_fname}: shard tag {_tag} is not a USPS code (V-34)")
+    if _flds != site_fields:
+        errors.append(f"{_fname}: header diverges from the table's shard header set (V-34)")
+    _ids = [r["site_id"] for r in _rows]
+    if _ids != sorted(_ids):
+        errors.append(f"{_fname}: site_ids not strictly ascending (V-36)")
+    for r in _rows:
+        if _site_shard_of(r) is None:
+            errors.append(f"{_fname}: {r['site_id']} is unplaceable (blank or non-USPS state) \u2014 held out for correction or an owner ruling (V-35)")
+        elif _site_shard_of(r) != _tag:
+            errors.append(f"{_fname}: {r['site_id']} placement mismatch \u2014 computed shard {_site_shard_of(r)} != file tag {_tag}; correct the state fact and move the record in the same pass (Appendix C \u00a74), never auto-move (V-35)")
+for _mono in ("organizations.csv", "sites.csv"):
+    if (DATA / _mono).exists():
+        errors.append(f"data/{_mono}: monolith present \u2014 shards are canonical (V-37)")
+for _f in sorted(DATA.glob("*_all.csv")):
+    errors.append(f"data/{_f.name}: merged export committed to data/ \u2014 merged exports are build/ release artifacts only (V-37)")
+if "organizations_US.csv" in ORG_SHARDS:
+    warnings.append(f"organizations_US.csv holds {len(ORG_SHARDS['organizations_US.csv'][1])} residual rows \u2014 placement-review queue (V-38)")
+print("organizations shards: " + ", ".join(f"{fn[len('organizations_'):-4]} {len(rw)}" for fn, (_, rw) in sorted(ORG_SHARDS.items())) + f" ({len(orgs)} total)")
+print("sites shards: " + ", ".join(f"{fn[len('sites_'):-4]} {len(rw)}" for fn, (_, rw) in sorted(SITE_SHARDS.items())) + f" ({len(sites)} total)")
+
 for w in warnings:
     print(f"WARN  {w}")
 for e in errors:
     print(f"ERROR {e}")
 print(f"\n{len(orgs)} organizations, {len(sites)} sites, {len(eco)} ecosystem rows, "
       f"{len(links)} registry links, {len(members)} member rows, {len(people)} people rows, "
-      f"{len(programs)} program rows checked.")
+      f"{len(programs)} program rows, {len(events)} event series, "
+      f"{len(evidence)} evidence rows, {len(relationships)} relationship rows, "
+      f"{len(capabilities)} capability rows, "
+      f"{len(participation)} participation rows checked.")
 if errors:
     print(f"FAILED with {len(errors)} error(s).")
     sys.exit(1)
