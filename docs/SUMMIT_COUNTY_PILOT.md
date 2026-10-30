@@ -1,5 +1,8 @@
 # Summit County Polymer Pilot — Coverage & Dedup Feasibility Test
 
+> **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
+> **Arithmetic correction:** The published table has **3/99 (3.0%)** three-source candidate rows (Goodyear, ARDL, Americhem), not the 2/99 (2.0%) stated below. This does not settle its probable duplicate or establish 99 verified establishments.
+
 **For:** John Swanson, Polymer Industry Cluster (PIC)
 **Scope:** SUMMIT COUNTY, OHIO ONLY. One-county pilot, speed over depth. No NAICS/address deep-verification.
 **Date of harvest:** 2026-10-28
