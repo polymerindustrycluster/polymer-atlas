@@ -18,7 +18,9 @@ for r,orig,snapshot in zip(v,pop,o):
  assert r['verdict']==('VERIFIED' if r['outcome']=='HQ_FOUND' else 'STILL_UNCERTAIN')
  assert 0<=int(r['primary_fetches'])<=6
  for k in ('observed_date','retrieved_date'):assert re.fullmatch(r'\d{4}-\d{2}-\d{2}',r[k])
- if r['outcome']=='HQ_FOUND':assert all(r[k] for k in ('hq_city','hq_state','hq_country','source_ref'))
+ if r['outcome']=='HQ_FOUND':
+  assert 'direct' in r['access_method'].lower() and 'success' in r['access_method'].lower()
+  assert all(r[k] for k in ('hq_city','hq_state','hq_country','source_ref'))
  else:assert r['settling_fact'] and not any(r[k] for k in ('hq_city','hq_state','hq_country','hq_county'))
 ids={r['org_id'] for r in v if r['outcome']=='HQ_FOUND'}
 assert len(e)==len(ids) and {r['record_id'] for r in e}==ids
