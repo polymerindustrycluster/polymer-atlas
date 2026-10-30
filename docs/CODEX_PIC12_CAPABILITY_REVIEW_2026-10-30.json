@@ -78,7 +78,9 @@
         "CAP-000470",
         "CAP-000471",
         "CAP-000472"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000082",
@@ -101,7 +103,9 @@
       "integration_decision": "append",
       "allocated_capability_ids": [
         "CAP-000473"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000107",
@@ -124,7 +128,9 @@
       "integration_decision": "append",
       "allocated_capability_ids": [
         "CAP-000474"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000117",
@@ -168,7 +174,9 @@
         "CAP-000477",
         "CAP-000478",
         "CAP-000479"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000119",
@@ -201,7 +209,9 @@
         "CAP-000480",
         "CAP-000481",
         "CAP-000482"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000179",
@@ -244,7 +254,9 @@
         "CAP-000485",
         "CAP-000486",
         "CAP-000487"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000222",
@@ -270,7 +282,9 @@
       ],
       "integration_caveat": "Site attribution combines in-house manufacturing with own location page; weaker than an explicit plant sentence. Integrator may hold if exact-address tie is insufficient.",
       "integration_decision": "hold",
-      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR."
+      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR.",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Explicit primary statement locating the claimed injection operation and molded outputs at 140 West Drive, Lodi."
     },
     {
       "site_id": "SITE-000224",
@@ -295,7 +309,9 @@
       ],
       "integration_caveat": "Large-format process maps to the existing umbrella term, not a new term. Do not claim current certification from a certificate that expired September 2026.",
       "integration_decision": "hold",
-      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR."
+      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR.",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Explicit primary statement locating the claimed printers and thermoplastic processing at 990 Evans Avenue, Akron."
     },
     {
       "site_id": "SITE-000234",
@@ -320,7 +336,9 @@
       ],
       "integration_caveat": "Toll coating is application, not coating formulation. Current address is 365; do not import an older 367 Stanton document address.",
       "integration_decision": "hold",
-      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR."
+      "integration_hold_reason": "Conservative review: in-house corporate capability plus address is insufficiently explicit plant attribution for this PR.",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Explicit primary statement locating adhesive manufacture and compounding at 365 Stanton Avenue, Akron."
     },
     {
       "site_id": "SITE-000240",
@@ -355,7 +373,9 @@
         "CAP-000488",
         "CAP-000489",
         "CAP-000490"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-000245",
@@ -388,7 +408,9 @@
         "CAP-000491",
         "CAP-000492",
         "CAP-000493"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-001889",
@@ -416,7 +438,9 @@
       "allocated_capability_ids": [
         "CAP-000494",
         "CAP-000495"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     },
     {
       "site_id": "SITE-003465",
@@ -444,7 +468,9 @@
       "allocated_capability_ids": [
         "CAP-000496",
         "CAP-000497"
-      ]
+      ],
+      "verdict": "VERIFIED",
+      "verdict_scope": "Only listed site-grain capability claims; not full-record verification, liveness, operating status, tier, address correction, or certification."
     }
   ],
   "held_sites": [
@@ -452,45 +478,59 @@
       "site_id": "SITE-000037",
       "name": "HKB Enterprises",
       "reason": "Own-source website unavailable; provisional HQ grain unresolved.",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Readable primary disclosure identifying polymer operations at the held Akron establishment, rather than headquarters only."
     },
     {
       "site_id": "SITE-000040",
       "name": "Spectrum Plastics",
       "reason": "www/non-www splastics.com timed out; no fresh readable primary evidence.",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Readable company or government source tying specific processes/materials to the held Akron plant."
     },
     {
       "site_id": "SITE-000041",
       "name": "Next Generation Plastics",
       "reason": "Current own source identifies Fairlawn office, not existing Akron plant. Do not assign recycling to office or move site implicitly.",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Primary source identifying the actual recycling plant address and reconciling it with held Akron site versus Fairlawn office."
     },
     {
       "site_id": "SITE-000056",
       "name": "CF Extrusion Technologies",
       "reason": "Machinery supplier/HQ; unreadable own page and no manufacturing-process evidence. Supplying extruders is not polymer extrusion.",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Primary disclosure distinguishing manufacturing performed at held address from equipment supplied to other processors."
     },
     {
       "site_id": "SITE-000114",
       "name": "Cuyahoga Plastics",
       "reason": "Own about page explicitly says TWO locations; Euclid contact address does not locate molding or compounding operations. Hold pending plant-specific split.",
       "source_url": "https://cuyahogaplastics.com/about-us/",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Primary location-level breakdown assigning molding and compounding between the company\u2019s two facilities."
     },
     {
       "site_id": "SITE-000125",
       "name": "CPI Precision Plastics/Cardinal Products",
       "reason": "Own website unavailable; no fresh readable primary evidence.",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Readable primary source confirming custom molding at held North Royalton establishment."
     },
     {
       "site_id": "SITE-000134",
       "name": "Novagard",
       "reason": "Corporate pages show silicone/foam manufacturing and 5109 Hamilton footer but existing record has 2720 E79th address conflict. No exact plant allocation established; certificate fetch failed.",
       "source_url": "https://novagard.com/about/",
-      "integration_decision": "hold"
+      "integration_decision": "hold",
+      "verdict": "STILL_UNCERTAIN",
+      "settling_fact": "Primary plant-location evidence reconciling Hamilton Avenue and East79th addresses and locating each capability."
     }
   ],
   "integration": {
@@ -645,6 +685,14 @@
       "existing_record_changes": "No site, organization or evidence rows changed; verification tier changes 0"
     },
     "pull_request": "https://github.com/polymerindustrycluster/polymer-atlas/pull/2",
-    "allocation_scope": "CAP-000462\u2013CAP-000497 is a branch-only provisional reservation, not a main-branch ID lock. Recheck current upstream allocations immediately before merge; integrator must renumber collisions and update this manifest together. Baseline main: 3036121b0245bee1e6b1c8f46ed63c0a39821226."
+    "allocation_scope": "CAP-000462\u2013CAP-000497 is a branch-only provisional reservation, not a main-branch ID lock. Recheck current upstream allocations immediately before merge; integrator must renumber collisions and update this manifest together. Baseline main: 3036121b0245bee1e6b1c8f46ed63c0a39821226.",
+    "integrator_of_record": "codex-dot (build_atlas_quality_prs), designated by parent orchestrator; serialized CAP allocation and scoped local application delegated to capability worker before AGENTS swim-lanes amendment was fetched.",
+    "protocol_reconciliation": "Read and merged origin/main 9d7a33f (AGENTS-only amendment). No further data edits in this reconciliation; documents and queue only. Small single-purpose PR remains unmerged.",
+    "journal": "docs/CODEX_PIC12_CAPABILITY_PASS_JOURNAL_2026-10-30.md",
+    "baseline_backup": {
+      "path": "/workspace/scratch/476f38d3e773/atlas-site-research/backups/site_capabilities.before-pic12-3036121.csv",
+      "sha256": "273b4f47e4556693bad0fd737c34ba271e6dcda96b79fd3037489765f215c56a",
+      "timing": "Reconstructed from immutable baseline3036121 after application, during protocol reconciliation; not represented as a contemporaneous pre-pass filesystem backup. Original bytes were checked before append and byte-prefix preservation verified after application."
+    }
   }
 }
