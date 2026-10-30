@@ -1,5 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Source & Count Reconciliation
 
+> **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
+> **Attribution correction:** Numerically reproducing 996 from a CBP definition does not prove the strategic framework used that definition. The banked CBP extract and author methodology are absent here; historical firm/establishment ranges are not verified current statistics.
+
 **Scope of this report:** Scoping only. No master list was built. This report (1) inventories every authoritative / semi-authoritative seed source, (2) reconciles the rumored "~900 polymer companies in Ohio" against definitions, and (3) re-prioritizes sources based on John's actual access (updated 2026-10-28).
 
 **Access update (John, 2026-10-28):**
