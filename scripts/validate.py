@@ -740,7 +740,8 @@ CAP_MATERIAL = {"thermoplastics", "thermosets", "elastomers_rubber",
                 "pvc", "pet_petg", "polystyrene_ps_hips", "polycarbonate_pc", "nylon_pa",
                 "abs", "acetal_pom", "polyurethane_pu", "epoxy", "bioplastics_biobased",
                 "recycled_content_pcr_pir", "custom_compounds",
-                "inks_colorants_masterbatch", "coatings", "adhesives_sealants"}
+                "inks_colorants_masterbatch", "coatings", "adhesives_sealants",
+                "carbon_black"}
 CAP_PROCESS = {"injection_molding", "blow_molding", "extrusion", "thermoforming",
                "rotational_molding", "compression_molding", "rubber_molding",
                "rubber_mixing_compounding", "compounding", "color_masterbatch",
@@ -913,8 +914,16 @@ gen_merg = {(r["org_id"], "merged_into", r["successor_org_id"]) for r in orgs if
 held_parent = {(r["from_org_id"], r["relationship_type"], r["to_org_id"]) for r in relationships if r["relationship_type"] == "parent_of"}
 held_succ = {(r["from_org_id"], r["relationship_type"], r["to_org_id"]) for r in relationships if r["relationship_type"] == "successor_of"}
 held_merg = {(r["from_org_id"], r["relationship_type"], r["to_org_id"]) for r in relationships if r["relationship_type"] == "merged_into"}
-if held_parent != gen_parent:
-    errors.append(f"relationships.csv: parent_of edges drift from parent_org_id columns (missing {sorted(gen_parent - held_parent)}, extra {sorted(held_parent - gen_parent)}) (V-27)")
+# \u00a74.14 CPChem exception (owner ruling 10A, 2026-10-30; schema v1.6.1):
+# ORG-002910 (Chevron Phillips Chemical) is a 50/50 JV \u2014 parent_org_id stays
+# empty by design and the two parent_of edges are authored by hand. They are
+# REQUIRED here and excluded from the column-parity comparison below.
+CPCHEM_EXCEPTION = {("ORG-002911", "parent_of", "ORG-002910"),
+                    ("ORG-002912", "parent_of", "ORG-002910")}
+if not CPCHEM_EXCEPTION.issubset(held_parent):
+    errors.append("relationships.csv: CPChem \u00a74.14 exception edges missing \u2014 both authored parent_of edges into ORG-002910 are required (V-27)")
+if held_parent - CPCHEM_EXCEPTION != gen_parent:
+    errors.append(f"relationships.csv: parent_of edges drift from parent_org_id columns (missing {sorted(gen_parent - (held_parent - CPCHEM_EXCEPTION))}, extra {sorted((held_parent - CPCHEM_EXCEPTION) - gen_parent)}) (V-27)")
 if held_succ != gen_succ:
     errors.append(f"relationships.csv: successor_of edges drift from successor_org_id columns (V-27)")
 if held_merg != gen_merg:

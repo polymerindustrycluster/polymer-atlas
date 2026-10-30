@@ -1,7 +1,11 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.6 — 2026-10-30 (the combined v1.5 + v1.6 revision:
+**Version:** v1.6.1 — 2026-10-30 (pass-16 micro-revision: §3.6
+`carbon_black` material term added under owner ruling 7A; §4.14
+CPChem dual-parent exception documented under owner ruling 10A;
+applied in integration pass 16).
+Prior: v1.6 — 2026-10-30 (the combined v1.5 + v1.6 revision:
 events layer (§4.12); evidence records (§4.13), relationship records
 (§4.14), capability records (§3.6 + §4.15), liveness + Tier-1 qualifier
 fields (§4.4), site `county_source` / `site_group_id` (§4.5); validators
@@ -378,11 +382,11 @@ row**, records the capability verbatim in the site's `notes` prefixed
 layer), and the queue is reviewed at the next schema prep. Lane
 improvisation is forbidden.
 
-**The seed vocabulary (57 terms).** Mapping column: `= §3.1` / `= §3.2`
+**The seed vocabulary (58 terms).** Mapping column: `= §3.1` / `= §3.2`
 means the identical string in that list (REFERENCE); `ROLLUP` lists
 the §3.1 subtypes it covers; `NEW` states the gap.
 
-*`capability_type = material` (24) — what the site works in or sells
+*`capability_type = material` (25) — what the site works in or sells
 as material:*
 
 | Term | Mapping |
@@ -411,6 +415,7 @@ as material:*
 | `inks_colorants_masterbatch` | = §3.2 family (masterbatch/color concentrates as material; the process side is §3.1 `color_masterbatch` — the axis decides the string) |
 | `coatings` | = §3.2 family |
 | `adhesives_sealants` | = §3.2 family |
+| `carbon_black` | NEW — §3.2 names the rubber/elastomer families but carries no carbon black string; carbon black is a produced, specified material class (reinforcing and specialty carbons) at Cabot/Orion-class plants and does not honestly ride `elastomers_rubber`. Added by owner ruling 7A, 2026-10-30 (v1.6.1) |
 
 Deliberately *not* seeded at material grain: the specific elastomer
 compounds (`sbr`, `epdm`, `nitrile_nbr`, `neoprene_cr`, `viton_fkm`,
@@ -1403,6 +1408,22 @@ a mechanical derivation of them:
   `source_ref`. They are never generated, and the generator never
   deletes them.
 
+**Exception — dual-parent joint ventures (named-record, ruling
+10A, 2026-10-30).** The single-source rule above assumes one parent.
+Chevron Phillips Chemical Company LLC (`ORG-002910`) is owned 50/50
+by Chevron Corporation (`ORG-002911`) and Phillips 66 (`ORG-002912`);
+neither parent controls it, and a one-parent column value would
+misstate the fact. For this record only: `parent_org_id` stays
+EMPTY by design, and the two `parent_of` edges (Chevron → CPChem,
+Phillips 66 → CPChem, each `effective_from` 2000-07-01 on its own
+FY2025 10-K basis) are **authored by hand** as a documented
+exception. The edge generator skips this record, and V-27 parity is
+computed with CPChem excluded (the validator requires the two
+authored exception edges to be present and excludes them from the
+column-parity set). This exception is named-record-only and does
+not generalize: any future dual-parent JV requires its own owner
+ruling and its own named exception here before an edge is authored.
+
 **The membership rule (binding).** PIC membership is governed by
 §4.10 and recorded in `data/members.csv`; `members.csv` stays the
 membership record for PIC, full stop. No `member_of` edge ever states
@@ -1955,3 +1976,4 @@ semantic change if the applied set differs.
 - **v1.5 — 2026-10-30 (owner ruling 2026-10-30; applied in integration pass 14, Stage A).** Events layer — §4.12 adds `data/events.csv` (series grain) and `data/event_participation.csv` (harvested participation), the named-subject qualification test, the harvest-only rule, and validator rules V-17–V-21. No existing table, field, or vocabulary changes. Seeded with 27 series and 55 harvested participation rows; the A6-16 rider (audit 6) re-keys PROG-000014/PROG-000015 to Kent State ORG-000503 and clears ORG-002095's polymer_program claim. The version header moves to v1.6 at this pass's Stage B, which applies the v1.6 increment in the same pass; both revision entries are preserved.
 
 - **v1.6 — 2026-10-30 (owner rulings 2026-10-30 — battery of 13 items, all approved; applied in integration pass 14, Stage B).** Integrity & capability increment — §3.6 capability vocabulary (57 terms); §4.4 liveness trio (`last_activity_evidence_date` floor backfilled on all 2,430 organizations; 1 `closure_signature` seed + 2 `monitor_watch` seeds) and the derived Tier-1 qualifier (birth union 71; `tri_reporter` and `national_footprint` dormant at 0); §4.5 `county_source` (parcel 32 / physical_address 753 / blank 1,884) and `site_group_id` (2 groups, 5 sites); §4.13 evidence records (`data/evidence.csv`, born empty; V-22/V-23/V-25, the tier restatement an error from day one); §4.14 relationship records (`data/relationships.csv`, born 54 = 53 generated + the authored GEON `spun_off_from` edge); §4.15 capability records (`data/site_capabilities.csv` — owner-renamed from the prep's org_capabilities.csv — born from the adjudicated tag transform WITH the `withdrawn_date` column); validators V-22–V-33. The pass's Stage C splits organizations.csv / sites.csv into per-state shards (Appendix C).
+- **v1.6.1 — 2026-10-30 (owner rulings 2026-10-30 — pass-16 battery items 7A and 10A, all as recommended; applied in integration pass 16).** Micro-revision, two items only. (1) §3.6: `carbon_black` added as a NEW material capability term (vocabulary 57 → 58 terms; material 24 → 25) — §3.2 carries no carbon black string, and the class is produced and specified at plant grain by Cabot/Orion-class producers. `fumed_silica` was considered in the same ruling and NOT approved; it stays a §3.6.3 queue item. (2) §4.14: the CPChem dual-parent exception is documented (named-record exception for ORG-002910: `parent_org_id` empty by design, two hand-authored `parent_of` edges from the 50/50 parents Chevron ORG-002911 and Phillips 66 ORG-002912, generator skip, V-27 parity computed with CPChem excluded and the exception edges required present). No other table, field, or vocabulary changes.
