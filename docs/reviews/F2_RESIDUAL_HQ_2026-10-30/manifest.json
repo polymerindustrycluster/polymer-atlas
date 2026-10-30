@@ -3,18 +3,18 @@
   "population": 163,
   "completed": 163,
   "outcomes": {
-    "STILL_UNKNOWN": 111,
-    "HQ_FOUND": 52
+    "STILL_UNKNOWN": 113,
+    "HQ_FOUND": 50
   },
-  "draft_evidence_rows": 52,
+  "draft_evidence_rows": 50,
   "county_candidates": 0,
   "canonical_data_unchanged": true,
   "queue_other_entries_unchanged": true,
   "original_shard_sha256": "c42e32183f515d59ff2e4ddb8390c0ff33a70b05c3080e710690f891dcbd4407",
   "files": {
-    "verdicts.csv": "8f6967501147d9440f886dd291662f5dfc443221393aaf143d62ed9378948a62",
+    "verdicts.csv": "20715f0f44e4aaf08daac4e7675837664f6d934751feb5d80bb2069c707ecb2c",
     "original_rows.csv": "449df433992f455535c68172a531b9378883f507b4a998b2ef76365183020d02",
-    "source_ledger.csv": "f57d6ffdc5a58afd759e28e8606c0003dbae28854a8abc26d50025d60c56d9b7",
-    "evidence_draft.csv": "3957e33d7bf7d42133d14d0a1f65d12b3a45c1fc95330a13e77613129280f6fb"
+    "source_ledger.csv": "9e6420f29afe6b4b1d667f691322e479e8b42b078e59005fb92c22ce5755f94a",
+    "evidence_draft.csv": "45abf3d37e034c2112cce513ad9a4c4ad1a545d29524b71cb002a7f23ccc5a7e"
   }
 }
