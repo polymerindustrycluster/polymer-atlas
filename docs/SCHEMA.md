@@ -1,7 +1,12 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.6.2 — 2026-10-30 (events battery-release micro-revision:
+**Version:** v1.6.3 — 2026-10-30 (member_of minting micro-revision:
+§4.14 association-scoped reversal of the v1.6 `member_of` dormancy
+under owner ruling 2026-10-30 (events-pass battery item iii); 241
+authored `member_of` edges minted from the roster-harvest directory
+facts; applied in the member_of minting pass).
+Prior: v1.6.2 — 2026-10-30 (events battery-release micro-revision:
 §4.12.1 `coatings_finishing` subject_scope value added under owner
 ruling 2026-10-30 (events-pass battery item ii); applied in the events
 battery-release pass).
@@ -1440,6 +1445,28 @@ sourced membership fact exists outside the PIC system. At v1.6 birth
 the Atlas holds no such sourced facts, so `member_of` ships with
 **zero rows** — a scoped, dormant type, not a backfill target.
 
+**`member_of` dormancy — association-scoped reversal (owner ruling
+2026-10-30, events-pass battery item iii).** The v1.6 ruling kept the
+`member_of` type dormant because no association-membership facts existed
+to mint from. They exist now: the 2026-10-30 roster harvest produced 245
+directory-sourced facts (241 distinct organization × association pairs,
+190 companies × 15 associations), each from the association's own member
+directory (directory class, supports_B), snapshot-dated 2026-10-30. The
+241 pairs are minted as authored `member_of` edges (from = member
+organization, to = association; `basis` = the association's own
+directory, snapshot-dated 2026-10-30; `effective_from` is empty — a
+snapshot observes membership, it does not date its start, and §4.14.1
+admits that field only where a source states the start; `source_ref` =
+the directory URL). **Scope limit:** the reversal covers association
+membership only. PIC membership is explicitly excluded and remains
+governed by `data/members.csv` under §5.1; no `member_of` edge names
+PIC/GAC as its association. **Refresh obligation:** membership churns
+annually; the minted set is refreshed by re-running the harvest and
+diffing — a name disappearing from a later directory annotates the edge
+(§4.12.2 refresh-diff posture by analogy), it does not silently delete
+it. V-27 parity does not generate `member_of` (authored class); V-27
+checks its endpoints resolve, as for all authored types.
+
 **Renames and same-record DBAs are not edges (binding).** A rebrand or
 true legal rename with no ownership change is one record (§5.4):
 `legal_name` updated, former names in `trade_names[]`. A DBA adopted
@@ -1982,3 +2009,4 @@ semantic change if the applied set differs.
 - **v1.6 — 2026-10-30 (owner rulings 2026-10-30 — battery of 13 items, all approved; applied in integration pass 14, Stage B).** Integrity & capability increment — §3.6 capability vocabulary (57 terms); §4.4 liveness trio (`last_activity_evidence_date` floor backfilled on all 2,430 organizations; 1 `closure_signature` seed + 2 `monitor_watch` seeds) and the derived Tier-1 qualifier (birth union 71; `tri_reporter` and `national_footprint` dormant at 0); §4.5 `county_source` (parcel 32 / physical_address 753 / blank 1,884) and `site_group_id` (2 groups, 5 sites); §4.13 evidence records (`data/evidence.csv`, born empty; V-22/V-23/V-25, the tier restatement an error from day one); §4.14 relationship records (`data/relationships.csv`, born 54 = 53 generated + the authored GEON `spun_off_from` edge); §4.15 capability records (`data/site_capabilities.csv` — owner-renamed from the prep's org_capabilities.csv — born from the adjudicated tag transform WITH the `withdrawn_date` column); validators V-22–V-33. The pass's Stage C splits organizations.csv / sites.csv into per-state shards (Appendix C).
 - **v1.6.1 — 2026-10-30 (owner rulings 2026-10-30 — pass-16 battery items 7A and 10A, all as recommended; applied in integration pass 16).** Micro-revision, two items only. (1) §3.6: `carbon_black` added as a NEW material capability term (vocabulary 57 → 58 terms; material 24 → 25) — §3.2 carries no carbon black string, and the class is produced and specified at plant grain by Cabot/Orion-class producers. `fumed_silica` was considered in the same ruling and NOT approved; it stays a §3.6.3 queue item. (2) §4.14: the CPChem dual-parent exception is documented (named-record exception for ORG-002910: `parent_org_id` empty by design, two hand-authored `parent_of` edges from the 50/50 parents Chevron ORG-002911 and Phillips 66 ORG-002912, generator skip, V-27 parity computed with CPChem excluded and the exception edges required present). No other table, field, or vocabulary changes.
 - **v1.6.2 — 2026-10-30 (owner ruling 2026-10-30 — events-pass battery item ii, as recommended; applied in the events battery-release pass).** Micro-revision, one item only. §4.12.1: `coatings_finishing` added to the `subject_scope` vocabulary (12 → 13 values) — the list carried no coatings value, and the two coatings series seeded in the events pass (American Coatings Show & Conference EVT-000037; International Symposium on Coating Science and Technology EVT-000042) were provisionally mapped to `compounding_formulation` with the gap flagged in their `subject_note`s; both rows flip to `coatings_finishing` in the same pass and the flags are replaced with dated ruling notes. The validator's `SUBJECT_VOCAB` gains the value in the same pass. No other table, field, or vocabulary changes.
+- **v1.6.3 — 2026-10-30 (owner ruling 2026-10-30 — events-pass battery item iii, as recommended; applied in the member_of minting pass).** Micro-revision, one item only. §4.14: the v1.6 `member_of` dormancy is reversed for association membership only — 241 authored `member_of` edges (REL-000080–REL-000320) minted from the 2026-10-30 roster harvest's directory facts (245 facts = 241 distinct organization × association pairs, 190 companies × 15 associations; each from the association's own member directory — directory class, supports_B; snapshot-dated 2026-10-30 in `basis`/`source_ref`, with `effective_from` empty per §4.14.1 — no source states a membership start). PIC membership is explicitly excluded and remains governed by `data/members.csv` under §4.10/§5.1; no edge names PIC/GAC as its association. An annual refresh obligation is recorded in §4.14 (a name disappearing from a later directory annotates the edge; it does not silently delete it). No other table, field, or vocabulary changes.
