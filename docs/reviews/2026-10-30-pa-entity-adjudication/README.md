@@ -40,3 +40,7 @@ The standing PA same-street queue (Tredegar, CPG/Scranton, Taylor, Eastman/Synth
 - Remote CI is not claimed; this repository currently has no workflow file.
 
 Protocol recheck: main9d7a33f merged, no data drift. All cases use STILL_UNCERTAIN with settling facts (even keep-separate has unresolved HQ/site correction). No data files edited, no backup required. Integrator of record: codex-dot.
+
+## Current upstream reconciliation
+
+At f928257 pass18, fingerprint guard caught only PA09: ORG-002260 and SITE-002229 were tombstoned by the other integrator. PA09 is now DUPLICATE_OF ORG-002261, superseded, with no remaining action; nine other cases unchanged. Fingerprints refreshed only for this explicitly reconciled case. No resurrection or repeated merge proposed. Current guard and tests pass; full validator hits the same49 missing-FK/orphan errors as pristine f928257. Integration is blocked until upstream validation is repaired.

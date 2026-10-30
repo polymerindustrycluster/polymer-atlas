@@ -1,5 +1,5 @@
 {
-  "base_commit": "3036121b0245bee1e6b1c8f46ed63c0a39821226",
+  "base_commit": "f928257aa92ce7b91f781183d00035c752663349",
   "scope": "10 PA organization-pair review candidates; no canonical mutations",
   "cases": [
     {
@@ -344,20 +344,20 @@
     },
     {
       "case_id": "PA-09",
-      "disposition": "propose_parent_consolidation_hold_site_boundary",
+      "disposition": "superseded_by_upstream_pass18",
       "canonical_action": "none",
-      "finding": "Fresh company-hosted Intertek certificate CERT-0120618 names JM Eagle at 15661 Delano Road and an additional site at 15659. Scope is plastic pipe extrusion, valid until 2027-08-09. Existing Franklin Plant label does not itself prove which certified address it represents.",
+      "finding": "Upstream pass18 f928257 already merged ORG-002260 into held ORG-002261 and retired SITE-002229 as duplicate of SITE-002230. This packet does not propose repeating or reversing that decision.",
       "observed_date": "2026-10-30",
       "sources": [
         "https://www.jmeagle.com/sites/default/files/PME-MeadvillePA.pdf"
       ],
-      "required_next_step": "Resolve legal names and map Franklin Plant to exact certified site; preserve distinct 15659/15661 locations until boundary established.",
+      "required_next_step": "No duplicate action remains. Preserve upstream tombstones and surviving records; any separate campus-boundary research is a new task.",
       "records": [
         {
           "table": "organizations",
           "id": "ORG-002260",
           "name": "J-M Manufacturing Co. Inc.",
-          "sha256": "8a465be78088a8f64a5b09c89352cf74563a76b3dee968fc63534a2d3f86fc5c"
+          "sha256": "aed17063d34e818eaa03b7378218328764559e349716b146fd17f883dd987bbd"
         },
         {
           "table": "organizations",
@@ -369,7 +369,7 @@
           "table": "sites",
           "id": "SITE-002229",
           "name": "J-M Manufacturing Co. Inc.",
-          "sha256": "9d8679bf550b24f82b65890e546c0f4e30c0e399575ce962adf603da344d5e58"
+          "sha256": "183b179675dcb0dee39ba46bca32714f04532b315a39ab43a6b99ec8e9b0186a"
         },
         {
           "table": "sites",
@@ -378,8 +378,10 @@
           "sha256": "a5a7d00d2cfdd7bfaaabc3b7be0a98038fcc6f56fdc0143a3b3604daf9a395af"
         }
       ],
-      "verdict": "STILL_UNCERTAIN",
-      "settling_fact": "Resolve legal names and map Franklin Plant to exact certified site; preserve distinct 15659/15661 locations until boundary established."
+      "verdict": "DUPLICATE_OF",
+      "settling_fact": "No duplicate action remains. Preserve upstream tombstones and surviving records; any separate campus-boundary research is a new task.",
+      "duplicate_of": "ORG-002261",
+      "upstream_resolution_commit": "f928257aa92ce7b91f781183d00035c752663349"
     },
     {
       "case_id": "PA-10",
@@ -422,5 +424,5 @@
       "settling_fact": "Obtain accessible primary operator/campus evidence, then decide organization consolidation and site grouping independently."
     }
   ],
-  "protocol_recheck": "main9d7a33f AGENTS-only update; no canonical drift"
+  "protocol_recheck": "Pass18 drift caught by guard; PA09 superseded, other9cases exact fingerprints unchanged."
 }
