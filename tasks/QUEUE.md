@@ -100,3 +100,29 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 ## State-shard layout [Appendix C]
 - [x] `done 2026-10-30` State-shard split (integration pass 14, Stage C): organizations.csv -> 15 shards (OH 1781, PA 601, MI 8, TX 4, TN 3, DE 3, INTL 3, MO 2, CO/IN/NC/NY/NJ/KY 1 each, US residual 19), sites.csv -> sites_OH 1945 + sites_PA 724; four-part equality proof in the pass-14 journal (ID sets, SHA-256 row multisets, placement audit, manifest counts); monoliths removed locally only after the proof; validator V-34–V-38 live; builder unions shards + emits merged *_all.csv exports to build/; SCHEMA Appendix C + §4 sentence; AGENTS.md three deltas
 - [ ] `open` Placement-review queue (organizations_US.csv, 19 rows at split): HQ-state facts for the residual organizations (PPG, LyondellBasell, Piedmont Plastics, Synthomer, SKF USA et al.) — a row leaves the residual only via the Appendix C §4 move procedure on an evidenced HQ correction; placement is never inferred from an organization's sites. V-38 reports the queue size at every validation run
+
+
+## Codex PR lane — PA entity-grain adjudication (2026-10-30)
+- [ ] `in-pr:codex-dot 2026-10-30` Review 10 Pennsylvania duplicate/operator candidates; source-backed proposed dispositions, no automatic canonical merges or ID allocation. Branch: `agent/codex/pa-entity-adjudication`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
+
+
+## Codex PR lane — PIC-12 capability enrichment (2026-10-30)
+- [ ] `in-pr:https://github.com/polymerindustrycluster/polymer-atlas/pull/2` Verify 20 existing PIC-12 sites for missing plant-specific capabilities; evidence-backed fragments only until integration allocation, no company-wide capability propagation. Branch: `agent/codex/pic12-capability-enrichment`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
+
+  Result: 20 existing PIC-12 sites reviewed; 36 company-disclosed capability claims appended for 10 sites; 10 sites held without canonical changes. Allocation CAP-000462–CAP-000497. Source rationale, all 20 decisions, and premerge identity/allocation drift checks: `docs/CODEX_PIC12_CAPABILITY_REVIEW_2026-10-30.json`. Sites/orgs and verification tiers unchanged; PR remains unmerged.
+  Protocol reconciliation: merged AGENTS-only main `9d7a33f`; integrator of record codex-dot / build_atlas_quality_prs. Ten scoped VERIFIED decisions and ten STILL_UNCERTAIN decisions (with settling facts) are recorded in the review manifest. Local application journal: `docs/CODEX_PIC12_CAPABILITY_PASS_JOURNAL_2026-10-30.md`. Reconciliation changes docs/queue only; no further data edits.
+  Latest upstream check: merged pass18 `f928257`; 20 identity hashes unchanged, no CAP ID/tuple collisions. Validator blocked by 49 errors identical to pristine main; zero added errors, build passes. Await upstream repair and clean validation before ready-to-merge status.
+
+
+## Codex PR lane — Ohio program enrichment (2026-10-30)
+- [ ] `in-pr:codex-dot 2026-10-30` Verify 5 existing Ohio programs for structured specialties and public program facts; no inferred CIP/completions and no private CRM data. Branch: `agent/codex/ohio-program-enrichment`. Claim is visible in this draft PR only until merged; other writers should check open PRs. Main and existing campaign claims are unchanged. Recheck current records and upstream before integration; do not reuse historical IDs without identity checks.
+
+- PR #3 delivery: docs-only exact reviewed application patch for five programs plus Shawnee URL rollup and20evidence rows. Canonical data unchanged; integrator must recheck hashes and provisional EVD-006673–006692 before applying. https://github.com/polymerindustrycluster/polymer-atlas/pull/3
+
+- Current-base gate f928257: program packet refreshed; upstream49FK/orphan validator errors block integration pending main repair. No canonical data changed in this PR.
+
+## Codex evidence coverage audit — 2026-10-30
+- [ ] `in-pr:https://github.com/polymerindustrycluster/polymer-atlas/pull/4` Read-only evidence coverage report and reproducible audit script, scoped to scripts/audit_evidence_coverage.py, scripts/test_audit_evidence_coverage.py and docs/EVIDENCE_COVERAGE_AUDIT_2026-10-30.md. No canonical data, schema, tier, status, or ID changes; missing evidence rows are review signals, not verdicts. Separate branch agent/codex/evidence-coverage-audit; avoid overlap with data-enrichment lanes.
+
+## Codex read-only partner matching pilot — 2026-10-30
+- [ ] `in-pr:https://github.com/polymerindustrycluster/polymer-atlas/pull/5` Build deterministic site-capability × program-specialty candidate report, tests and methodology. Branch `agent/codex/partner-matching`; no canonical data edits, ID allocation, schema changes or asserted partnerships. Exact compatible vocabulary only; unknown/closed/tombstoned records and training admissions treated explicitly. Independent from PRs #1–3 and the evidence-audit lane. Claimed 2026-10-30 by codex-partner-matching; PR #5 contains the implementation and remains draft for independent review.
