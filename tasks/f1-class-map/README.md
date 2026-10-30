@@ -3,7 +3,7 @@
 Published by the orchestrator 2026-10-30 for the F1 lane (PR #9), whose sampler
 was blocked on this map. Source pin for the frame: main `eceead3a`.
 
-`f1_record_tri_class_mapping.csv` — 2,204 rows = every ORG (687) and SITE
+`f1_record_tri_class_mapping.csv` — 2,199 rows = every ORG (682) and SITE
 (1,517) created in integration passes 20–25: the full F1 sampling frame.
 
 ## How it was built (deterministic; retained in orchestrator staging)
@@ -25,7 +25,7 @@ wave summaries (e.g. tranche 1 = 46 TRI creations: 3 orgs + 43 sites).
   lowest P, others in parentheses in `tri_class`). Count in this build: 0.
 
 ## Distribution
-P0 **0** · P1 417 · P2 180 · P3 776 · P4 604 · NOT_TRI 227 · unresolved 0.
+P0 **0** · P1 417 · P2 180 · P3 771 · P4 604 · NOT_TRI 227 · unresolved 0.
 
 - **P0 has ZERO creations by construction** — P0 was link mechanics on
   already-held records, so no P0 stratum exists in the creations frame.
@@ -36,7 +36,11 @@ P0 **0** · P1 417 · P2 180 · P3 776 · P4 604 · NOT_TRI 227 · unresolved 0.
   produced ZERO creations (flips/repoints/edits only); all 287 pass-21
   creations are TRI.
 - The five watch-seed orgs (Carlstar ORG-004252, Barnhardt ORG-004218,
-  Jasper ORG-004131, Fiberon ORG-004229, Timken ORG-004288), allocated under
-  `org_create_watch`, are included — a sampler counting only `org_create`
-  rows will land 5 short (2,199). All five resolved P3 from their creating
-  site designs (Carlstar via two PKT-024 facilities).
+  Jasper ORG-004131, Fiberon ORG-004229, Timken ORG-004288) each carry an
+  additional `org_create_watch` marker row in their pass's allocation file.
+  The marker is not a creation. **Correction (2026-10-30):** v1 of this map
+  treated the markers as separate creations, double-counting all five
+  (2,204 rows, P3 776, and a wrong note here claiming samplers counting
+  only `org_create` rows would land 5 short — they land exactly right).
+  Duo's pre-draw duplicate check caught it. v2: 2,199 unique creations,
+  P3 771; the five orgs are ordinary `org_create` rows, all P3.
