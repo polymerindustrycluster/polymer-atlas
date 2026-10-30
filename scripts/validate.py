@@ -156,6 +156,17 @@ evd_fields, evidence = load("evidence.csv", new_file=True)
 rel_fields, relationships = load("relationships.csv", new_file=True)
 cap_fields, capabilities = load("site_capabilities.csv", new_file=True)
 
+# [v1.7] Code dimension tables (SCHEMA SS4.16-SS4.18). Missing = error:
+# from v1.7 these are canonical files, not optional increments.
+def _load_v17(name):
+    if not (DATA / name).exists():
+        errors.append(f"{name}: file missing (canonical from schema v1.7)")
+        return [], []
+    return load(name)
+rc_fields, ref_codes = _load_v17("ref_codes.csv")
+rm_fields, ref_code_map = _load_v17("ref_code_map.csv")
+ca_fields, code_assignments = _load_v17("code_assignments.csv")
+
 # V-2: retired column must not ship
 for fname, fields in (("organizations.csv", org_fields), ("ecosystem.csv", eco_fields)):
     if "pic_relationship_stage" in fields:
@@ -1036,7 +1047,16 @@ def _org_shard_of(r):
     return "US"
 def _site_shard_of(r):
     st = (r.get("state") or "").strip().upper()
-    return st if st in USPS_ALL else None
+    if st in USPS_ALL:
+        return st
+    # [v1.6.4] INTL branch (Appendix C SS2 as amended by the sites_INTL
+    # ruling, 2026-10-30): a non-US establishment places in INTL on its
+    # country; a US/unstated-country row with no USPS state stays
+    # unplaceable (sites have no residual shard).
+    c = (r.get("country") or "").strip().upper()
+    if c not in ("", "US", "USA", "UNITED STATES"):
+        return "INTL"
+    return None
 for _fname, (_flds, _rows) in sorted(ORG_SHARDS.items()):
     _tag = _fname[len("organizations_"):-len(".csv")]
     if _tag not in USPS_ALL and _tag not in ("INTL", "US"):
@@ -1051,9 +1071,9 @@ for _fname, (_flds, _rows) in sorted(ORG_SHARDS.items()):
             errors.append(f"{_fname}: {r['org_id']} placement mismatch \u2014 computed shard {_org_shard_of(r)} != file tag {_tag}; correct the HQ fact and move the record in the same pass (Appendix C \u00a74), never auto-move (V-35)")
 for _fname, (_flds, _rows) in sorted(SITE_SHARDS.items()):
     _tag = _fname[len("sites_"):-len(".csv")]
-    if _tag in ("INTL", "US"):
-        errors.append(f"{_fname}: sites carry no INTL or residual shard (Appendix C \u00a72.1) (V-35)")
-    elif _tag not in USPS_ALL:
+    if _tag == "US":
+        errors.append(f"{_fname}: sites carry no residual shard (Appendix C SS3) (V-35)")
+    elif _tag not in USPS_ALL and _tag != "INTL":
         errors.append(f"{_fname}: shard tag {_tag} is not a USPS code (V-34)")
     if _flds != site_fields:
         errors.append(f"{_fname}: header diverges from the table's shard header set (V-34)")
@@ -1062,7 +1082,7 @@ for _fname, (_flds, _rows) in sorted(SITE_SHARDS.items()):
         errors.append(f"{_fname}: site_ids not strictly ascending (V-36)")
     for r in _rows:
         if _site_shard_of(r) is None:
-            errors.append(f"{_fname}: {r['site_id']} is unplaceable (blank or non-USPS state) \u2014 held out for correction or an owner ruling (V-35)")
+            errors.append(f"{_fname}: {r['site_id']} is unplaceable (blank or non-USPS state with US/unstated country) \u2014 held out for correction or an owner ruling (V-35)")
         elif _site_shard_of(r) != _tag:
             errors.append(f"{_fname}: {r['site_id']} placement mismatch \u2014 computed shard {_site_shard_of(r)} != file tag {_tag}; correct the state fact and move the record in the same pass (Appendix C \u00a74), never auto-move (V-35)")
 for _mono in ("organizations.csv", "sites.csv"):
@@ -1072,6 +1092,135 @@ for _f in sorted(DATA.glob("*_all.csv")):
     errors.append(f"data/{_f.name}: merged export committed to data/ \u2014 merged exports are build/ release artifacts only (V-37)")
 if "organizations_US.csv" in ORG_SHARDS:
     warnings.append(f"organizations_US.csv holds {len(ORG_SHARDS['organizations_US.csv'][1])} residual rows \u2014 placement-review queue (V-38)")
+# V-39..V-44 [v1.7] code dimension (SCHEMA SS2.4, SS4.16-SS4.18)
+RC_FIELDS = ["ref_code_id", "code_system", "code_value", "code_title", "code_level",
+             "vintage", "polymer_bound", "atlas_signal", "status", "notes"]
+RM_FIELDS = ["map_id", "from_system", "from_code", "to_system", "to_code",
+             "relation", "map_source", "notes"]
+CA_FIELDS = ["assignment_id", "org_id", "code_system", "code_value", "role",
+             "source_type", "source_name", "source_ref", "stated_title",
+             "observed_date", "created_by", "notes"]
+CODE_SYSTEMS = {"NAICS", "SIC", "CIP", "CPC", "HS", "OPENALEX"}
+CODE_SOURCE_TYPES = {"company_disclosed", "government_filing", "directory_assigned", "researcher_inferred"}
+# V-39 ref_codes structural
+if rc_fields != RC_FIELDS:
+    errors.append("ref_codes.csv: header does not match the SS4.16 field set (V-39)")
+rc_ids, rc_pairs, rc_by_pair = set(), set(), {}
+for i, r in enumerate(ref_codes, 2):
+    rid = r["ref_code_id"]
+    if not re.fullmatch(r"RC-\d{6}", rid or ""):
+        errors.append(f"ref_codes.csv:{i} {rid} ref_code_id does not match RC-###### (V-39)")
+    if rid in rc_ids:
+        errors.append(f"ref_codes.csv:{i} {rid} duplicate ref_code_id (V-39)")
+    rc_ids.add(rid)
+    pair = (r["code_system"], r["code_value"])
+    if pair in rc_pairs:
+        errors.append(f"ref_codes.csv:{i} {rid} duplicate (code_system, code_value) pair {pair} (V-39)")
+    rc_pairs.add(pair)
+    rc_by_pair[pair] = r
+    if r["code_system"] not in CODE_SYSTEMS:
+        errors.append(f"ref_codes.csv:{i} {rid} code_system outside the enum (V-39)")
+    for _fld in ("code_title", "code_level", "vintage"):
+        if not (r.get(_fld) or "").strip():
+            errors.append(f"ref_codes.csv:{i} {rid} {_fld} empty (V-39)")
+    if r["polymer_bound"] not in ("true", "false"):
+        errors.append(f"ref_codes.csv:{i} {rid} polymer_bound outside true/false (V-39)")
+    if r["status"] not in ("active", "superseded"):
+        errors.append(f"ref_codes.csv:{i} {rid} status outside active/superseded (V-39)")
+    _sig = (r.get("atlas_signal") or "").strip()
+    if _sig and r["code_system"] != "NAICS":
+        errors.append(f"ref_codes.csv:{i} {rid} atlas_signal set on a non-NAICS row (V-39)")
+    if _sig and _sig not in ("P", "S", "X"):
+        errors.append(f"ref_codes.csv:{i} {rid} atlas_signal outside P/S/X (V-39)")
+# V-40 ref_code_map structural + resolution
+if rm_fields != RM_FIELDS:
+    errors.append("ref_code_map.csv: header does not match the SS4.17 field set (V-40)")
+rm_ids, rm_tuples = set(), set()
+for i, r in enumerate(ref_code_map, 2):
+    mid = r["map_id"]
+    if not re.fullmatch(r"RM-\d{6}", mid or ""):
+        errors.append(f"ref_code_map.csv:{i} {mid} map_id does not match RM-###### (V-40)")
+    if mid in rm_ids:
+        errors.append(f"ref_code_map.csv:{i} {mid} duplicate map_id (V-40)")
+    rm_ids.add(mid)
+    tup = (r["from_system"], r["from_code"], r["to_system"], r["to_code"])
+    if tup in rm_tuples:
+        errors.append(f"ref_code_map.csv:{i} {mid} duplicate map tuple (V-40)")
+    rm_tuples.add(tup)
+    if (r["from_system"], r["from_code"]) == (r["to_system"], r["to_code"]):
+        errors.append(f"ref_code_map.csv:{i} {mid} self-map (from == to) (V-40)")
+    for _end in ("from", "to"):
+        if (r[f"{_end}_system"], r[f"{_end}_code"]) not in rc_by_pair:
+            errors.append(f"ref_code_map.csv:{i} {mid} {_end} endpoint ({r[f'{_end}_system']}, {r[f'{_end}_code']}) does not resolve in ref_codes.csv (V-40)")
+    if r["relation"] not in ("exact", "broader", "narrower", "partial_overlap"):
+        errors.append(f"ref_code_map.csv:{i} {mid} relation outside the enum (V-40)")
+    if not (r.get("map_source") or "").strip():
+        errors.append(f"ref_code_map.csv:{i} {mid} map_source empty (V-40)")
+# V-41 code_assignments structural + resolution
+if ca_fields != CA_FIELDS:
+    errors.append("code_assignments.csv: header does not match the SS4.18 field set (V-41)")
+ORG_UNIVERSE = {r["org_id"] for r in orgs} | {r["org_id"] for r in eco}
+ca_ids, ca_tuples, ca_primaries = set(), set(), set()
+for i, r in enumerate(code_assignments, 2):
+    aid = r["assignment_id"]
+    if not re.fullmatch(r"CA-\d{6}", aid or ""):
+        errors.append(f"code_assignments.csv:{i} {aid} assignment_id does not match CA-###### (V-41)")
+    if aid in ca_ids:
+        errors.append(f"code_assignments.csv:{i} {aid} duplicate assignment_id (V-41)")
+    ca_ids.add(aid)
+    if r["org_id"] not in ORG_UNIVERSE:
+        errors.append(f"code_assignments.csv:{i} {aid} org_id {r['org_id']} does not resolve in organizations or ecosystem (V-41)")
+    _pair = (r["code_system"], r["code_value"])
+    if _pair not in rc_by_pair:
+        errors.append(f"code_assignments.csv:{i} {aid} code {_pair} does not resolve in ref_codes.csv (V-41)")
+    elif rc_by_pair[_pair]["status"] == "superseded":
+        # Mint-time check in effect: a supersession pass annotates the
+        # affected assignments in the same pass (owner ruling Q7,
+        # 2026-10-30), so a live row in this state is an error the
+        # superseding pass must resolve as it lands.
+        errors.append(f"code_assignments.csv:{i} {aid} code {_pair} is superseded in ref_codes.csv (V-41)")
+    if r["role"] not in ("primary", "secondary"):
+        errors.append(f"code_assignments.csv:{i} {aid} role outside primary/secondary (V-41)")
+    if r["role"] == "primary":
+        _pk = (r["org_id"], r["code_system"])
+        if _pk in ca_primaries:
+            errors.append(f"code_assignments.csv:{i} {aid} second primary for (org, system) {_pk} - the SS4.18 grain rule (V-41)")
+        ca_primaries.add(_pk)
+    tup = (r["org_id"], r["code_system"], r["code_value"], r["role"])
+    if tup in ca_tuples:
+        errors.append(f"code_assignments.csv:{i} {aid} duplicate (org_id, code_system, code_value, role) tuple (V-41)")
+    ca_tuples.add(tup)
+    for _fld in ("source_name", "source_ref", "created_by"):
+        if not (r.get(_fld) or "").strip():
+            errors.append(f"code_assignments.csv:{i} {aid} {_fld} empty (V-41)")
+    if not _is_date(r["observed_date"]) or r["observed_date"] > "2026-12-31":
+        errors.append(f"code_assignments.csv:{i} {aid} observed_date invalid or in the future (V-41)")
+    # V-42 stated-not-inferred guard (provenance)
+    if r["source_type"] not in CODE_SOURCE_TYPES:
+        errors.append(f"code_assignments.csv:{i} {aid} source_type outside the SS2.1 enum (V-42)")
+    if r["source_type"] == "researcher_inferred":
+        errors.append(f"code_assignments.csv:{i} {aid} source_type researcher_inferred - this table records stated codes only (V-42, SS2.4)")
+    if r["code_system"] == "SIC" and r["source_type"] not in ("company_disclosed", "government_filing"):
+        errors.append(f"code_assignments.csv:{i} {aid} SIC assignment with source_type {r['source_type']} - at v1.7 birth SIC admits company_disclosed/government_filing only (V-42, SS4.18)")
+    # V-43 concordance non-derivation tripwire
+    for _fld in ("source_name", "source_ref"):
+        _v = (r.get(_fld) or "").lower()
+        if "ref_code_map" in _v or "concordance" in _v:
+            errors.append(f"code_assignments.csv:{i} {aid} {_fld} names the concordance - an assignment's source is the stating source, never the concordance (V-43, SS2.4)")
+# V-44 coverage visibility (warning, never blocks)
+if code_assignments or ref_codes:
+    _ca_orgs = {r["org_id"] for r in code_assignments}
+    _by_sys = {}
+    for r in code_assignments:
+        _by_sys[r["code_system"]] = _by_sys.get(r["code_system"], 0) + 1
+    _sys_txt = ", ".join(f"{k} {v}" for k, v in sorted(_by_sys.items())) or "none"
+    _bound = {}
+    for r in ref_codes:
+        if r["polymer_bound"] == "true":
+            _bound[r["code_system"]] = _bound.get(r["code_system"], 0) + 1
+    _bound_txt = ", ".join(f"{k} {v}" for k, v in sorted(_bound.items())) or "none"
+    warnings.append(f"code assignments: {len(code_assignments)} rows over {len(_ca_orgs)} orgs ({_sys_txt}); polymer-bound ref_codes by system: {_bound_txt} (V-44)")
+
 print("organizations shards: " + ", ".join(f"{fn[len('organizations_'):-4]} {len(rw)}" for fn, (_, rw) in sorted(ORG_SHARDS.items())) + f" ({len(orgs)} total)")
 print("sites shards: " + ", ".join(f"{fn[len('sites_'):-4]} {len(rw)}" for fn, (_, rw) in sorted(SITE_SHARDS.items())) + f" ({len(sites)} total)")
 
@@ -1084,7 +1233,9 @@ print(f"\n{len(orgs)} organizations, {len(sites)} sites, {len(eco)} ecosystem ro
       f"{len(programs)} program rows, {len(events)} event series, "
       f"{len(evidence)} evidence rows, {len(relationships)} relationship rows, "
       f"{len(capabilities)} capability rows, "
-      f"{len(participation)} participation rows checked.")
+      f"{len(participation)} participation rows, "
+      f"{len(ref_codes)} ref_codes, {len(ref_code_map)} code-map rows, "
+      f"{len(code_assignments)} code assignments checked.")
 if errors:
     print(f"FAILED with {len(errors)} error(s).")
     sys.exit(1)

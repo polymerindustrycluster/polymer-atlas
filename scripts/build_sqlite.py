@@ -12,7 +12,9 @@ TABLES = {
           "people": "people.csv", "programs": "programs.csv",
           "events": "events.csv", "event_participation": "event_participation.csv",
           "evidence": "evidence.csv", "relationships": "relationships.csv",
-          "site_capabilities": "site_capabilities.csv"}
+          "site_capabilities": "site_capabilities.csv",
+          "ref_codes": "ref_codes.csv", "ref_code_map": "ref_code_map.csv",
+          "code_assignments": "code_assignments.csv"}
 
 OUT.parent.mkdir(exist_ok=True)
 if OUT.exists():

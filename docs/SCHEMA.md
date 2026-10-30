@@ -1,7 +1,14 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.6.3 — 2026-10-30 (member_of minting micro-revision:
+**Version:** v1.7 — 2026-10-30 (code dimension; see Revision 2 in
+the pass-19 freeze and the revision-history entry below).
+Prior: v1.6.4 — 2026-10-30 (sites_INTL micro-revision: Appendix C
+amended to admit a `sites_INTL.csv` shard for non-US
+establishments under owner ruling 2026-10-30 (battery item B9),
+and §4.5 gains the site `country` field; applied in integration
+pass 19).
+Prior: v1.6.3 — 2026-10-30 (member_of minting micro-revision:
 §4.14 association-scoped reversal of the v1.6 `member_of` dormancy
 under owner ruling 2026-10-30 (events-pass battery item iii); 241
 authored `member_of` edges minted from the roster-harvest directory
@@ -275,6 +282,55 @@ Composites straddle NAICS. Do NOT create a separate ring. Tag `materials` includ
 ### 2.3 Discovery implication
 
 Because ~900 Ohio polymer firms is the reported scale, NAICS-only discovery will both over-pull (332710, 541330, 325510 retail noise) and under-pull (firms mis-coded to a parent's NAICS, startups with no directory record). The sweep plan must therefore pair NAICS pulls with directory pulls (Plastics News, Rubber News, Thomasnet, Ohio Manufacturers' Association, county EDO lists) and process-keyword pulls — NAICS is the dedupe/filter layer, not the sole source. Record the discovery source in `sources[]` on every record so coverage can be audited by source.
+
+### 2.4 The code dimension and the stated-not-inferred rule **[v1.7]**
+
+§2.1's provenance doctrine generalizes: **a classification code is
+a fact about a record only when a source states that code for that
+company.** v1.7 therefore separates three things the v1 schema let
+blur together:
+
+1. **The code universe** (`data/ref_codes.csv`, §4.16) — the
+   governed list of codes the Atlas recognizes, across systems
+   (NAICS, SIC, CIP, CPC, HS, OpenAlex), including the
+   category-level *bounds* that define what "polymer" means in each
+   system. A bound row is a scope statement about a system, never
+   a value assignable to a record.
+2. **The concordance** (`data/ref_code_map.csv`, §4.17) — the
+   published many-to-many mapping between systems (at birth,
+   SIC↔NAICS). Reference data for discovery and translation
+   *questions*, nothing more.
+3. **Assignments** (`data/code_assignments.csv`, §4.18) — the only
+   place a code attaches to a record, each with §2.1-pattern
+   provenance.
+
+**THE STATED-NOT-INFERRED RULE (binding).** A record carries a SIC
+only when a source states that SIC for that company. A SIC is
+**never** inferred, derived, sharpened, or backfilled through the
+concordance: the fact that an org's NAICS 326199 maps to SIC 3089
+in `ref_code_map` is not evidence that any company holds SIC 3089.
+The concordance may *route a researcher* to a stated source (an
+EDGAR filer header, a SAM.gov registration, a 10-K); the assignment
+is minted only from what that source states. The same rule binds
+in reverse (no NAICS from a SIC) and at every grain. A general
+code stated by a source (EDGAR assigns truncated/general SICs —
+2820, 3060, 3080 and their class) is recorded **as stated**; it is
+never sharpened to a specific child code. This is §4.15's PMIR
+rule and §4.11's Lakeland rule restated for codes: classification
+systems generalise; a company's record does not.
+
+**Provenance typing** reuses §2.1's enum unchanged —
+`company_disclosed | government_filing | directory_assigned |
+researcher_inferred` — with two v1.7 restrictions for SIC:
+`researcher_inferred` is **forbidden** for SIC assignments (an
+inferred SIC is exactly what the rule bars), and at birth SIC
+admits only `company_disclosed` and `government_filing` (see
+§4.18). An EDGAR filer SIC is `government_filing` (the SEC's
+filing-header value for the registrant, sourced to the EDGAR
+submissions record) — it is a stated code, not a directory's
+opinion; a SIC a company prints in its own 10-K Item 1 or SAM.gov
+registration is `company_disclosed`, mirroring §4.15's authorship
+doctrine.
 
 ---
 
@@ -638,6 +694,7 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `geocode_precision` **[v1.1]** | enum | MUST if lat/lon present | `rooftop` \| `parcel` \| `address_interpolated` \| `zip_centroid` \| `city_centroid`. A centroid value never corrects a recorded county and is never presented as a rooftop location. |
 | `county_source` **[v1.6]** | enum, nullable | Nice | How this site's `county` was settled: `parcel` \| `physical_address` \| `geocoder_centroid` \| `directory`. **Doctrine:** county settles from the physical address (AGENTS.md §4 — never from the mailing city). Parcel evidence **outranks** a geocoder centroid and a postal/directory city, in that order and without exception: a county auditor/GIS parcel record for the site's situs is the strongest county evidence the Atlas takes. A centroid **never** corrects a recorded county (the §4.5 `geocode_precision` rule, restated for this field: `county_source=geocoder_centroid` is honest only where `geocode_precision ∈ {zip_centroid, city_centroid}` — a centroid-*derived* county is a weak claim and is labeled as one, and a later parcel or address-exact source replaces it, never the reverse). `physical_address` = the county was read from the site's physical street address (address-exact geocode or the address as published for that site). `directory` = the county rests on a directory-class source's address and nothing stronger — a labeled weak claim, set only by per-record adjudication, never derived in bulk from a record's source list. **Blank is an honest unknown, not a defect:** most sites carry no per-fact county provenance in their current record text, and a blank `county_source` asserts nothing about the county's correctness |
 | `site_group_id` **[v1.6]** | string, `GRP-######`, nullable | Nice | Campus grouping: sites sharing one physical campus — contiguous or single-address grounds under one **or multiple** operators — carry the same group ID. Minted **only** where an adjudication or primary evidence states that two or more held sites share the campus (the A3 co-location rulings are the model); never inferred from address similarity alone, and never from a shared mailing city. Group IDs are allocated at integration only. A group must contain **≥2 sites at application close** — a singleton group is a validator error (V-33), so a group whose second site is retired loses its ID at the same pass (the surviving site's field is cleared, the ID is never reused). Group members share `city` + `state`. Grouping asserts co-location only: it is not a merge, not an operator claim, and changes no §5.3 analysis — two sites at one address remain two sites, under the operator rule |
+| `country` | string | **MUST** on `sites_INTL` rows; `US` on US-shard rows | **[v1.6.4]** The establishment's country, as stated by the record's sources (`CA`, `GB`, …; ISO 3166 alpha-2 form where the source supports it). Added with the `sites_INTL` ruling (Appendix C §2 as amended): placement for non-US establishments keys on this field. On US-shard rows the applying pass filled `US` mechanically — it restates the shard's own fact and carries no per-row evidence. `county` and `county_source` are US-county concepts and stay **empty** on INTL rows (a design's county-equivalent observation rides in `notes`, never in `county_source` — V-32's shape is preserved). |
 | `ring_primary` (site-level) | enum 1–5 | **MUST** | May differ from Parent (Parker rule) |
 | `naics_primary` + provenance | §2.1 | **MUST** | Site NAICS often differs from Parent NAICS — never copy Parent NAICS to site without a site source or `researcher_inferred` flag |
 | `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB |
@@ -1088,7 +1145,12 @@ verification tier. It records what a lane actually observed.
 | `evidence_id` | string, immutable, `EVD-######` | **MUST** | Never reused; allocated at integration only, next-free at application (first allocation `EVD-000001`). Evidence rows are never deleted; a superseded or refuted observation is answered by a later row (typically `tier_effect=contradicts`, or a fresher `supports_*` row), never by editing the earlier row away |
 | `record_table` | enum | **MUST** | `organizations` \| `sites` \| `ecosystem` \| `programs` — the table the evidenced record lives in. People records (§4.9) are **not** an evidence-table class at this revision: their every field already traces to a single cited public page per record, and the class is deliberately out of scope here (see the open questions in the lane file) |
 | `record_id` | FK → the table named in `record_table` | **MUST** | `ORG-######` for organizations and ecosystem rows (ecosystem records carry org_ids), `SITE-######` for sites, `PROG-######` for programs. Validator V-22 resolves the FK against the named table only |
-| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` — exactly one per row; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance |
+| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` — exactly one per row; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
+rows: a stated SIC assignment is witnessed by a `code` evidence
+row whose `claim_detail` names the assignment ("sic 3089 stated,
+EDGAR filer CIK 0001370946") — corroboration class; assignments
+are not §4.13 must-have claims and V-25 does not restate tiers on
+them. |
 | `claim_detail` | string | **MUST** | Short, specific: which field or fact the row bears on, in the record's own terms ("hq_address + hq_county (Erie)", "naics_primary 326199", "ring_primary 1 via thermoforming on own site", "status active at 2026-10-29"). Never a bare field name when a value is in dispute, and never a narrative — the narrative lives in the verdict file the row's lane produced |
 | `source_class` | enum | **MUST** | `own_site` \| `government_filing` \| `registry` \| `directory` \| `press` \| `platform_category` \| `harvest_roster` — the class of the witness, not its prestige. `own_site` = the entity's own domain / own issued document. `government_filing` = a dated filing or government record of fact (Form 5500, TRI, WARN, SEC, court record). `registry` = a registry record keyed by an identifier (EPA FRS, GLEIF, Ohio SOS, SAM.gov, IPEDS/ROR identity records). `directory` = an authoritative directory listing (trade-association member directory, EDO directory, verified Thomasnet-class listing). `press` = dated news / trade-press reporting of a specific fact. `platform_category` = a platform-assigned category or profile label (Google Places category, LinkedIn industry, aggregator classification). `harvest_roster` = a harvested list under §4.12's harvest-only rule (exhibitor / sponsor / speaker roster for a named edition) |
 | `source_ref` | string | **MUST** | The witness itself, citable by a stranger: a URL, or a named source plus its identifier where the source is keyed ("EPA FRS registry 110070870004"; "DOL EFAST2 Form 5500, sponsor THE ARTHUR CORPORATION, PY2023, plan 501"). A staging path is admissible **only** in the one case the grep rule below defines (a named raw extract a registry citation resolves into). A reference to our own verdict files, lane notes, or integration journals is **never** a `source_ref` — those are claims about evidence, not evidence (see the grep rule) |
@@ -1586,6 +1648,144 @@ about a given tag's provenance.
 
 ---
 
+### 4.16 Reference codes **[v1.7]** (`data/ref_codes.csv`)
+
+The governed code universe. One row per (system × code): a code
+the Atlas recognizes, its official title, and its role. This table
+is reference data — it asserts facts about classification systems,
+never about companies.
+
+| Field | Type | v1.7? | Notes |
+|---|---|---|---|
+| `ref_code_id` | string, immutable, `RC-######` | **MUST** | Never reused; allocated at integration only |
+| `code_system` | enum | **MUST** | `NAICS` \| `SIC` \| `CIP` \| `CPC` \| `HS` \| `OPENALEX` |
+| `code_value` | string | **MUST** | The code as the system prints it (`326199`, `3089`, `14.3201`, `C08`, `39`, `2507`). Unique with `code_system` (V-39) |
+| `code_title` | string | **MUST** | The system's own title for the code, verbatim where the system publishes one |
+| `code_level` | string | **MUST** | The code's rung in its system (`industry`, `subsector`, `chapter`, `class`, `subfield`, `program field`, …) |
+| `vintage` | string | **MUST** | The edition the title is read from (`NAICS 2022`, `SIC 1987 / EDGAR filer SIC`, `CIP 2020`, `HS 2022`, …). Codes are versioned facts; a title from the wrong vintage is a wrong title |
+| `polymer_bound` | enum | **MUST** | `true` \| `false`. `true` = the code lies inside the polymer bound of its system (the awesome-cluster-data doctrine: *the sources generalise, the bounds do not* — NAICS 3252/3255/326, CIP 14.3201 et al., CPC C08, HS 39/40, OpenAlex 2507 are the seeded bounds). A row may be seeded with `false` solely so a stated code on a held record is representable (see the seed note) |
+| `atlas_signal` | enum, nullable | NAICS rows | The §2.2 signal (`P` \| `S` \| `X`) for NAICS codes in the §2.2 map; empty for other systems |
+| `status` | enum | **MUST** | `active` \| `superseded` (tombstone pattern: a code retired by its system stays, marked, so old assignments keep resolving) |
+| `notes` | string | Nice | Bound provenance, discrepancy flags, seed rationale |
+
+**Seed (at application).** NAICS: the §2.2 polymer map's 325/326
+codes plus the three category bound rows (3252, 3255, 326). SIC:
+the polymer 28xx/30xx universe, the EDGAR general variants
+(2800/2820/2890/3050/3060/3080), and — flagged
+`polymer_bound=false` — every further SIC a held org's EDGAR filer
+actually states (2670, 2911, 3290, 3350, 3674, 3829 at seed time),
+because an assignment's FK must resolve and a stated code must be
+representable even when it is not a polymer code. CIP: the three
+readme codes (14.3201, 40.0507, 15.0607) — the DECISIONS files of both awesome repos name only 14.3201,
+but the owner ruled the readme's three-code set the Atlas bound
+(2026-10-30, Q3); the seed rows carry the discrepancy in their
+notes as the historical record. CPC C08, HS 39, HS 40, OpenAlex
+2507: bound rows only.
+
+**Bounds are not assignments.** A `polymer_bound=true` row at a
+category level (NAICS 326, CPC C08, HS 39) defines the system's
+polymer perimeter for discovery; it is never written onto a
+company, program, or site record.
+
+### 4.17 Code concordance **[v1.7]** (`data/ref_code_map.csv`)
+
+The published many-to-many mapping between code systems, at birth
+SIC↔NAICS (U.S. Census Bureau SIC–NAICS concordance). **Reference
+only.** Its sole lawful uses: choosing which stated sources to
+check, translating a *question* between systems ("which NAICS
+codes correspond to SIC 3089, so we can look for stated NAICS
+evidence?"), and auditing coverage of the code universe. It is
+never a derivation path (§2.4): no record code is minted,
+sharpened, translated, or backfilled from a row of this table,
+and a concordance is never citable as an assignment's source
+(V-43 errors on the shape).
+
+| Field | Type | v1.7? | Notes |
+|---|---|---|---|
+| `map_id` | string, immutable, `RM-######` | **MUST** | Never reused; allocated at integration only |
+| `from_system` / `from_code` | enum / FK → ref_codes | **MUST** | The pair (`from_system`, `from_code`) must resolve in `ref_codes.csv` (V-40) |
+| `to_system` / `to_code` | enum / FK → ref_codes | **MUST** | Same resolution rule; `from` ≠ `to` |
+| `relation` | enum | **MUST** | `exact` \| `broader` \| `narrower` \| `partial_overlap` — read in the from→to direction. Most SIC↔NAICS pairs are `partial_overlap`; an `exact` claim is a concordance fact and must match the published Census bridge |
+| `map_source` | string | **MUST** | The published concordance the pair is read from, with vintage |
+| `notes` | string | Nice | Split/merge commentary from the source concordance |
+
+General-variant SICs (2820/3050/3060/3080 and their class) carry
+`broader` rows to their specific children's NAICS counterparts;
+top-general variants (2800/2890) and observed-adjacent codes carry
+**no** map rows at birth — a general code with no honest bridge is
+left unbridged rather than given a decorative one.
+
+### 4.18 Code assignments **[v1.7]** (`data/code_assignments.csv`)
+
+One row per (record × stated code): the only place a v1.7 code
+attaches to a record. Born seeded with EDGAR-stated SICs for held
+organizations (§4.18 seed note). Organization grain at birth;
+site and program grains are later increments, not implied by this
+table's existence (programs already carry `cip_code` natively
+under §4.11 — §4.18 does not duplicate it; see Q4).
+
+| Field | Type | v1.7? | Notes |
+|---|---|---|---|
+| `assignment_id` | string, immutable, `CA-######` | **MUST** | Never reused; allocated at integration only |
+| `org_id` | FK → organizations ∪ ecosystem | **MUST** | The record the code is stated for |
+| `code_system` / `code_value` | enum / FK → ref_codes | **MUST** | The pair must resolve in `ref_codes.csv` (V-41) |
+| `role` | enum | **MUST** | `primary` \| `secondary` — the stating source's own grain (a filer's header SIC is its primary) |
+| `source_type` | §2.1 enum | **MUST** | For SIC: `company_disclosed` \| `government_filing` only at birth; `researcher_inferred` is an error for any system in this table (V-42) — this table records stated codes, and §2.1's inferred NAICS continue to live on the org/site rows where they were born |
+| `source_name` | string | **MUST** | The stating source (`SEC EDGAR submissions (filer SIC)`, `SAM.gov registration`, `10-K FY2025 Item 1`, …). Naming the concordance or `ref_code_map` here is an error (V-43) |
+| `source_ref` | string | **MUST** | The specific artifact: filing/CIK, registration, or URL |
+| `stated_title` | string, nullable | Nice | The title as the source prints it, where it differs from the ref_codes title |
+| `observed_date` | date | **MUST** | The date the stating source was read / the filing's date |
+| `created_by` | string | **MUST** | Researcher/agent ID, as everywhere |
+| `notes` | string | Nice | Grain qualifiers, family/filer notes, conflict flags |
+
+**Grain rule (filer families).** EDGAR families file through many
+registrants (co-registrants, subsidiary filers) that all carry the
+family's SIC. An org matched to several filers mints **one**
+`primary` assignment — from the operating filer the dedupe names —
+and the remaining filers' stated SICs are corroboration recorded
+in `notes`/evidence, not parallel primaries. Where filers matched
+to one org state *differing* SICs, the packet is conflict-flagged
+and nothing mints until the dedupe is re-adjudicated: differing
+stated SICs against one org are a dedupe symptom first and a code
+fact second. A second `primary` is never minted; a genuinely
+distinct second stated code mints as `secondary`.
+
+**Supersession.** When a `ref_codes` row is marked
+`superseded`, the superseding pass annotates every affected
+assignment in the same pass (the §4.15 withdrawn-row
+pattern); an assignment left pointing at a superseded code is a
+validation error (V-41) the superseding pass must resolve as
+it lands. (Owner ruling Q7, 2026-10-30.)
+
+**Seed (at application).** The EDGAR majors substrate: 103 CIKs ×
+held-org matches = 109 packet rows over 71 distinct orgs
+(`staging/working/schema-v17-codes/seed_code_assignments.csv`),
+every SIC grep-verified against the filer's EDGAR submissions
+extract (103/103 exact; the 13 SIC mentions in the lanes' screen
+prose all corroborate the extract values; **zero phantoms** — no
+assignment rests on verdict prose). 53 rows are multi-filer
+corroboration under the grain rule; 15 rows across 6 orgs are
+conflict-flagged and mint nothing at birth; 3 rows sit on
+org-grain-fenced records (DuPont ORG-000042, Qnity ORG-000533,
+Rohm & Haas ORG-002730) and are held out of the seed pending the
+fence's own disposition (Q5). Expected birth population after the grain rule and flags: **61
+`primary` assignments** as applied in integration pass 19 (the
+draft's 62, less the ORG-001060 dormant-registrant row held at
+freeze, and with the CIK 0001423221 row re-keyed from ORG-001618
+to the Quanex parent ORG-003939 created in the same pass; 71
+packet orgs − 6 conflict orgs − 3 fenced orgs − the 1 dormant
+row; the conflict and fenced sets are disjoint). The 53 multi-filer rows collapse to their org's single
+primary — the remaining filers' stated SICs ride as corroboration
+in `notes`/evidence, not as parallel primaries — and no
+`secondary` mints at birth (the only orgs with differing stated
+SICs are exactly the 6 conflict orgs, held out).
+
+**Relation to existing code fields.** The org/site `naics_*`
+columns (§4.4/§4.5) are unchanged and remain the NAICS of record;
+v1.7 does not migrate them. `code_assignments` at birth carries
+SIC only. Whether stated NAICS from filings later join this table
+(dual-carriage vs migration) is Q4 — not decided by this revision.
+
 ## 5. Entity Resolution Rules — Dedupe Identically
 
 **Goal:** Three researchers given the same firm reach the same Parent/Site split, the same canonical name, and the same merge decision. When in doubt, **do not merge** — link with `related_org_ids[]` + note and flag for review. A false merge destroys data; a false split is cheap to fix.
@@ -1677,13 +1877,14 @@ files** in `data/`. Every other table stays a **single file**.
 | Table | Storage | Files |
 |---|---|---|
 | organizations | **sharded by HQ state** | `data/organizations_<TAG>.csv` |
-| sites | **sharded by physical state** | `data/sites_<TAG>.csv` |
+| sites | **sharded by physical state** (non-US → `INTL`) | `data/sites_<TAG>.csv` |
 | ecosystem, programs, people, members, registry_links, inclusion_log | single | `data/<table>.csv` |
 | events, event_participation (v1.5); evidence, relationships, site_capabilities (v1.6) | single | `data/<table>.csv` |
 
 `<TAG>` is a USPS state code (`OH`, `PA`, … including `DC` and the
-territories) or one of two special tags: `INTL` (organizations only)
-and `US` (organizations only — the residual shard, §3).
+territories) or one of two special tags: `INTL` (organizations,
+and — **as amended [v1.6.4]** — sites) and `US` (organizations
+only — the residual shard, §3; sites have no residual).
 
 **Lazy creation.** A shard file exists iff it holds ≥1 row. There are
 no empty shard files and no placeholder shards for un-landed states.
@@ -1721,8 +1922,10 @@ org_shard(org):
     return "US"                               # residual, §3
 
 site_shard(site):
-    st = upper(trim(site.state))
-    if st ∈ USPS:            return st
+    st = upper(trim(site.state));  c = upper(trim(site.country))
+    if st ∈ USPS:            return st        # includes DC + territories
+    if c ∉ {"", US, USA, UNITED STATES}:
+                             return "INTL"    # [v1.6.4]
     return UNPLACEABLE                        # §2.1
 ```
 
@@ -1745,16 +1948,27 @@ site_shard(site):
   non-USPS `hq_state` string (a province code, a spelled-out foreign
   region) falls through to the country test, as written.
 
-### 2.1 Unplaceable sites
+### 2.1 Unplaceable sites, and the INTL site shard **[v1.6.4]**
 
-Sites have **no residual shard**: a plant is somewhere, and a state we
-cannot name is a data defect, not a placement. A site whose `state`
-is blank or not a USPS code cannot enter a shard; the validator
-errors (V-35) and the record is held out of the pass for correction or
-an owner ruling. Current data has **zero** such sites (all 2,669
-carry OH or PA). Foreign physical sites are out of scope for the
-Atlas today; if one is ever ruled in, it arrives with its own ruling
-and an `INTL` site tag defined by that ruling — never by improvisation.
+Sites have **no residual shard**: a plant is somewhere, and a
+state we cannot name is a data defect, not a placement. A site
+whose `state` is blank or not a USPS code **and** whose `country`
+is `US` or unstated cannot enter a shard; the validator errors
+(V-35) and the record is held out of the pass for correction or
+an owner ruling.
+
+A **non-US establishment** places in `data/sites_INTL.csv` under
+owner ruling 2026-10-30 (battery item B9), on the
+`org_shard()` country pattern: `state` carries the province /
+region as the sources state it (`QC`, `ON`, `Northamptonshire`),
+`country` carries the country (§4.5), and `county` /
+`county_source` stay empty. The INTL shard is born in integration
+pass 19 with 8 establishments (7 CA — 2 QC, 4 ON, 1 BC — and
+1 GB; the pass-17
+and pass-18 held designs). A site whose establishment is proven
+but whose country itself is unstated stays unplaceable — the
+INTL branch keys on a stated country, never on a non-USPS state
+alone.
 
 ## 3. The residual shard (`organizations_US.csv`)
 
@@ -1948,6 +2162,11 @@ semantic change if the applied set differs.
 - *Reporting.* The closing summary line reports **per-shard counts**
   plus the union totals, in the existing format's spirit:
   `organizations: OH 1781, PA 601, …, US 19 (2430 total)`.
+- **[v1.6.4]** V-34/V-35 as amended: a `sites_*.csv` tagged `INTL`
+  is lawful (a `US` tag remains an error — sites have no
+  residual); `_site_shard_of` gains the country branch of §2 as
+  amended; the site header set gains `country` (identical across
+  all site shards, per V-34).
 
 **`scripts/build_sqlite.py`**
 
@@ -1973,7 +2192,9 @@ semantic change if the applied set differs.
    under the three serializations of §6.2 (shared files, ID
    allocation, moves — all through the integrator of record).
 3. **Sites get no residual and no INTL shard** (§2.1), organizations
-   get both.
+   get both. **Amended [v1.6.4]:** decision 3's "no INTL shard for sites" is
+superseded for establishments by owner ruling 2026-10-30 (B9);
+sites still have no residual shard.
 4. The split carries **no schema version bump**; it is a layout
    appendix adopted by the same owner ruling that ordered it.
 
@@ -2010,3 +2231,33 @@ semantic change if the applied set differs.
 - **v1.6.1 — 2026-10-30 (owner rulings 2026-10-30 — pass-16 battery items 7A and 10A, all as recommended; applied in integration pass 16).** Micro-revision, two items only. (1) §3.6: `carbon_black` added as a NEW material capability term (vocabulary 57 → 58 terms; material 24 → 25) — §3.2 carries no carbon black string, and the class is produced and specified at plant grain by Cabot/Orion-class producers. `fumed_silica` was considered in the same ruling and NOT approved; it stays a §3.6.3 queue item. (2) §4.14: the CPChem dual-parent exception is documented (named-record exception for ORG-002910: `parent_org_id` empty by design, two hand-authored `parent_of` edges from the 50/50 parents Chevron ORG-002911 and Phillips 66 ORG-002912, generator skip, V-27 parity computed with CPChem excluded and the exception edges required present). No other table, field, or vocabulary changes.
 - **v1.6.2 — 2026-10-30 (owner ruling 2026-10-30 — events-pass battery item ii, as recommended; applied in the events battery-release pass).** Micro-revision, one item only. §4.12.1: `coatings_finishing` added to the `subject_scope` vocabulary (12 → 13 values) — the list carried no coatings value, and the two coatings series seeded in the events pass (American Coatings Show & Conference EVT-000037; International Symposium on Coating Science and Technology EVT-000042) were provisionally mapped to `compounding_formulation` with the gap flagged in their `subject_note`s; both rows flip to `coatings_finishing` in the same pass and the flags are replaced with dated ruling notes. The validator's `SUBJECT_VOCAB` gains the value in the same pass. No other table, field, or vocabulary changes.
 - **v1.6.3 — 2026-10-30 (owner ruling 2026-10-30 — events-pass battery item iii, as recommended; applied in the member_of minting pass).** Micro-revision, one item only. §4.14: the v1.6 `member_of` dormancy is reversed for association membership only — 241 authored `member_of` edges (REL-000080–REL-000320) minted from the 2026-10-30 roster harvest's directory facts (245 facts = 241 distinct organization × association pairs, 190 companies × 15 associations; each from the association's own member directory — directory class, supports_B; snapshot-dated 2026-10-30 in `basis`/`source_ref`, with `effective_from` empty per §4.14.1 — no source states a membership start). PIC membership is explicitly excluded and remains governed by `data/members.csv` under §4.10/§5.1; no edge names PIC/GAC as its association. An annual refresh obligation is recorded in §4.14 (a name disappearing from a later directory annotates the edge; it does not silently delete it). No other table, field, or vocabulary changes.
+
+- **v1.6.4 — 2026-10-30 (owner ruling 2026-10-30, battery item
+  B9; applied in integration pass 19).** Appendix C amended:
+  `data/sites_INTL.csv` admitted for non-US establishments
+  (placement gains the country branch, mirroring `org_shard()`);
+  §4.5 gains the site `country` field (MUST on INTL rows; `US`
+  filled mechanically on US-shard rows at application); county
+  and county_source stay empty on INTL rows. Born with 8
+  establishments — the foreign site designs held out of passes 17
+  (3) and 18 (5) for exactly this ruling. Sites still have no
+  residual shard; an establishment with an unstated country stays
+  unplaceable.
+- **v1.7 — 2026-10-30 (owner battery 2026-10-30, items C/Q1–Q8,
+  all approved as recommended; applied in integration pass 19).**
+  Code dimension — §2.4 states the stated-not-inferred rule (a
+  record carries a SIC only when a source states it for that
+  company; the concordance never derives, sharpens, or backfills a
+  code; general codes recorded as stated); §4.16 adds
+  `data/ref_codes.csv` (the governed code universe across NAICS,
+  SIC, CIP, CPC, HS, OpenAlex, seeded 79 rows incl. the
+  category-level polymer bounds per the awesome-cluster-data
+  doctrine); §4.17 adds `data/ref_code_map.csv` (SIC↔NAICS
+  concordance, 39 pairs, reference only); §4.18 adds
+  `data/code_assignments.csv` (stated-code assignments, org grain,
+  seeded from the EDGAR majors substrate — 61 `primary` assignments as applied; every SIC grep-verified
+  against the filer's submissions extract, zero phantoms);
+  validators V-39–V-44. The CIP bound is the readme's three codes, per owner
+  ruling 2026-10-30 (Q3) resolving the DECISIONS-vs-readme
+  discrepancy in the Atlas's favor of the three. No existing table, field, or
+  vocabulary changes; the `naics_*` columns are untouched.

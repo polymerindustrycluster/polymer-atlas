@@ -1,0 +1,80 @@
+ref_code_id,code_system,code_value,code_title,code_level,vintage,polymer_bound,atlas_signal,status,notes
+RC-000001,NAICS,326111,Plastics Bag and Pouch Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000002,NAICS,326112,Plastics Packaging Film and Sheet (including Laminated) Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000003,NAICS,326113,Unlaminated Plastics Film and Sheet (except Packaging) Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000004,NAICS,326121,Unlaminated Plastics Profile Shape Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000005,NAICS,326122,Plastics Pipe and Pipe Fitting Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000006,NAICS,326130,"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000007,NAICS,326140,Polystyrene Foam Product Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000008,NAICS,326150,Urethane and Other Foam Product (except Polystyrene) Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000009,NAICS,326160,Plastics Bottle Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000010,NAICS,326191,Plastics Plumbing Fixture Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000011,NAICS,326192,Resilient Floor Covering Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000012,NAICS,326199,All Other Plastics Product Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000013,NAICS,326211,Tire Manufacturing (except Retreading),industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000014,NAICS,326212,Tire Retreading,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000015,NAICS,326220,Rubber and Plastics Hoses and Belting Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000016,NAICS,326291,Rubber Product Manufacturing for Mechanical Use,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000017,NAICS,326299,All Other Rubber Product Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000018,NAICS,325211,Plastics Material and Resin Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000019,NAICS,325212,Synthetic Rubber Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000020,NAICS,325991,Custom Compounding of Purchased Resins,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000021,NAICS,325510,Paint and Coating Manufacturing,industry,NAICS 2022,true,P,active,"§2.2 polymer NAICS map member. Freeze conforming fix: the seed atlas_signal ""P*"" is normalized to P; SS2.2 footnote carried here: ""Primary for manufacturers; retail/dealer excluded per the Sherwin-Williams ruling."""
+RC-000022,NAICS,325520,Adhesive Manufacturing,industry,NAICS 2022,true,P,active,§2.2 polymer NAICS map member.
+RC-000023,NAICS,325130,Synthetic Dye and Pigment Manufacturing,industry,NAICS 2022,true,S,active,§2.2 polymer NAICS map member.
+RC-000024,NAICS,325199,All Other Basic Organic Chemical Manufacturing,industry,NAICS 2022,true,S,active,§2.2 polymer NAICS map member.
+RC-000025,NAICS,325220,Artificial and Synthetic Fibers and Filaments Manufacturing,industry,NAICS 2022,true,S,active,§2.2 polymer NAICS map member.
+RC-000026,NAICS,325998,All Other Miscellaneous Chemical Product and Preparation Manufacturing,industry,NAICS 2022,true,S,active,§2.2 polymer NAICS map member.
+RC-000027,NAICS,325110,Petrochemical Manufacturing,industry,NAICS 2022,true,S,active,§2.2 polymer NAICS map member.
+RC-000028,NAICS,325920,Explosives Manufacturing,industry,NAICS 2022,true,X,active,§2.2 polymer NAICS map member.
+RC-000029,NAICS,325611,Soap and Other Detergent Manufacturing,industry,NAICS 2022,true,X,active,§2.2 polymer NAICS map member.
+RC-000030,NAICS,325612,Polish and Other Sanitation Good Manufacturing,industry,NAICS 2022,true,X,active,§2.2 polymer NAICS map member.
+RC-000031,NAICS,325910,Printing Ink Manufacturing,industry,NAICS 2022,true,,active,"§2.2 polymer NAICS map member. Freeze conforming fix: the seed's ""adjacent"" characterization is carried here in notes (325910 is adjacent per SS2.2 cartography use); ""adjacent"" is not a SS4.16 signal value, so atlas_signal is empty."
+RC-000032,NAICS,316210,Footwear Manufacturing,industry,NAICS 2022,true,S,active,§2.2 polymer NAICS map member.
+RC-000033,SIC,2821,"Plastics Materials, Synthetic Resins, and Nonvulcanizable Elastomers",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000034,SIC,2822,Synthetic Rubber (Vulcanizable Elastomers),industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000035,SIC,2823,Cellulosic Manmade Fibers,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000036,SIC,2824,"Synthetic Organic Fibers, Except Cellulosic",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000037,SIC,2851,"Paints, Varnishes, Lacquers, Enamels, and Allied Products",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000038,SIC,2865,"Cyclic Organic Crudes and Intermediates, and Organic Dyes and Pigments",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000039,SIC,2869,"Industrial Organic Chemicals, NEC",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000040,SIC,2891,Adhesives and Sealants,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000041,SIC,2893,Printing Ink,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000042,SIC,2899,"Chemicals and Chemical Preparations, NEC",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000043,SIC,3011,Tires and Inner Tubes,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000044,SIC,3021,Rubber and Plastics Footwear,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000045,SIC,3052,Rubber and Plastics Hose and Belting,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000046,SIC,3053,"Gaskets, Packing, and Sealing Devices",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000047,SIC,3061,"Molded, Extruded, and Lathe-Cut Mechanical Rubber Goods",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000048,SIC,3069,"Fabricated Rubber Products, NEC",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000049,SIC,3081,Unsupported Plastics Film and Sheet,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000050,SIC,3082,Unsupported Plastics Profile Shapes,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000051,SIC,3083,Laminated Plastics Plate and Sheet,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000052,SIC,3084,Plastics Pipe,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000053,SIC,3085,Plastics Bottles,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000054,SIC,3086,Plastics Foam Products,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000055,SIC,3087,Custom Compounding of Purchased Plastics Resins,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000056,SIC,3088,Plastics Plumbing Fixtures,industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000057,SIC,3089,"Plastics Products, NEC",industry,SIC 1987 / EDGAR filer SIC,true,,active,Polymer SIC universe (28xx/30xx).
+RC-000058,SIC,2800,Chemicals and Allied Products (general),industry,SIC 1987 / EDGAR filer SIC,false,,active,"EDGAR general variant — EDGAR assigns truncated/general SICs to some filers (Carlisle carries 3060); a stated general SIC is recorded as stated, never sharpened to a specific child."
+RC-000059,SIC,2820,Plastics Materials and Synthetic Resins (general),industry,SIC 1987 / EDGAR filer SIC,false,,active,"EDGAR general variant — EDGAR assigns truncated/general SICs to some filers (Carlisle carries 3060); a stated general SIC is recorded as stated, never sharpened to a specific child."
+RC-000060,SIC,2890,Chemical Products (general),industry,SIC 1987 / EDGAR filer SIC,false,,active,"EDGAR general variant — EDGAR assigns truncated/general SICs to some filers (Carlisle carries 3060); a stated general SIC is recorded as stated, never sharpened to a specific child."
+RC-000061,SIC,3050,"Gaskets, Packing and Sealing Devices, and Rubber and Plastics Hose and Belting (general)",industry,SIC 1987 / EDGAR filer SIC,false,,active,"EDGAR general variant — EDGAR assigns truncated/general SICs to some filers (Carlisle carries 3060); a stated general SIC is recorded as stated, never sharpened to a specific child."
+RC-000062,SIC,3060,Fabricated Rubber Products (general),industry,SIC 1987 / EDGAR filer SIC,false,,active,"EDGAR general variant — EDGAR assigns truncated/general SICs to some filers (Carlisle carries 3060); a stated general SIC is recorded as stated, never sharpened to a specific child."
+RC-000063,SIC,3080,Miscellaneous Plastics Products (general),industry,SIC 1987 / EDGAR filer SIC,false,,active,"EDGAR general variant — EDGAR assigns truncated/general SICs to some filers (Carlisle carries 3060); a stated general SIC is recorded as stated, never sharpened to a specific child."
+RC-000064,SIC,2670,Converted Paper and Paperboard Products (general),industry,SIC 1987 / EDGAR filer SIC,false,,active,Not a polymer code — seeded because a held org's EDGAR filer states it; ref_codes must be able to represent every stated code an assignment references.
+RC-000065,SIC,2911,Petroleum Refining,industry,SIC 1987 / EDGAR filer SIC,false,,active,Not a polymer code — seeded because a held org's EDGAR filer states it; ref_codes must be able to represent every stated code an assignment references.
+RC-000066,SIC,3290,"Abrasive, Asbestos, and Miscellaneous Nonmetallic Mineral Products (general)",industry,SIC 1987 / EDGAR filer SIC,false,,active,Not a polymer code — seeded because a held org's EDGAR filer states it; ref_codes must be able to represent every stated code an assignment references.
+RC-000067,SIC,3350,"Rolling, Drawing, and Extruding of Nonferrous Metals (general)",industry,SIC 1987 / EDGAR filer SIC,false,,active,Not a polymer code — seeded because a held org's EDGAR filer states it; ref_codes must be able to represent every stated code an assignment references.
+RC-000068,SIC,3674,Semiconductors and Related Devices,industry,SIC 1987 / EDGAR filer SIC,false,,active,Not a polymer code — seeded because a held org's EDGAR filer states it; ref_codes must be able to represent every stated code an assignment references.
+RC-000069,SIC,3829,"Measuring and Controlling Devices, NEC",industry,SIC 1987 / EDGAR filer SIC,false,,active,Not a polymer code — seeded because a held org's EDGAR filer states it; ref_codes must be able to represent every stated code an assignment references.
+RC-000070,NAICS,3252,"Resin, Synthetic Rubber, and Artificial and Synthetic Fibers and Filaments Manufacturing",subsector_group (industry group),NAICS 2022,true,,active,"Category-level bound per awesome-cluster-data DECISIONS (2026-08-19): ""the sources generalise, the bounds do not."" Bound row only — never assigned to a record."
+RC-000071,NAICS,3255,"Paint, Coating, and Adhesive Manufacturing",industry group,NAICS 2022,true,,active,Category-level bound per awesome-cluster-data DECISIONS (2026-08-19). Bound row only — never assigned to a record.
+RC-000072,NAICS,326,Plastics and Rubber Products Manufacturing,subsector,NAICS 2022,true,,active,Category-level bound per awesome-cluster-data DECISIONS (2026-08-19). Bound row only — never assigned to a record.
+RC-000073,CIP,14.3201,Polymer/Plastics Engineering,program field,CIP 2020,true,,active,Named in both APS/ACD DECISIONS and the APS readme. Already in production as programs.cip_code values.
+RC-000074,CIP,40.0507,Polymer Chemistry,program field,CIP 2020,true,,active,"DISCREPANCY (flagged, unresolved): APS readme classification row carries this code; APS/ACD DECISIONS text names only 14.3201. Seeded from the readme three-code set per github-lists decisions_flags.md flag 1."
+RC-000075,CIP,15.0607,Plastics and Polymer Engineering Technology/Technician,program field,CIP 2020,true,,active,"DISCREPANCY (flagged, unresolved): APS readme classification row carries this code; APS/ACD DECISIONS text names only 14.3201. Seeded from the readme three-code set per github-lists decisions_flags.md flag 1."
+RC-000076,CPC,C08,Organic macromolecular compounds; their preparation or chemical working-up; compositions based thereon,class (section C),CPC scheme (current),true,,active,"Patent-side bound of ""polymer"" (EPO/USPTO Cooperative Patent Classification). The bound licensable-tech's PatentsView census used. Bound row only at birth — no record assignments."
+RC-000077,HS,39,Plastics and articles thereof,chapter,HS 2022,true,,active,Trade-side bound (USITC DataWeb HS chapter). Bound row only at birth — no record assignments.
+RC-000078,HS,40,Rubber and articles thereof,chapter,HS 2022,true,,active,Trade-side bound (USITC DataWeb HS chapter). Bound row only at birth — no record assignments.
+RC-000079,OPENALEX,2507,"Polymers and Plastics (subfield 2507; styled ""Polymer Science"" in the APS source row)",subfield,OpenAlex topics (current),true,,active,Research-side bound. Bound row only at birth — no record assignments.
