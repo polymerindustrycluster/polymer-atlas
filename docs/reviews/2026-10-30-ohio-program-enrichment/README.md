@@ -14,13 +14,14 @@ PENRA held because source access failed; failure is not closure evidence.
 
 ## Integrator handoff — no blind application
 
-Base is main9d7a33f (AGENTS-only successor to research base3036121). Patch is
-exactly the independently reviewed local7431c32 canonical diff. Manifest gives
+Base is mainf928257 (pass18). Programs/ecosystem bytes match the prior reviewed
+base; the same six row changes are retained. Evidence IDs were reallocated above
+current maximum006672, preserving every upstream evidence row. Manifest gives
 SHA-256 of the patch and each before/after file. Read current AGENTS/schema/queue
 first. Fetch latest main and all open PRs. Confirm every before hash and patch
 hash; if any mismatch, STOP and re-adjudicate against current data. Never use a
 fuzzy/partial apply or overwrite concurrent evidence. Review provisional
-EVD-003713–EVD-003732 against latest maximum and open PRs; these are NOT globally
+EVD-006673–EVD-006692 against latest maximum and open PRs; these are NOT globally
 reserved. If occupied, designated integrator must reallocate and update packet,
 manifest and tests together. PR #2 uses CAP IDs only; #1/#4/#5 allocate none.
 
@@ -44,8 +45,11 @@ as contemporaneous disk backups. Codex-dot is packet integrator of record.
 
 The full canonical candidate passed independent source review, validator and
 SQLite build (3732 evidence records); an isolated combined rehearsal with other
-four PRs passed43 tests and retained497 capabilities. The packet-only tree also
-passes validator/build. Patch was apply-checked and reconstructed hashes tested
+four PRs passed43 tests and retained497 capabilities. The prior packet-only tree passed validator/build; current pass18 status is below. Patch was apply-checked and reconstructed hashes tested
 on a clean temp copy; see review report. Current CSV files in this PR are
 unchanged. Append-only task queue conflicts must preserve all lane sections.
 This branch-local `in-pr` claim is visible, not a lock on main.
+
+## Current-base gate (2026-10-30)
+
+Current base f928257 has49 validator errors (11 missing site-parent FKs and38 orphan evidence references); pristine base and scoped program application have the exact same49 errors, with zero new errors. SQLite build succeeds. This draft is BLOCKED for integration until upstream repairs land and full validation passes. Do not silently repair other agents data. Patch IDs6673–6692 remain provisional; previous3713–3732 range is superseded and occupied upstream. Current candidate has6660evidence rows. Contemporaneous disk backups for this refreshed application were made before editing in an isolated temporary checkout.

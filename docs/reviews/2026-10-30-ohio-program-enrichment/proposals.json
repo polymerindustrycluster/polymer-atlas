@@ -125,7 +125,7 @@
   ],
   "integration": {
     "integrator": "codex-dot",
-    "allocated_evidence_ids": "EVD-003713\u2013EVD-003732",
+    "allocated_evidence_ids": "EVD-006673\u2013EVD-006692",
     "ecosystem_rollup": {
       "org_id": "ORG-001298",
       "field": "polymer_program_url",
@@ -135,7 +135,7 @@
       "last_verified_retained": "2026-10-28"
     },
     "baseline": "3036121b0245bee1e6b1c8f46ed63c0a39821226",
-    "upstream_recheck": "9d7a33f5e2d69d4a4e5d053f3e1e89f1faf6ee99; AGENTS-only update, no data drift",
+    "upstream_recheck": "f928257aa92ce7b91f781183d00035c752663349; program/ecosystem unchanged; evidence reallocated above maximum6672",
     "backup": "Original files available immutably at baseline data/programs.csv, data/ecosystem.csv and data/evidence.csv; local prepass backups retained outside repo."
   }
 }
