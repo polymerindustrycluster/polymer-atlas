@@ -1,0 +1,20 @@
+{
+  "pin": "eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05",
+  "population": 163,
+  "completed": 163,
+  "outcomes": {
+    "STILL_UNKNOWN": 111,
+    "HQ_FOUND": 52
+  },
+  "draft_evidence_rows": 52,
+  "county_candidates": 0,
+  "canonical_data_unchanged": true,
+  "queue_other_entries_unchanged": true,
+  "original_shard_sha256": "c42e32183f515d59ff2e4ddb8390c0ff33a70b05c3080e710690f891dcbd4407",
+  "files": {
+    "verdicts.csv": "8f6967501147d9440f886dd291662f5dfc443221393aaf143d62ed9378948a62",
+    "original_rows.csv": "449df433992f455535c68172a531b9378883f507b4a998b2ef76365183020d02",
+    "source_ledger.csv": "f57d6ffdc5a58afd759e28e8606c0003dbae28854a8abc26d50025d60c56d9b7",
+    "evidence_draft.csv": "3957e33d7bf7d42133d14d0a1f65d12b3a45c1fc95330a13e77613129280f6fb"
+  }
+}
