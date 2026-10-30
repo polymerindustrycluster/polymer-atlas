@@ -1,0 +1,50 @@
+{
+  "population": 1517,
+  "dispositions": {
+    "HELD_NO_MATCH": 228,
+    "REFERENCE_MATCH": 935,
+    "HELD_NONEXACT_MATCH": 246,
+    "HELD_ADDRESS_COMPARISON": 57,
+    "HELD_EXISTING_COORDINATES": 1,
+    "HELD_NO_STREET_ADDRESS": 15,
+    "HELD_PARTIAL_ADDRESS": 25,
+    "HELD_TIE": 10
+  },
+  "county_comparison": {
+    "NOT_ASSESSED": 279,
+    "AGREES_REFERENCE_ONLY": 1232,
+    "CONFLICT_REVIEW_ONLY": 5,
+    "RECORDED_COUNTY_BLANK": 1
+  },
+  "provider_match": {
+    "Match": 1238,
+    "No_Match": 228,
+    "Tie": 10
+  },
+  "provider_match_type": {
+    "Exact": 992,
+    "Non_Exact": 246
+  },
+  "cohort_dispositions": {
+    "other_pass20_25_creation": {
+      "HELD_NO_MATCH": 22,
+      "REFERENCE_MATCH": 104,
+      "HELD_NONEXACT_MATCH": 23,
+      "HELD_ADDRESS_COMPARISON": 9,
+      "HELD_EXISTING_COORDINATES": 1,
+      "HELD_NO_STREET_ADDRESS": 15,
+      "HELD_PARTIAL_ADDRESS": 1
+    },
+    "tri_national_wave_note": {
+      "REFERENCE_MATCH": 831,
+      "HELD_NONEXACT_MATCH": 223,
+      "HELD_NO_MATCH": 206,
+      "HELD_ADDRESS_COMPARISON": 48,
+      "HELD_PARTIAL_ADDRESS": 24,
+      "HELD_TIE": 10
+    }
+  },
+  "raw_response_sha256": "c514ab5ccde4114e1230dc01fcb60882c4f242f7340b2b12728ba34ca1bb28e1",
+  "county_code_source": "https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt",
+  "county_code_source_retrieved": "2026-10-30"
+}

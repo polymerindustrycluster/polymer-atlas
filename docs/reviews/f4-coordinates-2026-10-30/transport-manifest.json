@@ -1,0 +1,224 @@
+{
+  "coordinates-packet.csv": {
+    "bytes": 579879,
+    "sha256": "7fe39c9c7523f6336431d514cccb7033a09018cf927c2ec47048bf9b76a3593b",
+    "parts": [
+      {
+        "path": "transport-parts/coordinates-packet.csv.part000.b64",
+        "sha256": "8f2aef8a18b2e77181c56642957b95a37944e54f418e1bd10e05b315fb96f98e"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part001.b64",
+        "sha256": "15da4911f7f8f8a1e8953e41b10f153fc609471da427d2aee17978668624d91a"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part002.b64",
+        "sha256": "255314632e463fcccc69c8e2625388dc8c8a13c472b6d0728a0f2592f7f73be2"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part003.b64",
+        "sha256": "2dbfac645eeb1315601d81daa0943408430710a1b9a7b47ca2e1024c849a383e"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part004.b64",
+        "sha256": "90dae9406bb87723b3314f8ba8b2c1630156f065bb6a10710b557e725aa058f3"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part005.b64",
+        "sha256": "1314b95283adb3bfe0dc6781e6ed2659179a6bb6eb1e198de9c0a3d238666dd7"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part006.b64",
+        "sha256": "ed858569ed5320cb07c6f6a8a8a62e6f0afa1822bf6f8482de6f8b71c1274322"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part007.b64",
+        "sha256": "bbdb778ebf75242c796d47ed8f08fb2da60d3d5df16fa81081c9ec0a4c201aab"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part008.b64",
+        "sha256": "6b50779167b02cd038214dfc2b284c58cf164980c0aa5ba6cbb5bdbfad81a293"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part009.b64",
+        "sha256": "96c1034987184f341855b15117d1bed4af8d2fe9965f41f292edc089acd68b61"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part010.b64",
+        "sha256": "25c05253ac644bdda803f3851723e7186bc0fbe87ebaab8f7dab1ad9c048866f"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part011.b64",
+        "sha256": "20a68f56503a5b292a4e09a00744e97fd14ff7dfbeda1691aead8f44810e5d8e"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part012.b64",
+        "sha256": "5f6c766a5c445d3daa6f6565042442fda92a56317f40dae1b147598e7197f83a"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part013.b64",
+        "sha256": "4f5bef118b2b6d24ca2bb3a5005e3dbff1bc65a6c673d4c8055f47cb34178fd0"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part014.b64",
+        "sha256": "e86068fc773e0e8569ed6e2ff8d116a4c0a57a1aded449a4a8a9795b746d7c19"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part015.b64",
+        "sha256": "1701307e4bec6a9556f3296058706be0914d269a06b53c7e359754bfdd4f162b"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part016.b64",
+        "sha256": "e1d66544332522afce21d6b2f586f4f637b5a6ff6836b8cde94ec7d7ff5c1934"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part017.b64",
+        "sha256": "7d4fd6bdd3e468b9d983a62b2ab0dbe157a30aa15c807037d34ba7cbc735236e"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part018.b64",
+        "sha256": "662409421f209ab22196548d66ae5a0c3506d5475bf9ddeb2acc2c11eefefe4f"
+      },
+      {
+        "path": "transport-parts/coordinates-packet.csv.part019.b64",
+        "sha256": "2e29bf81a725c40764660ebf6ff80357316bbbe1abc896b94e91114d6d154cec"
+      }
+    ]
+  },
+  "county-codes-2020.txt": {
+    "bytes": 126639,
+    "sha256": "9f6e5f6eb6ac2f5e9a36d5fd01dec77991bddc75118f748a069441a4782970d6",
+    "parts": [
+      {
+        "path": "transport-parts/county-codes-2020.txt.part000.b64",
+        "sha256": "1b5f3bfccf73bacbb8461b5511e6a0ce75c6c7a1408db592e9244b1952ce7936"
+      },
+      {
+        "path": "transport-parts/county-codes-2020.txt.part001.b64",
+        "sha256": "132a845ecf6dbe4b27d52d5c735ca34af1170001ac871c7df42200f2591e0a45"
+      },
+      {
+        "path": "transport-parts/county-codes-2020.txt.part002.b64",
+        "sha256": "95cbb91a2971fad0fdfab90d40f101118f8ab95f7a2de6b2026ea127b68d4ecb"
+      },
+      {
+        "path": "transport-parts/county-codes-2020.txt.part003.b64",
+        "sha256": "7ea93119a4b1b8bec631d85c53d0e93e064b1ae4465c23ac02b224d82089618a"
+      },
+      {
+        "path": "transport-parts/county-codes-2020.txt.part004.b64",
+        "sha256": "fc5565bc6e6ae947e3df855bffd0c7d0e57bd9979965071e79afad6bc071afd7"
+      }
+    ]
+  },
+  "population.csv": {
+    "bytes": 303383,
+    "sha256": "4a4388aafc1154407a4c79ffe982274663a3178edea40cb4c5cbaee25b6e9a34",
+    "parts": [
+      {
+        "path": "transport-parts/population.csv.part000.b64",
+        "sha256": "4622186b83264846d2f2447ce409cdf4fe89fa5e5afd15f2ff0690d2d0aef552"
+      },
+      {
+        "path": "transport-parts/population.csv.part001.b64",
+        "sha256": "a8a48cb74d3493ab25cbbb28ad6c341bc53b10cb294ff3b1cd4ac9404b370b81"
+      },
+      {
+        "path": "transport-parts/population.csv.part002.b64",
+        "sha256": "dc2eb76312ca5ab64559d39b490e916de2f75009f1992fd6a03e595698783870"
+      },
+      {
+        "path": "transport-parts/population.csv.part003.b64",
+        "sha256": "ec0896ca8d2a770fbaea5d888a6ab974723ac9e666ab752bf6f7b56a5bdd3008"
+      },
+      {
+        "path": "transport-parts/population.csv.part004.b64",
+        "sha256": "3413eedf175ffeca81c4f4517c8e5ecf9d2f365fb6c1bacd2ef7c69be1a22d07"
+      },
+      {
+        "path": "transport-parts/population.csv.part005.b64",
+        "sha256": "6d7e250abe90120c16fbca2d100d0b2192ea88e01ea8167c4d539099bd72eccd"
+      },
+      {
+        "path": "transport-parts/population.csv.part006.b64",
+        "sha256": "b617399f2c2f18991a1d4b435d8ff0eeccec004de8feb555381d4d912984d199"
+      },
+      {
+        "path": "transport-parts/population.csv.part007.b64",
+        "sha256": "733a56c6eb86aecb7466a2a794aeea660868c42a57ab1e0bf27e6bdf4fc49ebf"
+      },
+      {
+        "path": "transport-parts/population.csv.part008.b64",
+        "sha256": "f7f94934f5e2b44610b16cb4c9cd9606ae8d320c2142718a7fd697f81b0fefbf"
+      },
+      {
+        "path": "transport-parts/population.csv.part009.b64",
+        "sha256": "4040cd4dc96e8767e042dc5249b694ce86f8761ded69c611dd733f545c993d79"
+      },
+      {
+        "path": "transport-parts/population.csv.part010.b64",
+        "sha256": "167192b687593a7a4e10e3fc1ca31099ad02c00d42174937d6be12f300a6c584"
+      }
+    ]
+  },
+  "request.csv": {
+    "bytes": 72802,
+    "sha256": "f12c8f8df7d20f6112541dc56fe2579ad4fd4155f824c3415c855418c0c54dfd",
+    "parts": [
+      {
+        "path": "transport-parts/request.csv.part000.b64",
+        "sha256": "db9f0223d7d5c8be760919da4b66db3c45a520bb1d2727f2daf15c3a74cf4b65"
+      },
+      {
+        "path": "transport-parts/request.csv.part001.b64",
+        "sha256": "9a11ac769f9e242f6f1899c2ede90f091c87241fbc266f4697419c0679102ff6"
+      },
+      {
+        "path": "transport-parts/request.csv.part002.b64",
+        "sha256": "2bcf2ddd5d0fccbb00481423984c69a6c32033419fa0b67cd7afe86e0feabf79"
+      }
+    ]
+  },
+  "response.csv": {
+    "bytes": 251295,
+    "sha256": "c514ab5ccde4114e1230dc01fcb60882c4f242f7340b2b12728ba34ca1bb28e1",
+    "parts": [
+      {
+        "path": "transport-parts/response.csv.part000.b64",
+        "sha256": "372c9e834727c5b8b9186c9d4aec46cd27bdfae7b5ea0b8533a1a19844acb95a"
+      },
+      {
+        "path": "transport-parts/response.csv.part001.b64",
+        "sha256": "72189d5ea1390b254dfcc00f5731588303bd81d52da2029f763236b2989066a9"
+      },
+      {
+        "path": "transport-parts/response.csv.part002.b64",
+        "sha256": "6ef24db12b75fe98cbb113f2578e9d86dc01f69edeb1b063a80a4ee100cd0e92"
+      },
+      {
+        "path": "transport-parts/response.csv.part003.b64",
+        "sha256": "9b0d4905c448b651f757dac9f45dfc504dfe27ce9336bbf860ffe00bb29752ba"
+      },
+      {
+        "path": "transport-parts/response.csv.part004.b64",
+        "sha256": "5878a57eb341d0eb2fae845ae2bbc3195d48fb87013580d795e04f80e592da4d"
+      },
+      {
+        "path": "transport-parts/response.csv.part005.b64",
+        "sha256": "cb8131ad5ff06fec2ffbd0a288885ce02dfc1244ddc4be2aebaa79984ff77422"
+      },
+      {
+        "path": "transport-parts/response.csv.part006.b64",
+        "sha256": "c29dc05573660ff0ba1680c385f2ffb3d0e8d573887403125512e400cf9a31f0"
+      },
+      {
+        "path": "transport-parts/response.csv.part007.b64",
+        "sha256": "582f3fc02ac8cf632d1046ffc543764ad2e96aa4a671fdb40881ef46ccd51998"
+      },
+      {
+        "path": "transport-parts/response.csv.part008.b64",
+        "sha256": "7a9fec385e06ae4dd644037a1753dc642a5c69b879bf849ba2a306abebb1365f"
+      }
+    ]
+  }
+}
