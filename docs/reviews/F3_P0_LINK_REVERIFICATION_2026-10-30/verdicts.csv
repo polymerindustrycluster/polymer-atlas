@@ -1,0 +1,6 @@
+packet_key,verdict,deciding_fact,settling_fact,registry_identity,facility_existence,application_gate
+amcor_appleton,STILL_UNCERTAIN,,Amcor Wisconsin LLC operator must be reconciled with held Amcor Flexibles North America Inc.; exact site polymer-process witness and non-TRI legal parent bridge needed.,GREP_VERIFIED_RY2024,supported,HOLD_OWNER_AND_EVIDENCE
+ucc_technology_park,VERIFIED,2026 WVDEP permit confirms UCC R&D; park operator describes polyolefin R&D. Separate TRIFID/address from both held UCC WV sites.,,GREP_VERIFIED_RY2024,supported,INDEPENDENT_REVIEW_AND_INTEGRATOR
+alpha_elkhart,STILL_UNCERTAIN,,"Owner must resolve Patrick/Alpha organization grain; ORG-002547 is Adorn, not an established Patrick-wide parent. Confirm plant-specific adhesive formulation before applying proposed process.",GREP_VERIFIED_RY2024,supported,HOLD_OWNER_AND_EVIDENCE
+aoc_tennessee,VERIFIED,"Own location names Tennessee manufacturing plant at 860; issuer resin guide names same plant; TRI county Fayette, not mailing-city inference.",,GREP_VERIFIED_RY2024,supported,INDEPENDENT_REVIEW_AND_INTEGRATOR
+teel_industrial,VERIFIED,Own site explicitly names Industrial Court pipe facility; ISO certificate page 2 scopes 500 Industrial Court to custom plastic extrusion.,,GREP_VERIFIED_RY2024,supported,INDEPENDENT_REVIEW_AND_INTEGRATOR

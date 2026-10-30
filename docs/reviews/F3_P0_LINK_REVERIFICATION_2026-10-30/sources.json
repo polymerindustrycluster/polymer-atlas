@@ -1,0 +1,143 @@
+[
+  {
+    "source_key": "tri",
+    "url": "https://data.epa.gov/efservice/downloads/tri/mv_tri_basic_download/2024_US/csv",
+    "retrieved_utc_date": "2026-10-30",
+    "http_status": 200,
+    "bytes": 60550684,
+    "sha256": "06dfa3a67bb4c5bd38d9e9f0f7b8bff10b95254a63169423632d7f6f251e1506",
+    "chemical_report_rows": 77295,
+    "reporting_year": 2024,
+    "local_raw_retention": "/tmp/f3-raw/tri_2024.csv (not committed; reproducible official download)"
+  },
+  {
+    "source_key": "amcor_permit",
+    "url": "https://apps.dnr.wi.gov/warp_ext/am_permittracking2.aspx?id=3001551",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 54375,
+    "sha256": "f1893cbf6703a868e58ffcf3465a2902044fab4c8263841fb356697bcfedd85d"
+  },
+  {
+    "source_key": "amcor_job",
+    "url": "https://www.amcor.com/careers/job-details/req_95783",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 104228,
+    "sha256": "0f250b1d18f1767c58a47976adb306edbb166e04a820290b53367ba229d7c993"
+  },
+  {
+    "source_key": "ucc_cleanup",
+    "url": "https://www.epa.gov/system/files/documents/2026-05/lts-assessment-rpt_ucc-tech-park-visit-date-10.29.25-2.20.2026.pdf",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 8359798,
+    "sha256": "4c47418f1a55c3ee61f0193ad53a976ed402f2c58472ddcb6ebd06d51755428b"
+  },
+  {
+    "source_key": "ucc_facts",
+    "url": "https://apps.dep.wv.gov/Documents/DAQ/TitleVPermits/039-00004--1-2/Final/FinalFactSheet%20R30-03900004-2026%20(Group%201%20of%202).pdf",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 134267,
+    "sha256": "682d5d6f351ba9160526192e37d5c1af76205f8f1bcaa9e5192d41406b408cc5"
+  },
+  {
+    "source_key": "ucc_park",
+    "url": "https://www.wvtechpark.com/post/tenant-spotlight-dow",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 825420,
+    "sha256": "107bd85c5c2ca9260917fed939153ee81f6ecfa50e1440eac499d49dc4aff766"
+  },
+  {
+    "source_key": "alpha_home",
+    "url": "https://alphallc.us/",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 185739,
+    "sha256": "9e8277973f64bdb12add3ecc7ea1f5af0e8e2c339f9370d5e741bc19313b9b14"
+  },
+  {
+    "source_key": "alpha_contact",
+    "url": "https://alphallc.us/contact/",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "snapshot_error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "source_key": "alpha_acquisition",
+    "url": "https://ir.patrickind.com/investor-news-events/press-releases/detail/197/patrick-industries-inc-completes-acquisition-of-alpha-systems-llc",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 82986,
+    "sha256": "0024d4419856c6f6c5e814c32af42676c3f26e488bfd4d3ecb1fcf5c0744af4d"
+  },
+  {
+    "source_key": "aoc_location",
+    "url": "https://aocformulations.com/en-asia/contact/locations/americas/united-states/aoc-tennessee-plant/",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 119181,
+    "sha256": "9b83be7a3c1905387f5b04d534db57707d10c590c880d59b9f8468884f2b3bd4"
+  },
+  {
+    "source_key": "aoc_us",
+    "url": "https://aocformulations.com/en-emea/applications/aoc-united-states/",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 104064,
+    "sha256": "fa34d761dda460944ed79c15dcf47bd44888514200e82ace870be5ae7ebfe7df"
+  },
+  {
+    "source_key": "aoc_guide",
+    "url": "https://alpinagrate.eu/wp-content/uploads/2020/11/literature_Corrosion_Guide-AOC.pdf",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 3089561,
+    "sha256": "0443442189291526015c3b0fc6c8d59ed7f798d91d3c44460cb532cf34294381"
+  },
+  {
+    "source_key": "teel_about",
+    "url": "https://www.teel.com/about-us/",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 89354,
+    "sha256": "279f37454266efe37b9b6da6e111074a4d6c1b5256c1783d6590367f32c28dbf"
+  },
+  {
+    "source_key": "teel_certificate",
+    "url": "https://www.teel.com/wp-content/uploads/2025/03/5750-Teel-Plastics-ISO-9001-Certificate-June-2024-signed.pdf",
+    "retrieved_utc_date": "2026-10-30",
+    "web_open_observed": true,
+    "http_status": 200,
+    "bytes": 149241,
+    "sha256": "8a97af50eb2eba0fff793a47a8c504e4f365805cc31cdf0030db0d15d2382b76"
+  },
+  {
+    "source_key": "teel_reels_failed",
+    "url": "https://www.teelpipe.com/wp-content/uploads/2024/06/Teel-Reel-Return-Program_240621.pdf",
+    "result": "web open inaccessible; discovery snippet not evidence"
+  },
+  {
+    "source_key": "teel_gas_failed",
+    "url": "https://www.teel.com/wp-content/uploads/2025/01/Teel-Gas-Pipe-Booklet_20260107_web-1.pdf",
+    "result": "web open content length too large; discovery snippet not evidence"
+  },
+  {
+    "source_key": "alpha_tax_failed",
+    "url": "https://elkhartindiana.org/wp-content/uploads/2025-Tax-Abatement-Resolutions.pdf",
+    "result": "web open HTTP404; discovery snippet not evidence"
+  }
+]
