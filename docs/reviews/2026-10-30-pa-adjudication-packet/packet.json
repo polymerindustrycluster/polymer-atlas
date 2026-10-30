@@ -2739,13 +2739,13 @@
           "record_table": "sites",
           "record_id": "SITE-002200",
           "claim_type": "address",
-          "claim_detail": "Permit identifies Boyertown address as owner mailing, not plant location.",
+          "claim_detail": "Contradicts using permit39-00025 as evidence of a Boyertown manufacturing site: its Boyertown address is owner mailing, while plant location is Macungie. Does not prove no separate Boyertown establishment exists.",
           "source_class": "government_filing",
           "source_ref": "https://files.dep.state.pa.us/Air/AirQuality/AQPortalFiles/Permits/PermitDocuments/1509250%5B39-00025%5D_Issued_v1.pdf",
           "observed_date": "2025-05-21",
           "tier_effect": "contradicts",
           "created_by": "codex-dot",
-          "notes": "Draft only; no record-tier promotion. Retrieved 2026-10-30."
+          "notes": "Draft only. No closure, status or tier inference. A separate Boyertown establishment remains unresolved. Retrieved 2026-10-30."
         },
         {
           "evidence_id": "",
