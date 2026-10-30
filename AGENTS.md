@@ -18,14 +18,53 @@ do not work around it.
 ## 2. How work happens
 
 1. **Claim before you build.** Pick (or add) a task in `tasks/QUEUE.md`,
-   mark it `claimed:<your-id> <date>`. One task = one branch = one PR.
-2. **Never push to `main`.** Branch name: `agent/<harness>/<task-slug>`.
-3. Keep PRs small and single-purpose (one county, one source, one ring
+   mark it `claimed:<your-id> <date>`. One task = one branch = one PR —
+   except in campaign mode (rule 2), where one task = one integration pass.
+2. **Campaign mode (owner ruling C2, 2026-10-29).** The campaign
+   orchestrator may push directly to `main` for a campaign integration
+   pass when **all** of the following hold for that push:
+   a. the repo owner has approved **that push** (per-push approval; a
+      general go-ahead for a pass series is not approval of each push);
+   b. `python3 scripts/validate.py` passes locally on the exact tree being
+      pushed, before the push;
+   c. after the push, the pushed files are read back from the remote and
+      verified byte-identical to the validated local copies;
+   d. the push is appended to the snapshot sync log
+      (`polymer-atlas.muse-github-snapshot-sync.json`, maintained alongside
+      the local repo) with its paths and, where the push route returns one,
+      its commit SHA.
+   Campaign mode exists because the GitHub App has no Workflows
+   permission: `.github/workflows/validate.yml` is not on the remote, so a
+   PR would run **no** automated validation, while a campaign push is
+   gated by b–d. If Workflows permission is ever granted and the workflow
+   lands on the remote, this rule is revisited by dated revision — it is
+   not self-expiring and it is not self-extending.
+3. **Outside campaign mode: never push to `main`.** Branch name:
+   `agent/<harness>/<task-slug>`. This binds every outside harness and
+   every non-campaign contribution, without exception. If you are not the
+   campaign orchestrator landing an approved integration pass, rule 2 does
+   not apply to you.
+4. Keep changes small and single-purpose (one county, one source, one ring
    pass). A PR that touches 400 rows across 6 topics will not be merged.
-4. Run `python3 scripts/validate.py` before opening the PR. It must pass.
-5. In the PR description state: task claimed, sources used, rows
-   added/changed, how many at each verification tier, and any borderline
-   calls you logged in `data/inclusion_log.csv`.
+   A campaign integration pass is single-purpose **by pass**: its scope is
+   fixed by its pass journal/manifest before application, and nothing
+   outside that scope rides the push, however convenient.
+5. Run `python3 scripts/validate.py` before opening the PR — and, in
+   campaign mode, before the push. It must pass.
+6. State your provenance. In the PR description state: task claimed,
+   sources used, rows added/changed, how many at each verification tier,
+   and any borderline calls you logged in `data/inclusion_log.csv`. A
+   campaign push carries the same record in its pass journal and its
+   snapshot-log entry instead of a PR description; a push without that
+   record is a protocol violation even if the data validates.
+
+*Revision note — 2026-10-29 (owner ruling C2): §2 amended to formalize the
+campaign mode under which integration passes 4–11, the schema v1.1+v1.2
+implementation, the network-layer application, and the schema v1.3
+micro-pass were pushed directly to `main` — 19 logged pushes, each with
+per-push owner approval, local validation, and read-back verification.
+The branch/PR rule is unchanged for outside harnesses and non-campaign
+contributions. No other section is amended by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 

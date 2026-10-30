@@ -65,9 +65,11 @@ python3 scripts/validate.py            # run before every PR
 ## Contributing — especially for agents
 
 Read `AGENTS.md` first. It is the binding protocol for every contributor,
-human or AI: branch + PR only, claim a task in `tasks/QUEUE.md`, dedupe
-before creating, provenance on every record, no licensed-dataset copying,
-no personal contact data, tombstone — never delete.
+human or AI: branch + PR for outside contributions (campaign integration
+passes land on `main` only under AGENTS.md §2 campaign mode, with per-push
+owner approval), claim a task in `tasks/QUEUE.md`, dedupe before creating,
+provenance on every record, no licensed-dataset copying, no personal
+contact data, tombstone — never delete.
 
 ## Licensing — read this before reusing
 

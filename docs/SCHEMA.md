@@ -1,15 +1,20 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.3 — 2026-10-29 (the v1.3 increment to the combined v1.2 revision:
-§4.6 drift fix, institutional identifiers, and the programs table; owner directed
-the increment 2026-10-29 per the schema-v1.3 note reconciliation; applied
-2026-10-29 in the schema v1.3 micro-pass, against the post-network-application repo)
+**Version:** v1.4 — 2026-10-29 (the v1.4 increment to the combined v1.2 revision:
+`ownership_type` vocabulary adopted (§4.4); `UEI` added to the §4.8 registry
+enum; owner ruled 2026-10-29 in the consolidated batch ("all as recommended");
+applied 2026-10-29 in integration pass 12, against the post-pass-11 repo).
+Prior: v1.3 — 2026-10-29 (§4.6 drift fix, institutional identifiers, and the
+programs table; owner directed the increment 2026-10-29 per the schema-v1.3
+note reconciliation; applied 2026-10-29 in the schema v1.3 micro-pass, against
+the post-network-application repo)
 **Status:** This document defines classification and record structure. It does not contain the company list.
 **Change basis:** v1.1 (decision memo 2026-10-29 §1, option (a): Tier 1 + Tier 2) and v1.2
 (repo change proposals S1–S4, 2026-10-29) adopted together as one dated revision. New or
 changed text in this revision is marked **[v1.1]** / **[v1.2]** at the paragraph or row level.
 The v1.3 increment's text is marked **[v1.3]** the same way.
+The v1.4 increment's text is marked **[v1.4]** the same way.
 Sections without a mark are carried from v1.0 unchanged.
 **Scope:** Northeast Ohio primary; Ohio statewide secondary; national for parents, OEMs, and ecosystem entities with an Ohio footprint or direct PIC relevance.
 
@@ -380,7 +385,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `year_founded` **[v1.1]** | integer | Nice | ADOPTED NAME for the founding-year field: `year_founded` supersedes the v1.0 draft label `founded_year` above (the two rows are one field; the v1.1 adoption text governs the name). Legal-entity formation year where a source states it; multi-inception conflicts (e.g., rename years) stay unresolved in notes until a formation convention is ruled — never silently pick one. |
 | `stock_ticker` **[v1.1]** | string | Nice | Exchange ticker for public orgs, **always with an as-of date in `field_sources`** — tickers are dated claims (a delisted ticker persisted in Wikidata is the known failure). Public parents only; never inferred. |
 | `employee_band` **[v1.1]** | enum §4.4 bands | Nice (Ohio band = MUST if known) | The adopted Tier-2 band field. READING (flagged in the implementation plan): the existing populated column `employee_band_ohio` is this field's Ohio instance and is NOT duplicated by a second column; CRM-banked employee counts land in `employee_band_ohio` as banded values with provenance (see the migration notes). `employee_band_global` remains as defined above. |
-| `ownership_type` **[v1.1]** | enum | Nice | `public_company` \| `private_company` \| `private_equity_portfolio` \| `family_owned` \| `employee_owned` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown`. Distinct from `entity_type` (legal form): this records control. Only from a primary/authoritative source; never inferred from size or name. (Vocabulary proposed in the implementation package — the adoption named the field, not its values.) |
+| `ownership_type` **[v1.1]** **[v1.4]** | enum | Nice | `public_company` \| `private_company` \| `private_equity_portfolio` \| `family_owned` \| `employee_owned` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown`. Distinct from `entity_type` (legal form): this records control. Only from a primary/authoritative source; never inferred from size or name. (Vocabulary **adopted 2026-10-29 — v1.4**; at v1.1 the adoption named the field, not its values, and the values were carried as proposed until this revision.) |
 | `certifications[]` **[v1.1]** | controlled vocab §3.4 | Nice | Promoted from the §3.4 nice-to-have list to a stored column on organizations. Values only from §3.4; self-disclosed or certificate-evidenced only. |
 | `website` | URL | **MUST** if exists; explicit `none_found` otherwise | Own domain only; a LinkedIn page goes in `sources`, not `website` |
 | `description_1line` | string ≤180 chars | **MUST** | Researcher-written, factual, no marketing copy-paste: "Custom injection molder, medical + automotive, Akron" |
@@ -501,10 +506,30 @@ an org may hold several LEIs and they are never collapsed to one.
 | Field | Type | Notes |
 |---|---|---|
 | `org_id` | FK → organizations ∪ ecosystem | **MUST** |
-| `registry` | enum | `LEI` \| `OHIO_SOS_CHARTER` \| `WIKIDATA` \| `SEC_CIK` \| `SEC_CIK_PARENT_FILER` \| `FRS` \| `TRI_TRIFID` \| `FDA_FEI` \| `EIN_NONPROFIT` (extensible only by dated revision) |
+| `registry` | enum | `LEI` \| `OHIO_SOS_CHARTER` \| `WIKIDATA` \| `SEC_CIK` \| `SEC_CIK_PARENT_FILER` \| `FRS` \| `TRI_TRIFID` \| `FDA_FEI` \| `EIN_NONPROFIT` \| `UEI` **[v1.4]** (extensible only by dated revision) |
 | `registry_id` | string | Verbatim as the registry carries it (charter numbers verbatim incl. leading zeros; CIKs zero-padded to 10) |
 | `match_basis` | string | How the match was established, e.g. `gleif_exact_confident`, `wikidata_confident_match`, `edgar_ex21_subsidiary_of_filer:<filer name>` — a guarded no-hit is never recorded as a negative fact |
 | `as_of` | date | The date the registry record was retrieved/verified |
+**UEI [v1.4].** `UEI` is the SAM.gov **Unique Entity ID** — the
+identifier SAM.gov assigns to an entity registered to do business with the
+U.S. federal government, and the recipient key on USAspending award
+records. `registry_id` carries the UEI verbatim as SAM.gov or
+USAspending carries it (§4.8's verbatim rule; no normalization, no
+case-folding). A UEI row is minted **only on an exact UEI match**: the
+UEI itself — taken from a SAM.gov Entity Management record or a
+USAspending recipient record — is the match, recorded in `match_basis`
+in the established style (e.g. `sam_exact_uei`,
+`usaspending_exact_uei`), with `as_of` = the retrieval date. A name
+resemblance, however strong, never mints a UEI row; name matching is how
+a candidate is *found*, the shared UEI is how it is *linked* — the same
+guarded-no-hit doctrine as the rest of this table applies, and an org
+with no UEI row asserts nothing (most Atlas organizations are not
+federal contractors or grantees and will never hold one). **Dedupe
+purpose:** UEI is the exact join key for USAspending recipient records
+(and for UEI-bearing federal award files such as the SBIR award files),
+so federal-award discovery and corroboration can key-match instead of
+name-matching — the FRS/TRI/FDA mechanics of this table, applied to the
+federal-awards source class.
 
 Seed population: the adjudicated GLEIF / Wikidata / EDGAR crosswalk (141 of its 142
 seed orgs carry into the table at application; the one holdout is named in the
@@ -720,3 +745,23 @@ Controlled vocabularies (§3) and Ring rules (§1) change only by a dated revisi
 - **v1.1 — adopted 2026-10-29 as part of the combined v1.2 revision.** Tier 1: `street_address` on sites; site `latitude`/`longitude` + `geocode_precision`; external registry-ID link table (§4.8); `year_founded`; `stock_ticker`. Tier 2: `employee_band`, `ownership_type`, `certifications` on organizations. (Decision memo 2026-10-29 §1, option (a).)
 - **v1.2 — 2026-10-29 (this text).** People records — professors only, public facts only, CRM never a source (§4.9); program/office record grains on ecosystem (§4.6 extension) with the §3.5 research-areas supplement under the §3-first rule; PIC membership fields + spanning member table, website-public only (§4.10); `pic_relationship_stage` retired from the public files (§4.3). (Repo change proposals S1–S4; connections trio approval 2026-10-29; Phase A calibration fixes integrated: conditioned `credential_types`, `admissions_status`, the engagement-mode grain rule.)
 - **v1.3 — 2026-10-29 (drafted; dated at application).** §4.6 drift fix: `polymer_program_url` column lands in ecosystem.csv with validator rule V-13 (MUST-if-claimed enforced at institution grain, with a dated pending list for unsourced claims); `ipeds_unitid` + `ror_id` identifier columns on university_college rows (V-14; identity join keys only — IPEDS/ROR assert identity, never program existence). Program records move from ecosystem grain rows to `data/programs.csv` (§4.11; V-15/V-16), adding `cip_code` with provenance, `level`, `unit_department`, and IPEDS completions fields to the v1.2 program grain; `program_type` gains `lab_facility` and `course` (apprenticeship retained); the `polymer_program_name`/`polymer_program_url` fields become the generated rollup of an institution's program rows; the inclusion rule is restated with the Lakeland rule (a CIP attribution is never program evidence); §4.9's `program_org_id` re-points to the programs table.
+
+- **v1.4 — 2026-10-29 (owner ruling, consolidated batch "all as
+  recommended"; applied in integration pass 12).** Two increments, no new
+  fields and no data population. (1) The `ownership_type` vocabulary
+  (§4.4) is **adopted**: the ten values carried as proposed since v1.1 are
+  now the binding enum — `public_company` | `private_company` |
+  `private_equity_portfolio` | `family_owned` | `employee_owned` |
+  `nonprofit` | `government` | `academic` | `cooperative` | `unknown` —
+  control, distinct from `entity_type` (legal form), set only from a
+  primary/authoritative source and never inferred from size or name. The
+  validator's `OWNERSHIP` set already enforces exactly these values; this
+  revision makes the schema text catch up to the validator. (2) `UEI`
+  (SAM.gov Unique Entity ID) is added to the §4.8 `registry_links`
+  registry enum, with the validator's `REGISTRIES` whitelist gaining
+  `UEI` in the same pass (§4.8 design note). Purpose: exact-key matching
+  against SAM.gov entity registrations and USAspending recipient records,
+  replacing name matching for federal-award corroboration. **No UEI rows
+  are minted by this revision** — population is later wave work, only on
+  an exact UEI match, and a guarded no-hit is never recorded as a negative
+  fact.

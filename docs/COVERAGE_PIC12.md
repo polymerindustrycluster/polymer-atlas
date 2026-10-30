@@ -1,5 +1,41 @@
 # PIC-12 Coverage Report — Atlas establishments vs. official denominators
 
+**Update (2026-10-29, integration pass 12):** Recomputed from the local
+repo at its post-integration-pass-12 state (1832 organization rows /
+1943 sites; org tiers A 621 / B 993 / C 164 / U 11). Headline PIC-12
+NAICS 326 coverage (unit: establishments — Atlas sites, operating status
+active/unknown; denominator QCEW 2023, 367): primary cut (tiers A–C)
+**415 (113.1%) — unchanged**; recorded cut (any tier) **431 (117.4%)
+→ 429 (116.9%)**. Statewide NAICS 326 primary coverage: **804 (90.3%)**
+of the QCEW Ohio denominator of 890 — unchanged; recorded 979 → 977.
+Pass 12 applied the owner's 2026-10-29 consolidated ruling batch: the
+Hankook merge, the Röchling unwind (ORG-000551 re-created), the A3
+co-location annotations, the B5 scope landings (the Phoenix Bowling
+Green site created; PureCycle and Parker Rust-Proof created; the E.L.
+Stone and North American Coating scope-rejects reversed), the
+tier-seam re-grades, the YSU and University of Pennsylvania
+institution seams, the Cast Nylons CN-2/CN-3 settlement, and the
+enrichment-2 fills — plus the PMIR close-out: PMIR's records
+(ORG-000127 / SITE-000126) were retired out of scope on wave-13
+own-site evidence (a measuring-instrument business; the B5 release
+motions were withdrawn by the owner), removing one Tier U NAICS-326
+site from the recorded cut; the second recorded decrement is the
+E.L. Stone site's adjudicated NAICS correction (326199 → 332812,
+leaving the 326 family). No pass-12 motion moves the primary cut:
+every creation carries a non-326 primary NAICS (325211 / 325991 /
+332812), and the +1 the pass-12 prep projected on the withdrawn PMIR
+release does not occur — the prep projection (416 / 805) is superseded
+by these applied actuals. Against the prep's projected final counts the
+only delta is the PMIR close-out (active organizations −1, Tier U −1).
+Statewide 3252-family primary rises 79 → 80 (the Phoenix site) and
+3259-family 75 → 76 (the PureCycle site). Two context figures
+printed in §2 from earlier passes are restated on the governing ruler in
+this pass: the 3261 sub-row (printed 317 / 329; the pass-11 integration
+log's ruler gives 320 / 332 at the pass-12 baseline) and the 3259-family
+context count (printed 72; 75 on the prefix ruler at baseline) — their
+previously printed values are superseded, not pass-12 deltas. The decomposition prose below
+analyzes the pass-10 frame and carries structurally.
+
 **Update (2026-10-29, integration pass 11):** Recomputed from the local
 repo at its post-integration-pass-11 state (1,829 organization rows /
 1,940 sites; org tiers A 624 / B 990 / C 163 / U 12). Headline PIC-12
@@ -114,8 +150,8 @@ re-validated against the fresh pull and are unchanged.
 
 | NAICS family | Atlas primary cut (sites) | Atlas recorded cut (sites) | QCEW 2023 denominator (establishments, PIC-12) | Primary coverage | Recorded coverage |
 |---|---|---|---|---|---|
-| **326** Plastics & rubber products | **415** | **431** | **367** | **113.1%** | **117.4%** |
-| 3261 Plastics products | 317 | 329 | 283 | 112.0% | 116.3% |
+| **326** Plastics & rubber products | **415** | **429** | **367** | **113.1%** | **116.9%** |
+| 3261 Plastics products | 320 | 330 | 283 | 113.1% | 116.6% |
 | 3262 Rubber products | 95 | 99 | 84 | 113.1% | 117.9% |
 | **3252** Resin, synthetic rubber, fibers (325211+325212+325220) | **39** | **44** | **52** | **75.0%** | **84.6%** |
 | **3259** Other chemical products (incl. 325991) | **46** | **53** | **62–63** | **73.0%–74.2%** | **84.1%–85.5%** |
@@ -134,8 +170,8 @@ re-validated against the fresh pull and are unchanged.
   establishment from this family's PIC-12 cells), so the coverage figures
   are stated as ranges across the two sums.
 - Statewide context (same cuts, same sources): Atlas primary-cut NAICS-326
-  sites in Ohio = 804 of QCEW Ohio 890 (**90.3%**); 3252-family 79 of 115
-  (68.7%); 3259-family 72 of 153 (47.1%). PIC-12's 326 coverage (112.3%
+  sites in Ohio = 804 of QCEW Ohio 890 (**90.3%**); 3252-family 80 of 115
+  (69.6%); 3259-family 76 of 153 (49.7%). PIC-12's 326 coverage (112.3%
   primary, with the frame decomposition above) runs ahead of the statewide figure.
 
 ## 3. County table — NAICS 326 family
@@ -148,7 +184,7 @@ every county carries a percentage.
 | County | Atlas primary | Atlas recorded | QCEW 326 | Primary % | Recorded % | of which QCEW 3261 / 3262 |
 |---|---|---|---|---|---|---|
 | Ashtabula | 22 | 22 | 21 | 104.8% | 104.8% | 17 / 4 |
-| Cuyahoga | 81 | 86 | 65 | 124.6% | 132.3% | 58 / 7 |
+| Cuyahoga | 81 | 85 | 65 | 124.6% | 130.8% | 58 / 7 |
 | Geauga | 30 | 30 | 28 | 107.1% | 107.1% | 21 / 7 |
 | Lake | 32 | 34 | 23 | 139.1% | 147.8% | 17 / 6 |
 | Lorain | 23 | 23 | 18 | 127.8% | 127.8% | 15 / 3 |
@@ -156,10 +192,10 @@ every county carries a percentage.
 | Medina | 18 | 18 | 21 | 85.7% | 85.7% | 12 / 9 |
 | Portage | 44 | 46 | 35 | 125.7% | 131.4% | 27 / 8 |
 | Stark | 29 | 30 | 30 | 96.7% | 100.0% | 27 / 3 |
-| Summit | 94 | 100 | 76 | 123.7% | 131.6% | 48 / 28 |
+| Summit | 94 | 99 | 76 | 123.7% | 130.3% | 48 / 28 |
 | Trumbull | 5 | 5 | 13 | 38.5% | 38.5% | 11 / 2 |
 | Wayne | 13 | 13 | 18 | 72.2% | 72.2% | 13 / 5 |
-| **PIC-12** | **415** | **431** | **367** | **113.1%** | **117.4%** | **283 / 84** |
+| **PIC-12** | **415** | **429** | **367** | **113.1%** | **116.9%** | **283 / 84** |
 
 Read on the outliers:
 
@@ -175,7 +211,7 @@ Read on the outliers:
 - **Trumbull remains the thinnest county in PIC-12** (38.5% primary / 38.5%
   recorded) — a genuine discovery gap, not a backlog artifact: there are
   only 5 recorded NAICS-326 sites against 13 expected.
-- **Cuyahoga's backlog has largely converted**: 81 primary / 86 recorded
+- **Cuyahoga's backlog has largely converted**: 81 primary / 85 recorded
   against 65 expected — only 5 of its recorded NAICS-326 sites remain
   Tier U after the pass-10 burn-down (33 were Tier U at pass 9).
 

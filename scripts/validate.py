@@ -74,7 +74,7 @@ CERTS = {"iso_9001", "iso_14001", "iatf_16949", "iso_13485", "as9100", "fda_regi
          "cleanroom_iso7", "cleanroom_iso8", "itar", "ul_recognized", "nsf_certified_products", "glp_gmp"}
 GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "city_centroid"}
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
-              "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT"}
+              "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI"}
 CREDENTIALS = {"phd", "ms", "bs", "aas_associate", "certificate", "registered_apprenticeship",
                "incumbent_worker_training", "noncredit_workforce"}
 ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
