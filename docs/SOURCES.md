@@ -1,5 +1,8 @@
 # Sources & Method
 
+> **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
+> **Attribution correction:** Numerically reproducing 996 from a CBP definition does not prove the strategic framework used that definition. The banked CBP extract and author methodology are absent here; historical firm/establishment ranges are not verified current statistics.
+
 How this database is built: which sources feed it, what each source is actually
 good for, and the data-quality failure modes we have learned to defend against.
 The methodology is part of the contribution — another region building the same
