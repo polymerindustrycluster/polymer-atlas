@@ -91,7 +91,11 @@ LEVEL_MAP = {"phd": "doctorate", "ms": "master", "bs": "bachelor",
 LEVELS = {"certificate", "associate", "bachelor", "master", "doctorate", "none"}
 CIP_SOURCE_TYPES = {"institution_published", "ipeds_listing", "researcher_inferred"}
 ROLES = {"professor", "associate_professor", "assistant_professor", "research_professor",
-         "center_director_professor"}
+         "center_director_professor",
+         # [v1.7.4] federal-laboratory research-staff values (§4.9 scope extension)
+         "research_scientist", "staff_scientist", "research_engineer", "senior_scientist",
+         "distinguished_scientist", "group_leader", "senior_research_engineer",
+         "associate_scientist", "division_director", "assistant_scientist", "named_chair"}
 PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_lsr_silicone",
              "insert_overmolding", "two_shot_molding", "blow_molding_extrusion", "blow_molding_injection",
              "blow_molding_stretch", "extrusion_film_blown", "extrusion_film_cast", "extrusion_sheet",

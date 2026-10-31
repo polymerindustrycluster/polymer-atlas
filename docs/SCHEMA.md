@@ -1,7 +1,16 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.3 — 2026-10-31 (academic-layer owner rulings
+**Version:** v1.7.4 — 2026-10-31 (first lab-staff records
+micro-revision: the §4.9 `role` controlled vocabulary gains the
+federal-laboratory research-staff values foreseen at v1.7.3 —
+`research_scientist`, `staff_scientist`, `research_engineer`,
+`senior_scientist`, `distinguished_scientist`, `group_leader`,
+`senior_research_engineer`, `associate_scientist`,
+`division_director`, `assistant_scientist`, `named_chair` — with
+the lab wave's documented folds; the validator's ROLES gains the
+same values; applied in integration pass 35). Prior: v1.7.3 —
+2026-10-31 (academic-layer owner rulings
 micro-revision: R1 — people scope extended to federal-lab research
 staff (§4.9; AGENTS.md §6 amended in the same pass); R2 — the
 materials-candidate adjudication rule codified in §1 with leg (a)'s
@@ -964,9 +973,10 @@ and its public staff directory or program pages must style the person
 as research staff with polymer research stated. The affiliation
 recorded is the laboratory; a joint university appointment is recorded
 and verified at the primary home institution. The `role` controlled
-vocabulary below is the professor vocabulary; controlled values for
-lab-staff stylings are added with the first lab-staff records, and
-until then the lab's own words ride in `role_as_published`. This
+vocabulary below was the professor vocabulary at v1.7.3; the
+lab-staff values arrived with the first lab-staff records
+(**[v1.7.4]**, integration pass 35), and the lab's own words ride
+in `role_as_published` in all cases. This
 extension creates no records by itself.
 
 | Field | Type | Notes |
@@ -975,7 +985,7 @@ extension creates no records by itself.
 | `full_name` | string | As published on the institution's page |
 | `institution_org_id` | FK → organizations ∪ ecosystem | **MUST** |
 | `program_org_id` | FK → `data/programs.csv` (§4.11), nullable. (At v1.2 this pointed at program-grain ecosystem records; programs moved to their own table at v1.3 and the reference follows them. Validator V-11 as amended.) | Where the public page ties the person to a held program |
-| `role` | controlled | The institution's own styling, recorded verbatim in `role_as_published`; the controlled value is one of: `professor` \| `associate_professor` \| `assistant_professor` \| `research_professor` \| `center_director_professor` (directors/program leads qualify **only** if they also hold a publicly stated professor title) |
+| `role` | controlled | The institution's own styling, recorded verbatim in `role_as_published`; the controlled value is one of: `professor` \| `associate_professor` \| `assistant_professor` \| `research_professor` \| `center_director_professor` (directors/program leads qualify **only** if they also hold a publicly stated professor title); for federal-laboratory research-staff records under the [v1.7.3] scope extension **[v1.7.4]**: `research_scientist` \| `staff_scientist` \| `research_engineer` \| `senior_scientist` \| `distinguished_scientist` \| `group_leader` \| `senior_research_engineer` \| `associate_scientist` \| `division_director` \| `assistant_scientist` \| `named_chair` — the lab roster wave's harvested stylings, with its documented folds (generic "Research Staff" / "researcher" → `research_scientist`; "Section Head" → `group_leader`; endowed laboratory chairs, e.g. the ORNL/UT Governor's Chair → `named_chair`). No postdoc value exists: solely-postdoctoral stylings are out of scope at lab grain exactly as at university grain |
 | `role_as_published` | string | The institution's exact words — never normalized or inferred |
 | `research_specialties[]` | §3.1/§3.2 vocab first, §3.5 supplement where needed | As publicly stated on the cited page |
 | `public_profile_url` | URL | Their own faculty/lab page |
@@ -2505,3 +2515,20 @@ UNITID-fill precedent); §4.6's uniqueness doctrine is restated
 V-14 is amended to admit a repeated UNITID only where every
 additional carrier names the institution-grain holder as its
 `parent_institution_org_id`. No new tables or fields.
+
+- **v1.7.4 — 2026-10-31 (first lab-staff records; applied in
+integration pass 35).** The §4.9 `role` controlled vocabulary
+gains the federal-laboratory research-staff values foreseen at
+v1.7.3, taken from the lab roster wave's harvested stylings:
+`research_scientist`, `staff_scientist`, `research_engineer`,
+`senior_scientist`, `distinguished_scientist`, `group_leader`,
+`senior_research_engineer`, `associate_scientist`,
+`division_director`, `assistant_scientist`, and `named_chair`
+(endowed laboratory chairs), with the wave's documented folds
+(generic "Research Staff" / "researcher" → `research_scientist`;
+"Section Head" → `group_leader`; Governor's Chair →
+`named_chair`). No postdoc value is added: solely-postdoctoral
+stylings remain out of scope. The validator's ROLES gains the
+same values in the same pass. No new tables or fields; people
+records remain outside the §4.13 evidence classes, their gate
+citations riding in `sources[]`.
