@@ -1,7 +1,14 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7 — 2026-10-30 (code dimension; see Revision 2 in
+**Version:** v1.7.1 — 2026-10-31 (owner-rulings micro-revision:
+the 2026-10-31 owner battery B1–B29, all as recommended — §1 gains
+the Owner rulings 2026-10-31 subsection (precursor-only → Ring 3;
+process boundary; site-grain affirmation; tar-refinery, blending,
+and captive-packaging lines; segment-grain confirmations) and
+§4.14.2 records the LACC dual-parent ruling with its application
+deferred (Lotte endpoint unheld); applied in integration pass 29).
+Prior: v1.7 — 2026-10-30 (code dimension; see Revision 2 in
 the pass-19 freeze and the revision-history entry below).
 Prior: v1.6.4 — 2026-10-30 (sites_INTL micro-revision: Appendix C
 amended to admit a `sites_INTL.csv` shard for non-US
@@ -144,6 +151,75 @@ Generic universities with only a standard chemistry degree and no polymer progra
 | **Household-name diversified: Eaton, Timken, Lincoln Electric, Moen/fortune brands, Diebold Nixdorf** | Do NOT auto-include. Apply site-level Ring 4 test individually. Moen-type (plastics in faucets, captive molding historically) likely passes A+B; electrical/metal-dominant firms often fail B/C at Ohio sites. Default when unsure: `watchlist`. | Familiarity and size are not inclusion criteria. The test, not the brand, decides. |
 | **Waste hauler that also runs a plastics MRF / reclaimer** | Hauling-only sites = exclude. MRF/reprocessing site = Ring 3 `recycling_recovery` Establishment (Ring 1 if it pelletizes/washes to saleable flake/pellet — then `secondary_ring=3`). | Function at the site decides, not the parent's SIC. |
 | **University spinout / startup with no plant yet** | Include as Parent, Ring by intended process (usually 1 or 2), `status=pre_revenue` / `site_type=hq_virtual`, address = incubator/lab if that is its real base. | PIC's prospect pipeline needs pre-plant startups. Virtual/HQ-only is a valid Establishment type; do not invent a plant address. |
+
+### Owner rulings — 2026-10-31 (battery B1–B29) **[v1.7.1]**
+
+Dated doctrine settled by the owner's 2026-10-31 micro-battery (all
+items as recommended; record motions applied in integration pass 29;
+the per-item record dispositions are in `data/inclusion_log.csv`).
+These are binding precedent of the same standing as the edge-case
+table above:
+
+- **Precursor-only production → Ring 3 (B6, B17).** A record whose
+  only polymer-adjacent activity is producing monomers or
+  intermediates (ethylene; ethylene oxide / ethylene glycol) is
+  Ring 3 value chain, not Ring 1/2 materials production — a monomer
+  is not a polymer. Applied jointly: LACC, LLC (`ORG-004202`) and its
+  Westlake establishment, and the Indorama Ventures Oxides Clear
+  Lake site (`SITE-005406`) at site grain. Consistent with the
+  pass-25 MEGlobal screen (ethylene glycol is not the ethylene
+  monomer).
+- **Ring boundary = process (B16; B9 confirms).** Whether an
+  establishment is Ring 1 turns on what it *does*: on-site
+  polymerization is Ring 1 regardless of the product's additive or
+  specialty end-use; formulation/compounding only is Ring 2.
+  Applied: Estron Chemical, Calvert City (`SITE-005870`) → Ring 1
+  (acrylic resin manufacture); Syensqo Borger (`SITE-004843`)
+  confirmed Ring 1.
+- **Site grain: no parent-capability inheritance (B14, affirmed).**
+  A site's `site_type` and ring are determined from site-specific
+  evidence only; a site record never borrows its parent
+  organization's process identity. This is the rule B13's evidentiary
+  hold also rests on.
+- **Physical transformation at establishment grain (B10–B12, B15).**
+  The §1 Ring 1 inclusion rule (melt / mix / cure / polymerize /
+  foam / lay up on site; final shaped product) applies at the
+  establishment even inside a Ring 2 parent: composite molding,
+  physical foam molding, and solid-surface fabrication sites are
+  Ring 1 sites.
+- **Tar-refinery distinguishing rule (B23, codified).** Dedicated
+  single-slate polymer-intermediate production is in scope;
+  multi-product tar refining without a dedicated polymer line is
+  not. The pass-25 Koppers Cicero REJECT stands under this rule.
+- **Blending line (B28, codified).** Blending or formulation with
+  no polymer or resin production at the address is out of scope on
+  a chemical (325xxx) profile alone; a permit- or source-stated
+  polymer/resin production at the address is in (the Essential
+  Industries contrast). The Buckeye International REJECT stands.
+- **Captive packaging is out (B26, affirmed).** In-house packaging
+  manufacture captive to a non-polymer headline business (e.g.
+  ancillary bottle blowing inside a beverage plant) does not
+  qualify a record. The pass-23 Nestlé Waddell REJECT stands as the
+  standing answer.
+- **Multi-segment producers are built at polymer-segment grain
+  (B27, B29).** A diversified chemical parent's Atlas build covers
+  its polymer-facing segments only: Evonik's polymer build stands
+  (Tippecanoe, a pharmaceutical API/CDMO plant, stays out), and
+  Albemarle (`ORG-002888`) stays a Bromine-only build — the Ketjen
+  catalysts segment is out (Pasadena stays uncreated), and the
+  Baton Rouge STILL_UNCERTAIN's ceiling is entry as a Bromine
+  Derivatives site only, on its own settling fact.
+- **Grace whole-company grain confirmed (B25).** W. R. Grace & Co.
+  (`ORG-003113`) stands as recorded — Ring 2 primary / Ring 3
+  secondary, whole-company grain, its Pasadena catalyst site in.
+  The asymmetry with B29 is principled, not accidental: Grace's
+  nexus is polyolefin catalysts plus UNIPOL polypropylene process
+  licensing (polymer-*production* inputs), against Ketjen's
+  refining-catalyst profile.
+- **LACC dual-parent exception — ruled, application deferred
+  (B5).** See §4.14.2: the CPChem pattern is ruled for
+  `ORG-004202`, but no edge is authored and no validator exception
+  applies until a Lotte Chemical USA parent record is held.
 
 ---
 
@@ -1495,6 +1571,23 @@ column-parity set). This exception is named-record-only and does
 not generalize: any future dual-parent JV requires its own owner
 ruling and its own named exception here before an edge is authored.
 
+**Second dual-parent ruling — application deferred (owner battery
+B5, 2026-10-31) **[v1.7.1]**.** LACC, LLC (`ORG-004202`) is a 50/50
+joint venture of Lotte Chemical USA Corporation and Westlake
+Chemical Corporation, and the owner ruled the CPChem pattern for it
+on 2026-10-31. The exception is **not yet in force in the data**:
+no held record exists for the Lotte parent (the tree holds only
+`ORG-003500` LOTTE Chemical California, Inc., a different entity),
+and the both-endpoints-held rule above bars authoring its edge.
+Until a Lotte Chemical USA parent record is held through the normal
+record gate, `ORG-004202.parent_org_id` stays empty (which needs
+no exception cover while no edge exists), its
+`ultimate_parent_name` carries the joint-venture string naming both
+parents, and the validator carries **no** LACC exception. The two
+authored edges, this record's named exception here, and the
+matching validator exception land together in the first pass after
+the endpoint is held.
+
 **The membership rule (binding).** PIC membership is governed by
 §4.10 and recorded in `data/members.csv`; `members.csv` stays the
 membership record for PIC, full stop. No `member_of` edge ever states
@@ -2261,3 +2354,30 @@ sites still have no residual shard.
   ruling 2026-10-30 (Q3) resolving the DECISIONS-vs-readme
   discrepancy in the Atlas's favor of the three. No existing table, field, or
   vocabulary changes; the `naics_*` columns are untouched.
+- **v1.7.1 — 2026-10-31 (owner battery 2026-10-31, items B1–B29,
+  all as recommended; applied in integration pass 29).**
+  Owner-rulings micro-revision. Record motions applied in pass 29:
+  four re-parents with their generated `parent_of` edges (EPS
+  ORG-003910 under Sherwin-Williams ORG-000132, with the four
+  EPS-operated sites re-pointed down; Durez ORG-000809 under SBNA
+  ORG-004081; Royal Building Products ORG-001091 under Westlake
+  ORG-003067, with the five parent-held Royal sites re-pointed
+  down; Ventra ORG-001183 renamed to division grain and re-parented
+  under Flex-N-Gate ORG-004272); one fold (Zodiac Pool Solutions
+  ORG-004322 merged into Fluidra USA ORG-004250, generated
+  `merged_into` edge REL-000341); the Patrick Industries re-grain
+  (ORG-002547 renamed in place); nine ring restatements at org or
+  site grain (B3, B4, B6 ×2 records, B7, B8, B10, B11, B12, B15,
+  B16, B17); the Interplastic re-type (SITE-003762 `hq_only` →
+  `hq_and_plant`, city → Vadnais Heights); Three60's trade name;
+  and mechanics MC1–MC3. Doctrine recorded in §1's Owner rulings
+  2026-10-31 subsection: precursor-only production → Ring 3 (B6,
+  B17); ring boundary = process (B16); site-grain no-inheritance
+  affirmed (B14); the tar-refinery distinguishing rule (B23) and
+  the blending line (B28) codified; captive packaging out (B26);
+  polymer-segment grain for multi-segment producers (B27, B29);
+  Grace whole-company grain confirmed (B25). B5's LACC
+  dual-parent exception is ruled but its application is deferred
+  (Lotte endpoint unheld — §4.14.2 carries the deferral note; no
+  validator change in this revision). B13 is an evidentiary hold
+  and changes nothing. No field, vocabulary, or table changes.
