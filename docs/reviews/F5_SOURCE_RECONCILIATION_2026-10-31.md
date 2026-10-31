@@ -1,5 +1,7 @@
 # F5 source-packet reconciliation — 2026-10-31
 
+> **Final F5 reconciliation, 2026-10-31:** [Completed count/accounting report](F5_FINAL_RECONCILIATION_2026-10-31.md) reproduces PIC-12 326 = 367 and resolves all seven link cases as six documented freeze holds plus one corrected applied link—not missing facilities. The 3252/3259 values 52/62 are incomplete published-cell sums. Earlier blocker statements below are historical.
+
 **Explicit metadata advance:** `884c2c0344b6d071406761ee39a203eac7e07d72`,
 observed 01:49 UTC, supersedes the earlier `4a406991` metadata observation.
 Only twelve `tasks/f5-source-packet/` files were added. Canonical data, schema
