@@ -150,3 +150,7 @@ Deliberately NOT queued (owner doctrine, 2026-10-30): candidate-queue packets
 Q03–Q15 are priced inventory (~29% measured yield and falling), not a burn-down
 backlog — do not self-assign them. Scope/ring/grain rulings (incl. the EPS
 ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
+
+
+## Blind Audit 9 — pass-34 people creations (2026-10-31)
+- [ ] `claimed:codex-audit9 2026-10-31` Evidence-blind audit of 50 reproducibly random R1 people creations, four separately reported judgment cases, and seven held corrections at `604fea8ef1d9fe3f17049aeb053d157345a61de5`. Branch `agent/codex/audit-9-people-r1`; findings-only draft PR under `tasks/audit-9-people-r1/`; no data edits, IDs, main pushes, or merges. Existing claims preserved.
