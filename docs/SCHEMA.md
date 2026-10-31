@@ -1,15 +1,14 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.1 — 2026-10-31 (owner-rulings micro-revision:
-the 2026-10-31 owner battery B1–B29, all as recommended — §1 gains
-the Owner rulings 2026-10-31 subsection (precursor-only → Ring 3;
-process boundary; site-grain affirmation; tar-refinery, blending,
-and captive-packaging lines; segment-grain confirmations) and
-§4.14.2 records the LACC dual-parent ruling with its application
-deferred (Lotte endpoint unheld); applied in integration pass 29).
-Prior: v1.7 — 2026-10-30 (code dimension; see Revision 2 in
-the pass-19 freeze and the revision-history entry below).
+**Version:** v1.7.2 — 2026-10-31 (B5 completion micro-revision:
+§4.14.2's LACC dual-parent exception applied — the Lotte endpoint
+record `ORG-004623` (Lotte Chemical USA Corporation) created, both
+authored `parent_of` edges into `ORG-004202` minted, and the
+validator's named LACC exception in force; applied in integration
+pass 30). Prior: v1.7.1 — 2026-10-31 (owner-rulings
+micro-revision: the 2026-10-31 owner battery B1–B29; see the
+revision-history entry below).
 Prior: v1.6.4 — 2026-10-30 (sites_INTL micro-revision: Appendix C
 amended to admit a `sites_INTL.csv` shard for non-US
 establishments under owner ruling 2026-10-30 (battery item B9),
@@ -216,10 +215,13 @@ table above:
   nexus is polyolefin catalysts plus UNIPOL polypropylene process
   licensing (polymer-*production* inputs), against Ketjen's
   refining-catalyst profile.
-- **LACC dual-parent exception — ruled, application deferred
-  (B5).** See §4.14.2: the CPChem pattern is ruled for
-  `ORG-004202`, but no edge is authored and no validator exception
-  applies until a Lotte Chemical USA parent record is held.
+- **LACC dual-parent exception — ruled and applied (B5; pass 30).**
+  See §4.14.2: the CPChem pattern applies to `ORG-004202`; both
+  authored `parent_of` edges (from `ORG-004623` Lotte Chemical USA
+  Corporation and `ORG-003067` Westlake Corporation, each
+  `effective_from` 2022-03-15) are in force, the validator carries
+  the named LACC exception, and `ORG-004202.parent_org_id` stays
+  empty by design.
 
 ---
 
@@ -1571,22 +1573,26 @@ column-parity set). This exception is named-record-only and does
 not generalize: any future dual-parent JV requires its own owner
 ruling and its own named exception here before an edge is authored.
 
-**Second dual-parent ruling — application deferred (owner battery
-B5, 2026-10-31) **[v1.7.1]**.** LACC, LLC (`ORG-004202`) is a 50/50
-joint venture of Lotte Chemical USA Corporation and Westlake
-Chemical Corporation, and the owner ruled the CPChem pattern for it
-on 2026-10-31. The exception is **not yet in force in the data**:
-no held record exists for the Lotte parent (the tree holds only
-`ORG-003500` LOTTE Chemical California, Inc., a different entity),
-and the both-endpoints-held rule above bars authoring its edge.
-Until a Lotte Chemical USA parent record is held through the normal
-record gate, `ORG-004202.parent_org_id` stays empty (which needs
-no exception cover while no edge exists), its
-`ultimate_parent_name` carries the joint-venture string naming both
-parents, and the validator carries **no** LACC exception. The two
-authored edges, this record's named exception here, and the
-matching validator exception land together in the first pass after
-the endpoint is held.
+**Second dual-parent exception — LACC (owner battery B5,
+2026-10-31) **[v1.7.2]**.** LACC, LLC (`ORG-004202`) is owned
+50/50 by Lotte Chemical USA Corporation (`ORG-004623`) and
+Westlake Corporation (`ORG-003067`); neither parent controls it,
+and a one-parent column value would misstate the fact. For this
+record only: `parent_org_id` stays EMPTY by design, and the two
+`parent_of` edges (Lotte Chemical USA Corporation → LACC, Westlake
+Corporation → LACC, each `effective_from` 2022-03-15 — the date
+the 50/50 state was reached, per Westlake Corporation's FY2023
+Form 10-K, Note 9) are **authored by hand** as a documented
+exception. Westlake's membership is held through its wholly-owned
+subsidiary Eagle US 2 LLC; the edge is authored at the group grain
+named in the B5 ruling and the intermediation is disclosed in the
+edge's basis. The edge generator skips this record, and V-27
+parity is computed with LACC excluded (the validator requires the
+two authored exception edges to be present and excludes them from
+the column-parity set). This exception is named-record-only and
+does not generalize: any future dual-parent JV requires its own
+owner ruling and its own named exception here before an edge is
+authored.
 
 **The membership rule (binding).** PIC membership is governed by
 §4.10 and recorded in `data/members.csv`; `members.csv` stays the
@@ -2381,3 +2387,17 @@ sites still have no residual shard.
   (Lotte endpoint unheld — §4.14.2 carries the deferral note; no
   validator change in this revision). B13 is an evidentiary hold
   and changes nothing. No field, vocabulary, or table changes.
+- **v1.7.2 — 2026-10-31 (B5 completion; applied in integration
+pass 30).** The §4.14.2 LACC dual-parent exception is in force:
+the Lotte endpoint record `ORG-004623` (Lotte Chemical USA
+Corporation, Houston TX; Tier B — the packet
+designed Tier B, restated under V-25 at application, see the
+pass-30 journal) was created through the normal record gate from the B5-completion packet; both authored
+`parent_of` edges into `ORG-004202` are minted (REL-000342,
+REL-000343; `effective_from` 2022-03-15, the date the 50/50 state
+was reached); and the validator carries the named LACC_EXCEPTION
+beside CPCHEM_EXCEPTION (V-27 requires both authored edges and
+excludes them from column parity). `ORG-004202.parent_org_id`
+stays empty by design. §4.14.2's v1.7.1 deferral paragraph is
+replaced by the exception text, and §1's B5 battery bullet is
+restated as applied. No field, vocabulary, or table changes.

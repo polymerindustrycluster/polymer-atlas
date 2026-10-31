@@ -933,8 +933,19 @@ CPCHEM_EXCEPTION = {("ORG-002911", "parent_of", "ORG-002910"),
                     ("ORG-002912", "parent_of", "ORG-002910")}
 if not CPCHEM_EXCEPTION.issubset(held_parent):
     errors.append("relationships.csv: CPChem \u00a74.14 exception edges missing \u2014 both authored parent_of edges into ORG-002910 are required (V-27)")
-if held_parent - CPCHEM_EXCEPTION != gen_parent:
-    errors.append(f"relationships.csv: parent_of edges drift from parent_org_id columns (missing {sorted(gen_parent - (held_parent - CPCHEM_EXCEPTION))}, extra {sorted((held_parent - CPCHEM_EXCEPTION) - gen_parent)}) (V-27)")
+# \u00a74.14 LACC exception (owner battery B5, 2026-10-31; schema v1.7.2):
+# ORG-004202 (LACC, LLC) is a 50/50 JV of Lotte Chemical USA
+# Corporation and Westlake Corporation \u2014 parent_org_id stays
+# empty by design and the two parent_of edges are authored by hand.
+# They are REQUIRED here and excluded from the column-parity
+# comparison below. (ORG-004623 = the id allocated to the Lotte
+# Chemical USA Corporation record at pass-30 application.)
+LACC_EXCEPTION = {("ORG-004623", "parent_of", "ORG-004202"),
+                  ("ORG-003067", "parent_of", "ORG-004202")}
+if not LACC_EXCEPTION.issubset(held_parent):
+    errors.append("relationships.csv: LACC \u00a74.14 exception edges missing \u2014 both authored parent_of edges into ORG-004202 are required (V-27)")
+if held_parent - CPCHEM_EXCEPTION - LACC_EXCEPTION != gen_parent:
+    errors.append(f"relationships.csv: parent_of edges drift from parent_org_id columns (missing {sorted(gen_parent - (held_parent - CPCHEM_EXCEPTION - LACC_EXCEPTION))}, extra {sorted((held_parent - CPCHEM_EXCEPTION - LACC_EXCEPTION) - gen_parent)}) (V-27)")
 if held_succ != gen_succ:
     errors.append(f"relationships.csv: successor_of edges drift from successor_org_id columns (V-27)")
 if held_merg != gen_merg:
