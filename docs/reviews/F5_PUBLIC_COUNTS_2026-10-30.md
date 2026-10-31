@@ -1,5 +1,7 @@
 # F5 public-count audit — pinned post-TRI snapshot
 
+> **Final F5 reconciliation, 2026-10-31:** [Completed count/accounting report](F5_FINAL_RECONCILIATION_2026-10-31.md) reproduces PIC-12 326 = 367 and resolves all seven link cases as six documented freeze holds plus one corrected applied link—not missing facilities. The 3252/3259 values 52/62 are incomplete published-cell sums. Earlier blocker statements below are historical.
+
 > **2026-10-31 source update:** [Reconciliation results](F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
 
 > **23:22 UTC continuation:** The [reconciliation addendum](F5_RECONCILIATION_ADDENDUM_2026-10-30.md) verifies the newly published creation map at current main. Coverage/denominator and full campaign-ledger gaps remain explicitly open; canonical data is unchanged.
