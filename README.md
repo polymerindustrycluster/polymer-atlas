@@ -89,12 +89,13 @@ contact data, tombstone — never delete.
 
 ## Status
 
-**Pinned inventory — 2026-10-30:** source commit
-`eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05` (observed 21:32 UTC).
-The canonical CSVs contain **4,179 organization rows, 5,770 site rows and
+**Inventory — 2026-10-31:** reconciled at the F5 source pin
+`eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05` and updated by integration
+passes 26–28 (the F1–F4 follow-up packets, applied 2026-10-31).
+The canonical CSVs contain **4,179 organization rows, 5,773 site rows and
 206 ecosystem rows**, all statuses and all verification tiers, including
 candidates and tombstones. These are not counts of active companies or unique
-ultimate parents. There are also 2,373 registry-link rows and 12,876 evidence rows.
+ultimate parents. There are also 2,376 registry-link rows and 12,968 evidence rows.
 
 See the [public-count audit](docs/reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for
 current state/county cuts, TRI accounting, evidence/matching refreshes, input
