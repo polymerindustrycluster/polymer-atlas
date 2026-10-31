@@ -1,5 +1,7 @@
 # Open issues — read before trusting SCHEMA.md rulings blindly
 
+> **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
+
 Schema v1.0 (docs/SCHEMA.md) was drafted by a research agent on 2026-10-28
 and is strong overall, but the following items are flagged by the
 coordinator for human ruling. Do not treat them as settled.

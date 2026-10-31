@@ -1,0 +1,221 @@
+{
+  "county_blank_values": 97,
+  "county_codes": [
+    "325211",
+    "325212",
+    "325991",
+    "326111",
+    "326112",
+    "326113",
+    "326121",
+    "326122",
+    "326130",
+    "326140",
+    "326150",
+    "326160",
+    "326191",
+    "326192",
+    "326199",
+    "326211",
+    "326212",
+    "326220",
+    "326291",
+    "326299"
+  ],
+  "county_sources": {
+    "BLS QCEW 2023 annual averages via BLS CEW API, private ownership (own_code=5)": 96,
+    "Census County Business Patterns 2023 (national county file cbp23co)": 35,
+    "Neither source published": 97,
+    "Neither source \u2014 code not in NAICS 2017": 12
+  },
+  "excluded_allocation_classes": {
+    "20": {
+      "evidence_create": 859,
+      "evidence_create_conforming": 3,
+      "next_free_unused": 2,
+      "registry_link_create": 371,
+      "registry_link_create_derived": 14
+    },
+    "21": {
+      "evidence": 903,
+      "next_free_after_pass": 3,
+      "org_edit_hq": 2,
+      "org_edit_watch": 1,
+      "org_flip_duplicate": 2,
+      "org_fold": 1,
+      "registry_link": 283,
+      "site_repoint": 1
+    },
+    "22": {
+      "evidence": 981,
+      "next_free_after_pass": 3,
+      "org_edit_watch": 3,
+      "registry_link": 277
+    },
+    "23": {
+      "evidence": 1189,
+      "next_free_after_pass": 3,
+      "org_create_watch": 4,
+      "org_edit_hq": 1,
+      "org_flip_no_create": 3,
+      "org_merge_fold": 1,
+      "registry_link": 283,
+      "site_dup_no_create": 2,
+      "site_repoint": 1
+    },
+    "24": {
+      "evidence": 1027,
+      "next_free_after_pass": 3,
+      "org_create_watch": 1,
+      "org_flip_no_create": 2,
+      "registry_link": 253,
+      "site_note_append": 1
+    },
+    "25": {
+      "evidence_mint_org_grain": 234,
+      "evidence_packet": 999,
+      "flip_to_held": 1,
+      "link_forward": 3,
+      "link_new_site": 254,
+      "rekey_to_existing": 3
+    }
+  },
+  "frame_exact_match": true,
+  "frame_pass_type_counts": {
+    "20": {
+      "ORG": 96,
+      "SITE": 177
+    },
+    "21": {
+      "ORG": 5,
+      "SITE": 282
+    },
+    "22": {
+      "ORG": 50,
+      "SITE": 273
+    },
+    "23": {
+      "ORG": 163,
+      "SITE": 280
+    },
+    "24": {
+      "ORG": 134,
+      "SITE": 251
+    },
+    "25": {
+      "ORG": 234,
+      "SITE": 254
+    }
+  },
+  "ledger_any_creation": 1383,
+  "ledger_class_counts": {
+    "P0": 252,
+    "P1": 438,
+    "P2": 171,
+    "P3": 571,
+    "P4": 365
+  },
+  "ledger_creation_join_exact": true,
+  "ledger_link_org_populated": 1648,
+  "ledger_link_site_populated": 1648,
+  "ledger_unique_trifids": 1797,
+  "link_join_issues": [
+    [
+      "77511QNTMC2MILE",
+      "unresolved design reference",
+      "NEWSITE:lyondellbasell-chocolate-bayou-alvin-tx",
+      []
+    ],
+    [
+      "77511QNTMC2MILE",
+      "missing canonical registry link",
+      "ORG-000033"
+    ],
+    [
+      "25401KRPLS2011M",
+      "unresolved design reference",
+      "NEWSITE:maax-martinsburg",
+      []
+    ],
+    [
+      "25401KRPLS2011M",
+      "missing canonical registry link",
+      "ORG-001409"
+    ],
+    [
+      "46563KRPLS1001N",
+      "unresolved design reference",
+      "NEWSITE:maax-plymouth",
+      []
+    ],
+    [
+      "46563KRPLS1001N",
+      "missing canonical registry link",
+      "ORG-001409"
+    ],
+    [
+      "9176WPCFCR1671S",
+      "unresolved design reference",
+      "NEWSITE:elite-comfort-ontario",
+      []
+    ],
+    [
+      "9176WPCFCR1671S",
+      "missing canonical registry link",
+      "ORG-002216"
+    ],
+    [
+      "5254WNHNCT299IN",
+      "unresolved design reference",
+      "NEWSITE:inhance-centerville-ia",
+      []
+    ],
+    [
+      "5254WNHNCT299IN",
+      "missing canonical registry link",
+      "ORG-002181"
+    ],
+    [
+      "92807XRXSC1210N",
+      "unresolved design reference",
+      "NEWSITE:xerxes-anaheim-ca",
+      []
+    ],
+    [
+      "92807XRXSC1210N",
+      "missing canonical registry link",
+      "ORG-003367"
+    ],
+    [
+      "81503CLRDC56924",
+      "missing canonical registry link",
+      "ORG-003165"
+    ],
+    [
+      "81503CLRDC56924",
+      "site operator differs",
+      "SITE-004546",
+      "ORG-003165",
+      "ORG-004005"
+    ]
+  ],
+  "source_sha256": {
+    "tasks/f5-source-packet/README.md": "88d250fab12cd85011061cf1f87936cf0cf411244d4af8dc7333092c513b3059",
+    "tasks/f5-source-packet/build_f1_mapping.py": "e66fa2f662c17bbf8b088e67b16bc60923c26ea13fbd97707d1c6133c1975448",
+    "tasks/f5-source-packet/frame_allocations_pass20.csv": "0bb98b314b13eaa7cdd68aec5d097a2f3613a0664dd3a5f7751484a7acc63805",
+    "tasks/f5-source-packet/frame_allocations_pass21.csv": "6790c2679fc6381dbde6990abfa80426f83d185a98a209aad2d8e3c76b802741",
+    "tasks/f5-source-packet/frame_allocations_pass22.csv": "59ecb8a879c17c3c7c8b1715588575e5ac757c619d6ee5196b7719054994fed9",
+    "tasks/f5-source-packet/frame_allocations_pass23.csv": "861a2edb00fe7bbc7791dffcb6f7065f3d62f2dc23c680b77f8015da77f91c21",
+    "tasks/f5-source-packet/frame_allocations_pass24.csv": "84a87eaecd9e462447c3143c79bae5946a462e4b31328e6703cc2d1885e32c7a",
+    "tasks/f5-source-packet/frame_allocations_pass25.csv": "2a2325d7ed6a0785f8e2fde007b8d93d0de9f1816617eeb3e22faa32480899fd",
+    "tasks/f5-source-packet/frame_design_key_index.csv": "ba570c29fc8a7d79cadce48a814b06596d3983fbaef6fd8367d4d5820256ea91",
+    "tasks/f5-source-packet/qcew_denominators_by_state_2023.csv": "16b492365a9e77b5465c9320c4cc1129a8ba1e9834b5dc31fee619c51da1a281",
+    "tasks/f5-source-packet/qcew_denominators_pic12_county_2023.csv": "c0aa54ac05ea293e89516f634c32a3b582d7b61b55a2d50cb432e7e5fa50abcd",
+    "tasks/f5-source-packet/tri_worklist_verdict_ledger.csv": "cddb8a0a29ec2b6d3ad5103aca94de4691d480cceea703f508e8cb3df36ae633"
+  },
+  "verdict_counts": {
+    "REJECT": 84,
+    "STILL_UNCERTAIN": 56,
+    "VERIFIED": 1657
+  }
+}

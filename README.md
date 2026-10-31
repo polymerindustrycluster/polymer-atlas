@@ -1,5 +1,9 @@
 # Polymer Industry Atlas — Ohio & Northeast Ohio
 
+> **Final F5 reconciliation, 2026-10-31:** [Completed count/accounting report](docs/reviews/F5_FINAL_RECONCILIATION_2026-10-31.md) reproduces PIC-12 326 = 367 and resolves all seven link cases as six documented freeze holds plus one corrected applied link—not missing facilities. The 3252/3259 values 52/62 are incomplete published-cell sums. Earlier blocker statements below are historical.
+
+> **2026-10-31 source update:** [Reconciliation results](docs/reviews/F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
+
 An open, source-backed database of the polymer / plastics / rubber industry:
 companies, plants, materials producers, the value chain, downstream OEMs, and
 the ecosystem (universities, associations, nonprofits, economic development)
@@ -12,12 +16,10 @@ the same rules, the same schema, and pull requests.
 
 ## Why this exists
 
-There is no central database of Ohio's polymer industry. Reported counts
-range from ~600 verified core plastics manufacturers (JobsOhio / Shale
-Crescent USA study, after manual cleaning of 1,100+ raw hits) to 900+ once
-rubber, compounding, materials, and the value chain are included. The count
-depends entirely on the definition — so this database **reports every ring
-and every unit separately, and never publishes a bare headline number.**
+Reported industry totals depend on geography, year, industrial definition and
+whether the unit is a parent organization or a physical establishment. This
+Atlas reports those units separately. Historical external estimates are in
+`docs/SOURCE_COUNT_RECONCILIATION.md`; they are not current Atlas totals.
 
 ## How the data is organized
 
@@ -87,7 +89,19 @@ contact data, tombstone — never delete.
 
 ## Status
 
-Scaffold v0.1 — 2026-10-28. Seeded with the 8 primary-source-verified
-companies from PIC's Oct 2026 prototype directory plus 3 ecosystem anchors.
-Coverage build (PIC-12 counties → Ohio → national tiers) in phases;
-see `tasks/QUEUE.md`.
+**Pinned inventory — 2026-10-30:** source commit
+`eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05` (observed 21:32 UTC).
+The canonical CSVs contain **4,179 organization rows, 5,770 site rows and
+206 ecosystem rows**, all statuses and all verification tiers, including
+candidates and tombstones. These are not counts of active companies or unique
+ultimate parents. There are also 2,373 registry-link rows and 12,876 evidence rows.
+
+See the [public-count audit](docs/reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for
+current state/county cuts, TRI accounting, evidence/matching refreshes, input
+fingerprints, and Ohio/Pennsylvania QCEW limitations. Count ratios are not
+matched-facility coverage; a missing denominator is not zero.
+
+Historical scaffold v0.1 (2026-10-28) began with 8 prototype organization rows
+and 3 ecosystem anchors. The coverage build has since expanded beyond Ohio;
+see `tasks/QUEUE.md`. Historical reports retain their dates and must not be
+quoted as today's inventory.
