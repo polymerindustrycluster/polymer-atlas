@@ -1,5 +1,7 @@
 # PIC-12 Coverage Report — Atlas establishments vs. official denominators
 
+> **Final F5 reconciliation, 2026-10-31:** [Completed count/accounting report](reviews/F5_FINAL_RECONCILIATION_2026-10-31.md) reproduces PIC-12 326 = 367 and resolves all seven link cases as six documented freeze holds plus one corrected applied link—not missing facilities. The 3252/3259 values 52/62 are incomplete published-cell sums. Earlier blocker statements below are historical.
+
 > **2026-10-31 source update:** [Reconciliation results](reviews/F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
 
 > **Snapshot notice — F5 audit, 2026-10-30:** Counts and source claims below are historical to their stated pass/date, not current inventory or newly verified external statistics. See the [pinned count audit](reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for current units/filters, corrections, reproducible results and missing-denominator limitations. Historical dates and observations are retained.
