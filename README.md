@@ -1,5 +1,7 @@
 # Polymer Industry Atlas — Ohio & Northeast Ohio
 
+> **Final F5 reconciliation, 2026-10-31:** [Completed count/accounting report](docs/reviews/F5_FINAL_RECONCILIATION_2026-10-31.md) reproduces PIC-12 326 = 367 and resolves all seven link cases as six documented freeze holds plus one corrected applied link—not missing facilities. The 3252/3259 values 52/62 are incomplete published-cell sums. Earlier blocker statements below are historical.
+
 > **2026-10-31 source update:** [Reconciliation results](docs/reviews/F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
 
 An open, source-backed database of the polymer / plastics / rubber industry:
