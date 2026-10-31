@@ -1,5 +1,7 @@
 # F5 reconciliation addendum — remaining open item
 
+> **2026-10-31 source update:** [Reconciliation results](F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
+
 **Current-main observation: 2026-10-30 23:22 UTC**, pin
 `4a406991c9466b10896f17913f9995b541b39713`.
 F5 remains claimed on `agent/codex/f5-public-counts`, draft PR #10; this is a
