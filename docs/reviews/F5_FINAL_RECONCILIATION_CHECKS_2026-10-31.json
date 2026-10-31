@@ -1,0 +1,72 @@
+{
+  "data_pin": "eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05",
+  "disposition_checks": [
+    {
+      "disposition": "HELD_AT_FREEZE_S5_BAR",
+      "result": "hold consistent: no canonical TRI link, no site-creation allocation",
+      "trifid": "77511QNTMC2MILE"
+    },
+    {
+      "disposition": "HELD_AT_FREEZE_S5_BAR",
+      "result": "hold consistent: no canonical TRI link, no site-creation allocation",
+      "trifid": "25401KRPLS2011M"
+    },
+    {
+      "disposition": "HELD_AT_FREEZE_S5_BAR",
+      "result": "hold consistent: no canonical TRI link, no site-creation allocation",
+      "trifid": "46563KRPLS1001N"
+    },
+    {
+      "disposition": "HELD_AT_FREEZE_S5_BAR",
+      "result": "hold consistent: no canonical TRI link, no site-creation allocation",
+      "trifid": "9176WPCFCR1671S"
+    },
+    {
+      "disposition": "HELD_AT_FREEZE_LIVENESS",
+      "result": "hold consistent: no canonical TRI link, no site-creation allocation",
+      "trifid": "5254WNHNCT299IN"
+    },
+    {
+      "disposition": "HELD_AT_FREEZE_LIVENESS",
+      "result": "hold consistent: no canonical TRI link, no site-creation allocation",
+      "trifid": "92807XRXSC1210N"
+    },
+    {
+      "disposition": "APPLIED_AS_FORWARD_LINK_FREEZE_CORRECTION",
+      "result": "applied forward link matches canonical operator and pass-23 allocation",
+      "trifid": "81503CLRDC56924"
+    }
+  ],
+  "disposition_counts": {
+    "APPLIED_AS_FORWARD_LINK_FREEZE_CORRECTION": 1,
+    "HELD_AT_FREEZE_LIVENESS": 2,
+    "HELD_AT_FREEZE_S5_BAR": 4
+  },
+  "published_cell_sums": {
+    "3252": 52,
+    "3259": 62,
+    "326": 367,
+    "3261": 283,
+    "3262": 84
+  },
+  "sha256": {
+    "tasks/f5-source-packet/README.md": "5a00bd7f47c60c470c4bde0dbe837d8c381cb0e4e1ad1f54d9075d8087c755da",
+    "tasks/f5-source-packet/ledger_link_dispositions.csv": "801ca8e3c101ccaaacda41770a7a8652312ccde239faabb6978893611a6f5796",
+    "tasks/f5-source-packet/qcew_pic12_county_aggregates_2023.csv": "4f4c4b028e08eae47d53beadd528a635f696a4d17c2c3596b737b8188ecd37e9"
+  },
+  "source_pin": "e7ea638fa0ce0b3ef93d73ab4649a82fabb76df3",
+  "unique_aggregate_cells": 60,
+  "unknown_counties_by_code": {
+    "3252": [
+      "Mahoning",
+      "Trumbull"
+    ],
+    "3259": [
+      "Ashtabula",
+      "Mahoning"
+    ],
+    "326": [],
+    "3261": [],
+    "3262": []
+  }
+}
