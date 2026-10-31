@@ -9,7 +9,7 @@ claim/queue preserved; no rebase, data edits, IDs, merges or main pushes.
 ## What closes, and what does not
 
 - **Closed:** PA/OH state denominator availability and packet-level provenance;
-  51 unique jurisdiction extracts checked, 2023 separated from 2024 sensitivity.
+  51 unique jurisdiction rows in the banked derived extract checked, 2023 separated from 2024 sensitivity.
 - **Closed:** ledger uniqueness/outcome accounting and all creation joins:
   1,797 unique TRIFIDs; 1,657 VERIFIED / 84 REJECT / 56 STILL_UNCERTAIN.
 - **Closed:** independent allocation/design reconstruction reproduces every
@@ -88,10 +88,10 @@ with 39007 is explicit and consistent in all Ashtabula packet rows; this FIPS
 correction is distinct from validating the aggregate 367. No inferred suppressed
 values or mixed-system lower bound is published as coverage.
 
-**Smallest outstanding input:** official QCEW-2023 own_code=5, qtr=A,
-size_code=0, annual_avg_estabs for the 12 PIC-12 counties at 326/3261/3262
-(36 rows), with FIPS/area titles, disclosure flags and source provenance;
-add 3252/3259 (24 rows) to settle those published family denominators and the
+**Smallest input to settle 367:** the 12 PIC-12 county NAICS-326 aggregate
+rows from official QCEW-2023, own_code=5, qtr=A, size_code=0, annual_avg_estabs,
+with FIPS/area titles, disclosure flags and source provenance. Add 3261/3262
+(24 more rows; 36 total) for the subfamilies; add 3252/3259 (24 more rows) to settle those published family denominators and the
 old 62–63 discrepancy. The source README supplies only the API URL template,
 not these aggregate rows. Current PIC-12 numerator counts remain 423/437 for
 NAICS326; conditional ratios against 367 in the older report remain conditional.
@@ -128,7 +128,11 @@ comparison passes. TRI subset 589/1,383 = 1,972; NOT_TRI 93/134 = 227; P3=771.
 Ledger link columns sometimes contain packet design keys rather than canonical
 IDs. Resolve using unique explicit allocation keys (including earlier passes),
 and site-allocation parent fields joined to design org_ref for named aliases;
-never equate a proposed design with a held site. After these resolutions:
+never equate a proposed design with a held site. Examples: ProVia’s explicit
+`flip_to_held` resolves to ORG-001053; Zeus’s site allocation parent joined to
+design org_ref resolves its NEW alias to ORG-003941 (also corroborated by its
+existence/scope evidence allocation references). These are metadata crosswalks,
+not name guesses. After these resolutions:
 
 | TRIFID | Ledger proposed link | Observed issue at pin |
 |---|---|---|
@@ -151,7 +155,8 @@ is a source-accounting mismatch, not a verdict that any facility is nonexistent.
 ## Reproduction, fingerprints and validation
 
 `F5_SOURCE_RECONCILIATION_CHECKS_2026-10-31.json` retains every source-file
-SHA-256, excluded allocation-class counts, per-pass totals and exact join issues.
+SHA-256, excluded allocation-class counts, per-pass totals and exact join issues. This is the compact checker output: the
+1,797-entry `resolved_links` array is omitted; all other fields are unchanged.
 The code below is the independently run checker (save outside the repository,
 run from the pinned current-main checkout); it writes only `/tmp` analysis.
 No canonical modification, network call or ID allocation occurs.
