@@ -259,6 +259,16 @@ above:
   polymer presence is recorded at institution grain (ecosystem and
   program rows keyed to the unit that actually holds it), never
   borrowed into another unit's adjudication.
+- **Polymerized-protein therapeutics satisfy the polymer-work
+  test (owner ruling 2026-10-31, the Palmer precedent).** For
+  people records (§4.9), Gate B is met where the polymer is the
+  person's research object: engineering polymerized or crosslinked
+  proteins — polymerized hemoglobins, polymerized albumins — as
+  therapeutics is polymer research, even when the person's stated
+  program sits in an application field such as transfusion
+  medicine. The witness remains person-level and on the
+  institution's own pages; the ruling settles the class, not any
+  individual's evidence.
 
 ---
 
