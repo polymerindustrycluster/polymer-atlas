@@ -74,3 +74,31 @@ build metadata only — **no canonical data files are touched**.
   NOT_TRI orgs = 93, for 227 NOT_TRI records in total).
 - Class distribution of the frame: P0 0 · P1 417 · P2 180 · P3 771 ·
   P4 604 · NOT_TRI 227.
+
+## Addendum — 2026-10-31 (integrator response to the F5 reconciliation report)
+
+**PIC-12 aggregate rows.** `qcew_pic12_county_aggregates_2023.csv` publishes
+the county-level aggregate cells behind the PIC-12 family denominators,
+extracted from the banked BLS QCEW 2023 county area files under the same
+filters (`own_code=5`, `qtr=A`, `size_code=0`, `annual_avg_estabs`):
+12 counties × NAICS 326 / 3261 / 3262 / 3252 / 3259 (60 rows). Sums of the
+published cells: **326 = 367** (all 12 counties publish — the total is now
+independently reproducible), **3261 = 283**, **3262 = 84**, **3252 = 52**,
+**3259 = 62** — settling the earlier 62–63 uncertainty at **62**. Four
+subfamily cells are not published / no row (Ashtabula 3259; Mahoning 3252
+and 3259; Trumbull 3252): recorded blank as unknown, never zero; the 3252 /
+3259 family sums are therefore the sums of published cells, as the campaign
+has always used them.
+
+**Ledger link semantics.** In `tri_worklist_verdict_ledger.csv`, the
+`link_org_id` / `link_site_id` / `link_match_basis` columns carry the
+**packet-proposed** link outcome from the wave packets. The **applied**
+state of record is `data/registry_links.csv` plus the pass journals. The
+two differ exactly where a freeze held a design out or corrected an
+attribution; the seven such cases among VERIFIED facilities are
+crosswalked in `ledger_link_dispositions.csv` (six explicit freeze holds —
+four §5-bar holds in pass 21, two liveness holds in pass 22 — and one
+applied forward link under a freeze-corrected org, Cray Valley Grand
+Junction). A lane VERIFIED verdict is therefore not synonymous with
+integration: disposition is a separate axis, and no canonical record was
+changed by this addendum.
