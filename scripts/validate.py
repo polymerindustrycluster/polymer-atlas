@@ -76,7 +76,7 @@ GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "c
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
               "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI"}
 CREDENTIALS = {"phd", "ms", "bs", "aas_associate", "certificate", "registered_apprenticeship",
-               "incumbent_worker_training", "noncredit_workforce"}
+               "incumbent_worker_training", "noncredit_workforce", "minor"}  # minor added at v1.7.3 (owner ruling R3)
 ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
               "testing_characterization_access", "lab_facility_access", "licensing_tech_transfer",
               "training_seats_open_enrollment", "customized_employer_training"}
@@ -86,7 +86,8 @@ PROGRAM_TYPES = {"degree", "certificate", "apprenticeship", "center", "training"
 LEVEL_MAP = {"phd": "doctorate", "ms": "master", "bs": "bachelor",
              "aas_associate": "associate", "certificate": "certificate",
              "registered_apprenticeship": None, "incumbent_worker_training": None,
-             "noncredit_workforce": None}
+             "noncredit_workforce": None,
+             "minor": None}  # [v1.7.3] a minor derives no level of its own; it rides its host program's level
 LEVELS = {"certificate", "associate", "bachelor", "master", "doctorate", "none"}
 CIP_SOURCE_TYPES = {"institution_published", "ipeds_listing", "researcher_inferred"}
 ROLES = {"professor", "associate_professor", "assistant_professor", "research_professor",
@@ -333,7 +334,25 @@ for i, r in enumerate(eco, 2):
 # (design identifiers_design.md rule V-13, renumbered.) No completeness
 # error: a university_college row without identifiers is legal; absence is
 # visible in the file, not a validation failure.
-seen_ipeds, seen_ror = {}, {}
+# [v1.7.3] U1 amendment (owner ruling 2026-10-31, question U1): a
+# university_college sub-unit row carries its parent institution's UNITID
+# by reference, so one UNITID may legitimately appear on several rows.
+# Uniqueness binds the institution-grain holder: exactly one carrier per
+# UNITID whose own parent_institution_org_id does not name another carrier
+# of the same UNITID; every other carrier must name that holder as its
+# parent_institution_org_id. A repeat in any other shape is a duplicate.
+_ipeds_carriers = {}
+for _r in eco:
+    _ip = (_r.get("ipeds_unitid") or "").strip()
+    if _ip:
+        _ipeds_carriers.setdefault(_ip, []).append((_r["org_id"] or "").strip())
+_ipeds_canonical = {}
+for _ip, _oids in _ipeds_carriers.items():
+    _idset = set(_oids)
+    _by_oid = {(_r["org_id"] or "").strip(): _r for _r in eco}
+    _ipeds_canonical[_ip] = [o for o in _oids
+                             if ((_by_oid[o].get("parent_institution_org_id") or "").strip() not in _idset)]
+seen_ror = {}
 for i, r in enumerate(eco, 2):
     oid = r["org_id"].strip()
     sub = (r.get("ecosystem_subtype") or "").strip()
@@ -344,9 +363,11 @@ for i, r in enumerate(eco, 2):
     if ip:
         if not re.fullmatch(r"\d{6}", ip):
             errors.append(f"ecosystem.csv:{i} {oid} ipeds_unitid {ip!r} is not a 6-digit IPEDS UnitID")
-        if ip in seen_ipeds:
-            errors.append(f"ecosystem.csv:{i} {oid} ipeds_unitid duplicates {seen_ipeds[ip]}")
-        seen_ipeds[ip] = oid
+        _canon = _ipeds_canonical.get(ip, [])
+        if len(_canon) != 1:
+            errors.append(f"ecosystem.csv:{i} {oid} ipeds_unitid {ip} has {len(_canon)} institution-grain holders — exactly one required (V-14 as amended at v1.7.3, U1)")
+        elif oid != _canon[0] and (r.get("parent_institution_org_id") or "").strip() != _canon[0]:
+            errors.append(f"ecosystem.csv:{i} {oid} ipeds_unitid {ip} duplicates {_canon[0]} without naming it as parent_institution_org_id (V-14 as amended at v1.7.3, U1)")
     if rr:
         if not re.fullmatch(r"https://ror\.org/[0-9a-z]{9}", rr):
             errors.append(f"ecosystem.csv:{i} {oid} ror_id {rr!r} is not a canonical ROR URI")

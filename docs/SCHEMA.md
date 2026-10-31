@@ -1,7 +1,15 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.2 — 2026-10-31 (B5 completion micro-revision:
+**Version:** v1.7.3 — 2026-10-31 (academic-layer owner rulings
+micro-revision: R1 — people scope extended to federal-lab research
+staff (§4.9; AGENTS.md §6 amended in the same pass); R2 — the
+materials-candidate adjudication rule codified in §1 with leg (a)'s
+unit-scope line; R3 — `minor` added to the credential vocabulary
+(§4.6 / §4.11) and encoded on PROG-000109 and PROG-000118; R4 —
+sub-unit ecosystem rows carry the parent institution's UNITID
+(§4.6; V-14 amended), 14 rows filled; applied in integration
+pass 33). Prior: v1.7.2 — 2026-10-31 (B5 completion micro-revision:
 §4.14.2's LACC dual-parent exception applied — the Lotte endpoint
 record `ORG-004623` (Lotte Chemical USA Corporation) created, both
 authored `parent_of` edges into `ORG-004202` minted, and the
@@ -222,6 +230,35 @@ table above:
   `effective_from` 2022-03-15) are in force, the validator carries
   the named LACC exception, and `ORG-004202.parent_org_id` stays
   empty by design.
+
+### Owner rulings — 2026-10-31 (academic layer) **[v1.7.3]**
+
+Dated doctrine settled by the owner's 2026-10-31 academic-layer
+rulings (all items as recommended; applied in integration pass 33).
+These are binding precedent of the same standing as the rulings
+above:
+
+- **Materials-candidate adjudication rule — the three legs (R2).**
+  A candidate academic unit in the candidate class (a general
+  materials / materials-science unit not itself polymer-named) is
+  promoted into the programs frame only on one of three legs:
+  (a) a polymer center or concentration is **named inside the
+  adjudicated unit itself**; (b) the unit publishes a
+  **polymer-named credential**; or (c) **at least two of the unit's
+  current faculty state polymer-specific research areas** on the
+  unit's own pages. Candidate volume — completions, enrollment,
+  unit size — never qualifies a unit under any leg.
+- **Leg (a) is unit-scoped (R2, the Wave B F1 line).** A polymer
+  center or concentration elsewhere at the same university does not
+  qualify the adjudicated unit: UW–Madison's Polymer Engineering
+  Center is housed in and led by Mechanical Engineering and does
+  not promote the Materials Science & Engineering unit, however the
+  university's pages cross-list it; Auburn's Center for Polymer and
+  Advanced Composites is a college-level, ChemE-directed center and
+  does not promote Auburn's materials unit. Institution-grain
+  polymer presence is recorded at institution grain (ecosystem and
+  program rows keyed to the unit that actually holds it), never
+  borrowed into another unit's adjudication.
 
 ---
 
@@ -801,7 +838,7 @@ Use for Ring 5 only. Ecosystem entities get a Parent-shaped record PLUS this ext
 > **Subtype waiver (owner ruling 2026-10-30; integration pass 15):** a merged-status tombstone row in `ecosystem.csv` that names a `programs.csv` successor record is exempt from the `ecosystem_subtype` MUST above. The tombstone exists so a published org_id keeps resolving (AGENTS.md §3: never delete; ids are never reused); its live substance sits on the successor program row, and forcing a subtype value onto it would fabricate a classification the record no longer carries. The exemption is documented here and in `scripts/validate.py` at V-8; it applies to merged tombstones only — every live ecosystem record still carries a subtype. E.g., association membership criteria, lab access model |
 | `parent_institution_org_id` | FK, nullable | Nice→MUST if center-within-university | E.g., a polymer center inside a university: center may be its own Ecosystem record linked to the university Parent — see §5.2 |
 | `ipeds_unitid` | string (6 digits) | university_college rows | The institution's UNITID in the IPEDS Institutional Characteristics directory (NCES). An identity join key only: it asserts *which institution this record is*, never that a program exists — program claims are decided by the named-program test on the institution's own pages (§4.11), and third-party/IPEDS program attributions are leads, not evidence (Lakeland rule, Phase B 2026-10-29). |
-| `ror_id` | string (canonical URI `https://ror.org/…`) | university_college rows | The institution's Research Organization Registry record. Same doctrine as `ipeds_unitid`: identity evidence, never activity or program evidence. Validator V-14 confines both fields to `university_college` rows and enforces their uniqueness across the file — the same campus cannot be entered twice under two names. |
+| `ror_id` | string (canonical URI `https://ror.org/…`) | university_college rows | The institution's Research Organization Registry record. Same doctrine as `ipeds_unitid`: identity evidence, never activity or program evidence. Validator V-14 confines both fields to `university_college` rows and enforces their uniqueness across the file — the same campus cannot be entered twice under two names. **[v1.7.3] (owner ruling 2026-10-31, question U1):** a `university_college` sub-unit row (a center, TTO, or similar child whose `parent_institution_org_id` names a held university) carries the **parent institution's** `ipeds_unitid` by reference; for `ipeds_unitid`, uniqueness binds the institution-grain holder — V-14 as amended admits a repeated UNITID only where every additional carrier names that holder as its `parent_institution_org_id`. `ror_id` uniqueness is unchanged. |
 
 
 **[v1.2] Record grains (proposal S2, as drafted by Phase A).** Ecosystem records carry a
@@ -825,7 +862,7 @@ apprenticeship; the program, not the university, is the unit an introduction tar
 | `program_name` | string | **MUST** | As the institution styles it; the named program is the Ring 5 inclusion evidence |
 | `parent_institution_org_id` | FK → institution record (organizations ∪ ecosystem) | **MUST** | §4.6's `parent_institution_org_id`, promoted to MUST at this grain |
 | `program_type` | enum | **MUST** | `degree` \| `certificate` \| `apprenticeship` \| `center` \| `training` — exactly one; a center that also grants degrees is `center`, with the degrees in `credential_types[]` |
-| `credential_types[]` | enum[] | MUST **only for** `degree`/`certificate`/`apprenticeship` types | `phd` · `ms` · `bs` · `aas_associate` · `certificate` · `registered_apprenticeship` · `incumbent_worker_training` · `noncredit_workforce`. **Calibration fix (Phase A, 2026-10-29): as an unconditional MUST this field failed every center in the sample (0/7 grant credentials); it is therefore conditioned on program type, and `center`/`training` records carry it empty by design.** |
+| `credential_types[]` | enum[] | MUST **only for** `degree`/`certificate`/`apprenticeship` types | `phd` · `ms` · `bs` · `aas_associate` · `certificate` · `registered_apprenticeship` · `incumbent_worker_training` · `noncredit_workforce` · `minor` **[v1.7.3]**. **Calibration fix (Phase A, 2026-10-29): as an unconditional MUST this field failed every center in the sample (0/7 grant credentials); it is therefore conditioned on program type, and `center`/`training` records carry it empty by design.** |
 | `program_url` | URL | **MUST** | The program's own public page (Tier A primary source) |
 | `specialty_processes[]` / `specialty_materials[]` | §3.1 / §3.2 vocab | as evidenced | Never inferred beyond the program's own page. Characterization facilities fill neither — they tag `research_areas[characterization_methods]` (§3.5) |
 | `research_areas[]` | §3.5 supplement | research programs only | §3 terms first wherever they honestly fit |
@@ -902,10 +939,25 @@ records "unregistered" or "no parent". EIN appears only via ProPublica for nonpr
 is adopted. FRS / TRI / FDA registries join by the same mechanics when a wave produces
 org-keyed matches — no rows are minted speculatively.
 
-### 4.9 People records **[v1.2]** (`data/people.csv`) — professors only
+### 4.9 People records **[v1.2]** (`data/people.csv`) — professors; federal-lab research staff **[v1.7.3]**
 
 Structure adopted at this revision; **records are built only in their own scoped
 professor passes** — adopting this section creates no records.
+
+**Scope extension [v1.7.3] (owner ruling 2026-10-31, R1).** Research
+staff at federal laboratories with real polymer programs are in scope
+for this table alongside professors, under the identical public-facts
+discipline: every field an independently public professional fact,
+cited to the institution's own public pages. The verification standard
+adapts at lab grain — the person's own institution is the laboratory,
+and its public staff directory or program pages must style the person
+as research staff with polymer research stated. The affiliation
+recorded is the laboratory; a joint university appointment is recorded
+and verified at the primary home institution. The `role` controlled
+vocabulary below is the professor vocabulary; controlled values for
+lab-staff stylings are added with the first lab-staff records, and
+until then the lab's own words ride in `role_as_published`. This
+extension creates no records by itself.
 
 | Field | Type | Notes |
 |---|---|---|
@@ -923,8 +975,9 @@ professor passes** — adopting this section creates no records.
 **Hard constraints (validator-enforced):** no email, phone, or address field exists in
 this class; the PIC CRM is **not an admissible source** — no field, name, or record's
 existence may derive from CRM data, and there is no CRM export/extract/cross-check step
-for people anywhere in the pipeline; researchers, staff scientists, and postdocs are
-not recorded; removal on request is honored at the next pass.
+for people anywhere in the pipeline; researchers, staff scientists, and postdocs at
+universities are not recorded — federal-laboratory research staff stand only under
+the [v1.7.3] scope extension above; removal on request is honored at the next pass.
 
 ### 4.10 PIC membership **[v1.2]**
 
@@ -967,8 +1020,8 @@ office-grain rows (§4.6); institutions remain ecosystem institution rows
 | `institution_org_id` | FK → organizations ∪ ecosystem | **MUST** | The institution the program belongs to |
 | `program_name` | string | **MUST** | As the institution styles it; the named program is the Ring 5 inclusion evidence |
 | `program_type` | enum | **MUST** | `degree` \| `certificate` \| `apprenticeship` \| `center` \| `training` \| `lab_facility` \| `course` — exactly one; a center that also grants degrees is `center`, with the degrees in `credential_types[]` |
-| `credential_types[]` | enum[] | MUST only for `degree`/`certificate`/`apprenticeship` types | `phd` · `ms` · `bs` · `aas_associate` · `certificate` · `registered_apprenticeship` · `incumbent_worker_training` · `noncredit_workforce` (the v1.2 conditioning carries over: centers grant no credentials and carry it empty by design) |
-| `level[]` | enum[] | **MUST** | `certificate` \| `associate` \| `bachelor` \| `master` \| `doctorate` \| `none`. Derived from `credential_types[]` by the fixed map (phd→doctorate, ms→master, bs→bachelor, aas_associate→associate, certificate→certificate; apprenticeship/training credentials map to none); validator V-15 enforces the derivation, so the two fields cannot drift |
+| `credential_types[]` | enum[] | MUST only for `degree`/`certificate`/`apprenticeship` types | `phd` · `ms` · `bs` · `aas_associate` · `certificate` · `registered_apprenticeship` · `incumbent_worker_training` · `noncredit_workforce` · `minor` **[v1.7.3]** (the v1.2 conditioning carries over: centers grant no credentials and carry it empty by design) |
+| `level[]` | enum[] | **MUST** | `certificate` \| `associate` \| `bachelor` \| `master` \| `doctorate` \| `none`. Derived from `credential_types[]` by the fixed map (phd→doctorate, ms→master, bs→bachelor, aas_associate→associate, certificate→certificate; apprenticeship/training credentials map to none; `minor` **[v1.7.3]** maps to none of its own — it derives no level and rides the level of its host program's degree credentials); validator V-15 enforces the derivation, so the two fields cannot drift |
 | `cip_code` | string `NN.NNNN` (CIP-2020) | nullable | **Data, never evidence** — see the inclusion rule below. Carries `cip_source_type` (`institution_published` \| `ipeds_listing` \| `researcher_inferred`), the §2.1 provenance grammar applied to CIP; the pair is recorded together or not at all |
 | `unit_department` | string | Nice | The administering school/department/unit, as published |
 | `description_1line` | string | **MUST** | Backbone parity with ecosystem records |
@@ -2401,3 +2454,44 @@ excludes them from column parity). `ORG-004202.parent_org_id`
 stays empty by design. §4.14.2's v1.7.1 deferral paragraph is
 replaced by the exception text, and §1's B5 battery bullet is
 restated as applied. No field, vocabulary, or table changes.
+
+- **v1.7.3 — 2026-10-31 (owner rulings 2026-10-31 — academic
+layer, all as recommended; applied in integration pass 33).**
+Four items. (1) People scope (R1): §4.9 is extended — research
+staff at federal laboratories with real polymer programs are in
+scope for `data/people.csv` alongside professors, under the same
+public-facts discipline (AGENTS.md §6 amended in the same pass);
+the verification standard adapts at lab grain (the laboratory's
+own public staff/program pages must style the person as research
+staff with polymer research stated; the affiliation recorded is
+the laboratory; joint university appointments are recorded and
+verified at the primary home institution). Doctrine only — no
+people records are created by this revision, and the `role`
+controlled vocabulary gains lab-staff values only with the first
+lab-staff records. (2) Academic adjudication (R2): the
+programs-spine materials-candidate adjudication rule is codified
+in §1's Owner rulings 2026-10-31 (academic layer) subsection —
+promotion on (a) a named polymer center/concentration, (b) a
+polymer-named credential, or (c) ≥2 faculty with polymer-specific
+stated research areas, volume never qualifying — with the
+unit-scope line on leg (a) (the center/concentration must sit
+inside the adjudicated unit itself; the UW–Madison PEC and Auburn
+CPAC cases are the recorded precedents, settling Wave B friction
+F1). (3) Vocabulary (R3): `minor` is added to the
+`credential_types[]` enum (§4.6 and §4.11; the validator's
+CREDENTIALS gains the value, and LEVEL_MAP maps it to none — a
+minor derives no level of its own); the two minors previously
+carried in prose are encoded in the same pass — PROG-000109
+(Lehigh Materials Science and Engineering; the Minor in Polymer
+Science and Engineering) and PROG-000118 (NC State Fiber and
+Polymer Science; the graduate minor in Fiber and Polymer
+Sciences), each with a dated conformance note in its `notes`.
+(4) Identifiers (R4, owner ruling on Wave C question U1): the 14
+`university_college` sub-unit ecosystem rows carry their parent
+institution's `ipeds_unitid` by reference (fills listed in the
+pass-33 journal; no evidence rows minted, following the pass-31
+UNITID-fill precedent); §4.6's uniqueness doctrine is restated
+(uniqueness binds the institution-grain holder) and validator
+V-14 is amended to admit a repeated UNITID only where every
+additional carrier names the institution-grain holder as its
+`parent_institution_org_id`. No new tables or fields.

@@ -245,12 +245,19 @@ Ownership demographics (woman/minority/veteran-owned) only when
 self-disclosed by a primary or authoritative source; never inferred.
 
 **People records.** The Atlas may carry records for **professors** —
-and only professors — where every field is an independently public
-professional fact: name, institution, role, research specialty, and a
-public lab or profile URL, each cited to its public source in the
-record's `sources`. A professor is recorded only when those facts are
-public; no record is created from, or corroborated by, any private
-system. In particular, **the PIC CRM is never a source for people
+and, under the owner ruling of 2026-10-31, **research staff at
+federal laboratories with real polymer programs** — where every field
+is an independently public professional fact: name, institution,
+role, research specialty, and a public lab or profile URL, each cited
+to its public source in the record's `sources`. A professor is
+recorded only when those facts are public; no record is created from,
+or corroborated by, any private system. A lab research-staff record
+stands on the same discipline at lab grain: the laboratory's own
+public staff or program pages must style the person as research staff
+with polymer research stated, the recorded affiliation is the
+laboratory, and a joint university appointment is recorded and
+verified at the primary home institution. In particular, **the PIC
+CRM is never a source for people
 records**: people held in the CRM are not recorded, exported, or
 exposed in the Atlas, and CRM-only information about a person never
 enters a record. Personal contact data (individual emails, direct-dial
@@ -290,3 +297,10 @@ event-participation grain. The owner confirmed the same day that
 §2 rule 3 stands for all non-orchestrator harnesses: branch/PR only,
 with no campaign-mode grant. No data file is changed by this
 revision.*
+
+*Revision note — 2026-10-31 (people-scope extension): §6's
+people-records passage is extended under the owner's ruling of the
+same day — research staff at federal laboratories with real polymer
+programs are recordable alongside professors, under the same
+public-facts discipline (SCHEMA v1.7.3, §4.9). No data file is
+changed by this revision.*
