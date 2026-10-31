@@ -1,0 +1,542 @@
+[
+  {
+    "person_id": "PERSON-000041",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/mariarcoleman.html",
+    "gate_a_fact": "Toledo identifies Coleman at professorial rank with graduate-program directorship in chemical engineering.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/mariarcoleman.html",
+    "gate_b_quote": "Multifunctional polymer nanocomposites",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/mariarcoleman.html",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at The University of Toledo.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/mariarcoleman.html",
+    "role_fact": "Toledo identifies Coleman at professorial rank with graduate-program directorship in chemical engineering.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Maria R. Coleman; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "AGREE",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Her own research description covers polymer separation membranes and polymer nanocomposite synthesis.",
+    "notes": "Page carries July 14, 2026 update. Professor code remains valid despite director duties; no compulsory director recoding.",
+    "sources": [
+      {
+        "url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/mariarcoleman.html",
+        "title": "Maria R. Coleman institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Toledo identifies Coleman at professorial rank with graduate-program directorship in chemical engineering. Her own research description covers polymer separation membranes and polymer nanocomposite synthesis."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/mariarcoleman.html",
+        "status": "Opened body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000060",
+    "gate_a_verdict": "UNRESOLVED",
+    "gate_a_url": "https://cdn.prod.web.uta.edu/-/media/project/website/provost/faculty-success/new-faculty-booklet-2025-updated-final-for-web.pdf",
+    "gate_a_fact": "UTA hiring booklet supports professorial rank, but current faculty-page Gate A at the claimed Akron affiliation remains unsettled.",
+    "gate_b_verdict": "UNRESOLVED",
+    "gate_b_url": "",
+    "gate_b_quote": "",
+    "affiliation_verdict": "UNRESOLVED",
+    "affiliation_url": "https://cdn.prod.web.uta.edu/-/media/project/website/provost/faculty-success/new-faculty-booklet-2025-updated-final-for-web.pdf",
+    "affiliation_fact": "UTA new hire in Fall 2025 is confirmed. Akron continuation versus departure is not settled by an opened current institutional faculty page.",
+    "role_verdict": "UNRESOLVED",
+    "role_url": "https://cdn.prod.web.uta.edu/-/media/project/website/provost/faculty-success/new-faculty-booklet-2025-updated-final-for-web.pdf",
+    "role_fact": "Professorial rank is supported by UTA hiring material, but claimed Akron styling remains unverified.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Xiong Gong; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "UNRESOLVED",
+    "overall_verdict": "UNRESOLVED",
+    "error_fields": [],
+    "settling_fact": "Opened institutional hiring booklet establishes a UTA professorship, but not whether all Akron appointments ended.",
+    "notes": "Held correction is U downgrade, not a new candidate. UTA appointment alone does not exclude a joint Akron appointment. Current research faculty/lab witness could not be recovered; no creation error asserted.",
+    "sources": [
+      {
+        "url": "https://cdn.prod.web.uta.edu/-/media/project/website/provost/faculty-success/new-faculty-booklet-2025-updated-final-for-web.pdf",
+        "title": "Xiong Gong institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "UTA introduces Gong as a new electrical-engineering professor for Fall 2025. Opened institutional hiring booklet establishes a UTA professorship, but not whether all Akron appointments ended."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://cdn.prod.web.uta.edu/-/media/project/website/provost/faculty-success/new-faculty-booklet-2025-updated-final-for-web.pdf",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://nehm.uta.edu/",
+        "status": "Web inaccessible, repeated via HTTP; direct urllib HTTP route returned 503"
+      },
+      {
+        "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/electrical/faculty",
+        "status": "Web inaccessible"
+      },
+      {
+        "url": "https://www.uta.edu/academics/schools-colleges/engineering/academics/departments/electrical/people/faculty",
+        "status": "Web inaccessible"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000094",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://people.engineering.osu.edu/people/hall.1004",
+    "gate_a_fact": "Ohio State lists Hall at professorial rank in chemical/biomolecular engineering.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://people.engineering.osu.edu/people/hall.1004",
+    "gate_b_quote": "theory and simulation of polymeric materials",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://people.engineering.osu.edu/people/hall.1004",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at The Ohio State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://people.engineering.osu.edu/people/hall.1004",
+    "role_fact": "Ohio State lists Hall at professorial rank in chemical/biomolecular engineering.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Lisa M. Hall; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Her expertise statement explicitly describes theoretical and simulation research on polymer materials.",
+    "notes": "Institution omits middle initial; this is not an identity error.",
+    "sources": [
+      {
+        "url": "https://people.engineering.osu.edu/people/hall.1004",
+        "title": "Lisa M. Hall institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Ohio State lists Hall at professorial rank in chemical/biomolecular engineering. Her expertise statement explicitly describes theoretical and simulation research on polymer materials."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://people.engineering.osu.edu/people/hall.1004",
+        "status": "Opened body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000153",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://chem.vt.edu/people/faculty/teaching-and-research/mschulz.html",
+    "gate_a_fact": "Virginia Tech chemistry lists Schulz at associate-professor rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://chem.vt.edu/people/faculty/teaching-and-research/mschulz.html",
+    "gate_b_quote": "tools of polymer chemistry",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://chem.vt.edu/people/faculty/teaching-and-research/mschulz.html",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at Virginia Polytechnic Institute and State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://chem.vt.edu/people/faculty/teaching-and-research/mschulz.html",
+    "role_fact": "Virginia Tech chemistry lists Schulz at associate-professor rank.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Michael D. Schulz; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "His research group designs polymer architecture and functionality for biological and environmental applications.",
+    "notes": "Institution heading omits middle initial; selected publications identify M. D. Schulz.",
+    "sources": [
+      {
+        "url": "https://chem.vt.edu/people/faculty/teaching-and-research/mschulz.html",
+        "title": "Michael D. Schulz institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Virginia Tech chemistry lists Schulz at associate-professor rank. His research group designs polymer architecture and functionality for biological and environmental applications."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://chem.vt.edu/people/faculty/teaching-and-research/mschulz.html",
+        "status": "Opened body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000203",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://mse.gatech.edu/people/natalie-stingelin",
+    "gate_a_fact": "Georgia Tech MSE lists Stingelin at professorial rank and as school chair.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://mse.gatech.edu/people/natalie-stingelin",
+    "gate_b_quote": "polymer microstructure, phase behavior, and charge transport",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://mse.gatech.edu/people/natalie-stingelin",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at Georgia Institute of Technology.",
+    "role_verdict": "AGREE",
+    "role_url": "https://mse.gatech.edu/people/natalie-stingelin",
+    "role_fact": "Georgia Tech MSE lists Stingelin at professorial rank and as school chair.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Natalie Stingelin; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Person-specific research section explicitly investigates polymer structures and transport, beyond teaching or center membership.",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://mse.gatech.edu/people/natalie-stingelin",
+        "title": "Natalie Stingelin institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Georgia Tech MSE lists Stingelin at professorial rank and as school chair. Person-specific research section explicitly investigates polymer structures and transport, beyond teaching or center membership."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://mse.gatech.edu/people/natalie-stingelin",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://stingelin-lab.gatech.edu/",
+        "status": "Opened, navigation-only body"
+      },
+      {
+        "url": "https://mse.gatech.edu/people?field_personnel_group_value=rs",
+        "status": "Opened faculty directory"
+      },
+      {
+        "url": "https://mse.gatech.edu/sites/default/files/groupoverview/StingelinGroup_2024.pdf",
+        "status": "Cache miss"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000227",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.pse.umass.edu/faculty/researchgroup/coughlin",
+    "gate_a_fact": "UMass department lab page identifies E. Bryan Coughlin at professorial rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.pse.umass.edu/faculty/researchgroup/coughlin",
+    "gate_b_quote": "Polymer Upcycling and Sustainability",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.pse.umass.edu/faculty/researchgroup/coughlin",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at University of Massachusetts Amherst.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.pse.umass.edu/faculty/researchgroup/coughlin",
+    "role_fact": "UMass department lab page identifies E. Bryan Coughlin at professorial rank.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Edward Bryan Coughlin; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current-research section describes polymer synthesis, upcycling, architecture control and fire-resistant composites.",
+    "notes": "Institution uses E. Bryan Coughlin, compatible with supplied Edward Bryan Coughlin; expansion not independently settled, no identity error inferred. Legacy institutional lab route remains available; newer routes blocked.",
+    "sources": [
+      {
+        "url": "https://www.pse.umass.edu/faculty/researchgroup/coughlin",
+        "title": "Edward Bryan Coughlin institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "UMass department lab page identifies E. Bryan Coughlin at professorial rank. Current-research section describes polymer synthesis, upcycling, architecture control and fire-resistant composites."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.pse.umass.edu/faculty/researchgroup/coughlin",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/about/directory/e-bryan-coughlin",
+        "status": "403 via web twice and direct urllib"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/coughlin-research-group",
+        "status": "403"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000261",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.uml.edu/research/nano/faculty-staff/staff/zhang-jinde.aspx",
+    "gate_a_fact": "Lowell explicitly identifies Zhang at assistant research-professor rank in the Nanomanufacturing Center.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.uml.edu/research/nano/faculty-staff/staff/zhang-jinde.aspx",
+    "gate_b_quote": "Polymer nanocomposites fabrication",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.uml.edu/research/nano/faculty-staff/staff/zhang-jinde.aspx",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at University of Massachusetts Lowell.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.uml.edu/research/nano/faculty-staff/staff/zhang-jinde.aspx",
+    "role_fact": "Lowell explicitly identifies Zhang at assistant research-professor rank in the Nanomanufacturing Center.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Jinde Zhang; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "His person-specific research list includes polymeric-film manufacturing and polymer nanocomposite fabrication.",
+    "notes": "Staff navigation bucket does not negate explicit research-professor title. research_professor code accommodates assistant research-professor rank.",
+    "sources": [
+      {
+        "url": "https://www.uml.edu/research/nano/faculty-staff/staff/zhang-jinde.aspx",
+        "title": "Jinde Zhang institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Lowell explicitly identifies Zhang at assistant research-professor rank in the Nanomanufacturing Center. His person-specific research list includes polymeric-film manufacturing and polymer nanocomposite fabrication."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.uml.edu/research/nano/faculty-staff/staff/zhang-jinde.aspx",
+        "status": "Opened body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000324",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://physics.cornell.edu/eric-dufresne",
+    "gate_a_fact": "Cornell physics lists Dufresne at professorial rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.lassp.cornell.edu/bibcite?page=1&pi_term=Eric+Dufresne+(104)",
+    "gate_b_quote": "polymerization in the solid state",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://physics.cornell.edu/eric-dufresne",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at Cornell University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://news.cornell.edu/stories/2026/09/awards-honor-duffield-engineering-faculty-teaching-advising",
+    "role_fact": "September 2026 Cornell report confirms professorial appointments in both MSE and physics.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Eric R. Dufresne; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Cornell LASSP publication page explicitly attributes polymerization-controlled phase-separation research and hydrogel/elastomer composites to Dufresne and his group.",
+    "notes": "Within-university physics/MSE appointment confirmed by September 2026 institutional news; this is not a conflicting institutional affiliation.",
+    "sources": [
+      {
+        "url": "https://physics.cornell.edu/eric-dufresne",
+        "title": "Eric R. Dufresne institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Cornell physics lists Dufresne at professorial rank. Cornell LASSP publication page explicitly attributes polymerization-controlled phase-separation research and hydrogel/elastomer composites to Dufresne and his group."
+      },
+      {
+        "url": "https://www.lassp.cornell.edu/bibcite?page=1&pi_term=Eric+Dufresne+(104)",
+        "title": "Cornell LASSP Dufresne research listing",
+        "observed_date": "2026-10-31",
+        "facts": "Dufresne is the Cornell-affiliated author and lab lead on polymer phase-separation and hydroelastomer research."
+      },
+      {
+        "url": "https://news.cornell.edu/stories/2026/09/awards-honor-duffield-engineering-faculty-teaching-advising",
+        "title": "Cornell September 2026 faculty award report",
+        "observed_date": "2026-10-31",
+        "facts": "Identifies Dufresne as professor in both MSE and physics."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://physics.cornell.edu/eric-dufresne",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://www.lassp.cornell.edu/bibcite?page=1&pi_term=Eric+Dufresne+(104)",
+        "status": "Opened research body"
+      },
+      {
+        "url": "https://news.cornell.edu/stories/2026/09/awards-honor-duffield-engineering-faculty-teaching-advising",
+        "status": "Opened body"
+      },
+      {
+        "url": "https://softliv-lab.cornell.edu/people/",
+        "status": "502"
+      },
+      {
+        "url": "https://softliv-lab.cornell.edu/research/",
+        "status": "502"
+      },
+      {
+        "url": "https://www.lassp.cornell.edu/people/eric-dufresne",
+        "status": "Opened faculty body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000357",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://engineering.pitt.edu/people/faculty/susan-fullerton/",
+    "gate_a_fact": "Pitt profile confirms full-professor promotion in 2026 and interim chemical/petroleum engineering chair duties.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://engineering.pitt.edu/people/faculty/susan-fullerton/",
+    "gate_b_quote": "creates degradable polymers to tackle global plastic waste",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://engineering.pitt.edu/people/faculty/susan-fullerton/",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at University of Pittsburgh.",
+    "role_verdict": "AGREE",
+    "role_url": "https://engineering.pitt.edu/people/faculty/susan-fullerton/",
+    "role_fact": "Pitt profile confirms full-professor promotion in 2026 and interim chemical/petroleum engineering chair duties.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Susan Fullerton; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Her lab develops degradable polymer films and polymer/ion materials for electronics.",
+    "notes": "Body inspected through direct urllib after web timeouts. Institutional publication list also uses Susan K. Fullerton-Shirey; screened that alias against held names with no match.",
+    "sources": [
+      {
+        "url": "https://engineering.pitt.edu/people/faculty/susan-fullerton/",
+        "title": "Susan Fullerton institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Pitt profile confirms full-professor promotion in 2026 and interim chemical/petroleum engineering chair duties. Her lab develops degradable polymer films and polymer/ion materials for electronics."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://engineering.pitt.edu/people/faculty/susan-fullerton/",
+        "status": "Web timeout twice; direct urllib HTTP 200 genuine faculty body inspected"
+      },
+      {
+        "url": "https://www.fullertonlab.pitt.edu/research",
+        "status": "Web inaccessible"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000392",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://msu-prod.dotcms.cloud/people/eva-almenar/?language_id=1&roleURL=",
+    "gate_a_fact": "MSU packaging faculty body identifies Almenar at professorial rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://msu-prod.dotcms.cloud/people/eva-almenar/?language_id=1&roleURL=",
+    "gate_b_quote": "active packaging, and coatings",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://msu-prod.dotcms.cloud/people/eva-almenar/?language_id=1&roleURL=",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at Michigan State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://msu-prod.dotcms.cloud/people/eva-almenar/?language_id=1&roleURL=",
+    "role_fact": "MSU packaging faculty body identifies Almenar at professorial rank.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Eva Almenar; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Her person-specific research biography describes coatings and bio-/petroleum-based packaging materials, with current development of renewable-feedstock active packaging.",
+    "notes": "University-branded production CMS page recovered; canonical MSU faculty URL blocked. Gate B rests on person-specific coatings/materials research biography, not mere packaging department membership.",
+    "sources": [
+      {
+        "url": "https://msu-prod.dotcms.cloud/people/eva-almenar/?language_id=1&roleURL=",
+        "title": "Eva Almenar institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "MSU packaging faculty body identifies Almenar at professorial rank. Her person-specific research biography describes coatings and bio-/petroleum-based packaging materials, with current development of renewable-feedstock active packaging."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://msu-prod.dotcms.cloud/people/eva-almenar/?language_id=1&roleURL=",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://www.canr.msu.edu/people/eva-almenar",
+        "status": "403 web; direct urllib HTTP 200 Incapsula rejection, not faculty content"
+      },
+      {
+        "url": "https://www.canr.msu.edu/almenar/research",
+        "status": "Web inaccessible"
+      },
+      {
+        "url": "https://www.canr.msu.edu/almenar/research/",
+        "status": "Web inaccessible"
+      },
+      {
+        "url": "https://www.canr.msu.edu/almenar/",
+        "status": "403"
+      },
+      {
+        "url": "https://msu-prod.dotcms.cloud/almenar/",
+        "status": "Cache miss"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000415",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://engineering.lehigh.edu/faculty/whitney-blocher-mctigue",
+    "gate_a_fact": "Lehigh identifies Blocher McTigue at assistant-professor rank in chemical/biomolecular engineering.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://engineering.lehigh.edu/faculty/whitney-blocher-mctigue",
+    "gate_b_quote": "using charged polymer moieties",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://engineering.lehigh.edu/faculty/whitney-blocher-mctigue",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at Lehigh University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://engineering.lehigh.edu/faculty/whitney-blocher-mctigue",
+    "role_fact": "Lehigh identifies Blocher McTigue at assistant-professor rank in chemical/biomolecular engineering.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Whitney C. Blocher McTigue; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Faculty research narrative explicitly describes using charged polymers and coacervation to stabilize biomacromolecules.",
+    "notes": "Shorter institutional name is compatible with supplied middle initial.",
+    "sources": [
+      {
+        "url": "https://engineering.lehigh.edu/faculty/whitney-blocher-mctigue",
+        "title": "Whitney C. Blocher McTigue institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Lehigh identifies Blocher McTigue at assistant-professor rank in chemical/biomolecular engineering. Faculty research narrative explicitly describes using charged polymers and coacervation to stabilize biomacromolecules."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://engineering.lehigh.edu/faculty/whitney-blocher-mctigue",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://engineering.lehigh.edu/faculty",
+        "status": "Opened faculty directory"
+      },
+      {
+        "url": "https://sites.google.com/lehigh.edu/blochermctiguelab/people",
+        "status": "Opened institutional lab body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000460",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.usm.edu/faculty-directory/profile.php?id=2204354",
+    "gate_a_fact": "Southern Mississippi identifies Qiang at associate-professor rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.usm.edu/faculty-directory/profile.php?id=2204354",
+    "gate_b_quote": "understand polymer behaviors at nanoscale",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.usm.edu/faculty-directory/profile.php?id=2204354",
+    "affiliation_fact": "Institution-owned profile identifies an active appointment at University of Southern Mississippi.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.usm.edu/faculty-directory/profile.php?id=2204354",
+    "role_fact": "Southern Mississippi identifies Qiang at associate-professor rank.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names against institutional name form Zhe Qiang; no other identity match found. Self excluded for held correction. Not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "His current faculty bio describes plastic-waste conversion and nanoscale polymer research.",
+    "notes": "Separate school administration page lists associate-director duties, which do not invalidate associate_professor coding.",
+    "sources": [
+      {
+        "url": "https://www.usm.edu/faculty-directory/profile.php?id=2204354",
+        "title": "Zhe Qiang institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Southern Mississippi identifies Qiang at associate-professor rank. His current faculty bio describes plastic-waste conversion and nanoscale polymer research."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.usm.edu/faculty-directory/profile.php?id=2204354",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://www.usm.edu/faculty-directory/profile.php?id=1937173",
+        "status": "Guessed route inaccessible; not evidence"
+      },
+      {
+        "url": "https://www.usm.edu/polymer-science-engineering/spse_admin_staff.php",
+        "status": "Opened"
+      },
+      {
+        "url": "https://www.usm.edu/faculty-directory/?keyword=School+of+Polymer+Science+and+Engineering",
+        "status": "Opened directory; followed actual profile link"
+      }
+    ]
+  }
+]

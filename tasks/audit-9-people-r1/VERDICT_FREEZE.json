@@ -1,0 +1,28 @@
+{
+  "frozen_utc": "2026-10-31T20:08:49.053575+00:00",
+  "data_pin": "604fea8ef1d9fe3f17049aeb053d157345a61de5",
+  "unique_people": 60,
+  "frame_counts": {
+    "random": {
+      "UNRESOLVED": 5,
+      "AGREE": 42,
+      "FIELD_ERROR": 3
+    },
+    "judgment": {
+      "AGREE": 4
+    },
+    "held_correction": {
+      "AGREE": 6,
+      "UNRESOLVED": 1
+    }
+  },
+  "worker_file_sha256": {
+    "results_batch1.json": "47221847da053e4044c5cc763d14f1e2f73138e0fb59fb60349e77235b87c2a3",
+    "results_batch2.json": "682c49890a08ddf5fddee9ef48ec17ba280ccd62e5f7fd5dc31f011dc2f047f2",
+    "results_batch3.json": "18ecf387beb7cd55efea80a1e8f2ccc308a6b29a06b7db22997e86fd827bfbca",
+    "results_batch4.json": "7778c7848020797b6ca5560add02c7375a776d16982a0c0728268a910b5029ae",
+    "results_batch5.json": "06d09eab693cc63779c4d368d31b30c8794d12ba85f687dfe4808cdc61e0b234"
+  },
+  "existing_evidence_opened": false,
+  "forbidden_source_columns_displayed": false
+}

@@ -1,9 +1,10 @@
 """Evidence-blind claim whitelist extraction; never exports URLs/notes/evidence."""
-import csv, json, random, hashlib
+import csv, json, random, hashlib, argparse
 from pathlib import Path
 SEED=2026103109
 ROOT=Path(__file__).resolve().parents[2]
-out=Path('/workspace/shared/audit9-blind'); out.mkdir(exist_ok=True)
+parser=argparse.ArgumentParser(); parser.add_argument('--output-dir',default=str(ROOT/'build/audit9-sample')); args=parser.parse_args()
+out=Path(args.output_dir); out.mkdir(parents=True,exist_ok=True)
 rows=list(csv.DictReader((ROOT/'data/people.csv').open()))
 byid={r['person_id']:r for r in rows}
 assert len(rows)==len(byid)==476
@@ -25,5 +26,5 @@ held=[{k:claim(i)[k] for k in ['person_id','full_name','institution_org_id','ins
 (out/'claims.json').write_text(json.dumps(claims,indent=2)+'\n')
 for n in range(5): (out/f'batch{n+1}.json').write_text(json.dumps(claims[n::5],indent=2)+'\n')
 manifest={'data_pin':'604fea8ef1d9fe3f17049aeb053d157345a61de5','seed':SEED,'method':'CPython random.Random(seed).sample(sorted PERSON-000074..000476 IDs, 50), sort sampled IDs for presentation; no replacement of overlap','frame_n':403,'random_ids':sample,'judgment_ids':judgment,'held_correction_ids':mini,'random_judgment_overlap':sorted(set(sample)&set(judgment)),'unique_audited_n':len(ids),'claim_file_sha256':hashlib.sha256((out/'claims.json').read_bytes()).hexdigest()}
-(ROOT/'tasks/audit-9-people-r1/sample_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+(out/'sample_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(json.dumps(manifest,indent=2)); print('Batches', [len(claims[n::5]) for n in range(5)])

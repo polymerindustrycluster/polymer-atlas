@@ -1,0 +1,575 @@
+[
+  {
+    "person_id": "PERSON-000003",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.bgsu.edu/arts-and-sciences/chemistry/faculty/joseph-c--furgal.html",
+    "gate_a_fact": "BGSU chemistry lists Furgal at associate rank and additionally as department chair.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.bgsu.edu/arts-and-sciences/chemistry/faculty/joseph-c--furgal.html",
+    "gate_b_quote": "Polymer Photochemistry/Physics, Hybrid Polymers/Oligomers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.bgsu.edu/arts-and-sciences/chemistry/faculty/joseph-c--furgal.html",
+    "affiliation_fact": "Institution-owned current profile identifies this person with Bowling Green State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.bgsu.edu/arts-and-sciences/chemistry/faculty/joseph-c--furgal.html",
+    "role_fact": "BGSU chemistry lists Furgal at associate rank and additionally as department chair.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "AGREE",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "Associate rank correction supported. Chair addition does not invalidate associate-professor coding.",
+    "sources": [
+      {
+        "url": "https://www.bgsu.edu/arts-and-sciences/chemistry/faculty/joseph-c--furgal.html",
+        "title": "Joseph C. Furgal institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "BGSU chemistry lists Furgal at associate rank and additionally as department chair. Research concerns photoresponsive silicon-organic networks and self-healing materials."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.bgsu.edu/arts-and-sciences/chemistry/faculty/joseph-c--furgal.html",
+        "status": "Opened and inspected body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000056",
+    "gate_a_verdict": "UNRESOLVED",
+    "gate_a_url": "https://dev.uakron.edu/bot/docs/2022-Board-Materials/Board%20Materials%2010-12-2022%20Updated.pdf",
+    "gate_a_fact": "Board personnel actions record Wong leaving his mechanical-engineering professorship effective 2022-08-31.",
+    "gate_b_verdict": "UNRESOLVED",
+    "gate_b_url": "",
+    "gate_b_quote": "",
+    "affiliation_verdict": "FIELD_ERROR",
+    "affiliation_url": "https://dev.uakron.edu/bot/docs/2022-Board-Materials/Board%20Materials%2010-12-2022%20Updated.pdf",
+    "affiliation_fact": "Akron board records resignation effective 2022-08-31; Akron affiliation is historical, not established current.",
+    "role_verdict": "UNRESOLVED",
+    "role_url": "https://dev.uakron.edu/bot/docs/2022-Board-Materials/Board%20Materials%2010-12-2022%20Updated.pdf",
+    "role_fact": "Professor rank established at departure; no current appointment established.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "AGREE",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Positive resignation record supports U downgrade. Overall AGREE applies only to this specific held correction; components preserve current-affiliation limitation.",
+    "notes": "Mini-frame assesses downgrade to U, not new-person creation. Historical role retained; current appointment elsewhere and current polymer research remain unverified.",
+    "sources": [
+      {
+        "url": "https://dev.uakron.edu/bot/docs/2022-Board-Materials/Board%20Materials%2010-12-2022%20Updated.pdf",
+        "title": "Shing-Chung Josh Wong institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Board personnel actions record Wong leaving his mechanical-engineering professorship effective 2022-08-31."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://dev.uakron.edu/bot/docs/2022-Board-Materials/Board%20Materials%2010-12-2022%20Updated.pdf",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://www.uakron.edu/engineering/me/our-people/faculty",
+        "status": "Opened current directory first page; not treated as exhaustive absence"
+      },
+      {
+        "url": "https://www.uakron.edu/engineering/me/our-people/faculty?currentPage=2",
+        "status": "Opened second page; no Wong match, not conclusive absence"
+      },
+      {
+        "url": "https://www.uakron.edu/engineering/me/our-people/faculty?currentPage=3",
+        "status": "Fetch failed: cache miss"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000092",
+    "gate_a_verdict": "UNRESOLVED",
+    "gate_a_url": "https://engineering.osu.edu/news/2024/05/university-recognizes-six-remarkable-faculty-and-staff",
+    "gate_a_fact": "Ohio State 2024 honors article confirms distinguished university rank and FABE appointment.",
+    "gate_b_verdict": "UNRESOLVED",
+    "gate_b_url": "https://engineering.osu.edu/news/2024/05/university-recognizes-six-remarkable-faculty-and-staff",
+    "gate_b_quote": "development of polymers using enzyme catalysis",
+    "affiliation_verdict": "UNRESOLVED",
+    "affiliation_url": "https://engineering.osu.edu/news/2024/05/university-recognizes-six-remarkable-faculty-and-staff",
+    "affiliation_fact": "2024 Ohio State appointment corroborated; current faculty-page body not retrieved.",
+    "role_verdict": "UNRESOLVED",
+    "role_url": "https://engineering.osu.edu/news/2024/05/university-recognizes-six-remarkable-faculty-and-staff",
+    "role_fact": "Distinguished university rank documented in 2024 institutional news; current faculty title body not retrieved.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "UNRESOLVED",
+    "error_fields": [],
+    "settling_fact": "Historical institutional evidence supports claim, but required current faculty/lab witness remains inaccessible.",
+    "notes": "Opened dated institutional news corroborates role and polymer research, but current faculty profile is JavaScript-only and FABE routes failed. No negative inference from failures.",
+    "sources": [
+      {
+        "url": "https://engineering.osu.edu/news/2024/05/university-recognizes-six-remarkable-faculty-and-staff",
+        "title": "Judit E. Puskas institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Ohio State 2024 honors article confirms distinguished university rank and FABE appointment."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://engineering.osu.edu/news/2024/05/university-recognizes-six-remarkable-faculty-and-staff",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://cancer.osu.edu/find-a-researcher/search-researcher-directory/judit-puskas-100003326",
+        "status": "Opened body contains JavaScript-required message only; snippet not counted"
+      },
+      {
+        "url": "https://fabe.osu.edu/our-people/judit-puskas",
+        "status": "Inaccessible via web tool"
+      },
+      {
+        "url": "https://fabe.osu.edu/our-people/judit-e-puskas",
+        "status": "403 via web and urllib fallback"
+      },
+      {
+        "url": "https://fabe.osu.edu/our-people/judit-puskas-0",
+        "status": "Inaccessible via web tool"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000145",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://chemistry.wwu.edu/people/riderd",
+    "gate_a_fact": "Chemistry profile explicitly gives full professorial rank across materials chemistry and engineering/design.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://chemistry.wwu.edu/people/riderd",
+    "gate_b_quote": "organic and inorganic polymers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://chemistry.wwu.edu/people/riderd",
+    "affiliation_fact": "Institution-owned current profile identifies this person with Western Washington University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://chemistry.wwu.edu/people/riderd",
+    "role_fact": "Chemistry profile explicitly gives full professorial rank across materials chemistry and engineering/design.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "Chemistry page explicitly states current WWU position. Search routing found an engineering-directory associate label, but the person profile supports submitted full rank.",
+    "sources": [
+      {
+        "url": "https://chemistry.wwu.edu/people/riderd",
+        "title": "David Rider institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Chemistry profile explicitly gives full professorial rank across materials chemistry and engineering/design. Group designs and assembles polymer materials for energy and nanoscale applications."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://chemistry.wwu.edu/people/riderd",
+        "status": "Opened and inspected body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000201",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.mse.gatech.edu/people/meisha-shofner",
+    "gate_a_fact": "Georgia Tech MSE biography identifies Shofner at full professorial rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.mse.gatech.edu/people/meisha-shofner",
+    "gate_b_quote": "processing-structure-property relationships in polymers and composites",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.mse.gatech.edu/people/meisha-shofner",
+    "affiliation_fact": "Institution-owned current profile identifies this person with Georgia Institute of Technology.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.mse.gatech.edu/people/meisha-shofner",
+    "role_fact": "Georgia Tech MSE biography identifies Shofner at full professorial rank.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "Additional graduate-director responsibility does not invalidate professor code.",
+    "sources": [
+      {
+        "url": "https://www.mse.gatech.edu/people/meisha-shofner",
+        "title": "Meisha L. Shofner institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Georgia Tech MSE biography identifies Shofner at full professorial rank. Research connects polymer/composite structure and processing to performance."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.mse.gatech.edu/people/meisha-shofner",
+        "status": "Opened and inspected body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000225",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.umass.edu/natural-sciences/about/directory/reika-katsumata",
+    "gate_a_fact": "CNS current faculty profile lists associate rank and graduate-program leadership in polymer science.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.umass.edu/natural-sciences/news/pse-reika-katsumata-young-scientists-award",
+    "gate_b_quote": "polymers can be used to design new functions at soft-hard interfaces",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.umass.edu/natural-sciences/about/directory/reika-katsumata",
+    "affiliation_fact": "Institution-owned current profile identifies this person with University of Massachusetts Amherst.",
+    "role_verdict": "FIELD_ERROR",
+    "role_url": "https://www.umass.edu/natural-sciences/about/directory/reika-katsumata",
+    "role_fact": "CNS current faculty profile lists associate rank and graduate-program leadership in polymer science.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "FIELD_ERROR",
+    "error_fields": [
+      "role",
+      "role_as_published"
+    ],
+    "settling_fact": "Claimed assistant rank conflicts with opened current CNS associate rank.",
+    "notes": "Current CNS faculty page settles rank. Opened May 2026 person-focused institutional award profile includes her explicit current group research statement on polymer soft/hard interfaces; accepted as person-level profile by content, with news-hosted source caveat. Department profile returned 403; no negative inference from failure.",
+    "sources": [
+      {
+        "url": "https://www.umass.edu/natural-sciences/about/directory/reika-katsumata",
+        "title": "Reika Katsumata institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "CNS current faculty profile lists associate rank and graduate-program leadership in polymer science."
+      },
+      {
+        "url": "https://www.umass.edu/natural-sciences/news/pse-reika-katsumata-young-scientists-award",
+        "title": "UMass report on Katsumata award",
+        "observed_date": "2026-10-31",
+        "facts": "May 2026 report identifies associate rank and describes her group researching polymer behavior at soft/hard boundaries."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.umass.edu/natural-sciences/about/directory/reika-katsumata",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://www.umass.edu/natural-sciences/news/pse-reika-katsumata-young-scientists-award",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/about/directory/reika-katsumata",
+        "status": "403 via web and urllib fallback"
+      },
+      {
+        "url": "https://www.umass.edu/news/article/reika-katsumata-wins-young-scientists-award",
+        "status": "403"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/about/directory/reika-katsumata?audit=1",
+        "status": "Inaccessible"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/about/directory/reika-katsumata/",
+        "status": "Cache miss"
+      },
+      {
+        "url": "https://www.umass.edu/natural-sciences/news/reika-katsumata-wins-prestigious-awards",
+        "status": "Opened 2022 award report; network-polymer research corroboration"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000258",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.uml.edu/differencemaker/team/johnston-stephen.aspx",
+    "gate_a_fact": "Current UML profile heading identifies Johnston at full professorial rank in plastics engineering.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.uml.edu/differencemaker/team/johnston-stephen.aspx",
+    "gate_b_quote": "polymer processing and product design",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.uml.edu/differencemaker/team/johnston-stephen.aspx",
+    "affiliation_fact": "Institution-owned current profile identifies this person with University of Massachusetts Lowell.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.uml.edu/differencemaker/team/johnston-stephen.aspx",
+    "role_fact": "Current UML profile heading identifies Johnston at full professorial rank in plastics engineering.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "Image alternate text retains associate label; explicit current title heading is professor. Independently observed name form Stephen P. Johnston is consistent with supplied Stephen Johnston.",
+    "sources": [
+      {
+        "url": "https://www.uml.edu/differencemaker/team/johnston-stephen.aspx",
+        "title": "Stephen Johnston institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Current UML profile heading identifies Johnston at full professorial rank in plastics engineering. His research addresses molding, polymer manufacturing and design."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.uml.edu/differencemaker/team/johnston-stephen.aspx",
+        "status": "Opened and inspected body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000318",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://cals.cornell.edu/people/alireza-abbaspourrad",
+    "gate_a_fact": "CALS profile identifies associate rank in food chemistry and ingredient technology.",
+    "gate_b_verdict": "UNRESOLVED",
+    "gate_b_url": "https://news.cornell.edu/stories/2018/08/microscopic-beads-help-harvest-heparin",
+    "gate_b_quote": "porous polystyrene beads coated with chitosan",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://cals.cornell.edu/people/alireza-abbaspourrad",
+    "affiliation_fact": "Institution-owned current profile identifies this person with Cornell University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://cals.cornell.edu/people/alireza-abbaspourrad",
+    "role_fact": "CALS profile identifies associate rank in food chemistry and ingredient technology.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "UNRESOLVED",
+    "error_fields": [],
+    "settling_fact": "Title and affiliation confirmed; current person-level polymer faculty/lab witness was not obtained.",
+    "notes": "Current faculty page specifies bio-derived soft materials but does not itself establish polymer objects. Historical institution-owned research article corroborates polymer work; strict current faculty/lab gate remains unverified.",
+    "sources": [
+      {
+        "url": "https://cals.cornell.edu/people/alireza-abbaspourrad",
+        "title": "Alireza Abbaspourrad institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "CALS profile identifies associate rank in food chemistry and ingredient technology."
+      },
+      {
+        "url": "https://news.cornell.edu/stories/2018/08/microscopic-beads-help-harvest-heparin",
+        "title": "Cornell account of heparin recovery research",
+        "observed_date": "2026-10-31",
+        "facts": "2018 report attributes research on engineered porous polymer beads for heparin capture to Abbaspourrad."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://cals.cornell.edu/people/alireza-abbaspourrad",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://news.cornell.edu/stories/2018/08/microscopic-beads-help-harvest-heparin",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://fellows.atkinson.cornell.edu/view.php?NetID=aa2347",
+        "status": "Opened; associate rank corroborated"
+      },
+      {
+        "url": "https://softmatter.cornell.edu/people/",
+        "status": "502"
+      },
+      {
+        "url": "https://joogroup.cbe.cornell.edu/publications/",
+        "status": "502"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000353",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.chem.pitt.edu/people",
+    "gate_a_fact": "Chemistry faculty directory lists Meyer as professor, separately from emeriti.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.chem.pitt.edu/people/tara-meyer",
+    "gate_b_quote": "Synthesis of repeating sequence copolymers for biomedical applications",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.chem.pitt.edu/people",
+    "affiliation_fact": "Institution-owned current profile identifies this person with University of Pittsburgh.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.chem.pitt.edu/people",
+    "role_fact": "Chemistry faculty directory lists Meyer as professor, separately from emeriti.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://www.chem.pitt.edu/people",
+        "title": "Tara Y. Meyer institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Chemistry faculty directory lists Meyer as professor, separately from emeriti."
+      },
+      {
+        "url": "https://www.chem.pitt.edu/people/tara-meyer",
+        "title": "Meyer chemistry research profile",
+        "observed_date": "2026-10-31",
+        "facts": "Research includes catalytic polymer synthesis, conducting materials, and biomedical sequence-defined copolymers."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.chem.pitt.edu/people",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://www.chem.pitt.edu/people/tara-meyer",
+        "status": "Opened and inspected body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000376",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://dmse.mit.edu/people/faculty/tania-lopez-silva/",
+    "gate_a_fact": "MIT DMSE profile gives assistant professorial rank and records joining in July 2025.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://dmse.mit.edu/people/faculty/tania-lopez-silva/",
+    "gate_b_quote": "supramolecular hydrogels",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://dmse.mit.edu/people/faculty/tania-lopez-silva/",
+    "affiliation_fact": "Institution-owned current profile identifies this person with Massachusetts Institute of Technology.",
+    "role_verdict": "AGREE",
+    "role_url": "https://dmse.mit.edu/people/faculty/tania-lopez-silva/",
+    "role_fact": "MIT DMSE profile gives assistant professorial rank and records joining in July 2025.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "Research object is self-assembling peptide hydrogel material, not merely use of proteins as therapeutics. Named endowed title does not change explicit assistant rank.",
+    "sources": [
+      {
+        "url": "https://dmse.mit.edu/people/faculty/tania-lopez-silva/",
+        "title": "Tania Lopez-Silva institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "MIT DMSE profile gives assistant professorial rank and records joining in July 2025. Designs peptide hydrogel materials and tests material-dependent biological and immune responses."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://dmse.mit.edu/people/faculty/tania-lopez-silva/",
+        "status": "Opened and inspected body"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000413",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://engineering.lehigh.edu/faculty/xuanhong-cheng",
+    "gate_a_fact": "Current Lehigh faculty profile gives professorial rank and department chair responsibility.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://engineering.lehigh.edu/news/article/xuanhong-cheng-named-chair-lehigh-bioengineering",
+    "gate_b_quote": "biodegradation of polymeric materials towards sustainable polymer development",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://engineering.lehigh.edu/faculty/xuanhong-cheng",
+    "affiliation_fact": "Institution-owned current profile identifies this person with Lehigh University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://engineering.lehigh.edu/faculty/xuanhong-cheng",
+    "role_fact": "Current Lehigh faculty profile gives professorial rank and department chair responsibility.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current faculty page confirms professor role; August 2026 institutional person-focused chair biography explicitly identifies polymer biodegradation research.",
+    "notes": "FLAG: concurrent Lehigh departmental appointments, not conflicting institution. Professor code remains valid despite chair duty. Gate B uses August 2026 institution-owned person-focused biography and research summary, news-hosted source caveat; lab routes returned 502.",
+    "sources": [
+      {
+        "url": "https://engineering.lehigh.edu/faculty/xuanhong-cheng",
+        "title": "Xuanhong Cheng institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Current Lehigh faculty profile gives professorial rank and department chair responsibility."
+      },
+      {
+        "url": "https://engineering.lehigh.edu/news/article/xuanhong-cheng-named-chair-lehigh-bioengineering",
+        "title": "Lehigh appointment and research account",
+        "observed_date": "2026-10-31",
+        "facts": "August 2026 article confirms bioengineering chair appointment, materials-science appointment, and research on polymer degradation."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://engineering.lehigh.edu/faculty/xuanhong-cheng",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://engineering.lehigh.edu/news/article/xuanhong-cheng-named-chair-lehigh-bioengineering",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://wordpress.lehigh.edu/xuc207/",
+        "status": "502"
+      },
+      {
+        "url": "https://wordpress.lehigh.edu/xuc207/research/",
+        "status": "502 via web and urllib fallback"
+      },
+      {
+        "url": "https://wordpress.lehigh.edu/xuc207/publications/",
+        "status": "502"
+      },
+      {
+        "url": "https://wordpress.lehigh.edu/biopolymers/group-members/xuanhong-cheng/",
+        "status": "502"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000448",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://prod.lsa.umich.edu/chem/people/faculty/paulzim.html",
+    "gate_a_fact": "Michigan chemistry profile gives full professorial rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://sites.lsa.umich.edu/zimmerman-lab/publications/",
+    "gate_b_quote": "Giving Superabsorbent Polymers a Second Life as Pressure-Sensitive Adhesives",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://prod.lsa.umich.edu/chem/people/faculty/paulzim.html",
+    "affiliation_fact": "Institution-owned current profile identifies this person with University of Michigan.",
+    "role_verdict": "AGREE",
+    "role_url": "https://prod.lsa.umich.edu/chem/people/faculty/paulzim.html",
+    "role_fact": "Michigan chemistry profile gives full professorial rank.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened observed name forms against held PERSON-000001–000073 names, excluding self when applicable; no other matching identity found. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Current institutional professor title and person-level polymer research support inclusion.",
+    "notes": "Observed name forms Paul Zimmerman and P. M. Zimmerman consistent with claim; no substantive name error established. Person-level polymer publications settle gate independently of macromolecular directory membership.",
+    "sources": [
+      {
+        "url": "https://prod.lsa.umich.edu/chem/people/faculty/paulzim.html",
+        "title": "Paul Martin Zimmerman institutional profile",
+        "observed_date": "2026-10-31",
+        "facts": "Michigan chemistry profile gives full professorial rank."
+      },
+      {
+        "url": "https://sites.lsa.umich.edu/zimmerman-lab/publications/",
+        "title": "Zimmerman group publication list",
+        "observed_date": "2026-10-31",
+        "facts": "Current institution-hosted lab lists Zimmerman-authored polymer upcycling and polymerization research, including a 2021 superabsorbent-to-adhesive paper."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://prod.lsa.umich.edu/chem/people/faculty/paulzim.html",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://sites.lsa.umich.edu/zimmerman-lab/publications/",
+        "status": "Opened and inspected body"
+      },
+      {
+        "url": "https://sites.lsa.umich.edu/zimmerman-lab/lab-members/current-members/",
+        "status": "Opened current group-leader professor listing"
+      },
+      {
+        "url": "https://sites.lsa.umich.edu/zimmerman-lab/",
+        "status": "Web body opened; urllib fallback 403"
+      },
+      {
+        "url": "https://available-inventions.umich.edu/product/super-absorbent-polymer-recycling-to-pressure-sensitive-adhesives",
+        "status": "Opened; polymer recycling invention identifies Zimmerman as inventor"
+      }
+    ]
+  }
+]

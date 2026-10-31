@@ -1,0 +1,105 @@
+{
+  "audited_main_sha": "604fea8ef1d9fe3f17049aeb053d157345a61de5",
+  "starting_main_sha": "604fea8ef1d9fe3f17049aeb053d157345a61de5",
+  "final_main_sha": "604fea8ef1d9fe3f17049aeb053d157345a61de5",
+  "checked_utc": "2026-10-31T20:15:11.410359+00:00",
+  "drift": false,
+  "canonical_data_diff_bytes": 0,
+  "validator": "PASS",
+  "sqlite_build": "PASS",
+  "regression_tests": 37,
+  "packet_check": "PASS",
+  "files_excluding_self": {
+    "tasks/QUEUE.md": {
+      "sha256": "cbf899e46aaae841ebf2cef169cf465e7f0a2fc3c0ac51b98af8065397cbff13",
+      "git_blob_sha": "3a4096ee5c5baf4e6df8905d9b1a8231944ff36b",
+      "bytes": 53339
+    },
+    "tasks/audit-9-people-r1/DERIVATIVE_CORRECTIONS.json": {
+      "sha256": "e6258de3885e0a16dd7b99ec2ca60c9c2660cc3842088c886a2c0eacc21297fd",
+      "git_blob_sha": "940811777475828441e0711ba2a805ddf8229579",
+      "bytes": 12086
+    },
+    "tasks/audit-9-people-r1/PRIVACY_REDACTIONS.json": {
+      "sha256": "af78eb97bfb1a0b4db4c108f8aff3609e3f52769aab67d219bce38c494730287",
+      "git_blob_sha": "16b107e8acda3eef65a727594e17d9503a4ae7d2",
+      "bytes": 507
+    },
+    "tasks/audit-9-people-r1/PROTOCOL.md": {
+      "sha256": "dff7789ce51a2b18fcae14b9c4a314bc3f317412922f86793f736fb696c0f455",
+      "git_blob_sha": "2d46306006e4381a6e3c139300e10a266ebb2f8f",
+      "bytes": 4575
+    },
+    "tasks/audit-9-people-r1/REPORT.md": {
+      "sha256": "9cc973cade4f50450fff91746cac85d3f1348b2341ad4662c9c4c9c59b897607",
+      "git_blob_sha": "b6f7e834b8940ed6b22fa9ba5378c2ba78ce8577",
+      "bytes": 19299
+    },
+    "tasks/audit-9-people-r1/REVIEW_NOTES.md": {
+      "sha256": "2afa3ca50551137151e26a12f2441eb58da2b5a9e873d48100e3ec86370fad8b",
+      "git_blob_sha": "5a042934e9e08a6d96e03399694273813388ef9e",
+      "bytes": 3828
+    },
+    "tasks/audit-9-people-r1/VERDICT_FREEZE.json": {
+      "sha256": "90ce3fd1989388d0d9bd7edec9a7dcb64ff50477dafe9df0bf532a27ba2d8c95",
+      "git_blob_sha": "5dff8dfd7c064c83ad229cefd43f086d4af6f75b",
+      "bytes": 951
+    },
+    "tasks/audit-9-people-r1/check_packet.py": {
+      "sha256": "08f0d1f0f98d6e97331ad714148a12b43d7087a783e0c7bc61fdbcb05bdbd63c",
+      "git_blob_sha": "979954816c21312361aa9f41c05730e056365ac9",
+      "bytes": 2694
+    },
+    "tasks/audit-9-people-r1/held_names.json": {
+      "sha256": "778d22353509cc9f12db3071ef8fd555b1e7dc873adb6fb2127c43a0af09364a",
+      "git_blob_sha": "2c92713f2768c749dc1fe00a76bbc93d74bdf0ca",
+      "bytes": 11968
+    },
+    "tasks/audit-9-people-r1/results_batch1.json": {
+      "sha256": "47221847da053e4044c5cc763d14f1e2f73138e0fb59fb60349e77235b87c2a3",
+      "git_blob_sha": "ed3292fd027f58020a6caa7b22c33323d7d14e24",
+      "bytes": 30912
+    },
+    "tasks/audit-9-people-r1/results_batch2.json": {
+      "sha256": "682c49890a08ddf5fddee9ef48ec17ba280ccd62e5f7fd5dc31f011dc2f047f2",
+      "git_blob_sha": "312a0117f22ec0dc761ac431b8c8bb70d86f3d55",
+      "bytes": 30066
+    },
+    "tasks/audit-9-people-r1/results_batch3.json": {
+      "sha256": "18ecf387beb7cd55efea80a1e8f2ccc308a6b29a06b7db22997e86fd827bfbca",
+      "git_blob_sha": "a0954f8624095dc9b260909a1a799c669f74e336",
+      "bytes": 27262
+    },
+    "tasks/audit-9-people-r1/results_batch4.json": {
+      "sha256": "8dea683ddfdf308a2fb277d4263c74cff93161db5ee7472f75c5989a33b8dcc2",
+      "git_blob_sha": "51d09a54d21dd9aea97cf26234bb535d66ad347b",
+      "bytes": 31004
+    },
+    "tasks/audit-9-people-r1/results_batch5.json": {
+      "sha256": "06d09eab693cc63779c4d368d31b30c8794d12ba85f687dfe4808cdc61e0b234",
+      "git_blob_sha": "ec5a6ce247e310797a5a0eb37f4860a9e61761c3",
+      "bytes": 31007
+    },
+    "tasks/audit-9-people-r1/sample.py": {
+      "sha256": "797f1c1bea3f865bb9a1d780a2fbdd446f5b6f011fdc5dca619807b23513fd34",
+      "git_blob_sha": "de32b0003a1f38176d3fb2e5034bc95647d3b189",
+      "bytes": 2386
+    },
+    "tasks/audit-9-people-r1/sample_manifest.json": {
+      "sha256": "6ffb6df54055ca49aff1c6ac54a23c03456df1bee9655b9bc5ddbe83ab14ba03",
+      "git_blob_sha": "4f501f133b5ea5c413de25e88521ffc40e8eda95",
+      "bytes": 1782
+    },
+    "tasks/audit-9-people-r1/statistics.json": {
+      "sha256": "04ab5eb2aca288ae92e087746cacb0d0b052196f1da99048f0d2223a48eff286",
+      "git_blob_sha": "36d6bf00cf3dd84fef98624ddd218e486f2841a0",
+      "bytes": 844
+    },
+    "tasks/audit-9-people-r1/worksheet.csv": {
+      "sha256": "45866f0b19e30f45ec226001c4c5a4c9aef7b9df98c6ad27267812a7488ab2e2",
+      "git_blob_sha": "5cfec93c638d7ea8c1c53dc51faa90eb25a27cab",
+      "bytes": 73097
+    }
+  },
+  "remote_parity_contract": "Publish these exact blobs; parent independent review checks immutable final remote tree before delivery. This manifest cannot contain its own hash."
+}

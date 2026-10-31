@@ -1,0 +1,479 @@
+[
+  {
+    "person_id": "PERSON-000042",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/yakovlapitsky.html",
+    "gate_a_fact": "Departmental profile identifies a professor who chairs chemical engineering.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/yakovlapitsky.html",
+    "gate_b_quote": "polyelectrolyte-based soft materials",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/yakovlapitsky.html",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within The University of Toledo.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/yakovlapitsky.html",
+    "role_fact": "Departmental profile identifies a professor who chairs chemical engineering.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match other than self, which was excluded. This is not exhaustive alias proof.",
+    "correction_verdict": "AGREE",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Departmental profile identifies a professor who chairs chemical engineering. Person-specific research text supports polymer-related work.",
+    "notes": "Held correction supported directly by departmental page, last updated July 8, 2026. Professor code remains valid despite chair duty.",
+    "sources": [
+      {
+        "url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/yakovlapitsky.html",
+        "title": "Lapitsky faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "Departmental profile identifies a professor who chairs chemical engineering. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.utoledo.edu/engineering/chemical-engineering/facultystaff/yakovlapitsky.html",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000077",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.uakron.edu/engineering/me/our-people/profile.dot?u=hoofatt",
+    "gate_a_fact": "Akron identifies Hoo Fatt as a mechanical-engineering professor.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.uakron.edu/engineering/me/our-people/profile.dot?u=hoofatt",
+    "gate_b_quote": "Elastomer Mechanics",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.uakron.edu/engineering/me/our-people/profile.dot?u=hoofatt",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within University of Akron.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.uakron.edu/engineering/me/our-people/profile.dot?u=hoofatt",
+    "role_fact": "Akron identifies Hoo Fatt as a mechanical-engineering professor.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Akron identifies Hoo Fatt as a mechanical-engineering professor. Person-specific research text supports polymer-related work.",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://www.uakron.edu/engineering/me/our-people/profile.dot?u=hoofatt",
+        "title": "Hoo Fatt faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "Akron identifies Hoo Fatt as a mechanical-engineering professor. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.uakron.edu/engineering/me/our-people/profile.dot?u=hoofatt",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000095",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://chemistry.osu.edu/people/sevov.1",
+    "gate_a_fact": "OSU lists Sevov with a distinguished college professorship.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://chemistry.osu.edu/people/sevov.1",
+    "gate_b_quote": "polymers and materials development",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://chemistry.osu.edu/people/sevov.1",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within The Ohio State University.",
+    "role_verdict": "UNRESOLVED",
+    "role_url": "https://research.cbc.osu.edu/sevov.1/christo-s-sevov/",
+    "role_fact": "Current lab chronology ends associate period in 2025 and begins distinguished title then; May 2025 trustees record explicitly pairs associate rank with distinguished appointment running May 2025–April 2030. Current academic rank is not settled by title alone.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "UNRESOLVED",
+    "error_fields": [],
+    "settling_fact": "Faculty eligibility and polymer research confirmed; exact associate rank requires clarification because lab chronology and trustees styling diverge.",
+    "notes": "Do not equate named distinguished professorship automatically with full academic rank. Current lab chronology and dated trustees record differ in how they present rank/title; no settled promotion-to-full evidence located.",
+    "sources": [
+      {
+        "url": "https://chemistry.osu.edu/people/sevov.1",
+        "title": "Sevov faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "OSU lists Sevov with a distinguished college professorship. Person-specific research supports Gate B as detailed in the research quotation field."
+      },
+      {
+        "url": "https://research.cbc.osu.edu/sevov.1/christo-s-sevov/",
+        "title": "Sevov lab biography",
+        "observed_date": "2026-10-31",
+        "facts": "Lab lists associate period as 2023–2025 and distinguished position from 2025 onward; group investigates plastics upcycling."
+      },
+      {
+        "url": "https://trustees.osu.edu/sites/default/files/documents/2025/05/Materials%20-%20FB%20Public%20Session%20-%20May%2021%2C%202025_0.pdf",
+        "title": "OSU trustees May 2025 materials",
+        "observed_date": "2026-10-31",
+        "facts": "Record explicitly lists associate rank with college distinguished appointment through April 2030 and associate rank for fall 2025 leave."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://chemistry.osu.edu/people/sevov.1",
+        "status": "Opened institution-owned body successfully"
+      },
+      {
+        "url": "https://research.cbc.osu.edu/sevov.1/christo-s-sevov/",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://trustees.osu.edu/sites/default/files/documents/2025/05/Materials%20-%20FB%20Public%20Session%20-%20May%2021%2C%202025_0.pdf",
+        "status": "Opened body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000162",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://che.vt.edu/People/faculty/Deshmukh.html",
+    "gate_a_fact": "VT current body identifies full professor rank with associate department-head duties.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://che.vt.edu/People/faculty/Deshmukh.html",
+    "gate_b_quote": "Conformational transitions in smart-polymers and their composites/architectures",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://che.vt.edu/People/faculty/Deshmukh.html",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within Virginia Polytechnic Institute and State University.",
+    "role_verdict": "FIELD_ERROR",
+    "role_url": "https://che.vt.edu/People/faculty/Deshmukh.html",
+    "role_fact": "Claimed associate-professor rank is superseded by full professor in the current departmental body.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "FIELD_ERROR",
+    "error_fields": [
+      "role",
+      "role_as_published"
+    ],
+    "settling_fact": "Opened current VT faculty body explicitly gives full professor, not associate professor. Search snippet was stale and was not used as evidence.",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://che.vt.edu/People/faculty/Deshmukh.html",
+        "title": "Deshmukh faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "VT current body identifies full professor rank with associate department-head duties. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://che.vt.edu/People/faculty/Deshmukh.html",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000210",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://eng.auburn.edu/directory/bsb0025",
+    "gate_a_fact": "Auburn lists the Uthlaut family associate professorship and leadership of its polymers/composites center.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://eng.auburn.edu/directory/bsb0025",
+    "gate_b_quote": "Polymer synthesis, characterization and physics",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://eng.auburn.edu/directory/bsb0025",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within Auburn University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://eng.auburn.edu/directory/bsb0025",
+    "role_fact": "Auburn lists the Uthlaut family associate professorship and leadership of its polymers/composites center.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Auburn lists the Uthlaut family associate professorship and leadership of its polymers/composites center. Person-specific research text supports polymer-related work.",
+    "notes": "Associate-professor code remains valid alongside directorship; no compulsory director code inferred.",
+    "sources": [
+      {
+        "url": "https://eng.auburn.edu/directory/bsb0025",
+        "title": "Beckingham faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "Auburn lists the Uthlaut family associate professorship and leadership of its polymers/composites center. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://eng.auburn.edu/directory/bsb0025",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000236",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.ou.edu/coe/scbme/people/faculty/klier",
+    "gate_a_fact": "OU biography identifies Klier as an engineering dean and chemical/biological/materials engineering professor.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.ou.edu/coe/scbme/people/faculty/klier",
+    "gate_b_quote": "Structured polymer colloids and emulsion polymers",
+    "affiliation_verdict": "UNRESOLVED",
+    "affiliation_url": "https://www.umass.edu/engineering/about/directory/john-klier",
+    "affiliation_fact": "OU current profile positively establishes OU employment and describes earlier UMass service; UMass body could not be inspected to establish whether a concurrent relationship remains.",
+    "role_verdict": "UNRESOLVED",
+    "role_url": "https://www.umass.edu/engineering/about/directory/john-klier",
+    "role_fact": "Professor status established at OU, but exact current styling at claimed UMass institution remains unverified.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "UNRESOLVED",
+    "error_fields": [],
+    "settling_fact": "Faculty and polymer eligibility established at OU; claimed UMass affiliation and associated role remain unresolved, not failed.",
+    "notes": "UMass search result suggests professor on leave 2024/25, but body access failed. This snippet is a retrieval lead, not affirmative current evidence. OU reports arrival from UMass in July 2020; that does not exclude a continuing leave/joint affiliation. Cannot settle claimed UMass affiliation. No creation error inferred.",
+    "sources": [
+      {
+        "url": "https://www.ou.edu/coe/scbme/people/faculty/klier",
+        "title": "Klier OU faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "OU biography identifies Klier as an engineering dean and chemical/biological/materials engineering professor. Person-specific research supports Gate B as detailed in the research quotation field."
+      },
+      {
+        "url": "https://www.ou.edu/coe/scbme/people/faculty",
+        "title": "OU faculty directory",
+        "observed_date": "2026-10-31",
+        "facts": "Directory updated October 26, 2026 lists Klier as dean, endowed chair holder and professor, with polymer research."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.ou.edu/coe/scbme/people/faculty/klier",
+        "status": "Opened institution-owned body successfully"
+      },
+      {
+        "url": "https://www.ou.edu/coe/scbme/people/faculty",
+        "status": "Opened body successfully"
+      },
+      {
+        "url": "https://www.umass.edu/engineering/about/directory/john-klier",
+        "status": "Web open HTTP 403; direct urllib also HTTP 403"
+      },
+      {
+        "url": "https://www.umass.edu/engineering/about/directory/john-klier?audit=1",
+        "status": "Web route inaccessible"
+      },
+      {
+        "url": "https://www.umass.edu/engineering/about/directory/john-klier/",
+        "status": "Web cache miss"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000270",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://mae.ncsu.edu/people/btoconno/",
+    "gate_a_fact": "NC State mechanical/aerospace faculty page identifies OConnor as professor.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://mae.ncsu.edu/people/btoconno/",
+    "gate_b_quote": "polymer semiconductors",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://mae.ncsu.edu/people/btoconno/",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within North Carolina State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://mae.ncsu.edu/people/btoconno/",
+    "role_fact": "NC State mechanical/aerospace faculty page identifies OConnor as professor.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "NC State mechanical/aerospace faculty page identifies OConnor as professor. Person-specific research text supports polymer-related work.",
+    "notes": "Current faculty page describes device research and person-specific polymer projects; displayed grant periods include historical projects, not evidence of departure.",
+    "sources": [
+      {
+        "url": "https://mae.ncsu.edu/people/btoconno/",
+        "title": "OConnor faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "NC State mechanical/aerospace faculty page identifies OConnor as professor. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://mae.ncsu.edu/people/btoconno/",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000328",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.duffield.cornell.edu/people/yong-l-joo/",
+    "gate_a_fact": "Cornell identifies Joo as an endowed full professor within the named chemical/biomolecular school.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.duffield.cornell.edu/people/yong-l-joo/",
+    "gate_b_quote": "viscoelastic instabilities in polymer flows",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.duffield.cornell.edu/people/yong-l-joo/",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within Cornell University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.duffield.cornell.edu/people/yong-l-joo/",
+    "role_fact": "Cornell identifies Joo as an endowed full professor within the named chemical/biomolecular school.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Cornell identifies Joo as an endowed full professor within the named chemical/biomolecular school. Person-specific research text supports polymer-related work.",
+    "notes": "Independent profile uses Yong L. Joo and Yong Lak Joo. Generic professor styling is substantively accurate despite omission of named chair.",
+    "sources": [
+      {
+        "url": "https://www.duffield.cornell.edu/people/yong-l-joo/",
+        "title": "Joo faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "Cornell identifies Joo as an endowed full professor within the named chemical/biomolecular school. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.duffield.cornell.edu/people/yong-l-joo/",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000360",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://cheme.mit.edu/profile/bradley-d-olsen/",
+    "gate_a_fact": "MIT chemical-engineering profile gives the Alexander/I. Michael Kasser named professorship.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://cheme.mit.edu/profile/bradley-d-olsen/",
+    "gate_b_quote": "block copolymers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://cheme.mit.edu/profile/bradley-d-olsen/",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within Massachusetts Institute of Technology.",
+    "role_verdict": "AGREE",
+    "role_url": "https://cheme.mit.edu/profile/bradley-d-olsen/",
+    "role_fact": "MIT chemical-engineering profile gives the Alexander/I. Michael Kasser named professorship.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "MIT chemical-engineering profile gives the Alexander/I. Michael Kasser named professorship. Person-specific research text supports polymer-related work.",
+    "notes": "Placement of graduation year in named-chair wording differs without changing substantive appointment identity.",
+    "sources": [
+      {
+        "url": "https://cheme.mit.edu/profile/bradley-d-olsen/",
+        "title": "Olsen faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "MIT chemical-engineering profile gives the Alexander/I. Michael Kasser named professorship. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://cheme.mit.edu/profile/bradley-d-olsen/",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000395",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://engineering.msu.edu/directory/faculty/zhan2565",
+    "gate_a_fact": "MSU profile identifies assistant rank with joint appointments in chemical/materials and biosystems/agricultural engineering.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://engineering.msu.edu/directory/faculty/zhan2565",
+    "gate_b_quote": "polymer and biopolymer nanotechnology",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://engineering.msu.edu/directory/faculty/zhan2565",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within Michigan State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://engineering.msu.edu/directory/faculty/zhan2565",
+    "role_fact": "MSU profile identifies assistant rank with joint appointments in chemical/materials and biosystems/agricultural engineering.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "MSU profile identifies assistant rank with joint appointments in chemical/materials and biosystems/agricultural engineering. Person-specific research text supports polymer-related work.",
+    "notes": "FLAG: real current internal joint appointment in two MSU departments; claimed chemical/materials appointment is valid, not an affiliation failure.",
+    "sources": [
+      {
+        "url": "https://engineering.msu.edu/directory/faculty/zhan2565",
+        "title": "Zhang faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "MSU profile identifies assistant rank with joint appointments in chemical/materials and biosystems/agricultural engineering. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://engineering.msu.edu/directory/faculty/zhan2565",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000440",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://aero.engin.umich.edu/people/sodano-henry/",
+    "gate_a_fact": "Michigan aerospace profile identifies professor rank and additional materials and macromolecular appointments.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://aero.engin.umich.edu/people/sodano-henry/",
+    "gate_b_quote": "Self-Healing Polymers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://aero.engin.umich.edu/people/sodano-henry/",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within University of Michigan.",
+    "role_verdict": "AGREE",
+    "role_url": "https://aero.engin.umich.edu/people/sodano-henry/",
+    "role_fact": "Michigan aerospace profile identifies professor rank and additional materials and macromolecular appointments.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Michigan aerospace profile identifies professor rank and additional materials and macromolecular appointments. Person-specific research text supports polymer-related work.",
+    "notes": "FLAG: current joint departmental appointments explicitly supported. Profile uses Henry A. Sodano; no unsupported conclusion that expanded middle name is erroneous.",
+    "sources": [
+      {
+        "url": "https://aero.engin.umich.edu/people/sodano-henry/",
+        "title": "Sodano faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "Michigan aerospace profile identifies professor rank and additional materials and macromolecular appointments. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://aero.engin.umich.edu/people/sodano-henry/",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000468",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.usm.edu/faculty-directory/profile.php?id=1936186",
+    "gate_a_fact": "USM personal profile identifies a current polymer-science/engineering professor and active research team.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.usm.edu/faculty-directory/profile.php?id=1936186",
+    "gate_b_quote": "polymer structure-property-performance relationships",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.usm.edu/faculty-directory/profile.php?id=1936186",
+    "affiliation_fact": "Institution-owned current faculty profile identifies this person within University of Southern Mississippi.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.usm.edu/faculty-directory/profile.php?id=1936186",
+    "role_fact": "USM personal profile identifies a current polymer-science/engineering professor and active research team.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied PERSON-000001–000073 names against independently observed identity/name forms; no match. This is not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "USM personal profile identifies a current polymer-science/engineering professor and active research team. Person-specific research text supports polymer-related work.",
+    "notes": "Independent profile uses James W. Rawlins; omission of middle initial is not an identity error.",
+    "sources": [
+      {
+        "url": "https://www.usm.edu/faculty-directory/profile.php?id=1936186",
+        "title": "Rawlins faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "USM personal profile identifies a current polymer-science/engineering professor and active research team. Person-specific research supports Gate B as detailed in the research quotation field."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.usm.edu/faculty-directory/profile.php?id=1936186",
+        "status": "Opened institution-owned body successfully"
+      }
+    ]
+  }
+]

@@ -1,0 +1,551 @@
+[
+  {
+    "person_id": "PERSON-000052",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=mtsige",
+    "gate_a_fact": "The profile identifies Tsige as a professor and SPSPE director.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=mtsige",
+    "gate_b_quote": "computational polymer science",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=mtsige",
+    "affiliation_fact": "Institution-owned current profile places this person at University of Akron.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=mtsige",
+    "role_fact": "The profile identifies Tsige as a professor and SPSPE director.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "AGREE",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Research explicitly covers computational polymers and thermoset mechanical failure.",
+    "notes": "Mini-frame correction to professor plus director is supported; current institution profile supplies both gates.",
+    "sources": [
+      {
+        "url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=mtsige",
+        "title": "Akron Tsige profile",
+        "observed_date": "2026-10-31",
+        "facts": "The profile identifies Tsige as a professor and SPSPE director. Research explicitly covers computational polymers and thermoset mechanical failure."
+      },
+      {
+        "url": "https://blogs.uakron.edu/mtsige/contact/",
+        "title": "Tsige laboratory biography",
+        "observed_date": "2026-10-31",
+        "facts": "Lab biography independently identifies a professorship in the Akron polymer school."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=mtsige",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://blogs.uakron.edu/mtsige/contact/",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000084",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://case.edu/engineering/about/faculty-and-staff-directory/laura-bruckman",
+    "gate_a_fact": "Current faculty page identifies a Climo-endowed associate professorship in materials science.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://case.edu/engineering/about/faculty-and-staff-directory/laura-bruckman",
+    "gate_b_quote": "weathering induced degradation of Poly(ethylene-terephthalate)",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://case.edu/engineering/about/faculty-and-staff-directory/laura-bruckman",
+    "affiliation_fact": "Institution-owned current profile places this person at Case Western Reserve University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://bulletin.case.edu/engineering/materials-science-engineering/",
+    "role_fact": "The faculty title is associate professor; the current bulletin separately identifies her as MDS-Rely director.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Her listed authored research studies weathering degradation of PET, rather than relying on center membership.",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://case.edu/engineering/about/faculty-and-staff-directory/laura-bruckman",
+        "title": "CWRU Bruckman profile",
+        "observed_date": "2026-10-31",
+        "facts": "Current faculty page identifies a Climo-endowed associate professorship in materials science. Her listed authored research studies weathering degradation of PET, rather than relying on center membership."
+      },
+      {
+        "url": "https://bulletin.case.edu/engineering/materials-science-engineering/",
+        "title": "CWRU materials engineering bulletin",
+        "observed_date": "2026-10-31",
+        "facts": "The 2026–27 bulletin identifies Bruckman as director of MDS-Rely, separately from her co-directorship of MDS3."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://case.edu/engineering/about/faculty-and-staff-directory/laura-bruckman",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://bulletin.case.edu/engineering/materials-science-engineering/",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000112",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://cse.umn.edu/cems/michelle-calabrese",
+    "gate_a_fact": "Faculty profile identifies an associate professorship.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://cse.umn.edu/cems/michelle-calabrese",
+    "gate_b_quote": "polymer processing",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://cse.umn.edu/cems/michelle-calabrese",
+    "affiliation_fact": "Institution-owned current profile places this person at University of Minnesota.",
+    "role_verdict": "AGREE",
+    "role_url": "https://cse.umn.edu/cems/michelle-calabrese",
+    "role_fact": "Faculty profile identifies an associate professorship.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Her research describes rheology and scattering for polymer-processing materials; authored studies include block-copolymer micelles and thermoresponsive polymers.",
+    "notes": "Middle initial is corroborated by authored publications on this page; abbreviated displayed name is not an identity error.",
+    "sources": [
+      {
+        "url": "https://cse.umn.edu/cems/michelle-calabrese",
+        "title": "Minnesota Calabrese profile",
+        "observed_date": "2026-10-31",
+        "facts": "Faculty profile identifies an associate professorship. Her research describes rheology and scattering for polymer-processing materials; authored studies include block-copolymer micelles and thermoresponsive polymers."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://cse.umn.edu/cems/michelle-calabrese",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000173",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+    "gate_a_fact": "The current teaching-and-research faculty profile identifies associate rank.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+    "gate_b_quote": "Polymer synthesis and characterization",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+    "affiliation_fact": "Institution-owned current profile places this person at Virginia Polytechnic Institute and State University.",
+    "role_verdict": "FIELD_ERROR",
+    "role_url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+    "role_fact": "Claimed full-professor code and published styling conflict with the current associate-rank heading.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "FIELD_ERROR",
+    "error_fields": [
+      "role",
+      "role_as_published"
+    ],
+    "settling_fact": "Current institutional heading identifies associate rank; faculty and person-level polymer research remain eligible.",
+    "notes": "",
+    "sources": [
+      {
+        "url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+        "title": "Virginia Tech Deck profile",
+        "observed_date": "2026-10-31",
+        "facts": "The current teaching-and-research faculty profile identifies associate rank. Research describes making fluorinated aromatic polymers and developing polymer synthesis methods."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000212",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://cosam.auburn.edu/directory/profile.php?id=czg0090",
+    "gate_a_fact": "The redesigned faculty profile identifies an assistant professorship in chemistry and biochemistry.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://cosam.auburn.edu/directory/profile.php?id=czg0090",
+    "gate_b_quote": "charge carriers in conducting polymers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://cosam.auburn.edu/directory/profile.php?id=czg0090",
+    "affiliation_fact": "Institution-owned current profile places this person at Auburn University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://cosam.auburn.edu/directory/profile.php?id=czg0090",
+    "role_fact": "The redesigned faculty profile identifies an assistant professorship in chemistry and biochemistry.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Research uses optical spectroscopy to probe charge transport in conducting polymers.",
+    "notes": "Old profile failed by redirect; independently followed redesigned institutional department and roster to the functioning current profile.",
+    "sources": [
+      {
+        "url": "https://cosam.auburn.edu/directory/profile.php?id=czg0090",
+        "title": "Auburn Grieco profile",
+        "observed_date": "2026-10-31",
+        "facts": "The redesigned faculty profile identifies an assistant professorship in chemistry and biochemistry. Research uses optical spectroscopy to probe charge transport in conducting polymers."
+      },
+      {
+        "url": "https://cosam.auburn.edu/chemistry/index.php",
+        "title": "Auburn chemistry department",
+        "observed_date": "2026-10-31",
+        "facts": "Department links to the current faculty roster and describes Grieco laboratory polymer research."
+      },
+      {
+        "url": "https://cosam.auburn.edu/chemistry/about/meet-the-team.php?utm_medium=web&utm_source=cosam",
+        "title": "Auburn chemistry roster",
+        "observed_date": "2026-10-31",
+        "facts": "Current faculty roster identifies Grieco at assistant rank and links to the new profile."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://cosam.auburn.edu/directory/profile.php?id=czg0090",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://www.auburn.edu/cosam/faculty/chemistry/grieco/",
+        "status": "Redirected to college landing page; old faculty body not obtained"
+      },
+      {
+        "url": "https://cosam.auburn.edu/departments/chemistry/faculty/grieco/",
+        "status": "Tool reported inaccessible"
+      },
+      {
+        "url": "https://cosam.auburn.edu/chemistry/index.php",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://cosam.auburn.edu/chemistry/about/meet-the-team.php?utm_medium=web&utm_source=cosam",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000238",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.umass.edu/polymer-science/hoagland-research-group",
+    "gate_a_fact": "Institution-hosted current laboratory page identifies Hoagland as a professor.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.umass.edu/polymer-science/hoagland-research-group",
+    "gate_b_quote": "examine polymer structure and dynamics",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.umass.edu/polymer-science/hoagland-research-group",
+    "affiliation_fact": "Institution-owned current profile places this person at University of Massachusetts Amherst.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.umass.edu/polymer-science/hoagland-research-group",
+    "role_fact": "Institution-hosted current laboratory page identifies Hoagland as a professor.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "The named laboratory studies polymer conformation and dynamics, polyelectrolytes and polymers in ionic liquids.",
+    "notes": "Faculty route failed, but the institution-owned current lab page supplied title and both research/affiliation evidence. Failed fetch not treated as absence.",
+    "sources": [
+      {
+        "url": "https://www.umass.edu/polymer-science/hoagland-research-group",
+        "title": "UMass Hoagland laboratory",
+        "observed_date": "2026-10-31",
+        "facts": "Institution-hosted current laboratory page identifies Hoagland as a professor. The named laboratory studies polymer conformation and dynamics, polyelectrolytes and polymers in ionic liquids."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.umass.edu/polymer-science/hoagland-research-group",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/about/directory/david-hoagland",
+        "status": "Web open and Python urllib both returned 403; HTTP variant also 403"
+      },
+      {
+        "url": "https://www.umass.edu/polymer-science/about/directory/david-hoagland?x=1",
+        "status": "Tool reported inaccessible"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000292",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.clemson.edu/cecas/departments/chbe/people/davis_e.html",
+    "gate_a_fact": "Current department profile identifies a professor who is also associate chair.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.clemson.edu/cecas/departments/chbe/people/davis_e.html",
+    "gate_b_quote": "polymer structure, transport phenomena, and polymer physics",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.clemson.edu/cecas/departments/chbe/people/davis_e.html",
+    "affiliation_fact": "Institution-owned current profile places this person at Clemson University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.clemson.edu/cecas/departments/chbe/people/davis_e.html",
+    "role_fact": "Current department profile identifies a professor who is also associate chair.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Research directly examines structure, processing and transport in polymer membranes for energy and water applications.",
+    "notes": "Search routed an older lab-page associate-rank styling, but current departmental profile supports the claimed full rank; older undated snippets are not used to override current primary profile.",
+    "sources": [
+      {
+        "url": "https://www.clemson.edu/cecas/departments/chbe/people/davis_e.html",
+        "title": "Clemson Davis profile",
+        "observed_date": "2026-10-31",
+        "facts": "Current department profile identifies a professor who is also associate chair. Research directly examines structure, processing and transport in polymer membranes for energy and water applications."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.clemson.edu/cecas/departments/chbe/people/davis_e.html",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000334",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.esf.edu/faculty/gitsov/index.php",
+    "gate_a_fact": "Profile identifies Ivan Gitsov Ivanov as a chemistry professor and polymer institute director.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.esf.edu/faculty/gitsov/index.php",
+    "gate_b_quote": "design, synthesis and evaluation of novel polymers and copolymers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.esf.edu/faculty/gitsov/index.php",
+    "affiliation_fact": "Institution-owned current profile places this person at SUNY College of Environmental Science and Forestry.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.esf.edu/faculty/gitsov/index.php",
+    "role_fact": "Profile identifies Ivan Gitsov Ivanov as a chemistry professor and polymer institute director.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "His group designs, synthesizes and evaluates novel polymers, copolymers and macromolecular architectures.",
+    "notes": "FLAG: page also records an ongoing courtesy associate appointment at Syracuse since 2023; this does not negate SUNY ESF affiliation. Ivan Gitsov and Ivan Ivanov forms belong to this same institutional profile, not a held-roster duplicate.",
+    "sources": [
+      {
+        "url": "https://www.esf.edu/faculty/gitsov/index.php",
+        "title": "ESF Ivanov profile",
+        "observed_date": "2026-10-31",
+        "facts": "Profile identifies Ivan Gitsov Ivanov as a chemistry professor and polymer institute director. His group designs, synthesizes and evaluates novel polymers, copolymers and macromolecular architectures."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.esf.edu/faculty/gitsov/index.php",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000366",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO",
+    "gate_a_fact": "Department profile identifies the Whitaker named professorship and a mechanical-engineering professorship.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO",
+    "gate_b_quote": "tough adhesive hydrogels",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO",
+    "affiliation_fact": "Institution-owned current profile places this person at Massachusetts Institute of Technology.",
+    "role_verdict": "AGREE",
+    "role_url": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO",
+    "role_fact": "Department profile identifies the Whitaker named professorship and a mechanical-engineering professorship.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Person-level research interests explicitly include tough adhesive hydrogels and plastics.",
+    "notes": "FLAG: internal joint/courtesy CEE appointment is stated and does not negate MIT affiliation. Several routes failed, but the mechanical-engineering faculty page supplies both gates.",
+    "sources": [
+      {
+        "url": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO",
+        "title": "MIT Zhao faculty profile",
+        "observed_date": "2026-10-31",
+        "facts": "Department profile identifies the Whitaker named professorship and a mechanical-engineering professorship. Person-level research interests explicitly include tough adhesive hydrogels and plastics."
+      },
+      {
+        "url": "https://news.mit.edu/2026/mit-engineers-whip-up-more-breathable-hydrogel-0708",
+        "title": "MIT breathable-hydrogel report",
+        "observed_date": "2026-10-31",
+        "facts": "July 2026 research report corroborates Zhao’s named professorship and development of polymer-network hydrogel materials."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://news.mit.edu/2026/mit-engineers-whip-up-more-breathable-hydrogel-0708",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://cee.mit.edu/people_individual/xuanhe-zhao/",
+        "status": "Web and Python urllib returned 502"
+      },
+      {
+        "url": "https://ppsm.mit.edu/faculty/",
+        "status": "502"
+      },
+      {
+        "url": "https://ilpstex.mit.edu/en/content/faculty-profiles/xuanhe-zhao",
+        "status": "Timeout"
+      },
+      {
+        "url": "https://zhao.mit.edu/",
+        "status": "502"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000397",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://viest.upenn.edu/people/chinedum-osuji",
+    "gate_a_fact": "Institution profile identifies a named chemical-engineering professorship and department chair position.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://viest.upenn.edu/people/chinedum-osuji",
+    "gate_b_quote": "block copolymers",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://viest.upenn.edu/people/chinedum-osuji",
+    "affiliation_fact": "Institution-owned current profile places this person at University of Pennsylvania.",
+    "role_verdict": "AGREE",
+    "role_url": "https://viest.upenn.edu/people/chinedum-osuji",
+    "role_fact": "Institution profile identifies a named chemical-engineering professorship and department chair position.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Named laboratory research synthesizes and processes self-assembled block-copolymer materials for separation and electrochemical applications.",
+    "notes": "Professor code remains valid despite concurrent department chair position; no compulsory director coding assumed.",
+    "sources": [
+      {
+        "url": "https://viest.upenn.edu/people/chinedum-osuji",
+        "title": "Penn Osuji profile",
+        "observed_date": "2026-10-31",
+        "facts": "Institution profile identifies a named chemical-engineering professorship and department chair position. Named laboratory research synthesizes and processes self-assembled block-copolymer materials for separation and electrochemical applications."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://viest.upenn.edu/people/chinedum-osuji",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000442",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://search.asu.edu/profile/4996366",
+    "gate_a_fact": "Current ASU faculty profile identifies a school director and professor, with 2026 teaching listed.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://search.asu.edu/profile/4996366",
+    "gate_b_quote": "Recyclable vitrimer composite materials",
+    "affiliation_verdict": "UNRESOLVED",
+    "affiliation_url": "https://aero.engin.umich.edu/people/waas-anthony-m/",
+    "affiliation_fact": "Active ASU appointment confirmed; whether a concurrent active Michigan appointment persists is not settled by inconsistent Michigan evidence.",
+    "role_verdict": "UNRESOLVED",
+    "role_url": "https://aero.engin.umich.edu/people/waas-anthony-m/",
+    "role_fact": "Professor code fits active ASU rank, but claimed Michigan named-professor styling conflicts with Michigan Aerospace emeritus heading.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "UNRESOLVED",
+    "error_fields": [],
+    "settling_fact": "Need an unambiguous current Michigan appointment record resolving retained joint professor status versus emeritus-only Michigan status. ASU appointment alone does not prove Michigan departure.",
+    "notes": "FLAG/CONFLICT: ASU active appointment is confirmed. Michigan Aerospace heading says emeritus while its biography retains active Michigan titles. Michigan ME search result says joint professor, but body access failed; that snippet is not accepted as settling joint-appointment evidence. Do not infer emeritus-only eligibility failure from this conflict.",
+    "sources": [
+      {
+        "url": "https://search.asu.edu/profile/4996366",
+        "title": "ASU Waas profile",
+        "observed_date": "2026-10-31",
+        "facts": "Current ASU faculty profile identifies a school director and professor, with 2026 teaching listed. Current person-level research explicitly names recyclable vitrimer composites."
+      },
+      {
+        "url": "https://aero.engin.umich.edu/people/waas-anthony-m/",
+        "title": "Michigan Aerospace Waas profile",
+        "observed_date": "2026-10-31",
+        "facts": "Heading labels emeritus status; retained biographical text describes active Michigan named and mechanical-engineering professorships. Person-specific research includes polymer composite mechanics."
+      },
+      {
+        "url": "https://news.engineering.asu.edu/2024/03/anthony-waas-named-director-of-asus-school-for-engineering-of-matter-transport-and-energy/",
+        "title": "ASU Waas appointment report",
+        "observed_date": "2026-10-31",
+        "facts": "March 2024 article reports arrival at ASU as school director and professor, following his 2018 return to Michigan."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://search.asu.edu/profile/4996366",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://aero.engin.umich.edu/people/waas-anthony-m/",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://news.engineering.asu.edu/2024/03/anthony-waas-named-director-of-asus-school-for-engineering-of-matter-transport-and-energy/",
+        "status": "Opened; substantive institutional page body inspected"
+      },
+      {
+        "url": "https://me.engin.umich.edu/people/faculty/anthony-waas/",
+        "status": "403; search snippet not accepted as opened evidence"
+      },
+      {
+        "url": "https://me.engin.umich.edu/people/printable-directory/",
+        "status": "403"
+      },
+      {
+        "url": "https://www.me.engin.umich.edu/people/faculty/anthony-waas/",
+        "status": "Cache miss"
+      }
+    ]
+  },
+  {
+    "person_id": "PERSON-000472",
+    "gate_a_verdict": "AGREE",
+    "gate_a_url": "https://www.pittstate.edu/automotive-and-engineering/faculty-and-staff/paul-herring.html",
+    "gate_a_fact": "Current institutional profile identifies a professor.",
+    "gate_b_verdict": "AGREE",
+    "gate_b_url": "https://www.pittstate.edu/automotive-and-engineering/faculty-and-staff/paul-herring.html",
+    "gate_b_quote": "Injection Molding",
+    "affiliation_verdict": "AGREE",
+    "affiliation_url": "https://www.pittstate.edu/automotive-and-engineering/faculty-and-staff/paul-herring.html",
+    "affiliation_fact": "Institution-owned current profile places this person at Pittsburg State University.",
+    "role_verdict": "AGREE",
+    "role_url": "https://www.pittstate.edu/automotive-and-engineering/faculty-and-staff/paul-herring.html",
+    "role_fact": "Current institutional profile identifies a professor.",
+    "duplicate_verdict": "AGREE",
+    "duplicate_fact": "Screened supplied held PERSON-000001–000073 names and institutional identities; no matching other person. Self excluded for PERSON-000052. This is a screening result, not exhaustive alias proof.",
+    "correction_verdict": "",
+    "overall_verdict": "AGREE",
+    "error_fields": [],
+    "settling_fact": "Individual research-interest section names injection molding, blow molding and recycling in the profile’s explicit plastics-processing context.",
+    "notes": "Gate B is supported by a person-specific research-interest section, not merely teaching responsibilities or program membership. Plastics context is established on the same profile.",
+    "sources": [
+      {
+        "url": "https://www.pittstate.edu/automotive-and-engineering/faculty-and-staff/paul-herring.html",
+        "title": "Pittsburg State Herring profile",
+        "observed_date": "2026-10-31",
+        "facts": "Current institutional profile identifies a professor. Individual research-interest section names injection molding, blow molding and recycling in the profile’s explicit plastics-processing context."
+      }
+    ],
+    "fetch_log": [
+      {
+        "url": "https://www.pittstate.edu/automotive-and-engineering/faculty-and-staff/paul-herring.html",
+        "status": "Opened; substantive institutional page body inspected"
+      }
+    ]
+  }
+]

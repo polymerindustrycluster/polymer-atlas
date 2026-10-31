@@ -1,0 +1,8 @@
+{
+  "results_batch4.json": {
+    "original_frozen_sha256": "7778c7848020797b6ca5560add02c7375a776d16982a0c0728268a910b5029ae",
+    "published_redacted_sha256": "8dea683ddfdf308a2fb277d4263c74cff93161db5ee7472f75c5989a33b8dcc2",
+    "redaction": "Replaced one email-shaped MIT profile routing URL wherever present with REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO; all other bytes preserved. Original retained privately, never published.",
+    "placeholder": "REDACTED_PROFILE_URL_MIT_MECHE_XUANHE_ZHAO"
+  }
+}

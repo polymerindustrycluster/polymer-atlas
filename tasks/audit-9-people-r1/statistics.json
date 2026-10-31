@@ -1,0 +1,47 @@
+{
+  "random": {
+    "n": 50,
+    "counts": {
+      "AGREE": 41,
+      "FIELD_ERROR": 3,
+      "CREATION_ERROR": 0,
+      "UNRESOLVED": 6
+    },
+    "rates": {
+      "AGREE": 82.0,
+      "FIELD_ERROR": 6.0,
+      "CREATION_ERROR": 0.0,
+      "UNRESOLVED": 12.0
+    }
+  },
+  "judgment": {
+    "n": 4,
+    "counts": {
+      "AGREE": 4,
+      "FIELD_ERROR": 0,
+      "CREATION_ERROR": 0,
+      "UNRESOLVED": 0
+    },
+    "rates": {
+      "AGREE": 100.0,
+      "FIELD_ERROR": 0.0,
+      "CREATION_ERROR": 0.0,
+      "UNRESOLVED": 0.0
+    }
+  },
+  "held_correction": {
+    "n": 7,
+    "counts": {
+      "AGREE": 6,
+      "FIELD_ERROR": 0,
+      "CREATION_ERROR": 0,
+      "UNRESOLVED": 1
+    },
+    "rates": {
+      "AGREE": 85.71428571428571,
+      "FIELD_ERROR": 0.0,
+      "CREATION_ERROR": 0.0,
+      "UNRESOLVED": 14.285714285714286
+    }
+  }
+}
