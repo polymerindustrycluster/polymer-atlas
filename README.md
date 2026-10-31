@@ -1,5 +1,7 @@
 # Polymer Industry Atlas — Ohio & Northeast Ohio
 
+> **2026-10-31 source update:** [Reconciliation results](docs/reviews/F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
+
 An open, source-backed database of the polymer / plastics / rubber industry:
 companies, plants, materials producers, the value chain, downstream OEMs, and
 the ecosystem (universities, associations, nonprofits, economic development)
