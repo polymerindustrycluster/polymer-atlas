@@ -1,5 +1,7 @@
 # F5 public-count audit — pinned post-TRI snapshot
 
+> **2026-10-31 source update:** [Reconciliation results](F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
+
 > **23:22 UTC continuation:** The [reconciliation addendum](F5_RECONCILIATION_ADDENDUM_2026-10-30.md) verifies the newly published creation map at current main. Coverage/denominator and full campaign-ledger gaps remain explicitly open; canonical data is unchanged.
 
 Pin: `eceead3a5a59b7a51d13b2ad61d6070e4cfc9a05`, observed 2026-10-30 21:32 UTC.
