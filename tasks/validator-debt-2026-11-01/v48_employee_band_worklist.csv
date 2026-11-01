@@ -1,0 +1,21 @@
+record_id,shard,site_name,employee_band_site
+SITE-004293,sites_CA.csv,ASC Process Systems - Valencia,200-499
+SITE-004289,sites_FL.csv,American Tool & Mold - Clearwater,100-199
+SITE-003391,sites_GA.csv,Toyo Tire North America Manufacturing — White,1000-2499
+SITE-003382,sites_IN.csv,Michelin — Fort Wayne (BFGoodrich),1000-2499
+SITE-003304,sites_MI.csv,CHT USA headquarters and silicone polymer plant - Cassopolis,100-199
+SITE-004394,sites_NC.csv,STI Polymer HQ and plant,100-199 (ThomasNet estimate)
+SITE-003712,sites_NH.csv,Textiles Coated International Headquarters & Plant,201-500
+SITE-004207,sites_NH.csv,Spaulding Composites Headquarters and Plant,100-199
+SITE-003462,sites_OH.csv,ContiTech — Marysville (Conveyor Belt Plant),200-499
+SITE-003463,sites_OH.csv,CW Ohio — Conneaut (HQ plant),200-499
+SITE-003471,sites_OH.csv,Mantaline — Mantua (HQ plant),100-199
+SITE-003376,sites_SC.csv,Michelin — Greenville (US1),1000-2499
+SITE-003377,sites_SC.csv,Michelin — Spartanburg,1000-2499
+SITE-003379,sites_SC.csv,Michelin — Lexington,1000-2499
+SITE-003386,sites_SC.csv,Continental Tire — Sumter,1000-2499
+SITE-004382,sites_SC.csv,Munzing Clover plant,"71 employees (own site, Clover location total)"
+SITE-003687,sites_TX.csv,Tex-Trude Headquarters & Plant,200-499
+SITE-004078,sites_TX.csv,Advanced Pedestals - Gainesville,100-199
+SITE-004176,sites_VA.csv,Euro-Composites - Elkwood plant,100-199
+SITE-004528,sites_WA.csv,General Plastics Manufacturing - Tacoma Plant,101-250
