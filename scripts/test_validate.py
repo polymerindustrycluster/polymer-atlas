@@ -114,6 +114,18 @@ class ValidatorMutationTests(unittest.TestCase):
                            lambda r: r.update(markets_served="automotive"))
         self.assert_fails_with(f"sites {r['site_id']} markets_served values ['automotive']")
 
+    def test_v50_crm_in_org_sources(self):
+        all_debt = set().union(*map(set, BASELINE.values()))
+        r = self.edit_rows("organizations_OH.csv", lambda r: r["org_id"] not in all_debt,
+                           lambda r: r.update(sources=r["sources"] + "; PIC CRM record"))
+        self.assert_fails_with(f"{r['org_id']} names the PIC CRM")
+
+    def test_new_v176_vocab_accepted(self):
+        self.edit_rows("sites_OH.csv", self.clean_ohio_site,
+                       lambda r: r.update(markets_served="automotive_unspecified;tire_rubber_goods"))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-2000:])
+
     def test_fixed_baseline_row_is_reported(self):
         target = sorted(BASELINE["V-45"])[0]
         self.edit_rows(next(p.name for p in self.data.glob("sites_*.csv")

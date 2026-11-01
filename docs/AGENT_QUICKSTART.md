@@ -76,7 +76,7 @@ python3 -m unittest discover -s scripts -p 'test_*.py'   # all tests (~12 s)
 ```
 
 - **Grandfathered debt.** The validator warns about rows listed in
-  `scripts/validate_debt_baseline.json` (V-45..V-49). Any *new* violation is an
+  `scripts/validate_debt_baseline.json` (V-45..V-51). Any *new* violation is an
   error. Never add IDs to the baseline to get past it. Fixing a baselined row
   shrinks the list. See `tasks/validator-debt-2026-11-01/`.
 - **PR description:** state the task claimed, sources used, rows added or

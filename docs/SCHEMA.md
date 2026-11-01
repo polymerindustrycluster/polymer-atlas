@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -310,6 +310,71 @@ above:
 
 ---
 
+### Owner rulings — 2026-11-01 (battery 2026-11-01) **[v1.7.6]**
+
+Ruled "all as recommended" by the repo owner in session on 2026-11-01. The
+battery, with its evidence, is `tasks/OWNER_BATTERY_2026-11-01.md`. The
+vocabulary added below is enforced by `scripts/validate.py` and exported to
+`docs/schema/vocab.json`. **No data row is changed by this revision.** Applying
+the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
+
+- **P1. The PIC CRM is never a cited source and is never named in any public row.**
+  This covers all tables, not only membership (AGENTS.md §5.1) and people (§6).
+  Rows that cite or describe CRM content are re-sourced to public evidence, or
+  dropped to the tier that public evidence supports. Validator V-50 enforces it,
+  with existing rows grandfathered for the cleanup pass.
+- **P2. No email-like string in `people.public_profile_url`** (V-51).
+- **P3. `sources` carries public citations only.** Workshop and staging paths
+  (`working/…`, `(staging …)`) move to evidence rows or pass journals in a
+  dedicated cleanup pass. The validator does not enforce this yet.
+- **R1. `site_type` additions** (§4.5):
+  - `office_other` covers an in-scope office that is neither HQ nor sales.
+  - `service_repair` covers a machinery service and repair center (Ring 3).
+  - A mixed-use address carries one `site_type`, for its dominant physical
+    function. The other functions go in notes.
+- **R2/R8. `markets_served` additions** (§3.3):
+  `automotive_unspecified` (the source says automotive without saying OEM or
+  aftermarket; never upgraded without a source), `tire_rubber_goods`,
+  `plastics_rubber_processors` (upstream customers), `cosmetics_personal_care`,
+  `food_processing_foodservice` (not packaging), `medical_healthcare_general`
+  ("medical" without "device"), `chemical_mining_metals_processing`,
+  `rv_powersports_trailers`, `telecom_datacom`.
+- **R3/R8. `processes` additions** (§3.1): `additive_dry_blending`,
+  `pigment_colorant_dispersion`, `pressure_sensitive_tape_manufacture`,
+  `potting_encapsulation_casting`, `fluoropolymer_lining`,
+  `thermoforming_unspecified` (the type is not stated; never upgraded without a
+  source).
+- **R8. `materials` additions** (§3.2): `asa`, `specialty_elastomers`
+  (HNBR / FFKM / CSM / butyl / ECO / fluorosilicone; name the specific one in
+  notes), `polyester_vinyl_ester_resins`, `acrylic_pmma`.
+- **R3b/R8. `certifications` additions** (§3.4): `iso_45001`, `iso_17025`.
+- **R3c. Certification currency.** Record a certification only from a current
+  certificate, or a current page that names a non-superseded edition. An expired
+  certificate, a superseded edition, or an "ISO certified" claim that names no
+  standard is not recorded. A product compliance claim (UL-listed, FDA-grade,
+  NSF/ANSI 61) is never a facility certification.
+- **R4. NAICS confidence stays three-point** (`high | medium | low`, §2.1).
+  Values like `low-medium` round down.
+- **R5. `members.member_since` is a year field by design.** It is the single
+  exception to the AGENTS.md §4 full-ISO-date rule.
+- **R6. Pilot scope items:**
+  - Etched Metal (SITE-001426) gets the Ring 4 two-of-three test, logged in
+    `inclusion_log.csv`.
+  - SITE-001836 (Robin Industries, Independence) goes to re-verification.
+- **R7. Process rulings:**
+  - Move to one file per task after the current campaign.
+  - Consolidate SCHEMA into a v2 as a dedicated pass.
+  - Appoint a delegate for routine battery items. The owner names the person.
+  - Activate the news / WARN monitor. Its hits only queue re-verification.
+  - North America scope is held.
+  - A Form 5500 plan-participant count is admissible as an employee-band input.
+    It is `government_filing` with the plan year, always banded, and never a
+    precise headcount.
+- **R9. A row that is not a plant is corrected, not kept as a plant.** Offices,
+  warehouses and distributors carried as `manufacturing_plant` rows get their
+  `site_type` and ring corrected from evidence (B14: an office row's ring is not
+  the parent's). A row whose scope becomes doubtful goes to `inclusion_log.csv`.
+
 ## 2. NAICS Map
 
 ### 2.1 Critical provenance rule — read first
@@ -519,7 +584,7 @@ doctrine.
 `additive_manufacturing_polymer` · `additive_manufacturing_polymer_production` *(end-use; implies Ring 1 candidacy)* · `additive_manufacturing_metal` *(record only as secondary capability)*
 
 **Secondary / finishing / other:**
-`plastics_machining_cnc` · `plastics_fabrication_welding` · `die_cutting_converting` · `laminating` · `coating_applying` *(contrast: `coating_formulation` = makes it)* · `printing_decorating_plastics` · `assembly_secondary_ops` · `ultrasonic_solvent_bonding` · `recycling_mechanical` · `recycling_chemical_pyrolysis` · `recycling_chemical_solvolysis` · `regrind_pelletizing` · `mold_tool_making` · `tooling_repair_maintenance`
+`plastics_machining_cnc` · `plastics_fabrication_welding` · `die_cutting_converting` · `laminating` · `coating_applying` *(contrast: `coating_formulation` = makes it)* · `printing_decorating_plastics` · `assembly_secondary_ops` · `ultrasonic_solvent_bonding` · `recycling_mechanical` · `recycling_chemical_pyrolysis` · `recycling_chemical_solvolysis` · `regrind_pelletizing` · `mold_tool_making` · `tooling_repair_maintenance` · **[v1.7.6]** `additive_dry_blending` · `pigment_colorant_dispersion` · `pressure_sensitive_tape_manufacture` · `potting_encapsulation_casting` · `fluoropolymer_lining` · `thermoforming_unspecified` *(type not stated; never upgraded without a source)*
 
 ### 3.2 Materials (`materials[]`)
 
@@ -527,15 +592,15 @@ doctrine.
 `thermoplastics` · `thermosets` · `elastomers_rubber` · `thermoplastic_elastomers_tpe_tpu` · `silicones` · `fluoropolymers` · `bioplastics_biobased` · `recycled_content_pcr_pir` · `composites_frp` · `composites_carbon` · `composites_thermoset` · `composites_thermoplastic` · `foams_polymeric` · `films_flexible_packaging` · `coatings` · `adhesives_sealants` · `inks_colorants_masterbatch`
 
 **Specific resins/compounds (tag when explicitly claimed — do not infer from family):**
-`abs` · `polyethylene_pe` · `polypropylene_pp` · `pvc` · `pet_petg` · `polystyrene_ps_hips` · `polycarbonate_pc` · `nylon_pa` · `acetal_pom` · `peek_high_performance` · `epoxy` · `polyurethane_pu` · `phenolic` · `melamine_urea_formaldehyde` · `natural_rubber_nr` · `sbr` · `epdm` · `nitrile_nbr` · `neoprene_cr` · `viton_fkm` · `pla` · `pha` · `other_specified_in_notes`
+`abs` · `polyethylene_pe` · `polypropylene_pp` · `pvc` · `pet_petg` · `polystyrene_ps_hips` · `polycarbonate_pc` · `nylon_pa` · `acetal_pom` · `peek_high_performance` · `epoxy` · `polyurethane_pu` · `phenolic` · `melamine_urea_formaldehyde` · `natural_rubber_nr` · `sbr` · `epdm` · `nitrile_nbr` · `neoprene_cr` · `viton_fkm` · `pla` · `pha` · `other_specified_in_notes` · **[v1.7.6]** `asa` · `specialty_elastomers` *(HNBR/FFKM/CSM/butyl/ECO/fluorosilicone — name it in notes)* · `polyester_vinyl_ester_resins` · `acrylic_pmma`
 
 ### 3.3 Markets Served (`markets_served[]`)
 
-`automotive_oem` · `automotive_aftermarket` · `aerospace_defense` · `medical_device` · `pharmaceutical_biotech` · `dental` · `construction_building_products` · `infrastructure_civil` · `packaging_consumer` · `packaging_industrial` · `packaging_food_beverage` · `consumer_goods_housewares` · `appliances` · `electronics_electrical` · `industrial_machinery` · `agriculture` · `marine` · `rail_transportation` · `energy_oil_gas` · `energy_renewables_battery` · `water_wastewater` · `lawn_garden_recreation` · `toys_sporting_goods` · `footwear_apparel` · `furniture_office` · `general_industrial` · `other_specified_in_notes`
+`automotive_oem` · `automotive_aftermarket` · `aerospace_defense` · `medical_device` · `pharmaceutical_biotech` · `dental` · `construction_building_products` · `infrastructure_civil` · `packaging_consumer` · `packaging_industrial` · `packaging_food_beverage` · `consumer_goods_housewares` · `appliances` · `electronics_electrical` · `industrial_machinery` · `agriculture` · `marine` · `rail_transportation` · `energy_oil_gas` · `energy_renewables_battery` · `water_wastewater` · `lawn_garden_recreation` · `toys_sporting_goods` · `footwear_apparel` · `furniture_office` · `general_industrial` · `other_specified_in_notes` · **[v1.7.6]** `automotive_unspecified` *(source says automotive without OEM/aftermarket)* · `tire_rubber_goods` · `plastics_rubber_processors` · `cosmetics_personal_care` · `food_processing_foodservice` · `medical_healthcare_general` · `chemical_mining_metals_processing` · `rv_powersports_trailers` · `telecom_datacom`
 
 ### 3.4 Certifications / capabilities (nice-to-have controlled list, `certifications[]`)
 
-`iso_9001` · `iso_14001` · `iatf_16949` · `iso_13485` · `as9100` · `fda_registered` · `cleanroom_iso7` · `cleanroom_iso8` · `itar` · `ul_recognized` · `nsf_certified_products` · `glp_gmp` — plus booleans: `offers_tolling` · `captive_only` · `exporter` · `woman_minority_veteran_owned` *(only when self-disclosed by a primary/authoritative source; never inferred from name/photo)*.
+`iso_9001` · `iso_14001` · `iatf_16949` · `iso_13485` · `as9100` · `fda_registered` · `cleanroom_iso7` · `cleanroom_iso8` · `itar` · `ul_recognized` · `nsf_certified_products` · `glp_gmp` · **[v1.7.6]** `iso_45001` · `iso_17025` (record only current certificates — owner ruling 2026-11-01 R3c) — plus booleans: `offers_tolling` · `captive_only` · `exporter` · `woman_minority_veteran_owned` *(only when self-disclosed by a primary/authoritative source; never inferred from name/photo)*.
 
 ---
 
@@ -850,7 +915,7 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `site_id` | string, `SITE-######` | **MUST** | |
 | `org_id` | FK → Parent | **MUST** | Every site has exactly one Parent at a time; ownership changes create a new linkage with dates (see §5.5) |
 | `site_name` | string | **MUST** | As signed/listed: "Avient — Avon Lake Plant". Default = `{Parent trade name} — {City}` |
-| `site_type` | enum | **MUST** | `manufacturing_plant` \| `hq_only` \| `hq_and_plant` \| `rd_center` \| `lab_testing` \| `warehouse_distribution` \| `sales_office` \| `tool_shop` \| `recycling_facility` \| `training_center` \| `campus` \| `virtual_incubator` |
+| `site_type` | enum | **MUST** | `manufacturing_plant` \| `hq_only` \| `hq_and_plant` \| `rd_center` \| `lab_testing` \| `warehouse_distribution` \| `sales_office` \| `tool_shop` \| `recycling_facility` \| `training_center` \| `campus` \| `virtual_incubator` \| `office_other` \| `service_repair` — last two **[v1.7.6]**; a mixed-use address takes its dominant physical function |
 | `address_street/city/state/zip` + `county` + `lat_lon` (optional in v1) | structured | **MUST** (lat/lon Nice) | Physical address, not PO Box if a physical address exists. County MUST be from address geocode/official source |
 | `street_address` **[v1.1]** | string | **MUST** if known | The street component as its own column (in the CSV it is the single `street_address` column alongside `city`/`state`/`zip`). This is the address-first matching key the v1.0 layout lacked: street addresses previously lived only inside notes, which capped every address join. Backfilled ONLY from named sources already on the record (own-site address, filing, parcel record) — no unsourced bulk backfill. |
 | `latitude` / `longitude` **[v1.1]** | decimal | Nice | From the Census batch geocoder or the coordinates supplement; always paired with `geocode_precision`. |
@@ -2596,3 +2661,22 @@ NC State MSE promoted on leg (c), count exactly 2
 (PROG-000147, tier A), and ORG-002851's §4.11 rollup
 regenerated. No new tables or fields; the validator is
 unchanged.
+
+- **v1.7.6 — 2026-11-01.** This revision records the owner battery
+  2026-11-01, ruled "all as recommended" in session (`tasks/OWNER_BATTERY_2026-11-01.md`).
+  - **Vocabulary added:**
+    - `site_type`: `office_other`, `service_repair`.
+    - `markets_served`: 9 terms, including `automotive_unspecified`.
+    - `processes`: 6 terms.
+    - `materials`: 4 terms.
+    - `certifications`: `iso_45001`, `iso_17025`.
+  - **Rules added:** the PIC CRM is never cited in a public row (validator
+    V-50); no email-like string in a people profile URL (V-51); public-only
+    `sources` (cleanup pass, not yet enforced); certification currency; the
+    three-point NAICS confidence scale; `member_since` is a year field; a Form
+    5500 participant count is admissible for employee bands.
+  - **Process rulings:** see §1 "Owner rulings — 2026-11-01".
+  - **Validator:** gains V-45..V-51, enforcing existing MUSTs plus the new
+    rules, with a shrink-only grandfather baseline in
+    `scripts/validate_debt_baseline.json`.
+  - **Data:** no data row is changed. Application is integrator work.

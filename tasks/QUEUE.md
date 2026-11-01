@@ -166,3 +166,14 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `in-pr:claude-code 2026-11-01` **Website liveness sweep (C-02):** `scripts/liveness_sweep.py` + one run → `tasks/liveness-sweep-2026-11-01/` (re-verification leads only; never status changes).
 - [ ] `in-pr:claude-code 2026-11-01` **CBP size-class gap shape (A-03):** `docs/denominators/CBP_SIZE_CLASSES.md`.
 - [ ] `in-pr:claude-code 2026-11-01` **Static explorer / map / county pages (E-02..E-04):** `scripts/build_site.py` → `build/site/` (generated; publishing is an owner decision).
+
+## Owner battery 2026-11-01 — RULED "all as recommended" (SCHEMA v1.7.6)
+- [x] `done 2026-11-01` Rulings recorded in SCHEMA v1.7.6, the AGENTS.md §4/§5.1 amendments, `scripts/validate.py` (vocabulary + V-50 CRM tripwire + V-51 people-URL email check) and `docs/schema/vocab.json`; battery `tasks/OWNER_BATTERY_2026-11-01.md`.
+- [ ] `open` **Integrator — P1 CRM cleanup:** the 40 organization rows in baseline V-50 (31 sources strings, 9 descriptions). Re-source each to public evidence, or drop it to the tier public evidence supports; remove CRM text; shrink the baseline.
+- [ ] `open` **Integrator — P2:** PERSON-000366 `public_profile_url` → the institution profile URL without the email (V-51).
+- [ ] `open` **Integrator — P3 public-only sources:** move workshop/staging paths out of `sources` into evidence rows or journals (dedicated pass; plan first, since most org rows are affected).
+- [ ] `open` **Integrator — validator debt, now fully ruled:** site_type mapping incl. `office_other` / `service_repair` (V-45), ring proposals (V-46, `v46_ring_proposals.csv`; the 87 NAICS-led rows ride R9/§2.1 review), NAICS provenance (V-47, `v47_naics_proposals.csv`), bands (V-48), markets incl. `automotive_unspecified` (V-49).
+- [ ] `open` **Integrator — R9 non-plant rows** from the wave reports (Jerico Wadsworth, Knight Material East Canton, Mantaline Twinsburg, Gem City, Infinity Composites, Promerus, Winsell, others listed in the lane REPORTs).
+- [ ] `open` **Integrator — R6:** Etched Metal Ring 4 test + inclusion log; SITE-001836 Robin re-verification.
+- [ ] `open` **OWNER — R7c:** name the battery delegate. **R7d:** activate the news/WARN monitor from local staging.
+- [ ] `open` **R7b SCHEMA v2 consolidation** (dedicated pass) and **R7a one-file-per-task** (after the current campaign).

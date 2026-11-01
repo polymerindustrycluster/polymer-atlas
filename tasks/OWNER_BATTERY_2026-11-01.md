@@ -1,5 +1,17 @@
 # Owner battery — 2026-11-01
 
+> **RULED 2026-11-01 — "all as recommended"** (repo owner, in session).
+> Recorded in SCHEMA v1.7.6 ("Owner rulings — 2026-11-01" in §1, plus the
+> revision history), with matching amendments to AGENTS.md §4 and §5.1.
+> The vocabulary is live in `scripts/validate.py` and `docs/schema/vocab.json`.
+>
+> Two items need something only the owner can supply:
+> - **R7c delegate:** a named person.
+> - **R7d news-monitor activation:** the monitor lives in local staging.
+>
+> Applying the rulings to data rows is queued for the integrator of record in
+> `tasks/QUEUE.md`.
+
 Every open question from the 2026-11-01 tooling, debt, pilot and wave lanes that
 needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation and
 its evidence. Agents hold the work an item gates until it's ruled.

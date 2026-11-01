@@ -1,5 +1,5 @@
 {
- "_doc": "Grandfathered violations of validator rules V-45..V-49 (added 2026-11-01). IDs listed here only WARN; any other violating row is an ERROR. Shrink this list as rows are fixed; never add IDs to it to make a new violation pass (that is a protocol violation, AGENTS.md section 1). Regenerating it requires an owner-approved PR.",
+ "_doc": "Grandfathered violations of validator rules V-45..V-51 (added 2026-11-01). IDs listed here only WARN; any other violating row is an ERROR. Shrink this list as rows are fixed; never add IDs to it to make a new violation pass (that is a protocol violation, AGENTS.md section 1). Regenerating it requires an owner-approved PR.",
  "created": "2026-11-01",
  "created_at_commit": "a3e59e7",
  "rules": {
@@ -910,6 +910,52 @@
    "ORG-001487",
    "ORG-001488",
    "ORG-001489"
+  ],
+  "V-50": [
+   "ORG-000035",
+   "ORG-000042",
+   "ORG-000083",
+   "ORG-000103",
+   "ORG-000169",
+   "ORG-000181",
+   "ORG-000191",
+   "ORG-000239",
+   "ORG-000273",
+   "ORG-000523",
+   "ORG-000547",
+   "ORG-000655",
+   "ORG-000676",
+   "ORG-000683",
+   "ORG-000777",
+   "ORG-000825",
+   "ORG-000894",
+   "ORG-000907",
+   "ORG-000925",
+   "ORG-000949",
+   "ORG-001013",
+   "ORG-001029",
+   "ORG-001076",
+   "ORG-001157",
+   "ORG-001160",
+   "ORG-001172",
+   "ORG-001202",
+   "ORG-001381",
+   "ORG-001417",
+   "ORG-001430",
+   "ORG-001590",
+   "ORG-001770",
+   "ORG-001805",
+   "ORG-001815",
+   "ORG-001833",
+   "ORG-001863",
+   "ORG-001872",
+   "ORG-001877",
+   "ORG-001890",
+   "ORG-001930"
+  ],
+  "V-51": [
+   "PERSON-000366"
   ]
- }
+ },
+ "amended": "2026-11-01: V-50/V-51 added under owner ruling 2026-11-01 (battery P1/P2); existing violators grandfathered for the integrator's cleanup pass."
 }

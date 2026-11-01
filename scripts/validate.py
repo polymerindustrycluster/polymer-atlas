@@ -73,7 +73,8 @@ def check_membership(fname, i, r, rid):
 OWNERSHIP = {"public_company", "private_company", "private_equity_portfolio", "family_owned",
              "employee_owned", "nonprofit", "government", "academic", "cooperative", "unknown"}
 CERTS = {"iso_9001", "iso_14001", "iatf_16949", "iso_13485", "as9100", "fda_registered",
-         "cleanroom_iso7", "cleanroom_iso8", "itar", "ul_recognized", "nsf_certified_products", "glp_gmp"}
+         "cleanroom_iso7", "cleanroom_iso8", "itar", "ul_recognized", "nsf_certified_products", "glp_gmp",
+         "iso_45001", "iso_17025"}  # iso_45001 + iso_17025 added at v1.7.6 (owner ruling 2026-11-01, R3b/R8)
 GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "city_centroid"}
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
               "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI"}
@@ -117,7 +118,10 @@ PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_
              "die_cutting_converting", "laminating", "coating_applying", "printing_decorating_plastics",
              "assembly_secondary_ops", "ultrasonic_solvent_bonding", "recycling_mechanical",
              "recycling_chemical_pyrolysis", "recycling_chemical_solvolysis", "regrind_pelletizing",
-             "mold_tool_making", "tooling_repair_maintenance"}
+             "mold_tool_making", "tooling_repair_maintenance",
+             # [v1.7.6] owner ruling 2026-11-01 (battery R3a/R8)
+             "additive_dry_blending", "pigment_colorant_dispersion", "pressure_sensitive_tape_manufacture",
+             "potting_encapsulation_casting", "fluoropolymer_lining", "thermoforming_unspecified"}
 MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic_elastomers_tpe_tpu",
              "silicones", "fluoropolymers", "bioplastics_biobased", "recycled_content_pcr_pir",
              "composites_frp", "composites_carbon", "composites_thermoset", "composites_thermoplastic",
@@ -126,7 +130,9 @@ MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic
              "pet_petg", "polystyrene_ps_hips", "polycarbonate_pc", "nylon_pa", "acetal_pom",
              "peek_high_performance", "epoxy", "polyurethane_pu", "phenolic", "melamine_urea_formaldehyde",
              "natural_rubber_nr", "sbr", "epdm", "nitrile_nbr", "neoprene_cr", "viton_fkm", "pla", "pha",
-             "other_specified_in_notes"}
+             "other_specified_in_notes",
+             # [v1.7.6] owner ruling 2026-11-01 (battery R8)
+             "asa", "specialty_elastomers", "polyester_vinyl_ester_resins", "acrylic_pmma"}
 RESEARCH_SUPPLEMENT = {"polymer_physics", "rheology", "polymer_synthesis", "degradation_biodegradation",
                        "recycling_circularity", "composites_mechanics", "membranes_separations",
                        "biomedical_polymers", "additive_manufacturing_science", "characterization_methods",
@@ -429,7 +435,7 @@ for i, r in enumerate(sites, 2):
     if (lat or lon) and not prec:
         errors.append(f"sites.csv:{i} {sid} coordinates without geocode_precision")
 
-# V-45..V-49 [2026-11-01] Enforcement of existing SCHEMA MUSTs that no rule
+# V-45..V-51 [2026-11-01] Enforcement of existing SCHEMA MUSTs that no rule
 # checked before. These add no vocabulary: each set below is copied from the
 # SCHEMA section named in its message. Rows that already violated a rule when
 # it was added are listed in scripts/validate_debt_baseline.json and only
@@ -438,7 +444,8 @@ for i, r in enumerate(sites, 2):
 # baselined row is fixed, the validator says so; remove its ID from the file.
 SITE_TYPES = {"manufacturing_plant", "hq_only", "hq_and_plant", "rd_center", "lab_testing",
               "warehouse_distribution", "sales_office", "tool_shop", "recycling_facility",
-              "training_center", "campus", "virtual_incubator"}            # SCHEMA §4.5
+              "training_center", "campus", "virtual_incubator",
+              "office_other", "service_repair"}  # SCHEMA §4.5; last two added at v1.7.6 (owner ruling 2026-11-01, R1a/R1c)
 EMPLOYEE_BANDS = {"1-9", "10-49", "50-99", "100-249", "250-499", "500-999",
                   "1000-4999", "5000+", "unknown"}                          # SCHEMA §4.4
 NAICS_SOURCE_TYPES = {"company_disclosed", "government_filing", "directory_assigned",
@@ -452,7 +459,11 @@ MARKETS = {"automotive_oem", "automotive_aftermarket", "aerospace_defense", "med
            "rail_transportation", "energy_oil_gas", "energy_renewables_battery",
            "water_wastewater", "lawn_garden_recreation", "toys_sporting_goods",
            "footwear_apparel", "furniture_office", "general_industrial",
-           "other_specified_in_notes"}                                      # SCHEMA §3.3
+           "other_specified_in_notes",
+           # [v1.7.6] owner ruling 2026-11-01 (battery R2/R8)
+           "automotive_unspecified", "tire_rubber_goods", "plastics_rubber_processors",
+           "cosmetics_personal_care", "food_processing_foodservice", "medical_healthcare_general",
+           "chemical_mining_metals_processing", "rv_powersports_trailers", "telecom_datacom"}  # SCHEMA §3.3
 _BASELINE_PATH = ROOT / "scripts" / "validate_debt_baseline.json"
 try:
     DEBT_BASELINE = {k: set(v) for k, v in json.loads(_BASELINE_PATH.read_text())["rules"].items()}
@@ -494,6 +505,21 @@ for r in orgs:
     band = (r.get("employee_band_ohio") or "").strip()
     if band and band not in EMPLOYEE_BANDS:
         debt("V-48", oid, f"organizations {oid} employee_band_ohio {band!r} not in SCHEMA §4.4 bands")
+
+# V-50 [v1.7.6, owner ruling 2026-11-01 P1]: the PIC CRM is never a cited source and never
+# named in any public row. Org/site sources + descriptions + notes are checked.
+CRM_RE = re.compile(r"\bCRM\b")
+for _rows, _id, _cols in ((orgs, "org_id", ("sources", "description_1line")),
+                          (sites, "site_id", ("sources",))):
+    for r in _rows:
+        rid = r[_id].strip()
+        hit = [c for c in _cols if CRM_RE.search(r.get(c) or "")]
+        if hit:
+            debt("V-50", rid, f"{rid} names the PIC CRM in {hit} — the CRM is never a cited source in a public row (AGENTS.md §5.1/§6, owner ruling 2026-11-01)")
+# V-51 [v1.7.6, owner ruling 2026-11-01 P2]: no email-like string in a people profile URL.
+for r in people:
+    if "@" in (r.get("public_profile_url") or ""):
+        debt("V-51", r["person_id"].strip(), f"{r['person_id'].strip()} public_profile_url contains an email-like string (AGENTS.md §6)")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
