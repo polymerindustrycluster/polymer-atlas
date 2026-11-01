@@ -18,6 +18,41 @@ the new value.
 | X4 | **Close or refresh stale draft PRs** | #7, #11 (and likely #8, #9) carry packets that QUEUE records as applied, so they mislead agents checking for claims | GitHub UI |
 | X5 | **Publish the static explorer** (once built) | Chamber staff and members can use the Atlas without git | `docs/SITE_HOWTO.md` |
 
+## Priority — public-data hygiene (found while rendering the static site)
+
+### P1. PIC CRM references in public organization rows
+- **The finding.** 31 organization rows carry PIC CRM references in `sources`,
+  e.g. "CRM conflict adjudication …". 9 rows have descriptions that say a fact
+  "rests on the CRM record only": ORG-001770, ORG-001805, ORG-001815, ORG-001833,
+  ORG-001863, ORG-001872, ORG-001877, ORG-001890, ORG-001930.
+- **What the rules say.** AGENTS.md §5.1 says the CRM "is never the cited source
+  for a membership fact". §6 bars the CRM for people. Neither rule names other
+  organization facts, but the CRM is described throughout as private and
+  internal, and these rows publish the fact that CRM records exist and what
+  they say.
+- **Recommend.** Rule that the CRM is never a cited source in any public row.
+  The integrator then re-sources these rows to public evidence, or drops them to
+  tier U or C where nothing public supports the fact, and removes the CRM text
+  from `sources` and descriptions.
+- **Validator follow-up.** Add a validator tripwire on organization sources like
+  the one people.csv already has.
+- **Meanwhile.** The static site generator hides these strings.
+
+### P2. Email-like string in a people record
+- **The finding.** PERSON-000366's `public_profile_url` contains an individual's
+  email address as a URL path.
+- **Recommend.** The integrator replaces it with the institution's
+  profile-page URL that has no email in it. Add a validator check that rejects
+  `@` in `public_profile_url` (AGENTS.md §6).
+
+### P3. Workshop paths in public `sources`
+- **The finding.** Most organization `sources` strings embed local staging paths
+  (`working/…`, `(staging …)`). They mean nothing to a public reader and leak
+  internal file layout.
+- **Recommend.** Rule whether `sources` should carry only public citations, with
+  workshop provenance moved to the evidence rows or the pass journals.
+  *Recommend yes,* as a dedicated cleanup pass.
+
 ## Rulings
 
 ### R1. Vocabulary: `site_type` (validator debt V-45)
