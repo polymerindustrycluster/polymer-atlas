@@ -24,13 +24,15 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
   completions) and institution rollups recomputed and compared; program
   grain in ecosystem.csv is an error; people.program_org_id → programs.csv
 """
-import csv, re, sys
+import csv, json, os, re, sys
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+# ATLAS_DATA_DIR lets scripts/test_validate.py run the validator against a
+# mutated copy of data/. Unset in normal use.
+DATA = Path(os.environ["ATLAS_DATA_DIR"]) if os.environ.get("ATLAS_DATA_DIR") else ROOT / "data"
 errors, warnings = [], []
 
 def load(name, new_file=False):
@@ -427,6 +429,89 @@ for i, r in enumerate(sites, 2):
     if (lat or lon) and not prec:
         errors.append(f"sites.csv:{i} {sid} coordinates without geocode_precision")
 
+# V-45..V-49 [2026-11-01] Enforcement of existing SCHEMA MUSTs that no rule
+# checked before. These add no vocabulary: each set below is copied from the
+# SCHEMA section named in its message. Rows that already violated a rule when
+# it was added are listed in scripts/validate_debt_baseline.json and only
+# warn (one aggregated line per rule; --debt-details lists them). Any row NOT
+# in the baseline errors, so the debt can shrink but never grow. When a
+# baselined row is fixed, the validator says so; remove its ID from the file.
+SITE_TYPES = {"manufacturing_plant", "hq_only", "hq_and_plant", "rd_center", "lab_testing",
+              "warehouse_distribution", "sales_office", "tool_shop", "recycling_facility",
+              "training_center", "campus", "virtual_incubator"}            # SCHEMA §4.5
+EMPLOYEE_BANDS = {"1-9", "10-49", "50-99", "100-249", "250-499", "500-999",
+                  "1000-4999", "5000+", "unknown"}                          # SCHEMA §4.4
+NAICS_SOURCE_TYPES = {"company_disclosed", "government_filing", "directory_assigned",
+                      "researcher_inferred"}                                # AGENTS.md §4, SCHEMA §2.1
+NAICS_CONFIDENCE = {"high", "medium", "low"}                                # SCHEMA §2.1
+MARKETS = {"automotive_oem", "automotive_aftermarket", "aerospace_defense", "medical_device",
+           "pharmaceutical_biotech", "dental", "construction_building_products",
+           "infrastructure_civil", "packaging_consumer", "packaging_industrial",
+           "packaging_food_beverage", "consumer_goods_housewares", "appliances",
+           "electronics_electrical", "industrial_machinery", "agriculture", "marine",
+           "rail_transportation", "energy_oil_gas", "energy_renewables_battery",
+           "water_wastewater", "lawn_garden_recreation", "toys_sporting_goods",
+           "footwear_apparel", "furniture_office", "general_industrial",
+           "other_specified_in_notes"}                                      # SCHEMA §3.3
+_BASELINE_PATH = ROOT / "scripts" / "validate_debt_baseline.json"
+try:
+    DEBT_BASELINE = {k: set(v) for k, v in json.loads(_BASELINE_PATH.read_text())["rules"].items()}
+except FileNotFoundError:
+    DEBT_BASELINE = {}
+DEBT_FOUND = {}   # rule -> {record_id: message}
+
+def debt(rule, rid, msg):
+    DEBT_FOUND.setdefault(rule, {})[rid] = msg
+
+for r in sites:
+    sid = r["site_id"].strip()
+    st = (r.get("site_type") or "").strip()
+    if st not in SITE_TYPES:
+        debt("V-45", sid, f"sites {sid} site_type {st!r} not in SCHEMA §4.5 enum")
+    if (r.get("ring_primary") or "").strip() not in {"1", "2", "3", "4", "5"}:
+        debt("V-46", sid, f"sites {sid} ring_primary blank or not 1-5 (SCHEMA §4.5 MUST)")
+    if (r.get("naics_primary") or "").strip():
+        stype = (r.get("naics_primary_source_type") or "").strip()
+        conf = (r.get("naics_confidence") or "").strip()
+        if stype not in NAICS_SOURCE_TYPES or conf not in NAICS_CONFIDENCE:
+            debt("V-47", sid, f"sites {sid} NAICS provenance source_type={stype!r} confidence={conf!r} (AGENTS.md §4: one of {sorted(NAICS_SOURCE_TYPES)}; confidence high|medium|low)")
+    bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
+    if bad_mk:
+        debt("V-49", sid, f"sites {sid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
+    band = (r.get("employee_band_site") or "").strip()
+    if band and band not in EMPLOYEE_BANDS:
+        debt("V-48", sid, f"sites {sid} employee_band_site {band!r} not in SCHEMA §4.4 bands")
+for r in orgs:
+    oid = r["org_id"].strip()
+    if (r.get("naics_primary") or "").strip():
+        conf = (r.get("naics_confidence") or "").strip()
+        stype = (r.get("naics_primary_source_type") or "").strip()
+        if stype not in NAICS_SOURCE_TYPES or conf not in NAICS_CONFIDENCE:
+            debt("V-47", oid, f"organizations {oid} NAICS provenance source_type={stype!r} confidence={conf!r} (AGENTS.md §4)")
+    bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
+    if bad_mk:
+        debt("V-49", oid, f"organizations {oid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
+    band = (r.get("employee_band_ohio") or "").strip()
+    if band and band not in EMPLOYEE_BANDS:
+        debt("V-48", oid, f"organizations {oid} employee_band_ohio {band!r} not in SCHEMA §4.4 bands")
+
+DEBT_DETAILS = "--debt-details" in sys.argv
+for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
+    found = DEBT_FOUND.get(rule, {})
+    base = DEBT_BASELINE.get(rule, set())
+    old = {k: v for k, v in found.items() if k in base}
+    for rid, msg in sorted(found.items()):
+        if rid not in base:
+            errors.append(f"{msg} — new violation ({rule}; not in scripts/validate_debt_baseline.json)")
+    if old:
+        warnings.append(f"{rule}: {len(old)} baselined rows still violate (grandfathered debt; run with --debt-details to list)")
+        if DEBT_DETAILS:
+            for rid, msg in sorted(old.items()):
+                warnings.append(f"  {rule} debt: {msg}")
+    fixed = sorted(base - set(found))
+    if fixed:
+        warnings.append(f"{rule}: {len(fixed)} baselined rows now pass — remove from scripts/validate_debt_baseline.json: {', '.join(fixed[:10])}{' …' if len(fixed) > 10 else ''}")
+
 # V-6: registry links
 seen_links = set()
 for i, r in enumerate(links, 2):
@@ -669,7 +754,7 @@ SUBJECT_VOCAB = {"plastics_general", "rubber_elastomers", "compounding_formulati
 EVENT_FORMATS = {"expo", "conference", "technical_conference", "summit", "meeting_series"}
 CADENCES = {"annual", "biennial", "triennial", "irregular"}
 HOME_REGIONS = {"ne_ohio", "ohio", "national_us", "international"}
-ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host"}
+PART_ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host"}  # renamed 2026-11-01: was ROLES, shadowing the people ROLES above
 EVENT_STATUSES = {"active", "active_idled_partial", "idled", "closed", "acquired",
                   "merged", "relocated_in_scope", "relocated_out_of_scope",
                   "pre_revenue", "unknown"}
@@ -735,7 +820,7 @@ for i, r in enumerate(participation, 2):
     if tup in evp_tuples:
         errors.append(f"event_participation.csv:{i} {pid} duplicate (event_id, org_id, edition_year, role) tuple (V-18)")
     evp_tuples.add(tup)
-    if r["role"] not in ROLES:
+    if r["role"] not in PART_ROLES:
         errors.append(f"event_participation.csv:{i} {pid} bad role (V-19)")
     try:
         yr = int(r["edition_year"])
