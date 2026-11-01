@@ -1,7 +1,17 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.4 — 2026-10-31 (first lab-staff records
+**Version:** v1.7.5 — 2026-10-31 (Gate A rank line +
+leg-(c) styling principle micro-revision: §4.9 gains the
+faculty-rank line — research-professor ranks count as faculty
+at university grain, staff-scientist and research-associate
+stylings do not, and lecturer ranks count toward program
+leg-(c) faculty counts; §1 gains the leg-(c) styling
+principle — the unit's own styling of its faculty governs
+over payroll home (the NC State / Spontak application,
+cross-referencing the F2(ii) courtesy-appointment
+exclusion); applied in integration pass 37).
+Prior: v1.7.4 — 2026-10-31 (first lab-staff records
 micro-revision: the §4.9 `role` controlled vocabulary gains the
 federal-laboratory research-staff values foreseen at v1.7.3 —
 `research_scientist`, `staff_scientist`, `research_engineer`,
@@ -268,6 +278,25 @@ above:
   polymer presence is recorded at institution grain (ecosystem and
   program rows keyed to the unit that actually holds it), never
   borrowed into another unit's adjudication.
+- **Leg (c) counts the unit's own styling (owner ruling
+  2026-10-31) [v1.7.5].** Whether a person is the adjudicated
+  unit's own faculty for leg (c) is read from the unit's own
+  pages and styling, not from the person's payroll home or
+  appointment split: a professor the unit itself styles as its
+  own counts toward the unit's leg-(c) total even where a
+  distinguished chair or the salary line sits in another unit.
+  The recorded application is NC State's Department of
+  Materials Science and Engineering: Richard Spontak, styled
+  on MSE's own people pages as Professor of Materials Science
+  & Engineering with a verbatim polymer area statement, counts
+  although his distinguished chair sits in Chemical &
+  Biomolecular Engineering — MSE promoted on leg (c), count
+  exactly 2 (Spontak; Seifrid, PERSON-000307), integration
+  pass 37. The converse is the F2(ii) line applied in Wave B:
+  a courtesy or cross-listed styling the unit does not claim
+  as its own (Michigan's courtesy appointments) does not
+  count. The unit's own published styling governs in both
+  directions.
 - **Polymerized-protein therapeutics satisfy the polymer-work
   test (owner ruling 2026-10-31, the Palmer precedent).** For
   people records (§4.9), Gate B is met where the polymer is the
@@ -978,6 +1007,20 @@ lab-staff values arrived with the first lab-staff records
 (**[v1.7.4]**, integration pass 35), and the lab's own words ride
 in `role_as_published` in all cases. This
 extension creates no records by itself.
+
+**Faculty-rank line [v1.7.5] (owner ruling 2026-10-31).** At
+university grain, faculty styling for this table (Gate A)
+includes the research-professor ranks — assistant, associate,
+and full research professor — recorded as `research_professor`
+(the Zhao precedent, WSU). Staff-scientist and
+research-associate stylings at a university do **not** satisfy
+the gate: the hard constraint below (researchers, staff
+scientists, and postdocs at universities are not recorded)
+stands, now rank-explicit. Lecturer ranks — lecturer, senior
+lecturer, principal lecturer — are instructional faculty and
+count toward a program's leg-(c) faculty count under §1's
+adjudication rule. Emeritus stylings remain outside the gate
+in every rank.
 
 | Field | Type | Notes |
 |---|---|---|
@@ -2532,3 +2575,24 @@ stylings remain out of scope. The validator's ROLES gains the
 same values in the same pass. No new tables or fields; people
 records remain outside the §4.13 evidence classes, their gate
 citations riding in `sources[]`.
+
+- **v1.7.5 — 2026-10-31 (Gate A rank line + leg-(c) styling
+principle; applied in integration pass 37).** Two owner
+rulings of 2026-10-31. (1) Faculty-rank line (§4.9): at
+university grain the research-professor ranks (assistant /
+associate / full research professor) count as faculty —
+recorded `research_professor` — and staff-scientist and
+research-associate stylings do not; lecturer ranks are
+instructional faculty for program leg-(c) counts under §1.
+Applied to the nine held R2 tranche-1 AMBIGUOUS rows: three
+minted (Bhowmick, PERSON-000834; van der Vlies,
+PERSON-000835; Wenhan Xu, PERSON-000836), six held out with
+per-person dispositions recorded in the pass-37 journal; and
+to the held RIT Materials Science & Engineering program row
+(PROG-000146, leg-(c) count 2 including a principal
+lecturer). (2) Styling principle (§1): leg (c) reads the
+unit's own styling of its faculty, not the payroll home;
+NC State MSE promoted on leg (c), count exactly 2
+(PROG-000147, tier A), and ORG-002851's §4.11 rollup
+regenerated. No new tables or fields; the validator is
+unchanged.
