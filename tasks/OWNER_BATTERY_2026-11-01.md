@@ -214,3 +214,46 @@ Composites, Promerus, Winsell.
 B14 already says an office row's ring is not the parent's. List any row whose
 scope becomes doubtful (a distributor rather than a processor) in
 `inclusion_log.csv` for a ruling.
+
+---
+
+## Addendum — new items from the federal-data lanes (2026-11-01, not yet ruled)
+
+### R10. Facility-grain registry IDs (FRS, TRI)
+`registry_links.csv` is keyed to organizations (§4.8), but FRS and TRIFID IDs
+identify facilities. The 2,156 existing TRIFID rows already carry this mismatch,
+and the ECHO spine adds 2,350 FRS candidates. Options:
+- **(a)** keep org-keyed rows with `:<site_id>` in `match_basis`;
+- **(b)** add a nullable `site_id` column to `registry_links`;
+- **(c)** create a separate site-keyed link table.
+
+*Recommend (b),* with a validator rule: when `site_id` is present, it must belong
+to `org_id`, and several IDs per site are allowed. Evidence:
+`tasks/echo-frs-spine-2026-11-01/REPORT.md` §3.
+
+### R11. Employer EIN registry value
+Form 5500 publishes sponsor EINs.
+
+*Recommend:* add a single `EIN` registry value and keep `EIN_NONPROFIT`
+grandfathered. Mint an `EIN` row only on MATCH_ORG with a name match plus a
+street match on one of that org's sites. 320 sponsors qualify today. Evidence:
+`tasks/form5500-spine-2026-11-01/REPORT.md`.
+
+### R12. Edition-less certifications
+Several lanes met "ISO 9001 certified" (or IATF / AS9100) on current pages that
+name no edition. R3c currently bars these.
+
+*Recommend:* keep the bar. A standard stated with no edition is not recorded,
+but it may be noted in site notes as "claims ISO 9001 (edition not stated)", so
+a later certificate pass can settle it.
+
+### R13. Size data sources and conflicts
+Three band sources now exist:
+- Form 5500 participants: R7f, organization-level.
+- OSHA inspection `nr_in_estab`: site-level.
+- OSHA ITA annual average employees: site-level; packet pending.
+
+*Recommend this precedence for site bands:* ITA (most recent calendar year)
+first, then the OSHA inspection (most recent), then Form 5500. Form 5500 applies
+only to a single-establishment organization. Where sources disagree by more than
+one band, the row goes to review, not to automatic application.
