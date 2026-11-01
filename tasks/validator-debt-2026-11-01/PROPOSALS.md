@@ -87,3 +87,59 @@ Customer names belong in notes, never in the value.
 - **Never add an ID to the baseline to get a new row through.** The baseline only
   shrinks. Regenerating it needs an owner-approved PR.
 - `python3 -m unittest scripts/test_validate.py` mutation-tests these rules.
+
+## Lane results (2026-11-01)
+
+Desk pass over repo facts only (site rows, `data/evidence.csv`, `registry_links`, SCHEMA §1, §2.1, §2.2, §4.13 and the 2026-10-31 owner rulings). No web fetches. Nothing under `data/` was edited, no IDs were allocated, no evidence rows were minted. Two files were produced, one row per worklist row: `v46_ring_proposals.csv` and `v47_naics_proposals.csv`. Counts are site rows or organization rows at the pinned commit unless stated.
+
+### V-46 site ring backfill (383 site rows with blank `ring_primary`)
+
+| Result | Site rows |
+|---|---:|
+| VERIFIED, proposed Ring 1 | 109 |
+| VERIFIED, proposed Ring 2 | 92 |
+| VERIFIED, proposed Ring 3 | 2 |
+| **VERIFIED total** | **203** |
+| STILL_UNCERTAIN (no ring proposed) | 180 |
+
+**Basis of the 203 VERIFIED rows.** (a) 162 rows: a facility-level government NAICS (EPA TRI record; the site row's source type or a `code` evidence row) that SCHEMA §2.2 lists as a Primary signal, with consistent `processes[]`. 75 of these also have an independent site-attributed witness (own site, 10-K, permit, press). **87 are NAICS-led**: the processes look mechanically assigned from the NAICS (all 60 `325510` rows carry `coating_formulation`, all 17 `325520` rows carry `adhesive_sealant_formulation`), so the NAICS is effectively the only basis. §2.1 says NAICS never decides a ring alone; the integrator may want to hold those 87 for an owner nod (the 60 coatings and 17 adhesives rows are the bulk). (b) 41 rows: a site-attributed process or product statement (own site, ISO annex, permit, EPA letter, 10-K Item 2 product row, press) that passes a §1 test. Two of these (SITE-002858, SITE-002859) have **no evidence rows at all**; the witness lives only in `notes`, so an observing lane must write the scope row before they apply.
+
+Never used as a reason: the parent's ring. For information only, 19 of the 203 differ from the parent org's ring (e.g. Olin Freeport epoxy resin plant Ring 1 under a Ring 2 parent; AkzoNobel Lancaster plastic-film plant Ring 1 under a Ring 2 coatings parent; STCC ethylene unit Ring 3 under a Ring 1 parent). 3 differ from the ring the creation lane itself stated (SITE-003015, SITE-003161 Enoree VAE emulsion polymerization, SITE-003179 ethylene unit).
+
+**STILL_UNCERTAIN, by settling fact (180 site rows).** Each row carries `would_be_ring_if_settled` as information only.
+
+| Class | Rows | Settling fact |
+|---|---:|---|
+| `U_SEGMENT` | 32 | Only a 10-K Item 2 segment attribution (Avient SEM/CAI, Myers Material Handling, Chemours APM); plant-level process not stated. Plant-level witness, or battery item B-V46-B |
+| `U_NAICS_NOT_IN_TABLE` | 25 | TRI NAICS outside §2.2 as a Primary signal and no plant-level witness (Avery Dennison 322220 label stock, Brady, Rogers, Enpro, H.B. Fuller 332812, others) |
+| `U_NAICS_PROC_CONFLICT` | 22 | NAICS and processes point to different rings (`325211` at coatings, adhesives, spray-foam and silicone plants; `326199` at an Axalta coatings plant). Resin synthesis vs blending at the address (B16 vs B28) |
+| `U_ADDITIVE` | 17 | Carbon black, fumed silica, flame retardants, rubber chemicals, pigments, catalysts. No ruling covers additive/filler producers |
+| `U_NONPROD` | 16 | HQ-only, sales, warehouse, R&D addresses. §1 has no ring rule for them |
+| `U_MONOMER_B6B17` | 16 | Monomer/intermediate-only plants (phenol, caprolactam, amines, VAM, aniline, EO derivatives, maleic anhydride, plasticizer, HF/HCFC-22). B6/B17 would give Ring 3 but names only ethylene and EO/EG |
+| `U_SEGMENT_OR_NOTIN_TABLE` | 15 | Integrated chemical complexes (Dow, Eastman, CPChem, ExxonMobil) with `polymerization` tagged by the creation lane but no plant-level witness |
+| `U_SCOPE` | 13 | 11 Owens Corning mineral wool / fiberglass plants (`327993`) and 2 Solstice fluorine plants (HFO blowing agent, HFO-1234yf refrigerant): scope question, not a ring question |
+| `U_PARENT_INHERITED` | 11 | Pass-4/pass-8 mechanical sweep rows whose own notes say the site NAICS/ring is inherited from the parent as `researcher_inferred` |
+| `U_COMPOSITE_CORE` | 5 | Hexcel honeycomb, honeycomb-parts machining and reinforcement-fabric plants |
+| `U_FIBER` | 3 | PAN precursor, UHMWPE fiber, cellulose acetate |
+| `U_NAICS_TABLE_VS_B16` | 3 | `325212` is listed under Ring 2 in §2.2, but `polymerization` on site is Ring 1 under B16 (Goodyear synthetic rubber, two plants; one is an R&D office) |
+| `U_NAICS_S` | 2 | Avient plants whose TRI NAICS is only a Secondary signal |
+
+**OWNER battery items proposed (not self-ruled).** B-V46-A: ring convention for non-production sites (precedent in data: about 93% of ring-set `hq_only` rows carry the parent's ring, which sits badly with B14). B-V46-B: does a 10-K Item 2 segment attribution settle a site's ring for single-ring segments? B-V46-C: scope of mineral-wool/fiberglass plants and blowing-agent/refrigerant fluorochemical plants. B-V46-D: ring for additive, filler and catalyst producers. B-V46-E: composite-material producers (honeycomb, prepreg, reinforcement fabric). B-V46-F: `325212` table row vs B16. B-V46-G: polymer fiber producers. Also: does B6/B17 extend beyond ethylene and EO/EG?
+
+### V-47 NAICS provenance (312 rows: 295 site, 17 organization)
+
+| Pattern (current values) | Rows | Proposal | Verdict |
+|---|---:|---|---|
+| Site, `government_filing`, blank confidence | 199 | `high` 186; `medium` 12; held 1 | 198 VERIFIED, 1 STILL_UNCERTAIN |
+| Site, blank source type, blank confidence | 78 | `government_filing`/`high` 76, `government_filing`/`medium` 1, `researcher_inferred`/`low` 1 | 78 VERIFIED |
+| Site, `researcher_inferred`, blank confidence | 1 | `medium` (SITE-003207, inferred from an EPA process description) | VERIFIED |
+| Site `researcher_inferred` / `directory_assigned`, `low-medium` or `medium-high` | 10 | `low` 8, `medium` 2, source type unchanged | VERIFIED (mechanical) |
+| Site `company_website` (6) / `own_site` (1) | 7 | see below | STILL_UNCERTAIN |
+| Organization `researcher_inferred` / `directory_assigned`, `low-medium` or `medium-high` | 9 | `low` 7, `medium` 2, source type unchanged | VERIFIED (mechanical) |
+| Organization `company_website` (7) / `own_site` (1) | 8 | see below | STILL_UNCERTAIN |
+
+- **`high`** only where a `code` evidence row from a facility-level government record (TRI facility record) states the code: 262 of the 277 site rows in the first two patterns. Five Chemours rows say "site NAICS as stated in the TRI facility record" without printing the number; the integrator confirms the number.
+- **`medium` (13 site rows)**: 10 where the repo's own notes record the code conflicting with the documented activity (SITE-003029, -003036, -003041, -003007, -003009, -003203, -003013, -003066, -003189, -002916); SITE-003092 (code row cites a state press release, not the TRI record); SITE-003152 and -003153 (code row cites a TCEQ permit stating the pre-2022 carbon black code `325182`; the site carries TRI `325180`).
+- **Held (1 site row):** SITE-003224 (Cabot Midland) cites a TRI Explorer profile only in its sources string; no `code` evidence row exists. An observing lane writes the row, then `high`.
+- **Mechanical mapping `company_website`/`own_site` -> `company_disclosed` is NOT recommended for any of the 15 rows.** SCHEMA §2.1 allows `company_disclosed` only if the company itself states the code. For every row the cited page describes activity and no repo field shows a printed NAICS. Proposed fallback: `researcher_inferred`, confidence kept. Settling fact: the cited page prints the 6-digit code. Exception: ORG-002174 Parker Rust-Proof cites OSHA establishment data (a government record) in its source name; proposed `government_filing`/`medium` once the OSHA record is located (its site row SITE-002134 cites only the own site: `researcher_inferred`/`medium`).
+- Rounding `low-medium` -> `low`, `medium-high` -> `medium` is exact for the vocabulary. The worklist actually holds 15 `company_website`/`own_site` rows (13 + 2) and 19 rounding rows across sites and organizations; the V-47 table above says 13 and 18.
