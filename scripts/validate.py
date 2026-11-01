@@ -77,7 +77,8 @@ CERTS = {"iso_9001", "iso_14001", "iatf_16949", "iso_13485", "as9100", "fda_regi
          "iso_45001", "iso_17025"}  # iso_45001 + iso_17025 added at v1.7.6 (owner ruling 2026-11-01, R3b/R8)
 GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "city_centroid"}
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
-              "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI"}
+              "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI",
+              "EIN"}  # EIN (employer) added at v1.7.7, owner ruling 2026-11-01 R11
 CREDENTIALS = {"phd", "ms", "bs", "aas_associate", "certificate", "registered_apprenticeship",
                "incumbent_worker_training", "noncredit_workforce", "minor"}  # minor added at v1.7.3 (owner ruling R3)
 ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
@@ -539,8 +540,22 @@ for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
         warnings.append(f"{rule}: {len(fixed)} baselined rows now pass — remove from scripts/validate_debt_baseline.json: {', '.join(fixed[:10])}{' …' if len(fixed) > 10 else ''}")
 
 # V-6: registry links
+# [v1.7.7, owner ruling 2026-11-01 R10] registry_links may carry an optional
+# site_id column for facility-grain IDs (FRS, TRI_TRIFID, FDA_FEI). When the
+# column is present and a row fills it, the site must exist and belong to the
+# row's org_id. Several IDs per site are allowed.
+_SITE_ORG_V6 = {s["site_id"].strip(): s["org_id"].strip() for s in sites}
+FACILITY_GRAIN = {"FRS", "TRI_TRIFID", "FDA_FEI"}
 seen_links = set()
 for i, r in enumerate(links, 2):
+    _sid = (r.get("site_id") or "").strip()
+    if _sid:
+        if _sid not in _SITE_ORG_V6:
+            errors.append(f"registry_links.csv:{i} site_id {_sid!r} not found (V-6, R10)")
+        elif _SITE_ORG_V6[_sid] != (r.get("org_id") or "").strip():
+            errors.append(f"registry_links.csv:{i} site_id {_sid} belongs to {_SITE_ORG_V6[_sid]}, not {(r.get('org_id') or '').strip()} (V-6, R10)")
+        if (r.get("registry") or "").strip() not in FACILITY_GRAIN:
+            errors.append(f"registry_links.csv:{i} site_id set on a non-facility registry {(r.get('registry') or '').strip()!r} (V-6, R10)")
     oid = (r.get("org_id") or "").strip()
     reg = (r.get("registry") or "").strip()
     rid = (r.get("registry_id") or "").strip()
@@ -554,6 +569,8 @@ for i, r in enumerate(links, 2):
         errors.append(f"registry_links.csv:{i} LEI {rid!r} fails ISO 17442 shape")
     if reg in {"SEC_CIK", "SEC_CIK_PARENT_FILER"} and not re.fullmatch(r"\d{10}", rid):
         errors.append(f"registry_links.csv:{i} CIK {rid!r} is not zero-padded 10 digits")
+    if reg == "EIN" and not re.fullmatch(r"\d{2}-?\d{7}", rid):
+        errors.append(f"registry_links.csv:{i} EIN {rid!r} is not 9 digits (NN-NNNNNNN)")
     if reg == "WIKIDATA" and not re.fullmatch(r"Q\d+", rid):
         errors.append(f"registry_links.csv:{i} Wikidata id {rid!r} is not a QID")
     if not (r.get("match_basis") or "").strip():
@@ -562,7 +579,7 @@ for i, r in enumerate(links, 2):
         datetime.strptime((r.get("as_of") or "").strip(), "%Y-%m-%d")
     except ValueError:
         errors.append(f"registry_links.csv:{i} as_of is not a date")
-    key = (oid, reg, rid)
+    key = (oid, reg, rid, _sid)
     if key in seen_links:
         errors.append(f"registry_links.csv:{i} duplicate link triple {key}")
     seen_links.add(key)

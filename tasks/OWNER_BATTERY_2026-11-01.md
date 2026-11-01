@@ -217,7 +217,9 @@ scope becomes doubtful (a distributor rather than a processor) in
 
 ---
 
-## Addendum — new items from the federal-data lanes (2026-11-01, not yet ruled)
+## Addendum — new items from the federal-data lanes (2026-11-01)
+
+> **RULED 2026-11-01 — "do it all" (repo owner, in session, in reply to these recommendations).** Recorded as SCHEMA v1.7.7. The validator now enforces R10 (optional `site_id` on registry links) and R11 (`EIN`).
 
 ### R10. Facility-grain registry IDs (FRS, TRI)
 `registry_links.csv` is keyed to organizations (§4.8), but FRS and TRIFID IDs

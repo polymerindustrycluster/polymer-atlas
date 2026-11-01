@@ -126,6 +126,41 @@ class ValidatorMutationTests(unittest.TestCase):
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-2000:])
 
+    def _add_link(self, row, with_site_col=True):
+        path = self.data / "registry_links.csv"
+        with open(path, newline="", encoding="utf-8") as f:
+            rdr = csv.DictReader(f); fields = list(rdr.fieldnames); rows = list(rdr)
+        if with_site_col and "site_id" not in fields:
+            fields.append("site_id")
+        rows.append(row)
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n", restval="")
+            w.writeheader(); w.writerows(rows)
+
+    def _a_site(self):
+        with open(self.data / "sites_OH.csv", newline="", encoding="utf-8") as f:
+            return next(r for r in csv.DictReader(f) if self.clean_ohio_site(r))
+
+    def test_r10_site_keyed_frs_link_accepted(self):
+        s = self._a_site()
+        self._add_link({"org_id": s["org_id"], "registry": "FRS", "registry_id": "110000000001",
+                        "match_basis": "test", "as_of": "2026-11-01", "site_id": s["site_id"]})
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-2000:])
+
+    def test_r10_site_of_other_org_rejected(self):
+        s = self._a_site()
+        self._add_link({"org_id": "ORG-000001" if s["org_id"] != "ORG-000001" else "ORG-000002",
+                        "registry": "FRS", "registry_id": "110000000002",
+                        "match_basis": "test", "as_of": "2026-11-01", "site_id": s["site_id"]})
+        self.assert_fails_with(f"site_id {s['site_id']} belongs to")
+
+    def test_r11_ein_shape(self):
+        s = self._a_site()
+        self._add_link({"org_id": s["org_id"], "registry": "EIN", "registry_id": "12345",
+                        "match_basis": "test", "as_of": "2026-11-01"}, with_site_col=False)
+        self.assert_fails_with("EIN '12345' is not 9 digits")
+
     def test_fixed_baseline_row_is_reported(self):
         target = sorted(BASELINE["V-45"])[0]
         self.edit_rows(next(p.name for p in self.data.glob("sites_*.csv")

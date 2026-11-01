@@ -577,6 +577,7 @@
    "governs": "registry_links.registry",
    "section": "SCHEMA §4.8",
    "values": [
+    "EIN",
     "EIN_NONPROFIT",
     "FDA_FEI",
     "FRS",

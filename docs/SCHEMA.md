@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -374,6 +374,44 @@ the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
   warehouses and distributors carried as `manufacturing_plant` rows get their
   `site_type` and ring corrected from evidence (B14: an office row's ring is not
   the parent's). A row whose scope becomes doubtful goes to `inclusion_log.csv`.
+
+### Owner rulings — 2026-11-01 addendum (R10–R13) **[v1.7.7]**
+
+The repo owner ruled these "as recommended" in session on 2026-11-01. Evidence is
+in `tasks/OWNER_BATTERY_2026-11-01.md` (addendum). The validator enforces R10 and
+R11. **No data row is changed by this revision.**
+
+- **R10. Facility-grain registry IDs.** `registry_links.csv` gains an
+  **optional** `site_id` column (§4.8):
+  - The integrator adds the column on the first application pass that needs it.
+    Until then, the absent column is lawful.
+  - When filled, the site must exist and belong to the row's `org_id`.
+  - `site_id` is allowed only for facility-grain registries: `FRS`,
+    `TRI_TRIFID`, `FDA_FEI`.
+  - A site may carry several IDs.
+  - An ID shared by co-located operators is linked once per operator site, with
+    a note.
+  - Existing org-keyed TRIFID rows are back-filled with `site_id` by the
+    integrator where the match basis names the site.
+- **R11. Employer `EIN` registry value.** `EIN` joins the §4.8 enum; the shape is
+  9 digits, `NN-NNNNNNN` or unhyphenated. `EIN_NONPROFIT` is grandfathered.
+  - **Mint rule:** a Form 5500 / ITA sponsor record matched by name **and** by
+    street to a site of the org.
+  - The EIN comes verbatim from the filing, which is the source system.
+- **R12. Certifications with no edition.** R3c stands: a standard named without
+  an edition is not recorded in `certifications`. It may be noted in site notes
+  as `claims <standard> (edition not stated, <URL>, <date>)` for a later
+  certificate pass.
+- **R13. Site employee-band source precedence** for `employee_band_site`:
+  1. OSHA ITA 300A annual average employees, most recent calendar year;
+  2. the OSHA inspection `nr_in_estab`, most recent;
+  3. Form 5500 active participants, only for a single-establishment
+     organization (R7f).
+
+  Where the chosen source disagrees with another source by more than one band,
+  or with an existing in-vocabulary band, the row goes to review and is not
+  applied automatically. The band is always stored with
+  `employee_count_source_date` and never as a precise headcount (§4.4).
 
 ## 2. NAICS Map
 
@@ -818,7 +856,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `stock_ticker` **[v1.1]** | string | Nice | Exchange ticker for public orgs, **always with an as-of date in `field_sources`** — tickers are dated claims (a delisted ticker persisted in Wikidata is the known failure). Public parents only; never inferred. |
 | `tier1_qualifier` **[v1.6]** | multi-valued enum, `;`-separated | Derived | Subset of `public_parent` \| `tri_reporter` \| `employees_250plus` \| `national_footprint`, in that fixed order, or empty. **Derived, never hand-asserted:** the column is derivation output, recomputed from the derivation rules below and diffed at each integration pass, like the §4.11 rollup — a hand edit is a validator warning (V-29) and is overwritten at the next pass. An empty value asserts nothing: the org may be unmeasured on every leg (e.g. no employee band populated), which is not evidence it fails any leg |
 | `tier1_qualifier_basis` **[v1.6]** | string | Derived | One short clause per value present in `tier1_qualifier`, in the same order, stating the derivation input verbatim — e.g. `public_parent: stock_ticker=SHW; employees_250plus: employee_band_ohio=1000-4999`. Present iff `tier1_qualifier` is non-empty (V-29). Also derivation output, regenerated with the qualifier |
-| `employee_band` **[v1.1]** | enum §4.4 bands | Nice (Ohio band = MUST if known) | The adopted Tier-2 band field. READING (flagged in the implementation plan): the existing populated column `employee_band_ohio` is this field's Ohio instance and is NOT duplicated by a second column; CRM-banked employee counts land in `employee_band_ohio` as banded values with provenance (see the migration notes). `employee_band_global` remains as defined above. |
+| `employee_band` **[v1.1]** — site-band source precedence: §1 R13 **[v1.7.7]**; | enum §4.4 bands | Nice (Ohio band = MUST if known) | The adopted Tier-2 band field. READING (flagged in the implementation plan): the existing populated column `employee_band_ohio` is this field's Ohio instance and is NOT duplicated by a second column; CRM-banked employee counts land in `employee_band_ohio` as banded values with provenance (see the migration notes). `employee_band_global` remains as defined above. |
 | `ownership_type` **[v1.1]** **[v1.4]** | enum | Nice | `public_company` \| `private_company` \| `private_equity_portfolio` \| `family_owned` \| `employee_owned` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown`. Distinct from `entity_type` (legal form): this records control. Only from a primary/authoritative source; never inferred from size or name. (Vocabulary **adopted 2026-10-29 — v1.4**; at v1.1 the adoption named the field, not its values, and the values were carried as proposed until this revision.) |
 | `certifications[]` **[v1.1]** | controlled vocab §3.4 | Nice | Promoted from the §3.4 nice-to-have list to a stored column on organizations. Values only from §3.4; self-disclosed or certificate-evidenced only. |
 | `website` | URL | **MUST** if exists; explicit `none_found` otherwise | Own domain only; a LinkedIn page goes in `sources`, not `website` |
@@ -2680,3 +2718,12 @@ unchanged.
     rules, with a shrink-only grandfather baseline in
     `scripts/validate_debt_baseline.json`.
   - **Data:** no data row is changed. Application is integrator work.
+- **v1.7.7 — 2026-11-01.** Records the owner battery addendum R10–R13, ruled "as
+  recommended" in session:
+  - an optional `site_id` on `registry_links` for FRS / TRI_TRIFID / FDA_FEI
+    (validator V-6 extended);
+  - an employer `EIN` registry value with its shape check;
+  - the note rule for edition-less certifications;
+  - the site employee-band source precedence.
+
+  No data row is changed.
