@@ -146,3 +146,59 @@ dedicated pass with a diff review.
 **R7f.** Is a Form 5500 plan-participant count admissible as an employee-band input
 (B-02)? *Recommend yes,* as `government_filing` with the plan year, banded, and never
 as a precise headcount.
+
+### R8. Vocabulary gaps from the wave (tranche 1, 150 sites)
+
+Recurring gaps. Each was flagged in the lanes' `*_other_note` rows and none has
+been settled. The candidate terms are listed below. *Recommend* adding the ones
+marked ★ in a single dated SCHEMA revision. The rest stay in notes until they
+recur.
+
+**Markets:**
+- ★ `automotive_unspecified` (R2a; about 30 sites)
+- ★ `tire_rubber_goods` (R2b)
+- ★ `food_processing_foodservice` (non-packaging)
+- ★ `medical_healthcare_general` ("medical" without "device")
+- ★ `chemical_mining_metals_processing`
+- ★ `rv_powersports_trailers`
+- ★ `telecom_datacom`
+- `lighting`
+- `hvac_plumbing_hardware`
+- `law_enforcement_personal_protection`
+
+**Processes:**
+- ★ `additive_dry_blending` / pigment and colorant dispersion
+- ★ `pressure_sensitive_tape_manufacture`
+- ★ `potting_encapsulation_casting`
+- ★ `fluoropolymer_lining`
+- ★ `thermoforming` (type unstated)
+- `rubber_molding` (type unstated)
+- `vacuum_metallization`
+- `low_pressure_molding`
+- `bag_converting`
+
+**Materials:**
+- ★ `asa`
+- ★ `specialty_elastomers` (HNBR / FFKM / CSM / butyl / ECO / fluorosilicone)
+- ★ `polyester_vinyl_ester_resins`
+- ★ `acrylic_pmma`
+- `pps`, `pei`, `pbt`
+- `tpv`, `tpo`
+
+**Certifications:**
+- ★ `iso_45001`
+- ★ `iso_17025` (R3b)
+- `sqf`
+- `rcms`
+
+### R9. Rows that aren't plants
+
+The wave found corporate offices, warehouses, distributors and a supply store
+carried as ring 1–2 `manufacturing_plant` rows. Examples: Jerico Wadsworth,
+Knight Material East Canton, Mantaline Twinsburg, Gem City, Infinity
+Composites, Promerus, Winsell.
+
+*Recommend:* the integrator corrects `site_type` and ring from the lane evidence.
+B14 already says an office row's ring is not the parent's. List any row whose
+scope becomes doubtful (a distributor rather than a processor) in
+`inclusion_log.csv` for a ruling.
