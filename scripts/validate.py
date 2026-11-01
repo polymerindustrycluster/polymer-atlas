@@ -24,13 +24,15 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
   completions) and institution rollups recomputed and compared; program
   grain in ecosystem.csv is an error; people.program_org_id → programs.csv
 """
-import csv, re, sys
+import csv, json, os, re, sys
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+# ATLAS_DATA_DIR lets scripts/test_validate.py run the validator against a
+# mutated copy of data/. Unset in normal use.
+DATA = Path(os.environ["ATLAS_DATA_DIR"]) if os.environ.get("ATLAS_DATA_DIR") else ROOT / "data"
 errors, warnings = [], []
 
 def load(name, new_file=False):
@@ -71,10 +73,12 @@ def check_membership(fname, i, r, rid):
 OWNERSHIP = {"public_company", "private_company", "private_equity_portfolio", "family_owned",
              "employee_owned", "nonprofit", "government", "academic", "cooperative", "unknown"}
 CERTS = {"iso_9001", "iso_14001", "iatf_16949", "iso_13485", "as9100", "fda_registered",
-         "cleanroom_iso7", "cleanroom_iso8", "itar", "ul_recognized", "nsf_certified_products", "glp_gmp"}
+         "cleanroom_iso7", "cleanroom_iso8", "itar", "ul_recognized", "nsf_certified_products", "glp_gmp",
+         "iso_45001", "iso_17025"}  # iso_45001 + iso_17025 added at v1.7.6 (owner ruling 2026-11-01, R3b/R8)
 GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "city_centroid"}
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
-              "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI"}
+              "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI",
+              "EIN"}  # EIN (employer) added at v1.7.7, owner ruling 2026-11-01 R11
 CREDENTIALS = {"phd", "ms", "bs", "aas_associate", "certificate", "registered_apprenticeship",
                "incumbent_worker_training", "noncredit_workforce", "minor"}  # minor added at v1.7.3 (owner ruling R3)
 ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
@@ -115,7 +119,10 @@ PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_
              "die_cutting_converting", "laminating", "coating_applying", "printing_decorating_plastics",
              "assembly_secondary_ops", "ultrasonic_solvent_bonding", "recycling_mechanical",
              "recycling_chemical_pyrolysis", "recycling_chemical_solvolysis", "regrind_pelletizing",
-             "mold_tool_making", "tooling_repair_maintenance"}
+             "mold_tool_making", "tooling_repair_maintenance",
+             # [v1.7.6] owner ruling 2026-11-01 (battery R3a/R8)
+             "additive_dry_blending", "pigment_colorant_dispersion", "pressure_sensitive_tape_manufacture",
+             "potting_encapsulation_casting", "fluoropolymer_lining", "thermoforming_unspecified"}
 MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic_elastomers_tpe_tpu",
              "silicones", "fluoropolymers", "bioplastics_biobased", "recycled_content_pcr_pir",
              "composites_frp", "composites_carbon", "composites_thermoset", "composites_thermoplastic",
@@ -124,7 +131,9 @@ MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic
              "pet_petg", "polystyrene_ps_hips", "polycarbonate_pc", "nylon_pa", "acetal_pom",
              "peek_high_performance", "epoxy", "polyurethane_pu", "phenolic", "melamine_urea_formaldehyde",
              "natural_rubber_nr", "sbr", "epdm", "nitrile_nbr", "neoprene_cr", "viton_fkm", "pla", "pha",
-             "other_specified_in_notes"}
+             "other_specified_in_notes",
+             # [v1.7.6] owner ruling 2026-11-01 (battery R8)
+             "asa", "specialty_elastomers", "polyester_vinyl_ester_resins", "acrylic_pmma"}
 RESEARCH_SUPPLEMENT = {"polymer_physics", "rheology", "polymer_synthesis", "degradation_biodegradation",
                        "recycling_circularity", "composites_mechanics", "membranes_separations",
                        "biomedical_polymers", "additive_manufacturing_science", "characterization_methods",
@@ -427,9 +436,126 @@ for i, r in enumerate(sites, 2):
     if (lat or lon) and not prec:
         errors.append(f"sites.csv:{i} {sid} coordinates without geocode_precision")
 
+# V-45..V-51 [2026-11-01] Enforcement of existing SCHEMA MUSTs that no rule
+# checked before. These add no vocabulary: each set below is copied from the
+# SCHEMA section named in its message. Rows that already violated a rule when
+# it was added are listed in scripts/validate_debt_baseline.json and only
+# warn (one aggregated line per rule; --debt-details lists them). Any row NOT
+# in the baseline errors, so the debt can shrink but never grow. When a
+# baselined row is fixed, the validator says so; remove its ID from the file.
+SITE_TYPES = {"manufacturing_plant", "hq_only", "hq_and_plant", "rd_center", "lab_testing",
+              "warehouse_distribution", "sales_office", "tool_shop", "recycling_facility",
+              "training_center", "campus", "virtual_incubator",
+              "office_other", "service_repair"}  # SCHEMA §4.5; last two added at v1.7.6 (owner ruling 2026-11-01, R1a/R1c)
+EMPLOYEE_BANDS = {"1-9", "10-49", "50-99", "100-249", "250-499", "500-999",
+                  "1000-4999", "5000+", "unknown"}                          # SCHEMA §4.4
+NAICS_SOURCE_TYPES = {"company_disclosed", "government_filing", "directory_assigned",
+                      "researcher_inferred"}                                # AGENTS.md §4, SCHEMA §2.1
+NAICS_CONFIDENCE = {"high", "medium", "low"}                                # SCHEMA §2.1
+MARKETS = {"automotive_oem", "automotive_aftermarket", "aerospace_defense", "medical_device",
+           "pharmaceutical_biotech", "dental", "construction_building_products",
+           "infrastructure_civil", "packaging_consumer", "packaging_industrial",
+           "packaging_food_beverage", "consumer_goods_housewares", "appliances",
+           "electronics_electrical", "industrial_machinery", "agriculture", "marine",
+           "rail_transportation", "energy_oil_gas", "energy_renewables_battery",
+           "water_wastewater", "lawn_garden_recreation", "toys_sporting_goods",
+           "footwear_apparel", "furniture_office", "general_industrial",
+           "other_specified_in_notes",
+           # [v1.7.6] owner ruling 2026-11-01 (battery R2/R8)
+           "automotive_unspecified", "tire_rubber_goods", "plastics_rubber_processors",
+           "cosmetics_personal_care", "food_processing_foodservice", "medical_healthcare_general",
+           "chemical_mining_metals_processing", "rv_powersports_trailers", "telecom_datacom"}  # SCHEMA §3.3
+_BASELINE_PATH = ROOT / "scripts" / "validate_debt_baseline.json"
+try:
+    DEBT_BASELINE = {k: set(v) for k, v in json.loads(_BASELINE_PATH.read_text())["rules"].items()}
+except FileNotFoundError:
+    DEBT_BASELINE = {}
+DEBT_FOUND = {}   # rule -> {record_id: message}
+
+def debt(rule, rid, msg):
+    DEBT_FOUND.setdefault(rule, {})[rid] = msg
+
+for r in sites:
+    sid = r["site_id"].strip()
+    st = (r.get("site_type") or "").strip()
+    if st not in SITE_TYPES:
+        debt("V-45", sid, f"sites {sid} site_type {st!r} not in SCHEMA §4.5 enum")
+    if (r.get("ring_primary") or "").strip() not in {"1", "2", "3", "4", "5"}:
+        debt("V-46", sid, f"sites {sid} ring_primary blank or not 1-5 (SCHEMA §4.5 MUST)")
+    if (r.get("naics_primary") or "").strip():
+        stype = (r.get("naics_primary_source_type") or "").strip()
+        conf = (r.get("naics_confidence") or "").strip()
+        if stype not in NAICS_SOURCE_TYPES or conf not in NAICS_CONFIDENCE:
+            debt("V-47", sid, f"sites {sid} NAICS provenance source_type={stype!r} confidence={conf!r} (AGENTS.md §4: one of {sorted(NAICS_SOURCE_TYPES)}; confidence high|medium|low)")
+    bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
+    if bad_mk:
+        debt("V-49", sid, f"sites {sid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
+    band = (r.get("employee_band_site") or "").strip()
+    if band and band not in EMPLOYEE_BANDS:
+        debt("V-48", sid, f"sites {sid} employee_band_site {band!r} not in SCHEMA §4.4 bands")
+for r in orgs:
+    oid = r["org_id"].strip()
+    if (r.get("naics_primary") or "").strip():
+        conf = (r.get("naics_confidence") or "").strip()
+        stype = (r.get("naics_primary_source_type") or "").strip()
+        if stype not in NAICS_SOURCE_TYPES or conf not in NAICS_CONFIDENCE:
+            debt("V-47", oid, f"organizations {oid} NAICS provenance source_type={stype!r} confidence={conf!r} (AGENTS.md §4)")
+    bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
+    if bad_mk:
+        debt("V-49", oid, f"organizations {oid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
+    band = (r.get("employee_band_ohio") or "").strip()
+    if band and band not in EMPLOYEE_BANDS:
+        debt("V-48", oid, f"organizations {oid} employee_band_ohio {band!r} not in SCHEMA §4.4 bands")
+
+# V-50 [v1.7.6, owner ruling 2026-11-01 P1]: the PIC CRM is never a cited source and never
+# named in any public row. Org/site sources + descriptions + notes are checked.
+CRM_RE = re.compile(r"\bCRM\b")
+for _rows, _id, _cols in ((orgs, "org_id", ("sources", "description_1line")),
+                          (sites, "site_id", ("sources",))):
+    for r in _rows:
+        rid = r[_id].strip()
+        hit = [c for c in _cols if CRM_RE.search(r.get(c) or "")]
+        if hit:
+            debt("V-50", rid, f"{rid} names the PIC CRM in {hit} — the CRM is never a cited source in a public row (AGENTS.md §5.1/§6, owner ruling 2026-11-01)")
+# V-51 [v1.7.6, owner ruling 2026-11-01 P2]: no email-like string in a people profile URL.
+for r in people:
+    if "@" in (r.get("public_profile_url") or ""):
+        debt("V-51", r["person_id"].strip(), f"{r['person_id'].strip()} public_profile_url contains an email-like string (AGENTS.md §6)")
+
+DEBT_DETAILS = "--debt-details" in sys.argv
+for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
+    found = DEBT_FOUND.get(rule, {})
+    base = DEBT_BASELINE.get(rule, set())
+    old = {k: v for k, v in found.items() if k in base}
+    for rid, msg in sorted(found.items()):
+        if rid not in base:
+            errors.append(f"{msg} — new violation ({rule}; not in scripts/validate_debt_baseline.json)")
+    if old:
+        warnings.append(f"{rule}: {len(old)} baselined rows still violate (grandfathered debt; run with --debt-details to list)")
+        if DEBT_DETAILS:
+            for rid, msg in sorted(old.items()):
+                warnings.append(f"  {rule} debt: {msg}")
+    fixed = sorted(base - set(found))
+    if fixed:
+        warnings.append(f"{rule}: {len(fixed)} baselined rows now pass — remove from scripts/validate_debt_baseline.json: {', '.join(fixed[:10])}{' …' if len(fixed) > 10 else ''}")
+
 # V-6: registry links
+# [v1.7.7, owner ruling 2026-11-01 R10] registry_links may carry an optional
+# site_id column for facility-grain IDs (FRS, TRI_TRIFID, FDA_FEI). When the
+# column is present and a row fills it, the site must exist and belong to the
+# row's org_id. Several IDs per site are allowed.
+_SITE_ORG_V6 = {s["site_id"].strip(): s["org_id"].strip() for s in sites}
+FACILITY_GRAIN = {"FRS", "TRI_TRIFID", "FDA_FEI"}
 seen_links = set()
 for i, r in enumerate(links, 2):
+    _sid = (r.get("site_id") or "").strip()
+    if _sid:
+        if _sid not in _SITE_ORG_V6:
+            errors.append(f"registry_links.csv:{i} site_id {_sid!r} not found (V-6, R10)")
+        elif _SITE_ORG_V6[_sid] != (r.get("org_id") or "").strip():
+            errors.append(f"registry_links.csv:{i} site_id {_sid} belongs to {_SITE_ORG_V6[_sid]}, not {(r.get('org_id') or '').strip()} (V-6, R10)")
+        if (r.get("registry") or "").strip() not in FACILITY_GRAIN:
+            errors.append(f"registry_links.csv:{i} site_id set on a non-facility registry {(r.get('registry') or '').strip()!r} (V-6, R10)")
     oid = (r.get("org_id") or "").strip()
     reg = (r.get("registry") or "").strip()
     rid = (r.get("registry_id") or "").strip()
@@ -443,6 +569,8 @@ for i, r in enumerate(links, 2):
         errors.append(f"registry_links.csv:{i} LEI {rid!r} fails ISO 17442 shape")
     if reg in {"SEC_CIK", "SEC_CIK_PARENT_FILER"} and not re.fullmatch(r"\d{10}", rid):
         errors.append(f"registry_links.csv:{i} CIK {rid!r} is not zero-padded 10 digits")
+    if reg == "EIN" and not re.fullmatch(r"\d{2}-?\d{7}", rid):
+        errors.append(f"registry_links.csv:{i} EIN {rid!r} is not 9 digits (NN-NNNNNNN)")
     if reg == "WIKIDATA" and not re.fullmatch(r"Q\d+", rid):
         errors.append(f"registry_links.csv:{i} Wikidata id {rid!r} is not a QID")
     if not (r.get("match_basis") or "").strip():
@@ -451,7 +579,7 @@ for i, r in enumerate(links, 2):
         datetime.strptime((r.get("as_of") or "").strip(), "%Y-%m-%d")
     except ValueError:
         errors.append(f"registry_links.csv:{i} as_of is not a date")
-    key = (oid, reg, rid)
+    key = (oid, reg, rid, _sid)
     if key in seen_links:
         errors.append(f"registry_links.csv:{i} duplicate link triple {key}")
     seen_links.add(key)
@@ -669,7 +797,7 @@ SUBJECT_VOCAB = {"plastics_general", "rubber_elastomers", "compounding_formulati
 EVENT_FORMATS = {"expo", "conference", "technical_conference", "summit", "meeting_series"}
 CADENCES = {"annual", "biennial", "triennial", "irregular"}
 HOME_REGIONS = {"ne_ohio", "ohio", "national_us", "international"}
-ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host"}
+PART_ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host"}  # renamed 2026-11-01: was ROLES, shadowing the people ROLES above
 EVENT_STATUSES = {"active", "active_idled_partial", "idled", "closed", "acquired",
                   "merged", "relocated_in_scope", "relocated_out_of_scope",
                   "pre_revenue", "unknown"}
@@ -735,7 +863,7 @@ for i, r in enumerate(participation, 2):
     if tup in evp_tuples:
         errors.append(f"event_participation.csv:{i} {pid} duplicate (event_id, org_id, edition_year, role) tuple (V-18)")
     evp_tuples.add(tup)
-    if r["role"] not in ROLES:
+    if r["role"] not in PART_ROLES:
         errors.append(f"event_participation.csv:{i} {pid} bad role (V-19)")
     try:
         yr = int(r["edition_year"])

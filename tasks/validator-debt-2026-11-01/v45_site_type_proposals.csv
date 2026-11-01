@@ -1,0 +1,176 @@
+site_id,shard,org_id,site_name,current_site_type,proposed_site_type,decision_class,rationale
+SITE-003308,sites_CA.csv,ORG-002994,ENGEL West Tech Center - Corona,tech_center,rd_center,synonym,technical/innovation center = rd_center
+SITE-004526,sites_FL.csv,ORG-003987,Fiberglass Coatings - Saint Petersburg Retail,retail / distribution,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-004062,sites_GA.csv,ORG-003616,Redwood Plastics and Rubber - Stockbridge,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004119,sites_GA.csv,ORG-003694,Brighi USA Technical Center,service_center,HOLD,owner,service/repair center has no enum value
+SITE-004542,sites_GA.csv,ORG-004001,Lintech International - Macon HQ,headquarters / distribution,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-004070,sites_IA.csv,ORG-003619,Seelye-Eiler Plastics - Cedar Rapids,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-003286,sites_IL.csv,ORG-002975,Intouch Monitoring - Rosemont US Office,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-004073,sites_IL.csv,ORG-003619,Seelye-Eiler Plastics - Roxana,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004202,sites_IL.csv,ORG-003764,Plasmatreat Elgin Technology Center,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-004539,sites_IL.csv,ORG-003998,RAHN USA - Aurora Facility,office / application laboratory / distribution center,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-003969,sites_IN.csv,ORG-003537,Chase Plastics Central Distribution Center,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-004050,sites_IN.csv,ORG-003606,Meyer Plastics - Fort Wayne,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004065,sites_KS.csv,ORG-003617,Regal Plastic Supply - Wichita,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004069,sites_MN.csv,ORG-003619,Seelye-Eiler Plastics - Duluth,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004064,sites_MO.csv,ORG-003617,Regal Plastic Supply - Joplin,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004066,sites_MO.csv,ORG-003617,Regal Plastic Supply - Earth City,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004545,sites_NC.csv,ORG-004003,Hosokawa Micron Powder Systems - Goldsboro Processing Facility,contract processing facility,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-004072,sites_ND.csv,ORG-003619,Seelye-Eiler Plastics - Fargo,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004071,sites_NE.csv,ORG-003619,Seelye-Eiler Plastics - Omaha,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004579,sites_NH.csv,ORG-004033,Brueckner Group USA - Dover facility,"North America HQ; service, parts and repair shops; Customer Innovation Center",HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-003234,sites_NJ.csv,ORG-002926,Evonik Piscataway site,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-003413,sites_NJ.csv,ORG-002953,Langzauner USA Office,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-004523,sites_NJ.csv,ORG-003985,Americas Headquarters and Technical Center - East Windsor,hq; laboratory,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-004516,sites_NV.csv,ORG-003978,Las Vegas Polymer Center,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-004536,sites_NY.csv,ORG-003995,Nagase America - New York HQ,headquarters / sales office,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-001213,sites_OH.csv,ORG-001121,"SpecTape, Inc. — Cincinnati",office_warehouse,warehouse_distribution,judgement,mixed office+warehouse; warehouse is the physical function
+SITE-001771,sites_OH.csv,ORG-001695,Innovative Rubber Technologies Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001773,sites_OH.csv,ORG-001697,Nation Grinding Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001778,sites_OH.csv,ORG-001702,J T Adams Company,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001780,sites_OH.csv,ORG-001704,Venus Product Development Corporation,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001786,sites_OH.csv,ORG-001710,Herbert USA Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001794,sites_OH.csv,ORG-001718,Kimberly-Clark Corporation,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001804,sites_OH.csv,ORG-001728,Buckeye Medical Technologies LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001805,sites_OH.csv,ORG-001729,"ICU Medical, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001807,sites_OH.csv,ORG-001731,"Nissha Medical Technologies (Ohio), Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001815,sites_OH.csv,ORG-001739,"API II, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001816,sites_OH.csv,ORG-001740,Auto Technology Company,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001818,sites_OH.csv,ORG-001742,Global Waste and Recycling LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001819,sites_OH.csv,ORG-001743,Industrial Pattern & Mfg. Co.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001820,sites_OH.csv,ORG-001744,"Jet Di, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001821,sites_OH.csv,ORG-001745,J.G. Sales Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001825,sites_OH.csv,ORG-001749,"Standards Testing Laboratories, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001831,sites_OH.csv,ORG-001755,Medina Recycling Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001835,sites_OH.csv,ORG-001759,"The Original Mattress Factory, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001836,sites_OH.csv,ORG-000549,"Robin Industries, Inc.",hq_office,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001844,sites_OH.csv,ORG-001761,"Advanced Testing Laboratory, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001848,sites_OH.csv,ORG-001765,A-Z Recycling Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001850,sites_OH.csv,ORG-001767,ACSIC Ingredients LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001854,sites_OH.csv,ORG-001774,Alcon Tool Co,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001855,sites_OH.csv,ORG-001776,S. Slesnick Company (Slesnick Recycling — Alliance Recycling Center),office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001858,sites_OH.csv,ORG-001779,"American Sign Products, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001859,sites_OH.csv,ORG-001780,"American Testing Technologies, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001862,sites_OH.csv,ORG-001784,BF Plastics Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001864,sites_OH.csv,ORG-001788,Colonial Patterns Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001865,sites_OH.csv,ORG-001791,Cosar Mold Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001871,sites_OH.csv,ORG-001801,"Eagle Mold Co., Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001874,sites_OH.csv,ORG-001808,Eurotech (Eurotech Materials & Engineering),office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001880,sites_OH.csv,ORG-001826,Hapco Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001886,sites_OH.csv,ORG-001841,Koehlke Components Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001893,sites_OH.csv,ORG-001868,PolyMet Recovery LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001894,sites_OH.csv,ORG-001869,Pro-Line Automation Systems Ltd. (USA),office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001897,sites_OH.csv,ORG-001880,Razor Edge Precision Grinding LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001898,sites_OH.csv,ORG-001883,Rezkem Chemicals,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001900,sites_OH.csv,ORG-001892,Schibley Solvents and Chemicals Inc. (Schibley Chemical Co Inc),office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001905,sites_OH.csv,ORG-001911,"United Feed Screws, Ltd. (United Feed Screws LLC)",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001906,sites_OH.csv,ORG-001913,US Polymers Inc,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001907,sites_OH.csv,ORG-001915,World Resource Solutions (WRS Tool),office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001909,sites_OH.csv,ORG-001917,Guild CPO,hq_office,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-001979,sites_OH.csv,ORG-001985,Operational Support Services LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002000,sites_OH.csv,ORG-002006,Rose Layman Laminating & Mounting (current operator; formerly Rose Laminating & Mounting Company),office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002050,sites_OH.csv,ORG-001776,S. Slesnick Company,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002068,sites_OH.csv,ORG-002068,Chemstress Consultant Company,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-003229,sites_OH.csv,ORG-002922,Absolute Haitian Ohio Technical Center,tech_center,rd_center,synonym,technical/innovation center = rd_center
+SITE-004576,sites_OH.csv,ORG-004031,Axcess Infrastructure - Dayton,engineering office (city grain only),HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-004575,sites_OR.csv,ORG-004030,Avpowers LLC (Infinite Ocean) - Beaverton,brand owner / direct sales (city grain only),HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-002139,sites_PA.csv,ORG-002180,"Fuling Plastic USA, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002153,sites_PA.csv,ORG-002191,New Pig Burns Ave,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002167,sites_PA.csv,ORG-002205,Lehigh Gasket Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002169,sites_PA.csv,ORG-002206,Kenson Plastics,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002176,sites_PA.csv,ORG-002213,Pelmor Lab - Bensalem,lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002182,sites_PA.csv,ORG-002619,Ultra-Poly Corporation,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002186,sites_PA.csv,ORG-002222,Lehigh Valley Plastics,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002196,sites_PA.csv,ORG-002229,Kleerdex,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-002203,sites_PA.csv,ORG-002235,Luminite Prod,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002210,sites_PA.csv,ORG-002242,Huntington Foam LLC - Brockway,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002220,sites_PA.csv,ORG-002251,Carlisle Construction Materials,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002234,sites_PA.csv,ORG-002265,Mondo USA Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002246,sites_PA.csv,ORG-002277,Eastern Machine & Conveyors Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002250,sites_PA.csv,ORG-002281,Penn Color Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002253,sites_PA.csv,ORG-002283,New Pig Corporation - Duncansville Site,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002256,sites_PA.csv,ORG-002285,"Color Rite Distributing East, Inc.",distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002264,sites_PA.csv,ORG-002293,"Palmer Plastics, Inc.",recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002267,sites_PA.csv,ORG-002296,U-POL US Corp,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002276,sites_PA.csv,ORG-002303,"Amatech Polycel, LLC",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002277,sites_PA.csv,ORG-002304,Engineered Plastics LLC,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002278,sites_PA.csv,ORG-002305,Erie Industrial Plastics Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002292,sites_PA.csv,ORG-002315,"Plastek Industries, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002308,sites_PA.csv,ORG-002329,Boy Machines Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002310,sites_PA.csv,ORG-002331,Klinkau America Inc.,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-002311,sites_PA.csv,ORG-002332,"Packaging Technology, Inc.",distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002315,sites_PA.csv,ORG-002337,Ultra Pak Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002333,sites_PA.csv,ORG-002355,Asap Hydraulics Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002343,sites_PA.csv,ORG-002365,Adhesives Research Inc.,lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002347,sites_PA.csv,ORG-002369,Stretchpak Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002351,sites_PA.csv,ORG-002373,Controlled Molding,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002358,sites_PA.csv,ORG-002378,McClarin Plastics LLC.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002362,sites_PA.csv,ORG-002382,Martech Medical Products-Warehouse,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002373,sites_PA.csv,ORG-002393,Efs Plastics,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002379,sites_PA.csv,ORG-002399,Simona America Incorporated,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002380,sites_PA.csv,ORG-002400,"Thoren Caging Systems, Inc.",lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002383,sites_PA.csv,ORG-002403,Penn Turf Inc.,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002388,sites_PA.csv,ORG-002408,Benjamin Obdyke Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002391,sites_PA.csv,ORG-002411,Chartiers Packaging Inc. Dba Chartiers Industries,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002406,sites_PA.csv,ORG-002425,Industrial Floor Corporation,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-002407,sites_PA.csv,ORG-002426,Norcen Inds Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002410,sites_PA.csv,ORG-002429,Atofina Chem Inc. - King Of Prussia,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002411,sites_PA.csv,ORG-002430,Purolite Corporation,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002413,sites_PA.csv,ORG-002432,Shawnee Chemical Company Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002418,sites_PA.csv,ORG-002437,Greene Tweed & Co. Inc. - Kulpsville,lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002424,sites_PA.csv,ORG-002441,Dart Container Corp. Pitney Road Site,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002426,sites_PA.csv,ORG-002443,Euramax International Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002440,sites_PA.csv,ORG-002456,Chestnut Ridge Foam Inc.,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002443,sites_PA.csv,ORG-002459,Import Export Tire Company Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002450,sites_PA.csv,ORG-002465,Regupol America LLC,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002451,sites_PA.csv,ORG-002466,Vs Rubber,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002452,sites_PA.csv,ORG-002467,"Entrance, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002453,sites_PA.csv,ORG-002468,Flex Membrane International Corp.,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-002472,sites_PA.csv,ORG-002485,"Central Distribution Company, Inc.",warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002474,sites_PA.csv,ORG-002487,Mahantango Enterprises Inc.,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002479,sites_PA.csv,ORG-002492,Peace Products Company,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002481,sites_PA.csv,ORG-002494,"The Resin Enterprise, Inc.",distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002489,sites_PA.csv,ORG-002501,Advanced Plastic Systems Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002506,sites_PA.csv,ORG-002518,"Universal Protective Packaging, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002548,sites_PA.csv,ORG-002560,S & J Recycling Inc.,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002553,sites_PA.csv,ORG-002565,Trigon Plastics LLC,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002555,sites_PA.csv,ORG-002567,"Pelmor Laboratories, Inc.",lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002567,sites_PA.csv,ORG-002579,Kettle Creek Corporation,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002570,sites_PA.csv,ORG-002582,General Plastics Inc.,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002582,sites_PA.csv,ORG-002593,Quint Co.,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-002583,sites_PA.csv,ORG-002594,Recycledelphia Inc.,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002584,sites_PA.csv,ORG-002595,Schutz Na LLC,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002585,sites_PA.csv,ORG-002596,"Siltco Industries, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002586,sites_PA.csv,ORG-002597,"Src Elastomerics, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002592,sites_PA.csv,ORG-002603,Arieca,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-002600,sites_PA.csv,ORG-002611,"Tmi, LLC",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002608,sites_PA.csv,ORG-002618,Adams Manufacturing Corporation,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002609,sites_PA.csv,ORG-002619,Ultra Poly Corp. - Portland,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002621,sites_PA.csv,ORG-002631,G & T Industries,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002624,sites_PA.csv,ORG-004004,NPX ONE - Reading Plant,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002645,sites_PA.csv,ORG-002655,"Scranton Products, Inc.",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002656,sites_PA.csv,ORG-002665,M & C Specialties Southampton Fac,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002664,sites_PA.csv,ORG-002673,New Pig Corp.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002667,sites_PA.csv,ORG-002676,"Timi Plastics, Inc.",recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002672,sites_PA.csv,ORG-002681,Raybob Packaging,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002673,sites_PA.csv,ORG-002682,Durr Marketing,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002683,sites_PA.csv,ORG-002691,Whirley Industries Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002692,sites_PA.csv,ORG-002699,Regenex Corporation,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002699,sites_PA.csv,ORG-002706,"Suscon, Incorporated",office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002716,sites_PA.csv,ORG-002722,W R Meadows Of Pennsylvania,warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002721,sites_PA.csv,ORG-001610,Behr Proc Corp. - Allentown,distribution_center,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-002725,sites_PA.csv,ORG-000088,Ppg - Research & Development Facility,lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002739,sites_PA.csv,ORG-001114,United Gilsonite Labs,lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-002775,sites_PA.csv,ORG-001403,"Graham Packaging Company, Lp",warehouse,warehouse_distribution,synonym,warehouse = warehouse_distribution
+SITE-002777,sites_PA.csv,ORG-000547,Lanxess Corporation,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002778,sites_PA.csv,ORG-000088,Ppg Industries Inc.,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002786,sites_PA.csv,ORG-000651,"Advanced Drainage Systems, Inc.",recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002791,sites_PA.csv,ORG-001193,Washington Penn Plas - Arden,office_hq,hq_only,synonym,HQ office with no plant at the address = hq_only
+SITE-002799,sites_PA.csv,ORG-001403,Graham Recycling Plt,recycling_plant,recycling_facility,synonym,same meaning; enum spelling is recycling_facility
+SITE-002800,sites_PA.csv,ORG-000132,Valspar Corporation,lab_r_and_d,rd_center,synonym,R&D lab = rd_center (lab_testing is for testing-service labs)
+SITE-004527,sites_PA.csv,ORG-003988,Gehring Montgomery - Warminster Facility,headquarters / distribution facility,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-004506,sites_SC.csv,ORG-003968,Engineered Composites — Columbia (Idlewilde),,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value
+SITE-003653,sites_TX.csv,ORG-003225,Fangli Technology Houston,office,HOLD,owner,non-HQ office has no enum value (sales_office only if it sells); per-row check needed
+SITE-003684,sites_TX.csv,ORG-003252,Muehlstein Houston Supercenter,distribution,warehouse_distribution,synonym,distribution facility = warehouse_distribution
+SITE-004061,sites_WA.csv,ORG-003616,Redwood Plastics and Rubber - Spokane Valley,branch,sales_office,judgement,"distributor branch: sales_office if sales-only, warehouse_distribution if it stocks inventory; per-row check"
+SITE-004524,sites_WI.csv,ORG-003986,Headquarters and Distribution Center - Germantown,hq; distribution center,HOLD,owner,compound or free-text value; needs a per-row reading or an owner ruling on a new enum value

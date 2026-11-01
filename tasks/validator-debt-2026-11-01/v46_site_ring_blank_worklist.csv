@@ -1,0 +1,384 @@
+record_id,shard,site_name,state,site_type,naics_primary,naics_primary_source_type
+SITE-002882,sites_AL.csv,Avient — Birmingham,AL,manufacturing_plant,,
+SITE-002916,sites_AL.csv,Ppg Industries Inc.,AL,manufacturing_plant,327215,government_filing
+SITE-002975,sites_AL.csv,Dura Coat Products Inc.,AL,manufacturing_plant,325510,government_filing
+SITE-003035,sites_AL.csv,Hexcel Corporation - Decatur,AL,manufacturing_plant,325220,government_filing
+SITE-003048,sites_AL.csv,Aptar CSP - Auburn,AL,manufacturing_plant,,
+SITE-003077,sites_AL.csv,Huntsman Advanced Materials - McIntosh,AL,manufacturing_plant,325211,
+SITE-003198,sites_AL.csv,Eastman Chemical Co - Anniston Plant,AL,manufacturing_plant,325199,government_filing
+SITE-002873,sites_AR.csv,Cooper Tire — Texarkana,AR,manufacturing_plant,326211,
+SITE-002917,sites_AR.csv,Ppg Protective & Marine Coat Ings,AR,manufacturing_plant,325510,government_filing
+SITE-003118,sites_AR.csv,Owens Corning Insulation — Fort Smith,AR,manufacturing_plant,327993,government_filing
+SITE-003126,sites_AR.csv,Albemarle Corp South Plant - Magnolia,AR,manufacturing_plant,325180,government_filing
+SITE-003127,sites_AR.csv,Albemarle Corp West Plant - Magnolia,AR,manufacturing_plant,325180,government_filing
+SITE-002880,sites_AZ.csv,Avient Colorants USA LLC — Phoenix Facility,AZ,manufacturing_plant,325991,
+SITE-002883,sites_AZ.csv,Avient — Mesa,AZ,manufacturing_plant,,
+SITE-002884,sites_AZ.csv,Avient — Glendale,AZ,manufacturing_plant,,
+SITE-003029,sites_AZ.csv,Rogers Corporation - Chandler,AZ,hq_and_plant,334419,government_filing
+SITE-003036,sites_AZ.csv,Hexcel Corporation - Casa Grande,AZ,manufacturing_plant,322299,government_filing
+SITE-003121,sites_AZ.csv,Owens Corning Insulation — Eloy,AZ,manufacturing_plant,327993,government_filing
+SITE-002918,sites_CA.csv,Ennis-Flint Bakersfield,CA,manufacturing_plant,325510,government_filing
+SITE-002919,sites_CA.csv,Prc-Desoto International Inc.,CA,manufacturing_plant,325520,government_filing
+SITE-002920,sites_CA.csv,Sierracin/Sylmar Corp,CA,manufacturing_plant,336413,government_filing
+SITE-002976,sites_CA.csv,Dura Coat Products Inc (Axalta Coating Systems),CA,manufacturing_plant,325510,government_filing
+SITE-002999,sites_CA.csv,H.B. Fuller Co,CA,manufacturing_plant,325520,government_filing
+SITE-003075,sites_CA.csv,Huntsman Advanced Materials - Los Angeles,CA,manufacturing_plant,325520,
+SITE-003087,sites_CA.csv,Carlisle Polyurethane Systems — Rancho Cucamonga (Accella),CA,manufacturing_plant,325211,government_filing
+SITE-003130,sites_CA.csv,Lollicup USA - Chino Manufacturing Plant,CA,manufacturing_plant,,
+SITE-002886,sites_CO.csv,Avient — Englewood,CO,manufacturing_plant,,
+SITE-002887,sites_CO.csv,Avient — Montrose,CO,manufacturing_plant,,
+SITE-002914,sites_CO.csv,Myers Industries — Littleton,CO,manufacturing_plant,,
+SITE-003060,sites_CO.csv,Entegris - Colorado Springs Manufacturing Center of Excellence,CO,manufacturing_plant,,
+SITE-003139,sites_CO.csv,Lightwave Logic - Englewood HQ and fab,CO,rd_center,,
+SITE-002885,sites_CT.csv,Avient — Bethel,CT,manufacturing_plant,,
+SITE-002888,sites_CT.csv,Avient — North Haven,CT,manufacturing_plant,,
+SITE-003015,sites_CT.csv,Sealed Air,CT,manufacturing_plant,325991,government_filing
+SITE-003030,sites_CT.csv,Rogers Corporation - Rogers (Killingly),CT,manufacturing_plant,,
+SITE-003031,sites_CT.csv,Rogers Corporation - Woodstock,CT,manufacturing_plant,326150,government_filing
+SITE-003043,sites_CT.csv,Hexcel Corporation - Stamford Headquarters,CT,hq_only,,
+SITE-003032,sites_DE.csv,Rogers Corporation - Bear,DE,manufacturing_plant,326130,government_filing
+SITE-002909,sites_FL.csv,Myers Industries — Orlando,FL,manufacturing_plant,,
+SITE-002989,sites_FL.csv,New Nautical Coatings Inc,FL,manufacturing_plant,325510,government_filing
+SITE-003074,sites_FL.csv,Latham Pool Products (VIKING POOLS-FL) - Zephyrhills,FL,manufacturing_plant,326199,
+SITE-003085,sites_FL.csv,Huntsman - Pensacola (Maleic Anhydride),FL,manufacturing_plant,,
+SITE-003111,sites_FL.csv,Owens Corning Insulation — Lakeland,FL,manufacturing_plant,327993,government_filing
+SITE-003135,sites_FL.csv,Timeplast - Winter Springs facility,FL,manufacturing_plant,,
+SITE-003155,sites_FL.csv,Celanese — Pensacola (Santoprene TPV Plant),FL,manufacturing_plant,325212,
+SITE-003199,sites_FL.csv,Eastman Chemical Co - Pace Plant,FL,manufacturing_plant,325199,government_filing
+SITE-002864,sites_GA.csv,Goodyear — Social Circle (Wingfoot),GA,manufacturing_plant,326211,
+SITE-002876,sites_GA.csv,Avient Corp — Kennesaw,GA,manufacturing_plant,325991,
+SITE-002942,sites_GA.csv,Prime Resins Inc.,GA,manufacturing_plant,325510,government_filing
+SITE-002943,sites_GA.csv,Tci Inc.,GA,manufacturing_plant,325510,government_filing
+SITE-002985,sites_GA.csv,Trinseo Llc,GA,manufacturing_plant,325211,government_filing
+SITE-003000,sites_GA.csv,H.B. Fuller Co,GA,manufacturing_plant,325520,government_filing
+SITE-003001,sites_GA.csv,H.B. Fuller Co,GA,manufacturing_plant,325520,government_filing
+SITE-003058,sites_GA.csv,Blue Cube Operations LLC - Roberta (Formulated Solutions),GA,manufacturing_plant,325510,
+SITE-003088,sites_GA.csv,Carlisle Polyurethane Systems — Cartersville,GA,manufacturing_plant,325211,government_filing
+SITE-003100,sites_GA.csv,Avery Dennison — Peachtree City (Materials Group),GA,manufacturing_plant,,
+SITE-003110,sites_GA.csv,Owens Corning Insulation — Fairburn,GA,manufacturing_plant,327993,government_filing
+SITE-003181,sites_GA.csv,Dow Chemical — Marietta Plant,GA,manufacturing_plant,325211,government_filing
+SITE-002906,sites_IA.csv,Myers Industries — Atlantic,IA,manufacturing_plant,,
+SITE-002977,sites_IA.csv,Axalta Coating Systems Usa Llc- Fort Madison Plant,IA,manufacturing_plant,325211,government_filing
+SITE-003069,sites_IA.csv,Latham Pool Products (DEWITT IA) - De Witt,IA,manufacturing_plant,326199,
+SITE-003168,sites_IA.csv,Chevron Phillips Chemical - Performance Pipe Bloomfield,IA,manufacturing_plant,326122,
+SITE-003044,sites_ID.csv,AZEK - Boise,ID,manufacturing_plant,326199,
+SITE-002889,sites_IL.csv,Avient — McHenry,IL,manufacturing_plant,,
+SITE-002890,sites_IL.csv,Avient — West Chicago,IL,manufacturing_plant,,
+SITE-002911,sites_IL.csv,Myers Industries — South Beloit,IL,manufacturing_plant,,
+SITE-002921,sites_IL.csv,Alpha Coating Technologies Llc,IL,manufacturing_plant,325510,government_filing
+SITE-002944,sites_IL.csv,Rust-Oleum Corp,IL,manufacturing_plant,325510,government_filing
+SITE-002990,sites_IL.csv,Akzonobel Aerospace Coatings,IL,manufacturing_plant,325510,government_filing
+SITE-003002,sites_IL.csv,H.B. Fuller Co,IL,manufacturing_plant,325520,government_filing
+SITE-003033,sites_IL.csv,Rogers Corporation - Carol Stream,IL,manufacturing_plant,326299,government_filing
+SITE-003045,sites_IL.csv,AZEK - Chicago HQ,IL,hq_only,,
+SITE-003049,sites_IL.csv,Aptar - Cary,IL,manufacturing_plant,,
+SITE-003051,sites_IL.csv,AptarGroup - Crystal Lake HQ,IL,hq_only,,
+SITE-003054,sites_IL.csv,Aptar - McHenry,IL,manufacturing_plant,,
+SITE-003078,sites_IL.csv,Huntsman Polyurethanes - Ringwood (TPU),IL,manufacturing_plant,325211,
+SITE-003089,sites_IL.csv,Hunter Panels — Franklin Park,IL,manufacturing_plant,326150,government_filing
+SITE-003090,sites_IL.csv,Carlisle Construction Materials — Greenville (EPDM),IL,manufacturing_plant,326299,government_filing
+SITE-003103,sites_IL.csv,Avery Dennison — Niles (Reflective Solutions finishing),IL,manufacturing_plant,326199,government_filing
+SITE-003112,sites_IL.csv,Fiberteq — Danville (wet-use chopped strand),IL,manufacturing_plant,327993,government_filing
+SITE-003113,sites_IL.csv,Natural Polymers — Cortland (spray foam),IL,manufacturing_plant,326150,government_filing
+SITE-003133,sites_IL.csv,Reynolds Consumer Products - Jacksonville Plant,IL,manufacturing_plant,326111,
+SITE-003136,sites_IL.csv,NanoChem Solutions - Peru plant,IL,manufacturing_plant,,
+SITE-003138,sites_IL.csv,Yunhong Green CTI - Lake Barrington plant,IL,hq_and_plant,,
+SITE-003223,sites_IL.csv,Cabot Corporation - Tuscola,IL,manufacturing_plant,,
+SITE-002891,sites_IN.csv,Avient — La Porte,IN,manufacturing_plant,,
+SITE-002907,sites_IN.csv,Myers Industries — South Bend,IN,manufacturing_plant,,
+SITE-002908,sites_IN.csv,Myers Industries — Middlebury,IN,manufacturing_plant,,
+SITE-002913,sites_IN.csv,Myers Industries — Bristol,IN,manufacturing_plant,,
+SITE-002922,sites_IN.csv,Ppg Brazil Liquid,IN,manufacturing_plant,325510,government_filing
+SITE-002923,sites_IN.csv,Ppg Brazil Powder,IN,manufacturing_plant,325510,government_filing
+SITE-002924,sites_IN.csv,Prc-Desoto International Inc.,IN,manufacturing_plant,325520,government_filing
+SITE-002925,sites_IN.csv,Ppg Lafayette,IN,manufacturing_plant,325510,government_filing
+SITE-002945,sites_IN.csv,Rpm Industrial Coatings Group Inc. Dba Finishworks,IN,manufacturing_plant,325510,government_filing
+SITE-002991,sites_IN.csv,Akzo Nobel Coatings,IN,manufacturing_plant,325510,government_filing
+SITE-003003,sites_IN.csv,Royal Adhesives & Sealants,IN,manufacturing_plant,325520,government_filing
+SITE-003101,sites_IN.csv,Avery Dennison — Greenfield (Materials Group),IN,manufacturing_plant,,
+SITE-003102,sites_IN.csv,Avery Dennison — Lowell (Materials Group),IN,manufacturing_plant,326112,government_filing
+SITE-003141,sites_IN.csv,Berry Global — Evansville HQ,IN,hq_only,,
+SITE-003156,sites_IN.csv,Celanese — Evansville Plant,IN,manufacturing_plant,326199,
+SITE-002865,sites_KS.csv,Goodyear Tire — Topeka,KS,manufacturing_plant,326211,
+SITE-002926,sites_KS.csv,Versaflex,KS,manufacturing_plant,325510,government_filing
+SITE-003114,sites_KS.csv,Owens Corning Insulation — Kansas City,KS,manufacturing_plant,327993,government_filing
+SITE-003122,sites_KS.csv,Rubbermaid - Winfield,KS,manufacturing_plant,326199,government_filing
+SITE-002915,sites_KY.csv,Infiltrator Water Technologies — Winchester (ADS),KY,manufacturing_plant,,
+SITE-002986,sites_KY.csv,Aristech Surfaces Llc,KY,manufacturing_plant,326113,government_filing
+SITE-002987,sites_KY.csv,Altuglas Louisville Plant,KY,manufacturing_plant,326199,government_filing
+SITE-003018,sites_KY.csv,Chemours Louisville Works,KY,manufacturing_plant,325180,
+SITE-003134,sites_KY.csv,Danimer Scientific - Winchester (PHA plant),KY,manufacturing_plant,,
+SITE-003157,sites_KY.csv,Celanese — Florence Plant,KY,manufacturing_plant,325991,
+SITE-003182,sites_KY.csv,Dow Silicones — Carrollton Plant,KY,manufacturing_plant,325199,government_filing
+SITE-003183,sites_KY.csv,Dow Silicones — Elizabethtown Plant,KY,manufacturing_plant,325520,government_filing
+SITE-003225,sites_KY.csv,Cabot Corporation - Carrollton,KY,manufacturing_plant,,
+SITE-002946,sites_LA.csv,Carboline Global Inc.,LA,manufacturing_plant,325510,government_filing
+SITE-003024,sites_LA.csv,Solstice Advanced Materials - Baton Rouge Fluorine Products Plant,LA,manufacturing_plant,325199,government_filing
+SITE-003025,sites_LA.csv,Solstice Advanced Materials - Geismar Plant,LA,manufacturing_plant,325120,government_filing
+SITE-003068,sites_LA.csv,Latham Pool Products (VIKING POOLS-LA) - Breaux Bridge,LA,manufacturing_plant,326199,
+SITE-003079,sites_LA.csv,Huntsman - Geismar (incl. Rubicon LLC JV),LA,manufacturing_plant,325194,
+SITE-003145,sites_LA.csv,Cabot Corporation - Canal Plant,LA,manufacturing_plant,325180,government_filing
+SITE-003146,sites_LA.csv,Cabot Corporation - Ville Platte Plant,LA,manufacturing_plant,325180,government_filing
+SITE-003151,sites_LA.csv,Orion Engineered Carbons - Ivanhoe Carbon Black Plant,LA,manufacturing_plant,325180,government_filing
+SITE-003184,sites_LA.csv,Union Carbide — St. Charles Operations (Taft/Star),LA,manufacturing_plant,325199,government_filing
+SITE-003185,sites_LA.csv,Dow — Louisiana Operations (Plaquemine),LA,manufacturing_plant,325199,government_filing
+SITE-003200,sites_LA.csv,Eastman Chemical Co - St. Gabriel Plant,LA,manufacturing_plant,325199,government_filing
+SITE-003213,sites_LA.csv,ExxonMobil Baton Rouge Plastics Plant,LA,manufacturing_plant,325211,government_filing
+SITE-003214,sites_LA.csv,ExxonMobil Baton Rouge Resin Finishing Plant,LA,manufacturing_plant,325211,government_filing
+SITE-003215,sites_LA.csv,ExxonMobil Baton Rouge Polyolefins Plant,LA,manufacturing_plant,325211,government_filing
+SITE-003216,sites_LA.csv,ExxonMobil Baton Rouge Chemical Plant,LA,manufacturing_plant,325199,government_filing
+SITE-002874,sites_MA.csv,Avient Colorants USA LLC — Holden Facility,MA,manufacturing_plant,325991,
+SITE-002947,sites_MA.csv,Rust-Oleum,MA,manufacturing_plant,325510,government_filing
+SITE-002948,sites_MA.csv,Rpm Wood Finishes Group Inc.,MA,manufacturing_plant,325510,government_filing
+SITE-003037,sites_MA.csv,Hexcel Corporation - Amesbury (ARC Technologies),MA,manufacturing_plant,,
+SITE-003061,sites_MA.csv,Entegris - i2M Center (Bedford),MA,manufacturing_plant,326199,
+SITE-003062,sites_MA.csv,Entegris - Billerica HQ,MA,hq_only,,
+SITE-003147,sites_MA.csv,Cabot Corporation - Business and Technology Center (Billerica),MA,rd_center,,
+SITE-003148,sites_MA.csv,Cabot Corporation - Global Headquarters (Boston),MA,hq_only,,
+SITE-003201,sites_MA.csv,Eastman Chemical Co - Springfield Plant,MA,manufacturing_plant,326113,government_filing
+SITE-002949,sites_MD.csv,Dap Global Inc,MD,manufacturing_plant,325520,government_filing
+SITE-002950,sites_MD.csv,Rust-Oleum Corp In Md,MD,manufacturing_plant,325510,government_filing
+SITE-003019,sites_MD.csv,Chemours Elkton Plant,MD,manufacturing_plant,,
+SITE-003169,sites_MD.csv,Chevron Phillips Chemical - Performance Pipe Hagerstown,MD,manufacturing_plant,,
+SITE-003202,sites_MD.csv,Eastman Specialties Corp - Chestertown Plant,MD,manufacturing_plant,325199,government_filing
+SITE-002892,sites_ME.csv,Avient — Lewiston,ME,manufacturing_plant,,
+SITE-002878,sites_MI.csv,Avient Colorants USA LLC — Albion Facility,MI,manufacturing_plant,325991,
+SITE-002905,sites_MI.csv,Myers Industries — White Pigeon,MI,manufacturing_plant,,
+SITE-002927,sites_MI.csv,Ppg Industries-Adrian,MI,manufacturing_plant,325520,government_filing
+SITE-002928,sites_MI.csv,Ppg Industries - Grand Haven,MI,manufacturing_plant,325510,government_filing
+SITE-002978,sites_MI.csv,Transtar Autobody Technologies,MI,manufacturing_plant,325510,government_filing
+SITE-002979,sites_MI.csv,Axalta Coating Systems Usa Llc-Mount Clemens Plant,MI,manufacturing_plant,325510,government_filing
+SITE-002988,sites_MI.csv,Trinseo Llc-Mi Operations,MI,manufacturing_plant,325211,government_filing
+SITE-002992,sites_MI.csv,Akzonobel Coatings Inc,MI,manufacturing_plant,325510,government_filing
+SITE-003004,sites_MI.csv,ND Industries Inc,MI,manufacturing_plant,332812,government_filing
+SITE-003005,sites_MI.csv,HB Fuller Co,MI,manufacturing_plant,325520,government_filing
+SITE-003006,sites_MI.csv,Royal Adhesives & Sealants,MI,manufacturing_plant,325520,government_filing
+SITE-003007,sites_MI.csv,ND Industries Inc,MI,manufacturing_plant,325520,government_filing
+SITE-003086,sites_MI.csv,Huntsman Advanced Materials - East Lansing,MI,manufacturing_plant,,
+SITE-003125,sites_MI.csv,DME Company - Madison Heights,MI,manufacturing_plant,,
+SITE-003140,sites_MI.csv,Kraig Biocraft - Ann Arbor R&D and production HQ,MI,rd_center,,
+SITE-003186,sites_MI.csv,Dow Silicones — Auburn Site,MI,manufacturing_plant,325211,government_filing
+SITE-003187,sites_MI.csv,Dow — Michigan Operations / Midland HQ Complex,MI,hq_and_plant,325211,government_filing
+SITE-003224,sites_MI.csv,Cabot Corporation - Midland Plant,MI,manufacturing_plant,325180,government_filing
+SITE-002879,sites_MN.csv,Avient Colorants USA LLC — Minneapolis Facility,MN,manufacturing_plant,325991,
+SITE-002893,sites_MN.csv,Avient — Winona,MN,manufacturing_plant,,
+SITE-002900,sites_MN.csv,Core Molding Technologies — Winona,MN,manufacturing_plant,,
+SITE-002951,sites_MN.csv,Rust-Oleum - Brooklyn Park,MN,manufacturing_plant,325510,government_filing
+SITE-003008,sites_MN.csv,H.B. Fuller Co,MN,manufacturing_plant,325520,government_filing
+SITE-003009,sites_MN.csv,H.B. Fuller Co,MN,manufacturing_plant,541715,government_filing
+SITE-003010,sites_MN.csv,H.B. Fuller Pilot Facility,MN,manufacturing_plant,325520,government_filing
+SITE-003063,sites_MN.csv,Entegris - Chaska,MN,manufacturing_plant,,
+SITE-003158,sites_MN.csv,Celanese — Winona Plant (Celstran LFRT),MN,manufacturing_plant,,
+SITE-002896,sites_MO.csv,Avient — St. Louis,MO,manufacturing_plant,,
+SITE-002903,sites_MO.csv,Myers Industries — Springfield,MO,manufacturing_plant,,
+SITE-002929,sites_MO.csv,Ennis-Flint,MO,manufacturing_plant,325510,government_filing
+SITE-002952,sites_MO.csv,Dap Global Inc.,MO,manufacturing_plant,325211,government_filing
+SITE-002953,sites_MO.csv,Arnette Polymers Llc,MO,manufacturing_plant,325211,government_filing
+SITE-002954,sites_MO.csv,Kop-Coat Inc,MO,manufacturing_plant,325510,government_filing
+SITE-003091,sites_MO.csv,Carlisle Polyurethane Systems — Maryland Heights,MO,manufacturing_plant,325211,government_filing
+SITE-003092,sites_MO.csv,Carlisle Construction Materials — Sikeston (polyiso),MO,manufacturing_plant,326150,government_filing
+SITE-002871,sites_MS.csv,Cooper Tire — Clarksdale,MS,manufacturing_plant,326299,
+SITE-002872,sites_MS.csv,Cooper Tire — Tupelo,MS,manufacturing_plant,326211,
+SITE-003093,sites_MS.csv,Carlisle SynTec — Senatobia (Plant 9),MS,manufacturing_plant,,
+SITE-002863,sites_NC.csv,Goodyear Tire — Fayetteville,NC,manufacturing_plant,326211,
+SITE-002875,sites_NC.csv,Avient Colorants USA LLC — Mooresville Facility,NC,manufacturing_plant,325998,
+SITE-002894,sites_NC.csv,Avient — Greenville,NC,manufacturing_plant,,
+SITE-002895,sites_NC.csv,Avient — Hickory,NC,manufacturing_plant,,
+SITE-002901,sites_NC.csv,Patch Rubber Co — Weldon,NC,manufacturing_plant,326211,
+SITE-002930,sites_NC.csv,Ppg Industries Greensboro Powder,NC,manufacturing_plant,325510,government_filing
+SITE-002931,sites_NC.csv,Ennis-Flint Inc - High Point Facility,NC,manufacturing_plant,325211,government_filing
+SITE-002955,sites_NC.csv,Rpm Wood Finishes Group Inc,NC,manufacturing_plant,325510,government_filing
+SITE-002980,sites_NC.csv,Axalta Coating Systems Usa Llc - High Point,NC,manufacturing_plant,325510,government_filing
+SITE-002993,sites_NC.csv,Akzonobel Coatings Inc,NC,manufacturing_plant,325510,government_filing
+SITE-003020,sites_NC.csv,Chemours Fayetteville Works,NC,manufacturing_plant,325120,
+SITE-003053,sites_NC.csv,Aptar - Lincolnton,NC,manufacturing_plant,,
+SITE-003072,sites_NC.csv,Latham Pool Products (VIKING POOLS-NC) - Rockingham,NC,manufacturing_plant,326199,
+SITE-003159,sites_NC.csv,Celanese — Shelby Plant,NC,manufacturing_plant,325211,
+SITE-003160,sites_NC.csv,Fortron Industries — Wilmington Plant,NC,manufacturing_plant,325211,
+SITE-002956,sites_NJ.csv,Stoncor Group Inc. Cherry Hill,NJ,manufacturing_plant,325510,government_filing
+SITE-002957,sites_NJ.csv,Stoncor Group Inc.,NJ,manufacturing_plant,325510,government_filing
+SITE-002958,sites_NJ.csv,Kirker Enterprises Inc,NJ,manufacturing_plant,325510,government_filing
+SITE-002959,sites_NJ.csv,Modern Recreational Technologies Inc. (Formerly Kop-Coat Mar,NJ,manufacturing_plant,325510,government_filing
+SITE-002960,sites_NJ.csv,Rust-Oleum Corp,NJ,manufacturing_plant,325510,government_filing
+SITE-003021,sites_NJ.csv,Chemours Chambers Works,NJ,manufacturing_plant,325199,
+SITE-003022,sites_NJ.csv,Chemours Parlin Facility,NJ,manufacturing_plant,325510,
+SITE-003026,sites_NJ.csv,Solstice Advanced Materials - Morris Plains Headquarters,NJ,hq_only,,
+SITE-003052,sites_NJ.csv,Aptar - Eatontown,NJ,manufacturing_plant,,
+SITE-003137,sites_NJ.csv,Unifoil - Fairfield plant,NJ,manufacturing_plant,,
+SITE-002961,sites_NV.csv,Carboline Global Inc.,NV,manufacturing_plant,325510,government_filing
+SITE-003170,sites_NV.csv,Chevron Phillips Chemical - Performance Pipe Reno,NV,manufacturing_plant,326122,
+SITE-002867,sites_NY.csv,Goodyear Chemical — Niagara Falls,NY,manufacturing_plant,325199,
+SITE-003050,sites_NY.csv,Aptar Pharma - Congers,NY,manufacturing_plant,,
+SITE-003064,sites_NY.csv,Garlock Sealing Technologies - Palmyra,NY,manufacturing_plant,339991,
+SITE-003094,sites_NY.csv,Hunter Panels — Montgomery (Hamptonburgh),NY,manufacturing_plant,,
+SITE-003109,sites_NY.csv,Owens Corning Insulation — Feura Bush (Delmar),NY,manufacturing_plant,327993,government_filing
+SITE-003142,sites_NY.csv,Amcor Flexibles North America — Edgewood,NY,manufacturing_plant,326112,government_filing
+SITE-003203,sites_NY.csv,Knowlton Technologies LLC - Watertown Plant,NY,manufacturing_plant,322120,government_filing
+SITE-003226,sites_NY.csv,Thermo Fisher Scientific — Rochester (Nalge Nunc),NY,manufacturing_plant,,
+SITE-001557,sites_OH.csv,Hendrickson Composites — Dayton,OH,manufacturing_plant,326199,researcher_inferred
+SITE-001558,sites_OH.csv,The Gorilla Glue Company — Sharonville,OH,hq_and_plant,325520,researcher_inferred
+SITE-001559,sites_OH.csv,United Industrial Sales — Willoughby,OH,warehouse_distribution,423840,researcher_inferred
+SITE-001560,sites_OH.csv,Allied Machine & Engineering — Dover,OH,manufacturing_plant,333519,researcher_inferred
+SITE-001561,sites_OH.csv,Barwell Machinery USA — Brunswick,OH,sales_office,423830,researcher_inferred
+SITE-001562,sites_OH.csv,Bosch Rexroth (Hägglunds) — Grove City,OH,sales_office,423830,researcher_inferred
+SITE-001563,sites_OH.csv,Budzar Industries — Willoughby,OH,manufacturing_plant,333415,researcher_inferred
+SITE-001564,sites_OH.csv,SigmaTEK Systems (Cambrio) — Cincinnati,OH,hq_only,513210,researcher_inferred
+SITE-001565,sites_OH.csv,Lianda Corporation — Twinsburg,OH,warehouse_distribution,424690,researcher_inferred
+SITE-001566,sites_OH.csv,Minco Tool & Mold — Dayton,OH,hq_and_plant,333511,researcher_inferred
+SITE-001567,sites_OH.csv,Polymer Valley Chemicals — Akron,OH,warehouse_distribution,424690,researcher_inferred
+SITE-002861,sites_OH.csv,Goodyear Chemical R&D — Akron (Archwood Ave),OH,rd_center,325212,
+SITE-002897,sites_OH.csv,Avient — Norwalk,OH,manufacturing_plant,,
+SITE-002904,sites_OH.csv,Myers Industries — Wadsworth,OH,manufacturing_plant,,
+SITE-002912,sites_OH.csv,Myers Industries — Alliance,OH,manufacturing_plant,,
+SITE-002932,sites_OH.csv,Ppg Industries Inc,OH,manufacturing_plant,325510,government_filing
+SITE-002962,sites_OH.csv,Key Resin Co,OH,manufacturing_plant,325510,government_filing
+SITE-002963,sites_OH.csv,Tremco Cpg Inc. Cleveland Plant,OH,manufacturing_plant,324122,government_filing
+SITE-002964,sites_OH.csv,Day-Glo Color Corp,OH,manufacturing_plant,325130,government_filing
+SITE-002965,sites_OH.csv,Republic Powdered Metals Inc,OH,manufacturing_plant,325510,government_filing
+SITE-002966,sites_OH.csv,Rpm Industrial Coatings Group Inc Dba Finishworks,OH,manufacturing_plant,325510,government_filing
+SITE-002967,sites_OH.csv,Dap Global Inc,OH,manufacturing_plant,325510,government_filing
+SITE-002968,sites_OH.csv,Day-Glo Color Corp,OH,manufacturing_plant,325130,government_filing
+SITE-002981,sites_OH.csv,Axalta Coating Systems Llc - Hilliard Site,OH,manufacturing_plant,325510,government_filing
+SITE-003011,sites_OH.csv,Royal Adhesives & Sealants,OH,manufacturing_plant,325520,government_filing
+SITE-003012,sites_OH.csv,ND Industries,OH,manufacturing_plant,332812,government_filing
+SITE-003104,sites_OH.csv,"Avery Dennison — Mentor (Cleveland Films Facility, 5750 Heisley Rd)",OH,manufacturing_plant,322220,government_filing
+SITE-003105,sites_OH.csv,"Avery Dennison — Mentor (Building 19, 7070 Spinach Dr)",OH,manufacturing_plant,322220,government_filing
+SITE-003106,sites_OH.csv,Avery Dennison Specialty Tape Division — Painesville (205 Chester St),OH,manufacturing_plant,322220,government_filing
+SITE-003107,sites_OH.csv,"Avery Dennison Reflective — Painesville (Building 7, 215 Chester St)",OH,manufacturing_plant,322220,government_filing
+SITE-003108,sites_OH.csv,"Avery Dennison — Building 11 (670 Hardy Rd, Fairport Harbor)",OH,manufacturing_plant,322220,government_filing
+SITE-003115,sites_OH.csv,Owens Corning Insulation — Mount Vernon,OH,manufacturing_plant,327993,government_filing
+SITE-003116,sites_OH.csv,Owens Corning Insulation — Newark,OH,manufacturing_plant,327993,government_filing
+SITE-003117,sites_OH.csv,Owens Corning Science & Technology Center — Granville,OH,rd_center,,
+SITE-002866,sites_OK.csv,Goodyear Tire — Lawton,OK,manufacturing_plant,326211,
+SITE-002902,sites_OK.csv,Myers Industries — Miami,OK,manufacturing_plant,,
+SITE-002933,sites_OK.csv,Milamar Coatings Llc,OK,manufacturing_plant,325510,government_filing
+SITE-003073,sites_OK.csv,Latham Pool Products (SEMINOLE) - Seminole,OK,manufacturing_plant,326199,
+SITE-003171,sites_OK.csv,Chevron Phillips Chemical - Performance Pipe Pryor,OK,manufacturing_plant,326122,
+SITE-002934,sites_OR.csv,Ennis-Flint Salem,OR,manufacturing_plant,325510,government_filing
+SITE-002994,sites_OR.csv,Akzo Nobel Coatings Inc,OR,manufacturing_plant,325510,government_filing
+SITE-002856,sites_PA.csv,"Ammeraal Beltech Modular, Incorporated - Jefferson",PA,sales_office,,
+SITE-002857,sites_PA.csv,Brentwood Industries Spg 621 - Reading (Spring Ridge),PA,hq_and_plant,,
+SITE-002858,sites_PA.csv,American Made LLC Dba Us Liner Company - Pittsburgh (Neville Island),PA,manufacturing_plant,,
+SITE-002859,sites_PA.csv,Engineered Plastics LLC - Lake City,PA,manufacturing_plant,,
+SITE-002881,sites_PA.csv,Fiber-Line LLC — Hatfield (Avient),PA,manufacturing_plant,313320,
+SITE-002935,sites_PA.csv,Whitford Corp,PA,manufacturing_plant,325510,government_filing
+SITE-002936,sites_PA.csv,Ppg Industries Inc,PA,manufacturing_plant,325130,government_filing
+SITE-003038,sites_PA.csv,Hexcel Corporation - Pottsville,PA,manufacturing_plant,,
+SITE-003046,sites_PA.csv,Versatex - Aliquippa,PA,manufacturing_plant,,
+SITE-003047,sites_PA.csv,AZEK - Scranton (Keyser Ave),PA,manufacturing_plant,,
+SITE-003055,sites_PA.csv,AdvanSix - Frankford (Philadelphia),PA,manufacturing_plant,325110,
+SITE-003034,sites_RI.csv,Rogers Corporation - Narragansett,RI,manufacturing_plant,326113,government_filing
+SITE-002899,sites_SC.csv,Core Molding Technologies — Gaffney,SC,manufacturing_plant,326199,
+SITE-002937,sites_SC.csv,Sem Products Inc,SC,manufacturing_plant,325510,government_filing
+SITE-002995,sites_SC.csv,Akzonobel,SC,manufacturing_plant,326113,government_filing
+SITE-003013,sites_SC.csv,Royal Adhesives & Sealants LLC,SC,manufacturing_plant,325211,government_filing
+SITE-003016,sites_SC.csv,Sealed Air Corp Cryovac Div,SC,manufacturing_plant,326112,government_filing
+SITE-003076,sites_SC.csv,Huntsman Advanced Materials - Rock Hill,SC,manufacturing_plant,325211,
+SITE-003128,sites_SC.csv,Ingevity South Carolina LLC Charleston Chemical Plant - North Charleston,SC,manufacturing_plant,325194,government_filing
+SITE-003129,sites_SC.csv,Northann Corp. - Fort Lawn Plant and HQ,SC,hq_and_plant,,
+SITE-003161,sites_SC.csv,Celanese — Enoree Plant (Emulsions),SC,manufacturing_plant,325211,
+SITE-003172,sites_SC.csv,Chevron Phillips Chemical - Performance Pipe Startex (Wellford),SC,manufacturing_plant,326122,
+SITE-003204,sites_SC.csv,Eastman Chemical Co - South Carolina Operations,SC,manufacturing_plant,325211,government_filing
+SITE-004506,sites_SC.csv,Engineered Composites — Columbia (Idlewilde),SC,,326199,researcher_inferred
+SITE-002877,sites_TN.csv,Avient Corp — Vonore,TN,manufacturing_plant,325991,
+SITE-002996,sites_TN.csv,Akzo Nobel Inc,TN,manufacturing_plant,325510,government_filing
+SITE-003070,sites_TN.csv,Latham Pool Products (VIKING POOLS-TN) - Fayetteville,TN,manufacturing_plant,326199,
+SITE-003095,sites_TN.csv,Carlisle Polyurethane Systems — Chattanooga,TN,manufacturing_plant,325211,government_filing
+SITE-003173,sites_TN.csv,Chevron Phillips Chemical - Performance Pipe Knoxville,TN,manufacturing_plant,326122,
+SITE-003205,sites_TN.csv,Eastman Chemical Co - Tennessee Operations (Kingsport),TN,hq_and_plant,325211,government_filing
+SITE-002868,sites_TX.csv,Goodyear Chemical — Houston,TX,manufacturing_plant,325212,
+SITE-002869,sites_TX.csv,Goodyear Chemical — Bayport,TX,manufacturing_plant,325199,
+SITE-002870,sites_TX.csv,Goodyear Chemical — Beaumont,TX,manufacturing_plant,325212,
+SITE-002938,sites_TX.csv,Ennis-Flint North,TX,manufacturing_plant,325510,government_filing
+SITE-002939,sites_TX.csv,Ppg Industries Inc Tx,TX,manufacturing_plant,325510,government_filing
+SITE-002940,sites_TX.csv,Prc-Desoto International Inc.,TX,manufacturing_plant,325520,government_filing
+SITE-002969,sites_TX.csv,Tremco Cpg Manufacturing Corp. Corsicana Facility,TX,manufacturing_plant,325199,government_filing
+SITE-002970,sites_TX.csv,Fibergrate Composite Structures Inc,TX,manufacturing_plant,326199,government_filing
+SITE-002982,sites_TX.csv,Axalta Coating Systems Usa Llc,TX,manufacturing_plant,326199,government_filing
+SITE-002983,sites_TX.csv,Century Industrial Coatings I Nc.,TX,manufacturing_plant,325510,government_filing
+SITE-002997,sites_TX.csv,International Paint Llc,TX,manufacturing_plant,325510,government_filing
+SITE-003014,sites_TX.csv,H.B. Fuller Construction Products Inc.,TX,manufacturing_plant,325520,government_filing
+SITE-003017,sites_TX.csv,Cryovac Inc Iowa Park,TX,manufacturing_plant,326112,government_filing
+SITE-003027,sites_TX.csv,Solstice Advanced Materials - Orange Plant,TX,manufacturing_plant,325211,government_filing
+SITE-003042,sites_TX.csv,Hexcel Corporation - Seguin,TX,manufacturing_plant,,
+SITE-003059,sites_TX.csv,Blue Cube Operations LLC - Freeport (Olin Epoxy),TX,manufacturing_plant,325199,
+SITE-003065,sites_TX.csv,STEMCO - Longview,TX,manufacturing_plant,336390,
+SITE-003080,sites_TX.csv,Huntsman Building Solutions - Arlington,TX,manufacturing_plant,325211,
+SITE-003081,sites_TX.csv,Huntsman - Houston (Polyols),TX,manufacturing_plant,325110,
+SITE-003082,sites_TX.csv,Huntsman Petrochemical - Conroe (Amines),TX,manufacturing_plant,325199,
+SITE-003083,sites_TX.csv,Huntsman Ethyleneamines - Freeport,TX,manufacturing_plant,325199,
+SITE-003084,sites_TX.csv,Huntsman Petrochemical - Port Neches (Amines),TX,manufacturing_plant,325199,
+SITE-003096,sites_TX.csv,Hunter Panels — Terrell,TX,manufacturing_plant,326150,government_filing
+SITE-003097,sites_TX.csv,Carlisle Coatings & Waterproofing — Wylie,TX,manufacturing_plant,325510,government_filing
+SITE-003119,sites_TX.csv,Owens Corning Insulation — Waxahachie,TX,manufacturing_plant,327993,government_filing
+SITE-003123,sites_TX.csv,RectorSeal - Houston,TX,manufacturing_plant,,
+SITE-003124,sites_TX.csv,Whitmore Manufacturing - Rockwall,TX,manufacturing_plant,,
+SITE-003131,sites_TX.csv,Lollicup USA - Rockwall Manufacturing Plant and HQ,TX,hq_and_plant,,
+SITE-003132,sites_TX.csv,Reynolds Consumer Products - Temple Plant,TX,manufacturing_plant,,
+SITE-003149,sites_TX.csv,Cabot Corporation - Pampa Plant,TX,manufacturing_plant,325180,government_filing
+SITE-003150,sites_TX.csv,Cabot Corporation - Pampa Development & Manufacturing Center,TX,rd_center,325180,government_filing
+SITE-003152,sites_TX.csv,Orion Engineered Carbons - Borger Plant,TX,manufacturing_plant,325180,government_filing
+SITE-003153,sites_TX.csv,Orion Engineered Carbons - Orange Plant,TX,manufacturing_plant,325180,government_filing
+SITE-003154,sites_TX.csv,Orion S.A. - Principal Executive Office (Spring),TX,hq_only,,
+SITE-003162,sites_TX.csv,Celanese — Bishop Plant,TX,manufacturing_plant,325199,
+SITE-003163,sites_TX.csv,Celanese Corporation — Irving HQ,TX,hq_only,,
+SITE-003164,sites_TX.csv,Celanese — Clear Lake Plant,TX,manufacturing_plant,325199,
+SITE-003174,sites_TX.csv,Chevron Phillips Chemical - Cedar Bayou Plant (Baytown),TX,manufacturing_plant,325110,
+SITE-003175,sites_TX.csv,Chevron Phillips Chemical - Borger Plant,TX,manufacturing_plant,325199,
+SITE-003176,sites_TX.csv,Chevron Phillips Chemical - Performance Pipe Brownwood,TX,manufacturing_plant,,
+SITE-003177,sites_TX.csv,Chevron Phillips Chemical - Southeast Texas Chemical Complex Polyethylene (Orange),TX,manufacturing_plant,325211,
+SITE-003178,sites_TX.csv,Chevron Phillips Chemical - Pasadena Plastics Complex,TX,manufacturing_plant,325211,
+SITE-003179,sites_TX.csv,Chevron Phillips Chemical - Southeast Texas Chemical Complex Ethylene (Port Arthur),TX,manufacturing_plant,325110,
+SITE-003180,sites_TX.csv,Chevron Phillips Chemical - Sweeny Complex (incl. Old Ocean),TX,manufacturing_plant,325110,
+SITE-003188,sites_TX.csv,Dow Chemical — Freeport Facility (Texas Operations),TX,manufacturing_plant,325199,government_filing
+SITE-003189,sites_TX.csv,Dow Chemical — La Porte Plant,TX,manufacturing_plant,325199,government_filing
+SITE-003190,sites_TX.csv,Dow Chemical — Beaumont Aniline Plant (Nederland),TX,manufacturing_plant,325194,government_filing
+SITE-003191,sites_TX.csv,Dow — Sabine River Operations (Orange),TX,manufacturing_plant,325110,government_filing
+SITE-003192,sites_TX.csv,Union Carbide — Seadrift Plant,TX,manufacturing_plant,325199,government_filing
+SITE-003193,sites_TX.csv,Union Carbide — Texas City Plant,TX,manufacturing_plant,325110,government_filing
+SITE-003194,sites_TX.csv,Dow — Victoria Site (F-Unit Copolymers),TX,manufacturing_plant,325211,government_filing
+SITE-003206,sites_TX.csv,Eastman Chemical Co - Alvin (Chocolate Bayou),TX,manufacturing_plant,,
+SITE-003207,sites_TX.csv,Eastman Chemical Co - Texas Operations (Longview),TX,manufacturing_plant,325211,researcher_inferred
+SITE-003208,sites_TX.csv,Eastman Chemical Co - Texas City,TX,manufacturing_plant,,
+SITE-003217,sites_TX.csv,ExxonMobil Mont Belvieu Plastics Plant,TX,manufacturing_plant,325211,government_filing
+SITE-003218,sites_TX.csv,ExxonMobil Baytown Chemical Plant & Olefins Plant,TX,manufacturing_plant,325110,government_filing
+SITE-003219,sites_TX.csv,ExxonMobil Beaumont Polyethylene Plant,TX,manufacturing_plant,325211,government_filing
+SITE-003220,sites_TX.csv,ExxonMobil Beaumont Chemical Plant,TX,manufacturing_plant,325110,government_filing
+SITE-003221,sites_TX.csv,Gulf Coast Growth Ventures (GCGV) Gregory Plant,TX,manufacturing_plant,325211,government_filing
+SITE-003222,sites_TX.csv,ExxonMobil Huntsville Polyolefin Thermoset Resin Plant (Proxxima),TX,manufacturing_plant,325110,government_filing
+SITE-003039,sites_UT.csv,Hexcel Corporation - Salt Lake City,UT,hq_and_plant,325211,government_filing
+SITE-003098,sites_UT.csv,Hunter Panels — Tooele,UT,manufacturing_plant,326150,government_filing
+SITE-003120,sites_UT.csv,Owens Corning Insulation — Nephi,UT,manufacturing_plant,327993,government_filing
+SITE-003227,sites_UT.csv,Thermo Fisher Scientific — Logan (Single-Use Technologies),UT,manufacturing_plant,,
+SITE-002862,sites_VA.csv,Goodyear Tire — Danville,VA,manufacturing_plant,326211,
+SITE-002898,sites_VA.csv,Avient — Winchester,VA,manufacturing_plant,,
+SITE-002984,sites_VA.csv,Axalta Coating Systems Usa Llc-Front Royal Plant,VA,manufacturing_plant,325510,government_filing
+SITE-002998,sites_VA.csv,Akzo Nobel Coatings Inc,VA,manufacturing_plant,325510,government_filing
+SITE-003028,sites_VA.csv,Solstice Advanced Materials - Colonial Heights (Spectra Fiber) Plant,VA,manufacturing_plant,325220,government_filing
+SITE-003056,sites_VA.csv,AdvanSix - Hopewell,VA,manufacturing_plant,325199,
+SITE-003057,sites_VA.csv,AdvanSix - Chesterfield (Chester),VA,manufacturing_plant,325211,
+SITE-003165,sites_VA.csv,Celanese Acetate — Celco Plant (Narrows),VA,manufacturing_plant,325220,
+SITE-003166,sites_VA.csv,Celanese — Richmond Zytel Plant (Spruance),VA,manufacturing_plant,,
+SITE-003209,sites_VA.csv,Eastman Performance Films LLC - Axton Facility,VA,manufacturing_plant,326130,government_filing
+SITE-003210,sites_VA.csv,Eastman Performance Films LLC - Plant II,VA,manufacturing_plant,326130,government_filing
+SITE-003211,sites_VA.csv,Eastman Performance Films LLC - Plant 1,VA,manufacturing_plant,326130,government_filing
+SITE-003212,sites_VA.csv,Eastman Performance Films LLC - Martinsville,VA,manufacturing_plant,326112,government_filing
+SITE-002910,sites_WA.csv,Myers Industries — Ridgefield,WA,manufacturing_plant,,
+SITE-003040,sites_WA.csv,Hexcel Corporation - Burlington,WA,manufacturing_plant,,
+SITE-003041,sites_WA.csv,Hexcel Corporation - Kent,WA,manufacturing_plant,336413,government_filing
+SITE-003099,sites_WA.csv,Carlisle Construction Materials — Puyallup (polyiso),WA,manufacturing_plant,326150,government_filing
+SITE-002941,sites_WI.csv,Ppg Industries Inc-Oak Creek,WI,manufacturing_plant,325211,government_filing
+SITE-002971,sites_WI.csv,Carboline Global Inc.,WI,manufacturing_plant,325510,government_filing
+SITE-002972,sites_WI.csv,Rust-Oleum Corp,WI,manufacturing_plant,325510,government_filing
+SITE-002973,sites_WI.csv,Rust-Oleum Corp,WI,manufacturing_plant,325510,government_filing
+SITE-003066,sites_WI.csv,Brady Worldwide Inc - Florist Avenue Campus,WI,manufacturing_plant,322299,
+SITE-003067,sites_WI.csv,Brady Corporation - Good Hope Road HQ & Manufacturing Campus,WI,manufacturing_plant,,
+SITE-003143,sites_WI.csv,Amcor Flexibles — Madison,WI,manufacturing_plant,326112,government_filing
+SITE-003144,sites_WI.csv,Amcor Flexibles — New London,WI,manufacturing_plant,326112,government_filing
+SITE-002974,sites_WV.csv,Rustoleum Corp,WV,manufacturing_plant,325510,government_filing
+SITE-003023,sites_WV.csv,Chemours Washington Works,WV,manufacturing_plant,325120,
+SITE-003071,sites_WV.csv,Latham Pool Products (VIKING POOLS-WV) - Jane Lew,WV,manufacturing_plant,326199,
+SITE-003167,sites_WV.csv,Celanese — Washington Works Plant,WV,manufacturing_plant,325211,
+SITE-003195,sites_WV.csv,Union Carbide — Institute Facility,WV,manufacturing_plant,325199,government_filing
+SITE-003196,sites_WV.csv,Union Carbide — South Charleston Facility,WV,manufacturing_plant,325199,government_filing
+SITE-003197,sites_WV.csv,Univation Technologies — South Charleston Catalyst Plant (SCCP),WV,manufacturing_plant,325199,government_filing

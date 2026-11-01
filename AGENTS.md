@@ -191,7 +191,8 @@ force-place it into a US shard or the residual.
 - County is required for every Ohio site, from the physical address —
   never inferred from the mailing city (ZIP codes straddle boundaries).
 - Date fields carry a full ISO date or are empty. A year-only value
-  is invalid.
+  is invalid. The single exception is `members.member_since`, which
+  is a year field by design (owner ruling 2026-11-01, SCHEMA v1.7.6).
 - **Evidence contract.** A create integrates only with evidence rows
   in `data/evidence.csv` covering its existence and scope claims at
   minimum, per SCHEMA.md §4.13, which also sets the per-source-class
@@ -231,7 +232,9 @@ flag only for a member **findable on the public PIC website member
 list**, and the record's `sources` cite that public list. The PIC CRM
 is a private, internal system: it may be used to reconcile the
 website list against the Atlas internally, but it is never the cited
-source for a membership fact, and no membership information that
+source for a membership fact — nor for any other fact in any public
+row, and no public row names CRM content (owner ruling 2026-11-01;
+validator V-50) — and no membership information that
 exists only in the CRM is published. Where the website list and the
 CRM disagree, the website governs what publishes and the discrepancy
 is an internal reconciliation item, not a publishable fact.
@@ -304,3 +307,9 @@ same day — research staff at federal laboratories with real polymer
 programs are recordable alongside professors, under the same
 public-facts discipline (SCHEMA v1.7.3, §4.9). No data file is
 changed by this revision.*
+
+*Revision note — 2026-11-01 (owner battery 2026-11-01, SCHEMA v1.7.6):
+§4's date rule gains the `members.member_since` year-field exception,
+and §5.1 extends the CRM bar to every fact in every public row
+(validator V-50). The owner ruled the battery "all as recommended".
+No data file is changed by this revision.*

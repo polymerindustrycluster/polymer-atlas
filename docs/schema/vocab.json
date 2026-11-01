@@ -1,0 +1,731 @@
+{
+ "_doc": "Controlled vocabularies enforced by scripts/validate.py, exported by scripts/export_vocab.py. DERIVED: never hand-edit. Multi-value fields use ';'. A value not listed here goes in the record's notes field and is flagged, never improvised (AGENTS.md §1).",
+ "vocabularies": {
+  "CADENCES": {
+   "governs": "events.cadence",
+   "section": "SCHEMA §4.12.1",
+   "values": [
+    "annual",
+    "biennial",
+    "irregular",
+    "triennial"
+   ]
+  },
+  "CAP_MATERIAL": {
+   "governs": "site_capabilities.term where capability_type=material",
+   "section": "SCHEMA §3.6",
+   "values": [
+    "abs",
+    "acetal_pom",
+    "adhesives_sealants",
+    "bioplastics_biobased",
+    "carbon_black",
+    "coatings",
+    "custom_compounds",
+    "elastomers_rubber",
+    "epoxy",
+    "fluoropolymers",
+    "inks_colorants_masterbatch",
+    "nylon_pa",
+    "pet_petg",
+    "polycarbonate_pc",
+    "polyethylene_pe",
+    "polypropylene_pp",
+    "polystyrene_ps_hips",
+    "polyurethane_pu",
+    "pvc",
+    "recycled_content_pcr_pir",
+    "silicones",
+    "thermoplastic_elastomers_tpe_tpu",
+    "thermoplastic_olefin_tpo",
+    "thermoplastics",
+    "thermosets"
+   ]
+  },
+  "CAP_PROCESS": {
+   "governs": "site_capabilities.term where capability_type=process",
+   "section": "SCHEMA §3.6",
+   "values": [
+    "additive_manufacturing_polymer",
+    "adhesive_sealant_formulation",
+    "blow_molding",
+    "calendering",
+    "coating_formulation",
+    "color_masterbatch",
+    "composites_pultrusion",
+    "compounding",
+    "compression_molding",
+    "extrusion",
+    "injection_molding",
+    "polymerization",
+    "reaction_injection_molding",
+    "recycling_mechanical",
+    "rotational_molding",
+    "rubber_mixing_compounding",
+    "rubber_molding",
+    "thermoforming"
+   ]
+  },
+  "CAP_PRODUCT": {
+   "governs": "site_capabilities.term where capability_type=product_form",
+   "section": "SCHEMA §3.6",
+   "values": [
+    "bags_pouches",
+    "bottles_containers",
+    "fiber_filament",
+    "film_sheet",
+    "flooring",
+    "foam_products",
+    "gaskets_seals",
+    "hose_belting",
+    "medical_tubing",
+    "molded_parts",
+    "pipe_profile",
+    "sheet_plate",
+    "tires",
+    "tubing",
+    "wire_cable"
+   ]
+  },
+  "CERTS": {
+   "governs": "organizations.certifications (multi, ';')",
+   "section": "SCHEMA §3.4",
+   "values": [
+    "as9100",
+    "cleanroom_iso7",
+    "cleanroom_iso8",
+    "fda_registered",
+    "glp_gmp",
+    "iatf_16949",
+    "iso_13485",
+    "iso_14001",
+    "iso_17025",
+    "iso_45001",
+    "iso_9001",
+    "itar",
+    "nsf_certified_products",
+    "ul_recognized"
+   ]
+  },
+  "CIP_SOURCE_TYPES": {
+   "governs": "programs.cip_source_type",
+   "section": "SCHEMA §4.11",
+   "values": [
+    "institution_published",
+    "ipeds_listing",
+    "researcher_inferred"
+   ]
+  },
+  "CLAIM_TYPES": {
+   "governs": "evidence.claim_type",
+   "section": "SCHEMA §4.13",
+   "values": [
+    "activity",
+    "address",
+    "code",
+    "existence",
+    "liveness",
+    "parent",
+    "scope"
+   ]
+  },
+  "CLASS_CEIL": {
+   "governs": "evidence: highest tier_effect per source_class",
+   "section": "SCHEMA §4.13",
+   "values": {
+    "directory": "supports_B",
+    "government_filing": "supports_A",
+    "harvest_roster": "supports_B",
+    "own_site": "supports_A",
+    "platform_category": "supports_C",
+    "press": "supports_B",
+    "registry": "supports_B"
+   }
+  },
+  "CODE_SOURCE_TYPES": {
+   "governs": "code_assignments.source_type",
+   "section": "SCHEMA §4.18",
+   "values": [
+    "company_disclosed",
+    "directory_assigned",
+    "government_filing",
+    "researcher_inferred"
+   ]
+  },
+  "CODE_SYSTEMS": {
+   "governs": "ref_codes.code_system; code_assignments.code_system",
+   "section": "SCHEMA §4.16",
+   "values": [
+    "CIP",
+    "CPC",
+    "HS",
+    "NAICS",
+    "OPENALEX",
+    "SIC"
+   ]
+  },
+  "COUNTY_SOURCES": {
+   "governs": "sites.county_source",
+   "section": "SCHEMA §4.5 (v1.6)",
+   "values": [
+    "directory",
+    "geocoder_centroid",
+    "parcel",
+    "physical_address"
+   ]
+  },
+  "CREDENTIALS": {
+   "governs": "programs.credential_types",
+   "section": "SCHEMA §4.11",
+   "values": [
+    "aas_associate",
+    "bs",
+    "certificate",
+    "incumbent_worker_training",
+    "minor",
+    "ms",
+    "noncredit_workforce",
+    "phd",
+    "registered_apprenticeship"
+   ]
+  },
+  "EMPLOYEE_BANDS": {
+   "governs": "organizations.employee_band_ohio; sites.employee_band_site",
+   "section": "SCHEMA §4.4",
+   "values": [
+    "1-9",
+    "10-49",
+    "100-249",
+    "1000-4999",
+    "250-499",
+    "50-99",
+    "500-999",
+    "5000+",
+    "unknown"
+   ]
+  },
+  "ENGAGEMENT": {
+   "governs": "programs.engagement_modes",
+   "section": "SCHEMA §4.11",
+   "values": [
+    "customized_employer_training",
+    "internships_coops",
+    "lab_facility_access",
+    "licensing_tech_transfer",
+    "research_collaboration",
+    "student_projects_capstone",
+    "testing_characterization_access",
+    "training_seats_open_enrollment"
+   ]
+  },
+  "ENTITY_TYPE": {
+   "governs": "organizations.entity_type",
+   "section": "SCHEMA §4.4",
+   "values": [
+    "corporation_public",
+    "corporation_private",
+    "llc",
+    "partnership",
+    "sole_proprietor",
+    "nonprofit",
+    "government",
+    "academic",
+    "cooperative",
+    "unknown"
+   ],
+   "note": "written inline in validate.py / SCHEMA, mirrored here"
+  },
+  "EVENT_FORMATS": {
+   "governs": "events.format",
+   "section": "SCHEMA §4.12.1",
+   "values": [
+    "conference",
+    "expo",
+    "meeting_series",
+    "summit",
+    "technical_conference"
+   ]
+  },
+  "EVENT_STATUSES": {
+   "governs": "events.status",
+   "section": "SCHEMA §4.12.1",
+   "values": [
+    "acquired",
+    "active",
+    "active_idled_partial",
+    "closed",
+    "idled",
+    "merged",
+    "pre_revenue",
+    "relocated_in_scope",
+    "relocated_out_of_scope",
+    "unknown"
+   ]
+  },
+  "GEO_PRECISION": {
+   "governs": "sites.geocode_precision",
+   "section": "SCHEMA §4.5",
+   "values": [
+    "address_interpolated",
+    "city_centroid",
+    "parcel",
+    "rooftop",
+    "zip_centroid"
+   ]
+  },
+  "HOME_REGIONS": {
+   "governs": "events.home_region",
+   "section": "SCHEMA §4.12.1",
+   "values": [
+    "international",
+    "national_us",
+    "ne_ohio",
+    "ohio"
+   ]
+  },
+  "LEVELS": {
+   "governs": "programs.level",
+   "section": "SCHEMA §4.11",
+   "values": [
+    "associate",
+    "bachelor",
+    "certificate",
+    "doctorate",
+    "master",
+    "none"
+   ]
+  },
+  "LIVENESS_SIGNALS": {
+   "governs": "organizations.liveness_signal",
+   "section": "SCHEMA §4.4 (v1.6)",
+   "values": [
+    "closure_signature",
+    "operating_evidence",
+    "sos_active",
+    "sos_confirmed_closed"
+   ]
+  },
+  "MARKETS": {
+   "governs": "markets_served (multi, ';') on organizations/sites",
+   "section": "SCHEMA §3.3",
+   "values": [
+    "aerospace_defense",
+    "agriculture",
+    "appliances",
+    "automotive_aftermarket",
+    "automotive_oem",
+    "automotive_unspecified",
+    "chemical_mining_metals_processing",
+    "construction_building_products",
+    "consumer_goods_housewares",
+    "cosmetics_personal_care",
+    "dental",
+    "electronics_electrical",
+    "energy_oil_gas",
+    "energy_renewables_battery",
+    "food_processing_foodservice",
+    "footwear_apparel",
+    "furniture_office",
+    "general_industrial",
+    "industrial_machinery",
+    "infrastructure_civil",
+    "lawn_garden_recreation",
+    "marine",
+    "medical_device",
+    "medical_healthcare_general",
+    "other_specified_in_notes",
+    "packaging_consumer",
+    "packaging_food_beverage",
+    "packaging_industrial",
+    "pharmaceutical_biotech",
+    "plastics_rubber_processors",
+    "rail_transportation",
+    "rv_powersports_trailers",
+    "telecom_datacom",
+    "tire_rubber_goods",
+    "toys_sporting_goods",
+    "water_wastewater"
+   ]
+  },
+  "MATERIALS": {
+   "governs": "materials (multi, ';') on organizations/sites",
+   "section": "SCHEMA §3.2",
+   "values": [
+    "abs",
+    "acetal_pom",
+    "acrylic_pmma",
+    "adhesives_sealants",
+    "asa",
+    "bioplastics_biobased",
+    "coatings",
+    "composites_carbon",
+    "composites_frp",
+    "composites_thermoplastic",
+    "composites_thermoset",
+    "elastomers_rubber",
+    "epdm",
+    "epoxy",
+    "films_flexible_packaging",
+    "fluoropolymers",
+    "foams_polymeric",
+    "inks_colorants_masterbatch",
+    "melamine_urea_formaldehyde",
+    "natural_rubber_nr",
+    "neoprene_cr",
+    "nitrile_nbr",
+    "nylon_pa",
+    "other_specified_in_notes",
+    "peek_high_performance",
+    "pet_petg",
+    "pha",
+    "phenolic",
+    "pla",
+    "polycarbonate_pc",
+    "polyester_vinyl_ester_resins",
+    "polyethylene_pe",
+    "polypropylene_pp",
+    "polystyrene_ps_hips",
+    "polyurethane_pu",
+    "pvc",
+    "recycled_content_pcr_pir",
+    "sbr",
+    "silicones",
+    "specialty_elastomers",
+    "thermoplastic_elastomers_tpe_tpu",
+    "thermoplastics",
+    "thermosets",
+    "viton_fkm"
+   ]
+  },
+  "NAICS_CONFIDENCE": {
+   "governs": "*.naics_confidence",
+   "section": "SCHEMA §2.1",
+   "values": [
+    "high",
+    "low",
+    "medium"
+   ]
+  },
+  "NAICS_SOURCE_TYPES": {
+   "governs": "*.naics_primary_source_type",
+   "section": "AGENTS.md §4; SCHEMA §2.1",
+   "values": [
+    "company_disclosed",
+    "directory_assigned",
+    "government_filing",
+    "researcher_inferred"
+   ]
+  },
+  "OFFICE_MODES": {
+   "governs": "ecosystem.industry_partnership_modes (office grain)",
+   "section": "SCHEMA §4.6",
+   "values": [
+    "facility_access",
+    "licensing",
+    "materials_transfer",
+    "sponsored_research",
+    "startup_formation"
+   ]
+  },
+  "ORG_STATUS": {
+   "governs": "organizations.status; sites.operating_status",
+   "section": "SCHEMA §4.2",
+   "values": [
+    "active",
+    "active_idled_partial",
+    "idled",
+    "closed",
+    "acquired",
+    "merged",
+    "relocated_in_scope",
+    "relocated_out_of_scope",
+    "pre_revenue",
+    "unknown"
+   ],
+   "note": "written inline in validate.py / SCHEMA, mirrored here"
+  },
+  "OWNERSHIP": {
+   "governs": "organizations.ownership_type",
+   "section": "SCHEMA §4.4 (v1.4)",
+   "values": [
+    "academic",
+    "cooperative",
+    "employee_owned",
+    "family_owned",
+    "government",
+    "nonprofit",
+    "private_company",
+    "private_equity_portfolio",
+    "public_company",
+    "unknown"
+   ]
+  },
+  "PART_ROLES": {
+   "governs": "event_participation.role",
+   "section": "SCHEMA §4.12.2",
+   "values": [
+    "exhibitor",
+    "host",
+    "organizer",
+    "speaker",
+    "sponsor"
+   ]
+  },
+  "PROCESSES": {
+   "governs": "processes (multi, ';') on organizations/sites",
+   "section": "SCHEMA §3.1",
+   "values": [
+    "additive_dry_blending",
+    "additive_manufacturing_metal",
+    "additive_manufacturing_polymer",
+    "additive_manufacturing_polymer_production",
+    "adhesive_sealant_formulation",
+    "assembly_secondary_ops",
+    "blow_molding",
+    "blow_molding_extrusion",
+    "blow_molding_injection",
+    "blow_molding_stretch",
+    "calendering",
+    "coating_applying",
+    "coating_formulation",
+    "color_masterbatch",
+    "composites_compression_smc_bmc",
+    "composites_filament_winding",
+    "composites_hand_layup",
+    "composites_prepreg_autoclave",
+    "composites_pultrusion",
+    "composites_rtm_infusion",
+    "compounding_extrusion",
+    "compression_molding",
+    "custom_compounding",
+    "die_cutting_converting",
+    "extrusion_film_blown",
+    "extrusion_film_cast",
+    "extrusion_pipe_tube",
+    "extrusion_profile",
+    "extrusion_sheet",
+    "extrusion_wire_cable_coating",
+    "fluoropolymer_lining",
+    "foam_extrusion",
+    "foam_fabrication",
+    "foam_molding_bead",
+    "foam_molding_structural",
+    "hose_belting_manufacturing",
+    "injection_molding",
+    "injection_molding_lsr_silicone",
+    "injection_molding_micro",
+    "ink_formulation",
+    "insert_overmolding",
+    "laminating",
+    "latex_dipping_foaming",
+    "mold_tool_making",
+    "pigment_colorant_dispersion",
+    "plastics_fabrication_welding",
+    "plastics_machining_cnc",
+    "polymerization",
+    "potting_encapsulation_casting",
+    "pressure_sensitive_tape_manufacture",
+    "printing_decorating_plastics",
+    "pulverizing_grinding_resin",
+    "recycling_chemical_pyrolysis",
+    "recycling_chemical_solvolysis",
+    "recycling_mechanical",
+    "regrind_pelletizing",
+    "rotational_molding",
+    "rubber_calendering",
+    "rubber_extrusion",
+    "rubber_mixing_compounding",
+    "rubber_molding_compression",
+    "rubber_molding_injection",
+    "silicone_formulation",
+    "thermoforming_pressure",
+    "thermoforming_unspecified",
+    "thermoforming_vacuum",
+    "tire_manufacturing",
+    "tire_retreading",
+    "tooling_repair_maintenance",
+    "transfer_molding",
+    "two_shot_molding",
+    "ultrasonic_solvent_bonding",
+    "vulcanization_curing_services"
+   ]
+  },
+  "PROGRAM_TYPES": {
+   "governs": "programs.program_type",
+   "section": "SCHEMA §4.11",
+   "values": [
+    "apprenticeship",
+    "center",
+    "certificate",
+    "course",
+    "degree",
+    "lab_facility",
+    "training"
+   ]
+  },
+  "QUAL_ORDER": {
+   "governs": "organizations.tier1_qualifier (derived; order matters)",
+   "section": "SCHEMA §4.4 (v1.6)",
+   "values": [
+    "public_parent",
+    "tri_reporter",
+    "employees_250plus",
+    "national_footprint"
+   ]
+  },
+  "REGISTRIES": {
+   "governs": "registry_links.registry",
+   "section": "SCHEMA §4.8",
+   "values": [
+    "EIN",
+    "EIN_NONPROFIT",
+    "FDA_FEI",
+    "FRS",
+    "LEI",
+    "OHIO_SOS_CHARTER",
+    "SEC_CIK",
+    "SEC_CIK_PARENT_FILER",
+    "TRI_TRIFID",
+    "UEI",
+    "WIKIDATA"
+   ]
+  },
+  "REL_TYPES": {
+   "governs": "relationships.relationship_type",
+   "section": "SCHEMA §4.14",
+   "values": [
+    "dba_of",
+    "member_of",
+    "merged_into",
+    "parent_of",
+    "spun_off_from",
+    "successor_of"
+   ]
+  },
+  "RESEARCH_SUPPLEMENT": {
+   "governs": "people/programs research areas (with PROCESSES|MATERIALS)",
+   "section": "SCHEMA §3.5",
+   "values": [
+    "additive_manufacturing_science",
+    "biomedical_polymers",
+    "characterization_methods",
+    "composites_mechanics",
+    "degradation_biodegradation",
+    "elastomer_science",
+    "membranes_separations",
+    "polymer_physics",
+    "polymer_synthesis",
+    "recycling_circularity",
+    "rheology",
+    "sustainable_feedstocks"
+   ]
+  },
+  "RING": {
+   "governs": "*.ring_primary",
+   "section": "SCHEMA §1",
+   "values": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "note": "written inline in validate.py / SCHEMA, mirrored here"
+  },
+  "ROLES": {
+   "governs": "people.role",
+   "section": "SCHEMA §4.9 (v1.7.4)",
+   "values": [
+    "assistant_professor",
+    "assistant_scientist",
+    "associate_professor",
+    "associate_scientist",
+    "center_director_professor",
+    "distinguished_scientist",
+    "division_director",
+    "group_leader",
+    "named_chair",
+    "professor",
+    "research_engineer",
+    "research_professor",
+    "research_scientist",
+    "senior_research_engineer",
+    "senior_scientist",
+    "staff_scientist"
+   ]
+  },
+  "SITE_TYPES": {
+   "governs": "sites.site_type",
+   "section": "SCHEMA §4.5",
+   "values": [
+    "campus",
+    "hq_and_plant",
+    "hq_only",
+    "lab_testing",
+    "manufacturing_plant",
+    "office_other",
+    "rd_center",
+    "recycling_facility",
+    "sales_office",
+    "service_repair",
+    "tool_shop",
+    "training_center",
+    "virtual_incubator",
+    "warehouse_distribution"
+   ]
+  },
+  "SOURCE_CLASSES": {
+   "governs": "evidence.source_class",
+   "section": "SCHEMA §4.13",
+   "values": [
+    "directory",
+    "government_filing",
+    "harvest_roster",
+    "own_site",
+    "platform_category",
+    "press",
+    "registry"
+   ]
+  },
+  "SUBJECT_VOCAB": {
+   "governs": "events subject tags",
+   "section": "SCHEMA §4.12.1",
+   "values": [
+    "adhesives_sealants",
+    "cluster_convening",
+    "coatings_finishing",
+    "composites",
+    "compounding_formulation",
+    "foams",
+    "plastics_general",
+    "plastics_processing_technology",
+    "polyurethanes",
+    "recycling_circularity",
+    "rubber_elastomers",
+    "silicones",
+    "tooling_molds"
+   ]
+  },
+  "TIER_EFFECTS": {
+   "governs": "evidence.tier_effect",
+   "section": "SCHEMA §4.13",
+   "values": [
+    "contradicts",
+    "supports_A",
+    "supports_B",
+    "supports_C"
+   ]
+  },
+  "VERIFICATION_TIER": {
+   "governs": "*.verification_tier",
+   "section": "SCHEMA §4.1",
+   "values": [
+    "A",
+    "B",
+    "C",
+    "U"
+   ],
+   "note": "written inline in validate.py / SCHEMA, mirrored here"
+  }
+ }
+}
