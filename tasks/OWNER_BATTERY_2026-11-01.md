@@ -1,0 +1,113 @@
+# Owner battery — 2026-11-01
+
+Every open question from the 2026-11-01 tooling, debt, pilot and wave lanes that
+needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation and
+its evidence. Agents hold the work an item gates until it's ruled.
+
+**To rule:** reply "all as recommended", or give item numbers with changes.
+Rulings that touch vocabulary need a dated SCHEMA revision before any data uses
+the new value.
+
+## Actions only the owner can take (no ruling needed)
+
+| # | Action | Why | How |
+|---|---|---|---|
+| X1 | **Turn on CI** | No PR from any harness gets automated validation today | `docs/ci/README.md`: paste `docs/ci/validate.yml` into `.github/workflows/validate.yml` through the GitHub web UI |
+| X2 | **First release + LICENSE** | The README promises releases and CC BY 4.0, but there is no release and no LICENSE file | `docs/RELEASE_HOWTO.md`; add a root `LICENSE` |
+| X3 | **Get local staging into version control** (a private repo is fine) | Pass journals, the snapshot sync log, raw snapshots and denominator inputs exist only on one machine. F5 was already blocked by this. | Push the staging folder to a private repo |
+| X4 | **Close or refresh stale draft PRs** | #7, #11 (and likely #8, #9) carry packets that QUEUE records as applied, so they mislead agents checking for claims | GitHub UI |
+| X5 | **Publish the static explorer** (once built) | Chamber staff and members can use the Atlas without git | `docs/SITE_HOWTO.md` |
+
+## Rulings
+
+### R1. Vocabulary: `site_type` (validator debt V-45)
+
+**R1a.** Add `office_other` for in-scope non-HQ, non-sales offices (11 rows)?
+*Recommend yes.*
+
+**R1b.** Mixed-use addresses: keep one `site_type` (the dominant physical function)
+and put the rest in notes? *Recommend yes.* This matches how ring and NAICS already
+work.
+
+**R1c.** Add `service_repair` for machinery service and repair centers (Ring 3)?
+*Recommend yes.*
+
+Evidence: `tasks/validator-debt-2026-11-01/PROPOSALS.md`, `v45_site_type_proposals.csv`.
+
+### R2. Vocabulary: markets (from the pilot and wave lanes)
+
+**R2a.** "Automotive" stated with no OEM or aftermarket split happens often. Add
+`automotive_unspecified`, or keep the rule that it maps to nothing until the
+source says which?
+*Recommend adding `automotive_unspecified`.* Otherwise the most common market
+claim in NE Ohio is lost.
+
+**R2b.** Add a `tire_rubber_goods` market (suppliers to tire makers)? *Recommend
+yes.* Tire is the defining Akron market.
+
+**R2c.** Add `plastics_rubber_processors` (upstream customers: resin, additive and
+compound suppliers selling to processors)? *Recommend yes.*
+
+**R2d.** Add `cosmetics_personal_care`? *Recommend yes.* This is a recurring
+packaging and compounding customer.
+
+Evidence: `tasks/pilot-pic12-capabilities-2026-11-01/REPORT.md` (Observations 1),
+and the wave lane reports.
+
+### R3. Vocabulary: processes and certifications
+
+**R3a.** Add a process `additive_dry_blending` (additive masterbatch and dry-blend
+makers)? *Recommend yes.*
+
+**R3b.** Add certifications `iso_45001` and `iso_17025` (testing labs)? *Recommend
+yes.*
+
+**R3c.** A certification is recorded only from a current certificate or a current
+page that names a non-superseded edition? *Recommend yes.* Example: Colonial
+Machine shows "ISO 9001:2005".
+
+### R4. NAICS confidence scale
+
+There are 18 rows using `low-medium` or `medium-high`. Keep the three-point scale
+(high, medium, low) and round down, or adopt five points?
+*Recommend keeping three points and rounding down.* The validator and SCHEMA §2.1
+already say three.
+
+### R5. `members.member_since` year-only
+
+AGENTS.md §4 says a year-only date is invalid, but `validate.py` requires a
+four-digit year for `member_since`. Which governs?
+*Recommend an explicit exception:* `member_since` is a year field by design. Amend
+AGENTS.md §4 to say so.
+
+### R6. Scope items surfaced by the pilot
+
+**R6a.** Etched Metal (SITE-001426) is mainly a metal nameplate maker, and plastic
+printing is one line. Is it in scope as Ring 3/4, or excluded? *Recommend applying
+the Ring 4 two-of-three test and logging it in `inclusion_log.csv`.*
+
+**R6b.** SITE-001836 (Robin Industries, Independence, `hq_office`, ring 1). The
+company's own site lists no Independence address. *Recommend routing it to
+re-verification.* This is not a ruling, just a flag.
+
+### R7. Process
+
+**R7a.** Move from one `QUEUE.md` to one file per task (`tasks/open/T-####.md`)?
+*Recommend yes, after the current campaign.* QUEUE.md is the main merge-conflict
+hotspot for parallel harnesses.
+
+**R7b.** Consolidate SCHEMA into a v2: fold the rulings into the rules and move the
+history to a changelog (`docs/IDEAS_AND_RESOURCES.md` F-07)? *Recommend yes,* as one
+dedicated pass with a diff review.
+
+**R7c.** Appoint a delegate for routine battery items (G-02)? *Recommend yes.*
+
+**R7d.** Activate the built news / WARN monitor (QUEUE "Weekly signals sweep")?
+*Recommend yes.* Its hits only queue re-verification.
+
+**R7e.** North America scope for held parents' Canada and Mexico plants (A-12)?
+*Recommend holding until the US national spine is further along.*
+
+**R7f.** Is a Form 5500 plan-participant count admissible as an employee-band input
+(B-02)? *Recommend yes,* as `government_filing` with the plan year, banded, and never
+as a precise headcount.

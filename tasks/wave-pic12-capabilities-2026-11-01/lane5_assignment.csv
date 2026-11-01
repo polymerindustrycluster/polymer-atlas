@@ -1,0 +1,31 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000025,ORG-000026,"Enterprise Rubber, Inc. — Akron",Akron,Summit,http://www.enterpriserubber.com
+SITE-000065,ORG-000065,"Hudson Extrusions, Inc. — Hudson",Hudson,Summit,https://www.hudsonextrusions.com
+SITE-000101,ORG-000101,"Polymerics, Inc. — Cuyahoga Falls",Cuyahoga Falls,Summit,http://www.polymericsinc.com
+SITE-000128,ORG-000129,Playground Plastics — Cleveland,Cleveland,Cuyahoga,https://www.playgroundplastics.com/
+SITE-000179,ORG-000172,Graphic Arts Rubber — Cuyahoga Falls,Cuyahoga Falls,Summit,https://www.graphicartsrubber.com/
+SITE-000208,ORG-000201,Ashtabula Rubber — Ashtabula,Ashtabula,Ashtabula,http://www.ashtabularubber.com
+SITE-000238,ORG-000224,"Alliance Equipment Company, Inc. — Alliance",Alliance,Stark,https://alliance-equipment.com/
+SITE-000271,ORG-000255,"Buckeye Packaging Co., Inc. — Alliance",Alliance,Stark,https://www.buckeyepackaging.com/
+SITE-000309,ORG-000290,Cosmo Corporation — Cleveland (Solon),Cleveland (Solon),Cuyahoga,https://www.cosmocorp.com/
+SITE-000343,ORG-000322,ECP Corp DBA Polycase — Avon,Avon,Lorain,https://www.polycase.com/
+SITE-000379,ORG-000355,Godfrey & Wing — Aurora,Aurora,Portage,https://www.godfreywing.com/
+SITE-000423,ORG-000909,"Jerico Plastic Industries, Inc. — Wadsworth",Wadsworth,Medina,https://jericoplastic.com/
+SITE-000455,ORG-000425,"M&M Industries, Inc Lordstown — Lordstown",Lordstown,Trumbull,https://www.mmcontainer.com/
+SITE-000490,ORG-000458,Neff-Perkins Company — Middlefield,Middlefield,Geauga,https://neff-perkins.com/
+SITE-000532,ORG-001033,Plastipak- Medina — Medina,Medina,Medina,https://www.plastipak.com/
+SITE-000569,ORG-000533,Qnity Cleveland Laird Plant — Cleveland,Cleveland,Cuyahoga,https://www.qnityelectronics.com/
+SITE-000603,ORG-000564,"Scott Molders, Inc. — Kent",Kent,Portage,https://scottmolders.com/
+SITE-000634,ORG-000595,System Seals — Brecksville,Brecksville,Cuyahoga,https://www.systemseals.com/
+SITE-000673,ORG-000632,West & Barker — Niles,Niles,Trumbull,https://westandbarker.com/
+SITE-001417,ORG-000588,Steere Enterprises — Tallmadge (350 Tacoma Ave),Tallmadge,Summit,https://www.steere.com/
+SITE-001468,ORG-001422,Elster Perfection — Geneva,Geneva,Ashtabula,https://process.honeywell.com
+SITE-001545,ORG-001479,O2 RegenTech - Akron,Akron,Summit,http://www.o2regentech.com
+SITE-001671,ORG-001599,MultiPlast Systems Inc — Solon,Solon,Cuyahoga,https://multiplastsystems.com/
+SITE-001717,ORG-001643,OVERMOLD EXPRESS — Mentor,Mentor,Lake,https://www.overmoldexpress.com/
+SITE-001774,ORG-001698,Prime Engineered Plastics,Canton,Stark,https://www.prime-plastics.com/
+SITE-001834,ORG-001758,Niles Building Products Company,Niles,Trumbull,http://www.nilesbldg.com/
+SITE-001888,ORG-001855,NewKor Inc.,Cleveland,Cuyahoga,https://newkor.com
+SITE-001992,ORG-001998,R A M Plastics Co Inc,North Lima,Mahoning,ram-plastics.com
+SITE-002073,ORG-002073,EnergyEne Inc.,Wooster,Wayne,https://energyene.com
+SITE-003477,ORG-001836,Johnsonite — Middlefield Rubber Tile Plant,Middlefield,Geauga,https://johnsonite.com
