@@ -47,3 +47,11 @@ including its "Tranche 2" section. In summary:
 
 Use the same columns as the PIC-12 wave. If your tool refuses to write
 `REPORT.md`, return the full report as text.
+
+## Pennsylvania lanes (2026-11-01)
+
+- **Assignment:** the 369 PA candidates, split round-robin into
+  `pa_lane1_assignment.csv` … `pa_lane6_assignment.csv` (61–62 sites each).
+- **Output:** `pa_lane<N>/`.
+- **Method:** identical to the Ohio lanes.
+- **Scratch directory:** `/tmp/claude-0/wave-pa/lane<N>/`.
