@@ -80,8 +80,8 @@ the integrator of record.
 
 Before finishing:
 1. Copy `data/` to a temp directory.
-2. Fill the `<ALLOC>` IDs there from `python3 scripts/atlas.py next-id ORG|SITE|EVD
-   --data-dir <tmp>` (temp copy only), then append your rows.
+2. Fill the `<ALLOC>` IDs there from `python3 scripts/atlas.py --data-dir <tmp> next-id ORG` (likewise
+   `SITE`, `EVD`) (temp copy only), then append your rows.
 3. Run `ATLAS_DATA_DIR=<tmp> python3 scripts/validate.py`. It must exit 0. Report
    the result.
 4. Delete the temp directory.
