@@ -89,6 +89,7 @@ All counts are site rows or organization rows, all tiers and statuses, from
 | D-07 | **Foreign direct investment view:** ultimate parent country for every site. Japanese, German and Korean ownership of Ohio plants is a standard EDO question. | Needs `ultimate_parent_org_id` records for foreign parents (only 32 INTL org rows today). | idea |
 | D-08 | **Workforce layer:** BLS OEWS wages for plastics occupations (51-4072, 51-4021, 51-9197…), QCEW average pay per county × NAICS (now in `docs/denominators/`), IPEDS completions by CIP (programs table), registered apprenticeships (DOL RAPIDS). | Talent supply vs demand by county | idea |
 | D-09 | **Products/brands:** a light table of consumer brands → manufacturing site, for public storytelling ("made in NE Ohio"). | **OWNER** scope | idea |
+| D-11 | **Economic pulse context data:** FRED producer-price and production indexes, BLS NAICS 326 employment and earnings, BEA state GDP for NAICS 326, EIA industrial energy prices (`docs/indicators/`, `scripts/build_indicators.py`; keys from env). Ohio was 6.8% of US NAICS 326 GDP in 2025, down from 8.1% in 2020. | Context only, with vintages; never evidence for a record | done → `docs/indicators/` |
 | D-10 | **Federal programs anchoring the cluster:** EDA Tech Hubs (the NE Ohio Sustainable Polymers Tech Hub), NIST MEP centers per state (MAGNET in NE Ohio), Manufacturing USA institutes with polymer work (IACMI composites, America Makes, LIFT, REMADE). | Ecosystem rows. Check which are held. | idea |
 
 ## E. Product — make it usable by people, not just agents
