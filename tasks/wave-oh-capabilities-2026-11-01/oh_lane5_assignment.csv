@@ -1,0 +1,80 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000693,ORG-000649,"Action Rubber Co., Inc. — Dayton",Dayton,Montgomery,https://actionrubber.com/
+SITE-000703,ORG-000656,Agile Ultrasonics — Columbus,Columbus,Franklin,https://www.agileultrasonics.com
+SITE-000714,ORG-000665,Amcor Rigid Packaging — Bellevue,Bellevue,Sandusky,https://www.amcor.com/
+SITE-000724,ORG-000670,Amsty Hanging Rock — Ironton,Ironton,Lawrence,https://www.amsty.com/
+SITE-000736,ORG-000685,Associated Plastics Corp. — Ada,Ada,Hardin,https://www.associatedplasticscorp.com/
+SITE-000744,ORG-000690,Axium Packaging : New Albany Plant 4,New Albany,Licking,https://axiumpackaging.com/
+SITE-000756,ORG-000698,BASF Corporation — Greenville,Greenville,Darke,https://www.basf.com/us/en.html
+SITE-000768,ORG-000710,BRP Manufacturing Company — Lima,Lima,Allen,https://brpmfg.com/
+SITE-000783,ORG-000724,"Centrex Plastics, LLC — Findlay",Findlay,Hancock,https://centrexplastics.com/
+SITE-000792,ORG-000731,ChemPrise — Cincinnati,Cincinnati,Hamilton,https://chemprise.com/
+SITE-000809,ORG-001147,Continental Structural Plastics — Carey,Carey,Wyandot,https://www.thecsp.com/
+SITE-000819,ORG-000756,"Core Molding Technologies, Inc. — Columbus",Columbus,Franklin,https://coremt.com/
+SITE-000832,ORG-000769,Creative Foam — Dayton,Dayton,Montgomery,https://creativefoam.com/
+SITE-000845,ORG-000781,CVG - Commercial Vehicle Group,New Albany,Franklin,https://cvgrp.com/
+SITE-000855,ORG-000791,DG Medical — Centerville,Centerville,Montgomery,https://dg-medical.com/
+SITE-000867,ORG-000802,Drew Foam Holdings — Lancaster,Lancaster,Fairfield,https://alleguard.com/
+SITE-000878,ORG-000812,Edco Supply Corporation — Dayton,Dayton,Montgomery,https://www.edcosupply.com/
+SITE-000889,ORG-000823,Empire Plastics — Newcomerstown,Newcomerstown,Tuscarawas,https://www.boltaron.com/
+SITE-000899,ORG-000833,"Fabshapes, a Division of Polymershapes — Tipp City",Tipp City,Miami,https://polymershapes.com/
+SITE-000912,ORG-000844,"Flow Dry Technology, Inc. — Brookville",Brookville,Montgomery,https://www.flowdry.com/
+SITE-000922,ORG-000854,GERRESHEIMER PRIMARY PACKAGING PLASTICS NA — Berlin,Berlin,Holmes,https://www.gerresheimer.com/
+SITE-000933,ORG-000865,GREEN TOKAI CO — Brookville,Brookville,Montgomery,https://www.greentokai.com/
+SITE-000941,ORG-000873,Hamilton Polymers — Leetonia,Leetonia,Columbiana,https://hamiltonpolymers.com/
+SITE-000950,ORG-000882,High Tech Elastomers — Vandalia,Vandalia,Montgomery,https://htei.com/
+SITE-000962,ORG-000894,Ineos USA — Lima,Lima,Allen,https://www.ineos.com/
+SITE-000971,ORG-000902,Inventive Extrusion Corp. — Bolivar,Bolivar,Tuscarawas,https://pei-us.com/
+SITE-000985,ORG-000915,"K & B Molded Products, Div. of Kuhns Mold & Tool Co., Inc. — Brookville",Brookville,Montgomery,https://kandbmoldedproducts.com/
+SITE-000995,ORG-000925,Kraton Corporation — Belpre,Belpre,Washington,https://kraton.com/
+SITE-001006,ORG-000935,Logoplaste Lima — Lima,Lima,Allen,https://www.logoplaste.com/
+SITE-001016,ORG-000944,Marcy Adhesives — Columbus,Columbus,Franklin,https://marcyadhesives.com/
+SITE-001028,ORG-000954,Mesa ETP — Cincinnati,Cincinnati,Hamilton,https://www.mesaetp.com/
+SITE-001039,ORG-000963,MODEL GRAPHICS — West Chester,West Chester,Butler,https://www.modelgraphicsinc.com/
+SITE-001050,ORG-000972,"Mulhern Belting, Inc. — Fairfield",Fairfield,Butler,https://mulhernbelting.com/
+SITE-001060,ORG-000982,NetProto — Holland,Holland,Lucas,https://netproto.com/
+SITE-001071,ORG-000993,Nu-Tech Polymers — Cincinnati,Cincinnati,Hamilton,https://nu-techpolymers.com/
+SITE-001083,ORG-000474,ORBIS Urbana,Urbana,Champaign,https://www.orbiscorporation.com/
+SITE-001098,ORG-001018,Pinnacle Industrial Enterprises — Bowling Green,Bowling Green,Wood,https://www.pinnacleplasticproducts.com/
+SITE-001111,ORG-001029,"PLASTIC PACKAGING TECHNOLOGIES, LLC — Columbus",Columbus,Franklin,https://ppcflex.com/
+SITE-001124,ORG-001041,PolyGroup Inc. — Cincinnati,Cincinnati,Hamilton,https://polygroupinc.com/
+SITE-001134,ORG-001051,Protective Packaging Solutions — Cincinnati,Cincinnati,Hamilton,http://ppspkg.com/
+SITE-001149,ORG-001064,R L Industries — Fairfield,Fairfield,Butler,https://www.rl-industries.com/
+SITE-001161,ORG-001075,"Retterbush Fiberglass Corp. - A division of Arrowhead Plastic Engineering, Inc.",Piqua,Miami,https://www.arrowheadinc.com/
+SITE-001170,ORG-001082,Ring Container Technologies — Sidney,Sidney,Shelby,https://ringcontainer.com/
+SITE-001184,ORG-001093,RTP Company — Gahanna,Gahanna,Franklin,https://www.rtpcompany.com/
+SITE-001195,ORG-001104,Seal-Jet of Ohio — Cincinnati,Cincinnati,Hamilton,https://sealjetofohio.com/
+SITE-001205,ORG-001114,Sika Corp. — Marion,Marion,Marion,https://usa.sika.com/
+SITE-001213,ORG-001121,"SpecTape, Inc. — Cincinnati",Cincinnati,Hamilton,https://www.spectape.com/
+SITE-001223,ORG-001129,Style Crest Enterprises — Fremont,Fremont,Sandusky,https://stylecrestinc.com/
+SITE-001236,ORG-001142,Tech Intl — Johnstown,Johnstown,Licking,https://techtirerepairs.com/
+SITE-001246,ORG-001151,TH Plastics - Bowling Green,Bowling Green,Wood,https://www.thplastics.com/
+SITE-001258,ORG-001160,Toledo Molding & Die — Bowling Green,Bowling Green,Wood,https://tmdinc.com/
+SITE-001272,ORG-001173,"United Fiberglass of America, Inc. — Springfield",Springfield,Clark,https://www.creativecompositesgroup.com/
+SITE-001284,ORG-001185,Versa Pak — Celina,Celina,Mercer,https://www.versa-pak.com/
+SITE-001293,ORG-001194,"Westar Plastics, LLC — Bryan",Bryan,Williams,https://westarplastics.com/
+SITE-001330,ORG-001339,"E-BEAM Services, Inc. — Lebanon",Lebanon,Warren,https://ebeamservices.com/
+SITE-001343,ORG-000690,Axium Packaging Inc — 10015 Innovation Campus Way,New Albany,Licking,https://axiumpackaging.com/
+SITE-001447,ORG-001403,Graham Packaging — Findlay,Findlay,Hancock,https://www.grahampackaging.com/
+SITE-001456,ORG-001410,CCP Newco — Tiffin,Tiffin,Seneca,https://americanplasticsllc.com/
+SITE-001466,ORG-001420,Scottdel — Swanton,Swanton,Fulton,https://scottdel.com/
+SITE-001507,ORG-001456,Nuvo Packaging — Columbus,Columbus,Franklin,https://pinnpack.com
+SITE-001521,ORG-000781,AdvancTEK — Chillicothe (CVG),Chillicothe,Ross,https://cvgrp.com/
+SITE-001554,ORG-001489,Sun Chemical Performance Pigments - Amelia,Amelia,Clermont,https://www.sunchemical.com/
+SITE-001602,ORG-001537,American Nitrile Operations LLC — Grove City,Grove City,Franklin,https://americannitrile.com/
+SITE-001677,ORG-001604,Bridgestone APM Company — Upper Sandusky,Upper Sandusky,Wyandot,https://bridgestone.com/
+SITE-001692,ORG-001621,6S PRODUCTS LLC — Anna,Anna,Shelby,https://www.6sproductsllc.com/
+SITE-001705,ORG-001632,AMERICAN PAINT RECYCLERS LLC — Van Wert,Van Wert,Van Wert,http://www.americanpaintrecyclers.com/
+SITE-001736,ORG-001660,D M Tool & Plastics Inc — Lewisburg,Lewisburg,Preble,https://forwardthinkingent.com/
+SITE-001751,ORG-001675,General Films Inc — Covington,Covington,Miami,https://generalfilms.com/
+SITE-001765,ORG-001689,MEP Manufacturing Inc — Genoa,Genoa,Ottawa,https://none found/
+SITE-001809,ORG-001733,"Custom Seal, Inc.",Fremont,Sandusky,http://www.customseal.com/
+SITE-001826,ORG-001750,Surgical Recovery Systems LLC,Fairfield Township,Butler,https://surgicalrecoverysystems.com/
+SITE-001870,ORG-001799,Diversipak Inc,Cincinnati,Hamilton,https://diversipak.com
+SITE-001892,ORG-001861,Orbit Manufacturing Inc.,Batavia,Clermont,https://orbitman.com
+SITE-001920,ORG-001926,"Expert Roto Molding (Eger Products, a Division of Kaivac)",Batavia,Clermont,https://expert-roto.com
+SITE-001997,ORG-002003,"Roboworld, LLC",Mason,Warren,https://www.roboworld.com/
+SITE-002051,ORG-001890,Savko Plastic Pipe & Fittings,Columbus,Franklin,https://savko.com
+SITE-002078,ORG-002078,"ZeoVation, Inc.",Columbus,Franklin,https://zeovation.com
+SITE-002127,ORG-002170,Tech Mold & Tool Co.,Tipp City,Miami,https://hitechmoldtool.com/
+SITE-003474,ORG-003105,Prospira America — Upper Sandusky Plant,Upper Sandusky,Wyandot,http://www.prospira.us/
