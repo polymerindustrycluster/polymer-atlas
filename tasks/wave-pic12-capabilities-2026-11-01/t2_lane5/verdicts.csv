@@ -1,0 +1,55 @@
+site_id,org_id,site_name,verdict,deciding_or_settling_fact,fetches_used,availability_failures
+SITE-000009,ORG-000010,GEON - Westlake HQ,STILL_UNCERTAIN,"Which address is the GEON Westlake HQ establishment: own locations page gives Westlake HQ at 25777 Detroit Rd Suite 202 (44145), site row carries FRS 6100 Oak Tree Blvd (44131); no GEON page ties a process to either address.",6,0
+SITE-000031,ORG-000031,Akron Porcelain & Plastics Co. — Akron,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000054,ORG-000054,"Americhem, Inc. — Cuyahoga Falls",STILL_UNCERTAIN,Which of the two own-site Cuyahoga Falls addresses (HQ 2000 Americhem Way 44221; plant 155 East Steels Corners 44224) the row (1353 Industrial Pkwy 44310) is; locations page ties masterbatch to the Steels Corners plant only.,6,0
+SITE-000069,ORG-000069,Design Molded Plastics — Macedonia,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,1
+SITE-000086,ORG-000086,"Rubber Associates, Inc. — Barberton",VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000108,ORG-000108,House of Plastics — Cleveland,STILL_UNCERTAIN,"Own site prints only 3705 Carnegie Ave (the plant, SITE-000107); no page names the Prospect Ave storefront this sales_office row represents.",6,0
+SITE-000122,ORG-000123,Anita Plastics — Woodmere,STILL_UNCERTAIN,"Whether any converting or lamination happens in Ohio: own pages say the Solon entity is the US trading arm selling product made by Mewar Group in India; site row says Woodmere hq_only, own address is Solon.",6,0
+SITE-000135,ORG-000135,Valtris Specialty Chemicals — Independence,STILL_UNCERTAIN,No page names Independence: locations page is a JS map (no locations in static HTML) and the row is hq_only; Valtris is a specialty-chemical additive maker (off-vocab).,6,0
+SITE-000172,ORG-000103,HEXPOL Compounding — Solon,STILL_UNCERTAIN,"Own site unreachable (curl CONNECT 502 on apex, TLS handshake failure on www, WebFetch ENOTFOUND): availability only. Needs a route that returns the Solon plant page.",3,3
+SITE-000193,ORG-000186,SKF USA — Highland Heights,STILL_UNCERTAIN,Own site skf.com/us is a JS shell (3 characters of text) and SKF is a multi-plant group; need a plant-named page for Highland Heights.,1,1
+SITE-000209,ORG-000202,QBM Products — Avon Lake,STILL_UNCERTAIN,Own site shows Quality Belt Maintenance as a conveyor-belt service and scrap-belt recycling company with a Northern Ohio branch and no manufacturing; need a page stating what is made at the Avon Lake site.,6,0
+SITE-000222,ORG-000209,ABC Plastics — Lodi,STILL_UNCERTAIN,No fetched page prints an address or names Lodi (contact page lost to a tooling race); need the ABC contact page to settle site scope.,6,0
+SITE-000241,ORG-000227,American Foam Products — Painesville,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000255,ORG-000239,The B.B. Bradley Company — Painesville,STILL_UNCERTAIN,No fetched page prints an address or town (contact page is a form); need a page naming Painesville.,6,0
+SITE-000278,ORG-000261,Carbon Polymers Company — Lodi,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000293,ORG-000274,"Chemsultants International, Inc. — Mentor",VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000321,ORG-000302,"Dermamed Coatings, LLC — Kent",VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000338,ORG-000317,Duramax Marine — Hiram,STILL_UNCERTAIN,No fetched page prints an address or names Hiram; the site describes a worldwide distributor network; need a Hiram plant page.,6,0
+SITE-000362,ORG-000340,Flambeau Sharon Center Plant,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000383,ORG-000358,GRAFIX — Maple Heights,STILL_UNCERTAIN,"Own site returned a Cloudflare 403 (availability failure, not evidence of closure); a WebFetch summary suggested film/sheet slitting, sheeting and lamination but nothing is quotable.",2,2
+SITE-000410,ORG-000384,Intralox — Twinsburg,STILL_UNCERTAIN,No fetched Intralox page names Twinsburg or a plant (locations page lost to a tooling race); need the Intralox locations page or a plant job posting.,6,1
+SITE-000425,ORG-000396,JK Plastics — Middlefield,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,4,0
+SITE-000443,ORG-000414,Koroseal Interior Products — Medina,STILL_UNCERTAIN,No fetched Koroseal page names Medina or says what is made where.,6,0
+SITE-000462,ORG-000431,Masco (Mercury Plastics),STILL_UNCERTAIN,No fetched page prints an address or names Middlefield (contact page lost); need the Mercury contact page.,6,0
+SITE-000480,ORG-000449,"Molded Devices of Ohio, Inc",STILL_UNCERTAIN,Aptyx locations page lists Kent OH with a phone only; no page says what the Kent (Molded Devices) plant does. Certifications are org-wide.,6,0
+SITE-000503,ORG-000471,Novis Works LLC — Canton,VERIFIED,"Site-scope values rest on a single-location reading of ""located in Northeastern, Ohio""; foundry-chemicals scope doubt flagged in packet notes.",6,0
+SITE-000528,ORG-000493,The Plas-mac — Solon,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000547,ORG-000513,Polystar Containment — Stow,STILL_UNCERTAIN,No fetched page prints an address or names Stow; need the Polystar contact page.,6,0
+SITE-000568,ORG-000532,Q Medical Devices — Pepper Pike,STILL_UNCERTAIN,Only address on own site is the Pepper Pike HQ office suite (Suite 201); no page says where QMD manufactures.,6,0
+SITE-000586,ORG-000549,"Robin Industries, Inc. — Fredericksburg",VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-000605,ORG-000237,Sealed Air (APS- STC),STILL_UNCERTAIN,"Own site returned a Cloudflare challenge (403, availability failure); Sealed Air is a multi-plant group, so a plant-named page is also needed.",1,1
+SITE-000623,ORG-000584,"Sprosty Bag Co., Inc. — Smithville",STILL_UNCERTAIN,"No fetched page prints an address or names Smithville; site reads as a packaging distributor/webstore, so what is made at Smithville is unsettled.",6,0
+SITE-000643,ORG-000603,Tesla Nanocoatings — Massillon,STILL_UNCERTAIN,Home page names Massillon only as HEADQUARTERS and does not say where coatings are made.,6,0
+SITE-000661,ORG-000620,"Universal Plastics Group, Inc. — Middlefield",STILL_UNCERTAIN,No fetched Universal Plastics page names Middlefield; the Locations page was not retained and the company has several locations.,6,0
+SITE-001308,ORG-001327,AltraSet Composite Technologies — Chagrin Falls,STILL_UNCERTAIN,No fetched AltraSet page names Chagrin Falls or prints an address.,6,0
+SITE-001397,ORG-000035,Saint-Gobain Performance Plastics — Ravenna (Aerospace),STILL_UNCERTAIN,"Own site returned a bot-verification wall (403, availability failure); Saint-Gobain is a 9-site org, so an Aerospace Ravenna plant page is needed.",1,1
+SITE-001425,ORG-001386,Ergomat Inc. — Lorain,STILL_UNCERTAIN,No fetched Ergomat page names Lorain or any plant (global SP Group brand site).,6,1
+SITE-001439,ORG-001396,Sure-foot Industries — Cleveland,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-001512,ORG-001461,Sare Plastics — Alliance,STILL_UNCERTAIN,"sareplastics.com now redirects to CPI Precision Plastics (cpipp.com, injection molder since 1994) and no fetched page names Sare, Stuchell or Alliance: settle whether CPI is the same entity or a successor before any value is applied.",6,1
+SITE-001570,ORG-001506,"ValenSil Technologies, LLC — Avon",STILL_UNCERTAIN,"Only an off-vocab activity (aerosol formulation and contract filling) is stated at Avon; no polymer process, material or certificate on the pages.",6,0
+SITE-001654,ORG-000135,Valtris Specialty Chemicals — Walton Hills,STILL_UNCERTAIN,No page names Walton Hills: locations page returned no static locations; same org pages as SITE-000135. Needs a plant-named page or job posting.,6,0
+SITE-001673,ORG-001601,Pison Stream Solutions Inc — Brecksville,STILL_UNCERTAIN,No fetched page names Brecksville; history page says R&D laboratories and manufacturing are in Ohio (Greater Cleveland) and HQ is in New York.,6,0
+SITE-001707,ORG-001634,ASTRA PRODUCTS OF OHIO LTD — Ravenna,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-001722,ORG-001647,V&A PROCESS — Lorain,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-001746,ORG-001670,Enpac LLC — Eastlake,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-001784,ORG-001708,ECM Performance Materials Corp,STILL_UNCERTAIN,"Own site returned Cloudflare error 1014 / 403 on both curl and WebFetch (availability failure, not evidence of closure).",2,2
+SITE-001829,ORG-001753,Foundation Industries Inc,VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-001852,ORG-001769,Adherex Packaging (Adherex Group),STILL_UNCERTAIN,No fetched Adherex page prints a street or names Cleveland; Adherex is a multi-business group.,6,0
+SITE-001883,ORG-001830,Impact Sleeve (Sleeve Seal / ID Images),STILL_UNCERTAIN,No fetched page prints a street or names Twinsburg; Impact Sleeves is part of ID Images with a Locations page.,6,1
+SITE-001924,ORG-001930,Industrial Thermoset Plastics (IT Plastics),VERIFIED,At least one in-vocab value at site scope (single printed address or plant named on own site); see packet rows.,6,0
+SITE-001993,ORG-001999,"Raydar of Ohio, Inc.",STILL_UNCERTAIN,"raydarrubber.com serves a JS redirect to /lander (parked-style page with no text): availability failure, not evidence of closure.",2,2
+SITE-002043,ORG-002049,Sietins Plastics Inc (Sietins Precision),STILL_UNCERTAIN,sietins.com apex returns an unrelated page (title in Chinese gambling-style spam: likely hijacked or compromised domain) and /about returns 403: availability failure; need a legitimate route to company content.,2,2
+SITE-002082,ORG-000005,DayGlo Twinsburg site,STILL_UNCERTAIN,"No fetched DayGlo page (home, products, dyes) names Twinsburg or any plant.",6,0
+SITE-003465,ORG-001466,Henkel — Mentor,STILL_UNCERTAIN,Henkel locations page lists main locations (Westlake OH among them) but not Mentor; nothing ties a process to 7405 Production Dr.,6,0

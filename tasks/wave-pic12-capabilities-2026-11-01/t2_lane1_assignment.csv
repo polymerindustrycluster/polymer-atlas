@@ -1,0 +1,56 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000003,ORG-000003,Goodyear — Akron Global HQ,Akron,Summit,https://www.goodyear.com
+SITE-000017,ORG-000018,Ace Rubber Products — Akron,Akron,Summit,https://theacerubber.com
+SITE-000039,ORG-000039,Landmark Plastic Corp. — Akron,Akron,Summit,https://landmarkplastic.com
+SITE-000063,ORG-000063,Akron Gasket — Tallmadge,Tallmadge,Summit,http://www.akrongasket.com
+SITE-000080,ORG-000080,Ace Plastics — Barberton,Barberton,Summit,https://aceframes.com
+SITE-000103,ORG-000103,HEXPOL Compounding — Copley,Copley,Summit,https://hexpolcompounding.com
+SITE-000115,ORG-000116,AMD Plastics — Euclid,Euclid,Cuyahoga,https://www.amdplastics.com/
+SITE-000130,ORG-000131,Tarkett North America — Solon,Solon,Cuyahoga,https://www.tarkett.com
+SITE-000167,ORG-000006,Tremco CPG — Beachwood,Beachwood,Cuyahoga,https://www.rpminc.com
+SITE-000186,ORG-000179,Jet Rubber Company — Rootstown,Rootstown,Portage,http://www.jetrubber.com/
+SITE-000200,ORG-000193,TMI — Youngstown,Youngstown,Mahoning,http://www.teamtmi.com/
+SITE-000214,ORG-000004,Parker Hannifin — Wickliffe (Hose Products Division),Wickliffe,Lake,https://www.parker.com
+SITE-000234,ORG-000220,"Akron Coating and Adhesives, Inc. — Akron",Akron,Summit,https://akroncoating.com/
+SITE-000250,ORG-000236,Associated Materials — Cuyahoga Falls,Cuyahoga Falls,Summit,https://www.associatedmaterials.com/
+SITE-000266,ORG-000250,"Boardman Molded Products, Inc. — Youngstown",Youngstown,Mahoning,https://boardmanmolded.com/
+SITE-000283,ORG-000265,CCL Label — Strongsville,Strongsville,Cuyahoga,https://ccllabel.com/
+SITE-000312,ORG-000293,"Creative Millwork of Ohio, Inc. — Ashtabula",Ashtabula,Ashtabula,https://www.creativemillwork.com/
+SITE-000331,ORG-000312,Duo-Corp — North Lima,North Lima,Mahoning,https://duo-corp.com/
+SITE-000348,ORG-000327,Enterprise Plastics — Kent,Kent,Portage,https://enterpriseplastics.net/
+SITE-000370,ORG-000347,Four Seasons Industries — Garrettsville,Garrettsville,Portage,https://fourseasonsindustries.com/
+SITE-000397,ORG-000372,Huntsman Advanced Materials,Ashtabula,Ashtabula,https://www.huntsman.com/
+SITE-000418,ORG-000390,J & O Plastics Inc. — Rittman,Rittman,Wayne,https://jandoplastics.com/
+SITE-000431,ORG-000402,KAPCO (Kent Adhesive Products Co.),Kent,Portage,https://kapco.com/
+SITE-000449,ORG-000420,Linden Polyurethane — Cuyahoga Falls,Cuyahoga Falls,Summit,https://www.lindenindustries.com/
+SITE-000470,ORG-000439,Mickey Thompson Tire and Wheels — Stow,Stow,Summit,https://www.mickeythompsontires.com/
+SITE-000492,ORG-000460,Newko 9 — Strongsville,Strongsville,Cuyahoga,https://www.newkopolymers.com/
+SITE-000521,ORG-000486,PET Processors LLC — Painesville,Painesville,Lake,https://petus.com/
+SITE-000538,ORG-000506,Greenbridge — Mentor (HQ & manufacturing),Mentor,Lake,https://www.greenbridge.com/
+SITE-000559,ORG-000523,Pretium Packaging,Cleveland,Cuyahoga,https://www.pretiumpkg.com/
+SITE-000575,ORG-000539,Rauh Polymers — Akron,Akron,Summit,https://www.rauhpolymers.com/
+SITE-000591,ORG-000553,"Royal Plastics, Inc. — Mentor",Mentor,Lake,https://royalplastics.com/
+SITE-000612,ORG-000573,Silicone Solutions — Cuyahoga Falls,Cuyahoga Falls,Summit,https://siliconesolutions.com/
+SITE-000631,ORG-000592,"Sun State Plastics, Inc. — North Canton",North Canton,Stark,https://www.sunstateplastics.com/
+SITE-000653,ORG-000612,Trelleborg Seals & Profiles Americas,Aurora,Portage,https://www.trelleborg.com/
+SITE-000672,ORG-000631,Wayne County Rubber — Wooster,Wooster,Wayne,https://woosterelastomers.com/
+SITE-001318,ORG-000238,Avery Dennison — Mentor HQ (8080 Norton Parkway),Mentor,Lake,https://tapes.averydennison.com/
+SITE-001419,ORG-001380,Bauer Corporation — Wooster,Wooster,Wayne,https://bauerladder.com/
+SITE-001433,ORG-000684,ASK Chemicals — Cleveland West,Cleveland,Cuyahoga,https://www.ask-chemicals.com/
+SITE-001483,ORG-001435,Meese (MODRoto) — Ashtabula,Ashtabula,Ashtabula,https://modroto.com
+SITE-001534,ORG-001472,ChemMasters — Madison,Madison,Lake,https://chemmasters.net/
+SITE-001647,ORG-001576,Aabaco Plastics Inc — Garfield Heights,Garfield Heights,Cuyahoga,https://aabacoplastics.com/
+SITE-001665,ORG-001593,Amros Industries Inc — Cleveland,Cleveland,Cuyahoga,https://clamshellusa.com/
+SITE-001688,ORG-000004,Parker-Hannifin Corporation — Ravenna,Ravenna,Portage,https://www.parker.com
+SITE-001716,ORG-001642,MOTIVO DISPLAY SOLUTIONS — Massillon,Massillon,Stark,http://www.motivodisplay.com/
+SITE-001732,ORG-001656,ClearSonic Manufacturing Inc — Akron,Akron,Summit,https://clearsonic.com/
+SITE-001775,ORG-001699,Aerocase Inc.,Westlake,Cuyahoga,aerocaseinc.com
+SITE-001796,ORG-001720,"Sun Art Decals, Inc.",Cleveland,Cuyahoga,sunartdecals.com
+SITE-001839,ORG-000098,Spazzolplastica North America LLC,Mentor,Lake,https://www.spazzolplastica.it
+SITE-001868,ORG-001794,Dal-Little Fabricating Inc,Cleveland,Cuyahoga,https://dallittle.com
+SITE-001904,ORG-001905,Thermoprene Inc,Garfield Heights,Cuyahoga,https://thermoprene.com
+SITE-001935,ORG-001941,"Thermo Packaging Suppliers, Inc.",Chagrin Falls,Geauga,https://thermopackaging.com
+SITE-002025,ORG-002031,Vinyltech International LLC,North Jackson,Mahoning,vinyltechint.com
+SITE-002059,ORG-002060,Canfield Plastics Inc,Canfield,Mahoning,https://canfieldplastics.com
+SITE-002110,ORG-002153,Checkpoint Systems,Canton,Stark,alphaworld.com
+SITE-003472,ORG-000430,Mar-Bal Pultrusion — Willoughby,Willoughby,Lake,https://www.mar-bal.com/

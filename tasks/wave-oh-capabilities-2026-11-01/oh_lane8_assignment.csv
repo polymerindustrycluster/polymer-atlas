@@ -1,0 +1,80 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000697,ORG-000651,Advanced Drainage Systems (Napoleon),Napoleon,Henry,https://www.adspipe.com/
+SITE-000706,ORG-000802,Alleguard - Lancaster,Lancaster,Fairfield,https://alleguard.com/
+SITE-000717,ORG-000666,American Colors Inc. — Sandusky,Sandusky,Erie,https://www.americancolors.com/
+SITE-000728,ORG-000677,API INDUSTRIES INC — Columbus,Columbus,Franklin,https://earthfirstfilms.com/
+SITE-000739,ORG-000688,Autoneum — Norwalk,Norwalk,Huron,https://autoneum.com/
+SITE-000747,ORG-000691,AZEK BUILDING PRODUCTS RECYCLING PLANT,Wilmington,Clinton,https://www.timbertech.com/
+SITE-000761,ORG-000665,"Venture Packaging, Inc.",Monroeville,Huron,https://www.amcor.com/
+SITE-000775,ORG-000717,BWAY Corporation-Monroe — Monroe,Monroe,Butler,https://mauserpackaging.com/
+SITE-000787,ORG-000728,Charter Next Generation — Delaware,Delaware,Delaware,https://cnginc.com/
+SITE-000799,ORG-000738,US Coexcell — Maumee,Maumee,Lucas,https://coexcellinc.com/
+SITE-000813,ORG-000751,Convertapax — Midvale,Midvale,Tuscarawas,https://www.convertapax.com/
+SITE-000825,ORG-000762,Cpca Manufacturing — Dayton,Dayton,Montgomery,https://www.creativecompositesgroup.com/
+SITE-000835,ORG-000772,Creative Plastics International — Jackson Center,Jackson Center,Shelby,https://www.wurmsproducts.com/
+SITE-000849,ORG-000785,"DDP SPECIALTY ELECTRONIC MATERIALS US 5, LLC — West Alexandria",West Alexandria,Preble,https://www.dupont.com/
+SITE-000858,ORG-000794,DimcoGray Company — Centerville,Centerville,Montgomery,https://dimcogray.com/
+SITE-000871,ORG-000805,DuPont — Circleville,Circleville,Pickaway,https://www.dupont.com/
+SITE-000882,ORG-000816,Electro-General Plastics Corp. — Grove City,Grove City,Franklin,https://www.electro-generalplastics.com/
+SITE-000894,ORG-000828,Evans Adhesive Corporation — Columbus,Columbus,Franklin,https://meridianadhesives.com/evans/
+SITE-000903,ORG-000835,Fiber-Tech Industries — Washington Court House,Washington Court House,Fayette,https://www.fiber-tech.net/
+SITE-000916,ORG-000848,"Fowler Products, Inc. — Crestline",Crestline,Crawford,http://www.foxvalleypain.net/
+SITE-000927,ORG-000859,GLS Corp. — Dayton,Dayton,Montgomery,https://compositesone.com/
+SITE-000936,ORG-000868,Guardian Manufacturing Company — Willard,Willard,Huron,https://guardian-mfg.com/
+SITE-000945,ORG-000877,HAVERHILL CHEMICALS LLC — Haverhill,Haverhill,Scioto,https://altivia.com/
+SITE-000953,ORG-000885,Huhtamaki New Vienna Operations — New Vienna,New Vienna,Highland,https://www.huhtamaki.com/
+SITE-000966,ORG-000897,Integris Composites — Hebron,Hebron,Licking,https://integriscomposites.com/
+SITE-000976,ORG-000906,"ISO Technologies, Inc. — Hebron",Hebron,Licking,https://isotechfoam.com/
+SITE-000988,ORG-000197,Kenda Tire — Reynoldsburg,Reynoldsburg,Franklin,https://www.kendatire.com/
+SITE-000998,ORG-000928,"L & C Plastic Bags, Inc — Covington",Covington,Miami,http://www.lcplastics.com/
+SITE-001009,ORG-000938,M-TEK INC — Upper Sandusky,Upper Sandusky,Wyandot,https://www.kasai-na.com/
+SITE-001019,ORG-000947,Mason Color Works — East Liverpool,East Liverpool,Columbiana,https://www.masoncolor.com/
+SITE-001033,ORG-000959,"Midwest Molding, Inc. — Plain City",Plain City,Union,https://midwest-molding.com/
+SITE-001044,ORG-000967,Moore Industries — Montpelier,Montpelier,Williams,https://www.moore-industries.com/
+SITE-001053,ORG-000975,Nagase Chemtex America — Delaware,Delaware,Delaware,https://nagasechemtex.com/
+SITE-001065,ORG-000987,Nifco America Corp. — Canal Winchester,Canal Winchester,Fairfield,https://www.nifcousa.com/
+SITE-001077,ORG-000998,"Ohio Valley Gasket, Inc. — West Chester",West Chester,Butler,https://ohiovalleygasket.net/
+SITE-001088,ORG-001008,Pac worldwide — Middletown,Middletown,Butler,https://www.pac.com/
+SITE-001105,ORG-001024,"Plaskolite, Inc. — Columbus",Columbus,Franklin,https://plaskolite.com/
+SITE-001115,ORG-001054,"Plastic Technologies, Inc. — Holland",Holland,Lucas,https://www.plastictechnologies.com/
+SITE-001129,ORG-001046,Premier Material Concepts — Findlay,Findlay,Hancock,https://simona-pmc.com/
+SITE-001137,ORG-001053,Provia Strasburg Facility — Strasburg,Strasburg,Tuscarawas,https://www.provia.com/
+SITE-001153,ORG-001068,Rage Corp. — Hilliard,Hilliard,Franklin,https://rageplastics.com/
+SITE-001164,ORG-001078,Rhetech Colors — Sandusky,Sandusky,Erie,https://www.rhetechcolors.com/
+SITE-001176,ORG-000549,Robin Industries Holmco,Winesburg,Holmes,https://www.robin-industries.com/
+SITE-001187,ORG-001096,Rubex — Grove City,Grove City,Franklin,https://edgeadhesives.co/
+SITE-001200,ORG-001109,Shelter Works — Bucyrus,Bucyrus,Crawford,https://www.shelterworks.com/
+SITE-001208,ORG-001117,"Sonoco (Franklin, OH - Flexible Pkg - E017)",Franklin,Warren,https://packaging.toppan.com/
+SITE-001217,ORG-001125,Starwin Industries — Dayton (Kettering),Dayton (Kettering),Montgomery,https://www.eti-starwin.com/
+SITE-001228,ORG-001134,Superform USA — West Chester,West Chester,Butler,https://www.superformicf.com/
+SITE-001240,ORG-001146,"Techno Polymer Co., Ltd. — Blue Ash",Blue Ash,Hamilton,https://www.t-umg.com/usa/
+SITE-001250,ORG-001153,Thermodyn Corp. — Sylvania,Sylvania,Lucas,https://thermodyn.com/
+SITE-001264,ORG-001165,TRIM PARTS INC — Lebanon,Lebanon,Warren,https://rpui.com/
+SITE-001277,ORG-001178,Valfilm Findlay Facility — Findlay,Findlay,Hancock,https://www.valgroupco.com/
+SITE-001288,ORG-001189,Vinyl Design Corporation — Holland,Holland,Lucas,https://vinyldesigncorp.com/
+SITE-001301,ORG-001202,Woodbridge Corporation — Fremont,Fremont,Sandusky,https://www.woodbridgegroup.com/
+SITE-001334,ORG-001343,NAWAH US — Englewood,Englewood,Montgomery,https://nawah.us/
+SITE-001346,ORG-000708,"Boomerang Rubber, Inc. — Botkins (Dinsmore St. Campus)",Botkins,Shelby,https://www.boomerangrubber.com/
+SITE-001450,ORG-001405,Spinnaker — Troy (Plant 1),Troy,Miami,https://spinps.com/
+SITE-001459,ORG-001413,Electra Form Industries — Vandalia,Vandalia,Montgomery,https://electraform.com/
+SITE-001478,ORG-001430,Solvay Specialty Polymers — Marietta,Marietta,Washington,https://www.syensqo.com
+SITE-001516,ORG-000004,Parker Lord — Dayton,Dayton,Montgomery,https://www.parker.com
+SITE-001532,ORG-000683,Bostik — Columbus,Columbus,Franklin,https://www.bostik.com/
+SITE-001580,ORG-001516,US Paper Mill LLC — Chillicothe,Chillicothe,Ross,https://usmg.us/
+SITE-001635,ORG-001568,"Findlay Machine & Tool, LLC (Kreate) — Findlay",Findlay,Hancock,http://kreate.com/
+SITE-001684,ORG-001613,GVS Filtration Inc — Findlay,Findlay,Hancock,https://www.gvs.com/
+SITE-001697,ORG-001625,AERO-BLAST PRODUCTS INC — Sharonville,Sharonville,Hamilton,https://www.aeroblast.com/
+SITE-001726,ORG-001650,BCM Inks USA Inc — Blue Ash,Loveland,Hamilton,https://bcminks.com/
+SITE-001739,ORG-001663,Delaware Paint Company Ltd — Plain City,Plain City,Franklin,https://delawarepaintco.com/
+SITE-001759,ORG-001683,Kardol Quality Products LLC — Cincinnati,Cincinnati,Hamilton,https://kardol.com/
+SITE-001769,ORG-001693,Nationwide Concrete Restoration LLC — Toledo,Toledo,Lucas,https://nwcrestoration.com/
+SITE-001812,ORG-001736,"Miami Valley Plastics, Inc.",Eldorado,Preble,https://www.miamivalleyplastics.com/
+SITE-001830,ORG-001754,"Licensed Specialty Products of Ohio, Inc.",Bradner,Wood,https://licensedspecialtyproducts.com/
+SITE-001879,ORG-001825,Hamilton Custom Molding Inc,Hamilton,Butler,https://hamiltoncm.com
+SITE-001903,ORG-001901,Summit Environmental Group (Tree Sentry),Toledo,Lucas,https://treesentry.com
+SITE-001927,ORG-001933,Performance Additives of America LLC,New Philadelphia,Tuscarawas,https://performance-additives.com
+SITE-002023,ORG-002029,Valutex Reinforcements Inc,Washington Court House,Fayette,https://www.valutex.net/
+SITE-002061,ORG-002062,Fouty & Co Inc,Oregon,Lucas,https://foutywaterjet.com
+SITE-002086,ORG-000717,INDUSTRIAL CONTAINER SERVICES LLC,Gahanna,Franklin,https://mauserpackaging.com/
+SITE-002133,ORG-002173,PureCycle Technologies - Ironton,Ironton,Lawrence,https://www.purecycle.com
+SITE-003704,ORG-003266,Rural Path Headquarters & Plant,Morrow,Warren,https://www.ruralpath.com/

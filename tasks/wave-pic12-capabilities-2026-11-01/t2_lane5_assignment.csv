@@ -1,0 +1,55 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000009,ORG-000010,GEON - Westlake HQ,Westlake,Cuyahoga,https://www.geon.com
+SITE-000031,ORG-000031,Akron Porcelain & Plastics Co. — Akron,Akron,Summit,https://www.akronporcelain.com
+SITE-000054,ORG-000054,"Americhem, Inc. — Cuyahoga Falls",Cuyahoga Falls,Summit,https://americhem.com
+SITE-000069,ORG-000069,Design Molded Plastics — Macedonia,Macedonia,Summit,https://designmolded.com
+SITE-000086,ORG-000086,"Rubber Associates, Inc. — Barberton",Barberton,Summit,https://rubberassociates.com
+SITE-000108,ORG-000108,House of Plastics — Cleveland,Cleveland,Cuyahoga,https://hpmanufacturing.com
+SITE-000122,ORG-000123,Anita Plastics — Woodmere,Woodmere,Cuyahoga,https://www.anitaplastics.com/
+SITE-000135,ORG-000135,Valtris Specialty Chemicals — Independence,Independence,Cuyahoga,https://www.valtris.com
+SITE-000172,ORG-000103,HEXPOL Compounding — Solon,Solon,Cuyahoga,https://hexpolcompounding.com
+SITE-000193,ORG-000186,SKF USA — Highland Heights,Highland Heights,Cuyahoga,https://www.skf.com
+SITE-000209,ORG-000202,QBM Products — Avon Lake,Avon Lake,Lorain,https://qbm.ca
+SITE-000222,ORG-000209,ABC Plastics — Lodi,Lodi,Medina,http://www.abcplasticslodi.com/
+SITE-000241,ORG-000227,American Foam Products — Painesville,Painesville,Lake,https://www.americanfoamproducts.com/
+SITE-000255,ORG-000239,The B.B. Bradley Company — Painesville,Painesville,Lake,https://bbbradley.com/
+SITE-000278,ORG-000261,Carbon Polymers Company — Lodi,Lodi,Medina,https://carbonpolymersco.com/
+SITE-000293,ORG-000274,"Chemsultants International, Inc. — Mentor",Mentor,Lake,https://www.chemsultants.com/
+SITE-000321,ORG-000302,"Dermamed Coatings, LLC — Kent",Kent,Portage,https://dermamedcoatings.com/
+SITE-000338,ORG-000317,Duramax Marine — Hiram,Hiram,Geauga,https://www.duramaxmarine.com/
+SITE-000362,ORG-000340,Flambeau Sharon Center Plant,Wadsworth,Medina,https://www.flambeau.com/
+SITE-000383,ORG-000358,GRAFIX — Maple Heights,Maple Heights,Cuyahoga,https://www.grafixplastics.com/
+SITE-000410,ORG-000384,Intralox — Twinsburg,Twinsburg,Summit,https://www.intralox.com/
+SITE-000425,ORG-000396,JK Plastics — Middlefield,Middlefield,Geauga,https://jkplasticsllc.com/
+SITE-000443,ORG-000414,Koroseal Interior Products — Medina,Medina,Medina,https://koroseal.com/
+SITE-000462,ORG-000431,Masco (Mercury Plastics),Middlefield,Geauga,https://mercury-plastics.com/
+SITE-000480,ORG-000449,"Molded Devices of Ohio, Inc",Kent,Portage,https://aptyx.com/
+SITE-000503,ORG-000471,Novis Works LLC — Canton,Canton,Stark,https://www.novisworks.com/
+SITE-000528,ORG-000493,The Plas-mac — Solon,Solon,Cuyahoga,https://mercurymachine.com/plas-mac-corporation/
+SITE-000547,ORG-000513,Polystar Containment — Stow,Stow,Summit,https://polystarcontainment.com/
+SITE-000568,ORG-000532,Q Medical Devices — Pepper Pike,Pepper Pike,Cuyahoga,https://qmd.net/
+SITE-000586,ORG-000549,"Robin Industries, Inc. — Fredericksburg",Fredericksburg,Wayne,https://www.robin-industries.com/
+SITE-000605,ORG-000237,Sealed Air (APS- STC),Streetsboro,Portage,https://www.sealedair.com/
+SITE-000623,ORG-000584,"Sprosty Bag Co., Inc. — Smithville",Smithville,Wayne,https://sprostybag.com/
+SITE-000643,ORG-000603,Tesla Nanocoatings — Massillon,Massillon,Stark,https://teslanano.com/
+SITE-000661,ORG-000620,"Universal Plastics Group, Inc. — Middlefield",Middlefield,Geauga,https://www.universalplastics.com/
+SITE-001308,ORG-001327,AltraSet Composite Technologies — Chagrin Falls,Chagrin Falls,Geauga,https://altraset.mar-bal.com/
+SITE-001397,ORG-000035,Saint-Gobain Performance Plastics — Ravenna (Aerospace),Ravenna,Portage,https://saint-gobain.com
+SITE-001425,ORG-001386,Ergomat Inc. — Lorain,Lorain,Lorain,https://www.ergomat.com/
+SITE-001439,ORG-001396,Sure-foot Industries — Cleveland,Cleveland,Cuyahoga,https://surefootcorp.com/
+SITE-001512,ORG-001461,Sare Plastics — Alliance,Alliance,Stark,https://sareplastics.com
+SITE-001570,ORG-001506,"ValenSil Technologies, LLC — Avon",Avon,Lorain,https://valensil.com/
+SITE-001654,ORG-000135,Valtris Specialty Chemicals — Walton Hills,Walton Hills,Cuyahoga,https://www.valtris.com
+SITE-001673,ORG-001601,Pison Stream Solutions Inc — Brecksville,Brecksville,Cuyahoga,https://pisonstreamsolutions.com/
+SITE-001707,ORG-001634,ASTRA PRODUCTS OF OHIO LTD — Ravenna,Ravenna,Portage,https://www.astraproductsltd.com/
+SITE-001722,ORG-001647,V&A PROCESS — Lorain,Lorain,Lorain,http://www.vaprocessinc.com/contact
+SITE-001746,ORG-001670,Enpac LLC — Eastlake,Eastlake,Lake,https://enpac.com/
+SITE-001784,ORG-001708,ECM Performance Materials Corp,Medina,Medina,ecmpmc.com
+SITE-001829,ORG-001753,Foundation Industries Inc,Akron,Summit,https://foundationind.com/
+SITE-001852,ORG-001769,Adherex Packaging (Adherex Group),Cleveland,Cuyahoga,https://adherexpackaging.com
+SITE-001883,ORG-001830,Impact Sleeve (Sleeve Seal / ID Images),Twinsburg,Summit,https://impactsleeves.com
+SITE-001924,ORG-001930,Industrial Thermoset Plastics (IT Plastics),Mentor,Lake,http://www.itplastics.com/
+SITE-001993,ORG-001999,"Raydar of Ohio, Inc.",Wadsworth,Medina,raydarrubber.com
+SITE-002043,ORG-002049,Sietins Plastics Inc (Sietins Precision),Bedford,Cuyahoga,https://sietins.com
+SITE-002082,ORG-000005,DayGlo Twinsburg site,Twinsburg,Summit,https://www.dayglo.com
+SITE-003465,ORG-001466,Henkel — Mentor,Mentor,Lake,https://www.henkel-northamerica.com/

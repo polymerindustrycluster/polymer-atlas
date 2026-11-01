@@ -1,0 +1,365 @@
+file,row_id,column,occurrence_no,class,field_affected,disposition,descriptor
+ecosystem.csv,ORG-000092,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+ecosystem.csv,ORG-001225,notes,1,FACT_PER_CRM,website,HOLD,website provenance clause
+ecosystem.csv,ORG-001225,notes,2,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+ecosystem.csv,ORG-001225,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+event_participation.csv,EVP-000452,notes,1,OTHER,notes,SCRUB_ONLY,third-party system label in a note
+organizations_DE.csv,ORG-000042,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_DE.csv,ORG-000042,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_INTL.csv,ORG-001430,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_INTL.csv,ORG-001430,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_MI.csv,ORG-000169,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_MI.csv,ORG-000169,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_MI.csv,ORG-000169,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_MI.csv,ORG-000655,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_MI.csv,ORG-000655,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_MI.csv,ORG-001172,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_MI.csv,ORG-001172,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_MI.csv,ORG-001172,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_MI.csv,ORG-001202,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_MI.csv,ORG-001202,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_MI.csv,ORG-001202,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_MO.csv,ORG-000523,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_MO.csv,ORG-000523,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000003,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000005,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000006,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000008,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000009,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000015,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000016,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000025,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000026,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000028,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000047,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000048,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000053,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000057,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000058,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000060,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000061,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000062,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000068,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000069,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000070,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000071,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000075,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000081,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000082,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000083,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000083,notes,2,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-000083,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000084,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000085,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000086,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000097,notes,1,NARRATIVE,legal_name,SCRUB_ONLY,legal_name provenance clause
+organizations_OH.csv,ORG-000103,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-000103,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000107,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000124,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000135,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000139,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000142,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000147,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000176,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000179,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000181,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000181,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000182,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000183,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000184,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000185,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000188,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000191,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000191,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000195,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000196,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000198,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000199,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000208,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000209,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000216,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000217,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000218,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000236,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000237,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000238,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000239,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000239,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000247,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000249,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000251,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000252,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000255,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000271,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000273,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000273,notes,2,FACT_PER_CRM,hq_city;hq_county,HOLD,hq_city provenance clause with county note
+organizations_OH.csv,ORG-000273,notes,3,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000273,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000276,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000278,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000279,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000302,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000307,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000315,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000316,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000319,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000321,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000327,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000331,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000333,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000337,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000339,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000340,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000343,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000347,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000348,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000350,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000352,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000360,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000366,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000369,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000379,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000382,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000385,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000392,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000393,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000399,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000403,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000410,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000412,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000413,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000414,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000415,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000420,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000421,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000427,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000430,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000431,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000433,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000439,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000451,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000455,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000461,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000477,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000480,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000481,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000482,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000484,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000490,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000491,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000495,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000500,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000506,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000511,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000513,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000519,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000525,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000529,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000534,notes,1,FACT_PER_CRM,ultimate_parent_name,RESOURCE,ultimate_parent_name provenance clause
+organizations_OH.csv,ORG-000537,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000543,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000544,notes,1,NARRATIVE,legal_name,SCRUB_ONLY,legal_name provenance clause
+organizations_OH.csv,ORG-000545,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000561,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000564,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000569,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000572,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000586,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000588,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000589,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000592,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000594,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000595,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000600,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000601,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000610,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000623,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000625,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000627,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000628,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000634,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000641,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000651,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000658,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000664,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000671,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000676,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000676,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000686,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000708,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000714,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000722,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000729,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000742,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000756,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000758,notes,1,NARRATIVE,trade_names,SCRUB_ONLY,trade_names provenance clause
+organizations_OH.csv,ORG-000766,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000777,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000777,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000777,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000782,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000793,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000794,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000798,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000803,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000807,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000825,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-000825,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000826,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000835,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000846,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000853,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000879,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000880,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000881,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000889,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000894,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000894,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000907,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000907,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-000907,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000909,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000912,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000919,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000924,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-000946,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000947,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000949,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-000949,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-000974,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-000999,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001013,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001013,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001028,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001029,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001029,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001029,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001042,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001069,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001073,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001074,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001076,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001076,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001077,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001096,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001097,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001122,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001129,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001130,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001155,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001157,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001157,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001160,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001160,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001178,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001328,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001336,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001381,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001381,notes,2,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001381,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001383,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001393,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001394,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001395,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001415,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001417,notes,1,FACT_PER_CRM,hq_city;hq_county,HOLD,hq_city provenance clause with county note
+organizations_OH.csv,ORG-001417,notes,2,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001417,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001422,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001425,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001432,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001442,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001452,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001453,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001454,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001459,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001460,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001466,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001472,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001473,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001475,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001476,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001499,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001541,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001565,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001569,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001584,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001588,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001589,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001590,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001590,notes,2,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001590,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_OH.csv,ORG-001596,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001622,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001631,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001634,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001636,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001637,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001640,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001657,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001667,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001668,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_OH.csv,ORG-001681,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_OH.csv,ORG-001770,description_1line,1,NARRATIVE,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001770,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+organizations_OH.csv,ORG-001772,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001774,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+organizations_OH.csv,ORG-001805,description_1line,1,FACT_PER_CRM,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001805,notes,1,FACT_PER_CRM,hq_city;processes,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001814,notes,1,FACT_PER_CRM,relationship_note,HOLD,relationship_note provenance clause
+organizations_OH.csv,ORG-001815,description_1line,1,NARRATIVE,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001815,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+organizations_OH.csv,ORG-001831,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001833,description_1line,1,FACT_PER_CRM,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001833,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001842,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001844,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001845,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001846,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001851,notes,1,FACT_PER_CRM,relationship_note,HOLD,relationship_note provenance clause
+organizations_OH.csv,ORG-001853,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001862,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001863,description_1line,1,FACT_PER_CRM,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001863,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001864,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001867,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001868,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+organizations_OH.csv,ORG-001869,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+organizations_OH.csv,ORG-001870,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001871,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001872,description_1line,1,FACT_PER_CRM,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001872,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001873,notes,1,FACT_PER_CRM,hq_city;capabilities,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001877,description_1line,1,FACT_PER_CRM,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001877,notes,1,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001882,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001884,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001885,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001888,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001890,description_1line,1,FACT_PER_CRM,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001890,notes,1,FACT_PER_CRM,hq_city;scope,RESOURCE,hq_city provenance clause
+organizations_OH.csv,ORG-001906,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001908,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_OH.csv,ORG-001930,description_1line,1,NARRATIVE,description_1line,REWRITE,description text with provenance clause
+organizations_OH.csv,ORG-001930,notes,1,NARRATIVE,website,SCRUB_ONLY,website provenance clause
+organizations_PA.csv,ORG-000035,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_PA.csv,ORG-000035,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_PA.csv,ORG-000547,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_PA.csv,ORG-000547,notes,2,FACT_PER_CRM,hq_city,RESOURCE,hq_city provenance clause
+organizations_PA.csv,ORG-000547,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_PA.csv,ORG-000933,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_TN.csv,ORG-000938,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_TN.csv,ORG-000938,notes,2,NARRATIVE,legal_name,SCRUB_ONLY,legal_name provenance clause
+organizations_TN.csv,ORG-000938,notes,3,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+organizations_TX.csv,ORG-000007,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_TX.csv,ORG-000925,notes,1,FACT_PER_CRM,hq_city,HOLD,hq_city provenance clause
+organizations_TX.csv,ORG-000925,notes,2,NARRATIVE,hq_county,SCRUB_ONLY,hq_county provenance clause
+organizations_TX.csv,ORG-000925,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+organizations_TX.csv,ORG-001005,notes,1,BAND_FROM_CRM,employee_band_ohio,REPLACE,band provenance clause
+organizations_WI.csv,ORG-000683,notes,1,BAND_FROM_CRM,employee_band_ohio,CLEAR,band provenance clause
+organizations_WI.csv,ORG-000683,notes,2,NARRATIVE,hq_city,SUPERSEDED,hq_city provenance clause (superseded)
+organizations_WI.csv,ORG-000683,sources,1,SRC_ENTRY,sources,DROP_ENTRY,sources entry citing a non-public adjudication record
+sites_OH.csv,SITE-001853,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+sites_OH.csv,SITE-001854,notes,1,NARRATIVE,notes,SCRUB_ONLY,notes provenance clause
+sites_OH.csv,SITE-001924,notes,1,NARRATIVE,website,SCRUB_ONLY,website provenance clause

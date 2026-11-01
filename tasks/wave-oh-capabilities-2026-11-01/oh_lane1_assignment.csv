@@ -1,0 +1,81 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000563,ORG-000527,Progressive Foam Technologies — Beach City,Beach City,Tuscarawas,https://www.progressivefoam.com/
+SITE-000698,ORG-000651,Advanced Drainage Systems (New Miami),Hamilton,Butler,https://www.adspipe.com/
+SITE-000709,ORG-000661,ALLIED MOULDED PRODUCTS INC. - PLANT 3,Bryan,Williams,https://alliedmoulded.com/
+SITE-000720,ORG-000669,American Rheinmetall — St. Marys,St. Marys,Auglaize,https://www.rheinmetall.com/en/company/subsidiaries/american-rheinmetall
+SITE-000729,ORG-000678,Applied Foam Solutions — Hamilton,Hamilton,Butler,https://appliedfoamsolutions.com/
+SITE-000740,ORG-000689,Axillon Aerospace - Cincinnati,Cincinnati,Hamilton,https://mearthane.com/
+SITE-000749,ORG-000692,Azelis Americas Case — West Chester,West Chester,Butler,https://www.azelis.com/
+SITE-000762,ORG-000704,"BLACKTHORN, LLC. — Clayton",Clayton,Montgomery,https://www.blackthorn-inc.com/
+SITE-000777,ORG-000719,Calorplast USA Inc. — Milford,Milford,Clermont,https://www.calorplastusa.com/
+SITE-000788,ORG-000728,Charter Next Generation - Ontario,Ontario,Richland,https://cnginc.com/
+SITE-000803,ORG-000742,Columbus Gasket — Columbus,Columbus,Franklin,https://www.columbusgasket.com/
+SITE-000814,ORG-000752,Cook Composites & Polymers Co. — Sandusky,Sandusky,Erie,https://www.polynt.com/
+SITE-000826,ORG-000763,Crane CPE — Cincinnati,Cincinnati,Hamilton,https://cranecpe.com/
+SITE-000838,ORG-000774,Crown Plastics — Harrison,Harrison,Hamilton,https://crownplastics.com/
+SITE-000850,ORG-000786,Deceuninck North America — Monroe,Monroe,Butler,https://deceuninckna.com/
+SITE-000859,ORG-000795,DJM Plastics — Findlay,Findlay,Hancock,https://dlmplastics.com/
+SITE-000872,ORG-000806,Dupont Electronic Polymers — Dayton,Dayton,Montgomery,https://www.dupont.com/
+SITE-000883,ORG-000817,Elite Precision Plastics — Cincinnati,Cincinnati,Clermont,https://www.eliteprecisionplastics.com/
+SITE-000895,ORG-000829,"Expert Rotomolding, A Division of KAIVAC — Batavia",Batavia,Clermont,https://expertroto.com/
+SITE-000905,ORG-000837,Findlay Vinyl — Findlay,Findlay,Hancock,https://www.findlayvinyl.com/
+SITE-000917,ORG-000849,Fox Lite — Fairborn,Fairborn,Greene,https://foxlite.com/
+SITE-000928,ORG-000354,GMR MATERIAL TECHNOLOGY — Bolivar,Bolivar,Tuscarawas,https://www.gmrcompanies.com/
+SITE-000937,ORG-000869,Guardian Medical — Swanton,Swanton,Fulton,https://guardianmedicalusa.com/
+SITE-000946,ORG-000878,"HBD Industries, Inc. — Dublin",Dublin,Franklin,https://hbdindustries.com/
+SITE-000955,ORG-000887,HydraTech Engineered Products LLC — Cincinnati,Cincinnati,Hamilton,https://hydratechllc.com/
+SITE-000967,ORG-000898,"Interior Packaging Design, LLC — Milford",Milford,Clermont,https://returnables.com/
+SITE-000977,ORG-000907,Itw Evercoat — Cincinnati,Cincinnati,Hamilton,https://www.evercoat.com/
+SITE-000989,ORG-000919,Key Resin Co. — Batavia,Batavia,Clermont,https://www.keyresin.com/
+SITE-000999,ORG-000929,L & L Plastics — Felicity,Felicity,Clermont,https://www.llplastic.com/
+SITE-001010,ORG-000939,Magnum Magnetics Corporation - Devola,Marietta,Washington,https://magnummagnetics.com/
+SITE-001021,ORG-000949,Maverick Corporation — Cincinnati,Cincinnati,Hamilton,https://www.maverickcorp.com/
+SITE-001034,ORG-000960,Midwest Plastics — Lima,Lima,Allen,https://www.midwestplasticsoh.com/
+SITE-001045,ORG-000968,Mps Manufacturing Company — New Philadelphia,New Philadelphia,Tuscarawas,https://mpsco.com/
+SITE-001055,ORG-000977,NanoSperse — Kettering,Kettering,Montgomery,https://nanosperse.com/
+SITE-001067,ORG-000989,Nissen Chemitec America — London,London,Madison,https://nissenchemitecamerica.com/
+SITE-001078,ORG-000999,Okamoto Sandusky Manufacturing — Sandusky,Sandusky,Erie,https://okamotosandusky.com/
+SITE-001090,ORG-001010,Palpac Industries — Ottawa,Ottawa,Putnam,https://palpacindustries.com/
+SITE-001106,ORG-001024,"PLASKOLITE, LLC - ZANESVILLE",Zanesville,Muskingum,https://plaskolite.com/
+SITE-001116,ORG-001033,Plastipak Packaging — Jackson Center,Jackson Center,Shelby,https://www.plastipak.com/
+SITE-001130,ORG-000523,Pretium Leipsic — Leipsic,Leipsic,Putnam,https://www.pretiumpkg.com/
+SITE-001141,ORG-001057,Putnam Plastics Farm Products — West Carrollton,West Carrollton,Montgomery,https://www.putnamplasticsinc.com/
+SITE-001156,ORG-001071,"Recto Molded Products, Inc. — Cincinnati",Cincinnati,Hamilton,https://rectomolded.com/
+SITE-001165,ORG-001079,Rich Industries — New Philadelphia,New Philadelphia,Tuscarawas,https://www.richindustriesinc.com/
+SITE-001177,ORG-001087,Roppe Corp. — Fostoria,Fostoria,Seneca,https://roppe.com/
+SITE-001190,ORG-001099,SaN Pallets — Troy,Troy,Miami,https://sanpallets.com/
+SITE-001201,ORG-001110,The Shepherd Color Company — Cincinnati,Cincinnati,Butler,https://www.shepherdcolor.com
+SITE-001209,ORG-001118,Southeastern Container — Bowling Green,Bowling Green,Wood,https://www.secontainer.com/
+SITE-001218,ORG-000589,"The Step2 Company, LLC - Perrysville Location",Perrysville,Ashland,https://www.step2.com/
+SITE-001229,ORG-001135,Superior Plastics Inc — Plain City,Plain City,Union,https://superiorplasticsinc.com/
+SITE-001241,ORG-001147,"Teijin Automotive Technologies, Van Wert, Ohio",Van Wert,Van Wert,https://www.thecsp.com/
+SITE-001251,ORG-001154,Titan Industrial Plastics — Lancaster,Lancaster,Fairfield,https://titanindustrialplastics.net/
+SITE-001265,ORG-001166,Trimold — Circleville,Circleville,Pickaway,https://www.tstech.com/
+SITE-001279,ORG-001180,"Vampire Optical Coatings, Inc. — Pataskala",Pataskala,Licking,https://v-coat.com/
+SITE-001289,ORG-001190,Vinyl Kraft Windows and Doors — New Boston,New Boston,Scioto,https://www.vinylkraftwindows.com/
+SITE-001302,ORG-001203,Woodlawn Rubber Co. — Blue Ash,Blue Ash,Hamilton,https://woodlawnrubber.com/
+SITE-001336,ORG-001345,Plastinuva — Toledo,Toledo,Lucas,https://plastinuva.com
+SITE-001442,ORG-001399,Adient — Greenfield,Greenfield,Highland,https://www.adient.com/
+SITE-001451,ORG-001405,Spinnaker — Troy (Manufacturing Facility),Troy,Miami,https://spinps.com/
+SITE-001460,ORG-001414,Flexmag Industries — Marietta,Marietta,Washington,https://www.arnoldmagnetics.com/
+SITE-001491,ORG-001442,Velocity Group — Mason,Mason,Warren,https://www.velocityfast.com/
+SITE-001517,ORG-000651,Advanced Drainage Systems — Findlay HanTech,Findlay,Hancock,https://www.adspipe.com/
+SITE-001537,ORG-000665,Amcor Flexibles North America — Fremont,Fremont,Sandusky,https://www.amcor.com/
+SITE-001581,ORG-001517,"Casco Manufacturing Solutions, Inc. — Cincinnati",Cincinnati,Hamilton,https://cascomfg.com/
+SITE-001636,ORG-001569,"Pleasant Precision, Inc. — Kenton",Kenton,Hardin,https://teamppi.com/
+SITE-001685,ORG-001614,Intraplas Packaging Solutions Inc — Van Wert,Van Wert,Van Wert,https://www.intraplas-packaging.com/
+SITE-001698,ORG-001626,AEROSPORT ADDITIVE — Canal Winchester,Canal Winchester,Franklin,http://www.aerosportadditive.com/
+SITE-001727,ORG-001651,Berlekamp Plastics Inc — Fremont,Fremont,Sandusky,https://berlekamp.com/
+SITE-001740,ORG-001664,Denizen Inc — Piqua,Piqua,Miami,https://denizeninc.com/
+SITE-001761,ORG-001685,Kittyhawk Molding Company Inc — Carlisle,Carlisle,Warren,https://kittyhawkmolding.com/
+SITE-001770,ORG-001694,Novatex North America Inc — Ashland,Ashland,Ashland,https://novatex.us/
+SITE-001813,ORG-001737,"Shamrock Plastics, Inc.",Mount Vernon,Knox,https://shamrockplastics.com/
+SITE-001832,ORG-001756,Stronghold Coating Systems (Stronghold Coating Ltd.),Cincinnati,Hamilton,https://strongholdcoatings.com/
+SITE-001881,ORG-001828,Howard Industries Inc,Columbus,Franklin,https://howardchem.com
+SITE-001914,ORG-001197,Engineered Plastic Components — Fremont,Fremont,Sandusky,https://www.epcmfg.com/
+SITE-001936,ORG-001942,"Tire Gard (Precision Tool Grinding, Inc.)",Elida,Allen,https://tiregard.net
+SITE-002029,ORG-002035,Wolf Creek Portable Piping Products LLC,Dayton,Montgomery,https://portablepiping.com
+SITE-002062,ORG-002063,KLW Plastics,Monroe,Butler,https://klwplastics.com
+SITE-002094,ORG-002138,POWDER COATING SPECIALTY LLC,Cincinnati,Hamilton,http://www.powdercoatingspecialty.com/
+SITE-003316,ORG-003002,"Omya, Inc. headquarters - Cincinnati",Cincinnati,Hamilton,https://www.omya.com
+SITE-003884,ORG-003460,Aluf Plastics Columbus Plant,Columbus,Franklin,https://www.alufplastics.com
