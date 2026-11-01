@@ -177,3 +177,13 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Integrator — R6:** Etched Metal Ring 4 test + inclusion log; SITE-001836 Robin re-verification.
 - [ ] `open` **OWNER — R7c:** name the battery delegate. **R7d:** activate the news/WARN monitor from local staging.
 - [ ] `open` **R7b SCHEMA v2 consolidation** (dedicated pass) and **R7a one-file-per-task** (after the current campaign).
+
+## Federal-data spines + PIC-12 wave completion (2026-11-01) — packets in PR #13
+- [x] `done 2026-11-01` PIC-12 capability campaign complete: 611 of 611 candidate site rows (pilot + tranche 1 + tranche 2), 290 VERIFIED, 3,308 in-vocab proposals — `tasks/wave-pic12-capabilities-2026-11-01/SUMMARY.md`.
+- [x] `done 2026-11-01` Federal-data packets: EPA ECHO/FRS (`tasks/echo-frs-spine-2026-11-01/`), OSHA inspections via DOL API and OSHA ITA 300A owner extract (`tasks/osha-spine-2026-11-01/`, `tasks/osha-ita-2026-11-01/`), Form 5500 (`tasks/form5500-spine-2026-11-01/`), IPEDS completions (`tasks/ipeds-completions-2026-11-01/`), USAspending + openFDA (`tasks/federal-leads-2026-11-01/`), patents (`tasks/patents-pilot-2026-11-01/`).
+- [ ] `open` **Integrator — capability application:** apply the 611-site wave packets (site-scope rows to site columns / `site_capabilities.csv`; org-scope rows to org columns), with evidence rows per value (§4.13); dedupe overlapping org-scope rows across lanes (e.g. Dura-Line, Avient, Mar-Bal).
+- [ ] `open` **Integrator — employee bands:** apply site bands with the R13 precedence once ruled (ITA → OSHA inspection → Form 5500 single-establishment), conflicts to review; Ohio org bands from Form 5500 (R7f). Re-run the tier1_qualifier derivation afterwards.
+- [ ] `open` **Integrator — hygiene pass from lane reports:** unrecorded acquisitions/renames, unheld plants listed on own sites, non-plant rows (R9), address conflicts, same-address duplicate pairs.
+- [ ] `open` **Integrator — registry links** after R10/R11 rulings: FRS (2,350 candidates), UEI (146 + 83 review), FDA_FEI (2 + 8 review), EIN (320 if R11 adopted).
+- [ ] `open` **Discovery waves by state (packet lanes):** NO_MATCH leads cross-confirmed across sources (OSHA ITA ∩ OSHA inspections ∩ ECHO ∩ Form 5500) in the largest QCEW-gap states first (CA, TX, FL, MI, IL, GA, IN, WI, NY, NC); every lead still takes the full AGENTS §3 dedupe + create path.
+- [ ] `open` **OWNER battery addendum R10–R13** (`tasks/OWNER_BATTERY_2026-11-01.md`).
