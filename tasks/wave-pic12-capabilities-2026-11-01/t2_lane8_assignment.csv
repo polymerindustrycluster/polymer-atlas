@@ -1,0 +1,55 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000015,ORG-000016,Gabriel Performance Products — Akron,Akron,Summit,https://gabrielchem.com
+SITE-000038,ORG-000038,Pioneer Plastics Corp. — Akron,Akron,Summit,https://pioneerplasticscorp.com
+SITE-000062,ORG-000062,Chemionics — Tallmadge,Tallmadge,Summit,https://www.chemionics.com
+SITE-000078,ORG-000078,Giesecke+Devrient America — Twinsburg,Twinsburg,Summit,https://gi-de.com
+SITE-000099,ORG-000099,Materium Technologies — Akron,Akron,Summit,https://www.materiumtech.com
+SITE-000114,ORG-000115,Cuyahoga Plastics — Euclid,Euclid,Cuyahoga,http://www.cuyahogaplastics.com/
+SITE-000129,ORG-000130,Peak Nano — Valley View,Valley View,Cuyahoga,https://www.peaknano.com
+SITE-000140,ORG-000140,Cleveland Specialty Products — Cleveland,Cleveland,Cuyahoga,https://clevelandsp.com/
+SITE-000183,ORG-000176,Kent Elastomer Products — Kent,Kent,Portage,https://kentelastomer.com
+SITE-000198,ORG-000191,Ohio Elastomers — Perry,Perry,Lake,https://ohioelastomers.com
+SITE-000213,ORG-000103,HEXPOL Compounding — Middlefield (Gold Key Processing),Middlefield,Geauga,https://hexpolcompounding.com
+SITE-000233,ORG-000219,Akro-Plastics — Kent,Kent,Portage,https://rotomold.net/
+SITE-000248,ORG-000234,Architectural Fiberglass — Cleveland,Cleveland,Cuyahoga,https://www.fiberglass-afi.com/
+SITE-000265,ORG-000249,BMS Burns — Medina,Medina,Medina,https://www.bmsburns.com/
+SITE-000282,ORG-000264,Cast Nylons 4429,Willoughby,Lake,https://castnylon.com/
+SITE-000310,ORG-000291,CPC Bags — Elyria,Elyria,Lorain,https://creativepackagingconcepts.com/
+SITE-000329,ORG-000310,Dreco — North Ridgeville,North Ridgeville,Lorain,https://drecoinc.com/
+SITE-000346,ORG-000325,Emerald Polymer Additives — Akron,Akron,Summit,https://www.huntsman.com/
+SITE-000368,ORG-000345,Forest City Technologies — Wellington,Wellington,Lorain,https://www.forestcitytech.com/
+SITE-000396,ORG-000883,Hub Plastics — Geneva,Geneva,Ashtabula,https://hubplastics.com/
+SITE-000415,ORG-000387,"J.b. Polymers, Inc — Mogadore",Mogadore,Summit,https://www.jbpolymers.com/
+SITE-000430,ORG-000401,JuggerBot 3D LLC — Youngstown,Youngstown,Mahoning,https://juggerbot3d.com
+SITE-000448,ORG-000419,LG Chem Ohio Petrochemical — Ravenna,Ravenna,Portage,https://www.lgchem.com/
+SITE-000469,ORG-000438,Mexichem Specialty Resins Inc. Avon lake — Avon Lake,Avon Lake,Lorain,https://www.vestolit.com/
+SITE-000489,ORG-000457,National Polymer — Chagrin Falls,Chagrin Falls,Geauga,https://nationalpolymer.com/
+SITE-000518,ORG-000484,Performance Elastomers — Ravenna,Ravenna,Portage,https://www.pexco.com/
+SITE-000535,ORG-000500,PLASTPRO INC — Ashtabula,Ashtabula,Ashtabula,https://www.plastproinc.com/
+SITE-000557,ORG-000522,"Premix, Inc. — Conneaut (North Kingsville)",Conneaut (North Kingsville),Ashtabula,https://premix-hadlock.com/
+SITE-000573,ORG-000537,Rainbow Printing — Uniontown,Uniontown,Summit,https://www.rainbow-printing.com/
+SITE-000590,ORG-000552,Rogers Industrial Products — Akron,Akron,Summit,https://rogersusa.com/
+SITE-000611,ORG-000572,"Silco, Inc. — Mentor",Mentor,Lake,https://www.silco-inc.com/
+SITE-000630,ORG-001128,"Storopack, Inc. - Cleveland",Cleveland,Cuyahoga,https://www.storopack.us/
+SITE-000650,ORG-000610,Tower Industries LTD — Massillon,Massillon,Stark,https://www.towersurfaces.com/
+SITE-000671,ORG-000630,Waterlox Coatings Corporation — Cleveland,Cleveland,Cuyahoga,https://waterlox.com/
+SITE-001317,ORG-000569,"Shin-Etsu Silicones of America, Inc. — 1030 Evans Ave",Akron,Summit,https://www.shinetsusilicones.com/
+SITE-001418,ORG-000588,Steere Enterprises — Tallmadge (303 Tacoma Ave),Tallmadge,Summit,https://www.steere.com/
+SITE-001431,ORG-001392,Kalcor Coatings Company — Willoughby,Willoughby,Lake,https://www.kalcor.com/
+SITE-001481,ORG-001433,Extruded Silicone Products — Mogadore,Mogadore,Summit,https://esprubber.com
+SITE-001530,ORG-000006,Tremco CPG — Cleveland (E 175th St),Cleveland,Cuyahoga,https://www.rpminc.com
+SITE-001643,ORG-000001,"GSDI Specialty Dispersions, Inc. — Massillon",Massillon,Stark,https://www.avient.com
+SITE-001662,ORG-001590,Therm-O-Link Inc — Warren,Warren,Trumbull,https://tolwire.com/
+SITE-001682,ORG-001609,"Morgan Adhesives Company, LLC — Stow",Stow,Summit,https://mactac.com/
+SITE-001715,ORG-001641,MAINE RUBBER PREFORMS AND EXTRUSIONS LLC — Middlefield,Middlefield,Geauga,https://mainerubberpreforms.com/
+SITE-001729,ORG-001653,Bruns Brush Inc — Willoughby,Willoughby,Lake,https://brunsbrush.com/
+SITE-001758,ORG-001682,Invisible Repair Products Inc — Tallmadge,Tallmadge,Summit,https://vinylleatherrepair.com/
+SITE-001795,ORG-001719,"Pyramid Plastics, Inc.",Cleveland,Cuyahoga,pyramidplasticsinc.com
+SITE-001838,ORG-000101,"Polymerics, Inc.",Kent,Portage,http://www.polymericsinc.com
+SITE-001867,ORG-001793,Custom Tarpaulin Products Inc,Boardman,Mahoning,https://customtarpaulin.com
+SITE-001895,ORG-001878,Qube Corporation,Chagrin Falls,Geauga,https://qubeinc.com
+SITE-001934,ORG-001940,Synthetic Rubber Technologies,Uniontown,Stark,https://srtpolymers.com
+SITE-002016,ORG-002022,The Simplay3 Co,Streetsboro,Portage,simplay3.com
+SITE-002056,ORG-002057,Quality Fiberglass,Marshallville,Wayne,https://qualityfiberglass.net
+SITE-002091,ORG-002135,Applied Specialties Inc,Avon Lake,Lorain,https://www.appliedspecialties.com
+SITE-003471,ORG-000077,Mantaline — Mantua (HQ plant),Mantua,Portage,https://mantaline.com

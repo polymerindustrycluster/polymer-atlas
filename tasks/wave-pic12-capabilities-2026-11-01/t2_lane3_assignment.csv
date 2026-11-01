@@ -1,0 +1,56 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000007,ORG-000008,Struktol — Stow HQ,Stow,Summit,https://www.struktol.com
+SITE-000024,ORG-000025,Musson Rubber Co. — Akron,Akron,Summit,http://www.mussonrubber.com
+SITE-000044,ORG-000044,APV Engineered Coatings — Akron,Akron,Summit,https://apvcoatings.com
+SITE-000066,ORG-000066,"Custom Plastic Extrusions, Ltd. — Hudson",Hudson,Summit,none_found
+SITE-000083,ORG-000083,"Michael Day Enterprises, LLC — Norton",Norton,Summit,https://mdayinc.com
+SITE-000105,ORG-000106,PharoPLAST — Cleveland,Cleveland,Cuyahoga,https://www.pharoplast.com/
+SITE-000118,ORG-000119,Mechanical Rubber — Strongsville,Strongsville,Cuyahoga,https://mechanicalrubber.com/
+SITE-000133,ORG-000133,Oatey — Cleveland,Cleveland,Cuyahoga,https://oatey.com
+SITE-000170,ORG-000035,Saint-Gobain Performance Plastics — Solon,Solon,Cuyahoga,https://saint-gobain.com
+SITE-000188,ORG-000181,SpringSeal — Streetsboro,Streetsboro,Portage,http://www.springsealinc.com/
+SITE-000205,ORG-000198,Ziegler Tire — Massillon,Massillon,Stark,https://www.zieglertire.com/
+SITE-000220,ORG-000207,A.r.e. Accessories — Massillon,Massillon,Stark,https://realtruck.com/
+SITE-000239,ORG-000225,Allpass Corporation — Madison,Madison,Lake,https://www.allpasscorporation.com/
+SITE-000252,ORG-000237,Automated Packaging Systems-Sealed Air-Bedford — Bedford Heights,Bedford Heights,Cuyahoga,https://www.sealedair.com/
+SITE-000273,ORG-000257,BVPV Styrenics — Painesville,Painesville,Lake,https://styropek.com/
+SITE-000286,ORG-000268,Chapin Custom Molding — Elyria,Elyria,Lorain,https://chapincustommolding.com/
+SITE-000319,ORG-000618,Degussa Initiators — Elyria,Elyria,Lorain,https://www.united-initiators.com/
+SITE-000335,ORG-000315,Dura-Line — Elyria,Elyria,Lorain,https://www.duraline.com/
+SITE-000357,ORG-000336,Extrudex — Painesville,Painesville,Lake,https://extrudex.net/
+SITE-000376,ORG-000352,General Color & Chemical — Minerva,Minerva,Stark,https://generalcolor.com/
+SITE-000405,ORG-000379,Infinity Engineered Products — Fairlawn,Fairlawn,Summit,https://goodyearairsprings.com/
+SITE-000421,ORG-000392,Jaco Products Co. — Middlefield,Middlefield,Geauga,https://jacoproducts.com/
+SITE-000437,ORG-000408,Kes Industries — Twinsburg,Twinsburg,Summit,https://preformsealants.com/
+SITE-000456,ORG-000426,"Mac Divitt Rubber Co., LLC — North Perry",North Perry,Lake,https://www.macdivittrubber.com/
+SITE-000475,ORG-000444,Midwest Industrial Products Corporation — Cleveland,Cleveland,Cuyahoga,https://www.mipco.org/
+SITE-000496,ORG-000464,Nippon Paint Automotive Americas — Cleveland,Cleveland,Cuyahoga,https://www.nipponpaintamericas.com/
+SITE-000524,ORG-000490,Philpott Rubber Extrusions — Mogadore,Mogadore,Portage,https://philpottsolutions.com/
+SITE-000542,ORG-000508,Polymer 5 — Garrettsville,Garrettsville,Portage,https://www.polymer5.com/
+SITE-000565,ORG-000529,"Prospect Mold, Inc. — Cuyahoga Falls",Cuyahoga Falls,Summit,https://prospectgroup.com/
+SITE-000579,ORG-000543,Refcotec — Orrville,Orrville,Wayne,https://www.refcotec.com/
+SITE-000601,ORG-000562,Schneller LLC — Kent,Kent,Portage,https://www.schneller.com/
+SITE-000620,ORG-000581,Speed North America — Wooster,Wooster,Wayne,https://speedgroupe.com/
+SITE-000639,ORG-000600,Technoform — Twinsburg,Twinsburg,Summit,https://www.technoform.com/
+SITE-000655,ORG-000614,"Tri-Craft, Inc. — Middleburg Heights",Middleburg Heights,Cuyahoga,https://www.tc-tm.com/
+SITE-000676,ORG-000635,THE WOOSTER BRUSH COMPANY — Wooster,Wooster,Wayne,https://www.woosterbrush.com/
+SITE-001393,ORG-000001,Avient Corporation — Berea (ColorMatrix),Berea,Cuyahoga,https://www.avient.com
+SITE-001423,ORG-001384,Sterilite Corporation — Massillon,Massillon,Stark,https://www.sterilite.com/
+SITE-001435,ORG-000665,Amcor — Aurora (PVC Stretch Film),Aurora,Portage,https://www.amcor.com/
+SITE-001487,ORG-001438,Thogus Products — Avon Lake,Avon Lake,Lorain,https://www.thogus.com/
+SITE-001540,ORG-001475,ChromaScape — Stow (Manufacturing Facility),Stow,Summit,https://chromascape.com/
+SITE-001651,ORG-001580,Chemical Solvents Inc — Cleveland,Cleveland,Cuyahoga,https://chemicalsolvents.com/
+SITE-001670,ORG-001598,J B Jewitt Co Inc — Cleveland,Cleveland,Cuyahoga,https://homesteadfinishingproducts.com/
+SITE-001695,ORG-001624,ADVANCED CRYOGENIC ENTERPRISES — Akron,Akron,Summit,http://www.acecryo.com/
+SITE-001719,ORG-001645,RTS COMPANIES INC. — Austinburg,Austinburg,Ashtabula,http://rtscompaniesinc.com/
+SITE-001742,ORG-001666,Drossbach Inc — Stow,Stow,Summit,https://drossbach.com/
+SITE-001777,ORG-001701,Cru Performance Coatings LLC,Cleveland,Cuyahoga,https://www.continentalpaints.com/
+SITE-001806,ORG-001730,3D Dental Designs and Development LLC,Shaker Heights,Cuyahoga,https://www.3ddental.com
+SITE-001843,ORG-001760,The Pioneer Manufacturing Company,Cleveland,Cuyahoga,https://pioneerathletics.com
+SITE-001876,ORG-001817,G2 Materials Corp,Cleveland,Cuyahoga,https://g2materials.com
+SITE-001917,ORG-001923,"Artemis Polymer Processing, Inc.",Akron,Summit,https://artemispolymerprocessing.com
+SITE-001986,ORG-001992,Precision Polymer Casting LLC (dba Castinite),Perry,Lake,http://www.castinite.com/
+SITE-002035,ORG-002041,May Lin Silicone Products Inc.,Barberton,Summit,https://www.may-lin.com
+SITE-002079,ORG-000698,BASF Elyria site,Elyria,Lorain,https://www.basf.com/us/en.html
+SITE-002131,ORG-001877,Quality Plastics LLC,Fredericksburg,Wayne,https://qualityplasticsllc.com
+SITE-003479,ORG-001147,CSP — Conneaut Plant,Conneaut,Ashtabula,https://www.thecsp.com/

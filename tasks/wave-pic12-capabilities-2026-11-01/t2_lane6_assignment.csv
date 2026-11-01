@@ -1,0 +1,55 @@
+site_id,org_id,site_name,city,county,org_website
+SITE-000011,ORG-000012,Akron Polymer Systems — Akron,Akron,Summit,https://akronpolysys.com
+SITE-000035,ORG-000035,Saint-Gobain Performance Plastics — Akron,Akron,Summit,https://saint-gobain.com
+SITE-000055,ORG-000055,"Ultratech Polymers, Inc. — Cuyahoga Falls",Cuyahoga Falls,Summit,https://ultratechpolymers.com
+SITE-000071,ORG-000071,Miles Rubber & Packing — Twinsburg,Twinsburg,Summit,https://milesrubber.com
+SITE-000097,ORG-000097,BioVerde — Akron,Akron,Summit,https://bioverde.us
+SITE-000109,ORG-000110,Team Plastic — Cleveland,Cleveland,Cuyahoga,https://teamplasticsinc.com/
+SITE-000123,ORG-000124,Prime Conduit — Beachwood,Beachwood,Cuyahoga,https://primeconduit.com
+SITE-000137,ORG-000137,Protective Industrial Polymers — Middleburg Heights,Middleburg Heights,Cuyahoga,https://protectiveindustrialpolymers.com
+SITE-000181,ORG-000174,Vertex — Mogadore,Mogadore,Summit,http://www.vertexseals.com/
+SITE-000195,ORG-000188,Universal Polymer & Rubber — Middlefield,Middlefield,Geauga,https://universalpolymer.com
+SITE-000210,ORG-000050,Synthomer — Akron,Akron,Summit,https://synthomer.com
+SITE-000226,ORG-000651,Advanced Drainage Systems (Wooster),Wooster,Wayne,https://www.adspipe.com/
+SITE-000245,ORG-000231,"Apollo Plastics, Inc. — Mentor",Mentor,Lake,https://apolloplastics.net/
+SITE-000262,ORG-000246,Biothane Coated Webbing — North Ridgeville,North Ridgeville,Lorain,https://www.biothaneusa.com/
+SITE-000279,ORG-000262,Carlisle Polyurethane Systems — Berea,Berea,Cuyahoga,https://carlisletyrfil.com/
+SITE-000305,ORG-000286,Container Compliance — Cleveland,Cleveland,Cuyahoga,https://www.containercompliance.com/
+SITE-000325,ORG-000306,Dinesol Plastics Inc — Niles,Niles,Trumbull,https://dinesol.com/
+SITE-000339,ORG-000318,E.l. Mustee & Sons — Brook Park,Brook Park,Cuyahoga,https://mustee.com/
+SITE-000363,ORG-000341,Flavorseal — Avon,Avon,Lorain,https://flavorseal.com/
+SITE-000386,ORG-000361,"H & B Machine & Tool Co., Inc. — Cleveland",Cleveland,Cuyahoga,https://www.hb-machine.com/
+SITE-000412,ORG-000386,Iten Industries Inc. (Plant 1),Ashtabula,Ashtabula,https://www.itenindustries.com/
+SITE-000426,ORG-000397,Johnson Brothers Rubber Co. — West Salem,West Salem,Wayne,https://www.johnsonbrosrubbercompany.com/
+SITE-000445,ORG-000416,Latham Pool Products (Youngstown - GLI),Youngstown,Mahoning,https://www.glipoolproducts.com/
+SITE-000463,ORG-000264,Cast Nylons 4300,Willoughby,Lake,https://castnylon.com/
+SITE-000483,ORG-000451,Molded Fiber Glass Research Company,Ashtabula,Ashtabula,https://moldedfiberglass.com/
+SITE-000505,ORG-000473,Oldcastle Infrastructure (IPG - Middlefield),Middlefield,Geauga,https://oldcastleinfrastructure.com/
+SITE-000530,ORG-000495,Plastic Platers — Brooklyn,Brooklyn,Cuyahoga,https://www.mpcplating.com/
+SITE-000549,ORG-000515,"Precision Foam Fabrication, Inc. — Youngstown",Youngstown,Trumbull,https://precisionfoam.com/
+SITE-000570,ORG-000534,Quality Synthetic Rubber — Twinsburg,Twinsburg,Summit,https://www.datwyler.com/
+SITE-000587,ORG-000549,"Robin Industries, Inc. — North Canton (HQ)",North Canton,Stark,https://www.robin-industries.com/
+SITE-000606,ORG-000567,Seco Machine — North Canton,North Canton,Summit,https://stucki.com/brands/seco-machine/
+SITE-000625,ORG-000586,Spunfab Ltd — Cuyahoga Falls,Cuyahoga Falls,Summit,https://spunfab.com/
+SITE-000647,ORG-000607,"Timco Rubber Products, Inc. — Berea",Berea,Cuyahoga,https://www.timcorubber.com/
+SITE-000664,ORG-000623,Uniwall Mfg — Louisville,Louisville,Stark,https://familyfunpools.com/
+SITE-001311,ORG-001330,Finite Fiber — Akron,Akron,Summit,https://finitefiber.com/
+SITE-001399,ORG-000131,Tarkett North America — Middlefield,Middlefield,Geauga,https://www.tarkett.com
+SITE-001428,ORG-001389,IML Containers Ohio — Alliance,Alliance,Stark,https://imlcontainer.com/
+SITE-001441,ORG-001398,Smithers Medical Products — North Canton,North Canton,Stark,https://smithersmedicalproducts.com/
+SITE-001524,ORG-001465,Chalfant Sewing Fabricators — Cleveland,Cleveland,Cuyahoga,https://chalfantusa.com/
+SITE-001591,ORG-001526,"Viscus Biologics, LLC — Cleveland",Cleveland,Cuyahoga,https://viscusbiologics.com/
+SITE-001658,ORG-001586,Jos-Tech Inc — Kent,Kent,Portage,https://jos-tech.com/
+SITE-001674,ORG-001602,Royal Powder Corp — Cleveland,Cleveland,Cuyahoga,https://royalpowder.com/
+SITE-001708,ORG-001635,EAGLE PLASTICS GROUP — North Canton,Green,Summit,http://www.eagleplasticsgroup.com/
+SITE-001723,ORG-001648,WORTHINGTON PRODUCTS — East Canton,East Canton,Stark,http://tuffboom.com/
+SITE-001748,ORG-001672,Flash It LLC — Mantua,Mantua,Portage,https://flashitllc.com/
+SITE-001790,ORG-001714,"AML Industries, Inc.",Warren,Trumbull,amlube.com
+SITE-001833,ORG-001757,"ACO Polymer Products, Inc.",Mentor,Lake,https://acousa.com/
+SITE-001856,ORG-001777,American Consolidated Industries Inc (Anchor Industries),Solon,Cuyahoga,https://anchor-online.com
+SITE-001889,ORG-001856,Novation Solutions LLC (NovationSi),Barberton,Summit,https://novationsi.com
+SITE-001928,ORG-001934,Rack Coating Services Inc.,Canal Fulton,Stark,https://rackpowdercoating.com
+SITE-002001,ORG-002007,S&A Industries Corporation,Akron,Summit,http://www.s-aindustries.com/
+SITE-002047,ORG-002053,STUCK LLC,Akron,Summit,stuckyourself.com
+SITE-002084,ORG-000002,Lubrizol Painesville site,Painesville,Lake,https://www.lubrizol.com
+SITE-003468,ORG-000547,LANXESS Rhein Chemie — Chardon Plant 2,Chardon,Geauga,https://lanxess.com/

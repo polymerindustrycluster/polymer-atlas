@@ -60,3 +60,30 @@ Follow the pilot's method (`tasks/pilot-pic12-capabilities-2026-11-01/REPORT.md`
   - fetch-failure rate;
   - vocabulary gaps met;
   - hygiene findings.
+
+---
+
+## Tranche 2 (2026-11-01, after owner ruling R2 / SCHEMA v1.7.6)
+
+- **Assignment:** the 436 remaining candidates, split round-robin into
+  `t2_lane1_assignment.csv` … `t2_lane8_assignment.csv` (54–55 sites each).
+  Outputs go to `t2_lane<N>/`.
+- **Method:** the same as tranche 1, with three changes.
+  1. **Use the v1.7.6 vocabulary** in `docs/schema/vocab.json`:
+     - "Automotive" with no OEM or aftermarket split → `automotive_unspecified`.
+     - Tire customers → `tire_rubber_goods`.
+     - "Medical" without "device" → `medical_healthcare_general`.
+     - Food processing that is not packaging → `food_processing_foodservice`.
+     - Type-unstated thermoforming → `thermoforming_unspecified`.
+     - Also available: `asa`, `specialty_elastomers` (name the specific
+       elastomer in notes), `iso_45001`, `iso_17025`.
+  2. **Certification currency (R3c).** Record only current certificates, or
+     current pages naming a non-superseded edition. Expired certificates and
+     "ISO certified" with no standard named are not recorded.
+  3. **Tie values to plants first.** For a multi-plant parent, look first for
+     certificate annexes, plant pages and plant-named job postings that name
+     this address and its activity. Only then fall back to org scope.
+- **Scratch directory:** use `/tmp/claude-0/wave/t2_lane<N>/` exclusively. In
+  tranche 1, two lanes collided by sharing a scratch path.
+- **REPORT.md:** if your tool refuses to write it, return the full report as
+  text. The orchestrator saves it.
