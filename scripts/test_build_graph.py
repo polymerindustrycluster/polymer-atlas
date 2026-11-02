@@ -49,5 +49,41 @@ class BuildGraphTests(unittest.TestCase):
         self.assertNotIn("__DATA__", html)
 
 
+class GeoAndEventsTests(unittest.TestCase):
+    """The map hybrid and the 3D events page reuse build_graph(); check their own outputs."""
+
+    @classmethod
+    def setUpClass(cls):
+        def load(name):
+            spec = importlib.util.spec_from_file_location(name, HERE / f"{name}.py")
+            m = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(m)
+            return m
+        cls.geo = load("build_geo_graph").build_data()
+        cls.ev = load("build_events_3d").build_data()
+
+    def test_geo_fields_whitelisted(self):
+        self.assertEqual({k for s in self.geo["sites"] for k in s} - {"n", "o", "c", "s", "y", "p", "la", "lo"}, set())
+        self.assertEqual({k for o in self.geo["orgs"] for k in o} - {"id", "l", "r", "c", "s", "w", "d", "m", "t"}, set())
+        self.assertNotRegex(json.dumps(self.geo), r"\bCRM\b")
+
+    def test_geo_refs_valid(self):
+        n_o, n_t = len(self.geo["orgs"]), len(self.geo["tags"])
+        for s in self.geo["sites"]:
+            self.assertTrue(0 <= s["o"] < n_o)
+            self.assertTrue(-90 <= s["la"] <= 90 and -180 <= s["lo"] <= 180)
+        for o in self.geo["orgs"]:
+            self.assertTrue(all(0 <= t < n_t for t in o["t"]))
+
+    def test_events_links_and_fields(self):
+        ids = {n["id"] for n in self.ev["nodes"]}
+        self.assertEqual(len(ids), len(self.ev["nodes"]))
+        for l in self.ev["links"]:
+            self.assertIn(l["source"], ids)
+            self.assertIn(l["target"], ids)
+            self.assertIn(l["role"], {"exhibitor", "sponsor", "speaker", "organizer"})
+        self.assertNotIn("PERSON-", json.dumps(self.ev))
+
+
 if __name__ == "__main__":
     unittest.main()
