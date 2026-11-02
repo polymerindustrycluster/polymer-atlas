@@ -402,6 +402,7 @@ Source and data: <a href="{esc(ctx.repo_url)}" rel="noopener">{esc(ctx.repo_url)
 Counts here are database rows, not industry totals.</p>
 </div>
 </footer>
+<script src="{root}sortable.js" defer></script>
 {scripts}
 </body>
 </html>
@@ -437,6 +438,69 @@ def breakdown_table(title_col, groups, order, label_fn, caption):
 
 # --------------------------------------------------------------------------
 # CSS / JS assets
+
+SORTABLE_JS = r"""(function () {
+  'use strict';
+  // Progressive enhancement: click a column header to sort; long tables get a filter box.
+  // Tables opt out with data-nosort; rows with class "total" stay at the bottom.
+  function key(cell) {
+    if (!cell) return { n: null, t: '' };
+    var raw = (cell.getAttribute('data-sort') || cell.textContent || '').trim();
+    var num = raw.replace(/[,$%\s]/g, '');
+    if (/^-?\d+(\.\d+)?$/.test(num)) return { n: parseFloat(num), t: raw.toLowerCase() };
+    return { n: null, t: raw.toLowerCase() };
+  }
+  function enhance(table, idx) {
+    var head = table.tHead, body = table.tBodies[0];
+    if (!head || !body || table.hasAttribute('data-nosort')) return;
+    var rows = Array.prototype.slice.call(body.rows);
+    if (rows.length < 2) return;
+    var ths = head.rows[head.rows.length - 1].cells;
+    Array.prototype.forEach.call(ths, function (th, col) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'sort';
+      while (th.firstChild) b.appendChild(th.firstChild);
+      th.appendChild(b); th.setAttribute('aria-sort', 'none');
+      b.addEventListener('click', function () {
+        var dir = th.getAttribute('aria-sort') === 'ascending' ? 'descending' : 'ascending';
+        Array.prototype.forEach.call(ths, function (o) { o.setAttribute('aria-sort', 'none'); });
+        th.setAttribute('aria-sort', dir);
+        var sign = dir === 'ascending' ? 1 : -1;
+        var all = Array.prototype.slice.call(body.rows);
+        var pinned = all.filter(function (r) { return r.classList.contains('total'); });
+        var sortable = all.filter(function (r) { return !r.classList.contains('total'); });
+        sortable.map(function (r, i) { return { r: r, k: key(r.cells[col]), i: i }; }).sort(function (a, b) {
+          var ea = a.k.t === '' || a.k.t === '\u2014', eb = b.k.t === '' || b.k.t === '\u2014';
+          if (ea !== eb) return ea ? 1 : -1;                       // blanks always last
+          var c = (a.k.n !== null && b.k.n !== null) ? a.k.n - b.k.n : a.k.t.localeCompare(b.k.t, undefined, { numeric: true });
+          return c * sign || a.i - b.i;
+        }).forEach(function (o) { body.appendChild(o.r); });
+        pinned.forEach(function (r) { body.appendChild(r); });
+      });
+    });
+    if (rows.length > 12) {
+      var wrap = table.closest('.table-wrap') || table;
+      var box = document.createElement('label'); box.className = 'tfilter';
+      var inp = document.createElement('input'); inp.type = 'search'; inp.id = 'tfilter-' + idx;
+      inp.placeholder = 'Filter ' + rows.length + ' rows';
+      var count = document.createElement('span'); count.setAttribute('aria-live', 'polite');
+      box.appendChild(document.createTextNode('Filter')); box.appendChild(inp); box.appendChild(count);
+      wrap.parentNode.insertBefore(box, wrap);
+      inp.addEventListener('input', function () {
+        var q = inp.value.trim().toLowerCase(), shown = 0;
+        Array.prototype.forEach.call(body.rows, function (r) {
+          var hit = !q || r.classList.contains('total') || r.textContent.toLowerCase().indexOf(q) !== -1;
+          r.hidden = !hit; if (hit && !r.classList.contains('total')) shown++;
+        });
+        count.textContent = q ? shown + ' of ' + rows.length : '';
+      });
+    }
+  }
+  function init() { Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), enhance); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+"""
+
 
 CSS = """
 @font-face{font-family:"Barlow";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/barlow-400.woff2) format("woff2")}
@@ -583,6 +647,16 @@ details.more[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px
 .card .big{font-family:var(--f-display)}
 @media (max-width:720px){.hero-stage{height:780px}.hero-copy{top:18px}.hero-stats b{font-size:1.7rem}.hero-tools{left:16px;right:auto;bottom:14px}.hero-legend{display:none}}
 @media (prefers-reduced-motion:reduce){.xcard{transition:none}}
+
+/* ---- sortable tables (sortable.js; progressive enhancement) ---- */
+th[aria-sort] button.sort{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font:inherit;color:inherit}
+th[aria-sort] button.sort:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+th[aria-sort] button.sort::after{content:"\2195";opacity:.35;font-size:.8em}
+th[aria-sort=ascending] button.sort::after{content:"\25B2";opacity:.9}
+th[aria-sort=descending] button.sort::after{content:"\25BC";opacity:.9}
+th.num button.sort{flex-direction:row-reverse}
+.tfilter{display:flex;gap:8px;align-items:center;margin:.8em 0 -.4em;font-size:.9rem;color:var(--muted)}
+.tfilter input{padding:6px 9px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%}
 """
 
 MAP_JS = r"""(function () {
@@ -840,7 +914,7 @@ def build_index(ctx):
         f'<tr><th scope="row">{tier_badge(t)}</th><td>{esc(TIERS[t][0])}</td><td>{esc(TIERS[t][1])}</td></tr>'
         for t in TIER_ORDER)
     tier_tbl = table_wrap(
-        "<table><caption>Verification tiers</caption><thead><tr><th scope=\"col\">Tier</th>"
+        "<table data-nosort><caption>Verification tiers</caption><thead><tr><th scope=\"col\">Tier</th>"
         "<th scope=\"col\">Meaning</th><th scope=\"col\">Typical sources</th></tr></thead>"
         f"<tbody>{tier_rows}</tbody></table>", "Verification tiers")
     sky = skyline.payload(active_ab(sites), lambda x: x["_ring"] or "?", set(PIC12))
@@ -1469,6 +1543,7 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     write(out_dir / "style.css", CSS.strip() + "\n")
     write(out_dir / "map.js", MAP_JS)
     write(out_dir / "search.js", SEARCH_JS)
+    write(out_dir / "sortable.js", SORTABLE_JS)
     write(out_dir / ".nojekyll", "")
     write(out_dir / "index.html", build_index(ctx))
     write(out_dir / "skyline.json", json.dumps(ctx.skyline, separators=(",", ":")))
