@@ -185,7 +185,7 @@ PAGE = r"""<title>Polymer Atlas Graph</title>
 /* Layout: full-bleed WebGL canvas; a docked control rail on the left, a detail card on the right; both stack over the canvas on phones. */
 :root {
   --bg: #eef1f6; --panel: #ffffff; --panel-2: #f5f7fb; --fg: #172033; --muted: #5d6679; --line: #d6dce7;
-  --accent: #2f6fd6; --edge: rgba(40, 56, 92, .10); --edge-hi: rgba(47, 111, 214, .75); --dim: #cfd5e0;
+  --accent: #2f6fd6; --edge: #d9dee8; --edge-hi: #5b8fe0; --dim: #cfd5e0;
   --ring1: #2f78c9; --ring2: #c4851c; --ring3: #7a5cc4; --ring4: #c2456f; --ring5: #138a7d; --ringx: #7b8496;
   --proc: #1d5fae; --mat: #9a6408; --mkt: #a3325b; --event: #4f5b72; --free: #9aa3b5; --label: #172033;
   --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
@@ -194,12 +194,12 @@ PAGE = r"""<title>Polymer Atlas Graph</title>
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #0c1220; --panel: #131b2c; --panel-2: #192236; --fg: #e3e8f3; --muted: #8e99b2; --line: #26324b;
-  --accent: #7fb0ff; --edge: rgba(150, 175, 225, .07); --edge-hi: rgba(127, 176, 255, .8); --dim: #222c42;
+  --accent: #7fb0ff; --edge: #1b2335; --edge-hi: #6f9be6; --dim: #222c42;
   --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
   --proc: #9cc5ff; --mat: #ffd27f; --mkt: #ffa7c6; --event: #b8c2d6; --free: #59627a; --label: #e3e8f3; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #0c1220; --panel: #131b2c; --panel-2: #192236; --fg: #e3e8f3; --muted: #8e99b2; --line: #26324b;
-  --accent: #7fb0ff; --edge: rgba(150, 175, 225, .07); --edge-hi: rgba(127, 176, 255, .8); --dim: #222c42;
+  --accent: #7fb0ff; --edge: #1b2335; --edge-hi: #6f9be6; --dim: #222c42;
   --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
   --proc: #9cc5ff; --mat: #ffd27f; --mkt: #ffa7c6; --event: #b8c2d6; --free: #59627a; --label: #e3e8f3; color-scheme: dark }
 html, body { height: 100%; }
@@ -463,7 +463,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
     renderer = new Sigma(G, $("stage"), {
       renderEdgeLabels: false, labelFont: getComputedStyle(document.body).fontFamily, labelSize: 12, labelWeight: "500",
       labelColor: { color: P.label }, labelRenderedSizeThreshold: 7, defaultEdgeColor: P.edge, zIndex: true,
-      nodeReducer, edgeReducer, minCameraRatio: 0.03, maxCameraRatio: 6, hoverRenderer: drawHover,
+      nodeReducer, edgeReducer, minCameraRatio: 0.03, maxCameraRatio: 6, hoverRenderer: drawHover, hideEdgesOnMove: true,
     });
     renderer.on("enterNode", ({ node }) => { setHover(node); });
     renderer.on("leaveNode", () => { setHover(null); });
