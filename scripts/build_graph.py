@@ -520,6 +520,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   function select(i) {
     state.selected = i;
     const card = $("card");
+    try { history.replaceState(null, "", i == null ? location.pathname + location.search : "#" + encodeURIComponent(NODES[i].id)); } catch (e) {}
     if (i == null) { card.hidden = true; setHover(null); return; }
     const n = NODES[i], key = String(i);
     if (!G.hasNode(key)) { card.hidden = true; return; }
@@ -608,6 +609,11 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   $("foot").textContent = `Built from data/ at ${RAW.commit} · ${RAW.built} · public fields only`;
   render();
+  // deep links: graph/index.html#ORG-000001 (also any tag or event id) opens with that node selected
+  const IDX = new Map(NODES.map((n, i) => [n.id, i]));
+  const fromHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (IDX.has(id)) goTo(IDX.get(id)); };
+  addEventListener("hashchange", fromHash);
+  if (location.hash) setTimeout(fromHash, 50);
 })();
 </script>
 """

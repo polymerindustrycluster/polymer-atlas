@@ -431,6 +431,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   const el = (t, p = {}, ...k) => { const e = document.createElement(t); Object.assign(e, p); e.append(...k); return e; };
   function selectOrg(o, focusSite = -1) {
     state.org = o; draw();
+    try { history.replaceState(null, "", o < 0 ? location.pathname + location.search : "#" + encodeURIComponent(O[o].id)); } catch (e) {}
     const card = $("card");
     if (o < 0) { card.hidden = true; return; }
     const org = O[o], list = sitesByOrg.get(o) || [];
@@ -496,6 +497,11 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   $("foot").textContent = `Built from data/ at ${D.commit} · ${D.built} · site positions are interpolated from addresses (reference data, not evidence)`;
   $("m-net").disabled = true; $("m-net").textContent = "Arranging…";
   setMode("geo"); stats(); resize();
+  // deep links: graph/map.html#ORG-000001 opens zoomed to that organization's sites
+  const ORG_IDX = new Map(O.map((o, k) => [o.id, k]));
+  const fromHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (ORG_IDX.has(id)) selectOrg(ORG_IDX.get(id)); };
+  addEventListener("hashchange", fromHash);
+  if (location.hash) setTimeout(fromHash, 60);
   (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(computeNetwork);
 })();
 </script>

@@ -350,7 +350,11 @@ NAV = [("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/m
 # Fonts and three.js are self-hosted (copied from scripts/assets/ into the site) so the site keeps
 # its rule of no third-party requests outside the street map (test_external_requests_only_on_map_page).
 FONT_FILES = ["barlow-400", "barlow-500", "barlow-600", "barlow-condensed-600", "barlow-condensed-700"]
-THREE_JS = "vendor/three.min.js"   # three.js r128 (MIT), scripts/assets/three/
+THREE_JS = "vendor/three.min.js"
+SITE_URL = "https://polymerindustrycluster.github.io/polymer-atlas/"   # absolute base for social-preview images and the 404 page
+FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1120"/>'
+           '<rect x="12" y="34" width="9" height="18" rx="2" fill="#40a6d6"/><rect x="27.5" y="14" width="9" height="38" rx="2" fill="#ffd27f"/>'
+           '<rect x="43" y="26" width="9" height="26" rx="2" fill="#7fb0ff"/></svg>')   # three.js r128 (MIT), scripts/assets/three/
 
 
 class Ctx:
@@ -377,7 +381,14 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="{desc}">
-<title>{esc(title)} | Polymer Industry Atlas</title>
+<title>{esc(title) + " | Polymer Industry Atlas" if title != "Home" else "Polymer Industry Atlas"}</title>
+<link rel="icon" href="{root}favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="Polymer Industry Atlas">
+<meta property="og:title" content="{esc(title if title != "Home" else "Polymer Industry Atlas")}">
+<meta property="og:description" content="{desc}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{SITE_URL}og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{root}style.css">
 {head_extra}
 </head>
@@ -522,6 +533,7 @@ CSS = """
   --r1:#4aa3df;--r2:#f2b84b;--r3:#2cc39a;--r4:#e29bc2;--r5:#a58be0;--rx:#9aa4af;}
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--f-body);overflow-x:clip}
 .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
@@ -645,18 +657,30 @@ details.more{border:1px solid var(--line);border-radius:10px;background:var(--pa
 details.more summary{cursor:pointer;font:600 1.25rem/1.2 var(--f-display);padding:10px 0}
 details.more[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px}
 .card .big{font-family:var(--f-display)}
-@media (max-width:720px){.hero-stage{height:780px}.hero-copy{top:18px}.hero-stats b{font-size:1.7rem}.hero-tools{left:16px;right:auto;bottom:14px}.hero-legend{display:none}}
+@media (max-width:720px){.hero-stage{height:780px}.hero-copy{top:40px}.hero-stats b{font-size:1.7rem}.hero-tools{left:16px;right:auto;bottom:14px}.hero-legend{display:none}}
 @media (prefers-reduced-motion:reduce){.xcard{transition:none}}
 
 /* ---- sortable tables (sortable.js; progressive enhancement) ---- */
 th[aria-sort] button.sort{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font:inherit;color:inherit}
 th[aria-sort] button.sort:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-th[aria-sort] button.sort::after{content:"\2195";opacity:.35;font-size:.8em}
-th[aria-sort=ascending] button.sort::after{content:"\25B2";opacity:.9}
-th[aria-sort=descending] button.sort::after{content:"\25BC";opacity:.9}
+th[aria-sort] button.sort::after{content:"";width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.3}
+th[aria-sort=ascending] button.sort::after{border-top:0;border-bottom:5px solid currentColor;opacity:.9}
+th[aria-sort=descending] button.sort::after{opacity:.9}
 th.num button.sort{flex-direction:row-reverse}
 .tfilter{display:flex;gap:8px;align-items:center;margin:.8em 0 -.4em;font-size:.9rem;color:var(--muted)}
 .tfilter input{padding:6px 9px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%}
+
+.explore-links{display:flex;gap:8px;flex-wrap:wrap;margin:.2em 0 1em}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);
+  font:600 .85rem/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--accent)}
+.pill:hover{border-color:var(--accent)}
+.notfound{padding:48px 0 24px}.notfound .big404{font:700 6rem/1 var(--f-display);color:var(--accent);margin:0}
+@media (max-width:720px){
+  .site-header .wrap{gap:6px}
+  .site-header nav{width:100%;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .site-header nav::-webkit-scrollbar{display:none}
+  .site-header nav ul{flex-wrap:nowrap;white-space:nowrap;gap:4px 18px;padding-right:24px}
+}
 """
 
 MAP_JS = r"""(function () {
@@ -1059,7 +1083,7 @@ organization because the site row has no ring of its own.</div>
     head = (f'<link rel="stylesheet" href="{LEAFLET}leaflet.css" integrity="{LEAFLET_CSS_SRI}" crossorigin="">')
     scripts = (f'<script src="{LEAFLET}leaflet.js" integrity="{LEAFLET_JS_SRI}" crossorigin=""></script>\n'
                '<script src="map.js"></script>')
-    return page(ctx, "Map", body, "", "map", "Map of polymer industry sites by ring.", head, scripts)
+    return page(ctx, "Street map", body, "", "map", "Street map of polymer industry sites by ring.", head, scripts)
 
 
 def sites_json(ctx):
@@ -1284,6 +1308,7 @@ def build_org_page(ctx, o):
 {('<p class="muted">Also known as: ' + esc(vocab(o.get("trade_names"))) + '</p>') if nonempty(o.get("trade_names")) else ''}
 {tombstone_banner(o, successor, a, "organization record")}
 {lede(o.get("description_1line"))}
+{explore_links(o["org_id"], o.get("status"), any(nonempty(x.get("latitude")) for x in a.sites if x.get("org_id") == o["org_id"]))}
 {fields}
 {('<h2>Subsidiary and child organizations</h2>' + kids_html) if kids_html else ''}
 {sites_html}
@@ -1293,6 +1318,16 @@ def build_org_page(ctx, o):
 """
     return page(ctx, o.get("legal_name") or oid, body, "../", "",
                 f"{o.get('legal_name') or oid}: Polymer Industry Atlas record.")
+
+
+def explore_links(oid, status, on_map):
+    """'See in graph / on the map' deep links (graph/index.html#ID, graph/map.html#ID); tombstones are not graph nodes."""
+    if status in ("merged", "acquired", "closed"):
+        return ""
+    links = [f'<a class="pill" href="../graph/index.html#{esc(oid)}">See in the industry graph</a>']
+    if on_map:
+        links.append(f'<a class="pill" href="../graph/map.html#{esc(oid)}">See its sites on the map</a>')
+    return '<p class="explore-links">' + " ".join(links) + "</p>"
 
 
 def build_eco_page(ctx, e):
@@ -1335,6 +1370,7 @@ def build_eco_page(ctx, e):
     body = f"""
 <p class="small"><a href="../search.html">Search</a> &rsaquo; Ecosystem organization</p>
 <h1>{esc(e.get("legal_name"))}</h1>
+{explore_links(e["org_id"], e.get("status"), False)}
 {tombstone_banner(e, successor, a, "ecosystem record")}
 {lede(e.get("description_1line"))}
 {fields}
@@ -1544,6 +1580,19 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     write(out_dir / "map.js", MAP_JS)
     write(out_dir / "search.js", SEARCH_JS)
     write(out_dir / "sortable.js", SORTABLE_JS)
+    write(out_dir / "favicon.svg", FAVICON)
+    og = Path(__file__).resolve().parent / "assets" / "og-image.jpg"
+    if og.exists():
+        shutil.copyfile(og, out_dir / "og-image.jpg")
+    base = "/" + SITE_URL.split("://", 1)[1].split("/", 1)[1] if SITE_URL.count("/") > 3 else "/"
+    write(out_dir / "404.html", page(ctx, "Page not found", f"""<div class="notfound">
+<p class="big404">404</p>
+<h1>That page isn't in the Atlas.</h1>
+<p class="lede">The link may be old, or the record may have been renamed or merged. Records are never deleted:
+search for the company by name, or start from one of the views below.</p>
+<p class="explore-links"><a class="pill" href="{base}search.html">Search organizations</a>
+<a class="pill" href="{base}graph/map.html">Map + network</a><a class="pill" href="{base}graph/index.html">Industry graph</a>
+<a class="pill" href="{base}index.html">Home</a></p></div>""", base))
     write(out_dir / ".nojekyll", "")
     write(out_dir / "index.html", build_index(ctx))
     write(out_dir / "skyline.json", json.dumps(ctx.skyline, separators=(",", ":")))

@@ -259,6 +259,10 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     else if (e.key === "Escape") overview();
   });
   const core = (n) => n.k === "event" && evLinks.get(n.id).length >= 8;  // fit to the larger shows; tiny outliers otherwise shrink the view
+  // deep links: graph/events.html#EVT-000001 opens on that show
+  const fromHash = () => { const i = events.findIndex((e) => e.id === decodeURIComponent(location.hash.slice(1))); if (i >= 0) { stop(); show(i); } };
+  addEventListener("hashchange", fromHash);
+  if (location.hash) setTimeout(fromHash, 2500);
   let fitted = false;
   Graph.onEngineStop(() => { if (!fitted && !state.current) { fitted = true; Graph.zoomToFit(reduced ? 0 : 1200, 20, core); } });
   setTimeout(() => { if (!state.current) Graph.zoomToFit(reduced ? 0 : 1200, 20, core); }, 3500);
