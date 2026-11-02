@@ -64,7 +64,8 @@ python3 scripts/atlas.py next-id --all   # every ID namespace and its next free 
     battery items with a recommendation. Don't settle them in a PR.
 14. **Never edit or commit** `build/`, the `.db`, or merged `*_all.csv` exports.
     Derived fields (`tier1_qualifier`, coordinates) are hands-off. Coordinates are
-    never evidence.
+    never evidence. The integrator refreshes `tier1_qualifier` with
+    `scripts/derive_tier1.py` (check mode is read-only and safe for anyone).
 15. **Only `data/`, `docs/`, `scripts/`, `tasks/` travel.** Nothing from local staging gets committed.
 
 ## 3. Before you open a PR
