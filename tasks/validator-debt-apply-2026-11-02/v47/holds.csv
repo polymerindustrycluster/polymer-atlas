@@ -1,0 +1,7 @@
+rule,row_id,file,reason
+V-47,SITE-003018,sites_KY.csv,naics_primary '325180' not printed in the cited code evidence (no 6-digit code printed)
+V-47,SITE-003020,sites_NC.csv,naics_primary '325120' not printed in the cited code evidence (no 6-digit code printed)
+V-47,SITE-003021,sites_NJ.csv,naics_primary '325199' not printed in the cited code evidence (no 6-digit code printed)
+V-47,SITE-003022,sites_NJ.csv,naics_primary '325510' not printed in the cited code evidence (no 6-digit code printed)
+V-47,SITE-001115,sites_OH.csv,source-type change on a non-filing row is not mechanical
+V-47,SITE-003023,sites_WV.csv,naics_primary '325120' not printed in the cited code evidence (no 6-digit code printed)
