@@ -1,7 +1,5 @@
-# Proposed GitHub Actions workflow — NOT active until a human with repo admin
-# commits it to .github/workflows/validate.yml (the GitHub App used by agent
-# harnesses has no Workflows permission, so agents cannot place it there).
-# See docs/ci/README.md. Stdlib-only: no dependencies to install.
+# Validate the canonical CSVs, vocabulary export and tests on every PR and push to main.
+# Source of truth for edits: this file (docs/ci/validate.yml keeps the reviewed copy).
 name: validate
 
 on:

@@ -1,12 +1,5 @@
-# Proposed GitHub Actions workflow: publish the Atlas site to GitHub Pages.
-# NOT active until a human with repo admin commits it to
-# .github/workflows/pages.yml (the GitHub App used by agent harnesses has no
-# Workflows permission). See docs/ci/README.md, "Publishing to GitHub Pages".
-#
-# On every push to main it validates the data, builds build/pages/ with
-# scripts/build_pages.py (static site + graph explorers, public fields only),
-# and deploys it. Stdlib-only Python: nothing to install. Generated files are
-# never committed; they travel only as the Pages artifact.
+# Publish the Atlas site to GitHub Pages on every push to main (validate -> build -> deploy).
+# Requires Settings -> Pages -> Source: GitHub Actions. Reviewed copy: docs/ci/pages.yml.
 name: pages
 
 on:
