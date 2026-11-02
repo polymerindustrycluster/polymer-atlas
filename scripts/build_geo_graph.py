@@ -81,32 +81,32 @@ def build_data():
 
 PAGE = r"""<title>Polymer Atlas Map</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
+@font-face { font-family: "Lato"; font-weight: 400; font-display: swap; src: url(../fonts/lato-400-latin.woff2) format("woff2"); }
+@font-face { font-family: "Lato"; font-weight: 700; font-display: swap; src: url(../fonts/lato-700-latin.woff2) format("woff2"); }
 /* Layout: one full-bleed canvas (map <-> network); control rail docked left, detail card right; both stack on phones. */
 :root {
-  --bg: #eef1f6; --panel: #ffffff; --panel-2: #f5f7fb; --fg: #172033; --muted: #5d6679; --line: #d6dce7;
-  --land: #e2e7f0; --border: #c2cad8; --p12: #d9e4f7; --p12-line: #2f6fd6; --accent: #2f6fd6;
-  --arc: rgba(40, 56, 92, .14); --arc-hi: rgba(47, 111, 214, .85);
-  --ring1: #2f78c9; --ring2: #c4851c; --ring3: #7a5cc4; --ring4: #c2456f; --ring5: #138a7d; --ringx: #7b8496;
-  --proc: #1d5fae; --mat: #9a6408; --mkt: #a3325b; --free: #9aa3b5;
-  --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
-  --f-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --bg: #faf9f7; --panel: #ffffff; --panel-2: #f1f2f0; --fg: #2b2c2a; --muted: #656661; --line: #ddd9d2;
+  --land: #ece9e3; --border: #d2cdc4; --p12: #eef4d6; --p12-line: #6f8200; --accent: #15727f; --accent-hover: #995480;
+  --arc: rgba(7, 63, 73, .16); --arc-hi: rgba(21, 114, 127, .9);
+  --ring1: #4099ac; --ring2: #bb780e; --ring3: #985a80; --ring4: #d5613b; --ring5: #2f6672; --ringx: #8d908b;
+  --proc: #073f49; --mat: #6f8200; --mkt: #5c2f4f; --free: #b9bbb6;
+  --f-display: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --f-body: var(--f-display);
+  --f-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0c1220; --panel: #131b2c; --panel-2: #192236; --fg: #e3e8f3; --muted: #8e99b2; --line: #26324b;
-  --land: #162036; --border: #2b3854; --p12: #1b2c4d; --p12-line: #7fb0ff; --accent: #7fb0ff;
-  --arc: rgba(150, 175, 225, .12); --arc-hi: rgba(127, 176, 255, .9);
-  --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
-  --proc: #9cc5ff; --mat: #ffd27f; --mkt: #ffa7c6; --free: #59627a; color-scheme: dark } }
+  --bg: #052e36; --panel: #073f49; --panel-2: #0a4a55; --fg: #eef3f2; --muted: #a9c2c3; --line: #1d5662;
+  --land: #0a3f48; --border: #1d5662; --p12: #1f4a33; --p12-line: #b8d637; --accent: #66d7de; --accent-hover: #dba8c9;
+  --arc: rgba(102, 215, 222, .14); --arc-hi: rgba(102, 215, 222, .9);
+  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
+  --proc: #eef3f2; --mat: #b8d637; --mkt: #f2b6d6; --free: #3c6b73; color-scheme: dark } }
 :root[data-theme="dark"] {
-  --bg: #0c1220; --panel: #131b2c; --panel-2: #192236; --fg: #e3e8f3; --muted: #8e99b2; --line: #26324b;
-  --land: #162036; --border: #2b3854; --p12: #1b2c4d; --p12-line: #7fb0ff; --accent: #7fb0ff;
-  --arc: rgba(150, 175, 225, .12); --arc-hi: rgba(127, 176, 255, .9);
-  --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
-  --proc: #9cc5ff; --mat: #ffd27f; --mkt: #ffa7c6; --free: #59627a; color-scheme: dark }
+  --bg: #052e36; --panel: #073f49; --panel-2: #0a4a55; --fg: #eef3f2; --muted: #a9c2c3; --line: #1d5662;
+  --land: #0a3f48; --border: #1d5662; --p12: #1f4a33; --p12-line: #b8d637; --accent: #66d7de; --accent-hover: #dba8c9;
+  --arc: rgba(102, 215, 222, .14); --arc-hi: rgba(102, 215, 222, .9);
+  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
+  --proc: #eef3f2; --mat: #b8d637; --mkt: #f2b6d6; --free: #3c6b73; color-scheme: dark }
 html, body { height: 100%; }
 body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); overflow: hidden; }
 canvas#cv { position: fixed; inset: 0; width: 100%; height: 100%; cursor: grab; touch-action: none; }
@@ -118,7 +118,7 @@ canvas#cv:active { cursor: grabbing; }
 .brand h1 { margin: 0; font: 600 26px/1 var(--f-display); letter-spacing: .02em; }
 .brand p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
 .morph { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.morph button { padding: 10px 6px; border: 0; background: var(--panel-2); color: var(--muted); font: 600 15px/1 var(--f-display); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.morph button { padding: 10px 6px; border: 0; background: var(--panel-2); color: var(--muted); font: 700 15px/1 var(--f-display); cursor: pointer; }
 .morph button[aria-pressed="true"] { background: var(--accent); color: var(--panel); }
 .morph button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .stat { font: 500 12px/1.45 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -431,6 +431,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   const el = (t, p = {}, ...k) => { const e = document.createElement(t); Object.assign(e, p); e.append(...k); return e; };
   function selectOrg(o, focusSite = -1) {
     state.org = o; draw();
+    try { history.replaceState(null, "", o < 0 ? location.pathname + location.search : "#" + encodeURIComponent(O[o].id)); } catch (e) {}
     const card = $("card");
     if (o < 0) { card.hidden = true; return; }
     const org = O[o], list = sitesByOrg.get(o) || [];
@@ -496,6 +497,11 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   $("foot").textContent = `Built from data/ at ${D.commit} · ${D.built} · site positions are interpolated from addresses (reference data, not evidence)`;
   $("m-net").disabled = true; $("m-net").textContent = "Arranging…";
   setMode("geo"); stats(); resize();
+  // deep links: graph/map.html#ORG-000001 opens zoomed to that organization's sites
+  const ORG_IDX = new Map(O.map((o, k) => [o.id, k]));
+  const fromHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (ORG_IDX.has(id)) selectOrg(ORG_IDX.get(id)); };
+  addEventListener("hashchange", fromHash);
+  if (location.hash) setTimeout(fromHash, 60);
   (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(computeNetwork);
 })();
 </script>

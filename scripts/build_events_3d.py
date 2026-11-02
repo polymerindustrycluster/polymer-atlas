@@ -63,18 +63,18 @@ def build_data():
 
 PAGE = r"""<title>Polymer Atlas Shows</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
+@font-face { font-family: "Lato"; font-weight: 400; font-display: swap; src: url(../fonts/lato-400-latin.woff2) format("woff2"); }
+@font-face { font-family: "Lato"; font-weight: 700; font-display: swap; src: url(../fonts/lato-700-latin.woff2) format("woff2"); }
 /* Layout: a deliberately dark, single-look stage for big screens. 3D canvas full-bleed; title top-left,
    control bar bottom-left, caption card bottom-right during the tour. */
 :root {
-  --bg: #070b14; --panel: rgba(16, 23, 38, .86); --fg: #eef2fa; --muted: #93a0bb; --line: rgba(120, 140, 180, .28);
-  --gold: #ffd98a; --accent: #8fb8ff;
-  --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
-  --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
-  --f-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --bg: #052e36; --panel: rgba(7, 63, 73, .9); --fg: #eef3f2; --muted: #a9c2c3; --line: rgba(102, 215, 222, .24);
+  --gold: #b8d637; --accent: #66d7de;
+  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
+  --f-display: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --f-body: var(--f-display);
+  --f-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   color-scheme: dark;
 }
 html, body { height: 100%; }
@@ -87,10 +87,10 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 .bar { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 2;
   display: flex; gap: 6px; flex-wrap: wrap; align-items: center; max-width: calc(100% - 32px); }
 .btn { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); cursor: pointer;
-  font: 600 14px/1 var(--f-display); letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(6px); }
+  font: 700 14px/1 var(--f-display); backdrop-filter: blur(6px); }
 .btn:hover { border-color: var(--accent); }
 .btn:focus-visible { outline: 2px solid var(--accent); }
-.btn.primary { background: var(--gold); color: #1a1408; border-color: var(--gold); }
+.btn.primary { background: var(--gold); color: #052e36; border-color: var(--gold); }
 .btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
 .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); padding: 0 6px; }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
@@ -165,9 +165,9 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 
   const state = { current: null, p12: false, playing: false, i: -1, timer: null };
   const nodeColor = (n) => {
-    if (n.k === "event") return state.current === n.id ? GOLD : state.current ? "#6f7a92" : EVENT;
-    if (state.p12 && !n.p) return "#2a3346";
-    if (state.current && !evLinks.get(state.current).some((l) => (l.target.id || l.target) === n.id)) return "#2a3346";
+    if (n.k === "event") return state.current === n.id ? GOLD : state.current ? "#5f8a90" : EVENT;
+    if (state.p12 && !n.p) return "#0d4a54";
+    if (state.current && !evLinks.get(state.current).some((l) => (l.target.id || l.target) === n.id)) return "#0d4a54";
     return RING[n.r || ""] || RING[""];
   };
 
@@ -184,7 +184,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     .nodeLabel((n) => n.k === "event"
       ? `<b>${esc(n.l)}</b><br><small>${evLinks.get(n.id).length} organizations · ${esc(n.city || n.org)}</small>`
       : `<b>${esc(n.l)}</b><br><small>${esc([n.c, n.s].filter(Boolean).join(", "))} · ${orgEvents.get(n.id)} show(s)</small>`)
-    .linkColor((l) => state.current && (l.source.id || l.source) === state.current ? "#ffd98a" : "#5a6a8c")
+    .linkColor((l) => state.current && (l.source.id || l.source) === state.current ? "#b8d637" : "#3a8592")
     .linkOpacity(0.22)
     .linkWidth((l) => state.current && (l.source.id || l.source) === state.current ? 0.6 : 0)
     .linkDirectionalParticles((l) => state.current && (l.source.id || l.source) === state.current ? 2 : 0)
@@ -259,6 +259,10 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     else if (e.key === "Escape") overview();
   });
   const core = (n) => n.k === "event" && evLinks.get(n.id).length >= 8;  // fit to the larger shows; tiny outliers otherwise shrink the view
+  // deep links: graph/events.html#EVT-000001 opens on that show
+  const fromHash = () => { const i = events.findIndex((e) => e.id === decodeURIComponent(location.hash.slice(1))); if (i >= 0) { stop(); show(i); } };
+  addEventListener("hashchange", fromHash);
+  if (location.hash) setTimeout(fromHash, 2500);
   let fitted = false;
   Graph.onEngineStop(() => { if (!fitted && !state.current) { fitted = true; Graph.zoomToFit(reduced ? 0 : 1200, 20, core); } });
   setTimeout(() => { if (!state.current) Graph.zoomToFit(reduced ? 0 : 1200, 20, core); }, 3500);
