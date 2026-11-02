@@ -1,0 +1,36 @@
+# Proposed GitHub Actions workflow — NOT active until a human with repo admin
+# commits it to .github/workflows/validate.yml (the GitHub App used by agent
+# harnesses has no Workflows permission, so agents cannot place it there).
+# See docs/ci/README.md. Stdlib-only: no dependencies to install.
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate canonical CSVs (AGENTS.md §2 rule 5)
+        run: python3 scripts/validate.py
+      - name: Vocabulary export is current
+        run: python3 scripts/export_vocab.py --check
+      - name: Unit and mutation tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: SQLite build succeeds
+        run: python3 scripts/build_sqlite.py
+      - name: Guard — no generated artifacts committed
+        run: |
+          if git ls-files | grep -E '(\.db$|_all\.csv$|^build/)'; then
+            echo "Generated artifacts must never be committed (AGENTS.md §1)"; exit 1
+          fi
