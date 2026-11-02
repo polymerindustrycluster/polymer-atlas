@@ -107,7 +107,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 .nums small { color: var(--muted); font-size: 12px; line-height: 1.25; }
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 .chip { border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; font-size: 12.5px; }
-.caption a { color: var(--accent); }
+.caption a, .home a { color: var(--accent); }
 .progress { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
 .progress i { display: block; height: 100%; width: 0; background: var(--gold); }
 .scene-tooltip { font: 13px/1.35 var(--f-body) !important; background: var(--panel) !important; border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px !important; }
@@ -123,7 +123,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 
 <div id="stage" aria-label="3D network of trade shows and the organizations that take part"></div>
 <header class="title">
-  <div class="eyebrow">Polymer Atlas · trade shows</div>
+  <div class="eyebrow">Polymer Atlas · trade shows</div>__HOME__
   <h1>Who shows up where</h1>
   <p id="stat"></p>
 </header>
@@ -267,9 +267,10 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 """
 
 
-def page(data, fragment):
+def page(data, fragment, home=""):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    body = PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob)
+    body = (PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob)
+            .replace("__HOME__", bg.home_link(home, "div", "home", "pointer-events:auto;margin-top:6px;font-size:13px")))
     if fragment:
         return body
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -281,11 +282,12 @@ def main():
     ap = argparse.ArgumentParser(description="Build the Atlas 3D events presentation (single HTML file).")
     ap.add_argument("--out", default=str(bg.ROOT / "build" / "graph" / "events.html"))
     ap.add_argument("--fragment", metavar="OUT")
+    ap.add_argument("--home", default="", help="href of an 'Atlas home' link")
     a = ap.parse_args()
     data = build_data()
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(data, False), encoding="utf-8")
+    out.write_text(page(data, False, a.home), encoding="utf-8")
     if a.fragment:
         Path(a.fragment).parent.mkdir(parents=True, exist_ok=True)
         Path(a.fragment).write_text(page(data, True), encoding="utf-8")

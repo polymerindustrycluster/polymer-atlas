@@ -198,7 +198,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
     <label class="opt"><input type="checkbox" id="p12only">Only PIC-12 sites</label>
   </fieldset>
   <p class="hint" id="modeHint"></p>
-  <p class="foot" id="foot"></p>
+  __HOME__<p class="foot" id="foot"></p>
 </aside>
 <section class="card" id="card" hidden aria-live="polite"></section>
 
@@ -502,12 +502,12 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
 """
 
 
-def page(data, fragment):
+def page(data, fragment, home=""):
     data.update({"commit": bg.commit(), "built": __import__("datetime").date.today().isoformat()})
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     geo = GEO.read_text(encoding="utf-8").replace("</", "<\\/")
     body = (PAGE.replace("__D3__", D3).replace("__TOPOJSON__", TOPOJSON).replace("__GRAPHOLOGY__", bg.GRAPHOLOGY)
-            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob))
+            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob).replace("__HOME__", bg.home_link(home)))
     if fragment:
         return body
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -519,11 +519,12 @@ def main():
     ap = argparse.ArgumentParser(description="Build the Atlas map/graph hybrid (single HTML file).")
     ap.add_argument("--out", default=str(bg.ROOT / "build" / "graph" / "map.html"))
     ap.add_argument("--fragment", metavar="OUT")
+    ap.add_argument("--home", default="", help="href of an 'Atlas home' link")
     a = ap.parse_args()
     data = build_data()
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(dict(data), False), encoding="utf-8")
+    out.write_text(page(dict(data), False, a.home), encoding="utf-8")
     if a.fragment:
         Path(a.fragment).parent.mkdir(parents=True, exist_ok=True)
         Path(a.fragment).write_text(page(dict(data), True), encoding="utf-8")

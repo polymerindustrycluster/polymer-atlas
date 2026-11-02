@@ -319,7 +319,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
     <button class="btn" id="fit" type="button">Fit view</button>
   </div>
   <p class="hint">Hover a node to light up its neighbours. Click for details. Scroll to zoom, drag to pan.</p>
-  <p class="foot" id="foot"></p>
+  __HOME__<p class="foot" id="foot"></p>
 </aside>
 
 <section class="card" id="card" hidden aria-live="polite"></section>
@@ -613,12 +613,20 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
 """
 
 
-def page(nodes, edges, fragment):
+def home_link(href, tag="p", cls="hint", style=""):
+    """Optional link back to the Atlas site (used when the explorers are published next to it)."""
+    if not href:
+        return ""
+    st = f' style="{style}"' if style else ""
+    return f'<{tag} class="{cls}"{st}><a href="{html.escape(href)}">&larr; Polymer Industry Atlas</a></{tag}>'
+
+
+def page(nodes, edges, fragment, home=""):
     data = {"nodes": nodes, "edges": [[i, j, t] for i, j, t in edges], "commit": commit(),
             "built": __import__("datetime").date.today().isoformat()}
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     body = (PAGE.replace("__GRAPHOLOGY__", GRAPHOLOGY).replace("__GRAPHOLOGY_LIB__", GRAPHOLOGY_LIB)
-            .replace("__SIGMA__", SIGMA).replace("__DATA__", blob))
+            .replace("__SIGMA__", SIGMA).replace("__DATA__", blob).replace("__HOME__", home_link(home)))
     if fragment:
         return body
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -631,11 +639,12 @@ def main():
     ap = argparse.ArgumentParser(description="Build the Atlas graph explorer (single HTML file).")
     ap.add_argument("--out", default=str(ROOT / "build" / "graph" / "index.html"))
     ap.add_argument("--fragment", metavar="OUT", help="also write a body-only page (no <html>/<head> skeleton) to OUT")
+    ap.add_argument("--home", default="", help="href of an 'Atlas home' link (e.g. ../index.html when published with the site)")
     a = ap.parse_args()
     nodes, edges = build_graph()
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(nodes, edges, False), encoding="utf-8")
+    out.write_text(page(nodes, edges, False, a.home), encoding="utf-8")
     if a.fragment:
         Path(a.fragment).parent.mkdir(parents=True, exist_ok=True)
         Path(a.fragment).write_text(page(nodes, edges, True), encoding="utf-8")

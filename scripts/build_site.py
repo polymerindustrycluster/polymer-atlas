@@ -344,7 +344,9 @@ def git_info(repo_root):
 # page layout
 
 NAV = [("index", "Home", "index.html"), ("map", "Map", "map.html"),
-       ("search", "Search", "search.html"), ("counties", "Ohio counties", "counties/index.html")]
+       ("search", "Search", "search.html"), ("counties", "Ohio counties", "counties/index.html"),
+       ("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
+       ("shows", "Trade shows", "graph/events.html")]
 
 
 class Ctx:
