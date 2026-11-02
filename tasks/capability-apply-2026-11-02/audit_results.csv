@@ -1,0 +1,41 @@
+audit_n,record_id,http_status,quote_found,supports,comment
+1,SITE-000411,200,yes,yes,Quote lists final assembly and kitting of panels and kits; matches assembly_secondary_ops.
+2,SITE-000109,200,yes,partial,Quote supports fabrication of acrylic and plastic products; no welding or joining process is mentioned.
+3,SITE-002035,200,yes,yes,Quote names Aerospace among rubber molding markets served.
+4,SITE-000086,200,yes,yes,"Quote lists 'Natural' among rubber materials; read as natural rubber, which is not spelled out."
+5,SITE-000571,403,fetch_failed,partial,"Not fetched (403); judged from notes quote. Quote cites custom formulations generally, not adhesives or sealants."
+6,SITE-001316,200,yes,partial,Quote ties ISO 14001 EMS to three named Akron facilities; quote does not show this site is one of them.
+7,SITE-000481,200,yes,yes,"Quote lists EPDM, misspelled 'EDPM' on the page; same material in the materials list."
+8,SITE-000117,200,yes,yes,"Quote names construction applications: window and door profiles, flashing, trim."
+9,SITE-000278,200,yes,partial,"Quote says HDPE is 'prime or recycled content'; does not say PCR or PIR, or that recycled content is used."
+10,SITE-000117,200,yes,yes,"Quote describes elastomer extrusion profiles for seals, gaskets and weatherstripping."
+11,SITE-000421,403,fetch_failed,yes,"Not fetched (403); judged from notes quote, which names Aerospace among markets."
+12,SITE-000571,403,fetch_failed,yes,"Not fetched (403); judged from notes quote, which cites industrial applications."
+13,SITE-001657,200,yes,yes,Quote lists Acrylonitrile-Butadiene-Styrene among materials processed.
+14,SITE-000001,200,yes,partial,Quote is a multi-site ISO 9001 certificate list; quote does not show this site is included.
+15,SITE-000565,200,yes,yes,Quote names Automotive among served markets.
+16,SITE-000017,200,yes,yes,Quote lists Rail and Transit applications with tie pads and cab flooring.
+17,SITE-000432,200,yes,yes,"Quote lists farm, mining, railway and pump machinery among applications."
+18,SITE-000456,429,fetch_failed,partial,Not fetched (429); judged from notes quote. Quote names Mining only; chemical and metals processing not named.
+19,SITE-000234,200,yes,yes,Quote states precision coating of water-based and solvent-based adhesives.
+20,SITE-000446,403,fetch_failed,partial,Not fetched (403); judged from notes quote. Generic ISO 9001 statement; quote names no site.
+21,SITE-000449,200,yes,yes,Quote lists Sports Equipment among markets served.
+22,SITE-000067,200,yes,yes,Quote lists HDPE in product construction; HDPE is a polyethylene.
+23,SITE-001829,200,yes,yes,Quote says manufacturing is diversified into industrial and other industries.
+24,SITE-000063,200,yes,yes,Quote lists compression and transfer molding among equipment.
+25,ORG-000458,200,yes,partial,Quote names rubbers as materials offered for advice; does not state the company processes rubber.
+26,ORG-000209,200,yes,yes,Quote states the company has molded custom plastic injection parts since 1986.
+27,ORG-000909,200,yes,yes,Quote lists LLDPE (linear low density polyethylene) grades.
+28,ORG-001128,200,yes,yes,Quote lists Pharmaceutical Industry among industries served.
+29,ORG-000009,200,yes,yes,"Quote names RV, marine and custom industries as served."
+30,ORG-000077,500,fetch_failed,yes,"Not fetched (500); judged from notes quote, which lists TPE and TPV profile materials."
+31,ORG-000511,200,yes,yes,"Quote names Food, Beverage and Industrial markets for packaging solutions."
+32,ORG-000611,200,yes,yes,Quote states the quality management system is IATF 16949:2016 certified.
+33,ORG-000490,200,yes,yes,Quote lists Appliances among industries served.
+34,ORG-001327,200,yes,yes,Quote states composite materials are suited to appliance applications.
+35,ORG-000108,200,yes,yes,Quote lists PEEK among materials offered.
+36,ORG-000130,200,yes,yes,Quote says its metamaterial is behind solutions for aerospace and defense.
+37,ORG-001657,406,fetch_failed,yes,"Not fetched (406); judged from notes quote, which names polyethylene products."
+38,ORG-000595,200,yes,partial,Quote is a generic UHMWPE material description; it does not itself say the company uses UHMWPE.
+39,ORG-000007,200,yes,yes,Quote lists Electronics among markets served.
+40,ORG-000883,200,yes,yes,Quote lists PET via the ISBM bottle platform.
