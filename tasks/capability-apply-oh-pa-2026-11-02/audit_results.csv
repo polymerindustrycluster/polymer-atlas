@@ -1,0 +1,41 @@
+audit_n,record_id,http_status,quote_found,supports,comment
+1,SITE-002844,200,yes,no,"Quote omits phenolic; the next sentence on the page names phenolic, so the quote excerpt is truncated and should be re-cited."
+2,SITE-002786,200,yes,partial,"Quote says only 'recycling facilities'; mechanical recycling not stated. Multi-location directory, so the site is not identifiable from the quote."
+3,SITE-002642,200,yes,yes,Quote states nylon film for cleanroom packaging film applications.
+4,SITE-001061,200,yes,yes,Quote names custom poly bags and flexible packaging solutions as a product offering.
+5,SITE-002840,200,yes,yes,Quote lists automotive among industries served.
+6,SITE-002564,200,yes,yes,Quote lists building materials among film-printing markets.
+7,SITE-002258,200,yes,yes,Quote states the company offers recycled resin PCR.
+8,SITE-000868,200,yes,yes,Quote lists Construction among industries served.
+9,SITE-000711,200,yes,yes,Quote lists nylon among extruded film materials.
+10,SITE-001237,200,yes,yes,Quote lists copolymer polypropylene in the materials list.
+11,SITE-002850,200,yes,yes,Quote lists Transfer Molding among molding processes (navigation menu text).
+12,SITE-000996,200,yes,yes,Quote states prime and reprocessed polyethylene film is available.
+13,SITE-002214,200,yes,partial,"Quote is a generic thermoforming definition, not a company statement. The next sentence (thermoforms films and fabrics) should be cited instead."
+14,SITE-001068,406,fetch_failed,not_assessed,HTTP 406 Not Acceptable; no page content. Not evidence against the claim.
+15,SITE-000848,200,yes,yes,Quote states DazPak offers lamination services.
+16,SITE-001697,200,yes,yes,Quote states AeroBlast processes thermoset trimmings and rejects into media.
+17,SITE-000980,200,yes,yes,Quote describes the company's robot depositing fiberglass and resin for composite parts.
+18,SITE-002382,429,fetch_failed,not_assessed,HTTP 429 with bot-check page (Checking Your Request); no content. Not evidence against the claim.
+19,SITE-002236,200,yes,yes,"Quote states the company can decorate, assemble and package products."
+20,SITE-001817,200,yes,yes,Quote states custom die cutting services.
+21,SITE-001264,200,yes,yes,Quote lists custom brake hose assemblies in rubber or stainless steel.
+22,SITE-000913,200,yes,yes,"Quote lists consumer products; 'housewares' is not named, but consumer goods is covered."
+23,SITE-001283,200,yes,partial,"Quote is one certificate location row (Yellow Springs OH); it does not name ISO 9001, and SITE-001283 cannot be matched to that address."
+24,SITE-001936,406,fetch_failed,not_assessed,HTTP 406 (Mod_Security block page); no page content. Not evidence against the claim.
+25,ORG-000955,200,yes,yes,Quote names NBR among elastomer types the company mixes in-house.
+26,ORG-000835,200,yes,yes,Quote lists polypropylene honeycomb among FRP panel core materials offered.
+27,ORG-001099,200,yes,yes,Quote states the patented process uses recycled and mixed plastics; PCR/PIR not named.
+28,ORG-000804,200,yes,yes,Quote lists 'Electrical & Utility' as a market (menu label); 'electronics' not separately named.
+29,ORG-002758,200,yes,yes,Quote states Neville's resins serve tire and industrial rubber applications.
+30,ORG-002731,200,yes,yes,Quote lists POM among engineered resins used in the company's injection molding plants.
+31,ORG-002601,200,yes,partial,Single 'EPDM' token from a generic ASTM abbreviation table on the company's materials page; no statement of EPDM use.
+32,ORG-001342,200,yes,yes,Quote lists NuFlex sealants and adhesives product brands.
+33,ORG-002383,200,yes,yes,Quote lists polyurethane sealants in the company's product line.
+34,ORG-000865,200,yes,yes,Quote states plastic injection molding for automotive parts.
+35,ORG-002650,200,yes,yes,Quote states Rynone has supplied the construction industry since 1945.
+36,ORG-002619,200,yes,yes,"Quote lists lawn edging, hose reels, flower pots and planters; lawn and garden is covered."
+37,ORG-000742,200,yes,yes,Quote states the company manufactures die cut industrial gaskets.
+38,ORG-000905,200,yes,partial,Quote names 'mining and aggregate' from ISO certificate scope; chemical and metals processing not stated.
+39,ORG-002447,403,fetch_failed,not_assessed,HTTP 403 (Cloudflare challenge page); no page content. Not evidence against the claim.
+40,ORG-001178,200,yes,yes,Quote lists recycled resins (Resinas Recicladas) as a product line.

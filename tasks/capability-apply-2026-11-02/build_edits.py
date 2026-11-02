@@ -46,7 +46,7 @@ def toks(s):
     return {t.strip() for t in (s or "").split(";") if t.strip()}
 
 
-def build(data):
+def build(data, SETS=SETS):
     shards = {}
     def rec(fname, rid):
         if fname not in shards:
@@ -129,7 +129,7 @@ def write(p, cols, rows):
         w.writerows(rows)
 
 
-def append_evidence(data):
+def append_evidence(data, OUT=OUT):
     path = data / "evidence.csv"
     raw = path.read_bytes()
     nl = b"\r\n" if b"\r\n" in raw else b"\n"
@@ -156,19 +156,23 @@ def main():
     ap.add_argument("--data-dir", required=True)
     ap.add_argument("--append-evidence", action="store_true")
     ap.add_argument("--i-am-the-integrator", action="store_true")
+    ap.add_argument("--sets", default=str(SETS), help="integration-ready change-set directory (default: the PIC-12 sets)")
+    ap.add_argument("--out", default=str(OUT), help="packet directory to write / append from (default: this folder)")
     a = ap.parse_args()
+    sets, out = Path(a.sets).resolve(), Path(a.out).resolve()
+    out.mkdir(parents=True, exist_ok=True)
     data = Path(a.data_dir).resolve()
     if a.append_evidence:
         if data == (ROOT / "data").resolve() and not a.i_am_the_integrator:
             sys.exit("appending to the real data/ is integrator work (AGENTS.md §2 rule 7); pass --i-am-the-integrator")
-        return append_evidence(data)
-    edits, holds, ev, dropped = build(data)
+        return append_evidence(data, out)
+    edits, holds, ev, dropped = build(data, sets)
     n = next_evd(data)
     for i, e in enumerate(ev):
         e["evidence_id"] = f"EVD-{n + i:06d}"
-    write(OUT / "edits.csv", EDIT_COLS, edits)
-    write(OUT / "holds.csv", HOLD_COLS, holds)
-    write(OUT / "evidence_append.csv", list(read(SETS / "evidence_rows.csv")[0].keys()), ev)
+    write(out / "edits.csv", EDIT_COLS, edits)
+    write(out / "holds.csv", HOLD_COLS, holds)
+    write(out / "evidence_append.csv", list(read(sets / "evidence_rows.csv")[0].keys()), ev)
     recs = {(e["file"], e["row_id"]) for e in edits}
     print(f"edits {len(edits)} over {len(recs)} records "
           f"({sum(1 for f, _ in recs if f.startswith('sites_'))} site, {sum(1 for f, _ in recs if f.startswith('organizations_'))} org); "

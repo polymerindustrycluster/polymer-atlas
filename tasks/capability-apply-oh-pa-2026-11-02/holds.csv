@@ -1,0 +1,6 @@
+record_id,file,column,reason
+ORG-002601,organizations_PA.csv,materials,"epdm: audit #31, single token in a generic abbreviation table on material_general.php; needs a statement of use"
+ORG-002601,organizations_PA.csv,materials,"natural_rubber_nr: audit #31, single token in a generic abbreviation table on material_general.php; needs a statement of use"
+ORG-002601,organizations_PA.csv,materials,"neoprene_cr: audit #31, single token in a generic abbreviation table on material_general.php; needs a statement of use"
+ORG-002601,organizations_PA.csv,materials,"sbr: audit #31, single token in a generic abbreviation table on material_general.php; needs a statement of use"
+ORG-002601,organizations_PA.csv,materials,"viton_fkm: audit #31, single token in a generic abbreviation table on material_general.php; needs a statement of use"
