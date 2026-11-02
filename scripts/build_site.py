@@ -345,7 +345,8 @@ def git_info(repo_root):
 # page layout
 
 NAV = [("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
-       ("shows", "Trade shows", "graph/events.html"), ("search", "Search", "search.html"),
+       ("shows", "Trade shows", "graph/events.html"), ("experts", "Programs & researchers", "experts.html"),
+       ("search", "Search", "search.html"),
        ("counties", "Ohio counties", "counties/index.html"), ("map", "Street map", "map.html")]
 # Fonts and three.js are self-hosted (copied from scripts/assets/ into the site) so the site keeps
 # its rule of no third-party requests outside the street map (test_external_requests_only_on_map_page).
@@ -451,6 +452,72 @@ def breakdown_table(title_col, groups, order, label_fn, caption):
 
 # --------------------------------------------------------------------------
 # CSS / JS assets
+
+EXPERTS_JS = r"""(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var D = null, MAXN = 120;
+  var params = new URLSearchParams(location.search);
+  $('q').value = params.get('q') || '';
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function chip(t) { return '<button type="button" class="xchip" data-q="' + esc(t) + '">' + esc(t) + '</button>'; }
+  function instLink(id) { var i = D.insts[id] || [id, '', '', '']; return '<a href="orgs/' + encodeURIComponent(id) + '.html">' + esc(i[0]) + '</a>' + (i[2] ? ' <span class="muted">' + esc([i[1], i[2]].filter(Boolean).join(', ')) + '</span>' : ''); }
+  fetch('experts.json').then(function (r) { return r.json(); }).then(function (d) {
+    D = d;
+    var states = {}; Object.keys(D.insts).forEach(function (k) { if (D.insts[k][2]) states[D.insts[k][2]] = 1; });
+    Object.keys(states).sort().forEach(function (s) { var o = document.createElement('option'); o.value = s; o.textContent = s; $('state').appendChild(o); });
+    $('state').value = params.get('state') || '';
+    var freq = {}, generic = { polymers: 1, polymer: 1, plastics: 1 };
+    D.people.forEach(function (p) { p[2].forEach(function (s) { if (!generic[s.toLowerCase()]) freq[s] = (freq[s] || 0) + 1; }); });
+    $('chips').innerHTML = '<span class="muted small">Common specialties:</span> ' + Object.keys(freq).sort(function (a, b) { return freq[b] - freq[a]; }).slice(0, 18).map(chip).join('');
+    D.peopleHay = D.people.map(function (p) { var i = D.insts[p[3]] || []; return [p[0], p[1], p[2].join(' '), i[0], i[1], i[2]].join(' | ').toLowerCase(); });
+    D.progHay = D.programs.map(function (g) { var i = D.insts[g[1]] || []; return [g[0], g[2], g[3], g[4], g[5].join(' '), i[0], i[1], i[2]].join(' | ').toLowerCase(); });
+    run();
+  }).catch(function (e) { $('count').textContent = 'Could not load the finder data (' + e.message + ').'; });
+
+  function matches(hay, words) { for (var k = 0; k < words.length; k++) if (hay.indexOf(words[k]) === -1) return false; return true; }
+  function run() {
+    if (!D) return;
+    var q = $('q').value.trim().toLowerCase(), st = $('state').value, kind = $('kind').value, show = $('show').value;
+    var words = q.split(/\s+/).filter(Boolean);
+    var instOk = function (id) { var i = D.insts[id] || ['', '', '', '']; return (!st || i[2] === st) && (!kind || i[3] === kind); };
+    var ppl = [], prg = [];
+    if (show !== 'programs') D.people.forEach(function (p, k) { if (instOk(p[3]) && matches(D.peopleHay[k], words)) ppl.push(p); });
+    if (show !== 'people') D.programs.forEach(function (g, k) { if (instOk(g[1]) && matches(D.progHay[k], words)) prg.push(g); });
+    var n = function (k, one, many) { return k.toLocaleString() + ' ' + (k === 1 ? one : many); };
+    $('count').textContent = (show === 'programs' ? '' : n(ppl.length, 'researcher record', 'researcher records')) +
+      (show === 'both' ? ' and ' : '') + (show === 'people' ? '' : n(prg.length, 'program record', 'program records')) +
+      (show !== 'both' && ppl.length + prg.length === 1 ? ' matches' : ' match') + (q || st || kind ? '' : ' (all of them)') + '.';
+    $('empty').hidden = ppl.length + prg.length > 0;
+    $('ppl').hidden = show === 'programs' || !ppl.length;
+    $('prg').hidden = show === 'people' || !prg.length;
+    $('people').innerHTML = ppl.slice(0, MAXN).map(function (p) {
+      var name = p[4] ? '<a href="' + esc(p[4]) + '" rel="noopener nofollow">' + esc(p[0]) + '</a>' : esc(p[0]);
+      return '<li><div class="xh"><strong>' + name + '</strong><span class="muted">' + esc(p[1]) + '</span></div><div class="xi">' + instLink(p[3]) + '</div>' +
+        (p[2].length ? '<div class="xs">' + p[2].map(chip).join('') + '</div>' : '') + '</li>';
+    }).join('') + (ppl.length > MAXN ? '<li class="muted">Showing the first ' + MAXN + '. Narrow the search to see the rest.</li>' : '');
+    $('programs').innerHTML = prg.slice(0, MAXN).map(function (g) {
+      var name = g[6] ? '<a href="' + esc(g[6]) + '" rel="noopener nofollow">' + esc(g[0]) + '</a>' : esc(g[0]);
+      var meta = [g[2], g[3], g[4]].filter(Boolean).join(' · ');
+      return '<li><div class="xh"><strong>' + name + '</strong><span class="muted">' + esc(meta) + '</span></div><div class="xi">' + instLink(g[1]) + '</div>' +
+        (g[5].length ? '<div class="xs">' + g[5].map(chip).join('') + '</div>' : '') + '</li>';
+    }).join('') + (prg.length > MAXN ? '<li class="muted">Showing the first ' + MAXN + '.</li>' : '');
+    var u = new URLSearchParams(); if (q) u.set('q', $('q').value.trim()); if (st) u.set('state', st);
+    try { history.replaceState(null, '', u.toString() ? '?' + u.toString() : location.pathname); } catch (e) {}
+  }
+  var t = null;
+  $('q').addEventListener('input', function () { clearTimeout(t); t = setTimeout(run, 120); });
+  ['state', 'kind', 'show'].forEach(function (id) { $(id).addEventListener('change', run); });
+  $('clear').addEventListener('click', function (e) {
+    $('q').value = ''; $('state').value = ''; $('kind').value = ''; $('show').value = 'both'; run(); $('q').focus();
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.xchip[data-q]'); if (!b) return;
+    $('q').value = b.getAttribute('data-q'); run(); $('q').focus(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+"""
+
 
 SORTABLE_JS = r"""(function () {
   'use strict';
@@ -705,6 +772,27 @@ th.num button.sort{flex-direction:row-reverse}
   .site-header nav::-webkit-scrollbar{display:none}
   .site-header nav ul{flex-wrap:nowrap;white-space:nowrap;gap:4px 18px;padding-right:24px}
 }
+/* ---- programs & researchers finder ---- */
+.eyebrow-ink{font:700 .75rem/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:1.4em 0 0}
+.xempty{border:1px dashed var(--line);border-radius:8px;padding:18px;margin:0 0 1.5em}
+.xempty button{margin-left:.4em}
+.xfinder .filters{grid-template-columns:repeat(auto-fill,minmax(180px,240px));gap:10px 20px;margin:.8em 0 .6em}
+.xfinder .filters p{margin:0}
+.xfinder .filters select{width:100%;margin-top:4px}
+.xfinder .xq{margin-bottom:0}
+.xfinder .xq input{display:block;margin-top:6px;max-width:42em;min-height:44px;font-size:17px}
+.xchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:.4em 0 1em}
+.xchip{min-height:32px;padding:0 11px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font:400 .86rem/1 var(--f-body);cursor:pointer}
+.xchip:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
+.xlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+.xlist li{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px 14px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.xlist .xh{display:flex;flex-direction:column;gap:1px}
+.xlist .xh .muted{font-size:.88rem}
+.xlist .xi{font-size:.92rem}
+.xlist .xs{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.xlist .xs .xchip{min-height:26px;font-size:.8rem;padding:0 9px;background:var(--panel-2);border-color:transparent}
+#count{font-weight:700}
+
 """
 
 MAP_JS = r"""(function () {
@@ -903,6 +991,10 @@ GLYPHS = {
              '<ellipse cx="120" cy="42" rx="60" ry="16" fill="none" stroke="var(--line)"/><circle cx="120" cy="42" r="10" fill="var(--lime)"/>'
              '<circle cx="34" cy="38" r="5" fill="var(--r1)"/><circle cx="196" cy="52" r="6" fill="var(--r2)"/><circle cx="160" cy="28" r="4" fill="var(--r3)"/>'
              '<circle cx="80" cy="56" r="4" fill="var(--r4)"/></svg>',
+    "experts": '<svg viewBox="0 0 240 84" aria-hidden="true"><g fill="none" stroke="var(--line)" stroke-width="1.4">'
+               '<path d="M70 42 L120 22 L170 42 L120 62 Z"/></g><circle cx="120" cy="22" r="9" fill="var(--accent)"/>'
+               '<circle cx="70" cy="42" r="6" fill="var(--r1)"/><circle cx="170" cy="42" r="6" fill="var(--r3)"/>'
+               '<circle cx="120" cy="62" r="6" fill="var(--r2)"/><rect x="100" y="70" width="40" height="5" rx="2" fill="var(--line)"/></svg>',
     "counties": '<svg viewBox="0 0 240 84" aria-hidden="true">' + "".join(
         f'<polygon points="{x},{y - 12} {x + 10},{y - 6} {x + 10},{y + 6} {x},{y + 12} {x - 10},{y + 6} {x - 10},{y - 6}" '
         f'fill="var(--{c})" opacity="{o}"/>'
@@ -980,6 +1072,8 @@ def build_index(ctx):
               "Every mapped site, with company networks drawn across the map. Then morph geography into structure."),
         xcard("graph/events.html", "shows", "Trade shows in 3D",
               "Which companies exhibit where, as a 3D network with a presentation mode for the big screen."),
+        xcard("experts.html", "experts", "Programs & researchers",
+              "Find who teaches and researches polymers: search faculty, lab scientists and programs by specialty."),
         xcard("counties/index.html", "counties", "PIC-12 county pages",
               "One page per Northeast Ohio county: establishments by ring, programs, and the official benchmark."),
     ])
@@ -1126,6 +1220,132 @@ def sites_json(ctx):
                      s.get("verification_tier") or "", s.get("operating_status") or ""])
         orgs[s["org_id"]] = a.name_of(s["org_id"]) or ""
     return {"cols": cols, "orgs": orgs, "rows": rows}
+
+
+def vals(value):
+    """';'-separated multi-value field -> list of stripped values."""
+    return [v.strip() for v in str(value or "").split(";") if v.strip()]
+
+
+SPEC_LABELS = {  # controlled-vocabulary tokens whose plain underscore->space form reads badly
+    "polyethylene_pe": "polyethylene (PE)", "polypropylene_pp": "polypropylene (PP)",
+    "polyurethane_pu": "polyurethane (PU)", "pet_petg": "PET / PETG", "sbr": "SBR",
+    "composites_frp": "composites (FRP)", "composites_rtm_infusion": "composites (RTM, infusion)",
+    "thermoplastic_elastomers_tpe_tpu": "thermoplastic elastomers (TPE/TPU)",
+    "elastomers_rubber": "elastomers & rubber", "adhesives_sealants": "adhesives & sealants",
+    "bioplastics_biobased": "bioplastics & bio-based", "recycling_circularity": "recycling & circularity",
+    "membranes_separations": "membranes & separations", "films_flexible_packaging": "films & flexible packaging",
+    "degradation_biodegradation": "degradation & biodegradation", "extrusion_film_blown": "blown film extrusion",
+    "extrusion_film_cast": "cast film extrusion", "thermoforming_vacuum": "thermoforming (vacuum)",
+    "compounding_extrusion": "compounding & extrusion", "printing_decorating_plastics": "printing & decorating plastics",
+    "mold_tool_making": "mold & tool making", "rubber_mixing_compounding": "rubber mixing & compounding",
+    "rubber_molding_injection": "rubber molding (injection)", "additive_manufacturing_polymer": "additive manufacturing (polymer)",
+    "additive_manufacturing_metal": "additive manufacturing (metal)", "additive_manufacturing_science": "additive manufacturing science",
+    "composites_hand_layup": "composites (hand layup)", "composites_carbon": "composites (carbon)",
+}
+SPEC_DROP = {"other_specified_in_notes"}
+
+
+def norm_specialty(v):
+    """Display form of a research specialty. Vocabulary tokens get readable labels; free text keeps its
+    wording and acronyms (only a sentence-case capital is lowered). '' for placeholder values."""
+    v = (v or "").strip().strip(".;,").strip()
+    if not v or v.lower() in SPEC_DROP:
+        return ""
+    if v.lower() in SPEC_LABELS:
+        return SPEC_LABELS[v.lower()]
+    if re.fullmatch(r"[a-z0-9_]+", v):
+        return v.replace("_", " ")
+    v = re.sub(r"\s+", " ", v)
+    if re.match(r"[A-Z][a-z]", v) and not re.match(r"[A-Z][a-z]+[A-Z]", v):  # 'Polymer physics' -> 'polymer physics', keep 'BioMEMS'
+        v = v[0].lower() + v[1:]
+    return v
+
+
+def specs_of(values):
+    out, seen = [], set()
+    for x in values:
+        d = norm_specialty(x)
+        if d and d.lower() not in seen:
+            seen.add(d.lower()); out.append(d)
+    return sorted(out, key=str.lower)
+
+
+CRED_LABELS = {"bs": "BS", "ms": "MS", "phd": "PhD", "aas_associate": "AAS", "certificate": "certificate",
+               "registered_apprenticeship": "registered apprenticeship"}
+
+
+LAB_TYPES = {"government_lab_agency", "nonprofit_rd_consortium"}
+
+
+def experts_json(ctx):
+    """Researchers + programs for experts.html. Public professional facts only, exactly as institution pages show them."""
+    a = ctx.atlas
+    insts, people, programs = {}, [], []
+
+    def inst(oid):
+        if oid not in insts:
+            e = a.eco.get(oid) or a.orgs.get(oid) or {}
+            sub = e.get("ecosystem_subtype") or ""
+            insts[oid] = [e.get("legal_name") or oid, e.get("city") or "", e.get("state") or "",
+                          "lab" if sub in LAB_TYPES else ("edu" if sub.startswith(("university", "k12", "workforce")) else "other")]
+        return oid
+
+    for p in a.people:
+        href = safe_href(p.get("public_profile_url")) or ""
+        if "@" in href:
+            href = ""
+        specs = specs_of(vals(p.get("research_specialties")))
+        role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
+        people.append([p.get("full_name") or "", role, specs, inst(p.get("institution_org_id")), href])
+    for g in a.programs:
+        if g.get("status") not in ("active", "", None):
+            continue
+        href = safe_href(g.get("url") or g.get("public_door_url")) or ""
+        specs = specs_of(x for f in ("specialty_processes", "specialty_materials", "research_areas") for x in vals(g.get(f)))
+        creds = ", ".join(CRED_LABELS.get(c, c.replace("_", " ")) for c in vals(g.get("credential_types")))
+        level = "" if creds or g.get("level") == "none" else ", ".join(vals(g.get("level"))).replace("_", " ")
+        ptype = str(g.get("program_type") or "").replace("_", " ")
+        if creds == ptype:  # 'certificate · certificate'
+            creds = ""
+        programs.append([g.get("program_name") or "", inst(g.get("institution_org_id")), ptype, level, creds, specs, href])
+    return {"insts": insts, "people": people, "programs": programs}
+
+
+def build_experts_page(ctx, n_people, n_programs):
+    body = f"""
+<p class="eyebrow-ink">Programs &amp; researchers</p>
+<h1>Who teaches and researches polymers</h1>
+<p class="lede">Search {fmt_int(n_people)} researcher records (university faculty and federal-laboratory
+research staff) and {fmt_int(n_programs)} active program records by name, research specialty, institution or state.
+Try a specialty such as <a href="?q=rheology">rheology</a>, <a href="?q=elastomers">elastomers</a> or
+<a href="?q=biomedical+polymers">biomedical polymers</a>.</p>
+<form onsubmit="return false" role="search" class="xfinder">
+<p class="xq"><label for="q"><strong>Name, specialty or institution</strong></label>
+<input type="search" id="q" autocomplete="off" placeholder="e.g. rheology Ohio"></p>
+<div class="filters">
+<p><label for="state">State</label><br><select id="state"><option value="">Any state</option></select></p>
+<p><label for="kind">Institution type</label><br><select id="kind"><option value="">Any</option>
+<option value="edu">Universities, colleges and training</option><option value="lab">Federal labs and research consortia</option></select></p>
+<p><label for="show">Show</label><br><select id="show"><option value="both">Researchers and programs</option>
+<option value="people">Researchers only</option><option value="programs">Programs only</option></select></p>
+</div>
+</form>
+<div class="xchips" id="chips" aria-label="Common research specialties"></div>
+<p id="count" role="status" aria-live="polite">Loading...</p>
+<div id="empty" class="xempty" hidden><strong>Nothing matches.</strong> Try fewer words or a broader specialty,
+or <button type="button" class="xchip" id="clear">clear the search and filters</button></div>
+<section id="ppl" aria-labelledby="ppl-h"><h2 id="ppl-h">Researchers</h2><ul id="people" class="xlist"></ul></section>
+<section id="prg" aria-labelledby="prg-h"><h2 id="prg-h">Programs</h2><ul id="programs" class="xlist"></ul></section>
+<p class="small muted">Researchers appear with their publicly stated name, role, research specialties and
+public profile page, from their institution's own pages; no contact details are published. Specialties are
+shown as the institution words them, lightly normalized for search. To request a correction or removal,
+<a href="{esc(ctx.repo_url)}/issues" rel="noopener">open an issue</a>.</p>
+<noscript><p>The finder needs JavaScript. Every researcher and program is also listed on its institution's page.</p></noscript>
+"""
+    return page(ctx, "Programs & researchers", body, "", "experts",
+                "Find polymer programs and researchers by specialty, institution or state.", "",
+                '<script src="experts.js"></script>')
 
 
 def build_search_page(ctx, n):
@@ -1640,6 +1860,10 @@ search for the company by name, or start from one of the views below.</p>
     oj = orgs_json(ctx)
     write(out_dir / "orgs.json", json.dumps(oj, separators=(",", ":"), ensure_ascii=False))
     write(out_dir / "search.html", build_search_page(ctx, len(oj["rows"])))
+    xj = experts_json(ctx)
+    write(out_dir / "experts.json", json.dumps(xj, separators=(",", ":"), ensure_ascii=False))
+    write(out_dir / "experts.js", EXPERTS_JS)
+    write(out_dir / "experts.html", build_experts_page(ctx, len(xj["people"]), len(xj["programs"])))
 
     write(out_dir / "counties" / "index.html", build_counties_index(ctx))
     for c in PIC12:

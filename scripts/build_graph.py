@@ -533,6 +533,8 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
       el("h2", { textContent: n.l }),
     ];
     if (n.d) kids.push(el("p", { textContent: n.d }));
+    if (n.k === "proc" || n.k === "mat") kids.push(el("p", {}, el("a", { href: "../experts.html?q=" + encodeURIComponent(n.l),
+      textContent: "Who teaches or researches " + n.l + "? \u2192" })));
     if (n.k === "org" || n.k === "eco") {
       const meta = el("dl", { className: "meta" });
       const row = (k, v) => { if (v !== "" && v != null) meta.append(el("dt", { textContent: k }), el("dd", {}, v)); };
