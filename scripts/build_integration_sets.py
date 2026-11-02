@@ -48,14 +48,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-OUT = ROOT / "tasks" / "integration-ready-2026-11-01"
+# --packets / --out let the same builder run on other capability waves (e.g. the
+# rest-of-Ohio + PA lanes); defaults reproduce the PIC-12 build.
+_pre = argparse.ArgumentParser(add_help=False)
+_pre.add_argument("--packets", nargs="+", help="packet directories or globs (repo-relative)")
+_pre.add_argument("--out", help="output directory (repo-relative or absolute)")
+_PRE, _ = _pre.parse_known_args()
+OUT = Path(_PRE.out).resolve() if _PRE.out else ROOT / "tasks" / "integration-ready-2026-11-01"
 CREATED_BY = "claude-code-integration-prep-2026-11-01"
 ALLOC = "<ALLOC>"
 csv.field_size_limit(10 ** 8)
 
-PACKET_DIRS = ["tasks/pilot-pic12-capabilities-2026-11-01"] + sorted(
-    str(Path(p).relative_to(ROOT)) for p in glob.glob(str(ROOT / "tasks/wave-pic12-capabilities-2026-11-01/*lane*"))
-    if (Path(p) / "packet.csv").exists())
+if _PRE.packets:
+    PACKET_DIRS = sorted({str(Path(p).relative_to(ROOT)) for g in _PRE.packets for p in glob.glob(str(ROOT / g))
+                          if (Path(p) / "packet.csv").exists()})
+else:
+    PACKET_DIRS = ["tasks/pilot-pic12-capabilities-2026-11-01"] + sorted(
+        str(Path(p).relative_to(ROOT)) for p in glob.glob(str(ROOT / "tasks/wave-pic12-capabilities-2026-11-01/*lane*"))
+        if (Path(p) / "packet.csv").exists())
 ITA_PATH = ROOT / "tasks/osha-ita-2026-11-01/band_proposals.csv"
 INSP_PATH = ROOT / "tasks/osha-spine-2026-11-01/band_proposals.csv"
 F5500_PATH = ROOT / "tasks/form5500-spine-2026-11-01/band_proposals.csv"
@@ -866,6 +876,8 @@ def dryrun(tmp_root):
         tmpdata = tmp / "data"
         shutil.copytree(DATA, tmpdata)
         base_rc, base_lines = run_validate(tmpdata)
+        with open(tmpdata / "evidence.csv", newline="", encoding="utf-8") as fh:
+            prior_ids = {r["evidence_id"] for r in csv.DictReader(fh)}
         stats = apply_to_copy(tmpdata)
         rc, lines = run_validate(tmpdata)
         # independent post-apply checks on the temp copy
@@ -875,8 +887,9 @@ def dryrun(tmp_root):
         ids = [r["evidence_id"] for r in ev]
         checks.append(("evidence_id unique across the table", len(ids) == len(set(ids))))
         checks.append(("no `<ALLOC>` placeholder left in the temp evidence.csv", all(ALLOC not in r["evidence_id"] for r in ev)))
+        new_rows = [r for r in ev if r["evidence_id"] not in prior_ids]
         checks.append(("all new evidence rows created_by = " + CREATED_BY,
-                       sum(1 for r in ev if r["created_by"] == CREATED_BY) == len(EVD)))
+                       len(new_rows) == len(EVD) and all(r["created_by"] == CREATED_BY for r in new_rows)))
         post_sites, _ = load_table_from(tmpdata, "sites")
         bad_tokens = 0
         for sid, p in SITE_PLAN.items():
@@ -915,6 +928,8 @@ def fmt_counter(c):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--packets", nargs="+", help="packet directories or globs (default: the PIC-12 wave)")
+    ap.add_argument("--out", help="output directory (default: tasks/integration-ready-2026-11-01)")
     ap.add_argument("--no-dryrun", action="store_true")
     ap.add_argument("--tmp-root", default=None, help="parent directory for the temp copy of data/")
     args = ap.parse_args()
@@ -1010,7 +1025,8 @@ def readme(S, dry_ok):
     bs = S["bands"]
     L = []
     A = L.append
-    A("# Integration-ready change sets — PIC-12 capability wave + employee bands (2026-11-01)")
+    A("# Integration-ready change sets — PIC-12 capability wave + employee bands (2026-11-01)" if not _PRE.packets
+      else f"# Integration-ready change sets — capability lanes {', '.join(Path(d).name for d in PACKET_DIRS)}")
     A("")
     A("**These are proposals, not data changes.** Produced by `scripts/build_integration_sets.py` (stdlib, re-runnable) "
       "by a packet lane that never edits `data/`. Every new ID is the placeholder `<ALLOC>`; the integrator of record "
@@ -1029,8 +1045,8 @@ def readme(S, dry_ok):
     A("")
     A("## Counts (units stated)")
     A("")
-    A(f"- **Inputs:** {S['packet_dirs']} packet folders (pilot + 5 tranche-1 lanes + 8 tranche-2 lanes); "
-      f"{S['packet_rows']} packet rows; {S['verdict_sites']} verdicted Ohio PIC-12 sites "
+    A(f"- **Inputs:** {S['packet_dirs']} packet folders ({'pilot + 5 tranche-1 lanes + 8 tranche-2 lanes' if not _PRE.packets else ', '.join(PACKET_DIRS)}); "
+      f"{S['packet_rows']} packet rows; {S['verdict_sites']} verdicted {'Ohio PIC-12 ' if not _PRE.packets else ''}sites "
       f"({S['verdict_sites_verified']} site-level VERIFIED); {S['entries_in_vocab_values']} in-vocab single values "
       f"after splitting `;`-packed rows (unit: record x field x value, all verdicts and scopes).")
     A(f"- **Site capability rows:** {S['site_rows_total']} sites carry VERIFIED site-scope rows "
