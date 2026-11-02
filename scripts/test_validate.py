@@ -120,6 +120,17 @@ class ValidatorMutationTests(unittest.TestCase):
                            lambda r: r.update(sources=r["sources"] + "; PIC CRM record"))
         self.assert_fails_with(f"{r['org_id']} names the PIC CRM")
 
+    def test_v50_crm_in_site_notes(self):
+        all_debt = set().union(*map(set, BASELINE.values()))
+        r = self.edit_rows("sites_OH.csv", lambda r: r["site_id"] not in all_debt,
+                           lambda r: r.update(notes=(r.get("notes") or "") + " per CRM export"))
+        self.assert_fails_with(f"{r['site_id']} names the PIC CRM in sites_OH.csv ['notes']")
+
+    def test_v50_crm_in_evidence_row(self):
+        r = self.edit_rows("evidence.csv", lambda r: True,
+                           lambda r: r.update(claim_detail=r["claim_detail"] + " (CRM)"))
+        self.assert_fails_with(f"{r['evidence_id']} names the PIC CRM in evidence.csv ['claim_detail']")
+
     def test_new_v176_vocab_accepted(self):
         self.edit_rows("sites_OH.csv", self.clean_ohio_site,
                        lambda r: r.update(markets_served="automotive_unspecified;tire_rubber_goods"))

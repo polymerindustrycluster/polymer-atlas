@@ -508,15 +508,19 @@ for r in orgs:
         debt("V-48", oid, f"organizations {oid} employee_band_ohio {band!r} not in SCHEMA §4.4 bands")
 
 # V-50 [v1.7.6, owner ruling 2026-11-01 P1]: the PIC CRM is never a cited source and never
-# named in any public row. Org/site sources + descriptions + notes are checked.
+# named in any public row. Widened 2026-11-02 (the P1 apply step's "widen V-50 to every
+# text column"): every column of every data/*.csv is checked. The row id is the file's
+# first column (registry_links: the org_id).
 CRM_RE = re.compile(r"\bCRM\b")
-for _rows, _id, _cols in ((orgs, "org_id", ("sources", "description_1line")),
-                          (sites, "site_id", ("sources",))):
-    for r in _rows:
-        rid = r[_id].strip()
-        hit = [c for c in _cols if CRM_RE.search(r.get(c) or "")]
-        if hit:
-            debt("V-50", rid, f"{rid} names the PIC CRM in {hit} — the CRM is never a cited source in a public row (AGENTS.md §5.1/§6, owner ruling 2026-11-01)")
+for _p in sorted(DATA.glob("*.csv")):
+    with open(_p, newline="", encoding="utf-8") as _fh:
+        _rd = csv.reader(_fh)
+        _hdr = next(_rd, [])
+        for _row in _rd:
+            hit = [c for c, v in zip(_hdr, _row) if CRM_RE.search(v)]
+            if hit:
+                rid = (_row[0].strip() if _row else "") or f"{_p.name}:{_rd.line_num}"
+                debt("V-50", rid, f"{rid} names the PIC CRM in {_p.name} {hit} — the CRM is never a cited source in a public row (AGENTS.md §5.1/§6, owner ruling 2026-11-01)")
 # V-51 [v1.7.6, owner ruling 2026-11-01 P2]: no email-like string in a people profile URL.
 for r in people:
     if "@" in (r.get("public_profile_url") or ""):
