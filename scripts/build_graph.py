@@ -179,29 +179,29 @@ def commit():
 
 PAGE = r"""<title>Polymer Atlas Graph</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
+@font-face { font-family: "Lato"; font-weight: 400; font-display: swap; src: url(../fonts/lato-400-latin.woff2) format("woff2"); }
+@font-face { font-family: "Lato"; font-weight: 700; font-display: swap; src: url(../fonts/lato-700-latin.woff2) format("woff2"); }
 /* Layout: full-bleed WebGL canvas; a docked control rail on the left, a detail card on the right; both stack over the canvas on phones. */
 :root {
-  --bg: #eef1f6; --panel: #ffffff; --panel-2: #f5f7fb; --fg: #172033; --muted: #5d6679; --line: #d6dce7;
-  --accent: #2f6fd6; --edge: #d9dee8; --edge-hi: #5b8fe0; --dim: #cfd5e0;
-  --ring1: #2f78c9; --ring2: #c4851c; --ring3: #7a5cc4; --ring4: #c2456f; --ring5: #138a7d; --ringx: #7b8496;
-  --proc: #1d5fae; --mat: #9a6408; --mkt: #a3325b; --event: #4f5b72; --free: #9aa3b5; --label: #172033;
-  --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
-  --f-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --bg: #faf9f7; --panel: #ffffff; --panel-2: #f1f2f0; --fg: #2b2c2a; --muted: #656661; --line: #ddd9d2;
+  --accent: #15727f; --accent-hover: #995480; --edge: #e4e1db; --edge-hi: #15727f; --dim: #e7e5e0;
+  --ring1: #4099ac; --ring2: #bb780e; --ring3: #985a80; --ring4: #d5613b; --ring5: #2f6672; --ringx: #8d908b;
+  --proc: #073f49; --mat: #6f8200; --mkt: #5c2f4f; --event: #585955; --free: #b9bbb6; --label: #2b2c2a;
+  --f-display: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --f-body: var(--f-display);
+  --f-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0c1220; --panel: #131b2c; --panel-2: #192236; --fg: #e3e8f3; --muted: #8e99b2; --line: #26324b;
-  --accent: #7fb0ff; --edge: #1b2335; --edge-hi: #6f9be6; --dim: #222c42;
-  --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
-  --proc: #9cc5ff; --mat: #ffd27f; --mkt: #ffa7c6; --event: #b8c2d6; --free: #59627a; --label: #e3e8f3; color-scheme: dark } }
+  --bg: #052e36; --panel: #073f49; --panel-2: #0a4a55; --fg: #eef3f2; --muted: #a9c2c3; --line: #1d5662;
+  --accent: #66d7de; --accent-hover: #dba8c9; --edge: #0c3f48; --edge-hi: #66d7de; --dim: #0e4650;
+  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
+  --proc: #eef3f2; --mat: #b8d637; --mkt: #f2b6d6; --event: #c8d2d0; --free: #3c6b73; --label: #eef3f2; color-scheme: dark } }
 :root[data-theme="dark"] {
-  --bg: #0c1220; --panel: #131b2c; --panel-2: #192236; --fg: #e3e8f3; --muted: #8e99b2; --line: #26324b;
-  --accent: #7fb0ff; --edge: #1b2335; --edge-hi: #6f9be6; --dim: #222c42;
-  --ring1: #5aa3f0; --ring2: #e9b04f; --ring3: #a68cf0; --ring4: #ec7ea3; --ring5: #3fc7b6; --ringx: #8c95a8;
-  --proc: #9cc5ff; --mat: #ffd27f; --mkt: #ffa7c6; --event: #b8c2d6; --free: #59627a; --label: #e3e8f3; color-scheme: dark }
+  --bg: #052e36; --panel: #073f49; --panel-2: #0a4a55; --fg: #eef3f2; --muted: #a9c2c3; --line: #1d5662;
+  --accent: #66d7de; --accent-hover: #dba8c9; --edge: #0c3f48; --edge-hi: #66d7de; --dim: #0e4650;
+  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
+  --proc: #eef3f2; --mat: #b8d637; --mkt: #f2b6d6; --event: #c8d2d0; --free: #3c6b73; --label: #eef3f2; color-scheme: dark }
 html, body { height: 100%; }
 body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); overflow: hidden; }
 #stage { position: fixed; inset: 0; }
@@ -371,7 +371,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
       if (!isTag && d === 0 && state.orph) continue;
       const size = isTag ? 3 + Math.sqrt(d) * 1.15 : 2.2 + Math.sqrt(n.n || 0) * 0.9 + (n.k === "eco" ? 1.4 : 0);
       const a = (i * 2.399963) % (2 * Math.PI), rad = isTag ? 40 + (i % 23) * 3 : 90 + (i % 211);
-      g.addNode(String(i), { x: Math.cos(a) * rad, y: Math.sin(a) * rad, size: Math.min(size, isTag ? 22 : 12), label: n.l, idx: i, tag: isTag });
+      g.addNode(String(i), { x: Math.cos(a) * rad, y: Math.sin(a) * rad, size: Math.min(size, isTag ? 15 : 12), label: n.l, idx: i, tag: isTag });
     }
     for (const [i, j, t] of es) {
       const a = String(i), b = String(j);

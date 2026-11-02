@@ -203,7 +203,7 @@ SKYLINE_JS = r"""(function () {
     stage.appendChild(renderer.domElement);
     var scene = new T.Scene();
     var camera = new T.PerspectiveCamera(32, 1, 1, 5000);
-    scene.add(new T.HemisphereLight(0xbfd4ff, 0x0a0f1c, 0.9));
+    scene.add(new T.HemisphereLight(0xd6f3f2, 0x05262c, 0.95));
     var sun = new T.DirectionalLight(0xffffff, 0.9); sun.position.set(-300, 600, 400); scene.add(sun);
 
     // state borders + PIC-12 outline
@@ -213,17 +213,16 @@ SKYLINE_JS = r"""(function () {
       var g = new T.BufferGeometry(); g.setAttribute('position', new T.Float32BufferAttribute(pos, 3));
       return new T.LineSegments(g, new T.LineBasicMaterial({ color: color, transparent: true, opacity: opacity }));
     }
-    scene.add(lines(D.borders, 0x4a5d86, 0.55, 0));
-    scene.add(lines(D.pic12, 0xffd27f, 0.95, 0.3));
-    var floor = new T.Mesh(new T.CircleGeometry(620, 64), new T.MeshBasicMaterial({ color: 0x0b1324, transparent: true, opacity: 0.55 }));
-    floor.rotation.x = -Math.PI / 2; floor.position.y = -0.5; scene.add(floor);
+    scene.add(lines(D.borders, 0x3a8592, 0.5, 0));
+    scene.add(lines(D.pic12, 0xb8d637, 0.95, 0.3));
 
     // hex columns (one instanced mesh)
     var max = D.hex[0] ? D.hex[0][2] : 1, n = D.hex.length;
     var geo = new T.CylinderGeometry(D.R * 0.86, D.R * 0.86, 1, 6); geo.translate(0, 0.5, 0);
     var mat = new T.MeshLambertMaterial({ color: 0xffffff });
     var mesh = new T.InstancedMesh(geo, mat, n);
-    var stops = [[0, [0.12, 0.30, 0.55]], [0.35, [0.25, 0.65, 0.84]], [0.7, [1.0, 0.78, 0.38]], [1, [1.0, 0.96, 0.86]]];
+    // PIC sequential teal (data-seq) rising into brand lime at the peaks; lime is chrome on the deep-teal stage
+    var stops = [[0, [0.122, 0.353, 0.388]], [0.4, [0.184, 0.498, 0.549]], [0.7, [0.310, 0.690, 0.741]], [0.88, [0.722, 0.839, 0.216]], [1, [0.933, 0.965, 0.812]]];
     function ramp(t) {
       for (var i = 1; i < stops.length; i++) if (t <= stops[i][0]) {
         var a = stops[i - 1], b = stops[i], u = (t - a[0]) / (b[0] - a[0]);
