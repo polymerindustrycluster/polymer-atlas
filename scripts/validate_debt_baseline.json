@@ -475,15 +475,13 @@
   "V-49": [
    "ORG-001478",
    "ORG-001481",
-   "ORG-001484",
    "ORG-001485",
    "ORG-001486",
    "ORG-001487",
-   "ORG-001488",
    "ORG-001489"
   ],
   "V-50": [],
   "V-51": []
  },
- "amended": "2026-11-01: V-50/V-51 added under owner ruling 2026-11-01 (battery P1/P2); existing violators grandfathered for the integrator's cleanup pass. 2026-11-02: V-45 shrunk by 139 (synonym site_type fixes) and V-47 by 290 (ruled NAICS provenance proposals), per tasks/validator-debt-apply-2026-11-02/ (owner battery 2026-11-01 R1/R4)."
+ "amended": "2026-11-01: V-50/V-51 added under owner ruling 2026-11-01 (battery P1/P2); existing violators grandfathered for the integrator's cleanup pass. 2026-11-02: V-45 shrunk by 139 (synonym site_type fixes) and V-47 by 290 (ruled NAICS provenance proposals), per tasks/validator-debt-apply-2026-11-02/ (owner battery 2026-11-01 R1/R4). 2026-11-02: V-49 shrunk by 2 (ORG-001484, ORG-001488: 'automotive' -> automotive_unspecified, tasks/vocab-normalize-2026-11-02/)."
 }

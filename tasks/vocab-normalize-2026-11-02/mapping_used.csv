@@ -1,0 +1,158 @@
+field,from_value,to_terms,class,tokens
+materials,polyurethane foam,polyurethane_pu;foams_polymeric,EQUIV,83
+materials,polyethylene,polyethylene_pe,EQUIV,81
+materials,polypropylene,polypropylene_pp,EQUIV,74
+materials,rubber,elastomers_rubber,EQUIV,66
+materials,fiberglass-reinforced plastic,composites_frp,EQUIV,64
+materials,rubber compounds,elastomers_rubber,EQUIV,58
+materials,PVC,pvc,SPELLING,49
+materials,polyester resin,polyester_vinyl_ester_resins,EQUIV,47
+materials,polyurethane,polyurethane_pu,EQUIV,47
+processes,injection molding,injection_molding,SPELLING,46
+materials,HDPE,polyethylene_pe,EQUIV,45
+processes,thermoforming,thermoforming_unspecified,EQUIV,45
+processes,rotational molding,rotational_molding,SPELLING,37
+materials,fiberglass reinforced plastic,composites_frp,EQUIV,35
+materials,elastomers,elastomers_rubber,EQUIV,30
+materials,adhesives,adhesives_sealants,EQUIV,28
+materials,PET,pet_petg,EQUIV,25
+materials,synthetic rubber,elastomers_rubber,EQUIV,24
+materials,fiberglass-reinforced plastic (FRP),composites_frp,EQUIV,20
+processes,lamination,laminating,EQUIV,19
+materials,vinyl ester resins,polyester_vinyl_ester_resins,EQUIV,18
+processes,foam fabrication,foam_fabrication,SPELLING,18
+materials,natural rubber,natural_rubber_nr,EQUIV,18
+materials,polystyrene,polystyrene_ps_hips,EQUIV,17
+processes,compression molding,compression_molding,SPELLING,17
+materials,ABS,abs,SPELLING,17
+materials,unsaturated polyester resins,polyester_vinyl_ester_resins,EQUIV,17
+materials,PP,polypropylene_pp,EQUIV,16
+materials,PVC compounds,pvc,EQUIV,16
+materials,polycarbonate,polycarbonate_pc,EQUIV,15
+materials,nylon,nylon_pa,EQUIV,15
+materials,sealants,adhesives_sealants,EQUIV,15
+processes,rubber_compounding,rubber_mixing_compounding,EQUIV,15
+materials,carbon fiber,composites_carbon,EQUIV,13
+materials,PTFE,fluoropolymers,EQUIV,13
+materials,PLA,pla,SPELLING,13
+processes,rubber compounding,rubber_mixing_compounding,EQUIV,13
+processes,pultrusion,composites_pultrusion,EQUIV,12
+materials,polystyrene foam,polystyrene_ps_hips;foams_polymeric,EQUIV,12
+materials,silicone,silicones,EQUIV,11
+materials,PEEK,peek_high_performance,EQUIV,11
+processes,blown film extrusion,extrusion_film_blown,EQUIV,10
+materials,thermoset resins,thermosets,EQUIV,10
+processes,mold making,mold_tool_making,EQUIV,10
+materials,LLDPE,polyethylene_pe,EQUIV,10
+materials,TPE,thermoplastic_elastomers_tpe_tpu,EQUIV,10
+materials,EPDM,epdm,SPELLING,10
+materials,epoxy resins,epoxy,EQUIV,9
+processes,filament winding,composites_filament_winding,EQUIV,9
+materials,carbon fiber composites,composites_carbon,EQUIV,8
+materials,TPU,thermoplastic_elastomers_tpe_tpu,EQUIV,7
+materials,LDPE,polyethylene_pe,EQUIV,7
+materials,CPVC,pvc,EQUIV,7
+materials,silicone rubber,silicones,EQUIV,7
+materials,FRP,composites_frp,EQUIV,7
+materials,phenolic resins,phenolic,EQUIV,7
+materials,polyurethanes,polyurethane_pu,EQUIV,7
+materials,polyester resins,polyester_vinyl_ester_resins,EQUIV,6
+processes,hand lay-up,composites_hand_layup,EQUIV,6
+materials,PVDF,fluoropolymers,EQUIV,6
+materials,thermoplastic resins,thermoplastics,EQUIV,6
+materials,flexible polyurethane foam,polyurethane_pu;foams_polymeric,EQUIV,6
+processes,custom compounding,custom_compounding,SPELLING,6
+materials,epoxy resin,epoxy,EQUIV,6
+materials,vinyl ester resin,polyester_vinyl_ester_resins,EQUIV,6
+materials,SBR,sbr,SPELLING,6
+materials,neoprene,neoprene_cr,EQUIV,6
+materials,acetal,acetal_pom,EQUIV,5
+processes,open molding,composites_hand_layup,EQUIV,5
+materials,PHA,pha,SPELLING,5
+processes,tire manufacturing,tire_manufacturing,SPELLING,5
+materials,PE,polyethylene_pe,EQUIV,5
+materials,PFA,fluoropolymers,EQUIV,5
+materials,FEP,fluoropolymers,EQUIV,5
+processes,RTM,composites_rtm_infusion,EQUIV,4
+materials,liquid silicone rubber,silicones,EQUIV,4
+processes,blow molding,blow_molding,SPELLING,4
+materials,UHMW,polyethylene_pe,EQUIV,4
+processes,mold building,mold_tool_making,EQUIV,4
+processes,sheet extrusion,extrusion_sheet,EQUIV,4
+materials,NBR,nitrile_nbr,EQUIV,4
+materials,PS,polystyrene_ps_hips,EQUIV,4
+processes,filament_winding,composites_filament_winding,EQUIV,4
+materials,polyamide,nylon_pa,EQUIV,4
+markets_served,automotive,automotive_unspecified,EQUIV,4
+materials,fluoroelastomers,viton_fkm,EQUIV,3
+materials,flexible PVC,pvc,EQUIV,3
+materials,thermoplastic elastomers,thermoplastic_elastomers_tpe_tpu,EQUIV,3
+materials,phenolic resin,phenolic,EQUIV,3
+processes,tube extrusion,extrusion_pipe_tube,EQUIV,3
+materials,UHMW-PE,polyethylene_pe,EQUIV,3
+processes,blown film,extrusion_film_blown,EQUIV,3
+materials,PETG,pet_petg,EQUIV,3
+processes,foam extrusion,foam_extrusion,SPELLING,3
+materials,epoxies,epoxy,EQUIV,3
+processes,hand layup,composites_hand_layup,EQUIV,3
+materials,unsaturated polyester resin,polyester_vinyl_ester_resins,EQUIV,3
+processes,sheet_extrusion,extrusion_sheet,EQUIV,3
+processes,hand_layup,composites_hand_layup,EQUIV,3
+materials,PC,polycarbonate_pc,EQUIV,3
+processes,vacuum infusion,composites_rtm_infusion,EQUIV,2
+processes,profile extrusion,extrusion_profile,EQUIV,2
+processes,blown_film_extrusion,extrusion_film_blown,EQUIV,2
+materials,urethanes,polyurethane_pu,EQUIV,2
+processes,cast film,extrusion_film_cast,EQUIV,2
+materials,EPS,polystyrene_ps_hips;foams_polymeric,EQUIV,2
+materials,TPV,thermoplastic_elastomers_tpe_tpu,EQUIV,2
+materials,melamine,melamine_urea_formaldehyde,EQUIV,2
+materials,PMMA,acrylic_pmma,EQUIV,2
+materials,vinyl ester,polyester_vinyl_ester_resins,EQUIV,2
+processes,plastic_fabrication,plastics_fabrication_welding,EQUIV,2
+processes,resin transfer molding,composites_rtm_infusion,EQUIV,2
+materials,carbon-fiber composites,composites_carbon,EQUIV,2
+materials,FKM,viton_fkm,EQUIV,2
+processes,rubber extrusion,rubber_extrusion,SPELLING,2
+materials,nitrile,nitrile_nbr,EQUIV,2
+processes,plastic welding,plastics_fabrication_welding,EQUIV,2
+materials,rigid PVC,pvc,EQUIV,2
+processes,resin infusion,composites_rtm_infusion,EQUIV,2
+materials,thermoplastic polyurethane,thermoplastic_elastomers_tpe_tpu,EQUIV,2
+processes,rubber mixing,rubber_mixing_compounding,EQUIV,2
+materials,styrene-butadiene rubber,sbr,EQUIV,2
+materials,RPET,pet_petg,EQUIV,1
+processes,vacuum_infusion,composites_rtm_infusion,EQUIV,1
+materials,adhesives/sealants,adhesives_sealants,SPELLING,1
+materials,rubber compound,elastomers_rubber,EQUIV,1
+materials,expanded_polystyrene,polystyrene_ps_hips;foams_polymeric,EQUIV,1
+materials,polyethylene_foam,polyethylene_pe;foams_polymeric,EQUIV,1
+materials,polyurethane_foam,polyurethane_pu;foams_polymeric,EQUIV,1
+processes,open_molding,composites_hand_layup,EQUIV,1
+processes,plastics fabrication,plastics_fabrication_welding,EQUIV,1
+materials,ASA,asa,SPELLING,1
+processes,CNC plastic machining,plastics_machining_cnc,EQUIV,1
+materials,specialty elastomers,specialty_elastomers,SPELLING,1
+materials,nitrile rubber,nitrile_nbr,EQUIV,1
+materials,nylon 6/6,nylon_pa,EQUIV,1
+materials,POM,acetal_pom,EQUIV,1
+materials,polyethylene foam,polyethylene_pe;foams_polymeric,EQUIV,1
+materials,Viton,viton_fkm,EQUIV,1
+materials,high-density polyethylene,polyethylene_pe,EQUIV,1
+materials,low-density polyethylene,polyethylene_pe,EQUIV,1
+processes,rubber calendering,rubber_calendering,SPELLING,1
+processes,blown_film,extrusion_film_blown,EQUIV,1
+materials,NR,natural_rubber_nr,EQUIV,1
+processes,coating formulation,coating_formulation,SPELLING,1
+materials,fluoroelastomer,viton_fkm,EQUIV,1
+processes,color masterbatch,color_masterbatch,SPELLING,1
+materials,expanded polystyrene,polystyrene_ps_hips;foams_polymeric,EQUIV,1
+materials,phenolics,phenolic,EQUIV,1
+processes,mold_building,mold_tool_making,EQUIV,1
+processes,pipe extrusion,extrusion_pipe_tube,EQUIV,1
+materials,polyvinyl chloride,pvc,EQUIV,1
+materials,fiberglass reinforced plastic (FRP),composites_frp,EQUIV,1
+processes,blown-film extrusion,extrusion_film_blown,EQUIV,1
+materials,polyethylene terephthalate,pet_petg,EQUIV,1
+markets_served,medical devices,medical_device,EQUIV,1
+markets_served,cosmetics,cosmetics_personal_care,EQUIV,1
