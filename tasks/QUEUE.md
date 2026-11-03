@@ -231,3 +231,6 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - List: `tasks/atlas-cleanup-2026-11-03/holds.csv`.
 - [ ] `open` **Integration writers must dedupe people against `people.csv` before allocating IDs.** Pass 45 created 14 same-institution duplicates.
 
+
+## NREL people after the rename (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **NREL -> National Laboratory of the Rockies (renamed 2025-12-01):** 18 people records cite dead nrel.gov pages. Re-verification packet (9 VERIFIED on research-hub.nlr.gov, raw-checked; 9 STILL_UNCERTAIN). **OWNER:** battery items B-NLR-1 (role vs NLR grade titles) and B-NLR-2 (tier U for the 9) in `tasks/nrel-repoint-2026-11-03/README.md`. No data edits until ruled.
