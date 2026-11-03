@@ -239,3 +239,13 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Equipment layer, first wave (SCHEMA v1.9 §4.19):** start with University of Akron, CWRU and other Ohio polymer instrument pages. Ohio Innovation Exchange equipment search results are leads only.
 - [ ] `open` **OWNER action:** approach ODHE / OH-TECH about a data or link agreement for Ohio Innovation Exchange profiles.
 
+## PIC-18 (owner ruling 2026-11-03)
+
+- [ ] `in-pr:claude-code 2026-11-03` **PIC-18 replaces PIC-12 for reporting (AGENTS.md §8):**
+  - The region is the NEO-SMART 18 counties, which equal JobsOhio Team NEO (14) plus Lake to River (4).
+  - `scripts/regions.py` is the single definition. The site, explorers and skyline are switched over.
+  - Dated reports that used PIC-12 are left as written.
+- [ ] `open` **Extend the CBP size-class denominator (`docs/denominators/cbp_size_classes_polymer.csv`) to the 6 added counties:** Ashland, Columbiana, Erie, Huron, Richland, Tuscarawas. Re-run `scripts/build_cbp_size_classes.py` with `regions.PIC18`. QCEW already covers every Ohio county.
+- [ ] `open` **Evidence Room (separate repo):** switch its PIC-12 cluster pages to PIC-18 to stay consistent.
+- [ ] `open` **Coverage gap for the 6 added counties:** they have fewer Atlas rows than the PIC-12 core. Run a site-discovery wave for them (TRI, OSHA and FRS spines first).
+

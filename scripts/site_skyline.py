@@ -9,7 +9,7 @@ Used by scripts/build_site.py; writes nothing itself. Stdlib only.
   (scripts/assets/us-atlas/). Alaska and Hawaii insets are not reproduced, and
   points there are skipped.
 * topology_lines() decodes the TopoJSON arcs into simplified polylines (state
-  borders, the PIC-12 county outlines).
+  borders, the PIC-18 county outlines).
 * hexbins() aggregates site points into pointy-top hexagons with counts, a dominant
   ring and the top cities, for the 3D columns.
 Coordinates are reference data (AGENTS.md section 1): they place columns, never evidence.
@@ -206,7 +206,7 @@ SKYLINE_JS = r"""(function () {
     scene.add(new T.HemisphereLight(0xd6f3f2, 0x05262c, 0.95));
     var sun = new T.DirectionalLight(0xffffff, 0.9); sun.position.set(-300, 600, 400); scene.add(sun);
 
-    // state borders + PIC-12 outline
+    // state borders + PIC-18 outline
     function lines(list, color, opacity, y) {
       var pos = [];
       list.forEach(function (a) { for (var i = 0; i + 3 < a.length; i += 2) pos.push(a[i] - W2, y, a[i + 1] - H2, a[i + 2] - W2, y, a[i + 3] - H2); });
@@ -281,7 +281,7 @@ SKYLINE_JS = r"""(function () {
       var hit = ray.intersectObject(mesh)[0];
       if (!hit) { tip.hidden = true; return; }
       var h = D.hex[hit.instanceId];
-      tip.innerHTML = '<b>' + h[2].toLocaleString() + ' site' + (h[2] === 1 ? '' : 's') + '</b><span>' + (h[5] || '') + '</span><small>' + RING[h[3]] + ' most common' + (h[4] ? ' · PIC-12' : '') + '</small>';
+      tip.innerHTML = '<b>' + h[2].toLocaleString() + ' site' + (h[2] === 1 ? '' : 's') + '</b><span>' + (h[5] || '') + '</span><small>' + RING[h[3]] + ' most common' + (h[4] ? ' · PIC-18' : '') + '</small>';
       tip.hidden = false;
       tip.style.left = Math.min(e.clientX - r.left + 14, r.width - 230) + 'px'; tip.style.top = (e.clientY - r.top + 14) + 'px';
     }

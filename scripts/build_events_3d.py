@@ -8,7 +8,7 @@ Event series (events.csv) are large nodes; organizations that exhibit, sponsor o
 speak at them (event_participation.csv) orbit them, coloured by ring. Organizations
 that attend several shows bridge the clusters. "Present" mode auto-tours the shows,
 largest first, flying the camera to each one with a caption (organizer, home city,
-participants, Ohio and PIC-12 participants) and particles running along its links;
+participants, Ohio and PIC-18 participants) and particles running along its links;
 it is meant for a big screen at an event or a board meeting.
 
 Rendering: 3d-force-graph (three.js, d3-force-3d). Only public fields are written
@@ -134,7 +134,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   <button class="btn primary" id="play" type="button">Present</button>
   <button class="btn" id="prev" type="button" aria-label="Previous show">‹</button>
   <button class="btn" id="next" type="button" aria-label="Next show">›</button>
-  <button class="btn" id="p12" type="button" aria-pressed="false">PIC-12 spotlight</button>
+  <button class="btn" id="p12" type="button" aria-pressed="false">PIC-18 spotlight</button>
   <button class="btn" id="reset" type="button">Overview</button>
   <div class="legend" id="legend"></div>
 </nav>
@@ -238,7 +238,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
       <div class="nums">
         <div><b>${ps.length}</b><small>organizations taking part</small></div>
         <div><b>${oh}</b><small>with an Ohio footprint</small></div>
-        <div><b>${p12.length}</b><small>in the PIC-12 counties</small></div>
+        <div><b>${p12.length}</b><small>in the PIC-18 counties</small></div>
       </div>
       <div class="sub">${Object.entries(roles).map(([r, n]) => `${n} ${esc(r)}${n === 1 ? "" : "s"}`).join(" · ")} · ${shared} also attend other series</div>
       ${p12.length ? `<div class="chips">${p12.slice(0, 8).map((p) => `<span class="chip">${esc(p.l)}</span>`).join("")}${p12.length > 8 ? `<span class="chip">+${p12.length - 8} more</span>` : ""}</div>` : ""}
@@ -255,7 +255,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     const ring = n.k === "eco" ? "Ecosystem organization" : (n.r ? "Ring " + n.r : "Ring not recorded");
     const cap = $("caption");
     cap.innerHTML = `
-      <div class="step">${esc(ring)}${n.p ? " · PIC-12 county" : n.oh ? " · Ohio footprint" : ""}</div>
+      <div class="step">${esc(ring)}${n.p ? " · PIC-18 county" : n.oh ? " · Ohio footprint" : ""}</div>
       <h2>${esc(n.l)}</h2>
       ${place ? `<div class="sub">${esc(place)}</div>` : ""}
       <div class="sub">Takes part in ${ls.length} event series:</div>

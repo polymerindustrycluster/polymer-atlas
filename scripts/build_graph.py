@@ -25,6 +25,7 @@ description_1line, and the public PIC membership flag. People records, notes,
 sources, pic_relevance and every internal column are never written.
 Stdlib only.
 """
+import sys
 import argparse
 import csv
 import glob
@@ -36,8 +37,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-PIC12 = {"Ashtabula", "Cuyahoga", "Geauga", "Lake", "Lorain", "Mahoning", "Medina",
-         "Portage", "Stark", "Summit", "Trumbull", "Wayne"}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from regions import PIC18, REGION_LABEL  # noqa: E402  (AGENTS.md section 8; owner ruling 2026-11-03)
+PIC12 = set(PIC18)  # the reporting region; the name is kept because the explorers' "p" flag and tests use it
 TOMBSTONE = {"merged", "acquired", "closed"}
 FREE_MIN = 3   # a free-text tag must be shared by this many organizations to appear
 TAG_FIELDS = (("processes", "proc"), ("materials", "mat"), ("markets_served", "mkt"))
@@ -286,7 +288,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   <fieldset>
     <legend>Scope</legend>
     <div class="seg" role="radiogroup">
-      <input type="radio" name="scope" id="sc-p12" value="p12"><label for="sc-p12">PIC-12</label>
+      <input type="radio" name="scope" id="sc-p12" value="p12"><label for="sc-p12">PIC-18</label>
       <input type="radio" name="scope" id="sc-oh" value="oh" checked><label for="sc-oh">Ohio</label>
       <input type="radio" name="scope" id="sc-all" value="all"><label for="sc-all">All</label>
     </div>
@@ -427,7 +429,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   function stats() {
     let orgs = 0, eco = 0, tags = 0;
     G.forEachNode((k, a) => { const n = NODES[a.idx]; if (n.k === "org") orgs++; else if (n.k === "eco") eco++; else tags++; });
-    const scope = { p12: "PIC-12 footprint", oh: "Ohio footprint", all: "all records" }[state.scope];
+    const scope = { p12: "PIC-18 footprint", oh: "Ohio footprint", all: "all records" }[state.scope];
     $("stat").innerHTML = `<b>${orgs.toLocaleString()}</b> organizations · <b>${eco.toLocaleString()}</b> institutions &amp; groups · <b>${tags.toLocaleString()}</b> tags · <b>${G.size.toLocaleString()}</b> links <br>${scope}`;
   }
 

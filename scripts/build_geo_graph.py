@@ -5,7 +5,7 @@
     python3 scripts/build_geo_graph.py --fragment OUT   # body-only page (for hosts that add their own skeleton)
 
 Geography mode: every site with coordinates sits at its address on an Albers USA
-map (state outlines, PIC-12 counties highlighted), with optional "company network"
+map (state outlines, PIC-18 counties highlighted), with optional "company network"
 arcs linking each site to its parent's other sites. Network mode: the same dots fly
 into a force-directed layout around the capability tags their organization carries
 (see scripts/build_graph.py for the tag model), so the industry's structure and its
@@ -188,14 +188,14 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
     <div class="btns">
       <button class="btn" type="button" id="z-us">United States</button>
       <button class="btn" type="button" id="z-oh">Ohio</button>
-      <button class="btn" type="button" id="z-p12">PIC-12</button>
+      <button class="btn" type="button" id="z-p12">PIC-18</button>
     </div>
   </fieldset>
   <fieldset>
     <legend>Show</legend>
     <div class="toggles" id="rings"></div>
     <label class="opt"><input type="checkbox" id="arcs" checked>Company networks (sites of one parent)</label>
-    <label class="opt"><input type="checkbox" id="p12only">Only PIC-12 sites</label>
+    <label class="opt"><input type="checkbox" id="p12only">Only PIC-18 sites</label>
   </fieldset>
   <p class="hint" id="modeHint"></p>
   __HOME__<p class="foot" id="foot"></p>
@@ -212,7 +212,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
 (() => {
   const D = JSON.parse(document.getElementById("atlas-data").textContent);
   const US = JSON.parse(document.getElementById("geo-data").textContent);
-  const PIC12 = new Set(["Ashtabula","Cuyahoga","Geauga","Lake","Lorain","Mahoning","Medina","Portage","Stark","Summit","Trumbull","Wayne"]);
+  const PIC12 = new Set(__REGION__);  // PIC-18 (AGENTS.md section 8), injected from scripts/regions.py
   const RING = { "1": "Ring 1 · producers & processors", "2": "Ring 2 · materials & compounding", "3": "Ring 3 · value chain", "4": "Ring 4 · OEMs & heavy users", "5": "Ring 5 · ecosystem", "": "Ring not set" };
   const $ = (id) => document.getElementById(id);
   const cv = $("cv"), ctx = cv.getContext("2d");
@@ -490,7 +490,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
 
   function stats() {
     let n = 0, p = 0; for (let i = 0; i < S.length; i++) if (visible(i)) { n++; if (S[i].p) p++; }
-    $("stat").innerHTML = `<b>${n.toLocaleString()}</b> sites shown · <b>${p.toLocaleString()}</b> in PIC-12<br>${placed.toLocaleString()} of ${D.held_sites.toLocaleString()} non-closed sites have coordinates`;
+    $("stat").innerHTML = `<b>${n.toLocaleString()}</b> sites shown · <b>${p.toLocaleString()}</b> in PIC-18<br>${placed.toLocaleString()} of ${D.held_sites.toLocaleString()} non-closed sites have coordinates`;
   }
   const retheme = () => { readTheme(); draw(); };
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
@@ -515,7 +515,7 @@ def page(data, fragment, home=""):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     geo = GEO.read_text(encoding="utf-8").replace("</", "<\\/")
     body = (PAGE.replace("__D3__", D3).replace("__TOPOJSON__", TOPOJSON).replace("__GRAPHOLOGY__", bg.GRAPHOLOGY)
-            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob).replace("__HOME__", bg.home_link(home)).replace("__ORGBASE__", bg.org_base(home)))
+            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob).replace("__HOME__", bg.home_link(home)).replace("__ORGBASE__", bg.org_base(home)).replace("__REGION__", json.dumps(sorted(bg.PIC12))))
     if fragment:
         return body
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
