@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -1057,7 +1057,7 @@ an org may hold several LEIs and they are never collapsed to one.
 | Field | Type | Notes |
 |---|---|---|
 | `org_id` | FK → organizations ∪ ecosystem | **MUST** |
-| `registry` | enum | `LEI` \| `OHIO_SOS_CHARTER` \| `WIKIDATA` \| `SEC_CIK` \| `SEC_CIK_PARENT_FILER` \| `FRS` \| `TRI_TRIFID` \| `FDA_FEI` \| `EIN_NONPROFIT` \| `UEI` **[v1.4]** (extensible only by dated revision) |
+| `registry` | enum | `LEI` \| `OHIO_SOS_CHARTER` \| `WIKIDATA` \| `SEC_CIK` \| `SEC_CIK_PARENT_FILER` \| `FRS` \| `TRI_TRIFID` \| `FDA_FEI` \| `EIN_NONPROFIT` \| `UEI` **[v1.4]** \| `EIN` **[v1.7.7]** \| `IPEDS_UNITID` **[v1.8.1]** (extensible only by dated revision). `IPEDS_UNITID` is the identity join key for institutions whose record lives in the organizations table (where §4.6's `ipeds_unitid` column does not reach); like V-14's column it asserts identity only, never program existence. |
 | `registry_id` | string | Verbatim as the registry carries it (charter numbers verbatim incl. leading zeros; CIKs zero-padded to 10) |
 | `match_basis` | string | How the match was established, e.g. `gleif_exact_confident`, `wikidata_confident_match`, `edgar_ex21_subsidiary_of_filer:<filer name>` — a guarded no-hit is never recorded as a negative fact |
 | `as_of` | date | The date the registry record was retrieved/verified |
@@ -2755,3 +2755,12 @@ unchanged.
   year" sketch was not taken: the record-shard key keeps each pass's
   evidence writes inside the shard files that pass already touches and
   caps the largest file at ~1.4 MB.
+
+- **v1.8.1 — 2026-11-02 (owner ruling 2026-11-02; applied in integration
+  pass 44).** `IPEDS_UNITID` joins the §4.8 registry enum (6-digit shape
+  enforced). Purpose: organizations-table institutions (a university
+  whose record is an organization with sites, e.g. Delaware, Princeton,
+  RIT, Houston) previously had no UNITID home — §4.6's column reaches
+  only ecosystem `university_college` rows, and duplicating the org
+  into ecosystem breaks the one-table-per-org invariant (pass 41's
+  attempt, reverted in pass 43). Four links minted at application.

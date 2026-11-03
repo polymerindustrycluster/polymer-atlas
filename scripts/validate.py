@@ -78,7 +78,7 @@ CERTS = {"iso_9001", "iso_14001", "iatf_16949", "iso_13485", "as9100", "fda_regi
 GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "city_centroid"}
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
               "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI",
-              "EIN"}  # EIN (employer) added at v1.7.7, owner ruling 2026-11-01 R11
+              "EIN", "IPEDS_UNITID"}  # EIN at v1.7.7 (R11); IPEDS_UNITID at v1.8.1, owner ruling 2026-11-02
 CREDENTIALS = {"phd", "ms", "bs", "aas_associate", "certificate", "registered_apprenticeship",
                "incumbent_worker_training", "noncredit_workforce", "minor"}  # minor added at v1.7.3 (owner ruling R3)
 ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
@@ -593,6 +593,8 @@ for i, r in enumerate(links, 2):
         errors.append(f"registry_links.csv:{i} CIK {rid!r} is not zero-padded 10 digits")
     if reg == "EIN" and not re.fullmatch(r"\d{2}-?\d{7}", rid):
         errors.append(f"registry_links.csv:{i} EIN {rid!r} is not 9 digits (NN-NNNNNNN)")
+    if reg == "IPEDS_UNITID" and not re.fullmatch(r"\d{6}", rid):
+        errors.append(f"registry_links.csv:{i} IPEDS_UNITID {rid!r} is not a 6-digit UNITID")
     if reg == "WIKIDATA" and not re.fullmatch(r"Q\d+", rid):
         errors.append(f"registry_links.csv:{i} Wikidata id {rid!r} is not a QID")
     if not (r.get("match_basis") or "").strip():
