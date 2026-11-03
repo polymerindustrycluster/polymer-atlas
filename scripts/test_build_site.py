@@ -153,7 +153,7 @@ class BuildSiteTest(unittest.TestCase):
 
     def test_pages_exist(self):
         for rel in ["index.html", "map.html", "search.html", "sites.json", "orgs.json", "style.css",
-                    "map.js", "search.js", "counties/index.html"]:
+                    "map.js", "search.js", "counties/index.html", "experts.html", "experts.js", "experts.json"]:
             self.assertTrue((self.out / rel).is_file(), rel)
         for c in build_site.PIC12:
             self.assertTrue((self.out / "counties" / f"{c.lower()}.html").is_file(), c)
@@ -242,6 +242,34 @@ class BuildSiteTest(unittest.TestCase):
             if p.name != "ORG-000501.html":
                 self.assertNotIn("Ada Researcher", p.read_text(encoding="utf-8"), p.name)
         self.assertFalse(any("PERSON" in p.name for p in self.out.rglob("*")))
+
+    def test_experts_finder_carries_public_professional_fields_only(self):
+        import json
+        d = json.loads(self.read("experts.json"))
+        self.assertEqual(set(d), {"insts", "people", "programs"})
+        by_name = {p[0]: p for p in d["people"]}
+        self.assertEqual(set(by_name), {"Ada Researcher", "Bo Embedded"})
+        for p in d["people"]:
+            self.assertEqual(len(p), 5)            # name, role, specialties, institution id, profile URL
+            self.assertNotIn("@", p[4])            # a URL embedding an email is dropped
+            self.assertIn(p[3], d["insts"])
+        self.assertIn("rheology", by_name["Ada Researcher"][2])
+        self.assertEqual(by_name["Bo Embedded"][4], "")
+        for oid, row in d["insts"].items():
+            self.assertEqual(len(row), 4)
+            self.assertIn(row[3], {"edu", "lab", "other"})
+        html = self.read("experts.html")
+        self.assertIn("researcher records", html)  # unit named (AGENTS.md section 7)
+        self.assertNotIn("Ada Researcher", html)   # names reach the page only through the finder data
+
+    def test_specialty_display_labels(self):
+        n = build_site.norm_specialty
+        self.assertEqual(n("polyethylene_pe"), "polyethylene (PE)")
+        self.assertEqual(n("injection_molding"), "injection molding")
+        self.assertEqual(n("Polymer physics."), "polymer physics")
+        self.assertEqual(n("BioMEMS"), "BioMEMS")
+        self.assertEqual(n("other_specified_in_notes"), "")
+        self.assertEqual(build_site.specs_of(["rheology", "Rheology", "polymer_physics"]), ["polymer physics", "rheology"])
 
     def test_crm_and_staging_references_withheld(self):
         for p in self.out.rglob("*.html"):
