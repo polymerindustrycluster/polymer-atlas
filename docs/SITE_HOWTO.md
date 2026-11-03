@@ -23,7 +23,7 @@ Options: `--db PATH`, `--out DIR`, `--qcew CSV`, `--repo-url URL`. A full build 
 | `index.html` | What the Atlas is, headline counts (each with its unit and filter), ring and tier legends, license, "as of" commit and date |
 | `map.html`, `sites.json`, `map.js` | Leaflet 1.9.4 map (version pinned, with SRI hashes) of site rows that have coordinates; filters for ring, tier and state, plus an opt-in for non-active sites |
 | `search.html`, `orgs.json`, `search.js` | Client-side search over organization and ecosystem rows (name, trade names, city, state, ring) |
-| `counties/index.html`, `counties/<county>.html` | Ohio county index and the 12 PIC-12 one-pagers: site rows by ring and by 3-digit NAICS with a tier breakdown, site table, programs, ecosystem organizations, and the BLS QCEW 2023 private NAICS 326 count benchmark |
+| `counties/index.html`, `counties/<county>.html` | Ohio county index and one-pagers for every Ohio county with Atlas rows, PIC-18 first (AGENTS.md §8): site rows by ring and by 3-digit NAICS with a tier breakdown, site table, programs, ecosystem organizations, and the BLS QCEW 2023 private NAICS 326 count benchmark |
 | `orgs/<record id>.html` | One page per organization and ecosystem organization: fields, sites, sources, tier, last verified; tombstones are marked, with a successor link |
 | `style.css` | The one shared stylesheet (light/dark via `prefers-color-scheme`, mobile friendly) |
 
@@ -87,7 +87,7 @@ the footer shows the commit the site was built from and flags uncommitted local 
 
 ## Known limitations
 
-- The map's dots are not keyboard-navigable; every site is also reachable from its county page (PIC-12) or its
+- The map's dots are not keyboard-navigable; every site is also reachable from its county page (PIC-18) or its
   organization page.
 - A site row with no recorded ring shows its parent organization's ring, marked with an asterisk.
 - County pages count site rows with operating status `active` in all tiers (tier U included, broken out by tier);

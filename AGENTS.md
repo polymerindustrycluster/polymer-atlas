@@ -280,13 +280,18 @@ protocol violation.
 
 ## 8. Geography (frozen definitions)
 
-- **PIC-12** (Evidence Room / cluster reporting): Ashtabula, Cuyahoga,
-  Geauga, Lake, Lorain, Mahoning, Medina, Portage, Stark, Summit,
-  Trumbull, Wayne.
-- A wider 19-county GAC footprint has been proposed in schema drafts.
-  Until the repo owner rules, tag records with the **county** and let
-  reports apply either definition — do not hard-code a region into a
-  record.
+- **PIC-18** is the cluster reporting region (Evidence Room / cluster reporting), by **owner ruling 2026-11-03**. It is the
+  NEO-SMART 18-county Northeast Ohio region, the union of the two JobsOhio network regions that cover it:
+  - **Team NEO (14):** Ashland, Cuyahoga, Erie, Geauga, Huron, Lake, Lorain, Medina, Portage, Richland, Stark, Summit,
+    Tuscarawas, Wayne;
+  - **Lake to River (4):** Ashtabula, Columbiana, Mahoning, Trumbull.
+
+  Sources: jobsohio.com/ohio-regional-network and the NEO-SMART map, both read 2026-11-03. The machine-readable form is
+  `scripts/regions.py`, and every script reads its region from there.
+- **PIC-12** (Ashtabula, Cuyahoga, Geauga, Lake, Lorain, Mahoning, Medina, Portage, Stark, Summit, Trumbull, Wayne) is the
+  earlier definition. Reports dated before 2026-11-03 used it and stay as written; it is not used for new reporting.
+- The 19-county GAC footprint once proposed in schema drafts is superseded by PIC-18.
+- **Unchanged:** tag records with the **county**, never a region. Reports apply the region; a region change touches no data row.
 
 *Revision note — 2026-10-30 (swim-lanes amendment): the Start-here
 block is added (amendment item 11); §1 gains the derived-fields
@@ -313,3 +318,8 @@ changed by this revision.*
 and §5.1 extends the CRM bar to every fact in every public row
 (validator V-50). The owner ruled the battery "all as recommended".
 No data file is changed by this revision.*
+
+*Revision note — 2026-11-03 (owner ruling, PIC-18): §8 replaces PIC-12 with PIC-18 for cluster reporting. PIC-18 is the
+NEO-SMART 18-county region, which equals the JobsOhio Team NEO (14) and Lake to River (4) regions together. PIC-12 is kept
+as the historical definition for earlier reports, and the 19-county GAC proposal is superseded. No data file is changed by
+this revision.*

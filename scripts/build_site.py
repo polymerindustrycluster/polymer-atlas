@@ -7,7 +7,7 @@ is missing) and writes a self-contained static site to build/site/:
     index.html            what the Atlas is, headline counts (unit + filter)
     map.html + sites.json Leaflet map of sites that carry coordinates
     search.html + orgs.json  client-side search over organizations/ecosystem
-    counties/index.html, counties/<county>.html   PIC-12 Ohio county pages
+    counties/index.html, counties/<county>.html   Ohio county pages (PIC-18 first)
     orgs/<org_id>.html    one page per organization and ecosystem org
     style.css, map.js, search.js
 
@@ -48,8 +48,9 @@ LEAFLET = "https://unpkg.com/leaflet@1.9.4/dist/"
 LEAFLET_CSS_SRI = "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
 LEAFLET_JS_SRI = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
 
-PIC12 = ["Ashtabula", "Cuyahoga", "Geauga", "Lake", "Lorain", "Mahoning",
-         "Medina", "Portage", "Stark", "Summit", "Trumbull", "Wayne"]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from regions import PIC18, JOBSOHIO_REGION, REGION_LABEL  # noqa: E402  (AGENTS.md section 8)
+PIC12 = PIC18  # the reporting region: PIC-18 since the owner ruling of 2026-11-03 (name kept for callers)
 
 RINGS = {
     "1": "Core Producers & Processors",
@@ -906,13 +907,13 @@ details.more[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px
 @media (prefers-reduced-motion:reduce){.xcard,a,.btn{transition:none}}
 
 /* ---- sortable tables (sortable.js; progressive enhancement) ---- */
-th[aria-sort] button.sort{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit}
+th[aria-sort] button.sort{all:unset;cursor:pointer;display:inline;white-space:normal;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-align:inherit}
 th[aria-sort] button.sort:hover{color:var(--accent-hover)}
 th[aria-sort] button.sort:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-th[aria-sort] button.sort::after{content:"";width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.3}
+th[aria-sort] button.sort::after{content:"";display:inline-block;vertical-align:middle;margin:0 0 0 5px;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.3}
 th[aria-sort=ascending] button.sort::after{border-top:0;border-bottom:5px solid currentColor;opacity:.9}
 th[aria-sort=descending] button.sort::after{opacity:.9}
-th.num button.sort{flex-direction:row-reverse}
+
 .tfilter{display:flex;gap:8px;align-items:center;margin:.8em 0 -.4em;font-size:.9rem;color:var(--muted)}
 .tfilter input{padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%;min-height:40px}
 
@@ -1205,7 +1206,7 @@ def build_index(ctx):
     cards = "".join([
         card(len(active_ab(sites)), "Site rows", "All locations held (US states, territories and a few non-US rows); operating status active; verification tiers A-C"),
         card(len(active_ab(oh)), "Ohio site rows", "State = OH; operating status active; verification tiers A-C"),
-        card(len(active_ab(pic)), "PIC-12 county site rows", "Ohio county in the 12 PIC counties; operating status active; tiers A-C"),
+        card(len(active_ab(pic)), "PIC-18 county site rows", "Ohio county in the 18 PIC counties (NEO-SMART region); operating status active; tiers A-C"),
         card(len(n_org_active), "Organization rows (parents)", "Status active; verification tiers A-C; all states"),
         card(len(parents_oh), "Parent organization rows with an Ohio footprint", "Organization status active, tiers A-C, and at least one active Ohio site row in tiers A-C"),
         card(len(eco_active), "Ecosystem organization rows", "Ring 5 (schools, associations, economic development, labs); status active; tiers A-C"),
@@ -1248,7 +1249,7 @@ def build_index(ctx):
               "Which companies exhibit where, as a 3D network with a presentation mode for the big screen."),
         xcard("experts.html", "experts", "Programs & researchers",
               "Find who teaches and researches polymers: search faculty, lab scientists and programs by specialty."),
-        xcard("counties/index.html", "counties", "PIC-12 county pages",
+        xcard("counties/index.html", "counties", "PIC-18 county pages",
               "One page per Northeast Ohio county: establishments by ring, programs, and the official benchmark."),
     ])
     body = f"""
@@ -1265,7 +1266,7 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 <div class="hero-stats">
 <div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>across all states</small></div>
 <div><b>{fmt_int(len(active_ab(oh)))}</b><small>in Ohio</small></div>
-<div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 12 PIC counties</small></div>
+<div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
 <div class="cta"><a class="btn primary" href="graph/map.html">Explore the map</a>
 <a class="btn" href="graph/index.html">Industry graph</a><a class="btn" href="search.html">Search</a></div>
@@ -1278,7 +1279,7 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 </section>
 <div class="sr-only"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
 <p class="small muted">The 3D map shows {fmt_int(sky["n"])} active, tier A-C site rows with reference coordinates in the lower 48
-states, binned into hexagons; column height follows the count. Lime outlines mark the PIC-12 counties.
+states, binned into hexagons; column height follows the count. Lime outlines mark the PIC-18 counties.
 Positions are interpolated from addresses and are never evidence.</p>
 
 <h2 id="explore">Explore</h2>
@@ -1369,7 +1370,7 @@ organization because the site row has no ring of its own.</div>
 <div id="map" role="application" aria-label="Map of polymer industry sites"></div>
 <noscript><p>The map needs JavaScript. County pages and search are available without the map.</p></noscript>
 <p class="small muted">The map is not keyboard-navigable; every site on it is also listed on its
-<a href="counties/index.html">county page</a> (PIC-12) or its organization page, reachable via
+<a href="counties/index.html">county page</a> (PIC-18) or its organization page, reachable via
 <a href="search.html">search</a>. Map tiles &copy; OpenStreetMap contributors.</p>
 """
     head = (f'<link rel="stylesheet" href="{LEAFLET}leaflet.css" integrity="{LEAFLET_CSS_SRI}" crossorigin="">')
@@ -1921,7 +1922,7 @@ that figure; it is not zero.</p>"""
 <p class="small"><a href="index.html">Ohio counties</a> &rsaquo; {esc(county)}</p>
 <h1>{esc(county)} County, Ohio</h1>
 <p class="lede">One-page summary of the polymer industry records the Atlas holds for {esc(county)} County,
-{"a PIC-12 county" if county in PIC12 else "outside the PIC-12 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
+{("a PIC-18 county (" + JOBSOHIO_REGION[county] + " region)") if county in PIC12 else "outside the PIC-18 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
 <div class="cards">
 <div class="card"><div class="big">{fmt_int(len(active))}</div><div class="unit">Site rows</div><div class="filter">{esc(county)} County, Ohio; operating status active; all verification tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(org_ids))}</div><div class="unit">Organization rows with an active site row here</div><div class="filter">distinct parent organizations of those site rows; all tiers</div></div>
@@ -1950,7 +1951,7 @@ Tier U rows are candidates; they are included here because this page shows all t
 
 
 def ohio_counties(a):
-    """PIC-12 plus every Ohio county where the Atlas holds a site or ecosystem row: each gets a one-pager."""
+    """PIC-18 plus every Ohio county where the Atlas holds a site or ecosystem row: each gets a one-pager."""
     names = set(PIC12)
     names |= {s["county"] for s in a.sites if s.get("state") == "OH" and nonempty(s.get("county"))}
     names |= {e["county"] for e in a.eco.values() if e.get("state") == "OH" and nonempty(e.get("county"))}
@@ -1978,7 +1979,7 @@ def build_counties_index(ctx):
         label = f'<a href="{esc(slug(c))}.html">{esc(c)}</a>'
         q = ctx.qcew.get(c)
         qn = fmt_int(int(float(q["annual_avg_estabs"]))) if q and nonempty(q.get("annual_avg_estabs")) else "n/a"
-        return (f'<tr><th scope="row">{label}</th><td>{"PIC-12" if c in PIC12 else ""}</td>'
+        return (f'<tr><th scope="row">{label}</th><td>{("PIC-18 · " + JOBSOHIO_REGION[c]) if c in PIC12 else ""}</td>'
                 f'<td class="num">{fmt_int(n_act)}</td><td class="num">{fmt_int(len(sites))}</td>'
                 f'<td class="num">{fmt_int(eco_n.get(c, 0))}</td><td class="num">{fmt_int(prog_n.get(c, 0))}</td>'
                 f'<td class="num">{qn}</td></tr>')
@@ -1992,14 +1993,15 @@ def build_counties_index(ctx):
             "<th scope=\"col\" class=\"num\">QCEW 2023 private NAICS 326 establishments (benchmark)</th></tr></thead>")
     body = f"""
 <h1>Ohio counties</h1>
-<p class="lede">County one-pagers for the 12 PIC-12 counties (Ashtabula, Cuyahoga, Geauga, Lake, Lorain,
-Mahoning, Medina, Portage, Stark, Summit, Trumbull, Wayne), and the same one-pager for every other Ohio county
-where the Atlas holds at least one row.</p>
+<p class="lede">County one-pagers for the 18 PIC-18 counties, the NEO-SMART region: the 14 counties of JobsOhio's
+Team NEO region (Ashland, Cuyahoga, Erie, Geauga, Huron, Lake, Lorain, Medina, Portage, Richland, Stark, Summit,
+Tuscarawas, Wayne) and the 4 of its Lake to River region (Ashtabula, Columbiana, Mahoning, Trumbull). The same
+one-pager exists for every other Ohio county where the Atlas holds at least one row.</p>
 <p>All counts are Atlas database rows by the unit named in the column heading. The QCEW column is a
 count benchmark from BLS, not matched coverage; "n/a" means the bundled benchmark file has no row for that
 county, which is not a zero. County is taken from each site's physical address.</p>
-<h2>PIC-12 counties</h2>
-{table_wrap(f"<table><caption>PIC-12 counties</caption>{head}<tbody>{pic_rows}</tbody></table>", "PIC-12 counties")}
+<h2>PIC-18 counties</h2>
+{table_wrap(f"<table><caption>PIC-18 counties (NEO-SMART region: JobsOhio Team NEO and Lake to River)</caption>{head}<tbody>{pic_rows}</tbody></table>", "PIC-18 counties")}
 <h2>Other Ohio counties</h2>
 {table_wrap(f"<table><caption>Other Ohio counties with at least one Atlas row</caption>{head}<tbody>{other_rows}</tbody></table>", "Other Ohio counties")}
 """

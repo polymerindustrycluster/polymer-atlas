@@ -42,7 +42,7 @@ MAX_LIMIT = 500
 COUNTING_REMINDER = (
     "AGENTS.md §7 (counting honesty): any count you state must name its unit "
     "and filter, e.g. 'Ohio establishments (sites) with operating_status=active', "
-    "'Parents with an Ohio footprint', 'Ring 1-2 establishments in PIC-12'. "
+    "'Parents with an Ohio footprint', 'Ring 1-2 establishments in PIC-18'. "
     "A bare '900 companies' is a protocol violation. Organizations, sites, "
     "ecosystem entities, programs and people are different units."
 )
