@@ -1,0 +1,52 @@
+record,school_key,name,lane,reason
+person,stanford,Zhenan Bao,L1,possible duplicate of PERSON-000954
+person,stanford,Andrew Spakowitz,L1,possible duplicate of PERSON-000904
+person,stanford,Jian Qin,L1,possible duplicate of PERSON-000851
+person,stanford,Robert Waymouth,L1,possible duplicate of PERSON-000852
+person,ucberkeley,Nitash P. Balsara,L1,possible duplicate of PERSON-001115
+person,ucla,Qibing Pei,L1,possible duplicate of PERSON-001009
+person,ucla,Timothy J. Deming,L1,possible duplicate of PERSON-000854
+person,ucla,Benjamin J. Schwartz,L1,possible duplicate of PERSON-000978
+person,ucsd,Nathan Romero,L2,possible duplicate of PERSON-001124
+person,ucsd,Shengqiang Cai,L2,possible duplicate of PERSON-000878
+person,ucsd,Jonathan Pokorski,L2,possible duplicate of PERSON-000872
+person,usc,Malancha Gupta,L2,possible duplicate of PERSON-000924
+person,usc,Barry C. Thompson,L2,possible duplicate of PERSON-000860
+person,usc,Megan E. Fieser,L2,possible duplicate of PERSON-000896
+person,usc,Travis J. Williams,L2,possible duplicate of PERSON-001020
+person,usc,Steven R. Nutt,L2,"integrator review: Gate B quote is the Gill Composites Center's page, not person-level; his own profile says only 'composites'"
+person,utah,Chen Wang,L2,possible duplicate of PERSON-001147
+person,utah,Jules J. Magda,L2,integrator review: Gate B quote is the department strengths page; needs his own profile or lab page
+person,utah,Jacob J. Lessard,L2,possible duplicate of PERSON-000987
+person,utah,Mingnan Chen,L2,"integrator review: Gate B quote is a department research-area listing, not person-level"
+person,uw,Samson A. Jenekhe,L3,possible duplicate of PERSON-000848
+person,uw,Cole A. DeForest,L3,possible duplicate of PERSON-000972
+person,uw,Eleftheria Roumeli,L3,possible duplicate of PERSON-000923
+person,rice,Rafael Verduzco,L3,possible duplicate of PERSON-000968
+person,rice,Amanda B. Marciel,L3,possible duplicate of PERSON-001195
+person,rice,Jeffrey D. Hartgerink,L3,"integrator review: Gate B quote ('peptide nanofibers, and hydrogels') names no polymer object"
+person,rice,Karen Lozano,L3,possible duplicate of PERSON-001071
+person,utk,Mark D. Dadmun,L3,possible duplicate of PERSON-000962
+person,utk,Michael Kilbey,L3,possible duplicate of PERSON-000998
+person,utk,Brian K. Long,L3,possible duplicate of PERSON-000991
+person,utk,Bin Zhao,L3,possible duplicate of PERSON-000965
+person,utk,Johnathan N. Brantley,L3,possible duplicate of PERSON-001171
+person,utk,Manolis Doxastakis,L3,possible duplicate of PERSON-001051
+person,utk,Gila E. Stein,L3,possible duplicate of PERSON-000981
+person,utk,Alexei P. Sokolov,L3,possible duplicate of PERSON-000478
+person,utk,Rigoberto Advincula,L3,possible duplicate of PERSON-000477
+person,duke,Matthew L. Becker,L4,possible duplicate of PERSON-000841
+person,duke,Stephen L. Craig,L4,possible duplicate of PERSON-000843
+person,duke,L. Catherine Brinson,L4,possible duplicate of PERSON-000891
+person,umd,Peter Kofinas,L4,possible duplicate of PERSON-001054
+person,umd,Lawrence R. Sita,L4,possible duplicate of PERSON-000877
+person,nyu,LaShanda Korley,L5,possible duplicate of PERSON-000719
+person,nyu,Jin Kim Montclare,L5,possible duplicate of PERSON-001163
+person,yale,Mingjiang Zhong,L5,possible duplicate of PERSON-000879
+person,uconn,Douglas Adamson,L6,possible duplicate of PERSON-000906
+person,uconn,Alexandru Asandei,L6,possible duplicate of PERSON-001135
+person,uconn,Kelly Burke,L6,possible duplicate of PERSON-001107
+person,uconn,Rajeswari Kasi,L6,possible duplicate of PERSON-001079
+person,uconn,Yao Lin,L6,possible duplicate of PERSON-001036
+person,uconn,Luyi Sun,L6,possible duplicate of PERSON-000863
+person,uconn,Elena Dormidontova,L6,possible duplicate of PERSON-000898

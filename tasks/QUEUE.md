@@ -200,3 +200,18 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 
 - [ ] `open` **OWNER ruling — campaign mode after CI (AGENTS.md §2 rule 2):** rule 2 says it "is revisited by dated revision" once a workflow lands on the remote. That happened on 2026-11-02: `validate` runs on every PR and push. **Recommendation:** retire direct pushes to `main` for every harness, the orchestrator included. All changes, campaign passes too, go through PRs that must pass `validate`. Keep the per-pass journal and the pre-pass backups. Optionally require the `validate` check in branch protection. Not self-ruled; this awaits the owner.
 - [ ] `open` **OWNER ruling — evidence claim_type for employee-size bands (SCHEMA §4.13):** 1,996 band values now carry their source and date only in `BAND-SOURCE:` notes. **Recommendation:** add `claim_type = size_band` with source classes `government_filing` (OSHA ITA / inspection, Form 5500) and `own_site`, with a ceiling of `supports_B`. Then backfill one evidence row per band from `tasks/integration-ready-oh-pa-2026-11-02/band_updates.csv`. Not self-ruled.
+
+## programs-db crosswalk + census-gap researcher wave (2026-11-03)
+
+- [ ] `in-pr:claude-code 2026-11-03` **programs-db crosswalk (integrator pass):**
+  - 69 `ror_id` values were verified at api.ror.org and added. 10 are held.
+  - Texas A&M `ORG-004656` was re-pointed from the A&M System Office (UNITID 228732, tamus.edu) to College Station (228723, www.tamu.edu), per IPEDS HD2024.
+  - 224 discovery leads were added from the programs-db hand-research layers.
+  - Details: `tasks/programs-db-crosswalk-2026-11-03/README.md`.
+- [ ] `in-pr:claude-code 2026-11-03` **Census-gap researcher wave (packet lanes ×6):** 73 people records added, all Gate A and Gate B verified on the universities' own pages. 51 held: 47 are already in the Atlas and 4 were held on integrator review. Details: `tasks/census-gap-people-2026-11-03/README.md`.
+- [ ] `open` **Census-gap follow-ups:**
+  - Re-run Johns Hopkins and Columbia (both bot-walled).
+  - Re-run the UCSD and Northeastern engineering rosters (503s).
+  - Settle the 79 STILL_UNCERTAIN on their named facts.
+  - **Re-verify PERSON-000719 (Korley).** Held at Delaware; NYU's pages now style her as an NYU professor.
+
