@@ -1,0 +1,206 @@
+{
+  "data/sites_AL.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_AL.csv",
+    "sha256": "348edded220400823a3c37a34dd39910a4fb30f56175d66aa05603b3ea3b4805"
+  },
+  "data/sites_AR.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_AR.csv",
+    "sha256": "8fbb02fdad9d9ed46ee309cc1e76b76f12a78d5c9f92e54a2c975e1dd92bf4cc"
+  },
+  "data/sites_AZ.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_AZ.csv",
+    "sha256": "16d44190276b7ac8149da432e72c0ed3ff30969533dfc727db40eec9d90fe360"
+  },
+  "data/sites_CA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_CA.csv",
+    "sha256": "9c78f2f36202b58c448e012aefd3d6fb52d2cd3fbfc9cdc07d4575db8c6a6b0d"
+  },
+  "data/sites_CO.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_CO.csv",
+    "sha256": "da162a15a98b58bba5670cf8e3ff7f26f672542476dd372199eea5f2a267e200"
+  },
+  "data/sites_CT.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_CT.csv",
+    "sha256": "efe85ef94bd870aec08bfaa8f10b703edea54438c849f8f6bc3c5388059b0ce7"
+  },
+  "data/sites_DE.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_DE.csv",
+    "sha256": "443f15630e22d74b09e10e6d043ac01837364524e033c7f8afb8c25217de1142"
+  },
+  "data/sites_FL.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_FL.csv",
+    "sha256": "928fcae4ff155fa3ea7094c65d114fdfa05ba0d7dfbaaa0b3f49696c6179e0ca"
+  },
+  "data/sites_GA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_GA.csv",
+    "sha256": "011b4071bf3860713abd287920a320a8f081aa1d20aca7d259944ea2bf47c312"
+  },
+  "data/sites_IA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_IA.csv",
+    "sha256": "2e33406028ff86c1356a1ca0152ccb57fc63124f875e2ce7b2ad19eeba34de7f"
+  },
+  "data/sites_ID.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_ID.csv",
+    "sha256": "3b8423bff3e759512535c513b11ae746f39d8017765fa283fe9f66b994c0378b"
+  },
+  "data/sites_IL.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_IL.csv",
+    "sha256": "131aba1169e1a43a4946dea1c595300c3b25059dd947a5b76b6267de5994a8fe"
+  },
+  "data/sites_IN.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_IN.csv",
+    "sha256": "284e2eb5fb3acad7af1b02c0bdaf258c4bd6f091d23c4227ad3bfb056a8474cf"
+  },
+  "data/sites_INTL.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_INTL.csv",
+    "sha256": "47690724f129bfe158e03925fea7713f2eeff5f25c35eb11594d5ea0ef224e31"
+  },
+  "data/sites_KS.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_KS.csv",
+    "sha256": "251c4d16706cf840e405f2f75f1c3995569a1682648e1f2065330ce219bc6fbe"
+  },
+  "data/sites_KY.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_KY.csv",
+    "sha256": "00d378f5740180b6033261036e7bd3b6a536e8e9e83c56850bd4bb0a6d04ba50"
+  },
+  "data/sites_LA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_LA.csv",
+    "sha256": "7a1d1d340027c83271a032601286379b51fb26ae346795195d1021abad8f28fb"
+  },
+  "data/sites_MA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MA.csv",
+    "sha256": "ecf4908d5e2edeb96fbedc5576c025e27d743be69f3b1d892b2012be603b5fce"
+  },
+  "data/sites_MD.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MD.csv",
+    "sha256": "c21dd8ebe37b665d8f55074f26a9f2f61c1732f18bd193be5f45437e95618ef0"
+  },
+  "data/sites_ME.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_ME.csv",
+    "sha256": "8241fedb4d67d67235703228327516882eb4863ad9370619642e9552e4eb9662"
+  },
+  "data/sites_MI.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MI.csv",
+    "sha256": "f3fa180cee0810bfcd1f0ee0b4a815270a0d8904b0a2db22d35d49f9c63732ad"
+  },
+  "data/sites_MN.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MN.csv",
+    "sha256": "6b7b0187962538d0033f1ef3cdb9a426f86707489982e2f67dab5016c5610a75"
+  },
+  "data/sites_MO.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MO.csv",
+    "sha256": "d842478882160bbfad8ec39491646567645df84b519736783f7916595591683d"
+  },
+  "data/sites_MS.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MS.csv",
+    "sha256": "2643aa245b821ef821d7dbc82afcf459ae0f8467b0c80b8086dcd3b001e63d91"
+  },
+  "data/sites_MT.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_MT.csv",
+    "sha256": "9ef5bd72a6336a4cf5575b4232bc5320fba6a4076e40e2c78f0814191a4571c8"
+  },
+  "data/sites_NC.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NC.csv",
+    "sha256": "dd66973e633ec5db71b1729bc79bb92bed4cfe0552c9afa2a7301ce71964e275"
+  },
+  "data/sites_ND.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_ND.csv",
+    "sha256": "b752b7da504eed8734e7ba191505d224277ee1367ccba26d1fe5a62479023ea8"
+  },
+  "data/sites_NE.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NE.csv",
+    "sha256": "4348d2e8bf502f68a37a5ebf5fc40f59ce70825cbfa18832b8fcb27746a6fcc9"
+  },
+  "data/sites_NH.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NH.csv",
+    "sha256": "70dcf4f3ccb91f3fcc43361fb514774c5f04c73e186d69f607bcd0245f135667"
+  },
+  "data/sites_NJ.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NJ.csv",
+    "sha256": "509e897af234b640e669bc04d1f07d87e93c35b478f6124e8b3252eb9371f834"
+  },
+  "data/sites_NM.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NM.csv",
+    "sha256": "69cd68e925bdbef401c1a83cf3554ece407a83c0bb3a186d4ffce0f7cab8d422"
+  },
+  "data/sites_NV.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NV.csv",
+    "sha256": "bab910b310b4305e68e26597f694e1a0b9c35c942b2a22cb14520d4087cbb12a"
+  },
+  "data/sites_NY.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_NY.csv",
+    "sha256": "3d7374a50784342525c7397a15184a15f2e919d9fec613576c74e2d6d21b30bc"
+  },
+  "data/sites_OH.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_OH.csv",
+    "sha256": "b23a553be1e6971c85c4d3a50fe14a4cecc0761e633d55be60943d13ccdd22af"
+  },
+  "data/sites_OK.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_OK.csv",
+    "sha256": "a5783feb43df07d32c603104261286122a2d7b3550bb8fda4baab9ef376ec259"
+  },
+  "data/sites_OR.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_OR.csv",
+    "sha256": "7a33c3fca4d890c059d3c63dc9befcbcaad7f067619024d0617ccc57c77167b6"
+  },
+  "data/sites_PA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_PA.csv",
+    "sha256": "d426acdccc6e46c2f6b1ac9a7a4f4d7799e584c5515ed4bcbd9887db579aad96"
+  },
+  "data/sites_PR.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_PR.csv",
+    "sha256": "c318f389c12c2753bfd8982afb3cbe81ad2b5a21c8d3de95d546bb43d03ea07a"
+  },
+  "data/sites_RI.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_RI.csv",
+    "sha256": "e4d57ed71c961ca06ef2447f130f320fc2c80a346ee90846d522ebf56b709c86"
+  },
+  "data/sites_SC.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_SC.csv",
+    "sha256": "0aef96dafe00033b424c53d10d1b07cc56fcf0d221c83537c6bb7d834dd564d4"
+  },
+  "data/sites_SD.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_SD.csv",
+    "sha256": "26e2cb87adf10bd5607d170df386bca34f8550469f3b80428d53271652ee5e8e"
+  },
+  "data/sites_TN.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_TN.csv",
+    "sha256": "103f1c42629d5a529dfd173e4deee584c32033504e5a22923f044af190c1dfa8"
+  },
+  "data/sites_TX.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_TX.csv",
+    "sha256": "04fe52cad1696e42bf09af11656fb9505115816de52e3c587b95c07f1298b6be"
+  },
+  "data/sites_UT.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_UT.csv",
+    "sha256": "fbfded7429647ba7430304d469dc216093f03616a64ba188f962c228daa322ba"
+  },
+  "data/sites_VA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_VA.csv",
+    "sha256": "819f0cad654a719dbdb9e448217b1a35863a7857bab6fe3bcaa0f41c884bb4a4"
+  },
+  "data/sites_VT.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_VT.csv",
+    "sha256": "f092e944538ed4060965ea01138e8854ef750767cb176b249981f009ef55a62e"
+  },
+  "data/sites_WA.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_WA.csv",
+    "sha256": "36a516e141ff66f833575f3cdaf8c179178d64ed4b0cf99e01a47f6c4036f731"
+  },
+  "data/sites_WI.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_WI.csv",
+    "sha256": "01c542c93cb18c7a09aa630df88a17c99b042d6a90fb99d77919d9aed7b03143"
+  },
+  "data/sites_WV.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_WV.csv",
+    "sha256": "b06a4cb2aafa72f44625ae7323aee29cc1e65765235b999de8a91acbcb255ce0"
+  },
+  "data/sites_WY.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/sites_WY.csv",
+    "sha256": "17b913c4847489cca33cdf670e04162211bff13367bacf295caae42529a0c4d0"
+  },
+  "data/organizations_OH.csv": {
+    "backup": "tasks/vocab-rulings-2026-11-03/backups/organizations_OH.csv",
+    "sha256": "43ed48c5dbc1566aa000ebf70aff5f453e9ecda49a83f5d4641ef7810d921371"
+  }
+}

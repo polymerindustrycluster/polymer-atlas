@@ -70,7 +70,8 @@ class MatchTests(unittest.TestCase):
     def test_real_vocab_no_alias_expansion(self):
         v=vocabulary(ROOT/'scripts/validate.py')
         self.assertIn('injection_molding',v['process']); self.assertNotIn('extrusion',v['process'])
-        self.assertNotIn('carbon_black',v['material'])
+        self.assertIn('carbon_black',v['material'])
+        self.assertNotIn('carbon black',v['material'])
 
 
 if __name__ == '__main__': unittest.main()

@@ -239,3 +239,6 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Equipment layer, first wave (SCHEMA v1.9 §4.19):** start with University of Akron, CWRU and other Ohio polymer instrument pages. Ohio Innovation Exchange equipment search results are leads only.
 - [ ] `open` **OWNER action:** approach ODHE / OH-TECH about a data or link agreement for Ohio Innovation Exchange profiles.
 
+
+## Vocabulary rulings (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **B-VOC-1..4 applied** (owner battery 2026-11-03, ruled (a)): 12 new terms (SCHEMA revision), `processes_other_note` / `materials_other_note` on site shards, 1,583 cells on 1,025 records; WRONG_FIELD (580 tokens) and organization TO_NOTE (10 tokens) left by design. Worker: codex under `tasks/vocab-rulings-2026-11-03/WORKER_CONTRACT.md`; controller-verified.

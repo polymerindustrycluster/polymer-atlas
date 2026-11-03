@@ -22,7 +22,7 @@ ORG_COLS = ["org_id", "legal_name", "trade_names", "successor_org_id", "hq_city"
             "status", "verification_tier", "notes"]
 ECO_COLS = ["org_id", "legal_name", "city", "state", "website", "status", "verification_tier", "notes"]
 SITE_COLS = ["site_id", "org_id", "site_name", "city", "state", "zip", "street_address", "operating_status",
-             "verification_tier", "site_group_id", "country"]
+             "verification_tier", "site_group_id", "country", "processes_other_note", "materials_other_note"]
 EVD_COLS = ["evidence_id", "record_table", "record_id", "claim_type", "source_class", "observed_date",
             "tier_effect", "source_ref"]
 REL_COLS = ["relationship_id", "from_org_id", "relationship_type", "to_org_id", "basis"]

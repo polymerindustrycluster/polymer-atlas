@@ -124,7 +124,11 @@ PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_
              "mold_tool_making", "tooling_repair_maintenance",
              # [v1.7.6] owner ruling 2026-11-01 (battery R3a/R8)
              "additive_dry_blending", "pigment_colorant_dispersion", "pressure_sensitive_tape_manufacture",
-             "potting_encapsulation_casting", "fluoropolymer_lining", "thermoforming_unspecified"}
+             "potting_encapsulation_casting", "fluoropolymer_lining", "thermoforming_unspecified",
+             # [v1.9.1] owner battery B-VOC, 2026-11-03
+             "extrusion_unspecified", "compounding_unspecified", "fabrication_unspecified",
+             "foam_production_unspecified", "molding_unspecified", "recycling_unspecified",
+             "rubber_molding_unspecified", "reaction_injection_molding"}
 MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic_elastomers_tpe_tpu",
              "silicones", "fluoropolymers", "bioplastics_biobased", "recycled_content_pcr_pir",
              "composites_frp", "composites_carbon", "composites_thermoset", "composites_thermoplastic",
@@ -135,7 +139,9 @@ MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic
              "natural_rubber_nr", "sbr", "epdm", "nitrile_nbr", "neoprene_cr", "viton_fkm", "pla", "pha",
              "other_specified_in_notes",
              # [v1.7.6] owner ruling 2026-11-01 (battery R8)
-             "asa", "specialty_elastomers", "polyester_vinyl_ester_resins", "acrylic_pmma"}
+             "asa", "specialty_elastomers", "polyester_vinyl_ester_resins", "acrylic_pmma",
+             # [v1.9.1] owner battery B-VOC, 2026-11-03
+             "carbon_black", "polymer_additives", "thermoplastic_olefin_tpo", "composites_unspecified"}
 RESEARCH_SUPPLEMENT = {"polymer_physics", "rheology", "polymer_synthesis", "degradation_biodegradation",
                        "recycling_circularity", "composites_mechanics", "membranes_separations",
                        "biomedical_polymers", "additive_manufacturing_science", "characterization_methods",
@@ -411,6 +417,9 @@ for i, r in enumerate(eco, 2):
         seen_ror[rr] = oid
 
 # V-5: sites new columns
+for col in ("processes_other_note", "materials_other_note"):
+    if col not in site_fields:
+        errors.append(f"sites.csv: missing v1.9.1 column {col}")
 for col in ("street_address", "latitude", "longitude", "geocode_precision"):
     if col not in site_fields:
         errors.append(f"sites.csv: missing v1.1 column {col}")

@@ -27,7 +27,8 @@ ORG_COLS = ["org_id", "legal_name", "trade_names", "parent_org_id", "ultimate_pa
             "year_founded", "stock_ticker", "ownership_type", "certifications", "pic_member",
             "membership_source_url"]
 SITE_COLS = ["site_id", "org_id", "site_name", "site_type", "city", "state", "zip", "county", "ring_primary",
-             "naics_primary", "naics_primary_source_type", "naics_confidence", "processes", "materials",
+             "naics_primary", "naics_primary_source_type", "naics_confidence", "processes", "processes_other_note",
+             "materials", "materials_other_note",
              "markets_served", "employee_band_site", "operating_status", "sources", "verification_tier",
              "last_verified", "created_by", "notes", "street_address", "latitude", "longitude",
              "geocode_precision", "country"]
