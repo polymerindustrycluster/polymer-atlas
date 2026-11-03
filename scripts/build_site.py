@@ -455,65 +455,115 @@ def breakdown_table(title_col, groups, order, label_fn, caption):
 
 EXPERTS_JS = r"""(function () {
   'use strict';
+  // Two views. "Browse": institutions grouped by state with researcher/program counts (the default with no
+  // search). "Results": compact one-line rows grouped by institution, shown once a search, filter or
+  // institution is chosen. URL keeps ?q=, ?state=, ?inst= so every view is linkable.
   var $ = function (id) { return document.getElementById(id); };
-  var D = null, MAXN = 120;
+  var D = null, PAGE = 60, limit = PAGE;
   var params = new URLSearchParams(location.search);
+  var inst = params.get('inst') || '';
   $('q').value = params.get('q') || '';
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function chip(t) { return '<button type="button" class="xchip" data-q="' + esc(t) + '">' + esc(t) + '</button>'; }
-  function instLink(id) { var i = D.insts[id] || [id, '', '', '']; return '<a href="orgs/' + encodeURIComponent(id) + '.html">' + esc(i[0]) + '</a>' + (i[2] ? ' <span class="muted">' + esc([i[1], i[2]].filter(Boolean).join(', ')) + '</span>' : ''); }
+  function instName(id) { return (D.insts[id] || [id])[0]; }
+  function place(id) { var i = D.insts[id] || []; return [i[1], i[2]].filter(Boolean).join(', '); }
   fetch('experts.json').then(function (r) { return r.json(); }).then(function (d) {
     D = d;
+    D.pc = {}; D.gc = {};
+    D.people.forEach(function (p) { D.pc[p[3]] = (D.pc[p[3]] || 0) + 1; });
+    D.programs.forEach(function (g) { D.gc[g[1]] = (D.gc[g[1]] || 0) + 1; });
     var states = {}; Object.keys(D.insts).forEach(function (k) { if (D.insts[k][2]) states[D.insts[k][2]] = 1; });
     Object.keys(states).sort().forEach(function (s) { var o = document.createElement('option'); o.value = s; o.textContent = s; $('state').appendChild(o); });
     $('state').value = params.get('state') || '';
     var freq = {}, generic = { polymers: 1, polymer: 1, plastics: 1 };
     D.people.forEach(function (p) { p[2].forEach(function (s) { if (!generic[s.toLowerCase()]) freq[s] = (freq[s] || 0) + 1; }); });
-    $('chips').innerHTML = '<span class="muted small">Common specialties:</span> ' + Object.keys(freq).sort(function (a, b) { return freq[b] - freq[a]; }).slice(0, 18).map(chip).join('');
+    $('chips').innerHTML = '<span class="muted small">Common specialties:</span> ' + Object.keys(freq).sort(function (a, b) { return freq[b] - freq[a]; }).slice(0, 14).map(chip).join('');
     D.peopleHay = D.people.map(function (p) { var i = D.insts[p[3]] || []; return [p[0], p[1], p[2].join(' '), i[0], i[1], i[2]].join(' | ').toLowerCase(); });
     D.progHay = D.programs.map(function (g) { var i = D.insts[g[1]] || []; return [g[0], g[2], g[3], g[4], g[5].join(' '), i[0], i[1], i[2]].join(' | ').toLowerCase(); });
     run();
   }).catch(function (e) { $('count').textContent = 'Could not load the finder data (' + e.message + ').'; });
 
   function matches(hay, words) { for (var k = 0; k < words.length; k++) if (hay.indexOf(words[k]) === -1) return false; return true; }
+  function setView(v) {
+    $('browse').hidden = v !== 'browse'; $('ppl').hidden = $('prg').hidden = v === 'browse';
+    Array.prototype.forEach.call($('tabs').querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === v)); });
+  }
+  function group(rows, instIdx, render) {
+    var by = {}, order = [];
+    rows.forEach(function (r) { var k = r[instIdx]; if (!by[k]) { by[k] = []; order.push(k); } by[k].push(r); });
+    order.sort(function (a, b) { return by[b].length - by[a].length || instName(a).localeCompare(instName(b)); });
+    return order.map(function (k) {
+      return '<div class="xgroup"><h3><a href="orgs/' + encodeURIComponent(k) + '.html">' + esc(instName(k)) + '</a> <span class="muted">' + esc(place(k)) + ' · ' + by[k].length + '</span></h3><ul class="xrows">' + by[k].map(render).join('') + '</ul></div>';
+    }).join('');
+  }
+  function specs(list) { return list.length ? '<span class="xs">' + list.slice(0, 4).map(chip).join('') + (list.length > 4 ? '<span class="muted small">+' + (list.length - 4) + '</span>' : '') + '</span>' : ''; }
+  function personRow(p) {
+    var name = p[4] ? '<a href="' + esc(p[4]) + '" rel="noopener nofollow">' + esc(p[0]) + '</a>' : esc(p[0]);
+    return '<li><span class="xn">' + name + '</span><span class="xr">' + esc(p[1]) + '</span>' + specs(p[2]) + '</li>';
+  }
+  function programRow(g) {
+    var name = g[6] ? '<a href="' + esc(g[6]) + '" rel="noopener nofollow">' + esc(g[0]) + '</a>' : esc(g[0]);
+    return '<li><span class="xn">' + name + '</span><span class="xr">' + esc([g[2], g[3], g[4]].filter(Boolean).join(' · ')) + '</span>' + specs(g[5]) + '</li>';
+  }
+  function browse(st, kind) {
+    var by = {};
+    Object.keys(D.insts).forEach(function (k) {
+      var i = D.insts[k]; if (!(D.pc[k] || D.gc[k])) return;
+      if ((st && i[2] !== st) || (kind && i[3] !== kind)) return;
+      (by[i[2] || 'Other'] = by[i[2] || 'Other'] || []).push(k);
+    });
+    var sts = Object.keys(by).sort(function (a, b) { return (a === 'OH' ? -1 : b === 'OH' ? 1 : a.localeCompare(b)); });
+    $('insts').innerHTML = sts.map(function (s) {
+      var ks = by[s].sort(function (a, b) { return ((D.pc[b] || 0) + (D.gc[b] || 0)) - ((D.pc[a] || 0) + (D.gc[a] || 0)); });
+      return '<section class="xstate"><h3>' + esc(s) + ' <span class="muted">' + ks.length + ' institution' + (ks.length === 1 ? '' : 's') + '</span></h3><ul class="xinsts">' + ks.map(function (k) {
+        var bits = []; if (D.pc[k]) bits.push(D.pc[k] + ' researcher' + (D.pc[k] === 1 ? '' : 's')); if (D.gc[k]) bits.push(D.gc[k] + ' program' + (D.gc[k] === 1 ? '' : 's'));
+        return '<li><button type="button" class="xinst" data-inst="' + esc(k) + '"><span>' + esc(instName(k)) + '</span><small>' + esc(D.insts[k][1] || '') + ' · ' + bits.join(' · ') + '</small></button></li>';
+      }).join('') + '</ul></section>';
+    }).join('');
+    return sts.reduce(function (n, s) { return n + by[s].length; }, 0);
+  }
   function run() {
     if (!D) return;
     var q = $('q').value.trim().toLowerCase(), st = $('state').value, kind = $('kind').value, show = $('show').value;
-    var words = q.split(/\s+/).filter(Boolean);
-    var instOk = function (id) { var i = D.insts[id] || ['', '', '', '']; return (!st || i[2] === st) && (!kind || i[3] === kind); };
+    var words = q.split(/\s+/).filter(Boolean), filtered = !!(q || inst);
+    var instOk = function (id) { var i = D.insts[id] || ['', '', '', '']; return (!inst || id === inst) && (!st || i[2] === st) && (!kind || i[3] === kind); };
     var ppl = [], prg = [];
     if (show !== 'programs') D.people.forEach(function (p, k) { if (instOk(p[3]) && matches(D.peopleHay[k], words)) ppl.push(p); });
     if (show !== 'people') D.programs.forEach(function (g, k) { if (instOk(g[1]) && matches(D.progHay[k], words)) prg.push(g); });
     var n = function (k, one, many) { return k.toLocaleString() + ' ' + (k === 1 ? one : many); };
-    $('count').textContent = (show === 'programs' ? '' : n(ppl.length, 'researcher record', 'researcher records')) +
+    var view = $('tabs').getAttribute('data-forced') || (filtered ? 'results' : 'browse');
+    var nInst = browse(st, kind);
+    $('count').innerHTML = esc((show === 'programs' ? '' : n(ppl.length, 'researcher record', 'researcher records')) +
       (show === 'both' ? ' and ' : '') + (show === 'people' ? '' : n(prg.length, 'program record', 'program records')) +
-      (show !== 'both' && ppl.length + prg.length === 1 ? ' matches' : ' match') + (q || st || kind ? '' : ' (all of them)') + '.';
+      (show !== 'both' && ppl.length + prg.length === 1 ? ' matches' : ' match') +
+      (view === 'browse' ? ', at ' + nInst.toLocaleString() + ' institutions' : '') + '.') +
+      (inst ? ' <span class="xfilter">Institution: <b>' + esc(instName(inst)) + '</b> <button type="button" class="xchip" id="noinst">remove</button></span>' : '');
+    if ($('noinst')) $('noinst').onclick = function () { inst = ''; limit = PAGE; run(); };
+    setView(view);
     $('empty').hidden = ppl.length + prg.length > 0;
-    $('ppl').hidden = show === 'programs' || !ppl.length;
-    $('prg').hidden = show === 'people' || !prg.length;
-    $('people').innerHTML = ppl.slice(0, MAXN).map(function (p) {
-      var name = p[4] ? '<a href="' + esc(p[4]) + '" rel="noopener nofollow">' + esc(p[0]) + '</a>' : esc(p[0]);
-      return '<li><div class="xh"><strong>' + name + '</strong><span class="muted">' + esc(p[1]) + '</span></div><div class="xi">' + instLink(p[3]) + '</div>' +
-        (p[2].length ? '<div class="xs">' + p[2].map(chip).join('') + '</div>' : '') + '</li>';
-    }).join('') + (ppl.length > MAXN ? '<li class="muted">Showing the first ' + MAXN + '. Narrow the search to see the rest.</li>' : '');
-    $('programs').innerHTML = prg.slice(0, MAXN).map(function (g) {
-      var name = g[6] ? '<a href="' + esc(g[6]) + '" rel="noopener nofollow">' + esc(g[0]) + '</a>' : esc(g[0]);
-      var meta = [g[2], g[3], g[4]].filter(Boolean).join(' · ');
-      return '<li><div class="xh"><strong>' + name + '</strong><span class="muted">' + esc(meta) + '</span></div><div class="xi">' + instLink(g[1]) + '</div>' +
-        (g[5].length ? '<div class="xs">' + g[5].map(chip).join('') + '</div>' : '') + '</li>';
-    }).join('') + (prg.length > MAXN ? '<li class="muted">Showing the first ' + MAXN + '.</li>' : '');
-    var u = new URLSearchParams(); if (q) u.set('q', $('q').value.trim()); if (st) u.set('state', st);
+    var pp = ppl.slice(0, limit), gg = prg.slice(0, limit);
+    $('people').innerHTML = group(pp, 3, personRow) + (ppl.length > limit ? '<button type="button" class="xmore" data-more="1">Show more researchers (' + (ppl.length - limit).toLocaleString() + ' left)</button>' : '');
+    $('programs').innerHTML = group(gg, 1, programRow) + (prg.length > limit ? '<button type="button" class="xmore" data-more="1">Show more programs (' + (prg.length - limit).toLocaleString() + ' left)</button>' : '');
+    if (view === 'results') { $('ppl').hidden = show === 'programs' || !ppl.length; $('prg').hidden = show === 'people' || !prg.length; }
+    var u = new URLSearchParams(); if (q) u.set('q', $('q').value.trim()); if (st) u.set('state', st); if (inst) u.set('inst', inst);
     try { history.replaceState(null, '', u.toString() ? '?' + u.toString() : location.pathname); } catch (e) {}
   }
   var t = null;
-  $('q').addEventListener('input', function () { clearTimeout(t); t = setTimeout(run, 120); });
-  ['state', 'kind', 'show'].forEach(function (id) { $(id).addEventListener('change', run); });
-  $('clear').addEventListener('click', function (e) {
-    $('q').value = ''; $('state').value = ''; $('kind').value = ''; $('show').value = 'both'; run(); $('q').focus();
+  $('q').addEventListener('input', function () { clearTimeout(t); limit = PAGE; $('tabs').removeAttribute('data-forced'); t = setTimeout(run, 120); });
+  ['state', 'kind', 'show'].forEach(function (id) { $(id).addEventListener('change', function () { limit = PAGE; run(); }); });
+  $('clear').addEventListener('click', function () {
+    $('q').value = ''; $('state').value = ''; $('kind').value = ''; $('show').value = 'both'; inst = ''; limit = PAGE; $('tabs').removeAttribute('data-forced'); run(); $('q').focus();
+  });
+  $('tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-view]'); if (!b) return; $('tabs').setAttribute('data-forced', b.getAttribute('data-view')); run();
   });
   document.addEventListener('click', function (e) {
-    var b = e.target.closest && e.target.closest('.xchip[data-q]'); if (!b) return;
-    $('q').value = b.getAttribute('data-q'); run(); $('q').focus(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    var b = e.target.closest && e.target.closest('.xchip[data-q]');
+    if (b) { $('q').value = b.getAttribute('data-q'); limit = PAGE; $('tabs').removeAttribute('data-forced'); run(); $('q').focus(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    var i = e.target.closest && e.target.closest('.xinst[data-inst]');
+    if (i) { inst = i.getAttribute('data-inst'); limit = PAGE; $('tabs').removeAttribute('data-forced'); run(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    var m = e.target.closest && e.target.closest('.xmore');
+    if (m) { limit += PAGE * 2; run(); }
   });
 })();
 """
@@ -576,7 +626,27 @@ SORTABLE_JS = r"""(function () {
       });
     }
   }
-  function init() { Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), enhance); }
+  // Phone layout: every cell carries its column heading, so CSS can stack a row as a labelled card.
+  function label(table) {
+    var head = table.tHead; if (!head) return;
+    var names = Array.prototype.map.call(head.rows[head.rows.length - 1].cells, function (c) { return c.textContent.trim(); });
+    if (names.length < 3) return;
+    table.classList.add('stack');
+    Array.prototype.forEach.call(table.tBodies, function (b) {
+      Array.prototype.forEach.call(b.rows, function (r) {
+        Array.prototype.forEach.call(r.cells, function (c, i) { if (names[i]) c.setAttribute('data-label', names[i]); });
+      });
+    });
+  }
+  // A link to #SITE-... opens that collapsed site row.
+  function openTarget() {
+    var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    var el = document.getElementById(id); if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
+  }
+  function init() {
+    Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), function (t, i) { label(t); enhance(t, i); });
+    openTarget(); addEventListener('hashchange', openTarget);
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 """
@@ -648,7 +718,25 @@ h3{font:700 1.15rem/1.25 var(--f-display);margin:1.4em 0 .4em}
 table{border-collapse:collapse;width:100%;font-size:.95rem}
 caption{text-align:left;padding:10px 12px;font-weight:700;color:var(--muted)}
 th,td{padding:7px 12px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
-thead th{background:var(--panel-2);border-top:0;white-space:nowrap;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+thead th{background:var(--panel-2);border-top:0;font-size:.74rem;line-height:1.3;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);vertical-align:bottom}
+thead th.num{max-width:10em}
+select{max-width:100%}
+@media (max-width:640px){
+  .table-wrap:has(table.stack){overflow-x:visible}
+  table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.stack caption{display:block}
+  table.stack,table.stack tbody,table.stack tr{display:block;width:100%}
+  table.stack tr{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:1fr 1fr}
+  table.stack tbody th,table.stack td:not(.num){grid-column:1/-1}
+  table.stack td.num{flex-direction:column;align-items:flex-start;gap:0;text-align:left;padding:4px 14px}
+  table.stack td.num::before{font-size:.68rem;line-height:1.25}
+  table.stack th,table.stack td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border:0;padding:3px 14px;text-align:right;white-space:normal}
+  table.stack tbody th{font-size:1rem;text-align:left;padding-top:4px;justify-content:flex-start;flex-wrap:wrap}
+  table.stack tbody th[data-label]::before{display:none}
+  table.stack td::before{content:attr(data-label);flex:0 1 auto;text-align:left;color:var(--muted);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;font-weight:400}
+  table.stack td:empty{display:none}
+  table.stack tr.total{background:var(--panel-2)}
+}
 tbody th{font-weight:700}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 tr.total th,tr.total td{background:var(--panel-2)}
@@ -676,9 +764,20 @@ dl.fields dd{margin:0;overflow-wrap:anywhere}
 @media (max-width:600px){dl.fields{grid-template-columns:1fr}dl.fields dt{margin-top:.5em}}
 ul.sources{margin:.3em 0;padding-left:1.2em}
 ul.sources li{overflow-wrap:anywhere;margin:.2em 0}
-article.site{border:1px solid var(--line);border-radius:8px;padding:6px 16px 12px;margin:12px 0;background:var(--panel)}
-article.site h3{margin:.5em 0 .2em}
-article.site:target{outline:3px solid var(--accent)}
+details.site{border:1px solid var(--line);border-radius:8px;margin:8px 0;background:var(--panel)}
+details.site>summary{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto;gap:4px 16px;align-items:center;padding:10px 16px;cursor:pointer;list-style:none}
+details.site>summary::-webkit-details-marker{display:none}
+details.site>summary::before{content:"";grid-row:1/3;display:none}
+details.site>summary:hover .s-name{color:var(--accent-hover)}
+details.site .s-name{font-weight:700;color:var(--accent)}
+details.site .s-meta{color:var(--muted);font-size:.92rem}
+details.site .s-badges{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+details.site[open]>summary{border-bottom:1px solid var(--line)}
+details.site .s-body{padding:4px 16px 12px}
+details.site:target{outline:3px solid var(--accent)}
+details.srcs>summary{cursor:pointer;color:var(--muted);font-size:.92rem}
+abbr[title]{text-decoration:none;cursor:help}
+@media (max-width:720px){details.site>summary{grid-template-columns:1fr}details.site .s-badges{justify-content:flex-start}}
 details{margin:.4em 0}
 summary{cursor:pointer}
 .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:1em 0}
@@ -784,13 +883,28 @@ th.num button.sort{flex-direction:row-reverse}
 .xchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:.4em 0 1em}
 .xchip{min-height:32px;padding:0 11px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font:400 .86rem/1 var(--f-body);cursor:pointer}
 .xchip:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
-.xlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
-.xlist li{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:12px 14px;display:flex;flex-direction:column;gap:5px;min-width:0}
-.xlist .xh{display:flex;flex-direction:column;gap:1px}
-.xlist .xh .muted{font-size:.88rem}
-.xlist .xi{font-size:.92rem}
-.xlist .xs{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
-.xlist .xs .xchip{min-height:26px;font-size:.8rem;padding:0 9px;background:var(--panel-2);border-color:transparent}
+.xtabs{display:flex;gap:0;margin:.4em 0 1em;border:1px solid var(--line);border-radius:8px;width:max-content;max-width:100%;overflow:hidden}
+.xtabs button{all:unset;cursor:pointer;padding:8px 16px;font:700 .88rem/1.2 var(--f-display);color:var(--muted)}
+.xtabs button[aria-pressed=true]{background:var(--accent);color:#fff}
+.xtabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.xstate{margin:0 0 1.2em}.xstate h3{margin:.2em 0 .5em;font-size:1.05rem}
+.xinsts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
+.xinst{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:2px;width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.xinst span{font-weight:700;color:var(--accent)}.xinst small{color:var(--muted);font-size:.82rem}
+.xinst:hover{border-color:var(--accent-hover)}.xinst:hover span{color:var(--accent-hover)}
+.xinst:focus-visible{outline:2px solid var(--accent)}
+.xgroup{margin:0 0 1em;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.xgroup h3{margin:0;padding:9px 14px;font-size:1rem;background:var(--panel-2);border-radius:8px 8px 0 0}
+.xgroup h3 .muted{font-weight:400;font-size:.88rem}
+.xrows{list-style:none;margin:0;padding:0}
+.xrows li{display:grid;grid-template-columns:minmax(10em,1.1fr) minmax(0,1.6fr) minmax(0,1.6fr);gap:4px 16px;align-items:baseline;padding:7px 14px;border-top:1px solid var(--line)}
+.xrows .xn{font-weight:700}.xrows .xr{color:var(--muted);font-size:.9rem}
+.xrows .xs{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.xrows .xs .xchip{min-height:24px;font-size:.78rem;padding:0 8px;background:var(--panel-2);border-color:transparent}
+.xmore{all:unset;cursor:pointer;display:block;margin:.4em 0 1.4em;padding:10px 16px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-weight:700;text-align:center}
+.xmore:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
+.xfilter{display:inline-flex;gap:6px;align-items:center;margin-left:8px;font-weight:400}
+@media (max-width:720px){.xrows li{grid-template-columns:1fr}}
 #count{font-weight:700}
 
 """
@@ -1335,8 +1449,10 @@ Try a specialty such as <a href="?q=rheology">rheology</a>, <a href="?q=elastome
 <p id="count" role="status" aria-live="polite">Loading...</p>
 <div id="empty" class="xempty" hidden><strong>Nothing matches.</strong> Try fewer words or a broader specialty,
 or <button type="button" class="xchip" id="clear">clear the search and filters</button></div>
-<section id="ppl" aria-labelledby="ppl-h"><h2 id="ppl-h">Researchers</h2><ul id="people" class="xlist"></ul></section>
-<section id="prg" aria-labelledby="prg-h"><h2 id="prg-h">Programs</h2><ul id="programs" class="xlist"></ul></section>
+<nav class="xtabs" aria-label="View" id="tabs"><button type="button" data-view="browse" aria-pressed="true">Browse by institution</button><button type="button" data-view="results" aria-pressed="false">Results list</button></nav>
+<section id="browse" aria-labelledby="browse-h"><h2 id="browse-h" class="sr-only">Institutions</h2><div id="insts"></div></section>
+<section id="ppl" aria-labelledby="ppl-h" hidden><h2 id="ppl-h">Researchers</h2><div id="people"></div></section>
+<section id="prg" aria-labelledby="prg-h" hidden><h2 id="prg-h">Programs</h2><div id="programs"></div></section>
 <p class="small muted">Researchers appear with their publicly stated name, role, research specialties and
 public profile page, from their institution's own pages; no contact details are published. Specialties are
 shown as the institution words them, lightly normalized for search. To request a correction or removal,
@@ -1393,7 +1509,8 @@ def dl(pairs):
     return f'<dl class="fields">{items}</dl>' if items else ""
 
 
-def site_article(s, a):
+def site_article(s, a, open_=False):
+    """One site as a collapsible row: a one-line summary (place, type, ring, status, tier) that opens to the full record."""
     addr = ", ".join(x for x in [s.get("street_address"), s.get("city")] if nonempty(x))
     region = " ".join(x for x in [s.get("state"), s.get("zip")] if nonempty(x))
     if region:
@@ -1418,9 +1535,15 @@ def site_article(s, a):
         ("Markets served", esc(vocab(s.get("markets_served")))),
         ("Site employee band", esc(s.get("employee_band_site"))),
     ])
-    return (f'<article class="site" id="{esc(safe_id(s["site_id"]))}">'
-            f'<h3>{esc(s.get("site_name") or s["site_id"])} <span class="muted small">{esc(s["site_id"])}</span></h3>'
-            f'{fields}<details><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details></article>')
+    place = ", ".join(x for x in [s.get("city"), s.get("state")] if nonempty(x))
+    meta = " · ".join(x for x in [esc(place), esc(vocab(s.get("site_type")))] if x)
+    badges = " ".join(x for x in [ring_badge(s["_ring"], s["_ring_inherited"]) if s["_ring"] else "",
+                                  status_badge(s.get("operating_status")), tier_badge(s.get("verification_tier"))] if x)
+    return (f'<details class="site" id="{esc(safe_id(s["site_id"]))}"{" open" if open_ else ""}>'
+            f'<summary><span class="s-name">{esc(s.get("site_name") or s["site_id"])}</span>'
+            f'<span class="s-meta">{meta}</span><span class="s-badges">{badges}</span></summary>'
+            f'<div class="s-body"><p class="muted small">{esc(s["site_id"])}</p>{fields}'
+            f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details></div></details>')
 
 
 def program_table(programs, a, with_inst=False, root=""):
@@ -1528,7 +1651,7 @@ def build_org_page(ctx, o):
                       "labs, warehouses). Each is owned by the operator."
                       + (" An asterisk (*) next to a ring means the site row records no ring, so the parent organization's ring is shown."
                          if any(s["_ring_inherited"] for s in site_rows) else "") + "</p>"
-                      + "".join(site_article(s, a) for s in site_rows))
+                      + "".join(site_article(s, a, len(site_rows) <= 3) for s in site_rows))
     fields = dl([
         ("Record ID", esc(oid)), ("Status", status_badge(o.get("status"))),
         ("Status date", esc(o.get("status_date"))), ("Ring", rings),
@@ -1610,7 +1733,7 @@ def build_eco_page(ctx, e):
     sites_html = ""
     if site_rows:
         sites_html = (f"<h2>Locations ({fmt_int(len(site_rows))} site rows)</h2>"
-                      + "".join(site_article(s, a) for s in site_rows))
+                      + "".join(site_article(s, a, len(site_rows) <= 3) for s in site_rows))
     body = f"""
 <p class="small"><a href="../search.html">Search</a> &rsaquo; Ecosystem organization</p>
 <h1>{esc(e.get("legal_name"))}</h1>
@@ -1718,7 +1841,7 @@ that figure; it is not zero.</p>"""
 <p class="small"><a href="index.html">Ohio counties</a> &rsaquo; {esc(county)}</p>
 <h1>{esc(county)} County, Ohio</h1>
 <p class="lede">One-page summary of the polymer industry records the Atlas holds for {esc(county)} County,
-a PIC-12 county. {esc(SOURCE_CLASS_NOTE)}</p>
+{"a PIC-12 county" if county in PIC12 else "outside the PIC-12 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
 <div class="cards">
 <div class="card"><div class="big">{fmt_int(len(active))}</div><div class="unit">Site rows</div><div class="filter">{esc(county)} County, Ohio; operating status active; all verification tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(org_ids))}</div><div class="unit">Organization rows with an active site row here</div><div class="filter">distinct parent organizations of those site rows; all tiers</div></div>
@@ -1746,6 +1869,14 @@ Tier U rows are candidates; they are included here because this page shows all t
                 f"{county} County, Ohio: polymer industry establishments by ring and NAICS, programs, ecosystem and QCEW benchmark.")
 
 
+def ohio_counties(a):
+    """PIC-12 plus every Ohio county where the Atlas holds a site or ecosystem row: each gets a one-pager."""
+    names = set(PIC12)
+    names |= {s["county"] for s in a.sites if s.get("state") == "OH" and nonempty(s.get("county"))}
+    names |= {e["county"] for e in a.eco.values() if e.get("state") == "OH" and nonempty(e.get("county"))}
+    return sorted(names)
+
+
 def build_counties_index(ctx):
     a = ctx.atlas
     all_sites = defaultdict(list)
@@ -1764,7 +1895,7 @@ def build_counties_index(ctx):
     def row(c):
         sites = all_sites.get(c, [])
         n_act = sum(1 for s in sites if s.get("operating_status") == "active")
-        label = (f'<a href="{esc(slug(c))}.html">{esc(c)}</a>' if c in PIC12 else esc(c))
+        label = f'<a href="{esc(slug(c))}.html">{esc(c)}</a>'
         q = ctx.qcew.get(c)
         qn = fmt_int(int(float(q["annual_avg_estabs"]))) if q and nonempty(q.get("annual_avg_estabs")) else "n/a"
         return (f'<tr><th scope="row">{label}</th><td>{"PIC-12" if c in PIC12 else ""}</td>'
@@ -1782,7 +1913,8 @@ def build_counties_index(ctx):
     body = f"""
 <h1>Ohio counties</h1>
 <p class="lede">County one-pagers for the 12 PIC-12 counties (Ashtabula, Cuyahoga, Geauga, Lake, Lorain,
-Mahoning, Medina, Portage, Stark, Summit, Trumbull, Wayne). Other Ohio counties are listed with counts only.</p>
+Mahoning, Medina, Portage, Stark, Summit, Trumbull, Wayne), and the same one-pager for every other Ohio county
+where the Atlas holds at least one row.</p>
 <p>All counts are Atlas database rows by the unit named in the column heading. The QCEW column is a
 count benchmark from BLS, not matched coverage; "n/a" means the bundled benchmark file has no row for that
 county, which is not a zero. County is taken from each site's physical address.</p>
@@ -1866,7 +1998,8 @@ search for the company by name, or start from one of the views below.</p>
     write(out_dir / "experts.html", build_experts_page(ctx, len(xj["people"]), len(xj["programs"])))
 
     write(out_dir / "counties" / "index.html", build_counties_index(ctx))
-    for c in PIC12:
+    county_names = ohio_counties(atlas)
+    for c in county_names:
         write(out_dir / "counties" / f"{slug(c)}.html", build_county_page(ctx, c))
     for o in atlas.orgs.values():
         write(out_dir / "orgs" / f"{safe_id(o['org_id'])}.html", build_org_page(ctx, o))
@@ -1879,7 +2012,7 @@ search for the company by name, or start from one of the views below.</p>
     html_files = [p for p in files if p.suffix == ".html"]
     return {"pages": len(html_files), "files": len(files), "bytes": sum(p.stat().st_size for p in files),
             "org_pages": len(atlas.orgs), "eco_pages": len(atlas.eco),
-            "county_pages": len(PIC12), "map_sites": len(sj["rows"])}
+            "county_pages": len(county_names), "map_sites": len(sj["rows"])}
 
 
 def main(argv=None):

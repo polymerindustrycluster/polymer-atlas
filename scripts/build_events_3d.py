@@ -107,6 +107,9 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 .nums small { color: var(--muted); font-size: 12px; line-height: 1.25; }
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 .chip { border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; font-size: 12.5px; }
+.chipbtn { background: transparent; color: var(--fg); cursor: pointer; font-family: inherit; text-align: left; }
+.chipbtn:hover { border-color: var(--accent); color: var(--accent); }
+.chipbtn small { color: var(--muted); }
 .caption a, .home a { color: var(--accent); }
 .progress { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
 .progress i { display: block; height: 100%; width: 0; background: var(--gold); }
@@ -117,7 +120,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   .title p { display: none; }
   .caption { top: calc(112px + env(safe-area-inset-top, 0px)); bottom: auto; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
     width: auto; padding: 14px 16px; gap: 8px; max-height: calc(100% - 200px); overflow: auto; }
-  .caption h2 { font-size: 26px; } .nums b { font-size: 24px; } .caption .chips { display: none; } .legend { display: none; } }
+  .caption h2 { font-size: 26px; } .nums b { font-size: 24px; } .legend { display: none; } }
 @media (prefers-reduced-motion: reduce) { .progress i { transition: none !important; } }
 </style>
 
@@ -163,14 +166,23 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   $("legend").innerHTML = [["1", "Ring 1"], ["2", "Ring 2"], ["3", "Ring 3"], ["4", "Ring 4"], ["5", "Ecosystem"]]
     .map(([r, t]) => `<span><i class="sw" style="background:${RING[r]}"></i>${t}</span>`).join("") + `<span><i class="sw" style="background:${EVENT}"></i>Event series</span>`;
 
-  const state = { current: null, p12: false, playing: false, i: -1, timer: null };
+  const state = { current: null, org: null, p12: false, playing: false, i: -1, timer: null };
+  const ORGBASE = "__ORGBASE__";
+  const orgShows = new Map();
+  for (const l of D.links) { if (!orgShows.has(l.target)) orgShows.set(l.target, []); orgShows.get(l.target).push(l); }
   const nodeColor = (n) => {
+    if (state.org) {
+      if (n.id === state.org) return GOLD;
+      if (n.k === "event") return orgShows.get(state.org).some((l) => (l.source.id || l.source) === n.id) ? EVENT : "#5f8a90";
+      return "#0d4a54";
+    }
     if (n.k === "event") return state.current === n.id ? GOLD : state.current ? "#5f8a90" : EVENT;
     if (state.p12 && !n.p) return "#0d4a54";
     if (state.current && !evLinks.get(state.current).some((l) => (l.target.id || l.target) === n.id)) return "#0d4a54";
     return RING[n.r || ""] || RING[""];
   };
 
+  const isLit = (l) => (state.current && (l.source.id || l.source) === state.current) || (state.org && (l.target.id || l.target) === state.org);
   const Graph = ForceGraph3D({ controlType: "orbit" })($("stage"))
     .backgroundColor(BG)
     .graphData(D)
@@ -184,17 +196,17 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     .nodeLabel((n) => n.k === "event"
       ? `<b>${esc(n.l)}</b><br><small>${evLinks.get(n.id).length} organizations · ${esc(n.city || n.org)}</small>`
       : `<b>${esc(n.l)}</b><br><small>${esc([n.c, n.s].filter(Boolean).join(", "))} · ${orgEvents.get(n.id)} show(s)</small>`)
-    .linkColor((l) => state.current && (l.source.id || l.source) === state.current ? "#b8d637" : "#3a8592")
+    .linkColor((l) => isLit(l) ? "#b8d637" : "#3a8592")
     .linkOpacity(0.22)
-    .linkWidth((l) => state.current && (l.source.id || l.source) === state.current ? 0.6 : 0)
-    .linkDirectionalParticles((l) => state.current && (l.source.id || l.source) === state.current ? 2 : 0)
+    .linkWidth((l) => isLit(l) ? 0.6 : 0)
+    .linkDirectionalParticles((l) => isLit(l) ? 2 : 0)
     .linkDirectionalParticleWidth(1.6)
     .linkDirectionalParticleColor(() => GOLD)
     .linkDirectionalParticleSpeed(0.006)
     .enableNodeDrag(false)
     .warmupTicks(80)
     .cooldownTime(9000)
-    .onNodeClick((n) => { if (n.k === "event") { stop(); show(events.findIndex((e) => e.id === n.id)); } });
+    .onNodeClick((n) => { stop(); if (n.k === "event") show(events.findIndex((e) => e.id === n.id)); else showOrg(n); });
   Graph.d3Force("charge").strength(-34);
   Graph.d3Force("link").distance((l) => 26 + Math.min(40, evLinks.get(l.source.id || l.source).length * 0.25));
 
@@ -213,7 +225,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     if (i < 0 || !events.length) return;
     state.i = (i + events.length) % events.length;
     const e = events[state.i], ls = evLinks.get(e.id), ps = ls.map((l) => byId.get(l.target.id || l.target));
-    state.current = e.id; refresh(); fly(e);
+    state.org = null; state.current = e.id; refresh(); fly(e);
     controls.autoRotate = false;
     const oh = ps.filter((p) => p.oh).length, p12 = ps.filter((p) => p.p);
     const roles = {}; ls.forEach((l) => roles[l.role] = (roles[l.role] || 0) + 1);
@@ -235,6 +247,25 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     cap.hidden = false;
     if (state.playing && !reduced) { const bar = $("prog"); bar.style.transition = "none"; bar.style.width = "0"; requestAnimationFrame(() => { bar.style.transition = "width 8s linear"; bar.style.width = "100%"; }); }
   }
+  function showOrg(n) {
+    state.current = null; state.org = n.id; refresh(); fly(n, 260);
+    controls.autoRotate = false;
+    const ls = orgShows.get(n.id) || [];
+    const place = [n.c, n.s].filter(Boolean).join(", ");
+    const ring = n.k === "eco" ? "Ecosystem organization" : (n.r ? "Ring " + n.r : "Ring not recorded");
+    const cap = $("caption");
+    cap.innerHTML = `
+      <div class="step">${esc(ring)}${n.p ? " · PIC-12 county" : n.oh ? " · Ohio footprint" : ""}</div>
+      <h2>${esc(n.l)}</h2>
+      ${place ? `<div class="sub">${esc(place)}</div>` : ""}
+      <div class="sub">Takes part in ${ls.length} event series:</div>
+      <div class="chips">${ls.map((l) => { const e = byId.get(l.source.id || l.source);
+        return `<button type="button" class="chip chipbtn" data-ev="${esc(e.id)}">${esc(e.l)} <small>${esc(l.role)}</small></button>`; }).join("")}</div>
+      <a href="${ORGBASE}${encodeURIComponent(n.id)}.html">Open ${esc(n.l)} in the Atlas \u2192</a>`;
+    cap.hidden = false;
+    cap.querySelectorAll("[data-ev]").forEach((b) => b.onclick = () => show(events.findIndex((e) => e.id === b.dataset.ev)));
+    try { history.replaceState(null, "", "#" + n.id); } catch (e) {}
+  }
   function play() {
     state.playing = true; $("play").textContent = "Pause";
     document.documentElement.requestFullscreen?.().catch(() => {});
@@ -243,7 +274,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   }
   function stop() { state.playing = false; clearInterval(state.timer); $("play").textContent = "Present"; }
   function overview() {
-    stop(); state.current = null; state.i = -1; refresh(); $("caption").hidden = true;
+    stop(); state.current = null; state.org = null; state.i = -1; refresh(); $("caption").hidden = true;
     Graph.zoomToFit(reduced ? 0 : 1500, 20, core); controls.autoRotate = !reduced;
   }
   $("play").onclick = () => state.playing ? stop() : play();
@@ -260,7 +291,10 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   });
   const core = (n) => n.k === "event" && evLinks.get(n.id).length >= 8;  // fit to the larger shows; tiny outliers otherwise shrink the view
   // deep links: graph/events.html#EVT-000001 opens on that show
-  const fromHash = () => { const i = events.findIndex((e) => e.id === decodeURIComponent(location.hash.slice(1))); if (i >= 0) { stop(); show(i); } };
+  const fromHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1)), i = events.findIndex((e) => e.id === id);
+    if (i >= 0) { stop(); show(i); } else if (byId.has(id)) { stop(); showOrg(byId.get(id)); }
+  };
   addEventListener("hashchange", fromHash);
   if (location.hash) setTimeout(fromHash, 2500);
   let fitted = false;
@@ -273,7 +307,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 
 def page(data, fragment, home=""):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    body = (PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob)
+    body = (PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob).replace("__ORGBASE__", bg.org_base(home))
             .replace("__HOME__", bg.home_link(home, "div", "home", "pointer-events:auto;margin-top:6px;font-size:13px")))
     if fragment:
         return body

@@ -439,7 +439,9 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
       el("div", { className: "kind", textContent: RING[org.r || ""] || "Company", style: `color:${P.ring[org.r || ""]}` }),
       el("h2", { textContent: org.l })];
     if (org.d) kids.push(el("p", { textContent: org.d }));
+    if (org.m) kids.push(el("p", { className: "kind", textContent: "PIC member (public list)" }));
     if (org.w) kids.push(el("p", {}, el("a", { href: org.w, target: "_blank", rel: "noopener", textContent: org.w.replace(/^https?:\/\//, "").replace(/\/$/, "") })));
+    kids.push(el("p", {}, el("a", { href: "__ORGBASE__" + encodeURIComponent(org.id) + ".html", textContent: "Open " + org.l + " in the Atlas \u2192" })));
     if (org.t.length) kids.push(el("h3", { textContent: `Capabilities · ${org.t.length}` }),
       el("div", { className: "chips" }, ...org.t.map((t) => el("span", { className: "chip", textContent: T[t].l }))));
     kids.push(el("h3", { textContent: `Sites on the map · ${list.length}` }),
@@ -513,7 +515,7 @@ def page(data, fragment, home=""):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     geo = GEO.read_text(encoding="utf-8").replace("</", "<\\/")
     body = (PAGE.replace("__D3__", D3).replace("__TOPOJSON__", TOPOJSON).replace("__GRAPHOLOGY__", bg.GRAPHOLOGY)
-            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob).replace("__HOME__", bg.home_link(home)))
+            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob).replace("__HOME__", bg.home_link(home)).replace("__ORGBASE__", bg.org_base(home)))
     if fragment:
         return body
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
