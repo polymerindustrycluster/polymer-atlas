@@ -17,3 +17,7 @@ The University of Tennessee-Knoxville,Alexei P. Sokolov,A2,possible duplicate of
 Texas A & M University-College Station,Amir Asadi,A3,raw check gate_a=yes gate_b=no
 Texas A & M University-College Station,Mary Beth Browning Monroe,A3,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
 University of Illinois Urbana-Champaign,Jeff Moore,A3,integrator review: same person as the Jeffrey S. Moore row in the same lane; one record only
+University of Chicago,Stuart J. Rowan,B1,possible duplicate of PERSON-000737
+Northwestern University,Junsoo Kim,B1,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+Rice University,Eugene R. Zubarev,B2,raw check gate_a=unfetchable gate_b=unfetchable
+University of Connecticut,Sangamesh Gurappa Kumbar,B2,public_profile_url not on uconn.edu; gate_a_url not on uconn.edu; gate_b_url not on uconn.edu

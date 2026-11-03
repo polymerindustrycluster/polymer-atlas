@@ -15,7 +15,7 @@
 
 ## Applied
 
-- `data/people.csv` +49 (PERSON-001334 to PERSON-001382), all tier A.
+- `data/people.csv` +64 (PERSON-001334 to PERSON-001397), all tier A.
 - `data/inclusion_log.csv` +3, the borderline admissions:
   - Mary Boyce: an emerita *administrative* title held alongside a current professor rank;
   - Ellis Meng: an interests-list phrase;
@@ -25,6 +25,7 @@
 |-|-:|
 | Census-gap follow-ups: lane T (JHU, Columbia), lanes R1 and R2 | 17 |
 | Band-A census leads: 4 lanes, run locally | 32 |
+| Band-B census lead sample: 2 lanes, run locally (60 of 632 people) | 15 |
 
 **Owner rulings applied (2026-11-03, `tasks/OWNER_BATTERY_2026-11-03.md`):**
 - **B-CG-2:** a biopolymer passes Gate B when the stated research engineers it as a material.
@@ -86,9 +87,31 @@ polymer sentence on the person's own pages, so the two rates measure different t
 | Not reachable (jhu.edu or columbia.edu not fetched in these lanes, Iowa State or Princeton ECE blocked) | 8 |
 | **Total** | **132** |
 
-Band B (632 people) was not run in full. The owner ruled B-CG-4 (a): a 60-person sample runs first.
+## Band-B census lead sample (unit: people; 60 drawn at random, seed 20261103, from 632)
 
-## Held (`holds.csv`, 18)
+The owner ruled B-CG-4 (a): sample first. Two lanes (B1, B2) ran under the same brief, with the B-CG rulings.
+
+| Outcome | People |
+|-|-:|
+| VERIFIED by a lane | 18 |
+| (of which admitted) | 15 |
+| Already held | 1 |
+| Emeritus styling | 11 |
+| Other non-professor styling (research scientist or specialist, teaching professor, professor of the practice, adjunct) | 5 |
+| No polymer sentence on the person's own pages | 19 |
+| Still uncertain (4 blocked hosts; 2 with no settling page) | 6 |
+| **Total** | **60** |
+
+Three were held after VERIFIED:
+- Kim: news item.
+- Zubarev: page unfetchable.
+- Kumbar: his profile is on the UConn Health domain (uchc.edu), which the integrator did not accept as uconn.edu without review.
+
+**Measured band-B admission rate:** 15 of 60 (25%), about the same as band A (32 of 132, 24%). If the rate held,
+the remaining 572 band-B people would give about 140 records. That is a projection, not a measurement. Whether to
+run them is the owner's call.
+
+## Held (`holds.csv`, 22: the 18 below, plus the band-B sample's 3 and its 1 already-held person)
 
 - **Integrator review (11):**
   - 5 rest on news items instead of the person's own pages: Wiley, Erb, Gupta, Nguyen and Monroe.

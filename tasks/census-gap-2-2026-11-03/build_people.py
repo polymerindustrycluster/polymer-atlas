@@ -20,13 +20,17 @@ from build_integration import DOMAINS, ROLES, SCHOOLS, append_rows, host, nname,
 
 TODAY = "2026-11-03"
 ROLES = ROLES | {"senior_lecturer"}  # owner ruling B-CG-3 (2026-11-03), SCHEMA 4.9 [v1.8.2]
-EXTRA_DOMAINS = {"Carnegie Mellon University": ["cmu.edu"]}  # held record carries no website
+EXTRA_DOMAINS = {  # held record carries no website, or the university publishes on a second domain
+    "Carnegie Mellon University": ["cmu.edu"],
+    "Pennsylvania State University-Main Campus": ["psu.edu"],
+    "University of Washington-Seattle Campus": ["washington.edu", "uw.edu"],
+}  # UConn Health (uchc.edu) is deliberately not added: a separate unit, so Kumbar stays held for review
 NEWS = "Gate B rests on a university news item, not the person's own profile or lab page"
 INTEGRATOR_HOLDS = {  # normalized name -> reason; integrator review of every VERIFIED Gate B quote, 2026-11-03
     "yang yang": "Gate B quote is the MSE department research-areas page, not person-level",
     "jenn ming yang": "Gate B quote is the MSE department research-areas page, not person-level",
     "benjamin wiley": NEWS, "randall erb": NEWS, "nikhil gupta": NEWS, "thanh nguyen": NEWS,
-    "mary beth browning monroe": NEWS,
+    "mary beth browning monroe": NEWS, "junsoo kim": NEWS,
     "keith vorst": "Gate B quote is the consortium page he directs, not person-level (Nutt precedent)",
     # B-CG-2 (ruled 2026-11-03): a biopolymer passes when the stated research engineers it as a material.
     # Schroeder ("Mineralization of biopolymers for sustainable material development") passes; Ribbeck's quote
