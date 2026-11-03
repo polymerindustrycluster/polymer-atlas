@@ -79,6 +79,43 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assertIn(needle, out)
 
     # -- tests -----------------------------------------------------------
+    def append_row(self, fname, row):
+        path = self.data / fname
+        with open(path, newline="", encoding="utf-8") as f:
+            fields = next(csv.reader(f))
+        with open(path, "a", newline="", encoding="utf-8") as f:
+            csv.DictWriter(f, fieldnames=fields, lineterminator="\n").writerow(row)
+
+    EQP_OK = {"equipment_id": "EQP-000001", "host_org_id": "ORG-000501", "site_id": "", "program_id": "",
+              "name": "Capillary rheometer", "equipment_class": "rheometer_capillary", "access_mode": "not_stated",
+              "source_ref": "https://www.uakron.edu/example-equipment", "observed_date": "2026-11-03",
+              "withdrawn_date": "", "created_by": "test", "notes": ""}
+
+    def test_v52_equipment_row_accepted(self):
+        self.append_row("equipment.csv", dict(self.EQP_OK))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v52_equipment_class_out_of_vocab(self):
+        self.append_row("equipment.csv", dict(self.EQP_OK, equipment_class="spectrometer"))
+        self.assert_fails_with("not in the \u00a73.7 vocabulary (V-52)")
+
+    def test_v52_equipment_needs_host_page_url(self):
+        self.append_row("equipment.csv", dict(self.EQP_OK, source_ref="Ohio Innovation Exchange listing"))
+        self.assert_fails_with("source_ref must be the host's own page URL (V-52)")
+
+    def test_v53_engagement_rejects_email_url(self):
+        self.append_row("people_engagement.csv", {"engagement_id": "ENG-000001", "person_id": "PERSON-000001",
+                        "mode": "consulting", "source_ref": "https://example.edu/people/someone@example.edu",
+                        "observed_date": "2026-11-03", "withdrawn_date": "", "created_by": "test", "notes": ""})
+        self.assert_fails_with("no email (V-53)")
+
+    def test_v53_engagement_mode_out_of_vocab(self):
+        self.append_row("people_engagement.csv", {"engagement_id": "ENG-000001", "person_id": "PERSON-000001",
+                        "mode": "available_for_hire", "source_ref": "https://example.edu/people/x",
+                        "observed_date": "2026-11-03", "withdrawn_date": "", "created_by": "test", "notes": ""})
+        self.assert_fails_with("not in the \u00a74.20 vocabulary (V-53)")
+
     def test_pristine_tree_passes(self):
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-2000:])

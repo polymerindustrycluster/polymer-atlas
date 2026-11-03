@@ -1,6 +1,17 @@
 {
  "_doc": "Controlled vocabularies enforced by scripts/validate.py, exported by scripts/export_vocab.py. DERIVED: never hand-edit. Multi-value fields use ';'. A value not listed here goes in the record's notes field and is flagged, never improvised (AGENTS.md §1).",
  "vocabularies": {
+  "ACCESS_MODES": {
+   "governs": "equipment.access_mode",
+   "section": "SCHEMA §4.19 (v1.9)",
+   "values": [
+    "collaboration",
+    "fee_for_service",
+    "internal_only",
+    "member_access",
+    "not_stated"
+   ]
+  },
   "CADENCES": {
    "governs": "events.cadence",
    "section": "SCHEMA §4.12.1",
@@ -234,6 +245,51 @@
     "unknown"
    ],
    "note": "written inline in validate.py / SCHEMA, mirrored here"
+  },
+  "EQUIPMENT_CLASSES": {
+   "governs": "equipment.equipment_class",
+   "section": "SCHEMA §3.7 (v1.9)",
+   "values": [
+    "additive_manufacturing_polymer",
+    "afm",
+    "blow_molder",
+    "compression_press",
+    "dielectric_tester",
+    "dma",
+    "dsc",
+    "fatigue_tester",
+    "film_line",
+    "flammability_tester",
+    "ftir",
+    "gpc_sec",
+    "hardness_tester",
+    "impact_tester",
+    "injection_molder",
+    "mass_spectrometry",
+    "melt_flow_indexer",
+    "mooney_viscometer",
+    "moving_die_rheometer",
+    "nmr",
+    "optical_microscopy",
+    "other_specified_in_notes",
+    "permeation_tester",
+    "raman",
+    "rheometer_capillary",
+    "rheometer_rotational",
+    "rubber_mixer",
+    "saxs_waxs",
+    "sem",
+    "single_screw_extruder",
+    "tem",
+    "tga",
+    "thermoformer",
+    "tma",
+    "twin_screw_compounder",
+    "two_roll_mill",
+    "universal_tester",
+    "weathering_aging",
+    "xrd"
+   ]
   },
   "EVENT_FORMATS": {
    "governs": "events.format",
@@ -469,6 +525,21 @@
     "organizer",
     "speaker",
     "sponsor"
+   ]
+  },
+  "PEOPLE_ENGAGEMENT": {
+   "governs": "people_engagement.mode",
+   "section": "SCHEMA §4.20 (v1.9)",
+   "values": [
+    "consulting",
+    "customized_employer_training",
+    "internships_coops",
+    "lab_facility_access",
+    "licensing_tech_transfer",
+    "research_collaboration",
+    "student_projects_capstone",
+    "testing_characterization_access",
+    "training_seats_open_enrollment"
    ]
   },
   "PROCESSES": {

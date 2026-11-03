@@ -189,6 +189,8 @@ def load_evidence():
 evd_fields, evidence = load_evidence()
 rel_fields, relationships = load("relationships.csv", new_file=True)
 cap_fields, capabilities = load("site_capabilities.csv", new_file=True)
+eqp_fields, equipment = load("equipment.csv", new_file=True)
+eng_fields, engagement = load("people_engagement.csv", new_file=True)
 
 # [v1.7] Code dimension tables (SCHEMA SS4.16-SS4.18). Missing = error:
 # from v1.7 these are canonical files, not optional increments.
@@ -944,6 +946,24 @@ CAP_PRODUCT = {"film_sheet", "sheet_plate", "pipe_profile", "tubing", "medical_t
                "bags_pouches", "molded_parts", "wire_cable", "gaskets_seals", "tires",
                "flooring"}
 CAP_VOCAB = {"material": CAP_MATERIAL, "process": CAP_PROCESS, "product_form": CAP_PRODUCT}
+# [v1.9, owner ruling 2026-11-03] Equipment layer (SCHEMA SS3.7, SS4.19) and people engagement (SS4.20).
+EQP_FIELDS = ["equipment_id", "host_org_id", "site_id", "program_id", "name", "equipment_class",
+              "access_mode", "source_ref", "observed_date", "withdrawn_date", "created_by", "notes"]
+EQUIPMENT_CLASSES = {"rheometer_rotational", "rheometer_capillary", "melt_flow_indexer", "moving_die_rheometer",
+                     "mooney_viscometer", "dsc", "tga", "dma", "tma", "ftir", "raman", "nmr", "gpc_sec",
+                     "mass_spectrometry", "xrd", "saxs_waxs", "sem", "tem", "afm", "optical_microscopy",
+                     "universal_tester", "impact_tester", "hardness_tester", "fatigue_tester",
+                     "dielectric_tester", "permeation_tester", "flammability_tester", "weathering_aging",
+                     "rubber_mixer", "two_roll_mill", "twin_screw_compounder", "single_screw_extruder",
+                     "film_line", "injection_molder", "blow_molder", "compression_press", "thermoformer",
+                     "additive_manufacturing_polymer", "other_specified_in_notes"}
+ACCESS_MODES = {"fee_for_service", "collaboration", "member_access", "internal_only", "not_stated"}
+ENG_FIELDS = ["engagement_id", "person_id", "mode", "source_ref", "observed_date", "withdrawn_date",
+              "created_by", "notes"]
+PEOPLE_ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
+                     "testing_characterization_access", "lab_facility_access", "licensing_tech_transfer",
+                     "training_seats_open_enrollment", "customized_employer_training", "consulting"}
+assert PEOPLE_ENGAGEMENT == ENGAGEMENT | {"consulting"}  # SS4.20: the SS4.11 set plus consulting
 LIVENESS_SIGNALS = {"operating_evidence", "closure_signature", "sos_confirmed_closed",
                     "sos_active"}
 QUAL_ORDER = ["public_parent", "tri_reporter", "employees_250plus", "national_footprint"]
@@ -1198,6 +1218,69 @@ for i, r in enumerate(capabilities, 2):
     if tup in cap_tuples:
         errors.append(f"site_capabilities.csv:{i} {cid} duplicate (site_id, capability_type, term) tuple (V-31)")
     cap_tuples.add(tup)
+# V-52 [v1.9] equipment: host-disclosed instruments and pilot lines (SCHEMA SS4.19)
+if eqp_fields != EQP_FIELDS:
+    errors.append("equipment.csv: header does not match the \u00a74.19 field set (V-52)")
+_eqp_ids, _eqp_tuples = set(), set()
+_prog_ids = {r["program_id"] for r in programs}
+for i, r in enumerate(equipment, 2):
+    eid = r["equipment_id"]
+    if not re.fullmatch(r"EQP-\d{6}", eid or ""):
+        errors.append(f"equipment.csv:{i} {eid} equipment_id does not match EQP-###### (V-52)")
+    if eid in _eqp_ids:
+        errors.append(f"equipment.csv:{i} {eid} duplicate equipment_id (V-52)")
+    _eqp_ids.add(eid)
+    if r["host_org_id"] not in ALL_ORG_IDS:
+        errors.append(f"equipment.csv:{i} {eid} host_org_id does not resolve (V-52)")
+    if r["site_id"] and SITE_ORG.get(r["site_id"]) != r["host_org_id"]:
+        errors.append(f"equipment.csv:{i} {eid} site_id does not resolve to a site of host_org_id (V-52)")
+    if r["program_id"] and r["program_id"] not in _prog_ids:
+        errors.append(f"equipment.csv:{i} {eid} program_id does not resolve (V-52)")
+    if not (r["name"] or "").strip():
+        errors.append(f"equipment.csv:{i} {eid} name empty (V-52)")
+    if r["equipment_class"] not in EQUIPMENT_CLASSES:
+        errors.append(f"equipment.csv:{i} {eid} equipment_class {r['equipment_class']!r} not in the \u00a73.7 vocabulary (V-52)")
+    if r["equipment_class"] == "other_specified_in_notes" and not (r["notes"] or "").strip():
+        errors.append(f"equipment.csv:{i} {eid} other_specified_in_notes needs a note (V-52)")
+    if r["access_mode"] not in ACCESS_MODES:
+        errors.append(f"equipment.csv:{i} {eid} access_mode {r['access_mode']!r} not in the \u00a74.19 enum (V-52)")
+    if not re.match(r"https?://", (r["source_ref"] or "").strip()):
+        errors.append(f"equipment.csv:{i} {eid} source_ref must be the host's own page URL (V-52)")
+    if not _is_date(r["observed_date"]) or r["observed_date"] > "2026-12-31":
+        errors.append(f"equipment.csv:{i} {eid} observed_date invalid or in the future (V-52)")
+    if r["withdrawn_date"] and not _is_date(r["withdrawn_date"]):
+        errors.append(f"equipment.csv:{i} {eid} withdrawn_date not a date (V-52)")
+    tup = (r["host_org_id"], r["name"].strip().lower())
+    if tup in _eqp_tuples:
+        errors.append(f"equipment.csv:{i} {eid} duplicate (host_org_id, name) (V-52)")
+    _eqp_tuples.add(tup)
+# V-53 [v1.9] people engagement: a person's publicly stated openness to industry (SCHEMA SS4.20)
+if eng_fields != ENG_FIELDS:
+    errors.append("people_engagement.csv: header does not match the \u00a74.20 field set (V-53)")
+_eng_ids, _eng_tuples = set(), set()
+_person_ids = {r["person_id"] for r in people}
+for i, r in enumerate(engagement, 2):
+    gid = r["engagement_id"]
+    if not re.fullmatch(r"ENG-\d{6}", gid or ""):
+        errors.append(f"people_engagement.csv:{i} {gid} engagement_id does not match ENG-###### (V-53)")
+    if gid in _eng_ids:
+        errors.append(f"people_engagement.csv:{i} {gid} duplicate engagement_id (V-53)")
+    _eng_ids.add(gid)
+    if r["person_id"] not in _person_ids:
+        errors.append(f"people_engagement.csv:{i} {gid} person_id does not resolve (V-53)")
+    if r["mode"] not in PEOPLE_ENGAGEMENT:
+        errors.append(f"people_engagement.csv:{i} {gid} mode {r['mode']!r} not in the \u00a74.20 vocabulary (V-53)")
+    src = (r["source_ref"] or "").strip()
+    if not re.match(r"https?://", src) or "@" in src:
+        errors.append(f"people_engagement.csv:{i} {gid} source_ref must be a public page URL with no email (V-53)")
+    if not _is_date(r["observed_date"]) or r["observed_date"] > "2026-12-31":
+        errors.append(f"people_engagement.csv:{i} {gid} observed_date invalid or in the future (V-53)")
+    if r["withdrawn_date"] and not _is_date(r["withdrawn_date"]):
+        errors.append(f"people_engagement.csv:{i} {gid} withdrawn_date not a date (V-53)")
+    tup = (r["person_id"], r["mode"])
+    if tup in _eng_tuples:
+        errors.append(f"people_engagement.csv:{i} {gid} duplicate (person_id, mode) (V-53)")
+    _eng_tuples.add(tup)
 # V-32/V-33 site fields
 GROUP_MEMBERS = {}
 for i, s in enumerate(sites, 2):
@@ -1422,7 +1505,7 @@ print(f"\n{len(orgs)} organizations, {len(sites)} sites, {len(eco)} ecosystem ro
       f"{len(links)} registry links, {len(members)} member rows, {len(people)} people rows, "
       f"{len(programs)} program rows, {len(events)} event series, "
       f"{len(evidence)} evidence rows, {len(relationships)} relationship rows, "
-      f"{len(capabilities)} capability rows, "
+      f"{len(capabilities)} capability rows, {len(equipment)} equipment rows, {len(engagement)} engagement rows, "
       f"{len(participation)} participation rows, "
       f"{len(ref_codes)} ref_codes, {len(ref_code_map)} code-map rows, "
       f"{len(code_assignments)} code assignments checked.")
