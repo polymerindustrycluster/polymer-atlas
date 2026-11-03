@@ -79,3 +79,28 @@ the 10 hardest calls in `ruling_proposals_SUMMARY.md`. Unit: values (tokens). In
     the biopolymer is only a component of a non-polymer research object (Molinari).
   - (b) Pass both.
   - (c) Fail both. Biological polymers are out of scope unless they are synthetic or processed polymer materials.
+- **B-CG-3. Professor-like stylings outside the listed ranks.** The lanes met:
+  - "Assistant/Associate Teaching Professor" (Olson, USM; Ekenseair, Northeastern);
+  - "Professor of the Practice" (Barenberg, Northeastern; Grunenfelder, MIT);
+  - "Post-Tenure" (Hatton, MIT);
+  - "Senior Lecturer" (Triggs, Auburn).
+
+  SCHEMA §4.9 [v1.8.2] lists `senior_lecturer` and counts lecturer ranks as instructional faculty. The lane brief
+  and `build_integration.py` still fail lecturers at Gate A, and no admitted row is affected.
+  - **(a) Recommended:**
+    - teaching-professor and professor-of-the-practice stylings stay outside Gate A, because they are instructional
+      or practice titles with no research rank;
+    - "Post-Tenure" is outside as a retirement-transition status;
+    - senior lecturers become recordable as `senior_lecturer` per SCHEMA §4.9, and the lane brief and builder are
+      brought into line.
+  - (b) Admit teaching professors and professors of the practice as `professor` when Gate B is met.
+  - (c) Keep everything as the briefs have it (lecturers fail), and amend SCHEMA instead.
+- **B-CG-4. Band B census leads (632 people).**
+  - Band A gave 31 admitted records from 132 people. Most of the rest are emeritus (30), have no polymer sentence on
+    their own pages (41), or are already held (11).
+  - The census measures band B at about 40% current-polymer-faculty precision, against about 100% for band A.
+  - At band A's rate, band B would yield on the order of 60–100 records. That is a projection, not a measurement.
+  - It would take about 20 Sonnet lanes.
+  - **(a) Recommended:** run a 60-person sample first, then decide on the rest.
+  - (b) Run all 632.
+  - (c) Do not run band B.
