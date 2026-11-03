@@ -1,5 +1,10 @@
 # Owner battery: 2026-11-03
 
+> **RULED 2026-11-03: every item (a), as recommended** (repo owner, in session, as multiple choice). The items are
+> B-CAMP, B-BAND, B-VOC-1/2, B-VOC-3/4, B-CG-1, B-CG-2, B-CG-3 and B-CG-4.
+> - B-CAMP is applied in this PR as a dated AGENTS.md revision.
+> - The other items are applied in their own PRs, which cite this file.
+
 Every item needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation, marked (a), and its
 evidence. Nothing these items gate has been applied.
 
