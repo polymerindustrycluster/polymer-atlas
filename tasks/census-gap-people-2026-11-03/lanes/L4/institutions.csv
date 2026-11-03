@@ -1,0 +1,4 @@
+school_key,legal_name_as_published,city,state,website,polymer_unit_name,polymer_unit_url,unit_evidence_quote,observed_date
+jhu,Johns Hopkins University,Baltimore,MD,https://www.jhu.edu,,,,2026-11-03
+umd,"University of Maryland, College Park",College Park,MD,https://umd.edu,,,,2026-11-03
+duke,Duke University,Durham,NC,https://duke.edu,NSF Center for the Chemistry of Molecularly Optimized Networks (MONET),https://chem.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials,"The NSF Center for the Chemistry of Molecularly Optimized Networks (MONET) will bring together experts in polymer chemistry, synthetic methods, photochemistry",2026-11-03
