@@ -96,6 +96,8 @@ LEVELS = {"certificate", "associate", "bachelor", "master", "doctorate", "none"}
 CIP_SOURCE_TYPES = {"institution_published", "ipeds_listing", "researcher_inferred"}
 ROLES = {"professor", "associate_professor", "assistant_professor", "research_professor",
          "center_director_professor",
+         # [v1.8.2] lecturer ranks are faculty for people records (owner ruling 2026-11-02)
+         "senior_lecturer",
          # [v1.7.4] federal-laboratory research-staff values (§4.9 scope extension)
          "research_scientist", "staff_scientist", "research_engineer", "senior_scientist",
          "distinguished_scientist", "group_leader", "senior_research_engineer",

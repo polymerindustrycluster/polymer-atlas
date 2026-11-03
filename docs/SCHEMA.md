@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -1131,7 +1131,7 @@ in every rank.
 | `full_name` | string | As published on the institution's page |
 | `institution_org_id` | FK → organizations ∪ ecosystem | **MUST** |
 | `program_org_id` | FK → `data/programs.csv` (§4.11), nullable. (At v1.2 this pointed at program-grain ecosystem records; programs moved to their own table at v1.3 and the reference follows them. Validator V-11 as amended.) | Where the public page ties the person to a held program |
-| `role` | controlled | The institution's own styling, recorded verbatim in `role_as_published`; the controlled value is one of: `professor` \| `associate_professor` \| `assistant_professor` \| `research_professor` \| `center_director_professor` (directors/program leads qualify **only** if they also hold a publicly stated professor title); for federal-laboratory research-staff records under the [v1.7.3] scope extension **[v1.7.4]**: `research_scientist` \| `staff_scientist` \| `research_engineer` \| `senior_scientist` \| `distinguished_scientist` \| `group_leader` \| `senior_research_engineer` \| `associate_scientist` \| `division_director` \| `assistant_scientist` \| `named_chair` — the lab roster wave's harvested stylings, with its documented folds (generic "Research Staff" / "researcher" → `research_scientist`; "Section Head" → `group_leader`; endowed laboratory chairs, e.g. the ORNL/UT Governor's Chair → `named_chair`). No postdoc value exists: solely-postdoctoral stylings are out of scope at lab grain exactly as at university grain |
+| `role` | controlled | The institution's own styling, recorded verbatim in `role_as_published`; the controlled value is one of: `professor` \| `associate_professor` \| `assistant_professor` \| `research_professor` \| `center_director_professor` \| `senior_lecturer` **[v1.8.2]** (directors/program leads qualify **only** if they also hold a publicly stated professor title); for federal-laboratory research-staff records under the [v1.7.3] scope extension **[v1.7.4]**: `research_scientist` \| `staff_scientist` \| `research_engineer` \| `senior_scientist` \| `distinguished_scientist` \| `group_leader` \| `senior_research_engineer` \| `associate_scientist` \| `division_director` \| `assistant_scientist` \| `named_chair` — the lab roster wave's harvested stylings, with its documented folds (generic "Research Staff" / "researcher" → `research_scientist`; "Section Head" → `group_leader`; endowed laboratory chairs, e.g. the ORNL/UT Governor's Chair → `named_chair`). No postdoc value exists: solely-postdoctoral stylings are out of scope at lab grain exactly as at university grain |
 | `role_as_published` | string | The institution's exact words — never normalized or inferred |
 | `research_specialties[]` | §3.1/§3.2 vocab first, §3.5 supplement where needed | As publicly stated on the cited page |
 | `public_profile_url` | URL | Their own faculty/lab page |
@@ -2764,3 +2764,11 @@ unchanged.
   only ecosystem `university_college` rows, and duplicating the org
   into ecosystem breaks the one-table-per-org invariant (pass 41's
   attempt, reverted in pass 43). Four links minted at application.
+
+- **v1.8.2 — 2026-11-02 (owner ruling 2026-11-02; applied in integration
+  pass 46).** `senior_lecturer` joins the §4.9 people role enum. The
+  2026-10-31 rank line already counted lecturer ranks as faculty for
+  program leg-(c) qualification; this revision extends the principle to
+  people records, whose enum previously had no lecturer value at all.
+  First application: PERSON-001055 (UMass Amherst), held out of pass 45
+  pending this ruling.
