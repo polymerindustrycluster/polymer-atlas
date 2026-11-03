@@ -241,11 +241,17 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 
 ## PIC-18 (owner ruling 2026-11-03)
 
-- [ ] `in-pr:claude-code 2026-11-03` **PIC-18 replaces PIC-12 for reporting (AGENTS.md §8):**
+- [x] `done 2026-11-03 (#32)` **PIC-18 replaces PIC-12 for reporting (AGENTS.md §8):**
   - The region is the NEO-SMART 18 counties, which equal JobsOhio Team NEO (14) plus Lake to River (4).
   - `scripts/regions.py` is the single definition. The site, explorers and skyline are switched over.
   - Dated reports that used PIC-12 are left as written.
 - [ ] `open` **Extend the CBP size-class denominator (`docs/denominators/cbp_size_classes_polymer.csv`) to the 6 added counties:** Ashland, Columbiana, Erie, Huron, Richland, Tuscarawas. Re-run `scripts/build_cbp_size_classes.py` with `regions.PIC18`. QCEW already covers every Ohio county.
-- [ ] `open` **Evidence Room (separate repo):** switch its PIC-12 cluster pages to PIC-18 to stay consistent.
-- [ ] `open` **Coverage gap for the 6 added counties:** they have fewer Atlas rows than the PIC-12 core. Run a site-discovery wave for them (TRI, OSHA and FRS spines first).
+- [ ] `in-pr:claude-code 2026-11-03` **Evidence Room (separate repo):** switch its PIC-12 cluster pages to PIC-18 to stay consistent.
+  - Phase 1 (definitions, decision and per-page "update pending" notices) is in progress.
+  - Phase 2 re-derives each page with a dated correction.
+  - pic-geo 1.1.0 carries the canonical PIC-18.
+- [x] `done 2026-11-03` **Coverage gap for the 6 added counties:** the discovery pass found no creates. Of 56 leads, 21 were duplicates, 9 rejected and 26 still uncertain. Details: `tasks/discovery-pic18-2026-11-03/README.md`.
+- [ ] `open` **The PIC-18 discovery pass left 26 STILL_UNCERTAIN leads.** Each names the fact that settles it, and most need the company's own page. 4 registry-link candidates are also unapplied (`tasks/discovery-pic18-2026-11-03/L*/`).
+- [ ] `open` **`atlas.py dedupe-check` misses sites whose street address is only in `notes`** (SITE-000863, SITE-001910). Match against notes too, or move the address into the address columns.
+- [ ] `open` **Possible duplicate:** SITE-000818 (ORG-000755) and SITE-001925 (ORG-001931) share 2228 Reiser Ave SE. Check before merging per SCHEMA.
 
