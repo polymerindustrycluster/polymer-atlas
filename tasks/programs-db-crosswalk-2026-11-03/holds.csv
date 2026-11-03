@@ -1,0 +1,11 @@
+org_id,legal_name,ipeds_unitid,ror_candidate,reason
+ORG-002779,Penn State Behrend,214591,https://ror.org/01ky71w68,ROR status withdrawn
+ORG-002780,Pennsylvania College of Technology,366252,,no crosswalk candidate
+ORG-004625,Wichita State University-Campus of Applied Sciences and Technology,156107,https://ror.org/01j933b41,"neither domain nor name agrees (ROR ['WATC', 'Wichita Area Technical College'], ['watc.edu'])"
+ORG-004635,The Landing School of Boatbuilding and Design,161208,,no crosswalk candidate
+ORG-004636,Edmonds College,235103,https://ror.org/00vhfbm88,"neither domain nor name agrees (ROR ['Edmonds Community College'], ['edcc.edu'])"
+ORG-004672,Connecticut State Community College,129367,https://ror.org/014a8dd26,"neither domain nor name agrees (ROR ['CCC', 'Capital Community College'], ['capitalcc.edu'])"
+ORG-004775,Purdue University Indianapolis,500139,,no crosswalk candidate
+ORG-004777,Rutgers University-Camden,186371,,no crosswalk candidate
+ORG-004778,Rutgers University-New Brunswick,186380,,no crosswalk candidate
+ORG-004779,Rutgers University-Newark,186399,,no crosswalk candidate
