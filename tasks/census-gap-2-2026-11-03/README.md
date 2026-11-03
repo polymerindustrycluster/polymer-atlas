@@ -13,21 +13,31 @@
 - The PIC faculty census, a private list. Its band-A rostered people not yet in the Atlas were exported to a
   **local-only** lead list, which is not in this repo.
 
-## Applied: `data/people.csv` +51 (PERSON-001334 to PERSON-001384), all tier A
+## Applied
+
+- `data/people.csv` +48 (PERSON-001334 to PERSON-001381), all tier A.
+- `data/inclusion_log.csv` +3, the borderline admissions:
+  - Mary Boyce: an emerita *administrative* title held alongside a current professor rank;
+  - Ellis Meng: an interests-list phrase;
+  - Jeffrey S. Moore: `research_professor`.
 
 | Source | People records added |
 |-|-:|
-| Census-gap follow-ups: lane T (JHU, Columbia), lanes R1 and R2 | 19 |
-| Band-A census leads: 4 lanes, run locally | 32 |
+| Census-gap follow-ups: lane T (JHU, Columbia), lanes R1 and R2 | 17 |
+| Band-A census leads: 4 lanes, run locally | 31 |
 
 **Admission rule** (`build_people.py`). A person record is admitted only when all of these hold:
 - the lane verdict is VERIFIED;
-- the **raw-page check** passes (`raw_check.csv`). The integrator re-fetched every gate URL raw and found both quotes
-  word for word. Pages came from the NAS Firecrawl, and jhu.edu and columbia.edu pages from the Tavily extract cache
-  (owner-approved route, 72 URLs used);
+- the **raw-page check** passes (`raw_check.csv`). The integrator re-fetched every gate URL and found both quotes
+  word for word in order. Gate A also needs the person's surname within 40 words of the quote, so a bare "Professor"
+  on a roster page cannot pass for someone else.
+  - Pages came from the NAS Firecrawl.
+  - jhu.edu and columbia.edu pages came from the Tavily extract cache (owner-approved route, 72 URLs used). For those
+    two hosts the check is a verbatim-copy check against the same saved text, not an independent fetch;
 - the role is in the university professor vocabulary;
 - all URLs are on the institution's own domain;
-- the institution is already held, matched by IPEDS UNITID;
+- the institution is already held, matched by IPEDS UNITID, including universities held as organization records
+  through `registry_links.csv`;
 - the name is not already in `people.csv`;
 - the integrator's review of every Gate B quote did not hold it.
 
@@ -36,36 +46,40 @@ No institutions were created.
 ## Census-gap follow-ups (unit: people examined)
 
 The first wave left 79 people STILL_UNCERTAIN (`uncertain.csv`):
-- 13 are already in the Atlas: 12 at the same university, and 1 (Herrera-Alonso) at another institution.
-- 3 are owner questions: B-CG-1 and B-CG-2, in the 2026-11-03 owner battery.
+- 12 are already held at the same university.
+- 1 (Herrera-Alonso) is held at another institution. Her current home was **not** re-checked, because jhu.edu was
+  blocked. That stays a follow-up.
+- 3 are owner questions: B-CG-1 and B-CG-2.
 - 63 were re-run.
 
 | Lane | Input people | Sweep people | VERIFIED | Raw check passed |
 |-|-:|-:|-:|-:|
-| T (JHU, Columbia; via Tavily) | 8 | 23 | 9 | 9 |
-| R1 (+ Northeastern roster sweep) | 28 | 5 | 14 | 12 |
+| T (JHU, Columbia; via Tavily) | 8 | 23 | 9 | 8 |
+| R1 (+ Northeastern roster sweep) | 28 | 5 | 14 | 11 |
 | R2 | 27 | 0 | 5 | 4 |
 
-The rest are REJECT or remain STILL_UNCERTAIN in each lane's `people.csv`, each with its settling fact.
+## Band-A census leads (unit: people; 133 input rows, 132 people)
 
-## Band-A census leads (unit: people examined)
-
-The census lists 1,176 rostered people (people it found on the school's own roster page). 765 are not in the Atlas
-at the same school: 133 in band A and 632 in band B.
-
-The 133 band-A people went through four lanes:
+The census lists 1,176 rostered people, meaning people it found on the school's own roster page. 765 of them are not
+in the Atlas at the same school: 133 in band A and 632 in band B. The census's band-A spot-check measured whether
+someone is *current polymer faculty at that school*. These gates also require a non-emeritus professor rank and a
+polymer sentence on the person's own pages, so the two rates measure different things.
 
 | Outcome | People |
 |-|-:|
-| VERIFIED | 38 rows, 37 people (one person appeared twice) |
-| Raw check passed | 38 of 38 rows |
-| Already held | 11 |
-| Rejected or still uncertain | the remainder; emeritus styling was the commonest Gate A failure |
+| VERIFIED by a lane | 37 |
+| (of which admitted after the raw check and review) | 31 |
+| Already held at the same school | 11 |
+| Emeritus styling (fails Gate A) | 30 |
+| Other non-professor styling (research associate, senior lecturer, research assistant, former faculty) | 4 |
+| At a different school than the census lists | 1 |
+| No polymer sentence on the person's own pages (REJECT or STILL_UNCERTAIN) | 41 |
+| Not reachable (jhu.edu or columbia.edu not fetched in these lanes, Iowa State or Princeton ECE blocked) | 8 |
+| **Total** | **132** |
 
-Band-A precision through the full gates is therefore about **28%** (37 of 133 people), well below the census's own
-band-A spot-check. Band B (632 people) has not been run.
+Band B (632 people) has not been run. Whether to run it is the owner's call.
 
-## Held (`holds.csv`, 15)
+## Held (`holds.csv`, 18)
 
 - **Integrator review (12):**
   - 5 rest on news items instead of the person's own pages: Wiley, Erb, Gupta, Nguyen and Monroe.
@@ -74,11 +88,23 @@ band-A spot-check. Band B (632 people) has not been run.
   - 2 have a biological polymer as the Gate B object, held for owner battery B-CG-2: Ribbeck and Schroeder.
   - 1 has a title that is a sentence fragment: Kokkoli.
   - 1 is a duplicate row: Jeff Moore, the same person as Jeffrey S. Moore.
-- **Raw check (2):**
-  - Czabaj: the Gate A quote is not on the page.
+- **Raw check (5):**
+  - Czabaj, Green and Sletten: the Gate A quote was not found next to their name.
+  - Asadi: the Gate B quote was not found on the page.
   - Kirshenbaum: the Gate A page could not be fetched.
 - **Already held elsewhere (1):** Sokolov is held at ORNL (PERSON-000478). Joint appointments are recorded at the
   primary home.
+
+## Known gap
+
+SCHEMA §4.9 [v1.8.2] lists `senior_lecturer` in the people vocabulary, but this wave's brief, following the first
+wave's, fails lecturers at Gate A, and `build_integration.py`'s `ROLES` omits the value. One lead (a senior lecturer)
+was rejected on it, and no admitted row is affected. The styling classes the lanes met are put to the owner as
+B-CG-3:
+- teaching professor;
+- professor of the practice;
+- post-tenure;
+- senior lecturer.
 
 ## Rebuild
 
