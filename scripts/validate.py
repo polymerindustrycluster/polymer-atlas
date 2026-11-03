@@ -917,7 +917,8 @@ REL_FIELDS = ["relationship_id", "from_org_id", "relationship_type", "to_org_id"
 CAP_FIELDS = ["capability_id", "site_id", "org_id", "capability_type", "term",
               "provenance", "source_ref", "observed_date", "withdrawn_date",
               "created_by", "notes"]
-CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness", "code"}
+CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness", "code", "size_band"}
+SIZE_BAND_CLASSES = {"government_filing", "own_site"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B
 SOURCE_CLASSES = {"own_site", "government_filing", "registry", "directory", "press",
                   "platform_category", "harvest_roster"}
 TIER_EFFECTS = {"supports_A", "supports_B", "supports_C", "contradicts"}
@@ -1030,6 +1031,8 @@ if evidence or True:
             errors.append(f"evidence.csv:{i} {eid} bad tier_effect (V-22)")
         elif te != "contradicts" and sc in CLASS_CEIL and EFF_RANK[te] > EFF_RANK[CLASS_CEIL[sc]]:
             errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
+        if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
+            errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing/own_site and caps at supports_B (V-22)")
         if sc in ("registry", "directory") and r["claim_type"] == "address" and te == "supports_B":
             errors.append(f"evidence.csv:{i} {eid} registry/directory address alone caps at supports_C (V-22)")
         if not (r["source_ref"] or "").strip() or not (r["claim_detail"] or "").strip():

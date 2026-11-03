@@ -25,7 +25,7 @@ BASE_CLAIMS = {
     "ecosystem": {"existence", "address", "scope"},
     "programs": {"existence", "scope"},
 }
-CLAIMS = {"existence", "address", "scope", "code", "parent", "activity", "liveness"}
+CLAIMS = {"existence", "address", "scope", "code", "parent", "activity", "liveness", "size_band"}  # size_band: B-BAND 2026-11-03
 EFFECTS = {"supports_A", "supports_B", "supports_C", "contradicts"}
 POSTURES = ("no_rows_history_unknown", "started_with_gaps", "claim_rows_present")
 
