@@ -264,6 +264,15 @@ class Atlas:
         self.sites = rows_of(con, "sites")
         self.programs = rows_of(con, "programs")
         self.people = rows_of(con, "people")
+        # [v1.9] equipment (SCHEMA 4.19) and people engagement (4.20); live rows only (no withdrawn_date)
+        self.equipment_by_host = defaultdict(list)
+        for r in rows_of(con, "equipment"):
+            if not (r.get("withdrawn_date") or "").strip():
+                self.equipment_by_host[r.get("host_org_id")].append(r)
+        self.engagement_by_person = defaultdict(list)
+        for r in rows_of(con, "people_engagement"):
+            if not (r.get("withdrawn_date") or "").strip():
+                self.engagement_by_person[r.get("person_id")].append(r)
         self.rels = rows_of(con, "relationships")
         self.ref_titles = {r["code_value"]: r["code_title"] for r in rows_of(con, "ref_codes")
                            if r.get("code_system") == "NAICS" and r.get("code_value")}
@@ -508,7 +517,8 @@ EXPERTS_JS = r"""(function () {
   function personRow(p) {
     var name = p[4] ? '<a href="' + esc(p[4]) + '" rel="noopener nofollow">' + esc(p[0]) + '</a>' : esc(p[0]);
     var i = D.insts[p[3]] || [];
-    return '<li><span class="xn">' + name + instLine(p[3]) + '</span><span class="xr">' + esc(p[1]) + '</span><span class="xsw">' + specs(p[2]) +
+    var open = p[5] && p[5].length ? '<span class="xopen">Open to: ' + esc(p[5].join(', ')) + '</span>' : '';
+    return '<li><span class="xn">' + name + instLine(p[3]) + '</span><span class="xr">' + esc(p[1]) + open + '</span><span class="xsw">' + specs(p[2]) +
       why([['name', p[0]], ['title', p[1]], ['specialties', p[2].join(' ')], ['institution', i[0]], ['location', [i[1], i[2]].join(' ')]]) + '</span></li>';
   }
   function programRow(g) {
@@ -948,6 +958,7 @@ th.num button.sort{flex-direction:row-reverse}
 .xrows .xn{font-weight:700;display:flex;flex-direction:column}.xrows .xn .xr{font-weight:400}.xrows .xr{color:var(--muted);font-size:.9rem}
 .xrows .xsw{display:flex;flex-direction:column;gap:3px}
 .xwhy{color:var(--muted);font-size:.78rem;font-style:italic}
+.xopen{display:block;margin-top:3px;color:var(--fg);font-size:.82rem;font-weight:700}
 .xrows .xs{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .xrows .xs .xchip{min-height:24px;font-size:.78rem;padding:0 8px;background:var(--panel-2);border-color:transparent}
 .xmore{all:unset;cursor:pointer;display:block;margin:.4em 0 1.4em;padding:10px 16px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-weight:700;text-align:center}
@@ -1460,7 +1471,8 @@ def experts_json(ctx):
             href = ""
         specs = specs_of(vals(p.get("research_specialties")))
         role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
-        people.append([p.get("full_name") or "", role, specs, inst(p.get("institution_org_id")), href])
+        modes = sorted({str(g.get("mode") or "").replace("_", " ") for g in a.engagement_by_person.get(p.get("person_id"), [])} - {""})
+        people.append([p.get("full_name") or "", role, specs, inst(p.get("institution_org_id")), href, modes])
     for g in a.programs:
         if g.get("status") not in ("active", "", None):
             continue
@@ -1729,6 +1741,7 @@ def build_org_page(ctx, o):
 {explore_links(o["org_id"], o.get("status"), any(nonempty(x.get("latitude")) for x in a.sites if x.get("org_id") == o["org_id"]))}
 {fields}
 {('<h2>Subsidiary and child organizations</h2>' + kids_html) if kids_html else ''}
+{equipment_block(a.equipment_by_host.get(o["org_id"], []))}
 {sites_html}
 <h2>Sources</h2>
 <p class="small muted">Organization-level sources. Last verified {esc(o.get("last_verified")) or "n/a"}; tier {esc(o.get("verification_tier")) or "n/a"}.</p>
@@ -1746,6 +1759,21 @@ def explore_links(oid, status, on_map):
     if on_map:
         links.append(f'<a class="pill" href="../graph/map.html#{esc(oid)}">See its sites on the map</a>')
     return '<p class="explore-links">' + " ".join(links) + "</p>"
+
+
+def equipment_block(rows):
+    """[v1.9] Instruments and pilot lines the host lists on its own pages (SCHEMA 4.19)."""
+    if not rows:
+        return ""
+    body = "".join(
+        f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+        f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
+        (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+        for r in sorted(rows, key=lambda r: (r.get("equipment_class") or "", (r.get("name") or "").lower())))
+    return (f"<h2>Equipment and testing ({fmt_int(len(rows))} equipment rows)</h2>"
+            '<p class="small muted">Instruments and pilot lines this organization lists on its own pages. Ask the host about access.</p>'
+            + table_wrap('<table><thead><tr><th scope="col">Equipment</th><th scope="col">Class</th><th scope="col">Access</th>'
+                         f'<th scope="col">Source</th></tr></thead><tbody>{body}</tbody></table>', "Equipment"))
 
 
 def build_eco_page(ctx, e):
@@ -1794,6 +1822,7 @@ def build_eco_page(ctx, e):
 {fields}
 {progs_html}
 {people_block(a.people_by_inst.get(eid, []), ctx)}
+{equipment_block(a.equipment_by_host.get(eid, []))}
 {sites_html}
 <h2>Sources</h2>
 <p class="small muted">Last verified {esc(e.get("last_verified")) or "n/a"}; tier {esc(e.get("verification_tier")) or "n/a"}.</p>

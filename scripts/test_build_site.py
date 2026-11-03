@@ -250,7 +250,7 @@ class BuildSiteTest(unittest.TestCase):
         by_name = {p[0]: p for p in d["people"]}
         self.assertEqual(set(by_name), {"Ada Researcher", "Bo Embedded"})
         for p in d["people"]:
-            self.assertEqual(len(p), 5)            # name, role, specialties, institution id, profile URL
+            self.assertEqual(len(p), 6)            # name, role, specialties, institution id, profile URL, engagement modes
             self.assertNotIn("@", p[4])            # a URL embedding an email is dropped
             self.assertIn(p[3], d["insts"])
         self.assertIn("rheology", by_name["Ada Researcher"][2])

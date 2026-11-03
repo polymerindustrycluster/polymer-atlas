@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -413,6 +413,19 @@ R11. **No data row is changed by this revision.**
   applied automatically. The band is always stored with
   `employee_count_source_date` and never as a precise headcount (§4.4).
 
+### Owner rulings — 2026-11-03 (equipment and availability) **[v1.9]**
+
+The owner ruled in session on 2026-11-03 (multiple choice: "Equipment + availability"). The ruling came out of a review of
+the Ohio Innovation Exchange expert and equipment search. Both layers are **publish-only-what-the-host-states** layers:
+
+- **Equipment (§3.7, §4.19).** An instrument, pilot line or testing service enters only from the host's own page that lists it,
+  whether the host is a university, laboratory or company. An aggregator, directory or state portal that lists the same instrument
+  is a discovery lead and mints nothing. That includes the Ohio Innovation Exchange: it is a lead, and its terms reserve all rights.
+- **Availability (§4.20).** A person's openness to industry work enters only where the person's own page, lab page or the
+  institution's page about them states it. Program-grain availability already exists as `programs.engagement_modes` (§4.11) and is
+  not duplicated. An aggregator's "availability" label is a lead only.
+- No new field is added to an existing table. Both layers are new single files, so no existing row changes.
+
 ## 2. NAICS Map
 
 ### 2.1 Critical provenance rule — read first
@@ -801,6 +814,21 @@ All NEW; definitions are the boundary rules:*
 | `gaskets_seals` | Gaskets, seals, and sealing devices |
 | `tires` | Tires (new and retread product; the *process* distinction stays in §3.1) |
 | `flooring` | Resilient flooring products (NAICS 326192 class) |
+
+#### 3.7 Equipment classes **[v1.9]**
+
+The governed `equipment.equipment_class` values. Use the closest class. If none fits, use `other_specified_in_notes`
+with the instrument named in `notes`, and flag it for a vocabulary revision.
+
+| Group | Terms |
+|---|---|
+| Rheology and flow | `rheometer_rotational` · `rheometer_capillary` · `melt_flow_indexer` · `moving_die_rheometer` · `mooney_viscometer` |
+| Thermal analysis | `dsc` · `tga` · `dma` · `tma` |
+| Spectroscopy and molecular weight | `ftir` · `raman` · `nmr` · `gpc_sec` · `mass_spectrometry` |
+| Structure and imaging | `xrd` · `saxs_waxs` · `sem` · `tem` · `afm` · `optical_microscopy` |
+| Mechanical and physical testing | `universal_tester` · `impact_tester` · `hardness_tester` · `fatigue_tester` · `dielectric_tester` · `permeation_tester` · `flammability_tester` · `weathering_aging` |
+| Processing (pilot scale) | `rubber_mixer` · `two_roll_mill` · `twin_screw_compounder` · `single_screw_extruder` · `film_line` · `injection_molder` · `blow_molder` · `compression_press` · `thermoformer` · `additive_manufacturing_polymer` |
+| Escape | `other_specified_in_notes` (requires a note) |
 
 ## 4. Record Schema Organizations and sites are stored as per-state shard files under the placement function in Appendix C; all field rules in this section apply to the union of a table’s shards.
 
@@ -2119,6 +2147,52 @@ v1.7 does not migrate them. `code_assignments` at birth carries
 SIC only. Whether stated NAICS from filings later join this table
 (dual-carriage vs migration) is Q4 — not decided by this revision.
 
+### 4.19 Equipment records **[v1.9]** (`data/equipment.csv`)
+
+One row per instrument, pilot line or named testing service that a host lists on its own pages. It answers the industry
+question "where can I get this made, tested or characterised?". Hosts are organizations or ecosystem records: universities,
+laboratories, consortia and testing companies.
+
+| Field | Type | v1.9? | Notes |
+|---|---|---|---|
+| `equipment_id` | string, immutable, `EQP-######` | **MUST** | Never reused; allocated at integration only |
+| `host_org_id` | FK → organizations ∪ ecosystem | **MUST** | The organization that operates the equipment |
+| `site_id` | FK → sites, nullable | Nice | Where the host has site rows; it must be a site of `host_org_id` (V-52) |
+| `program_id` | FK → programs, nullable | Nice | The center or lab-facility program that runs it, where the host's page says so |
+| `name` | string | **MUST** | As the host's page names it, e.g. "Capillary rheometer" or "Maximum Bubble Pressure / Cavitation Rheometer" |
+| `equipment_class` | §3.7 | **MUST** | Exactly one class |
+| `access_mode` | enum | **MUST** | `fee_for_service` · `collaboration` · `member_access` · `internal_only` · `not_stated`, as the page states it; otherwise `not_stated` |
+| `source_ref` | URL | **MUST** | The host's own page that lists the equipment. An aggregator URL is not admissible |
+| `observed_date` | date | **MUST** | When the page was read |
+| `withdrawn_date` | date, nullable | as applicable | When the page stopped listing it. Rows are never deleted |
+| `created_by` | string | **MUST** | As everywhere |
+| `notes` | string | Nice | Model or specification as the page states it, booking route, and the reason for an `other` class |
+
+**Rules.** The host is the operator, never a vendor or manufacturer. No contact data is recorded: booking routes are
+named, not copied. A (host, name) pair is unique (V-52).
+
+### 4.20 People engagement records **[v1.9]** (`data/people_engagement.csv`)
+
+One row per (person × engagement mode) that the person's own public page, lab page, or the institution's page about them
+states.
+
+| Field | Type | v1.9? | Notes |
+|---|---|---|---|
+| `engagement_id` | string, immutable, `ENG-######` | **MUST** | Never reused |
+| `person_id` | FK → people | **MUST** | |
+| `mode` | enum | **MUST** | The §4.11 `engagement_modes` set plus `consulting`: `research_collaboration` · `student_projects_capstone` · `internships_coops` · `testing_characterization_access` · `lab_facility_access` · `licensing_tech_transfer` · `training_seats_open_enrollment` · `customized_employer_training` · `consulting` |
+| `source_ref` | URL | **MUST** | The public page that states it. No email-bearing URL (V-53) |
+| `observed_date` | date | **MUST** | |
+| `withdrawn_date` | date, nullable | as applicable | |
+| `created_by` | string | **MUST** | |
+| `notes` | string | Nice | The page's own words, in 25 words or fewer |
+
+**Rules.**
+- A mode is recorded only where it is stated, never inferred from seniority, patents or grants.
+- An aggregator's availability label (for example the Ohio Innovation Exchange's "Availability: Industry Projects") is a lead
+  to look for the statement on the institution's own page. It is never the source.
+- Removal on request is honored at the next pass, as for §4.9.
+
 ## 5. Entity Resolution Rules — Dedupe Identically
 
 **Goal:** Three researchers given the same firm reach the same Parent/Site split, the same canonical name, and the same merge decision. When in doubt, **do not merge** — link with `related_org_ids[]` + note and flag for review. A false merge destroys data; a false split is cheap to fix.
@@ -2772,3 +2846,10 @@ unchanged.
   people records, whose enum previously had no lecturer value at all.
   First application: PERSON-001055 (UMass Amherst), held out of pass 45
   pending this ruling.
+- **v1.9 — 2026-11-03 (owner ruling 2026-11-03).** Adds the equipment layer
+  (§3.7 equipment classes; §4.19 `data/equipment.csv`) and people engagement
+  (§4.20 `data/people_engagement.csv`), following the Ohio Innovation
+  Exchange review. Both are new single files that start empty, so no
+  existing row changes. The validator gains V-52 (equipment) and V-53
+  (engagement). `docs/schema/vocab.json` gains `EQUIPMENT_CLASSES`,
+  `ACCESS_MODES` and `PEOPLE_ENGAGEMENT`.
