@@ -194,7 +194,7 @@ force-place it into a US shard or the residual.
   is invalid. The single exception is `members.member_since`, which
   is a year field by design (owner ruling 2026-11-01, SCHEMA v1.7.6).
 - **Evidence contract.** A create integrates only with evidence rows
-  in `data/evidence.csv` covering its existence and scope claims at
+  in the `data/evidence_*.csv` shards covering its existence and scope claims at
   minimum, per SCHEMA.md §4.13, which also sets the per-source-class
   tier ceilings. A platform or roster category is a discovery lead:
   it can never support a scope claim.

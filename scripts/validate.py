@@ -166,7 +166,25 @@ people_fields, people = load("people.csv", new_file=True)
 prog_fields, programs = load("programs.csv", new_file=True)
 event_fields, events = load("events.csv", new_file=True)
 part_fields, participation = load("event_participation.csv", new_file=True)
-evd_fields, evidence = load("evidence.csv", new_file=True)
+# [v1.8] Evidence is sharded (SCHEMA SS4.13): the logical evidence table is
+# the union of data/evidence_*.csv shards; a legacy data/evidence.csv, when
+# present, is read as part of the union (dual-read during migration).
+def load_evidence():
+    files = sorted(DATA.glob("evidence_*.csv"))
+    legacy = DATA / "evidence.csv"
+    if not files and legacy.exists():
+        files.append(legacy)
+    if not files:
+        errors.append("evidence.csv: file missing (canonical from schema v1.2)")
+        return [], []
+    all_fields, all_rows = None, []
+    for f in files:
+        flds, rows = load(f.name)
+        if all_fields is None:
+            all_fields = flds
+        all_rows.extend(rows)
+    return all_fields, all_rows
+evd_fields, evidence = load_evidence()
 rel_fields, relationships = load("relationships.csv", new_file=True)
 cap_fields, capabilities = load("site_capabilities.csv", new_file=True)
 

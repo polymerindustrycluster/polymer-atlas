@@ -63,6 +63,8 @@ def load_tables(data_dir):
         stem = os.path.basename(path)[:-4]
         m = SHARD_RE.match(stem)
         name = m.group(1) if m else stem
+        if stem == "evidence" or stem.startswith("evidence_"):
+            name = "evidence"  # [v1.8] evidence shards union into one table
         t = tables.setdefault(name, Table(name))
         with open(path, newline="", encoding="utf-8-sig") as fh:
             rd = csv.DictReader(fh)

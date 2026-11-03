@@ -11,7 +11,7 @@ TABLES = {
           "registry_links": "registry_links.csv", "members": "members.csv",
           "people": "people.csv", "programs": "programs.csv",
           "events": "events.csv", "event_participation": "event_participation.csv",
-          "evidence": "evidence.csv", "relationships": "relationships.csv",
+          "relationships": "relationships.csv",
           "site_capabilities": "site_capabilities.csv",
           "ref_codes": "ref_codes.csv", "ref_code_map": "ref_code_map.csv",
           "code_assignments": "code_assignments.csv"}
@@ -25,8 +25,11 @@ con = sqlite3.connect(OUT)
 # (SCHEMA Appendix C); merged exports emitted to build/ as release
 # artifacts, globally ID-sorted, never committed to data/.
 import glob as _glob
-for table, idcol in (("organizations", "org_id"), ("sites", "site_id")):
+for table, idcol in (("organizations", "org_id"), ("sites", "site_id"), ("evidence", "evidence_id")):
     files = sorted(_glob.glob(str(ROOT / "data" / f"{table}_*.csv")))
+    _legacy = ROOT / "data" / "evidence.csv"
+    if table == "evidence" and not files and _legacy.exists():
+        files.append(str(_legacy))
     cols, rows_all, counts = None, [], {}
     for fp in files:
         with open(fp, newline="", encoding="utf-8") as f:

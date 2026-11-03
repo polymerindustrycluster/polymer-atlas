@@ -127,9 +127,9 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assert_fails_with(f"{r['site_id']} names the PIC CRM in sites_OH.csv ['notes']")
 
     def test_v50_crm_in_evidence_row(self):
-        r = self.edit_rows("evidence.csv", lambda r: True,
+        r = self.edit_rows("evidence_ecosystem.csv", lambda r: True,
                            lambda r: r.update(claim_detail=r["claim_detail"] + " (CRM)"))
-        self.assert_fails_with(f"{r['evidence_id']} names the PIC CRM in evidence.csv ['claim_detail']")
+        self.assert_fails_with(f"{r['evidence_id']} names the PIC CRM in evidence_ecosystem.csv ['claim_detail']")
 
     def test_new_v176_vocab_accepted(self):
         self.edit_rows("sites_OH.csv", self.clean_ohio_site,

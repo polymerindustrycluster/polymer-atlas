@@ -553,7 +553,13 @@ def main():
             held_by_unitid[r["ipeds_unitid"]].append(r)
     prog_unitids = {u for u in held_unitids} | set(name_candidates)
     neg_ev = set()
-    for r in read_csv(os.path.join(repo, "data", "evidence.csv")):
+    import glob as _g
+    _evf = sorted(_g.glob(os.path.join(repo, "data", "evidence_*.csv")))
+    _leg = os.path.join(repo, "data", "evidence.csv")
+    if not _evf and os.path.exists(_leg):
+        _evf.append(_leg)
+    for _p in _evf:
+      for r in read_csv(_p):
         if r["record_table"] == "ecosystem" and "contradict" in (r["tier_effect"] + r["claim_type"]).lower():
             neg_ev.add(r["record_id"])
 

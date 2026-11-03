@@ -72,9 +72,15 @@ def inventory(data_dir):
                 if not key[1] or key in records:
                     raise ValueError(f"{path.name}: blank or duplicate record ID {key}")
                 records[key] = row
-    path = data_dir / "evidence.csv"
-    evidence = read_csv(path, ("evidence_id", "record_table", "record_id", "claim_type", "tier_effect", "source_class", "observed_date"))
-    paths.append(path)
+    evidence = []
+    _evpaths = sorted(data_dir.glob("evidence_*.csv"))
+    if not _evpaths and (data_dir / "evidence.csv").exists():
+        _evpaths.append(data_dir / "evidence.csv")
+    for path in _evpaths:
+        if ".bak-" in path.name:
+            continue
+        evidence.extend(read_csv(path, ("evidence_id", "record_table", "record_id", "claim_type", "tier_effect", "source_class", "observed_date")))
+        paths.append(path)
     seen = set()
     for row in evidence:
         eid = row["evidence_id"]

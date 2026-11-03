@@ -22,10 +22,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
-SHARDED = {"organizations": "org_id", "sites": "site_id"}
+SHARDED = {"organizations": "org_id", "sites": "site_id", "evidence": "evidence_id"}
 SINGLE = [
     "ecosystem", "programs", "people", "members", "events",
-    "event_participation", "evidence", "relationships", "site_capabilities",
+    "event_participation", "relationships", "site_capabilities",
     "registry_links", "inclusion_log", "code_assignments", "ref_codes",
     "ref_code_map",
 ]

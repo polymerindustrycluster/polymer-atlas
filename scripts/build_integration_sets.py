@@ -762,6 +762,35 @@ S["r13_ruled"] = bool(_i >= 0 and "RULED" in _bat[_i:_i + 400])
 APPLY_SITE_FIELDS = ("processes", "materials", "markets_served")
 
 
+def _evidence_paths(d):
+    ps = sorted(Path(d).glob("evidence_*.csv"))
+    leg = Path(d) / "evidence.csv"
+    if not ps and leg.exists():
+        ps.append(leg)
+    return ps
+
+
+def _read_evidence_union(d):
+    rows = []
+    for p in _evidence_paths(d):
+        with open(p, newline="", encoding="utf-8") as fh:
+            rows.extend(list(csv.DictReader(fh)))
+    return rows
+
+
+def _evidence_shard_for(d, row):
+    # [v1.8] evidence rows live in the shard mirroring their record's home file
+    rt = row["record_table"]
+    if rt in ("sites", "organizations"):
+        idcol = "site_id" if rt == "sites" else "org_id"
+        for fp in sorted(Path(d).glob(f"{rt}_*.csv")):
+            with open(fp, newline="", encoding="utf-8") as fh:
+                if any(r[idcol] == row["record_id"] for r in csv.DictReader(fh)):
+                    return Path(d) / f"evidence_{fp.name}"
+        raise ValueError(f"evidence routing: {row['record_id']} not in any {rt} shard")
+    return Path(d) / f"evidence_{rt}.csv"
+
+
 def apply_to_copy(tmpdata):
     """Apply the sets to a COPY of data/ (placeholders filled from atlas.py next-id). Returns stats."""
     st = Counter()
@@ -839,16 +868,24 @@ def apply_to_copy(tmpdata):
     nxt = json.loads(out)["prefixes"][0]["next_id"]
     st["first_evd"] = nxt
     n = int(nxt.split("-")[1])
-    with open(tmpdata / "evidence.csv", newline="", encoding="utf-8") as fh:
-        rdr = csv.DictReader(fh)
-        ehdr = list(rdr.fieldnames)
-    assert ehdr == EVD_HEADER, ehdr
-    with open(tmpdata / "evidence.csv", "a", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=EVD_HEADER, lineterminator="\n")
-        for i, r in enumerate(EVD):
-            row = dict(r)
-            row["evidence_id"] = f"EVD-{n + i:06d}"
-            w.writerow(row)
+    _evpaths = _evidence_paths(tmpdata)
+    if _evpaths:
+        with open(_evpaths[0], newline="", encoding="utf-8") as fh:
+            ehdr = list(csv.DictReader(fh).fieldnames)
+        assert ehdr == EVD_HEADER, ehdr
+    _routed = {}
+    for i, r in enumerate(EVD):
+        row = dict(r)
+        row["evidence_id"] = f"EVD-{n + i:06d}"
+        _routed.setdefault(_evidence_shard_for(tmpdata, row), []).append(row)
+    for _shard, _rows in _routed.items():
+        _new = not _shard.exists()
+        with open(_shard, "a", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=EVD_HEADER, lineterminator="\n")
+            if _new:
+                w.writeheader()
+            for row in _rows:
+                w.writerow(row)
     st["last_evd"] = f"EVD-{n + len(EVD) - 1:06d}" if EVD else ""
     st["evd_appended"] = len(EVD)
     return st
@@ -876,17 +913,15 @@ def dryrun(tmp_root):
         tmpdata = tmp / "data"
         shutil.copytree(DATA, tmpdata)
         base_rc, base_lines = run_validate(tmpdata)
-        with open(tmpdata / "evidence.csv", newline="", encoding="utf-8") as fh:
-            prior_ids = {r["evidence_id"] for r in csv.DictReader(fh)}
+        prior_ids = {r["evidence_id"] for r in _read_evidence_union(tmpdata)}
         stats = apply_to_copy(tmpdata)
         rc, lines = run_validate(tmpdata)
         # independent post-apply checks on the temp copy
         checks = []
-        with open(tmpdata / "evidence.csv", newline="", encoding="utf-8") as fh:
-            ev = list(csv.DictReader(fh))
+        ev = _read_evidence_union(tmpdata)
         ids = [r["evidence_id"] for r in ev]
         checks.append(("evidence_id unique across the table", len(ids) == len(set(ids))))
-        checks.append(("no `<ALLOC>` placeholder left in the temp evidence.csv", all(ALLOC not in r["evidence_id"] for r in ev)))
+        checks.append(("no `<ALLOC>` placeholder left in the temp evidence shards", all(ALLOC not in r["evidence_id"] for r in ev)))
         new_rows = [r for r in ev if r["evidence_id"] not in prior_ids]
         checks.append(("all new evidence rows created_by = " + CREATED_BY,
                        len(new_rows) == len(EVD) and all(r["created_by"] == CREATED_BY for r in new_rows)))
@@ -1038,7 +1073,7 @@ def readme(S, dry_ok):
     A("|---|---|")
     A("| `capability_site_updates.csv` | one row per site with VERIFIED site-scope packet rows: current vs proposed `processes` / `materials` / `markets_served`, certification route, packet row refs, APPLY/HOLD |")
     A("| `capability_org_updates.csv` | one row per organization with VERIFIED org-scope rows, deduplicated across lanes: all four fields incl. `certifications` |")
-    A("| `evidence_rows.csv` | draft rows in `data/evidence.csv`'s exact header order; `evidence_id` = `<ALLOC>` |")
+    A("| `evidence_rows.csv` | draft rows in the evidence shards' exact header order; `evidence_id` = `<ALLOC>` |")
     A("| `band_updates.csv` | per site (and per Ohio org): existing band, each source's proposal, the R13 pick, APPLY / REVIEW / SKIP |")
     A("| `conflicts.csv` | everything not mechanically appliable, with a class and a suggested disposition |")
     A("| `validate_dryrun.md` | the temp-copy application and `validate.py` result |")
@@ -1117,9 +1152,9 @@ def readme(S, dry_ok):
     A("")
     A("1. Review `conflicts.csv` (largest classes first) and `HOLD` rows; decide or return packets to lanes.")
     A("2. Claim the task in `tasks/QUEUE.md`. Take pre-pass backups of `data/sites_OH.csv`, the other touched site shards, "
-      "`data/organizations_*.csv` shards touched, and `data/evidence.csv`.")
+      "`data/organizations_*.csv` shards touched, and the `data/evidence_*.csv` shards.")
     A("3. Allocate `EVD-` IDs above the tree-wide maximum (`python3 scripts/atlas.py next-id EVD`) and replace each "
-      "`<ALLOC>` in `evidence_rows.csv`; append to `data/evidence.csv`.")
+      "`<ALLOC>` in `evidence_rows.csv`; append to the matching `data/evidence_*.csv` shard.")
     A("4. Apply `capability_site_updates.csv` APPLY rows to the site shards (`processes`, `materials`, `markets_served`) "
       "and append each `proposed_notes_append` to the site's `notes`.")
     A("5. Apply `capability_org_updates.csv` APPLY rows to the organization shards (four fields).")

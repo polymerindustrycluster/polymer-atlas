@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -1421,7 +1421,7 @@ both are seeded, each noting the other. When in doubt, don't merge.
   state them as "N organizations with harvested participation at
   \<event\> \<year\>", never as coverage.
 
-### 4.13 Evidence records **[v1.6]** (`data/evidence.csv`)
+### 4.13 Evidence records **[v1.6]** (`data/evidence_*.csv`, sharded at **[v1.8]**)
 
 Until this revision, a record's evidence lived in its free-text
 `sources[]` string and its verdict file in staging: adequate for a
@@ -1469,7 +1469,22 @@ licensed sources and what citation discipline forbids for all sources.
 #### Migration posture — the table is born empty **[v1.6]**
 
 `data/evidence.csv` is created at application with its header and
-**zero rows**. No legacy evidence is backfilled into it, and the
+**zero rows**.
+
+**Sharding [v1.8].** The evidence table outgrew the single-file layout
+(20,069 rows / 7.6 MB at the v1.8 migration — past the §2 revisit
+threshold, and past the hosted push tooling's per-request body cap).
+From v1.8 the logical evidence table is the union of shard files that
+mirror the record shards of Appendix C: `data/evidence_sites_<SHARD>.csv`
+for site records and `data/evidence_organizations_<SHARD>.csv` for
+organization records (the shard suffix is the record's home shard),
+plus single files `data/evidence_programs.csv` and
+`data/evidence_ecosystem.csv` for those tables. A new evidence row is
+written to the shard of its record's home file. All readers (validator,
+SQLite builder, CLI/MCP tooling, integration builder) read the union of
+`data/evidence_*.csv`; evidence IDs remain globally unique across the
+union (V-22). The single `data/evidence.csv` is retired; historical
+citations of it in pass journals and row text stand as written. No legacy evidence is backfilled into it, and the
 free-text `sources[]` strings on the existing records are
 **grandfathered as they stand** — not rewritten, not parsed, not
 re-expressed as rows. The reasons are the campaign's own lessons,
@@ -2219,8 +2234,8 @@ tables have no natural state key (a program, a link, an event is not
 file is re-examined for partitioning when it passes **~1 MB or ~2,500
 rows**, or when a natural partition key appears. Named watch items:
 `event_participation.csv` (a single NPE-scale roster is ~1,700 lines;
-revisit at ~5,000 rows) and `evidence.csv` (born empty at v1.6, grows
-per lane; revisit at ~10,000 rows / ~2 MB, partition by year if ever).
+revisit at ~5,000 rows) and the evidence table (born empty at v1.6 as `evidence.csv`;
+partitioned into `evidence_*.csv` record shards at v1.8 — see §4.13).
 
 ## 2. The placement function (deterministic, binding)
 
@@ -2727,3 +2742,16 @@ unchanged.
   - the site employee-band source precedence.
 
   No data row is changed.
+
+- **v1.8 — 2026-11-02 (owner ruling 2026-11-02; applied in integration
+  pass 43).** Evidence sharding: §4.13's single `data/evidence.csv`
+  (20,069 rows / 7.6 MB, past the §2 revisit threshold and the hosted
+  push cap) is partitioned into `data/evidence_*.csv` shards mirroring
+  the record shards (sites/organizations by home shard; programs and
+  ecosystem as single files). No evidence row's content changes; the
+  migration carries the 201 pass-42 scope rows that could not be pushed
+  in the single-file layout. Readers union the shards; writers route a
+  new row to its record's home shard. The §2 watch item's "partition by
+  year" sketch was not taken: the record-shard key keeps each pass's
+  evidence writes inside the shard files that pass already touches and
+  caps the largest file at ~1.4 MB.
