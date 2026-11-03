@@ -239,3 +239,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Equipment layer, first wave (SCHEMA v1.9 §4.19):** start with University of Akron, CWRU and other Ohio polymer instrument pages. Ohio Innovation Exchange equipment search results are leads only.
 - [ ] `open` **OWNER action:** approach ODHE / OH-TECH about a data or link agreement for Ohio Innovation Exchange profiles.
 
+
+## Program leads (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **Program leads, OH/PA wave:** 49 OH/PA leads (of 353 merged) through the named-program test; +4 programs (PROG-000163-000166, tier A) with 8 evidence rows; 7 held. `tasks/program-leads-2026-11-03/README.md`.
+- [ ] `open` **Program leads, remaining 275 non-OH/PA leads** (`tasks/program-leads-2026-11-03/worklist.csv`) and the 147 unapplied completions proposals.

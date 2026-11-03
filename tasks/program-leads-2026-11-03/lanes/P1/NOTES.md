@@ -1,0 +1,11 @@
+# Lane P1 notes (2026-11-03)
+- Leads examined: 25 input rows; 28 output rows (PCT yielded 3 programs from one lead, NWSt 2 held programs from one lead).
+- Output rows by verdict: VERIFIED 4 (3 distinct programs: Penn College Polymer Technology AAS, Penn College Polymer Processing certificate, Behrend Plastics Training Academy; the AAS row repeats for the second ABET lead), REJECT 13, STILL_UNCERTAIN 6 rows (5 distinct: AFIT, Akron Machining Institute x2 rows, Drexel MSE x2 rows, Hocking), DUPLICATE_OF 5 rows (PROG-000117, 000150, 000151, 000108, 000036).
+- Penn College Polymer Processing certificate was not in the leads; found via the program index. Its AAS and certificate are not held in programs.csv.
+- Name drift: PROG-000036 "Polymer Engineering" is Penn College's "Polymer Engineering Technology (B.S.)". CWRU "Polymer Science and Engineering, BSE" and its Minor sit under held PROG-000117 (Macromolecular Science and Engineering).
+- Scope questions left to the owner, not ruled: society student chapters (ACS PMSE, SPE; 4 leads) rejected as non-programs; Drexel MSE has only a department "Polymers" research-area heading, no degree-description wording.
+- Quote handling: all 3 VERIFIED quotes were checked against raw HTML fetched with curl and a browser user agent (WebFetch gets a 403 from behrend.psu.edu). Whitespace was normalized after tag stripping.
+- Admissions: Penn College "admitting" comes from a generic site-wide apply line on each program page; Behrend academy states no admissions status.
+- Not re-verified (held duplicates): NWSt catalog returned HTTP 202 empty; mse.osu.edu returned 403.
+- Weak REJECTs (catalog-level, not full A-Z read): Edison State, Lakeland. Kent (Kent and Tuscarawas) and Cincinnati State rest on a full catalog A-Z or catalog search.
+- Akron Machining Institute closure evidence is third-party only; no own-domain page found, so STILL_UNCERTAIN.
