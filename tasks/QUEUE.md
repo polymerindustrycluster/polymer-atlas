@@ -231,3 +231,11 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - List: `tasks/atlas-cleanup-2026-11-03/holds.csv`.
 - [ ] `open` **Integration writers must dedupe people against `people.csv` before allocating IDs.** Pass 45 created 14 same-institution duplicates.
 
+## Ohio Innovation Exchange follow-ups (2026-11-03)
+
+- [ ] `in-pr:claude-code 2026-11-03` **Ohio faculty wave:** 14 people added from 342 candidates on Ohio Innovation Exchange leads, each verified on the university's own pages. Details: `tasks/ohio-faculty-wave-2026-11-03/README.md`.
+- [ ] `open` **Ohio faculty wave re-run:** 130 STILL_UNCERTAIN, mostly from the lanes' search budget running out. Two borderline Gate B calls need a look: Zheng-Rong Lu (macromolecular MRI contrast agents) and Carlos Crespo (biopolymers among three study objects). How to rebuild the lead list is in the README.
+- [ ] `open` **PERSON-000063 (Yavitt):** role `professor`, but the page says "Asst Professor (F2)".
+- [ ] `open` **Equipment layer, first wave (SCHEMA v1.9 §4.19):** start with University of Akron, CWRU and other Ohio polymer instrument pages. Ohio Innovation Exchange equipment search results are leads only.
+- [ ] `open` **OWNER action:** approach ODHE / OH-TECH about a data or link agreement for Ohio Innovation Exchange profiles.
+
