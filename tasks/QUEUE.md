@@ -209,6 +209,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - 224 discovery leads were added from the programs-db hand-research layers.
   - Details: `tasks/programs-db-crosswalk-2026-11-03/README.md`.
 - [ ] `in-pr:claude-code 2026-11-03` **Census-gap researcher wave (packet lanes ×6):** 73 people records added, all Gate A and Gate B verified on the universities' own pages. 51 held: 47 are already in the Atlas and 4 were held on integrator review. Details: `tasks/census-gap-people-2026-11-03/README.md`.
+- [ ] `in-pr:claude-code 2026-11-03` **People wave 2** (`tasks/census-gap-2-2026-11-03/`): +51 people records, all raw-checked. 19 from the census-gap follow-ups below (JHU and Columbia via Tavily, Northeastern roster, the 79 uncertain) and 32 from band-A census leads; 15 held. Band B (632 leads) not run: band-A gate yield was ~28%.
 - [ ] `open` **Census-gap follow-ups:**
   - Re-run Johns Hopkins and Columbia (both bot-walled).
   - Re-run the UCSD and Northeastern engineering rosters (503s).

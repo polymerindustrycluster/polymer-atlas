@@ -1,0 +1,67 @@
+lane_file,school_key,full_name,gate_a,gate_b
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,duke,Benjamin J. Wiley,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,northeastern,Gokce Altin Yavuzarslan,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,northeastern,Randall Erb,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,northeastern,Arthur Coury,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,nyu,Nikhil Gupta,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,nyu,Kent Kirshenbaum,unfetchable,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,ucla,Yang Yang,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,ucla,Ellen M. Sletten,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,ucla,Sarah H. Tolbert,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,ucla,Jenn-Ming Yang,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,uconn,Thanh Nguyen,yes,no
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,uconn,Yang Cao,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,northeastern,Damilola Daramola,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R1\people.csv,northeastern,Bryan James,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R2\people.csv,umd,Michael Kio,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R2\people.csv,usc,Neda Maghsoodi,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R2\people.csv,usc,Ellis Meng,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\R2\people.csv,utah,Michael Czabaj,no,yes
+tasks\census-gap-2-2026-11-03\lanes\R2\people.csv,uw,Avin Vijay,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,columbia,Neil Dolinski,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,columbia,Oleg Gang,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,columbia,Mary Boyce,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,jhu,Efie Kokkoli,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,jhu,Rebecca Schulman,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,jhu,Hai-Quan Mao,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,jhu,Tine Curk,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,jhu,Jordan J. Green,yes,yes
+tasks\census-gap-2-2026-11-03\lanes\T\people.csv,jhu,Thao (Vicky) Nguyen,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A1\people.csv,Massachusetts Institute of Technology,Katharina Ribbeck,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A1\people.csv,Case Western Reserve University,Donald L. Feke,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A1\people.csv,Case Western Reserve University,Horst A. von Recum,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A1\people.csv,Iowa State University,Keith L. Vorst,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A1\people.csv,Arizona State University Campus Immersion,Lenore L. Dai,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A1\people.csv,Virginia Polytechnic Institute and State University,Richey M. Davis,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,University of Wisconsin-Madison,Shaoting Lin,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,University of Wisconsin-Madison,Pavana Prabhakar,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,University of Wisconsin-Madison,Sandro Mecozzi,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,University of Wisconsin-Madison,Xiao Kuang,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,University of Massachusetts-Amherst,Samuel P. Gido,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,The University of Tennessee-Knoxville,Alexei P. Sokolov,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A2\people.csv,Northwestern University,Guillermo Antonio Ameer,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,North Carolina State University at Raleigh,Abdel-Fattah M. Seyam,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,North Carolina State University at Raleigh,Martin William King,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,North Carolina State University at Raleigh,Thomas B. H. Schroeder,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,North Carolina State University at Raleigh,Tushar K. Ghosh,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,Texas A & M University-College Station,Amir Asadi,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,Texas A & M University-College Station,David E. Bergbreiter,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,Texas A & M University-College Station,Mary Beth Browning Monroe,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,Texas A & M University-College Station,Pavan V. Kolluru,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,Texas A & M University-College Station,Shuyi Xie,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,University of Chicago,Paul Franklin Nealey,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,University of Chicago,Sihong Wang,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,University of Florida,Christine E. Schmidt,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,University of Illinois Urbana-Champaign,Jeff Moore,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A3\people.csv,University of Illinois Urbana-Champaign,Jeffrey S. Moore,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,University of Delaware,Erik T. Thostenson,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,University of Delaware,Xinqiao Jia,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,University of Massachusetts-Lowell,Jayant Kumar,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,University of Massachusetts-Lowell,Marina Ruths,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,University of Massachusetts-Lowell,Neşe Orbey,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,University of Massachusetts-Lowell,Sanjeev K. Manohar,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,California Polytechnic State University-San Luis Obispo,Erik D. Sapper,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,California Polytechnic State University-San Luis Obispo,Shanju Zhang,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,Cornell University,Yu Zhong,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,Georgia Institute of Technology-Main Campus,Antonio F. Facchetti,yes,yes
+C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-census\cache\atlas_leads_wave\lanes\A4\people.csv,Carnegie Mellon University,Subha Ranjan Das,yes,yes
