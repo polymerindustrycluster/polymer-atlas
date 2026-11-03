@@ -1,0 +1,26 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-000056,,,CANNOT_CONFIRM,"Cited UAkron news page and CENTIRE page print only prose (professor of mechanical engineering at The University of Akron) and no title line; a UAkron faculty directory/profile page for this person would settle it"
+PERSON-000059,,,CANNOT_CONFIRM,"Cited polymer-physics page prints only the name in the faculty list; cited UAkron news page has only a prose description; a UAkron School of Polymer Science and Polymer Engineering faculty profile would settle it"
+PERSON-000082,"Kyocera Professor of Ceramics, Department of Materials Science and Engineering, Case School of Engineering; Director, Solar Durability and Lifetime Extension Center, Case School of Engineering",https://case.edu/datascience/node/176,CONFIRMED,"Page does not print Distinguished University Professor; SDLE center name on this page is Solar Durability and Lifetime Extension Center"
+PERSON-000098,,,CANNOT_CONFIRM,"Cited ohio.edu chemical engineering research page does not mention this person; an Ohio University faculty profile page would settle it"
+PERSON-000106,"Associate Head (Research & Operations), Prager Chair in Macromolecular Science in Chemistry, McKnight Presidential Endowed Chair, Distinguished University Teaching Professor, Department of Chemistry",https://cse.umn.edu/chem/marc-hillmyer,CONFIRMED,
+PERSON-000179,,,CANNOT_CONFIRM,"Cited UW-Madison profile prints no standalone title line (only a heading containing the name and a bio sentence about the Consolidated Papers Foundation Professorship); jobTitle appears only in page metadata"
+PERSON-000206,Professor,https://bioengineering.gatech.edu/index.php/user/karl-jacob,CONFIRMED,"Page title field is Professor; primary department shown as Georgia Tech School of Materials Science and Engineering"
+PERSON-000295,"Patricia “Pat” Layton Endowed Director of the Wood Utilization + Design Institute; Professor, Forestry and Environmental Conservation and Materials Science and Engineering",https://news.clemson.edu/experts/soledad-sole-pe/,CONFIRMED,
+PERSON-000299,"Associate Dean for Research, Wilson College of Textiles",https://provost.ncsu.edu/global-one-health-academy/people/xiangwu-zhang/,CONFIRMED,"Title line prints no professorship; bio lists Samuel S. Walker Distinguished Professor in Textile Innovation"
+PERSON-000309,,,CANNOT_CONFIRM,"Cited cecas.clemson.edu page failed (SSL certificate error); cited clemsoncomposites.org (redirects to clemsoncomposites.com) shows only conflicting attribution lines (Jenkins Endowed Professor / Bosch and Jenkins Endowed Professor); a Clemson faculty profile page would settle it"
+PERSON-000450,,,CANNOT_CONFIRM,"Both cited umich.edu pages (che.engin.umich.edu, macro.engin.umich.edu) returned 403 to fetch; the Michigan Macromolecular Science and Engineering faculty page would settle it"
+PERSON-000453,,,CANNOT_CONFIRM,"Cited news.umich.edu page returned 403 and macro.engin.umich.edu faculty page returned 403; the Michigan Macromolecular Science and Engineering faculty page would settle it"
+PERSON-000529,,,CANNOT_CONFIRM,"Cited ORNL news page prints no title line for this person (only a prose bio description); an ORNL staff profile would settle it"
+PERSON-000601,,,CANNOT_CONFIRM,"Cited AFRL news page gives only prose (research team lead in the Structural Materials Division of AFRL), not a title line; an AFRL staff profile would settle it"
+PERSON-000606,,,CANNOT_CONFIRM,"Cited AFRL news page gives only prose (project lead); an AFRL staff profile would settle it"
+PERSON-000608,principal materials research engineer,https://afresearchlab.com/2022-afrl-fellows-and-early-career-award-winners/,CONFIRMED,
+PERSON-000611,,,CANNOT_CONFIRM,"Cited army.mil article gives only a prose descriptor (a research polymer chemist), not a title line; a DEVCOM ARL staff profile would settle it"
+PERSON-000612,,,CANNOT_CONFIRM,"Cited army.mil article gives only a prose descriptor (a materials engineer at the laboratory), not a title line; a DEVCOM ARL staff profile would settle it"
+PERSON-000614,,,CANNOT_CONFIRM,"Cited Sandia article gives only prose (staff scientists at the Center for Integrated Nanotechnologies), not a per-person title line; a Sandia staff profile would settle it"
+PERSON-000615,,,CANNOT_CONFIRM,"Cited Sandia news release gives only a prose descriptor (Sandia organic materials scientist), not a title line; a Sandia staff profile would settle it"
+PERSON-000616,,,CANNOT_CONFIRM,"Cited Sandia Lab News article gives only a prose descriptor/caption (materials scientist), not a title line; a Sandia staff profile would settle it"
+PERSON-000617,,,CANNOT_CONFIRM,"First cited Sandia Lab News page names this person only in a group sentence with no individual title; second cited page (newsreleases.sandia.gov 2007 aps) not fetched; a Sandia staff profile would settle it"
+PERSON-000618,,,CANNOT_CONFIRM,"Cited NRL article returned 403 to fetch; the NRL article itself or an NRL staff page would settle it"
+PERSON-000619,Staff scientist,https://st.llnl.gov/research/people/johanna-schwartz,CONFIRMED,
+PERSON-000621,"Deputy Group Leader, Multiscale Modeling",https://people.llnl.gov/maiti2,CONFIRMED,"Page also prints org line PLS / Msd / Materials Science Division (not copied as it is an org line, not a title)"

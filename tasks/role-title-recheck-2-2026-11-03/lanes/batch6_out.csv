@@ -1,0 +1,26 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-001186,Research Assistant Professor,https://engineering.tufts.edu/news-events/news/early-lab-experience-undergraduates,CONFIRMED,"Page prints Research Assistant Professor (research-track title); record role is assistant_professor. facultyprofiles.tufts.edu page returned no text."
+PERSON-001188,Dean; Professor; Daniel D. Reneau Eminent Scholar Chair,https://latech.edu/directory/collin-wick.php,CONFIRMED,
+PERSON-001190,"Assistant Professor, University of Rhode Island",https://web.uri.edu/wp-content/uploads/sites/1895/CV_Poling-Skutvik.pdf,CONFIRMED,
+PERSON-001193,,,CANNOT_CONFIRM,"Cited PVAMU news page returned only a 168-character headline with no title line; the full article text or a PVAMU chemical engineering faculty page would settle it."
+PERSON-001197,assistant professor of chemical engineering in RIT's Kate Gleason College of Engineering,https://www.rit.edu/news/rit-professor-poornima-padmanabhan-honored-nsf-career-award,CONFIRMED,
+PERSON-001199,,,CANNOT_CONFIRM,"Both cited Colorado State pages returned 403. The cited bce/people page is slugged david-wang while the record is a different first name; identity must be confirmed on the bce/people directory entry."
+PERSON-001201,Assistant Professor in the Department of Chemical and Biomedical Engineering at the FAMU-FSU College of Engineering,https://isl.fsu.edu/article/isl-welcomes-two-new-faculty-affiliates,CONFIRMED,
+PERSON-001204,,,CANNOT_CONFIRM,"chem.mst.edu home page does not mention her and econection.mst.edu does not resolve; the Missouri S&T chemistry faculty directory page (chem.mst.edu/people/faculty/) would settle it."
+PERSON-001206,assistant professor in the Department of Chemical and Materials Engineering,https://uknow.uky.edu/professional-news/empowering-future-engineers-chwatko-celebrated-2025-great-teacher,CONFIRMED,
+PERSON-001208,Associate Professor,https://drexel.edu/engineering/about/faculty-staff/M/magenau-andrew/,CONFIRMED,
+PERSON-001209,,,CANNOT_CONFIRM,"Cited 2019 WSU news page names her dean of the Graduate School and associate vice president for Research and Technology Transfer and calls her a professor of Polymer Science at Akron; it prints no Wichita State professor title (no professor of chemistry). A current WSU faculty or graduate school profile would settle it."
+PERSON-001210,associate professor of biomedical engineering,https://olemiss.edu/news/2024/11/nanoparticle-cancer-delivery/,CONFIRMED,
+PERSON-001213,,,CANNOT_CONFIRM,"Only cited page (findscholars.unh.edu/display/jgf22) returned 403 on repeated fetch; a loadable copy of that profile would settle it."
+PERSON-001217,Armour College of Engineering professor of chemical engineering; director of the Center for Molecular Study of Soft Condensed Matter; professor of physics,https://www.iit.edu/news/professor-jay-schieber-elected-fellow-society-rheology,CONFIRMED,
+PERSON-001218,Professor,https://utrgv.edu/cos/_files/documents/pdf/phya-faculty-catalog.pdf,CONFIRMED,
+PERSON-001219,Mechanical engineering professor,https://den.mercer.edu/mercer-researchers-design-coating-material-with-self-healing-properties/,CONFIRMED,
+PERSON-001220,Assistant Professor,https://mate.calpoly.edu/faculty-and-staff,CONFIRMED,
+PERSON-001221,,,CANNOT_CONFIRM,"Only cited page (lab research page) prints no title line for him; a Syracuse chemistry faculty profile would settle it."
+PERSON-001222,professor in the Department of Chemistry,https://blog.smu.edu/huntinstitute/tag/hunt-institute/page/12/,CONFIRMED,"Page does not state department chair; catalog.smu.edu page returned 403."
+PERSON-001227,,,CANNOT_CONFIRM,"Cited 2026 UNL promotion list shows his name under the heading Promoted to Associate Professor and Granted Tenure, not a title line; the second cited page (2023) says assistant professor. A current UNL faculty profile would settle it."
+PERSON-001228,Assistant Professor; Mechanical Engineering,https://www.UWYO.edu/mechanical/faculty-staff/faculty/daniel-rau/index.html,CONFIRMED,
+PERSON-001230,Adjunct Assistant Professor; Materials Science and NanoEngineering,https://profiles.rice.edu/faculty/eilaf-egap,CONFIRMED,"Page prints Adjunct Assistant Professor, not Assistant Professor; no chemical and biomolecular engineering line shown. Record role is assistant_professor."
+PERSON-001232,Associate Professor,https://eas.uccs.edu/departments/mechanical-and-aerospace-engineering/directory/faculty/dr-jena-mccollum,CONFIRMED,
+PERSON-001234,Dean of College of Science and Engineering,https://www.uhcl.edu/science-engineering/faculty/irvin-jennifer,CONFIRMED,"Page header prints Dean; bio says she rose to full professor after starting as assistant professor in 1998. Record role assistant_professor is stale."
+PERSON-001237,Fletcher Jones Professor in Chemistry and Biochemistry,https://www.scu.edu/cas/chemistry/news--events/stories/welcome-dr-eric-tillman-fletcher-jones-professor.html,CONFIRMED,

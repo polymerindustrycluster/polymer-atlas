@@ -1,0 +1,26 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-000622,,,CANNOT_CONFIRM,"Cited STR article prints no title line (role only in body text); LLNL staff profile or Materials Science Division people page would settle it"
+PERSON-000624,,,CANNOT_CONFIRM,"Cited LLNL news article gives only a body-text descriptor (polymer simulation experts); LLNL staff profile would settle it"
+PERSON-000625,,,CANNOT_CONFIRM,"Cited LLNL news article gives only a body-text descriptor (LLNL staff scientist); LLNL staff profile would settle it"
+PERSON-000626,,,CANNOT_CONFIRM,"Cited LLNL news article gives only a body-text descriptor (LLNL materials engineer); LLNL staff profile would settle it"
+PERSON-000628,,,CANNOT_CONFIRM,"Cited LANL news page gives only a body-text descriptor (scientist with the Materials Synthesis and Integrated Devices group); LANL staff profile would settle it"
+PERSON-000635,,,CANNOT_CONFIRM,"Cited NLR news page gives only a body-text descriptor (lead NMR spectroscopist at NREL); NLR staff profile would settle it"
+PERSON-000638,,,CANNOT_CONFIRM,"Cited NLR news page prints no title or role for this person; NLR staff profile would settle it"
+PERSON-000644,,,CANNOT_CONFIRM,"Cited SRNL news page lists the name in a team list with no title; SRNL staff profile would settle it"
+PERSON-000652,,,CANNOT_CONFIRM,"Cited NTRS records and TechConnect PDF show only a branch/affiliation line (Advanced Materials & Processing Branch, NASA Langley Research Center), no title; NASA Langley staff profile would settle it"
+PERSON-000655,,,CANNOT_CONFIRM,"Cited NTRS record shows only an author affiliation, no title; NASA Langley staff profile would settle it"
+PERSON-000659,,,CANNOT_CONFIRM,"Cited nrel.gov page skipped (domain dead); docs.nlr.gov PDF exceeded the fetch size limit (10 MB); NLR staff profile would settle it"
+PERSON-000660,,,CANNOT_CONFIRM,"Cited nrel.gov PDF skipped (domain dead); docs.nlr.gov PDF exceeded the fetch size limit (10 MB); NLR staff profile would settle it"
+PERSON-000661,,,CANNOT_CONFIRM,"Cited NLR news page gives only a body-text descriptor (a biochemist at NREL and co-first author); NLR staff profile would settle it"
+PERSON-000663,"DEPUTY ASSOCIATE LABORATORY DIRECTOR, Energy and Photon Sciences Directorate, Brookhaven National Laboratory; PROJECT DIRECTOR, Brookhaven Lab; SENIOR SCIENTIST, Center for Functional Nanomaterials, Brookhaven Lab",https://www.bnl.gov/staff/ctblack,CONFIRMED,
+PERSON-000692,"Lawyer Taylor Professor of Materials Science and Engineering, Chemistry and (by courtesy) Chemical and Biological Engineering, Physics and Astronomy; Director, Center for Computation & Theory of Soft Materials; Deputy Director, Center for Bio-Inspired Energy Science",https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/olvera-de-la-cruz-monica.html,CONFIRMED,
+PERSON-000705,"G. Ronald and Margaret H. Morris Professor, Materials Science and Engineering; Professor, Materials Science and Engineering; Professor, Materials Research Laboratory; Professor, Chemistry",https://experts.illinois.edu/en/persons/kenneth-s-schweizer,CONFIRMED,
+PERSON-000723,,,CANNOT_CONFIRM,"Cited Miami news pages give only body-text wording (and a 2020 page reads associate professors); Miami Chemistry and Biochemistry faculty directory page would settle it"
+PERSON-000745,"Liu-Wang Liming Professor; Professor of Materials Science and Engineering and (by courtesy) Engineering Sciences and Applied Mathematics, Physics and Astronomy, and Chemistry; Provost",https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/luijten-erik.html,CONFIRMED,
+PERSON-000755,"Head, Materials Science and Engineering; W. W. Grainger Chair, Materials Science and Engineering; Professor, Materials Science and Engineering; Professor, Materials Research Laboratory; Professor, Mechanical Science and Engineering; Professor, Micro and Nanotechnology Laboratory; Professor, Chemistry; Affiliate, Chemical and Biomolecular Engineering; Professor, Beckman Institute for Advanced Science and Technology",https://experts.illinois.edu/en/persons/paul-v-braun,CONFIRMED,
+PERSON-000765,,,CANNOT_CONFIRM,"Both cited Penn State Behrend pages returned HTTP 403; the Behrend college-leadership page would settle it when reachable"
+PERSON-000791,,,CANNOT_CONFIRM,"Lab homepage prints no title line and the cited CHBE faculty research profiles page does not list this person; the CHBE faculty directory entry would settle it"
+PERSON-000844,,,CANNOT_CONFIRM,"Cited UA news pages give only body-text or award-heading wording, no title line; the UA Chemistry and Biochemistry faculty directory entry would settle it"
+PERSON-000850,,,CANNOT_CONFIRM,"Cited FSU group page and artsandsciences.fsu.edu print no title for this person; the FSU Chemistry and Biochemistry faculty profile would settle it"
+PERSON-000853,Professor,http://chemistry.jhu.edu/directory/rebekka-klausen/,CONFIRMED,
+PERSON-000861,,,CANNOT_CONFIRM,"Both cited NYU pages list the name with no title line; the NYU Chemistry faculty profile page would settle it"

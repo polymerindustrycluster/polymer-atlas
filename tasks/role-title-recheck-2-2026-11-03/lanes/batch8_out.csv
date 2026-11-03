@@ -1,0 +1,10 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-000989,"Richard J. Traystman Endowed Chair; Vice Chair for Research, Anesthesiology and Critical Care Medicine; Professor of Anesthesiology and Critical Care Medicine; Professor of Pediatrics",https://profiles.hopkinsmedicine.org/provider/sujatha-kannan/2702726,CONFIRMED,
+PERSON-001000,Professor of Chemical Engineering; Holder of George Armistead ‘23 Faculty Fellowship,https://qwang.engr.tamu.edu/people/dr-qingsheng-wang/,CONFIRMED,
+PERSON-001025,,,CANNOT_CONFIRM,"ceat.okstate.edu/fcem/faculty-staff returned 403; experts.okstate.edu page shows no title line. The faculty-staff directory entry would settle it."
+PERSON-001029,,,CANNOT_CONFIRM,"News page states the appointment only in running prose (Professor with Tenure; Kern Professorship in Biotechnology; Chair) with no title line; directory/hu-yang.php printed no title. A loading title line on mcw.marquette.edu/biomedical-engineering/directory/hu-yang.php would settle it."
+PERSON-001076,Professor of Biology,https://www.reed.edu/biology/mellies/research.html,CONFIRMED,
+PERSON-001078,Associate Vice President for Research & Innovation / Director of CAMP,https://www.clarkson.edu/people/devon-shipp,CONFIRMED,"Page title line shows administrative titles only and no professorial rank; record role is professor."
+PERSON-001145,,,CANNOT_CONFIRM,"News page states rank only in a sentence; clarkson.edu/people/xiaocun-lu printed no title line. A title line on the people page would settle it."
+PERSON-001181,,,CANNOT_CONFIRM,"Both cited FAMU-FSU news pages mention the name only inside running text; neither prints a title line. A faculty directory or profile page would settle it."
+PERSON-001202,"Research Professor; WSU Co-site Director, Center for Bioplastics and Biocomposites (CB2)",https://cmec.wsu.edu/person/karl-r-englund/,CONFIRMED,"cmec page prints Research Professor, not Associate Research Professor; ce.wsu.edu profile printed no title line."

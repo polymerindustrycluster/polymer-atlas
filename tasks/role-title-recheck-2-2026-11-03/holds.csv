@@ -1,0 +1,150 @@
+record,item,reason
+PERSON-000056,role_as_published,lane could not confirm: Cited UAkron news page and CENTIRE page print only prose (professor of mechanical engineering at The University of Akron) and no title line;
+PERSON-000059,role_as_published,lane could not confirm: Cited polymer-physics page prints only the name in the faculty list; cited UAkron news page has only a prose description; a UAkron School of
+PERSON-000082,role_as_published,"lane title is not a clean title line: 'Kyocera Professor of Ceramics, Department of Materials Science and Engineering, '"
+PERSON-000098,role_as_published,lane could not confirm: Cited ohio.edu chemical engineering research page does not mention this person; an Ohio University faculty profile page would settle it
+PERSON-000106,role_as_published,"lane title is not a clean title line: 'Associate Head (Research & Operations), Prager Chair in Macromolecular Science i'"
+PERSON-000179,role_as_published,lane could not confirm: Cited UW-Madison profile prints no standalone title line (only a heading containing the name and a bio sentence about the Consolidated Paper
+PERSON-000206,role_as_published,page rank differs from the record's role; title and role held together for review: Page title field is Professor; primary department shown as Georgia Tech School of Materials Science and Engineering
+PERSON-000295,role_as_published,lane title is not a clean title line: 'Patricia “Pat” Layton Endowed Director of the Wood Utilization + Design Institut'
+PERSON-000299,role_as_published,page rank differs from the record's role; title and role held together for review: Title line prints no professorship; bio lists Samuel S. Walker Distinguished Professor in Textile Innovation
+PERSON-000309,role_as_published,lane could not confirm: Cited cecas.clemson.edu page failed (SSL certificate error); cited clemsoncomposites.org (redirects to clemsoncomposites.com) shows only con
+PERSON-000450,role_as_published,"lane could not confirm: Both cited umich.edu pages (che.engin.umich.edu, macro.engin.umich.edu) returned 403 to fetch; the Michigan Macromolecular Science and Engin"
+PERSON-000453,role_as_published,lane could not confirm: Cited news.umich.edu page returned 403 and macro.engin.umich.edu faculty page returned 403; the Michigan Macromolecular Science and Engineer
+PERSON-000529,role_as_published,lane could not confirm: Cited ORNL news page prints no title line for this person (only a prose bio description); an ORNL staff profile would settle it
+PERSON-000601,role_as_published,"lane could not confirm: Cited AFRL news page gives only prose (research team lead in the Structural Materials Division of AFRL), not a title line; an AFRL staff pro"
+PERSON-000606,role_as_published,lane could not confirm: Cited AFRL news page gives only prose (project lead); an AFRL staff profile would settle it
+PERSON-000608,role_as_published,lane title is not a clean title line: 'principal materials research engineer'
+PERSON-000611,role_as_published,"lane could not confirm: Cited army.mil article gives only a prose descriptor (a research polymer chemist), not a title line; a DEVCOM ARL staff profile would settle"
+PERSON-000612,role_as_published,"lane could not confirm: Cited army.mil article gives only a prose descriptor (a materials engineer at the laboratory), not a title line; a DEVCOM ARL staff profile "
+PERSON-000614,role_as_published,"lane could not confirm: Cited Sandia article gives only prose (staff scientists at the Center for Integrated Nanotechnologies), not a per-person title line; a Sandi"
+PERSON-000615,role_as_published,"lane could not confirm: Cited Sandia news release gives only a prose descriptor (Sandia organic materials scientist), not a title line; a Sandia staff profile would"
+PERSON-000616,role_as_published,"lane could not confirm: Cited Sandia Lab News article gives only a prose descriptor/caption (materials scientist), not a title line; a Sandia staff profile would se"
+PERSON-000617,role_as_published,lane could not confirm: First cited Sandia Lab News page names this person only in a group sentence with no individual title; second cited page (newsreleases.sandia
+PERSON-000618,role_as_published,lane could not confirm: Cited NRL article returned 403 to fetch; the NRL article itself or an NRL staff page would settle it
+PERSON-000621,role_as_published,"page rank differs from the record's role; title and role held together for review: Page also prints org line PLS / Msd / Materials Science Division (not copied as it is an org line, not a title)"
+PERSON-000622,role_as_published,lane could not confirm: Cited STR article prints no title line (role only in body text); LLNL staff profile or Materials Science Division people page would settle i
+PERSON-000624,role_as_published,lane could not confirm: Cited LLNL news article gives only a body-text descriptor (polymer simulation experts); LLNL staff profile would settle it
+PERSON-000625,role_as_published,lane could not confirm: Cited LLNL news article gives only a body-text descriptor (LLNL staff scientist); LLNL staff profile would settle it
+PERSON-000626,role_as_published,lane could not confirm: Cited LLNL news article gives only a body-text descriptor (LLNL materials engineer); LLNL staff profile would settle it
+PERSON-000628,role_as_published,lane could not confirm: Cited LANL news page gives only a body-text descriptor (scientist with the Materials Synthesis and Integrated Devices group); LANL staff pro
+PERSON-000635,role_as_published,lane could not confirm: Cited NLR news page gives only a body-text descriptor (lead NMR spectroscopist at NREL); NLR staff profile would settle it
+PERSON-000638,role_as_published,lane could not confirm: Cited NLR news page prints no title or role for this person; NLR staff profile would settle it
+PERSON-000644,role_as_published,lane could not confirm: Cited SRNL news page lists the name in a team list with no title; SRNL staff profile would settle it
+PERSON-000652,role_as_published,"lane could not confirm: Cited NTRS records and TechConnect PDF show only a branch/affiliation line (Advanced Materials & Processing Branch, NASA Langley Research Ce"
+PERSON-000655,role_as_published,"lane could not confirm: Cited NTRS record shows only an author affiliation, no title; NASA Langley staff profile would settle it"
+PERSON-000659,role_as_published,lane could not confirm: Cited nrel.gov page skipped (domain dead); docs.nlr.gov PDF exceeded the fetch size limit (10 MB); NLR staff profile would settle it
+PERSON-000660,role_as_published,lane could not confirm: Cited nrel.gov PDF skipped (domain dead); docs.nlr.gov PDF exceeded the fetch size limit (10 MB); NLR staff profile would settle it
+PERSON-000661,role_as_published,lane could not confirm: Cited NLR news page gives only a body-text descriptor (a biochemist at NREL and co-first author); NLR staff profile would settle it
+PERSON-000663,role_as_published,"lane title is not a clean title line: 'DEPUTY ASSOCIATE LABORATORY DIRECTOR, Energy and Photon Sciences Directorate, Br'"
+PERSON-000692,role_as_published,"lane title is not a clean title line: 'Lawyer Taylor Professor of Materials Science and Engineering, Chemistry and (by '"
+PERSON-000705,role_as_published,"lane title is not a clean title line: 'G. Ronald and Margaret H. Morris Professor, Materials Science and Engineering; P'"
+PERSON-000723,role_as_published,lane could not confirm: Cited Miami news pages give only body-text wording (and a 2020 page reads associate professors); Miami Chemistry and Biochemistry faculty di
+PERSON-000745,role_as_published,lane title is not a clean title line: 'Liu-Wang Liming Professor; Professor of Materials Science and Engineering and (b'
+PERSON-000755,role_as_published,"lane title is not a clean title line: 'Head, Materials Science and Engineering; W. W. Grainger Chair, Materials Science'"
+PERSON-000765,role_as_published,lane could not confirm: Both cited Penn State Behrend pages returned HTTP 403; the Behrend college-leadership page would settle it when reachable
+PERSON-000791,role_as_published,lane could not confirm: Lab homepage prints no title line and the cited CHBE faculty research profiles page does not list this person; the CHBE faculty directory en
+PERSON-000844,role_as_published,"lane could not confirm: Cited UA news pages give only body-text or award-heading wording, no title line; the UA Chemistry and Biochemistry faculty directory entry w"
+PERSON-000850,role_as_published,lane could not confirm: Cited FSU group page and artsandsciences.fsu.edu print no title for this person; the FSU Chemistry and Biochemistry faculty profile would se
+PERSON-000861,role_as_published,lane could not confirm: Both cited NYU pages list the name with no title line; the NYU Chemistry faculty profile page would settle it
+PERSON-000864,role_as_published,lane could not confirm: Cited engineering.jhu.edu page did not load via Tavily extract (basic and advanced both returned fetch failure); the faculty page itself wou
+PERSON-000866,role_as_published,lane could not confirm: Cited opda.fsu.edu page prints only the name with a Dr. prefix and the department; no rank or title line; the FSU or FAMU-FSU College of Eng
+PERSON-000868,role_as_published,page rank differs from the record's role; title and role held together for review: Page states a named chair and CEI role but no professor rank; record role named_chair is consistent
+PERSON-000870,role_as_published,lane could not confirm: 2025 page prints only 'Professor Alshakim Nelson' as the new chair of the Department of Chemistry (honorific plus appointment); 2022 page sa
+PERSON-000873,role_as_published,lane title is not a clean title line: 'assistant professor of chemistry at the University of New Haven'
+PERSON-000875,role_as_published,page rank differs from the record's role; title and role held together for review: RANK DIFFERS: lab CV lists Associate Professor (2020 - present) but record role is professor; CV is undated so may be stale; news.fsu.edu ci
+PERSON-000883,role_as_published,lane title is not a clean title line: 'professor of chemical and biomolecular engineering with a joint appointment in t'
+PERSON-000887,role_as_published,lane could not confirm: RANK AMBIGUOUS: article body says 'Professor Ayse Asatekin' (honorific) while a photo caption says 'Associate Professor Ayse Asatekin'; cite
+PERSON-000893,role_as_published,lane title is not a clean title line: 'associate professor of Chemical and Biomedical Engineering'
+PERSON-000894,role_as_published,"page rank differs from the record's role; title and role held together for review: Rank matches record; brochure faculty profile prints only the rank, no department phrase"
+PERSON-000901,role_as_published,page rank differs from the record's role; title and role held together for review: Read via Tavily; rank matches record
+PERSON-000907,role_as_published,lane could not confirm: Cited chemistry.princeton.edu is the department homepage and does not mention her; the Princeton Chemistry faculty profile page would settle
+PERSON-000910,role_as_published,page rank differs from the record's role; title and role held together for review: Rank matches record; wording is from the page's bio sentence
+PERSON-000915,role_as_published,lane could not confirm: UT Dallas catalog PDF lists him under the plural heading 'Associate Professors' (no singular title line); cited news page (older) prints 'As
+PERSON-000920,role_as_published,page rank differs from the record's role; title and role held together for review: RANK DIFFERS: directory Title field now reads Professor but record role is associate_professor
+PERSON-000931,role_as_published,lane could not confirm: Bucknell 2023-2024 catalog lists him under the plural heading 'Associate Professors' (no singular title line); second cited page lists him a
+PERSON-000936,role_as_published,"lane could not confirm: Cited 2014 RPI news page prints acting department head and Polymer Center director and says full professor since 2013, but no professor titl"
+PERSON-000940,role_as_published,lane could not confirm: Cited lab page says 'promoted to the rank of Professor' in 2023 but prints no current title line and no endowed-chair or chair title; the Sy
+PERSON-000946,role_as_published,lane could not confirm: Cited vcredsearch.lsu.edu CV host does not resolve (DNS failure); the LSU Chemical Engineering faculty profile would settle it
+PERSON-000957,role_as_published,lane could not confirm: Both cited engineering.virginia.edu pages returned 403 to the fetch tool; the UVA faculty profile page itself would settle it
+PERSON-000971,role_as_published,page rank differs from the record's role; title and role held together for review: News page prints 'He was named a Laura H. Carnell Professor of Science in 2009' and says he returns to CST faculty after the deanship; no se
+PERSON-000972,role_as_published,page rank differs from the record's role; title and role held together for review: Rank matches record
+PERSON-000984,role_as_published,lane could not confirm: Both cited pages (engineering.rowan.edu and today.rowan.edu homepages) do not mention him; the Rowan Chemical Engineering faculty profile or
+PERSON-000985,role_as_published,lane could not confirm: Both cited engr.colostate.edu pages returned 403 to the fetch tool; the CSU Chemical and Biological Engineering faculty profile itself would
+PERSON-000990,role_as_published,lane title is not a clean title line: 'professor of biomedical engineering in the Weldon School of Biomedical Engineeri'
+PERSON-000995,role_as_published,lane could not confirm: Cited page is a news item that only states the title in a sentence (no title line); the UCLA chemistry faculty profile page would settle it
+PERSON-001001,role_as_published,lane could not confirm: Cited page returned 403 on two attempts; the page itself would settle it once it loads
+PERSON-001014,role_as_published,lane could not confirm: Cited page returned 403 on three attempts; the page itself would settle it once it loads
+PERSON-001018,role_as_published,lane title is not a clean title line: 'Professor | Chemistry and Biochemistry; University Distinguished Professor in th'
+PERSON-001021,role_as_published,lane could not confirm: Neither cited page lists this person (profiles directory paginated; chemistry dept page shows contacts only); the individual Howard profile 
+PERSON-001030,role_as_published,lane could not confirm: Cited page is the Tuskegee homepage and does not mention this person; the Tuskegee news item or faculty profile would settle it
+PERSON-001036,role_as_published,title not found verbatim on the raw page: not_found
+PERSON-001037,role_as_published,lane title is not a clean title line: 'assistant professor in Chemical Engineering at Louisiana Tech University'
+PERSON-001039,role_as_published,lane could not confirm: Cited page is the UMass Dartmouth homepage and does not mention this person; the Mechanical Engineering faculty directory entry would settle
+PERSON-001044,role_as_published,title not found verbatim on the raw page: unfetchable
+PERSON-001046,role_as_published,lane could not confirm: Cited page is the UNT research homepage and does not mention this person; the Biomedical Engineering faculty profile would settle it
+PERSON-001047,role_as_published,lane could not confirm: Cited pages list the person only as a research author or project lead with no rank; the NC A&T Chemistry faculty profile would settle it
+PERSON-001057,role_as_published,lane could not confirm: Cited catalog lists the person only under a Professors heading and the chemistry page shows only a news headline; the Rutgers Newark chemist
+PERSON-001063,role_as_published,lane could not confirm: Both cited pages are news articles that state the title only in a sentence; the FAMU-FSU College of Engineering faculty profile would settle
+PERSON-001067,role_as_published,lane could not confirm: Cited page failed with a certificate error on two attempts; the page itself would settle it once it loads
+PERSON-001071,role_as_published,lane could not confirm: Cited page is a 2018 news item that states the title only in a sentence; the UTRGV faculty profile would settle it
+PERSON-001072,role_as_published,title not found verbatim on the raw page: unfetchable
+PERSON-001074,role_as_published,lane could not confirm: Cited page is a news article that states the title only in a sentence; the Oregon State environmental and molecular toxicology faculty profi
+PERSON-001081,role_as_published,lane could not confirm: Cited page is a news item that states the title only in a sentence; the UMMC faculty profile would settle it
+PERSON-001089,role_as_published,page rank differs from the record's role; title and role held together for review: Page shows Associate Professor; record role is assistant_professor.
+PERSON-001090,role_as_published,"integrator review: punctuation unconfirmed: the lane saw 'Professor Chemistry', the record had 'Professor, Chemistry'"
+PERSON-001094,role_as_published,lane could not confirm: Neither cited page prints a title line for him (only the name heading); a K-State chemistry faculty profile page would settle it.
+PERSON-001101,role_as_published,"lane could not confirm: Cited news page gives only narrative prose (""a professor in the UC Irvine Department of Chemistry"") and the second cited page prints no titl"
+PERSON-001109,role_as_published,"integrator review: bio-sentence text ('... and lab director; head of the department of ...'), not a title line"
+PERSON-001123,role_as_published,lane could not confirm: Cited page gives only prose calling her an assistant professor (record role is associate_professor) and prints no title line; a VCU Chemical
+PERSON-001127,role_as_published,"lane could not confirm: Press release says only ""mechanical engineering professor"" (record role is associate_professor); second cited CV host did not resolve; the C"
+PERSON-001128,role_as_published,lane could not confirm: Cited URL is the Rowan Today home page and prints no title for him; the specific Rowan Today article or a Rowan faculty profile would settle
+PERSON-001130,role_as_published,integrator review: title plus a sentence tail ('University Professor in the Department of Chemistry')
+PERSON-001133,role_as_published,lane could not confirm: Cited UVA profile page returned 403 on repeated fetches; the same profile page loaded in a browser would settle it.
+PERSON-001136,role_as_published,lane title is not a clean title line: 'associate professor of chemistry and biochemistry'
+PERSON-001137,role_as_published,lane could not confirm: Cited URL is the Troy home page and prints no title for him; a Troy chemistry faculty profile page would settle it.
+PERSON-001138,role_as_published,"lane could not confirm: Cited page (2019 award story) headline styles him ""Assistant Professor"" (record role is associate_professor) and prints no clean title line;"
+PERSON-001139,role_as_published,page rank differs from the record's role; title and role held together for review: Directory shows Professor; record role is associate_professor.
+PERSON-001144,role_as_published,lane could not confirm: Cited NC A&T experts list returned 404; a working copy of that page or a JSNN faculty profile would settle it.
+PERSON-001146,role_as_published,lane title is not a clean title line: 'assistant professor of chemical and biomolecular engineering'
+PERSON-001151,role_as_published,lane could not confirm: Neither cited page prints a title line (only name and research-area text); a UConn chemistry faculty profile page would settle it.
+PERSON-001168,role_as_published,lane could not confirm: Neither cited page mentions him; a University of Miami faculty profile page would settle it.
+PERSON-001170,role_as_published,page rank differs from the record's role; title and role held together for review: Directory shows Professor; record role is associate_professor.
+PERSON-001174,role_as_published,lane title is not a clean title line: 'professor of engineering and associate chair of the Department of Engineering'
+PERSON-001175,role_as_published,"lane title is not a clean title line: 'McDermott Faculty Member, Associate Professor, Department of Materials Science a'"
+PERSON-001184,role_as_published,"page rank differs from the record's role; title and role held together for review: FSU new-faculty directory shows Position Title Assistant Professor (Chemical and Biomedical Engineering, 2025-26); record role is research_p"
+PERSON-001186,role_as_published,page rank differs from the record's role; title and role held together for review: Page prints Research Assistant Professor (research-track title); record role is assistant_professor. facultyprofiles.tufts.edu page returned
+PERSON-001193,role_as_published,lane could not confirm: Cited PVAMU news page returned only a 168-character headline with no title line; the full article text or a PVAMU chemical engineering facul
+PERSON-001197,role_as_published,"lane title is not a clean title line: ""assistant professor of chemical engineering in RIT's Kate Gleason College of Eng"""
+PERSON-001199,role_as_published,lane could not confirm: Both cited Colorado State pages returned 403. The cited bce/people page is slugged david-wang while the record is a different first name; id
+PERSON-001201,role_as_published,integrator review: news-sentence fragment ('... in the Department of ... at the FAMU-FSU College of Engineering')
+PERSON-001204,role_as_published,lane could not confirm: chem.mst.edu home page does not mention her and econection.mst.edu does not resolve; the Missouri S&T chemistry faculty directory page (chem
+PERSON-001206,role_as_published,lane title is not a clean title line: 'assistant professor in the Department of Chemical and Materials Engineering'
+PERSON-001209,role_as_published,lane could not confirm: Cited 2019 WSU news page names her dean of the Graduate School and associate vice president for Research and Technology Transfer and calls h
+PERSON-001210,role_as_published,lane title is not a clean title line: 'associate professor of biomedical engineering'
+PERSON-001213,role_as_published,lane could not confirm: Only cited page (findscholars.unh.edu/display/jgf22) returned 403 on repeated fetch; a loadable copy of that profile would settle it.
+PERSON-001217,role_as_published,integrator review: prose with a lowercase rank ('... professor of chemical engineering; director of ...')
+PERSON-001218,role_as_published,title not found verbatim on the raw page: not_found
+PERSON-001219,role_as_published,"integrator review: prose ('Mechanical engineering professor'), not a title line"
+PERSON-001221,role_as_published,lane could not confirm: Only cited page (lab research page) prints no title line for him; a Syracuse chemistry faculty profile would settle it.
+PERSON-001222,role_as_published,lane title is not a clean title line: 'professor in the Department of Chemistry'
+PERSON-001227,role_as_published,"lane could not confirm: Cited 2026 UNL promotion list shows his name under the heading Promoted to Associate Professor and Granted Tenure, not a title line; the sec"
+PERSON-001230,role_as_published,"page rank differs from the record's role; title and role held together for review: Page prints Adjunct Assistant Professor, not Assistant Professor; no chemical and biomolecular engineering line shown. Record role is assist"
+PERSON-001234,role_as_published,page rank differs from the record's role; title and role held together for review: Page header prints Dean; bio says she rose to full professor after starting as assistant professor in 1998. Record role assistant_professor 
+PERSON-001238,role_as_published,page rank differs from the record's role; title and role held together for review: Page prints Associate Professor; record role is assistant_professor.
+PERSON-001239,role_as_published,lane title is not a clean title line: 'assistant professor of chemistry'
+PERSON-001242,role_as_published,"lane could not confirm: Neither cited page prints a title for him; eng.famu.fsu.edu/cbe/people/mysona (linked from the cited research page, not itself cited) would "
+PERSON-001244,role_as_published,title not found verbatim on the raw page: not_found
+PERSON-001245,role_as_published,page rank differs from the record's role; title and role held together for review: Title is printed in the profile bio sentence; the page heading line carries no rank.
+PERSON-000297,role_as_published,page rank differs from the record's role; title and role held together for review: Title copied as printed; the page's own overview spells the chair Gregg-Graniteville.
+PERSON-000549,role_as_published,page rank differs from the record's role; title and role held together for review: Page prints Project Leader (2015-present) as the current line; Materials Research Engineer appears only as 2011-2015 history; record role is
+PERSON-000912,role_as_published,title not found verbatim on the raw page: not_found
+PERSON-000978,role_as_published,page rank differs from the record's role; title and role held together for review: Page prints Distinguished Professor; record role is professor.
+PERSON-000989,role_as_published,"lane title is not a clean title line: 'Richard J. Traystman Endowed Chair; Vice Chair for Research, Anesthesiology and '"
+PERSON-001025,role_as_published,lane could not confirm: ceat.okstate.edu/fcem/faculty-staff returned 403; experts.okstate.edu page shows no title line. The faculty-staff directory entry would sett
+PERSON-001029,role_as_published,lane could not confirm: News page states the appointment only in running prose (Professor with Tenure; Kern Professorship in Biotechnology; Chair) with no title lin
+PERSON-001076,role_as_published,title not found verbatim on the raw page: not_found
+PERSON-001078,role_as_published,page rank differs from the record's role; title and role held together for review: Page title line shows administrative titles only and no professorial rank; record role is professor.
+PERSON-001145,role_as_published,lane could not confirm: News page states rank only in a sentence; clarkson.edu/people/xiaocun-lu printed no title line. A title line on the people page would settle
+PERSON-001181,role_as_published,lane could not confirm: Both cited FAMU-FSU news pages mention the name only inside running text; neither prints a title line. A faculty directory or profile page w
+PERSON-001202,role_as_published,"page rank differs from the record's role; title and role held together for review: cmec page prints Research Professor, not Associate Research Professor; ce.wsu.edu profile printed no title line."

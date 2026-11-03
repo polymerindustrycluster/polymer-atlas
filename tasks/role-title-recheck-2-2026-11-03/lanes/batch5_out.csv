@@ -1,0 +1,26 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-001089,"Associate Professor, Chemical Engineering; Affiliated Faculty, Mechanical and Industrial Engineering; Affiliated Faculty, Chemistry and Chemical Biology",https://coe.northeastern.edu/people/hashmi-sara/,CONFIRMED,Page shows Associate Professor; record role is assistant_professor.
+PERSON-001090,Professor Chemistry,https://ung.edu/chemistry-biochemistry/faculty-staff-bio/aimee-tomlinson.php,CONFIRMED,
+PERSON-001094,,,CANNOT_CONFIRM,Neither cited page prints a title line for him (only the name heading); a K-State chemistry faculty profile page would settle it.
+PERSON-001101,,,CANNOT_CONFIRM,"Cited news page gives only narrative prose (""a professor in the UC Irvine Department of Chemistry"") and the second cited page prints no title; a UC Irvine chemistry faculty profile page would settle it."
+PERSON-001108,Professor,https://mse.utah.edu/wp-content/uploads/sites/34/2019/02/MSE-Undergraduate-Handbook-Year-2018_2019-Feb.-2019.pdf,CONFIRMED,
+PERSON-001109,"Georgia Athletic Association Professor of Fibers and Textiles and lab director; head of the department of textiles, merchandising and interiors within FACS",https://hdrc.fcs.uga.edu/news/story/innovative-facs-lab-at-forefront-of-research-into-next-generation-fabrics,CONFIRMED,
+PERSON-001123,,,CANNOT_CONFIRM,"Cited page gives only prose calling her an assistant professor (record role is associate_professor) and prints no title line; a VCU Chemical and Life Science Engineering faculty profile page would settle it."
+PERSON-001127,,,CANNOT_CONFIRM,"Press release says only ""mechanical engineering professor"" (record role is associate_professor); second cited CV host did not resolve; the CV page would settle it."
+PERSON-001128,,,CANNOT_CONFIRM,Cited URL is the Rowan Today home page and prints no title for him; the specific Rowan Today article or a Rowan faculty profile would settle it.
+PERSON-001130,University Professor in the Department of Chemistry,https://www.rochester.edu/newscenter/nicole-sampson-named-university-provost-637892/,CONFIRMED,
+PERSON-001133,,,CANNOT_CONFIRM,Cited UVA profile page returned 403 on repeated fetches; the same profile page loaded in a browser would settle it.
+PERSON-001136,associate professor of chemistry and biochemistry,https://news.ua.edu/2022/03/ua-leading-work-on-novel-fuel-for-high-velocity-missiles/,CONFIRMED,
+PERSON-001137,,,CANNOT_CONFIRM,Cited URL is the Troy home page and prints no title for him; a Troy chemistry faculty profile page would settle it.
+PERSON-001138,,,CANNOT_CONFIRM,"Cited page (2019 award story) headline styles him ""Assistant Professor"" (record role is associate_professor) and prints no clean title line; a current UIC chemical engineering faculty profile page would settle it."
+PERSON-001139,Professor,https://campusdirectory.ucsc.edu/cd_detail?uid=aayzner,CONFIRMED,Directory shows Professor; record role is associate_professor.
+PERSON-001144,,,CANNOT_CONFIRM,Cited NC A&T experts list returned 404; a working copy of that page or a JSNN faculty profile would settle it.
+PERSON-001146,assistant professor of chemical and biomolecular engineering,https://samueli.ucla.edu/ucla-chemical-engineer-joseph-peterson-receives-nsf-career-award-for-characterizing-polymer-deformation/,CONFIRMED,
+PERSON-001150,"Assistant Professor; ME, MSE",https://www.bu.edu/hic/profile/jorg-werner/,CONFIRMED,
+PERSON-001151,,,CANNOT_CONFIRM,Neither cited page prints a title line (only name and research-area text); a UConn chemistry faculty profile page would settle it.
+PERSON-001157,"Assistant Professor, Chemical Engineering and Materials Science",https://www.stevens.edu/news/the-schaefer-school-of-engineering-and-science-welcomes-21-new-faculty-and,CONFIRMED,
+PERSON-001168,,,CANNOT_CONFIRM,Neither cited page mentions him; a University of Miami faculty profile page would settle it.
+PERSON-001170,"Professor, Mechanical and Mechatronics Engineering Tech",https://www.rit.edu/engineeringtechnology/directory/cllmet-christopher-lewis,CONFIRMED,Directory shows Professor; record role is associate_professor.
+PERSON-001174,professor of engineering and associate chair of the Department of Engineering,https://www.hmc.edu/about/2025/06/30/harvey-mudd-faculty-promotions-summer-2025/,CONFIRMED,First cited page (2020) says Assistant Professor of Engineering; the 2025 promotion notice supersedes it and matches record role professor.
+PERSON-001175,"McDermott Faculty Member, Associate Professor, Department of Materials Science and Engineering, Department of Mechanical Engineering, Department of Bioengineering",https://cei.utdallas.edu/about/,CONFIRMED,
+PERSON-001184,Assistant Professor,https://fda.fsu.edu/nfd/yimin-mao,CONFIRMED,"FSU new-faculty directory shows Position Title Assistant Professor (Chemical and Biomedical Engineering, 2025-26); record role is research_professor."
