@@ -330,7 +330,7 @@ V13_URL_PENDING = {
     "ORG-001264": "NASA Glenn's own Polymers Branch page URL (nasa.gov/glenn). Current evidence is an NTRS technical-report PDF — a publication, not the branch's page.",
     "ORG-001278": "ODOD's own Ohio Innovation Hubs program page URL (development.ohio.gov). Current evidence is a PIC news post and an ODOD news release — announcements, not the program page.",
     "ORG-001299": "Sinclair's own program page for the AAS in Industrial Engineering Technology, Plastics and Composites Option (sinclair.edu). Current evidence is a campusprogram.com aggregator page — aggregators cannot carry a MUST field.",
-    "ORG-001310": "Terra State's own page for its plastics program (terra.edu). Current evidence is aggregator listings only (collegesimply, campusprogram).",
+
     "ORG-001311": "The Tire Society's own conference page URL (Annual Conference on Tire Science and Technology). The record carries no website at all; its only evidence URL is a chamber directory listing.",
 }
 V13_PENDING_SINCE = "2026-10-29"
