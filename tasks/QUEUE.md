@@ -215,3 +215,19 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - Settle the 79 STILL_UNCERTAIN on their named facts.
   - **Re-verify PERSON-000719 (Korley).** Held at Delaware; NYU's pages now style her as an NYU professor.
 
+## Cleanup after the passes 41–46 review (2026-11-03)
+
+- [ ] `in-pr:claude-code 2026-11-03` **Cleanup pass:**
+  - Merged 14 same-institution duplicate people into the older records.
+  - Set 47 exact role titles.
+  - Replaced 6 nonexistent ROR ids and cleared 1.
+  - Dropped 1 email-bearing source URL.
+  - Normalized data CSVs to LF and added `.gitattributes`.
+  - Details: `tasks/atlas-cleanup-2026-11-03/README.md`.
+- [ ] `open` **Role titles still narrative (214 people):**
+  - 151 need a re-read once their hosts answer. nrel.gov did not resolve in the 2026-11-03 session.
+  - 45 have a page rank that differs from `role`. Settle `role` and the title together.
+  - 18 lane lines were not usable.
+  - List: `tasks/atlas-cleanup-2026-11-03/holds.csv`.
+- [ ] `open` **Integration writers must dedupe people against `people.csv` before allocating IDs.** Pass 45 created 14 same-institution duplicates.
+

@@ -1,0 +1,215 @@
+record,item,reason
+PERSON-000054,role_as_published,page rank differs from the record's role; title and role held together for review: Profile prints 'Title: BF Goodrich Professor'; label dropped. Rank professor matches.
+PERSON-000056,role_as_published,lane could not confirm: reason: news page gives title only in prose ('professor of mechanical engineering'); Centire news page prints no title l
+PERSON-000059,role_as_published,lane could not confirm: reason: faculty list shows name only; news page gives only prose ('professor in the School of Polymer Science and Polyme
+PERSON-000067,role_as_published,page rank differs from the record's role; title and role held together for review: Rank associate professor matches; page adds 'of Practice' qualifier.
+PERSON-000082,role_as_published,"lane title is not a clean title line: 'Kyocera Professor of Ceramics, Department of Materials Science and Engineering, '"
+PERSON-000098,role_as_published,lane could not confirm: reason: Andrew C. Weems not listed on the fetched research page.
+PERSON-000106,role_as_published,"lane title is not a clean title line: 'Associate Head (Research & Operations), Prager Chair in Macromolecular Science i'"
+PERSON-000179,role_as_published,"lane could not confirm: reason: only header 'Professor Lih Sheng Turng, Mechanical Engineering, University of Wisconsin-Madison' (name included,"
+PERSON-000195,role_as_published,page rank differs from the record's role; title and role held together for review: Page prints only 'Associate Professor' under the name; the school and GRA lines are not shown as titles. Rank matches associate_professor.
+PERSON-000206,role_as_published,"lane could not confirm: reason: HTTP 503 on two attempts (availability, not evidence)."
+PERSON-000209,role_as_published,page rank differs from the record's role; title and role held together for review: Quoted via a summarizing fetch; spot-check the comma placement before applying. Rank professor matches.
+PERSON-000295,role_as_published,"lane title is not a clean title line: 'Professor, Forestry and Environmental Conservation and Materials Science and Eng'"
+PERSON-000297,role_as_published,page rank differs from the record's role; title and role held together for review: Title line spells 'Greg-Graniteville'; the page Overview spells 'Gregg-Graniteville' and the record uses Gregg. Spot-check spelling. Rank pr
+PERSON-000299,role_as_published,"lane could not confirm: reason: HTTP 503 on two attempts (availability, not evidence)."
+PERSON-000309,role_as_published,"lane could not confirm: reason: HTTP 503 (availability, not evidence); clemsoncomposites.org not fetched."
+PERSON-000450,role_as_published,"lane could not confirm: reason: HTTP 403 on the CHE page and the macro faculty page (availability, not evidence)."
+PERSON-000453,role_as_published,"lane could not confirm: reason: HTTP 403 on the news page and the macro faculty page (availability, not evidence)."
+PERSON-000529,role_as_published,lane could not confirm: reason: no title line; article gives only prose ('a materials scientist and mechanical engineer').
+PERSON-000549,role_as_published,page rank differs from the record's role; title and role held together for review: 'Materials Research Engineer' appears only as a dated 2011 to 2015 entry; current header line is Project Leader. Record research_engineer is
+PERSON-000601,role_as_published,lane could not confirm: reason: only prose in news article ('research team lead in the Structural Materials Division of AFRL'); no title line.
+PERSON-000606,role_as_published,lane could not confirm: reason: no title line; name appears only in body text and a photo caption as 'project lead'.
+PERSON-000607,role_as_published,"page rank differs from the record's role; title and role held together for review: Only title-like line on the page, and it is a team role rather than a rank. Record text 'research scientist (AFRL Materials and Manufacturin"
+PERSON-000608,role_as_published,lane title is not a clean title line: 'principal materials research engineer'
+PERSON-000611,role_as_published,lane could not confirm: reason: only prose in army.mil article ('a research polymer chemist'); no title line.
+PERSON-000612,role_as_published,lane could not confirm: reason: only prose in army.mil article ('a materials engineer at the laboratory').
+PERSON-000613,role_as_published,"page rank differs from the record's role; title and role held together for review: Page prints 'Physicist' under the name, not 'staff scientist'. Title differs from record; no rank line. Integrator should review."
+PERSON-000614,role_as_published,lane could not confirm: reason: only prose in news article; no title line for Stevens himself.
+PERSON-000615,role_as_published,lane could not confirm: reason: article says 'organic materials scientist' in prose; full name and middle initial not printed.
+PERSON-000616,role_as_published,lane could not confirm: reason: body text says 'Sandia materials scientist Erica Redline'; no 'team lead' title printed.
+PERSON-000617,role_as_published,lane could not confirm: reason: no title line; name appears only in passing.
+PERSON-000618,role_as_published,lane could not confirm: reason: not fetched; the WebFetch safety check was rate-limited.
+PERSON-000619,role_as_published,lane could not confirm: reason: not fetched; the WebFetch safety check was rate-limited.
+PERSON-000621,role_as_published,lane could not confirm: reason: not fetched (rate-limited); the LLNL article prints no individual title for him.
+PERSON-000622,role_as_published,lane could not confirm: reason: not fetched; the WebFetch safety check was rate-limited.
+PERSON-000624,role_as_published,lane could not confirm: reason: article names 'Matt Kroonblawd' in a shared description with no title for him.
+PERSON-000625,role_as_published,lane could not confirm: reason: article prints 'LLNL staff scientist Nick Liesen' in prose; the full name is not printed.
+PERSON-000626,role_as_published,"lane could not confirm: reason: 'LLNL materials engineer' is prose in the article, not a title line."
+PERSON-000628,role_as_published,lane could not confirm: reason: HTTP 404.
+PERSON-000634,role_as_published,lane could not confirm: reason: nrel.gov did not resolve in this session (DNS failure); not evidence.
+PERSON-000635,role_as_published,lane could not confirm: reason: not fetched; session fetches stopped after the nrel.gov DNS failure.
+PERSON-000636,role_as_published,lane could not confirm: reason: not fetched; session fetches stopped after the nrel.gov DNS failure.
+PERSON-000637,role_as_published,lane could not confirm: reason: nrel.gov did not resolve in this session (DNS failure); not evidence.
+PERSON-000638,role_as_published,lane could not confirm: reason: not fetched; session fetches stopped after the nrel.gov DNS failure.
+PERSON-000639,role_as_published,lane could not confirm: reason: not fetched; session fetches stopped after the nrel.gov DNS failure.
+PERSON-000641,role_as_published,lane could not confirm: reason: nrel.gov did not resolve in this session (DNS failure); not evidence.
+PERSON-000644,role_as_published,lane could not confirm: reason: not fetched; session fetches stopped after the nrel.gov DNS failure.
+PERSON-000646,role_as_published,"lane could not confirm: host docs.nrel.gov did not resolve in this session; availability only, no title line read"
+PERSON-000648,role_as_published,"lane could not confirm: host www.nrel.gov did not resolve in this session; availability only, no title line read"
+PERSON-000650,role_as_published,"lane could not confirm: host www.nrel.gov did not resolve in this session; availability only, no title line read"
+PERSON-000651,role_as_published,"lane could not confirm: host www.nrel.gov did not resolve in this session; availability only, no title line read"
+PERSON-000652,role_as_published,lane could not confirm: both NASA NTRS sources give affiliation only (NASA Langley); no title line printed; PDF unreadable
+PERSON-000654,role_as_published,"lane could not confirm: host www.nrel.gov did not resolve in this session; availability only, no title line read"
+PERSON-000655,role_as_published,lane could not confirm: NTRS citation gives affiliation only (NASA Langley); no title line printed
+PERSON-000656,role_as_published,lane could not confirm: docs.nrel.gov and www.nrel.gov did not resolve in this session; availability only
+PERSON-000659,role_as_published,lane could not confirm: www.nrel.gov did not resolve; docs.nlr.gov PDF exceeded size limit on fetch (no title read)
+PERSON-000660,role_as_published,lane could not confirm: docs.nlr.gov PDF exceeded size limit on fetch; www.nrel.gov did not resolve
+PERSON-000661,role_as_published,lane could not confirm: news page gives prose only ('a biochemist at NREL'); no title line printed
+PERSON-000662,role_as_published,lane could not confirm: host www.nrel.gov did not resolve in this session; availability only
+PERSON-000663,role_as_published,lane could not confirm: bnl.gov staff page returned HTTP 503 on three attempts; availability only
+PERSON-000692,role_as_published,"lane title is not a clean title line: 'Lawyer Taylor Professor of Materials Science and Engineering, Chemistry and (by '"
+PERSON-000705,role_as_published,"lane title is not a clean title line: 'G. Ronald and Margaret H. Morris Professor, Materials Science and Engineering; P'"
+PERSON-000723,role_as_published,lane title is not a clean title line: 'interim vice president for Research and Innovation and professor of Chemistry an'
+PERSON-000745,role_as_published,lane title is not a clean title line: 'Liu-Wang Liming Professor; Professor of Materials Science and Engineering and (b'
+PERSON-000755,role_as_published,"lane title is not a clean title line: 'Head, Materials Science and Engineering; W. W. Grainger Chair, Materials Science'"
+PERSON-000765,role_as_published,lane could not confirm: both Penn State Behrend pages returned HTTP 403 (leadership page; story page is prose only); availability only
+PERSON-000791,role_as_published,"lane could not confirm: lab page prints a tagline only, no title line; second source (CHBE profiles) not reached"
+PERSON-000844,role_as_published,lane could not confirm: both news pages give prose only ('a professor in the UA Department of Chemistry and Biochemistry'); no title line
+PERSON-000847,role_as_published,page rank differs from the record's role; title and role held together for review: title from Stanford Chemistry news body (Jan 2026); profiles.stanford.edu returned HTTP 503 three times
+PERSON-000850,role_as_published,lane could not confirm: group page prints no title for Schlenoff; FSU Arts and Sciences page does not mention him
+PERSON-000853,role_as_published,lane could not confirm: directory page returned HTTP 403; availability only
+PERSON-000861,role_as_published,lane could not confirm: both NYU pages returned HTTP 405; availability only
+PERSON-000864,role_as_published,lane could not confirm: directory page returned HTTP 403; availability only
+PERSON-000866,role_as_published,lane could not confirm: mentor page gives no academic title (only a 'research title' on crystallization of polymers)
+PERSON-000868,role_as_published,lane could not confirm: page returned HTTP 503 on three attempts; availability only
+PERSON-000870,role_as_published,lane could not confirm: news page gives prose only ('new chair of the Department of Chemistry'); no title line
+PERSON-000873,role_as_published,lane title is not a clean title line: 'assistant professor of chemistry at the University of New Haven'
+PERSON-000875,role_as_published,lane could not confirm: FSU news homepage does not mention Kennemur; linked PDF unreadable in fetch
+PERSON-000883,role_as_published,"lane could not confirm: Public profile returned HTTP 403 (route failure, not evidence); sources list the same URL, so no second page"
+PERSON-000884,role_as_published,page rank differs from the record's role; title and role held together for review: Title line from RPI profile; record role professor matches
+PERSON-000887,role_as_published,lane could not confirm: Tufts news page prints both 'Associate Professor Ayse Asatekin' and 'Professor Ayse Asatekin'; epsilon faculty-fellows p
+PERSON-000893,role_as_published,title page is not one the record cites: https://web1.eng.famu.fsu.edu/hallinan/
+PERSON-000894,role_as_published,lane could not confirm: BC MCAS 2026 brochure PDF loaded but gives no title line for Jia Niu; no other source
+PERSON-000901,role_as_published,lane could not confirm: Columbia materials page returned HTTP 403; newsletter page returned HTTP 403; no title obtained
+PERSON-000907,role_as_published,lane could not confirm: Princeton chemistry homepage shows no title for Erin Stache; guessed faculty URL returned 404; no page with a title line
+PERSON-000910,role_as_published,"lane title is not a clean title line: 'Connie B. Roth Professor of Physics, Emory University'"
+PERSON-000911,role_as_published,page rank differs from the record's role; title and role held together for review: Two title lines on VINSE personnel page joined with '; '; record role professor matches
+PERSON-000912,role_as_published,page rank differs from the record's role; title and role held together for review: Scholars portal title line; record role professor matches
+PERSON-000915,role_as_published,lane could not confirm: Only title found is 'Assistant professor of chemistry' on UT Dallas news page; catalog PDF gave no entry; rank conflicts
+PERSON-000918,role_as_published,page rank differs from the record's role; title and role held together for review: Title and department appear on separate lines on the Drexel page; record role assistant_professor matches
+PERSON-000920,role_as_published,"lane could not confirm: MSU directory shows Title field labels but no value on two fetches; one returned 'Professor', which conflicts with recor"
+PERSON-000925,role_as_published,page rank differs from the record's role; title and role held together for review: Only the bare title 'Professor' is printed; body text says 'Professor in the Department of Scientific Computing'
+PERSON-000931,role_as_published,lane could not confirm: Bucknell 2023-2024 catalog PDF gave no entry; Kalman symposium page returned HTTP 503 (rate-limited earlier)
+PERSON-000933,role_as_published,page rank differs from the record's role; title and role held together for review: Named-chair line only; page does not print a rank word; record role professor not contradicted
+PERSON-000935,role_as_published,page rank differs from the record's role; title and role held together for review: Two title lines joined; record role associate_professor matches
+PERSON-000936,role_as_published,lane could not confirm: RPI 2014 news page gives no title line; no profile page available
+PERSON-000938,role_as_published,page rank differs from the record's role; title and role held together for review: ISU chemistry directory; record role associate_professor matches
+PERSON-000939,role_as_published,page rank differs from the record's role; title and role held together for review: Lab page prints bare 'Professor'; record role professor matches
+PERSON-000940,role_as_published,lane could not confirm: Syracuse multiscale page returned HTTP 403; no second source
+PERSON-000941,role_as_published,page rank differs from the record's role; title and role held together for review: Utah BME profile; record role associate_professor matches
+PERSON-000942,role_as_published,page rank differs from the record's role; title and role held together for review: Page says Associate Professor of Chemical Engineering; record says professor
+PERSON-000946,role_as_published,lane could not confirm: LSU CV host (vcredsearch.lsu.edu) does not resolve from this session; needs to be allowed in network settings
+PERSON-000957,role_as_published,lane could not confirm: UVA faculty page and UVA news page both returned HTTP 503
+PERSON-000965,role_as_published,page rank differs from the record's role; title and role held together for review: UTK chemistry profile; record role professor matches
+PERSON-000971,role_as_published,"lane could not confirm: Temple news page gives only body prose ('Laura H. Carnell Professor of Science'), not a title line; guessed directory UR"
+PERSON-000972,role_as_published,lane could not confirm: UW Bioengineering portfolio page returned HTTP 503 on two attempts
+PERSON-000975,role_as_published,page rank differs from the record's role; title and role held together for review: Two title lines joined; record role professor matches
+PERSON-000978,role_as_published,"page rank differs from the record's role; title and role held together for review: Directory prints 'Distinguished Professor' (also a 'Faculty' category label, not used); record role professor matches"
+PERSON-000984,role_as_published,lane could not confirm: Rowan engineering and Rowan today pages both returned HTTP 503
+PERSON-000985,role_as_published,lane could not confirm: CSU profile returned HTTP 403; second CSU page also returned HTTP 403
+PERSON-000989,role_as_published,page rank differs from the record's role; title and role held together for review: Three title lines joined; record role professor matches; page does not show pediatrics
+PERSON-000990,role_as_published,lane could not confirm: Purdue feature page returned HTTP 503; no second source loaded
+PERSON-000991,role_as_published,page rank differs from the record's role; title and role held together for review: News-page title only ('Associate Professor Brian Long'); record role associate_professor matches
+PERSON-000995,role_as_published,"lane could not confirm: UCLA news page gives only prose ('a UCLA professor of chemistry and biochemistry'), not a title line"
+PERSON-001000,role_as_published,page rank differs from the record's role; title and role held together for review: Group site title line; record role professor matches
+PERSON-001001,role_as_published,lane could not confirm: UC Davis BAE profile returned HTTP 403; no second source
+PERSON-001002,role_as_published,lane could not confirm: Wisconsin chemistry team page prints no title for Andrew Boydston; catalog-style title not found on page
+PERSON-001014,role_as_published,"lane could not confirm: HTTP 503 on three attempts; no title read (availability, not evidence)"
+PERSON-001018,role_as_published,lane title is not a clean title line: 'Professor | Chemistry and Biochemistry'
+PERSON-001021,role_as_published,title page is not one the record cites: https://chemistry.howard.edu/people
+PERSON-001025,role_as_published,page rank differs from the record's role; title and role held together for review: CEAT faculty page returned 403; experts page used
+PERSON-001026,role_as_published,page rank differs from the record's role; title and role held together for review: Record role professor; page shows Assistant Professor
+PERSON-001028,role_as_published,lane could not confirm: Rowan profile HTTP 503 on repeated attempts; safety-check rate limit hit once; today.rowan.edu not fetched
+PERSON-001029,role_as_published,page rank differs from the record's role; title and role held together for review: Directory fetched on a later attempt after a safety-check rate limit
+PERSON-001030,role_as_published,lane could not confirm: Institution root page does not list Rangari; no profile URL in sources
+PERSON-001031,role_as_published,page rank differs from the record's role; title and role held together for review: Record role associate_professor; page shows Professor
+PERSON-001036,role_as_published,lane could not confirm: Group page and polymer.ims.uconn.edu both HTTP 503; no title read
+PERSON-001037,role_as_published,lane could not confirm: Page gives only prose ('an assistant professor in Chemical Engineering'); no title line
+PERSON-001039,role_as_published,lane could not confirm: UMass Dartmouth root page does not show Chalivendra; no title line found
+PERSON-001044,role_as_published,lane could not confirm: Profile HTTP 403; IDIES page lists her only as PI with no title line
+PERSON-001046,role_as_published,lane could not confirm: Root page HTTP 503; no person page cited
+PERSON-001047,role_as_published,lane could not confirm: Research page gives no title for Bastakoti; symposium page has no title line
+PERSON-001048,role_as_published,lane could not confirm: Faculty bio HTTP 503 on attempts; no title read
+PERSON-001057,role_as_published,lane could not confirm: Catalog line gives name and degree only; sasn.rutgers.edu/chemistry shows no title
+PERSON-001061,role_as_published,lane could not confirm: Rowan profile HTTP 503; no title read
+PERSON-001063,role_as_published,lane could not confirm: Both FSU sources give prose only ('is an associate professor in the FAMU-FSU College of Engineering'); no title line
+PERSON-001066,role_as_published,lane could not confirm: Rowan profile HTTP 503; no title read
+PERSON-001067,role_as_published,lane could not confirm: Contact page HTTP 503; no title read
+PERSON-001069,role_as_published,page rank differs from the record's role; title and role held together for review: Directory lists 'Jugal Sahoo' (record has 'Jugal Kishore Sahoo'); name variant only
+PERSON-001071,role_as_published,lane could not confirm: Newsroom HTTP 503; only prose would be available from a 2018 news page
+PERSON-001072,role_as_published,lane could not confirm: Profile HTTP 403; no title read
+PERSON-001074,role_as_published,lane could not confirm: Only a news article with prose; OSU profile URL guessed and returned 404
+PERSON-001075,role_as_published,lane could not confirm: Syracuse lab people page HTTP 503; no title read
+PERSON-001076,role_as_published,page rank differs from the record's role; title and role held together for review: Page does not show the 'Amgen-Perlmutter' chair; title line is Professor of Biology
+PERSON-001078,role_as_published,page rank differs from the record's role; title and role held together for review: Page header is an administrative title; faculty rank appears only in bio prose ('a full Professor'); consistent with record role professor
+PERSON-001081,role_as_published,lane could not confirm: News page HTTP 503; no title read
+PERSON-001086,role_as_published,page rank differs from the record's role; title and role held together for review: Record role professor; page shows Associate Professor
+PERSON-001089,role_as_published,lane could not confirm: Profile and news page both HTTP 503; no title read
+PERSON-001090,role_as_published,lane could not confirm: Faculty page and CV PDF both HTTP 503; no title read
+PERSON-001094,role_as_published,title page is not one the record cites: https://www.k-state.edu/chem/about/people/faculty/higgins/
+PERSON-001098,role_as_published,page rank differs from the record's role; title and role held together for review: Page title line says Professor (department on a separate line); record says associate_professor
+PERSON-001099,role_as_published,page rank differs from the record's role; title and role held together for review: Page says Associate Professor; record says assistant_professor
+PERSON-001101,role_as_published,title page is not one the record cites: http://www.chem.uci.edu/people/faculty/
+PERSON-001107,role_as_published,page rank differs from the record's role; title and role held together for review: Page still prints Assistant Professor (stale per page note); record says professor. 2024 IMS article (not a title line) reports Head of Chem
+PERSON-001108,role_as_published,lane could not confirm: Only a news headline (Dmitry Bedrov Named New Chair...) and a 2019 handbook PDF; no title line for him. mse.utah.edu fac
+PERSON-001109,role_as_published,lane could not confirm: UGA news page gives titles only in prose; help.fcs.uga.edu directory does not list him
+PERSON-001113,role_as_published,page rank differs from the record's role; title and role held together for review: Page says Professor; record says research_professor. Recheck exact directory wording
+PERSON-001123,role_as_published,lane could not confirm: VCU page is news prose only; no title line found
+PERSON-001127,role_as_published,lane could not confirm: South Alabama news page has no title line; ME faculty page returned 404
+PERSON-001128,role_as_published,lane could not confirm: Rowan Today item is prose; no title line for him found
+PERSON-001130,role_as_published,lane could not confirm: Rochester news says University Professor in prose; Chemistry faculty page returned 404
+PERSON-001133,role_as_published,lane could not confirm: Virginia faculty page and UVA fetch returned 503 on retry
+PERSON-001136,role_as_published,lane could not confirm: UA news page is prose; chemistry faculty page returned 405
+PERSON-001137,role_as_published,lane could not confirm: troy.edu home page only; no faculty profile for him found
+PERSON-001138,role_as_published,lane could not confirm: Only a 2019 UIC news headline: Chemical Engineering Assistant Professor Vivek Sharma; no directory title line. Rank conf
+PERSON-001139,role_as_published,lane could not confirm: UCSC campus directory returned 503; lab research page has no title for him
+PERSON-001142,role_as_published,page rank differs from the record's role; title and role held together for review: Page says Professor; record says associate_professor
+PERSON-001144,role_as_published,lane could not confirm: NC A&T experts list returned 404 on fetch; no title line retrieved
+PERSON-001145,role_as_published,page rank differs from the record's role; title and role held together for review: Title line says Associate Professor; a bio paragraph on the same page says Assistant Professor
+PERSON-001146,role_as_published,lane could not confirm: UCLA news page gives 'assistant professor' in prose only; no title line
+PERSON-001150,role_as_published,lane could not confirm: CONFIRMED
+PERSON-001151,role_as_published,lane could not confirm: UConn materials-science person page returned 503 on two attempts
+PERSON-001157,role_as_published,lane could not confirm: Stevens research portal shows department line only; no title line
+PERSON-001165,role_as_published,page rank differs from the record's role; title and role held together for review: Page says Professor; record says associate_professor
+PERSON-001168,role_as_published,lane could not confirm: Miami research index page has no title for him
+PERSON-001170,role_as_published,lane could not confirm: RIT directory returned 503 on two attempts
+PERSON-001174,role_as_published,lane title is not a clean title line: 'professor of engineering and associate chair of the Department of Engineering'
+PERSON-001175,role_as_published,lane could not confirm: UT Dallas CEI page gives only a truncated bio line; no clean title line retrieved
+PERSON-001181,role_as_published,page rank differs from the record's role; title and role held together for review: Title comes from a photo caption on an FSU news page; no directory page checked
+PERSON-001184,role_as_published,"lane could not confirm: Profile gives Assistant Professor only as a separate position-title field, not a title line. Record role research_profes"
+PERSON-001186,role_as_published,lane could not confirm: Profile has no title line; news page not fetched
+PERSON-001188,role_as_published,lane could not confirm: Directory returned 503 on two attempts
+PERSON-001190,role_as_published,"lane could not confirm: Page lists only an expertise line for the person, no title"
+PERSON-001193,role_as_published,lane could not confirm: Only a news headline names Shamim; no title line
+PERSON-001196,role_as_published,page rank differs from the record's role; title and role held together for review: Record role assistant_professor; page says Research Assistant Professor
+PERSON-001197,role_as_published,lane could not confirm: Page returned 503 on two attempts
+PERSON-001199,role_as_published,lane could not confirm: Profile and research page returned 403
+PERSON-001201,role_as_published,lane could not confirm: Page gives no title line
+PERSON-001202,role_as_published,page rank differs from the record's role; title and role held together for review: Record role research_professor; page says Associate Research Professor
+PERSON-001204,role_as_published,lane could not confirm: Page returned 503
+PERSON-001206,role_as_published,lane could not confirm: Domain rate-limited; not confirmed
+PERSON-001208,role_as_published,lane could not confirm: Profile gives only the name line Andrew Magenau | Drexel Engineering; second page not fetched
+PERSON-001209,role_as_published,lane could not confirm: Domain rate-limited; not confirmed
+PERSON-001210,role_as_published,lane could not confirm: Domain rate-limited; not confirmed
+PERSON-001213,role_as_published,lane could not confirm: Page returned 503
+PERSON-001217,role_as_published,lane could not confirm: Domain rate-limited; not confirmed
+PERSON-001218,role_as_published,lane could not confirm: PDF returned 503; second catalog not fetched
+PERSON-001219,role_as_published,lane could not confirm: Page gives no title line
+PERSON-001220,role_as_published,lane title is not a clean title line: 'Seamus Jones | Assistant Professor'
+PERSON-001221,role_as_published,lane could not confirm: Page returned 503
+PERSON-001222,role_as_published,lane could not confirm: Domain rate-limited; not confirmed
+PERSON-001227,role_as_published,lane could not confirm: News page returned 403
+PERSON-001228,role_as_published,lane could not confirm: Page returned 503
+PERSON-001230,role_as_published,lane could not confirm: Profile gives only the name line; no title
+PERSON-001232,role_as_published,lane could not confirm: Listing line runs into research keywords; not copied as a clean title
+PERSON-001234,role_as_published,lane could not confirm: Page gives name and Ph.D. only
+PERSON-001237,role_as_published,lane could not confirm: Domain rate-limited; not confirmed
+PERSON-001238,role_as_published,lane could not confirm: Page returned 403
+PERSON-001239,role_as_published,lane could not confirm: Not fetched; effort not spent
+PERSON-001240,role_as_published,lane could not confirm: Page gives only the name line David Salas-de la Cruz | Rutgers University
+PERSON-001241,role_as_published,lane could not confirm: Page gives no title line for Yuya
+PERSON-001242,role_as_published,lane could not confirm: Page gives name and office line only
+PERSON-001244,role_as_published,lane could not confirm: Page shows only a department line; no title
+PERSON-001245,role_as_published,lane could not confirm: Page shows only name and college; no title
+PERSON-001246,role_as_published,page rank differs from the record's role; title and role held together for review: Record role associate_professor; page says Industry Associate Professor (industry track)
