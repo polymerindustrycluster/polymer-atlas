@@ -488,22 +488,58 @@ EXPERTS_JS = r"""(function () {
     $('browse').hidden = v !== 'browse'; $('ppl').hidden = $('prg').hidden = v === 'browse';
     Array.prototype.forEach.call($('tabs').querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === v)); });
   }
-  function group(rows, instIdx, render) {
+  function group(rows, instIdx, render, az) {
     var by = {}, order = [];
     rows.forEach(function (r) { var k = r[instIdx]; if (!by[k]) { by[k] = []; order.push(k); } by[k].push(r); });
-    order.sort(function (a, b) { return by[b].length - by[a].length || instName(a).localeCompare(instName(b)); });
+    order.sort(function (a, b) { return az ? instName(a).localeCompare(instName(b)) : (by[b].length - by[a].length || instName(a).localeCompare(instName(b))); });
     return order.map(function (k) {
       return '<div class="xgroup"><h3><a href="orgs/' + encodeURIComponent(k) + '.html">' + esc(instName(k)) + '</a> <span class="muted">' + esc(place(k)) + ' · ' + by[k].length + '</span></h3><ul class="xrows">' + by[k].map(render).join('') + '</ul></div>';
     }).join('');
   }
   function specs(list) { return list.length ? '<span class="xs">' + list.slice(0, 4).map(chip).join('') + (list.length > 4 ? '<span class="muted small">+' + (list.length - 4) + '</span>' : '') + '</span>' : ''; }
+  var WORDS = [], FLAT = false;
+  // "Why this matched": which fields hold at least one search word (OIEx-style), shown only during a search.
+  function why(fields) {
+    if (!WORDS.length) return '';
+    var hit = fields.filter(function (f) { var v = String(f[1] || '').toLowerCase(); return WORDS.some(function (w) { return v.indexOf(w) !== -1; }); }).map(function (f) { return f[0]; });
+    return hit.length ? '<span class="xwhy">Matched in ' + hit.join(', ') + '</span>' : '';
+  }
+  function instLine(id) { return FLAT ? '<span class="xr">' + esc(instName(id)) + (place(id) ? ', ' + esc(place(id)) : '') + '</span>' : ''; }
   function personRow(p) {
     var name = p[4] ? '<a href="' + esc(p[4]) + '" rel="noopener nofollow">' + esc(p[0]) + '</a>' : esc(p[0]);
-    return '<li><span class="xn">' + name + '</span><span class="xr">' + esc(p[1]) + '</span>' + specs(p[2]) + '</li>';
+    var i = D.insts[p[3]] || [];
+    return '<li><span class="xn">' + name + instLine(p[3]) + '</span><span class="xr">' + esc(p[1]) + '</span><span class="xsw">' + specs(p[2]) +
+      why([['name', p[0]], ['title', p[1]], ['specialties', p[2].join(' ')], ['institution', i[0]], ['location', [i[1], i[2]].join(' ')]]) + '</span></li>';
   }
   function programRow(g) {
     var name = g[6] ? '<a href="' + esc(g[6]) + '" rel="noopener nofollow">' + esc(g[0]) + '</a>' : esc(g[0]);
-    return '<li><span class="xn">' + name + '</span><span class="xr">' + esc([g[2], g[3], g[4]].filter(Boolean).join(' · ')) + '</span>' + specs(g[5]) + '</li>';
+    var i = D.insts[g[1]] || [];
+    return '<li><span class="xn">' + name + instLine(g[1]) + '</span><span class="xr">' + esc([g[2], g[3], g[4]].filter(Boolean).join(' · ')) + '</span><span class="xsw">' + specs(g[5]) +
+      why([['program name', g[0]], ['type and level', [g[2], g[3], g[4]].join(' ')], ['specialties', g[5].join(' ')], ['institution', i[0]], ['location', [i[1], i[2]].join(' ')]]) + '</span></li>';
+  }
+  function lastName(n) { var w = String(n).replace(/\(.*?\)/g, '').trim().split(/\s+/); return (w[w.length - 1] || '').toLowerCase(); }
+  function flat(rows, render, key) {
+    return '<div class="xgroup"><ul class="xrows">' + rows.slice().sort(function (a, b) { return key(a).localeCompare(key(b)); }).map(render).join('') + '</ul></div>';
+  }
+  // Facet counts: each State / Institution type option shows how many results it would give with the other filters as they are.
+  function facetCounts(words, show) {
+    var by = { state: {}, kind: {} }, st = $('state').value, kind = $('kind').value;
+    function tally(instId, hay) {
+      if (inst && instId !== inst) return; if (!matches(hay, words)) return;
+      var i = D.insts[instId] || ['', '', '', ''];
+      if (!kind || i[3] === kind) by.state[i[2]] = (by.state[i[2]] || 0) + 1;
+      if (!st || i[2] === st) by.kind[i[3]] = (by.kind[i[3]] || 0) + 1;
+    }
+    if (show !== 'programs') D.people.forEach(function (p, k) { tally(p[3], D.peopleHay[k]); });
+    if (show !== 'people') D.programs.forEach(function (g, k) { tally(g[1], D.progHay[k]); });
+    Array.prototype.forEach.call($('state').options, function (o) {
+      if (!o.dataset.base) o.dataset.base = o.textContent;
+      if (o.value) { var n = by.state[o.value] || 0; o.textContent = o.dataset.base + ' (' + n.toLocaleString() + ')'; o.disabled = !n && o.value !== st; }
+    });
+    Array.prototype.forEach.call($('kind').options, function (o) {
+      if (!o.dataset.base) o.dataset.base = o.textContent;
+      if (o.value) o.textContent = o.dataset.base + ' (' + (by.kind[o.value] || 0).toLocaleString() + ')';
+    });
   }
   function browse(st, kind) {
     // One compact table: a state header row, then one line per institution (name, city, researchers, programs).
@@ -532,6 +568,8 @@ EXPERTS_JS = r"""(function () {
     if (!D) return;
     var q = $('q').value.trim().toLowerCase(), st = $('state').value, kind = $('kind').value, show = $('show').value;
     var words = q.split(/\s+/).filter(Boolean), filtered = !!(q || inst);
+    WORDS = words; FLAT = $('sort').value === 'name';
+    facetCounts(words, show);
     var instOk = function (id) { var i = D.insts[id] || ['', '', '', '']; return (!inst || id === inst) && (!st || i[2] === st) && (!kind || i[3] === kind); };
     var ppl = [], prg = [];
     if (show !== 'programs') D.people.forEach(function (p, k) { if (instOk(p[3]) && matches(D.peopleHay[k], words)) ppl.push(p); });
@@ -548,15 +586,17 @@ EXPERTS_JS = r"""(function () {
     setView(view);
     $('empty').hidden = ppl.length + prg.length > 0;
     var pp = ppl.slice(0, limit), gg = prg.slice(0, limit);
-    $('people').innerHTML = group(pp, 3, personRow) + (ppl.length > limit ? '<button type="button" class="xmore" data-more="1">Show more researchers (' + (ppl.length - limit).toLocaleString() + ' left)</button>' : '');
-    $('programs').innerHTML = group(gg, 1, programRow) + (prg.length > limit ? '<button type="button" class="xmore" data-more="1">Show more programs (' + (prg.length - limit).toLocaleString() + ' left)</button>' : '');
+    var instaz = $('sort').value === 'instaz';
+    var grp = function (rows, idx, render, key) { return FLAT ? flat(rows, render, key) : group(rows, idx, render, instaz); };
+    $('people').innerHTML = grp(pp, 3, personRow, function (p) { return lastName(p[0]); }) + (ppl.length > limit ? '<button type="button" class="xmore" data-more="1">Show more researchers (' + (ppl.length - limit).toLocaleString() + ' left)</button>' : '');
+    $('programs').innerHTML = grp(gg, 1, programRow, function (g) { return String(g[0]).toLowerCase(); }) + (prg.length > limit ? '<button type="button" class="xmore" data-more="1">Show more programs (' + (prg.length - limit).toLocaleString() + ' left)</button>' : '');
     if (view === 'results') { $('ppl').hidden = show === 'programs' || !ppl.length; $('prg').hidden = show === 'people' || !prg.length; }
     var u = new URLSearchParams(); if (q) u.set('q', $('q').value.trim()); if (st) u.set('state', st); if (inst) u.set('inst', inst);
     try { history.replaceState(null, '', u.toString() ? '?' + u.toString() : location.pathname); } catch (e) {}
   }
   var t = null;
   $('q').addEventListener('input', function () { clearTimeout(t); limit = PAGE; $('tabs').removeAttribute('data-forced'); t = setTimeout(run, 120); });
-  ['state', 'kind', 'show'].forEach(function (id) { $(id).addEventListener('change', function () { limit = PAGE; run(); }); });
+  ['state', 'kind', 'show', 'sort'].forEach(function (id) { $(id).addEventListener('change', function () { limit = PAGE; if (id === 'sort') $('tabs').setAttribute('data-forced', 'results'); run(); }); });
   $('clear').addEventListener('click', function () {
     $('q').value = ''; $('state').value = ''; $('kind').value = ''; $('show').value = 'both'; inst = ''; limit = PAGE; $('tabs').removeAttribute('data-forced'); run(); $('q').focus();
   });
@@ -905,7 +945,9 @@ th.num button.sort{flex-direction:row-reverse}
 .xgroup h3 .muted{font-weight:400;font-size:.88rem}
 .xrows{list-style:none;margin:0;padding:0}
 .xrows li{display:grid;grid-template-columns:minmax(10em,1.1fr) minmax(0,1.6fr) minmax(0,1.6fr);gap:4px 16px;align-items:baseline;padding:7px 14px;border-top:1px solid var(--line)}
-.xrows .xn{font-weight:700}.xrows .xr{color:var(--muted);font-size:.9rem}
+.xrows .xn{font-weight:700;display:flex;flex-direction:column}.xrows .xn .xr{font-weight:400}.xrows .xr{color:var(--muted);font-size:.9rem}
+.xrows .xsw{display:flex;flex-direction:column;gap:3px}
+.xwhy{color:var(--muted);font-size:.78rem;font-style:italic}
 .xrows .xs{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .xrows .xs .xchip{min-height:24px;font-size:.78rem;padding:0 8px;background:var(--panel-2);border-color:transparent}
 .xmore{all:unset;cursor:pointer;display:block;margin:.4em 0 1.4em;padding:10px 16px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-weight:700;text-align:center}
@@ -1450,6 +1492,8 @@ Try a specialty such as <a href="?q=rheology">rheology</a>, <a href="?q=elastome
 <option value="edu">Universities, colleges and training</option><option value="lab">Federal labs and research consortia</option></select></p>
 <p><label for="show">Show</label><br><select id="show"><option value="both">Researchers and programs</option>
 <option value="people">Researchers only</option><option value="programs">Programs only</option></select></p>
+<p><label for="sort">Sort results</label><br><select id="sort"><option value="inst">By institution, most matches first</option>
+<option value="instaz">By institution, A to Z</option><option value="name">By name, A to Z (one list)</option></select></p>
 </div>
 </form>
 <div class="xchips" id="chips" aria-label="Common research specialties"></div>
