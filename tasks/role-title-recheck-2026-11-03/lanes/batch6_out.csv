@@ -1,0 +1,42 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-001184,,https://fda.fsu.edu/nfd/yimin-mao,CANNOT_CONFIRM,"Profile gives Assistant Professor only as a separate position-title field, not a title line. Record role research_professor"
+PERSON-001186,,https://facultyprofiles.tufts.edu/ying-chen,CANNOT_CONFIRM,"Profile has no title line; news page not fetched"
+PERSON-001188,,https://latech.edu/directory/collin-wick.php,CANNOT_CONFIRM,"Directory returned 503 on two attempts"
+PERSON-001190,,https://web.uri.edu/engineering/research/research-themes/,CANNOT_CONFIRM,"Page lists only an expertise line for the person, no title"
+PERSON-001191,"Professor of Chemical Engineering, Bioengineering, and Biophysics",http://www.cce.caltech.edu/faculty/sujit-datta,CONFIRMED,
+PERSON-001193,,https://www.pvamu.edu/research/post/shamim-earns-more-than-750000-from-afosr-and-nsf-to-support-kinetics-of-vitrification-and-crystallization-research/,CANNOT_CONFIRM,"Only a news headline names Shamim; no title line"
+PERSON-001196,Research Assistant Professor,https://utorii.com/ivan-popov/,CONFIRMED,"Record role assistant_professor; page says Research Assistant Professor"
+PERSON-001197,,https://www.rit.edu/news/rit-professor-poornima-padmanabhan-honored-nsf-career-award,CANNOT_CONFIRM,"Page returned 503 on two attempts"
+PERSON-001199,,https://www.engr.colostate.edu/bce/people/david-wang/,CANNOT_CONFIRM,"Profile and research page returned 403"
+PERSON-001201,,https://isl.fsu.edu/article/isl-welcomes-two-new-faculty-affiliates,CANNOT_CONFIRM,"Page gives no title line"
+PERSON-001202,Associate Research Professor,https://ce.wsu.edu/faculty/wsu-profile/englund/,CONFIRMED,"Record role research_professor; page says Associate Research Professor"
+PERSON-001204,,https://chem.mst.edu/,CANNOT_CONFIRM,"Page returned 503"
+PERSON-001206,,https://uknow.uky.edu/professional-news/empowering-future-engineers-chwatko-celebrated-2025-great-teacher,CANNOT_CONFIRM,"Domain rate-limited; not confirmed"
+PERSON-001208,,https://drexel.edu/engineering/about/faculty-staff/M/magenau-andrew/,CANNOT_CONFIRM,"Profile gives only the name line Andrew Magenau | Drexel Engineering; second page not fetched"
+PERSON-001209,,https://www.wichita.edu/about/wsunews/news/2019/05-may/grad_school_coleen_pugh.php,CANNOT_CONFIRM,"Domain rate-limited; not confirmed"
+PERSON-001210,,https://olemiss.edu/news/2024/11/nanoparticle-cancer-delivery/,CANNOT_CONFIRM,"Domain rate-limited; not confirmed"
+PERSON-001211,"Associate Professor, Mechanical & Industrial Engineering",https://catalog.montana.edu/faculty/,CONFIRMED,
+PERSON-001213,,https://findscholars.unh.edu/display/jgf22,CANNOT_CONFIRM,"Page returned 503"
+PERSON-001214,Professor - Chemistry and Biochemistry,https://faculty.txst.edu/profile/1922408,CONFIRMED,
+PERSON-001217,,https://www.iit.edu/news/professor-jay-schieber-elected-fellow-society-rheology,CANNOT_CONFIRM,"Domain rate-limited; not confirmed"
+PERSON-001218,,https://utrgv.edu/cos/_files/documents/pdf/phya-faculty-catalog.pdf,CANNOT_CONFIRM,"PDF returned 503; second catalog not fetched"
+PERSON-001219,,https://den.mercer.edu/mercer-researchers-design-coating-material-with-self-healing-properties/,CANNOT_CONFIRM,"Page gives no title line"
+PERSON-001220,Seamus Jones | Assistant Professor,https://mate.calpoly.edu/faculty-and-staff,CONFIRMED,
+PERSON-001221,,https://dmozhdeh.expressions.syr.edu/research/,CANNOT_CONFIRM,"Page returned 503"
+PERSON-001222,,https://catalog.smu.edu/preview_entity.php?catoid=71&ent_oid=7336&returnto=6954,CANNOT_CONFIRM,"Domain rate-limited; not confirmed"
+PERSON-001227,,https://engineering.unl.edu/news/260410/tenure_promotion/,CANNOT_CONFIRM,"News page returned 403"
+PERSON-001228,,https://www.UWYO.edu/mechanical/faculty-staff/faculty/daniel-rau/index.html,CANNOT_CONFIRM,"Page returned 503"
+PERSON-001230,,https://profiles.rice.edu/faculty/eilaf-egap,CANNOT_CONFIRM,"Profile gives only the name line; no title"
+PERSON-001232,,https://eas.uccs.edu/departments/mechanical-and-aerospace-engineering/directory/faculty/dr-jena-mccollum,CANNOT_CONFIRM,"Listing line runs into research keywords; not copied as a clean title"
+PERSON-001233,Assistant Professor,https://www.kean.edu/directory/brian-ree,CONFIRMED,
+PERSON-001234,,https://www.uhcl.edu/science-engineering/faculty/irvin-jennifer,CANNOT_CONFIRM,"Page gives name and Ph.D. only"
+PERSON-001237,,https://www.scu.edu/cas/chemistry/research/faculty-research-projects/,CANNOT_CONFIRM,"Domain rate-limited; not confirmed"
+PERSON-001238,,https://engineering.unl.edu/mme/person/lucia-fernandez-ballester/,CANNOT_CONFIRM,"Page returned 403"
+PERSON-001239,,https://newsletter.blogs.wesleyan.edu/2021/09/20/new-ongoing-faculty-are-experts-on-japanese-pedagogy-costume-design-immersive-media/,CANNOT_CONFIRM,"Not fetched; effort not spent"
+PERSON-001240,,https://dsalas.camden.rutgers.edu/,CANNOT_CONFIRM,"Page gives only the name line David Salas-de la Cruz | Rutgers University"
+PERSON-001241,,https://clarkson.us/academics/schools-colleges/engineering/mechanical-aerospace/about/research,CANNOT_CONFIRM,"Page gives no title line for Yuya"
+PERSON-001242,,https://fda.fsu.edu/nfd/joshua-mysona,CANNOT_CONFIRM,"Page gives name and office line only"
+PERSON-001244,,https://cbe.utk.edu/people/ria-d-corder/,CANNOT_CONFIRM,"Page shows only a department line; no title"
+PERSON-001245,,https://engineering.wisc.edu/directory/profile/monica-ohnsorg/,CANNOT_CONFIRM,"Page shows only name and college; no title"
+PERSON-001246,Industry Associate Professor,https://engineering.nyu.edu/faculty/xin-wang,CONFIRMED,"Record role associate_professor; page says Industry Associate Professor (industry track)"
+PERSON-001055,NMR Director; Senior Lecturer,https://www.umass.edu/natural-sciences/about/directory/weiguo-hu,CONFIRMED,

@@ -1,0 +1,3 @@
+# Line endings: LF for every CSV (owner decision 2026-11-03). git normalizes on commit,
+# so a writer that emits CRLF (Python csv default) cannot reintroduce whole-file diffs.
+*.csv text eol=lf

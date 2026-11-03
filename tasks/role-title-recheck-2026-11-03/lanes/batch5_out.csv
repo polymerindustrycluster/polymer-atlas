@@ -1,0 +1,47 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-001091,Professor - Chemical Engineering,https://ptc.tamu.edu/profile-yossef-elabd/,CONFIRMED,
+PERSON-001094,Professor,https://www.k-state.edu/chem/about/people/faculty/higgins/,CONFIRMED,
+PERSON-001098,Professor,https://drexel.edu/engineering/about/faculty-staff/F/farnam-amir-yaghoob/,CONFIRMED,"Page title line says Professor (department on a separate line); record says associate_professor"
+PERSON-001099,Associate Professor,https://cee.engineering.gwu.edu/xitong-liu,CONFIRMED,"Page says Associate Professor; record says assistant_professor"
+PERSON-001101,Associate Professor,http://www.chem.uci.edu/people/faculty/,CONFIRMED,"Page says Associate Professor; record says professor"
+PERSON-001104,"Nanoscale Science PhD Program Director, Professor",https://chemnano.charlotte.edu/people-types/faculty/page/2/,CONFIRMED,
+PERSON-001106,"Associate Professor, Graduate Admissions Co-Director",http://bme.rutgers.edu/adam-j-gormley,CONFIRMED,
+PERSON-001107,Assistant Professor,https://www.bme.uconn.edu/faculty-staff/core-faculty/burke-kelly/,CONFIRMED,"Page still prints Assistant Professor (stale per page note); record says professor. 2024 IMS article (not a title line) reports Head of Chemical & Biomolecular Engineering"
+PERSON-001108,,,CANNOT_CONFIRM,"Only a news headline (Dmitry Bedrov Named New Chair...) and a 2019 handbook PDF; no title line for him. mse.utah.edu faculty page returned 404"
+PERSON-001109,,,CANNOT_CONFIRM,"UGA news page gives titles only in prose; help.fcs.uga.edu directory does not list him"
+PERSON-001111,Professor,https://www.nccu.edu/chas/chem-biochem/faculty-staff,CONFIRMED,
+PERSON-001113,Professor,https://cst.temple.edu/directory/simona-percec,CONFIRMED,"Page says Professor; record says research_professor. Recheck exact directory wording"
+PERSON-001115,"Professor; Charles W. Tobias Chair of Electrochemistry",https://vcresearch.berkeley.edu/faculty/nitash-balsara,CONFIRMED,
+PERSON-001117,"Associate Professor, Materials Science and Engineering",https://www.tuskegee.edu/explore/centers-of-excellence/CREST.html,CONFIRMED,
+PERSON-001123,,,CANNOT_CONFIRM,"VCU page is news prose only; no title line found"
+PERSON-001126,Associate Professor,http://chemistry.unm.edu/people/faculty/profile/jean-hubert-olivier.html,CONFIRMED,
+PERSON-001127,,,CANNOT_CONFIRM,"South Alabama news page has no title line; ME faculty page returned 404"
+PERSON-001128,,,CANNOT_CONFIRM,"Rowan Today item is prose; no title line for him found"
+PERSON-001130,,,CANNOT_CONFIRM,"Rochester news says University Professor in prose; Chemistry faculty page returned 404"
+PERSON-001131,"Professor, Nanoscience Initiative; Professor of Chemistry and Biochemistry, Hunter College",https://asrc.gc.cuny.edu/people/adam-braunschweig/,CONFIRMED,
+PERSON-001132,Department Chair; Professor,https://arts-sciences.buffalo.edu/chemistry/faculty/faculty-directory/rzayev.html,CONFIRMED,
+PERSON-001133,,,CANNOT_CONFIRM,"Virginia faculty page and UVA fetch returned 503 on retry"
+PERSON-001136,,,CANNOT_CONFIRM,"UA news page is prose; chemistry faculty page returned 405"
+PERSON-001137,,,CANNOT_CONFIRM,"troy.edu home page only; no faculty profile for him found"
+PERSON-001138,,,CANNOT_CONFIRM,"Only a 2019 UIC news headline: Chemical Engineering Assistant Professor Vivek Sharma; no directory title line. Rank conflict: record says associate_professor"
+PERSON-001139,,,CANNOT_CONFIRM,"UCSC campus directory returned 503; lab research page has no title for him"
+PERSON-001140,Professor,https://jong-in-hahm.facultysite.georgetown.edu/prof-hahm-research-in-hahm-laboratory,CONFIRMED,
+PERSON-001142,Professor,https://hb2504.utep.edu/Home/Profile?username=pcortes2,CONFIRMED,"Page says Professor; record says associate_professor"
+PERSON-001144,,,CANNOT_CONFIRM,"NC A&T experts list returned 404 on fetch; no title line retrieved"
+PERSON-001145,Associate Professor,https://www.clarkson.edu/people/xiaocun-lu,CONFIRMED,"Title line says Associate Professor; a bio paragraph on the same page says Assistant Professor"
+PERSON-001146,,,CANNOT_CONFIRM,"UCLA news page gives 'assistant professor' in prose only; no title line"
+PERSON-001150,Assistant Professor; ME, MSE,https://www.bu.edu/hic/profile/jorg-werner/,CONFIRMED,
+PERSON-001151,,,CANNOT_CONFIRM,"UConn materials-science person page returned 503 on two attempts"
+PERSON-001155,Assistant Professor,https://mu.lab.uiowa.edu/people/xuan-mu,CONFIRMED,
+PERSON-001157,,,CANNOT_CONFIRM,"Stevens research portal shows department line only; no title line"
+PERSON-001159,Chair; Professor,https://wmich.edu/chemical-paper/directory/li,CONFIRMED,
+PERSON-001164,Professor,https://sciences.ucf.edu/physics/people/schulte-alfons/,CONFIRMED,
+PERSON-001165,Professor,https://cbe.utk.edu/people/brian-j-edwards/,CONFIRMED,"Page says Professor; record says associate_professor"
+PERSON-001167,Regents Professor,https://cmec.wsu.edu/person/michael-p-wolcott/,CONFIRMED,
+PERSON-001168,,,CANNOT_CONFIRM,"Miami research index page has no title for him"
+PERSON-001170,,,CANNOT_CONFIRM,"RIT directory returned 503 on two attempts"
+PERSON-001171,Associate Professor,https://chem.utk.edu/people/johnathan-n-brantley/,CONFIRMED,
+PERSON-001174,professor of engineering and associate chair of the Department of Engineering,https://www.hmc.edu/about/2025/06/30/harvey-mudd-faculty-promotions-summer-2025/,CONFIRMED,"Title comes from a 2025 promotions notice on the HMC site, not a faculty directory"
+PERSON-001175,,,CANNOT_CONFIRM,"UT Dallas CEI page gives only a truncated bio line; no clean title line retrieved"
+PERSON-001181,Assistant Professor,https://eng.famu.fsu.edu/news/revolutionary-polymers-reshape-materials-science-and-sustainability,CONFIRMED,"Title comes from a photo caption on an FSU news page; no directory page checked"
+PERSON-001182,"Associate Professor of Chemistry, Department of Chemistry",https://shsu-preview.courseleaf.com/undergraduate/colleges-academic-departments/science-and-engineering-technology/chemistry/,CONFIRMED,
