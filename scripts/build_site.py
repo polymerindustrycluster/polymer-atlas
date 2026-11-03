@@ -506,6 +506,7 @@ EXPERTS_JS = r"""(function () {
     return '<li><span class="xn">' + name + '</span><span class="xr">' + esc([g[2], g[3], g[4]].filter(Boolean).join(' · ')) + '</span>' + specs(g[5]) + '</li>';
   }
   function browse(st, kind) {
+    // One compact table: a state header row, then one line per institution (name, city, researchers, programs).
     var by = {};
     Object.keys(D.insts).forEach(function (k) {
       var i = D.insts[k]; if (!(D.pc[k] || D.gc[k])) return;
@@ -513,13 +514,18 @@ EXPERTS_JS = r"""(function () {
       (by[i[2] || 'Other'] = by[i[2] || 'Other'] || []).push(k);
     });
     var sts = Object.keys(by).sort(function (a, b) { return (a === 'OH' ? -1 : b === 'OH' ? 1 : a.localeCompare(b)); });
-    $('insts').innerHTML = sts.map(function (s) {
-      var ks = by[s].sort(function (a, b) { return ((D.pc[b] || 0) + (D.gc[b] || 0)) - ((D.pc[a] || 0) + (D.gc[a] || 0)); });
-      return '<section class="xstate"><h3>' + esc(s) + ' <span class="muted">' + ks.length + ' institution' + (ks.length === 1 ? '' : 's') + '</span></h3><ul class="xinsts">' + ks.map(function (k) {
-        var bits = []; if (D.pc[k]) bits.push(D.pc[k] + ' researcher' + (D.pc[k] === 1 ? '' : 's')); if (D.gc[k]) bits.push(D.gc[k] + ' program' + (D.gc[k] === 1 ? '' : 's'));
-        return '<li><button type="button" class="xinst" data-inst="' + esc(k) + '"><span>' + esc(instName(k)) + '</span><small>' + esc(D.insts[k][1] || '') + ' · ' + bits.join(' · ') + '</small></button></li>';
-      }).join('') + '</ul></section>';
-    }).join('');
+    var tot = function (k) { return (D.pc[k] || 0) + (D.gc[k] || 0); };
+    $('insts').innerHTML = '<div class="table-wrap"><table class="xtable"><thead><tr><th scope="col">Institution</th><th scope="col">City</th>' +
+      '<th scope="col" class="num">Researchers</th><th scope="col" class="num">Programs</th></tr></thead>' +
+      sts.map(function (s) {
+        var ks = by[s].sort(function (a, b) { return tot(b) - tot(a) || instName(a).localeCompare(instName(b)); });
+        return '<tbody><tr class="xst"><th colspan="4" scope="colgroup">' + esc(s) + ' <span class="muted">' + ks.length + ' institution' + (ks.length === 1 ? '' : 's') + '</span></th></tr>' +
+          ks.map(function (k) {
+            return '<tr><th scope="row"><button type="button" class="xinst" data-inst="' + esc(k) + '">' + esc(instName(k)) + '</button></th>' +
+              '<td data-label="City">' + esc(D.insts[k][1] || '') + '</td><td class="num" data-label="Researchers">' + (D.pc[k] || '') +
+              '</td><td class="num" data-label="Programs">' + (D.gc[k] || '') + '</td></tr>';
+          }).join('') + '</tbody>';
+      }).join('') + '</table></div>';
     return sts.reduce(function (n, s) { return n + by[s].length; }, 0);
   }
   function run() {
@@ -887,12 +893,13 @@ th.num button.sort{flex-direction:row-reverse}
 .xtabs button{all:unset;cursor:pointer;padding:8px 16px;font:700 .88rem/1.2 var(--f-display);color:var(--muted)}
 .xtabs button[aria-pressed=true]{background:var(--accent);color:#fff}
 .xtabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.xstate{margin:0 0 1.2em}.xstate h3{margin:.2em 0 .5em;font-size:1.05rem}
-.xinsts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
-.xinst{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:2px;width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
-.xinst span{font-weight:700;color:var(--accent)}.xinst small{color:var(--muted);font-size:.82rem}
-.xinst:hover{border-color:var(--accent-hover)}.xinst:hover span{color:var(--accent-hover)}
-.xinst:focus-visible{outline:2px solid var(--accent)}
+.xtable tr.xst th{background:var(--panel-2);font-size:.95rem;padding-top:10px}
+.xtable tr.xst th .muted{font-weight:400;font-size:.85rem}
+.xtable td,.xtable th{padding:5px 12px}
+.xinst{all:unset;cursor:pointer;font-weight:700;color:var(--accent)}
+.xinst:hover{color:var(--accent-hover);text-decoration:underline}
+.xinst:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:640px){.xtable th:nth-child(2),.xtable td:nth-child(2){display:none}.xtable td,.xtable th{padding:6px 10px}}
 .xgroup{margin:0 0 1em;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
 .xgroup h3{margin:0;padding:9px 14px;font-size:1rem;background:var(--panel-2);border-radius:8px 8px 0 0}
 .xgroup h3 .muted{font-weight:400;font-size:.88rem}
