@@ -10,10 +10,10 @@ ucla,Ellen M. Sletten,R1,raw check gate_a=no gate_b=yes
 ucla,Jenn-Ming Yang,R1,"integrator review: Gate B quote is the MSE department research-areas page, not person-level"
 uconn,Thanh Nguyen,R1,"raw check gate_a=yes gate_b=no; integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
 utah,Michael Czabaj,R2,raw check gate_a=no gate_b=yes
-Massachusetts Institute of Technology,Katharina Ribbeck,A1,integrator review: Gate B object is a biological polymer (mucins): owner battery B-CG-2
+stanford,Danielle Mai,OWNER,possible duplicate of PERSON-000914
+Massachusetts Institute of Technology,Katharina Ribbeck,A1,"integrator review: B-CG-2: Gate B quote describes mucin polymers in the body, not engineering them as a material"
 Iowa State University,Keith L. Vorst,A1,"integrator review: Gate B quote is the consortium page he directs, not person-level (Nutt precedent)"
 The University of Tennessee-Knoxville,Alexei P. Sokolov,A2,possible duplicate of PERSON-000478
-North Carolina State University at Raleigh,Thomas B. H. Schroeder,A3,integrator review: Gate B object is biopolymers: owner battery B-CG-2
 Texas A & M University-College Station,Amir Asadi,A3,raw check gate_a=yes gate_b=no
 Texas A & M University-College Station,Mary Beth Browning Monroe,A3,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
 University of Illinois Urbana-Champaign,Jeff Moore,A3,integrator review: same person as the Jeffrey S. Moore row in the same lane; one record only

@@ -15,7 +15,7 @@
 
 ## Applied
 
-- `data/people.csv` +48 (PERSON-001334 to PERSON-001381), all tier A.
+- `data/people.csv` +49 (PERSON-001334 to PERSON-001382), all tier A.
 - `data/inclusion_log.csv` +3, the borderline admissions:
   - Mary Boyce: an emerita *administrative* title held alongside a current professor rank;
   - Ellis Meng: an interests-list phrase;
@@ -24,7 +24,16 @@
 | Source | People records added |
 |-|-:|
 | Census-gap follow-ups: lane T (JHU, Columbia), lanes R1 and R2 | 17 |
-| Band-A census leads: 4 lanes, run locally | 31 |
+| Band-A census leads: 4 lanes, run locally | 32 |
+
+**Owner rulings applied (2026-11-03, `tasks/OWNER_BATTERY_2026-11-03.md`):**
+- **B-CG-2:** a biopolymer passes Gate B when the stated research engineers it as a material.
+  - Schroeder is released from hold ("Mineralization of biopolymers for sustainable material development").
+  - Ribbeck stays held, because her quote describes mucins rather than engineering them.
+  - Mai was re-verdicted VERIFIED (`lanes/OWNER/`), but she is already held as PERSON-000914, so no second record.
+  - Molinari fails.
+- **B-CG-1:** Muller's "Professor of the Graduate School" is outside Gate A.
+- **B-CG-3:** `senior_lecturer` is added to the builder's roles. No admitted row changes.
 
 **Admission rule** (`build_people.py`). A person record is admitted only when all of these hold:
 - the lane verdict is VERIFIED;
@@ -68,7 +77,7 @@ polymer sentence on the person's own pages, so the two rates measure different t
 | Outcome | People |
 |-|-:|
 | VERIFIED by a lane | 37 |
-| (of which admitted after the raw check and review) | 31 |
+| (of which admitted after the raw check and review) | 32 |
 | Already held at the same school | 11 |
 | Emeritus styling (fails Gate A) | 30 |
 | Other non-professor styling (research associate, senior lecturer, research assistant, former faculty) | 4 |
@@ -77,30 +86,31 @@ polymer sentence on the person's own pages, so the two rates measure different t
 | Not reachable (jhu.edu or columbia.edu not fetched in these lanes, Iowa State or Princeton ECE blocked) | 8 |
 | **Total** | **132** |
 
-Band B (632 people) has not been run. Whether to run it is the owner's call.
+Band B (632 people) was not run in full. The owner ruled B-CG-4 (a): a 60-person sample runs first.
 
 ## Held (`holds.csv`, 18)
 
-- **Integrator review (12):**
+- **Integrator review (11):**
   - 5 rest on news items instead of the person's own pages: Wiley, Erb, Gupta, Nguyen and Monroe.
   - 2 rest on department research-area pages: Yang Yang and Jenn-Ming Yang.
   - 1 rests on a consortium page: Vorst.
-  - 2 have a biological polymer as the Gate B object, held for owner battery B-CG-2: Ribbeck and Schroeder.
+  - 1 is held under B-CG-2: Ribbeck, whose quote describes rather than engineers.
   - 1 has a title that is a sentence fragment: Kokkoli.
   - 1 is a duplicate row: Jeff Moore, the same person as Jeffrey S. Moore.
 - **Raw check (5):**
   - Czabaj, Green and Sletten: the Gate A quote was not found next to their name.
   - Asadi: the Gate B quote was not found on the page.
   - Kirshenbaum: the Gate A page could not be fetched.
-- **Already held elsewhere (1):** Sokolov is held at ORNL (PERSON-000478). Joint appointments are recorded at the
-  primary home.
+- **Already held (2):**
+  - Sokolov is held at ORNL (PERSON-000478). Joint appointments are recorded at the primary home.
+  - Mai is held at Stanford as PERSON-000914.
 
 ## Known gap
 
 SCHEMA §4.9 [v1.8.2] lists `senior_lecturer` in the people vocabulary, but this wave's brief, following the first
 wave's, fails lecturers at Gate A, and `build_integration.py`'s `ROLES` omits the value. One lead (a senior lecturer)
-was rejected on it, and no admitted row is affected. The styling classes the lanes met are put to the owner as
-B-CG-3:
+was rejected on it, and no admitted row is affected. B-CG-3 was ruled (a): `senior_lecturer` is now in this
+builder's roles, and the other stylings stay outside Gate A. The styling classes the lanes met were:
 - teaching professor;
 - professor of the practice;
 - post-tenure;

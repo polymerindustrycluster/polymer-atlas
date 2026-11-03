@@ -19,6 +19,7 @@ sys.path.insert(0, str(HERE.parent / "census-gap-people-2026-11-03"))
 from build_integration import DOMAINS, ROLES, SCHOOLS, append_rows, host, nname, on_domain, read  # noqa: E402
 
 TODAY = "2026-11-03"
+ROLES = ROLES | {"senior_lecturer"}  # owner ruling B-CG-3 (2026-11-03), SCHEMA 4.9 [v1.8.2]
 EXTRA_DOMAINS = {"Carnegie Mellon University": ["cmu.edu"]}  # held record carries no website
 NEWS = "Gate B rests on a university news item, not the person's own profile or lab page"
 INTEGRATOR_HOLDS = {  # normalized name -> reason; integrator review of every VERIFIED Gate B quote, 2026-11-03
@@ -27,8 +28,10 @@ INTEGRATOR_HOLDS = {  # normalized name -> reason; integrator review of every VE
     "benjamin wiley": NEWS, "randall erb": NEWS, "nikhil gupta": NEWS, "thanh nguyen": NEWS,
     "mary beth browning monroe": NEWS,
     "keith vorst": "Gate B quote is the consortium page he directs, not person-level (Nutt precedent)",
-    "katharina ribbeck": "Gate B object is a biological polymer (mucins): owner battery B-CG-2",
-    "thomas schroeder": "Gate B object is biopolymers: owner battery B-CG-2",
+    # B-CG-2 (ruled 2026-11-03): a biopolymer passes when the stated research engineers it as a material.
+    # Schroeder ("Mineralization of biopolymers for sustainable material development") passes; Ribbeck's quote
+    # describes mucins in the body rather than engineering them, so it stays held for an engineered-material quote.
+    "katharina ribbeck": "B-CG-2: Gate B quote describes mucin polymers in the body, not engineering them as a material",
     "efie kokkoli": "role_as_published is a sentence fragment ('a professor of ...'), not the printed title",
     "jeff moore":"same person as the Jeffrey S. Moore row in the same lane; one record only",
 }
