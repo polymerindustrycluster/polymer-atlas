@@ -255,3 +255,12 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **`atlas.py dedupe-check` misses sites whose street address is only in `notes`** (SITE-000863, SITE-001910). Match against notes too, or move the address into the address columns.
 - [ ] `open` **Possible duplicate:** SITE-000818 (ORG-000755) and SITE-001925 (ORG-001931) share 2228 Reiser Ave SE. Check before merging per SCHEMA.
 
+
+## Record fixes found 2026-11-03 (spot lookups)
+- [ ] `open` **HEXPOL duplicate:** ORG-002044 (HEXPOL Compounding LLC, Akron; 0 sites, no parent, 0 evidence rows) vs ORG-000103 (HEXPOL Compounding, Burton; parent HEXPOL AB, 14 sites). Merge, or re-grain as a site of ORG-000103 (AGENTS §3: when in doubt link and flag, do not merge).
+- [ ] `open` **PPG (ORG-000088) and Sherwin-Williams (ORG-000132) are tier C:** add government_filing evidence (10-K Item 2, Exhibit 21) for existence, address and parent, then re-derive the tier.
+- [ ] `open` **AltraSet Composite Technologies (ORG-001327)** has no parent link; its website is altraset.mar-bal.com, so check it against Mar-Bal Inc. (ORG-000430) and link it if a public page states the relationship.
+- [ ] `open` **The Pittsburgh Paint Company (ORG-001470, Huron OH)**, the former PPG US architectural business, has no website and 0 evidence rows; add existence, address and parent (American Industrial Partners) evidence.
+- [ ] `open` **Record-health pass for Ring 1-2 organizations with PIC-12 sites,** worst first: tier C/U, missing checklist claims, no street address, empty processes/materials/markets.
+- [ ] `in-pr:claude-code 2026-11-03` **Evidence repair pass** (`tasks/evidence-repair-2026-11-03/`): 1,139 weak own_site rows re-checked raw; +81 replacement evidence rows (address 49, parent 25, existence 7), all quotes raw-checked.
+- [ ] `open` **Evidence repair round 2:** 168 scope rows judged PARTIAL/NOT_SUPPORTED/WRONG_PAGE (mostly corporate pages that do not name the site) and 109 address rows with city but no street; plus the status/parent leads in the repair README (Viskase Osceola closure, AquaWorx parent, AOC/Nippon Paint, TotalEnergies parent, Janco, Pioneer Plastics, Kyowa).
