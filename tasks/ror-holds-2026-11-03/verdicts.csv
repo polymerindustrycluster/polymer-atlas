@@ -1,0 +1,11 @@
+org_id,legal_name,verdict,ror_id,reason
+ORG-004775,Purdue University Indianapolis,LINKED,https://ror.org/0482ksk80,"name agrees; active, US-IN"
+ORG-004636,Edmonds College,LINKED,https://ror.org/00vhfbm88,ROR carries the pre-2020 name; the college's own page records the April 2020 rename to Edmonds College
+ORG-004625,Wichita State University-Campus of Applied Sciences and Technology,LINKED,https://ror.org/01j933b41,"ROR carries the pre-2018 name; the college's own page says 'WSU Tech, formerly Wichita Area Technical College'"
+ORG-002779,Penn State Behrend,HOLD,,"ROR record 01ky71w68 (Penn State Behrend) is withdrawn; its successor is 04p491231 Pennsylvania State University, the parent. A campus never carries the parent's ROR (V-14), so no ROR id."
+ORG-002780,Pennsylvania College of Technology,HOLD,,"Pennsylvania College of Technology has no ROR record: name searches return other schools (ROR 'Penn College' 03m7qwy32 is William Penn University, Oskaloosa IA)."
+ORG-004635,The Landing School of Boatbuilding and Design,HOLD,,The Landing School has no ROR record (name search returns only unrelated design schools).
+ORG-004672,Connecticut State Community College,HOLD,,"Connecticut State Community College (the 2023 merger of 12 colleges) has no ROR record; the crosswalk candidate 014a8dd26 is Capital Community College, one of the merged colleges, not the same organization."
+ORG-004777,Rutgers University-Camden,HOLD,,ROR has Rutgers University (05vt9qd57) but no Camden campus record; the parent's ROR is not a campus's.
+ORG-004778,Rutgers University-New Brunswick,HOLD,,ROR has Rutgers University (05vt9qd57) but no New Brunswick campus record; the parent's ROR is not a campus's.
+ORG-004779,Rutgers University-Newark,HOLD,,ROR has Rutgers University (05vt9qd57) but no Newark campus record; the parent's ROR is not a campus's.
