@@ -1,7 +1,15 @@
 # NREL people after the rename: re-verification packet (2026-11-03)
 
-**Packet only. No `data/` file is changed.** Two owner rulings are needed before the integrator applies anything
-(AGENTS.md §2 rule 9).
+> **RULED 2026-11-03: B-NLR-1 (a) and B-NLR-2 (a), as recommended** (repo owner, in session). Applied by
+> `build_nrel.py` → `edits.csv`: 59 cell edits across the 18 people records (all in `data/people.csv`).
+> - The 9 VERIFIED records are re-pointed to their NLR profile, with the printed title and `role` kept. The
+>   exception is PERSON-000646, which moves to `senior_scientist`.
+> - The 9 STILL_UNCERTAIN records go B → U.
+> - On all 18, live same-path citations are re-pointed to `nlr.gov`.
+> - On the 9 VERIFIED, dead citations are dropped. The 9 U records keep theirs, because they are those records'
+>   only sources.
+
+Two owner rulings were needed before the integrator applied anything (AGENTS.md §2 rule 9).
 
 ## What changed at the lab
 The U.S. Department of Energy renamed the National Renewable Energy Laboratory the **National Laboratory of the
