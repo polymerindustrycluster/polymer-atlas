@@ -213,7 +213,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - Re-run Johns Hopkins and Columbia (both bot-walled).
   - Re-run the UCSD and Northeastern engineering rosters (503s).
   - Settle the 79 STILL_UNCERTAIN on their named facts.
-  - **Re-verify PERSON-000719 (Korley).** Held at Delaware; NYU's pages now style her as an NYU professor.
+  - **Re-verify PERSON-000719 (Korley).** Held at Delaware; NYU's pages now style her as an NYU professor. — `in-pr:claude-code 2026-11-03`: she moved; the record is updated in place to ORG-004705 New York University from NYU Tandon's profile and its dated announcement (2026-08-19). `tasks/korley-reverify-2026-11-03/`.
 
 ## Cleanup after the passes 41–46 review (2026-11-03)
 
