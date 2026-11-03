@@ -255,3 +255,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **`atlas.py dedupe-check` misses sites whose street address is only in `notes`** (SITE-000863, SITE-001910). Match against notes too, or move the address into the address columns.
 - [ ] `open` **Possible duplicate:** SITE-000818 (ORG-000755) and SITE-001925 (ORG-001931) share 2228 Reiser Ave SE. Check before merging per SCHEMA.
 
+
+## Evidence audit (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **own_site evidence audit (read-only):** 200 random rows re-fetched raw and judged; 142/191 loaded pages SUPPORTED (74%, CI 68-80%), 94% supported or partial; scope 122/151, existence 12/24, address 7/13. `tasks/evidence-audit-2026-11-03/README.md`.
+- [ ] `open` **Evidence repair pass:** existence/address rows citing a corporate home page for a plant claim, parent rows, and the October tri-national packets (6/19 supported in the audit).
