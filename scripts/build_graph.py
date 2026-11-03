@@ -544,6 +544,8 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
       if (n.m) row("PIC", "Member (public list)");
       if (n.w) row("Website", el("a", { href: n.w, target: "_blank", rel: "noopener", textContent: n.w.replace(/^https?:\/\//, "").replace(/\/$/, "") }));
       kids.push(meta);
+      kids.push(el("p", { className: "open" }, el("a", { href: "__ORGBASE__" + encodeURIComponent(n.id) + ".html",
+        textContent: "Open " + n.l + " in the Atlas \u2192" })));
     }
     const nb = G.neighbors(key).map(Number);
     const groups = [["Processes", "proc"], ["Materials", "mat"], ["Markets", "mkt"], ["Event series", "event"]];
@@ -629,12 +631,20 @@ def home_link(href, tag="p", cls="hint", style=""):
     return f'<{tag} class="{cls}"{st}><a href="{html.escape(href)}">&larr; Polymer Industry Atlas</a></{tag}>'
 
 
+def org_base(home):
+    """Where the Atlas organization pages live relative to an explorer page: next to the home link's index.html,
+    or the public site when the explorer is built standalone."""
+    if home:
+        return (home.rsplit("/", 1)[0] + "/orgs/") if "/" in home else "orgs/"
+    return "https://polymerindustrycluster.github.io/polymer-atlas/orgs/"
+
+
 def page(nodes, edges, fragment, home=""):
     data = {"nodes": nodes, "edges": [[i, j, t] for i, j, t in edges], "commit": commit(),
             "built": __import__("datetime").date.today().isoformat()}
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     body = (PAGE.replace("__GRAPHOLOGY__", GRAPHOLOGY).replace("__GRAPHOLOGY_LIB__", GRAPHOLOGY_LIB)
-            .replace("__SIGMA__", SIGMA).replace("__DATA__", blob).replace("__HOME__", home_link(home)))
+            .replace("__SIGMA__", SIGMA).replace("__DATA__", blob).replace("__HOME__", home_link(home)).replace("__ORGBASE__", org_base(home)))
     if fragment:
         return body
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
