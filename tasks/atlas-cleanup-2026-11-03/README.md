@@ -36,3 +36,21 @@ and `holds.csv` are its output.
 - Every edit is hash-checked against the current cell.
 - Removals check a whole-row hash.
 - `python3 scripts/validate.py` passes.
+
+## Follow-up: rank re-check of the 45 rank disagreements (owner decision 2026-11-03, option 2a)
+
+Two cheap lanes re-read each person's current official pages (`tasks/role-rank-recheck-2026-11-03/`).
+
+| Verdict | People | Action |
+|---|---:|---|
+| UPDATE | 7 | `role` and `role_as_published` changed together, as hash-checked edits |
+| KEEP | 27 | The record's rank stands; the disagreeing page was stale or styled a named chair without a rank word |
+| CANNOT_CONFIRM | 11 | Left as is; each row names the fact that would settle it |
+
+The 7 updates:
+- Tenhaeff: to associate professor.
+- Riaz: to assistant professor.
+- Foudazi, Cortes and Edwards: to professor.
+- Liu: to associate professor.
+- Sahoo: to research professor.
+
