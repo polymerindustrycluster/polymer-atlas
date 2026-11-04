@@ -255,5 +255,3 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **`atlas.py dedupe-check` misses sites whose street address is only in `notes`** (SITE-000863, SITE-001910). Match against notes too, or move the address into the address columns.
 - [ ] `open` **Possible duplicate:** SITE-000818 (ORG-000755) and SITE-001925 (ORG-001931) share 2228 Reiser Ave SE. Check before merging per SCHEMA.
 
-## Vocabulary rulings (2026-11-03)
-- [ ] `in-pr:claude-code 2026-11-03` **B-VOC-1..4 applied** (owner battery 2026-11-03, ruled (a)): 12 new terms (SCHEMA revision), `processes_other_note` / `materials_other_note` on site shards, 1,583 cells on 1,025 records; WRONG_FIELD (580 tokens) and organization TO_NOTE (10 tokens) left by design. Worker: codex under `tasks/vocab-rulings-2026-11-03/WORKER_CONTRACT.md`; controller-verified.
