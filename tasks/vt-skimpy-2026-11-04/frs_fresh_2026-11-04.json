@@ -1,0 +1,116 @@
+{
+ "110031342214": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031342214",
+     "FacilityName": "TEKNOR APEX",
+     "LocationAddress": "300 INDUSTRIAL PARK RD",
+     "SupplementalLocation": null,
+     "CityName": "ST ALBANS",
+     "CountyName": "FRANKLIN",
+     "StateAbbr": "VT",
+     "ZipCode": "05478",
+     "FIPSCode": "50011",
+     "Latitude83": "44.79817",
+     "Longitude83": "-73.09729"
+    }
+   ]
+  }
+ },
+ "110058315942": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110058315942",
+     "FacilityName": "KAMAN COMPOSITES - VERMONT, INC.",
+     "LocationAddress": "25 PERFORMANCE DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "BENNINGTON",
+     "CountyName": "BENNINGTON",
+     "StateAbbr": "VT",
+     "ZipCode": "05201",
+     "FIPSCode": "50003",
+     "Latitude83": "42.894369",
+     "Longitude83": "-73.19624"
+    }
+   ]
+  }
+ },
+ "110038915494": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110038915494",
+     "FacilityName": "REVISION MILITARY LTD",
+     "LocationAddress": "7 CORPORATE DR",
+     "SupplementalLocation": "ESSEX JUNCTION",
+     "CityName": "ESSEX JUNCTION",
+     "CountyName": "CHITTENDEN",
+     "StateAbbr": "VT",
+     "ZipCode": "05452",
+     "FIPSCode": "50007",
+     "Latitude83": "44.50304",
+     "Longitude83": "-73.0447"
+    }
+   ]
+  }
+ },
+ "110008205405": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110008205405",
+     "FacilityName": "MACK MOLDING",
+     "LocationAddress": "2044 MAIN ST",
+     "SupplementalLocation": null,
+     "CityName": "CAVENDISH",
+     "CountyName": "WINDSOR",
+     "StateAbbr": "VT",
+     "ZipCode": "051420127",
+     "FIPSCode": "50027",
+     "Latitude83": "43.38215",
+     "Longitude83": "-72.60921"
+    }
+   ]
+  }
+ },
+ "110001136155": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001136155",
+     "FacilityName": "MACK MOLDING",
+     "LocationAddress": "79 EAST ARLINGTON ROAD",
+     "SupplementalLocation": null,
+     "CityName": "ARLINGTON",
+     "CountyName": "BENNINGTON",
+     "StateAbbr": "VT",
+     "ZipCode": "05250-8609",
+     "FIPSCode": "50003",
+     "Latitude83": "43.07181",
+     "Longitude83": "-73.15339"
+    }
+   ]
+  }
+ },
+ "110015685418": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110015685418",
+     "FacilityName": "ARLINGTON INDUSTRIES, INC. DBA QUADRA TEK",
+     "LocationAddress": "2617 VT RTE 7A",
+     "SupplementalLocation": null,
+     "CityName": "ARLINGTON",
+     "CountyName": "BENNINGTON",
+     "StateAbbr": "VT",
+     "ZipCode": "05250-8882",
+     "FIPSCode": "50003",
+     "Latitude83": "43.057381",
+     "Longitude83": "-73.162031"
+    }
+   ]
+  }
+ }
+}
