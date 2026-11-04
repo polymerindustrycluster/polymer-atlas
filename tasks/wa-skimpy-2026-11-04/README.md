@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 37 | 30 | 4 | 3 | 19 | 0 / 30 | 39 -> 69 | 28 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004941..ORG-004959, SITE-006190..SITE-006219, EVD-026742..EVD-025213.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004941..ORG-004959, SITE-006190..SITE-006219, EVD-027332..EVD-025213.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-WA-17 GENERAL DYNAMICS OTS (Moses Lake): Whether GD-OTS Moses Lake makes polymer products (NAICS 325998, likely energetics); parent org pending in PR #56.

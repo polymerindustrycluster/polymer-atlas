@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 55 | 39 | 10 | 6 | 21 | 0 / 38 | 37 -> 75 | 26 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-005021..ORG-005041, SITE-006310..SITE-006347, EVD-026730..EVD-026729.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-005021..ORG-005041, SITE-006310..SITE-006347, EVD-027320..EVD-026729.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-IA-13 DUPONT SPECIALTY PRODUCTS USA LLC - FORT MADISON (Fort Madison): What the DuPont Fort Madison plant makes today (NAICS mix 325211/325510/325910) and its current operator after the DuPont split.
