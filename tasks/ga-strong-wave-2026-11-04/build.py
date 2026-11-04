@@ -104,7 +104,7 @@ def main():
                     "org_id": oid, "legal_name": name, "entity_type": et, "ring_primary": ring,
                     "hq_city": v["org_hq_city"].strip(), "hq_state": st if (st in US_STATES or st in CA_PROV) else "",
                     "hq_county": v["org_hq_county"].strip() if st in US_STATES else "",
-                    "hq_country": "US" if st in US_STATES else "CA" if st in CA_PROV else "",
+                    "hq_country": "US" if st in US_STATES else "CA" if st in CA_PROV else {"GERMANY": "DE"}.get(st, ""),  # shortcut: the one foreign country GA's lanes wrote out in full
                     "hq_in_scope": "international" if shard == "INTL" else "national_us",
                     "naics_primary": naics, "naics_primary_source_type": "government_filing", "naics_primary_source_name": fed[0][1].split(" (")[0],
                     "naics_confidence": "medium", "processes": procs, "materials": mats, "website": v["org_website"].strip(),
