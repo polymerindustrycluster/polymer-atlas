@@ -1,0 +1,8 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-ND-00,ComDel Innovation,Wahpeton,VERIFIED,new org + site; own comdelinnovation.com: injection molding 15-500 t + mold building,ORG-004854 / SITE-006027 (C)
+QMS-ND-01,ContiTech USA,Wahpeton,VERIFIED,site under held ORG-000051; own wccobelt.com (ContiTech USA): rubber conveyor/ag belting made in Wahpeton,SITE-006028 (B)
+QMS-ND-02,GPK Products Inc,Fargo,VERIFIED,new org + site; own gpk-fargo.com: molded and fabricated PVC fittings,ORG-004855 / SITE-006029 (C)
+QMS-ND-03,Northern Pipe Products,Fargo,VERIFIED,new org + site; own northernpipe.com: PVC pipe,ORG-004856 / SITE-006030 (C)
+QMS-ND-04,Elinor Coatings,Fargo,VERIFIED,new org + site; own elinorcoatings.com: small-batch coating manufacturing (ring 2),ORG-004857 / SITE-006031 (C)
+QMS-ND-05,Hood Packaging Corporation,Grand Forks,VERIFIED,site under held ORG-003546; own hoodpkg.com locations page lists Grand Forks plastic packaging plant,SITE-006032 (B)
+QMS-ND-06,Ice Crystal Engineering,Kindred,REJECT,deciding fact: makes pyrotechnic cloud-seeding flares (silver iodide / calcium chloride; NAICS 325998) - not a polymer process; own iceflares.com/products read 2026-11-04,none

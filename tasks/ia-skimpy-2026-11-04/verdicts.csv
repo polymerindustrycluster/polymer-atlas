@@ -1,0 +1,56 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-IA-00,"ACCU-MOLD LLC","Ankeny",VERIFIED,"Two federal sources: FRS 110001326752 + ITA 1328738 + OSHA 347027021 (scope from federal NAICS)",SITE-006310
+QMS-IA-01,"INNOVATIVE INJECTION TECHNOLOGIES","West Des Moines",VERIFIED,"Two federal sources: FRS 110001327537 + ITA 1437227 + OSHA 348581430 (scope from federal NAICS)",SITE-006311
+QMS-IA-02,"AMCOR FLEXIBLES NORTH AMERICA INC.","Centerville",VERIFIED,"Two federal sources: FRS 110064140807 + ITA 982062 + OSHA 344108782 (scope from federal NAICS)",SITE-006312
+QMS-IA-03,"INHANCE TECHNOLOGIES, LLC","Centerville",VERIFIED,"Two federal sources: FRS 110043621612 + ITA 1135737 + OSHA 345139331 (scope from federal NAICS)",SITE-006313
+QMS-IA-04,"ROUSSELOT, INC.","Dubuque",REJECT,"Gelatin/collagen producer, not polymer manufacturing: ITA CY2025 NAICS 311611/311999/325998 (fetched 2026-11-04).",
+QMS-IA-05,"PLASTICS UNLIMITED INC","Preston",VERIFIED,"Two federal sources: FRS 110040494738 + ITA 366741 + OSHA 343956702 (scope from federal NAICS)",SITE-006314
+QMS-IA-06,"ENGINEERED PLASTIC COMPONENTS INC","Kalona",VERIFIED,"Two federal sources: FRS 110001762030 + ITA 1279179 + OSHA 348550633 (scope from federal NAICS)",SITE-006315
+QMS-IA-07,"CAPTIVE PLASTICS LLC","Des Moines",VERIFIED,"Two federal sources: FRS 110001326477 + ITA 981761 + OSHA 348778739 (scope from federal NAICS)",SITE-006316
+QMS-IA-08,"TANKS LTD","Sheldon",VERIFIED,"Two federal sources: FRS 110005732546 + ITA 45543 + OSHA 347113854 (scope from federal NAICS)",SITE-006317
+QMS-IA-09,"3M (MINNESOTA MINING & MFG CO) - KNOXVILLE","Knoxville",VERIFIED,"Two federal sources: FRS 110000412697 + ITA 197361 (scope from federal NAICS)",SITE-006318
+QMS-IA-10,"HACH COMPANY","Ames",REJECT,"Water-analysis reagents and instruments, not polymer: ITA CY2025 NAICS 325998 (fetched 2026-11-04).",
+QMS-IA-11,"BEMIS CLYSAR","Camanche",VERIFIED,"Two federal sources: FRS 110000771718 + ITA 1114336 (scope from federal NAICS)",SITE-006319
+QMS-IA-12,"AJINOMOTO HEALTH & NUTRITION NORTH AMERICA, INC.","Eddyville",REJECT,"Amino acids/biochemicals, not polymer: ITA CY2025 NAICS 325199 (fetched 2026-11-04).",
+QMS-IA-13,"DUPONT SPECIALTY PRODUCTS USA LLC - FORT MADISON","Fort Madison",STILL_UNCERTAIN,"What the DuPont Fort Madison plant makes today (NAICS mix 325211/325510/325910) and its current operator after the DuPont split.",
+QMS-IA-14,"CRESLINE PLASTIC PIPE COMPANY, INC","Council Bluffs",VERIFIED,"Two federal sources: FRS 110005748922 + ITA 113374 (scope from federal NAICS)",SITE-006320
+QMS-IA-15,"COLORBIOTICS","Ames",REJECT,"Colorants for mulch/landscape, not polymer: ITA CY2025 NAICS 325130 (fetched 2026-11-04).",
+QMS-IA-16,"IOWA EPS PRODUCTS, INC.","Des Moines",VERIFIED,"Two federal sources: FRS 110070827926 + ITA 912214 (scope from federal NAICS)",SITE-006321
+QMS-IA-17,"MORSE RUBBER, LLC","Keokuk",VERIFIED,"Two federal sources: FRS 110000415480 + ITA 1254916 (scope from federal NAICS)",SITE-006322
+QMS-IA-18,"REG MASON CITY","Mason City",REJECT,"Biodiesel, not polymer: ITA CY2025 NAICS 325199 (fetched 2026-11-04).",
+QMS-IA-19,"BARTON SOLVENTS INC - BETTENDORF FACILITY","Bettendorf",REJECT,"Solvent distributor: ITA CY2025 primary NAICS 424690 (fetched 2026-11-04).",
+QMS-IA-20,"BECKER UNDERWOOD INC","Ames",REJECT,"Seed colorants/agri-biologicals, not polymer: ITA CY2025 NAICS 325130/325320 (fetched 2026-11-04).",
+QMS-IA-21,"CFI SALES INC","Des Moines",REJECT,"Tire retreading/sales, not manufacturing polymer (NAICS 326212): ITA CY2025 record (fetched 2026-11-04).",
+QMS-IA-22,"RILEY PAINT COMPANY","Burlington",VERIFIED,"Two federal sources: FRS 110000415373 + ITA 1122723 (scope from federal NAICS)",SITE-006323
+QMS-IA-23,"INNOCOR FOAM TECHNOLOGIES (FORMERLY ADVANCED URETHANE TECHNOLOGIES)","Dubuque",VERIFIED,"Two federal sources: FRS 110000414579 + ITA 1265919 (scope from federal NAICS)",SITE-006324
+QMS-IA-24,"CENTRO, INC","North Liberty",VERIFIED,"Already held as SITE-004403 Centro HQ plant, North Liberty.",SITE-004403 (already held, not re-created)
+QMS-IA-25,"HIGHLINE WARREN","Council Bluffs",STILL_UNCERTAIN,"Whether Highline Warren Council Bluffs makes plastic products or only blends fluids (NAICS 324191/326160).",
+QMS-IA-26,"SIEGWERK USA CO","Des Moines",VERIFIED,"Two federal sources: FRS 110000413099 + OSHA 344172564 (scope from federal NAICS)",SITE-006325
+QMS-IA-27,"VICTOR PLASTICS INC","Victor",VERIFIED,"Two federal sources: FRS 110005750124 + OSHA 344443551 (scope from federal NAICS)",SITE-006326
+QMS-IA-28,"CUSTOM-PAK INC","Clinton",VERIFIED,"Two federal sources: FRS 110005746620 + OSHA 345942320 (scope from federal NAICS)",SITE-006327
+QMS-IA-29,"AMCOR FLEXIBLES NORTH AMERICA, INC.","Des Moines",VERIFIED,"Two federal sources: FRS 110041995188 + OSHA 345310627 (scope from federal NAICS)",SITE-006328
+QMS-IA-30,"BERRY PLASTICS","Peosta",VERIFIED,"Two federal sources: FRS 110005752079 + OSHA 346401466 (scope from federal NAICS)",SITE-006329
+QMS-IA-31,"PRINSCO, INC.","Jesup",VERIFIED,"Two federal sources: FRS 110031326189 + OSHA 347284655 (scope from federal NAICS)",SITE-006330
+QMS-IA-32,"CRYOTECH DEICING TECHNOLOGY","Fort Madison",REJECT,"Deicing chemicals, not polymer: ITA/FRS NAICS 325998 (fetched 2026-11-04).",
+QMS-IA-33,"ACH FOAM TECHNOLOGIES, LLC","Washington",VERIFIED,"Two federal sources: FRS 110001330300 + OSHA 344201199 (scope from federal NAICS)",SITE-006331
+QMS-IA-34,"FOAM FABRICATORS, INC","Fort Madison",VERIFIED,"Two federal sources: FRS 110007390331 + OSHA 346173883 (scope from federal NAICS)",SITE-006332
+QMS-IA-35,"DECKER PLASTICS INC","Council Bluffs",VERIFIED,"Two federal sources: FRS 110070207154 + OSHA 347032187 (scope from federal NAICS)",SITE-006333
+QMS-IA-36,"KILIPER CORPORATION","Ames",VERIFIED,"Two federal sources: FRS 110005732127 + OSHA 344949383 (scope from federal NAICS)",SITE-006334
+QMS-IA-37,"RUBBER DEVELOPMENT INC","Waverly",VERIFIED,"Two federal sources: FRS 110005776963 + OSHA 345773196 (scope from federal NAICS)",SITE-006335
+QMS-IA-38,"Sterilite Corporation DIA","Davenport",VERIFIED,"Two federal sources: ITA 429945 + OSHA 348203779 (scope from federal NAICS)",SITE-006336
+QMS-IA-39,"Cedar Rapids","Cedar Rapids",STILL_UNCERTAIN,"Operator identity of the ITA establishment 'Cedar Rapids', 3801 Beverly Road (NAICS 326199/423840).",
+QMS-IA-40,"Greystone Manufacturing","Bettendorf",VERIFIED,"Two federal sources: ITA 53502 + OSHA 344797352 (scope from federal NAICS)",SITE-006337
+QMS-IA-41,"Custom-Pak DeWitt","Dewitt",VERIFIED,"Two federal sources: ITA 979696 + OSHA 344616321 (scope from federal NAICS)",SITE-006338
+QMS-IA-42,"ORBIS Monticello","Monticello",VERIFIED,"Two federal sources: ITA 675239 + OSHA 346088263 (scope from federal NAICS)",SITE-006339
+QMS-IA-43,"Yokohama TWS","Charles City",VERIFIED,"Two federal sources: ITA 1067995 + OSHA 345887640 (scope from federal NAICS)",SITE-006340
+QMS-IA-44,"Berry Global - Muscatine","Muscatine",VERIFIED,"Two federal sources: ITA 1317298 + OSHA 345100291 (scope from federal NAICS)",SITE-006341
+QMS-IA-45,"Davenport","Davenport",STILL_UNCERTAIN,"Operator identity of the ITA establishment 'Davenport', 1924 Comenitz Dr (NAICS 326199/424690).",
+QMS-IA-46,"AERON Advanced Manufacturing","Mason City",VERIFIED,"Two federal sources: ITA 1441171 + OSHA 345086441 (scope from federal NAICS)",SITE-006342
+QMS-IA-47,"Waterloo","Waterloo",STILL_UNCERTAIN,"Operator identity of the ITA establishment 'Waterloo', 300 Ansborough Ave (NAICS 326199/423930).",
+QMS-IA-48,"Kent Pet Group, Inc.","Muscatine",REJECT,"Pet litter/products, not polymer: ITA NAICS 325998 (fetched 2026-11-04).",
+QMS-IA-49,"NAPCO Bag and Film","Waverly",VERIFIED,"Two federal sources: ITA 917525 + OSHA 348677535 (scope from federal NAICS)",SITE-006343
+QMS-IA-50,"Adair Manufacturing Plant","Adair",STILL_UNCERTAIN,"Operator of the 'Adair Manufacturing Plant', 1000 Flag Road (dd2 suggests Leviat/Composite Technologies; not confirmed).",
+QMS-IA-51,"Plastipak- Ottumwa","Ottumwa",VERIFIED,"Two federal sources: ITA 98215 + OSHA 347360547 (scope from federal NAICS)",SITE-006344
+QMS-IA-52,"DKM MANUFACTURING INC","Victor",VERIFIED,"Two federal sources: ITA 1206272 + OSHA 348403478 (scope from federal NAICS)",SITE-006345
+QMS-IA-53,"Spencer Industries Incorporated - Wapello Location","Wapello",VERIFIED,"Two federal sources: ITA 1093170 + OSHA 346589294 (scope from federal NAICS)",SITE-006346
+QMS-IA-54,"HSM Monticello (218)","Monticello",VERIFIED,"Two federal sources: ITA 1309891 + OSHA 344391321 (scope from federal NAICS)",SITE-006347

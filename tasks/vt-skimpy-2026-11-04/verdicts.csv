@@ -1,0 +1,7 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-VT-00,Teknor Apex,St Albans,VERIFIED,site under held ORG-003024; own teknorapex.com locations page + ISO cert (TPE compounds); ring 2,SITE-006021 (B)
+QMS-VT-01,"Kaman Composites - Vermont, Inc.",Bennington,VERIFIED,new org Vermont Composites (renamed from Kaman; flagged) + site; own vermontcomposites.com,ORG-004851 / SITE-006022 (C)
+QMS-VT-02,Revision Military Ltd,Essex Junction,VERIFIED,new org + site; own revisionmilitary.com facilities: injection molding and lens coating,ORG-004852 / SITE-006023 (C)
+QMS-VT-03,Mack Molding,Cavendish,VERIFIED,site under held ORG-003198; own mack.com Cavendish VT page,SITE-006024 (B)
+QMS-VT-04,Mack Molding,Arlington (East Arlington),VERIFIED,site under held ORG-003198 (distinct from HQ SITE-003625); own mack.com East Arlington page,SITE-006025 (B)
+QMS-VT-05,Arlington Industries dba Quadra-Tek,Arlington,VERIFIED,new org + site; own quadra-tek.com: injection and thermoset molding,ORG-004853 / SITE-006026 (C)

@@ -1,0 +1,9 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-SD-00,Tyco Plastics Sioux Falls (Berry Global),Sioux Falls,VERIFIED,site under held ORG-002544 Berry Global; federal only (FRS + ITA + OSHA) - tier C,SITE-006037 (C)
+QMS-SD-01,Glacial Lakes Rubber & Plastics,Watertown,VERIFIED,new org + site; own glrp.com: rubber/plastic/PU molding,ORG-004860 / SITE-006038 (C)
+QMS-SD-02,Benchmark Foam Inc,Watertown,VERIFIED,new org + site; own benchmarkfoam.com: EPS foam maker,ORG-004861 / SITE-006039 (C)
+QMS-SD-03,Viaflex Inc,Brandon,VERIFIED,site under held ORG-004416 Viaflex; federal only (FRS + ITA) - tier C,SITE-006040 (C)
+QMS-SD-04,Viaflex,Sioux Falls (811 W Algonquin St),VERIFIED,already held as SITE-005719 Viaflex - Sioux Falls (same Algonquin St plant) - no create,SITE-005719 (existing)
+QMS-SD-05,WL Plastics - Rapid City,Rapid City,VERIFIED,site under held ORG-003282; own wlplastics.com Rapid City page: HDPE pipe plant; no FRS (no link),SITE-006041 (B)
+QMS-SD-06,PPD USA Inc,Madison,VERIFIED,new org + site; own ppdgroup.com: custom injection molding; no FRS (no link),ORG-004862 / SITE-006042 (C)
+QMS-SD-07,Royal Plastics Inc,Brookings,VERIFIED,new org + site (distinct from held ORG-000553 Mentor OH); own royalplastics-sd.com; no FRS (no link),ORG-004863 / SITE-006043 (C)
