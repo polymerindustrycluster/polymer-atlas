@@ -1,0 +1,667 @@
+{
+ "110016705332": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110016705332",
+     "FacilityName": "PACIFIC RESEARCH LABORATORIES",
+     "LocationAddress": "10221 SW 188TH ST",
+     "SupplementalLocation": null,
+     "CityName": "VASHON",
+     "CountyName": "KING",
+     "StateAbbr": "WA",
+     "ZipCode": "98070",
+     "FIPSCode": "53033",
+     "Latitude83": "47.43647",
+     "Longitude83": "-122.46547"
+    }
+   ]
+  }
+ },
+ "110000601581": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000601581",
+     "FacilityName": "CH2O INCORPORATED",
+     "LocationAddress": "8820 OLD HWY 99 SE",
+     "SupplementalLocation": null,
+     "CityName": "OLYMPIA",
+     "CountyName": "THURSTON",
+     "StateAbbr": "WA",
+     "ZipCode": "98501",
+     "FIPSCode": "53067",
+     "Latitude83": "46.963275",
+     "Longitude83": "-122.880932"
+    }
+   ]
+  }
+ },
+ "110005323113": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005323113",
+     "FacilityName": "ADVANCED DRAINAGE SYSTEMS INC",
+     "LocationAddress": "627 S 37TH ST",
+     "SupplementalLocation": null,
+     "CityName": "WASHOUGAL",
+     "CountyName": "CLARK",
+     "StateAbbr": "WA",
+     "ZipCode": "98671",
+     "FIPSCode": "011",
+     "Latitude83": "45.568993",
+     "Longitude83": "-122.32756"
+    }
+   ]
+  }
+ },
+ "110015537007": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110015537007",
+     "FacilityName": "ULTRA POLY INC",
+     "LocationAddress": "2926 S STEELE ST",
+     "SupplementalLocation": " ",
+     "CityName": "TACOMA",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98409-7630",
+     "FIPSCode": "053",
+     "Latitude83": "47.233585",
+     "Longitude83": "-122.468334"
+    }
+   ]
+  }
+ },
+ "110055010759": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110055010759",
+     "FacilityName": "PREMIER PLASTICS",
+     "LocationAddress": "635 E 15TH ST",
+     "SupplementalLocation": null,
+     "CityName": "TACOMA",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98421",
+     "FIPSCode": "053",
+     "Latitude83": "47.25105",
+     "Longitude83": "-122.42325"
+    }
+   ]
+  }
+ },
+ "110005324773": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005324773",
+     "FacilityName": "SCOUGAL RUBBER CORP",
+     "LocationAddress": "6239 CORSON AVE S",
+     "SupplementalLocation": null,
+     "CityName": "SEATTLE",
+     "CountyName": "KING",
+     "StateAbbr": "WA",
+     "ZipCode": "98108",
+     "FIPSCode": "033",
+     "Latitude83": "47.546452",
+     "Longitude83": "-122.322775"
+    }
+   ]
+  }
+ },
+ "110064548306": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064548306",
+     "FacilityName": "WESTERN CONTAINER",
+     "LocationAddress": "2205 70TH AVE E",
+     "SupplementalLocation": "SUITE A",
+     "CityName": "FIFE",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98424",
+     "FIPSCode": "00053",
+     "Latitude83": "47.238983",
+     "Longitude83": "-122.331001"
+    }
+   ]
+  }
+ },
+ "110071510918": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071510918",
+     "FacilityName": "ADVANCED DRAINAGE SYSTEMS",
+     "LocationAddress": "6001 BELMORE ST SW",
+     "SupplementalLocation": null,
+     "CityName": "TUMWATER",
+     "CountyName": "THURSTON COUNTY",
+     "StateAbbr": "WA",
+     "ZipCode": "98512",
+     "FIPSCode": "53067",
+     "Latitude83": "46.993156",
+     "Longitude83": "-122.956978"
+    }
+   ]
+  }
+ },
+ "110000491236": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000491236",
+     "FacilityName": "SHIELDS BAG AND PRINTING CO",
+     "LocationAddress": "1009 ROCK AVE",
+     "SupplementalLocation": null,
+     "CityName": "YAKIMA",
+     "CountyName": "YAKIMA",
+     "StateAbbr": "WA",
+     "ZipCode": "98902",
+     "FIPSCode": "077",
+     "Latitude83": "46.588837",
+     "Longitude83": "-120.505432"
+    }
+   ]
+  }
+ },
+ "110064017969": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064017969",
+     "FacilityName": "MILGARD MFG VINYL EXTRUSION M AND M",
+     "LocationAddress": "1001 54TH AVE E",
+     "SupplementalLocation": null,
+     "CityName": "FIFE",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98424-2731",
+     "FIPSCode": "053",
+     "Latitude83": "47.249863",
+     "Longitude83": "-122.35965"
+    }
+   ]
+  }
+ },
+ "110000547506": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000547506",
+     "FacilityName": "OXARC INC PASCO",
+     "LocationAddress": "716 S OREGON AVE",
+     "SupplementalLocation": null,
+     "CityName": "PASCO",
+     "CountyName": "FRANKLIN",
+     "StateAbbr": "WA",
+     "ZipCode": "99301",
+     "FIPSCode": "021",
+     "Latitude83": "46.226989",
+     "Longitude83": "-119.077617"
+    }
+   ]
+  }
+ },
+ "110000490558": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000490558",
+     "FacilityName": "SIMPSON TACOMA",
+     "LocationAddress": "801 E PORTLAND AVE",
+     "SupplementalLocation": null,
+     "CityName": "TACOMA",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98421",
+     "FIPSCode": "053",
+     "Latitude83": "47.26384",
+     "Longitude83": "-122.425332"
+    }
+   ]
+  }
+ },
+ "110009509905": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110009509905",
+     "FacilityName": "PRC DESOTO INTERNATIONAL ASC SEATTLE",
+     "LocationAddress": "14126 NE 190TH ST",
+     "SupplementalLocation": null,
+     "CityName": "WOODINVILLE",
+     "CountyName": "KING",
+     "StateAbbr": "WA",
+     "ZipCode": "98072",
+     "FIPSCode": "033",
+     "Latitude83": "47.767282",
+     "Longitude83": "-122.151819"
+    }
+   ]
+  }
+ },
+ "110000902159": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000902159",
+     "FacilityName": "HAYES CABINETS INC",
+     "LocationAddress": "1560 DOWN RIVER DR",
+     "SupplementalLocation": null,
+     "CityName": "WOODLAND",
+     "CountyName": "COWLITZ",
+     "StateAbbr": "WA",
+     "ZipCode": "98674-9513",
+     "FIPSCode": "015",
+     "Latitude83": "45.913212",
+     "Longitude83": "-122.751343"
+    }
+   ]
+  }
+ },
+ "110015548086": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110015548086",
+     "FacilityName": "CRESLINE NORTHWEST LLC",
+     "LocationAddress": "223 MAURIN RD",
+     "SupplementalLocation": " ",
+     "CityName": "CHEHALIS",
+     "CountyName": "LEWIS",
+     "StateAbbr": "WA",
+     "ZipCode": "98532",
+     "FIPSCode": "041",
+     "Latitude83": "46.628281",
+     "Longitude83": "-122.917571"
+    }
+   ]
+  }
+ },
+ "110071179682": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071179682",
+     "FacilityName": "ALTIUM PACKAGING",
+     "LocationAddress": "6545 S GLACIER ST",
+     "SupplementalLocation": null,
+     "CityName": "TUKWILA",
+     "CountyName": "KING COUNTY",
+     "StateAbbr": "WA",
+     "ZipCode": "98188",
+     "FIPSCode": "53033",
+     "Latitude83": "47.434174",
+     "Longitude83": "-122.255852"
+    }
+   ]
+  }
+ },
+ "110022930818": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022930818",
+     "FacilityName": "COMPOSITES ONE LLC VANCOUVER",
+     "LocationAddress": "12301 NE 56TH ST BLDG A",
+     "SupplementalLocation": null,
+     "CityName": "VANCOUVER",
+     "CountyName": "CLARK",
+     "StateAbbr": "WA",
+     "ZipCode": "98682-6476",
+     "FIPSCode": "53011",
+     "Latitude83": "45.66403",
+     "Longitude83": "-122.54821"
+    }
+   ]
+  }
+ },
+ "110005315569": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005315569",
+     "FacilityName": "GENERAL DYNAMICS OTS",
+     "LocationAddress": "9256 RANDOLPH RD NE",
+     "SupplementalLocation": null,
+     "CityName": "MOSES LAKE",
+     "CountyName": "GRANT",
+     "StateAbbr": "WA",
+     "ZipCode": "98837",
+     "FIPSCode": "025",
+     "Latitude83": "47.221579",
+     "Longitude83": "-119.297994"
+    }
+   ]
+  }
+ },
+ "110005394037": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005394037",
+     "FacilityName": "JELD WEN COATINGS TUKWILA",
+     "LocationAddress": "1061 INDUSTRY DR",
+     "SupplementalLocation": null,
+     "CityName": "TUKWILA",
+     "CountyName": "KING",
+     "StateAbbr": "WA",
+     "ZipCode": "98188",
+     "FIPSCode": "033",
+     "Latitude83": "47.447384",
+     "Longitude83": "-122.248817"
+    }
+   ]
+  }
+ },
+ "110054932187": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110054932187",
+     "FacilityName": "JANICKI INDUSTRIES INC SW",
+     "LocationAddress": "1476 MOORE ST",
+     "SupplementalLocation": null,
+     "CityName": "SEDRO-WOOLLEY",
+     "CountyName": "SKAGIT",
+     "StateAbbr": "WA",
+     "ZipCode": "98284",
+     "FIPSCode": "057",
+     "Latitude83": "48.515249",
+     "Longitude83": "-122.213824"
+    }
+   ]
+  }
+ },
+ "110060261620": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110060261620",
+     "FacilityName": "MOHAWK NORTHERN PLASTICS INC",
+     "LocationAddress": "701 A ST NE",
+     "SupplementalLocation": null,
+     "CityName": "AUBURN",
+     "CountyName": "KING",
+     "StateAbbr": "WA",
+     "ZipCode": "98002-4026",
+     "FIPSCode": "033",
+     "Latitude83": "47.314228",
+     "Longitude83": "-122.229673"
+    }
+   ]
+  }
+ },
+ "110000830101": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000830101",
+     "FacilityName": "VAUPELL",
+     "LocationAddress": "11323 COMMANDO RD W",
+     "SupplementalLocation": "11323 30TH AVE W",
+     "CityName": "EVERETT",
+     "CountyName": "SNOHOMISH",
+     "StateAbbr": "WA",
+     "ZipCode": "98204",
+     "FIPSCode": "53061",
+     "Latitude83": "47.8951",
+     "Longitude83": "-122.27319"
+    }
+   ]
+  }
+ },
+ "110037069276": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037069276",
+     "FacilityName": "PILLER AIMMCO GRANT ST",
+     "LocationAddress": "3925 S GRANT ST",
+     "SupplementalLocation": null,
+     "CityName": "WASHOUGAL",
+     "CountyName": "CLARK",
+     "StateAbbr": "WA",
+     "ZipCode": "98671-2800",
+     "FIPSCode": "53011",
+     "Latitude83": "45.56377",
+     "Longitude83": "-122.314514"
+    }
+   ]
+  }
+ },
+ "110000546632": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000546632",
+     "FacilityName": "DOLCO PACKAGING CORP",
+     "LocationAddress": "1121 S COLUMBIA ST",
+     "SupplementalLocation": null,
+     "CityName": "WENATCHEE",
+     "CountyName": "CHELAN",
+     "StateAbbr": "WA",
+     "ZipCode": "98801-3785",
+     "FIPSCode": "007",
+     "Latitude83": "47.41057",
+     "Longitude83": "-120.298434"
+    }
+   ]
+  }
+ },
+ "110005376958": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005376958",
+     "FacilityName": "KWIK LOK CORP",
+     "LocationAddress": "2712 S 16TH AVE",
+     "SupplementalLocation": null,
+     "CityName": "YAKIMA",
+     "CountyName": "YAKIMA",
+     "StateAbbr": "WA",
+     "ZipCode": "98903",
+     "FIPSCode": "53077",
+     "Latitude83": "46.55159",
+     "Longitude83": "-120.528946"
+    }
+   ]
+  }
+ },
+ "110005363953": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005363953",
+     "FacilityName": "LUMICOR",
+     "LocationAddress": "1400 MONSTER RD SW",
+     "SupplementalLocation": null,
+     "CityName": "RENTON",
+     "CountyName": "KING",
+     "StateAbbr": "WA",
+     "ZipCode": "98057-2902",
+     "FIPSCode": "53033",
+     "Latitude83": "47.46663",
+     "Longitude83": "-122.24169"
+    }
+   ]
+  }
+ },
+ "110071176889": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071176889",
+     "FacilityName": "MW MANUFACTURERS INC. D/B/A PLY GEM PACIFIC WINDOWS",
+     "LocationAddress": "5001 D ST NW",
+     "SupplementalLocation": null,
+     "CityName": "AUBURN",
+     "CountyName": "KING COUNTY",
+     "StateAbbr": "WA",
+     "ZipCode": "98001",
+     "FIPSCode": "53033",
+     "Latitude83": "47.351391",
+     "Longitude83": "-122.238197"
+    }
+   ]
+  }
+ },
+ "110037838098": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037838098",
+     "FacilityName": "SPECIFIED FITTINGS INC",
+     "LocationAddress": "164 W SMITH RD",
+     "SupplementalLocation": null,
+     "CityName": "BELLINGHAM",
+     "CountyName": "WHATCOM",
+     "StateAbbr": "WA",
+     "ZipCode": "98226",
+     "FIPSCode": "073",
+     "Latitude83": "48.832951",
+     "Longitude83": "-122.489372"
+    }
+   ]
+  }
+ },
+ "110015535928": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110015535928",
+     "FacilityName": "CHINOOK INDUSTRIAL PARK",
+     "LocationAddress": "3400 TACOMA ST",
+     "SupplementalLocation": " ",
+     "CityName": "UNION GAP",
+     "CountyName": "YAKIMA",
+     "StateAbbr": "WA",
+     "ZipCode": "98903-1979",
+     "FIPSCode": "077",
+     "Latitude83": "46.55196",
+     "Longitude83": "-120.471603"
+    }
+   ]
+  }
+ },
+ "110005356131": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005356131",
+     "FacilityName": "MCCONKEY AND CO INC",
+     "LocationAddress": "1615 PUYALLUP ST",
+     "SupplementalLocation": null,
+     "CityName": "SUMNER",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98390-0369",
+     "FIPSCode": "053",
+     "Latitude83": "47.214062",
+     "Longitude83": "-122.233643"
+    }
+   ]
+  }
+ },
+ "110000490629": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000490629",
+     "FacilityName": "SPECIALTY PRODUCTS",
+     "LocationAddress": "2410 104TH ST CT S, SUITE D",
+     "SupplementalLocation": null,
+     "CityName": "LAKEWOOD",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98499",
+     "FIPSCode": "53053",
+     "Latitude83": "47.16148",
+     "Longitude83": "-122.469583"
+    }
+   ]
+  }
+ },
+ "110070247931": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070247931",
+     "FacilityName": "ASSOCIATED MATERIALS LLC",
+     "LocationAddress": "2801 78TH AVE E",
+     "SupplementalLocation": null,
+     "CityName": "FIFE",
+     "CountyName": "PIERCE",
+     "StateAbbr": "WA",
+     "ZipCode": "98371",
+     "FIPSCode": "053",
+     "Latitude83": "47.232049",
+     "Longitude83": "-122.324653"
+    }
+   ]
+  }
+ },
+ "110072051858": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072051858",
+     "FacilityName": "ESSEX LABORATORIES LLC",
+     "LocationAddress": "115 KLEIN RD",
+     "SupplementalLocation": null,
+     "CityName": "CHEHALIS",
+     "CountyName": "LEWIS",
+     "StateAbbr": "WA",
+     "ZipCode": "98532",
+     "FIPSCode": "53041",
+     "Latitude83": "46.53602",
+     "Longitude83": "-122.80672"
+    }
+   ]
+  }
+ },
+ "110043335218": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043335218",
+     "FacilityName": "MACRO PLASTICS WASHINGTON",
+     "LocationAddress": "3555 BAY ST",
+     "SupplementalLocation": null,
+     "CityName": "UNION GAP",
+     "CountyName": "YAKIMA",
+     "StateAbbr": "WA",
+     "ZipCode": "98903",
+     "FIPSCode": "077",
+     "Latitude83": "46.55182",
+     "Longitude83": "-120.488107"
+    }
+   ]
+  }
+ },
+ "110071180365": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071180365",
+     "FacilityName": "NORWESCO",
+     "LocationAddress": "3860 GRANT ST",
+     "SupplementalLocation": null,
+     "CityName": "WASHOUGAL",
+     "CountyName": "CLARK COUNTY",
+     "StateAbbr": "WA",
+     "ZipCode": "98671",
+     "FIPSCode": "53011",
+     "Latitude83": "45.572399",
+     "Longitude83": "-122.333977"
+    }
+   ]
+  }
+ }
+}
