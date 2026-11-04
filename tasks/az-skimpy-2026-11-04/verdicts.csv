@@ -1,0 +1,28 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-AZ-00,"BROOKLYN BEDDING","Glendale",VERIFIED,"Two federal sources: FRS 110071451933 + ITA 1081318 (scope from federal NAICS)",SITE-006102
+QMS-AZ-01,"FUJIFILM ELECTRONIC MATERIALS","Mesa",STILL_UNCERTAIN,"Whether Fujifilm Electronic Materials Mesa makes polymer materials (photoresists/polyimides) or only inorganic process chemicals (NAICS 325180-325998 mix).",
+QMS-AZ-02,"PACIFIC SCIENTIFIC EMC WILLIS","Chandler",REJECT,"Energetic devices/explosives, not polymer: FRS 110039401652 and ITA CY2025 record, NAICS 325920 (fetched 2026-11-04).",
+QMS-AZ-03,"CANTEX, INC.","Kingman",VERIFIED,"Two federal sources: FRS 110072012918 + ITA 1286297 (scope from federal NAICS)",SITE-006103
+QMS-AZ-04,"DUNN-EDWARDS CORPORATION","Phoenix",VERIFIED,"Two federal sources: FRS 110071434516 + ITA 1107089 (scope from federal NAICS)",SITE-006104
+QMS-AZ-05,"TECH GROUP NORTH AMERICA, INC D/B/A WEST","Tempe",VERIFIED,"Two federal sources: FRS 110002605164 + ITA 1562660 (scope from federal NAICS)",SITE-006105
+QMS-AZ-06,"TUCSON RUBBER CORPORATION","Tucson",VERIFIED,"Two federal sources: FRS 110003410014 + ITA 303289 (scope from federal NAICS)",SITE-006106
+QMS-AZ-07,"VINYLTECH CORPORATION","Phoenix",VERIFIED,"Two federal sources: FRS 110002606190 + ITA 105045 (scope from federal NAICS)",SITE-006107
+QMS-AZ-08,"PRINTPACK, INC","Prescott Valley",VERIFIED,"Two federal sources: FRS 110000886131 + ITA 209372 (scope from federal NAICS)",SITE-006108
+QMS-AZ-09,"SOUTHWEST DISTRIBUTING CO","Mesa",VERIFIED,"Two federal sources: FRS 110041611672 + ITA 1478972 (scope from federal NAICS)",SITE-006109
+QMS-AZ-10,"CRESLINE-WEST INC.","Phoenix",VERIFIED,"Two federal sources: FRS 110002598555 + ITA 132201 (scope from federal NAICS)",SITE-006110
+QMS-AZ-11,"SHIN- ETSU MICROSI INC","Phoenix",STILL_UNCERTAIN,"Whether Shin-Etsu MicroSi Phoenix makes polymer products (photoresists/encapsulants) on site or only distributes (NAICS 325199/424690).",
+QMS-AZ-12,"GOODYEAR AVIATION PRODUCTS","Kingman",VERIFIED,"Two federal sources: FRS 110001695675 + ITA 1254970 (scope from federal NAICS)",SITE-006111
+QMS-AZ-13,"MORTON SALT CO - GLENDALE","Glendale",REJECT,"Salt, not polymer: ITA CY2025 record Morton Salt Glendale, NAICS 311942/325998 (fetched 2026-11-04).",
+QMS-AZ-14,"POLYGLASS USA, INC.","Phoenix",VERIFIED,"Two federal sources: FRS 110071280159 + ITA 1108119 (scope from federal NAICS)",SITE-006112
+QMS-AZ-15,"EARTH PROTECTION SERVICES","Phoenix",REJECT,"Hazardous-waste services, not polymer: ITA CY2025 record NAICS 562112/562211 (fetched 2026-11-04).",
+QMS-AZ-16,"PHOENIX PACKAGING OPERATIONS, LLC","Chandler",VERIFIED,"Two federal sources: FRS 110013371396 + OSHA 346170293 (scope from federal NAICS)",SITE-006113
+QMS-AZ-17,"REPUBLIC PLASTICS LP","Eloy",VERIFIED,"Two federal sources: FRS 110070273719 + OSHA 345150379 (scope from federal NAICS)",SITE-006114
+QMS-AZ-18,"Amcor PLC (formerly known as Berry Global)","Tolleson",VERIFIED,"Two federal sources: ITA 1514950 + OSHA 348413774 (scope from federal NAICS)",SITE-006115
+QMS-AZ-19,"R.E. Darling Co., INC.","Tucson",VERIFIED,"Two federal sources: ITA 1440618 + OSHA 349203265 (scope from federal NAICS)",SITE-006116
+QMS-AZ-20,"Schoeller Allibert US, INC","Goodyear",VERIFIED,"Two federal sources: ITA 917388 + OSHA 344716394 (scope from federal NAICS)",SITE-006117
+QMS-AZ-21,"Integrated Bagging Sysstems - Phoenix, AZ.","Phoenix",VERIFIED,"Two federal sources: ITA 1565430 + OSHA 344592068 (scope from federal NAICS)",SITE-006118
+QMS-AZ-22,"Hasa Inc. - Eloy","Eloy",REJECT,"Pool chlorine (sodium hypochlorite), not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-AZ-23,"CRM of America LLC","Mesa",STILL_UNCERTAIN,"Witnessed by ITA 224680 + OSHA 348264797 (rubber products, NAICS 326299) but NOT created: the legal name 'CRM of America' trips validate.py rule V-50 (PIC CRM); integrator to decide naming. Settling fact: an accepted naming for this org.",
+QMS-AZ-24,"Altium Packaging - Phoenix","Phoenix",VERIFIED,"Two federal sources: ITA 803494 + OSHA 348374026 (scope from federal NAICS)",SITE-006119
+QMS-AZ-25,"TRC-Tucson Blvd","Tucson",STILL_UNCERTAIN,"Operator identity of 'TRC-Tucson Blvd' (6351 S Tucson Blvd) and whether coatings/rubber products are made there.",
+QMS-AZ-26,"Accessible Products Company","Tempe",VERIFIED,"Two federal sources: ITA 967651 + OSHA 348667585 (scope from federal NAICS)",SITE-006120
