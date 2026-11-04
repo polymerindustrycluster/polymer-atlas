@@ -1,0 +1,23 @@
+school_key,name,lane_file,reason
+jhu,Efie Kokkoli,T,"integrator review: role_as_published is a sentence fragment ('a professor of ...'), not the printed title"
+jhu,Jordan J. Green,T,raw check gate_a=no gate_b=yes
+duke,Benjamin J. Wiley,R1,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+northeastern,Randall Erb,R1,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+nyu,Nikhil Gupta,R1,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+nyu,Kent Kirshenbaum,R1,raw check gate_a=unfetchable gate_b=yes
+ucla,Yang Yang,R1,"integrator review: Gate B quote is the MSE department research-areas page, not person-level"
+ucla,Ellen M. Sletten,R1,raw check gate_a=no gate_b=yes
+ucla,Jenn-Ming Yang,R1,"integrator review: Gate B quote is the MSE department research-areas page, not person-level"
+uconn,Thanh Nguyen,R1,"raw check gate_a=yes gate_b=no; integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+utah,Michael Czabaj,R2,raw check gate_a=no gate_b=yes
+stanford,Danielle Mai,OWNER,possible duplicate of PERSON-000914
+Massachusetts Institute of Technology,Katharina Ribbeck,A1,"integrator review: B-CG-2: Gate B quote describes mucin polymers in the body, not engineering them as a material"
+Iowa State University,Keith L. Vorst,A1,"integrator review: Gate B quote is the consortium page he directs, not person-level (Nutt precedent)"
+The University of Tennessee-Knoxville,Alexei P. Sokolov,A2,possible duplicate of PERSON-000478
+Texas A & M University-College Station,Amir Asadi,A3,raw check gate_a=yes gate_b=no
+Texas A & M University-College Station,Mary Beth Browning Monroe,A3,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+University of Illinois Urbana-Champaign,Jeff Moore,A3,integrator review: same person as the Jeffrey S. Moore row in the same lane; one record only
+University of Chicago,Stuart J. Rowan,B1,possible duplicate of PERSON-000737
+Northwestern University,Junsoo Kim,B1,"integrator review: Gate B rests on a university news item, not the person's own profile or lab page"
+Rice University,Eugene R. Zubarev,B2,raw check gate_a=unfetchable gate_b=unfetchable
+University of Connecticut,Sangamesh Gurappa Kumbar,B2,public_profile_url not on uconn.edu; gate_a_url not on uconn.edu; gate_b_url not on uconn.edu
