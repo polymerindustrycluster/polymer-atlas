@@ -1,0 +1,34 @@
+# STRONG wave: IL (2026-11-04)
+
+The repo owner requested this pass in session on 2026-11-04 ("do it all"). The state is claimed in
+`tasks/CAMPAIGN.md` (#81). The pass repeats the Indiana pilot (#75) on IL's lead-fusion STRONG clusters: those that
+three or more independent federal families record. The clusters were re-deduped against today's Atlas, and
+3 packet lanes ran under `LANE_BRIEF.md`.
+
+## Verdicts (unit: candidate establishments; 61)
+
+| Verdict | Count |
+|-|-:|
+| VERIFIED, new site under a held organization | 9 |
+| VERIFIED, new organization plus its site | 28 |
+| DUPLICATE_OF a held site | 0 |
+| REJECT (scope or closure, with the deciding fact) | 4 |
+| STILL_UNCERTAIN (with the settling fact) | 20 |
+
+**Yield:** 37 of 61 (61%) verified.
+
+## Applied (`build.py`)
+- organizations: +28 (ORG-006101 onward), all tier C; shards: US residual 19 (no HQ evidenced), IL 8, TX 1.
+- sites_IL.csv: +37 (SITE-008151 onward): 4 tier B, 33 tier C.
+- evidence: +460 rows (EVD-062001 to 062460).
+
+- **Tiers:** a site is tier B only with a federal source plus an own-site quote that the integrator re-fetched raw and
+  found verbatim. Federal-only sites are tier C, and new organizations are tier C.
+- **Raw check** (`rawcheck.csv`): {'yes': 33, 'no': 2, 'unfetchable': 2}.
+- **Sources:** federal facts are cited from the OSHA ITA and OSHA inspection extracts. ECHO/FRS ids sit in `notes` only.
+- **Ids** come from this state's reserved block in `tasks/CAMPAIGN.md`, above every id used by open PRs at build time.
+
+## Held
+- `holds.csv`: 0.
+- Lane flags for the integrator are in `lanes/L1/NOTES.md`, `lanes/L2/NOTES.md`, `lanes/L3/NOTES.md`. They cover scope questions for the owner, HQ disagreements
+  on held records, operator changes, and sites that look closed but have no dated closure statement.
