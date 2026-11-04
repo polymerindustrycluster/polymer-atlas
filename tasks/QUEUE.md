@@ -198,22 +198,24 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `in-pr:claude-code 2026-11-02` **Capability vocabulary normalization (packet lane):** only 1,064 of 5,062 site `processes` values (21%) are in the SCHEMA §3.1 vocabulary. Most are near-misses (`injection molding`, `extrusion`, `distribution`). Mechanical spelling maps plus per-value rulings for the ambiguous ones would make the graph explorer (E-11) and supplier search far denser. — **2026-11-02:** the mechanical subset is applied: 1,633 tokens over 1,044 records (spelling and exact equivalents). Site `processes` are now 37% in-vocabulary and `materials` 50% (`tasks/vocab-normalize-2026-11-02/`). **OWNER:** rule on the 163 ambiguous or legacy values in `ruling_candidates.csv` (`distribution`, `machinery_equipment`, `extrusion`, `fiberglass`, `plastic`, …).
 - [x] `done 2026-11-02` **OWNER — publish to GitHub Pages:** add `.github/workflows/pages.yml` from `docs/ci/pages.yml`, then set Settings → Pages → Source: GitHub Actions (steps in `docs/ci/README.md`). The site is built by `scripts/build_pages.py`: the static site plus the graph, map + network and trade-show explorers, public fields only. It goes live at https://polymerindustrycluster.github.io/polymer-atlas/ once the build scripts are on `main`. — The `pages` workflow is live, and Pages source = GitHub Actions (owner, 2026-11-02). The site is up at https://polymerindustrycluster.github.io/polymer-atlas/ and rebuilds on every push to `main`.
 
-- [ ] `open` **OWNER ruling — campaign mode after CI (AGENTS.md §2 rule 2):** rule 2 says it "is revisited by dated revision" once a workflow lands on the remote. That happened on 2026-11-02: `validate` runs on every PR and push. **Recommendation:** retire direct pushes to `main` for every harness, the orchestrator included. All changes, campaign passes too, go through PRs that must pass `validate`. Keep the per-pass journal and the pre-pass backups. Optionally require the `validate` check in branch protection. Not self-ruled; this awaits the owner.
-- [ ] `open` **OWNER ruling — evidence claim_type for employee-size bands (SCHEMA §4.13):** 1,996 band values now carry their source and date only in `BAND-SOURCE:` notes. **Recommendation:** add `claim_type = size_band` with source classes `government_filing` (OSHA ITA / inspection, Form 5500) and `own_site`, with a ceiling of `supports_B`. Then backfill one evidence row per band from `tasks/integration-ready-oh-pa-2026-11-02/band_updates.csv`. Not self-ruled.
+- [x] `done 2026-11-03` **RULED (a), B-CAMP, `tasks/OWNER_BATTERY_2026-11-03.md`; AGENTS.md revised.** **OWNER ruling — campaign mode after CI (AGENTS.md §2 rule 2):** rule 2 says it "is revisited by dated revision" once a workflow lands on the remote. That happened on 2026-11-02: `validate` runs on every PR and push. **Recommendation:** retire direct pushes to `main` for every harness, the orchestrator included. All changes, campaign passes too, go through PRs that must pass `validate`. Keep the per-pass journal and the pre-pass backups. Optionally require the `validate` check in branch protection. Not self-ruled; this awaits the owner.
+- [ ] `ruled 2026-11-03` **RULED (a), B-BAND: apply pending.** **OWNER ruling — evidence claim_type for employee-size bands (SCHEMA §4.13):** 1,996 band values now carry their source and date only in `BAND-SOURCE:` notes. **Recommendation:** add `claim_type = size_band` with source classes `government_filing` (OSHA ITA / inspection, Form 5500) and `own_site`, with a ceiling of `supports_B`. Then backfill one evidence row per band from `tasks/integration-ready-oh-pa-2026-11-02/band_updates.csv`. Not self-ruled.
 
 ## programs-db crosswalk + census-gap researcher wave (2026-11-03)
 
 - [ ] `in-pr:claude-code 2026-11-03` **programs-db crosswalk (integrator pass):**
-  - 69 `ror_id` values were verified at api.ror.org and added. 10 are held.
+  - 69 `ror_id` values were verified at api.ror.org and added. 10 are held. — `in-pr:claude-code 2026-11-03`: the 10 holds are resolved: 3 linked (Purdue Indianapolis, Edmonds, WSU Tech) and 7 held with the settling fact named (`tasks/ror-holds-2026-11-03/`).
   - Texas A&M `ORG-004656` was re-pointed from the A&M System Office (UNITID 228732, tamus.edu) to College Station (228723, www.tamu.edu), per IPEDS HD2024.
   - 224 discovery leads were added from the programs-db hand-research layers.
   - Details: `tasks/programs-db-crosswalk-2026-11-03/README.md`.
 - [ ] `in-pr:claude-code 2026-11-03` **Census-gap researcher wave (packet lanes ×6):** 73 people records added, all Gate A and Gate B verified on the universities' own pages. 51 held: 47 are already in the Atlas and 4 were held on integrator review. Details: `tasks/census-gap-people-2026-11-03/README.md`.
+- [ ] `in-pr:claude-code 2026-11-03` **People wave 2** (`tasks/census-gap-2-2026-11-03/`): +64 people records, all raw-checked (Gate A with surname proximity). 17 from the census-gap follow-ups below (JHU and Columbia via Tavily, Northeastern roster, the 79 uncertain), 32 from band-A census leads, 15 from a 60-person band-B sample; 22 held. Owner rulings B-CG-1..4 applied.
+- [ ] `open` **OWNER: run the remaining 572 band-B census leads?** The sample admitted 15 of 60 (25%; band A 24%), so the rest would yield ~140 records (projection). `tasks/census-gap-2-2026-11-03/README.md`. Still open: Herrera-Alonso (held at another institution; current home not re-checked, jhu.edu blocked).
 - [ ] `open` **Census-gap follow-ups:**
   - Re-run Johns Hopkins and Columbia (both bot-walled).
   - Re-run the UCSD and Northeastern engineering rosters (503s).
   - Settle the 79 STILL_UNCERTAIN on their named facts.
-  - **Re-verify PERSON-000719 (Korley).** Held at Delaware; NYU's pages now style her as an NYU professor.
+  - **Re-verify PERSON-000719 (Korley).** Held at Delaware; NYU's pages now style her as an NYU professor. — `in-pr:claude-code 2026-11-03`: she moved; the record is updated in place to ORG-004705 New York University from NYU Tandon's profile and its dated announcement (2026-08-19). `tasks/korley-reverify-2026-11-03/`.
 
 ## Cleanup after the passes 41–46 review (2026-11-03)
 
@@ -229,6 +231,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - 45 have a page rank that differs from `role`. Settle `role` and the title together.
   - 18 lane lines were not usable.
   - List: `tasks/atlas-cleanup-2026-11-03/holds.csv`.
+  - `in-pr:claude-code 2026-11-03` **Wave 2** (owner's laptop, raw-page check added): 35 titles set; 149 still held with reasons; 12 NREL-only people wait for the NREL re-point packet. `tasks/role-title-recheck-2-2026-11-03/`.
 - [ ] `open` **Integration writers must dedupe people against `people.csv` before allocating IDs.** Pass 45 created 14 same-institution duplicates.
 
 ## Ohio Innovation Exchange follow-ups (2026-11-03)
@@ -239,7 +242,28 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Equipment layer, first wave (SCHEMA v1.9 §4.19):** start with University of Akron, CWRU and other Ohio polymer instrument pages. Ohio Innovation Exchange equipment search results are leads only.
 - [ ] `open` **OWNER action:** approach ODHE / OH-TECH about a data or link agreement for Ohio Innovation Exchange profiles.
 
+## PIC-18 (owner ruling 2026-11-03)
 
-## Program leads (2026-11-03)
-- [ ] `in-pr:claude-code 2026-11-03` **Program leads, OH/PA wave:** 49 OH/PA leads (of 353 merged) through the named-program test; +4 programs (PROG-000163-000166, tier A) with 8 evidence rows; 7 held. `tasks/program-leads-2026-11-03/README.md`.
-- [ ] `open` **Program leads, remaining 275 non-OH/PA leads** (`tasks/program-leads-2026-11-03/worklist.csv`) and the 147 unapplied completions proposals.
+- [x] `done 2026-11-03 (#32)` **PIC-18 replaces PIC-12 for reporting (AGENTS.md §8):**
+  - The region is the NEO-SMART 18 counties, which equal JobsOhio Team NEO (14) plus Lake to River (4).
+  - `scripts/regions.py` is the single definition. The site, explorers and skyline are switched over.
+  - Dated reports that used PIC-12 are left as written.
+- [ ] `open` **Extend the CBP size-class denominator (`docs/denominators/cbp_size_classes_polymer.csv`) to the 6 added counties:** Ashland, Columbiana, Erie, Huron, Richland, Tuscarawas. Re-run `scripts/build_cbp_size_classes.py` with `regions.PIC18`. QCEW already covers every Ohio county.
+- [ ] `in-pr:claude-code 2026-11-03` **Evidence Room (separate repo):** switch its PIC-12 cluster pages to PIC-18 to stay consistent.
+  - Phase 1 (definitions, decision and per-page "update pending" notices) is in progress.
+  - Phase 2 re-derives each page with a dated correction.
+  - pic-geo 1.1.0 carries the canonical PIC-18.
+- [x] `done 2026-11-03` **Coverage gap for the 6 added counties:** the discovery pass found no creates. Of 56 leads, 21 were duplicates, 9 rejected and 26 still uncertain. Details: `tasks/discovery-pic18-2026-11-03/README.md`.
+- [ ] `open` **The PIC-18 discovery pass left 26 STILL_UNCERTAIN leads.** Each names the fact that settles it, and most need the company's own page. 4 registry-link candidates are also unapplied (`tasks/discovery-pic18-2026-11-03/L*/`).
+- [ ] `open` **`atlas.py dedupe-check` misses sites whose street address is only in `notes`** (SITE-000863, SITE-001910). Match against notes too, or move the address into the address columns.
+- [ ] `open` **Possible duplicate:** SITE-000818 (ORG-000755) and SITE-001925 (ORG-001931) share 2228 Reiser Ave SE. Check before merging per SCHEMA.
+
+
+## Record fixes found 2026-11-03 (spot lookups)
+- [ ] `open` **HEXPOL duplicate:** ORG-002044 (HEXPOL Compounding LLC, Akron; 0 sites, no parent, 0 evidence rows) vs ORG-000103 (HEXPOL Compounding, Burton; parent HEXPOL AB, 14 sites). Merge, or re-grain as a site of ORG-000103 (AGENTS §3: when in doubt link and flag, do not merge).
+- [ ] `open` **PPG (ORG-000088) and Sherwin-Williams (ORG-000132) are tier C:** add government_filing evidence (10-K Item 2, Exhibit 21) for existence, address and parent, then re-derive the tier.
+- [ ] `open` **AltraSet Composite Technologies (ORG-001327)** has no parent link; its website is altraset.mar-bal.com, so check it against Mar-Bal Inc. (ORG-000430) and link it if a public page states the relationship.
+- [ ] `open` **The Pittsburgh Paint Company (ORG-001470, Huron OH)**, the former PPG US architectural business, has no website and 0 evidence rows; add existence, address and parent (American Industrial Partners) evidence.
+- [ ] `open` **Record-health pass for Ring 1-2 organizations with PIC-12 sites,** worst first: tier C/U, missing checklist claims, no street address, empty processes/materials/markets.
+- [ ] `in-pr:claude-code 2026-11-03` **Evidence repair pass** (`tasks/evidence-repair-2026-11-03/`): 1,139 weak own_site rows re-checked raw; +81 replacement evidence rows (address 49, parent 25, existence 7), all quotes raw-checked.
+- [ ] `open` **Evidence repair round 2:** 168 scope rows judged PARTIAL/NOT_SUPPORTED/WRONG_PAGE (mostly corporate pages that do not name the site) and 109 address rows with city but no street; plus the status/parent leads in the repair README (Viskase Osceola closure, AquaWorx parent, AOC/Nippon Paint, TotalEnergies parent, Janco, Pioneer Plastics, Kyowa).
