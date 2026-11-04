@@ -65,7 +65,9 @@ def main():
     ev_files = {f: read(f) for f in sorted(data.glob("evidence_organizations_*.csv"))}
     ev_head = {f: next(csv.reader(open(f, encoding="utf-8"))) for f in ev_files}
     ev_all = [e for f in sorted(data.glob("evidence*.csv")) for e in read(f)]
-    eid = max(int(e["evidence_id"][4:]) for e in ev_all if e["evidence_id"][4:].isdigit()) + 1  # AGENTS §3: above the max
+    # AGENTS §3: above the max of main AND every open PR. #117 holds EVD-078028..078090 and #116 tops out at EVD-112175
+    # (scan of 2026-11-04), so this block starts at 113001.
+    eid = max([113000] + [int(e["evidence_id"][4:]) for e in ev_all if e["evidence_id"][4:].isdigit()]) + 1
     new_ev, log, touched, ev_touched = defaultdict(list), [], set(), set()
 
     for oid, (city, st, county, item) in HQ.items():
