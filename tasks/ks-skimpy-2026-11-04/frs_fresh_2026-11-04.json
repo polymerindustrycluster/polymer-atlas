@@ -1,0 +1,629 @@
+{
+ "110070343493": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070343493",
+     "FacilityName": "SPEARS CANEY INC",
+     "LocationAddress": "1200 S STATE",
+     "SupplementalLocation": null,
+     "CityName": "CANEY",
+     "CountyName": null,
+     "StateAbbr": "KS",
+     "ZipCode": "67333",
+     "FIPSCode": null,
+     "Latitude83": "37.002339",
+     "Longitude83": "-95.93734"
+    }
+   ]
+  }
+ },
+ "110000446321": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000446321",
+     "FacilityName": "COLEMAN CO. - WICHITA",
+     "LocationAddress": "3600 N. HYDRAULIC",
+     "SupplementalLocation": null,
+     "CityName": "WICHITA",
+     "CountyName": "SEDGWICK",
+     "StateAbbr": "KS",
+     "ZipCode": "67219",
+     "FIPSCode": "20173",
+     "Latitude83": "37.75011",
+     "Longitude83": "-97.31747"
+    }
+   ]
+  }
+ },
+ "110003215477": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003215477",
+     "FacilityName": "REVERE PLASTICS SYSTEMS",
+     "LocationAddress": "2130 INDUSTRIAL DR",
+     "SupplementalLocation": null,
+     "CityName": "MCPHERSON",
+     "CountyName": "MCPHERSON",
+     "StateAbbr": "KS",
+     "ZipCode": "67460",
+     "FIPSCode": "20113",
+     "Latitude83": "38.38936",
+     "Longitude83": "-97.62815"
+    }
+   ]
+  }
+ },
+ "110071527218": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071527218",
+     "FacilityName": "CONTITECH, USA, INC.  - HALSTEAD (STORMWATER)",
+     "LocationAddress": "325 E 10TH ST",
+     "SupplementalLocation": null,
+     "CityName": "HALSTEAD",
+     "CountyName": "HARVEY",
+     "StateAbbr": "KS",
+     "ZipCode": "67056",
+     "FIPSCode": "KS079",
+     "Latitude83": "37.993143",
+     "Longitude83": "-97.502559"
+    }
+   ]
+  }
+ },
+ "110054835238": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110054835238",
+     "FacilityName": "ADVENTURE CAPITAL PARTNERS DBA BETTER LIFE TECHNOLOGY",
+     "LocationAddress": "1219 HATCHER ST",
+     "SupplementalLocation": null,
+     "CityName": "EMPORIA",
+     "CountyName": "LYON",
+     "StateAbbr": "KS",
+     "ZipCode": "66801",
+     "FIPSCode": "20111",
+     "Latitude83": "38.412394",
+     "Longitude83": "-96.222239"
+    }
+   ]
+  }
+ },
+ "110007287097": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007287097",
+     "FacilityName": "NEODESHA PLASTICS",
+     "LocationAddress": "TWIN RIVERS INDUSTRIAL PARK",
+     "SupplementalLocation": null,
+     "CityName": "NEODESHA",
+     "CountyName": "WILSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66757",
+     "FIPSCode": "20205",
+     "Latitude83": "37.429382",
+     "Longitude83": "-95.663267"
+    }
+   ]
+  }
+ },
+ "110057630434": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110057630434",
+     "FacilityName": "HI-LINE PLASTICS INC.",
+     "LocationAddress": "801 E. HWY 56",
+     "SupplementalLocation": null,
+     "CityName": "OLATHE",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66061",
+     "FIPSCode": null,
+     "Latitude83": "38.86773",
+     "Longitude83": "-94.8047"
+    }
+   ]
+  }
+ },
+ "110041972988": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110041972988",
+     "FacilityName": "AIROSOL CO INC",
+     "LocationAddress": "1206 ILLINOIS ST",
+     "SupplementalLocation": null,
+     "CityName": "NEODESHA",
+     "CountyName": "WILSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66757",
+     "FIPSCode": "20205",
+     "Latitude83": "37.421667",
+     "Longitude83": "-95.6875"
+    }
+   ]
+  }
+ },
+ "110000446642": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000446642",
+     "FacilityName": "WILKO PAINT",
+     "LocationAddress": "2727 N OHIO ST",
+     "SupplementalLocation": null,
+     "CityName": "WICHITA",
+     "CountyName": "SEDGWICK",
+     "StateAbbr": "KS",
+     "ZipCode": "67219",
+     "FIPSCode": "20173",
+     "Latitude83": "37.73192",
+     "Longitude83": "-97.32431"
+    }
+   ]
+  }
+ },
+ "110001238189": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001238189",
+     "FacilityName": "BERRY PLASTICS - LAWRENCE",
+     "LocationAddress": "2330 PACKER RD.",
+     "SupplementalLocation": null,
+     "CityName": "LAWRENCE",
+     "CountyName": "DOUGLAS",
+     "StateAbbr": "KS",
+     "ZipCode": "66049",
+     "FIPSCode": "20045",
+     "Latitude83": "38.99796",
+     "Longitude83": "-95.26391"
+    }
+   ]
+  }
+ },
+ "110055253755": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110055253755",
+     "FacilityName": "PITT PLASTICS, INC.",
+     "LocationAddress": "1400 ATKINSON AVE.",
+     "SupplementalLocation": "1400 ATKINSON AVE.",
+     "CityName": "PITTSBURG",
+     "CountyName": "CRAWFORD",
+     "StateAbbr": "KS",
+     "ZipCode": "66762",
+     "FIPSCode": "KS037",
+     "Latitude83": "37.440484",
+     "Longitude83": "-94.727389"
+    }
+   ]
+  }
+ },
+ "110000445732": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000445732",
+     "FacilityName": "NAZDAR",
+     "LocationAddress": "8501 HEDGE LANE TERRACE",
+     "SupplementalLocation": null,
+     "CityName": "SHAWNEE",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66227",
+     "FIPSCode": "20091",
+     "Latitude83": "38.97253",
+     "Longitude83": "-94.85691"
+    }
+   ]
+  }
+ },
+ "110000445885": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000445885",
+     "FacilityName": "CARLISLE POWER TRANSMISSION PRODUCTS",
+     "LocationAddress": "4505 CAMPBELL DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "FORT SCOTT",
+     "CountyName": "BOURBON",
+     "StateAbbr": "KS",
+     "ZipCode": "66701",
+     "FIPSCode": "20011",
+     "Latitude83": "37.79109",
+     "Longitude83": "-94.70165"
+    }
+   ]
+  }
+ },
+ "110000769035": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000769035",
+     "FacilityName": "A & M PRODUCTS",
+     "LocationAddress": "705 N. LINCOLN",
+     "SupplementalLocation": null,
+     "CityName": "SPRING HILL",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66083-8840",
+     "FIPSCode": "20091",
+     "Latitude83": "38.7498",
+     "Longitude83": "-94.81882"
+    }
+   ]
+  }
+ },
+ "110000531933": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000531933",
+     "FacilityName": "HARCROS CHEMICALS INC. - KANSAS CITY",
+     "LocationAddress": "5200 SPEAKER RD.",
+     "SupplementalLocation": null,
+     "CityName": "KANSAS CITY",
+     "CountyName": "WYANDOTTE",
+     "StateAbbr": "KS",
+     "ZipCode": "66106",
+     "FIPSCode": "20209",
+     "Latitude83": "39.09492",
+     "Longitude83": "-94.69655"
+    }
+   ]
+  }
+ },
+ "110022440722": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022440722",
+     "FacilityName": "KBK INDUSTRIES",
+     "LocationAddress": "EAST HWY 96",
+     "SupplementalLocation": null,
+     "CityName": "RUSH CENTER",
+     "CountyName": "RUSH",
+     "StateAbbr": "KS",
+     "ZipCode": "67575",
+     "FIPSCode": "20165",
+     "Latitude83": "38.466126",
+     "Longitude83": "-99.306366"
+    }
+   ]
+  }
+ },
+ "110001369652": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001369652",
+     "FacilityName": "ATLAS MOLDED PRODUCTS - KANSAS CITY (KAW DR)",
+     "LocationAddress": "4001 KAW DR",
+     "SupplementalLocation": null,
+     "CityName": "KANSAS CITY",
+     "CountyName": "WYANDOTTE",
+     "StateAbbr": "KS",
+     "ZipCode": "66102",
+     "FIPSCode": "20209",
+     "Latitude83": "39.101641",
+     "Longitude83": "-94.678303"
+    }
+   ]
+  }
+ },
+ "110071992761": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071992761",
+     "FacilityName": "MARVIN",
+     "LocationAddress": "9820 LEAVENWORTH ROAD",
+     "SupplementalLocation": null,
+     "CityName": "KANSAS CITY",
+     "CountyName": "WYANDOTTE",
+     "StateAbbr": "KS",
+     "ZipCode": "66109",
+     "FIPSCode": "20209",
+     "Latitude83": "39.143291",
+     "Longitude83": "-94.806988"
+    }
+   ]
+  }
+ },
+ "110070286268": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070286268",
+     "FacilityName": "WESCON PLASTICS LLC",
+     "LocationAddress": "2810 S. WEST ST.",
+     "SupplementalLocation": null,
+     "CityName": "WICHITA",
+     "CountyName": null,
+     "StateAbbr": "KS",
+     "ZipCode": "67217",
+     "FIPSCode": null,
+     "Latitude83": "37.64322",
+     "Longitude83": "-97.38917"
+    }
+   ]
+  }
+ },
+ "110072195897": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072195897",
+     "FacilityName": "ALTIUM PACKAGING - LENEXA (STORMWATER)",
+     "LocationAddress": "11725 W 85TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "LENEXA",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66214",
+     "FIPSCode": "KS091",
+     "Latitude83": "38.9747",
+     "Longitude83": "-94.72168"
+    }
+   ]
+  }
+ },
+ "110008355476": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110008355476",
+     "FacilityName": "KROY INDUSTRIES",
+     "LocationAddress": "626 SOUTH ROAD H",
+     "SupplementalLocation": null,
+     "CityName": "ULYSSES",
+     "CountyName": "GRANT",
+     "StateAbbr": "KS",
+     "ZipCode": "67880",
+     "FIPSCode": "20067",
+     "Latitude83": "37.489619",
+     "Longitude83": "-101.39873"
+    }
+   ]
+  }
+ },
+ "110071673337": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071673337",
+     "FacilityName": "CAMSO - MIDROLLERS (AIR)",
+     "LocationAddress": "841 OVERLANDER",
+     "SupplementalLocation": null,
+     "CityName": "EMPORIA",
+     "CountyName": "LYON",
+     "StateAbbr": "KS",
+     "ZipCode": "66801",
+     "FIPSCode": "20111",
+     "Latitude83": "38.408761",
+     "Longitude83": "-96.235534"
+    }
+   ]
+  }
+ },
+ "110058131490": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110058131490",
+     "FacilityName": "HODGDON POWDER COMPANY",
+     "LocationAddress": "2577 Q AVE",
+     "SupplementalLocation": null,
+     "CityName": "HERINGTON",
+     "CountyName": "DICKINSON",
+     "StateAbbr": "KS",
+     "ZipCode": "67449",
+     "FIPSCode": "20127",
+     "Latitude83": "38.69598",
+     "Longitude83": "-96.8155"
+    }
+   ]
+  }
+ },
+ "110069429238": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069429238",
+     "FacilityName": "JACAM MFG. - ORGANOCLAY PROCESSING",
+     "LocationAddress": "1656 AVE Q",
+     "SupplementalLocation": null,
+     "CityName": "STERLING",
+     "CountyName": "RICE",
+     "StateAbbr": "KS",
+     "ZipCode": "67579",
+     "FIPSCode": "20159",
+     "Latitude83": "38.208468",
+     "Longitude83": "-98.206828"
+    }
+   ]
+  }
+ },
+ "110070120263": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070120263",
+     "FacilityName": "TIMILON CORPORATION",
+     "LocationAddress": "3602 NW 16TH ST",
+     "SupplementalLocation": null,
+     "CityName": "TOPEKA",
+     "CountyName": "SHAWNEE",
+     "StateAbbr": "KS",
+     "ZipCode": "66618",
+     "FIPSCode": "20177",
+     "Latitude83": "39.07981",
+     "Longitude83": "-95.71467"
+    }
+   ]
+  }
+ },
+ "110000596533": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000596533",
+     "FacilityName": "GOODYEAR TIRE & RUBBER CO",
+     "LocationAddress": "2000 NORTHWEST HIGHWAY U.S. 24",
+     "SupplementalLocation": null,
+     "CityName": "TOPEKA",
+     "CountyName": "SHAWNEE",
+     "StateAbbr": "KS",
+     "ZipCode": "66608-1956",
+     "FIPSCode": "20177",
+     "Latitude83": "39.09099",
+     "Longitude83": "-95.69256"
+    }
+   ]
+  }
+ },
+ "110003155120": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003155120",
+     "FacilityName": "CENTRAL PLASTICS, INC",
+     "LocationAddress": "811 W 1ST",
+     "SupplementalLocation": null,
+     "CityName": "MCPHERSON",
+     "CountyName": "MCPHERSON",
+     "StateAbbr": "KS",
+     "ZipCode": "67460-3266",
+     "FIPSCode": "20113",
+     "Latitude83": "38.37672",
+     "Longitude83": "-97.67618"
+    }
+   ]
+  }
+ },
+ "110072127492": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072127492",
+     "FacilityName": "REHRIG PACIFIC COMPANY",
+     "LocationAddress": "8875 COMMERCE DR",
+     "SupplementalLocation": null,
+     "CityName": "DE SOTO",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "KS",
+     "ZipCode": "66018",
+     "FIPSCode": "20091",
+     "Latitude83": "38.96764",
+     "Longitude83": "-94.97677"
+    }
+   ]
+  }
+ },
+ "110000903620": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000903620",
+     "FacilityName": "DE ELLIOTTE CO.",
+     "LocationAddress": "201 PRAIRIE VILLAGE DR",
+     "SupplementalLocation": null,
+     "CityName": "NEW CENTURY",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "KS",
+     "ZipCode": "660310000",
+     "FIPSCode": "20091",
+     "Latitude83": "38.82825",
+     "Longitude83": "-94.90388"
+    }
+   ]
+  }
+ },
+ "110064143519": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064143519",
+     "FacilityName": "KANSAS CORRECTIONAL INDUSTRIES",
+     "LocationAddress": "301 E KANSAS",
+     "SupplementalLocation": null,
+     "CityName": "LANSING",
+     "CountyName": "LEAVENWORTH",
+     "StateAbbr": "KS",
+     "ZipCode": "66043",
+     "FIPSCode": "20103",
+     "Latitude83": "39.24939",
+     "Longitude83": "-94.89267"
+    }
+   ]
+  }
+ },
+ "110001955634": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001955634",
+     "FacilityName": "FORM SYSTEMS",
+     "LocationAddress": "330 CAIN",
+     "SupplementalLocation": null,
+     "CityName": "HAYSVILLE",
+     "CountyName": "SEDGWICK",
+     "StateAbbr": "KS",
+     "ZipCode": "67060-2004",
+     "FIPSCode": "20173",
+     "Latitude83": "37.56715",
+     "Longitude83": "-97.33197"
+    }
+   ]
+  }
+ },
+ "110003209199": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003209199",
+     "FacilityName": "RASCHIG USA INC",
+     "LocationAddress": "126 S GRIFFITH",
+     "SupplementalLocation": null,
+     "CityName": "EL DORADO",
+     "CountyName": "BUTLER",
+     "StateAbbr": "KS",
+     "ZipCode": "67042-3434",
+     "FIPSCode": "20015",
+     "Latitude83": "37.81618",
+     "Longitude83": "-96.84705"
+    }
+   ]
+  }
+ },
+ "110057227567": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110057227567",
+     "FacilityName": "MEADWESTVACO CALMAR INC.",
+     "LocationAddress": "3719 E 12TH AVE",
+     "SupplementalLocation": null,
+     "CityName": "WINFIELD",
+     "CountyName": "COWLEY",
+     "StateAbbr": "KS",
+     "ZipCode": "67156",
+     "FIPSCode": null,
+     "Latitude83": "37.23742",
+     "Longitude83": "-96.95358"
+    }
+   ]
+  }
+ }
+}

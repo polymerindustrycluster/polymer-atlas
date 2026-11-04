@@ -132,6 +132,31 @@ class ValidatorMutationTests(unittest.TestCase):
                         "observed_date": "2026-11-03", "withdrawn_date": "", "created_by": "test", "notes": ""})
         self.assert_fails_with("not in the \u00a74.20 vocabulary (V-53)")
 
+    def test_v55_process_token_out_of_vocab(self):
+        base = set(BASELINE.get("V-55", []))
+        self.edit_rows("sites_OH.csv",
+                       lambda r: r["site_id"] not in base,
+                       lambda r: r.update(processes="not_a_process_token"))
+        self.assert_fails_with("not in SCHEMA §3.1/§3.2 vocabulary")
+
+    def test_v55_baselined_row_only_warns(self):
+        base = sorted(BASELINE.get("V-55", []))
+        self.assertTrue(base, "V-55 baseline must not be empty")
+        target = base[0]
+        idcol = "site_id" if target.startswith("SITE") else "org_id"
+        pat = "sites_*.csv" if target.startswith("SITE") else "organizations_*.csv"
+        hit = None
+        for path in sorted(self.data.glob(pat)):
+            with open(path, newline="", encoding="utf-8") as f:
+                if any(r[idcol] == target for r in csv.DictReader(f)):
+                    hit = path.name; break
+        self.assertIsNotNone(hit, f"{target} not found in any shard")
+        self.edit_rows(hit,
+                       lambda r: r[idcol] == target,
+                       lambda r: r.update(processes="not_a_process_token"))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
     def test_pristine_tree_passes(self):
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-2000:])
