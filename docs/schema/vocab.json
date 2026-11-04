@@ -137,7 +137,8 @@
     "existence",
     "liveness",
     "parent",
-    "scope"
+    "scope",
+    "size_band"
    ]
   },
   "CLASS_CEIL": {
