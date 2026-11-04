@@ -1,0 +1,23 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-WV-00,"TREPLAR INC","Martinsburg",VERIFIED,"Two federal sources: FRS 110072236638 + ITA 1533255 + OSHA 347303539 (scope from federal NAICS)",SITE-006074
+QMS-WV-01,"PACTIV PACKAGING INC","Mineral Wells",VERIFIED,"Two federal sources: FRS 110070279485 + ITA 1493158 + OSHA 347787988 (scope from federal NAICS)",SITE-006075
+QMS-WV-02,"AUTOMATED PACKAGING SYSTEMS INC","Keyser",VERIFIED,"Two federal sources: FRS 110070639721 + ITA 802013 + OSHA 343723565 (scope from federal NAICS)",SITE-006076
+QMS-WV-03,"SILGAN PLASTICS","Triadelphia",VERIFIED,"Two federal sources: FRS 110070645253 + ITA 666909 + OSHA 345424279 (scope from federal NAICS)",SITE-006077
+QMS-WV-04,"BRENTWOOD INDUSTRIES, INC.,  MARTINSBURG","Martinsburg",VERIFIED,"Two federal sources: FRS 110008192909 + ITA 799140 + OSHA 348831603 (scope from federal NAICS)",SITE-006078
+QMS-WV-05,"CHEM-PAK INC","Martinsburg",STILL_UNCERTAIN,"Whether Chem-Pak formulates polymer coatings/adhesives at 242 Corning Way or only fills aerosols (NAICS 324191/325510/325998 mixed).",
+QMS-WV-06,"ISCO INDUSTRIES LLC","Martinsburg",VERIFIED,"Two federal sources: FRS 110070646040 + ITA 958826 + OSHA 344586805 (scope from federal NAICS)",SITE-006079
+QMS-WV-07,"COLUMBIA PAINT CO.","Huntington",VERIFIED,"Two federal sources: FRS 110000344495 + ITA 1289509 + OSHA 347255879 (scope from federal NAICS)",SITE-006080
+QMS-WV-08,"SI GROUP INC - SOUTH PLANT","Morgantown",STILL_UNCERTAIN,"Which products SI Group makes at the Morgantown South Plant (polymer additives/resins vs other intermediates; NAICS 325199).",
+QMS-WV-09,"ICL-IP AMERICA INC. GALLIPOLIS FERRY SITE","Gallipolis Ferry",STILL_UNCERTAIN,"Whether ICL-IP Gallipolis Ferry products are polymer flame-retardant additives (NAICS 325199 does not say).",
+QMS-WV-10,"INNOVATIVE WATER CARE, LLC.","South Charleston",REJECT,"Pool/water sanitizer chemicals (calcium hypochlorite), not polymer: ITA CY2025 record filed 2026-08-04 NAICS 325180 inorganic chemicals.",
+QMS-WV-11,"ZIMS BAGGING CO INC","Prichard",VERIFIED,"Two federal sources: FRS 110070636551 + ITA 982485 (scope from federal NAICS)",SITE-006081
+QMS-WV-12,"UNION CARBIDE CORPORATION - UCC TECHNOLOGY PARK OPERATIONS","South Charleston",STILL_UNCERTAIN,"Whether UCC Technology Park South Charleston runs polymer production (secondary NAICS 325211) or only R&D/pilot operations.",
+QMS-WV-13,"TROY GROUP, INC.,  WHEELING","Wheeling",VERIFIED,"Two federal sources: FRS 110007872757 + ITA 1265007 (scope from federal NAICS)",SITE-006082
+QMS-WV-14,"AC & S, INC.","Nitro",STILL_UNCERTAIN,"What AC & S makes at 150 Plant Rd, Nitro (NAICS 325199/325998 - polymer or not).",
+QMS-WV-15,"ALLNEX USA INC","Belmont",VERIFIED,"Two federal sources: FRS 110060257742 + ITA 1435145 (scope from federal NAICS)",SITE-006083
+QMS-WV-16,"MAAX U.S. CORP","Martinsburg",VERIFIED,"Two federal sources: FRS 110040877806 + OSHA 345521306 (scope from federal NAICS)",SITE-006084
+QMS-WV-17,"NICHE POLYMER LLC","Ravenswood",VERIFIED,"Own site https://www.nichepolymer.com/contactus/ (scope from federal NAICS)",SITE-006085
+QMS-WV-18,"Westlake Natrium, LLC","Proctor",REJECT,"Chlor-alkali (chlorine/caustic) plant, not polymer: ITA CY2025 record filed 2026-01-30 NAICS 325180.",
+QMS-WV-19,"Logoplaste, Tabler Station LLC","Inwood",VERIFIED,"Two federal sources: ITA 417883 + OSHA 344677745 (scope from federal NAICS)",SITE-006086
+QMS-WV-20,"Sprouse Building Products, LLC","New Martinsville",VERIFIED,"Two federal sources: ITA 1261021 + OSHA 347660532 (scope from federal NAICS)",SITE-006087
+QMS-WV-21,"TeMa North America LLC","Kearneysville",VERIFIED,"Two federal sources: ITA 1508671 + OSHA 348935008 (scope from federal NAICS)",SITE-006088
