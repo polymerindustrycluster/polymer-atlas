@@ -1,7 +1,13 @@
-# Owner battery: 2026-11-04 (proposed, not yet ruled)
+# Owner battery: 2026-11-04
+
+> **RULED 2026-11-04: every item (a), as recommended.** The repo owner ruled in session, as multiple choice. The items
+> are B-PARENT, B-SCOPE, B-NEWS, B-LINKEDIN, B-ARCHIVE, B-ALIAS, B-GUARDS and B-SHARD.
+> - Each item is applied in its own PR, which cites this file.
+> - Schema changes land as dated SCHEMA revisions.
+> - B-SHARD needs no change: foreign plants stay held.
 
 Every item needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation, marked (a), with the
-evidence behind it. Nothing these items gate has been applied: the rows they affect are held in the PRs named below.
+evidence behind it.
 
 ## B-PARENT: does a parent's or brand owner's page count as `own_site`? (SCHEMA §4.13)
 SCHEMA §4.13 defines `own_site` as "the entity's own domain / own issued document". Evidence repair round 2 (#117)
