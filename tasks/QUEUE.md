@@ -270,3 +270,4 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `in-pr:claude-code 2026-11-03` **Evidence repair pass** (`tasks/evidence-repair-2026-11-03/`): 1,139 weak own_site rows re-checked raw; +81 replacement evidence rows (address 49, parent 25, existence 7), all quotes raw-checked.
 - [ ] `open` **Evidence repair round 2:** 168 scope rows judged PARTIAL/NOT_SUPPORTED/WRONG_PAGE (mostly corporate pages that do not name the site) and 109 address rows with city but no street; plus the status/parent leads in the repair README (Viskase Osceola closure, AquaWorx parent, AOC/Nippon Paint, TotalEnergies parent, Janco, Pioneer Plastics, Kyowa).
 - [x] `claimed:grok 2026-11-04` DE skimpy-state wave (tasks/de-skimpy-2026-11-04): 6 site + 4 org creates, PR on agent/grok/de-skimpy
+- [x] `claimed:grok 2026-11-04` ID skimpy-state wave (tasks/id-skimpy-2026-11-04), PR on agent/grok/id-skimpy
