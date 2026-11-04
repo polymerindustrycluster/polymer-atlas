@@ -1,0 +1,439 @@
+{
+ "110000467236": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000467236",
+     "FacilityName": "LEXMARK INTERNATIONAL INC",
+     "LocationAddress": "6555 MONARCH RD.",
+     "SupplementalLocation": null,
+     "CityName": "LONGMONT",
+     "CountyName": "BOULDER",
+     "StateAbbr": "CO",
+     "ZipCode": "80503",
+     "FIPSCode": "08013",
+     "Latitude83": "40.092803",
+     "Longitude83": "-105.20098"
+    }
+   ]
+  }
+ },
+ "110001435242": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001435242",
+     "FacilityName": "PLASTICS DESIGN & MFG INC",
+     "LocationAddress": "1955 S CHEROKEE ST",
+     "SupplementalLocation": null,
+     "CityName": "DENVER",
+     "CountyName": "DENVER",
+     "StateAbbr": "CO",
+     "ZipCode": "802233914",
+     "FIPSCode": "08031",
+     "Latitude83": "39.68109",
+     "Longitude83": "-104.99108"
+    }
+   ]
+  }
+ },
+ "110058215792": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110058215792",
+     "FacilityName": "J-M MANUFACTURING CO., INC. DBA JM EAGLE",
+     "LocationAddress": "1742 E. PLATTEVILLE BLVD.",
+     "SupplementalLocation": null,
+     "CityName": "PUEBLO WEST",
+     "CountyName": "PUEBLO",
+     "StateAbbr": "CO",
+     "ZipCode": "81007",
+     "FIPSCode": "08101",
+     "Latitude83": "38.3452",
+     "Longitude83": "-104.65192"
+    }
+   ]
+  }
+ },
+ "110009557862": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110009557862",
+     "FacilityName": "COLORADO PLASTICARD INC",
+     "LocationAddress": "10368 WEST CENTENNIAL ROAD",
+     "SupplementalLocation": null,
+     "CityName": "LITTLETON",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "CO",
+     "ZipCode": "80127-4295",
+     "FIPSCode": "08059",
+     "Latitude83": "39.56747",
+     "Longitude83": "-105.11491"
+    }
+   ]
+  }
+ },
+ "110000467469": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000467469",
+     "FacilityName": "BOULDER SCIENTIFIC CO - MEAD FACILITY",
+     "LocationAddress": "598 3RD STREET",
+     "SupplementalLocation": "P.O. BOX  548",
+     "CityName": "MEAD",
+     "CountyName": "WELD",
+     "StateAbbr": "CO",
+     "ZipCode": "80542",
+     "FIPSCode": "CO123",
+     "Latitude83": "40.238056",
+     "Longitude83": "-104.998056"
+    }
+   ]
+  }
+ },
+ "110043786356": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043786356",
+     "FacilityName": "KMG ELECTRONIC CHEMICALS INC",
+     "LocationAddress": "250 WILLIAM WHITE BLVD",
+     "SupplementalLocation": null,
+     "CityName": "PUEBLO",
+     "CountyName": "PUEBLO",
+     "StateAbbr": "CO",
+     "ZipCode": "81001",
+     "FIPSCode": "08101",
+     "Latitude83": "38.276933",
+     "Longitude83": "-104.523808"
+    }
+   ]
+  }
+ },
+ "110012253505": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012253505",
+     "FacilityName": "ASSOCIATED THERMOFORMING INC",
+     "LocationAddress": "765 2ND ST",
+     "SupplementalLocation": null,
+     "CityName": "BERTHOUD",
+     "CountyName": "LARIMER",
+     "StateAbbr": "CO",
+     "ZipCode": "80513",
+     "FIPSCode": "08069",
+     "Latitude83": "40.30809",
+     "Longitude83": "-105.07608"
+    }
+   ]
+  }
+ },
+ "110044927201": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110044927201",
+     "FacilityName": "ERA - A WATERS COMPANY",
+     "LocationAddress": "16341 TABLE MOUNTAIN PKWY",
+     "SupplementalLocation": null,
+     "CityName": "GOLDEN",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "CO",
+     "ZipCode": "80403",
+     "FIPSCode": "08059",
+     "Latitude83": "39.78269",
+     "Longitude83": "-105.18475"
+    }
+   ]
+  }
+ },
+ "110001399479": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001399479",
+     "FacilityName": "REYNOLDS POLYMER TECHNOLOGY INCORPORATED",
+     "LocationAddress": "607 HOLLINGSWORTH ST",
+     "SupplementalLocation": null,
+     "CityName": "GRAND JUNCTION",
+     "CountyName": "MESA",
+     "StateAbbr": "CO",
+     "ZipCode": "81505",
+     "FIPSCode": "08077",
+     "Latitude83": "39.09344",
+     "Longitude83": "-108.58283"
+    }
+   ]
+  }
+ },
+ "110001399326": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001399326",
+     "FacilityName": "CONTAINER INDUSTRIES INC",
+     "LocationAddress": "12850 EAST 40TH AVENUE SUITE 82",
+     "SupplementalLocation": null,
+     "CityName": "DENVER",
+     "CountyName": "DENVER",
+     "StateAbbr": "CO",
+     "ZipCode": "80239-3400",
+     "FIPSCode": "08031",
+     "Latitude83": "39.77283",
+     "Longitude83": "-104.83851"
+    }
+   ]
+  }
+ },
+ "110070431083": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070431083",
+     "FacilityName": "MOLECULAR PRODUCTS - LOUISVILLE PLANT",
+     "LocationAddress": "633 CTC BLVD",
+     "SupplementalLocation": null,
+     "CityName": "LOUISVILLE",
+     "CountyName": "BOULDER",
+     "StateAbbr": "CO",
+     "ZipCode": "80027",
+     "FIPSCode": "08013",
+     "Latitude83": "39.965156",
+     "Longitude83": "-105.11243"
+    }
+   ]
+  }
+ },
+ "110022514108": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022514108",
+     "FacilityName": "BOULDER SCIENTIFIC COMPANY LLC",
+     "LocationAddress": "4161 SPECIALTY PLACE",
+     "SupplementalLocation": null,
+     "CityName": "LONGMONT",
+     "CountyName": "WELD",
+     "StateAbbr": "CO",
+     "ZipCode": "80504",
+     "FIPSCode": "08123",
+     "Latitude83": "40.14398",
+     "Longitude83": "-104.97666"
+    }
+   ]
+  }
+ },
+ "110007351132": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007351132",
+     "FacilityName": "SONOCO PROTECTIVE SOLUTIONS, INC.",
+     "LocationAddress": "1100 GARDEN OF THE GODS RD",
+     "SupplementalLocation": null,
+     "CityName": "COLORADO SPRINGS",
+     "CountyName": "EL PASO",
+     "StateAbbr": "CO",
+     "ZipCode": "80907",
+     "FIPSCode": "08041",
+     "Latitude83": "38.89664",
+     "Longitude83": "-104.84815"
+    }
+   ]
+  }
+ },
+ "110000467511": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000467511",
+     "FacilityName": "CENTRAL PRODUCTS COMPANY",
+     "LocationAddress": "1095 SOUTH 4TH AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "BRIGHTON",
+     "CountyName": "ADAMS",
+     "StateAbbr": "CO",
+     "ZipCode": "806016745",
+     "FIPSCode": "08001",
+     "Latitude83": "39.96946",
+     "Longitude83": "-104.81938"
+    }
+   ]
+  }
+ },
+ "110070864106": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070864106",
+     "FacilityName": "JORDAN PROCESS LLC",
+     "LocationAddress": "23298 US HWY 160",
+     "SupplementalLocation": null,
+     "CityName": "SPRINGFIELD",
+     "CountyName": "BACA",
+     "StateAbbr": "CO",
+     "ZipCode": "81073",
+     "FIPSCode": "08009",
+     "Latitude83": "37.381843",
+     "Longitude83": "-102.661077"
+    }
+   ]
+  }
+ },
+ "110012624678": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012624678",
+     "FacilityName": "FRONT RANGE TOOLING INC",
+     "LocationAddress": "7700 MILLER DR",
+     "SupplementalLocation": null,
+     "CityName": "FREDERICK",
+     "CountyName": "WELD",
+     "StateAbbr": "CO",
+     "ZipCode": "805045454",
+     "FIPSCode": "08123",
+     "Latitude83": "40.11375",
+     "Longitude83": "-104.9724"
+    }
+   ]
+  }
+ },
+ "110024451797": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110024451797",
+     "FacilityName": "ACH FOAM TECHNOLOGIES",
+     "LocationAddress": "5250 SHERMAN STREET",
+     "SupplementalLocation": null,
+     "CityName": "DENVER",
+     "CountyName": "DENVER",
+     "StateAbbr": "CO",
+     "ZipCode": "80216-1938",
+     "FIPSCode": "08031",
+     "Latitude83": "39.7917",
+     "Longitude83": "-104.98519"
+    }
+   ]
+  }
+ },
+ "110001435215": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001435215",
+     "FacilityName": "AMCOR RIGID PLASTICS",
+     "LocationAddress": "4990 IRONTON STREET",
+     "SupplementalLocation": null,
+     "CityName": "DENVER",
+     "CountyName": "DENVER",
+     "StateAbbr": "CO",
+     "ZipCode": "80239-2410",
+     "FIPSCode": "08031",
+     "Latitude83": "39.78729",
+     "Longitude83": "-104.86329"
+    }
+   ]
+  }
+ },
+ "110001434065": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001434065",
+     "FacilityName": "CIRCULAR TECHNOLOGIES",
+     "LocationAddress": "3275 PRAIRIE AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "BOULDER",
+     "CountyName": "BOULDER",
+     "StateAbbr": "CO",
+     "ZipCode": "80301-2507",
+     "FIPSCode": "08013",
+     "Latitude83": "40.02198",
+     "Longitude83": "-105.25052"
+    }
+   ]
+  }
+ },
+ "110070511609": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070511609",
+     "FacilityName": "ALTIUM PACKAGING",
+     "LocationAddress": "3865 GRAPE ST",
+     "SupplementalLocation": null,
+     "CityName": "DENVER",
+     "CountyName": "DENVER",
+     "StateAbbr": "CO",
+     "ZipCode": "80207",
+     "FIPSCode": "08031",
+     "Latitude83": "39.770654",
+     "Longitude83": "-104.924603"
+    }
+   ]
+  }
+ },
+ "110031306272": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031306272",
+     "FacilityName": "CARESTREAM HEALTH INC - WINDSOR FACILITY",
+     "LocationAddress": "2000 HOWARD SMITH AVE W",
+     "SupplementalLocation": null,
+     "CityName": "WINDSOR",
+     "CountyName": "WELD",
+     "StateAbbr": "CO",
+     "ZipCode": "80550",
+     "FIPSCode": "08123",
+     "Latitude83": "40.45839",
+     "Longitude83": "-104.87419"
+    }
+   ]
+  }
+ },
+ "110001965437": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001965437",
+     "FacilityName": "CCW PRODUCTS INC",
+     "LocationAddress": "5861 TENNYSON STREET",
+     "SupplementalLocation": null,
+     "CityName": "ARVADA",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "CO",
+     "ZipCode": "80003-6902",
+     "FIPSCode": "08059",
+     "Latitude83": "39.8035",
+     "Longitude83": "-105.04396"
+    }
+   ]
+  }
+ },
+ "110002999505": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002999505",
+     "FacilityName": "PLASTICS DESIGN & MANUFACTURING",
+     "LocationAddress": "6284 S NOME CT",
+     "SupplementalLocation": null,
+     "CityName": "ENGLEWOOD",
+     "CountyName": "ARAPAHOE",
+     "StateAbbr": "CO",
+     "ZipCode": "80111-6834",
+     "FIPSCode": "08005",
+     "Latitude83": "39.604129",
+     "Longitude83": "-104.852891"
+    }
+   ]
+  }
+ }
+}

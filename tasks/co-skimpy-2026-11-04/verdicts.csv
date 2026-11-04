@@ -1,0 +1,31 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-CO-00,"LEXMARK INTERNATIONAL INC","Longmont",VERIFIED,"Two federal sources: FRS 110000467236 + ITA 275406 + OSHA 345402408 (scope from federal NAICS)",SITE-006141
+QMS-CO-01,"PLASTICS DESIGN & MFG INC","Denver",VERIFIED,"Two federal sources: FRS 110001435242 + ITA 1310131 + OSHA 345631667 (scope from federal NAICS)",SITE-006142
+QMS-CO-02,"J-M MANUFACTURING CO., INC. DBA JM EAGLE","Pueblo West",VERIFIED,"Two federal sources: FRS 110058215792 + ITA 1445479 + OSHA 347566838 (scope from federal NAICS)",SITE-006143
+QMS-CO-03,"COLORADO PLASTICARD INC","Littleton",VERIFIED,"Two federal sources: FRS 110009557862 + ITA 1373753 (scope from federal NAICS)",SITE-006144
+QMS-CO-04,"BOULDER SCIENTIFIC CO - MEAD FACILITY","Mead",STILL_UNCERTAIN,"Whether Boulder Scientific Mead makes polymer-scope products (polyolefin catalysts are not polymers; NAICS 325199/325412).",
+QMS-CO-05,"KMG ELECTRONIC CHEMICALS INC","Pueblo",REJECT,"Electronic-grade acids (inorganic), not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-CO-06,"ASSOCIATED THERMOFORMING INC","Berthoud",VERIFIED,"Two federal sources: FRS 110012253505 + ITA 326313 (scope from federal NAICS)",SITE-006145
+QMS-CO-07,"ERA - A WATERS COMPANY","Golden",STILL_UNCERTAIN,"Whether ERA (Waters) Golden makes any polymer products (NAICS 325998 reference standards).",
+QMS-CO-08,"REYNOLDS POLYMER TECHNOLOGY INCORPORATED","Grand Junction",VERIFIED,"Two federal sources: FRS 110001399479 + ITA 48652 (scope from federal NAICS)",SITE-006146
+QMS-CO-09,"CONTAINER INDUSTRIES INC","Denver",VERIFIED,"Two federal sources: FRS 110001399326 + ITA 1024267 (scope from federal NAICS)",SITE-006147
+QMS-CO-10,"MOLECULAR PRODUCTS - LOUISVILLE PLANT","Louisville",STILL_UNCERTAIN,"Whether Molecular Products Louisville makes polymer products (NAICS 325998; CO2 absorbents are inorganic).",
+QMS-CO-11,"BOULDER SCIENTIFIC COMPANY LLC","Longmont",STILL_UNCERTAIN,"Whether Boulder Scientific Longmont makes polymer-scope products (NAICS 325199).",
+QMS-CO-12,"SONOCO PROTECTIVE SOLUTIONS, INC.","Colorado Springs",VERIFIED,"Two federal sources: FRS 110007351132 + ITA 1241188 (scope from federal NAICS)",SITE-006148
+QMS-CO-13,"CENTRAL PRODUCTS COMPANY","Brighton",VERIFIED,"Two federal sources: FRS 110000467511 + ITA 798576 (scope from federal NAICS)",SITE-006149
+QMS-CO-14,"JORDAN PROCESS LLC","Springfield",REJECT,"Medicinal/botanical chemicals, not polymer: ITA CY2025 record NAICS 325411 (fetched 2026-11-04).",
+QMS-CO-15,"FRONT RANGE TOOLING INC","Frederick",VERIFIED,"Two federal sources: FRS 110012624678 + ITA 84990 (scope from federal NAICS)",SITE-006150
+QMS-CO-16,"ACH FOAM TECHNOLOGIES","Denver",VERIFIED,"Two federal sources: FRS 110024451797 + ITA 663583 (scope from federal NAICS)",SITE-006151
+QMS-CO-17,"AMCOR RIGID PLASTICS","Denver",VERIFIED,"Two federal sources: FRS 110001435215 + ITA 1095636 (scope from federal NAICS)",SITE-006152
+QMS-CO-18,"CIRCULAR TECHNOLOGIES","Boulder",VERIFIED,"Two federal sources: FRS 110001434065 + ITA 1257297 (scope from federal NAICS)",SITE-006153
+QMS-CO-19,"ALTIUM PACKAGING","Denver",VERIFIED,"Two federal sources: FRS 110070511609 + ITA 803403 (scope from federal NAICS)",SITE-006154
+QMS-CO-20,"CARESTREAM HEALTH INC - WINDSOR FACILITY","Windsor",VERIFIED,"Two federal sources: FRS 110031306272 + OSHA 346445646 (scope from federal NAICS)",SITE-006155
+QMS-CO-21,"CCW PRODUCTS INC","Arvada",VERIFIED,"Two federal sources: FRS 110001965437 + OSHA 347468613 (scope from federal NAICS)",SITE-006156
+QMS-CO-22,"PLASTICS DESIGN & MANUFACTURING","Englewood",VERIFIED,"Two federal sources: FRS 110002999505 + OSHA 348841818 (scope from federal NAICS)",SITE-006157
+QMS-CO-23,"KONG Colorado","Golden",VERIFIED,"Two federal sources: ITA 1392791 + OSHA 346335045 (scope from federal NAICS)",SITE-006158
+QMS-CO-24,"Prime Window Systems","Denver",VERIFIED,"Two federal sources: ITA 1067088 + OSHA 348051509 (scope from federal NAICS)",SITE-006159
+QMS-CO-25,"American Converters Longmont","Longmont",VERIFIED,"Two federal sources: ITA 1436749 + OSHA 345916332 (scope from federal NAICS)",SITE-006160
+QMS-CO-26,"FormTight, Inc","Denver",VERIFIED,"Two federal sources: ITA 1459781 + OSHA 347639841 (scope from federal NAICS)",SITE-006161
+QMS-CO-27,"Future Foam, Inc","Denver",VERIFIED,"Two federal sources: ITA 1090574 + OSHA 346377211 (scope from federal NAICS)",SITE-006162
+QMS-CO-28,"Pretred, Inc.","Aurora",VERIFIED,"Already held as SITE-004338 Pretred Headquarters and Plant, Aurora (held row lacks a street); not re-created.",SITE-004338 (already held, not re-created)
+QMS-CO-29,"Oribi Manufacturing, LLC","Commerce City",VERIFIED,"Two federal sources: ITA 1399148 + OSHA 343815072 (scope from federal NAICS)",SITE-006163
