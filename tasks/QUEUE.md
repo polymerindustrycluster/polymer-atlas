@@ -274,3 +274,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [x] `claimed:grok 2026-11-04` NH skimpy-state wave (tasks/nh-skimpy-2026-11-04), PR on agent/grok/nh-skimpy
 - [x] `claimed:grok 2026-11-04` RI skimpy-state wave (tasks/ri-skimpy-2026-11-04), PR on agent/grok/ri-skimpy
 - [x] `claimed:grok 2026-11-04` NV skimpy-state wave (tasks/nv-skimpy-2026-11-04), PR on agent/grok/nv-skimpy
+
+## Campaign claims (2026-11-04, see tasks/CAMPAIGN.md)
+- [ ] `claimed:claude-code 2026-11-04` **STRONG state waves:** MI, IL (in progress); CA, TX, FL, GA, WI, MA (next). IN pilot = #75.
+- [ ] `claimed:claude-code 2026-11-04` **PIC-18 capability pass + record-health fixes; evidence repair round 2 (scope).**
