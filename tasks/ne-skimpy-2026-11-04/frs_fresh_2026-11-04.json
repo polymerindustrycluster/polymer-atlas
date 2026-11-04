@@ -1,0 +1,268 @@
+{
+ "110002358902": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002358902",
+     "FacilityName": "AIRLITE PLASTICS CO",
+     "LocationAddress": "6110 ABBOTT DR",
+     "SupplementalLocation": null,
+     "CityName": "OMAHA",
+     "CountyName": "DOUGLAS",
+     "StateAbbr": "NE",
+     "ZipCode": "681102834",
+     "FIPSCode": "31055",
+     "Latitude83": "41.314334",
+     "Longitude83": "-95.9177"
+    }
+   ]
+  }
+ },
+ "110015738264": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110015738264",
+     "FacilityName": "WEST PHARMACEUTICAL SERVICES",
+     "LocationAddress": "923 WEST RAILROAD STREET",
+     "SupplementalLocation": null,
+     "CityName": "KEARNEY",
+     "CountyName": "BUFFALO",
+     "StateAbbr": "NE",
+     "ZipCode": "68845-5128",
+     "FIPSCode": "31019",
+     "Latitude83": "40.694716",
+     "Longitude83": "-99.095"
+    }
+   ]
+  }
+ },
+ "110059765696": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110059765696",
+     "FacilityName": "CARGILL - BLAIR FACILITY",
+     "LocationAddress": "650 INDUSTRIAL PARK DR",
+     "SupplementalLocation": null,
+     "CityName": "BLAIR",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "NE",
+     "ZipCode": "68008",
+     "FIPSCode": "31177",
+     "Latitude83": "41.53789",
+     "Longitude83": "-96.0977"
+    }
+   ]
+  }
+ },
+ "110012656116": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012656116",
+     "FacilityName": "PLASTILITE CORPORATION",
+     "LocationAddress": "9409 NORTH 45TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "OMAHA",
+     "CountyName": "DOUGLAS",
+     "StateAbbr": "NE",
+     "ZipCode": "68152-1305",
+     "FIPSCode": "31055",
+     "Latitude83": "41.34544",
+     "Longitude83": "-95.97858"
+    }
+   ]
+  }
+ },
+ "110001516501": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001516501",
+     "FacilityName": "DIAMOND PLASTICS CORP",
+     "LocationAddress": "1212 JOHNSTOWN RD",
+     "SupplementalLocation": "SW CNR JOHNSTOWN RD & US HWY 30 W",
+     "CityName": "GRAND ISLAND",
+     "CountyName": "HALL",
+     "StateAbbr": "NE",
+     "ZipCode": "68803-5011",
+     "FIPSCode": "NE079",
+     "Latitude83": "40.909",
+     "Longitude83": "-98.39119"
+    }
+   ]
+  }
+ },
+ "110011042059": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110011042059",
+     "FacilityName": "SNYDER INDUSTRIES",
+     "LocationAddress": "4700 FREMONT STREET",
+     "SupplementalLocation": null,
+     "CityName": "LINCOLN",
+     "CountyName": "LANCASTER",
+     "StateAbbr": "NE",
+     "ZipCode": "68504-1694",
+     "FIPSCode": "31109",
+     "Latitude83": "40.84859",
+     "Longitude83": "-96.65474"
+    }
+   ]
+  }
+ },
+ "110001516832": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001516832",
+     "FacilityName": "JM EAGLE",
+     "LocationAddress": "146 NORTH MAPLE AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "HASTINGS",
+     "CountyName": "ADAMS",
+     "StateAbbr": "NE",
+     "ZipCode": "68901-4745",
+     "FIPSCode": "31001",
+     "Latitude83": "40.5849",
+     "Longitude83": "-98.40956"
+    }
+   ]
+  }
+ },
+ "110070239915": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070239915",
+     "FacilityName": "KAAPA ETHANOL LLC",
+     "LocationAddress": "8450 KAAPA LN",
+     "SupplementalLocation": "PO BOX 238",
+     "CityName": "MINDEN",
+     "CountyName": "KEARNEY",
+     "StateAbbr": "NE",
+     "ZipCode": "68959",
+     "FIPSCode": "31099",
+     "Latitude83": "40.497473",
+     "Longitude83": "-98.939369"
+    }
+   ]
+  }
+ },
+ "110022534792": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022534792",
+     "FacilityName": "WATER ENGINEERING INCORPORATED",
+     "LocationAddress": "1574 COUNTY RD 10",
+     "SupplementalLocation": null,
+     "CityName": "MEAD",
+     "CountyName": "SAUNDERS",
+     "StateAbbr": "NE",
+     "ZipCode": "68041-4028",
+     "FIPSCode": "31155",
+     "Latitude83": "41.22989",
+     "Longitude83": "-96.48349"
+    }
+   ]
+  }
+ },
+ "110069463020": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069463020",
+     "FacilityName": "HEXAGON LINCOLN, LLC",
+     "LocationAddress": "5150 NW 40TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "LINCOLN",
+     "CountyName": "LANCASTER",
+     "StateAbbr": "NE",
+     "ZipCode": "68524",
+     "FIPSCode": "31109",
+     "Latitude83": "40.86389",
+     "Longitude83": "-96.777785"
+    }
+   ]
+  }
+ },
+ "110000615488": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000615488",
+     "FacilityName": "GENERAL DYNAMICS",
+     "LocationAddress": "4300 INDUSTRIAL AVENUE",
+     "SupplementalLocation": "MAIN PLANT",
+     "CityName": "LINCOLN",
+     "CountyName": "LANCASTER",
+     "StateAbbr": "NE",
+     "ZipCode": "68504-1107",
+     "FIPSCode": "31109",
+     "Latitude83": "40.85552",
+     "Longitude83": "-96.67967"
+    }
+   ]
+  }
+ },
+ "110015848680": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110015848680",
+     "FacilityName": "WILKINSON MANUFACTURING CO",
+     "LocationAddress": "1112 MADISON ST",
+     "SupplementalLocation": null,
+     "CityName": "FORT CALHOUN",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "NE",
+     "ZipCode": "680230369",
+     "FIPSCode": "31177",
+     "Latitude83": "41.453696",
+     "Longitude83": "-96.022548"
+    }
+   ]
+  }
+ },
+ "110057762808": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110057762808",
+     "FacilityName": "DENVER PLASTICS NEBRASKA LTD. PARTNERSHIP",
+     "LocationAddress": "2355 ASPEN STREET",
+     "SupplementalLocation": null,
+     "CityName": "WAHOO",
+     "CountyName": "SAUNDERS",
+     "StateAbbr": "NE",
+     "ZipCode": "68066",
+     "FIPSCode": "31155",
+     "Latitude83": "41.227526",
+     "Longitude83": "-96.606576"
+    }
+   ]
+  }
+ },
+ "110002128741": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002128741",
+     "FacilityName": "FOAMEX INTL INC",
+     "LocationAddress": "5050 F ST.",
+     "SupplementalLocation": null,
+     "CityName": "OMAHA",
+     "CountyName": "DOUGLAS",
+     "StateAbbr": "NE",
+     "ZipCode": "681171362",
+     "FIPSCode": "31055",
+     "Latitude83": "41.21974",
+     "Longitude83": "-95.99182"
+    }
+   ]
+  }
+ }
+}
