@@ -1,0 +1,38 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-WA-00,"PACIFIC RESEARCH LABORATORIES","Vashon",VERIFIED,"Two federal sources: FRS 110016705332 + ITA 1472293 + OSHA 346725039 (scope from federal NAICS)",SITE-006190
+QMS-WA-01,"CH2O INCORPORATED","Olympia",REJECT,"Water-treatment inorganic chemicals, not polymer: ITA CY2025 record NAICS 325188/325998 (fetched 2026-11-04).",
+QMS-WA-02,"ADVANCED DRAINAGE SYSTEMS INC","Washougal",VERIFIED,"Two federal sources: FRS 110005323113 + ITA 1000470 + OSHA 344844212 (scope from federal NAICS)",SITE-006191
+QMS-WA-03,"ULTRA POLY INC","Tacoma",VERIFIED,"Two federal sources: FRS 110015537007 + ITA 686447 + OSHA 348719915 (scope from federal NAICS)",SITE-006192
+QMS-WA-04,"PREMIER PLASTICS","Tacoma",VERIFIED,"Two federal sources: FRS 110055010759 + ITA 1503621 + OSHA 345151039 (scope from federal NAICS)",SITE-006193
+QMS-WA-05,"SCOUGAL RUBBER CORP","Seattle",VERIFIED,"Two federal sources: FRS 110005324773 + ITA 1211251 + OSHA 346934938 (scope from federal NAICS)",SITE-006194
+QMS-WA-06,"WESTERN CONTAINER","Fife",VERIFIED,"Two federal sources: FRS 110064548306 + ITA 1267424 + OSHA 344826367 (scope from federal NAICS)",SITE-006195
+QMS-WA-07,"ADVANCED DRAINAGE SYSTEMS","Tumwater",VERIFIED,"Two federal sources: FRS 110071510918 + ITA 1000462 + OSHA 344363791 (scope from federal NAICS)",SITE-006196
+QMS-WA-08,"SHIELDS BAG AND PRINTING CO","Yakima",VERIFIED,"Two federal sources: FRS 110000491236 + ITA 688179 (scope from federal NAICS)",SITE-006197
+QMS-WA-09,"MILGARD MFG VINYL EXTRUSION M AND M","Fife",VERIFIED,"Two federal sources: FRS 110064017969 + ITA 1425961 (scope from federal NAICS)",SITE-006198
+QMS-WA-10,"OXARC INC PASCO","Pasco",REJECT,"Industrial gases, not polymer: ITA CY2025 record NAICS 325120 (fetched 2026-11-04).",
+QMS-WA-11,"SIMPSON TACOMA","Tacoma",REJECT,"Pulp and paper mill, not polymer: ITA CY2025 record NAICS 322110-322130 (fetched 2026-11-04).",
+QMS-WA-12,"PRC DESOTO INTERNATIONAL ASC SEATTLE","Woodinville",VERIFIED,"Two federal sources: FRS 110009509905 + ITA 1000598 (scope from federal NAICS)",SITE-006199
+QMS-WA-13,"HAYES CABINETS INC","Woodland",VERIFIED,"Two federal sources: FRS 110000902159 + ITA 1451496 (scope from federal NAICS)",SITE-006200
+QMS-WA-14,"CRESLINE NORTHWEST LLC","Chehalis",VERIFIED,"Two federal sources: FRS 110015548086 + ITA 498481 (scope from federal NAICS)",SITE-006201
+QMS-WA-15,"ALTIUM PACKAGING","Tukwila",VERIFIED,"Two federal sources: FRS 110071179682 + ITA 803529 (scope from federal NAICS)",SITE-006202
+QMS-WA-16,"COMPOSITES ONE LLC VANCOUVER","Vancouver",REJECT,"Distributor, not a manufacturer: ITA CY2025 record Composites One NAICS 424610 (fetched 2026-11-04).",
+QMS-WA-17,"GENERAL DYNAMICS OTS","Moses Lake",STILL_UNCERTAIN,"Whether GD-OTS Moses Lake makes polymer products (NAICS 325998, likely energetics); parent org pending in PR #56.",
+QMS-WA-18,"JELD WEN COATINGS TUKWILA","Tukwila",VERIFIED,"Two federal sources: FRS 110005394037 + ITA 1468357 (scope from federal NAICS)",SITE-006203
+QMS-WA-19,"JANICKI INDUSTRIES INC SW","Sedro-woolley",VERIFIED,"Two federal sources: FRS 110054932187 + OSHA 346789282 (scope from federal NAICS)",SITE-006204
+QMS-WA-20,"MOHAWK NORTHERN PLASTICS INC","Auburn",VERIFIED,"Two federal sources: FRS 110060261620 + OSHA 348635764 (scope from federal NAICS)",SITE-006205
+QMS-WA-21,"VAUPELL","Everett",VERIFIED,"Two federal sources: FRS 110000830101 + OSHA 349234302 (scope from federal NAICS)",SITE-006206
+QMS-WA-22,"PILLER AIMMCO GRANT ST","Washougal",VERIFIED,"Two federal sources: FRS 110037069276 + OSHA 345230882 (scope from federal NAICS)",SITE-006207
+QMS-WA-23,"DOLCO PACKAGING CORP","Wenatchee",VERIFIED,"Two federal sources: FRS 110000546632 + OSHA 347732158 (scope from federal NAICS)",SITE-006208
+QMS-WA-24,"KWIK LOK CORP","Yakima",VERIFIED,"Two federal sources: FRS 110005376958 + OSHA 344780408 (scope from federal NAICS)",SITE-006209
+QMS-WA-25,"LUMICOR","Renton",VERIFIED,"Two federal sources: FRS 110005363953 + OSHA 347000978 (scope from federal NAICS)",SITE-006210
+QMS-WA-26,"MW MANUFACTURERS INC. D/B/A PLY GEM PACIFIC WINDOWS","Auburn",VERIFIED,"Two federal sources: FRS 110071176889 + OSHA 348521170 (scope from federal NAICS)",SITE-006211
+QMS-WA-27,"SPECIFIED FITTINGS INC","Bellingham",VERIFIED,"Two federal sources: FRS 110037838098 + OSHA 346459662 (scope from federal NAICS)",SITE-006212
+QMS-WA-28,"CHINOOK INDUSTRIAL PARK","Union Gap",STILL_UNCERTAIN,"Operator at 'Chinook Industrial Park', 3400 Tacoma St, Union Gap (an industrial park name, not an operator) and what is molded there.",
+QMS-WA-29,"MCCONKEY AND CO INC","Sumner",VERIFIED,"Two federal sources: FRS 110005356131 + OSHA 344712963 (scope from federal NAICS)",SITE-006213
+QMS-WA-30,"SPECIALTY PRODUCTS","Lakewood",VERIFIED,"Two federal sources: FRS 110000490629 + OSHA 345165062 (scope from federal NAICS)",SITE-006214
+QMS-WA-31,"ASSOCIATED MATERIALS LLC","Fife",VERIFIED,"Two federal sources: FRS 110070247931 + OSHA 347911216 (scope from federal NAICS)",SITE-006215
+QMS-WA-32,"ESSEX LABORATORIES LLC","Chehalis",STILL_UNCERTAIN,"Whether Essex Laboratories Chehalis makes polymer products (NAICS 325998).",
+QMS-WA-33,"MACRO PLASTICS WASHINGTON","Union Gap",VERIFIED,"Two federal sources: FRS 110043335218 + OSHA 347739096 (scope from federal NAICS)",SITE-006216
+QMS-WA-34,"NORWESCO","Washougal",VERIFIED,"Two federal sources: FRS 110071180365 + OSHA 345426092 (scope from federal NAICS)",SITE-006217
+QMS-WA-35,"Accor Technology Inc.","East Wenatchee",VERIFIED,"Two federal sources: ITA 1130401 + OSHA 347170839 (scope from federal NAICS)",SITE-006218
+QMS-WA-36,"Innovative Compsite Engineering","White Salmon",VERIFIED,"Two federal sources: ITA 1442303 + OSHA 346072663 (scope from federal NAICS)",SITE-006219
