@@ -13,17 +13,23 @@ Base: main 9708c3a. No data files are edited. All evidence was fetched on 2026-1
    - CHECK: everything else.
 5. Witness-checked the own sites of the largest CHECK rows, ordered by employees then recency, plus their address-duplicates. That covered 36 rows. The other CHECK rows are STILL_UNCERTAIN, each with a settling fact.
 
-## Counts (rows)
+## Counts (rows), pass 2
 | Verdict | Rows |
 |---|---|
-| VERIFIED | 21 (15 distinct sites; 6 are same-address duplicates) |
-| REJECT | 25 (4 dated witness rejects + 21 non-manufacturing) |
-| STILL_UNCERTAIN | 349 |
+| VERIFIED | 26 (20 distinct sites) |
+| REJECT | 27 (6 dated witness rejects + 21 non-manufacturing) |
+| STILL_UNCERTAIN | 342 |
 | ALREADY_HELD | 29 |
 
-## Judgment calls
-- Two witnesses are employer ATS job postings: Latham on Greenhouse and Zenith/Mayzon on Paylocity. I accepted them as own-site witnesses.
-- Rows that share an address were collapsed into one site: UT-215/367/371, UT-139/366, UT-219/376, UT-220/378, NV-205/307.
-- Three rows have a state mis-key (ID-172, NV-207, NH-188). They stay uncertain and are not rejected.
+52 rows have been witness-checked so far, largest employers first. The rest carry settling facts.
+
+## Rulings applied (integrator, 2026-11-04)
+- Hiring-site postings are not witnesses. Latham (UT-378/220), Zenith/Mayzon (DE-243), Cornerstone (NH-180) and Corning (UT-217) moved back to STILL_UNCERTAIN.
+- Address-first dedupe is accepted. Each merge is flagged in the `address_merge_group` column.
+- Wrong-state rows carry `correct_state`: ID-172→IA, NV-207→AZ, NH-188→MA.
+
+## Other judgment calls
 - UT-138/238 (Convergent) defers to PR #77.
+- Autajon Nashua (NH-258) is rejected as out of polymer scope, based on its own site's product description.
+- Chem-Tainer Cranston (RI-260) is rejected on its RI Secretary of State revocation dated 2020-12-30.
 - Fetch failure was treated as availability, not absence. No licensed sources were used.
