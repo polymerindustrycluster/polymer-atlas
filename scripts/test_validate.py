@@ -79,6 +79,22 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assertIn(needle, out)
 
     # -- tests -----------------------------------------------------------
+    def test_site_other_note_columns_required(self):
+        for column in ("processes_other_note", "materials_other_note"):
+            with self.subTest(column=column):
+                path = sorted(self.data.glob("sites_*.csv"))[0]
+                original = path.read_bytes()
+                with path.open(newline="", encoding="utf-8") as handle:
+                    reader = csv.DictReader(handle)
+                    fields, rows = reader.fieldnames, list(reader)
+                with path.open("w", newline="", encoding="utf-8") as handle:
+                    writer = csv.DictWriter(handle, fieldnames=[f for f in fields if f != column],
+                                            extrasaction="ignore", lineterminator="\n")
+                    writer.writeheader()
+                    writer.writerows(rows)
+                self.assert_fails_with(f"missing v1.9.1 column {column}")
+                path.write_bytes(original)
+
     def append_row(self, fname, row):
         path = self.data / fname
         with open(path, newline="", encoding="utf-8") as f:

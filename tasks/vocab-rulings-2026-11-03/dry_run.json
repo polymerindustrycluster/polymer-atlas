@@ -1,0 +1,3610 @@
+{
+  "schema_terms_added": {
+    "processes": [
+      "compounding_unspecified",
+      "extrusion_unspecified",
+      "fabrication_unspecified",
+      "foam_production_unspecified",
+      "molding_unspecified",
+      "reaction_injection_molding",
+      "recycling_unspecified",
+      "rubber_molding_unspecified"
+    ],
+    "materials": [
+      "carbon_black",
+      "composites_unspecified",
+      "polymer_additives",
+      "thermoplastic_olefin_tpo"
+    ]
+  },
+  "reconciliation": {
+    "DROP_NOT_CAPABILITY": {
+      "tokens_matched": 199,
+      "tokens_changed": 199,
+      "tokens_held": 0,
+      "values": 16
+    },
+    "MAP": {
+      "tokens_matched": 476,
+      "tokens_changed": 476,
+      "tokens_held": 0,
+      "values": 59
+    },
+    "NEW_UMBRELLA": {
+      "tokens_matched": 415,
+      "tokens_changed": 415,
+      "tokens_held": 0,
+      "values": 32
+    },
+    "TO_NOTE": {
+      "tokens_matched": 391,
+      "tokens_changed": 381,
+      "tokens_held": 10,
+      "values": 41
+    },
+    "WRONG_FIELD": {
+      "tokens_matched": 580,
+      "tokens_changed": 0,
+      "tokens_held": 580,
+      "values": 16
+    }
+  },
+  "by_file_class": {
+    "sites": {
+      "DROP_NOT_CAPABILITY": {
+        "values": 16,
+        "tokens_matched": 197,
+        "tokens_changed": 197,
+        "tokens_held": 0,
+        "rows_matched": 181,
+        "rows_changed": 181,
+        "rows_held": 0
+      },
+      "MAP": {
+        "values": 59,
+        "tokens_matched": 469,
+        "tokens_changed": 469,
+        "tokens_held": 0,
+        "rows_matched": 379,
+        "rows_changed": 379,
+        "rows_held": 0
+      },
+      "NEW_UMBRELLA": {
+        "values": 32,
+        "tokens_matched": 408,
+        "tokens_changed": 408,
+        "tokens_held": 0,
+        "rows_matched": 355,
+        "rows_changed": 355,
+        "rows_held": 0
+      },
+      "TO_NOTE": {
+        "values": 41,
+        "tokens_matched": 381,
+        "tokens_changed": 381,
+        "tokens_held": 0,
+        "rows_matched": 321,
+        "rows_changed": 321,
+        "rows_held": 0
+      },
+      "WRONG_FIELD": {
+        "values": 16,
+        "tokens_matched": 381,
+        "tokens_changed": 0,
+        "tokens_held": 381,
+        "rows_matched": 329,
+        "rows_changed": 0,
+        "rows_held": 329
+      }
+    },
+    "organizations": {
+      "DROP_NOT_CAPABILITY": {
+        "values": 2,
+        "tokens_matched": 2,
+        "tokens_changed": 2,
+        "tokens_held": 0,
+        "rows_matched": 2,
+        "rows_changed": 2,
+        "rows_held": 0
+      },
+      "MAP": {
+        "values": 5,
+        "tokens_matched": 7,
+        "tokens_changed": 7,
+        "tokens_held": 0,
+        "rows_matched": 7,
+        "rows_changed": 7,
+        "rows_held": 0
+      },
+      "NEW_UMBRELLA": {
+        "values": 4,
+        "tokens_matched": 7,
+        "tokens_changed": 7,
+        "tokens_held": 0,
+        "rows_matched": 7,
+        "rows_changed": 7,
+        "rows_held": 0
+      },
+      "TO_NOTE": {
+        "values": 4,
+        "tokens_matched": 10,
+        "tokens_changed": 0,
+        "tokens_held": 10,
+        "rows_matched": 10,
+        "rows_changed": 0,
+        "rows_held": 10
+      },
+      "WRONG_FIELD": {
+        "values": 4,
+        "tokens_matched": 199,
+        "tokens_changed": 0,
+        "tokens_held": 199,
+        "rows_matched": 199,
+        "rows_changed": 0,
+        "rows_held": 199
+      }
+    }
+  },
+  "per_value": [
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "distribution",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 109,
+      "tokens_changed": 0,
+      "tokens_held": 109
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "machinery_equipment",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 63,
+      "tokens_changed": 0,
+      "tokens_held": 63
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "tooling_mold_die",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 54,
+      "tokens_changed": 0,
+      "tokens_held": 54
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "extrusion",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 68,
+      "tokens_changed": 68,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "fiberglass",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 61,
+      "tokens_changed": 61,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "compounding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 57,
+      "tokens_changed": 57,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "recycling_recovery",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 21,
+      "tokens_changed": 0,
+      "tokens_held": 21
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "plastic",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 33,
+      "tokens_changed": 33,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "acrylic",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 30,
+      "tokens_changed": 30,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 30,
+      "tokens_changed": 30,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "service",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 30,
+      "tokens_changed": 30,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "carbon black",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 27,
+      "tokens_changed": 27,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "plastics",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 26,
+      "tokens_changed": 26,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "plastic films",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 22,
+      "tokens_changed": 0,
+      "tokens_held": 22
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "machining",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 21,
+      "tokens_changed": 21,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "coating",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 18,
+      "tokens_changed": 18,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "molding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 18,
+      "tokens_changed": 18,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "gel coat",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 18,
+      "tokens_changed": 18,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "resins",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 18,
+      "tokens_changed": 18,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "gel coats",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 17,
+      "tokens_changed": 17,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "vulcanization",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 17,
+      "tokens_changed": 17,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "silica",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 17,
+      "tokens_changed": 17,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "plastic sheet",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 16,
+      "tokens_changed": 0,
+      "tokens_held": 16
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "tube",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 16,
+      "tokens_changed": 0,
+      "tokens_held": 16
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "fiberglass composites",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 15,
+      "tokens_changed": 15,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "converting",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 15,
+      "tokens_changed": 15,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "rod",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 15,
+      "tokens_changed": 0,
+      "tokens_held": 15
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "CNC machining",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 15,
+      "tokens_changed": 15,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "assembly",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 14,
+      "tokens_changed": 14,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "tooling",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "composites",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 14,
+      "tokens_changed": 14,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "color concentrates",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 14,
+      "tokens_changed": 14,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "ethylene",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 14,
+      "tokens_changed": 14,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "formaldehyde",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 13,
+      "tokens_changed": 13,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polymers",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 13,
+      "tokens_changed": 13,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "foam",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 12,
+      "tokens_changed": 12,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "glass fiber",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 13,
+      "tokens_changed": 13,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyethylene film",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 12,
+      "tokens_changed": 12,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "plastic film",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 12,
+      "tokens_changed": 0,
+      "tokens_held": 12
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyisocyanurate foam",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 12,
+      "tokens_changed": 12,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "tool steel",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 12,
+      "tokens_changed": 12,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "fiberglass-reinforced plastics",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 12,
+      "tokens_changed": 12,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "flexible polyurethane foam pouring",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "polyester resin synthesis",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "gel coat production",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "film",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 11,
+      "tokens_changed": 0,
+      "tokens_held": 11
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "hot melt adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "masterbatch",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "propylene",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyolefins",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 11,
+      "tokens_changed": 11,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "film extrusion",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 10,
+      "tokens_changed": 10,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polymer additives",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 10,
+      "tokens_changed": 10,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "die cutting",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 10,
+      "tokens_changed": 10,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "aramid",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "formaldehyde and resin manufacturing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "printing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "slitting",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "resin distribution",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 9,
+      "tokens_changed": 0,
+      "tokens_held": 9
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "resin",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "additives",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "steel",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "HDPE pipe",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "vinyl chloride monomer",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 9,
+      "tokens_changed": 9,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "cultured marble",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "styrene",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "acrylic adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "rubber chemicals",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "mixing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyurethane adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "vinyl",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 8,
+      "tokens_changed": 8,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "aluminum",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "cast_polymer",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 4,
+      "tokens_changed": 4,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "hoses",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 7,
+      "tokens_changed": 0,
+      "tokens_held": 7
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "SMC",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "sales",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "testing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "polyurethane foam production and fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "acrylic sheet",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyurethane systems",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "pyrolysis oil",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "rubber molding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "adhesive_formulating",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "specialty chemicals",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "sheet molding compound (SMC)",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 7,
+      "tokens_changed": 7,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "epoxy adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "equipment manufacturing",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 7,
+      "tokens_changed": 0,
+      "tokens_held": 7
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "chemical distribution",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 7,
+      "tokens_changed": 0,
+      "tokens_held": 7
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "coatings_formulation",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 4,
+      "tokens_changed": 4,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "grinding",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "carbon black manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "rubber belt and hose manufacturing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "belts",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 6,
+      "tokens_changed": 0,
+      "tokens_held": 6
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "EPDM rubber",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polymer concrete",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "cultured marble casting",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyester",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "adhesive manufacturing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "specialty polymers",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "flexible polyurethane foam production",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "urethane foam",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "R&D",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "blending",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "plasticizers",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyester resin composites",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "packaging",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "recycled plastics",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "technical service",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "compounds",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "TPO",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "antioxidants",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyurethane foams",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "fiberglass-reinforced plastic products manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "methyl methacrylate",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "reaction injection molding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "machinery manufacturing",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 6,
+      "tokens_changed": 0,
+      "tokens_held": 6
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "recycling",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "engineered thermoplastic compounds",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "ethylene dichloride",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "caustic soda",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "vinyl siding extrusion",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "emulsion polymerization",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 6,
+      "tokens_changed": 6,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "FRP fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "fiberglass bathware manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "adiponitrile",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "hexamethylenediamine",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "plastic injection molding",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "custom fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "gelcoats",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "solid surface",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "reinforcements",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "headquarters",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyurethane coatings",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "thermoplastic masterbatch",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "engineered compounds",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "coating resins",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "resin manufacture",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "engineering resins",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "purging compounds",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "adhesive formulation",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "plastics recycling",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "shredders",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "granulators",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "laminates",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "cultured marble (polyester resin and mineral filler)",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "coextrusion",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "pelletizing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "adhesive manufacture",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "tread rubber manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "thermoset composites",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "gelcoat",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "wood",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "paper",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "single-screw extruders",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "pressure-sensitive adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "acrylic emulsions",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 4,
+      "tokens_changed": 4,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "vacuum forming",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "forming",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "compression molding of composite automotive components",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "chlorine",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "synthetic rubber production",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "colorants",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 4,
+      "tokens_changed": 4,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "polyurethane foam systems",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "materials",
+      "value": "additive masterbatch",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 5,
+      "tokens_changed": 5,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "sites",
+      "field": "processes",
+      "value": "vinyl_window_manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 3,
+      "tokens_changed": 3,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "distribution",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 58,
+      "tokens_changed": 0,
+      "tokens_held": 58
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "machinery_equipment",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 67,
+      "tokens_changed": 0,
+      "tokens_held": 67
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "tooling_mold_die",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 54,
+      "tokens_changed": 0,
+      "tokens_held": 54
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "extrusion",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 3,
+      "tokens_changed": 3,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "fiberglass",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "compounding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 2,
+      "tokens_changed": 2,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "recycling_recovery",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 20,
+      "tokens_changed": 0,
+      "tokens_held": 20
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "plastic",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "acrylic",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "service",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "carbon black",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "plastics",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "plastic films",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "machining",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "coating",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "molding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "gel coat",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "resins",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "gel coats",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "vulcanization",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "silica",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "plastic sheet",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "tube",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "fiberglass composites",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "converting",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "rod",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "CNC machining",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "assembly",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "tooling",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 3,
+      "tokens_changed": 0,
+      "tokens_held": 3
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "composites",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "color concentrates",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "ethylene",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "formaldehyde",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polymers",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "foam",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "glass fiber",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyethylene film",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "plastic film",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyisocyanurate foam",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "tool steel",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "fiberglass-reinforced plastics",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "flexible polyurethane foam pouring",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "polyester resin synthesis",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "gel coat production",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "film",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "hot melt adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "masterbatch",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "propylene",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyolefins",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "film extrusion",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polymer additives",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "die cutting",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "aramid",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "formaldehyde and resin manufacturing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "printing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "slitting",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "resin distribution",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "resin",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "additives",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "steel",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "HDPE pipe",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "vinyl chloride monomer",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "cultured marble",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "styrene",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "acrylic adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "rubber chemicals",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "mixing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyurethane adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "vinyl",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "aluminum",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "cast_polymer",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 4,
+      "tokens_changed": 0,
+      "tokens_held": 4
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "hoses",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "SMC",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "sales",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "testing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "polyurethane foam production and fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "acrylic sheet",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyurethane systems",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "pyrolysis oil",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "rubber molding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "adhesive_formulating",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "specialty chemicals",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "sheet molding compound (SMC)",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "epoxy adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "equipment manufacturing",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "chemical distribution",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "coatings_formulation",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 3,
+      "tokens_changed": 3,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "grinding",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "carbon black manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "rubber belt and hose manufacturing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "belts",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "EPDM rubber",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polymer concrete",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "cultured marble casting",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyester",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "adhesive manufacturing",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "specialty polymers",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "flexible polyurethane foam production",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "urethane foam",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "R&D",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "blending",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "plasticizers",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyester resin composites",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "packaging",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "recycled plastics",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "technical service",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "compounds",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "TPO",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "antioxidants",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyurethane foams",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "fiberglass-reinforced plastic products manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "methyl methacrylate",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "reaction injection molding",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "machinery manufacturing",
+      "proposal": "WRONG_FIELD",
+      "effective_proposal": "WRONG_FIELD",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "recycling",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "engineered thermoplastic compounds",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "ethylene dichloride",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "caustic soda",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "vinyl siding extrusion",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "emulsion polymerization",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "FRP fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "fiberglass bathware manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "adiponitrile",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "hexamethylenediamine",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "plastic injection molding",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "custom fabrication",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "gelcoats",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "solid surface",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "reinforcements",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "headquarters",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyurethane coatings",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "thermoplastic masterbatch",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "engineered compounds",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "coating resins",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "resin manufacture",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "engineering resins",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "purging compounds",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "adhesive formulation",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "plastics recycling",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "shredders",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "granulators",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "laminates",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "cultured marble (polyester resin and mineral filler)",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "coextrusion",
+      "proposal": "NEW_UMBRELLA",
+      "effective_proposal": "NEW_UMBRELLA",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "pelletizing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "adhesive manufacture",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "tread rubber manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "thermoset composites",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "gelcoat",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "wood",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "paper",
+      "proposal": "DROP_NOT_CAPABILITY",
+      "effective_proposal": "DROP_NOT_CAPABILITY",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "single-screw extruders",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "pressure-sensitive adhesives",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "acrylic emulsions",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 1,
+      "tokens_changed": 0,
+      "tokens_held": 1
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "vacuum forming",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "forming",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "compression molding of composite automotive components",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "chlorine",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "synthetic rubber production",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "colorants",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 1,
+      "tokens_changed": 1,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "polyurethane foam systems",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "materials",
+      "value": "additive masterbatch",
+      "proposal": "MAP",
+      "effective_proposal": "MAP",
+      "tokens_matched": 0,
+      "tokens_changed": 0,
+      "tokens_held": 0
+    },
+    {
+      "file_class": "organizations",
+      "field": "processes",
+      "value": "vinyl_window_manufacturing",
+      "proposal": "TO_NOTE",
+      "effective_proposal": "TO_NOTE",
+      "tokens_matched": 2,
+      "tokens_changed": 0,
+      "tokens_held": 2
+    }
+  ],
+  "site_vocabulary_shares": {
+    "before": {
+      "processes": {
+        "total": 5784,
+        "in_vocabulary": 2124
+      },
+      "materials": {
+        "total": 6659,
+        "in_vocabulary": 3330
+      }
+    },
+    "after": {
+      "processes": {
+        "total": 5574,
+        "in_vocabulary": 2532
+      },
+      "materials": {
+        "total": 6232,
+        "in_vocabulary": 3740
+      }
+    }
+  },
+  "input_sha256": {
+    "tasks/vocab-normalize-2026-11-02/ruling_proposals.csv": "1d1fb9020aeae7024625dcca2cd569b7bfad5d2a041c2c65e81fdc915400746e",
+    "data/sites_AL.csv": "348edded220400823a3c37a34dd39910a4fb30f56175d66aa05603b3ea3b4805",
+    "data/sites_AR.csv": "8fbb02fdad9d9ed46ee309cc1e76b76f12a78d5c9f92e54a2c975e1dd92bf4cc",
+    "data/sites_AZ.csv": "16d44190276b7ac8149da432e72c0ed3ff30969533dfc727db40eec9d90fe360",
+    "data/sites_CA.csv": "9c78f2f36202b58c448e012aefd3d6fb52d2cd3fbfc9cdc07d4575db8c6a6b0d",
+    "data/sites_CO.csv": "da162a15a98b58bba5670cf8e3ff7f26f672542476dd372199eea5f2a267e200",
+    "data/sites_CT.csv": "efe85ef94bd870aec08bfaa8f10b703edea54438c849f8f6bc3c5388059b0ce7",
+    "data/sites_DE.csv": "443f15630e22d74b09e10e6d043ac01837364524e033c7f8afb8c25217de1142",
+    "data/sites_FL.csv": "928fcae4ff155fa3ea7094c65d114fdfa05ba0d7dfbaaa0b3f49696c6179e0ca",
+    "data/sites_GA.csv": "011b4071bf3860713abd287920a320a8f081aa1d20aca7d259944ea2bf47c312",
+    "data/sites_IA.csv": "2e33406028ff86c1356a1ca0152ccb57fc63124f875e2ce7b2ad19eeba34de7f",
+    "data/sites_ID.csv": "3b8423bff3e759512535c513b11ae746f39d8017765fa283fe9f66b994c0378b",
+    "data/sites_IL.csv": "131aba1169e1a43a4946dea1c595300c3b25059dd947a5b76b6267de5994a8fe",
+    "data/sites_IN.csv": "284e2eb5fb3acad7af1b02c0bdaf258c4bd6f091d23c4227ad3bfb056a8474cf",
+    "data/sites_INTL.csv": "47690724f129bfe158e03925fea7713f2eeff5f25c35eb11594d5ea0ef224e31",
+    "data/sites_KS.csv": "251c4d16706cf840e405f2f75f1c3995569a1682648e1f2065330ce219bc6fbe",
+    "data/sites_KY.csv": "00d378f5740180b6033261036e7bd3b6a536e8e9e83c56850bd4bb0a6d04ba50",
+    "data/sites_LA.csv": "7a1d1d340027c83271a032601286379b51fb26ae346795195d1021abad8f28fb",
+    "data/sites_MA.csv": "ecf4908d5e2edeb96fbedc5576c025e27d743be69f3b1d892b2012be603b5fce",
+    "data/sites_MD.csv": "c21dd8ebe37b665d8f55074f26a9f2f61c1732f18bd193be5f45437e95618ef0",
+    "data/sites_ME.csv": "8241fedb4d67d67235703228327516882eb4863ad9370619642e9552e4eb9662",
+    "data/sites_MI.csv": "f3fa180cee0810bfcd1f0ee0b4a815270a0d8904b0a2db22d35d49f9c63732ad",
+    "data/sites_MN.csv": "6b7b0187962538d0033f1ef3cdb9a426f86707489982e2f67dab5016c5610a75",
+    "data/sites_MO.csv": "d842478882160bbfad8ec39491646567645df84b519736783f7916595591683d",
+    "data/sites_MS.csv": "2643aa245b821ef821d7dbc82afcf459ae0f8467b0c80b8086dcd3b001e63d91",
+    "data/sites_MT.csv": "9ef5bd72a6336a4cf5575b4232bc5320fba6a4076e40e2c78f0814191a4571c8",
+    "data/sites_NC.csv": "dd66973e633ec5db71b1729bc79bb92bed4cfe0552c9afa2a7301ce71964e275",
+    "data/sites_ND.csv": "b752b7da504eed8734e7ba191505d224277ee1367ccba26d1fe5a62479023ea8",
+    "data/sites_NE.csv": "4348d2e8bf502f68a37a5ebf5fc40f59ce70825cbfa18832b8fcb27746a6fcc9",
+    "data/sites_NH.csv": "70dcf4f3ccb91f3fcc43361fb514774c5f04c73e186d69f607bcd0245f135667",
+    "data/sites_NJ.csv": "509e897af234b640e669bc04d1f07d87e93c35b478f6124e8b3252eb9371f834",
+    "data/sites_NM.csv": "69cd68e925bdbef401c1a83cf3554ece407a83c0bb3a186d4ffce0f7cab8d422",
+    "data/sites_NV.csv": "bab910b310b4305e68e26597f694e1a0b9c35c942b2a22cb14520d4087cbb12a",
+    "data/sites_NY.csv": "3d7374a50784342525c7397a15184a15f2e919d9fec613576c74e2d6d21b30bc",
+    "data/sites_OH.csv": "b23a553be1e6971c85c4d3a50fe14a4cecc0761e633d55be60943d13ccdd22af",
+    "data/sites_OK.csv": "a5783feb43df07d32c603104261286122a2d7b3550bb8fda4baab9ef376ec259",
+    "data/sites_OR.csv": "7a33c3fca4d890c059d3c63dc9befcbcaad7f067619024d0617ccc57c77167b6",
+    "data/sites_PA.csv": "d426acdccc6e46c2f6b1ac9a7a4f4d7799e584c5515ed4bcbd9887db579aad96",
+    "data/sites_PR.csv": "c318f389c12c2753bfd8982afb3cbe81ad2b5a21c8d3de95d546bb43d03ea07a",
+    "data/sites_RI.csv": "e4d57ed71c961ca06ef2447f130f320fc2c80a346ee90846d522ebf56b709c86",
+    "data/sites_SC.csv": "0aef96dafe00033b424c53d10d1b07cc56fcf0d221c83537c6bb7d834dd564d4",
+    "data/sites_SD.csv": "26e2cb87adf10bd5607d170df386bca34f8550469f3b80428d53271652ee5e8e",
+    "data/sites_TN.csv": "103f1c42629d5a529dfd173e4deee584c32033504e5a22923f044af190c1dfa8",
+    "data/sites_TX.csv": "04fe52cad1696e42bf09af11656fb9505115816de52e3c587b95c07f1298b6be",
+    "data/sites_UT.csv": "fbfded7429647ba7430304d469dc216093f03616a64ba188f962c228daa322ba",
+    "data/sites_VA.csv": "819f0cad654a719dbdb9e448217b1a35863a7857bab6fe3bcaa0f41c884bb4a4",
+    "data/sites_VT.csv": "f092e944538ed4060965ea01138e8854ef750767cb176b249981f009ef55a62e",
+    "data/sites_WA.csv": "36a516e141ff66f833575f3cdaf8c179178d64ed4b0cf99e01a47f6c4036f731",
+    "data/sites_WI.csv": "01c542c93cb18c7a09aa630df88a17c99b042d6a90fb99d77919d9aed7b03143",
+    "data/sites_WV.csv": "b06a4cb2aafa72f44625ae7323aee29cc1e65765235b999de8a91acbcb255ce0",
+    "data/sites_WY.csv": "17b913c4847489cca33cdf670e04162211bff13367bacf295caae42529a0c4d0",
+    "data/organizations_AL.csv": "d0c9b589b5347efb065db1439a6271837b81f5a0f8efc4bc867bd086dd7feae8",
+    "data/organizations_AR.csv": "64556afbae96f517d3e147c64bbb802523c5ecbdaeed36f6245148c2d5bba62b",
+    "data/organizations_AZ.csv": "ab75553f952ab978ca2075b5c8d98c535d654cf17cd3fbe3d0f7c8e51a53cc13",
+    "data/organizations_CA.csv": "65cb9e9902c6a4b069c63ba89e22a791db120d023062fc996c819644f0096b8d",
+    "data/organizations_CO.csv": "a063cf26c927d8a24c1d834e5d9460b92e6e8059ba2d4746c1b0aa3475903417",
+    "data/organizations_CT.csv": "8239c08e0f636cf6ac122ae7da9e5c814fb0fc2ed217d095ee4622777fbf006a",
+    "data/organizations_DE.csv": "5e7f9af65b299937004e069aa47d6edf478d7de47a5806b5e23715d14d48cbb1",
+    "data/organizations_FL.csv": "6486f6e657fd704215ae69bdd139d78880ac270dde8ac9acbd967dea26ce0109",
+    "data/organizations_GA.csv": "093c8a29dc568aeae9ab65d4dee8b69d233f024da6f7d37c0a17230974b694f2",
+    "data/organizations_IA.csv": "0d565f5ee140ca56622516c0ed37795885dd80536a2a26c86d6b086bfd69eb3d",
+    "data/organizations_ID.csv": "7fbc40e9e86b47263ce15614c9faa813843acf77a7b69c0711cb68747a8ab636",
+    "data/organizations_IL.csv": "5ab283d7bf05b0c6cee0921a408169c0e0c024227ba8da789e3125973dffd6ef",
+    "data/organizations_IN.csv": "a0c304e2dcda3942a166d2bc0f729ad470982e5e709c7908fccaf3ef805df898",
+    "data/organizations_INTL.csv": "9ffe6671a16494c477ee2ec72eeaf1328f8d1a0d91fcda2553fffc5bfd47b871",
+    "data/organizations_KS.csv": "8caa391d2c461bb27fd64db3bac8a7cd3de51404faee2d3134af96f9aad0142f",
+    "data/organizations_KY.csv": "47e73d3373e109c37be7f0f28c99dfacc73a085b9ccef55b2b8ec2c75262ae0b",
+    "data/organizations_LA.csv": "1688099aba2c623f459bc33c27a68e80040617903b1eb78aee49a7068d0ae3e0",
+    "data/organizations_MA.csv": "d0b3cad21ebfc2c25991e3a22484955b644e6519668d6eaa8c285b64f8cd1b74",
+    "data/organizations_MD.csv": "138886f63903699d751f9d799cebc64ce6ac6c9ce4b3c5af8142266e68fc8054",
+    "data/organizations_ME.csv": "8c6e93a522be892a780c097600f6452d4ba1e8a8f08ef57d6bed0754f21f62ad",
+    "data/organizations_MI.csv": "4e5a2acee82f88080b196a07fd96ef4721309de1acfaf02a785b5ea19db9c3d6",
+    "data/organizations_MN.csv": "19ffbeb8d30319b0fb01d3e15ec3087d59f6c413067e97cf3bef55e63c4569d7",
+    "data/organizations_MO.csv": "8f34c0de906c258c6730a702e5967ccf4e9a10fc9050f81d1d0935432ef9d084",
+    "data/organizations_MS.csv": "217bce90b54a9afbb0f190d44d4cb3abea282e03b8db03582e4abe9bef567b11",
+    "data/organizations_MT.csv": "6d9f887b6552d2c25e8deb1d1d0def831838cbd1418d4b692b548e134ec37c0a",
+    "data/organizations_NC.csv": "afcddc503d19b7a3a31dc602af5054c42a3bfb3fe1ea64f6b1fe5ff0f5d83d71",
+    "data/organizations_ND.csv": "929cc866ad8454a44d109e41e9eaafbac64e275d0912431b3cf3337cac8be0e7",
+    "data/organizations_NE.csv": "9df0711ce50eb29b498fe241fbd226cfc81a8185a71d2977aac2e33fdc870983",
+    "data/organizations_NH.csv": "d7bd10dbe0694b37b6192c3464a1f51fb90aecad271f49907c7a5960c1f2e778",
+    "data/organizations_NJ.csv": "2052078182f9e3a97a13134c01ac54c197b8724869a89dec4c4a18a032a2e6a3",
+    "data/organizations_NM.csv": "c04d5547c43e3c451c23d2ccdb66373e89ad6301d56bfca7c41913bd14ae17f3",
+    "data/organizations_NV.csv": "635a155cf9ffaf1076d7bce13e5c2a3deabeea4d80a132b3e827c90fecec483b",
+    "data/organizations_NY.csv": "47b5af293e65ec619391aaa230f880870cf3874b68eecbd201006ac425858bf8",
+    "data/organizations_OH.csv": "43ed48c5dbc1566aa000ebf70aff5f453e9ecda49a83f5d4641ef7810d921371",
+    "data/organizations_OK.csv": "24492de94e77ce6408f32b1f292dee011cf8dbdba75c69d0c660c4d26cace2a9",
+    "data/organizations_OR.csv": "2b50298ee24e85efdc9d38b61e5ada2795322d994b7b4e3859ee386a22d0c4be",
+    "data/organizations_PA.csv": "0e2fbf33102bf9faeb7da2aea5427cce98088952f25a1d10ac529502166caa2e",
+    "data/organizations_RI.csv": "7f43f72941440936466e12083a3435583fca3c9770588d779227fce0b46a430b",
+    "data/organizations_SC.csv": "3dbbf3cfbf6bf1e8913fd05db3b483d59c78d333c09e9b6f163506cf8e4b4a2a",
+    "data/organizations_SD.csv": "72821b91e21b02e249ce9f8b15ed9756bdefa269921a97cc88d9fddc787f4aad",
+    "data/organizations_TN.csv": "83d69b51239f01663ff42533bcedfe1f69eebf6fbd6718d30c387c5ccdb07ecc",
+    "data/organizations_TX.csv": "8392ec01b665f2c96c2e4e792039102da0b8df5d7796027a4e294dd7409bc247",
+    "data/organizations_US.csv": "1977087f75cdf10a3bd5371fce578f2318c3d2939ac8ad295173ad00745bcd32",
+    "data/organizations_UT.csv": "8f750b6df20a2c7ff6e6c148d46653fbdb4424711ea82dbcf51441c4ed16c5c0",
+    "data/organizations_VA.csv": "e8086268256478de8c74e3fc0dedd155492e3a059dce7d70a525fbe1fe1cc29b",
+    "data/organizations_VT.csv": "649873b53e943e0df0df8235fadaf220d37a3375da1c86c463b00143a78c713b",
+    "data/organizations_WA.csv": "67df2e9ee01709974af23accfd689bc2566521da5ca4528f450e43d598f4879a",
+    "data/organizations_WI.csv": "d4d7bf764d0584062ed06d4288a8fe81fadf6297b5f423d3d2244f976087fe47",
+    "data/organizations_WV.csv": "c74ce38e481e63690aa551f567ac50285ac006da54c9d6c5e64543ff2794aee7",
+    "data/organizations_WY.csv": "8d68430cda2c2747369cbfddaf0e2541391b91b833467c76c891920d17dec6cc"
+  },
+  "output_sha256": {
+    "data/sites_AL.csv": "8a36cad1aef3cbe743e4556f3d291cceae4377f37e012d03766ee939236fc16e",
+    "data/sites_AR.csv": "10039521db7d6e49432074c61fc1c97c6a028aad9740d4bf80def65ec6cbb760",
+    "data/sites_AZ.csv": "1ef4b7cc1a3f575fe1ce4dbd66a4a2ba7965291b965a7d73047d1e99aec72a7b",
+    "data/sites_CA.csv": "b951891bbbef2ae14eeb3f5b734fcd209cadb20d1af2884e6d50aec207b84ecc",
+    "data/sites_CO.csv": "3d1409b7a0661121d2274604b4317ea3ecff12093ccf6b73ff8d1f366967942a",
+    "data/sites_CT.csv": "cf2c462f9e8661c3272e28a1f386a73ae3781aa386e432a38f4c04aaccb578d1",
+    "data/sites_DE.csv": "7b25d9ca10999ad32d6341383f67e563e323f1fd836fc1d0cd4de9f2980f289f",
+    "data/sites_FL.csv": "1351b1f3044bdcc40a3693aea794316d2d3478266d9e459419297bd62d10de32",
+    "data/sites_GA.csv": "6b24cdbb593d3033718be95fa36a9926cd4a9bdebfbe342d90320a5dc948ea64",
+    "data/sites_IA.csv": "29da7b0967ee2b673a5173776f5567e3cf21f8ac37b070f02462cc913c6317a4",
+    "data/sites_ID.csv": "7ab13a76df2666488609cd4143d655792e08bdd796559eafb6f2a89056c3b119",
+    "data/sites_IL.csv": "fef1b710015892c6609d9c45129188947b2984d9dec232ff584e190c0d8e4a61",
+    "data/sites_IN.csv": "04f1b960749bebb493e94e607fe873cfda75671cd19dab5b3e9201c70878b5c1",
+    "data/sites_INTL.csv": "8df7f07aef028e4960305c3d0fc21b6ea72719dd72ebe833e89ac253be43db33",
+    "data/sites_KS.csv": "423f8c8d6ac01f7b24c46474c77499c301412dd184733ff14e8333ad84975944",
+    "data/sites_KY.csv": "1e8d0f470a9e9a88f436cfe08d70bf347ee5000e4eacc285325504b74549af26",
+    "data/sites_LA.csv": "d17ddedcb12c892e478eb10b9ef2cf1de3e01c59f47b9d519e9589e5f8293f0d",
+    "data/sites_MA.csv": "2c38d3a6941d65c596f7d81833415fd71c348291e05cb34f191445d9a3f1c8ea",
+    "data/sites_MD.csv": "82a394c00148a39defce3abb8b58f8ebd443d2e9d383c93c81960b6724cead1e",
+    "data/sites_ME.csv": "162582531ed0471f9df8216ea9a64b87d4b8b293d31cedfff1b76e34ea7d81bc",
+    "data/sites_MI.csv": "a5a186fa0015f8a93b9908cda0904c49ac261e2a28c226f7c958ba97c5f886a3",
+    "data/sites_MN.csv": "c19e6c019b7e8e0275e5ca0c7e4a6b5198022488e62526f923be9b8cd4c50e8b",
+    "data/sites_MO.csv": "191d703dc37acd3caf7af05fa50f456c0360f2b7921808bd9b3e5749459fc5a0",
+    "data/sites_MS.csv": "41c0310e94bcfc13fa7066f01c156a16e08ae7a2a02a524cc2524bd1864a3edb",
+    "data/sites_MT.csv": "77a5805c0fd60bacb13e76c216a9b5366f7528d474548257b30cfd963a5d8aa0",
+    "data/sites_NC.csv": "61b8c043fc8591476a992e13728a443a83423e95f7cd7b200eadbacde43f884a",
+    "data/sites_ND.csv": "530f29dd2dfea28c33b819a9ba98ae53f9835a1e8b811288021087dc491e1ecd",
+    "data/sites_NE.csv": "4163c3c5b18f5411bfcc70b568c098b46c7eb41b3df09107c7807f3f4ea956f7",
+    "data/sites_NH.csv": "585c3db62211ad171747a53eeaae7bd1bcf3da1173770a6288dd14cc8eaf98db",
+    "data/sites_NJ.csv": "5a99ad1ab1ae960a5f7151fd62971edcadd8c660ae6f6eb3cc6bad2ae503e964",
+    "data/sites_NM.csv": "4622522dc7e230565807658d249a32907b804b2c29fed3e2f6e0a333dea57d3a",
+    "data/sites_NV.csv": "9d8555cf88a7354c8dc87029142fc8af70d890dd8c34718fe44c69ddd6df2f0b",
+    "data/sites_NY.csv": "63991c008cdb13a99d2799ce73359cfa4979cd7542c2b56d9b3c17c0c2c8783d",
+    "data/sites_OH.csv": "c8b12c835c31708082517c80de9144c8d578e57ebcdc9fc71899f36a79fe06fc",
+    "data/sites_OK.csv": "a7beca49d46fa9803c36da49792784ad8c55eae5fb47e4c978a6978e38d20dfd",
+    "data/sites_OR.csv": "d98e70c6a371e7e5eeda398143639947737f5d1a16adf70d489560ef994ca2c3",
+    "data/sites_PA.csv": "0f2439c7c03709bc0824e7aab24c4203d447d7b95c7765116e919ede71301b54",
+    "data/sites_PR.csv": "5034223fba89fc4ad5144ae76f772a87ef5a7548da0da6a0ef040d0dbc9838ef",
+    "data/sites_RI.csv": "4616fc71e61bbe68f5146ad41df9985570756bbc273a2724e9fe2fdfcc709f6d",
+    "data/sites_SC.csv": "df15cef7bcb57251897cf8f98d5c87e0d8ad60cec45cf7a78696834544282759",
+    "data/sites_SD.csv": "f01be1ba38e7e0b6d5ddc85b2ee913da71f6cfa988792767ccc078ac58c97bbd",
+    "data/sites_TN.csv": "224c74c4521f4f78ab6b8425d88fa611f05c079ef0b930de6d5779b550e3a446",
+    "data/sites_TX.csv": "aef2a1745ed58c7216907c110c53c80d3385f441d187f0090ea6ce15c2daaac1",
+    "data/sites_UT.csv": "29dc5232610b79c4ac7ae3742085d9419af84b4b1caa47951caf330b72baaf98",
+    "data/sites_VA.csv": "76737ffebc7c194ddc7120354e2caedc8769769e35ca71f8e3cf5325d3b862b4",
+    "data/sites_VT.csv": "c6be62030f547a34ecef9e17afec6ed1963622fd96fb3f0860c9800d88a0ea31",
+    "data/sites_WA.csv": "6ba13d1abcffd7c4c938be74aa4f06500e25388d248e98ecacef2632d2a80c93",
+    "data/sites_WI.csv": "7af804eaa9255f238b316c0ba47e5787b3049302dbdd2c9c9914e7b68d492aec",
+    "data/sites_WV.csv": "2d85927e854f3c32290d7ee323a837cc5cae32145390cf6886fefda21e65c77b",
+    "data/sites_WY.csv": "89c4ee74abca47759f354def76a71f08e8b0ef8925147bcc87a5790471c5b6a3",
+    "data/organizations_OH.csv": "9fca75118d4eb9cc5724da17ab798831a38264de58fc1b99830890c8a6f99038"
+  },
+  "changed_records": 1025,
+  "changed_cells": 1583
+}

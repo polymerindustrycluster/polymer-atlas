@@ -1,0 +1,372 @@
+{
+  "files_changed": [
+    "data/organizations_OH.csv",
+    "data/sites_AL.csv",
+    "data/sites_AR.csv",
+    "data/sites_AZ.csv",
+    "data/sites_CA.csv",
+    "data/sites_CO.csv",
+    "data/sites_CT.csv",
+    "data/sites_DE.csv",
+    "data/sites_FL.csv",
+    "data/sites_GA.csv",
+    "data/sites_IA.csv",
+    "data/sites_ID.csv",
+    "data/sites_IL.csv",
+    "data/sites_IN.csv",
+    "data/sites_INTL.csv",
+    "data/sites_KS.csv",
+    "data/sites_KY.csv",
+    "data/sites_LA.csv",
+    "data/sites_MA.csv",
+    "data/sites_MD.csv",
+    "data/sites_ME.csv",
+    "data/sites_MI.csv",
+    "data/sites_MN.csv",
+    "data/sites_MO.csv",
+    "data/sites_MS.csv",
+    "data/sites_MT.csv",
+    "data/sites_NC.csv",
+    "data/sites_ND.csv",
+    "data/sites_NE.csv",
+    "data/sites_NH.csv",
+    "data/sites_NJ.csv",
+    "data/sites_NM.csv",
+    "data/sites_NV.csv",
+    "data/sites_NY.csv",
+    "data/sites_OH.csv",
+    "data/sites_OK.csv",
+    "data/sites_OR.csv",
+    "data/sites_PA.csv",
+    "data/sites_PR.csv",
+    "data/sites_RI.csv",
+    "data/sites_SC.csv",
+    "data/sites_SD.csv",
+    "data/sites_TN.csv",
+    "data/sites_TX.csv",
+    "data/sites_UT.csv",
+    "data/sites_VA.csv",
+    "data/sites_VT.csv",
+    "data/sites_WA.csv",
+    "data/sites_WI.csv",
+    "data/sites_WV.csv",
+    "data/sites_WY.csv",
+    "docs/SCHEMA.md",
+    "docs/schema/vocab.json",
+    "scripts/test_atlas_cli.py",
+    "scripts/test_atlas_mcp_server.py",
+    "scripts/test_build_site.py",
+    "scripts/test_match_program_capabilities.py",
+    "scripts/test_validate.py",
+    "scripts/test_vocab_rulings.py",
+    "scripts/validate.py",
+    "tasks/vocab-rulings-2026-11-03/README.md",
+    "tasks/vocab-rulings-2026-11-03/WORKER_REPORT.json",
+    "tasks/vocab-rulings-2026-11-03/backups/organizations_OH.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_AL.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_AR.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_AZ.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_CA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_CO.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_CT.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_DE.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_FL.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_GA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_IA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_ID.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_IL.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_IN.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_INTL.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_KS.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_KY.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_LA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MD.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_ME.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MI.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MN.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MO.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MS.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_MT.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NC.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_ND.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NE.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NH.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NJ.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NM.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NV.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_NY.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_OH.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_OK.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_OR.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_PA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_PR.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_RI.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_SC.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_SD.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_TN.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_TX.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_UT.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_VA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_VT.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_WA.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_WI.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_WV.csv",
+    "tasks/vocab-rulings-2026-11-03/backups/sites_WY.csv",
+    "tasks/vocab-rulings-2026-11-03/build_edits.py",
+    "tasks/vocab-rulings-2026-11-03/dry_run.json",
+    "tasks/vocab-rulings-2026-11-03/edits_log.csv",
+    "tasks/vocab-rulings-2026-11-03/reconciliation.json",
+    "tasks/vocab-rulings-2026-11-03/rollback_manifest.json",
+    "tasks/vocab-rulings-2026-11-03/run_tests.py",
+    "tasks/vocab-rulings-2026-11-03/tests.log",
+    "tasks/vocab-rulings-2026-11-03/tests_inherited_acl.log",
+    "tasks/vocab-rulings-2026-11-03/validate.log",
+    "tasks/vocab-rulings-2026-11-03/verify_application.py"
+  ],
+  "schema_terms_added": {
+    "processes": [
+      "compounding_unspecified",
+      "extrusion_unspecified",
+      "fabrication_unspecified",
+      "foam_production_unspecified",
+      "molding_unspecified",
+      "reaction_injection_molding",
+      "recycling_unspecified",
+      "rubber_molding_unspecified"
+    ],
+    "materials": [
+      "carbon_black",
+      "composites_unspecified",
+      "polymer_additives",
+      "thermoplastic_olefin_tpo"
+    ]
+  },
+  "reconciliation": {
+    "DROP_NOT_CAPABILITY": {
+      "tokens_matched": 199,
+      "tokens_changed": 199,
+      "tokens_held": 0,
+      "values": 16
+    },
+    "MAP": {
+      "tokens_matched": 476,
+      "tokens_changed": 476,
+      "tokens_held": 0,
+      "values": 59
+    },
+    "NEW_UMBRELLA": {
+      "tokens_matched": 415,
+      "tokens_changed": 415,
+      "tokens_held": 0,
+      "values": 32
+    },
+    "TO_NOTE": {
+      "tokens_matched": 391,
+      "tokens_changed": 381,
+      "tokens_held": 10,
+      "values": 41
+    },
+    "WRONG_FIELD": {
+      "tokens_matched": 580,
+      "tokens_changed": 0,
+      "tokens_held": 580,
+      "values": 16
+    }
+  },
+  "reconciliation_by_file_class": {
+    "sites": {
+      "DROP_NOT_CAPABILITY": {
+        "values": 16,
+        "tokens_matched": 197,
+        "tokens_changed": 197,
+        "tokens_held": 0,
+        "rows_matched": 181,
+        "rows_changed": 181,
+        "rows_held": 0
+      },
+      "MAP": {
+        "values": 59,
+        "tokens_matched": 469,
+        "tokens_changed": 469,
+        "tokens_held": 0,
+        "rows_matched": 379,
+        "rows_changed": 379,
+        "rows_held": 0
+      },
+      "NEW_UMBRELLA": {
+        "values": 32,
+        "tokens_matched": 408,
+        "tokens_changed": 408,
+        "tokens_held": 0,
+        "rows_matched": 355,
+        "rows_changed": 355,
+        "rows_held": 0
+      },
+      "TO_NOTE": {
+        "values": 41,
+        "tokens_matched": 381,
+        "tokens_changed": 381,
+        "tokens_held": 0,
+        "rows_matched": 321,
+        "rows_changed": 321,
+        "rows_held": 0
+      },
+      "WRONG_FIELD": {
+        "values": 16,
+        "tokens_matched": 381,
+        "tokens_changed": 0,
+        "tokens_held": 381,
+        "rows_matched": 329,
+        "rows_changed": 0,
+        "rows_held": 329
+      }
+    },
+    "organizations": {
+      "DROP_NOT_CAPABILITY": {
+        "values": 2,
+        "tokens_matched": 2,
+        "tokens_changed": 2,
+        "tokens_held": 0,
+        "rows_matched": 2,
+        "rows_changed": 2,
+        "rows_held": 0
+      },
+      "MAP": {
+        "values": 5,
+        "tokens_matched": 7,
+        "tokens_changed": 7,
+        "tokens_held": 0,
+        "rows_matched": 7,
+        "rows_changed": 7,
+        "rows_held": 0
+      },
+      "NEW_UMBRELLA": {
+        "values": 4,
+        "tokens_matched": 7,
+        "tokens_changed": 7,
+        "tokens_held": 0,
+        "rows_matched": 7,
+        "rows_changed": 7,
+        "rows_held": 0
+      },
+      "TO_NOTE": {
+        "values": 4,
+        "tokens_matched": 10,
+        "tokens_changed": 0,
+        "tokens_held": 10,
+        "rows_matched": 10,
+        "rows_changed": 0,
+        "rows_held": 10
+      },
+      "WRONG_FIELD": {
+        "values": 4,
+        "tokens_matched": 199,
+        "tokens_changed": 0,
+        "tokens_held": 199,
+        "rows_matched": 199,
+        "rows_changed": 0,
+        "rows_held": 199
+      }
+    }
+  },
+  "site_vocabulary_shares": {
+    "before": {
+      "processes": {
+        "total": 5784,
+        "in_vocabulary": 2124
+      },
+      "materials": {
+        "total": 6659,
+        "in_vocabulary": 3330
+      }
+    },
+    "after": {
+      "processes": {
+        "total": 5574,
+        "in_vocabulary": 2532
+      },
+      "materials": {
+        "total": 6232,
+        "in_vocabulary": 3740
+      }
+    }
+  },
+  "changed_records": 1025,
+  "changed_cells": 1583,
+  "status": "ready_for_controller_review",
+  "validate_exit": 0,
+  "validate_command": "python scripts/validate.py",
+  "validate_log": "tasks/vocab-rulings-2026-11-03/validate.log",
+  "tests_exit": 0,
+  "tests_command": "python tasks/vocab-rulings-2026-11-03/run_tests.py",
+  "tests_run": 196,
+  "tests_skipped": 1,
+  "tests_seconds": 274.662,
+  "tests_log": "tasks/vocab-rulings-2026-11-03/tests_inherited_acl.log",
+  "literal_tests_command": "python -m unittest discover -s scripts -p \"test_*.py\"",
+  "literal_tests_exit": 1,
+  "literal_tests_log": "tasks/vocab-rulings-2026-11-03/tests.log",
+  "additional_checks": [
+    {
+      "command": "python -m unittest scripts/test_vocab_rulings.py",
+      "exit": 0,
+      "result": "5 focused tests passed; includes deliberately inconsistent reconciliation counts"
+    },
+    {
+      "command": "python tasks/vocab-rulings-2026-11-03/verify_application.py",
+      "exit": 0,
+      "result": "APPLICATION_AUDIT=PASS; all input/output hashes, headers, row identities and untouched fields checked; final run removed 0 log entries"
+    },
+    {
+      "command": "python scripts/export_vocab.py --check",
+      "exit": 0,
+      "result": "docs/schema/vocab.json is current"
+    }
+  ],
+  "deliberate_holds": {
+    "wrong_field": {
+      "sites": 381,
+      "organizations": 199,
+      "total": 580
+    },
+    "organization_to_note": {
+      "values": 4,
+      "tokens": 10
+    },
+    "monomers_intermediates": {
+      "term_added": false,
+      "site_values": 9,
+      "site_tokens_moved_to_materials_other_note": 77,
+      "organization_tokens": 0
+    }
+  },
+  "field_placement_deviations": [],
+  "fixture_changes": [
+    "Added site note columns to CLI, MCP and site-builder fixtures.",
+    "Updated matching vocabulary test to accept approved carbon_black while rejecting the carbon black alias.",
+    "Added a validator mutation test requiring failure when either new site note column is absent."
+  ],
+  "rollback_manifest": "tasks/vocab-rulings-2026-11-03/rollback_manifest.json",
+  "reconciliation_detail": "tasks/vocab-rulings-2026-11-03/reconciliation.json",
+  "dry_run": "tasks/vocab-rulings-2026-11-03/dry_run.json",
+  "edit_log": "tasks/vocab-rulings-2026-11-03/edits_log.csv",
+  "simplification_review": {
+    "verdict": "approved after correction",
+    "corrected_note_log_attributions": 99,
+    "detail": "Only effective TO_NOTE contributors now receive note-column log entries; canonical data did not require correction. Mapping read-back deliberately reuses rewrite; preservation and hashes are checked separately."
+  },
+  "deviations": [
+    "The literal unittest discovery command exited 1 because Windows Python 3.14 private temporary-directory ACLs blocked fixtures and one matching test still expected carbon_black to be invalid. The fixture was corrected. The same full discovery suite then passed using run_tests.py, which gives task-local temporary directories inherited ACLs, restores os.mkdir afterward, and changes no test assertions or skips. Git was absent from the test PATH and TEMP/TMP stayed inside the task directory.",
+    "Regenerated docs/schema/vocab.json using the existing exporter, although the hard-limit shorthand names SCHEMA rather than all docs files; this is the existing derived vocabulary copy required by step 3 and its parity test.",
+    "Recorded the worker claim in the task README rather than editing tasks/QUEUE.md, because the explicit worker write boundary excludes that file and reserves queue/PR ownership for the controller.",
+    "Added a task-local read-back audit helper and retained local backup, reconciliation and test-log artifacts to make the applied pass reviewable. Initial failed-run temporary directories were left for controller cleanup."
+  ],
+  "limitations": [
+    "One existing optional MCP registration test was skipped because the mcp package is not installed.",
+    "Git provenance execution was intentionally unavailable under the contract's no-Git constraint; no Git command, commit, push, network call or tracker mutation was performed.",
+    "The suite emitted an existing SyntaxWarning in scripts/build_site.py:1769; unrelated production rendering code was left outside scope.",
+    "The controller retains independent-family completion approval and PR ownership. This report does not close a tracked commitment.",
+    "files_changed lists deliverable files and retained audit/rollback artifacts; transient Python caches and failed-test temporary directories are not deliverables."
+  ]
+}

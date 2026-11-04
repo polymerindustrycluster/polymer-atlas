@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -637,6 +637,16 @@ doctrine.
 **Secondary / finishing / other:**
 `plastics_machining_cnc` · `plastics_fabrication_welding` · `die_cutting_converting` · `laminating` · `coating_applying` *(contrast: `coating_formulation` = makes it)* · `printing_decorating_plastics` · `assembly_secondary_ops` · `ultrasonic_solvent_bonding` · `recycling_mechanical` · `recycling_chemical_pyrolysis` · `recycling_chemical_solvolysis` · `regrind_pelletizing` · `mold_tool_making` · `tooling_repair_maintenance` · **[v1.7.6]** `additive_dry_blending` · `pigment_colorant_dispersion` · `pressure_sensitive_tape_manufacture` · `potting_encapsulation_casting` · `fluoropolymer_lining` · `thermoforming_unspecified` *(type not stated; never upgraded without a source)*
 
+**[v1.9.1] Owner battery B-VOC — 2026-11-03:**
+`extrusion_unspecified` *(type not stated; never upgraded without a source)* ·
+`compounding_unspecified` *(type not stated; never upgraded without a source)* ·
+`fabrication_unspecified` *(type not stated; never upgraded without a source)* ·
+`foam_production_unspecified` *(type not stated; never upgraded without a source)* ·
+`molding_unspecified` *(type not stated; never upgraded without a source)* ·
+`recycling_unspecified` *(type not stated; never upgraded without a source)* ·
+`rubber_molding_unspecified` *(type not stated; never upgraded without a source)* ·
+`reaction_injection_molding`.
+
 ### 3.2 Materials (`materials[]`)
 
 **Families (always tag at least one family if known):**
@@ -644,6 +654,13 @@ doctrine.
 
 **Specific resins/compounds (tag when explicitly claimed — do not infer from family):**
 `abs` · `polyethylene_pe` · `polypropylene_pp` · `pvc` · `pet_petg` · `polystyrene_ps_hips` · `polycarbonate_pc` · `nylon_pa` · `acetal_pom` · `peek_high_performance` · `epoxy` · `polyurethane_pu` · `phenolic` · `melamine_urea_formaldehyde` · `natural_rubber_nr` · `sbr` · `epdm` · `nitrile_nbr` · `neoprene_cr` · `viton_fkm` · `pla` · `pha` · `other_specified_in_notes` · **[v1.7.6]** `asa` · `specialty_elastomers` *(HNBR/FFKM/CSM/butyl/ECO/fluorosilicone — name it in notes)* · `polyester_vinyl_ester_resins` · `acrylic_pmma`
+
+**[v1.9.1] Owner battery B-VOC — 2026-11-03:**
+`carbon_black` · `polymer_additives` · `thermoplastic_olefin_tpo` ·
+`composites_unspecified` *(type not stated; never upgraded without a source)*.
+The proposed monomers/intermediates family is not adopted: its source text goes
+to site `materials_other_note` pending a scope ruling, and stays untouched on
+organizations, which have no corresponding note column.
 
 ### 3.3 Markets Served (`markets_served[]`)
 
@@ -992,6 +1009,7 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `ring_primary` (site-level) | enum 1–5 | **MUST** | May differ from Parent (Parker rule) |
 | `naics_primary` + provenance | §2.1 | **MUST** | Site NAICS often differs from Parent NAICS — never copy Parent NAICS to site without a site source or `researcher_inferred` flag |
 | `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB |
+| `processes_other_note` / `materials_other_note` **[v1.9.1]** | free text, nullable | Nice | Original source wording that cannot be mapped to §3.1/§3.2 without interpretation; semicolon-joined and deduplicated. Each column immediately follows its corresponding capability column in every site shard. Not a controlled capability claim; never upgraded without a source. Owner battery B-VOC, 2026-11-03. |
 | `employee_band_site` | enum §4.4 | **MUST** if any source gives it; else `unknown` | Never allocate Parent headcount pro-rata to sites |
 | `operating_status` + dates | §4.2 vocab per site | **MUST** | A Parent can be `active` while a site is `idled`/`closed` |
 | `website_site_page` | URL | Nice | Plant page / location page if distinct |
@@ -2853,3 +2871,12 @@ unchanged.
   existing row changes. The validator gains V-52 (equipment) and V-53
   (engagement). `docs/schema/vocab.json` gains `EQUIPMENT_CLASSES`,
   `ACCESS_MODES` and `PEOPLE_ENGAGEMENT`.
+- **v1.9.1 — 2026-11-03, owner battery B-VOC.** Applies B-VOC-1 through
+  B-VOC-4, all ruled (a) in `tasks/OWNER_BATTERY_2026-11-03.md`: eight
+  process terms and four material terms added in §3.1/§3.2, including eight
+  explicitly unspecified terms across the two fields. Adds the two site
+  other-note columns in §4.5. Applies the 59 MAP proposals, approved umbrella
+  mappings, site TO_NOTE transfers and 16 DROP proposals. Monomers/intermediates
+  remain outside the vocabulary: site occurrences go to other-note text;
+  organization TO_NOTE occurrences stay in place. All WRONG_FIELD values,
+  including Ring 3 labels and unruled product forms, remain unchanged.

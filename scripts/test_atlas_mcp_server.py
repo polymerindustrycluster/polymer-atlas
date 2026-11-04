@@ -19,7 +19,7 @@ import atlas_mcp_server as srv  # noqa: E402
 ORG_COLS = ["org_id", "legal_name", "trade_names", "parent_org_id", "ring_primary", "hq_city",
             "hq_state", "website", "status", "successor_org_id", "verification_tier"]
 SITE_COLS = ["site_id", "org_id", "site_name", "site_type", "street_address", "city", "state",
-             "zip", "county", "ring_primary", "naics_primary", "processes", "materials",
+             "zip", "county", "ring_primary", "naics_primary", "processes", "processes_other_note", "materials", "materials_other_note",
              "operating_status", "verification_tier"]
 ECO_COLS = ["org_id", "legal_name", "city", "state", "website", "status", "verification_tier",
             "parent_institution_org_id"]
@@ -55,11 +55,11 @@ def build_fixture(path: Path) -> None:
         ("ORG-000004", "100% Poly_mer", None, None, "2", "Erie", "PA", None, "closed", "ORG-000001", "U"),
     ])
     _make(con, "sites", SITE_COLS, [
-        ("SITE-000001", "ORG-000001", "Acme Akron", "manufacturing_plant", "1 Main St", "Akron", "OH", "44301", "Summit", "1", "326199", "injection_molding;extrusion", "thermoplastics", "active", "A"),
-        ("SITE-000002", "ORG-000001", "Acme Canton", "manufacturing_plant", "2 Main St", "Canton", "OH", "44702", "Stark", None, "326199", "blow_molding", "thermoplastics;elastomers_rubber", "active", "B"),
-        ("SITE-000003", "ORG-000003", "Beta Canton", "manufacturing_plant", "3 Main St", "Canton", "OH", "44702", "Stark", "1", "326211", "extrusion_profile", "elastomers_rubber", "closed", "B"),
-        ("SITE-000004", "ORG-000002", "Acme Dallas HQ", "headquarters", "4 Main St", "Dallas", "TX", "75001", "Dallas", "3", "551114", None, None, "active", "B"),
-        ("SITE-000005", "ORG-000001", "Acme Erie", "manufacturing_plant", "5 Main St", "Erie", "PA", "16501", "Erie", "1", "3261", "inject_ion", None, "active", "C"),
+        ("SITE-000001", "ORG-000001", "Acme Akron", "manufacturing_plant", "1 Main St", "Akron", "OH", "44301", "Summit", "1", "326199", "injection_molding;extrusion", "", "thermoplastics", "", "active", "A"),
+        ("SITE-000002", "ORG-000001", "Acme Canton", "manufacturing_plant", "2 Main St", "Canton", "OH", "44702", "Stark", None, "326199", "blow_molding", "", "thermoplastics;elastomers_rubber", "", "active", "B"),
+        ("SITE-000003", "ORG-000003", "Beta Canton", "manufacturing_plant", "3 Main St", "Canton", "OH", "44702", "Stark", "1", "326211", "extrusion_profile", "", "elastomers_rubber", "", "closed", "B"),
+        ("SITE-000004", "ORG-000002", "Acme Dallas HQ", "headquarters", "4 Main St", "Dallas", "TX", "75001", "Dallas", "3", "551114", None, "", None, "", "active", "B"),
+        ("SITE-000005", "ORG-000001", "Acme Erie", "manufacturing_plant", "5 Main St", "Erie", "PA", "16501", "Erie", "1", "3261", "inject_ion", "", None, "", "active", "C"),
     ])
     _make(con, "ecosystem", ECO_COLS, [
         ("ORG-000501", "University of Akron", "Akron", "OH", "https://uakron.edu", "active", "A", None),
