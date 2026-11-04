@@ -1,0 +1,87 @@
+lane_file,school_key,full_name,gate_a,gate_b
+T,columbia,Neil Dolinski,yes,yes
+T,columbia,Oleg Gang,yes,yes
+T,columbia,Mary Boyce,yes,yes
+T,jhu,Efie Kokkoli,yes,yes
+T,jhu,Rebecca Schulman,yes,yes
+T,jhu,Hai-Quan Mao,yes,yes
+T,jhu,Tine Curk,yes,yes
+T,jhu,Jordan J. Green,no,yes
+T,jhu,Thao (Vicky) Nguyen,yes,yes
+R1,duke,Benjamin J. Wiley,yes,yes
+R1,northeastern,Gokce Altin Yavuzarslan,yes,yes
+R1,northeastern,Randall Erb,yes,yes
+R1,northeastern,Arthur Coury,yes,yes
+R1,nyu,Nikhil Gupta,yes,yes
+R1,nyu,Kent Kirshenbaum,unfetchable,yes
+R1,ucla,Yang Yang,yes,yes
+R1,ucla,Ellen M. Sletten,no,yes
+R1,ucla,Sarah H. Tolbert,yes,yes
+R1,ucla,Jenn-Ming Yang,yes,yes
+R1,uconn,Thanh Nguyen,yes,no
+R1,uconn,Yang Cao,yes,yes
+R1,northeastern,Damilola Daramola,yes,yes
+R1,northeastern,Bryan James,yes,yes
+R2,umd,Michael Kio,yes,yes
+R2,usc,Neda Maghsoodi,yes,yes
+R2,usc,Ellis Meng,yes,yes
+R2,utah,Michael Czabaj,no,yes
+R2,uw,Avin Vijay,yes,yes
+A1,Massachusetts Institute of Technology,Katharina Ribbeck,yes,yes
+A1,Case Western Reserve University,Donald L. Feke,yes,yes
+A1,Case Western Reserve University,Horst A. von Recum,yes,yes
+A1,Iowa State University,Keith L. Vorst,yes,yes
+A1,Arizona State University Campus Immersion,Lenore L. Dai,yes,yes
+A1,Virginia Polytechnic Institute and State University,Richey M. Davis,yes,yes
+A2,University of Wisconsin-Madison,Shaoting Lin,yes,yes
+A2,University of Wisconsin-Madison,Pavana Prabhakar,yes,yes
+A2,University of Wisconsin-Madison,Sandro Mecozzi,yes,yes
+A2,University of Wisconsin-Madison,Xiao Kuang,yes,yes
+A2,University of Massachusetts-Amherst,Samuel P. Gido,yes,yes
+A2,The University of Tennessee-Knoxville,Alexei P. Sokolov,yes,yes
+A2,Northwestern University,Guillermo Antonio Ameer,yes,yes
+A3,North Carolina State University at Raleigh,Abdel-Fattah M. Seyam,yes,yes
+A3,North Carolina State University at Raleigh,Martin William King,yes,yes
+A3,North Carolina State University at Raleigh,Thomas B. H. Schroeder,yes,yes
+A3,North Carolina State University at Raleigh,Tushar K. Ghosh,yes,yes
+A3,Texas A & M University-College Station,Amir Asadi,yes,no
+A3,Texas A & M University-College Station,David E. Bergbreiter,yes,yes
+A3,Texas A & M University-College Station,Mary Beth Browning Monroe,yes,yes
+A3,Texas A & M University-College Station,Pavan V. Kolluru,yes,yes
+A3,Texas A & M University-College Station,Shuyi Xie,yes,yes
+A3,University of Chicago,Paul Franklin Nealey,yes,yes
+A3,University of Chicago,Sihong Wang,yes,yes
+A3,University of Florida,Christine E. Schmidt,yes,yes
+A3,University of Illinois Urbana-Champaign,Jeff Moore,yes,yes
+A3,University of Illinois Urbana-Champaign,Jeffrey S. Moore,yes,yes
+A4,University of Delaware,Erik T. Thostenson,yes,yes
+A4,University of Delaware,Xinqiao Jia,yes,yes
+A4,University of Massachusetts-Lowell,Jayant Kumar,yes,yes
+A4,University of Massachusetts-Lowell,Marina Ruths,yes,yes
+A4,University of Massachusetts-Lowell,Neşe Orbey,yes,yes
+A4,University of Massachusetts-Lowell,Sanjeev K. Manohar,yes,yes
+A4,California Polytechnic State University-San Luis Obispo,Erik D. Sapper,yes,yes
+A4,California Polytechnic State University-San Luis Obispo,Shanju Zhang,yes,yes
+A4,Cornell University,Yu Zhong,yes,yes
+A4,Georgia Institute of Technology-Main Campus,Antonio F. Facchetti,yes,yes
+A4,Carnegie Mellon University,Subha Ranjan Das,yes,yes
+OWNER,stanford,Danielle Mai,yes,yes
+B1,University of Chicago,Stuart J. Rowan,yes,yes
+B1,Texas A & M University-College Station,Anastasia Muliana,yes,yes
+B1,University of Pennsylvania,Kyle H. Vining,yes,yes
+B1,Northwestern University,SonBinh T. Nguyen,yes,yes
+B1,Northwestern University,Junsoo Kim,yes,yes
+B1,University of Florida,Chase M. Hartquist,yes,yes
+B1,Purdue University-Main Campus,Dianyun Zhang,yes,yes
+B2,Rice University,Eugene R. Zubarev,unfetchable,unfetchable
+B2,University of Florida,Angelika E. Neitzel,yes,yes
+B2,University of Connecticut,Sangamesh Gurappa Kumbar,yes,yes
+B2,University of Florida,Whitney L. Stoppel,yes,yes
+B2,University of Chicago,Ka Yee Christina Lee,yes,yes
+B2,University of Connecticut,Ali Tamayol,yes,yes
+B2,University of Illinois Urbana-Champaign,Hua Wang,yes,yes
+B2,Purdue University-Main Campus,R. Byron Pipes,yes,yes
+B2,Pennsylvania State University-Main Campus,Evangelos Manias,yes,yes
+B2,University of Washington-Seattle Campus,Joan E. Sanders,yes,yes
+B2,University of California-Los Angeles,Dino Di Carlo,yes,yes
+B2,Cornell University,Julie Melissa Goddard,yes,yes
