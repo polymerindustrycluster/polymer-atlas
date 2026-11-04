@@ -1,0 +1,116 @@
+{
+ "110001748716": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001748716",
+     "FacilityName": "FRANKLIN FIBRE-LAMITEX CORPORATION",
+     "LocationAddress": "903 EAST 13TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "WILMINGTON",
+     "CountyName": "NEW CASTLE",
+     "StateAbbr": "DE",
+     "ZipCode": "19802-5102",
+     "FIPSCode": "10003",
+     "Latitude83": "39.74417",
+     "Longitude83": "-75.53576"
+    }
+   ]
+  }
+ },
+ "110000339027": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000339027",
+     "FacilityName": "INVISTA S.A.R.L. SEAFORD PLANT",
+     "LocationAddress": "25876 DUPONT RD",
+     "SupplementalLocation": null,
+     "CityName": "SEAFORD",
+     "CountyName": "SUSSEX",
+     "StateAbbr": "DE",
+     "ZipCode": "19973-4387",
+     "FIPSCode": "10005",
+     "Latitude83": "38.631867",
+     "Longitude83": "-75.628373"
+    }
+   ]
+  }
+ },
+ "110001748618": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001748618",
+     "FacilityName": "DELSTAR TECHNOLOGIES INC",
+     "LocationAddress": "601 INDUSTRIAL PARK DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "MIDDLETOWN",
+     "CountyName": "NEW CASTLE",
+     "StateAbbr": "DE",
+     "ZipCode": "19709-1083",
+     "FIPSCode": "10003",
+     "Latitude83": "39.44533",
+     "Longitude83": "-75.72222"
+    }
+   ]
+  }
+ },
+ "110071062124": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071062124",
+     "FacilityName": "DATWYLER PHARMA PACKAGING USA, INC.",
+     "LocationAddress": "571 MERRIMAC AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "MIDDLETOWN",
+     "CountyName": "NEW CASTLE",
+     "StateAbbr": "DE",
+     "ZipCode": "19709",
+     "FIPSCode": "10003",
+     "Latitude83": "39.43734",
+     "Longitude83": "-75.73515"
+    }
+   ]
+  }
+ },
+ "110001736015": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001736015",
+     "FacilityName": "LIVEO RESEARCH, INC.",
+     "LocationAddress": "1389 SCHOOL HOUSE ROAD",
+     "SupplementalLocation": "PO BOX 537",
+     "CityName": "DELAWARE CITY",
+     "CountyName": "NEW CASTLE",
+     "StateAbbr": "DE",
+     "ZipCode": "19706-4200",
+     "FIPSCode": "10003",
+     "Latitude83": "39.594583",
+     "Longitude83": "-75.61825"
+    }
+   ]
+  }
+ },
+ "110000338858": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000338858",
+     "FacilityName": "ASHLAND SPECIALTY INGREDIENTS G.P.",
+     "LocationAddress": "500 HERCULES ROAD",
+     "SupplementalLocation": null,
+     "CityName": "WILMINGTON",
+     "CountyName": "NEW CASTLE",
+     "StateAbbr": "DE",
+     "ZipCode": "19808-1599",
+     "FIPSCode": "10003",
+     "Latitude83": "39.75625",
+     "Longitude83": "-75.638529"
+    }
+   ]
+  }
+ }
+}
