@@ -1,0 +1,26 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-000995,,,CANNOT_CONFIRM,"Cited page is a news item that only states the title in a sentence (no title line); the UCLA chemistry faculty profile page would settle it"
+PERSON-001001,,,CANNOT_CONFIRM,"Cited page returned 403 on two attempts; the page itself would settle it once it loads"
+PERSON-001002,Professor,https://boydston.chem.wisc.edu/team/,CONFIRMED,
+PERSON-001014,,,CANNOT_CONFIRM,"Cited page returned 403 on three attempts; the page itself would settle it once it loads"
+PERSON-001018,Professor | Chemistry and Biochemistry; University Distinguished Professor in the Department of Chemistry and Biochemistry,https://science.arizona.edu/news/college-science-announces-2026-teaching-and-advising-awards,CONFIRMED,
+PERSON-001021,,,CANNOT_CONFIRM,"Neither cited page lists this person (profiles directory paginated; chemistry dept page shows contacts only); the individual Howard profile or chemistry faculty listing would settle it"
+PERSON-001028,Associate Professor,https://engineering.rowan.edu/faculty_staff/listing/behrad-koohbor.html,CONFIRMED,
+PERSON-001030,,,CANNOT_CONFIRM,"Cited page is the Tuskegee homepage and does not mention this person; the Tuskegee news item or faculty profile would settle it"
+PERSON-001036,Professor of Chemistry Department and Polymer Program at the Institute of Materials Science at University of Connecticut,https://lingroup.uconn.edu/yao-lin/,CONFIRMED,
+PERSON-001037,assistant professor in Chemical Engineering at Louisiana Tech University,www2.latech.edu/~apeters/member-apeters.html,CONFIRMED,
+PERSON-001039,,,CANNOT_CONFIRM,"Cited page is the UMass Dartmouth homepage and does not mention this person; the Mechanical Engineering faculty directory entry would settle it"
+PERSON-001044,Edward J. Schaefer Professor in Engineering,https://engineering.jhu.edu/chembe/faculty/paulette-clancy/,CONFIRMED,
+PERSON-001046,,,CANNOT_CONFIRM,"Cited page is the UNT research homepage and does not mention this person; the Biomedical Engineering faculty profile would settle it"
+PERSON-001047,,,CANNOT_CONFIRM,"Cited pages list the person only as a research author or project lead with no rank; the NC A&T Chemistry faculty profile would settle it"
+PERSON-001048,Foss Professor of Physics,http://fstarr.faculty.wesleyan.edu/bio/,CONFIRMED,
+PERSON-001057,,,CANNOT_CONFIRM,"Cited catalog lists the person only under a Professors heading and the chemistry page shows only a news headline; the Rutgers Newark chemistry faculty profile would settle it"
+PERSON-001061,Professor and Director of AMMI,https://engineering.rowan.edu/faculty_staff/listing/joseph-stanzione.html,CONFIRMED,
+PERSON-001063,,,CANNOT_CONFIRM,"Both cited pages are news articles that state the title only in a sentence; the FAMU-FSU College of Engineering faculty profile would settle it"
+PERSON-001066,Chemical Engineering Professor and Department Head,https://engineering.rowan.edu/faculty_staff/listing/ken_lau.html,CONFIRMED,
+PERSON-001067,,,CANNOT_CONFIRM,"Cited page failed with a certificate error on two attempts; the page itself would settle it once it loads"
+PERSON-001071,,,CANNOT_CONFIRM,"Cited page is a 2018 news item that states the title only in a sentence; the UTRGV faculty profile would settle it"
+PERSON-001072,Louis M. Sardella Head and Professor,https://engineering.jhu.edu/materials/faculty/michael-kessler/,CONFIRMED,
+PERSON-001074,,,CANNOT_CONFIRM,"Cited page is a news article that states the title only in a sentence; the Oregon State environmental and molecular toxicology faculty profile would settle it"
+PERSON-001075,Director; Associate Professor of Mechanical and Aerospace Engineering,https://composites.syr.edu/people.html,CONFIRMED,
+PERSON-001081,,,CANNOT_CONFIRM,"Cited page is a news item that states the title only in a sentence; the UMMC faculty profile would settle it"

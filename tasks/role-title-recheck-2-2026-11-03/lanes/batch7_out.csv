@@ -1,0 +1,26 @@
+person_id,new_role_as_published,title_url,status,rank_note
+PERSON-001238,Associate Professor,https://engineering.unl.edu/mme/person/lucia-fernandez-ballester/,CONFIRMED,Page prints Associate Professor; record role is assistant_professor.
+PERSON-001239,assistant professor of chemistry,https://newsletter.blogs.wesleyan.edu/2021/09/20/new-ongoing-faculty-are-experts-on-japanese-pedagogy-costume-design-immersive-media/,CONFIRMED,Only cited page is a 2021-09-20 newsletter; rank may have changed since.
+PERSON-001240,Professor of Chemistry; Director of Chemistry Graduate Program,https://dsalas.camden.rutgers.edu/,CONFIRMED,
+PERSON-001241,Associate Professor,https://www.clarkson.edu/academics/schools-colleges/engineering/mechanical-aerospace/about/faculty?page=2,CONFIRMED,
+PERSON-001242,,https://fda.fsu.edu/nfd/joshua-mysona,CANNOT_CONFIRM,"Neither cited page prints a title for him; eng.famu.fsu.edu/cbe/people/mysona (linked from the cited research page, not itself cited) would settle it."
+PERSON-001244,Assistant Professor,https://cbe.utk.edu/people/ria-d-corder/,CONFIRMED,
+PERSON-001245,Assistant Professor of Biomedical Engineering,https://engineering.wisc.edu/directory/profile/monica-ohnsorg/,CONFIRMED,Title is printed in the profile bio sentence; the page heading line carries no rank.
+PERSON-000054,BF Goodrich Professor,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=janas,CONFIRMED,
+PERSON-000195,Associate Professor,https://www.mse.gatech.edu/people/jason-azoulay,CONFIRMED,
+PERSON-000209,"Professor, Roberto C. Goizueta Chair for Excellence in Chemical Engineering, and GRA Eminent Scholar in Membranes",https://www.chbe.gatech.edu/directory/person/william-koros,CONFIRMED,
+PERSON-000297,Greg-Graniteville Endowed Chair and Professor,https://www.clemson.edu/cecas/departments/mse/people/faculty/foulger.html,CONFIRMED,Title copied as printed; the page's own overview spells the chair Gregg-Graniteville.
+PERSON-000549,Project Leader: Scanned Probe Microscopy for Advanced Materials and Processes and Photopolymer Additive Manufacturing,https://www.nist.gov/people/jason-killgore,CONFIRMED,"Page prints Project Leader (2015-present) as the current line; Materials Research Engineer appears only as 2011-2015 history; record role is research_engineer."
+PERSON-000847,Professor of Chemistry,http://profiles.stanford.edu/yan-xia,CONFIRMED,
+PERSON-000884,"Ford Foundation Professor, Associate Director of Center for Future Energy Systems (CFES)",https://faculty.rpi.edu/chulsung-bae,CONFIRMED,
+PERSON-000912,"Professor, Chemistry",https://scholars.uky.edu/en/persons/chad-risko,CONFIRMED,
+PERSON-000918,Assistant Professor,https://drexel.edu/engineering/about/faculty-staff/L/lequieu-joshua/,CONFIRMED,
+PERSON-000925,Professor,https://people.sc.fsu.edu/~sshanbhag/,CONFIRMED,
+PERSON-000933,"E Ink Professor of Engineering and Dean of Research; Professor, Chemical and Biological Engineering",https://engineering.tufts.edu/people/faculty?title&field_department_tid=51&field_research_interests&department=All&category=All&page=5,CONFIRMED,
+PERSON-000935,Associate Professor of Materials Science and Engineering; Associate Professor of Biomedical Engineering,https://mse.engineering.arizona.edu/faculty-staff/faculty/minkyu-kim,CONFIRMED,
+PERSON-000938,Associate Professor,https://www.isu.edu/chem/faculty/staffdirectoryentries/,CONFIRMED,
+PERSON-000939,Professor,https://bowden.lab.uiowa.edu/node/46,CONFIRMED,
+PERSON-000941,Associate Professor,https://www.bme.utah.edu/profile/?unid=u0160456,CONFIRMED,
+PERSON-000965,Professor,https://chem.utk.edu/people/bin-zhao/,CONFIRMED,
+PERSON-000975,"Professor, Biomedical Engineering; Charles H. and Bettye Barclay Professor in Engineering",https://engineering.tamu.edu/biomedical/profiles/grunlan-melissa-a.html,CONFIRMED,
+PERSON-000978,Distinguished Professor,http://www.chemistry.ucla.edu/directory/schwartz-benjamin-j,CONFIRMED,Page prints Distinguished Professor; record role is professor.

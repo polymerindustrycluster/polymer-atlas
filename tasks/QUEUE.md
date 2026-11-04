@@ -229,6 +229,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - 45 have a page rank that differs from `role`. Settle `role` and the title together.
   - 18 lane lines were not usable.
   - List: `tasks/atlas-cleanup-2026-11-03/holds.csv`.
+  - `in-pr:claude-code 2026-11-03` **Wave 2** (owner's laptop, raw-page check added): 35 titles set; 149 still held with reasons; 12 NREL-only people wait for the NREL re-point packet. `tasks/role-title-recheck-2-2026-11-03/`.
 - [ ] `open` **Integration writers must dedupe people against `people.csv` before allocating IDs.** Pass 45 created 14 same-institution duplicates.
 
 ## Ohio Innovation Exchange follow-ups (2026-11-03)
