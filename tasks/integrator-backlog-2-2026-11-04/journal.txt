@@ -1,0 +1,21 @@
+MOVED ORG-000340 organizations_OH.csv -> organizations_WI.csv with 17 evidence rows
+HQ ORG-000340: ('Middlefield', 'OH') -> ('Baraboo', 'WI')
+MOVED ORG-000620 organizations_OH.csv -> organizations_MA.csv with 7 evidence rows
+HQ ORG-000620: ('Middlefield', 'OH') -> ('Holyoke', 'MA')
+MOVED ORG-000760 organizations_OH.csv -> organizations_MI.csv with 3 evidence rows
+HQ ORG-000760: ('Greenfield', 'OH') -> ('Kentwood', 'MI')
+MOVED ORG-000769 organizations_OH.csv -> organizations_MI.csv with 4 evidence rows
+HQ ORG-000769: ('Dayton', 'OH') -> ('Fenton', 'MI')
+MOVED ORG-000984 organizations_OH.csv -> organizations_GA.csv with 3 evidence rows
+HQ ORG-000984: ('Mount Sterling', 'OH') -> ('Atlanta', 'GA')
+HQ ORG-001151: ('Bowling Green', 'MI') -> ('Mendon', 'MI')
+MOVED ORG-002462 organizations_PA.csv -> organizations_NC.csv with 0 evidence rows
+HQ ORG-002462: ('Latrobe', 'PA') -> ('Asheboro', 'NC')
+MOVED ORG-002534 organizations_PA.csv -> organizations_GA.csv with 0 evidence rows
+HQ ORG-002534: ('Morrisville', 'PA') -> ('Alpharetta', 'GA')
+MOVED ORG-002535 organizations_PA.csv -> organizations_MA.csv with 5 evidence rows
+HQ ORG-002535: ('Morrisville', 'PA') -> ('Somerville', 'MA')
+MOVED ORG-006188 organizations_NV.csv -> organizations_CA.csv with 2 evidence rows
+HQ ORG-006188: ('Minden', 'NV') -> ('La Habra', 'CA')
+MOVED ORG-002261 organizations_PA.csv -> organizations_CA.csv with 2 evidence rows
+HQ ORG-002261: ('Cochranton', 'PA') -> ('Los Angeles', 'CA')
