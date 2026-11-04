@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 42 | 31 | 2 | 9 | 25 | 0 / 31 | 46 -> 77 | 21 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004978..ORG-005002, SITE-006250..SITE-006280, EVD-026300..EVD-025959.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004978..ORG-005002, SITE-006250..SITE-006280, EVD-026730..EVD-025959.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-CT-04 BRAND NU LABORATORIES INC (Meriden): Whether Brand Nu Laboratories Meriden makes polymer products (NAICS 325998/424690).

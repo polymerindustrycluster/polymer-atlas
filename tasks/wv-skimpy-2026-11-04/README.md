@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 22 | 15 | 2 | 5 | 8 | 0 / 15 | 31 -> 46 | 12 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004881..ORG-004888, SITE-006074..SITE-006088, EVD-026312..EVD-023739.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004881..ORG-004888, SITE-006074..SITE-006088, EVD-026742..EVD-023739.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-WV-05 CHEM-PAK INC (Martinsburg): Whether Chem-Pak formulates polymer coatings/adhesives at 242 Corning Way or only fills aerosols (NAICS 324191/325510/325998 mixed).

@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 38 | 30 | 0 | 8 | 18 | 0 / 30 | 33 -> 63 | 21 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004960..ORG-004977, SITE-006220..SITE-006249, EVD-026312..EVD-025561.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004960..ORG-004977, SITE-006220..SITE-006249, EVD-026742..EVD-025561.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-OR-02 ECS (Grants Pass): Legal operator behind FRS/ITA name "ECS" at 3560 Rogue River Hwy, Grants Pass (NAICS 326130/326199).
