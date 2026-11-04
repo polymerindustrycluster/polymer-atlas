@@ -468,7 +468,10 @@ for i, r in enumerate(sites, 2):
         errors.append(f"sites.csv:{i} {sid} coordinates without geocode_precision")
 
 # V-45..V-51 [2026-11-01] Enforcement of existing SCHEMA MUSTs that no rule
-# checked before. These add no vocabulary: each set below is copied from the
+# checked before. V-55 [2026-11-04] extends the same debt mechanism to
+# processes/materials tokens on sites and organizations (programs were
+# already hard-checked): 2,885 legacy records grandfathered at adoption.
+# These add no vocabulary: each set below is copied from the
 # SCHEMA section named in its message. Rows that already violated a rule when
 # it was added are listed in scripts/validate_debt_baseline.json and only
 # warn (one aggregated line per rule; --debt-details lists them). Any row NOT
@@ -521,6 +524,10 @@ for r in sites:
     bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
     if bad_mk:
         debt("V-49", sid, f"sites {sid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
+    bad_pm = [t for t in vals(r.get("processes")) if t not in PROCESSES] + \
+             [t for t in vals(r.get("materials")) if t not in MATERIALS]
+    if bad_pm:
+        debt("V-55", sid, f"sites {sid} processes/materials values {bad_pm} not in SCHEMA §3.1/§3.2 vocabulary")
     band = (r.get("employee_band_site") or "").strip()
     if band and band not in EMPLOYEE_BANDS:
         debt("V-48", sid, f"sites {sid} employee_band_site {band!r} not in SCHEMA §4.4 bands")
@@ -534,6 +541,10 @@ for r in orgs:
     bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
     if bad_mk:
         debt("V-49", oid, f"organizations {oid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
+    bad_pm = [t for t in vals(r.get("processes")) if t not in PROCESSES] + \
+             [t for t in vals(r.get("materials")) if t not in MATERIALS]
+    if bad_pm:
+        debt("V-55", oid, f"organizations {oid} processes/materials values {bad_pm} not in SCHEMA §3.1/§3.2 vocabulary")
     band = (r.get("employee_band_ohio") or "").strip()
     if band and band not in EMPLOYEE_BANDS:
         debt("V-48", oid, f"organizations {oid} employee_band_ohio {band!r} not in SCHEMA §4.4 bands")

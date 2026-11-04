@@ -1,0 +1,24 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-OK-00,"FILMS SHAWNEE LLC","Shawnee",VERIFIED,"Two federal sources: FRS 110000455873 + ITA 1411710 + OSHA 345956114 (scope from federal NAICS)",SITE-006089
+QMS-OK-01,"DELTA FAUCET OF OKLAHOMA","Chickasha",STILL_UNCERTAIN,"Whether Delta Faucet Chickasha molds or compounds polymer parts (NAICS 325211/325998 listed) vs metal faucet work only, and the parent org (Masco) record.",
+QMS-OK-02,"CROWN PAINT","Oklahoma City",VERIFIED,"Two federal sources: FRS 110000453713 + ITA 1566194 + OSHA 347095796 (scope from federal NAICS)",SITE-006090
+QMS-OK-03,"POLY FILMS INC","Oklahoma City",VERIFIED,"Two federal sources: FRS 110020743622 + ITA 1506397 + OSHA 348207473 (scope from federal NAICS)",SITE-006091
+QMS-OK-04,"HENNIGES AUTOMOTIVE OKLAHOMA INC","Frederick",VERIFIED,"Two federal sources: FRS 110042003774 + ITA 120975 (scope from federal NAICS)",SITE-006092
+QMS-OK-05,"GEMINI COATINGS INC / EL RENO PLANT","El Reno",VERIFIED,"Two federal sources: FRS 110000453651 + ITA 995554 (scope from federal NAICS)",SITE-006093
+QMS-OK-06,"NORIT ACTIVATED CARBON","Pryor",REJECT,"Activated carbon, not polymer: FRS/ITA CY2025 (filed 2026-02-26) Norit Activated Carbon, NAICS 325998.",
+QMS-OK-07,"BAGS INC","Oklahoma City",VERIFIED,"Two federal sources: FRS 110004758842 + ITA 1506238 (scope from federal NAICS)",SITE-006094
+QMS-OK-08,"AMERICAN PHOENIX INC / AMERICAN PHOENIX INC","Lawton",VERIFIED,"Two federal sources: FRS 110009435021 + ITA 989142 (scope from federal NAICS)",SITE-006095
+QMS-OK-09,"ML PRODUCTS LLC","Noble",STILL_UNCERTAIN,"What ML Products makes at 1101 E Maguire Rd, Noble (NAICS 325212/326299 vs 339113 medical devices).",
+QMS-OK-10,"COOLING TOWER COMPOSITES AND FABRICATIO / CHICKASHA FACILITY","Chickasha",VERIFIED,"Two federal sources: FRS 110070566656 + ITA 432019 (scope from federal NAICS)",SITE-006096
+QMS-OK-11,"IFS COATINGS, INC","Ardmore",VERIFIED,"Two federal sources: FRS 110070551269 + ITA 73266 (scope from federal NAICS)",SITE-006097
+QMS-OK-12,"CHEMTRADE REFINERY SERVICES, INC.","Tulsa",REJECT,"Refinery sulfuric-acid services, not polymer: ITA CY2025 (filed 2026-02-27) NAICS 325180.",
+QMS-OK-13,"DEEPWATER CHEMICALS, INC.","Woodward",REJECT,"Iodine/inorganic chemicals, not polymer: ITA CY2025 (filed 2026-08-11) NAICS 325180.",
+QMS-OK-14,"WOODWARD IODINE CORPORATION","Woodward",REJECT,"Iodine production, not polymer: ITA CY2025 (filed 2026-01-23) NAICS 325180.",
+QMS-OK-15,"OKLAHOMA CITY SITE","Yukon",STILL_UNCERTAIN,"Operator and products of the Yukon 'Oklahoma City Site' at 100 N Mustang Rd Bldg 200 (NAICS 325211/325992).",
+QMS-OK-16,"SPECIALTY GAS MFG PLT","Catoosa",REJECT,"Industrial gases, not polymer: ITA CY2025 (filed 2026-02-26) NAICS 325120.",
+QMS-OK-17,"SHEET VINYL FLOORING MFG FACILITY","Stillwater",STILL_UNCERTAIN,"Current operator (AHF Products ORG-004124 or other) of the Stillwater sheet vinyl flooring plant at 4115 N Perkins Rd.",
+QMS-OK-18,"NOMACO OKLAHOMA FOAM EXTRUSION PLANT","Yukon",VERIFIED,"Two federal sources: FRS 110018859635 + OSHA 344492376 (scope from federal NAICS)",SITE-006098
+QMS-OK-19,"3M TECHNICAL CERAMICS","Quapaw",REJECT,"Technical ceramics (boron nitride), not polymer: FRS 110056581275 fetched 2026-11-04, NAICS 325180/331419, name 3M Technical Ceramics.",
+QMS-OK-20,"JM MANUFACTURING-TULSA PLANT","Tulsa",VERIFIED,"Two federal sources: FRS 110004746133 + OSHA 349117804 (scope from federal NAICS)",SITE-006099
+QMS-OK-21,"Mfg  Americas Lawton","Lawton",VERIFIED,"Two federal sources: ITA 1465279 + OSHA 346946536 (scope from federal NAICS)",SITE-006100
+QMS-OK-22,"Berry Global","Pryor",VERIFIED,"Two federal sources: ITA 953095 + OSHA 345003123 (scope from federal NAICS)",SITE-006101

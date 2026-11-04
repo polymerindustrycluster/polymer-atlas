@@ -1,0 +1,6 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-MT-00,American Chemet Corp,East Helena,REJECT,deciding fact: inorganic copper/zinc oxide and copper powder chemicals (NAICS 325180) - not a polymer process; own chemet.com/what-we-do and MT DEQ permit MAQP #1993-26 read 2026-11-04,none
+QMS-MT-01,Big Sky Insulation Inc,Belgrade,VERIFIED,new org + site; own premierbuildingsystems.com careers page (SIPs + R-Shield EPS line); held ORG-000519 Premier Building Solutions (OH) is a different entity - flagged,ORG-004849 / SITE-006019 (C)
+QMS-MT-02,Montana Sulphur & Chemical Co,Billings,REJECT,deciding fact: elemental sulfur products and refinery sulfur recovery (NAICS 325180) - not a polymer process; own montanasulphur.com/products read 2026-11-04,none
+QMS-MT-03,Montana Fiberglass Inc,Lewistown,VERIFIED,new org + site; own montanafiberglass.com: fiberglass storage tanks,ORG-004850 / SITE-006020 (C)
+QMS-MT-04,"Stevensville, MT (483 Stevensville Airport Rd)",Stevensville,STILL_UNCERTAIN,settling fact: operator identity and current operation per the operator's own site (believed Poly Warehouse / Specified Fittings HDPE/PVC fittings; specfit.com returned HTTP 500 on 2026-11-04 - availability not absence),none

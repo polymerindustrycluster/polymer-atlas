@@ -1,0 +1,344 @@
+{
+ "110071451933": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071451933",
+     "FacilityName": "BROOKLYN BEDDING",
+     "LocationAddress": "5301 W BETHANY HOME RD",
+     "SupplementalLocation": null,
+     "CityName": "GLENDALE",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85301",
+     "FIPSCode": "04013",
+     "Latitude83": "33.522606",
+     "Longitude83": "-112.174373"
+    }
+   ]
+  }
+ },
+ "110039268431": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110039268431",
+     "FacilityName": "FUJIFILM ELECTRONIC MATERIALS",
+     "LocationAddress": "6550 S MOUNTAIN RD",
+     "SupplementalLocation": null,
+     "CityName": "MESA",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85212-7988",
+     "FIPSCode": "04013",
+     "Latitude83": "33.29222",
+     "Longitude83": "-111.59194"
+    }
+   ]
+  }
+ },
+ "110039401652": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110039401652",
+     "FacilityName": "PACIFIC SCIENTIFIC EMC WILLIS",
+     "LocationAddress": "7073 W WILLIS RD",
+     "SupplementalLocation": null,
+     "CityName": "CHANDLER",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85226-5165",
+     "FIPSCode": "04013",
+     "Latitude83": "33.284382",
+     "Longitude83": "-111.963064"
+    }
+   ]
+  }
+ },
+ "110072012918": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072012918",
+     "FacilityName": "CANTEX, INC.",
+     "LocationAddress": "4045 E BONANZA DR",
+     "SupplementalLocation": null,
+     "CityName": "KINGMAN",
+     "CountyName": "MOHAVE",
+     "StateAbbr": "AZ",
+     "ZipCode": "86401",
+     "FIPSCode": "04015",
+     "Latitude83": "35.27491",
+     "Longitude83": "-113.94864"
+    }
+   ]
+  }
+ },
+ "110071434516": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071434516",
+     "FacilityName": "DUNN-EDWARDS CORPORATION",
+     "LocationAddress": "520 S 67TH AVE",
+     "SupplementalLocation": null,
+     "CityName": "PHOENIX",
+     "CountyName": "MARICOPA COUNTY",
+     "StateAbbr": "AZ",
+     "ZipCode": "85043",
+     "FIPSCode": "04013",
+     "Latitude83": "33.44342",
+     "Longitude83": "-112.20358"
+    }
+   ]
+  }
+ },
+ "110002605164": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002605164",
+     "FacilityName": "TECH GROUP NORTH AMERICA, INC D/B/A WEST",
+     "LocationAddress": "470 W VAUGHN ST",
+     "SupplementalLocation": null,
+     "CityName": "TEMPE",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85283",
+     "FIPSCode": "04013",
+     "Latitude83": "33.36146",
+     "Longitude83": "-111.94494"
+    }
+   ]
+  }
+ },
+ "110003410014": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003410014",
+     "FacilityName": "TUCSON RUBBER CORPORATION",
+     "LocationAddress": "2201 E GANLEY",
+     "SupplementalLocation": null,
+     "CityName": "TUCSON",
+     "CountyName": "PIMA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85706",
+     "FIPSCode": "04019",
+     "Latitude83": "32.13953",
+     "Longitude83": "-110.93877"
+    }
+   ]
+  }
+ },
+ "110002606190": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002606190",
+     "FacilityName": "VINYLTECH CORPORATION",
+     "LocationAddress": "201 S 61ST AVE",
+     "SupplementalLocation": null,
+     "CityName": "PHOENIX",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85043-3598",
+     "FIPSCode": "04013",
+     "Latitude83": "33.4479",
+     "Longitude83": "-112.1909"
+    }
+   ]
+  }
+ },
+ "110000886131": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000886131",
+     "FacilityName": "PRINTPACK, INC",
+     "LocationAddress": "6800 E. 2ND ST",
+     "SupplementalLocation": null,
+     "CityName": "PRESCOTT VALLEY",
+     "CountyName": "YAVAPAI",
+     "StateAbbr": "AZ",
+     "ZipCode": "86314",
+     "FIPSCode": "04025",
+     "Latitude83": "34.580906",
+     "Longitude83": "-112.346488"
+    }
+   ]
+  }
+ },
+ "110041611672": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110041611672",
+     "FacilityName": "SOUTHWEST DISTRIBUTING CO",
+     "LocationAddress": "539 S DREW ST",
+     "SupplementalLocation": null,
+     "CityName": "MESA",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85210",
+     "FIPSCode": "04013",
+     "Latitude83": "33.40495",
+     "Longitude83": "-111.83273"
+    }
+   ]
+  }
+ },
+ "110002598555": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002598555",
+     "FacilityName": "CRESLINE-WEST INC.",
+     "LocationAddress": "3747 W BUCKEYE RD",
+     "SupplementalLocation": null,
+     "CityName": "PHOENIX",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85009-5432",
+     "FIPSCode": "04013",
+     "Latitude83": "33.4369",
+     "Longitude83": "-112.1413"
+    }
+   ]
+  }
+ },
+ "110002137526": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002137526",
+     "FacilityName": "SHIN- ETSU MICROSI INC",
+     "LocationAddress": "10028 S. 51ST ST.",
+     "SupplementalLocation": null,
+     "CityName": "PHOENIX",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85044",
+     "FIPSCode": "04013",
+     "Latitude83": "33.35552",
+     "Longitude83": "-111.974309"
+    }
+   ]
+  }
+ },
+ "110001695675": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001695675",
+     "FacilityName": "GOODYEAR AVIATION PRODUCTS",
+     "LocationAddress": "4105 MOHAVE AIRPORT DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "KINGMAN",
+     "CountyName": "MOHAVE",
+     "StateAbbr": "AZ",
+     "ZipCode": "86401-6767",
+     "FIPSCode": "04015",
+     "Latitude83": "35.267696",
+     "Longitude83": "-113.955375"
+    }
+   ]
+  }
+ },
+ "110002598797": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002598797",
+     "FacilityName": "MORTON SALT CO - GLENDALE",
+     "LocationAddress": "13000 WEST GLENDALE AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "GLENDALE",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85307-2200",
+     "FIPSCode": "04013",
+     "Latitude83": "33.53668",
+     "Longitude83": "-112.33813"
+    }
+   ]
+  }
+ },
+ "110071280159": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071280159",
+     "FacilityName": "POLYGLASS USA, INC.",
+     "LocationAddress": "5301 W MOHAVE ST",
+     "SupplementalLocation": null,
+     "CityName": "PHOENIX",
+     "CountyName": "MARICOPA COUNTY",
+     "StateAbbr": "AZ",
+     "ZipCode": "85043",
+     "FIPSCode": "04013",
+     "Latitude83": "33.43049",
+     "Longitude83": "-112.17339"
+    }
+   ]
+  }
+ },
+ "110039457851": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110039457851",
+     "FacilityName": "EARTH PROTECTION SERVICES",
+     "LocationAddress": "10 S 48TH AVE STE 4",
+     "SupplementalLocation": null,
+     "CityName": "PHOENIX",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85043-3827",
+     "FIPSCode": "04013",
+     "Latitude83": "33.4473",
+     "Longitude83": "-112.16287"
+    }
+   ]
+  }
+ },
+ "110013371396": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110013371396",
+     "FacilityName": "PHOENIX PACKAGING OPERATIONS, LLC",
+     "LocationAddress": "464 E CHILTON DR",
+     "SupplementalLocation": null,
+     "CityName": "CHANDLER",
+     "CountyName": "MARICOPA",
+     "StateAbbr": "AZ",
+     "ZipCode": "85225-1185",
+     "FIPSCode": "04013",
+     "Latitude83": "33.35509",
+     "Longitude83": "-111.83434"
+    }
+   ]
+  }
+ },
+ "110070273719": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070273719",
+     "FacilityName": "REPUBLIC PLASTICS LP",
+     "LocationAddress": "1550 W BATTAGLIA RD",
+     "SupplementalLocation": null,
+     "CityName": "ELOY",
+     "CountyName": "PINAL COUNTY",
+     "StateAbbr": "AZ",
+     "ZipCode": "85131",
+     "FIPSCode": "04021",
+     "Latitude83": "32.7631",
+     "Longitude83": "-111.57903"
+    }
+   ]
+  }
+ }
+}

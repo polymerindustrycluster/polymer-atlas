@@ -1,0 +1,97 @@
+{
+ "110004946658": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004946658",
+     "FacilityName": "TYCO PLASTICS SIOUX FALLS",
+     "LocationAddress": "1800 NORTH M AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "SIOUX FALLS",
+     "CountyName": "MINNEHAHA",
+     "StateAbbr": "SD",
+     "ZipCode": "57104-0229",
+     "FIPSCode": "46099",
+     "Latitude83": "43.57259",
+     "Longitude83": "-96.74807"
+    }
+   ]
+  }
+ },
+ "110031359456": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031359456",
+     "FacilityName": "GLACIAL LAKES RUBBER & PLASTICS",
+     "LocationAddress": "700 PHEASANT RIDGE DR.",
+     "SupplementalLocation": null,
+     "CityName": "WATERTOWN",
+     "CountyName": "CODINGTON",
+     "StateAbbr": "SD",
+     "ZipCode": "57201",
+     "FIPSCode": "46029",
+     "Latitude83": "44.895971",
+     "Longitude83": "-97.052679"
+    }
+   ]
+  }
+ },
+ "110021345301": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110021345301",
+     "FacilityName": "BENCHMARK FOAM, INC.",
+     "LocationAddress": "3200 9TH AVENUE SE",
+     "SupplementalLocation": null,
+     "CityName": "WATERTOWN",
+     "CountyName": "CODINGTON",
+     "StateAbbr": "SD",
+     "ZipCode": "57201-9172",
+     "FIPSCode": "46029",
+     "Latitude83": "44.88962",
+     "Longitude83": "-97.063"
+    }
+   ]
+  }
+ },
+ "110071192934": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071192934",
+     "FacilityName": "VIAFLEX, INC.",
+     "LocationAddress": "609 E WILLOW ST",
+     "SupplementalLocation": null,
+     "CityName": "BRANDON",
+     "CountyName": "MINNEHAHA",
+     "StateAbbr": "SD",
+     "ZipCode": "57005",
+     "FIPSCode": "46099",
+     "Latitude83": "43.613965",
+     "Longitude83": "-96.580362"
+    }
+   ]
+  }
+ },
+ "110004947103": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004947103",
+     "FacilityName": "VIAFLEX",
+     "LocationAddress": "811 WEST ALGONQUIN STREET",
+     "SupplementalLocation": null,
+     "CityName": "SIOUX FALLS",
+     "CountyName": "MINNEHAHA",
+     "StateAbbr": "SD",
+     "ZipCode": "57104",
+     "FIPSCode": "46099",
+     "Latitude83": "43.569483",
+     "Longitude83": "-96.735779"
+    }
+   ]
+  }
+ }
+}
