@@ -1,0 +1,17 @@
+cluster_id,verdict,tier,raw,route
+LF-FL-00346,VERIFIED_NEW_SITE,B,yes,firecrawl
+LF-FL-00162,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00031,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00508,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00373,VERIFIED_NEW_SITE,B,yes,firecrawl
+LF-FL-00434,VERIFIED_NEW_SITE,B,yes,firecrawl
+LF-FL-00069,VERIFIED_NEW_SITE,B,yes,firecrawl
+LF-FL-00342,VERIFIED_NEW_SITE,C,yes,firecrawl
+LF-FL-00376,VERIFIED_NEW_SITE,C,no_quote,none
+LF-FL-00383,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00359,VERIFIED_NEW_SITE,C,yes,firecrawl
+LF-FL-00521,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00577,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00433,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00096,VERIFIED_NEW_ORG,C,yes,firecrawl
+LF-FL-00089,VERIFIED_NEW_ORG,C,yes,firecrawl
