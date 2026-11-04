@@ -27,6 +27,9 @@ from build_integration import append_rows, read  # noqa: E402
 
 DATE, BY = "2026-11-04", "claude-code exhibitor-links-2026-11-04"
 UMBRELLA = {"EVT-000008", "EVT-000009", "EVT-000051", "EVT-000052"}  # AMI co-located expos -> EVT-000007
+OVERRIDE = {"SAMPE 2026": "EVT-000035"}  # held series the name map missed (events lane, 2026-11-04)
+# Not linked by design: MD&M West/Midwest (excluded by owner ruling 2026-10-30, SCHEMA 4.12.1 seam 3); RAPID + TCT,
+# Chemspec Europe, Automotive Testing Expo (fail the named-subject test: no polymer subject).
 
 
 def year_of(url, fallback):
@@ -50,7 +53,7 @@ def main():
     eds = {(r["key"], r["year"]): r for r in read(HERE / "editions.csv")}
     rows, skipped = [], Counter()
     for m in read(HERE / "matches.csv"):
-        ev = "EVT-000007" if m["event_id"] in UMBRELLA else m["event_id"]
+        ev = OVERRIDE.get(m["conf_key"]) or ("EVT-000007" if m["event_id"] in UMBRELLA else m["event_id"])
         if ev not in events:
             skipped["series not held"] += 1; continue
         yr = year_of(m["roster_url"], m["edition_year"])
