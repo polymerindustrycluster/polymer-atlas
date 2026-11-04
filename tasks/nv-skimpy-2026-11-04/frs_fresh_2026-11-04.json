@@ -1,0 +1,230 @@
+{
+ "110058169547": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110058169547",
+     "FacilityName": "AERVOE INDUSTRIES, INC.",
+     "LocationAddress": "1100 MARK CIRCLE",
+     "SupplementalLocation": null,
+     "CityName": "GARDNERVILLE",
+     "CountyName": "DOUGLAS",
+     "StateAbbr": "NV",
+     "ZipCode": "89410",
+     "FIPSCode": "32005",
+     "Latitude83": "38.92313",
+     "Longitude83": "-119.69918"
+    }
+   ]
+  }
+ },
+ "110027833272": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110027833272",
+     "FacilityName": "POLY-WEST",
+     "LocationAddress": "251 CONESTOGA WAY",
+     "SupplementalLocation": null,
+     "CityName": "HENDERSON",
+     "CountyName": "CLARK",
+     "StateAbbr": "NV",
+     "ZipCode": "89002",
+     "FIPSCode": "32003",
+     "Latitude83": "35.995673",
+     "Longitude83": "-114.942763"
+    }
+   ]
+  }
+ },
+ "110006442769": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110006442769",
+     "FacilityName": "BERRY PLASTICS",
+     "LocationAddress": "800 E HORIZON DR",
+     "SupplementalLocation": null,
+     "CityName": "HENDERSON",
+     "CountyName": "CLARK",
+     "StateAbbr": "NV",
+     "ZipCode": "89002",
+     "FIPSCode": "32003",
+     "Latitude83": "36.01262",
+     "Longitude83": "-114.95768"
+    }
+   ]
+  }
+ },
+ "110071988576": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071988576",
+     "FacilityName": "ATLAS MOLDED PRODUCTS, A DIVISION OF ATLAS ROOFING CORPORATION",
+     "LocationAddress": "13695 MT ANDERSON STREET",
+     "SupplementalLocation": null,
+     "CityName": "RENO",
+     "CountyName": "WASHOE",
+     "StateAbbr": "NV",
+     "ZipCode": "89506",
+     "FIPSCode": "32031",
+     "Latitude83": "39.651344",
+     "Longitude83": "-119.885305"
+    }
+   ]
+  }
+ },
+ "110045554084": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110045554084",
+     "FacilityName": "SIERRA PACKAGING & CONVERTING, LLC",
+     "LocationAddress": "11005 STEAD BLVD",
+     "SupplementalLocation": null,
+     "CityName": "RENO",
+     "CountyName": "WASHOE",
+     "StateAbbr": "NV",
+     "ZipCode": "89506",
+     "FIPSCode": "32031",
+     "Latitude83": "39.63104",
+     "Longitude83": "-119.88204"
+    }
+   ]
+  }
+ },
+ "110000472747": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000472747",
+     "FacilityName": "UNIVERSAL URETHANE INC",
+     "LocationAddress": "4201 EAST LONE MOUNTAIN ROAD",
+     "SupplementalLocation": null,
+     "CityName": "N LAS VEGAS",
+     "CountyName": "CLARK",
+     "StateAbbr": "NV",
+     "ZipCode": "89081-2721",
+     "FIPSCode": "32003",
+     "Latitude83": "36.24734",
+     "Longitude83": "-115.0822"
+    }
+   ]
+  }
+ },
+ "110000472809": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000472809",
+     "FacilityName": "RTP CO",
+     "LocationAddress": "23 W AIRPARK VISTA BLVD",
+     "SupplementalLocation": null,
+     "CityName": "DAYTON",
+     "CountyName": "LYON",
+     "StateAbbr": "NV",
+     "ZipCode": "89403",
+     "FIPSCode": "32019",
+     "Latitude83": "39.23096",
+     "Longitude83": "-119.55863"
+    }
+   ]
+  }
+ },
+ "110040098685": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110040098685",
+     "FacilityName": "ERICKSON INTERNATIONAL LLC",
+     "LocationAddress": "3135 MARCO ST",
+     "SupplementalLocation": null,
+     "CityName": "LAS VEGAS",
+     "CountyName": "CLARK",
+     "StateAbbr": "NV",
+     "ZipCode": "89115",
+     "FIPSCode": "32003",
+     "Latitude83": "36.21574",
+     "Longitude83": "-115.06889"
+    }
+   ]
+  }
+ },
+ "110031359394": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031359394",
+     "FacilityName": "QUALITY PLASTICS, INC",
+     "LocationAddress": "1685 INDUSTRIAL WAY",
+     "SupplementalLocation": null,
+     "CityName": "SPARKS",
+     "CountyName": "WASHOE",
+     "StateAbbr": "NV",
+     "ZipCode": "89431",
+     "FIPSCode": "32031",
+     "Latitude83": "39.519985",
+     "Longitude83": "-119.75815"
+    }
+   ]
+  }
+ },
+ "110069233074": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069233074",
+     "FacilityName": "PERFORMANCE COMPOSITES",
+     "LocationAddress": "4902 AMPERE DR",
+     "SupplementalLocation": null,
+     "CityName": "RENO",
+     "CountyName": "WASHOE",
+     "StateAbbr": "NV",
+     "ZipCode": "89502",
+     "FIPSCode": "32031",
+     "Latitude83": "39.51024",
+     "Longitude83": "-119.757446"
+    }
+   ]
+  }
+ },
+ "110071843032": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071843032",
+     "FacilityName": "RDHC PERFORMANCE GROUP LLC",
+     "LocationAddress": "4902 AMPERE DR",
+     "SupplementalLocation": "A",
+     "CityName": "RENO",
+     "CountyName": "WASHOE",
+     "StateAbbr": "NV",
+     "ZipCode": "89502",
+     "FIPSCode": "32031",
+     "Latitude83": "39.51026",
+     "Longitude83": "-119.757611"
+    }
+   ]
+  }
+ },
+ "110000473005": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000473005",
+     "FacilityName": "WINNEMUCCA PLANT",
+     "LocationAddress": "5505 CYANCO DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "WINNEMUCCA",
+     "CountyName": "HUMBOLDT",
+     "StateAbbr": "NV",
+     "ZipCode": "89445-4807",
+     "FIPSCode": "32013",
+     "Latitude83": "40.94129",
+     "Longitude83": "-117.861591"
+    }
+   ]
+  }
+ }
+}

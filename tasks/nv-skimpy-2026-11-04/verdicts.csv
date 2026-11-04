@@ -1,0 +1,12 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+LF-NV-00039,Aervoe Industries,Gardnerville,VERIFIED,new org + site; own site (paints/coatings HQ+plant; ring 2),ORG-004839 / SITE-006005 (C)
+LF-NV-00025,Poly-West Inc.,Henderson,VERIFIED,new org + site; own site (PE trash bags/construction film; Poly-America subsidiary),ORG-004840 / SITE-006006 (C)
+LF-NV-00017,Berry Plastics Opco (Berry Global),Henderson,VERIFIED,new site under ORG-002544 Berry Global; federal sources only,SITE-006007 (C)
+LF-NV-00063,Atlas Molded Products - Reno,Reno,VERIFIED,new site under ORG-002248 Atlas Roofing; own locations page (EPS),SITE-006008 (B)
+LF-NV-00037,Sierra Packaging & Converting,Reno,VERIFIED,new org + site; own site (laminated film flexible packaging converter),ORG-004841 / SITE-006009 (C)
+LF-NV-00002,Universal Urethane Inc.,North Las Vegas,VERIFIED,new org + site; own site (molded urethane),ORG-004842 / SITE-006010 (C)
+LF-NV-00003,RTP Company,Dayton,VERIFIED,new site under ORG-001093 RTP Company; own facilities page (compounding; ring 2),SITE-006011 (B)
+LF-NV-00033,Erickson International (American Standard Window Film),Las Vegas,VERIFIED,new org + site; own site (window film manufacturer),ORG-004843 / SITE-006012 (C)
+LF-NV-00028,Quality Plastics Inc.,Sparks,VERIFIED,new org + site; own site (thermoforming/machining/fabrication),ORG-004844 / SITE-006013 (C)
+LF-NV-00049,Performance Composites Inc.,Reno,VERIFIED,new org (HQ Compton CA; CA shard) + Reno site; own facilities page,ORG-004845 / SITE-006014 (C)
+LF-NV-00005,Cyanco Winnemucca,Winnemucca,REJECT,sodium cyanide production for mining (Andrussow HCN process; Cyanide Code audit); not polymer,
