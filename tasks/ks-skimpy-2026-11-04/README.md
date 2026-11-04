@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 44 | 35 | 4 | 5 | 18 | 0 / 29 | 48 -> 77 | 23 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-005003..ORG-005020, SITE-006281..SITE-006309, EVD-026730..EVD-026299.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-005003..ORG-005020, SITE-006281..SITE-006309, EVD-027320..EVD-026299.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-KS-07 AIROSOL CO INC (Neodesha): Whether Airosol Co. Neodesha formulates polymer products or only fills aerosols (NAICS 325998).
