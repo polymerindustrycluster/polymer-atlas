@@ -1,0 +1,8 @@
+lane,institution,program_name,program_type,reason
+P2,University of Akron,"Polymer Science and Polymer Engineering, Minor",degree,"PROG-000115 already carries the minor in credential_types (bs;ms;phd;minor); a separate row would split one program"
+P2,University of Akron,"Undergraduate Research in Polymer Science and Polymer Engineering, Certificate",certificate,"quote is the catalog list entry only; needs the certificate's own catalog page for level, unit and modes"
+P2,University of Akron,"Chemical Engineering/Polymer Engineering, Certificate",certificate,"catalog list entry only; the lane found no page of its own"
+P2,The Pennsylvania State University,"Polymer Science, Minor",degree,"no institution org_id resolved for University Park; check the held Penn State record before minting"
+P2,Miami University,MME 232 Polymer Processes,course,"single course (SCHEMA 4.11: recordable but does not make the institution pass); institution not checked as held"
+P2,Villanova University,ME 7270 - Polymer Engineering,course,"single course; institution not checked as held"
+P2,Wright State University,ME 4720 - Engineering Polymers,course,"single course; institution not checked as held"
