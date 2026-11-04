@@ -1,0 +1,45 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-KS-00,"SPEARS CANEY INC","Caney",VERIFIED,"Already held as SITE-005204 Spears Manufacturing - Caney (1220 S State St); not re-created.",SITE-005204 (already held, not re-created)
+QMS-KS-01,"COLEMAN CO. - WICHITA","Wichita",VERIFIED,"Two federal sources: FRS 110000446321 + ITA 1431495 + OSHA 345798938 (scope from federal NAICS)",SITE-006281
+QMS-KS-02,"REVERE PLASTICS SYSTEMS","Mcpherson",VERIFIED,"Two federal sources: FRS 110003215477 + ITA 938535 + OSHA 345315527 (scope from federal NAICS)",SITE-006282
+QMS-KS-03,"CONTITECH, USA, INC.  - HALSTEAD (STORMWATER)","Halstead",VERIFIED,"Two federal sources: FRS 110071527218 + ITA 1261673 + OSHA 346416266 (scope from federal NAICS)",SITE-006283
+QMS-KS-04,"ADVENTURE CAPITAL PARTNERS DBA BETTER LIFE TECHNOLOGY","Emporia",VERIFIED,"Two federal sources: FRS 110054835238 + ITA 1281288 + OSHA 348367368 (scope from federal NAICS)",SITE-006284
+QMS-KS-05,"NEODESHA PLASTICS","Neodesha",VERIFIED,"Two federal sources: FRS 110007287097 + ITA 517252 + OSHA 345027536 (scope from federal NAICS)",SITE-006285
+QMS-KS-06,"HI-LINE PLASTICS INC.","Olathe",VERIFIED,"Two federal sources: FRS 110057630434 + ITA 57619 + OSHA 346474612 (scope from federal NAICS)",SITE-006286
+QMS-KS-07,"AIROSOL CO INC","Neodesha",STILL_UNCERTAIN,"Whether Airosol Co. Neodesha formulates polymer products or only fills aerosols (NAICS 325998).",
+QMS-KS-08,"WILKO PAINT","Wichita",VERIFIED,"Two federal sources: FRS 110000446642 + ITA 561717 + OSHA 344847710 (scope from federal NAICS)",SITE-006287
+QMS-KS-09,"BERRY PLASTICS - LAWRENCE","Lawrence",VERIFIED,"Two federal sources: FRS 110001238189 + ITA 444295 (scope from federal NAICS)",SITE-006288
+QMS-KS-10,"PITT PLASTICS, INC.","Pittsburg",VERIFIED,"Two federal sources: FRS 110055253755 + ITA 1565427 (scope from federal NAICS)",SITE-006289
+QMS-KS-11,"NAZDAR","Shawnee",VERIFIED,"Two federal sources: FRS 110000445732 + ITA 1496740 (scope from federal NAICS)",SITE-006290
+QMS-KS-12,"CARLISLE POWER TRANSMISSION PRODUCTS","Fort Scott",STILL_UNCERTAIN,"Current operator (Timken Belts or Carlisle) of the Fort Scott power-transmission belt plant, 4505 Campbell Dr.",
+QMS-KS-13,"A & M PRODUCTS","Spring Hill",STILL_UNCERTAIN,"What A & M Products Spring Hill makes (NAICS 325998/327992) - polymer or not.",
+QMS-KS-14,"HARCROS CHEMICALS INC. - KANSAS CITY","Kansas City",REJECT,"Chemical distributor, not polymer manufacturing: ITA CY2025 record NAICS 424690 (fetched 2026-11-04).",
+QMS-KS-15,"KBK INDUSTRIES","Rush Center",VERIFIED,"Already held as SITE-005229 KBK Industries - Rush Center (North Facility); not re-created (possible second plant - integrator check).",SITE-005229 (already held, not re-created)
+QMS-KS-16,"ATLAS MOLDED PRODUCTS - KANSAS CITY (KAW DR)","Kansas City",VERIFIED,"Two federal sources: FRS 110001369652 + ITA 809974 (scope from federal NAICS)",SITE-006291
+QMS-KS-17,"MARVIN","Kansas City",VERIFIED,"Two federal sources: FRS 110071992761 + ITA 1528277 (scope from federal NAICS)",SITE-006292
+QMS-KS-18,"WESCON PLASTICS LLC","Wichita",VERIFIED,"Two federal sources: FRS 110070286268 + ITA 1276966 (scope from federal NAICS)",SITE-006293
+QMS-KS-19,"ALTIUM PACKAGING - LENEXA (STORMWATER)","Lenexa",VERIFIED,"Two federal sources: FRS 110072195897 + ITA 803434 (scope from federal NAICS)",SITE-006294
+QMS-KS-20,"KROY INDUSTRIES","Ulysses",VERIFIED,"Two federal sources: FRS 110008355476 + ITA 1460416 (scope from federal NAICS)",SITE-006295
+QMS-KS-21,"CAMSO - MIDROLLERS (AIR)","Emporia",VERIFIED,"Two federal sources: FRS 110071673337 + ITA 1522858 (scope from federal NAICS)",SITE-006296
+QMS-KS-22,"HODGDON POWDER COMPANY","Herington",REJECT,"Smokeless powder (explosives), not polymer: ITA CY2025 record NAICS 325920 (fetched 2026-11-04).",
+QMS-KS-23,"JACAM MFG. - ORGANOCLAY PROCESSING","Sterling",REJECT,"Organoclay (modified clay minerals), not polymer: ITA CY2025 record NAICS 327992/424690 (fetched 2026-11-04).",
+QMS-KS-24,"TIMILON CORPORATION","Topeka",REJECT,"Inorganic adsorbent chemicals, not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-KS-25,"GOODYEAR TIRE & RUBBER CO","Topeka",VERIFIED,"Already held as SITE-002865 Goodyear Tire - Topeka; not re-created.",SITE-002865 (already held, not re-created)
+QMS-KS-26,"CENTRAL PLASTICS, INC","Mcpherson",VERIFIED,"Two federal sources: FRS 110003155120 + OSHA 348520362 (scope from federal NAICS)",SITE-006297
+QMS-KS-27,"REHRIG PACIFIC COMPANY","De Soto",VERIFIED,"Two federal sources: FRS 110072127492 + OSHA 347308231 (scope from federal NAICS)",SITE-006298
+QMS-KS-28,"DE ELLIOTTE CO.","New Century",VERIFIED,"Two federal sources: FRS 110000903620 + OSHA 346256944 (scope from federal NAICS)",SITE-006299
+QMS-KS-29,"KANSAS CORRECTIONAL INDUSTRIES","Lansing",VERIFIED,"Two federal sources: FRS 110064143519 + OSHA 343744645 (scope from federal NAICS)",SITE-006300
+QMS-KS-30,"FORM SYSTEMS","Haysville",VERIFIED,"Two federal sources: FRS 110001955634 + OSHA 348477126 (scope from federal NAICS)",SITE-006301
+QMS-KS-31,"RASCHIG USA INC","El Dorado",VERIFIED,"Two federal sources: FRS 110003209199 + OSHA 345020085 (scope from federal NAICS)",SITE-006302
+QMS-KS-32,"MEADWESTVACO CALMAR INC.","Winfield",VERIFIED,"Two federal sources: FRS 110057227567 + OSHA 345044754 (scope from federal NAICS)",SITE-006303
+QMS-KS-33,"The Onyx Collection","Belvue",VERIFIED,"Already held as SITE-005790 The Onyx Collection - Belvue; not re-created.",SITE-005790 (already held, not re-created)
+QMS-KS-34,"Western Industries Plastic Products LLC","Winfield",VERIFIED,"Two federal sources: ITA 910594 + OSHA 348148248 (scope from federal NAICS)",SITE-006304
+QMS-KS-35,"Leading Technology Composites","Wichita",VERIFIED,"Two federal sources: ITA 1338093 + OSHA 347195802 (scope from federal NAICS)",SITE-006305
+QMS-KS-36,"USA KS Andover Plant","Andover",VERIFIED,"Already held as SITE-004938 Sherwin-Williams - Andover; not re-created.",SITE-004938 (already held, not re-created)
+QMS-KS-37,"Great Lakes Polymer Technologies LLC","Kingman",VERIFIED,"Already held as SITE-005872 Great Lakes Polymer Technologies (FabPro) - Kingman; not re-created.",SITE-005872 (already held, not re-created)
+QMS-KS-38,"Westlake Pipe & Fittings","Mcpherson",VERIFIED,"Two federal sources: ITA 150751 + OSHA 347368334 (scope from federal NAICS)",SITE-006306
+QMS-KS-39,"Buckley Industries, Inc.","Park City",VERIFIED,"Two federal sources: ITA 552056 + OSHA 346882343 (scope from federal NAICS)",SITE-006307
+QMS-KS-40,"Wichita Fiber Glass Systems","Wichita",STILL_UNCERTAIN,"Wichita Fiber Glass Systems (ITA 1459584 + OSHA 345572960) is witnessed, but the NOV Inc. parent org is pending in PR #57; settling fact: PR #57 merge.",
+QMS-KS-41,"Main RC","Olathe",STILL_UNCERTAIN,"Operator identity and products of 'Main RC', 1001 W Highway 56, Olathe (NAICS 326199).",
+QMS-KS-42,"Quality Profile Services","Council Grove",VERIFIED,"Two federal sources: ITA 62545 + OSHA 347193534 (scope from federal NAICS)",SITE-006308
+QMS-KS-43,"Standridge Color Kansas","Newton",VERIFIED,"Two federal sources: ITA 1431211 + OSHA 347768913 (scope from federal NAICS)",SITE-006309
