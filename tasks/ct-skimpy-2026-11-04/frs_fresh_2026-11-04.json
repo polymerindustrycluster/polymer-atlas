@@ -1,0 +1,572 @@
+{
+ "110064673312": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064673312",
+     "FacilityName": "PUTNAM PLASTICS CORP",
+     "LocationAddress": "40 LOUISA VIENS DR",
+     "SupplementalLocation": null,
+     "CityName": "DAYVILLE",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06241",
+     "FIPSCode": "09015",
+     "Latitude83": "41.86884",
+     "Longitude83": "-71.9053"
+    }
+   ]
+  }
+ },
+ "110001735613": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001735613",
+     "FacilityName": "INLINE PLASTICS CORP",
+     "LocationAddress": "42 CANAL ST",
+     "SupplementalLocation": null,
+     "CityName": "SHELTON",
+     "CountyName": "FAIRFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06484-3265",
+     "FIPSCode": "09001",
+     "Latitude83": "41.31499",
+     "Longitude83": "-73.08945"
+    }
+   ]
+  }
+ },
+ "110005968845": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005968845",
+     "FacilityName": "COLTS PLASTICS CO",
+     "LocationAddress": "969 NORTH MAIN STREET",
+     "SupplementalLocation": null,
+     "CityName": "KILLINGLY (DAYVILLE)",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06241-2123",
+     "FIPSCode": "09015",
+     "Latitude83": "41.83187",
+     "Longitude83": "-71.8768"
+    }
+   ]
+  }
+ },
+ "110059768719": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110059768719",
+     "FacilityName": "SILGAN DISPENSING SYSTEMS (PARK RD.)",
+     "LocationAddress": "91 PARK RD",
+     "SupplementalLocation": null,
+     "CityName": "WATERTOWN",
+     "CountyName": "LITCHFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06795",
+     "FIPSCode": "09005",
+     "Latitude83": "41.61097",
+     "Longitude83": "-73.08508"
+    }
+   ]
+  }
+ },
+ "110000316202": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000316202",
+     "FacilityName": "BRAND NU LABORATORIES INC",
+     "LocationAddress": "30 MAYNARD STREET",
+     "SupplementalLocation": null,
+     "CityName": "MERIDEN",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06450-2319",
+     "FIPSCode": "09009",
+     "Latitude83": "41.553908",
+     "Longitude83": "-72.787863"
+    }
+   ]
+  }
+ },
+ "110001747557": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001747557",
+     "FacilityName": "FLAGSHIP CONVERTERS, INC",
+     "LocationAddress": "205 SHELTER ROCK RD",
+     "SupplementalLocation": null,
+     "CityName": "DANBURY",
+     "CountyName": "FAIRFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06810",
+     "FIPSCode": "09001",
+     "Latitude83": "41.394982",
+     "Longitude83": "-73.410979"
+    }
+   ]
+  }
+ },
+ "110000315926": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000315926",
+     "FacilityName": "ROGERS CORPORATION - MOOSUP",
+     "LocationAddress": "1 RIVER STREET",
+     "SupplementalLocation": null,
+     "CityName": "MOOSUP",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06354",
+     "FIPSCode": "09015",
+     "Latitude83": "41.714",
+     "Longitude83": "-71.879"
+    }
+   ]
+  }
+ },
+ "110003008218": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003008218",
+     "FacilityName": "AIREX RUBBER PRODUCTS CORP.",
+     "LocationAddress": "100 INDIAN HILL AVE",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MIDDLESEX",
+     "StateAbbr": "CT",
+     "ZipCode": "06480",
+     "FIPSCode": "09007",
+     "Latitude83": "41.598633",
+     "Longitude83": "-72.626429"
+    }
+   ]
+  }
+ },
+ "110000316881": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000316881",
+     "FacilityName": "PORCE-LEN, INC",
+     "LocationAddress": "129 LEEDER HILL DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "HAMDEN",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06517-2731",
+     "FIPSCode": "09009",
+     "Latitude83": "41.34584",
+     "Longitude83": "-72.9243"
+    }
+   ]
+  }
+ },
+ "110031435579": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031435579",
+     "FacilityName": "DYMAX CORPORATION",
+     "LocationAddress": "318 INDUSTRIAL LA",
+     "SupplementalLocation": null,
+     "CityName": "TORRINGTON",
+     "CountyName": "LITCHFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06790-2391",
+     "FIPSCode": "09005",
+     "Latitude83": "41.87567",
+     "Longitude83": "-73.06969"
+    }
+   ]
+  }
+ },
+ "110001404944": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001404944",
+     "FacilityName": "REXAM DISPENSING SYSTEMS",
+     "LocationAddress": "60 ELECTRIC AVE",
+     "SupplementalLocation": null,
+     "CityName": "THOMASTON",
+     "CountyName": "LITCHFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06787",
+     "FIPSCode": "09005",
+     "Latitude83": "41.675325",
+     "Longitude83": "-73.070484"
+    }
+   ]
+  }
+ },
+ "110000314972": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000314972",
+     "FacilityName": "REFLEXITE CORPORATION",
+     "LocationAddress": "120 DARLING DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "AVON",
+     "CountyName": "HARTFORD",
+     "StateAbbr": "CT",
+     "ZipCode": "06001-4217",
+     "FIPSCode": "09003",
+     "Latitude83": "41.80475",
+     "Longitude83": "-72.84476"
+    }
+   ]
+  }
+ },
+ "110002089739": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002089739",
+     "FacilityName": "PHOTRONICS, INC.",
+     "LocationAddress": "15 SECOR RD.",
+     "SupplementalLocation": null,
+     "CityName": "BROOKFIELD",
+     "CountyName": "FAIRFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06804",
+     "FIPSCode": "09001",
+     "Latitude83": "41.42683",
+     "Longitude83": "-73.37913"
+    }
+   ]
+  }
+ },
+ "110000316916": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000316916",
+     "FacilityName": "MACDERMID ENTHONE",
+     "LocationAddress": "350 FRONTAGE RD",
+     "SupplementalLocation": null,
+     "CityName": "WEST HAVEN",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06516",
+     "FIPSCode": "09009",
+     "Latitude83": "41.26524",
+     "Longitude83": "-72.97846"
+    }
+   ]
+  }
+ },
+ "110070513540": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070513540",
+     "FacilityName": "FLUOROPOLYMER RESOURCES",
+     "LocationAddress": "6 INDUSTRIAL PARK RD",
+     "SupplementalLocation": null,
+     "CityName": "NORTH WINDHAM",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06256",
+     "FIPSCode": "09015",
+     "Latitude83": "41.74294",
+     "Longitude83": "-72.17781"
+    }
+   ]
+  }
+ },
+ "110002476419": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002476419",
+     "FacilityName": "SCA PACKAGING NORTH AMERICA",
+     "LocationAddress": "29 PARK ROAD",
+     "SupplementalLocation": null,
+     "CityName": "PUTNAM",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06260-3044",
+     "FIPSCode": "09015",
+     "Latitude83": "41.89716",
+     "Longitude83": "-71.89562"
+    }
+   ]
+  }
+ },
+ "110001734428": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001734428",
+     "FacilityName": "DELMAR PRODUCTS",
+     "LocationAddress": "400 CHRISTIAN LA",
+     "SupplementalLocation": null,
+     "CityName": "BERLIN",
+     "CountyName": "HARTFORD",
+     "StateAbbr": "CT",
+     "ZipCode": "06037",
+     "FIPSCode": "09003",
+     "Latitude83": "41.64157",
+     "Longitude83": "-72.75033"
+    }
+   ]
+  }
+ },
+ "110071062080": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071062080",
+     "FacilityName": "DREW MARINE USA",
+     "LocationAddress": "400 CAPTAIN NEVILLE DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "WATERBURY",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06705",
+     "FIPSCode": "09009",
+     "Latitude83": "41.53887",
+     "Longitude83": "-72.97531"
+    }
+   ]
+  }
+ },
+ "110000787060": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000787060",
+     "FacilityName": "MILLER STEPHENSON CHEMICAL",
+     "LocationAddress": "55 BACKUS AVE",
+     "SupplementalLocation": null,
+     "CityName": "DANBURY",
+     "CountyName": "FAIRFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "06810",
+     "FIPSCode": "09001",
+     "Latitude83": "41.37111",
+     "Longitude83": "-73.4917"
+    }
+   ]
+  }
+ },
+ "110057071911": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110057071911",
+     "FacilityName": "DYMOTEK CORP",
+     "LocationAddress": "7 MAIN ST",
+     "SupplementalLocation": null,
+     "CityName": "ELLINGTON",
+     "CountyName": "TOLLAND",
+     "StateAbbr": "CT",
+     "ZipCode": "06029",
+     "FIPSCode": "09013",
+     "Latitude83": "41.900779",
+     "Longitude83": "-72.459975"
+    }
+   ]
+  }
+ },
+ "110000317283": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000317283",
+     "FacilityName": "NEOPERL, INC",
+     "LocationAddress": "171 MATTATUCK HEIGHTS",
+     "SupplementalLocation": null,
+     "CityName": "WATERBURY",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06705-3832",
+     "FIPSCode": "09009",
+     "Latitude83": "41.53845",
+     "Longitude83": "-72.98333"
+    }
+   ]
+  }
+ },
+ "110042353146": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110042353146",
+     "FacilityName": "FOSTER CORPORATION",
+     "LocationAddress": "45 RIDGE RD",
+     "SupplementalLocation": null,
+     "CityName": "PUTNAM",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06260",
+     "FIPSCode": "09015",
+     "Latitude83": "41.88783",
+     "Longitude83": "-71.88738"
+    }
+   ]
+  }
+ },
+ "110000317586": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000317586",
+     "FacilityName": "VANDERBILT CHEMICALS, LLC BETHEL",
+     "LocationAddress": "31 TAYLOR AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "BETHEL",
+     "CountyName": "FAIRFIELD",
+     "StateAbbr": "CT",
+     "ZipCode": "068012411",
+     "FIPSCode": "09001",
+     "Latitude83": "41.36671",
+     "Longitude83": "-73.41401"
+    }
+   ]
+  }
+ },
+ "110030384732": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110030384732",
+     "FacilityName": "AZURE WATER SERVICES",
+     "LocationAddress": "280 CALLEGARI DR",
+     "SupplementalLocation": null,
+     "CityName": "WEST HAVEN",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06516-6234",
+     "FIPSCode": "09009",
+     "Latitude83": "41.25331",
+     "Longitude83": "-72.98922"
+    }
+   ]
+  }
+ },
+ "110000315409": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000315409",
+     "FacilityName": "DYNO NOBEL",
+     "LocationAddress": "660 HOPMEADOW ST",
+     "SupplementalLocation": null,
+     "CityName": "SIMSBURY",
+     "CountyName": "HARTFORD",
+     "StateAbbr": "CT",
+     "ZipCode": "06070",
+     "FIPSCode": "09003",
+     "Latitude83": "41.869055",
+     "Longitude83": "-72.805771"
+    }
+   ]
+  }
+ },
+ "110028533950": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110028533950",
+     "FacilityName": "WEB INDUSTRIES",
+     "LocationAddress": "20 LOUISA VIENS DR",
+     "SupplementalLocation": null,
+     "CityName": "KILLINGLY (DAYVILLE)",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06241-1106",
+     "FIPSCode": "09015",
+     "Latitude83": "41.86816",
+     "Longitude83": "-71.90548"
+    }
+   ]
+  }
+ },
+ "110055440802": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110055440802",
+     "FacilityName": "INTEGRO LLC",
+     "LocationAddress": "30 PETER CT",
+     "SupplementalLocation": null,
+     "CityName": "NEW BRITAIN",
+     "CountyName": "HARTFORD",
+     "StateAbbr": "CT",
+     "ZipCode": "06051",
+     "FIPSCode": "09003",
+     "Latitude83": "41.65306",
+     "Longitude83": "-72.77219"
+    }
+   ]
+  }
+ },
+ "110001405596": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001405596",
+     "FacilityName": "P I LIQUIDATING, INC.",
+     "LocationAddress": "207 NEW HAVEN RD",
+     "SupplementalLocation": null,
+     "CityName": "PROSPECT",
+     "CountyName": "NEW HAVEN",
+     "StateAbbr": "CT",
+     "ZipCode": "06712",
+     "FIPSCode": "09009",
+     "Latitude83": "41.47551",
+     "Longitude83": "-72.96886"
+    }
+   ]
+  }
+ },
+ "110000603062": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000603062",
+     "FacilityName": "WASLEY PRODUCTS/PRECISION MOLDING",
+     "LocationAddress": "87 SPRING LN",
+     "SupplementalLocation": null,
+     "CityName": "PLAINVILLE",
+     "CountyName": "HARTFORD",
+     "StateAbbr": "CT",
+     "ZipCode": "06062-1167",
+     "FIPSCode": "09003",
+     "Latitude83": "41.69366",
+     "Longitude83": "-72.8684"
+    }
+   ]
+  }
+ },
+ "110002089061": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002089061",
+     "FacilityName": "PLASTIC DIVERSITY SOLUTIONS",
+     "LocationAddress": "349 LAKE RD",
+     "SupplementalLocation": null,
+     "CityName": "DAYVILLE",
+     "CountyName": "WINDHAM",
+     "StateAbbr": "CT",
+     "ZipCode": "06241-1551",
+     "FIPSCode": "09015",
+     "Latitude83": "41.86673",
+     "Longitude83": "-71.89975"
+    }
+   ]
+  }
+ }
+}

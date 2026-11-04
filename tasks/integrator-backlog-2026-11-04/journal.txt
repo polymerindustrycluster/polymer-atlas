@@ -1,0 +1,11 @@
+MOVED ORG-000698 organizations_OH.csv -> organizations_NJ.csv with 0 evidence rows
+HQ ORG-000698: ('Greenville', 'OH') -> ('Florham Park', 'NJ')
+MOVED ORG-000097 organizations_OH.csv -> organizations_TX.csv with 0 evidence rows
+HQ ORG-000097: ('Akron', 'OH') -> ('Houston', 'TX')
+HQ ORG-000523: ('Chesterfield', 'MO') -> ('St. Louis', 'MO')
+HQ ORG-004456: ('Lebanon', 'IN') -> ('Portage', 'IN')
+PARENT ORG-001327 -> ORG-000430
+ULT ORG-000201: '' -> 'ASC Engineered Solutions'
+ULT ORG-000343: '' -> 'One Rock Capital Partners'
+ULT ORG-000366: '' -> 'Platinum Equity'
+ULT ORG-003666: 'Sentinel Capital Partners' -> 'Court Square Capital Partners'

@@ -1,0 +1,20 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-NE-00,Airlite Plastics Co,Omaha,VERIFIED,site under held ORG-002553; own contact page + Fox Blocks manual: Omaha HQ and Midwest EPS manufacturing,SITE-006044 (B)
+QMS-NE-01,West Pharmaceutical Services,Kearney,VERIFIED,site under held ORG-002772; own global-locations page: compression molding of rubber stoppers/plungers,SITE-006045 (B)
+QMS-NE-02,Cargill - Blair Facility,Blair,REJECT,deciding fact: wet corn milling (ethanol/sweeteners/feed; NDEE NPDES notice 2025-02-25 SIC 2046/2869) - not a polymer process; co-located NatureWorks already held as SITE-003418,none
+QMS-NE-03,Plastilite Corporation,Omaha,VERIFIED,new org + site; own plastilite.com blog 2024-06-10: EPS coolers molded at Omaha plant,ORG-004864 / SITE-006046 (C)
+QMS-NE-04,Diamond Plastics Corp,Grand Island,VERIFIED,new org + site; own dpcpipe.com plants page: PVC pipe plant,ORG-004865 / SITE-006047 (C)
+QMS-NE-05,Snyder Industries,Lincoln,VERIFIED,new org + site; own snydernet.com about: Lincoln rotomolding plants (street from FRS),ORG-004866 / SITE-006048 (C)
+QMS-NE-06,JM Eagle,Hastings,VERIFIED,site under held ORG-002260 J-M Manufacturing; own jmeagle.com news on N Maple Ave pipe extrusion plant; ITA CY2025 current,SITE-006049 (B)
+QMS-NE-07,KAAPA Ethanol LLC,Minden,REJECT,deciding fact: fuel ethanol + distillers grains plant (Minden Courier 25-year feature) - not a polymer process,none
+QMS-NE-08,Water Engineering Inc,Mead,REJECT,deciding fact: water-treatment services/chemical blending company per own h2oeng.com (read 2026-11-04) - not a polymer process,none
+QMS-NE-09,Hexagon Lincoln LLC,Lincoln,VERIFIED,new org Hexagon Agility Inc. + site; own ISO 14001 cert: composite cylinder manufacture at 5150 NW 40th St,ORG-004867 / SITE-006050 (C)
+QMS-NE-10,General Dynamics,Lincoln,VERIFIED,new org GD-OTS + site; own gdots.com Lincoln page: composite motor cases/pressure vessels,ORG-004868 / SITE-006052 (C)
+QMS-NE-11,Wilkinson Manufacturing Co,Fort Calhoun,VERIFIED,new org + site; own wilkmfg.com: custom plastic (and aluminum) extrusions - medium,ORG-004869 / SITE-006053 (C)
+QMS-NE-12,Denver Plastics Nebraska LP,Wahoo,STILL_UNCERTAIN,settling fact: whether the Wahoo molding plant still operates (latest federal record 2019-10; only a third-party directory found) - needs an own page or current federal record,none
+QMS-NE-13,Foamex Intl Inc (FXI),Omaha,VERIFIED,site under held ORG-000853 FXI; federal only (FRS + OSHA 2020) - tier C,SITE-006054 (C)
+QMS-NE-14,Majors Plastics Inc,Omaha,VERIFIED,new org + site; own majorsplastics.com,ORG-004870 / SITE-006055 (C)
+QMS-NE-15,William H. Harvey,Omaha,VERIFIED,site under held ORG-000133 Oatey Co.; own oatey.com Harvey brand page (Oatey subsidiary since 2006); process low,SITE-006056 (B)
+QMS-NE-16,Hexagon Agility 5117,Lincoln,VERIFIED,site under new ORG-004867; own contact page: Mobile Pipeline & cylinder manufacturing at 5117 NW 40th St,SITE-006051 (C)
+QMS-NE-17,Yasufuku USA Inc,Lincoln,VERIFIED,new org + site; own yuinc.com: rubber/plastic molding,ORG-004871 / SITE-006057 (C)
+QMS-NE-18,Premier Plastics Inc,Omaha,VERIFIED,new org + site; own premierplasticsinc.com: injection molding at 4880 S 134th St,ORG-004872 / SITE-006058 (C)

@@ -1,0 +1,37 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-AR-00,"PACTIV CORPORATION","Malvern",VERIFIED,"Two federal sources: FRS 110000513579 + ITA 1492634 + OSHA 347130130 (scope from federal NAICS)",SITE-006164
+QMS-AR-01,"VISKASE COMPANIES INC","Osceola",VERIFIED,"Two federal sources: FRS 110000452331 + ITA 1531660 + OSHA 345378343 (scope from federal NAICS)",SITE-006165
+QMS-AR-02,"UNITED INDUSTRIES INC","Bentonville",VERIFIED,"Two federal sources: FRS 110003403521 + ITA 1179828 + OSHA 348214248 (scope from federal NAICS)",SITE-006166
+QMS-AR-03,"PIPELIFT JET STREAM, INC","Siloam Springs",VERIFIED,"Two federal sources: FRS 110001710104 + ITA 1441504 + OSHA 348707522 (scope from federal NAICS)",SITE-006167
+QMS-AR-04,"CONTAINER COMPONENTS, INC.","Jonesboro",VERIFIED,"Two federal sources: FRS 110041311416 + ITA 986596 + OSHA 348360967 (scope from federal NAICS)",SITE-006168
+QMS-AR-05,"UNITED INDUSTRIES INC.","Rogers",VERIFIED,"Two federal sources: FRS 110072172837 + ITA 1180010 + OSHA 343720959 (scope from federal NAICS)",SITE-006169
+QMS-AR-06,"GLAD MANUFACTURING COMPANY","Rogers",VERIFIED,"Two federal sources: FRS 110009353537 + ITA 1375959 (scope from federal NAICS)",SITE-006170
+QMS-AR-07,"ANCHOR PACKAGING - JONESBORO PLANT","Jonesboro",VERIFIED,"Two federal sources: FRS 110000452448 + ITA 1273739 (scope from federal NAICS)",SITE-006171
+QMS-AR-08,"LANXESS CORP - CENTRAL PLANT","El Dorado",REJECT,"Bromine and inorganic chemicals, not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-AR-09,"BAXTER HEALTHCARE CORPORATION","Mountain Home",VERIFIED,"Two federal sources: FRS 110072005783 + ITA 1479586 (scope from federal NAICS)",SITE-006172
+QMS-AR-10,"BPREX DELTA, INC. (A SUBSIDIARY OF BERRY GLOBAL, INC.)","Hot Springs",VERIFIED,"Two federal sources: FRS 110032931497 + ITA 874790 (scope from federal NAICS)",SITE-006173
+QMS-AR-11,"CRYOVAC, INC.","Rogers",VERIFIED,"Two federal sources: FRS 110016747895 + ITA 1082584 (scope from federal NAICS)",SITE-006174
+QMS-AR-12,"COOPER-STANDARD AUTOMOTIVE","El Dorado",VERIFIED,"Two federal sources: FRS 110000451001 + ITA 1423724 (scope from federal NAICS)",SITE-006175
+QMS-AR-13,"KOHLER ARKANSAS PLASTICS OPERATIONS","Sheridan",VERIFIED,"Two federal sources: FRS 110070158478 + ITA 1425086 (scope from federal NAICS)",SITE-006176
+QMS-AR-14,"PLASTIC INGENUITY, INC.","Maumelle",VERIFIED,"Two federal sources: FRS 110027250249 + ITA 1409836 (scope from federal NAICS)",SITE-006177
+QMS-AR-15,"POLY-TECH PLASTIC MOLDING, INC","Prairie Grove",VERIFIED,"Two federal sources: FRS 110062847558 + ITA 1276853 (scope from federal NAICS)",SITE-006178
+QMS-AR-16,"HENDREN PLASTICS, INC","Gravette",VERIFIED,"Two federal sources: FRS 110025118575 + ITA 918272 (scope from federal NAICS)",SITE-006179
+QMS-AR-17,"ENVIRO TECH CHEMICAL SERVICES - PLANT 6","Helena",REJECT,"Water-treatment/inorganic chemicals, not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-AR-18,"OWENS CORNING FOAM INSULATION - RUSSELLVILLE","Russellville",VERIFIED,"Two federal sources: FRS 110072078441 + ITA 1440596 (scope from federal NAICS)",SITE-006180
+QMS-AR-19,"GRACE COMPOSITES, LLC","Lonoke",VERIFIED,"Two federal sources: FRS 110024998680 + ITA 1169331 (scope from federal NAICS)",SITE-006181
+QMS-AR-20,"RING CONTAINER TECHNOLOGIES - LITTLE ROCK","Little Rock",VERIFIED,"Two federal sources: FRS 110070214403 + ITA 936684 (scope from federal NAICS)",SITE-006182
+QMS-AR-21,"ENVIRAPAC MONTICELLO, LLC","Monticello",STILL_UNCERTAIN,"What Envirapac Monticello makes (NAICS 325998/321999) - polymer or not.",
+QMS-AR-22,"EVERGREEN BUILDERS INC","Gravette",VERIFIED,"Two federal sources: FRS 110025066531 + ITA 62214 (scope from federal NAICS)",SITE-006183
+QMS-AR-23,"GREAT LAKES CHEMICAL WEST PLANT","Magnolia",REJECT,"Bromine chemicals, not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-AR-24,"BUILDING MATERIALS MANUFACTURING LLC.","Arkadelphia",STILL_UNCERTAIN,"Operator identity (GAF/BMCA or other) and product of Building Materials Manufacturing LLC Arkadelphia (NAICS 325991).",
+QMS-AR-25,"LYCUS LTD.","El Dorado",STILL_UNCERTAIN,"What Lycus Ltd. makes at El Dorado (NAICS 325199/325411) - polymer or not.",
+QMS-AR-26,"ECOTECH ENTERPRISES, INC","Scott",STILL_UNCERTAIN,"Whether Ecotech Enterprises Scott manufactures polymer products or distributes (NAICS 325998/424690).",
+QMS-AR-27,"COOPER TIRE & RUBBER COMPANY","Texarkana",VERIFIED,"Already held as SITE-002873 Cooper Tire - Texarkana; not re-created.",SITE-002873 (already held, not re-created)
+QMS-AR-28,"GEORG FISCHER LLC","Little Rock",VERIFIED,"Two federal sources: FRS 110025076263 + OSHA 347038226 (scope from federal NAICS)",SITE-006184
+QMS-AR-29,"AMCOR FLEXIBLES NORTH AMERICA","Russellville",VERIFIED,"Two federal sources: FRS 110024972699 + OSHA 348229352 (scope from federal NAICS)",SITE-006185
+QMS-AR-30,"DREW FOAM COMPANIES INC","Monticello",VERIFIED,"Two federal sources: FRS 110001149221 + OSHA 345841977 (scope from federal NAICS)",SITE-006186
+QMS-AR-31,"CREATIVE FOAM PRODUCTS, LLC.","North Little Rock",VERIFIED,"Two federal sources: FRS 110071232069 + OSHA 347540072 (scope from federal NAICS)",SITE-006187
+QMS-AR-32,"DELTA PLASTICS OF THE SOUTH","Stuttgart",VERIFIED,"Two federal sources: FRS 110025067415 + OSHA 344737887 (scope from federal NAICS)",SITE-006188
+QMS-AR-33,"RIVER BEND INDUSTRIES,LLC","Fort Smith",VERIFIED,"Two federal sources: FRS 110025079055 + OSHA 349034660 (scope from federal NAICS)",SITE-006189
+QMS-AR-34,"Little Rock - 03","Little Rock",STILL_UNCERTAIN,"Operator identity of ITA establishment 'Little Rock - 03' at 6901 Lindsey Rd (NAICS 326199).",
+QMS-AR-35,"Production Assistance Link","North Little Rock",STILL_UNCERTAIN,"Whether Production Assistance Link NLR manufactures polymer products (NAICS 325998).",
