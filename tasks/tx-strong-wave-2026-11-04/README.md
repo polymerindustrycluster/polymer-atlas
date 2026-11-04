@@ -24,7 +24,8 @@ orgs 18 {'TX': 14, 'US': 2, 'IL': 1, 'INTL': 1}; sites 32 Counter({'C': 25, 'B':
   found verbatim. Federal-only sites are tier C, and new organizations are tier C.
 - **Raw check** (`rawcheck.csv`): {'yes': 25, 'no': 5, 'no_own_url': 2}.
 - **Sources:** federal facts are cited from the OSHA ITA and OSHA inspection extracts. ECHO/FRS ids sit in `notes` only.
-- **Ids** come from this state's reserved block in `tasks/CAMPAIGN.md`, above every id used by open PRs at build time.
+- **Ids** come from a per-state block above main's maximum on 2026-11-04 (ORG-006267, SITE-008340, EVD-078027) and
+  every open PR, set in `build.py` (`ORG0, SITE0, EVD0`). The seven states were built in sequence on one branch.
 
 ## Held
 - `holds.csv`: 0.
