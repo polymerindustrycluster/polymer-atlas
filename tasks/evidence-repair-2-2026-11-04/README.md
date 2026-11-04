@@ -21,7 +21,8 @@ of it.
 | CONTRADICTED | quote found verbatim | 4 | 0 |
 | NONE_FOUND | n/a | 91 | 0 |
 
-63 new `scope` rows were applied, EVD-078028..EVD-078090, across 27 evidence shards.
+63 new `scope` rows were applied, EVD-126185..EVD-126247, across 27 evidence shards. The builder was re-run on main
+after #116, #119 and #120 merged, so the ids sit above that tree's maximum.
 
 ## Source classes
 The lanes wrote `company` and `company_site`. SCHEMA §4.13 defines `own_site` as the entity's own domain, so a row maps
