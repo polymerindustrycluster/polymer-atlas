@@ -13,15 +13,15 @@ Base: main 9708c3a. No data files are edited. All evidence was fetched on 2026-1
    - CHECK: everything else.
 5. Witness-checked the own sites of the largest CHECK rows, ordered by employees then recency, plus their address-duplicates. That covered 36 rows. The other CHECK rows are STILL_UNCERTAIN, each with a settling fact.
 
-## Counts (rows), pass 4
+## Counts (rows), pass 5
 | Verdict | Rows |
 |---|---|
-| VERIFIED | 114 (102 distinct sites) |
-| REJECT | 43 |
-| STILL_UNCERTAIN | 238 |
+| VERIFIED | 126 (114 distinct sites) |
+| REJECT | 53 |
+| STILL_UNCERTAIN | 216 |
 | ALREADY_HELD | 29 |
 
-Not yet witness-checked: CHECK 0, stale (no federal activity since 2019) 91, small inspection-only 80. Their settling facts are by class.
+Not yet witness-checked: CHECK 0, stale (no federal activity since 2019) 50, small inspection-only 80. Their settling facts are by class.
 
 ## Rulings applied (integrator, 2026-11-04)
 - Hiring-site postings are not witnesses. Latham (UT-378/220), Zenith/Mayzon (DE-243), Cornerstone (NH-180) and Corning (UT-217) moved back to STILL_UNCERTAIN.
