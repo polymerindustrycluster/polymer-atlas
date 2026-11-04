@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 23 | 13 | 6 | 4 | 6 | 0 / 13 | 29 -> 42 | 11 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004889..ORG-004894, SITE-006089..SITE-006101, EVD-024092..EVD-023879.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004889..ORG-004894, SITE-006089..SITE-006101, EVD-024306..EVD-023879.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-OK-01 DELTA FAUCET OF OKLAHOMA (Chickasha): Whether Delta Faucet Chickasha molds or compounds polymer parts (NAICS 325211/325998 listed) vs metal faucet work only, and the parent org (Masco) record.

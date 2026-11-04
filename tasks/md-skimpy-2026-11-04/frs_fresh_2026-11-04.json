@@ -1,0 +1,515 @@
+{
+ "110003520431": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003520431",
+     "FacilityName": "PLASTIPAK INC",
+     "LocationAddress": "1801 CLARK RD",
+     "SupplementalLocation": null,
+     "CityName": "HAVRE DE GRACE",
+     "CountyName": "HARFORD",
+     "StateAbbr": "MD",
+     "ZipCode": "21078",
+     "FIPSCode": "24025",
+     "Latitude83": "39.53117",
+     "Longitude83": "-76.11432"
+    }
+   ]
+  }
+ },
+ "110040100075": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110040100075",
+     "FacilityName": "ATS SCIENTIFIC PRODUCTS - BEL ART",
+     "LocationAddress": "2024 BROAD ST",
+     "SupplementalLocation": null,
+     "CityName": "POCOMOKE CITY",
+     "CountyName": "WORCESTER",
+     "StateAbbr": "MD",
+     "ZipCode": "21851",
+     "FIPSCode": "24047",
+     "Latitude83": "38.056821",
+     "Longitude83": "-75.560498"
+    }
+   ]
+  }
+ },
+ "110000340131": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000340131",
+     "FacilityName": "SHERWIN-WILLIAMS COMPANY",
+     "LocationAddress": "2325 HOLLINS FERRY RD",
+     "SupplementalLocation": null,
+     "CityName": "BALTIMORE",
+     "CountyName": "BALTIMORE",
+     "StateAbbr": "MD",
+     "ZipCode": "21230",
+     "FIPSCode": "MD510",
+     "Latitude83": "39.264788",
+     "Longitude83": "-76.643938"
+    }
+   ]
+  }
+ },
+ "110000340710": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000340710",
+     "FacilityName": "COLONIAL METALS INC - TRIUMPH INDUSTRIAL PARK BLDG 20",
+     "LocationAddress": "505 BLUE BALL RD",
+     "SupplementalLocation": null,
+     "CityName": "ELKTON",
+     "CountyName": "CECIL",
+     "StateAbbr": "MD",
+     "ZipCode": "21921-4856",
+     "FIPSCode": "24015",
+     "Latitude83": "39.62106",
+     "Longitude83": "-75.85149"
+    }
+   ]
+  }
+ },
+ "110029000088": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110029000088",
+     "FacilityName": "RICCA CHEMICAL CO.",
+     "LocationAddress": "1841 BROAD ST",
+     "SupplementalLocation": null,
+     "CityName": "POCOMOKE CITY",
+     "CountyName": "WORCESTER",
+     "StateAbbr": "MD",
+     "ZipCode": "21851",
+     "FIPSCode": "24047",
+     "Latitude83": "38.061237",
+     "Longitude83": "-75.563885"
+    }
+   ]
+  }
+ },
+ "110000867214": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000867214",
+     "FacilityName": "W R GRACE AND CO \u00e2\u0080\u0093 CURTIS BAY WORKS",
+     "LocationAddress": "5500 CHEMICAL RD",
+     "SupplementalLocation": null,
+     "CityName": "CURTIS BAY",
+     "CountyName": "BALTIMORE CITY",
+     "StateAbbr": "MD",
+     "ZipCode": "21226-1698",
+     "FIPSCode": "24510",
+     "Latitude83": "39.216111",
+     "Longitude83": "-76.57"
+    }
+   ]
+  }
+ },
+ "110000340756": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000340756",
+     "FacilityName": "W L GORE & ASSOCIATES INCORPORATED CHERRY HILL SITE",
+     "LocationAddress": "2401 SINGERLY ROAD",
+     "SupplementalLocation": null,
+     "CityName": "ELKTON",
+     "CountyName": "CECIL",
+     "StateAbbr": "MD",
+     "ZipCode": "21921-2733",
+     "FIPSCode": "24015",
+     "Latitude83": "39.67053",
+     "Longitude83": "-75.85654"
+    }
+   ]
+  }
+ },
+ "110012464001": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012464001",
+     "FacilityName": "CYTEC ENGINEERED MATERIALS, INC",
+     "LocationAddress": "1300 REVOLUTION STREET",
+     "SupplementalLocation": null,
+     "CityName": "HAVRE DE GRACE",
+     "CountyName": "HARFORD",
+     "StateAbbr": "MD",
+     "ZipCode": "21078-3800",
+     "FIPSCode": "24025",
+     "Latitude83": "39.53875",
+     "Longitude83": "-76.10859"
+    }
+   ]
+  }
+ },
+ "110022379415": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022379415",
+     "FacilityName": "SUPERFOS PACKAGING",
+     "LocationAddress": "11301 SUPERFOS DR SE ALLEGANY CO IND PARK",
+     "SupplementalLocation": null,
+     "CityName": "CUMBERLAND",
+     "CountyName": "ALLEGANY",
+     "StateAbbr": "MD",
+     "ZipCode": "21502-8772",
+     "FIPSCode": "24001",
+     "Latitude83": "39.596833",
+     "Longitude83": "-78.753068"
+    }
+   ]
+  }
+ },
+ "110000867161": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000867161",
+     "FacilityName": "USALCO LLC",
+     "LocationAddress": "2601 CANNERY AVE",
+     "SupplementalLocation": null,
+     "CityName": "CURTIS BAY",
+     "CountyName": "BALTIMORE CITY",
+     "StateAbbr": "MD",
+     "ZipCode": "21226",
+     "FIPSCode": "24005",
+     "Latitude83": "39.230529",
+     "Longitude83": "-76.56363"
+    }
+   ]
+  }
+ },
+ "110072196459": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072196459",
+     "FacilityName": "W. L. GORE & ASSOCIATES, INC. - ELK MILLS 1",
+     "LocationAddress": "501 VIEVE'S WAY",
+     "SupplementalLocation": null,
+     "CityName": "ELKTON",
+     "CountyName": "CECIL",
+     "StateAbbr": "MD",
+     "ZipCode": "21921",
+     "FIPSCode": "24015",
+     "Latitude83": "39.664033",
+     "Longitude83": "-75.807412"
+    }
+   ]
+  }
+ },
+ "110000871236": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000871236",
+     "FacilityName": "W L GORE & ASSOCIATES INC",
+     "LocationAddress": "100 AIRPORT ROAD, BUILDING 2",
+     "SupplementalLocation": null,
+     "CityName": "ELKTON",
+     "CountyName": "CECIL",
+     "StateAbbr": "MD",
+     "ZipCode": "21921-4171",
+     "FIPSCode": "24015",
+     "Latitude83": "39.64411",
+     "Longitude83": "-75.8091"
+    }
+   ]
+  }
+ },
+ "110000339367": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000339367",
+     "FacilityName": "CITRUS & ALLIED ESSENCES LTD",
+     "LocationAddress": "4620 MERCEDES DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "BELCAMP",
+     "CountyName": "HARFORD",
+     "StateAbbr": "MD",
+     "ZipCode": "21017-1229",
+     "FIPSCode": "24025",
+     "Latitude83": "39.47898",
+     "Longitude83": "-76.22792"
+    }
+   ]
+  }
+ },
+ "110019855192": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110019855192",
+     "FacilityName": "TILLEY DISTRIBUTION",
+     "LocationAddress": "501 CHESAPEAKE PARK PLAZA",
+     "SupplementalLocation": null,
+     "CityName": "MIDDLE RIVER",
+     "CountyName": "BALTIMORE",
+     "StateAbbr": "MD",
+     "ZipCode": "21220",
+     "FIPSCode": "24005",
+     "Latitude83": "39.3267",
+     "Longitude83": "-76.4315"
+    }
+   ]
+  }
+ },
+ "110019864547": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110019864547",
+     "FacilityName": "HUBER, J.M. CORPORATION",
+     "LocationAddress": "907 REVOLUTION STREET",
+     "SupplementalLocation": null,
+     "CityName": "HAVRE DE GRACE",
+     "CountyName": "HARFORD",
+     "StateAbbr": "MD",
+     "ZipCode": "21078-3723",
+     "FIPSCode": "24025",
+     "Latitude83": "39.54292",
+     "Longitude83": "-76.09995"
+    }
+   ]
+  }
+ },
+ "110019863762": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110019863762",
+     "FacilityName": "CONTINENTAL PLASTIC CONTAINERS",
+     "LocationAddress": "7100 BALTIMORE STREET, EAST",
+     "SupplementalLocation": null,
+     "CityName": "BALTIMORE",
+     "CountyName": "BALTIMORE ",
+     "StateAbbr": "MD",
+     "ZipCode": "21224-1830",
+     "FIPSCode": "24005",
+     "Latitude83": "39.2939",
+     "Longitude83": "-76.52768"
+    }
+   ]
+  }
+ },
+ "110001825044": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001825044",
+     "FacilityName": "CREATIVE PLASTICS",
+     "LocationAddress": "930 TODDS LANE",
+     "SupplementalLocation": null,
+     "CityName": "ROSEDALE",
+     "CountyName": "BALTIMORE",
+     "StateAbbr": "MD",
+     "ZipCode": "21237",
+     "FIPSCode": "MD005",
+     "Latitude83": "39.32106",
+     "Longitude83": "-76.49761"
+    }
+   ]
+  }
+ },
+ "110000339544": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000339544",
+     "FacilityName": "HI-TECH COLOR",
+     "LocationAddress": "1721 MIDWAY ROAD",
+     "SupplementalLocation": null,
+     "CityName": "ODENTON",
+     "CountyName": "ANNE ARUNDEL",
+     "StateAbbr": "MD",
+     "ZipCode": "21113-1127",
+     "FIPSCode": "24003",
+     "Latitude83": "39.10898",
+     "Longitude83": "-76.69575"
+    }
+   ]
+  }
+ },
+ "110000340514": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000340514",
+     "FacilityName": "SUN CHEMICAL CORP",
+     "LocationAddress": "10319 GRUMBACKER LANE",
+     "SupplementalLocation": null,
+     "CityName": "WILLIAMSPORT",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "MD",
+     "ZipCode": "21795-3170",
+     "FIPSCode": "24043",
+     "Latitude83": "39.5961",
+     "Longitude83": "-77.79878"
+    }
+   ]
+  }
+ },
+ "110024888898": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110024888898",
+     "FacilityName": "LIFOAM INDUSTRIES, LLC",
+     "LocationAddress": "121 BATA BLVD",
+     "SupplementalLocation": null,
+     "CityName": "BELCAMP",
+     "CountyName": "HARFORD",
+     "StateAbbr": "MD",
+     "ZipCode": "21017",
+     "FIPSCode": "24025",
+     "Latitude83": "39.46865",
+     "Longitude83": "-76.23527"
+    }
+   ]
+  }
+ },
+ "110002085109": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002085109",
+     "FacilityName": "CONGOLEUM INDUSTRIES",
+     "LocationAddress": "2700 EMORY ROAD",
+     "SupplementalLocation": null,
+     "CityName": "FINKSBURG",
+     "CountyName": "CARROLL",
+     "StateAbbr": "MD",
+     "ZipCode": "21048-2335",
+     "FIPSCode": "24013",
+     "Latitude83": "39.49962",
+     "Longitude83": "-76.8832"
+    }
+   ]
+  }
+ },
+ "110019859278": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110019859278",
+     "FacilityName": "PLASTICOID COMPANY",
+     "LocationAddress": "249 HIGH STREET, WEST",
+     "SupplementalLocation": null,
+     "CityName": "ELKTON",
+     "CountyName": "CECIL",
+     "StateAbbr": "MD",
+     "ZipCode": "21921-5248",
+     "FIPSCode": "24015",
+     "Latitude83": "39.610996",
+     "Longitude83": "-75.825013"
+    }
+   ]
+  }
+ },
+ "110001259799": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001259799",
+     "FacilityName": "ADELL PLASTICS",
+     "LocationAddress": "4530 ANNAPOLIS ROAD",
+     "SupplementalLocation": null,
+     "CityName": "HALETHORPE",
+     "CountyName": "BALTIMORE",
+     "StateAbbr": "MD",
+     "ZipCode": "21227-4899",
+     "FIPSCode": "24005",
+     "Latitude83": "39.22984",
+     "Longitude83": "-76.6416"
+    }
+   ]
+  }
+ },
+ "110066863629": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110066863629",
+     "FacilityName": "VAC PAC, INC",
+     "LocationAddress": "917 MIDDLE RIVER RD",
+     "SupplementalLocation": null,
+     "CityName": "MIDDLE RIVER",
+     "CountyName": "BALTIMORE",
+     "StateAbbr": "MD",
+     "ZipCode": "21220",
+     "FIPSCode": "005",
+     "Latitude83": "39.34877",
+     "Longitude83": "-76.45056"
+    }
+   ]
+  }
+ },
+ "110001302144": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001302144",
+     "FacilityName": "GOODWRAPPERS",
+     "LocationAddress": "1920 HALETHORPE FARMS ROAD",
+     "SupplementalLocation": null,
+     "CityName": "HALETHORPE",
+     "CountyName": "BALTIMORE",
+     "StateAbbr": "MD",
+     "ZipCode": "21227-4501",
+     "FIPSCode": "24005",
+     "Latitude83": "39.22985",
+     "Longitude83": "-76.68652"
+    }
+   ]
+  }
+ },
+ "110002096785": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002096785",
+     "FacilityName": "BRADEN SUTPHIN INK CO",
+     "LocationAddress": "8600 LARKIN RD.",
+     "SupplementalLocation": null,
+     "CityName": "SAVAGE",
+     "CountyName": "HOWARD",
+     "StateAbbr": "MD",
+     "ZipCode": "20763",
+     "FIPSCode": "24027",
+     "Latitude83": "39.13557",
+     "Longitude83": "-76.8097"
+    }
+   ]
+  }
+ },
+ "110071648705": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071648705",
+     "FacilityName": "SOLO CUP COMPANY",
+     "LocationAddress": "1000 INDUSTRIAL PARK DRIVE",
+     "SupplementalLocation": "P.O. BOX 129",
+     "CityName": "FEDERALSBURG",
+     "CountyName": "CAROLINE",
+     "StateAbbr": "MD",
+     "ZipCode": "21632",
+     "FIPSCode": "24011",
+     "Latitude83": "38.688492",
+     "Longitude83": "-75.759577"
+    }
+   ]
+  }
+ }
+}
