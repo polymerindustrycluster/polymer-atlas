@@ -1,0 +1,21 @@
+candidate,city,verdict,deciding_or_settling_fact,record
+Reynolds/Presto Products,Lewiston,VERIFIED,new site under ORG-002892; own careers posting names Lewiston plant,SITE-005966 (B)
+Charlotte Pipe & Foundry,Cedar City,VERIFIED,new site under ORG-002549; own press release,SITE-005967 (B)
+WL Plastics,Cedar City,VERIFIED,new site under ORG-003282; own BABA page,SITE-005968 (B)
+Atlas Molded Products,Murray,VERIFIED,new site under ORG-002248; own locations page,SITE-005969 (B)
+Carlisle SynTec,Tooele,VERIFIED,new site under ORG-002251 (distinct from SITE-003098); own careers locations,SITE-005970 (B)
+Flex Trim West,Provo,VERIFIED,new site under ORG-004365; own locations page,SITE-005971 (B)
+Altium Packaging,Clearfield,VERIFIED,new site under ORG-001408; federal two-source only,SITE-005972 (C)
+Norwesco,Tooele,VERIFIED,new site under ORG-000991; federal two-source only,SITE-005973 (C)
+EnviroTech Molded Products,Salt Lake City,VERIFIED,new org + site,ORG-004816 / SITE-005974 (C)
+3form,Salt Lake City,VERIFIED,new org + HQ site,ORG-004817 / SITE-005975 (C)
+Sports Molding dba Rosti Utah,Clearfield,VERIFIED,new org + site,ORG-004818 / SITE-005976 (C)
+Closure Systems International Americas,Salt Lake City,VERIFIED,new org (residual US shard; HQ unknown) + site,ORG-004819 / SITE-005977 (C)
+AMPAC,Cedar City,REJECT,ammonium perchlorate oxidizer maker (NAICS 325920); not polymer,
+Albion Laboratories,Ogden,REJECT,mineral amino-acid chelate maker; not polymer,
+ChampionX,Vernal/Naples,REJECT,chemical blending/distribution (ITA NAICS 424690); no polymer process,
+Genpak,Cedar City,REJECT,production ended 2026-05-23; site closing Sept 2026 (Packaging Dive; cedarcityutah.com),
+PPC Flexible Packaging,Payson,STILL_UNCERTAIN,integrator dedupe ruling on ORG-001029 vs ORG-004209 (which org operates Payson),
+Adhesives Technology Corp / Convergent,Orem,STILL_UNCERTAIN,whether Orem formulates polymer-binder products (epoxy/sealers) vs silicate densifiers only,
+Whitewater Whirlpool Baths,Lindon,STILL_UNCERTAIN,whether resin/cultured marble is cast on site or only fabricated/sold,
+3form Ecoresin plant 955 S 3800 W,Salt Lake City,STILL_UNCERTAIN,single source (Utah DAQ memo); needs own-site or federal second source,
