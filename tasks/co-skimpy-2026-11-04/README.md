@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 30 | 24 | 2 | 4 | 15 | 0 / 23 | 24 -> 47 | 17 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004914..ORG-004928, SITE-006141..SITE-006163, EVD-026378..EVD-024579.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004914..ORG-004928, SITE-006141..SITE-006163, EVD-026808..EVD-024579.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-CO-04 BOULDER SCIENTIFIC CO - MEAD FACILITY (Mead): Whether Boulder Scientific Mead makes polymer-scope products (polyolefin catalysts are not polymers; NAICS 325199/325412).
