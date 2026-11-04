@@ -38,7 +38,14 @@ produced in a local staging or workshop area; only changes under
 1. **Claim before you build.** Pick (or add) a task in `tasks/QUEUE.md`,
    mark it `claimed:<your-id> <date>`. One task = one branch = one PR —
    except in campaign mode (rule 2), where one task = one integration pass.
-2. **Campaign mode (owner ruling C2, 2026-10-29).** The campaign
+2. **Campaign mode — RETIRED 2026-11-03 (owner battery B-CAMP).** Since
+   2026-11-02 the `validate` workflow runs on every PR and push, so the
+   reason for direct pushes is gone. **No harness, the campaign
+   orchestrator included, pushes to `main`.** Every change, campaign
+   integration passes too, lands through a PR that passes `validate`;
+   integration passes keep their pass journal and pre-pass backups. The
+   historical rule is kept below for the record of passes 4–46.
+   *(Historical, 2026-10-29 to 2026-11-03, owner ruling C2:)* The campaign
    orchestrator may push directly to `main` for a campaign integration
    pass when **all** of the following hold for that push:
    a. the repo owner has approved **that push** (per-push approval; a
@@ -57,11 +64,9 @@ produced in a local staging or workshop area; only changes under
    gated by b–d. If Workflows permission is ever granted and the workflow
    lands on the remote, this rule is revisited by dated revision — it is
    not self-expiring and it is not self-extending.
-3. **Outside campaign mode: never push to `main`.** Branch name:
-   `agent/<harness>/<task-slug>`. This binds every outside harness and
-   every non-campaign contribution, without exception. If you are not the
-   campaign orchestrator landing an approved integration pass, rule 2 does
-   not apply to you.
+3. **Never push to `main`.** Branch name:
+   `agent/<harness>/<task-slug>`. This binds every harness and every
+   contribution, without exception (rule 2 is retired).
 4. Keep changes small and single-purpose (one county, one source, one ring
    pass). A PR that touches 400 rows across 6 topics will not be merged.
    A campaign integration pass is single-purpose **by pass**: its scope is
@@ -312,6 +317,12 @@ same day — research staff at federal laboratories with real polymer
 programs are recordable alongside professors, under the same
 public-facts discipline (SCHEMA v1.7.3, §4.9). No data file is
 changed by this revision.*
+
+*Revision note — 2026-11-03 (owner battery 2026-11-03, item B-CAMP):
+§2 rule 2's campaign mode is retired now that `validate` runs on every
+PR and push; rule 3 binds every harness. Recorded in
+`tasks/OWNER_BATTERY_2026-11-03.md`. No data file is changed by this
+revision.*
 
 *Revision note — 2026-11-01 (owner battery 2026-11-01, SCHEMA v1.7.6):
 §4's date rule gains the `members.member_since` year-field exception,

@@ -1,0 +1,165 @@
+field,value,tokens,proposal,target,rationale
+processes,distribution,167,WRONG_FIELD,ring3_subtype=distribution,"Ring 3 subtype label (SCHEMA §1), not a process; site_type warehouse_distribution already holds it for most records."
+processes,machinery_equipment,130,WRONG_FIELD,ring3_subtype=machinery_equipment,"Ring 3 subtype label (SCHEMA §1), not a process; no processes[] term states machinery making."
+processes,tooling_mold_die,108,WRONG_FIELD,ring3_subtype=tooling_mold_die,Ring 3 subtype label; all 54 sites are site_type tool_shop. Mapping to mold_tool_making would assert a capability not stated.
+processes,extrusion,71,NEW_UMBRELLA,extrusion_unspecified,Subtype unstated; never upgraded to a specific extrusion_* term. Follows thermoforming_unspecified and blow_molding legacy-umbrella precedent.
+materials,fiberglass,61,TO_NOTE,materials_other_note,"Mixed: finished FRP product or raw glass-fiber reinforcement (mat, prepreg); composites_frp would upgrade the reinforcement-only sites."
+processes,compounding,59,NEW_UMBRELLA,compounding_unspecified,Bare compounding is neither compounding_extrusion nor custom_compounding; SCHEMA §3.6 already treats it as a rollup of both.
+processes,recycling_recovery,41,WRONG_FIELD,ring3_subtype=recycling_recovery,"Ring 3 subtype label (SCHEMA §1), not a process; 20 of 21 sites are site_type recycling_facility."
+materials,plastic,33,DROP_NOT_CAPABILITY,,Family unknown; §3.2 permits no family. Generic word adds nothing in Atlas scope.
+materials,acrylic,30,TO_NOTE,materials_other_note,"Mostly PMMA shells and sheet, but also acrylic adhesives; acrylic_pmma would upgrade those (README ambiguity confirmed)."
+processes,fabrication,30,NEW_UMBRELLA,fabrication_unspecified,Substrate and method unstated; plastics_fabrication_welding or hand_layup would upgrade. Follows thermoforming_unspecified precedent.
+processes,service,30,DROP_NOT_CAPABILITY,,"Business function, not a capability; no vocabulary meaning, same class as headquarters and sales."
+materials,carbon black,27,NEW_UMBRELLA,carbon_black,"Promote the §3.6 NEW capability term (owner ruling 7A) into §3.2; no §3.2 string exists. New term, not _unspecified."
+materials,plastics,27,DROP_NOT_CAPABILITY,,Family unknown; §3.2 permits no family. Generic word adds nothing in Atlas scope.
+materials,plastic films,22,WRONG_FIELD,site_capabilities:film_sheet,"Product form, not a material; films_flexible_packaging would narrow window, graphics and label films. Belongs in §3.6 product_form."
+processes,machining,21,TO_NOTE,processes_other_note,"Includes metal machining at tool and machinery makers; plastics_machining_cnc is plastics-only, so mapping would upgrade."
+processes,coating,19,MAP,coating_applying,Sampled sites are all web or film coaters applying coatings or adhesive; §3.1 contrasts coating_applying with coating_formulation (makes it).
+processes,molding,19,NEW_UMBRELLA,molding_unspecified,"Mixes FRP, rubber, dip, injection and compression uses; any specific molding term would upgrade. Follows thermoforming_unspecified precedent."
+materials,gel coat,18,MAP,coatings,"Gel coat is a coating (§3.2 coatings family); resin chemistry is not claimed, so polyester_vinyl_ester_resins is not added."
+materials,resins,18,DROP_NOT_CAPABILITY,,Generic: thermoset or thermoplastic unstated; no §3.2 family fits.
+materials,gel coats,17,MAP,coatings,Plural of 'gel coat'; same coatings family.
+processes,vulcanization,17,TO_NOTE,processes_other_note,"Step inside tire and rubber molding, not the vulcanization_curing_services offer; 15 of 17 sites already carry tire_manufacturing."
+materials,silica,17,TO_NOTE,materials_other_note,Tire and rubber filler; not a polymer material in §3.2.
+materials,plastic sheet,16,WRONG_FIELD,site_capabilities:sheet_plate,"Product form (§3.6 sheet_plate; film_sheet if thin gauge), not a material; resin not stated."
+materials,tube,16,WRONG_FIELD,site_capabilities:tubing,"Product form (§3.6 tubing or pipe_profile), not a material; resin not stated."
+materials,fiberglass composites,15,MAP,composites_frp,"Glass-fiber composite = composites_frp, same logic as mapped 'carbon fiber composites' to composites_carbon."
+processes,converting,15,MAP,die_cutting_converting,"die_cutting_converting is the only converting term; slight stretch for film bag converters, flagged in summary."
+materials,rod,15,WRONG_FIELD,site_capabilities:sheet_plate,Stock shape; §3.6 sheet_plate covers plate and stock shapes sold as material. Not a resin.
+processes,CNC machining,15,TO_NOTE,processes_other_note,Mold-steel and machinery machining mixed with plastic stock machining; mapping_used maps only 'CNC plastic machining' to plastics_machining_cnc.
+processes,assembly,14,TO_NOTE,processes_other_note,Mixes post-molding assembly with machine-builder equipment assembly; assembly_secondary_ops covers polymer secondary operations only.
+processes,tooling,14,TO_NOTE,processes_other_note,Unclear whether making (mold_tool_making) or maintaining (tooling_repair_maintenance); several sites are molders with in-house tool rooms.
+materials,composites,14,NEW_UMBRELLA,composites_unspecified,"Matrix and fiber unstated, so no composites_* family fits. Follows thermoforming_unspecified precedent."
+materials,color concentrates,14,MAP,inks_colorants_masterbatch,§3.6 places masterbatch and color concentrates under the inks_colorants_masterbatch family string.
+materials,ethylene,14,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+materials,formaldehyde,13,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope. Not melamine_urea_formaldehyde, which is the resin."
+materials,polymers,13,DROP_NOT_CAPABILITY,,Generic word; universities list it beside research and teaching. No §3.2 family fits.
+materials,foam,13,MAP,foams_polymeric,"Foam in a polymer-industry record is polymeric foam; family string only, no resin implied."
+materials,glass fiber,13,TO_NOTE,materials_other_note,"Reinforcement fiber, no §3.2 term; composites_frp is the composite, not the fiber. Possible future reinforcement_fibers term."
+materials,polyethylene film,12,MAP,polyethylene_pe,Resin stated; film is product form (site_capabilities film_sheet). films_flexible_packaging not assumed.
+materials,plastic film,12,WRONG_FIELD,site_capabilities:film_sheet,"Product form, not a material; films_flexible_packaging would narrow window, graphics and label films. Belongs in §3.6 product_form."
+materials,polyisocyanurate foam,12,MAP,foams_polymeric,PIR is a rigid polymeric foam; polyurethane_pu not added because that would assert chemistry the source does not.
+materials,tool steel,12,DROP_NOT_CAPABILITY,,"Metal; §3.2 lists polymers only. Mold-making input, not a polymer material."
+materials,fiberglass-reinforced plastics,12,MAP,composites_frp,Plural of mapped 'fiberglass-reinforced plastic' (mapping_used EQUIV).
+processes,flexible polyurethane foam pouring,11,NEW_UMBRELLA,foam_production_unspecified,No §3.1 term for pouring or producing PU foam; foam_fabrication is cutting/shaping only. Production umbrella needed.
+processes,polyester resin synthesis,11,MAP,polymerization,SCHEMA §3.6 defines polymerization as resin production as a capability; synthesizing polyester resin is that.
+processes,gel coat production,11,MAP,coating_formulation,Gel coat is a coating the site makes; coating_formulation = makes it (§3.1).
+materials,film,11,WRONG_FIELD,site_capabilities:film_sheet,"Product form listed by distributors beside sheet, rod, tube; belongs in §3.6 product_form, resin not stated."
+materials,hot melt adhesives,11,MAP,adhesives_sealants,Adhesive class; §3.2 family string.
+materials,masterbatch,11,MAP,inks_colorants_masterbatch,§3.6 places masterbatch under the inks_colorants_masterbatch family string.
+materials,propylene,11,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+materials,polyolefins,11,MAP,thermoplastics,"Polyolefins are thermoplastics; PE or PP not stated, so neither specific term is added."
+processes,film extrusion,10,NEW_UMBRELLA,extrusion_unspecified,"Blown vs cast not stated, so extrusion_film_blown/cast would upgrade. Film nuance lost unless owner adds extrusion_film_unspecified."
+materials,polymer additives,10,NEW_UMBRELLA,polymer_additives,Additive class with no §3.2 string; polymer_additives family umbrella would hold it.
+processes,die cutting,10,MAP,die_cutting_converting,Exact process named by die_cutting_converting; mapping_used lacked this spelling.
+materials,aramid,9,TO_NOTE,materials_other_note,"Reinforcement fiber, no §3.2 term; composites_* are composites, not the fiber. Possible future reinforcement_fibers term."
+processes,formaldehyde and resin manufacturing,9,MAP,polymerization,"Resin half is polymerization (§3.6); formaldehyde half is a chemical, handled under materials value 'formaldehyde'."
+processes,printing,9,MAP,printing_decorating_plastics,Sampled sites print on plastic film and bags; printing_decorating_plastics is the only §3.1 printing term.
+processes,slitting,9,MAP,die_cutting_converting,Slitting is a converting operation listed with die cutting and laminating; same family stretch as 'converting'.
+processes,resin distribution,9,WRONG_FIELD,ring3_subtype=distribution,Distribution is a Ring 3 subtype (SCHEMA §1); the resins sold already appear in materials[].
+materials,resin,9,DROP_NOT_CAPABILITY,,Generic: thermoset or thermoplastic unstated; no §3.2 family fits.
+materials,additives,9,NEW_UMBRELLA,polymer_additives,Additive class with no §3.2 string; polymer_additives family umbrella would hold it.
+materials,steel,9,DROP_NOT_CAPABILITY,,"Metal; §3.2 lists polymers only. Mold and machinery input, not a polymer material."
+materials,HDPE pipe,9,MAP,polyethylene_pe,"Resin stated (HDPE, mapping_used EQUIV); pipe is product form for site_capabilities pipe_profile."
+materials,vinyl chloride monomer,9,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+materials,cultured marble,8,TO_NOTE,materials_other_note,"Finished product type; resin unstated in this token, and §3.2 has no mineral-filled cast category."
+materials,styrene,8,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+materials,acrylic adhesives,8,MAP,adhesives_sealants,Adhesive class only; acrylic_pmma deliberately not added because an acrylic adhesive is not PMMA.
+materials,rubber chemicals,8,NEW_UMBRELLA,polymer_additives,"Accelerators, antioxidants and similar; no §3.2 string. polymer_additives family umbrella would hold them."
+processes,mixing,8,TO_NOTE,processes_other_note,"Rubber mixing, adhesive mixing and filling are mixed; rubber_mixing_compounding would upgrade."
+materials,polyurethane adhesives,8,MAP,polyurethane_pu;adhesives_sealants,"Two-sided term, same as mapped 'polyurethane foam' to polyurethane_pu plus foams_polymeric."
+materials,vinyl,8,MAP,pvc,"Sampled uses (plastisol, flooring, siding, mats) are PVC; vinyl ester resin is spelled out elsewhere. Lower confidence."
+materials,aluminum,8,DROP_NOT_CAPABILITY,,"Metal; §3.2 lists polymers only. Mold and machinery input, not a polymer material."
+processes,cast_polymer,8,TO_NOTE,processes_other_note,Cultured-marble casting; only potting_encapsulation_casting exists and is a different process. Possible future gap with 'cultured marble casting'.
+materials,hoses,7,WRONG_FIELD,site_capabilities:hose_belting,"Product form (§3.6 hose_belting), not a material; rubber family already tagged on the same records."
+materials,SMC,7,MAP,composites_thermoset,SMC is a glass-filled thermoset molding compound; composites_thermoset states it. Process side stays compression_molding.
+processes,sales,7,DROP_NOT_CAPABILITY,,"Business function, not a capability; site_type sales_office states it where true."
+processes,testing,7,TO_NOTE,processes_other_note,Real offering but no §3.1 term; site_type lab_testing and Ring 3 testing_lab carry lab sites.
+processes,polyurethane foam production and fabrication,7,NEW_UMBRELLA,foam_production_unspecified;foam_fabrication,Fabrication half is foam_fabrication (§3.1); production half needs the production umbrella.
+materials,acrylic sheet,7,MAP,acrylic_pmma,Acrylic sheet is PMMA by definition; product form separate (sheet_plate).
+materials,polyurethane systems,7,MAP,polyurethane_pu,"System houses sell PU chemistry; foams or adhesives are not stated, so only polyurethane_pu."
+materials,pyrolysis oil,7,TO_NOTE,materials_other_note,Recycling output stream; no §3.2 string and not a polymer. Not recycled_content_pcr_pir.
+processes,rubber molding,7,NEW_UMBRELLA,rubber_molding_unspecified,"Compression vs injection not stated, so rubber_molding_compression/injection would upgrade. §3.6 rubber_molding rollup shows the gap."
+processes,adhesive_formulating,7,MAP,adhesive_sealant_formulation,Spelling variant of the §3.1 term.
+materials,specialty chemicals,7,TO_NOTE,materials_other_note,Generic non-polymer chemistry; no §3.2 family. Details belong in notes.
+materials,sheet molding compound (SMC),7,MAP,composites_thermoset,Long-form spelling of SMC; same mapping.
+materials,epoxy adhesives,7,MAP,epoxy;adhesives_sealants,Two-sided term: resin plus adhesive family.
+processes,equipment manufacturing,7,WRONG_FIELD,ring3_subtype=machinery_equipment,"Ring 3 subtype label (SCHEMA §1), not a process; makes equipment, which no processes[] term states."
+processes,chemical distribution,7,WRONG_FIELD,ring3_subtype=distribution,Distribution is a Ring 3 subtype (SCHEMA §1); the chemicals sold are not polymer processes.
+processes,coatings_formulation,7,MAP,coating_formulation,Spelling variant of the §3.1 term.
+processes,grinding,6,TO_NOTE,processes_other_note,Scrap-resin grinding at recyclers (regrind_pelletizing vs pulverizing_grinding_resin unclear) mixed with metal grinding at a platen maker.
+processes,carbon black manufacturing,6,TO_NOTE,processes_other_note,Chemical manufacture of a filler with no §3.1 term; companion material 'carbon black' is a separate schema ask.
+processes,rubber belt and hose manufacturing,6,MAP,hose_belting_manufacturing,Same process named by §3.1 hose_belting_manufacturing.
+materials,belts,6,WRONG_FIELD,site_capabilities:hose_belting,"Product form (§3.6 hose_belting), not a material."
+materials,EPDM rubber,6,MAP,epdm,Same material as mapped 'EPDM' (SPELLING).
+materials,polymer concrete,6,TO_NOTE,materials_other_note,Resin-bound aggregate; binder resin unstated and no §3.2 category fits.
+processes,cultured marble casting,6,TO_NOTE,processes_other_note,Casting of polyester/mineral-filled bath products; potting_encapsulation_casting is a different process. Possible future gap with 'cast_polymer'.
+materials,polyester,6,TO_NOTE,materials_other_note,"Fiber, fabric, PET or thermoset resin unresolved; polyester_vinyl_ester_resins or pet_petg would upgrade."
+processes,adhesive manufacturing,6,MAP,adhesive_sealant_formulation,Making adhesive is adhesive_sealant_formulation (§3.1).
+materials,specialty polymers,6,DROP_NOT_CAPABILITY,,Generic word; no §3.2 family fits.
+processes,flexible polyurethane foam production,6,NEW_UMBRELLA,foam_production_unspecified,No §3.1 term for pouring or producing PU foam; foam_fabrication is cutting/shaping only. Production umbrella needed.
+materials,urethane foam,6,MAP,polyurethane_pu;foams_polymeric,"Two-sided term, same as mapped 'polyurethane foam'."
+processes,R&D,6,TO_NOTE,processes_other_note,Not a process; site_type rd_center and Ring 3 rd_design_engineering carry R&D sites.
+processes,blending,6,TO_NOTE,processes_other_note,"Material blended is unstated (additive, resin, monomer); additive_dry_blending would upgrade."
+materials,plasticizers,6,NEW_UMBRELLA,polymer_additives,Additive class with no §3.2 string; polymer_additives family umbrella would hold it.
+materials,polyester resin composites,6,MAP,polyester_vinyl_ester_resins;composites_thermoset,Resin stated plus composite; thermoset matrix gives composites_thermoset (cultured-marble records).
+processes,packaging,6,TO_NOTE,processes_other_note,"Product filling and packaging in adhesive plants, not packaging-industry shaping; no §3.1 term."
+materials,recycled plastics,6,MAP,recycled_content_pcr_pir,§3.2 family for recycled and reclaim streams as material.
+processes,technical service,6,DROP_NOT_CAPABILITY,,"Customer-support function, not a capability; no vocabulary meaning, same class as service."
+materials,compounds,6,DROP_NOT_CAPABILITY,,Generic: base polymer unstated; no §3.2 family fits.
+materials,TPO,6,NEW_UMBRELLA,thermoplastic_olefin_tpo,Promote the §3.6 NEW capability term into §3.2 so the strings match (§3.6.1); TPE/TPU family would misfile it. New term.
+materials,antioxidants,6,NEW_UMBRELLA,polymer_additives,Additive class with no §3.2 string; polymer_additives family umbrella would hold it.
+materials,polyurethane foams,6,MAP,polyurethane_pu;foams_polymeric,Plural of mapped 'polyurethane foam'.
+processes,fiberglass-reinforced plastic products manufacturing,6,TO_NOTE,processes_other_note,"Product description; molding method unstated, so composites_hand_layup or other composites_* would upgrade."
+materials,methyl methacrylate,6,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope. Not acrylic_pmma, which is the polymer."
+processes,reaction injection molding,6,NEW_UMBRELLA,reaction_injection_molding,"Genuine gap, not an _unspecified umbrella: RIM has no §3.1 term and injection_molding would misstate it. §3.6 already seeds it."
+processes,machinery manufacturing,6,WRONG_FIELD,ring3_subtype=machinery_equipment,"Ring 3 subtype label (SCHEMA §1), not a process; makes machinery, which no processes[] term states."
+processes,recycling,6,NEW_UMBRELLA,recycling_unspecified,Mechanical vs chemical not stated; recycling_mechanical would upgrade. Follows thermoforming_unspecified precedent.
+materials,engineered thermoplastic compounds,6,MAP,thermoplastics,"Thermoplastic stated; base resin unstated, so only the family."
+materials,ethylene dichloride,6,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+materials,caustic soda,6,TO_NOTE,materials_other_note,Inorganic chlor-alkali chemical; no §3.2 string and not a polymer or monomer.
+processes,vinyl siding extrusion,6,MAP,extrusion_profile,"Vinyl siding is an extruded PVC profile; a named product, not a generic extrusion word."
+processes,emulsion polymerization,6,MAP,polymerization,Emulsion polymerization is a polymerization; §3.6 equates polymerization with resin production.
+processes,FRP fabrication,5,NEW_UMBRELLA,fabrication_unspecified,"Layup or winding method unstated, so composites_hand_layup would upgrade. Follows thermoforming_unspecified precedent."
+processes,fiberglass bathware manufacturing,5,TO_NOTE,processes_other_note,"Product description; spray-up, layup or molding route unstated."
+materials,adiponitrile,5,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+materials,hexamethylenediamine,5,NEW_UMBRELLA,monomers_intermediates,"Monomer/intermediate with no §3.2 string; materials[] lists polymers, so owner must rule scope."
+processes,plastic injection molding,5,MAP,injection_molding,Same process; 'plastic' is redundant in Atlas scope (cf. mapping_used 'injection molding').
+processes,custom fabrication,5,NEW_UMBRELLA,fabrication_unspecified,"Same as 'fabrication'; 'custom' is tolling, which belongs in offers_tolling (§3 rules), not a variant term."
+materials,gelcoats,5,MAP,coatings,Spelling variant of 'gel coat'; same coatings family.
+materials,solid surface,5,TO_NOTE,materials_other_note,"Product category, acrylic or polyester unstated; no §3.2 term."
+materials,reinforcements,5,TO_NOTE,materials_other_note,"Distributor catch-all (glass, carbon, aramid); no §3.2 term for fibers."
+processes,headquarters,5,DROP_NOT_CAPABILITY,,"A site role, already stated by site_type; not a capability."
+materials,polyurethane coatings,5,MAP,polyurethane_pu;coatings,Two-sided term: resin plus coatings family.
+materials,thermoplastic masterbatch,5,MAP,inks_colorants_masterbatch,§3.6 places masterbatch under the inks_colorants_masterbatch family string.
+materials,engineered compounds,5,TO_NOTE,materials_other_note,Base polymer unstated; mapping to thermoplastics would infer it from co-tags.
+materials,coating resins,5,MAP,coatings,"Binder resins sold into coatings; §3.2 coatings family, resin chemistry not claimed."
+processes,resin manufacture,5,MAP,polymerization,"SCHEMA §3.6: polymerization = resin production as a capability; alkyd, polyester and polybutadiene resin makers all fit."
+materials,engineering resins,5,MAP,thermoplastics,"Engineering resins are engineering thermoplastics; specific resin unstated, so only the family."
+materials,purging compounds,5,TO_NOTE,materials_other_note,"Machine-cleaning products, not a polymer material; no §3.2 family."
+processes,adhesive formulation,5,MAP,adhesive_sealant_formulation,"Same process as the §3.1 term, shorter wording."
+processes,plastics recycling,5,NEW_UMBRELLA,recycling_unspecified,Mechanical vs chemical not stated; recycling_mechanical would upgrade. Follows thermoforming_unspecified precedent.
+materials,shredders,5,TO_NOTE,materials_other_note,"Machine the site builds or sells; Ring 3 machinery_equipment, not a material."
+materials,granulators,5,TO_NOTE,materials_other_note,"Machine the site builds or sells; Ring 3 machinery_equipment, not a material."
+materials,laminates,5,TO_NOTE,materials_other_note,"Product type; substrate and resin unstated (window film, decorative, composite)."
+materials,cultured marble (polyester resin and mineral filler),5,MAP,polyester_vinyl_ester_resins,Source states polyester resin; mineral filler has no §3.2 string.
+processes,coextrusion,5,NEW_UMBRELLA,extrusion_unspecified,"Technique across film, sheet and profile; subtype unstated, so any extrusion_* subtype would upgrade."
+processes,pelletizing,5,TO_NOTE,processes_other_note,Recycler pelletizing (regrind_pelletizing) and compounder strand pelletizing (compounding) are mixed.
+processes,adhesive manufacture,5,MAP,adhesive_sealant_formulation,Making adhesive is adhesive_sealant_formulation (§3.1).
+processes,tread rubber manufacturing,5,TO_NOTE,processes_other_note,Tread rubber for retreading; neither tire_manufacturing nor tire_retreading (applying tread) states it.
+materials,thermoset composites,5,MAP,composites_thermoset,Exact §3.2 family term in other words.
+materials,gelcoat,5,MAP,coatings,Spelling variant of 'gel coat'; same coatings family.
+materials,wood,5,DROP_NOT_CAPABILITY,,Not a polymer; shredder-maker input material.
+materials,paper,5,DROP_NOT_CAPABILITY,,Not a polymer; substrate for coating and laminating.
+materials,single-screw extruders,5,TO_NOTE,materials_other_note,"Machine the site builds or sells; Ring 3 machinery_equipment, not a material."
+materials,pressure-sensitive adhesives,5,MAP,adhesives_sealants,Adhesive class; §3.2 family string.
+materials,acrylic emulsions,5,TO_NOTE,materials_other_note,Acrylic latex polymers for coatings and adhesives; acrylic_pmma is a different material.
+processes,vacuum forming,5,MAP,thermoforming_vacuum,"Vacuum forming is vacuum thermoforming; the specific term is stated, not inferred."
+processes,forming,5,TO_NOTE,processes_other_note,"Heat bending, cold forming or thermoforming unstated; thermoforming_unspecified would upgrade a bending shop."
+processes,compression molding of composite automotive components,5,MAP,compression_molding,§3.6 notes compression_molding covers plastics and composites; the rest is product wording.
+materials,chlorine,5,TO_NOTE,materials_other_note,Inorganic chlor-alkali chemical; no §3.2 string and not a polymer or monomer.
+processes,synthetic rubber production,5,MAP,polymerization,Synthetic rubber is made by polymerization; §3.6 equates polymerization with polymer/resin production.
+materials,colorants,5,MAP,inks_colorants_masterbatch,§3.2 inks_colorants_masterbatch family is the colorant bucket.
+materials,polyurethane foam systems,5,MAP,polyurethane_pu;foams_polymeric,Two-sided term: PU chemistry plus foam.
+materials,additive masterbatch,5,MAP,inks_colorants_masterbatch,§3.6 places masterbatch under the inks_colorants_masterbatch family string.
+processes,vinyl_window_manufacturing,5,TO_NOTE,processes_other_note,"Product assembly, not a process; extrusion and welding method unstated."
