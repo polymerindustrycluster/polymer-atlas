@@ -1,0 +1,401 @@
+{
+ "110000455873": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000455873",
+     "FacilityName": "FILMS SHAWNEE LLC",
+     "LocationAddress": "41501 WOLVERINE ROAD",
+     "SupplementalLocation": null,
+     "CityName": "SHAWNEE",
+     "CountyName": "POTTAWATOMIE",
+     "StateAbbr": "OK",
+     "ZipCode": "74804",
+     "FIPSCode": "40125",
+     "Latitude83": "35.418774",
+     "Longitude83": "-96.91881"
+    }
+   ]
+  }
+ },
+ "110000602508": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000602508",
+     "FacilityName": "DELTA FAUCET OF OKLAHOMA",
+     "LocationAddress": "2500 HWY. 62 W.",
+     "SupplementalLocation": null,
+     "CityName": "CHICKASHA",
+     "CountyName": "GRADY",
+     "StateAbbr": "OK",
+     "ZipCode": "73018",
+     "FIPSCode": "40051",
+     "Latitude83": "35.06703",
+     "Longitude83": "-97.97855"
+    }
+   ]
+  }
+ },
+ "110000453713": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000453713",
+     "FacilityName": "CROWN PAINT",
+     "LocationAddress": "1801 W. SHERIDAN",
+     "SupplementalLocation": null,
+     "CityName": "OKLAHOMA CITY",
+     "CountyName": "OKLAHOMA",
+     "StateAbbr": "OK",
+     "ZipCode": "73106-3249",
+     "FIPSCode": "40109",
+     "Latitude83": "35.46688",
+     "Longitude83": "-97.54673"
+    }
+   ]
+  }
+ },
+ "110020743622": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110020743622",
+     "FacilityName": "POLY FILMS INC",
+     "LocationAddress": "1910 N SOONER RD",
+     "SupplementalLocation": null,
+     "CityName": "OKLAHOMA CITY",
+     "CountyName": "OKLAHOMA",
+     "StateAbbr": "OK",
+     "ZipCode": "73141",
+     "FIPSCode": "40109",
+     "Latitude83": "35.48775",
+     "Longitude83": "-97.42405"
+    }
+   ]
+  }
+ },
+ "110042003774": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110042003774",
+     "FacilityName": "HENNIGES AUTOMOTIVE OKLAHOMA INC",
+     "LocationAddress": "AIRPORT INDUSTRIAL PARK",
+     "SupplementalLocation": null,
+     "CityName": "FREDERICK",
+     "CountyName": "TILLMAN",
+     "StateAbbr": "OK",
+     "ZipCode": "73542",
+     "FIPSCode": "40141",
+     "Latitude83": "34.360278",
+     "Longitude83": "-98.998333"
+    }
+   ]
+  }
+ },
+ "110000453651": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000453651",
+     "FacilityName": "GEMINI COATINGS INC / EL RENO PLANT",
+     "LocationAddress": "2300 HOLLOWAY DR",
+     "SupplementalLocation": null,
+     "CityName": "EL RENO",
+     "CountyName": "CANADIAN",
+     "StateAbbr": "OK",
+     "ZipCode": "73036",
+     "FIPSCode": "OK017",
+     "Latitude83": "35.511387",
+     "Longitude83": "-97.949787"
+    }
+   ]
+  }
+ },
+ "110000606808": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000606808",
+     "FacilityName": "NORIT ACTIVATED CARBON",
+     "LocationAddress": "1432 6TH ST",
+     "SupplementalLocation": null,
+     "CityName": "PRYOR",
+     "CountyName": "MAYES",
+     "StateAbbr": "OK",
+     "ZipCode": "74361",
+     "FIPSCode": "40097",
+     "Latitude83": "36.23124",
+     "Longitude83": "-95.27639"
+    }
+   ]
+  }
+ },
+ "110004758842": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004758842",
+     "FacilityName": "BAGS INC",
+     "LocationAddress": "1900 NORTH SOONER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "OKLAHOMA CITY",
+     "CountyName": "OKLAHOMA",
+     "StateAbbr": "OK",
+     "ZipCode": "73141",
+     "FIPSCode": "40109",
+     "Latitude83": "35.48775",
+     "Longitude83": "-97.42405"
+    }
+   ]
+  }
+ },
+ "110009435021": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110009435021",
+     "FacilityName": "AMERICAN PHOENIX INC / AMERICAN PHOENIX INC",
+     "LocationAddress": "5201 SW 11TH ST",
+     "SupplementalLocation": null,
+     "CityName": "LAWTON",
+     "CountyName": "COMANCHE",
+     "StateAbbr": "OK",
+     "ZipCode": "73501",
+     "FIPSCode": "OK031",
+     "Latitude83": "34.558681",
+     "Longitude83": "-98.404537"
+    }
+   ]
+  }
+ },
+ "110041626336": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110041626336",
+     "FacilityName": "ML PRODUCTS LLC",
+     "LocationAddress": "1101 E MAGUIRE RD",
+     "SupplementalLocation": null,
+     "CityName": "NOBLE",
+     "CountyName": "CLEVELAND",
+     "StateAbbr": "OK",
+     "ZipCode": "73068",
+     "FIPSCode": "40027",
+     "Latitude83": "35.13146",
+     "Longitude83": "-97.38137"
+    }
+   ]
+  }
+ },
+ "110070566656": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070566656",
+     "FacilityName": "COOLING TOWER COMPOSITES AND FABRICATIO / CHICKASHA FACILITY",
+     "LocationAddress": "2500 FRISCO AVE",
+     "SupplementalLocation": null,
+     "CityName": "CHICKASHA",
+     "CountyName": "GRADY COUNTY",
+     "StateAbbr": "OK",
+     "ZipCode": "73018",
+     "FIPSCode": "OK051",
+     "Latitude83": "35.05863",
+     "Longitude83": "-97.96655"
+    }
+   ]
+  }
+ },
+ "110070551269": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070551269",
+     "FacilityName": "IFS COATINGS, INC",
+     "LocationAddress": "3430 CYPERT WAY",
+     "SupplementalLocation": null,
+     "CityName": "ARDMORE",
+     "CountyName": "CARTER COUNTY",
+     "StateAbbr": "OK",
+     "ZipCode": "73401",
+     "FIPSCode": "40019",
+     "Latitude83": "34.13653",
+     "Longitude83": "-97.13419"
+    }
+   ]
+  }
+ },
+ "110000454990": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000454990",
+     "FacilityName": "CHEMTRADE REFINERY SERVICES, INC.",
+     "LocationAddress": "5201 WEST 21ST STREET",
+     "SupplementalLocation": null,
+     "CityName": "TULSA",
+     "CountyName": "TULSA",
+     "StateAbbr": "OK",
+     "ZipCode": "74107",
+     "FIPSCode": "40143",
+     "Latitude83": "36.136309",
+     "Longitude83": "-96.051809"
+    }
+   ]
+  }
+ },
+ "110000454311": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000454311",
+     "FacilityName": "DEEPWATER CHEMICALS, INC.",
+     "LocationAddress": "1210 AIRPARK RD",
+     "SupplementalLocation": null,
+     "CityName": "WOODWARD",
+     "CountyName": "WOODWARD",
+     "StateAbbr": "OK",
+     "ZipCode": "73801",
+     "FIPSCode": "40153",
+     "Latitude83": "36.439844",
+     "Longitude83": "-99.515062"
+    }
+   ]
+  }
+ },
+ "110007386818": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007386818",
+     "FacilityName": "WOODWARD IODINE CORPORATION",
+     "LocationAddress": "205865 EAST COUNTY ROAD 32",
+     "SupplementalLocation": null,
+     "CityName": "WOODWARD",
+     "CountyName": "WOODWARD",
+     "StateAbbr": "OK",
+     "ZipCode": "73801",
+     "FIPSCode": "40153",
+     "Latitude83": "36.5501",
+     "Longitude83": "-99.33784"
+    }
+   ]
+  }
+ },
+ "110000453973": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000453973",
+     "FacilityName": "OKLAHOMA CITY SITE",
+     "LocationAddress": "100 N MUSTANG ROAD, BLDG 200",
+     "SupplementalLocation": null,
+     "CityName": "YUKON",
+     "CountyName": "CANADIAN",
+     "StateAbbr": "OK",
+     "ZipCode": "73099-5104",
+     "FIPSCode": "40017",
+     "Latitude83": "35.469214",
+     "Longitude83": "-97.719642"
+    }
+   ]
+  }
+ },
+ "110000454525": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000454525",
+     "FacilityName": "SPECIALTY GAS MFG PLT",
+     "LocationAddress": "1115 KEYSTONE AVE",
+     "SupplementalLocation": null,
+     "CityName": "CATOOSA",
+     "CountyName": "ROGERS",
+     "StateAbbr": "OK",
+     "ZipCode": "74015",
+     "FIPSCode": "40131",
+     "Latitude83": "36.227222",
+     "Longitude83": "-95.747222"
+    }
+   ]
+  }
+ },
+ "110000454838": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000454838",
+     "FacilityName": "SHEET VINYL FLOORING MFG FACILITY",
+     "LocationAddress": "4115 N PERKINS ROAD",
+     "SupplementalLocation": null,
+     "CityName": "STILLWATER",
+     "CountyName": "PAYNE",
+     "StateAbbr": "OK",
+     "ZipCode": "74075",
+     "FIPSCode": "40119",
+     "Latitude83": "36.16392",
+     "Longitude83": "-97.05044"
+    }
+   ]
+  }
+ },
+ "110018859635": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110018859635",
+     "FacilityName": "NOMACO OKLAHOMA FOAM EXTRUSION PLANT",
+     "LocationAddress": "524 N SARA RD",
+     "SupplementalLocation": null,
+     "CityName": "YUKON",
+     "CountyName": "CANADIAN",
+     "StateAbbr": "OK",
+     "ZipCode": "73099",
+     "FIPSCode": "40017",
+     "Latitude83": "35.47271",
+     "Longitude83": "-97.70678"
+    }
+   ]
+  }
+ },
+ "110056581275": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110056581275",
+     "FacilityName": "3M TECHNICAL CERAMICS",
+     "LocationAddress": "3250 SOUTH 614 ROAD",
+     "SupplementalLocation": "S2NENWS25T29NR23EIM",
+     "CityName": "QUAPAW",
+     "CountyName": "OTTAWA",
+     "StateAbbr": "OK",
+     "ZipCode": "74363",
+     "FIPSCode": "40115",
+     "Latitude83": "36.976667",
+     "Longitude83": "-94.769753"
+    }
+   ]
+  }
+ },
+ "110004746133": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004746133",
+     "FacilityName": "JM MANUFACTURING-TULSA PLANT",
+     "LocationAddress": "4501 W 49TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "TULSA",
+     "CountyName": "TULSA",
+     "StateAbbr": "OK",
+     "ZipCode": "74107-7315",
+     "FIPSCode": "40143",
+     "Latitude83": "36.09256",
+     "Longitude83": "-96.04225"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,23 @@
+org_id,kind,detail,reason
+ORG-000366,evidence:existence,"© THE HC COMPANIES, INC. 2026. ALL RIGHTS RESERVED",raw check no
+ORG-000430,evidence:address,"Mar-Bal R&D Technical Center | Corporate Office 10095 Queens Way Chagrin Falls, Ohio 44023",raw check no
+ORG-000698,evidence:address,"BASF Corporation, headquartered in Florham Park, New Jersey, is the North American affiliate of BASF SE, Ludwigshafen, G","address quote does not name the record's city (Greenville): finding, not evidence"
+ORG-000523,evidence:address,"1555 Page Industrial Blvd. St. Louis, Missouri 63132 - United States","address quote does not name the record's city (Chesterfield): finding, not evidence"
+ORG-000523,evidence:address,"Leipsic, Ohio Manufacturing Plant Pretium Packaging 150 S. Werner Street Leipsic, Ohio 45856 - United States",duplicate row
+ORG-000523,evidence:scope,injection blow molding machines that run the smaller HDPE bottles,duplicate row
+ORG-000033,evidence:existence,LyondellBasell Industries N.V. (Exact name of registrant as specified in its charter),raw check unfetchable
+ORG-000033,evidence:address,2800 POST OAK BLVD SUITE 5100 HOUSTON TX 77056,"raw check unfetchable; address quote does not name the record's city (): finding, not evidence"
+ORG-000033,evidence:code,SIC : 2860 - INDUSTRIAL ORGANIC CHEMICALS,raw check unfetchable; claim code not minted here (no NAICS found; SIC is not a NAICS claim)
+ORG-000088,evidence:existence,"PPG INDUSTRIES, INC. (Exact name of registrant as specified in its charter)",raw check unfetchable
+ORG-000088,evidence:code,"SIC : 2851 - PAINTS, VARNISHES, LACQUERS, ENAMELS & ALLIED PRODUCTS",raw check unfetchable; claim code not minted here (no NAICS found; SIC is not a NAICS claim)
+ORG-000034,evidence:address,1471 Exeter Road Akron OH 44306,raw check no
+ORG-000550,evidence:existence,"Röchling Automotive USA LLP 2275 Picton Parkway 44312 Akron, OH",raw check no
+ORG-000550,evidence:address,"Röchling Automotive USA LLP 2275 Picton Parkway 44312 Akron, OH",raw check no
+ORG-001459,field:website,https://survitecgroup.com,field website not applied here
+ORG-000097,evidence:existence,BioVerde Tech LLC and Unibio A/S today announced a strategic collaboration to develop scalable processes,raw check no
+ORG-000097,evidence:address,"6615 Minola St. Houston, TX 77007","address quote does not name the record's city (Akron): finding, not evidence"
+ORG-000097,evidence:address,A new $12.5M Tech Hubs grant now supports the expansion of our platform in Northeast Ohio,"address quote does not name the record's city (Akron): finding, not evidence"
+ORG-000132,evidence:existence,"The Sherwin-Williams Company, founded in 1866 and incorporated in Ohio in 1884",raw check unfetchable
+ORG-000132,evidence:address,"Our principal executive offices are located at 1 Sherwin Way, Cleveland, Ohio 44113-2206.",raw check unfetchable
+ORG-000132,evidence:code,"SIC: 5200 - RETAIL-BUILDING MATERIALS, HARDWARE, GARDEN SUPPLY",raw check unfetchable; claim code not minted here (no NAICS found; SIC is not a NAICS claim)
+ORG-000551,evidence:address,"Roechling Industrial Cleveland, LP 4321 Glenridge Road 44121 Cleveland, OH","raw check no; address quote does not name the record's city (South Euclid): finding, not evidence"

@@ -1,0 +1,79 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-AL-00,"3M CHEMICAL OPERATIONS' DECATUR FACILITY","Decatur",VERIFIED,"Two federal sources: FRS 110000367567 + ITA 197297 + OSHA 346240088 (scope from federal NAICS)",SITE-006348
+QMS-AL-01,"BRUDERER INC","Huntsville",STILL_UNCERTAIN,"Whether Bruderer Inc. Huntsville makes plastic products (ITA NAICS 326199) or only builds/services stamping presses (333513).",
+QMS-AL-02,"KWANGSUNG","Dadeville",VERIFIED,"Two federal sources: FRS 110043740903 + ITA 1182025 + OSHA 345170310 (scope from federal NAICS)",SITE-006349
+QMS-AL-03,"KUMI MANUFACTURING ALABAMA LLC","Clanton",VERIFIED,"Two federal sources: FRS 110043029736 + ITA 1453580 + OSHA 345660575 (scope from federal NAICS)",SITE-006350
+QMS-AL-04,"STERILITE CORPORATION","Birmingham",VERIFIED,"Two federal sources: FRS 110003378416 + ITA 83024 + OSHA 345997787 (scope from federal NAICS)",SITE-006351
+QMS-AL-05,"COLORMASTERS INC","Albertville",VERIFIED,"Already held as SITE-003970 Colormasters Headquarters and Plant.",SITE-003970 (already held, not re-created)
+QMS-AL-06,"HOMELAND VINYL PRODUCTS","Pinson",VERIFIED,"Two federal sources: FRS 110025371746 + ITA 1084284 + OSHA 345661862 (scope from federal NAICS)",SITE-006352
+QMS-AL-07,"VISCOFAN USA INC","Montgomery",VERIFIED,"Two federal sources: FRS 110003389734 + ITA 1244572 + OSHA 347364564 (scope from federal NAICS)",SITE-006353
+QMS-AL-08,"GENPAK LLC - HOPE HULL","Hope Hull",VERIFIED,"Two federal sources: FRS 110013335408 + ITA 1305923 + OSHA 348787417 (scope from federal NAICS)",SITE-006354
+QMS-AL-09,"LENZING FIBERS INC.","Axis",STILL_UNCERTAIN,"Whether Lenzing Axis (lyocell cellulosic fiber, NAICS 325220) is in atlas polymer scope.",
+QMS-AL-10,"INTERNATIONAL AUTOMOTIVE COMPONENTS GROUP","Cottondale",VERIFIED,"Two federal sources: FRS 110071899351 + ITA 1454153 + OSHA 347074015 (scope from federal NAICS)",SITE-006355
+QMS-AL-11,"VALLEY RUBBER","Falkville",VERIFIED,"Two federal sources: FRS 110064282949 + ITA 993383 + OSHA 348018383 (scope from federal NAICS)",SITE-006356
+QMS-AL-12,"K W PLASTICS CONTAINER FACILITY","Troy",VERIFIED,"Two federal sources: FRS 110064258048 + ITA 893119 + OSHA 345737183 (scope from federal NAICS)",SITE-006357
+QMS-AL-13,"INZI CONTROLS ALABAMA, INC.","Elba",VERIFIED,"Two federal sources: FRS 110018879025 + ITA 1493173 + OSHA 345091078 (scope from federal NAICS)",SITE-006358
+QMS-AL-14,"ASCEND PERFORMANCE MATERIALS OPERATIONS LLC","Foley",VERIFIED,"Two federal sources: FRS 110046320478 + ITA 1257636 + OSHA 348434101 (scope from federal NAICS)",SITE-006359
+QMS-AL-15,"ECORE INTERNATIONAL","Ozark",VERIFIED,"Two federal sources: FRS 110071432406 + ITA 1123063 + OSHA 347128761 (scope from federal NAICS)",SITE-006360
+QMS-AL-16,"WESTPOINT STEVENS-GREENVILLE","Greenville",REJECT,"Home textiles plant, not polymer: ITA CY2025 primary NAICS 314120 (fetched 2026-11-04).",
+QMS-AL-17,"PRETIUM PACKAGING, LLC","Troy",VERIFIED,"Two federal sources: FRS 110070705053 + ITA 1441792 + OSHA 345737233 (scope from federal NAICS)",SITE-006361
+QMS-AL-18,"CONTECH ENGINEERED SOLUTIONS LLC","Montgomery",VERIFIED,"Two federal sources: FRS 110006788486 + ITA 1317250 + OSHA 348041856 (scope from federal NAICS)",SITE-006362
+QMS-AL-19,"NYPRO KANAAK ALABAMA LLC","Dothan",VERIFIED,"Two federal sources: FRS 110039562185 + ITA 1123671 + OSHA 343990529 (scope from federal NAICS)",SITE-006363
+QMS-AL-20,"MAUSER USA INC","Anniston",VERIFIED,"Two federal sources: FRS 110010101488 + ITA 1459666 + OSHA 346617293 (scope from federal NAICS)",SITE-006364
+QMS-AL-21,"INDORAMA DECATUR SITE","Decatur",REJECT,"Aromatic monomer (PTA) chemical plant: ITA CY2025 primary NAICS 325199, not polymer manufacturing (fetched 2026-11-04).",
+QMS-AL-22,"BASF CORP","Mc Intosh",STILL_UNCERTAIN,"Whether BASF McIntosh makes any polymer (FRS lists 325211) or only chemicals (primary 325199).",
+QMS-AL-23,"APTAR CSP TECHNOLOGIES","Auburn",VERIFIED,"Already held as SITE-003048 Aptar CSP - Auburn.",SITE-003048 (already held, not re-created)
+QMS-AL-24,"INDORAMA VENTURES SUSTAINABLE SOLUTIONS, LLC","Athens",VERIFIED,"Two federal sources: FRS 110069421717 + ITA 1041635 (scope from federal NAICS)",SITE-006365
+QMS-AL-25,"GENFLEX ROOFING SYSTEMS","Tuscumbia",VERIFIED,"Two federal sources: FRS 110020517902 + ITA 995986 (scope from federal NAICS)",SITE-006366
+QMS-AL-26,"TASUS CORPORATION - ALABAMA","Florence",VERIFIED,"Two federal sources: FRS 110069422707 + ITA 700052 (scope from federal NAICS)",SITE-006367
+QMS-AL-27,"HWASEUNG AUTOMOTIVE USA, LLC","Enterprise",VERIFIED,"Two federal sources: FRS 110070556069 + ITA 1236582 (scope from federal NAICS)",SITE-006368
+QMS-AL-28,"E S ROBBINS CORPORATION","Muscle Shoals",VERIFIED,"Two federal sources: FRS 110000608717 + ITA 1266102 (scope from federal NAICS)",SITE-006369
+QMS-AL-29,"WOODBRIDGE ALABAMA LP","Tanner",VERIFIED,"Two federal sources: FRS 110069286105 + ITA 1068993 (scope from federal NAICS)",SITE-006370
+QMS-AL-30,"LOUISIANA-PACIFIC CORP","Selma",STILL_UNCERTAIN,"What Louisiana-Pacific Selma makes under NAICS 325991 (resin compounding or wood products only).",
+QMS-AL-31,"JOHNS MANVILLE","Scottsboro",VERIFIED,"Two federal sources: FRS 110042996103 + ITA 1512730 (scope from federal NAICS)",SITE-006371
+QMS-AL-32,"TATE & LYLE SUCRALOSE INC","Mc Intosh",REJECT,"Sucralose sweetener, not polymer: ITA CY2025 NAICS 325998 (fetched 2026-11-04).",
+QMS-AL-33,"ALPHAPET, INC.","Decatur",VERIFIED,"Already held as SITE-003956 AlphaPet Decatur.",SITE-003956 (already held, not re-created)
+QMS-AL-34,"PLASTIPAK PACKAGING, INC.","Mccalla",VERIFIED,"Two federal sources: FRS 110017710388 + ITA 98133 (scope from federal NAICS)",SITE-006372
+QMS-AL-35,"TARKETT USA, INC.","Florence",VERIFIED,"Already held as SITE-005840 Tarkett - Florence.",SITE-005840 (already held, not re-created)
+QMS-AL-36,"SAMKWANG USA INC.","Tuskegee",VERIFIED,"Two federal sources: FRS 110072103393 + ITA 1560134 (scope from federal NAICS)",SITE-006373
+QMS-AL-37,"PEMCO","Leesburg",STILL_UNCERTAIN,"Whether Pemco Leesburg makes any polymer coating or only porcelain-enamel frit (NAICS 327112/325510).",
+QMS-AL-38,"HERITAGE PLASTICS","Sylacauga",VERIFIED,"Two federal sources: FRS 110033010364 + ITA 666110 (scope from federal NAICS)",SITE-006374
+QMS-AL-39,"NELSON BROTHERS, LLC - SAMOSET FACILITY","Cordova",REJECT,"Explosives plant: ITA CY2025 NAICS 325920 (fetched 2026-11-04).",
+QMS-AL-40,"LEMOYNE SITE","Axis",REJECT,"Inorganic chemicals: ITA CY2025 primary NAICS 325180 (fetched 2026-11-04).",
+QMS-AL-41,"ASOCRIUM NORTH AMERICA, INC.","Tuscaloosa",VERIFIED,"Two federal sources: FRS 110022522858 + ITA 1436233 (scope from federal NAICS)",SITE-006375
+QMS-AL-42,"SPECIFICATION RUBBER PRODUCTS, INC.","Alabaster",VERIFIED,"Two federal sources: FRS 110000365970 + ITA 217535 (scope from federal NAICS)",SITE-006376
+QMS-AL-43,"NELSON BROTHERS SPECIALTY CHEMICALS, LLC","Parrish",STILL_UNCERTAIN,"Which polymer products, if any, Nelson Brothers Specialty Chemicals Parrish makes under NAICS 325211 (vs explosives 325920).",
+QMS-AL-44,"ASAHI KASEI PLASTICS NORTH AMERICA - ATHENS PLANT","Athens",VERIFIED,"Two federal sources: FRS 110067378064 + ITA 1123353 (scope from federal NAICS)",SITE-006377
+QMS-AL-45,"CIRCULUS HOLDINGS, LLC","Arab",VERIFIED,"Two federal sources: FRS 110071783682 + ITA 1437113 (scope from federal NAICS)",SITE-006378
+QMS-AL-46,"OCI ALABAMA LLC","Decatur",REJECT,"Inorganic chemicals: ITA CY2025 primary NAICS 325180 (fetched 2026-11-04).",
+QMS-AL-47,"CONCOURS TECHNOLOGY ALABAMA INC.","Cullman",VERIFIED,"Two federal sources: FRS 110020833302 + ITA 1455287 (scope from federal NAICS)",SITE-006379
+QMS-AL-48,"ALTIUM PACKAGING LP","Bessemer",VERIFIED,"Two federal sources: FRS 110071925420 + ITA 1329550 (scope from federal NAICS)",SITE-006380
+QMS-AL-49,"CHARLOTTE PIPE AND FOUNDRY COMPANY","Huntsville",VERIFIED,"Two federal sources: FRS 110012218876 + ITA 1527240 (scope from federal NAICS)",SITE-006381
+QMS-AL-50,"HERCULES BAGS INC","Eclectic",VERIFIED,"Two federal sources: FRS 110037372937 + ITA 1250524 (scope from federal NAICS)",SITE-006382
+QMS-AL-51,"INDURON COATINGS INC","Birmingham",VERIFIED,"Two federal sources: FRS 110000367031 + ITA 274918 (scope from federal NAICS)",SITE-006383
+QMS-AL-52,"MOBILE ROSIN OIL CO INC","Mobile",STILL_UNCERTAIN,"Whether Mobile Rosin Oil makes rosin resin (FRS 325211) or only rosin chemicals (325191).",
+QMS-AL-53,"PLASMINE TECHNOLOGY INC","Bay Minette",STILL_UNCERTAIN,"Which Plasmine Technology Bay Minette products, if any, are polymers (FRS lists 325211; primary 325998).",
+QMS-AL-54,"LONESTAR PLASTICS","Prattville",VERIFIED,"Two federal sources: FRS 110003388619 + ITA 150202 (scope from federal NAICS)",SITE-006384
+QMS-AL-55,"ROLLS, INC.","Leighton",VERIFIED,"Two federal sources: FRS 110058195714 + ITA 259798 (scope from federal NAICS)",SITE-006385
+QMS-AL-56,"GRAHAM PACKAGING COMPANY, L.P.","Prattville",VERIFIED,"Two federal sources: FRS 110043865305 + ITA 1093745 (scope from federal NAICS)",SITE-006386
+QMS-AL-57,"WATER SCIENCE TECHNOLOGIES LLC","Birmingham",REJECT,"Water-treatment chemicals: ITA CY2025 NAICS 325998 (fetched 2026-11-04).",
+QMS-AL-58,"YS, INC.","Collinsville",REJECT,"Inorganic chemicals: ITA CY2025 NAICS 325180 (fetched 2026-11-04).",
+QMS-AL-59,"GOODYEAR AUTO SERVICE CENTER #2293","Foley",REJECT,"Retail auto service center: ITA CY2025 NAICS 441330 (fetched 2026-11-04).",
+QMS-AL-60,"SABIC INNOVATIVE PLASTICS US LLC","Lowndesboro",VERIFIED,"Already held as SITE-005093 SABIC - Burkville Plant (1 Plastics Dr).",SITE-005093 (already held, not re-created)
+QMS-AL-61,"POLYMER INDUSTRIES","Henagar",VERIFIED,"Two federal sources: FRS 110010101424 + OSHA 346918592 (scope from federal NAICS)",SITE-006387
+QMS-AL-62,"HB & G","Troy",VERIFIED,"Already held as SITE-005852 HB&G Building Products - Troy.",SITE-005852 (already held, not re-created)
+QMS-AL-63,"GENPAK LLC - MONTGOMERY","Montgomery",VERIFIED,"Two federal sources: FRS 110000521098 + OSHA 346543325 (scope from federal NAICS)",SITE-006388
+QMS-AL-64,"KINPAK, INC.","Montgomery",STILL_UNCERTAIN,"Whether Kinpak Montgomery makes polymer (FRS lists 325211) or only blends and packages fluids.",
+QMS-AL-65,"LETICA CORPORATION (A SUBSIDIARY OF BERRY GLOBAL, INC.)","Lanett",VERIFIED,"Two federal sources: FRS 110070275117 + OSHA 348105255 (scope from federal NAICS)",SITE-006389
+QMS-AL-66,"KOMMERLING USA INCORPORATED","Huntsville",VERIFIED,"Two federal sources: FRS 110002105374 + OSHA 348246588 (scope from federal NAICS)",SITE-006390
+QMS-AL-67,"AMERICAN FIBERGLASS PRODUCTS INC","Double Springs",VERIFIED,"Two federal sources: FRS 110007347969 + OSHA 348942061 (scope from federal NAICS)",SITE-006391
+QMS-AL-68,"CORROSION TECHNOLOGY INC","Bay Minette",VERIFIED,"Two federal sources: FRS 110002338658 + OSHA 347241689 (scope from federal NAICS)",SITE-006392
+QMS-AL-69,"INFILTRATOR WATER TECHNOLOGIES, LLC","Phenix City",VERIFIED,"Two federal sources: FRS 110072156879 + OSHA 345966121 (scope from federal NAICS)",SITE-006393
+QMS-AL-70,"MICRO FAB, INC.","Theodore",VERIFIED,"Two federal sources: FRS 110007404460 + OSHA 344455225 (scope from federal NAICS)",SITE-006394
+QMS-AL-71,"Cumberland Plastics","Opelika",VERIFIED,"Two federal sources: ITA 1270965 + OSHA 345227441 (scope from federal NAICS)",SITE-006395
+QMS-AL-72,"LCI - 203","Double Springs",VERIFIED,"Two federal sources: ITA 357777 + OSHA 345301303 (scope from federal NAICS)",SITE-006396
+QMS-AL-73,"Archon Fibers LLC","Dadeville",REJECT,"Carpet/textile fiber mill: ITA primary NAICS 314110 (fetched 2026-11-04).",
+QMS-AL-74,"Ultratec Special Effects","Owens Cross Roads",REJECT,"Pyrotechnics: ITA primary NAICS 325920 (fetched 2026-11-04).",
+QMS-AL-75,"Hawk Plastics","Childersburg",VERIFIED,"Two federal sources: ITA 751387 + OSHA 349111484 (scope from federal NAICS)",SITE-006397
+QMS-AL-76,"Innovative Plastics","Madison",VERIFIED,"Two federal sources: ITA 1377166 + OSHA 347265985 (scope from federal NAICS)",SITE-006398
+QMS-AL-77,"Price Rubber Corporation","Montgomery",VERIFIED,"Two federal sources: ITA 612538 + OSHA 347809261 (scope from federal NAICS)",SITE-006399

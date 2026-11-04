@@ -1,0 +1,52 @@
+file,row_id,column,old_sha256,new_value,edit_class,rationale
+organizations_OH.csv,ORG-000349,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,regrind_pelletizing,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000349,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000366,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,blow_molding;thermoforming_unspecified;injection_molding;thermoforming_vacuum;compression_molding;rotational_molding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000366,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polypropylene_pp;recycled_content_pcr_pir,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000317,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber;nitrile_nbr;polyethylene_pe;thermosets;composites_thermoset,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000528,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polymerization,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-001328,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,tire_manufacturing,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-001328,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber;thermoplastics,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000322,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polycarbonate_pc,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000034,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,nylon_pa;polyethylene_pe;thermoplastic_elastomers_tpe_tpu;thermoplastics,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000237,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000237,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,printing_decorating_plastics,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000264,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,plastics_machining_cnc,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000264,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,nylon_pa;acetal_pom,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000313,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,other_specified_in_notes,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-001388,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000034,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000430,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000031,verification_tier,6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000031,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000366,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000414,verification_tier,df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000414,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-001328,verification_tier,df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-001328,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000349,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000313,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-001580,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000057,verification_tier,6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000057,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000237,verification_tier,df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000237,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000322,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_MO.csv,ORG-000523,verification_tier,a25513c7e0f6eaa80a3337ee18081b9e2ed09e00af8531c8f7bb2542764027e7,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_MO.csv,ORG-000523,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000201,verification_tier,6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000201,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-001459,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000317,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000097,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000698,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000131,verification_tier,6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000131,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000528,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_PA.csv,ORG-000088,verification_tier,6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_PA.csv,ORG-000088,last_verified,95d17cab42b9c0ff1c9a10c44cef534e01e57635ffe1d795124538a8ba8575d5,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000264,verification_tier,df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000264,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000551,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
+organizations_OH.csv,ORG-000343,verification_tier,df7e70e5021544f4834bbee64a9e3789febc4be81470df629cad6ddb03320a5c,A,TIER_RESTATE,SCHEMA 4.1/4.13: weakest evidenced must-have claim is A
+organizations_OH.csv,ORG-000343,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,record-health fix 2026-11-04
