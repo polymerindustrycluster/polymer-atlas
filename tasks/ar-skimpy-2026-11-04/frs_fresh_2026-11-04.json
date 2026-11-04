@@ -1,0 +1,648 @@
+{
+ "110000513579": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000513579",
+     "FacilityName": "PACTIV CORPORATION",
+     "LocationAddress": "1105 INDUSTRIAL LANE",
+     "SupplementalLocation": null,
+     "CityName": "MALVERN",
+     "CountyName": "HOT SPRING",
+     "StateAbbr": "AR",
+     "ZipCode": "72104-2317",
+     "FIPSCode": "05059",
+     "Latitude83": "34.379556",
+     "Longitude83": "-92.818861"
+    }
+   ]
+  }
+ },
+ "110000452331": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000452331",
+     "FacilityName": "VISKASE COMPANIES INC",
+     "LocationAddress": "2221 EAST STATE HIGHWAY 198",
+     "SupplementalLocation": null,
+     "CityName": "OSCEOLA",
+     "CountyName": "MISSISSIPPI",
+     "StateAbbr": "AR",
+     "ZipCode": "72370",
+     "FIPSCode": "05093",
+     "Latitude83": "35.652289",
+     "Longitude83": "-89.939752"
+    }
+   ]
+  }
+ },
+ "110003403521": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003403521",
+     "FacilityName": "UNITED INDUSTRIES INC",
+     "LocationAddress": "1900 E CENTRAL",
+     "SupplementalLocation": null,
+     "CityName": "BENTONVILLE",
+     "CountyName": "BENTON",
+     "StateAbbr": "AR",
+     "ZipCode": "72712-5611",
+     "FIPSCode": "05007",
+     "Latitude83": "36.37109",
+     "Longitude83": "-94.18838"
+    }
+   ]
+  }
+ },
+ "110001710104": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001710104",
+     "FacilityName": "PIPELIFT JET STREAM, INC",
+     "LocationAddress": "1700 S LINCOLN",
+     "SupplementalLocation": null,
+     "CityName": "SILOAM SPRINGS",
+     "CountyName": "BENTON",
+     "StateAbbr": "AR",
+     "ZipCode": "72761-8800",
+     "FIPSCode": "05007",
+     "Latitude83": "36.168889",
+     "Longitude83": "-94.531667"
+    }
+   ]
+  }
+ },
+ "110041311416": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110041311416",
+     "FacilityName": "CONTAINER COMPONENTS, INC.",
+     "LocationAddress": "2405 INDUSTRIAL DR",
+     "SupplementalLocation": null,
+     "CityName": "JONESBORO",
+     "CountyName": "CRAIGHEAD",
+     "StateAbbr": "AR",
+     "ZipCode": "72401",
+     "FIPSCode": "05031",
+     "Latitude83": "35.8167",
+     "Longitude83": "-90.64187"
+    }
+   ]
+  }
+ },
+ "110072172837": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072172837",
+     "FacilityName": "UNITED INDUSTRIES INC.",
+     "LocationAddress": "1603 NORTH 35TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "ROGERS",
+     "CountyName": null,
+     "StateAbbr": "AR",
+     "ZipCode": "72756",
+     "FIPSCode": "AR007",
+     "Latitude83": "36.35138",
+     "Longitude83": "-94.16813"
+    }
+   ]
+  }
+ },
+ "110009353537": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110009353537",
+     "FacilityName": "GLAD MANUFACTURING COMPANY",
+     "LocationAddress": "1700 NORTH 13TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "ROGERS",
+     "CountyName": "BENTON",
+     "StateAbbr": "AR",
+     "ZipCode": "72756-2308",
+     "FIPSCode": "05007",
+     "Latitude83": "36.350278",
+     "Longitude83": "-94.135556"
+    }
+   ]
+  }
+ },
+ "110000452448": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000452448",
+     "FacilityName": "ANCHOR PACKAGING - JONESBORO PLANT",
+     "LocationAddress": "4708 KRUEGER DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "JONESBORO",
+     "CountyName": "CRAIGHEAD",
+     "StateAbbr": "AR",
+     "ZipCode": "72401-6714",
+     "FIPSCode": "05031",
+     "Latitude83": "35.813343",
+     "Longitude83": "-90.638567"
+    }
+   ]
+  }
+ },
+ "110000451109": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000451109",
+     "FacilityName": "LANXESS CORP - CENTRAL PLANT",
+     "LocationAddress": "2226 HAYNESVILLE HWY",
+     "SupplementalLocation": "P.O. BOX 7020",
+     "CityName": "EL DORADO",
+     "CountyName": "UNION",
+     "StateAbbr": "AR",
+     "ZipCode": "71730-7020",
+     "FIPSCode": "05139",
+     "Latitude83": "33.1831",
+     "Longitude83": "-92.7069"
+    }
+   ]
+  }
+ },
+ "110072005783": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072005783",
+     "FacilityName": "BAXTER HEALTHCARE CORPORATION",
+     "LocationAddress": "432 RUSSELL LANE",
+     "SupplementalLocation": null,
+     "CityName": "MOUNTAIN HOME",
+     "CountyName": "BAXTER",
+     "StateAbbr": "AR",
+     "ZipCode": "72653",
+     "FIPSCode": "05005",
+     "Latitude83": "36.362038",
+     "Longitude83": "-92.389434"
+    }
+   ]
+  }
+ },
+ "110032931497": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110032931497",
+     "FacilityName": "BPREX DELTA, INC. (A SUBSIDIARY OF BERRY GLOBAL, INC.)",
+     "LocationAddress": "106 DELTA PLACE",
+     "SupplementalLocation": null,
+     "CityName": "HOT SPRINGS",
+     "CountyName": "GARLAND",
+     "StateAbbr": "AR",
+     "ZipCode": "71913-9134",
+     "FIPSCode": "05051",
+     "Latitude83": "34.521667",
+     "Longitude83": "-93.126111"
+    }
+   ]
+  }
+ },
+ "110016747895": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110016747895",
+     "FacilityName": "CRYOVAC, INC.",
+     "LocationAddress": "4 BEKAERT DR",
+     "SupplementalLocation": null,
+     "CityName": "ROGERS",
+     "CountyName": "BENTON",
+     "StateAbbr": "AR",
+     "ZipCode": "72756",
+     "FIPSCode": "05007",
+     "Latitude83": "36.349333",
+     "Longitude83": "-94.163139"
+    }
+   ]
+  }
+ },
+ "110000451001": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000451001",
+     "FacilityName": "COOPER-STANDARD AUTOMOTIVE",
+     "LocationAddress": "166 COOPER DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "EL DORADO",
+     "CountyName": "UNION",
+     "StateAbbr": "AR",
+     "ZipCode": "71730-6601",
+     "FIPSCode": "05139",
+     "Latitude83": "33.20041",
+     "Longitude83": "-92.61134"
+    }
+   ]
+  }
+ },
+ "110070158478": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070158478",
+     "FacilityName": "KOHLER ARKANSAS PLASTICS OPERATIONS",
+     "LocationAddress": "300 S. OKLAHOMA ST",
+     "SupplementalLocation": null,
+     "CityName": "SHERIDAN",
+     "CountyName": "GRANT",
+     "StateAbbr": "AR",
+     "ZipCode": "72150",
+     "FIPSCode": "05053",
+     "Latitude83": "34.30384",
+     "Longitude83": "-92.39343"
+    }
+   ]
+  }
+ },
+ "110027250249": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110027250249",
+     "FacilityName": "PLASTIC INGENUITY, INC.",
+     "LocationAddress": "105 CHAMPS BLVD.",
+     "SupplementalLocation": "SEC-28 TWP-3N RNG-13W",
+     "CityName": "MAUMELLE",
+     "CountyName": "PULASKI",
+     "StateAbbr": "AR",
+     "ZipCode": "72113",
+     "FIPSCode": "05119",
+     "Latitude83": "34.86634",
+     "Longitude83": "-92.38971"
+    }
+   ]
+  }
+ },
+ "110062847558": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110062847558",
+     "FacilityName": "POLY-TECH PLASTIC MOLDING, INC",
+     "LocationAddress": "126 N INDUSTRIAL PARK RD",
+     "SupplementalLocation": null,
+     "CityName": "PRAIRIE GROVE",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "AR",
+     "ZipCode": "72753",
+     "FIPSCode": "05143",
+     "Latitude83": "35.975375",
+     "Longitude83": "-94.331425"
+    }
+   ]
+  }
+ },
+ "110025118575": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025118575",
+     "FacilityName": "HENDREN PLASTICS, INC",
+     "LocationAddress": "1607 HIGHWAY 72 SE",
+     "SupplementalLocation": null,
+     "CityName": "GRAVETTE",
+     "CountyName": "BENTON",
+     "StateAbbr": "AR",
+     "ZipCode": "72736-9441",
+     "FIPSCode": "05007",
+     "Latitude83": "36.415603",
+     "Longitude83": "-94.437488"
+    }
+   ]
+  }
+ },
+ "110063867383": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110063867383",
+     "FacilityName": "ENVIRO TECH CHEMICAL SERVICES - PLANT 6",
+     "LocationAddress": "724 PHILLIPS COUNTY ROAD 411",
+     "SupplementalLocation": null,
+     "CityName": "HELENA",
+     "CountyName": "PHILLIPS",
+     "StateAbbr": "AR",
+     "ZipCode": "72342",
+     "FIPSCode": "05107",
+     "Latitude83": "34.415444",
+     "Longitude83": "-90.626028"
+    }
+   ]
+  }
+ },
+ "110072078441": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072078441",
+     "FacilityName": "OWENS CORNING FOAM INSULATION - RUSSELLVILLE",
+     "LocationAddress": "1089 TYLER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "RUSSELLVILLE",
+     "CountyName": "POPE",
+     "StateAbbr": "AR",
+     "ZipCode": "72802",
+     "FIPSCode": "05115",
+     "Latitude83": "35.2642",
+     "Longitude83": "-93.078809"
+    }
+   ]
+  }
+ },
+ "110024998680": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110024998680",
+     "FacilityName": "GRACE COMPOSITES, LLC",
+     "LocationAddress": "351 RUTH ROAD",
+     "SupplementalLocation": null,
+     "CityName": "LONOKE",
+     "CountyName": "LONOKE",
+     "StateAbbr": "AR",
+     "ZipCode": "72086-8469",
+     "FIPSCode": "05085",
+     "Latitude83": "34.801583",
+     "Longitude83": "-92.013194"
+    }
+   ]
+  }
+ },
+ "110070214403": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070214403",
+     "FacilityName": "RING CONTAINER TECHNOLOGIES - LITTLE ROCK",
+     "LocationAddress": "9000 FRAZIER PIKE",
+     "SupplementalLocation": null,
+     "CityName": "LITTLE ROCK",
+     "CountyName": "PULASKI",
+     "StateAbbr": "AR",
+     "ZipCode": "72206",
+     "FIPSCode": "AR119",
+     "Latitude83": "34.704567",
+     "Longitude83": "-92.176698"
+    }
+   ]
+  }
+ },
+ "110067218521": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110067218521",
+     "FacilityName": "ENVIRAPAC MONTICELLO, LLC",
+     "LocationAddress": "346 FIRING RANGE RD",
+     "SupplementalLocation": null,
+     "CityName": "MONTICELLO",
+     "CountyName": "DREW",
+     "StateAbbr": "AR",
+     "ZipCode": "71655",
+     "FIPSCode": "05043",
+     "Latitude83": "33.60753",
+     "Longitude83": "-91.77864"
+    }
+   ]
+  }
+ },
+ "110025066531": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025066531",
+     "FacilityName": "EVERGREEN BUILDERS INC",
+     "LocationAddress": "115 8TH AVE NW",
+     "SupplementalLocation": null,
+     "CityName": "GRAVETTE",
+     "CountyName": "BENTON",
+     "StateAbbr": "AR",
+     "ZipCode": "727360000",
+     "FIPSCode": "05007",
+     "Latitude83": "36.42732",
+     "Longitude83": "-94.463"
+    }
+   ]
+  }
+ },
+ "110043973910": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043973910",
+     "FacilityName": "GREAT LAKES CHEMICAL WEST PLANT",
+     "LocationAddress": "5821 SHULER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "MAGNOLIA",
+     "CountyName": "COLUMBIA",
+     "StateAbbr": "AR",
+     "ZipCode": "71753",
+     "FIPSCode": "05027",
+     "Latitude83": "33.183889",
+     "Longitude83": "-92.937778"
+    }
+   ]
+  }
+ },
+ "110071642655": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071642655",
+     "FacilityName": "BUILDING MATERIALS MANUFACTURING LLC.",
+     "LocationAddress": "151 MCCLELLAN BLVD",
+     "SupplementalLocation": null,
+     "CityName": "ARKADELPHIA",
+     "CountyName": "CLARK COUNTY",
+     "StateAbbr": "AR",
+     "ZipCode": "71923",
+     "FIPSCode": "AR019",
+     "Latitude83": "34.05057",
+     "Longitude83": "-93.09284"
+    }
+   ]
+  }
+ },
+ "110000451029": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000451029",
+     "FacilityName": "LYCUS LTD.",
+     "LocationAddress": "181 COOPER DR",
+     "SupplementalLocation": null,
+     "CityName": "EL DORADO",
+     "CountyName": "UNION",
+     "StateAbbr": "AR",
+     "ZipCode": "71730",
+     "FIPSCode": "05139",
+     "Latitude83": "33.200279",
+     "Longitude83": "-92.610922"
+    }
+   ]
+  }
+ },
+ "110038448427": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110038448427",
+     "FacilityName": "ECOTECH ENTERPRISES, INC",
+     "LocationAddress": "7100 COLONEL MAYNARD ROAD",
+     "SupplementalLocation": null,
+     "CityName": "SCOTT",
+     "CountyName": "PULASKI",
+     "StateAbbr": "AR",
+     "ZipCode": "72142",
+     "FIPSCode": "05119",
+     "Latitude83": "34.674518",
+     "Longitude83": "-92.126925"
+    }
+   ]
+  }
+ },
+ "110000458095": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000458095",
+     "FacilityName": "COOPER TIRE & RUBBER COMPANY",
+     "LocationAddress": "3500 EAST WASHINGTON ROAD",
+     "SupplementalLocation": null,
+     "CityName": "TEXARKANA",
+     "CountyName": "MILLER",
+     "StateAbbr": "AR",
+     "ZipCode": "71854",
+     "FIPSCode": "AR091",
+     "Latitude83": "33.423167",
+     "Longitude83": "-94.003778"
+    }
+   ]
+  }
+ },
+ "110025076263": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025076263",
+     "FacilityName": "GEORG FISCHER LLC",
+     "LocationAddress": "7777 SLOANE DR",
+     "SupplementalLocation": null,
+     "CityName": "LITTLE ROCK",
+     "CountyName": "PULASKI",
+     "StateAbbr": "AR",
+     "ZipCode": "72206",
+     "FIPSCode": "05119",
+     "Latitude83": "34.704306",
+     "Longitude83": "-92.198"
+    }
+   ]
+  }
+ },
+ "110024972699": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110024972699",
+     "FacilityName": "AMCOR FLEXIBLES NORTH AMERICA",
+     "LocationAddress": "3033 EAST 16TH ST",
+     "SupplementalLocation": null,
+     "CityName": "RUSSELLVILLE",
+     "CountyName": "POPE",
+     "StateAbbr": "AR",
+     "ZipCode": "72802-9435",
+     "FIPSCode": "05115",
+     "Latitude83": "35.26351",
+     "Longitude83": "-93.0954"
+    }
+   ]
+  }
+ },
+ "110001149221": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001149221",
+     "FacilityName": "DREW FOAM COMPANIES INC",
+     "LocationAddress": "1093 U S HWY 278 E",
+     "SupplementalLocation": null,
+     "CityName": "MONTICELLO",
+     "CountyName": "DREW",
+     "StateAbbr": "AR",
+     "ZipCode": "71655",
+     "FIPSCode": "05043",
+     "Latitude83": "33.631639",
+     "Longitude83": "-91.766972"
+    }
+   ]
+  }
+ },
+ "110071232069": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071232069",
+     "FacilityName": "CREATIVE FOAM PRODUCTS, LLC.",
+     "LocationAddress": "1301 E. EIGHTH STREET",
+     "SupplementalLocation": null,
+     "CityName": "NORTH LITTLE ROCK",
+     "CountyName": "PULASKI",
+     "StateAbbr": "AR",
+     "ZipCode": "72114",
+     "FIPSCode": "05119",
+     "Latitude83": "34.76061",
+     "Longitude83": "-92.25274"
+    }
+   ]
+  }
+ },
+ "110025067415": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025067415",
+     "FacilityName": "DELTA PLASTICS OF THE SOUTH",
+     "LocationAddress": "3104 SOUTH MAIN",
+     "SupplementalLocation": null,
+     "CityName": "STUTTGART",
+     "CountyName": "ARKANSAS",
+     "StateAbbr": "AR",
+     "ZipCode": "72160-7011",
+     "FIPSCode": "05001",
+     "Latitude83": "34.470209",
+     "Longitude83": "-91.550652"
+    }
+   ]
+  }
+ },
+ "110025079055": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025079055",
+     "FacilityName": "RIVER BEND INDUSTRIES,LLC",
+     "LocationAddress": "3730 WHEELER AVE",
+     "SupplementalLocation": null,
+     "CityName": "FORT SMITH",
+     "CountyName": "SEBASTIAN",
+     "StateAbbr": "AR",
+     "ZipCode": "729010000",
+     "FIPSCode": "05131",
+     "Latitude83": "35.347056",
+     "Longitude83": "-94.427"
+    }
+   ]
+  }
+ }
+}
