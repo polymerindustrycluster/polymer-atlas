@@ -1,0 +1,135 @@
+{
+ "110012260196": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012260196",
+     "FacilityName": "US BAG MANUFACTURING, LLC.",
+     "LocationAddress": "2520 MADISON STREET NORTHEAST",
+     "SupplementalLocation": null,
+     "CityName": "ALBUQUERQUE",
+     "CountyName": "BERNALILLO",
+     "StateAbbr": "NM",
+     "ZipCode": "87110-3906",
+     "FIPSCode": "35001",
+     "Latitude83": "35.107846",
+     "Longitude83": "-106.592005"
+    }
+   ]
+  }
+ },
+ "110069514984": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069514984",
+     "FacilityName": "KOJIMA",
+     "LocationAddress": "100 LINDBERGH DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "SANTA THERESA",
+     "CountyName": "DONA ANA",
+     "StateAbbr": "NM",
+     "ZipCode": "88008",
+     "FIPSCode": "35013",
+     "Latitude83": "31.86754",
+     "Longitude83": "-106.69949"
+    }
+   ]
+  }
+ },
+ "110017237667": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110017237667",
+     "FacilityName": "STA TECHNOLOGIES INC",
+     "LocationAddress": "5401 VENICE AVE NE",
+     "SupplementalLocation": null,
+     "CityName": "ALBUQUERQUE",
+     "CountyName": "BERNALILLO",
+     "StateAbbr": "NM",
+     "ZipCode": "87113",
+     "FIPSCode": "35001",
+     "Latitude83": "35.19607",
+     "Longitude83": "-106.58394"
+    }
+   ]
+  }
+ },
+ "110070557690": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070557690",
+     "FacilityName": "E-CHEM",
+     "LocationAddress": "4102 EL REY RD",
+     "SupplementalLocation": null,
+     "CityName": "ALBUQUERQUE",
+     "CountyName": "BERNALILLO",
+     "StateAbbr": "NM",
+     "ZipCode": "87105",
+     "FIPSCode": "35001",
+     "Latitude83": "35.01973",
+     "Longitude83": "-106.64383"
+    }
+   ]
+  }
+ },
+ "110069632320": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069632320",
+     "FacilityName": "ROGERS FOAM CORPORATION",
+     "LocationAddress": "2800 AIRPORT ROAD, SUITE B",
+     "SupplementalLocation": null,
+     "CityName": "SANTA TERESA",
+     "CountyName": "DONA ANA",
+     "StateAbbr": "NM",
+     "ZipCode": "88008",
+     "FIPSCode": "35013",
+     "Latitude83": "31.86999",
+     "Longitude83": "-106.69836"
+    }
+   ]
+  }
+ },
+ "110012221559": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012221559",
+     "FacilityName": "CLARIANT CORPORATION BELEN",
+     "LocationAddress": "101 CHRISTINE DR",
+     "SupplementalLocation": null,
+     "CityName": "BELEN",
+     "CountyName": "VALENCIA",
+     "StateAbbr": "NM",
+     "ZipCode": "87002",
+     "FIPSCode": "35061",
+     "Latitude83": "34.60219",
+     "Longitude83": "-106.73125"
+    }
+   ]
+  }
+ },
+ "110071522652": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071522652",
+     "FacilityName": "PAJARITO POWDER LLC",
+     "LocationAddress": "5555 MCLEOD",
+     "SupplementalLocation": null,
+     "CityName": "ALBUQUERQUE",
+     "CountyName": "BERNALILLO",
+     "StateAbbr": "NM",
+     "ZipCode": "87109",
+     "FIPSCode": "35001",
+     "Latitude83": "35.138635",
+     "Longitude83": "-106.584005"
+    }
+   ]
+  }
+ }
+}
