@@ -1,0 +1,11 @@
+org_id,kind,detail,reason
+ORG-001404,field:processes,injection_molding,raw check no
+ORG-000116,field:processes,assembly_secondary_ops,raw check no
+ORG-000581,field:processes,extrusion_unspecified,raw check no
+ORG-000231,field:processes,insert_overmolding,raw check no
+ORG-001866,field:materials,abs,raw check no
+ORG-001866,field:materials,acrylic_pmma,raw check no
+ORG-001866,field:materials,polyethylene_pe,raw check no
+ORG-001866,field:materials,polycarbonate_pc,raw check no
+ORG-001866,field:materials,pet_petg,raw check no
+ORG-001894,field:materials,elastomers_rubber,raw check no
