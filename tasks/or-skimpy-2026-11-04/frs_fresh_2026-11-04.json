@@ -1,0 +1,515 @@
+{
+ "110014162379": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110014162379",
+     "FacilityName": "JELD-WEN",
+     "LocationAddress": "2044 DESCHUTES DR",
+     "SupplementalLocation": " ",
+     "CityName": "STAYTON",
+     "CountyName": "MARION",
+     "StateAbbr": "OR",
+     "ZipCode": "97383",
+     "FIPSCode": "41047",
+     "Latitude83": "44.79992",
+     "Longitude83": "-122.8177"
+    }
+   ]
+  }
+ },
+ "110004800564": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004800564",
+     "FacilityName": "NIC INDUSTRIES",
+     "LocationAddress": "7050 6TH ST.",
+     "SupplementalLocation": "7050 6TH STREET",
+     "CityName": "WHITE CITY",
+     "CountyName": "JACKSON",
+     "StateAbbr": "OR",
+     "ZipCode": "97503",
+     "FIPSCode": "41029",
+     "Latitude83": "42.429192",
+     "Longitude83": "-122.871973"
+    }
+   ]
+  }
+ },
+ "110000488703": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000488703",
+     "FacilityName": "ECS",
+     "LocationAddress": "3560 ROGUE RIVER HWY",
+     "SupplementalLocation": null,
+     "CityName": "GRANTS PASS",
+     "CountyName": "JOSEPHINE",
+     "StateAbbr": "OR",
+     "ZipCode": "97527",
+     "FIPSCode": "41033",
+     "Latitude83": "42.426521",
+     "Longitude83": "-123.270421"
+    }
+   ]
+  }
+ },
+ "110000488259": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000488259",
+     "FacilityName": "FORREST PAINT",
+     "LocationAddress": "1011 MCKINLEY ST",
+     "SupplementalLocation": null,
+     "CityName": "EUGENE",
+     "CountyName": "LANE",
+     "StateAbbr": "OR",
+     "ZipCode": "97402",
+     "FIPSCode": "41039",
+     "Latitude83": "44.048482",
+     "Longitude83": "-123.128556"
+    }
+   ]
+  }
+ },
+ "110002149684": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002149684",
+     "FacilityName": "ROCKY MOUNTAIN COLBY PIPE COMPANY",
+     "LocationAddress": "4650 MCKENNON RD",
+     "SupplementalLocation": "4650 BARTSCH RD",
+     "CityName": "PENDLETON",
+     "CountyName": "UMATILLA",
+     "StateAbbr": "OR",
+     "ZipCode": "97801",
+     "FIPSCode": "41059",
+     "Latitude83": "45.668772",
+     "Longitude83": "-118.847668"
+    }
+   ]
+  }
+ },
+ "110037770203": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037770203",
+     "FacilityName": "MCCLURE INDUSTRIES",
+     "LocationAddress": "9051 SE 55TH AVE",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "CLACKAMAS",
+     "StateAbbr": "OR",
+     "ZipCode": "97222",
+     "FIPSCode": "41005",
+     "Latitude83": "45.458219",
+     "Longitude83": "-122.608599"
+    }
+   ]
+  }
+ },
+ "110004803570": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004803570",
+     "FacilityName": "GRIFFITH RUBBER MILLS",
+     "LocationAddress": "2631 W 5TH",
+     "SupplementalLocation": null,
+     "CityName": "EUGENE",
+     "CountyName": "LANE",
+     "StateAbbr": "OR",
+     "ZipCode": "97402-2717",
+     "FIPSCode": "41039",
+     "Latitude83": "44.05453",
+     "Longitude83": "-123.1373"
+    }
+   ]
+  }
+ },
+ "110004779990": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004779990",
+     "FacilityName": "PELLA VINYL PORTLAND OPERATIONS",
+     "LocationAddress": "18600 NE WILKES RD",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97230",
+     "FIPSCode": "41051",
+     "Latitude83": "45.54061",
+     "Longitude83": "-122.4703"
+    }
+   ]
+  }
+ },
+ "110000488623": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000488623",
+     "FacilityName": "CARESTREAM HEALTH, INC.",
+     "LocationAddress": "8124 PACIFIC AVE",
+     "SupplementalLocation": null,
+     "CityName": "WHITE CITY",
+     "CountyName": "JACKSON",
+     "StateAbbr": "OR",
+     "ZipCode": "97503",
+     "FIPSCode": "41029",
+     "Latitude83": "42.434925",
+     "Longitude83": "-122.882038"
+    }
+   ]
+  }
+ },
+ "110071307862": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071307862",
+     "FacilityName": "TRUEHQ",
+     "LocationAddress": "8210 NE MAUZEY CT",
+     "SupplementalLocation": null,
+     "CityName": "HILLSBORO",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "OR",
+     "ZipCode": "97124",
+     "FIPSCode": "41067",
+     "Latitude83": "45.567029",
+     "Longitude83": "-122.896233"
+    }
+   ]
+  }
+ },
+ "110007736959": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007736959",
+     "FacilityName": "XEROX",
+     "LocationAddress": "27063 SW CANYON CREEK RD.",
+     "SupplementalLocation": null,
+     "CityName": "WILSONVILLE",
+     "CountyName": "CLACKAMAS",
+     "StateAbbr": "OR",
+     "ZipCode": "97070",
+     "FIPSCode": "41005",
+     "Latitude83": "45.325277",
+     "Longitude83": "-122.765146"
+    }
+   ]
+  }
+ },
+ "110067124908": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110067124908",
+     "FacilityName": "OWENS CORNING FOAM INSULATION GRESHAM",
+     "LocationAddress": "18456 NE WILKES RD",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97230",
+     "FIPSCode": "41051",
+     "Latitude83": "45.539875",
+     "Longitude83": "-122.473372"
+    }
+   ]
+  }
+ },
+ "110072044439": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072044439",
+     "FacilityName": "CENTRAL OREGON PROCESSING, LLC",
+     "LocationAddress": "1948 N MAIN ST BLDG M, STE 161",
+     "SupplementalLocation": null,
+     "CityName": "PRINEVILLE",
+     "CountyName": "CROOK",
+     "StateAbbr": "OR",
+     "ZipCode": "97754-9105",
+     "FIPSCode": "41013",
+     "Latitude83": "44.318212",
+     "Longitude83": "-120.847038"
+    }
+   ]
+  }
+ },
+ "110063383707": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110063383707",
+     "FacilityName": "LATICRETE INTERNATIONAL",
+     "LocationAddress": "100 ENTEK WAY",
+     "SupplementalLocation": null,
+     "CityName": "LEBANON",
+     "CountyName": "LINN",
+     "StateAbbr": "OR",
+     "ZipCode": "97355",
+     "FIPSCode": "41043",
+     "Latitude83": "44.54833",
+     "Longitude83": "-122.924148"
+    }
+   ]
+  }
+ },
+ "110031396825": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031396825",
+     "FacilityName": "FRONT AVE",
+     "LocationAddress": "5740 NW FRONT AVE",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97210",
+     "FIPSCode": "41051",
+     "Latitude83": "45.564379",
+     "Longitude83": "-122.738687"
+    }
+   ]
+  }
+ },
+ "110000487866": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000487866",
+     "FacilityName": "FRANKLIN INTERNATIONAL INC",
+     "LocationAddress": "10915 N LOMBARD ST",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97203",
+     "FIPSCode": "41051",
+     "Latitude83": "45.605956",
+     "Longitude83": "-122.764798"
+    }
+   ]
+  }
+ },
+ "110037439938": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037439938",
+     "FacilityName": "CODEL ENTRY SYSTEMS CORPORATION",
+     "LocationAddress": "29600 SW SEELY AVE STE. A",
+     "SupplementalLocation": null,
+     "CityName": "WILSONVILLE",
+     "CountyName": "CLACKAMAS",
+     "StateAbbr": "OR",
+     "ZipCode": "97070-9820",
+     "FIPSCode": "41005",
+     "Latitude83": "45.30488",
+     "Longitude83": "-122.77643"
+    }
+   ]
+  }
+ },
+ "110070732940": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070732940",
+     "FacilityName": "MARQUIS CORP",
+     "LocationAddress": "1265 STRYKER RD",
+     "SupplementalLocation": null,
+     "CityName": "INDEPENDENCE",
+     "CountyName": "POLK",
+     "StateAbbr": "OR",
+     "ZipCode": "97351",
+     "FIPSCode": "41053",
+     "Latitude83": "44.86685",
+     "Longitude83": "-123.19204"
+    }
+   ]
+  }
+ },
+ "110004787419": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004787419",
+     "FacilityName": "GMN PLASTICS",
+     "LocationAddress": "13725 SW MILLIKAN WAY",
+     "SupplementalLocation": null,
+     "CityName": "BEAVERTON",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "OR",
+     "ZipCode": "97005",
+     "FIPSCode": "41067",
+     "Latitude83": "45.49234",
+     "Longitude83": "-122.81809"
+    }
+   ]
+  }
+ },
+ "110000487795": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000487795",
+     "FacilityName": "FXI",
+     "LocationAddress": "3900 NE 158TH AVE",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97230",
+     "FIPSCode": "41051",
+     "Latitude83": "45.543778",
+     "Longitude83": "-122.497278"
+    }
+   ]
+  }
+ },
+ "110002149005": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002149005",
+     "FacilityName": "ULTIMATE RB",
+     "LocationAddress": "904 NE 10TH AVE",
+     "SupplementalLocation": null,
+     "CityName": "MCMINNVILLE",
+     "CountyName": "YAMHILL",
+     "StateAbbr": "OR",
+     "ZipCode": "97128",
+     "FIPSCode": "41071",
+     "Latitude83": "45.213744",
+     "Longitude83": "-123.189448"
+    }
+   ]
+  }
+ },
+ "110031394355": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031394355",
+     "FacilityName": "ULTIMATE RB DBA RB RECYCLING",
+     "LocationAddress": "9945 N BURGARD WAY STE 100",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97203",
+     "FIPSCode": "41051",
+     "Latitude83": "45.613013",
+     "Longitude83": "-122.778177"
+    }
+   ]
+  }
+ },
+ "110072288816": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072288816",
+     "FacilityName": "VISIONS RECYCLING INC DBA VISIONS QUALITY COATINGS",
+     "LocationAddress": "4825 N BASIN AVE",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97217",
+     "FIPSCode": "41051",
+     "Latitude83": "45.55827",
+     "Longitude83": "-122.69975"
+    }
+   ]
+  }
+ },
+ "110071063047": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071063047",
+     "FacilityName": "BULK NATURAL LLC",
+     "LocationAddress": "2416 N HAYDEN ISLAND DR",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97217",
+     "FIPSCode": "41051",
+     "Latitude83": "45.6162",
+     "Longitude83": "-122.69129"
+    }
+   ]
+  }
+ },
+ "110000894621": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000894621",
+     "FacilityName": "FLINT GROUP PACKAGING INKS NORTH AMERICA CORPORATION",
+     "LocationAddress": "2985 N MARINE DR",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97217",
+     "FIPSCode": "41051",
+     "Latitude83": "45.611201",
+     "Longitude83": "-122.6981"
+    }
+   ]
+  }
+ },
+ "110000488311": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000488311",
+     "FacilityName": "OREGON TREAD RUBBER COMPANY",
+     "LocationAddress": "3595 W 1ST AVE",
+     "SupplementalLocation": null,
+     "CityName": "EUGENE",
+     "CountyName": "LANE",
+     "StateAbbr": "OR",
+     "ZipCode": "97402",
+     "FIPSCode": "41039",
+     "Latitude83": "44.058897",
+     "Longitude83": "-123.153863"
+    }
+   ]
+  }
+ },
+ "110000487303": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000487303",
+     "FacilityName": "DREW PAINTS",
+     "LocationAddress": "1525 NW 23RD AVE",
+     "SupplementalLocation": null,
+     "CityName": "PORTLAND",
+     "CountyName": "MULTNOMAH",
+     "StateAbbr": "OR",
+     "ZipCode": "97210",
+     "FIPSCode": "41051",
+     "Latitude83": "45.53385",
+     "Longitude83": "-122.69876"
+    }
+   ]
+  }
+ }
+}
