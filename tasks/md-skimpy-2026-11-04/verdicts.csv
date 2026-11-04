@@ -1,0 +1,30 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-MD-00,"PLASTIPAK INC","Havre De Grace",VERIFIED,"Two federal sources: FRS 110003520431 + ITA 303644 + OSHA 346413610 (scope from federal NAICS)",SITE-006121
+QMS-MD-01,"ATS SCIENTIFIC PRODUCTS - BEL ART","Pocomoke City",VERIFIED,"Two federal sources: FRS 110040100075 + ITA 848813 + OSHA 346447600 (scope from federal NAICS)",SITE-006122
+QMS-MD-02,"SHERWIN-WILLIAMS COMPANY","Baltimore",VERIFIED,"Two federal sources: FRS 110000340131 + ITA 347059 + OSHA 347951782 (scope from federal NAICS)",SITE-006123
+QMS-MD-03,"COLONIAL METALS INC - TRIUMPH INDUSTRIAL PARK BLDG 20","Elkton",REJECT,"Metal powders/inorganic chemicals, not polymer: ITA CY2025 record NAICS 325180/331492 (fetched 2026-11-04).",
+QMS-MD-04,"RICCA CHEMICAL CO.","Pocomoke City",STILL_UNCERTAIN,"Whether Ricca Chemical Pocomoke City makes any polymer products (NAICS 325998 lab reagents).",
+QMS-MD-05,"W R GRACE AND CO – CURTIS BAY WORKS","Curtis Bay",REJECT,"Silica and catalysts (inorganic), not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-MD-06,"W L GORE & ASSOCIATES INCORPORATED CHERRY HILL SITE","Elkton",VERIFIED,"Two federal sources: FRS 110000340756 + ITA 932814 (scope from federal NAICS)",SITE-006124
+QMS-MD-07,"CYTEC ENGINEERED MATERIALS, INC","Havre De Grace",VERIFIED,"Two federal sources: FRS 110012464001 + ITA 1426238 (scope from federal NAICS)",SITE-006125
+QMS-MD-08,"SUPERFOS PACKAGING","Cumberland",VERIFIED,"Two federal sources: FRS 110022379415 + ITA 1066308 (scope from federal NAICS)",SITE-006126
+QMS-MD-09,"USALCO LLC","Curtis Bay",REJECT,"Aluminum-based water-treatment chemicals, not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-MD-10,"W. L. GORE & ASSOCIATES, INC. - ELK MILLS 1","Elkton",VERIFIED,"Already held as SITE-005554 W. L. Gore - Elkton (Vieves Way), same street; not re-created.",SITE-005554 (already held, not re-created)
+QMS-MD-11,"W L GORE & ASSOCIATES INC","Elkton",VERIFIED,"Two federal sources: FRS 110000871236 + ITA 932811 (scope from federal NAICS)",SITE-006127
+QMS-MD-12,"CITRUS & ALLIED ESSENCES LTD","Belcamp",REJECT,"Flavors/fragrances, not polymer: ITA CY2025 record NAICS 311999/325620 (fetched 2026-11-04).",
+QMS-MD-13,"TILLEY DISTRIBUTION","Middle River",REJECT,"Chemical distributor, not a manufacturer: ITA CY2025 record NAICS 424690 (fetched 2026-11-04).",
+QMS-MD-14,"HUBER, J.M. CORPORATION","Havre De Grace",REJECT,"Inorganic minerals/silica, not polymer: ITA CY2025 record NAICS 325180 (fetched 2026-11-04).",
+QMS-MD-15,"CONTINENTAL PLASTIC CONTAINERS","Baltimore",VERIFIED,"Two federal sources: FRS 110019863762 + ITA 803353 (scope from federal NAICS)",SITE-006128
+QMS-MD-16,"CREATIVE PLASTICS","Rosedale",VERIFIED,"Two federal sources: FRS 110001825044 + ITA 1258666 (scope from federal NAICS)",SITE-006129
+QMS-MD-17,"HI-TECH COLOR","Odenton",VERIFIED,"Two federal sources: FRS 110000339544 + ITA 1063410 (scope from federal NAICS)",SITE-006130
+QMS-MD-18,"SUN CHEMICAL CORP","Williamsport",VERIFIED,"Two federal sources: FRS 110000340514 + ITA 139644 (scope from federal NAICS)",SITE-006131
+QMS-MD-19,"LIFOAM INDUSTRIES, LLC","Belcamp",VERIFIED,"Two federal sources: FRS 110024888898 + OSHA 343901260 (scope from federal NAICS)",SITE-006132
+QMS-MD-20,"CONGOLEUM INDUSTRIES","Finksburg",VERIFIED,"Two federal sources: FRS 110002085109 + OSHA 344926472 (scope from federal NAICS)",SITE-006133
+QMS-MD-21,"PLASTICOID COMPANY","Elkton",VERIFIED,"Two federal sources: FRS 110019859278 + OSHA 348570086 (scope from federal NAICS)",SITE-006134
+QMS-MD-22,"ADELL PLASTICS","Halethorpe",VERIFIED,"Two federal sources: FRS 110001259799 + OSHA 345926042 (scope from federal NAICS)",SITE-006135
+QMS-MD-23,"VAC PAC, INC","Middle River",VERIFIED,"Two federal sources: FRS 110066863629 + OSHA 346032584 (scope from federal NAICS)",SITE-006136
+QMS-MD-24,"GOODWRAPPERS","Halethorpe",VERIFIED,"Two federal sources: FRS 110001302144 + OSHA 347826893 (scope from federal NAICS)",SITE-006137
+QMS-MD-25,"BRADEN SUTPHIN INK CO","Savage",VERIFIED,"Two federal sources: FRS 110002096785 + OSHA 347349367 (scope from federal NAICS)",SITE-006138
+QMS-MD-26,"SOLO CUP COMPANY","Federalsburg",VERIFIED,"Two federal sources: FRS 110071648705 + OSHA 343790531 (scope from federal NAICS)",SITE-006139
+QMS-MD-27,"Fabricated Extrusion Company of Maryland, LLC","Hagerstown",VERIFIED,"Two federal sources: ITA 436344 + OSHA 346448103 (scope from federal NAICS)",SITE-006140
+QMS-MD-28,"DBA SSI","Hollywood",STILL_UNCERTAIN,"Legal operator behind 'DBA SSI' at 43985 Commerce Ave, Hollywood MD and what plastics/rubber products it makes.",
