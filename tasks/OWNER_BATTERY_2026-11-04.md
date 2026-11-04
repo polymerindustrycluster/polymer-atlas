@@ -45,6 +45,54 @@ sealants.
 - (b) Rule class by class.
 - (c) Hold every class as STILL_UNCERTAIN.
 
+## B-NEWS: a newsroom field, and switching on the news monitor (SCHEMA §4.4, QUEUE.md signals sweep)
+The v1.6 columns already exist: `monitor_watch` (14 organizations set), `liveness_signal` (305 set) and
+`last_activity_evidence_date`. QUEUE.md records that the news monitor is built and validated in a dry run (35 genuine
+matches on day one) but not switched on. It has no per-company place to look.
+- **(a) Recommended:**
+  - Add an optional `newsroom_url` organization column: the company's own news, press or announcements page, own
+    domain only. Add an optional `newsroom_feed_url` for an RSS or Atom feed.
+  - Fill both first for Tier-1-qualified and PIC-18 organizations.
+  - Switch on the monitor in dry-run-to-PR mode. Each hit becomes a re-verification queue item, never an automatic
+    status change, as §5 already requires.
+- (b) Add the columns, and keep the monitor off.
+- (c) No change.
+
+## B-LINKEDIN: a LinkedIn company URL (SCHEMA §4.4 nice-to-have)
+SCHEMA ranks a LinkedIn page on its own as tier C, and LinkedIn industry labels as `platform_category`. Post content
+sits behind a login, and LinkedIn's terms bar automated scraping.
+- **(a) Recommended:** add an optional `linkedin_url` column as a navigation link only. It is never an evidence row or
+  a monitoring source.
+- (b) Keep LinkedIn pages in `sources` only, as now.
+
+## B-ARCHIVE: archive each own-site quote at mint time (SCHEMA §4.13)
+Evidence repair rounds 1 and 2 exist because cited pages changed or vanished after minting: 172 weak scope rows in
+round 2, 91 of them with no replacement found.
+- **(a) Recommended:** add an optional `archive_ref` evidence column holding a Wayback Machine capture made when the
+  row is minted, so a later audit can read what the integrator read. It is a provenance aid only: it never changes
+  the source class or the tier.
+- (b) No change.
+
+## B-ALIAS: federal registrant names as dedupe aliases (AGENTS.md §3)
+The lead-fusion clusters carry federal registrant names that differ from Atlas legal names. Because of this, Dart
+(ORG-002441) and WinCup (ORG-000984) were missed as held organizations in the Florida wave.
+- **(a) Recommended:** when a federal source is attached to a site, record its registrant name in the organization's
+  `trade_names`, marked as a registrant name, so the AGENTS.md §3 name search finds it next time. No new column is
+  needed.
+- (b) Add a separate `registrant_names` column.
+- (c) No change.
+
+## B-GUARDS: validator checks for failures hit on 2026-11-04
+- **CRLF files:** three data files are committed with CRLF despite `.gitattributes eol=lf`
+  (`organizations_OH.csv`, `organizations_IA.csv`, `evidence_organizations_IA.csv`). CI did not notice.
+- **Missing country:** a non-USPS `hq_state` with an empty `hq_country` surfaced only as a V-35 shard mismatch.
+- **Appending builders:** they break V-36 (ids ascending) whenever two waves share a shard.
+- **(a) Recommended:**
+  - a validator error for CRLF line endings in `data/`, plus a one-time normalization PR;
+  - a direct error when `hq_country` is empty and `hq_state` is not a USPS code;
+  - a shared sorted-append helper in `scripts/` for builders to use.
+- (b) Normalize the three files only.
+
 ## B-SHARD: foreign establishments of US organizations (AGENTS.md §3)
 Bryant Rubber's Tijuana plant has no lawful site shard, so it is held (#116).
 - **(a) Recommended:** keep holding foreign plants, noting each on the organization record, until a dated schema
