@@ -1,0 +1,1351 @@
+{
+ "110000367567": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000367567",
+     "FacilityName": "3M CHEMICAL OPERATIONS' DECATUR FACILITY",
+     "LocationAddress": "1400 STATE DOCKS ROAD",
+     "SupplementalLocation": null,
+     "CityName": "DECATUR",
+     "CountyName": "MORGAN",
+     "StateAbbr": "AL",
+     "ZipCode": "356018807",
+     "FIPSCode": "01103",
+     "Latitude83": "34.641667",
+     "Longitude83": "-87.038611"
+    }
+   ]
+  }
+ },
+ "110002338603": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002338603",
+     "FacilityName": "BRUDERER INC",
+     "LocationAddress": "1619 HIGHWAY 72 EAST",
+     "SupplementalLocation": null,
+     "CityName": "HUNTSVILLE",
+     "CountyName": "MADISON",
+     "StateAbbr": "AL",
+     "ZipCode": "35811-9658",
+     "FIPSCode": "01089",
+     "Latitude83": "34.77357",
+     "Longitude83": "-86.53455"
+    }
+   ]
+  }
+ },
+ "110043740903": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043740903",
+     "FacilityName": "KWANGSUNG",
+     "LocationAddress": "217 THWEATT INDUSTRIAL BLVD",
+     "SupplementalLocation": null,
+     "CityName": "DADEVILLE",
+     "CountyName": "TALLAPOOSA",
+     "StateAbbr": "AL",
+     "ZipCode": "36853",
+     "FIPSCode": "01123",
+     "Latitude83": "32.82485",
+     "Longitude83": "-85.72935"
+    }
+   ]
+  }
+ },
+ "110043029736": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043029736",
+     "FacilityName": "KUMI MANUFACTURING ALABAMA LLC",
+     "LocationAddress": "2543 7TH ST S",
+     "SupplementalLocation": null,
+     "CityName": "CLANTON",
+     "CountyName": "CHILTON",
+     "StateAbbr": "AL",
+     "ZipCode": "35046",
+     "FIPSCode": "01021",
+     "Latitude83": "32.79002",
+     "Longitude83": "-86.56265"
+    }
+   ]
+  }
+ },
+ "110003378416": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003378416",
+     "FacilityName": "STERILITE CORPORATION",
+     "LocationAddress": "1551 STERILITE DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "BIRMINGHAM",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35215-4189",
+     "FIPSCode": "01073",
+     "Latitude83": "33.632765",
+     "Longitude83": "-86.742976"
+    }
+   ]
+  }
+ },
+ "110046228480": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110046228480",
+     "FacilityName": "COLORMASTERS INC",
+     "LocationAddress": "491 MEDLOCK ROAD",
+     "SupplementalLocation": null,
+     "CityName": "ALBERTVILLE",
+     "CountyName": "MARSHALL",
+     "StateAbbr": "AL",
+     "ZipCode": "35951",
+     "FIPSCode": "01095",
+     "Latitude83": "34.24356",
+     "Longitude83": "-86.18206"
+    }
+   ]
+  }
+ },
+ "110025371746": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025371746",
+     "FacilityName": "HOMELAND VINYL PRODUCTS",
+     "LocationAddress": "3300 PINSON VALLEY PKWY",
+     "SupplementalLocation": null,
+     "CityName": "PINSON",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35217-1816",
+     "FIPSCode": "01073",
+     "Latitude83": "33.62549",
+     "Longitude83": "-86.73296"
+    }
+   ]
+  }
+ },
+ "110003389734": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003389734",
+     "FacilityName": "VISCOFAN USA INC",
+     "LocationAddress": "50 COUNTY COURT",
+     "SupplementalLocation": null,
+     "CityName": "MONTGOMERY",
+     "CountyName": "MONTGOMERY",
+     "StateAbbr": "AL",
+     "ZipCode": "36105-5506",
+     "FIPSCode": "01101",
+     "Latitude83": "32.26443",
+     "Longitude83": "-86.36244"
+    }
+   ]
+  }
+ },
+ "110013335408": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110013335408",
+     "FacilityName": "GENPAK LLC - HOPE HULL",
+     "LocationAddress": "7621 BILL JOSEPH PARKWAY",
+     "SupplementalLocation": null,
+     "CityName": "HOPE HULL",
+     "CountyName": "MONTGOMERY",
+     "StateAbbr": "AL",
+     "ZipCode": "36043-4304",
+     "FIPSCode": "01101",
+     "Latitude83": "32.26806",
+     "Longitude83": "-86.372"
+    }
+   ]
+  }
+ },
+ "110043792278": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043792278",
+     "FacilityName": "LENZING FIBERS INC.",
+     "LocationAddress": "12950 US HIGHWAY 43 NORTH",
+     "SupplementalLocation": null,
+     "CityName": "AXIS",
+     "CountyName": "MOBILE",
+     "StateAbbr": "AL",
+     "ZipCode": "36505",
+     "FIPSCode": "01097",
+     "Latitude83": "30.96019",
+     "Longitude83": "-88.02483"
+    }
+   ]
+  }
+ },
+ "110071899351": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071899351",
+     "FacilityName": "INTERNATIONAL AUTOMOTIVE COMPONENTS GROUP",
+     "LocationAddress": "15911 PROGRESS DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "COTTONDALE",
+     "CountyName": "TUSCALOOSA",
+     "StateAbbr": "AL",
+     "ZipCode": "35453",
+     "FIPSCode": "AL125",
+     "Latitude83": "33.18181",
+     "Longitude83": "-87.32281"
+    }
+   ]
+  }
+ },
+ "110064282949": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064282949",
+     "FacilityName": "VALLEY RUBBER",
+     "LocationAddress": "150 BUSTER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "FALKVILLE",
+     "CountyName": "MORGAN ",
+     "StateAbbr": "AL",
+     "ZipCode": "35622",
+     "FIPSCode": "AL103",
+     "Latitude83": "34.375752",
+     "Longitude83": "-86.893546"
+    }
+   ]
+  }
+ },
+ "110064258048": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064258048",
+     "FacilityName": "K W PLASTICS CONTAINER FACILITY",
+     "LocationAddress": "110 HENDERSON HIGHWAY",
+     "SupplementalLocation": null,
+     "CityName": "TROY",
+     "CountyName": "PIKE",
+     "StateAbbr": "AL",
+     "ZipCode": "36079",
+     "FIPSCode": "AL109",
+     "Latitude83": "31.791457",
+     "Longitude83": "-85.978184"
+    }
+   ]
+  }
+ },
+ "110018879025": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110018879025",
+     "FacilityName": "INZI CONTROLS ALABAMA, INC.",
+     "LocationAddress": "375 HIGHWAY 203",
+     "SupplementalLocation": null,
+     "CityName": "ELBA",
+     "CountyName": "COFFEE",
+     "StateAbbr": "AL",
+     "ZipCode": "36323",
+     "FIPSCode": "01031",
+     "Latitude83": "31.412222",
+     "Longitude83": "-86.088611"
+    }
+   ]
+  }
+ },
+ "110046320478": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110046320478",
+     "FacilityName": "ASCEND PERFORMANCE MATERIALS OPERATIONS LLC",
+     "LocationAddress": "518 SOUTH BAY STREET",
+     "SupplementalLocation": null,
+     "CityName": "FOLEY",
+     "CountyName": "BALDWIN",
+     "StateAbbr": "AL",
+     "ZipCode": "36535",
+     "FIPSCode": "01003",
+     "Latitude83": "30.40153",
+     "Longitude83": "-87.67852"
+    }
+   ]
+  }
+ },
+ "110071432406": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071432406",
+     "FacilityName": "ECORE INTERNATIONAL",
+     "LocationAddress": "451 W ROY PARKER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "OZARK",
+     "CountyName": "DALE",
+     "StateAbbr": "AL",
+     "ZipCode": "36360",
+     "FIPSCode": "01045",
+     "Latitude83": "31.469444",
+     "Longitude83": "-85.648889"
+    }
+   ]
+  }
+ },
+ "110000499933": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000499933",
+     "FacilityName": "WESTPOINT STEVENS-GREENVILLE",
+     "LocationAddress": "591 GLENDALE ROAD",
+     "SupplementalLocation": null,
+     "CityName": "GREENVILLE",
+     "CountyName": "BUTLER",
+     "StateAbbr": "AL",
+     "ZipCode": "36037-1334",
+     "FIPSCode": "1013",
+     "Latitude83": "31.84547",
+     "Longitude83": "-86.62684"
+    }
+   ]
+  }
+ },
+ "110070705053": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070705053",
+     "FacilityName": "PRETIUM PACKAGING, LLC",
+     "LocationAddress": "100 HOLMES STREET",
+     "SupplementalLocation": null,
+     "CityName": "TROY",
+     "CountyName": "PIKE",
+     "StateAbbr": "AL",
+     "ZipCode": "36079",
+     "FIPSCode": "AL109",
+     "Latitude83": "31.7794",
+     "Longitude83": "-86.00029"
+    }
+   ]
+  }
+ },
+ "110006788486": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110006788486",
+     "FacilityName": "CONTECH ENGINEERED SOLUTIONS LLC",
+     "LocationAddress": "2700 GUNTER PARK DR WEST",
+     "SupplementalLocation": null,
+     "CityName": "MONTGOMERY",
+     "CountyName": "MONTGOMERY",
+     "StateAbbr": "AL",
+     "ZipCode": "36109-1014",
+     "FIPSCode": "01101",
+     "Latitude83": "32.40036",
+     "Longitude83": "-86.23399"
+    }
+   ]
+  }
+ },
+ "110039562185": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110039562185",
+     "FacilityName": "NYPRO KANAAK ALABAMA LLC",
+     "LocationAddress": "208 NYPRO LANE",
+     "SupplementalLocation": null,
+     "CityName": "DOTHAN",
+     "CountyName": "HOUSTON",
+     "StateAbbr": "AL",
+     "ZipCode": "36305-1081",
+     "FIPSCode": "01069",
+     "Latitude83": "31.228682",
+     "Longitude83": "-85.455713"
+    }
+   ]
+  }
+ },
+ "110010101488": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110010101488",
+     "FacilityName": "MAUSER USA INC",
+     "LocationAddress": "1800 COLEMAN RD",
+     "SupplementalLocation": null,
+     "CityName": "ANNISTON",
+     "CountyName": "CALHOUN",
+     "StateAbbr": "AL",
+     "ZipCode": "36207-6814",
+     "FIPSCode": "01015",
+     "Latitude83": "33.623833",
+     "Longitude83": "-85.803567"
+    }
+   ]
+  }
+ },
+ "110056961417": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110056961417",
+     "FacilityName": "INDORAMA DECATUR SITE",
+     "LocationAddress": "1401 FINLEY ISLAND RD",
+     "SupplementalLocation": null,
+     "CityName": "DECATUR",
+     "CountyName": "MORGAN",
+     "StateAbbr": "AL",
+     "ZipCode": "35601",
+     "FIPSCode": "01103",
+     "Latitude83": "34.6415",
+     "Longitude83": "-87.0589"
+    }
+   ]
+  }
+ },
+ "110000605051": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000605051",
+     "FacilityName": "BASF CORP",
+     "LocationAddress": "1379 CIBA RD",
+     "SupplementalLocation": "P.O. BOX 113",
+     "CityName": "MC INTOSH",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "AL",
+     "ZipCode": "36553-0113",
+     "FIPSCode": "01129",
+     "Latitude83": "31.2789",
+     "Longitude83": "-88.0043"
+    }
+   ]
+  }
+ },
+ "110071404685": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071404685",
+     "FacilityName": "APTAR CSP TECHNOLOGIES",
+     "LocationAddress": "358 ENTERPRISE DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "AUBURN",
+     "CountyName": "LEE",
+     "StateAbbr": "AL",
+     "ZipCode": "36832",
+     "FIPSCode": "AL081",
+     "Latitude83": "32.54918",
+     "Longitude83": "-85.52184"
+    }
+   ]
+  }
+ },
+ "110069421717": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069421717",
+     "FacilityName": "INDORAMA VENTURES SUSTAINABLE SOLUTIONS, LLC",
+     "LocationAddress": "1764 WILKINSON ST",
+     "SupplementalLocation": null,
+     "CityName": "ATHENS",
+     "CountyName": "LIMESTONE",
+     "StateAbbr": "AL",
+     "ZipCode": "35611",
+     "FIPSCode": "AL083",
+     "Latitude83": "34.82959",
+     "Longitude83": "-86.965206"
+    }
+   ]
+  }
+ },
+ "110020517902": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110020517902",
+     "FacilityName": "GENFLEX ROOFING SYSTEMS",
+     "LocationAddress": "393 DENTON CIR",
+     "SupplementalLocation": null,
+     "CityName": "TUSCUMBIA",
+     "CountyName": "COLBERT",
+     "StateAbbr": "AL",
+     "ZipCode": "35674",
+     "FIPSCode": "01033",
+     "Latitude83": "34.700424",
+     "Longitude83": "-87.658245"
+    }
+   ]
+  }
+ },
+ "110069422707": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069422707",
+     "FacilityName": "TASUS CORPORATION - ALABAMA",
+     "LocationAddress": "4310 PARKWAY DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "FLORENCE",
+     "CountyName": "LAUDERDALE",
+     "StateAbbr": "AL",
+     "ZipCode": "35630",
+     "FIPSCode": "AL077",
+     "Latitude83": "34.867888",
+     "Longitude83": "-87.656304"
+    }
+   ]
+  }
+ },
+ "110070556069": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070556069",
+     "FacilityName": "HWASEUNG AUTOMOTIVE USA, LLC",
+     "LocationAddress": "101 DEVELOPMENT DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "ENTERPRISE",
+     "CountyName": "COFFEE",
+     "StateAbbr": "AL",
+     "ZipCode": "36330",
+     "FIPSCode": "AL031",
+     "Latitude83": "31.362166",
+     "Longitude83": "-85.872041"
+    }
+   ]
+  }
+ },
+ "110000608717": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000608717",
+     "FacilityName": "E S ROBBINS CORPORATION",
+     "LocationAddress": "2802 AVALON AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "MUSCLE SHOALS",
+     "CountyName": "COLBERT",
+     "StateAbbr": "AL",
+     "ZipCode": "35661-3748",
+     "FIPSCode": "01033",
+     "Latitude83": "34.74434",
+     "Longitude83": "-87.634573"
+    }
+   ]
+  }
+ },
+ "110069286105": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069286105",
+     "FacilityName": "WOODBRIDGE ALABAMA LP",
+     "LocationAddress": "5549 ENDEAVOR WAY",
+     "SupplementalLocation": null,
+     "CityName": "TANNER",
+     "CountyName": "LIMESTONE",
+     "StateAbbr": "AL",
+     "ZipCode": "35671",
+     "FIPSCode": "AL089",
+     "Latitude83": "34.640047",
+     "Longitude83": "-86.900708"
+    }
+   ]
+  }
+ },
+ "110001712843": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001712843",
+     "FacilityName": "LOUISIANA-PACIFIC CORP",
+     "LocationAddress": "5 MEADOWCRAFT PARKWAY",
+     "SupplementalLocation": null,
+     "CityName": "SELMA",
+     "CountyName": "DALLAS",
+     "StateAbbr": "AL",
+     "ZipCode": "36701-1812",
+     "FIPSCode": "01047",
+     "Latitude83": "32.33086",
+     "Longitude83": "-86.98974"
+    }
+   ]
+  }
+ },
+ "110042996103": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110042996103",
+     "FacilityName": "JOHNS MANVILLE",
+     "LocationAddress": "117 LEQUIRE ST",
+     "SupplementalLocation": null,
+     "CityName": "SCOTTSBORO",
+     "CountyName": "JACKSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35769",
+     "FIPSCode": "01071",
+     "Latitude83": "34.630681",
+     "Longitude83": "-86.059421"
+    }
+   ]
+  }
+ },
+ "110007232315": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007232315",
+     "FacilityName": "TATE & LYLE SUCRALOSE INC",
+     "LocationAddress": "588 INDUSTRIAL RD",
+     "SupplementalLocation": null,
+     "CityName": "MC INTOSH",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "AL",
+     "ZipCode": "36553",
+     "FIPSCode": "01129",
+     "Latitude83": "31.2507",
+     "Longitude83": "-88.0154"
+    }
+   ]
+  }
+ },
+ "110037574808": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037574808",
+     "FacilityName": "ALPHAPET, INC.",
+     "LocationAddress": "1301 FINLEY ISLAND ROAD",
+     "SupplementalLocation": null,
+     "CityName": "DECATUR",
+     "CountyName": "MORGAN",
+     "StateAbbr": "AL",
+     "ZipCode": "35601",
+     "FIPSCode": "01103",
+     "Latitude83": "34.64162",
+     "Longitude83": "-87.05203"
+    }
+   ]
+  }
+ },
+ "110017710388": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110017710388",
+     "FacilityName": "PLASTIPAK PACKAGING, INC.",
+     "LocationAddress": "7150 JEFFERSON METROPOLITAN PARKWAY",
+     "SupplementalLocation": "7150 JEFFERSON METROPOLITAN PK",
+     "CityName": "MCCALLA",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35111",
+     "FIPSCode": "01073",
+     "Latitude83": "33.30392",
+     "Longitude83": "-87.04647"
+    }
+   ]
+  }
+ },
+ "110070278710": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070278710",
+     "FacilityName": "TARKETT USA, INC.",
+     "LocationAddress": "1701 MARS HILL ROAD",
+     "SupplementalLocation": null,
+     "CityName": "FLORENCE",
+     "CountyName": "LAUDERDALE COUNTY",
+     "StateAbbr": "AL",
+     "ZipCode": "35630-",
+     "FIPSCode": "AL077",
+     "Latitude83": "34.8558",
+     "Longitude83": "-87.65269"
+    }
+   ]
+  }
+ },
+ "110072103393": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072103393",
+     "FacilityName": "SAMKWANG USA INC.",
+     "LocationAddress": "600 AL-186 BUILDING 100",
+     "SupplementalLocation": null,
+     "CityName": "TUSKEGEE",
+     "CountyName": "MACON",
+     "StateAbbr": "AL",
+     "ZipCode": "36083",
+     "FIPSCode": "AL087",
+     "Latitude83": "32.482788",
+     "Longitude83": "-85.636005"
+    }
+   ]
+  }
+ },
+ "110000607807": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000607807",
+     "FacilityName": "PEMCO",
+     "LocationAddress": "100 PEMCO DR",
+     "SupplementalLocation": null,
+     "CityName": "LEESBURG",
+     "CountyName": "CHEROKEE",
+     "StateAbbr": "AL",
+     "ZipCode": "35983",
+     "FIPSCode": "01019",
+     "Latitude83": "34.1963",
+     "Longitude83": "-85.7642"
+    }
+   ]
+  }
+ },
+ "110033010364": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110033010364",
+     "FacilityName": "HERITAGE PLASTICS",
+     "LocationAddress": "851 SYLACAUGA FAYETTEVILLE HWY",
+     "SupplementalLocation": null,
+     "CityName": "SYLACAUGA",
+     "CountyName": "TALLADEGA",
+     "StateAbbr": "AL",
+     "ZipCode": "35151",
+     "FIPSCode": "01121",
+     "Latitude83": "33.163788",
+     "Longitude83": "-86.290641"
+    }
+   ]
+  }
+ },
+ "110025315175": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110025315175",
+     "FacilityName": "NELSON BROTHERS, LLC - SAMOSET FACILITY",
+     "LocationAddress": "4707 HORSE CREEK RD.",
+     "SupplementalLocation": "COUNTY ROAD 30",
+     "CityName": "CORDOVA",
+     "CountyName": "WALKER",
+     "StateAbbr": "AL",
+     "ZipCode": "35550",
+     "FIPSCode": "AL127",
+     "Latitude83": "33.736618",
+     "Longitude83": "-87.115624"
+    }
+   ]
+  }
+ },
+ "110000741243": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000741243",
+     "FacilityName": "LEMOYNE SITE",
+     "LocationAddress": "13440 HIGHWAY 43 NORTH",
+     "SupplementalLocation": null,
+     "CityName": "AXIS",
+     "CountyName": "MOBILE",
+     "StateAbbr": "AL",
+     "ZipCode": "365054315",
+     "FIPSCode": "01097",
+     "Latitude83": "30.969439",
+     "Longitude83": "-88.0175"
+    }
+   ]
+  }
+ },
+ "110022522858": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022522858",
+     "FacilityName": "ASOCRIUM NORTH AMERICA, INC.",
+     "LocationAddress": "1420 INDUSTRIAL PARK DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "TUSCALOOSA",
+     "CountyName": "TUSCALOOSA",
+     "StateAbbr": "AL",
+     "ZipCode": "35401",
+     "FIPSCode": "AL125",
+     "Latitude83": "33.22226",
+     "Longitude83": "-87.62108"
+    }
+   ]
+  }
+ },
+ "110000365970": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000365970",
+     "FacilityName": "SPECIFICATION RUBBER PRODUCTS, INC.",
+     "LocationAddress": "1568 1ST STREET NORTH",
+     "SupplementalLocation": null,
+     "CityName": "ALABASTER",
+     "CountyName": "SHELBY",
+     "StateAbbr": "AL",
+     "ZipCode": "35007",
+     "FIPSCode": "01117",
+     "Latitude83": "33.263284",
+     "Longitude83": "-86.811187"
+    }
+   ]
+  }
+ },
+ "110000367399": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000367399",
+     "FacilityName": "NELSON BROTHERS SPECIALTY CHEMICALS, LLC",
+     "LocationAddress": "500 OLD BALTIMORE ROAD",
+     "SupplementalLocation": null,
+     "CityName": "PARRISH",
+     "CountyName": "WALKER",
+     "StateAbbr": "AL",
+     "ZipCode": "35580",
+     "FIPSCode": "AL127",
+     "Latitude83": "33.726873",
+     "Longitude83": "-87.27038"
+    }
+   ]
+  }
+ },
+ "110067378064": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110067378064",
+     "FacilityName": "ASAHI KASEI PLASTICS NORTH AMERICA - ATHENS PLANT",
+     "LocationAddress": "1910 WILKINSON STREET",
+     "SupplementalLocation": null,
+     "CityName": "ATHENS",
+     "CountyName": "LIMESTONE COUNTY",
+     "StateAbbr": "AL",
+     "ZipCode": "35611-",
+     "FIPSCode": "AL083",
+     "Latitude83": "34.81941",
+     "Longitude83": "-86.96734"
+    }
+   ]
+  }
+ },
+ "110071783682": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071783682",
+     "FacilityName": "CIRCULUS HOLDINGS, LLC",
+     "LocationAddress": "302 11TH STREET SW",
+     "SupplementalLocation": null,
+     "CityName": "ARAB",
+     "CountyName": "MARSHALL",
+     "StateAbbr": "AL",
+     "ZipCode": "35016",
+     "FIPSCode": "AL095",
+     "Latitude83": "34.311663",
+     "Longitude83": "-86.515662"
+    }
+   ]
+  }
+ },
+ "110012168572": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012168572",
+     "FacilityName": "OCI ALABAMA LLC",
+     "LocationAddress": "1455 RED HAT ROAD",
+     "SupplementalLocation": null,
+     "CityName": "DECATUR",
+     "CountyName": "MORGAN",
+     "StateAbbr": "AL",
+     "ZipCode": "35601-7588",
+     "FIPSCode": "01103",
+     "Latitude83": "34.64736",
+     "Longitude83": "-87.0699"
+    }
+   ]
+  }
+ },
+ "110020833302": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110020833302",
+     "FacilityName": "CONCOURS TECHNOLOGY ALABAMA INC.",
+     "LocationAddress": "651 24TH ST SW",
+     "SupplementalLocation": "940 24TH STREET SOUTH WEST",
+     "CityName": "CULLMAN",
+     "CountyName": "CULLMAN",
+     "StateAbbr": "AL",
+     "ZipCode": "35055",
+     "FIPSCode": "01043",
+     "Latitude83": "34.133802",
+     "Longitude83": "-86.853285"
+    }
+   ]
+  }
+ },
+ "110071925420": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071925420",
+     "FacilityName": "ALTIUM PACKAGING LP",
+     "LocationAddress": "3152 DUBLIN LANE",
+     "SupplementalLocation": null,
+     "CityName": "BESSEMER",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35022",
+     "FIPSCode": "AL073",
+     "Latitude83": "33.371875",
+     "Longitude83": "-86.943804"
+    }
+   ]
+  }
+ },
+ "110012218876": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012218876",
+     "FacilityName": "CHARLOTTE PIPE AND FOUNDRY COMPANY",
+     "LocationAddress": "3425 STANWOOD BLVD",
+     "SupplementalLocation": null,
+     "CityName": "HUNTSVILLE",
+     "CountyName": "MADISON",
+     "StateAbbr": "AL",
+     "ZipCode": "35811-8519",
+     "FIPSCode": "01089",
+     "Latitude83": "34.78178",
+     "Longitude83": "-86.52793"
+    }
+   ]
+  }
+ },
+ "110037372937": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037372937",
+     "FacilityName": "HERCULES BAGS INC",
+     "LocationAddress": "315 MAIN STREET",
+     "SupplementalLocation": null,
+     "CityName": "ECLECTIC",
+     "CountyName": "ELMORE",
+     "StateAbbr": "AL",
+     "ZipCode": "36024-6216",
+     "FIPSCode": "01051",
+     "Latitude83": "32.635985",
+     "Longitude83": "-86.030234"
+    }
+   ]
+  }
+ },
+ "110000367031": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000367031",
+     "FacilityName": "INDURON COATINGS INC",
+     "LocationAddress": "3333 RICHARD ARRINGTON JR BOULEVARD NORTH",
+     "SupplementalLocation": null,
+     "CityName": "BIRMINGHAM",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35203",
+     "FIPSCode": "01073",
+     "Latitude83": "33.533022",
+     "Longitude83": "-86.794089"
+    }
+   ]
+  }
+ },
+ "110000369565": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000369565",
+     "FacilityName": "MOBILE ROSIN OIL CO INC",
+     "LocationAddress": "2469 BRAGDON AVE.",
+     "SupplementalLocation": null,
+     "CityName": "MOBILE",
+     "CountyName": "MOBILE",
+     "StateAbbr": "AL",
+     "ZipCode": "36617-2099",
+     "FIPSCode": "01097",
+     "Latitude83": "30.71877",
+     "Longitude83": "-88.10521"
+    }
+   ]
+  }
+ },
+ "110000369226": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000369226",
+     "FacilityName": "PLASMINE TECHNOLOGY INC",
+     "LocationAddress": "251 NEWPORT PARKWAY",
+     "SupplementalLocation": null,
+     "CityName": "BAY MINETTE",
+     "CountyName": "BALDWIN",
+     "StateAbbr": "AL",
+     "ZipCode": "36507-2975",
+     "FIPSCode": "01003",
+     "Latitude83": "30.88145",
+     "Longitude83": "-87.770927"
+    }
+   ]
+  }
+ },
+ "110003388619": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003388619",
+     "FacilityName": "LONESTAR PLASTICS",
+     "LocationAddress": "1107 DOSTER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "PRATTVILLE",
+     "CountyName": "AUTAUGA",
+     "StateAbbr": "AL",
+     "ZipCode": "36067-4329",
+     "FIPSCode": "01001",
+     "Latitude83": "32.43984",
+     "Longitude83": "-86.44149"
+    }
+   ]
+  }
+ },
+ "110058195714": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110058195714",
+     "FacilityName": "ROLLS, INC.",
+     "LocationAddress": "1875 NORA MORGAN STREET",
+     "SupplementalLocation": null,
+     "CityName": "LEIGHTON",
+     "CountyName": "COLBERT",
+     "StateAbbr": "AL",
+     "ZipCode": "35646",
+     "FIPSCode": "01033",
+     "Latitude83": "34.703419",
+     "Longitude83": "-87.534691"
+    }
+   ]
+  }
+ },
+ "110043865305": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043865305",
+     "FacilityName": "GRAHAM PACKAGING COMPANY, L.P.",
+     "LocationAddress": "1099 DOSTER ROAD",
+     "SupplementalLocation": null,
+     "CityName": "PRATTVILLE",
+     "CountyName": "AUTAUGA",
+     "StateAbbr": "AL",
+     "ZipCode": "36067",
+     "FIPSCode": "01001",
+     "Latitude83": "32.440374",
+     "Longitude83": "-86.440386"
+    }
+   ]
+  }
+ },
+ "110003021827": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003021827",
+     "FacilityName": "WATER SCIENCE TECHNOLOGIES LLC",
+     "LocationAddress": "1701 VANDERBILT ROAD",
+     "SupplementalLocation": null,
+     "CityName": "BIRMINGHAM",
+     "CountyName": "JEFFERSON",
+     "StateAbbr": "AL",
+     "ZipCode": "35234-1423",
+     "FIPSCode": "01073",
+     "Latitude83": "33.54661",
+     "Longitude83": "-86.79188"
+    }
+   ]
+  }
+ },
+ "110070391665": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070391665",
+     "FacilityName": "YS, INC.",
+     "LocationAddress": "4531 COUNTY ROAD 458",
+     "SupplementalLocation": null,
+     "CityName": "COLLINSVILLE",
+     "CountyName": "DEKALB",
+     "StateAbbr": "AL",
+     "ZipCode": "35961",
+     "FIPSCode": "AL049",
+     "Latitude83": null,
+     "Longitude83": null
+    }
+   ]
+  }
+ },
+ "110003028143": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110003028143",
+     "FacilityName": "GOODYEAR AUTO SERVICE CENTER #2293",
+     "LocationAddress": "302 SOUTH MCKENZIE STREET",
+     "SupplementalLocation": null,
+     "CityName": "FOLEY",
+     "CountyName": "BALDWIN",
+     "StateAbbr": "AL",
+     "ZipCode": "36535-1927",
+     "FIPSCode": "01003",
+     "Latitude83": "30.40396",
+     "Longitude83": "-87.68381"
+    }
+   ]
+  }
+ },
+ "110017438762": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110017438762",
+     "FacilityName": "SABIC INNOVATIVE PLASTICS US LLC",
+     "LocationAddress": "1 PLASTICS DR",
+     "SupplementalLocation": null,
+     "CityName": "LOWNDESBORO",
+     "CountyName": "LOWNDES COUNTY",
+     "StateAbbr": "AL",
+     "ZipCode": "36752",
+     "FIPSCode": "01085",
+     "Latitude83": "32.31367",
+     "Longitude83": "-86.51153"
+    }
+   ]
+  }
+ },
+ "110010101424": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110010101424",
+     "FacilityName": "POLYMER INDUSTRIES",
+     "LocationAddress": "10526 ALABAMA HWY 40",
+     "SupplementalLocation": null,
+     "CityName": "HENAGAR",
+     "CountyName": "DEKALB",
+     "StateAbbr": "AL",
+     "ZipCode": "35978",
+     "FIPSCode": "AL049",
+     "Latitude83": "34.637418",
+     "Longitude83": "-85.774707"
+    }
+   ]
+  }
+ },
+ "110001714468": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001714468",
+     "FacilityName": "HB & G",
+     "LocationAddress": "1015 S BRUNDIDGE BLVD",
+     "SupplementalLocation": null,
+     "CityName": "TROY",
+     "CountyName": "PIKE",
+     "StateAbbr": "AL",
+     "ZipCode": "36081",
+     "FIPSCode": "01109",
+     "Latitude83": "31.795209",
+     "Longitude83": "-85.967664"
+    }
+   ]
+  }
+ },
+ "110000521098": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000521098",
+     "FacilityName": "GENPAK LLC - MONTGOMERY",
+     "LocationAddress": "3255 THOMASON AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "MONTGOMERY",
+     "CountyName": "MONTGOMERY",
+     "StateAbbr": "AL",
+     "ZipCode": "36108-2319",
+     "FIPSCode": "01101",
+     "Latitude83": "32.35242",
+     "Longitude83": "-86.35372"
+    }
+   ]
+  }
+ },
+ "110000368682": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000368682",
+     "FacilityName": "KINPAK, INC.",
+     "LocationAddress": "2780 GUNTER PARK DR. E",
+     "SupplementalLocation": null,
+     "CityName": "MONTGOMERY",
+     "CountyName": "MONTGOMERY",
+     "StateAbbr": "AL",
+     "ZipCode": "36109-1496",
+     "FIPSCode": "01101",
+     "Latitude83": "32.39899",
+     "Longitude83": "-86.23067"
+    }
+   ]
+  }
+ },
+ "110070275117": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070275117",
+     "FacilityName": "LETICA CORPORATION (A SUBSIDIARY OF BERRY GLOBAL, INC.)",
+     "LocationAddress": "3715 S PHILLIPS RD",
+     "SupplementalLocation": null,
+     "CityName": "LANETT",
+     "CountyName": "CHAMBERS",
+     "StateAbbr": "AL",
+     "ZipCode": "36863",
+     "FIPSCode": "AL017",
+     "Latitude83": "32.829927",
+     "Longitude83": "-85.223752"
+    }
+   ]
+  }
+ },
+ "110002105374": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002105374",
+     "FacilityName": "KOMMERLING USA INCORPORATED",
+     "LocationAddress": "3402 STANWOOD BOULEVARD NORTHEAST",
+     "SupplementalLocation": null,
+     "CityName": "HUNTSVILLE",
+     "CountyName": "MADISON",
+     "StateAbbr": "AL",
+     "ZipCode": "35811-9021",
+     "FIPSCode": "01089",
+     "Latitude83": "34.78177",
+     "Longitude83": "-86.52882"
+    }
+   ]
+  }
+ },
+ "110007347969": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007347969",
+     "FacilityName": "AMERICAN FIBERGLASS PRODUCTS INC",
+     "LocationAddress": "101 INDUSTRIAL PARK RD",
+     "SupplementalLocation": null,
+     "CityName": "DOUBLE SPRINGS",
+     "CountyName": "WINSTON",
+     "StateAbbr": "AL",
+     "ZipCode": "35553",
+     "FIPSCode": "01133",
+     "Latitude83": "34.163264",
+     "Longitude83": "-87.410553"
+    }
+   ]
+  }
+ },
+ "110002338658": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002338658",
+     "FacilityName": "CORROSION TECHNOLOGY INC",
+     "LocationAddress": "10955 HIGHWAY 138",
+     "SupplementalLocation": null,
+     "CityName": "BAY MINETTE",
+     "CountyName": "BALDWIN",
+     "StateAbbr": "AL",
+     "ZipCode": "36507-7121",
+     "FIPSCode": "01003",
+     "Latitude83": "30.845372",
+     "Longitude83": "-87.838319"
+    }
+   ]
+  }
+ },
+ "110072156879": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072156879",
+     "FacilityName": "INFILTRATOR WATER TECHNOLOGIES, LLC",
+     "LocationAddress": "3 DOWNING DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "PHENIX CITY",
+     "CountyName": "RUSSELL",
+     "StateAbbr": "AL",
+     "ZipCode": "36869",
+     "FIPSCode": "AL113",
+     "Latitude83": "32.40376",
+     "Longitude83": "-85.04783"
+    }
+   ]
+  }
+ },
+ "110007404460": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007404460",
+     "FacilityName": "MICRO FAB, INC.",
+     "LocationAddress": "7081 SWEDETOWN ROAD",
+     "SupplementalLocation": "THEODORE",
+     "CityName": "THEODORE",
+     "CountyName": "MOBILE",
+     "StateAbbr": "AL",
+     "ZipCode": "36582-6281",
+     "FIPSCode": "01097",
+     "Latitude83": "30.54421",
+     "Longitude83": "-88.19096"
+    }
+   ]
+  }
+ }
+}
