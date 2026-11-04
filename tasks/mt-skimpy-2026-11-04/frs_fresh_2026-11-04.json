@@ -1,0 +1,40 @@
+{
+ "110001474994": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001474994",
+     "FacilityName": "BIG SKY INSULATION INC",
+     "LocationAddress": "15 ARDEN DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "BELGRADE",
+     "CountyName": "GALLATIN",
+     "StateAbbr": "MT",
+     "ZipCode": "59714-8916",
+     "FIPSCode": "30031",
+     "Latitude83": "45.78043",
+     "Longitude83": "-111.19111"
+    }
+   ]
+  }
+ },
+ "110017616677": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110017616677",
+     "FacilityName": "MONTANA FIBERGLASS INC",
+     "LocationAddress": "2063 CASINO CREEK DR",
+     "SupplementalLocation": null,
+     "CityName": "LEWISTOWN",
+     "CountyName": "FERGUS",
+     "StateAbbr": "MT",
+     "ZipCode": "59457",
+     "FIPSCode": "30027",
+     "Latitude83": "47.04465",
+     "Longitude83": "-109.43585"
+    }
+   ]
+  }
+ }
+}
