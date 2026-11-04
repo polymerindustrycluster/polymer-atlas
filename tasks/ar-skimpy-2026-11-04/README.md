@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 36 | 27 | 3 | 6 | 12 | 0 / 26 | 41 -> 67 | 26 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004929..ORG-004940, SITE-006164..SITE-006189, EVD-025972..EVD-024859.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004929..ORG-004940, SITE-006164..SITE-006189, EVD-026312..EVD-024859.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-AR-21 ENVIRAPAC MONTICELLO, LLC (Monticello): What Envirapac Monticello makes (NAICS 325998/321999) - polymer or not.
