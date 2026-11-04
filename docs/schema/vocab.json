@@ -137,8 +137,7 @@
     "existence",
     "liveness",
     "parent",
-    "scope",
-    "size_band"
+    "scope"
    ]
   },
   "CLASS_CEIL": {
@@ -317,6 +316,17 @@
     "relocated_in_scope",
     "relocated_out_of_scope",
     "unknown"
+   ]
+  },
+  "EVIDENCE_TABLES": {
+   "governs": "evidence.record_table",
+   "section": "SCHEMA §4.13",
+   "values": [
+    "organizations",
+    "sites",
+    "ecosystem",
+    "programs",
+    "people"
    ]
   },
   "GEO_PRECISION": {
@@ -545,6 +555,13 @@
     "student_projects_capstone",
     "testing_characterization_access",
     "training_seats_open_enrollment"
+   ]
+  },
+  "PERSON_ID_TYPES": {
+   "governs": "people_identifiers.identifier_type",
+   "section": "SCHEMA §4.21 (v1.10)",
+   "values": [
+    "ORCID"
    ]
   },
   "PROCESSES": {

@@ -18,14 +18,17 @@ TABLES = {
     "sites": ("sites_*.csv", "site_id", "site_name"),
     "ecosystem": ("ecosystem.csv", "org_id", "legal_name"),
     "programs": ("programs.csv", "program_id", "program_name"),
+    "people": ("people.csv", "person_id", "full_name"),
 }
 BASE_CLAIMS = {
     "organizations": {"existence", "address", "scope", "code"},
     "sites": {"existence", "address", "scope", "code", "parent"},
     "ecosystem": {"existence", "address", "scope"},
     "programs": {"existence", "scope"},
+    # [v1.10] mirrors validate.py MUST_HAVE for the people evidence class.
+    "people": {"existence", "scope", "parent"},
 }
-CLAIMS = {"existence", "address", "scope", "code", "parent", "activity", "liveness", "size_band"}  # size_band: B-BAND 2026-11-03
+CLAIMS = {"existence", "address", "scope", "code", "parent", "activity", "liveness"}
 EFFECTS = {"supports_A", "supports_B", "supports_C", "contradicts"}
 POSTURES = ("no_rows_history_unknown", "started_with_gaps", "claim_rows_present")
 
@@ -141,6 +144,10 @@ def analyze(records, evidence, limit=25):
             for claim in missing:
                 gaps[(table, claim)] += 1
         status = record.get("operating_status" if table == "sites" else "status", "")
+        if table == "people":
+            # SS4.9 people records carry no status column: a held record
+            # asserts a current styling, so it queues like an active record.
+            status = "active"
         if rows and (missing or contradicted or unsupported) and status in ("active", "unknown"):
             candidates.append({"table": table, "record_id": rid, "name": record.get(TABLES[table][2], ""),
                                "tier": tier, "status": status, "missing_claim_rows": sorted(missing),

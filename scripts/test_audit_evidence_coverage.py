@@ -122,7 +122,7 @@ class CoverageTests(unittest.TestCase):
             (p / "organizations_all.csv").write_text("org_id,verification_tier\nGENERATED,A\n")
             (p / "evidence.csv").write_text("evidence_id,record_table,record_id,claim_type,tier_effect,source_class,observed_date\n")
             records, rows, manifest = audit.inventory(p)
-            self.assertEqual(len(records), 4)
+            self.assertEqual(len(records), len(audit.TABLES))
             self.assertNotIn("organizations_all.csv", [r["path"] for r in manifest])
             (p / "organizations_PA.csv").write_text("org_id,verification_tier\nID-organizations,A\n")
             with self.assertRaises(ValueError):
