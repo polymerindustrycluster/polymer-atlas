@@ -198,8 +198,8 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `in-pr:claude-code 2026-11-02` **Capability vocabulary normalization (packet lane):** only 1,064 of 5,062 site `processes` values (21%) are in the SCHEMA §3.1 vocabulary. Most are near-misses (`injection molding`, `extrusion`, `distribution`). Mechanical spelling maps plus per-value rulings for the ambiguous ones would make the graph explorer (E-11) and supplier search far denser. — **2026-11-02:** the mechanical subset is applied: 1,633 tokens over 1,044 records (spelling and exact equivalents). Site `processes` are now 37% in-vocabulary and `materials` 50% (`tasks/vocab-normalize-2026-11-02/`). **OWNER:** rule on the 163 ambiguous or legacy values in `ruling_candidates.csv` (`distribution`, `machinery_equipment`, `extrusion`, `fiberglass`, `plastic`, …).
 - [x] `done 2026-11-02` **OWNER — publish to GitHub Pages:** add `.github/workflows/pages.yml` from `docs/ci/pages.yml`, then set Settings → Pages → Source: GitHub Actions (steps in `docs/ci/README.md`). The site is built by `scripts/build_pages.py`: the static site plus the graph, map + network and trade-show explorers, public fields only. It goes live at https://polymerindustrycluster.github.io/polymer-atlas/ once the build scripts are on `main`. — The `pages` workflow is live, and Pages source = GitHub Actions (owner, 2026-11-02). The site is up at https://polymerindustrycluster.github.io/polymer-atlas/ and rebuilds on every push to `main`.
 
-- [ ] `open` **OWNER ruling — campaign mode after CI (AGENTS.md §2 rule 2):** rule 2 says it "is revisited by dated revision" once a workflow lands on the remote. That happened on 2026-11-02: `validate` runs on every PR and push. **Recommendation:** retire direct pushes to `main` for every harness, the orchestrator included. All changes, campaign passes too, go through PRs that must pass `validate`. Keep the per-pass journal and the pre-pass backups. Optionally require the `validate` check in branch protection. Not self-ruled; this awaits the owner.
-- [ ] `open` **OWNER ruling — evidence claim_type for employee-size bands (SCHEMA §4.13):** 1,996 band values now carry their source and date only in `BAND-SOURCE:` notes. **Recommendation:** add `claim_type = size_band` with source classes `government_filing` (OSHA ITA / inspection, Form 5500) and `own_site`, with a ceiling of `supports_B`. Then backfill one evidence row per band from `tasks/integration-ready-oh-pa-2026-11-02/band_updates.csv`. Not self-ruled.
+- [x] `done 2026-11-03` **RULED (a), B-CAMP, `tasks/OWNER_BATTERY_2026-11-03.md`; AGENTS.md revised.** **OWNER ruling — campaign mode after CI (AGENTS.md §2 rule 2):** rule 2 says it "is revisited by dated revision" once a workflow lands on the remote. That happened on 2026-11-02: `validate` runs on every PR and push. **Recommendation:** retire direct pushes to `main` for every harness, the orchestrator included. All changes, campaign passes too, go through PRs that must pass `validate`. Keep the per-pass journal and the pre-pass backups. Optionally require the `validate` check in branch protection. Not self-ruled; this awaits the owner.
+- [ ] `ruled 2026-11-03` **RULED (a), B-BAND: apply pending.** **OWNER ruling — evidence claim_type for employee-size bands (SCHEMA §4.13):** 1,996 band values now carry their source and date only in `BAND-SOURCE:` notes. **Recommendation:** add `claim_type = size_band` with source classes `government_filing` (OSHA ITA / inspection, Form 5500) and `own_site`, with a ceiling of `supports_B`. Then backfill one evidence row per band from `tasks/integration-ready-oh-pa-2026-11-02/band_updates.csv`. Not self-ruled.
 
 ## programs-db crosswalk + census-gap researcher wave (2026-11-03)
 
@@ -239,6 +239,21 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Equipment layer, first wave (SCHEMA v1.9 §4.19):** start with University of Akron, CWRU and other Ohio polymer instrument pages. Ohio Innovation Exchange equipment search results are leads only.
 - [ ] `open` **OWNER action:** approach ODHE / OH-TECH about a data or link agreement for Ohio Innovation Exchange profiles.
 
+## PIC-18 (owner ruling 2026-11-03)
+
+- [x] `done 2026-11-03 (#32)` **PIC-18 replaces PIC-12 for reporting (AGENTS.md §8):**
+  - The region is the NEO-SMART 18 counties, which equal JobsOhio Team NEO (14) plus Lake to River (4).
+  - `scripts/regions.py` is the single definition. The site, explorers and skyline are switched over.
+  - Dated reports that used PIC-12 are left as written.
+- [ ] `open` **Extend the CBP size-class denominator (`docs/denominators/cbp_size_classes_polymer.csv`) to the 6 added counties:** Ashland, Columbiana, Erie, Huron, Richland, Tuscarawas. Re-run `scripts/build_cbp_size_classes.py` with `regions.PIC18`. QCEW already covers every Ohio county.
+- [ ] `in-pr:claude-code 2026-11-03` **Evidence Room (separate repo):** switch its PIC-12 cluster pages to PIC-18 to stay consistent.
+  - Phase 1 (definitions, decision and per-page "update pending" notices) is in progress.
+  - Phase 2 re-derives each page with a dated correction.
+  - pic-geo 1.1.0 carries the canonical PIC-18.
+- [x] `done 2026-11-03` **Coverage gap for the 6 added counties:** the discovery pass found no creates. Of 56 leads, 21 were duplicates, 9 rejected and 26 still uncertain. Details: `tasks/discovery-pic18-2026-11-03/README.md`.
+- [ ] `open` **The PIC-18 discovery pass left 26 STILL_UNCERTAIN leads.** Each names the fact that settles it, and most need the company's own page. 4 registry-link candidates are also unapplied (`tasks/discovery-pic18-2026-11-03/L*/`).
+- [ ] `open` **`atlas.py dedupe-check` misses sites whose street address is only in `notes`** (SITE-000863, SITE-001910). Match against notes too, or move the address into the address columns.
+- [ ] `open` **Possible duplicate:** SITE-000818 (ORG-000755) and SITE-001925 (ORG-001931) share 2228 Reiser Ave SE. Check before merging per SCHEMA.
 
 ## Vocabulary rulings (2026-11-03)
 - [ ] `in-pr:claude-code 2026-11-03` **B-VOC-1..4 applied** (owner battery 2026-11-03, ruled (a)): 12 new terms (SCHEMA revision), `processes_other_note` / `materials_other_note` on site shards, 1,583 cells on 1,025 records; WRONG_FIELD (580 tokens) and organization TO_NOTE (10 tokens) left by design. Worker: codex under `tasks/vocab-rulings-2026-11-03/WORKER_CONTRACT.md`; controller-verified.
