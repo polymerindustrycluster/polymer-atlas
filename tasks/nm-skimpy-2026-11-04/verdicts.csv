@@ -1,0 +1,8 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-NM-00,US Bag Manufacturing LLC,Albuquerque,VERIFIED,new org + site; own usbagmanufacturing.com: poly/laminated bags and pouches made in Albuquerque,ORG-004858 / SITE-006033 (C)
+QMS-NM-01,Kojima (D.A. Inc.),Santa Teresa,VERIFIED,new org D.A. Inc. + site; own daiwa-da.com/about: automotive clip/clamp injection molding plant at 100 Lindbergh Dr,ORG-004859 / SITE-006034 (C)
+QMS-NM-02,STA Technologies Inc,Albuquerque,STILL_UNCERTAIN,settling fact: whether security-ink formulation (SICPA authentication inks/markers) is manufactured at 5401 Venice Ave NE vs R&D and sensor electronics only - needs a SICPA/STA own page naming on-site ink production,none
+QMS-NM-03,E-Chem,Albuquerque,VERIFIED,site under held ORG-003922 Meridian Adhesives; own e-chem.net: epoxy adhesive manufacturer at 4102 El Rey Rd SE (ring 2),SITE-006035 (B)
+QMS-NM-04,Rogers Foam Corporation,Santa Teresa,VERIFIED,site under held ORG-002535; own rogersfoam.com all-sites ISO certificates list Santa Teresa,SITE-006036 (B)
+QMS-NM-05,Clariant Corporation Belen,Belen,REJECT,deciding fact: Belen plant makes mineral desiccants (bentonite clay / silica gel / molecular sieve) and packs them - not a polymer process; own clariant.com news 2023-12 (40 years of desiccant manufacturing in Belen),none
+QMS-NM-06,Pajarito Powder LLC,Albuquerque,REJECT,deciding fact: makes platinum/iridium electrocatalysts and carbon catalyst supports - not a polymer process; own pajaritopowder.com/products (product sheets dated 2025-08),none
