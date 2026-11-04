@@ -48,3 +48,10 @@ Not yet witness-checked: CHECK 0, stale (no federal activity since 2019) 50, sma
   - NH-040 Carbon Felt: carbon composites counted.
   - DE-001 FBK/D&B: street number differs.
   - Out-of-scope or no-plant rejects use the company's own site as the dated (fetch-date) fact: UT-160 JM Eagle (distribution center), UT-236 Champion (service location), NH-198 Integra (warehouse, per its 2025 environmental report).
+
+## Pass 5 judgment calls
+- DE-019 is VERIFIED on Qnity's own Bellevue Rd CMP pages. Its filed No. 50 may be on the same campus as DE-014 (451) and DE-018 (575). They are not merged; flagged.
+- DE-016 GE solar and DE-025 Chemours TiO2 are rejected on dated closures; both are also out of polymer scope.
+- NH-058 PFE is rejected on its own services page: it does testing and consulting, not manufacturing.
+- NH-048 Vaupell and NH-060 Haydon Kerk: the company's own site gives a different street in the same town. Both are STILL_UNCERTAIN, with the date they left the filed street as the settling fact.
+
