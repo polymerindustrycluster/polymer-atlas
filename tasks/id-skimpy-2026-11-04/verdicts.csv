@@ -1,0 +1,7 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+LF-ID-00005,Spears Manufacturing Co.,Jerome,VERIFIED,new site under ORG-004116; federal three-record overlap (no own read),SITE-005984 (C)
+LF-ID-00014,Fiber Composites LLC (Fiberon),Meridian,VERIFIED,new site under ORG-004229; own news page (fiberondecking.com),SITE-005985 (B)
+LF-ID-00012,Unitech Composites Inc.,Hayden,VERIFIED,new org + site; own APEX facility page (composite layup),ORG-004824 / SITE-005986 (C)
+LF-ID-00013,Yellowstone Plastics Inc.,Idaho Falls,VERIFIED,new org + site; own Volm page (printed/laminated PE film bags),ORG-004825 / SITE-005987 (C)
+LF-ID-00016,IPEX USA LLC,Preston,VERIFIED,new org (residual US shard) + site; federal two-source only,ORG-004826 / SITE-005988 (C)
+LF-ID-00018,Fabri-Kal (dba Pactiv Evergreen),Burley,VERIFIED,new site under ORG-002395; federal two-source only,SITE-005989 (C)
