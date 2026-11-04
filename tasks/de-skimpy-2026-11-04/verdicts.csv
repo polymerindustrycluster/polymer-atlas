@@ -1,0 +1,9 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+LF-DE-00022,Franklin Fibre-Lamitex Corp.,Wilmington,VERIFIED,new org + site; own contact page (thermoset laminates),ORG-004820 / SITE-005978 (C)
+LF-DE-00007,INVISTA (INV Performance Materials) Seaford,Seaford,VERIFIED,new site under ORG-003240; INVISTA/Koch own careers + news (nylon 6.6 fiber),SITE-005979 (B)
+LF-DE-00021,DelStar Technologies (Mativ),Middletown,VERIFIED,new org + site; own about/locations page; parent link to ORG-002642 flagged not forced,ORG-004821 / SITE-005980 (C)
+LF-DE-00050,Datwyler Pharma Packaging USA,Middletown,VERIFIED,new org + site; own locations page (elastomer stoppers); QSR sibling not linked,ORG-004822 / SITE-005981 (C)
+LF-DE-00019,Liveo Research Inc.,Delaware City,VERIFIED,new org + site; own locations page (calendered/laminated PVC film),ORG-004823 / SITE-005982 (C)
+LF-DE-00006,Ashland Wilmington Aquarius plant,Wilmington,VERIFIED,new site under ORG-002065; federal two-source only,SITE-005983 (C)
+LF-DE-00044,Nexpera Red Lion,New Castle,REJECT,sulfuric acid regeneration plant (TRI NAICS 325180; AIP 2024-07-31 release); no polymer process,
+LF-DE-00051,Essity Hydrofera,Newark,STILL_UNCERTAIN,whether PU-foam dressings are produced at 211 Executive Dr Suite 6 (1-9 employees; suite address) or it is an office/lab only,
