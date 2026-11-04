@@ -1517,6 +1517,19 @@ if code_assignments or ref_codes:
     _bound_txt = ", ".join(f"{k} {v}" for k, v in sorted(_bound.items())) or "none"
     warnings.append(f"code assignments: {len(code_assignments)} rows over {len(_ca_orgs)} orgs ({_sys_txt}); polymer-bound ref_codes by system: {_bound_txt} (V-44)")
 
+# V-56 [2026-11-04, owner battery B-GUARDS] data files are LF-only (.gitattributes eol=lf). A CRLF file passed every
+# other rule, but each later edit turned it into a whole-file diff.
+for _p in sorted(DATA.glob("*.csv")):
+    if b"\r\n" in _p.read_bytes():
+        errors.append(f"{_p.name}: CRLF line endings; data files are LF-only (git add --renormalize) (V-56)")
+# V-57 [2026-11-04, owner battery B-GUARDS] an organization HQ outside the USPS set must name its country. Otherwise it
+# surfaces only as a V-35 placement mismatch that points at the wrong field.
+for _fname, (_flds, _rows) in sorted(ORG_SHARDS.items()):
+    for r in _rows:
+        _st = (r.get("hq_state") or "").strip().upper()
+        if _st and _st not in USPS_ALL and not (r.get("hq_country") or "").strip():
+            errors.append(f"{_fname}: {r['org_id']} hq_state {_st!r} is not a USPS code and hq_country is empty (V-57)")
+
 print("organizations shards: " + ", ".join(f"{fn[len('organizations_'):-4]} {len(rw)}" for fn, (_, rw) in sorted(ORG_SHARDS.items())) + f" ({len(orgs)} total)")
 print("sites shards: " + ", ".join(f"{fn[len('sites_'):-4]} {len(rw)}" for fn, (_, rw) in sorted(SITE_SHARDS.items())) + f" ({len(sites)} total)")
 
