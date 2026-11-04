@@ -1,0 +1,59 @@
+{
+ "110000797111": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000797111",
+     "FacilityName": "CORNING LIFE SCIENCES",
+     "LocationAddress": "2 ALFRED RD",
+     "SupplementalLocation": null,
+     "CityName": "KENNEBUNK",
+     "CountyName": "YORK",
+     "StateAbbr": "ME",
+     "ZipCode": "04043-6266",
+     "FIPSCode": "23031",
+     "Latitude83": "43.40494",
+     "Longitude83": "-70.56443"
+    }
+   ]
+  }
+ },
+ "110037396332": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110037396332",
+     "FacilityName": "NORTHEAST PACKAGING CO",
+     "LocationAddress": "875 SKYWAY STREET",
+     "SupplementalLocation": null,
+     "CityName": "PRESQUE ISLE",
+     "CountyName": "AROOSTOOK",
+     "StateAbbr": "ME",
+     "ZipCode": "04769-2063",
+     "FIPSCode": "23003",
+     "Latitude83": "46.700071",
+     "Longitude83": "-68.041567"
+    }
+   ]
+  }
+ },
+ "110038379064": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110038379064",
+     "FacilityName": "ANGSTROM FIBER AUBURN LLC",
+     "LocationAddress": "125 ALLIED ROAD",
+     "SupplementalLocation": null,
+     "CityName": "AUBURN",
+     "CountyName": "ANDROSCOGGIN",
+     "StateAbbr": "ME",
+     "ZipCode": "04210-4001",
+     "FIPSCode": "23001",
+     "Latitude83": "44.03582",
+     "Longitude83": "-70.263234"
+    }
+   ]
+  }
+ }
+}

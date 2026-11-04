@@ -274,3 +274,43 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [x] `claimed:grok 2026-11-04` NH skimpy-state wave (tasks/nh-skimpy-2026-11-04), PR on agent/grok/nh-skimpy
 - [x] `claimed:grok 2026-11-04` RI skimpy-state wave (tasks/ri-skimpy-2026-11-04), PR on agent/grok/ri-skimpy
 - [x] `claimed:grok 2026-11-04` NV skimpy-state wave (tasks/nv-skimpy-2026-11-04), PR on agent/grok/nv-skimpy
+- [x] `claimed:grok 2026-11-04` ME skimpy-state wave (tasks/me-skimpy-2026-11-04), PR on agent/grok/me-skimpy
+- [x] `claimed:grok 2026-11-04` MT skimpy-state wave (tasks/mt-skimpy-2026-11-04), PR on agent/grok/mt-skimpy
+- [x] `claimed:grok 2026-11-04` VT skimpy-state wave (tasks/vt-skimpy-2026-11-04), PR on agent/grok/vt-skimpy
+- [x] `claimed:grok 2026-11-04` ND skimpy-state wave (tasks/nd-skimpy-2026-11-04), PR on agent/grok/nd-skimpy
+- [x] `claimed:grok 2026-11-04` NM skimpy-state wave (tasks/nm-skimpy-2026-11-04), PR on agent/grok/nm-skimpy
+- [x] `claimed:grok 2026-11-04` SD skimpy-state wave (tasks/sd-skimpy-2026-11-04), PR on agent/grok/sd-skimpy
+- [x] `claimed:grok 2026-11-04` NE skimpy-state wave (tasks/ne-skimpy-2026-11-04), PR on agent/grok/ne-skimpy
+- [x] `claimed:grok 2026-11-04` MS skimpy-state wave (tasks/ms-skimpy-2026-11-04), PR on agent/grok/ms-skimpy
+- [x] `claimed:grok 2026-11-04` WV skimpy-state wave (tasks/wv-skimpy-2026-11-04), PR on agent/grok/wv-skimpy
+- [x] `claimed:grok 2026-11-04` OK skimpy-state wave (tasks/ok-skimpy-2026-11-04), PR on agent/grok/ok-skimpy
+- [x] `claimed:grok 2026-11-04` AZ skimpy-state wave (tasks/az-skimpy-2026-11-04), PR on agent/grok/az-skimpy
+- [x] `claimed:grok 2026-11-04` MD skimpy-state wave (tasks/md-skimpy-2026-11-04), PR on agent/grok/md-skimpy
+- [x] `claimed:grok 2026-11-04` CO skimpy-state wave (tasks/co-skimpy-2026-11-04), PR on agent/grok/co-skimpy
+- [x] `claimed:grok 2026-11-04` AR skimpy-state wave (tasks/ar-skimpy-2026-11-04), PR on agent/grok/ar-skimpy
+- [x] `claimed:grok 2026-11-04` WA skimpy-state wave (tasks/wa-skimpy-2026-11-04), PR on agent/grok/wa-skimpy
+- [x] `claimed:grok 2026-11-04` OR skimpy-state wave (tasks/or-skimpy-2026-11-04), PR on agent/grok/or-skimpy
+- [x] `claimed:grok 2026-11-04` CT skimpy-state wave (tasks/ct-skimpy-2026-11-04), PR on agent/grok/ct-skimpy
+- [x] `claimed:grok 2026-11-04` KS skimpy-state wave (tasks/ks-skimpy-2026-11-04), PR on agent/grok/ks-skimpy
+- [x] `claimed:grok 2026-11-04` IA skimpy-state wave (tasks/ia-skimpy-2026-11-04), PR on agent/grok/ia-skimpy
+- [x] `claimed:grok 2026-11-04` AL skimpy-state wave (tasks/al-skimpy-2026-11-04), PR on agent/grok/al-skimpy
+## Campaign claims (2026-11-04, see tasks/CAMPAIGN.md)
+- [ ] `claimed:claude-code 2026-11-04` **STRONG state waves:** MI, IL (in progress); CA, TX, FL, GA, WI, MA (next). IN pilot = #75.
+- [ ] `claimed:claude-code 2026-11-04` **PIC-18 capability pass + record-health fixes; evidence repair round 2 (scope).**
+
+### from PR #39
+
+## Evidence audit (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **own_site evidence audit (read-only):** 200 random rows re-fetched raw and judged; 142/191 loaded pages SUPPORTED (74%, CI 68-80%), 94% supported or partial; scope 122/151, existence 12/24, address 7/13. `tasks/evidence-audit-2026-11-03/README.md`.
+- [ ] `open` **Evidence repair pass:** existence/address rows citing a corporate home page for a plant claim, parent rows, and the October tri-national packets (6/19 supported in the audit).
+
+### from PR #29
+
+## NREL people after the rename (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **NREL -> National Laboratory of the Rockies (renamed 2025-12-01):** 18 people records cite dead nrel.gov pages. Re-verification packet (9 VERIFIED on research-hub.nlr.gov, raw-checked; 9 STILL_UNCERTAIN). B-NLR-1 (a) and B-NLR-2 (a) RULED 2026-11-03; applied: 59 cell edits on 18 people records (9 re-pointed with NLR printed titles, 9 B -> U). `tasks/nrel-repoint-2026-11-03/README.md`.
+
+### from PR #35
+
+## Program leads (2026-11-03)
+- [ ] `in-pr:claude-code 2026-11-03` **Program leads, OH/PA wave:** 49 OH/PA leads (of 353 merged) through the named-program test; +4 programs (PROG-000163-000166, tier A) with 8 evidence rows; 7 held. `tasks/program-leads-2026-11-03/README.md`.
+- [ ] `open` **Program leads, remaining 275 non-OH/PA leads** (`tasks/program-leads-2026-11-03/worklist.csv`) and the 147 unapplied completions proposals.

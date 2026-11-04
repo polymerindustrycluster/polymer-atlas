@@ -1,0 +1,21 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-MS-00,Dart Container,Quitman,VERIFIED,Own Dart location page (foam cups),SITE-006059
+QMS-MS-01,Westlake Chemicals & Vinyls,Aberdeen,REJECT,PVC plant closed by end of Dec 2025 (Westlake 8-K 2025-12-15; WCBI). Form 5500 check: parent ORG-003067 active - closure is site-level,
+QMS-MS-02,Calgon Carbon,Bay St Louis,REJECT,Activated carbon not polymer (Calgon press release 2023-10),
+QMS-MS-03,KP Building Products,Holly Springs,VERIFIED,Saint-Gobain NA Kaycan Holly Springs fact sheet Nov 2024 (vinyl siding),SITE-006060
+QMS-MS-04,Corelle Brands,Byhalia,VERIFIED,Two federal sources FRS + ITA NAICS 326199 (judgment call; low conf),SITE-006061
+QMS-MS-05,Valvoline / Niteo Products,Hernando,REJECT,Automotive car-care chemicals not polymer (MDEQ permit lists Niteo Products),
+QMS-MS-06,Sherwin-Williams,Olive Branch,VERIFIED,Two federal sources FRS + ITA NAICS 325510; 2009 closure was Miller Rd plant,SITE-006062
+QMS-MS-07,Sonoco Protective Solutions,Tupelo,VERIFIED,Two federal sources FRS + ITA NAICS 326140; FLAG ThermoSafe permit transfer Aug 2026,SITE-006063
+QMS-MS-08,Westlake Pipe & Fittings,Booneville,VERIFIED,Own westlake.com/booneville,SITE-006064
+QMS-MS-09,Adlam Films,Shannon,VERIFIED,Own adlamfilms.com,SITE-006065
+QMS-MS-10,Sterling Specialty Chemicals,Aberdeen,VERIFIED,Own sterlingspec.com Aberdeen expansion (polyacrylamide),SITE-006066
+QMS-MS-11,Bakelite Chemicals,Taylorsville,VERIFIED,Two federal sources FRS + ITA,SITE-006067
+QMS-MS-12,Air Cruisers,Liberty,VERIFIED,Two federal sources FRS + ITA NAICS 326199/326299 (Safran lists 269 Main St - flag),SITE-006068
+QMS-MS-13,Centreville Plant (G2O Technologies),Centreville,STILL_UNCERTAIN,Whether resin (NAICS 325211 secondary) is made at 700 Hwy 33 S and who operates it,
+QMS-MS-14,NOV Fiber Glass Systems,Iuka,VERIFIED,Two federal sources FRS + ITA + Title V,SITE-006069
+QMS-MS-15,Independent Furniture Supply,Tupelo,VERIFIED,Own site,SITE-006070
+QMS-MS-16,Confortaire,Tupelo,VERIFIED,Own confortaire.net,SITE-006071
+QMS-MS-17,Southern Film and Bag,Summit,STILL_UNCERTAIN,Whether operator at 1301 Hwy 51 N is Southern Film and Bag or Summit Films Inc and that film is made there,
+QMS-MS-18,Hybrid Plastics,Hattiesburg,VERIFIED,Own hybridplastics.com history page,SITE-006072
+QMS-MS-19,HSM Verona Fab,Verona,VERIFIED,Two federal sources ITA + OSHA,SITE-006073

@@ -1,0 +1,344 @@
+{
+ "110072236638": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072236638",
+     "FacilityName": "TREPLAR INC",
+     "LocationAddress": "5115 WINCHESTER AVE",
+     "SupplementalLocation": null,
+     "CityName": "MARTINSBURG",
+     "CountyName": "BERKELEY",
+     "StateAbbr": "WV",
+     "ZipCode": "25405",
+     "FIPSCode": "54003",
+     "Latitude83": "39.390216",
+     "Longitude83": "-78.008416"
+    }
+   ]
+  }
+ },
+ "110070279485": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070279485",
+     "FacilityName": "PACTIV PACKAGING INC",
+     "LocationAddress": "100 COMMERCIAL STREET",
+     "SupplementalLocation": null,
+     "CityName": "MINERAL WELLS",
+     "CountyName": "WOOD",
+     "StateAbbr": "WV",
+     "ZipCode": "26150",
+     "FIPSCode": "54107",
+     "Latitude83": "39.17424",
+     "Longitude83": "-81.536"
+    }
+   ]
+  }
+ },
+ "110070639721": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070639721",
+     "FacilityName": "AUTOMATED PACKAGING SYSTEMS INC",
+     "LocationAddress": "58 INDUSTRIAL PARK",
+     "SupplementalLocation": null,
+     "CityName": "KEYSER",
+     "CountyName": "MINERAL",
+     "StateAbbr": "WV",
+     "ZipCode": "26726",
+     "FIPSCode": "54057",
+     "Latitude83": "39.439646",
+     "Longitude83": "-78.956618"
+    }
+   ]
+  }
+ },
+ "110070645253": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070645253",
+     "FacilityName": "SILGAN PLASTICS",
+     "LocationAddress": "475 TECHNOLOGY DR",
+     "SupplementalLocation": "3RD BLDG LEFT",
+     "CityName": "TRIADELPHIA",
+     "CountyName": "OHIO",
+     "StateAbbr": "WV",
+     "ZipCode": "26059",
+     "FIPSCode": "54069",
+     "Latitude83": "40.069987",
+     "Longitude83": "-80.561827"
+    }
+   ]
+  }
+ },
+ "110008192909": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110008192909",
+     "FacilityName": "BRENTWOOD INDUSTRIES, INC.,  MARTINSBURG",
+     "LocationAddress": "793 CORNING WAY",
+     "SupplementalLocation": null,
+     "CityName": "MARTINSBURG",
+     "CountyName": "BERKELEY",
+     "StateAbbr": "WV",
+     "ZipCode": "25405-2518",
+     "FIPSCode": "54003",
+     "Latitude83": "39.390204",
+     "Longitude83": "-78.023888"
+    }
+   ]
+  }
+ },
+ "110012177839": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012177839",
+     "FacilityName": "CHEM-PAK INC",
+     "LocationAddress": "242 CORNING WAY",
+     "SupplementalLocation": null,
+     "CityName": "MARTINSBURG",
+     "CountyName": "BERKELEY",
+     "StateAbbr": "WV",
+     "ZipCode": "254012589",
+     "FIPSCode": "54003",
+     "Latitude83": "39.38861",
+     "Longitude83": "-78.01726"
+    }
+   ]
+  }
+ },
+ "110070646040": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070646040",
+     "FacilityName": "ISCO INDUSTRIES LLC",
+     "LocationAddress": "701 MID ATLANTIC PARKWAY",
+     "SupplementalLocation": null,
+     "CityName": "MARTINSBURG",
+     "CountyName": "BERKELEY",
+     "StateAbbr": "WV",
+     "ZipCode": "25404",
+     "FIPSCode": "54003",
+     "Latitude83": "39.497473",
+     "Longitude83": "-77.950647"
+    }
+   ]
+  }
+ },
+ "110000344495": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000344495",
+     "FacilityName": "COLUMBIA PAINT CO.",
+     "LocationAddress": "641 JACKSON AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "HUNTINGTON",
+     "CountyName": "CABELL",
+     "StateAbbr": "WV",
+     "ZipCode": "25704",
+     "FIPSCode": "54011",
+     "Latitude83": "38.41076",
+     "Longitude83": "-82.46469"
+    }
+   ]
+  }
+ },
+ "110000572782": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000572782",
+     "FacilityName": "SI GROUP INC - SOUTH PLANT",
+     "LocationAddress": "1000 MORGANTOWN INDUSTRIAL PARK  BLDG. 816",
+     "SupplementalLocation": null,
+     "CityName": "MORGANTOWN",
+     "CountyName": "MONONGALIA",
+     "StateAbbr": "WV",
+     "ZipCode": "26501",
+     "FIPSCode": "54061",
+     "Latitude83": "39.59983",
+     "Longitude83": "-79.97148"
+    }
+   ]
+  }
+ },
+ "110070640113": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070640113",
+     "FacilityName": "ICL-IP AMERICA INC. GALLIPOLIS FERRY SITE",
+     "LocationAddress": "11636 HUNTINGTON ROAD",
+     "SupplementalLocation": null,
+     "CityName": "GALLIPOLIS FERRY",
+     "CountyName": "MASON",
+     "StateAbbr": "WV",
+     "ZipCode": "25515",
+     "FIPSCode": "54053",
+     "Latitude83": "38.773303",
+     "Longitude83": "-82.20146"
+    }
+   ]
+  }
+ },
+ "110020047545": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110020047545",
+     "FacilityName": "INNOVATIVE WATER CARE, LLC.",
+     "LocationAddress": "95 MACCORKLE AVE., SW",
+     "SupplementalLocation": null,
+     "CityName": "SOUTH CHARLESTON",
+     "CountyName": "KANAWHA",
+     "StateAbbr": "WV",
+     "ZipCode": "25303",
+     "FIPSCode": "54039",
+     "Latitude83": "38.365333",
+     "Longitude83": "-81.706116"
+    }
+   ]
+  }
+ },
+ "110070636551": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070636551",
+     "FacilityName": "ZIMS BAGGING CO INC",
+     "LocationAddress": "1 ZIM'S LANE",
+     "SupplementalLocation": null,
+     "CityName": "PRICHARD",
+     "CountyName": "WAYNE",
+     "StateAbbr": "WV",
+     "ZipCode": "25555",
+     "FIPSCode": "54099",
+     "Latitude83": "38.26928",
+     "Longitude83": "-82.57259"
+    }
+   ]
+  }
+ },
+ "110060645146": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110060645146",
+     "FacilityName": "UNION CARBIDE CORPORATION - UCC TECHNOLOGY PARK OPERATIONS",
+     "LocationAddress": "1840 UNION CARBIDE DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "SOUTH CHARLESTON",
+     "CountyName": "KANAWHA",
+     "StateAbbr": "WV",
+     "ZipCode": "25303",
+     "FIPSCode": "54039",
+     "Latitude83": "38.353502",
+     "Longitude83": "-81.704074"
+    }
+   ]
+  }
+ },
+ "110007872757": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007872757",
+     "FacilityName": "TROY GROUP, INC.,  WHEELING",
+     "LocationAddress": "3 BRYAN DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "WHEELING",
+     "CountyName": "OHIO",
+     "StateAbbr": "WV",
+     "ZipCode": "26003-6121",
+     "FIPSCode": "54069",
+     "Latitude83": "40.093976",
+     "Longitude83": "-80.687282"
+    }
+   ]
+  }
+ },
+ "110070273168": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070273168",
+     "FacilityName": "AC & S, INC.",
+     "LocationAddress": "150 PLANT ROAD",
+     "SupplementalLocation": null,
+     "CityName": "NITRO",
+     "CountyName": "PUTNAM",
+     "StateAbbr": "WV",
+     "ZipCode": "25143",
+     "FIPSCode": "54079",
+     "Latitude83": "38.421522",
+     "Longitude83": "-81.844008"
+    }
+   ]
+  }
+ },
+ "110060257742": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110060257742",
+     "FacilityName": "ALLNEX USA INC",
+     "LocationAddress": "252 HEILMAN AVE",
+     "SupplementalLocation": null,
+     "CityName": "BELMONT",
+     "CountyName": "PLEASANTS",
+     "StateAbbr": "WV",
+     "ZipCode": "26134",
+     "FIPSCode": "54073",
+     "Latitude83": "39.358597",
+     "Longitude83": "-81.30817"
+    }
+   ]
+  }
+ },
+ "110040877806": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110040877806",
+     "FacilityName": "MAAX U.S. CORP",
+     "LocationAddress": "718 MID ATLANTIC PARKWAY",
+     "SupplementalLocation": null,
+     "CityName": "MARTINSBURG",
+     "CountyName": "BERKELEY",
+     "StateAbbr": "WV",
+     "ZipCode": "25404",
+     "FIPSCode": "54003",
+     "Latitude83": "39.497487",
+     "Longitude83": "-77.950366"
+    }
+   ]
+  }
+ },
+ "110070635092": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070635092",
+     "FacilityName": "NICHE POLYMER LLC",
+     "LocationAddress": "880 S WASHINGTON ST",
+     "SupplementalLocation": null,
+     "CityName": "RAVENSWOOD",
+     "CountyName": "JACKSON",
+     "StateAbbr": "WV",
+     "ZipCode": "26164",
+     "FIPSCode": "54035",
+     "Latitude83": "38.9418",
+     "Longitude83": "-81.7552"
+    }
+   ]
+  }
+ }
+}

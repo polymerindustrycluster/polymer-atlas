@@ -1,0 +1,43 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-CT-00,"PUTNAM PLASTICS CORP","Dayville",VERIFIED,"Two federal sources: FRS 110064673312 + ITA 1450094 + OSHA 346768542 (scope from federal NAICS)",SITE-006250
+QMS-CT-01,"INLINE PLASTICS CORP","Shelton",VERIFIED,"Two federal sources: FRS 110001735613 + ITA 498110 + OSHA 348397654 (scope from federal NAICS)",SITE-006251
+QMS-CT-02,"COLTS PLASTICS CO","Killingly (dayville)",VERIFIED,"Two federal sources: FRS 110005968845 + ITA 1182603 + OSHA 348922394 (scope from federal NAICS)",SITE-006252
+QMS-CT-03,"SILGAN DISPENSING SYSTEMS (PARK RD.)","Watertown",VERIFIED,"Two federal sources: FRS 110059768719 + ITA 960586 + OSHA 345203038 (scope from federal NAICS)",SITE-006253
+QMS-CT-04,"BRAND NU LABORATORIES INC","Meriden",STILL_UNCERTAIN,"Whether Brand Nu Laboratories Meriden makes polymer products (NAICS 325998/424690).",
+QMS-CT-05,"FLAGSHIP CONVERTERS, INC","Danbury",VERIFIED,"Two federal sources: FRS 110001747557 + ITA 1259971 + OSHA 346823271 (scope from federal NAICS)",SITE-006254
+QMS-CT-06,"ROGERS CORPORATION - MOOSUP","Moosup",VERIFIED,"Two federal sources: FRS 110000315926 + ITA 1273540 + OSHA 349246611 (scope from federal NAICS)",SITE-006255
+QMS-CT-07,"AIREX RUBBER PRODUCTS CORP.","Portland",VERIFIED,"Two federal sources: FRS 110003008218 + ITA 909751 + OSHA 347978603 (scope from federal NAICS)",SITE-006256
+QMS-CT-08,"PORCE-LEN, INC","Hamden",VERIFIED,"Two federal sources: FRS 110000316881 + ITA 1355811 + OSHA 347447187 (scope from federal NAICS)",SITE-006257
+QMS-CT-09,"DYMAX CORPORATION","Torrington",VERIFIED,"Two federal sources: FRS 110031435579 + ITA 921064 (scope from federal NAICS)",SITE-006258
+QMS-CT-10,"REXAM DISPENSING SYSTEMS","Thomaston",STILL_UNCERTAIN,"Current operator of the former Rexam Dispensing Systems plant at 60 Electric Ave, Thomaston (FRS/ITA name is legacy).",
+QMS-CT-11,"REFLEXITE CORPORATION","Avon",VERIFIED,"Two federal sources: FRS 110000314972 + ITA 43153 (scope from federal NAICS)",SITE-006259
+QMS-CT-12,"PHOTRONICS, INC.","Brookfield",REJECT,"Photomasks (semiconductor), not polymer: ITA CY2025 record NAICS 325992/334119 (fetched 2026-11-04).",
+QMS-CT-13,"MACDERMID ENTHONE","West Haven",STILL_UNCERTAIN,"Whether MacDermid Enthone West Haven makes polymer products (NAICS 325998 plating chemicals).",
+QMS-CT-14,"FLUOROPOLYMER RESOURCES","North Windham",VERIFIED,"Two federal sources: FRS 110070513540 + ITA 1072692 (scope from federal NAICS)",SITE-006260
+QMS-CT-15,"SCA PACKAGING NORTH AMERICA","Putnam",VERIFIED,"Two federal sources: FRS 110002476419 + ITA 1491564 (scope from federal NAICS)",SITE-006261
+QMS-CT-16,"DELMAR PRODUCTS","Berlin",VERIFIED,"Two federal sources: FRS 110001734428 + ITA 547482 (scope from federal NAICS)",SITE-006262
+QMS-CT-17,"DREW MARINE USA","Waterbury",STILL_UNCERTAIN,"Whether Drew Marine Waterbury makes polymer products (NAICS 325998/325510).",
+QMS-CT-18,"MILLER STEPHENSON CHEMICAL","Danbury",STILL_UNCERTAIN,"Whether Miller-Stephenson Danbury manufactures polymer products (release agents/coatings) or distributes (NAICS 325510/424690).",
+QMS-CT-19,"DYMOTEK CORP","Ellington",VERIFIED,"Two federal sources: FRS 110057071911 + ITA 136770 (scope from federal NAICS)",SITE-006263
+QMS-CT-20,"NEOPERL, INC","Waterbury",VERIFIED,"Two federal sources: FRS 110000317283 + ITA 1455473 (scope from federal NAICS)",SITE-006264
+QMS-CT-21,"FOSTER CORPORATION","Putnam",VERIFIED,"Two federal sources: FRS 110042353146 + ITA 1268540 (scope from federal NAICS)",SITE-006265
+QMS-CT-22,"VANDERBILT CHEMICALS, LLC BETHEL","Bethel",VERIFIED,"Two federal sources: FRS 110000317586 + ITA 155886 (scope from federal NAICS)",SITE-006266
+QMS-CT-23,"AZURE WATER SERVICES","West Haven",STILL_UNCERTAIN,"Whether Azure Water Services West Haven makes any polymer products (NAICS 325998 water treatment).",
+QMS-CT-24,"DYNO NOBEL","Simsbury",REJECT,"Explosives, not polymer: FRS 110000315409 fetched 2026-11-04, NAICS 325920, Dyno Nobel.",
+QMS-CT-25,"WEB INDUSTRIES","Killingly (dayville)",VERIFIED,"Two federal sources: FRS 110028533950 + OSHA 347570723 (scope from federal NAICS)",SITE-006267
+QMS-CT-26,"INTEGRO LLC","New Britain",VERIFIED,"Two federal sources: FRS 110055440802 + OSHA 345184592 (scope from federal NAICS)",SITE-006268
+QMS-CT-27,"P I LIQUIDATING, INC.","Prospect",STILL_UNCERTAIN,"Whether the Prospect EPS plant (FRS name 'P I Liquidating, Inc.') still operates and who runs it.",
+QMS-CT-28,"WASLEY PRODUCTS/PRECISION MOLDING","Plainville",VERIFIED,"Two federal sources: FRS 110000603062 + OSHA 345451496 (scope from federal NAICS)",SITE-006269
+QMS-CT-29,"PLASTIC DIVERSITY SOLUTIONS","Dayville",VERIFIED,"Two federal sources: FRS 110002089061 + OSHA 345216493 (scope from federal NAICS)",SITE-006270
+QMS-CT-30,"LATICRETE International Inc - Bethany","Bethany",STILL_UNCERTAIN,"LATICRETE Bethany HQ/plant (ITA 1454525 + OSHA 345693337) is witnessed, but the LATICRETE org is pending in PR #69; settling fact: PR #69 merge, then add the site under that org.",
+QMS-CT-31,"PTA Plastics Oxford","Oxford",VERIFIED,"Two federal sources: ITA 1052473 + OSHA 344614425 (scope from federal NAICS)",SITE-006271
+QMS-CT-32,"NPI Medical (Westfall Technik, LLC)","Ansonia",VERIFIED,"Two federal sources: ITA 1411008 + OSHA 346020787 (scope from federal NAICS)",SITE-006272
+QMS-CT-33,"CKS Naugatuck","Naugatuck",VERIFIED,"Two federal sources: ITA 1527537 + OSHA 346603517 (scope from federal NAICS)",SITE-006273
+QMS-CT-34,"Flextronics International USA","Manchester",VERIFIED,"Two federal sources: ITA 890805 + OSHA 348113622 (scope from federal NAICS)",SITE-006274
+QMS-CT-35,"Mechanical Plastics Corp","Norwalk",VERIFIED,"Two federal sources: ITA 1409715 + OSHA 348108382 (scope from federal NAICS)",SITE-006275
+QMS-CT-36,"Superior Plastics Extrusion Co - CT","Putnam",VERIFIED,"Two federal sources: ITA 1029234 + OSHA 346332125 (scope from federal NAICS)",SITE-006276
+QMS-CT-37,"Phoenix Products Company","Terryville",STILL_UNCERTAIN,"Whether Phoenix Products Terryville manufactures polymer products (NAICS 325998/424690).",
+QMS-CT-38,"Madison Polymeric Eng","Branford",VERIFIED,"Two federal sources: ITA 850409 + OSHA 347560492 (scope from federal NAICS)",SITE-006277
+QMS-CT-39,"Bollore Inc.","Dayville",VERIFIED,"Two federal sources: ITA 991731 + OSHA 346268675 (scope from federal NAICS)",SITE-006278
+QMS-CT-40,"Deitsch Plastic Co., Inc","West Haven",VERIFIED,"Two federal sources: ITA 663932 + OSHA 347909608 (scope from federal NAICS)",SITE-006279
+QMS-CT-41,"Technical Industries, Inc.","Torrington",VERIFIED,"Two federal sources: ITA 355060 + OSHA 346028798 (scope from federal NAICS)",SITE-006280

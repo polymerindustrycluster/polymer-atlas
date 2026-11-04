@@ -1,0 +1,724 @@
+{
+ "110001326752": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001326752",
+     "FacilityName": "ACCU-MOLD LLC",
+     "LocationAddress": "1711 SE ORALABOR ROAD",
+     "SupplementalLocation": null,
+     "CityName": "ANKENY",
+     "CountyName": "POLK",
+     "StateAbbr": "IA",
+     "ZipCode": "50021",
+     "FIPSCode": "19153",
+     "Latitude83": "41.70283",
+     "Longitude83": "-93.5687"
+    }
+   ]
+  }
+ },
+ "110001327537": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001327537",
+     "FacilityName": "INNOVATIVE INJECTION TECHNOLOGIES",
+     "LocationAddress": "2360 GRAND AVE",
+     "SupplementalLocation": null,
+     "CityName": "WEST DES MOINES",
+     "CountyName": "POLK",
+     "StateAbbr": "IA",
+     "ZipCode": "50265",
+     "FIPSCode": "IA153",
+     "Latitude83": "41.55766",
+     "Longitude83": "-93.73691"
+    }
+   ]
+  }
+ },
+ "110064140807": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064140807",
+     "FacilityName": "AMCOR FLEXIBLES NORTH AMERICA INC.",
+     "LocationAddress": "1400 E ONEAL ST",
+     "SupplementalLocation": null,
+     "CityName": "CENTERVILLE",
+     "CountyName": "APPANOOSE",
+     "StateAbbr": "IA",
+     "ZipCode": "52544",
+     "FIPSCode": "19007",
+     "Latitude83": "40.71797",
+     "Longitude83": "-92.85938"
+    }
+   ]
+  }
+ },
+ "110043621612": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110043621612",
+     "FacilityName": "INHANCE TECHNOLOGIES, LLC",
+     "LocationAddress": "2800 INDUSTRIAL PARK RD",
+     "SupplementalLocation": null,
+     "CityName": "CENTERVILLE",
+     "CountyName": "APPANOOSE",
+     "StateAbbr": "IA",
+     "ZipCode": "52544",
+     "FIPSCode": "19007",
+     "Latitude83": "40.75001",
+     "Longitude83": "-92.87738"
+    }
+   ]
+  }
+ },
+ "110012169330": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012169330",
+     "FacilityName": "ROUSSELOT, INC.",
+     "LocationAddress": "2350 KERPER BOULEVARD",
+     "SupplementalLocation": null,
+     "CityName": "DUBUQUE",
+     "CountyName": "DUBUQUE",
+     "StateAbbr": "IA",
+     "ZipCode": "52001-2220",
+     "FIPSCode": "19061",
+     "Latitude83": "42.52175",
+     "Longitude83": "-90.65258"
+    }
+   ]
+  }
+ },
+ "110040494738": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110040494738",
+     "FacilityName": "PLASTICS UNLIMITED INC",
+     "LocationAddress": "301 1ST ST NW",
+     "SupplementalLocation": null,
+     "CityName": "PRESTON",
+     "CountyName": "JACKSON",
+     "StateAbbr": "IA",
+     "ZipCode": "52069",
+     "FIPSCode": "19097",
+     "Latitude83": "42.05614",
+     "Longitude83": "-90.40506"
+    }
+   ]
+  }
+ },
+ "110001762030": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001762030",
+     "FacilityName": "ENGINEERED PLASTIC COMPONENTS INC",
+     "LocationAddress": "202 1ST STREET SOUTH",
+     "SupplementalLocation": null,
+     "CityName": "KALONA",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "IA",
+     "ZipCode": "52247-9591",
+     "FIPSCode": "19183",
+     "Latitude83": "41.480139",
+     "Longitude83": "-91.713959"
+    }
+   ]
+  }
+ },
+ "110001326477": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001326477",
+     "FacilityName": "CAPTIVE PLASTICS LLC",
+     "LocationAddress": "2201 BELL AVE",
+     "SupplementalLocation": null,
+     "CityName": "DES MOINES",
+     "CountyName": "POLK",
+     "StateAbbr": "IA",
+     "ZipCode": "50321-1112",
+     "FIPSCode": "19153",
+     "Latitude83": "41.562954",
+     "Longitude83": "-93.647736"
+    }
+   ]
+  }
+ },
+ "110005732546": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005732546",
+     "FacilityName": "TANKS LTD",
+     "LocationAddress": "520 11TH ST",
+     "SupplementalLocation": null,
+     "CityName": "SHELDON",
+     "CountyName": "O BRIEN",
+     "StateAbbr": "IA",
+     "ZipCode": "512011923",
+     "FIPSCode": "19141",
+     "Latitude83": "43.17775",
+     "Longitude83": "-95.852075"
+    }
+   ]
+  }
+ },
+ "110000412697": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000412697",
+     "FacilityName": "3M (MINNESOTA MINING & MFG CO) - KNOXVILLE",
+     "LocationAddress": "3406 E PLEASANT ST",
+     "SupplementalLocation": null,
+     "CityName": "KNOXVILLE",
+     "CountyName": "MARION",
+     "StateAbbr": "IA",
+     "ZipCode": "50138",
+     "FIPSCode": "19125",
+     "Latitude83": "41.318143",
+     "Longitude83": "-93.065738"
+    }
+   ]
+  }
+ },
+ "110000612025": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000612025",
+     "FacilityName": "HACH COMPANY",
+     "LocationAddress": "100 DAYTON AVE.",
+     "SupplementalLocation": null,
+     "CityName": "AMES",
+     "CountyName": "STORY",
+     "StateAbbr": "IA",
+     "ZipCode": "50010",
+     "FIPSCode": "19169",
+     "Latitude83": "42.025278",
+     "Longitude83": "-93.581944"
+    }
+   ]
+  }
+ },
+ "110000771718": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000771718",
+     "FacilityName": "BEMIS CLYSAR",
+     "LocationAddress": "2505 CAMANCHE INDUSTRIAL PARK DR",
+     "SupplementalLocation": null,
+     "CityName": "CAMANCHE",
+     "CountyName": "CLINTON",
+     "StateAbbr": "IA",
+     "ZipCode": "52730",
+     "FIPSCode": "19045",
+     "Latitude83": "41.80612",
+     "Longitude83": "-90.2409"
+    }
+   ]
+  }
+ },
+ "110072128759": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072128759",
+     "FacilityName": "AJINOMOTO HEALTH & NUTRITION NORTH AMERICA, INC.",
+     "LocationAddress": "1 AJINOMOTO DR",
+     "SupplementalLocation": null,
+     "CityName": "EDDYVILLE",
+     "CountyName": "MONROE COUNTY",
+     "StateAbbr": "IA",
+     "ZipCode": "52553",
+     "FIPSCode": "19135",
+     "Latitude83": "41.149972",
+     "Longitude83": "-92.64754"
+    }
+   ]
+  }
+ },
+ "110055435159": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110055435159",
+     "FacilityName": "DUPONT SPECIALTY PRODUCTS USA LLC - FORT MADISON",
+     "LocationAddress": "801 35TH ST",
+     "SupplementalLocation": null,
+     "CityName": "FORT MADISON",
+     "CountyName": "LEE",
+     "StateAbbr": "IA",
+     "ZipCode": "52627",
+     "FIPSCode": "19111",
+     "Latitude83": "40.631667",
+     "Longitude83": "-91.363611"
+    }
+   ]
+  }
+ },
+ "110005748922": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005748922",
+     "FacilityName": "CRESLINE PLASTIC PIPE COMPANY, INC",
+     "LocationAddress": "2100 SOUTH 35TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "COUNCIL BLUFFS",
+     "CountyName": "POTTAWATTAMIE",
+     "StateAbbr": "IA",
+     "ZipCode": "51501-7012",
+     "FIPSCode": "19155",
+     "Latitude83": "41.24183",
+     "Longitude83": "-95.8985"
+    }
+   ]
+  }
+ },
+ "110060261862": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110060261862",
+     "FacilityName": "COLORBIOTICS",
+     "LocationAddress": "1725 DAYTON AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "AMES",
+     "CountyName": "STORY",
+     "StateAbbr": "IA",
+     "ZipCode": "50010",
+     "FIPSCode": "19169",
+     "Latitude83": "42.040204",
+     "Longitude83": "-93.583221"
+    }
+   ]
+  }
+ },
+ "110070827926": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070827926",
+     "FacilityName": "IOWA EPS PRODUCTS, INC.",
+     "LocationAddress": "4100 DIXON ST",
+     "SupplementalLocation": null,
+     "CityName": "DES MOINES",
+     "CountyName": "POLK",
+     "StateAbbr": "IA",
+     "ZipCode": "50313",
+     "FIPSCode": "19153",
+     "Latitude83": "41.632851",
+     "Longitude83": "-93.590956"
+    }
+   ]
+  }
+ },
+ "110000415480": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000415480",
+     "FacilityName": "MORSE RUBBER, LLC",
+     "LocationAddress": "3588 MAIN ST",
+     "SupplementalLocation": null,
+     "CityName": "KEOKUK",
+     "CountyName": "LEE",
+     "StateAbbr": "IA",
+     "ZipCode": "52632",
+     "FIPSCode": "19111",
+     "Latitude83": "40.42443",
+     "Longitude83": "-91.41131"
+    }
+   ]
+  }
+ },
+ "110031261863": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031261863",
+     "FacilityName": "REG MASON CITY",
+     "LocationAddress": "4172 19TH ST SW",
+     "SupplementalLocation": null,
+     "CityName": "MASON CITY",
+     "CountyName": "CERRO GORDO",
+     "StateAbbr": "IA",
+     "ZipCode": "50401-1575",
+     "FIPSCode": "19033",
+     "Latitude83": "43.1324",
+     "Longitude83": "-93.2641"
+    }
+   ]
+  }
+ },
+ "110000415569": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000415569",
+     "FacilityName": "BARTON SOLVENTS INC - BETTENDORF FACILITY",
+     "LocationAddress": "204 36TH ST",
+     "SupplementalLocation": null,
+     "CityName": "BETTENDORF",
+     "CountyName": "SCOTT",
+     "StateAbbr": "IA",
+     "ZipCode": "52722",
+     "FIPSCode": "19163",
+     "Latitude83": "41.52476",
+     "Longitude83": "-90.48279"
+    }
+   ]
+  }
+ },
+ "110000412544": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000412544",
+     "FacilityName": "BECKER UNDERWOOD INC",
+     "LocationAddress": "801 DAYTON AVE.",
+     "SupplementalLocation": null,
+     "CityName": "AMES",
+     "CountyName": "STORY",
+     "StateAbbr": "IA",
+     "ZipCode": "50010",
+     "FIPSCode": "19169",
+     "Latitude83": "42.02914",
+     "Longitude83": "-93.58156"
+    }
+   ]
+  }
+ },
+ "110066861006": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110066861006",
+     "FacilityName": "CFI SALES INC",
+     "LocationAddress": "2041 E. WALNUT STREET",
+     "SupplementalLocation": null,
+     "CityName": "DES MOINES",
+     "CountyName": "POLK COUNTY",
+     "StateAbbr": "IA",
+     "ZipCode": "50317",
+     "FIPSCode": "IA153",
+     "Latitude83": "41.59333",
+     "Longitude83": "-93.58086"
+    }
+   ]
+  }
+ },
+ "110000415373": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000415373",
+     "FacilityName": "RILEY PAINT COMPANY",
+     "LocationAddress": "860 WASHINGTON STREET",
+     "SupplementalLocation": null,
+     "CityName": "BURLINGTON",
+     "CountyName": "DES MOINES",
+     "StateAbbr": "IA",
+     "ZipCode": "52601-5150",
+     "FIPSCode": "19057",
+     "Latitude83": "40.81238",
+     "Longitude83": "-91.11047"
+    }
+   ]
+  }
+ },
+ "110000414579": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000414579",
+     "FacilityName": "INNOCOR FOAM TECHNOLOGIES (FORMERLY ADVANCED URETHANE TECHNOLOGIES)",
+     "LocationAddress": "2459 KERPER BOULEVARD",
+     "SupplementalLocation": null,
+     "CityName": "DUBUQUE",
+     "CountyName": "DUBUQUE",
+     "StateAbbr": "IA",
+     "ZipCode": "52001-2246",
+     "FIPSCode": "19061",
+     "Latitude83": "42.52388",
+     "Longitude83": "-90.65222"
+    }
+   ]
+  }
+ },
+ "110002350278": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002350278",
+     "FacilityName": "CENTRO, INC",
+     "LocationAddress": "950 NORTH BEND DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "NORTH LIBERTY",
+     "CountyName": "JOHNSON",
+     "StateAbbr": "IA",
+     "ZipCode": "52317-9300",
+     "FIPSCode": "19103",
+     "Latitude83": "41.75632",
+     "Longitude83": "-91.60155"
+    }
+   ]
+  }
+ },
+ "110000414427": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000414427",
+     "FacilityName": "HIGHLINE WARREN",
+     "LocationAddress": "2850 RIVER RD",
+     "SupplementalLocation": null,
+     "CityName": "COUNCIL BLUFFS",
+     "CountyName": "POTTAWATTAMIE",
+     "StateAbbr": "IA",
+     "ZipCode": "51501",
+     "FIPSCode": "19155",
+     "Latitude83": "41.233498",
+     "Longitude83": "-95.907433"
+    }
+   ]
+  }
+ },
+ "110000413099": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000413099",
+     "FacilityName": "SIEGWERK USA CO",
+     "LocationAddress": "129 SOUTHEAST 18TH STREET",
+     "SupplementalLocation": null,
+     "CityName": "DES MOINES",
+     "CountyName": "POLK",
+     "StateAbbr": "IA",
+     "ZipCode": "50317-7651",
+     "FIPSCode": "19153",
+     "Latitude83": "41.58759",
+     "Longitude83": "-93.58711"
+    }
+   ]
+  }
+ },
+ "110005750124": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005750124",
+     "FacilityName": "VICTOR PLASTICS INC",
+     "LocationAddress": "2135 B AVENUE",
+     "SupplementalLocation": null,
+     "CityName": "VICTOR",
+     "CountyName": "IOWA",
+     "StateAbbr": "IA",
+     "ZipCode": "52347-8512",
+     "FIPSCode": "19095",
+     "Latitude83": "41.699333",
+     "Longitude83": "-92.281444"
+    }
+   ]
+  }
+ },
+ "110005746620": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005746620",
+     "FacilityName": "CUSTOM-PAK INC",
+     "LocationAddress": "86 16TH AVENUE NORTH",
+     "SupplementalLocation": null,
+     "CityName": "CLINTON",
+     "CountyName": "CLINTON",
+     "StateAbbr": "IA",
+     "ZipCode": "52732-2864",
+     "FIPSCode": "19045",
+     "Latitude83": "41.86222",
+     "Longitude83": "-90.18289"
+    }
+   ]
+  }
+ },
+ "110041995188": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110041995188",
+     "FacilityName": "AMCOR FLEXIBLES NORTH AMERICA, INC.",
+     "LocationAddress": "1500 E AURORA AVE",
+     "SupplementalLocation": null,
+     "CityName": "DES MOINES",
+     "CountyName": "POLK",
+     "StateAbbr": "IA",
+     "ZipCode": "50313",
+     "FIPSCode": "19153",
+     "Latitude83": "41.63772",
+     "Longitude83": "-93.59787"
+    }
+   ]
+  }
+ },
+ "110005752079": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005752079",
+     "FacilityName": "BERRY PLASTICS",
+     "LocationAddress": "19101 KAPP DR",
+     "SupplementalLocation": null,
+     "CityName": "PEOSTA",
+     "CountyName": "DUBUQUE",
+     "StateAbbr": "IA",
+     "ZipCode": "52068",
+     "FIPSCode": "19061",
+     "Latitude83": "42.44548",
+     "Longitude83": "-90.86208"
+    }
+   ]
+  }
+ },
+ "110031326189": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031326189",
+     "FacilityName": "PRINSCO, INC.",
+     "LocationAddress": "850 HAWKEYE RD",
+     "SupplementalLocation": null,
+     "CityName": "JESUP",
+     "CountyName": "BUCHANAN",
+     "StateAbbr": "IA",
+     "ZipCode": "50648",
+     "FIPSCode": "19019",
+     "Latitude83": "42.47267",
+     "Longitude83": "-92.07916"
+    }
+   ]
+  }
+ },
+ "110011273317": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110011273317",
+     "FacilityName": "CRYOTECH DEICING TECHNOLOGY",
+     "LocationAddress": "6103 ORTHO WAY",
+     "SupplementalLocation": null,
+     "CityName": "FORT MADISON",
+     "CountyName": "LEE",
+     "StateAbbr": "IA",
+     "ZipCode": "52627",
+     "FIPSCode": "19111",
+     "Latitude83": "40.600533",
+     "Longitude83": "-91.394852"
+    }
+   ]
+  }
+ },
+ "110001330300": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001330300",
+     "FacilityName": "ACH FOAM TECHNOLOGIES, LLC",
+     "LocationAddress": "809 E 15TH ST",
+     "SupplementalLocation": null,
+     "CityName": "WASHINGTON",
+     "CountyName": "WASHINGTON",
+     "StateAbbr": "IA",
+     "ZipCode": "52353",
+     "FIPSCode": "19183",
+     "Latitude83": "41.31298",
+     "Longitude83": "-91.682"
+    }
+   ]
+  }
+ },
+ "110007390331": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007390331",
+     "FacilityName": "FOAM FABRICATORS, INC",
+     "LocationAddress": "100 FORMAD INDUSTRIES DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "FORT MADISON",
+     "CountyName": "LEE",
+     "StateAbbr": "IA",
+     "ZipCode": "52627-9504",
+     "FIPSCode": "19111",
+     "Latitude83": "40.61958",
+     "Longitude83": "-91.38031"
+    }
+   ]
+  }
+ },
+ "110070207154": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070207154",
+     "FacilityName": "DECKER PLASTICS INC",
+     "LocationAddress": "1104 2ND AVE",
+     "SupplementalLocation": null,
+     "CityName": "COUNCIL BLUFFS",
+     "CountyName": "POTTAWATTAMIE",
+     "StateAbbr": "IA",
+     "ZipCode": "51501",
+     "FIPSCode": "19155",
+     "Latitude83": "41.2597",
+     "Longitude83": "-95.86126"
+    }
+   ]
+  }
+ },
+ "110005732127": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005732127",
+     "FacilityName": "KILIPER CORPORATION",
+     "LocationAddress": "118 ALEXANDER",
+     "SupplementalLocation": null,
+     "CityName": "AMES",
+     "CountyName": "STORY",
+     "StateAbbr": "IA",
+     "ZipCode": "50010",
+     "FIPSCode": "19169",
+     "Latitude83": "42.02186",
+     "Longitude83": "-93.57744"
+    }
+   ]
+  }
+ },
+ "110005776963": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005776963",
+     "FacilityName": "RUBBER DEVELOPMENT INC",
+     "LocationAddress": "701 TECHNOLOGY PL",
+     "SupplementalLocation": null,
+     "CityName": "WAVERLY",
+     "CountyName": "BREMER",
+     "StateAbbr": "IA",
+     "ZipCode": "50677",
+     "FIPSCode": "19017",
+     "Latitude83": "42.70763",
+     "Longitude83": "-92.47926"
+    }
+   ]
+  }
+ }
+}
