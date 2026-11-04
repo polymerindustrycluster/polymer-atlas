@@ -1,0 +1,6 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+QMS-ME-00,Corning Life Sciences,Kennebunk,VERIFIED,new org Corning Incorporated (NY shard) + site; own corning.com careers page: Kennebunk plant makes plastic labware,ORG-004846 / SITE-006015 (C)
+QMS-ME-01,Angstrom Fiber Auburn LLC,Auburn,STILL_UNCERTAIN,settling fact: whether polymer forming/molding still runs at 125 Allied Rd or the site is nonwoven textile only (NAICS 313230/325220; Maine DEP license notes thermoformer and molding line removed) - needs an Angstrom own page or current DEP license naming a polymer process,none
+QMS-ME-02,Northeast Packaging Co (NEPCO),Presque Isle,VERIFIED,new org + site; own nepcobags.com: poly bags on 3 poly presses and 6 wicketers,ORG-004847 / SITE-006016 (C)
+QMS-ME-03,Paradigm Window Solutions,Portland,VERIFIED,new org + site; own paradigmwindows.com: vinyl window manufacturing at Portland HQ; no FRS (no registry link),ORG-004848 / SITE-006017 (C)
+QMS-ME-04,Altium Packaging - Poland Plant,Poland,VERIFIED,site under held ORG-001408; own Altium/CCC Workday posting for 115 Poland Spring Dr plant; no FRS (no registry link),SITE-006018 (B)
