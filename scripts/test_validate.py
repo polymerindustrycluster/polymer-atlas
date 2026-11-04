@@ -107,6 +107,16 @@ class ValidatorMutationTests(unittest.TestCase):
               "source_ref": "https://www.uakron.edu/example-equipment", "observed_date": "2026-11-03",
               "withdrawn_date": "", "created_by": "test", "notes": ""}
 
+    def test_v56_crlf_data_file(self):
+        p = self.data / "relationships.csv"
+        p.write_bytes(p.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
+        self.assert_fails_with("(V-56)")
+
+    def test_v57_non_usps_state_without_country(self):
+        self.edit_rows("organizations_INTL.csv", lambda r: r["hq_country"].strip(),
+                       lambda r: r.update(hq_state="QC", hq_country=""))
+        self.assert_fails_with("(V-57)")
+
     def test_v52_equipment_row_accepted(self):
         self.append_row("equipment.csv", dict(self.EQP_OK))
         code, out = run_validator(self.data)
