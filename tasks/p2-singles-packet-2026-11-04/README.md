@@ -13,15 +13,15 @@ Base: main 9708c3a. No data files are edited. All evidence was fetched on 2026-1
    - CHECK: everything else.
 5. Witness-checked the own sites of the largest CHECK rows, ordered by employees then recency, plus their address-duplicates. That covered 36 rows. The other CHECK rows are STILL_UNCERTAIN, each with a settling fact.
 
-## Counts (rows), pass 3
+## Counts (rows), pass 4
 | Verdict | Rows |
 |---|---|
-| VERIFIED | 85 (73 distinct sites) |
-| REJECT | 37 |
-| STILL_UNCERTAIN | 273 |
+| VERIFIED | 114 (102 distinct sites) |
+| REJECT | 43 |
+| STILL_UNCERTAIN | 238 |
 | ALREADY_HELD | 29 |
 
-Witness-checking went largest employers first, down to roughly 20 employees in the CHECK class. Rows still marked "Not witness-checked yet" carry the settling fact "own-site page naming the plant, or a second federal source".
+Not yet witness-checked: CHECK 0, stale (no federal activity since 2019) 91, small inspection-only 80. Their settling facts are by class.
 
 ## Rulings applied (integrator, 2026-11-04)
 - Hiring-site postings are not witnesses. Latham (UT-378/220), Zenith/Mayzon (DE-243), Cornerstone (NH-180) and Corning (UT-217) moved back to STILL_UNCERTAIN.
@@ -40,3 +40,11 @@ Witness-checking went largest employers first, down to roughly 20 employees in t
 - State-agency pages (NV GOED, Nevada OSHA review board, Utah DAQ) were not counted as federal or own-site witnesses (NV-311, NV-315, UT-230).
 - UT-230 (Danone yogurt plant, captive cup thermoforming) needs a scope ruling.
 - RI-271 RBC Warwick is rejected on its RI SOS dissolution dated 2020-12-17. Cranston is a lead.
+- Pass 4 (remaining CHECK rows):
+  - Two-federal-source VERIFIED rows use two different agencies or programs: DE-014 (EPA TRI + FRS) and UT-143 (FDA + EPA TRI).
+  - NV-120 CPI Trade Dr is VERIFIED by address under PLI, which bought it in 2015; the operator change is flagged.
+  - RI-201 SpillTech: the address comes from the company's own Chemtex acquisition notice.
+  - UT-234 Liberty Tire: tire recycling counted as polymer.
+  - NH-040 Carbon Felt: carbon composites counted.
+  - DE-001 FBK/D&B: street number differs.
+  - Out-of-scope or no-plant rejects use the company's own site as the dated (fetch-date) fact: UT-160 JM Eagle (distribution center), UT-236 Champion (service location), NH-198 Integra (warehouse, per its 2025 environmental report).
