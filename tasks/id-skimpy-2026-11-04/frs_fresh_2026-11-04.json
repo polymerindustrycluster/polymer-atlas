@@ -1,0 +1,116 @@
+{
+ "110000888503": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110000888503",
+     "FacilityName": "SPEARS MANUFACTURING",
+     "LocationAddress": "2152 S LINCOLN AVE",
+     "SupplementalLocation": null,
+     "CityName": "JEROME",
+     "CountyName": "JEROME",
+     "StateAbbr": "ID",
+     "ZipCode": "83338",
+     "FIPSCode": "16053",
+     "Latitude83": "42.700573",
+     "Longitude83": "-114.516372"
+    }
+   ]
+  }
+ },
+ "110012576079": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110012576079",
+     "FacilityName": "FIBERON COMPOSITES",
+     "LocationAddress": "420 W FRANKLIN RD",
+     "SupplementalLocation": null,
+     "CityName": "MERIDIAN",
+     "CountyName": "ADA",
+     "StateAbbr": "ID",
+     "ZipCode": "83642",
+     "FIPSCode": "16001",
+     "Latitude83": "43.60468",
+     "Longitude83": "-116.39904"
+    }
+   ]
+  }
+ },
+ "110005783919": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005783919",
+     "FacilityName": "UNITECH COMPOSITES",
+     "LocationAddress": "10413 N AERO DR",
+     "SupplementalLocation": null,
+     "CityName": "HAYDEN",
+     "CountyName": "KOOTENAI",
+     "StateAbbr": "ID",
+     "ZipCode": "83835",
+     "FIPSCode": "16055",
+     "Latitude83": "47.766998",
+     "Longitude83": "-116.824611"
+    }
+   ]
+  }
+ },
+ "110005792464": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110005792464",
+     "FacilityName": "YELLOWSTONE PLASTICS",
+     "LocationAddress": "3725 W 65TH S",
+     "SupplementalLocation": null,
+     "CityName": "IDAHO FALLS",
+     "CountyName": "BONNEVILLE",
+     "StateAbbr": "ID",
+     "ZipCode": "83402",
+     "FIPSCode": "16019",
+     "Latitude83": "43.437482",
+     "Longitude83": "-112.108642"
+    }
+   ]
+  }
+ },
+ "110038455720": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110038455720",
+     "FacilityName": "IPEX USA",
+     "LocationAddress": "640 S HWY 91",
+     "SupplementalLocation": null,
+     "CityName": "PRESTON",
+     "CountyName": "FRANKLIN",
+     "StateAbbr": "ID",
+     "ZipCode": "83263-1549",
+     "FIPSCode": "16041",
+     "Latitude83": "42.085145",
+     "Longitude83": "-111.869418"
+    }
+   ]
+  }
+ },
+ "110070029334": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070029334",
+     "FacilityName": "FABRI-KAL DBA PACTIV EVERGREEN",
+     "LocationAddress": "2457 WASHINGTON AVE",
+     "SupplementalLocation": null,
+     "CityName": "BURLEY",
+     "CountyName": "CASSIA COUNTY",
+     "StateAbbr": "ID",
+     "ZipCode": "83318",
+     "FIPSCode": "ID031",
+     "Latitude83": "42.52455",
+     "Longitude83": "-113.813555"
+    }
+   ]
+  }
+ }
+}
