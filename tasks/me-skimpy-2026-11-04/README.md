@@ -1,0 +1,2 @@
+# ME skimpy-state wave (2026-11-04)
+Multi-source queue tasks/federal-frame-2026-11-04/QUEUE_MULTISOURCE.csv, state ME: 5 candidates, all considered; the queue is exhausted. `build.py` appended the rows (shared builder; sites without an FRS id get no registry link and use ITA/OSHA as the federal basis), `verdicts.csv` holds the verdicts, and `frs_fresh_2026-11-04.json` is the fresh FRS REST pull. Base: origin/main 8033620. IDs from the owner ledger: ORG-004846..004848, SITE-006015..006018, EVD-022840..022893. Paid API calls: 0.
