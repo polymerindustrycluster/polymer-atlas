@@ -30,7 +30,7 @@ sys.path.insert(0, str(TASKS / "census-gap-people-2026-11-03"))
 from build_integration import append_rows, read  # noqa: E402
 
 DATE, BY = "2026-11-04", "claude-code fl-strong-wave-2026-11-04"
-ORG0, SITE0, EVD0 = 6701, 9051, 74001  # disjoint per-state block
+ORG0, SITE0, EVD0 = 7601, 10901, 112001  # disjoint per-state block
 CA_PROV = {"AB", "BC", "MB", "NB", "NL", "NS", "ON", "PE", "QC", "SK"}
 US_STATES = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split())
 
