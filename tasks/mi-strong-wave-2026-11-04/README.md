@@ -18,11 +18,11 @@ three or more independent federal families record. The clusters were re-deduped 
 **Yield:** 87 of 106 (82%) verified.
 
 ## Applied (`build.py`)
-orgs 66 {'MI': 36, 'US': 30}; sites 85 Counter({'C': 74, 'B': 11}); evidence 1069 (EVD-100001..EVD-101069); holds 2
+orgs 66 {'MI': 36, 'US': 30}; sites 85 Counter({'C': 73, 'B': 12}); evidence 1071 (EVD-100001..EVD-101071); holds 2
 
 - **Tiers:** a site is tier B only with a federal source plus an own-site quote that the integrator re-fetched raw and
   found verbatim. Federal-only sites are tier C, and new organizations are tier C.
-- **Raw check** (`rawcheck.csv`): {'yes': 80, 'no': 3, 'no_own_url': 2, 'unfetchable': 2}.
+- **Raw check** (`rawcheck.csv`): {'yes': 82, 'no': 3, 'no_own_url': 2}.
 - **Sources:** federal facts are cited from the OSHA ITA and OSHA inspection extracts. ECHO/FRS ids sit in `notes` only.
 - **Ids** come from a per-state block above main's maximum on 2026-11-04 (ORG-006267, SITE-008340, EVD-078027) and
   every open PR, set in `build.py` (`ORG0, SITE0, EVD0`). The seven states were built in sequence on one branch.
