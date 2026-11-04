@@ -1,0 +1,15 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+LF-RI-00061,igus Inc.,Rumford,VERIFIED,new org + site; own visitor page 257 Ferris Ave (motion plastics HQ/plant),ORG-004835 / SITE-005999 (C)
+LF-RI-00024,Spectrum Coatings Laboratories,Providence,VERIFIED,new org + site; own site (polymer-binder coatings formulator; ring 2),ORG-004836 / SITE-006000 (C)
+LF-RI-00031,PMI/MPC LLC (fka Polyurethane Molding Industries),Woonsocket,VERIFIED,new site under ORG-000689 Mearthane; own Mearthane contact page,SITE-006001 (B)
+LF-RI-00058,EpoxySet Inc.,Woonsocket,VERIFIED,new org + site; own site (epoxy adhesives; ring 2),ORG-004837 / SITE-006002 (C)
+LF-RI-00025,Iselann-Moss Industries,Cranston,VERIFIED,new org + site; own site (molded PU/silicone parts),ORG-004838 / SITE-006003 (C)
+LF-RI-00051,Composites One LLC,Bristol,VERIFIED,new ring-3 distribution site under ORG-000745; own locations page,SITE-006004 (B)
+LF-RI-00022,General Polymer Inc.,Central Falls,STILL_UNCERTAIN,firearm/engineered coatings maker (ring 2) but its 59 Foundry St building is listed Pending sale with seller to vacate at closing (RILiving MLS 1416075); settling fact = whether operations continue/relocate after the sale,
+LF-RI-00043,FUJIFILM Electronic Materials U.S.A.,North Kingstown,STILL_UNCERTAIN,site ISO certs cover semiconductor process chemicals; polyimides/photoresists listed for the business but not tied to this site; settling fact = whether polymer-binder materials are formulated at 80 Circuit Dr,
+LF-RI-00015,Aspen Aerogels Rhode Island,East Providence,REJECT,silica aerogel insulation blankets (inorganic silica is the functional material); not a polymer process,
+LF-RI-00046,Honeywell Safety Products USA,Smithfield,REJECT,plant permanently closed 2023-11-17 and property sold (WPRI; Providence Journal),
+LF-RI-00005,Technic Inc.,Cranston,REJECT,electroplating chemistry supplier; no polymer formulation,
+LF-RI-00009,Technic Inc. Engineered Powders Division,Woonsocket,REJECT,silver/metal powders and flakes; not polymer,
+LF-RI-00004,John R Hess & Company,Cranston,REJECT,specialty chemical distributor (commodity chemicals; SCHEMA s1 Ring 2 exclusion),
+LF-RI-00049,Symmetrix Composite Tooling,Bristol,REJECT,Bristol operation consolidated to Statesville NC; Bristol assets/facility acquired by Moore Brothers Company June 2025 (moorebro.co) - operator at address changed; Moore Brothers not created (no two-source record under that name),

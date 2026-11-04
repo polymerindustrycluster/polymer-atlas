@@ -1,0 +1,116 @@
+{
+ "110071679783": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071679783",
+     "FacilityName": "IGUS INC.",
+     "LocationAddress": "257 FERRIS AVE",
+     "SupplementalLocation": null,
+     "CityName": "RUMFORD",
+     "CountyName": "PROVIDENCE",
+     "StateAbbr": "RI",
+     "ZipCode": "02916",
+     "FIPSCode": "44007",
+     "Latitude83": "41.852385",
+     "Longitude83": "-71.346411"
+    }
+   ]
+  }
+ },
+ "110002087553": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002087553",
+     "FacilityName": "SPECTRUM COATINGS LABORATORIES, INC.",
+     "LocationAddress": "217 CHAPMAN ST.",
+     "SupplementalLocation": null,
+     "CityName": "PROVIDENCE",
+     "CountyName": "PROVIDENCE",
+     "StateAbbr": "RI",
+     "ZipCode": "02905",
+     "FIPSCode": "44007",
+     "Latitude83": "41.792659",
+     "Longitude83": "-71.400607"
+    }
+   ]
+  }
+ },
+ "110004919474": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004919474",
+     "FacilityName": "PMI MPC LLC",
+     "LocationAddress": "100 FOUNDERS DR",
+     "SupplementalLocation": null,
+     "CityName": "WOONSOCKET",
+     "CountyName": "PROVIDENCE",
+     "StateAbbr": "RI",
+     "ZipCode": "02895",
+     "FIPSCode": "44007",
+     "Latitude83": "41.99102",
+     "Longitude83": "-71.48491"
+    }
+   ]
+  }
+ },
+ "110070398422": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070398422",
+     "FacilityName": "EPOXYSET INC.",
+     "LocationAddress": "718 PARK EAST DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "WOONSOCKET",
+     "CountyName": "PROVIDENCE",
+     "StateAbbr": "RI",
+     "ZipCode": "02895",
+     "FIPSCode": "44007",
+     "Latitude83": "41.99771",
+     "Longitude83": "-71.47464"
+    }
+   ]
+  }
+ },
+ "110002087820": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110002087820",
+     "FacilityName": "ISELANN-MOSS IND., INC.",
+     "LocationAddress": "41 SLATER RD.",
+     "SupplementalLocation": null,
+     "CityName": "CRANSTON",
+     "CountyName": "PROVIDENCE",
+     "StateAbbr": "RI",
+     "ZipCode": "02920",
+     "FIPSCode": "44007",
+     "Latitude83": "41.74732",
+     "Longitude83": "-71.448"
+    }
+   ]
+  }
+ },
+ "110062056607": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110062056607",
+     "FacilityName": "COMPOSITES ONE LLC",
+     "LocationAddress": "4 MINTURN FARM RD",
+     "SupplementalLocation": null,
+     "CityName": "BRISTOL",
+     "CountyName": "BRISTOL",
+     "StateAbbr": "RI",
+     "ZipCode": "02809",
+     "FIPSCode": "44001",
+     "Latitude83": "41.67648",
+     "Longitude83": "-71.25962"
+    }
+   ]
+  }
+ }
+}
