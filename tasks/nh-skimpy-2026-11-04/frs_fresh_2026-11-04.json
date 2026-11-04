@@ -1,0 +1,173 @@
+{
+ "110004092776": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004092776",
+     "FacilityName": "DIACOM CORPORATION",
+     "LocationAddress": "5 HOWE DR",
+     "SupplementalLocation": null,
+     "CityName": "AMHERST",
+     "CountyName": "HILLS",
+     "StateAbbr": "NH",
+     "ZipCode": "03031",
+     "FIPSCode": "NH011",
+     "Latitude83": "42.8035",
+     "Longitude83": "-71.57102"
+    }
+   ]
+  }
+ },
+ "110018932119": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110018932119",
+     "FacilityName": "EPTAM PLASTICS",
+     "LocationAddress": "2 RIVERSIDE BUSINESS PARK",
+     "SupplementalLocation": null,
+     "CityName": "TILTON",
+     "CountyName": "BELKNAP",
+     "StateAbbr": "NH",
+     "ZipCode": "03276",
+     "FIPSCode": "33001",
+     "Latitude83": "43.44851",
+     "Longitude83": "-71.54934"
+    }
+   ]
+  }
+ },
+ "110069517963": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110069517963",
+     "FacilityName": "PELHAM PLASTICS INC",
+     "LocationAddress": "42 DICK TRACY DR",
+     "SupplementalLocation": null,
+     "CityName": "PELHAM",
+     "CountyName": "HILLSBOROUGH",
+     "StateAbbr": "NH",
+     "ZipCode": "03076",
+     "FIPSCode": "33011",
+     "Latitude83": "42.78019",
+     "Longitude83": "-71.35869"
+    }
+   ]
+  }
+ },
+ "110031421101": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110031421101",
+     "FacilityName": "MICROSPEC CORP",
+     "LocationAddress": "327 JAFFREY RD",
+     "SupplementalLocation": null,
+     "CityName": "PETERBOROUGH",
+     "CountyName": "HILLS",
+     "StateAbbr": "NH",
+     "ZipCode": "03458",
+     "FIPSCode": "33011",
+     "Latitude83": "42.84499",
+     "Longitude83": "-71.96547"
+    }
+   ]
+  }
+ },
+ "110064518455": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110064518455",
+     "FacilityName": "PROTAVIC AMERICA INC",
+     "LocationAddress": "8 RICKER AVE",
+     "SupplementalLocation": null,
+     "CityName": "LONDONDERRY",
+     "CountyName": "ROCKINGHAM COUNTY",
+     "StateAbbr": "NH",
+     "ZipCode": "03053",
+     "FIPSCode": "NH015",
+     "Latitude83": "42.92734",
+     "Longitude83": "-71.42582"
+    }
+   ]
+  }
+ },
+ "110004087005": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004087005",
+     "FacilityName": "SCANDIA PLASTICS INC",
+     "LocationAddress": "55 WESTVILLE RD",
+     "SupplementalLocation": "RT 125",
+     "CityName": "PLAISTOW",
+     "CountyName": "ROCKINGHAM",
+     "StateAbbr": "NH",
+     "ZipCode": "03865",
+     "FIPSCode": "33015",
+     "Latitude83": "42.831718",
+     "Longitude83": "-71.103786"
+    }
+   ]
+  }
+ },
+ "110007686030": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007686030",
+     "FacilityName": "MTI POLYEXE INC",
+     "LocationAddress": "50 PINE RD",
+     "SupplementalLocation": null,
+     "CityName": "BRENTWOOD",
+     "CountyName": "ROCKINGHAM",
+     "StateAbbr": "NH",
+     "ZipCode": "03833",
+     "FIPSCode": "33015",
+     "Latitude83": "43.00279",
+     "Longitude83": "-71.01376"
+    }
+   ]
+  }
+ },
+ "110071064151": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110071064151",
+     "FacilityName": "AMERICAN PERFORMANCE POLYMERS",
+     "LocationAddress": "23 GOULD ST",
+     "SupplementalLocation": null,
+     "CityName": "COLEBROOK",
+     "CountyName": "COOS COUNTY",
+     "StateAbbr": "NH",
+     "ZipCode": "03576",
+     "FIPSCode": "NH007",
+     "Latitude83": "44.896692",
+     "Longitude83": "-71.503145"
+    }
+   ]
+  }
+ },
+ "110007684826": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110007684826",
+     "FacilityName": "PLAN TECH INC",
+     "LocationAddress": "7031 SHAKER RD",
+     "SupplementalLocation": null,
+     "CityName": "LOUDON",
+     "CountyName": "MERRIMACK",
+     "StateAbbr": "NH",
+     "ZipCode": "03307",
+     "FIPSCode": "33013",
+     "Latitude83": "43.32616",
+     "Longitude83": "-71.48048"
+    }
+   ]
+  }
+ }
+}

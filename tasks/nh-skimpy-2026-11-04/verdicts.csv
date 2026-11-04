@@ -1,0 +1,12 @@
+cluster_id,candidate,city,verdict,deciding_or_settling_fact,record
+LF-NH-00018,DiaCom Corporation,Amherst,VERIFIED,new org + site; own site (elastomer diaphragm molding),ORG-004827 / SITE-005990 (C)
+LF-NH-00044,EPTAM Plastics Ltd.,Northfield,VERIFIED,new org + site; own locations page (plastics machining HQ); county flagged,ORG-004828 / SITE-005991 (C)
+LF-NH-00062,Pelham Plastics Inc.,Pelham,VERIFIED,new org + site; own site (injection molding),ORG-004829 / SITE-005992 (C)
+LF-NH-00048,Microspec Corporation,Peterborough,VERIFIED,new org + site; own site (medical tubing extrusion),ORG-004830 / SITE-005993 (C)
+LF-NH-00059,Protavic America Inc.,Londonderry,VERIFIED,new org + site; own site (epoxy adhesive/encapsulant formulation; ring 2),ORG-004831 / SITE-005994 (C)
+LF-NH-00014,Scandia Plastics / Pexco,Plaistow,VERIFIED,new site under ORG-002534 Pexco LLC; own Pexco location page,SITE-005995 (B)
+LF-NH-00030,MTI Polyexe Inc.,Brentwood,VERIFIED,new org + site; own site (blown film + silicone release liners),ORG-004832 / SITE-005996 (C)
+LF-NH-00066,American Performance Polymers LLC,Colebrook,VERIFIED,new org + site; own site (nitrile gloves),ORG-004833 / SITE-005997 (C)
+LF-NH-00029,Plan Tech Inc.,Loudon,VERIFIED,new org + site; own site (cast polyurethane),ORG-004834 / SITE-005998 (C)
+LF-NH-00017,D.D. Bean & Sons Co.,Jaffrey,REJECT,book-match manufacturer (NAICS 325998 matches); no polymer process,
+LF-NH-00008,JCI Jones Chemicals (Merrimack),Merrimack,REJECT,water-treatment chemical (chlorine/hypochlorite) packaging and distribution (424690/325998; 1-9 employees); no polymer process,
