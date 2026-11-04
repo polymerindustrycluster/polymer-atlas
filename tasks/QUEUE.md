@@ -8,6 +8,8 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 - [x] `done 2026-10-28` Fold scoping reports (source/count reconciliation, Summit pilot) into docs/ after coordinator synthesis — live as docs/SOURCE_COUNT_RECONCILIATION.md and docs/SUMMIT_COUNTY_PILOT.md
 - [ ] `open` Add tombstone parent record: Chromaflo Technologies → successor Vibrantz (ORG-000007)
 
+- [x] `claimed:grok 2026-11-04` KS skimpy-state wave (tasks/ks-skimpy-2026-11-04), PR on agent/grok/ks-skimpy
+
 ## Phase 1 — PIC-12 core (Rings 1–2)
 - [x] `done 2026-10-28` Summit County: convert the ~99-candidate pilot list to tiered records (staging = tier U/C, promote on verification) — 94 organizations converted (ORG-000011–ORG-000104, incl. OMNOVA tombstone), promoted to repo
 - [x] `done 2026-10-28` Cuyahoga County candidate harvest (same multi-source method as Summit pilot) — 73 candidates; 62 new organizations converted (ORG-000105–ORG-000166) plus sites under seeded/staged parents, promoted to repo
