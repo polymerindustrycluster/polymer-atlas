@@ -279,3 +279,4 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [x] `claimed:grok 2026-11-04` VT skimpy-state wave (tasks/vt-skimpy-2026-11-04), PR on agent/grok/vt-skimpy
 - [x] `claimed:grok 2026-11-04` ND skimpy-state wave (tasks/nd-skimpy-2026-11-04), PR on agent/grok/nd-skimpy
 - [x] `claimed:grok 2026-11-04` NM skimpy-state wave (tasks/nm-skimpy-2026-11-04), PR on agent/grok/nm-skimpy
+- [x] `claimed:grok 2026-11-04` SD skimpy-state wave (tasks/sd-skimpy-2026-11-04), PR on agent/grok/sd-skimpy
