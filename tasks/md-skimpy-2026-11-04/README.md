@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 29 | 21 | 6 | 2 | 9 | 0 / 20 | 25 -> 45 | 19 | 0 |
 
-**ID ranges used (tiled from the ledger, no main rescan):** ORG-004905..ORG-004913, SITE-006121..SITE-006140, EVD-025640..EVD-024305.
+**ID ranges used (tiled from the ledger, no main rescan):** ORG-004905..ORG-004913, SITE-006121..SITE-006140, EVD-026038..EVD-024305.
 
 **STILL_UNCERTAIN (settling fact):**
 - QMS-MD-04 RICCA CHEMICAL CO. (Pocomoke City): Whether Ricca Chemical Pocomoke City makes any polymer products (NAICS 325998 lab reagents).
