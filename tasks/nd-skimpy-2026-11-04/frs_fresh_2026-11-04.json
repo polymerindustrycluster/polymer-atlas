@@ -1,0 +1,135 @@
+{
+ "110039505265": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110039505265",
+     "FacilityName": "COMDEL INNOVATION",
+     "LocationAddress": "2100 15TH ST N",
+     "SupplementalLocation": null,
+     "CityName": "WAHPETON",
+     "CountyName": "RICHLAND",
+     "StateAbbr": "ND",
+     "ZipCode": "58075",
+     "FIPSCode": "38077",
+     "Latitude83": "46.29149",
+     "Longitude83": "-96.62218"
+    }
+   ]
+  }
+ },
+ "110072045020": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110072045020",
+     "FacilityName": "CONTITECH USA",
+     "LocationAddress": "1998 9TH STREET N",
+     "SupplementalLocation": null,
+     "CityName": "WAHPETON",
+     "CountyName": "RICHLAND",
+     "StateAbbr": "ND",
+     "ZipCode": "58075",
+     "FIPSCode": "38077",
+     "Latitude83": "46.28743",
+     "Longitude83": "-96.61178"
+    }
+   ]
+  }
+ },
+ "110022363128": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110022363128",
+     "FacilityName": "GPK PRODUCTS INC",
+     "LocationAddress": "1601 43RD ST N",
+     "SupplementalLocation": null,
+     "CityName": "FARGO",
+     "CountyName": "CASS",
+     "StateAbbr": "ND",
+     "ZipCode": "581022806",
+     "FIPSCode": "38017",
+     "Latitude83": "46.90077",
+     "Longitude83": "-96.85609"
+    }
+   ]
+  }
+ },
+ "110004068810": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110004068810",
+     "FacilityName": "NORTHERN PIPE PRODUCTS - FARGO",
+     "LocationAddress": "1302 39TH ST NORTHWEST",
+     "SupplementalLocation": null,
+     "CityName": "FARGO",
+     "CountyName": "CASS",
+     "StateAbbr": "ND",
+     "ZipCode": "58102-2808",
+     "FIPSCode": "38017",
+     "Latitude83": "46.89242",
+     "Longitude83": "-96.84451"
+    }
+   ]
+  }
+ },
+ "110070813179": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110070813179",
+     "FacilityName": "ELINOR COATINGS",
+     "LocationAddress": "1805 NDSU RESEARCH PARK DRIVE",
+     "SupplementalLocation": null,
+     "CityName": "FARGO",
+     "CountyName": "CASS",
+     "StateAbbr": "ND",
+     "ZipCode": "58102",
+     "FIPSCode": "38017",
+     "Latitude83": "46.90339",
+     "Longitude83": "-96.80659"
+    }
+   ]
+  }
+ },
+ "110001505167": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110001505167",
+     "FacilityName": "HOOD PACKAGING CORPORATION",
+     "LocationAddress": "4955 TENTH AVENUE S",
+     "SupplementalLocation": null,
+     "CityName": "GRAND FORKS",
+     "CountyName": "GRAND FORKS",
+     "StateAbbr": "ND",
+     "ZipCode": "58201-3821",
+     "FIPSCode": "38035",
+     "Latitude83": "47.911953",
+     "Longitude83": "-97.037703"
+    }
+   ]
+  }
+ },
+ "110038859054": {
+  "Results": {
+   "FRSFacility": [
+    {
+     "RegistryId": "110038859054",
+     "FacilityName": "ICE CRYSTAL ENGINEERING",
+     "LocationAddress": "5074 165TH AVENUE SE",
+     "SupplementalLocation": null,
+     "CityName": "KINDRED",
+     "CountyName": "CASS",
+     "StateAbbr": "ND",
+     "ZipCode": "58051",
+     "FIPSCode": "38017",
+     "Latitude83": "46.67821",
+     "Longitude83": "-97.01068"
+    }
+   ]
+  }
+ }
+}
