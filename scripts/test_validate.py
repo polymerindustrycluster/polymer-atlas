@@ -219,6 +219,51 @@ class ValidatorMutationTests(unittest.TestCase):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="0000-0002-1825-009"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
 
+    # [v1.11] V-58 newsroom / LinkedIn columns; V-59 archive links.
+    @staticmethod
+    def _has_site(r):
+        return r["website"].startswith("https://") and r["website"].count("/") <= 3
+
+    def test_v58_newsroom_on_own_domain_accepted(self):
+        def mut(r):
+            r["newsroom_url"] = r["website"].rstrip("/") + "/news/"
+        self.edit_rows("organizations_OH.csv", self._has_site, mut)
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v58_newsroom_off_domain_rejected(self):
+        self.edit_rows("organizations_OH.csv", self._has_site, lambda r: r.update(newsroom_url="https://www.prnewswire.com/news/acme/"))
+        self.assert_fails_with("newsroom_url must be on the website's own domain (V-58)")
+
+    def test_v58_linkedin_shape(self):
+        self.edit_rows("organizations_OH.csv", self._has_site, lambda r: r.update(linkedin_url="https://www.linkedin.com/in/someone/"))
+        self.assert_fails_with("linkedin_url is not a linkedin.com/company/ page URL (V-58)")
+
+    def _an_evidence_id(self):
+        with open(self.data / "evidence_organizations_OH.csv", newline="", encoding="utf-8") as f:
+            return next(csv.DictReader(f))["evidence_id"]
+
+    ARC_OK = {"archive_ref": "https://web.archive.org/web/20261105120000/https://example.com/", "captured_at": "2026-11-05", "created_by": "test"}
+
+    def test_v59_archive_link_accepted(self):
+        self.append_row("archive_links.csv", dict(self.ARC_OK, evidence_id=self._an_evidence_id()))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v59_archive_ref_shape(self):
+        self.append_row("archive_links.csv", dict(self.ARC_OK, evidence_id=self._an_evidence_id(), archive_ref="https://archive.ph/abc"))
+        self.assert_fails_with("archive_ref is not a web.archive.org capture URL (V-59)")
+
+    def test_v59_archive_dangling_and_duplicate(self):
+        eid = self._an_evidence_id()
+        self.append_row("archive_links.csv", dict(self.ARC_OK, evidence_id=eid))
+        self.append_row("archive_links.csv", dict(self.ARC_OK, evidence_id=eid))
+        self.append_row("archive_links.csv", dict(self.ARC_OK, evidence_id="EVD-999998"))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 1, out[-1500:])
+        self.assertIn("one row per evidence id (V-59)", out)
+        self.assertIn("evidence_id 'EVD-999998' does not resolve (V-59)", out)
+
     def test_v54_orcid_rejects_fullwidth_digits(self):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="００００-０００２-１８２５-００９７"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")

@@ -202,6 +202,7 @@ cap_fields, capabilities = load("site_capabilities.csv", new_file=True)
 eqp_fields, equipment = load("equipment.csv", new_file=True)
 eng_fields, engagement = load("people_engagement.csv", new_file=True)
 pil_fields, person_links = load("people_identifiers.csv", new_file=True)
+arc_fields, archive_links = load("archive_links.csv", new_file=True)  # [v1.11] §4.22; not an evidence_*.csv shard
 
 # [v1.7] Code dimension tables (SCHEMA SS4.16-SS4.18). Missing = error:
 # from v1.7 these are canonical files, not optional increments.
@@ -227,6 +228,10 @@ for col in ("last_activity_evidence_date", "liveness_signal", "monitor_watch",
 for col in ("county_source", "site_group_id"):
     if col not in site_fields:
         errors.append(f"sites.csv: missing v1.6 column {col}")
+# V-3c [v1.11]: optional organization columns, present on every row (owner battery B-NEWS, B-LINKEDIN)
+for col in ("newsroom_url", "newsroom_feed_url", "linkedin_url"):
+    if col not in org_fields:
+        errors.append(f"organizations.csv: missing v1.11 column {col}")
 
 # V-3: organizations new columns
 for col in ("year_founded", "stock_ticker", "ownership_type", "certifications",
@@ -1354,6 +1359,44 @@ for i, r in enumerate(person_links, 2):
     if key in _seen_pil:
         errors.append(f"people_identifiers.csv:{i} identifier {iid} already recorded — one row per identifier value (V-54)")
     _seen_pil.add(key)
+# V-58 [v1.11] newsroom and LinkedIn columns (SCHEMA §4.4): URL shape; newsroom_url on the website's own domain.
+def _reg_domain(url):
+    host = (urlparse(url if "://" in url else "https://" + url).hostname or "").lower()
+    parts = host.split(".")
+    return ".".join(parts[-3:]) if len(parts) >= 3 and parts[-2] in ("co", "com") and len(parts[-1]) == 2 else ".".join(parts[-2:])
+RE_LINKEDIN = re.compile(r"https://(www\.)?linkedin\.com/company/[^/?#\s]+/?")
+for i, r in enumerate(orgs, 2):
+    oid = r["org_id"]
+    for col in ("newsroom_url", "newsroom_feed_url"):
+        v = (r.get(col) or "").strip()
+        if v and not re.fullmatch(r"https?://[^\s]+\.[^\s]+", v):
+            errors.append(f"organizations.csv:{i} {oid} {col} is not an http(s) URL (V-58)")
+    nr = (r.get("newsroom_url") or "").strip()
+    if nr:
+        site = (r.get("website") or "").strip()
+        if not site or _reg_domain(nr) != _reg_domain(site):
+            errors.append(f"organizations.csv:{i} {oid} newsroom_url must be on the website's own domain (V-58)")
+    li = (r.get("linkedin_url") or "").strip()
+    if li and not RE_LINKEDIN.fullmatch(li):
+        errors.append(f"organizations.csv:{i} {oid} linkedin_url is not a linkedin.com/company/ page URL (V-58)")
+# V-59 [v1.11] evidence archive links (SCHEMA §4.22)
+ARC_FIELDS = ["evidence_id", "archive_ref", "captured_at", "created_by"]
+if arc_fields != ARC_FIELDS:
+    errors.append("archive_links.csv: header does not match the §4.22 field set (V-59)")
+_seen_arc = set()
+for i, r in enumerate(archive_links, 2):
+    aid = (r.get("evidence_id") or "").strip()
+    if aid not in evd_ids:
+        errors.append(f"archive_links.csv:{i} evidence_id {aid!r} does not resolve (V-59)")
+    if not re.fullmatch(r"https://web\.archive\.org/web/[0-9]{14}/https?://\S+", (r.get("archive_ref") or "").strip()):
+        errors.append(f"archive_links.csv:{i} {aid} archive_ref is not a web.archive.org capture URL (V-59)")
+    if not _is_date((r.get("captured_at") or "").strip()):
+        errors.append(f"archive_links.csv:{i} {aid} captured_at is not a date (V-59)")
+    if not (r.get("created_by") or "").strip():
+        errors.append(f"archive_links.csv:{i} {aid} empty created_by (V-59)")
+    if aid in _seen_arc:
+        errors.append(f"archive_links.csv:{i} {aid} already archived; one row per evidence id (V-59)")
+    _seen_arc.add(aid)
 # V-32/V-33 site fields
 GROUP_MEMBERS = {}
 for i, s in enumerate(sites, 2):
