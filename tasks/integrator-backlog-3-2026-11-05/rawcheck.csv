@@ -1,0 +1,15 @@
+item,raw,route,source_url
+pexco-perfplastics-date,yes,firecrawl,https://www.pexco.com/about-us/
+ametek-hq,yes,firecrawl,https://www.ametek.com/contact-us
+clearlyclean-hq,yes,firecrawl,https://clearlyclean.com/
+ronaldmark-hq,no,none,https://ronaldmark.com/contact-us/
+knf-same,yes,firecrawl,https://knfcorporation.com/contact/
+84fairmount-plant,no,none,https://www.plasticsgroup.com/
+esschem-linwood,yes,firecrawl,https://www.esschem.com/contact-us/
+westfall-lasvegas,no,none,https://westfalltechnik.com/locations/
+johnsonite-date,yes,firecrawl,https://www.floordaily.net/flooring-news/tarkett-announces-acquisition-of-johnsonite/
+bway-date,yes,firecrawl,https://www.prnewswire.com/news-releases/packaging-industry-leaders-join-to-create-new-sustainability-focused-company-mauser-packaging-solutions-300726977.html
+wbwagner-site,yes,firecrawl,http://wbwagner.com/
+hpe-site,yes,jina_reader,https://www.hpeplasticextrusions.com/
+federalprocess-site,yes,firecrawl,https://www.fpcintl.com/
+paddington-site,no,none,https://paddingtongroup.com/
