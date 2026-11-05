@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -1184,6 +1184,18 @@ in every rank.
 | `sources[]` | public citations only | **MUST**, ≥1 per record, every field traceable to a public university/program/lab page |
 | `verification_tier` / `last_verified` | §4.1 | Shortest refresh leash in the layer; a vanished/changed profile downgrades the record to U |
 
+**Evidence and identifiers [v1.10] (owner ruling 2026-11-04).** From
+v1.10 people records are a §4.13 evidence class: a lane that creates
+or changes a people record writes evidence rows (to
+`data/evidence_people.csv`) under the §4.13 lane-brief contract, and
+V-25 restates a person's tier on the claims its rows evidence. The
+`sources[]` citations every existing record already carries are
+grandfathered exactly as the other tables' legacy strings were at
+v1.6 — not backfilled, not re-expressed as rows. A person's registry
+identifiers (ORCID) are recorded in the §4.21 link table, never as a
+column here: this table's field set is pinned, and identity links
+carry their own match provenance.
+
 **Hard constraints (validator-enforced):** no email, phone, or address field exists in
 this class; the PIC CRM is **not an admissible source** — no field, name, or record's
 existence may derive from CRM data, and there is no CRM export/extract/cross-check step
@@ -1467,7 +1479,7 @@ both are seeded, each noting the other. When in doubt, don't merge.
   state them as "N organizations with harvested participation at
   \<event\> \<year\>", never as coverage.
 
-### 4.13 Evidence records **[v1.6]** (`data/evidence_*.csv`, sharded at **[v1.8]**)
+### 4.13 Evidence records **[v1.6]** (`data/evidence_*.csv`, sharded at **[v1.8]**, people class at **[v1.10]**)
 
 Until this revision, a record's evidence lived in its free-text
 `sources[]` string and its verdict file in staging: adequate for a
@@ -1478,16 +1490,17 @@ Atlas a per-claim evidence layer: one row per (record, claim, source)
 observation, so that *which source supports which fact, at what
 strength, as of when* is data, not prose.
 
-The table is an **evidence layer over** the four record tables, in the
-same posture as §4.12's events layer: an evidence row never makes a
+The table is an **evidence layer over** the record tables — four at
+v1.6, five from **[v1.10]**, when people records (§4.9) were admitted —
+in the same posture as §4.12's events layer: an evidence row never makes a
 record in-scope, never creates a record, and never by itself raises a
 verification tier. It records what a lane actually observed.
 
 | Field | Type | v1.6? | Notes |
 |---|---|---|---|
 | `evidence_id` | string, immutable, `EVD-######` | **MUST** | Never reused; allocated at integration only, next-free at application (first allocation `EVD-000001`). Evidence rows are never deleted; a superseded or refuted observation is answered by a later row (typically `tier_effect=contradicts`, or a fresher `supports_*` row), never by editing the earlier row away |
-| `record_table` | enum | **MUST** | `organizations` \| `sites` \| `ecosystem` \| `programs` — the table the evidenced record lives in. People records (§4.9) are **not** an evidence-table class at this revision: their every field already traces to a single cited public page per record, and the class is deliberately out of scope here (see the open questions in the lane file) |
-| `record_id` | FK → the table named in `record_table` | **MUST** | `ORG-######` for organizations and ecosystem rows (ecosystem records carry org_ids), `SITE-######` for sites, `PROG-######` for programs. Validator V-22 resolves the FK against the named table only |
+| `record_table` | enum | **MUST** | `organizations` \| `sites` \| `ecosystem` \| `programs` \| `people` **[v1.10]** — the table the evidenced record lives in. People records (§4.9) were deliberately out of scope at v1.6 — their every field already traces to a single cited public page per record; the owner admitted the class at **[v1.10]** (ruling 2026-11-04) so the two §4.9 gates become mechanically restatable claims (V-25) instead of prose in `sources[]` |
+| `record_id` | FK → the table named in `record_table` | **MUST** | `ORG-######` for organizations and ecosystem rows (ecosystem records carry org_ids), `SITE-######` for sites, `PROG-######` for programs, `PERSON-######` for people **[v1.10]**. Validator V-22 resolves the FK against the named table only |
 | `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection, Form 5500 active participants) or `own_site` only; ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
 rows: a stated SIC assignment is witnessed by a `code` evidence
 row whose `claim_detail` names the assignment ("sic 3089 stated,
@@ -1501,6 +1514,22 @@ them. |
 | `tier_effect` | enum | **MUST** | `supports_A` \| `supports_B` \| `supports_C` \| `contradicts` — how this row bears on the record's tier **for this claim**. The class-to-effect ceiling is §4.1's ladder restated per class: `own_site` and `government_filing` may carry `supports_A`; `registry` and `directory` may carry at most `supports_B` (a registry/directory *address* alone caps at `supports_C`, per the settled seam-2 ruling); `press` and `harvest_roster` may carry at most `supports_B` and corroborate rather than carry (a roster row is, per §4.12, A-equivalent *for the fact of participation* — as an evidence row that fact is a `liveness`/`activity` claim, and its effect is still capped at `supports_B` here, because participation attests the named organization, not its plant or scope); `platform_category` may carry at most `supports_C`, and for a `scope` claim carries **no** supporting effect at all (the PMIR rule, below). `contradicts` is class-free: any class may contradict, and an `own_site` contradiction is the strongest refutation the system records |
 | `created_by` | string | **MUST** | The lane / researcher ID that produced the observation, in the `created_by` grammar of the record tables |
 | `notes` | string | Nice | One line: the observation's posture ("roster still filling at harvest"; "fetch via search-index retrieval of the exact URL; direct fetch HTTP 000 — availability noted, content dated 2024-11-14"). Licensed-source discovery provenance, where it exists, lives **here and only here** (see §5 interplay, below) |
+
+**Claim types at people grain [v1.10].** The claim vocabulary is
+shared; four of its values have people-grain referents. `existence` =
+the person is the person claimed, styled in a §4.9 Gate-A role on the
+institution's own page (identity and styling are one observation at
+this grain). `scope` = the Gate-B witness: the institution's own
+pages state polymer research for this person. `parent` = the
+`institution_org_id` affiliation linkage the row asserts. `liveness`
+at people grain is carried by the `existence` row's currency — a
+fresh styling observation on the live page is the liveness witness —
+and is not separately claimed. `address` and `code` have no
+people-grain referent (the class carries neither addresses nor codes
+by design, §4.9); a person's ORCID is an identifier, not a code — it
+lives in §4.21's link table, and an `existence` row whose
+`claim_detail` names the iD may witness the identity claim it
+supports.
 
 **Backbone fields deliberately not carried, with reasons.** The record
 tables' `sources[]`, `verification_tier`, and `last_verified` are not
@@ -1525,7 +1554,12 @@ mirror the record shards of Appendix C: `data/evidence_sites_<SHARD>.csv`
 for site records and `data/evidence_organizations_<SHARD>.csv` for
 organization records (the shard suffix is the record's home shard),
 plus single files `data/evidence_programs.csv` and
-`data/evidence_ecosystem.csv` for those tables. A new evidence row is
+`data/evidence_ecosystem.csv` for those tables. People records ride a
+single file `data/evidence_people.csv` **[v1.10]**, on the same
+precedent: `people.csv` is a single unsharded table, so its evidence
+is a single file. That file is born empty; no legacy `sources[]`
+string is backfilled into it (the migration posture below applies
+unchanged). A new evidence row is
 written to the shard of its record's home file. All readers (validator,
 SQLite builder, CLI/MCP tooling, integration builder) read the union of
 `data/evidence_*.csv`; evidence IDs remain globally unique across the
@@ -1598,6 +1632,14 @@ the claims a record may not ship unverified:
   it), `code` where a `cip_code` is set or changed (with its
   `cip_source_type` — and per §4.11, a CIP attribution is data, never
   the `scope` claim's witness).
+- **people [v1.10]:** `existence` (the person is the person claimed,
+  styled in a §4.9 Gate-A role on the institution's own page), `scope`
+  (Gate B: polymer research stated for this person on the
+  institution's own pages), `parent` (the `institution_org_id`
+  affiliation linkage) — and a verdict asserting the role is still
+  current rests on an `existence` observation dated to that check
+  (liveness at this grain rides the existence row, per the
+  people-grain note above).
 
 One row per (claim, witness): a verdict resting on an own site plus a
 Form 5500 writes two rows for the claims each witness actually bears
@@ -2211,6 +2253,45 @@ states.
   to look for the statement on the institution's own page. It is never the source.
 - Removal on request is honored at the next pass, as for §4.9.
 
+### 4.21 Person identifier link table **[v1.10]** (`data/people_identifiers.csv`)
+
+Registry identity for people is recorded **once**, in its own table,
+on the §4.8 pattern — instead of as a column on `people.csv` (whose
+field set is pinned, §4.9) or as rows in `registry_links.csv` (whose
+grain is the organization: its `org_id` key resolves to organizations
+∪ ecosystem, and a person is neither). One row per (person, identifier
+type, identifier); multi-value by design — identifiers are never
+collapsed to one. The table is born empty at this revision: rows are
+minted by lanes that stand in front of the identifier, never
+speculatively and never in bulk from a name match.
+
+| Field | Type | Notes |
+|---|---|---|
+| `person_id` | FK → people | **MUST** |
+| `identifier_type` | enum | `ORCID` (extensible only by dated revision) |
+| `identifier_id` | string | Verbatim as the registry carries it (ORCID iDs with their hyphens; the final character may be the `X` check character) |
+| `match_basis` | string | How the match was established, e.g. `orcid_on_institution_page`, `orcid_record_employment_match` — a guarded no-hit is never recorded as a negative fact |
+| `as_of` | date | The date the registry record was retrieved/verified |
+
+**ORCID [v1.10] (owner ruling 2026-11-04).** The ORCID iD is the
+identifier a researcher publishes for attribution; it is a public
+professional identifier, not contact data, and §4.9's privacy
+discipline is unchanged (removal on request is honored at the next
+pass, as for the people record itself). A row is minted **only on an
+exact iD match**: the iD itself — published on the institution page
+or profile §4.9 already cites, or carried by an ORCID public record
+whose name and current employment match the record's
+`institution_org_id` — is the match, recorded in `match_basis` in the
+established style. A name resemblance, however strong, never mints a
+row; name matching is how a candidate is *found*, the shared iD is
+how it is *linked* — the §4.8 guarded-no-hit doctrine, at person
+grain. An ORCID iD identifies exactly one person: the table carries
+**one row per identifier value**, and a second people record claiming
+the same iD is a dedupe alarm (the records are presumptively the same
+person), resolved as a record merge — never as a second link row.
+Validator V-54 enforces the field set, the FK, the enum, the ORCID
+shape, and the one-row-per-value rule.
+
 ## 5. Entity Resolution Rules — Dedupe Identically
 
 **Goal:** Three researchers given the same firm reach the same Parent/Site split, the same canonical name, and the same merge decision. When in doubt, **do not merge** — link with `related_org_ids[]` + note and flag for review. A false merge destroys data; a false split is cheap to fix.
@@ -2303,7 +2384,7 @@ files** in `data/`. Every other table stays a **single file**.
 |---|---|---|
 | organizations | **sharded by HQ state** | `data/organizations_<TAG>.csv` |
 | sites | **sharded by physical state** (non-US → `INTL`) | `data/sites_<TAG>.csv` |
-| ecosystem, programs, people, members, registry_links, inclusion_log | single | `data/<table>.csv` |
+| ecosystem, programs, people, people_identifiers **[v1.10]**, members, registry_links, inclusion_log | single | `data/<table>.csv` |
 | events, event_participation (v1.5); evidence, relationships, site_capabilities (v1.6) | single | `data/<table>.csv` |
 
 `<TAG>` is a USPS state code (`OH`, `PA`, … including `DC` and the
@@ -2327,7 +2408,8 @@ file is re-examined for partitioning when it passes **~1 MB or ~2,500
 rows**, or when a natural partition key appears. Named watch items:
 `event_participation.csv` (a single NPE-scale roster is ~1,700 lines;
 revisit at ~5,000 rows) and the evidence table (born empty at v1.6 as `evidence.csv`;
-partitioned into `evidence_*.csv` record shards at v1.8 — see §4.13).
+partitioned into `evidence_*.csv` record shards at v1.8, with people
+on the single `evidence_people.csv` at v1.10 — see §4.13).
 
 ## 2. The placement function (deterministic, binding)
 
@@ -2885,3 +2967,14 @@ unchanged.
   `own_site` only, with a ceiling of `supports_B`. It is not a must-have claim. The validator's V-22 enforces it, and
   `docs/schema/vocab.json` is regenerated. Backfill: one `size_band` evidence row for each of the 1,996 bands applied
   on 2026-11-02 (`tasks/size-band-evidence-2026-11-03/`). No record row changes.
+- **v1.10 — 2026-11-04 (owner ruling 2026-11-04).** People records join
+  the §4.13 evidence classes: `record_table` gains `people`, rows ride
+  the single `data/evidence_people.csv` (born empty; §4.9's existing
+  `sources[]` gate citations are grandfathered, never backfilled), and
+  V-22/V-25 extend to the class mechanically (people must-have claims:
+  `existence`, `scope`, `parent`). New §4.21 person identifier link
+  table (`data/people_identifiers.csv`, born empty) carries ORCID on
+  the §4.8 pattern — exact-iD minting only, one row per identifier
+  value — enforced by new validator V-54. `docs/schema/vocab.json`
+  gains `EVIDENCE_TABLES` and `PERSON_ID_TYPES`. No existing row in any
+  table changes.

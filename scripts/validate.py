@@ -23,6 +23,10 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
 - [v1.3] programs.csv discipline (PROG ids, FK, type/credential/level/CIP/
   completions) and institution rollups recomputed and compared; program
   grain in ecosystem.csv is an error; people.program_org_id → programs.csv
+- [v1.10] evidence record_table gains people (§4.13): TABLE_IDS/TABLE_TIER/
+  MUST_HAVE extended; data/evidence_people.csv joins the evidence union
+- [v1.10] people_identifiers.csv (§4.21): person FK, identifier-type enum,
+  ORCID shape, one row per identifier value (V-54)
 """
 import csv, json, os, re, sys
 from datetime import datetime
@@ -197,6 +201,7 @@ rel_fields, relationships = load("relationships.csv", new_file=True)
 cap_fields, capabilities = load("site_capabilities.csv", new_file=True)
 eqp_fields, equipment = load("equipment.csv", new_file=True)
 eng_fields, engagement = load("people_engagement.csv", new_file=True)
+pil_fields, person_links = load("people_identifiers.csv", new_file=True)
 
 # [v1.7] Code dimension tables (SCHEMA SS4.16-SS4.18). Missing = error:
 # from v1.7 these are canonical files, not optional increments.
@@ -937,6 +942,8 @@ REL_FIELDS = ["relationship_id", "from_org_id", "relationship_type", "to_org_id"
 CAP_FIELDS = ["capability_id", "site_id", "org_id", "capability_type", "term",
               "provenance", "source_ref", "observed_date", "withdrawn_date",
               "created_by", "notes"]
+EVIDENCE_TABLES = ["organizations", "sites", "ecosystem", "programs",
+                   "people"]  # [v1.10] people admitted (owner ruling 2026-11-04)
 CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness", "code", "size_band"}
 SIZE_BAND_CLASSES = {"government_filing", "own_site"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B
 SOURCE_CLASSES = {"own_site", "government_filing", "registry", "directory", "press",
@@ -985,6 +992,10 @@ PEOPLE_ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "int
                      "testing_characterization_access", "lab_facility_access", "licensing_tech_transfer",
                      "training_seats_open_enrollment", "customized_employer_training", "consulting"}
 assert PEOPLE_ENGAGEMENT == ENGAGEMENT | {"consulting"}  # SS4.20: the SS4.11 set plus consulting
+# [v1.10, owner ruling 2026-11-04] Person identifier links (SCHEMA SS4.21):
+# registry identity for people, in its own table on the SS4.8 pattern.
+PIL_FIELDS = ["person_id", "identifier_type", "identifier_id", "match_basis", "as_of"]
+PERSON_ID_TYPES = {"ORCID"}  # extensible only by dated schema revision (SS4.21)
 LIVENESS_SIGNALS = {"operating_evidence", "closure_signature", "sos_confirmed_closed",
                     "sos_active"}
 QUAL_ORDER = ["public_parent", "tri_reporter", "employees_250plus", "national_footprint"]
@@ -1001,16 +1012,21 @@ def _is_date(s):
 TABLE_IDS = {"organizations": {r["org_id"] for r in orgs},
              "sites": {r["site_id"] for r in sites},
              "ecosystem": {r["org_id"] for r in eco},
-             "programs": {r["program_id"] for r in programs}}
+             "programs": {r["program_id"] for r in programs},
+             "people": {r["person_id"] for r in people}}
 TABLE_TIER = {}
 for _t, _rows, _idc in (("organizations", orgs, "org_id"), ("sites", sites, "site_id"),
-                        ("ecosystem", eco, "org_id"), ("programs", programs, "program_id")):
+                        ("ecosystem", eco, "org_id"), ("programs", programs, "program_id"),
+                        ("people", people, "person_id")):
     for _r in _rows:
         TABLE_TIER[(_t, _r[_idc])] = (_r.get("verification_tier") or "").strip()
 MUST_HAVE = {"organizations": {"existence", "address", "scope", "code"},
              "sites": {"existence", "address", "scope", "code", "parent"},
              "ecosystem": {"existence", "address", "scope"},
-             "programs": {"existence", "scope"}}
+             "programs": {"existence", "scope"},
+             # [v1.10] SS4.13 at people grain: Gate A identity/styling,
+             # Gate B scope, and the institution affiliation linkage.
+             "people": {"existence", "scope", "parent"}}
 STATUS_BY_ID = {r["org_id"]: (r.get("status") or "").strip() for r in orgs}
 SITE_STATUS = {r["site_id"]: (r.get("operating_status") or "").strip() for r in sites}
 def must_have_for(table, rid):
@@ -1037,7 +1053,7 @@ if evidence or True:
             errors.append(f"evidence.csv:{i} {eid} duplicate evidence_id (V-22)")
         evd_ids.add(eid)
         rt = r["record_table"]
-        if rt not in TABLE_IDS:
+        if rt not in EVIDENCE_TABLES:
             errors.append(f"evidence.csv:{i} {eid} bad record_table (V-22)")
         elif r["record_id"] not in TABLE_IDS[rt]:
             errors.append(f"evidence.csv:{i} {eid} record_id does not resolve in {rt} (V-22)")
@@ -1053,6 +1069,13 @@ if evidence or True:
             errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
         if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
             errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing/own_site and caps at supports_B (V-22)")
+        if rt == "people":
+            # [v1.10] §4.13 people grain: existence and scope are observations on the institution's own page;
+            # address, code and size_band have no people-grain referent. (Cross-family review of #125, 2026-11-05.)
+            if r["claim_type"] in ("address", "code", "size_band"):
+                errors.append(f"evidence.csv:{i} {eid} claim_type {r['claim_type']} has no people-grain referent (V-22)")
+            elif r["claim_type"] in ("existence", "scope") and sc != "own_site":
+                errors.append(f"evidence.csv:{i} {eid} people {r['claim_type']} must be observed on the institution's own page (own_site) (V-22)")
         if sc in ("registry", "directory") and r["claim_type"] == "address" and te == "supports_B":
             errors.append(f"evidence.csv:{i} {eid} registry/directory address alone caps at supports_C (V-22)")
         if not (r["source_ref"] or "").strip() or not (r["claim_detail"] or "").strip():
@@ -1304,6 +1327,33 @@ for i, r in enumerate(engagement, 2):
     if tup in _eng_tuples:
         errors.append(f"people_engagement.csv:{i} {gid} duplicate (person_id, mode) (V-53)")
     _eng_tuples.add(tup)
+# V-54 [v1.10] people identifiers: registry identity for people (SCHEMA SS4.21).
+# On the SS4.8 pattern: the identifier itself is the match, and the table
+# carries one row per identifier value — a second person record claiming the
+# same iD is a dedupe alarm, resolved as a record merge, never a second row.
+if pil_fields != PIL_FIELDS:
+    errors.append("people_identifiers.csv: header does not match the §4.21 field set (V-54)")
+_seen_pil = set()
+for i, r in enumerate(person_links, 2):
+    pid = (r.get("person_id") or "").strip()
+    itype = (r.get("identifier_type") or "").strip()
+    iid = (r.get("identifier_id") or "").strip()
+    if pid not in person_ids:
+        errors.append(f"people_identifiers.csv:{i} person_id {pid!r} does not resolve (V-54)")
+    if itype not in PERSON_ID_TYPES:
+        errors.append(f"people_identifiers.csv:{i} identifier_type {itype!r} not in §4.21 enum (V-54)")
+    if not iid:
+        errors.append(f"people_identifiers.csv:{i} empty identifier_id (V-54)")
+    if itype == "ORCID" and iid and not re.fullmatch(r"[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]", iid):  # ASCII only: \d also matches full-width digits
+        errors.append(f"people_identifiers.csv:{i} ORCID {iid!r} is not a 4x4 ORCID iD (V-54)")
+    if not (r.get("match_basis") or "").strip():
+        errors.append(f"people_identifiers.csv:{i} link without match_basis (V-54)")
+    if not _is_date((r.get("as_of") or "").strip()):
+        errors.append(f"people_identifiers.csv:{i} as_of is not a date (V-54)")
+    key = (itype, iid)
+    if key in _seen_pil:
+        errors.append(f"people_identifiers.csv:{i} identifier {iid} already recorded — one row per identifier value (V-54)")
+    _seen_pil.add(key)
 # V-32/V-33 site fields
 GROUP_MEMBERS = {}
 for i, s in enumerate(sites, 2):
@@ -1541,7 +1591,7 @@ print(f"\n{len(orgs)} organizations, {len(sites)} sites, {len(eco)} ecosystem ro
       f"{len(links)} registry links, {len(members)} member rows, {len(people)} people rows, "
       f"{len(programs)} program rows, {len(events)} event series, "
       f"{len(evidence)} evidence rows, {len(relationships)} relationship rows, "
-      f"{len(capabilities)} capability rows, {len(equipment)} equipment rows, {len(engagement)} engagement rows, "
+      f"{len(capabilities)} capability rows, {len(equipment)} equipment rows, {len(engagement)} engagement rows, {len(person_links)} person-identifier links, "
       f"{len(participation)} participation rows, "
       f"{len(ref_codes)} ref_codes, {len(ref_code_map)} code-map rows, "
       f"{len(code_assignments)} code assignments checked.")

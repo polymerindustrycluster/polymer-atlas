@@ -167,6 +167,71 @@ class ValidatorMutationTests(unittest.TestCase):
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-1500:])
 
+    # [v1.10] people as a §4.13 evidence class: rows ride evidence_people.csv.
+    EVD_PEOPLE_OK = {"evidence_id": "EVD-999999", "record_table": "people", "record_id": "PERSON-000001",
+                     "claim_type": "existence", "claim_detail": "styled professor on the institution's page",
+                     "source_class": "own_site", "source_ref": "https://www.bgsu.edu/example",
+                     "observed_date": "2026-11-04", "tier_effect": "supports_A",
+                     "created_by": "test", "notes": ""}
+
+    def test_v110_people_evidence_row_accepted(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v110_people_evidence_dangling_person(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, record_id="PERSON-999999"))
+        self.assert_fails_with("record_id does not resolve in people (V-22)")
+
+    def test_v110_evidence_bad_table_still_rejected(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, record_table="persons"))
+        self.assert_fails_with("bad record_table (V-22)")
+
+    def test_v110_people_scope_restates_tier(self):
+        # PERSON-000001 is tier A; a must-have scope claim supported only at
+        # C strength caps the record (V-25), at people grain as elsewhere.
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="scope",
+                        claim_detail="polymer research stated for this person",
+                        source_class="own_site", source_ref="https://www.bgsu.edu/example",
+                        tier_effect="supports_C"))
+        self.assert_fails_with("must-have claim scope supported only at C strength but tier is A (V-25)")
+
+    def test_v110_people_scope_needs_own_site(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="scope",
+                        source_class="press", source_ref="https://example.com/news", tier_effect="supports_B"))
+        self.assert_fails_with("people scope must be observed on the institution's own page (own_site) (V-22)")
+
+    def test_v110_people_address_has_no_referent(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="address"))
+        self.assert_fails_with("claim_type address has no people-grain referent (V-22)")
+
+    # [v1.10] §4.21 person identifier links (ORCID), enforced by V-54.
+    PIL_OK = {"person_id": "PERSON-000001", "identifier_type": "ORCID",
+              "identifier_id": "0000-0002-1825-0097", "match_basis": "orcid_on_institution_page",
+              "as_of": "2026-11-04"}
+
+    def test_v54_orcid_link_accepted(self):
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v54_orcid_shape(self):
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="0000-0002-1825-009"))
+        self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
+
+    def test_v54_orcid_rejects_fullwidth_digits(self):
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="００００-０００２-１８２５-００９７"))
+        self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
+
+    def test_v54_orcid_one_row_per_value(self):
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK))
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK, person_id="PERSON-000002"))
+        self.assert_fails_with("one row per identifier value (V-54)")
+
+    def test_v54_dangling_person(self):
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK, person_id="PERSON-999999"))
+        self.assert_fails_with("does not resolve (V-54)")
+
     def test_pristine_tree_passes(self):
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-2000:])

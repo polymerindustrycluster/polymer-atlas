@@ -14,6 +14,7 @@ TABLES = {
           "relationships": "relationships.csv",
           "site_capabilities": "site_capabilities.csv",
           "equipment": "equipment.csv", "people_engagement": "people_engagement.csv",
+          "people_identifiers": "people_identifiers.csv",
           "ref_codes": "ref_codes.csv", "ref_code_map": "ref_code_map.csv",
           "code_assignments": "code_assignments.csv"}
 
