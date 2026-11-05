@@ -31,21 +31,33 @@ Jina Reader, and matched as a word sequence (`rawcheck.csv`).
 ## Applied (`build.py`, decisions written per organization; `journal.txt`)
 | Change | Organizations |
 |-|-:|
-| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 7 |
-| `ultimate_parent_name` set or made precise (buyer not held) | 5 |
+| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 2 |
+| `ultimate_parent_name` made precise (buyer not held) | 1 |
 | `status=acquired` with `status_date` and `successor_org_id`, with its generated `successor_of` edge | 1 |
-| `website` moved to the business's current own site (the old domain redirected, or the field was empty) | 8 |
+| `website` moved to the business's current own site (the old domain redirected) | 6 |
 | `trade_names` gains a new brand (legal name unchanged) | 1 |
 | evidence-only: the parent was already recorded | 2 |
 
-- Parents: Firestone Polymers → Bridgestone Americas; Corr Tech → Indelco; Specialty Products → PPG (through VersaFlex);
-  Foster → GEON; Sylvin → Mexichem Specialty Compounds; Composite Advantage → Creative Composites Group; Integrated
-  Bagging Systems → Inteplast Group.
+- Parents: Corr Tech → Indelco ("Corr-Tech, now a division of Indelco"); Foster → GEON (completed acquisition).
 - Acquisition: Charter Plastics, Titusville, PA → WL Plastics (asset purchase, 2021-12-31). The record is kept as a
   tombstone. Its sites stay linked historically until the successor's site linkage is reviewed.
-- 23 evidence rows (`parent` or `existence`), each carrying the raw-verified lane quote. The ceiling is `supports_B` for
-  press and LinkedIn, and `supports_A` for own sites and the parties' own releases.
+- 12 evidence rows (`parent` or `existence`), each carrying the raw-verified lane quote. The ceiling is `supports_B` for
+  press, and `supports_A` for own sites and the parties' own releases.
 - 3D Dental's old domain now belongs to an unrelated firm. Its website moves to `3d-dent.com`.
+
+## Review
+Two other model families, grok and codex, each tried to refute the 23 changes of the first build (deep effort,
+read-only). Grok flagged 13 and codex 11, mostly as OVERREACH: the quote did not carry the specific link.
+- **Held after review, 11:**
+  - 5 parent links. Firestone Polymers: a pilot-center release. Specialty Products: a brand bundle. Sylvin: subsidiary
+    vs absorbed is open. Composite Advantage: the buyer named is Hill & Smith. Integrated Bagging: a division transfer.
+  - 4 ultimate parents. Tubro and OEM/Miller may be at the wrong level. SPR and Martin Wheel were already right.
+  - 2 websites. GMR's new domain may be Principal Plastics' site. Packaging Products' quote is a generic slogan.
+  Each reason is in `build.py` (`COUNCIL_HELD`) and `journal.txt`.
+- **Kept against a flag:** Foster → GEON, and the dlhBOWLES and Berry evidence rows. `parent_org_id` records ownership,
+  and each quote is a completed acquisition by the named parent. Both reviewers read "parent" as "still operates under
+  its own name". That came from the integrator's own prompt wording, not the schema. Harwood → corelinerollers.com is
+  kept too: the page is the business's current combined brand.
 
 ## Held (not applied)
 - **Duplicates, for the dedupe pass:** Performance Plastics → Pexco, which is held twice (ORG-002534, ORG-000484).

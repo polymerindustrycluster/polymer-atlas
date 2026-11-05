@@ -23,12 +23,26 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 DATE, BY = "2026-11-04", "claude-code ownership-status-2026-11-04"
-PARENT = {"ORG-001716": "ORG-000011", "ORG-003596": "ORG-000149", "ORG-004956": "ORG-000088", "ORG-004990": "ORG-000010",
-          "ORG-002275": "ORG-004294", "ORG-001790": "ORG-000768", "ORG-004903": "ORG-003476"}
-ULT = {"ORG-002420": "Polymershapes", "ORG-001381": "IKO Group", "ORG-001859": "ILPEA Industries",
-       "ORG-001525": "Medtronic plc", "ORG-001847": "Kenda Rubber Industrial Co., Ltd."}
+PARENT = {"ORG-003596": "ORG-000149", "ORG-004990": "ORG-000010"}
+ULT = {"ORG-001381": "IKO Group"}
 ACQ = {"ORG-002674": ("ORG-003282", "2021-12-31")}
-WEB = {"ORG-001843", "ORG-000043", "ORG-000074", "ORG-003181", "ORG-000063", "ORG-000126", "ORG-000175", "ORG-000354", "ORG-001730"}
+WEB = {"ORG-001843", "ORG-000043", "ORG-000074", "ORG-000063", "ORG-000126", "ORG-000175", "ORG-001730"}
+# Cross-family refute (grok + codex, deep, 2026-11-04) of the first build: rows whose quote does not carry the
+# specific change are held. `parent_org_id` records ownership, so a completed-acquisition quote supports it (Foster,
+# dlhBOWLES, Berry); a facility, brand-bundle or division-transfer quote does not.
+COUNCIL_HELD = {
+    "ORG-001716": "council: the quote announces a Bridgestone pilot center; it does not state that Bridgestone Americas owns Firestone Polymers, LLC",
+    "ORG-004956": "council: the quote lists Specialty Products in PPG's VersaFlex brand bundle; it does not state the ownership link",
+    "ORG-002275": "council: the quote names Mexichem as buyer; Sylvin now appears as an Alphagary heritage brand, so subsidiary vs absorbed and the owning entity are open",
+    "ORG-001790": "council: the quote names Hill & Smith as buyer, not Creative Composites Group",
+    "ORG-004903": "council: the quote is about an operation moved into Inteplast's IBS division, not this record's ownership",
+    "ORG-002420": "council: Polymershapes may itself be owned by another firm, so it may not be the ultimate parent; source is a LinkedIn post",
+    "ORG-001859": "council: the quote names Holm as buyer; ILPEA Industries is a US subsidiary of the ILPEA group, not the ultimate parent",
+    "ORG-001525": "council: already 'Medtronic, Inc.'; the quote does not name the plc, so the change is churn",
+    "ORG-001847": "council: already 'Kenda'; the quote does not name the listed company, so the change is churn",
+    "ORG-000354": "council: principalplasticsinc.com describes GMR in the third person; it may be Principal Plastics' site, not GMR's",
+    "ORG-003181": "council: the packprod.com quote is a generic slogan that names neither the company nor Plymouth",
+}
 TRADE = {"ORG-000175": "Coreline Rollers"}
 CONFIRM = {"ORG-001452", "ORG-002544"}
 HELD = {
@@ -173,7 +187,7 @@ def main():
         if not ready(oid): continue
         evid(oid, "parent", f"parent {org[oid]['parent_org_id']} ({org[org[oid]['parent_org_id']]['legal_name']})")
         log.append(f"CONFIRM {oid}: parent {org[oid]['parent_org_id']} evidence row")
-    for oid, why in HELD.items():
+    for oid, why in {**HELD, **COUNCIL_HELD}.items():
         log.append(f"HELD {oid} {org[oid]['legal_name']}: {why}")
     for h in read(HERE / "website_hygiene.csv"):
         oid, act, why = h["org_id"], h["action"], h["reason"]

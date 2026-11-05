@@ -1,25 +1,14 @@
-PARENT ORG-001716 Firestone Polymers, LLC -> ORG-000011 Bridgestone Americas, Inc.
 PARENT ORG-003596 Corr Tech, Inc. -> ORG-000149 Indelco Plastics Corp.
-PARENT ORG-004956 Specialty Products -> ORG-000088 PPG Industries, Inc.
 PARENT ORG-004990 Foster Corporation -> ORG-000010 GEON Performance Solutions
-PARENT ORG-002275 Sylvin Technologies Inc. -> ORG-004294 Mexichem Specialty Compounds Inc.
-PARENT ORG-001790 Composite Advantage -> ORG-000768 Creative Composites Group
-PARENT ORG-004903 Integrated Bagging Systems -> ORG-003476 Inteplast Group
-ULT ORG-002420 Tubro Co. Inc.: '' -> 'Polymershapes'
 ULT ORG-001381 Hyload Inc.: 'IKO' -> 'IKO Group'
-ULT ORG-001859 OEM/Miller: '' -> 'ILPEA Industries'
-ULT ORG-001525 SPR Therapeutics, Inc: 'Medtronic, Inc.' -> 'Medtronic plc'
-ULT ORG-001847 Martin Wheel Co. Inc.: 'Kenda' -> 'Kenda Rubber Industrial Co., Ltd.'
 ACQ ORG-002674 Charter Plastics -> ORG-003282 on 2021-12-31
 WEB ORG-000043 Alterra Energy: https://www.alterraenergy.com -> https://alterra360.com/
 WEB ORG-000063 Akron Gasket: http://www.akrongasket.com -> https://akron-gasket.com/
 WEB ORG-000074 MRP Solutions: https://mrpcap.com -> https://mrpsolutions.com/
 WEB ORG-000126 CPI Precision Plastics LLC: https://cardinalproductsinc.com -> https://cpipp.com/
 WEB ORG-000175 Harwood Rubber Products: http://www.harwoodrubber.com -> https://corelinerollers.com/
-WEB ORG-000354 GMR Companies: https://www.gmrcompanies.com/ -> https://principalplasticsinc.com/
 WEB ORG-001730 3D Dental Designs and Development LLC: https://www.3ddental.com -> https://3d-dent.com/
 HELD ORG-001843: kumhotireusa.com already held by ['ORG-007503'] (possible duplicate)
-WEB ORG-003181 Packaging Products Inc.: (blank) -> https://packprod.com/
 TRADE ORG-000175: + Coreline Rollers
 CONFIRM ORG-001452: parent ORG-001423 evidence row
 CONFIRM ORG-002544: parent ORG-002907 evidence row
@@ -31,6 +20,17 @@ HELD ORG-006250 Bway Corporation: merged into Mauser Packaging Solutions, but no
 HELD ORG-001836 Johnsonite Inc.: acquired by Tarkett in 2005; year only, no full date
 HELD ORG-001881 Reduction Engineering Scheer: absorbed into Maag (Dover), which the Atlas does not hold, so there is no successor record
 HELD ORG-001425 Cooper Tire & Rubber Company: parent already recorded (Goodyear); quote not raw-verified
+HELD ORG-001716 Firestone Polymers, LLC: council: the quote announces a Bridgestone pilot center; it does not state that Bridgestone Americas owns Firestone Polymers, LLC
+HELD ORG-004956 Specialty Products: council: the quote lists Specialty Products in PPG's VersaFlex brand bundle; it does not state the ownership link
+HELD ORG-002275 Sylvin Technologies Inc.: council: the quote names Mexichem as buyer; Sylvin now appears as an Alphagary heritage brand, so subsidiary vs absorbed and the owning entity are open
+HELD ORG-001790 Composite Advantage: council: the quote names Hill & Smith as buyer, not Creative Composites Group
+HELD ORG-004903 Integrated Bagging Systems: council: the quote is about an operation moved into Inteplast's IBS division, not this record's ownership
+HELD ORG-002420 Tubro Co. Inc.: council: Polymershapes may itself be owned by another firm, so it may not be the ultimate parent; source is a LinkedIn post
+HELD ORG-001859 OEM/Miller: council: the quote names Holm as buyer; ILPEA Industries is a US subsidiary of the ILPEA group, not the ultimate parent
+HELD ORG-001525 SPR Therapeutics, Inc: council: already 'Medtronic, Inc.'; the quote does not name the plc, so the change is churn
+HELD ORG-001847 Martin Wheel Co. Inc.: council: already 'Kenda'; the quote does not name the listed company, so the change is churn
+HELD ORG-000354 GMR Companies: council: principalplasticsinc.com describes GMR in the third person; it may be Principal Plastics' site, not GMR's
+HELD ORG-003181 Packaging Products Inc.: council: the packprod.com quote is a generic slogan that names neither the company nor Plymouth
 HYGIENE CLEAR ORG-004079: 'https://www.thomasnet.com/suppliers/connecticut/all-cities/null-961516' -> ''
 HYGIENE CLEAR ORG-004082: 'https://qa.modot.info/sites/default/files/documents/FS1039T3_4.pdf' -> ''
 HYGIENE CLEAR ORG-003587: 'https://www.thomasnet.com/company/adams-plastics-10111443/profile' -> ''
