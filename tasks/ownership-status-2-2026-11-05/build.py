@@ -25,10 +25,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 DATE, BY = "2026-11-05", "claude-code ownership-status-2-2026-11-05"
 # Immediate owner held in the Atlas, quote naming both parties.
-PARENT = {"ORG-004082": "ORG-003922", "ORG-004045": "ORG-007026", "ORG-004567": "ORG-004606"}
+PARENT = {"ORG-004082": "ORG-003922", "ORG-004567": "ORG-004606"}
 # Owner not held; only where ultimate_parent_name is empty and the buyer is the top of its chain.
-ULT = {"ORG-004267": "Wynnchurch Capital", "ORG-004076": "MacLean Investment Partners", "ORG-002144": "AeroVironment, Inc.",
-       "ORG-002171": "Carlisle Companies Inc."}
+ULT = {"ORG-002144": "AeroVironment, Inc.", "ORG-002171": "Carlisle Companies Inc."}
 ACQ = {}
 # Website fills for records whose non-site value #122/#126 cleared, and same-business domain migrations or rebrands. A
 # US subsidiary's site swapped for a foreign parent's group site is not applied.
@@ -49,6 +48,13 @@ COUNCIL_HELD = {
     "ORG-002618": "council: Keter has financial owners above it, so it is not the top of the chain",
     "ORG-003979": "council: the quote is the agreement, not the closing",
     "ORG-003348": "council: the quotes do not tie RS Utility Structures (St. George) to the Resilient Structures site",
+    # Grok review (deep, 2026-11-05) of the codex-adjusted build: record identity or deal level not shown.
+    "ORG-004045": "council: the quote is an announcement headline with no Franksville identity",
+    "ORG-004267": "council: the sale is of the Covington, LA business; this record sits at the seller's Dallas HQ city",
+    "ORG-004076": "council: the buyer took certain assets of 'Janco Composites, Inc.', a different name",
+    "ORG-002249": "council: the quote does not place National Rubber in Canonsburg, and the name collides with other firms",
+    "ORG-002726": "council: the site shows only the brand; it does not name Our Remedy LLC or Zionsville (both reviewers)",
+    "ORG-003671": "council: the quote says Stern Assembly is now Revolv; the Baxter, MN record is not shown on the domain",
 }
 TRADE = {"ORG-003167": "UPM Adhesive Materials", "ORG-004606": "APN Performance Coatings"}
 CONFIRM = set()
@@ -182,7 +188,7 @@ def main():
                   "and its sites stay linked historically until the successor's site linkage is reviewed.")
         evid(oid, "parent", f"acquired by {succ} ({org[succ]['legal_name']}) on {when}")
         log.append(f"ACQ {oid} {r['legal_name']} -> {succ} on {when}")
-    for oid in sorted(WEB):
+    for oid in sorted(WEB - set(COUNCIL_HELD)):  # a review hold always wins over the apply set
         r, L = org[oid], lane[oid]
         if not ready(oid): continue
         new, d = L["new_website"].strip(), dom(L["new_website"])

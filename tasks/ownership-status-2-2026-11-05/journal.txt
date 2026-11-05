@@ -1,8 +1,5 @@
 PARENT ORG-004082 Adhesives Technology Corporation -> ORG-003922 Meridian Adhesives Group LLC
-PARENT ORG-004045 Fiber-Tech, Inc. -> ORG-007026 National Manufacturing Group
 PARENT ORG-004567 Res-Tek Inc. -> ORG-004606 A. P. Nonweiler Company, Inc.
-ULT ORG-004267 Arcosa Marine Products, Inc.: '' -> 'Wynnchurch Capital'
-ULT ORG-004076 Janco Engineered Products, LLC: '' -> 'MacLean Investment Partners'
 ULT ORG-002144 UES INC: '' -> 'AeroVironment, Inc.'
 ULT ORG-002171 ULTIMATE RB: '' -> 'Carlisle Companies Inc.'
 WEB ORG-001908 Tremco CPG Inc.: https://tremco.com -> https://tremcocpg.com/
@@ -10,12 +7,10 @@ WEB ORG-001992 Precision Polymer Casting LLC (dba Castinite): http://www.castini
 HELD ORG-002004: roboworld.com already held by ['ORG-002003'] (possible duplicate)
 WEB ORG-002066 Catexel Nease LLC: https://www.neaseco.com -> https://catexel.com/
 WEB ORG-002204 Performance Coatings Intl Labs: https://pcoatingsintl.com -> https://pcilabsllc.com/
-WEB ORG-002249 National Rubber Corporation: (blank) -> https://nationalrubber.com/
 WEB ORG-002312 North Coast Plastics, Inc.: northcoastplastics.com -> https://northcoastpoly.com/
 HELD ORG-002404: gellnerindustrial.com already held by ['ORG-002405'] (possible duplicate)
 WEB ORG-002487 Mahantango Enterprises Inc.: (blank) -> https://mahantango.com/
 HELD ORG-002690: whirleydrinkworks.com already held by ['ORG-002691'] (possible duplicate)
-WEB ORG-002726 Our Remedy LLC Dba Better Bungee: (blank) -> https://thebetterbungee.com/
 WEB ORG-002729 Ensinger Inc: (blank) -> https://ensingerplastics.com/
 WEB ORG-002886 CSW Industrials, Inc.: https://www.cswindustrials.com -> https://csw.com/
 WEB ORG-002898 DAIS Corp: http://www.daisanalytic.com -> https://daisnano.com/
@@ -26,7 +21,6 @@ WEB ORG-003373 Alliance Specialties and Laser Sales: https://alliancelasersales.
 WEB ORG-003480 NantBioRenewables AL, LLC: https://nantbioplastics.com/ -> https://nantbiorenewables.com/
 WEB ORG-003502 Memphis Record Pressing LLC: https://memphisvinyl.com -> https://memphisrecordpressing.com/
 WEB ORG-003515 Coroplast Tape Corporation: https://www.coroplasttape.com/enus -> https://coroplast-tape.com/
-WEB ORG-003671 Revolv Manufacturing: revolvmanufacturing.com -> https://revolvmfg.com/
 WEB ORG-003850 Bamberger Amco Polymers: https://bambergeramco.com -> https://bapolymers.com/
 WEB ORG-003859 Davis Rubber Company, Inc.: http://www.davisrubbercoinc.com/ -> https://davisrubberco.com/
 WEB ORG-003908 CyCan Industries, Inc.: http://cycanindustries.com -> https://cycanspray.com/
@@ -73,3 +67,9 @@ HELD ORG-004067 Seemann Composites, LLC: council: Karman's relationship with its
 HELD ORG-002618 Adams Manufacturing Corporation: council: Keter has financial owners above it, so it is not the top of the chain
 HELD ORG-003979 TPC Group Inc.: council: the quote is the agreement, not the closing
 HELD ORG-003348 RS Utility Structures Inc.: council: the quotes do not tie RS Utility Structures (St. George) to the Resilient Structures site
+HELD ORG-004045 Fiber-Tech, Inc.: council: the quote is an announcement headline with no Franksville identity
+HELD ORG-004267 Arcosa Marine Products, Inc.: council: the sale is of the Covington, LA business; this record sits at the seller's Dallas HQ city
+HELD ORG-004076 Janco Engineered Products, LLC: council: the buyer took certain assets of 'Janco Composites, Inc.', a different name
+HELD ORG-002249 National Rubber Corporation: council: the quote does not place National Rubber in Canonsburg, and the name collides with other firms
+HELD ORG-002726 Our Remedy LLC Dba Better Bungee: council: the site shows only the brand; it does not name Our Remedy LLC or Zionsville (both reviewers)
+HELD ORG-003671 Revolv Manufacturing: council: the quote says Stern Assembly is now Revolv; the Baxter, MN record is not shown on the domain

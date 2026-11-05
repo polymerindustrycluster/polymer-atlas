@@ -26,19 +26,17 @@ quoted rows passed.
 ## Applied (`build.py`, decisions per organization; `journal.txt`)
 | Change | Organizations |
 |-|-:|
-| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 3 |
-| `ultimate_parent_name` set where it was empty and the buyer is the top of its chain | 4 |
-| `website` filled (it had been cleared) or moved to the business's current own domain | 35 |
+| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 2 |
+| `ultimate_parent_name` set where it was empty and the buyer is the top of its chain | 2 |
+| `website` filled (it had been cleared) or moved to the business's current own domain | 32 |
 | `trade_names` gains a new brand | 2 |
 
-42 evidence rows and 3 generated relationship rows.
+36 evidence rows and 2 generated relationship rows.
 
-- **Parents:** Adhesives Technology → Meridian Adhesives Group; Fiber-Tech → National Manufacturing Group; Res-Tek →
-  A.P. Nonweiler (APN Performance Coatings).
-- **Ultimate parents:** Arcosa Marine → Wynnchurch Capital; Janco → MacLean Investment Partners; UES → AeroVironment;
-  Ultimate RB → Carlisle Companies.
-- **Websites:** 12 fills for cleared records, for example Ensinger Inc. → `ensingerplastics.com` and Y-TEX →
-  `y-tex.com`. The other 23 are same-business migrations or rebrands, for example UPM Raflatac →
+- **Parents:** Adhesives Technology → Meridian Adhesives Group; Res-Tek → A.P. Nonweiler (APN Performance Coatings).
+- **Ultimate parents:** UES → AeroVironment; Ultimate RB → Carlisle Companies.
+- **Websites:** 8 fills for cleared records, for example Ensinger Inc. → `ensingerplastics.com` and Y-TEX →
+  `y-tex.com`. The other 24 are same-business migrations or rebrands, for example UPM Raflatac →
   `adhesivematerials.upm.com` and A.P. Nonweiler → `apncoatings.com`. A US subsidiary's site swapped for a foreign
   parent's group site is **not** applied (Evonik, Untha, Futamura, Silon, Sigmasoft, Unimatec, Econ, Bekum and others).
 
@@ -52,8 +50,16 @@ review (`COUNCIL_HELD` in `build.py`):
   closing).
 - The RS Utility Structures website: the quotes do not tie the St. George record to Resilient Structures.
 
-Kept against a flag: Better Bungee's website. Its domain matches the record's own DBA. A grok pass had not run when
-this was written.
+Grok then refuted the codex-adjusted build and flagged six more, all held. Each record's identity or the deal's level
+is not shown:
+- Fiber-Tech: an announcement headline with no Franksville identity.
+- Arcosa Marine: the sale is of the Covington, LA business, but the record sits in Dallas.
+- Janco: the buyer took assets of "Janco Composites, Inc.".
+- National Rubber: the name collides with other firms, and nothing places it in Canonsburg.
+- Better Bungee: flagged by both reviewers.
+- Revolv: the Baxter, MN record is not shown on the domain.
+
+Across both reviews, 13 of the first build's 49 changes are held.
 
 ## Held
 - **Licensed source:** HPE Extrusion → Pexco (2019). The only quote is from Plastics News, which AGENTS.md §5 allows as
