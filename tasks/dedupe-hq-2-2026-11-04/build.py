@@ -14,9 +14,9 @@ the integrator decision below names it. AGENTS.md §3: when in doubt, do not mer
 - ACQ: the record is a business bought by the other record on a dated deal -> `status=acquired`, `status_date`,
   `successor_org_id`, and its generated `successor_of` edge, plus a `parent` evidence row.
 - PARENT: `parent_org_id` + its generated `parent_of` edge, plus a `parent` evidence row.
-- AMETEK: ORG-002556 is the Nesquehoning business Ametek sold to Niche Polymer. Its legal name becomes the business's
-  name ("Ametek" stays in trade_names), it is marked acquired with Niche as successor, and its plant (SITE-002544)
-  moves to Niche, the operator (AGENTS.md §3 step 3).
+- AMETEK: Ametek sold its Nesquehoning plant (SITE-002544, Westchester Plastics) to Niche Polymer on 2021-09-07. The
+  plant and its FRS facility link move to Niche, the operator (AGENTS.md §3 step 3). ORG-002556 also holds Ametek's
+  St. Louis plant, so it is Ametek itself and keeps its name and status; its Nesquehoning HQ is flagged in notes.
 - WATCH: `monitor_watch=true` for two announced, not yet closed, plant closures (a queue flag, never a status change).
 """
 import argparse, csv, io, sys
@@ -33,9 +33,14 @@ HQ = {  # org_id: (hq_city, hq_state, hq_county); every new HQ is outside Ohio, 
     "ORG-002643": ("Charlotte", "NC", "Mecklenburg"), "ORG-005041": ("Hickory", "NC", "Catawba"),
     "ORG-003943": ("Huntersville", "NC", "Mecklenburg"),
 }
-MERGE = {"ORG-002323": "ORG-002324", "ORG-002384": "ORG-002325", "ORG-001813": "ORG-000449"}  # duplicate -> survivor
-ACQ = {"ORG-000484": ("ORG-002534", "2021-12-01"), "ORG-000492": ("ORG-004564", "2023-02-02"),
-       "ORG-006171": ("ORG-001148", "2018-04-04")}
+MERGE = {"ORG-002323": "ORG-002324", "ORG-002384": "ORG-002325"}  # duplicate -> survivor
+ACQ = {"ORG-000484": ("ORG-002534", "2021-12-01"), "ORG-000492": ("ORG-004564", "2023-02-02")}
+ACQ_NOTE = {"ORG-000492": " The date is the buyer's release date ('announced today'); the closing date is not stated (SCHEMA §5.4)."}
+# Cross-family refute (grok + codex, deep, 2026-11-04) of the first build: held after review.
+COUNCIL_HELD = {
+    "ORG-001813": "council: the record bundles Formco, a separate 2018 acquisition by Molded Devices, so it is not simply a duplicate of Aptyx",
+    "ORG-006171": "council: the quote is Tekni-Plex buying Dunn Industries; whether 'Tekniplex Healthcare' is only the former Dunn business is open",
+}
 PARENT = {"ORG-000119": "ORG-007802"}
 AMETEK = ("ORG-002556", "ORG-004886", "2021-09-07", "SITE-002544", "Ametek Westchester Plastics")
 WATCH = {"ORG-000870": "H.B. Fuller announced the closure of its Paducah, KY plant (expected Q1 2027)",
@@ -158,7 +163,7 @@ def main():
         assert org[oid]["status"] == "active" and org[succ]["status"] == "active", oid
         org[oid].update(status="acquired", status_date=when, successor_org_id=succ)
         org[oid]["sources"] = (org[oid]["sources"] + "; " + p["source_url"]).strip("; ")
-        note(oid, f"status acquired {when}, successor {succ} ({org[succ]['legal_name']}); the record is kept as a tombstone, and its sites stay linked historically.")
+        note(oid, f"status acquired {when}, successor {succ} ({org[succ]['legal_name']}); the record is kept as a tombstone, and its sites stay linked historically." + ACQ_NOTE.get(oid, ""))
         edge(oid, "successor_of", succ, oid, f"Generated from {oid}.successor_org_id with status=acquired (canonical §4.4 columns); "
              "the column is the source of truth and this edge is its derived view (§4.14.2 single-source rule).")
         evid("organizations", oid, tag(oid), "parent", f"acquired by {succ} ({org[succ]['legal_name']}) on {when}", p)
@@ -176,18 +181,13 @@ def main():
     oid, succ, when, site, name = AMETEK
     p = pair_ok(oid)
     if p:
+        # Council (2026-11-04): the record also holds Ametek's St. Louis plant (SITE-004583), so it is Ametek itself, not
+        # the sold business. Only the sold plant moves; the org keeps its name and status, and its HQ is flagged.
         r = org[oid]
         assert r["status"] == "active" and r["legal_name"] == "Ametek", oid
-        old = r["legal_name"]
-        r["trade_names"] = ";".join([t for t in r["trade_names"].split(";") if t.strip()] + [old, "Westchester Plastics"])
-        r.update(legal_name=name, status="acquired", status_date=when, successor_org_id=succ)
-        r["sources"] = (r["sources"] + "; " + p["source_url"]).strip("; ")
-        note(oid, f"identity corrected: the record carried its former owner's name. It is the Nesquehoning business "
-                  f"(Westchester Plastics) that Ametek sold to {succ} ({org[succ]['legal_name']}) on {when}; legal name "
-                  f"'{old}' -> '{name}', status acquired; its plant {site} moves to {succ}, the operator.")
-        edge(oid, "successor_of", succ, oid, f"Generated from {oid}.successor_org_id with status=acquired (canonical §4.4 columns); "
-             "the column is the source of truth and this edge is its derived view (§4.14.2 single-source rule).")
-        evid("organizations", oid, tag(oid), "parent", f"sold by Ametek to {succ} ({org[succ]['legal_name']}) on {when}", p)
+        note(oid, f"the Nesquehoning plant {site} (Westchester Plastics) was sold to {succ} ({org[succ]['legal_name']}) on "
+                  f"{when} and moves to that operator. This record's HQ (Nesquehoning, PA) came from that plant and is not "
+                  "Ametek's HQ: a finding for the next HQ pass.")
         site_files = {f: read(f) for f in sorted(data.glob("sites_*.csv"))}
         hit = [(f, s) for f, rows in site_files.items() for s in rows if s["site_id"] == site]
         assert len(hit) == 1 and hit[0][1]["org_id"] == oid, site
@@ -204,12 +204,14 @@ def main():
             write(data / "registry_links.csv", links, next(csv.reader(open(data / "registry_links.csv", encoding="utf-8"))))
         evid("sites", site, s["state"], "parent", f"operator {succ} ({org[succ]['legal_name']})", p)
         log.append(f"REGISTRY {len(moved)} facility link(s) on {site} -> {succ}")
-        log.append(f"AMETEK {oid}: '{old}' -> '{name}', acquired {when} by {succ}; {site} -> {succ}")
+        log.append(f"AMETEK {oid}: plant {site} (sold {when}) -> {succ}; org unchanged, HQ flagged")
     for oid, why in WATCH.items():
         assert org[oid]["monitor_watch"] == "false", oid
         org[oid]["monitor_watch"] = "true"
         note(oid, f"monitor_watch set: {why}; verified operating today by the 2026-11-04 state wave. Re-verify when the watch fires.")
         log.append(f"WATCH {oid} {org[oid]['legal_name']}")
+    for oid, why in COUNCIL_HELD.items():
+        log.append(f"HELD {oid} {org[oid]['legal_name']}: {why}")
     for pid, r in D.items():
         if not any(PAIR[k] == pid for k in PAIR):
             log.append(f"HELD pair {pid}: {r['outcome']} (raw {rawD.get(pid)}): {r['note'][:150]}")

@@ -21,15 +21,15 @@ HQ ORG-005041 HSM Solutions: ('Monticello', 'IA') -> ('Hickory', 'NC')
 HQ ORG-003943 Wilbert, Inc.: ('Belmont', 'NC') -> ('Huntersville', 'NC')
 MERGE ORG-002323 Esstech -  Division Of Esschem Co. -> ORG-002324 Esstech, Inc.
 MERGE ORG-002384 Advanced Polymer Technology -> ORG-002325 Apt Advanced Polymer Technology Corp.
-MERGE ORG-001813 Formco / Molded Devices Inc -> ORG-000449 Aptyx
 ACQ ORG-000484 Performance Elastomers -> ORG-002534 on 2021-12-01
 ACQ ORG-000492 Pilot Plastics, Inc. -> ORG-004564 on 2023-02-02
-ACQ ORG-006171 Tekniplex Healthcare -> ORG-001148 on 2018-04-04
 PARENT ORG-000119 -> ORG-007802
 REGISTRY 1 facility link(s) on SITE-002544 -> ORG-004886
-AMETEK ORG-002556: 'Ametek' -> 'Ametek Westchester Plastics', acquired 2021-09-07 by ORG-004886; SITE-002544 -> ORG-004886
+AMETEK ORG-002556: plant SITE-002544 (sold 2021-09-07) -> ORG-004886; org unchanged, HQ flagged
 WATCH ORG-000870 H.B. Fuller Company
 WATCH ORG-003702 INOAC USA, Inc.
+HELD ORG-001813 Formco / Molded Devices Inc: council: the record bundles Formco, a separate 2018 acquisition by Molded Devices, so it is not simply a duplicate of Aptyx
+HELD ORG-006171 Tekniplex Healthcare: council: the quote is Tekni-Plex buying Dunn Industries; whether 'Tekniplex Healthcare' is only the former Dunn business is open
 HELD pair ORG-004948|ORG-007004: SIBLINGS (raw yes): Sumitomo Bakelite's group list shows Vaupell Holdings, Inc. and Vaupell Molding & Tooling, Inc. as separate entities, both listed under Sumitomo Bakel
 HELD pair ORG-002670|ORG-002750: SAME_ENTITY (raw no): Both records sit at 734 W Penn Pike; the site brands the company KNF FLEXPAK Corporation (with sister brand KNF Clean Room Products Corporation, Vinel
 HELD pair ORG-004209|ORG-001029: STILL_UNCERTAIN (raw yes): Do not merge. ORG-004209 (PPC Flexible Packaging, LLC, HQ Buffalo Grove IL per ppcflex.com) acquired Plastic Packaging Technologies, LLC (Kansas City 
