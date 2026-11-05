@@ -99,6 +99,12 @@ The lead-fusion clusters carry federal registrant names that differ from Atlas l
   - a shared sorted-append helper in `scripts/` for builders to use.
 - (b) Normalize the three files only.
 
+## B-PARENT-WEB (addendum, RULED 2026-11-04): a corporate group's domain as a plant's `website`
+The website pass (#121) gave some plant records their corporate group's domain, for example Siliconature, Valmet,
+Viscofan USA and Tecomet. The owner ruled in session, as multiple choice: **allow it, and flag it in notes.** A group
+domain may stand as a plant's `website`. Each such record carries a notes flag saying so. Applied in
+`tasks/ownership-status-2026-11-04/`.
+
 ## B-SHARD: foreign establishments of US organizations (AGENTS.md §3)
 Bryant Rubber's Tijuana plant has no lawful site shard, so it is held (#116).
 - **(a) Recommended:** keep holding foreign plants, noting each on the organization record, until a dated schema
