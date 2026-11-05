@@ -1360,36 +1360,64 @@ for i, r in enumerate(person_links, 2):
         errors.append(f"people_identifiers.csv:{i} identifier {iid} already recorded — one row per identifier value (V-54)")
     _seen_pil.add(key)
 # V-58 [v1.11] newsroom and LinkedIn columns (SCHEMA §4.4): URL shape; newsroom_url on the website's own domain.
+def _url_host(url):
+    """The URL's host, lowercased, IDNA-encoded and without a trailing dot, or None when the URL is malformed (no
+    http(s) scheme, no dotted host, a bad port, a broken IPv6 bracket, whitespace)."""
+    if not url or any(c.isspace() for c in url):
+        return None
+    try:
+        p = urlparse(url if "://" in url else "https://" + url)
+        p.port  # raises ValueError on a bad port
+        host = (p.hostname or "").rstrip(".")
+        host = host.encode("idna").decode("ascii").lower()
+    except (ValueError, UnicodeError):
+        return None
+    if p.scheme.lower() not in ("http", "https") or "." not in host:
+        return None
+    return host
+# shortcut: a short list of two-level public suffixes, not the Public Suffix List; enough for a US-focused atlas.
+# Upgrade to a PSL library if foreign websites with other two-level suffixes become common.
+_SLD2 = {"co", "com", "org", "net", "ac", "gov", "edu", "ne", "or", "go", "gob", "nic", "ltd", "plc", "sch", "mil"}
 def _reg_domain(url):
-    host = (urlparse(url if "://" in url else "https://" + url).hostname or "").lower()
+    host = _url_host(url) or ""
     parts = host.split(".")
-    return ".".join(parts[-3:]) if len(parts) >= 3 and parts[-2] in ("co", "com") and len(parts[-1]) == 2 else ".".join(parts[-2:])
-RE_LINKEDIN = re.compile(r"https://(www\.)?linkedin\.com/company/[^/?#\s]+/?")
+    return ".".join(parts[-3:]) if len(parts) >= 3 and parts[-2] in _SLD2 and len(parts[-1]) == 2 else ".".join(parts[-2:])
+# A company slug: letters, digits, '-', '_', percent-escapes; dot-separated parts but never '.', '..' or an encoded dot.
+RE_LINKEDIN = re.compile(r"https://(www\.)?linkedin\.com/company/[A-Za-z0-9_%-]+(\.[A-Za-z0-9_%-]+)*/?")
 for i, r in enumerate(orgs, 2):
     oid = r["org_id"]
     for col in ("newsroom_url", "newsroom_feed_url"):
         v = (r.get(col) or "").strip()
-        if v and not re.fullmatch(r"https?://[^\s]+\.[^\s]+", v):
+        if v and (not re.match(r"(?i)https?://", v) or _url_host(v) is None):
             errors.append(f"organizations.csv:{i} {oid} {col} is not an http(s) URL (V-58)")
     nr = (r.get("newsroom_url") or "").strip()
-    if nr:
+    if nr and _url_host(nr):
         site = (r.get("website") or "").strip()
-        if not site or _reg_domain(nr) != _reg_domain(site):
+        if not site or _url_host(site) is None or _reg_domain(nr) != _reg_domain(site):
             errors.append(f"organizations.csv:{i} {oid} newsroom_url must be on the website's own domain (V-58)")
     li = (r.get("linkedin_url") or "").strip()
-    if li and not RE_LINKEDIN.fullmatch(li):
+    if li and (not RE_LINKEDIN.fullmatch(li) or "%2e" in li.lower()):
         errors.append(f"organizations.csv:{i} {oid} linkedin_url is not a linkedin.com/company/ page URL (V-58)")
 # V-59 [v1.11] evidence archive links (SCHEMA §4.22)
 ARC_FIELDS = ["evidence_id", "archive_ref", "captured_at", "created_by"]
 if arc_fields != ARC_FIELDS:
     errors.append("archive_links.csv: header does not match the §4.22 field set (V-59)")
 _seen_arc = set()
+_evd_ref = {e["evidence_id"]: (e.get("source_ref") or "").strip() for e in evidence}
+def _same_page(a, b):  # compare URLs ignoring scheme, a leading www., letter case of the host and a trailing slash
+    norm = lambda u: re.sub(r"^(https?://)?(www\.)?", "", u.strip()).rstrip("/")
+    na, nb = norm(a), norm(b)
+    ha, _, pa = na.partition("/"); hb, _, pb = nb.partition("/")
+    return ha.lower() == hb.lower() and pa == pb
 for i, r in enumerate(archive_links, 2):
     aid = (r.get("evidence_id") or "").strip()
     if aid not in evd_ids:
         errors.append(f"archive_links.csv:{i} evidence_id {aid!r} does not resolve (V-59)")
-    if not re.fullmatch(r"https://web\.archive\.org/web/[0-9]{14}/https?://\S+", (r.get("archive_ref") or "").strip()):
+    m = re.fullmatch(r"https://web\.archive\.org/web/[0-9]{14}/(https?://\S+)", (r.get("archive_ref") or "").strip())
+    if not m:
         errors.append(f"archive_links.csv:{i} {aid} archive_ref is not a web.archive.org capture URL (V-59)")
+    elif aid in _evd_ref and not _same_page(m.group(1), _evd_ref[aid]):
+        errors.append(f"archive_links.csv:{i} {aid} archive_ref captures a different page than the evidence row cites (V-59)")
     if not _is_date((r.get("captured_at") or "").strip()):
         errors.append(f"archive_links.csv:{i} {aid} captured_at is not a date (V-59)")
     if not (r.get("created_by") or "").strip():

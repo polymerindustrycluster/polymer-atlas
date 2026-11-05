@@ -2312,7 +2312,8 @@ side table by owner ruling 2026-11-05 so that no existing evidence row or builde
 
 A provenance aid only: an archive link never changes the evidence row's source class, tier effect or claim, and a
 missing link asserts nothing. Append-only, like §4.13. Validator V-59 enforces the field set, the FK, the archive URL
-shape, the date and one row per evidence id.
+shape, that the capture is of the page the evidence row cites (`source_ref`, ignoring scheme, `www.` and a trailing
+slash), the date and one row per evidence id.
 
 ## 5. Entity Resolution Rules — Dedupe Identically
 
