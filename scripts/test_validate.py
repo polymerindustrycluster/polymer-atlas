@@ -192,9 +192,18 @@ class ValidatorMutationTests(unittest.TestCase):
         # C strength caps the record (V-25), at people grain as elsewhere.
         self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="scope",
                         claim_detail="polymer research stated for this person",
-                        source_class="press", source_ref="https://example.com/news",
+                        source_class="own_site", source_ref="https://www.bgsu.edu/example",
                         tier_effect="supports_C"))
         self.assert_fails_with("must-have claim scope supported only at C strength but tier is A (V-25)")
+
+    def test_v110_people_scope_needs_own_site(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="scope",
+                        source_class="press", source_ref="https://example.com/news", tier_effect="supports_B"))
+        self.assert_fails_with("people scope must be observed on the institution's own page (own_site) (V-22)")
+
+    def test_v110_people_address_has_no_referent(self):
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="address"))
+        self.assert_fails_with("claim_type address has no people-grain referent (V-22)")
 
     # [v1.10] §4.21 person identifier links (ORCID), enforced by V-54.
     PIL_OK = {"person_id": "PERSON-000001", "identifier_type": "ORCID",

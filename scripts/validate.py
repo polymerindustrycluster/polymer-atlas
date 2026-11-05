@@ -1069,6 +1069,13 @@ if evidence or True:
             errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
         if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
             errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing/own_site and caps at supports_B (V-22)")
+        if rt == "people":
+            # [v1.10] §4.13 people grain: existence and scope are observations on the institution's own page;
+            # address, code and size_band have no people-grain referent. (Cross-family review of #125, 2026-11-05.)
+            if r["claim_type"] in ("address", "code", "size_band"):
+                errors.append(f"evidence.csv:{i} {eid} claim_type {r['claim_type']} has no people-grain referent (V-22)")
+            elif r["claim_type"] in ("existence", "scope") and sc != "own_site":
+                errors.append(f"evidence.csv:{i} {eid} people {r['claim_type']} must be observed on the institution's own page (own_site) (V-22)")
         if sc in ("registry", "directory") and r["claim_type"] == "address" and te == "supports_B":
             errors.append(f"evidence.csv:{i} {eid} registry/directory address alone caps at supports_C (V-22)")
         if not (r["source_ref"] or "").strip() or not (r["claim_detail"] or "").strip():
