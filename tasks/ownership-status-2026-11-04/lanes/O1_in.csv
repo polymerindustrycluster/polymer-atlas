@@ -1,0 +1,26 @@
+org_id,legal_name,hq_city,hq_state,website,lead_types,detail,buyer_names
+ORG-001716,"Firestone Polymers, LLC",Akron,OH,,B:search_host_held;N:named,search host bridgestoneamericas.com | named lead: Firestone Polymers,"Bridgestone Americas, Inc."
+ORG-000085,"Ohio Precision Molding, Inc.",Barberton,OH,https://ohioprecisionmolding.com,R:REDIRECT_CROSS_DOMAIN,ohioprecisionmolding.com -> designmolded.com,Design Molded Plastics
+ORG-001752,Performance Plastics Ltd.,Cincinnati,OH,http://performanceplastics.com/,R:REDIRECT_CROSS_DOMAIN,performanceplastics.com -> pexco.com,Performance Elastomers
+ORG-001790,Composite Advantage,Dayton,OH,https://compositeadvantage.com,R:REDIRECT_CROSS_DOMAIN,compositeadvantage.com -> creativecompositesgroup.com,"CPCA Manufacturing LLC; Creative Composites Group; United Fiberglass of America, Inc."
+ORG-001843,Kumho America Technical Center,Akron,OH,https://kumhotire.com,R:REDIRECT_CROSS_DOMAIN,kumhotire.com -> kumhotireusa.com,"Kumho Tire Georgia, Inc."
+ORG-002275,Sylvin Technologies Inc.,Denver,PA,,B:search_host_held,search host alphagary.com,Mexichem Specialty Compounds Inc.
+ORG-002420,Tubro Co. Inc.,Ivyland,PA,https://tubro.com,R:REDIRECT_CROSS_DOMAIN,tubro.com -> polymershapes.com,"Fabshapes, a Division of Polymershapes"
+ORG-002674,Charter Plastics,Titusville,PA,,B:search_host_held,search host wlplastics.com,WL Plastics
+ORG-003596,"Corr Tech, Inc.",Houston,TX,http://www.corr-tech.com/contacts.htm,R:REDIRECT_CROSS_DOMAIN,corr-tech.com -> indelco.com,Indelco Plastics Corp.
+ORG-004202,"LACC, LLC",WESTLAKE,LA,,B:search_host_held,search host lottechemusa.com,Lotte Chemical USA Corporation
+ORG-004956,Specialty Products,Lakewood,WA,,B:search_host_held,search host ppg.com,"PPG Industries, Inc."
+ORG-006217,84 Fairmount Street,Woonsocket,RI,,B:search_host_held,search host plasticsgroup.com,The Plastics Group of America
+ORG-001425,Cooper Tire & Rubber Company,Findlay,OH,,N:named,named lead: Cooper Tire,
+ORG-002556,Ametek,Nesquehoning,PA,,N:named,named lead: Ametek,
+ORG-000043,Alterra Energy,Akron,OH,https://www.alterraenergy.com,R:REDIRECT_CROSS_DOMAIN,alterraenergy.com -> alterra360.com,
+ORG-000074,MRP Solutions,Twinsburg,OH,https://mrpcap.com,R:REDIRECT_CROSS_DOMAIN,mrpcap.com -> mrpsolutions.com,
+ORG-000097,BioVerde Tech LLC,Houston,TX,https://bioverde.us,R:REDIRECT_CROSS_DOMAIN,bioverde.us -> bioverdegroup.com,
+ORG-000157,GrafTech International,Brooklyn Heights,OH,https://www.graftech.com,R:REDIRECT_CROSS_DOMAIN,graftech.com -> graftech2022cr.q4web.com,
+ORG-000201,Ashtabula Rubber Co.,Ashtabula,OH,http://www.ashtabularubber.com,R:REDIRECT_CROSS_DOMAIN,ashtabularubber.com -> asc-es.com,
+ORG-000689,Mearthane Products Corporation,Cincinnati,OH,https://mearthane.com/,R:REDIRECT_CROSS_DOMAIN,mearthane.com -> mpcurethane.com,
+ORG-001461,"Stuchell Products, LLC",Alliance,OH,https://sareplastics.com,R:REDIRECT_CROSS_DOMAIN,sareplastics.com -> cpipp.com,
+ORG-001685,Kittyhawk Molding Company Inc,Carlisle,OH,https://kittyhawkmolding.com/,R:NXDOMAIN,kittyhawkmolding.com,
+ORG-001729,"ICU Medical, Inc.",Dublin,OH,https://www.smiths-medical.com/us/en,R:NXDOMAIN,smiths-medical.com,
+ORG-001836,Johnsonite Inc.,Chagrin Falls,OH,https://johnsonite.com,R:REDIRECT_CROSS_DOMAIN,johnsonite.com -> tarkettna.com,
+ORG-001859,OEM/Miller,Aurora,OH,https://oem-miller.com,R:REDIRECT_CROSS_DOMAIN,oem-miller.com -> ilpeaindustries.com,

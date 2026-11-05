@@ -1,0 +1,26 @@
+org_id,legal_name,hq_city,hq_state,website,lead_types,detail,buyer_names
+ORG-002168,Revlis Corporation,Akron,OH,,B:search_host_held;N:named,search host akrochem.com | named lead: Revlis,Akrochem Corp.
+ORG-001381,Hyload Inc.,Seville,OH,https://www.hyload.com/,R:REDIRECT_CROSS_DOMAIN,hyload.com -> iko.com,IKO Northeast Inc.
+ORG-001773,Akron Special Machinery,Akron,OH,https://akronspecial.com,R:REDIRECT_CROSS_DOMAIN,akronspecial.com -> polinggroup.com,Akron Steel Fabricators Co.
+ORG-001813,Formco / Molded Devices Inc,North Canton,OH,https://moldeddevices.com,R:REDIRECT_CROSS_DOMAIN,moldeddevices.com -> aptyx.com,Aptyx
+ORG-001931,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),New Philadelphia,OH,https://www.cooperstandard-isg.com/,R:REDIRECT_CROSS_DOMAIN,cooperstandard-isg.com -> cooperstandard.com,Cooper Standard
+ORG-002384,Advanced Polymer Technology,Harmony,PA,,B:search_host_held,search host advpolytech.com,Apt Advanced Polymer Technology Corp.
+ORG-002544,Berry Global,Evansville,IN,,B:search_host_held,search host amcor.com,"Amcor plc; Amcor Flexibles North America, Inc."
+ORG-003181,Packaging Products Inc.,Plymouth,MI,,B:search_host_held,search host armacell.com,Armacell LLC
+ORG-003811,PolyCycle Innovation LLC,Crawfordsville,IN,,B:search_host_held,search host csiclosures.com,"Closure Systems International Americas, Inc."
+ORG-004903,Integrated Bagging Systems,Phoenix,AZ,,B:search_host_held,search host inteplast.com,Inteplast Group
+ORG-004990,Foster Corporation,Putnam,CT,,B:search_host_held,search host geon.com,GEON Performance Solutions
+ORG-006250,Bway Corporation,Cedar City,UT,,B:search_host_held,search host mauserpackaging.com,Mauser Packaging Solutions
+ORG-001452,"dlhBOWLES, Inc.",North Canton,OH,,N:named,named lead: dlhBOWLES,
+ORG-000017,Chemigon LLC,Akron,OH,https://chemigon.com,R:REDIRECT_CROSS_DOMAIN,chemigon.com -> odoo.sh,
+ORG-000063,Akron Gasket,Tallmadge,OH,http://www.akrongasket.com,R:REDIRECT_CROSS_DOMAIN,akrongasket.com -> akron-gasket.com,
+ORG-000079,"General Plastex, Inc.",Barberton,OH,https://generalplastex.com,R:PARKED_SUSPECT,generalplastex.com -> generalplastex.com,
+ORG-000126,CPI Precision Plastics LLC,North Royalton,OH,https://cardinalproductsinc.com,R:REDIRECT_CROSS_DOMAIN,cardinalproductsinc.com -> cpipp.com,
+ORG-000175,Harwood Rubber Products,Cuyahoga Falls,OH,http://www.harwoodrubber.com,R:REDIRECT_CROSS_DOMAIN,harwoodrubber.com -> corelinerollers.com,
+ORG-000354,GMR Companies,Ashtabula,OH,https://www.gmrcompanies.com/,R:REDIRECT_CROSS_DOMAIN,gmrcompanies.com -> principalplasticsinc.com,
+ORG-001427,KN Rubber LLC,Wapakoneta,OH,https://knrubber.com,R:NXDOMAIN,knrubber.com,
+ORG-001525,"SPR Therapeutics, Inc",Cleveland,OH,https://sprtherapeutics.com/,R:REDIRECT_CROSS_DOMAIN,sprtherapeutics.com -> sprpainrelief.com,
+ORG-001719,"Pyramid Plastics, Inc.",Cleveland,OH,pyramidplasticsinc.com,R:NXDOMAIN,pyramidplasticsinc.com,
+ORG-001730,3D Dental Designs and Development LLC,Shaker Heights,OH,https://www.3ddental.com,R:REDIRECT_CROSS_DOMAIN,3ddental.com -> camcube.com,
+ORG-001847,Martin Wheel Co. Inc.,Tallmadge,OH,https://martinwheelco.com,R:REDIRECT_CROSS_DOMAIN,martinwheelco.com -> martinwheel.com,
+ORG-001881,Reduction Engineering Scheer,Kent,OH,https://reductionengineering.com,R:REDIRECT_CROSS_DOMAIN,reductionengineering.com -> maag.com,

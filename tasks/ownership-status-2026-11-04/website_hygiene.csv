@@ -1,0 +1,51 @@
+org_id,action,reason
+ORG-004079,CLEAR,Thomasnet supplier listing
+ORG-004082,CLEAR,state DOT product PDF (qa.modot.info)
+ORG-003587,CLEAR,Thomasnet company profile
+ORG-004072,CLEAR,third-party finance news page (ayondo.com)
+ORG-004065,CLEAR,Thomasnet company profile
+ORG-004076,CLEAR,Thomasnet supplier listing
+ORG-004066,CLEAR,trade-press article (rubberworld.com)
+ORG-004084,CLEAR,press-release wire page (prweb.com)
+ORG-004067,CLEAR,trade-press article (areadevelopment.com)
+ORG-004085,CLEAR,Thomasnet supplier listing
+ORG-001649,CLEAR,distributor's product page (midstate-sales.com)
+ORG-001974,CLEAR,prose in the website field
+ORG-001980,CLEAR,prose in the website field
+ORG-001989,CLEAR,prose in the website field
+ORG-002004,CLEAR,prose in the website field
+ORG-002209,CLEAR,data-vendor profile (mergr.com)
+ORG-002234,CLEAR,Thomasnet supplier listing
+ORG-002249,CLEAR,Thomasnet company profile
+ORG-002331,CLEAR,bare directory host (thomasnet.com)
+ORG-002355,CLEAR,bare directory host (thomasnet.com)
+ORG-002371,CLEAR,state permit document folder (files.dep.state.pa.us)
+ORG-002400,CLEAR,bare directory host (thomasnet.com)
+ORG-002404,CLEAR,Thomasnet browse page
+ORG-002487,CLEAR,state agency program page (pa.gov)
+ORG-002588,CLEAR,Thomasnet company profile
+ORG-002596,CLEAR,data-vendor profile (datanyze.com)
+ORG-002618,CLEAR,Thomasnet company profile
+ORG-002687,CLEAR,Thomasnet company profile
+ORG-002690,CLEAR,state permit document (crawler.dep.state.pa.us)
+ORG-002692,CLEAR,third-party press release about the buyer (mfn.se)
+ORG-002695,CLEAR,directory listing (processregister.com)
+ORG-002726,CLEAR,federal-awards aggregator profile (highergov.com)
+ORG-002729,CLEAR,directory listing (globalspec.com)
+ORG-004063,CLEAR,trade-press article (areadevelopment.com)
+ORG-004089,CLEAR,trade-press article (packaging-gateway.com)
+ORG-004083,CLEAR,state agency permit PDF (dnr.wisconsin.gov)
+ORG-004069,CLEAR,federal agency label PDF (epa.gov)
+ORG-003682,ROOT,own-domain blog post
+ORG-002535,ROOT,own-domain certificate PDF
+ORG-004077,ROOT,own-domain news post
+ORG-002307,ROOT,own-domain PDF
+ORG-002700,ROOT,own-domain data-sheet PDF
+ORG-002744,ROOT,own-domain certificate PDF
+ORG-002603,ROOT,own-domain news post
+ORG-002385,ROOT,own-domain careers page on a mail subdomain
+ORG-003585,ROOT,own-domain product category page
+ORG-002227,ROOT,own-domain distributor list page
+ORG-002720,ROOT,own-domain plant PDF
+ORG-002628,ROOT,own-domain news article (Spanish locale)
+ORG-002466,FLAG,website is vsrubber.nl (a Dutch site); check that it is this company

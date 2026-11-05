@@ -1,0 +1,87 @@
+PARENT ORG-003596 Corr Tech, Inc. -> ORG-000149 Indelco Plastics Corp.
+PARENT ORG-004990 Foster Corporation -> ORG-000010 GEON Performance Solutions
+ULT ORG-001381 Hyload Inc.: 'IKO' -> 'IKO Group'
+ACQ ORG-002674 Charter Plastics -> ORG-003282 on 2021-12-31
+WEB ORG-000043 Alterra Energy: https://www.alterraenergy.com -> https://alterra360.com/
+WEB ORG-000063 Akron Gasket: http://www.akrongasket.com -> https://akron-gasket.com/
+WEB ORG-000074 MRP Solutions: https://mrpcap.com -> https://mrpsolutions.com/
+WEB ORG-000126 CPI Precision Plastics LLC: https://cardinalproductsinc.com -> https://cpipp.com/
+WEB ORG-000175 Harwood Rubber Products: http://www.harwoodrubber.com -> https://corelinerollers.com/
+WEB ORG-001730 3D Dental Designs and Development LLC: https://www.3ddental.com -> https://3d-dent.com/
+HELD ORG-001843: kumhotireusa.com already held by ['ORG-007503'] (possible duplicate)
+TRADE ORG-000175: + Coreline Rollers
+CONFIRM ORG-001452: parent ORG-001423 evidence row
+CONFIRM ORG-002544: parent ORG-002907 evidence row
+HELD ORG-001752 Performance Plastics Ltd.: Pexco is held twice (ORG-002534, ORG-000484); resolve that duplicate first (dedupe pass)
+HELD ORG-001813 Formco / Molded Devices Inc: rebranded Aptyx, which the Atlas already holds as ORG-000449: a duplicate for the dedupe pass
+HELD ORG-002556 Ametek: identity error: the Nesquehoning plant is Westchester Plastics, sold by Ametek to Niche Polymer (ORG-004886) on 2021-09-07; the record correction goes to the dedupe/HQ pass
+HELD ORG-006217 84 Fairmount Street: identity error: 84 Fairmount Street is a property of The Plastics Group of America (ORG-003880); quote not raw-verified
+HELD ORG-006250 Bway Corporation: merged into Mauser Packaging Solutions, but no source gives a full merge date (AGENTS.md §4: ISO dates only)
+HELD ORG-001836 Johnsonite Inc.: acquired by Tarkett in 2005; year only, no full date
+HELD ORG-001881 Reduction Engineering Scheer: absorbed into Maag (Dover), which the Atlas does not hold, so there is no successor record
+HELD ORG-001425 Cooper Tire & Rubber Company: parent already recorded (Goodyear); quote not raw-verified
+HELD ORG-001716 Firestone Polymers, LLC: council: the quote announces a Bridgestone pilot center; it does not state that Bridgestone Americas owns Firestone Polymers, LLC
+HELD ORG-004956 Specialty Products: council: the quote lists Specialty Products in PPG's VersaFlex brand bundle; it does not state the ownership link
+HELD ORG-002275 Sylvin Technologies Inc.: council: the quote names Mexichem as buyer; Sylvin now appears as an Alphagary heritage brand, so subsidiary vs absorbed and the owning entity are open
+HELD ORG-001790 Composite Advantage: council: the quote names Hill & Smith as buyer, not Creative Composites Group
+HELD ORG-004903 Integrated Bagging Systems: council: the quote is about an operation moved into Inteplast's IBS division, not this record's ownership
+HELD ORG-002420 Tubro Co. Inc.: council: Polymershapes may itself be owned by another firm, so it may not be the ultimate parent; source is a LinkedIn post
+HELD ORG-001859 OEM/Miller: council: the quote names Holm as buyer; ILPEA Industries is a US subsidiary of the ILPEA group, not the ultimate parent
+HELD ORG-001525 SPR Therapeutics, Inc: council: already 'Medtronic, Inc.'; the quote does not name the plc, so the change is churn
+HELD ORG-001847 Martin Wheel Co. Inc.: council: already 'Kenda'; the quote does not name the listed company, so the change is churn
+HELD ORG-000354 GMR Companies: council: principalplasticsinc.com describes GMR in the third person; it may be Principal Plastics' site, not GMR's
+HELD ORG-003181 Packaging Products Inc.: council: the packprod.com quote is a generic slogan that names neither the company nor Plymouth
+HYGIENE CLEAR ORG-004079: 'https://www.thomasnet.com/suppliers/connecticut/all-cities/null-961516' -> ''
+HYGIENE CLEAR ORG-004082: 'https://qa.modot.info/sites/default/files/documents/FS1039T3_4.pdf' -> ''
+HYGIENE CLEAR ORG-003587: 'https://www.thomasnet.com/company/adams-plastics-10111443/profile' -> ''
+HYGIENE CLEAR ORG-004072: 'https://ayondo.com/de/accw/US3596941068/pacific-avenue/pacific-avenue-' -> ''
+HYGIENE CLEAR ORG-004065: 'https://www.thomasnet.com/company/mid-states-rubber-products-inc-10666' -> ''
+HYGIENE CLEAR ORG-004076: 'https://www.thomasnet.com/suppliers/indiana/all-cities/molded-composit' -> ''
+HYGIENE CLEAR ORG-004066: 'https://rubberworld.com/ox-engineering-products-acquired-by-holcim/' -> ''
+HYGIENE CLEAR ORG-004084: 'http://www.prweb.com/releases/best_buy_to_carry_new_line_of_comply_foa' -> ''
+HYGIENE CLEAR ORG-004067: 'https://www.areadevelopment.com/newsitems/9-3-2020/seemann-composites-' -> ''
+HYGIENE CLEAR ORG-004085: 'https://www.thomasnet.com/suppliers/north-carolina/all-cities/fire-res' -> ''
+HYGIENE CLEAR ORG-001649: 'https://www.midstate-sales.com/youngstown-rubber-products/rubber-produ' -> ''
+HYGIENE CLEAR ORG-001974: 'phototexgroup.com (operating own domain; staged https://www.photo-tex.' -> ''
+HYGIENE CLEAR ORG-001980: 'troester.de (group own site - direct reads this run); troester-usa.com' -> ''
+HYGIENE CLEAR ORG-001989: "none found (Erie, PA firm's site is a different company - see evidence" -> ''
+HYGIENE CLEAR ORG-002004: 'directory/patent records' -> ''
+HYGIENE CLEAR ORG-002209: 'https://mergr.com/company/nanohorizons' -> ''
+HYGIENE CLEAR ORG-002234: 'https://www.thomasnet.com/suppliers/western-pennsylvania/all-cities/ir' -> ''
+HYGIENE CLEAR ORG-002249: 'https://www.thomasnet.com/company/national-rubber-corp-1310882/profile' -> ''
+HYGIENE CLEAR ORG-002331: 'thomasnet.com' -> ''
+HYGIENE CLEAR ORG-002355: 'thomasnet.com' -> ''
+HYGIENE CLEAR ORG-002371: 'https://files.dep.state.pa.us/air/AirQuality/AQPortalFiles/Permits/Per' -> ''
+HYGIENE CLEAR ORG-002400: 'https://www.thomasnet.com' -> ''
+HYGIENE CLEAR ORG-002404: 'https://www.thomasnet.com/browsecompanies.html?letter=G&pos=8' -> ''
+HYGIENE CLEAR ORG-002487: 'https://www.pa.gov/agencies/dep/programs-and-services/waste-programs/s' -> ''
+HYGIENE CLEAR ORG-002588: 'https://www.thomasnet.com/company/fluoro-plastics-inc-131247/profile?c' -> ''
+HYGIENE CLEAR ORG-002596: 'https://www.datanyze.com/companies/mutual-industries-north/71911496' -> ''
+HYGIENE CLEAR ORG-002618: 'https://www.thomasnet.com/company/adams-manufacturing-1081610/profile?' -> ''
+HYGIENE CLEAR ORG-002687: 'https://www.thomasnet.com/company/medical-precision-plastics-inc-83073' -> ''
+HYGIENE CLEAR ORG-002690: 'https://crawler.dep.state.pa.us/Air/AirQuality/AQPortalFiles/Permits/P' -> ''
+HYGIENE CLEAR ORG-002692: 'https://mfn.se/a/trelleborg/trelleborgs-acquisition-of-a-specialist-in' -> ''
+HYGIENE CLEAR ORG-002695: 'https://www.processregister.com/Dies_Molds/Suppliers/Page76/pid21122.h' -> ''
+HYGIENE CLEAR ORG-002726: 'https://www.highergov.com/awardee/our-remedy-llc-12484620/' -> ''
+HYGIENE CLEAR ORG-002729: 'https://www.globalspec.com/local/4040/C_US/PA/WASHINGTON' -> ''
+HYGIENE CLEAR ORG-004063: 'https://www.areadevelopment.com/newsItems/3-26-2012/kyowa-portland-ten' -> ''
+HYGIENE CLEAR ORG-004089: 'https://www.packaging-gateway.com/news/kureha-opens-polyglycolic-acid-' -> ''
+HYGIENE CLEAR ORG-004083: 'https://dnr.wisconsin.gov/sites/default/files/topic/Wastewater/pn/Esse' -> ''
+HYGIENE CLEAR ORG-004069: 'https://www3.epa.gov/pesticides/chem_search/ppls/039039-00028-20231115' -> ''
+HYGIENE ROOT ORG-003682: 'https://www.skbcases.com/blogs/blog/the-real-story-behind-skbs-made-in' -> 'https://skbcases.com/'
+HYGIENE ROOT ORG-002535: 'https://www.rogersfoam.com/wp-content/uploads/2024/11/ISO-9001-Cert-Al' -> 'https://rogersfoam.com/'
+HYGIENE ROOT ORG-004077: 'http://nycoa.com/recent-news/2023/2/27/hosing-and-tubing-permeability' -> 'https://nycoa.com/'
+HYGIENE ROOT ORG-002307: 'https://www.generalpartitions.com/wp-content/uploads/2025/11/BABA-Buil' -> 'https://generalpartitions.com/'
+HYGIENE ROOT ORG-002700: 'https://www.libertypultrusions.com/wp-content/uploads/2025/03/Supersil' -> 'https://libertypultrusions.com/'
+HYGIENE ROOT ORG-002744: 'https://www.drugplastics.com/wp-content/uploads/2026/05/Drug_614516_SG' -> 'https://drugplastics.com/'
+HYGIENE ROOT ORG-002603: 'https://www.Arieca.com/2025/04/22/arieca-and-rohm-develop-reference-de' -> 'https://arieca.com/'
+HYGIENE ROOT ORG-002385: 'https://mail.uslco.com/careers.php' -> 'https://uslco.com/'
+HYGIENE ROOT ORG-003585: 'https://www.acplasticsinc.com/product-category/shop-by-materials/acryl' -> 'https://acplasticsinc.com/'
+HYGIENE ROOT ORG-002227: 'https://chasecorp.com/HumiSeal/contact-us/distributors/pg/5/' -> 'https://chasecorp.com/'
+HYGIENE ROOT ORG-002720: 'https://spxcooling.com/wp-content/uploads/Olathe-12.pdf' -> 'https://spxcooling.com/'
+HYGIENE ROOT ORG-002628: 'https://www.ammeraalbeltech.com/es-ar/noticias-y-eventos/noticias/2024' -> 'https://ammeraalbeltech.com/'
+HYGIENE FLAG ORG-002466: 'https://www.vsrubber.nl/en/produits/rubber-buffers/' -> 'https://www.vsrubber.nl/en/produits/rubber-buffers/'
+GROUPFLAG ORG-004495 Siliconature Corp: https://siliconature.com/
+GROUPFLAG ORG-002255 Valmet Inc.: https://valmet.com/
+GROUPFLAG ORG-004182 Viscofan USA Inc: https://viscofan.com/
+GROUPFLAG ORG-006161 Tecomet: https://tecomet.com/
