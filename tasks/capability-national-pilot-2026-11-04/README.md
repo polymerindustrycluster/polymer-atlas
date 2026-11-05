@@ -3,6 +3,9 @@
 The repo owner chose this pass in session on 2026-11-04, as a pilot of about 100 organizations before scaling. It
 repeats `tasks/capability-pass-2026-11-04/` (66 NE Ohio organizations) at national scale.
 
+**Stacked on #123, which is stacked on #122.** Merge #122, then #123, then this PR. All three append to the same
+evidence shards, so stacking avoids end-of-file conflicts.
+
 ## Sample
 The pool is the active Ring 1–2 organizations with a website and **no** `processes` or `materials`: 2,110 of them, after
 excluding the 137 organizations touched by open PRs #122 and #123. 100 were drawn at random (seed 1104), across 28
