@@ -1,16 +1,10 @@
 PARENT ORG-004082 Adhesives Technology Corporation -> ORG-003922 Meridian Adhesives Group LLC
-PARENT ORG-002692 Magee Plastics Company -> ORG-004243 Trelleborg Corp
 PARENT ORG-004045 Fiber-Tech, Inc. -> ORG-007026 National Manufacturing Group
 PARENT ORG-004567 Res-Tek Inc. -> ORG-004606 A. P. Nonweiler Company, Inc.
-ULT ORG-002992 CHT USA: '' -> 'CHT Group'
-ULT ORG-002355 Asap Hydraulics Inc.: '' -> 'RG Group'
 ULT ORG-004267 Arcosa Marine Products, Inc.: '' -> 'Wynnchurch Capital'
-ULT ORG-004067 Seemann Composites, LLC: '' -> 'Karman Space & Defense'
 ULT ORG-004076 Janco Engineered Products, LLC: '' -> 'MacLean Investment Partners'
 ULT ORG-002144 UES INC: '' -> 'AeroVironment, Inc.'
-ULT ORG-002618 Adams Manufacturing Corporation: '' -> 'Keter Group'
 ULT ORG-002171 ULTIMATE RB: '' -> 'Carlisle Companies Inc.'
-ULT ORG-003979 TPC Group Inc.: '' -> 'ENEOS Holdings, Inc.'
 WEB ORG-001908 Tremco CPG Inc.: https://tremco.com -> https://tremcocpg.com/
 WEB ORG-001992 Precision Polymer Casting LLC (dba Castinite): http://www.castinite.com/ -> https://precisionpolymercasting.com/
 HELD ORG-002004: roboworld.com already held by ['ORG-002003'] (possible duplicate)
@@ -28,7 +22,6 @@ WEB ORG-002898 DAIS Corp: http://www.daisanalytic.com -> https://daisnano.com/
 WEB ORG-003167 UPM Raflatac Inc.: https://www.upmraflatac.com -> https://adhesivematerials.upm.com/
 WEB ORG-003186 Shintech Inc.: http://www.shintechinc.com/ -> https://shintech.com/
 WEB ORG-003335 Neuvokas Corporation: http://www.neuvokascorp.com -> https://gatorbar.com/
-WEB ORG-003348 RS Utility Structures Inc.: http://rspoles.com -> https://resilient-structures.com/
 WEB ORG-003373 Alliance Specialties and Laser Sales: https://alliancelasersales.com -> https://alliancesls.com/
 WEB ORG-003480 NantBioRenewables AL, LLC: https://nantbioplastics.com/ -> https://nantbiorenewables.com/
 WEB ORG-003502 Memphis Record Pressing LLC: https://memphisvinyl.com -> https://memphisrecordpressing.com/
@@ -73,3 +66,10 @@ HELD ORG-004604 Florikan E.S.A. LLC: Profile Products' own ownership was not che
 HELD ORG-004066 OX Engineered Products: the immediate buyer is Holcim Building Envelope; the ultimate parent (Holcim) was not quoted
 HELD ORG-001974 Photo Tex Group Inc: the site carries injected gambling spam; possibly compromised, so not used
 HELD ORG-002687 Medical Precision Plastics: dropstirs.com product site; whether it is Medical Precision Plastics' own site is unconfirmed
+HELD ORG-002692 Magee Plastics Company: council: the quote names Trelleborg Group, not the held US entity Trelleborg Corp
+HELD ORG-002992 CHT USA: council: CHT Group sits under Beitlich family/foundation ownership, so it is not the top of the chain
+HELD ORG-002355 Asap Hydraulics Inc.: council: RG Group's own upstream ownership is unknown
+HELD ORG-004067 Seemann Composites, LLC: council: Karman's relationship with its sponsor Trive Capital after the IPO is unresolved
+HELD ORG-002618 Adams Manufacturing Corporation: council: Keter has financial owners above it, so it is not the top of the chain
+HELD ORG-003979 TPC Group Inc.: council: the quote is the agreement, not the closing
+HELD ORG-003348 RS Utility Structures Inc.: council: the quotes do not tie RS Utility Structures (St. George) to the Resilient Structures site

@@ -25,25 +25,32 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 DATE, BY = "2026-11-05", "claude-code ownership-status-2-2026-11-05"
 # Immediate owner held in the Atlas, quote naming both parties.
-PARENT = {"ORG-004082": "ORG-003922", "ORG-002692": "ORG-004243", "ORG-004045": "ORG-007026",
-          "ORG-004567": "ORG-004606"}
+PARENT = {"ORG-004082": "ORG-003922", "ORG-004045": "ORG-007026", "ORG-004567": "ORG-004606"}
 # Owner not held; only where ultimate_parent_name is empty and the buyer is the top of its chain.
-ULT = {"ORG-002992": "CHT Group", "ORG-002355": "RG Group", "ORG-004267": "Wynnchurch Capital", "ORG-004067": "Karman Space & Defense",
-       "ORG-004076": "MacLean Investment Partners", "ORG-002144": "AeroVironment, Inc.", "ORG-002618": "Keter Group",
-       "ORG-002171": "Carlisle Companies Inc.", "ORG-003979": "ENEOS Holdings, Inc."}
+ULT = {"ORG-004267": "Wynnchurch Capital", "ORG-004076": "MacLean Investment Partners", "ORG-002144": "AeroVironment, Inc.",
+       "ORG-002171": "Carlisle Companies Inc."}
 ACQ = {}
 # Website fills for records whose non-site value #122/#126 cleared, and same-business domain migrations or rebrands. A
 # US subsidiary's site swapped for a foreign parent's group site is not applied.
 WEB = {"ORG-004084", "ORG-002487", "ORG-002726", "ORG-004083", "ORG-004079", "ORG-004065", "ORG-002690", "ORG-002729", "ORG-004069",
        "ORG-004085", "ORG-002249", "ORG-002004", "ORG-002404",
-       "ORG-001908", "ORG-002066", "ORG-003348", "ORG-003480", "ORG-003859", "ORG-004001", "ORG-004161", "ORG-004274", "ORG-004570",
+       "ORG-001908", "ORG-002066", "ORG-003480", "ORG-003859", "ORG-004001", "ORG-004161", "ORG-004274", "ORG-004570",
        "ORG-002312", "ORG-003671", "ORG-003908", "ORG-004581", "ORG-002886", "ORG-003186", "ORG-003373", "ORG-003502", "ORG-004073",
        "ORG-001992", "ORG-002204", "ORG-002898", "ORG-003335", "ORG-003515", "ORG-003850", "ORG-003167", "ORG-004606"}
 # Cross-family refute (grok + codex, deep, 2026-11-04) of the first build: rows whose quote does not carry the
 # specific change are held. `parent_org_id` records ownership, so a completed-acquisition quote supports it (Foster,
 # dlhBOWLES, Berry); a facility, brand-bundle or division-transfer quote does not.
-COUNCIL_HELD = {}  # filled after the cross-family review
-TRADE = {"ORG-003348": "Resilient Structures", "ORG-003167": "UPM Adhesive Materials", "ORG-004606": "APN Performance Coatings"}
+# Codex review (deep, 2026-11-05): an ultimate parent must be the top of the chain, a parent must be the named entity.
+COUNCIL_HELD = {
+    "ORG-002692": "council: the quote names Trelleborg Group, not the held US entity Trelleborg Corp",
+    "ORG-002992": "council: CHT Group sits under Beitlich family/foundation ownership, so it is not the top of the chain",
+    "ORG-002355": "council: RG Group's own upstream ownership is unknown",
+    "ORG-004067": "council: Karman's relationship with its sponsor Trive Capital after the IPO is unresolved",
+    "ORG-002618": "council: Keter has financial owners above it, so it is not the top of the chain",
+    "ORG-003979": "council: the quote is the agreement, not the closing",
+    "ORG-003348": "council: the quotes do not tie RS Utility Structures (St. George) to the Resilient Structures site",
+}
+TRADE = {"ORG-003167": "UPM Adhesive Materials", "ORG-004606": "APN Performance Coatings"}
 CONFIRM = set()
 HELD = {
     "ORG-002203": "Pexco bought HPE (2019), but the only quote is Plastics News, a licensed source usable as a lead only (AGENTS.md §5)",

@@ -26,22 +26,34 @@ quoted rows passed.
 ## Applied (`build.py`, decisions per organization; `journal.txt`)
 | Change | Organizations |
 |-|-:|
-| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 4 |
-| `ultimate_parent_name` set where it was empty and the buyer is the top of its chain | 9 |
-| `website` filled (it had been cleared) or moved to the business's current own domain | 36 |
+| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 3 |
+| `ultimate_parent_name` set where it was empty and the buyer is the top of its chain | 4 |
+| `website` filled (it had been cleared) or moved to the business's current own domain | 35 |
 | `trade_names` gains a new brand | 2 |
 
-49 evidence rows and 4 generated relationship rows.
+42 evidence rows and 3 generated relationship rows.
 
-- **Parents:** Adhesives Technology → Meridian Adhesives Group; Magee Plastics →
-  Trelleborg Corp; Fiber-Tech → National Manufacturing Group; Res-Tek → A.P. Nonweiler (APN Performance Coatings).
-- **Ultimate parents:** CHT USA → CHT Group; ASAP Hydraulics → RG Group; Arcosa Marine → Wynnchurch Capital; Seemann
-  Composites → Karman Space & Defense; Janco → MacLean Investment Partners; UES → AeroVironment; Adams Manufacturing →
-  Keter Group; Ultimate RB → Carlisle Companies; TPC Group → ENEOS Holdings.
+- **Parents:** Adhesives Technology → Meridian Adhesives Group; Fiber-Tech → National Manufacturing Group; Res-Tek →
+  A.P. Nonweiler (APN Performance Coatings).
+- **Ultimate parents:** Arcosa Marine → Wynnchurch Capital; Janco → MacLean Investment Partners; UES → AeroVironment;
+  Ultimate RB → Carlisle Companies.
 - **Websites:** 12 fills for cleared records, for example Ensinger Inc. → `ensingerplastics.com` and Y-TEX →
-  `y-tex.com`. The other 24 are same-business migrations or rebrands, for example UPM Raflatac →
+  `y-tex.com`. The other 23 are same-business migrations or rebrands, for example UPM Raflatac →
   `adhesivematerials.upm.com` and A.P. Nonweiler → `apncoatings.com`. A US subsidiary's site swapped for a foreign
   parent's group site is **not** applied (Evonik, Untha, Futamura, Silon, Sigmasoft, Unimatec, Econ, Bekum and others).
+
+## Review
+Codex refuted the 49 changes of the build (deep effort, read-only), with the prompt stating that a parent link records
+ownership and that an ultimate parent must be the top of the chain. It marked 41 OK. Seven changes are held after
+review (`COUNCIL_HELD` in `build.py`):
+- Magee → Trelleborg Corp: the quote names the Trelleborg Group, not the US entity.
+- Five ultimate parents are not shown to be the top of their chain: CHT Group (family foundation above it), RG Group,
+  Karman (sponsor relationship after the IPO), Keter (financial owners), and ENEOS (the quote is the agreement, not the
+  closing).
+- The RS Utility Structures website: the quotes do not tie the St. George record to Resilient Structures.
+
+Kept against a flag: Better Bungee's website. Its domain matches the record's own DBA. A grok pass had not run when
+this was written.
 
 ## Held
 - **Licensed source:** HPE Extrusion → Pexco (2019). The only quote is from Plastics News, which AGENTS.md §5 allows as
