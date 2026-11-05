@@ -1,0 +1,26 @@
+org_id,status,note
+ORG-003293,TERMS_FOUND,Own site; filament-wound glass fiber/epoxy RTRC conduit.
+ORG-003467,TERMS_FOUND,Own site; no process stated; only the proprietary Bio Compound additive is named.
+ORG-003495,TERMS_FOUND,"Own site; material developer, processes are stated as target forming methods for its grades."
+ORG-000268,TERMS_FOUND,Own site (Chapin Custom Molding); no resin named.
+ORG-001073,TERMS_FOUND,"Own site; thermoforming, metallizing, CNC."
+ORG-003273,TERMS_FOUND,Own site; PPS has no vocabulary term.
+ORG-001133,TERMS_FOUND,Own site (home page is image-only; terms from Manufacturing Processes page); no resin named.
+ORG-000744,TERMS_FOUND,Own site (CTC Plastics).
+ORG-001627,NO_TERMS,Own Dominator Race Products shop pages only say 'Hi-Impact plastic material' nose kits; no process or vocabulary material stated; Aerotech name not on page.
+ORG-003329,SITE_DOWN,"marshallcomposite.com and www. variant do not resolve (NXDOMAIN, checked with nslookup and fetch tools)."
+ORG-002244,TERMS_FOUND,"Own site; machining, fabrication, thermoforming, tanks; materials from service and nav lists; Lexan not mapped (brand only)."
+ORG-001923,TERMS_FOUND,"Own site (real artemispolymerprocessing.com, live); twin-screw compounder; materials from Products page list."
+ORG-000774,TERMS_FOUND,Own site; UHMW-PE belt-press and extrusion.
+ORG-000724,TERMS_FOUND,"Own site (single-page); injection molding only, no resin named."
+ORG-003688,TERMS_FOUND,"Own site (Three60 Roto); LLDPE, XLPE, HDPE and nylon listed."
+ORG-004460,NO_TERMS,"Redirects to gemstonesinks.com (Gemstone brand, Elkhart IN; Newlett not named). Site says only 'acrylic-modified resin systems'; no process or vocabulary material stated."
+ORG-001661,TERMS_FOUND,"Own site; padding fabricator, home page calls itself a vinyl padding distributor; vinyl not mapped to pvc (not stated as PVC)."
+ORG-000966,TERMS_FOUND,Own site.
+ORG-004284,TERMS_FOUND,"Own site (Plasticade, Des Plaines IL HQ); plastic molding processes appear only in PDF catalogs, not recorded."
+ORG-004158,TERMS_FOUND,Own site; dual-laminate FRP/thermoplastic-lined vessels.
+ORG-004283,TERMS_FOUND,"Own site (Mountville Rubber Co, LaGrange GA); compounding and calendering only, floor-mat molding not stated on site; CPE has no term; home/products fetched via Jina after bot block."
+ORG-002606,TERMS_FOUND,"Own site (Industrial Rubber Products); mostly distributor, rubber grades are stocked not processed so not recorded."
+ORG-002880,TERMS_FOUND,"olin.com has no epoxy detail; terms from Olin-owned olinepoxy.com (different domain, linked as the Epoxy segment site). No process stated."
+ORG-003154,TERMS_FOUND,Own global site (no Dallas NC plant page); PBT has no vocabulary term.
+ORG-000021,WRONG_SITE,paddingtongroup.com redirects to a GoDaddy domain-for-sale parking page.

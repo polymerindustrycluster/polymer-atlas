@@ -1,0 +1,87 @@
+org_id,field,value,source_url,quote
+ORG-003010,materials,pha,https://cjbiomaterials.com/products/how-pha-is-made,we are able to manufacture PHAs through the large-scale fermentation of renewable carbon sources
+ORG-003010,materials,pla,https://cjbiomaterials.com/products/compounds,typically formulated by blending Polylactic Acid (PLA) with amorphous polyhydroxyalkanoate (aPHA)
+ORG-003010,materials,bioplastics_biobased,https://cjbiomaterials.com/products/how-pha-is-made,"our PHA is made directly from renewable sources of biogenic carbon, like plant sugars, and is certified as biobased by USDA BioPreferred"
+ORG-003010,processes,compounding_unspecified,https://cjbiomaterials.com/products/compounds,CJ Biomaterials offers a portfolio of PHACT™ Compounds that are compatible with various plastic conversion technologies.
+ORG-003097,processes,tire_manufacturing,https://media.toyotires.com/,"has reached a major manufacturing milestone with the production of 100 million tires at the company’s plant in White, Georgia."
+ORG-003059,materials,thermosets,https://www.norplex-micarta.com/,"Thermoset Composite Materials Development, Design, and Manufacturing"
+ORG-003059,materials,composites_thermoset,https://www.norplex-micarta.com/,"Thermoset Composite Materials Development, Design, and Manufacturing"
+ORG-003059,materials,epoxy,https://www.norplex-micarta.com/,"Utilizing epoxy, phenolic, melamine, and silicone resin systems on nearly limitless different reinforcements, Norplex-Micarta offers composite material solutions to designers worldwide."
+ORG-003059,materials,phenolic,https://www.norplex-micarta.com/,"Utilizing epoxy, phenolic, melamine, and silicone resin systems on nearly limitless different reinforcements, Norplex-Micarta offers composite material solutions to designers worldwide."
+ORG-003059,materials,melamine_urea_formaldehyde,https://www.norplex-micarta.com/,"Utilizing epoxy, phenolic, melamine, and silicone resin systems on nearly limitless different reinforcements, Norplex-Micarta offers composite material solutions to designers worldwide."
+ORG-003059,materials,silicones,https://www.norplex-micarta.com/,"Utilizing epoxy, phenolic, melamine, and silicone resin systems on nearly limitless different reinforcements, Norplex-Micarta offers composite material solutions to designers worldwide."
+ORG-003059,processes,composites_filament_winding,https://www.norplex-micarta.com/,"Prepreg and filament wound tubes for excellent strength, stiffness, and repeatability."
+ORG-002578,materials,pet_petg,https://clearlyclean.com/about/,"We create lightweight, transparent food trays made from recyclable PET with post-consumer content."
+ORG-002578,materials,recycled_content_pcr_pir,https://clearlyclean.com/innovation/,Incorporates post-consumer recycled content
+ORG-001567,processes,injection_molding,https://ieg-llc.com/capabilities-2/,At IEG Plastics we combine our state-of-the-art method of injection molding plus our capacity for secondary operations and assembly
+ORG-001567,processes,assembly_secondary_ops,https://ieg-llc.com/capabilities-2/,At IEG Plastics we combine our state-of-the-art method of injection molding plus our capacity for secondary operations and assembly
+ORG-001567,processes,insert_overmolding,https://ieg-llc.com/capabilities-2/,Insert Molding Over molding Robotics Assembly
+ORG-001567,processes,mold_tool_making,https://ieg-llc.com/capabilities-2/,The company's ability to tackle complex projects is what makes IEG a leader in the mold design and mold making industry.
+ORG-001567,processes,tooling_repair_maintenance,https://ieg-llc.com/capabilities-2/,Engineering Changes- USA Mold Repair- USA
+ORG-004486,processes,coating_applying,https://ronaldmark.com/,Our advanced extrusion coating process applies a thin layer of plastic to a base textile
+ORG-004486,processes,extrusion_unspecified,https://ronaldmark.com/,Our advanced extrusion coating process applies a thin layer of plastic to a base textile
+ORG-004486,processes,recycling_mechanical,https://ronaldmark.com/,"We operate an in-house plastics recycling facility at our Pitman, NJ, plant with sifting, grinding, and sorting capabilities"
+ORG-004486,materials,pvc,https://ronaldmark.com/,"we offer toll coating with polymers like PVC, TPU, TPO, and LLDPE on knit, woven, and nonwoven fabrics"
+ORG-004486,materials,thermoplastic_elastomers_tpe_tpu,https://ronaldmark.com/,"we offer toll coating with polymers like PVC, TPU, TPO, and LLDPE on knit, woven, and nonwoven fabrics"
+ORG-004486,materials,thermoplastic_olefin_tpo,https://ronaldmark.com/,"Made from durable TPO polymer, our diamond plate flooring features a low-profile surface for easy cleaning"
+ORG-004486,materials,polyethylene_pe,https://ronaldmark.com/,"we offer toll coating with polymers like PVC, TPU, TPO, and LLDPE on knit, woven, and nonwoven fabrics"
+ORG-001885,processes,thermoforming_unspecified,https://www.rohrer.com/ezcombo/thermoforming/,"For plastic packaging components, like thermoformed blisters, ezCombo ® can significantly reduce costs."
+ORG-001885,materials,pvc,https://www.rohrer.com/ezcombo/thermoforming/,PVC and RPET thermoformed blisters and trays packaging
+ORG-001885,materials,pet_petg,https://www.rohrer.com/ezcombo/thermoforming/,PVC and RPET thermoformed blisters and trays packaging
+ORG-001885,materials,recycled_content_pcr_pir,https://www.rohrer.com/product/blister-packaging/,sustainable materials like post-consumer recycled thermoformed blisters
+ORG-000434,processes,injection_molding,https://mcitechnologies.com/,Precision Injection Molding Our wealth of real-world expertise in polymer behavior allows us to deliver real solutions
+ORG-000434,processes,insert_overmolding,https://mcitechnologies.com/service/inset-molding-for-connectors/,injecting thermoplastic around the carefully placed parts (inserts)
+ORG-000434,materials,thermoplastics,https://mcitechnologies.com/service/inset-molding-for-connectors/,injecting thermoplastic around the carefully placed parts (inserts)
+ORG-000372,materials,polyurethane_pu,https://www.huntsman.com/about/polyurethanes,"Huntsman Polyurethanes is a global leader in MDI-based polyurethanes, serving over 5,000 customers globally."
+ORG-000372,materials,thermoplastic_elastomers_tpe_tpu,https://www.huntsman.com/about/polyurethanes,our coatings and TPUs provide protection and extend the life of many different products and applications
+ORG-000372,materials,foams_polymeric,https://www.huntsman.com/about/polyurethanes,our flexible cushioning foams provide superior comfort and enhance wellbeing
+ORG-000372,materials,composites_unspecified,https://www.huntsman.com/about/polyurethanes,Our lightweight composite materials improve the fuel efficiency of automobiles and forms of transportation
+ORG-000372,materials,epoxy,https://www.huntsman.com/about/advanced-materials,Our Araldite® and Aradur® brands provide our customers with one of the broadest epoxy resins portfolios in the industry
+ORG-002407,processes,additive_manufacturing_polymer,https://americanadditive.com/about-us,"Our Horsham, Pennsylvania facility houses FDM production (including the AIS-qualified Stratasys Fortus 900), DMLS, SLS, SLA, HP MJF"
+ORG-002407,processes,additive_manufacturing_metal,https://americanadditive.com/about-us,Direct Metal Laser Sintering (DMLS)
+ORG-002407,materials,peek_high_performance,https://americanadditive.com/about-us,validated for aircraft-interior and mission-grade PEKK applications with low-outgassing and ESD-safe options
+ORG-002407,materials,nylon_pa,https://americanadditive.com/about-us,Featured SLS Materials Nylon 12 (PA12) Nylon 12 GF TPU 90A
+ORG-002407,materials,thermoplastic_elastomers_tpe_tpu,https://americanadditive.com/about-us,Featured SLS Materials Nylon 12 (PA12) Nylon 12 GF TPU 90A
+ORG-004287,processes,composites_hand_layup,https://thorpeplantmaintenanceandengineering.com/manufacturing/non-metallic-equipment/shop-capabilities/,Thorpe has the ability to quickly manufacture custom pipe systems with either hand lay-up or filament structures in any variety of resin systems.
+ORG-004287,materials,composites_frp,https://thorpeplantmaintenanceandengineering.com/manufacturing/non-metallic-equipment/shop-capabilities/,Our capabilities include providing FRP (Fiberglass Reinforced Plastic) fittings and flanged nozzles for any application.
+ORG-003050,materials,polymer_additives,https://www.byk.com/en/applications/thermoplastics,Our high-performance thermoplastics additives and solutions - added value for your polymers.
+ORG-003564,processes,extrusion_unspecified,https://www.polytex.com/,Features: • 10-Color Flexographic Printing • Multilayer Coextruded Films • Specialty Film Laminations • Soft-Touch & High-Gloss Coatings
+ORG-003564,processes,laminating,https://www.polytex.com/,Features: • 10-Color Flexographic Printing • Multilayer Coextruded Films • Specialty Film Laminations • Soft-Touch & High-Gloss Coatings
+ORG-003564,processes,printing_decorating_plastics,https://www.polytex.com/,Features: • 10-Color Flexographic Printing • Multilayer Coextruded Films • Specialty Film Laminations • Soft-Touch & High-Gloss Coatings
+ORG-003564,materials,polypropylene_pp,https://www.polytex.com/,"Woven polypropylene strength meets premium BOPP graphics in a lightweight, tear-resistant package"
+ORG-003564,materials,films_flexible_packaging,https://www.polytex.com/,"Advanced coextruded multilayer films combine strength, clarity and sealability with sophisticated printing, laminating and coating options"
+ORG-002185,processes,foam_production_unspecified,https://pennfoam.com/,Flexible Polyurethane Foam Manufacturing High-performance quality formulated foams to meet your company’s specific needs
+ORG-002185,processes,foam_fabrication,https://pennfoam.com/,"Flexible Foam & Fiber Fabrication Specialized vertical and horizontal CNC cutting lines, high-volume die-cutters"
+ORG-002185,materials,polyurethane_pu,https://pennfoam.com/,Flexible Polyurethane Foam Manufacturing High-performance quality formulated foams to meet your company’s specific needs
+ORG-002185,materials,foams_polymeric,https://pennfoam.com/,"Unlike typical fabricators that only cut foam and fiber, we manufacture the foam and fiber ourselves."
+ORG-001018,processes,blow_molding,https://www.pinnacleplasticproducts.com/custom-blow-molding/,Our blow molding facility consists of nine presses ranging from 10-50 pounds utilizing 17 accumulator heads blow molding machines
+ORG-001018,processes,assembly_secondary_ops,https://www.pinnacleplasticproducts.com/,"secondary operations such as urethane foam filling, drilling, routing, punching, riveting, as well as assembly and full product pack out"
+ORG-001018,processes,insert_overmolding,https://www.pinnacleplasticproducts.com/custom-blow-molding/,Secondary Services Assembly Decaling Drilling Full Product Pack-Out Insert Molding JIT Labeling
+ORG-001018,materials,polyethylene_pe,https://www.pinnacleplasticproducts.com/custom-blow-molding/,"Custom plastic products are made from a range of plastics, such as high-density polyethylene (HDPE), polypropylene (PP), and most engineering grade resins."
+ORG-001018,materials,polypropylene_pp,https://www.pinnacleplasticproducts.com/custom-blow-molding/,"Custom plastic products are made from a range of plastics, such as high-density polyethylene (HDPE), polypropylene (PP), and most engineering grade resins."
+ORG-001018,materials,abs,https://www.pinnacleplasticproducts.com/custom-blow-molding/,Thermoplastic Rubber (TPR) Acrylonitrile-Butadiene-Styrene (ABS) Noryl Glass filled (PPE/PS)
+ORG-001018,materials,thermoplastic_elastomers_tpe_tpu,https://www.pinnacleplasticproducts.com/custom-blow-molding/,Thermoplastic Rubber (TPR) Acrylonitrile-Butadiene-Styrene (ABS) Noryl Glass filled (PPE/PS)
+ORG-004414,materials,composites_frp,https://gpicomposites.com/,"GPI has designed and manufactured fiberglass tanks, vessels, scrubbers, and piping systems for aggressive chemical and industrial environments."
+ORG-004414,materials,thermoplastics,https://gpicomposites.com/capabilities,Dual-laminate construction with thermoplastic liners when required
+ORG-002453,processes,injection_molding,https://htbauerle.com,Custom plastic injection molding
+ORG-002453,processes,thermoforming_pressure,https://htbauerle.com,Custom pressure forming
+ORG-002453,processes,thermoforming_vacuum,https://htbauerle.com,Custom vacuum forming
+ORG-002453,processes,extrusion_profile,https://htbauerle.com,Custom profile + tubing extrusions
+ORG-002453,processes,extrusion_pipe_tube,https://htbauerle.com,Custom profile + tubing extrusions
+ORG-002453,processes,rubber_molding_unspecified,https://htbauerle.com,Custom rubber molded parts
+ORG-002453,processes,rubber_extrusion,https://htbauerle.com,Extruded rubber profiles
+ORG-002453,processes,plastics_machining_cnc,https://htbauerle.com,Plastic machining (all plastics)
+ORG-002453,processes,fabrication_unspecified,https://htbauerle.com,Plastic fabrication + assemblies
+ORG-002453,processes,mold_tool_making,https://htbauerle.com,CAD/CAM & in-house tooling
+ORG-002453,processes,assembly_secondary_ops,https://htbauerle.com,All secondaries & assemblies
+ORG-002453,materials,elastomers_rubber,https://htbauerle.com,Custom rubber molded parts
+ORG-004107,processes,injection_molding,https://royaltechnologies.com/capabilities/plastic-molding/,Injection Molding Urethane Foam Molding Precision Optics & Lenses Multi-shot Injection Molding Gas-assist Insert and Over-mold Stack Mold
+ORG-004107,processes,insert_overmolding,https://royaltechnologies.com/capabilities/plastic-molding/,Injection Molding Urethane Foam Molding Precision Optics & Lenses Multi-shot Injection Molding Gas-assist Insert and Over-mold Stack Mold
+ORG-004107,processes,two_shot_molding,https://royaltechnologies.com/capabilities/plastic-molding/,2-Shot Chair Back Molding
+ORG-004107,processes,plastics_fabrication_welding,https://royaltechnologies.com/,We offer advanced fabrication and welding options to create durable and precise products that fit your unique needs.
+ORG-004107,processes,assembly_secondary_ops,https://royaltechnologies.com/,Combine multiple components into one perfected product while removing time constraints and streamlining production with our assembly capabilities.
+ORG-004107,materials,thermoplastics,https://royaltechnologies.com/,We use our decades of experience to create custom thermoplastic injection molding solutions that help lower costs and increase efficiency.
+ORG-004107,materials,polyurethane_pu,https://royaltechnologies.com/,"our state-of-the-art facilities are ready to tackle your plastic injection, precision and urethane foam molding needs."
+ORG-004107,materials,foams_polymeric,https://royaltechnologies.com/,"our state-of-the-art facilities are ready to tackle your plastic injection, precision and urethane foam molding needs."
+ORG-003635,processes,rotational_molding,https://chemtainer.com/about,keeping them at the forefront of the plastic rotational molding industry.
+ORG-003635,materials,polyethylene_pe,https://chemtainer.com/resources/material-selection-guide,Most products offered in this catalog are molded of linear medium density polyethylene (LMDPE)

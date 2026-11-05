@@ -1,0 +1,52 @@
+org_id,field,value,source_url,quote
+ORG-001517,processes,fabrication_unspecified,https://cascomfg.com/contract-manufacturing/,"If it involves stitching, sealing, or soft surface fabrication, Casco can probably build it."
+ORG-003982,processes,silicone_formulation,https://www.appliedmaterialsolutions.com/chemical-products/silicone-emulsions/,AMS manufactures silicone emulsions ranging in concentration from 25% to 60% active.
+ORG-003982,materials,silicones,https://www.appliedmaterialsolutions.com/chemical-products/silicone-emulsions/,AMS manufactures silicone emulsions ranging in concentration from 25% to 60% active.
+ORG-002328,processes,fabrication_unspecified,https://ventana-usa.com,we have mastered bending hundreds of profiles for products across a variety of industries
+ORG-002328,materials,pvc,https://ventana-usa.com,the art and engineering of vinyl profiles
+ORG-003246,processes,fabrication_unspecified,https://marmac.com/construction-products/pipe-couplings/,"each MarMac coupling is hand-made in our McBee, South Carolina manufacturing facility"
+ORG-003246,materials,polyethylene_pe,https://marmac.com/construction-products/pipe-couplings/,Alternating layers of polyethylene and woven polypropylene impart incredible strength and durability
+ORG-003246,materials,polypropylene_pp,https://marmac.com/construction-products/pipe-couplings/,Alternating layers of polyethylene and woven polypropylene impart incredible strength and durability
+ORG-000842,processes,rubber_molding_unspecified,https://www.flexoplate.com/ProductsandCapabilities.html,Molded rubber plates as well as engraved plates are available on a daily basis.
+ORG-000842,materials,natural_rubber_nr,https://www.flexoplate.com/RubberPlatemaking.html,"All molding rubber used is Natural Rubber, various colors, and various durometers."
+ORG-003960,processes,polymerization,https://ortecinc.com/core-capabilities/,Emulsion Polymerizations
+ORG-003960,materials,polyurethane_pu,https://ortecinc.com/,polyurethanes and dispersions or other specialty chemical or polymer needs
+ORG-001838,processes,die_cutting_converting,https://kwmbeach.com/products,Our die cutting business is service oriented
+ORG-001838,processes,laminating,https://kwmbeach.com/products,Laminating
+ORG-001838,materials,elastomers_rubber,https://kwmbeach.com/products,Rubber
+ORG-001838,materials,foams_polymeric,https://kwmbeach.com/products,Foam
+ORG-000983,processes,extrusion_film_blown,https://newtechplastics.com/capabilities-products/,Our advanced blown film extrusion ensures quality and customization
+ORG-000983,materials,films_flexible_packaging,https://newtechplastics.com/capabilities-products/,"With 45+ years in flexible packaging, we deliver expert, innovative solutions."
+ORG-000983,materials,polyethylene_pe,https://newtechplastics.com/capabilities-products/,High Molecular Weight High Density (HMW-HDPE) Film
+ORG-000983,materials,recycled_content_pcr_pir,https://newtechplastics.com/capabilities-products/,made from 100% recycled scrap (clear or colored)
+ORG-000433,processes,custom_compounding,https://mccannplastics.com/,Discover our advanced compounding and formulation technology for superior product performance.
+ORG-000433,materials,thermoplastics,https://mccannplastics.com/,"McCann manufactures customized thermoplastic materials, specializing in filled PP, rotational molding compounds and powders."
+ORG-000433,materials,polypropylene_pp,https://mccannplastics.com/,"McCann manufactures customized thermoplastic materials, specializing in filled PP, rotational molding compounds and powders."
+ORG-000433,materials,polyethylene_pe,https://mccannplastics.com/,"We provide customized thermoplastic materials, including PP and PE based compounds, to diverse industries"
+ORG-004448,processes,injection_molding,https://www.mgsmfg.com/global-locations/mgs-usa/,"Our Germantown manufacturing facility is home to state-of-the-art cleanroom manufacturing including precision injection molding, assembly and quality for complex healthcare programs."
+ORG-004448,processes,assembly_secondary_ops,https://www.mgsmfg.com/global-locations/mgs-usa/,"Our Germantown manufacturing facility is home to state-of-the-art cleanroom manufacturing including precision injection molding, assembly and quality for complex healthcare programs."
+ORG-003031,materials,polymer_additives,https://www.clariant.com/en/Business-Units/Additives,"major supplier of flame retardants, performance additives and advanced surface solutions for functional effects in plastics, coatings, inks and consumer applications"
+ORG-002742,processes,injection_molding,https://www.crescentind.com/custom-injection-molding,"specialized injection molding services like insert molding, overmolding, cleanroom molding"
+ORG-002742,processes,insert_overmolding,https://www.crescentind.com/custom-injection-molding,"specialized injection molding services like insert molding, overmolding, cleanroom molding"
+ORG-002742,processes,mold_tool_making,https://www.crescentind.com/custom-injection-molding,In-House Mold Design & Tool Building
+ORG-002742,processes,assembly_secondary_ops,https://www.crescentind.com/custom-injection-molding,"Post-Processing Operations (Part Decoration, Assembly, Kitting, and Packaging)"
+ORG-002742,materials,thermoplastics,https://www.crescentind.com/custom-injection-molding,"Our experience includes various thermoplastics, engineered resins, and elastomers"
+ORG-002742,materials,elastomers_rubber,https://www.crescentind.com/custom-injection-molding,"Our experience includes various thermoplastics, engineered resins, and elastomers"
+ORG-003653,processes,rotational_molding,https://kracor.com/about.php,"For over 50 years, KRACOR has manufactured high quality rotationally molded plastic products for national and international markets"
+ORG-002401,materials,pvc,https://miwindows.com/hegins-location,"our Hegins, Pa., facility manufactures vinyl windows and sliding glass doors for the home-replacement sector"
+ORG-003935,processes,adhesive_sealant_formulation,https://technicaladhesives.com/water-based-adhesives/,"As a manufacturer, we offer a diverse range of products, including Poly Vinyl Acetate (PVA), Vinyl Acetate Emulsion (VAE), Dextrin, and Acrylic adhesives, among others."
+ORG-003935,materials,adhesives_sealants,https://technicaladhesives.com/water-based-adhesives/,"As a manufacturer, we offer a diverse range of products, including Poly Vinyl Acetate (PVA), Vinyl Acetate Emulsion (VAE), Dextrin, and Acrylic adhesives, among others."
+ORG-000230,processes,extrusion_wire_cable_coating,https://www.americanwireandcable.com/about-us.html,"extrusion plants located in Northern Ohio and Central Tennessee apply PVC, XLPE, EPDM, Silicone Rubber"
+ORG-000230,materials,pvc,https://www.americanwireandcable.com/about-us.html,"extrusion plants located in Northern Ohio and Central Tennessee apply PVC, XLPE, EPDM, Silicone Rubber"
+ORG-000230,materials,epdm,https://www.americanwireandcable.com/about-us.html,"extrusion plants located in Northern Ohio and Central Tennessee apply PVC, XLPE, EPDM, Silicone Rubber"
+ORG-000230,materials,silicones,https://www.americanwireandcable.com/about-us.html,"extrusion plants located in Northern Ohio and Central Tennessee apply PVC, XLPE, EPDM, Silicone Rubber"
+ORG-003018,processes,recycling_chemical_pyrolysis,https://nexuscircular.com/our-technology/,We use a patented pyrolysis-based process to recover hard-to-recycle plastics from everyday products and packaging.
+ORG-003018,materials,polyethylene_pe,https://nexuscircular.com/our-technology/,"films, foams and flexible packaging materials made from high-density polyethylene (HDPE #2), low-density polyethylene (LDPE #4) and polypropylene (PP #5)"
+ORG-003018,materials,polypropylene_pp,https://nexuscircular.com/our-technology/,"films, foams and flexible packaging materials made from high-density polyethylene (HDPE #2), low-density polyethylene (LDPE #4) and polypropylene (PP #5)"
+ORG-003903,processes,injection_molding,https://www.agtproducts.com/,manufacturing of most injection plastic molding
+ORG-003903,processes,extrusion_unspecified,https://www.agtproducts.com/,custom and stock extrusions to manufacture a wide range of components
+ORG-003903,processes,thermoforming_unspecified,https://www.agtproducts.com/,Thermoforming
+ORG-003903,processes,die_cutting_converting,https://www.agtproducts.com/,AGT specializes in providing every customer with custom gasket cutting services in a wide selection of industries.
+ORG-003903,processes,laminating,https://www.agtproducts.com/,AGT offers a range of inline and offline laminating capabilities
+ORG-003903,materials,elastomers_rubber,https://www.agtproducts.com/,"We specialize and offer fabrication in large varieties of rubbers, foam, tapes, film and almost any non-metallic material."
+ORG-003903,materials,foams_polymeric,https://www.agtproducts.com/,"We specialize and offer fabrication in large varieties of rubbers, foam, tapes, film and almost any non-metallic material."

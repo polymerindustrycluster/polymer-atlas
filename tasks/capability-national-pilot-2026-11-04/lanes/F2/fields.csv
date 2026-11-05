@@ -1,0 +1,107 @@
+org_id,field,value,source_url,quote
+ORG-003293,processes,composites_filament_winding,https://championfiberglass.com/industries/industrial-commercial/,Champion RTRC conduit is filament-wound from glass fiber strands impregnated with epoxy resin and cured at high temperature
+ORG-003293,materials,epoxy,https://championfiberglass.com/industries/industrial-commercial/,Champion RTRC conduit is filament-wound from glass fiber strands impregnated with epoxy resin and cured at high temperature
+ORG-003293,materials,composites_frp,https://championfiberglass.com/industries/industrial-commercial/,Champion RTRC conduit is filament-wound from glass fiber strands impregnated with epoxy resin and cured at high temperature
+ORG-003467,materials,polymer_additives,https://coollid.com/our-mission/,"Eco Coollid-Bio™ Compound stands apart as a purely organic additive, distinct from conventional oxo-biodegradable options."
+ORG-003495,processes,injection_molding,https://www.cornnext.com/cornnext17,CornNext-17 is being developed for extrusion and injection molding using conventional industrial equipment platforms.
+ORG-003495,processes,extrusion_unspecified,https://www.cornnext.com/cornnext17,CornNext-17 is being developed for extrusion and injection molding using conventional industrial equipment platforms.
+ORG-003495,materials,bioplastics_biobased,https://www.cornnext.com/cornnext17,to DIN EN 16785-1 at 98% biobased content
+ORG-000268,processes,blow_molding_extrusion,https://chapincustommolding.com/,Extrusion blow molding is performed right in our facility.
+ORG-000268,processes,printing_decorating_plastics,https://chapincustommolding.com/,Screen printing
+ORG-000268,processes,assembly_secondary_ops,https://chapincustommolding.com/,Product assembly
+ORG-001073,processes,thermoforming_vacuum,https://replex.com/two-types-of-thermoforming-free-blowing-vs-molding/,"The substrate is then heated and drawn into the mold, with a vacuum applied to extract all the air."
+ORG-001073,processes,coating_applying,https://replex.com/metallizing/,Specialized protective back coatings for indoor or outdoor applications are applied using a robotic paint line
+ORG-001073,processes,plastics_machining_cnc,https://replex.com/cnc-machining/,"Five 3-axis CNC routers, one 5-axis CNC router, and a CNC panel saw, with all tooling designed in-house."
+ORG-001073,materials,acrylic_pmma,https://replex.com/capabilities/,Precision forming of acrylic and polycarbonate into complex shapes and sizes.
+ORG-001073,materials,polycarbonate_pc,https://replex.com/capabilities/,Precision forming of acrylic and polycarbonate into complex shapes and sizes.
+ORG-003273,processes,extrusion_pipe_tube,https://www.teel.com/,"Teel Plastics extrudes high-quality, close-tolerance plastic tubing, piping, and profiles for many applications and offers injection molding as well."
+ORG-003273,processes,extrusion_profile,https://www.teel.com/,"Teel Plastics extrudes high-quality, close-tolerance plastic tubing, piping, and profiles for many applications and offers injection molding as well."
+ORG-003273,processes,injection_molding,https://www.teel.com/,"Teel Plastics extrudes high-quality, close-tolerance plastic tubing, piping, and profiles for many applications and offers injection molding as well."
+ORG-003273,materials,polyethylene_pe,https://www.teel.com/,We work in many resins from commodity HDPE to high-end PEEK and PPS.
+ORG-003273,materials,peek_high_performance,https://www.teel.com/,We work in many resins from commodity HDPE to high-end PEEK and PPS.
+ORG-001133,processes,injection_molding,https://www.superbindustries.com/engineering%20%26amp%3B%20manufacturing/manufacturing-processes,State-of-the-art injection molding presses and process technology offers the highest precision and flexibility for the most diverse applications
+ORG-001133,processes,insert_overmolding,https://www.superbindustries.com/engineering%20%26amp%3B%20manufacturing/manufacturing-processes,"reel to reel terminal over molding, robot assisted processes, insert molding, nut insertion and molding, over molding bumper bolts, and shuttle press molding."
+ORG-001133,processes,assembly_secondary_ops,https://www.superbindustries.com/engineering%20%26amp%3B%20manufacturing/manufacturing-processes,SUPERB offers value added manual and automated assembly of components
+ORG-000744,processes,compression_molding,https://ctcplastics.com/,"CTC Plastics delivers high-volume, high-performance compression molded components for the most demanding industries."
+ORG-000744,processes,mold_tool_making,https://ctcplastics.com/,Tooling design & build
+ORG-000744,processes,assembly_secondary_ops,https://ctcplastics.com/,Post-molding finishing and assembly
+ORG-000744,materials,polypropylene_pp,https://ctcplastics.com/,PP (Polypropylene)
+ORG-000744,materials,polyethylene_pe,https://ctcplastics.com/,HDPE (High Density Polyethylene)
+ORG-000744,materials,abs,https://ctcplastics.com/,ABS (Acrylonitrile Butadiene Styrene)
+ORG-000744,materials,recycled_content_pcr_pir,https://ctcplastics.com/,We process advanced thermoplastics and recycled compounds to meet OEM performance and environmental standards.
+ORG-002244,processes,thermoforming_unspecified,https://www.millerplastics.com/services,Our plastic annealing services and custom thermoforming services are available to you in our high-tech programmable ovens.
+ORG-002244,processes,plastics_machining_cnc,https://www.millerplastics.com/about-us/,introducing the latest and greatest CNC machines and other state-of-the-art processes.
+ORG-002244,processes,plastics_fabrication_welding,https://www.millerplastics.com/machining,utilizing our plastic welding and fabricating processes to ensure the highest quality and durability.
+ORG-002244,processes,assembly_secondary_ops,https://www.millerplastics.com/services,Assembly
+ORG-002244,materials,polystyrene_ps_hips,https://www.millerplastics.com/services,"Many thermoplastics can be custom thermoformed; they include Polystyrene, Kydex®, Apet, Lexan®, PVC, and more."
+ORG-002244,materials,pvc,https://www.millerplastics.com/services,"Many thermoplastics can be custom thermoformed; they include Polystyrene, Kydex®, Apet, Lexan®, PVC, and more."
+ORG-002244,materials,pet_petg,https://www.millerplastics.com/services,"Many thermoplastics can be custom thermoformed; they include Polystyrene, Kydex®, Apet, Lexan®, PVC, and more."
+ORG-002244,materials,peek_high_performance,https://www.millerplastics.com/machining,PEEK Machining
+ORG-002244,materials,polypropylene_pp,https://www.millerplastics.com/machining,Polypropylene Plastic Containers
+ORG-002244,materials,fluoropolymers,https://www.millerplastics.com/machining,Kynar Fittings
+ORG-001923,processes,custom_compounding,https://www.artemispolymerprocessing.com/custom-production,"When melt processing is the only way to create the plastic raw material that you require, we can make your pellets to your specifications."
+ORG-001923,processes,compounding_extrusion,https://www.artemispolymerprocessing.com/products,TWIN-SCREW COMPOUNDING - CUSTOMIZED TO YOUR REQUIREMENTS
+ORG-001923,processes,additive_dry_blending,https://www.artemispolymerprocessing.com/custom-production,We can blend in whatever your additive requirements may be and save you the cost of custom compounding.
+ORG-001923,materials,thermoplastic_elastomers_tpe_tpu,https://www.artemispolymerprocessing.com/products,"Thermoplastic polyurethane: 60 Shore A TO 85 Shore D, esters, ethers, natural, black, colors, FR, UV,"
+ORG-001923,materials,thermoplastic_olefin_tpo,https://www.artemispolymerprocessing.com/products,"Matte finish thermoplastic polyolefins: 20 Shore A to 70 Shore D, natural, black, colors, FR, UV"
+ORG-001923,materials,polystyrene_ps_hips,https://www.artemispolymerprocessing.com/products,"Crystal polystyrene, clear SBS (K-RESIN), SAN, transparent ABS, acrylic, polycarbonate"
+ORG-001923,materials,abs,https://www.artemispolymerprocessing.com/products,"ABS: natural, black, colors, FR, UV glass-filled, transparent"
+ORG-001923,materials,acrylic_pmma,https://www.artemispolymerprocessing.com/products,"Crystal polystyrene, clear SBS (K-RESIN), SAN, transparent ABS, acrylic, polycarbonate"
+ORG-001923,materials,polycarbonate_pc,https://www.artemispolymerprocessing.com/products,"POLYCARBONATE: clear, black, colors, FR, glass-filled"
+ORG-001923,materials,pvc,https://www.artemispolymerprocessing.com/products,"polymethylpentene (TPX), rigid and flexible PVC"
+ORG-001923,materials,acetal_pom,https://www.artemispolymerprocessing.com/products,"ACETALS: homopolymer and copolymer, natural, black, colors, impact-modified, glass & glass/mineral-filled"
+ORG-001923,materials,nylon_pa,https://www.artemispolymerprocessing.com/products,"NYLON: 6 & 6/6 natural, black, colors, FR, UV, glass-filled, impact-modified, heat-stabilized"
+ORG-001923,materials,fluoropolymers,https://www.artemispolymerprocessing.com/products,"FLUOROPOLYMERS: ETFE, PVDF, natural & colored"
+ORG-001923,materials,polypropylene_pp,https://www.artemispolymerprocessing.com/products,"POLYPROPYLENE/POLYETHYLENE: glass-filled, talc-filled, FR, natural, black, colors"
+ORG-001923,materials,polyethylene_pe,https://www.artemispolymerprocessing.com/products,"POLYPROPYLENE/POLYETHYLENE: glass-filled, talc-filled, FR, natural, black, colors"
+ORG-001923,materials,peek_high_performance,https://www.artemispolymerprocessing.com/products,PEEK
+ORG-000774,processes,compression_molding,https://crownplastics.com/contact,Crown Plastics is the world leader in the manufacturing of thin gauge UHMW polyethylene due to our unique process of continuous compression molding.
+ORG-000774,processes,extrusion_sheet,https://crownplastics.com/company/equipment/,for melt polymer sheet production.
+ORG-000774,processes,extrusion_unspecified,https://crownplastics.com/company/equipment/,Ram Extrusion- 9.5mm-12mm thick/ 254mm wide for UHMW extrusion.
+ORG-000774,processes,laminating,https://crownplastics.com/solutions/custom-solutions/,Multi-layer laminating capability
+ORG-000774,processes,die_cutting_converting,https://crownplastics.com/solutions/custom-solutions/,"Die-cutting capabilities offer a wide range of cost-effective, diversified installation options for your customer."
+ORG-000774,materials,polyethylene_pe,https://crownplastics.com/contact,Crown Plastics is the world leader in the manufacturing of thin gauge UHMW polyethylene
+ORG-000774,materials,composites_thermoplastic,https://crownplastics.com/,Advanced Thermoplastics Composites
+ORG-000724,processes,injection_molding,https://centrexplastics.com/,"For over 50 years, Centrex Plastics has been a leader in custom plastic injection molding."
+ORG-003688,processes,rotational_molding,https://www.360roto.com/,"By using the rotational molding process, we can offer high quality products with complex shapes and flexible designs"
+ORG-003688,processes,plastics_machining_cnc,https://www.360roto.com/,"precision CNC machining, molded-in inserts, graphics, spin welding, assembly, and structural foaming"
+ORG-003688,processes,plastics_fabrication_welding,https://www.360roto.com/,"precision CNC machining, molded-in inserts, graphics, spin welding, assembly, and structural foaming"
+ORG-003688,processes,assembly_secondary_ops,https://www.360roto.com/,"precision CNC machining, molded-in inserts, graphics, spin welding, assembly, and structural foaming"
+ORG-003688,processes,foam_molding_structural,https://www.360roto.com/,"precision CNC machining, molded-in inserts, graphics, spin welding, assembly, and structural foaming"
+ORG-003688,materials,polyethylene_pe,https://www.360roto.com/,"Because of its physical properties, Three60 Roto most commonly uses LLDPE."
+ORG-003688,materials,nylon_pa,https://www.360roto.com/,Nylon parts are extremely wear and heat resistance.
+ORG-001661,processes,foam_fabrication,https://www.dandyproducts.net/spcialty-padding-systems,All pads are custom made of 1 inch to 6 inches thick high-density foam covered in a range of
+ORG-001661,materials,foams_polymeric,https://www.dandyproducts.net/spcialty-padding-systems,All pads are custom made of 1 inch to 6 inches thick high-density foam covered in a range of
+ORG-000966,processes,rotational_molding,https://mondopolymer.com/toll-manufacturing/,Ferry Industries 4 Arm Rotational Molder
+ORG-000966,processes,injection_molding,https://mondopolymer.com/toll-manufacturing/,Nissei 660 Ton Injection Molder
+ORG-000966,processes,plastics_fabrication_welding,https://mondopolymer.com/toll-manufacturing/,2 Kabar 15 KW RF Welder
+ORG-000966,processes,recycling_mechanical,https://mondopolymer.com,"acquire, sort, process and divert millions of pounds of polyethylene from solid waste streams"
+ORG-000966,materials,polyethylene_pe,https://mondopolymer.com/mondo-highway/,"Manufactured from recycled polyethylene, one of the toughest polymers available"
+ORG-000966,materials,recycled_content_pcr_pir,https://mondopolymer.com/mondo-highway/,Manufactured from over 96% recycled plastics
+ORG-000966,materials,pvc,https://mondopolymer.com/mondo-marine/,"a range of durable, high-quality flotation devices produced from PVC materials"
+ORG-000966,materials,nylon_pa,https://mondopolymer.com/mondo-marine/,We also mold the most durable USA made nylon dock cleat on the market.
+ORG-004284,processes,rubber_molding_unspecified,https://plasticade.com/about-us,"Plasticade Rubber offers a full line of high-quality molded-rubber safety products for traffic, construction, parking lot, industrial and airport applications."
+ORG-004284,materials,elastomers_rubber,https://plasticade.com/about-us,An innovator in manufacturing using post-consumer recycled tire rubber
+ORG-004284,materials,recycled_content_pcr_pir,https://plasticade.com/about-us,An innovator in manufacturing using post-consumer recycled tire rubber
+ORG-004158,processes,composites_hand_layup,https://www.bdplastics.com/hetron-lined-process-vessel.php,The vessels were hand lay-up on custom molds
+ORG-004158,processes,composites_filament_winding,https://www.bdplastics.com/process-vessel-manufacturing.php,Hand Lay-Up Contact Molded Spray Up Filament Winding
+ORG-004158,processes,thermoforming_unspecified,https://www.bdplastics.com/what-are-dual-laminates.php,"B&D Plastics has a unique, thermo-forming molding processes for corner radius and dished head designs"
+ORG-004158,materials,composites_frp,https://www.bdplastics.com/what-are-dual-laminates.php,"Combining the corrosion resistance of the thermoplastic liners with the lower cost, strength and durability of a Fiberglass Reinforced Plastics (FRP)"
+ORG-004158,materials,pvc,https://www.bdplastics.com/what-are-dual-laminates.php,PVC - Polyvinylchloride
+ORG-004158,materials,polypropylene_pp,https://www.bdplastics.com/what-are-dual-laminates.php,PP - Polypropylene (homo-polymer and co-polymer)
+ORG-004158,materials,polyethylene_pe,https://www.bdplastics.com/what-are-dual-laminates.php,HDPE - High Density Polyethylene
+ORG-004158,materials,fluoropolymers,https://www.bdplastics.com/what-are-dual-laminates.php,PVDF - Polyvinylidene Fluoride (homo-polymer and co-polymer)
+ORG-004283,processes,rubber_mixing_compounding,https://www.mountvillerubber.com/company,"Mountville Rubber provides exceptional compounding services for CPE, CR, EPDM, NBR, NR, and SBR to various markets averaging 35 million pounds annually."
+ORG-004283,processes,rubber_calendering,https://www.mountvillerubber.com/capabilities,Four rolls for milling thin sheets of rubber
+ORG-004283,materials,neoprene_cr,https://www.mountvillerubber.com/company,"Mountville Rubber provides exceptional compounding services for CPE, CR, EPDM, NBR, NR, and SBR to various markets averaging 35 million pounds annually."
+ORG-004283,materials,epdm,https://www.mountvillerubber.com/company,"Mountville Rubber provides exceptional compounding services for CPE, CR, EPDM, NBR, NR, and SBR to various markets averaging 35 million pounds annually."
+ORG-004283,materials,nitrile_nbr,https://www.mountvillerubber.com/company,"Mountville Rubber provides exceptional compounding services for CPE, CR, EPDM, NBR, NR, and SBR to various markets averaging 35 million pounds annually."
+ORG-004283,materials,natural_rubber_nr,https://www.mountvillerubber.com/company,"Mountville Rubber provides exceptional compounding services for CPE, CR, EPDM, NBR, NR, and SBR to various markets averaging 35 million pounds annually."
+ORG-004283,materials,sbr,https://www.mountvillerubber.com/company,"Mountville Rubber provides exceptional compounding services for CPE, CR, EPDM, NBR, NR, and SBR to various markets averaging 35 million pounds annually."
+ORG-002606,processes,fabrication_unspecified,https://www.irpgroup.com/,"We are a distributor and fabricator of metal hose assemblies, conveyor belts, custom gaskets, O-rings and other related rubber and metal products."
+ORG-002606,processes,vulcanization_curing_services,https://www.irpgroup.com/,We also stock a variety of sizes and compounds of cord stock used for custom splicing and vulcanizing O-rings.
+ORG-002606,materials,elastomers_rubber,https://www.irpgroup.com/,"We are a distributor and fabricator of metal hose assemblies, conveyor belts, custom gaskets, O-rings and other related rubber and metal products."
+ORG-002880,materials,epoxy,https://olinepoxy.com/product-market-segments/liquid-resins/,"Olin’s epoxy resins are thermosetting polymers engineered for durability, chemical resistance, and versatility across industrial applications."
+ORG-002880,materials,thermosets,https://olinepoxy.com/product-market-segments/liquid-resins/,"Olin’s epoxy resins are thermosetting polymers engineered for durability, chemical resistance, and versatility across industrial applications."
+ORG-003154,processes,compounding_unspecified,https://www.envalior.com/en-us/insights/blog/envalior-harmonizes-pa6-pa66-and-pbt-product-brands,"branding and nomenclature of its PA6, PA66 and PBT compounded materials"
+ORG-003154,materials,nylon_pa,https://www.envalior.com/en-us/home,Circular polyamide 6 from Envalior cuts the carbon footprint of Vimar Linea switches by 80%

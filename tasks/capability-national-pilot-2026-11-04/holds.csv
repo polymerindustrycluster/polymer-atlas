@@ -1,0 +1,64 @@
+org_id,kind,detail,reason
+ORG-001885,field:processes,thermoforming_unspecified,council: the quote compares the product against thermoformed blisters
+ORG-002407,field:materials,nylon_pa,raw check no
+ORG-002407,field:materials,thermoplastic_elastomers_tpe_tpu,raw check no
+ORG-003564,field:processes,extrusion_unspecified,raw check no
+ORG-003564,field:processes,laminating,raw check no
+ORG-003564,field:processes,printing_decorating_plastics,raw check no
+ORG-003564,field:materials,polypropylene_pp,raw check no
+ORG-003564,field:materials,films_flexible_packaging,raw check no
+ORG-002453,field:processes,thermoforming_pressure,quote of three words or fewer is too thin to evidence a term
+ORG-002453,field:processes,thermoforming_vacuum,quote of three words or fewer is too thin to evidence a term
+ORG-002453,field:processes,rubber_molding_unspecified,council: 'custom rubber molded parts' may be a sourced product line
+ORG-002453,field:processes,rubber_extrusion,quote of three words or fewer is too thin to evidence a term
+ORG-002453,field:processes,fabrication_unspecified,quote of three words or fewer is too thin to evidence a term
+ORG-002453,field:processes,assembly_secondary_ops,quote of three words or fewer is too thin to evidence a term
+ORG-003495,field:processes,extrusion_unspecified,council: the material is being developed for others to extrude
+ORG-000268,field:processes,printing_decorating_plastics,quote of three words or fewer is too thin to evidence a term
+ORG-000268,field:processes,assembly_secondary_ops,quote of three words or fewer is too thin to evidence a term
+ORG-000744,field:processes,mold_tool_making,quote of three words or fewer is too thin to evidence a term
+ORG-000744,field:materials,polypropylene_pp,quote of three words or fewer is too thin to evidence a term
+ORG-002244,field:processes,assembly_secondary_ops,quote of three words or fewer is too thin to evidence a term
+ORG-002244,field:materials,peek_high_performance,quote of three words or fewer is too thin to evidence a term
+ORG-002244,field:materials,polypropylene_pp,quote of three words or fewer is too thin to evidence a term
+ORG-002244,field:materials,fluoropolymers,quote of three words or fewer is too thin to evidence a term
+ORG-001923,field:processes,custom_compounding,raw check unfetchable
+ORG-001923,field:processes,compounding_extrusion,raw check unfetchable
+ORG-001923,field:processes,additive_dry_blending,raw check unfetchable
+ORG-001923,field:materials,thermoplastic_elastomers_tpe_tpu,raw check unfetchable
+ORG-001923,field:materials,thermoplastic_olefin_tpo,raw check unfetchable
+ORG-001923,field:materials,polystyrene_ps_hips,raw check unfetchable
+ORG-001923,field:materials,abs,raw check unfetchable
+ORG-001923,field:materials,acrylic_pmma,raw check unfetchable
+ORG-001923,field:materials,polycarbonate_pc,raw check unfetchable
+ORG-001923,field:materials,pvc,raw check unfetchable
+ORG-001923,field:materials,acetal_pom,raw check unfetchable
+ORG-001923,field:materials,nylon_pa,raw check unfetchable
+ORG-001923,field:materials,fluoropolymers,raw check unfetchable
+ORG-001923,field:materials,polypropylene_pp,raw check unfetchable
+ORG-001923,field:materials,polyethylene_pe,raw check unfetchable
+ORG-001923,field:materials,peek_high_performance,raw check unfetchable; quote of three words or fewer is too thin to evidence a term
+ORG-000774,field:processes,extrusion_sheet,council: the quote is a fragment that does not say the company extrudes sheet
+ORG-000774,field:materials,composites_thermoplastic,quote of three words or fewer is too thin to evidence a term
+ORG-003688,field:materials,nylon_pa,"council: the quote states a nylon property, not that the company makes nylon parts"
+ORG-004158,field:materials,pvc,quote of three words or fewer is too thin to evidence a term
+ORG-004283,field:processes,rubber_calendering,"council: 'four rolls for milling' describes milling, not calendering"
+ORG-002880,field:materials,epoxy,page olinepoxy.com is not the record's own domain olin.com
+ORG-002880,field:materials,thermosets,page olinepoxy.com is not the record's own domain olin.com
+ORG-003630,field:processes,rotational_molding,council: the floats use a rotomolded shell; the quote does not say the company molds it
+ORG-002328,field:materials,pvc,pvc inferred from 'vinyl'; the quote does not name PVC
+ORG-000842,field:processes,rubber_molding_unspecified,raw check unfetchable
+ORG-000842,field:materials,natural_rubber_nr,raw check unfetchable
+ORG-003960,field:processes,polymerization,quote of three words or fewer is too thin to evidence a term
+ORG-001838,field:processes,laminating,quote of three words or fewer is too thin to evidence a term
+ORG-001838,field:materials,elastomers_rubber,quote of three words or fewer is too thin to evidence a term
+ORG-001838,field:materials,foams_polymeric,quote of three words or fewer is too thin to evidence a term
+ORG-000433,field:processes,custom_compounding,raw check no
+ORG-000433,field:materials,thermoplastics,raw check no
+ORG-000433,field:materials,polypropylene_pp,raw check no
+ORG-000433,field:materials,polyethylene_pe,raw check no
+ORG-002742,field:processes,injection_molding,raw check no
+ORG-002742,field:processes,insert_overmolding,raw check no
+ORG-002401,field:materials,pvc,pvc inferred from 'vinyl'; the quote does not name PVC
+ORG-003903,field:processes,extrusion_unspecified,council: the company uses extrusions as inputs; it does not extrude
+ORG-003903,field:processes,thermoforming_unspecified,quote of three words or fewer is too thin to evidence a term
