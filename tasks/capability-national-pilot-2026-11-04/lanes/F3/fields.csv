@@ -1,0 +1,85 @@
+org_id,field,value,source_url,quote
+ORG-003533,processes,recycling_chemical_pyrolysis,https://bolderindustries.com/n2tr,proprietary pyrolysis process to convert end-of-life tires into high-quality recovered carbon black
+ORG-003533,materials,carbon_black,https://bolderindustries.com/bolderblack,BolderBlack is a carbon black alternative that replaces petroleum-derived carbon black as a rubber reinforcing agent and a black pigment in plastics.
+ORG-000936,materials,melamine_urea_formaldehyde,https://lrbgusa.com/about-us/,"only manufacturers of spray-dried MF, UF and MUF resins in North America"
+ORG-000936,materials,thermosets,https://lrbgusa.com/,Thermosetting resins that match your specific needs.
+ORG-000936,materials,adhesives_sealants,https://lrbgusa.com/splicer-adhesives/,Our series of splicer adhesives are formulated to meet a broad range of demands for veneer splicing operations.
+ORG-000936,processes,adhesive_sealant_formulation,https://lrbgusa.com/splicer-adhesives/,Our series of splicer adhesives are formulated to meet a broad range of demands for veneer splicing operations.
+ORG-004326,materials,acrylic_pmma,https://www.royal-mfg.com/faq/,We manufacture our bathtubs and shower pans with a cross-linked acrylic.
+ORG-003504,processes,extrusion_sheet,https://www.primexplastics.com/extruded-plastic-sheet-roll-stock/,"largest custom plastic sheet extruder, with the capacity and expertise to create unique sheet and roll products for many applications."
+ORG-003504,processes,recycling_mechanical,https://www.primexplastics.com/recycling/,"The process involves cleaning, grinding, blending, and pelletizing large plastic parts."
+ORG-003504,processes,regrind_pelletizing,https://www.primexplastics.com/recycling/,"The process involves cleaning, grinding, blending, and pelletizing large plastic parts."
+ORG-003504,processes,color_masterbatch,https://www.primexplastics.com/color-concentrates/,"We create high-quality masterbatches and uniquely engineered concentrates to add plastic coloring solutions to any commercial, medical, or food-grade application."
+ORG-003504,processes,compounding_unspecified,https://www.primexplastics.com/compounds/,We offer a variety of off-the-shelf compounded solutions and specialty compounds to meet the ever-changing needs of customers
+ORG-003504,processes,die_cutting_converting,https://www.primexplastics.com/die-cut-ship-flat/,die cut ship flat products are the economical way for our customers to meet their reusable protective packaging needs.
+ORG-003504,processes,laminating,https://www.primexplastics.com/abs/,Our Prime ABS Weather-X InDURO is a composite sheet consisting of an ABS substrate laminated with a Cast Acrylic.
+ORG-003504,materials,abs,https://www.primexplastics.com/abs/,"Primex offers a comprehensive selection of monolayer and multilayer ABS (Acrylonitrile-Butadiene-Styrene) plastic sheet and roll stock, including options with recycled content."
+ORG-003504,materials,recycled_content_pcr_pir,https://www.primexplastics.com/abs/,"Primex offers a comprehensive selection of monolayer and multilayer ABS (Acrylonitrile-Butadiene-Styrene) plastic sheet and roll stock, including options with recycled content."
+ORG-003504,materials,thermoplastic_elastomers_tpe_tpu,https://www.primexplastics.com/abs/,Our Prime ABS ST80 is an alloy of weatherable thermoplastic elastomers co-extruded over a rigid ABS substrate.
+ORG-003504,materials,polyethylene_pe,https://www.primexplastics.com/abs/,"Prime ReCycle Materials are available in a variety of polymers, Polystyrene, ABS, Polyethylene, Polypropylene and many more."
+ORG-003504,materials,polypropylene_pp,https://www.primexplastics.com/abs/,"Prime ReCycle Materials are available in a variety of polymers, Polystyrene, ABS, Polyethylene, Polypropylene and many more."
+ORG-003504,materials,polystyrene_ps_hips,https://www.primexplastics.com/abs/,"Prime ReCycle Materials are available in a variety of polymers, Polystyrene, ABS, Polyethylene, Polypropylene and many more."
+ORG-004075,processes,composites_filament_winding,https://www.andronaco.com/andronaco-products/vessels-and-tanks/fiberglass-tanks,provide our Diamond Fiberglass brand of filament wound FRP vessels and tanks with cost-efficiency and extreme corrosion resistance.
+ORG-004075,materials,composites_frp,https://www.andronaco.com/andronaco-products/vessels-and-tanks/fiberglass-tanks,provide our Diamond Fiberglass brand of filament wound FRP vessels and tanks with cost-efficiency and extreme corrosion resistance.
+ORG-002751,processes,injection_molding,https://www.leechind.com/services/plastic-molding/thermoplastic-molding/,"services, thermoplastic injection molding produces precise molded parts that are suitable for a range of applications."
+ORG-002751,processes,compression_molding,https://www.leechind.com/services/plastic-molding/,"Injection, compression, insert over-molding and transfer capabilities"
+ORG-002751,processes,insert_overmolding,https://www.leechind.com/services/plastic-molding/,"Injection, compression, insert over-molding and transfer capabilities"
+ORG-002751,processes,transfer_molding,https://www.leechind.com/services/plastic-molding/,"Injection, compression, insert over-molding and transfer capabilities"
+ORG-002751,processes,mold_tool_making,https://www.leechind.com/services/plastic-molding/,"We design, build and run molds to produce parts in the millions, utilizing engineering and commodity-grade resins."
+ORG-002751,processes,composites_compression_smc_bmc,https://www.leechind.com/services/plastic-molding/thermoset-molding/,"125-ton hull for processing bulk molding compound, polyester or phenolic"
+ORG-002751,materials,thermoplastics,https://www.leechind.com/services/plastic-molding/thermoplastic-molding/,"services, thermoplastic injection molding produces precise molded parts that are suitable for a range of applications."
+ORG-002751,materials,thermosets,https://www.leechind.com/services/plastic-molding/thermoset-molding/,"services, thermoset plastic molding results in high-quality components that meet tight tolerance requirements and stringent industry demands."
+ORG-002751,materials,phenolic,https://www.leechind.com/services/plastic-molding/thermoset-molding/,"125-ton hull for processing bulk molding compound, polyester or phenolic"
+ORG-002963,materials,composites_carbon,https://www.toraycma.com/company/locations/,"Our Tacoma plant produces carbon fiber composite materials for the Aerospace, Industrial, Sporting Goods, and Transportation & Automotive markets."
+ORG-002963,materials,composites_thermoset,https://www.toraycma.com/company/about-us/,thermoset composites manufacturer in the United States and around the world
+ORG-002963,processes,composites_prepreg_autoclave,https://www.toraycma.com/company/locations/,"The Spartanburg plant is an integrated facility producing precursor, carbon fiber and prepreg in a single manufacturing facility."
+ORG-002723,materials,epdm,https://www.elevatecommercialbp.com/latam-en/resources/about-us,Opened our first RubberGard EPDM manufacturing plant in Arkansas.
+ORG-002723,materials,thermoplastic_olefin_tpo,https://www.elevatecommercialbp.com/latam-en/resources/about-us,Introduced UltraPly TPO and opened its first TPO manufacturing plant in South Carolina.
+ORG-001683,materials,coatings,https://www.kardol.com/products_clearcoats.html,"Kardol Medium Solids Acrylic Urethane Clearcoats are superior quality clearcoats that provide excellent gloss, durability and depth of image"
+ORG-001683,processes,coating_formulation,https://www.kardol.com/products_clearcoats.html,Formulated to satisfy existing state and federal regulations.
+ORG-001683,materials,polyester_vinyl_ester_resins,https://www.kardol.com/products_resin.html,"Premium, all-purpose polyester resin designed for general lay-up manufacturing as well as repair work."
+ORG-003630,processes,rotational_molding,https://carolinawaterworks.com/,Our floats are constructed of thick-walled rotationally molded polyethylene shell that encapsulates expanded polystyrene - the finest flotation material.
+ORG-003630,materials,polyethylene_pe,https://carolinawaterworks.com/,Our floats are constructed of thick-walled rotationally molded polyethylene shell that encapsulates expanded polystyrene - the finest flotation material.
+ORG-003630,materials,polystyrene_ps_hips,https://carolinawaterworks.com/,Our floats are constructed of thick-walled rotationally molded polyethylene shell that encapsulates expanded polystyrene - the finest flotation material.
+ORG-004157,processes,rubber_molding_injection,https://akwel-automotive.com/en/performance-2/products/,"which are manufactured using various technologies, including rubber injection molding."
+ORG-004157,processes,extrusion_unspecified,https://akwel-automotive.com/en/group/about-us/,"Our core expertise lies in continuous extrusion and vulcanization, using up to 12 different specialty polymers, including silicone."
+ORG-004157,materials,silicones,https://akwel-automotive.com/en/group/about-us/,"Our core expertise lies in continuous extrusion and vulcanization, using up to 12 different specialty polymers, including silicone."
+ORG-004157,materials,elastomers_rubber,https://akwel-automotive.com/en/performance-2/products/,"Our hoses are made of multilayer rubber or metal and are suitable for all types of oils, regardless of operating temperature."
+ORG-000321,processes,rubber_extrusion,https://eagleelastomer.com/extruded-products/,operates four specialized extrusion lines backed by industrial autoclaves and forced-air post-cure ovens
+ORG-000321,processes,rubber_mixing_compounding,https://eagleelastomer.com/compound-mixes/,Eagle Elastomer is a premier provider of high-performance fluoroelastomer (FKM) and perfluoroelastomer (FFKM) custom mixed compounds.
+ORG-000321,materials,viton_fkm,https://eagleelastomer.com/compound-mixes/,Eagle Elastomer is a premier provider of high-performance fluoroelastomer (FKM) and perfluoroelastomer (FFKM) custom mixed compounds.
+ORG-000321,materials,specialty_elastomers,https://eagleelastomer.com/compound-mixes/,Eagle Elastomer is a premier provider of high-performance fluoroelastomer (FKM) and perfluoroelastomer (FFKM) custom mixed compounds.
+ORG-001079,processes,plastics_fabrication_welding,https://www.richindustriesinc.com/information.php?About-Rich-Industries-2,"Our varied product lines are manufactured by many processes, including Radio Frequency welding, ultrasonic welding, heat sealing, automated sealing, die-cutting, and seam surging."
+ORG-001079,processes,die_cutting_converting,https://www.richindustriesinc.com/information.php?About-Rich-Industries-2,"Our varied product lines are manufactured by many processes, including Radio Frequency welding, ultrasonic welding, heat sealing, automated sealing, die-cutting, and seam surging."
+ORG-001079,materials,pvc,https://www.richindustriesinc.com/productLines.php?Bags-2,"Typical materials include .004 mils through .012 mils in Polyvinyl Chloride (PVC), Polyethylene, Polyurethane"
+ORG-001079,materials,polyethylene_pe,https://www.richindustriesinc.com/productLines.php?Bags-2,"Typical materials include .004 mils through .012 mils in Polyvinyl Chloride (PVC), Polyethylene, Polyurethane"
+ORG-001079,materials,polyurethane_pu,https://www.richindustriesinc.com/productLines.php?Bags-2,"Typical materials include .004 mils through .012 mils in Polyvinyl Chloride (PVC), Polyethylene, Polyurethane"
+ORG-002184,materials,pet_petg,https://orangeproducts.com/pet-bottles/,"We produce all PET bottles in an ISO-certified, clean-room facility with full lot traceability, documentation, and strict quality assurance."
+ORG-002184,materials,polyethylene_pe,https://orangeproducts.com/hdpe-bottles/,"We offer a full spectrum of certified HDPE bottles engineered for pharmaceutical, nutraceutical, and health-focused product lines"
+ORG-004380,materials,composites_frp,https://www.wyomingcustomfiberglass.com/,"Custom fiberglass fabrication for boxes, enclosures, equipment components, recreation products, and ideas without an off-the-shelf fit."
+ORG-004380,processes,fabrication_unspecified,https://www.wyomingcustomfiberglass.com/,"Custom fiberglass fabrication for boxes, enclosures, equipment components, recreation products, and ideas without an off-the-shelf fit."
+ORG-001379,processes,injection_molding,https://elyriapp.com/injection-molding,"to provide our customers with injection molded parts that have exceptional quality, with quick turnaround"
+ORG-001379,processes,mold_tool_making,https://elyriapp.com/tool-room,"fully equipped tool room with CNC mills, lathes, and EDMs builds injection molds in-house"
+ORG-006143,materials,bioplastics_biobased,https://www.biologiq.com/,We make plastic from annually renewable starch rather than petroleum
+ORG-006143,materials,thermoplastics,https://www.biologiq.com/,BioPolymers are a unique type of thermoplastic resin made with our proprietary and innovative technology process
+ORG-006143,materials,polyethylene_pe,https://www.biologiq.com/,we have invented a process that allows us to make blends of NuPlastiQ with traditional low-density polyethylene
+ORG-006143,processes,compounding_unspecified,https://www.biologiq.com/,we have invented a process that allows us to make blends of NuPlastiQ with traditional low-density polyethylene
+ORG-003350,materials,composites_carbon,https://www.sglcarbon.com/en/company/about-us/company-profile/fiber-composites/,"BL Fiber Specialities manufactures carbon fiber from a precursor, either as continuous fiber or as a fiber intermediate in milled or chopped form."
+ORG-003680,processes,rotational_molding,https://scribnerplastics.com/custom-roto-molding/,Scribner Plastics uses the rotational molding technique to manufacture all our products.
+ORG-003680,materials,polyethylene_pe,https://scribnerplastics.com/shipping-containers/,"Molded from ultra-high strength polyethylene, impervious to most automotive fluids."
+ORG-004317,processes,composites_pultrusion,https://www.strongwell.com/,Strongwell has the largest pultrusion capacity and product size capability in the world
+ORG-004317,materials,composites_frp,https://www.strongwell.com/,gold standard in pultruded fiber reinforced polymer (FRP) structural shapes and plate.
+ORG-004317,processes,fabrication_unspecified,https://www.strongwell.com/about/capabilities/,"Strongwell excels at fabrication from simple material preparation (sanding, cutting, routing, drilling, coping, and painting) to full assembly or pre-assembly."
+ORG-004334,processes,rubber_molding_compression,https://precix.net/custom-elastomer-solutions-2/,molding machines seamlessly execute compression and transfer molding with high precision
+ORG-004334,processes,transfer_molding,https://precix.net/custom-elastomer-solutions-2/,molding machines seamlessly execute compression and transfer molding with high precision
+ORG-004334,processes,mold_tool_making,https://precix.net/custom-elastomer-solutions-2/,The excellence of our in-house mold-making capabilities further ensures the production of top-quality parts.
+ORG-004334,materials,viton_fkm,https://precix.net/custom-elastomer-solutions-2/,type FKM material has the lowest thru-seal permeation numbers (as measured via ASTM E93-53T) in the industry.
+ORG-004334,materials,elastomers_rubber,https://precix.net/o-rings-and-elastomeric-products-2/,"We specialize in O-Rings, Custom Elastomers, and Urethane Sealing parts"
+ORG-004334,materials,polyurethane_pu,https://precix.net/o-rings-and-elastomeric-products-2/,"We specialize in O-Rings, Custom Elastomers, and Urethane Sealing parts"
+ORG-000967,processes,injection_molding,https://www.moore-industries.com/capabilities,"We have 20 Plastic Injection Molding Machines ranging in size from 75 ton to 2,000 ton, all equipped with the latest robotic technology."
+ORG-000967,processes,insert_overmolding,https://www.moore-industries.com/capabilities,Insert Injection Molding and Insert Overmolding
+ORG-000967,processes,assembly_secondary_ops,https://www.moore-industries.com/capabilities,"Our diverse end markets often require assembly operations, either at the press or as secondary operations."
+ORG-000967,processes,plastics_fabrication_welding,https://www.moore-industries.com/capabilities,We currently have three sonic welding machines with plans for additional welders in the near future.
+ORG-000967,processes,tooling_repair_maintenance,https://www.moore-industries.com/capabilities,We are able to provide routine maintenance and repair of our customers tools in house.
+ORG-000967,materials,polyethylene_pe,https://www.moore-industries.com/capabilities,Material experience ranging from commodity HDPE / PP to engineering grades
+ORG-000967,materials,polypropylene_pp,https://www.moore-industries.com/capabilities,Material experience ranging from commodity HDPE / PP to engineering grades

@@ -1,0 +1,26 @@
+org_id,status,note
+ORG-003533,TERMS_FOUND,Own site; pyrolysis quote is from the N2TR (Antwerp) page describing Bolder's proprietary process; no Maryville page names a process directly.
+ORG-000936,TERMS_FOUND,"Own site; spray drying/resin synthesis not a vocabulary process and polymerization not stated, so no other process."
+ORG-004326,TERMS_FOUND,"Own site (Royal Manufacturing); acrylic recorded as acrylic_pmma (site says 'acrylic', not PMMA); no forming process stated; cultured marble cast in molds has no matching term."
+ORG-003504,TERMS_FOUND,Own site; waterjet cutting seen but not mapped to a term.
+ORG-003852,NO_TERMS,Own site (AeroZero/PhaseBlue); polyimide aerogel film is roll-to-roll but no vocabulary process or material term is stated.
+ORG-004333,SITE_DOWN,"accentmanufacturing.com does not resolve (NXDOMAIN from this network, www and bare); no terms recorded."
+ORG-004075,TERMS_FOUND,Site is parent Andronaco's page but names the Diamond Fiberglass brand and its filament wound FRP tanks; accepted as the record's own page.
+ORG-002751,TERMS_FOUND,Own site; UHMW/silicone from the record description not stated on pages read; CNC machining appears to be general (not plastic-specific) so not recorded.
+ORG-002963,TERMS_FOUND,Own site; composites_prepreg_autoclave taken for prepreg production (customer autoclave cure is not the company's own process) - integrator may drop.
+ORG-002723,TERMS_FOUND,"Page is the Elevate brand (not the Amrize name) but lists the Youngwood Plant, Youngwood PA under Polyiso Insulation Manufacturing; polyiso foam terms not recorded because the page never says foam."
+ORG-001683,TERMS_FOUND,"Own site (www.kardol.com, redirect); about page says Kardol manufactures resin, primers, thinners; product pages name clearcoats and polyester resin. Weakest term: coating_formulation (sentence says 'Formulated')."
+ORG-003630,TERMS_FOUND,"Own site; EPS recorded as polystyrene_ps_hips; foams_polymeric not recorded (page says expanded polystyrene, not foam)."
+ORG-004157,TERMS_FOUND,"Group-level AKWEL site; names AKWEL CADILLAC USA INC only as an address on global-presence, so terms are group statements not Cadillac-plant-specific - integrator to weigh."
+ORG-000321,TERMS_FOUND,Own site; FFKM recorded under specialty_elastomers per SCHEMA 3.2.
+ORG-001079,TERMS_FOUND,Own site; RF/ultrasonic welding mapped to plastics_fabrication_welding.
+ORG-002184,TERMS_FOUND,"Own site; HDPE/PET bottle and closure making stated, but injection blow molding (record description) is not named on any page read, so no process recorded."
+ORG-004380,TERMS_FOUND,"Site is Wyoming Custom Fiberglass, Casper shop (matches brand); site says fiberglass fabrication but never layup/molding method; tanks not mentioned on pages read."
+ORG-001379,TERMS_FOUND,Own site; machining is of bar/block/castings (not stated as plastic) so plastics_machining_cnc not recorded; no resin names found.
+ORG-001812,WRONG_SITE,"federalprocess.com / www serve a blank ad-tracking page (only a 'Do Not Sell' link, no company named, parked-style); apex connection resets. Nothing recorded."
+ORG-006143,TERMS_FOUND,Own site (www.biologiq.com); thermoplastic starch resins and PE blends; blend process recorded as compounding_unspecified.
+ORG-003350,TERMS_FOUND,"Global SGL Carbon site names SGL CARBON LLC (Charlotte HQ) on the sites page, but the carbon-fiber statement is group-level and the US sites listed (Morganton, St. Marys, Sinking Spring) are not described as carbon-fiber plants; composite RTM/autoclave statements refer to German sites so not recorded."
+ORG-003680,TERMS_FOUND,Own site; home page banner confirms relocation to Victoria TX.
+ORG-004317,TERMS_FOUND,Own site; resin chemistry (polyester/vinyl ester) not named on pages read; molded grating not mapped.
+ORG-004334,TERMS_FOUND,"Site is Precix (history page names Acushnet Rubber Company, Inc.); compression/transfer molding quote is mid-sentence of a long text node; transfer_molding is the generic vocabulary term for it (no rubber-specific transfer term)."
+ORG-000967,TERMS_FOUND,Own site; sonic welding mapped to plastics_fabrication_welding.

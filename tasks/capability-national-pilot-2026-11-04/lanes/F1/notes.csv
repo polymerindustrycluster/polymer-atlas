@@ -1,0 +1,26 @@
+org_id,status,note
+ORG-003010,TERMS_FOUND,"Own site (cjbiomaterials.com, redirect from www): PHA resin maker and PHA/PLA compounder."
+ORG-003097,TERMS_FOUND,toyotires.com is the Toyo Tire U.S.A. Corp. marketing site (Holdings not named); media room on same domain states TNA tire production in White GA. Main site itself states no process.
+ORG-003059,TERMS_FOUND,"Own site (www.norplex-micarta.com; bare domain does not resolve). Thermoset composite prepregs, sheets, tubes."
+ORG-002578,TERMS_FOUND,"Own site; PET trays with PCR content, no forming process stated. Site HQ is 14 Clearly Clean Way, Frackville PA (record says Orwigsburg)."
+ORG-001567,TERMS_FOUND,"Own site (ieg-llc.com), IEG Plastics; no materials stated. 'Sonic Welding' and '3D Printing' listed but not mapped (no explicit ultrasonic/polymer wording)."
+ORG-003163,NO_TERMS,"Own site: states it manufactures polyester polyols and RUCOTE powder coating resins (not mapped: no vocab term states them; polyols are PU inputs, not PU processing)."
+ORG-004486,TERMS_FOUND,"Own site homepage; extrusion coating/film, toll coating with PVC/TPU/TPO/LLDPE, in-house recycling. Site mentions Pitman NJ plant (record says Hillside)."
+ORG-001885,TERMS_FOUND,Own site (www.rohrer.com): thermoformed blister/tray packaging; forming type (vacuum/pressure) not stated.
+ORG-000434,TERMS_FOUND,Own site; precision injection molding and insert molding of thermoplastic; aluminum machining not mapped (not plastic).
+ORG-000372,TERMS_FOUND,"Own site, three segment pages (polyurethanes, advanced materials); material terms only, no shaping process stated. Additives/curing agent wording not mapped."
+ORG-002407,TERMS_FOUND,"Own site; raw fetch returned HTTP 429 so quotes taken via Jina (page is American Additive, redirects to www). Ultem/PEI not mapped (no PEI term); end-use production not recorded as separate term."
+ORG-004287,TERMS_FOUND,"Own site (Thorpe Plant Maintenance and Engineering): FRP shop fabrication. Thermoplastics/rubber linings are field services in menus only, not mapped; 'filament structures' not mapped to winding."
+ORG-003050,TERMS_FOUND,"byk.com is BYK global (ALTANA) site, brand matches; additives for thermoplastics only; no process stated."
+ORG-003564,TERMS_FOUND,"polytex.com redirects to fivestar.com/companies/fivestar-polytex/ (Five Star Polytex, Houston); source_url given as the polytex.com address that resolves there. Parent-group domain: integrator may wish to discard."
+ORG-002185,TERMS_FOUND,Own site; flexible PU foam manufacture plus foam/fiber fabrication. Polyester fiber not mapped (PET not stated).
+ORG-001018,TERMS_FOUND,Own site; blow molding subtype not stated (accumulator-head presses) so umbrella blow_molding used.
+ORG-002630,NO_TERMS,"Own site (www.customprocessingservices.com): generic toll milling/blending/pelletizing; states it serves makers of plastics, rubbers, resins and polymers but names no polymer process or material it handles itself."
+ORG-004414,TERMS_FOUND,"Own site; raw fetch 403, quotes via Jina. FRP tank/piping maker; no forming process named; urethane foam not stated on site pages read."
+ORG-002453,TERMS_FOUND,"Own site (single Wix page, redirect to www.htbauerle.com). Historic rotational molding mention not recorded."
+ORG-004107,TERMS_FOUND,"Own site; thermoplastic injection molding, multi-shot, insert/over-mold, urethane foam molding, welding/fabrication, assembly."
+ORG-002203,WRONG_SITE,hpeplasticextrusions.com now serves an unrelated Chinese sports-news/app-download page (domain appears hijacked/repurposed); no HPE content. Record the website as dead/hijacked.
+ORG-003635,TERMS_FOUND,Own site; rotational molder of polyethylene tanks. Site says acquired 2019 by Tank Holding Corp.
+ORG-003190,NO_TERMS,"Own site (chemicals.sasol.com) pages read show only menu listings (Polymers industry, Polymer Additives, Polymerization Catalysts, PE/PP/PVC application areas); no body sentence states a process or material Sasol itself makes or processes. LIPE JV not mentioned on this domain."
+ORG-004276,NO_TERMS,"Own site (home, company, locations): 'highly engineered automotive sealing solutions' and 'vertically integrated' only; no rubber/EPDM/TPE or molding/extrusion process named."
+ORG-001724,SITE_DOWN,rpmrepublic.com (www and bare) connection timed out on direct fetch; Jina returned HTTP 422. Not evidence of closure.

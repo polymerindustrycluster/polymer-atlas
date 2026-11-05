@@ -1,0 +1,26 @@
+org_id,status,note
+ORG-001517,TERMS_FOUND,"Own site; sewn/sealed soft goods, material types not stated beyond fabric/foam; only generic fabrication tagged."
+ORG-003982,TERMS_FOUND,Own site; silicone emulsions made in-house.
+ORG-002328,TERMS_FOUND,"Own site (Wix); vinyl profile bending; 'vinyl' mapped to pvc, no process page names extrusion or welding."
+ORG-003246,TERMS_FOUND,Own site (marmac.com/construction-products); couplings built from PE and woven PP layers.
+ORG-000842,TERMS_FOUND,Own site (2006-era static pages); rubber and photopolymer flexo plates; no vocabulary term for photopolymer plate making.
+ORG-003960,TERMS_FOUND,Own site; contract chemical/polymer manufacturer.
+ORG-003141,SITE_DOWN,"denka-pe.com unreachable on every route (Jina HTTP 422, WebFetch ECONNREFUSED, tinyfish proxy_error/target_unreachable, tavily timeout); no evidence either way."
+ORG-003530,SITE_DOWN,"albea-group.com bot-blocked on every route (Jina and tinyfish captcha/bot_blocked, WebFetch 403); content unread, no evidence either way."
+ORG-001838,TERMS_FOUND,Own site; die cutting and converting of rubber and foam; only list-item quotes for materials.
+ORG-000983,TERMS_FOUND,Own site; blown film maker.
+ORG-000433,TERMS_FOUND,Own site; read via tinyfish (Jina gets 401 password page).
+ORG-001890,NO_TERMS,"Own site is a retail storefront for PVC/ABS pipe, fittings and tubing; no manufacturing process stated."
+ORG-004448,TERMS_FOUND,Own site (MGS USA page); Germantown facility.
+ORG-003031,TERMS_FOUND,Group-level additives page on clariant.com; plastics additives only (generic).
+ORG-002742,TERMS_FOUND,Own site; custom injection molder.
+ORG-001699,NO_TERMS,Own site (aerocaseinc.com) describes ATA shipping case construction only; no polymer process or material named.
+ORG-003653,TERMS_FOUND,"Kracor site (Yamaha Motor Corporation U.S.A. footer, 'KRACOR' brand; about page states Yamaha acquired Kracor assets 2017)."
+ORG-002401,TERMS_FOUND,"Own site Hegins location page; 'vinyl' mapped to pvc, no process named."
+ORG-001568,WRONG_SITE,"kreate.com is the Kreate brand (411 S Main St, Findlay) and never names Findlay Machine & Tool; its process page does say 'Plastic injection molding' (https://kreate.com/process). Recorded nothing; integrator to confirm brand link."
+ORG-002713,WRONG_SITE,"wbwagner.com now redirects to moviesgen.com, an Indonesian online-slot spam site; no retreading content."
+ORG-003935,TERMS_FOUND,"Own site (technicaladhesives.com; www host serves captcha to Jina, quote read from non-www page)."
+ORG-000230,TERMS_FOUND,Own site; lead wire insulation extrusion.
+ORG-003018,TERMS_FOUND,Own site; pyrolysis recycler of HDPE/LDPE/PP.
+ORG-000877,NO_TERMS,"Own site: phenol, acetone, alpha-methyl styrene producer; none are vocabulary terms and no polymer process stated."
+ORG-003903,TERMS_FOUND,Own site (AGT Products).
