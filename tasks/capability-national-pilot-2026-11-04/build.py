@@ -24,6 +24,18 @@ sys.path.insert(0, str(HERE.parent / "census-gap-people-2026-11-03"))
 from build_integration import append_rows, read  # noqa: E402
 
 TODAY, BY, EVD_FLOOR = "2026-11-04", "claude-code capability-national-pilot-2026-11-04", 128000  # above open PRs #122/#123
+# Cross-family refute (grok, deep, 60-term random sample, 2026-11-05): the quote mentions the process or material
+# without saying the company does it. Held.
+COUNCIL_HELD = {
+    ("ORG-003903", "extrusion_unspecified"): "council: the company uses extrusions as inputs; it does not extrude",
+    ("ORG-003630", "rotational_molding"): "council: the floats use a rotomolded shell; the quote does not say the company molds it",
+    ("ORG-003495", "extrusion_unspecified"): "council: the material is being developed for others to extrude",
+    ("ORG-001885", "thermoforming_unspecified"): "council: the quote compares the product against thermoformed blisters",
+    ("ORG-000774", "extrusion_sheet"): "council: the quote is a fragment that does not say the company extrudes sheet",
+    ("ORG-003688", "nylon_pa"): "council: the quote states a nylon property, not that the company makes nylon parts",
+    ("ORG-002453", "rubber_molding_unspecified"): "council: 'custom rubber molded parts' may be a sourced product line",
+    ("ORG-004283", "rubber_calendering"): "council: 'four rolls for milling' describes milling, not calendering",
+}
 CEIL = {"own_site": "supports_A", "government_filing": "supports_A", "press": "supports_B"}
 RANK = {"supports_C": 1, "supports_B": 2, "supports_A": 3}
 TIER = {3: "A", 2: "B", 1: "C"}
@@ -96,6 +108,10 @@ def main():
             o = orgs.get(r["org_id"])
             if not o: why.append("org not found")
             elif dom(r["source_url"]) != dom(o["website"]): why.append(f"page {dom(r['source_url'])} is not the record's own domain {dom(o['website'])}")
+            if len(W(r["quote"])) <= 3:
+                why.append("quote of three words or fewer is too thin to evidence a term")  # e.g. a bare menu item "Foam"
+            if (r["org_id"], val) in COUNCIL_HELD:
+                why.append(COUNCIL_HELD[(r["org_id"], val)])
             if val == "pvc" and not re.search(r"\bpvc\b|polyvinyl chloride", r["quote"], re.I):
                 why.append("pvc inferred from 'vinyl'; the quote does not name PVC")  # a lane mapped vinyl windows to pvc
             if why:

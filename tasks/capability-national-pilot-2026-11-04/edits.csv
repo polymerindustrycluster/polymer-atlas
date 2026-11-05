@@ -8,7 +8,6 @@ organizations_PA.csv,ORG-002578,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_OH.csv,ORG-001567,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;assembly_secondary_ops;insert_overmolding;mold_tool_making;tooling_repair_maintenance,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_NJ.csv,ORG-004486,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,coating_applying;extrusion_unspecified;recycling_mechanical,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_NJ.csv,ORG-004486,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,pvc;thermoplastic_elastomers_tpe_tpu;thermoplastic_olefin_tpo;polyethylene_pe,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-001885,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,thermoforming_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001885,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,pvc;pet_petg;recycled_content_pcr_pir,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-000434,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;insert_overmolding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-000434,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,thermoplastics,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
@@ -23,7 +22,7 @@ organizations_PA.csv,ORG-002185,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_OH.csv,ORG-001018,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,blow_molding;assembly_secondary_ops;insert_overmolding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001018,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;polypropylene_pp;abs;thermoplastic_elastomers_tpe_tpu,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_WI.csv,ORG-004414,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,composites_frp;thermoplastics,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_PA.csv,ORG-002453,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;thermoforming_pressure;thermoforming_vacuum;extrusion_profile;extrusion_pipe_tube;rubber_molding_unspecified;rubber_extrusion;plastics_machining_cnc;fabrication_unspecified;mold_tool_making;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_PA.csv,ORG-002453,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;extrusion_profile;extrusion_pipe_tube;plastics_machining_cnc;mold_tool_making,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_PA.csv,ORG-002453,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MI.csv,ORG-004107,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;insert_overmolding;two_shot_molding;plastics_fabrication_welding;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MI.csv,ORG-004107,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,thermoplastics;polyurethane_pu;foams_polymeric,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
@@ -32,23 +31,23 @@ organizations_NY.csv,ORG-003635,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_TX.csv,ORG-003293,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,composites_filament_winding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_TX.csv,ORG-003293,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,epoxy;composites_frp,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MD.csv,ORG-003467,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polymer_additives,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_CA.csv,ORG-003495,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;extrusion_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_CA.csv,ORG-003495,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_CA.csv,ORG-003495,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,bioplastics_biobased,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-000268,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,blow_molding_extrusion;printing_decorating_plastics;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000268,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,blow_molding_extrusion,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001073,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,thermoforming_vacuum;coating_applying;plastics_machining_cnc,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001073,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,acrylic_pmma;polycarbonate_pc,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_WI.csv,ORG-003273,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,extrusion_pipe_tube;extrusion_profile;injection_molding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_WI.csv,ORG-003273,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;peek_high_performance,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001133,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;insert_overmolding;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-000744,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,compression_molding;mold_tool_making;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-000744,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polypropylene_pp;polyethylene_pe;abs;recycled_content_pcr_pir,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_PA.csv,ORG-002244,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,thermoforming_unspecified;plastics_machining_cnc;plastics_fabrication_welding;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_PA.csv,ORG-002244,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polystyrene_ps_hips;pvc;pet_petg;peek_high_performance;polypropylene_pp;fluoropolymers,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-000774,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,compression_molding;extrusion_sheet;extrusion_unspecified;laminating;die_cutting_converting,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-000774,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;composites_thermoplastic,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000744,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,compression_molding;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000744,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;abs;recycled_content_pcr_pir,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_PA.csv,ORG-002244,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,thermoforming_unspecified;plastics_machining_cnc;plastics_fabrication_welding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_PA.csv,ORG-002244,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polystyrene_ps_hips;pvc;pet_petg,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000774,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,compression_molding;extrusion_unspecified;laminating;die_cutting_converting,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-000774,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-000724,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MI.csv,ORG-003688,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rotational_molding;plastics_machining_cnc;plastics_fabrication_welding;assembly_secondary_ops;foam_molding_structural,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_MI.csv,ORG-003688,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;nylon_pa,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_MI.csv,ORG-003688,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001661,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,foam_fabrication,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001661,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,foams_polymeric,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-000966,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rotational_molding;injection_molding;plastics_fabrication_welding;recycling_mechanical,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
@@ -56,8 +55,8 @@ organizations_OH.csv,ORG-000966,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_OR.csv,ORG-004284,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rubber_molding_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OR.csv,ORG-004284,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber;recycled_content_pcr_pir,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MS.csv,ORG-004158,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,composites_hand_layup;composites_filament_winding;thermoforming_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_MS.csv,ORG-004158,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,composites_frp;pvc;polypropylene_pp;polyethylene_pe;fluoropolymers,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_GA.csv,ORG-004283,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rubber_mixing_compounding;rubber_calendering,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_MS.csv,ORG-004158,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,composites_frp;polypropylene_pp;polyethylene_pe;fluoropolymers,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_GA.csv,ORG-004283,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rubber_mixing_compounding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_GA.csv,ORG-004283,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,neoprene_cr;epdm;nitrile_nbr;natural_rubber_nr;sbr,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_PA.csv,ORG-002606,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,fabrication_unspecified;vulcanization_curing_services,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_PA.csv,ORG-002606,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
@@ -79,7 +78,6 @@ organizations_WA.csv,ORG-002963,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_PA.csv,ORG-002723,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,epdm;thermoplastic_olefin_tpo,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001683,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,coatings;polyester_vinyl_ester_resins,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-001683,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,coating_formulation,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_SC.csv,ORG-003630,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rotational_molding,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_SC.csv,ORG-003630,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;polystyrene_ps_hips,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MI.csv,ORG-004157,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,rubber_molding_injection;extrusion_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_MI.csv,ORG-004157,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,silicones;elastomers_rubber,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
@@ -108,10 +106,8 @@ organizations_WI.csv,ORG-003982,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_PA.csv,ORG-002328,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,fabrication_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_SC.csv,ORG-003246,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,fabrication_unspecified,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_SC.csv,ORG-003246,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;polypropylene_pp,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_SC.csv,ORG-003960,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polymerization,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_SC.csv,ORG-003960,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyurethane_pu,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-001838,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,die_cutting_converting;laminating,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_OH.csv,ORG-001838,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber;foams_polymeric,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_OH.csv,ORG-001838,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,die_cutting_converting,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-000983,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,extrusion_film_blown,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_OH.csv,ORG-000983,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,films_flexible_packaging;polyethylene_pe;recycled_content_pcr_pir,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_WI.csv,ORG-004448,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;assembly_secondary_ops,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
@@ -125,78 +121,78 @@ organizations_OH.csv,ORG-000230,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41
 organizations_OH.csv,ORG-000230,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,pvc;epdm;silicones,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_GA.csv,ORG-003018,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,recycling_chemical_pyrolysis,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_GA.csv,ORG-003018,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,polyethylene_pe;polypropylene_pp,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_IL.csv,ORG-003903,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;extrusion_unspecified;thermoforming_unspecified;die_cutting_converting;laminating,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
+organizations_IL.csv,ORG-003903,processes,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,injection_molding;die_cutting_converting;laminating,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
 organizations_IL.csv,ORG-003903,materials,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,elastomers_rubber;foams_polymeric,CAPABILITY_FILL,terms stated on the company's own page (scope evidence rows carry the quotes)
-organizations_MI.csv,ORG-003688,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_NC.csv,ORG-003154,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_WI.csv,ORG-004448,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_NY.csv,ORG-003635,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_US.csv,ORG-004380,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_INTL.csv,ORG-003935,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_MI.csv,ORG-004157,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001567,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002606,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000268,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000967,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_WA.csv,ORG-002963,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001838,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000744,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_TX.csv,ORG-000372,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002407,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001073,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_MI.csv,ORG-004107,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002578,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_GA.csv,ORG-004283,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002184,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000230,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001379,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_TX.csv,ORG-003293,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000966,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_CA.csv,ORG-003495,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_CA.csv,ORG-003097,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001885,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002328,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_NC.csv,ORG-003350,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_IN.csv,ORG-003504,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002751,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_NC.csv,ORG-003031,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_TX.csv,ORG-003680,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_CO.csv,ORG-003533,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_TX.csv,ORG-004287,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_NJ.csv,ORG-004486,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_WI.csv,ORG-003273,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_SC.csv,ORG-003630,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001661,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000321,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_MD.csv,ORG-003467,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001018,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_WI.csv,ORG-003653,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
 organizations_TX.csv,ORG-004075,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000983,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000774,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001517,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001079,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_VA.csv,ORG-004317,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_SC.csv,ORG-003246,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002244,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002742,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_GA.csv,ORG-003018,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000724,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_SC.csv,ORG-003960,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_CT.csv,ORG-003050,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001133,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_MA.csv,ORG-003010,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_WI.csv,ORG-003982,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_MA.csv,ORG-004334,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_WI.csv,ORG-004414,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_IL.csv,ORG-003903,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_IA.csv,ORG-003059,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-001683,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002185,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000434,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OH.csv,ORG-000936,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_OR.csv,ORG-004284,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002723,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_PA.csv,ORG-002453,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
-organizations_MS.csv,ORG-004158,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000744,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002578,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001567,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
 organizations_US.csv,ORG-004326,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000268,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_NC.csv,ORG-003154,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000724,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MI.csv,ORG-004157,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000230,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_NY.csv,ORG-003635,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MI.csv,ORG-003688,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_GA.csv,ORG-004283,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000321,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_IN.csv,ORG-003504,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_WI.csv,ORG-003273,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001079,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002723,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_WI.csv,ORG-004448,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_CT.csv,ORG-003050,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001683,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_IL.csv,ORG-003903,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_TX.csv,ORG-003293,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001018,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000936,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_TX.csv,ORG-003680,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_WI.csv,ORG-004414,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002751,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001838,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002185,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001133,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MA.csv,ORG-004334,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000434,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MI.csv,ORG-004107,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_SC.csv,ORG-003246,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_INTL.csv,ORG-003935,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002244,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_GA.csv,ORG-003018,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_VA.csv,ORG-004317,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_SC.csv,ORG-003960,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002453,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OR.csv,ORG-004284,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002606,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000966,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MD.csv,ORG-003467,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001517,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000983,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002184,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_NC.csv,ORG-003031,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_TX.csv,ORG-004287,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_WA.csv,ORG-002963,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_WI.csv,ORG-003653,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000774,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_NJ.csv,ORG-004486,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001379,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MA.csv,ORG-003010,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_IA.csv,ORG-003059,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_CA.csv,ORG-003097,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-000967,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002407,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_CO.csv,ORG-003533,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_SC.csv,ORG-003630,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002328,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_MS.csv,ORG-004158,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_US.csv,ORG-004380,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_NC.csv,ORG-003350,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_CA.csv,ORG-003495,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001073,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_WI.csv,ORG-003982,last_verified,c9c37f3f041ea4694d0764b4b1dbf3d53551e7be57c4a4823ed2b6981db13c90,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001885,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_PA.csv,ORG-002742,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_OH.csv,ORG-001661,last_verified,5ef2d8c8a905e88171c9291a4a8a70c6024e770c24466438bc20edeff4becc96,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
+organizations_TX.csv,ORG-000372,last_verified,58beca76ab87ec9701346cceaabd6bd8c4a439e3743d30395910ba1de3631845,2026-11-04,REVERIFIED,capability national pilot 2026-11-04
