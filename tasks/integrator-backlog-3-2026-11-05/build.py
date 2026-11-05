@@ -23,7 +23,7 @@ DATE, BY = "2026-11-05", "claude-code integrator-backlog-3-2026-11-05"
 ACQ = {"pexco-perfplastics-date": ("ORG-001752", "acquired", "ORG-002534", ""),
        "johnsonite-date": ("ORG-001836", "acquired", "ORG-000131", " The date is the announcement date; no closing date was found."),
        "bway-date": ("ORG-006250", "merged", "ORG-000717", " BWAY and Mauser combined as Mauser Packaging Solutions (a corporate combination, not a record consolidation).")}
-DUP = {"knf-same": ("ORG-002670", "ORG-002750", "KNF Flexpak")}
+DUP = {}  # codex review 2026-11-05: KNF's shared premises and website do not prove one legal entity (AGENTS §3: when in doubt, do not merge)
 HQ = {"ametek-hq": ("ORG-002556", "Berwyn", "PA", "Chester"), "clearlyclean-hq": ("ORG-002578", "Frackville", "PA", "Schuylkill")}
 WEB_CLEAR = {"wbwagner-site": "ORG-002713", "hpe-site": "ORG-002203", "paddington-site": "ORG-000021"}
 WEB_NEW = {"federalprocess-site": ("ORG-001812", "https://fpcintl.com/", "FPC International")}
@@ -33,7 +33,8 @@ CLEAR_WITHOUT_RAW = {"paddington-site"}
 HELD = {"84fairmount-plant": "quote not raw-verified again (the page renders by script)",
         "esschem-linwood": "the Linwood plant belongs to Esschem, Inc., a separate Justi Group company the Atlas does not hold; creating it needs its own evidence",
         "westfall-lasvegas": "Westfall no longer lists a Las Vegas location; that is not closure evidence for the held site",
-        "ronaldmark-hq": "Hillside, NJ confirmed; no change"}
+        "ronaldmark-hq": "Hillside, NJ confirmed; no change",
+        "knf-same": "held after codex review: one operation and address under both names, but no source states the two are one legal entity (a sister KNF Clean Room company exists)"}
 
 
 def read(p):

@@ -1,7 +1,6 @@
 ACQUIRED ORG-001752 Performance Plastics Ltd. -> ORG-002534 on 2022-09-15
 ACQUIRED ORG-001836 Johnsonite Inc. -> ORG-000131 on 2005-12-08
 MERGED ORG-006250 Bway Corporation -> ORG-000717 on 2018-10-08
-DUP ORG-002670 -> ORG-002750
 HQ ORG-002556 Ametek: Nesquehoning -> Berwyn
 HQ ORG-002578 Clearly Clean Products LLC: Orwigsburg -> Frackville
 WEB CLEAR ORG-002713 W.B Wagner Tire Inc.: http://wbwagner.com/
@@ -12,3 +11,4 @@ HELD 84fairmount-plant: quote not raw-verified again (the page renders by script
 HELD esschem-linwood: the Linwood plant belongs to Esschem, Inc., a separate Justi Group company the Atlas does not hold; creating it needs its own evidence
 HELD westfall-lasvegas: Westfall no longer lists a Las Vegas location; that is not closure evidence for the held site
 HELD ronaldmark-hq: Hillside, NJ confirmed; no change
+HELD knf-same: held after codex review: one operation and address under both names, but no source states the two are one legal entity (a sister KNF Clean Room company exists)
