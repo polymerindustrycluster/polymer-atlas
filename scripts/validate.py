@@ -1337,7 +1337,7 @@ for i, r in enumerate(person_links, 2):
         errors.append(f"people_identifiers.csv:{i} identifier_type {itype!r} not in §4.21 enum (V-54)")
     if not iid:
         errors.append(f"people_identifiers.csv:{i} empty identifier_id (V-54)")
-    if itype == "ORCID" and iid and not re.fullmatch(r"\d{4}-\d{4}-\d{4}-\d{3}[\dX]", iid):
+    if itype == "ORCID" and iid and not re.fullmatch(r"[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]", iid):  # ASCII only: \d also matches full-width digits
         errors.append(f"people_identifiers.csv:{i} ORCID {iid!r} is not a 4x4 ORCID iD (V-54)")
     if not (r.get("match_basis") or "").strip():
         errors.append(f"people_identifiers.csv:{i} link without match_basis (V-54)")

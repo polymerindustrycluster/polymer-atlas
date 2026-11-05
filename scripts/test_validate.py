@@ -210,6 +210,10 @@ class ValidatorMutationTests(unittest.TestCase):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="0000-0002-1825-009"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
 
+    def test_v54_orcid_rejects_fullwidth_digits(self):
+        self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="００００-０００２-１８２５-００９７"))
+        self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
+
     def test_v54_orcid_one_row_per_value(self):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK))
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, person_id="PERSON-000002"))
