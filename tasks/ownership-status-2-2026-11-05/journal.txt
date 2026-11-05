@@ -1,4 +1,3 @@
-PARENT ORG-002203 Hpe Extrusion Solutions -> ORG-002534 Pexco LLC
 PARENT ORG-004082 Adhesives Technology Corporation -> ORG-003922 Meridian Adhesives Group LLC
 PARENT ORG-002692 Magee Plastics Company -> ORG-004243 Trelleborg Corp
 PARENT ORG-004045 Fiber-Tech, Inc. -> ORG-007026 National Manufacturing Group
@@ -53,6 +52,7 @@ WEB ORG-004581 Aurora Specialty Chemistries: https://auroraspchm.com -> https://
 WEB ORG-004606 A. P. Nonweiler Company, Inc.: https://www.apnonweiler.com/ -> https://apncoatings.com/
 TRADE ORG-003167: + UPM Adhesive Materials
 TRADE ORG-004606: + APN Performance Coatings
+HELD ORG-002203 Hpe Extrusion Solutions: Pexco bought HPE (2019), but the only quote is Plastics News, a licensed source usable as a lead only (AGENTS.md §5)
 HELD ORG-003117 Georg Fischer Central Plastics LLC: the lane names Georg Fischer Corp.; the held GF record (ORG-002291, GF Harvel) may be a sibling, not the parent
 HELD ORG-003701 Hennecke Inc.: the quote is about Brückner buying the Hennecke Group; it does not name the Bridgeville entity
 HELD ORG-003704 Kent Manufacturing Company: quote not raw-verified (Sur-Seal)

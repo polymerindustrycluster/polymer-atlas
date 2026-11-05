@@ -26,14 +26,14 @@ quoted rows passed.
 ## Applied (`build.py`, decisions per organization; `journal.txt`)
 | Change | Organizations |
 |-|-:|
-| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 5 |
+| `parent_org_id` set to a held buyer, with its generated `parent_of` edge | 4 |
 | `ultimate_parent_name` set where it was empty and the buyer is the top of its chain | 9 |
 | `website` filled (it had been cleared) or moved to the business's current own domain | 36 |
 | `trade_names` gains a new brand | 2 |
 
-50 evidence rows and 5 generated relationship rows.
+49 evidence rows and 4 generated relationship rows.
 
-- **Parents:** HPE Extrusion Solutions → Pexco; Adhesives Technology → Meridian Adhesives Group; Magee Plastics →
+- **Parents:** Adhesives Technology → Meridian Adhesives Group; Magee Plastics →
   Trelleborg Corp; Fiber-Tech → National Manufacturing Group; Res-Tek → A.P. Nonweiler (APN Performance Coatings).
 - **Ultimate parents:** CHT USA → CHT Group; ASAP Hydraulics → RG Group; Arcosa Marine → Wynnchurch Capital; Seemann
   Composites → Karman Space & Defense; Janco → MacLean Investment Partners; UES → AeroVironment; Adams Manufacturing →
@@ -44,6 +44,8 @@ quoted rows passed.
   parent's group site is **not** applied (Evonik, Untha, Futamura, Silon, Sigmasoft, Unimatec, Econ, Bekum and others).
 
 ## Held
+- **Licensed source:** HPE Extrusion → Pexco (2019). The only quote is from Plastics News, which AGENTS.md §5 allows as
+  a lead only. `build.py` now holds any row whose source is a licensed publication.
 - **Possible duplicates, for a dedupe pass:**
   - Roboworld, Gellner and Whirley: each new domain is already held by an adjacent record (ORG-002003, ORG-002405,
     ORG-002691).

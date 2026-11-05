@@ -25,7 +25,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 DATE, BY = "2026-11-05", "claude-code ownership-status-2-2026-11-05"
 # Immediate owner held in the Atlas, quote naming both parties.
-PARENT = {"ORG-002203": "ORG-002534", "ORG-004082": "ORG-003922", "ORG-002692": "ORG-004243", "ORG-004045": "ORG-007026",
+PARENT = {"ORG-004082": "ORG-003922", "ORG-002692": "ORG-004243", "ORG-004045": "ORG-007026",
           "ORG-004567": "ORG-004606"}
 # Owner not held; only where ultimate_parent_name is empty and the buyer is the top of its chain.
 ULT = {"ORG-002992": "CHT Group", "ORG-002355": "RG Group", "ORG-004267": "Wynnchurch Capital", "ORG-004067": "Karman Space & Defense",
@@ -46,6 +46,7 @@ COUNCIL_HELD = {}  # filled after the cross-family review
 TRADE = {"ORG-003348": "Resilient Structures", "ORG-003167": "UPM Adhesive Materials", "ORG-004606": "APN Performance Coatings"}
 CONFIRM = set()
 HELD = {
+    "ORG-002203": "Pexco bought HPE (2019), but the only quote is Plastics News, a licensed source usable as a lead only (AGENTS.md §5)",
     "ORG-003117": "the lane names Georg Fischer Corp.; the held GF record (ORG-002291, GF Harvel) may be a sibling, not the parent",
     "ORG-003701": "the quote is about Brückner buying the Hennecke Group; it does not name the Bridgeville entity",
     "ORG-003704": "quote not raw-verified (Sur-Seal)",
@@ -68,6 +69,7 @@ HELD = {
     "ORG-002687": "dropstirs.com product site; whether it is Medical Precision Plastics' own site is unconfirmed",
 }
 GROUP_DOMAIN = []
+LICENSED = re.compile(r"plasticsnews\.com|rubbernews\.com|dnb\.com|zoominfo\.com|data-axle\.com|dataaxle\.com", re.I)
 DIRECT = re.compile(r"linkedin\.com", re.I)  # a social post is not the company's own site: press ceiling
 
 
@@ -139,6 +141,8 @@ def main():
     def ready(oid):
         if raw.get(oid) != "yes":
             log.append(f"HELD {oid}: quote not raw-verified ({raw.get(oid)})"); return False
+        if LICENSED.search(lane[oid]["source_url"]):  # AGENTS.md §5: licensed sources are leads only, never cited
+            log.append(f"HELD {oid}: source is a licensed publication ({lane[oid]['source_url'][:60]})"); return False
         return True
 
     for oid, parent in PARENT.items():
