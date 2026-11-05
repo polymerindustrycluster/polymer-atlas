@@ -23,13 +23,14 @@ organizations with no `website` and a USPS HQ state.
 
 | Change | Rows |
 |-|-:|
-| `website` filled (`edits.csv`, applied with `scripts/apply_p1_crm_scrub.py`) | 171 |
-| `existence` evidence rows (`own_site`, `supports_A`), one per website, carrying the homepage quote | 171 |
+| `website` filled (`edits.csv`, applied with `scripts/apply_p1_crm_scrub.py`) | 169 |
+| `existence` evidence rows (`own_site`, `supports_A`), one per website, carrying the homepage quote | 169 |
 
 No tier moves. The evidence ids sit above the tree-wide maximum.
 
 ## Not applied
-- **`holds.csv`, 146 rows, each with its reason:**
+- **`holds.csv`, 148 rows, each with its reason:**
+  - cross-family review hold: 2 (see "Review" below);
   - only the distinctive word was on the page, not the full name: 38 (review candidates);
   - no clean phrase: 57;
   - bot wall: 20;
@@ -39,5 +40,21 @@ No tier moves. The evidence ids sit above the tree-wide maximum.
 - **`no_own_domain.csv`, 501 organizations:** no own-domain result came back. Many are small firms with no site. Others
   look acquired, because their results point at a buyer: dlhBOWLES at ABC Technologies, Revlis at Akrochem, Firestone
   Polymers at Bridgestone, Cooper Tire at Goodyear. It is a findings list for a status and ownership pass.
+
+## Review
+Two other model families, grok and codex, each tried to refute a random sample of 60 of the 171 first-pass websites,
+read-only. Grok returned 50 OK and codex 44. Each flagged row was checked against the cached homepage:
+
+- **Removed, 2:** Ametek, Nesquehoning (ORG-002556). ametek.com is the former owner's site; the record's own
+  description says Niche Polymer bought the plant in 2020. Stockmeier Urethanes USA (ORG-004194). stockmeier.com is the
+  group site, and the quote was a Tampa trade-show listing.
+- **Kept:** the other flags were "the quote does not show the place". The cached homepage named the record's city or
+  matched its product line for each of them (for example Byhalia on ac-polymers.com, Bettendorf on greystonepallets.com
+  and Waterbury on Neoperl's US site).
+- **Open question:** some plant records now carry a corporate group's domain (for example Siliconature, Valmet,
+  Viscofan, Tecomet). Whether a plant's `website` may be its group's domain is a parent-page question for the repo owner.
+- Only one applied record's description pointed at a change of owner. That was the Ametek row.
+
+Sampled error rate: 2 of 60. Expect a few more wrong among the other 109.
 
 Checks: rehearsed on a temp copy. `python scripts/validate.py` exits 0 on the committed tree.

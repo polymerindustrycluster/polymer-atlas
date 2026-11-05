@@ -48,6 +48,11 @@ BOTWALL = re.compile(r"sgcaptcha|captcha|just a moment|attention required|verify
 POLY = re.compile(r"plastic|polymer|rubber|resin|coating|paint|adhesive|sealant|foam|composite|mold|extru|film|packag|vinyl|"
                   r"urethane|silicone|fiberglass|elastomer|\bink|laminat|pvc|nylon|polyeth|polyprop|thermo|tire|latex|"
                   r"gasket|hose|pipe|container|bottle|caulk|epoxy|acrylic|fiber|fibre|tape|label|membrane|compound", re.I)
+# Cross-family refute (grok + codex, 60-row sample, 2026-11-04), each verdict checked against the cached homepage.
+COUNCIL_HOLD = {
+    "ORG-002556": "council: ametek.com is the former owner's corporate site; the record says Niche Polymer bought this plant in 2020",
+    "ORG-004194": "council: stockmeier.com is the group site and the quote is a Tampa trade-show listing, not the Clarksburg entity",
+}
 
 
 def dom(u):
@@ -124,6 +129,7 @@ def main():
         elif o["website"].strip(): why.append(f"record already has website {o['website']}")
         if held_dom.get(d): why.append(f"domain already held by {sorted(held_dom[d])} (possible duplicate)")
         if len(seen_dom[d]) > 1: why.append(f"same domain accepted for {seen_dom[d]} (possible duplicate)")
+        if oid in COUNCIL_HOLD: why.append(COUNCIL_HOLD[oid])
         quote = None
         if not why:
             full = [t for t in atlas.name_key(o["legal_name"]).split() if t not in ("and", "the")]
