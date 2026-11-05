@@ -1,0 +1,44 @@
+MOVED ORG-001108 organizations_OH.csv -> organizations_TN.csv with 4 evidence rows
+HQ ORG-001108 Sekisui Kasei USA Inc.: ('Kenton', 'OH') -> ('Mount Pleasant', 'TN')
+MOVED ORG-001082 organizations_OH.csv -> organizations_TN.csv with 3 evidence rows
+HQ ORG-001082 Ring Container Technologies: ('Sidney', 'OH') -> ('Oakland', 'TN')
+MOVED ORG-001118 organizations_OH.csv -> organizations_NC.csv with 0 evidence rows
+HQ ORG-001118 Southeastern Container, Inc.: ('Bowling Green', 'OH') -> ('Enka', 'NC')
+MOVED ORG-001193 organizations_OH.csv -> organizations_PA.csv with 19 evidence rows
+HQ ORG-001193 Washington Penn Plastic Co., Inc.: ('Wapakoneta', 'OH') -> ('Washington', 'PA')
+MOVED ORG-001093 organizations_OH.csv -> organizations_MN.csv with 2 evidence rows
+HQ ORG-001093 RTP Company: ('Gahanna', 'OH') -> ('Winona', 'MN')
+MOVED ORG-001489 organizations_OH.csv -> organizations_NJ.csv with 0 evidence rows
+HQ ORG-001489 Sun Chemical Corporation: ('Amelia', 'OH') -> ('Parsippany', 'NJ')
+MOVED ORG-003420 organizations_NV.csv -> organizations_AZ.csv with 2 evidence rows
+HQ ORG-003420 Westfall Technik, Inc.: ('Las Vegas', 'NV') -> ('Tempe', 'AZ')
+MOVED ORG-004957 organizations_WA.csv -> organizations_CA.csv with 6 evidence rows
+HQ ORG-004957 Macro Plastics: ('Union Gap', 'WA') -> ('Fairfield', 'CA')
+MOVED ORG-002643 organizations_PA.csv -> organizations_NC.csv with 0 evidence rows
+HQ ORG-002643 Jeld-Wen: ('Ringtown', 'PA') -> ('Charlotte', 'NC')
+MOVED ORG-005041 organizations_IA.csv -> organizations_NC.csv with 6 evidence rows
+HQ ORG-005041 HSM Solutions: ('Monticello', 'IA') -> ('Hickory', 'NC')
+HQ ORG-003943 Wilbert, Inc.: ('Belmont', 'NC') -> ('Huntersville', 'NC')
+MERGE ORG-002323 Esstech -  Division Of Esschem Co. -> ORG-002324 Esstech, Inc.
+MERGE ORG-002384 Advanced Polymer Technology -> ORG-002325 Apt Advanced Polymer Technology Corp.
+ACQ ORG-000484 Performance Elastomers -> ORG-002534 on 2021-12-01
+ACQ ORG-000492 Pilot Plastics, Inc. -> ORG-004564 on 2023-02-02
+PARENT ORG-000119 -> ORG-007802
+REGISTRY 1 facility link(s) on SITE-002544 -> ORG-004886
+AMETEK ORG-002556: plant SITE-002544 (sold 2021-09-07) -> ORG-004886; org unchanged, HQ flagged
+WATCH ORG-000870 H.B. Fuller Company
+WATCH ORG-003702 INOAC USA, Inc.
+HELD ORG-001813 Formco / Molded Devices Inc: council: the record bundles Formco, a separate 2018 acquisition by Molded Devices, so it is not simply a duplicate of Aptyx
+HELD ORG-006171 Tekniplex Healthcare: council: the quote is Tekni-Plex buying Dunn Industries; whether 'Tekniplex Healthcare' is only the former Dunn business is open
+HELD pair ORG-004948|ORG-007004: SIBLINGS (raw yes): Sumitomo Bakelite's group list shows Vaupell Holdings, Inc. and Vaupell Molding & Tooling, Inc. as separate entities, both listed under Sumitomo Bakel
+HELD pair ORG-002670|ORG-002750: SAME_ENTITY (raw no): Both records sit at 734 W Penn Pike; the site brands the company KNF FLEXPAK Corporation (with sister brand KNF Clean Room Products Corporation, Vinel
+HELD pair ORG-004209|ORG-001029: STILL_UNCERTAIN (raw yes): Do not merge. ORG-004209 (PPC Flexible Packaging, LLC, HQ Buffalo Grove IL per ppcflex.com) acquired Plastic Packaging Technologies, LLC (Kansas City 
+HELD pair ORG-002192|ORG-000768: STILL_UNCERTAIN (raw yes): Creative Pultrusions Inc. (Alum Bank PA) is one member of the Creative Composites Group umbrella, which it formed in Feb 2021 (CompositesWorld); ultim
+HELD pair ORG-001843|ORG-007503: SIBLINGS (raw yes): Kumho Tire Co.'s global office list shows the Akron technical center and 'GEORGIA PLANT KUMHO TIRE GEORGIA INC.' (Macon) as separate units. Georgia is
+HELD pair ORG-002475|ORG-002631: STILL_UNCERTAIN (raw yes): G&T's own site lists one PA facility (Reading, 1025 Epler Wy) and no Leola/Lancaster site, so the Leola Lancaster Division may be closed or consolidat
+HELD pair ORG-006217|ORG-003880: PLANT_OF (raw no): ORG-006217 is a property (84 Fairmount St warehouse/restoration site) of The Plastics Group of America, not a business of its own. Note plasticsgroup.
+KEPT/HELD HQ ORG-004053 sekisui-voltek-hq: CONFIRMED Coldwater MI -> Coldwater MI (raw no)
+KEPT/HELD HQ ORG-002229 sekisui-kydex-hq: CONFIRMED Bloomsburg PA -> Bloomsburg PA (raw no)
+KEPT/HELD HQ ORG-003162 sekisui-specialty-chem-hq: CONFIRMED Dallas TX -> Dallas TX (raw yes)
+KEPT/HELD HQ ORG-003717 sekisui-products-hq: CONFIRMED Farmers Branch TX -> Dallas TX (raw yes)
+KEPT/HELD HQ ORG-000921 klockner-pentaplast-hq: STILL_UNCERTAIN Greenville OH -> Greenville OH (raw yes)
