@@ -1,0 +1,898 @@
+org_id,legal_name,hq_city,hq_state,result,website,homepage_title,top_hosts
+ORG-001336,"Yokohama TWS North America, Inc.",Akron,OH,no_candidate,,,safer.fmcsa.dot.gov;www.movecars.com;panjiva.com;www.indeed.com
+ORG-001409,American Bath Group,Salem,OH,accept,https://americanbathgroup.com/,"American Bath Group – ""To make a positive impact on people’s lives.""",americanbathgroup.com;americanbathgroup.com;newsroom.lixil.com;www.kitchenbathdesign.com
+ORG-001423,ABC Technologies Inc.,Bellevue,OH,no_candidate,,,www.ziprecruiter.com;news.futunn.com;www.linkedin.com;leadiq.com
+ORG-001424,Dometic Sanitation Corporation,Big Prairie,OH,reject_name_not_on_page,https://dometic.com/,"Dometic – Outdoor Gear, Coolers & RV Accessories",documents.dometic.com;dometic.manymanuals.com;marinesan.com;www.gorvmarine.com.au
+ORG-001425,Cooper Tire & Rubber Company,Findlay,OH,no_candidate,,,en.wikipedia.org;www.indeed.com;www.mapquest.com;m.yelp.com
+ORG-001426,Techniplas US LLC,Mansfield,OH,no_candidate,,,www.indeed.com;builtin.com;www.indeed.com;www.career.com
+ORG-001428,"Da-Lite Screen Company, Inc.",Blue Ash,OH,no_candidate,,,www.sec.gov;sweets.construction.com;www.biz2bizonline.com;infassure.com
+ORG-001429,"Nexeo Plastics, LLC",The Woodlands,TX,reject_name_not_on_page,https://nexeoplastics.com/,DNS points to prohibited IP | nexeoplastics.com,www.nexeoplastics.com;www.zoominfo.com;www.mapquest.com;www.naics.com
+ORG-001437,Ottawa Rubber Company,Holland,OH,no_candidate,,,pitchbook.com;www.bbb.org;www.nsnlookup.com;www.dnb.com
+ORG-001439,"RPS Composites Ohio, Inc.",Franklin,OH,no_candidate,,,network.procore.com;www.industrynet.com;apps.sos.wv.gov;www.linkedin.com
+ORG-001440,"Spectra Group Ltd., Inc.",Millbury,OH,no_candidate,,,www.bloomberg.com;chemdmart.com;excesa.com;www.zoominfo.com
+ORG-001441,Tempcraft Corporation,Cleveland,OH,no_candidate,,,northeastohioregion.com;www.jobsohio.com;www.linkedin.com;www.facebook.com
+ORG-001443,Alliance Carpet Cushion,Johnstown,OH,no_candidate,,,www.facebook.com;www.homeyou.com;downloads.regulations.gov;downloads.regulations.gov
+ORG-001444,"Archem America, Inc.",Upper Sandusky,OH,accept,https://archem.inc/,Archem Inc.,www.linkedin.com;www.indeed.com;www.archem.inc;www.linkedin.com
+ORG-001445,Arclin USA LLC,Toledo,OH,no_candidate,,,www.indeed.com;www.commtrex.com;www.industrynet.com;www.ziprecruiter.com
+ORG-001446,Auria Holmesville LLC,Holmesville,OH,reject_name_not_on_page,https://auriasolutions.com/,Auria | Automotive Acoustics for Gas & Electric Vehicles,www.ellis.com;www.auriasolutions.com;www.immihelp.com;www.ellis.com
+ORG-001447,Axalta Coating Systems USA LLC,Orrville,OH,accept,https://axalta.com/,Axalta Coating Systems,ir.axalta.com;en.nbd.ltd;ir.axalta.com;ir.axalta.com
+ORG-001449,Best-One Retreading of Toledo,Toledo,OH,reject_name_not_on_page,https://bestonecommercial.com/,Best-One Commercial,www.bestonecommercial.com
+ORG-001452,"dlhBOWLES, Inc.",North Canton,OH,no_candidate,,,www.rwbaird.com;abctechnologies.com;www.mpepartners.com;www.plasticsnews.com
+ORG-001453,Flow Polymers LLC,Cleveland,OH,no_candidate,,,www.arsenalcapital.com;www.indeed.com;www.mapquest.com;www.prnewswire.com
+ORG-001457,Pacific Industries USA Inc.,Fairfield,OH,accept,https://schrader-pacific.com/,Robot Challenge Screen,schrader-pacific.com;www.indeed.com;www.pacific-ind.co.jp;www.globalspec.com
+ORG-001458,Polyram USA,Avon,OH,accept,https://polyram-group.com/,Homepage,www.mapquest.com;polyram-group.com;www.manta.com;www.facebook.com
+ORG-001459,RFD Beaufort Inc.,Sharon Center,OH,no_candidate,,,www.waze.com;www.gao.gov;www.movecars.com;www.creditsafe.com
+ORG-001462,Clevite Elastomers Technical Center (Tenneco),Milan,OH,no_candidate,,,
+ORG-001467,Motion Conveyance Solutions,West Chester,OH,accept,https://miconveyancesolutions.com/,Motion Conveyance Solutions,miconveyancesolutions.com;miconveyancesolutions.com;www.industrynet.com;www.motion.com
+ORG-001469,"FDIE, LLC",Cleveland,OH,no_candidate,,,www.indeed.com;www.simplyhired.com;www.glassdoor.ie;www.indeed.com
+ORG-001470,The Pittsburgh Paint Company,Huron,OH,no_candidate,,,diversityjobs.com;www.milwaukeejobs.com;www.ziprecruiter.com;talents.vaia.com
+ORG-001473,"Toagosei America, Inc.",West Jefferson,OH,accept,https://toagoseiamerica.com/,Toagosei America - Home,toagoseiamerica.com;toagoseiamerica.com;www.linkedin.com;toagoseiamerica.com
+ORG-001474,DAP Products Inc.,Tipp City,OH,accept,https://dap.com/,On The Job Since 1865 | DAP,buildingclean.org;www.mapquest.com;www.dnb.com;local.yahoo.com
+ORG-001484,Hexa Americas Inc.,Sidney,OH,no_candidate,,,www.indeed.com;web.sidneyshelbychamber.com;www.kisco-net.com;www.facebook.com
+ORG-001486,"Sunstar Engineering Americas, Inc.",Springboro,OH,accept,https://sunstar-engineering.com/,Sunstar Engineering - Trusted by the world’s leading companies to solve unique technical challenges,www.sunstar-engineering.com;www.sunstar-engineering.com;www.automateshow.com;www.bloomberg.com
+ORG-001490,Chardon Custom Polymers,Chardon,OH,accept,https://chardoncp.com/,Custom Rubber Compounder in Ohio | Chardon Custom Polymers,www.chardoncp.com;www.indeed.com;www.linkedin.com;www.customrubbercorp.com
+ORG-001491,The Gorilla Glue Company,Sharonville,OH,accept,https://gorillatough.com/,Gorilla Glue | For the Toughest Jobs on Planet Earth | Gorilla Tough,gorillatough.com;gorillatough.com;www.linkedin.com;gorillatough.com
+ORG-001492,Hendrickson Composites,Dayton,OH,reject_name_not_on_page,https://hendrickson-intl.com/,Heavy-Duty Truck & Trailer Suspension Systems | Hendrickson | Hendrickson,micro.hendrickson-intl.com;www.facebook.com;www.indeed.com;www.linkedin.com
+ORG-001493,"United Industrial Sales Company, Inc.",Willoughby,OH,no_candidate,,,willoughby-oh.chambermaster.com;acmabuyersguide.com;www.plainsite.org
+ORG-001494,Allied Machine & Engineering Corp.,Dover,OH,accept,https://alliedmachine.com/,Allied Machine and Engineering - Industrial Holemaking Cutting Tools,www.alliedmachine.com;www.alliedmachine.com;www.alliedmachine.com;www.linkedin.com
+ORG-001495,Barwell Machinery USA Inc.,Brunswick,OH,no_candidate,,,www.dandb.com;www.thefreelibrary.com;www.scribd.com;www.thefreelibrary.com
+ORG-001496,Bosch Rexroth Corporation — Hägglunds,Grove City,OH,no_candidate,,,
+ORG-001497,Budzar Industries LLC,Willoughby,OH,accept,https://budzar.com/,Home,www.budzar.com;www.linkedin.com;supplychain.wemakeithere.org;www.budzar.com
+ORG-001498,SigmaTEK Systems LLC,Cincinnati,OH,no_candidate,,,www.oemoffhighway.com;www.preqin.com;directory.designnews.com;www.woodworkingnetwork.com
+ORG-001499,Lianda Corporation,Twinsburg,OH,no_candidate,,,www.linkedin.com;rubberworld.com;www.rubbernewsdirectory.com;www.cience.com
+ORG-001500,Minco Tool & Mold Inc.,Dayton,OH,no_candidate,,,www.ndt.org;www.plasticstoday.com;www.plasticsnewsdirectory.com;www.mapquest.com
+ORG-001501,Polymer Valley Chemicals Inc.,Akron,OH,accept,https://polymervalleychemicals.com/,"Polymer Valley Chemicals – The leader in mineral fillers, carbon black and custom treating & packaging.",polymervalleychemicals.com;paintandcoatingsbuyersguide.com;www.baton.com;polymervalleychemicals.com
+ORG-001597,International Technical Polymer Systems Inc,Niles,OH,accept,https://itps-inc.com/,"ITPS – International Technical Polymer Systems, Inc.",www.itps-inc.com;www.plasticsnews.com;www.dnb.com;www.buzzfile.com
+ORG-001617,Poly6 Technologies Inc,Eastlake,OH,accept,https://poly6.com/,Poly6 Technologies,www.poly6.com;www.gongwer-oh.com;northeastohioregion.com;www.jobsohio.com
+ORG-001695,Innovative Rubber Technologies Inc.,Wapakoneta,OH,no_candidate,,,www.linkedin.com;en.nbd.ltd;www.bizapedia.com;freightscout.ai
+ORG-001696,AULD CORPORATION,Columbus,OH,reject_name_not_on_page,https://auldcorporation.com/,Just a moment...,www.auldcorporation.com;www.linkedin.com;www.mapquest.com;cottage24.com
+ORG-001705,ASPEC Inc,Cincinnati,OH,accept,https://aspecplastics.com/,"Custom Manufacturer of Plastic Injection Molding and Insert Molding-Cincinnati, OH",www.bbb.org;www.aspecplastics.com;www.mapquest.com;local.yahoo.com
+ORG-001716,"Firestone Polymers, LLC",Akron,OH,no_candidate,,,www.mapquest.com;www.zippia.com;www.bridgestoneamericas.com;www.bloomberg.com
+ORG-001721,"Truco, Inc.",Cleveland,OH,no_candidate,,,www.thebluebook.com;www.crunchbase.com;www.bloomberg.com;www.roofingcontractor.com
+ORG-001726,"Endura Plastics, Inc.",Kirtland,OH,no_candidate,,,www.linkedin.com;www.indeed.com;www.facebook.com;www.iqsdirectory.com
+ORG-001761,"Advanced Testing Laboratory, Inc.",Blue Ash,OH,reject_name_not_on_page,https://sensorsandtestingsolutionsfinder.com/,Welcome to Sensors + Testing Solutions Finder,www.crunchbase.com;www.ziprecruiter.com;www.bbb.org;www.hicapitalize.com
+ORG-001764,NMC Metals Inc,Niles,OH,no_candidate,,,govtribe.com;loadconnect.io;www.mapquest.com;www.nsnlookup.com
+ORG-001770,Advanced Rubber & Plastics Company Incorporated,Perrysburg,OH,no_candidate,,,www.thomasnet.com
+ORG-001919,"Catalyst Systems, Inc.",Gnadenhutten,OH,no_candidate,,,www.csb.gov;www.csb.gov;www.amazon.co.jp;www.desertcart.in
+ORG-001920,"Lawrence Machine, Inc.",Massillon,OH,no_candidate,,,www.linkedin.com;www.mapquest.com;www.industrynet.com;www.chamberofcommerce.com
+ORG-001921,Potter's Inc,Cleveland,OH,no_candidate,,,www.yellowpages.com;wanderboat.ai;www.chamberofcommerce.com;moovitapp.com
+ORG-001922,Faull and Son,Niles,OH,accept,https://faullandson.com/,Faull & Son | LLC,faullandson.com;www.bbb.org;m.yelp.com;faullandson.com
+ORG-001944,"Tristan Rubber Molding, Inc.",North Canton,OH,no_candidate,,,www.indeed.com;www.mapquest.com;www.bbb.org;www.govcb.com
+ORG-001950,Artisan Mold Co Inc,Grafton,OH,no_candidate,,,www.buzzfile.com;www.linkedin.com;oberlinproject.org
+ORG-001952,Catalysis Additive Tooling LLC,Columbus,OH,no_candidate,,,www.linkedin.com;www.linkedin.com;rocketreach.co;aeroleads.com
+ORG-001960,K & E Plastic Pipe and Trailer Sales LLC,Reedsville,OH,no_candidate,,,www.movecars.com;safer.fmcsa.dot.gov;newbizbot.ai;brokersnapshot.com
+ORG-001962,"Lasttic, LLC",Holmesville,OH,no_candidate,,,www.movecars.com;safer.fmcsa.dot.gov;www.facebook.com;insightcarrier.com
+ORG-001964,M Sacks International,Akron,OH,no_candidate,,,www.linkedin.com;www.importinfo.com;www.mapquest.com;local.yahoo.com
+ORG-001970,Northcoast Inc Recycling Specialists,Wickliffe,OH,error: HTTPError,,,northcoastrecycling.com;www.curbwaste.com;safer.fmcsa.dot.gov;ohiobiz.com
+ORG-001972,Penco Acquisition Co. LLC dba Penco Tool,Ashtabula,OH,no_candidate,,,
+ORG-001982,"XL Pattern Shop, Inc.",Orrville,OH,accept,https://xlpatternshop.com/,"Foundry Tooling & Complex Machining | XL Pattern Shop - Orrville, OH",www.xlpatternshop.com;www.linkedin.com;www.xlpatternshop.com;www.xlpatternshop.com
+ORG-002001,REP Services Inc,Bucyrus,OH,no_candidate,,,www.mapquest.com;www.facebook.com;www.thomasnet.com;www.thomasnet.com
+ORG-002008,Samjay & Sons LLC,Fairlawn,OH,no_candidate,,,
+ORG-002009,SaN Pallet LLC (SaN Pallets),Troy,OH,no_candidate,,,
+ORG-002023,Thinnovations LLC dba SmartPaint,Columbus,OH,no_candidate,,,files.brokercheck.finra.org;www.advisorcheck.com;document.epiq11.com;portal-redirect.epiq11.com
+ORG-002024,Tolloti Pipe LLC,Uhrichsville,OH,no_candidate,,,www.mapquest.com;www.facebook.com;www.bbb.org;members.greaterakronchamber.org
+ORG-002026,Tronplas Inc,Findlay,OH,no_candidate,,,www.manta.com
+ORG-002027,United Feed Screws Limited,Akron,OH,no_candidate,,,www.sba.com
+ORG-002050,"Diskin Enterprises, LLC",Garrettsville,OH,no_candidate,,,www.linkedin.com;www.mapquest.com;www.buzzfile.com;local.yahoo.com
+ORG-002079,TDM LLC,Ashtabula,OH,no_candidate,,,www.industrynet.com;www.thomasnet.com;www.industrynet.com;www.thomasnet.com
+ORG-002080,Mitsubishi Chemical Performance Polymers Inc,Bellevue,OH,error: HTTPError,,,mca.earcu.com;www.indeed.com;www.mfg.com;fcc.report
+ORG-002139,Enzyme Catalyzed Polymers LLC,Akron,OH,no_candidate,,,www.mapquest.com;pubs.acs.org;www.mapquest.com;www.uakron.edu
+ORG-002141,TRIFECTA TOOL AND ENGINEERING LLC,Kettering,OH,no_candidate,,,www.importgenius.com;www.mfg.com;www.federalregister.gov;www.govinfo.gov
+ORG-002143,AXILEA LLC,Beachwood,OH,no_candidate,,,
+ORG-002145,All Coatings Corp.,Youngstown,OH,no_candidate,,,www.thomasnet.com;www.thomasnet.com
+ORG-002151,Black Bounce Rubber & Tire LLC,Millersburg,OH,no_candidate,,,edocpub.epa.ohio.gov;edocpub.epa.ohio.gov;biashara.cybo.com;www.chamberofcommerce.com
+ORG-002152,BLAKO INDUSTRIES INC.,Bowling Green,OH,no_candidate,,,www.chamberofcommerce.com;freightscout.ai;www.plasticsnews.com;www.superpages.com
+ORG-002154,Composite Engineering,Amelia,OH,no_candidate,,,www.linkedin.com;www.mapquest.com;www.yellowpages.com;www.manta.com
+ORG-002155,Cottage Play Systems LLC,Millersburg,OH,reject_name_not_on_page,https://cottageplaysystems.com/,"One moment, please...",cottageplaysystems.com;www.mapquest.com;www.yellowpages.com;www.mapquest.com
+ORG-002159,"ENCORE INDUSTRIES, INC.",Sandusky,OH,no_candidate,,,www.paintsupply.com;www.manta.com;www.canadianmanufacturing.com;www.bloomberg.com
+ORG-002160,FELICITY PLANT,Felicity,OH,no_candidate,,,www.angi.com;housesitter.com;www.kikyflorist.com;www.angi.com
+ORG-002162,Gerich Fiberglass,Mount Gilead,OH,no_candidate,,,www.linkedin.com;m.yelp.com;www.mapquest.com;www.bbb.org
+ORG-002163,"K & K Services, Inc.",Wadsworth,OH,no_candidate,,,www.govconinabox.com;www.usaspending.gov;www.importgenius.com;en.nbd.ltd
+ORG-002165,MEDAL Components,Holgate,OH,no_candidate,,,www.indeed.com;ohiobiz.com;carriernetwork.ai;www.plastico.com
+ORG-002166,The Mold Shop,Sylvania,OH,no_candidate,,,www.facebook.com;www.bbb.org;reviews.birdeye.com;www.mapquest.com
+ORG-002168,Revlis Corporation,Akron,OH,no_candidate,,,www.akrochem.com;www.facebook.com;www.importgenius.com;supplychain.wemakeithere.org
+ORG-002169,SPECIALTY PROCESSING LLC,Wadsworth,OH,no_candidate,,,www.recycleinme.com;www.mapquest.com;www.zoominfo.com;www.recycle.net
+ORG-002172,Wright Materials Research Co.,Beavercreek,OH,no_candidate,,,getfunded.ai;www.yellowpages.com;www.sbir.gov;www.inknowvation.com
+ORG-002177,Berkley Prods Co.,Akron,PA,no_candidate,,,www.city-data.com
+ORG-002181,Inhance Technologies LLC,Allentown,PA,no_candidate,,,www.industrynet.com;importkey.com;www.pacermonitor.com;www.importgenius.com
+ORG-002183,Niagara Bottling LLC,Allentown,PA,reject_name_not_on_page,https://niagarawater.com/,Home,www.niagarawater.com;www.ziprecruiter.com;www.glassdoor.com;www.snagajob.com
+ORG-002186,Polymer Dynamics Inc.,Allentown,PA,no_candidate,,,www.polydyn.com;www.mcall.com;www.zippia.com;www.mapquest.com
+ORG-002187,"Royal Industries International, Inc.",Allentown,PA,no_candidate,,,www.areadevelopment.com;www.zoominfo.com;newbizbot.ai;www.mcall.com
+ORG-002190,"Valley Extrusions, LLC.",Allentown,PA,no_candidate,,,directory.designnews.com;www.indeed.com;www.linkedin.com;www.indeed.com
+ORG-002191,New Pig Burns Ave,Altoona,PA,no_candidate,,,
+ORG-002192,Creative Pultrusions Inc.,Alum Bank,PA,accept,https://creativecompositesgroup.com/,CCG Home,www.creativecompositesgroup.com;www.creativecompositesgroup.com;www.mapquest.com;www.indeed.com
+ORG-002196,Flextron Industries Inc.,Aston,PA,no_candidate,,,www.mapquest.com;www.zycon.com;www.highergov.com;www.usaspending.gov
+ORG-002198,Rebus Inc.,Aston,PA,no_candidate,,,www.mapquest.com;www.yellowpages.com;en.kunststoffe.de;www.mapquest.com
+ORG-002199,Surteco North Amer Inc.,Auburn,PA,no_candidate,,,
+ORG-002200,Anholt Tech,Avondale,PA,no_candidate,,,greencompanydb.com;www.linkedin.com;www.pacodeandbulletin.gov;cedatareporting.pa.gov
+ORG-002201,Edlon Avondale Fac,Avondale,PA,no_candidate,,,greencompanydb.com
+ORG-002202,Edlon Inc.,Avondale,PA,no_candidate,,,www.linkedin.com;rocketreach.co;www.ndt.org;www.waze.com
+ORG-002205,Lehigh Gasket Inc.,Bath,PA,no_candidate,,,www.industrynet.com;www.govcb.com;rocketreach.co;www.buzzfile.com
+ORG-002210,"Analytic Plastics, Inc.",Bensalem,PA,no_candidate,,,www.indeed.com;mergr.com;www.plasticsnews.com;www.indeed.com
+ORG-002211,Laminated Materials Corp.,Bensalem,PA,no_candidate,,,www.mapquest.com;www.bloomberg.com;local.yahoo.com;www.importgenius.com
+ORG-002212,Nytef Plastics,Bensalem,PA,no_candidate,,,www.yelp.com;www.mapquest.com;jcsentinel.com;directory.designnews.com
+ORG-002213,Pelmor Lab,Bensalem,PA,no_candidate,,,freightscout.ai;www.pacodeandbulletin.gov;cedatareporting.pa.gov;www.pacodeandbulletin.gov
+ORG-002215,Berwick Offray LLC,Berwick,PA,reject_name_not_on_page,https://theberwickoffray.com/,403 Forbidden,www.fundinguniverse.com;theberwickoffray.com;www.bbb.org;associationdatabase.com
+ORG-002216,L & P Berwick Div Leggett & Platt,Berwick,PA,no_candidate,,,files.dep.state.pa.us;cedatareporting.pa.gov;digitalcommons.law.villanova.edu
+ORG-002219,Alpha Packaging,Bethlehem,PA,accept,https://alphapackaging.com/,"Alpha Packaging, Inc. | Specialty Packaging Solutions",www.jgpetrucci.com;www.alphapackaging.com;www.ziprecruiter.com;www.pretiumpkg.com
+ORG-002220,B Braun Med Bethlehem Plt,Bethlehem,PA,no_candidate,,,
+ORG-002221,Crayola LLC,Bethlehem,PA,accept,https://crayola.com/,"Home | Products, Coloring Pages, Crafts & More",www.indeed.com;www.crayola.com;www.crayola.com;www.ziprecruiter.com
+ORG-002225,Icp Industrial - Birdsboro,Birdsboro,PA,no_candidate,,,www.growableground.com
+ORG-002228,Foam Fabricators Inc.,Bloomsburg,PA,no_candidate,,,www.indeed.com;www.industrynet.com;www.indeed.com;www.scrapmonster.com
+ORG-002231,"Gehr Plastics, Inc.",Boothwyn,PA,accept,https://gehrplastics.com/,GEHR GmbH | Plastics engineered by GEHR | Kunstoff-Halbzeuge,www.gehrplastics.com;www.facebook.com;www.indeed.com;www.industrynet.com
+ORG-002232,"Luicana Industries, Inc.",Boyertown,PA,accept,https://luicanas.com/,Kitchen And Bath | Luicana Industries | Boyertown,www.luicanas.com;www.bbb.org;www.luicanas.com;www.industrynet.com
+ORG-002236,"Reichhold Chemicals, Inc. (Polynt-Reichhold group)",Bridgeville,PA,no_candidate,,,
+ORG-002237,Mathews Marble MFG Inc.,Bridgeville,PA,no_candidate,,,
+ORG-002239,Altuglas LLC,Bristol,PA,no_candidate,,,www.trinseo.com;panjiva.com;www.federalregister.gov;www.importinfo.com
+ORG-002241,Dunmore Corp.,Bristol,PA,no_candidate,,,www.mapquest.com;local.yahoo.com;www.bloomberg.com;www.mapquest.com
+ORG-002242,Huntington Foam LLC,Brockway,PA,no_candidate,,,www.dandb.com;www.zoominfo.com;www.vivalanka.com;www.thetimes-tribune.com
+ORG-002243,"Ishman Plastic And Wood Cutting, Inc.",Brookville,PA,no_candidate,,,safer.fmcsa.dot.gov;www.privco.com;www.movecars.com;vektortms.com
+ORG-002245,Jsp Intl MFG,Butler,PA,no_candidate,,,mytownview.com;www.scribd.com;howismyzip.com
+ORG-002247,Bhb Plastic Molding,Cambridge Springs,PA,no_candidate,,,greencompanydb.com;files.dep.state.pa.us;digitalcommons.law.villanova.edu;www.pacodeandbulletin.gov
+ORG-002248,Atlas Roofing Corporation,Camp Hill,PA,accept,https://atlasroofing.com/,"Atlas Roofing Shingles, Underlayments & Ventilation Homepage",www.atlasroofing.com;www.atlasrwi.com;www.indeed.com;buildingclean.org
+ORG-002250,Trident Rubber Inc.,Canonsburg,PA,no_candidate,,,nordhavn.com;www.privco.com;www.mapquest.com;es.panjiva.com
+ORG-002251,Carlisle Construction Materials LLC,Carlisle,PA,accept,https://carlisleconstructionmaterials.com/,Home - Carlisle Construction Materials,www.carlisleconstructionmaterials.com;www.geosynthetic-institute.org;www.mapquest.com;www.linkedin.com
+ORG-002252,Lane Enterprises Inc.,Carlisle,PA,accept,https://lane-enterprises.com/,Lane Enterprises,www.linkedin.com;staging.lane-enterprises.com;esopservices.com;www.indeed.com
+ORG-002253,John Wall Inc.,Carmichaels,PA,no_candidate,,,www.linkedin.com;www.mapquest.com;horserail.com;www.legacy.com
+ORG-002254,Valley Tire Co.,Charleroi,PA,accept,https://valleytireco.com/,"Valley Tire Pros | Auto Repair & Tire Shop in New York, Pennsylvania and Ohio",www.valleytireco.com;www.linkedin.com;members.washcochamber.com;www.mapquest.com
+ORG-002255,Valmet Inc.,Clarks Summit,PA,accept,https://valmet.com/,"Valmet: technologies, services and automation to pulp, energy and paper industries",www.valmet.com;www.valmet.com;www.indeed.com;www.jobleads.com
+ORG-002259,Comor Inc.,Cochranton,PA,no_candidate,,,www.yellowpages.com;www.mapquest.com;www.crunchbase.com;www.govinfo.gov
+ORG-002261,"Jm Manufacturing Company, Inc.",Cochranton,PA,no_candidate,,,www.osha.gov;www.yellowpages.com;importkey.com;bpdirectory.intertek.com
+ORG-002262,Poux Plastics Inc.,Cochranton,PA,accept,https://pouxplastics.com/,"Home | Poux Plastics, Inc.",pouxplastics.com;pouxplastics.com;www.industrynet.com;pouxplastics.com
+ORG-002264,Southco Concordville Facility,Concordville,PA,no_candidate,,,www.masstransitmag.com;www.facebook.com;files.dep.state.pa.us;www.linkedin.com
+ORG-002265,Mondo USA Inc.,Conshohocken,PA,reject_name_not_on_page,https://mondoworldwide.com/,Mondoworldwide,cisleads.com;leadiq.com;lei.bloomberg.com;www.homeyou.com
+ORG-002268,"Allegheny Plastics, Inc.",Cranberry Township,PA,accept,https://allegheny.com/,Allegheny Card Solutions,www.allegheny.com;www.mapquest.com;www.zoominfo.com;www.plasticsnews.com
+ORG-002272,Rowa Group Holding Gmbh,Croydon,PA,accept,https://rowainc.net/,ROWA INC. - ROWA Inc,www.zoominfo.com;www.linkedin.com;www.rowainc.net;rowa-group.com
+ORG-002273,Poly Plastic Products Inc.,Delano,PA,accept,https://polyplasticproducts.com/,Poly Plastic Products - Sigma Specialty Films,www.polyplasticproducts.com;www.zoominfo.com;www.industrynet.com;nextdoor.com
+ORG-002274,Vision Profile Extrusions USA Ltd,Delmont,PA,no_candidate,,,www.pacodeandbulletin.gov;cedatareporting.pa.gov
+ORG-002275,Sylvin Technologies Inc.,Denver,PA,no_candidate,,,www.alphagary.com;www.linkedin.com;www.facebook.com;www.azom.com
+ORG-002276,Weaver Industries,Denver,PA,accept,https://weaverind.com/,"Weaver Industries - Graphite Machining, Urethane Molding & Glass Art",weaverind.com;www.linkedin.com;www.facebook.com;www.indeed.com
+ORG-002283,New Pig Corporation - Duncansville Site,Duncansville,PA,no_candidate,,,waterlandlife.org
+ORG-002288,Crayola LLC - Kresslersville Rd Plant,Easton,PA,no_candidate,,,
+ORG-002290,Fluortek Inc,Easton,PA,no_candidate,,,investors.nordson.com;qmed.com;www.mrcpa.org;www.news-medical.net
+ORG-002291,Georg Fischer LLC (GF Harvel),Easton,PA,no_candidate,,,
+ORG-002292,Molded Acoustical Products of Easton Inc,Easton,PA,no_candidate,,,law.justia.com;www.plasticsnews.com;www.linkedin.com;www.snagajob.com
+ORG-002296,U-POL US Corp,Easton,PA,no_candidate,,,www.importinfo.com;fr.abrams.wiki;ko.abrams.wiki
+ORG-002298,Metamora Products Corporation,Elkland,PA,no_candidate,,,stacks.cdc.gov;www.bloomberg.com;www.manta.com;dced.pa.gov
+ORG-002300,Polar Tech Industries of PA Inc,Elysburg,PA,no_candidate,,,digitalcommons.law.villanova.edu;www.pacodeandbulletin.gov;digitalcommons.law.villanova.edu;digitalcommons.law.villanova.edu
+ORG-002301,Electro Chemical Engineering & Manufacturing Co,Emmaus,PA,no_candidate,,,www.azom.com;local.yahoo.com;www.crunchbase.com;www.industrynet.com
+ORG-002302,AAH Acquisition LLC dba Snap-Tite Hose,Erie,PA,no_candidate,,,govtribe.com;www.highergov.com;fencelinedata.org;www.lqlite.com
+ORG-002304,Engineered Plastics LLC,Erie,PA,accept,https://engineeredplastics.com/,Engineered Plastics,www.linkedin.com;www.engineeredplastics.com;www.engineeredplastics.com;www.engineeredplastics.com
+ORG-002313,Havpak International,Erie,PA,accept,https://havpak.com/,Havpak - Discover What's Packed Inside,www.havpak.com;www.havpak.com;www.indeed.com;www.havpak.com
+ORG-002314,Plastek Grp-Spectrum Molding &,Erie,PA,no_candidate,,,
+ORG-002315,"Plastek Industries, Inc.",Erie,PA,accept,https://plastekgroup.com/,Plastics Manufacturers and Suppliers | The Plastek Group,www.plastekgroup.com;www.bloomberg.com;www.industrynet.com;www.hicapitalize.com
+ORG-002318,Rehrig Pacific,Erie,PA,accept,https://rehrigpacific.com/,Rehrig Pacific Company,www.rehrigpacific.com;www.linkedin.com;www.indeed.com;supplychain.wemakeithere.org
+ORG-002319,Rehrig Pacific Bldg 2,Erie,PA,no_candidate,,,
+ORG-002321,Thermoclad - Iroquois Ave,Erie,PA,no_candidate,,,
+ORG-002322,"United-Erie Division of ICC, Inc",Erie,PA,no_candidate,,,files.dep.state.pa.us
+ORG-002324,"Esstech, Inc.",Essington,PA,accept,https://esstechinc.com/,Esstech Inc – Advanced chemicals for industries demanding distinctive technology,www.esstechinc.com;www.linkedin.com;www.thomasnet.com;www.indeed.com
+ORG-002327,Carclo Technical Plastics,Export,PA,no_candidate,,,www.mapquest.com;www.yelp.com;www.facebook.com;www.linkedin.com
+ORG-002330,Dsm Biomedical Inc. - Sierra Drive,Exton,PA,no_candidate,,,www.pacodeandbulletin.gov
+ORG-002333,Trinseo LLC.,Exton,PA,no_candidate,,,www.trinseo.com;www.indeed.com;talents.vaia.com;www.monster.com
+ORG-002335,Hunter Panels LLC,Fairchance,PA,no_candidate,,,www.linkedin.com;www.industrynet.com;www.greatlawyers.com;sv.linkedin.com
+ORG-002339,Formtech Enterprises,Fairview,PA,accept,https://formtech.com/,HOME,formtech.com;www.indeed.com;nl.linkedin.com;www.mapquest.com
+ORG-002345,"Novares Us, LLC - Felton Plant",Felton,PA,no_candidate,,,
+ORG-002348,Carpenter Co.,Richmond,VA,accept,https://carpenter.com/,Carpenter Co.,carpenter.com;carpenter.com;www.linkedin.com;carpenter.com
+ORG-002353,Am Stabilizers Corporation,Franklin,PA,accept,https://amstabilizers.com/,AM Stabilizers,www.amstabilizers.com;www.amstabilizers.com;www.amstabilizers.com;www.linkedin.com
+ORG-002356,Herbert Cooper Co.,Genesee,PA,no_candidate,,,www.highergov.com;www.sweetspot.so;www.yelp.com;www.mapquest.com
+ORG-002361,Emsco Group,Girard,PA,accept,https://emscogroup.com/,Emsco Group,www.emscogroup.com;www.facebook.com;www.indeed.com;www.linkedin.com
+ORG-002362,Jamestown Powder Coatings,Girard,PA,no_candidate,,,19january2017snapshot.epa.gov;m.yelp.com;www.thomasnet.com;rocketreach.co
+ORG-002363,Cott MFG,Glassport,PA,reject_name_not_on_page,https://cottmfg.com/,Cott Manufacturing,www.cottmfg.com;www.linkedin.com;www.whitepages.com;www.processregister.com
+ORG-002366,Addev Walco Inc.,Glenshaw,PA,no_candidate,,,shaler.org;www.post-gazette.com;www.linkedin.com;www.salary.com
+ORG-002369,Stretchpak Inc.,Greensburg,PA,accept,https://stretchpak.com/,Home | My Site 3,www.stretchpak.com;www.mapquest.com;www.bbb.org;www.linkedin.com
+ORG-002373,Controlled Molding,Hadley,PA,accept,https://controlledmolding.com/,CMI • Controlled Molding Incorporated,controlledmolding.com;www.linkedin.com;www.indeed.com;www.mapquest.com
+ORG-002376,Colonial Fiberglass Industries,Hanover,PA,no_candidate,,,m.yelp.com;www.mapquest.com;www.manta.com;www.kompass.com
+ORG-002379,Polymer Concepts Tech Pby Inc.,Hanover,PA,no_candidate,,,files.dep.state.pa.us;cedatareporting.pa.gov;cedatareporting.pa.gov;cedatareporting.pa.gov
+ORG-002380,Sonoco Plastics,Hanover,PA,no_candidate,,,www.linkedin.com;www.industrynet.com;www.linkedin.com;www.indeed.com
+ORG-002382,Martech Medical Products-Warehouse,Harleysville,PA,no_candidate,,,freightscout.ai
+ORG-002384,Advanced Polymer Technology,Harmony,PA,no_candidate,,,advpolytech.com;www.linkedin.com;buildingclean.org;www.mapquest.com
+ORG-002387,Jet Plastica Ind Inc.,Hatfield,PA,reject_name_not_on_page,https://lanefinder.com/,Find CDL Truck Driving Jobs Near You,www.lanefinder.com;otrucking.com;www.payphone-project.com;cedatareporting.pa.gov
+ORG-002389,Surco Inc.,Hatfield,PA,no_candidate,,,www.mapquest.com;www.industrynet.com;www.showmelocal.com;www.processregister.com
+ORG-002395,Fabri Kal Corp.,Hazleton,PA,no_candidate,,,www.commtrex.com;www.industrynet.com;www.plasticsnews.com;www.linkedin.com
+ORG-002396,Jml Industries Inc.,Hazleton,PA,no_candidate,,,www.seair.co.in;www.mapquest.com;www.indeed.com;www.mapquest.com
+ORG-002398,"Schoolhouse Plastics, Inc.",Hazleton,PA,no_candidate,,,www.yellowpages.com;www.mapquest.com;www.crunchbase.com;www.mapquest.com
+ORG-002399,Simona America Incorporated,Hazleton,PA,no_candidate,,,
+ORG-002403,Penn Turf Inc.,Hollidaysburg,PA,accept,https://pennturftire.com/,Penn Turf | Scrap Tire Recycling & Collection in Central PA,www.facebook.com;pennturftire.com;www.statecollege.com;www.mapquest.com
+ORG-002406,Hartman Plastics Inc.,Honey Brook,PA,no_candidate,,,www.mapquest.com;www.yellowpages.com;www.printingnews.com;www.chamberofcommerce.com
+ORG-002408,Benjamin Obdyke Inc.,Horsham,PA,accept,https://benjaminobdyke.com/,Roof & Wall Moisture Management Building Materials - Benjamin Obdyke,www.linkedin.com;benjaminobdyke.com;www.zoominfo.com;www.facebook.com
+ORG-002410,Edon Corp.,Horsham,PA,accept,https://edon.com/,Home - EDON Composites - Architectural Fiberglass,edon.com;libraryresources.net;www.aecinfo.com;edon.com
+ORG-002411,Chartiers Packaging Inc. Dba Chartiers Industries,Houston,PA,no_candidate,,,
+ORG-002412,"Venture Precision Tool, Inc.",Hummelstown,PA,no_candidate,,,www.mfg.com;www.linkedin.com;www.bbb.org;www.privco.com
+ORG-002414,"Ajr Polytron, Inc.",Huntingdon Valley,PA,no_candidate,,,www.linkedin.com;aeroleads.com;www.linkedin.com;www.plasticstoday.com
+ORG-002415,Fielco Industries,Huntingdon Valley,PA,no_candidate,,,www.datanyze.com;www.dandb.com;www.zoominfo.com;leadiq.com
+ORG-002416,Penn Protective Coatings,Huntingdon Valley,PA,no_candidate,,,www.mapquest.com;www.yelp.com;start.cortera.com;www.manta.com
+ORG-002417,Strauss Engineering Co.,Huntingdon Valley,PA,no_candidate,,,www.yellowpages.com;www.bloomberg.com;local.yahoo.com;www.mapquest.com
+ORG-002418,Donaldson Co. Ivyland Fac,Ivyland,PA,no_candidate,,,
+ORG-002419,Eastern Web Handling,Ivyland,PA,accept,https://easternwebhandling.com/,"Flexible Packaging Converter | Eastern Web Handling, Inc.",www.easternwebhandling.com;www.thomasnet.com;www.industrynet.com;gather.tracegains.com
+ORG-002421,Jamestown Paint Co.,Jamestown,PA,no_candidate,,,www.pcimag.com;www.zoominfo.com;www.proquest.com;www.pcimag.com
+ORG-002422,L.P. Aero Plastics Inc.,Jeannette,PA,accept,https://lpaero.com/,LP Aero Plastics Inc. – Aviation's Leading Source for Windshields & Windows,lpaero.com;lpaero.com;www.linkedin.com;www.facebook.com
+ORG-002426,Norcen Inds Inc.,Jersey Shore,PA,no_candidate,,,
+ORG-002427,West Pharm Serv Js SW,Jersey Shore,PA,no_candidate,,,files.dep.state.pa.us
+ORG-002428,Quality Dispersions Inc.,Kersey,PA,accept,https://qualitydispersionsinc.com/,URL Source: https://qualitydispersionsinc.com/,qualitydispersionsinc.com;www.movecars.com;www.manta.com;www.zoominfo.com
+ORG-002429,Atofina Chem Inc.,King Of Prussia,PA,no_candidate,,,
+ORG-002430,Purolite Corporation,King Of Prussia,PA,error: HTTPError,,,www.thomasnet.com;www.prnewswire.com;babcphl.com;www.visualvisitor.com
+ORG-002433,Shingle Belting Inc.,King Of Prussia,PA,accept,https://shinglebelting.com/,Home - Shingle Belting,www.zoominfo.com;shinglebelting.com;www.dnb.com;shinglebelting.com
+ORG-002434,Bergad Incorporated,Kittanning,PA,no_candidate,,,newbizbot.ai;www.facebook.com;pppreport.org;www.congress.gov
+ORG-002435,Dielectric Solutions LLC,Kittanning,PA,no_candidate,,,www.mapquest.com;kando.tech;rocketreach.co;archive.triblive.com
+ORG-002438,"East Penn Manufacturing Co., Inc.",Lancaster,PA,accept,https://eastpennmanufacturing.com/,East Penn Manufacturing - Battery Manufacturer & Energy Solutions,www.eastpennmanufacturing.com;www.eastpennmanufacturing.com;www.eastpennmanufacturing.com;www.eastpennmanufacturing.com
+ORG-002439,Palram Americas,Kutztown,PA,accept,https://palram.com/,Palram | Leading PVC Sheet Supplier & Polycarbonate Sheet Manufacturer,www.palram.com;www.linkedin.com;www.facebook.com;architizer.com
+ORG-002440,"Armstrong World Industries, Inc.",Lancaster,PA,accept,https://armstrong.com/,Armstrong World Industries | Armstrong Ceilings & Walls Solutions,en.wikipedia.org;www.linkedin.com;investors.armstrong.com;www.armstrongceilings.com
+ORG-002441,Dart Container Corporation,Lancaster,PA,accept,https://dartcontainer.com/,Beverage & Food Packaging | Container Supplier | Dart Container,corporate.dartcontainer.com;www.dartcontainer.com;corporate.dartcontainer.com;www.dartcontainer.com
+ORG-002442,Ecore Intl Inc.,Lancaster,PA,no_candidate,,,www.cetient.com;freightscout.ai;freightscout.ai;cedatareporting.pa.gov
+ORG-002443,Euramax International Inc.,Lancaster,PA,no_candidate,,,www.sec.gov;www.linkedin.com;oag.ca.gov;www.floridabuilding.org
+ORG-002444,Fenner Inc.,Lancaster,PA,accept,https://fenner.com/,Home,www.fenner.com;www.ziprecruiter.com;www.indeed.com;www.importinfo.com
+ORG-002445,Interface Solutions Centerville Plt,Lancaster,PA,no_candidate,,,
+ORG-002446,Interface Performance Materials,Lancaster,PA,no_candidate,,,www.lydallpm.com;www.linkedin.com;www.oemoffhighway.com;www.lydall.com
+ORG-002448,Mxl Ind Inc.,Lancaster,PA,no_candidate,,,
+ORG-002449,Opsec Security,Lancaster,PA,accept,https://opsecsecurity.com/,Home - OpSec Security,oldsite.opsecsecurity.com;www.linkedin.com;www.indeed.com;gov.opsecsecurity.com
+ORG-002450,Stryten Lampeter LLC,Lancaster,PA,no_candidate,,,www.pacodeandbulletin.gov;lancasteronline.com;moldmap.io;cedatareporting.pa.gov
+ORG-002451,True Precision Plastics,Lancaster,PA,error: HTTPError,,,www.trueprecision.com;pitchbook.com;www.plasticstoday.com;www.indeed.com
+ORG-002452,Moldamatic LLC,Langhorne,PA,accept,https://moldamatic.com/,Homepage - Moldamatic,www.linkedin.com;moldamatic.com;rocketreach.co;www.yellowpages.com
+ORG-002454,Handelok Bag Co.,Lansdale,PA,no_candidate,,,www.mapquest.com;www.industrynet.com;reviews.birdeye.com;local.yahoo.com
+ORG-002457,Classic Industries Corporation,Latrobe,PA,no_candidate,,,
+ORG-002458,Ctp Carrera Inc.,Latrobe,PA,no_candidate,,,www.naics.com;www.bloomberg.com;www.mapquest.com;www.govcb.com
+ORG-002459,Import Export Tire Company Inc.,Latrobe,PA,no_candidate,,,www.linkedin.com;www.osha.gov;www.osha.gov;www.linkedin.com
+ORG-002460,Opco Inc.,Latrobe,PA,accept,https://opcodirect.com/,"OPCORE Recyclable Protective Packaging & Thermal Insulation from OPCO, Inc.",www.opcodirect.com;www.sips.org;buildingclean.org;www.zoominfo.com
+ORG-002462,"Technimark, LLC",Latrobe,PA,accept,https://technimark.com/,Technimark | Turnkey Injection Molding Global Manufacturer,www.technimark.com;www.technimark.com;www.linkedin.com;supplychain.wemakeithere.org
+ORG-002463,Sp Acquisition Company LLC Dba Reitech Corporation,Laureldale,PA,no_candidate,,,
+ORG-002465,Regupol America LLC,Lebanon,PA,accept,https://regupol.us/,Flooring solutions | Flooring specialists | REGUPOL America LLC,www.regupol.us;www.bloomberg.com;cca.lvchamber.org;www.mapquest.com
+ORG-002467,"Entrance, Inc.",Leesport,PA,no_candidate,,,www.linkedin.com;supplychain.wemakeithere.org;www.zoominfo.com;lensa.com
+ORG-002468,Flex Membrane International Corp.,Leesport,PA,accept,https://flexroofingsystems.com/,Home - Flex Roofing Systems,flexroofingsystems.com;www.nrca.net;www.zoominfo.com;iibec2024.smallworldlabs.com
+ORG-002470,"Allegheny Performance Plastics, LLC",Leetsdale,PA,reject_name_not_on_page,https://alleghenyperformanceplastics.com/,Robot Challenge Screen,www.bloomberg.com;alleghenyperformanceplastics.com;pghntma.org;alleghenyperformanceplastics.com
+ORG-002471,Impact Guard LLC,Leetsdale,PA,no_candidate,,,www.linkedin.com;www.indeed.com;www.commtrex.com;www.zoominfo.com
+ORG-002474,Dart Container Corp. Of Pennsylvania,Leola,PA,no_candidate,,,news.bloomberglaw.com;leadiq.com;www.puc.pa.gov;grconnect.com
+ORG-002476,Marbleon Inc.,Leola,PA,no_candidate,,,www.mapquest.com;ca.showmelocal.com;countertop-dealers.cmac.ws;files.dep.state.pa.us
+ORG-002477,North Amer Pipe Corp.,Leola,PA,no_candidate,,,
+ORG-002478,North American Pipe Corporation (Westlake Pipe & Fittings),Leola,PA,no_candidate,,,
+ORG-002479,Fiberglass Tech Inc.,Levittown,PA,no_candidate,,,files.dep.state.pa.us;freightscout.ai;cedatareporting.pa.gov;faymarwatch.org
+ORG-002482,Lighthouse Man LLC,Lewisburg,PA,accept,https://lighthouseman.com/,Lighthouse Man | Handcrafted Lawn and Garden Lighthouses,www.lighthouseman.com;www.lighthouseman.com;www.facebook.com;www.lighthouseman.com
+ORG-002483,Trinity Plastics,Lewistown,PA,accept,https://trinityplastics.com/,Homepage - Trinity Plastics,www.trinityplastics.com;www.indeed.com;www.linkedin.com;www.facebook.com
+ORG-002486,Tily Manufacturing Inc.,Littlestown,PA,no_candidate,,,www.mapquest.com;local.yahoo.com;www.superpages.com;www.chamberofcommerce.com
+ORG-002489,Luicana Ind Inc.,Macungie,PA,no_candidate,,,files.dep.state.pa.us;airqualitydaily.com;www.growableground.com;cedatareporting.pa.gov
+ORG-002491,Loparex,Malvern,PA,accept,https://loparex.com/,Loparex | Enabling Sustainable Performance,loparex.com;www.indeed.com;www.ziprecruiter.com;loparex.applicantpool.com
+ORG-002492,Peace Products Company,Malvern,PA,reject_name_not_on_page,https://peaceproducts.com/,"One moment, please...",www.peaceproducts.com;www.linkedin.com;www.peaceproducts.com;www.zoominfo.com
+ORG-002496,Bedford Materials Co.,Manns Choice,PA,error: HTTPError,,,www.bedfordmaterials.com;www.iqsdirectory.com;www.dnb.com;us.metoree.com
+ORG-002498,Tredegar Film Prod Inc.,Mar Lin,PA,no_candidate,,,cedatareporting.pa.gov;cedatareporting.pa.gov
+ORG-002500,Braskem Amer Inc.,Marcus Hook,PA,no_candidate,,,
+ORG-002501,Advanced Plastic Systems Inc.,Mars,PA,no_candidate,,,www.dandb.com;www.manta.com;www.dnb.com;www.linkedin.com
+ORG-002502,Lectromat Inc.,Mars,PA,accept,https://lectromat.com/,HOME | lectromat,www.lectromat.com;local.yahoo.com;www.importgenius.com;www.teamingpro.com
+ORG-002504,Tri-Tech Molding,Mckean,PA,no_candidate,,,www.facebook.com;www.indeed.com;www.yelp.com;tri-tech-molding.hub.biz
+ORG-002505,"Allegany Solid Surfaces Technology, LLC",Mcsherrystown,PA,no_candidate,,,www.osha.gov;www.osha.gov
+ORG-002519,Acrymax Tech Inc.,Media,PA,no_candidate,,,pennsylvania.building-material.org;cedatareporting.pa.gov
+ORG-002521,Hilex Poly Co. LLC,Milesburg,PA,no_candidate,,,www.industrynet.com;siccode.com;www.zippia.com;www.buzzfile.com
+ORG-002522,Mi Profiles LLC - Millersburg,Millersburg,PA,no_candidate,,,www.indeed.com;files.dep.state.pa.us;www.osha.gov;www.helpwanted.com
+ORG-002523,"Advanced Scientifics, Inc.",Millersburg,PA,no_candidate,,,www.mpo-mag.com;www.linkedin.com;www.chromatographyonline.com;documents.thermofisher.com
+ORG-002525,Truck Accessories Npdes Stormwater,Milton,PA,no_candidate,,,files.dep.state.pa.us
+ORG-002527,Shell Chem Appalachia,Monaca,PA,no_candidate,,,
+ORG-002528,Tegrant Diversified Brands Inc.,Montgomeryville,PA,no_candidate,,,www.linkedin.com;files.dep.state.pa.us;www.pacodeandbulletin.gov;digitalcommons.law.villanova.edu
+ORG-002533,Cpg Intl,Moosic,PA,no_candidate,,,files.dep.state.pa.us
+ORG-002534,Pexco LLC,Morrisville,PA,accept,https://pexco.com/,https://match.adsrvr.org/track/cmf/google,www.linkedin.com;www.pexco.com;www.ziprecruiter.com;m.facebook.com
+ORG-002537,Pactiv Corporation,Mount Carmel,PA,no_candidate,,,
+ORG-002542,Bleyer Gift Packs LLC,Mount Union,PA,no_candidate,,,www.indeed.com;www.industrynet.com;www.commtrex.com;usnlx.com
+ORG-002543,Fiber Glass Sys Inc.,Mount Union,PA,no_candidate,,,
+ORG-002544,Berry Global,Evansville,IN,no_candidate,,,www.amcor.com;www.linkedin.com;www.indeed.com;www.evansvilleregion.com
+ORG-002545,Crestwood Membranes Inc. Dba I2M,Mountain Top,PA,no_candidate,,,files.dep.state.pa.us;www.shshsj.com;www.pacodeandbulletin.gov;files.dep.state.pa.us
+ORG-002546,Tempur Production USA LLC Dba Mountain Top Foam,Mountain Top,PA,no_candidate,,,greencompanydb.com;fencelinedata.org;draxe.com;files.dep.state.pa.us
+ORG-002547,"Patrick Industries, Inc.",Mt Joy,PA,accept,https://patrickind.com/,Patrick Industries | Empowering the Outdoor Enthusiast Markets,patrickind.com;www.mapquest.com;www.compositepanel.org;www.linkedin.com
+ORG-002548,Advance Drainage Systems,Muncy,PA,no_candidate,,,
+ORG-002549,Charlotte Pipe & Foundry,Muncy,PA,no_candidate,,,www.indeed.com;info.nsf.org;www.mapquest.com;www.ziprecruiter.com
+ORG-002550,Msa Safety Pittsburgh MFG LLC,Murrysville,PA,no_candidate,,,files.dep.state.pa.us;www.pacodeandbulletin.gov;faymarwatch.org;cedatareporting.pa.gov
+ORG-002553,Airlite Plastics Co.,Nazareth,PA,accept,https://airliteplastics.com/,"Airlite Plastics: Mono-Material, In-Mold Labeled Packaging",www.linkedin.com;www.airliteplastics.com;www.measurexscoops.com;www.glassdoor.com
+ORG-002555,S G L Plastics,Nazareth,PA,reject_name_not_on_page,https://findagrave.com/,Just a moment...,pl.findagrave.com;nb.findagrave.com;www.mcall.com;ipmall.law.unh.edu
+ORG-002556,Ametek,Nesquehoning,PA,accept,https://ametek.com/,Home,www.indeed.com;www.tnonline.com;www.mapquest.com;www.plasticsnews.com
+ORG-002558,Velocity Equipment Solutions LLC,New Castle,PA,accept,https://velocityes.com/,"Blow Molding Machine, Water Bottling Machines, Bottle Cap Sorter Repair",www.facebook.com;www.velocityes.com;rocketreach.co;www.zoominfo.com
+ORG-002559,Pillings FRP,New Columbia,PA,no_candidate,,,www.roserocket.com;www.mapquest.com;search.sunbiz.org;www.carshipio.com
+ORG-002560,S & J Recycling Inc.,New Columbia,PA,no_candidate,,,www.yellowpages.com;www.career.com;www.yellowpages.com;www.superpages.com
+ORG-002562,"Superior Plastic Products, Inc.",New Holland,PA,accept,https://superioroutdoors.com/,"Superior Plastic Products - Quality Vinyl Railing, Fencing, & Much More",superioroutdoors.com;www.nadra.org;www.dnb.com;www.mapquest.com
+ORG-002564,Pittsburgh Technologies Group Inc.,New Kensington,PA,no_candidate,,,newbizbot.ai;www.dnb.com;pppreport.org;www.city-data.com
+ORG-002565,Trigon Plastics LLC,Newmanstown,PA,no_candidate,,,www.mapquest.com;www.plasticsnews.com;nextdoor.com;local.yahoo.com
+ORG-002568,Crazy Aaron Enterprises,Norristown,PA,no_candidate,,,pitchbook.com;www.indeed.com;www.instagram.com;www.instagram.com
+ORG-002569,Lite Tech Inc.,Norristown,PA,no_candidate,,,www.linkedin.com;www.bloomberg.com;www.x-sanatec.com;www.yellowpages.com
+ORG-002570,Micro Dimensional Products,Norristown,PA,accept,https://microdimensional.com/,"Micro Dimensional Products, Inc.",www.microdimensional.com;www.microdimensional.com;www.industrynet.com;local.yahoo.com
+ORG-002571,Optinova Plymouth Meeting Facility,Norristown,PA,no_candidate,,,www.pacodeandbulletin.gov;www.pacodeandbulletin.gov
+ORG-002572,Epc Powder Manufacturing Inc.,North East,PA,no_candidate,,,www.dnb.com;www.indeed.com;www.zoominfo.com;www.workopolis.com
+ORG-002575,Normandy Industries Inc.,Oakmont,PA,no_candidate,,,www.zoominfo.com;www.crunchbase.com;www.zoominfo.com;www.yellowpages.com
+ORG-002578,Clearly Clean Products LLC,Orwigsburg,PA,accept,https://clearlyclean.com/,Clearly Clean: The Original Roll Over-Wrap™ Food Tray,clearlyclean.com;www.linkedin.com;www.indeed.com;clearlyclean.com
+ORG-002581,Taylor Ind Inc.,Parker Ford,PA,no_candidate,,,www.epa.gov;cedatareporting.pa.gov
+ORG-002583,Abbey Color Inc.,Philadelphia,PA,no_candidate,,,www.bloomberg.com;www.sweetspot.so;www.socma.org;www.cosmeticsandtoiletries.com
+ORG-002586,Duralife USA LLC,Philadelphia,PA,accept,https://duralife.com/,Healthcare Furniture - PVC Furniture for Home & Medical Use | Duralife,duralife.com;duralife.com;www.waze.com;www.industrynet.com
+ORG-002587,Epc Inc.,Philadelphia,PA,accept,https://epcusa.com/,EPC USA - Certified & Refurbished IT,www.mapquest.com;www.facebook.com;local.yahoo.com;www.teamingpro.com
+ORG-002589,Fun-Time International Inc.,Philadelphia,PA,no_candidate,,,www.linkedin.com;www.bloomberg.com;www.mapquest.com;www.privco.com
+ORG-002590,Highline Polycarbonate LLC,Philadelphia,PA,no_candidate,,,www.linkedin.com;www.mapquest.com;www.facebook.com;babcphl.com
+ORG-002591,INEOS Composites US LLC,Philadelphia,PA,no_candidate,,,www.manta.com;www.importinfo.com;www.commtrex.com;panjiva.com
+ORG-002592,Purolite LLC An Ecolab Co.,Philadelphia,PA,no_candidate,,,
+ORG-002594,Recycledelphia Inc.,Philadelphia,PA,no_candidate,,,www.facebook.com;supplychain.wemakeithere.org;www.linkedin.com;www.scrapmonster.com
+ORG-002595,Schutz Na LLC,Philadelphia,PA,accept,https://dr-schutz.com/,Dr. Schutz Group | We care about floors,www.thebluebook.com;www.datanyze.com;www.importgenius.com;www.dr-schutz.com
+ORG-002598,Surf Technologies,Philadelphia,PA,accept,https://surftechnologies.net/,Strategic Consulting & Business Continuity,surftechnologies.net;www.snagajob.com;trabajos.univision.com;www.ziprecruiter.com
+ORG-002602,American Made Systems Inc.,Pittsburgh,PA,no_candidate,,,www.linersystems.com;www.facebook.com;www.linkedin.com;supplychain.wemakeithere.org
+ORG-002605,Gateway Paint & Chemical,Pittsburgh,PA,no_candidate,,,www.facebook.com;reag.com;pitchbook.com;www.yelp.com
+ORG-002607,Marvel Marking Products Inc. Garage,Pittsburgh,PA,no_candidate,,,freightscout.ai
+ORG-002611,"Tmi, LLC",Pittsburgh,PA,no_candidate,,,www.materialhandling247.com;www.theindustrialmarketplaceweb.com;www.mmh.com;www.aecinfo.com
+ORG-002613,Independent Refining Co. LLC,Pittston,PA,no_candidate,,,freightscout.ai;digitalcommons.law.villanova.edu
+ORG-002616,Optinova Valley Forge,Plymouth Meeting,PA,reject_name_not_on_page,https://optinova.com/,Optinova | When quality matters,optinova.com;www.indeed.com;www.youtube.com;www.importgenius.com
+ORG-002624,Associated Rubber,Quakertown,PA,accept,https://associatedrubber.com/,Molded Rubber Products,associatedrubber.com;www.linkedin.com;bondedtometalrubber.com;www.iqsdirectory.com
+ORG-002625,"Lancer Systems, Lp.",Quakertown,PA,accept,https://lancer-systems.com/,Robot Challenge Screen,lancer-systems.com;outdoorindustryjobs.com;lancer-systems.com;www.highergov.com
+ORG-002630,Custom Processing Services Inc.,Reading,PA,accept,https://customprocessingservices.com/,Home | Custom Processing Services,www.customprocessingservices.com;www.facebook.com;www.linkedin.com;www.customprocessingservices.com
+ORG-002631,G & T Industries,Reading,PA,reject_name_not_on_page,https://berksconnect.com/,Vercel Security Checkpoint,www.indeed.com;www.mapquest.com;www.industrynet.com;www.yelp.com
+ORG-002634,Novipax LLC,Reading,PA,no_candidate,,,www.indeed.com;informaconnect.com;safer.fmcsa.dot.gov;hl.com
+ORG-002635,Polyfab Corporation,Reading,PA,no_candidate,,,www.teamingpro.com;www.govcb.com;dockets.justia.com;readingplastic.com
+ORG-002637,Tray-Pak Corporation,Reading,PA,reject_name_not_on_page,https://easypak.com/,Easypak™ - Thermoformed Plastic Packaging Solutions,www.indeed.com;www.mapquest.com;www.grahampartners.net;kw.linkedin.com
+ORG-002638,Apex Urethane Millwork Red Lion,Red Lion,PA,no_candidate,,,m.yelp.com;aeroleads.com;www.manta.com;www.plasticstoday.com
+ORG-002640,Alltrista Plastics LLC,Reedsville,PA,accept,https://alltrista.com/,Alltrista: Plastic Injection Molding Made to Last,alltrista.com;www.linkedin.com;www.ziprecruiter.com;www.indeed.com
+ORG-002641,Unipar Inc.,Reedsville,PA,reject_name_not_on_page,https://uniparplastics.com/,Robot Challenge Screen,uniparplastics.com;www.facebook.com;www.indeed.com;www.industrynet.com
+ORG-002642,"Schweitzer-Mauduit International, Inc.",Richland,PA,no_candidate,,,www.allbiz.com;www.swmintl.com;www.factoryregistry.com;safetyrecord.org
+ORG-002643,Jeld-Wen,Ringtown,PA,accept,https://jeld-wen.com/,Reliable and Energy Efficient Doors and Windows | JELD-WEN Windows & Doors,www.indeed.com;www.jeld-wen.com;locations.jeld-wen.com;www.ziprecruiter.com
+ORG-002644,Steinmetz Inc.,Roaring Brook Twp,PA,accept,https://steinmetzinc.com/,Steinmetz,steinmetzinc.com;www.industrynet.com;www.mapquest.com;www.yellowpages.com
+ORG-002647,"Plastic Supply Of Pennsylvania, Inc.",Royersford,PA,no_candidate,,,www.industrynet.com;www.zoominfo.com;www.datanyze.com;trabajos.univision.com
+ORG-002651,Cardinal Systems Inc.,Schuylkill Haven,PA,accept,https://cardinalsystemsinc.com/,Home - Cardinal Systems,cardinalsystemsinc.com;cardinalpools.com;www.linkedin.com;www.indeed.com
+ORG-002653,Laminations Inc.,Scranton,PA,no_candidate,,,www.bbb.org;www.yellowpages.com;www.mapquest.com;countertop-dealers.cmac.ws
+ORG-002654,"Northeastern Plastics, Inc.",Scranton,PA,no_candidate,,,www.linkedin.com;www.indeed.com;system.privco.com;rocketreach.co
+ORG-002655,"Scranton Products, Inc.",Scranton,PA,accept,https://scrantonproducts.com/,Toilet Partition & Lockers Manufacturer | Scranton Products,www.scrantonproducts.com;skyislandcap.com;www.preqin.com;www.scrantonproducts.com
+ORG-002657,Selmax Corp.,Selinsgrove,PA,no_candidate,,,www.linkedin.com;www.thomasnet.com;www.mapquest.com;www.highergov.com
+ORG-002658,"Bergeys, Inc.",Sellersville,PA,no_candidate,,,www.indeed.com;www.indeed.com;www.simplyhired.com;www.snagajob.com
+ORG-002659,Crosstex Intl Inc.,Sharon,PA,no_candidate,,,files.dep.state.pa.us;cedatareporting.pa.gov;cedatareporting.pa.gov;cedatareporting.pa.gov
+ORG-002660,Advanced Fiberglass Svc Inc.,Sharpsville,PA,no_candidate,,,cedatareporting.pa.gov
+ORG-002662,Palmer Intl Inc.,Skippack,PA,no_candidate,,,www.lqlite.com;files.dep.state.pa.us;www.wbparts.com;www.adibuja.com
+ORG-002664,Guy Chemical Company Inc.,Somerset,PA,no_candidate,,,www.indeed.com;somersetcountychamber.com;redica.com;www.indeed.com
+ORG-002665,M & C Specialties Southampton Fac,Southampton,PA,no_candidate,,,
+ORG-002668,Polymer Products Co. Inc.,Stockertown,PA,accept,https://pmcpolymerproducts.com/,PMC Polymer Products,www.mapquest.com;pmcpolymerproducts.com;19january2017snapshot.epa.gov;www.bloomberg.com
+ORG-002670,Knf Flexpak Corporation,Tamaqua,PA,accept,https://knfcorporation.com/,KNF FLEXPAK Corporation - Packaging Experts,knfcorporation.com;www.thomasnet.com;www.zoominfo.com;assets.fishersci.com
+ORG-002671,Transwestern Polymer,Tamaqua,PA,no_candidate,,,www.linkedin.com;files.dep.state.pa.us;www.legacy.com;www.myheritage.com
+ORG-002673,New Pig Corp.,Tipton,PA,no_candidate,,,www.indeed.com;www.zoominfo.com;www.aviationpros.com;www.bloomberg.com
+ORG-002674,Charter Plastics,Titusville,PA,no_candidate,,,www.wlplastics.com;www.wlplastics.com;www.linkedin.com;www.ineos.com
+ORG-002675,Checkers Safety Group,Titusville,PA,no_candidate,,,www.indeed.com;www.mapquest.com;www.waze.com;www.indeed.com
+ORG-002676,"Timi Plastics, Inc.",Towanda,PA,no_candidate,,,www.mapquest.com;www.scrapmonster.com;local.yahoo.com;www.linkedin.com
+ORG-002677,Congoleum Corp.,Trainer,PA,no_candidate,,,www.facebook.com;industrynet.com;panjiva.com;www.processregister.com
+ORG-002678,Plasticoncentrates Inc.,Trainer,PA,accept,https://plasticoncentrates.com/,Home,plasticoncentrates.com;supplychain.wemakeithere.org;www.indeed.com;www.plasticsnews.com
+ORG-002681,Raybob Packaging,Tullytown,PA,reject_name_not_on_page,https://raybobpackaging.com/,Robot Challenge Screen,raybobpackaging.com;raybobpackaging.com;www.facebook.com;raybobpackaging.com
+ORG-002682,Durr Marketing,Turtle Creek,PA,no_candidate,,,www.linkedin.com;www.owler.com;leadiq.com;www.selling.com
+ORG-002684,Craft Tire Inc.,Uniontown,PA,no_candidate,,,
+ORG-002686,Finish Tech Corp.,Warminster,PA,accept,https://finishtechcorp.com/,"Overlay Films, Laminates, Wallcoverings & Surface Finishing Solutions | Finish Tech Corp. USA",www.finishtechcorp.com;www.linkedin.com;www.indeed.com;www.mapquest.com
+ORG-002688,"Osram Sylvania Products Inc. - Warren, PA",Warren,PA,no_candidate,,,mytownview.com
+ORG-002689,Whirley Ind Inc.,Warren,PA,no_candidate,,,
+ORG-002693,Rocal Corporation,Warrington,PA,no_candidate,,,www.mapquest.com;govtribe.com;www.sweetspot.so;www.movecars.com
+ORG-002697,Synthomer Jefferson Hills LLC,West Elizabeth,PA,reject_name_not_on_page,https://synthomer.com/,Synthomer plc,www.synthomer.com;www.epa.gov;www.alleghenyfront.org;www.alleghenycounty.us
+ORG-002699,Regenex Corporation,West Middlesex,PA,error: HTTPError,,,www.regenex.com;www.mapquest.com;www.bloomberg.com;www.yelp.com
+ORG-002702,"J Meyer & Sons, Inc.",West Point,PA,no_candidate,,,www.waze.com;www.movecars.com;patch.com;safer.fmcsa.dot.gov
+ORG-002704,Cromaglass Corp.,Williamsport,PA,no_candidate,,,www.masstc.org;www.aecinfo.com;dec.vermont.gov;www.linkedin.com
+ORG-002705,Plastic Dev,Williamsport,PA,no_candidate,,,files.dep.state.pa.us;faymarwatch.org;airqualitydaily.com;www.facebook.com
+ORG-002707,West Pharm Serv Wmpt SW,Williamsport,PA,no_candidate,,,files.dep.state.pa.us
+ORG-002709,Finzer Roller Inc. Willow Street,Willow Street,PA,no_candidate,,,www.simplyhired.com;www.simplyhired.com;www.simplyhired.com;www.simplyhired.com
+ORG-002711,Bryn Hill Industries,Yeadon,PA,no_candidate,,,www.mapquest.com;www.iqsdirectory.com;www.bloomberg.com;www.indeed.com
+ORG-002714,Keltrol Enterprises Inc.,York,PA,accept,https://keltrolinc.com/,"Keltrol Home - Keltrol Enterprises, Inc",keltrolinc.com;keltrolinc.com;local.yahoo.com;www.thomasnet.com
+ORG-002717,Protech Powder Coating Inc.,York,PA,no_candidate,,,www.industrynet.com;www.linkedin.com;www.industrynet.com;files.dep.state.pa.us
+ORG-002719,Quaker Plastic Corporation Thermoforming Div.,York,PA,no_candidate,,,
+ORG-002727,Essentra Components,Erie,PA,accept,https://essentracomponents.com/,Essentra Components | Leading manufacturer & supplier of essential parts,www.essentracomponents.com;www.powdercoating.org;www.facebook.com;www.waze.com
+ORG-002728,Comptec Inc,Irwin,PA,accept,https://comptecinc.com/,Comptec Inc. | High Performance Composites,comptecinc.com;www.indeed.com;www.facebook.com;www.indeed.com
+ORG-002730,Rohm and Haas Chemicals LLC,Bristol,PA,no_candidate,,,19january2017snapshot.epa.gov;www.epa.gov;corporate.dow.com;19january2021snapshot.epa.gov
+ORG-002737,Caplugs,Erie,PA,accept,https://caplugs.com/,"Plastic Caps & Plugs, Masking Solutions & Product Protection",www.caplugs.com;www.indeed.com;www.mapquest.com;www.linkedin.com
+ORG-002738,CertainTeed LLC,Malvern,PA,accept,https://certainteed.com/,Let's Build for Tomorrow. Today,www.certainteed.com;www.globaldata.com;www.certainteed.ca;www.zoominfo.com
+ORG-002740,Conair Group Inc,Cranberry Township,PA,accept,https://conairgroup.com/,"Conair | Guaranteed plastics auxiliary equipment, designed by the experts",www.mapquest.com;www.iqsdirectory.com;www.dnb.com;assemblymachinery.com
+ORG-002741,Covington Plastic Molding Inc.,New Oxford,PA,accept,https://covingtonplasticmolding.com/,Covington Plastic Molding. Since 1998,www.covingtonplasticmolding.com;www.konaequity.com;www.covingtonplasticmolding.com;www.industrynet.com
+ORG-002753,Matrix Tool Inc.,Fairview,PA,accept,https://matrixtoolinc.com/,Advanced Plastic Injection Molding & Tooling | Matrix Tool,matrixtoolinc.com;www.linkedin.com;www.facebook.com;supplychain.wemakeithere.org
+ORG-002755,Moldgenix LLC,Trumbauersville,PA,accept,https://moldgenix.com/,Contract Injection Molding for the Medical Industry | Moldgenix,moldgenix.com;moldgenix.com;moldgenix.com;www.linkedin.com
+ORG-002757,National Polymers,Charleroi,PA,accept,https://nationalpolymers.com/,National Polymers Inc. – More than just a product…services and solutions for building your business,nationalpolymers.com;www.linkedin.com;buildingclean.org;nationalpolymers.com
+ORG-002759,Newage Industries Inc.,Southampton,PA,accept,https://newageindustries.com/,Home - NewAge Industries,newageindustries.com;www.linkedin.com;www.thomasnet.com;govtribe.com
+ORG-002760,Novelty Manufacturing Co.,Lancaster,PA,accept,https://noveltymfg.com/,Quality Plastic Products | Novelty Manufacturing Co.,noveltymfg.com;www.instagram.com;www.linkedin.com;www.indeed.com
+ORG-002761,Oil Creek Plastics Inc.,Titusville,PA,no_candidate,,,www.bloomberg.com;www.mapquest.com;local.yahoo.com;classiccomfortohio.com
+ORG-002772,West Pharmaceutical Services Inc.,Exton,PA,accept,https://westpharma.com/,Drug Packaging and Delivery Solutions - West,www.westpharma.com;www.linkedin.com;en.wikipedia.org;www.facebook.com
+ORG-002917,Honeywell International Inc.,Charlotte,NC,accept,https://honeywell.com/,Home,www.honeywell.com;www.honeywell.com;www.linkedin.com;en.wikipedia.org
+ORG-002995,"Faci USA, Inc.",Lufkin,TX,accept,https://faci.it/,Global leader in the oleochemical industry,www.faci.it;www.linkedin.com;www.zoominfo.com;www.faci.it
+ORG-002999,Main Tech America Inc,Dalton,GA,accept,https://maintechamerica.com/,Main Tech – Plastics Engineering,maintechamerica.com;maintechamerica.com;maintechamerica.com;maintechamerica.com
+ORG-003029,Baumer of America Inc.,Towaco,NJ,no_candidate,,,www.baeumer.us;www.linkedin.com;www.mapquest.com;www.thomasnet.com
+ORG-003101,"CW Ohio, Inc.",Conneaut,OH,no_candidate,,,www.facebook.com;www.industrynet.com;www.thebluebook.com;www.yellowpages.com
+ORG-003112,Freepoint Commodities LLC,Stamford,CT,accept,https://freepoint.com/,Freepoint Commodities,www.freepoint.com;www.bloomberg.com;www.freepointsolutions.com;grains.org
+ORG-003181,Packaging Products Inc.,Plymouth,MI,no_candidate,,,www.packprod.com;www.linkedin.com;www.teamingpro.com;www.armacell.com
+ORG-003435,Purge Clean LLC,Scottsburg,IN,accept,https://purgeclean.com/,Purge Clean Purging Compound | #1 Cost-Effective Solutions,www.purgeclean.com;www.purgeclean.com;www.k-online.com;www.purgeclean.com
+ORG-003501,Mauer USA,Hebron,KY,no_candidate,,,www.indeed.com;business.nkychamber.com;www.indeed.com;www.mapquest.com
+ORG-003531,AlphaPet Inc.,Decatur,AL,no_candidate,,,www.indeed.com;www.chemwinfo.com;mceda.org;lf.adem.alabama.gov
+ORG-003532,"Arrow Specialties USA, LLC",Richmond,VA,no_candidate,,,www.indeed.com;www.nlrb.gov;govtribe.com;www.usaspending.gov
+ORG-003533,"Bolder Industries, Inc.",Boulder,CO,accept,https://bolderindustries.com/,Bolder Industries,www.bolderindustries.com;www.bolderindustries.com;www.linkedin.com;www.yellowpages.com
+ORG-003534,"British American Rubber Company, LLC",Tallapoosa,GA,no_candidate,,,safer.fmcsa.dot.gov;www.movecars.com;www.fleetfax.com;lei.bloomberg.com
+ORG-003545,"G-3 Chickadee Purchaser, LLC",Houston,TX,accept,https://g-3chickadee.com/,G-3 Chickadee: Innovative Polymer Technologies & Solutions,g-3chickadee.com;www.goodyearchemical.com;www.bbb.org;www.linkedin.com
+ORG-003547,"INV Nylon Chemicals Americas, LLC",Wichita,KS,no_candidate,,,chemdmart.com;ghgdata.epa.gov;h1bvisajobs.com;www.immihelp.com
+ORG-003549,ISOFlex Packaging,Nashville,TN,accept,https://isoflexpackaging.com/,"High-Performance Barrier Films, Shrink Films, Custom Bags and Flexible Packaging Solutions.",www.isoflexpackaging.com;www.linkedin.com;www.sigmaplasticsgroup.com;tnjobfair.com
+ORG-003556,"Nippon Shokubai America Industries, Inc.",Pasadena,TX,error: HTTPError,,,www.shokubai.co.jp;www.linkedin.com;www.pasadenaedc.com;www.shokubai.co.jp
+ORG-003557,Phibro RCB LLC,Natchez,MS,no_candidate,,,www.mapquest.com;www.indeed.com;www.bbb.org;www.linkedin.com
+ORG-003560,Polyloom Corporation of America,Dalton,GA,no_candidate,,,www.withpavilion.com;www.buzzfile.com;www.importinfo.com;files.sourcewell.org
+ORG-003561,PolyMelt Manufacturing Inc.,Missouri City,TX,no_candidate,,,www.importgenius.com;www.importinfo.com;www.bizapedia.com;www.coreties.com
+ORG-003562,"Polyplastics USA, Inc.",Farmington Hills,MI,no_candidate,,,www.dandb.com;www.mapquest.com;www.plasticstoday.com;www.importinfo.com
+ORG-003567,"Shaw Polymers, LLC",Crown Point,IN,accept,https://shawpolymers.com/,Shaw Polymers - Polyethylene & Polypropylene Distributor,www.shawpolymers.com;www.shawpolymers.com;www.shawpolymers.com;www.shawpolymers.com
+ORG-003568,"SIBO USA, LLC",Harrisonburg,VA,accept,https://sibogroup.com/,"SIBO GROUP - Packaging solutions CAPS, CLOSURES AND SHOULDERS",www.mapquest.com;www.vedp.org;sibogroup.com;virginiabusiness.com
+ORG-003573,Takigawa Corporation America,Bardstown,KY,accept,https://takigawa-corp.com/,Home - 株式会社タキガワコーポレーション,www.takigawa-corp.com;www.linkedin.com;www.facebook.com;www.indeed.com
+ORG-003574,Wedlake Industries,Hohenwald,TN,accept,https://wedlakeindustries.com/,Wedlake Industries LLC,wedlakeindustries.com;www.indeed.com;www.facebook.com;www.tn.gov
+ORG-003615,Precision Punch & Plastics Company,Minnetonka,MN,no_candidate,,,www.iapd.org;www.thomasnet.com;www.scrapmonster.com;www.thomasnet.com
+ORG-003621,"Trident Plastics, Inc.",Ivyland,PA,accept,https://tridentplastics.com/,Home - Trident Plastics inc.,www.tridentplastics.com;www.linkedin.com;www.tridentplastics.com;www.thomasnet.com
+ORG-003700,"Helton, Inc.",Morrison,TN,accept,https://heltonplastics.com/,Home – Helton Plastics,www.heltonplastics.com;www.facebook.com;www.bbb.org;www.mapquest.com
+ORG-003714,RCO Engineering,Roseville,MI,accept,https://rcoeng.com/,B2B Prototype & Manufacturing Services | RCO Engineering,www.rcoeng.com;www.linkedin.com;www.indeed.com;www.instagram.com
+ORG-003720,"TemperPack Technologies, Inc.",Richmond,VA,accept,https://temperpack.com/,Sustainable Packaging Technologies | TemperPack,www.temperpack.com;www.indeed.com;www.mapquest.com;www.preqin.com
+ORG-003721,Tenowo Inc.,Lincolnton,NC,accept,https://tenowo.com/,TENOWO - the nonwovens people,www.tenowo.com;www.tenowo.com;www.linkedin.com;www.commerce.nc.gov
+ORG-003723,"Troy Polymers, Inc.",Madison Heights,MI,no_candidate,,,www.foam-expo.com;www.teamingpro.com;www.mapquest.com;www.linkedin.com
+ORG-003726,American DORNIER Machinery Corporation,Charlotte,NC,accept,https://lindauerdornier.com/,Home,www.lindauerdornier.com;www.linkedin.com;www.lindauerdornier.com;www.etextilecommunications.com
+ORG-003731,Broetje-Automation USA,Elk Grove Village,IL,accept,https://broetje-automation.de/,Home - Broetje Automation,broetje-automation.de;www.linkedin.com;www.indeed.com;talents.vaia.com
+ORG-003734,Chomarat North America LLC,Anderson,SC,accept,https://chomarat.com/,Welcome - Chomarat Corporate,www.facebook.com;jobapscloud.com;www.importinfo.com;www.industrynet.com
+ORG-003737,"CMS North America, Inc.",Caledonia,MI,no_candidate,,,www.linkedin.com;www.instagram.com;manufacturing-today.com;leadiq.com
+ORG-003740,"CPIC North America, Inc.",Amsterdam,NY,no_candidate,,,www.importinfo.com;www.linkedin.com;www.importgenius.com;www.privco.com
+ORG-003749,"Gurit USA, Inc.",Dallas,TX,accept,https://gurit.com/,Markets,www.gurit.com;www.gurit.com;www.gurit.com;www.importinfo.com
+ORG-003751,Idemitsu Chemicals USA Corporation,Novi,MI,accept,https://idemitsu.com/,出光興産,www.linkedin.com;www.idemitsu.com;www.importinfo.com;www.importgenius.com
+ORG-003755,"Jushi USA Fiberglass Co., Ltd.",Columbia,SC,error: HTTPError,,,www.linkedin.com;www.jushi.com;www.mapquest.com;www.indeed.com
+ORG-003758,"Microtex Composites, Inc.",Chattanooga,TN,accept,https://microtexcomposites.com/,Microtex Composites,www.microtexcomposites.com;www.ucbjournal.com;www.tn.gov;businessfacilities.com
+ORG-003765,Redex USA Inc.,Ocean Township,NJ,accept,https://redexusa.com/,Homepage,redexusa.com;www.linkedin.com;redexusa.com;www.njmep.org
+ORG-003780,"ADG Solutions, Inc.",Fairfield,CT,no_candidate,,,revenuebase.ai
+ORG-003798,"KibbeChem, Inc.",Elkhart,IN,accept,https://kibbechem.com/,"KibbeChem, Inc.",www.kibbechem.com;www.linkedin.com;www.mapquest.com;www.bloomberg.com
+ORG-003799,Kingfa Science & Technology (USA) Inc.,Canton,MI,no_candidate,,,www.dnb.com;www.zoominfo.com;www.manta.com;www.certipedia.com
+ORG-003806,"MSS, Inc.",Nashville,TN,accept,https://mssoptical.com/,Optical Sorting Equipment | AI & NIR Technology | MSS Optical Sorters,www.mssoptical.com;cpgrp.com;www.linkedin.com;www.recyclingproductnews.com
+ORG-003810,"Poly Compounding, LLC",Elgin,IL,accept,https://polycompounding.com/,Toll Compounding Services,polycompounding.com;mbsadvisors.com;www.mapquest.com;www.yellowpages.com
+ORG-003811,PolyCycle Innovation LLC,Crawfordsville,IN,no_candidate,,,www.csiclosures.com;www.recyclingtoday.com;www.facebook.com;www.greencirclecertified.com
+ORG-003813,"Polymer Recovery Systems, Inc.",Eau Claire,WI,accept,https://prsi.com/,Polymer Recovery Systems,prsi.com;prsi.com;prsi.com;www.linkedin.com
+ORG-003817,ReUse Polymers,Spartanburg,SC,no_candidate,,,www.facebook.com;www.yelp.com;www.mapquest.com;www.mapquest.com
+ORG-003819,"Revolution Sustainable Solutions, LLC",Little Rock,AR,accept,https://revolutioncompany.com/,Revolution - Sustainable Loop Plastic Solutions,www.linkedin.com;www.facebook.com;www.zoominfo.com;recycle.ab.ca
+ORG-003821,Zimmer America Recycling Solutions,Spartanburg,SC,reject_name_not_on_page,https://recyclingtoday.com/,Recycling Today - The recycling industry is responsible for collecting processing and marketing billions of dollars wort,www.linkedin.com;www.recyclingtoday.com;rocketreach.co;www.crunchbase.com
+ORG-003823,Sunrise Plastic Enterprise Inc.,Houston,TX,reject_name_not_on_page,https://sunriseplastic.com/,Sunrise Plastic | High-Quality Recycled Plastic and Resin,sunriseplastic.com;www.indeed.com;rocketreach.co;www.zoominfo.com
+ORG-003825,"Technical Process and Engineering, Inc.",Lehighton,PA,no_candidate,,,industrialmixers.com;www.zoominfo.com;contractmanufacturingcompanies.com;www.loc8nearme.com
+ORG-003851,"Blue Polymers, LLC",Indianapolis,IN,no_candidate,,,www.recyclingtoday.com;investor.republicservices.com;www.recycledmaterials.org;www.zoominfo.com
+ORG-003867,"Global Silicones, Inc.",Oxnard,CA,no_candidate,,,10bfa78.netsolhost.com;www.thomasnet.com;www.thomasnet.com;www.dir.ca.gov
+ORG-003871,Integrated Control Technologies,Coppell,TX,accept,https://integratedcontroltech.com/,Extruder Control Systems & Drive Conversions - Integrated Control Technologies,www.integratedcontroltech.com;www.linkedin.com;rocketreach.co;www.dnb.com
+ORG-003885,Radici Plastics USA Inc.,Wadsworth,OH,accept,https://radicigroup.com/,Produttore di poliammidi e tecnopolimeri - RadiciGroup,www.linkedin.com;www.creditsafe.com;madeinmedinacounty.com;www.waze.com
+ORG-003892,Sukano Polymers Corp.,Duncan,SC,accept,https://sukano.com/,Sukano – Your Expert in Masterbatches and Compounds,www.plasticsnewsdirectory.com;www.sukano.com;www.mfgconnected.com;www.bloomberg.com
+ORG-003893,Syncro Group USA,Charlotte,NC,accept,https://syncro-group.com/,Welcome to Syncro Group Website,syncro-group.com;syncro-group.com;www.eurexma.com;qedreps.com
+ORG-003899,"Web Industries, Inc.",Marlborough,MA,accept,https://webindustries.com/,Homepage - Web Industries,www.webindustries.com;www.zoominfo.com;www.indeed.com;www.glassdoor.com
+ORG-003900,Windmoeller & Hoelscher Corp.,Lincoln,RI,no_candidate,,,www.providencejournal.com;www.plasticsnews.com;www.plasticstoday.com;www.canadianpackaging.com
+ORG-003911,"Global Chemsource, Inc.",Fort Worth,TX,no_candidate,,,www.zoominfo.com;panjiva.com;www.importgenius.com;www.neverbounce.com
+ORG-003920,LAS Adhesives Inc.,Tucker,GA,no_candidate,,,www.ascouncil.org;www.artimelt.com;www.artimelt.com;www.artimelt.com
+ORG-003929,Seal It Services Inc.,Fort Lauderdale,FL,no_candidate,,,news.cision.com;www.pressreader.com;lee-lf.leecountync.gov:23610;news.cision.com
+ORG-003942,"Protective Industrial Products, Inc.",Latham,NY,accept,https://pipglobal.com/,Leaders in Personal Protective Equipment,us.pipglobal.com;www.pipglobal.com;www.pipglobal.com;eu.pipglobal.com
+ORG-003962,U.S. Medical Chemical Company,Honea Path,SC,reject_name_not_on_page,https://medicaldesigndevelopment.com/,Home,www.postandcourier.com;www.linkedin.com;www.mddionline.com;rubberworld.com
+ORG-003967,Palmetto Pedic LLC,Gaffney,SC,no_candidate,,,panjiva.com;www.furnituretoday.com;www.textileworld.com;certipur.us
+ORG-004038,"Rockmart Fuel Containment, LLC",Rockmart,GA,no_candidate,,,finance.yahoo.com;www.usaspending.gov;www.sweetspot.so;heico.com
+ORG-004043,Deltech Monomers OpCo LLC,Baton Rouge,LA,no_candidate,,,www.balmoralfunds.com;www.linkedin.com;www.chembuyersguide.com;finance.yahoo.com
+ORG-004047,Marble Products Co,Wichita,KS,no_candidate,,,www.mcilvainecompany.com;www.epa.gov;obits.masslive.com;www.legacy.com
+ORG-004050,"Maverick Maintenance & Supply, LLC",Karnes City,TX,no_candidate,,,www.mavmaint.com;www.linkedin.com;www.industrynet.com;ls.maptons.com
+ORG-004056,"Franklin Bay, LLC",Elkhart,IN,no_candidate,,,safer.fmcsa.dot.gov;vektortms.com;www.movecars.com;vektortms.com
+ORG-004057,OQ Chemicals Corporation,Houston,TX,no_candidate,,,www.nlrb.gov;www.mapquest.com;www.onevalor.com;www.oxea.com
+ORG-004060,Monument Chemical LLC,Indianapolis,IN,accept,https://monumentchemical.com/,Homepage,monumentchemical.com;www.socma.org;www.zoominfo.com;leadiq.com
+ORG-004068,"V & E Components, Inc.",High Point,NC,no_candidate,,,www.industrynet.com;www.linkedin.com;www.govinfo.gov;downloads.regulations.gov
+ORG-004102,Griffith Polymers Inc.,Tualatin,OR,no_candidate,,,www.indian-companies.com;www.linkedin.com;www.bloomberg.com;leadiq.com
+ORG-004140,KBK Industries LLC,Rush Center,KS,accept,https://kbkindustries.com/,Custom Tank Manufacturer | KBK Industries,kbkindustries.com;www.linkedin.com;terravestindustries.com;network.procore.com
+ORG-004142,Eagle Industries Inc,Wixom,MI,accept,https://eagleindinc.com/,Eagle Industries | Innovating AutomotivePerformance Solutions,eagleindinc.com;www.indeed.com;www.linkedin.com;www.mapquest.com
+ORG-004151,AC Polymers Inc,Byhalia,MS,accept,https://ac-polymers.com/,"AC Polymers, Inc. | Polymers for Oil Field, Investment Casting and Custom Applications",ac-polymers.com;www.indeed.com;www.linkedin.com;www.byhaliamainstreet.org
+ORG-004152,Shaw's Fiberglass & Plastics Inc.,Damascus,OR,no_candidate,,,www.mapquest.com;ezlocal.com;www.superpages.com;www.yellowpages.com
+ORG-004156,Advanced Flexible Composites Inc,Lake in the Hills,IL,reject_name_not_on_page,https://afcmaterials.com/,High Temperature & Non-Stick Solutions,tapesuppliers.com;afcmaterials.com;afcmaterials.com;afcmaterials.com
+ORG-004159,Bando USA Inc,Bowling Green,KY,accept,https://bando.cn/,BANDO官网-阪东（上海）管理有限公司-阪东皮带,www.linkedin.com;www.facebook.com;cca.bgchamber.com;rocketreach.co
+ORG-004163,E-Stone USA Corp,Sebring,FL,no_candidate,,,business.sebring.org;www.mapquest.com;www.importinfo.com;www.yellowpages.com
+ORG-004166,Hobas Pipe USA Inc.,Houston,TX,accept,https://hobaspipe.com/,Hobas Pipe USA - Hobas Pipe USA,hobaspipe.com;www.linkedin.com;www.hobas.com;warws.com
+ORG-004177,Sunlite Plastics Inc,GERMANTOWN,WI,reject_name_not_on_page,https://sunliteplastics.com/,Robot Challenge Screen,sunliteplastics.com;www.linkedin.com;www.zoominfo.com;www.plasticstoday.com
+ORG-004178,"Tracker Marine, LLC",LEBANON,MO,reject_name_not_on_page,https://armadamarineusa.com/,Best Pontoon Boats | Armada Marine,www.industrynet.com;www.justice.gov;www.talent.com;law.justia.com
+ORG-004179,United Fiberglass Inc,AMARILLO,TX,no_candidate,,,ufitanks.com;www.facebook.com;safer.fmcsa.dot.gov;www.teamingpro.com
+ORG-004180,Up North Plastics Inc,COTTAGE GROVE,MN,accept,https://upnplastics.com/,Up North Plastics,www.upnplastics.com;www.indeed.com;www.ziprecruiter.com;www.zoominfo.com
+ORG-004181,V-Rod USA Inc,ROCKFORD,IL,no_candidate,,,www.importgenius.com;contratados.org;es.panjiva.com;precast.org
+ORG-004182,Viscofan USA Inc,DANVILLE,IL,accept,https://viscofan.com/,Viscofan - Meat Casings -  Cellulose Collagen Fibrous Plastic,www.viscofan.com;www.facebook.com;www.viscofan.com;www.osha.gov
+ORG-004183,VPC Foam USA Inc,ASHEBORO,NC,no_candidate,,,www.mapquest.com;safer.fmcsa.dot.gov;local.yahoo.com;vektortms.com
+ORG-004184,Adell Polymers,PETERSBURG,WV,accept,https://adellplastics.com/,Adell Plastics – Leader in Compounding Technology,adellplastics.com;www.mapquest.com;www.yelp.com;adellplastics.com
+ORG-004185,Anderson Development Company,ADRIAN,MI,accept,https://andersondevelopment.com/,Chemical Manufacturer | Specialty Chemical Companies | Toll Manufacturing,www.andersondevelopment.com;www.linkedin.com;www.indeed.com;www.facebook.com
+ORG-004186,Azon USA Inc,KALAMAZOO,MI,accept,https://azonintl.com/,50 years of chemical and machinery expertise. | AZON International,www.mapquest.com;www.industrynet.com;www.indeed.com;www.movecars.com
+ORG-004187,Calhoun Plastics & Chemicals,CALHOUN,GA,accept,https://calhounplastics.com/,"Calhoun Plastics and Chemical – Best Products, Service and Value",www.calhounplastics.com;www.calhounplastics.com;www.indeed.com;www.mapquest.com
+ORG-004188,Engineered Composites Inc,BUFFALO,NY,accept,https://engcomposites.com/,Home - Engineered Composites Incorporated,engcomposites.com;www.indeed.com;www.linkedin.com;www.zoominfo.com
+ORG-004189,Garware Fulflex USA Inc,BRATTLEBORO,VT,accept,https://fulflex.com/,A Global Supplier of High-Performance Polymer Products,www.linkedin.com;www.fulflex.com;www.fulflex.com;www.thomasnet.com
+ORG-004190,Industrial Summit Technology Corporation,PARLIN,NJ,accept,https://istusa.com/,I.S.T USA,istusa.com;www.bloomberg.com;www.mapquest.com;istusa.com
+ORG-004191,"Nutrition & Biosciences USA 1, LLC",MIDLAND,MI,no_candidate,,,www.excipact.org;redica.com;www.nrc.gov;gather.tracegains.com
+ORG-004192,Plastics Engineering Company,SHEBOYGAN,WI,no_candidate,,,plenco.com;plenco.com;www.facebook.com;www.linkedin.com
+ORG-004193,"Prysmian Cables and Systems USA, LLC",INDIANAPOLIS,IN,accept,https://prysmian.com/,"Prysmian | Cables, Energy & Telecom Solutions",www.ziprecruiter.com;na.prysmian.com;www.dnb.com;www.prysmian.com
+ORG-004194,Stockmeier Urethanes USA Inc,CLARKSBURG,WV,accept,https://stockmeier.com/,The STOCKMEIER Group,www.stockmeier.com;apps.sos.wv.gov;www.stockmeier.com;www.bbb.org
+ORG-004195,Sun Polymers International Inc,MOORESVILLE,IN,accept,https://sunpolymers.com/,Home - Sun Polymers,www.powdercoating.org;sunpolymers.com;sunpolymers.com;www.mapquest.com
+ORG-004196,Uniform Color Company,HOLLAND,MI,accept,https://uniformcolor.com/,Color & Additive Masterbatch | Uniform Color,www.facebook.com;www.mapquest.com;www.zoominfo.com;lakeshoreadvantage.com
+ORG-004197,"US Polymers - Accurez, LLC",SAINT LOUIS,MO,reject_name_not_on_page,https://uspolymers.com/,Specialty Resins for High-Performance Coatings and Adhesive Formulations | US Polymers,www.uspolymers.com;www.linkedin.com;www.indeed.com;www.thomasnet.com
+ORG-004198,ACCI Specialty Materials LLC,HARRISONVILLE,MO,no_candidate,,,ac-catalysts.com;dnr.mo.gov;h1bgrader.com;es.importgenius.com
+ORG-004199,Baril Coatings USA LLC,ANGOLA,IN,no_candidate,,,www.facebook.com;www.bbb.org;www.whatsup247.com;www.steubenedc.com
+ORG-004200,Coatings & Adhesives Corporation,LELAND,NC,accept,https://cacoatings.com/,"Waterbased/UV Coatings, Adhesives and Specialty Polymers",www.cacoatings.com;www.linkedin.com;www.inxinternational.com;www.indeed.com
+ORG-004201,Infineum USA L.P.,LINDEN,NJ,accept,https://infineum.com/,Infineum - A Sustainable Future Through Innovative Chemistry,www.waze.com;business.elizabethchamber.com;www.nlrb.gov;www.teamingpro.com
+ORG-004202,"LACC, LLC",WESTLAKE,LA,no_candidate,,,lottechemusa.com;oilandgaswatch.org;lottechemusa.com;www.commtrex.com
+ORG-004203,Nippon Chemical Texas Inc,PASADENA,TX,accept,https://nctius.com/,NCTI - Leading Chemical Manufacturer Texas USA,nctius.com;www.linkedin.com;www.emcochem.com;ghgdata.epa.gov
+ORG-004204,NOVA Chemicals Olefins LLC,GEISMAR,LA,error: HTTPError,,,oilandgaswatch.org;www.mapquest.com;www.bbb.org;ghgdata.epa.gov
+ORG-004205,"Urethane Polymers International, Inc.",FONTANA,CA,accept,https://urethanepolymers.com/,URL Source: https://urethanepolymers.com/,urethanepolymers.com;www.linkedin.com;buildingclean.org;www.zoominfo.com
+ORG-004206,All Plastics & Fiberglass Inc,MOBILE,AL,accept,https://allplastics-fiberglass.com/,"All Plastics And Fiberglass, Inc.",my.mobilechamber.com;local.yahoo.com;www.allplastics-fiberglass.com;www.zoominfo.com
+ORG-004207,Camco Manufacturing Inc,GREENSBORO,NC,no_candidate,,,www.linkedin.com;www.indeed.com;www.mapquest.com;plumbingnet.com
+ORG-004208,"Innovative Chemical Technologies, Inc.",CARTERSVILLE,GA,error: HTTPError,,,www.ictchemicals.com;www.ictchemicals.com;www.indeed.com;www.mapquest.com
+ORG-004209,"PPC Flexible Packaging, LLC",NORTH SALT LAKE,UT,accept,https://ppcflex.com/,Flexible Packaging and Product Packaging Solutions | PPC Flex,www.industrynet.com;ppcflex.com;ppcflex.com;www.privsource.com
+ORG-004210,LTA Manufacturing LLC,ELKHART,IN,no_candidate,,,www.lanefinder.com;suncruisermedia.com;www.simplyhired.com;leadiq.com
+ORG-004211,Weir Minerals Linatex,SALT LAKE CITY,UT,reject_name_not_on_page,https://linatex.dk/,Linatex A/S - Teknisk plast og gummi til industri. Bearbejdet og halvfabrikat,www.mapquest.com;www.waze.com;www.bloomberg.com;www.indeed.com
+ORG-004212,Millwork & Panel LLC,CLAREMONT,NC,no_candidate,,,www.commerce.nc.gov;charlotteregion.com;www.plasticsnews.com;www.wcnc.com
+ORG-004213,GCP Applied Technologies Inc,BEDFORD PARK,IL,no_candidate,,,www.commtrex.com;www.villageofbedfordpark.com;www.seair.co.in;www.hud.gov
+ORG-004214,SES Foam LLC,Spring,TX,reject_name_not_on_page,https://eaglefoaminsulation.com/,"Spray Foam Insulation - Fort Worth, TX | Arlington-Dallas | New or Existing",www.holcim.com;www.mapquest.com;hl.com;www.zoominfo.com
+ORG-004215,"Shaw Industries Group, Inc.",Dalton,GA,accept,https://shawinc.com/,"Shaw Industries Group, Inc. | Home",shawinc.com;www.linkedin.com;shawfloors.com;en.wikipedia.org
+ORG-004222,"Goldshield Fiberglass, Inc.",Decatur,IN,no_candidate,,,www.industrynet.com;safer.fmcsa.dot.gov;www.movecars.com;www.bbb.org
+ORG-004226,Rimtec Manufacturing Corporation,Burlington,NJ,no_candidate,,,www.linkedin.com;rocketreach.co;safer.fmcsa.dot.gov;www.movecars.com
+ORG-004227,Baxter Healthcare Corporation,Deerfield,IL,accept,https://baxter.com/,Redefining Healthcare Delivery,en.wikipedia.org;m.yelp.com;business.sos.ri.gov;www.bloomberg.com
+ORG-004233,MPM Silicones LLC,Waterford,NY,no_candidate,,,samples.momentive.com;www.epa.gov;www.linkedin.com;www.mapquest.com
+ORG-004239,Hutchinson North America,Grand Rapids,MI,no_candidate,,,www.indeed.com;www.wgvunews.org;www.zoominfo.com;www.corpmagazine.com
+ORG-004244,Tulip Molded Plastics LLC,Milwaukee,WI,no_candidate,,,toxinscout.com;www.epa.gov
+ORG-004271,"Conceptual Creations, LLC",Phoenix,AZ,no_candidate,,,www.bbb.org;www.buzzfile.com;www.zoominfo.com;www.facebook.com
+ORG-004300,MAPEI Corporation,Deerfield Beach,FL,accept,https://mapei.com/,Just a moment...,www.mapei.com;www.mapei.com;www.mapei.com;www.indeed.com
+ORG-004304,Air Liquide Advanced Separations,Newport,DE,reject_name_not_on_page,https://airliquide.com/,Air Liquide,engineering-technologies.airliquide.com;dnrec.delaware.gov;engineering-technologies.airliquide.com;usa.airliquide.com
+ORG-004306,Blachford Inc.,West Chicago,IL,accept,https://blachfordacoustics.com/,Acoustic Materials Testing & Development - Blachford Acoustics,www.linkedin.com;www.indeed.com;blachfordacoustics.com;reviews.birdeye.com
+ORG-004308,Cytiva US LLC,Marlborough,MA,accept,https://cytivalifesciences.com/,Cytiva - Accelerating science and biopharma innovation,cdn.cytivalifesciences.com;cdn.cytivalifesciences.com;cdn.cytivalifesciences.com;cdn.cytivalifesciences.com
+ORG-004319,American Surfacing Materials LLC,Temple,TX,no_candidate,,,lochridgepriest.com;hyundailncusa.com;info.nsf.org;panjiva.com
+ORG-004335,Adhesive Coating Technologies Inc.,Wheeling,IL,no_candidate,,,industrynet.com;www.zoominfo.com;www.importgenius.com;www.manta.com
+ORG-004353,Armaly Sponge Co.,Walled Lake,MI,accept,https://armalybrands.com/,Armaly Brands | Helping America Clean Since 1908,www.dbusiness.com;theshelbyreport.com;www.bbb.org;www.yellowpages.com
+ORG-004358,Belmark Inc,De Pere,WI,accept,https://belmark.com/,Total Packaging Solutions That Grow Your Brand | Belmark,www.belmark.com;www.linkedin.com;www.indeed.com;wedc.org
+ORG-004360,Beynon Sports Surfaces,Hunt Valley,MD,reject_name_not_on_page,https://sportsbuilders.org/,American Sports Builders Association,www.mapquest.com;sportsbuilders.org;en.wikipedia.org;beynonsports.com
+ORG-004361,Blue Water Dynamics LLC,Edgewater,FL,no_candidate,,,www.mapquest.com;www.privco.com;www.dnb.com;www.govcb.com
+ORG-004362,Bumper Specialties Inc,West Deptford,NJ,no_candidate,,,
+ORG-004366,General Formulations Inc,Sparta,MI,no_candidate,,,www.linkedin.com;www.alignable.com;www.tpxonline.com;www.bbb.org
+ORG-004369,Channell Commercial Corporation,Rockwall,TX,accept,https://channell.com/,"Channell Commercial Corporation - Fiber Enclosures, Pedestals & Vaults",www.channell.com;www.indeed.com;www.facebook.com;www.ziprecruiter.com
+ORG-004371,Church & Dwight Co Inc,Ewing,NJ,accept,https://churchdwight.com/,Church and Dwight | Consumer Goods,churchdwight.com;www.linkedin.com;en.wikipedia.org;theaahp.org
+ORG-004372,Classic Cultured Marble Inc.,Riviera Beach,FL,no_candidate,,,m.yelp.com;www.thebluebook.com;www.kitchenbathguide.com;www.privco.com
+ORG-004393,"Flocast, LLC",Dolgeville,NY,no_candidate,,,www.accessdata.fda.gov;www.importinfo.com;panjiva.com;www.bloomberg.com
+ORG-004394,Hickory Springs Manufacturing Co.,Hickory,NC,no_candidate,,,en.wikipedia.org;www.masstransitmag.com;www.yellowpages.com;www.mapquest.com
+ORG-004397,"HS Automotive Alabama, Inc.",Enterprise,AL,accept,https://madeinalabama.com/,Made in Alabama - Alabama Department of Commerce,www.madeinalabama.com;www.inhersight.com;www.yellowpages.com;www.importgenius.com
+ORG-004398,"Dynasty Spas, Inc.",Athens,TN,reject_name_not_on_page,https://thepoolspashow.com/,The 2027 Pool and Spa Show,www.linkedin.com;www.thepoolspashow.com;www.poolsupplyunlimited.com;www.dynastyspas.com
+ORG-004402,Fiber Tron Corp,Elkhart,IN,no_candidate,,,www.bloomberg.com;www.industrynet.com;www.facebook.com;www.dnb.com
+ORG-004412,"Five Star Coatings Group, Inc.",Twin Lakes,WI,no_candidate,,,www.yellowpages.com;vektortms.com;www.dnb.com;www.bloomberg.com
+ORG-004413,"Fiberdome Products, LLC",Lake Mills,WI,accept,https://fiberdome.com/,"Fiberglass Fabricator in Lake Mills, WI",www.linkedin.com;www.fiberdome.com;www.fiberdome.com;leadiq.com
+ORG-004432,Johnson Laminating & Coating Inc.,Carson,CA,reject_name_not_on_page,https://johnsonwindowfilms.com/,Home - Johnson Window Films,www.linkedin.com;www.mapquest.com;johnsonwindowfilms.com;www.waze.com
+ORG-004433,Engineered Composite Systems,Belton,TX,reject_name_not_on_page,https://ecs-env.com/,ECS Environmental Solutions: Advanced Air Pollution Control Systems,www.amca.org;ecs-env.com;airpollutioncontrolequipment.com;www.facebook.com
+ORG-004434,K F Fiberglass Inc,Downey,CA,error: HTTPError,,,www.movecars.com;otrucking.com;safer.fmcsa.dot.gov;www.roserocket.com
+ORG-004435,Kastalon Inc,Alsip,IL,accept,https://kastalon.com/,Custom Polyurethane | Custom Engineering,kastalon.com;www.linkedin.com;www.fmamfg.org;www.instagram.com
+ORG-004436,Kimoto Tech Inc,Cedartown,GA,accept,https://kimototech.com/,"Home of Functional Films | Kimoto Tech, Inc.",www.kimototech.com;www.linkedin.com;www.facebook.com;www.indeed.com
+ORG-004437,QSR Inc.,Jasper,GA,no_candidate,,,www.linkedin.com;www.mapquest.com;connectors.datwyler.com;www.indeed.com
+ORG-004438,"Lonestar Fiberglass Components of Texas, LLC",New Braunfels,TX,no_candidate,,,www.dnb.com;x.com;www.manta.com;www.inforuptcy.com
+ORG-004439,Louisville Cooler Manufacturing Co,Louisville,KY,no_candidate,,,www.mapquest.com;www.bloomberg.com;www.thebluebook.com;openmill.com
+ORG-004444,Mansfield Plumbing Products LLC,Henderson,TX,accept,https://mansfieldplumbing.com/,Home | Mansfield Plumbing,www.mansfieldplumbing.com;www.mansfieldplumbing.com;www.industrynet.com;supplychain.wemakeithere.org
+ORG-004445,Master Marble Inc.,Holden,MO,no_candidate,,,www.thebluebook.com;dnr.mo.gov;vektortms.com;www.linkedin.com
+ORG-004447,McDonald Tank & Equipment Co Inc,Great Bend,KS,no_candidate,,,www.mapquest.com;safer.fmcsa.dot.gov;www.movecars.com;www.facebook.com
+ORG-004478,Questech Corp.,Rutland,VT,no_candidate,,,www.zoominfo.com;tilemagonline.com;www3.epa.gov;www.floordaily.net
+ORG-004479,"Romeo RIM, Inc.",Romeo,MI,accept,https://romeorim.com/,"Romeo RIM – Reaction Injection Molding for parts that are Bigger, Stronger, Lighter™ - Romeo RIM",romeorim.com;www.linkedin.com;romeorim.com;romeorim.com
+ORG-004482,Redneck Outdoor Products,Lamar,MO,reject_name_not_on_page,https://redneckblinds.com/,Redneck Blinds: Premium Deer Blinds for All Hunters | Shop Online,www.indeed.com;redneckblinds.com;www.linkedin.com;recruiting.paylocity.com
+ORG-004483,Ritus Corporation,Milwaukee,WI,no_candidate,,,gracematthews.com;www.mapquest.com;www.yelp.com;www.ihire.com
+ORG-004484,"Roca Bathroom Products, Inc.",Waco,TX,no_candidate,,,www.tdlr.texas.gov;www.importinfo.com;projects.constructconnect.com;www.tceq.texas.gov
+ORG-004485,"The ROHO Group, Inc.",Belleville,IL,no_candidate,,,www.zoominfo.com;www.zippia.com;motioncares.ca;www.manta.com
+ORG-004486,"Ronald Mark Associates, Inc.",Hillside,NJ,accept,https://ronaldmark.com/,Home - Ronald Mark Associates,ronaldmark.com;www.indeed.com;www.facebook.com;www.axial.net
+ORG-004488,Royal Spa Corporation,Indianapolis,IN,accept,https://royalspa.com/,"Hot Tubs, Swim Spas & Saunas | Royal Spa Indianapolis",royalspa.com;royalspa.com;www.yelp.com;www.bbb.org
+ORG-004489,Royale Comfort Seating LLC,Taylorsville,NC,no_candidate,,,howismyzip.com
+ORG-004490,Sawyer Oilfield Products,Brownwood,TX,no_candidate,,,www.mapquest.com;www.buzzfile.com;local.yahoo.com;www.kompass.com
+ORG-004491,Scougal Rubber Corporation,McCarran,NV,accept,https://scougalrubber.com/,America's Leading Custom Molded Rubber Manufacturer | Scougal Rubber,www.linkedin.com;www.scougalrubber.com;rollermanufacturer.com;www.bloomberg.com
+ORG-004492,"Seating Concepts, Inc.",Rockdale,IL,no_candidate,,,scicustom.com;www.linkedin.com;nafem27.mapyourshow.com;rocketreach.co
+ORG-004495,Siliconature Corp,Caledonia,MI,accept,https://siliconature.com/,Silicone Release Coatings | Siliconature,www.siliconature.com;www.siliconature.com;www.linkedin.com;www.linkedin.com
+ORG-004496,"Sinomax East, Inc.",La Vergne,TN,no_candidate,,,www.industrynet.com;www.privco.com;visapulseusa.com;www.commtrex.com
+ORG-004497,"The Soundcoat Company, Inc.",Deer Park,NY,accept,https://soundcoat.com/,Home | SOUNDCOAT,soundcoat.com;soundcoat.com;soundcoat.com;www.linkedin.com
+ORG-004498,"Southern Illinois Storm Shelters, Inc.",Benton,IL,reject_name_not_on_page,https://safety1ststormshelters.com/,Storm Shelters Chattanooga - Safety 1st Storm Shelters,www.facebook.com;safety1ststormshelters.com;www.thebluebook.com;www.waze.com
+ORG-004513,"Tepro, Inc.",Winchester,TN,no_candidate,,,www.winchester-tn.com;www.indeed.com;www.mapquest.com;www.franklincountyidb.com
+ORG-004518,"JH Rhodes Company, Inc.",Vernon,NY,accept,https://jhrhodes.com/,JH Rhodes – The Polishing Pad Manufacturer,jhrhodes.com;jhrhodes.com;jhrhodes.com;jhrhodes.com
+ORG-004524,"Wearwell, Inc.",Smyrna,TN,accept,https://wearwell.com/,Wearwell Ergonomic Flooring and Anti-fatigue Matting,www.bloomberg.com;www.zoominfo.com;www.wearwell.com;askjan.org
+ORG-004534,DynaChem Inc.,Westville,IL,accept,https://dynacheminc.com/,Home,www.indeed.com;dynacheminc.com;www.vermilionadvantage.com;dynacheminc.com
+ORG-004564,Preformed Line Products Company,Mayfield Village,OH,accept,https://plp.com/,PLP | Electric power and fiber optic communications infrastructure solutions,plp.com;plp.com;plp.com;topworkplaces.com
+ORG-004573,Southern Resin Inc.,Thomasville,NC,no_candidate,,,www.facebook.com;www.indeed.com;safer.fmcsa.dot.gov;www.commtrex.com
+ORG-004577,W&W Fiberglass Tank Co.,Pampa,TX,accept,https://wwtank.com/,"Steel & Fiberglass Tanks and Vessels | WW Tank | Pampa, Texas",www.wwtank.com;weftec26.mapyourshow.com;www.zoominfo.com;www.fastline.com
+ORG-004580,American Acryl LP,Seabrook,TX,accept,https://americanacryl.com/,PREMIER SUPPLIER OF ACRYLIC ACID,www.americanacryl.com;www.arkema.com;www.linkedin.com;www.zabalist.com
+ORG-004582,CAAP Co Inc.,Milford,CT,accept,https://caapco.com/,"CAAP Company Inc. | Performance Aircraft Coatings | Milford, CT",www.caapco.com;govtribe.com;www.highergov.com;www.bloomberg.com
+ORG-004586,"Swarco Colorado Paint, LLC",Aurora,CO,reject_name_not_on_page,https://swarco.com/,The Better Way. Every Day.,www.swarco.com;www.linkedin.com;www.industrynet.com;www.importgenius.com
+ORG-004596,Kempen Paint Co.,East Carondelet,IL,no_candidate,,,www.industrynet.com;www.mapquest.com;www.homeyou.com;www.thebluebook.com
+ORG-004603,Primester GP,Kingsport,TN,no_candidate,,,www.cerdia.com;www.bloomberg.com;geopub.epa.gov;panjiva.com
+ORG-004615,Union Specialties Inc.,Newburyport,MA,accept,https://unionspecialtiesinc.com/,Union Specialties Inc. | In Union There IS Strength.,www.unionspecialtiesinc.com;www.linkedin.com;www.mapquest.com;rocketreach.co
+ORG-004619,Louisiana Integrated Polyethylene JV LLC,Westlake,LA,no_candidate,,,www.facebook.com;oilandgaswatch.org;www.gem.wiki;www.bloomberg.com
+ORG-004881,Treplar Inc.,Martinsburg,WV,accept,https://treplar.com/,Treplar – Treplar Food Packaging Products,treplar.com;treplar.com;www.indeed.com;supplychain.wemakeithere.org
+ORG-004882,Columbia Paint Co.,Huntington,WV,no_candidate,,,www.mfg.marshall.edu;www.yellowpages.com;nepis.epa.gov;toxinscout.com
+ORG-004883,"Zim's Bagging Co., Inc.",Prichard,WV,no_candidate,,,www.wvnews.com;nepis.epa.gov;nepis.epa.gov
+ORG-004884,"TROY Group, Inc.",Wheeling,WV,accept,https://troygroup.com/,Secure MICR Check Printing Magnetic Ink Solutions | TROY Group,www.troygroup.com;www.facebook.com;www.linkedin.com;www.crunchbase.com
+ORG-004885,MAAX U.S. Corp.,Martinsburg,WV,no_candidate,,,www.indeed.com;www.naics.com;www.bbb.org;dep.wv.gov
+ORG-004887,"Sprouse Building Products, LLC",New Martinsville,WV,reject_name_not_on_page,https://sprousewindows.com/,Sprouse Windows | B2B Vinyl Window & Door Manufacturer,vektortms.com;www.movecars.com;sprousewindows.com;www.zoominfo.com
+ORG-004888,TeMa North America LLC,Kearneysville,WV,accept,https://temanorthamerica.com/,TEMA NORTH AMERICA | Products to Waterproof Insulate Drainage Your Building,www.temanorthamerica.com;supplychain.wemakeithere.org;jcda.net;www.indeed.com
+ORG-004889,Films Shawnee LLC,Shawnee,OK,no_candidate,,,applications.deq.ok.gov;property.whitepages.com;19january2021snapshot.epa.gov;www.bseindia.com
+ORG-004890,Crown Paint Co.,Oklahoma City,OK,accept,https://crownpaintok.com/,Home - Crown Paint Ok,crownpaintok.com;www.mapquest.com;www.waze.com;www.endurapaint.com
+ORG-004891,Poly Films Inc.,Oklahoma City,OK,accept,https://polyfilmsinc.com/,Poly Films Incorporated,www.polyfilmsinc.com;www.waze.com;www.industrynet.com;www.commtrex.com
+ORG-004892,"Gemini Coatings, Inc.",El Reno,OK,reject_name_not_on_page,https://coatingsworld.com/,Coatings World,www.coatingsworld.com;www.geminiindustriesinc.com;www.bbb.org;safer.fmcsa.dot.gov
+ORG-004893,Bags Inc.,Oklahoma City,OK,accept,https://bags-inc.com/,Bags Inc,www.bags-inc.com;www.mapquest.com;www.indeed.com;cca.midwestcityok.com
+ORG-004894,Cooling Tower Composites and Fabrication,Chickasha,OK,no_candidate,,,ctcaf.com;applications.deq.ok.gov;www.epa.gov;trends.builtwith.com
+ORG-004895,Brooklyn Bedding LLC,Glendale,AZ,no_candidate,,,
+ORG-004896,Dunn-Edwards Corporation,Phoenix,AZ,accept,https://dunnedwards.com/,"Dunn-Edwards - Paint Stores, Exterior & Interior Painting Supplies, Colors & Design Inspiration",www.dunnedwards.com;www.dunnedwards.com;www.dunnedwards.com;www.dunnedwards.com
+ORG-004897,Tucson Rubber Corporation,Tucson,AZ,no_candidate,,,www.chartwellinvestments.com;www.legacy.com;completemarkets.com;static.azdeq.gov
+ORG-004898,Vinyltech Corporation,Phoenix,AZ,no_candidate,,,vtpipe.com;www.linkedin.com;www.mapquest.com;www.indeed.com
+ORG-004899,Southwest Distributing Co.,Mesa,AZ,error: HTTPError,,,www.swdistributing.com;www.mapquest.com;www.importinfo.com;www.industrynet.com
+ORG-004900,"Phoenix Packaging Operations, LLC",Chandler,AZ,no_candidate,,,www.indeed.com;jobs.ourcareerpages.com;workhands.com;en-gb.facebook.com
+ORG-004901,"R.E. Darling Co., Inc.",Tucson,AZ,accept,https://redarling.com/,"Rubber Molding Companies, Composite Manufacturing Companies, Rubber Mixing Companies",www.redarling.com;www.redarling.com;www.redarling.com;www.linkedin.com
+ORG-004902,"Schoeller Allibert US, Inc.",Goodyear,AZ,no_candidate,,,www.indeed.com;safer.fmcsa.dot.gov;www.commtrex.com;www.movecars.com
+ORG-004903,Integrated Bagging Systems,Phoenix,AZ,no_candidate,,,www.inteplast.com;realestatedaily-news.com;www.indeed.com;www.prnewswire.com
+ORG-004904,Accessible Products Company,Tempe,AZ,accept,https://accessibleproducts.com/,Accessible Products Company,www.accessibleproducts.com;www.zoominfo.com;emuseum.tempe.gov;www.mapquest.com
+ORG-004905,Bel-Art Products,Pocomoke City,MD,accept,https://belart.com/,SP Bel-Art,belart.com;www.mapquest.com;belart.com;belart.com
+ORG-004906,Continental Plastic Containers,Baltimore,MD,no_candidate,,,www.facebook.com;www.thomasnet.com;www.encyclopedia.com;m.yelp.com
+ORG-004907,Creative Plastics,Rosedale,MD,no_candidate,,,www.facebook.com;www.scribd.com;www.pacermonitor.com;document.epiq11.com
+ORG-004908,Hi-Tech Color,Odenton,MD,accept,https://htcolor.com/,"Hi-Tech Color, Inc. | Odenton, MD | Transforming Surfaces, Enhancing Opportunities",htcolor.com;www.gray.com;www.linkedin.com;www.indeed.com
+ORG-004909,Plasticoid Company,Elkton,MD,accept,https://plasticoid.com/,Home - Plasticoid Company,plasticoid.com;www.indeed.com;www.thomasnet.com;www.rubbernewsdirectory.com
+ORG-004910,"Vac Pac, Inc.",Middle River,MD,no_candidate,,,
+ORG-004911,Goodwrappers,Halethorpe,MD,no_candidate,,,www.baltimoredirections.com;www.mapquest.com;www.bbb.org;www.iqsdirectory.com
+ORG-004912,Braden Sutphin Ink Company,Cleveland,OH,reject_name_not_on_page,https://inkworldmagazine.com/,Ink World Magazine,www.printaccess.com;www.linkedin.com;www.flexography.org;www.indeed.com
+ORG-004913,"Fabricated Extrusion Company of Maryland, LLC",Hagerstown,MD,no_candidate,,,workhands.com;workhands.com;labor.maryland.gov;lfportal.washco-md.net
+ORG-004914,"Lexmark International, Inc.",Lexington,KY,accept,https://lexmark.com/,Lexmark is now part of Xerox,www.lexmark.com;www.lexmark.com;en.wikipedia.org;www.lexmark.com
+ORG-004915,"Plastics Design & Manufacturing, Inc.",Denver,CO,no_candidate,,,www.linkedin.com;www.pharmaindustry.com;denvertechcenter.wordpress.com;dafj9zn809j4jd.archive.is
+ORG-004916,Colorado Plasticard Inc.,Littleton,CO,no_candidate,,,www.mapquest.com;www.yellowpages.com;search.sunbiz.org;www.showmelocal.com
+ORG-004917,Associated Thermoforming Inc.,Berthoud,CO,no_candidate,,,ati-forms.com;www.linkedin.com;www.facebook.com;www.indeed.com
+ORG-004918,"Reynolds Polymer Technology, Inc.",Grand Junction,CO,accept,https://reynoldspolymer.com/,Reynolds Polymer Technology: Make The Impossible Possible,www.reynoldspolymer.com;www.linkedin.com;www.instagram.com;www.preqin.com
+ORG-004919,Container Industries Inc.,Denver,CO,no_candidate,,,www.plasticsnews.com;www.plasticstoday.com;nepis.epa.gov;www.mlkbusinessawards.org
+ORG-004920,Front Range Tooling Inc.,Frederick,CO,no_candidate,,,www.facebook.com;www.linkedin.com;www.zoominfo.com;www.bbb.org
+ORG-004921,ACH Foam Technologies,Denver,CO,no_candidate,,,www.forconstructionpros.com;qmed.com;www.srsdistribution.com;www.linkedin.com
+ORG-004922,Circular Technologies,Boulder,CO,accept,https://circulartech.com/,Circular Technologies,www.linkedin.com;circulartech.com;rocketreach.co;www.indeed.com
+ORG-004923,"Carestream Health, Inc.",Rochester,NY,accept,https://carestream.com/,Carestream - Home,www.carestream.com;en.wikipedia.org;www.carestream.com;www.accessdata.fda.gov
+ORG-004924,CCW Products Inc.,Arvada,CO,no_candidate,,,www.facebook.com;www.cbinsights.com;www.capstonepartners.com;mergr.com
+ORG-004925,Prime Window Systems,Denver,CO,error: HTTPError,,,primewindowsys.com;www.indeed.com;www.bbb.org;pitchbook.com
+ORG-004926,American Converters,Longmont,CO,no_candidate,,,amconfoam.com;www.mapquest.com;www.industrynet.com;www.indeed.com
+ORG-004927,"FormTight, Inc.",Denver,CO,accept,https://formtightinc.com/,"Thermoformed Plastic Containers Supplier | FormTight, Inc.",www.formtightinc.com;www.linkedin.com;www.facebook.com;www.packaging-labelling.com
+ORG-004928,"Oribi Manufacturing, LLC",Commerce City,CO,no_candidate,,,oribi.rebuildmanufacturing.com;www.sweetspot.so;bandana.com;www.dnb.com
+ORG-004929,United Industries Inc.,Bentonville,AR,no_candidate,,,www.dnb.com;www.yellowpages.com;www.linkedin.com;signsofthetimes.com
+ORG-004930,"Pipelife Jet Stream, Inc.",Siloam Springs,AR,reject_name_not_on_page,https://jetstreampipes.com/,Home - Jet Stream,www.linkedin.com;jetstreampipes.com;www.bloomberg.com;info.nsf.org
+ORG-004931,"Container Components, Inc.",Jonesboro,AR,no_candidate,,,www.mapquest.com;www.linkedin.com;www.manta.com;www.mapquest.com
+ORG-004932,The Glad Manufacturing Company,Rogers,AR,no_candidate,,,www.importinfo.com;www.ozarkfuneralhome.com;www.thecloroxcompany.com;www.suiteness.com
+ORG-004933,"Poly-Tech Plastic Molding, Inc.",Prairie Grove,AR,no_candidate,,,armoneyandpolitics.com;wcel.nwaonline.com;lei.bloomberg.com;www.plasticsnews.com
+ORG-004934,"Hendren Plastics, Inc.",Gravette,AR,accept,https://hendrenplastics.com/,Hendren Plastics | Home of Eagle Floats,www.facebook.com;hendrenplastics.com;www.linkedin.com;hendrenplastics.com
+ORG-004935,"Grace Composites, LLC",Lonoke,AR,no_candidate,,,www.linkedin.com;system.privco.com;www.industrynet.com;www.zoominfo.com
+ORG-004936,Evergreen Builders Inc.,Gravette,AR,accept,https://evergreenbuildersusa.com/,Evergreen Builders Inc.,m.facebook.com;evergreenbuildersusa.com;rocketreach.co
+ORG-004937,Drew Foam Companies Inc.,Monticello,AR,no_candidate,,,www.facebook.com;www.marinadockage.com;www.linkedin.com;www.indeed.com
+ORG-004938,"Creative Foam Products, LLC",North Little Rock,AR,no_candidate,,,www.linkedin.com;www.mapquest.com;www.crunchbase.com;theorg.com
+ORG-004939,Delta Plastics of the South,Stuttgart,AR,no_candidate,,,www.indeed.com;www.mapquest.com;safer.fmcsa.dot.gov;www.movecars.com
+ORG-004940,"River Bend Industries, LLC",Fort Smith,AR,no_candidate,,,www.dnb.com;graphiq.ai;www.iqsdirectory.com;en.nbd.ltd
+ORG-004941,Pacific Research Laboratories,Vashon,WA,reject_name_not_on_page,https://pacific-research.com/,Robot Challenge Screen,www.pacific-research.com;en.wikipedia.org;sawbones.com;www.healthysimulation.com
+ORG-004942,Ultra Poly Inc.,Tacoma,WA,no_candidate,,,www.masstransitmag.com;www.teamingpro.com;www.highergov.com;www.bbb.org
+ORG-004943,Premier Plastics,Tacoma,WA,reject_name_not_on_page,https://premierplastics.com/,"One moment, please...",www.mapquest.com;m.yelp.com;pitchbook.com;industrial-container-dealers.cmac.ws
+ORG-004944,Western Container Corporation,Fife,WA,accept,https://westerncontainercoke.com/,Home - Western Container Corporation,www.westerncontainercoke.com;www.linkedin.com;www.indeed.com;www.mapquest.com
+ORG-004945,Shields Bag and Printing Co.,Yakima,WA,no_candidate,,,www.ndt.org;www.instagram.com;www.yakimaherald.com;www.visualvisitor.com
+ORG-004946,Hayes Cabinets Inc.,Woodland,WA,accept,https://hayescabinetsinc.com/,"Hayes Cabinets, Inc. – Custom residential cabinetry & commercial casework/millwork",www.hayescabinetsinc.com;www.houzz.com;www.instagram.com;www.movecars.com
+ORG-004947,Mohawk Northern Plastics Inc.,Auburn,WA,no_candidate,,,www.mapquest.com;www.bloomberg.com;www.lanefinder.com;mergr.com
+ORG-004948,Vaupell,Everett,WA,accept,https://vaupell.com/,"Aerospace, defense, & medical solutions l Vaupell",vaupell.com;www.linkedin.com;hig.com;www.indeed.com
+ORG-004949,Piller AIMMCO,Washougal,WA,accept,https://pilleraimmco.com/,Home,www.pilleraimmco.com;www.linkedin.com;www.indeed.com;www.facebook.com
+ORG-004950,Dolco Packaging Corp.,Wenatchee,WA,no_candidate,,,www.facebook.com;www.facebook.com;www.dnb.com;www.dnb.com
+ORG-004951,Kwik Lok Corporation,Yakima,WA,accept,https://kwiklok.com/,Kwik Lok | Bag Closures | Packaging Manufacturer,www.kwiklok.com;www.facebook.com;www.linkedin.com;www.indeed.com
+ORG-004952,Lumicor,Renton,WA,accept,https://lumicor.com/,Home | Lumicor,www.lumicor.com;www.indeed.com;www.lumicor.com;www.lumicor.com
+ORG-004953,MW Manufacturers Inc.,Auburn,WA,no_candidate,,,s23.q4cdn.com;www.sec.gov;content.edgar-online.com;answers.google.com
+ORG-004954,Specified Fittings Inc.,Bellingham,WA,no_candidate,,,jmeagle.com;siccode.com;leadiq.com;rocketreach.co
+ORG-004955,McConkey and Co. Inc.,Sumner,WA,no_candidate,,,qdro.com;assignmentcenter.uspto.gov;es.importgenius.com;svaec.ifas.ufl.edu
+ORG-004956,Specialty Products,Lakewood,WA,no_candidate,,,www.ppg.com;www.facebook.com;www.zoominfo.com;www.sprayfoammagazine.com
+ORG-004957,Macro Plastics,Union Gap,WA,no_candidate,,,m.yelp.com;www.facebook.com;www.indeed.com;www.mapquest.com
+ORG-004958,Accor Technology Inc.,East Wenatchee,WA,no_candidate,,,www.indeed.com;www.linkedin.com;www.owler.com;info.nsf.org
+ORG-004959,Innovative Composite Engineering,White Salmon,WA,no_candidate,,,www.linkedin.com;crgta.org;www.airframer.com;www.indeed.com
+ORG-004960,NIC Industries,White City,OR,accept,https://nicindustries.com/,Leading Manufacturer of Performance Proven Coatings | NIC Industries,www.nicindustries.com;www.linkedin.com;oregonbusinessindustry.com;www.cerakote.com
+ORG-004961,Forrest Paint Co.,Eugene,OR,accept,https://forrestpaint.com/,Home - Forrest Paint,guildcpo.com;forrestpaint.com;www.movecars.com;www.mapquest.com
+ORG-004962,Rocky Mountain Colby Pipe Company,Pendleton,OR,no_candidate,,,investors.atkore.com;www.facebook.com;leadiq.com;fcc.report
+ORG-004963,McClure Industries,Portland,OR,reject_name_not_on_page,https://mcclureindustries.com/,Commercial Heavy Duty Laundry Carts on Wheels,mcclureindustries.com;www.facebook.com;www.bbb.org;www.mapquest.com
+ORG-004964,Xerox Corporation,Norwalk,CT,accept,https://xerox.com/,Workplace and Digital Printing Solutions,www.xerox.com;www.xerox.com;biznet.ct.gov;en.wikipedia.org
+ORG-004965,"LATICRETE International, Inc.",Bethany,CT,accept,https://laticrete.com/,Map,www.laticrete.com;www.facebook.com;www.indeed.com;www.bloomberg.com
+ORG-004966,Codel Entry Systems Corporation,Wilsonville,OR,no_candidate,,,greencompanydb.com;freightscout.ai
+ORG-004967,Marquis Corp.,Independence,OR,reject_name_not_on_page,https://marquisspas.com/,Best Hot Tubs & Swim Spas - Portable Hot Tubs,www.marquisspas.com;cr.linkedin.com;www.seattlehottub.com;m.yelp.com
+ORG-004968,GMN Plastics,Beaverton,OR,no_candidate,,,www.indeed.com;www.alignable.com;www.linkedin.com;www.industrynet.com
+ORG-004969,Visions Recycling Inc.,Portland,OR,no_candidate,,,chwmeg.org;www.linkedin.com;www.afcec.af.mil;www.newmoa.org
+ORG-004970,Oregon Tread Rubber Company,Eugene,OR,error: HTTPError,,,www.rubbernewsdirectory.com;www.oregontreadrubber.com;www.monroenews.com;ormills.com
+ORG-004971,Drew Paints,Portland,OR,accept,https://drewpaints.com/,"Paint Coatings Manufacturer | Portland, OR | Drew Paints Inc",www.drewpaints.com;www.industrynet.com;www.knowde.com;www.bbb.org
+ORG-004972,Ridgeline Pipe Manufacturing,Eugene,OR,no_candidate,,,www.mapquest.com;www.prnewswire.com;www.swfinstitute.org;m.yelp.com
+ORG-004973,Indow,Portland,OR,accept,https://indowwindows.com/,"Window Inserts That Provide Comfort, Quiet, & Savings | Indow",indowwindows.com;www.yelp.com;www.facebook.com;www.linkedin.com
+ORG-004974,Quadel Industries Inc.,Coos Bay,OR,accept,https://quadel.net/,Home - Quadel Industries,quadel.net;www.mapquest.com;www.linkedin.com;www.preqin.com
+ORG-004975,Dravon Medical,Clackamas,OR,accept,https://dravon.com/,Medical Tubing & Towel Clamps | Custom IV Bags | Dravon Medical,dravon.com;www.linkedin.com;www.indeed.com;www.teamingpro.com
+ORG-004976,Anderson Die & Manufacturing Co.,Milwaukie,OR,no_candidate,,,www.commtrex.com;www.city-data.com;www.commtrex.com;data.oregon.gov
+ORG-004977,Willamette Windows Inc.,Salem,OR,no_candidate,,,www.linkedin.com;leadiq.com;www.signalhire.com;www.zoominfo.com
+ORG-004978,Putnam Plastics Corp.,Dayville,CT,no_candidate,,,www.bloomberg.com;www.manufacturingtechnologyinsights.com;www.mapquest.com;www.zoominfo.com
+ORG-004979,Inline Plastics Corp.,Shelton,CT,accept,https://inlineplastics.com/,Inline Plastics - Innovative Food Packaging,www.inlineplastics.com;www.linkedin.com;www.indeed.com;www.inlineplastics.com
+ORG-004980,Colts Plastics Co.,Killingly (dayville),CT,no_candidate,,,nepis.epa.gov
+ORG-004981,"Flagship Converters, Inc.",Danbury,CT,reject_name_not_on_page,https://flagshipconverters.com/,flagship,flagshipconverters.com;www.linkedin.com;flagshipconverters.com;www.privco.com
+ORG-004982,Airex Rubber Products Corp.,Portland,CT,accept,https://airexrubber.com/,Airex Rubber,www.airexrubber.com;www.linkedin.com;www.airexrubber.com;www.zoominfo.com
+ORG-004983,"Porce-Len, Inc.",Hamden,CT,no_candidate,,,myaccount.valsparcoilextrusion.com;capitolwholesalefence.com;www.builditsolar.com;www.ecocenter.org
+ORG-004984,Dymax Corporation,Torrington,CT,accept,https://dymax.com/,Dymax,dymax.com;dymax.com;www.indeed.com;smta.org
+ORG-004985,Fluoropolymer Resources,North Windham,CT,no_candidate,,,frlusa.com;frlusa.com;frlusa.com;frlusa.com
+ORG-004986,SCA Packaging North America,Putnam,CT,no_candidate,,,cslib.contentdm.oclc.org;assets.ctfassets.net;data.ct.gov;ttabvue.uspto.gov
+ORG-004987,Delmar Products,Berlin,CT,accept,https://delmarproducts.com/,"Delmar Products, Inc.",delmarproducts.com;www.linkedin.com;www.indeed.com;www.waze.com
+ORG-004988,Dymotek Corp.,Ellington,CT,accept,https://dymotek.com/,Dymotek | Plastic Injection Molding and LSR Molding Company,www.dymotek.com;www.dymotek.com;www.dymotek.com;www.mapquest.com
+ORG-004989,"Neoperl, Inc.",Waterbury,CT,accept,https://neoperl.com/,"Neoperl OEM/Manufacturers – Precision Water Components for Faucets, Showers, Hydronics – Website for the United States",www.neoperl.com;www.neoperl.com;www.neoperl.com;www.bloomberg.com
+ORG-004990,Foster Corporation,Putnam,CT,no_candidate,,,www.geon.com;www.linkedin.com;www.indeed.com;www.facebook.com
+ORG-004991,Integro LLC,New Britain,CT,no_candidate,,,www.linkedin.com;safer.fmcsa.dot.gov;govtribe.com;www.movecars.com
+ORG-004992,Wasley Products,Plainville,CT,no_candidate,,,www.courant.com;www.mapquest.com;www.pmcind.com;www.prnewswire.com
+ORG-004993,Plastic Diversity Solutions,Dayville,CT,no_candidate,,,www.indeed.com;www.thomasauction.com;www.yelp.com;www.immihelp.com
+ORG-004994,PTA Plastics,Oxford,CT,accept,https://ptaplastics.com/,PTA Plastics - Home,www.ptaplastics.com;www.linkedin.com;www.indeed.com;www.mapquest.com
+ORG-004995,CKS Packaging,Naugatuck,CT,accept,https://ckspackaging.com/,"CKS Packaging, a Covenant Company, is an American manufacturer and North American supplier of blow-molded plastic contai",www.indeed.com;www.ckspackaging.com;www.ckspackaging.com;www.ziprecruiter.com
+ORG-004996,"Flextronics International USA, Inc.",Manchester,CT,no_candidate,,,h1bgrader.com;www.myvisajobs.com;www.ellis.com;permtracker.app
+ORG-004997,Mechanical Plastics Corp.,Norwalk,CT,no_candidate,,,www.linkedin.com;cisleads.com;www.industrynet.com;contactout.com
+ORG-004998,Superior Plastics Extrusion Co.,Putnam,CT,no_candidate,,,www.bloomberg.com;www.industrynet.com;blog.icpg.co;www.immihelp.com
+ORG-004999,Madison Polymeric Engineering,Branford,CT,no_candidate,,,madpoly.com;www.linkedin.com;www.indeed.com;qmed.com
+ORG-005000,Bollore Inc.,Dayville,CT,accept,https://bolloreinc.com/,Bollore Inc.,www.bolloreinc.com;www.packworld.com;www.mapquest.com;local.yahoo.com
+ORG-005001,"Deitsch Plastic Co., Inc.",West Haven,CT,no_candidate,,,www.bloomberg.com;reviews.birdeye.com;www.movecars.com;safer.fmcsa.dot.gov
+ORG-005002,"Technical Industries, Inc.",Torrington,CT,accept,https://technicalindustriesinc.com/,Plastic Injection Molding | Technical Industries – United States,www.technicalindustriesinc.com;www.zoominfo.com;www.mapquest.com;www.facebook.com
+ORG-005003,"The Coleman Company, Inc.",Wichita,KS,no_candidate,,,www.chamberofcommerce.com;www.yellowpages.com;businessyab.com;www.allbiz.com
+ORG-005004,Adventure Capital Partners (d/b/a Better Life Technology),Emporia,KS,no_candidate,,,
+ORG-005005,Neodesha Plastics,Neodesha,KS,no_candidate,,,npi-ks.com;www.yelp.com;www.indeed.com;www.linkedin.com
+ORG-005006,Hi-Line Plastics Inc.,Olathe,KS,no_candidate,,,www.facebook.com;www.mapquest.com;www.industrynet.com;www.waze.com
+ORG-005007,Wilko Paint,Wichita,KS,accept,https://wilkopaintinc.com/,Home - Wilko Paint - Premier Supplier of Industrial Finishes and Coatings,wilkopaintinc.com;www.indeed.com;www.facebook.com;www.linkedin.com
+ORG-005008,"Pitt Plastics, Inc.",Pittsburg,KS,accept,https://pittplastics.com/,"Pitt Plastics | Can Liners, Foodservice & Healthcare Bags Manufacturer",pittplastics.com;www.indeed.com;cca.pittsburgareachamber.com;www.zoominfo.com
+ORG-005009,Nazdar,Shawnee,KS,accept,https://nazdar.com/,Just a moment...,www.nazdar.com;www.nazdar.com;www.nazdar.com;www.linkedin.com
+ORG-005010,Wescon Plastics LLC,Wichita,KS,no_candidate,,,talkbusiness.net;www.cbinsights.com;www.facebook.com;findingmfg.com
+ORG-005011,Kroy Industries,Ulysses,KS,accept,https://kroyind.com/,"Kroy Industries, Inc.",kroyind.com;www.indeed.com;www.mapquest.com;www.commtrex.com
+ORG-005012,"Central Plastics, Inc.",Mcpherson,KS,no_candidate,,,www.cpi-ks.com;www.facebook.com;www.indeed.com;rocketreach.co
+ORG-005013,De Elliotte Co.,New Century,KS,accept,https://deelliotte.com/,"de Elliotte Company, Inc. - Printed Plastic Bag and Plastic Packaging",www.deelliotte.com;www.linkedin.com;www.mapquest.com;themanifest.com
+ORG-005014,Kansas Correctional Industries,Lansing,KS,no_candidate,,,www.doc.ks.gov;kansasci.doc.ks.gov;en.wikipedia.org;www.facebook.com
+ORG-005015,Form Systems,Haysville,KS,reject_name_not_on_page,https://formsystemsinc.com/,Robot Challenge Screen,formsystemsinc.com;www.iqsdirectory.com;www.linkedin.com;www.mapquest.com
+ORG-005016,Raschig USA Inc.,El Dorado,KS,accept,https://raschig-usa.com/,"Raschig USA, Inc. - Home - Superior Performance by Design",raschig-usa.com;www.indeed.com;raschig-usa.com;raschig-usa.com
+ORG-005017,Western Industries Plastic Products LLC,Winfield,KS,accept,https://westernind.com/,Home,westernind.com;www.linkedin.com;www.zoominfo.com;www.indeed.com
+ORG-005018,Leading Technology Composites,Wichita,KS,accept,https://ltc-ltc.com/,"Leading Technology Composites, Inc | LTC",ltc-ltc.com;www.linkedin.com;www.facebook.com;www.indeed.com
+ORG-005019,"Buckley Industries, Inc.",Park City,KS,accept,https://buckleyind.com/,"Buckley Industries, Inc",www.buckleyind.com;www.buckleyind.com;www.buckleyind.com;www.mapquest.com
+ORG-005020,Quality Profile Services,Council Grove,KS,accept,https://qualityprofile.com/,Quality Profile,qualityprofile.com;www.facebook.com;www.councilgrove.com;www.zoominfo.com
+ORG-005021,Accu-Mold LLC,Ankeny,IA,accept,https://accu-mold.com/,Accu-Mold | Precision Micro Molding Experts,www.accu-mold.com;tonkabayequity.com;bbs.fobshanghai.com;www.mapquest.com
+ORG-005022,Innovative Injection Technologies,West Des Moines,IA,no_candidate,,,i2-tech.com;www.linkedin.com;www.indeed.com;topworkplaces.com
+ORG-005023,Plastics Unlimited Inc.,Preston,IA,no_candidate,,,www.zoominfo.com;www.fcc.gov;pr.linkedin.com;graphiq.ai
+ORG-005024,Tanks Ltd,Sheldon,IA,no_candidate,,,www.mapquest.com;draylocator.com;www.yellowpages.com;www.facebook.com
+ORG-005025,Clysar LLC,Camanche,IA,accept,https://clysar.com/,Clysar | Clysar Home,clysar.com;clysar.com;clysar.com;facilityexplorer.iowadnr.gov
+ORG-005026,"Iowa EPS Products, Inc.",Des Moines,IA,accept,https://iowaeps.com/,"Expanded Polystyrene Products | Iowa EPS Products, Inc. | Des Moines, IA",www.iowaeps.com;www.meshworks.com;www.mapquest.com;facilityexplorer.iowadnr.gov
+ORG-005027,"Morse Rubber, LLC",Keokuk,IA,no_candidate,,,www.rubbernews.com;facilityexplorer.iowadnr.gov;jhmenge.com;www.zoominfo.com
+ORG-005028,Riley Paint Company,Burlington,IA,accept,https://rileypaint.com/,Home - Riley Paint Company,rileypaint.com;www.facebook.com;www.mapquest.com;reviews.birdeye.com
+ORG-005029,Innocor Foam Technologies,Dubuque,IA,no_candidate,,,www.manta.com;www.washingtontimes.com;moovitapp.com;facilityexplorer.iowadnr.gov
+ORG-005030,Siegwerk USA Co.,Des Moines,IA,no_candidate,,,www.iowadnr.gov;www.indeed.com;www.industrynet.com;www.zippia.com
+ORG-005031,Victor Plastics Inc.,Victor,IA,no_candidate,,,www.privateequityinternational.com;www.plasticsnews.com;mergr.com;www.bglco.com
+ORG-005032,Custom-Pak Inc.,Clinton,IA,accept,https://custom-pak.com/,"Custom-Pak, Inc. – Design & Blowmolding",www.custom-pak.com;www.linkedin.com;www.industrynet.com;www.waze.com
+ORG-005033,"ACH Foam Technologies, LLC",Washington,IA,no_candidate,,,www.osha.gov;www.linkedin.com;reviews.birdeye.com;www.napc.pro
+ORG-005034,Decker Plastics Inc.,Council Bluffs,IA,no_candidate,,,www.dandb.com;www.zoominfo.com;law.justia.com;www.casemine.com
+ORG-005035,Kiliper Corporation,Ames,IA,accept,https://kilipercorp.com/,Kiliper Corp,kilipercorp.com;inovarpackaging.com;www.indeed.com;www.facebook.com
+ORG-005036,Rubber Development Inc.,Waverly,IA,error: HTTPError,,,www.rubberdevelopment.com;www.indeed.com;www.industrynet.com;www.linkedin.com
+ORG-005037,Greystone Manufacturing,Bettendorf,IA,accept,https://greystonepallets.com/,Greystone Pallets by Greystone Logistics – The World's Best 100% Recycled Plastic Pallets,greystonepallets.com;greystonepallets.com;www.linkedin.com;greystonepallets.com
+ORG-005038,AERON Advanced Manufacturing,Mason City,IA,accept,https://aeronlifetech.com/,Innovators of Home and Car Fragrances | AERON Lifestyle Technology,www.indeed.com;www.aeronlifetech.com;www.linkedin.com;www.aeronlifetech.com
+ORG-005039,NAPCO Bag and Film,Waverly,IA,no_candidate,,,www.indeed.com;www.linkedin.com;www.industrynet.com;www.waverlywelcomehome.com
+ORG-005040,DKM Manufacturing Inc.,Victor,IA,accept,https://dkmmfg.com/,"DKM Manufacturing, Inc.",dkmmfg.com;dkmmfg.com;dkmmfg.com;www.iqsdirectory.com
+ORG-005041,HSM Solutions,Monticello,IA,accept,https://hsmsolutions.com/,HSM Solutions,www.hsmsolutions.com;www.hsmsolutions.com;www.indeed.com;www.ziprecruiter.com
+ORG-005042,Kwangsung America,Dadeville,AL,no_candidate,,,www.indeed.com;www.mapquest.com;m.yelp.com;pitchbook.com
+ORG-005043,Kumi Manufacturing Alabama LLC,Clanton,AL,accept,https://kumi-alabama.com/,"Kumi Manufacturing Alabama – A Tier-1 supplier to the automotive industry, Kumi Canada provides class-leading design, pr",kumi-alabama.com;www.linkedin.com;www.facebook.com;www.nlrb.gov
+ORG-005044,Homeland Vinyl Products,Pinson,AL,accept,https://homelandvinyl.com/,"Homeland Vinyl Products | Vinyl Fence, Vinyl Deck, Vinyl Rail",homelandvinyl.com;homelandvinyl.com;www.bbb.org;www.indeed.com
+ORG-005045,Valley Rubber LLC,Falkville,AL,reject_name_not_on_page,https://rubbermolding.org/,Rubber Molding Companies | Rubber Molding Services,rubbermolding.org;www.indeed.com;bondedtometalrubber.com;business.hartsellechamber.com
+ORG-005046,"Inzi Controls Alabama, Inc.",Elba,AL,reject_name_not_on_page,https://inzicontrols.net/,INZI CONTROLS,www.facebook.com;safer.fmcsa.dot.gov;www.industrynet.com;www.inzicontrols.net
+ORG-005047,Contech Engineered Solutions LLC,Montgomery,AL,accept,https://conteches.com/,Contech Engineered Solutions,www.conteches.com;www.indeed.com;www.facebook.com;www.commtrex.com
+ORG-005048,Nypro Kanaak Alabama LLC,Dothan,AL,no_candidate,,,rocketreach.co;www.linkedin.com;rocketreach.co;www.linkedin.com
+ORG-005049,GenFlex Roofing Systems,Tuscumbia,AL,accept,https://genflex.com/,"GenFlex | TPO, EPDM & Asphalt Roofing Systems",www.genflex.com;www.plasticsnews.com;www.facebook.com;roofing.corkensteel.com
+ORG-005050,Tasus Corporation,Florence,AL,accept,https://tasus.com/,TASUS | Tsuchiya Group North America - automotive plastic injection molding,www.tasus.com;www.tasus.com;www.linkedin.com;www.indeed.com
+ORG-005051,E.S. Robbins Corporation,Muscle Shoals,AL,accept,https://esrobbins.com/,ES Robbins Corp: Creative Plastic Extrusion Manufacturing Plant,www.esrobbins.com;www.linkedin.com;www.esrobbins.com;esrchairmats.com
+ORG-005052,Samkwang USA Inc.,Tuskegee,AL,no_candidate,,,al.ltddir.com;www.linkedin.com;jobkoreausa.com;madeinmacon.com
+ORG-005053,"Asocrium North America, Inc.",Tuscaloosa,AL,no_candidate,,,
+ORG-005054,"Specification Rubber Products, Inc.",Alabaster,AL,accept,https://specrubber.com/,Trusted Rubber Gasket Manufacturer in the USA | Spec Rubber,www.linkedin.com;specrubber.com;www.bbb.org;specrubber.com
+ORG-005055,"Circulus Holdings, LLC",Arab,AL,no_candidate,,,www.ziprecruiter.com;www.sec.gov;corporate.dow.com;s23.q4cdn.com
+ORG-005056,Concours Technology Alabama Inc.,Cullman,AL,no_candidate,,,freightscout.ai
+ORG-005057,Hercules Bags Inc.,Eclectic,AL,no_candidate,,,al.ltddir.com;www.city-data.com;b2bhint.com;b2bhint.com
+ORG-005058,Induron Coatings Inc.,Birmingham,AL,accept,https://induron.com/,High Quality Industrial Coatings | Induron Protective Coatings,www.induron.com;www.induron.com;www.chamberofcommerce.com;www.allbiz.com
+ORG-005059,Lonestar Plastics,Prattville,AL,no_candidate,,,www.facebook.com;www.indeed.com;www.mapquest.com;www.yelp.com
+ORG-005060,"Rolls, Inc.",Leighton,AL,no_candidate,,,www.mapquest.com;www.timesdaily.com;www.rubbernewsdirectory.com;www.yellowpages.com
+ORG-005061,Polymer Industries,Henagar,AL,accept,https://polymerindustries.com/,Home - Polymer Industries,polymerindustries.com;www.linkedin.com;www.indeed.com;digital.iapd.org
+ORG-005062,Kommerling USA Inc.,Huntsville,AL,no_candidate,,,glassbuild2026.mapyourshow.com;www.mapquest.com;www.commtrex.com;www.koemmerling.com
+ORG-005063,American Fiberglass Products Inc.,Double Springs,AL,no_candidate,,,www.industrynet.com;www.movecars.com;safer.fmcsa.dot.gov;www.bbb.org
+ORG-005064,Corrosion Technology Inc.,Bay Minette,AL,accept,https://corrosiontechnology.net/,"Corrosion Technology, Inc.",corrosiontechnology.net;www.movecars.com;www.mapquest.com;local.yahoo.com
+ORG-005065,"Infiltrator Water Technologies, LLC",Phenix City,AL,no_candidate,,,www.jobtarget.com;www.ziprecruiter.com;www.dandb.com;www.indeed.com
+ORG-005066,"Micro Fab, Inc.",Theodore,AL,no_candidate,,,www.mapquest.com;www.industrynet.com;local.yahoo.com;locator.wastebits.com
+ORG-005067,Cumberland Plastics,Opelika,AL,reject_name_not_on_page,https://cumberlandps.com/,401 Authorization Required,cumberlandps.com;www.indeed.com;www.mapquest.com;www.glassdoor.com
+ORG-005068,Hawk Plastics,Childersburg,AL,accept,https://hawkplasticscorp.com/,Hawk Plastics Corp,www.hawkplasticscorp.com;www.facebook.com;us.metoree.com;www.mapquest.com
+ORG-005069,Innovative Plastics,Madison,AL,accept,https://innovativeplasticsco.com/,Innovative Plastics,innovativeplasticsco.com;www.linkedin.com;www.indeed.com;www.facebook.com
+ORG-005070,Price Rubber Corporation,Montgomery,AL,no_candidate,,,www.mapquest.com;www.facebook.com;www.indeed.com;www.waze.com
+ORG-006132,"D & B Products / Multi-Tech, Inc.",Georgetown,DE,no_candidate,,,greencompanydb.com;greencompanydb.com;www.factoryregistry.com
+ORG-006133,"Penn Fibre Plastics, Inc.",Greenwood,DE,no_candidate,,,www.mfg.com;www.linkedin.com;www.visualvisitor.com;en.wikipedia.org
+ORG-006134,National Roll Kote (Nrk),New Castle,DE,no_candidate,,,www.linkedin.com;lu.linkedin.com;online.flippingbook.com;sv.linkedin.com
+ORG-006135,Zacros America - Delaware,Newark,DE,reject_name_not_on_page,https://delawarebusinesstimes.com/,"Westchester Magazine - Restaurants, Things to Do, Homes & More",news.delaware.gov;www.linkedin.com;delawarebusinesstimes.com;delawarebusinesstimes.com
+ORG-006136,Altium Packaging - Newark Plant,Newark,DE,no_candidate,,,
+ORG-006137,"Wilmington Fibre Specialty Company, Inc.",New Castle,DE,no_candidate,,,www.osha.gov;martechnical.com;www.osha.gov;violationtracker.goodjobsfirst.org
+ORG-006138,"Fmi-Eps, LLC",Jerome,ID,accept,https://fmi-eps.com/,FMI-EPS,fmi-eps.com;web.idahoagc.org;www.linkedin.com;buildingclean.org
+ORG-006139,Northwest Foam Products Inc.,Twin Falls,ID,accept,https://northwestfoam.com/,Insulation: Low & High Density EPS Foam for Construction | Northwest,northwestfoam.com;buildingclean.org;safer.fmcsa.dot.gov;www.zoominfo.com
+ORG-006140,Western Window,Nampa,ID,accept,https://western-window.com/,"One moment, please...",www.western-window.com;www.indeed.com;www.mapquest.com;in.linkedin.com
+ORG-006141,Vrc Engineered Solutions-Coeur D'Alene,Coeur D'Alene,ID,no_candidate,,,bandana.com;bebee.com;www.indeed.com;bandana.com
+ORG-006142,"Lightning Tool & Manufacturing, Inc.",Post Falls,ID,accept,https://ltm-inc.com/,"Lightning Tool & Manufacturing, Inc. - Custom Plastic Injection Molding & Precision Tooling",ltm-inc.com;www.bbb.org;www.linkedin.com;web.idahoagc.org
+ORG-006143,Biologiq,Idaho Falls,ID,accept,https://biologiq.com/,Sustainable Biopolymers | Powered By Plants - BioLogiQ,www.biologiq.com;www.biologiq.com;www.idmfg.org;www.facebook.com
+ORG-006144,Standridge Color Id,Burley,ID,no_candidate,,,
+ORG-006145,Cordova Outdoors,Nampa,ID,accept,https://cordovaoutdoors.com/,"Outdoor Coolers, Drinkware, and Gear | Cordova Outdoors",cordovaoutdoors.com;www.linkedin.com;testedinidaho.com;www.instagram.com
+ORG-006146,Interstate Plastic Inc.,Post Falls,ID,no_candidate,,,safer.fmcsa.dot.gov;www.movecars.com;www.industrynet.com;www.truckerpro.ca
+ORG-006147,Badraun Coatings LLC,Boise,ID,no_candidate,,,safetyincidents.org
+ORG-006148,Delfex Innovations LLC,Berlin,NH,no_candidate,,,www4.des.state.nh.us
+ORG-006149,Carbon Felt Inc.,Claremont,NH,accept,https://carbonfeltinc.com/,Home | Carbon Felt Inc,www.carbonfeltinc.com;www.indeed.com;www.indeed.com;vnews.com
+ORG-006150,"Hcp Packaging USA, Inc.",Hinsdale,NH,accept,https://hcpackaging.com/,Homepage,www.hcpackaging.com;www.reformer.com;industrynet.com;www.hcpackaging.com
+ORG-006151,Duro Fiber Co Inc.,Hudson,NH,no_candidate,,,www.thebluebook.com;vektortms.com;www.thebluebook.com;vektortms.com
+ORG-006152,"Johnson Precision, Inc.",Hudson,NH,no_candidate,,,vermontbiz.com;www.zoominfo.com;growjo.com;www.ndt.org
+ORG-006153,Parker Hannifin Corp  Chomerics Div,Hudson,NH,no_candidate,,,www.industrynet.com;grconnect.com;envreportcard.com;downloads.regulations.gov
+ORG-006154,Millipore Corp,Jaffrey,NH,no_candidate,,,www.epa.gov;www.foodnavigator.com;panjiva.com;www.sciencedirect.com
+ORG-006155,Markem-Imaje Corp,Keene,NH,no_candidate,,,network.procore.com;www.bloomberg.com;www.teamingpro.com;govtribe.com
+ORG-006156,Pak 2000,Lancaster,NH,reject_name_not_on_page,https://paksolutionsusa.com/,Home - Pak Solutions,paksolutionsusa.com;www.indeed.com;www.facebook.com;www.linkedin.com
+ORG-006157,"Index Packaging, Inc., D/B/A Avilite",Merrimack,NH,no_candidate,,,
+ORG-006158,Lightblocks Mfg LLC,Merrimack,NH,no_candidate,,,www.nhcompanyregistry.com;www.bizapedia.com
+ORG-006159,Critical Process Filtration Inc.,Nashua,NH,error: HTTPError,,,www.criticalprocess.com;www.criticalprocess.com;www.criticalprocess.com;www.criticalprocess.com
+ORG-006160,Spartech LLC - Tufpak,Ossipee,NH,no_candidate,,,www4.des.state.nh.us;www4.des.state.nh.us
+ORG-006161,Tecomet,Manchester,NH,accept,https://tecomet.com/,Medical Device & Aerospace Manufacturing Solutions | Tecomet,www.tecomet.com;www.tecomet.com;www.indeed.com;www.tecomet.com
+ORG-006162,Integra-Biosciences,Hudson,NH,accept,https://integra-biosciences.com/,Frontpage,www.integra-biosciences.com;www.integra-biosciences.com;www.linkedin.com;www.integra-biosciences.com
+ORG-006163,Integra-Biosciences Friars,Hudson,NH,no_candidate,,,
+ORG-006164,"Envases USA, Inc. (Amherst)",Amherst,NH,no_candidate,,,gather.tracegains.com;gather.tracegains.com;trea.com;granitegeek.concordmonitor.com
+ORG-006165,"Appli-Tec, Inc.",Salem,NH,accept,https://appli-tec.com/,Appli-Tec - Adhesive Manufacturers - Industrial Adhesive Solutions,www.appli-tec.com;www.linkedin.com;www.cbinsights.com;www.mapquest.com
+ORG-006166,Schul - Willseal - Tremco,Hudson,NH,no_candidate,,,
+ORG-006167,Plastech Machining And Fabrication,Bow,NH,accept,https://plastechfab.com/,"Plastic machining, plastic fabrication, precision machined plastic parts",www.facebook.com;www.delcamcapital.com;www.linkedin.com;www.plastechfab.com
+ORG-006168,"American Durafilm Co., Inc.",Dover,NH,reject_name_not_on_page,https://americandurafilm.com/,Robot Challenge Screen,americandurafilm.com;www.indeed.com;www.simplyhired.com;leadiq.com
+ORG-006169,"Acw Plastic Products, Inc.",Concord,NH,accept,https://acw1.com/,Leading Webbing Manufacturer USA — Since 1917 | ACW,acw1.com;www.etextilecommunications.com;www.industrynet.com;www.textileworld.com
+ORG-006170,"Marmon Utility, LLC",Amherst,NH,reject_name_not_on_page,https://marmoniei.com/,Robot Challenge Screen,www.indeed.com;www.linkedin.com;www.indeed.com;www.cabinet.com
+ORG-006171,Tekniplex Healthcare,Manchester,NH,accept,https://tekni-plex.com/,TekniPlex,tekni-plex.com;tekni-plex.com;tekni-plex.com;tekni-plex.com
+ORG-006172,Pbs Plastics Inc.,Barrington,NH,accept,https://pbsplastics.com/,"PBS Plastics Profile Extruders, Rigid Plastic Core Extrusion Manufacturers & Suppliers, Profile Custom Extrusion Company",www.facebook.com;www.iqsdirectory.com;www.linkedin.com;www.alignable.com
+ORG-006173,Insulfab Plastics Inc.,Franklin,NH,accept,https://insulfab.com/,"InsulFab Plastics, Inc.",insulfab.com;www.bbb.org;www.linkedin.com;www.indeed.com
+ORG-006174,Taiyo America Inc.,Carson City,NV,accept,https://taiyo-america.com/,"One moment, please...",taiyo-america.com;www.linkedin.com;www.indeed.com;taiyo-america.com
+ORG-006175,Cpi Cardgroup Nevada Inc.,North Las Vegas,NV,reject_name_not_on_page,https://nevadabusiness.com/,Nevada Business Magazine,www.pacermonitor.com;www.importgenius.com;veritaglobal.net;www.nevadabusiness.com
+ORG-006176,Ram Enterprise Inc.,Elko,NV,accept,https://ram-enterprise.com/,Home with services & products images,www.ram-enterprise.com;www.linkedin.com;www.indeed.com;safer.fmcsa.dot.gov
+ORG-006177,Channell Commercial Corporation Nv,Las Vegas,NV,no_candidate,,,safetyincidents.org
+ORG-006178,Primex Plastics Mesquite,Mesquite,NV,no_candidate,,,www.glassdoor.com;www.glassdoor.co.in;www.stgeorgeutah.com;mvprogress.com
+ORG-006179,Foster LLC - West,North Las Vegas,NV,no_candidate,,,
+ORG-006180,American Sealants Inc.- Nevada Plant,Las Vegas,NV,no_candidate,,,
+ORG-006181,Worldpak Flexible Packaging,Reno,NV,reject_name_not_on_page,https://packaging-labelling.com/,B2B platform for Packaging & Labelling | Connect Globally,www.linkedin.com;www.packaging-labelling.com;www.indeed.com;www.carsoncitychamber.com
+ORG-006182,Zacros America - Reno,Reno,NV,no_candidate,,,es.importgenius.com;aeroleads.com
+ORG-006183,R4 Industrial USA LLC,Las Vegas,NV,no_candidate,,,tube.org;www.importgenius.com;www.leinumber.com;www.ueedata.com
+ORG-006184,Sunburst Shutters Las Vegas,Las Vegas,NV,accept,https://sunburstshutterslasvegas.com/,"Shutters, Blinds, & Shades in Las Vegas, NV | Sunburst Shutters Las Vegas",www.sunburstshutterslasvegas.com;www.sunburstshutters.com;www.houzz.com;www.sunburstshutters.com
+ORG-006185,"Langdale Holdings, Inc.",Carson City,NV,no_candidate,,,g2x.com;www.teamingpro.com;www.bizapedia.com;www.lqlite.com
+ORG-006186,"Click Bond, Inc.",Carson City,NV,accept,https://clickbond.com/,"Click Bond, Inc. - Adhesive-Bonded Fasteners For Aerospace, Defense, Marine, Automotive, Rail, Energy, & Industrial Sect",www.clickbond.com;www.instagram.com;www.facebook.com;www.indeed.com
+ORG-006187,"Messenger Molding, Inc.",Reno,NV,accept,https://messengermolding.com/,Messenger Molding - Plastic Injection Molding Company,messengermolding.com;www.indeed.com;seamless.ai;www.bloomberg.com
+ORG-006188,"Vip Rubber Company, Inc.",Minden,NV,accept,https://viprubber.com/,Custom Rubber Products & Plastic Parts Manufacturerl,viprubber.com;www.indeed.com;www.osha.gov;www.oshalert.com
+ORG-006189,Jyc America,Mound House,NV,error: HTTPError,,,jychemical.com;www.indeed.com;www.jycamerica.com;panjiva.com
+ORG-006190,Fallline Corporation,Reno,NV,accept,https://fallline.com/,Custom Molded Polyurethane & Cast Urethane Parts Manufacturer | FallLi...,fallline.com;www.comanufacturers.com;app.indexbox.io;www.mapquest.com
+ORG-006191,"Ingenuim, LLC",Reno,NV,no_candidate,,,
+ORG-006192,"Triad Enterprises, Inc.",Reno,NV,no_candidate,,,www.industrynet.com;www.osha.gov;www.zoominfo.com;www.401khunter.com
+ORG-006193,Blackhawk Molding Company Inc.,Sparks,NV,no_candidate,,,www.nevadabusiness.com;www.ctcseminars.com;issuu.com;www.anywho.com
+ORG-006194,Red Star Foam,Las Vegas,NV,accept,https://redstarfoam.com/,Home | Red Star Foam,redstarfoam.com;m.yelp.com;www.facebook.com;www.instagram.com
+ORG-006195,"Peterson Products, Inc.",Dayton,NV,accept,https://petersonproducts.com/,Reinforced Plastic Composite Manufacturer | Nationwide USA,petersonproducts.com;www.datanyze.com;www.alignable.com;www.zoominfo.com
+ORG-006196,"Deslauriers, Inc.",Henderson,NV,no_candidate,,,deslinc.com;deslinc.com;www.linkedin.com;www.mapquest.com
+ORG-006197,"Plastic Man, Inc.",Las Vegas,NV,accept,https://plasticmaninc.com/,Plastic Man Inc,www.plasticmaninc.com;www.instagram.com;www.facebook.com;www.thebluebook.com
+ORG-006198,"North American Specialty Laminations, LLC.",Sparks,NV,no_candidate,,,northamericanlam.com;northamericanlam.com;northamericanlam.com;northamericanlam.com
+ORG-006199,"Carson Hi-Tech, Inc.",Carson City,NV,accept,https://carsonhitech.com/,"Carson Hi-Tech, Inc.",www.carsonhitech.com;www.zoominfo.com;www.mapquest.com;www.linkedin.com
+ORG-006200,"Lam Tex Composites, Inc.",Sparks,NV,no_candidate,,,govtribe.com;www.sweetspot.so;www.mimiradvisors.org;www.usaspending.gov
+ORG-006201,Semco Surfaces,Las Vegas,NV,accept,https://semcosurfaces.com/,SEMCO Surfaces,www.semcosurfaces.com;www.instagram.com;www.facebook.com;docu.team
+ORG-006202,"Stealth Finishing, LLC",Mccarran,NV,accept,https://stealthfinishing.com/,Expert Industry Leading Profile Wrapping Services Company,stealthfinishing.com;www.osha.gov;www.savestoreycounty.org;www.savestoreycounty.org
+ORG-006203,Tike LLC,Las Vegas,NV,no_candidate,,,www.bkalerts.com;bkdata.com;www.pacermonitor.com;www.importgenius.com
+ORG-006204,Piper Plastics LLC,Las Vegas,NV,no_candidate,,,www.plasticspluslv.com;www.linkedin.com;app.procurated.com;www.napc.pro
+ORG-006205,Containur Pools Inc.,North Las Vegas,NV,accept,https://containurpools.com/,Container Pools | Fiberglass | Ships Nationwide | ContainUR Pools,containurpools.com;www.facebook.com;containurpools.com;containurpools.com
+ORG-006206,"Stagecoach Rubber Manufacturing, Inc.",Pahrump,NV,no_candidate,,,www.facebook.com;grindrecoil.com;www.zoominfo.com;n2b.goexposoftware.com
+ORG-006207,P & A Plastics Inc.,Las Vegas,NV,reject_name_not_on_page,https://maptons.com/,Attention Required! | Cloudflare,www.mapquest.com;www.bbb.org;www.yellowpages.com;my.maptons.com
+ORG-006208,Goetz Composites,Bristol,RI,no_candidate,,,www.yachtinsidersguide.com;www.facebook.com;www.indeed.com;www.mapquest.com
+ORG-006209,"Epoxies, LLC",Cranston,RI,no_candidate,,,www.facebook.com;www.city-data.com;kfor.com
+ORG-006210,Greene Plastics Corp,Hope Valley,RI,no_candidate,,,www.thebeadery.com;www.linkedin.com;pbn.com;www.yellowpages.com
+ORG-006211,Symmetry Products,Lincoln,RI,accept,https://symmetryproducts.com/,Home - Lance industries Inc. Symmetry,www.symmetryproducts.com;www.symmetryproducts.com;www.symmetryproducts.com;www.symmetryproducts.com
+ORG-006212,Sutherland Welles,Providence,RI,accept,https://sutherlandwelles.com/,Sutherland Welles Ltd. - Exceptional Polymerized Tung Oil Wood Finishes,sutherlandwelles.com;www.facebook.com;sutherlandwelles.com;sutherlandwelles.com
+ORG-006213,"Branch River Plastics, Inc.",Smithfield,RI,error: HTTPError,,,www.branchriver.com;network.procore.com;www.bbb.org;www.movecars.com
+ORG-006214,Technic Inc. - Technimask Division,Woonsocket,RI,no_candidate,,,
+ORG-006215,A & H Mfg. Co.,Johnston,RI,no_candidate,,,www.indeed.com;www.glassdoor.com;www.zippia.com;www.bbb.org
+ORG-006216,Eco Global Manufacturing Providence Branch,Providence,RI,no_candidate,,,
+ORG-006217,84 Fairmount Street,Woonsocket,RI,no_candidate,,,www.plasticsgroup.com;www.compass.com;en.wikipedia.org;www.realie.ai
+ORG-006218,Spilltech Environmental Of Cumberland,Cumberland,RI,no_candidate,,,
+ORG-006219,Interplex Engineered Products Inc.,Rumford,RI,no_candidate,,,www.mapquest.com;www.bloomberg.com;www.yellowpages.com;www.importgenius.com
+ORG-006220,"Fast Forward Composites, Inc.",Bristol,RI,no_candidate,,,www.zoominfo.com;www.industrynet.com;www.dnb.com;pppreport.org
+ORG-006221,"Fielding Mfg. - Zinc Diecasting, Inc.",Cranston,RI,no_candidate,,,business.sos.ri.gov;business.sos.ri.gov;www.castool.com;www.fastbackgroundcheck.com
+ORG-006222,"Capco Plastics, Inc.",Providence,RI,accept,https://capcoplastics.com/,Capco Plastics,www.mapquest.com;capcoplastics.com;www.bbb.org;capcoplastics.com
+ORG-006223,"Aspects, Inc.",Warren,RI,no_candidate,,,hummzinger.com;hummzinger.com;hummzinger.com;www.bbb.org
+ORG-006224,Jeneet Inc.,Warwick,RI,accept,https://jeneet.com/,Jeneet Inc,www.jeneet.com;www.linkedin.com;www.jeneet.com;www.dandb.com
+ORG-006225,Rubber Hose Manufacturing Facility,Nephi,UT,no_candidate,,,lf-public.deq.utah.gov;lf-public.deq.utah.gov;lf-public.deq.utah.gov;lf-public.deq.utah.gov
+ORG-006226,Ppc Flexible Packaging - Payson Printing Plant,Payson,UT,no_candidate,,,lf-public.deq.utah.gov;lf-public.deq.utah.gov;toxinscout.com;lf-public.deq.utah.gov
+ORG-006227,Merit3D LLC,Price,UT,accept,https://merit3d.com/,Mass Production 3D Printing Services | Merit3D,merit3d.com;www.mapquest.com;www.mapquest.com;trademarksoncall.com
+ORG-006228,Abbott Critical Care Systems,Salt Lake City,UT,no_candidate,,,archivesspace.lib.utah.edu;www.ovid.com;pubmed.ncbi.nlm.nih.gov;www.jcvaonline.com
+ORG-006229,Amsco,Salt Lake City,UT,accept,https://amscowindows.com/,Home - AMSCO WINDOWS,www.amscowindows.com;www.yelp.com;buildingclean.org;www.instagram.com
+ORG-006230,Midwestern Fab/Delta Equipment/D.E.I,Salt Lake City,UT,no_candidate,,,
+ORG-006231,Sorenson Bioscience Inc.,Salt Lake City,UT,no_candidate,,,healthmanagement.org;www.dandb.com;www.industrynet.com;www.zoominfo.com
+ORG-006232,Vortex Products / Quadex,Sandy,UT,no_candidate,,,
+ORG-006233,Parker Hannifin Corp Eps Div,West Valley City,UT,no_candidate,,,www.scribd.com
+ORG-006234,Valley Paint Mfg,Woods Cross,UT,accept,https://valleypaintutah.com/,"Industrial Primers - Woods Cross, UT - Valley Paint MFG",www.valleypaintutah.com;www.valleypaintutah.com;www.valleypaintutah.com;www.valleypaintutah.com
+ORG-006235,Salt Lake City,Salt Lake City,UT,accept,https://visitsaltlake.com/,"Salt Lake City Hotels, Restaurants, Events, Things to Do & Shopping",en.wikipedia.org;www.utah.com;www.visitsaltlake.com;www.slc.gov
+ORG-006236,Design Imaging LLC,Orem,UT,no_candidate,,,kb.nkba.org;www.mapquest.com;www.bbb.org;www.movecars.com
+ORG-006237,"Homeland Vinyl Products, Inc. Utah",Ogden,UT,no_candidate,,,www.linkedin.com
+ORG-006238,H3 Plastics,American Fork,UT,accept,https://h3plastics.com/,H3 Plastics,h3plastics.com;www.linkedin.com;rocketreach.co;www.zoominfo.com
+ORG-006239,Rotational Molding Of Utah,Brigham City,UT,reject_name_not_on_page,https://rotationallymoldedplastics.com/,Rotational Molding Companies | Rotational Molding Services,rotationallymoldedplastics.com;rotationalmoldingofutah.com;www.linkedin.com;www.indeed.com
+ORG-006240,Ericsons Ut Plant,Ogden,UT,no_candidate,,,
+ORG-006241,Averra Packaging,West Valley City,UT,accept,https://averrapackaging.com/,Medical Device Packaging Design + Manufacturing,www.averrapackaging.com;www.mapquest.com;local.yahoo.com;www.waze.com
+ORG-006242,Whitehead Composite Industries LLC,North Salt Lake,UT,no_candidate,,,www.sj-r.com;www.naplesnews.com;www.bizapedia.com;document.epiq11.com
+ORG-006243,Danone North America,West Jordan,UT,accept,https://danonenorthamerica.com/,Danone North America - Bringing Health Through Food,careers.danone.com;www.danonenorthamerica.com;careers.danone.com;www.linkedin.com
+ORG-006244,Blue Diamond Industries - Ogden,Ogden,UT,no_candidate,,,www.facebook.com;www.linkedin.com;bebee.com;www.linkedin.com
+ORG-006245,Future Foam - Plant 12,West Valley City,UT,no_candidate,,,
+ORG-006246,"Liberty Tire Recycling - Ogden, Ut",Ogden,UT,no_candidate,,,www.facebook.com
+ORG-006247,"Isco Industries, Inc. - Salt Lake City",West Jordan,UT,no_candidate,,,www.linkedin.com;www.glassdoor.com.br
+ORG-006248,"Rps Composites, Utah, Inc.",North Salt Lake,UT,no_candidate,,,www.bbb.org;lf-public.deq.utah.gov;www.bbb.org;lf-public.deq.utah.gov
+ORG-006249,Western Container Salt Lake,Salt Lake City,UT,no_candidate,,,www.armyproperty.com
+ORG-006250,Bway Corporation,Cedar City,UT,no_candidate,,,gather.tracegains.com;www.indeed.com;mauserpackaging.com;www.yellowpages.com
+ORG-006251,Enve Composites LLC,Ogden,UT,accept,https://enve.com/,ENVE Composites,www.linkedin.com;www.bloomberg.com;recruiting.paylocity.com;bicycleindustryjobs.com
+ORG-006252,"Snap Lock Industries, Inc.",Salt Lake City,UT,no_candidate,,,www.linkedin.com;www.zoominfo.com;bebee.com;www.bbb.org
+ORG-006253,Miro Industries Inc.,Heber City,UT,accept,https://miroind.com/,Home,www.miroind.com;www.linkedin.com;www.facebook.com;www.instagram.com
+ORG-006254,Walker Tape Co,West Jordan,UT,accept,https://walkertapeco.com/,"Walker Tape® | Hair System Tapes, Adhesives & Solvents",www.walkertapeco.com;www.linkedin.com;www.indeed.com;www.waze.com
+ORG-006255,Kaddas Enterprises Inc.,Salt Lake City,UT,accept,https://kaddas.com/,Kaddas Enterprises Inc.,www.kaddas.com;www.linkedin.com;www.trade.gov;govtribe.com
+ORG-006256,"Great Outdoor Products, LLC",Woods Cross,UT,no_candidate,,,www.mapquest.com;www.dandb.com;www.mapquest.com;www.ffls.com
+ORG-006257,Whiteclouds Inc.,Uintah,UT,no_candidate,,,www.osha.gov;www.linkedin.com;www.scribd.com
+ORG-006258,Plastics Resources Inc.,Logan,UT,no_candidate,,,pri-plastics.com;www.linkedin.com;www.bbb.org;www.indeed.com
+ORG-006259,South Valley Specialties Corp.,Sandy,UT,accept,https://svsco.com/,South Valley Specialties | Custom Rubber Molding & Parts,www.svsco.com;www.linkedin.com;seamless.ai;govtribe.com
+ORG-006260,Plastic Fabricating LLC,Salt Lake City,UT,no_candidate,,,www.linkedin.com;www.sweetspot.so;www.teamingpro.com;www.govconinabox.com
+ORG-006261,Magic Vac Inc.,Woods Cross,UT,accept,https://magicvacinc.com/,Magic Vac Inc | Custom Thermoformed Manufacturing,www.facebook.com;www.linkedin.com;www.instagram.com;www.alignable.com
+ORG-006262,Graphic Inc. Co,Salt Lake City,UT,no_candidate,,,nepis.epa.gov
+ORG-006263,Marko Products Inc.,Salt Lake City,UT,no_candidate,,,
+ORG-006264,Lgg Industrial Inc.,West Valley City,UT,no_candidate,,,www.industrynet.com;www.industrynet.com;www.industrynet.com;members.niba.org
+ORG-006265,Vulcan Precision Linings,Salt Lake City,UT,accept,https://vulcanprecision.com/,Vulcan Precision | Precision Rubber Lining,vulcanprecision.com;www.linkedin.com;www.zoominfo.com;local.yahoo.com
+ORG-006266,"Industrial Fluoro-Plastics, Inc.",West Jordan,UT,accept,https://industrialfluoroplastics.com/,"Industrial Fluoro-Plastics, Inc. | Coatings | West Jordan UT",www.industrialfluoroplastics.com;www.industrialfluoroplastics.com;www.linkedin.com;www.facebook.com
+ORG-006267,Concrete Coatings Inc.,Layton,UT,accept,https://concretecoatingsinc.com/,"Concrete Coatings, Inc.",concretecoatingsinc.com;www.linkedin.com;www.facebook.com;www.mapquest.com
+ORG-007407,"Performance Polymer Technologies, LLC",Roseville,CA,reject_name_not_on_page,https://pptech.com/,easlot คาสิโนสดและสปอร์ตบุ๊ค ฝากผ่าน KBank และ SCB Easy,pptech.com;www.sweetspot.so;www.industrynet.com;www.highergov.com
