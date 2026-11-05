@@ -105,6 +105,13 @@ Viscofan USA and Tecomet. The owner ruled in session, as multiple choice: **allo
 domain may stand as a plant's `website`. Each such record carries a notes flag saying so. Applied in
 `tasks/ownership-status-2026-11-04/`.
 
+## B-ARCHIVE storage (addendum, RULED 2026-11-05)
+B-ARCHIVE was ruled as an `archive_ref` evidence column. Implementing it as a column would rewrite all of the roughly
+35,000 evidence rows and change the header every builder writes. The owner ruled in session, as multiple choice:
+**store it as a side table**, `data/archive_links.csv` (SCHEMA §4.22, v1.11), with one row per archived evidence id.
+The intent is unchanged. The news-monitor switch-on (B-NEWS) waits on its code, which lives in another harness's
+working area (`working/news-monitor/`, per QUEUE.md) and is not in this repository.
+
 ## B-SHARD: foreign establishments of US organizations (AGENTS.md §3)
 Bryant Rubber's Tijuana plant has no lawful site shard, so it is held (#116).
 - **(a) Recommended:** keep holding foreign plants, noting each on the organization record, until a dated schema

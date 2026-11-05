@@ -219,6 +219,81 @@ class ValidatorMutationTests(unittest.TestCase):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="0000-0002-1825-009"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
 
+    # [v1.11] V-58 newsroom / LinkedIn columns; V-59 archive links.
+    @staticmethod
+    def _has_site(r):
+        return r["website"].startswith("https://") and r["website"].count("/") <= 3
+
+    def test_v58_newsroom_on_own_domain_accepted(self):
+        def mut(r):
+            r["newsroom_url"] = r["website"].rstrip("/") + "/news/"
+        self.edit_rows("organizations_OH.csv", self._has_site, mut)
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v58_newsroom_off_domain_rejected(self):
+        self.edit_rows("organizations_OH.csv", self._has_site, lambda r: r.update(newsroom_url="https://www.prnewswire.com/news/acme/"))
+        self.assert_fails_with("newsroom_url must be on the website's own domain (V-58)")
+
+    def test_v58_linkedin_shape(self):
+        self.edit_rows("organizations_OH.csv", self._has_site, lambda r: r.update(linkedin_url="https://www.linkedin.com/in/someone/"))
+        self.assert_fails_with("linkedin_url is not a linkedin.com/company/ page URL (V-58)")
+
+    def test_v58_linkedin_dot_segment_rejected(self):  # codex review: /company/.. resolves to the LinkedIn root
+        self.edit_rows("organizations_OH.csv", self._has_site, lambda r: r.update(linkedin_url="https://www.linkedin.com/company/.."))
+        self.assert_fails_with("linkedin_url is not a linkedin.com/company/ page URL (V-58)")
+
+    def test_v58_malformed_urls_rejected_without_crash(self):  # codex review: no host, bad port, broken IPv6 bracket
+        def mut(r):
+            r["newsroom_feed_url"] = "https:///feeds.example/rss.xml"
+            r["newsroom_url"] = "https://[example.com/news"
+        self.edit_rows("organizations_OH.csv", self._has_site, mut)
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 1, out[-1500:])
+        self.assertIn("newsroom_feed_url is not an http(s) URL (V-58)", out)
+        self.assertIn("newsroom_url is not an http(s) URL (V-58)", out)
+        self.assertNotIn("Traceback", out)
+
+    def test_v58_two_level_suffix_is_not_one_domain(self):  # codex review: alpha.org.uk vs beta.org.uk
+        def mut(r):
+            r["website"], r["newsroom_url"] = "https://alpha.org.uk/", "https://beta.org.uk/news"
+        self.edit_rows("organizations_OH.csv", self._has_site, mut)
+        self.assert_fails_with("newsroom_url must be on the website's own domain (V-58)")
+
+    def _an_evidence_row(self):
+        with open(self.data / "evidence_organizations_OH.csv", newline="", encoding="utf-8") as f:
+            r = next(e for e in csv.DictReader(f) if e["source_ref"].startswith("http"))
+        return r["evidence_id"], r["source_ref"]
+
+    def _arc(self, eid, ref):
+        return {"evidence_id": eid, "archive_ref": f"https://web.archive.org/web/20261105120000/{ref}",
+                "captured_at": "2026-11-05", "created_by": "test"}
+
+    def test_v59_archive_link_accepted(self):
+        self.append_row("archive_links.csv", self._arc(*self._an_evidence_row()))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v59_archive_ref_shape(self):
+        eid, ref = self._an_evidence_row()
+        self.append_row("archive_links.csv", dict(self._arc(eid, ref), archive_ref="https://archive.ph/abc"))
+        self.assert_fails_with("archive_ref is not a web.archive.org capture URL (V-59)")
+
+    def test_v59_archive_must_capture_the_cited_page(self):  # codex review: binding to the evidence row's URL
+        eid, _ = self._an_evidence_row()
+        self.append_row("archive_links.csv", self._arc(eid, "https://unrelated.example/"))
+        self.assert_fails_with("archive_ref captures a different page than the evidence row cites (V-59)")
+
+    def test_v59_archive_dangling_and_duplicate(self):
+        eid, ref = self._an_evidence_row()
+        self.append_row("archive_links.csv", self._arc(eid, ref))
+        self.append_row("archive_links.csv", self._arc(eid, ref))
+        self.append_row("archive_links.csv", self._arc("EVD-999998", ref))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 1, out[-1500:])
+        self.assertIn("one row per evidence id (V-59)", out)
+        self.assertIn("evidence_id 'EVD-999998' does not resolve (V-59)", out)
+
     def test_v54_orcid_rejects_fullwidth_digits(self):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="００００-０００２-１８２５-００９７"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
