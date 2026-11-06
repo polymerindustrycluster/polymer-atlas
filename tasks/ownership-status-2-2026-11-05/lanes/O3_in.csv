@@ -1,0 +1,35 @@
+org_id,legal_name,hq_city,hq_state,website,lead_types,detail,buyer_names,source
+ORG-001908,Tremco CPG Inc.,Beachwood,OH,https://tremco.com,R:REDIRECT_CROSS_DOMAIN,tremco.com -> tremcocpg.com,,round-1 lead
+ORG-001993,Precision Thermoplastic Components Inc,Lima,OH,ptclima.com,R:NXDOMAIN,ptclima.com,,round-1 lead
+ORG-002038,"Pinnacle Recycling, LLC",Akron,OH,pinnaclerecyclingllc.com,R:REDIRECT_CROSS_DOMAIN,pinnaclerecyclingllc.com -> rumpke.com,,round-1 lead
+ORG-002066,Catexel Nease LLC,Harrison,OH,https://www.neaseco.com,R:REDIRECT_CROSS_DOMAIN,neaseco.com -> catexel.com,,round-1 lead
+ORG-002150,Biena Tech Llc,Akron,OH,bienatech.com,R:NXDOMAIN,bienatech.com,,round-1 lead
+ORG-002278,Proto-Cast LLC,Douglassville,PA,proto-cast.com,R:NXDOMAIN,proto-cast.com,,round-1 lead
+ORG-002582,General Plastics Inc.,Phila,PA,http://www.pabags.com,R:NXDOMAIN,pabags.com,,round-1 lead
+ORG-002746,Fenner Drives Inc.,Lititz,PA,http://www.fennerdrives.com/,R:REDIRECT_CROSS_DOMAIN,fennerdrives.com -> fenner.com,,round-1 lead
+ORG-002926,Evonik Corporation,Piscataway,NJ,https://corporate.evonik.us/en,R:REDIRECT_CROSS_DOMAIN,corporate.evonik.us -> evonik.com,,round-1 lead
+ORG-003046,"UNTHA Shredding Technology America, Inc.",Hampton,NH,https://www.untha-america.com,R:REDIRECT_CROSS_DOMAIN,untha-america.com -> untha.com,,round-1 lead
+ORG-003144,Futamura USA Inc,Tecumseh,KS,http://www.natureflex.com/,R:REDIRECT_CROSS_DOMAIN,natureflex.com -> futamuragroup.com,,round-1 lead
+ORG-003269,SILON US LLC,Peachtree City,GA,https://silonllc.com/about-us/,R:REDIRECT_CROSS_DOMAIN,silonllc.com -> silon.eu,,round-1 lead
+ORG-003348,RS Utility Structures Inc.,St. George,UT,http://rspoles.com,R:REDIRECT_CROSS_DOMAIN,rspoles.com -> resilient-structures.com,,round-1 lead
+ORG-003385,Evosys North America Corporation,Rochester Hills,MI,https://www.evosys-laser.us/,R:REDIRECT_CROSS_DOMAIN,evosys-laser.us -> evosys-laser.com,,round-1 lead
+ORG-003480,"NantBioRenewables AL, LLC",Gadsden,AL,https://nantbioplastics.com/,R:REDIRECT_CROSS_DOMAIN,nantbioplastics.com -> nantbiorenewables.com,,round-1 lead
+ORG-003550,McNeely Plastics,Clinton,MS,http://www.mcneelyplastics.com/,R:REDIRECT_CROSS_DOMAIN,mcneelyplastics.com -> mcneelyplastic.com,,round-1 lead
+ORG-003661,Dakota Molding Inc.,Fargo,ND,http://www.dakotamolding.com/,R:REDIRECT_CROSS_DOMAIN,dakotamolding.com -> nottco.com,,round-1 lead
+ORG-003729,Bekum America Corporation,Williamston,MI,https://bekumamerica.com,R:REDIRECT_CROSS_DOMAIN,bekumamerica.com -> bekum.com,,round-1 lead
+ORG-003859,"Davis Rubber Company, Inc.",Little Rock,AR,http://www.davisrubbercoinc.com/,R:REDIRECT_CROSS_DOMAIN,davisrubbercoinc.com -> davisrubberco.com,,round-1 lead
+ORG-004001,Lintech International LLC,Macon,GA,lintechinternational.com,R:REDIRECT_CROSS_DOMAIN,lintechinternational.com -> lintech.us,,round-1 lead
+ORG-004161,Boge Rubber & Plastics USA LLC,Hebron,KY,http://www.boge-rubber-plastics.com/,R:REDIRECT_CROSS_DOMAIN,boge-rubber-plastics.com -> boge.tech,,round-1 lead
+ORG-004274,"Petroleum Containment, Inc.",Jacksonville,FL,https://www.petroleumcontainment.com/,R:REDIRECT_CROSS_DOMAIN,petroleumcontainment.com -> petroleum-containment.com,,round-1 lead
+ORG-004364,Carstin Brands LLC,,,https://carstinbrands.com/,R:REDIRECT_CROSS_DOMAIN,carstinbrands.com -> wolfhomeproducts.com,,round-1 lead
+ORG-004570,Sanco Inc.,Dalton,GA,https://sancopolymers.com,R:REDIRECT_CROSS_DOMAIN,sancopolymers.com -> sancosystems.com,,round-1 lead
+ORG-004621,"National Composites, LLC",Troy,MI,https://www.national-composites.com/,R:NXDOMAIN,national-composites.com,,round-1 lead
+ORG-004072,"TEC Specialty Products, LLC",Aurora,IL,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004084,"Hearing Components, Inc.",Oakdale,MN,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-001974,Photo Tex Group Inc,Boardman,OH,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002209,"F Group Nano, LLC",Bellefonte,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002355,Asap Hydraulics Inc.,Gap,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002487,Mahantango Enterprises Inc.,Liverpool,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002687,Medical Precision Plastics,Warminster,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002726,Our Remedy LLC Dba Better Bungee,Zionsville,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004083,"Essential Industries, Inc.",Merton,WI,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
