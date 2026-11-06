@@ -66,16 +66,19 @@ An evidence-backed database of US polymer entities that supports PIC's members a
 - **Private sources never cross into this repo.** The PIC CRM, the faculty census and the vault are discovery leads
   at most. Prospect and outreach lists are internal and never committed.
 
-- **Approvals bind to the lane's data change, not to a commit** (applied to every merge of the 2026-11-06 campaign).
-  When the two family approvals sit on different heads, or a PR is replayed onto a moved `main`, the integrator merges
-  only if the lane's cell-level data delta (every cell the PR changes against its merge-base, plus new rows) is
-  identical across the approved heads and the head being merged, or the later delta is a strict subset of the
-  approved one with no shared cell edited (only refuted claims withdrawn). Anything else gets a targeted re-review.
+- **An approval carries forward only over an unchanged approved payload** (applied to the 2026-11-06 merges). When
+  the two family approvals sit on different heads, or a PR is replayed onto a moved `main`, the integrator merges
+  without new review only if (a) the lane's data delta is identical across the approved heads and the head being
+  merged — first compared row by row, later cell by cell (every cell the PR changes against its merge-base, plus new
+  rows) — or is a strict subset with only refuted claims withdrawn, and (b) nothing else changed between those heads
+  except receipts or main's own files. Any change to code, packets, reports or source meaning gets a targeted review,
+  even when the data delta is identical or empty (e.g. #137's guard cure at `8533b8e`).
 - **Replays onto a moved `main` use a normal merge.** `git merge origin/main`, take `main`'s copy of any conflicting
   `data/` file, re-run the lane's builder, re-run its checks. Never `git merge -s ours` with a partial restore: on
   2026-11-06 that kept a stale tree outside `data/` and deleted 312 files from `main` (#163, restored in #209).
-- **Every PR passes the row-loss guard** (`scripts/check_row_loss.py`, in CI since #130): no keyed data row, and no
-  tracked file outside `data/` (#210), may disappear unless a `REMOVALS.csv` added in the same change declares it.
+- **Every PR passes the row-loss guard** (`scripts/check_row_loss.py`, in CI since #130): no keyed data row may
+  disappear unless a `REMOVALS.csv` added in the same change declares it. The guard and its CI step were themselves
+  deleted by the #163 merge and restored by #209. Extending it to tracked files outside `data/` is pending in #210.
 - **An `own_site` evidence row states only what the cited page says.** Federal registrant names, registry ids, internal
   record ids and adjudication notes go on their own rows or in `notes`, never in an `own_site` `claim_detail`
   (Grok finding on #141, 2026-11-06).
