@@ -41,5 +41,5 @@ for name,oid in [('Plastipak Packaging, Inc.','ORG-001033'),('Advanced Drainage 
 rows=read(paths[0]);ids={r['site_id'] for r in alloc};strict=lambda r:r['operating_status'] in ['active','unknown'] and r['verification_tier'] in ['A','B','C'] and r['naics_primary'].startswith('326')
 after=sum(strict(r) for r in rows);before=sum(strict(r) for r in rows if r['site_id'] not in ids)
 assert before==68 and after==before
-result=dict(state=STATE,worked_clusters=N,creates_C=CREATES,evidence_rows=7*CREATES,known_answers=3,blind_census_size=CREATES,before_strict326=before,after_strict326=after,qcew2023_private_establishments326=797,strict_share_percent=100*after/797,delta=0)
+result=dict(state=STATE,worked_clusters=N,creates_C=CREATES,evidence_rows=7*CREATES+1,known_answers=3,blind_census_size=CREATES,before_strict326=before,after_strict326=after,qcew2023_private_establishments326=797,strict_share_percent=100*after/797,delta=0)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print('PASS',result)
