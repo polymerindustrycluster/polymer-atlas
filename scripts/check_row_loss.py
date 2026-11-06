@@ -79,16 +79,16 @@ def read_tree(ref):
 
 
 def declared_removals(ref):
-    """(table, key) pairs declared in any tasks/**/REMOVALS.csv at ref (or the working tree)."""
+    """{(manifest_path, table, key)} declared in tasks/**/REMOVALS.csv at ref (or the working tree)."""
     out = set()
     if ref is None:
-        texts = [p.read_text(encoding="utf-8") for p in (ROOT / "tasks").rglob("REMOVALS.csv")]
+        texts = [(str(p.relative_to(ROOT)), p.read_text(encoding="utf-8")) for p in (ROOT / "tasks").rglob("REMOVALS.csv")]
     else:
-        texts = [git("show", f"{ref}:{p}") for p in git("ls-tree", "-r", "--name-only", ref, "tasks/").split()
+        texts = [(p, git("show", f"{ref}:{p}")) for p in git("ls-tree", "-r", "--name-only", ref, "tasks/").split()
                  if p.endswith("/REMOVALS.csv")]
-    for text in texts:
+    for path, text in texts:
         for r in csv.DictReader(io.StringIO(text)):
-            out.add(((r.get("table") or "").strip(), (r.get("key") or "").strip()))
+            out.add((path, (r.get("table") or "").strip(), (r.get("key") or "").strip()))
     return out
 
 
@@ -108,7 +108,9 @@ def main():
     ap.add_argument("--head", help="git ref for the new side (default: the working tree)")
     a = ap.parse_args()
     base = git("merge-base", a.base, a.head or "HEAD").strip()
-    allowed = declared_removals(a.head) - declared_removals(base)  # only manifests added in this range count
+    # a declaration counts only if its (manifest file, table, key) row is new in this range: an untouched old manifest
+    # cannot authorize a later loss, but re-declaring a key in a new manifest file can
+    allowed = {(t, k) for _, t, k in declared_removals(a.head) - declared_removals(base)}
     lost = removed_keys(read_tree(base), read_tree(a.head), allowed)
     if not lost:
         print(f"row-loss guard: OK — no keyed row removed from data/ since {a.base} (merge-base {base[:10]})")
