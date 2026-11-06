@@ -1,0 +1,17 @@
+site_id,verdict,street_address,evidence_id,reason,availability
+SITE-000140,STILL_UNCERTAIN,2130 WEST 110TH ST,,notes street conflicts; dated address adjudication needed,
+SITE-000223,STILL_UNCERTAIN,,,need admissible site-keyed physical street witness; FRS unavailable and no qualifying inherited ITA,110071956419: FRS fetch failed: 22
+SITE-000251,STILL_UNCERTAIN,13555 MCCRACKEN ROAD,,FRS 110000815164: ZIP conflict/missing,
+SITE-000252,STILL_UNCERTAIN,25900 SOLON RD,,ITA city/ZIP conflict or missing,
+SITE-000273,STILL_UNCERTAIN,786 HARDY ROAD,,ITA city/ZIP conflict or missing,
+SITE-000288,STILL_UNCERTAIN,8333 NAVARRE RD SE,,FRS 110071956474: county conflict/missing,
+SITE-000376,STILL_UNCERTAIN,350 BRIDGE ST,,FRS 110025332913: county conflict/missing,
+SITE-000402,STILL_UNCERTAIN,1643 MASSILLON ROAD,,FRS 110071344621: city conflict,
+SITE-000412,STILL_UNCERTAIN,4001 BENEFIT AVE.,,ITA city/ZIP conflict or missing,
+SITE-000479,STILL_UNCERTAIN,4485 CRYSTAL PKWY,,notes street conflicts; dated address adjudication needed,
+SITE-000556,STILL_UNCERTAIN,3479 STATE RD,,FRS 110070070026: ZIP conflict/missing; ITA city/ZIP conflict or missing; notes street conflicts; dated address adjudication needed,
+SITE-000563,STILL_UNCERTAIN,6753 CHESTNUT RIDGE RD,,notes street conflicts; dated address adjudication needed,
+SITE-000589,STILL_UNCERTAIN,4321 GLENRIDGE ROAD,,ITA city/ZIP conflict or missing,
+SITE-000606,STILL_UNCERTAIN,5335 MAYFAIR RD,,FRS 110071018510: county conflict/missing,
+SITE-000650,STILL_UNCERTAIN,2101 9TH ST SW,,notes street conflicts; dated address adjudication needed,
+SITE-000653,STILL_UNCERTAIN,285 LENA DR,,FRS 110070791866: county conflict/missing,
