@@ -1,0 +1,50 @@
+{
+  "ohio-air": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "requested frame gated by route/terms; not sampled"
+  },
+  "ocs-blue": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "requested frame gated by route/terms; not sampled"
+  },
+  "caa-sb54": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "requested frame gated by route/terms; not sampled"
+  },
+  "nsf61": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "requested frame gated by route/terms; not sampled"
+  },
+  "pbr_keyword_fallback": {
+    "sampled": 20,
+    "verified_new": 0,
+    "yield_fraction": 0,
+    "wilson95": [
+      0,
+      0.161125
+    ],
+    "duplicate_sample_sites": 2,
+    "uncertain_sample_sites": 18,
+    "frame_facility_ids": 21,
+    "frame_unit_rows": 33,
+    "sample_exact_street_match_fraction": 0.1,
+    "sample_exact_street_match_wilson95": [
+      0.027866,
+      0.301034
+    ],
+    "frame_exact_street_matches": 2,
+    "frame_exact_street_match_fraction": 0.09523809523809523
+  }
+}
