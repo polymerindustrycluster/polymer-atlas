@@ -1,0 +1,18 @@
+council-ask: grok effort=deep -> model=grok-4.7 reasoning=xhigh
+REFUTE
+
+The census, ID lanes, tier-C-only creates, MAPEI-only alias, 140+1 evidence rows, 16/4 NAICS split, and 37→53 arithmetic are internally consistent. Inherited ITA use and provisional federal C are within the controller’s stated scope. These four creates are still wrong, and the builder/blind check let them through.
+
+1. **Jacuzzi, SITE-016005 / ITA 1494484 / ORG-004311 (LF-FL-00236).** `company_name` is Jacuzzi Brands LLC, but `establishment_name` is “Duel Named Insureds Roto Ops, LLC; LMI IP, LLC” and EIN is blank. Those are different legal entities on the establishment itself. Ownership is unresolved, so this row cannot be VERIFIED under Jacuzzi. The parent evidence line still records that establishment name and stamps `tier_effect=supports_C`.
+
+2. **American Vinyl, SITE-016014 / ITA 1440553 / ORG-007606 (LF-FL-00337).** Filer name is American Vinyl Company; establishment name is “Aurora Material Solutions - FLUS01PR”. That second corporate name is unresolved (no alias, no successor note). MAPEI got a registrant alias for a weaker name mismatch; this one was attached as a clean parent.
+
+3. **ISCO, SITE-016019 / ITA 958828 / ORG-000905 (LF-FL-00835).** The banked row is `reliability=review`, `size_code_vs_avg_employees=inconsistent` (size code 1 vs 24 employees), EIN blank, and industry text “Chemical toilets, plastics, manufacturing” on NAICS 326191. `build.py` never reads `reliability` or the size screen, and every evidence row is still `supports_C`.
+
+4. **CANTEX, SITE-016017 / ITA 1088099 / ORG-000259 (LF-FL-00582).** `ita_estabs_at_address=2` at 202 Progress Rd, Auburndale. The second establishment is not identified, held, or cited. The site is written from `fed[0]` only. ITA tokens are tested with `startswith('ITA:')` and no strip, so a `"; "`-separated extra ITA id is dropped before the same-street assert.
+
+5. **Sherwin-Williams, SITE-016001 / ITA 204465.** Street is stored as `2150 W Sandlake Rd, Orlando, FL 32809` while city and zip are also Orlando / 32809. Structured address fields are duplicated inside `street_address`. `street_key` equality then misses an existing row whose street is only `2150 W Sandlake Rd`.
+
+The 20/20 blind recheck only asserts company_name against legal/trade names plus street/NAICS/tier. It does not look at establishment_name, EIN, `reliability`, size consistency, or `ita_estabs_at_address`. `check.py` also does not assert the strict 326 numerator: “before” is a hand count of `sites_FL.csv` at bd57a08, “after” is `atlas_numerators(...)[1]`, and nothing checks before+16==after. Passing that script does not clear the five rows above.
+
+83 holds are unfinished research. Dart, Carpenter, and TSE staying on hold is consistent with that. The five verified rows are not.
