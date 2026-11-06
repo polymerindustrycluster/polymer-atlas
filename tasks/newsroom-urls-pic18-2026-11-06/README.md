@@ -55,3 +55,5 @@ Only current VERIFIED indexes listed;Keener removed. Samples have only pre-2024 
 | ORG-001937 Smetzer's Tire Center, Inc. | March 28, 2014 |
 
 Controller frame instruction: frozen9d69978 membership governs; rank was ordering only. Runtime rank/region guards removed; frozen772 census, current active status, exact canonical website, own publisher/domain and value-conflict preflight retained. Pretium ORG-000523 gained national_footprint tier1 on later main, but stays in this frozen PIC18 cohort under that instruction. No tier1 edits by L9. Current-main542629e replay originally stopped on that runtime guard before writing; after the controller-directed guard removal it applies the same38-page/11-feed packet.
+
+Latest integration replay pinned d1e618b06ae71588e80d117b042cf5c0308e0d50:all main organization shards restored+builder replayed;49 previously empty cells/38existing IDs/4shards,only2navigation fields,no row loss. Builder0,selfcheckPASS,validator0;researchpacket unchanged.
