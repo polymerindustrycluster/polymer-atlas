@@ -117,3 +117,9 @@ stopped before publication. Payloads now use stdlib zlib compression per row;
 lookups return the identical dictionaries. Existing plain-JSON cache indexes remain
 readable. Raw archives are retained. This is a storage correction, not a filter:
 all rows and fields remain, and the same count/known-answer gates apply.
+
+The official SEC ZIP contains one non-data member, `placeholder.txt`, whose exact
+bytes are `Placeholder file`. The importer explicitly validates and reports it in
+`auxiliary_members`; it is not a JSON issuer/history row. Every other member must
+match the CIK JSON grammar. `archive_members = row_count + len(auxiliary_members)`
+records the complete archive accounting; unknown files still fail the build.

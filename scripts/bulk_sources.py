@@ -106,6 +106,8 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
     tmp = Path(name)
     db = sqlite3.connect(tmp)
     count = indexed = historical = 0
+    auxiliary = []
+    archive_count = None
     try:
         db.execute('CREATE TABLE records (id TEXT, name TEXT, city TEXT, payload BLOB)')
         def add(key, label, city, row):
@@ -125,7 +127,13 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
                 members = [m for m in z.namelist() if not m.endswith('/')]
                 if len(members) != len(set(members)):
                     raise ValueError('duplicate archive members')
+                archive_count = len(members)
                 if source == 'sec':
+                    if 'placeholder.txt' in members:
+                        if z.read('placeholder.txt') != b'Placeholder file':
+                            raise ValueError('unexpected SEC placeholder contents')
+                        auxiliary.append('placeholder.txt')
+                        members.remove('placeholder.txt')
                     if not members or any(not re.fullmatch(r'CIK\d{10}(?:-submissions-\d+)?\.json', m) for m in members):
                         raise ValueError('unexpected SEC archive member')
                     for m in members:
@@ -171,7 +179,8 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
         if db.execute('SELECT count(*) FROM records').fetchone()[0] != indexed:
             raise ValueError('SQLite row count mismatch')
         metadata.update(row_count=count, indexed_rows=indexed, historical_members=historical,
-                        independent_count=independent, published_count=expected_count)
+                        independent_count=independent, published_count=expected_count,
+                        archive_members=archive_count, auxiliary_members=auxiliary)
         db.execute('CREATE TABLE manifest (json TEXT NOT NULL)')
         db.execute('INSERT INTO manifest VALUES (?)', (json.dumps(metadata),))
         db.commit()

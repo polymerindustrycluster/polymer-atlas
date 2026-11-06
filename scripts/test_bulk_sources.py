@@ -61,8 +61,11 @@ class BulkTests(unittest.TestCase):
         members = {'CIK' + str(cik).zfill(10) + '.json': json.dumps(dict(cik=cik, name=name, tickers=[ticker], filings={}))
                    for cik, name, ticker in rows}
         members['CIK0000320193-submissions-001.json'] = json.dumps({'accessionNumber': ['1']})
+        members['placeholder.txt'] = 'Placeholder file'
         path = self.archive('sec.zip', members)
-        b.index_file('sec', path, self.cache, expected_count=4)
+        meta = b.index_file('sec', path, self.cache, expected_count=4)
+        self.assertEqual(meta['archive_members'], 5)
+        self.assertEqual(meta['auxiliary_members'], ['placeholder.txt'])
         ticks = self.cache / 'tickers.json'
         ticks.write_text(json.dumps({str(i): dict(cik_str=cik, title=name, ticker=ticker)
                                     for i, (cik, name, ticker) in enumerate(rows)}))

@@ -22,6 +22,8 @@ def check(cache):
         assert b.sha256(raw) == meta['sha256'], source + ' SHA mismatch'
         assert indexed == meta['indexed_rows'], source + ' index yield mismatch'
         assert indexed + meta['historical_members'] == meta['row_count'] == meta['independent_count']
+        if meta.get('archive_members') is not None:
+            assert meta['archive_members'] == meta['row_count'] + len(meta['auxiliary_members'])
         if meta['published_count'] is not None:
             assert meta['row_count'] == meta['published_count']
         counts[source] = meta['row_count']
