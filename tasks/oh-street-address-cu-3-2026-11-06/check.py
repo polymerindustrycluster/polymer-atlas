@@ -23,7 +23,7 @@ def main():
  assert all(r['bulk_transcription']=='PASS' and not r['error'] for r in audit if r['site_id'] in {e['record_id'] for e in ev})
 
  assert build.note_streets(dict(city='South Euclid',notes='Street (per Grok): 4321 Glenridge Road. county UNVERIFIED — Grok county_check=TRUE'))==['4321 Glenridge Road']
- assert len(ev)==7,'frozen bulk-source yield changed; inspect before revising'
+ assert len(ev)==6,'frozen bulk-source yield changed; inspect before revising'
  assert len(build.read(build.TASK/'bulk_known.csv'))==3
  import json,re,subprocess,csv
  original=list(csv.DictReader(subprocess.check_output(['git','show','a9af228:tasks/oh-street-address-cu-2026-11-06/frame.csv'],text=True).splitlines()))
@@ -36,10 +36,17 @@ def main():
   assert 'retrieval date not address-effective date' in e['notes'] and re.search(r'REGISTRY_ID \d{12};',e['notes'])
  for sid in ('SITE-000184','SITE-000185','SITE-000205','SITE-000234','SITE-000256','SITE-000282','SITE-000297','SITE-000309','SITE-000333','SITE-000355','SITE-000360','SITE-000387','SITE-000393','SITE-000414','SITE-000427'):
   assert next(v for v in verdicts if v['site_id']==sid)['verdict']=='STILL_UNCERTAIN',sid
+ clark=next(r for r in selected if r['site_id']=='SITE-000197')
+ assert build.address_warning(clark),'actual Clark deferred-address warning missed'
+ assert next(v for v in verdicts if v['site_id']=='SITE-000197')['verdict']=='STILL_UNCERTAIN'
+ assert build.address_warning(dict(notes='See org note for address.',held_org_notes='ADDRESS DISCREPANCY: alternatives; resolve at verification.'))
+ assert not build.address_warning(dict(notes='NAICS codes conflict; Street: 123 Main Road.',held_org_notes=''))
  expected=len(ev)
  with tempfile.TemporaryDirectory() as tmp:
   build.ROOT=Path(tmp);(build.ROOT/'data').mkdir()
   for p in (root/'data').glob('evidence_*.csv'):shutil.copyfile(p,build.ROOT/'data'/p.name)
+  for p in (root/'data').glob('organizations_*.csv'):shutil.copyfile(p,build.ROOT/'data'/p.name)
+  shutil.copyfile(root/'data/ecosystem.csv',build.ROOT/'data/ecosystem.csv')
   for name in ('sites_OH.csv','registry_links.csv'):shutil.copyfile(root/'data'/name,build.ROOT/'data'/name)
   for name in ('establishments.csv','site_matches.csv'):
    p=build.ROOT/'tasks/osha-ita-2026-11-01'/name;p.parent.mkdir(parents=True,exist_ok=True)
@@ -61,6 +68,15 @@ def main():
   paths=list((build.ROOT/'data').glob('*.csv'));hashes={p.name:digest(p) for p in paths}
   with contextlib.redirect_stdout(io.StringIO()):build.run(apply=True)
   assert hashes=={p.name:digest(p) for p in paths},'not byte-idempotent'
+  saved_warning=build.address_warning;saved_read=build.read
+  build.address_warning=lambda *args:False
+  build.read=lambda p:[] if Path(p).name=='retired_ids.csv' else saved_read(p)
+  try:
+   with contextlib.redirect_stdout(io.StringIO()):build.run(apply=True)
+  except AssertionError:pass
+  else:raise AssertionError('original Clark admission defect bypassed frozen subset')
+  finally:build.address_warning=saved_warning;build.read=saved_read
+  assert hashes=={p.name:digest(p) for p in paths},'writes happened before Clark defect rejection'
   target=changed[0]
   for field,value in [('street_address','999 WRONG ROAD'),('zip','00000'),('verification_tier','A'),('operating_status','closed')]:
    original=target[field];target[field]=value;build.write(build.ROOT/'data/sites_OH.csv',after)
@@ -72,7 +88,8 @@ def main():
    assert hashes=={p.name:digest(p) for p in paths},'canonical write before drift refusal'
    target[field]=original;build.write(build.ROOT/'data/sites_OH.csv',after)
   foreign=build.ROOT/'data/evidence_sites_ZZ.csv'
-  for foreign_row in (ev[-1],):
+  retired_row=dict(ev[-1],evidence_id='EVD-153109')
+  for foreign_row in (ev[-1],retired_row):
    build.write(foreign,[foreign_row])
    paths=list((build.ROOT/'data').glob('*.csv'));hashes={p.name:digest(p) for p in paths}
    try:

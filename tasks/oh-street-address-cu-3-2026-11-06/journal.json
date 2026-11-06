@@ -4,10 +4,10 @@
   "selected": 100,
   "future_unworked": 579,
   "selection": "next100 frozen indices101\u2013217 excluding prior140",
-  "fills": 7,
-  "holds": 93,
+  "fills": 6,
+  "holds": 94,
   "tiers": {
-    "C": 6,
+    "C": 5,
     "U": 1
   },
   "source_class": "registry",
@@ -22,17 +22,10 @@
   "initial_rest_ok": 10,
   "active_ohio_sites": 1883,
   "before_streets": 415,
-  "after_streets": 422,
+  "after_streets": 421,
   "site_changes": [
     {
       "site_id": "SITE-000195",
-      "changed_fields": [
-        "sources",
-        "street_address"
-      ]
-    },
-    {
-      "site_id": "SITE-000197",
       "changed_fields": [
         "sources",
         "street_address"
@@ -76,7 +69,6 @@
   ],
   "evidence_ids": [
     "EVD-153108",
-    "EVD-153109",
     "EVD-153112",
     "EVD-153126",
     "EVD-153179",
@@ -86,5 +78,11 @@
   "canonical_hashes": {
     "sites_OH.csv": "a053937f800554082b6c0f9d19129da77f3b0cc3cf068b69bb7fde2cbd5af689",
     "evidence_sites_OH.csv": "4572d072c0040f9bfc42e1ae01468aec4f6e7e6ce3563f8491bbaf53494b1971"
-  }
+  },
+  "replayed_main": "c909f6bb855f2044f963a1165c3a8703d33031b0",
+  "retired_ids": [
+    "EVD-153109"
+  ],
+  "strict_subset_of": "cfa528e12a2fded3d644fa0f7a0da9b6ce2b5582",
+  "remaining_authored_values_identical": true
 }

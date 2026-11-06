@@ -17,6 +17,10 @@ def note_streets(s):
  m=re.search(r'(?i)\bstreet(?:\s*\([^)]*\))?:\s*(.+)',s['notes'])
  if m:out.append(re.split(r'\.\s+(?=PASS|BAND|CERT|Ring|INTEGRATION|Parcel|Re-pointed|NAICS|Source|(?i:county UNVERIFIED)|\[)',m[1])[0].rstrip('. '))
  return out
+def address_warning(s,org_note=None):
+ text=s['notes']
+ if re.search(r'(?i)\bsee (?:the )?(?:org|organization|parent) note',text):text+=' '+(org_note if org_note is not None else s.get('held_org_notes',''))
+ return bool(re.search(r'(?i)(?:street|address)[^.\\n]{0,120}(?:not staged|withheld|discrepancy|unresolved|sources conflict)|(?:unresolved|conflicting) (?:street|address)',text))
 def plan():
  frame=read(TASK/'frame.csv');selected=[s for s in frame if s['selected']=='yes'];links=read(TASK/'bulk_bindings.csv');ids={s['site_id'] for s in selected}
  assert len(frame)==len({s['site_id'] for s in frame})==819
@@ -34,8 +38,10 @@ def plan():
  existing=[e for e in read(ROOT/'data/evidence_sites_OH.csv') if e['record_id'] in ids and e['claim_type']=='address' and e['created_by']!='atlas-L2-oh-address-cu-2']
  assert not existing,'new held address evidence needs priority/adjudication before this frozen pass'
  ev=[];verdicts=[];transcription=[];canonical=read(ROOT/'data/sites_OH.csv')
+ parents={r['org_id']:r for p in (ROOT/'data').glob('organizations_*.csv') for r in read(p)};parents.update({r['org_id']:r for r in read(ROOT/'data/ecosystem.csv')})
  for s in selected:
   sid=s['site_id'];why=[];candidates=[];unavailable=[]
+  if address_warning(s,parents[s['org_id']]['notes']):why.append('explicit unresolved street/address warning including referenced org note; documented reconciliation required')
   peers=[r for r in canonical if r['site_id']!=sid and r['org_id']==s['org_id'] and r['operating_status']=='active' and frs.norm(r['city'])==frs.norm(s['city']) and (not r['zip'] or not s['zip'] or r['zip'][:5]==s['zip'][:5])]
   for link in [r for r in links if r['site_id']==sid]:
    rid=link['registry_id'];row=fetches[rid]
@@ -72,7 +78,7 @@ def plan():
   street=candidates[0]['street'] if candidates else ''
   # shortcut: written ordinals/dotted diagonals remain distinct; adjudicate held aliases before widening matching.
   if candidates and any(frs.streetkey(n)!=frs.streetkey(street) for n in note_streets(s)):why.append('notes street conflicts; dated address adjudication needed')
-  if sid in {r['site_id'] for r in read(TASK/'retired_ids.csv')}:why.append('cited FRS audit source unavailable after bounded retry; successful fresh recheck required')
+  if sid in {r['site_id'] for r in read(TASK/'retired_ids.csv')}:why.append('retired proposal requires documented address/source reconciliation')
   if not candidates:why.append('need admissible physical street witness; no qualifying federal route or source unavailable')
   why=list(dict.fromkeys(why))
   v=dict(site_id=sid,verdict='STILL_UNCERTAIN' if why else 'VERIFIED',street_address=street,evidence_id='' if why else s['reserved_evidence_id'],reason='; '.join(why),availability='; '.join(unavailable))
@@ -85,7 +91,7 @@ def plan():
  assert len(verdicts)==len({v['site_id'] for v in verdicts})==100
  return selected,links,verdicts,ev,transcription
 def run(apply=False):
- selected,links,verdicts,ev,transcription=plan();assert len(ev)==7,'frozen adjudication yield changed before writes'
+ selected,links,verdicts,ev,transcription=plan();assert len(ev)==6,'frozen adjudication yield changed before writes'
  sites=read(ROOT/'data/sites_OH.csv');byid={s['site_id']:s for s in sites};frozen={s['site_id']:s for s in selected};eb={e['record_id']:e for e in ev}
  live_links={(r['org_id'],r['registry_id'],r['site_id']) for r in read(ROOT/'data/registry_links.csv') if r['registry']=='FRS'}
  assert all((r['org_id'],r['registry_id'],r['site_id']) in live_links for r in read(TASK/'registry_links_input.csv')),'main link no longer held'
