@@ -1,0 +1,35 @@
+org_id,legal_name,hq_city,hq_state,website,lead_types,detail,buyer_names,source
+ORG-001940,Synthetic Rubber Technologies,Uniontown,OH,https://srtpolymers.com,R:NXDOMAIN,srtpolymers.com,,round-1 lead
+ORG-002013,Southern Adhesives & Coatings Inc,Cincinnati,OH,southernadhesivesandcoatings.com,R:REDIRECT_CROSS_DOMAIN,southernadhesivesandcoatings.com -> kodiakchemical.com,,round-1 lead
+ORG-002040,"StockPKG, Inc. (StockPKG Films), successor operator of United Converting, Inc.",Columbus,OH,https://unitedconvertinginc.com,R:REDIRECT_CROSS_DOMAIN,unitedconvertinginc.com -> stockpkgfilms.com,,round-1 lead
+ORG-002078,"ZeoVation, Inc.",Columbus,OH,https://zeovation.com,R:NXDOMAIN,zeovation.com,,round-1 lead
+ORG-002171,ULTIMATE RB,Delphos,OH,ultimaterb.com,R:NXDOMAIN,ultimaterb.com,,round-1 lead
+ORG-002312,"North Coast Plastics, Inc.",Erie,PA,northcoastplastics.com,R:REDIRECT_CROSS_DOMAIN,northcoastplastics.com -> northcoastpoly.com,,round-1 lead
+ORG-002632,Hydrojet Services Inc.,Reading,PA,https://hydrojet.com/,R:PARKED_SUSPECT,hydrojet.com -> hydrojet.com,,round-1 lead
+ORG-002877,The AZEK Company Inc.,Chicago,IL,https://www.azekco.com,R:REDIRECT_CROSS_DOMAIN,azekco.com -> jameshardie.com,,round-1 lead
+ORG-002954,"Magris Talc USA, Inc.",Three Forks,MT,https://magristalc.com,R:REDIRECT_CROSS_DOMAIN,magristalc.com -> magrispm.com,,round-1 lead
+ORG-003056,"Kuraray America, Inc.",Houston,TX,https://www.kuraray.us.com,R:REDIRECT_CROSS_DOMAIN,kuraray.us.com -> kuraray.com,,round-1 lead
+ORG-003167,UPM Raflatac Inc.,Mills River,NC,https://www.upmraflatac.com,R:REDIRECT_CROSS_DOMAIN,upmraflatac.com -> adhesivematerials.upm.com,,round-1 lead
+ORG-003328,Marine Concepts,Cape Coral,FL,http://www.marineconcepts.com,R:NXDOMAIN,marineconcepts.com,,round-1 lead
+ORG-003369,Seda North America,Mount Pleasant,WI,https://sedapackaging.com,R:REDIRECT_CROSS_DOMAIN,sedapackaging.com -> sedagroup.com,,round-1 lead
+ORG-003415,"SIGMA Plastic Services, Inc.",Schaumburg,IL,https://sigmasoftvm.com,R:REDIRECT_CROSS_DOMAIN,sigmasoftvm.com -> sigmasoft.de,,round-1 lead
+ORG-003486,Republic Bag Inc,Corona,CA,https://www.republicbag.com,R:REDIRECT_CROSS_DOMAIN,republicbag.com -> sigmacommercialbag.com,,round-1 lead
+ORG-003564,Polytex Fibers LLC,Houston,TX,https://www.polytex.com/,R:REDIRECT_CROSS_DOMAIN,polytex.com -> fivestar.com,,round-1 lead
+ORG-003671,Revolv Manufacturing,Baxter,MN,revolvmanufacturing.com,R:REDIRECT_CROSS_DOMAIN,revolvmanufacturing.com -> revolvmfg.com,,round-1 lead
+ORG-003754,"Technical Fibre Products, Inc.",Rotterdam,NY,http://www.tfpglobal.com,R:REDIRECT_CROSS_DOMAIN,tfpglobal.com -> advancedmaterials.jamescropper.com,,round-1 lead
+ORG-003908,"CyCan Industries, Inc.",Woodstock,GA,http://cycanindustries.com,R:REDIRECT_CROSS_DOMAIN,cycanindustries.com -> cycanspray.com,,round-1 lead
+ORG-004045,"Fiber-Tech, Inc.",Franksville,WI,https://fiber-techinc.com/,R:PARKED_SUSPECT,fiber-techinc.com -> fiber-techinc.com,,round-1 lead
+ORG-004230,NuSil Technology LLC,Carpinteria,CA,avantor.com,R:REDIRECT_CROSS_DOMAIN,avantor.com -> avantor.no,,round-1 lead
+ORG-004333,Accent Marble Inc.,London,KY,http://accentmanufacturing.com,R:NXDOMAIN,accentmanufacturing.com,,round-1 lead
+ORG-004458,New Boston RTM Inc.,New Boston,MI,http://www.newbostonrtm.com/,R:REDIRECT_CROSS_DOMAIN,newbostonrtm.com -> newbostonrtm-com.l.ink,,round-1 lead
+ORG-004581,Aurora Specialty Chemistries,Lansing,MI,https://auroraspchm.com,R:REDIRECT_CROSS_DOMAIN,auroraspchm.com -> auroraspecialtychemistries.com,,round-1 lead
+ORG-004079,"Advanced Adhesive Systems, Inc.",Newington,CT,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004065,"Mid-States Rubber Products, Inc.",Princeton,IN,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004067,"Seemann Composites, LLC",Gulfport,MS,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-001980,"TROESTER Machinery, Ltd.",Cuyahoga Falls,OH,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002234,Pandalai Coating Company,Brackenridge,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002371,Wabtec Rubber Products,Greensburg,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002588,"Fluoro Plastics, Inc.",Philadelphia,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002690,Whirley Industries Harmar Street,Warren,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002729,Ensinger Inc,Washington,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004069,Y-TEX Corporation,Cody,WY,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website

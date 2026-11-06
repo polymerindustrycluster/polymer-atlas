@@ -1,0 +1,35 @@
+org_id,legal_name,hq_city,hq_state,website,lead_types,detail,buyer_names,source
+ORG-001945,"Vinyl Profiles, LLC (Vinyl Profiles Inc)",North Jackson,OH,https://vinylprofilesinc.com,R:NXDOMAIN,vinylprofilesinc.com,,round-1 lead
+ORG-002020,The Electro Prime Group LLC,Toledo,OH,electroprime.com,R:REDIRECT_CROSS_DOMAIN,electroprime.com -> beacon-industries.com,,round-1 lead
+ORG-002051,"SEAWAY PATTERN MANUFACTURING, INC.",Toledo,OH,seawaypatterninc.com,R:NXDOMAIN,seawaypatterninc.com,,round-1 lead
+ORG-002133,VINYL TOOL & DIE,Youngstown,OH,https://vinyltoolanddie.com,R:NXDOMAIN,vinyltoolanddie.com,,round-1 lead
+ORG-002194,Superior Transparent Noise Barriers LLC,Ardmore,PA,https://www.superiortnb.com/,R:REDIRECT_CROSS_DOMAIN,superiortnb.com -> ekhois.com,,round-1 lead
+ORG-002334,United Plastics Machinery LLC,Exton,PA,https://unitedplasticsmachine.com,R:NXDOMAIN,unitedplasticsmachine.com,,round-1 lead
+ORG-002712,Fay L Wagner Inc.,Yeagertown,PA,faywagnertire.com,R:NXDOMAIN,faywagnertire.com,,round-1 lead
+ORG-002886,"CSW Industrials, Inc.",Dallas,TX,https://www.cswindustrials.com,R:REDIRECT_CROSS_DOMAIN,cswindustrials.com -> csw.com,,round-1 lead
+ORG-002992,CHT USA,Cassopolis,MI,https://www.cht-silicones.com/,R:REDIRECT_CROSS_DOMAIN,cht-silicones.com -> solutions.cht.com,,round-1 lead
+ORG-003058,MIKI SANGYO (USA) INC.,Parsippany,NJ,https://www.mikisangyo.com/,R:REDIRECT_CROSS_DOMAIN,mikisangyo.com -> mikisangyo.co.jp,,round-1 lead
+ORG-003186,Shintech Inc.,Houston,TX,http://www.shintechinc.com/,R:REDIRECT_CROSS_DOMAIN,shintechinc.com -> shintech.com,,round-1 lead
+ORG-003329,"Marshall Composite Technologies, LLC",Salem,OR,http://www.marshallcomposite.com/,R:NXDOMAIN,marshallcomposite.com,,round-1 lead
+ORG-003373,Alliance Specialties and Laser Sales,Wauconda,IL,https://alliancelasersales.com,R:REDIRECT_CROSS_DOMAIN,alliancelasersales.com -> alliancesls.com,,round-1 lead
+ORG-003430,Hudson-Sharp Machine Company,Green Bay,WI,https://www.hudsonsharp.com,R:REDIRECT_CROSS_DOMAIN,hudsonsharp.com -> bwconverting.com,,round-1 lead
+ORG-003502,Memphis Record Pressing LLC,Bartlett,TN,https://memphisvinyl.com,R:REDIRECT_CROSS_DOMAIN,memphisvinyl.com -> memphisrecordpressing.com,,round-1 lead
+ORG-003572,StarPak Ltd,Houston,TX,https://starpakltd.com/,R:REDIRECT_CROSS_DOMAIN,starpakltd.com -> fivestar.com,,round-1 lead
+ORG-003701,Hennecke Inc.,Bridgeville,PA,http://www.henneckeinc.com/,R:REDIRECT_CROSS_DOMAIN,henneckeinc.com -> hennecke.com,,round-1 lead
+ORG-003790,ECON Inc.,Monroe,MI,https://www.econ-us.com,R:REDIRECT_CROSS_DOMAIN,econ-us.com -> econ.eu,,round-1 lead
+ORG-003979,TPC Group Inc.,Houston,TX,https://www.tpcgroup.com,R:REDIRECT_CROSS_DOMAIN,tpcgroup.com -> tpcgrp.com,,round-1 lead
+ORG-004073,"The Hanson Group, LLC",Norcross,GA,http://www.hansonco.net/,R:REDIRECT_CROSS_DOMAIN,hansonco.net -> thehansongroup.com,,round-1 lead
+ORG-004252,Carlstar Group LLC,Franklin,TN,https://www.carlstargroup.com/,R:REDIRECT_CROSS_DOMAIN,carlstargroup.com -> carlstar.com,,round-1 lead
+ORG-004337,Advance Energy Technologies Inc.,Clifton Park,NY,http://www.advanceet.com/,R:REDIRECT_CROSS_DOMAIN,advanceet.com -> thesnapshotpeople.com,,round-1 lead
+ORG-004460,Newlett Inc,Elkhart,IN,https://gemstoness.com/,R:REDIRECT_CROSS_DOMAIN,gemstoness.com -> gemstonesinks.com,,round-1 lead
+ORG-004604,Florikan E.S.A. LLC,Sarasota,FL,https://www.florikan.com/,R:REDIRECT_CROSS_DOMAIN,florikan.com -> profileproducts.com,,round-1 lead
+ORG-004082,Adhesives Technology Corporation,Pompano Beach,FL,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004076,"Janco Engineered Products, LLC",Mishawaka,IN,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004085,"Piedmont Composites & Tooling, LLC",Taylorsville,NC,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-001989,"Plastikos Corporation dba Multi-Form Plastics, Inc.",Batavia,OH,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002249,National Rubber Corporation,Canonsburg,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002400,"Thoren Caging Systems, Inc.",Hazleton,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002596,"Siltco Industries, Inc.",Philadelphia,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002692,Magee Plastics Company,Warrendale,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-004063,Kyowa America Corporation,Portland,TN,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
+ORG-002203,Hpe Extrusion Solutions,Bally,PA,,H:website_cleared,website field cleared as not the org's own site (#122/#126); notes keep the old value,,cleared website
