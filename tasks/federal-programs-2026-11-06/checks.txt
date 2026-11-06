@@ -1,6 +1,5 @@
-PASS cross-shard org_id collision refused before any write
-PASS cross-shard evidence_id collision refused before any write
-PASS missing typed evidence refused before any write
-RAW PASS https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1400+Rosa+Parks+Boulevard+Detroit+MI+48216&benchmark=Public_AR_Current&vintage=Current_Current&format=json
-PASS fabricated evidence quote refuses; all CSVs unchanged
-PASS census12/12;1Cecosystem+5EVD exact main delta; all main rows preserved; all-CSV replay byte-identical
+Traceback (most recent call last):
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/tasks/federal-programs-2026-11-06/check.py", line 28, in <module>
+    assert changed == {"data/ecosystem.csv", "data/evidence_ecosystem.csv"}, changed
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'data/evidence_organizations_OH.csv', 'data/ecosystem.csv', 'data/sites_MI.csv', 'data/evidence_ecosystem.csv', 'data/organizations_OH.csv', 'data/evidence_sites_MI.csv'}
