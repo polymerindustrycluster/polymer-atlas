@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000031235.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000031235",
+  "name": "EASTMAN KODAK CO",
+  "tickers": [
+    "KODK"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "9abccb5f067fd687f5f8fbd91a0ca38c0c794bd1d4d594eaf8acde3506745442",
+  "raw_name_token": "\"EASTMAN KODAK CO\""
+}

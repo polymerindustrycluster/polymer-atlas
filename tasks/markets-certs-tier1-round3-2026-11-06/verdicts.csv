@@ -1,0 +1,101 @@
+org_id,verdict,detail
+ORG-000464,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000481,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000495,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000519,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000521,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000551,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000567,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000612,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000618,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000631,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000637,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000698,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000751,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000752,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000798,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000823,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000851,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000868,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000870,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000947,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000999,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001048,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001116,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001328,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-001382,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001385,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001392,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001409,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-001426,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-001441,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-001447,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-001453,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-001454,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001470,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-001472,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001490,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001549,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001550,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001631,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001678,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001716,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-001724,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001921,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-002079,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-002080,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-002157,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-002168,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-002174,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002544,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-003101,STILL_UNCERTAIN,No canonical website available. Need an independently public own-site witness matched to this held entity before adding market/cert values; website field is outside lane scope.
+ORG-000566,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000642,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000655,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000720,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-000729,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000743,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000756,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000757,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000761,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000763,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000768,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000781,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000785,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000788,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000793,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000805,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000806,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000821,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000846,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-000877,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000878,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000894,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000903,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-000907,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-000925,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000938,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000958,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000973,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-000975,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-000987,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001003,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001022,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001029,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001043,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-001075,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-001077,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001080,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-001087,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001090,STILL_UNCERTAIN,"Reviewed own home page does not establish a precise controlled end-market/certification value at this entity grain. Need an explicit entity-scoped industries/quality statement, not generic product possibilities."
+ORG-001093,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001094,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001117,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001119,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001122,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001129,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001130,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001136,STILL_UNCERTAIN,"Own domain exposes group/parent/business-wide information, insufficient to attribute its market/certificate union to this named subsidiary or facility. Need explicit held-entity linkage plus entity-scoped served-market/current certificate witness; no parent/status/website change made."
+ORG-001137,STILL_UNCERTAIN,Own-site direct/fallback retrieval unavailable or challenge-only. Need a retrievable own-site industries/quality witness; no inference of absence or closure.
+ORG-001149,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001166,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."

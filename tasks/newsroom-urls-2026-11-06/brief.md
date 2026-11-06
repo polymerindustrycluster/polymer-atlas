@@ -1,0 +1,486 @@
+FINAL v4 PR145 rerefute:115pages+41feeds=156emptycells,934holds,1049 canonical-source IDs. Kaneka held; six omissions fetched;9 corrected routes rechecked; canonical9d69978 census+injected historical omission fail; hold/stale prose fixed; query-slash defect fixed in redirect AND feed item URL comparison with negative tests;45s bounded fetch cap addresses known32s-valid feed. No status/tier/ownership fields changed. Full code/accepted URLs below.
+# L9 newsroom navigation — Tier-1, 2026-11-06
+
+Claim atlas-L9-newsroom; branch agent/codex/newsroom-urls, PR145. Controller delegated application of newsroom_url/newsroom_feed_url. First user: existing news-monitor operator (L8/controller), usable after merge; no new operator system.
+
+## Scope and provenance
+
+Controller ruling superseded initial100-org proposal: first pass attempts all active organizations with tier1_qualifier nonempty and website, column as-is despite pending derivation. **Named canonical source snapshot9d69978:1261 active tier1 organizations,1049 with website,212 without.** All1049 IDs and canonical website values exactly equal inputs.csv. Nine existing canonical routes changed and six previously website-blank tier1 records gained websites after initial snapshot: all15 routes re-fetched; superseded-route-attempts.json preserves the9 old route histories. Each current canonical-route discovery <=6 requests; new canonical evidence justified reopening those route holds. No six-record omission remains.
+
+Six added input IDs: ORG-004065,004069,004079,004083,004084,004085. Each attempted and STILL_UNCERTAIN; no absence or closure asserted. No website supplied for212 source-snapshot tier1 organizations, outside fetch frame. PIC18 non-tier1 and other classes are separate PR152/169, not part of this pass. Source manifest is frozen at9d69978; later parallel creates are outside it. Current accepted-row eligibility and website assertions still run on fresh main.
+
+Primary sources: each canonical own website and directly linked news/press/announcements index; exact routes/statuses in discovery.json, text date samples in audit.json, one disposition/input in verdicts.csv. Navigation aids under SCHEMA4.4/v1.11/V-58 require no EVD, never evidence themselves; EVD230000–239999 unused. No new records/dedupe/ID allocation/inclusion decisions. No status,tier,liveness,registry,derived,LinkedIn or evidence fields authored.
+
+## Acceptance and repeatable checks
+
+Hold homepage redirects,parent/division/publisher mismatches,tag/template/post uncertainty and unavailable routes. Accept reachable own-domain organization-specific news indexes; final URL must remain stored path (trailing slash tolerated). Feed must parse RSS/Atom with >=1 article entry and link an article also linked from selected index. Channel/feed metadata and comments never establish overlap. Builder preflights all shards and refuses conflicting cells,website/scope changes,off-domain/comment URLs before writes. Re-fetch first asserts current canonical data equals packet and eligibility remains active/tier1.
+
+```
+python3 tasks/newsroom-urls-2026-11-06/self_check.py --live
+python3 tasks/newsroom-urls-2026-11-06/build.py
+python3 tasks/newsroom-urls-2026-11-06/check.py
+python3 scripts/validate.py
+```
+
+Calibration:3 fresh known-answer discoveries (Avient/RPM/GEON) PASS. Default self_check checks saved calibration; --live actually re-fetches. Injected403,off-domain,emptyfeed,channel-home false match,comments and same-domain homepage redirects all rejected. **New coverage gate recomputes all4945 canonical organization rows at immutable9d69978,1261/1049/212 counts,exact eligible IDs and canonical website values; injected historical six-ID omission fails this gate.** Packet reconciliation alone is not claimed as canonical coverage.
+
+## Final counts and holds
+
+Unit/filter: active organizations in frozen priority cohort. Attempted tier1=1049,PIC18 non-tier1=0,other=0. **115 tier1 organizations:115 newsroom pages+41 feeds=156 previously empty cells,28 organization shards.** Other class fills0. Existing tiers unchanged:A=36,B=72,C=6,U=1.934 organization holds:701 no bounded-nav candidate,233 candidate identity/purpose/accessibility.20 overlapping feed-only holds. No inclusion_log changes.
+
+| Hold class | Active organizations | Still needed before a fill |
+|---|---:|---|
+| No bounded-nav candidate |701|Still need a reachable own-domain newsroom index; none confirmed by this bounded route|
+| Candidate identity/purpose/accessibility |233|Still need organization-specific maintained index/publisher confirmation; held candidate URL is in verdicts.csv|
+| Feed-only, overlaps accepted orgs |20|Still need dedicated article feed/overlap confirmation; page retained, feed empty|
+
+Specific holds: Oregon Rubber Mills004556 template placeholder; Duraco004418 tag archive; Mississippi004620 index purpose; Thorpe004287 canonical identity; Proviron004605 global feed for regional index; Kaneka003079 holding-company newsroom; BOGE004161 global German index and AP Nonweiler004606 platform publisher. None is self-ruled as a scope/identity change.
+
+Kaneka own /kaneka-americas/our-company/ explicitly distinguishes North America as a subsidiary of Americas Holding. Holding-company /kaneka-americas/newsroom/ is therefore held under SCHEMA4.4 parent bar; no ownership repair made. PCI004274's own home page explicitly identifies Petroleum Containment Inc (PCI); its index accepted,root feed held for no article overlap. Shintech003186's corrected own-site index accepted. These are the only two additions after v3; Kaneka removed.
+
+## Checks and review response
+
+Final re-fetch: **PASS115 active organizations;156 URLs,all HTTP200 and feeds nonempty**,same path/domain and article-item overlap; refetch.json lists all outcomes. Build repeat0cells/0shards. Validator0errors,V-58 clean. Current-main field-boundary proof156 emptycells/115 existing IDs/only two target columns. Core suite earlier221 tests OK(1 skipped),scripts/ untouched. Branch history is pre-pass backup; README pass journal.
+
+Codex and Grok original deep v1 REFUTE: channel/feed metadata falsely counted as article overlap,Synray comments feed; fixed and defect-injected. Additional Grok same-domain redirect and four ambiguous index/identity holds applied. v3 was114pages+41feeds=155cells and1043 stale input IDs; superseded by this packet.
+
+Codex clerk1 FINALv3 REFUTE: Kaneka parent publisher and missing six source-snapshot IDs. Both substantiated independently; Kaneka held,six fetched,all9 changed routes refreshed,immutable canonical census plus historical-defect injection added.
+
+Grok clerks1/3 FINALv3 REFUTE: same frame gap,Kaneka parent (clerk1),hold-table ambiguity and stale-table contradiction. Fixed: hold table now explicitly states what is still needed,not that held indexes were confirmed; staleness table below lists **only current VERIFIED indexes**,all held rows removed. Final corrected two-family rereviews pending; no Done claim.
+
+Latest integration replay pinned 85b85600c77e72c91fde772b0cf3c25e51c321ab; exact main organization shards restored and builder replayed,preserving all upstream state-wave,ownership,markets,registry changes. No CSV conflict hand-merged; no net federal-frame diff vs main. Source snapshot stays9d69978 while current eligibility/value checks use integrated data.
+
+## Potential staleness leads
+
+Only currently VERIFIED navigation indexes appear below. Saved samples contain only pre-2024 fully parsed dates (up to12 dates; nonstandard dates can be missed). They are candidate liveness leads,not newest-release or operating-status assertions. MFG004451 alone had latest listed item manually confirmed2023-10-26. BOARD/L8 informed; no liveness/status fields changed. Held Oregon,Mississippi,Thorpe pages are absent.
+
+| Active organization | Date sample |
+|---|---|
+| ORG-000138 Permatex | February 14, 2020;December 21, 2018 |
+| ORG-000430 Mar-Bal Inc. | August 9, 2021;February 24, 2020;February 8, 2021 |
+| ORG-000451 Molded Fiber Glass Companies | October 26, 2023;October 5, 2023;August 21, 2023;August 7, 2023;November 17, 2022;October 7, 2022;Ja |
+| ORG-000835 Fiber-Tech Industries, Inc. | July 30, 2019 |
+| ORG-000868 Guardian Manufacturing Company | June 22, 2018;April 5, 2018;September 27, 2018 |
+| ORG-001080 Ridge Corporation | September 30, 2021;September 28, 2019;July 26, 2019;January 29, 2018;July 26, 2017;February 29, 2016 |
+| ORG-002174 Parker Rust-Proof of Cleveland | 07/08/2022;3/19/2020;2/26/2020 |
+| ORG-002401 Mi Windows & Doors Inc. | November 10, 2022;November 02, 2022;October 17, 2022;September 13, 2022;September 07, 2022;August 22 |
+| ORG-002497 The Murus Company | March 15, 2013 |
+| ORG-003132 Seasafe, Inc. | Apr 20 2021;April 20, 2021;Jan 25 2021;January 25, 2021;Mar 19 2020;March 19, 2020;Apr 30 2018;April |
+| ORG-003183 AmFine Chemical Corporation | November 12, 2015;June 4, 2014;April 11, 2014 |
+| ORG-003194 REXtac, LLC | June 7, 2022;January 1, 2022;December 16, 2021;June 22, 2021;August 20, 2020;April 11, 2019;December |
+| ORG-003219 Covation Biomaterials LLC | May 11, 2023 |
+| ORG-003952 Augusta Fiberglass Coatings, Inc. | October 20, 2016;September 6, 2016;July 22, 2016;January 6, 2016;December 10, 2015 |
+| ORG-003989 General Plastics Manufacturing Company | May 15, 2019;Oct 20, 2015;September 8, 2015;Oct 6, 2014;October 07, 2014;October 2, 2014;September 2 |
+| ORG-004137 R3 Composites Corp | Feb 11, 2021 |
+| ORG-004291 Viskase Companies, Inc. | May 31, 2022;February 8, 2022;January 4, 2022;October 6, 2021;April 16, 2021;April 15, 2021;November |
+| ORG-004386 Dicar Inc | May 31, 2022;Mar 23, 2020;March 22, 2020;Mar 20, 2020;Feb 22, 2019;Sep 28, 2018;Jul 18, 2018;Apr 19, |
+| ORG-004533 Bomar Specialties, LLC | January 31, 2023;May 4, 2022;January 31, 2022;June 8, 2021;April 5, 2021;November 2, 2020 |
+
+Cross-PR coverage gate now PASS against named source9d69978:1049+772+2258=4079 disjoint IDs,exactly all active organizations with website at that snapshot. No missing/extra IDs. Later-main creates excluded by frozen manifests,not claimed as attempted. Current proposals across PR145/152/169:321 newsroom pages+141 feeds=462 URLs in321 active organizations;3758 explicit organization holds.
+
+Cross-lane Codex PR152 gate finding substantiated: full-string rstrip erased trailing slashes inside query values. Replaced all URL comparisons (redirects and feed-article overlap) with urlsplit keys that normalize only parsed path trailing slash, preserving query and fragment. Injected changed-query redirect and changed-query article permalink fail; benign path-only slash still passes. No current live misredirect claimed; no field changes from this gate correction.
+
+Known slow-valid feed observation from PR152:Pretium feed returned200RSS after32.3s to Grok. Fetch cap raised18→45s (connect8s unchanged) for reliable bounded rechecks; initial frozen discovery attempts used18s. No timeout is an absence/status finding.
+
+Final v4 integration main97ee6bc2a4475a47d8449ca79db688fb9114ab0f:exact-main orgs+builder,115pages/41feeds unchanged;parsed-query URL gate full156 fresh checks passed. Source cohort remains9d69978.
+
+CODE discover.py
+"""Bounded own-domain discovery; candidates require human review before build.py."""
+import concurrent.futures, csv, json, re, subprocess, sys
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urljoin, urlparse
+from xml.etree import ElementTree as ET
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+SLD2 = {'co','com','org','net','ac','gov','edu','ne','or','go','gob','nic','ltd','plc','sch','mil'}
+def domain(url):
+    p = (urlparse(url).hostname or '').lower().rstrip('.').split('.')
+    return '.'.join(p[-3:] if len(p)>2 and p[-2] in SLD2 and len(p[-1])==2 else p[-2:])
+
+class Links(HTMLParser):
+    def __init__(self, body):
+        super().__init__(); self.links=[]; self.feeds=[]; self.text=[]; self.href=None; self.label=[]
+        self.feed(body)
+    def handle_starttag(self, tag, attrs):
+        a=dict(attrs)
+        if tag=='a': self.href=a.get('href'); self.label=[]
+        if tag=='link' and 'alternate' in a.get('rel','') and a.get('type') in ('application/rss+xml','application/atom+xml'):
+            self.feeds.append(a.get('href',''))
+    def handle_data(self, text):
+        self.text.append(text)
+        if self.href: self.label.append(text)
+    def handle_endtag(self, tag):
+        if tag=='a' and self.href:
+            self.links.append((self.href,' '.join(' '.join(self.label).split()))); self.href=None
+
+def fetch(url):
+    p=subprocess.run(['curl','-L','--max-redirs','5','--max-time','45','--connect-timeout','8','-sS','-A','Mozilla/5.0', '-w','\n%{http_code}\t%{url_effective}',url],capture_output=True,text=True,errors='replace')
+    body,_,meta=p.stdout.rpartition('\n'); code,_,final=meta.partition('\t')
+    return {'url':url,'final':final,'status':code,'body':body,'error':p.stderr[:180]}
+
+def feed_count(body):
+    root=ET.fromstring(body)
+    assert root.tag in ('rss','{http://www.w3.org/2005/Atom}feed','{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF'),root.tag
+    return sum(e.tag in ('item','{http://www.w3.org/2005/Atom}entry','{http://purl.org/rss/1.0/}item') for e in root.iter())
+
+LABEL=re.compile(r'^(?:(?:company|latest|corporate|all|our)\s+)?(?:news(?:\s*(?:room|[&+]\s*(?:events|media)|and\s*(?:events|media)))?|press(?:\s*(?:room|releases|center))?|media(?:\s*(?:center|room))?|announcements)(?:\s*[›»→])?$',re.I)
+def discover(r):
+    attempts=[]
+    def get(url):
+        v=fetch(url); attempts.append({k:v[k] for k in ('url','final','status','error')}); return v
+    home=get(r['website']); result={**r,'verdict':'STILL_UNCERTAIN','newsroom_url':'','newsroom_feed_url':'','label':'','title':'','years':'','feed_items':0,'note':'Need reachable own-domain newsroom navigation','attempts':attempts}
+    if home['status']!='200' or domain(home['final'])!=domain(r['website']): return result
+    nav=Links(home['body']); candidates=[]
+    for href,label in nav.links:
+        url=urljoin(home['final'],href).split('#')[0]
+        if LABEL.fullmatch(label) and domain(url)==domain(r['website']) and url not in [u for u,l in candidates]: candidates.append((url,label))
+    for url,label in candidates[:3]:
+        page=get(url)
+        if page['status']!='200' or domain(page['final'])!=domain(r['website']): continue
+        parsed=Links(page['body']); title=re.search(r'<title[^>]*>(.*?)</title>',page['body'],re.I|re.S)
+        result.update(newsroom_url=page['final'],label=label,title=re.sub(r'\s+',' ',title[1]) if title else '',years=';'.join(sorted(set(re.findall(r'\b20(?:1\d|2\d)\b',' '.join(parsed.text))))),note='Candidate: review purpose and dated items')
+        feeds=[urljoin(page['final'],f) for f in parsed.feeds]
+        if not feeds: feeds=[urljoin(page['final'],'/feed/'),urljoin(page['final'],'/rss.xml')]
+        for feed in dict.fromkeys(feeds):
+            if len(attempts)>=6: break
+            if domain(feed)!=domain(r['website']): continue
+            got=get(feed)
+            if got['status']!='200' or domain(got['final'])!=domain(r['website']): continue
+            try: count=feed_count(got['body'])
+            except (ET.ParseError,AssertionError): continue
+            if count: result.update(newsroom_feed_url=got['final'],feed_items=count); break
+        break
+    return result
+
+if __name__=='__main__':
+    rows=list(csv.DictReader(open(HERE/'inputs.csv')))
+    prior={r['org_id']:r for r in json.loads((HERE/'discovery.json').read_text())} if (HERE/'discovery.json').exists() else {}
+    pending=[r for r in rows if r['org_id'] not in prior]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+        new=list(pool.map(discover,pending))
+    results=sorted(list(prior.values())+new,key=lambda r:r['org_id'])
+    (HERE/'discovery.json').write_text(json.dumps(results,indent=2)+'\n')
+    for r in results: print(r['org_id'],r['newsroom_url'],r['title'],r['years'],r['newsroom_feed_url'])
+
+CODE audit.py
+"""Fetch candidate indexes for review; do not infer activity from copyright years."""
+import concurrent.futures, json, re
+from discover import HERE, Links, fetch
+DATE=re.compile(r'\b(?:20\d\d-\d\d-\d\d|\d{1,2}/\d{1,2}/20\d\d|(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?\s+\d{1,2},?\s+20\d\d|\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+20\d\d)\b',re.I)
+def audit(r):
+    p=fetch(r['newsroom_url']);body=re.sub(r'<(script|style)\b.*?</\1>','',p['body'],flags=re.I|re.S)
+    parsed=Links(body);text=' '.join(' '.join(parsed.text).split());dates=list(dict.fromkeys(m[0] for m in DATE.finditer(text)))
+    return {'org_id':r['org_id'],'status':p['status'],'final':p['final'],'dates':dates[:12],'title':r['title'],'newsroom_url':r['newsroom_url']}
+if __name__=='__main__':
+    rows=[r for r in json.loads((HERE/'discovery.json').read_text()) if r['newsroom_url']]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:result=list(pool.map(audit,rows))
+    (HERE/'audit.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(len(result),'candidate indexes inspected for actual text dates')
+
+CODE build.py
+"""Apply reviewed navigation URLs; fail on conflicting values; safe to rerun on fresh main."""
+import csv, io
+from discover import HERE, ROOT, domain
+
+def main():
+    verdicts=list(csv.DictReader(open(HERE/'verdicts.csv')))
+    assert len({r['org_id'] for r in verdicts})==len(verdicts)
+    edits={r['org_id']:r for r in verdicts if r['verdict']=='VERIFIED'}
+    assert edits
+    found=set(); writes=[]; cells=0
+    for path in sorted((ROOT/'data').glob('organizations_*.csv')):
+        if path.name=='organizations_all.csv': continue
+        rows=list(csv.DictReader(io.StringIO(path.read_text()))); header=list(rows[0]) if rows else None
+        changed=False
+        for row in rows:
+            if row['org_id'] not in edits: continue
+            v=edits[row['org_id']];found.add(row['org_id'])
+            assert row['status']=='active' and row['tier1_qualifier'],row['org_id']
+            website=row['website'] if '://' in row['website'] else 'https://'+row['website']
+            assert website==v['website'],row['org_id']
+            assert domain(v['newsroom_url'])==domain(website)
+            for col in ('newsroom_url','newsroom_feed_url'):
+                value=v[col]
+                if not value: continue
+                assert domain(value)==domain(website),(row["org_id"],col)
+                assert "/comments/" not in value.lower() and "feed=comments" not in value.lower()
+                assert row[col] in ('',value),(row['org_id'],col,'conflict')
+                if row[col]!=value:row[col]=value; changed=True; cells+=1
+        if changed:
+            buf=io.StringIO();w=csv.DictWriter(buf,fieldnames=header,lineterminator='\n');w.writeheader();w.writerows(rows);writes.append((path,buf.getvalue()))
+    assert found==set(edits),(set(edits)-found)
+    for path,text in writes:path.write_text(text)
+    print(f'{len(edits)} active tier1 organizations; {cells} cells changed; {len(writes)} shards written')
+if __name__=='__main__':main()
+
+CODE check.py
+"""Re-fetch all accepted URLs; fail on unreadable pages, redirects off-domain or empty feeds."""
+import concurrent.futures, csv, json
+from urllib.parse import urljoin, urlsplit
+from xml.etree import ElementTree as ET
+from discover import HERE, ROOT, Links, domain, fetch, feed_count
+
+def url_key(url):
+    parts=urlsplit(url)
+    return parts._replace(path=parts.path.rstrip('/'))
+
+def check(r):
+    out={'org_id':r['org_id'],'checks':[]}; page_links=set()
+    for col in ('newsroom_url','newsroom_feed_url'):
+        if not r[col]: continue
+        p=fetch(r[col]); assert p['status']=='200',(r['org_id'],col,p['status'])
+        assert domain(p['final'])==domain(r['website']),(r['org_id'],p['final'])
+        assert url_key(p['final'])==url_key(r[col]),(r['org_id'],'stored URL redirected to another path',p['final'])
+        result={k:p[k] for k in ('url','final','status')}
+        if col=='newsroom_url':
+            page_links={url_key(urljoin(p['final'],u.strip())) for u,l in Links(p['body']).links}
+        if col=='newsroom_feed_url':
+            result['items']=feed_count(p['body']); assert result['items']>0
+            root=ET.fromstring(p['body']); links=set()
+            titles=root.findall('./channel/title')+root.findall('{http://www.w3.org/2005/Atom}title')
+            assert '/comments/' not in p['final'].lower() and 'feed=comments' not in p['final'].lower()
+            assert not any('comments' in (e.text or '').lower() for e in titles),'comments feed'
+            entries=[e for e in root.iter() if e.tag in ('item','{http://www.w3.org/2005/Atom}entry','{http://purl.org/rss/1.0/}item')]
+            for entry in entries:
+                links.update(url_key(e.text.strip()) for e in entry.iter('link') if e.text)
+                links.update(url_key(e.attrib.get('href','')) for e in entry.iter('{http://www.w3.org/2005/Atom}link') if e.attrib.get('rel','alternate')=='alternate')
+            assert page_links & links,(r['org_id'],'feed items not linked from newsroom')
+            result['linked_items']=len(page_links & links)
+        out['checks'].append(result)
+    return out
+
+if __name__=='__main__':
+    rows=[r for r in csv.DictReader(open(HERE/'verdicts.csv')) if r['verdict']=='VERIFIED']
+    assert rows and len({r['org_id'] for r in rows})==len(rows)
+    actual={r['org_id']:r for path in (ROOT/'data').glob('organizations_*.csv') if path.name!='organizations_all.csv' for r in csv.DictReader(open(path))}
+    for r in rows:
+        a=actual[r['org_id']]; assert a['status']=='active' and a['tier1_qualifier']
+        assert all(a[col]==r[col] for col in ('newsroom_url','newsroom_feed_url')),(r['org_id'],'builder not applied')
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool: result=list(pool.map(check,rows))
+    (HERE/'refetch.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(f'PASS: {len(rows)} active organizations; {sum(len(r["checks"]) for r in result)} URLs, all HTTP 200 and feeds nonempty')
+
+CODE self_check.py
+"""Defect injection: the URL/feed gate must reject HTTP failure, off-domain redirects and empty feeds."""
+from unittest.mock import patch
+from check import check
+from discover import domain, feed_count, LABEL
+assert LABEL.fullmatch('News + Events')
+assert not LABEL.fullmatch('Some individual news article')
+assert domain('https://news.example.co.uk/a')=='example.co.uk'
+assert feed_count('<rss><channel><item/></channel></rss>')==1
+row={'org_id':'test','website':'https://example.com','newsroom_url':'https://example.com/news','newsroom_feed_url':''}
+for response in [{'status':'403','final':row['newsroom_url']},{'status':'200','final':'https://other.com'}]:
+    with patch('check.fetch',return_value=response):
+        try:check(row)
+        except AssertionError:pass
+        else:raise AssertionError('defect missed')
+row.update(newsroom_url='',newsroom_feed_url='https://example.com/feed')
+with patch('check.fetch',return_value={'status':'200','url':row['newsroom_feed_url'],'final':row['newsroom_feed_url'],'body':'<rss><channel/></rss>'}):
+    try:check(row)
+    except AssertionError:pass
+    else:raise AssertionError('empty feed missed')
+print('PASS: label/domain/feed checks; injected HTTP error, off-domain redirect and empty feed all rejected')
+import json
+from discover import HERE
+known=json.loads((HERE/'known_answers.json').read_text())
+assert {r['org_id']:r['newsroom_url'] for r in known}=={'Avient':'https://www.avient.com/company/news-events','RPM':'https://www.rpminc.com/news/','GEON':'https://www.geon.com/news'}
+print('PASS: 3 saved live known-answer results match expected newsroom indexes')
+import csv
+inputs=list(csv.DictReader(open(HERE/'inputs.csv')))
+verdicts=list(csv.DictReader(open(HERE/'verdicts.csv')))
+discovery=json.loads((HERE/'discovery.json').read_text())
+for rows in (inputs,verdicts,discovery):assert len({r['org_id'] for r in rows})==len(rows)==1049
+assert {r['org_id'] for r in inputs}=={r['org_id'] for r in verdicts}=={r['org_id'] for r in discovery}
+assert all(1<=len(r['attempts'])<=6 for r in discovery)
+assert all(r['note'] for r in verdicts if r['verdict']=='STILL_UNCERTAIN')
+print('PASS: 1049/1049 input IDs uniquely reconciled to discovery and verdicts; discovery fetch budget <=6; holds explicit')
+row={'org_id':'test','website':'https://example.com','newsroom_url':'https://example.com/news','newsroom_feed_url':'https://example.com/feed'}
+page={'status':'200','url':row['newsroom_url'],'final':row['newsroom_url'],'body':'<a href="/">Home</a>'}
+feed={'status':'200','url':row['newsroom_feed_url'],'final':row['newsroom_feed_url'],'body':'<rss><channel><link>https://example.com/</link><item><link>https://example.com/unlisted</link></item></channel></rss>'}
+with patch('check.fetch',side_effect=[page,feed]):
+    try:check(row)
+    except AssertionError:pass
+    else:raise AssertionError('channel home link incorrectly accepted as item overlap')
+page['body']='<a href="/unlisted">Actual release</a>'
+with patch('check.fetch',side_effect=[page,feed]):assert check(row)['checks'][1]['linked_items']==1
+print('PASS: channel metadata link cannot satisfy item overlap; actual item link does')
+feed['final']='https://example.com/comments/feed/'
+row['newsroom_feed_url']=feed['url']=feed['final']
+with patch('check.fetch',side_effect=[page,feed]):
+    try:check(row)
+    except AssertionError:pass
+    else:raise AssertionError('comments feed accepted')
+print('PASS: comments feed rejected even when its item links overlap')
+
+badrow={'org_id':'test','website':'https://example.com','newsroom_url':'https://example.com/news','newsroom_feed_url':''}
+with patch('check.fetch',return_value={'status':'200','url':badrow['newsroom_url'],'final':'https://example.com/','body':'Home'}):
+    try:check(badrow)
+    except AssertionError:pass
+    else:raise AssertionError('same-domain homepage redirect accepted')
+print('PASS: same-domain homepage redirect rejected')
+import sys
+if '--live' in sys.argv:
+    from discover import discover
+    for saved in known:
+        result=discover({'org_id':saved['org_id'],'website':saved['website']})
+        assert result['newsroom_url']==saved['newsroom_url'],result
+    print('PASS: 3 fresh live known-answer newsroom discoveries')
+
+from discover import ROOT
+import subprocess,io
+snapshot='9d69978'
+paths=subprocess.check_output(['git','ls-tree','-r','--name-only',snapshot,'data'],cwd=ROOT,text=True).splitlines()
+records=[r for path in paths if path.startswith('data/organizations_') and not path.endswith('_all.csv') for r in csv.DictReader(io.StringIO(subprocess.check_output(['git','show',snapshot+':'+path],cwd=ROOT,text=True)))]
+eligible={r['org_id']:r for r in records if r['status']=='active' and r['tier1_qualifier'] and r['website']}
+assert len(records)==len({r['org_id'] for r in records})==4945
+def verify_snapshot_packet(candidate):
+    assert set(eligible)=={r['org_id'] for r in candidate},'canonical eligible ID set mismatch'
+    for r in candidate:
+        url=eligible[r['org_id']]['website']; url=url if '://' in url else 'https://'+url
+        assert r['website']==url,(r['org_id'],'snapshot website mismatch')
+verify_snapshot_packet(inputs)
+historical_omissions={'ORG-004065','ORG-004069','ORG-004079','ORG-004083','ORG-004084','ORG-004085'}
+try:verify_snapshot_packet([r for r in inputs if r['org_id'] not in historical_omissions])
+except AssertionError:pass
+else:raise AssertionError('historical six-ID omission escaped canonical census')
+print('PASS: injected historical six-ID omission rejected by canonical census')
+assert len([r for r in records if r['status']=='active' and r['tier1_qualifier']])==1261
+print('PASS: named canonical snapshot9d69978 has1261 active tier1,1049 websites,212 blank; input IDs and website values exactly match')
+
+qrow={'org_id':'query-test','website':'https://example.com','newsroom_url':'https://example.com/?page_id=52','newsroom_feed_url':''}
+qpage={'url':qrow['newsroom_url'],'final':qrow['newsroom_url']+'/','status':'200','body':'<h1>News</h1>'}
+with patch('check.fetch',return_value=qpage):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('query value52→52/ accepted')
+qrow['newsroom_url']='https://example.com/news/?page_id=52'
+qpage.update(url=qrow['newsroom_url'],final='https://example.com/news?page_id=52')
+with patch('check.fetch',return_value=qpage):assert len(check(qrow)['checks'])==1
+qrow.update(newsroom_url='https://example.com/news',newsroom_feed_url='https://example.com/feed')
+qpage.update(url=qrow['newsroom_url'],final=qrow['newsroom_url'],body='<a href="/article?id=52">News release</a>')
+qfeed={'url':qrow['newsroom_feed_url'],'final':qrow['newsroom_feed_url'],'status':'200','body':'<rss><channel><title>News</title><item><link>https://example.com/article?id=52/</link></item></channel></rss>'}
+with patch('check.fetch',side_effect=[qpage,qfeed]):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('different query article IDs falsely overlap')
+print('PASS: changed query values rejected for redirects and feed articles; path-only slash normalization retained')
+
+ALL ACCEPTED (id|name|website|newsroom|feed|title|dates):
+ORG-000001 | Avient Corporation | https://www.avient.com | https://www.avient.com/company/news-events |  | Avient News Center: Press Releases &amp; Upcoming Events | September 28, 2026;Nov 04, 2026;Oct 14, 2026;Oct 09, 2026;Se
+ORG-000006 | RPM International Inc. | https://www.rpminc.com | https://www.rpminc.com/news/ |  | Company News | RPM International Inc. | 11/02/2026;10/08/2026;10/06/2026;10/01/2026;09/23/2026;09/04
+ORG-000010 | GEON Performance Solutions | https://www.geon.com | https://www.geon.com/news | https://www.geon.com/news/rss.xml | News | GEON® Performance Solutions | July 09, 2026;July 9, 2026;March 10, 2026;March 09, 2026;Jan
+ORG-000134 | Novagard Solutions | https://novagard.com | https://novagard.com/news-events/ |  | Novagard News &amp; Events | Awards, Press, Industry | August 26, 2026;January 30, 2026;October 21, 2025;June 5, 20
+ORG-000135 | Valtris Specialty Chemicals | https://www.valtris.com | https://www.valtris.com/news/category/news/ | https://www.valtris.com/news/category/news/feed/ | News Archives - Valtris Specialty Chemicals | August 17, 2026;July 27, 2026;May 4, 2026;April 20, 2026;Feb
+ORG-000138 | Permatex | https://www.permatex.com | https://www.permatex.com/category/news-events/ |  | News &amp; Events Archives | Permatex® | February 14, 2020;December 21, 2018
+ORG-000196 | Goldsmith & Eggleton | https://www.goldsmith-eggleton.com/ | https://goldsmith-eggleton.com/latest-news/ | https://goldsmith-eggleton.com/feed/ | Latest News | Goldsmith-Eggleton | July 28, 2025;March 14, 2024;December 7, 2022;January 1, 202
+ORG-000234 | Architectural Fiberglass, Inc. | https://www.fiberglass-afi.com/ | https://www.fiberglass-afi.com/press-releases/ | https://www.fiberglass-afi.com/feed/ | Press Releases | Architectural Fiberglass, Inc. | February 19, 2024;October 9, 2005;February 16, 2024;February
+ORG-000317 | Duramax Marine, LLC | https://www.duramaxmarine.com/ | https://www.duramaxmarine.com/news-articles/ |  | Duramax Marine: News Articles | August 31, 2026;July 13, 2026;November 4, 2024;February 24,
+ORG-000372 | Huntsman Corporation | https://www.huntsman.com/ | https://www.huntsman.com/news | https://www.huntsman.com/news/media-releases/rss | Read the Latest Huntsman News :: Huntsman Corporation (HUN) | Nov 2, 2026;Oct 6, 2026;November 3, 2026;Sep 11, 2026;Aug 25
+ORG-000430 | Mar-Bal Inc. | https://www.mar-bal.com/ | https://www.mar-bal.com/category/news/ |  | News Archives - Mar-Bal, Inc. | August 9, 2021;February 24, 2020;February 8, 2021
+ORG-000451 | Molded Fiber Glass Companies | https://moldedfiberglass.com/ | https://moldedfiberglass.com/category/company-news/ | https://moldedfiberglass.com/category/company-news/feed/ | Company News Archives - Molded Fiber Glass Companies | October 26, 2023;October 5, 2023;August 21, 2023;August 7, 2
+ORG-000473 | Oldcastle Infrastructure (IPG | https://oldcastleinfrastructure.com/ | https://oldcastleinfrastructure.com/press-releases/ | https://oldcastleinfrastructure.com/feed/ | Newsroom | Oldcastle Infrastructure | June 23, 2026;June 1, 2026;February 9, 2026;February 6, 2026
+ORG-000483 | Pentair | https://www.pentair.com/ | https://www.pentair.com/en-us/about-pentair/newsroom.html |  | Newsroom | About Pentair | Pentair | Oct. 19, 2026;Oct. 14, 2026;Sep. 22, 2026
+ORG-000543 | Refcotec, Inc. | https://www.refcotec.com/ | https://www.refcotec.com/news |  | REFCOTEC News - Refractory Coatings, Foundry Resin Systems, Sand Additives, Heat Resistant Coatings | March 2, 2026;January 29, 2026;February 27, 2023;April 19, 2
+ORG-000544 | Foundation Wellness | https://foundationwellness.com/ | https://foundationwellness.com/blogs/news | https://foundationwellness.com/blogs/news.atom |  News &ndash; Foundation Wellness | May 13, 2025;September 5, 2024;May 7, 2024;August 6, 2021;De
+ORG-000566 | Sealed Air Corporation | https://www.sealedair.com/ | https://www.sealedair.com/company/media-center/press-releases |  | Press Releases - Sealed Air | October 15, 2026;September 22, 2026;August 24, 2026;April 9,
+ORG-000569 | Shin-Etsu Silicones of America, Inc. | https://www.shinetsusilicones.com/ | https://www.shinetsusilicones.com/news.aspx |  | Shin-Etsu News | 2026-10-28;2025-07-08;2025-03-03;2024-07-02;2024-07-10;2022-
+ORG-000698 | BASF Corporation | https://www.basf.com/us/en.html | https://www.basf.com/us/en/media |  | Welcome to the BASF News &amp; Media Center | Nov. 11, 2026;July 29, 2026
+ORG-000720 | Capital Resin Corporation | https://capitalresin.com/ | https://capitalresin.com/news/ |  | Chemical Toll Manufacturing News | Capital Resin | Oct 29 2026;Oct 20 2026;Sep 24 2026
+ORG-000763 | Crane ChemPharma & Energy | https://cranecpe.com/ | https://cranecpe.com/news-events/ | https://cranecpe.com/feed/ | News &amp; Events - CRANE ChemPharma &amp; Energy | 10/20/2026;09/08/2026;06/29/2026;06/18/2026;03/25/2026;10/24
+ORG-000768 | Creative Composites Group | https://www.creativecompositesgroup.com/ | https://www.creativecompositesgroup.com/about-us/newsroom |  | Newsroom | Creative Composites Group | Oct 6, 2026;October 6, 2026;Nov 10, 2025;October 8, 2025;Oct
+ORG-000769 | Creative Foam Corporation | https://creativefoam.com/ | https://creativefoam.com/news/ |  | News - Creative Foam | March 6, 2025;3/5/2025;July 23, 2021;July 15, 2021;March 8,
+ORG-000786 | Deceuninck North America, LLC | https://deceuninckna.com/ | https://deceuninckna.com/news-and-press/ | https://deceuninckna.com/news-and-press/feed/ | News Archive - Deceuninck North America | September 14, 2026;April 1, 2026;March 26, 2026;February 17,
+ORG-000821 | Emery Oleochemicals | https://www.emeryoleo.com | https://www.emeryoleo.com/news |  | Latest News | Innovations and Events| Emery Oleochemicals | March 30, 2026;May 6, 2026;December 15, 2025;August 18, 2025
+ORG-000835 | Fiber-Tech Industries, Inc. | https://www.fiber-tech.net/ | https://www.fiber-tech.net/news |  | News | Fiber-Tech Industries | July 30, 2019
+ORG-000868 | Guardian Manufacturing Company | https://guardian-mfg.com/ | https://guardian-mfg.com/news/ |  | News | Electrician Gloves for Guardian Manufacturing | June 22, 2018;April 5, 2018;September 27, 2018
+ORG-000880 | Hexion Inc. | https://www.hexion.com/ | https://www.hexion.com/news |  | News | Hexion | May 4, 2026;Apr 21, 2026;Feb 9, 2026;Sep 23, 2025;Aug 8, 202
+ORG-000931 | Lear Corporation | https://www.lear.com/ | https://www.lear.com/newsroom |  | Newsroom | Lear Corporation | October 30, 2026;October 19, 2026;June 22, 2026;April 28, 20
+ORG-000947 | Mason Color Works | https://www.masoncolor.com/ | https://www.masoncolor.com/about/news | https://www.masoncolor.com/feed | News | Mason Color Works | August 26, 2026;November 17, 2025
+ORG-000975 | Nagase ChemteX America | https://nagasechemtex.com/ | https://nagasechemtex.com/news/ |  | News | Nagase ChemteX | January 3, 2024;December 14, 2020
+ORG-000979 | Neaton Auto Products Manufacturing | https://www.neaton.com/ | https://www.neaton.com/neaton-newsroom |  | Neaton Newsroom &mdash; Neaton Auto Products Manufacturing | September 17, 2025
+ORG-001080 | Ridge Corporation | https://ridgecorp.com/ | https://ridgecorp.com/category/news/ | https://ridgecorp.com/category/news/feed/ | News Archives - Ridge Corporation | September 30, 2021;September 28, 2019;July 26, 2019;January
+ORG-001090 | Rowmark LLC | https://www.rowmark.com | https://www.rowmark.com/news |  | Rowmark | News | January 31, 2024;June 9, 2022;March 4, 2022;July 13, 2021;Ju
+ORG-001109 | Shelter Works | https://www.shelterworks.com/ | https://www.shelterworks.com/news.html |  | Shelter Works News & Updates | Oct 05, 2026;Oct 01, 2026;Sep 24, 2026;Aug 25, 2026;Jun 08,
+ORG-001110 | The Shepherd Color Company | https://www.shepherdcolor.com | https://www.shepherdcolor.com/news-events/ | https://www.shepherdcolor.com/feed/ | News + Events - Shepherd Color | October 8, 2026;September 25, 2026;September 24, 2026;July 1
+ORG-001202 | Woodbridge Corporation | https://www.woodbridgegroup.com/ | https://www.woodbridgegroup.com/Resources/Newsroom |  | Newsroom | Woodbridge  | 6/19/2026;6/18/2026;2/19/2026;6/10/2025;5/7/2025;2/24/2025;2
+ORG-001545 | AtriCure, Inc. | https://atricure.com/ | https://news.atricure.com/ |  | AtriCure News | July 21, 2026
+ORG-001572 | Therma-Tru Corp. | https://www.thermatru.com/ | https://www.thermatru.com/newsroom/ |  | Newsroom | Therma-Tru Doors | 10/13/2026;07/20/2026;02/12/2026;6/03/2025;5/29/2025;4/16/20
+ORG-002174 | Parker Rust-Proof of Cleveland | https://www.parkerhq.com | https://www.parkerhq.com/news |  | News | Parker Rust-Proof | 07/08/2022;3/19/2020;2/26/2020
+ORG-002350 | Veka Inc. | https://vekainc.com | https://www.vekainc.com/resources/news-events/ |  | VEKA Inc. | News | Events | 08/10/2025;11/08/2025;23/09/2024;21/05/2024
+ORG-002353 | Am Stabilizers Corporation | https://amstabilizers.com/ | https://amstabilizers.com/latest/news |  | News | AM Stabilizers | March 24, 2026;February 18, 2026;January 19, 2026;January 7,
+ORG-002401 | Mi Windows & Doors Inc. | https://miwindows.com/hegins-location | https://miwindows.com/news |  | Window News &amp; Industry Updates | MI Windows and Doors | November 10, 2022;November 02, 2022;October 17, 2022;Septemb
+ORG-002497 | The Murus Company | https://murus.com | https://murus.com/about/newspress-materials/ |  | News and Events &#187; Murus.com | March 15, 2013
+ORG-002547 | Patrick Industries, Inc. | https://patrickind.com/ | https://patrickind.com/news/ |  | News - Patrick Industries | December 3, 2024
+ORG-002758 | Neville Chemical Co | https://nevchem.com/ | https://www.nevchem.com/news/ | https://www.nevchem.com/feed/ | News - Neville Chemical | April 29, 2026;March 11, 2026;December 2, 2025;July 24, 2025
+ORG-002874 | Solstice Advanced Materials Inc. | https://www.solstice.com | https://www.solstice.com/us/en/news-events |  | News &amp; Events | Solstice Advanced Materials | Nov 04 2026;Oct 16 2026;Oct 10 2026;Oct 1 2026;November 4, 2
+ORG-002875 | Rogers Corporation | https://www.rogerscorp.com | https://www.rogerscorp.com/news |  | Rogers Corporation News | Oct 27, 2026;Oct 13, 2026;Sep 30, 2026;September 30, 2026;Se
+ORG-002879 | AdvanSix Inc. | https://www.advansix.com | https://www.advansix.com/newsroom/ | https://www.advansix.com/feed/ | Latest News | Advansix | Nov 4, 2026;Oct 29, 2026;Oct 5, 2026;Sep 4, 2026;Aug 7, 2026
+ORG-002888 | Albemarle Corporation | https://www.albemarle.com | https://www.albemarle.com/us/en/newsroom |  | Newsroom | Albemarle | September 29, 2026;March 31, 2026;January 14, 2026;November
+ORG-002890 | Northann Corp. | https://www.northann.com | https://www.northann.com/news |  | News | Northann Corp | October 16, 2026;October 7, 2026;October 1, 2026;August 31,
+ORG-002892 | Reynolds Consumer Products Inc. | https://www.reynoldsconsumerproducts.com | https://www.reynoldsconsumerproducts.com/news |  | NEWS | Reynolds Consumer Products | May 1, 2025;Nov 20, 2024;Nov 1, 2024;Sep 6, 2024;September 2
+ORG-002908 | Cabot Corporation | https://www.cabotcorp.com | https://www.cabotcorp.com/company/newsroom |  | Newsroom | Cabot Corporation press releases, product launches and current news | 10/13/2026;10/1/2026;9/17/2026;9/15/2026;8/12/2026;7/30/2026
+ORG-002910 | Chevron Phillips Chemical Company LLC | https://www.cpchem.com | https://www.cpchem.com/media-events/news |  | News | Chevron Phillips Chemical | 07/30/2026;07/28/2026;07/22/2026;06/29/2026;06/15/2026;05/28
+ORG-002955 | Modern Dispersions, Inc. | https://www.moderndispersions.com/ | https://www.moderndispersions.com/news/ | https://www.moderndispersions.com/feed/ | News | Modern Dispersions, Inc. | Leominster, MA | April 9, 2026
+ORG-003057 | Lion Elastomers LLC | https://www.lionelastomers.com | https://www.lionelastomers.com/news |  | News - Lion Elastomers - A Leader in Synthetic Rubber | Sep 18, 2026;Feb 24, 2026;Feb 14, 2024;February 13, 2024
+ORG-003082 | NanoXplore Inc. | https://nanoxplore.ca | https://nanoxplore.ca/press-releases/ |  | Press Releases | NanoXplore | November 2, 2026;October 5, 2026;September 17, 2026;Septembe
+ORG-003095 | Continental Tire the Americas, LLC | https://www.continentaltire.com | https://continentaltire.com/learn/news-and-events |  | News | Continental Tire | August 18, 2026;July 1, 2026;January 15, 2026;December 12, 2
+ORG-003104 | Gelest, Inc. | https://www.gelest.com/ | https://www.gelest.com/about-gelest/news/ |  | News - Gelest, Inc. | February 12, 2026;February 06, 2026;December 29, 2025;May 19
+ORG-003129 | Osborne Industries, Inc. | http://www.osborneindustries.com | https://www.osborneindustries.com/news/ | https://www.osborneindustries.com/feed/ | Osborne Company News &amp; Industry Updates | Osborne Industries | June 10, 2026;April 7, 2026;March 30, 2026;February 10, 2026
+ORG-003132 | Seasafe, Inc. | http://www.seasafe.com | https://seasafe.com/news/ | https://seasafe.com/feed/ | SeaSafe News Blog, structural fiberglass industry news | Apr 20 2021;April 20, 2021;Jan 25 2021;January 25, 2021;Mar
+ORG-003151 | Bryce Corporation | https://www.brycecorp.com | https://brycecorp.com/news |  | News | Bryce Corporation | Apr 29 2025;6/4/2024;June 4, 2024;Apr 12 2023;August 24, 202
+ORG-003163 | Stepan Company | https://www.stepan.com | https://www.stepan.com/content/stepan-dot-com/en/news-events.html |  | Stepan Company News and Events | Specialty Chemicals Solutions | April 1, 2026;April 7, 2026;September 15, 2026
+ORG-003183 | AmFine Chemical Corporation | https://www.amfine.com | https://amfine.com/news/ | https://amfine.com/news/feed/ | Amfine News | What&#039;s happening at Amfine Chemical Corporation | November 12, 2015;June 4, 2014;April 11, 2014
+ORG-003186 | Shintech Inc. | https://shintech.com/ | https://www.shintech.com/news |  |  News | Shintech News  | March 4, 2026;December 29, 2021;May 4, 2021;February 3, 2021
+ORG-003191 | Alberdingk Boley, Inc. | http://www.alberdingkusa.com/ | https://www.alberdingkusa.com/News/ |  | News | Alberdingk Boley | January 26, 2026;October 25, 2025;August 18, 2025;April 23,
+ORG-003194 | REXtac, LLC | http://www.rextac.com | https://www.rextac.com/about-us/news-and-events/ |  | News and Events | REXtac LLC | June 7, 2022;January 1, 2022;December 16, 2021;June 22, 2021
+ORG-003208 | Ascend Performance Materials Holdings Inc. | http://www.ascendmaterials.com | https://www.ascendmaterials.com/about/newsroom | https://www.ascendmaterials.com/feeds/feed.rss | Newsroom | Ascend Performance Materials | April 29, 2026;February 4, 2026;December 19, 2025;December 1
+ORG-003219 | Covation Biomaterials LLC | http://www.covationbio.com | https://covationbio.com/press-room |  | Press Room | Covation Biomaterials | May 11, 2023
+ORG-003258 | Pipeline Plastics, LLC | https://www.pipe.us | https://www.pipe.us/news-events/ |  | News &#038; Events | Pipeline Plastics | October 20, 2026;October 24, 2025;October 28, 2025;February
+ORG-003286 | Altec Industries, Inc. | http://altec.com | https://www.altec.com/about-altec/press-releases |  | Press Releases &#8211; Altec Inc | June 17, 2026;March 1, 2025;November 15, 2021;October 7, 202
+ORG-003318 | Interplastic Corporation | http://www.interplastic.com | https://interplastic.com/category/news-events/news/ | https://interplastic.com/feed/ | News &#8211; Interplastic Corporation | September 18, 2026;June 3, 2026;February 18, 2026;March 20,
+ORG-003361 | Valto Engineered Materials | http://www.valtoem.com | https://valtoem.com/news/ | https://valtoem.com/feed/ | News - VALTO Engineered Materials | February 17, 2026;September 2, 2025;June 28, 2025;May 19, 20
+ORG-003639 | Douglas Dynamics Inc. | https://www.douglasdynamics.com/ | https://www.douglasdynamics.com/news/ |  | News - Douglas Dynamics | September 17, 2026;August 24, 2026;November 11, 2025;Septemb
+ORG-003922 | Meridian Adhesives Group LLC | https://meridianadhesives.com | https://meridianadhesives.com/about/news/ | https://meridianadhesives.com/feed/ | News | Innovations in Adhesives Market | Meridian Adhesives | 1 October 2026;27 May 2026;18 December 2025;1 October 2025;2
+ORG-003952 | Augusta Fiberglass Coatings, Inc. | http://www.augustafiberglass.com/ | https://www.augustafiberglass.com/news-augusta-fiberglass.html | https://www.augustafiberglass.com/feed/ | Augusta Fiberglass News | October 20, 2016;September 6, 2016;July 22, 2016;January 6,
+ORG-003960 | Ortec Inc | https://ortecinc.com/ | https://ortecinc.com/news/ | https://ortecinc.com/feed/ | Latest News | ORTEC | June 12, 2024;April 3, 2023;February 1, 2023
+ORG-003970 | COIM USA Inc. | https://www.us.coimgroup.com | https://www.us.coimgroup.com/about/news-and-events/ | https://www.us.coimgroup.com/feed/ | COIM News &amp; Events | Latest Updates &amp; Industry Insights | August 24, 2026;October 1, 2026;June 9, 2026;May 22, 2026;Ju
+ORG-003989 | General Plastics Manufacturing Company | https://generalplastics.com | https://www.generalplastics.com/news-events |  | NEWS AND EVENTS - General Plastics | May 15, 2019;Oct 20, 2015;September 8, 2015;Oct 6, 2014;Octo
+ORG-004040 | Vybond Group, Inc. | https://vybond.com/ | https://vybond.com/news/ |  | Vybond News | Latest Product Launches and Company Updates | Feb 3, 2026;Feb 2, 2026
+ORG-004071 | Manner Polymers, Inc. | https://mannerpolymers.com/ | https://mannerpolymers.com/manner-polymers-news/ | https://mannerpolymers.com/feed/ | News - Manner Polymers | October 6, 2025;July 18, 2025;November 12, 2024;July 17, 202
+ORG-004080 | Rahco Rubber, Inc. | https://rahco-rubber.com/about-us/news/ | https://rahco-rubber.com/about-us/news/ |  | News - Rahco Rubber | October 12, 2026;August 5, 2026
+ORG-004106 | Iracore International Inc | https://iracore.com/ | https://iracore.com/about-us/news/ | https://iracore.com/feed/ | News - Iracore | Oct 10, 2026;Aug 8, 2021;Jul 7, 2021
+ORG-004123 | Sterling Specialty Chemicals LLC | https://www.sterlingspec.com/ | https://www.sterlingspec.com/news/ |  | News &#8211; Sterling Specialty Chemicals, LLC | May 4, 2026;April 10, 2026;March 17, 2026;February 17, 2026;
+ORG-004135 | Bemis Manufacturing Co | https://www.bemismfg.com/ | https://www.bemismfg.com/blog | https://www.bemismfg.com/blog-feed.xml | NEWS | Bemis Mfg | Oct 23, 2024;Jul 30, 2024
+ORG-004137 | R3 Composites Corp | http://www.r3composites.com/ | https://www.r3composites.com/r3c/news-events |  | News &#038; Events &#8211; Compression Molding SMC Manufacturing | R3 Composites Inc | Feb 11, 2021
+ORG-004147 | GS Polymers Inc. | https://www.gspolymers.com/ | https://www.gspolymers.com/news/ | https://www.gspolymers.com/feed/ | News Archives &#187; GS Polymers | June 4, 2025;March 20, 2023
+ORG-004185 | Anderson Development Company | https://andersondevelopment.com/ | https://www.andersondevelopment.com/news_events/ |  | Anderson Development | News &amp; Events | Specialty Chemical Manufacturer | December 18, 2024;December 18, 2021;December 14, 2021;August
+ORG-004215 | Shaw Industries Group, Inc. | https://shawinc.com/ | https://shawinc.com/Newsroom |  |  Shaw Industries Group, Inc. | Newsroom  | August 21, 2026;July 7, 2026;June 2, 2026;April 30, 2026;Apr
+ORG-004219 | SNF Holding Company | https://snf.com | https://www.snf.com/news/ |  |  News - SNF | July 27, 2026;March 31, 2026;March 17, 2026;January 2, 2026;
+ORG-004256 | HK Research Corporation | https://www.hkresearch.com/ | https://hkresearch.com/category/news/ | https://hkresearch.com/feed/ | News &#8211; HK Research | America&#039;s Leading Gel Coat Company | September 18, 2026;June 3, 2026;March 20, 2026;April 4, 2026
+ORG-004258 | Barrette Outdoor Living, Inc. | https://www.barretteoutdoorliving.com/ | https://www.barretteoutdoorliving.com/newsroom | https://www.barretteoutdoorliving.com/feed | Newsroom - Barrette Outdoor Living | February 20, 2024;December 18, 2023;October 17, 2023;October
+ORG-004272 | Flex-N-Gate Corporation | https://www.flex-n-gate.com/ | https://flex-n-gate.com/news/ | https://flex-n-gate.com/feed/ | News - Flex N Gate | 16 October 2026;22 July 2026;14 April 2026;17 March 2026;26
+ORG-004273 | Future Pipe Industries | https://futurepipe.com/ | https://futurepipe.com/news-events/ |  | News &amp; Events - Future Pipe Industries | 24 September 2026;10 September 2026;10 August 2026;22 May 20
+ORG-004274 | Petroleum Containment, Inc. | https://petroleum-containment.com/ | https://www.petroleum-containment.com/category/news/ |  | News &#8211; PCI Sumps | August 25, 2026;May 13, 2026;February 10, 2026;November 16,
+ORG-004278 | Magnera Corporation | https://www.magnera.com/ | https://magnera.com/news/ | https://magnera.com/feed/ | Magnera News and Press Releases | Corporate Announcements | October 13, 2026;October 22, 2026;October 5, 2026;September
+ORG-004289 | Trex Company, Inc. | https://www.trex.com/ | https://www.trex.com/our-company/news/ |  | News | Trex | February 16, 2026;February 13, 2026;January 31, 2026;January
+ORG-004291 | Viskase Companies, Inc. | https://www.viskase.com/ | https://www.viskase.com/news-events/ | https://www.viskase.com/feed/ | News &#038; Events &#8211; Viskase | May 31, 2022;February 8, 2022;January 4, 2022;October 6, 202
+ORG-004309 | FLEXcon Company, Inc. | https://www.flexcon.com/ | https://www.flexcon.com/press-releases |  | Flexcon | Press Releases | 08/24/2026;04/22/2026;03/24/2026;03/09/2026;02/03/2026;02/02
+ORG-004316 | Stryten Energy LLC | https://www.stryten.com/ | https://www.stryten.com/blog/ | https://www.stryten.com/feed/ | News From Stryten Energy | November 3, 2026;October 21, 2026;October 19, 2026;October 1
+ORG-004317 | Strongwell Corporation | https://www.strongwell.com/ | https://www.strongwell.com/news/ |  | News Archive - Strongwell | Sep 9, 2026;Aug 26, 2026;Aug 25, 2026;Aug 11, 2026;Aug 5, 20
+ORG-004324 | Toray Performance Materials Corporation | https://www.toraypmc.com/ | https://www.toraypmc.com/news |  | Latest news and updates - Toray Performance Materials Corporation | 26 August 2026;12 August 2026;1 June 2026;1 April 2026;29 Au
+ORG-004328 | Techmer PM LLC | https://www.techmerpm.com/ | https://www.techmerpm.com/press-releases/ | https://www.techmerpm.com/feed/ | Press Releases - Techmer PM | May 12, 2023;June 3, 2023;April 29, 2023;June 15, 2026;Mar.
+ORG-004386 | Dicar Inc | https://www.dicar.com/ | https://dicar.com/news/ |  | News | Dicar | May 31, 2022;Mar 23, 2020;March 22, 2020;Mar 20, 2020;Feb 22
+ORG-004449 | Microporous LLC | https://www.microporous.net/ | https://microporous.net/newsroom/ | https://microporous.net/feed/ | Newsroom - Microporous | Apr 30, 2026;March 6, 2026
+ORG-004452 | Miller Ingenuity | https://www.milleringenuity.com/ | https://www.milleringenuity.com/news/ | https://www.milleringenuity.com/feed/ |  News | Miller Ingenuity | Oct 28, 2026;Oct 07, 2026;Oct 05, 2026;Sep 23, 2026;Aug 25,
+ORG-004500 | Special-Lite, Inc. | https://special-lite.com/ | https://special-lite.com/news/ |  | News Posts Archive - Special-Lite | March 25, 2026;Oct. 15, 2025
+ORG-004523 | Wabash National Corporation | https://onewabash.com/ | https://news.onewabash.com/ | https://news.onewabash.com/feed/ | Newsroom One Wabash | 24 September 2026;22 July 2026;01 July 2026;June 15, 2026;Ma
+ORG-004533 | Bomar Specialties, LLC | https://www.bomar-chem.com/ | https://bomar-chem.com/resources/news-and-media |  | News &amp; Media | Bomar Oligomers | January 31, 2023;May 4, 2022;January 31, 2022;June 8, 2021;A
+ORG-004539 | Epic Resins | https://epicresins.com/ | https://www.epicresins.com/News |  | Epoxy Formulator Capitol Equipment Investments | Product Development News | Epic Resins | February 9, 2026;February 3, 2026;January 21, 2026;August 19
+ORG-004540 | Estron Chemical, Inc. | https://www.estron.com/ | https://estron.com/news/ |  | News - Estron Chemical | October 14, 2026;October 3, 2026;April 24, 2026;November 12,
+ORG-004575 | Synray Corporation | https://synray.com | https://synray.com/news/ |  | NEWS &#8211; Synray Corporation &#8211; Manufacturers of Alkyd Resins, Polyesters and Chemical Specialties | April 30, 2026;March 31, 2025
+ORG-004585 | Rodda Paint Company | https://www.roddapaint.com | https://www.roddapaint.com/about-us/newsroom/ | https://www.roddapaint.com/feed/ | Newsroom - Rodda-Miller Paint | October 20, 2026;March 18, 2025;December 3, 2024;June 15, 20
+ORG-004592 | Hydrite Chemical Co. | https://www.hydrite.com | https://www.hydrite.com/News-Events/Press-Releases.htm |  | Press Releases | Hydrite Chemical Co. | September 3, 2025;April 26, 2024;December 1, 2021;December 1
+ORG-004605 | Proviron Inc. | https://proviron.com/america | https://proviron.com/america/america-news/ |  | Proviron Inc - news, blog and resources | October 13, 2026;September 8, 2026;July 14, 2026;July 8, 202

@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "record_id": "SITE-014006",
+      "url": "https://calspas.com/zp/albums/calspas/pdf/press-releases/PR-CalSpas-SantaCop2015.pdf",
+      "known_quote": "The company produces premium collections of lifestyle products from its headquarters in Pomona, California",
+      "format": "pdf",
+      "text_path": "build/pic18-fetch-retry-cache/bffc76e482ce3f71c7c503dcd5e90f5e343773b34884ea80ea628addb73a66a8.txt",
+      "text_sha256": "43373fd5897ab92cd73824f80b8b74049105e6426b1851ddd6451993b2195cab",
+      "fetched_at": "2026-11-06T13:08:28Z",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "wrong_order": "REJECTED",
+      "wrong_page": "REJECTED"
+    },
+    {
+      "record_id": "SITE-006049",
+      "url": "https://www.jmeagle.com/sites/default/files/JM%20Eagle%20NMSDC%20MBE%20Certificate%204-30-2026.pdf",
+      "known_quote": "J-M Manufacturing Company, Inc Doing Business As JM Eagle",
+      "format": "pdf",
+      "text_path": "build/pic18-fetch-retry-cache/5db3516c520bf52ed51d78736bc9e21a496b2a5dba7c3da662fbddc3eb3bb611.txt",
+      "text_sha256": "6558b55d91ba0e36daded4d7eec0939d6c450f3d3fb17c8d386bec36471d12ca",
+      "fetched_at": "2026-11-06T13:08:29Z",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "wrong_order": "REJECTED",
+      "wrong_page": "REJECTED"
+    },
+    {
+      "record_id": "SITE-001828",
+      "url": "https://www.pexco.com/wp-content/uploads/2025/09/ISO9001-2015-certificate-Cincinnati.pdf",
+      "known_quote": "Performance Plastics Limited 4435 Brownway Avenue Cincinnati, OH 45209",
+      "format": "pdf",
+      "text_path": "build/pic18-fetch-retry-cache/451cea3a406820ba42b11c830893a307cb33878b0f89f971c78031ae91d0efb4.txt",
+      "text_sha256": "9cedbc3d030fa1508629fef77cee3f49217bc106be51b695ed398f6881d56ffc",
+      "fetched_at": "2026-11-06T13:08:29Z",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "wrong_order": "REJECTED",
+      "wrong_page": "REJECTED"
+    },
+    {
+      "record_id": "known-SSI",
+      "url": "https://www.ssibio.com/contact-us",
+      "known_quote": "1310 Thurman Street Lodi, CA 95240",
+      "format": "html_text_nodes",
+      "text_path": "build/pic18-fetch-retry-cache/a34236df7edaa642b1fdda3d6efc5c2e11e376e3cda02c19c7d5b4a64d5a2f96.txt",
+      "text_sha256": "9eaf74dd8b31bfc7dfbf9fdf24de44474ba4aafc7cc38fa7d6d26b5032e246e3",
+      "fetched_at": "2026-11-06T13:08:29Z",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "wrong_order": "REJECTED",
+      "wrong_page": "REJECTED"
+    },
+    {
+      "record_id": "known-Rubbercraft",
+      "url": "https://www.rubbercraft.com/",
+      "known_quote": "co-molding",
+      "format": "html_text_nodes",
+      "text_path": "build/pic18-fetch-retry-cache/c2ad9225630c87ecaf0dbf302c2f144513b5eac09eec120d9c52d5c06cbebfda.txt",
+      "text_sha256": "bb82095c4f5dfca369fac97eb67e4951eec06e5c04f5a825182cd3e35e735647",
+      "fetched_at": "2026-11-06T13:08:30Z",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "wrong_order": "REJECTED",
+      "wrong_page": "REJECTED"
+    }
+  ],
+  "wall": "REJECTED",
+  "empty": "REJECTED",
+  "query_case": "REJECTED",
+  "NAS_live_known": [
+    {
+      "record_id": "SITE-014006",
+      "url": "https://calspas.com/zp/albums/calspas/pdf/press-releases/PR-CalSpas-SantaCop2015.pdf",
+      "route": "firecrawl_pdf_text",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "text_sha256": "aaffd622465f2e5373136669ad6a80c91aa14b6d368733d539de42b553d69731",
+      "fetched_at": "2026-11-06T13:13:23.184Z"
+    },
+    {
+      "record_id": "known-SSI",
+      "url": "https://www.ssibio.com/contact-us",
+      "route": "firecrawl",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "text_sha256": "92081908c64c990e7393572723c16b4dcc23cd595fcb1ce21e8d4b1da29a956d",
+      "fetched_at": "2026-11-06T13:13:26.015Z"
+    },
+    {
+      "record_id": "known-Rubbercraft",
+      "url": "https://www.rubbercraft.com/",
+      "route": "firecrawl",
+      "positive": "PASS",
+      "false_tail": "REJECTED",
+      "text_sha256": "dcc42e1902859edff8aab04cf5773f292042885bd23cc6b1d8c392f82853fc7e",
+      "fetched_at": "2026-11-06T13:13:30.605Z"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+site_id,verdict,street_address,evidence_id,reason
+SITE-000002,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000004,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000006,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000007,STILL_UNCERTAIN,201 East Steels Corners Road,,own-page street blocks disagree; own-page ZIP conflicts with current site ZIP
+SITE-000008,STILL_UNCERTAIN,1293 South Main Street,,retired postal-only witness proposal EVD-152005; physical witness needs new ID in later pass; mailing-only or ambiguous address context
+SITE-000009,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000010,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000014,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000035,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000037,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000043,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000044,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000047,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000048,STILL_UNCERTAIN,3770 Embassy Parkway,,own-page street blocks disagree; own-page ZIPs disagree; own-page ZIP conflicts with current site ZIP
+SITE-000050,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000051,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000052,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000056,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000058,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000061,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000070,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000076,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000077,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000078,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000079,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000083,STILL_UNCERTAIN,3960 Summit Rd,,own-page ZIPs disagree
+SITE-000085,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000092,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000101,STILL_UNCERTAIN,2828 Second Street,,notes address conflicts; dated adjudication needed
+SITE-000105,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000106,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000112,STILL_UNCERTAIN,1274 East 55th Street,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+SITE-000114,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000115,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000123,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000129,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000133,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000134,STILL_UNCERTAIN,5109 Hamilton Ave,,notes address conflicts; dated adjudication needed
+SITE-000136,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000145,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000150,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched

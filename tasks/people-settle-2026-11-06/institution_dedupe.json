@@ -1,0 +1,616 @@
+[
+  {
+    "query": {
+      "domain": "chemistry.osu.edu",
+      "name": "Faith Wyzgoski",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": null,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "chemistry.case.edu",
+      "name": "John D. Protasiewicz",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000502",
+            "name": "Case Western Reserve University",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: case.edu"
+          },
+          {
+            "id": "ORG-002108",
+            "name": "CWRU Technology Transfer Office",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: case.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "case.edu",
+      "name": "Burcu Gurkan",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000502",
+            "name": "Case Western Reserve University",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "ecosystem.csv",
+            "match": "domain exact: case.edu"
+          },
+          {
+            "id": "ORG-002108",
+            "name": "CWRU Technology Transfer Office",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain exact: case.edu"
+          },
+          {
+            "id": "ORG-002127",
+            "name": "CWRU Macromolecular Science and Engineering / CAPP",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: engineering.case.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "case.edu",
+      "name": "Huichun (Judy) Zhang",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000502",
+            "name": "Case Western Reserve University",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "ecosystem.csv",
+            "match": "domain exact: case.edu"
+          },
+          {
+            "id": "ORG-002108",
+            "name": "CWRU Technology Transfer Office",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain exact: case.edu"
+          },
+          {
+            "id": "ORG-002127",
+            "name": "CWRU Macromolecular Science and Engineering / CAPP",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: engineering.case.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "researchdirectory.uc.edu",
+      "name": "John Robert Martin",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": null,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "researchdirectory.uc.edu",
+      "name": "Jonathan David Nickels",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": null,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "researchdirectory.uc.edu",
+      "name": "Junhang Dong",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": null,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "profiles.bgsu.edu",
+      "name": "Pavel Anzenbacher",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002087",
+            "name": "Bowling Green State University",
+            "city": "Bowling Green",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: bgsu.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "osu.edu",
+      "name": "Allen Yi",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002114",
+            "name": "Ohio State Innovation and Commercialization (OSIF)",
+            "city": "Columbus",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: research.osu.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "ysu.edu",
+      "name": "Byung-Wook Park",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002175",
+            "name": "Youngstown State University",
+            "city": "Youngstown",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain exact: ysu.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "case.edu",
+      "name": "Julie Renner",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000502",
+            "name": "Case Western Reserve University",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "ecosystem.csv",
+            "match": "domain exact: case.edu"
+          },
+          {
+            "id": "ORG-002108",
+            "name": "CWRU Technology Transfer Office",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain exact: case.edu"
+          },
+          {
+            "id": "ORG-002127",
+            "name": "CWRU Macromolecular Science and Engineering / CAPP",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: engineering.case.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  {
+    "query": {
+      "domain": "osu.edu",
+      "name": "Aleksander Skardal",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002114",
+            "name": "Ohio State Innovation and Commercialization (OSIF)",
+            "city": "Columbus",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "domain subdomain: research.osu.edu"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+]

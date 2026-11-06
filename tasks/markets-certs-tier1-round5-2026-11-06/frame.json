@@ -1,0 +1,10 @@
+{
+  "base": "c2674712c0c9f8aeefac9179597b8a4c6e5eda5f",
+  "active_tier1_organizations": 1261,
+  "markets_populated": 174,
+  "certifications_populated": 17,
+  "eligible_remaining": 867,
+  "selected": 100,
+  "selected_pic18": 0,
+  "selection": "active + stored Tier1 + blank markets; exclude prior30+100+100 frames and ORG62/101; any held OH PIC18 county-site first thenorgid; no website filter"
+}

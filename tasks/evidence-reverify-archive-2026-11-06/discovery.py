@@ -44,14 +44,16 @@ def cdx(url):
     except (ValueError,TypeError,KeyError):return [],'CDX_INVALID_RESPONSE'
 
 
-def main():
+def main(results=None, output=None):
     grouped={}
     for e in read(HERE/'verdicts.csv'):
         if e['judgment']=='SUPPORTED':grouped.setdefault(e['url'],[]).append(e)
     supported_ids = {e['evidence_id'] for rows in grouped.values() for e in rows}
-    results=ROOT/'build/l1-discovery';results.mkdir(exist_ok=True)
+    results = results or ROOT/'build/l1-discovery'
+    output = output or ROOT/'build/l1-cdx-links.csv'
+    results.mkdir(exist_ok=True)
     all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links'] if r['evidence_id'] in supported_ids]
-    write(ROOT/'build/l1-cdx-links.csv',sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
+    write(output,sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
     for i,(url,rows) in enumerate(sorted(grouped.items()),1):
         if time.monotonic() >= END: break
         path=results/(hashlib.sha256(url.encode()).hexdigest()+'.json')
@@ -85,7 +87,7 @@ def main():
                     links.append(dict(evidence_id=e['evidence_id'],archive_ref=ref,captured_at=stamp[:4]+'-'+stamp[4:6]+'-'+stamp[6:8],created_by='atlas-L1-reverify-archive'))
         path.write_text(json.dumps(dict(url=url,status=status,links=links)))
         all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links'] if r['evidence_id'] in supported_ids]
-        write(ROOT/'build/l1-cdx-links.csv',sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
+        write(output,sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
         print(i,'/',len(grouped),'CDX',status,'links',len(all_links),flush=True)
 
 

@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "scope": "D10 L14 selected12 federal program/institution candidates. Canonical delta1Cecosystem LIFT ORG013300+5append-onlyEVD296000\u2013004, previousrowsunchanged. Full canonical projection/evidence in creates_ecosystem/evidence_rows. Five held duplicates,six namedholds; no rule/ring/vocab changes.",
+  "criteria": [
+    "12candidateunits1VERIFIED5DUPLICATE6HOLD;oneCecosystemLIFT+6EVD,alloldrowsunchanged",
+    "Namedpolymerresources,identity/address/county and potential_member relevance assessment supported by ownsources;noformalPICrelationshipinvented",
+    "Mandatoryrelevancepre-writeguardandblanknew-recordactualapplynegative;all6rawobservations4sources/known3/dedupe/globalIDs/replay/validator0/nativeguard"
+  ],
+  "out_of_scope": [
+    "Current federal funding or operating liveness",
+    "Program/table/vocabulary changes gated by owner battery",
+    "Complete regional MEP affiliate inventory",
+    "Hosted deployment or physical inspection"
+  ],
+  "revision": "549b7155720fb56abb126e2df716cd9e4bc8d29b",
+  "tool_access": "Reviewers have full branch/canonical data access and may fetch admitted own sources, Census county record and held candidates. Inspect complete packet; use PR ref if worker checkout moves.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "45a9b6b325ec8de1d9fe6eff3bf3644bb6cd37d4510f788fa9012a5d4950e5ff"
+    },
+    {
+      "path": "README.md",
+      "sha256": "2b208d5a871764db60253c367d1af8c86cc018409a8400dc5799fd954918054a"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "d09e141d2c5cc753109c54370ece5d96f7ec9f92225c4a481de1ed302c643776"
+    },
+    {
+      "path": "application.txt",
+      "sha256": "19fe37aef9c101dc47f35f313177b6033eed07eeece9c9e1cd49b66ab7d2dd8e"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "c6f78b765899de8987a80d8bde4e67ca36ecbff396958943763775a9339bdd2e"
+    },
+    {
+      "path": "build.py",
+      "sha256": "036399398bd28d252a1e856432102573e7113a3a97a18c21917b766db47fece4"
+    },
+    {
+      "path": "check.py",
+      "sha256": "a27cc67e012d7c23b08bc43168075f06f7f106179e64f2c8790d2ae62f3e7f69"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "18943deb7db29183c46699d86d92ce111073a4aa6436a8dd226059ee6832e115"
+    },
+    {
+      "path": "creates_ecosystem.csv",
+      "sha256": "3346f01f00973fc264de27c65144749fec97aa9a6a59b0edbbce7f3184ca9c86"
+    },
+    {
+      "path": "dedupe-america.txt",
+      "sha256": "07426d4f7bb63be322d334372939a3122d0428d178072db6fed0f97fef516ee5"
+    },
+    {
+      "path": "dedupe-hub.txt",
+      "sha256": "92097c4d397d4d8fff886905e6b39ce95db3ecba3a117c24ed4a4470f1c31a1d"
+    },
+    {
+      "path": "dedupe-iacmi.txt",
+      "sha256": "86d977392ff51c6f9c03baad3ee9cbaf572704b133267a51977a9d03e8499615"
+    },
+    {
+      "path": "dedupe-lift-alias.txt",
+      "sha256": "f0a08a0263534c1fe6a08d0766c80a35333d6da57e4e9ee0a8bcad4cfd3a5863"
+    },
+    {
+      "path": "dedupe-lift-old.txt",
+      "sha256": "6fbf331fe7a26606b268f2358f5c6cd5ba3c17848c3a52b87ea3796190c6a01f"
+    },
+    {
+      "path": "dedupe-lift-operator.txt",
+      "sha256": "012d75f8274318fbdb61f9cf691b3ed98a9679f01a2c573e17d44da8621ea257"
+    },
+    {
+      "path": "dedupe-lift.txt",
+      "sha256": "54f2ea428148ecafcafd7566f1fe9684cc2181917c00b07090e57d15506e5405"
+    },
+    {
+      "path": "dedupe-magnet.txt",
+      "sha256": "d7b7e8aa514b93dae94cfff497490e5a1d24a69214a04ee418ca6d04f3abbbd7"
+    },
+    {
+      "path": "dedupe-michigan-mep.txt",
+      "sha256": "4ef87258b7d5e4721238bbed04710fab1aa9003c6fd3b0d06a507cb160db1e4a"
+    },
+    {
+      "path": "dedupe-nepirc.txt",
+      "sha256": "17c3d6903745ca79036d1be8b37cbb878ba97d2c2013edae9711e3d05eaf0391"
+    },
+    {
+      "path": "dedupe-niimbl-alias.txt",
+      "sha256": "20d46baa6fdebd622b004f7ccb821132712c42db4a1666c6af2cbf442ae91576"
+    },
+    {
+      "path": "dedupe-niimbl.txt",
+      "sha256": "953560c332f8d9017aa5d85685709a5585b51776be81bc52d7256ab65083c2ff"
+    },
+    {
+      "path": "dedupe-ohio-mep.txt",
+      "sha256": "a5d3d659cce7fcba9ce94132386748ac2fefb6d1638229ea319a251cf3caa847"
+    },
+    {
+      "path": "dedupe-pa-mep.txt",
+      "sha256": "271407fcf71aca5faf5fba05f9869259a2abdaf0292f474196f4281987131fde"
+    },
+    {
+      "path": "dedupe-purdue-mep.txt",
+      "sha256": "eb8a6cb9a413e010023abb364d5005f2eb6560723ae49f4123f099cee8658044"
+    },
+    {
+      "path": "dedupe-remade.txt",
+      "sha256": "b395bbd50ba2f1d7871377f39051c7cb6645d33e833d5de9e5fd0c20386923a2"
+    },
+    {
+      "path": "evidence_rows.csv",
+      "sha256": "a958be5048ea00869d50e67f2af538257489627367cb1ecf818c90aaab1d76aa"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "2b166361444c61eadb750acf9de07c2994b4b21422c1f06c7e140b916e225a27"
+    },
+    {
+      "path": "integration.json",
+      "sha256": "e69c12d91683f5d8b9d7cf492b177d806a72c90480fd3644f6ba5aa441d800ec"
+    },
+    {
+      "path": "raw-checks.txt",
+      "sha256": "ce810bc41e8a36193295fd263c9d0fe9ff51da24692bcf99ab8d15d6fa2e76f5"
+    },
+    {
+      "path": "row-loss.txt",
+      "sha256": "f6955a69be617da2af889a0aae77357c7418be5c0da8d2b60792bed88b3c262f"
+    },
+    {
+      "path": "shard-reference.json",
+      "sha256": "6fa40bf99d03fd7e530b2e8bfba039304f8e0a192f24532e0478271bf2a593c6"
+    },
+    {
+      "path": "source-fetches.csv",
+      "sha256": "026b01e65bcf4842ea150b518531163b90915dde41b2b694f4dfe4937d9584d3"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "a8baf4f375d999207bb2f2f8aaffbe99627cde573274a5f241719d82864495e5"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "dc166e0346b93212ca792d33f9948039aba77d6e76e99dd87428a8cdeea0b09b"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/federal-programs-2026-11-06/build.py --raw-check",
+      "outcome": "pass",
+      "evidence": "raw-checks.txt"
+    },
+    {
+      "command": "python3 tasks/federal-programs-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [
+    {
+      "id": "codex4-initial",
+      "findings": [
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "missing-mandatory-relevance",
+          "evidence": "Codex4REFUTEee004fdaccepted;potential_memberresearcherassessment+append-only296005scope;old5unchanged;blanknewrecordactualapplyfailsbeforewrites. Correctedreviewsrequired."
+        }
+      ]
+    }
+  ],
+  "receipts": []
+}

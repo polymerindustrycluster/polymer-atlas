@@ -1,0 +1,29 @@
+[
+  {
+    "record": "Spiratex Monroe",
+    "url": "https://www.spiratex.com/careers/",
+    "expected": "Production Operator \u2013 Monroe",
+    "result": "PASS",
+    "negative": "absent quote refused",
+    "page": "build/l11-quality-cache/frozen/8c6806d25414bcf574d28b59528c7f44ba1445a6337421d1ba009165ec437741.txt",
+    "page_sha256": "8c6806d25414bcf574d28b59528c7f44ba1445a6337421d1ba009165ec437741"
+  },
+  {
+    "record": "Pretium Aurora",
+    "url": "https://www.pretiumpkg.com/locations/",
+    "expected": "Aurora, Illinois Manufacturing Plant",
+    "result": "PASS",
+    "negative": "absent quote refused",
+    "page": "build/l11-quality-cache/frozen/5257b514e41914ce88797613e4096707cb13fcf400e51a963cfc1e1ba3af7161.txt",
+    "page_sha256": "5257b514e41914ce88797613e4096707cb13fcf400e51a963cfc1e1ba3af7161"
+  },
+  {
+    "record": "Gilkey showroom",
+    "url": "https://www.gilkey.com/location/chicago-ridge-il/",
+    "expected": "Showroom",
+    "result": "PASS",
+    "negative": "absent quote refused",
+    "page": "build/l11-quality-cache/frozen/f358cb4cf0929e42d987473a072616ec4c269110005aabdcef63c000ff3e9d6f.txt",
+    "page_sha256": "f358cb4cf0929e42d987473a072616ec4c269110005aabdcef63c000ff3e9d6f"
+  }
+]

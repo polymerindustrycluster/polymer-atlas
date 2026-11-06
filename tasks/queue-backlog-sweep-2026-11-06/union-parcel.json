@@ -1,0 +1,95 @@
+{
+  "url": "https://www7.co.union.oh.us/unioncountyohio/rest/services/parcel/MapServer/0/query?where=houseNumber%3D8485+AND+StreetName+LIKE+%27%25ESTATE%25%27&outFields=ACCOUNT%2CAddress%2ChouseNumber%2CStreetName%2Ctownship%2Ccity%2CZipCode%2CtaxDistrictName%2CPARCELTYPE%2CPropertyCard&returnGeometry=false&f=pjson&resultRecordCount=25",
+  "result": {
+    "displayFieldName": "camano",
+    "fieldAliases": {
+      "ACCOUNT": "account",
+      "Address": "Address",
+      "houseNumber": "houseNumber",
+      "StreetName": "StreetName",
+      "township": "township",
+      "city": "city",
+      "ZipCode": "ZipCode",
+      "taxDistrictName": "taxDistrictName",
+      "PARCELTYPE": "ParcelType",
+      "PropertyCard": "PropertyCard"
+    },
+    "fields": [
+      {
+        "name": "ACCOUNT",
+        "type": "esriFieldTypeString",
+        "alias": "account",
+        "length": 15
+      },
+      {
+        "name": "Address",
+        "type": "esriFieldTypeString",
+        "alias": "Address",
+        "length": 59
+      },
+      {
+        "name": "houseNumber",
+        "type": "esriFieldTypeInteger",
+        "alias": "houseNumber"
+      },
+      {
+        "name": "StreetName",
+        "type": "esriFieldTypeString",
+        "alias": "StreetName",
+        "length": 50
+      },
+      {
+        "name": "township",
+        "type": "esriFieldTypeString",
+        "alias": "township",
+        "length": 55
+      },
+      {
+        "name": "city",
+        "type": "esriFieldTypeString",
+        "alias": "city",
+        "length": 50
+      },
+      {
+        "name": "ZipCode",
+        "type": "esriFieldTypeString",
+        "alias": "ZipCode",
+        "length": 35
+      },
+      {
+        "name": "taxDistrictName",
+        "type": "esriFieldTypeString",
+        "alias": "taxDistrictName",
+        "length": 50
+      },
+      {
+        "name": "PARCELTYPE",
+        "type": "esriFieldTypeString",
+        "alias": "ParcelType",
+        "length": 1
+      },
+      {
+        "name": "PropertyCard",
+        "type": "esriFieldTypeString",
+        "alias": "PropertyCard",
+        "length": 155
+      }
+    ],
+    "features": [
+      {
+        "attributes": {
+          "ACCOUNT": "15-0027019.0230",
+          "Address": "8485 ESTATE COURT",
+          "houseNumber": 8485,
+          "StreetName": "ESTATE COURT",
+          "township": "JEROME",
+          "city": "PLAIN CITY",
+          "ZipCode": "PLAIN CITY OH 43064",
+          "taxDistrictName": "JONATHAN ALDER LSD",
+          "PARCELTYPE": "p",
+          "PropertyCard": "https://unionparcel.appraisalresearchcorp.com/Union/PDF/1500270190230.pdf"
+        }
+      }
+    ]
+  }
+}

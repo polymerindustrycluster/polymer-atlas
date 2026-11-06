@@ -1,0 +1,76 @@
+site_id,verdict,street_address,evidence_id,reason
+SITE-000648,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000676,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000677,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000678,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000717,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000788,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000789,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000864,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000879,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001311,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001316,STILL_UNCERTAIN,1150 Damar Drive,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001317,STILL_UNCERTAIN,1150 Damar Drive,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001394,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001396,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001400,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001416,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001417,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001418,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001419,STILL_UNCERTAIN,2540 Progress Drive,,notes address conflicts; dated adjudication needed
+SITE-001420,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001423,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001424,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001425,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001428,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001431,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001432,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001433,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001434,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001435,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001436,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001437,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001438,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001440,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001441,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001449,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001455,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001468,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001480,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001481,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001483,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001484,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001485,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001505,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001506,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001512,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001522,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001524,STILL_UNCERTAIN,11525 Madison Avenue,,own-page ZIP conflicts with current site ZIP; existing notes name an unresolved ZIP discrepancy; reconcile primary locality first
+SITE-001525,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001529,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001538,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001539,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001546,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001560,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001567,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001571,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001573,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001577,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001579,STILL_UNCERTAIN,549 E Washington Street,,notes address conflicts; dated adjudication needed
+SITE-001588,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001590,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001591,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001593,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001599,STILL_UNCERTAIN,200 West Ohio Ave,,mailing-only or ambiguous address context
+SITE-001603,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001604,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001605,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001606,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001611,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001614,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001615,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001616,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001622,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001630,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001632,STILL_UNCERTAIN,150 Lena Drive,,notes address conflicts; dated adjudication needed
+SITE-001637,STILL_UNCERTAIN,345 S. Mill St,,notes address conflicts; dated adjudication needed

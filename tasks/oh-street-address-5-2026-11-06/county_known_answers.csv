@@ -1,0 +1,4 @@
+address,expected_county,county,matched_address,result
+"373 Washington St, Chardon, OH 44024",Geauga,Geauga County,"373 WASHINGTON ST, CHARDON, OH, 44024",PASS
+"1101 Moore Rd, Avon, OH 44011",Lorain,Lorain County,"1101 MOORE RD, AVON, OH, 44011",PASS
+"1150 Damar Dr, Akron, OH 44305",Summit,Summit County,"1150 DAMAR DR, AKRON, OH, 44305",PASS

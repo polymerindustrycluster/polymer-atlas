@@ -1,0 +1,16 @@
+{
+  "original_candidates": 7,
+  "sampled": 7,
+  "accepted_fills": 6,
+  "archive_rows_reconciled": 3233462,
+  "bulk_transcription_errors": 0,
+  "fresh_rest_matches": 7,
+  "rest_unavailable": 0,
+  "rest_incomplete": 0,
+  "address_disagreements": 0,
+  "source_download_date": "2026-11-06T13:12:33.594168+00:00",
+  "source_is_address_effective_date": false,
+  "accepted_bulk_transcriptions": 6,
+  "withdrawn_for_explicit_unresolved_warning": 1,
+  "replacement_sample": false
+}

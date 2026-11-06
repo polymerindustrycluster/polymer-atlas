@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001290900.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001290900",
+  "name": "Commercial Vehicle Group, Inc.",
+  "tickers": [
+    "CVGI"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "4ad8d31063ff4c9d60ceedc4f1b5fddac6045d1e3808ab88f437addd16780bde",
+  "raw_name_token": "\"Commercial Vehicle Group, Inc.\""
+}

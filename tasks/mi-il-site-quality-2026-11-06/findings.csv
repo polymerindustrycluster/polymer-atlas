@@ -1,0 +1,4 @@
+site_id,kind,finding,source_url
+SITE-019018,possible_creation_error,"Exact address10160 Virginia Avenue, Chicago Ridge IL60415; own page labels Showroom and Office and describes window replacement. Manufacturing_plant classification needs correction review, not an upgrade.",https://www.gilkey.com/location/chicago-ridge-il/
+SITE-019009,address_conflict,"Own page lists320 Craig Place, Hillside IL60162, versus held320 Craig Road; Packaging label is not plant-specific manufacturing proof.",https://www.storopack.us/company/about-us/storopack-worldwide/
+SITE-018014,operating_disruption,Own page reports substantial fire at South Haven facility and disruption; no closure inference or status edit.,https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/

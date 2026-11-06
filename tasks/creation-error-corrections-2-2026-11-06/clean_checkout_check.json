@@ -1,0 +1,11 @@
+{
+  "head": "78af48286746d39a1f31ba623b4e957ad9dbb470",
+  "fresh_clone": "/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/l11-correction2-clean-iv_mkn_p/repo",
+  "copied_cache": false,
+  "public_acquisition": "PASS",
+  "missing_witness_refused_before_writes": true,
+  "named_check": "PASS",
+  "canonical_replay_byte_identical": true,
+  "validator_errors": 0,
+  "row_loss": "PASS"
+}

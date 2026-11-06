@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001323885.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001323885",
+  "name": "AtriCure, Inc.",
+  "tickers": [
+    "ATRC"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "f561dcd7b6b006f546d541e7c57cdb6569cc2600f639f7e22e7cc1139e35c483",
+  "raw_name_token": "\"AtriCure, Inc.\""
+}

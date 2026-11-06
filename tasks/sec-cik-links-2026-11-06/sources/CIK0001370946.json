@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001370946.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001370946",
+  "name": "Owens Corning",
+  "tickers": [
+    "OC"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "7805b562d69ec0ba73ed13bac03f6ac826a8dfd765d8d9714772449a133a5573",
+  "raw_name_token": "\"Owens Corning\""
+}

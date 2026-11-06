@@ -1,0 +1,57 @@
+{
+  "frame_sites": 75,
+  "promoted_B_sites": 30,
+  "held_C_sites": 45,
+  "changed_cells": 60,
+  "appended_evidence": 210,
+  "government_observations": 180,
+  "own_scope_quotes": 30,
+  "own_scope_URLs": 27,
+  "known_answers": 3,
+  "blind_sample": 20,
+  "source_URLs_attempted": 82,
+  "fetch_outcomes": {
+    "loaded": 59,
+    "unfetchable": 21,
+    "unreadable": 2
+  },
+  "all6_mutations": "PASS before writes",
+  "replay": "PASS",
+  "state_counts": {
+    "FL": {
+      "strict326_before": 50,
+      "strict326_after": 50,
+      "QCEW2023_private_establishments": 798.0,
+      "share_before": 0.06265664160401002,
+      "share_after": 0.06265664160401002
+    },
+    "GA": {
+      "strict326_before": 75,
+      "strict326_after": 75,
+      "QCEW2023_private_establishments": 491.0,
+      "share_before": 0.15274949083503056,
+      "share_after": 0.15274949083503056
+    },
+    "NY": {
+      "strict326_before": 50,
+      "strict326_after": 50,
+      "QCEW2023_private_establishments": 410.0,
+      "share_before": 0.12195121951219512,
+      "share_after": 0.12195121951219512
+    },
+    "IN": {
+      "strict326_before": 129,
+      "strict326_after": 129,
+      "QCEW2023_private_establishments": 512.0,
+      "share_before": 0.251953125,
+      "share_after": 0.251953125
+    },
+    "WI": {
+      "strict326_before": 87,
+      "strict326_after": 87,
+      "QCEW2023_private_establishments": 456.0,
+      "share_before": 0.19078947368421054,
+      "share_after": 0.19078947368421054
+    }
+  }
+}

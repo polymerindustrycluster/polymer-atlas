@@ -1,0 +1,1697 @@
+[
+  {
+    "cluster_id": "LF-CA-02777",
+    "result": {
+      "query": {
+        "domain": "https://metropolybag.com/about/",
+        "name": "Metro Poly Corp.",
+        "street": "1651 Aurora Drive",
+        "city": "San Leandro",
+        "state": "CA",
+        "zip": "94577"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02843",
+    "result": {
+      "query": {
+        "domain": "https://microdyneplastics.com/",
+        "name": "MYCRODYNE PLASTICS, INC",
+        "street": "1901 E COOLEY DR.",
+        "city": "COLTON",
+        "state": "CA",
+        "zip": "92324"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02852",
+    "result": {
+      "query": {
+        "domain": "https://sites.google.com/view/westbag/home",
+        "name": "WEST-BAG INC",
+        "street": "1161 MONTEREY PASS RD",
+        "city": "MONTEREY PARK",
+        "state": "CA",
+        "zip": "91754"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02894",
+    "result": {
+      "query": {
+        "domain": "https://montebelloplastics.com/",
+        "name": "Montebello Plastics, LLC",
+        "street": "601 W Olympic Blvd",
+        "city": "Montebello",
+        "state": "CA",
+        "zip": "90640"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-03165",
+    "result": {
+      "query": {
+        "domain": "https://www.americaninnotek.com/",
+        "name": "American Innotek",
+        "street": "2655 Vista Pacific Drive",
+        "city": "Oceanside",
+        "state": "CA",
+        "zip": "92056"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00737",
+    "result": {
+      "query": {
+        "domain": "https://sunpol.com/",
+        "name": "SUNPOL RESINS AND POLYMERS, INC.",
+        "street": "2475 CROCKER CIRCLE #6515",
+        "city": "FAIRFIELD",
+        "state": "CA",
+        "zip": "94533"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00843",
+    "result": {
+      "query": {
+        "domain": "https://www.mitchellrubber.com/",
+        "name": "MITCHELL RUBBER PRODUCTS, LLC",
+        "street": "10220 SAN SEVAINE WAY",
+        "city": "MIRA LOMA",
+        "state": "CA",
+        "zip": "91752"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01037",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "PAN PACIFIC PLASTICS MFG, INC",
+        "street": "26551 DANTI CT",
+        "city": "HAYWARD",
+        "state": "CA",
+        "zip": "94545"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01063",
+    "result": {
+      "query": {
+        "domain": "https://elitecomfortsolutions.com/",
+        "name": "ELITE COMFORT SOLUTIONS",
+        "street": "1671 S. CHAMPAGNE AVE",
+        "city": "ONTARIO",
+        "state": "CA",
+        "zip": "91764"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01163",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "A & S MOLD & DIE CORP",
+        "street": "9705 ETON AVE",
+        "city": "CHATSWORTH",
+        "state": "CA",
+        "zip": "91311"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01165",
+    "result": {
+      "query": {
+        "domain": "https://www.armorcastprod.com/",
+        "name": "ARMORCAST PRODUCTS COMPANY, INC.",
+        "street": "500 S. DUPONT AVE.",
+        "city": "ONTARIO",
+        "state": "CA",
+        "zip": "91761"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01283",
+    "result": {
+      "query": {
+        "domain": "https://www.leonardsmoldedproducts.com/",
+        "name": "LEONARD'S MOLDED PRODUCTS INC",
+        "street": "25031 ANZA DR",
+        "city": "SANTA CLARITA",
+        "state": "CA",
+        "zip": "91355"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01336",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "VANTAGE ASSOCIATES INC",
+        "street": "12333 LOS NIETOS RD",
+        "city": "SANTA FE SPGS",
+        "state": "CA",
+        "zip": "90670"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01689",
+    "result": {
+      "query": {
+        "domain": "https://www.minaproducts.com/",
+        "name": "MINA PRODUCT DEVELOPMENT, INC.",
+        "street": "3020 RED HILL AVENUE",
+        "city": "COSTA MESA",
+        "state": "CA",
+        "zip": "92626"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01693",
+    "result": {
+      "query": {
+        "domain": "https://www.maverickcaps.com/",
+        "name": "MAVERICK ENTERPRISE/ENOPLASTIC",
+        "street": "2601 MAXWELL WAY",
+        "city": "FAIRFIELD",
+        "state": "CA",
+        "zip": "94534"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01991",
+    "result": {
+      "query": {
+        "domain": "https://www.argeecorp.com/",
+        "name": "ARGEE MANUFACTURING CORPORATION OF SAN DIEGO",
+        "street": "9550 PATHWAY STREET",
+        "city": "SANTEE",
+        "state": "CA",
+        "zip": "92071"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02543",
+    "result": {
+      "query": {
+        "domain": "https://www.protechmats.com/",
+        "name": "PRO-TECH MATS INDUSTRIES, INC.",
+        "street": "72370 QUARRY TRAIL, SUITE A",
+        "city": "THOUSAND PALMS",
+        "state": "CA",
+        "zip": "92276"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02627",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "PRE/PLASTICS, INC.",
+        "street": "12600 LOCKSLEY LANE #100",
+        "city": "AUBURN",
+        "state": "CA",
+        "zip": "95602"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02638",
+    "result": {
+      "query": {
+        "domain": "https://safepathproducts.com/online-retailers/",
+        "name": "VAN DUERR INDUSTRIES, INC.",
+        "street": "21 VALLEY CT",
+        "city": "CHICO",
+        "state": "CA",
+        "zip": "95973"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02868",
+    "result": {
+      "query": {
+        "domain": "https://www.westcoastgasket.com/",
+        "name": "WEST COAST GASKET CO.",
+        "street": "300 RANGER AVE.",
+        "city": "BREA",
+        "state": "CA",
+        "zip": "92821"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-02921",
+    "result": {
+      "query": {
+        "domain": "https://www.sig.biz/",
+        "name": "SIG GROUP LLC",
+        "street": "2500 Cooper Ave",
+        "city": "Merced",
+        "state": "CA",
+        "zip": "95348"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-03258",
+    "result": {
+      "query": {
+        "domain": "https://spearsmfg.com/",
+        "name": "SPEARS MANUFACTURING COMPANY",
+        "street": "15853 Olden St",
+        "city": "Sylmar",
+        "state": "CA",
+        "zip": "91342"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004116",
+              "name": "Spears Manufacturing Co",
+              "city": "Sylmar",
+              "state": "CA",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CA.csv",
+              "match": "domain exact: spearsmfg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004116",
+              "name": "Spears Manufacturing Co",
+              "city": "Sylmar",
+              "state": "CA",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CA.csv",
+              "match": "name key 'spears manufacturing' = legal_name 'Spears Manufacturing Co'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-03269",
+    "result": {
+      "query": {
+        "domain": "https://www.simonton.com/",
+        "name": "SIMONTON INDUSTRIES INC.",
+        "street": "2019 East Monte Vista Ave",
+        "city": "Vacaville",
+        "state": "CA",
+        "zip": "95688"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00081",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "ARMTEC DEFENSE PRODUCTS COMPANY",
+        "street": "85901 AVENUE 53",
+        "city": "COACHELLA",
+        "state": "CA",
+        "zip": "92236"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00125",
+    "result": {
+      "query": {
+        "domain": "https://www.kwplastics.com/",
+        "name": "KW Plastics of California",
+        "street": "1861 Sunnyside Court",
+        "city": "Bakersfield",
+        "state": "CA",
+        "zip": "93308"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003189",
+              "name": "KW Plastics",
+              "city": "Troy",
+              "state": "AL",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_AL.csv",
+              "match": "domain exact: kwplastics.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00499",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "D Aircraft",
+        "street": "1191 Hawk Circle",
+        "city": "Anaheim",
+        "state": "CA",
+        "zip": "92807"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00516",
+    "result": {
+      "query": {
+        "domain": "https://www.rakarinc.com/",
+        "name": "RAKAR, INC.",
+        "street": "1700 EMERSON AVENUE",
+        "city": "OXNARD",
+        "state": "CA",
+        "zip": "93033"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00701",
+    "result": {
+      "query": {
+        "domain": "https://cosmicplastics.com/",
+        "name": "COSMIC PLASTICS INC",
+        "street": "28410 Industry Drive",
+        "city": "Valencia",
+        "state": "CA",
+        "zip": "91355"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00749",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "ANDERSON MOULDS",
+        "street": "3131 EAST ANITA ST.",
+        "city": "STOCKTON",
+        "state": "CA",
+        "zip": "95205"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00839",
+    "result": {
+      "query": {
+        "domain": "https://www.sealscience.com/",
+        "name": "SEAL SCIENCE",
+        "street": "17131 DAIMLER ST",
+        "city": "IRVINE",
+        "state": "CA",
+        "zip": "92614"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00897",
+    "result": {
+      "query": {
+        "domain": "https://www.pentair.com/",
+        "name": "Pentair Water Pool and Spa, Inc",
+        "street": "10951 W Los Angeles Avenue",
+        "city": "Moorpark",
+        "state": "CA",
+        "zip": "93021"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000483",
+              "name": "Pentair",
+              "city": "Chardon",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: pentair.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00910",
+    "result": {
+      "query": {
+        "domain": "https://www.avantorsciences.com/",
+        "name": "NuSil Technology",
+        "street": "1050 Cindy Lane",
+        "city": "Carpinteria",
+        "state": "CA",
+        "zip": "93013"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004230",
+              "name": "NuSil Technology LLC",
+              "city": "Carpinteria",
+              "state": "CA",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CA.csv",
+              "match": "name key 'nusil technology' = legal_name 'NuSil Technology LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00938",
+    "result": {
+      "query": {
+        "domain": "https://agriculturebag.com/about-us/index.html",
+        "name": "AGRICULTURAL BAG MANUFACTURING USA, INC",
+        "street": "960 - 98TH AVENUE",
+        "city": "OAKLAND",
+        "state": "CA",
+        "zip": "94603"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-00962",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "WATERDOG PRODUCTS INC",
+        "street": "1148 PIONEER WAY",
+        "city": "EL CAJON",
+        "state": "CA",
+        "zip": "92020"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01043",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "TURRET PUNCH CO INC",
+        "street": "7780 EDISON AVE",
+        "city": "FONTANA",
+        "state": "CA",
+        "zip": "92336"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01045",
+    "result": {
+      "query": {
+        "domain": "https://usrubber.com/",
+        "name": "U.S. RUBBER RECYCLING, INC.",
+        "street": "1231 S. LINCOLN ST.",
+        "city": "COLTON",
+        "state": "CA",
+        "zip": "92324"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01053",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "CRF INDUSTRIES INC",
+        "street": "1281 N PATT ST",
+        "city": "ANAHEIM",
+        "state": "CA",
+        "zip": "92801"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01068",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "SHER-FAB UNLIMITED, INC.",
+        "street": "1740 E MONTICELLO CT",
+        "city": "ONTARIO",
+        "state": "CA",
+        "zip": "91761"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01096",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "A & D RUBBER PRODUCTS CO INC",
+        "street": "1438 BOURBON ST",
+        "city": "STOCKTON",
+        "state": "CA",
+        "zip": "95204"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-CA-01162",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "MAGSPHERE INC",
+        "street": "1993 LOCUST ST",
+        "city": "PASADENA",
+        "state": "CA",
+        "zip": "91107"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  }
+]

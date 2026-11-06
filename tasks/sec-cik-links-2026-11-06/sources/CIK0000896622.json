@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000896622.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000896622",
+  "name": "APTARGROUP, INC.",
+  "tickers": [
+    "ATR"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "3baffcc80f69579a532b9b27f28e7b3bb8f0243aa2cb3dfb4faaece67a2b5599",
+  "raw_name_token": "\"APTARGROUP, INC.\""
+}

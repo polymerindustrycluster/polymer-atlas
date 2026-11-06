@@ -1,0 +1,76 @@
+site_id,org_id,state,city,street_address,naics_primary,verification_tier,legal_name,website,ultimate_parent_name
+SITE-016000,ORG-002521,FL,Jacksonville,"500 N Ellis Rd, Suite A",326111,C,Hilex Poly Co. LLC,NULL,NULL
+SITE-016001,ORG-000132,FL,Orlando,2150 W Sandlake Rd,325510,C,The Sherwin-Williams Company,https://www.sherwin-williams.com,The Sherwin-Williams Co.
+SITE-016002,ORG-002643,FL,Venice,355 Center Court,326199,C,Jeld-Wen,NULL,NULL
+SITE-016003,ORG-001033,FL,Plant City,4211 Amberjack Blvd.,326160,C,"Plastipak Packaging, Inc.",https://www.plastipak.com/,NULL
+SITE-016004,ORG-004300,FL,Wildwood,4405 Northeast 82nd Ave.,325520,C,MAPEI Corporation,NULL,NULL
+SITE-016006,ORG-000853,FL,Miami,11000 NW 32nd Avenue,326150,C,"FXI, Inc.",https://www.fxi.com/,NULL
+SITE-016007,ORG-001408,FL,Zephyrhills,4330 20th St.,326160,C,Altium Packaging,https://altiumpkg.com/,NULL
+SITE-016008,ORG-001403,FL,Lakeland,1070 County Line Rd,326160,C,Graham Packaging Company,https://www.grahampackaging.com/,NULL
+SITE-016009,ORG-000566,FL,Lakeland,5135 Drane Field Road,326112,C,Sealed Air Corporation,https://www.sealedair.com/,NULL
+SITE-016010,ORG-002349,FL,Jacksonville,5555 W Beaver Street,325510,C,Cork Industries Inc.,https://corkindustries.com,NULL
+SITE-016011,ORG-004965,FL,West Palm Beach,6769 White Drive,325520,C,"LATICRETE International, Inc.",NULL,NULL
+SITE-016012,ORG-004516,FL,SANFORD,"3000 MELLONVILLE AVE, BLDG 422",326122,C,The Toro Company,https://www.toro.com/,NULL
+SITE-016013,ORG-002723,FL,Jacksonville,6831 Stuart Ave,326150,C,Amrize Building Envelope LLC,https://www.elevatecommercialbp.com/latam-en/resources/about-us,NULL
+SITE-016015,ORG-001128,FL,Medley,11825 NW 100th Road Suite 4,326140,C,"Storopack, Inc.",https://www.storopack.us/,NULL
+SITE-016016,ORG-001128,FL,Tampa,4724 Transport Drive,326140,C,"Storopack, Inc.",https://www.storopack.us/,NULL
+SITE-016017,ORG-000259,FL,Auburndale,202 Progress Rd.,326122,C,CANTEX Inc.,https://www.cantexinc.com/,NULL
+SITE-016018,ORG-004995,FL,Orlando,333 W. Michigan St,326160,C,CKS Packaging,NULL,NULL
+SITE-016100,ORG-002537,GA,Covington,8170 Alcovy Road NE,326140,C,Pactiv Corporation,NULL,NULL
+SITE-016101,ORG-000984,GA,Stone Mountain,4640 Lewis Rd,326140,C,WinCup,https://wincup.com/,NULL
+SITE-016102,ORG-002537,GA,Conyers,1501 Rockdale Industrial Blvd,326199,C,Pactiv Corporation,NULL,NULL
+SITE-016103,ORG-000003,GA,Stockbridge,100 Business Center Drive,326212,C,The Goodyear Tire & Rubber Company,https://www.goodyear.com,The Goodyear Tire & Rubber Co.
+SITE-016104,ORG-000132,GA,Lawrenceville,725 Raco Drive,325510,C,The Sherwin-Williams Company,https://www.sherwin-williams.com,The Sherwin-Williams Co.
+SITE-016105,ORG-004251,GA,Valdosta,2100 Steeda Way,326130,C,GAF Materials Corporation,https://www.gaf.com/,Standard Industries Inc.
+SITE-016106,ORG-002281,GA,Ringgold,540 Hackett Mill Road,325510,C,Penn Color Inc.,https://www.penncolor.com/,NULL
+SITE-016107,ORG-001128,GA,Atlanta,6140 Duquesne Drive,326140,C,"Storopack, Inc.",https://www.storopack.us/,NULL
+SITE-016108,ORG-004300,GA,Dalton,2308 Dalton Industrial Court,325520,C,MAPEI Corporation,NULL,NULL
+SITE-016109,ORG-004300,GA,Calhoun,201 Enterprise Drive,325520,C,MAPEI Corporation,NULL,NULL
+SITE-016110,ORG-004392,GA,Suwanee,805 Satellite Blvd NW,326220,C,"Habasit America, Inc.",https://www.habasit.com/,Habasit AG
+SITE-016111,ORG-000132,GA,Covington,13129 Harland Drive,325510,C,The Sherwin-Williams Company,https://www.sherwin-williams.com,The Sherwin-Williams Co.
+SITE-016112,ORG-004995,GA,Atlanta,300 Fisk Drive,326160,C,CKS Packaging,NULL,NULL
+SITE-016113,ORG-000651,GA,Perry,1005 Valley Drive,326122,C,"Advanced Drainage Systems, Inc.",https://www.adspipe.com/,NULL
+SITE-016114,ORG-000690,GA,Lawrenceville,1775 Macleod Dr.,326160,C,Axium Packaging Inc,https://axiumpackaging.com/,Axium Packaging Inc
+SITE-016115,ORG-000132,GA,Morrow,6795 Jonesboro Rd,325510,C,The Sherwin-Williams Company,https://www.sherwin-williams.com,The Sherwin-Williams Co.
+SITE-016116,ORG-001408,GA,Atlanta,6220 Duquesne Dr SW,326160,C,Altium Packaging,https://altiumpkg.com/,NULL
+SITE-016117,ORG-004995,GA,Atlanta,6195 Purdue Drive,326160,C,CKS Packaging,NULL,NULL
+SITE-016119,ORG-007510,GA,Thomaston,600 Poplar Drive,325510,C,"Crown USA, Inc.",https://crownusa.com,NULL
+SITE-016120,ORG-004055,GA,Calhoun,197 Royal Drive SE,326299,C,"Apache Mills, Inc.",http://www.apachemills.com/,NULL
+SITE-016500,ORG-003489,IN,Fort Wayne,3511 Engle Rd,326199,C,Sabert Corporation,https://www.sabert.com,NULL
+SITE-016501,ORG-003146,IN,BLOOMINGTON,2121 N ANGELINA LANE,326111,C,Printpack Inc.,https://www.printpack.com,NULL
+SITE-016502,ORG-002544,IN,Princeton,889 W Gach Rd,326199,C,Berry Global,NULL,NULL
+SITE-016503,ORG-007513,IN,Goshen,701 Eisenhower Drive N,326122,C,NIBCO INC.,https://www.nibco.com,NULL
+SITE-016504,ORG-001403,IN,Evansville,5504 Foundation Dr,326160,C,Graham Packaging Company,https://www.grahampackaging.com/,NULL
+SITE-016506,ORG-002544,IN,Bloomington,4100 Profile Parkway,326113,C,Berry Global,NULL,NULL
+SITE-016507,ORG-002544,IN,Odon,10485 E 1250 N,326113,C,Berry Global,NULL,NULL
+SITE-016508,ORG-002913,IN,Kendallville,111 S. Progress Dr. East,325212,C,Dow Inc.,https://www.dow.com,NULL
+SITE-016510,ORG-000105,IN,Richmond,300 Industrial Pkwy,326113,C,Transcendia Inc.,https://www.transcendia.com,NULL
+SITE-016511,ORG-001119,IN,Muncie,1401 East Memorial Drive,326112,C,Spartech,https://www.spartech.com/,NULL
+SITE-016512,ORG-005107,IN,Evansville,14636 Foundation Ave,326140,C,"EFP, LLC",https://www.efppackaging.com,NULL
+SITE-016513,ORG-004965,IN,Indianapolis,"4620 West 84th Street, Building II, Suite 200",325520,C,"LATICRETE International, Inc.",NULL,NULL
+SITE-016514,ORG-004251,IN,Mt. Vernon,6101 Lower Harmony Road,326130,C,GAF Materials Corporation,https://www.gaf.com/,Standard Industries Inc.
+SITE-016515,ORG-000717,IN,Valparaiso,4002 Montdale Park Drive,326199,C,Mauser Packaging Solutions,https://mauserpackaging.com/,NULL
+SITE-016516,ORG-002544,IN,Richmond,630 Commerce Road,326199,C,Berry Global,NULL,NULL
+SITE-016517,ORG-002744,IN,Oxford,"Five Bottle Drive, SR 352",326160,C,Drug Plastics & Glass Co,https://drugplastics.com/,NULL
+SITE-016518,ORG-000846,IN,Greenfield,6579 W County Road 350 N,326130,C,Formica Corporation,https://www.formica.com/en-us,NULL
+SITE-016519,ORG-001408,IN,Argos,300 Dewey St,326160,C,Altium Packaging,https://altiumpkg.com/,NULL
+SITE-016520,ORG-005041,IN,New Castle,2600 Troy Ave,326150,C,HSM Solutions,NULL,NULL
+SITE-016521,ORG-000582,IN,Dale,902 Buffaloville Rd,326199,C,Spencer Industries Incorporated,https://spencerindustries.com/,NULL
+SITE-016522,ORG-004174,IN,South Bend,3615 Voorde Drive,326199,C,"PSI Molded Plastics, Inc.",http://www.psimp.com/,NULL
+SITE-016200,ORG-002737,NY,Buffalo,2150 Elmwood Avenue,326199,C,Caplugs,NULL,NULL
+SITE-016201,ORG-001148,NY,Blauvelt,900 Bradley Hill Road,326112,C,"TekniPlex, Inc.",https://tekni-plex.com/,NULL
+SITE-016202,ORG-004392,NY,Buffalo,1400 Clinton St,326220,C,"Habasit America, Inc.",https://www.habasit.com/,Habasit AG
+SITE-016203,ORG-002935,NY,Queensbury,300 Lower Warren Street,326150,C,Pregis LLC,https://www.pregis.com,Warburg Pincus
+SITE-016204,ORG-003172,NY,Canastota,120 Barlow St,326199,C,Dutchland Plastics LLC,https://www.dutchland.com/,NULL
+SITE-016205,ORG-001408,NY,Rochester,18 Champeney Terrace,326160,C,Altium Packaging,https://altiumpkg.com/,NULL
+SITE-016206,ORG-000004,NY,Marion,3967 Buffalo St.,326121,C,Parker-Hannifin Corporation,https://www.parker.com,NULL
+SITE-016400,ORG-004135,WI,Sheboygan Falls,300 Mill Street,326199,C,Bemis Manufacturing Co,https://www.bemismfg.com/,NULL
+SITE-016401,ORG-002255,WI,Neenah,1615 Matthews St,326291,C,Valmet Inc.,https://valmet.com/,NULL
+SITE-016402,ORG-003966,WI,Milwaukee,8200 North Faulkner Road,325510,C,"Hentzen Coatings, Inc.",https://www.hentzen.com/,NULL
+SITE-016403,ORG-003067,WI,Janesville,210 S Arch St,326122,C,Westlake Corporation,https://www.westlake.com/,NULL
+SITE-016404,ORG-000728,WI,Milton,751 N Vickerman Road,326112,C,Charter Next Generation,https://cnginc.com/,Leonard Green & Partners
+SITE-016405,ORG-002281,WI,Milton,1474 Putman Parkway,325510,C,Penn Color Inc.,https://www.penncolor.com/,NULL
+SITE-016406,ORG-007037,WI,Two Rivers,2800 18th street,326199,C,"Ironwood Plastics, Inc.",https://www.ironwood.com,NULL
+SITE-016407,ORG-003273,WI,Baraboo,426 Hitchcock Street,326111,C,"Teel Plastics, LLC",https://www.teel.com,NULL
+SITE-016409,ORG-002336,WI,Middleton,8430 Murphy Dr,326150,C,Future Foam Inc.,https://www.futurefoam.com/facility/fairless-hills-pa/,NULL
+SITE-016410,ORG-003607,WI,De Pere,2151 American Blvd,326199,C,"Midland Plastics, Inc.",https://www.midlandplastics.com/,NULL

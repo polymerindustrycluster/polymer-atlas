@@ -241,13 +241,23 @@ SUFFIX = {"street": "st", "avenue": "ave", "av": "ave", "road": "rd", "drive": "
           "square": "sq", "trail": "trl", "center": "ctr", "centre": "ctr", "expressway": "expy", "turnpike": "tpke",
           "north": "n", "south": "s", "east": "e", "west": "w", "northeast": "ne", "northwest": "nw", "southeast": "se",
           "southwest": "sw"}
-UNIT_RE = re.compile(r"\b(suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)\b.*$|#.*$")
+UNIT_RE = re.compile(r"\b(suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)\b.*$|(?<=\S)\s*#.*$")
+UNIT_ONLY_RE = re.compile(r"^\s*(?:(?:suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)\b|#)\s*[\w-]*\s*$")
 
 
 def street_key(s):
-    s = UNIT_RE.sub("", (s or "").lower().split(",")[0] if re.search(r"\d", (s or "").split(",")[0]) else (s or "").lower())
+    """Normalized street line for address-first dedupe (AGENTS §3 step 3); empty only when no street is present."""
+    parts = (s or "").lower().split(",")
+    # drop only LEADING unit-only parts ("Suite 100, 200 Main St"); any other comma part is kept as before
+    while len(parts) > 1 and UNIT_ONLY_RE.match(parts[0]):
+        parts = parts[1:]
+    rest = ",".join(parts)
+    street = parts[0] if re.search(r"\d", parts[0]) else rest  # original rule, applied after the unit prefix
+    street = re.sub(r"^\s*#\s*(?=\d)", "", street)  # a leading "#6" is a building number, not a unit
+    s = UNIT_RE.sub("", street)
     s = re.sub(r"\b(\d+)(st|nd|rd|th)\b", r"\1", s)
     return " ".join(SUFFIX.get(t, t) for t in squash(s).split())
+
 
 # ---------------------------------------------------------------- dedupe-check
 

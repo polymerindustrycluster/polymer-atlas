@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001653477.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001653477",
+  "name": "Ingevity Corp",
+  "tickers": [
+    "NGVT"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "4c6bc3252277593be36d4d743c26cbe48ab9f35f11ff25687cb27eeba36e52f7",
+  "raw_name_token": "\"Ingevity Corp\""
+}
