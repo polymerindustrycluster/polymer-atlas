@@ -20,4 +20,4 @@ new={r['site_id'] for r in alloc};rows=read(ROOT/'data/sites_TX.csv');delta=sum(
 assert after-b['atlas_strict']==delta
 result={**b,'atlas_strict_after':after,'delta_strict':delta,'before_pct':100*b['atlas_strict']/b['qcew_2023_private_establishments'],'after_pct':100*after/b['qcew_2023_private_establishments']}
 (P/'qcew_result.json').write_text(json.dumps(result,indent=2)+'\n')
-print('PASS: 40/40 unique verdicts; 20/21 blind sample witnesses; idempotent canonical bytes;',result)
+print('PASS: 40/40 unique verdicts; 20/20 blind sample witnesses; idempotent canonical bytes;',result)
