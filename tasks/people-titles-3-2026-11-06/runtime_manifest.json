@@ -1,0 +1,30 @@
+{
+  "unit": "candidate people",
+  "candidate_people": 184,
+  "counts": {
+    "STILL_UNCERTAIN": 89,
+    "VERIFIED": 88,
+    "REJECT": 7
+  },
+  "private_runtime_root": "/Users/johnswanson/.bb/thread-storage/thr_mcdghpxw8c/people-titles-3-private",
+  "private_input_sha256": {
+    "frame.json": "1bdbb4d01c44da7d5ab0eea2a7264e8b193aef39550bf966742728c73183f0bf",
+    "lane1/dispositions.json": "1c660c58537613d482015f6e5d10e8c5bc3c44505401f4e13817dbcd6ab0e34d",
+    "lane2/dispositions.json": "996bafc0380e7a542381e497911899ff3e5941979e3112df47b780228fc250c4",
+    "lane3/dispositions.json": "67474299326b0ce25ae8468adb3cc4f965ed2f031e8cec4f008ffb597616ffae",
+    "root16/dispositions.json": "41a5461e8227496c4ee2bdc7289762c9978481177af1a721840dcb1fb3614a4d"
+  },
+  "public_packet_sha256": {
+    "reviewed.csv": "566ac72522d6180e9ea6db9b7401295c4efff2db7a3e6921b88d7540c85fbcd3",
+    "rawcheck.csv": "79f0f97b1e80c0ef34cd96506c835830f8e8c0a8f4809280f179e34cbaba5348",
+    "verdicts.csv": "9cdf53ca3fde58af936211aa8e8cf7545b85d60e1d5d63d33205240141729ff2",
+    "rank_resolution.csv": "6a52d179cb1511ecb3e46293a0f439b68f9490ebd7d73a0c327e0411e43f5070",
+    "withdrawn.csv": "34b8e371d43a5384836a49551e90c286a1741ba501b65ee95314a223aaaef8d1"
+  },
+  "lane_proposal_counts": {
+    "note": "private_input_sha256 dispositions are the lanes' own record: 91 VERIFIED proposals; the integrator withdrew 3 (withdrawn.csv) after the 75cdeb5 refutes",
+    "VERIFIED": 91,
+    "withdrawn": 3,
+    "applied": 88
+  }
+}
