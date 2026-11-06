@@ -13,3 +13,6 @@ DedupeCLIallshardsdomain/name/street/tradenamesrecordedindedupe.json. Spearsheld
 No20-yieldtarget:full12createcensus,eachclusteronce,notduplicatedwitnessestoinflateasample. Sourcecodefamilymismatchesheld,6digitvariantsinsamefamilyexplicitlynotedwithdateswhereobserved. BuilderglobalIDpreflightcoversalloutputsandcrossshardsbeforeappend_sortedwrites. Namedresults/refutespending;notDone.
 
 Checks2026-11-06:validate0errors/OK;check.pyPASS40uniqueverdicts/full12sourcecensus/idempotentcanonicalreplay/globalcrossshardEVDcollisionzerowrites. ExistingmainrowsallpreservedbyIDcomparison. Strict326baseline93→105/1306(7.1210%→8.0398%),12new326sites;baselineincludesmergedCA135,excludesunmergedCA2166. Two-familyclerkreviewpending;notDone.
+
+
+Codex2 (OpenAI, thr_mdr3gn2xmm) APPROVE8b588852fb1a2c2ebf41b9658d5e2996bf7c65fa,0findings,2026-11-06: full12blind source cases assessed before allocations, all12 banked fields and5ITA bands match;10Cparents/12Csites/105EVD,28holds; all16mixed-family cases held. Recomputed all-shard and seven-other-L6 dedupe finds no missed duplicate/IDcollision; CA2UniPoly/CA3MetroPoly distinction held correctly. Random10/typedclaims/replay/collision/rowloss/validator0/strict93→105/1306 pass. No freshgovernment/current-operation confirmation; remote-tip final query timedout so approval is exact8b58885. Grok remains pending; no Ready/Done claim.
