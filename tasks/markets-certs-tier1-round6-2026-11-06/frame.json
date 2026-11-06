@@ -1,0 +1,10 @@
+{
+  "base": "e008ab9349352238af533d33f0a67c8413ccfdf7",
+  "active_tier1_organizations": 1293,
+  "markets_populated": 221,
+  "certifications_populated": 21,
+  "eligible_remaining": 782,
+  "selected": 100,
+  "selected_pic18": 2,
+  "selection": "active storedTier1 blankmarkets;exclude prior30+100+100+100frames andORG62/101;anyheldOHPIC18county-sitefirst thenorgid;noURLfilter"
+}

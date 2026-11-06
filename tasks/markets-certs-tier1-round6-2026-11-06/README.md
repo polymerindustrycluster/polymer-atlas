@@ -1,0 +1,7 @@
+# L10 Tier1 markets/certifications round6
+
+Controller assigned continuation after round5yield51%;next100,newbranchagent/codex/markets-certs-tier1-round6 frompinnedmaininframe.json;EVD240800+. Acceptancebeforework:active+storedTier1+blankmarkets,anyheldOHPIC18site first thenorg_id,noURLfilter,excludeallprior30+100+100+100frames plusunresolvedORG62/101. Freeze100uniqueIDs. FirstuserPICsuppliermatchingstaff;nonusereview2026-12-15.
+
+Onlymarkets_served/certifications andappend-onlymirrorevidence,exactSCHEMA vocabulary. Corporateentityservedmarkets,notgenericmaterialproperties/parentunions. R3c/R12currentcertificateORcurrentownpagenon-supersedededition;identity/scope/date/expirywhenknown,unknownexplicit. SupersededISO9001/14001ownertransitionbatteryheld,no self-ruling;editionless/productcomplianceheld. OEM-typeparts,fitmentselectors,IATF notOEMcustomerproof. Failedfetch/maintenance/softblocknotabsence/closure. Cap~6distinctprimarypages/org;reverificationadditional.
+
+Gates:known4/fabrication4/3softblock/forcedplainfallback beforefetcheruse;everyacceptedquote freshraw;freshseeded30valueaudit0errors;100uniqueverdictcoverage;globalID+correctmirrorshard/payloadpreflight beforewrites;no-writeguards;oldrow/fields/evidenceboundary+byteidenticalreplay;validate0;two-familydeeprefutesbeforeReady. Historicalmerged136/157buildersunchanged/mustnotrerunpercontroller;activeonesonly. Prior179/215clerkfixesfirst,separatepackets. Researchunapplied/unapproved.
