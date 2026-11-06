@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000094049.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000094049",
+  "name": "STEPAN CO",
+  "tickers": [
+    "SCL"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "97b9969cd1dc87c3d7c02acb1f9b2298e29871e5c5d50aeeddd93f2a9ec74185",
+  "raw_name_token": "\"STEPAN CO\""
+}

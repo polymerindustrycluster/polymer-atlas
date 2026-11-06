@@ -1,0 +1,20 @@
+[
+  {
+    "registry_id": "110033674646",
+    "expected_name": "PINTA ACOUSTIC INC",
+    "expected_street": "2601 49TH AVE N STE 400",
+    "result": "PASS"
+  },
+  {
+    "registry_id": "110003764436",
+    "expected_name": "QUALITY EXTRUSION",
+    "expected_street": "1904 WILLOW ST",
+    "result": "PASS"
+  },
+  {
+    "registry_id": "110003748847",
+    "expected_name": "HIAWATHA RUBBER CO",
+    "expected_street": "1700 67TH AVE N",
+    "result": "PASS"
+  }
+]

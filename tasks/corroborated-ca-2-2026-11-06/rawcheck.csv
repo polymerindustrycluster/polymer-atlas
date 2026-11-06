@@ -1,0 +1,6 @@
+cluster_id,kind,url,quote,raw,text_sha256
+LF-CA-01360,scope,https://www.addmangroup.com/irvine-facility/,"Our Irvine, CA facility specializes in Polymer Additive Manufacturing",yes,80a277e07506c071bae1e442bb3902c39b9c20f9b7783703d9217d3bb0546885
+LF-CA-01360,parent,https://www.addmangroup.com/irvine-facility/,ADDMAN Polymer,yes,80a277e07506c071bae1e442bb3902c39b9c20f9b7783703d9217d3bb0546885
+LF-CA-01859,scope,https://www.cpflexpack.com/locations/placentia-california/,"Manufacturing capabilities include cleanroom environments, in-house blown film extrusion",yes,2d92875a18e7b2e3c2c6fe9e83cf868e88b3765fa88348895f08940c159925ab
+LF-CA-01859,parent,https://www.cpflexpack.com/locations/placentia-california/,"Fruth Custom Packaging, a division of C-P Flexible Packaging",yes,2d92875a18e7b2e3c2c6fe9e83cf868e88b3765fa88348895f08940c159925ab
+LF-CA-02692,scope,https://www.kmcrubber.com/,KMC Rubber offers superior quality custom compounding of a vast range of thermoset polymers,yes,d3e51e2860fb22cd568f354d2f64368964645fc5f2a93325754afa94d3ce8a62

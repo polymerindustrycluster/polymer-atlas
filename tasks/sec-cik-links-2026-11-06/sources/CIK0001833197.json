@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001833197.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001833197",
+  "name": "Latham Group, Inc.",
+  "tickers": [
+    "SWIM"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "aa122558a558d6ba829fcf45ae413df380a7dc37530a255eb21a1052dbef337e",
+  "raw_name_token": "\"Latham Group, Inc.\""
+}

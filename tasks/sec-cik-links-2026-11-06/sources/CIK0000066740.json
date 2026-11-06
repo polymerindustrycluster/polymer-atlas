@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000066740.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000066740",
+  "name": "3M CO",
+  "tickers": [
+    "MMM"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "1b812c41c9f23fee8091c04e55b049885d5b12d2e0c292a6a1225cc19062b880",
+  "raw_name_token": "\"3M CO\""
+}

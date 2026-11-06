@@ -1,0 +1,11 @@
+cluster_id,url,route,fetch,chars
+ravenna,https://www.pexco.com/locations/ravenna-oh/,,unfetchable,0
+pexco-history,https://www.pexco.com/about-us/,,unfetchable,0
+pilot-acq,https://plp.com/news-events/234-plp-announces-acquisition-of-pilot-plastics,https://plp.com/news-events/234-plp-announces-acquisition-of-pilot-plastics,loaded,5100
+pilot-home,https://pilotplastics.com/,https://pilotplastics.com/,loaded,2261
+esstech,https://www.esstechinc.com/,https://www.esstechinc.com/,loaded,1204
+apt,https://advpolytech.com/,https://advpolytech.com/,loaded,117
+wl-acq,https://www.wlplastics.com/news/wl-plastics-purchases-charter-plastics,https://www.wlplastics.com/news/wl-plastics-purchases-charter-plastics,loaded,2957
+mauser,https://mauserpackaging.com/about-mauser/locations/,https://mauserpackaging.com/about-mauser/locations/,loaded,40555
+jm-locations,https://jmeagle.com/locations,https://jmeagle.com/locations,loaded,1819
+danimer-acq,https://www.teknorapex.com/en-us/news/teknor-apex-acquires-danimer-scientific-to-further-diversify-sustainable-materials-portfolio,https://www.teknorapex.com/en-us/news/teknor-apex-acquires-danimer-scientific-to-further-diversify-sustainable-materials-portfolio,loaded,37295

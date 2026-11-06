@@ -1,0 +1,17 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000797468.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000797468",
+  "name": "OCCIDENTAL PETROLEUM CORP /DE/",
+  "tickers": [
+    "OXY",
+    "OXY-WT"
+  ],
+  "exchanges": [
+    "NYSE",
+    "NYSE"
+  ],
+  "raw_sha256": "71b49cdc369e047358c8133a07c6793a82a60f6cbcc551c63f4c745feacc10e2",
+  "raw_name_token": "\"OCCIDENTAL PETROLEUM CORP /DE/\""
+}

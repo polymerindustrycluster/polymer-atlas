@@ -1,0 +1,515 @@
+[
+  {
+    "site_id": "SITE-019014",
+    "url": "https://mauserpackaging.com/about-mauser/locations/",
+    "status": "200",
+    "bytes": 1504320,
+    "sha256": "5b98f6857fb25c4efc8f28240983fc8d3ca066cd88e314f24884b0f97e586fc0",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019009",
+    "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+    "status": "200",
+    "bytes": 67729,
+    "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018007",
+    "url": "https://www.pregis.com/contact-us/",
+    "status": "200",
+    "bytes": 101852,
+    "sha256": "4452ef60032bd03447ff67638591c7bc1e4ad97ce5278cd7d69ae40db0eb0d04",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018007",
+    "url": "https://www.pregis.com/knowledge-hub/pregis-acquires-rex-performance-products/",
+    "status": "200",
+    "bytes": 92700,
+    "sha256": "44954cf6bc0c299c128b77fa94d52ff44c6c81916e9bafa2a993cd8fec7ee560",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-012001",
+    "url": "https://watsoncoatings.com/",
+    "status": "200",
+    "bytes": 101469,
+    "sha256": "c65a16569be7f083a8d2df4a98d8e665bab937fa860e897a59d41354f82e07d7",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-012026",
+    "url": "https://www.perlon.com/wp-content/uploads/2025/08/LEX-ISO-9001_2015.pdf",
+    "status": "200",
+    "bytes": 323709,
+    "sha256": "53c73a972463e9edee09fd194166c28a475ef05c7f4e1f3bb66f01e4ab79bd88",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-012026",
+    "url": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+    "status": "200",
+    "bytes": 90450,
+    "sha256": "cfab62cdb63aade805246ec3e842e3ef907af794bd440ff6c550bc1baf6e3fc8",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-012001",
+    "url": "https://watsoncoatings.com/wp-content/uploads/2025/07/White_AntiClimb_SafetyData.pdf",
+    "status": "200",
+    "bytes": 116001,
+    "sha256": "7c8201a8b4503d9fd846a6387713f87ad918022fbba9b28525184b7a769ca43e",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-012001",
+    "url": "https://watsoncoatings.com/about-us/",
+    "status": "200",
+    "bytes": 84321,
+    "sha256": "6caeb419c19c02a4cbf591ef2516ab76a5e8afb983bf0f434cf9ae054e024f33",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016017",
+    "url": "https://www.cantexinc.com/Portals/0/CANTEX-PVC-Extruded-Electrical-Conduit-Environmental-Product-Declaration-EPD.pdf",
+    "status": "200",
+    "bytes": 1227625,
+    "sha256": "2fc9db6f0df08356869a60f07dee82b58af2491a3c759f92d01a28472e715f34",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016010",
+    "url": "https://corkindustries.com/about-cork-industries/",
+    "status": "307",
+    "bytes": 1439,
+    "sha256": "12a4f3b8b48861f1ccaf1a5bae97b47a0d6b7691c8abdd16b3f703953f3b2fd9",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016010",
+    "url": "https://corkindustries.com/matte-finish-eb-coating/",
+    "status": "307",
+    "bytes": 1439,
+    "sha256": "12a4f3b8b48861f1ccaf1a5bae97b47a0d6b7691c8abdd16b3f703953f3b2fd9",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016004",
+    "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/iso-certifications/iso-14001-2015.pdf?sfvrsn=449e7574_23",
+    "status": "200",
+    "bytes": 107777,
+    "sha256": "191013be49e4cf81f24584337f705e002bdc53fd0373d2d8002e993270efd303",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016111",
+    "url": "https://industrial.sherwin-williams.com/na/us/en/aerospace/find-location/location-detail.undefined.en_US-10371519-PCG_Manufacturing_GID.html",
+    "status": "200",
+    "bytes": 21152,
+    "sha256": "ed1b7b6c05de79ef16627f2068cba9c3e774c420b0436b8465a433ed4192a8db",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016119",
+    "url": "https://crownusa.com",
+    "status": "200",
+    "bytes": 1098147,
+    "sha256": "bacc1bce63829a89ddc4582bd2f96510b16eed99566aedd436e3cbf7267867fd",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014017",
+    "url": "https://atsduct.com/about-us/",
+    "status": "200",
+    "bytes": 386070,
+    "sha256": "4b1df61390bc11da4f168094a622d4171643c4a13f5aa6ed04db46b125c417c2",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014017",
+    "url": "https://atsduct.com/50-years-of-excellence-in-industrial-duct-solutions/",
+    "status": "200",
+    "bytes": 391069,
+    "sha256": "2a69fc407f616af32c7991e045f7f2388bebc2c6c33737e374977dfbafadb14d",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018017",
+    "url": "https://www.adspipe.com/support/locations",
+    "status": "200",
+    "bytes": 46403,
+    "sha256": "630e8ecb998e8eaeb1be986c667b697f67bb50fd151259b15521cd67af8ee494",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016119",
+    "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1695189.015",
+    "status": "403",
+    "bytes": 919,
+    "sha256": "c768406bddb88991fab8bb645dae7c05faac9c08a14792b410f7d12b5ff1323a",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014010",
+    "url": "https://files.ceqanet.lci.ca.gov/265020-3/attachment/asDIyxasBHOFATlXQOmeEpQysSnhxSEbUUMmlO4iFsdAxn2z3VlcB9q85fawfkDPVIemgExYzKWfrHrT0",
+    "status": "200",
+    "bytes": 40364146,
+    "sha256": "b8a02b49149d4851821a5735efab0e8cd66d1ebe14cbed615aaa6e43dbc4afc9",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016119",
+    "url": "https://crownusa.com/directions/",
+    "status": "200",
+    "bytes": 1037660,
+    "sha256": "9b0fe0113dad72660545184df99594ba597b49928cd71ec7afce0f4db56583d3",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014006",
+    "url": "https://calspas.com/contact",
+    "status": "200",
+    "bytes": 161967,
+    "sha256": "8c8afb23fcd5d7088eaa738ca50d5630ddb7ac8097cc282b5652b11426e514f5",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014006",
+    "url": "https://dealers.calspas.com/pdf/newsletter/2017_01_se.pdf",
+    "status": "200",
+    "bytes": 1359311,
+    "sha256": "2bb2321233e0c887f9effca22b9c20497079fcc7aea62ba8c896c0082c963328",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014017",
+    "url": "https://atsduct.com/pdfs/",
+    "status": "200",
+    "bytes": 383554,
+    "sha256": "27cf0a41c63b29cedae002ec0ed95bdac07f0e29481aef4d6b5e5cad7caaf1ec",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019014",
+    "url": "https://www.usplastic.com/catalog/files/specsheets/UNClosingInstructions.pdf",
+    "status": "200",
+    "bytes": 740943,
+    "sha256": "0c8ef7ffe756dc334e4c114b76162721cd47da66ff57b90e36aee22ee27398a0",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018001",
+    "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/2018-05/IWC_Division_Annual_Report_B2_04-27-2015.pdf",
+    "status": "200",
+    "bytes": 31397447,
+    "sha256": "8c015abceb7d02d9770e89c6b51850016f8d38124398aa07d71719e35238e29e",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018017",
+    "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1761255.015",
+    "status": "403",
+    "bytes": 919,
+    "sha256": "cb4789e4b10d32f8c761fd487cd3cc3ac80512721ad97aca5405d2bf2e2284fe",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019002",
+    "url": "https://apps.dot.illinois.gov/eplan/desenv/082214/66429-015/66429-015.pdf",
+    "status": "200",
+    "bytes": 718878,
+    "sha256": "fae57ca171e8a3a0d9f13b7dcf9d1331b881a2c0bcdd6b15aabea6508e83d712",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018007",
+    "url": "https://www.egle.state.mi.us/aps/downloads/srn/N6944/N6944_SAR_20240201.pdf",
+    "status": "200",
+    "bytes": 1499942,
+    "sha256": "ed96087a57d663ad7ded41183e9a2bae477f0216bbc3e78d92b3217f350d8138",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016010",
+    "url": "https://www.corkindustries.com/about-cork-industries/",
+    "status": "307",
+    "bytes": 1463,
+    "sha256": "bbb9eb7112ff61afa35446b0df7ad07c27329a2b57eca079aa7782dca41b716e",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018017",
+    "url": "https://idot.illinois.gov/content/dam/soi/en/web/idot/documents/doing-business/specialty-lists/highways/materials/materials---physical-research/misticproducers.pdf",
+    "status": "200",
+    "bytes": 1489635,
+    "sha256": "b3c07152f9adf1119db7ee58ef7acf38f0442490c34323cb1c08655ce498dee4",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018001",
+    "url": "https://www.egle.state.mi.us/aps/downloads/SRN/Sources_By_Company.pdf",
+    "status": "200",
+    "bytes": 3694872,
+    "sha256": "cb8a69fb7b6a3b2bfb4f73fd214fe4e5ab77e9564340fbd01147e610bd49db2a",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014017",
+    "url": "https://atsduct.com/FAQ/",
+    "status": "200",
+    "bytes": 414582,
+    "sha256": "9a277093c119c5731143cece7f5b4eca5b0870725fd517cf5d4ffeff2c04f3c4",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014006",
+    "url": "https://calspas.com/about",
+    "status": "200",
+    "bytes": 169831,
+    "sha256": "b66723cbaf7376f474cea2b649dd28521ac3535dc8b67f584f7192326b9f5db5",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014010",
+    "url": "https://novolex.com/pages.php?pageid=101",
+    "status": "200",
+    "bytes": 184432,
+    "sha256": "60c877de3f5fb67c6d1e99dd25ebbedc75b118e88024117e6178806b11aa9bea",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019014",
+    "url": "https://mauserpackaging.com/closing-instructions/",
+    "status": "200",
+    "bytes": 249464,
+    "sha256": "1a7a5d4d08295dba083a76dd02b8ef0c9705c74ec45dbf8dd2ce86444f8cad85",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016105",
+    "url": "https://documents.gaf.com/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+    "status": "403",
+    "bytes": 463,
+    "sha256": "74a609b40aec832a562c366bc130aa11854e327543dea77ce79ae4b35b37c385",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-012026",
+    "url": "https://www.perlon.com/wp-content/uploads/2019/03/Perlon_Press_March_2017_en.pdf",
+    "status": "200",
+    "bytes": 234392,
+    "sha256": "f26b88fe6bf6c28732109235048701925d88da64981962103c8980977c73875b",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016004",
+    "url": "https://cdnmedia.mapei.com/docs/librariesprovider65/realta-mapei-magazine/n--28.pdf?sfvrsn=aef4d3cd_4",
+    "status": "200",
+    "bytes": 6878252,
+    "sha256": "4213d086bd378e1d7e394ed99f41b613c9373814ac72688904164132925c1317",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019014",
+    "url": "https://mauserpackaging.com/wp-content/uploads/2026/10/MC-PAS-QA-103-R14-Closing-Instructions-Plastic-Drums.pdf",
+    "status": "200",
+    "bytes": 441401,
+    "sha256": "cc34647b5ed471135ccd52bd91d491b61f696b34620553e69c2a277abc1129ff",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016119",
+    "url": "https://crownusa.com/our-story/",
+    "status": "200",
+    "bytes": 1039329,
+    "sha256": "27bc91d62a6f534743a0ef42df7f3af55e5b935e2d00591259c8b467a53a9376",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016105",
+    "url": "https://www.gaf.com/en-us/document-library/documents/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+    "status": "403",
+    "bytes": 510,
+    "sha256": "01028fabe460b72c064089f3d9008659a28abf547c6839032429b0d124b18e0c",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018001",
+    "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N3206/",
+    "status": "200",
+    "bytes": 366,
+    "sha256": "2de44624ea016d5077178a6f0b9b6ed91bf817ce9cf1981ea34f1c1e92ef58b9",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018001",
+    "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N3206/N3206_SAR_20160405.pdf",
+    "status": "200",
+    "bytes": 416532,
+    "sha256": "b2965d90f49e6a41d16d2de73c7c6368b63269ffd0640f5cad50b9dfedd750b8",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016004",
+    "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/products-documents/7_large-tile-and-stone-mortar-white_822e0934af184e5b87c5a7415f8cf2cc.pdf?Status=Master&sfvrsn=4548c265_0",
+    "status": "200",
+    "bytes": 945610,
+    "sha256": "a4a54f9dc8c80bfd043843aa433778f1e6abda36a345bed99c00c3314124e55a",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014010",
+    "url": "https://heritage-bag.com/",
+    "status": "200",
+    "bytes": 20758,
+    "sha256": "b669d8b5d154725b5159bc7c1bde200d948e867e0a59ee7bbada5b83c3566872",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014006",
+    "url": "https://calspas.com/",
+    "status": "200",
+    "bytes": 282562,
+    "sha256": "27753d52b3c311369203c56e2eb1603f7f7311ca5ca5202e80eec5febf02b8a6",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014006",
+    "url": "https://calspas.com/spa-cover",
+    "status": "200",
+    "bytes": 166350,
+    "sha256": "a4ead3827e697b4ff6a33974997d02575cffbf8082440d2a91cda8b900d31a78",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016105",
+    "url": "https://www.gaf.com/en-us/blog/in-your-community/how-gaf-plant-communities-support-neighbors-after-hurricanes-6852b3c5-8e94-4530-a5aa-5b5558d087a6",
+    "status": "403",
+    "bytes": 563,
+    "sha256": "9b26f1312d74f2ba54645122e430e08c1d0990c5001a7fbfa0f09e41f74fc87f",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016010",
+    "url": "https://corkindustries.com/",
+    "status": "307",
+    "bytes": 1279,
+    "sha256": "2e5b1a44ff49e41df02447648867b0c16f26ce5a729c53f04bfc122e28f47e32",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-018017",
+    "url": "https://onlinepubs.trb.org/onlinepubs/Archive/NotesDocs/20-07%28191%29_FR.pdf",
+    "status": "200",
+    "bytes": 5198721,
+    "sha256": "478a57b39064f3a4ba077d8e0aa09d93666d0ea334f2c58e81d5c6caf17a6441",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016105",
+    "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+    "status": "200",
+    "bytes": 26697258,
+    "sha256": "540c781381b0ca1105b57a905f7de836ac425f6b6a48e9120f2caa629426e129",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019002",
+    "url": "https://pactivevergreen.com/",
+    "status": "200",
+    "bytes": 65464,
+    "sha256": "570fc6f62a34ceeea4547409c2f57cfb6b252ae04283e8fe05c46a7532ba632c",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014010",
+    "url": "https://novolex.com/content/PDF/Novolex-Supplier-Onboarding-FAQ.pdf",
+    "status": "200",
+    "bytes": 254538,
+    "sha256": "15abaa17578cffa8bad745ee1bb5b2b9de8ea756a7945f8eb45bb8fee85928c6",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-014010",
+    "url": "https://apps.ecology.wa.gov/publications/documents/0504013.pdf",
+    "status": "200",
+    "bytes": 59297,
+    "sha256": "c98db32dfaa35d810ae640a472deed3e4474b78fb32d1469310177cbdcb835b0",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-016010",
+    "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f94000005790-f7efa108-3e5e-4bed-a807-e47bc991c754&directionType=PreviousList&inquirytype=EntityName&listNameOrder=CORKIEPRODUCTS+G330420&searchNameOrder=CORKINDUSTRIES+F940000057900&searchTerm=CORK%27D+WINE+BAR+",
+    "status": "403",
+    "bytes": 6647,
+    "sha256": "f6e63a854adb07aa966e656e5997fbabf00cd2d43e6b6441ca8b3a642e40d3f0",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  },
+  {
+    "site_id": "SITE-019002",
+    "url": "https://pactivevergreen.com/assets/d9/b6/d9b6d3e6-625f-4d2d-b4e4-7b8088748fb3/2024%20PTVE%20CDP%20Questionnaire.pdf",
+    "status": "200",
+    "bytes": 1330520,
+    "sha256": "6052ecf4cb32cdebdbd4d0502a33a8e2dc97bf3665e0db55492440620bdc2a2e",
+    "curl_exit": 0,
+    "observed_date": "2026-11-06"
+  }
+]

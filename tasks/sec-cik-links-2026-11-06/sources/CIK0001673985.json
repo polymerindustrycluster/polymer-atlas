@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001673985.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001673985",
+  "name": "AdvanSix Inc.",
+  "tickers": [
+    "ASIX"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "ab1981f9759fe258c5a02161804f37ffb33d0b04daa0b35cb4d7196c9630e6a4",
+  "raw_name_token": "\"AdvanSix Inc.\""
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000851968.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000851968",
+  "name": "MOHAWK INDUSTRIES INC",
+  "tickers": [
+    "MHK"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "72e2c88ca494a8f33dccd80771e8ff30dcbd6ec1ca022b1e73c789ff02d4104e",
+  "raw_name_token": "\"MOHAWK INDUSTRIES INC\""
+}

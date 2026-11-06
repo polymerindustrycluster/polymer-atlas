@@ -1,0 +1,44 @@
+{
+  "base": "30a4c798534f6d5d1aafd3490cfbfc81cdca073e",
+  "frame_commit": "49ddb5ddd636e6023b4cc381678dd3629717ffb4",
+  "counts": {
+    "MN": {
+      "C": 25,
+      "B": 15
+    },
+    "NY": {
+      "C": 23,
+      "B": 2
+    },
+    "NJ": {
+      "C": 23
+    },
+    "NC": {
+      "C": 19,
+      "B": 6
+    },
+    "TN": {
+      "C": 14,
+      "B": 9
+    },
+    "KY": {
+      "C": 16,
+      "B": 9
+    },
+    "VA": {
+      "C": 10,
+      "B": 6
+    },
+    "MA": {
+      "C": 31,
+      "B": 12
+    }
+  },
+  "frame_sites": 220,
+  "input_sites": 40,
+  "echo_rows": 132,
+  "corpus_pages": 73,
+  "original_eligible_sites": 161,
+  "unworked_sites": 121,
+  "cap_authority": "Controller conservation instruction: first40 of already frozen frame only; no continuation batch"
+}
