@@ -14,7 +14,7 @@ Named checks (2026-11-06):
 - `python3 tasks/corroborated-fl-ga-2026-11-06/build.py --apply`: idempotent, second run pending rows 0.
 - No scripts/ edits, so scripts pytest gate does not apply.
 
-Florida NAICS 326 strict sites (active/unknown, A/B/C, US) / QCEW 2023 private establishments: 37/798 = 4.6366% before, 50/798 = 6.2657% after. 16 of 17 creates carry 326; four carry 3255. This is a count ratio, not matched QCEW coverage. Baseline bd57a08. GA unchanged by this PR; continuation requires separate branch and PR.
+Florida NAICS 326 strict sites (active/unknown, A/B/C, US) / QCEW 2023 private establishments: 37/798 = 4.6366% before, 50/798 = 6.2657% after. 13 of 17 creates carry 326; four carry 3255. This is a count ratio, not matched QCEW coverage. Baseline bd57a08. GA unchanged by this PR; continuation requires separate branch and PR.
 
 Pre-pass backup: branch base bd57a08. Builder touches sites_FL, evidence_sites_FL, organizations_FL (alias only), evidence_organizations_FL. IDs SITE-016000–016004,016006–016013,016015–016018; EVD-200000–200034,200042–200097,200105–200132,200140. No ORG IDs minted. No registry_links or derived qualifiers touched. Rebase by restoring current main data then re-running build.py (never hand-merge CSVs).
 
@@ -116,3 +116,5 @@ Grok deep REFUTE: Jacuzzi/Aurora establishment operator conflicts and ISCO relia
 |LF-FL-00787|HOLD: needs an unambiguous operator/ultimate-parent and site-scope witness; federal cluster alone does not settle ownership or current scope. Recommend primary operator page before creation.|
 |LF-FL-00224|HOLD: needs an unambiguous operator/ultimate-parent and site-scope witness; federal cluster alone does not settle ownership or current scope. Recommend primary operator page before creation.|
 |LF-FL-00831|HOLD: needs an unambiguous operator/ultimate-parent and site-scope witness; federal cluster alone does not settle ownership or current scope. Recommend primary operator page before creation.|
+
+Codex clerk3 targeted REFUTE (head7cdcf03): stale326split and20-create docstring only; all prior code/data findings cleared,validator/row-loss/namedcheck passed. Corrected README13+4=17 and check docstring17. Targeted re-review requested; approval still pending.

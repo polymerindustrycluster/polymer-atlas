@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Census the packet and blind-shuffle its 20 creates against banked ITA rows."""
+"""Census the packet and blind-shuffle its 17 creates against banked ITA rows."""
 import csv,hashlib,json,random,subprocess,sys,tempfile,shutil
 from pathlib import Path
 from collections import Counter
