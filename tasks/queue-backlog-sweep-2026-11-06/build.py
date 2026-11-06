@@ -28,11 +28,17 @@ def apply(data):
   rr=next(r for r in raw if r['key']==s['key']);assert rr['raw']=='yes' and all(rr[k]==s[k] for k in ('url','quote')),'unchecked source'
  orgs=read(HERE/'organizations.csv');ev=read(HERE/'evidence.csv');edits=read(HERE/'edits.csv')
  assert len(orgs)==1 and orgs[0]['org_id']=='ORG-013200'
+ for e in ev:
+  if e['source_class']=='own_site':
+   quote=e['claim_detail'].split('raw quote: "',1)[1].rsplit('"',1)[0]
+   assert e['claim_detail']=='raw quote: "'+quote+'"', 'own_site claim exceeds literal source observation'
  assert len(ev)==16 and all(310000<=int(e['evidence_id'][4:])<=314999 for e in ev)
  assert {e['claim_type'] for e in ev if e['record_id']=='ORG-013200'}=={'existence','address','scope','code','parent'}
  assert orgs[0]['successor_org_id']=='ORG-000007' and orgs[0]['status']=='acquired' and orgs[0]['verification_tier']=='U'
  plans=defaultdict(list)
  plans['organizations_OH.csv'].extend(orgs);plans['relationships.csv'].extend(generated_edges(orgs))
+ pending_ids=[r['evidence_id'] for r in ev]
+ assert len(pending_ids)==len(set(pending_ids)), 'cross-packet evidence ID collision'
  for e in ev:
   ee=dict(e);shard=ee.pop('shard');plans[shard].append(ee)
  # Global ID census across shards, including ecosystem's shared organization namespace.

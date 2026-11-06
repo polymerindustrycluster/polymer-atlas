@@ -1,5 +1,7 @@
 """12-item census; fresh-base replay; row preservation; fail-closed defect injections."""
 import copy,csv,json,shutil,subprocess,tempfile
+from unittest.mock import patch
+import build
 from collections import Counter
 from pathlib import Path
 from build import HERE,ROOT,apply,read,write,generated_edges
@@ -24,12 +26,40 @@ def main():
  org=read(HERE/'organizations.csv')[0];edge=generated_edges([org])[0]
  assert (edge['from_org_id'],edge['relationship_type'],edge['to_org_id'],edge['effective_from'])==(org['org_id'],'successor_of',org['successor_org_id'],org['status_date'])
  sites={r['site_id']:r for r in read(ROOT/'data/sites_PA.csv')}
+ edited_pa={r['record_id'] for r in read(HERE/'edits.csv') if r['file']=='sites_PA.csv'}
+ assert Counter(sites[i]['verification_tier'] for i in edited_pa)=={'A':2,'B':4}
+ allsites={r['site_id']:r for name in ['sites_OH.csv','sites_PA.csv'] for r in read(ROOT/'data'/name)}
+ edited={r['record_id'] for r in read(HERE/'edits.csv')}
+ assert Counter(allsites[i]['verification_tier'] for i in edited)=={'A':4,'B':4}
  assert sites['SITE-002612']['operating_status']=='closed' and sites['SITE-002486']['operating_status']=='active'
  with tempfile.TemporaryDirectory() as tmp:
   d=Path(tmp)
   for f in (ROOT/'data').glob('*.csv'):shutil.copyfile(f,d/f.name)
   base=(HERE/'base.txt').read_text().strip()
   for name in NAMES:(d/name).write_bytes(subprocess.check_output(['git','show',base+':data/'+name],cwd=ROOT))
+  # Reproduce two NEW shard rows sharing one reserved EVD, with no prior held collision.
+  normal=build.read
+  def badpacket(path):
+   rows=normal(path)
+   if path==HERE/'evidence.csv':
+    orgrow=next(r for r in rows if r['record_table']=='organizations');siterow=next(r for r in rows if r['record_table']=='sites')
+    orgrow['evidence_id']=siterow['evidence_id']
+   return rows
+  pristine=snapshot(d)
+  with patch.object(build,'read',badpacket):
+   try:apply(d)
+   except AssertionError as e:assert 'cross-packet evidence ID collision' in str(e)
+   else:raise AssertionError('new/new cross-shard packet EVD collision accepted')
+  assert pristine==snapshot(d),'pending packet collision wrote before refusal'
+  def internal_claim(path):
+   rows=normal(path)
+   if path==HERE/'evidence.csv':next(r for r in rows if r['source_class']=='own_site')['claim_detail']='Atlas duplicate SITE-999999; '+next(r for r in rows if r['source_class']=='own_site')['claim_detail']
+   return rows
+  with patch.object(build,'read',internal_claim):
+   try:apply(d)
+   except AssertionError as e:assert 'own_site claim exceeds literal source observation' in str(e)
+   else:raise AssertionError('internal inference attributed to own source')
+  assert pristine==snapshot(d),'source-boundary failure caused writes'
   before={n:read(d/n) for n in NAMES};apply(d);first=snapshot(d);apply(d);assert first==snapshot(d),'replay drift'
   for name in NAMES:
    key='org_id' if name.startswith('organizations') else 'site_id' if name.startswith('sites') else 'relationship_id' if name=='relationships.csv' else 'evidence_id'
@@ -55,5 +85,5 @@ def main():
   try:parcel_check(bad,p)
   except AssertionError:pass
   else:raise AssertionError('parcel negative accepted: '+label)
- print('PASS: 12 items=3 VERIFIED/1 DUPLICATE_OF/8 STILL_UNCERTAIN; 1 U org/1 generated REL/8 edited sites/16EVD; fresh-base byte replay/old-row preservation; cross-shard+preimage zero-write; 4 parcel defects rejected')
+ print('PASS: 12 items=3 VERIFIED/1 DUPLICATE_OF/8 STILL_UNCERTAIN; 1 U org/1 generated REL/8 edited sites/16EVD; fresh-base byte replay/old-row preservation; cross-shard+preimage+pendingpacket+ownsource-boundary zero-write; editedsite tiers4A4B; 4 parcel defects rejected')
 if __name__=='__main__':main()

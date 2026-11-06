@@ -50,7 +50,7 @@ in holds.csv. A positive partial identity is not a completed company verificatio
 Canonical delta: **1 new U-tier historical acquired organization**, ORG-013200; **0 new
 active organizations/sites**. **8 existing site rows** receive **22 cell edits**:
 2 Ohio county/situs settlements (5cells each), and6 Pennsylvania site cross-reference
-annotations (2cells each). Existing site tiers unchanged: Ohio2A, PA1A+5B.
+annotations (2cells each). Existing site tiers unchanged: Ohio2A, PA2A+4B.
 **16 appended evidence rows**: organizations_OH6, sites_OH4, sites_PA6.
 **1 generated successor_of edge**, REL-000460, from canonical successor/status/date.
 Controller10:35 allocated REL460–469; this supersedes the original block list's omission
@@ -149,3 +149,11 @@ Grok/xAI clerk3 (thr_4g4uwqjxjv) APPROVE 188deead996ba3fbc9e790e1c27670ac7c4551d
 Fresh-base replay, old-row preservation, global collision/preimage zero-write tests, four parcel defects, validator0 and row-loss pass. Canonical delta unchanged:1 U historical organization,1 generated successor edge,16 appended evidence rows,8 existing site rows edited; no new active organization/site, registry or script edit. Eight holds and all owner questions remain unresolved; no PA folds. Taylor permit quotation is a mailing address, not proof warranting consolidation. Report: controller reviews/185-clerk-grok-3.md.
 
 Codex approval remains pending; PR stays draft without a two-family completion claim. This receipt changes documentation only. No fresh source fetches or full scripts pytest repeated for the receipt.
+
+## Codex correction — controller ruling on unmerged evidence
+
+Controller ruling: unmerged branch-only evidence rows are not yet canonical. Regenerate EVD310000–310015 in place with the same IDs; append-only binds rows on main. Precedent L3 PR141 EVD161300. This explicit ruling supersedes the earlier proposed retirement/replacement interpretation; no IDs retired or added. All pre-existing main evidence remains untouched. Original branch commits remain the pre-pass backup.
+
+All new own-site claim_details now contain literal source quotations only. Internal SITE/ORG IDs, counterpart/duplicate decisions, ring/NAICS inferences and reconciliation instructions stay in record notes/verdicts/evidence notes, never attributed as the page’s own statement. Audited every new own-site row, not only the four flagged rows. Taylor government permit detail similarly states its mailing-address fact only; no fold inferred. Regenerated via exact base shards plus builder, not hand-edited canonical lines.
+
+Builder now preflights aggregate pending-EVD uniqueness across all shards, and refuses own-site detail prefixes that exceed literal quotations before writes. Exact new/new EVD collision plus an injected internal Atlas duplicate claim both fail on pristine data with every CSV unchanged. Existing global-held-ID and county-preimage mutations remain. Edited-site tiers recomputed and asserted: PA2A/4B plus Ohio2A = total4A/4B; no tier changes. Named check/replay/old-row preservation, all16quotes fresh,4parcel defects and validator0 rerun for corrected packet. Prior family approvals do not approve the corrected guard/provenance; both same refuting/review clerks receive corrected-head requests.
