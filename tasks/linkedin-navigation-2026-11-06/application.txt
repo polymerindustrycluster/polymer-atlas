@@ -1,0 +1,1 @@
+PASS complete preflight; 345 verified navigation proposals; 345 blank cells to fill; 40 shards; zero EVD/other fields

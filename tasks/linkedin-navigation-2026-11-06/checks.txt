@@ -1,0 +1,4 @@
+navigation_conflict refused before any CSV write
+entity_preimage refused before any CSV write
+PASS 345 navigation cells; 2061 frame outcomes; 40 shards; all other canonical bytes/keys/fields preserved, byte replay, 3 zero-write negatives, LinkedIn request exclusion.
+By cohort {'tier1': 245, 'pic18_remainder': 100} by frozen tier {'B': 180, 'A': 136, 'U': 1, 'C': 28}
