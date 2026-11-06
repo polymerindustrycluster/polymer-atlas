@@ -1,13 +1,13 @@
 {
   "worked_FL_clusters": 103,
-  "sites_C": 20,
-  "blind_recheck_passes": 20,
+  "sites_C": 17,
+  "blind_recheck_passes": 17,
   "known_answer_passes": 3,
   "idempotence": "PASS",
   "conflicting_ID_mutation": "PASS (fails before writes)",
   "NAICS326_strict_sites_before": 37,
-  "NAICS326_strict_sites_after": 53,
+  "NAICS326_strict_sites_after": 50,
   "QCEW2023_private_establishments": 798.0,
   "strict_share_before": 0.046365914786967416,
-  "strict_share_after": 0.06641604010025062
+  "strict_share_after": 0.06265664160401002
 }
