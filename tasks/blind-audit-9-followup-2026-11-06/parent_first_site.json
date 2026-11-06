@@ -1,0 +1,21 @@
+{
+  "site_id": "SITE-019001",
+  "quotes": [
+    {
+      "url": "https://pressroom.pella.com/pella-celebrates-its-next-generation-of-leaders/",
+      "quote": "Last year I worked on vinyl doors in Macomb; now I\u2019m focused on the flow of wood sliding and hinge doors through production in Pella.",
+      "sha256": "28a17ac0d8e58b8e1de0e5d37ff2dbadd3b50996bc906ab0eb54ae24cc56ed7b",
+      "bytes": 97928,
+      "raw": "yes"
+    },
+    {
+      "url": "https://business.macombareachamber.com/list/member/pella-corporation-374",
+      "quote": "Pella Corporation Categories Manufacturing 111 Pella Pl. Macomb IL 61455",
+      "sha256": "418928df83ecfe192cfdecef89b9c553b7a160c6e17806d861a7391e42a1e086",
+      "bytes": 278557,
+      "raw": "yes"
+    }
+  ],
+  "scope": "Pella owns narrative linking Macomb vinyl-door production; public chamber exact street and manufacturing. Limited agreement, not legal/county/current-status certification.",
+  "parent_original_evidence_context": "Parent is not blind, used only to verify fresh source quotation validity. Verifier remains evidence-blind."
+}

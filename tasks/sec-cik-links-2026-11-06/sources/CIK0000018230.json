@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000018230.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000018230",
+  "name": "CATERPILLAR INC",
+  "tickers": [
+    "CAT"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "bcb05695563629a55636b17f85a161ff88ee3a4e80f8cdf5e56e2630a5445ec2",
+  "raw_name_token": "\"CATERPILLAR INC\""
+}

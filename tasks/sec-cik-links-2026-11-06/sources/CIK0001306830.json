@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001306830.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001306830",
+  "name": "Celanese Corp",
+  "tickers": [
+    "CE"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "59ef4ec34ada009310606ba83a209eaff5440f9c51066a9c8bb3549251875045",
+  "raw_name_token": "\"Celanese Corp\""
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "site_id": "SITE-012107",
+    "source_url": "https://buckhorninc.com/wp-content/uploads/2024/06/buckhorn_catalog_2020-1.pdf",
+    "raw_text_path": "/tmp/l3-q3-buckhorn-pdf.txt",
+    "sha256": "bedae476d181ca9fc3f2f3f720d537e4b056715aadd693290d63320605e58292",
+    "quote": "Manufacturing Capabilities:",
+    "retrieved_date": "2026-11-06",
+    "route": "curl PDF / pdftotext -layout"
+  },
+  {
+    "site_id": "SITE-012118",
+    "source_url": "https://careers.sealedair.com/fr-ca/jobs/press-operator-en-56095",
+    "raw_text_path": "/tmp/l3-q3-sealedjob.txt",
+    "sha256": "cc421281da5c6dc00dffffdc1d8d9290a933db3db3ddac82c0058f506a423be5",
+    "quote": "operate flexographic printing equipment to produce high-quality packaging materials",
+    "retrieved_date": "2026-11-06",
+    "route": "fresh public raw HTML, house Text parser"
+  },
+  {
+    "site_id": "SITE-012127",
+    "source_url": "https://www.grahampackaging.com/about-us/",
+    "raw_text_path": "/tmp/l3-q2-grahamabout.txt",
+    "sha256": "0915b1248b16c68c62deea6842134279bcff2ec1f2ad99b8e348613812804187",
+    "quote": "Custom plastic bottle manufacturing",
+    "retrieved_date": "2026-11-06",
+    "route": "fresh public raw HTML, house Text parser"
+  },
+  {
+    "site_id": "SITE-012148",
+    "source_url": "https://www.spartech.com/locations",
+    "raw_text_path": "/tmp/l3-q3-spartechloc.txt",
+    "sha256": "b8bcdb54d74a6501e87a467e63a8f3f43b55f341c64803abc632e8601b795844",
+    "quote": "2500 Spartech Dr. Cape Girardeau, MO, 63702-0758 USA",
+    "retrieved_date": "2026-11-06",
+    "route": "fresh public raw HTML, house Text parser"
+  },
+  {
+    "site_id": "SITE-012181",
+    "source_url": "https://jobs.michelinman.com/recruitment-sites/piedmont-sc",
+    "raw_text_path": "/tmp/l3-q3-michelin.txt",
+    "sha256": "6518fe8a469bd3051ed87c377f6707a5ebee31852a25eefde62a072d54ca5ea0",
+    "quote": "Michelin Tweel Technologies - Plant",
+    "retrieved_date": "2026-11-06",
+    "route": "fresh public raw HTML, house Text parser"
+  },
+  {
+    "site_id": "SITE-012198",
+    "source_url": "https://americanroller.com/the-american-roller-way/",
+    "raw_text_path": "/tmp/l3-q3-roller-firecrawl.txt",
+    "sha256": "8fda212b2310305f10f00b8d515b2e405ed8f2ab5e78a0bc0ca198fd495dabc9",
+    "quote": "Rock Hill Plant 1550 Cedar Line Dr Rock Hill, SC 29730",
+    "retrieved_date": "2026-11-06",
+    "route": "NAS Firecrawl maxAge=0 rawHtml HTTP200 / house Text parser"
+  },
+  {
+    "site_id": "SITE-012199",
+    "source_url": "https://www.elevatecommercialbp.com/us-en/resources/about-us",
+    "raw_text_path": "/tmp/l3-q3-amrizeabout.txt",
+    "sha256": "553f102d8e95bbb468c30ff5a5bc166cf47ebe0c70f9c0a7e4cbf305bd9d3b99",
+    "quote": "Thermoplastic Manufacturing Wellford Plant 320 Innovation Way Wellford, SC 29385",
+    "retrieved_date": "2026-11-06",
+    "route": "fresh public raw HTML, house Text parser"
+  },
+  {
+    "site_id": "SITE-012219",
+    "source_url": "https://www.sterilite.com/",
+    "raw_text_path": "/tmp/l3-q3-sterilite-firecrawl.txt",
+    "sha256": "3f850b5011979540f76c95f6b00960262c76a4f8b22ef6e2e4c708e22be26431",
+    "quote": "Sterilite has been creating thoughtfully designed storage containers, bins, and drawers made in the USA",
+    "retrieved_date": "2026-11-06",
+    "route": "NAS Firecrawl maxAge=0 rawHtml HTTP200 / house Text parser"
+  },
+  {
+    "site_id": "SITE-012226",
+    "source_url": "https://www.amcor.com/careers/job-details/req_97607",
+    "raw_text_path": "/tmp/l3-q3-berry-final.txt",
+    "sha256": "4e9e03e8ebaf98f0d5af8672439904036d99315cb2e3d80c6d4cb1c1154ba3b7",
+    "quote": "RPSI Greenville (GRSC) SC",
+    "retrieved_date": "2026-11-06",
+    "route": "NAS Firecrawl maxAge=0 rawHtml HTTP200 / house Text parser"
+  }
+]

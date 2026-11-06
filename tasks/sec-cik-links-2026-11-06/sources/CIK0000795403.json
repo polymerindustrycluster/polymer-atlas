@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000795403.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000795403",
+  "name": "WATTS WATER TECHNOLOGIES INC",
+  "tickers": [
+    "WTS"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "baa6e1d4b28707ff68d05123ac6a51c85a9dc928739e71753cba8f4906d053e4",
+  "raw_name_token": "\"WATTS WATER TECHNOLOGIES INC\""
+}

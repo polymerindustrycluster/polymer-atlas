@@ -1,0 +1,10 @@
+site_id,verdict,reason
+SITE-012107,STILL_UNCERTAIN,"Own-issued witness tying polymer manufacturing to the held Springfield street; the admitted catalog describes company capabilities, not that establishment."
+SITE-012118,STILL_UNCERTAIN,Own-issued local polymer-production witness at the held street; the local job establishes flexographic printing of packaging but does not settle polymer film production.
+SITE-012127,STILL_UNCERTAIN,Own-issued Joplin plant-city and activity witness bound to 3876 E 25th Street; the admitted company-wide description cannot establish that local process.
+SITE-012148,STILL_UNCERTAIN,Primary reconciliation of the same-street ZIP: own locations page gives 63702-0758 while the held ITA site gives 63701; no address or NAICS correction authorized here.
+SITE-012181,STILL_UNCERTAIN,Primary same-establishment bridge between the Piedmont Tweel plant page and ITA Michelin PMG at 1610 Old Grove Road; city and tire activity alone do not settle the named-plant ambiguity.
+SITE-012198,STILL_UNCERTAIN,Own-issued Rock Hill-specific rubber-roll-cover manufacturing witness; company-wide roller coverings plus a footer address do not bind that process to the local plant.
+SITE-012199,STILL_UNCERTAIN,"Primary reconciliation of local Thermoplastic Manufacturing with filed 326299 single-ply rubber roofing membrane activity, and issuer/operator treatment; no scope/code/parent correction authorized here."
+SITE-012219,STILL_UNCERTAIN,Own-issued Clinton plant-city and polymer activity witness at 1939 Charlottes Road; admitted company-wide product statement and a script-only career search do not settle the local activity.
+SITE-012226,STILL_UNCERTAIN,Own-issued bottle manufacturing witness bound to Berry 200 Arrowhead Ct; the Greenville EHS job does not supply a local polymer process or that street. Recorded Amcor parent alone does not settle the plant binding.

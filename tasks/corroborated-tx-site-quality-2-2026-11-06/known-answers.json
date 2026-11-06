@@ -1,0 +1,32 @@
+{
+  "known_records": [
+    {
+      "case": "rubbercraft",
+      "cache_file": "/tmp/L6-op-known-rubbercraft.txt",
+      "quote": "co-molding",
+      "sha256": "475a9fdc16ae489b72d7b9c730cd04713cb190fcdb1915111ae51c6c80c465a6",
+      "result": "PASS"
+    },
+    {
+      "case": "ssi",
+      "cache_file": "/tmp/L6-op-known-ssi.txt",
+      "quote": "1310 Thurman Street Lodi, CA 95240",
+      "sha256": "1459a28d54c764bcb8346423722d32fc148dbb239e88a353aa672a92eaac1e1f",
+      "result": "PASS"
+    },
+    {
+      "case": "polyfoam",
+      "cache_file": "/tmp/L6-op-known-polyfoam.txt",
+      "quote": "foam fabricator located in Hayward, CA",
+      "sha256": "c6ce4e99fa9c47eb9a9e9cc6ecdebe72d88b68f8d52c8c00d2f40e931e769245",
+      "result": "PASS"
+    }
+  ],
+  "wrong_city": "rejected",
+  "word_order": "rejected",
+  "independent_refetch_quotes": 13,
+  "independent_refetch_urls": 11,
+  "hash_changes_reread_quotes_still_match": [
+    "SITE-015002"
+  ]
+}

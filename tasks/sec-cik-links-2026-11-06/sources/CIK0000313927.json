@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000313927.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000313927",
+  "name": "CHURCH & DWIGHT CO INC /DE/",
+  "tickers": [
+    "CHD"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "e27c181f7858192c1ee637af479bc3c9a87c969b04ee4f32417f68522932cc20",
+  "raw_name_token": "\"CHURCH & DWIGHT CO INC /DE/\""
+}

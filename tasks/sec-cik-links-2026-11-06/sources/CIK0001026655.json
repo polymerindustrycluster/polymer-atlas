@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001026655.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001026655",
+  "name": "CORE MOLDING TECHNOLOGIES INC",
+  "tickers": [
+    "CMT"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "484f45d795db0ccfa3ee862f2d74fda2b58ac42ef2df1c21a137842d87ea408d",
+  "raw_name_token": "\"CORE MOLDING TECHNOLOGIES INC\""
+}

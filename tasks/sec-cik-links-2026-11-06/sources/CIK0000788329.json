@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000788329.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000788329",
+  "name": "JOHNSON OUTDOORS INC",
+  "tickers": [
+    "JOUT"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "0e21f419569d44fcaf0e4b72bbdaa23970c7087de577099c5d14d200545d598b",
+  "raw_name_token": "\"JOHNSON OUTDOORS INC\""
+}

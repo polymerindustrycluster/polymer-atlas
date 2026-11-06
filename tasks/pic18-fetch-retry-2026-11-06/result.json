@@ -1,0 +1,20 @@
+{
+  "frozen_evidence_rows": 264,
+  "cited_references": 96,
+  "explicit_fetch_urls": 94,
+  "judgments": {
+    "SUPPORTED": 195,
+    "NOT_SUPPORTED": 0,
+    "HOLD": 69
+  },
+  "holds_by_reason": {
+    "NO_PRESERVED_QUOTE": 22,
+    "FETCH_FAILED": 27,
+    "SOURCE_BINDING": 10,
+    "PDF_WORD_BOUNDARY_HOLD": 10
+  },
+  "transport_receipts": 227,
+  "supplemental_inspections": 1,
+  "canonical_changes": 0,
+  "new_EVD_ids": 0
+}

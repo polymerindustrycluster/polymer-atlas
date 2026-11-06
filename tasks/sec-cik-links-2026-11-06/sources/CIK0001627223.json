@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001627223.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001627223",
+  "name": "Chemours Co",
+  "tickers": [
+    "CC"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "14f87c5f66de118a2a586627c57344d12f6e8ca359f7a772c1b25a231eac6337",
+  "raw_name_token": "\"Chemours Co\""
+}

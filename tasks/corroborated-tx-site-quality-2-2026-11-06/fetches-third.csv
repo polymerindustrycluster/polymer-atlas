@@ -1,0 +1,9 @@
+cluster_id,url,route,fetch,chars
+SITE-015017-q2b,https://www.vpetusa.com/about/,https://www.vpetusa.com/about/,loaded,3292
+SITE-015018-q2b,https://mositesrubber.com/about/,,unfetchable,0
+SITE-015018-q2c,https://mositesrubber.com/contact/,,unfetchable,0
+SITE-015019-q2b,https://www.solmax.com/global/en/news/solmax-americas-modernizes-houston-facility-to-expand-geomembrane-manufacturing,https://www.solmax.com/global/en/news/solmax-americas-modernizes-houston-facility-to-expand-geomembrane-manufacturing,loaded,3226
+SITE-015402-q2b,https://www.cantexinc.com/about-us,https://www.cantexinc.com/about-us,loaded,4973
+SITE-015409-q2b,https://www.wlplastics.com/pe-pipes/baba-bead-info,https://www.wlplastics.com/pe-pipes/baba-bead-info,loaded,4774
+SITE-015412-q2b,https://www.charlottepipe.com/about-us,https://www.charlottepipe.com/about-us,loaded,6476
+SITE-015413-q2b,https://www.daconindustries.com/contact,https://www.daconindustries.com/contact,loaded,1171

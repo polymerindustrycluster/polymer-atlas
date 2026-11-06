@@ -1,0 +1,4 @@
+known_record,url,quote,expected,result
+op-known-rubbercraft,https://www.rubbercraft.com/,Precise co-molding processes that vulcanize an elastomeric seal profile,raw quote present,PASS
+op-known-ssi,https://www.ssibio.com/,"Scientific Specialties has designed, molded, and certified pipette tips, PCR consumables",raw quote present,PASS
+op-known-polyfoam,https://americanpolyfoam.com/about/,"American Poly-Foam Co, Inc is a foam fabricator located in Hayward, CA.",raw quote present,PASS

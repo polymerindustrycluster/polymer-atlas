@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001786431.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001786431",
+  "name": "Reynolds Consumer Products Inc.",
+  "tickers": [
+    "REYN"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "63bfaae88954f3acbd41c722cd7cd22b48bd70607e0c80f2215fffbfffe65ea4",
+  "raw_name_token": "\"Reynolds Consumer Products Inc.\""
+}

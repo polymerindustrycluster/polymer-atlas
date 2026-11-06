@@ -1,0 +1,3180 @@
+{
+  "pinned_main": "97ee6bc2a4475a47d8449ca79db688fb9114ab0f",
+  "comparison_started_at_utc": "2026-11-06T12:05:28.495209+00:00",
+  "records": [
+    {
+      "site_id": "SITE-012034",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-163405",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://www.ashindustries.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163406",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://www.ashindustries.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163407",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://www.ashindustries.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163408",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "source_ref": "https://www.ashindustries.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163409",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "source_ref": "https://www.ashindustries.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163410",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 57635 (ASH Industries, Inc.)",
+          "observed_date": "2026-01-26",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163411",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 57635 (ASH Industries, Inc.)",
+          "observed_date": "2026-01-26",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168401",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 57635 (ASH Industries, Inc.)",
+          "observed_date": "2026-01-26",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168402",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 57635 (ASH Industries, Inc.)",
+          "observed_date": "2026-01-26",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018006",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260042",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260043",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260044",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260045",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260046",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260047",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260048",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=96759",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018000",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260000",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260001",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260002",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260003",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260004",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260005",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260006",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1123909",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014003",
+      "blind_grade": "field_error",
+      "final_grade": "field_error",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180025",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348840042 (DART CONTAINER CORPORATION); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180026",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348840042 (DART CONTAINER CORPORATION); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180027",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348840042 (DART CONTAINER CORPORATION); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180028",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348840042 (DART CONTAINER CORPORATION); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180029",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348840042 (DART CONTAINER CORPORATION); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019012",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270084",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270085",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270086",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270087",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270088",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270089",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270090",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1266984",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014008",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180061",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1000457 (Madera); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180062",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1000457 (Madera); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180063",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1000457 (Madera); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180064",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1000457 (Madera); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180065",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1000457 (Madera); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180066",
+          "claim_type": "size_band",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1000457 (Madera); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016109",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201063",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201064",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201065",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201066",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201067",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201068",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201069",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1417323",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016000",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200000",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200001",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200002",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200003",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200004",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200005",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200006",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=818294",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016015",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200105",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200106",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200107",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200108",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200109",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200110",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200111",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082299",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019001",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270007",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270008",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270009",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270010",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270011",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270012",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270013",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=567205",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019008",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270056",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270057",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270058",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270059",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270060",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270061",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270062",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1324114",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016103",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201021",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201022",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201023",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201024",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201025",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201026",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201027",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1514964",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-012023",
+      "blind_grade": "field_error",
+      "final_grade": "creation_error",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-162301",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162302",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162303",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162304",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "source_ref": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162305",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "source_ref": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162306",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059636 (Yokohama TWS - Spartanburg)",
+          "observed_date": "2026-02-09",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162307",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059636 (Yokohama TWS - Spartanburg)",
+          "observed_date": "2026-02-09",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167302",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059636 (Yokohama TWS - Spartanburg)",
+          "observed_date": "2026-02-09",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167303",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059636 (Yokohama TWS - Spartanburg)",
+          "observed_date": "2026-02-09",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018015",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260105",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260106",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260107",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260108",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260109",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260110",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260111",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=671523",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014015",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180124",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=346719347 (MERCURY PLASTICS); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180125",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=346719347 (MERCURY PLASTICS); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180126",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=346719347 (MERCURY PLASTICS); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180127",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=346719347 (MERCURY PLASTICS); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180128",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=346719347 (MERCURY PLASTICS); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016009",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200063",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200064",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200065",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200066",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200067",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200068",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200069",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1519390",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016116",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201112",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201113",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201114",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201115",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201116",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201117",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201118",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=803419",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-012001",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-160104",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://watsoncoatings.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-160105",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://watsoncoatings.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-160106",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://watsoncoatings.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-160107",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "source_ref": "https://watsoncoatings.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-160108",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "source_ref": "https://watsoncoatings.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-160109",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "source_ref": "https://watsoncoatings.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016017",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200119",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200120",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200121",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200122",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200123",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200124",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200125",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1088099",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016111",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201077",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201078",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201079",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201080",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201081",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201082",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201083",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=345917",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018007",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260049",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260050",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260051",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260052",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260053",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260054",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260055",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=468937",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014017",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180139",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=349163741 (ATS PRODUCTS INC); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180140",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=349163741 (ATS PRODUCTS INC); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180141",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=349163741 (ATS PRODUCTS INC); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180142",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=349163741 (ATS PRODUCTS INC); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180143",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA inspection https://www.osha.gov/ords/imis/establishment.inspection_detail?id=349163741 (ATS PRODUCTS INC); tasks/osha-spine-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-012026",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-162605",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162606",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162607",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162608",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "source_ref": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162609",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "source_ref": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162610",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1328552 (Hahl Inc)",
+          "observed_date": "2026-01-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162611",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1328552 (Hahl Inc)",
+          "observed_date": "2026-01-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167602",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167604",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1328552 (Hahl Inc)",
+          "observed_date": "2026-01-29",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167605",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1328552 (Hahl Inc)",
+          "observed_date": "2026-01-29",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018001",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260007",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260008",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260009",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260010",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260011",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260012",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260013",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=97944",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016004",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200028",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200029",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200030",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200031",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200032",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200033",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200034",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1558286",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016119",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201133",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201134",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201135",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201136",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201137",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201138",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201139",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1336218",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018017",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260119",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260120",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260121",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260122",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260123",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260124",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260125",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000463",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019014",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270098",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270099",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270100",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270101",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270102",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270103",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270104",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1522621",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014006",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180049",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1008715 (Cal spas); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-02; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180050",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1008715 (Cal spas); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-02; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180051",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1008715 (Cal spas); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-02; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180052",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1008715 (Cal spas); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-02; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180053",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1008715 (Cal spas); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-02; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019009",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270063",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270064",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270065",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270066",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270067",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270068",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270069",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1082283",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019002",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270014",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270015",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270016",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270017",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270018",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270019",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270020",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1493157",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014010",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180077",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982363 (Heritage Bag-Rancho); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-03; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180078",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982363 (Heritage Bag-Rancho); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-03; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180079",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982363 (Heritage Bag-Rancho); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-03; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180080",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982363 (Heritage Bag-Rancho); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-03; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180081",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982363 (Heritage Bag-Rancho); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-03; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180082",
+          "claim_type": "size_band",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982363 (Heritage Bag-Rancho); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-03; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016010",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200070",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200071",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200072",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200073",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200074",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200075",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200076",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1248403",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016105",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201035",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201036",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201037",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201038",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201039",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201040",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201041",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1071562",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014013",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180107",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-180108",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-180109",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180110",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-180111",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-180112",
+          "claim_type": "size_band",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-180113",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://www.ssibio.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-181000",
+          "claim_type": "address",
+          "source_class": "own_site",
+          "source_ref": "https://www.ssibio.com/contact-us",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018012",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260084",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260085",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260086",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260087",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260088",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260089",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260090",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1424524",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016013",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200091",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200092",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200093",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200094",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200095",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200096",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200097",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=995961",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-012022",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-162205",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://cr.rebuildmanufacturing.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162206",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://cr.rebuildmanufacturing.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162207",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://cr.rebuildmanufacturing.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162208",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "source_ref": "https://cr.rebuildmanufacturing.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162209",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "source_ref": "https://cr.rebuildmanufacturing.com/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162210",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1250716 (Re:Build Composite Resources)",
+          "observed_date": "2026-01-09",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-162211",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1250716 (Re:Build Composite Resources)",
+          "observed_date": "2026-01-09",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167201",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1250716 (Re:Build Composite Resources)",
+          "observed_date": "2026-01-09",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-167202",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1250716 (Re:Build Composite Resources)",
+          "observed_date": "2026-01-09",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016113",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201091",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201092",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201093",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201094",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201095",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201096",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201097",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1000465",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-012031",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-163105",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/about-us/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163106",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/about-us/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163107",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/about-us/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163108",
+          "claim_type": "parent",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/about-us/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163109",
+          "claim_type": "liveness",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/about-us/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163110",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1067928 (Sun Drilling Products Corp.)",
+          "observed_date": "2026-01-16",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-163111",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1067928 (Sun Drilling Products Corp.)",
+          "observed_date": "2026-01-16",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168101",
+          "claim_type": "existence",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/about-us/",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168103",
+          "claim_type": "scope",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/wp-content/uploads/2024/09/Lubra-Glide-Beads-Technical-Data-Sheet-2018-August-06.pdf",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168105",
+          "claim_type": "activity",
+          "source_class": "own_site",
+          "source_ref": "https://sunspecialtyproducts.com/wp-content/uploads/2024/09/Lubra-Glide-Beads-Technical-Data-Sheet-2018-August-06.pdf",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168107",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1067928 (Sun Drilling Products Corp.)",
+          "observed_date": "2026-01-16",
+          "tier_effect": "supports_B"
+        },
+        {
+          "evidence_id": "EVD-168108",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1067928 (Sun Drilling Products Corp.)",
+          "observed_date": "2026-01-16",
+          "tier_effect": "supports_B"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-018003",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-260021",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260022",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260023",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260024",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260025",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260026",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-260027",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1330357",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016108",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201056",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201057",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201058",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201059",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201060",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201061",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201062",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=519695",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014014",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180118",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 705973 (VM INTERNATIONAL: 945 E CHRURCH ST. RIVERSIDE, CA 92507); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-27; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180119",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 705973 (VM INTERNATIONAL: 945 E CHRURCH ST. RIVERSIDE, CA 92507); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-27; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180120",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 705973 (VM INTERNATIONAL: 945 E CHRURCH ST. RIVERSIDE, CA 92507); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-27; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180121",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 705973 (VM INTERNATIONAL: 945 E CHRURCH ST. RIVERSIDE, CA 92507); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-27; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180122",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 705973 (VM INTERNATIONAL: 945 E CHRURCH ST. RIVERSIDE, CA 92507); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-27; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180123",
+          "claim_type": "size_band",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 705973 (VM INTERNATIONAL: 945 E CHRURCH ST. RIVERSIDE, CA 92507); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-27; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014019",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180155",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059943 (Altium Packaging - Corona); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180156",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059943 (Altium Packaging - Corona); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180157",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059943 (Altium Packaging - Corona); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180158",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059943 (Altium Packaging - Corona); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180159",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059943 (Altium Packaging - Corona); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180160",
+          "claim_type": "size_band",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 1059943 (Altium Packaging - Corona); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019007",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270049",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270050",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270051",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270052",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270053",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270054",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270055",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=213557",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019019",
+      "blind_grade": "agreement",
+      "final_grade": "agreement",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270133",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270134",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270135",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270136",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270137",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270138",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270139",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=347002",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-014007",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-180055",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982201 (NuSil Technology, Bakersfield); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-01-15; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180056",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982201 (NuSil Technology, Bakersfield); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-01-15; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180057",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982201 (NuSil Technology, Bakersfield); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-01-15; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180058",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982201 (NuSil Technology, Bakersfield); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-01-15; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180059",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982201 (NuSil Technology, Bakersfield); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-01-15; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-180060",
+          "claim_type": "size_band",
+          "source_class": "government_filing",
+          "source_ref": "OSHA ITA Form 300A CY2025 establishment 982201 (NuSil Technology, Bakersfield); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-01-15; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",
+          "observed_date": "2026-11-06",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-019011",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-270077",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270078",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270079",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270080",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270081",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270082",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-270083",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1497928",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016006",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-200042",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200043",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200044",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200045",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200046",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200047",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-200048",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=324275",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-016101",
+      "blind_grade": "unresolved",
+      "final_grade": "unresolved",
+      "original_evidence": [
+        {
+          "evidence_id": "EVD-201007",
+          "claim_type": "existence",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201008",
+          "claim_type": "address",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201009",
+          "claim_type": "scope",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201010",
+          "claim_type": "code",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201011",
+          "claim_type": "parent",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201012",
+          "claim_type": "activity",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        },
+        {
+          "evidence_id": "EVD-201013",
+          "claim_type": "liveness",
+          "source_class": "government_filing",
+          "source_ref": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=1533149",
+          "observed_date": "2026-11-01",
+          "tier_effect": "supports_C"
+        }
+      ]
+    }
+  ],
+  "typed_claim_coverage": {
+    "activity": 40,
+    "address": 50,
+    "code": 49,
+    "existence": 50,
+    "liveness": 40,
+    "parent": 50,
+    "scope": 50,
+    "size_band": 6
+  },
+  "source_class_rows": {
+    "government_filing": 314,
+    "own_site": 37
+  },
+  "original_evidence_rows": 351,
+  "interpretation": "Original evidence compared after freeze only; never rewrites a blind result. Missing/weak typed rows are provenance observations, not factual errors."
+}

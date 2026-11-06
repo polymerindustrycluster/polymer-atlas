@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0002115436.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0002115436",
+  "name": "ExxonMobil Holdings Corp",
+  "tickers": [
+    "XOM"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "1659123917560a470bcfe71b929d0801ee22f4aeb19b7d64a70d8669d5d2c0a5",
+  "raw_name_token": "\"ExxonMobil Holdings Corp\""
+}

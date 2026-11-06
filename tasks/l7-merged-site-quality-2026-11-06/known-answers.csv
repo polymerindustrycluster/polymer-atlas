@@ -1,0 +1,4 @@
+cluster_id,url,route,fetch,chars,quote,expected,result
+L7-known-hentzen,https://www.hentzen.com/locations/,https://www.hentzen.com/locations/,loaded,2575,Milwaukee Powder Plant,MATCH,PASS; fabricated suffix rejected
+L7-known-valmet,https://www.valmet.com/service/service-centers/north-america/neenah/,https://www.valmet.com/service/service-centers/north-america/neenah/,loaded,18093,"polyurethane, composite and rubber covers",MATCH,PASS; fabricated suffix rejected
+L7-known-dutchland,https://www.dutchland.com/jobs-canastota/,https://www.dutchland.com/jobs-canastota/,loaded,7102,manufacturers of custom rotational molded plastic products,MATCH,PASS; fabricated suffix rejected

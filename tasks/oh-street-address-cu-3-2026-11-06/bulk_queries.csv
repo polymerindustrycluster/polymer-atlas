@@ -1,0 +1,1587 @@
+site_id,query_type,query,rows_returned,blank_ids
+SITE-000184,existing_id_lead,110000617636,1,0
+SITE-000184,existing_id_lead,110031399083,1,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER CO,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER COMPANY,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER CORP,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER CORPORATION,1,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER INC,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER INCORPORATED,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER LIMITED,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER LLC,0,0
+SITE-000184,exact_name_city_discovery,SEAL MASTER LTD,0,0
+SITE-000184,exact_name_city_discovery,Seal Master Corp.,0,0
+SITE-000185,existing_id_lead,110000617636,1,0
+SITE-000185,existing_id_lead,110031399083,1,0
+SITE-000185,exact_name_city_discovery,ELBEX,0,0
+SITE-000185,exact_name_city_discovery,ELBEX CO,0,0
+SITE-000185,exact_name_city_discovery,ELBEX COMPANY,0,0
+SITE-000185,exact_name_city_discovery,ELBEX CORP,0,0
+SITE-000185,exact_name_city_discovery,ELBEX CORPORATION,1,0
+SITE-000185,exact_name_city_discovery,ELBEX INC,0,0
+SITE-000185,exact_name_city_discovery,ELBEX INCORPORATED,0,0
+SITE-000185,exact_name_city_discovery,ELBEX LIMITED,0,0
+SITE-000185,exact_name_city_discovery,ELBEX LLC,0,0
+SITE-000185,exact_name_city_discovery,ELBEX LTD,0,0
+SITE-000185,exact_name_city_discovery,Elbex Corp.,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER CO,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER COMPANY,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER CORP,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER CORPORATION,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER INC,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER INCORPORATED,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER LIMITED,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER LLC,0,0
+SITE-000187,exact_name_city_discovery,ENDURO RUBBER LTD,0,0
+SITE-000187,exact_name_city_discovery,Enduro Rubber Company,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL CO,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL COMPANY,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL CORP,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL CORPORATION,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL INC,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL INCORPORATED,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL LIMITED,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL LLC,0,0
+SITE-000188,exact_name_city_discovery,SPRINGSEAL LTD,0,0
+SITE-000188,exact_name_city_discovery,SpringSeal Inc.,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS CO,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS COMPANY,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS CORP,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS CORPORATION,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS INC,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS INCORPORATED,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS LIMITED,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS LLC,0,0
+SITE-000190,exact_name_city_discovery,DIE CUT PRODUCTS LTD,0,0
+SITE-000190,exact_name_city_discovery,Die-Cut Products Co.,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL CO,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL COMPANY,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL CORP,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL CORPORATION,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL INC,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL INCORPORATED,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL LIMITED,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL LLC,0,0
+SITE-000191,exact_name_city_discovery,NORTH COAST SEAL LTD,0,0
+SITE-000191,exact_name_city_discovery,North Coast Seal,0,0
+SITE-000193,exact_name_city_discovery,SKF USA,0,0
+SITE-000193,exact_name_city_discovery,SKF USA CO,0,0
+SITE-000193,exact_name_city_discovery,SKF USA COMPANY,0,0
+SITE-000193,exact_name_city_discovery,SKF USA CORP,0,0
+SITE-000193,exact_name_city_discovery,SKF USA CORPORATION,0,0
+SITE-000193,exact_name_city_discovery,SKF USA INC,0,0
+SITE-000193,exact_name_city_discovery,SKF USA INCORPORATED,0,0
+SITE-000193,exact_name_city_discovery,SKF USA Inc.,0,0
+SITE-000193,exact_name_city_discovery,SKF USA LIMITED,0,0
+SITE-000193,exact_name_city_discovery,SKF USA LLC,0,0
+SITE-000193,exact_name_city_discovery,SKF USA LTD,0,0
+SITE-000195,existing_id_lead,110004707924,1,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER,1,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER CO,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER COMPANY,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER CORP,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER CORPORATION,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER INC,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER INCORPORATED,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER LIMITED,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER LLC,0,0
+SITE-000195,exact_name_city_discovery,UNIVERSAL POLYMER AND RUBBER LTD,0,0
+SITE-000195,exact_name_city_discovery,Universal Polymer & Rubber,1,0
+SITE-000197,existing_id_lead,110004619226,1,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC CO,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC CO.,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC COMPANY,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC CORP,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC CORPORATION,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC INC,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC INCORPORATED,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC LIMITED,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC LLC,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTIC LTD,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS CO,1,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS COMPANY,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS CORP,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS CORPORATION,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS INC,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS INCORPORATED,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS LIMITED,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS LLC,0,0
+SITE-000197,exact_name_city_discovery,CLARK RUBBER AND PLASTICS LTD,0,0
+SITE-000197,exact_name_city_discovery,Clark Rubber & Plastics Co.,1,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS CO,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS COMPANY,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS CORP,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS CORPORATION,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS INC,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS INCORPORATED,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS LIMITED,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS LLC,0,0
+SITE-000197,exact_name_city_discovery,MUNSON PRODUCTS LTD,0,0
+SITE-000200,exact_name_city_discovery,TMI,0,0
+SITE-000200,exact_name_city_discovery,TMI CO,0,0
+SITE-000200,exact_name_city_discovery,TMI COMPANY,0,0
+SITE-000200,exact_name_city_discovery,TMI CORP,0,0
+SITE-000200,exact_name_city_discovery,TMI CORPORATION,0,0
+SITE-000200,exact_name_city_discovery,TMI INC,0,0
+SITE-000200,exact_name_city_discovery,TMI INCORPORATED,0,0
+SITE-000200,exact_name_city_discovery,TMI Inc.,0,0
+SITE-000200,exact_name_city_discovery,TMI LIMITED,0,0
+SITE-000200,exact_name_city_discovery,TMI LLC,0,0
+SITE-000200,exact_name_city_discovery,TMI LTD,0,0
+SITE-000205,existing_id_lead,110006241959,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE CO,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE COMPANY,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE CORP,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE CORPORATION,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE INC,1,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE INCORPORATED,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE LIMITED,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE LLC,0,0
+SITE-000205,exact_name_city_discovery,ZIEGLER TIRE LTD,0,0
+SITE-000205,exact_name_city_discovery,Ziegler Tire,0,0
+SITE-000208,existing_id_lead,110000385093,1,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER CO,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER COMPANY,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER CORP,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER CORPORATION,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER INC,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER INCORPORATED,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER LIMITED,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER LLC,0,0
+SITE-000208,exact_name_city_discovery,ASHTABULA RUBBER LTD,0,0
+SITE-000208,exact_name_city_discovery,Ashtabula Rubber Co.,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS CO,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS COMPANY,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS CORP,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS CORPORATION,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS INC,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS INCORPORATED,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS LIMITED,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS LLC,0,0
+SITE-000209,exact_name_city_discovery,QBM PRODUCTS LTD,0,0
+SITE-000209,exact_name_city_discovery,QBM Products,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE CO,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE COMPANY,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE CORP,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE CORPORATION,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE INC,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE INCORPORATED,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE LIMITED,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE LLC,0,0
+SITE-000209,exact_name_city_discovery,QUALITY BELT MAINTENANCE LTD,0,0
+SITE-000209,exact_name_city_discovery,Quality Belt Maintenance Ltd.,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER CO,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER COMPANY,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER CORP,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER CORPORATION,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER INC,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER INCORPORATED,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER LIMITED,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER LLC,0,0
+SITE-000210,exact_name_city_discovery,SYNTHOMER LTD,0,0
+SITE-000210,exact_name_city_discovery,"Synthomer, Inc.",0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING CO,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING COMPANY,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING CORP,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING CORPORATION,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING INC,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING INCORPORATED,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LIMITED,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING CO,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING COMPANY,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING CORP,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING CORPORATION,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING INC,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING INCORPORATED,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING LIMITED,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING LLC,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING LTD,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL COMPOUNDING LTD,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL Compounding,0,0
+SITE-000211,exact_name_city_discovery,HEXPOL Compounding LLC (HEXPOL Akron / HEXPOL Silicone Compounding),0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING CO,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING COMPANY,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING CORP,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING CORPORATION,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING INC,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING INCORPORATED,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING LIMITED,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING LLC,0,0
+SITE-000211,exact_name_city_discovery,PREFERRED COMPOUNDING LTD,0,0
+SITE-000211,exact_name_city_discovery,Preferred Compounding,0,0
+SITE-000214,existing_id_lead,110042190232,1,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE CO,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE COMPANY,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE CORP,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE CORPORATION,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE INC,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE INCORPORATED,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE LIMITED,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE LLC,0,0
+SITE-000214,exact_name_city_discovery,PARKER APPLIANCE LTD,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN CO,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN COMPANY,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN CORP,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN CORPORATION,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN INC,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN INCORPORATED,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN LIMITED,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN LLC,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN LTD,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME CO,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME COMPANY,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME CORP,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME CORPORATION,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME INC,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME INCORPORATED,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME LIMITED,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME LLC,0,0
+SITE-000214,exact_name_city_discovery,PARKER HANNIFIN MARION NY FEDERAL REGISTRANT NAME LTD,0,0
+SITE-000214,exact_name_city_discovery,Parker Hannifin,0,0
+SITE-000214,exact_name_city_discovery,"Parker Hannifin - Marion, NY (federal registrant name)",0,0
+SITE-000214,exact_name_city_discovery,Parker-Hannifin Corporation,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE CO,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE COMPANY,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE CORP,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE CORPORATION,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE INC,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE INCORPORATED,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE LIMITED,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE LLC,0,0
+SITE-000214,exact_name_city_discovery,RUNWISE LTD,0,0
+SITE-000214,exact_name_city_discovery,Runwise,0,0
+SITE-000214,exact_name_city_discovery,THE PARKER APPLIANCE COMPANY,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS CO,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS COMPANY,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS CORP,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS CORPORATION,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS INC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS INCORPORATED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS LIMITED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS LLC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS LTD,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON CO,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON COMPANY,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON CORP,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON CORPORATION,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON INC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON INCORPORATED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON LIMITED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON LLC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NAPOLEON LTD,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI CO,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI COMPANY,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI CORP,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI CORPORATION,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI INC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI INCORPORATED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI LIMITED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI LLC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS NEW MIAMI LTD,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER CO,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER COMPANY,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER CORP,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER CORPORATION,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER INC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER INCORPORATED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER LIMITED,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER LLC,0,0
+SITE-000226,exact_name_city_discovery,ADVANCED DRAINAGE SYSTEMS WOOSTER LTD,0,0
+SITE-000226,exact_name_city_discovery,Advanced Drainage Systems (Napoleon),0,0
+SITE-000226,exact_name_city_discovery,Advanced Drainage Systems (New Miami),0,0
+SITE-000226,exact_name_city_discovery,Advanced Drainage Systems (Wooster),0,0
+SITE-000226,exact_name_city_discovery,"Advanced Drainage Systems, Inc.",0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION CO,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION COMPANY,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION CORP,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION CORPORATION,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION INC,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION INCORPORATED,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION LIMITED,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION LLC,0,0
+SITE-000229,exact_name_city_discovery,AETNA PLASTICS FABRICATION LTD,0,0
+SITE-000229,exact_name_city_discovery,Aetna Plastics Fabrication,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES CO,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES COMPANY,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES CORP,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES CORPORATION,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES INC,1,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES INCORPORATED,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES LIMITED,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES LLC,0,0
+SITE-000234,exact_name_city_discovery,AKRON COATING AND ADHESIVES LTD,0,0
+SITE-000234,exact_name_city_discovery,"Akron Coating & Adhesives, Inc.",1,0
+SITE-000234,exact_name_city_discovery,"Akron Coating and Adhesives, Inc",1,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS CO,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS COMPANY,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS CORP,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS CORPORATION,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS INC,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS INCORPORATED,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS LIMITED,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS LLC,0,0
+SITE-000237,exact_name_city_discovery,ALL FOAM PRODUCTS LTD,0,0
+SITE-000237,exact_name_city_discovery,"All Foam Products Co., Inc.",0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC CO,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC COMPANY,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC CORP,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC CORPORATION,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC INC,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC INCORPORATED,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC LIMITED,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC LLC,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTIC LTD,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS CO,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS COMPANY,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS CORP,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS CORPORATION,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS INC,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS INCORPORATED,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS LIMITED,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS LLC,0,0
+SITE-000243,exact_name_city_discovery,AMERICAN MOLDED PLASTICS LTD,0,0
+SITE-000243,exact_name_city_discovery,"AMERICAN MOLDED PLASTICS, INC",0,0
+SITE-000243,exact_name_city_discovery,"American Molded Plastic, Inc.",0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY CO,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY COMPANY,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY CORP,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY CORPORATION,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY INC,1,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY INCORPORATED,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY LIMITED,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY LLC,0,0
+SITE-000246,exact_name_city_discovery,APPLIED MEDICAL TECHNOLOGY LTD,0,0
+SITE-000246,exact_name_city_discovery,"Applied Medical Technology, Inc.",1,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST CO,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST COMPANY,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST CORP,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST CORPORATION,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST INC,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST INCORPORATED,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST LIMITED,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST LLC,0,0
+SITE-000249,exact_name_city_discovery,ASSEMBLY SPECIALIST LTD,0,0
+SITE-000249,exact_name_city_discovery,"Assembly Specialist, Inc.",0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY CO,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY COMPANY,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY CORP,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY CORPORATION,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY INC,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY INCORPORATED,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY LIMITED,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY LLC,0,0
+SITE-000255,exact_name_city_discovery,B B BRADLEY LTD,0,0
+SITE-000255,exact_name_city_discovery,The B.B. Bradley Company,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS CO,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS COMPANY,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS CORP,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS CORPORATION,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS INC,1,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS INCORPORATED,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS LIMITED,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS LLC,0,0
+SITE-000256,exact_name_city_discovery,BAKER PLASTICS LTD,0,0
+SITE-000256,exact_name_city_discovery,"Baker Plastics, Inc.",1,0
+SITE-000259,exact_name_city_discovery,BASETEK,0,0
+SITE-000259,exact_name_city_discovery,BASETEK CO,0,0
+SITE-000259,exact_name_city_discovery,BASETEK COMPANY,0,0
+SITE-000259,exact_name_city_discovery,BASETEK CORP,0,0
+SITE-000259,exact_name_city_discovery,BASETEK CORPORATION,0,0
+SITE-000259,exact_name_city_discovery,BASETEK INC,0,0
+SITE-000259,exact_name_city_discovery,BASETEK INCORPORATED,0,0
+SITE-000259,exact_name_city_discovery,BASETEK LIMITED,0,0
+SITE-000259,exact_name_city_discovery,BASETEK LLC,0,0
+SITE-000259,exact_name_city_discovery,BASETEK LTD,0,0
+SITE-000259,exact_name_city_discovery,"BaseTek, LLC",0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS CO,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS COMPANY,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS CORP,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS CORPORATION,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS INC,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS INCORPORATED,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS LIMITED,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS LLC,0,0
+SITE-000265,exact_name_city_discovery,BMS BURNS LTD,0,0
+SITE-000265,exact_name_city_discovery,BMS Burns,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H CO,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H COMPANY,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H CORP,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H CORPORATION,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H INC,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H INCORPORATED,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H LIMITED,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H LLC,0,0
+SITE-000265,exact_name_city_discovery,BURNS J H LTD,0,0
+SITE-000265,exact_name_city_discovery,"Burns, J. H. Inc.",0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS CO,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS COMPANY,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS CORP,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS CORPORATION,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS INC,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS INCORPORATED,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS LIMITED,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS LLC,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PLASTICS LTD,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS CO,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS COMPANY,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS CORP,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS CORPORATION,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS INC,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS INCORPORATED,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS LIMITED,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS LLC,0,0
+SITE-000266,exact_name_city_discovery,BOARDMAN MOLDED PRODUCTS LTD,0,0
+SITE-000266,exact_name_city_discovery,Boardman Molded Plastics,0,0
+SITE-000266,exact_name_city_discovery,"Boardman Molded Products, Inc.",0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS CO,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS COMPANY,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS CORP,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS CORPORATION,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS INC,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS INCORPORATED,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS LIMITED,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS LLC,0,0
+SITE-000266,exact_name_city_discovery,SPACE LINKS LTD,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES CO,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES COMPANY,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES CORP,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES CORPORATION,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES INC,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES INCORPORATED,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES LIMITED,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES LLC,0,0
+SITE-000266,exact_name_city_discovery,SPACELINKS ENTERPRISES LTD,0,0
+SITE-000266,exact_name_city_discovery,Space Links,0,0
+SITE-000266,exact_name_city_discovery,SpaceLinks Enterprises,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY CO,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY COMPANY,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY CORP,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY CORPORATION,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY INC,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY INCORPORATED,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY LIMITED,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY LLC,0,0
+SITE-000267,exact_name_city_discovery,BOLE MACHINERY LTD,0,0
+SITE-000267,exact_name_city_discovery,Bole Machinery Inc.,0,0
+SITE-000268,exact_name_city_discovery,BONNOT,0,0
+SITE-000268,exact_name_city_discovery,BONNOT CO,0,0
+SITE-000268,exact_name_city_discovery,BONNOT COMPANY,0,0
+SITE-000268,exact_name_city_discovery,BONNOT CORP,0,0
+SITE-000268,exact_name_city_discovery,BONNOT CORPORATION,0,0
+SITE-000268,exact_name_city_discovery,BONNOT INC,0,0
+SITE-000268,exact_name_city_discovery,BONNOT INCORPORATED,0,0
+SITE-000268,exact_name_city_discovery,BONNOT LIMITED,0,0
+SITE-000268,exact_name_city_discovery,BONNOT LLC,0,0
+SITE-000268,exact_name_city_discovery,BONNOT LTD,0,0
+SITE-000268,exact_name_city_discovery,The Bonnot Company,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND CO,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND COMPANY,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND CORP,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND CORPORATION,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND INC,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND INCORPORATED,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND LIMITED,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND LLC,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS A MILLIKEN BRAND LTD,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS CO,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS COMPANY,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS CORP,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS CORPORATION,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS INC,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS INCORPORATED,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS LIMITED,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS LLC,0,0
+SITE-000269,exact_name_city_discovery,BORCHERS AMERICAS LTD,0,0
+SITE-000269,exact_name_city_discovery,Borchers Americas Inc.,0,0
+SITE-000269,exact_name_city_discovery,Borchers: A Milliken Brand,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER CO,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER COMPANY,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER CORP,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER CORPORATION,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER INC,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER INCORPORATED,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER LIMITED,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER LLC,0,0
+SITE-000275,exact_name_city_discovery,C A LITZLER LTD,0,0
+SITE-000275,exact_name_city_discovery,"C.A. Litzler Co., Inc.",0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER CO,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER COMPANY,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER CORP,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER CORPORATION,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER INC,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER INCORPORATED,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER LIMITED,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER LLC,0,0
+SITE-000275,exact_name_city_discovery,MOLDING AND COATING TECHNOLOGIES MCT A PART OF C A LITZLER LTD,0,0
+SITE-000275,exact_name_city_discovery,"Molding & Coating Technologies (MCT), A Part Of C. A. Litzler Co., Inc.",0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS CO,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS COMPANY,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS CORP,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS CORPORATION,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS INC,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS INCORPORATED,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS LIMITED,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS LLC,0,0
+SITE-000280,exact_name_city_discovery,CARNEY PLASTICS LTD,0,0
+SITE-000280,exact_name_city_discovery,Carney Plastics Inc.,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 CO,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 COMPANY,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 CORP,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 CORPORATION,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 INC,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 INCORPORATED,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 LIMITED,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 LLC,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4366 LTD,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 CO,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 COMPANY,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 CORP,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 CORPORATION,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 INC,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 INCORPORATED,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 LIMITED,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 LLC,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS 4429 LTD,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS CO,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS COMPANY,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS CORP,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS CORPORATION,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS INC,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS INCORPORATED,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS LIMITED,0,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS LLC,1,0
+SITE-000282,exact_name_city_discovery,CAST NYLONS LTD,0,0
+SITE-000282,exact_name_city_discovery,Cast Nylons 4366,0,0
+SITE-000282,exact_name_city_discovery,Cast Nylons 4429,0,0
+SITE-000282,exact_name_city_discovery,"Cast Nylons, LTD",0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL CO,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL COMPANY,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL CORP,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL CORPORATION,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL INC,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL INCORPORATED,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL LIMITED,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL LLC,0,0
+SITE-000283,exact_name_city_discovery,CCL LABEL LTD,0,0
+SITE-000283,exact_name_city_discovery,CCL Label,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH CO,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH COMPANY,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH CORP,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH CORPORATION,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH INC,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH INCORPORATED,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH LIMITED,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH LLC,0,0
+SITE-000284,exact_name_city_discovery,CERMETECH LTD,0,0
+SITE-000284,exact_name_city_discovery,CermeTech LLC,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL CO,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL COMPANY,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL CORP,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL CORPORATION,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL INC,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL INCORPORATED,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL LIMITED,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL LLC,0,0
+SITE-000291,exact_name_city_discovery,CHEMPAK INTERNATIONAL LTD,0,0
+SITE-000291,exact_name_city_discovery,ChemPak International,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC CO,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC COMPANY,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC CORP,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC CORPORATION,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC INC,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC INCORPORATED,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC LIMITED,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC LLC,0,0
+SITE-000292,exact_name_city_discovery,CHEMSPEC LTD,0,0
+SITE-000292,exact_name_city_discovery,"ChemSpec, Ltd.",0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS CO,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS COMPANY,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS CORP,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS CORPORATION,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS INC,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS INCORPORATED,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS LIMITED,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS LLC,0,0
+SITE-000292,exact_name_city_discovery,SAFIC ALCAN SAS LTD,0,0
+SITE-000292,exact_name_city_discovery,Safic-Alcan SAS,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL CO,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL COMPANY,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL CORP,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL CORPORATION,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL INC,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL INCORPORATED,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL LIMITED,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL LLC,0,0
+SITE-000293,exact_name_city_discovery,CHEMSULTANTS INTERNATIONAL LTD,0,0
+SITE-000293,exact_name_city_discovery,"Chemsultants International, Inc.",0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES CO,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES COMPANY,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES CORP,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES CORPORATION,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES INC,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES INCORPORATED,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES LIMITED,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES LLC,0,0
+SITE-000295,exact_name_city_discovery,CLEVELAND RECLAIM INDUSTRIES LTD,0,0
+SITE-000295,exact_name_city_discovery,Cleveland Reclaim Industries,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS CO,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS COMPANY,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS CORP,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS CORPORATION,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS INC,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS INCORPORATED,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS LIMITED,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS LLC,0,0
+SITE-000295,exact_name_city_discovery,TURTLE PLASTICS LTD,0,0
+SITE-000295,exact_name_city_discovery,Turtle Plastics,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS CO,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS COMPANY,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS CORP,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS CORPORATION,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS INC,1,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS INCORPORATED,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS LIMITED,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS LLC,0,0
+SITE-000297,exact_name_city_discovery,COBRA PLASTICS LTD,0,0
+SITE-000297,exact_name_city_discovery,"Cobra Plastics, Inc",1,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING CO,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING COMPANY,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING CORP,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING CORPORATION,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING INC,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING INCORPORATED,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING LIMITED,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING LLC,0,0
+SITE-000297,exact_name_city_discovery,SILGAN DISPENSING LTD,0,0
+SITE-000297,exact_name_city_discovery,Silgan Dispensing,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN CO,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN COMPANY,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN CORP,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN CORPORATION,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN INC,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN INCORPORATED,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN LIMITED,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN LLC,0,0
+SITE-000301,exact_name_city_discovery,COMPONENT MANUFACTURING AND DESIGN LTD,0,0
+SITE-000301,exact_name_city_discovery,Component Manufacturing & Design,0,0
+SITE-000301,exact_name_city_discovery,Component Manufacturing and Design,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS CO,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS COMPANY,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS CORP,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS CORPORATION,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS INC,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS INCORPORATED,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS LIMITED,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS LLC,0,0
+SITE-000304,exact_name_city_discovery,CONSOLIDATED PLASTICS LTD,0,0
+SITE-000304,exact_name_city_discovery,"Consolidated Plastics Co., Inc.",0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS CO,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS COMPANY,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS CORP,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS CORPORATION,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS INC,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS INCORPORATED,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS LIMITED,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS LLC,0,0
+SITE-000307,exact_name_city_discovery,CORPORATE CONSULTING AND SERVICE INSTRUMENTS LTD,0,0
+SITE-000307,exact_name_city_discovery,"Corporate Consulting & Service Instruments, Inc.",0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES CO,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES COMPANY,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES CORP,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES CORPORATION,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES INC,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES INCORPORATED,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES LIMITED,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES LLC,0,0
+SITE-000308,exact_name_city_discovery,CORROSION RESISTANT TECHNOLOGIES LTD,0,0
+SITE-000308,exact_name_city_discovery,"Corrosion Resistant Technologies, Inc.",0,0
+SITE-000309,exact_name_city_discovery,COSMO,0,0
+SITE-000309,exact_name_city_discovery,COSMO CO,0,0
+SITE-000309,exact_name_city_discovery,COSMO COMPANY,0,0
+SITE-000309,exact_name_city_discovery,COSMO CORP,0,0
+SITE-000309,exact_name_city_discovery,COSMO CORPORATION,0,0
+SITE-000309,exact_name_city_discovery,COSMO INC,0,0
+SITE-000309,exact_name_city_discovery,COSMO INCORPORATED,0,0
+SITE-000309,exact_name_city_discovery,COSMO LIMITED,0,0
+SITE-000309,exact_name_city_discovery,COSMO LLC,0,0
+SITE-000309,exact_name_city_discovery,COSMO LTD,0,0
+SITE-000309,exact_name_city_discovery,Cosmo Corporation,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE CO,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE COMPANY,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE CORP,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE CORPORATION,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE INC,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE INCORPORATED,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE LIMITED,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE LLC,0,0
+SITE-000311,exact_name_city_discovery,CRAFTERS WHOLESALE SUPERSTORE LTD,0,0
+SITE-000311,exact_name_city_discovery,"Crafters Wholesale Superstore, LLC",0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS CO,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS COMPANY,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS CORP,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS CORPORATION,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI CO,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI COMPANY,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI CORP,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI CORPORATION,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI INC,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI INCORPORATED,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI LIMITED,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI LLC,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INC CINCINNATI LTD,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS INCORPORATED,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS LIMITED,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS LLC,0,0
+SITE-000313,exact_name_city_discovery,CURBELL PLASTICS LTD,0,0
+SITE-000313,exact_name_city_discovery,"Curbell Plastics, Inc.",0,0
+SITE-000313,exact_name_city_discovery,"Curbell Plastics, Inc. Cincinnati",0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP CO,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP COMPANY,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP CORP,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP CORPORATION,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP INC,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP INCORPORATED,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP LIMITED,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP LLC,0,0
+SITE-000315,exact_name_city_discovery,DALTON CONSULTING GROUP LTD,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP CO,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP COMPANY,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP CORP,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP CORPORATION,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP INC,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP INCORPORATED,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP LIMITED,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP LLC,0,0
+SITE-000315,exact_name_city_discovery,DALTON MANUFACTURING AND CONSULTING GROUP LTD,0,0
+SITE-000315,exact_name_city_discovery,"Dalton Consulting Group, Inc",0,0
+SITE-000315,exact_name_city_discovery,Dalton Manufacturing and Consulting Group,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH CO,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH COMPANY,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH CORP,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH CORPORATION,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH INC,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH INCORPORATED,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH LIMITED,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH LLC,0,0
+SITE-000316,exact_name_city_discovery,DAR TECH LTD,0,0
+SITE-000316,exact_name_city_discovery,"Dar-Tech, Inc.",0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING CO,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING COMPANY,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING CORP,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING CORPORATION,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING INC,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING INCORPORATED,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING LIMITED,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING LLC,0,0
+SITE-000320,exact_name_city_discovery,DEM MANUFACTURING LTD,0,0
+SITE-000320,exact_name_city_discovery,DEM Manufacturing LLC,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS CO,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS COMPANY,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS CORP,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS CORPORATION,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS INC,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS INCORPORATED,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS LIMITED,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS LLC,0,0
+SITE-000321,exact_name_city_discovery,DERMAMED COATINGS LTD,0,0
+SITE-000321,exact_name_city_discovery,"DermaMed Coatings Company, LLC",0,0
+SITE-000322,exact_name_city_discovery,DESENCO,0,0
+SITE-000322,exact_name_city_discovery,DESENCO CO,0,0
+SITE-000322,exact_name_city_discovery,DESENCO COMPANY,0,0
+SITE-000322,exact_name_city_discovery,DESENCO CORP,0,0
+SITE-000322,exact_name_city_discovery,DESENCO CORPORATION,0,0
+SITE-000322,exact_name_city_discovery,DESENCO INC,0,0
+SITE-000322,exact_name_city_discovery,DESENCO INCORPORATED,0,0
+SITE-000322,exact_name_city_discovery,DESENCO LIMITED,0,0
+SITE-000322,exact_name_city_discovery,DESENCO LLC,0,0
+SITE-000322,exact_name_city_discovery,DESENCO LTD,0,0
+SITE-000322,exact_name_city_discovery,Desenco Inc.,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD CO,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD COMPANY,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD CORP,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD CORPORATION,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD INC,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD INCORPORATED,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD LIMITED,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD LLC,0,0
+SITE-000324,exact_name_city_discovery,DIEMASTER TOOL AND MOLD LTD,0,0
+SITE-000324,exact_name_city_discovery,"Diemaster Tool & Mold, Inc.",0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS CO,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS COMPANY,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS CORP,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS CORPORATION,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS INC,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS INCORPORATED,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS LIMITED,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS LLC,0,0
+SITE-000326,exact_name_city_discovery,DIVERSIFIED MOLD AND CASTINGS LTD,0,0
+SITE-000326,exact_name_city_discovery,Diversified Mold & Castings,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND CO,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND COMPANY,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND CORP,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND CORPORATION,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND INC,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND INCORPORATED,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND LIMITED,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND LLC,0,0
+SITE-000330,exact_name_city_discovery,DRUMMOND LTD,0,0
+SITE-000330,exact_name_city_discovery,Drummond Corp.,0,0
+SITE-000333,existing_id_lead,110000840788,1,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C CO,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C COMPANY,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C CORP,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C CORPORATION,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C INC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C INCORPORATED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C LIMITED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C LLC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT DOW ELASTOMERS L L C LTD,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS CO,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS COMPANY,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS CORP,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS CORPORATION,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS INC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS INCORPORATED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS LIMITED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS LLC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT STOW WORKS LTD,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW CO,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW COMPANY,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW CORP,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW CORPORATION,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW INC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW INCORPORATED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW LIMITED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW LLC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW LTD,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT CO,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT COMPANY,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT CORP,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT CORPORATION,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT INC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT INCORPORATED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT LIMITED,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT LLC,0,0
+SITE-000333,exact_name_city_discovery,DUPONT VALLEY VIEW VESPEL PLANT LTD,0,0
+SITE-000333,exact_name_city_discovery,DuPont Dow Elastomers L.L.C.,0,0
+SITE-000333,exact_name_city_discovery,DuPont Stow Works,0,0
+SITE-000333,exact_name_city_discovery,DuPont Valley View,0,0
+SITE-000333,exact_name_city_discovery,DuPont — Valley View (Vespel) plant,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS CO,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS COMPANY,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS CORP,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS CORPORATION,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS INC,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS INCORPORATED,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS LIMITED,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS LLC,0,0
+SITE-000339,exact_name_city_discovery,E L MUSTEE AND SONS LTD,0,0
+SITE-000339,exact_name_city_discovery,"E.L. Mustee & Sons, Inc.",0,0
+SITE-000340,exact_name_city_discovery,E L STONE,0,0
+SITE-000340,exact_name_city_discovery,E L STONE CO,0,0
+SITE-000340,exact_name_city_discovery,E L STONE COMPANY,0,0
+SITE-000340,exact_name_city_discovery,E L STONE CORP,0,0
+SITE-000340,exact_name_city_discovery,E L STONE CORPORATION,0,0
+SITE-000340,exact_name_city_discovery,E L STONE INC,0,0
+SITE-000340,exact_name_city_discovery,E L STONE INCORPORATED,0,0
+SITE-000340,exact_name_city_discovery,E L STONE LIMITED,0,0
+SITE-000340,exact_name_city_discovery,E L STONE LLC,0,0
+SITE-000340,exact_name_city_discovery,E L STONE LTD,0,0
+SITE-000340,exact_name_city_discovery,"E.L. Stone Co., Inc.",0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP CO,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP COMPANY,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP CORP,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP CORPORATION,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP INC,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP INCORPORATED,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP LIMITED,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP LLC,0,0
+SITE-000344,exact_name_city_discovery,ELECTRA TARP LTD,0,0
+SITE-000344,exact_name_city_discovery,"Electra Tarp, Inc.",0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS CO,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS COMPANY,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS CORP,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS CORPORATION,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS INC,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS INCORPORATED,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS LIMITED,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS LLC,0,0
+SITE-000345,exact_name_city_discovery,ELITE MACHINERY SYSTEMS LTD,0,0
+SITE-000345,exact_name_city_discovery,Elite Machinery Systems,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM CO,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM COMPANY,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM CORP,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM CORPORATION,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM INC,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM INCORPORATED,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM LIMITED,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM LLC,0,0
+SITE-000349,exact_name_city_discovery,EQUALSEAL COM LTD,0,0
+SITE-000349,exact_name_city_discovery,Equalseal.com,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES CO,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES COMPANY,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES CORP,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES CORPORATION,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES INC,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES INCORPORATED,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES LIMITED,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES LLC,0,0
+SITE-000351,exact_name_city_discovery,ESI EXTRUSION SERVICES LTD,0,0
+SITE-000351,exact_name_city_discovery,"ESI-Extrusion Services, Inc.",0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS CO,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS COMPANY,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS CORP,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS CORPORATION,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS INC,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS INCORPORATED,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS LIMITED,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS LLC,0,0
+SITE-000352,exact_name_city_discovery,ESSENTIAL SEALING PRODUCTS LTD,0,0
+SITE-000352,exact_name_city_discovery,Essential Sealing Products,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE CO,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE COMPANY,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE CORP,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE CORPORATION,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE INC,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE INCORPORATED,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE LIMITED,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE LLC,0,0
+SITE-000353,exact_name_city_discovery,ESSENTIALWARE LTD,0,0
+SITE-000353,exact_name_city_discovery,Essentialware,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES CO,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES COMPANY,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES CORP,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES CORPORATION,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES INC,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES INCORPORATED,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES LIMITED,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES LLC,0,0
+SITE-000354,exact_name_city_discovery,EVANS INDUSTRIES LTD,0,0
+SITE-000354,exact_name_city_discovery,Evans Industries,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS CO,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS COMPANY,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS CORP,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS CORPORATION,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS INC,2,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS INCORPORATED,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS LIMITED,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS LLC,0,0
+SITE-000355,exact_name_city_discovery,EVERHARD PRODUCTS LTD,0,0
+SITE-000355,exact_name_city_discovery,Everhard Products Inc.,2,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX CO,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX COMPANY,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX CORP,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX CORPORATION,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX INC,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX INCORPORATED,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP,1,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP CO,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP COMPANY,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP CORP,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP CORPORATION,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP INC,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP INCORPORATED,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP LIMITED,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP LLC,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LIMITED PARTNERSHIP LTD,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LLC,0,0
+SITE-000357,exact_name_city_discovery,EXTRUDEX LTD,0,0
+SITE-000357,exact_name_city_discovery,Extrudex,0,0
+SITE-000358,exact_name_city_discovery,FACTS,0,0
+SITE-000358,exact_name_city_discovery,FACTS CO,0,0
+SITE-000358,exact_name_city_discovery,FACTS COMPANY,0,0
+SITE-000358,exact_name_city_discovery,FACTS CORP,0,0
+SITE-000358,exact_name_city_discovery,FACTS CORPORATION,0,0
+SITE-000358,exact_name_city_discovery,FACTS INC,0,0
+SITE-000358,exact_name_city_discovery,FACTS INCORPORATED,0,0
+SITE-000358,exact_name_city_discovery,FACTS LIMITED,0,0
+SITE-000358,exact_name_city_discovery,FACTS LLC,0,0
+SITE-000358,exact_name_city_discovery,FACTS LTD,0,0
+SITE-000358,exact_name_city_discovery,"FACTS, Inc.",0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS CO,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS COMPANY,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS CORP,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS CORPORATION,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS INC,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS INCORPORATED,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS LIMITED,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS LLC,0,0
+SITE-000359,exact_name_city_discovery,VALTRIS SPECIALTY CHEMICALS LTD,0,0
+SITE-000359,exact_name_city_discovery,Valtris Specialty Chemicals,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES CO,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES COMPANY,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES CORP,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES CORPORATION,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES INC,2,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES INCORPORATED,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES LIMITED,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES LLC,0,0
+SITE-000360,exact_name_city_discovery,FERRY INDUSTRIES LTD,0,0
+SITE-000360,exact_name_city_discovery,Ferry Industries Inc.,2,0
+SITE-000364,exact_name_city_discovery,FLEX PACK,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK CO,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK COMPANY,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK CORP,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK CORPORATION,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING CO,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING COMPANY,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING CORP,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING CORPORATION,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING INC,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING INCORPORATED,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING LIMITED,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING LLC,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK ENGINEERING LTD,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK INC,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK INCORPORATED,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK LIMITED,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK LLC,0,0
+SITE-000364,exact_name_city_discovery,FLEX PACK LTD,0,0
+SITE-000364,exact_name_city_discovery,Flex-Pack,0,0
+SITE-000364,exact_name_city_discovery,Flex-Pack Engineering Inc.,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P CO,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P COMPANY,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P CORP,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P CORPORATION,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P INC,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P INCORPORATED,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P LIMITED,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P LLC,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA L P LTD,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP,1,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP CO,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP COMPANY,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP CORP,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP CORPORATION,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP INC,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP INCORPORATED,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP LIMITED,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP LLC,0,0
+SITE-000365,exact_name_city_discovery,FLEXSYS AMERICA LP LTD,0,0
+SITE-000365,exact_name_city_discovery,Flexsys America L.P.,0,0
+SITE-000365,exact_name_city_discovery,Flexsys America LP,1,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES CO,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES COMPANY,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES CORP,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES CORPORATION,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES INC,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES INCORPORATED,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES LIMITED,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES LLC,0,0
+SITE-000370,exact_name_city_discovery,FOUR SEASONS INDUSTRIES LTD,0,0
+SITE-000370,exact_name_city_discovery,Four Seasons Industries,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES CO,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES COMPANY,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES CORP,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES CORPORATION,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES INC,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES INCORPORATED,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES LIMITED,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES LLC,0,0
+SITE-000373,exact_name_city_discovery,FULL CIRCLE TECHNOLOGIES LTD,0,0
+SITE-000373,exact_name_city_discovery,Full Circle Technologies,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY CO,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY COMPANY,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY CORP,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY CORPORATION,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY INC,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY INCORPORATED,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY LIMITED,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY LLC,0,0
+SITE-000375,exact_name_city_discovery,GEM CITY PLASTIC MACHINERY LTD,0,0
+SITE-000375,exact_name_city_discovery,"Gem City Plastic Machinery, Inc.",0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING CO,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING COMPANY,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING CORP,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING CORPORATION,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING INC,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING INCORPORATED,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING LIMITED,0,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING LLC,1,0
+SITE-000379,exact_name_city_discovery,GODFREY AND WING LTD,0,0
+SITE-000379,exact_name_city_discovery,Godfrey & Wing,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY CO,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY COMPANY,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY CORP,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY CORPORATION,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY INC,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY INCORPORATED,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY LIMITED,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY LLC,0,0
+SITE-000382,exact_name_city_discovery,GOMAPLAST MACHINERY LTD,0,0
+SITE-000382,exact_name_city_discovery,Gomaplast Machinery Inc.,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL CO,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL COMPANY,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL CORP,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL CORPORATION,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL INC,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL INCORPORATED,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL LIMITED,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL LLC,0,0
+SITE-000385,exact_name_city_discovery,H B CHEMICAL LTD,0,0
+SITE-000385,exact_name_city_discovery,H.B. Chemical,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS CO,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS COMPANY,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS CORP,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS CORPORATION,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS INC,2,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS INCORPORATED,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS LIMITED,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS LLC,0,0
+SITE-000387,exact_name_city_discovery,H P PRODUCTS LTD,0,0
+SITE-000387,exact_name_city_discovery,"H-P Products, Inc.",2,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES CO,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES COMPANY,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES CORP,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES CORPORATION,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES INC,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES INCORPORATED,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES LIMITED,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES LLC,0,0
+SITE-000388,exact_name_city_discovery,HANLON COMPOSITES LTD,0,0
+SITE-000388,exact_name_city_discovery,"Hanlon Composites, LLC",0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES CO,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES COMPANY,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES CORP,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES CORPORATION,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES INC,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES INCORPORATED,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES LIMITED,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES LLC,0,0
+SITE-000389,exact_name_city_discovery,HANNECARD ROLLER COATINGS INC ASB INDUSTRIES LTD,0,0
+SITE-000389,exact_name_city_discovery,"Hannecard Roller Coatings, Inc. / ASB Industries",0,0
+SITE-000393,existing_id_lead,110000388492,1,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING CO,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING COMPANY,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING CORP,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING CORPORATION,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING INC,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING INCORPORATED,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LIMITED,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING CO,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING COMPANY,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING CORP,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING CORPORATION,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING INC,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING INCORPORATED,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING LIMITED,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING LLC,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LLC HEXPOL AKRON HEXPOL SILICONE COMPOUNDING LTD,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL COMPOUNDING LTD,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL Compounding,0,0
+SITE-000393,exact_name_city_discovery,HEXPOL Compounding LLC (HEXPOL Akron / HEXPOL Silicone Compounding),0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING CO,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING COMPANY,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING CORP,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING CORPORATION,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING INC,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING INCORPORATED,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING LIMITED,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING LLC,0,0
+SITE-000393,exact_name_city_discovery,PREFERRED COMPOUNDING LTD,0,0
+SITE-000393,exact_name_city_discovery,Preferred Compounding,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN CO,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN COMPANY,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN CORP,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN CORPORATION,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN INC,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN INCORPORATED,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN LIMITED,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN LLC,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING AND DESIGN LTD,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING CO,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING COMPANY,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING CORP,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING CORPORATION,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING INC,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING INCORPORATED,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING LIMITED,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING LLC,0,0
+SITE-000395,exact_name_city_discovery,HIGH TECH MOLDING LTD,0,0
+SITE-000395,exact_name_city_discovery,High Tech Molding,0,0
+SITE-000395,exact_name_city_discovery,"High Tech Molding and Design, Inc.",0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS CO,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS COMPANY,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS CORP,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS CORPORATION,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS INC,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS INCORPORATED,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS LIMITED,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS LLC,0,0
+SITE-000400,exact_name_city_discovery,IMPERIAL PLASTICS LTD,0,0
+SITE-000400,exact_name_city_discovery,"Imperial Plastics, Inc.",0,0
+SITE-000401,exact_name_city_discovery,IMS,0,0
+SITE-000401,exact_name_city_discovery,IMS CO,0,0
+SITE-000401,exact_name_city_discovery,IMS COMPANY,0,0
+SITE-000401,exact_name_city_discovery,IMS CORP,0,0
+SITE-000401,exact_name_city_discovery,IMS CORPORATION,0,0
+SITE-000401,exact_name_city_discovery,IMS Company,0,0
+SITE-000401,exact_name_city_discovery,IMS INC,0,0
+SITE-000401,exact_name_city_discovery,IMS INCORPORATED,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES CO,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES COMPANY,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES CORP,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES CORPORATION,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES INC,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES INCORPORATED,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES LIMITED,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES LLC,0,0
+SITE-000401,exact_name_city_discovery,IMS INDUSTRIAL MOLDING SUPPLIES LTD,0,0
+SITE-000401,exact_name_city_discovery,IMS Industrial Molding Supplies,0,0
+SITE-000401,exact_name_city_discovery,IMS LIMITED,0,0
+SITE-000401,exact_name_city_discovery,IMS LLC,0,0
+SITE-000401,exact_name_city_discovery,IMS LTD,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS CO,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS COMPANY,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS CORP,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS CORPORATION,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS INC,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS INCORPORATED,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS LIMITED,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS LLC,0,0
+SITE-000405,exact_name_city_discovery,INFINITY ENGINEERED PRODUCTS LTD,0,0
+SITE-000405,exact_name_city_discovery,Infinity Engineered Products,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT CO,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT COMPANY,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT CORP,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT CORPORATION,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT INC,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT INCORPORATED,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT LIMITED,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT LLC,0,0
+SITE-000406,exact_name_city_discovery,INGALLS PROCESS EQUIPMENT LTD,0,0
+SITE-000406,exact_name_city_discovery,Ingalls Process Equipment Co.,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS CO,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS COMPANY,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS CORP,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS CORPORATION,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS INC,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS INCORPORATED,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS LIMITED,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS LLC,0,0
+SITE-000407,exact_name_city_discovery,INTEGRATED CHEMICAL CONCEPTS LTD,0,0
+SITE-000407,exact_name_city_discovery,"Integrated Chemical Concepts, Inc.",0,0
+SITE-000410,exact_name_city_discovery,INTRALOX,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX CO,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX COMPANY,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX CORP,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX CORPORATION,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX INC,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX INCORPORATED,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C CO,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C COMPANY,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C CORP,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C CORPORATION,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C INC,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C INCORPORATED,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C LIMITED,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C LLC,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX L L C LTD,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX LIMITED,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX LLC,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX LTD,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG CO,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG COMPANY,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG CORP,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG CORPORATION,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG INC,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG INCORPORATED,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG LIMITED,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG LLC,0,0
+SITE-000410,exact_name_city_discovery,INTRALOX TWINSBURG LTD,0,0
+SITE-000410,exact_name_city_discovery,Intralox,0,0
+SITE-000410,exact_name_city_discovery,Intralox Twinsburg,0,0
+SITE-000410,exact_name_city_discovery,"Intralox, L.L.C.",0,0
+SITE-000414,existing_id_lead,110004740950,1,0
+SITE-000414,existing_id_lead,110071041484,1,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE CO,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE COMPANY,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE CORP,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE CORPORATION,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE INC,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE INCORPORATED,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE LIMITED,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE LLC,0,0
+SITE-000414,exact_name_city_discovery,ITEN FIBRE LTD,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES,1,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES CO,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES COMPANY,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES CORP,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES CORPORATION,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 CO,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 COMPANY,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 CORP,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 CORPORATION,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 INC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 INCORPORATED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 LIMITED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 LLC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 1 LTD,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 CO,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 COMPANY,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 CORP,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 CORPORATION,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 INC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 INCORPORATED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 LIMITED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 LLC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 3 LTD,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4,2,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 CO,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 COMPANY,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 CORP,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 CORPORATION,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 INC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 INCORPORATED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 LIMITED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 LLC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC PLANT 4 LTD,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INC. (PLANT 3),0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES INCORPORATED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES LIMITED,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES LLC,0,0
+SITE-000414,exact_name_city_discovery,ITEN INDUSTRIES LTD,0,0
+SITE-000414,exact_name_city_discovery,Iten Industries Inc. (Plant 1),0,0
+SITE-000414,exact_name_city_discovery,Iten Industries Inc. (Plant 4),2,0
+SITE-000414,exact_name_city_discovery,"Iten Industries, Inc.",0,0
+SITE-000414,exact_name_city_discovery,The Iten Fibre Company,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS CO,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS COMPANY,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS CORP,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS CORPORATION,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS INC,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS INCORPORATED,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS LIMITED,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS LLC,0,0
+SITE-000415,exact_name_city_discovery,J B POLYMERS LTD,0,0
+SITE-000415,exact_name_city_discovery,"J.B. Polymers, Inc.",0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS CO,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS COMPANY,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS CORP,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS CORPORATION,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS INC,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS INCORPORATED,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS LIMITED,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS LLC,0,0
+SITE-000417,exact_name_city_discovery,J J WHITE PRODUCTS LTD,0,0
+SITE-000417,exact_name_city_discovery,"J.J. White Products, Inc.",0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS CO,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS COMPANY,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS CORP,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS CORPORATION,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS INC,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS INCORPORATED,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS LIMITED,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS LLC,0,0
+SITE-000424,exact_name_city_discovery,JET DOCK SYSTEMS LTD,0,0
+SITE-000424,exact_name_city_discovery,Jet Dock Systems,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS CO,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS COMPANY,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS CORP,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS CORPORATION,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS INC,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS INCORPORATED,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS LIMITED,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS LLC,0,0
+SITE-000425,exact_name_city_discovery,JK PLASTICS LTD,0,0
+SITE-000425,exact_name_city_discovery,JK Plastics,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA CO,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA COMPANY,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA CORP,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA CORPORATION,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA INC,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA INCORPORATED,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA LIMITED,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA LLC,0,0
+SITE-000427,exact_name_city_discovery,TARKETT NORTH AMERICA LTD,0,0
+SITE-000427,exact_name_city_discovery,Tarkett North America,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING CO,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING COMPANY,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING CORP,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING CORPORATION,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING INC,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING INCORPORATED,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING LIMITED,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING LLC,0,0
+SITE-000428,exact_name_city_discovery,JOSLYN MANUFACTURING LTD,0,0
+SITE-000428,exact_name_city_discovery,"Joslyn Manufacturing Co., Inc.",0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D CO,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D COMPANY,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D CORP,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D CORPORATION,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D INC,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D INCORPORATED,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D LIMITED,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D LLC,0,0
+SITE-000430,exact_name_city_discovery,JUGGERBOT 3D LTD,0,0
+SITE-000430,exact_name_city_discovery,JuggerBot 3D LLC,0,0
+SITE-000431,exact_name_city_discovery,KAPCO,0,0
+SITE-000431,exact_name_city_discovery,KAPCO (Kent Adhesive Products Co.),0,0
+SITE-000431,exact_name_city_discovery,KAPCO CO,0,0
+SITE-000431,exact_name_city_discovery,KAPCO COMPANY,0,0
+SITE-000431,exact_name_city_discovery,KAPCO CORP,0,0
+SITE-000431,exact_name_city_discovery,KAPCO CORPORATION,0,0
+SITE-000431,exact_name_city_discovery,KAPCO INC,0,0
+SITE-000431,exact_name_city_discovery,KAPCO INCORPORATED,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS CO,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS COMPANY,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS CORP,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS CORPORATION,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS INC,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS INCORPORATED,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS LIMITED,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS LLC,0,0
+SITE-000431,exact_name_city_discovery,KAPCO KENT ADHESIVE PRODUCTS LTD,0,0
+SITE-000431,exact_name_city_discovery,KAPCO LIMITED,0,0
+SITE-000431,exact_name_city_discovery,KAPCO LLC,0,0
+SITE-000431,exact_name_city_discovery,KAPCO LTD,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS CO,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS COMPANY,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS CORP,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS CORPORATION,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS INC,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS INCORPORATED,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS LIMITED,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS LLC,0,0
+SITE-000431,exact_name_city_discovery,KENT ADHESIVE PRODUCTS LTD,0,0
+SITE-000431,exact_name_city_discovery,Kent Adhesive Products Company,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION CO,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION COMPANY,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION CORP,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION CORPORATION,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION INC,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION INCORPORATED,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION LIMITED,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION LLC,0,0
+SITE-000435,exact_name_city_discovery,KENT PULTRUSION LTD,0,0
+SITE-000435,exact_name_city_discovery,Kent Pultrusion,0,0

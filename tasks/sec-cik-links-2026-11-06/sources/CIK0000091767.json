@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000091767.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000091767",
+  "name": "SONOCO PRODUCTS CO",
+  "tickers": [
+    "SON"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "573883d6affb1b9a2c83a351fcc5aa0f574a5435f4d80ae3e300ccb16f25db37",
+  "raw_name_token": "\"SONOCO PRODUCTS CO\""
+}

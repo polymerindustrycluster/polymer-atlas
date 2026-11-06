@@ -1,8 +1,15 @@
 {
   "initial_packet_head": "5e97722",
-  "integration_main": "5574d48f4060f3b03633399f707047db0314e28b",
-  "all_49_org_cell_deltas_equal": true,
-  "all_171_full_evidence_rows_equal": true,
-  "old_main_rows_preserved": true,
+  "reviewed_head": "9ad1c7a29250b9fea8e03d0dc156b184581b4518",
+  "integration_main": "1cd71d0947bf19ee7de05ef7786a641949c7674b",
+  "withdrawn_values": 4,
+  "withdrawn_evidence_ids_unused": [
+    "EVD-240838",
+    "EVD-240841",
+    "EVD-240947",
+    "EVD-240968"
+  ],
+  "remaining_org_cell_deltas_equal_reviewed": true,
+  "remaining_167_full_evidence_rows_equal_reviewed": true,
   "historical_builders_unchanged": true
 }

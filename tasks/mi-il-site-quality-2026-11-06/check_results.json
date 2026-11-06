@@ -1,0 +1,30 @@
+{
+  "MI": {
+    "strict_before": 138,
+    "strict_after": 138,
+    "qcew_2023_private_326": 819,
+    "before_percent": 16.84981684981685,
+    "after_percent": 16.84981684981685
+  },
+  "IL": {
+    "strict_before": 85,
+    "strict_after": 85,
+    "qcew_2023_private_326": 797,
+    "before_percent": 10.664993726474279,
+    "after_percent": 10.664993726474279
+  },
+  "frame": 35,
+  "promoted_sites_B": 8,
+  "holds": 27,
+  "new_evidence": 40,
+  "known_answers": 3,
+  "raw_census": 8,
+  "old_evidence_preserved": true,
+  "replay_byte_identical": true,
+  "mutation_checks": [
+    "missing own scope",
+    "changed source hash",
+    "invented city",
+    "global EVD collision"
+  ]
+}

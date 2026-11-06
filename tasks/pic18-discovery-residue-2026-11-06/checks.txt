@@ -1,0 +1,5 @@
+PASS census26/26; proposed1organization+1site+14evidence+4registrylinks; pending 0 rows
+PASS snapshot2026-11-01 Form5500 screen: IAC3 names/0 establishment matches; Ultimate0 names
+PASS missing-parent evidence negative refuses before any write
+PASS registry composite-key conflict fails before any write
+PASS all-CSV replay byte-identical; injected cross-shard reserved-ID collision fails before write

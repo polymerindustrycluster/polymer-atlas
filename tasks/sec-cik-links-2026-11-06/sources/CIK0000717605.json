@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000717605.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000717605",
+  "name": "HEXCEL CORP /DE/",
+  "tickers": [
+    "HXL"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "c9c514c3b5e712e72e7039032c69490f00a768fd119fcbdb5891ef9ca93a4445",
+  "raw_name_token": "\"HEXCEL CORP /DE/\""
+}

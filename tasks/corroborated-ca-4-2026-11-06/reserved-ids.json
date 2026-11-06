@@ -1,0 +1,58 @@
+[
+  {
+    "cluster_id": "LF-CA-01235",
+    "org_id": "ORG-010300",
+    "site_id": "SITE-014600",
+    "tier": "C",
+    "evidence_start": 186000
+  },
+  {
+    "cluster_id": "LF-CA-02033",
+    "org_id": "ORG-003465",
+    "site_id": "SITE-014601",
+    "tier": "C",
+    "evidence_start": 186009
+  },
+  {
+    "cluster_id": "LF-CA-02979",
+    "org_id": "ORG-010301",
+    "site_id": "SITE-014602",
+    "tier": "C",
+    "evidence_start": 186014
+  },
+  {
+    "cluster_id": "LF-CA-03161",
+    "org_id": "ORG-002537",
+    "site_id": "SITE-014603",
+    "tier": "C",
+    "evidence_start": 186024
+  },
+  {
+    "cluster_id": "LF-CA-03284",
+    "org_id": "ORG-001408",
+    "site_id": "SITE-014604",
+    "tier": "C",
+    "evidence_start": 186030
+  },
+  {
+    "cluster_id": "LF-CA-00400",
+    "org_id": "ORG-004866",
+    "site_id": "SITE-014605",
+    "tier": "C",
+    "evidence_start": 186035
+  },
+  {
+    "cluster_id": "LF-CA-02109",
+    "org_id": "ORG-010302",
+    "site_id": "SITE-014606",
+    "tier": "C",
+    "evidence_start": 186040
+  },
+  {
+    "cluster_id": "LF-CA-03177",
+    "org_id": "ORG-000665",
+    "site_id": "SITE-014607",
+    "tier": "C",
+    "evidence_start": 186049
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "site_id": "SITE-011013",
+    "url": "https://www.reoplastics.com/plastic-injection-molding-machinery-and-equipment/",
+    "quote": "REO Plastics houses a wide selection of plastic injection molding machinery and equipment with tonnages ranging from 50-950",
+    "status": "ok",
+    "positive": true,
+    "negative": false
+  },
+  {
+    "site_id": "SITE-011015",
+    "url": "https://www.styrotech.com/",
+    "quote": "Styrotech, Inc. manufactures, designs and fabricates expanded polystyrene (EPS) foam for use as insulation, protective packaging and diverse custom applications.",
+    "status": "ok",
+    "positive": true,
+    "negative": false
+  },
+  {
+    "site_id": "SITE-011017",
+    "url": "https://www.7-sigma.com/about-us/",
+    "quote": "7-SIGMA is a successful designer, manufacturer and supplier of high-performance polymer and metal components and assemblies for the printing, medical, aerospace, and industrial markets.",
+    "status": "ok",
+    "positive": true,
+    "negative": false
+  }
+]

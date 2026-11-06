@@ -1,0 +1,25 @@
+[
+  {
+    "key": "taylor-permit",
+    "url": "https://files.dep.state.pa.us/air/AirQuality/AQPortalFiles/Permits/PermitDocuments/1514390%5B15-00049%5D_Issued_v1.pdf",
+    "http_status": 200,
+    "bytes": 126500
+  },
+  {
+    "key": "synthomer-permit",
+    "url": "https://www.alleghenycounty.us/files/assets/county/v/1/government/health/documents/air-quality/title-v/synthomer-tvop.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "scranton-legacy",
+    "url": "https://dhhl.hawaii.gov/wp-content/uploads/2019/03/Addendum-2-IFB-19-HHL-009.pdf",
+    "http_status": 200,
+    "bytes": 24749444
+  },
+  {
+    "key": "scranton-buyer",
+    "url": "https://skyislandcap.com/sky-island-capital-acquires-scranton-products-inc/",
+    "http_status": 200,
+    "bytes": 119616
+  }
+]

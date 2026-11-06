@@ -1,0 +1,98 @@
+[
+  {
+    "site_id": "SITE-011028",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1700+67th+Ave+N&city=Minneapolis&state=MN&zip=55430&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Hennepin County",
+    "geoid": "27053",
+    "matched_address": "1700 67TH AVE N, MINNEAPOLIS, MN, 55430",
+    "raw_file": "build/l11-strong-quality/county/SITE-011028.json",
+    "raw_sha256": "bad61830e8c5e63f1634c8e3f33d417efb034c758496906ac81e09a39921c64f",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011011",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1904+Willow+Street&city=Mankato&state=MN&zip=56001&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Blue Earth County",
+    "geoid": "27013",
+    "matched_address": "1904 WILLOW ST, MANKATO, MN, 56001",
+    "raw_file": "build/l11-strong-quality/county/SITE-011011.json",
+    "raw_sha256": "311f6fe05aca5642c4738501b4c83027cc080ea2ab7fa00a55b4f763895bc3e9",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011151",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1220+Lee+Rd&city=Rochester&state=NY&zip=14606&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Monroe County",
+    "geoid": "36055",
+    "matched_address": "1220 LEE RD, ROCHESTER, NY, 14606",
+    "raw_file": "build/l11-strong-quality/county/SITE-011151.json",
+    "raw_sha256": "d85901cbead8a98b99ad4cc07463dd15cfd83fb09b48e4e73130488692f916f2",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011003",
+    "status": "HOLD",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=900+Prairie+Ave+NW&city=Staples&state=MN&zip=56479&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "reason": "County/address match absent or ambiguous"
+  },
+  {
+    "site_id": "SITE-011009",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=6+Spruce+St+NW&city=Remer&state=MN&zip=56672&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Cass County",
+    "geoid": "27021",
+    "matched_address": "6 SPRUCE ST NW, REMER, MN, 56672",
+    "raw_file": "build/l11-strong-quality/county/SITE-011009.json",
+    "raw_sha256": "111801d5a422ba68a84213ab83205b00cc92af3aa8c5b26bd928cb56c77eab64",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011010",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=14720+Main+St&city=Rogers&state=MN&zip=55374&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Hennepin County",
+    "geoid": "27053",
+    "matched_address": "14720 MAIN ST, ROGERS, MN, 55374",
+    "raw_file": "build/l11-strong-quality/county/SITE-011010.json",
+    "raw_sha256": "10366c03c4068b309e1aa68f1deafe950d8cf150f0f3e3fcc7c48d41a690bf06",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011029",
+    "status": "HOLD",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=830+County+Road+75&city=Clearwater&state=MN&zip=55320&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "reason": "County/address match absent or ambiguous"
+  },
+  {
+    "site_id": "SITE-011155",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=110+Wrentham+Drive&city=Liverpool&state=NY&zip=13088&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Onondaga County",
+    "geoid": "36067",
+    "matched_address": "110 WRENTHAM DR, LIVERPOOL, NY, 13088",
+    "raw_file": "build/l11-strong-quality/county/SITE-011155.json",
+    "raw_sha256": "3079494600566c2bce74b818679564cffae1ac46c0a0d12068189ce0700a1804",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011158",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=101+Columbus+St&city=Auburn&state=NY&zip=13021&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Cayuga County",
+    "geoid": "36011",
+    "matched_address": "101 COLUMBUS ST, AUBURN, NY, 13021",
+    "raw_file": "build/l11-strong-quality/county/SITE-011158.json",
+    "raw_sha256": "1f6e436dbc1320cd80bbdd6d50f63e494a6515dd727bd5222c399ba71219232f",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  }
+]
