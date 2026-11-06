@@ -1,6 +1,7 @@
 {
-  "base": "9801f9664e56cdaf162bf5e567dc29a3ee667a59",
+  "base": "9ea45cdd07f3638981f4a628e1cac10630b9aed1",
   "source_pr": 223,
   "source_head": "0879150eaec6c161dfe436f7b4784baad0813f92",
-  "eligible": 5
+  "eligible": 5,
+  "frozen_base": "9801f9664e56cdaf162bf5e567dc29a3ee667a59"
 }
