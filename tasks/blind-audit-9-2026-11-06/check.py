@@ -5,7 +5,7 @@ from frame import derive
 from sample import draw,read
 from lock import collected,digest,main as lockcheck
 from stats import summarize,wilson
-from write_report import H,REPORT,render
+from write_report import H,REPORT,reviewed_render
 
 def frozen_ok(rows,freeze):
  assert len(rows)==len({r['site_id'] for r in rows})==50
@@ -31,7 +31,7 @@ def main():
  assert Counter(r['grade'] for r in adjudicated)=={'agreement':32,'field_error':1,'creation_error':1,'unresolved':16}
  assert summarize(sample,adjudicated)==json.loads((H/'statistics.json').read_text())
  assert wilson(0,20)==[0,0.161125] and wilson(20,20)==[0.838875,1] and wilson(10,20)==[0.299298,0.700702]
- assert REPORT.read_text()==render(),'report no longer matches frozen counts'
+ assert REPORT.read_text()==reviewed_render(),'report no longer matches frozen counts'
  # Every fetch is counted, failed routes included; never silently omit a body/hash.
  attempts=[]
  for k in 'abc':attempts+=json.loads((H/f'receipts_{k}.json').read_text())

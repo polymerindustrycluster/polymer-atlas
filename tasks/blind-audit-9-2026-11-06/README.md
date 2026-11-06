@@ -55,3 +55,9 @@ are deterministicderivedartifacts; noadjudicationrewritesfrozenblindsourceobject
 Historicalaudit8report/readmefromgit4311e9e/PR9 gives53A2F0C10U/65mixedrecords; audit7
 only58/65agreementavailable,restunclassified. Windowsdataestatecataloguegaploggedprivately;
 publicgit/primarysources suffice, noemptycatalogueasabsenceclaim.
+
+## Codex family approval
+
+Codex/OpenAI clerk5thr_pf5j2nisg7 APPROVE36b18b5, zero blockers. Independently reproduced all six merge/first-parent unions and110uniquecreations, fixed50sample/8strata/44C6B, direct Wilson intervals and design weights32A1F1C16U. Reviewed all50rationales; all159raw hashes/bytes and115admitted quotes verified (Reynolds scannedp11 visual); fresh random10+targeted total14sites/24URLs/32quotes HTTP200/matched. Independently confirmed Darttype, Yokohamaissuerp17closedvsSalemconsidered, freshEFAST2hash/twoWakefieldfilings/noactualdayinvention. All49otherfirsthashes+exactNSFtwofieldreconstruction/final50pre-releasehashes checked; protocol evidence not independentproof of noaccess. MAPEIDaltoncertificatehistorical/expired, no currentvalidity/continuousoperationcertification. Frame/check/stats/compare/report/validator0/rowloss/diffcheckPASS. Grok remains pending; no two-family final approval. Report controller reviews/200-clerk-codex-5.md. This receipt does not change frozen research or rates.
+
+Controller07:55clockcorrection: after160/168replays,newbranchfollow-up audits16unresolved withup10routes/siteagainstsamefrozenrecord; originalaudit9rates stayfrozen,addendumratesseparate. CorrectionsstillL11. No follow-up evidence has changed this report.
