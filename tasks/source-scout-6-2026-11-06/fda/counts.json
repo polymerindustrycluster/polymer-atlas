@@ -1,0 +1,16 @@
+{
+ "registration_rows": 44789,
+ "us_facility_active": 13100,
+ "us_facility_with_listing": 10261,
+ "polymer_product_codes": 153,
+ "frame": 689,
+ "states_in_frame": 44,
+ "input_sha256": {
+  "Registration.zip": "4b85d9733910e90461cf34c117a3e1fd4dbceefc32f048c860a4f49c74370530",
+  "registration_listing.zip": "74adb6a994a5c55fc92ebd787d175d881ac4807d4236c9fdac2b0949b01cef03",
+  "Listing_PCD.zip": "42d16f727dd7431b0a7c8c25720390e116a64dba4a0b8db682eade66c79b379f",
+  "listing_estabtypes.zip": "b4d63b5972f08d7c4fd0679201f5bda3f26f97d3048fe15bf951c73a0edd543f",
+  "foiclass.zip": "5e5bfa558698d20d17296f81826421d044c323dcab6f1c2e375fb72c13a1c215",
+  "estabtypes.zip": "ddc553e66a3969b7f244450be0547cba51096cc4a9132a8fcb0dca59bd2779c7"
+ }
+}

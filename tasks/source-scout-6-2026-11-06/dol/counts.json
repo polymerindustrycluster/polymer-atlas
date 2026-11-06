@@ -1,0 +1,9 @@
+{
+ "data_rows": 118580,
+ "naics_slice_cases": 148,
+ "certified_us_worksite_slice_cases": 130,
+ "slice_employers": 98,
+ "frame_employer_worksite_units": 114,
+ "units_where_worksite_is_employer_address": 66,
+ "input_sha256": "1d4bae0c38e903d5b8e06d3cf638c5626969e4de50da4cb3abf5f55eb81f19c7"
+}
