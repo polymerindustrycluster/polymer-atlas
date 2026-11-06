@@ -1,0 +1,17 @@
+{
+  "head": "517327ed29ce55bb21a2e92aa265476792de7fd7",
+  "fresh_clone": "/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/l11-pr151-after-acy8v58r/repo",
+  "copied_build_cache": false,
+  "public_acquisition": true,
+  "normalized_hash": "36708139af3ede6cf8ba7ad0597ebc42b622523da0d5fde422666cc9cd7fd982",
+  "named_check": "PASS",
+  "canonical_replay_byte_identical": true,
+  "validator_errors": 0,
+  "row_loss": "PASS",
+  "negative_controls": [
+    "missing witness",
+    "changed page hash",
+    "fabricated quote"
+  ],
+  "canonical_subset_equal_to": "d9d45de"
+}
