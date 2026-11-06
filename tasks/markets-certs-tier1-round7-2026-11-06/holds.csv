@@ -99,3 +99,6 @@ ORG-004037,markets_served/certifications,https://www.basf.com,STILL_UNCERTAIN,"N
 ORG-004038,markets_served/certifications,,STILL_UNCERTAIN,No recorded website; need public own-domain identity and explicit market or current certification.
 ORG-004039,markets_served/certifications,https://us.sumiriko.com,STILL_UNCERTAIN,At least one explicit company market accepted; other market and certification claims require additional entity-specific evidence.
 ORG-004040,markets_served/certifications,https://vybond.com/,STILL_UNCERTAIN,At least one explicit company market accepted; other market and certification claims require additional entity-specific evidence.
+ORG-003616,markets_served,https://www.redwoodplastics.com/,STILL_UNCERTAIN,Food & Beverage alone does not distinguish food processing/foodservice from food packaging; need an explicit narrower claim. EVD-241013 unused.
+ORG-003742,markets_served,https://currentcomposites.com,STILL_UNCERTAIN,Consumer Goods alone does not establish housewares; need an explicit narrower claim. EVD-241023 unused.
+ORG-003952,markets_served,http://www.augustafiberglass.com/,STILL_UNCERTAIN,Food and Beverage alone does not distinguish food processing/foodservice from food packaging; need an explicit narrower claim. EVD-241041 unused.
