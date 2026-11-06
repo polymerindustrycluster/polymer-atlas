@@ -1,0 +1,13 @@
+candidate_id,name,state,domain,source_ref,verdict,held_or_new_id,deciding_or_settling_fact
+D10-01,MAGNET,OH,manufacturingsuccess.org,https://www.manufacturingsuccess.org/,DUPLICATE_OF,ORG-000159,Held institution identity; do not create another MEP host.
+D10-02,Ohio Manufacturing Extension Partnership,OH,development.ohio.gov,https://development.ohio.gov/home/news-and-events/all-news/2021-1001-News-Release-State-Supports-Ohio-Manufacturers,STILL_UNCERTAIN,,B-D10-GRAIN: owner must settle program-only grain under state agency; current own route failed.
+D10-03,Pennsylvania Manufacturing Extension Partnership,PA,pamep.org,https://www.pamep.org/,STILL_UNCERTAIN,,B-D10-GEN: out-of-state generalist needs owner geographic exception or named polymer service.
+D10-04,Michigan Manufacturing Technology Center,MI,the-center.org,https://www.the-center.org/,STILL_UNCERTAIN,,B-D10-GEN: generalist outside NE Ohio; generic 3D-printing training alone does not name a polymer pathway.
+D10-05,Purdue Manufacturing Extension Partnership,IN,mep.purdue.edu,https://mep.purdue.edu/about-us/about-mep/,STILL_UNCERTAIN,,B-D10-GEN/GRAIN: named unit of held Purdue ORG-004662; no separate ecosystem institution or polymer program inferred.
+D10-06,"IACMI, The Composites Institute",TN,iacmi.org,https://iacmi.org/,DUPLICATE_OF,ORG-002099,Held named composites institution; no source/tier/location edit in this create-only pass.
+D10-07,America Makes,OH,americamakes.us,https://www.americamakes.us/,DUPLICATE_OF,ORG-001217,Held named additive manufacturing institution; no new record or tier promotion.
+D10-08,LIFT,MI,lift.technology,https://lift.technology/resources/,VERIFIED,ORG-013300,Own member resources explicitly include named plastics surface treatment and polymer-powder processing.
+D10-09,REMADE Institute,NY,remadeinstitute.org,https://remadeinstitute.org/,DUPLICATE_OF,ORG-002100,Held Manufacturing USA recycling institution; no duplicate.
+D10-10,NIIMBL,DE,niimbl.org,https://www.niimbl.org/projects/scale-up-studies-on-single-use-settlers-for-clarifying-cell-culture-broth/,STILL_UNCERTAIN,,Six fresh direct/fallback routes yielded curl56/no body; need reachable own identity/address and named plastics-project support. Not absence or closure.
+D10-11,Sustainable Polymers Tech Hub,OH,polymerindustrycluster.org,https://polymerindustrycluster.org/,DUPLICATE_OF,ORG-002825,Held Greater Akron Chamber-led hub; both EDA and Ohio hub designations already on one held record.
+D10-12,Northeastern Pennsylvania Industrial Resource Center,PA,nepirc.com,https://nepirc.com/online-training/,STILL_UNCERTAIN,,Own online-training page names Plastics Processing; B-D10-GEO: settle lawful geography_served token for multi-county PA region.
