@@ -1,0 +1,112 @@
+[
+  {
+    "org_id": "ORG-004062",
+    "url": "https://www.resrgautomotive.com/en/contact",
+    "raw_sha256": "f444493e14ab31077f00dd4c4249932c0bda68825d2b343131b2ea560a356c2b",
+    "path": "/tmp/residual-hq2-integrator/ORG-004062_607c0f83f0.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Headquarters 800 Stephenson Highway Troy, Michigan, USA 48083",
+    "text_sha256": "73b2965939c8064b1f17fcd8fbdf693e487ea8805c6deb3ed4f832e1c6fd16aa"
+  },
+  {
+    "org_id": "ORG-004134",
+    "url": "https://www.duratechnologiesinc.com/careers/",
+    "raw_sha256": "553bb4d6d0a8001eb92292c4cd814e476c43fc9de21c5a08b9158742cb93734f",
+    "path": "/tmp/residual-hq2-integrator/ORG-004134_a1f8c84d03.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Our headquarters is conveniently located in Bloomington, California.",
+    "text_sha256": "35d4bc94faed911c0bd0584737d0e9c45c82e05b79da9be71de6f5ca677ca23d"
+  },
+  {
+    "org_id": "ORG-004346",
+    "url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+    "raw_sha256": "1c266f182c15a99ee3faaf98e30fe7b3f3c12672fc2d5b30491ed6b4f278024d",
+    "path": "/tmp/residual-hq2-integrator/ORG-004346_d3a283c52b.raw",
+    "error": "",
+    "matched": false,
+    "quote": "American Renolit Corporation - HQ || 1207 E. Lincolnway LaPorte, IN 46350 USA",
+    "text_sha256": "0f32be1c031947684ea24b1ecb4bf3d083759a40ffebeb5451313eb26c79469d"
+  },
+  {
+    "org_id": "ORG-004348",
+    "url": "https://amerityre.com/company/",
+    "raw_sha256": "2b00535dc49d2dd31034d226a691bbc74d308e1cb18e26b5082f8dbfab61095e",
+    "path": "/tmp/residual-hq2-integrator/ORG-004348_363dcf64c3.raw",
+    "error": "",
+    "matched": true,
+    "quote": "From its headquarters and manufacturing facility in Boulder City, Nevada, Amerityre produces",
+    "text_sha256": "1c6372540e5bde398ec5e90b526565433430e903e2f62df3333a1ec111e980c2"
+  },
+  {
+    "org_id": "ORG-004350",
+    "url": "https://polyurethanelaboratories.com/poly-labs-fluid-focus/",
+    "raw_sha256": "29e6711602531ed49b6027b2400b6c01cfc2f224096177de669725189d599f5f",
+    "path": "/tmp/residual-hq2-integrator/ORG-004350_e1ad81ad9f.raw",
+    "error": "",
+    "matched": true,
+    "quote": "manufacturing company headquartered in Lewiston, Maine, USA.",
+    "text_sha256": "6bd88965a3cae60872db7763db9aaf5143e448dbf1f293fdeb16f1e90e054178"
+  },
+  {
+    "org_id": "ORG-004383",
+    "url": "http://deliveryconcepts.com/",
+    "raw_sha256": "25536ea94b4ae2f767a515a125615e6ae7429a15392bbf41980543697a2f678e",
+    "path": "/tmp/residual-hq2-integrator/ORG-004383_e77dd4a3c1.raw",
+    "error": "",
+    "matched": true,
+    "quote": "CORPORATE HQ: 29385 County Road 20 Elkhart, IN",
+    "text_sha256": "d6a2d6254d71686d87cd73b66b7b2c052b79a5073ec3c502e850a014ead218e0"
+  },
+  {
+    "org_id": "ORG-004391",
+    "url": "https://www.idex-hs.com/about/legal-notices/privacy-statement",
+    "raw_sha256": "6e91e84316806f59f37b0a7bd882aaf8f4887a5ea55b80eb5454fb1956864bd9",
+    "path": "/tmp/residual-hq2-integrator/ORG-004391_483d97cbb7.raw",
+    "error": "",
+    "matched": true,
+    "quote": "our corporate headquarters || IDEX Health & Science, LLC 600 Park Court Rohnert Park, CA 94928 Unites States",
+    "text_sha256": "86a5d0d82b5a566fb3e67f2644888d2092fd9d928b8e28b92d083cc258965fc9"
+  },
+  {
+    "org_id": "ORG-004522",
+    "url": "https://mbpgroup.com/companies/",
+    "raw_sha256": "16158ff0897fcf1ca9c9775c8e52f637f85014444098bc0706f87e2d8c342adf",
+    "path": "/tmp/residual-hq2-integrator/ORG-004522_a4c6fcdd7b.raw",
+    "error": "",
+    "matched": true,
+    "quote": "HB&G Building Products || We\u2019re headquartered in Troy, AL",
+    "text_sha256": "ce47023f535a1f2a66b33dd5bb5ff5929f7640600eb2e50da1bd99a67180744e"
+  },
+  {
+    "org_id": "ORG-004523",
+    "url": "https://news.onewabash.com/wabash-recognizes-outstanding-suppliers-for-2025/",
+    "raw_sha256": "099dc4e8b56982bbe67d76fed6a2d02de414e2cfcd866f12d4448b74482b7c67",
+    "path": "/tmp/residual-hq2-integrator/ORG-004523_0204c3bf0e.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Headquartered in Lafayette, Indiana, Wabash designs, manufactures, and services",
+    "text_sha256": "475d63cb2c1eb3e442fb333bc52d7ff0496305d370fc4a2fd735838071a4ae88"
+  },
+  {
+    "org_id": "ORG-004531",
+    "url": "https://chemline.net/about/our-history/",
+    "raw_sha256": "64f474be5a1c67cd49551c49198a1206ac4cd34f3d2d6b3090fbe0f32fb4a9ae",
+    "path": "/tmp/residual-hq2-integrator/ORG-004531_1aac4deedb.raw",
+    "error": "",
+    "matched": true,
+    "quote": "St. Louis, MO || Our St. Louis location acts as our headquarters",
+    "text_sha256": "df207b2c6af1f8ddec7c16048cf9a3a5b27144ce4976e317ef040c8dfa012f1d"
+  },
+  {
+    "org_id": "ORG-004533",
+    "url": "https://bomar-chem.com/content/download/933/file/b22ddc7688358a265f86a6060e43f1f0.pdf",
+    "raw_sha256": "f4d68e6134671438e27d890bf1bf0e976d8d7729fa0de899c8a05a65441ca284",
+    "path": "/tmp/residual-hq2-integrator/ORG-004533_b0bdaa8526.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Global Headquarters: 51 Greenwoods Road | Torrington, CT 06790 | USA",
+    "text_sha256": "5d26938800711aa7c829af6acad92cf0981e7264666d9a954bfff2c47fa3bf99"
+  }
+]
