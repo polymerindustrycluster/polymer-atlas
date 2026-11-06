@@ -53,7 +53,7 @@ def main():
         reject('evidence shard mismatch')
         for p, content in snapshot.items(): p.write_bytes(content)
         for basis, field, value, expected in [
-            ('current_edition_page', 'quote', 'ISO 45001:2015', 'page edition must be current ISO45001:2018'),
+            ('dated_certificate', 'cert_start', '2027-01-01', 'certificate outside observation date'),
             ('dated_certificate', 'cert_expiry', '2025-01-01', 'certificate outside observation date'),
         ]:
             with inputs.open(newline='') as f: rows = list(csv.DictReader(f))
@@ -71,7 +71,7 @@ def main():
         write(verdicts, rows[:-1])
         result = subprocess.run([sys.executable, str(task / 'check.py')], capture_output=True, text=True)
         assert result.returncode and 'frame/verdict yield mismatch' in result.stderr, result.stderr
-    print(json.dumps({'duplicate_id_no_write': 'PASS', 'identical_foreign_shard_no_write': 'PASS', 'page_edition_no_write': 'PASS',
+    print(json.dumps({'duplicate_id_no_write': 'PASS', 'identical_foreign_shard_no_write': 'PASS', 'future_effective_no_write': 'PASS',
                       'expired_certificate_no_write': 'PASS', 'foreign_publisher_no_write': 'PASS', 'verdict_yield': 'PASS'}))
 
 if __name__ == '__main__': main()

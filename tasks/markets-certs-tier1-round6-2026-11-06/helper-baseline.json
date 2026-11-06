@@ -1,0 +1,12 @@
+{
+  "parent_packet": "PR215 c153963",
+  "exact_reuse_except_lane_id_seed": true,
+  "sha256": {
+    "fetch.py": "1e0ba3a0cb43bcb5270d491cdceccb9208e4a4cf7e5915a7eb241a2af88e70a2",
+    "build.py": "f16808eb97da2ce3d190331574bcd9c3cd37f71a724e98dec6ec31aba4bab1ca",
+    "check.py": "101eb8448366653619f3b9ce92ebefbc7397125d18b15ff97b101c762ca1568e",
+    "guardcheck.py": "f78676c1a3459582e6523d738ee937db1f0ce69756489c1c91e63a02a3223815",
+    "boundary.py": "a3a3cf3f0d5fa680a23241772683133a900a9e88ab830e1bbaa0ffaede21d800"
+  },
+  "subsequent_lane_change": "guardcheck current-page edition mutation replaced by dated-certificate future-effective mutation; no current-page cert accepted"
+}
