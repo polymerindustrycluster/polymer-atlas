@@ -1,0 +1,26 @@
+[
+  {
+    "lead_ids": [
+      "L13B-069"
+    ],
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/plastics-manufacturing-aa/",
+    "final_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/plastics-manufacturing-aa/",
+    "http_status": "202",
+    "curl_rc": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "c2c175de9753e5b1"
+  },
+  {
+    "lead_ids": [
+      "L13B-089"
+    ],
+    "url": "https://hennepintech.smartcatalogiq.com/en/2024-2025/catalog/degrees-programs/manufacturing-engineering/plastics-engineering/plastics-engineering-technology/",
+    "final_url": "https://hennepintech.smartcatalogiq.com/en/2024-2025/catalog/degrees-programs/manufacturing-engineering/plastics-engineering/plastics-engineering-technology/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 79778,
+    "sha256": "82871e254d860ddbbcb3e867816a75de95324ee5a5255450c1217f14562ec0b9",
+    "cache_key": "31f9f5ec38518df1"
+  }
+]
