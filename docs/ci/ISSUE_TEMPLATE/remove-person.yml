@@ -1,0 +1,34 @@
+# PROPOSED: owner copies this file to .github/ISSUE_TEMPLATE/ to activate it.
+name: Remove a person record
+description: Ask the Atlas owner to handle a person-record removal request.
+title: "[Privacy request] "
+assignees:
+  - LynyrdGrynyrd
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public and will be assigned to the Atlas owner.
+        Enter only the record ID and your relationship below. Do not add a person's name to the title.
+        No evidence, explanation, identity documents or public source URL is required.
+        Do not post emails, phone numbers, addresses, documents or other sensitive details in the issue or comments.
+        The owner handles this privacy request; submitting it does not automatically alter the Atlas.
+  - type: input
+    id: record_id
+    attributes:
+      label: Person record ID
+      description: The PERSON- identifier shown on the Atlas record; do not enter a person's name.
+      placeholder: PERSON-000001
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your relationship to the record
+      description: Choose a category only; no identifying details or proof are needed.
+      options:
+        - I am the person in this record
+        - I represent the person in this record
+        - Another relationship
+    validations:
+      required: true

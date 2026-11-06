@@ -1,0 +1,1862 @@
+[
+  {
+    "cluster_id": "LF-TX-01777",
+    "result": {
+      "query": {
+        "domain": "https://www.naftanks.com/",
+        "name": "NORTH AMERICAN FUEL TANKS, INC.",
+        "street": "950 S. 6TH AVE.",
+        "city": "MANSFIELD",
+        "state": "TX",
+        "zip": "76063"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00047",
+    "result": {
+      "query": {
+        "domain": "https://www.sacheminc.com/",
+        "name": "SACHEM INC",
+        "street": "2311 Pipeline Road",
+        "city": "Cleburne",
+        "state": "TX",
+        "zip": "76033"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00099",
+    "result": {
+      "query": {
+        "domain": "https://www.univarsolutions.com/",
+        "name": "Conroe 0681",
+        "street": "9733 Meador Rd",
+        "city": "Conroe",
+        "state": "TX",
+        "zip": "77303"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00845",
+    "result": {
+      "query": {
+        "domain": "https://drakeplastics.com/",
+        "name": "DRAKE PLASTICS LTD. CO.",
+        "street": "14869 GRANT ROAD",
+        "city": "CYPRESS",
+        "state": "TX",
+        "zip": "77429"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01030",
+    "result": {
+      "query": {
+        "domain": "https://www.adspipe.com/",
+        "name": "ADVANCED DRAINAGE SYSTEMS, INC.",
+        "street": "18121 Cochran Rd",
+        "city": "Hempstead",
+        "state": "TX",
+        "zip": "77445"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000651",
+              "name": "Advanced Drainage Systems, Inc.",
+              "city": "Hilliard",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: adspipe.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000651",
+              "name": "Advanced Drainage Systems, Inc.",
+              "city": "Hilliard",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'advanced drainage systems' = legal_name 'Advanced Drainage Systems, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01079",
+    "result": {
+      "query": {
+        "domain": "https://www.primeproductsinc.com/",
+        "name": "PRIME PRODUCTS, INC.",
+        "street": "407 E. US HWY 90",
+        "city": "SCHULENBURG",
+        "state": "TX",
+        "zip": "78956"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01193",
+    "result": {
+      "query": {
+        "domain": "https://goodnaturedproducts.com/",
+        "name": "FORMTEX PLASTICS CORPORATION",
+        "street": "6817 Wynnwood Ln",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77008"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01218",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "J & M PLASTICS INC",
+        "street": "1121 INDUSTRIAL DR",
+        "city": "ROYSE CITY",
+        "state": "TX",
+        "zip": "75189"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01441",
+    "result": {
+      "query": {
+        "domain": "https://igps.net/",
+        "name": "OPTIMIZED LOGISTICS, LLC",
+        "street": "3940 Pipestone Road",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75212"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01497",
+    "result": {
+      "query": {
+        "domain": "https://www.primehdpe.com/",
+        "name": "PRIME INDUSTRIES, LLP",
+        "street": "633 Oakland Road",
+        "city": "SCHULENBURG",
+        "state": "TX",
+        "zip": "78956"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01526",
+    "result": {
+      "query": {
+        "domain": "https://www.futurepipe.com/",
+        "name": "FUTURE PIPE INDUSTRIES, INC.",
+        "street": "11811 Proctor St",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77038"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004273",
+              "name": "Future Pipe Industries",
+              "city": "Dubai",
+              "state": "",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_INTL.csv",
+              "match": "domain exact: futurepipe.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004273",
+              "name": "Future Pipe Industries",
+              "city": "Dubai",
+              "state": "",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_INTL.csv",
+              "match": "name key 'future pipe industries' = legal_name 'Future Pipe Industries'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01548",
+    "result": {
+      "query": {
+        "domain": "https://www.kenross.com/",
+        "name": "KEN ROSS INC.",
+        "street": "703 Cooper Drive",
+        "city": "Wylie",
+        "state": "TX",
+        "zip": "75098"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01643",
+    "result": {
+      "query": {
+        "domain": "https://isco-pipe.com/",
+        "name": "ISCO INDUSTRIES, INC.",
+        "street": "5610 Almeda Genoa Road",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77048"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000905",
+              "name": "ISCO Industries, Inc.",
+              "city": "Louisville",
+              "state": "KY",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_KY.csv",
+              "match": "domain exact: isco-pipe.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000905",
+              "name": "ISCO Industries, Inc.",
+              "city": "Louisville",
+              "state": "KY",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_KY.csv",
+              "match": "name key 'isco industries' = legal_name 'ISCO Industries, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006247",
+              "name": "Isco Industries, Inc. - Salt Lake City",
+              "city": "West Jordan",
+              "state": "UT",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_UT.csv",
+              "match": "legal_name contains 'ISCO INDUSTRIES, INC.'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00215",
+    "result": {
+      "query": {
+        "domain": "https://oilstates.com/",
+        "name": "OIL STATES INDUSTRIES SPECIAL PRODUCTS DIVISION",
+        "street": "7701A S COOPER ST",
+        "city": "ARLINGTON",
+        "state": "TX",
+        "zip": "76001"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00463",
+    "result": {
+      "query": {
+        "domain": "https://www.scicron.com/",
+        "name": "SciCron",
+        "street": "501 W. Amarillo Blvd",
+        "city": "Amarillo",
+        "state": "TX",
+        "zip": "79107"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00513",
+    "result": {
+      "query": {
+        "domain": "https://www.princecorp.com/",
+        "name": "PRINCE ENERGY LLC",
+        "street": "7707 WALLISVILLE ROAD BUILDING B",
+        "city": "HOUSTON",
+        "state": "TX",
+        "zip": "77020"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00540",
+    "result": {
+      "query": {
+        "domain": "https://www.precisionurethane.com/",
+        "name": "PRECISION URETHANE & MACHINE",
+        "street": "612 3RD ST",
+        "city": "HEMPSTEAD",
+        "state": "TX",
+        "zip": "77445"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00937",
+    "result": {
+      "query": {
+        "domain": "https://www.trentonplastics.com/",
+        "name": "Trenton Plastics, Inc.",
+        "street": "300 S US HWY 69",
+        "city": "Trenton",
+        "state": "TX",
+        "zip": "75490"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01068",
+    "result": {
+      "query": {
+        "domain": "https://www.themoderngroup.com/",
+        "name": "THE MODERN GROUP",
+        "street": "3005A Pasadena Frwy",
+        "city": "PASADENA",
+        "state": "TX",
+        "zip": "77503"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01092",
+    "result": {
+      "query": {
+        "domain": "https://lomont.com/",
+        "name": "R&D MOLDERS, INC.",
+        "street": "107 Park Central Blvd",
+        "city": "Georgetown",
+        "state": "TX",
+        "zip": "78626"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003757",
+              "name": "Lomont Molding, LLC",
+              "city": "Mount Pleasant",
+              "state": "IA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_IA.csv",
+              "match": "domain exact: lomont.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01099",
+    "result": {
+      "query": {
+        "domain": "https://www.ecoreintl.com/",
+        "name": "ECORE INTERNATIONAL INC.",
+        "street": "1428 County Road 930",
+        "city": "Mexia",
+        "state": "TX",
+        "zip": "76667"
+      },
+      "stop_at_step": 4,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002442",
+              "name": "Ecore Intl Inc.",
+              "city": "Lancaster",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'ECORE INTERNATIONAL INC.'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01313",
+    "result": {
+      "query": {
+        "domain": "https://www.hagansplastics.com/",
+        "name": "HAGANS PLASTICS CO., INC.",
+        "street": "121 W Rock Island Rd",
+        "city": "Grand Prairie",
+        "state": "TX",
+        "zip": "75050"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01462",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "EMU PLASTICS (TEX) LIMITED, INC.",
+        "street": "6100 S 35th St",
+        "city": "McAllen",
+        "state": "TX",
+        "zip": "78503"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01498",
+    "result": {
+      "query": {
+        "domain": "https://marianinc.com/",
+        "name": "MARIAN MEXICO INC",
+        "street": "11401 Pellicano Drive",
+        "city": "El Paso",
+        "state": "TX",
+        "zip": "79936"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-005114",
+              "name": "Marian, Inc.",
+              "city": "Indianapolis",
+              "state": "IN",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_IN.csv",
+              "match": "domain exact: marianinc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01653",
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "T & H PLASTICS, INC.",
+        "street": "700 Plastics Avenue",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77020"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00777",
+    "result": {
+      "query": {
+        "domain": "https://www.industrialmodelsinc.com/",
+        "name": "INDUSTRIAL MODELS GROUP, INC",
+        "street": "1711 Westaire Drive",
+        "city": "Gainesville",
+        "state": "TX",
+        "zip": "76240"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004425",
+              "name": "Industrial Models, Inc.",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_US.csv",
+              "match": "domain exact: industrialmodelsinc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00754",
+    "result": {
+      "query": {
+        "domain": "https://chemtrusion.com/",
+        "name": "CHEMTRUSION- TX, INC.",
+        "street": "7115 Clinton Drive",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77020"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004532",
+              "name": "Chemtrusion, Inc.",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_US.csv",
+              "match": "domain exact: chemtrusion.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01189",
+    "result": {
+      "query": {
+        "domain": "https://www.metropak.com/",
+        "name": "METROPAK, LLC",
+        "street": "1001 Commerce Road",
+        "city": "Richardson",
+        "state": "TX",
+        "zip": "75081"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01627",
+    "result": {
+      "query": {
+        "domain": "https://www.dlplastics.com/",
+        "name": "D & L TOOLING & PLASTICS, INC.",
+        "street": "950 SE LOOP 456",
+        "city": "JACKSONVILLE",
+        "state": "TX",
+        "zip": "75766"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01380",
+    "result": {
+      "query": {
+        "domain": "https://www.goodyear.com/",
+        "name": "THE GOODYEAR TIRE & RUBBER COMPANY",
+        "street": "1459 BESSEMER DR",
+        "city": "EL PASO",
+        "state": "TX",
+        "zip": "79936"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000003",
+              "name": "The Goodyear Tire & Rubber Company",
+              "city": "Akron",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: goodyear.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000003",
+              "name": "The Goodyear Tire & Rubber Company",
+              "city": "Akron",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'goodyear tire and rubber' = legal_name 'The Goodyear Tire & Rubber Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01633",
+    "result": {
+      "query": {
+        "domain": "https://www.atcoflex.com/",
+        "name": "ATCO RUBBER PRODUCTS, INC.",
+        "street": "9222 Woodforest Blvd",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77013"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004234",
+              "name": "ATCO Rubber Products, Inc.",
+              "city": "Fort Worth",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "domain exact: atcoflex.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004234",
+              "name": "ATCO Rubber Products, Inc.",
+              "city": "Fort Worth",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "name key 'atco rubber products' = legal_name 'ATCO Rubber Products, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00163",
+    "result": {
+      "query": {
+        "domain": "https://www.technicalchemical.com/",
+        "name": "Technical Chemical Company",
+        "street": "3327 Pipeline Rd.",
+        "city": "Cleburne",
+        "state": "TX",
+        "zip": "76033"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00806",
+    "result": {
+      "query": {
+        "domain": "https://www.championx.com/",
+        "name": "ChampionX",
+        "street": "11177 S. Stadium Drive",
+        "city": "Sugar Land",
+        "state": "TX",
+        "zip": "77478"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00209",
+    "result": {
+      "query": {
+        "domain": "https://www.liquidpower.com/",
+        "name": "LSPI Bryan Manufacturing Plant",
+        "street": "1331 Independence Ave",
+        "city": "Bryan",
+        "state": "TX",
+        "zip": "77803"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00324",
+    "result": {
+      "query": {
+        "domain": "https://seatexcorp.com/",
+        "name": "SEATEX",
+        "street": "445 HIGHWAY 36 N",
+        "city": "ROSENBERG",
+        "state": "TX",
+        "zip": "77471"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00631",
+    "result": {
+      "query": {
+        "domain": "https://www.polycoatusa.com/",
+        "name": "Polycoat Products LLC",
+        "street": "3001 E. Pioneer Parkway",
+        "city": "Arlington",
+        "state": "TX",
+        "zip": "76010"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004238",
+              "name": "American Polymers Corp",
+              "city": "Santa Fe Springs",
+              "state": "CA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_CA.csv",
+              "match": "domain exact: polycoatusa.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004238",
+              "name": "American Polymers Corp",
+              "city": "Santa Fe Springs",
+              "state": "CA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_CA.csv",
+              "match": "name key 'polycoat products' = trade_names 'Polycoat Products'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00743",
+    "result": {
+      "query": {
+        "domain": "https://www.murphywallproducts.com/",
+        "name": "MURPHY WALL PRODUCTS INTERNATIONAL, INC.",
+        "street": "201 NE 21ST ST",
+        "city": "FORT WORTH",
+        "state": "TX",
+        "zip": "76164"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-01575",
+    "result": {
+      "query": {
+        "domain": "https://www.ifscoatings.com/",
+        "name": "IFS Coatings, Inc.(Texas)",
+        "street": "3601 N Interstate 35",
+        "city": "Gainesville",
+        "state": "TX",
+        "zip": "76240"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00017",
+    "result": {
+      "query": {
+        "domain": "https://polyguard.com/",
+        "name": "Polyguard",
+        "street": "3801 South Interstate 45",
+        "city": "Ennis",
+        "state": "TX",
+        "zip": "75119"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-TX-00018",
+    "result": {
+      "query": {
+        "domain": "https://www.benjaminmoore.com/",
+        "name": "BENJAMIN MOORE & CO.",
+        "street": "700 W. KEARNEY ST.,",
+        "city": "MESQUITE",
+        "state": "TX",
+        "zip": "75149"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004216",
+              "name": "Benjamin Moore & Co.",
+              "city": "Montvale",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NJ.csv",
+              "match": "domain exact: benjaminmoore.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004216",
+              "name": "Benjamin Moore & Co.",
+              "city": "Montvale",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NJ.csv",
+              "match": "name key 'benjamin moore and' = legal_name 'Benjamin Moore & Co.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  }
+]

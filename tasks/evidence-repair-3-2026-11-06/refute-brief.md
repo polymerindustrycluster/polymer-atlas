@@ -1,0 +1,5 @@
+# Targeted deep re-refute PR165
+
+Final158weakrows=43VERIFIED115holds,43newEVD6shards,35scope7address1existence/38A3B2C. Grok3REFUTE47b920c acceptedboth:013345GEONConsumerProductsdoesnotstatehousewares;016535CNGFoodtiledoesnotstatepackaging/beverage. No retag/narrowerclaimsubstitution. Proposed275022/275068absentgloballyandretired_ids.csvneverreuse;alloriginalweakrowsunchanged. Remaining43quotes/IDsunchanged;record/URLcountsderivedREADME. Domain_holds.csvlegacynameincludes2semantic+5domainholds.
+
+Run python3 tasks/evidence-repair-3-2026-11-06/check.py and python3 scripts/validate.py;bothPASS;row-loss guardPASS. Currentmainpinnedinsidecheck.py;exact6mainshards+builder(nohandCSVmerge). Frame4ef764e158rows,43raw/hash/known3/oldrows/replay/threefaults+retirementabsence gatesPASS. Rawlocal build/l11-repair3-cache/frozen. Remaining43semanticcensuspassedoriginalGrokreview;pleaseverifyretirementsandsurvivingequality. Codexfinalreviewpending. Ownclaimdetailpagewordsonly07:20,no datafields/tier/status/registrychange. NoDone/approvalclaim.
