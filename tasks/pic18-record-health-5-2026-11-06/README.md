@@ -28,13 +28,13 @@ Specific holds include Hudson's mailing P.O. box (not a physical HQ witness), G-
 
 ## Raw T1 and combined projection
 
-Current-main integration baseline547d51b already includes PR133. This round alone: **430/632→438/632 PIC18 Ring1–2 organizations,68.04%→69.30%**. Eight become newly healthy; Röchling retains a probable-duplicate gap. The original health.py duplicate definition is unchanged.
+The reviewed packet2621b4e uses parent/checkbaseline f078dd58fc7134594f0b7a9e75fb522f7315f935, including approved PR133 and154. This round alone: **440/632→448/632 PIC18 Ring1–2 organizations,69.62%→70.89%**. Historical430→438 was the earlier133-only baseline and is not the current branch total. Eight become newly healthy; Röchling retains a probable-duplicate gap. The original health.py duplicate definition is unchanged.
 
-`project_open_prs.py --include-round5` extracts current main into a disposable tree, applies each open L4 builder in order, then applies this packet and measures health after every stage. It does not sum reported gains. Exact refs and results are in projection.csv:
+`project_open_prs.py --include-round5` extracts current main into a disposable tree, applies each open L4 builder in order, then applies this packet and measures health after every stage. It does not sum reported gains. The archived initial replay refs and results are in projection.csv (main18a8f8a,430healthy; earlier narrative used the equivalent547d51b baseline). Later reviewer replay on main456healthy still finishes472/632; merged stages become no-ops. The following table records that historical initial replay:
 
 | Stage | Healthy PIC18 Ring1–2 organizations | Raw T1 |
 |---|---:|---:|
-| Current main547d51b (PR133 included) |430/632|68.04%|
+| Archived main18a8f8a (PR133 included) |430/632|68.04%|
 | After PR146 |446/632|70.57%|
 | After PR154 |456/632|72.15%|
 | After PR172 |464/632|73.42%|
@@ -56,8 +56,10 @@ PASS:35 quotes match their admitted fresh or authorised inherited raw witnesses;
 
 Raw downloads and short research extracts remain local. URLs, quotes, source classes, retrieval methods, filing dates and controller exception provenance are recorded in packet/route artifacts. For a fresh raw check, re-fetch original URLs with browser-UA curl, parse HTML with raw.Text or PDF with pdftotext; if blocked, use the existing Firecrawl connector with formats=[html],onlyMainContent=false and verify sourceURL/status200 before extracting. Do not treat a failed re-fetch as a pass. ITA rows use the explicitly authorised inherited packet and are not described as newly downloaded. check.py runs from the committed canonical data without needing live network availability.
 
-Independent Codex4/Grok4 reviews pending. Draft until both approve. Controller owns merges and task statuses.
+Grok clerk6 APPROVE reviewed packet2621b4e,zero findings;Codex review remains pending. Draft until both approve. Controller owns merges and task statuses.
 
 Independent ITA reconciliation checks all five admitted establishment IDs against the inherited CSV, actual submission dates, and the exact filed company/establishment-name cell. Lead's two draft composite-name/address strings were narrowed before publication to the exact filed employer-name cell: no synthetic multi-column text is presented as a verbatim quote. government_rows.csv preserves the selected original fields for all five. Packet replay and validator rerun successfully after this refinement; counts and tiers are unchanged.
 
 Controller refresh atop approved154 f078dd58fc7134594f0b7a9e75fb522f7315f935:all parentdata plus unchanged9-tier/35-EVD packet replayed. Global-ID preflight additionally retains shard locations and rejects an identical existing payload in the wrong shard before writes, addressing the sibling172Codex finding. No source content or tier decision changed; final family review remains pending.
+
+Review receipt — Grok(clerk6),thr_3b6qu2kt8w:APPROVE2621b4e,zero findings;not approval of requested ancestor42b1f9a. Independentvalidator0,rowloss,exact9tiercells/35append-onlyEVD/62verdicts,healthselfcheck,owntripleV25/IDs,all27ownquotes+3OhioEPAquotes+5authorisedinheritedITAname/dateatoms pass. Freshcurl200 exceptChemionics403 recoveredindependentFirecrawl200. ExistingnineC→Adecisions unchanged;no collateralfields. Reviewer seed183random10 disclosed in receipt. Currentbranch448/632,parent440;RoechlingORG000551remainsduplicate-unhealthy. Isolatedlatestmain+pendingpacketreplaystill472/632,97short569;projection.csvrestored. Detail:controller reviews/183-clerk-grok-6.md. This receipt/baseline correction changes documentation only;data/buildinputs unchanged since2621b4e. Codex pending,no completion/mergeauthorization.
