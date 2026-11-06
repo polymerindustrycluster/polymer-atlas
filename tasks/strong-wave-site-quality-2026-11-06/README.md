@@ -63,3 +63,5 @@ Acquisition uses the shipped shared Corpus transport, whitespace-only normalizat
 Codex and Grok deep refutations requested at publication; no approval or Done claimed until both report. Under conservation instruction, disputed candidates are withdrawn/held as strict subsets, not sent through another research/review round.
 
 Integration pin: main30a4c798534f6d5d1aafd3490cfbfc81cdca073e. Restored its four canonical MN/NY site/evidence files and reran the unchanged builder; no CSV hand merge. Named check, validator0 and native row-loss pass on this tree. Strict counts remain MN58/368 and NY50/410. All other canonical CSV bytes equal the integration pin.
+
+Clean checkout53a3887 with no copied build cache: public own acquisition7/7 and Census county/address7/7 PASS; namedcheck/replay/7faults PASS. Receipt clean_checkout_receipt.json. The earlier Oneida access failure remains held and does not disappear from the history. Final retained evidence count49 and promoted-site count7 are unchanged.
