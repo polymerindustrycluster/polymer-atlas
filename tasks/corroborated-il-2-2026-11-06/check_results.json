@@ -1,0 +1,13 @@
+{
+  "state": "IL",
+  "worked_clusters": 45,
+  "creates_C": 3,
+  "evidence_rows": 22,
+  "known_answers": 3,
+  "blind_census_size": 3,
+  "before_strict326": 85,
+  "after_strict326": 85,
+  "qcew2023_private_establishments326": 797,
+  "strict_share_percent": 10.664993726474279,
+  "delta": 0
+}

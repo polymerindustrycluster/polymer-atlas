@@ -1,3 +1,5 @@
+FINAL REDUCED PACKET supersedes earlier217/51/93countsbelow:acceptedCodexREFUTEfreshGlenmarfailure. Inputindex1ORG2698buildingmarket→STILL_UNCERTAIN,EVD240501permanentunused,neworgno-fillhold. 216accepted(211markets5certs),50org52cells(A27B22C1),50V50orgU/94claimholds,yield50%,12heldvalues. Holes501/684/714–723. reduced-packet-equivalence.json provesallother216payloads/shards/orgvaluesunchangedc153963;build/check/guard/fetch/frameunchanged. Freshraw216/certquotes/random30zero/6guards/boundary/replay/SQL/validate0(38610EVD)PASS. Main4d7a67a active4899markets493→541cert60→64,Tier1active1293markets268→316cert24→28. Pleaseinspectwithdrawal/finalreducedgateandcarryforwardunchangedsourcecoverage;nofalsequote/closureassertion. Historicalbuildersuntouched.
+
 # REFUTE L10 Tier1 round5 — deep
 
 Disprove incrementalround5. Read README/frame/verdicts/inputs/holds/attempts/build/check/fetch/guardcheck/boundary;SCHEMA3.3/3.4/R3c/R12/4.13. Commands/base inREADME/boundary.json. APPROVE/REFUTE withconcreterecord/value/source/governingrulefindings+uninspectedwork. Nomergestatusauthorization.

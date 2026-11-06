@@ -1,0 +1,269 @@
+[
+  {
+    "site_id": "SITE-019001",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Fresh Pella-authored professional development account explicitly places vinyl-door production work in Macomb. Chamber member profile gives Pella Corporation manufacturing at exact 111 Pella Place (Pl.), Macomb IL 61455. Convergent city-level process and exact establishment listing independently support site manufacturing/polymer identity; no contradiction established. Current pages do not make frozen unknown status erroneous.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://pressroom.pella.com/pella-celebrates-its-next-generation-of-leaders/",
+        "source_class": "own_site",
+        "quote": "Last year I worked on vinyl doors in Macomb; now I\u2019m focused on the flow of wood sliding and hinge doors through production in Pella.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://business.macombareachamber.com/list/member/pella-corporation-374",
+        "source_class": "public_directory",
+        "quote": "Pella Corporation Categories Manufacturing 111 Pella Pl. Macomb IL 61455",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:01:41.503789+00:00"
+  },
+  {
+    "site_id": "SITE-019009",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Storopack own-site lists 320 Craig Place, Hillside IL 60162 (held Craig Road). Packaging division label and supplier line card do not establish physical production versus distribution at this address. Two spellings alone do not prove an address error; no authoritative situs resolution. Per SCHEMA \u00a71 site-grain rule and \u00a74.5 lawful warehouse/sales functions, no manufacturing error or creation error is inferred.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "source_class": "own_site",
+        "quote": "Chicago (Packaging) Storopack Inc. 320 Craig Place Hillside, Illinois 60162",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Site-specific permit, company process statement or plant certificate establishing operator, physical function and polymer work at 320 Craig; authoritative situs source resolving Craig Place versus Craig Road.",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:05:33.710375+00:00"
+  },
+  {
+    "site_id": "SITE-016015",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Own-site confirms exact Storopack Inc. location at Suite 4 Medley. Label Packaging alone is not evidence of on-site transformation, dominant physical function or current operation. Per SCHEMA \u00a74.5 and \u00a75.3 it could lawfully be a distribution/sales location; evidence does not settle that either.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "source_class": "own_site",
+        "quote": "Miami (Packaging) Storopack Inc. 11825 N.W.100th Road, Suite 4 Medley, Florida 33178",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Primary site-specific statement or permit establishing whether Suite 4 manufactures polymer packaging, warehouses it, or performs sales/service, and its operating date.",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:05:33.712044+00:00"
+  },
+  {
+    "site_id": "SITE-018015",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "2025 Lacks supplier manual confirms historical addition of Kraft Mold to its locations appendix but removed that appendix in the 2023 revision. Fresh searches led to a tax certificate and older manuals, but those address/process statements could not be raw-verified within 10 total search/fetch attempts. Current manual alone does not independently establish exact 5801 Kraft operator or polymer molding at the site. No claim of closure/absence is made.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://lacksenterprises.com/wp-content/uploads/2025/02/P-C-Lacks-Supplier-Manualv.250203.pdf",
+        "source_class": "own_site",
+        "quote": "Appendix A \u2013 Added LTS - Paint Central, Kraft Mold; PPL - DC",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Raw-verifiable site-specific company certificate or permit tying 5801 Kraft Ave SE to its current legal operator, molding process/material, physical function and operation date.",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:05:33.714067+00:00"
+  },
+  {
+    "site_id": "SITE-016000",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Novolex locations page confirms Hilex at exact Jacksonville suite; supplier onboarding table independently repeats address, but is a supplier migration schedule, not proof of production. Hilex plants map and company-level product descriptions do not uniquely link polymer production to this physical address. No closed/no-establishment inference from failed discovery.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://novolex.com/pages.php?pageid=101",
+        "source_class": "own_site",
+        "quote": "Jacksonville (Hilex) 500 N. Ellis Rd., Suite A, Jacksonville, FL 32254",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://novolex.com/content/PDF/Novolex-Supplier-Onboarding-FAQ.pdf",
+        "source_class": "own_site",
+        "quote": "HILEX 500 ELLIS RD N STE A JACKSONVILLE FL 32254-2843 US",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Exact-address manufacturing permit or company plant process/job statement identifying plastic bag extrusion/conversion at 500 N Ellis Rd Suite A and current operation.",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:05:33.715496+00:00"
+  },
+  {
+    "site_id": "SITE-016105",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "GAF-authored 2024 brochure embedded in City of Detroit public filing PDF p25 (not city-authored company facts) states planned Valdosta TPO manufacturing at 2100 Steeda Way, ZIP 31606 versus held 31601. OCR map and visual check in calibration_a.json. Coming Soon does not establish operation at frozen 2026-11-06. Fresh searches disclosed 2025 company opening narrative, but its raw fetch and alternatives were 403; search text was not admitted. ZIP spelling alone is held for authoritative postal/situs resolution. No closure, absence or creation error inferred.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+        "source_class": "own_site",
+        "quote": "Valdosta, GA \u2014 Coming Soon",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+        "source_class": "own_site",
+        "quote": "2100 Steeda Way, Valdosta, GA 31606",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Dated raw-accessible operating evidence for GAF at 2100 Steeda Way, plus authoritative postal/situs confirmation of ZIP 31606 versus held 31601; current/planned status and legal operator must be tied to exact site.",
+    "limitations": "GAF brochure is 2024 planning evidence; raw PDFs at GAF routes blocked. OCR quotes are page 25 and reproducible from hashed PDF/image/text map in calibration_a.json. No primary outcome establishes current operation; no NAICS/tier certification. Original evidence never accessed.",
+    "locked_at_utc": "2026-11-06T13:06:48.056438+00:00"
+  },
+  {
+    "site_id": "SITE-014010",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Novolex exact location page and supplier onboarding table confirm Heritage at 12320 Fourth/4th St Rancho Cucamonga. Public planning EIR describes Heritage Bag manufacturing facility at exact address; it is city environmental-review material, not a Heritage-authored process certificate. Heritage corporate product catalogue contains LLDPE/HDPE liners, but does not settle what this particular plant makes. Fresh employer extrusion job discovery could not be raw-verified (403) before the 10-attempt cap. Unknown frozen status is not an error.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://novolex.com/pages.php?pageid=101",
+        "source_class": "own_site",
+        "quote": "Rancho Cucamonga (Heritage) 12320 Fourth St Rancho Cucamonga, CA 91730",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://files.ceqanet.lci.ca.gov/265020-3/attachment/asDIyxasBHOFATlXQOmeEpQysSnhxSEbUUMmlO4iFsdAxn2z3VlcB9q85fawfkDPVIemgExYzKWfrHrT0",
+        "source_class": "government_filing",
+        "quote": "The Heritage Bag manufacturing facility is the nearest industrial/commercial receptor, which is located approximately 120 feet west of the Project site\u2019s western boundary at 12320 4th Street.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Raw-verifiable primary site-specific permit or company production/job statement linking plastic bag/film processing to 12320 Fourth St and its legal operator, dated by frozen 2026-11-06.",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:06:48.100240+00:00"
+  },
+  {
+    "site_id": "SITE-016009",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "org_id/operator",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Company-authored Sealed Air recruitment text hosted by DiversityJobs gives exact 5135 Drane Field Road Lakeland and describes machine production and quality control, dated October 28 2026. It is employer-authored job evidence despite third-party hosting; expired recruitment is not closure. Polymer material/output is not stated in retrieved job text. EDC report discovery described Bubble Wrap manufacturing, but raw route returned 404 and cannot be positive evidence. Thus polymer scope at this precise establishment remains unconfirmed.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://diversityjobs.com/career/18768823/Operator-Mailer-Night-Shift-Florida-Lakeland",
+        "source_class": "company_authored_job_posting",
+        "quote": "United States, Florida, Lakeland 5135 Drane Field Road",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://diversityjobs.com/career/18768823/Operator-Mailer-Night-Shift-Florida-Lakeland",
+        "source_class": "company_authored_job_posting",
+        "quote": "Operators are responsible for the safe and efficient operation of assigned machinery throughout their shift. This includes production, quality control, documentation, material handling, housekeeping, and basic equipment maintenance in accordance with company standards.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Accessible company process description, manufacturing permit or EDC original report linking polymer film/Bubble Wrap production to this exact Lakeland address and operator.",
+    "limitations": "NAICS and verification tier not certified; no all-field accuracy assertion. Unknown status is not counted as error. No original evidence accessed.",
+    "locked_at_utc": "2026-11-06T13:06:48.101211+00:00"
+  }
+]

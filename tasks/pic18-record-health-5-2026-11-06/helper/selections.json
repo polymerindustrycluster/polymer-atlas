@@ -1,0 +1,128 @@
+[
+  [
+    "ORG-000174",
+    "existence",
+    "/contact-us/",
+    "VERTEX, Incorporated 3956 Mogadore Industrial Parkway Mogadore, Ohio 44260 USA",
+    "Own named corporate contact, common legal-name form matches Vertex Inc."
+  ],
+  [
+    "ORG-000174",
+    "address",
+    "/contact-us/",
+    "VERTEX, Incorporated 3956 Mogadore Industrial Parkway Mogadore, Ohio 44260 USA",
+    "Physical business address in held Mogadore; not a PO Box or service-area label."
+  ],
+  [
+    "ORG-000174",
+    "scope",
+    "about-us",
+    "Neoprene, EPDM, Polyisoprene, SBR, Nitrile, Silicone in dense or sponge compounds are processed into finished extruded products",
+    "Own elastomer extrusion, present-tense operation, no capability fields populated."
+  ],
+  [
+    "ORG-000175",
+    "existence",
+    "https://corelinerollers.com/",
+    "Coreline Rollers brings together Harwood Rubber Products and Rubber Right Rollers under one brand",
+    "Explicit own brand bridge, supersedes unproven-address-only bridge; no legal-name or parent change proposed."
+  ],
+  [
+    "ORG-000175",
+    "address",
+    "/contact-us/",
+    "Harwood Rubber Products Facility 1365 Orlen Ave. Cuyahoga Falls, OH 44221",
+    "Own specifically named Harwood facility; Coreline home separately labels same street Headquarters."
+  ],
+  [
+    "ORG-000175",
+    "scope",
+    "/capabilities/",
+    "We manufacture rubber rollers where material selection, dimensions, tolerances, and surface requirements directly impact performance",
+    "Own Coreline/Harwood-branded roller production, with explicit own identity bridge; no site-specific process transfer."
+  ],
+  [
+    "ORG-000188",
+    "existence",
+    "universalpolymer.com",
+    "Universal Polymer & Rubber Ltd., Inc. 15730 S. Madison Road, Middlefield, OH 44062",
+    "Own corporate name and physical business address; no parent inference."
+  ],
+  [
+    "ORG-000188",
+    "address",
+    "universalpolymer.com",
+    "Universal Polymer & Rubber Ltd., Inc. 15730 S. Madison Road, Middlefield, OH 44062",
+    "Own corporate footer street in held Middlefield; own page separately describes Middlefield operation."
+  ],
+  [
+    "ORG-000188",
+    "scope",
+    "universalpolymer.com",
+    "We manufacture custom rubber components using extrusion, molding, and cutting",
+    "Explicit own rubber manufacturing operation, not customer machinery use."
+  ],
+  [
+    "ORG-000190",
+    "existence",
+    "clarkrandp.com/",
+    "Copyright © 2026 by Clark Rubber & Plastics",
+    "Own corporate branding, held-domain continuity and Mentor physical address; no legal-name motion."
+  ],
+  [
+    "ORG-000190",
+    "address",
+    "clarkrandp.com/",
+    "Location 8888 East Avenue Mentor, Ohio 44060",
+    "Own physical corporate location in held Mentor, not a PO Box."
+  ],
+  [
+    "ORG-000190",
+    "scope",
+    "clarkrandp.com/",
+    "We are a world-class rubber and plastic manufacturer",
+    "Own manufacturing statement, current services additionally list molding/extrusion; no scope fields populated."
+  ],
+  [
+    "ORG-001590",
+    "existence",
+    "title=about+us",
+    "Therm-O-Link, Inc and VULKOR manufactures a wide-range of insulated copper wire",
+    "Own held company named alongside separately named Vulkor; no subsidiary/legal-name/parent change."
+  ],
+  [
+    "ORG-001590",
+    "address",
+    "title=contact",
+    "Corporate and Accounting Offices and Therm-O-Link of Ohio 10513 Freedom St Garrettsville, OH 44231",
+    "Explicit corporate/accounting offices, not merely one plant in a generic list; Texas/Vulkor addresses are excluded."
+  ],
+  [
+    "ORG-001590",
+    "scope",
+    "title=about+us",
+    "Therm-O-Link, Inc and VULKOR manufactures a wide-range of insulated copper wire",
+    "Explicit named own insulated-wire manufacture, not the potential-use can-be-jacketed wording. Same own production paragraph specifies XLPE/PVC/silicone/CPE jacketing; no plant-specific extrusion assignment."
+  ],
+  [
+    "ORG-000551",
+    "existence",
+    "/cleveland/contact",
+    "Roechling Industrial Cleveland, LP 4321 Glenridge Road",
+    "Own named legal entity on regional contact page; group alone not used as entity evidence."
+  ],
+  [
+    "ORG-000551",
+    "address",
+    "/cleveland/contact",
+    "Roechling Industrial Cleveland, LP 4321 Glenridge Road 44121 Cleveland, OH",
+    "Own regional contact gives named legal entity and physical street in Cleveland postal city. Physical-municipality continuity decision is recorded separately in README and government row; no municipality inferred from this own page."
+  ],
+  [
+    "ORG-000551",
+    "scope",
+    "/us/industrial/cleveland",
+    "the fiberglass reinforced plastics products you receive from us are fully tested",
+    "Own Cleveland business describes its fiberglass-reinforced-plastics output and manufacturing process in adjacent context; not unrelated group capability."
+  ]
+]

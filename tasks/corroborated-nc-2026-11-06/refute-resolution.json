@@ -1,0 +1,24 @@
+{
+  "cluster_id": "LF-NC-00423",
+  "verdict": "STILL_UNCERTAIN",
+  "retired_site_id": "SITE-016302",
+  "retired_evidence_ids": [
+    "EVD-203014",
+    "EVD-203015",
+    "EVD-203016",
+    "EVD-203017",
+    "EVD-203018",
+    "EVD-203019",
+    "EVD-203020"
+  ],
+  "outcome_url": "https://www.alpek.com/wp-content/uploads/2025/10/Alpek-3Q25-Report-ENG.pdf",
+  "outcome_date": "2025-10-21",
+  "raw_http_status": 200,
+  "raw_pdf_sha256": "ba9b1ef1b84d4f0a6f41bf2455508473dbfdaad44369527014fe0d5abbf8c25e",
+  "pdf_page": 5,
+  "outcome_quote": "permanent closures of the Cedar Creek",
+  "announcement_url": "https://www.alpek.com/pr-alpek-will-cease-operations-at-its-pet-facility-in-north-carolina/",
+  "announcement_date": "2025-05-30",
+  "settling_facts": "status/current activity and standalone resin site ring; annual filing does not rebut dated closure",
+  "applied_status_change": false
+}

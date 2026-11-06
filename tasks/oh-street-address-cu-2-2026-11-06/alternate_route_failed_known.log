@@ -1,0 +1,9 @@
+ALTERNATE KNOWN 110000745766 PASS
+Traceback (most recent call last):
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_vtggrr2f8d-1/polymer-atlas/tasks/oh-street-address-cu-2-2026-11-06/retry_audit.py", line 16, in <module>
+    f=frs.facility(alternate(rid,'alternate_known_raw'),rid)
+                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_vtggrr2f8d-1/polymer-atlas/tasks/oh-street-address-cu-2-2026-11-06/retry_audit.py", line 9, in alternate
+    if response.returncode:raise ValueError('alternate-order FRS fetch failed: '+str(response.returncode))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: alternate-order FRS fetch failed: 22
