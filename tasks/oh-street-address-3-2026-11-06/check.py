@@ -2,9 +2,13 @@
 import contextlib,hashlib,io,shutil,tempfile
 from pathlib import Path
 import build
+from fetch import mailing_posture
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  root=build.ROOT;selected,verdicts,ev=build.plan()
+ quote='1293 South Main Street Akron, Ohio 44301'
+ for prefix in ('You can reach us by mail at this address: ','Mailing address: ','Postal address: '):assert mailing_posture(prefix+quote,quote)=='mailing-only context'
+ assert not mailing_posture('Email us. Physical address: '+quote,quote)
  assert len(ev)==38,'frozen acceptance count changed; inspect before revising'
  with tempfile.TemporaryDirectory() as tmp:
   build.ROOT=Path(tmp);(build.ROOT/'data').mkdir()

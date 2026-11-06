@@ -1,3 +1,4 @@
+POSTAL-GATE UPDATE: PR156 Myersby-mail defect fixed there; SAMErootclassifier propagated HERE. Exactactualwording andemail-negativefixtures pass; fresh76uniquequalifyingURL checks acrossALL38currentpositives produce0flags/0errors. All38data/evidencevalues identical83d446b; no withdrawal/newID here. recheck_posture.py andmailing_recheck.csv in taskfolder. Thisguard update mustbe included in eventualheadverdict.
 Adversarial completion refute, L2 Ohio street round3, branch agent/codex/oh-street-address-3. Return VERDICT: APPROVE/REFUTE with actual demonstrated defects, no mutations or merge.
 Frozen ORIGINAL448frame positions61–160 (IDs152060–152159) exactly next100 after prior156'sfirst60.100worked=38VERIFIED/62STILL_UNCERTAIN;288futureframe rows unworked. All100 were blank,activePIC18A/B with operatorwebsite on main8e8c71a beforefetch.38street/source-only edits,38append-only own_site/address/supports_A evidence; tiersA27/B11unchanged. No county/county_source/ZIP/status/tier/ring/registry/derived edits, no org/site creates/deletes/inclusionlog. Coverage286/1883→324/1883 (15.19→17.21%), excludes disjoint20pending156. Check currentmain if156merges; replayonmain recipe, not scope growth.
 209rawpage attempts=186fetched+23unavailable; all100siteIDs accounted,54rawaddresssites38admitted. Missingcityblocks/multiple street/ZIPs/knownZIP/notes conflicts/mail-only/cross-host redirects held. Quote-to-field/city/ZIP/digest/held-host binding asserted. Street normalization only suffix/direction abbreviations. Ownpage address blocks only,no personal contacts/fullHTML retained. Five research pages/operator reserves sixth audit; inherited federal exception not used.
@@ -42,6 +43,11 @@ def extract(text,city):
  pattern=r'\b(\d{1,6}\s+(?:(?!\d+\b)[A-Za-z0-9.#/-]+\s+){0,8}?'+suffix+r')[, •|]*\s*'+re.escape(city)+r'\s*[, •|]*\s*(?:OH|Ohio)\s*[, •|]*\s*(\d{5}(?:-\d{4})?)\b'
  text=' '.join(text.split())
  return [(m[1].strip(),m[2],m[0]) for m in re.finditer(pattern,text,re.I)]
+def mailing_posture(text,quote):
+ text=' '.join(text.split());pos=text.find(quote)
+ if pos<0:return 'quote absent on fresh fetch'
+ context=text[max(0,pos-80):pos+len(quote)]
+ return 'mailing-only context' if re.search(r'(?i)mailing\s+address|postal\s+address|\bby\s+mail\b',context) else ''
 def known():
  cases=[('373 Washington St. Chardon OH 44024','Chardon','373 Washington St.','44024'),
         ('1101 Moore Road, Avon, Ohio 44011','Avon','1101 Moore Road','44011'),
@@ -78,8 +84,7 @@ def main():
     text,links,sha=fetch(u);found=0
     for r in rows:
      for street,zip_,quote in extract(text,r['city']):
-      pos=' '.join(text.split()).find(quote);context=' '.join(text.split())[max(0,pos-80):pos+len(quote)]
-      posture='mailing-only context' if re.search(r'(?i)mailing\s+address|postal\s+address',context) else ''
+      posture=mailing_posture(text,quote)
       out.append(dict(site_id=r['site_id'],street_address=street,source_zip=zip_,quote=quote,url=u,sha256=sha,posture=posture));found+=1
     pages.append(dict(org_id=oid,url=u,outcome='fetched',address_blocks=found,error=''))
     links=sorted(links,key=lambda x:('location' not in x.lower(),len(x)))
@@ -190,9 +195,13 @@ FILE check.py
 import contextlib,hashlib,io,shutil,tempfile
 from pathlib import Path
 import build
+from fetch import mailing_posture
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  root=build.ROOT;selected,verdicts,ev=build.plan()
+ quote='1293 South Main Street Akron, Ohio 44301'
+ for prefix in ('You can reach us by mail at this address: ','Mailing address: ','Postal address: '):assert mailing_posture(prefix+quote,quote)=='mailing-only context'
+ assert not mailing_posture('Email us. Physical address: '+quote,quote)
  assert len(ev)==38,'frozen acceptance count changed; inspect before revising'
  with tempfile.TemporaryDirectory() as tmp:
   build.ROOT=Path(tmp);(build.ROOT/'data').mkdir()
@@ -547,3 +556,22 @@ FILE summary.json
   "before_streets": 286,
   "after_streets": 324
 }
+\nFILE recheck_posture.py\n"""Monotonic source-context correction: re-fetch only previously accepted witness URLs."""
+import concurrent.futures
+from fetch import TASK,read,write,fetch,mailing_posture
+verdicts=read(TASK/'verdicts.csv');ids={v['site_id'] for v in verdicts if v['verdict']=='VERIFIED'}
+rows=read(TASK/'rawchecks.csv');urls=sorted({r['url'] for r in rows if r['site_id'] in ids and r['street_address']})
+def one(u):
+ try:text,links,sha=fetch(u);return u,text,sha,''
+ except Exception as ex:return u,'','',str(ex)
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:pages={u:(text,sha,error) for u,text,sha,error in pool.map(one,urls)}
+log=[]
+for r in rows:
+ if r['site_id'] not in ids or not r['street_address']:continue
+ text,sha,error=pages[r['url']]
+ posture='source unavailable on posture recheck' if error else mailing_posture(text,r['quote'])
+ # A previous negative remains negative: broadening the gate never creates a new positive.
+ r['posture']=r['posture'] or posture
+ log.append(dict(site_id=r['site_id'],url=r['url'],quote=r['quote'],fresh_sha256=sha,posture=r['posture'],error=error))
+write(TASK/'rawchecks.csv',rows);write(TASK/'mailing_recheck.csv',log)
+print('previous-positive site IDs',len(ids),'uniqueURLs',len(urls),'newly flagged',sorted({r['site_id'] for r in log if r['posture']}))
