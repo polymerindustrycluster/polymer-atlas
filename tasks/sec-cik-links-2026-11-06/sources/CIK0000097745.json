@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000097745.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000097745",
+  "name": "THERMO FISHER SCIENTIFIC INC.",
+  "tickers": [
+    "TMO"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "8c53c35ccfef53b1ad0c2230b29d108453947d0aeec772df63e7cbdee119e78c",
+  "raw_name_token": "\"THERMO FISHER SCIENTIFIC INC.\""
+}

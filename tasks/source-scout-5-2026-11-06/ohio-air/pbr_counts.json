@@ -1,0 +1,17 @@
+{
+  "whole_workbook_unit_rows": 19443,
+  "input_blank_rows": 1,
+  "whole_workbook_facility_ids": 12196,
+  "state_oh_unit_rows": 19440,
+  "state_oh_facility_ids": 12194,
+  "pic18_county_only_unit_rows": 7824,
+  "pic18_county_only_facility_ids": 4758,
+  "pic18_county_and_state_oh_unit_rows": 7822,
+  "pic18_county_and_state_oh_facility_ids": 4757,
+  "non_oh_coded_unit_rows": 3,
+  "non_oh_coded_facility_ids": 2,
+  "keyword_unit_rows": 33,
+  "keyword_facility_ids": 21,
+  "report_generated": "Report Generated: 11/5/2026 8:00:10 PM",
+  "workbook_sha256": "e15af4624245a11b9de2eb9ff7d689ac9289baf52bae15e77df1f7d2f58dd9b1"
+}

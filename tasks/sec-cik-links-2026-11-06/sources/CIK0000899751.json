@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000899751.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000899751",
+  "name": "TITAN INTERNATIONAL INC",
+  "tickers": [
+    "TWI"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "5e99a31c6fca1cb7b60c58eb4e6b047b84af7dba3d8f442a34f588da886748f8",
+  "raw_name_token": "\"TITAN INTERNATIONAL INC\""
+}

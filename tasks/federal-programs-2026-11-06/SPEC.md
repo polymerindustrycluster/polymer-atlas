@@ -1,0 +1,9 @@
+# D10 federal programs — acceptance before application
+
+Controller assigns new branch off current main, ORG013300–013399 and EVD296000–296999. Only missing ecosystem institution records from own-site evidence; dedupe all organizations/ecosystem by domain/name/street/trade names before create. Scope: Ohio-first MEPs, then PA/MI/IN; Manufacturing USA polymer/composites institutes; NE Ohio Sustainable Polymers Tech Hub. Existing rows are DUPLICATE_OF held IDs, not edited or duplicated. No programs table/registry/site/derived-field change.
+
+SCHEMA §1 Ring5, §4.6 named program/grain/vocab and §4.13 ecosystem existence/address/scope typed evidence govern. Own sources raw-rechecked with house word matcher; evidence append-only with append_sorted and global-ID preflight. Statusunknown unless independently supported; every nonblank field has a typed witness in packet. No contacts/CRM/private/licensed content. No invented generalist geography or program-in-ecosystem grain.
+
+Controller explicitly agrees holds for out-of-state generalist MEPs lacking named polymer work and Ohio MEP's apparent program-only grain; README battery items will state evidence/recommendation and settling decision. Continue independently on lawful missing institutes/services; zero creation is preferable to an unsupported row. Holds are not absence/closure claims. ~6primary discovery fetches per organization.
+
+Named check: frozen candidate census and complete verdicts,3hand-known held identities and fabricated negative, raw names/quotes/no skips for admitted records, all-namespace collision tests/no-write, exact main preservation and idempotent replay, validate0, two-family Codex/Grok completion refutes. First user PIC staff seeking federal/manufacturing support anchors; non-use review2026-12-06. Generated/raw downloads uncommitted. No issue/task status change or worker merge.

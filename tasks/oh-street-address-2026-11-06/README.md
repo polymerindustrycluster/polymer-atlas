@@ -6,7 +6,7 @@ Acceptance: fill blank streets of active Ohio site rows only from site-keyed pri
 
 First user: Atlas integrator/controller, on PR review 2026-11-06. Non-use finding date: 2026-11-13 (controller checks adoption).
 
-Baseline bd57a08: 1,883 active Ohio site rows, 143 streets (7.59%), 1,740 blanks. Brief's 1,955/146/1,809 differs from current main; do not combine denominators. Six existing address evidence rows cover blanks, but none quotes a street, so none qualifies for reuse. Registry input is the unmodified registry_links.csv from restore branch commit 08b60bab86a959180e9810d479d7b45d55f313ca; 301 FRS links cover 283 blank active Ohio sites. No registry links are changed.
+Baseline bd57a08: 1,883 active Ohio site rows, 143 streets (7.59%), 1,740 blanks. Brief's 1,955/146/1,809 differs from current main; do not combine denominators. Six existing address evidence rows cover blanks, but none quotes a street, so none qualifies for reuse. Registry input is a verbatim site-keyed FRS subset of registry_links.csv from restore branch commit 08b60bab86a959180e9810d479d7b45d55f313ca; 301 FRS links cover 283 blank active Ohio sites. No registry links are changed.
 
 §4.5 county_source describes the county's actual adjudication, not street presence. It stays unchanged. FRS address evidence is registry/supports_C (§4.13); A/B rows without stronger address evidence are held, never demoted to make validation pass.
 
@@ -42,4 +42,12 @@ Named checks:
 
 Rebuild on fresh main: restore main's two Ohio data files, then run `build.py --apply`, `check.py`, `validate.py`. The builder refuses changed locality, county provenance, operator, tier or already populated conflicting street instead of overwriting. Pre-pass data backups are local under backups/ and excluded from the PR. No automatic acceptance of a changed snapshot.
 
-Review route: controller 05:55 clerk ruling supersedes the brief council-only route and order; this branch is pushed as a draft for the designated Codex/Grok reviewer threads. Council attempts were refused before provider launch by the shared hard40/600s guard (no verdict). Required two-family verdicts remain pending.
+Review route: controller 05:55 clerk ruling supersedes the brief council-only route and order; this branch is pushed as a draft for the designated Codex/Grok reviewer threads. Council attempts were refused before provider launch by the shared hard40/600s guard (no verdict). Both required families have now approved the substantive output; verdicts below supersede the pending status.
+
+
+Final independent completion refutes (substantive head50ac7a22afff4be038d6bc8a88316b1b6ec6a0c5):
+
+- Codex/OpenAI, R-codex-2 thr_mdr3gn2xmm: **APPROVE,0blocking findings**. Traced all143 fills to exact/strong ITA/operator links, fresh FRS/locality and own pages; independent fresh own7/7, three live calibration answers and injected locality/PO-box cases pass. Validator/check/row-loss guard/fresh-main replay pass; seven protected-field/status drifts reject before writes. Reproduced final audit exactly:ITA0/22transcription,14/30freshcorroboration,16/30uncheckable,0addresserrors. Counts,tiers,sourceceilings,all301inputlinks and frozenbaseline reconcile. Receipt:controller reviews/134-clerk-codex-2.md.
+- Grok/xAI, R-grok-2 thr_f2fcbx6tq8: **APPROVE,0findings**. Recomputed143street edits,143append-only evidence,143→286/1883coverage,C102U34A6B1; all124ITA matches and12FRS JSONs agree. Live own7/7quotes and four FRS responses match. Validator/check/row-loss pass,globalIDs unique/in-block and absent from main; audit rates reconcile. All target143rows unchanged on fresh main9d69978; replay-on-main is the integration recipe, not a defect. Receipt:controller reviews/134-clerk-grok-2.md.
+
+Fresh-main integration: controller06:12 LF exception applied, then main9d69978 merged (includes restored registry links). Took main's two Ohio data files and re-ran the unchanged builder, preserving fresh-main pre-pass backups locally. Named check and validator0errors re-pass. Separate keyed comparison proves every main site/evidence key retained, all legacy evidence unchanged, exactly143 street/source-only site edits and143 evidence appends. Net federal-frame/registry_links diff vs main is zero. Reviewed data/logic unchanged; only main integration and this verdict record added. No issue closure or merge performed by L2.

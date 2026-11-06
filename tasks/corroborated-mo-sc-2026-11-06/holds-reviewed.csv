@@ -1,0 +1,5 @@
+cluster_id,reason
+LF-MO-00442,Need legal/operator continuity: held Crown Plastics makes UHMW belt-press sheet in Ohio; the Festus filing says plastic lamp shades. Same normalized name alone does not settle these operators.
+LF-SC-00014,Need actual establishment function: federal establishment_name is Duncan Innovation. Resolve R&D/innovation center versus a production plant before assigning manufacturing_plant.
+LF-MO-00380,"Need a held operator identity for Aurora Technologies Inc at #6 Capper Drive, Pacific MO; blank normalized street keys are not duplicate evidence. No site create."
+LF-SC-00287,Need primary reconciliation of surviving or restarted polymer production at Cooper River: Alpek 4Q2023 results p4 report PET production transferred elsewhere; its 2025 annual report p80 records decommissioning/dismantling and remediation. A later ITA filing does not settle current plant activity. No closure/status change or create; SITE-012208/EVD-302160–302166 remain unused.

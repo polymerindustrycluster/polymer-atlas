@@ -1,0 +1,15 @@
+# L4b round4 — corrected packet re-review
+
+Try to refute completion using ground truth. Packet005d051, parent/checkbaselinef078dd58fc7134594f0b7a9e75fb522f7315f935. Documentation-only receipts leave alldata/buildinputs unchanged.
+
+31 flagged PIC18 Ring1–2 organizations generate33unique pairs:7sourceddistinct,26packet-linkedholds,0merges/status/relationshipchanges. Capability68:8VERIFIED/60holds afterAnchoridentityrefutation. Exact19cells/19orgs=11notes+8capcells,13capabilityvalues. Canonical25EVD within170066–108=12correctlyattributed uniqueidentityobservations+13scopevalues. Eighteen unmerged misattributed/redundantIDs permanently retired,never reused. Each identity quote belongs only to the entity named;pairnotes cite both attributed observations. Paircomparisonpacket retained.
+
+Codex4finding1 corrected entity attribution;finding2 corrected globalcollisionpreflight to retain shardpaths. Identical170108payload movedOH→DE must reject before anywrite with allCSVhashes unchanged. Differentpayload/wrongquote controls and byte-identicalpositive/repeatreplay remain. No existingmain evidence removed or edited. Canonicaldata/packet unchanged since005d051.
+
+Current branch raw440→448/632(70.89% after);separateunadopteddateddistinctscenario445→453/632(71.68% after). Original428→436/433→441 figures are historical baseline series;health_before.csv retains428anchor. Originalhealth.pydefinition unchanged;owneritem B-L4-T1-ADJUDICATION unresolved. Preserve every newer main record through builder replay during integration.
+
+Run task check.py,measure.py,health.py --self-check,scripts/validate.py,and row-loss guard. Refetch.py updates localwitnesspaths before build.py --raw-check;replay on temporarydataonly. Census33pairs/68caporgs,globalIDcollisionzero-write,andsourceattribution are required. Inspect QSRhistoricalcertificate identityonly,distinctGastonia establishment versus unprovedlegalLPidentity,ownoperations/materials versus customer/machinery/grouptransfers. Prior3helperknownanswers+wrongnegative pass;Anchor4valuesheld,Covianeutralquote. No creates/dedupe obligations or owner-scope/ring/vocabulary decisions.
+
+Grok4 APPROVE005d051 zerofindings:25/25quotes matched across18URLs(directcurl18rows,independent200fallback7rows),correctpartyattribution/exactdelta/append-only/idempotence/zero-writefault/validator0/rowloss/dualmetrics pass. Codex/OpenAI clerk1 targeted re-review APPROVE121125c0,zero outstanding findings;its identity census9URLs,zero-writefaults/byte-identicalreplay/validator/checks pass. Both families approve identical correcteddata/buildinputs;documentation receipts do not change the packet. Earlier unrelated approvals do not approve this packet;no merge/status/completion authorization.
+
+Integrationrefresh419678b:allmaincanonicalfilescheckedoutthenunchangedapprovedbuilderreplayed. Currentraw456→464/632,scenario461→469/632. Exact19cells25EVDandallotherdatapreservation/check/validator0/health/repeat220hashesPASS. Source/buildinputs unchangedfrombothreviewedheads. No newfamilyrequestneededforpayloadchangesbecausenoneoccurred;controllerstillverifiesintegrationparity.

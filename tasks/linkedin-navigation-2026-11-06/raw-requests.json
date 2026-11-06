@@ -1,0 +1,3852 @@
+[
+  {
+    "org_id": "ORG-000001",
+    "attempts": [
+      {
+        "url": "https://www.avient.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000005",
+    "attempts": [
+      {
+        "url": "https://www.dayglo.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000007",
+    "attempts": [
+      {
+        "url": "https://www.vibrantz.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://vibrantz.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000088",
+    "attempts": [
+      {
+        "url": "https://ppg.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.ppg.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.ppg.com/en-US",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000134",
+    "attempts": [
+      {
+        "url": "https://novagard.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000199",
+    "attempts": [
+      {
+        "url": "https://www.seamancorp.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000234",
+    "attempts": [
+      {
+        "url": "https://www.fiberglass-afi.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000238",
+    "attempts": [
+      {
+        "url": "https://tapes.averydennison.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "http://tapes.averydennison.com/na/en/home.html",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://tapes.averydennison.com/na/en/home.html",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000262",
+    "attempts": [
+      {
+        "url": "https://carlisletyrfil.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000315",
+    "attempts": [
+      {
+        "url": "https://www.duraline.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000316",
+    "attempts": [
+      {
+        "url": "https://www.duracote.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000386",
+    "attempts": [
+      {
+        "url": "https://www.itenindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000473",
+    "attempts": [
+      {
+        "url": "https://oldcastleinfrastructure.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000481",
+    "attempts": [
+      {
+        "url": "https://www.paramounttube.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000495",
+    "attempts": [
+      {
+        "url": "https://www.mpcplating.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000513",
+    "attempts": [
+      {
+        "url": "https://polystarcontainment.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000522",
+    "attempts": [
+      {
+        "url": "https://premix-hadlock.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000562",
+    "attempts": [
+      {
+        "url": "https://www.schneller.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000598",
+    "attempts": [
+      {
+        "url": "https://www.teamwendy.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000618",
+    "attempts": [
+      {
+        "url": "https://www.united-initiators.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000628",
+    "attempts": [
+      {
+        "url": "https://www.silmix.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000640",
+    "attempts": [
+      {
+        "url": "https://zehrco-giancola.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000651",
+    "attempts": [
+      {
+        "url": "https://www.adspipe.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000666",
+    "attempts": [
+      {
+        "url": "https://www.americancolors.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000671",
+    "attempts": [
+      {
+        "url": "https://www.proampac.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.proampac.com/en-us/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000672",
+    "attempts": [
+      {
+        "url": "https://www.ampacet.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000683",
+    "attempts": [
+      {
+        "url": "https://www.bostik.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.bostik.com/global/en/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000717",
+    "attempts": [
+      {
+        "url": "https://mauserpackaging.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000720",
+    "attempts": [
+      {
+        "url": "https://capitalresin.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000743",
+    "attempts": [
+      {
+        "url": "https://www.fiberframe.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000761",
+    "attempts": [
+      {
+        "url": "https://www.covestro.com/",
+        "status": "403",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000769",
+    "attempts": [
+      {
+        "url": "https://creativefoam.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000786",
+    "attempts": [
+      {
+        "url": "https://deceuninckna.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000846",
+    "attempts": [
+      {
+        "url": "https://www.formica.com/en-us",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://formica.com/en-us",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000870",
+    "attempts": [
+      {
+        "url": "https://www.hbfuller.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.hbfuller.com/en",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000878",
+    "attempts": [
+      {
+        "url": "https://hbdindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000879",
+    "attempts": [
+      {
+        "url": "https://thermoid.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000901",
+    "attempts": [
+      {
+        "url": "https://www.itape.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000911",
+    "attempts": [
+      {
+        "url": "https://www.jm.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000931",
+    "attempts": [
+      {
+        "url": "https://www.lear.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000950",
+    "attempts": [
+      {
+        "url": "https://maycointernational.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000987",
+    "attempts": [
+      {
+        "url": "https://www.nifcousa.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001007",
+    "attempts": [
+      {
+        "url": "https://www.owenscorning.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.owenscorning.com/en-us",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001024",
+    "attempts": [
+      {
+        "url": "https://plaskolite.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001048",
+    "attempts": [
+      {
+        "url": "https://primarypackaging.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001090",
+    "attempts": [
+      {
+        "url": "https://www.rowmark.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001093",
+    "attempts": [
+      {
+        "url": "https://www.rtpcompany.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001109",
+    "attempts": [
+      {
+        "url": "https://www.shelterworks.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001110",
+    "attempts": [
+      {
+        "url": "https://www.shepherdcolor.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001117",
+    "attempts": [
+      {
+        "url": "https://packaging.toppan.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001128",
+    "attempts": [
+      {
+        "url": "https://www.storopack.us/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001148",
+    "attempts": [
+      {
+        "url": "https://tekni-plex.com/",
+        "status": "307",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://tekni-plex.com/en",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001385",
+    "attempts": [
+      {
+        "url": "https://www.aexcelcorp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001399",
+    "attempts": [
+      {
+        "url": "https://www.adient.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001403",
+    "attempts": [
+      {
+        "url": "https://www.grahampackaging.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001415",
+    "attempts": [
+      {
+        "url": "https://freshproducts.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001466",
+    "attempts": [
+      {
+        "url": "https://www.henkel-northamerica.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001477",
+    "attempts": [
+      {
+        "url": "https://www.auroramaterialsolutions.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001542",
+    "attempts": [
+      {
+        "url": "https://abrasive-tech.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.abrasive-tech.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001545",
+    "attempts": [
+      {
+        "url": "https://atricure.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001589",
+    "attempts": [
+      {
+        "url": "https://ruscoe.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001605",
+    "attempts": [
+      {
+        "url": "https://clopaydoor.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.clopaydoor.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001606",
+    "attempts": [
+      {
+        "url": "https://haasdoor.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.haasdoor.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001619",
+    "attempts": [
+      {
+        "url": "https://www.soprema.us/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001658",
+    "attempts": [
+      {
+        "url": "https://conseal.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001667",
+    "attempts": [
+      {
+        "url": "https://dudick.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.dudick.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002042",
+    "attempts": [
+      {
+        "url": "https://ha-international.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.ha-international.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002224",
+    "attempts": [
+      {
+        "url": "https://www.arkema.com/usa/en/united-states/production-centers/birdsboro-pa/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002229",
+    "attempts": [
+      {
+        "url": "https://kydex.com/contact-us/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002248",
+    "attempts": [
+      {
+        "url": "https://atlasroofing.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.atlasroofing.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002266",
+    "attempts": [
+      {
+        "url": "https://www.corryrubber.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002281",
+    "attempts": [
+      {
+        "url": "https://www.penncolor.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002294",
+    "attempts": [
+      {
+        "url": "https://polytek.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002350",
+    "attempts": [
+      {
+        "url": "https://vekainc.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.vekainc.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002351",
+    "attempts": [
+      {
+        "url": "https://pulflex.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.pulflex.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002353",
+    "attempts": [
+      {
+        "url": "https://amstabilizers.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002383",
+    "attempts": [
+      {
+        "url": "https://pecora.com/contact-us",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.pecora.com/contact-us",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.pecora.com/contact-us/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002535",
+    "attempts": [
+      {
+        "url": "https://rogersfoam.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.rogersfoam.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002547",
+    "attempts": [
+      {
+        "url": "https://patrickind.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002630",
+    "attempts": [
+      {
+        "url": "https://customprocessingservices.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.customprocessingservices.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002650",
+    "attempts": [
+      {
+        "url": "http://www.rynone.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.rynone.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://rynone.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002694",
+    "attempts": [
+      {
+        "url": "https://pleiger.com/custom-molded-polyurethane/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002701",
+    "attempts": [
+      {
+        "url": "http://www.colorcon.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.colorcon.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002876",
+    "attempts": [
+      {
+        "url": "https://www.hexcel.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002878",
+    "attempts": [
+      {
+        "url": "https://www.aptar.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.aptar.com/en-us",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002879",
+    "attempts": [
+      {
+        "url": "https://www.advansix.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002881",
+    "attempts": [
+      {
+        "url": "https://www.entegris.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002886",
+    "attempts": [
+      {
+        "url": "https://csw.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002890",
+    "attempts": [
+      {
+        "url": "https://www.northann.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002894",
+    "attempts": [
+      {
+        "url": "https://loopindustries.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002905",
+    "attempts": [
+      {
+        "url": "https://www.lightwavelogic.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002910",
+    "attempts": [
+      {
+        "url": "https://www.cpchem.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002924",
+    "attempts": [
+      {
+        "url": "https://colortech.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002932",
+    "attempts": [
+      {
+        "url": "https://us.mitsuichemicals.com/index.htm",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002935",
+    "attempts": [
+      {
+        "url": "https://www.pregis.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002945",
+    "attempts": [
+      {
+        "url": "https://anchorpackaging.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.anchorpackaging.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002955",
+    "attempts": [
+      {
+        "url": "https://www.moderndispersions.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003024",
+    "attempts": [
+      {
+        "url": "https://www.teknorapex.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.teknorapex.com/en-us",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003031",
+    "attempts": [
+      {
+        "url": "https://www.clariant.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.clariant.com/en/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.clariant.com/en/Corporate",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003039",
+    "attempts": [
+      {
+        "url": "https://www.nofamerica.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://nofamerica.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003043",
+    "attempts": [
+      {
+        "url": "https://www.siigroup.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://siigroup.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003082",
+    "attempts": [
+      {
+        "url": "https://nanoxplore.ca",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003083",
+    "attempts": [
+      {
+        "url": "http://www.nouryon.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.nouryon.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003096",
+    "attempts": [
+      {
+        "url": "https://www.yokohamatire.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003100",
+    "attempts": [
+      {
+        "url": "https://www.iacgroup.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://iacgroup.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003120",
+    "attempts": [
+      {
+        "url": "http://www.ashinmold.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.ashinmold.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003122",
+    "attempts": [
+      {
+        "url": "http://www.designtanks.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.designtanks.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003146",
+    "attempts": [
+      {
+        "url": "https://www.printpack.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003149",
+    "attempts": [
+      {
+        "url": "https://www.jowat.com",
+        "status": "307",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.jowat.com/en/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003151",
+    "attempts": [
+      {
+        "url": "https://www.brycecorp.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://brycecorp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003158",
+    "attempts": [
+      {
+        "url": "https://www.paxxus.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://paxxus.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003163",
+    "attempts": [
+      {
+        "url": "https://www.stepan.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003164",
+    "attempts": [
+      {
+        "url": "https://www.toraytpa.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003169",
+    "attempts": [
+      {
+        "url": "https://www.tseind.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://tseind.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003172",
+    "attempts": [
+      {
+        "url": "https://www.dutchland.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003188",
+    "attempts": [
+      {
+        "url": "http://www.heritage-plastics.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.heritage-plastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003194",
+    "attempts": [
+      {
+        "url": "http://www.rextac.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.rextac.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003195",
+    "attempts": [
+      {
+        "url": "https://daikin-america.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003219",
+    "attempts": [
+      {
+        "url": "http://www.covationbio.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.covationbio.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://covationbio.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003273",
+    "attempts": [
+      {
+        "url": "https://www.teel.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003282",
+    "attempts": [
+      {
+        "url": "http://www.wlplastics.com/",
+        "status": "308",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.wlplastics.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003286",
+    "attempts": [
+      {
+        "url": "http://altec.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://altec.com:443/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.altec.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003287",
+    "attempts": [
+      {
+        "url": "http://www.an-cor.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.an-cor.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003316",
+    "attempts": [
+      {
+        "url": "http://www.ips-frp.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://ips-frp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003330",
+    "attempts": [
+      {
+        "url": "https://marvincomposites.com/",
+        "status": "308",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.marvincomposites.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003349",
+    "attempts": [
+      {
+        "url": "http://www.sbravo.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.sbravo.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003420",
+    "attempts": [
+      {
+        "url": "https://westfalltechnik.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003533",
+    "attempts": [
+      {
+        "url": "https://bolderindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003629",
+    "attempts": [
+      {
+        "url": "https://www.cambro.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003666",
+    "attempts": [
+      {
+        "url": "https://playcore.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.playcore.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003742",
+    "attempts": [
+      {
+        "url": "https://currentcomposites.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003930",
+    "attempts": [
+      {
+        "url": "https://www.sonoco.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.sonoco.com/na",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003938",
+    "attempts": [
+      {
+        "url": "http://www.worthenind.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://worthenind.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003948",
+    "attempts": [
+      {
+        "url": "https://www.clarios.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003949",
+    "attempts": [
+      {
+        "url": "https://inchemcorp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003964",
+    "attempts": [
+      {
+        "url": "https://3vsigmausa.com/industries/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003966",
+    "attempts": [
+      {
+        "url": "https://www.hentzen.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003978",
+    "attempts": [
+      {
+        "url": "https://www.republicservices.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003983",
+    "attempts": [
+      {
+        "url": "https://www.croda.com",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.croda.com/en-gb",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004040",
+    "attempts": [
+      {
+        "url": "https://vybond.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004053",
+    "attempts": [
+      {
+        "url": "https://www.sekisuivoltek.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004064",
+    "attempts": [
+      {
+        "url": "http://lavelle.com/about-lavelle",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://lavelle.com/about-lavelle",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004070",
+    "attempts": [
+      {
+        "url": "https://www.efipolymers.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004074",
+    "attempts": [
+      {
+        "url": "https://www.grtrubber.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://grtrubber.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004080",
+    "attempts": [
+      {
+        "url": "https://rahco-rubber.com/about-us/news/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004083",
+    "attempts": [
+      {
+        "url": "https://essind.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.essind.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004090",
+    "attempts": [
+      {
+        "url": "https://www.all-stateind.com/category/blog/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004097",
+    "attempts": [
+      {
+        "url": "https://palladioindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004100",
+    "attempts": [
+      {
+        "url": "https://hydrocomposites.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004105",
+    "attempts": [
+      {
+        "url": "http://www.vendura.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.vendura.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004123",
+    "attempts": [
+      {
+        "url": "https://www.sterlingspec.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004124",
+    "attempts": [
+      {
+        "url": "https://www.ahfproducts.com/en-us",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004135",
+    "attempts": [
+      {
+        "url": "https://www.bemismfg.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004141",
+    "attempts": [
+      {
+        "url": "http://toppindustries.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.toppindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004155",
+    "attempts": [
+      {
+        "url": "https://www.3d-plastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004157",
+    "attempts": [
+      {
+        "url": "https://akwel-automotive.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004162",
+    "attempts": [
+      {
+        "url": "https://www.dunagroup.com/usa/contact-us",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004166",
+    "attempts": [
+      {
+        "url": "https://hobaspipe.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004175",
+    "attempts": [
+      {
+        "url": "http://rhinolinings.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://rhinolinings.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004218",
+    "attempts": [
+      {
+        "url": "https://ncfi.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004223",
+    "attempts": [
+      {
+        "url": "https://coldchaintech.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.coldchaintech.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004227",
+    "attempts": [
+      {
+        "url": "https://baxter.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.baxter.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004234",
+    "attempts": [
+      {
+        "url": "https://atcoflex.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004235",
+    "attempts": [
+      {
+        "url": "https://www.abc-industries.net/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004236",
+    "attempts": [
+      {
+        "url": "https://wilvaco.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004238",
+    "attempts": [
+      {
+        "url": "https://www.polycoatusa.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004253",
+    "attempts": [
+      {
+        "url": "https://www.inliner.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004258",
+    "attempts": [
+      {
+        "url": "https://www.barretteoutdoorliving.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004273",
+    "attempts": [
+      {
+        "url": "https://futurepipe.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004274",
+    "attempts": [
+      {
+        "url": "https://petroleum-containment.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.petroleum-containment.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004282",
+    "attempts": [
+      {
+        "url": "http://www.milkrite-interpuls.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.milkrite-interpuls.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004283",
+    "attempts": [
+      {
+        "url": "https://www.mountvillerubber.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004284",
+    "attempts": [
+      {
+        "url": "https://plasticade.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004286",
+    "attempts": [
+      {
+        "url": "https://www.thombert.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004289",
+    "attempts": [
+      {
+        "url": "https://www.trex.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004295",
+    "attempts": [
+      {
+        "url": "https://keystoneindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004297",
+    "attempts": [
+      {
+        "url": "https://www.aurorium.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004305",
+    "attempts": [
+      {
+        "url": "https://www.andersenwindows.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004306",
+    "attempts": [
+      {
+        "url": "https://blachfordacoustics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004309",
+    "attempts": [
+      {
+        "url": "https://www.flexcon.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004315",
+    "attempts": [
+      {
+        "url": "https://www.pall.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004316",
+    "attempts": [
+      {
+        "url": "https://www.stryten.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004317",
+    "attempts": [
+      {
+        "url": "https://www.strongwell.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004318",
+    "attempts": [
+      {
+        "url": "https://www.wilsonart.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004321",
+    "attempts": [
+      {
+        "url": "https://www.solenis.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.solenis.com/en/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004324",
+    "attempts": [
+      {
+        "url": "https://www.toraypmc.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004327",
+    "attempts": [
+      {
+        "url": "https://chromacolors.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004328",
+    "attempts": [
+      {
+        "url": "https://www.techmerpm.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004338",
+    "attempts": [
+      {
+        "url": "https://greengirt.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004340",
+    "attempts": [
+      {
+        "url": "http://sandiamarble.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.sandiamarble.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004341",
+    "attempts": [
+      {
+        "url": "https://www.rubberband.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004357",
+    "attempts": [
+      {
+        "url": "https://baileyparks.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004358",
+    "attempts": [
+      {
+        "url": "https://belmark.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.belmark.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004359",
+    "attempts": [
+      {
+        "url": "https://www.beltservice.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004369",
+    "attempts": [
+      {
+        "url": "https://channell.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.channell.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004377",
+    "attempts": [
+      {
+        "url": "https://conmet.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004403",
+    "attempts": [
+      {
+        "url": "https://www.viewrail.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004408",
+    "attempts": [
+      {
+        "url": "https://www.hfgp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004417",
+    "attempts": [
+      {
+        "url": "https://gallaghercorp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004427",
+    "attempts": [
+      {
+        "url": "https://www.glasscraft.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://glasscraft.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004428",
+    "attempts": [
+      {
+        "url": "https://elgirubber.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.elgirubber.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004436",
+    "attempts": [
+      {
+        "url": "https://kimototech.com/",
+        "status": "307",
+        "curl_exit": 0
+      },
+      {
+        "url": "http://kimototech.com/home-of-functional-films.html",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://kimototech.com/home-of-functional-films.html",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004443",
+    "attempts": [
+      {
+        "url": "https://www.macleanfogg.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://macleanfogg.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004448",
+    "attempts": [
+      {
+        "url": "https://www.mgsmfg.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004449",
+    "attempts": [
+      {
+        "url": "https://www.microporous.net/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://microporous.net/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004451",
+    "attempts": [
+      {
+        "url": "https://www.mwrco.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://mwrco.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004456",
+    "attempts": [
+      {
+        "url": "https://www.monosol.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004459",
+    "attempts": [
+      {
+        "url": "https://www.newbasis.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004464",
+    "attempts": [
+      {
+        "url": "https://www.omegauvpipe.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004470",
+    "attempts": [
+      {
+        "url": "https://www.plastexmatting.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.plastexmatting.com/us/?__redir=plastexUk",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004472",
+    "attempts": [
+      {
+        "url": "https://www.polyjohn.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004473",
+    "attempts": [
+      {
+        "url": "https://www.daramic.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004486",
+    "attempts": [
+      {
+        "url": "https://ronaldmark.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004491",
+    "attempts": [
+      {
+        "url": "https://scougalrubber.com/",
+        "status": "308",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.scougalrubber.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004497",
+    "attempts": [
+      {
+        "url": "https://soundcoat.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004499",
+    "attempts": [
+      {
+        "url": "http://www.spaceagesynthetics.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.spaceagesynthetics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004500",
+    "attempts": [
+      {
+        "url": "https://special-lite.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004504",
+    "attempts": [
+      {
+        "url": "https://www.everfabbath.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004505",
+    "attempts": [
+      {
+        "url": "http://www.stewartfilmscreen.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.stewartfilmscreen.com/",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.stewartfilmscreen.com/en",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004520",
+    "attempts": [
+      {
+        "url": "https://www.mplcompany.net/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004521",
+    "attempts": [
+      {
+        "url": "https://www.vailrubber.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004539",
+    "attempts": [
+      {
+        "url": "https://epicresins.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.epicresins.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004542",
+    "attempts": [
+      {
+        "url": "https://fabpropolymers.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.fabpropolymers.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004544",
+    "attempts": [
+      {
+        "url": "https://inlandcoatings.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004567",
+    "attempts": [
+      {
+        "url": "https://res-tek.net",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.res-tek.net/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004583",
+    "attempts": [
+      {
+        "url": "https://www.chemence.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://chemence.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004587",
+    "attempts": [
+      {
+        "url": "https://www.kodak.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.kodak.com/en/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004589",
+    "attempts": [
+      {
+        "url": "https://www.futurefuelcorporation.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004590",
+    "attempts": [
+      {
+        "url": "http://www.generalcoatings.net",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://generalcoatings.net/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004592",
+    "attempts": [
+      {
+        "url": "https://www.hydrite.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004601",
+    "attempts": [
+      {
+        "url": "https://www.pflaumer.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://pflaumer.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004605",
+    "attempts": [
+      {
+        "url": "https://proviron.com/america",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://proviron.com/america/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004612",
+    "attempts": [
+      {
+        "url": "https://www.stabond.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004613",
+    "attempts": [
+      {
+        "url": "https://www.stanchem-inc.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004618",
+    "attempts": [
+      {
+        "url": "https://www.volatilefree.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://volatilefree.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000029",
+    "attempts": [
+      {
+        "url": "https://ardl.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000030",
+    "attempts": [
+      {
+        "url": "https://piedmontplastics.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.piedmontplastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000048",
+    "attempts": [
+      {
+        "url": "https://akrochem.com",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.akrochem.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000087",
+    "attempts": [
+      {
+        "url": "https://rainbowrubber.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000096",
+    "attempts": [
+      {
+        "url": "https://g3machinery.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000098",
+    "attempts": [
+      {
+        "url": "https://www.spazzolplastica.it",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000099",
+    "attempts": [
+      {
+        "url": "https://www.materiumtech.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000108",
+    "attempts": [
+      {
+        "url": "https://hpmanufacturing.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.hpmanufacturing.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000118",
+    "attempts": [
+      {
+        "url": "https://gshindustries.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.gshindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000122",
+    "attempts": [
+      {
+        "url": "https://latticecomposites.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000123",
+    "attempts": [
+      {
+        "url": "https://www.anitaplastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000130",
+    "attempts": [
+      {
+        "url": "https://www.peaknano.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000133",
+    "attempts": [
+      {
+        "url": "https://oatey.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.oatey.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000147",
+    "attempts": [
+      {
+        "url": "https://www.chem-materials.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000149",
+    "attempts": [
+      {
+        "url": "http://www.indelco.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.indelco.com/",
+        "status": "500",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000152",
+    "attempts": [
+      {
+        "url": "http://seglian.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://seglian.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000177",
+    "attempts": [
+      {
+        "url": "http://www.sealmaster.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.sealmaster.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000189",
+    "attempts": [
+      {
+        "url": "http://www.gbsa.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.gbsa.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000191",
+    "attempts": [
+      {
+        "url": "https://ohioelastomers.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.ohioelastomers.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000211",
+    "attempts": [
+      {
+        "url": "https://additiveeng.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000232",
+    "attempts": [
+      {
+        "url": "https://www.appliedmedical.net/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000243",
+    "attempts": [
+      {
+        "url": "https://basetek.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000249",
+    "attempts": [
+      {
+        "url": "https://www.bmsburns.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000279",
+    "attempts": [
+      {
+        "url": "https://colonial-machine.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000296",
+    "attempts": [
+      {
+        "url": "https://www.manufactureparts.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000302",
+    "attempts": [
+      {
+        "url": "https://dermamedcoatings.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000306",
+    "attempts": [
+      {
+        "url": "https://dinesol.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.dinesol.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000308",
+    "attempts": [
+      {
+        "url": "https://dottproducts.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000334",
+    "attempts": [
+      {
+        "url": "https://www.everhard.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000339",
+    "attempts": [
+      {
+        "url": "https://www.ferryindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000360",
+    "attempts": [
+      {
+        "url": "https://www.hbchemical.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000362",
+    "attempts": [
+      {
+        "url": "https://www.h-pproducts.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000377",
+    "attempts": [
+      {
+        "url": "https://www.industrialtech.info/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000384",
+    "attempts": [
+      {
+        "url": "https://www.intralox.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000385",
+    "attempts": [
+      {
+        "url": "https://www.itendefense.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000402",
+    "attempts": [
+      {
+        "url": "https://kapco.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000412",
+    "attempts": [
+      {
+        "url": "https://www.ksbi.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000415",
+    "attempts": [
+      {
+        "url": "https://laszeray.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000428",
+    "attempts": [
+      {
+        "url": "https://malishplastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000431",
+    "attempts": [
+      {
+        "url": "https://mercury-plastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000444",
+    "attempts": [
+      {
+        "url": "https://www.mipco.org/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000445",
+    "attempts": [
+      {
+        "url": "https://www.weldmaster.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000446",
+    "attempts": [
+      {
+        "url": "https://www.mmitextiles.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000452",
+    "attempts": [
+      {
+        "url": "https://moldedmarketing.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000470",
+    "attempts": [
+      {
+        "url": "https://novatlc.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000471",
+    "attempts": [
+      {
+        "url": "https://www.novisworks.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000478",
+    "attempts": [
+      {
+        "url": "https://pace-equipment.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000480",
+    "attempts": [
+      {
+        "url": "https://www.palmerholland.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000487",
+    "attempts": [
+      {
+        "url": "https://pfccases.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000505",
+    "attempts": [
+      {
+        "url": "https://www.poly-source.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000531",
+    "attempts": [
+      {
+        "url": "https://www.q-lab.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000541",
+    "attempts": [
+      {
+        "url": "https://rdabbott.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000563",
+    "attempts": [
+      {
+        "url": "https://www.scottbader.com/north-america/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000570",
+    "attempts": [
+      {
+        "url": "https://www.shiniusa.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000573",
+    "attempts": [
+      {
+        "url": "https://siliconesolutions.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000601",
+    "attempts": [
+      {
+        "url": "https://www.tth.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000603",
+    "attempts": [
+      {
+        "url": "https://teslanano.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000610",
+    "attempts": [
+      {
+        "url": "https://www.towersurfaces.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000641",
+    "attempts": [
+      {
+        "url": "https://zeigerindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000660",
+    "attempts": [
+      {
+        "url": "https://www.alliance-innovations.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000830",
+    "attempts": [
+      {
+        "url": "https://extolohio.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000832",
+    "attempts": [
+      {
+        "url": "https://fabohio.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000883",
+    "attempts": [
+      {
+        "url": "https://hubplastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000909",
+    "attempts": [
+      {
+        "url": "https://jericoplastic.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000951",
+    "attempts": [
+      {
+        "url": "https://mdplastics.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001133",
+    "attempts": [
+      {
+        "url": "https://www.superbindustries.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001329",
+    "attempts": [
+      {
+        "url": "https://www.shrinktape.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001396",
+    "attempts": [
+      {
+        "url": "https://surefootcorp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001404",
+    "attempts": [
+      {
+        "url": "https://www.deflecto.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001475",
+    "attempts": [
+      {
+        "url": "https://chromascape.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001497",
+    "attempts": [
+      {
+        "url": "https://budzar.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.budzar.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001505",
+    "attempts": [
+      {
+        "url": "https://visionairsolutions.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.visionairsolutions.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001515",
+    "attempts": [
+      {
+        "url": "https://s4medical.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.s4medical.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001523",
+    "attempts": [
+      {
+        "url": "https://centerlinebiomedical.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001551",
+    "attempts": [
+      {
+        "url": "https://volk.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.volk.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001558",
+    "attempts": [
+      {
+        "url": "https://myrava.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.myrava.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001570",
+    "attempts": [
+      {
+        "url": "https://www.ghsp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001573",
+    "attempts": [
+      {
+        "url": "https://www.prc-saltillo.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://prc-saltillo.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001581",
+    "attempts": [
+      {
+        "url": "https://epacflexibles.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001640",
+    "attempts": [
+      {
+        "url": "https://m-line.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001668",
+    "attempts": [
+      {
+        "url": "https://durablecorp.com/",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.durablecorp.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001670",
+    "attempts": [
+      {
+        "url": "https://enpac.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001672",
+    "attempts": [
+      {
+        "url": "https://flashitllc.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001740",
+    "attempts": [
+      {
+        "url": "https://autotechnology.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001769",
+    "attempts": [
+      {
+        "url": "https://adherexpackaging.com",
+        "status": "302",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.adherexpackaging.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001779",
+    "attempts": [
+      {
+        "url": "https://americansignproducts.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001856",
+    "attempts": [
+      {
+        "url": "https://novationsi.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001869",
+    "attempts": [
+      {
+        "url": "https://prolineautomation.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://www.prolineautomation.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001877",
+    "attempts": [
+      {
+        "url": "https://qualityplasticsllc.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001878",
+    "attempts": [
+      {
+        "url": "https://qubeinc.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001936",
+    "attempts": [
+      {
+        "url": "https://rotocastmold.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002068",
+    "attempts": [
+      {
+        "url": "https://www.chemstress.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002135",
+    "attempts": [
+      {
+        "url": "https://www.appliedspecialties.com",
+        "status": "301",
+        "curl_exit": 0
+      },
+      {
+        "url": "https://appliedspecialties.com/",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004026",
+    "attempts": [
+      {
+        "url": "https://www.andersonintl.com",
+        "status": "200",
+        "curl_exit": 0
+      }
+    ]
+  }
+]

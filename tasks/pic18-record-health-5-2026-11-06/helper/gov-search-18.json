@@ -1,0 +1,24 @@
+{
+  "org_ids": [
+    "ORG-001747",
+    "ORG-001794",
+    "ORG-001836",
+    "ORG-001920"
+  ],
+  "queries": [
+    {
+      "q": "\"P3 Infrastructure\" Stow (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Dal-Little Fabricating\" Cleveland (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Johnsonite\" Chagrin Falls (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Lawrence Machine\" Massillon (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "63cc59cb599745b1c074f7e3f8039331f6abcb1cf40c820187e479eb52ed7f8a",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}

@@ -1,0 +1,88 @@
+{
+  "main_base": "acfd2e2766d7dbbf857b0f21d15d9d8c67c9dc8d",
+  "prior_worked": 140,
+  "selected": 100,
+  "future_unworked": 579,
+  "selection": "next100 frozen indices101\u2013217 excluding prior140",
+  "fills": 6,
+  "holds": 94,
+  "tiers": {
+    "C": 5,
+    "U": 1
+  },
+  "source_class": "registry",
+  "source_url": "https://echo.epa.gov/files/echodownloads/echo_exporter.zip",
+  "source_download_date": "2026-11-06T13:12:33.594168+00:00",
+  "source_is_address_effective_date": false,
+  "bulk_queries": 1586,
+  "bulk_returned_observations": 50,
+  "bulk_site_id_bindings": 28,
+  "bulk_registry_ids": 26,
+  "initial_rest_registry_ids": 11,
+  "initial_rest_ok": 10,
+  "active_ohio_sites": 1883,
+  "before_streets": 415,
+  "after_streets": 421,
+  "site_changes": [
+    {
+      "site_id": "SITE-000195",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000208",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000246",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000357",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000365",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000379",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "EVD-153108",
+    "EVD-153112",
+    "EVD-153126",
+    "EVD-153179",
+    "EVD-153184",
+    "EVD-153191"
+  ],
+  "canonical_hashes": {
+    "sites_OH.csv": "a3849a0cbd60922a7b085ad44b97221df64fd55a6fd292e7f6e1e21500e45bf6",
+    "evidence_sites_OH.csv": "ed36fa1c19934f62e5ce1a4610b4a0bc92ac7883b80701afb7f31fe8de6cddeb"
+  },
+  "replayed_main": "c909f6bb855f2044f963a1165c3a8703d33031b0",
+  "retired_ids": [
+    "EVD-153109"
+  ],
+  "strict_subset_of": "cfa528e12a2fded3d644fa0f7a0da9b6ce2b5582",
+  "remaining_authored_values_identical": true
+}

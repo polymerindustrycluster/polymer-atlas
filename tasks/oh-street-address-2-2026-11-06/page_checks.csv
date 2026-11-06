@@ -1,0 +1,129 @@
+org_id,url,outcome,address_blocks,error
+ORG-000002,https://www.lubrizol.com,unavailable,0,HTTP/transport failure 56
+ORG-000004,https://www.parker.com,unavailable,0,HTTP/transport failure 56
+ORG-000005,https://www.dayglo.com,fetched,0,
+ORG-000005,https://www.dayglo.com/contact-us/,fetched,2,
+ORG-000007,https://www.vibrantz.com,fetched,0,
+ORG-000007,https://vibrantz.com/global-locations,fetched,0,
+ORG-000007,https://vibrantz.com/our-company/global-locations/,fetched,0,
+ORG-000007,https://vibrantz.com/global-locations/,fetched,0,
+ORG-000007,https://vibrantz.com/contact-us/,fetched,0,
+ORG-000008,https://www.struktol.com,fetched,0,
+ORG-000008,https://www.struktol.com/about-us/locations/,fetched,2,
+ORG-000008,https://www.struktol.com/contact-us/,fetched,2,
+ORG-000008,https://www.struktol.com/about-us/locations/worldwide/,fetched,1,
+ORG-000008,https://www.struktol.com/contact-us/sds-request/,fetched,0,
+ORG-000009,https://www.myersindustries.com,fetched,0,
+ORG-000009,https://www.myersindustries.com/contact-us/,fetched,1,
+ORG-000010,https://www.geon.com,fetched,0,
+ORG-000010,https://www.geon.com/locations,fetched,0,
+ORG-000011,https://bridgestoneamericas.com,fetched,0,
+ORG-000011,https://www.bridgestoneamericas.com/fr_CA/press-release-details.en.2021.bridgestone-continued-investment-in-akron-campus,fetched,0,
+ORG-000011,https://bridgestoneamericas.com/en/contact-us/locations/administrative-offices,fetched,0,
+ORG-000011,https://bridgestoneamericas.com/en/contact-us/write-to-us,fetched,0,
+ORG-000011,https://bridgestoneamericas.com/en/newsroom/media-contacts,fetched,0,
+ORG-000015,https://daextrusion.com,fetched,0,
+ORG-000015,https://daextrusion.com/,fetched,0,
+ORG-000015,https://daextrusion.com/contact-us/,fetched,0,
+ORG-000018,https://theacerubber.com,fetched,2,
+ORG-000018,https://theacerubber.com/,fetched,2,
+ORG-000035,https://saint-gobain.com,unavailable,0,HTTP/transport failure 56
+ORG-000037,https://hkbenterprises.com,unavailable,0,HTTP/transport failure 60
+ORG-000038,https://pioneerplasticscorp.com,fetched,0,
+ORG-000038,https://pioneerplasticscorp.com/contact,fetched,1,
+ORG-000039,https://landmarkplastic.com,fetched,1,
+ORG-000039,https://landmarkplastic.com/,fetched,1,
+ORG-000039,https://landmarkplastic.com/Contact,fetched,2,
+ORG-000043,https://alterra360.com/,unavailable,0,HTTP/transport failure 56
+ORG-000044,https://apvcoatings.com,unavailable,0,HTTP/transport failure 56
+ORG-000044,https://apvcoatings.com/,unavailable,0,HTTP/transport failure 56
+ORG-000047,https://smithers.com,unavailable,0,HTTP/transport failure 56
+ORG-000047,https://www.smithers.com/en-gb/industries/materials/plastic,unavailable,0,HTTP/transport failure 56
+ORG-000048,https://akrochem.com,fetched,0,
+ORG-000048,https://akrochem.com/locations.php,fetched,3,
+ORG-000048,https://akrochem.com/contact.php,fetched,1,
+ORG-000050,https://synthomer.com,fetched,0,
+ORG-000050,https://synthomer.com/about-us/global-locations/,fetched,0,
+ORG-000050,https://synthomer.com/contact-us/,fetched,0,
+ORG-000050,https://synthomer.com/investor-relations/investor-relations-contacts/,fetched,0,
+ORG-000050,https://synthomer.com/markets-and-products/consumer-materials/contact-us/,fetched,0,
+ORG-000051,https://continental-industry.com,fetched,0,
+ORG-000052,https://harwickstandard.com,unavailable,0,HTTP/transport failure 28
+ORG-000056,https://cfextrusion.com,fetched,0,
+ORG-000058,https://steelastic.com,unavailable,0,HTTP/transport failure 56
+ORG-000058,https://steelastic.com/,unavailable,0,HTTP/transport failure 56
+ORG-000060,https://esterle.com,fetched,1,
+ORG-000060,https://esterle.com/contact,fetched,1,
+ORG-000061,https://ferriot.com,fetched,0,
+ORG-000061,https://ferriot.com/,fetched,0,
+ORG-000070,https://plasticmaterialsinc.com,unavailable,0,HTTP/transport failure 35
+ORG-000071,https://milesrubber.com,fetched,0,
+ORG-000071,http://milesrubber.com/,fetched,0,
+ORG-000071,https://milesrubber.com/contact-us,fetched,1,
+ORG-000071,http://milesrubber.com/contact-us,fetched,1,
+ORG-000072,https://cimaplastics.com,fetched,1,
+ORG-000072,https://cimaplastics.com/contact.shtml,fetched,1,
+ORG-000074,https://mrpsolutions.com/,fetched,0,
+ORG-000074,https://mrpsolutions.com/contact-us,fetched,1,
+ORG-000075,https://industrialmold.com,fetched,1,
+ORG-000075,http://www.industrialmold.com/Home.html,fetched,1,
+ORG-000075,https://industrialmold.com/contact_us.html,fetched,0,
+ORG-000075,http://www.industrialmold.com/contact_us.html,fetched,0,
+ORG-000076,https://crownmold.net,unavailable,0,HTTP/transport failure 28
+ORG-000076,https://crownmold.net/,unavailable,0,HTTP/transport failure 28
+ORG-000077,https://mantaline.com,fetched,0,
+ORG-000077,https://www.mantaline.com/contact-us/,fetched,0,
+ORG-000078,https://gi-de.com,fetched,0,
+ORG-000078,https://gi-de.com/en/locations,fetched,0,
+ORG-000078,https://gi-de.com/en/contact,fetched,0,
+ORG-000078,https://gi-de.com/en/contact/contact-of-security-emergency-response-team,fetched,0,
+ORG-000079,https://generalplastex.com,fetched,0,
+ORG-000081,https://novexinc.com,fetched,2,
+ORG-000081,https://novexinc.com/contact-us/,fetched,2,
+ORG-000082,https://merryweather.com,fetched,1,
+ORG-000082,https://merryweather.com/,fetched,1,
+ORG-000083,https://mdayinc.com,fetched,2,
+ORG-000083,https://mdayinc.com/,fetched,2,
+ORG-000083,https://mdayinc.com/contact,fetched,2,
+ORG-000083,https://mdayinc.com/contact-1,fetched,1,
+ORG-000085,https://ohioprecisionmolding.com,unavailable,0,redirect leaves held operator host
+ORG-000085,https://ohioprecisionmolding.com/,unavailable,0,redirect leaves held operator host
+ORG-000086,https://rubberassociates.com,fetched,1,
+ORG-000086,https://www.rubberassociates.com/,fetched,1,
+ORG-000087,https://rainbowrubber.com,fetched,1,
+ORG-000087,https://rainbowrubber.com/our-story/,fetched,1,
+ORG-000092,https://ohiorubbergroup.org,fetched,0,
+ORG-000092,https://www.ohiorubbergroup.org/contact-us/,fetched,0,
+ORG-000101,http://www.polymericsinc.com,fetched,1,
+ORG-000106,https://www.pharoplast.com/,unavailable,0,HTTP/transport failure 56
+ORG-000106,https://pharoplast.com/contact/,unavailable,0,HTTP/transport failure 56
+ORG-000107,http://www.tmplasticsusa.com,fetched,0,
+ORG-000108,https://hpmanufacturing.com,fetched,1,
+ORG-000108,https://hpmanufacturing.com/contact,fetched,2,
+ORG-000108,https://www.hpmanufacturing.com/contact/,fetched,2,
+ORG-000110,https://teamplasticsinc.com/,fetched,2,
+ORG-000110,https://teamplasticsinc.com/contact-us/,fetched,1,
+ORG-000110,https://teamplasticsinc.com/contact-us,fetched,1,
+ORG-000112,https://tricomachine.com,fetched,1,
+ORG-000113,https://customrubbercorp.com,fetched,1,
+ORG-000113,https://customrubbercorp.com/contact-us.aspx,fetched,2,
+ORG-000115,http://www.cuyahogaplastics.com/,unavailable,0,HTTP/transport failure 22
+ORG-000116,https://www.amdplastics.com/,unavailable,0,HTTP/transport failure 60
+ORG-000117,https://noramcobag.com,fetched,0,
+ORG-000117,https://noramcobag.com/,fetched,0,
+ORG-000117,https://noramcobag.com/contact-us/,fetched,1,
+ORG-000118,https://gshindustries.com,fetched,2,
+ORG-000118,https://www.gshindustries.com/contact-us/,fetched,2,
+ORG-000124,https://primeconduit.com,unavailable,0,HTTP/transport failure 56
+ORG-000126,https://cpipp.com/,fetched,2,
+ORG-000126,https://cpipp.com/contact-us/,fetched,3,
+ORG-000130,https://www.peaknano.com,fetched,0,
+ORG-000130,https://www.peaknano.com/contact-us,fetched,0,
+ORG-000133,https://oatey.com,fetched,0,
+ORG-000133,https://oatey.com/contact,fetched,0,
+ORG-000134,https://novagard.com,fetched,1,
+ORG-000134,https://novagard.com/contact-us/,fetched,2,
+ORG-000136,https://rotopolymers.com,fetched,0,
+ORG-000136,https://www.rotopolymers.com/contact-us,fetched,0,
+ORG-000145,https://plasticsmg.com,unavailable,0,HTTP/transport failure 56
+ORG-000150,http://nslanalytical.com/,unavailable,0,HTTP/transport failure 22

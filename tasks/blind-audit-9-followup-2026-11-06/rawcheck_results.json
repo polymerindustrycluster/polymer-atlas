@@ -1,0 +1,450 @@
+{
+  "checked_quote_observations": 32,
+  "held_out_citations": [],
+  "attempted_routes": 117,
+  "raw_bodies_verified": 81,
+  "unarchived_discovery_or_failed_routes": [
+    {
+      "site_id": "SITE-019001",
+      "url": "web-search://search_query?q=Pella%20Macomb%20%22111%22%20vinyl%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-019001",
+      "url": "web-search://search_query?q=site%3Apella.com%20Macomb%20wood%20windows%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-019009",
+      "url": "web-search://search_query?q=Storopack%20%22320%20Craig%22%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-019009",
+      "url": "web-search://search_query?q=site%3Astoropack.us%20Hillside%20production%20loose%20fill",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-019009",
+      "url": "web-search://search_query?q=%22Storopack%22%20%22Hillside%22%20%22manufacturing%22%20-site%3Adnb.com%20-site%3Aindustrynet.com",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-019009",
+      "url": "web-search://search_query?q=%22Storopack%22%20%22Hillside%22%20%22extrusion%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "web-search://search_query?q=Lacks%20%225801%20Kraft%22%20plastic",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "web-search://search_query?q=site%3Alacksenterprises.com%20%22Kraft%22%20mold",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "web-search://search_query?q=%225801%20Kraft%22%20injection%20molding%20certificate",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "web-search://search_query?q=%22Kraft%20Mold%22%20plastics%20injection%20Lacks",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "web-search://search_query?q=site%3Alacksenterprises.com%20%225801%22%20%22certificate%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "web-search://search_query?q=%225801%20Kraft%22%20%22injection%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "web-search://search_query?q=Heritage%20Bag%20%2212320%22%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "web-search://search_query?q=site%3Aheritage-bag.com%20Rancho%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "web-search://search_query?q=%22Heritage%22%20%22Rancho%22%20%22extrusion%22%20Novolex",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "web-search://search_query?q=%22Novolex%22%20%22Rancho%20Cucamonga%22%20%22extrusion%22%20careers",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "web-search://search_query?q=%22Hilex%22%20%22500%22%20%22Ellis%22%20Jacksonville",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "web-search://search_query?q=site%3Anovolex.com%20Jacksonville%20Hilex%20extrusion",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "web-search://search_query?q=site%3Anovolex.com%20Jacksonville%20%22extrusion%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "web-search://search_query?q=%22Hilex%22%20%22Jacksonville%22%20%22extruder%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "web-search://search_query?q=site%3Acareers.novolex.com%20Jacksonville%20extrusion%20operator",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "web-search://search_query?q=%22Sealed%20Air%22%20%225135%22%20Lakeland%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "web-search://search_query?q=site%3Asealedair.com%20Lakeland%20manufacturing%20Drane",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "web-search://search_query?q=site%3Asealedair.com%20%22Lakeland%22%20%22bubble%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "web-search://search_query?q=site%3Ajobs.sealedair.com%20Lakeland%20mailer%20operator",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "web-search://search_query?q=%22Sealed%20Air%22%20%22Lakeland%22%20%22manufacturing%22%20plant",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "web-search://search_query?q=%22Sealed%20Air%22%20%225135%22%20site%3Ajobs.sealedair.com",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016015",
+      "url": "web-search://search_query?q=%22Storopack%22%20%22Medley%22%20manufacturing",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016015",
+      "url": "web-search://search_query?q=site%3Astoropack.us%20Medley%20production%20loose%20fill",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016015",
+      "url": "web-search://search_query?q=%22Storopack%22%20%22Medley%22%20%22production%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016015",
+      "url": "web-search://search_query?q=%22Storopack%22%20%22Medley%22%20%22extrusion%22",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "web-search://search_query?q=%22GAF%22%20%222100%20Steeda%22%20TPO",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "web-search://search_query?q=site%3Agaf.com%20Valdosta%20plant%202025%20TPO%20opened",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "web-search://search_query?q=site%3Agaf.com%20Valdosta%2031601%2031606%202100",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "web-search://search_query?q=GAF%20Valdosta%20%22opened%22%20%222024%22%20industrial%20authority",
+      "status": "discovery_only",
+      "reason": "Search tool discovery; response not archived as fetched source body; never used as positive evidence. Timestamp is logging time."
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+      "status": "403_web_open",
+      "reason": "Web open failed 403; empty body not archived. Separate from successful curl route."
+    }
+  ],
+  "quotes": [
+    {
+      "site_id": "SITE-019001",
+      "url": "https://pressroom.pella.com/pella-celebrates-its-next-generation-of-leaders/",
+      "quote": "Last year I worked on vinyl doors in Macomb; now I\u2019m focused on the flow of wood sliding and hinge doors through production in Pella.",
+      "raw": "yes",
+      "sha256": "eec2d3b44345983ca9bcf1076312fc78e5456e70b827264d2c039f1f5621546e"
+    },
+    {
+      "site_id": "SITE-019001",
+      "url": "https://business.macombareachamber.com/list/member/pella-corporation-374",
+      "quote": "Pella Corporation Categories Manufacturing 111 Pella Pl. Macomb IL 61455",
+      "raw": "yes",
+      "sha256": "418928df83ecfe192cfdecef89b9c553b7a160c6e17806d861a7391e42a1e086"
+    },
+    {
+      "site_id": "SITE-019009",
+      "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+      "quote": "Chicago (Packaging) Storopack Inc. 320 Craig Place Hillside, Illinois 60162",
+      "raw": "yes",
+      "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27"
+    },
+    {
+      "site_id": "SITE-016015",
+      "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+      "quote": "Miami (Packaging) Storopack Inc. 11825 N.W.100th Road, Suite 4 Medley, Florida 33178",
+      "raw": "yes",
+      "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27"
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "https://lacksenterprises.com/wp-content/uploads/2025/02/P-C-Lacks-Supplier-Manualv.250203.pdf",
+      "quote": "Appendix A \u2013 Added LTS - Paint Central, Kraft Mold; PPL - DC",
+      "raw": "yes",
+      "sha256": "4e7741aed9e62cab7bdc63d1df41177bd5264a753be581ef4221d1e985849ec5"
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "https://novolex.com/pages.php?pageid=101",
+      "quote": "Jacksonville (Hilex) 500 N. Ellis Rd., Suite A, Jacksonville, FL 32254",
+      "raw": "yes",
+      "sha256": "3a5cdd9d5808e47ed03021c9c31bb2b07dad3bfb978866e27677fdd25bccd7d5"
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "https://novolex.com/content/PDF/Novolex-Supplier-Onboarding-FAQ.pdf",
+      "quote": "HILEX 500 ELLIS RD N STE A JACKSONVILLE FL 32254-2843 US",
+      "raw": "yes",
+      "sha256": "15abaa17578cffa8bad745ee1bb5b2b9de8ea756a7945f8eb45bb8fee85928c6"
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+      "quote": "Valdosta, GA \u2014 Coming Soon",
+      "raw": "yes",
+      "sha256": "540c781381b0ca1105b57a905f7de836ac425f6b6a48e9120f2caa629426e129"
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+      "quote": "2100 Steeda Way, Valdosta, GA 31606",
+      "raw": "yes",
+      "sha256": "540c781381b0ca1105b57a905f7de836ac425f6b6a48e9120f2caa629426e129"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://novolex.com/pages.php?pageid=101",
+      "quote": "Rancho Cucamonga (Heritage) 12320 Fourth St Rancho Cucamonga, CA 91730",
+      "raw": "yes",
+      "sha256": "6eb2a7c708fe68ef994f56b67e2a63e870e5f7e54bb801ad8fc5d77c84c8ddb6"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://files.ceqanet.lci.ca.gov/265020-3/attachment/asDIyxasBHOFATlXQOmeEpQysSnhxSEbUUMmlO4iFsdAxn2z3VlcB9q85fawfkDPVIemgExYzKWfrHrT0",
+      "quote": "The Heritage Bag manufacturing facility is the nearest industrial/commercial receptor, which is located approximately 120 feet west of the Project site\u2019s western boundary at 12320 4th Street.",
+      "raw": "yes",
+      "sha256": "b8a02b49149d4851821a5735efab0e8cd66d1ebe14cbed615aaa6e43dbc4afc9"
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "https://diversityjobs.com/career/18768823/Operator-Mailer-Night-Shift-Florida-Lakeland",
+      "quote": "United States, Florida, Lakeland 5135 Drane Field Road",
+      "raw": "yes",
+      "sha256": "94e23c53061872d7b3f5f92ca69bb91db87ae2b38e0acdf74b642d6a8e0c4206"
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "https://diversityjobs.com/career/18768823/Operator-Mailer-Night-Shift-Florida-Lakeland",
+      "quote": "Operators are responsible for the safe and efficient operation of assigned machinery throughout their shift. This includes production, quality control, documentation, material handling, housekeeping, and basic equipment maintenance in accordance with company standards.",
+      "raw": "yes",
+      "sha256": "94e23c53061872d7b3f5f92ca69bb91db87ae2b38e0acdf74b642d6a8e0c4206"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://corkindustries.net/",
+      "quote": "Jacksonville, Florida Lab & Manufacture 5555 W. Beaver St Jacksonville, FL 32254",
+      "raw": "yes",
+      "sha256": "1b82c64d2d9807043de8fe745dd9c099346a44c04fbe27bd200689606d984aa2"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://corkindustries.net/",
+      "quote": "Cork is an Industry Leader in the Formulation of Sustainable Aqueous, UV, and EB Coatings, Varnishes, Adhesives, and UV inks for Graphic Arts and Packaging.",
+      "raw": "yes",
+      "sha256": "1b82c64d2d9807043de8fe745dd9c099346a44c04fbe27bd200689606d984aa2"
+    },
+    {
+      "site_id": "SITE-019002",
+      "url": "https://www.oshrc.gov/wp-content/uploads/08-1554.pdf",
+      "quote": "Reynolds Packaging KAMA, Inc., (Reynolds), manufactures oriented polystyrene sheet for use in food packaging at its facility in Manteno, Illinois.",
+      "raw": "yes",
+      "sha256": "06fc4cf749c3c7eeba82b8fc259c6a20bf281fd9b43312341c3b4eef73962b0a"
+    },
+    {
+      "site_id": "SITE-019002",
+      "url": "https://apps.dot.illinois.gov/eplan/desenv/082214/66429-015/66429-015.pdf",
+      "quote": "1050 Sycamore Road",
+      "raw": "yes",
+      "sha256": "fae57ca171e8a3a0d9f13b7dcf9d1331b881a2c0bcdd6b15aabea6508e83d712"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://www.myjournalcourier.com/news/article/jacksonville-reynolds-solar-project-19961647.php",
+      "quote": "Jacksonville Plan Commission agreed to recommend a proposed zoning change for the Reynolds Consumer Products plant at 2226-2230 E. Morton Ave. to the council at its Wednesday meeting.",
+      "raw": "yes",
+      "sha256": "19abc5f57b90277bb6c960acdfdb65e51231ce7401c8343655a5a3b056c29bac"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.dir.ca.gov/oshab/DECISIONS-ALJ/2020/1195278-Nusil-Technology.pdf",
+      "quote": "NuSil Technology, LLC (Employer) is a manufacturer of medical devices and components.",
+      "raw": "yes",
+      "sha256": "351a875e2ee25dc5d9ea2dbb4a9fecfd9aa86d6a455766c4ea2924fbc198dd9e"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.dir.ca.gov/oshab/DECISIONS-ALJ/2020/1195278-Nusil-Technology.pdf",
+      "quote": "2343 Pegasus Drive in Bakersfield, California",
+      "raw": "yes",
+      "sha256": "351a875e2ee25dc5d9ea2dbb4a9fecfd9aa86d6a455766c4ea2924fbc198dd9e"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.ewlerp.com/___country___/uploadedfile/rawmaterial/cb/CES-1104%20-%20COMPOSITION.pdf",
+      "quote": "MANUFACTURER NuSil Technology LLC 1050 Cindy Lane, Carpinteria and 2343 Pegasus Road, Bakersfield California, USA",
+      "raw": "yes",
+      "sha256": "f201a12f1abb44b23ef6157a3226304a77b77715b096019ce45241fa018d57fb"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.sigmaplasticsgroup.com/location/mercury-plastics-inc-ca/",
+      "quote": "Mercury Plastics, Inc. is a vertically integrated custom manufacturer who extrudes mono and co-ex layer polyethylene films",
+      "raw": "yes",
+      "sha256": "eda7a4424fc88e18004a742c6bf5dbf2ba5e9dac9c867643beec16c246174193"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.sigmaplasticsgroup.com/location/mercury-plastics-inc-ca/",
+      "quote": "Address: 14825 Salt Lake Ave, City of Industry, CA 91746",
+      "raw": "yes",
+      "sha256": "eda7a4424fc88e18004a742c6bf5dbf2ba5e9dac9c867643beec16c246174193"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://fire.lacounty.gov/wp-content/uploads/2023/07/CUPA-List-Active-7.11.23.pdf",
+      "quote": "MERCURY PLASTICS INC 14849 SALT LAKE AVE INDUSTRY 91746",
+      "raw": "yes",
+      "sha256": "37b69b51ac75cb98ef1a8eef3011dd2b3e5a11b6dab7d4fde6c33631229346f3"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://www.fxi.com/what-we-do",
+      "quote": "Miami, FL",
+      "raw": "yes",
+      "sha256": "ffb5d19e96b616b1f8988825a931e987a87e26aa83ee5120acb1698c0ca80f6c"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://www.fxi.com/what-we-do",
+      "quote": "With 33 facilities across the U.S. and Mexico, our robust manufacturing network reduces lead time and logistics costs.",
+      "raw": "yes",
+      "sha256": "ffb5d19e96b616b1f8988825a931e987a87e26aa83ee5120acb1698c0ca80f6c"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://diversityjobs.com/career/18293668/Machine-Operator-Florida-Miami",
+      "quote": "Conducts set-up and operates a variety of fabricating devices",
+      "raw": "yes",
+      "sha256": "85cd1529755bfd015cb8f91cd5c3938e84e95d5b91e7eaa819eab01eebdf7754"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://epd.georgia.gov/document/document/08900097narpdf/download",
+      "quote": "This facility manufactures cups and food containers from expanded polystyrene.",
+      "raw": "yes",
+      "sha256": "e5e2fbedda7cdadfb55d192f88781f6180a1d4757d3ed140f3f23f265760ea4c"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://epd.georgia.gov/document/document/08900097narpdf/download",
+      "quote": "4640 Lewis Road Stone Mountain, Georgia, 30083 DeKalb County",
+      "raw": "yes",
+      "sha256": "e5e2fbedda7cdadfb55d192f88781f6180a1d4757d3ed140f3f23f265760ea4c"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://epd.georgia.gov/document/document/08900097notpdf/download",
+      "quote": "This facility manufactures cups and food containers from expanded polystyrene.",
+      "raw": "yes",
+      "sha256": "3b3e36d1fbeae50a4153d3864aeb72d87605304ac8367621d11a517620699e9c"
+    },
+    {
+      "site_id": "SITE-016116",
+      "url": "https://www.talent.com/view?id=625134914376697815",
+      "quote": "Location Address: 6220 Duquesne Drive, Atlanta, Georgia 30336",
+      "raw": "yes",
+      "sha256": "d4ee6f2b4c0ba58508e0ebd306294f2050175ee0272c952f032e96f9e36d7189"
+    },
+    {
+      "site_id": "SITE-016116",
+      "url": "https://www.talent.com/view?id=625134914376697815",
+      "quote": "The Machine Operator will operate blow-mold/PET/injection molding machines, grinders, trimmer machines, and conveyor systems.",
+      "raw": "yes",
+      "sha256": "d4ee6f2b4c0ba58508e0ebd306294f2050175ee0272c952f032e96f9e36d7189"
+    }
+  ]
+}

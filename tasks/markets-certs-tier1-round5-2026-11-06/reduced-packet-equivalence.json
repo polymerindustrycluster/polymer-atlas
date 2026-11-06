@@ -1,0 +1,14 @@
+{
+  "prior_reviewed_head": "c153963",
+  "integration_main": "4d7a67ab3fa7d6c348637f359c4557e8f85c4201",
+  "sole_withdrawal": "ORG-002698 construction_building_products / proposed EVD-240501",
+  "remaining_216_full_evidence_rows_and_shards_equal": true,
+  "other_org_values_equal": true,
+  "sole_input_changed_index": 1,
+  "build_check_guard_fetch_frame_unchanged": true,
+  "unused_evidence_ids": [
+    "EVD-240501",
+    "EVD-240684",
+    "EVD-240714\u2013240723"
+  ]
+}
