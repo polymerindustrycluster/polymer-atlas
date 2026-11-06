@@ -150,8 +150,8 @@ def main():
                 if PERSONAL.search(detail):
                     detail = ""
                 partial = "" if L.get("complete") else " The organizer's list was not read to the end (partial)."
-                pre = " Pre-show list, still filling as of the evidence date." if role == "exhibitor" and \
-                    str(ed.get("start", "")) > d["retrieved"] else ""
+                pre = " Pre-show list, still filling as of the evidence date." \
+                    if str(ed.get("start", "")) > d["retrieved"] else ""
                 e = events[ev]
                 rows.append({
                     "participation_id": f"EVP-{nxt:06d}", "event_id": ev, "org_id": org, "edition_year": yr,
