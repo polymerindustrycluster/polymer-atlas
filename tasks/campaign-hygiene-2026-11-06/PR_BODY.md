@@ -4,6 +4,6 @@ Carries nine missing postmerge receipt patches; skips two receipts already on ma
 
 Checks: task check reconciles frozen PR state/branch/date, earlier queue prefix, all receipt patches and protected paths; count sources reconcile unique/disjoint rows; wrong status and non-receipt paths refuse; builder byte-idempotent; validate.py zero errors. Remaining holds:4tombstone site rows,155Tier1organization rows/197overlapping gaps,6202archive evidence rows,221HQorganization rows,1559activeOHsite rows missing streets, all with filters/as-of caveats in README. These overlap other claims and are not an additive workload count.
 
-Codex/Grok deep short-queue refutes pending; draft. Historical producer checks, private outreach/source lists, source availability and hosted deployment were not rechecked.
+Codex6 APPROVEd0ce849 and Grok5 APPROVEe31a32b (unchanged technical payload), zero findings. Both reproduced the frozen-state/receipt/count checks. Later receipts change documentation/manifests only; controller owns merge/status. Historical producer checks, private outreach/source lists, source availability and hosted deployment were not rechecked.
 
 🤖 Generated with Codex (bb child of thr_9i2c6byhcz)
