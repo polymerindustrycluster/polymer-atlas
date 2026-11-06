@@ -22,6 +22,11 @@ def plan(data):
     assert len({r['lead_id'] for r in verdicts}) == 26
     assert {r['cluster_id'] for r in inputs} == {r['lead_id'] for r in verdicts}
     assert all(r['verdict'] in {'VERIFIED', 'DUPLICATE_OF', 'REJECT', 'STILL_UNCERTAIN'} for r in verdicts)
+    evidence = read(HERE / 'evidence_rows.csv')
+    for site in read(HERE / 'creates_sites.csv'):
+        assert any(r['record_table'] == 'sites' and r['record_id'] == site['site_id']
+                   and r['claim_type'] == 'parent' and site['org_id'] in r['claim_detail']
+                   for r in evidence), 'missing site parent evidence'
     specs = [('creates_orgs.csv', 'organizations_US.csv', 'org_id', 'organizations_*.csv', 9600, 9699),
              ('creates_sites.csv', 'sites_OH.csv', 'site_id', 'sites_*.csv', 13100, 13199),
              ('evidence_rows.csv', None, 'evidence_id', 'evidence_*.csv', 295000, 299999)]
@@ -79,7 +84,9 @@ def raw_check():
         def handle_data(self, data): self.parts.append(data)
     def words(text): return ' ' + ' '.join(house.W(text)) + ' '
     def has(text, quote): return bool(house.W(quote)) and words(quote) in words(text)
-    urls = {r['source_ref'] for r in [r for r in read(HERE / 'evidence_rows.csv') if int(r['evidence_id'][4:]) < 295008]} | {'https://www.nexxta.com/locations'}
+    quote_rows = [r for r in read(HERE / 'evidence_rows.csv')
+                  if int(r['evidence_id'][4:]) < 295008 or r['evidence_id'] == 'EVD-295013']
+    urls = {r['source_ref'] for r in quote_rows} | {'https://www.nexxta.com/locations'}
     with tempfile.TemporaryDirectory() as tmp:
         for n, url in enumerate(sorted(urls)):
             p = Path(tmp) / f'{n}.raw'
@@ -89,16 +96,28 @@ def raw_check():
                 text = p.with_suffix('.txt').read_text()
             else:
                 t = Text(); t.parts=[]; t.feed(p.read_text()); text=' '.join(t.parts)
-            for r in [r for r in read(HERE / 'evidence_rows.csv') if int(r['evidence_id'][4:]) < 295008]:
+            for r in quote_rows:
                 if r['source_ref'] == url:
                     quote = r['claim_detail'].split('"')[1]
                     assert has(text, quote), (r['evidence_id'], 'raw quote absent')
-            if url.endswith('NOE.pdf'): assert has(text, '9109 State Route 250')
+            if url.endswith('NOE.pdf'):
+                assert has(text, '9109 State Route 250')
+                # shortcut: fixed columns for this permit witness; re-check layout if the source changes.
+                subprocess.run(['pdftotext', '-layout', '-f', '277', '-l', '277', str(p), str(p.with_suffix('.parent.txt'))], check=True)
+                lines = p.with_suffix('.parent.txt').read_text().splitlines()
+                hits = [i for i, line in enumerate(lines) if '0GRN00360*BG' in line]
+                assert len(hits) == 1, 'parent permit row missing or repeated'
+                block = lines[hits[0]:hits[0]+3]
+                for start, end, expected in [(26, 51, 'Peak Performance Polymers'),
+                                             (75, 90, 'Peak Performance Polymers'),
+                                             (91, 113, '9109 State Route 250 NW'),
+                                             (113, 129, 'Strasburg')]:
+                    assert has(' '.join(line[start:end].strip() for line in block), expected), 'parent permit column changed'
             elif 'nexxta.com' in url: assert has(text, '150 E Longview Ave') and has(text, '26 injection molding presses')
             else: assert has(text, 'CUSTOM POLYURETHANE MANUFACTURING')
             assert not has(text, 'Fabricated polymer plant at 9999 Nowhere'), 'negative control'
             print('RAW PASS', url)
-    print('Raw evidence yield8/8; source yield3/3; hand-known manufacturer/address/held-duplicate3/3 plus fabricated negative PASS')
+    print('Raw evidence yield9/9; source yield3/3; hand-known manufacturer/address/held-duplicate3/3 plus fabricated negative PASS')
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--data-dir',type=Path,default=ROOT/'data');ap.add_argument('--apply',action='store_true');ap.add_argument('--raw-check',action='store_true');a=ap.parse_args()
@@ -115,6 +134,6 @@ def main():
                 with p.open('w', newline='', encoding='utf-8') as handle:
                     writer = csv.DictWriter(handle, fieldnames=list(old[0]), lineterminator='\n')
                     writer.writeheader(); writer.writerows(old + rows)
-    print('PASS census26/26; proposed1organization+1site+13evidence+4registrylinks; pending',sum(map(len,pending.values())), 'rows')
+    print('PASS census26/26; proposed1organization+1site+14evidence+4registrylinks; pending',sum(map(len,pending.values())), 'rows')
 
 if __name__=='__main__':main()

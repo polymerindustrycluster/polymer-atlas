@@ -18,7 +18,7 @@ Every hold names its settling fact in verdicts.csv. Source failures are availabi
 
 ## Canonical additions
 
-1 organization row at tierC (ORG-009600 Peak Performance Polymers, organizations_US.csv),1 Ohio site row at tierC (SITE-013100 Strasburg, Tuscarawas),13 append-only evidence rows EVD-295000–295012 (5 organization/8 site), plus4 registry-link rows (3FRS/1EIN). Existing canonical rows changed:0. No tierA/B record additions or tier changes. Equipment rows in this PR:0.
+1 organization row at tierC (ORG-009600 Peak Performance Polymers, organizations_US.csv),1 Ohio site row at tierC (SITE-013100 Strasburg, Tuscarawas),14 append-only evidence rows EVD-295000–295013 (5 organization/9 site), plus4 registry-link rows (3FRS/1EIN). Existing canonical rows changed:0. No tierA/B record additions or tier changes. Equipment rows in this PR:0.
 
 Peak's own homepage explicitly states custom polyurethane manufacturing. Ohio EPA's fresh no-exposure list, permit0GRN00360*BG, names both applicant and facility and the physical address9109 State Route250 NW, Strasburg, Tuscarawas. PDF page277 was rendered and visually read, so column-wrap extraction did not decide the address/county. The government list's address is the new fact that settles the prior address hold. Company-level polymer scope is linked to that same-named facility at tierC; no facility-specific molding method is invented. Current operating status remains unknown; an unexpired permit is not a liveness witness.
 
@@ -77,3 +77,13 @@ Merged current main85b8560, which already contains equipment PR140 and both fina
 ### Independent review receipt — Grok4
 
 Grok4 (xAI, thr_95ffgh3rxy) APPROVE at 9a0622c, zero blockers; grok-review.md records the received verdict. Independently confirmed preservation, census/replay/negative controls, validator, Peak scope/address, duplicate terminus, closure filing screens, and all four source-system identifiers. A later FRS429 in its verifier followed the clerk's successful independent HTTP200 record fetch; no quote/identity failure. Six payload CSVs remain byte-identical cf6c9cd. This receipt-only addendum changes no canonical or implementation file. Codex4 review remains pending; PR159 stays draft.
+
+### Codex4 parent finding — corrected, re-review pending
+
+Codex4 (OpenAI, thr_x5xruuutxp) REFUTE at9a0622c: one P2 missing typed sites.parent observation for the new SITE-013100→ORG-009600 operator linkage. Governing decision: SCHEMA §4.13 lane-brief contract requires parent for a new site's org_id; a legacy partial-restatement exception does not apply to this create. Finding accepted. The reviewer found no other blocker and independently checked the four registry IDs, fresh evidence, historical outcomes, preserved rows and all26 verdicts; the22 remaining holds were not all independently re-fetched.
+
+Appended immutable EVD-295013, government_filing/supports_C, from a fresh raw Ohio EPA NOE.pdf fetch2026-11-06. Page277 permit0GRN00360*BG has Peak Performance Polymers in both applicant and facility columns, with facility9109StateRoute250NW/Strasburg. The row explicitly supports SITE013100→ORG009600 only. All previous13 observations are preserved. New total14 evidence rows (5organization/9site); no org/site/registry field changes or tier changes.
+
+Builder preflights typed parent support for every new site before writes. Raw check now includes9/9 original-plus-parent observations over the same3 URLs, asserting applicant name, facility name, physical street and city in separate columns of the reviewed permit row. Source-layout change fails closed. A new negative control removes only the parent witness, confirms13 valid CSV rows remain, and observes the exact missing-parent refusal with no canonical writes. Existing replay/cross-shard-ID/registry-conflict tests and validator0 pass. parent-checks.txt records the fresh source, replay and validation output. The original8/8 logs and13-row integration notes above are historical; this addendum supersedes those current-count claims.
+
+Grok4's prior APPROVE9a0622c remains a historical verdict; both families are asked to re-review this correction and updated count/check. No completion approval is claimed yet.

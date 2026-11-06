@@ -21,6 +21,28 @@ print('PASS snapshot2026-11-01 Form5500 screen: IAC3 names/0 establishment match
 
 with tempfile.TemporaryDirectory() as tmp:
     data=Path(tmp)/'data';shutil.copytree(build.ROOT/'data',data)
+    original_here = build.HERE
+    packet = Path(tmp) / 'packet'; packet.mkdir()
+    for src in original_here.glob('*.csv'): shutil.copyfile(src, packet / src.name)
+    evidence = build.read(packet / 'evidence_rows.csv')
+    assert len(evidence) == 14
+    with (packet / 'evidence_rows.csv').open('w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=list(evidence[0]), lineterminator='\n')
+        w.writeheader(); w.writerows(r for r in evidence if r['claim_type'] != 'parent')
+    assert len(build.read(packet / 'evidence_rows.csv')) == 13
+    before = hashes(data)
+    build.HERE = packet
+    try:
+        try:
+            build.plan(data)
+        except AssertionError as error:
+            assert str(error) == 'missing site parent evidence', str(error)
+        else:
+            raise AssertionError('missing-parent negative control passed')
+        assert hashes(data) == before, 'missing parent wrote data'
+    finally:
+        build.HERE = original_here
+    print('PASS missing-parent evidence negative refuses before any write')
     before=hashes(data)
     subprocess.run(['python3',str(build.HERE/'build.py'),'--data-dir',str(data),'--apply'],check=True)
     assert hashes(data)==before, 'replay changed bytes'
