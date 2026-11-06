@@ -37,6 +37,10 @@ if __name__=='__main__':
     queue=read(HERE/'queue.csv')
     verdicts=read(HERE/'verdicts.csv')
     validate(queue,verdicts)
+    by_id={r['org_id']:r for r in verdicts}
+    for decision in read(HERE/'lead_decisions.csv'):
+        row=by_id[decision['org_id']]
+        assert (row['verdict'],row['finding'],row['settling_fact'])==(decision['lead_verdict'],decision['lead_finding'],decision['lead_settling_fact'])
     from git_gate import assert_data_unchanged
     assert_data_unchanged(HERE.parents[1])
     raw_rows=read(HERE/'lead_rawcheck.csv')
