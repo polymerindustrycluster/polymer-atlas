@@ -1,0 +1,960 @@
+{
+  "checked": 159,
+  "all_passed": true,
+  "receipt_body_matches": [
+    {
+      "site_id": "SITE-012034",
+      "url": "https://www.ashindustries.com/",
+      "raw_path": "/tmp/audit9-a/d7623f767ca4e278ae1f2a0e452afd23f3e83ca8ab4bde4f6189e51c358ae5bf.raw",
+      "sha256": "e1f7d55c42fbdcfad2a68d5cb0667d671bc349afdd71faf4ad5ebd1dac516d1c"
+    },
+    {
+      "site_id": "SITE-018006",
+      "url": "https://www.spiratex.com/contact-us/",
+      "raw_path": "/tmp/audit9-a/4cb2b30f0e11c9465e37fbe55437eaa8d558cd3a03eb9e1e8a146aa7aebc5ab5.raw",
+      "sha256": "25b881b48369f40e7c021d628cf4a3b5e8dadac1c0feb6b737623431199829aa"
+    },
+    {
+      "site_id": "SITE-018006",
+      "url": "https://www.spiratex.com/about/",
+      "raw_path": "/tmp/audit9-a/d9ef60f2f812a4bd4981a98a3b05b6960b54820e9ceebe8b9f5120bc5c2f3c86.raw",
+      "sha256": "0c3dd357e08d2538427898d6efe972bd908763fdfad241c489a7fd66891e7874"
+    },
+    {
+      "site_id": "SITE-018000",
+      "url": "https://www.egle.state.mi.us/aps/downloads/permits/finpticon/2017/64-17B.pdf",
+      "raw_path": "/tmp/audit9-a/14a32fbab1d3859dfe3a07c483c9e84bb6916093c68f1672a2d952d04ea722e2.raw",
+      "sha256": "a580633f52853083e78e21db0cbc1ad4fd40ffca9be920050731b02e55dc629b"
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "https://lacksenterprises.com/wp-content/uploads/2020/12/Lacks-Supplier-Manual.pdf",
+      "raw_path": "/tmp/audit9-a/64519c898a14fd22f62a603c7c649672ebfeae088d6675b3604cafc5e2f6490a.raw",
+      "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0"
+    },
+    {
+      "site_id": "SITE-014003",
+      "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+      "raw_path": "/tmp/audit9-a/c217e3a0e819fa94e6d08d4f7d225a3b50f42f36e08aed38bbf8df8b28218642.raw",
+      "sha256": "d2ea297b23ad1e18ac99f880b48ca05dc19c90b8dc3fcae7ef5209989e87b669"
+    },
+    {
+      "site_id": "SITE-016015",
+      "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+      "raw_path": "/tmp/audit9-a/da17b38127222c6cfbde697ae56a16f39a1f1faa4e2fbf60f1fe5664086c3ad3.raw",
+      "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27"
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "https://novolex.com/pages.php?pageid=101",
+      "raw_path": "/tmp/audit9-a/40388eeb38397dae3e1e5e37197cd5d790c97e4f0bef61c23830f42ccce04412.raw",
+      "sha256": "29d62bfbf80de075999cb638e73c68f982423adfc36692fa58e74400db7b573b"
+    },
+    {
+      "site_id": "SITE-016109",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/iso-certifications/iso-9001-2015.pdf?sfvrsn=429e7574_15",
+      "raw_path": "/tmp/audit9-a/d6aab433f01d54bd859f5bcbfb1c070a04840a5e0bcfcbd3c687bd86a4e37dea.raw",
+      "sha256": "930ba5291be898307c8c267b19b755406665fbcccacccaf515a60167f1dd0e1a"
+    },
+    {
+      "site_id": "SITE-012023",
+      "url": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+      "raw_path": "/tmp/audit9-a/e3e318d27514f03f066ed1433db15de31896a8f1ab5d8b351561c0de40744974.raw",
+      "sha256": "aadce836aedfa70501c7a4f93d7a457ed70943973fcc38dab0aef108f3b562ba"
+    },
+    {
+      "site_id": "SITE-019012",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1472344.015",
+      "raw_path": "/tmp/audit9-a/ac285cc5041c3f7f5a1206da1069eb630b1c4a91541feeb32db3766b72bf7f03.raw",
+      "sha256": "986898cffb145623046e361ef8d5617dcb972cf3906b9eae04e645680e2ff05a"
+    },
+    {
+      "site_id": "SITE-019008",
+      "url": "https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/tss-streamwood-usa",
+      "raw_path": "/tmp/audit9-a/23ed38be91811113e1cffbb4f8860ea01af8486d7c9b3de8f89709e8b9eefb39.raw",
+      "sha256": "ef2a0a316c950586caa5fda12d321bd2f849b335ca626ec74c998c78aff87c23"
+    },
+    {
+      "site_id": "SITE-019001",
+      "url": "https://pressroom.pella.com/women-leaders-at-pella-corporation-recognized-for-excellence-in-manufacturing/",
+      "raw_path": "/tmp/audit9-a/d46c060bb431e0cc98856a24736be8fd8bd66c49ddf2b9fbf52f5fa6b9fe1236.raw",
+      "sha256": "d255d3e87b6293b269c77b943a2b205046142c316d678b3c577c640d403552f6"
+    },
+    {
+      "site_id": "SITE-019001",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1742492.015",
+      "raw_path": "/tmp/audit9-a/65cf740d38c031c71243baa6c9a2bb3d7eb71fc97a59d482d8d7641a7b9036c8.raw",
+      "sha256": "b46eca4f23279dbca636b5b5b52906af9fe801eba1f31f972c321add66f72eeb"
+    },
+    {
+      "site_id": "SITE-019012",
+      "url": "https://osha.prod.pace.dol.gov/ords/imis/establishment.inspection_detail?id=1472344.015",
+      "raw_path": "/tmp/audit9-a/2f22e0baaa173956ea536bc0cd23eb2f48550c3662839bc6b9fb8978ed2dfb14.raw",
+      "sha256": "be7624654616de7dad58b4527910027de874f2b0ccc06077ae4686a5ef668649"
+    },
+    {
+      "site_id": "SITE-014008",
+      "url": "https://www.adspipe.com/resources/case-studies/hp-storm-creates-savings-in-california-right-of-way-install",
+      "raw_path": "/tmp/audit9-a/998ea560369386ae90a1e634e9286fe29e790c0e2033ad7c54e21a913f83529f.raw",
+      "sha256": "43915df3d5bab22100cdec5b94d8698396be45dd76b951d966997775e1b5056b"
+    },
+    {
+      "site_id": "SITE-014008",
+      "url": "https://www.madera.gov/media/tsgh1yj5/issued-permits-february-2026.pdf",
+      "raw_path": "/tmp/audit9-a/4873e94a9d8e8be4197bded6a579a7d21138533232a5d4581375496cbedc18a2.raw",
+      "sha256": "2baf19e440d77bf79859a6ac0a2731e67e54b7aa473034233313affdaff83a3c"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1593053.015",
+      "raw_path": "/tmp/audit9-a/709db6e6118250ee19e190ef5568049334ea786ab53663268db78a89f0334e7b.raw",
+      "sha256": "44df951846e6c52d7b91a43c39d1b9eef064d3d8b5cad02a7a070f8f81565a64"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.mercplastics.com/",
+      "raw_path": "/tmp/audit9-a/b054988e295108da05dd74fbad5a853bd2d63e5fe56643e59f39c96ac9417f39.raw",
+      "sha256": "80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4"
+    },
+    {
+      "site_id": "SITE-016116",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=347454480",
+      "raw_path": "/tmp/audit9-a/c8a8b554c30b5d46606518102a1c8809ce9c7e586561bc86443fb1207ecd0c79.raw",
+      "sha256": "bfd43b6548d74907bceb0f7e240fd0e69a047e0d328a1f15e724f84b949bb25d"
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "https://stage.lacksenterprises.com/wp-content/uploads/2020/12/Lacks-Supplier-Manual.pdf",
+      "raw_path": "/tmp/audit9-a/7076ac300223bf0f3901d4593e3306c361271509c5c208b92c0b30e92e64bec3.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "site_id": "SITE-012023",
+      "url": "https://www.trelleborg-tires.com/en-us/contact-us",
+      "raw_path": "/tmp/audit9-a/86c99530cc7584e513cdce5ea87f16fd491d8077a288c70f6efad7572682748a.raw",
+      "sha256": "86cfa0514af80bc1aa499a2f2025e8c2cdee0c81d3af57242651896f252f7248"
+    },
+    {
+      "site_id": "SITE-016103",
+      "url": "https://www.goodyearaviation.com/",
+      "raw_path": "/tmp/audit9-a/7595300d9603a6f016be63db2a82c3a875cf58432fca6912e6f696ffa622bbd5.raw",
+      "sha256": "c020fa19ceef1f7876eccdace8b995bb322fe0ce33724eda886d4a88878cc7a5"
+    },
+    {
+      "site_id": "SITE-016103",
+      "url": "https://epd.georgia.gov/document/document/procsortretrlandjuly2017pdf/download",
+      "raw_path": "/tmp/audit9-a/99b65d7cd20ec8956e1cda19f0a79119c85dc147d1f5eac59c1ff39cd5d606f4.raw",
+      "sha256": "32ebbfecedc9882faa35f7a6d12d011747a10ce7b7b2bdb50cc0f2a036c955b0"
+    },
+    {
+      "site_id": "SITE-016009",
+      "url": "https://careers.sealedair.com/en/jobs/operator-mailer-night-shift-en-57054",
+      "raw_path": "/tmp/audit9-a/6105769f81dc7371e6fa55fbddb67114ea1def3d2fca766e3eee925cd2da929a.raw",
+      "sha256": "b9e26490b4bba1deac1591df591c7978c731e0b7192227d4d4f6321350138432"
+    },
+    {
+      "site_id": "SITE-019012",
+      "url": "https://villageofalsip.org/Current%20Licenses%2005282024.pdf",
+      "raw_path": "/tmp/audit9-a/e2a3617fb5844e002e25a2a760d44ceefeafbc221d9afc63be290fe94abd8d92.raw",
+      "sha256": "7009feb0c18d3cf275f3c70a883dca5aba391b671ea530a9757dac9eca1a6fdf"
+    },
+    {
+      "site_id": "SITE-014003",
+      "url": "https://www.dartcontainer.com/ca/about-us/plant-locations",
+      "raw_path": "/tmp/audit9-a/083c1ea38d69339780ccd95aad099d561cf9aa6b27f5ba33beac5ad71adbedad.raw",
+      "sha256": "a1dac7fc5c70fcec81683b3ed6ce5609e9d686c8448fb77ebfc6e62415d04eb1"
+    },
+    {
+      "site_id": "SITE-019008",
+      "url": "https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/streamwood-usa",
+      "raw_path": "/tmp/audit9-a/4199d5e9f8a59cba5bb8576427cc628f5f5feb318a7c07cfb6cc193dc0a29cb1.raw",
+      "sha256": "68a94a5ea7c50aa22d43a43596604746b0e7e29d26aae272942d85affbaec3de"
+    },
+    {
+      "site_id": "SITE-019008",
+      "url": "https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/brochures/orkot_marine_bearings_engineering_manual_en.pdf",
+      "raw_path": "/tmp/audit9-a/e97c30bc98e063a365a8eff51751cb203c4beb1d6652e63aa214d94fd653aaf3.raw",
+      "sha256": "83444726259d68cae753b4a904971a91e82f791e3389f4baa7eac557052e2fe3"
+    },
+    {
+      "site_id": "SITE-016109",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/realta-mapei-magazine/24-2045-rmna38-fullissue-en.pdf?sfvrsn=3cc81888_5",
+      "raw_path": "/tmp/audit9-a/45396a7c593967024153b9c3ddca9aed2d36bfa1768513589dbffade30a7f900.raw",
+      "sha256": "4f2e56adbe09646f0ddffe23a686a97e25b9e8ea6c19c893074689698ca4ab53"
+    },
+    {
+      "site_id": "SITE-019008",
+      "url": "https://www.trelleborg.com/cs-cz/seals/about-us/manufacturing-capabilities/streamwood-usa",
+      "raw_path": "/tmp/audit9-a/7d3750d362b2802aca0aa940e5ebc7dc96e580be91907c82d6a64f27d25862e8.raw",
+      "sha256": "68a3ce5cc27960ee98c15f25b364ea2490cb7207376a2afd482c3448882e992f"
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "https://lacksenterprises.com/",
+      "raw_path": "/tmp/audit9-a/3e7ef7c5a1481ced6840ef4f5a517c38655c1036539d2e875434a81dfaf8ba52.raw",
+      "sha256": "9e242261e88fae6a8bf74d7b9ae02ca5453fefd1f498887ab953f8d41aefc72c"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.mercplastics.com/about-us/",
+      "raw_path": "/tmp/audit9-a/e20806d25c5e3e6b6cb28316094edaa686c5781cbfe45856216b57ccbe6f361a.raw",
+      "sha256": "80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4"
+    },
+    {
+      "site_id": "SITE-016116",
+      "url": "https://altiumpkg.com/locations/",
+      "raw_path": "/tmp/audit9-a/11044e413129f384cc31bb7fcb0f5c2ad1831a306180bc68425116bc0f1742af.raw",
+      "sha256": "82884cf507def999b4482604f27e3cfef0e4d0092f2d61e2dba031432172e06b"
+    },
+    {
+      "site_id": "SITE-019001",
+      "url": "https://www.osha.gov/ords/odi/establishment_search.search?begindart=&begindawfii=&begintcr=&city=&enddart=&enddawfii=&endtcr=&endyear=&establishment=&naics=&p_desc=DESC&p_direction=Next&p_finish=312560&p_show=20&p_sort=&p_start=&sic=&startyear=&state=&zip=",
+      "raw_path": "/tmp/audit9-a/cf08b7d4999bbc37bcab59c3c50e77472413021e5e2fb113431821b10b443c24.raw",
+      "sha256": "6f023d81b6c4c619ac26fe5ddcd9b6cd02b40cbacf420477bd9d512426bcb70d"
+    },
+    {
+      "site_id": "SITE-012023",
+      "url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+      "raw_path": "/tmp/audit9-a/2367c33e3105c231306eb602e7a9e2d8e813ad20dc3b081da9ac5d7857eae1b5.raw",
+      "sha256": "6dc3f90eaa27643780d36351aca33207864e73f43258e4a3856411122f7bb945"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.mercplastics.com/about-us/facilities/coi",
+      "raw_path": "/tmp/audit9-a/a13f141b91e69a4f464cbe3b6c6bca28aeb47de95e304f7b726cc8ac5d4f79f7.raw",
+      "sha256": "80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4"
+    },
+    {
+      "site_id": "SITE-016000",
+      "url": "https://novolex.com/content/PDF/Novolex-Supplier-Onboarding-FAQ.pdf",
+      "raw_path": "/tmp/audit9-a/aa89596113eb32881be49a526abb9c82d89a0f8f86c1d6688b52d5f5aba3b388.raw",
+      "sha256": "15abaa17578cffa8bad745ee1bb5b2b9de8ea756a7945f8eb45bb8fee85928c6"
+    },
+    {
+      "site_id": "SITE-016116",
+      "url": "https://altiumpkg.com/",
+      "raw_path": "/tmp/audit9-a/839f96050c123b0194933703a1064f47e8de505803992ee5bc3705fe1f9c6493.raw",
+      "sha256": "4cc29366baae5f63727e1ff7f19783be3f3823dc2330d618690405b1ae0479ac"
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "https://lacksenterprises.com/locations/",
+      "raw_path": "/tmp/audit9-a/1bb54758fdb0aebb85c567682ecbe0eab59344b3e9e02bb3d7750b87a98868a9.raw",
+      "sha256": "0366bf729707bd60d361639f76b113fc6eada956fabded32ad8f44176307ccf8"
+    },
+    {
+      "site_id": "SITE-019008",
+      "url": "https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/brochures/manufact_capabilities_gb_en.pdf",
+      "raw_path": "/tmp/audit9-a/c4b7490b59fa2f6aa9fbd3dff3783214c96a108c6af46a2a9867c039d2f72e02.raw",
+      "sha256": "0b0155630138ceab65884a823523876025f9d636a371a13f7a8072e3b5c5f8b3"
+    },
+    {
+      "site_id": "SITE-016103",
+      "url": "https://corporate.goodyear.com/us/en/company/locations.html",
+      "raw_path": "/tmp/audit9-a/39c2302c3499d25cd9ca5bdab12e0702ca04b59e933a2f36048e254a47e52f96.raw",
+      "sha256": "535a5d1cd761c7e699755ec4a00a0700ee5b459b767155ac19ff1bddcb048ba7"
+    },
+    {
+      "site_id": "SITE-012023",
+      "url": "https://fs2.magicalir.net/tdnet/2026/5101/20260218564658.pdf",
+      "raw_path": "/tmp/audit9-a/ebe782ffea1d11b3341c797a2c88fc21463b1d53abfc362adcdd48d0e878fc4d.raw",
+      "sha256": "5c2a8db5358f43698af9dcfa63ad815ade5aba0828bcff0268d01a8d8051ff12"
+    },
+    {
+      "site_id": "SITE-012023",
+      "url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+      "raw_path": "/tmp/audit9-a/0a0105aa4fcd7d2c0cc83a580d9ac47cf699c470e3b3e0892052da5372451f0c.raw",
+      "sha256": "33208e277c5849207e72889142b62616dce4cbc1f3449f39ad3ceb8f21b94ef9"
+    },
+    {
+      "site_id": "SITE-014015",
+      "url": "https://www.fire.lacounty.gov/wp-content/uploads/2023/07/CUPA-List-Active-7.11.23.pdf",
+      "raw_path": "/tmp/audit9-a/459de1c76cec8aaeefa1d3be190f186a37cb1483e665a499440db8ecefcbc9a8.raw",
+      "sha256": "37b69b51ac75cb98ef1a8eef3011dd2b3e5a11b6dab7d4fde6c33631229346f3"
+    },
+    {
+      "site_id": "SITE-018015",
+      "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/treasury/BLGSS/PSD_CSD/Industrial-Facility-Exemption/2020-STC-Certs/Amended-Certificates-081820.pdf?hash=B0534876C464EA071CCEFF4FEBAB5DEF&rev=716eea688af64e3daeba1eec540fcf8e",
+      "raw_path": "/tmp/audit9-a/41a6369fe79e60e1fe4a21bc066c78c266ac08fd2bfaeae850d1e2539d012afa.raw",
+      "sha256": "27a6fb342b1ae7fb25bf2c9a35caf715ca73ef7cd714ecbdf89204910b03e4ed"
+    },
+    {
+      "site_id": "SITE-019014",
+      "url": "https://mauserpackaging.com/about-mauser/locations/",
+      "raw_path": "/tmp/audit9-b/51641239fe5335f0cca85b7ff47f1fdfef7a634c95072f493898d05d3f45dbb0.raw",
+      "sha256": "5b98f6857fb25c4efc8f28240983fc8d3ca066cd88e314f24884b0f97e586fc0"
+    },
+    {
+      "site_id": "SITE-019009",
+      "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+      "raw_path": "/tmp/audit9-b/da17b38127222c6cfbde697ae56a16f39a1f1faa4e2fbf60f1fe5664086c3ad3.raw",
+      "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27"
+    },
+    {
+      "site_id": "SITE-018007",
+      "url": "https://www.pregis.com/contact-us/",
+      "raw_path": "/tmp/audit9-b/82c0daef1c1bd713f0b3cbe3b5d689d17a86c0917178e5bf641a7f9b7dce9ca7.raw",
+      "sha256": "4452ef60032bd03447ff67638591c7bc1e4ad97ce5278cd7d69ae40db0eb0d04"
+    },
+    {
+      "site_id": "SITE-018007",
+      "url": "https://www.pregis.com/knowledge-hub/pregis-acquires-rex-performance-products/",
+      "raw_path": "/tmp/audit9-b/a852ddc9ab945e2c362d2030debb642ca21232aae1f3aa54af5be15c0745298f.raw",
+      "sha256": "44954cf6bc0c299c128b77fa94d52ff44c6c81916e9bafa2a993cd8fec7ee560"
+    },
+    {
+      "site_id": "SITE-012001",
+      "url": "https://watsoncoatings.com/",
+      "raw_path": "/tmp/audit9-b/214b245d7498946f4797eb1a6dc1d888e954715d75748524683c408413c54278.raw",
+      "sha256": "c65a16569be7f083a8d2df4a98d8e665bab937fa860e897a59d41354f82e07d7"
+    },
+    {
+      "site_id": "SITE-012026",
+      "url": "https://www.perlon.com/wp-content/uploads/2025/08/LEX-ISO-9001_2015.pdf",
+      "raw_path": "/tmp/audit9-b/1356172724c50d685cd381a695068547ee222a69b50b2ef8be172a0119dadecb.raw",
+      "sha256": "53c73a972463e9edee09fd194166c28a475ef05c7f4e1f3bb66f01e4ab79bd88"
+    },
+    {
+      "site_id": "SITE-012026",
+      "url": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+      "raw_path": "/tmp/audit9-b/cc933e897c811cf1a53ab13670a428a94f34a0a61e78b9b6b659daf214c350de.raw",
+      "sha256": "cfab62cdb63aade805246ec3e842e3ef907af794bd440ff6c550bc1baf6e3fc8"
+    },
+    {
+      "site_id": "SITE-012001",
+      "url": "https://watsoncoatings.com/wp-content/uploads/2025/07/White_AntiClimb_SafetyData.pdf",
+      "raw_path": "/tmp/audit9-b/dca328fc13c93d8f4d29e02f823302c437272019fe73f02d46870afa7a998c97.raw",
+      "sha256": "7c8201a8b4503d9fd846a6387713f87ad918022fbba9b28525184b7a769ca43e"
+    },
+    {
+      "site_id": "SITE-012001",
+      "url": "https://watsoncoatings.com/about-us/",
+      "raw_path": "/tmp/audit9-b/6b7d0045015c4f87eb763492d5f265e8445483cc47a95a11afa11d1c99d52ec6.raw",
+      "sha256": "6caeb419c19c02a4cbf591ef2516ab76a5e8afb983bf0f434cf9ae054e024f33"
+    },
+    {
+      "site_id": "SITE-016017",
+      "url": "https://www.cantexinc.com/Portals/0/CANTEX-PVC-Extruded-Electrical-Conduit-Environmental-Product-Declaration-EPD.pdf",
+      "raw_path": "/tmp/audit9-b/aff529499a6f2a987c55f02dfb390337c83e33efd41ab5307993947cb3e363e0.raw",
+      "sha256": "2fc9db6f0df08356869a60f07dee82b58af2491a3c759f92d01a28472e715f34"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://corkindustries.com/about-cork-industries/",
+      "raw_path": "/tmp/audit9-b/3983736d9f62d1a3319746c5cb6aa67e458b459beeeee8d5d3bbc7476dfc1e05.raw",
+      "sha256": "12a4f3b8b48861f1ccaf1a5bae97b47a0d6b7691c8abdd16b3f703953f3b2fd9"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://corkindustries.com/matte-finish-eb-coating/",
+      "raw_path": "/tmp/audit9-b/bf4c7faaa0e70e8e4d0b553a7f4124c80ba1d5be0fee80f928a57fb4d7361daf.raw",
+      "sha256": "12a4f3b8b48861f1ccaf1a5bae97b47a0d6b7691c8abdd16b3f703953f3b2fd9"
+    },
+    {
+      "site_id": "SITE-016004",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/iso-certifications/iso-14001-2015.pdf?sfvrsn=449e7574_23",
+      "raw_path": "/tmp/audit9-b/619b2c8c952ff192fca51c1a5fd75e0c2f87a729716ef14242f06d14964061ac.raw",
+      "sha256": "191013be49e4cf81f24584337f705e002bdc53fd0373d2d8002e993270efd303"
+    },
+    {
+      "site_id": "SITE-016111",
+      "url": "https://industrial.sherwin-williams.com/na/us/en/aerospace/find-location/location-detail.undefined.en_US-10371519-PCG_Manufacturing_GID.html",
+      "raw_path": "/tmp/audit9-b/21bf6d33a947fb9076798c39b9045a6dc96a82e85bd1638defe7c2cde065710b.raw",
+      "sha256": "ed1b7b6c05de79ef16627f2068cba9c3e774c420b0436b8465a433ed4192a8db"
+    },
+    {
+      "site_id": "SITE-016119",
+      "url": "https://crownusa.com",
+      "raw_path": "/tmp/audit9-b/5d7813aece0b1a2a936259d2fff5320eb69d7d1ce75831535a730196457a1e46.raw",
+      "sha256": "bacc1bce63829a89ddc4582bd2f96510b16eed99566aedd436e3cbf7267867fd"
+    },
+    {
+      "site_id": "SITE-014017",
+      "url": "https://atsduct.com/about-us/",
+      "raw_path": "/tmp/audit9-b/64658b822bc04dc2030a53b963567cb59b293e9c9c4c592db26c2ca8c887f255.raw",
+      "sha256": "4b1df61390bc11da4f168094a622d4171643c4a13f5aa6ed04db46b125c417c2"
+    },
+    {
+      "site_id": "SITE-014017",
+      "url": "https://atsduct.com/50-years-of-excellence-in-industrial-duct-solutions/",
+      "raw_path": "/tmp/audit9-b/04541bd8b71102dc42a09e34959fbe0695757101400392da37a8b1b9d08bcce0.raw",
+      "sha256": "2a69fc407f616af32c7991e045f7f2388bebc2c6c33737e374977dfbafadb14d"
+    },
+    {
+      "site_id": "SITE-018017",
+      "url": "https://www.adspipe.com/support/locations",
+      "raw_path": "/tmp/audit9-b/c8733c47ea869d43ad38615d27ec0671186bdcecbee6fcaacbe895700ec2ea55.raw",
+      "sha256": "630e8ecb998e8eaeb1be986c667b697f67bb50fd151259b15521cd67af8ee494"
+    },
+    {
+      "site_id": "SITE-016119",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1695189.015",
+      "raw_path": "/tmp/audit9-b/713a4e5b31746c73c02b80a5feb3bd933ab17da083f68408059e3e16f745ef2c.raw",
+      "sha256": "c768406bddb88991fab8bb645dae7c05faac9c08a14792b410f7d12b5ff1323a"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://files.ceqanet.lci.ca.gov/265020-3/attachment/asDIyxasBHOFATlXQOmeEpQysSnhxSEbUUMmlO4iFsdAxn2z3VlcB9q85fawfkDPVIemgExYzKWfrHrT0",
+      "raw_path": "/tmp/audit9-b/61416bdd245bc531fe5bb46bb1d8b82f76bdcffb851e2b1a2a3d7fe6af160a6b.raw",
+      "sha256": "b8a02b49149d4851821a5735efab0e8cd66d1ebe14cbed615aaa6e43dbc4afc9"
+    },
+    {
+      "site_id": "SITE-016119",
+      "url": "https://crownusa.com/directions/",
+      "raw_path": "/tmp/audit9-b/cc85f8cc829f84bd8ff3e7dc511d87b1dc446738500e987b018d1a3b6efa9d24.raw",
+      "sha256": "9b0fe0113dad72660545184df99594ba597b49928cd71ec7afce0f4db56583d3"
+    },
+    {
+      "site_id": "SITE-014006",
+      "url": "https://calspas.com/contact",
+      "raw_path": "/tmp/audit9-b/74e2b1699cc2b9e09b8407ecc10a57797ff29968d44be45f0ae3eede751c5859.raw",
+      "sha256": "8c8afb23fcd5d7088eaa738ca50d5630ddb7ac8097cc282b5652b11426e514f5"
+    },
+    {
+      "site_id": "SITE-014006",
+      "url": "https://dealers.calspas.com/pdf/newsletter/2017_01_se.pdf",
+      "raw_path": "/tmp/audit9-b/45ef46c46aaa3aeb37a50ff54132e741536959fb0024b46ddb976d83968db66a.raw",
+      "sha256": "2bb2321233e0c887f9effca22b9c20497079fcc7aea62ba8c896c0082c963328"
+    },
+    {
+      "site_id": "SITE-014017",
+      "url": "https://atsduct.com/pdfs/",
+      "raw_path": "/tmp/audit9-b/5b62655e0f33b69020f5b261cf6ae1c723f2dcd84c2a015a5d8dbbbe63fe0efb.raw",
+      "sha256": "27cf0a41c63b29cedae002ec0ed95bdac07f0e29481aef4d6b5e5cad7caaf1ec"
+    },
+    {
+      "site_id": "SITE-019014",
+      "url": "https://www.usplastic.com/catalog/files/specsheets/UNClosingInstructions.pdf",
+      "raw_path": "/tmp/audit9-b/31e38ccf67604115f4fb5f077b052f2c520d450311612dac577b2a7e8adcc79e.raw",
+      "sha256": "0c8ef7ffe756dc334e4c114b76162721cd47da66ff57b90e36aee22ee27398a0"
+    },
+    {
+      "site_id": "SITE-018001",
+      "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/2018-05/IWC_Division_Annual_Report_B2_04-27-2015.pdf",
+      "raw_path": "/tmp/audit9-b/4956c9042761b2e4845af692efae0e7e8445de2d6b5877948ade2279f31115d4.raw",
+      "sha256": "8c015abceb7d02d9770e89c6b51850016f8d38124398aa07d71719e35238e29e"
+    },
+    {
+      "site_id": "SITE-018017",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1761255.015",
+      "raw_path": "/tmp/audit9-b/c00f93b5edb3b63d03007f20c97486d45070ed44b6ecb52d45cc4943075c3172.raw",
+      "sha256": "cb4789e4b10d32f8c761fd487cd3cc3ac80512721ad97aca5405d2bf2e2284fe"
+    },
+    {
+      "site_id": "SITE-019002",
+      "url": "https://apps.dot.illinois.gov/eplan/desenv/082214/66429-015/66429-015.pdf",
+      "raw_path": "/tmp/audit9-b/a16dc8a7b62de9848a27616d1738d9ba47cb6cd29895ee676902ff3518cb96cb.raw",
+      "sha256": "fae57ca171e8a3a0d9f13b7dcf9d1331b881a2c0bcdd6b15aabea6508e83d712"
+    },
+    {
+      "site_id": "SITE-018007",
+      "url": "https://www.egle.state.mi.us/aps/downloads/srn/N6944/N6944_SAR_20240201.pdf",
+      "raw_path": "/tmp/audit9-b/c06932ad55f5ac3333f88ffe4b0360fd19071280aa75834c96f540dab01449f3.raw",
+      "sha256": "ed96087a57d663ad7ded41183e9a2bae477f0216bbc3e78d92b3217f350d8138"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://www.corkindustries.com/about-cork-industries/",
+      "raw_path": "/tmp/audit9-b/72309269c49230bfc10bad23c1db5fda92c1320149c368cd2c04b5da11e02d89.raw",
+      "sha256": "bbb9eb7112ff61afa35446b0df7ad07c27329a2b57eca079aa7782dca41b716e"
+    },
+    {
+      "site_id": "SITE-018017",
+      "url": "https://idot.illinois.gov/content/dam/soi/en/web/idot/documents/doing-business/specialty-lists/highways/materials/materials---physical-research/misticproducers.pdf",
+      "raw_path": "/tmp/audit9-b/472790c0db15aa512edfcedc99980d975c48b7970475ece9ea70ec21e3fb4f7c.raw",
+      "sha256": "b3c07152f9adf1119db7ee58ef7acf38f0442490c34323cb1c08655ce498dee4"
+    },
+    {
+      "site_id": "SITE-018001",
+      "url": "https://www.egle.state.mi.us/aps/downloads/SRN/Sources_By_Company.pdf",
+      "raw_path": "/tmp/audit9-b/7544b6b841f7890a0630d6a4a85e6d16e328d99acc647d0a5366c3c385556099.raw",
+      "sha256": "cb8a69fb7b6a3b2bfb4f73fd214fe4e5ab77e9564340fbd01147e610bd49db2a"
+    },
+    {
+      "site_id": "SITE-014017",
+      "url": "https://atsduct.com/FAQ/",
+      "raw_path": "/tmp/audit9-b/f2288eb2d1be6465fd19026d45aa4b37630875bb5146072a5ec81150ceca95d0.raw",
+      "sha256": "9a277093c119c5731143cece7f5b4eca5b0870725fd517cf5d4ffeff2c04f3c4"
+    },
+    {
+      "site_id": "SITE-014006",
+      "url": "https://calspas.com/about",
+      "raw_path": "/tmp/audit9-b/f301cd5d6f4b284ec2da9bdbd52dbe83e02857c6fb00255cc447f20068085ff5.raw",
+      "sha256": "b66723cbaf7376f474cea2b649dd28521ac3535dc8b67f584f7192326b9f5db5"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://novolex.com/pages.php?pageid=101",
+      "raw_path": "/tmp/audit9-b/40388eeb38397dae3e1e5e37197cd5d790c97e4f0bef61c23830f42ccce04412.raw",
+      "sha256": "60c877de3f5fb67c6d1e99dd25ebbedc75b118e88024117e6178806b11aa9bea"
+    },
+    {
+      "site_id": "SITE-019014",
+      "url": "https://mauserpackaging.com/closing-instructions/",
+      "raw_path": "/tmp/audit9-b/5663d2d43d2c6193ea95d7c92e351ffa461925c4be8f09d17aa0849fcc8fa747.raw",
+      "sha256": "1a7a5d4d08295dba083a76dd02b8ef0c9705c74ec45dbf8dd2ce86444f8cad85"
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://documents.gaf.com/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+      "raw_path": "/tmp/audit9-b/c2beea8b587a3587867072da22281c74e93f877dec9ee52c99a841059e68156f.raw",
+      "sha256": "74a609b40aec832a562c366bc130aa11854e327543dea77ce79ae4b35b37c385"
+    },
+    {
+      "site_id": "SITE-012026",
+      "url": "https://www.perlon.com/wp-content/uploads/2019/03/Perlon_Press_March_2017_en.pdf",
+      "raw_path": "/tmp/audit9-b/e5b56cc8aa51e836dbb3191dac032ac8ce314308104f34a5e342639b5d85f869.raw",
+      "sha256": "f26b88fe6bf6c28732109235048701925d88da64981962103c8980977c73875b"
+    },
+    {
+      "site_id": "SITE-016004",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider65/realta-mapei-magazine/n--28.pdf?sfvrsn=aef4d3cd_4",
+      "raw_path": "/tmp/audit9-b/5cc3657cecf8cd114a5e7e9ae0963e444794d8383455a19f13046597ca399eeb.raw",
+      "sha256": "4213d086bd378e1d7e394ed99f41b613c9373814ac72688904164132925c1317"
+    },
+    {
+      "site_id": "SITE-019014",
+      "url": "https://mauserpackaging.com/wp-content/uploads/2026/10/MC-PAS-QA-103-R14-Closing-Instructions-Plastic-Drums.pdf",
+      "raw_path": "/tmp/audit9-b/ca9a38ed3166ca5857022fc31f27d8680fc991699e67a4175c9657a26edbcf91.raw",
+      "sha256": "cc34647b5ed471135ccd52bd91d491b61f696b34620553e69c2a277abc1129ff"
+    },
+    {
+      "site_id": "SITE-016119",
+      "url": "https://crownusa.com/our-story/",
+      "raw_path": "/tmp/audit9-b/4e274e570208328b55e33172be9ab43d456de70e43ae9d451dce18eb40d2ee34.raw",
+      "sha256": "27bc91d62a6f534743a0ef42df7f3af55e5b935e2d00591259c8b467a53a9376"
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://www.gaf.com/en-us/document-library/documents/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+      "raw_path": "/tmp/audit9-b/c78a3754835c4fe5b9046c3fdaf151db207ac8dbe8a0c91d6f34580970cd1561.raw",
+      "sha256": "01028fabe460b72c064089f3d9008659a28abf547c6839032429b0d124b18e0c"
+    },
+    {
+      "site_id": "SITE-018001",
+      "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N3206/",
+      "raw_path": "/tmp/audit9-b/38aa335f7842027cb31538e31d616183df4c7cb359b38aea6265962616f6f521.raw",
+      "sha256": "2de44624ea016d5077178a6f0b9b6ed91bf817ce9cf1981ea34f1c1e92ef58b9"
+    },
+    {
+      "site_id": "SITE-018001",
+      "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N3206/N3206_SAR_20160405.pdf",
+      "raw_path": "/tmp/audit9-b/fd933d91e9dd0d6a1e716a2447e613e36b6f4e6241219ed15d805091ae29fc52.raw",
+      "sha256": "b2965d90f49e6a41d16d2de73c7c6368b63269ffd0640f5cad50b9dfedd750b8"
+    },
+    {
+      "site_id": "SITE-016004",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/products-documents/7_large-tile-and-stone-mortar-white_822e0934af184e5b87c5a7415f8cf2cc.pdf?Status=Master&sfvrsn=4548c265_0",
+      "raw_path": "/tmp/audit9-b/519aff1b774ff4c65c8e84d6868b1fc523d5224c163f7b1a9f1cb3b4bac386e5.raw",
+      "sha256": "a4a54f9dc8c80bfd043843aa433778f1e6abda36a345bed99c00c3314124e55a"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://heritage-bag.com/",
+      "raw_path": "/tmp/audit9-b/c9d058d9fedfce0bf8857b3834b28434ac0960808336f29dbe57b0204509e9f5.raw",
+      "sha256": "b669d8b5d154725b5159bc7c1bde200d948e867e0a59ee7bbada5b83c3566872"
+    },
+    {
+      "site_id": "SITE-014006",
+      "url": "https://calspas.com/",
+      "raw_path": "/tmp/audit9-b/e35b2ac172aeefe16df9b19f411f071ceaff0ba11161f0ce0a40c8722cc6873e.raw",
+      "sha256": "27753d52b3c311369203c56e2eb1603f7f7311ca5ca5202e80eec5febf02b8a6"
+    },
+    {
+      "site_id": "SITE-014006",
+      "url": "https://calspas.com/spa-cover",
+      "raw_path": "/tmp/audit9-b/851be59b7ecd82bad155847e242f6aaa43f72f96c1b9b85e73db23ac1286b63d.raw",
+      "sha256": "a4ead3827e697b4ff6a33974997d02575cffbf8082440d2a91cda8b900d31a78"
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://www.gaf.com/en-us/blog/in-your-community/how-gaf-plant-communities-support-neighbors-after-hurricanes-6852b3c5-8e94-4530-a5aa-5b5558d087a6",
+      "raw_path": "/tmp/audit9-b/c94472b15da1aa507515f3d272c19b06cac77b85b22317acf49e4a397ca557cc.raw",
+      "sha256": "9b26f1312d74f2ba54645122e430e08c1d0990c5001a7fbfa0f09e41f74fc87f"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://corkindustries.com/",
+      "raw_path": "/tmp/audit9-b/ae5d712e1303d5f29634c8d227c2ca55c0ccc61e0ec571465cc9a9dd1030f341.raw",
+      "sha256": "2e5b1a44ff49e41df02447648867b0c16f26ce5a729c53f04bfc122e28f47e32"
+    },
+    {
+      "site_id": "SITE-018017",
+      "url": "https://onlinepubs.trb.org/onlinepubs/Archive/NotesDocs/20-07%28191%29_FR.pdf",
+      "raw_path": "/tmp/audit9-b/125f6065cf168ccdce444aa5dd8b2842306738f4e74805054b05a4abb0f4a325.raw",
+      "sha256": "478a57b39064f3a4ba077d8e0aa09d93666d0ea334f2c58e81d5c6caf17a6441"
+    },
+    {
+      "site_id": "SITE-016105",
+      "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-decisions/2026-02/HDC2026-00021_HDC_COA_Approval_for_%5B1676_Chi.pdf",
+      "raw_path": "/tmp/audit9-b/3c3de106dbc26e1d786a579490d4191aa2c9bc1ffe6ed6e00b76c289b1cf25b0.raw",
+      "sha256": "540c781381b0ca1105b57a905f7de836ac425f6b6a48e9120f2caa629426e129"
+    },
+    {
+      "site_id": "SITE-019002",
+      "url": "https://pactivevergreen.com/",
+      "raw_path": "/tmp/audit9-b/a530ff79682d663083ed534a4c0b3ea09f679945f53d197c6c17d31fa2e44675.raw",
+      "sha256": "570fc6f62a34ceeea4547409c2f57cfb6b252ae04283e8fe05c46a7532ba632c"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://novolex.com/content/PDF/Novolex-Supplier-Onboarding-FAQ.pdf",
+      "raw_path": "/tmp/audit9-b/aa89596113eb32881be49a526abb9c82d89a0f8f86c1d6688b52d5f5aba3b388.raw",
+      "sha256": "15abaa17578cffa8bad745ee1bb5b2b9de8ea756a7945f8eb45bb8fee85928c6"
+    },
+    {
+      "site_id": "SITE-014010",
+      "url": "https://apps.ecology.wa.gov/publications/documents/0504013.pdf",
+      "raw_path": "/tmp/audit9-b/4666eec85082650acb88a2735bd921f451defdc0e03c515fc0e5895db9b285cd.raw",
+      "sha256": "c98db32dfaa35d810ae640a472deed3e4474b78fb32d1469310177cbdcb835b0"
+    },
+    {
+      "site_id": "SITE-016010",
+      "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f94000005790-f7efa108-3e5e-4bed-a807-e47bc991c754&directionType=PreviousList&inquirytype=EntityName&listNameOrder=CORKIEPRODUCTS+G330420&searchNameOrder=CORKINDUSTRIES+F940000057900&searchTerm=CORK%27D+WINE+BAR+",
+      "raw_path": "/tmp/audit9-b/6426ec7d95be911fa8e26e9184fb5f42a6224edd96f881989abadb063bd92992.raw",
+      "sha256": "f6e63a854adb07aa966e656e5997fbabf00cd2d43e6b6441ca8b3a642e40d3f0"
+    },
+    {
+      "site_id": "SITE-019002",
+      "url": "https://pactivevergreen.com/assets/d9/b6/d9b6d3e6-625f-4d2d-b4e4-7b8088748fb3/2024%20PTVE%20CDP%20Questionnaire.pdf",
+      "raw_path": "/tmp/audit9-b/3d7b40b495b067f6ef382faa10732cdd7127f0472ef9243b83f457c64a1354b9.raw",
+      "sha256": "6052ecf4cb32cdebdbd4d0502a33a8e2dc97bf3665e0db55492440620bdc2a2e"
+    },
+    {
+      "site_id": "SITE-018003",
+      "url": "https://cooperstandard.com/fr/node/192?page=4",
+      "raw_path": "/tmp/audit9-c/90cc2f3648e854.raw",
+      "sha256": "b5edbbf789b99c6a55d1c58d093e7d13ee71940cce9aeef4f93e3692f18a39e7"
+    },
+    {
+      "site_id": "SITE-019007",
+      "url": "https://reflectives.averydennison.com/en/home/locations.html",
+      "raw_path": "/tmp/audit9-c/ba60f706ad247c.raw",
+      "sha256": "bbdbfe7a27af78ee0af7c0e4ee53e4f9628688eeda27a24e42b0c3c8e9990d7a"
+    },
+    {
+      "site_id": "SITE-018003",
+      "url": "https://careers.cooperstandard.com/job/13314824/production-associate-gaylord-mi/",
+      "raw_path": "/tmp/audit9-c/986c5b7dfad625.raw",
+      "sha256": "f194ac6066882ce372aae278b398f081eb86ce83aac99dec4bb5c5786db98411"
+    },
+    {
+      "site_id": "SITE-018012",
+      "url": "https://www.techniplas.com/wp-content/uploads/2024/12/Jonesville-ISO_14001-2015_Jonesville_261220.pdf",
+      "raw_path": "/tmp/audit9-c/a2601ebb4346fa.raw",
+      "sha256": "72bc9038fcb7de13327d852da4a02ec46f4a711d4ce27c530e96c2acb78362d3"
+    },
+    {
+      "site_id": "SITE-012022",
+      "url": "https://cr.rebuildmanufacturing.com/",
+      "raw_path": "/tmp/audit9-c/b8a09e0c392c7f.raw",
+      "sha256": "96938eb9cde4e38d0cf17347f743daad8ebed27a71cfdf84ce300a8d12216da2"
+    },
+    {
+      "site_id": "SITE-012031",
+      "url": "https://sunspecialtyproducts.com/about-us/",
+      "raw_path": "/tmp/audit9-c/b56574cf0b3eca.raw",
+      "sha256": "336841f934d34d6fdb720d384a7d2b440fe6a7c80ed99506106bef54a061ab7d"
+    },
+    {
+      "site_id": "SITE-014013",
+      "url": "https://www.ssibio.com/",
+      "raw_path": "/tmp/audit9-c/790833dcb2a02b.raw",
+      "sha256": "178a506aa1688a30453364a882610a68b60e7c1b16c40403f5ca07673d7a82c0"
+    },
+    {
+      "site_id": "SITE-012022",
+      "url": "https://cr.rebuildmanufacturing.com/contact/",
+      "raw_path": "/tmp/audit9-c/4e986ef09eeadd.raw",
+      "sha256": "900188b1f0296128a057f36f1a760956d7f73c37f3907d0ac8760777552b6464"
+    },
+    {
+      "site_id": "SITE-019019",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1364229.015",
+      "raw_path": "/tmp/audit9-c/4bca41a5248bca.raw",
+      "sha256": "8e94a8580930feef819af3fe90b6f9e4208b65bd3a2838f7d88cfe0928a24c04"
+    },
+    {
+      "site_id": "SITE-014014",
+      "url": "https://buylowwholesale.com/pages/about-us",
+      "raw_path": "/tmp/audit9-c/f1321c870d2764.raw",
+      "sha256": "b13b0c66bace3e3ff44f4658da4f25d32d649b57973b4605bd20fe8775114321"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://www.fxi.com/",
+      "raw_path": "/tmp/audit9-c/2007143bdfb08a.raw",
+      "sha256": "de56e5a5ca5e75a2595e6100714abefd4408f0b1be6f0159ea778ffa0b84bf45"
+    },
+    {
+      "site_id": "SITE-014019",
+      "url": "https://altiumpkg.com/locations/",
+      "raw_path": "/tmp/audit9-c/11044e413129f3.raw",
+      "sha256": "3d9dc675826fe54b353b72680020f1a1e23cb227845aaf5718f513470eb8e66e"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://join.reynoldsconsumerproducts.com/jobs/3753?lang=en-us",
+      "raw_path": "/tmp/audit9-c/4a44e8e2af2d68.raw",
+      "sha256": "ac00d4b8e3c83afb5f62783656c0b7453d2f6b59693d1a2ce504751c18b32986"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.dir.ca.gov/oshab/DECISIONS-ALJ/2020/1195278-Nusil-Technology.pdf",
+      "raw_path": "/tmp/audit9-c/074ac7d7129369.raw",
+      "sha256": "351a875e2ee25dc5d9ea2dbb4a9fecfd9aa86d6a455766c4ea2924fbc198dd9e"
+    },
+    {
+      "site_id": "SITE-014014",
+      "url": "https://info.nsf.org/Certified/Food/Listings.asp?Company=C0804305&Standard=002",
+      "raw_path": "/tmp/audit9-c/4e2a16099c92e5.raw",
+      "sha256": "ab1a55855947780c69963e644a36339e807d3f6261b981e614423f40512ebb63"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://wincup.com/",
+      "raw_path": "/tmp/audit9-c/468d7735d14095.raw",
+      "sha256": "c69e46c4a5c46e345970784e8f12922f7302289cd019255c55f6528801c483a2"
+    },
+    {
+      "site_id": "SITE-016113",
+      "url": "https://www.adspipe.com/locations",
+      "raw_path": "/tmp/audit9-c/431f3744a1f90b.raw",
+      "sha256": "aaf9a704bb827e8019ffc516dd08180af635735c0bc1dd3f6fd8af405c90abc9"
+    },
+    {
+      "site_id": "SITE-016013",
+      "url": "https://www.elevatecommercialbp.com/ca-en/resources/about-us",
+      "raw_path": "/tmp/audit9-c/366d6ccab97614.raw",
+      "sha256": "19871dacc9cf2fd296c5e47d3101169cdbfb0d0152df25efc214c9a3a66224ea"
+    },
+    {
+      "site_id": "SITE-016108",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider65/iso-certifications/iso-45001-mapei-na_en.pdf?sfvrsn=680d0f89_0",
+      "raw_path": "/tmp/audit9-c/ba2f3c6514c881.raw",
+      "sha256": "5d6a9897b63679d8fbf34c5d62d8ab0e1beb3ade51d1244b6526db9ce305c6b1"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://investors.reynoldsconsumerproducts.com/node/6826/html",
+      "raw_path": "/tmp/audit9-c/e1585a66f55318.raw",
+      "sha256": "c15dfa228e6332a6d19ae847bc81432bdef2dfafa3f27e84a348f2c0b19db333"
+    },
+    {
+      "site_id": "SITE-012022",
+      "url": "https://cr.rebuildmanufacturing.com/about/",
+      "raw_path": "/tmp/audit9-c/59b2295d99a8ee.raw",
+      "sha256": "bb7a776c0fbf40f9eab20d871adedc007df886d5d05df34699b5132d8aa39141"
+    },
+    {
+      "site_id": "SITE-012031",
+      "url": "https://sunspecialtyproducts.com/",
+      "raw_path": "/tmp/audit9-c/82677a0563896a.raw",
+      "sha256": "d6bea5a7fec07f09e786d6387a6566904bc6834fb508b4303103051836792285"
+    },
+    {
+      "site_id": "SITE-016113",
+      "url": "https://www.dot.state.al.us/publications/materials/pdf/MSDSAR/QMSD/Li11.pdf",
+      "raw_path": "/tmp/audit9-c/e3a0eabb6f9f98.raw",
+      "sha256": "a101b3fefef05c11af6354a12185927574216cb0b1400f2634da1c7020d0065c"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://epd.georgia.gov/document/document/08900097draftpdf/download",
+      "raw_path": "/tmp/audit9-c/02e68b0ffe77d1.raw",
+      "sha256": "f22128332fec1fc5eb0b56bec566e5abc482fac594bd1a72ccbfe545f53de504"
+    },
+    {
+      "site_id": "SITE-019007",
+      "url": "https://d3n9y02raazwpg.cloudfront.net/mountprospect/7187b7ba-4ecf-11eb-920e-0050569183fa-8a553f6f-20df-4e89-9078-a16d8dee3216-1635865563.pdf",
+      "raw_path": "/tmp/audit9-c/1845ebd223cf6a.raw",
+      "sha256": "7139a58fc00abd4c174fc3533bc9d278961c5437bddd3baa7ae5f494581ae0c2"
+    },
+    {
+      "site_id": "SITE-014019",
+      "url": "https://coronaplasticpackaging.com/",
+      "raw_path": "/tmp/audit9-c/3323734e9c5753.raw",
+      "sha256": "ecc7770efd3e31b784b6fbc9c1cad06d9ec1f58e6a0a4aa422f285d0fde79bd3"
+    },
+    {
+      "site_id": "SITE-018003",
+      "url": "https://www.cooperstandard.com/locations",
+      "raw_path": "/tmp/audit9-c/22c3c28ff46c5c.raw",
+      "sha256": "5d2f43e415dc3b8b35ae9da912ab080b0ccbb655c9577447d8c365e89246756b"
+    },
+    {
+      "site_id": "SITE-012031",
+      "url": "https://sunspecialtyproducts.com/wp-content/uploads/2024/09/2023-SDS-COASTAL-SPOT.pdf",
+      "raw_path": "/tmp/audit9-c/24189e78258ced.raw",
+      "sha256": "29390133a14f0f71b89ad7a2307eecc956589df58c50660338d356087a6a5e35"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://careers.avantorsciences.com/manufacturing-admin/job/R-175609",
+      "raw_path": "/tmp/audit9-c/20acd0363823e4.raw",
+      "sha256": "d9505c39140b30337e1bbc1582e8d0c093f02038b3d0841e09180bec9cc70f3a"
+    },
+    {
+      "site_id": "SITE-018003",
+      "url": "https://ir.cooperstandard.com/2012-12-17-Three-Cooper-Standard-Facilities-Honored-with-GM-Supplier-Quality-Excellence-Award",
+      "raw_path": "/tmp/audit9-c/e4b91094e3bb74.raw",
+      "sha256": "53d18a2f69820f061ba6787825af2e97333358b1efc7a757dd05c5f956e2c78b"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://investors.reynoldsconsumerproducts.com/static-files/68c4dbb7-e4cb-42c1-84c7-465cc31f9c8a",
+      "raw_path": "/tmp/audit9-c/7537ff61b50b3c.raw",
+      "sha256": "e1af44c4fb7a43c658b231128d5e81bb206c2019a18a50e16c84a9053ab62d5b"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://www.fxi.com/what-we-do",
+      "raw_path": "/tmp/audit9-c/0a3bc0c516980a.raw",
+      "sha256": "ffb5d19e96b616b1f8988825a931e987a87e26aa83ee5120acb1698c0ca80f6c"
+    },
+    {
+      "site_id": "SITE-019019",
+      "url": "https://www.epscca.com/en_GB/contact-us/locations/",
+      "raw_path": "/tmp/audit9-c/9507c2420986df.raw",
+      "sha256": "8bcc9dc519df8b5e8a35cac908f9655bec934c34308a86bc0e4c486a1d70e52b"
+    },
+    {
+      "site_id": "SITE-019019",
+      "url": "https://www.epscca.com/en_GB/",
+      "raw_path": "/tmp/audit9-c/49b60e5f11e864.raw",
+      "sha256": "eab13a28e8074c1b6ef3bbfba7dc0d333baea9766be8ec816db9442819b30ca3"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://downloads.regulations.gov/EPA-HQ-OAR-2008-0334-0011/attachment_1.pdf",
+      "raw_path": "/tmp/audit9-c/ae561a2e2f7780.raw",
+      "sha256": "c564cd9813c20a7cfd28f0470d813d77d63feb08865f142acef5edc54191896a"
+    },
+    {
+      "site_id": "SITE-018003",
+      "url": "https://www.cooperstandard.com/fr/node/192?page=4",
+      "raw_path": "/tmp/audit9-c/66d0d09676aa5c.raw",
+      "sha256": "a2cf8841ed067285a01a3af9b24d4b356e5150b26f4cf00bbb5ecd7c2c7e2bb3"
+    },
+    {
+      "site_id": "SITE-018003",
+      "url": "https://www.egle.state.mi.us/aps/downloads/permits/finpticon/1990/62-90C.pdf",
+      "raw_path": "/tmp/audit9-c/243cad5ac1ec94.raw",
+      "sha256": "3677fcd97535381bb30367b8402d4f9b6e5dd3bba63cdfb7cf68489841e17cb3"
+    },
+    {
+      "site_id": "SITE-016108",
+      "url": "https://cdnmedia.mapei.com/docs/librariesprovider65/realta-mapei-magazine/en_2014_19.pdf?sfvrsn=d0142b77_16",
+      "raw_path": "/tmp/audit9-c/c4e9d4908baaa8.raw",
+      "sha256": "edbb341a72571b70a2dc69eaa33594d3b22f3a62202421195ad1cbba53c9e387"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://reynoldsconsumerproducts.gcs-web.com/node/6456/html",
+      "raw_path": "/tmp/audit9-c/576994fe9fbe49.raw",
+      "sha256": "7dbdc6c6369f41e6ab12b8cb8c47d163d5e6f93d9ed54972f1d57936b3281a63"
+    },
+    {
+      "site_id": "SITE-014019",
+      "url": "https://ccc.wd5.myworkdayjobs.com/es/ccc_External/job/Production-Packaging-Associates-3rd-Shift_R19690",
+      "raw_path": "/tmp/audit9-c/2b37752aba4964.raw",
+      "sha256": "fa34d3ebe495d810b5d877820028432c237c1847cf8901445f9c604061f98029"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://diversityjobs.com/career/18307325/Pourline-Operator-Florida-Miami",
+      "raw_path": "/tmp/audit9-c/1703ddcae785d9.raw",
+      "sha256": "51ab18bc88f808dec1f475b8b3f31d2d2d655f2d799070721e2a2e2351b1115b"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://join.reynoldsconsumerproducts.com/jobs/4736?lang=en-us",
+      "raw_path": "/tmp/audit9-c/cd529e0ab5b7c6.raw",
+      "sha256": "f63c976801c6602d97d6b407d5b7fefb832bcf96039a5afe3d556d71f258fe2f"
+    },
+    {
+      "site_id": "SITE-019019",
+      "url": "https://www.epscca.com/en/terms-of-use/",
+      "raw_path": "/tmp/audit9-c/18df5372980ea7.raw",
+      "sha256": "08f33e57331bdaf8ef8b886353057230e95da4cc13c17d1b6cd7eac5f368fb46"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://wincup.com/contact/",
+      "raw_path": "/tmp/audit9-c/ab5b4a38a50af6.raw",
+      "sha256": "4ef4baeacd238a6b0a668663ac4ba7030c32bbe9b0a56877daa97b248f8286e3"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.spectrumchemical.com/media/sd/S1926_SD.pdf",
+      "raw_path": "/tmp/audit9-c/b344087337f5b0.raw",
+      "sha256": "f44c08d898f9e2e2004cd387ca3259cfc89a09e2f02b2d7af72120e21914784e"
+    },
+    {
+      "site_id": "SITE-019011",
+      "url": "https://west-central.org/wp-content/uploads/2026/05/Document_20260501_0002.pdf",
+      "raw_path": "/tmp/audit9-c/c391ff13dda1d1.raw",
+      "sha256": "08135d8ff715400648c6d29ee50da2cf042278ceaca07304a08c0ffc9756837b"
+    },
+    {
+      "site_id": "SITE-019019",
+      "url": "https://osha.gov/ords/imis/establishment.inspection_detail?id=1364229.015",
+      "raw_path": "/tmp/audit9-c/4bfdca10bf4e3c.raw",
+      "sha256": "112601de2548abfd43f9f04cbbf58c19eb6b8a3a3789190a9d100879192b04c9"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.spectrumrx.com/media/sd/S1926_SD.pdf",
+      "raw_path": "/tmp/audit9-c/772b7373ea5dbf.raw",
+      "sha256": "d13d559bda83b14a281d869d959f48ddaf69bde29e6700862f9170a3f9dc5c79"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://careers-fxi.icims.com/jobs/search?ss=1&searchLocation=12781-12793-Miami",
+      "raw_path": "/tmp/audit9-c/a2a522f94eecc0.raw",
+      "sha256": "4b12d840a2d7617d30f4b85cf01d862794be279d40b76fda20f3942d10a1a92b"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://www.wincup.com/contact/",
+      "raw_path": "/tmp/audit9-c/4bef6f4cc6147c.raw",
+      "sha256": "3f74123ecb2e727c086ae8e4ee32dec2defa6fb5ca46b5a5b12360eb97d6aedf"
+    },
+    {
+      "site_id": "SITE-014019",
+      "url": "https://ccc.wd5.myworkdayjobs.com/wday/cxs/ccc/ccc_External/job/Production-Packaging-Associates-3rd-Shift_R19690",
+      "raw_path": "/tmp/audit9-c/4121e817e89ba4.raw",
+      "sha256": "5ff488d310d57e8bc887f4d668eec10c3fc7424795cc1b27031409adda007cdc"
+    },
+    {
+      "site_id": "SITE-014007",
+      "url": "https://www.nusil.com/us/en/applications/semiconductor-mems",
+      "raw_path": "/tmp/audit9-c/30a4f411961867.raw",
+      "sha256": "dce4160d34c5b92b6e6f9d1965fe80bbeec1c610df70e059230aa23b519315d6"
+    },
+    {
+      "site_id": "SITE-019007",
+      "url": "https://reflectives.averydennison.com/content/dam/averydennison/reflective-responsive/documents/english/pdb/retroreflective-sheeting/lv-0700-pdb-ww-english.pdf",
+      "raw_path": "/tmp/audit9-c/c51c85630218c4.raw",
+      "sha256": "283fa1580bd863eeb5607a89df70334cf38f677daaf41cc97cc392d65b5fd7fd"
+    },
+    {
+      "site_id": "SITE-019019",
+      "url": "https://pcb.illinois.gov/documents/dsweb/Get/Version-51702/HO08-17%2C021308.pdf",
+      "raw_path": "/tmp/audit9-c/7535f798544035.raw",
+      "sha256": "0f6499c9a7f092cb0d911ca3b8a8672c49a71fbcdc28f2c9a0aa3241305534e4"
+    },
+    {
+      "site_id": "SITE-016101",
+      "url": "https://wincup.com/wp-json/wp/v2/pages?slug=contact",
+      "raw_path": "/tmp/audit9-c/7c6217fd3e9d63.raw",
+      "sha256": "74fb603d212ae4965d9895db9532b3285dcfa2b240ff06bbb9586d99fcaf78a6"
+    },
+    {
+      "site_id": "SITE-016006",
+      "url": "https://www.fxi.com/careers",
+      "raw_path": "/tmp/audit9-c/e5b9d6cc331307.raw",
+      "sha256": "8933dd2ff6d9315bc27e94fb68e6b84ca935b17301ebc100193453d7ecc21be3"
+    }
+  ]
+}

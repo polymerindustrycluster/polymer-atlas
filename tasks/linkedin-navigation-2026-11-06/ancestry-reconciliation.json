@@ -1,0 +1,367 @@
+{
+  "http200_pages_reparsed": 1285,
+  "before_pages_with_anchors": 536,
+  "after_pages_with_anchors": 512,
+  "changed_pages": [
+    {
+      "website": "https://www.myersindustries.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/myers-industries/",
+          "linkedin_url": "https://www.linkedin.com/company/myers-industries/",
+          "location": "div#sidebar-footer4.widget-area-footer"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.geon.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/geon-performance-solutions/",
+          "linkedin_url": "https://www.linkedin.com/company/geon-performance-solutions/",
+          "location": "div#hs_menu_wrapper_module_site_footer_.hs-menu-wrapper.active-branch.no-flyouts.hs-menu-flow-horizontal"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://bridgestoneamericas.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/bridgestone",
+          "linkedin_url": "https://www.linkedin.com/company/bridgestone/",
+          "location": "div.layoutFooter__container.container-xl"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://carlisletyrfil.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/carlisletyrfil/",
+          "linkedin_url": "https://www.linkedin.com/company/carlisletyrfil/",
+          "location": "div.elementor-element.elementor-element-37fe61a.elementor-shape-circle.header-socials.elementor-grid-0.e-grid-align-center.elementor-widget.elementor-widget-social-icons"
+        },
+        {
+          "href": "https://www.linkedin.com/company/carlisletyrfil/",
+          "linkedin_url": "https://www.linkedin.com/company/carlisletyrfil/",
+          "location": "div.header__nav"
+        },
+        {
+          "href": "https://www.linkedin.com/company/carlisletyrfil/",
+          "linkedin_url": "https://www.linkedin.com/company/carlisletyrfil/",
+          "location": "footer.elementor.elementor-67.elementor-location-footer"
+        },
+        {
+          "href": "https://www.linkedin.com/company/carlisletyrfil/",
+          "linkedin_url": "https://www.linkedin.com/company/carlisletyrfil/",
+          "location": "footer.elementor.elementor-67.elementor-location-footer"
+        }
+      ],
+      "after": [
+        {
+          "href": "https://www.linkedin.com/company/carlisletyrfil/",
+          "linkedin_url": "https://www.linkedin.com/company/carlisletyrfil/",
+          "location": "div.elementor-element.elementor-element-37fe61a.elementor-shape-circle.header-socials.elementor-grid-0.e-grid-align-center.elementor-widget.elementor-widget-social-icons"
+        },
+        {
+          "href": "https://www.linkedin.com/company/carlisletyrfil/",
+          "linkedin_url": "https://www.linkedin.com/company/carlisletyrfil/",
+          "location": "div.header__nav"
+        }
+      ]
+    },
+    {
+      "website": "https://flexsys.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/flexsys",
+          "linkedin_url": "https://www.linkedin.com/company/flexsys/",
+          "location": "div#av_section_9.avia-section.av-4yjtk-0a156141183c36c48c14609352bace79.main_color.avia-section-default.avia-no-border-styling.avia-builder-el-0.el_before_av_section.avia-builder-el-first.footer-row-one.avia-bg-style-scroll.container_wrap.fullsize"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.pentair.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/pentair",
+          "linkedin_url": "https://www.linkedin.com/company/pentair/",
+          "location": "div.footer__col"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.akzonobel.com/",
+      "before": [
+        {
+          "href": "http://www.linkedin.com/company/akzonobel",
+          "linkedin_url": "https://www.linkedin.com/company/akzonobel/",
+          "location": "header.s4-corporate-header.cp-top-spacing-none.cp-bottom-spacing-none.style-default"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://transtec.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/transtec-by-corteco/",
+          "linkedin_url": "https://www.linkedin.com/company/transtec-by-corteco/",
+          "location": "footer.footer"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.spartech.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/spartech",
+          "linkedin_url": "https://www.linkedin.com/company/spartech/",
+          "location": "div.spartech-header-001"
+        },
+        {
+          "href": "https://www.linkedin.com/company/spartech",
+          "linkedin_url": "https://www.linkedin.com/company/spartech/",
+          "location": "div.spartech-header-001"
+        },
+        {
+          "href": "https://www.linkedin.com/company/spartech",
+          "linkedin_url": "https://www.linkedin.com/company/spartech/",
+          "location": "footer.container-fluid.spartech-2000.pdPrintHide"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.woodbridgegroup.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/woodbridge",
+          "linkedin_url": "https://www.linkedin.com/company/woodbridge/",
+          "location": "div.container.modest-footer"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.solstice.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/solstice-advanced-materials/",
+          "linkedin_url": "https://www.linkedin.com/company/solstice-advanced-materials/",
+          "location": "ul.footer--links__socials.d-flex.flex-wrap.pl-0"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.arlanxeo.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/arlanxeo",
+          "linkedin_url": "https://www.linkedin.com/company/arlanxeo/",
+          "location": "div.col-sm-4.col-xs-6.footer__social-col"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "http://www.seasafe.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/seasafe-inc/",
+          "linkedin_url": "https://www.linkedin.com/company/seasafe-inc/",
+          "location": "div.wf-container-footer"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.americanpackaging.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/american-packaging-corporation",
+          "linkedin_url": "https://www.linkedin.com/company/american-packaging-corporation/",
+          "location": "header.page_ui.c_flex--centered"
+        },
+        {
+          "href": "https://www.linkedin.com/company/american-packaging-corporation",
+          "linkedin_url": "https://www.linkedin.com/company/american-packaging-corporation/",
+          "location": "div.c_footer--social"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.polyplex.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/polyplex/",
+          "linkedin_url": "https://www.linkedin.com/company/polyplex/",
+          "location": "div.footer__row-Item"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.ellsworth.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/28305?trk=tyah",
+          "linkedin_url": "https://www.linkedin.com/company/28305/",
+          "location": "ul.footer-links-social-list"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "generalplastics.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/153248/",
+          "linkedin_url": "https://www.linkedin.com/company/153248/",
+          "location": "footer"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.milleringenuity.com/",
+      "before": [
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "ul.header-social"
+        },
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "ul.nav-footer-social"
+        },
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "div.social-header"
+        },
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "ul.footer-social"
+        }
+      ],
+      "after": [
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "ul.header-social"
+        },
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "ul.nav-footer-social"
+        },
+        {
+          "href": "http://www.linkedin.com/company/1064004",
+          "linkedin_url": "https://www.linkedin.com/company/1064004/",
+          "location": "ul.footer-social"
+        }
+      ]
+    },
+    {
+      "website": "https://www.premoldcorp.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/premold-corp/",
+          "linkedin_url": "https://www.linkedin.com/company/premold-corp/",
+          "location": "section.elementor-section.elementor-top-section.elementor-element.elementor-element-2fe31d4.hp-footer.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://chemline.net/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/chemline-inc/",
+          "linkedin_url": "https://www.linkedin.com/company/chemline-inc/",
+          "location": "section.page-block.relative.overflow-hidden.footer-block.block-"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://lairdplastics.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/laird-plastics",
+          "linkedin_url": "https://www.linkedin.com/company/laird-plastics/",
+          "location": "section.footer-info.4a616d6573"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.swagelok.com",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/swagelok",
+          "linkedin_url": "https://www.linkedin.com/company/swagelok/",
+          "location": "div.small-12.medium-7.large-8.columns.footer-module02"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.rcsgear.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/raven-concealment-systems/",
+          "linkedin_url": "https://www.linkedin.com/company/raven-concealment-systems/",
+          "location": "div.footer__inner"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://paramontmachinecompany.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/paramont-machine-company/",
+          "linkedin_url": "https://www.linkedin.com/company/paramont-machine-company/",
+          "location": "footer.wp-block-template-part"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.kongcompany.com/",
+      "before": [
+        {
+          "href": "https://www.linkedin.com/company/kong-company/",
+          "linkedin_url": "https://www.linkedin.com/company/kong-company/",
+          "location": "section.footer-group"
+        }
+      ],
+      "after": []
+    },
+    {
+      "website": "https://www.vmi-group.com",
+      "before": [
+        {
+          "href": "https://nl.linkedin.com/company/vmi-holland-bv",
+          "linkedin_url": "https://www.linkedin.com/company/vmi-holland-bv/",
+          "location": "footer.main-footer.pseudo-vmi-general.pseudo-vmi-general-before.pseudo-line-after"
+        }
+      ],
+      "after": []
+    }
+  ],
+  "cache_digests_verified": true,
+  "new_network_requests": 0
+}

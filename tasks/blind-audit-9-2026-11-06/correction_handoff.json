@@ -1,0 +1,157 @@
+{
+  "correction_owner": "L11 thr_nn5sx8c9ji percontroller",
+  "audit_owner": "L13 thr_ywwrwjishr;packetonly",
+  "frozen_before_original_evidence": true,
+  "decisions": "SCHEMA4.5/5.3 real warehouse mistypedplant=fielderror; explicit audit9closed=creationerror. No deletion or exactclosuredate inferred.",
+  "confirmed": [
+    {
+      "site_id": "SITE-014003",
+      "final_audit_grade": "field_error",
+      "field_errors": [
+        {
+          "field": "site_type",
+          "held_value": "manufacturing_plant",
+          "proposed_value": "warehouse_distribution",
+          "source_url": "https://corporate.dartcontainer.com/location/corona-ca/",
+          "quote": "our Corona Distribution Center has more than 1 million square feet under roof."
+        }
+      ],
+      "creation_error_reason": "",
+      "sources": [
+        {
+          "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+          "source_class": "own_site",
+          "quote": "our Corona Distribution Center has more than 1 million square feet under roof.",
+          "raw_checked": true,
+          "observed_date": "2026-11-06"
+        },
+        {
+          "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+          "source_class": "own_site",
+          "quote": "150 S. Maple Street, Corona, CA 92878",
+          "raw_checked": true,
+          "observed_date": "2026-11-06"
+        }
+      ],
+      "raw_receipts": [
+        {
+          "site_id": "SITE-014003",
+          "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+          "http_status": "200",
+          "bytes": 52554,
+          "sha256": "d2ea297b23ad1e18ac99f880b48ca05dc19c90b8dc3fcae7ef5209989e87b669",
+          "raw_path": "/tmp/audit9-a/c217e3a0e819fa94e6d08d4f7d225a3b50f42f36e08aed38bbf8df8b28218642.raw",
+          "text_path": "/tmp/audit9-a/c217e3a0e819fa94e6d08d4f7d225a3b50f42f36e08aed38bbf8df8b28218642.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        },
+        {
+          "site_id": "SITE-014003",
+          "url": "https://www.dartcontainer.com/ca/about-us/plant-locations",
+          "http_status": "200",
+          "bytes": 2266,
+          "sha256": "a1dac7fc5c70fcec81683b3ed6ce5609e9d686c8448fb77ebfc6e62415d04eb1",
+          "raw_path": "/tmp/audit9-a/083c1ea38d69339780ccd95aad099d561cf9aa6b27f5ba33beac5ad71adbedad.raw",
+          "text_path": "/tmp/audit9-a/083c1ea38d69339780ccd95aad099d561cf9aa6b27f5ba33beac5ad71adbedad.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-012023",
+      "final_audit_grade": "creation_error",
+      "field_errors": [
+        {
+          "field": "operating_status",
+          "held_value": "active",
+          "proposed_value": "closed",
+          "source_url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+          "quote": "Y-TWS Spartanburg Plant Closed"
+        }
+      ],
+      "creation_error_reason": "Issuer confirms this sampled active site closed before its 2026-11-06 creation. New audit taxonomy explicitly includes closed. Historical physical establishment remains real; do not delete. Exact closure day unknown.",
+      "sources": [
+        {
+          "url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+          "source_class": "own_site",
+          "quote": "Y-TWS Spartanburg Plant Closed",
+          "raw_checked": true,
+          "observed_date": "2026-11-06"
+        },
+        {
+          "url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+          "source_class": "government_filing",
+          "quote": "Yokohama TWS North America Spartanburg 2/18/2025 4/19/2025 90 Permanent Closure 570 Trelleborg Dr., Spartanburg, SC 29301",
+          "raw_checked": true,
+          "observed_date": "2026-11-06"
+        },
+        {
+          "url": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "source_class": "own_site",
+          "quote": "from the preparation of semi-finished products through tire building and curing",
+          "raw_checked": true,
+          "observed_date": "2026-11-06"
+        }
+      ],
+      "raw_receipts": [
+        {
+          "site_id": "SITE-012023",
+          "url": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+          "http_status": "200",
+          "bytes": 101387,
+          "sha256": "aadce836aedfa70501c7a4f93d7a457ed70943973fcc38dab0aef108f3b562ba",
+          "raw_path": "/tmp/audit9-a/e3e318d27514f03f066ed1433db15de31896a8f1ab5d8b351561c0de40744974.raw",
+          "text_path": "/tmp/audit9-a/e3e318d27514f03f066ed1433db15de31896a8f1ab5d8b351561c0de40744974.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        },
+        {
+          "site_id": "SITE-012023",
+          "url": "https://www.trelleborg-tires.com/en-us/contact-us",
+          "http_status": "200",
+          "bytes": 181849,
+          "sha256": "86cfa0514af80bc1aa499a2f2025e8c2cdee0c81d3af57242651896f252f7248",
+          "raw_path": "/tmp/audit9-a/86c99530cc7584e513cdce5ea87f16fd491d8077a288c70f6efad7572682748a.raw",
+          "text_path": "/tmp/audit9-a/86c99530cc7584e513cdce5ea87f16fd491d8077a288c70f6efad7572682748a.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        },
+        {
+          "site_id": "SITE-012023",
+          "url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+          "http_status": "200",
+          "bytes": 20861,
+          "sha256": "6dc3f90eaa27643780d36351aca33207864e73f43258e4a3856411122f7bb945",
+          "raw_path": "/tmp/audit9-a/2367c33e3105c231306eb602e7a9e2d8e813ad20dc3b081da9ac5d7857eae1b5.raw",
+          "text_path": "/tmp/audit9-a/2367c33e3105c231306eb602e7a9e2d8e813ad20dc3b081da9ac5d7857eae1b5.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        },
+        {
+          "site_id": "SITE-012023",
+          "url": "https://fs2.magicalir.net/tdnet/2026/5101/20260218564658.pdf",
+          "http_status": "200",
+          "bytes": 2719283,
+          "sha256": "5c2a8db5358f43698af9dcfa63ad815ade5aba0828bcff0268d01a8d8051ff12",
+          "raw_path": "/tmp/audit9-a/ebe782ffea1d11b3341c797a2c88fc21463b1d53abfc362adcdd48d0e878fc4d.raw",
+          "text_path": "/tmp/audit9-a/ebe782ffea1d11b3341c797a2c88fc21463b1d53abfc362adcdd48d0e878fc4d.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        },
+        {
+          "site_id": "SITE-012023",
+          "url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+          "http_status": "200",
+          "bytes": 2591491,
+          "sha256": "33208e277c5849207e72889142b62616dce4cbc1f3449f39ad3ceb8f21b94ef9",
+          "raw_path": "/tmp/audit9-a/0a0105aa4fcd7d2c0cc83a580d9ac47cf699c470e3b3e0892052da5372451f0c.raw",
+          "text_path": "/tmp/audit9-a/0a0105aa4fcd7d2c0cc83a580d9ac47cf699c470e3b3e0892052da5372451f0c.txt",
+          "observed_date": "2026-11-06",
+          "availability_error": ""
+        }
+      ]
+    }
+  ],
+  "candidates": "SITE019009 CraigRoad/CraigPlace sourceconflict remains auditunresolved untilalias/situsproof; GAFZIPsourceconflict unread403 excluded. Gilkey019018/EastJordan018014 unsampled, excludedfromrates."
+}

@@ -66,6 +66,41 @@ An evidence-backed database of US polymer entities that supports PIC's members a
 - **Private sources never cross into this repo.** The PIC CRM, the faculty census and the vault are discovery leads
   at most. Prospect and outreach lists are internal and never committed.
 
+- **An approval carries forward only over an unchanged approved payload** (applied to the 2026-11-06 merges). When
+  the two family approvals sit on different heads, or a PR is replayed onto a moved `main`, the integrator merges
+  without new review only if (a) the lane's data delta is identical across the approved heads and the head being
+  merged — first compared row by row, later cell by cell (every cell the PR changes against its merge-base, plus new
+  rows) — or is a strict subset with only refuted claims withdrawn, and (b) nothing else changed between those heads
+  except receipts or main's own files. Any change to code, packets, reports or source meaning gets a targeted review,
+  even when the data delta is identical or empty (e.g. #137's guard cure at `8533b8e`).
+- **Replays onto a moved `main` use a normal merge.** `git merge origin/main`, take `main`'s copy of any conflicting
+  `data/` file, re-run the lane's builder, re-run its checks. Never `git merge -s ours` with a partial restore: on
+  2026-11-06 that kept a stale tree outside `data/` and deleted 312 files from `main` (#163, restored in #209).
+- **Every PR passes the row-loss guard** (`scripts/check_row_loss.py`, in CI since #130): no keyed data row may
+  disappear unless a `REMOVALS.csv` added in the same change declares it. The guard and its CI step were themselves
+  deleted by the #163 merge and restored by #209. Extending it to tracked files outside `data/` is pending in #210.
+- **An `own_site` evidence row states only what the cited page says.** Federal registrant names, registry ids, internal
+  record ids and adjudication notes go on their own rows or in `notes`, never in an `own_site` `claim_detail`
+  (Grok finding on #141, 2026-11-06).
+- **Unmerged rows may be regenerated in place.** Append-only binds rows on `main`. A lane may rewrite its own
+  not-yet-merged evidence rows under the same IDs; once merged, a weak row is answered by a fresher row.
+
+## Operating conventions (owner direction, in session 2026-11-06: "do items 3–5 to test out")
+These are being tested; they become conventions when the owner confirms them after the test.
+- **Review depth follows risk.** A PR that changes `data/` needs two families (Codex plus Grok or Gemini). A
+  packet-only or docs-only PR needs one family plus CI. Re-reviews are targeted at the findings being fixed.
+- **Review capacity is planned.** Past about 8 parallel lanes, the shared `council-ask` deep-call ceiling saturates,
+  so reviews run on dedicated reviewer threads (at least two per family). Each reviewer gives one verdict line per
+  request. Queues are balanced within a family, and stale requests for merged PRs are deleted.
+- **Stop a discovery frame on yield.** When a batch's verified yield falls under 20%, the lane stops new batches of
+  that frame and moves to quality or correction passes.
+- **A fresh thread per batch** for long lanes, with a handoff brief, and cheaper models (GPT-6.1 Terra or Luna) for
+  mechanical extraction. Judgment and review stay on stronger models. Long contexts caused two thread failures.
+- **Controller board lines carry real `date` output.** On 2026-11-06 the controller wrote estimated times and stopped
+  lanes early on a wrong clock.
+- **Before taking over a thread that looks wedged, probe it.** On 2026-11-06 a "failed" thread came back while a
+  replacement worked in the same worktree.
+
 ## Order of work
 1. Merge-ready PRs first: every open wave raises the ID floor for the next.
 2. Record quality on members and large PIC-18 organizations (T1).

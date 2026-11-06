@@ -1,0 +1,12 @@
+[
+  {
+    "pair_id": "D03",
+    "source_url": "https://roppe.com/wp-content/uploads/2018/10/Roppe-Press-Release_New-Facility_2018-10-23.pdf",
+    "quote": "Roppe Holding Company (RHC), the parent company to commercial flooring leaders Roppe and Flexco",
+    "source_date": "2018-10-23",
+    "raw_path": "/tmp/dedupe-leads-integrator/D03-roppe.pdf",
+    "raw_sha256": "7947523689e943c437c6ea7f25a46eaaa1af7df7ee28f6574a7c601e406a6145",
+    "matched": true,
+    "decision_calibration": "parent/operator distinct; no merge"
+  }
+]

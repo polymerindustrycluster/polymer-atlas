@@ -1,0 +1,68 @@
+{
+  "pinned_main": "97ee6bc2a4475a47d8449ca79db688fb9114ab0f",
+  "creation_filter": "canonical IDs present at merge and absent at its first parent; no build metadata classes counted",
+  "prs": [
+    {
+      "pr": 132,
+      "lane": "L7-FL",
+      "merge_sha": "fb99047cea9a6716dbcf39e872744f7b116c5213",
+      "published_creates": 17,
+      "derived_creates": 17,
+      "tiers": {
+        "C": 17
+      }
+    },
+    {
+      "pr": 135,
+      "lane": "L6-CA",
+      "merge_sha": "412391a0a462105a73e322ea67291d24088cfe7a",
+      "published_creates": 19,
+      "derived_creates": 19,
+      "tiers": {
+        "C": 16,
+        "B": 3
+      }
+    },
+    {
+      "pr": 138,
+      "lane": "L11-MI",
+      "merge_sha": "fd55c1049a3aa317e3bef9f4112b739be3500001",
+      "published_creates": 17,
+      "derived_creates": 17,
+      "tiers": {
+        "C": 17
+      }
+    },
+    {
+      "pr": 141,
+      "lane": "L3-MO-SC-LA",
+      "merge_sha": "8a52475c604edeea6e3e3a5cb69e7eb491992efc",
+      "published_creates": 19,
+      "derived_creates": 19,
+      "tiers": {
+        "B": 18,
+        "C": 1
+      }
+    },
+    {
+      "pr": 142,
+      "lane": "L7-GA",
+      "merge_sha": "8e8c71ada1f63b7c4d90867027efb8cea57f03a0",
+      "published_creates": 20,
+      "derived_creates": 20,
+      "tiers": {
+        "C": 20
+      }
+    },
+    {
+      "pr": 143,
+      "lane": "L11-IL",
+      "merge_sha": "547d51b882ad4f10f9c1284e03236c015b754061",
+      "published_creates": 18,
+      "derived_creates": 18,
+      "tiers": {
+        "C": 18
+      }
+    }
+  ]
+}
