@@ -8,6 +8,8 @@ BASE='85b85600c77e72c91fde772b0cf3c25e51c321ab'
 leads=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','a012caa:tasks/evidence-reverify-archive-oh-pa-2026-11-06/repair_leads.csv'],cwd=ROOT,text=True))))
 expected=[r for r in leads if r['judgment'] in ['NOT_SUPPORTED','WRONG_PAGE','PARTIAL']]
 assert read(H/'input.csv')==expected and len(expected)==269
+prior=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','agent/codex/evidence-repair-3:tasks/evidence-repair-3-2026-11-06/input.csv'],cwd=ROOT,text=True))))
+assert not ({r['evidence_id'] for r in prior}&{r['evidence_id'] for r in expected})
 vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');raw=read(H/'rawcheck.csv')
 assert len(vs)==269==len({r['evidence_id'] for r in vs})
 assert {r['evidence_id'] for r in vs}=={r['evidence_id'] for r in expected}
