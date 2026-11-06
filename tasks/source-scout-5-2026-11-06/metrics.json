@@ -35,16 +35,16 @@
       0,
       0.161125
     ],
-    "duplicate_sample_sites": 2,
-    "uncertain_sample_sites": 18,
+    "duplicate_sample_sites": 4,
+    "uncertain_sample_sites": 16,
     "frame_facility_ids": 21,
     "frame_unit_rows": 33,
-    "sample_exact_street_match_fraction": 0.1,
+    "sample_exact_street_match_fraction": 0.2,
     "sample_exact_street_match_wilson95": [
-      0.027866,
-      0.301034
+      0.080658,
+      0.416017
     ],
-    "frame_exact_street_matches": 2,
-    "frame_exact_street_match_fraction": 0.09523809523809523
+    "frame_exact_street_matches": 4,
+    "frame_exact_street_match_fraction": 0.19047619047619047
   }
 }
