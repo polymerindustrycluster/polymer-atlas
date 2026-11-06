@@ -1,0 +1,23 @@
+{
+  "unit": "candidate people",
+  "candidate_people": 184,
+  "counts": {
+    "STILL_UNCERTAIN": 86,
+    "VERIFIED": 91,
+    "REJECT": 7
+  },
+  "private_runtime_root": "/Users/johnswanson/.bb/thread-storage/thr_mcdghpxw8c/people-titles-3-private",
+  "private_input_sha256": {
+    "frame.json": "1bdbb4d01c44da7d5ab0eea2a7264e8b193aef39550bf966742728c73183f0bf",
+    "lane1/dispositions.json": "1c660c58537613d482015f6e5d10e8c5bc3c44505401f4e13817dbcd6ab0e34d",
+    "lane2/dispositions.json": "996bafc0380e7a542381e497911899ff3e5941979e3112df47b780228fc250c4",
+    "lane3/dispositions.json": "67474299326b0ce25ae8468adb3cc4f965ed2f031e8cec4f008ffb597616ffae",
+    "root16/dispositions.json": "41a5461e8227496c4ee2bdc7289762c9978481177af1a721840dcb1fb3614a4d"
+  },
+  "public_packet_sha256": {
+    "reviewed.csv": "bf7da32b043e2dac12c2132622ef64a83b5581834212660e65e4c267de8bea5d",
+    "rawcheck.csv": "79f0f97b1e80c0ef34cd96506c835830f8e8c0a8f4809280f179e34cbaba5348",
+    "verdicts.csv": "cb5306216243249a1f36adef54fd0e359ef655389af66857ac9a30b05878b142",
+    "rank_resolution.csv": "6a52d179cb1511ecb3e46293a0f439b68f9490ebd7d73a0c327e0411e43f5070"
+  }
+}
