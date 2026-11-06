@@ -145,3 +145,5 @@ Pending independent Codex3/Grok3 approval; draft. Controller06:25 newodd-lane cl
 |LF-IN-00728|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 
 Main-refresh journal: merged origin/main 412391a0a462105a73e322ea67291d24088cfe7a before review (CA135 integration);INbuilder pending0,23-source/20-sample checks andvalidate0 re-pass;INbaseline110strict326 sites unchanged. All161ownproposals government_filing;07:20 own_site audit zero matches. No WI/CAdata/code changes innetdiff.
+
+Codex/OpenAI clerk1 APPROVE atfbc91db,0findings: full145frame/all23sources/dedupe/161evidence/known3/blind20/replay/preservation/globalcollision/T3PASS. Receipt reviews/173-clerk-codex-1.md. SubsequentNCAlpek rootcause guard propagation leavesall23site/evidencevaluesunchanged: non326codes325212/325991/325520 explicitlySCHEMA2.2Ring2. Builder nowraisesHOLDfor325211/unknowncodes;known/HOLDcontrols added andcurrentmain replayed. TargetedCodexreview ofguard pending;Groklatestheadreviewpending. No currentoperation/freshbulkdownload claimed.

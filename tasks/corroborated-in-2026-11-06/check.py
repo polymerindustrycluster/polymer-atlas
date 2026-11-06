@@ -6,7 +6,7 @@ from collections import Counter
 H=Path(__file__).resolve().parent;R=H.parents[1];sys.path.insert(0,str(R/'scripts'))
 from atlas import load_tables,dedupe,name_key
 from build_qcew_denominators import atlas_numerators
-from build import read, clean_street
+from build import read, clean_street, ring_for_naics
 vs=read(H/'verdicts.csv');cs=read(H/'input.csv');alloc=read(H/'allocations.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==145
 assert {r['cluster_id'] for r in cs}=={r['cluster_id'] for r in vs}
@@ -40,6 +40,10 @@ for fn in ['sites_IN.csv','evidence_sites_IN.csv']:
 owned=[r for r in T['evidence'].rows if 205000<=int(r['evidence_id'][4:])<=205160]
 assert len(owned)==161 and all(r['source_class']=='government_filing' for r in owned)
 assert len(read(H/'blind_recheck.csv'))==20
+for code,expected in [('326199','1'),('325510','2'),('325520','2'),('325991','2'),('325212','2')]:assert ring_for_naics(code)==expected
+for code in ['325211','325998','325999']:
+ try:ring_for_naics(code);raise AssertionError('unresolved ring admitted')
+ except ValueError:pass
 # Byte idempotence, and a mutation: an occupied lane ID must fail without modifying any file.
 files=[R/'data'/f for f in ['sites_IN.csv','evidence_sites_IN.csv','organizations_IN.csv','evidence_organizations_IN.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files]

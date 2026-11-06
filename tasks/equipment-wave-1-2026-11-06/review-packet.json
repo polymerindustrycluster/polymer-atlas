@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "scope": "L14 first-wave equipment data and builder; canonical equipment rows exactly project columns of inputs.csv. Changed-path census: data/equipment.csv plus these seven task files; data separately inspected by reviewers in checkout.",
+  "criteria": [
+    "34 equipment rows have own-host citations and valid schema classes, access and held hosts",
+    "Raw quotes/names match with no source skips; three hand-confirmed instruments pass",
+    "Builder idempotent and validator reports zero errors"
+  ],
+  "out_of_scope": [
+    "Full equipment inventory",
+    "Other inherited federal-frame CRLF changes"
+  ],
+  "revision": "a034e3f93909b1a92b19e18d0afd8880b0c45898",
+  "tool_access": "Clerks may inspect full worktree and fetch source URLs; all packet evidence must be read.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "README.md",
+      "sha256": "467818bc3fcba1e26858cb6f7384fcc1afbda4f88404fd17169ef31fd2b37ef1"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "877ca4cac69306a86f9028d5782b9a1690d0a32fe940ac6f14782506da458556"
+    },
+    {
+      "path": "build.py",
+      "sha256": "7cf3e6168a774eb7cdaddafa8326c115460fc749809cd167d71181f907f3d29e"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "4fceed088ca45aa2648fdf83df017c99139db172736311cbb3d44811e8a7bc12"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "67e18c4ebc059aaa468cfd0f970e68431cdc8ff78e576087d825554b95044c48"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "282444858aca3a4ceac6f29ccded99e36d8f2f92b420a2b3bb2a114148bf056a"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "9740253c3ccc73fdbc9e319afe1e8fc1743c61e84a6d7f0007f02f061f13b432"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/equipment-wave-1-2026-11-06/build.py --raw-check --apply",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}
