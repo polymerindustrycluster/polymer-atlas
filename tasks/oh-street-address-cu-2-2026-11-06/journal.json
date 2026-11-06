@@ -1,0 +1,92 @@
+{
+  "main_base": "542629e53a0d07d55cf49b6da958f2219fbb5ba5",
+  "selected": 100,
+  "prior_worked": 40,
+  "future_unworked": 679,
+  "selection": "frozen indices0\u2013100 excluding70",
+  "fills": 7,
+  "holds": 93,
+  "tiers": {
+    "C": 6,
+    "U": 1
+  },
+  "registry_requests": 23,
+  "fetch_results": {
+    "OK": 22,
+    "UNAVAILABLE": 1
+  },
+  "original_audit_candidates": 9,
+  "fresh_reverified": 7,
+  "unavailable_withdrawals": 2,
+  "retired_ids": [
+    "EVD-153012",
+    "EVD-153081"
+  ],
+  "active_ohio_sites": 1883,
+  "before_streets": 324,
+  "after_streets": 331,
+  "site_changes": [
+    {
+      "site_id": "SITE-000028",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000031",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000034",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000057",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000153",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000164",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-000182",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "EVD-153015",
+    "EVD-153018",
+    "EVD-153020",
+    "EVD-153029",
+    "EVD-153078",
+    "EVD-153088",
+    "EVD-153100"
+  ],
+  "canonical_hashes": {
+    "sites_OH.csv": "f00913178393ff9e30f93ad2f0beb0a4d39defba160c4cf74b10222d15cd9e00",
+    "evidence_sites_OH.csv": "aa280c03a30d41847f7c80ca3456c49b872541c1451a503a476143b7fbcc0c57"
+  }
+}
