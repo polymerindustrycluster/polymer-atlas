@@ -1,9 +1,9 @@
 # Registry-links restore (2026-11-06)
 
 ## What happened
-Commit `805528a` ("ID skimpy-state wave (rebased by integrator)", merged with PR #67 as `91cd1a8` on 2026-11-04)
+Commit `805528a` ("ID skimpy-state wave (rebased by integrator)", merged with PR #68 as `bac5809` on 2026-11-04)
 added its 4 intended FRS links and rewrote `data/registry_links.csv` from a stale copy. The file went from 5,158
-links (at its parent `92393de`) to 1,811. Nothing failed: `validate.py` checks each link row, not how many there are.
+links at its parent `91cd1a8` (the PR #67 merge, whose registry file is byte-identical to `92393de`'s) to 1,811. Nothing failed: `validate.py` checks each link row, not how many there are.
 
 What was lost, by registry: TRI_TRIFID 1,943 · FRS 1,223 · LEI 104 · OHIO_SOS_CHARTER 28 · EIN 16 · WIKIDATA 15 ·
 SEC_CIK 9 · UEI 9 · SEC_CIK_PARENT_FILER 5 (unit: link rows, key = org_id + registry + registry_id + site_id).
@@ -54,8 +54,9 @@ left to restore.
 Grok (grok-4.7, deep) returned REFUTE. It could not run git or the validator, so most findings say a check was
 unverified. Each was checked against the data:
 - *Could a later commit have meant to delete a restored row?* No task folder dated 2026-11-04 to 11-06 describes
-  removing, purging or retiring a registry link, and no commit between `92393de` and `805528a` exists (one is the
-  other's parent).
+  removing, purging or retiring a registry link. `805528a`'s parent is `91cd1a8` (the PR #67 merge of `92393de`), and
+  the registry file is byte-identical at both, so no commit between them touched it. (An earlier draft of this README
+  said `92393de` was the parent. The Codex clerk caught that; the data result is unchanged.)
 - *Do restored rows put one registry id on two organizations?* 2 restored TRIFIDs are each on two organizations
   (`44319FRSTN381WE`: ORG-000011 / ORG-001716; `43207VNYLM1441U`: ORG-000764 / ORG-001091). Both pairs were exactly so at
   `92393de`, so the restore recreates the pre-loss state and adds no new conflict. They are dedupe leads, like the

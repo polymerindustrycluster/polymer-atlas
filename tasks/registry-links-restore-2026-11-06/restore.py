@@ -1,8 +1,8 @@
-"""Restore the registry links dropped by commit 805528a (PR #67 merge 91cd1a8, 2026-11-04).
+"""Restore the registry links dropped by commit 805528a (merged with PR #68 as bac5809, 2026-11-04).
 
 805528a ("ID skimpy-state wave, rebased by integrator") added its 4 intended FRS links and
 rewrote data/registry_links.csv from a stale copy, dropping 3,351 links that were on main at
-its parent 92393de. This script re-appends every dropped link that is still valid on the
+its parent 91cd1a8 (the PR #67 merge; its registry file is byte-identical to 92393de's). This script re-appends every dropped link that is still valid on the
 current tree, and writes a journal of every row it restores, re-points or holds.
 
 Rules (in order, per lost row):
@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 D = ROOT / "data"
-BASE = "92393de"   # parent of 805528a: last tree with the full link set
+BASE = "91cd1a8"   # parent of 805528a (PR #67 merge): last tree with the full link set
 OUT = Path(__file__).resolve().parent
 
 def key(r): return (r["org_id"], r["registry"], r["registry_id"], r.get("site_id", ""))
