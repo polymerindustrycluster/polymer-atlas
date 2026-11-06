@@ -4,7 +4,9 @@ from pathlib import Path
 import build
 from build import P,ROOT,read,write
 from research import found
-BASE=subprocess.check_output(['git','merge-base','origin/main','HEAD'],text=True).strip()
+# Other worktrees advance shared remote refs; compare one immutable integration snapshot.
+merge=subprocess.run(['git','rev-parse','--verify','MERGE_HEAD'],capture_output=True,text=True)
+BASE=merge.stdout.strip() if merge.returncode==0 else subprocess.check_output(['git','merge-base','origin/main','HEAD'],text=True).strip()
 frame=read(P/'input.csv');vs=read(P/'verdicts.csv');edits=read(P/'edits.csv');packet=read(P/'evidence_packet.csv')
 assert len(vs)==len(frame)==len({r['site_id'] for r in vs})==14
 assert len({r['org_id'] for r in frame})==10
