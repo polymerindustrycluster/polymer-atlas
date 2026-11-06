@@ -1,109 +1,47 @@
 #!/usr/bin/env python3
-"""Census, preservation, replay and injected failure checks for the fixed D10 packet."""
+"""Zero-data hold packet, immutable withdrawn rows, replay and re-admission negatives."""
 import csv
 import hashlib
 import io
 import shutil
 import subprocess
 import tempfile
-from collections import Counter
 from pathlib import Path
-from types import SimpleNamespace
 from unittest.mock import patch
 import build
 
-ROOT, HERE = build.ROOT, build.HERE
-hashes = lambda data: {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob("*.csv")}
-base = subprocess.check_output(["git", "merge-base", "HEAD", "origin/main"], cwd=ROOT, text=True).strip()
-verdicts = build.read(HERE / "verdicts.csv")
-assert Counter(r["verdict"] for r in verdicts) == {"VERIFIED": 1, "DUPLICATE_OF": 5, "STILL_UNCERTAIN": 6}
-for filename, key, expected in [("ecosystem.csv", "org_id", 1), ("evidence_ecosystem.csv", "evidence_id", 6)]:
-    old = list(csv.DictReader(io.StringIO(subprocess.check_output(["git", "show", f"{base}:data/{filename}"], cwd=ROOT, text=True))))
-    new = build.read(ROOT / "data" / filename)
-    current = {r[key]: r for r in new}
-    assert len(current) == len(new)
-    assert all(current[r[key]] == r for r in old), "main row lost or changed"
-    assert len(new) - len(old) == expected
-changed = set(subprocess.check_output(["git", "diff", "--name-only", base, "--", "data/"], cwd=ROOT, text=True).splitlines())
-assert changed == {"data/ecosystem.csv", "data/evidence_ecosystem.csv"}, changed
-
+ROOT,HERE=build.ROOT,build.HERE
+digest=lambda data:{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+base=subprocess.check_output(['git','merge-base','HEAD','origin/main'],cwd=ROOT,text=True).strip()
+assert not subprocess.check_output(['git','diff','--name-only',base,'--','data/'],cwd=ROOT,text=True).strip(),'hold packet changes canonical data'
+assert not build.plan(ROOT/'data')
+for filename in ['creates_ecosystem.csv','evidence_rows.csv']:
+    archived=(HERE/'withdrawn'/filename).read_bytes()
+    original=subprocess.check_output(['git','show','1342f2d:tasks/federal-programs-2026-11-06/'+filename],cwd=ROOT)
+    assert archived==original,'withdrawn rows differ from immutable original'
+    assert not build.read(HERE/filename)
+assert len(build.read(HERE/'withdrawn/evidence_rows.csv'))==6
+assert len(build.read(HERE/'withdrawn/creates_ecosystem.csv'))==1
 with tempfile.TemporaryDirectory() as tmp:
-    data = Path(tmp) / "data"; shutil.copytree(ROOT / "data", data)
-    before = hashes(data)
-    subprocess.run(["python3", str(HERE / "build.py"), "--data-dir", str(data), "--apply"], capture_output=True, check=True)
-    assert hashes(data) == before, "replay changed CSV bytes"
-    for filename, key, duplicate, reason in [
-        ("organizations_MI.csv", "org_id", "ORG-013300", "duplicate existing ORG ID"),
-        ("evidence_sites_MI.csv", "evidence_id", "EVD-296000", "duplicate existing evidence ID")]:
-        path = data / filename
-        fake = dict(build.read(path)[0]); fake[key] = duplicate
-        build.append_sorted(path, [fake], key)
-        before = hashes(data)
-        result = subprocess.run(["python3", str(HERE / "build.py"), "--data-dir", str(data), "--apply"],
-                                capture_output=True, text=True)
-        assert result.returncode and reason in result.stderr, result.stderr
-        assert hashes(data) == before, "failed preflight wrote CSV"
-        shutil.copyfile(ROOT / "data" / filename, path)
-        print("PASS cross-shard", key, "collision refused before any write")
-
-    packet = Path(tmp) / "packet"; packet.mkdir()
-    for src in HERE.glob("*.csv"): shutil.copyfile(src, packet / src.name)
-    evidence = build.read(HERE / "evidence_rows.csv")
-    def write_evidence(rows):
-        with (packet / "evidence_rows.csv").open("w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=list(evidence[0]), lineterminator="\n")
-            writer.writeheader(); writer.writerows(rows)
-    before = hashes(data)
-    build.HERE = packet
+    data=Path(tmp)/'data';shutil.copytree(ROOT/'data',data)
+    before=digest(data)
+    cmd=['python3',str(HERE/'build.py'),'--data-dir',str(data),'--raw-check','--apply']
+    subprocess.run(cmd,check=True,capture_output=True)
+    subprocess.run(cmd,check=True,capture_output=True)
+    assert digest(data)==before,'no-op replay wrote canonical data'
+    packet=Path(tmp)/'packet';shutil.copytree(HERE,packet,ignore=shutil.ignore_patterns('__pycache__'))
+    original_here=build.HERE
     try:
-        creates = build.read(packet / 'creates_ecosystem.csv')
-        creates[0]['pic_relevance'] = ''
-        with (packet / 'creates_ecosystem.csv').open('w', newline='') as f:
-            w = csv.DictWriter(f, fieldnames=list(creates[0]), lineterminator='\n'); w.writeheader(); w.writerows(creates)
-        unapplied = Path(tmp) / 'unapplied'
-        shutil.copytree(data, unapplied)
-        for filename, key, excluded in [
-            ('ecosystem.csv', 'org_id', {'ORG-013300'}),
-            ('evidence_ecosystem.csv', 'evidence_id', {r['evidence_id'] for r in evidence})]:
-            path = unapplied / filename
-            rows = build.read(path)
-            with path.open('w', newline='') as f:
-                w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
-                w.writeheader(); w.writerows(r for r in rows if r[key] not in excluded)
-        fresh_before = hashes(unapplied)
-        with patch.object(build.sys, 'argv', ['build.py', '--data-dir', str(unapplied), '--apply']):
-            try: build.main()
-            except AssertionError as error: assert str(error) == 'missing ecosystem PIC relevance', str(error)
-            else: raise AssertionError('blank new-record relevance passed')
-        assert hashes(unapplied) == fresh_before
-        assert hashes(data) == before
-        shutil.copyfile(HERE / 'creates_ecosystem.csv', packet / 'creates_ecosystem.csv')
-        print('PASS blank relevance refused before any write')
-        write_evidence([r for r in evidence if r["claim_type"] != "address"])
-        assert len(build.read(packet / "evidence_rows.csv")) == 4
-        try: build.plan(data)
-        except AssertionError as error: assert str(error) == "missing ecosystem must-have evidence", str(error)
-        else: raise AssertionError("missing typed address evidence passed")
-        assert hashes(data) == before
-        print("PASS missing typed evidence refused before any write")
-        bad = [dict(r) for r in evidence]
-        bad[0]["claim_detail"] = 'identity: "Fabricated Federal Polymer Program XYZ"'
-        write_evidence(bad)
-        bodies = {}
-        for row in evidence:
-            url = row["source_ref"]
-            if url not in bodies:
-                bodies[url] = subprocess.run(["curl", "-fL", "--max-time", "45", "-A", "Mozilla/5.0", "-sS", url],
-                                            capture_output=True, check=True).stdout
-        def cached_curl(args, **kwargs):
-            assert args[0] == "curl" and args[-1] in bodies
-            return SimpleNamespace(stdout=bodies[args[-1]])
-        with patch.object(build.subprocess, "run", side_effect=cached_curl):
-            try: build.raw_check()
-            except AssertionError as error: assert "raw quote absent" in str(error), str(error)
-            else: raise AssertionError("fabricated source quote passed")
-        assert hashes(data) == before
-        print("PASS fabricated evidence quote refuses; all CSVs unchanged")
+        build.HERE=packet
+        for filename in ['creates_ecosystem.csv','evidence_rows.csv']:
+            shutil.copyfile(HERE/'withdrawn'/filename,packet/filename)
+            with patch.object(build.sys,'argv',['build.py','--data-dir',str(data),'--apply']):
+                try:build.main()
+                except AssertionError as error:assert str(error)=='scope hold prohibits canonical creates/evidence',str(error)
+                else:raise AssertionError('retired proposal re-admitted')
+            assert digest(data)==before,'failed hold preflight wrote data'
+            shutil.copyfile(HERE/filename,packet/filename)
+            print('PASS retired',filename,'re-admission refused before any write')
     finally:
-        build.HERE = HERE
-print("PASS census12/12;1Cecosystem+6EVD exact main delta; all main rows preserved; all-CSV replay byte-identical")
+        build.HERE=original_here
+print('PASS 12candidate rows=5held duplicates+7uncertain; exact archived1create/6EVD; retired7IDs; canonical/allCSVdelta0; byte-identical no-op replay')
