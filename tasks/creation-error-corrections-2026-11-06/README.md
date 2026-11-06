@@ -11,3 +11,32 @@ Question: how should a consumer window manufacturer's sales showroom/installatio
 (a) Recommendation: owner may explicitly admit a producer's own sales showroom in Ring3, documenting its producer relationship, without suggesting local transformation. Alternatives: (b) outside commercial scope at establishment grain while retaining historical record; (c) hold at C pending local specification/design or production evidence. No reading is applied. Controller explicitly confirmed AGENTS2.9: apply sales_office only, retain existing ring without re-affirmation, and add inclusion_log seam per SCHEMA R9. This instruction supersedes any prior proposed ring application. Existing Ring1 is unresolved historical data, not a confirmed conclusion.
 
 L13 handoff read from its owned worktree: tasks/blind-audit-9-2026-11-06/correction_handoff.json (uncommitted audit packet at intake; raw paths/hashes preserved). Audit owns sampled rates: Dart is field_error, Yokohama creation_error under the controller's explicit closed-before-create taxonomy. Gilkey/EastJordan unsampled and never added to audit numerators. L11 owns application only. Named-source results must be independently raw-rechecked here.
+
+## Owner battery: Dart Corona ring HOLD
+
+Question: which ring applies to a producer-owned finished-polymer-products distribution center with no site transformation? Own Dart page at https://corporate.dartcontainer.com/location/corona-ca/ explicitly calls exact150SMapleStreet a Corona Distribution Center. (a) Recommendation: Ring3 warehousing/distribution service for a polymer producer under §1 Ring3. Alternatives: (b) owner specifies treatment of vertically integrated distribution sites; (c) outside establishment scope pending local production evidence. B14 bars inheriting parent Ring1. Apply warehouse_distribution only and retain Ring1 as disputed historical data, never re-affirmed. Both Gilkey and Dart have inclusion_log seam rows under R9; owner decides ring/scope.
+
+## Applied correction census
+
+| Record | Applied fields / disposition | Evidence |
+|---|---|---|
+| SITE-019018 Gilkey Chicago Ridge | manufacturing_plant→sales_office; showroom in notes. Ring/scope HOLD. Existing Cincinnati factory SITE-000923 is already held; ITA114099 itself uses Chicago Ridge, so no plant-elsewhere relocation inferred. Filed NAICS retained as disputed historical filing. | own exact-address showroom page |
+| SITE-019009 Storopack Hillside | Road→Place. Current own named facility + independent municipal Western Springs guide agree on320CraigPlace; banked EPA110001337198 alsoPlace. ITA1082283 Road remains disclosed outlier, not claimed legal alias. No type/code change. | own location + municipal PDF |
+| SITE-018014 East Jordan South Haven | dated fire/disruption notes/sources only; unknown operating_status unchanged. Own publication2026-09-26, EPA dates fire2026-09-25. | own statement + dated EPA response |
+| ORG-007011 East Jordan | monitor_watch false→true; reason appended. Status/tier/all dates/liveness floor unchanged perSCHEMA4.4: queue allocation only. | separate organization disruption evidence |
+| SITE-014003 Dart Corona | manufacturing_plant→warehouse_distribution. Ring/scope HOLD; ZIP92878vs92880 conflict noted only. NMapleWARN is different address. L6 quality186 changes no Dart cells. | own exact-address Distribution Center page |
+| SITE-012023 Yokohama Spartanburg | active→closed, confirmed by2026-02-19 issuer outcome. Actual closure day unknown; WARN projected2025-04-19 never asserted actual. Historical plant/type/operator remain. | issuer briefing p17 + exact-site SCWARN p1 |
+
+Five site rows changed (4C/1B, tiers unchanged), one organization row changed (C, tier unchanged), nine evidence rows appended in five evidence shards (5supports_C/2supports_B/2contradicts), two inclusion-log seams appended. Four factual cells changed across sites (2types/1street/1status) plus dated provenance/notes; EastJordan site annotation only. No creates/deletes, registry/parent/derived edits. Source snapshots/hash receipts local build/l11-correction-cache/frozen/; only short quotes/receipts ship. Own claim_detail contains actual source words only. Source dates are in notes, observed_date is independent review2026-11-06.
+
+Yokohama closure: briefing frontpage2026-02-19; p17 explicitly Y-TWS Spartanburg Plant Closed, unlike Salem tentative closure. Briefing p17 and WARN p1 independently rendered/inspected after re-fetch. WARN operator/street/locality bind outcome to570TrelleborgDrive; historical bankedITA1059636 agrees. Form5500 gate EIN061316073 WakefieldMA corporate sponsor (107AudubonRdBuilding2Suite205) is not this site, so no contradictory establishment activity. Site shard has no separate status_date/status_source columns: confirmed-by date/source ride in notes; actual day UNKNOWN. No company-wide closure.
+
+Physical-function counts (US,tierABC,statusactive/unknown,NAICS326; manufacturing-type additionally manufacturing_plant/hq_and_plant): CA manufacturing91→90,IL85→84,MI138→138,SC49→48. Code-only counts CA93→93,IL85→85,MI138→138,SC52→51. Type correction does not silently change filed NAICS; code-only ratios are not plant coverage. Gilkey/Dart ring/scope owner-held.
+
+## Verification and limits
+
+- python3 tasks/creation-error-corrections-2026-11-06/check.py PASS: full5site/1org/9evidence census;3 known answers (Gilkey showroom,Dart distribution,Yokohama closed);9raw/hash/fabricated-word negatives; all old evidence preserved; curated cells only; two seams; byte-identical replay. Five isolated fail-before-write mutations: missing issuer outcome,WARN projected date substituted for outcome,frozen hash alteration,invented quote,cross-shard EVD collision.
+- python3 scripts/validate.py PASS0errors, existing warnings only. No scripts edits/full scripts pytest.
+- Estate lookup incomplete on Mac (Documents catalogues unavailable; whois base Python lackedPyYAML). Repository packets and public primary pages supplied sources; no inference of estate absence/private/licensed data.
+- Audit9 handoff now frozen/pushed36b18b5, PR200. Intake metadata preserves original handoff; L13 owns audit counts. Storopack municipal corroboration is independent post-freeze evidence; auditUNRESOLVED count unchanged.
+- Codex/Grok deep clerk refutes pending; no Done/merge/approval claim. No fresh federal bulk download under packet-vintage exception; exact Yokohama closure day, local manufacturing at Storopack, or EastJordan recovery/current operations not established.

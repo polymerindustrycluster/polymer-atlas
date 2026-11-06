@@ -1,4 +1,5 @@
 {
   "base": "8a5821b37e308a31b22ed57015edb54636641f1c",
-  "sites": 5
+  "sites": 5,
+  "application_base": "4b69ed3145ffb793f4bfd6ce15363bc41610b3af"
 }

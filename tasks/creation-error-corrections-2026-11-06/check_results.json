@@ -1,0 +1,41 @@
+{
+  "sites": 5,
+  "organization_watch_flags": 1,
+  "new_evidence": 9,
+  "inclusion_seams": 2,
+  "physical_type_changes": 2,
+  "street_corrections": 1,
+  "closures_confirmed_by_date": 1,
+  "status_unchanged_EastJordan": true,
+  "known_answers": 3,
+  "raw_census": 9,
+  "replay_byte_identical": true,
+  "old_evidence_preserved": true,
+  "no_write_mutations": 5,
+  "state_counts": {
+    "CA": {
+      "code_count_before": 93,
+      "code_count_after": 93,
+      "manufacturing_type_count_before": 91,
+      "manufacturing_type_count_after": 90
+    },
+    "IL": {
+      "code_count_before": 85,
+      "code_count_after": 85,
+      "manufacturing_type_count_before": 85,
+      "manufacturing_type_count_after": 84
+    },
+    "MI": {
+      "code_count_before": 138,
+      "code_count_after": 138,
+      "manufacturing_type_count_before": 138,
+      "manufacturing_type_count_after": 138
+    },
+    "SC": {
+      "code_count_before": 52,
+      "code_count_after": 51,
+      "manufacturing_type_count_before": 49,
+      "manufacturing_type_count_after": 48
+    }
+  }
+}
