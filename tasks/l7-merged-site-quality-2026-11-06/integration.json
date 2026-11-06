@@ -1,0 +1,17 @@
+{
+  "approved_packet_head": "e2d04dc",
+  "integrated_main": "a7cd761a7db45e984d2bc35dd78f3e2c52dcf2d1",
+  "implementation_identical": true,
+  "rows": {
+    "sites": {
+      "count": 31,
+      "unchanged": true,
+      "sha256": "20256fffdda6b7ca5fa02ca40206f80a66f517a904dc030338fb2cc0a248f8a8"
+    },
+    "evidence_sites": {
+      "count": 217,
+      "unchanged": true,
+      "sha256": "57ae618f83dc61b48bfdda21bad066976b778844dca4ca5eb4d9f8d5e2cf0d25"
+    }
+  }
+}
