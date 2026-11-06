@@ -1,4 +1,4 @@
-FINAL v4 corrected PR145 adversarial rerefute. Return VERDICT APPROVE or REFUTE. New head will replace84145bb. All Codex1/Grok1/Grok3 findings addressed:Kaneka holding-company URL blank;1049/212 immutable canonical census plus injected historical six-omission rejection;all15 changed/new website routes fetched;hold table explicitly Stillneeded;staleness lists only VERIFIED rows.115pages+41feeds=156emptycells,934holds. Only new fills sincev3:PCI page andShintech page;Kaneka removed;PCI feed held. Source snapshot9d69978,latestmain replay85b85600c77e72c91fde772b0cf3c25e51c321ab. Complete code/all accepted URLs below. No EVD needed under4.4 navigation aids. Refute remaining identity/page/feed/frame/build defects.
+FINAL v4 PR145 corrected rerefute. Return VERDICT APPROVE or REFUTE. Kaneka held; six added/9 changed routes checked;1049/212 canonical census plus injected omission test;hold/staleness prose fixed.115pages+41feeds=156cells,934holds. PCI andShintech onlynewpages;PCIfeedheld. Also fixed relatedPR152 query-slash bug at all URL comparison sites; regression tests cover redirect and feed article query differences. Complete code/accepted URLs follow.
 # L9 newsroom navigation — Tier-1, 2026-11-06
 
 Claim atlas-L9-newsroom; branch agent/codex/newsroom-urls, PR145. Controller delegated application of newsroom_url/newsroom_feed_url. First user: existing news-monitor operator (L8/controller), usable after merge; no new operator system.
@@ -77,6 +77,8 @@ Only currently VERIFIED navigation indexes appear below. Saved samples contain o
 | ORG-004533 Bomar Specialties, LLC | January 31, 2023;May 4, 2022;January 31, 2022;June 8, 2021;April 5, 2021;November 2, 2020 |
 
 Cross-PR coverage gate now PASS against named source9d69978:1049+772+2258=4079 disjoint IDs,exactly all active organizations with website at that snapshot. No missing/extra IDs. Later-main creates excluded by frozen manifests,not claimed as attempted. Current proposals across PR145/152/169:321 newsroom pages+141 feeds=462 URLs in321 active organizations;3758 explicit organization holds.
+
+Cross-lane Codex PR152 gate finding substantiated: full-string rstrip erased trailing slashes inside query values. Replaced all URL comparisons (redirects and feed-article overlap) with urlsplit keys that normalize only parsed path trailing slash, preserving query and fragment. Injected changed-query redirect and changed-query article permalink fail; benign path-only slash still passes. No current live misredirect claimed; no field changes from this gate correction.
 
 CODE discover.py
 """Bounded own-domain discovery; candidates require human review before build.py."""
@@ -212,9 +214,13 @@ if __name__=='__main__':main()
 CODE check.py
 """Re-fetch all accepted URLs; fail on unreadable pages, redirects off-domain or empty feeds."""
 import concurrent.futures, csv, json
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 from xml.etree import ElementTree as ET
 from discover import HERE, ROOT, Links, domain, fetch, feed_count
+
+def url_key(url):
+    parts=urlsplit(url)
+    return parts._replace(path=parts.path.rstrip('/'))
 
 def check(r):
     out={'org_id':r['org_id'],'checks':[]}; page_links=set()
@@ -222,10 +228,10 @@ def check(r):
         if not r[col]: continue
         p=fetch(r[col]); assert p['status']=='200',(r['org_id'],col,p['status'])
         assert domain(p['final'])==domain(r['website']),(r['org_id'],p['final'])
-        assert p['final'].rstrip('/')==r[col].rstrip('/'),(r['org_id'],'stored URL redirected to another path',p['final'])
+        assert url_key(p['final'])==url_key(r[col]),(r['org_id'],'stored URL redirected to another path',p['final'])
         result={k:p[k] for k in ('url','final','status')}
         if col=='newsroom_url':
-            page_links={urljoin(p['final'],u.strip()).rstrip('/') for u,l in Links(p['body']).links}
+            page_links={url_key(urljoin(p['final'],u.strip())) for u,l in Links(p['body']).links}
         if col=='newsroom_feed_url':
             result['items']=feed_count(p['body']); assert result['items']>0
             root=ET.fromstring(p['body']); links=set()
@@ -234,8 +240,8 @@ def check(r):
             assert not any('comments' in (e.text or '').lower() for e in titles),'comments feed'
             entries=[e for e in root.iter() if e.tag in ('item','{http://www.w3.org/2005/Atom}entry','{http://purl.org/rss/1.0/}item')]
             for entry in entries:
-                links.update(e.text.strip().rstrip('/') for e in entry.iter('link') if e.text)
-                links.update(e.attrib.get('href','').rstrip('/') for e in entry.iter('{http://www.w3.org/2005/Atom}link') if e.attrib.get('rel','alternate')=='alternate')
+                links.update(url_key(e.text.strip()) for e in entry.iter('link') if e.text)
+                links.update(url_key(e.attrib.get('href','')) for e in entry.iter('{http://www.w3.org/2005/Atom}link') if e.attrib.get('rel','alternate')=='alternate')
             assert page_links & links,(r['org_id'],'feed items not linked from newsroom')
             result['linked_items']=len(page_links & links)
         out['checks'].append(result)
@@ -340,7 +346,25 @@ print('PASS: injected historical six-ID omission rejected by canonical census')
 assert len([r for r in records if r['status']=='active' and r['tier1_qualifier']])==1261
 print('PASS: named canonical snapshot9d69978 has1261 active tier1,1049 websites,212 blank; input IDs and website values exactly match')
 
-ALL ACCEPTED (id|name|website|newsroom|feed|title|date sample):
+qrow={'org_id':'query-test','website':'https://example.com','newsroom_url':'https://example.com/?page_id=52','newsroom_feed_url':''}
+qpage={'url':qrow['newsroom_url'],'final':qrow['newsroom_url']+'/','status':'200','body':'<h1>News</h1>'}
+with patch('check.fetch',return_value=qpage):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('query value52→52/ accepted')
+qrow['newsroom_url']='https://example.com/news/?page_id=52'
+qpage.update(url=qrow['newsroom_url'],final='https://example.com/news?page_id=52')
+with patch('check.fetch',return_value=qpage):assert len(check(qrow)['checks'])==1
+qrow.update(newsroom_url='https://example.com/news',newsroom_feed_url='https://example.com/feed')
+qpage.update(url=qrow['newsroom_url'],final=qrow['newsroom_url'],body='<a href="/article?id=52">News release</a>')
+qfeed={'url':qrow['newsroom_feed_url'],'final':qrow['newsroom_feed_url'],'status':'200','body':'<rss><channel><title>News</title><item><link>https://example.com/article?id=52/</link></item></channel></rss>'}
+with patch('check.fetch',side_effect=[qpage,qfeed]):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('different query article IDs falsely overlap')
+print('PASS: changed query values rejected for redirects and feed articles; path-only slash normalization retained')
+
+ALL ACCEPTED (id|name|website|newsroom|feed|title|dates):
 ORG-000001 | Avient Corporation | https://www.avient.com | https://www.avient.com/company/news-events |  | Avient News Center: Press Releases &amp; Upcoming Events | September 28, 2026;Nov 04, 2026;Oct 14, 2026;Oct 09, 2026;Se
 ORG-000006 | RPM International Inc. | https://www.rpminc.com | https://www.rpminc.com/news/ |  | Company News | RPM International Inc. | 11/02/2026;10/08/2026;10/06/2026;10/01/2026;09/23/2026;09/04
 ORG-000010 | GEON Performance Solutions | https://www.geon.com | https://www.geon.com/news | https://www.geon.com/news/rss.xml | News | GEON® Performance Solutions | July 09, 2026;July 9, 2026;March 10, 2026;March 09, 2026;Jan

@@ -84,3 +84,21 @@ else:raise AssertionError('historical six-ID omission escaped canonical census')
 print('PASS: injected historical six-ID omission rejected by canonical census')
 assert len([r for r in records if r['status']=='active' and r['tier1_qualifier']])==1261
 print('PASS: named canonical snapshot9d69978 has1261 active tier1,1049 websites,212 blank; input IDs and website values exactly match')
+
+qrow={'org_id':'query-test','website':'https://example.com','newsroom_url':'https://example.com/?page_id=52','newsroom_feed_url':''}
+qpage={'url':qrow['newsroom_url'],'final':qrow['newsroom_url']+'/','status':'200','body':'<h1>News</h1>'}
+with patch('check.fetch',return_value=qpage):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('query value52→52/ accepted')
+qrow['newsroom_url']='https://example.com/news/?page_id=52'
+qpage.update(url=qrow['newsroom_url'],final='https://example.com/news?page_id=52')
+with patch('check.fetch',return_value=qpage):assert len(check(qrow)['checks'])==1
+qrow.update(newsroom_url='https://example.com/news',newsroom_feed_url='https://example.com/feed')
+qpage.update(url=qrow['newsroom_url'],final=qrow['newsroom_url'],body='<a href="/article?id=52">News release</a>')
+qfeed={'url':qrow['newsroom_feed_url'],'final':qrow['newsroom_feed_url'],'status':'200','body':'<rss><channel><title>News</title><item><link>https://example.com/article?id=52/</link></item></channel></rss>'}
+with patch('check.fetch',side_effect=[qpage,qfeed]):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('different query article IDs falsely overlap')
+print('PASS: changed query values rejected for redirects and feed articles; path-only slash normalization retained')

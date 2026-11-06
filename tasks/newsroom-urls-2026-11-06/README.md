@@ -76,3 +76,5 @@ Only currently VERIFIED navigation indexes appear below. Saved samples contain o
 | ORG-004533 Bomar Specialties, LLC | January 31, 2023;May 4, 2022;January 31, 2022;June 8, 2021;April 5, 2021;November 2, 2020 |
 
 Cross-PR coverage gate now PASS against named source9d69978:1049+772+2258=4079 disjoint IDs,exactly all active organizations with website at that snapshot. No missing/extra IDs. Later-main creates excluded by frozen manifests,not claimed as attempted. Current proposals across PR145/152/169:321 newsroom pages+141 feeds=462 URLs in321 active organizations;3758 explicit organization holds.
+
+Cross-lane Codex PR152 gate finding substantiated: full-string rstrip erased trailing slashes inside query values. Replaced all URL comparisons (redirects and feed-article overlap) with urlsplit keys that normalize only parsed path trailing slash, preserving query and fragment. Injected changed-query redirect and changed-query article permalink fail; benign path-only slash still passes. No current live misredirect claimed; no field changes from this gate correction.
