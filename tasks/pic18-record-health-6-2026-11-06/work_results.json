@@ -1,0 +1,24 @@
+{
+  "healthy_before": 472,
+  "healthy_after": 477,
+  "total": 632,
+  "newly_healthy": [
+    "ORG-000379",
+    "ORG-000414",
+    "ORG-000484",
+    "ORG-001447",
+    "ORG-001931"
+  ],
+  "newly_unhealthy": [],
+  "remaining_organizations": 155,
+  "remaining_gaps": 197,
+  "remaining_classes": {
+    "b": 55,
+    "c": 131,
+    "d": 11
+  },
+  "needed_for90": 92,
+  "initial_desk_routes": 75,
+  "resolved_initial_gaps": 8,
+  "newly_exposed_gaps": 1
+}
