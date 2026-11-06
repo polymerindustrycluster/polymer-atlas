@@ -1,0 +1,227 @@
+{
+  "main_base": "419678b2e3e415194dad804af8daca649b163f3e",
+  "original_frame_commit": "7af42197932bd67c11831403324a7898b88124ba",
+  "frame_positions": [
+    361,
+    448
+  ],
+  "selected": 88,
+  "fills": 24,
+  "holds": 64,
+  "future_unworked": 0,
+  "note_flags": 6,
+  "notes_only_evidence_ids": [
+    "EVD-152448",
+    "EVD-152449"
+  ],
+  "evidence_rows": 26,
+  "tiers": {
+    "A": 20,
+    "B": 4
+  },
+  "page_outcomes": {
+    "fetched": 134,
+    "unavailable": 32
+  },
+  "active_ohio_sites": 1883,
+  "before_streets": 324,
+  "after_streets": 348,
+  "site_changes": [
+    {
+      "site_id": "SITE-001717",
+      "changed_fields": [
+        "notes"
+      ]
+    },
+    {
+      "site_id": "SITE-001721",
+      "changed_fields": [
+        "notes"
+      ]
+    },
+    {
+      "site_id": "SITE-001852",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001854",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001858",
+      "changed_fields": [
+        "notes",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001860",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001861",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001864",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001867",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001876",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001880",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001882",
+      "changed_fields": [
+        "notes",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001888",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001893",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001895",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001896",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001899",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001904",
+      "changed_fields": [
+        "notes",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001905",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001924",
+      "changed_fields": [
+        "notes",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001930",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001945",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001957",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-002008",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-002016",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-002028",
+      "changed_fields": [
+        "street_address"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "EVD-152361",
+    "EVD-152362",
+    "EVD-152365",
+    "EVD-152367",
+    "EVD-152368",
+    "EVD-152370",
+    "EVD-152372",
+    "EVD-152376",
+    "EVD-152377",
+    "EVD-152378",
+    "EVD-152380",
+    "EVD-152383",
+    "EVD-152385",
+    "EVD-152386",
+    "EVD-152389",
+    "EVD-152391",
+    "EVD-152392",
+    "EVD-152399",
+    "EVD-152402",
+    "EVD-152411",
+    "EVD-152415",
+    "EVD-152426",
+    "EVD-152428",
+    "EVD-152430",
+    "EVD-152448",
+    "EVD-152449"
+  ],
+  "canonical_hashes": {
+    "sites_OH.csv": "a78f81935d7a6c25d373f3ceb0bb215b1a89131fb0ccac25437c9311b5fbf244",
+    "evidence_sites_OH.csv": "8a9e826c8e165885360e3c162463c759234f4890cf3285ce1d9abbc7fa8d49e9"
+  }
+}
