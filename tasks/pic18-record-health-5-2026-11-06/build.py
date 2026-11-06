@@ -42,7 +42,17 @@ def main():
     ev_by = {e['evidence_id']:e for e in packet}
     shards = {p:read(p) for p in sorted(a.data_dir.glob('organizations_*.csv')) if not p.name.endswith('_all.csv')}
     org = {r['org_id']:(path,r) for path, rows in shards.items() for r in rows}
-    all_ev = [r for path in a.data_dir.glob('evidence_*.csv') for r in read(path)]
+    all_ev = []
+    ev_locations = {}
+    for path in a.data_dir.glob('evidence_*.csv'):
+        for row in read(path):
+            assert row['evidence_id'] not in ev_locations, 'duplicate global evidence ID'
+            ev_locations[row['evidence_id']] = path
+            all_ev.append(row)
+    for row in packet:
+        expected = a.data_dir / ('evidence_' + org[row['record_id']][0].name)
+        if row['evidence_id'] in ev_locations:
+            assert ev_locations[row['evidence_id']] == expected, 'existing evidence ID in wrong shard'
     for e in packet:
         for held in all_ev:
             if held['evidence_id'] == e['evidence_id']:

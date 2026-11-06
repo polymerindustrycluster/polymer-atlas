@@ -59,3 +59,5 @@ Raw downloads and short research extracts remain local. URLs, quotes, source cla
 Independent Codex4/Grok4 reviews pending. Draft until both approve. Controller owns merges and task statuses.
 
 Independent ITA reconciliation checks all five admitted establishment IDs against the inherited CSV, actual submission dates, and the exact filed company/establishment-name cell. Lead's two draft composite-name/address strings were narrowed before publication to the exact filed employer-name cell: no synthetic multi-column text is presented as a verbatim quote. government_rows.csv preserves the selected original fields for all five. Packet replay and validator rerun successfully after this refinement; counts and tiers are unchanged.
+
+Controller refresh atop approved154 f078dd58fc7134594f0b7a9e75fb522f7315f935:all parentdata plus unchanged9-tier/35-EVD packet replayed. Global-ID preflight additionally retains shard locations and rejects an identical existing payload in the wrong shard before writes, addressing the sibling172Codex finding. No source content or tier decision changed; final family review remains pending.

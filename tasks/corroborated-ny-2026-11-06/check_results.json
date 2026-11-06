@@ -1,0 +1,13 @@
+{
+  "worked_NY_clusters": 81,
+  "sites_C": 7,
+  "blind_recheck_passes": 7,
+  "known_answer_passes": 4,
+  "idempotence": "PASS",
+  "conflicting_ID_mutation": "PASS (fails before writes)",
+  "NAICS326_strict_sites_before": 43,
+  "NAICS326_strict_sites_after": 50,
+  "QCEW2023_private_establishments": 410.0,
+  "strict_share_before": 0.1048780487804878,
+  "strict_share_after": 0.12195121951219512
+}

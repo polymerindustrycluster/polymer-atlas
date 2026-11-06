@@ -17,7 +17,7 @@ ORG-000017,Chemigon LLC,1,0,0,1,,2,0
 ORG-000018,Ace Rubber Products,0,0,0,0,,0,1
 ORG-000021,Paddington Group,1,0,1,1,,3,0
 ORG-000025,Musson Rubber Co.,1,0,0,0,,1,0
-ORG-000026,"Enterprise Rubber, Inc.",1,0,0,0,,1,0
+ORG-000026,"Enterprise Rubber, Inc.",0,0,0,0,,0,1
 ORG-000027,The Hygenic Corp.,1,0,0,0,,1,0
 ORG-000031,Akron Porcelain & Plastics Co.,0,0,0,0,,0,1
 ORG-000033,LyondellBasell,1,1,0,0,ORG-000735,2,0
@@ -38,8 +38,8 @@ ORG-000055,"Ultratech Polymers, Inc.",0,0,0,0,,0,1
 ORG-000057,Smithers-Oasis Co.,0,0,0,0,,0,1
 ORG-000061,"Ferriot, Inc.",0,0,0,0,,0,1
 ORG-000062,Chemionics,0,0,0,0,,0,1
-ORG-000063,Akron Gasket,1,0,0,0,,1,0
-ORG-000064,"Green Technologies of Ohio, LLC",1,0,0,0,,1,0
+ORG-000063,Akron Gasket,0,0,0,0,,0,1
+ORG-000064,"Green Technologies of Ohio, LLC",0,0,0,0,,0,1
 ORG-000065,"Hudson Extrusions, Inc.",1,0,0,0,,1,0
 ORG-000066,"Custom Plastic Extrusions, Ltd.",1,0,1,0,,2,0
 ORG-000067,R.C. Graham Co. LLC (dba Hand-Tite),0,0,0,0,,0,1
@@ -97,10 +97,10 @@ ORG-000172,"Graphic Arts Rubber, LLC",0,0,0,0,,0,1
 ORG-000174,"Vertex, Inc.",0,0,0,0,,0,1
 ORG-000175,Harwood Rubber Products,0,0,0,0,,0,1
 ORG-000176,Kent Elastomer Products,0,0,0,0,,0,1
-ORG-000177,Seal Master Corp.,1,0,0,0,,1,0
-ORG-000178,Elbex Corp.,1,0,0,0,,1,0
+ORG-000177,Seal Master Corp.,0,0,0,0,,0,1
+ORG-000178,Elbex Corp.,0,0,0,0,,0,1
 ORG-000179,Jet Rubber Company,0,0,0,0,,0,1
-ORG-000180,Enduro Rubber Company,1,0,0,0,,1,0
+ORG-000180,Enduro Rubber Company,0,0,0,0,,0,1
 ORG-000181,SpringSeal Inc.,1,0,0,0,,1,0
 ORG-000182,Orazen Extruded Polymers,0,0,0,0,,0,1
 ORG-000183,Die-Cut Products Co.,1,0,0,0,,1,0
@@ -109,7 +109,7 @@ ORG-000188,Universal Polymer & Rubber,0,0,0,0,,0,1
 ORG-000189,GBSA Inc.,0,0,0,0,,0,1
 ORG-000190,Clark Rubber & Plastics Co.,0,0,0,0,,0,1
 ORG-000191,Ohio Elastomers,0,0,0,0,,0,1
-ORG-000193,TMI Inc.,1,1,0,0,ORG-002611,2,0
+ORG-000193,TMI Inc.,0,1,0,0,ORG-002611,1,0
 ORG-000194,Salem-Republic Rubber Co.,0,0,0,0,,0,1
 ORG-000195,Qualiform Inc.,0,0,0,0,,0,1
 ORG-000198,Ziegler Tire,1,0,0,0,,1,0
@@ -434,7 +434,7 @@ ORG-001398,"Smithers Medical Products, Inc.",0,0,0,0,,0,1
 ORG-001404,"Deflecto, LLC",0,0,0,0,,0,1
 ORG-001409,American Bath Group,0,0,0,0,,0,1
 ORG-001422,Elster Perfection Corporation,0,0,0,0,,0,1
-ORG-001423,ABC Technologies Inc.,0,0,1,0,,1,0
+ORG-001423,ABC Technologies Inc.,0,0,0,0,,0,1
 ORG-001426,Techniplas US LLC,0,0,1,0,,1,0
 ORG-001432,Cell-O-Core Company,0,0,0,0,,0,1
 ORG-001433,"Extruded Silicone Products, Inc.",0,0,0,0,,0,1
@@ -503,7 +503,7 @@ ORG-001645,RTS COMPANIES INC.,0,0,0,0,,0,1
 ORG-001646,TUSCO PRODUCTS,0,0,0,0,,0,1
 ORG-001647,V&A PROCESS,0,0,0,0,,0,1
 ORG-001648,WORTHINGTON PRODUCTS,0,0,0,1,,1,0
-ORG-001649,YOUNGSTOWN RUBBER PRODUCTS,1,0,1,0,,2,0
+ORG-001649,YOUNGSTOWN RUBBER PRODUCTS,0,0,0,0,,0,1
 ORG-001653,Bruns Brush Inc,0,0,0,1,,1,0
 ORG-001656,ClearSonic Manufacturing Inc,0,0,0,0,,0,1
 ORG-001657,Comdess Company Inc,0,0,0,0,,0,1
@@ -540,8 +540,8 @@ ORG-001725,Thorworks Industries Inc,0,0,0,0,,0,1
 ORG-001726,"Endura Plastics, Inc.",1,0,1,1,,3,0
 ORG-001730,3D Dental Designs and Development LLC,0,0,0,1,,1,0
 ORG-001747,P3 Infrastructure Inc.,1,0,0,0,,1,0
-ORG-001748,"PKG, LLC",1,0,0,0,,1,0
-ORG-001753,Foundation Industries Inc,1,0,0,0,,1,0
+ORG-001748,"PKG, LLC",0,0,0,0,,0,1
+ORG-001753,Foundation Industries Inc,0,0,0,0,,0,1
 ORG-001757,"ACO Polymer Products, Inc.",0,0,0,0,,0,1
 ORG-001758,Niles Building Products Company,0,0,0,0,,0,1
 ORG-001760,"Pioneer Manufacturing Company, Inc.",0,0,0,0,,0,1
