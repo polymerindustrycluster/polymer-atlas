@@ -120,8 +120,7 @@ page wording describes a future readable source, not an assertion that failed pa
 explicit; the controller's paced CDX/SPN worker is the continuation route. Some review findings concerned the earlier
 in-flight code and were already fixed before publication (429 label/backoff, terminal gates, deadline handling).
 
-Controller 05:55 ruling supersedes council-only ordering and permits draft publication before refutes. Codex and Grok
-clerk re-review of the corrected commit is pending; **no Done claim**. The original refute outputs are local, with the
+Controller 05:55 ruling supersedes council-only ordering and permits draft publication before refutes. Codex clerk re-review is pending; Grok clerk approved the replay correction at8533b8e; **no Done claim**. The original refute outputs are local, with the
 verdicts and responses recorded here. No semantic claim re-verification, replacement evidence, scope/ring/vocabulary
 ruling, rendered visibility audit or PDF text extraction is claimed.
 
@@ -132,3 +131,12 @@ same_capture: exact capture timestamp plus structural original-page comparison, 
 check_replay_binding.py exercises the actual receipt gate: exact replay passes; changed query and capture timestamp
 fail and leave no successful receipt. PASS. The continuation cache collector receives the same shared guard.
 Existing frame, judgments, quotes and canonical archive rows do not change. Corrected clerk re-review is required.
+
+
+Grok3 clerk @8533b8e7e5bc8eeaeadb897c970f661cfd34d12a: **APPROVE, zero findings**. Targeted replay-cure review
+confirms exact timestamp and preserved inner query across collector/checker/worker. Actual receipt-gate regression
+passes; extra probes reject another query value and id_ modifier, and preserve permitted scheme/www/path-slash
+normalization. validate.py zero errors; keyed row-loss guard PASS against merge-base bd57a08dfe. No data differs from
+4ef764e: same34 archive rows, none with queries, frozen judgments unchanged. The prior Grok review independently
+re-fetched7captures covering10rows with matching quotes; network captures were not re-fetched again for this code-only
+cure. Codex3 targeted cure approval remains pending, so this PR stays draft.
