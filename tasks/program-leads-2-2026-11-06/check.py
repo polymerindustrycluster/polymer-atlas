@@ -23,8 +23,9 @@ def main():
     assert all(r['raw'] == 'yes' and r['observed_date'] == '2026-11-06' for r in raw)
     programs = read(HERE / 'programs.csv'); evidence = read(HERE / 'evidence_programs.csv')
     assert len(programs) == 1 and programs[0]['program_id'] == 'PROG-000300'
-    assert {r['claim_type'] for r in evidence if r['record_id'] == 'PROG-000300'} == {'existence','scope'}
-    assert len({r['evidence_id'] for f in ('evidence_programs.csv','evidence_ecosystem.csv') for r in read(HERE/f)}) == 3
+    assert {r['claim_type'] for r in evidence if r['record_id'] == 'PROG-000300'} == {'existence','scope','address'}
+    assert programs[0]['county'] == 'Middlesex'
+    assert len({r['evidence_id'] for f in ('evidence_programs.csv','evidence_ecosystem.csv') for r in read(HERE/f)}) == 4
     canonical = {r['program_id']:r for r in read(HERE.parents[1] / 'data/programs.csv')}
     for r in verdicts + calibration:
         assert r['verdict'] in ('VERIFIED','REJECT','STILL_UNCERTAIN','DUPLICATE_OF')
@@ -54,7 +55,7 @@ def main():
         try: apply(data)
         except AssertionError as e: assert 'ID collision/drift' in str(e)
         else: raise AssertionError('occupied ID was silently accepted')
-    print('PASS: 6 pending input leads = 1 VERIFIED + 4 DUPLICATE_OF + 1 STILL_UNCERTAIN; 4 separate calibration leads; 1 program / 3 evidence rows; replay and collision injection passed')
+    print('PASS: 6 pending input leads = 1 VERIFIED + 4 DUPLICATE_OF + 1 STILL_UNCERTAIN; 4 separate calibration leads; 1 program / 4 evidence rows; replay and collision injection passed')
 
 
 if __name__ == '__main__': main()

@@ -26,7 +26,7 @@ map one-to-one. No statistical improvement claim follows from these selected bat
 - Programs: +1 Tier A row, PROG-000300 (Plastics Engineering Seminars, UMass Lowell).
 - Institutions: 0 created; no institution tier changes. ORG-002846 rollup name updated;
   its lead URL remains unchanged.
-- Evidence: +2 program rows EVD-285000–285001, +1 ecosystem scope row EVD-285002.
+- Evidence: +3 program rows EVD-285000–285001 and EVD-285003, +1 ecosystem scope row EVD-285002.
 - No inclusion-log changes: direct §4.11(a) named plastics training, no seam ruling.
 - GRCC's certificate is already within PROG-000004 (aas_associate;certificate), and
   Southern Mississippi's BS already within PROG-000060 (bs;ms;phd). Do not split those
@@ -104,3 +104,12 @@ proposals as worked. No IPEDS completions/CIP fields were applied. Wider state/n
 in the input are retained unchanged; no national denominator inferred from them. The
 Mac's data-estate catalogue search reported Windows-only inventory gaps; the supplied
 committed worklist and fresh public institution pages suffice for this batch.
+
+## Codex refute correction
+
+PR144 Codex1 (thr_86bb34wxm8) REFUTE: required county missing. Valid finding.
+Corrected county=Middlesex under SCHEMA4.11 permitted institution default, independently
+confirmed against fresh NCES HD2024 UNITID166513, county_identity.csv. Added append-only
+address EVD285003 registry/supports_C (no tier change); old evidence preserved.
+Total evidence now4. Named checks rerun; rereview requested from same refuting clerk.
+This supersedes earlier3-evidence snapshots. New raw registry fact, no new own-page quote.

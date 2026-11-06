@@ -38,7 +38,7 @@ def apply(data):
     writer = csv.DictWriter(buf, fieldnames=list(eco[0]), lineterminator='\n')
     writer.writeheader(); writer.writerows(eco)
     (data / 'ecosystem.csv').write_text(buf.getvalue())
-    print('L13 applied: 1 program; 3 evidence rows; institution rollup regenerated (idempotent)')
+    print('L13 applied: 1 program; 4 evidence rows; institution rollup regenerated (idempotent)')
 
 
 if __name__ == '__main__':
