@@ -1,0 +1,17 @@
+{
+  "reviewed_head": "50ac7a22afff4be038d6bc8a88316b1b6ec6a0c5",
+  "integrated_main": "1afa5f5f42b64c6fb4cfa11cb0a8191d7495702e",
+  "site_rows_changed": 143,
+  "evidence_rows_appended": 143,
+  "legacy_keys_preserved": true,
+  "legacy_evidence_unchanged": true,
+  "checks": {
+    "python3 tasks/oh-street-address-2026-11-06/check.py": "PASS143fills,boundary,idempotence,injectedstreetconflict",
+    "python3 scripts/validate.py": "PASS0errors",
+    "fresh-main keyed comparison": "PASS143street/sourceedits,143append-onlyEVD,nootherchanges"
+  },
+  "outputs": {
+    "sites_OH.csv": "ff2dd76364bbb57b6325ec3519cc4ef70d9636d29519a740ffc5efe18503c8a1",
+    "evidence_sites_OH.csv": "6755eec0a323a2d2d9e5850db99e92487902c4b59d71ba6605515df75d82990f"
+  }
+}

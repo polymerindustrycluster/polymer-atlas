@@ -1,0 +1,5 @@
+cluster_id,url,route,fetch,chars
+SITE-015403-q2b,https://royaltechnologies.com/who-we-are/our-locations/,,unfetchable,0
+SITE-015411-q2b,https://www.pretiumpkg.com/locations/,https://www.pretiumpkg.com/locations/,loaded,5815
+SITE-015416-q2b,https://ufpt.com/news/ufp-technologies-expands-molded-fiber-operations-el-paso-tx/,,unfetchable,0
+SITE-015418-q2b,https://www.fischbach-fi.com/en/contacts/,,unfetchable,0

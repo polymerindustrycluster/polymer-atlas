@@ -1,0 +1,4 @@
+PASS coverage_raw_check: 72 / 72 organizations; {'STILL_UNCERTAIN': 51, 'VERIFIED': 21}
+Fetches: 158 ; organizations attempted: 72 /72; quote-positive verdicts: 28 ; VERIFIED: 21 /72
+HTTP: {'000': 35, '422': 17, '200': 64, '403': 21, '410': 1, '404': 6, '522': 1, '406': 1, '307': 2, '503': 1, '401': 9}
+Mutations: missing row: caught; duplicate ID: caught; absent quote: caught; empty uncertainty: caught

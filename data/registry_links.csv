@@ -1850,7 +1850,7 @@ ORG-002772,FRS,110015738264,frs_rest_registry_id_name_street_match:SITE-006045,2
 ORG-004864,FRS,110012656116,frs_rest_registry_id_name_street_match:SITE-006046,2026-11-04,SITE-006046
 ORG-004865,FRS,110001516501,frs_rest_registry_id_name_street_match:SITE-006047,2026-11-04,SITE-006047
 ORG-004866,FRS,110011042059,frs_rest_registry_id_name_street_match:SITE-006048,2026-11-04,SITE-006048
-ORG-002260,FRS,110001516832,frs_rest_registry_id_name_street_match:SITE-006049,2026-11-04,SITE-006049
+ORG-002261,FRS,110001516832,frs_rest_registry_id_name_street_match:SITE-006049,2026-11-04,SITE-006049
 ORG-004867,FRS,110069463020,frs_rest_registry_id_name_street_match:SITE-006050,2026-11-04,SITE-006050
 ORG-004868,FRS,110000615488,frs_rest_registry_id_name_street_match:SITE-006052,2026-11-04,SITE-006052
 ORG-004869,FRS,110015848680,frs_rest_registry_id_name_street_match:SITE-006053,2026-11-04,SITE-006053
@@ -5372,3 +5372,7 @@ ORG-002876,UEI,TSF5X5B2YLS4,usaspending_exact_uei,2026-11-01,
 ORG-000132,UEI,KQ3FH6QEV9C3,usaspending_exact_uei,2026-11-01,
 ORG-003593,UEI,GT17WW2KEGR4,usaspending_exact_uei,2026-11-01,
 ORG-000846,UEI,ZP69NJVK9FL2,usaspending_exact_uei,2026-11-01,
+ORG-000798,FRS,110000741822,frs_rest_verified_id:SITE-000863; name and3676 Davis RD NW; source=https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110000741822,2026-11-06,SITE-000863
+ORG-000751,FRS,110007706900,"frs_rest_verified_id:SITE-000813; name,Midvale OH44653,Gundy DR; FRS omits street number; held site cites same ID; source=https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110007706900",2026-11-06,SITE-000813
+ORG-001919,FRS,110000390390,frs_rest_verified_id:SITE-001910; 2290 Zimmerman RD SE; historical FRS name Quest Automotive Products; Ohio EPA CRO2557 jointly names Quest Automotive Products / Catalyst Systems at same street; no operator/status change; source=https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110000390390; alias_source=https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Portals/30/hazwaste/Historical_list_Facilities_CRO.pdf,2026-11-06,SITE-001910
+ORG-000798,EIN,391205755,"efast2_PY2024_ACK_ID:20251015110824NAL0008891586001; exact sponsor DOVER CHEMICAL CORPORATION and3676 DAVIS ROAD NW,DOVER OH match SITE-000863; R11; source=https://askebsa.dol.gov/FOIA%20Files/2024/Latest/F_5500_2024_Latest.zip; separate ICC-name filing not used, no parent inference",2026-11-06,

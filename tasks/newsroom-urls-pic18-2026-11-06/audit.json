@@ -1,0 +1,1427 @@
+[
+  {
+    "org_id": "ORG-000015",
+    "status": "200",
+    "final": "https://daextrusion.com/newsroom-lobby/",
+    "dates": [],
+    "title": "Extruder News, Technical Articles, Equipment Updates and Events",
+    "newsroom_url": "https://daextrusion.com/newsroom-lobby/"
+  },
+  {
+    "org_id": "ORG-000029",
+    "status": "200",
+    "final": "https://ardl.com/news/",
+    "dates": [
+      "Jun 30, 2026",
+      "Feb 23, 2024",
+      "Feb 09, 2024",
+      "Jan 19, 2024",
+      "Nov 03, 2021",
+      "Sep 30, 2021",
+      "Dec 04, 2020",
+      "Nov 24, 2020",
+      "Nov 05, 2020",
+      "November 5, 2020",
+      "Sep 01, 2020",
+      "Apr 02, 2020"
+    ],
+    "title": "News | ARDL",
+    "newsroom_url": "https://ardl.com/news/"
+  },
+  {
+    "org_id": "ORG-000031",
+    "status": "200",
+    "final": "https://www.akronporcelain.com/news/",
+    "dates": [],
+    "title": "News - Akron Porcelain &amp; Plastics Co",
+    "newsroom_url": "https://www.akronporcelain.com/news/"
+  },
+  {
+    "org_id": "ORG-000060",
+    "status": "200",
+    "final": "https://esterle.com/news",
+    "dates": [
+      "August 2, 2026",
+      "May 10, 2025",
+      "November 6, 2023",
+      "August 5, 2023",
+      "August 2, 2023",
+      "May 25, 2023",
+      "May 18, 2023",
+      "May 6, 2023",
+      "January 1, 2022",
+      "December 28, 2021",
+      "November 25, 2021",
+      "August 2, 2021"
+    ],
+    "title": "News &amp; Updates - ESTERLE Mold &amp; Machine",
+    "newsroom_url": "https://esterle.com/news"
+  },
+  {
+    "org_id": "ORG-000078",
+    "status": "200",
+    "final": "https://www.gi-de.com/en/about-us/press",
+    "dates": [],
+    "title": "Press Center: press releases and information on events | G+D",
+    "newsroom_url": "https://www.gi-de.com/en/about-us/press"
+  },
+  {
+    "org_id": "ORG-000098",
+    "status": "200",
+    "final": "https://www.spazzolplastica.it/us/news-index",
+    "dates": [
+      "16 October 2026",
+      "09 September 2026",
+      "05 August 2026",
+      "07 July 2026",
+      "30 April 2026",
+      "23 March 2026",
+      "30 January 2026",
+      "16 December 2025",
+      "28 October 2025",
+      "17 October 2025",
+      "29 July 2025",
+      "01 July 2025"
+    ],
+    "title": "Company news and updates | Spazzolplastica",
+    "newsroom_url": "https://www.spazzolplastica.it/us/news-index"
+  },
+  {
+    "org_id": "ORG-000105",
+    "status": "200",
+    "final": "https://www.transcendia.com/company-news",
+    "dates": [
+      "June 3, 2025",
+      "September 10, 2024",
+      "May 2, 2024",
+      "September 20, 2021",
+      "December 8, 2020",
+      "November 14, 2019",
+      "March 1, 2019",
+      "January 11, 2019",
+      "August 6, 2018",
+      "September 7, 2017"
+    ],
+    "title": "Company News | Transcendia",
+    "newsroom_url": "https://www.transcendia.com/company-news"
+  },
+  {
+    "org_id": "ORG-000126",
+    "status": "200",
+    "final": "https://cpipp.com/news/",
+    "dates": [],
+    "title": "News - CPI Precision Plastics LLC",
+    "newsroom_url": "https://cpipp.com/news/"
+  },
+  {
+    "org_id": "ORG-000130",
+    "status": "200",
+    "final": "https://www.peaknano.com/newsroom",
+    "dates": [
+      "October 19, 2026",
+      "September 16, 2026",
+      "July 13, 2026",
+      "April 26, 2026",
+      "April 15, 2026",
+      "April 7, 2026",
+      "April 3, 2026",
+      "March 12, 2026",
+      "March 11, 2026",
+      "March 2, 2026",
+      "February 26, 2026",
+      "February 24, 2026"
+    ],
+    "title": "Newsroom | Peak Nano",
+    "newsroom_url": "https://www.peaknano.com/newsroom"
+  },
+  {
+    "org_id": "ORG-000153",
+    "status": "200",
+    "final": "https://www.moen.com/blogs/press-room",
+    "dates": [
+      "June 15, 2026",
+      "April 20, 2026",
+      "February 17, 2026",
+      "June 2, 2025",
+      "May 29, 2025",
+      "April 14, 2025",
+      "April 10, 2025",
+      "March 21, 2025",
+      "February 25, 2025"
+    ],
+    "title": "Moen News &amp; Press Room | Updates &amp; Announcements",
+    "newsroom_url": "https://www.moen.com/blogs/press-room"
+  },
+  {
+    "org_id": "ORG-000156",
+    "status": "200",
+    "final": "https://www.swagelok.com/en/about/news",
+    "dates": [
+      "July 31, 2022"
+    ],
+    "title": "Swagelok News | Swagelok",
+    "newsroom_url": "https://www.swagelok.com/en/about/news"
+  },
+  {
+    "org_id": "ORG-000169",
+    "status": "200",
+    "final": "https://www.zatkoff.com/",
+    "dates": [
+      "February 25, 2025",
+      "February 12, 2025",
+      "January 30, 2025"
+    ],
+    "title": " Zatkoff ",
+    "newsroom_url": "https://www.zatkoff.com/"
+  },
+  {
+    "org_id": "ORG-000174",
+    "status": "200",
+    "final": "https://vertexseals.com/news/",
+    "dates": [
+      "October 26, 2018",
+      "June 3, 2021",
+      "June 5, 2017"
+    ],
+    "title": "News - Vertex, Inc.",
+    "newsroom_url": "https://vertexseals.com/news/"
+  },
+  {
+    "org_id": "ORG-000185",
+    "status": "200",
+    "final": "https://www.anyseals.com/en/company/news/",
+    "dates": [],
+    "title": "News",
+    "newsroom_url": "https://www.anyseals.com/en/company/news/"
+  },
+  {
+    "org_id": "ORG-000193",
+    "status": "200",
+    "final": "https://teamtmi.com/news-manufactured-rubber/",
+    "dates": [],
+    "title": "News - TMI manufactured Rubber Products and How they are used",
+    "newsroom_url": "https://teamtmi.com/news-manufactured-rubber/"
+  },
+  {
+    "org_id": "ORG-000195",
+    "status": "200",
+    "final": "https://qualiformrubbermolding.com/company/news/",
+    "dates": [],
+    "title": "News | Qualiform Custom Rubber Molding | Rubber Products",
+    "newsroom_url": "https://qualiformrubbermolding.com/company/news/"
+  },
+  {
+    "org_id": "ORG-000197",
+    "status": "200",
+    "final": "https://www.kendatire.com/en-us/news/",
+    "dates": [],
+    "title": "Kenda Tire | Corporate | News",
+    "newsroom_url": "https://www.kendatire.com/en-us/news/"
+  },
+  {
+    "org_id": "ORG-000204",
+    "status": "200",
+    "final": "https://www.hankooktire.com/content/hankooktire/us/en/company/media-center/media-list.html/",
+    "dates": [],
+    "title": "Media Center | Hankook Tire USA",
+    "newsroom_url": "https://www.hankooktire.com/content/hankooktire/us/en/company/media-center/media-list.html/"
+  },
+  {
+    "org_id": "ORG-000208",
+    "status": "200",
+    "final": "https://www.a-roo.com/news",
+    "dates": [
+      "September 28, 2026",
+      "October 9, 2026",
+      "February 6, 2024",
+      "Dec 08, 2026",
+      "Dec 10, 2026"
+    ],
+    "title": "Latest News from A\u00b7ROO Company",
+    "newsroom_url": "https://www.a-roo.com/news"
+  },
+  {
+    "org_id": "ORG-000232",
+    "status": "200",
+    "final": "https://www.appliedmedical.net/news/",
+    "dates": [],
+    "title": "News &amp; Updates | Applied Medical Technology",
+    "newsroom_url": "https://www.appliedmedical.net/news/"
+  },
+  {
+    "org_id": "ORG-000237",
+    "status": "200",
+    "final": "https://www.sealedair.com/company/media-center/press-releases",
+    "dates": [
+      "October 15, 2026",
+      "September 22, 2026",
+      "August 24, 2026",
+      "April 9, 2026",
+      "January 26, 2026",
+      "January 7, 2026",
+      "November 17, 2025",
+      "September 16, 2025",
+      "September 9, 2025",
+      "August 4, 2025",
+      "February 14, 2025",
+      "September 4, 2024"
+    ],
+    "title": "Press Releases - Sealed Air",
+    "newsroom_url": "https://www.sealedair.com/company/media-center/press-releases"
+  },
+  {
+    "org_id": "ORG-000243",
+    "status": "200",
+    "final": "https://basetek.com/news/",
+    "dates": [
+      "September 14, 2026",
+      "June 26, 2026",
+      "March 26, 2026",
+      "November 25, 2025",
+      "October 21, 2025",
+      "August 4, 2025"
+    ],
+    "title": "News - BaseTek",
+    "newsroom_url": "https://basetek.com/news/"
+  },
+  {
+    "org_id": "ORG-000245",
+    "status": "200",
+    "final": "https://luxiumsolutions.com/news-events",
+    "dates": [],
+    "title": "News &amp; Events | Luxium Solutions",
+    "newsroom_url": "https://luxiumsolutions.com/news-events"
+  },
+  {
+    "org_id": "ORG-000251",
+    "status": "200",
+    "final": "https://boleamerica.com/news/",
+    "dates": [
+      "Sep 22, 2023",
+      "Aug 18, 2023",
+      "May 15, 2023",
+      "May 12, 2023",
+      "April 17, 2023",
+      "April 15, 2023",
+      "April 14, 2023",
+      "March 28, 2023",
+      "March 14, 2023",
+      "February 7, 2023",
+      "Feb. 07, 2023",
+      "Feb. 09, 2023"
+    ],
+    "title": "News - Bole Machinery USA",
+    "newsroom_url": "https://boleamerica.com/news/"
+  },
+  {
+    "org_id": "ORG-000259",
+    "status": "200",
+    "final": "https://www.cantexinc.com/news",
+    "dates": [
+      "February 11, 2026",
+      "January 3, 2022",
+      "July 18, 2019"
+    ],
+    "title": " Latest News and Upcoming Events Calendar | Cantex Inc ",
+    "newsroom_url": "https://www.cantexinc.com/news"
+  },
+  {
+    "org_id": "ORG-000265",
+    "status": "200",
+    "final": "https://ccllabel.com/en/company/news",
+    "dates": [],
+    "title": "CCL Label \u2013 News",
+    "newsroom_url": "https://ccllabel.com/en/company/news"
+  },
+  {
+    "org_id": "ORG-000273",
+    "status": "200",
+    "final": "https://www.safic-alcan.com/en-us/media-center/",
+    "dates": [],
+    "title": "Media Center - Safic-Alcan United States",
+    "newsroom_url": "https://www.safic-alcan.com/en-us/media-center/"
+  },
+  {
+    "org_id": "ORG-000276",
+    "status": "200",
+    "final": "https://www.turtleplastics.com/news-events/",
+    "dates": [
+      "June 24, 2026",
+      "February 25, 2026",
+      "December 22, 2025",
+      "January 1, 2026",
+      "December 8, 2025",
+      "November 24, 2025",
+      "October 20, 2025",
+      "September 22, 2025",
+      "September 9, 2025",
+      "September 1, 2025",
+      "July 10, 2025",
+      "May 15, 2025"
+    ],
+    "title": "Safety Cribbing &amp; Tiles Recycled Plastic",
+    "newsroom_url": "https://www.turtleplastics.com/news-events/"
+  },
+  {
+    "org_id": "ORG-000293",
+    "status": "200",
+    "final": "https://www.creativemillwork.com/news-insights",
+    "dates": [],
+    "title": "News | Creative Millwork",
+    "newsroom_url": "https://www.creativemillwork.com/news-insights"
+  },
+  {
+    "org_id": "ORG-000313",
+    "status": "200",
+    "final": "https://www.dupont.com/news.html",
+    "dates": [],
+    "title": "Newsroom | DuPont",
+    "newsroom_url": "https://www.dupont.com/news.html"
+  },
+  {
+    "org_id": "ORG-000315",
+    "status": "200",
+    "final": "https://www.duraline.com/about-us/news/",
+    "dates": [
+      "May 15, 2026",
+      "October 03, 2025",
+      "May 29, 2025",
+      "January 15, 2024",
+      "April 26, 2023",
+      "October 04, 2022",
+      "September 13, 2022"
+    ],
+    "title": "News - About Us | Dura-Line",
+    "newsroom_url": "https://www.duraline.com/about-us/news/"
+  },
+  {
+    "org_id": "ORG-000326",
+    "status": "200",
+    "final": "https://www.enclosure-solutions.com/news.php",
+    "dates": [
+      "2025-03-12",
+      "2023-01-06",
+      "2019-12-29",
+      "2013-02-26"
+    ],
+    "title": "ESI News: ESI Announces Product Line Expansion in the PolyGuard Series",
+    "newsroom_url": "https://www.enclosure-solutions.com/news.php"
+  },
+  {
+    "org_id": "ORG-000330",
+    "status": "200",
+    "final": "https://esi-extrusion.com/blog/",
+    "dates": [],
+    "title": "Blog - ESI - Extrusion Services, LLC.",
+    "newsroom_url": "https://esi-extrusion.com/blog/"
+  },
+  {
+    "org_id": "ORG-000339",
+    "status": "200",
+    "final": "https://www.ferryindustries.com/NewsAndEvents",
+    "dates": [
+      "November 2, 2020",
+      "October 30, 2020",
+      "June 4, 2020",
+      "April 3, 2020",
+      "April 1, 2020",
+      "October 21, 2019",
+      "Oct. 17, 2019",
+      "July 30, 2019",
+      "January 17, 2019",
+      "March 7, 2017",
+      "March 12, 2015",
+      "July 9, 2024"
+    ],
+    "title": "News &amp; Events",
+    "newsroom_url": "https://www.ferryindustries.com/NewsAndEvents"
+  },
+  {
+    "org_id": "ORG-000340",
+    "status": "200",
+    "final": "https://www.flambeau.com/news/",
+    "dates": [
+      "July 23, 2023",
+      "February 20, 2023",
+      "February 2, 2023",
+      "May 16, 2022",
+      "March 7, 2022",
+      "January 6, 2022",
+      "December 12, 2021",
+      "September 30, 2021",
+      "July 30, 2021",
+      "May 11, 2021",
+      "May 1, 2021",
+      "April 6, 2021"
+    ],
+    "title": "Latest Corporate News and Updates | Flambeau, Inc",
+    "newsroom_url": "https://www.flambeau.com/news/"
+  },
+  {
+    "org_id": "ORG-000355",
+    "status": "200",
+    "final": "https://www.godfreywing.com/news-events/",
+    "dates": [
+      "February 1, 2024"
+    ],
+    "title": "News &amp; Events - Godfrey \uff06 Wing",
+    "newsroom_url": "https://www.godfreywing.com/news-events/"
+  },
+  {
+    "org_id": "ORG-000384",
+    "status": "200",
+    "final": "https://www.intralox.com/media/news",
+    "dates": [
+      "November 5, 2026",
+      "October 29, 2026",
+      "October 16, 2026",
+      "September 11, 2026",
+      "August 12, 2026",
+      "July 30, 2026",
+      "July 14, 2026",
+      "June 2, 2026"
+    ],
+    "title": "News &amp; Insights | Intralox",
+    "newsroom_url": "https://www.intralox.com/media/news"
+  },
+  {
+    "org_id": "ORG-000385",
+    "status": "200",
+    "final": "https://www.itendefense.com/news",
+    "dates": [],
+    "title": "Blog 3 &mdash; ITEN DEFENSE",
+    "newsroom_url": "https://www.itendefense.com/news"
+  },
+  {
+    "org_id": "ORG-000402",
+    "status": "200",
+    "final": "https://kapco.com/news/category/custom-coating/",
+    "dates": [],
+    "title": "Custom Coating / Kapco News | KAPCO",
+    "newsroom_url": "https://kapco.com/news/category/custom-coating/"
+  },
+  {
+    "org_id": "ORG-000403",
+    "status": "200",
+    "final": "https://karmanrubber.com/whats-new-at-karman/",
+    "dates": [],
+    "title": "Rubber Industry News, Updates | Karman Rubber",
+    "newsroom_url": "https://karmanrubber.com/whats-new-at-karman/"
+  },
+  {
+    "org_id": "ORG-000405",
+    "status": "200",
+    "final": "http://www.keenerrubber.com/news.htm",
+    "dates": [
+      "6/15/2000",
+      "7/25/2000",
+      "11/15/2000",
+      "1/18/2001",
+      "1/25/2001",
+      "10/2/2001",
+      "2/19/2002",
+      "5/15/2002",
+      "7/23/2002",
+      "July 23, 2002"
+    ],
+    "title": "Keener News Page",
+    "newsroom_url": "http://www.keenerrubber.com/news.htm"
+  },
+  {
+    "org_id": "ORG-000412",
+    "status": "200",
+    "final": "https://www.ksbi.com/news/",
+    "dates": [
+      "September 12, 2024",
+      "May 16, 2024",
+      "May 2, 2024"
+    ],
+    "title": "News &#8211; Kobelco Stewart Bolling, Inc.",
+    "newsroom_url": "https://www.ksbi.com/news/"
+  },
+  {
+    "org_id": "ORG-000413",
+    "status": "200",
+    "final": "https://knightmaterials.com/resources/?filter=.press",
+    "dates": [],
+    "title": "Resources - Knight Materials",
+    "newsroom_url": "https://knightmaterials.com/resources/?filter=.press"
+  },
+  {
+    "org_id": "ORG-000428",
+    "status": "200",
+    "final": "https://malishplastics.com/news/",
+    "dates": [],
+    "title": "News &#8211; The Malish Corporation",
+    "newsroom_url": "https://malishplastics.com/news/"
+  },
+  {
+    "org_id": "ORG-000461",
+    "status": "200",
+    "final": "https://www.nexentireusa.com/news/",
+    "dates": [
+      "4 May 2023",
+      "2 May 2023",
+      "25 May 2021",
+      "10 May 2021",
+      "4 May 2020",
+      "15 May 2019",
+      "13 May 2019",
+      "27 May 2014"
+    ],
+    "title": "News - Nexen Tire",
+    "newsroom_url": "https://www.nexentireusa.com/news/"
+  },
+  {
+    "org_id": "ORG-000472",
+    "status": "200",
+    "final": "https://www.resivantmedical.com/news-cutiva-plus/",
+    "dates": [
+      "September 22, 2026",
+      "August 18, 2026",
+      "August 23, 2024",
+      "June 23, 2026"
+    ],
+    "title": "News - Resivant Medical - Cutiva",
+    "newsroom_url": "https://www.resivantmedical.com/news-cutiva-plus/"
+  },
+  {
+    "org_id": "ORG-000482",
+    "status": "200",
+    "final": "https://pkoh.com/investor-relations/news/press-releases",
+    "dates": [],
+    "title": "Press Releases | ParkOhio",
+    "newsroom_url": "https://pkoh.com/investor-relations/news/press-releases"
+  },
+  {
+    "org_id": "ORG-000498",
+    "status": "200",
+    "final": "https://plastiwin.com/blog/",
+    "dates": [],
+    "title": "Machinery &amp; Company News | PlastiWin Capital Equipment",
+    "newsroom_url": "https://plastiwin.com/blog/"
+  },
+  {
+    "org_id": "ORG-000506",
+    "status": "200",
+    "final": "https://www.greenbridge.com/category/news/",
+    "dates": [],
+    "title": "News - Greenbridge",
+    "newsroom_url": "https://www.greenbridge.com/category/news/"
+  },
+  {
+    "org_id": "ORG-000510",
+    "status": "200",
+    "final": "https://www.polymermachineryco.com/news",
+    "dates": [],
+    "title": "News and Events &mdash; Polymer Machinery Consultants, Ltd.",
+    "newsroom_url": "https://www.polymermachineryco.com/news"
+  },
+  {
+    "org_id": "ORG-000523",
+    "status": "200",
+    "final": "https://www.pretiumpkg.com/news-and-events/",
+    "dates": [
+      "09/03/2026",
+      "September 3, 2026",
+      "07/08/2026",
+      "July 8, 2026",
+      "12/28/2023",
+      "10/30/2023",
+      "October 30, 2023",
+      "08/07/2023",
+      "August 8, 2023",
+      "01/16/2023",
+      "January 16, 2023",
+      "03/07/2023"
+    ],
+    "title": "News and Events - Pretium Packaging",
+    "newsroom_url": "https://www.pretiumpkg.com/news-and-events/"
+  },
+  {
+    "org_id": "ORG-000527",
+    "status": "200",
+    "final": "https://www.progressivefoam.com/about-pft/media-center/",
+    "dates": [],
+    "title": "Media Center | Progressive Foam Technologies",
+    "newsroom_url": "https://www.progressivefoam.com/about-pft/media-center/"
+  },
+  {
+    "org_id": "ORG-000529",
+    "status": "200",
+    "final": "https://prospectgroup.com/about/news/",
+    "dates": [
+      "Jul 14, 2025",
+      "Feb 14, 2025",
+      "Dec 17, 2024",
+      "Nov 15, 2024",
+      "Sep 30, 2024",
+      "Sep 5, 2024",
+      "Jul 30, 2024",
+      "Jul 9, 2024",
+      "Jun 4, 2024",
+      "May 7, 2024",
+      "Mar 8, 2024",
+      "Feb 2, 2024"
+    ],
+    "title": "News - Prospect",
+    "newsroom_url": "https://prospectgroup.com/about/news/"
+  },
+  {
+    "org_id": "ORG-000533",
+    "status": "200",
+    "final": "https://www.qnityelectronics.com/news",
+    "dates": [
+      "November 4, 2026"
+    ],
+    "title": "News &amp; Events",
+    "newsroom_url": "https://www.qnityelectronics.com/news"
+  },
+  {
+    "org_id": "ORG-000534",
+    "status": "200",
+    "final": "https://datwyler.com/media/",
+    "dates": [
+      "2014-12-19"
+    ],
+    "title": "Media | Datwyler",
+    "newsroom_url": "https://datwyler.com/media/"
+  },
+  {
+    "org_id": "ORG-000549",
+    "status": "200",
+    "final": "https://www.robin-industries.com/news-and-events/",
+    "dates": [],
+    "title": "News and Events - Robin Industries Robin Industries | Custom Molding",
+    "newsroom_url": "https://www.robin-industries.com/news-and-events/"
+  },
+  {
+    "org_id": "ORG-000550",
+    "status": "200",
+    "final": "https://www.roechling.com/newsroom",
+    "dates": [],
+    "title": " Newsroom &#124; R\u00f6chling&nbsp;EN",
+    "newsroom_url": "https://www.roechling.com/newsroom"
+  },
+  {
+    "org_id": "ORG-000570",
+    "status": "200",
+    "final": "https://www.shiniusa.com/our-company/news/",
+    "dates": [
+      "October 14, 2024",
+      "October 15, 2024",
+      "September 14, 2021",
+      "October 20, 2022",
+      "September 2, 2021",
+      "March 16, 2022",
+      "June 30, 2021",
+      "July 28, 2021",
+      "March 11, 2020",
+      "June 8, 2022",
+      "February 5, 2020",
+      "July 23, 2019"
+    ],
+    "title": "News | Blog Posts | Plastics Industry News | Shini USA",
+    "newsroom_url": "https://www.shiniusa.com/our-company/news/"
+  },
+  {
+    "org_id": "ORG-000571",
+    "status": "200",
+    "final": "https://shurtapetech.com/",
+    "dates": [
+      "Oct 21, 2026",
+      "October 15, 2026",
+      "Oct 13, 2026",
+      "Sep 22, 2026"
+    ],
+    "title": "Home - Shurtape Technologies, LLC",
+    "newsroom_url": "https://shurtapetech.com/"
+  },
+  {
+    "org_id": "ORG-000587",
+    "status": "200",
+    "final": "https://www.tlsquire.com/news",
+    "dates": [],
+    "title": " News - T.L. Squire & Company ",
+    "newsroom_url": "https://www.tlsquire.com/news"
+  },
+  {
+    "org_id": "ORG-000601",
+    "status": "200",
+    "final": "https://www.tth.com/news",
+    "dates": [
+      "Oct. 25, 2015"
+    ],
+    "title": "Company News | TTH",
+    "newsroom_url": "https://www.tth.com/news"
+  },
+  {
+    "org_id": "ORG-000603",
+    "status": "200",
+    "final": "https://teslanano.com/offshore-coatings-newsroom/",
+    "dates": [
+      "October 26, 2026",
+      "October 21, 2026",
+      "April 11, 2025",
+      "March 11, 2025",
+      "February 27, 2025",
+      "February 26, 2025",
+      "February 3, 2025",
+      "December 12, 2024",
+      "November 26, 2024",
+      "October 30, 2024"
+    ],
+    "title": "Tesla NanoCoatings Newsroom: Offshore Coating Insights",
+    "newsroom_url": "https://teslanano.com/offshore-coatings-newsroom/"
+  },
+  {
+    "org_id": "ORG-000624",
+    "status": "200",
+    "final": "https://www.uwayextrusion.com/news",
+    "dates": [
+      "2026-10-23",
+      "2026-11-02",
+      "2026-10-16",
+      "2026-09-23",
+      "2026-09-11",
+      "2026-08-27"
+    ],
+    "title": "News-UWAY",
+    "newsroom_url": "https://www.uwayextrusion.com/news"
+  },
+  {
+    "org_id": "ORG-000625",
+    "status": "200",
+    "final": "https://www.ventureplastics.com/news/",
+    "dates": [
+      "June 30, 2026",
+      "May 1, 2025",
+      "September 18, 2024",
+      "April 15, 2022",
+      "September 21, 2019",
+      "September 2, 2019"
+    ],
+    "title": "Company News &amp; Case Studies | Venture Plastics, Inc.",
+    "newsroom_url": "https://www.ventureplastics.com/news/"
+  },
+  {
+    "org_id": "ORG-000638",
+    "status": "200",
+    "final": "https://www.yokohamaiaohio.com/about-us/news",
+    "dates": [
+      "7/31/2026",
+      "October 30, 2026"
+    ],
+    "title": "News | Yokohama",
+    "newsroom_url": "https://www.yokohamaiaohio.com/about-us/news"
+  },
+  {
+    "org_id": "ORG-000688",
+    "status": "200",
+    "final": "https://autoneum.com/news",
+    "dates": [
+      "November 2, 2026",
+      "October 30, 2026",
+      "October 12, 2026",
+      "October 10, 2026",
+      "November 25, 2026",
+      "November 26, 2026",
+      "January 21, 2027",
+      "March 11, 2027",
+      "April 6, 2027"
+    ],
+    "title": "Autoneum | News &amp; Events",
+    "newsroom_url": "https://autoneum.com/news"
+  },
+  {
+    "org_id": "ORG-000697",
+    "status": "200",
+    "final": "https://hedstrom.com/news/",
+    "dates": [],
+    "title": "Hedstrom Happenings - Hedstrom",
+    "newsroom_url": "https://hedstrom.com/news/"
+  },
+  {
+    "org_id": "ORG-000883",
+    "status": "200",
+    "final": "https://hubplastics.com/announcements/",
+    "dates": [
+      "05/15/2024",
+      "4/4/2023",
+      "9/19/2022",
+      "5/1/2019"
+    ],
+    "title": "Announcements | Hub Plastics",
+    "newsroom_url": "https://hubplastics.com/announcements/"
+  },
+  {
+    "org_id": "ORG-001033",
+    "status": "200",
+    "final": "https://www.plastipak.com/?page_id=52",
+    "dates": [
+      "Oct 14, 2026",
+      "Oct 1, 2026",
+      "Aug 21, 2026",
+      "Jul 9, 2026",
+      "Jul 2, 2026",
+      "Jun 12, 2026",
+      "Jun 1, 2026",
+      "May 8, 2026",
+      "Apr 14, 2026",
+      "Mar 2, 2026",
+      "Jan 29, 2026",
+      "Jan 20, 2026"
+    ],
+    "title": "Plastipak Newsroom - Plastipak Packaging, Inc.",
+    "newsroom_url": "https://www.plastipak.com/?page_id=52"
+  },
+  {
+    "org_id": "ORG-001078",
+    "status": "200",
+    "final": "https://www.rhetechcolors.com/news-and-events/",
+    "dates": [
+      "January 29, 2026",
+      "July 31, 2026",
+      "March 4, 2026"
+    ],
+    "title": "News &amp; events - RheTech Colors - Additive Masterbatches",
+    "newsroom_url": "https://www.rhetechcolors.com/news-and-events/"
+  },
+  {
+    "org_id": "ORG-001079",
+    "status": "200",
+    "final": "https://www.richindustriesinc.com/RichIndustriesNews.php",
+    "dates": [],
+    "title": "Rich Industries News",
+    "newsroom_url": "https://www.richindustriesinc.com/RichIndustriesNews.php"
+  },
+  {
+    "org_id": "ORG-001105",
+    "status": "200",
+    "final": "https://www.liquibox.com/news/news-and-press-releases/",
+    "dates": [
+      "May 13, 2024",
+      "January 18, 2024",
+      "February 22, 2023",
+      "February 01, 2023",
+      "January 09, 2023",
+      "October 18, 2022",
+      "October 05, 2022",
+      "August 09, 2022",
+      "July 27, 2022"
+    ],
+    "title": "News and Press Releases Archives - Liquibox- Sealed Air",
+    "newsroom_url": "https://www.liquibox.com/news/news-and-press-releases/"
+  },
+  {
+    "org_id": "ORG-001327",
+    "status": "200",
+    "final": "https://altraset.mar-bal.com/news/",
+    "dates": [
+      "Feb 18, 2019"
+    ],
+    "title": "AltraSet Composite Technologies | News",
+    "newsroom_url": "https://altraset.mar-bal.com/news/"
+  },
+  {
+    "org_id": "ORG-001329",
+    "status": "200",
+    "final": "https://www.shrinktape.com/resources/news/",
+    "dates": [
+      "September 2, 2026",
+      "May 28, 2026",
+      "March 24, 2026",
+      "December 18, 2025",
+      "September 15, 2025",
+      "August 15, 2025",
+      "July 25, 2025",
+      "May 15, 2025",
+      "March 26, 2025",
+      "February 6, 2025",
+      "December 10, 2024",
+      "November 15, 2024"
+    ],
+    "title": "News - Heat Shrinkable Tapes &amp; Tubing | Dunstone",
+    "newsroom_url": "https://www.shrinktape.com/resources/news/"
+  },
+  {
+    "org_id": "ORG-001333",
+    "status": "200",
+    "final": "https://steerworld.com/en/news-and-events",
+    "dates": [],
+    "title": "STEER World News | Latest Updates on Innovation and Events",
+    "newsroom_url": "https://steerworld.com/en/news-and-events"
+  },
+  {
+    "org_id": "ORG-001334",
+    "status": "200",
+    "final": "https://www.tedericglobal.com/brochure2.html",
+    "dates": [],
+    "title": "Tederic Media Center",
+    "newsroom_url": "https://www.tedericglobal.com/brochure2.html"
+  },
+  {
+    "org_id": "ORG-001388",
+    "status": "200",
+    "final": "https://www.hy-ko.com/news",
+    "dates": [
+      "July 21, 2020"
+    ],
+    "title": "News",
+    "newsroom_url": "https://www.hy-ko.com/news"
+  },
+  {
+    "org_id": "ORG-001394",
+    "status": "200",
+    "final": "https://kentdisplays.com/news/",
+    "dates": [
+      "January 7, 2026",
+      "July 29, 2025"
+    ],
+    "title": "News | Kent Displays",
+    "newsroom_url": "https://kentdisplays.com/news/"
+  },
+  {
+    "org_id": "ORG-001422",
+    "status": "200",
+    "final": "https://process.honeywell.com/us/en/navigation/news-and-events",
+    "dates": [],
+    "title": "News &amp; Events",
+    "newsroom_url": "https://process.honeywell.com/us/en/navigation/news-and-events"
+  },
+  {
+    "org_id": "ORG-001465",
+    "status": "200",
+    "final": "https://chalfantusa.com/media-center/",
+    "dates": [],
+    "title": "Media Center - Loading Dock Equipment Manufacturer",
+    "newsroom_url": "https://chalfantusa.com/media-center/"
+  },
+  {
+    "org_id": "ORG-001480",
+    "status": "200",
+    "final": "https://ace-laboratories.com/news/",
+    "dates": [],
+    "title": "ACE Laboratories News | Stay up to Date with ACE",
+    "newsroom_url": "https://ace-laboratories.com/news/"
+  },
+  {
+    "org_id": "ORG-001494",
+    "status": "200",
+    "final": "https://alliedmachine.com/company/news/",
+    "dates": [
+      "9/14/2026",
+      "8/10/2026",
+      "5/8/2026",
+      "4/27/2026",
+      "9/22/2025",
+      "9/2/2025",
+      "6/12/2025",
+      "3/18/2025",
+      "3/13/2025",
+      "10/25/2024",
+      "9/9/2024",
+      "7/15/2024"
+    ],
+    "title": "Allied - Company News",
+    "newsroom_url": "https://alliedmachine.com/company/news/"
+  },
+  {
+    "org_id": "ORG-001508",
+    "status": "200",
+    "final": "https://ichorvascular.com/news-events/",
+    "dates": [
+      "October 28, 2026",
+      "September 26, 2026",
+      "September 14, 2026",
+      "August 12, 2026",
+      "July 22, 2026",
+      "July 21, 2026",
+      "July 20, 2026",
+      "July 16, 2026",
+      "June 15, 2026"
+    ],
+    "title": "NEWS &amp; EVENTS - iCHOR Updates in Removal Technology and Innovation",
+    "newsroom_url": "https://ichorvascular.com/news-events/"
+  },
+  {
+    "org_id": "ORG-001509",
+    "status": "200",
+    "final": "https://filterqueen.com/pages/company-news",
+    "dates": [],
+    "title": "Company News | FilterQueen",
+    "newsroom_url": "https://filterqueen.com/pages/company-news"
+  },
+  {
+    "org_id": "ORG-001511",
+    "status": "200",
+    "final": "https://clevemed.com/news/",
+    "dates": [
+      "Apr 8, 2026",
+      "Mar 5, 2026",
+      "Feb 23, 2026",
+      "Feb 2, 2026",
+      "February 6, 2026",
+      "Jan 16, 2026",
+      "Nov 24, 2025",
+      "Nov 14, 2025",
+      "Oct 24, 2025",
+      "Oct 9, 2025",
+      "May 5, 2025",
+      "Apr 30, 2025"
+    ],
+    "title": "CleveMed News and Updates | Press Releases &amp; Announcements",
+    "newsroom_url": "https://clevemed.com/news/"
+  },
+  {
+    "org_id": "ORG-001515",
+    "status": "200",
+    "final": "https://www.s4medical.com/media/",
+    "dates": [
+      "February 1, 2024",
+      "July 12, 2023",
+      "September 27, 2021",
+      "June 29, 2020"
+    ],
+    "title": "Media | S4 Medical",
+    "newsroom_url": "https://www.s4medical.com/media/"
+  },
+  {
+    "org_id": "ORG-001523",
+    "status": "200",
+    "final": "https://centerlinebiomedical.com/news-events/",
+    "dates": [
+      "Aug 18, 2025",
+      "August 18, 2025",
+      "Jul 31, 2025",
+      "May 23, 2025",
+      "Mar 11, 2025",
+      "March 11, 2025",
+      "Dec 4, 2024",
+      "Dec. 4, 2024",
+      "Nov 19, 2024",
+      "Nov. 19, 2024",
+      "Aug 6, 2024",
+      "Aug. 6, 2024"
+    ],
+    "title": "News &#038; Events | Centerline Biomedical",
+    "newsroom_url": "https://centerlinebiomedical.com/news-events/"
+  },
+  {
+    "org_id": "ORG-001540",
+    "status": "200",
+    "final": "https://epandr.com/press",
+    "dates": [],
+    "title": "Press &#183; Emergency Products + Research (EP+R)",
+    "newsroom_url": "https://epandr.com/press"
+  },
+  {
+    "org_id": "ORG-001555",
+    "status": "200",
+    "final": "https://www.synapsebiomedical.com/resources-2/news/",
+    "dates": [],
+    "title": "Diaphragm Pacing Technology News | Synapse Biomedical Inc.",
+    "newsroom_url": "https://www.synapsebiomedical.com/resources-2/news/"
+  },
+  {
+    "org_id": "ORG-001562",
+    "status": "200",
+    "final": "https://baycorporation.com/announcements",
+    "dates": [],
+    "title": " Bay Corporation :: Announcements ",
+    "newsroom_url": "https://baycorporation.com/announcements"
+  },
+  {
+    "org_id": "ORG-001565",
+    "status": "200",
+    "final": "https://www.automationplastics.com/news",
+    "dates": [],
+    "title": "Blog &mdash; Automation Plastics Corporation",
+    "newsroom_url": "https://www.automationplastics.com/news"
+  },
+  {
+    "org_id": "ORG-001570",
+    "status": "200",
+    "final": "https://www.ghsp.com/news/",
+    "dates": [],
+    "title": "GHSP | News from GHSP",
+    "newsroom_url": "https://www.ghsp.com/news/"
+  },
+  {
+    "org_id": "ORG-001581",
+    "status": "200",
+    "final": "https://epacflexibles.com/",
+    "dates": [
+      "February 19, 2026",
+      "January 7, 2026"
+    ],
+    "title": "ePac Custom Flexible Packaging Company in USA",
+    "newsroom_url": "https://epacflexibles.com/"
+  },
+  {
+    "org_id": "ORG-001601",
+    "status": "200",
+    "final": "https://www.pisonstreamsolutions.com/news/",
+    "dates": [],
+    "title": "News &#187; Pison Stream Solutions",
+    "newsroom_url": "https://www.pisonstreamsolutions.com/news/"
+  },
+  {
+    "org_id": "ORG-001602",
+    "status": "200",
+    "final": "https://www.royalpowder.com/news",
+    "dates": [
+      "October 12, 2026",
+      "August 3, 2026"
+    ],
+    "title": "News &mdash; Royal Powder",
+    "newsroom_url": "https://www.royalpowder.com/news"
+  },
+  {
+    "org_id": "ORG-001609",
+    "status": "200",
+    "final": "https://www.mactac.com/news",
+    "dates": [
+      "9/14/2026",
+      "7/28/2025",
+      "5/22/2025",
+      "3/18/2025"
+    ],
+    "title": "Mactac | Press Releases",
+    "newsroom_url": "https://www.mactac.com/news"
+  },
+  {
+    "org_id": "ORG-001640",
+    "status": "200",
+    "final": "https://m-line.com/media/",
+    "dates": [],
+    "title": "Packaging Media - M-Line Inc.",
+    "newsroom_url": "https://m-line.com/media/"
+  },
+  {
+    "org_id": "ORG-001643",
+    "status": "200",
+    "final": "https://overmoldexpress.com/news/",
+    "dates": [],
+    "title": "News - Overmold Express",
+    "newsroom_url": "https://overmoldexpress.com/news/"
+  },
+  {
+    "org_id": "ORG-001717",
+    "status": "200",
+    "final": "https://flexlinkllc.com/news/",
+    "dates": [
+      "March 28, 2016"
+    ],
+    "title": "Flexlink LLC Company &amp; Industry News - Flexlink, LLC",
+    "newsroom_url": "https://flexlinkllc.com/news/"
+  },
+  {
+    "org_id": "ORG-001763",
+    "status": "200",
+    "final": "https://dalinmold.com/blog/",
+    "dates": [],
+    "title": "News &amp; Updates - Dalin Mold &amp; Machine",
+    "newsroom_url": "https://dalinmold.com/blog/"
+  },
+  {
+    "org_id": "ORG-001779",
+    "status": "200",
+    "final": "https://americansignproducts.com/news/",
+    "dates": [],
+    "title": "News - American Sign Products",
+    "newsroom_url": "https://americansignproducts.com/news/"
+  },
+  {
+    "org_id": "ORG-001784",
+    "status": "200",
+    "final": "https://bfplasticsinc.com/news/updates.asp",
+    "dates": [
+      "May 13, 2020",
+      "February 11, 2019",
+      "February 7, 2019",
+      "May 16, 2018",
+      "February 8, 2018",
+      "December 26, 2017",
+      "December 8, 2017",
+      "December 1, 2017",
+      "November 24, 2017",
+      "April 25, 2017",
+      "March 29, 2017",
+      "March 20, 2017"
+    ],
+    "title": "Company News & Updates for Engraving & Signage",
+    "newsroom_url": "https://bfplasticsinc.com/news/updates.asp"
+  },
+  {
+    "org_id": "ORG-001830",
+    "status": "200",
+    "final": "https://www.impactsleeves.com/about-us/news-events",
+    "dates": [
+      "May 10, 2017"
+    ],
+    "title": " Impact Sleeves News & Events | Industry Updates ",
+    "newsroom_url": "https://www.impactsleeves.com/about-us/news-events"
+  },
+  {
+    "org_id": "ORG-001878",
+    "status": "200",
+    "final": "https://qubeinc.com/news/",
+    "dates": [],
+    "title": "NEWS - Qube Corporation",
+    "newsroom_url": "https://qubeinc.com/news/"
+  },
+  {
+    "org_id": "ORG-001930",
+    "status": "200",
+    "final": "http://itplastics.com/news/",
+    "dates": [],
+    "title": "News - IT Plastics",
+    "newsroom_url": "http://itplastics.com/news/"
+  },
+  {
+    "org_id": "ORG-001937",
+    "status": "200",
+    "final": "https://www.smetzertire.com/About-Us/News",
+    "dates": [
+      "March 28, 2014"
+    ],
+    "title": " Wooster, OH Tires Shop News :: Smetzer's Tire Center, Inc. ",
+    "newsroom_url": "https://www.smetzertire.com/About-Us/News"
+  },
+  {
+    "org_id": "ORG-002039",
+    "status": "200",
+    "final": "https://www.paramelt.com/",
+    "dates": [
+      "7 May 2026",
+      "12 May 2026",
+      "10 May 2026",
+      "6 May 2026"
+    ],
+    "title": "Shaping tomorrow. Together. | Paramelt - leaders in waxes, adhesives and coatings",
+    "newsroom_url": "https://www.paramelt.com/"
+  },
+  {
+    "org_id": "ORG-002136",
+    "status": "200",
+    "final": "https://www.kongsbergautomotive.com/media-news/press-releases/",
+    "dates": [
+      "October 22, 2026",
+      "October 13, 2026",
+      "October 12, 2026",
+      "October 6, 2026",
+      "September 18, 2026",
+      "August 21, 2026",
+      "July 16, 2026",
+      "July 7, 2026",
+      "June 18, 2026",
+      "June 15, 2026",
+      "May 27, 2026",
+      "May 22, 2026"
+    ],
+    "title": "Press releases",
+    "newsroom_url": "https://www.kongsbergautomotive.com/media-news/press-releases/"
+  },
+  {
+    "org_id": "ORG-002146",
+    "status": "200",
+    "final": "https://altorsolutions.com/",
+    "dates": [],
+    "title": "Altor Solutions - Altor Solutions",
+    "newsroom_url": "https://altorsolutions.com/"
+  },
+  {
+    "org_id": "ORG-002153",
+    "status": "200",
+    "final": "https://www.alphaworld.com/resources/news",
+    "dates": [
+      "Apr 15, 2024",
+      "Feb 8, 2024",
+      "Mar 15, 2023",
+      "Nov 9, 2022",
+      "Jan 28, 2020",
+      "Dec 6, 2019"
+    ],
+    "title": "Alpha News | What's New with Alpha High-Theft",
+    "newsroom_url": "https://www.alphaworld.com/resources/news"
+  },
+  {
+    "org_id": "ORG-002948",
+    "status": "200",
+    "final": "https://www.coviacorp.com/",
+    "dates": [
+      "December 2 2026"
+    ],
+    "title": "Innovative Mineral and Material Solutions",
+    "newsroom_url": "https://www.coviacorp.com/"
+  },
+  {
+    "org_id": "ORG-003196",
+    "status": "200",
+    "final": "https://www.eckart.net/en/profil/news",
+    "dates": [
+      "Apr. 04, 2026",
+      "Jan. 9, 2026",
+      "Dec. 15, 2025",
+      "AUG. 14, 2025",
+      "JUN. 16, 2025",
+      "MAR. 21, 2024",
+      "DEC. 18, 2024",
+      "DEC. 17, 2024",
+      "NOV. 20, 2024",
+      "13 January 2025",
+      "AUG. 06, 2024",
+      "JUL. 08, 2024"
+    ],
+    "title": "ECKART News \u2013 Latest Updates on Metallic &amp; Pearlescent Effect Pigments",
+    "newsroom_url": "https://www.eckart.net/en/profil/news"
+  },
+  {
+    "org_id": "ORG-003545",
+    "status": "200",
+    "final": "https://www.g-3chickadee.com/newsroom",
+    "dates": [
+      "May 22, 2025"
+    ],
+    "title": "G-3 Chickadee Media: Press Releases &amp; News Inquiries",
+    "newsroom_url": "https://www.g-3chickadee.com/newsroom"
+  },
+  {
+    "org_id": "ORG-003771",
+    "status": "200",
+    "final": "https://www.st-blowmoulding.com/news-events",
+    "dates": [
+      "2026-10-20",
+      "2026-11-23",
+      "2026-11-25",
+      "2026-09-20",
+      "2026-05-15",
+      "2027-07-30",
+      "2026-04-24",
+      "2026-11-30",
+      "2026-04-06",
+      "2026-04-21",
+      "2025-12-15",
+      "2026-12-01"
+    ],
+    "title": "News &amp; Events",
+    "newsroom_url": "https://www.st-blowmoulding.com/news-events"
+  },
+  {
+    "org_id": "ORG-004022",
+    "status": "200",
+    "final": "https://vmi-group.com/news/",
+    "dates": [
+      "13 October 2026",
+      "12 October 2026",
+      "6 October 2026",
+      "15 September 2026",
+      "27 August 2026",
+      "11 August 2026",
+      "3 August 2026"
+    ],
+    "title": "News Archive &#8211; VMI Group",
+    "newsroom_url": "https://vmi-group.com/news/"
+  }
+]

@@ -1,0 +1,17 @@
+Parent reran all three checker commands after final researcher locks; no original evidence used to alter outcomes.
+PASS input/output ID equality=17, unique IDs=17, raw-word source quotes=35, receipts=46, deciding-primary errors, named uncertainties, unchanged branch and clean data diff
+grades {'agreement': 8, 'field_error': 2, 'unresolved': 7}
+SHA256 21233c117988bb345d08441c0f345ec8ff4b83d86a8d531eaa8e82c83d86519b
+fetches per site {'SITE-012034': 1, 'SITE-018006': 2, 'SITE-018000': 1, 'SITE-018015': 5, 'SITE-014003': 2, 'SITE-016015': 1, 'SITE-016000': 2, 'SITE-016109': 2, 'SITE-012023': 5, 'SITE-019012': 3, 'SITE-019008': 5, 'SITE-019001': 3, 'SITE-014008': 2, 'SITE-014015': 5, 'SITE-016116': 3, 'SITE-016103': 3, 'SITE-016009': 1}
+SITE-014003 [{'field': 'site_type', 'held_value': 'manufacturing_plant', 'proposed_value': 'warehouse_distribution', 'source_url': 'https://corporate.dartcontainer.com/location/corona-ca/', 'quote': 'our Corona Distribution Center has more than 1 million square feet under roof.'}, {'field': 'zip', 'held_value': '92880', 'proposed_value': '92878', 'source_url': 'https://corporate.dartcontainer.com/location/corona-ca/', 'quote': '150 S. Maple Street, Corona, CA 92878'}]
+SITE-012023 [{'field': 'operating_status', 'held_value': 'active', 'proposed_value': 'closed', 'source_url': 'https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf', 'quote': 'Y-TWS Spartanburg Plant Closed'}]
+
+PASS audit9-b coverage/uniqueness/quote/error/unresolved/branch/no-data-diff; 17 sites; 40 raw source quotes; {'agreement': 12, 'unresolved': 5}
+SHA256 0d2b1453db073ede583b8c5f6ae0bc708867978b94610aff32ab9387662e15c3
+receipts 57
+
+PASS blind_c_complete_raw_quotes: input/output 16 unique IDs; quotes re-extracted and hashes verified: 40 ; fabricated-quote negatives rejected; unresolved settling facts populated; data diff empty; branch unchanged
+Counter({'agreement': 12, 'unresolved': 4})
+SHA256 590bee6855c04e2739ee112c74f40c81f39a1cfa59593ecff4e08065e61a15f2
+
+Parent independently checked all159rawbody hashes+bytecounts:PASS; raw_integrity.json.

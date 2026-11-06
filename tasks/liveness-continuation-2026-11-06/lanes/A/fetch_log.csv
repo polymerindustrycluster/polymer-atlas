@@ -1,0 +1,179 @@
+org_id,url,http,route,error,observed_date,final_url,raw_cache_path
+ORG-001940,https://srtpolymers.com,000,curl-browser-UA,curl: (6) Could not resolve host: srtpolymers.com,2026-11-06,https://srtpolymers.com/,/tmp/atlas-L8-cont-A/ORG-001940-1.html
+ORG-001945,https://vinylprofilesinc.com,000,curl-browser-UA,curl: (6) Could not resolve host: vinylprofilesinc.com,2026-11-06,https://vinylprofilesinc.com/,/tmp/atlas-L8-cont-A/ORG-001945-1.html
+ORG-001993,https://ptclima.com,000,curl-browser-UA,curl: (6) Could not resolve host: ptclima.com,2026-11-06,https://ptclima.com/,/tmp/atlas-L8-cont-A/ORG-001993-1.html
+ORG-002031,https://vinyltechint.com,000,curl-browser-UA,curl: (6) Could not resolve host: vinyltechint.com,2026-11-06,https://vinyltechint.com/,/tmp/atlas-L8-cont-A/ORG-002031-1.html
+ORG-002051,https://seawaypatterninc.com,000,curl-browser-UA,curl: (6) Could not resolve host: seawaypatterninc.com,2026-11-06,https://seawaypatterninc.com/,/tmp/atlas-L8-cont-A/ORG-002051-1.html
+ORG-001940,https://srtpolymers.com,422,jina,,2026-11-06,https://r.jina.ai/https://srtpolymers.com,/tmp/atlas-L8-cont-A/ORG-001940-2.html
+ORG-001945,https://vinylprofilesinc.com,422,jina,,2026-11-06,https://r.jina.ai/https://vinylprofilesinc.com,/tmp/atlas-L8-cont-A/ORG-001945-2.html
+ORG-001993,https://ptclima.com,422,jina,,2026-11-06,https://r.jina.ai/https://ptclima.com,/tmp/atlas-L8-cont-A/ORG-001993-2.html
+ORG-002031,https://vinyltechint.com,422,jina,,2026-11-06,https://r.jina.ai/https://vinyltechint.com,/tmp/atlas-L8-cont-A/ORG-002031-2.html
+ORG-002051,https://seawaypatterninc.com,422,jina,,2026-11-06,https://r.jina.ai/https://seawaypatterninc.com,/tmp/atlas-L8-cont-A/ORG-002051-2.html
+ORG-001945,https://vinylprofiles.com,000,curl-browser-UA,"curl: (60) SSL: no alternative certificate subject name matches target host name 'vinylprofiles.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.",2026-11-06,https://vinylprofiles.com/,/tmp/atlas-L8-cont-A/ORG-001945-3.html
+ORG-001993,https://nickolas.com/news-articles/nickolas-asset-managements-ambitious-plan-for-autonomous-us-molding-network,200,curl-browser-UA,,2026-11-06,https://nickolas.com/news-articles/nickolas-asset-managements-ambitious-plan-for-autonomous-us-molding-network,/tmp/atlas-L8-cont-A/ORG-001993-3.html
+ORG-002078,https://zeovation.com,000,curl-browser-UA,curl: (6) Could not resolve host: zeovation.com,2026-11-06,https://zeovation.com/,/tmp/atlas-L8-cont-A/ORG-002078-1.html
+ORG-002150,https://bienatech.com,000,curl-browser-UA,curl: (6) Could not resolve host: bienatech.com,2026-11-06,https://bienatech.com/,/tmp/atlas-L8-cont-A/ORG-002150-1.html
+ORG-002171,https://ultimaterb.com,000,curl-browser-UA,curl: (6) Could not resolve host: ultimaterb.com,2026-11-06,https://ultimaterb.com/,/tmp/atlas-L8-cont-A/ORG-002171-1.html
+ORG-002278,https://proto-cast.com,000,curl-browser-UA,curl: (6) Could not resolve host: proto-cast.com,2026-11-06,https://proto-cast.com/,/tmp/atlas-L8-cont-A/ORG-002278-1.html
+ORG-002334,https://unitedplasticsmachine.com,000,curl-browser-UA,curl: (6) Could not resolve host: unitedplasticsmachine.com,2026-11-06,https://unitedplasticsmachine.com/,/tmp/atlas-L8-cont-A/ORG-002334-1.html
+ORG-002582,http://www.pabags.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.pabags.com,2026-11-06,http://www.pabags.com/,/tmp/atlas-L8-cont-A/ORG-002582-1.html
+ORG-002827,https://ybincubator.org,000,curl-browser-UA,curl: (6) Could not resolve host: ybincubator.org,2026-11-06,https://ybincubator.org/,/tmp/atlas-L8-cont-A/ORG-002827-1.html
+ORG-003285,http://www.akpachemicalsus.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.akpachemicalsus.com,2026-11-06,http://www.akpachemicalsus.com/,/tmp/atlas-L8-cont-A/ORG-003285-1.html
+ORG-003328,http://www.marineconcepts.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.marineconcepts.com,2026-11-06,http://www.marineconcepts.com/,/tmp/atlas-L8-cont-A/ORG-003328-1.html
+ORG-003329,http://www.marshallcomposite.com/,000,curl-browser-UA,curl: (6) Could not resolve host: www.marshallcomposite.com,2026-11-06,http://www.marshallcomposite.com/,/tmp/atlas-L8-cont-A/ORG-003329-1.html
+ORG-001993,https://www.businesswire.com/news/home/20250825624828/en/,000,curl-browser-UA,curl: (92) HTTP/2 stream 1 was not closed cleanly: INTERNAL_ERROR (err 2),2026-11-06,https://www.businesswire.com/news/home/20250825624828/en/,/tmp/atlas-L8-cont-A/ORG-001993-4.html
+ORG-001945,https://www.vinylprofilesinc.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.vinylprofilesinc.com,2026-11-06,https://www.vinylprofilesinc.com/,/tmp/atlas-L8-cont-A/ORG-001945-4.html
+ORG-002051,http://www.seawaypatterninc.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.seawaypatterninc.com,2026-11-06,http://www.seawaypatterninc.com/,/tmp/atlas-L8-cont-A/ORG-002051-3.html
+ORG-003515,https://coroplast-tape.com/,200,curl-browser-UA,,2026-11-06,https://www.coroplast-tape.com/en-us/,/tmp/atlas-L8-cont-A/ORG-003515-1.html
+ORG-003850,https://bapolymers.com/,403,curl-browser-UA,,2026-11-06,https://bapolymers.com/,/tmp/atlas-L8-cont-A/ORG-003850-1.html
+ORG-004333,http://accentmanufacturing.com,000,curl-browser-UA,curl: (6) Could not resolve host: accentmanufacturing.com,2026-11-06,http://accentmanufacturing.com/,/tmp/atlas-L8-cont-A/ORG-004333-1.html
+ORG-004621,https://www.national-composites.com/,000,curl-browser-UA,curl: (6) Could not resolve host: www.national-composites.com,2026-11-06,https://www.national-composites.com/,/tmp/atlas-L8-cont-A/ORG-004621-1.html
+ORG-004842,https://universalurethaneinc.com/,000,curl-browser-UA,curl: (6) Could not resolve host: universalurethaneinc.com,2026-11-06,https://universalurethaneinc.com/,/tmp/atlas-L8-cont-A/ORG-004842-1.html
+ORG-007511,https://en.enplas.com,200,curl-browser-UA,,2026-11-06,https://en.enplas.com/,/tmp/atlas-L8-cont-A/ORG-007511-1.html
+ORG-000079,https://generalplastex.com,200,curl-browser-UA,,2026-11-06,https://generalplastex.com/cgi-sys/suspendedpage.cgi,/tmp/atlas-L8-cont-A/ORG-000079-1.html
+ORG-001587,https://minijector.com/,410,curl-browser-UA,,2026-11-06,http://ww80.minijector.com/?subid1=a6652189-d9d3-11f1-bb13-8cbc1c1b032d,/tmp/atlas-L8-cont-A/ORG-001587-1.html
+ORG-004045,https://fiber-techinc.com/,404,curl-browser-UA,,2026-11-06,https://fiber-techinc.com/,/tmp/atlas-L8-cont-A/ORG-004045-1.html
+ORG-000085,https://ohioprecisionmolding.com,200,curl-browser-UA,,2026-11-06,https://www.designmolded.com/,/tmp/atlas-L8-cont-A/ORG-000085-1.html
+ORG-000097,https://bioverde.us,200,curl-browser-UA,,2026-11-06,https://bioverdegroup.com/,/tmp/atlas-L8-cont-A/ORG-000097-1.html
+ORG-000157,https://www.graftech.com,403,curl-browser-UA,,2026-11-06,https://www.graftech.com/,/tmp/atlas-L8-cont-A/ORG-000157-1.html
+ORG-002078,https://zeovation.com,422,jina,,2026-11-06,https://r.jina.ai/https://zeovation.com,/tmp/atlas-L8-cont-A/ORG-002078-2.html
+ORG-002150,https://bienatech.com,422,jina,,2026-11-06,https://r.jina.ai/https://bienatech.com,/tmp/atlas-L8-cont-A/ORG-002150-2.html
+ORG-002171,https://ultimaterb.com,422,jina,,2026-11-06,https://r.jina.ai/https://ultimaterb.com,/tmp/atlas-L8-cont-A/ORG-002171-2.html
+ORG-002278,https://proto-cast.com,422,jina,,2026-11-06,https://r.jina.ai/https://proto-cast.com,/tmp/atlas-L8-cont-A/ORG-002278-2.html
+ORG-002334,https://unitedplasticsmachine.com,422,jina,,2026-11-06,https://r.jina.ai/https://unitedplasticsmachine.com,/tmp/atlas-L8-cont-A/ORG-002334-2.html
+ORG-002582,http://www.pabags.com,422,jina,,2026-11-06,https://r.jina.ai/http://www.pabags.com,/tmp/atlas-L8-cont-A/ORG-002582-2.html
+ORG-002827,https://ybincubator.org,422,jina,,2026-11-06,https://r.jina.ai/https://ybincubator.org,/tmp/atlas-L8-cont-A/ORG-002827-2.html
+ORG-003285,http://www.akpachemicalsus.com,422,jina,,2026-11-06,https://r.jina.ai/http://www.akpachemicalsus.com,/tmp/atlas-L8-cont-A/ORG-003285-2.html
+ORG-003328,http://www.marineconcepts.com,422,jina,,2026-11-06,https://r.jina.ai/http://www.marineconcepts.com,/tmp/atlas-L8-cont-A/ORG-003328-2.html
+ORG-003329,http://www.marshallcomposite.com/,422,jina,,2026-11-06,https://r.jina.ai/http://www.marshallcomposite.com/,/tmp/atlas-L8-cont-A/ORG-003329-2.html
+ORG-000689,https://mearthane.com/,403,curl-browser-UA,,2026-11-06,https://mearthane.com/,/tmp/atlas-L8-cont-A/ORG-000689-1.html
+ORG-001432,https://cellocore.com,200,curl-browser-UA,,2026-11-06,https://reptheus.com/,/tmp/atlas-L8-cont-A/ORG-001432-1.html
+ORG-001461,https://sareplastics.com,200,curl-browser-UA,,2026-11-06,https://cpipp.com/,/tmp/atlas-L8-cont-A/ORG-001461-1.html
+ORG-001525,https://sprtherapeutics.com/,200,curl-browser-UA,,2026-11-06,https://www.sprpainrelief.com/,/tmp/atlas-L8-cont-A/ORG-001525-1.html
+ORG-001620,https://www.technicote.com/,403,curl-browser-UA,,2026-11-06,https://www.technicote.com/,/tmp/atlas-L8-cont-A/ORG-001620-1.html
+ORG-001702,https://tensiletestinginc.com,200,curl-browser-UA,,2026-11-06,https://tensile.com/,/tmp/atlas-L8-cont-A/ORG-001702-1.html
+ORG-001773,https://akronspecial.com,200,curl-browser-UA,,2026-11-06,https://www.polinggroup.com/,/tmp/atlas-L8-cont-A/ORG-001773-1.html
+ORG-001813,https://moldeddevices.com,403,curl-browser-UA,,2026-11-06,https://aptyx.com/,/tmp/atlas-L8-cont-A/ORG-001813-1.html
+ORG-000160,https://www.teamneo.org,522,curl-browser-UA,,2026-11-06,https://www.teamneo.org/,/tmp/atlas-L8-cont-A/ORG-000160-1.html
+ORG-000201,http://www.ashtabularubber.com,200,curl-browser-UA,,2026-11-06,https://www.asc-es.com/?r=ashtabula,/tmp/atlas-L8-cont-A/ORG-000201-1.html
+ORG-000354,https://www.gmrcompanies.com/,200,curl-browser-UA,,2026-11-06,https://www.principalplasticsinc.com/,/tmp/atlas-L8-cont-A/ORG-000354-1.html
+ORG-001843,https://kumhotire.com,200,curl-browser-UA,,2026-11-06,https://kumhotireusa.com/,/tmp/atlas-L8-cont-A/ORG-001843-1.html
+ORG-002013,https://southernadhesivesandcoatings.com,403,curl-browser-UA,,2026-11-06,https://www.kodiakchemical.com/,/tmp/atlas-L8-cont-A/ORG-002013-1.html
+ORG-002020,https://electroprime.com,200,curl-browser-UA,,2026-11-06,https://beacon-industries.com/,/tmp/atlas-L8-cont-A/ORG-002020-1.html
+ORG-002038,https://pinnaclerecyclingllc.com,200,curl-browser-UA,,2026-11-06,https://www.rumpke.com/,/tmp/atlas-L8-cont-A/ORG-002038-1.html
+ORG-002040,https://unitedconvertinginc.com,200,curl-browser-UA,,2026-11-06,https://www.stockpkgfilms.com/,/tmp/atlas-L8-cont-A/ORG-002040-1.html
+ORG-002053,https://stuckyourself.com,406,curl-browser-UA,,2026-11-06,https://stuckyourself.com/,/tmp/atlas-L8-cont-A/ORG-002053-1.html
+ORG-002066,https://catexel.com/,000,curl-browser-UA,curl: (7) Failed to connect to catexel.com port 443 after 148 ms: Couldn't connect to server,2026-11-06,https://catexel.com/,/tmp/atlas-L8-cont-A/ORG-002066-1.html
+ORG-002144,https://www.ues.com,403,curl-browser-UA,,2026-11-06,https://bluehalo.com/ues-is-now-bluehalo/,/tmp/atlas-L8-cont-A/ORG-002144-1.html
+ORG-002148,http://arthurcorp.com,200,curl-browser-UA,,2026-11-06,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,/tmp/atlas-L8-cont-A/ORG-002148-1.html
+ORG-001847,https://martinwheelco.com,403,curl-browser-UA,,2026-11-06,https://martinwheelco.com/,/tmp/atlas-L8-cont-A/ORG-001847-1.html
+ORG-002194,https://www.superiortnb.com/,200,curl-browser-UA,,2026-11-06,https://ekhois.com/,/tmp/atlas-L8-cont-A/ORG-002194-1.html
+ORG-002204,https://pcilabsllc.com/,200,curl-browser-UA,,2026-11-06,https://www.pcilabsllc.com/,/tmp/atlas-L8-cont-A/ORG-002204-1.html
+ORG-002290,https://,000,curl-browser-UA,curl: (3) URL rejected: No host part in the URL,2026-11-06,https://,/tmp/atlas-L8-cont-A/ORG-002290-1.html
+ORG-001859,https://oem-miller.com,200,curl-browser-UA,,2026-11-06,https://www.ilpeaindustries.com/oem-miller/,/tmp/atlas-L8-cont-A/ORG-001859-1.html
+ORG-002312,https://northcoastpoly.com/,200,curl-browser-UA,,2026-11-06,https://www.northcoastpoly.com/,/tmp/atlas-L8-cont-A/ORG-002312-1.html
+ORG-002385,https://uslco.com/,403,curl-browser-UA,,2026-11-06,https://uslco.com/,/tmp/atlas-L8-cont-A/ORG-002385-1.html
+ORG-002420,https://tubro.com,403,curl-browser-UA,,2026-11-06,https://tubro.com/,/tmp/atlas-L8-cont-A/ORG-002420-1.html
+ORG-002526,https://concretevoids.com,200,curl-browser-UA,,2026-11-06,https://supervoid.com/,/tmp/atlas-L8-cont-A/ORG-002526-1.html
+ORG-002746,http://www.fennerdrives.com/,200,curl-browser-UA,,2026-11-06,https://www.fenner.com/brands/fenner-drives?redirectFD=true,/tmp/atlas-L8-cont-A/ORG-002746-1.html
+ORG-002877,https://www.azekco.com,200,curl-browser-UA,,2026-11-06,https://www.jameshardie.com/all-about-james-hardie/james-hardie-brands/,/tmp/atlas-L8-cont-A/ORG-002877-1.html
+ORG-002886,https://csw.com/,200,curl-browser-UA,,2026-11-06,https://csw.com/,/tmp/atlas-L8-cont-A/ORG-002886-1.html
+ORG-002898,https://daisnano.com/,200,curl-browser-UA,,2026-11-06,https://www.daisnano.com/,/tmp/atlas-L8-cont-A/ORG-002898-1.html
+ORG-002926,https://corporate.evonik.us/en,200,curl-browser-UA,,2026-11-06,https://www.evonik.com/en/company/worldwide-locations/north-america.html,/tmp/atlas-L8-cont-A/ORG-002926-1.html
+ORG-001881,https://reductionengineering.com,200,curl-browser-UA,,2026-11-06,https://maag.com/reduction/,/tmp/atlas-L8-cont-A/ORG-001881-1.html
+ORG-002954,https://magristalc.com,200,curl-browser-UA,,2026-11-06,https://www.magrispm.com/,/tmp/atlas-L8-cont-A/ORG-002954-1.html
+ORG-002978,https://mahrusa.com/,403,curl-browser-UA,,2026-11-06,https://metering.mahr.com/en-us/,/tmp/atlas-L8-cont-A/ORG-002978-1.html
+ORG-001908,https://tremcocpg.com/,200,curl-browser-UA,,2026-11-06,https://tremcocpg.com/,/tmp/atlas-L8-cont-A/ORG-001908-1.html
+ORG-001931,https://www.cooperstandard-isg.com/,307,curl-browser-UA,,2026-11-06,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,/tmp/atlas-L8-cont-A/ORG-001931-1.html
+ORG-002992,https://www.cht-silicones.com/,503,curl-browser-UA,,2026-11-06,https://www.cht-silicones.com/,/tmp/atlas-L8-cont-A/ORG-002992-1.html
+ORG-001992,https://precisionpolymercasting.com/,200,curl-browser-UA,,2026-11-06,https://precisionpolymercasting.com/,/tmp/atlas-L8-cont-A/ORG-001992-1.html
+ORG-003034,https://fb-balzanelliusa.com/,200,curl-browser-UA,,2026-11-06,https://www.fb-balzanelli.it/,/tmp/atlas-L8-cont-A/ORG-003034-1.html
+ORG-003046,https://www.untha-america.com,200,curl-browser-UA,,2026-11-06,https://www.untha.com/en-us,/tmp/atlas-L8-cont-A/ORG-003046-1.html
+ORG-003056,https://www.kuraray.us.com,200,curl-browser-UA,,2026-11-06,https://www.kuraray.com/us-en/,/tmp/atlas-L8-cont-A/ORG-003056-1.html
+ORG-003058,https://www.mikisangyo.com/,200,curl-browser-UA,,2026-11-06,https://mikisangyo.co.jp/en/corporate/usa/,/tmp/atlas-L8-cont-A/ORG-003058-1.html
+ORG-002171,https://www.carlisleconstructionmaterials.com/brands/ultimate-rb/,404,curl-browser-UA,,2026-11-06,https://www.carlisleconstructionmaterials.com/brands/ultimate-rb/,/tmp/atlas-L8-cont-A/ORG-002171-3.html
+ORG-002278,https://www.proto-cast.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.proto-cast.com,2026-11-06,https://www.proto-cast.com/,/tmp/atlas-L8-cont-A/ORG-002278-3.html
+ORG-002334,https://www.unitedplasticsmachinery.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.unitedplasticsmachinery.com,2026-11-06,https://www.unitedplasticsmachinery.com/,/tmp/atlas-L8-cont-A/ORG-002334-3.html
+ORG-002582,https://pabags.com,000,curl-browser-UA,curl: (6) Could not resolve host: pabags.com,2026-11-06,https://pabags.com/,/tmp/atlas-L8-cont-A/ORG-002582-3.html
+ORG-002827,https://ybi.org,403,curl-browser-UA,,2026-11-06,https://ybi.org/,/tmp/atlas-L8-cont-A/ORG-002827-3.html
+ORG-003285,https://akpachemical.com,000,curl-browser-UA,curl: (6) Could not resolve host: akpachemical.com,2026-11-06,https://akpachemical.com/,/tmp/atlas-L8-cont-A/ORG-003285-3.html
+ORG-003328,https://www.marineconcepts.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.marineconcepts.com,2026-11-06,https://www.marineconcepts.com/,/tmp/atlas-L8-cont-A/ORG-003328-3.html
+ORG-003329,https://marshallcomposite.com,000,curl-browser-UA,curl: (6) Could not resolve host: marshallcomposite.com,2026-11-06,https://marshallcomposite.com/,/tmp/atlas-L8-cont-A/ORG-003329-3.html
+ORG-003850,https://bapolymers.com/,401,jina,,2026-11-06,https://r.jina.ai/https://bapolymers.com/,/tmp/atlas-L8-cont-A/ORG-003850-2.html
+ORG-004333,https://accentmanufacturing.com,000,curl-browser-UA,curl: (6) Could not resolve host: accentmanufacturing.com,2026-11-06,https://accentmanufacturing.com/,/tmp/atlas-L8-cont-A/ORG-004333-2.html
+ORG-004621,https://nationalcomposites.com,000,curl-browser-UA,"curl: (60) SSL certificate problem: certificate has expired
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.",2026-11-06,https://nationalcomposites.com/,/tmp/atlas-L8-cont-A/ORG-004621-2.html
+ORG-004842,https://www.universalurethaneinc.com,000,curl-browser-UA,curl: (6) Could not resolve host: www.universalurethaneinc.com,2026-11-06,https://www.universalurethaneinc.com/,/tmp/atlas-L8-cont-A/ORG-004842-2.html
+ORG-002827,https://ybi.org,401,jina,,2026-11-06,https://r.jina.ai/https://ybi.org,/tmp/atlas-L8-cont-A/ORG-002827-4.html
+ORG-003850,https://www.bapolymers.com,403,curl-browser-UA,,2026-11-06,https://www.bapolymers.com/,/tmp/atlas-L8-cont-A/ORG-003850-3.html
+ORG-004333,http://accentmanufacturing.com,422,jina,,2026-11-06,https://r.jina.ai/http://accentmanufacturing.com,/tmp/atlas-L8-cont-A/ORG-004333-3.html
+ORG-004621,https://www.national-composites.com,422,jina,,2026-11-06,https://r.jina.ai/https://www.national-composites.com,/tmp/atlas-L8-cont-A/ORG-004621-3.html
+ORG-004842,https://universalurethaneinc.com,401,jina,,2026-11-06,https://r.jina.ai/https://universalurethaneinc.com,/tmp/atlas-L8-cont-A/ORG-004842-3.html
+ORG-004045,https://fiber-techinc.com,401,jina,,2026-11-06,https://r.jina.ai/https://fiber-techinc.com,/tmp/atlas-L8-cont-A/ORG-004045-2.html
+ORG-000157,https://graftech2022cr.q4web.com/home/default.aspx,403,curl-browser-UA,,2026-11-06,https://graftech2022cr.q4web.com/home/default.aspx,/tmp/atlas-L8-cont-A/ORG-000157-2.html
+ORG-000160,https://northeastohioregion.com,200,curl-browser-UA,,2026-11-06,https://northeastohioregion.com/,/tmp/atlas-L8-cont-A/ORG-000160-2.html
+ORG-000689,https://mpcurethane.com,403,curl-browser-UA,,2026-11-06,https://mpcurethane.com/,/tmp/atlas-L8-cont-A/ORG-000689-2.html
+ORG-001620,https://www.beontag.com/press-releases/beontag-acquires-technicote-and-marks-its-entry-to-the-north-american-self-adhesive-market/,200,curl-browser-UA,,2026-11-06,https://www.beontag.com/press-releases/beontag-acquires-technicote-and-marks-its-entry-to-the-north-american-self-adhesive-market/,/tmp/atlas-L8-cont-A/ORG-001620-2.html
+ORG-001813,https://aptyx.com,401,jina,,2026-11-06,https://r.jina.ai/https://aptyx.com,/tmp/atlas-L8-cont-A/ORG-001813-2.html
+ORG-001847,https://martinwheel.com,403,curl-browser-UA,,2026-11-06,https://martinwheel.com/,/tmp/atlas-L8-cont-A/ORG-001847-2.html
+ORG-001931,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,307,curl-browser-UA,,2026-11-06,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,/tmp/atlas-L8-cont-A/ORG-001931-2.html
+ORG-003285,https://www.akpachemicalus.com/,200,curl-browser-UA,,2026-11-06,https://www.akpachemicalus.com/,/tmp/atlas-L8-cont-A/ORG-003285-4.html
+ORG-003328,https://marineconcepts.patrickind.com/,000,curl-browser-UA,"curl: (60) SSL: no alternative certificate subject name matches target host name 'marineconcepts.patrickind.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.",2026-11-06,https://marineconcepts.patrickind.com/,/tmp/atlas-L8-cont-A/ORG-003328-4.html
+ORG-002827,https://ybi.org/about/,403,curl-browser-UA,,2026-11-06,https://ybi.org/about/,/tmp/atlas-L8-cont-A/ORG-002827-5.html
+ORG-001993,https://investor.wedbush.com/wedbush/article/bizwire-2025-8-25-nickolas-asset-management-and-the-reinhart-family-of-companies-announce-kreates-acquisition-of-precision-thermoplastic-components-in-lima-ohio,200,curl-browser-UA,,2026-11-06,https://investor.wedbush.com/wedbush/article/bizwire-2025-8-25-nickolas-asset-management-and-the-reinhart-family-of-companies-announce-kreates-acquisition-of-precision-thermoplastic-components-in-lima-ohio,/tmp/atlas-L8-cont-A/ORG-001993-5.html
+ORG-002013,https://www.kodiakchemical.com/about-us/,403,curl-browser-UA,,2026-11-06,https://www.kodiakchemical.com/about-us/,/tmp/atlas-L8-cont-A/ORG-002013-2.html
+ORG-002020,https://beacon-industries.com/about-us/,200,curl-browser-UA,,2026-11-06,https://beacon-industries.com/about-us/,/tmp/atlas-L8-cont-A/ORG-002020-2.html
+ORG-002038,https://www.rumpke.com/newsroom,200,curl-browser-UA,,2026-11-06,https://www.rumpke.com/about-us/media,/tmp/atlas-L8-cont-A/ORG-002038-2.html
+ORG-002053,https://www.stuckvinylgraphics.com/,401,jina,,2026-11-06,https://r.jina.ai/https://www.stuckvinylgraphics.com/,/tmp/atlas-L8-cont-A/ORG-002053-2.html
+ORG-002066,https://www.catexel.com/,401,jina,,2026-11-06,https://r.jina.ai/https://www.catexel.com/,/tmp/atlas-L8-cont-A/ORG-002066-2.html
+ORG-002144,https://www.avinc.com/,401,jina,,2026-11-06,https://r.jina.ai/https://www.avinc.com/,/tmp/atlas-L8-cont-A/ORG-002144-2.html
+ORG-002290,https://www.tekniplex.com/,200,curl-browser-UA,,2026-11-06,https://tekni-plex.com/en,/tmp/atlas-L8-cont-A/ORG-002290-2.html
+ORG-002312,https://www.northcoastpoly.com/about-us/,200,curl-browser-UA,,2026-11-06,https://www.northcoastpoly.com/products/,/tmp/atlas-L8-cont-A/ORG-002312-2.html
+ORG-002385,https://transtex-llc.com/,200,curl-browser-UA,,2026-11-06,https://transtex-llc.com/,/tmp/atlas-L8-cont-A/ORG-002385-2.html
+ORG-002420,https://polymershapes.com/,403,curl-browser-UA,,2026-11-06,https://polymershapes.com/,/tmp/atlas-L8-cont-A/ORG-002420-2.html
+ORG-002526,https://supervoid.com/about/,404,curl-browser-UA,,2026-11-06,https://supervoid.com/about/,/tmp/atlas-L8-cont-A/ORG-002526-2.html
+ORG-002877,https://www.jameshardie.com/all-about-james-hardie/james-hardie-brands/,200,curl-browser-UA,,2026-11-06,https://www.jameshardie.com/all-about-james-hardie/james-hardie-brands/,/tmp/atlas-L8-cont-A/ORG-002877-2.html
+ORG-002978,https://metering.mahr.com/en-us/,401,jina,,2026-11-06,https://r.jina.ai/https://metering.mahr.com/en-us/,/tmp/atlas-L8-cont-A/ORG-002978-2.html
+ORG-002992,https://www.cht.com/,200,curl-browser-UA,,2026-11-06,https://www.cht.com/,/tmp/atlas-L8-cont-A/ORG-002992-2.html
+ORG-003034,https://www.fb-balzanelli.it/contacts/,200,curl-browser-UA,,2026-11-06,https://www.fb-balzanelli.it/contacts/,/tmp/atlas-L8-cont-A/ORG-003034-2.html
+ORG-007511,https://en.enplas.com/privacy-policy/,200,curl-browser-UA,,2026-11-06,https://en.enplas.com/privacy-policy/,/tmp/atlas-L8-cont-A/ORG-007511-2.html
+ORG-000085,https://www.designmolded.com/about-us/,200,curl-browser-UA,,2026-11-06,https://www.designmolded.com/about-us/,/tmp/atlas-L8-cont-A/ORG-000085-2.html
+ORG-000201,https://www.asc-es.com/ashtabula-rubber-company,200,curl-browser-UA,,2026-11-06,https://www.asc-es.com/ashtabula-rubber-company,/tmp/atlas-L8-cont-A/ORG-000201-2.html
+ORG-001461,https://cpipp.com/about-us/,200,curl-browser-UA,,2026-11-06,https://cpipp.com/about-us/,/tmp/atlas-L8-cont-A/ORG-001461-2.html
+ORG-001525,"https://news.medtronic.com/2026-07-16-Medtronic-completes-acquisition-of-SPR,-expanding-patient-access-to-minimally-invasive,-non-opioid-treatment-of-chronic-and-acute-pain",200,curl-browser-UA,,2026-11-06,"https://news.medtronic.com/2026-07-16-Medtronic-completes-acquisition-of-SPR,-expanding-patient-access-to-minimally-invasive,-non-opioid-treatment-of-chronic-and-acute-pain",/tmp/atlas-L8-cont-A/ORG-001525-2.html
+ORG-001773,https://www.polinggroup.com/company.php,404,curl-browser-UA,,2026-11-06,https://www.polinggroup.com/company.php,/tmp/atlas-L8-cont-A/ORG-001773-2.html
+ORG-002194,https://ekhois.com/about/,200,curl-browser-UA,,2026-11-06,https://ekhois.com/about/,/tmp/atlas-L8-cont-A/ORG-002194-2.html
+ORG-002312,https://www.northcoastpoly.com/about-ncp/,200,curl-browser-UA,,2026-11-06,https://www.northcoastpoly.com/about-ncp/,/tmp/atlas-L8-cont-A/ORG-002312-3.html
+ORG-002954,https://www.magrispm.com/magristalc,200,curl-browser-UA,,2026-11-06,https://www.magrispm.com/magristalc,/tmp/atlas-L8-cont-A/ORG-002954-2.html
+ORG-003285,https://www.akpachemicalus.com/en/contact,200,curl-browser-UA,,2026-11-06,https://www.akpachemicalus.com/en/contact,/tmp/atlas-L8-cont-A/ORG-003285-5.html
+ORG-007511,https://www.enplasusa.com/,000,curl-browser-UA,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.enplasusa.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.",2026-11-06,https://www.enplasusa.com/,/tmp/atlas-L8-cont-A/ORG-007511-3.html
+ORG-001773,https://www.polinggroup.com/company,404,curl-browser-UA,,2026-11-06,https://www.polinggroup.com/company,/tmp/atlas-L8-cont-A/ORG-001773-3.html
+ORG-002038,https://www.rumpke.com/about-us/acquisitions,200,curl-browser-UA,,2026-11-06,https://www.rumpke.com/about-us/acquisitions,/tmp/atlas-L8-cont-A/ORG-002038-3.html
+ORG-002290,https://investors.nordson.com/news/news-details/2020/Nordson-Corporation-Acquires-Fluortek-Inc-Expanding-Medical-Tubing-Offerings-for-Complex-Medical-Devices/default.aspx,403,curl-browser-UA,,2026-11-06,https://investors.nordson.com/news/news-details/2020/Nordson-Corporation-Acquires-Fluortek-Inc-Expanding-Medical-Tubing-Offerings-for-Complex-Medical-Devices/default.aspx,/tmp/atlas-L8-cont-A/ORG-002290-3.html
+ORG-002385,https://transtex-llc.com/resources/,200,curl-browser-UA,,2026-11-06,https://transtex-llc.com/resources/,/tmp/atlas-L8-cont-A/ORG-002385-3.html
+ORG-002746,https://www.fenner.com/brands/fenner-drives,200,curl-browser-UA,,2026-11-06,https://www.fenner.com/brands/fenner-drives,/tmp/atlas-L8-cont-A/ORG-002746-2.html
+ORG-002926,https://www.evonik.com/en/meta/legal-notice.html,200,curl-browser-UA,,2026-11-06,https://www.evonik.com/en/meta/legal-notice.html,/tmp/atlas-L8-cont-A/ORG-002926-2.html
+ORG-002992,https://www.cht.com/cht/web.nsf/id/us-home-en.html,404,curl-browser-UA,,2026-11-06,https://solutions.cht.com/cht/web.nsf/id/us-home-en.html,/tmp/atlas-L8-cont-A/ORG-002992-3.html
+ORG-002013,https://www.prnewswire.com/news-releases/kodiak-acquires-southern-adhesives-and-coatings-targeting-the-paper-and-packaging-industries-302191211.html,200,curl-browser-UA,,2026-11-06,https://www.prnewswire.com/news-releases/kodiak-acquires-southern-adhesives-and-coatings-targeting-the-paper-and-packaging-industries-302191211.html,/tmp/atlas-L8-cont-A/ORG-002013-3.html
+ORG-002420,https://www.linkedin.com/posts/polymershapes_polymershapes-tubro-press-release-activity-7413931035010314240-TMU6,200,curl-browser-UA,,2026-11-06,https://www.linkedin.com/posts/polymershapes_polymershapes-tubro-press-release-activity-7413931035010314240-TMU6,/tmp/atlas-L8-cont-A/ORG-002420-3.html
+ORG-002877,https://ir.jameshardie.com/news/news-details/2025/James-Hardie-Completes-Acquisition-of-AZEK-to-Become-a-Leading-Provider-of-Exterior-Home-and-Outdoor-Living-Solutions/default.aspx,403,curl-browser-UA,,2026-11-06,https://ir.jameshardie.com/news/news-details/2025/James-Hardie-Completes-Acquisition-of-AZEK-to-Become-a-Leading-Provider-of-Exterior-Home-and-Outdoor-Living-Solutions/default.aspx,/tmp/atlas-L8-cont-A/ORG-002877-3.html
+ORG-002992,https://www.cht.com/en/cht-group/locations/cht-usa-inc,200,curl-browser-UA,,2026-11-06,https://www.cht.com/en/cht-group/locations/cht-usa-inc,/tmp/atlas-L8-cont-A/ORG-002992-4.html

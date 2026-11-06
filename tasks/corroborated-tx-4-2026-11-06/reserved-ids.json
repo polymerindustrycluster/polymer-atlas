@@ -1,0 +1,34 @@
+[
+  {
+    "cluster_id": "LF-TX-01030",
+    "org_id": "ORG-000651",
+    "site_id": "SITE-015600",
+    "tier": "C",
+    "evidence_start": 196000,
+    "evidence_end": 196004
+  },
+  {
+    "cluster_id": "LF-TX-01218",
+    "org_id": "ORG-010800",
+    "site_id": "SITE-015601",
+    "tier": "C",
+    "evidence_start": 196005,
+    "evidence_end": 196014
+  },
+  {
+    "cluster_id": "LF-TX-01497",
+    "org_id": "ORG-010801",
+    "site_id": "SITE-015602",
+    "tier": "C",
+    "evidence_start": 196015,
+    "evidence_end": 196024
+  },
+  {
+    "cluster_id": "LF-TX-01548",
+    "org_id": "ORG-010802",
+    "site_id": "SITE-015603",
+    "tier": "C",
+    "evidence_start": 196025,
+    "evidence_end": 196034
+  }
+]

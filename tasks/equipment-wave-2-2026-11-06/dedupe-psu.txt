@@ -1,0 +1,11 @@
+dedupe-check {'domain': 'psu.edu', 'name': 'Pennsylvania State University'}  (AGENTS.md §3; searches the union of ALL shards)
+STEP 1 website domain (organizations_*.csv + ecosystem.csv): 0 hit(s)
+STEP 2 normalized name vs legal_name/trade_names: 0 hit(s)
+STEP 3 street address (sites_*.csv; one address = one site, owned by the operator): skipped (no --street)
+STEP 4 trade_names/notes/legal_name substring + successor_org_id chain: 2 hit(s)
+  ORG-002775  Pennsylvania State University (University Park)  [State College, PA]  status=active tier=A  (ecosystem.csv)
+      match: legal_name contains 'Pennsylvania State University'
+  ORG-002785  Pennsylvania State University Office of Technology Management  [State College, PA]  status=active tier=A  (ecosystem.csv)
+      match: legal_name contains 'Pennsylvania State University'
+
+=> STOP at step 4: a hit exists. Use/link the existing record; do not create a duplicate. When in doubt do NOT merge - create/link and flag (AGENTS.md §3).

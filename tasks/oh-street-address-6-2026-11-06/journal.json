@@ -1,0 +1,318 @@
+{
+  "main_base": "2e3daefb152fdce9f6e79d6084ac87716a08f79f",
+  "original_frame_positions": [
+    261,
+    360
+  ],
+  "frame_sites": 448,
+  "prior": 260,
+  "selected": 100,
+  "future_unworked": 88,
+  "fills": 36,
+  "holds": 64,
+  "tiers": {
+    "B": 12,
+    "A": 24
+  },
+  "page_outcomes": {
+    "fetched": 176,
+    "unavailable": 23
+  },
+  "active_ohio_sites": 1883,
+  "before_streets": 324,
+  "after_streets": 360,
+  "site_changes": [
+    {
+      "site_id": "SITE-001640",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001647",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001655",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001657",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001658",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001666",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001668",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001672",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001675",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001682",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001702",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001707",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001712",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001714",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001717",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001719",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001721",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001722",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001729",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001732",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001742",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001744",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001746",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001747",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001748",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001758",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001770",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001775",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001776",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001780",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001783",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001796",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001799",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001831",
+      "changed_fields": [
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001843",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    },
+    {
+      "site_id": "SITE-001846",
+      "changed_fields": [
+        "sources",
+        "street_address"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "EVD-152260",
+    "EVD-152261",
+    "EVD-152268",
+    "EVD-152270",
+    "EVD-152271",
+    "EVD-152279",
+    "EVD-152281",
+    "EVD-152285",
+    "EVD-152287",
+    "EVD-152289",
+    "EVD-152295",
+    "EVD-152297",
+    "EVD-152301",
+    "EVD-152302",
+    "EVD-152305",
+    "EVD-152307",
+    "EVD-152308",
+    "EVD-152309",
+    "EVD-152312",
+    "EVD-152314",
+    "EVD-152317",
+    "EVD-152319",
+    "EVD-152320",
+    "EVD-152321",
+    "EVD-152322",
+    "EVD-152327",
+    "EVD-152328",
+    "EVD-152330",
+    "EVD-152331",
+    "EVD-152334",
+    "EVD-152335",
+    "EVD-152341",
+    "EVD-152343",
+    "EVD-152351",
+    "EVD-152358",
+    "EVD-152359"
+  ],
+  "canonical_hashes": {
+    "sites_OH.csv": "6ce117bfd0564687e057e3a970956bff3951bd06be0ba9cd4c40f114effc65be",
+    "evidence_sites_OH.csv": "1a6784526e79bc2dedc6905ea5afd5e3d2601f996d9edc414e37689b4be2d724"
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "branch": "agent/codex/people-settle-2",
+    "description": "Second people-settlement pass; 342 source people rows; public-professional-facts boundary unchanged. BOARD continuation; PR not yet opened."
+  },
+  {
+    "branch": "agent/codex/markets-certs-tier1-round5",
+    "description": "Next 100 Tier-1 organizations with blank markets_served; EVD-240500 onward. BOARD continuation; PR not yet opened."
+  }
+]

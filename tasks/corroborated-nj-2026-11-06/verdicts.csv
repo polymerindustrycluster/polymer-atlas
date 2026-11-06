@@ -1,0 +1,92 @@
+cluster_id,state,verdict,held_org_id,duplicate_of,establishment_id,reason
+LF-NJ-00246,NJ,STILL_UNCERTAIN,,,1442732,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00475,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00709,NJ,STILL_UNCERTAIN,,,1009137,"Need plant-specific polymer-process and legal-identity reconciliation for Air Cruisers at Wall Township: ITA calls awnings/rigid-plastics manufacturing (326199), while the held LLC describes aerospace inflatables with government code336413. Settle plastics fabrication versus aircraft-assembly function and filed INC versus held LLC continuity before a create."
+LF-NJ-00193,NJ,STILL_UNCERTAIN,,,1533230,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00489,NJ,STILL_UNCERTAIN,,,114114,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00511,NJ,STILL_UNCERTAIN,,,1371949,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00564,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00582,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00011,NJ,STILL_UNCERTAIN,,,,Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.
+LF-NJ-00035,NJ,VERIFIED,ORG-004216,,1329479,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-NJ-00061,NJ,STILL_UNCERTAIN,,,1519331,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00137,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00351,NJ,STILL_UNCERTAIN,,,1188491,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00353,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00427,NJ,STILL_UNCERTAIN,,,1000597,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00453,NJ,STILL_UNCERTAIN,,,1562655,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00462,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00481,NJ,STILL_UNCERTAIN,,,1452203,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00498,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00591,NJ,STILL_UNCERTAIN,,,923801,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00068,NJ,STILL_UNCERTAIN,,,60481,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00072,NJ,STILL_UNCERTAIN,,,1565443,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00077,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00081,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00126,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00157,NJ,STILL_UNCERTAIN,,,1502613,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00251,NJ,STILL_UNCERTAIN,,,1441176,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00348,NJ,STILL_UNCERTAIN,,,1149180,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00416,NJ,VERIFIED,ORG-001403,,176105,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-NJ-00420,NJ,STILL_UNCERTAIN,,,1082237,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00424,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00480,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00540,NJ,STILL_UNCERTAIN,,,806480,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00551,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00566,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00584,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00611,NJ,STILL_UNCERTAIN,,,103169,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00856,NJ,STILL_UNCERTAIN,,,929968,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00868,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00940,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00027,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00038,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00060,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00080,NJ,STILL_UNCERTAIN,,,824587,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00177,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00181,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00190,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00199,NJ,STILL_UNCERTAIN,,,849320,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00291,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00446,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00455,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00617,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00660,NJ,STILL_UNCERTAIN,,,1445323,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00897,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00025,NJ,STILL_UNCERTAIN,,,,Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.
+LF-NJ-00192,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00262,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00295,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00408,NJ,STILL_UNCERTAIN,,,1435953,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00488,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00528,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00733,NJ,VERIFIED,ORG-005044,,1122236,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-NJ-00777,NJ,VERIFIED,ORG-000523,,1441848,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-NJ-00789,NJ,STILL_UNCERTAIN,,,1456111,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00850,NJ,STILL_UNCERTAIN,,,849283,Need reconciled reliable federal street/state/NAICS across the linked ITA records.
+LF-NJ-00862,NJ,STILL_UNCERTAIN,,,982310,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-NJ-00873,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00132,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00273,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00555,NJ,STILL_UNCERTAIN,,,1069794,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00697,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00102,NJ,STILL_UNCERTAIN,,,433610,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00277,NJ,STILL_UNCERTAIN,,,141619,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00425,NJ,STILL_UNCERTAIN,,,,Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.
+LF-NJ-00465,NJ,STILL_UNCERTAIN,,,1436444,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00707,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00724,NJ,STILL_UNCERTAIN,,,1088459,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00738,NJ,STILL_UNCERTAIN,,,1190712,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00817,NJ,STILL_UNCERTAIN,,,1519329,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00826,NJ,STILL_UNCERTAIN,,,157447,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00851,NJ,STILL_UNCERTAIN,,,895727,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00857,NJ,VERIFIED,ORG-001082,,936836,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-NJ-00101,NJ,STILL_UNCERTAIN,,,699841,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-NJ-00443,NJ,STILL_UNCERTAIN,,,1450064,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00607,NJ,STILL_UNCERTAIN,,,435019,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00650,NJ,STILL_UNCERTAIN,,,298550,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00680,NJ,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00741,NJ,STILL_UNCERTAIN,,,1206362,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00815,NJ,STILL_UNCERTAIN,,,1515091,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00835,NJ,STILL_UNCERTAIN,,,382643,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-NJ-00836,NJ,STILL_UNCERTAIN,,,384071,"Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve ['ORG-001117', 'ORG-003930']."

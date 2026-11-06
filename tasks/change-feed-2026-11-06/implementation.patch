@@ -1,0 +1,596 @@
+diff --git a/scripts/build_changelog.py b/scripts/build_changelog.py
+new file mode 100644
+index 0000000..da44758
+--- /dev/null
++++ b/scripts/build_changelog.py
+@@ -0,0 +1,314 @@
++#!/usr/bin/env python3
++"""Build public change Markdown and Atom from full main history; stdlib only.
++
++    python3 scripts/build_changelog.py                 # local origin/main
++    python3 scripts/build_changelog.py --ref main       # full local main checkout
++
++Only build/changelog/ is written. Fetch full history before running in a shallow clone.
++"""
++import argparse
++import csv
++import io
++import os
++import re
++import stat
++import subprocess
++import tempfile
++from collections import Counter, defaultdict
++from pathlib import Path
++import xml.etree.ElementTree as ET
++
++ROOT = Path(__file__).resolve().parents[1]
++REPO_URL = "https://github.com/polymerindustrycluster/polymer-atlas"
++ATOM = "http://www.w3.org/2005/Atom"
++KEYS = {
++    "organizations": "org_id", "sites": "site_id", "ecosystem": "org_id", "evidence": "evidence_id",
++    "registry_links": "org_id", "members": "member_row_id", "people": "person_id",
++    "programs": "program_id", "events": "event_id", "event_participation": "participation_id",
++    "relationships": "relationship_id", "site_capabilities": "capability_id",
++    "equipment": "equipment_id", "people_engagement": "engagement_id",
++    "people_identifiers": "person_id", "archive_links": "evidence_id",
++    "ref_codes": "ref_code_id", "ref_code_map": "map_id", "code_assignments": "assignment_id",
++}
++# Same link grain as the row-loss guard; archive_links is one row per evidence_id (§4.22).
++COMPOSITE = {
++    "registry_links": ("org_id", "registry", "registry_id", "site_id"),
++    "people_identifiers": ("person_id", "identifier_type", "identifier_id"),
++}
++STATUSES = {
++    "active", "active_idled_partial", "idled", "closed", "acquired", "merged",
++    "relocated_in_scope", "relocated_out_of_scope", "pre_revenue", "unknown",
++    "superseded",
++}
++EVIDENCE_TABLES = {"organizations", "sites", "ecosystem", "programs", "people"}
++PREFIXES = {
++    "org_id": "ORG", "site_id": "SITE", "evidence_id": "EVD", "member_row_id": "MBR",
++    "person_id": "PERSON", "program_id": "PROG", "event_id": "EVT", "participation_id": "EVP",
++    "relationship_id": "REL", "capability_id": "CAP", "equipment_id": "EQP",
++    "engagement_id": "ENG", "ref_code_id": "RC", "map_id": "RM", "assignment_id": "CA",
++}
++ET.register_namespace("", ATOM)
++
++
++def git(repo, *args):
++    return subprocess.run(["git", "-C", str(repo), *args], check=True,
++                          capture_output=True, text=True).stdout
++
++
++def table_of(path):
++    stem = Path(path).stem
++    if stem == "inclusion_log" or stem.endswith("_all"):
++        return None
++    table = "evidence" if stem.startswith("evidence_") else re.sub(r"_(?:[A-Z]{2}|INTL)$", "", stem)
++    if table not in KEYS:
++        raise ValueError(f"unsupported data CSV: {path}")
++    return table
++
++
++def read_rows(path, text):
++    """Keep only keyed public metadata; never carry notes/names/claims into the feed."""
++    table = table_of(path)
++    if table is None:
++        return []
++    reader = csv.DictReader(io.StringIO(text), strict=True)
++    if not reader.fieldnames or len(set(reader.fieldnames)) != len(reader.fieldnames):
++        raise ValueError(f"missing or repeated CSV header: {path}")
++    required = {KEYS[table]} | set(COMPOSITE.get(table, ()))
++    if table == "registry_links":
++        required.discard("site_id")  # The optional site key was added after this table was introduced.
++    if table == "evidence":
++        required.add("record_table")
++    if not required.issubset(reader.fieldnames):
++        raise ValueError(f"missing key columns: {path}")
++    out = []
++    for row in reader:
++        if None in row or any(value is None for value in row.values()):
++            raise ValueError(f"malformed CSV row: {path}")
++        ident = row[KEYS[table]]
++        if not re.fullmatch(PREFIXES[KEYS[table]] + r"-[0-9]{6}", ident):
++            raise ValueError(f"invalid immutable ID: {path}")
++        key = tuple(row.get(col, "") for col in COMPOSITE[table]) if table in COMPOSITE else (ident,)
++        if table == "evidence" and row.get("record_table") not in EVIDENCE_TABLES:
++            raise ValueError(f"unsupported evidence target table: {path}")
++        projection = {
++            "table": table, "id": ident,
++            "status": row.get("operating_status", "") if table == "sites" else row.get("status", ""),
++            "tier": row.get("verification_tier", ""),
++            "evidence_table": row.get("record_table", "") if table == "evidence" else "",
++        }
++        out.append(((table, key), projection))
++    return out
++
++
++def snapshot(files):
++    rows = {}
++    for path in sorted(files):
++        for key, row in files[path]:
++            if key in rows and rows[key] != row:
++                raise ValueError("conflicting duplicate keyed row in historical snapshot")
++            rows[key] = row
++    return rows
++
++
++def keyed_diff(before, after, seen):
++    created, restored, removed, status, tier = [], [], [], [], []
++    evidence = Counter()
++    added, deleted = after.keys() - before.keys(), before.keys() - after.keys()
++    pairs = [(key, key) for key in before.keys() & after.keys()]
++    # Historical ORG-ID collisions exist: match a cross-table transfer only if unique on BOTH sides.
++    old_orgs, new_orgs = defaultdict(list), defaultdict(list)
++    for rows, target in [(before, old_orgs), (after, new_orgs)]:
++        for key, row in rows.items():
++            if row["table"] in {"organizations", "ecosystem"}:
++                target[row["id"]].append(key)
++    for ident in old_orgs.keys() & new_orgs.keys():
++        old, new = old_orgs[ident], new_orgs[ident]
++        if len(old) == len(new) == 1 and old[0] != new[0]:
++            added.discard(new[0]); deleted.discard(old[0])
++            pairs.append((old[0], new[0]))
++    for key in sorted(added):
++        row = after[key]
++        if key in seen:
++            restored.append(row)
++        elif row["table"] == "evidence":
++            evidence[row["evidence_table"]] += 1
++        else:
++            created.append(row)
++    for key in sorted(deleted):
++        removed.append(before[key])
++    for old_key, new_key in sorted(pairs):
++        old, new = before[old_key], after[new_key]
++        if old["status"] != new["status"]:
++            status.append((new, old["status"], new["status"]))
++        if old["tier"] != new["tier"]:
++            tier.append((new, old["tier"], new["tier"]))
++    return {"created": created, "restored": restored, "removed": removed,
++            "status": status, "tier": tier, "evidence": evidence}
++
++
++def history(repo, ref):
++    if git(repo, "rev-parse", "--is-shallow-repository").strip() == "true":
++        raise ValueError("full main history required; fetch --unshallow before generating")
++    ref = git(repo, "rev-parse", "--verify", "--end-of-options", ref + "^{commit}").strip()
++    commits = git(repo, "log", "--first-parent", "--reverse",
++                  "--format=%H%x00%P%x00%cI%x00%s", ref).splitlines()
++    if not commits:
++        raise ValueError("main history is empty")
++    files, before, seen, entries = {}, {}, set(), []
++    for line in commits:
++        sha, parents, date, subject = line.split("\0", 3)
++        if parents:
++            changes = git(repo, "diff-tree", "-r", "--no-commit-id", "--no-renames",
++                          "--name-status", parents.split()[0], sha, "--", "data/").splitlines()
++        else:
++            changes = ["A\t" + p for p in git(repo, "ls-tree", "-r", "--name-only", sha, "data/").splitlines()]
++        touched = False
++        for change in changes:
++            action, path = change.split("\t", 1)
++            if not re.fullmatch(r"data/[^/]+\.csv", path) or table_of(path) is None:
++                continue
++            touched = True
++            if action == "D":
++                files.pop(path, None)
++            else:
++                files[path] = read_rows(path, git(repo, "show", f"{sha}:{path}"))
++        if not touched:
++            continue
++        after = snapshot(files)
++        diff = keyed_diff(before, after, seen)
++        pr = re.match(r"Merge pull request #(\d+)\b", subject) or re.search(r"\(#(\d+)\)$", subject)
++        entries.append({"sha": sha, "date": date, "pr": pr[1] if pr else None, **diff})
++        seen.update(after)
++        before = after
++    return entries, commits[-1].split("\0", 1)[0], commits[-1].split("\0")[2]
++
++
++def controlled(value, tier=False):
++    if not value:
++        return "(blank)"
++    return value if value in ({"A", "B", "C", "U"} if tier else STATUSES) else "(unrecognized)"
++
++
++def record_lines(label, rows):
++    grouped = defaultdict(Counter)
++    for row in rows:
++        grouped[row["table"]][row["id"]] += 1
++    lines = []
++    for table, ids in sorted(grouped.items()):
++        labels = [ident + (f" ({n} rows)" if n > 1 else "") for ident, n in sorted(ids.items())]
++        lines.append(f"- {label} — {table}: {sum(ids.values())} keyed rows; " + ", ".join(labels))
++    return lines
++
++
++def entry_text(entry):
++    lines = record_lines("Created", entry["created"])
++    lines += record_lines("Restored, previously seen", entry["restored"])
++    lines += record_lines("Removed from snapshot", entry["removed"])
++    for field, label in [("status", "Status"), ("tier", "Verification tier")]:
++        for row, old, new in entry[field]:
++            lines.append(f"- {label} — {row['table']} {row['id']}: "
++                         f"{controlled(old, field == 'tier')} → {controlled(new, field == 'tier')} "
++                         "(1 existing keyed row change)")
++    for table, count in sorted(entry["evidence"].items()):
++        lines.append(f"- New evidence — {table}: {count} evidence rows (first-seen EVD IDs)")
++    return "\n".join(lines) or "No keyed creations, restorations, removals, status/tier changes or new evidence rows."
++
++
++def title(entry):
++    return "PR #" + entry["pr"] if entry["pr"] else "Commit " + entry["sha"][:12] + " (no PR recorded)"
++
++
++def publish(repo, out, payloads):
++    """Stage both outputs; reject unsafe targets and roll back a failed publication."""
++    repo = repo.resolve()
++    if not out.resolve().is_relative_to(repo / "build"):
++        raise ValueError("output must stay under repository build/")
++    out.mkdir(parents=True, exist_ok=True)
++    previous = {}
++    for name in payloads:
++        target = out / name
++        if target.is_symlink() or (target.exists() and not target.is_file()):
++            raise ValueError("output file must be a regular file, not a symlink")
++        if target.exists():
++            info = target.stat()
++            if not stat.S_IMODE(info.st_mode) & 0o222:
++                raise PermissionError("output file is read-only")
++            previous[name] = (target.read_bytes(), info)
++    with tempfile.TemporaryDirectory(dir=out) as tmp:
++        stage = Path(tmp)
++        for name, data in payloads.items():
++            (stage / ("new-" + name)).write_bytes(data)
++            if name in previous:
++                content, info = previous[name]
++                backup = stage / ("old-" + name)
++                backup.write_bytes(content)
++                backup.chmod(stat.S_IMODE(info.st_mode))
++                os.utime(backup, ns=(info.st_atime_ns, info.st_mtime_ns))
++                (stage / ("new-" + name)).chmod(stat.S_IMODE(info.st_mode))
++        published = []
++        try:
++            for name in payloads:
++                os.replace(stage / ("new-" + name), out / name)
++                published.append(name)
++        except OSError:
++            for name in reversed(published):
++                if name in previous:
++                    os.replace(stage / ("old-" + name), out / name)
++                else:
++                    (out / name).unlink()
++            raise
++
++
++def build(repo, ref):
++    repo = Path(repo).resolve()
++    out = repo / "build/changelog"
++    if not out.resolve().is_relative_to(repo / "build"):
++        raise ValueError("output must stay under repository build/")
++    entries, head, updated = history(repo, ref)
++    intro = ("# Polymer Atlas change feed\n\n"
++             f"Main snapshot: [{head[:12]}]({REPO_URL}/commit/{head}).\n\n"
++             "Changes are recorded when a pull request reaches main; older direct updates are labelled by commit. "
++             "Counts are distinct keyed rows or existing-row field changes, not companies or current operations. "
++             "Shards and unique organization/ecosystem transfers preserve keys; historical cross-table ID collisions stay distinct. Restorations are not first-time creations. "
++             "Evidence counts are grouped by target record table. Composite-link rows share their owner ID label. "
++             "Other field edits, inclusion_log and generated *_all exports are outside this feed. "
++             "Only IDs and controlled values are published; unknown legacy values are redacted.\n\n")
++    sections = []
++    feed = ET.Element(f"{{{ATOM}}}feed")
++    def child(parent, tag, text=None, **attrs):
++        el = ET.SubElement(parent, f"{{{ATOM}}}{tag}", attrs)
++        el.text = text
++        return el
++    child(feed, "id", REPO_URL + "#data-change-feed")
++    child(feed, "title", "Polymer Atlas changes")
++    child(feed, "updated", updated)
++    child(child(feed, "author"), "name", "Polymer Industry Cluster")
++    child(feed, "link", href=REPO_URL + "/tree/main/data", rel="alternate")
++    for entry in reversed(entries):
++        link = REPO_URL + ("/pull/" + entry["pr"] if entry["pr"] else "/commit/" + entry["sha"])
++        body = entry_text(entry)
++        sections.append(f"## {entry['date'][:10]} — [{title(entry)}]({link})\n\n{body}\n")
++        atom = child(feed, "entry")
++        child(atom, "id", REPO_URL + "/commit/" + entry["sha"])
++        child(atom, "title", "Atlas changes — " + title(entry))
++        child(atom, "updated", entry["date"])
++        child(atom, "link", href=link, rel="alternate")
++        child(atom, "content", body, type="text")
++    ET.indent(feed)
++    publish(repo, out, {
++        "CHANGELOG.md": (intro + "\n".join(sections)).encode("utf-8"),
++        "feed.xml": ET.tostring(feed, encoding="utf-8", xml_declaration=True),
++    })
++    return entries
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--ref", default="origin/main", help="local full main ref (default: origin/main)")
++    args = parser.parse_args()
++    entries = build(ROOT, args.ref)
++    print(f"change feed: {len(entries)} data-history entries -> build/changelog/CHANGELOG.md and feed.xml")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/test_build_changelog.py b/scripts/test_build_changelog.py
+new file mode 100644
+index 0000000..7efcb68
+--- /dev/null
++++ b/scripts/test_build_changelog.py
+@@ -0,0 +1,270 @@
++"""Known-answer and adversarial change-feed checks against throwaway Git repositories."""
++import csv
++import sys
++import tempfile
++import unittest
++from unittest.mock import patch
++from pathlib import Path
++import xml.etree.ElementTree as ET
++
++sys.path.insert(0, str(Path(__file__).resolve().parent))
++import build_changelog as feed
++
++ORG_FIELDS = ["org_id", "status", "verification_tier", "notes", "sources"]
++SITE_FIELDS = ["site_id", "operating_status", "verification_tier", "notes"]
++EVD_FIELDS = ["evidence_id", "record_table", "claim_detail", "notes"]
++SECRET = "PRIVATE_CRM_NOTE person@example.com 216-555-0199"
++
++
++class ChangeFeedTests(unittest.TestCase):
++    def setUp(self):
++        self.tmp = tempfile.TemporaryDirectory()
++        self.addCleanup(self.tmp.cleanup)
++        self.repo = Path(self.tmp.name) / "repo"
++        self.repo.mkdir()
++        self.git("init", "-b", "main")
++        self.git("config", "user.name", "SECRET_AUTHOR")
++        self.git("config", "user.email", "private@example.com")
++        self.org = ["ORG-000001", "active", "C", SECRET, "mailto:person@example.com"]
++        self.site = ["SITE-000001", "unknown", "C", SECRET]
++        self.evidence = ["EVD-000001", "sites", SECRET, SECRET]
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.write("sites_OH", SITE_FIELDS, [self.site])
++        self.write("evidence_sites_OH", EVD_FIELDS, [self.evidence])
++        self.commit("PRIVATE_INITIAL_MESSAGE")
++
++    def git(self, *args):
++        return feed.git(self.repo, *args)
++
++    def write(self, name, fields, rows):
++        path = self.repo / "data" / (name + ".csv")
++        path.parent.mkdir(exist_ok=True)
++        with path.open("w", newline="") as f:
++            writer = csv.writer(f, lineterminator="\n")
++            writer.writerow(fields); writer.writerows(rows)
++
++    def commit(self, message):
++        self.git("add", "data")
++        self.git("commit", "-m", message)
++        return self.git("rev-parse", "HEAD").strip()
++
++    def test_known_answers_merge_net_diffs_privacy_and_moves(self):
++        self.git("switch", "-c", "SECRET_BRANCH")
++        self.org[2] = "B"
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.commit("PRIVATE_INTERMEDIATE_MESSAGE")
++        self.org[1:3] = ["closed", "A"]
++        org2 = ["ORG-000002", "active", "C", SECRET, ""]
++        self.write("organizations_OH", ORG_FIELDS, [org2, self.org])
++        self.git("mv", "data/organizations_OH.csv", "data/organizations_PA.csv")
++        self.write("evidence_organizations_PA", EVD_FIELDS, [["EVD-000002", "organizations", SECRET, SECRET]])
++        self.commit("PRIVATE_FINAL_MESSAGE")
++        self.git("switch", "main")
++        self.git("merge", "--no-ff", "SECRET_BRANCH", "-m", "Merge pull request #7 from SECRET_BRANCH")
++
++        self.git("switch", "-c", "SECRET_UNMERGED")
++        self.write("equipment", ["equipment_id", "notes"], [["EQP-999999", SECRET]])
++        self.commit("UNMERGED_PRIVATE_MESSAGE")
++        self.git("switch", "main")
++        # A notes-only commit stays an honest zero-category entry, without publishing the note.
++        self.org[3] += " NEW_SECRET"
++        self.write("organizations_PA", ORG_FIELDS, [self.org, org2])
++        self.commit("PRIVATE_NOTES_MESSAGE")
++        self.git("switch", "-c", "SECRET_SQUASH")
++        self.write("sites_OH", SITE_FIELDS, [self.site, ["SITE-000002", "active", "B", SECRET]])
++        self.commit("SECRET_SQUASH_SOURCE")
++        self.git("switch", "main")
++        self.git("merge", "--squash", "SECRET_SQUASH")
++        self.git("commit", "-m", "PRIVATE_SQUASH_TITLE (#8)")
++
++        # A unique ORG-id type transfer is a continuing row, not a fresh entity.
++        self.write("organizations_PA", ORG_FIELDS, [self.org])
++        self.write("ecosystem", ORG_FIELDS, [org2])
++        self.commit("SECRET_TYPE_TRANSFER")
++        entries = feed.build(self.repo, "main")
++        root, merged, notes, squashed, moved = entries
++        # Three hand-known outcomes: new org2, one net active→closed, one C→A (not C→B→A).
++        self.assertEqual([(r["table"], r["id"]) for r in merged["created"]], [("organizations", "ORG-000002")])
++        self.assertEqual([(a, b) for _, a, b in merged["status"]], [("active", "closed")])
++        self.assertEqual([(a, b) for _, a, b in merged["tier"]], [("C", "A")])
++        self.assertEqual(dict(merged["evidence"]), {"organizations": 1})
++        self.assertEqual(len(root["created"]), 2)
++        self.assertEqual(dict(root["evidence"]), {"sites": 1})
++        self.assertEqual([r["id"] for r in squashed["created"]], ["SITE-000002"])
++        self.assertEqual([e["pr"] for e in entries], [None, "7", None, "8", None])
++        for entry in [notes, moved]:
++            self.assertTrue(all(not entry[k] for k in ["created", "restored", "removed", "status", "tier", "evidence"]))
++
++        md = (self.repo / "build/changelog/CHANGELOG.md").read_bytes()
++        xml = (self.repo / "build/changelog/feed.xml").read_bytes()
++        for secret in [SECRET, "SECRET", "PRIVATE", "person@example.com", "216-555-0199", "EQP-999999"]:
++            self.assertNotIn(secret.encode(), md + xml)
++        parsed = ET.fromstring(xml)
++        atom = {"a": feed.ATOM}
++        self.assertEqual(len(parsed.findall("a:entry", atom)), 5)
++        ids = [e.find("a:id", atom).text for e in parsed.findall("a:entry", atom)]
++        self.assertEqual(len(set(ids)), 5)
++        self.assertIn("PR #7", md.decode())
++        self.assertIn("1 evidence rows", md.decode())
++        self.assertIn("(no PR recorded)", md.decode())
++        feed.build(self.repo, "main")
++        self.assertEqual(md, (self.repo / "build/changelog/CHANGELOG.md").read_bytes())
++        self.assertEqual(xml, (self.repo / "build/changelog/feed.xml").read_bytes())
++
++    def test_composite_keys_restorations_and_unrecognized_values(self):
++        fields = ["org_id", "registry", "registry_id", "site_id", "notes"]
++        self.write("registry_links", fields, [
++            ["ORG-000001", "UEI", "FIRST", "", SECRET],
++            ["ORG-000001", "UEI", "SECOND", "", SECRET],
++            ["ORG-000001", "UEI", "FIRST", "SITE-000001", SECRET]])
++        self.write("people_identifiers", ["person_id", "identifier_type", "identifier_id"],
++                   [["PERSON-000001", "ORCID", "FIRST"], ["PERSON-000001", "ORCID", "SECOND"]])
++        self.write("archive_links", ["evidence_id", "archive_ref"], [["EVD-000001", SECRET]])
++        self.commit("LINKS")
++        self.write("organizations_OH", ORG_FIELDS, [])
++        self.write("evidence_sites_OH", EVD_FIELDS, [])
++        self.commit("REMOVE")
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.write("evidence_sites_OH", EVD_FIELDS, [self.evidence])
++        self.commit("RESTORE")
++        self.org[1] = SECRET
++        self.org[2] = SECRET
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.commit("REDACT")
++        self.org[1:3] = ["", ""]
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.commit("BLANK_TRANSITION")
++        entries = feed.build(self.repo, "main")
++        self.assertEqual(len(entries[1]["created"]), 6)
++        self.assertEqual(len(entries[2]["removed"]), 2)
++        self.assertEqual(len(entries[3]["restored"]), 2)
++        self.assertFalse(entries[3]["created"])
++        self.assertFalse(entries[3]["evidence"])
++        text = (self.repo / "build/changelog/CHANGELOG.md").read_text()
++        self.assertIn("ORG-000001 (3 rows)", text)
++        self.assertIn("(unrecognized)", text)
++        self.assertIn("(blank)", text)
++        self.assertEqual(entries[-1]["status"][0][2], "")
++        self.assertEqual(entries[-1]["tier"][0][2], "")
++        self.assertNotIn(SECRET, text)
++        self.assertNotIn("FIRST", text)
++
++    def test_conflicting_rows_and_invalid_ids_fail_before_output(self):
++        feed.build(self.repo, "main")
++        out = self.repo / "build/changelog"
++        before = {p.name: p.read_bytes() for p in out.iterdir()}
++        self.write("organizations_OH", ORG_FIELDS, [self.org, ["ORG-000001", "closed", "A", SECRET, ""]])
++        self.commit("CONFLICT")
++        with self.assertRaisesRegex(ValueError, "conflicting duplicate"):
++            feed.build(self.repo, "main")
++        self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++        with self.assertRaisesRegex(ValueError, "invalid immutable ID"):
++            feed.read_rows("data/equipment.csv", "equipment_id,notes\nprivate@example.com,hidden\n")
++        with self.assertRaisesRegex(ValueError, "malformed CSV"):
++            feed.read_rows("data/equipment.csv", "equipment_id,notes\nEQP-000001,hidden,extra\n")
++        with self.assertRaisesRegex(ValueError, "unsupported data CSV"):
++            feed.read_rows("data/private.csv", "secret\nhidden\n")
++        with self.assertRaisesRegex(ValueError, "unsupported evidence target"):
++            feed.read_rows("data/evidence_sites_OH.csv", "evidence_id,record_table\nEVD-000001,private\n")
++        with self.assertRaisesRegex(ValueError, "missing key columns"):
++            feed.read_rows("data/equipment.csv", "notes\nORG-000001\n")
++        with self.assertRaisesRegex(ValueError, "missing key columns"):
++            feed.read_rows("data/registry_links.csv", "org_id,notes\nORG-000001,hidden\n")
++        self.assertIsNone(feed.table_of("data/organizations_all.csv"))
++        self.assertIsNone(feed.table_of("data/inclusion_log.csv"))
++
++    def test_legacy_cross_table_collisions_remain_distinct(self):
++        self.write("ecosystem", ORG_FIELDS, [["ORG-000001", "active", "B", SECRET, ""]])
++        self.commit("LEGACY_COLLISION")
++        entries = feed.build(self.repo, "main")
++        self.assertEqual([(r["table"], r["id"]) for r in entries[-1]["created"]],
++                         [("ecosystem", "ORG-000001")])
++        self.assertFalse(entries[-1]["tier"])
++        self.assertFalse(entries[-1]["removed"])
++
++    def test_shallow_history_and_output_symlink_refused(self):
++        clone = Path(self.tmp.name) / "shallow"
++        self.git("clone", "--depth=1", "--branch=main", self.repo.as_uri(), str(clone))
++        with self.assertRaisesRegex(ValueError, "full main history required"):
++            feed.build(clone, "main")
++        outside = Path(self.tmp.name) / "outside"
++        outside.mkdir()
++        (self.repo / "build").symlink_to(outside, target_is_directory=True)
++        with self.assertRaisesRegex(ValueError, "output must stay"):
++            feed.build(self.repo, "main")
++        self.assertEqual(list(outside.iterdir()), [])
++
++    def test_table_namespaces_reject_private_and_wrong_table_ids(self):
++        feed.build(self.repo, "main")
++        out = self.repo / "build/changelog"
++        before = {p.name: p.read_bytes() for p in out.iterdir()}
++        for ident in ["PRIVATE_CRM_ACQUISITION_TARGET-000002", "EQP-000002"]:
++            with self.subTest(ident=ident):
++                self.write("organizations_OH", ORG_FIELDS,
++                           [self.org, [ident, "active", "C", "", ""]])
++                self.commit("INVALID_ID")
++                with self.assertRaisesRegex(ValueError, "invalid immutable ID"):
++                    feed.build(self.repo, "main")
++                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++                self.git("reset", "--hard", "HEAD~1")
++        for table, key in feed.KEYS.items():
++            columns = sorted({key} | set(feed.COMPOSITE.get(table, ())))
++            if table == "evidence":
++                columns.append("record_table")
++            values = {col: "" for col in columns}
++            values[key] = feed.PREFIXES[key] + "-000001"
++            if table == "evidence":
++                values["record_table"] = "sites"
++            data = ",".join(columns) + "\n" + ",".join(values[c] for c in columns) + "\n"
++            self.assertEqual(len(feed.read_rows("data/" + table + ".csv", data)), 1)
++
++    def test_leaf_symlinks_and_readonly_output_preserve_pair(self):
++        feed.build(self.repo, "main")
++        out = self.repo / "build/changelog"
++        before = {p.name: p.read_bytes() for p in out.iterdir()}
++        outside = Path(self.tmp.name) / "outside-sentinel"
++        outside.write_bytes(b"sentinel")
++        for leaf in before:
++            with self.subTest(leaf=leaf):
++                (out / leaf).unlink()
++                (out / leaf).symlink_to(outside)
++                with self.assertRaisesRegex(ValueError, "not a symlink"):
++                    feed.build(self.repo, "main")
++                self.assertEqual(outside.read_bytes(), b"sentinel")
++                (out / leaf).unlink()
++                (out / leaf).write_bytes(before[leaf])
++                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++        self.org[1] = "closed"
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.commit("STATUS_CHANGE")
++        (out / "feed.xml").chmod(0o444)
++        try:
++            with self.assertRaises(PermissionError):
++                feed.build(self.repo, "main")
++            self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++        finally:
++            (out / "feed.xml").chmod(0o644)
++
++    def test_second_replace_failure_rolls_back_existing_and_new_outputs(self):
++        out = self.repo / "build/changelog"
++        replace = feed.os.replace
++        for existing in [False, True]:
++            with self.subTest(existing=existing):
++                if existing:
++                    feed.build(self.repo, "main")
++                before = {p.name: p.read_bytes() for p in out.iterdir()} if out.exists() else {}
++                calls = 0
++                def fail_second(source, target):
++                    nonlocal calls
++                    calls += 1
++                    if calls == 2:
++                        raise OSError("injected publication failure")
++                    return replace(source, target)
++                with patch.object(feed.os, "replace", side_effect=fail_second):
++                    with self.assertRaisesRegex(OSError, "injected publication"):
++                        feed.publish(self.repo, out, {"CHANGELOG.md": b"new MD", "feed.xml": b"new XML"})
++                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++
++
++if __name__ == "__main__":
++    unittest.main()

@@ -1,0 +1,21 @@
+{
+  "check": "L8-B packet coverage/raw/uncertainty",
+  "inputs": 72,
+  "verdicts": {
+    "VERIFIED": 33,
+    "STILL_UNCERTAIN": 39
+  },
+  "organizations_attempted": 72,
+  "fetch_attempts": 138,
+  "http200_responses": 84,
+  "organizations_with_http200": 59,
+  "raw_quote_rows": 54,
+  "known_answers": 5,
+  "mutation_failures_expected": [
+    "missing",
+    "duplicate",
+    "quote-absent",
+    "empty-settling"
+  ],
+  "result": "PASS"
+}
