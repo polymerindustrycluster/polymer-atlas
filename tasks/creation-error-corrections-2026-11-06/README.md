@@ -40,3 +40,5 @@ Physical-function counts (US,tierABC,statusactive/unknown,NAICS326; manufacturin
 - Estate lookup incomplete on Mac (Documents catalogues unavailable; whois base Python lackedPyYAML). Repository packets and public primary pages supplied sources; no inference of estate absence/private/licensed data.
 - Audit9 handoff now frozen/pushed36b18b5, PR200. Intake metadata preserves original handoff; L13 owns audit counts. Storopack municipal corroboration is independent post-freeze evidence; auditUNRESOLVED count unchanged.
 - Codex/Grok deep clerk refutes pending; no Done/merge/approval claim. No fresh federal bulk download under packet-vintage exception; exact Yokohama closure day, local manufacturing at Storopack, or EastJordan recovery/current operations not established.
+
+Replay integration pinned e1a1b6609472c5e73bc7c47afddcda079e31f5c7: took exact main copies of all11 affected canonical files, then reran builder/check/validator0. Existing7MIevidence rows may move under append_sorted id ordering; no old values change. Row-loss guard against origin/main PASS. No incoming scripts were lane edits.
