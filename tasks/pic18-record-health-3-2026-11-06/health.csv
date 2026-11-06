@@ -84,7 +84,7 @@ ORG-000128,Compking,1,0,0,0,,1,0
 ORG-000129,Playground Plastics,0,0,0,0,,0,1
 ORG-000130,Peak Nano,0,0,0,0,,0,1
 ORG-000131,Tarkett North America,0,0,0,0,,0,1
-ORG-000132,The Sherwin-Williams Company,1,0,0,0,,1,0
+ORG-000132,The Sherwin-Williams Company,0,0,0,0,,0,1
 ORG-000133,Oatey Co.,0,0,0,0,,0,1
 ORG-000134,Novagard Solutions,0,0,0,0,,0,1
 ORG-000135,Valtris Specialty Chemicals,0,0,0,0,,0,1
@@ -453,7 +453,7 @@ ORG-001462,Clevite Elastomers Technical Center (Tenneco),0,0,1,1,,2,0
 ORG-001465,Chalfant Sewing Fabricators Inc,0,0,0,0,,0,1
 ORG-001466,Henkel Corporation,0,0,0,0,,0,1
 ORG-001469,"FDIE, LLC",0,0,1,0,,1,0
-ORG-001470,The Pittsburgh Paint Company,0,0,1,0,,1,0
+ORG-001470,The Pittsburgh Paint Company,0,0,0,0,,0,1
 ORG-001472,ChemMasters Inc.,0,0,0,0,,0,1
 ORG-001475,"ChromaScape, Inc.",0,0,0,0,,0,1
 ORG-001477,Aurora Material Solutions,0,0,0,0,,0,1
@@ -572,7 +572,7 @@ ORG-001916,Zero D Products Inc,0,0,0,0,,0,1
 ORG-001919,"Catalyst Systems, Inc.",0,0,1,1,,2,0
 ORG-001920,"Lawrence Machine, Inc.",1,0,1,1,,3,0
 ORG-001921,Potter's Inc,1,0,1,1,,3,0
-ORG-001922,Faull and Son,1,0,1,1,,3,0
+ORG-001922,Faull and Son,1,0,0,1,,2,0
 ORG-001923,"Artemis Polymer Processing, Inc.",0,0,0,0,,0,1
 ORG-001927,GlueTread LLC,1,0,0,0,,1,0
 ORG-001929,Saint-Gobain HyComp LLC (Hycomp LLC),0,0,0,1,,1,0

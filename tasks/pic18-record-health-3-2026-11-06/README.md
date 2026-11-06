@@ -37,3 +37,5 @@ Reviews pending Codex4/Grok4. Draft until both independent families approve; no 
 Integration refresh: merged mainbdb8b98 (markets/certs136 andPA-address147),took all main data and replayed only this packet. Exact-delta check baselinebdb8b9879b6a546b913812938710f9d033bcf33e; fresh before428/632 andafter438/632 unchanged. All other data preserved,validate0/checkPASS. This supersedes9489b60 as current integration/check baseline,not the original claim/frame.
 
 Grok4 REFUTE fixed:Youngstown addressEVD170064now cites namedYoungstownRubberProducts businesspage rather than genericMidStatebranch/aboutpage. Residualgap explanation corrected toTMI probableduplicate;Youngstown becomeshealthy. No tierorT1count change. Revisedraw/exactdelta/validate gates rerun;priorversion superseded.
+
+Final reviews:Codex4 APPROVEe5febec andGrok4 APPROVEe5febec,zeroopenfindings. Both Youngstown URL and TMI residual-gap findings fixed. Controller requested current-main5a90bb17f52ad3ae7fa86482f8cd0b2e8d57b8a1 data replay; all main data taken then unchanged12-cell/31-EVD builder applied; current exact-delta/health/validate rerun. Controller alone merges.
