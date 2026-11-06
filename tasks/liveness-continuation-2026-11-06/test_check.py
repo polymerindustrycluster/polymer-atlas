@@ -1,7 +1,7 @@
 """Yield and trust-boundary known answers for the continuation packet gate."""
 import copy
 import unittest
-from check import validate
+from check import validate,validate_decisions,read,HERE
 
 class CoverageTests(unittest.TestCase):
     def setUp(self):
@@ -21,5 +21,13 @@ class CoverageTests(unittest.TestCase):
     def test_undated_status(self):
         rows=copy.deepcopy(self.rows);rows[0].update(proposed_status='closed',source_date='')
         with self.assertRaises(AssertionError):validate(self.queue,rows)
+    def test_held_entity_cannot_be_repromoted(self):
+        rows=read(HERE/'verdicts.csv');decisions=read(HERE/'lead_decisions.csv')
+        validate_decisions(rows,decisions)
+        for org_id in ('ORG-003375','ORG-003385'):
+            bad=copy.deepcopy(rows)
+            row=next(r for r in bad if r['org_id']==org_id)
+            row.update(verdict='VERIFIED',settling_fact='')
+            with self.assertRaises(AssertionError):validate_decisions(bad,decisions)
 
 if __name__=='__main__':unittest.main()

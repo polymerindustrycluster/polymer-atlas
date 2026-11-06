@@ -32,15 +32,19 @@ def validate(queue,verdicts):
             assert r['source_date'] and r['quote'].strip() and r['raw_check']=='yes'
             assert r.get('grain_hold','').lower() not in ('true','yes','1')
 
+def validate_decisions(verdicts,decisions):
+    by_id={r['org_id']:r for r in verdicts}
+    assert len(decisions)==len({r['org_id'] for r in decisions})
+    for decision in decisions:
+        row=by_id[decision['org_id']]
+        assert (row['verdict'],row['finding'],row['settling_fact'])==(decision['lead_verdict'],decision['lead_finding'],decision['lead_settling_fact'])
+
 if __name__=='__main__':
     assert hashlib.sha256((HERE/'queue.csv').read_bytes()).hexdigest()=='47f1ab283a34a8b7a5a2ade730ae471ea67d125d40952e71d7e73e1925533a02'
     queue=read(HERE/'queue.csv')
     verdicts=read(HERE/'verdicts.csv')
     validate(queue,verdicts)
-    by_id={r['org_id']:r for r in verdicts}
-    for decision in read(HERE/'lead_decisions.csv'):
-        row=by_id[decision['org_id']]
-        assert (row['verdict'],row['finding'],row['settling_fact'])==(decision['lead_verdict'],decision['lead_finding'],decision['lead_settling_fact'])
+    validate_decisions(verdicts,read(HERE/'lead_decisions.csv'))
     from git_gate import assert_data_unchanged
     assert_data_unchanged(HERE.parents[1])
     raw_rows=read(HERE/'lead_rawcheck.csv')
