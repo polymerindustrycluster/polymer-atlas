@@ -353,3 +353,19 @@ class RealDataSmoke(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StreetKey(unittest.TestCase):
+    """street_key must not collapse a real street to '' (L3 finding on #164: '#6 Capper Drive' -> '' matched another blank)."""
+
+    def test_leading_hash_building_number(self):
+        self.assertEqual(atlas.street_key("#6 Capper Drive"), "6 capper dr")
+
+    def test_unit_first_then_street(self):
+        self.assertEqual(atlas.street_key("Suite 100, 200 Main St"), "200 main st")
+        self.assertEqual(atlas.street_key("200 Main St, Suite 100"), "200 main st")
+        self.assertEqual(atlas.street_key("200 Main St #4"), "200 main st")
+
+    def test_unit_only_is_empty(self):
+        self.assertEqual(atlas.street_key("Unit 4"), "")
+        self.assertEqual(atlas.street_key(""), "")
