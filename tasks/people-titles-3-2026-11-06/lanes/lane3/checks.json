@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "candidate_people": 56,
+  "verdicts": {
+    "VERIFIED": 28,
+    "STILL_UNCERTAIN": 27,
+    "REJECT": 1
+  },
+  "verified_rechecks": 28,
+  "proposed_field_edits": 26,
+  "rank_resolution_witnesses": 4,
+  "source_observations": 157,
+  "known_answers": 4,
+  "negative_fixtures": 5,
+  "false_quote_mutation": "REJECTED",
+  "wrong_identity_mutation": "REJECTED",
+  "current_sanitized_cache_hashes": "MATCH"
+}

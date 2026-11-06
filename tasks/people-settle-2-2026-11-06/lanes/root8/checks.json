@@ -1,0 +1,57 @@
+{
+  "assigned_candidate_people": 8,
+  "verdict_counts": {
+    "STILL_UNCERTAIN": 7,
+    "VERIFIED": 1
+  },
+  "proposal_rows": 1,
+  "gate_quotes_checked": 2,
+  "source_controls": 3,
+  "synthetic_matcher_controls": 6,
+  "injected_wrong_quote": "rejected: quote absent",
+  "input_sha256": "8d6ac531ade745f9078c09e31a0bfeee310588ceca9f81256b7ece116d396fe9",
+  "private_dispositions_sha256": "6de92f4412903260647b26dfc3ec5b20dd530482760246bc5bc442d736828276",
+  "check_command": "python3 tasks/people-settle-2-2026-11-06/lanes/root8/check.py",
+  "check_outcome": "PASS exact accounting, quotes, ranks, dedupe, privacy and schema-controlled research specialties",
+  "pdf_page_yield": {
+    "source": "https://dentistry.osu.edu/sites/default/files/osu-cod-mshandbook.pdf",
+    "pdfinfo_pages": 27,
+    "pdftotext_nonempty_pages": 27,
+    "inspected_page": 14,
+    "posture": "historical 2021 metadata; not admission evidence"
+  },
+  "source_hash_basis": "sanitized extracted text, not HTTP bytes; original PDF bytes separately hashed privately",
+  "date": "2026-11-06",
+  "controlled_specialty_correction": {
+    "scope": "parent instruction supersedes earlier literal-specialty allowance",
+    "mappings": {
+      "11934": "composites_carbon"
+    },
+    "cached_pascall_method_witness": null,
+    "vocabulary_assertion": "schema-derived \u00a7\u00a73.1/3.2/3.5 tokens",
+    "status": "PASS"
+  },
+  "controlled_specialty_mutations": [
+    {
+      "candidate_id": "11934",
+      "old_literal_rejected": true
+    }
+  ],
+  "electrospinning_token_injection": "rejected: unsupported specialty",
+  "pending_candidate_people_checked": 12,
+  "applied_self_exemption": {
+    "mapping": "parent reviewed.csv candidate_id -> allocated_person_id",
+    "parity_fields": [
+      "full_name",
+      "institution_org_id",
+      "role",
+      "role_as_published",
+      "research_specialties",
+      "public_profile_url"
+    ],
+    "exclusion": "only exact allocated held person ID after all parity assertions",
+    "retired_person_002114": "not exempt",
+    "pending": "current file, dynamic count",
+    "outcome": "PASS exact canonical parity; named checker rerun once after update"
+  }
+}

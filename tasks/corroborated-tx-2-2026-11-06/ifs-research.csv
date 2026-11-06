@@ -1,0 +1,12 @@
+cluster_id,url,fetch,quote,raw_in_order,html_sha256,fetched
+LF-TX-00505,https://www.ifscoatings.com/,loaded (curl browser UA),"Powder Coating Manufacturer · Gainesville, TX",yes,44f3d07041a3cc945c9e55ecc3e6214c3fd1601b6af132fce575a193a3bf97c2,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/,loaded (curl browser UA),America's largest privately owned powder coating manufacturer,yes,44f3d07041a3cc945c9e55ecc3e6214c3fd1601b6af132fce575a193a3bf97c2,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/ifs-manufacturing-facilities/,loaded (curl browser UA),"Gainesville, TX Primary Facility",yes,45cc39f80259ec975940e53c1fc4bd2405435e5cd243a675c7f156ba006f506f,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/ifs-manufacturing-facilities/,loaded (curl browser UA),Our flagship Gainesville plant is capable of producing both large and small orders,yes,45cc39f80259ec975940e53c1fc4bd2405435e5cd243a675c7f156ba006f506f,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/ifs-manufacturing-facilities/,loaded (curl browser UA),"3601 N I-35 Gainesville, TX 76240",yes,45cc39f80259ec975940e53c1fc4bd2405435e5cd243a675c7f156ba006f506f,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/about-us/,loaded (curl browser UA),"We manufacture a complete line of thermosetting powder coatings in epoxy, hybrid, polyester, polyurethane, and fluoropolymer chemistries",yes,fe302b7cb204912c1621189b9ce33c70f0bf29b2760052cfedde5aa74e025117,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/about-us/,loaded (curl browser UA),"We also manufacture tough, durable thermoplastic powder coatings",yes,fe302b7cb204912c1621189b9ce33c70f0bf29b2760052cfedde5aa74e025117,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/powder-manufacture/,loaded (curl browser UA),"Raw materials are combined under heat and pressure, then cooled and ground to an exact particle size",yes,e5105b9333e5237abee02091641750aef6dff677e7f87318a3360b748393b1dc,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/powder-manufacture/,loaded (curl browser UA),"IFS manufactures the powder, and professional coaters worldwide apply it",yes,e5105b9333e5237abee02091641750aef6dff677e7f87318a3360b748393b1dc,2026-11-06
+LF-TX-00505,https://www.ifscoatings.com/ifs-powder-types/,loaded (curl browser UA),IFS powder coatings are available in thermosetting and thermoplastic formulations,yes,bfa3308fc22fc06316eae36e743586d699b38254060a7e73a7ecaa859b2bfe48,2026-11-06
+LF-TX-00505,https://ifscos.com/,"failed: curl rc=60 (TLS certificate); availability only, not evidence",,,,2026-11-06
