@@ -58,7 +58,9 @@ def packet(data):
     links, verdicts = [], []
     for held in frame:
         org = orgs[held['org_id']]
-        assert all(org[k] == held[k] for k in held), f"frame identity/input drift {held['org_id']}"
+        assert all(org[k] == held[k] for k in held if k != 'trade_names'), f"frame identity/input drift {held['org_id']}"
+        aliases = lambda value: {s.strip() for s in value.split(';') if s.strip()}
+        assert aliases(held['trade_names']) <= aliases(org['trade_names']), f"frozen alias removed {held['org_id']}"
         ticker = 'CSW' if held['org_id'] == 'ORG-002886' else held['stock_ticker']
         row = by_ticker.get(ticker)
         v = {k: '' for k in FIELDS}

@@ -60,6 +60,25 @@ class GateTests(unittest.TestCase):
                 with self.assertRaisesRegex(AssertionError, 'snapshot hash mismatch'):
                     build.packet(build.ROOT / 'data')
 
+    def test_additive_alias_only_preserves_identity_gate(self):
+        expected = build.packet(build.ROOT / 'data')
+        original = build.read
+        def changed(field, value):
+            def read(path):
+                rows = original(path)
+                if path.name.startswith('organizations_'):
+                    for row in rows:
+                        if row['org_id'] == 'ORG-000651':
+                            row[field] = value if field != 'trade_names' else value(row[field])
+                return rows
+            return read
+        with patch.object(build, 'read', changed('trade_names', lambda v: v + '; harmless test alias')):
+            self.assertEqual(build.packet(build.ROOT / 'data'), expected)
+        for field, value in [('legal_name', 'WRONG ENTITY'), ('stock_ticker', 'WRONG'), ('trade_names', lambda v: '')]:
+            with patch.object(build, 'read', changed(field, value)):
+                with self.assertRaises(AssertionError):
+                    build.packet(build.ROOT / 'data')
+
 
 if __name__ == '__main__':
     unittest.main()
