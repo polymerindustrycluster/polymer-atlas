@@ -1,8 +1,12 @@
 {
-  "reviewed_head": "61ed9bf",
-  "integration_main": "80bb5140e0f1598d85fe30b28777def59c9b83c6",
-  "reviewed_48_org_cell_deltas_equal": true,
-  "reviewed_158_full_evidence_rows_equal": true,
-  "inputs_frame_raw_checker_fetcher_unchanged": true,
+  "prior_reviewed_head": "d20d477",
+  "integration_main": "542629e53a0d07d55cf49b6da958f2219fbb5ba5",
+  "only_semantic_withdrawal": "ORG-000851 automotive_oem / proposed EVD-240188",
+  "remaining_157_full_evidence_rows_equal": true,
+  "remaining_org_values_equal": true,
+  "unused_evidence_ids": [
+    "EVD-240188",
+    "EVD-240254"
+  ],
   "historical_builders_unchanged": true
 }

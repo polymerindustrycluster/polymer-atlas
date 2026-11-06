@@ -1,3 +1,5 @@
+FINAL REDUCED PACKET: GrokREFUTEaccepted, withdrawORG851automotive_oem/EVD240188 (OE-type components in aftermarket kits do not prove OEM customers);inputindex28STILL_UNCERTAIN/permanentunusedID. Final157accepted=154markets+3certs,48orgs50cells,67holds;240254alsohole. Main542629e active4899markets446→493/cert57→60,Tier1active1293markets221→268/cert21→24. packet-equivalence.json proves solewithdrawalvsd20d477;remaining157EVD/orgvaluesunchanged. Fiveguards/boundary/replay/validate0(37631EVD),raw159candidatequotes+fresh30accepted0errorsPASS. Existing shardguardfixretained. Reviewthisreducedpacket,older158countsbelowhistoricalonly.
+
 # REFUTE L10 Tier-1 round3 completion — deep
 
 Review this immutable branch/PR against integration base in boundary.json. Try to disprove correctness, not merely run the validator. No merge/task-close authorization. Final output APPROVE/REFUTE, blocking findings with record/value/source and governing schema rule; say what was not checked.
