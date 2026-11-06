@@ -1,0 +1,47 @@
+{
+  "organizations": 160,
+  "gaps": 204,
+  "by_gap": {
+    "duplicate": 31,
+    "tier": 52,
+    "capabilities": 93,
+    "website": 28
+  },
+  "by_initial_class": {
+    "b": 52,
+    "c": 67,
+    "a": 75,
+    "d": 10
+  },
+  "organizations_all_gaps_a": 57,
+  "organizations_with_a": 73,
+  "organization_class_combinations": {
+    "b": 46,
+    "c": 31,
+    "ac": 13,
+    "a": 57,
+    "d": 10,
+    "ab": 3
+  },
+  "desk_only_best_case_healthy": 529,
+  "minimum_additional_non_desk_organizations_for90": 40,
+  "single_gap_breakdown": {
+    "duplicate": 27,
+    "tier": 28,
+    "capabilities": 61,
+    "website": 7
+  },
+  "dated_distinct_pair_scenario_before_fixes": {
+    "healthy": 478,
+    "total": 632,
+    "percent": 75.63,
+    "gained_org_ids": [
+      "ORG-000534",
+      "ORG-000550",
+      "ORG-000551",
+      "ORG-000665",
+      "ORG-000698",
+      "ORG-001877"
+    ]
+  }
+}
