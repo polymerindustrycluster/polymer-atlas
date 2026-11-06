@@ -208,6 +208,23 @@ def name_key(s):
     return " ".join(kept or toks)
 
 
+# A name written inside parentheses after a marker: "(formerly X)", "(fka X)", "(f/k/a X)", "(previously X)", "(dba X)".
+# Other parentheticals ("(USA)", "(Ohio plant)") are not names and do not match.
+# shortcut: one name per parenthetical (no "X and Y" split), and the unparenthesized "X dba Y" / "formerly Y" forms are not read.
+FORMER_NAME_RE = re.compile(r"\(\s*(?:formerly|previously|f/k/a|fka|d/b/a|dba)\b[\s:.-]*(\w[^()]*?)\s*\)", re.I)
+
+
+def former_names(text):
+    return FORMER_NAME_RE.findall(text or "")
+
+
+def org_name_fields(r):
+    """(field, value) for every name an organization row answers to: legal_name, each trade_names entry, then the names
+    written in parentheses inside either (field is "<source> parenthetical name"). Step 2 of dedupe-check searches these."""
+    fields = [("legal_name", r["legal_name"])] + [("trade_names", t) for t in tokens_semicolon(r.get("trade_names"))]
+    return fields + [(f"{fld} parenthetical name", x) for fld, val in fields for x in former_names(val)]
+
+
 LOCALITY_SEP_RE = re.compile(r"\s+[-\u2013\u2014]\s+")   # " - ", " – ", " — " (SCHEMA site_name default uses the em dash)
 TRAILING_PAREN_RE = re.compile(r"\s*\(([^()]*)\)\s*$")
 
@@ -343,8 +360,7 @@ def dedupe(tables, domain=None, name=None, street=None, city=None, state=None, z
     if name:
         q = name_key(name)
         for tn, r in orgs:
-            fields = [("legal_name", r["legal_name"])] + [("trade_names", t) for t in tokens_semicolon(r.get("trade_names"))]
-            for fld, val in fields:
+            for fld, val in org_name_fields(r):
                 if q and name_key(val) == q:
                     s2["hits"].append({**brief(tn, r), "match": f"name key {q!r} = {fld} {val!r}"})
                     hit2.add(r["org_id"]); break
