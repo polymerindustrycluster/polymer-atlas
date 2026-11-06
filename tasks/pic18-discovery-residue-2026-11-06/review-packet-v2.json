@@ -1,0 +1,116 @@
+{
+  "schema_version": 2,
+  "scope": "L14 pinned26 discovery leads plus4 freshly source-verified registry candidates after PR129 restoration. Canonical delta1Corganization1Csite13append-only evidence4newregistrylinks. No existing record/link/evidence changes.",
+  "criteria": [
+    "26 unique leads have one justified verdict;4 prior registry candidates now source-verified and applied after main restoration",
+    "New1Corg1Csite retain raw source support;13 evidence rows total;registry links match FRS/DOL identity and R10/R11",
+    "Duplicate terminates at held SITE001473;2 historical rejects meet dated outcome and snapshot5500 screen",
+    "Fresh source checks4/4+jointname corroboration, no skips;validator zero errors;replay unchanged;ID andregistry conflicts refuse before writes"
+  ],
+  "out_of_scope": [
+    "Full discovery census",
+    "Unresolved holds are not promoted",
+    "PR140 equipment changes"
+  ],
+  "revision": "9dbf1b65e35271158dfacb706ed19a146f764d4e",
+  "tool_access": "Reviewers may read full checkout and fetch primary sources; inspect all packet files plus canonical diff.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "README.md",
+      "sha256": "b8980563ac5ae0b1dea3132a8877cfa4ff269c6308c1a1d3da48b6953638b352"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "bc463c105d6370341a95944f452f227e74f2f2bf1186b80515c2250b8f873eee"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "0b7c374f32a2f803b6d73510d83d4356b125e67fe3c92c8b9c7b618154ac0a5d"
+    },
+    {
+      "path": "build.py",
+      "sha256": "696d4308a68f248a4d82f4f2ef9d4c69d0b7f5d032b996bebf2696aab22fb641"
+    },
+    {
+      "path": "check.py",
+      "sha256": "f47d175b4693c84f7579a7b976a95980dee04b4957267a04cb2d63f63d4a1a46"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "ae4773e83c023c883efe4702cf1c1e16f34e0a1a4448aebc304116dcc730862c"
+    },
+    {
+      "path": "creates_orgs.csv",
+      "sha256": "2581fd78fd12d0822dd39e130279dc00888f1dce4e9a48a1e9ca95daf6f89a7d"
+    },
+    {
+      "path": "creates_sites.csv",
+      "sha256": "7254483b0bbfe846801b531241b521cfc4ecb0b3b7925c05af6577e0bc436900"
+    },
+    {
+      "path": "evidence_rows.csv",
+      "sha256": "393be0cb2845e23e60b29835116584be870c2511e974bd3dcfe4a728bcaf5e4e"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "857d05b39434bf74d4241eeb867346cf03eee3997d1e4108f9081d498526015b"
+    },
+    {
+      "path": "registry-checks.txt",
+      "sha256": "b10821a6596e45ae121b63f40f35a354d8e9559f262f45dabf904fd36975eeea"
+    },
+    {
+      "path": "registry_additions.csv",
+      "sha256": "d7f238f33a166dbafd6b22b932f3f8e4b39f16ae13e366e1696b43d7f8f2c826"
+    },
+    {
+      "path": "registry_holds.csv",
+      "sha256": "a3db2bb64225404dde44cc13ee94bae253e912ddea60bb09293db0ecbf04bb06"
+    },
+    {
+      "path": "registry_sources.csv",
+      "sha256": "5e0d31026e2c1a7319bbf604a0c928b3ed1fc995e5c2295436a404dfa5fa4686"
+    },
+    {
+      "path": "validation-summary.txt",
+      "sha256": "66e309e1e714c8f2868cb8b61a3b7a3c3ee42ab4246573a0770964e346e19b47"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "551971c74ac79378e24bba54091df36a23c5dabe467ab2079f9c4ba2a94e450b"
+    },
+    {
+      "path": "verify_registry.py",
+      "sha256": "be93e414db58e263eacc5bc30d74fdf45371e6b15c886de59ad1db580b08b2d6"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/pic18-discovery-residue-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validation-summary.txt"
+    },
+    {
+      "command": "python3 tasks/pic18-discovery-residue-2026-11-06/verify_registry.py",
+      "outcome": "pass",
+      "evidence": "registry-checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "registry-checks.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}
