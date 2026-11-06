@@ -73,3 +73,7 @@ Added5 identity evidence observations:3 FRS site observations,1 DOL organization
 ### Integration after equipment merge
 
 Merged current main85b8560, which already contains equipment PR140 and both final approval receipts (a025fad/30fb413). No extra equipment data/code or receipt delta rides this PR. Resolved canonical CSV conflicts by taking main versions of all six owned canonical files and replaying the unchanged builder; no hand CSV merge. All main rows in those files preserved field-for-field;1organization+1site+13evidence+4registry rows added. All six packet/value CSVs are byte-identical to cf6c9cd. check.py census/replay/collision gates and validate.py zero errors pass. integration-replay.json records exact counts and baseline. PR159 remains draft pending its own independent reviews.
+
+### Independent review receipt — Grok4
+
+Grok4 (xAI, thr_95ffgh3rxy) APPROVE at 9a0622c, zero blockers; grok-review.md records the received verdict. Independently confirmed preservation, census/replay/negative controls, validator, Peak scope/address, duplicate terminus, closure filing screens, and all four source-system identifiers. A later FRS429 in its verifier followed the clerk's successful independent HTTP200 record fetch; no quote/identity failure. Six payload CSVs remain byte-identical cf6c9cd. This receipt-only addendum changes no canonical or implementation file. Codex4 review remains pending; PR159 stays draft.
