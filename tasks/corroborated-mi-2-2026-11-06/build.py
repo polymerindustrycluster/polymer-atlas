@@ -21,7 +21,9 @@ def main():
  orgs={r['org_id']:r for p in data.glob('organizations_*.csv') for r in read(p)}
  oldsites=[r for p in data.glob('sites_*.csv') for r in read(p)]
  out=defaultdict(list);eid=260140;alloc=[]
- for idx,v in enumerate(v for v in vs if v['verdict']=='VERIFIED'):
+ slots={r['cluster_id']:int(r['slot']) for r in read(H/'id_slots.csv')}
+ for v in (v for v in vs if v['verdict']=='VERIFIED'):
+  idx=slots[v['cluster_id']];eid=260140+7*idx
   c=cs[v['cluster_id']];oid=v['held_org_id'];org=orgs[oid];assert org['status']=='active' and not org['successor_org_id']
   fed=[ita[s[4:]] for s in c['sources_with_ids'].split(';') if s.startswith('ITA:')]
   assert fed and all(r['state']=='MI' for r in fed)
@@ -70,5 +72,5 @@ def main():
    if rows:append_sorted(data/name,rows,'site_id' if name.startswith('sites_') else 'evidence_id')
  with open(H/'allocations.csv','w') as f:
   w=csv.DictWriter(f,fieldnames=list(alloc[0]),lineterminator='\n');w.writeheader();w.writerows(alloc)
- print(json.dumps({'worked_MI_clusters':len(vs),'verdicts':dict(Counter(v['verdict'] for v in vs)),'sites_C':len(alloc),'organizations_created':0,'evidence_rows':eid-260140,'pending_rows':{k:len(v) for k,v in pending.items()}}))
+ print(json.dumps({'worked_MI_clusters':len(vs),'verdicts':dict(Counter(v['verdict'] for v in vs)),'sites_C':len(alloc),'organizations_created':0,'evidence_rows':sum(len(r) for k,r in out.items() if k.startswith('evidence_')),'pending_rows':{k:len(v) for k,v in pending.items()}}))
 if __name__=='__main__':main()

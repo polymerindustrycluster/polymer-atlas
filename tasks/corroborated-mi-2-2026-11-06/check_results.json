@@ -1,10 +1,10 @@
 {
   "state": "MI",
   "worked_clusters": 48,
-  "creates_C": 4,
-  "evidence_rows": 28,
+  "creates_C": 2,
+  "evidence_rows": 14,
   "known_answers": 3,
-  "blind_census_size": 4,
+  "blind_census_size": 2,
   "before_strict326": 121,
   "after_strict326": 121,
   "qcew2023_private_establishments326": 819,

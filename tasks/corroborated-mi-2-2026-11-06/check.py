@@ -4,7 +4,7 @@ from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from atlas import load_tables,dedupe
 from build import read
-STATE='MI';N=48;CREATES=4;BASE='9489b607c19b450c195c2353944c61719105e1f9'
+STATE='MI';N=48;CREATES=2;BASE='9489b607c19b450c195c2353944c61719105e1f9'
 cs=read(H/'input.csv');vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');prior=read(H/'prior-input.csv')
 def frame_check(vs):
  assert len(cs)==len(vs)==len({v['cluster_id'] for v in vs})==N

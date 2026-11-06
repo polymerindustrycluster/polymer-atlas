@@ -1,10 +1,8 @@
-Deep adversarial refute for L11 MI batch2. Owner authorizes federal-only provisionalC and full-create census(4, fewer than20) in place of20blind sample. FIRST independently judge each BLIND row PASS/HOLD for identity/operator, scope at provisional C and distinct address. Then inspect builder/check. 48screened=4VERIFIED/44holds,0org,28EVD. All non326; strict326 unchanged121/819. Raw banked CY2025 ITA admissible observed2026-11-01; no fresh operating or own-site claim. Uncertain newerITA vsolderOSHA326 cases held, not cherry-picked. Review IDs(global collisions),append-only,source dates,builder preflight/idempotence,frame reconciliation. Read README. Return VERDICT APPROVE|REFUTE with concrete findings and per-row census. Controller owns Done.
-BLIND
+Revised deep refute PR150 L11 MI2. All48residueclusters screened=2VERIFIED Csites(SOPREMA,Paramelt),14EVD,46holds. Codex3 findingsCytiva unsettled standalone-resin ring andAptar ZIPconflict bothheld;SITE018020/018022 and14EVDslotsretired permanently. StableSOPREMA/ParameltIDslots unchanged. Strict326unchanged121/819. Full2createblindcensus(controllerapproved<20),source-onlybelow. BankedCY2025ITA observed2026-11-01,federal-onlyprovisionalC,nooperation2026claim. validate0/checkPASS:frame/known3,oldrowsunchanged,byteidempotence,globalIDcollision no-write mutation. Prior4/28 snapshots superseded. Refute surviving2andpreservation/IDs;returnAPPROVE|REFUTE.
+SOURCE2
 cluster_id,held_operator_id,held_operator_name,held_operator_status,successor,held_operator_domain,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,schema_2_2_signal,date_submitted,year_filing_for,prior_sites
 LF-MI-00673,ORG-001619,SOPREMA Inc,active,,https://www.soprema.us/,264788,SOPREMA,Chem Link,353 East Lyons,Schoolcraft,MI,49087,325520,Tile adhesives manufacturing,P,2026-01-22,2025,[]
-LF-MI-00087,ORG-004308,Cytiva US LLC,active,,,1373356,Cytiva,Global Life Sciences Solutions US LLC,1740 Whitehall Road,Muskegon,MI,49445,325211,Protein plastics manufacturing,P,2026-01-16,2025,[]
 LF-MI-00491,ORG-002039,"M. Argueso & Co., Inc.",active,,https://www.paramelt.com,912548,M Argueso & Co dba Paramelt,M Argueso & Co dba Paramelt - McCracken,2817 McCracken St,Muskegon,MI,49441,325520,"Adhesives (except asphalt, dental, gypsum base) manufacturing",P,2026-01-27,2025,[]
-LF-MI-01094,ORG-002878,"AptarGroup, Inc.",active,,https://www.aptar.com,1264628,Aptar Group,AptarGroup Midland,2202 Ridgewood Drive,Midland,MI,48862,325212,Silicone rubber manufacturing,P,2026-01-06,2025,[]
 
 BUILDER
 #!/usr/bin/env python3
@@ -30,7 +28,9 @@ def main():
  orgs={r['org_id']:r for p in data.glob('organizations_*.csv') for r in read(p)}
  oldsites=[r for p in data.glob('sites_*.csv') for r in read(p)]
  out=defaultdict(list);eid=260140;alloc=[]
- for idx,v in enumerate(v for v in vs if v['verdict']=='VERIFIED'):
+ slots={r['cluster_id']:int(r['slot']) for r in read(H/'id_slots.csv')}
+ for v in (v for v in vs if v['verdict']=='VERIFIED'):
+  idx=slots[v['cluster_id']];eid=260140+7*idx
   c=cs[v['cluster_id']];oid=v['held_org_id'];org=orgs[oid];assert org['status']=='active' and not org['successor_org_id']
   fed=[ita[s[4:]] for s in c['sources_with_ids'].split(';') if s.startswith('ITA:')]
   assert fed and all(r['state']=='MI' for r in fed)
@@ -79,7 +79,7 @@ def main():
    if rows:append_sorted(data/name,rows,'site_id' if name.startswith('sites_') else 'evidence_id')
  with open(H/'allocations.csv','w') as f:
   w=csv.DictWriter(f,fieldnames=list(alloc[0]),lineterminator='\n');w.writeheader();w.writerows(alloc)
- print(json.dumps({'worked_MI_clusters':len(vs),'verdicts':dict(Counter(v['verdict'] for v in vs)),'sites_C':len(alloc),'organizations_created':0,'evidence_rows':eid-260140,'pending_rows':{k:len(v) for k,v in pending.items()}}))
+ print(json.dumps({'worked_MI_clusters':len(vs),'verdicts':dict(Counter(v['verdict'] for v in vs)),'sites_C':len(alloc),'organizations_created':0,'evidence_rows':sum(len(r) for k,r in out.items() if k.startswith('evidence_')),'pending_rows':{k:len(v) for k,v in pending.items()}}))
 if __name__=='__main__':main()
 
 CHECK
@@ -89,7 +89,7 @@ from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from atlas import load_tables,dedupe
 from build import read
-STATE='MI';N=48;CREATES=4;BASE='9489b607c19b450c195c2353944c61719105e1f9'
+STATE='MI';N=48;CREATES=2;BASE='9489b607c19b450c195c2353944c61719105e1f9'
 cs=read(H/'input.csv');vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');prior=read(H/'prior-input.csv')
 def frame_check(vs):
  assert len(cs)==len(vs)==len({v['cluster_id'] for v in vs})==N
