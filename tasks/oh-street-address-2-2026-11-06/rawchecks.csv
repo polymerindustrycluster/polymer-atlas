@@ -1,0 +1,109 @@
+site_id,street_address,source_zip,quote,url,sha256,posture
+SITE-000002,,,,https://www.lubrizol.com,,need physical street at recorded city; no raw address block found
+SITE-000004,,,,https://www.parker.com,,need physical street at recorded city; no raw address block found
+SITE-000005,4515 St. Clair Avenue,44103,"4515 St. Clair Avenue Cleveland, OH 44103",https://www.dayglo.com/contact-us/,16617eb93bcc5bac01c4d5352a16d52640d788a47edd8906291c0473dd018394,
+SITE-000005,4515 St. Clair Avenue,44103,"4515 St. Clair Avenue Cleveland, OH 44103",https://www.dayglo.com/contact-us/,16617eb93bcc5bac01c4d5352a16d52640d788a47edd8906291c0473dd018394,
+SITE-000006,,,,https://www.vibrantz.com,,need physical street at recorded city; no raw address block found
+SITE-000007,201 East Steels Corners Road,44224-4921,"201 East Steels Corners Road Stow, Ohio 44224-4921",https://www.struktol.com/about-us/locations/,8c4585531b5a9b9b7596132cf5742015a4cffa09d330cb49f3fca6580d45c86a,
+SITE-000007,1530 Commerce Drive,44224,"1530 Commerce Drive Stow, OH 44224",https://www.struktol.com/about-us/locations/,8c4585531b5a9b9b7596132cf5742015a4cffa09d330cb49f3fca6580d45c86a,
+SITE-000007,201 E. Steels Corners Road,44224-4921,"201 E. Steels Corners Road Stow, OH 44224-4921",https://www.struktol.com/contact-us/,3053e9e6e63024eab66f206a594540267a2cdcec1ead3e0776c3cc3294aae299,
+SITE-000007,1530 Commerce Drive,44224,"1530 Commerce Drive Stow, OH 44224",https://www.struktol.com/contact-us/,3053e9e6e63024eab66f206a594540267a2cdcec1ead3e0776c3cc3294aae299,
+SITE-000007,201 E. Steels Corners Road,44224-0649,"201 E. Steels Corners Road Stow, OH 44224-0649",https://www.struktol.com/about-us/locations/worldwide/,d45352e4b3832af500e3efc1821a889b7d6e0cef7811ead8ce201ca04949bdb0,
+SITE-000008,1293 South Main Street,44301,"1293 South Main Street Akron, Ohio 44301",https://www.myersindustries.com/contact-us/,735c1b8c5eb63d756e9f806ccbfbc99bbaf22881031dfd1a4d024d12a7f03582,
+SITE-000009,,,,https://www.geon.com,,need physical street at recorded city; no raw address block found
+SITE-000010,,,,https://bridgestoneamericas.com,,need physical street at recorded city; no raw address block found
+SITE-000014,,,,https://daextrusion.com,,need physical street at recorded city; no raw address block found
+SITE-000017,1200 Devalera St,44310,"1200 Devalera St, Akron, Ohio 44310",https://theacerubber.com,adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b,
+SITE-000017,1200 Devalera St,44310,"1200 Devalera St, Akron, Ohio 44310",https://theacerubber.com,adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b,
+SITE-000017,1200 Devalera St,44310,"1200 Devalera St, Akron, Ohio 44310",https://theacerubber.com/,adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b,
+SITE-000017,1200 Devalera St,44310,"1200 Devalera St, Akron, Ohio 44310",https://theacerubber.com/,adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b,
+SITE-000035,,,,https://saint-gobain.com,,need physical street at recorded city; no raw address block found
+SITE-000037,,,,https://hkbenterprises.com,,need physical street at recorded city; no raw address block found
+SITE-000038,3330 Massillon Road,44312,"3330 Massillon Road Akron, OH 44312",https://pioneerplasticscorp.com/contact,7c9e6a46cea01cf0c0eddd892573a6b90f66cbcba368b87f939b27894949456f,
+SITE-000039,1331 Kelly Ave.,44306,"1331 Kelly Ave. Akron, Ohio 44306",https://landmarkplastic.com,e356557a50a2314de9bc1f21c7eabbf97afe142392d77eb74491091d8928beb4,
+SITE-000039,1331 Kelly Ave.,44306,"1331 Kelly Ave. Akron, Ohio 44306",https://landmarkplastic.com/,e356557a50a2314de9bc1f21c7eabbf97afe142392d77eb74491091d8928beb4,
+SITE-000039,1331 Kelly Ave.,44306,"1331 Kelly Ave. Akron, OH 44306",https://landmarkplastic.com/Contact,607e6c9ef106fd21d49bd1e6d00ed57bae46f8be71707531e38dae65a12851a0,
+SITE-000039,1331 Kelly Ave.,44306,"1331 Kelly Ave. Akron, Ohio 44306",https://landmarkplastic.com/Contact,607e6c9ef106fd21d49bd1e6d00ed57bae46f8be71707531e38dae65a12851a0,
+SITE-000043,,,,https://alterra360.com/,,need physical street at recorded city; no raw address block found
+SITE-000044,,,,https://apvcoatings.com,,need physical street at recorded city; no raw address block found
+SITE-000047,,,,https://smithers.com,,need physical street at recorded city; no raw address block found
+SITE-000048,3770 Embassy Parkway,44333,"3770 Embassy Parkway Akron, OH 44333",https://akrochem.com/locations.php,9c117efaac04b25b738be54cbb596e6de1f33d4954157952f368c519cceab952,
+SITE-000048,255 Fountain Street,44304,"255 Fountain Street Akron, OH 44304",https://akrochem.com/locations.php,9c117efaac04b25b738be54cbb596e6de1f33d4954157952f368c519cceab952,
+SITE-000048,1075 Jenkins Blvd,44306,"1075 Jenkins Blvd Akron, OH 44306",https://akrochem.com/locations.php,9c117efaac04b25b738be54cbb596e6de1f33d4954157952f368c519cceab952,
+SITE-000048,3770 Embassy Parkway,44333,"3770 Embassy Parkway Akron, OH 44333",https://akrochem.com/contact.php,86c6514a0e02321d3ffb03c89c576aff4584e0a2259018b367365ae667ca7f7b,
+SITE-000050,,,,https://synthomer.com,,need physical street at recorded city; no raw address block found
+SITE-000051,,,,https://continental-industry.com,,need physical street at recorded city; no raw address block found
+SITE-000052,,,,https://harwickstandard.com,,need physical street at recorded city; no raw address block found
+SITE-000056,,,,https://cfextrusion.com,,need physical street at recorded city; no raw address block found
+SITE-000058,,,,https://steelastic.com,,need physical street at recorded city; no raw address block found
+SITE-000060,1539 Commerce Drive,44224,"1539 Commerce Drive, Stow, OH 44224",https://esterle.com,ae6376d22c18958a0b7bcec5d105970cf75ec825c6dc213e21d33bb5a064b4fe,
+SITE-000060,1539 Commerce Drive,44224,"1539 Commerce Drive, Stow, OH 44224",https://esterle.com/contact,2b1d20faaf70f39981784ae632b1a8ed7aef2cff501a62b2505e74085f927ae8,
+SITE-000061,,,,https://ferriot.com,,need physical street at recorded city; no raw address block found
+SITE-000070,,,,https://plasticmaterialsinc.com,,need physical street at recorded city; no raw address block found
+SITE-000071,9020 Dutton Drive,44087,"9020 Dutton Drive, Twinsburg, Ohio 44087",https://milesrubber.com/contact-us,b2b4c6be2e931f738c7292ec6afd7ac79c2682081ead12931ada488043bda7c4,
+SITE-000071,9020 Dutton Drive,44087,"9020 Dutton Drive, Twinsburg, Ohio 44087",http://milesrubber.com/contact-us,b2b4c6be2e931f738c7292ec6afd7ac79c2682081ead12931ada488043bda7c4,
+SITE-000072,2146 Enterprise Parkway,44087,"2146 Enterprise Parkway Twinsburg, OH 44087",https://cimaplastics.com,7db45d057caa82c8f77822bbb7049a5d378f712e4b06e979f25024ac69d089b8,
+SITE-000072,2146 Enterprise Parkway,44087,"2146 Enterprise Parkway Twinsburg, OH 44087",https://cimaplastics.com/contact.shtml,2dff4a07d7ee35c5e18dfcf3a211398d89dc76c43871d86814be9d3b85cab9cf,
+SITE-000074,2222 Highland Road,44087,"2222 Highland Road Twinsburg, OH 44087",https://mrpsolutions.com/contact-us,e3841b01af8b0270df49b4506dfca511810440aaf930cf61a1bf62f46bb7322e,
+SITE-000075,2057 E. Aurora Rd.,44087,"2057 E. Aurora Rd. Twinsburg, OH 44087",https://industrialmold.com,1afcaef402c1d2016308fe0384d1b8cfd9166c8916b8e690ff58e0005a136517,
+SITE-000075,2057 E. Aurora Rd.,44087,"2057 E. Aurora Rd. Twinsburg, OH 44087",http://www.industrialmold.com/Home.html,1afcaef402c1d2016308fe0384d1b8cfd9166c8916b8e690ff58e0005a136517,
+SITE-000076,,,,https://crownmold.net,,need physical street at recorded city; no raw address block found
+SITE-000077,,,,https://mantaline.com,,need physical street at recorded city; no raw address block found
+SITE-000078,,,,https://gi-de.com,,need physical street at recorded city; no raw address block found
+SITE-000079,,,,https://generalplastex.com,,need physical street at recorded city; no raw address block found
+SITE-000081,74 Robinson Ave,44203,"74 Robinson Ave Barberton, OH 44203",https://novexinc.com,7bc4297a0c5c609375b58d3ea346488792645551ba187c02ca1078abde6fe1d5,
+SITE-000081,74 Robinson Ave,44203,"74 Robinson Ave Barberton, OH 44203",https://novexinc.com,7bc4297a0c5c609375b58d3ea346488792645551ba187c02ca1078abde6fe1d5,
+SITE-000081,74 Robinson Ave,44203,"74 Robinson Ave Barberton, OH 44203",https://novexinc.com/contact-us/,197449f4292010f45e0cc9b80bae509af48aee8e02ba70c48d66088c14440c5d,
+SITE-000081,74 Robinson Ave,44203,"74 Robinson Ave Barberton, OH 44203",https://novexinc.com/contact-us/,197449f4292010f45e0cc9b80bae509af48aee8e02ba70c48d66088c14440c5d,
+SITE-000082,11 Brown St.,44203,"11 Brown St. Barberton , OH 44203",https://merryweather.com,fcedc4591a36db0d6d120c84ba2ff0cfa047fa95c9fb1a376bccaba1afd25499,
+SITE-000082,11 Brown St.,44203,"11 Brown St. Barberton , OH 44203",https://merryweather.com/,fcedc4591a36db0d6d120c84ba2ff0cfa047fa95c9fb1a376bccaba1afd25499,
+SITE-000083,3960 Summit Rd,44281,"3960 Summit Rd Norton, OH, 44281",https://mdayinc.com,b8f5ba312697eb3626132e4ac658f4493350990081cabfa6631790c15226bb74,
+SITE-000083,3960 Summit Rd.,44203,"3960 Summit Rd. Norton, OH 44203",https://mdayinc.com,b8f5ba312697eb3626132e4ac658f4493350990081cabfa6631790c15226bb74,
+SITE-000083,3960 Summit Rd,44281,"3960 Summit Rd Norton, OH, 44281",https://mdayinc.com/,b8f5ba312697eb3626132e4ac658f4493350990081cabfa6631790c15226bb74,
+SITE-000083,3960 Summit Rd.,44203,"3960 Summit Rd. Norton, OH 44203",https://mdayinc.com/,b8f5ba312697eb3626132e4ac658f4493350990081cabfa6631790c15226bb74,
+SITE-000083,3960 Summit Rd.,44203,"3960 Summit Rd. Norton, OH 44203",https://mdayinc.com/contact,03245ba00498e2b6709954b9db8fdd1f29ca8b17e990959b122ef83ee1056904,
+SITE-000083,3960 Summit Rd.,44203,"3960 Summit Rd. Norton, OH 44203",https://mdayinc.com/contact,03245ba00498e2b6709954b9db8fdd1f29ca8b17e990959b122ef83ee1056904,
+SITE-000083,3960 Summit Rd.,44203,"3960 Summit Rd. Norton, OH 44203",https://mdayinc.com/contact-1,af2857cbf441aceaa7afd99ff6d98fadd844dbdd88a4af93378f619bb23d9cf2,
+SITE-000085,,,,https://ohioprecisionmolding.com,,need physical street at recorded city; no raw address block found
+SITE-000086,1522 W. Turkeyfoot Lake Road,44203,"1522 W. Turkeyfoot Lake Road Barberton, OH 44203",https://rubberassociates.com,24bad599f084e6903c3601bee6feef918772db4ea09468b3e9e4226cf07bb526,
+SITE-000086,1522 W. Turkeyfoot Lake Road,44203,"1522 W. Turkeyfoot Lake Road Barberton, OH 44203",https://www.rubberassociates.com/,24bad599f084e6903c3601bee6feef918772db4ea09468b3e9e4226cf07bb526,
+SITE-000087,1580 West Turkeyfoot Lake Rd.,44203,"1580 West Turkeyfoot Lake Rd. Barberton, OH 44203",https://rainbowrubber.com,d805c9453dc6379228b7dfbe51c5a67974ae7b65f3de6cfbfa3e3043e9f67a15,
+SITE-000087,1580 West Turkeyfoot Lake Rd.,44203,"1580 West Turkeyfoot Lake Rd. Barberton, OH 44203",https://rainbowrubber.com/our-story/,80f7ced8b9458b8290102903f0296693e3047f1b0117155c67748997595b6661,
+SITE-000092,,,,https://ohiorubbergroup.org,,need physical street at recorded city; no raw address block found
+SITE-000101,2828 Second Street,44221,"2828 Second Street • Cuyahoga Falls, Ohio 44221",http://www.polymericsinc.com,ee3890e959c2cf2374c2ef1a67c19693978553306deed5dfdce67e709d8e3122,
+SITE-000105,,,,https://www.pharoplast.com/,,need physical street at recorded city; no raw address block found
+SITE-000106,,,,http://www.tmplasticsusa.com,,need physical street at recorded city; no raw address block found
+SITE-000107,3705 Carnegie Avenue,44115,"3705 Carnegie Avenue Cleveland, Ohio 44115",https://hpmanufacturing.com,6c0d55d62c1d9660f650e6cc8faab3cc0169875ebfdbcca3dd2b8678978f276f,
+SITE-000107,3705 Carnegie Avenue,44115,"3705 Carnegie Avenue Cleveland, OH 44115",https://hpmanufacturing.com/contact,97b7e8f4be2665f7d197d228a32f8484e69be7e8b19b03eb5051f87d6803eee6,
+SITE-000107,3705 Carnegie Avenue,44115,"3705 Carnegie Avenue Cleveland, Ohio 44115",https://hpmanufacturing.com/contact,97b7e8f4be2665f7d197d228a32f8484e69be7e8b19b03eb5051f87d6803eee6,
+SITE-000107,3705 Carnegie Avenue,44115,"3705 Carnegie Avenue Cleveland, OH 44115",https://www.hpmanufacturing.com/contact/,97b7e8f4be2665f7d197d228a32f8484e69be7e8b19b03eb5051f87d6803eee6,
+SITE-000107,3705 Carnegie Avenue,44115,"3705 Carnegie Avenue Cleveland, Ohio 44115",https://www.hpmanufacturing.com/contact/,97b7e8f4be2665f7d197d228a32f8484e69be7e8b19b03eb5051f87d6803eee6,
+SITE-000109,3901 W 150th St,44111,"3901 W 150th St, Cleveland, OH 44111",https://teamplasticsinc.com/,27d1bf5ac80a7cb1c16375a7c4d7e5ac2ad3e67c0f1186e1d75ead642c93ff93,
+SITE-000109,3901 W 150th St,44111,"3901 W 150th St, Cleveland, OH 44111",https://teamplasticsinc.com/,27d1bf5ac80a7cb1c16375a7c4d7e5ac2ad3e67c0f1186e1d75ead642c93ff93,
+SITE-000109,3901 W 150th St,44111,"3901 W 150th St, Cleveland, OH 44111",https://teamplasticsinc.com/contact-us/,6b2252fff05b0642fda674a0b19fb43b26042ef9ec7099b56fb331615ca3e656,
+SITE-000109,3901 W 150th St,44111,"3901 W 150th St, Cleveland, OH 44111",https://teamplasticsinc.com/contact-us,740505c3c62bc1fdb389503b5e3209767786abf7f96ab52af596c0a43ecb213b,
+SITE-000111,5081 Corbin Drive,44128,"5081 Corbin Drive Bedford Heights, OH 44128",https://tricomachine.com,26905a209d3a6ae77ad4dc57bc0f7d2ee64b065e34cb147094fbc4f9ba1fcdc4,
+SITE-000112,1274 East 55th Street,44103-1029,"1274 East 55th Street Cleveland , OH 44103-1029",https://customrubbercorp.com,3690a68e69de2ec9de825da1106fdcf5b831d8ec23a3421d73e4df5870e3adaf,
+SITE-000112,1274 East 55th Street,44103-1029,"1274 East 55th Street Cleveland, OH 44103-1029",https://customrubbercorp.com/contact-us.aspx,1285ca438679b6c9b0717d04127a866f621b5e085ad52842f6fcfb1081b71d4b,
+SITE-000112,1274 East 55th Street,44103-1029,"1274 East 55th Street Cleveland , OH 44103-1029",https://customrubbercorp.com/contact-us.aspx,1285ca438679b6c9b0717d04127a866f621b5e085ad52842f6fcfb1081b71d4b,
+SITE-000114,,,,http://www.cuyahogaplastics.com/,,need physical street at recorded city; no raw address block found
+SITE-000115,,,,https://www.amdplastics.com/,,need physical street at recorded city; no raw address block found
+SITE-000116,1400 E. 222nd. St.,44117,"1400 E. 222nd. St. Euclid, OH 44117",https://noramcobag.com/contact-us/,b7e7a425b250c09f18751953393a6c9204cf4d0b8ee6ee1230ba370c1d83f932,
+SITE-000117,15242 Foltz Industrial Pkwy,44149,"15242 Foltz Industrial Pkwy, Strongsville, Ohio 44149",https://gshindustries.com,37bceacbf151016f1df887691ac92805d35b96a2efac459b936378907c332877,
+SITE-000117,15242 Foltz Industrial Pkwy,44149,"15242 Foltz Industrial Pkwy Strongsville , Ohio 44149",https://gshindustries.com,37bceacbf151016f1df887691ac92805d35b96a2efac459b936378907c332877,
+SITE-000117,15242 Foltz Industrial Parkway,44149,"15242 Foltz Industrial Parkway Strongsville, OH 44149",https://www.gshindustries.com/contact-us/,9fcd84f91ac121dd2de620cf28c76eb69e1f5edfc7f8bed302dd9550cc74b6fc,
+SITE-000117,15242 Foltz Industrial Pkwy,44149,"15242 Foltz Industrial Pkwy Strongsville , Ohio 44149",https://www.gshindustries.com/contact-us/,9fcd84f91ac121dd2de620cf28c76eb69e1f5edfc7f8bed302dd9550cc74b6fc,
+SITE-000123,,,,https://primeconduit.com,,need physical street at recorded city; no raw address block found
+SITE-000125,11929 Abbey Rd,44133,"11929 Abbey Rd, North Royalton, OH, 44133",https://cpipp.com/,7c7cfa47ab57aa4639dbbb1533ae29da8f7a859f967a25ab28a817882e4ea87f,
+SITE-000125,11929 Abbey Rd,44133,"11929 Abbey Rd North Royalton, OH, 44133",https://cpipp.com/,7c7cfa47ab57aa4639dbbb1533ae29da8f7a859f967a25ab28a817882e4ea87f,
+SITE-000125,11929 Abbey Rd,44133,"11929 Abbey Rd, North Royalton, OH, 44133",https://cpipp.com/contact-us/,096521a10fa084d1e3737d8bc2731b32c6e233d51b183f35ff5ca072de02d2a2,
+SITE-000125,11929 Abbey Rd,44133,"11929 Abbey Rd, North Royalton, OH, 44133",https://cpipp.com/contact-us/,096521a10fa084d1e3737d8bc2731b32c6e233d51b183f35ff5ca072de02d2a2,
+SITE-000125,11929 Abbey Rd,44133,"11929 Abbey Rd North Royalton, OH, 44133",https://cpipp.com/contact-us/,096521a10fa084d1e3737d8bc2731b32c6e233d51b183f35ff5ca072de02d2a2,
+SITE-000129,,,,https://www.peaknano.com,,need physical street at recorded city; no raw address block found
+SITE-000133,,,,https://oatey.com,,need physical street at recorded city; no raw address block found
+SITE-000134,5109 Hamilton Ave,44114,"5109 Hamilton Ave Cleveland, Ohio 44114",https://novagard.com,2855588dc325ba027a8480e98c162fe7a4e4f3d46cfbdc81828fde88fff33125,
+SITE-000134,5109 Hamilton Avenue,44114,"5109 Hamilton Avenue Cleveland, Ohio 44114",https://novagard.com/contact-us/,bdb62b089d168c3a3157be1871ab59176138e78d9477e5ed636be494969026a7,
+SITE-000134,5109 Hamilton Ave,44114,"5109 Hamilton Ave Cleveland, Ohio 44114",https://novagard.com/contact-us/,bdb62b089d168c3a3157be1871ab59176138e78d9477e5ed636be494969026a7,
+SITE-000136,,,,https://rotopolymers.com,,need physical street at recorded city; no raw address block found
+SITE-000145,,,,https://plasticsmg.com,,need physical street at recorded city; no raw address block found
+SITE-000150,,,,http://nslanalytical.com/,,need physical street at recorded city; no raw address block found

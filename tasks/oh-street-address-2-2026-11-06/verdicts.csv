@@ -1,0 +1,61 @@
+site_id,verdict,street_address,evidence_id,reason
+SITE-000002,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000004,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000005,VERIFIED,4515 St. Clair Avenue,EVD-152002,
+SITE-000006,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000007,STILL_UNCERTAIN,201 East Steels Corners Road,,own-page street blocks disagree; own-page ZIP conflicts with current site ZIP
+SITE-000008,VERIFIED,1293 South Main Street,EVD-152005,
+SITE-000009,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000010,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000014,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000017,VERIFIED,1200 Devalera St,EVD-152009,
+SITE-000035,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000037,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000038,VERIFIED,3330 Massillon Road,EVD-152012,
+SITE-000039,VERIFIED,1331 Kelly Ave.,EVD-152013,
+SITE-000043,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000044,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000047,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000048,STILL_UNCERTAIN,3770 Embassy Parkway,,own-page street blocks disagree; own-page ZIPs disagree; own-page ZIP conflicts with current site ZIP
+SITE-000050,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000051,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000052,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000056,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000058,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000060,VERIFIED,1539 Commerce Drive,EVD-152023,
+SITE-000061,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000070,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000071,VERIFIED,9020 Dutton Drive,EVD-152026,
+SITE-000072,VERIFIED,2146 Enterprise Parkway,EVD-152027,
+SITE-000074,VERIFIED,2222 Highland Road,EVD-152028,
+SITE-000075,VERIFIED,2057 E. Aurora Rd.,EVD-152029,
+SITE-000076,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000077,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000078,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000079,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000081,VERIFIED,74 Robinson Ave,EVD-152034,
+SITE-000082,VERIFIED,11 Brown St.,EVD-152035,
+SITE-000083,STILL_UNCERTAIN,3960 Summit Rd,,own-page ZIPs disagree
+SITE-000085,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000086,VERIFIED,1522 W. Turkeyfoot Lake Road,EVD-152038,
+SITE-000087,VERIFIED,1580 West Turkeyfoot Lake Rd.,EVD-152039,
+SITE-000092,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000101,STILL_UNCERTAIN,2828 Second Street,,notes address conflicts; dated adjudication needed
+SITE-000105,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000106,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000107,VERIFIED,3705 Carnegie Avenue,EVD-152044,
+SITE-000109,VERIFIED,3901 W 150th St,EVD-152045,
+SITE-000111,VERIFIED,5081 Corbin Drive,EVD-152046,
+SITE-000112,STILL_UNCERTAIN,1274 East 55th Street,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+SITE-000114,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000115,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000116,VERIFIED,1400 E. 222nd. St.,EVD-152050,
+SITE-000117,VERIFIED,15242 Foltz Industrial Pkwy,EVD-152051,
+SITE-000123,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000125,VERIFIED,11929 Abbey Rd,EVD-152053,
+SITE-000129,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000133,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000134,STILL_UNCERTAIN,5109 Hamilton Ave,,notes address conflicts; dated adjudication needed
+SITE-000136,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000145,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000150,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
