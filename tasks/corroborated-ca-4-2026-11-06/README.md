@@ -13,3 +13,6 @@ Domain/name/street/trade-name dedupe across all shards is in dedupe.json. Calibr
 Checks and two-family refutes pending; not Done.
 
 Final proposed count is55evidence (12parent +43site rows). Named checks2026-11-06: validate0errors/OK;check.pyPASS40uniqueverdicts/full8source census/byte-identicalreplay/QCEW/globalcross-shard lateIDcollisionzero-writefailure. All main rows preserved by ID comparison. Strict32693→101/1306(7.1210%→7.7335%),baseline includesCA135,excludespendingCA2/3. Independent family reviews pending;notDone.
+
+
+Codex4 (OpenAI) APPROVE18f7095,0findings,2026-11-06: full8blind originals before outcomes, all4ITA/4OSHA and additional witnesses match; three new-parent domain/name/street/alias searches find no duplicate. Exact3Cparents/8Csites/55EVD,32holds; required evidence/IDs/reservations, wrong-shard and N-concordance zero-write mutations, rowloss/replay/validator0 and strict93→101/1306 pass. Random10 changed rows/17associatedclaims independently reconciled; blocked government routes use admitted bankedsource only. No freshgovernment/current-operation claim; holds not exhaustively re-researched. Grok remains pending; no Ready/Done claim.
