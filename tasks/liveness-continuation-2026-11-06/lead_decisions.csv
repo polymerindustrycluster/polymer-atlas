@@ -1,0 +1,3 @@
+org_id,lead_verdict,lead_finding,lead_settling_fact
+ORG-003908,STILL_UNCERTAIN,"Helper retrieved a current CyCan offering; lead's non-www and www raw attempts both returned HTTP406. Availability restriction, no closure inference; current positive claim held at integration.",An accessible current CyCan-issued operating witness whose exact quote the lead can re-fetch.
+ORG-002898,STILL_UNCERTAIN,"Lead confirms live Dais own-site Aqualyte offering at the held Odessa address. Canonical status is unknown; no dated company operating statement was retrieved to authorize a formal unknown-to-active transition.",A dated Dais-issued operating statement or dated government operating record settling the held unknown status; positive live-site offer is recorded without status motion.
