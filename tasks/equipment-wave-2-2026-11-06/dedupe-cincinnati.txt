@@ -1,0 +1,81 @@
+{
+  "query": {
+    "domain": "uc.edu",
+    "name": "University of Cincinnati",
+    "street": null,
+    "city": null,
+    "state": null,
+    "zip": null
+  },
+  "stop_at_step": 1,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002117",
+          "name": "University of Cincinnati technology licensing (1819 Innovation Hub)",
+          "city": "Cincinnati",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "ecosystem.csv",
+          "match": "domain subdomain: innovation.uc.edu"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-001314",
+          "name": "University of Cincinnati",
+          "city": "Cincinnati",
+          "state": "OH",
+          "status": "active",
+          "tier": "C",
+          "file": "ecosystem.csv",
+          "match": "name key 'university of cincinnati' = legal_name 'University of Cincinnati'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": "no --street",
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002076",
+          "name": "Meteora3D, Incorporated",
+          "city": "Cincinnati",
+          "state": "OH",
+          "status": "active",
+          "tier": "C",
+          "file": "organizations_OH.csv",
+          "match": "notes contains 'University of Cincinnati'"
+        },
+        {
+          "id": "ORG-002117",
+          "name": "University of Cincinnati technology licensing (1819 Innovation Hub)",
+          "city": "Cincinnati",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "ecosystem.csv",
+          "match": "legal_name contains 'University of Cincinnati'"
+        }
+      ]
+    }
+  ]
+}

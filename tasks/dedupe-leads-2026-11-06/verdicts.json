@@ -1,0 +1,578 @@
+[
+  {
+    "pair_id": "D01",
+    "record_table": "sites",
+    "a_id": "SITE-000818",
+    "b_id": "SITE-001925",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "duplicate_of": "",
+    "legal_names": [
+      "Cooper Standard Industrial and Specialty Group",
+      "Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing)"
+    ],
+    "observed_date": "2026-11-06",
+    "evidence": [
+      {
+        "source_url": "https://ir.cooperstandard.com/2018-07-03-Cooper-Standard-Agrees-to-Acquire-Lauren-Manufacturing-and-Lauren-Plastics-to-Accelerate-Growth-in-Key-Industrial-Markets",
+        "source_class": "own_site",
+        "quote": "announced its agreement to acquire Lauren Manufacturing and Lauren Plastics, subject to regulatory approvals and related parties' consent.",
+        "source_date": "2018-07-03",
+        "date_basis": "release date; agreement, not closing",
+        "observed_date": "2026-11-06",
+        "claim": "Cooper Standard announced acquisition agreement; does not establish same legal entity or exact plant identity.",
+        "endpoint_ids": [
+          "SITE-000818",
+          "SITE-001925"
+        ],
+        "raw_sha256": "9748b94d5df60ab149ff7ca5d151c9c0183347ec581c04b7322c96d911f848ed",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "0a6d4aa4da79232cc93d7af05135072484ccb4e0cc06e834d4a21868f6316c7d"
+      }
+    ],
+    "settling_fact": "Dated primary certificate/filing explicitly tying both site representations to the same legal operator and the same 2228 Reiser Avenue SE establishment, plus a permitted duplicate-tombstone correction procedure.",
+    "recommendation": "Keep both IDs; flag prior closed tombstone as an unproven duplicate designation, not evidence of physical plant closure. No merge, rekey, status correction or parent-org identity inference from this packet.",
+    "reason": "Dated release concerns acquisition agreement and four facilities, including two in New Philadelphia. It does not identify 2228 Reiser or establish same legal operator for both site records. Known own site and two certificate URLs failed/returned not found. Existing banked duplicate note is not primary proof; closed status cannot be read as physical closure.",
+    "primary_fetch_count_by_org": {
+      "ORG-001931": 5,
+      "ORG-000755": 5
+    },
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D02",
+    "record_table": "organizations",
+    "a_id": "ORG-000386",
+    "b_id": "ORG-002079",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "duplicate_of": "",
+    "legal_names": [
+      "Iten Industries, Inc.",
+      "TDM LLC"
+    ],
+    "observed_date": "2026-11-06",
+    "evidence": [
+      {
+        "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Portals/27/sip/Nonattain/D1-nonEGU_point_source_inv.pdf",
+        "source_class": "government_filing",
+        "quote": "Iten Industries Inc. (Plant 3) || 1303 West 38th Street, Ashtabula, OH 44004",
+        "source_date": "",
+        "date_basis": "Source header: 2008 Base Year Emissions Inventory; period year only, no full date asserted.",
+        "observed_date": "2026-11-06",
+        "claim": "Historic Iten plant identity/address; no TDM LLC legal relationship established.",
+        "endpoint_ids": [
+          "ORG-000386"
+        ],
+        "raw_sha256": "d5fcf5c3403430ea7e4e5d1743bf8ce4a237a19db815585d5cd78a48a01be6f8",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "d5fcf5c3403430ea7e4e5d1743bf8ce4a237a19db815585d5cd78a48a01be6f8"
+      }
+    ],
+    "settling_fact": "Source-system verified TDM LLC sponsor/entity record and a dated primary acquisition, legal-name-change or operating-company instrument explicitly resolving TDM versus Iten at 1303 West 38th, with effective dates.",
+    "recommendation": "Retain organizations and facility links unchanged; flag possible historical operator/asset succession as hypothesis only. Do not merge from address or sponsor-note overlap.",
+    "reason": "Historical Ohio inventory names Iten at 1303 West 38th. Own Iten page inspected. TDM/TRI route and possible own-domain discovery route failed. Banked 2022\u20132024 TDM Form 5500 sponsor note remains context; it was not independently source-verified here. Same address across periods does not establish same legal entity or concurrent operator.",
+    "primary_fetch_count_by_org": {
+      "ORG-002079": 2,
+      "ORG-000386": 3
+    },
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D03",
+    "record_table": "organizations",
+    "a_id": "ORG-001088",
+    "b_id": "ORG-001087",
+    "verdict": "VERIFIED",
+    "decision": "DISTINCT",
+    "duplicate_of": "",
+    "legal_names": [
+      "Roppe Holding Company",
+      "Roppe Corp."
+    ],
+    "observed_date": "2026-11-06",
+    "evidence": [
+      {
+        "source_url": "https://roppe.com/wp-content/uploads/2018/10/Roppe-Press-Release_New-Facility_2018-10-23.pdf",
+        "source_class": "own_site",
+        "quote": "Roppe Holding Company (RHC), the parent company to commercial flooring leaders Roppe and Flexco",
+        "source_date": "2018-10-23",
+        "date_basis": "release date",
+        "observed_date": "2026-11-06",
+        "claim": "Holding-company versus operating-business distinction.",
+        "endpoint_ids": [
+          "ORG-001088",
+          "ORG-001087"
+        ],
+        "raw_sha256": "7947523689e943c437c6ea7f25a46eaaa1af7df7ee28f6574a7c601e406a6145",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "7947523689e943c437c6ea7f25a46eaaa1af7df7ee28f6574a7c601e406a6145"
+      },
+      {
+        "source_url": "https://roppe.com/wp-content/uploads/2024/12/SCS-EPD-RFCI_LVT-Gluedown.pdf",
+        "source_class": "own_site",
+        "quote": "Roppe Corporation is a wholly owned division of Roppe Holding Company",
+        "source_date": "2024-05-09",
+        "date_basis": "EPD SCS-EPD-10146 validity start; valid through 2029-05-08",
+        "observed_date": "2026-11-06",
+        "claim": "Exact Corporation name separately identified from holding company.",
+        "endpoint_ids": [
+          "ORG-001088",
+          "ORG-001087"
+        ],
+        "raw_sha256": "e0dbab24d370c2926d994df51ea973a49460ade20f8afd8d315bc9116aeacf77",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "e0dbab24d370c2926d994df51ea973a49460ade20f8afd8d315bc9116aeacf77"
+      }
+    ],
+    "settling_fact": "",
+    "recommendation": "No merge. Retain parent/operator separation. Parent may use these sources to corroborate existing relationship under its own schema/relationship gate; do not infer member identity or transfer facility TRI links.",
+    "reason": "Dated own-issued release and own-hosted dated EPD identify parent/operating business separately. A wholly owned division description is not a same-legal-entity finding. Existing held parent pointer is context only.",
+    "primary_fetch_count_by_org": {
+      "ORG-001087": 2,
+      "ORG-001088": 2
+    },
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D04",
+    "record_table": "organizations",
+    "a_id": "ORG-000011",
+    "b_id": "ORG-001716",
+    "verdict": "VERIFIED",
+    "decision": "DISTINCT",
+    "duplicate_of": "",
+    "legal_names": [
+      "Bridgestone Americas, Inc.",
+      "Firestone Polymers, LLC"
+    ],
+    "observed_date": "2026-11-06",
+    "evidence": [
+      {
+        "source_url": "https://fs2.magicalir.net/tdnet/2026/5108/20260227571355.pdf",
+        "source_class": "own_site",
+        "quote": "Bridgestone Americas, Inc. || Management of Americas operations || Firestone Polymers, LLC || Manufacture and sale of synthetic rubber",
+        "source_date": "2025-12-31",
+        "date_basis": "FY2025 business report period end (Jan 1 through Dec 31 2025), published 2026; translated report p37\u201338",
+        "observed_date": "2026-11-06",
+        "claim": "Separate named companies in corporate group report.",
+        "endpoint_ids": [
+          "ORG-000011",
+          "ORG-001716"
+        ],
+        "raw_sha256": "670bd754238e0e84cb4387d2aa5c6bcedfeb069d136b82b3706934a16a12df56",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "670bd754238e0e84cb4387d2aa5c6bcedfeb069d136b82b3706934a16a12df56"
+      },
+      {
+        "source_url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/contact-us/locations/administrative-offices.html",
+        "source_class": "own_site",
+        "quote": "Firestone Polymers Corporate Headquarters A subsidiary of Bridgestone Americas, Inc.",
+        "source_date": "",
+        "date_basis": "Live own administrative-offices page is undated; retrieval is not publication date.",
+        "observed_date": "2026-11-06",
+        "claim": "Explicit subsidiary context corroborates dated group company distinction.",
+        "endpoint_ids": [
+          "ORG-000011",
+          "ORG-001716"
+        ],
+        "raw_sha256": "050a64c999053ae4e739fc9d16897229eb15faef2dcfd6b30123dafa36d7a051",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "7f03b0440f7e4d6c316e77ef2b2e7cf28b86daa9bb2163e4c8d2ce4416ec58dd"
+      }
+    ],
+    "settling_fact": "",
+    "recommendation": "No organization merge. Retain all registry links for integrator review; require current source-system TRI record showing facility operator versus parent before any link rekey/removal.",
+    "reason": "Dated group report lists Bridgestone Americas Inc and Firestone Polymers LLC as separate companies; own admin page explicitly describes subsidiary relationship. Shared held TRI ID cannot collapse parent and operator. TRI ownership/link allocation at 381 W Wilbeth was not source-system resolved.",
+    "primary_fetch_count_by_org": {
+      "ORG-000011": 4,
+      "ORG-001716": 4
+    },
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D05",
+    "record_table": "organizations",
+    "a_id": "ORG-000764",
+    "b_id": "ORG-001091",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "duplicate_of": "",
+    "legal_names": [
+      "Royal Building Products",
+      "Royal Building Products (Westlake Royal Building Products)"
+    ],
+    "observed_date": "2026-11-06",
+    "evidence": [
+      {
+        "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/PUBLIC/DSW/INDUS.pdf",
+        "source_class": "government_filing",
+        "quote": "EXTERIOR PORTFOLIO LLC-NORTH PLANT || 1550 UNIVERSAL RD || 9/11/2025 || EXTERIOR PORTFOLIO LLC - SOUTH PLANT || 1441 UNIVERSAL RD || 9/4/2025",
+        "source_date": "2025-09-11",
+        "date_basis": "North permit issue 2025-09-11; South permit issue 2025-09-04; one public regulator list.",
+        "observed_date": "2026-11-06",
+        "claim": "Two separately named and addressed establishments; not a same-legal-entity finding for held organization abstractions.",
+        "endpoint_ids": [
+          "ORG-000764",
+          "ORG-001091"
+        ],
+        "raw_sha256": "3ec68450fa93940ff0593d593fc414f569f69e64262cf8283ff3bb4288675bf1",
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "3ec68450fa93940ff0593d593fc414f569f69e64262cf8283ff3bb4288675bf1"
+      }
+    ],
+    "settling_fact": "Source-system TRI records for 43207VNYLM1441U and 43207CRNPR1550U plus dated exact operator legal identities and a determination of whether both held organization records represent that same legal entity, rather than distinct facilities or group scope.",
+    "recommendation": "No merge/rekey/removal. Preserve both plants and organization records; flag shared TRI assignment for explicit source-system operator/parent adjudication. Separate establishments alone do not prove distinct organizations.",
+    "reason": "Ohio regulator lists north plant 1550 Universal and south plant 1441 Universal separately, with Royal applicant names. Shared held TRI assignment is a lead only: both TRI source-system fetches failed. One held organization models north plant, another spans broader Royal business; legal-entity equivalence remains unsettled.",
+    "primary_fetch_count_by_org": {
+      "ORG-001091": 4,
+      "ORG-000764": 4
+    },
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D06",
+    "record_table": "sites",
+    "a_id": "SITE-001858",
+    "b_id": "SITE-001904",
+    "description": "American Sign/Thermoprene",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "The 2024-05-20 own Innoplast release names Thermoprene and American Sign Products as separate subsidiaries of its portfolio. Their shared address does not prove same legal operator or same establishment.",
+    "settling_fact": "Dated legal/DBA record establishing whether American Sign Products Inc and Thermoprene Inc are distinct legal operators or aliases, plus establishment/unit boundaries at 5718 Transportation Blvd.",
+    "recommendation": "Retain both site records; flag possible co-location/group affiliation only. Do not author parent or site-group edges from this hypothesis.",
+    "evidence": [
+      {
+        "source_url": "https://innoplast.com/blog/scalecos-innoplast-holdings-acquires-shur-tite-products/",
+        "source_class": "press",
+        "source_date": "2024-05-20",
+        "date_basis": "JSON-LD datePublished",
+        "retrieved_date": "2026-11-06",
+        "quote": "subsidiaries Thermoprene and American Sign Products",
+        "raw_sha256": "5a863f35c5305aade18608d8d0e30ef453457bdf64b249157295fff9b6b0fbf2",
+        "receipt_id": "ORG-001779-3",
+        "role": "separate subsidiaries, not legal identity",
+        "endpoints": [
+          "SITE-001858",
+          "SITE-001904"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "5a863f35c5305aade18608d8d0e30ef453457bdf64b249157295fff9b6b0fbf2",
+        "attribution_note": "Unrecorded group/affiliate issuer; contextual witness only, no own_site/tier_A implication (B-PARENT)."
+      },
+      {
+        "source_url": "https://americansignproducts.com/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "5718 Transportation Blvd., Garfield Heights, OH 44125",
+        "raw_sha256": "5ec63573abaa53100827e6decfbbb7b4b2bcbac10c77dfd7cebc7d6cf7be1972",
+        "receipt_id": "ORG-001779-1",
+        "role": "endpoint A address",
+        "endpoints": [
+          "SITE-001858"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "5ec63573abaa53100827e6decfbbb7b4b2bcbac10c77dfd7cebc7d6cf7be1972"
+      },
+      {
+        "source_url": "https://thermoprene.com/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "5718 Transportation Blvd, Garfield Heights, OH 44125",
+        "raw_sha256": "fca5d8f1acdf3965ed1508fc061187b7cd6e730a163638b80efa013066428304",
+        "receipt_id": "ORG-001905-1",
+        "role": "endpoint B address",
+        "endpoints": [
+          "SITE-001904"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "aa1c3880fe4d3a27f061a8f7b80ac50b76961f19378fd3fc24aa54b945ee0ea2"
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D07",
+    "record_table": "sites",
+    "a_id": "SITE-001882",
+    "b_id": "SITE-001721",
+    "description": "Horsemen Pride/Tusco",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Both own brands list 10008 State Route 43 and distinct brand terms-of-service. Neither explicitly identifies HP Enterprise Inc as legal operator of Tusco or dates a same-entity establishment consolidation.",
+    "settling_fact": "Dated primary acquisition/DBA/legal operator document tying Tusco Products and HP Enterprise Inc to the same legal operator AND same manufacturing establishment; common holding company alone is insufficient.",
+    "recommendation": "Retain both records; flag shared-address and potential affiliated operations. No inferred merge or site group.",
+    "evidence": [
+      {
+        "source_url": "https://horsemenspride.com/pages/about-us",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "10008 State Route 43 Streetsboro, Ohio 44241",
+        "raw_sha256": "26090b110b3310e998f4f02ddee57e6ce7dee77fc4c6db56835554c3e1904a00",
+        "receipt_id": "ORG-001829-2",
+        "role": "endpoint A address",
+        "endpoints": [
+          "SITE-001882"
+        ],
+        "integrator_raw_status": "UNCONFIRMED",
+        "integrator_raw_sha256": "5439646f1bdd07d84e556d821f7842acd1bd371dc3d01432c5c609e108830996"
+      },
+      {
+        "source_url": "https://www.tuscoproducts.com/pages/the-tusco-advantage",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "10008 State Route 43 Streetsboro, Ohio 44241",
+        "raw_sha256": "39340c5214d56e802e0ed3a106cd9cf5dde53ef68724851b9ac69f3f90f5a77c",
+        "receipt_id": "ORG-001646-2",
+        "role": "endpoint B address",
+        "endpoints": [
+          "SITE-001721"
+        ],
+        "integrator_raw_status": "UNCONFIRMED",
+        "integrator_raw_sha256": "4b4f27a926d471f92e02ed04e9f5f074e32480f3b4891d6f8d29df1b596f7dd0"
+      },
+      {
+        "source_url": "https://horsemenspride.com/policies/terms-of-service",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "This website is operated by Horsemen's Pride.",
+        "raw_sha256": "759afb81740248309c05c734e9f7a139470c5a326c41bcd4dfbb3d8d9608d1e8",
+        "receipt_id": "ORG-001829-4",
+        "role": "brand terms, not HP Enterprise legal bridge",
+        "endpoints": [],
+        "integrator_raw_status": "UNCONFIRMED",
+        "integrator_raw_sha256": "b043ff7e702e560132d06c856c83a6c12ab48740f78e2c1de6ea69da31de3e34"
+      },
+      {
+        "source_url": "https://www.tuscoproducts.com/policies/terms-of-service",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "This website is operated by Tusco Products.",
+        "raw_sha256": "d031f7d4049b8485fa6f8aa2c30f0b6dc7d1c4972a1342df8eaa1f143ead93a6",
+        "receipt_id": "ORG-001646-5",
+        "role": "brand terms, not common legal operator",
+        "endpoints": [],
+        "integrator_raw_status": "UNCONFIRMED",
+        "integrator_raw_sha256": "bbfa0d17f758675fdc8bd899410bfd16daf0e53e334c9978ea5550a7614da344"
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D08",
+    "record_table": "sites",
+    "a_id": "SITE-001924",
+    "b_id": "SITE-001717",
+    "description": "IT Plastics/Overmold",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "IT Plastics and Overmold Express own pages both identify 7675 Jenther Drive. Overmold names its founder but no retrieved dated primary source states legal DBA/acquisition identity with Industrial Thermoset Plastics.",
+    "settling_fact": "Dated primary legal-name/DBA, merger or operator-continuity document explicitly connecting Industrial Thermoset Plastics and Overmold Express at this establishment, and whether simultaneous units or time-separated operators.",
+    "recommendation": "Retain both records and flag identity question. Same address and matching capabilities do not establish duplicate.",
+    "evidence": [
+      {
+        "source_url": "http://www.itplastics.com/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "7675 Jenther Dr Mentor, Ohio",
+        "raw_sha256": "1eebc6846e0a0c0f3f981aa732d659a3c124fee7cdbba701339749f99f61b84e",
+        "receipt_id": "ORG-001930-1",
+        "role": "endpoint A address",
+        "endpoints": [
+          "SITE-001924"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "1eebc6846e0a0c0f3f981aa732d659a3c124fee7cdbba701339749f99f61b84e"
+      },
+      {
+        "source_url": "https://overmoldexpress.com/about/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "7675 Jenther Dr, Mentor, OH 44060",
+        "raw_sha256": "bf3d7d454b960457c04c5be80e399bc4cc9cae0b717ef3e98a304852a5b806bc",
+        "receipt_id": "ORG-001643-3",
+        "role": "endpoint B address",
+        "endpoints": [
+          "SITE-001717"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "bf3d7d454b960457c04c5be80e399bc4cc9cae0b717ef3e98a304852a5b806bc"
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D09",
+    "record_table": "sites",
+    "a_id": "SITE-002301",
+    "b_id": "SITE-002302",
+    "description": "Esstech overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Esstech own current pages name Esstech Inc at 48 Powhattan Ave. Esschem own history calls Esstech an affiliate. This does not date or legally resolve legacy Esstech Division Of Esschem Co versus Esstech Inc at one establishment. The held org tombstone is not independent site-duplicate proof.",
+    "settling_fact": "Dated primary record explicitly establishing the legal continuity or DBA between legacy Esstech Division Of Esschem Co and Esstech Inc, plus same establishment rather than an historic operator succession.",
+    "recommendation": "Retain both sites pending legal/establishment witness. Do not use prior merged-org successor as merge evidence.",
+    "evidence": [
+      {
+        "source_url": "https://www.esstechinc.com/contact-us/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "48 Powhattan Ave Essington, PA 19029-0039",
+        "raw_sha256": "d8bca1a2c4ce18a3b8c8b224548e1a32860391cd1b2d1fbd96b2d2d100273997",
+        "receipt_id": "ORG-002324-3",
+        "role": "current endpoint B address; not legacy legal bridge",
+        "endpoints": [
+          "SITE-002302"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "50fa0d396e6162fa7f8d4e23b5f69a0054d8e450e32c40a4f7d412ffc32a3642"
+      },
+      {
+        "source_url": "https://www.esschem.com/about-us/",
+        "source_class": "press",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "With our affiliates, Esstech, Esschem Europe and EssPac",
+        "raw_sha256": "3c6dbd92af5c379897bebb7b8a2668421494b45c299f7dfce4c1c18f29caf0a9",
+        "receipt_id": "ORG-002324-4",
+        "role": "affiliate context, not legal identity",
+        "endpoints": [],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "3c6dbd92af5c379897bebb7b8a2668421494b45c299f7dfce4c1c18f29caf0a9",
+        "attribution_note": "Unrecorded group/affiliate issuer; contextual witness only, no own_site/tier_A implication (B-PARENT)."
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D10",
+    "record_table": "sites",
+    "a_id": "SITE-002364",
+    "b_id": "SITE-002304",
+    "description": "APT overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Own APT route blocked; Sunbiz and OSHA routes blocked; two IPOPHL attempts returned empty HTTP200. Indexed official recordal lead suggests Harmony-to-Evans City address change, but no inspectable dated raw bridge retrieved. Existing merged organization and same109 Conica address are not sufficient site-duplicate proof.",
+    "settling_fact": "Inspectable dated primary legal record naming APT Advanced Polymer Technology Corp at both Harmony and Evans City109 Conica addresses, plus explicit establishment continuity/address correction rather than relocation or separate premises.",
+    "recommendation": "Hold both sites; no rekey or merge. No additional fetch to rescue yield: actual6 attempts exceeded helper5 through cache-name collision; one body uninspectable.",
+    "evidence": [],
+    "discovery_leads": [
+      {
+        "url": "https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+        "note": "Indexed recordal dated2023-05-05 describes applicant Harmony and registrant Evans City; raw empty, not admitted evidence"
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D11",
+    "record_table": "sites",
+    "a_id": "SITE-003477",
+    "b_id": "SITE-001399",
+    "description": "Johnsonite/Tarkett Middlefield legacy/current overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Dated Ohio EPA permit row names Tarkett USA Inc at Middlefield16035 Industrial Pkwy; legacy held endpoint is attributed to Tarkett North America. No dated typed legal identity/DBA bridge between these organizations was retrieved. Shared Tarkett brand/address alone does not resolve same legal operator.",
+    "settling_fact": "Dated legal/DBA/operator-continuity witness connecting Tarkett USA Inc dba Johnsonite and held Tarkett North America to the exact16035 Industrial Pkwy establishment, without assuming group identity.",
+    "recommendation": "Retain both Middlefield records; flag potential duplicate pending legal bridge. No physical closure or org rekey.",
+    "evidence": [
+      {
+        "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+        "source_class": "government_filing",
+        "source_date": "2024-08-27",
+        "date_basis": "permit row date",
+        "retrieved_date": "2026-11-06",
+        "quote": "Tarkett USA, Inc. || 16035 Industrial || 8/27/2024",
+        "raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0",
+        "receipt_id": "ORG-000131-1",
+        "role": "Middlefield permit, not rename or legal alias",
+        "endpoints": [
+          "SITE-003477",
+          "SITE-001399"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0"
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  },
+  {
+    "pair_id": "D12",
+    "record_table": "sites",
+    "a_id": "SITE-003478",
+    "b_id": "SITE-000427",
+    "description": "Johnsonite/Tarkett Chagrin Falls legacy/current overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Ohio EPA dated2017-03-01 row names JOHNSONITE at16910 Munn Road Chagrin Falls. No dated typed legal bridge from Tarkett USA Inc dba Johnsonite to Tarkett North America was retrieved. Same brand/address is insufficient for legal identity.",
+    "settling_fact": "Dated primary operator/legal continuity tying both held organization attributions to the exact16910 Munn Road establishment; retain distinction from Middlefield and17340 Munn Road.",
+    "recommendation": "Retain both Chagrin Falls records; flag potential duplicate pending exact legal bridge. Do not infer closure or merge the separate Middlefield plant.",
+    "evidence": [
+      {
+        "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+        "source_class": "government_filing",
+        "source_date": "2017-03-01",
+        "date_basis": "permit row date",
+        "retrieved_date": "2026-11-06",
+        "quote": "JOHNSONITE 16910 MUNN RD || 3/1/2017",
+        "raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0",
+        "receipt_id": "ORG-000131-1",
+        "role": "Chagrin Falls permit, not rename or legal alias",
+        "endpoints": [
+          "SITE-003478",
+          "SITE-000427"
+        ],
+        "integrator_raw_status": "PASS",
+        "integrator_raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0"
+      }
+    ],
+    "canonical_effect": "NONE: packet-only links/flags; no notes, merge, status, evidence or registry mutation"
+  }
+]

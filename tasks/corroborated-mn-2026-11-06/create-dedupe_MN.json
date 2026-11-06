@@ -1,0 +1,1197 @@
+{
+  "LF-MN-00033": {
+    "query": {
+      "domain": null,
+      "name": "American Converters, Inc.",
+      "street": "5360 Main St NE",
+      "city": "Fridley",
+      "state": "MN",
+      "zip": "55421"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004926",
+            "name": "American Converters",
+            "city": "Longmont",
+            "state": "CO",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_CO.csv",
+            "match": "name key 'american converters' = legal_name 'American Converters'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012619",
+            "name": "American Converters - Fridley",
+            "org_id": "ORG-004926",
+            "city": "Fridley",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "5360 Main St NE",
+            "operator": "American Converters",
+            "match": "street key '5360 main st ne'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MN-00069": {
+    "query": {
+      "domain": null,
+      "name": "Carpenter Co.",
+      "street": "2510 Y.H. Hanson Avenue",
+      "city": "Albert Lea",
+      "state": "MN",
+      "zip": "56007"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002484",
+            "name": "Carpenter Co. Incorporated",
+            "city": "Lititz",
+            "state": "PA",
+            "status": "merged",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "name key 'carpenter' = legal_name 'Carpenter Co. Incorporated'",
+            "successor_chain": [
+              "ORG-002348"
+            ],
+            "successor_end": "terminal",
+            "successor_terminal": "ORG-002348 Carpenter Co. [active]"
+          },
+          {
+            "id": "ORG-002348",
+            "name": "Carpenter Co.",
+            "city": "Richmond",
+            "state": "VA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_VA.csv",
+            "match": "name key 'carpenter' = legal_name 'Carpenter Co.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012620",
+            "name": "Carpenter Co. - Albert Lea",
+            "org_id": "ORG-002348",
+            "city": "Albert Lea",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "2510 Y.H. Hanson Avenue",
+            "operator": "Carpenter Co.",
+            "match": "street key '2510 y h hanson ave'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MN-00484": {
+    "query": {
+      "domain": "https://www.plasticproductsco.com",
+      "name": "Plastic Products Co., Inc.",
+      "street": "610 County Road 18 So.",
+      "city": "Princeton",
+      "state": "MN",
+      "zip": "55371"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007732",
+            "name": "Plastic Products Company, Inc.",
+            "city": "Lindstrom",
+            "state": "MN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MN.csv",
+            "match": "domain exact: plasticproductsco.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007732",
+            "name": "Plastic Products Company, Inc.",
+            "city": "Lindstrom",
+            "state": "MN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MN.csv",
+            "match": "name key 'plastic products' = legal_name 'Plastic Products Company, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012668",
+            "name": "Plastic Products Company, Inc. - Princeton",
+            "org_id": "ORG-007732",
+            "city": "Princeton",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "610 County Road 18 So.",
+            "operator": "Plastic Products Company, Inc.",
+            "match": "street key '610 county rd 18 so'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002208",
+            "name": "Green Garden Products Company LLC",
+            "city": "Bedford",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002244",
+            "name": "Miller Plastic Products, Inc.",
+            "city": "Burgettstown",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002267",
+            "name": "Entech Plastics Inc.",
+            "city": "Corry",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002273",
+            "name": "Poly Plastic Products Inc.",
+            "city": "Delano",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002424",
+            "name": "Sap Manufacturing LLC",
+            "city": "Jefferson Township",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002455",
+            "name": "Kendik Rubber & Plastic Products Co. Inc.",
+            "city": "Lansdale",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002561",
+            "name": "Key-Link Fencing & Railing, Inc.",
+            "city": "New Holland",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002562",
+            "name": "Superior Plastic Products, Inc.",
+            "city": "New Holland",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002564",
+            "name": "Pittsburgh Technologies Group Inc.",
+            "city": "New Kensington",
+            "state": "PA",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002652",
+            "name": "M & Q Plastic Products Corporation",
+            "city": "Schuylkill Haven",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-003619",
+            "name": "Seelye-Eiler Plastics",
+            "city": "Bloomington",
+            "state": "MN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MN.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-007215",
+            "name": "Proske Plastic Products, Inc.",
+            "city": "Houston",
+            "state": "TX",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_TX.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-003339",
+            "name": "Orenco Systems, Inc.",
+            "city": "Sutherlin",
+            "state": "OR",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OR.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-007015",
+            "name": "Wright Plastic Products Co., LLC",
+            "city": "Sheridan",
+            "state": "MI",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MI.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-007066",
+            "name": "Wright Plastic Products Co. L.L.C.",
+            "city": "Sheridan",
+            "state": "MI",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MI.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-007124",
+            "name": "Wisconsin Plastic Products, Inc.",
+            "city": "Plymouth",
+            "state": "WI",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_WI.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-006169",
+            "name": "Acw Plastic Products, Inc.",
+            "city": "Concord",
+            "state": "NH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NH.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-003594",
+            "name": "Colorado Plastic Products",
+            "city": "Louisville",
+            "state": "CO",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_CO.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-000468",
+            "name": "North American Seal & Supply, Inc.",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-000781",
+            "name": "Commercial Vehicle Group, Inc.",
+            "city": "New Albany",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-000819",
+            "name": "Haviland Plastic Products Co.",
+            "city": "Haviland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "trade_names contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-000966",
+            "name": "Mondo Polymer Technologies, Inc.",
+            "city": "Reno",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001018",
+            "name": "Pinnacle Plastic Products",
+            "city": "Bowling Green",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "trade_names contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001171",
+            "name": "Uni-Grip, Inc.",
+            "city": "Upper Sandusky",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001379",
+            "name": "Elyria Plastic Products",
+            "city": "Elyria",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001424",
+            "name": "Dometic Sanitation Corporation",
+            "city": "Big Prairie",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001568",
+            "name": "Findlay Machine & Tool, LLC",
+            "city": "Findlay",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001736",
+            "name": "Miami Valley Plastics, Inc.",
+            "city": "Eldorado",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001770",
+            "name": "Advanced Rubber & Plastics Company Incorporated",
+            "city": "Perrysburg",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001786",
+            "name": "Chuoh of America Inc",
+            "city": "Tipp City",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001866",
+            "name": "Plastic Works Inc.",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-001909",
+            "name": "TSR Inc",
+            "city": "Strongsville",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002026",
+            "name": "Tronplas Inc",
+            "city": "Findlay",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002055",
+            "name": "Neo Industries Inc",
+            "city": "Conneaut",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002149",
+            "name": "Berry Global - Streetsboro, OH",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-002918",
+            "name": "Thermo Fisher Scientific Inc.",
+            "city": "Waltham",
+            "state": "MA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_MA.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-009013",
+            "name": "KOLLER-CRAFT PLASTIC PRODUCTS",
+            "city": "",
+            "state": "",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_US.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-005017",
+            "name": "Western Industries Plastic Products LLC",
+            "city": "Winfield",
+            "state": "KS",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_KS.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-006128",
+            "name": "Foremost Plastic Products Company, Inc.",
+            "city": "Elmwood Park",
+            "state": "IL",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_IL.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-003650",
+            "name": "Jeco Plastic Products LLC",
+            "city": "Plainfield",
+            "state": "IN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IN.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          },
+          {
+            "id": "ORG-003662",
+            "name": "Park Plastic Products",
+            "city": "Fort Wayne",
+            "state": "IN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IN.csv",
+            "match": "notes contains 'Plastic Products Co., Inc.'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-MN-00499": {
+    "query": {
+      "domain": "https://oatey.com",
+      "name": "Oatey Company",
+      "street": "2300 Vierling Drive West",
+      "city": "Shakopee",
+      "state": "MN",
+      "zip": "55379"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000133",
+            "name": "Oatey Co.",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: oatey.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000133",
+            "name": "Oatey Co.",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "name key 'oatey' = legal_name 'Oatey Co.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012669",
+            "name": "Oatey Co. - Shakopee",
+            "org_id": "ORG-000133",
+            "city": "Shakopee",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "2300 Vierling Drive West",
+            "operator": "Oatey Co.",
+            "match": "street key '2300 vierling dr w'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MN-00507": {
+    "query": {
+      "domain": "https://www.morrispkg.com/",
+      "name": "Morris Packaging",
+      "street": "17100 Medina Rd,",
+      "city": "Plymouth",
+      "state": "MN",
+      "zip": "55447"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003553",
+            "name": "Morris Packaging LLC",
+            "city": "Bloomington",
+            "state": "IL",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IL.csv",
+            "match": "domain exact: morrispkg.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003553",
+            "name": "Morris Packaging LLC",
+            "city": "Bloomington",
+            "state": "IL",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IL.csv",
+            "match": "name key 'morris packaging' = legal_name 'Morris Packaging LLC'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012670",
+            "name": "Morris Packaging LLC - Plymouth",
+            "org_id": "ORG-003553",
+            "city": "Plymouth",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "17100 Medina Rd,",
+            "operator": "Morris Packaging LLC",
+            "match": "street key '17100 medina rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MN-00516": {
+    "query": {
+      "domain": "https://www.amcor.com",
+      "name": "Amcor",
+      "street": "1301 3rd Ave",
+      "city": "Mankato",
+      "state": "MN",
+      "zip": "56001"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000665",
+            "name": "Amcor Flexibles North America, Inc.",
+            "city": "Bellevue",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: amcor.com"
+          },
+          {
+            "id": "ORG-002907",
+            "name": "Amcor plc",
+            "city": "Bristol",
+            "state": "",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_INTL.csv",
+            "match": "domain exact: amcor.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002907",
+            "name": "Amcor plc",
+            "city": "Bristol",
+            "state": "",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_INTL.csv",
+            "match": "name key 'amcor' = trade_names 'Amcor'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012671",
+            "name": "Amcor plc - Mankato",
+            "org_id": "ORG-002907",
+            "city": "Mankato",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "1301 3rd Ave",
+            "operator": "Amcor plc",
+            "match": "street key '1301 3 ave'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000665",
+            "name": "Amcor Flexibles North America, Inc.",
+            "city": "Bellevue",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "trade_names contains 'Amcor'"
+          },
+          {
+            "id": "ORG-002149",
+            "name": "Berry Global - Streetsboro, OH",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Amcor'"
+          },
+          {
+            "id": "ORG-002544",
+            "name": "Berry Global",
+            "city": "Evansville",
+            "state": "IN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IN.csv",
+            "match": "notes contains 'Amcor'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-MN-00506": {
+    "query": {
+      "domain": null,
+      "name": "Revolution Sustainable Solutions LLC",
+      "street": "5301 Hadley Ave N",
+      "city": "Oakdale",
+      "state": "MN",
+      "zip": "55128"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003819",
+            "name": "Revolution Sustainable Solutions, LLC",
+            "city": "Little Rock",
+            "state": "AR",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_AR.csv",
+            "match": "name key 'revolution sustainable solutions' = legal_name 'Revolution Sustainable Solutions, LLC'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012682",
+            "name": "Revolution Sustainable Solutions, LLC - Oakdale",
+            "org_id": "ORG-003819",
+            "city": "Oakdale",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "5301 Hadley Ave N",
+            "operator": "Revolution Sustainable Solutions, LLC",
+            "match": "street key '5301 hadley ave n'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MN-00481": {
+    "query": {
+      "domain": "https://www.toplastics.com",
+      "name": "T.O. Plastics, Inc.",
+      "street": "6035 Queens Ave NE",
+      "city": "Otsego",
+      "state": "MN",
+      "zip": "55330"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007729",
+            "name": "T.O. Plastics, Inc.",
+            "city": "Clearwater",
+            "state": "MN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MN.csv",
+            "match": "domain exact: toplastics.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007729",
+            "name": "T.O. Plastics, Inc.",
+            "city": "Clearwater",
+            "state": "MN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MN.csv",
+            "match": "name key 't o plastics' = legal_name 'T.O. Plastics, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012700",
+            "name": "T.O. Plastics, Inc. - Otsego",
+            "org_id": "ORG-007729",
+            "city": "Otsego",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "6035 Queens Ave NE",
+            "operator": "T.O. Plastics, Inc.",
+            "match": "street key '6035 queens ave ne'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MN-00529": {
+    "query": {
+      "domain": "https://www.tankholding.com/category/news/",
+      "name": "Tank Holding Corp",
+      "street": "860 Johnson Dr",
+      "city": "Delano",
+      "state": "MN",
+      "zip": "55328"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003687",
+            "name": "Tank Holding Corp.",
+            "city": "St. Bonifacius",
+            "state": "MN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_MN.csv",
+            "match": "domain exact: tankholding.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003687",
+            "name": "Tank Holding Corp.",
+            "city": "St. Bonifacius",
+            "state": "MN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_MN.csv",
+            "match": "name key 'tank holding' = legal_name 'Tank Holding Corp.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012706",
+            "name": "Tank Holding Corp. - Delano",
+            "org_id": "ORG-003687",
+            "city": "Delano",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "860 Johnson Dr",
+            "operator": "Tank Holding Corp.",
+            "match": "street key '860 johnson dr'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007210",
+            "name": "Enduraplas, LLC",
+            "city": "Converse",
+            "state": "TX",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_TX.csv",
+            "match": "notes contains 'Tank Holding Corp'"
+          },
+          {
+            "id": "ORG-003635",
+            "name": "Chem-Tainer Industries Inc.",
+            "city": "West Babylon",
+            "state": "NY",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NY.csv",
+            "match": "notes contains 'Tank Holding Corp'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-MN-00367": {
+    "query": {
+      "domain": "https://www.adspipe.com/",
+      "name": "Advanced Drainage Systems",
+      "street": "1001 Timberlake Road",
+      "city": "Fairmont",
+      "state": "MN",
+      "zip": "56031"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000651",
+            "name": "Advanced Drainage Systems, Inc.",
+            "city": "Hilliard",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: adspipe.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000651",
+            "name": "Advanced Drainage Systems, Inc.",
+            "city": "Hilliard",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'advanced drainage systems' = legal_name 'Advanced Drainage Systems, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012714",
+            "name": "Advanced Drainage Systems, Inc. - Fairmont",
+            "org_id": "ORG-000651",
+            "city": "Fairmont",
+            "state": "MN",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MN.csv",
+            "street": "1001 Timberlake Road",
+            "operator": "Advanced Drainage Systems, Inc.",
+            "match": "street key '1001 timberlake rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+}

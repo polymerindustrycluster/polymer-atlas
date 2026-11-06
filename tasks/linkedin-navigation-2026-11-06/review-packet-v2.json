@@ -1,0 +1,158 @@
+{
+  "schema_version": 2,
+  "scope": "L14 own-site LinkedIn navigation only:345 blank org cells,40shards; exact public header/footer anchors. Never request LinkedIn, zeroEVD/IDs/otherfields.",
+  "criteria": [
+    "All2061frozenorg outcomes,1299Tier1firstthen762otherPIC18;1708eligibleownURLcensus;345freshrawPASS,1716holds with named settling facts",
+    "Exactlegal/tradename slug binding+uniquehelddomain prevents parent/brand substitutions; V58companyURL normalization;no personal/share/body-only links",
+    "Direct/redirectLinkedIn hardblocked before subprocess request; all source chains own-only; no evidence or monitoring use",
+    "Canonicalall-data projection345cells only, allotherbytes/keys/fields preserved;byte replay,4zero-writecontrols,validator0/rowloss;known3+raw-negative/sourceboundarytests"
+  ],
+  "out_of_scope": [
+    "LinkedIn destination reading/verification (explicitly forbidden)",
+    "JS-only/footer browser rendering or nationwide complete org census",
+    "Owner/parent/alias rulings and evidence/tier/website edits",
+    "Hosted deployment/usage claims"
+  ],
+  "revision": "4d9757e5cc2df65a409abd13949d4ad6bf2856ac",
+  "tool_access": "Complete branch/PR/source packet; raw HTML only uncommittedbuild/linkedin-navigation/raw, may independently fetch own source websites only. No LinkedIn requests. No edits or merge.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "b3657de77035bf2c227d917085538e9442e5a675b2dcda9feaf688ddbc4d637e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3c763371d1edc4f51e759db4131eedbfcdba216ea95097c6f3e6cebe4b414f45"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "42d81c60e147bf3c25dea7ad03b9fb08ec1727d1dc0e98c2b1445f7133e518cc"
+    },
+    {
+      "path": "application.txt",
+      "sha256": "461cab55c8491e28f2c4d334611c8492806645ef999d9dd1598b1cc6c905db17"
+    },
+    {
+      "path": "base.txt",
+      "sha256": "cf8ba5291c46d9623383f45e619c29fa10f28ac9b8db5849bf67aa4bb250530d"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "20d5274dfde583d707b3f4bfc369470ba00dbb9b9675619a2cdd84039bf59ad6"
+    },
+    {
+      "path": "build.py",
+      "sha256": "852423f0f07e80539ef6e7d256d99ed3104d33d85b94395aa55e59a3b6d2e7a6"
+    },
+    {
+      "path": "check.py",
+      "sha256": "0ccbc1766e95f41fc7e91e1eb0ad37c18f0a60407e239736a0fe799960977d51"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "2e28766a8d166805077648c4623a9f77dd6dcec1014688033b52427587bfca2d"
+    },
+    {
+      "path": "classify.py",
+      "sha256": "7488609c20a4de823b28f427af2776941825b31148cd67380af330a47850f84d"
+    },
+    {
+      "path": "discover.py",
+      "sha256": "2cf29f83526507f8b3ba07a9b81a1a83b02665b6365bf0d7c5ce2fec7519d536"
+    },
+    {
+      "path": "discovery.json",
+      "sha256": "64328aac1cc74e4a441f6abb15cfe505c0ef60d58b7d239a6d38a5d3d3733d90"
+    },
+    {
+      "path": "frame-base.txt",
+      "sha256": "955c5d51cbef4682702806a374f7b7b628911f918b111455d4407d1a4be19f49"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "63a262a613ccbc12b66382d41ab8e901eb82881db3cb94c55c58c98eab49de52"
+    },
+    {
+      "path": "known-answers.json",
+      "sha256": "a5da0238fe9f42fc0cbf4725a3f243262833784193597b5c1c780f34edee4e75"
+    },
+    {
+      "path": "proposals.csv",
+      "sha256": "7b59b40d635d5e5ca3f348b9c1f868f7727c1554d5037657faca944c2c121580"
+    },
+    {
+      "path": "raw-outcomes.csv",
+      "sha256": "ccda9e3cae6d7a607ebabbfc4e5cbbb9b73c9068803ad4317f7ec1729afec763"
+    },
+    {
+      "path": "raw-requests.json",
+      "sha256": "3c7977035cba5ca6a891f691001f540587b85feeafb7e4613fb9372e076b0fb9"
+    },
+    {
+      "path": "rawcheck-log.txt",
+      "sha256": "53785f8442fc6dab77ed20c3cbec48a374af73b36fe6cda7b6c0679fca6aba1d"
+    },
+    {
+      "path": "rawcheck.csv",
+      "sha256": "ccda9e3cae6d7a607ebabbfc4e5cbbb9b73c9068803ad4317f7ec1729afec763"
+    },
+    {
+      "path": "rawcheck.py",
+      "sha256": "97a56c1907741870db4177e8e9190a7195fe9711cd8760228b191b1accf5ff77"
+    },
+    {
+      "path": "row-loss.txt",
+      "sha256": "f842c3b1aa06df2683d1f0b3adea8e47264407bbbe33b9958ec043b717196982"
+    },
+    {
+      "path": "self-check.txt",
+      "sha256": "a71b227bbc9062d6b68d02798b9637299138fdf8be8145514597c7fd88c88d4c"
+    },
+    {
+      "path": "self_check.py",
+      "sha256": "bf9757740323346a201886fb333c7c8e4a087e8fc52b528fdf29f6c5c617da8a"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "fce13a0b3197910aa115a7807489a769f89e0d33bb6ec90b299dae114db68ed7"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "14362f151b216101730ad8aee85dcba68eb54bd5c9f11702f0cc70350532c2be"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "python3 scripts/check_row_loss.py --base origin/main",
+      "outcome": "pass",
+      "evidence": "row-loss.txt"
+    },
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/rawcheck.py",
+      "outcome": "pass",
+      "evidence": "rawcheck-log.txt"
+    },
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/self_check.py",
+      "outcome": "pass",
+      "evidence": "self-check.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}

@@ -1,0 +1,952 @@
+[
+  {
+    "lead_ids": [
+      "L13B-001"
+    ],
+    "url": "https://www.aiche.org/ili/academy/aiche-academy-course-offerings",
+    "final_url": "https://www.aiche.org/ili/academy/aiche-academy-course-offerings",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5519,
+    "sha256": "0e2cace69dddb6c752a79eb064f0e548654003b5073d66eafb1d86edb2b404f7",
+    "cache_key": "1f7be7c0010a5c7e"
+  },
+  {
+    "lead_ids": [
+      "L13B-002"
+    ],
+    "url": "https://www.asumh.edu/",
+    "final_url": "https://asumh.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 135918,
+    "sha256": "fd4b66388c1c8f8a416611cb81095665c12fe0c0436c9f92788a0406db337414",
+    "cache_key": "632b802c0606cd39"
+  },
+  {
+    "lead_ids": [
+      "L13B-003",
+      "L13B-004"
+    ],
+    "url": "https://ashland.kctcs.edu/",
+    "final_url": "https://ashland.kctcs.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 140965,
+    "sha256": "e0eb3edc9bc0a09ad5dd57b787e7032d2f96988fa6bfc9384d0e43deb98d70c0",
+    "cache_key": "ac659b74671ceba0"
+  },
+  {
+    "lead_ids": [
+      "L13B-005"
+    ],
+    "url": "https://www.baylor.edu/",
+    "final_url": "https://www.baylor.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 448839,
+    "sha256": "02655b5b4b2ceb5e29361ba350c1292093c5733e9989a693eeeaef9fe067e8ff",
+    "cache_key": "3956eaef175013a9"
+  },
+  {
+    "lead_ids": [
+      "L13B-006",
+      "L13B-056"
+    ],
+    "url": "https://www.beaumontinc.com/education/",
+    "final_url": "https://www.beaumontinc.com/education/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 109526,
+    "sha256": "d9eadd1ed9f4a284735672c55086a667f7b2864a699d05bfddfd1cd0bf7beb0a",
+    "cache_key": "00008bdc83496e63"
+  },
+  {
+    "lead_ids": [
+      "L13B-007",
+      "L13B-008"
+    ],
+    "url": "https://bigsandy.kctcs.edu/",
+    "final_url": "https://bigsandy.kctcs.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 144591,
+    "sha256": "5742eff798379476b90dc028018e9ec14c1764f00f3f84d3918fa0b1724799be",
+    "cache_key": "47eb0d77c4c845af"
+  },
+  {
+    "lead_ids": [
+      "L13B-009"
+    ],
+    "url": "https://www.davistech.edu/",
+    "final_url": "https://www.davistech.edu/",
+    "http_status": "000",
+    "curl_rc": 6,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "1bac59cc32a7a01d"
+  },
+  {
+    "lead_ids": [
+      "L13B-010"
+    ],
+    "url": "https://www.depaul.edu/",
+    "final_url": "https://www.depaul.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 243226,
+    "sha256": "7ef6577aa34270cd419215d66dc064c6451ae232c3db58489e3ca77243c065fa",
+    "cache_key": "a1b7b0da013b1182"
+  },
+  {
+    "lead_ids": [
+      "L13B-011",
+      "L13B-082"
+    ],
+    "url": "https://www.elgin.edu/",
+    "final_url": "https://elgin.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 75961,
+    "sha256": "b35ce5b63ef8577bc306f18833c8d6ac95332fef098980a8885d6e2efbceef0f",
+    "cache_key": "3a6c7ad353494709",
+    "shared_institution_route_note": "Same Elgin institution; grant-only lead082 shares own homepage route with CIP lead011."
+  },
+  {
+    "lead_ids": [
+      "L13B-012"
+    ],
+    "url": "https://www.escc.edu/",
+    "final_url": "https://escc.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 173569,
+    "sha256": "54de3b8d3395580bec667f8ab5e79ea4066680ff9822b0a4604c1fe1e8c900f6",
+    "cache_key": "3dadea21e94fb205"
+  },
+  {
+    "lead_ids": [
+      "L13B-013",
+      "L13B-083"
+    ],
+    "url": "https://www.ferris.edu",
+    "final_url": "https://www.ferris.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 62229,
+    "sha256": "f7891a96dd03b1cc29938bc4db75767fe3537bb3216a116073f7009172e93c9a",
+    "cache_key": "c5dcfa323457b3a5"
+  },
+  {
+    "lead_ids": [
+      "L13B-014",
+      "L13B-015"
+    ],
+    "url": "https://gateway.kctcs.edu/index.aspx",
+    "final_url": "https://gateway.kctcs.edu/index.aspx",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 145001,
+    "sha256": "c630522e0b511457dfbe46c0b12eca5cf6a68641c6d067d00f3b45e64d96460a",
+    "cache_key": "c5af6af66f090bde"
+  },
+  {
+    "lead_ids": [
+      "L13B-016"
+    ],
+    "url": "https://www.gwu.edu/",
+    "final_url": "https://www.gwu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 114611,
+    "sha256": "5d10304316ded53f8aa514e88c24542b2f1f0b45fe0e41997ba411e504e96103",
+    "cache_key": "347c08cab40becb9"
+  },
+  {
+    "lead_ids": [
+      "L13B-017"
+    ],
+    "url": "https://www.uga.edu/",
+    "final_url": "https://www.uga.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 3417,
+    "sha256": "6d8c542bf5356de206ab756a91ff19df3fab8036c7ac95dc95bced4541d2213e",
+    "cache_key": "0807f6aa51da596a"
+  },
+  {
+    "lead_ids": [
+      "L13B-018"
+    ],
+    "url": "https://grcc.edu/workforcetraining/michigancoalitionforadvancedmanufacturingmcam",
+    "final_url": "https://www.grcc.edu/schools-departments/school-workforce-training",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 247896,
+    "sha256": "0a8e5927cf1fcbfee0c52927ef0b344cf3b8336c6cb62ec36ff3a9814662209f",
+    "cache_key": "7eafbf5cace5af1c"
+  },
+  {
+    "lead_ids": [
+      "L13B-019"
+    ],
+    "url": "https://catalog.ivytech.edu/preview_course_nopop.php?catoid=1&coid=1887",
+    "final_url": "https://catalog.ivytech.edu/preview_course_nopop.php?catoid=1&coid=1887",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 140719,
+    "sha256": "1fe1c00b88add8cfb645b26aa18a94a328ab0898e2d41f72d03feae48c1b8fa0",
+    "cache_key": "33ab9f9f92bfd124"
+  },
+  {
+    "lead_ids": [
+      "L13B-020"
+    ],
+    "url": "https://www.macomb.edu/resources/programs/attachments/Applied-Technology-Plastic-Process-Technician.pdf",
+    "final_url": "https://www.macomb.edu/resources/programs/attachments/Applied-Technology-Plastic-Process-Technician.pdf",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 676065,
+    "sha256": "3359dfcf35f4ede9b24d02a9185971bcd9283a825c0cdfe9d1f3e782adba6b73",
+    "cache_key": "51abdae68cd109b9"
+  },
+  {
+    "lead_ids": [
+      "L13B-021"
+    ],
+    "url": "https://www.northwoodtech.edu/academic-programs/degree-programs-and-certificates/injection-mold-set-up-plastic-apprentice/",
+    "final_url": "https://www.northwoodtech.edu/academic-programs/degree-programs-and-certificates/injection-mold-set-up-plastic-apprentice/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5762,
+    "sha256": "e23428954d33cc9c48558f23e2ba92deee3c22e8e34d51499c8931450d2048f5",
+    "cache_key": "1588abe3ee217001"
+  },
+  {
+    "lead_ids": [
+      "L13B-022"
+    ],
+    "url": "https://www.otech.edu/",
+    "final_url": "https://www.otech.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 1005367,
+    "sha256": "76aa356d93e7a9d40cd7f01477206b98d82badc91d7977f11777e8ad4e49cc4c",
+    "cache_key": "ae7ee575dd4cf0c9"
+  },
+  {
+    "lead_ids": [
+      "L13B-024"
+    ],
+    "url": "https://paulsontraining.com/paulsonuniversity-online-training/",
+    "final_url": "https://paulsontraining.com/paulsonuniversity-online-training/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 175432,
+    "sha256": "5eccedf5395c512027c3298679c4fd3a80bc63332ad18f67018c97dbc5fde098",
+    "cache_key": "dc186f0fd8624742"
+  },
+  {
+    "lead_ids": [
+      "L13B-025"
+    ],
+    "url": "https://www.paulsonplasticsacademy.com/promolder-1/",
+    "final_url": "https://www.paulsonplasticsacademy.com/promolder-1/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 50879,
+    "sha256": "4aa0c5d0919233ba77e487a145fdc9f7caee4b24c8ef03c3c462ad7bdd2438dd",
+    "cache_key": "5084679e55fac1c5"
+  },
+  {
+    "lead_ids": [
+      "L13B-027"
+    ],
+    "url": "https://www.myptc.edu/",
+    "final_url": "https://www.myptc.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 71426,
+    "sha256": "f9d7dfdef22c7eb361b9eb0e5393343cd124678357a4ad830c9e288dde5cbcfd",
+    "cache_key": "898a93f7c486c7b1"
+  },
+  {
+    "lead_ids": [
+      "L13B-028"
+    ],
+    "url": "https://plastics.institute/training",
+    "final_url": "https://plastics.institute/training",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 1740757,
+    "sha256": "e0205f3fd56b4dd81aae763aa4a24d7545b985a6bb5d2df018daf6a37d8acf10",
+    "cache_key": "26189f475f624bd9"
+  },
+  {
+    "lead_ids": [
+      "L13B-030"
+    ],
+    "url": "https://www.sampeamerica.org/conference/tutorials",
+    "final_url": "https://www.sampeamerica.org/conference/tutorials",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 968245,
+    "sha256": "ca46bfd8b223dc5aeb42d6b769ed48c7c0e8ac7761641032e4d3dcc006cac1c8",
+    "cache_key": "126e27a8cb078b6d"
+  },
+  {
+    "lead_ids": [
+      "L13B-031"
+    ],
+    "url": "https://paulsontraining.com/spe-paulson-training-and-penn-college-of-technology-announce-new-alliance/",
+    "final_url": "https://paulsontraining.com/spe-paulson-training-and-penn-college-of-technology-announce-new-alliance/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 280819,
+    "sha256": "e816d9742524c261c54c7db6b76f49bcd49094e86ce60d85a8a64dd7836b2193",
+    "cache_key": "3881ec8d81caf237"
+  },
+  {
+    "lead_ids": [
+      "L13B-032",
+      "L13B-033"
+    ],
+    "url": "https://somerset.kctcs.edu/",
+    "final_url": "https://somerset.kctcs.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 139501,
+    "sha256": "a4f2513b07dc1121ebb341564845e30ae630a9e8f39e57d9049edd60e4dfb41c",
+    "cache_key": "685d183efb9db4c9"
+  },
+  {
+    "lead_ids": [
+      "L13B-034"
+    ],
+    "url": "https://www.smccme.edu/",
+    "final_url": "https://www.smccme.edu/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5668,
+    "sha256": "2e974d6bfe7e00d0460375f55c0107ac735cedfa9bd78592895f83e980ce9b00",
+    "cache_key": "892785b9872c2663"
+  },
+  {
+    "lead_ids": [
+      "L13B-036",
+      "L13B-037"
+    ],
+    "url": "https://scc.spokane.edu/",
+    "final_url": "https://scc.spokane.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 55976,
+    "sha256": "ae0cd252a5ce3348e9d116647cd3d7df2aecf9e2d8ed9ab72d638389e5317a09",
+    "cache_key": "993010da030b192f"
+  },
+  {
+    "lead_ids": [
+      "L13B-038"
+    ],
+    "url": "https://www.thefabschool.com/",
+    "final_url": "https://www.thefabschool.com/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 186078,
+    "sha256": "d4a2f92dca01366e65258e3355aece327e2f758a494fb9f71679c827aceccb49",
+    "cache_key": "b64299b3b5dddf66"
+  },
+  {
+    "lead_ids": [
+      "L13B-040"
+    ],
+    "url": "https://uconn.edu/",
+    "final_url": "https://uconn.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 144694,
+    "sha256": "540747af184c11e38628c40774915c0a30b4a10b7926634f87e7be9200d9764b",
+    "cache_key": "c5657f10cb58feac"
+  },
+  {
+    "lead_ids": [
+      "L13B-041"
+    ],
+    "url": "https://www.uml.edu",
+    "final_url": "https://www.uml.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 31874,
+    "sha256": "9c46e4b8b6877c603f8955de41a0dd24d37556348dc22b4c71ae166b5ccf70a2",
+    "cache_key": "8dc8ccfd65502291"
+  },
+  {
+    "lead_ids": [
+      "L13B-042"
+    ],
+    "url": "https://www.uml.edu/engineering/plastics/",
+    "final_url": "https://www.uml.edu/engineering/plastics/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 34922,
+    "sha256": "d21527b7e53a98eb4bd5225a54db4ec26b670f7820a8655badf2e9dc23c262b3",
+    "cache_key": "6d4332d6a02d6178"
+  },
+  {
+    "lead_ids": [
+      "L13B-043"
+    ],
+    "url": "https://uwm.edu/sce/certificates/plastics-technology-certificate/",
+    "final_url": "https://sce-register.uwm.edu/public/category/courseCategoryCertificateProfile.do?method=load&certificateId=1044130&selectedProgramAreaId=1030321&selectedProgramStreamId=1030346",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 82955,
+    "sha256": "990bbeba032aedb7427f593216f55818d7e187b89de0fa007099336f98050cac",
+    "cache_key": "e2e46d6fc4a8749e"
+  },
+  {
+    "lead_ids": [
+      "L13B-044"
+    ],
+    "url": "https://www.vt.edu",
+    "final_url": "https://www.vt.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 96098,
+    "sha256": "f96d971b1632cb5855f6adb0d896d6e02fa7a170e5de6ea3ed318398220ef748",
+    "cache_key": "8cded4c0bb2f1913"
+  },
+  {
+    "lead_ids": [
+      "L13B-045"
+    ],
+    "url": "https://www.wichita.edu/academics/wsutech/index.php",
+    "final_url": "https://www.wichita.edu/academics/wsutech/index.php",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 212,
+    "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+    "cache_key": "0651ef5f06fcf65d"
+  },
+  {
+    "lead_ids": [
+      "L13B-046"
+    ],
+    "url": "https://www.adhesionsociety.org/",
+    "final_url": "https://www.adhesionsociety.org/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 29225,
+    "sha256": "a01a6a5031c28a54f0e81efda61e4244a28972d9dd546688d1e285bbeee0b4a9",
+    "cache_key": "23e2b82f836951bc"
+  },
+  {
+    "lead_ids": [
+      "L13B-047"
+    ],
+    "url": "https://www.bbb.org/us/oh/barberton/profile/business-school/akron-machining-institute-inc-0272-3019",
+    "final_url": "https://www.bbb.org/us/oh/barberton/profile/business-school/akron-machining-institute-inc-0272-3019",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 14528,
+    "sha256": "1947012356ba4baac6d312afe9294e40115587093da84b496f0641afdbda97b8",
+    "cache_key": "bce5bec524d30313"
+  },
+  {
+    "lead_ids": [
+      "L13B-048",
+      "L13B-049"
+    ],
+    "url": "https://www.alfred.edu",
+    "final_url": "https://www.alfred.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 119119,
+    "sha256": "e3381ba057708ec0b74f91c0ce7e421e8fb9056e8d32fc0004cda4f99d386f98",
+    "cache_key": "9cc2893b313934c7"
+  },
+  {
+    "lead_ids": [
+      "L13B-050"
+    ],
+    "url": "https://www.alfred.edu/",
+    "final_url": "https://www.alfred.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 119119,
+    "sha256": "63ae92f43e0fa6118dc04cb10ead11c927a4b1e572277845d132068df2b487d9",
+    "cache_key": "f1879ca95b3bbfef"
+  },
+  {
+    "lead_ids": [
+      "L13B-051"
+    ],
+    "url": "https://www.asu.edu",
+    "final_url": "https://www.asu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 75291,
+    "sha256": "38dea153db4947c43e504c97240ed52894aabc62fbeb6f0f3652c257ff0e9891",
+    "cache_key": "979cb652b2519546"
+  },
+  {
+    "lead_ids": [
+      "L13B-052",
+      "L13B-053",
+      "L13B-054"
+    ],
+    "url": "https://www.asu.edu/",
+    "final_url": "https://www.asu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 75291,
+    "sha256": "38dea153db4947c43e504c97240ed52894aabc62fbeb6f0f3652c257ff0e9891",
+    "cache_key": "63a0adadd4ee0a66"
+  },
+  {
+    "lead_ids": [
+      "L13B-055"
+    ],
+    "url": "https://www.auburn.edu",
+    "final_url": "https://www.auburn.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 85926,
+    "sha256": "a6e46ce25be7ea6370cb842f4dc760f21647af8c8fd2ee488d14b0203367eef2",
+    "cache_key": "9061c6b1565c965a"
+  },
+  {
+    "lead_ids": [
+      "L13B-057"
+    ],
+    "url": "https://www.beaumontinc.com/autodesk-moldflow-training-courses/",
+    "final_url": "https://www.beaumontinc.com/autodesk-moldflow-training-courses/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 111152,
+    "sha256": "a98ce09bcbfe7850dcf36eb630f82d0568cfaf5c5c44c6e37ef1d8d4fc547ed2",
+    "cache_key": "e423935a0fa7d0e2"
+  },
+  {
+    "lead_ids": [
+      "L13B-058"
+    ],
+    "url": "https://www.binghamton.edu/",
+    "final_url": "https://www.binghamton.edu/index.php",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 24678,
+    "sha256": "c33d80bd7b8a4777c319d7ec2fe1417624f99a117452a96a6465b1317cfc86c0",
+    "cache_key": "3961ca91c75b9a39"
+  },
+  {
+    "lead_ids": [
+      "L13B-059"
+    ],
+    "url": "https://www.boisestate.edu",
+    "final_url": "https://www.boisestate.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 187442,
+    "sha256": "c9d437f5e51cb63eb29ae05ed66df49356459b8fdfae485f16b7f034d0afc6e2",
+    "cache_key": "945c1de9dcb3e4a7"
+  },
+  {
+    "lead_ids": [
+      "L13B-060"
+    ],
+    "url": "https://www.boisestate.edu/",
+    "final_url": "https://www.boisestate.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 187442,
+    "sha256": "c9d437f5e51cb63eb29ae05ed66df49356459b8fdfae485f16b7f034d0afc6e2",
+    "cache_key": "12f838b74445c333"
+  },
+  {
+    "lead_ids": [
+      "L13B-061"
+    ],
+    "url": "https://www.bu.edu/",
+    "final_url": "https://www.bu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 152754,
+    "sha256": "8d2775d7f024693ca203c10135a55fc2c0dbf26cf7a621ef373f5ddbd0333770",
+    "cache_key": "47beca77457af86e"
+  },
+  {
+    "lead_ids": [
+      "L13B-062"
+    ],
+    "url": "https://www.caltech.edu/",
+    "final_url": "https://www.caltech.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 349925,
+    "sha256": "fba17449bd36ef2e1747a8f1c744d2266cf0591d72b364ab17999d5ce1119a41",
+    "cache_key": "b9296da9bc0cac1d"
+  },
+  {
+    "lead_ids": [
+      "L13B-063"
+    ],
+    "url": "https://www.calpoly.edu",
+    "final_url": "https://www.calpoly.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 82907,
+    "sha256": "cc7baa7816711227a8b6326d40bce931c6ae42964d9f4f919e430f23f4af59cb",
+    "cache_key": "3b0d153668cac30c"
+  },
+  {
+    "lead_ids": [
+      "L13B-064"
+    ],
+    "url": "https://www.cpp.edu/",
+    "final_url": "https://www.cpp.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 94992,
+    "sha256": "5abdace962983a319c8c19b28f84d175f0b251479dd08bf63b979982e329e77c",
+    "cache_key": "ba457176947ebbed"
+  },
+  {
+    "lead_ids": [
+      "L13B-066"
+    ],
+    "url": "https://www.calstatela.edu/",
+    "final_url": "https://www.calstatela.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 89170,
+    "sha256": "e1733ee328bf775c068431ad2cbb53733dcc7008215e7c750a63885b11b64300",
+    "cache_key": "b316d2f1a0c5500e"
+  },
+  {
+    "lead_ids": [
+      "L13B-067"
+    ],
+    "url": "https://www.csun.edu/",
+    "final_url": "https://www.csun.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 91953,
+    "sha256": "9881666aa48f3b2aeb5ebac20185ef014a1cccd81f01ca71547c75e46923fb10",
+    "cache_key": "c9c9fe099f4c6a5b"
+  },
+  {
+    "lead_ids": [
+      "L13B-068"
+    ],
+    "url": "https://www.cmich.edu/",
+    "final_url": "https://www.cmich.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 100111,
+    "sha256": "f7ceef0f649d14950cabc25408922833a9e83e8bc3d34d044ca4020698fc31a7",
+    "cache_key": "cd817e493bc09f81"
+  },
+  {
+    "lead_ids": [
+      "L13B-069"
+    ],
+    "url": "https://www.cerritos.edu/Connections-2025/04/04.22/Plastics.htm",
+    "final_url": "https://www.cerritos.edu/Connections-2025/04/04.22/Plastics.htm",
+    "http_status": "000",
+    "curl_rc": 6,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "c2510de8cdce0630"
+  },
+  {
+    "lead_ids": [
+      "L13B-070"
+    ],
+    "url": "https://catalog.cincinnatistate.edu/degreeampcertificateprograms/",
+    "final_url": "https://catalog.cincinnatistate.edu/degreeampcertificateprograms/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 43453,
+    "sha256": "a8c89943d50210af0691e534bd6b51582c454d95effc11286670b8563489bd3a",
+    "cache_key": "54be798b80f9c629"
+  },
+  {
+    "lead_ids": [
+      "L13B-071"
+    ],
+    "url": "https://www.clarkson.edu/",
+    "final_url": "https://www.clarkson.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 49280,
+    "sha256": "6434901b9ff5c7150f04343b8ffb3dda1642ef6acb6f81dbefa1d81bc95ca619",
+    "cache_key": "160c606b6ca46f7c"
+  },
+  {
+    "lead_ids": [
+      "L13B-072"
+    ],
+    "url": "https://www.mines.edu",
+    "final_url": "https://www.mines.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 101893,
+    "sha256": "67b440ef74bc8fb67ef5ff2081c7f3870d177de679f06b3dd0c8f0a143dd6bb4",
+    "cache_key": "b16b2926c8b34bdc"
+  },
+  {
+    "lead_ids": [
+      "L13B-073"
+    ],
+    "url": "https://www.mines.edu/",
+    "final_url": "https://www.mines.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 101893,
+    "sha256": "67b440ef74bc8fb67ef5ff2081c7f3870d177de679f06b3dd0c8f0a143dd6bb4",
+    "cache_key": "bfe2ebe3602cd19d"
+  },
+  {
+    "lead_ids": [
+      "L13B-074",
+      "L13B-075"
+    ],
+    "url": "https://colostate.edu/",
+    "final_url": "https://colostate.edu/",
+    "http_status": "000",
+    "curl_rc": 35,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "d2587f3fedd7337f"
+  },
+  {
+    "lead_ids": [
+      "L13B-076"
+    ],
+    "url": "https://www.columbia.edu/",
+    "final_url": "https://www.columbia.edu/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5374,
+    "sha256": "b107551d022ade0e227c7572896e7622c3302b17d96283c7a457eb437334ffeb",
+    "cache_key": "3116cfaf5c978ae6"
+  },
+  {
+    "lead_ids": [
+      "L13B-077",
+      "L13B-078"
+    ],
+    "url": "https://dartmouth.edu/",
+    "final_url": "https://home.dartmouth.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 128739,
+    "sha256": "2755f583dc7e929d9749a37382ad2420d7717b2394cbf3a2d063a5b9936187c8",
+    "cache_key": "9be52ac38805a71e"
+  },
+  {
+    "lead_ids": [
+      "L13B-079"
+    ],
+    "url": "https://www.duke.edu/",
+    "final_url": "https://www.duke.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 238248,
+    "sha256": "c8b16c709e86ed11c1125ec20f5e5e72728cb4b097a36a3ca9eed5a64ce47988",
+    "cache_key": "f092a0d857b71538"
+  },
+  {
+    "lead_ids": [
+      "L13B-080"
+    ],
+    "url": "https://catalog.edisonohio.edu/preview_program.php?catoid=34&poid=7622",
+    "final_url": "https://catalog.edisonohio.edu/preview_program.php?catoid=34&poid=7622",
+    "http_status": "202",
+    "curl_rc": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "19921cea2e7d14ea"
+  },
+  {
+    "lead_ids": [
+      "L13B-081"
+    ],
+    "url": "https://www.epcc.edu/",
+    "final_url": "https://www.epcc.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 158457,
+    "sha256": "9e6da4b297d969f05456d3db24886903ea30fb518de3052d894e2eb9559c946d",
+    "cache_key": "0e6f4be0dbfdde27"
+  },
+  {
+    "lead_ids": [
+      "L13B-085"
+    ],
+    "url": "https://www.fiu.edu/",
+    "final_url": "https://www.fiu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 60891,
+    "sha256": "1334ed819596d8cfa509c32c3850754ac28a0d3b1bc9602139b6d0a1ee244b2a",
+    "cache_key": "a4ba451d0a43acd4"
+  },
+  {
+    "lead_ids": [
+      "L13B-086"
+    ],
+    "url": "https://www.fsu.edu/",
+    "final_url": "https://www.fsu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 74140,
+    "sha256": "2f33016f8d7b4e365d933e70feea9f2dbad967d12da0094b80a07e0b4e23d624",
+    "cache_key": "2f1614057904e61c"
+  },
+  {
+    "lead_ids": [
+      "L13B-087"
+    ],
+    "url": "https://www.gatech.edu",
+    "final_url": "https://www.gatech.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 115095,
+    "sha256": "a19e12cd4a4de38a9169d0abc34e826b4ba49c27057c9cffeee34e08f75f730e",
+    "cache_key": "9ef03e0f7dd4126b"
+  },
+  {
+    "lead_ids": [
+      "L13B-088"
+    ],
+    "url": "https://www.greatbay.edu/",
+    "final_url": "https://www.greatbay.edu/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 4545,
+    "sha256": "1a86b53977a954027bad424883c5c565bc7a66ad76eb6e6dde6c6980ef7621b7",
+    "cache_key": "6d7264cb3eb111cd"
+  },
+  {
+    "lead_ids": [
+      "L13B-089"
+    ],
+    "url": "https://hennepintech.edu/about-htc/history/",
+    "final_url": "https://hennepintech.edu/about-htc/history/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 310382,
+    "sha256": "729247fe274bb7029a91e65a37733686408400b68efedc790040fdb67999bdc1",
+    "cache_key": "6628f712dd6b6b4b"
+  },
+  {
+    "lead_ids": [
+      "L13B-090"
+    ],
+    "url": "https://hennepintech.edu/",
+    "final_url": "https://hennepintech.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 274749,
+    "sha256": "d482143022ea33e86e3cd85e97034aedd326de490b276aa343078801d93f915c",
+    "cache_key": "bca67f47a2e14f7f"
+  },
+  {
+    "lead_ids": [
+      "L13B-091"
+    ],
+    "url": "https://whatsupnewp.com/2016/06/iyrs-school-technology-trades-receives-two-significant-grants-total-680000/",
+    "final_url": "https://whatsupnewp.com/2016/06/iyrs-school-technology-trades-receives-two-significant-grants-total-680000/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 196655,
+    "sha256": "521777a42bf8843d197030804da42c5a072b1cc07bc5760a0f39d34c272061b1",
+    "cache_key": "1c5ed03f8c299847"
+  },
+  {
+    "lead_ids": [
+      "L13B-092"
+    ],
+    "url": "https://www.iit.edu",
+    "final_url": "https://www.iit.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 84373,
+    "sha256": "2e37e8e0c998074dd63b918f65affc673ec9a30f538fe74da5d93cd787995d5e",
+    "cache_key": "8d2f0b3f0c93fcee"
+  },
+  {
+    "lead_ids": [
+      "L13B-093"
+    ],
+    "url": "https://www.iit.edu/",
+    "final_url": "https://www.iit.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 84373,
+    "sha256": "2e37e8e0c998074dd63b918f65affc673ec9a30f538fe74da5d93cd787995d5e",
+    "cache_key": "fc5f79e0dd59af54"
+  },
+  {
+    "lead_ids": [
+      "L13B-094"
+    ],
+    "url": "https://www.iastate.edu",
+    "final_url": "https://www.iastate.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 59925,
+    "sha256": "4c607ede0a64bde4e874ed8d13c9098c39ea35bc05e4f9653e3af56f7b5f0112",
+    "cache_key": "a31449b0396e66bc"
+  },
+  {
+    "lead_ids": [
+      "L13B-095"
+    ],
+    "url": "https://www.jhu.edu/",
+    "final_url": "https://www.jhu.edu/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5660,
+    "sha256": "48b1863b91aa0c5f81d7183c6bbe9ff06d1d6272c0cf3b7351faf69e71f9b78c",
+    "cache_key": "814a8b81730cc79c"
+  },
+  {
+    "lead_ids": [
+      "L13B-096"
+    ],
+    "url": "https://catalog.kent.edu/colleges/ap/mechanical-engineering-technology-aas/",
+    "final_url": "https://catalog.kent.edu/colleges/ap/mechanical-engineering-technology-aas/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 126971,
+    "sha256": "082a8d590c551f1b326990a70ce2722a384592113afe2e2ee8a0eb16cd64cdcb",
+    "cache_key": "eae2e2d7249042d0"
+  },
+  {
+    "lead_ids": [
+      "L13B-098"
+    ],
+    "url": "https://catalog.lakelandcc.edu/degree-certificate-programs/cimn/",
+    "final_url": "https://catalog.lakelandcc.edu/degree-certificate-programs/cimn/",
+    "http_status": "202",
+    "curl_rc": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "c5b015cf1404fbcb"
+  },
+  {
+    "lead_ids": [
+      "L13B-100"
+    ],
+    "url": "https://www.lsu.edu/",
+    "final_url": "https://www.lsu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 84819,
+    "sha256": "379e1a65882bf0a79aebe755c08231ebc138e1f4986bbf0ccdfd9cad6b88266f",
+    "cache_key": "2b0dd468bbb6d747"
+  }
+]

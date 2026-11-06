@@ -1,0 +1,40 @@
+{
+  "site_id": "SITE-014014",
+  "grade": "agreement",
+  "fields_tested": [
+    "physical_address",
+    "operator_identity",
+    "polymer_scope_at_site",
+    "site_type",
+    "operating_status"
+  ],
+  "observations": "NSF certification registry identifies VM International DBA AmericanMaid as manufacturer with a Riverside facility and exact street address; own-site describes in-house plastic products and named resins in Riverside. Registry and own-site together support manufacturing rather than an unsupported parent-wide extrapolation.",
+  "field_errors": [],
+  "creation_error_reason": "",
+  "sources": [
+    {
+      "url": "https://info.nsf.org/Certified/Food/Listings.asp?Company=C0804305&Standard=002",
+      "source_class": "company_website",
+      "quote": "VM International DBA AmericanMaid 945 East Church Street Riverside, CA 92507",
+      "raw_checked": true,
+      "observed_date": "2026-11-06"
+    },
+    {
+      "url": "https://info.nsf.org/Certified/Food/Listings.asp?Company=C0804305&Standard=002",
+      "source_class": "company_website",
+      "quote": "Facility : Riverside, CA",
+      "raw_checked": true,
+      "observed_date": "2026-11-06"
+    },
+    {
+      "url": "https://buylowwholesale.com/pages/about-us",
+      "source_class": "company_website",
+      "quote": "in-house plastic products. Various resins are used to manufacture products such as Tritan, SAN, polyethylene, polystyrene, and polypropylene.",
+      "raw_checked": true,
+      "observed_date": "2026-11-06"
+    }
+  ],
+  "settling_fact": "",
+  "limitations": "NAICS, county, headcount and other untested fields are outside this audit. Undated live pages establish positive presence, not a dated operating-status adjudication.",
+  "locked_at_utc": "2026-11-06T11:59:35.074735+00:00"
+}

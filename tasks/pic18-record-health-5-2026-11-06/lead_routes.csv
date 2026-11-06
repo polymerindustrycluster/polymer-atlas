@@ -1,0 +1,59 @@
+org_id,url,result,detail
+ORG-000012,https://akronpolysys.com,fetched,2949
+ORG-000012,https://akronpolysys.com/contact,fetched,1463
+ORG-000012,https://akronpolysys.com/company,fetched,1899
+ORG-000014,none_found,no_website,
+ORG-000016,https://gabrielchem.com,unfetchable,"curl: (28) Connection timed out after 20008 milliseconds
+"
+ORG-000017,https://chemigon.com,unfetchable,"curl: (22) The requested URL returned error: 404
+"
+ORG-000021,,no_website,
+ORG-000025,https://www.mussonrubber.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-000027,https://www.hygenic.com,fetched,10074
+ORG-000027,https://www.hygenic.com/about-us,fetched,9069
+ORG-000033,https://lyondellbasell.com,fetched,18383
+ORG-000033,https://lyondellbasell.com/en/contact-us/,fetched,6353
+ORG-000034,https://www.akronpolymer.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000035,https://saint-gobain.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000036,https://extrudedplastics.com,fetched,19021
+ORG-000036,https://extrudedplastics.com/contact-us/,fetched,3215
+ORG-000042,https://dupont.com/multibase-family.html,unfetchable,"curl: (7) Failed to connect to dupont.com port 443 after 23 ms: Couldn't connect to server
+"
+ORG-000049,https://www.akronpolymersolutions.com/,fetched,3670
+ORG-000049,https://www.akronpolymersolutions.com/contact-us,fetched,2538
+ORG-000049,https://www.akronpolymersolutions.com/about-prophene,fetched,4292
+ORG-000054,https://americhem.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000062,https://www.chemionics.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000065,https://www.hudsonextrusions.com,fetched,5494
+ORG-000065,https://www.hudsonextrusions.com/contact-us/,fetched,4006
+ORG-000065,https://www.hudsonextrusions.com/about-us/,fetched,6481
+ORG-000066,none_found,no_website,
+ORG-000080,https://aceframes.com,unfetchable,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/"
+ORG-000097,https://bioverde.us,fetched,12574
+ORG-000099,https://www.materiumtech.com,fetched,2827
+ORG-000105,https://www.transcendia.com,fetched,6913
+ORG-000105,https://www.transcendia.com/locations,fetched,7898
+ORG-000105,https://www.transcendia.com/contact-us,fetched,16538
+ORG-000105,https://www.transcendia.com/about-us,fetched,5860
+ORG-000107,https://www.tmplasticsusa.com,unfetchable,"curl: (35) LibreSSL/3.3.6: error:1404B410:SSL routines:ST_CONNECT:sslv3 alert handshake failure
+"
+ORG-000124,https://primeconduit.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-000128,https://compking.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-000132,https://www.sherwin-williams.com,held_prior_PR133,
+ORG-000054,https://www.americhem.com/locations/,firecrawl_raw_html,20155
+ORG-000062,https://www.chemionics.com/about/,firecrawl_raw_html,4135
+ORG-000034,https://www.akronpolymer.com/,firecrawl_raw_html,3096
+ORG-000034,https://www.akronpolymer.com/contact-us/,firecrawl_raw_html,2573
+ORG-000025,https://mussonrubber.com/,firecrawl_raw_html,5463
+ORG-000080,https://www.aceframes.com/,firecrawl_raw_html,3344
+ORG-000080,https://www.aceframes.com/contact-us.php,firecrawl_raw_html,2404
+ORG-000054,https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1533928.015,government_route_405,395
+ORG-000062,https://www.osha.gov/ords/odi/establishment_search.search?begindart=&begindawfii=&begintcr=&city=&enddart=&enddawfii=&endtcr=&endyear=&establishment=&naics=&p_desc=DESC&p_direction=Next&p_finish=10860&p_show=20&p_sort=&p_start=10840&sic=&startyear=&state=OH&zip=,government_route_405,395
