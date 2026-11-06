@@ -4,7 +4,7 @@ ORG-001459,website,,https://survitecgroup.com/,EVD-170145
 ORG-001462,website,,https://www.tenneco.com/,EVD-170146
 ORG-000210,materials,,polymer_additives,EVD-170147
 ORG-000210,processes,,additive_dry_blending,EVD-170148
-ORG-000414,materials,,pvc,EVD-170149
+ORG-000414,materials,,pvc;thermoplastics,EVD-170149;EVD-170160
 ORG-000414,processes,,laminating,EVD-170150
 ORG-000484,materials,,elastomers_rubber;silicones;thermoplastics,EVD-170151;EVD-170152;EVD-170153
 ORG-000484,processes,,rubber_extrusion,EVD-170154

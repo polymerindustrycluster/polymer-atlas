@@ -24,7 +24,11 @@ def main():
  assert checked=={r['evidence_id']:digest(r) for r in packet},'raw ledger is stale or incomplete'
  shards={p:read(p) for p in sorted(a.data_dir.glob('organizations_*.csv')) if not p.name.endswith('_all.csv')}
  org={r['org_id']:(p,r) for p,rows in shards.items() for r in rows}
- ev={r['evidence_id']:r for p in a.data_dir.glob('evidence_*.csv') for r in read(p)}
+ ev={}
+ for path in a.data_dir.glob('evidence_*.csv'):
+  for row in read(path):
+   assert row['evidence_id'] not in ev, 'duplicate global evidence ID'
+   ev[row['evidence_id']]=(path,row)
  byid={r['evidence_id']:r for r in packet};pending=defaultdict(list);touched=set()
  vocab=json.loads((ROOT/'docs/schema/vocab.json').read_text())['vocabularies']
  for e in edits:
@@ -40,7 +44,7 @@ def main():
   if row[e['field']]!=e['new']:row[e['field']]=e['new'];touched.add(path)
  for r in packet:
   path=a.data_dir/('evidence_'+org[r['record_id']][0].name);fields=list(read(path)[0]);entry={k:r[k] for k in fields}
-  if r['evidence_id'] in ev:assert ev[r['evidence_id']]==entry,('global evidence ID collision',r['evidence_id'])
+  if r['evidence_id'] in ev:assert ev[r['evidence_id']]==(path,entry),('global evidence ID collision or wrong shard',r['evidence_id'])
   else:pending[path].append(entry)
  # All prospective edits and evidence are checked before any canonical write.
  for path in touched:write(path,shards[path])
