@@ -26,6 +26,8 @@ def plan(data):
              ('creates_sites.csv', 'sites_OH.csv', 'site_id', 'sites_*.csv', 13100, 13199),
              ('evidence_rows.csv', None, 'evidence_id', 'evidence_*.csv', 295000, 299999)]
     pending = {}
+    org_dest = {r["org_id"]: p.name for p in data.glob("organizations_*.csv") for r in read(p)}
+    org_dest["ORG-009600"] = "organizations_US.csv"
     for src, target, key, glob, lo, hi in specs:
         old = {}
         for p in sorted(data.glob(glob)) + ([data / 'ecosystem.csv'] if key == 'org_id' else []):
@@ -36,7 +38,7 @@ def plan(data):
         assert len({r[key] for r in rows}) == len(rows)
         for r in rows:
             assert lo <= int(r[key].split('-')[1]) <= hi
-            dest = target or ('evidence_organizations_US.csv' if r['record_table'] == 'organizations' else 'evidence_sites_OH.csv')
+            dest = target or ('evidence_' + org_dest[r['record_id']] if r['record_table'] == 'organizations' else 'evidence_sites_OH.csv')
             p = data / dest
             assert set(r) == set(next(csv.reader(p.open())))
             if r[key] in old:
@@ -48,6 +50,23 @@ def plan(data):
     assert not any(r['org_id'] != neworg['org_id'] and 'peakperformancepolymers.com' in r['website'].lower() for r in orgs), 'domain duplicate'
     assert not any(r['site_id'] != 'SITE-013100' and re.sub(r'[^a-z0-9]', '', r['street_address'].lower()) in {'9109stateroute250nw','9109us250nw'} for r in sites), 'address duplicate'
     assert any(r['site_id'] == 'SITE-001473' and r['org_id'] == 'ORG-001426' for r in sites), 'duplicate target missing'
+    path = data / 'registry_links.csv'
+    key = lambda r: (r['org_id'], r['registry'], r['registry_id'])
+    old_links = {key(r): r for r in read(path)}
+    assert len(old_links) == len(read(path)), 'duplicate existing registry triple'
+    additions = read(HERE / 'registry_additions.csv')
+    assert len(additions) == len({key(r) for r in additions}) == 4
+    pinned = read(ROOT / 'tasks/discovery-pic18-2026-11-03/L1/registry_link_candidates.csv')
+    fullkey = lambda r: key(r) + (r['site_id'],)
+    assert {fullkey(r) for r in additions} == {fullkey(r) for r in pinned}, 'registry scope changed'
+    assert {(r['registry'], r['registry_id']) for r in additions} == {(r['registry'], r['registry_id']) for r in read(HERE / 'registry_sources.csv')}, 'registry witnesses differ from proposed links'
+    site_org = {r['site_id']: r['org_id'] for r in sites}
+    for row in additions:
+        assert row['org_id'] in org_dest
+        if row['site_id']: assert site_org[row['site_id']] == row['org_id']
+        if key(row) in old_links: assert old_links[key(row)] == row, 'registry triple changed'
+    new_links = [r for r in additions if key(r) not in old_links]
+    if new_links: pending[(path, None)] = new_links
     return pending
 
 def raw_check():
@@ -60,7 +79,7 @@ def raw_check():
         def handle_data(self, data): self.parts.append(data)
     def words(text): return ' ' + ' '.join(house.W(text)) + ' '
     def has(text, quote): return bool(house.W(quote)) and words(quote) in words(text)
-    urls = {r['source_ref'] for r in read(HERE / 'evidence_rows.csv')} | {'https://www.nexxta.com/locations'}
+    urls = {r['source_ref'] for r in [r for r in read(HERE / 'evidence_rows.csv') if int(r['evidence_id'][4:]) < 295008]} | {'https://www.nexxta.com/locations'}
     with tempfile.TemporaryDirectory() as tmp:
         for n, url in enumerate(sorted(urls)):
             p = Path(tmp) / f'{n}.raw'
@@ -70,7 +89,7 @@ def raw_check():
                 text = p.with_suffix('.txt').read_text()
             else:
                 t = Text(); t.parts=[]; t.feed(p.read_text()); text=' '.join(t.parts)
-            for r in read(HERE / 'evidence_rows.csv'):
+            for r in [r for r in read(HERE / 'evidence_rows.csv') if int(r['evidence_id'][4:]) < 295008]:
                 if r['source_ref'] == url:
                     quote = r['claim_detail'].split('"')[1]
                     assert has(text, quote), (r['evidence_id'], 'raw quote absent')
@@ -84,9 +103,18 @@ def raw_check():
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--data-dir',type=Path,default=ROOT/'data');ap.add_argument('--apply',action='store_true');ap.add_argument('--raw-check',action='store_true');a=ap.parse_args()
     pending=plan(a.data_dir.resolve())
-    if a.raw_check:raw_check()
+    if a.raw_check:
+        raw_check()
+        subprocess.run([sys.executable, str(HERE / "verify_registry.py")], check=True)
     if a.apply:
-        for (p,key),rows in pending.items():append_sorted(p,rows,key)
-    print('PASS census26/26; proposed1organization+1site+8evidence; pending',sum(map(len,pending.values())), 'rows')
+        for (p,key),rows in pending.items():
+            if key is not None: append_sorted(p,rows,key)
+            else:
+                # Registry rows have a composite key; append_sorted requires a unique single-ID column.
+                old = read(p)
+                with p.open('w', newline='', encoding='utf-8') as handle:
+                    writer = csv.DictWriter(handle, fieldnames=list(old[0]), lineterminator='\n')
+                    writer.writeheader(); writer.writerows(old + rows)
+    print('PASS census26/26; proposed1organization+1site+13evidence+4registrylinks; pending',sum(map(len,pending.values())), 'rows')
 
 if __name__=='__main__':main()

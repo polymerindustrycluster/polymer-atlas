@@ -32,4 +32,15 @@ with tempfile.TemporaryDirectory() as tmp:
     result=subprocess.run(['python3',str(build.HERE/'build.py'),'--data-dir',str(data),'--apply'],capture_output=True,text=True)
     assert result.returncode != 0 and 'duplicate existing ID' in result.stderr, result.stderr
     assert hashes(data)==before, 'failed preflight wrote data'
+    shutil.copyfile(build.ROOT/'data/organizations_OH.csv', data/'organizations_OH.csv')
+    path=data/'registry_links.csv';rows=build.read(path)
+    row=next(r for r in rows if r['org_id']=='ORG-000798' and r['registry']=='EIN' and r['registry_id']=='391205755')
+    row['as_of']='2000-01-01'
+    with path.open('w',newline='',encoding='utf-8') as f:
+        writer=csv.DictWriter(f,fieldnames=rows[0],lineterminator='\n');writer.writeheader();writer.writerows(rows)
+    before=hashes(data)
+    result=subprocess.run(['python3',str(build.HERE/'build.py'),'--data-dir',str(data),'--apply'],capture_output=True,text=True)
+    assert result.returncode!=0 and 'registry triple changed' in result.stderr, result.stderr
+    assert hashes(data)==before, 'registry conflict wrote data'
+print('PASS registry composite-key conflict fails before any write')
 print('PASS all-CSV replay byte-identical; injected cross-shard reserved-ID collision fails before write')

@@ -14,11 +14,11 @@ Continuation claim: controller06:30 BOARD entry, new branch agent/codex/pic18-di
 | STILL_UNCERTAIN |22|
 | Total |26|
 
-Every hold names its settling fact in verdicts.csv. Source failures are availability only. No arbitrary inactive/closure change is made to any held record. The4 inherited registry-link candidate rows remain STILL_UNCERTAIN/held: PR129 was verified OPEN, mergedAt null, on2026-11-06. Their identifiers are not newly asserted as verified registry facts. They have not been applied or independently reverified pending the controller's restoration gate. registry_links.csv remains untouched.
+Every hold names its settling fact in verdicts.csv. Source failures are availability only. No arbitrary inactive/closure change is made to any held record. The4 inherited registry-link candidates are now VERIFIED and applied (3FRS,1EIN), after PR129 merged and fresh source-system verification. The prior restoration hold is superseded by the controller's release and the registry addendum below. No existing link row changed.
 
 ## Canonical additions
 
-1 organization row at tierC (ORG-009600 Peak Performance Polymers, organizations_US.csv),1 Ohio site row at tierC (SITE-013100 Strasburg, Tuscarawas),8 append-only evidence rows EVD-295000–295007 (4 organization/4 site). Existing canonical rows changed:0. No tierA/B additions. Equipment rows in this PR:0.
+1 organization row at tierC (ORG-009600 Peak Performance Polymers, organizations_US.csv),1 Ohio site row at tierC (SITE-013100 Strasburg, Tuscarawas),13 append-only evidence rows EVD-295000–295012 (5 organization/8 site), plus4 registry-link rows (3FRS/1EIN). Existing canonical rows changed:0. No tierA/B record additions or tier changes. Equipment rows in this PR:0.
 
 Peak's own homepage explicitly states custom polyurethane manufacturing. Ohio EPA's fresh no-exposure list, permit0GRN00360*BG, names both applicant and facility and the physical address9109 State Route250 NW, Strasburg, Tuscarawas. PDF page277 was rendered and visually read, so column-wrap extraction did not decide the address/county. The government list's address is the new fact that settles the prior address hold. Company-level polymer scope is linked to that same-named facility at tierC; no facility-specific molding method is invented. Current operating status remains unknown; an unexpired permit is not a liveness witness.
 
@@ -50,3 +50,22 @@ On main advance: merge origin/main; for any canonical CSV conflict take main's f
 ## Reviews
 
 Pending independent Codex/Grok refute clerk pair4 under controller06:25 routing. No completion approval claimed.
+
+## Registry application after restoration (supersedes the initial four-link hold)
+
+Controller released the gate after PR129 merged as9d69978. Merged current main before application (mergefea3ce4). `registry_additions.csv` has4 unique new triples, none present in the5373 restored/current links; data/registry_links.csv is exactly4 appended lines, old rows byte-preserved. Registry has composite keys and no immutable single-ID column; the existing append_sorted helper is used for all ID tables, and registry append uses the same CSV header with preflight composite uniqueness and original order preserved (V36 applies to org/site IDs, not registry triples).
+
+Source-system proof, retrieved2026-11-06:
+
+| Candidate | Primary verification | Application |
+|---|---|---|
+| Dover FRS110000741822 | Fresh FRS REST returns Dover Chemical Corporation,3676 Davis RD NW,Dover OH44622 | ORG000798 / SITE000863 |
+| Convertapax FRS110007706900 | Fresh FRS REST returns Convertapax Inc,Gundy DR BLDG NO3,Midvale OH44653 | ORG000751 / SITE000813; FRS omits street number, so no full-address assertion; held site already cites this exact source ID and same street/locality |
+| Catalyst FRS110000390390 | Fresh FRS REST returns Quest Automotive Products,2290 Zimmerman RD SE,Gnadenhutten OH44629; fresh Ohio EPA CRO2557 jointly labels Quest Automotive Products / Catalyst Systems at exact street | ORG001919 / SITE001910; historical facility identity only, no operator/status/parent change |
+| Dover EIN391205755 | Fresh DOL EFAST2 PY2024 bulk CSV, ACK20251015110824NAL0008891586001: exact sponsor Dover Chemical Corporation AND3676 Davis Road NW,Dover OH | ORG000798, no site_id per R11;3 exact-name/street filings found. A separate ICC-named filing with the same EIN is excluded; no parent inference |
+
+The OSHA ITA direct download returned403; that is availability only. R11 is satisfied by a fresh source-system Form5500 filing instead. Raw federal downloads remain uncommitted in build/pic18-registry; registry_sources.csv preserves only corporate identity/address/identifier fields, citation, record key and observed-byte SHA256. XML coordinates are not a matching input and are not copied to the packet.
+
+Added5 identity evidence observations:3 FRS site observations,1 DOL organization EIN observation,1 Ohio EPA joint-label corroboration (EVD295008–295012). None asserts current operation or changes any existing record field. `verify_registry.py` independently re-fetches3 FRS records, the DOL bulk and the Ohio EPA corroboration; all4 identities and the joint label pass, with exact field/filing-yield checks and negative ID controls. These checks run within build.py --raw-check before application; no source may silently skip. Original8 evidence quotes retain their separate8/8 raw check.
+
+`check.py` now additionally injects a conflicting existing registry triple and proves refusal before any write. Final validation/replay results are in registry-checks.txt. Prior review packet is historical; review-packet-v2.json covers the expanded registry scope, requiring updated independent family review.
