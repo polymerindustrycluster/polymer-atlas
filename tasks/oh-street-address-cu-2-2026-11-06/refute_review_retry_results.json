@@ -1,0 +1,29 @@
+[
+  {
+    "site_id": "SITE-000164",
+    "source_class": "registry",
+    "registry_id": "110063155482",
+    "transcription": "not_ITA",
+    "fresh_source_match": "yes",
+    "detail": "bounded fresh retry: same identifier/name/street/city/ZIP/county/state",
+    "error": ""
+  },
+  {
+    "site_id": "SITE-000156",
+    "source_class": "registry",
+    "registry_id": "110004726761",
+    "transcription": "not_ITA",
+    "fresh_source_match": "yes",
+    "detail": "bounded fresh retry: same identifier/name/street/city/ZIP/county/state",
+    "error": ""
+  },
+  {
+    "site_id": "SITE-000182",
+    "source_class": "registry",
+    "registry_id": "110006269313",
+    "transcription": "not_ITA",
+    "fresh_source_match": "no",
+    "detail": "FRS fetch failed: 22",
+    "error": ""
+  }
+]

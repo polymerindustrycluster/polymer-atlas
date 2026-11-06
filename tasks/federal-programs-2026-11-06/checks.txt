@@ -1,0 +1,3 @@
+PASS retired creates_ecosystem.csv re-admission refused before any write
+PASS retired evidence_rows.csv re-admission refused before any write
+PASS 12candidate rows=5held duplicates+7uncertain; exact archived1create/6EVD; retired7IDs; canonical/allCSVdelta0; byte-identical no-op replay

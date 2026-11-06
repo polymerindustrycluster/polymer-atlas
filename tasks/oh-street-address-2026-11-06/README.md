@@ -44,7 +44,7 @@ Rebuild on fresh main: restore main's two Ohio data files, then run `build.py --
 
 Review route: controller 05:55 clerk ruling supersedes the brief council-only route and order; this branch is pushed as a draft for the designated Codex/Grok reviewer threads. Council attempts were refused before provider launch by the shared hard40/600s guard (no verdict). Both required families have now approved the substantive output; verdicts below supersede the pending status.
 
-    
+
 Final independent completion refutes (substantive head50ac7a22afff4be038d6bc8a88316b1b6ec6a0c5):
 
 - Codex/OpenAI, R-codex-2 thr_mdr3gn2xmm: **APPROVE,0blocking findings**. Traced all143 fills to exact/strong ITA/operator links, fresh FRS/locality and own pages; independent fresh own7/7, three live calibration answers and injected locality/PO-box cases pass. Validator/check/row-loss guard/fresh-main replay pass; seven protected-field/status drifts reject before writes. Reproduced final audit exactly:ITA0/22transcription,14/30freshcorroboration,16/30uncheckable,0addresserrors. Counts,tiers,sourceceilings,all301inputlinks and frozenbaseline reconcile. Receipt:controller reviews/134-clerk-codex-2.md.

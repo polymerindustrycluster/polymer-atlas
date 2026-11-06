@@ -1,0 +1,20 @@
+[
+  {
+    "key": "MO-00088",
+    "path": "/tmp/l3-MO-00088.txt",
+    "quote": "We manufacture FDA approved polyethylene blown film using prime resins.",
+    "sha256": "21cd918df42f1b0fccd83bca5eb222ee3891b5d1bf6c291721b8f17851935797"
+  },
+  {
+    "key": "MO-00023",
+    "path": "/tmp/l3-MO-00023.txt",
+    "quote": "Steering wheels, Airbags, Side Molding, Interior & Exterior plastic trim components for automobiles.",
+    "sha256": "de6dcda19e9d8b18a548cfb9d516a24f7e0b6322d0cf4ce7a446d89ed87d91a4"
+  },
+  {
+    "key": "SC-00082",
+    "path": "/tmp/l3-SC-00082.txt",
+    "quote": "precision machining and stamping of engineering and high-performance plastic materials",
+    "sha256": "f2d980b59c4623a18da4bf68fa4a8b6e8f4935cc1539473e964cca672d455ea3"
+  }
+]

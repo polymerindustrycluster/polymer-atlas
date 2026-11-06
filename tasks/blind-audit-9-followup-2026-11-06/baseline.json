@@ -1,0 +1,32 @@
+{
+  "audit_head": "bbbbc34fdf7990ce257c486f516d028edab254bd",
+  "research_head": "36b18b54f483d6c573b2d26f4a6241a3dae666f8",
+  "original_report_sha256": "3af0d0e1fab9c78cfe1b1cde99da4c4d09a24af8ea8e8ca8a7fb45cbc2aa1069",
+  "original_adjudicated_sha256": "41a6edf917b8349634ad7934d0a3e559367a2b28353214cd6e53510bfcff468b",
+  "original_counts": {
+    "agreement": 32,
+    "field_error": 1,
+    "creation_error": 1,
+    "unresolved": 16
+  },
+  "followup_ids": [
+    "SITE-014007",
+    "SITE-014010",
+    "SITE-014015",
+    "SITE-016000",
+    "SITE-016006",
+    "SITE-016009",
+    "SITE-016010",
+    "SITE-016015",
+    "SITE-016101",
+    "SITE-016105",
+    "SITE-016116",
+    "SITE-018015",
+    "SITE-019001",
+    "SITE-019002",
+    "SITE-019009",
+    "SITE-019011"
+  ],
+  "controller_instruction": "After160/168replays, settle16 unresolved with up10routes/site, stillblindagainstfrozenrecord, appendupdatedrates,newbranch,L11corrections",
+  "dependent_PR": 200
+}

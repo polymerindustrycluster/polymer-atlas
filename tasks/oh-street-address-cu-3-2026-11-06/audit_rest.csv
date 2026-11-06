@@ -1,0 +1,4 @@
+site_id,source_class,registry_id,transcription,fresh_source_match,detail,error
+SITE-000208,registry,110000385093,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000195,registry,110004707924,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000197,registry,110004619226,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",

@@ -1,0 +1,9 @@
+# L3 merged-site quality, batch3
+
+Continuation of the controller's existing merged-only quality assignment. PR164 merged13:38:54Z; its9Csites(MO4,SC5) formthisfinalnewlyeligibleframe. MainSHApinnedinbaseline.json with separateframe_commit. Priorquality2163sites and23215sites stayfrozen/excluded. Together3+15+9coverall27L3Cbirthestablishments from141/164/198/202/204. No newtrackedcommitment/statuswrite. Firstusercontroller/researchintegrator intendedreview2026-11-06.
+
+Acceptance beforefetch/application: exactly9legalverdicts; promoteonlyrawownissuedplantcity+polymeractivitywithall5Bmandatoryclaims(existence,address,scope,code,parent). Unknownstatusretained. B-PARENTdocumentedrelationship/groupusageflagasrequired;07:20ownclaimpagewordsonly,federalfactsfederalclaims. BankedCY2025asof2026-11-01 distinctretrieval2026-11-06. Exactstreet/stateZIP/code/operatorbinding; conflictsHOLDnamedsettlingfact,neverautoaddresscode/status/repoint/scope/ringruling. Approx6primaryroutes/org,failedfetchavailabilitynotabsence.
+
+Reuse232/216builder/check/housematcher/shard_io; known3answers+negativebeforetrust,fullpromotioncensus/sourcehashissuerbinding. EVD304300+6*frozenindexthrough304353 unusedinsidecontroller304000+block,disjoint216304012–016and232304100+slots;gapspermanent,noORG/SITEcreates. Allowedsitefields tier/sources/last_verified/appendnotesonly,evidenceappend-only. Framecommitfixedifintegrationmainmoves.
+
+Namedcheck9census/all5Bsourcecoverage/oldrowpreservation/exactboundary/IDs/failbeforewritefaults/rawpositive-negative/replay/validator0;aggregate27birthsitequalitycoverageassert across3packets. T3strictcountunchangedbyqualityonly. Twofamilydeeprefutesrequired;controlleralone merges/statuses. AnypriorPRfindingsremainpriority.

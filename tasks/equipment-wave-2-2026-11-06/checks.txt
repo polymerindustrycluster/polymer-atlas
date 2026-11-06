@@ -1,0 +1,7 @@
+existing_id refused before any write
+duplicate_name refused before any write
+unheld_host refused before any write
+uc_access refused before any write
+combined_calorimeters refused before any write
+PASS: 54/54 VERIFIED equipment rows; main rows preserved; exact projection; byte-idempotent replay; 5 negative controls
+PAGES PASS: 54 equipment names/classes/access/source links across 8 actual host HTML sections

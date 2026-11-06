@@ -1,0 +1,12 @@
+{
+  "source_ref": "https://www.orbiscorporation.com/en-us/news/orbis-expands-autostore-bin-production-to-texas/",
+  "status_code": 200,
+  "scrape_id": "01a1b0e3-7f08-7396-9876-57b3390e80f7",
+  "route": "NAS Firecrawl live rawHtml",
+  "request_maxAge": 0,
+  "rechecked_date": "2026-11-06",
+  "raw_file": "/tmp/L6-orbis-q2-recheck.html",
+  "note": "Full response rawHtml was used, not markdown/summary/query output.",
+  "raw_html_sha256": "f4f5096969a4770ae37eb65e81fcb97097aec90adb2b9a92ee6cf1ee79b497df",
+  "normalized_text_sha256": "dcfb27c505ded6aea9fdb10eeccccd8702f1e7e88162d37d968c2da90a0480f6"
+}
