@@ -1,0 +1,24 @@
+{
+  "org_ids": [
+    "ORG-001452",
+    "ORG-001479",
+    "ORG-001590",
+    "ORG-001601"
+  ],
+  "queries": [
+    {
+      "q": "\"dlhBOWLES\" North Canton (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"O2 RegenTech\" Akron (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Therm-O-Link\" Garrettsville (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Pison Stream Solutions\" Brecksville (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "8da3f0db1b242122491978315a420be50b05400842f32988f130ed8227c2ecc2",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}

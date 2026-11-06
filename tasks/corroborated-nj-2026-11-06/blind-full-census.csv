@@ -1,0 +1,6 @@
+cluster_id,site_id,held_org_id,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,reliability,year_filing_for,date_submitted
+LF-NJ-00035,SITE-012809,ORG-004216,1329479,Benjamin Moore & Co.,Benjamin Moore & Co.,134 Lister Ave.,NEWARK,NJ,07105,325510,"Paints, emulsion (i.e., latex paint), manufacturing",ok,2025,2026-01-16
+LF-NJ-00416,SITE-012828,ORG-001403,176105,Graham Packaging Company,Seabrook,1043 West Parsonage Road,Seabrook,NJ,08302,326160,"Bottles, plastics, manufacturing",ok,2025,2026-03-24
+LF-NJ-00733,SITE-012861,ORG-005044,1122236,"Homeland Vinyl Products, Inc.",Homeland Vinyl Products Inc. New Jersey,1701 Eden Road,Milville,NJ,08332,326199,"Siding, plastics, manufacturing",ok,2025,2026-03-02
+LF-NJ-00777,SITE-012862,ORG-000523,1441848,Pretium Packaging,Pretium Hillsborough,208 Cougar Court,Hillsborough,NJ,08844,326160,"Bottles, plastics, manufacturing",ok,2025,2026-01-27
+LF-NJ-00857,SITE-012881,ORG-001082,936836,Ring Container Technologies,Ring Container Springfield,50 Fadem Road,Springfield,NJ,07081,326160,"Bottles, plastics, manufacturing",ok,2025,2026-02-27

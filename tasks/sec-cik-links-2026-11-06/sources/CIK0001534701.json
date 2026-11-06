@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001534701.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001534701",
+  "name": "Phillips 66",
+  "tickers": [
+    "PSX"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "fa0e663c27c055e3efe6462662f8e5e4d849c40f1557ebc29534c649d84c30f8",
+  "raw_name_token": "\"Phillips 66\""
+}

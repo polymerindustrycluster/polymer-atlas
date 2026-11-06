@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000110621.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000110621",
+  "name": "RPM INTERNATIONAL INC/DE/",
+  "tickers": [
+    "RPM"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "7b54b4c933c052e96cd9cd5316314052ecf135d7ad6e4fadc185d2df9f1afd08",
+  "raw_name_token": "\"RPM INTERNATIONAL INC/DE/\""
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000093410.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000093410",
+  "name": "CHEVRON CORP",
+  "tickers": [
+    "CVX"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "423911afea9331e8094633f5fd7a23dc6d64593258d8459ffb633a65c9136d8f",
+  "raw_name_token": "\"CHEVRON CORP\""
+}

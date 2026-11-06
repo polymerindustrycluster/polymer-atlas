@@ -1,0 +1,2 @@
+Unmodified PR130 guard, source bce296a, blob 10b41e276c577053a1bfd9b62b33b622ac334c24; --base origin/main; executed with repository scripts __file__ while restoration209 pending.
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base 09df9e9d7f)

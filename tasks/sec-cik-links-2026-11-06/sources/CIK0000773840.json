@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000773840.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000773840",
+  "name": "HONEYWELL INTERNATIONAL INC",
+  "tickers": [
+    "HON"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "2acd408372c000f19c40cfd646b480c953514c9d4aaf4f9f5b1273db123e6564",
+  "raw_name_token": "\"HONEYWELL INTERNATIONAL INC\""
+}

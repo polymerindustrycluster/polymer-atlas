@@ -1,0 +1,28 @@
+{
+  "approved_head": "658c5b8",
+  "main": "78578da6162952d0c015dff5e6914a0ef1abb0b9",
+  "owner_strict_subset_authorization": "Controller: Codex9 approved658c5b8 minus Apache9cells; Grok sole finding withdrawn; CAMPAIGN rule from224",
+  "withdrawn_site": "SITE-016120",
+  "retired_evidence_ids": [
+    "EVD-207360",
+    "EVD-207361",
+    "EVD-207362",
+    "EVD-207363",
+    "EVD-207364",
+    "EVD-207365",
+    "EVD-207366"
+  ],
+  "rows": {
+    "sites": {
+      "count": 30,
+      "approved_values_identical": true,
+      "sha256": "d6bb0114d824fe272b9fa0475e3e76ef07da8cc4261ad2de9e891a8b42ad4c0e"
+    },
+    "evidence_sites": {
+      "count": 210,
+      "approved_values_identical": true,
+      "sha256": "6de959baca4c20fc0598c5f5172c9452b3e23a3eef18d87e6dbe8cfc0fb2ee1e"
+    }
+  },
+  "builder_unchanged_from_withdrawal": true
+}

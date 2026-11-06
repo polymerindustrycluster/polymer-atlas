@@ -1,0 +1,64 @@
+{
+  "url": "https://parcelmap.ashtabulacounty.us/arcgis/rest/services/Parcel_Data/Parcels_Online/MapServer/0/query?where=Location_Address+LIKE+%27%252600%25MICHIGAN%25%27&outFields=Name%2CPIN%2CLocation_Address%2CLanduse_Code%2CLanduse_Class%2CAuditor_Link&returnGeometry=false&f=pjson&resultRecordCount=25",
+  "result": {
+    "displayFieldName": "Name",
+    "fieldAliases": {
+      "Name": "Parcel Identification Number",
+      "PIN": "PIN",
+      "Location_Address": "Location_Address",
+      "Landuse_Code": "Landuse_Code",
+      "Landuse_Class": "Landuse_Class",
+      "Auditor_Link": "Auditor_Link"
+    },
+    "fields": [
+      {
+        "name": "Name",
+        "type": "esriFieldTypeString",
+        "alias": "Parcel Identification Number",
+        "length": 50
+      },
+      {
+        "name": "PIN",
+        "type": "esriFieldTypeString",
+        "alias": "PIN",
+        "length": 30
+      },
+      {
+        "name": "Location_Address",
+        "type": "esriFieldTypeString",
+        "alias": "Location_Address",
+        "length": 75
+      },
+      {
+        "name": "Landuse_Code",
+        "type": "esriFieldTypeString",
+        "alias": "Landuse_Code",
+        "length": 5
+      },
+      {
+        "name": "Landuse_Class",
+        "type": "esriFieldTypeString",
+        "alias": "Landuse_Class",
+        "length": 5
+      },
+      {
+        "name": "Auditor_Link",
+        "type": "esriFieldTypeString",
+        "alias": "Auditor_Link",
+        "length": 150
+      }
+    ],
+    "features": [
+      {
+        "attributes": {
+          "Name": "05-318-00-006-00",
+          "PIN": "05-318-00-006-00",
+          "Location_Address": "2600  MICHIGAN AVE",
+          "Landuse_Code": "330",
+          "Landuse_Class": "I",
+          "Auditor_Link": "https://auditor.ashtabulacounty.gov/PT/Datalets/Datalet.aspx?mode=profileall&UseSearch=no&pin=053180000600"
+        }
+      }
+    ]
+  }
+}

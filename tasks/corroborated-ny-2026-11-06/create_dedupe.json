@@ -1,0 +1,547 @@
+[
+  {
+    "cluster_id": "LF-NY-00520",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Protective Industries Inc.",
+      "--street",
+      "2150 Elmwood Avenue",
+      "--city",
+      "Buffalo",
+      "--state",
+      "NY",
+      "--zip",
+      "14207",
+      "--json",
+      "--domain",
+      "https://www.caplugs.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.caplugs.com",
+        "name": "Protective Industries Inc.",
+        "street": "2150 Elmwood Avenue",
+        "city": "Buffalo",
+        "state": "NY",
+        "zip": "14207"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NY-00223",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Tekni-Plex, Inc.",
+      "--street",
+      "900 Bradley Hill Road",
+      "--city",
+      "Blauvelt",
+      "--state",
+      "NY",
+      "--zip",
+      "10913",
+      "--json",
+      "--domain",
+      "https://tekni-plex.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://tekni-plex.com/",
+        "name": "Tekni-Plex, Inc.",
+        "street": "900 Bradley Hill Road",
+        "city": "Blauvelt",
+        "state": "NY",
+        "zip": "10913"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001148",
+              "name": "TekniPlex, Inc.",
+              "city": "Holland",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: tekni-plex.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001148",
+              "name": "TekniPlex, Inc.",
+              "city": "Holland",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Tekni-Plex, Inc.'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NY-00130",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Habasit America",
+      "--street",
+      "1400 Clinton St",
+      "--city",
+      "Buffalo",
+      "--state",
+      "NY",
+      "--zip",
+      "14206",
+      "--json",
+      "--domain",
+      "https://www.habasit.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.habasit.com/",
+        "name": "Habasit America",
+        "street": "1400 Clinton St",
+        "city": "Buffalo",
+        "state": "NY",
+        "zip": "14206"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004392",
+              "name": "Habasit America, Inc.",
+              "city": "Suwanee",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: habasit.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004392",
+              "name": "Habasit America, Inc.",
+              "city": "Suwanee",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "name key 'habasit america' = legal_name 'Habasit America, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NY-00740",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Pregis.LLC",
+      "--street",
+      "300 Lower Warren Street",
+      "--city",
+      "Queensbury",
+      "--state",
+      "NY",
+      "--zip",
+      "12804",
+      "--json",
+      "--domain",
+      "https://www.pregis.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.pregis.com",
+        "name": "Pregis.LLC",
+        "street": "300 Lower Warren Street",
+        "city": "Queensbury",
+        "state": "NY",
+        "zip": "12804"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002935",
+              "name": "Pregis LLC",
+              "city": "Deerfield",
+              "state": "IL",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_IL.csv",
+              "match": "domain exact: pregis.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002935",
+              "name": "Pregis LLC",
+              "city": "Deerfield",
+              "state": "IL",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_IL.csv",
+              "match": "name key 'pregis' = legal_name 'Pregis LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NY-00775",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Dutchland Plastics LLC",
+      "--street",
+      "120 Barlow St",
+      "--city",
+      "Canastota",
+      "--state",
+      "NY",
+      "--zip",
+      "13032",
+      "--json",
+      "--domain",
+      "https://www.dutchland.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.dutchland.com/",
+        "name": "Dutchland Plastics LLC",
+        "street": "120 Barlow St",
+        "city": "Canastota",
+        "state": "NY",
+        "zip": "13032"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003172",
+              "name": "Dutchland Plastics LLC",
+              "city": "Oostburg",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "domain exact: dutchland.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003172",
+              "name": "Dutchland Plastics LLC",
+              "city": "Oostburg",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "name key 'dutchland plastics' = legal_name 'Dutchland Plastics LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NY-00764",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Altium Packaging",
+      "--street",
+      "18 Champeney Terrace",
+      "--city",
+      "Rochester",
+      "--state",
+      "NY",
+      "--zip",
+      "14605",
+      "--json",
+      "--domain",
+      "https://altiumpkg.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://altiumpkg.com/",
+        "name": "Altium Packaging",
+        "street": "18 Champeney Terrace",
+        "city": "Rochester",
+        "state": "NY",
+        "zip": "14605"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: altiumpkg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'altium packaging' = legal_name 'Altium Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006136",
+              "name": "Altium Packaging - Newark Plant",
+              "city": "Newark",
+              "state": "DE",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_DE.csv",
+              "match": "legal_name contains 'Altium Packaging'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NY-00644",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Parker Hannifin - Marion, NY",
+      "--street",
+      "3967 Buffalo St.",
+      "--city",
+      "Marion",
+      "--state",
+      "NY",
+      "--zip",
+      "14505",
+      "--json",
+      "--domain",
+      "https://www.parker.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.parker.com",
+        "name": "Parker Hannifin - Marion, NY",
+        "street": "3967 Buffalo St.",
+        "city": "Marion",
+        "state": "NY",
+        "zip": "14505"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000004",
+              "name": "Parker-Hannifin Corporation",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: parker.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  }
+]

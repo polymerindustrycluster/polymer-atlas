@@ -1,0 +1,66 @@
+{
+  "normalizer": "AST-loaded W only from tasks/evidence-repair-2-2026-11-04/prep.py; no main/import execution",
+  "probes": [
+    {
+      "input": "<p>Storopack, Inc.</p>",
+      "quote": "Storopack Inc",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "input": "<p>320 Craig Place</p>",
+      "quote": "320 Craig Place",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "input": "<p>Polymer &amp; foam \u2014 manufacturing</p>",
+      "quote": "polymer foam manufacturing",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "input": "<p>Storopack, Inc.</p>",
+      "quote": "fabricated unicorn resin factory",
+      "expected": false,
+      "observed": false
+    }
+  ],
+  "checked_at_utc": "2026-11-06T13:00:40.559297+00:00",
+  "ocr_probes": [
+    {
+      "quote": "TPO Manufacturing Locations",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "quote": "Valdosta, GA \u2014 Coming Soon",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "quote": "2100 Steeda Way, Valdosta, GA 31606",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "quote": "2100 Steeda Way, Valdosta, GA 31601",
+      "expected": false,
+      "observed": false
+    }
+  ],
+  "ocr_map": {
+    "site_id": "SITE-016105",
+    "pdf_path": "/tmp/audit9-follow-a/rawpages/SITE-016105-4.raw",
+    "pdf_sha256": "540c781381b0ca1105b57a905f7de836ac425f6b6a48e9120f2caa629426e129",
+    "page_number": 25,
+    "image_path": "/tmp/audit9-follow-a/rawpages/gaf25hi.png",
+    "image_sha256": "da5911fb68cb7fc725468c065a1ea3042431a923042ed4664e7072977c8ab4af",
+    "text_path": "/tmp/audit9-follow-a/rawpages/gaf25hi.txt",
+    "text_sha256": "afa0ef7f1be8b871304a969e10510b81bc44a73c7eb10322ec845a94771e6e57",
+    "render_command": "pdftoppm -f 25 -l 25 -scale-to 5000 -png -singlefile <pdf> <prefix>",
+    "ocr_command": "tesseract /private/tmp/audit9-follow-a/rawpages/gaf25hi.png /private/tmp/audit9-follow-a/rawpages/gaf25hi",
+    "visual_check": true,
+    "limitations": "Initial /tmp paths failed Leptonica; realpath /private/tmp succeeded. Low-resolution OCR misread address and was not admitted; 5000-pixel OCR independently visually checked. GAF brochure authored by GAF, hosted in City of Detroit filing; not city-authored evidence."
+  }
+}

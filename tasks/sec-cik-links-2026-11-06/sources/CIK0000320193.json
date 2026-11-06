@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000320193",
+  "name": "Apple Inc.",
+  "tickers": [
+    "AAPL"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "2c9cbb2f163361bf1fd0318faadb50cdfa719104d45aa39934f29d554d3a4916",
+  "raw_name_token": "\"Apple Inc.\""
+}

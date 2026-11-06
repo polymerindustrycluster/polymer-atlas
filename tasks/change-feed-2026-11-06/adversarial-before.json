@@ -1,0 +1,32 @@
+[
+  {
+    "case": "leaf_symlink_CHANGELOG.md",
+    "error": null,
+    "outside_overwritten": true
+  },
+  {
+    "case": "leaf_symlink_feed.xml",
+    "error": null,
+    "outside_overwritten": true
+  },
+  {
+    "case": "readonly_xml_preserves_previous_pair",
+    "error": "PermissionError: [Errno 13] Permission denied: '/private/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp629z0p4_/repo/build/changelog/feed.xml'",
+    "changed_files": [
+      "CHANGELOG.md"
+    ],
+    "uid": 501
+  },
+  {
+    "case": "arbitrary_or_wrong_table_id",
+    "id": "PRIVATE_CRM_ACQUISITION_TARGET-000002",
+    "error": null,
+    "published_in_both": true
+  },
+  {
+    "case": "arbitrary_or_wrong_table_id",
+    "id": "EQP-000002",
+    "error": null,
+    "published_in_both": true
+  }
+]
