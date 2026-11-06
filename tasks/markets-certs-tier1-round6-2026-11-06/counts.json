@@ -12,9 +12,9 @@
   "packet_value_rows": 173,
   "packet_organizations": 49,
   "tiers": {
+    "C": 5,
     "B": 39,
-    "A": 5,
-    "C": 5
+    "A": 5
   },
-  "new_evidence_rows": 0
+  "new_evidence_rows": 166
 }

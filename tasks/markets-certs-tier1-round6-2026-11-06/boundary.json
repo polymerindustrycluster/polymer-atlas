@@ -1,5 +1,5 @@
 {
-  "base": "1cd71d0947bf19ee7de05ef7786a641949c7674b",
+  "base": "7cf7b93bbc6b8217ec6e221b75420d5974ea4548",
   "organizations": 49,
   "changed_cells": {
     "markets_served": 49,
@@ -24,7 +24,7 @@
     "evidence_organizations_MN.csv": 9,
     "evidence_organizations_MO.csv": 5,
     "evidence_organizations_MS.csv": 1,
-    "evidence_organizations_NC.csv": 5,
+    "evidence_organizations_NC.csv": 4,
     "evidence_organizations_NJ.csv": 4,
     "evidence_organizations_NY.csv": 17,
     "evidence_organizations_OR.csv": 6,
@@ -37,7 +37,7 @@
     "evidence_organizations_WA.csv": 5,
     "evidence_organizations_WI.csv": 16
   },
-  "new_evidence_rows": 167,
+  "new_evidence_rows": 166,
   "existing_row_loss": 0,
   "changed_unrelated_columns": 0,
   "edited_existing_evidence": 0,

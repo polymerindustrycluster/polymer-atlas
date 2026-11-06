@@ -14,3 +14,5 @@ Attacks:
 - All30home-shardorg/evidencepairsmirrored,IDsworldunique,noreuse,oldmainrecordspreserved,countunitactiveorgsnotvalues,full100yield/exclusions. Prior179/215separatepackets;historical136/157buildersmustnotrerun. DraftnotDone.
 
 REVIEW FIX 2026-11-06: four Grok-refuted values withdrawn (EVD-240838/240841/240947/240968 unused); packet now 167 accepted values, 167 evidence rows, 6 held values. Re-attack the remaining 167 only; the withdrawn four are holds.
+
+REVIEW FIX 2 2026-11-06: Dynamic Systems toys_sporting_goods withdrawn (EVD-240868 unused); packet now 166 accepted values, 166 evidence rows, 7 held values. Re-attack the remaining 166 only.
