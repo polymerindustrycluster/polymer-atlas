@@ -1,10 +1,5 @@
-RAW PASS https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf
-RAW PASS https://peakperformancepolymers.com/
-RAW PASS https://www.nexxta.com/locations
-Raw evidence yield8/8; source yield3/3; hand-known manufacturer/address/held-duplicate3/3 plus fabricated negative PASS
-PASS census26/26; proposed1organization+1site+8evidence; pending 0 rows
-PASS census26/26; proposed1organization+1site+8evidence; pending 0 rows
-PASS all-CSV replay byte-identical; injected cross-shard reserved-ID collision fails before write
-PASS census26/26; proposed1organization+1site+8evidence; pending 0 rows
+PASS census26/26; proposed1organization+1site+14evidence+4registrylinks; pending 0 rows
 PASS snapshot2026-11-01 Form5500 screen: IAC3 names/0 establishment matches; Ultimate0 names
+PASS missing-parent evidence negative refuses before any write
+PASS registry composite-key conflict fails before any write
 PASS all-CSV replay byte-identical; injected cross-shard reserved-ID collision fails before write
