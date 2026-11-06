@@ -173,3 +173,24 @@ This targeted rereview did not repeat the unchanged original program sources or 
 Grok/xAI clerk5 (thr_r5auppm5ps) APPROVE257e2d6: no remaining append-only repair findings. Live fetches verify the original offer URL lacks the locality words, while EVD285030 own-about Chester/Connecticut and EVD285031 official county composition match words in order. EVD285028 is byte-identical to1891c83; new attribution correction is append-only. The sole existing institution edit is GT ORG002844 generated program-name rollup. Named100-lead check,4programs/2institutions/22EVD,validator0,row-loss and allocation uniqueness pass. Together with Codex5 approval on257e2d6, both required families approve the corrected packet. Reviews cover their requested corrections; unchanged original100-lead adjudication was not repeated.
 
 Controller instructs: wait for PR209 to merge, then take that main’s owned canonical files and replay this builder; report the integration head. This supersedes any earlier readiness implication while merge conflicts remain. No hand-merged CSVs or force-push. Program/institution/evidence packet values remain frozen; apply-time fresh-main checks still required.
+
+## Integration after PR209
+
+Pinned fresh main4ea5659562be6f267d84c450f3c9fb133ff61fe2 contains the required PR209
+merge1e5834394f592f7237a5919500d9fbd5f2c48ad5. Merged main into this branch; resolved
+all four owned canonical files by exact main copies, then replayed unchanged builder.
+No CSV hand-merge. Approved four packet CSV hashes and every packet row value unchanged.
+Fresh-main atlas domain/name dedupe: UWM and Davis both no hits before creates; receipts
+integration-main-dedupe-*.json. Integration counts/hashes in integration-209.json.
+
+Preserved all167 main program rows,400 institution rows,296 program evidence rows and
+407 ecosystem evidence rows. Added exactly4 programs,2 institutions,15program+7ecosystem
+EVD. The only changed existing cell is GT ORG002844 polymer_program_name, appending the
+new named composites certificate through the §4.11 rollup. No other main row or old
+fact/evidence was lost or changed. Result171programs/402ecosystem rows.
+
+Named check/replay/globalpending-EVD+wrongshard+preimage no-write injections PASS;
+validate.py0errors on the integrated tree. Both family approvals of257e2d6 cover the
+unchanged frozen packet; this merge changes integration context only. No scripts edits
+relative to main; fullscripts pytest/source research not repeated. Controller receives
+new head for serial merge; worker never merges to main.

@@ -1,0 +1,51 @@
+Before: python3 -m unittest scripts.test_validate.ValidatorMutationTests.test_v52_equipment_row_accepted
+F
+======================================================================
+FAIL: test_v52_equipment_row_accepted (scripts.test_validate.ValidatorMutationTests.test_v52_equipment_row_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/test_validate.py", line 123, in test_v52_equipment_row_accepted
+    self.assertEqual(code, 0, out[-1500:])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 :  tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4930 ORG-004089 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4931 ORG-004146 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4933 ORG-004194 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4934 ORG-004220 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4935 ORG-004605 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4936 ORG-004622 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations.csv:4946 ORG-004069 tier1_qualifier drift: stored ['tri_reporter'] vs derived [] (V-29)
+WARN  organizations_US.csv holds 222 residual rows — placement-review queue (V-38)
+WARN  code assignments: 61 rows over 61 orgs (SIC 61); polymer-bound ref_codes by system: CIP 3, CPC 1, HS 2, NAICS 35, OPENALEX 1, SIC 25 (V-44)
+ERROR equipment.csv:36 EQP-000001 duplicate equipment_id (V-52)
+
+4945 organizations, 6897 sites, 400 ecosystem rows, 2025 registry links, 60 member rows, 1431 people rows, 166 program rows, 71 event series, 35389 evidence rows, 356 relationship rows, 497 capability rows, 35 equipment rows, 0 engagement rows, 0 person-identifier links, 970 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+FAILED with 1 error(s).
+
+
+----------------------------------------------------------------------
+Ran 1 test in 1.211s
+
+FAILED (failures=1)
+
+After same command:
+.
+----------------------------------------------------------------------
+Ran 1 test in 1.164s
+
+OK
+
+Full suite: uv run --no-project --with pytest python3 -m pytest -q scripts/
+.................................s............................................................................ [ 49%]
+................................................................. [ 79%]
+..............................................                         [100%]
+=============================== warnings summary ===============================
+scripts/build_site.py:1770
+  /Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/build_site.py:1770: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+    f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+220 passed, 1 skipped, 1 warning, 43 subtests passed in 89.67s (0:01:29)
+
+Validator:
+OK — validation passed.
