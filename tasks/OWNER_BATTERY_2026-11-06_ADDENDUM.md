@@ -7,7 +7,7 @@
 > - This ruling changes no records, vocabulary, status, tier or existing ruling by itself.
 
 Same format as the [November 4 battery](OWNER_BATTERY_2026-11-04.md). The
-[merged November 6 battery](OWNER_BATTERY_2026-11-06.md) remains unchanged.
+[merged November 6 battery](OWNER_BATTERY_2026-11-06.md) keeps its item text unchanged.
 Seven questions below cover the requested later holds, the post-`a3eb74a` BOARD window, checked again before publication, and L12's subsequent source clarification. Packet evidence is pinned at each citation; primary
 links permit owner inspection. A recommendation cannot supply a missing fact or admit a held record by itself.
 

@@ -7,9 +7,10 @@
 > - Most items rule that a hold stays until its named evidence arrives. Selecting (a) supplies no missing fact and
 >   admits no held record by itself.
 > - B-ITA-ADMISSIBILITY ratifies the bounded inherited federal-packet exception used on 2026-11-06.
-> - Work authorized by (a): a bounded first tranche of band-B census leads (B-CENSUS-B); permission requests for the
->   owner to send (B-VINYL-RIGHTS, B-PMA-RIGHTS, B-ACMA-RIGHTS); a SAM.gov Read Public credential that the owner
->   provides through the secure credential route (B-SAM-KEY).
+> - Work authorized by (a): a bounded first tranche of band-B census leads (B-CENSUS-B); preparing a permission request,
+>   with no outreach sent (B-VINYL-RIGHTS); seeking a written permission or terms basis (B-PMA-RIGHTS) and express
+>   permission (B-ACMA-RIGHTS); extraction and publication stay held until suitable rights are granted; a SAM.gov
+>   Read Public credential that the owner provides or authorizes through the secure credential route (B-SAM-KEY).
 
 Every item needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation, marked (a), with the
 evidence behind it. Evidence that is still missing remains a hold; selecting a recommendation cannot supply it.
