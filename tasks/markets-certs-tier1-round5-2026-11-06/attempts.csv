@@ -1,6 +1,6 @@
 org_id,source_url,route_result,route,text_sha256
 ORG-002694,https://pleiger.com/custom-molded-polyurethane/,FETCHED,https://pleiger.com/custom-molded-polyurethane/,fbdd66e2fcec7dea8307cbd79cf5f1ae8550f2644a7c99bf19edcb4425d814a1
-ORG-002698,http://www.glenmarmanufacturing.com/,FETCHED,http://www.glenmarmanufacturing.com/,1c722d5b1326780c6c0907eb44c4d19a12ce0903e6fbb2cd9dcf261c997f2d9c
+ORG-002698,http://www.glenmarmanufacturing.com/,UNFETCHABLE,,
 ORG-002700,https://libertypultrusions.com/,UNFETCHABLE,,
 ORG-002711,,NO_WEBSITE,,
 ORG-002717,,NO_WEBSITE,,
