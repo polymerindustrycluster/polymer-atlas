@@ -6,7 +6,7 @@ Dedupe: held domains where available, normalized company/registrant legal/trade 
 
 Checks: validate.py0 errors; check.py147/147 verdict census,3 known answers,20/20 shuffled source-first checks, byte idempotence and occupied-ID mutation pass. GA strict NAICS326 sites/QCEW2023 private establishments62/491(12.63%)→75/491(15.27%); count ratio, not matched coverage. No scripts/ edits.
 
-Two-family refutes pending; draft under controller05:55 superseding review-clerk policy.
+Codex/OpenAI clerk3 APPROVE on a2dd30d (all20creates and dedupe checked; validator0, rowloss/replay/collision checks pass). Grok approval pending; draft remains under controller clerk-review policy.
 
 
 
