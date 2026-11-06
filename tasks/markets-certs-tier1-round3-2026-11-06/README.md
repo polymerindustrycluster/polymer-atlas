@@ -18,7 +18,7 @@ Named gates: validator zero errors; known-answer/defect checks; every candidate 
 
 **50 changed cells on 48 active stored-Tier-1 organizations**: 47 market cells + 3 certification cells; unchanged tiers A22/B24/U2. **158 new evidence rows**, one per accepted value: MN16/NC1/NJ2/OH128/TN1/TX10. Input-index IDs EVD-240160–240318; **240254 is an unused permanent hold slot**. No organization/site creates. Public own-site industries/products/quality pages and original PDFs only; each evidence row retains quote, URL and 2026-11-06 observation date. No private/licensed content.
 
-Initial bdb8b98 baseline, unit = active canonical organizations (4884): markets **404→451**, certs **52→55**. Active stored-Tier-1 subset (1261 organizations): markets **162→209**, certs **15→18**. These count populated organizations, not tags. `counts.json` records first application; `counts.sql` independently recounts canonical shards, excludes generated exports and reports frame/candidate yield.
+Initial bdb8b98 baseline, unit = active canonical organizations (4884): markets **404→451**, certs **52→55**. Active stored-Tier-1 subset (1261 organizations): markets **162→209**, certs **15→18**. These count populated organizations, not tags. `counts.json` records latest first application after main replay; `counts.sql` independently recounts canonical shards, excludes generated exports and reports frame/candidate yield.
 
 Accepted certifications (full own-site URLs and exact quotes in inputs):
 
@@ -39,6 +39,7 @@ Run from repo root:
 ```sh
 python3 tasks/markets-certs-tier1-round3-2026-11-06/check.py
 python3 tasks/markets-certs-tier1-round3-2026-11-06/build.py
+python3 tasks/markets-certs-tier1-round3-2026-11-06/guardcheck.py
 python3 tasks/markets-certs-tier1-round3-2026-11-06/boundary.py <integration-main-sha>
 duckdb :memory: < tasks/markets-certs-tier1-round3-2026-11-06/counts.sql
 python3 scripts/validate.py
@@ -46,9 +47,11 @@ python3 scripts/validate.py
 
 Before trusting the copied house fetch/matcher, four live known answers passed: CIMA markets positive, ESTERLE ISO2015 positive, Hudson ISO2015 positive, CIMA quality ISO2015 negative. Four fabricated quotes rejected. Raw matching reuses W from `tasks/evidence-repair-2-2026-11-04/prep.py` (requested ownership rawcheck tool absent). Curl browser UA, Jina fallback, pdftotext; ordered normalized tokens, not visual layout. New JS-challenge negative control rejects both routes. **159/159 candidate quotes**, accepted certificate identity/expiry quotes pass; zero unavailable candidate pages. Fresh random sample seed20361107: **30 VERIFIED value rows, 0 raw errors**, routes and parsed-text hashes in audit30.csv. Thirty values, not distinct organizations or semantic-review substitute.
 
-Pre-application mutations: duplicate existing evidence ID; IATF page edition2016→2015; dated-cert expiry→2025. Each rejected before writes, canonical hashes unchanged. Dropping a verdict failed 99/100 coverage. boundary.py checks existing keys, old evidence immutability, allowed fields and monotone tag additions, then byte-identical replay. Initial base bdb8b98: 48 orgs/47+3 cells/158 evidence; zero row loss/unrelated fields/old evidence edits. Validator **zero errors**, 35610 evidence rows on initial base. Existing warning queues remain warnings. Shared scripts unchanged; scripts pytest gate not triggered.
+Runnable `guardcheck.py` repeats the following in a temporary copy with canonical-file hashes. Pre-application mutations: duplicate existing evidence ID; IATF page edition2016→2015; dated-cert expiry→2025. Each rejected before writes, canonical hashes unchanged. Dropping a verdict failed 99/100 coverage. boundary.py checks existing keys, old evidence immutability, allowed fields and monotone tag additions, then byte-identical replay. Initial base bdb8b98: 48 orgs/47+3 cells/158 evidence; zero row loss/unrelated fields/old evidence edits. Validator **zero errors**, 35610 evidence rows on initial base. Existing warning queues remain warnings. Shared scripts unchanged; scripts pytest gate not triggered.
 
 On main movement, keep branch history as pre-pass backup. Merge current main per controller-authorized recipe; replace **ALL organization AND evidence shards MN/NC/NJ/OH/TN/TX with main versions**, replay builder, rerun checks. Never retain hand-merged CSV. boundary.json records latest base; refresh counts after replay. Frozen frame/input-index IDs stay unchanged.
+
+Latest integration: merged pinned main **fd55c1049a3aa317e3bef9f4112b739be3500001**, restored all 12 owned data files from that exact base, replayed builder. Active canonical organizations now **4899**, markets **404→451**, certs **52→55**; stored-Tier-1 counts remain **1261 / 162→209 / 15→18**. Same 48 organizations/50 cells/158 evidence, zero old-row loss/unrelated changes, byte-identical replay. Fresh raw159 + random30/0, all four no-write/yield guard checks and validator zero errors (**36563 evidence rows**) pass. Origin/main is moving in parallel; this receipt pins the actual merge parent.
 
 ## Refutes and limits
 

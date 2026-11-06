@@ -1,0 +1,33 @@
+diff --git a/scripts/build_site.py b/scripts/build_site.py
+index 91f60ec..ca03718 100644
+--- a/scripts/build_site.py
++++ b/scripts/build_site.py
+@@ -1769,7 +1769,7 @@ def equipment_block(rows):
+     body = "".join(
+         f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+         f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
+-        (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
++        + (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+         for r in sorted(rows, key=lambda r: (r.get("equipment_class") or "", (r.get("name") or "").lower())))
+     return (f"<h2>Equipment and testing ({fmt_int(len(rows))} equipment rows)</h2>"
+             '<p class="small muted">Instruments and pilot lines this organization lists on its own pages. Ask the host about access.</p>'
+diff --git a/scripts/test_build_site.py b/scripts/test_build_site.py
+index e2a8d58..287ef1c 100644
+--- a/scripts/test_build_site.py
++++ b/scripts/test_build_site.py
+@@ -152,6 +152,15 @@ class BuildSiteTest(unittest.TestCase):
+     def all_text_files(self):
+         return [p for p in self.out.rglob("*") if p.is_file() and p.suffix in {".html", ".json", ".js", ".css"}]
+ 
++    def test_nonempty_equipment_renders_source_cell(self):
++        for source in ("https://example.edu/equipment", ""):
++            with self.subTest(source=source):
++                html = build_site.equipment_block([{"name": "DSC", "equipment_class": "dsc",
++                                                   "access_mode": "not_stated", "source_ref": source}])
++                self.assertIn("1 equipment rows", html)
++                self.assertIn('<th scope="row">DSC</th>', html)
++                self.assertIn("host page</a></td></tr>" if source else "<td></td></tr>", html)
++
+     def test_pages_exist(self):
+         for rel in ["index.html", "map.html", "search.html", "sites.json", "orgs.json", "style.css",
+                     "map.js", "search.js", "counties/index.html", "experts.html", "experts.js", "experts.json"]:
