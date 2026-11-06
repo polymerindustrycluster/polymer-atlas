@@ -20,3 +20,5 @@ Initial66quote candidates:oneiNOEX candidate held at own-domain boundary;threeAu
 All207holds name the original claim plus required ownfacility/operator/edition witness inverdicts.csv. Fetch failure is never absence. Certification edition/currentcertificate uncertainties remain held. Parent/site inheritance, companyrebrands and genericchemicalscope are not silently inferred. This is62/269repaired, not269claims proved or an exhaustive website search. Existingparsedrecords remain identical; append_sorted may normalizeCSVquoting/newlines.
 
 BothCodex/Grok semanticdeeprefutes pending through06:25newoddlanepair3. Request independent62-rowcensus fromreview_packet.csv, including claimedsitebinding and interpretive market/material/process mappings. No finalapproval/Doneclaim;draft until findings resolved. Main was merged beforeapplication, resolving noCSVbyhand. 07:20own_siteclaimdetail audit:62/62containonlycitedpagewords, no federal aliases/IDs.
+
+Replayed oncurrentmain 18a8f8a: exactmaincopies ofall6affectedshards,thenbuilder;nohandCSVmerge.62witnesses269frameandfieldvaluesunchanged;baseline.json/checkpinupdated.

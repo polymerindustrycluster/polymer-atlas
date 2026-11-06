@@ -181,3 +181,15 @@ fact that would settle it. Changes are applied by a single writer per file,
 validated by the repository's validation script, and published with a
 byte-level read-back check. Personal contact data is never collected into
 this database; sources that carry it are stripped at ingest.
+
+## L5 source scout 3 — 2026-11-06
+
+Packet: [source-scout-3](../tasks/source-scout-3-2026-11-06/README.md), with recomputable samples and Wilson intervals.
+
+| Source | Standing | Measured scope / limitation |
+|---|---|---|
+| IAF CertSearch | CLOSED for public extraction | Terms restrict copying/redistribution; stopped before certificate sampling. Count/yield unavailable. Authorized enterprise API is a separate route. |
+| Polyurethane Manufacturers Association, public Processor Members | CORROBORATION_ONLY | 95 named processor-section entries; 3/20 verified-new organization leads (15%, Wilson 95% 5.24–36.04%). Public terms permission unresolved; no membership edges applied. |
+| PatentsView / USPTO PVGPATDIS | CORROBORATION_ONLY | 79,016 grants with C08/B29/C09J/B60C, 2020–2025; 12,939 organization assignees, 525 exact-name Atlas candidates (4.0575%). Sample 0/20 verified-new from bulk evidence alone (Wilson 95% 0–16.11%). 79 PIC-18 held organization patent candidates; confirmed ownership total remains held. No 2026 grants covered. |
+
+CBP 2023 reference: six added PIC-18 counties were already in the CSV; 16 published county/NAICS totals (160 size-class rows) reconcile to fresh Census API. Reporting tables now use PIC-18 (401 NAICS 326 establishments). See [reconciliation](../tasks/source-scout-3-2026-11-06/cbp/README.md).
