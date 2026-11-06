@@ -1,0 +1,475 @@
+{
+  "observed_date": "2026-11-06",
+  "input_sha256": "307b7a6d0eb968bdd4d11016dc27749cc1f9400240515178072466e60bcf5d94",
+  "fetches": [
+    {
+      "org_id": "ORG-007428",
+      "url": "https://www.sigmaplasticsgroup.com/location/omega-plastics-ca/",
+      "raw_sha256": "5761c4102d36650aa0ea824c572837b66ecb837e5e6542aaff743a80f1dbe8e2",
+      "path": "/tmp/residual-hq4-a/ORG-007428_2ae2acb44e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007432",
+      "url": "https://www.polyprocessing.com/contact-us/",
+      "raw_sha256": "9dd6507b836f4d642dd7e4a0a937a11455b2955f5ca1a7033970f775e9da3b09",
+      "path": "/tmp/residual-hq4-a/ORG-007432_0bd52be64a.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007432",
+      "url": "https://tanks.polyprocessing.com/hubfs/Installation%20Operation%20Maintenance%20Manual/PPC%20Installation%2C%20Operation%2C%20and%20Maintenance%20Manual%209-2023.pdf",
+      "raw_sha256": "8d1c3da4c684d749f2db483fdf5b05599c73d7295823b5cbd5ec335c9d38f780",
+      "path": "/tmp/residual-hq4-a/ORG-007432_657e6924e1.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007432",
+      "url": "https://www.polyprocessing.com",
+      "raw_sha256": "83858dc3a545e4af1ec7d88e9bf7ed19edb2b1a21f4f486214dc76bb098036c7",
+      "path": "/tmp/residual-hq4-a/ORG-007432_e15c9d4691.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007440",
+      "url": "https://r.jina.ai/https://www.toraytac.com/",
+      "raw_sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+      "path": "/tmp/residual-hq4-a/ORG-007440_0d53c033ad.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007440",
+      "url": "https://www.toraytac.com",
+      "raw_sha256": "775979b63ad375b64fcb2d9581864e5c5b32575c4e727caf9bac95346ac985a6",
+      "path": "/tmp/residual-hq4-a/ORG-007440_58e6f34f18.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007440",
+      "url": "https://www.toraytac.com/contact",
+      "raw_sha256": "63c1b552867e60186fd710bea84b54c72f177342fc073a7f1a7469f4ddb49fd3",
+      "path": "/tmp/residual-hq4-a/ORG-007440_b75ce52e3e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007516",
+      "url": "https://r.jina.ai/https://www.greenviewfloors.com/",
+      "raw_sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+      "path": "/tmp/residual-hq4-a/ORG-007516_324fda1280.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007516",
+      "url": "https://www.greenviewfloors.com",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "/tmp/residual-hq4-a/ORG-007516_6d981ba778.raw",
+      "error": "curl: (6) Could not resolve host: www.greenviewfloors.com\n"
+    },
+    {
+      "org_id": "ORG-007516",
+      "url": "http://www.greenviewfloors.com/",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "/tmp/residual-hq4-a/ORG-007516_d615b44123.raw",
+      "error": "curl: (6) Could not resolve host: www.greenviewfloors.com\n"
+    },
+    {
+      "org_id": "ORG-007605",
+      "url": "https://spartanmat.com/about/locations/",
+      "raw_sha256": "5ec64c9478916368061f5ef7bb08009f820ecea85a66276a34247883a7e6a611",
+      "path": "/tmp/residual-hq4-a/ORG-007605_6df156cfbd.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007605",
+      "url": "https://spartanmat.com",
+      "raw_sha256": "ee3067bf48b09753cc7b7dba718a55b9842cb6bb9719ffe1fc8d81033ec400b2",
+      "path": "/tmp/residual-hq4-a/ORG-007605_6eb523fe83.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007605",
+      "url": "https://spartanmat.com/about/",
+      "raw_sha256": "6a1e3c375f586255e813ab7b229024d99785c0615134bde6606abe8e9014abc6",
+      "path": "/tmp/residual-hq4-a/ORG-007605_bb0f403f28.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007606",
+      "url": "https://avcplastics.com/locations/",
+      "raw_sha256": "220eab5f03988444ea8a64e49694889a851a006ae1056566f50658f2ad223533",
+      "path": "/tmp/residual-hq4-a/ORG-007606_06ba34a5cb.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007606",
+      "url": "https://avcplastics.com",
+      "raw_sha256": "bf0538d2d92c2b699ccdb666e19f34c25866e9056e3ba2d878862caa512c42a2",
+      "path": "/tmp/residual-hq4-a/ORG-007606_54ac578acc.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007712",
+      "url": "https://tpmmfg.com/",
+      "raw_sha256": "96d3c1fe8c61679858c3014f9685e94e2e7292fd0176566ba6cbb86862553ff1",
+      "path": "/tmp/residual-hq4-a/ORG-007712_4edcd2e140.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007712",
+      "url": "https://tpmmfg.com/about/",
+      "raw_sha256": "d7a3f6da4b0bbf1d794897f9447e21a936e43c12589400b67279845068a3ef61",
+      "path": "/tmp/residual-hq4-a/ORG-007712_94096e8e3d.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007721",
+      "url": "https://avonplastics.com/",
+      "raw_sha256": "10a5b55566d01c7daa9e8078e6b8e8594f6b28e416612434865e9fe322a54cd7",
+      "path": "/tmp/residual-hq4-a/ORG-007721_ece0610a7d.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007721",
+      "url": "https://avonplastics.com/contact/",
+      "raw_sha256": "30c3f0191b183e6503a5fcefdde15e065dc4d75a48709887275d831e55febe57",
+      "path": "/tmp/residual-hq4-a/ORG-007721_fa97f88ac1.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007726",
+      "url": "https://www.imr-inc.com",
+      "raw_sha256": "923c57d764b901f91a32bda250c0cd0b8bd040868dd99aeab172da61ca34a31e",
+      "path": "/tmp/residual-hq4-a/ORG-007726_1d3936593c.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007726",
+      "url": "https://www.imr-inc.com/contact-us/",
+      "raw_sha256": "4c1f59943920a8f068d4cc35aa4055fdceda4ae5f5846d3be8367d95aef46390",
+      "path": "/tmp/residual-hq4-a/ORG-007726_87606e6c52.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007726",
+      "url": "https://www.imr-inc.com/about-us/",
+      "raw_sha256": "400fcda484eb7bb526174cbff89f1574297fa1fbdc16fc1dfb9691ddea242afa",
+      "path": "/tmp/residual-hq4-a/ORG-007726_a1a5df1b1e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007727",
+      "url": "https://www.manus.net/company/",
+      "raw_sha256": "62ad997da4a026ec44947cee3e9cf61feef999c3c6731a79cdff6801b10cf10e",
+      "path": "/tmp/residual-hq4-a/ORG-007727_1f16e34d6b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007727",
+      "url": "https://www.manus.net/contact/",
+      "raw_sha256": "7bc8be2db5a3bc3d752e1bdf31aab86df483a84c96d7f48d11a9572161165206",
+      "path": "/tmp/residual-hq4-a/ORG-007727_51ced1e13c.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007727",
+      "url": "https://www.manus.net",
+      "raw_sha256": "b4833e9e3363c92f5535ca91fdfd71dfbb87ba7f353baaab10addffdcf160cd8",
+      "path": "/tmp/residual-hq4-a/ORG-007727_a3f6b7542f.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007728",
+      "url": "https://www.hiawatharubber.com",
+      "raw_sha256": "e2fcf4c1e01cd44105381d9cc6075e3b3cde21a8820c5e79cf60443b2600b100",
+      "path": "/tmp/residual-hq4-a/ORG-007728_3de64f992c.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007728",
+      "url": "https://www.hiawatharubber.com/page/contact",
+      "raw_sha256": "4e4dce0b32b8cd2c95086e7f58a42d8f295c1462f05cbf2c0e25708cd9c34b76",
+      "path": "/tmp/residual-hq4-a/ORG-007728_4ce8295d9e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007728",
+      "url": "https://www.hiawatharubber.com/page/about",
+      "raw_sha256": "046a811423e94f0865fd8e143ca239303cb25f0c4fde4d73ce9215ca778f3444",
+      "path": "/tmp/residual-hq4-a/ORG-007728_acab5a6271.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007729",
+      "url": "https://www.toplastics.com",
+      "raw_sha256": "27111f5d60a966d322f344449c895a080b22809caf4f08cd2003c7f9ccdd4651",
+      "path": "/tmp/residual-hq4-a/ORG-007729_1676f0111a.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007729",
+      "url": "https://www.toplastics.com/hubfs/Resources/Medical/TO%20Plastics_Custom%20Solutions.pdf",
+      "raw_sha256": "762a2c30ecb4a9fde3370827b5f2de718bc7c62bb4cc6d788513e2c26097045b",
+      "path": "/tmp/residual-hq4-a/ORG-007729_3538f8c763.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007729",
+      "url": "https://www.toplastics.com/about",
+      "raw_sha256": "8d74881e1c03d316c26488cacf2205670e6398ee897c987c5a802aa7775f43f0",
+      "path": "/tmp/residual-hq4-a/ORG-007729_dfe7373254.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007730",
+      "url": "https://www.aggressiveindustries.com",
+      "raw_sha256": "ed34d9e0d48ccbce874818ae1ab70ecec3f36e8b4e0fd3dda37d7bb644ea09b9",
+      "path": "/tmp/residual-hq4-a/ORG-007730_2153048ab8.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007730",
+      "url": "https://www.aggressiveindustries.com/about-us/",
+      "raw_sha256": "d6a6e3533a3a8f1ca99259152a54a7ace6f0f0f6a8ba53e0a5443f05ce55d47a",
+      "path": "/tmp/residual-hq4-a/ORG-007730_fedcaf4090.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007731",
+      "url": "https://pridesolutions.com",
+      "raw_sha256": "1d174187cc05cc58fd73db4bc9da0449df5178b122f233c1479eb7d21f126511",
+      "path": "/tmp/residual-hq4-a/ORG-007731_12a84bef7a.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007731",
+      "url": "https://pridesolutions.com/contact",
+      "raw_sha256": "0890a898dd94a410db2493c0ae43206448a04384fc96a3ab5d7494d7c60b61aa",
+      "path": "/tmp/residual-hq4-a/ORG-007731_13b08f67fc.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007731",
+      "url": "https://pridesolutions.com/about-our-company",
+      "raw_sha256": "93f01b00d5fafc6995b49bce57228880db5da86b13feb46e6f5694829247a1e9",
+      "path": "/tmp/residual-hq4-a/ORG-007731_b47a53d632.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007733",
+      "url": "https://www.rubberindustries.com/about-us.html",
+      "raw_sha256": "3720334534d7236bc4867c535799647bff7a176d4478e3c051377c550e38c909",
+      "path": "/tmp/residual-hq4-a/ORG-007733_410ddad571.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007733",
+      "url": "https://www.rubberindustries.com",
+      "raw_sha256": "5c102c00cb1f94db7819f6640e83b36bf0964ba52702ba29bc0923c4d827424f",
+      "path": "/tmp/residual-hq4-a/ORG-007733_928395a24b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007733",
+      "url": "https://www.rubberindustries.com/contact.html",
+      "raw_sha256": "8db80f29c7804d6da47958a35b73689f9c7fa22a1b80df2a8aad81b121df6be0",
+      "path": "/tmp/residual-hq4-a/ORG-007733_aedbf8cadf.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007908",
+      "url": "https://flexcraft.com",
+      "raw_sha256": "1a281a4251942823b2b03a10d3488992e0a8dfb93f66164ceda58f756497ce2d",
+      "path": "/tmp/residual-hq4-a/ORG-007908_4f7afc2fed.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007908",
+      "url": "https://flexcraft.com/contact/",
+      "raw_sha256": "1baaa590f5285f76aea36855a325ea5bf2dcbc6c863eaaf0d8fef84d721654c0",
+      "path": "/tmp/residual-hq4-a/ORG-007908_c1c786a5ec.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007908",
+      "url": "https://flexcraft.com/about-us",
+      "raw_sha256": "fdfde6c1e457fe123eb1216e94ac13a55fa48d4a72b698153cb33748f60c7cda",
+      "path": "/tmp/residual-hq4-a/ORG-007908_f281d97e54.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007912",
+      "url": "https://www.pantechnology.com/contact",
+      "raw_sha256": "158857eca8ed0c17a4691f341c5b7a54b3efd89047f63a6e82ff6bd7a328a4fb",
+      "path": "/tmp/residual-hq4-a/ORG-007912_1c28572111.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007912",
+      "url": "https://www.pantechnology.com",
+      "raw_sha256": "16f242a2dbfae7655b489535d057da514cdee2e9fb38b8c1c0572fe30b0d53b2",
+      "path": "/tmp/residual-hq4-a/ORG-007912_aac75e334f.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007912",
+      "url": "https://www.pantechnology.com/about",
+      "raw_sha256": "105ae9a313c756f2e69163e05490fd08b699be2a0baffc9aaf181608a0ee9b91",
+      "path": "/tmp/residual-hq4-a/ORG-007912_ee60acefca.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007917",
+      "url": "https://www.minorrubber.com",
+      "raw_sha256": "5541da2ae97e31f73cce7e88e5552bf9fecf1d6ec539e9caf1c0390767b41ee0",
+      "path": "/tmp/residual-hq4-a/ORG-007917_3a1324f75a.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007917",
+      "url": "https://www.minorrubber.com/contact-us.html",
+      "raw_sha256": "5e7d182f5c67b8728cd2cbf4d159636ace0ae6fcea9d116770745445ee0c5252",
+      "path": "/tmp/residual-hq4-a/ORG-007917_62d04ee160.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-007917",
+      "url": "https://www.minorrubber.com/about-us.html",
+      "raw_sha256": "65fd60a5cf77f4e445943b29e002d12844dca9f56af40b78c3ecb19b49cbb0f2",
+      "path": "/tmp/residual-hq4-a/ORG-007917_8fd2041777.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008002",
+      "url": "https://darnelgroup.com",
+      "raw_sha256": "d86ad532970f3e365c0b592d62241d37ffadd40feb1ba8b97e41b8e728506871",
+      "path": "/tmp/residual-hq4-a/ORG-008002_5ea03ba2bd.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008002",
+      "url": "https://darnelgroup.com/en-us/contact",
+      "raw_sha256": "ea898411c46df719ef500f759c5b3b8f906e2cee187d23462596e9d3593cc784",
+      "path": "/tmp/residual-hq4-a/ORG-008002_9a1bd97669.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008002",
+      "url": "https://darnelgroup.com/en-us/about-us",
+      "raw_sha256": "3d6c888b550a720b6b1d9115f92825fb125dbee18fc6d5081755641768c454e5",
+      "path": "/tmp/residual-hq4-a/ORG-008002_ebfb3a0388.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008106",
+      "url": "https://group.saargummi.com",
+      "raw_sha256": "a5841f88bdeb610d8f05032eb6269af792deefbbdc8d5e0eaa89b34896d11453",
+      "path": "/tmp/residual-hq4-a/ORG-008106_2c3b82f938.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008106",
+      "url": "https://group.saargummi.com/en/locations",
+      "raw_sha256": "6b63eaeb728673ecc608483be46aff0bb23633dacf20d26071067debf9fdbd56",
+      "path": "/tmp/residual-hq4-a/ORG-008106_e80a1500d7.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008206",
+      "url": "https://www.graciousliving.com/contact",
+      "raw_sha256": "0d18ffac2dbadf3a8add5781e48ca1290538daed3f4181f2aea956fb82d95d37",
+      "path": "/tmp/residual-hq4-a/ORG-008206_597161366a.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008206",
+      "url": "https://www.graciousliving.com/about",
+      "raw_sha256": "0c00d89c5f7e2e08924781ba5a46700afa9d7d28ac824d63f6bf85a8dc63a14b",
+      "path": "/tmp/residual-hq4-a/ORG-008206_69744b3b7d.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008206",
+      "url": "https://www.graciousliving.com/",
+      "raw_sha256": "68cb3463b44660b5d4631d7515be8d00b2b1830bb25d9f975c8937d5c36205b7",
+      "path": "/tmp/residual-hq4-a/ORG-008206_8f343530ab.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008307",
+      "url": "https://www.reissmfg.com/contact-us/",
+      "raw_sha256": "6227f92a8e9f8176dbc7056e99910079ef4407a74b1d8b530645e3691b8c7632",
+      "path": "/tmp/residual-hq4-a/ORG-008307_4e181edd1e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008307",
+      "url": "https://reissmfg.com/our-company/",
+      "raw_sha256": "150b570260285b1263381a4a7d972abaeb74bb31f82af9e1908f2db92c3d20f3",
+      "path": "/tmp/residual-hq4-a/ORG-008307_7d36bb9942.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-008307",
+      "url": "https://www.reissmfg.com/",
+      "raw_sha256": "d7cd4392a9353d42b857748e42fad77fc5862d08fe424a11868ccec0d3f09749",
+      "path": "/tmp/residual-hq4-a/ORG-008307_9b1af04e41.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009001",
+      "url": "https://watsoncoatings.com/contact-us/",
+      "raw_sha256": "1f67c3625ca52910d6cf311a28254d3b1c203593be14ff5488bbd561f2d1ee86",
+      "path": "/tmp/residual-hq4-a/ORG-009001_116fee3986.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009001",
+      "url": "https://watsoncoatings.com/",
+      "raw_sha256": "c65a16569be7f083a8d2df4a98d8e665bab937fa860e897a59d41354f82e07d7",
+      "path": "/tmp/residual-hq4-a/ORG-009001_214b245d74.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009001",
+      "url": "https://watsoncoatings.com/about-us/",
+      "raw_sha256": "6caeb419c19c02a4cbf591ef2516ab76a5e8afb983bf0f434cf9ae054e024f33",
+      "path": "/tmp/residual-hq4-a/ORG-009001_6b7d004501.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009003",
+      "url": "https://www.tgmissouri.com/contact",
+      "raw_sha256": "c98dbec5e1b6af726aeac95e5fb103f355538326de867e87adc19bf44317c89a",
+      "path": "/tmp/residual-hq4-a/ORG-009003_5f8b048676.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009003",
+      "url": "https://www.tgmissouri.com/profile/",
+      "raw_sha256": "f36d39b73352d651266a7f28434998051523a7f797242832682a82b2bfb3b189",
+      "path": "/tmp/residual-hq4-a/ORG-009003_ff7be60230.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009004",
+      "url": "https://www.davispaint.com/contact-davis-paint",
+      "raw_sha256": "e97aec604bfdf3c79a196010d59dfab88497f6e35aa39f023d0a3d0ce5d7ee32",
+      "path": "/tmp/residual-hq4-a/ORG-009004_0b9f369b8b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009004",
+      "url": "https://www.davispaint.com/about-us",
+      "raw_sha256": "4c2bad4602cf7693098064353760bf48285577122f1d63ced35e4c78616e2a91",
+      "path": "/tmp/residual-hq4-a/ORG-009004_62a98536c6.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-009004",
+      "url": "https://www.davispaint.com/",
+      "raw_sha256": "df7e59c6e9b94b61f89cb5fa1f1ab1a668cb4432d793fcc612210fbedc544556",
+      "path": "/tmp/residual-hq4-a/ORG-009004_e8280a3757.raw",
+      "error": ""
+    }
+  ]
+}
