@@ -89,3 +89,13 @@ Bothprivateresearcherchecks+parentsupplementcheckreplayed,source_check_results.t
 Draft PR218 https://github.com/polymerindustrycluster/polymer-atlas/pull/218 dependsPR200;
 noCodex/Grokapprovalclaimeduntilitsownnewrequests. Parentclockcorrection9hoursrecorded;
 thislargerbudgetcheckdoesnotsettle14unknownfactsorconfirmthemabsent.
+
+## Review dispatch
+
+Published corrected follow-up head df37fef, DRAFT PR218. Controller14:00 clerk-pool ruling
+(any family clerk, prefer shortest queue) supersedes the older06:25 fixed-pair route.
+Queried live queues: Codex5thr_pf5j2nisg7=0, Grok5thr_r5auppm5ps=2 and shortest Grok;
+queued one deep adversarial request to each with brief.md. Both approvals pending;
+no Done/ready/merge claim. Existing PR185finding rereview stays with refutingCodex3;
+other priorPRs have independent gates. This dispatch receipt changes documentation only;
+all16 source verdicts, supplemental hashes, statistics and originalreportprefix unchanged.
