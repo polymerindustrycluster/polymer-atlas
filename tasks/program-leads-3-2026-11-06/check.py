@@ -27,13 +27,14 @@ def main():
     assert {(r['lead_id'],r['source_url'],r['quote']) for r in quotes}=={(r['lead_id'],r['source_url'],r['quote']) for r in raw}
     assert len(raw)==len(quotes)==16 and all(r['raw']=='yes' for r in raw)
     packets={f:read(HERE/f) for f in ('programs.csv','ecosystem.csv','evidence_programs.csv','evidence_ecosystem.csv')}
-    assert list(map(len,packets.values()))==[4,2,11,7]
+    assert list(map(len,packets.values()))==[4,2,13,7]
     assert {r['record_id'] for r in verdicts if r['verdict']=='VERIFIED'}=={r['program_id'] for r in packets['programs.csv']}
     evidence=packets['evidence_programs.csv']+packets['evidence_ecosystem.csv']
-    assert len(evidence)==len({r['evidence_id'] for r in evidence})==18
+    assert len(evidence)==len({r['evidence_id'] for r in evidence})==20
     for f,key in (('programs.csv','program_id'),('ecosystem.csv','org_id')):
         for row in packets[f]:assert {'existence','scope'}<={r['claim_type'] for r in evidence if r['record_id']==row[key]}
     for r in packets['programs.csv']:
+        assert all(r[k] for k in ('city','state','county')), 'required locality missing'
         assert not any(r[k] for k in ('cip_code','cip_source_type','latest_completions','completions_year','first_year_awarded','last_year_awarded'))
     canonical=HERE.parents[1]/'data'
     held={r['program_id'] for r in read(canonical/'programs.csv')}
@@ -66,7 +67,7 @@ def main():
         except AssertionError as e:assert 'ID collision/drift' in str(e)
         else:raise AssertionError('occupied ID passed')
         assert before==digest(data),'conflict caused partial writes'
-    print('PASS 100 exact next leads =4VERIFIED/2DUPLICATE_OF/94STILL_UNCERTAIN;4programs/2institutions/18evidence;16rawquotes;replay,prior-row preservation,two no-write defect injections')
+    print('PASS 100 exact next leads =4VERIFIED/2DUPLICATE_OF/94STILL_UNCERTAIN;4programs/2institutions/20evidence;16rawquotes;replay,prior-row preservation,two no-write defect injections')
 
 
 if __name__=='__main__':main()

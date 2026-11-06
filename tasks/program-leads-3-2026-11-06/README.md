@@ -55,8 +55,8 @@ Applied packet:
 - +4 Tier A program rows PROG000301–000304: Davis Composites certificate; Paulson
   University Online Training; UWM Plastics Technology Certificate; Georgia Tech
   Multidisciplinary Composites Certificate Program. No existing program row edited.
-- +2 Tier C institution rows ORG013000–013001 (UWM and Davis). +18 append-only
-  evidence rows EVD285010–285027:11 program and7 ecosystem. GT rollup regenerated;
+- +2 Tier C institution rows ORG013000–013001 (UWM and Davis). +20 append-only
+  evidence rows EVD285010–285029:13 program and7 ecosystem. GT rollup regenerated;
   its lead URL retained. No institution tier upgrade, registry-link row or ROR assertion.
 - UMass historic University of Lowell lead maps directly to held PROG000057;
   IYRS discovery-grant lead yields held Composites Technology PROG000082. Neither
@@ -122,7 +122,7 @@ research projects; no capstone requirement is asserted.
  old-row preservation, byte-identical replay, and two injected no-write failures
  (occupied ID drift and same EVD in wrong shard).
 - `python3 tasks/program-leads-3-2026-11-06/build.py`: PASS4 programs/2 institutions/
- 18 evidence; rerun0 appends. append_sorted used; all collisions checked before writes.
+ 20 evidence; rerun0 appends. append_sorted used; all collisions checked before writes.
 - `python3 scripts/validate.py`: PASS zero errors. Initial V23 failure (fresh NCES
  download marker omitted in evidence notes) fixed in frozen packet, restored main's
  four data files, replayed; no prior/published evidence edited.
@@ -143,3 +143,13 @@ Draft PR https://github.com/polymerindustrycluster/polymer-atlas/pull/160, heade
 Both Codex3/Grok3 requests queued; no verdict claimed. The94 settling facts are
 committed in holds.csv. Controller next assignment prioritizes all147 completions
 proposals on a new independent branch, then remaining169 leads if time allows.
+
+## Related county omission corrected before review
+
+The valid PR144 Codex county finding prompted the same required-locality audit here.
+Paulson now carries held parent ORG002934 default Chester/CT/Middlesex; GT carries
+held ORG002844 county Fulton (freshHD2024 UNITID139755 confirms). Explicit SCHEMA4.11
+defaults, not new campuses/HQ assertions. Added append-only addressEVD285028–029;
+old18 evidence unchanged; total20. Locality now asserted nonempty in task check.
+Paulson default provenance is its held operator, not a new current address observation
+on the online-offer page; worldwide delivery and tierA existence/scope are unchanged.
