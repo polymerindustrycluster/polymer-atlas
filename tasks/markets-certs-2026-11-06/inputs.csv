@@ -3,7 +3,7 @@ ORG-000061,markets_served,medical_device,https://www.ferriot.com/,"Enclosures an
 ORG-000061,markets_served,industrial_machinery,https://www.ferriot.com/,"Machine control housings, automation components, and rugged industrial enclosures",VERIFIED,,,,,
 ORG-000061,markets_served,electronics_electrical,https://www.ferriot.com/,"EMI shielded enclosures, cable and connector housings, and electronic device components",VERIFIED,,,,,
 ORG-000061,markets_served,appliances,https://www.ferriot.com/,"Kiosk enclosures, terminals, and appliance housings for high-use environments",VERIFIED,,,,,
-ORG-000061,markets_served,energy_renewables_battery,https://www.ferriot.com/,EV Charging and Electrical Infrastructure,VERIFIED,,,,,
+ORG-000061,markets_served,energy_renewables_battery,https://www.ferriot.com/,EV Charging and Electrical Infrastructure,STILL_UNCERTAIN,EV charging/electrical infrastructure does not explicitly establish renewables or battery market; hold mapping pending narrower source or owner vocabulary ruling.,,,,
 ORG-000069,markets_served,automotive_unspecified,https://www.designmolded.com/markets-served/,Automotive Industry Precision and durability are paramount in the automotive sector.,VERIFIED,,,,,
 ORG-000069,markets_served,medical_healthcare_general,https://www.designmolded.com/markets-served/,Healthcare Sector Reliability and precision are crucial in the healthcare industry for patient care.,VERIFIED,,,,,
 ORG-000069,markets_served,toys_sporting_goods,https://www.designmolded.com/markets-served/,"Our injection-molded parts are utilized in athletic gear, outdoor equipment, and sporting goods accessories",VERIFIED,,,,,
