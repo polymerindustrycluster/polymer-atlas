@@ -34,8 +34,10 @@ BY = "claude-code dedupe-medium-apply-2026-11-06"
 EVD_FIRST = 333000
 REL_FIRST = 470          # REL-000460..469 were allocated to the backlog sweep (BOARD 2026-11-06 10:35)
 
-# Held after the registry check (see README "Holds"): cluster -> reason. The cluster's org fold and its repoint are skipped.
+# Held (see README "Holds"): cluster -> reason. The cluster's folds and repoints are skipped.
 HOLD = {
+    "SND-0049": "controller: the 2 STILL_UNCERTAIN clusters stay untouched. The Jushi site fold (SITE-004191 -> SITE-003765) is the same plant "
+                "whoever operates it and is ready to apply on the controller's word (remove this entry and re-run).",
     "SND-0101": "GLEIF lists U.S. Farathane Corporation (Michigan, LEI 549300P7GW6TNUHX2L07, entity-supplied, registration "
                 "lapsed 2014) and U.S. Farathane, LLC (Delaware file 5360808, formed 2013-07-02, LEI 549300HLVY1RVM0MPI20, "
                 "fully corroborated, active) as separate legal entities; no conversion record. Not settled, so no fold.",

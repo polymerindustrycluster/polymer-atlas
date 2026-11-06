@@ -36,7 +36,7 @@ PERSIST = Path("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-
 csv.field_size_limit(10 ** 9)
 DATE = "2026-11-06"
 BY = "claude-code dedupe-medium-apply-2026-11-06"
-HELD = {"SND-0101"}              # US Farathane: GLEIF shows two separate legal entities, not a conversion; fold + repoint held
+HELD = {"SND-0101", "SND-0049"}  # Farathane: GLEIF shows two separate legal entities; Jushi: STILL_UNCERTAIN cluster, controller carve-out
 EVD_LO, EVD_HI = 333000, 333999
 REL_LO = 470
 ORG_ALLOWED_DUP = {"status", "status_date", "successor_org_id", "sources", "notes", "last_verified"}

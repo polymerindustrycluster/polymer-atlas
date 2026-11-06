@@ -1,3 +1,4 @@
+HOLD SND-0049: controller: the 2 STILL_UNCERTAIN clusters stay untouched. The Jushi site fold (SITE-004191 -> SITE-003765) is the same plant whoever operates it and is ready to apply on the controller's word (remove this entry and re-run).
 HOLD SND-0101: GLEIF lists U.S. Farathane Corporation (Michigan, LEI 549300P7GW6TNUHX2L07, entity-supplied, registration lapsed 2014) and U.S. Farathane, LLC (Delaware file 5360808, formed 2013-07-02, LEI 549300HLVY1RVM0MPI20, fully corroborated, active) as separate legal entities; no conversion record. Not settled, so no fold.
 ORG FOLD ORG-005115 Diamond Plastics Corporation -> ORG-004865 Diamond Plastics Corporation
 ORG FOLD ORG-001792 Crown Foam Technologies -> ORG-000937 Ludlow Composites Corporation
@@ -19,7 +20,6 @@ SITE FOLD SITE-002301 -> SITE-002302
 SITE FOLD SITE-004181 -> SITE-002868
 SITE FOLD SITE-004182 -> SITE-002870
 SITE FOLD SITE-000427 -> SITE-003478
-SITE FOLD SITE-004191 -> SITE-003765
 SITE FOLD SITE-000989 -> SITE-002962
 SITE FOLD SITE-002777 -> SITE-004377
 SITE FOLD SITE-001866 -> SITE-001008
