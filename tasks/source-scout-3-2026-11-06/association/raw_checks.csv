@@ -1,0 +1,7 @@
+name,claim,url,observed_date,quote,raw_words_in_order,raw_sha256
+Chemi-Flex,scope_quote,http://www.chemiflex.com/,2026-11-06,Custom Polyurethane Timing Belts — Engineered for Performance,PASS,c86dafb9cf72617fdc50a1eb665c59d9eab49f32e8bc387d6f6d8e1e40b89911
+Chemi-Flex,address_quote,https://www.chemiflex.com/contact,2026-11-06,"Visit our facility at: 1040 N. Ridge Ave. Lombard, IL 60148",PASS,a855be08ad388a523dbc910d25b775c364badf7ef54d5780f52f03b59004f18f
+ABCO Subsea LLC,scope_quote,http://www.abcosubsea.com/,2026-11-06,"VBRs are available in polyurethane, steel or a hybrid combination of the two materials.",PASS,e5b7aef8d5d45ddc02c18c152b2531f0a8fa9f059e56735b730c1a34035cd5c3
+ABCO Subsea LLC,address_quote,https://www.abcosubsea.com/,2026-11-06,"7108 West Little York Road Houston, Texas 77040 USA",PASS,e5b7aef8d5d45ddc02c18c152b2531f0a8fa9f059e56735b730c1a34035cd5c3
+"Meridian Laboratory, Inc",scope_quote,http://www.meridianlab.com/,2026-11-06,Meridian Laboratory Rotating Slip Rings and Molded Polyurethane,PASS,eec213b00d6082e24b4ef526567f347a4e7a5918669b01f2ad5ac8f23323042a
+"Meridian Laboratory, Inc",address_quote,https://www.meridianlab.com/contact-us/,2026-11-06,"2415 N. Pleasant View Rd. Middleton, WI 53562",PASS,2902132082268e7cb65db0f74bc884afe1b17e1606900a5944270cc39a4dbfa9
