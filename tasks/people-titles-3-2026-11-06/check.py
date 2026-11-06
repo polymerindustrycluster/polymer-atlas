@@ -1,5 +1,6 @@
 """Exact title-pass yield, bounded claim changes, raw witnesses and replay oracle."""
-import csv, hashlib, io, json, re, subprocess, sys
+import csv, hashlib, io, json, re, subprocess, sys, tempfile
+from pathlib import Path
 from unittest.mock import patch
 from build import HERE, ROOT, FIELDS, read, require_pair, on_domain, prepare
 from fetch import found, get, words
@@ -64,6 +65,24 @@ def main():
     assert len(ownids)==2*len(packet)+len(rank_rows)
     for r in packet:
         assert {evby[r[k]]['claim_type'] for k in ('evidence_title_id','evidence_polymer_id')}=={'existence','scope'}
+    # Integrator withdrawals after the 75cdeb5 refutes: lane proposals minus withdrawn = applied packet (AGENTS §2 rule 10c).
+    withdrawn={w['person_id']:w for w in read(HERE/'withdrawn.csv')}
+    lane_v=set().union(*({r['person_id'] for r in read(f)} for f in sorted(HERE.glob('lanes/*/verified.csv'))))
+    assert len(lane_v)==91 and set(withdrawn)<=lane_v and pids==lane_v-set(withdrawn),'lane proposals minus withdrawn != applied packet'
+    vby={v['person_id']:v for v in verdicts}
+    retired={e for w in withdrawn.values() for e in w['retired_evidence_ids'].split(';')}
+    assert len(retired)==2*len(withdrawn) and not retired&ownids
+    for pid,w in withdrawn.items():
+        assert vby[pid]['verdict']=='STILL_UNCERTAIN' and w['settling_fact'] in vby[pid]['settling_fact']
+        assert nowby[pid]==oldby[pid],(pid,'withdrawn person not at baseline')
+    def retired_absent(shards):
+        assert not retired&{e['evidence_id'] for f in shards for e in read(f)},'retired evidence ID in use'
+    shards=sorted((ROOT/'data').glob('evidence_*.csv'));retired_absent(shards)
+    with tempfile.TemporaryDirectory() as tmp:
+        bad=Path(tmp)/'evidence_people.csv';bad.write_text((ROOT/'data/evidence_people.csv').read_text()+sorted(retired)[0]+',people,X,,,,,,,,\n')
+        try:retired_absent([bad])
+        except AssertionError:pass
+        else:raise AssertionError('reused retired evidence ID accepted')
     # Exercise production guards without writing either canonical CSV.
     sample=packet[0];files=[ROOT/'data/people.csv',ROOT/'data/evidence_people.csv']
     hashes=[hashlib.sha256(f.read_bytes()).hexdigest() for f in files]

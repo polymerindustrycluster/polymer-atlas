@@ -2,7 +2,10 @@
 import concurrent.futures, hashlib, html, json, re, subprocess
 from html.parser import HTMLParser
 from pathlib import Path
-CACHE = Path('/tmp/atlas-l12-titles3-pages'); CACHE.mkdir(exist_ok=True)
+# Persisted copy of the sanitized cache (survives /tmp cleanup and worktree archive); /tmp is the original location.
+CACHE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/people-titles-3-2026-11-06/pages')
+if not CACHE.exists(): CACHE = Path('/tmp/atlas-l12-titles3-pages')
+CACHE.mkdir(exist_ok=True)
 class Text(HTMLParser):
     def __init__(self): super().__init__(); self.parts=[]; self.skip=0
     def handle_starttag(self,t,a):

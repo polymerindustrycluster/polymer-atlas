@@ -34,7 +34,7 @@ def identity(r,s):
     return False
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--private-root',required=True,type=Path);ap.add_argument('--cache-root',type=Path,default=Path('/tmp/atlas-l12-titles3-pages'));args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--private-root',required=True,type=Path);ap.add_argument('--cache-root',type=Path,default=next((x for x in [Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/people-titles-3-2026-11-06/pages')] if x.exists()),Path('/tmp/atlas-l12-titles3-pages')));args=ap.parse_args()
     p,c=args.private_root,args.cache_root;out=Path(__file__).resolve().parent;root=out.parents[3]
     a=private_data(p,'input_snapshot.json');d=private_data(p,'dispositions.json');m=private_data(p,'manifest.json');binding=private_data(p,'title_binding.json')
     assert len(a)==len(d)==56 and len({r['person_id'] for r in a})==56
@@ -47,15 +47,16 @@ def main():
     held={r['person_id']:r for r in csv.DictReader((root/'data/people.csv').open())}
     af={r['person_id']:r for r in a}
     roles={'professor','associate_professor','assistant_professor','research_professor','center_director_professor','senior_lecturer','staff_scientist','group_leader'}
-    expected={'professor':r'Professor','associate_professor':r'Associate Professor','assistant_professor':r'Assistant Professor','staff_scientist':r'Staff Scientist','group_leader':r'Group Leader'}
+    expected={'professor':r'Professor','associate_professor':r'Associate Professor','assistant_professor':r'Assistant Professor','staff_scientist':r'Staff Scientist','group_leader':r'^Group Leader\b'}  # anchored: 'Deputy Group Leader' has no SCHEMA §4.9 fold
     def quotecheck(u,q):
         assert 0<len(q.split())<=25 and contains(body(c,u),q), 'raw quote mismatch'
     def validate(r):
         f=v[r['person_id']];old=af[r['person_id']]
         for k in r: assert r[k]==f[k], f'public/private parity {k}'
         for k in ['full_name','institution_org_id']: assert r[k]==old[k]==held[r['person_id']][k]
-        assert r['old_role']==old['role']==held[r['person_id']]['role']
-        assert r['old_role_as_published']==old['role_as_published']==held[r['person_id']]['role_as_published']
+        assert (r['old_role'],r['old_role_as_published'])==(old['role'],old['role_as_published'])
+        live=(held[r['person_id']]['role'],held[r['person_id']]['role_as_published'])
+        assert live in {(r['old_role'],r['old_role_as_published']),(r['new_role'],r['new_role_as_published'])}, 'live pair is neither the baseline nor the applied proposal'
         assert r['new_role'] in roles and re.search(expected[r['new_role']],r['new_role_as_published'],re.I)
         assert not re.search(r'emeritus|adjunct|teaching|practice|postdoc',r['new_role_as_published'],re.I)
         domains={'.'.join(urlparse(u).hostname.split('.')[-2:]) for u in [old['public_profile_url'],*old['sources'].split(';')] if urlparse(u).hostname}
@@ -80,7 +81,23 @@ def main():
     assert not formal_title('Xiwen Gong\nAssociate Professor','Assistant Professor','formal_header')
     assert not identity({'full_name':'Xiwen Gong','new_role_as_published':'Assistant Professor'},body(c,known[0]['url']))
     assert not hits('Materials science','Ma') and not hits('polymers','polymer')
-    for r in rows:validate(r)
+    # Parent (integrator) withdrawals after the 75cdeb5 refutes: live row stays at baseline and the proposal must fail.
+    withdrawn={r['person_id'] for r in csv.DictReader((out.parents[1]/'withdrawn.csv').open())}
+    for r in rows:
+        if r['person_id'] not in withdrawn:validate(r);continue
+        assert (held[r['person_id']]['role'],held[r['person_id']]['role_as_published'])==(r['old_role'],r['old_role_as_published']), 'withdrawn person not at baseline'
+        try:validate(r)
+        except AssertionError:pass
+        else:raise AssertionError('withdrawn proposal still validates')
+    assert re.search(expected['group_leader'],'Group Leader / Polymer Engineer') and not re.search(expected['group_leader'],'Deputy Group Leader')
+    # Live-pair fixtures: baseline and applied pairs pass; a mixed pair fails.
+    r0=next(r for r in rows if r['person_id'] not in withdrawn and (r['old_role'],r['old_role_as_published'])!=(r['new_role'],r['new_role_as_published']));keep=held[r0['person_id']]
+    for pair,ok in [((r0['old_role'],r0['old_role_as_published']),True),((r0['new_role'],r0['new_role_as_published']),True),((r0['old_role'],r0['new_role_as_published']+' X'),False)]:
+        held[r0['person_id']]=dict(keep,role=pair[0],role_as_published=pair[1])
+        try:validate(r0);passed=True
+        except AssertionError:passed=False
+        assert passed==ok,('live-pair fixture',pair)
+    held[r0['person_id']]=keep
     false=copy.deepcopy(rows[0]);false['polymer_quote']='Fabricated polymer claim never printed in this source'
     try:quotecheck(false['polymer_url'],false['polymer_quote'])
     except AssertionError:pass
