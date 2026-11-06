@@ -23,6 +23,14 @@ def main():
  assert Counter(r['cluster_id'] for r in alloc)==Counter(r['cluster_id'] for r in vs if r['verdict']=='VERIFIED')
  ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
  sites={r['site_id']:r for p in (ROOT/'data').glob('sites_*.csv') for r in read(p)}
+ sys.path.insert(0,str(H));from prep import same_street
+ assert not same_street('','') and not same_street('#6 Capper Drive','')
+ assert same_street('126 Glassmaster Road','126 Glassmaster Rd')
+ for r in vs:
+  if r['verdict']=='DUPLICATE_OF':
+   c=next(c for c in source if c['cluster_id']==r['cluster_id']);site=sites[r['duplicate_of']]
+   assert site['state']==c['state'] and same_street(site['street_address'],c['street']),'invalid duplicate street link'
+  else:assert not r['duplicate_of'],'non-duplicate target'
  ev=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
  lane=[r for r in ev if r['created_by']=='atlas-L3-corroborated-la']
  assert len(alloc)==2 and len(lane)==15,(len(alloc),len(lane))

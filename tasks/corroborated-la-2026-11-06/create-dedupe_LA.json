@@ -48,7 +48,21 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [],
+        "hits": [
+          {
+            "id": "SITE-012503",
+            "name": "Poly Processing Company, LLC - Monroe",
+            "org_id": "ORG-007432",
+            "city": "Monroe",
+            "state": "LA",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_LA.csv",
+            "street": "2201 Old Sterlington Road",
+            "operator": "Poly Processing Company, LLC",
+            "match": "street key '2201 old sterlington rd'"
+          }
+        ],
         "other_localities": []
       },
       {
@@ -108,7 +122,21 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [],
+        "hits": [
+          {
+            "id": "SITE-012511",
+            "name": "Plastipak Packaging, Inc. - Pineville",
+            "org_id": "ORG-001033",
+            "city": "Pineville",
+            "state": "LA",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_LA.csv",
+            "street": "4101 Pardue Rd",
+            "operator": "Plastipak Packaging, Inc.",
+            "match": "street key '4101 pardue rd'"
+          }
+        ],
         "other_localities": []
       },
       {

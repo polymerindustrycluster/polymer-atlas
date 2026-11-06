@@ -46,3 +46,7 @@ T3 strict326 establishments: 7→9 /117 QCEW2023 establishments; 5.98%→7.69%. 
 Negative control initially exposed a real global-ID dictionary-collapse bug dependent on shard iteration order. Fixed by asserting SITE and EVD uniqueness before building lookup dictionaries; both injected duplicates now fail before writes. Same fix propagates to pending MO/SC PR164. No canonical data duplication occurred.
 
 Fresh-main identity preflight also asserts the filed company_name resolves to exactly one active surviving organization at application time, preventing stale packet identity from bypassing newly added aliases. A temp-copy mutation adds that company name to another active organization; it is rejected before any data write. SITE/EVD duplicates and ambiguous operator are three independent no-write negative controls. All42 verdicts and2 creates unchanged after fresh-main screening.
+
+Fresh-main integration at5a90bb1: all four affected canonical files restored from main before builder replay; baseline refreshed. Exact four-file boundary/all old canonical rows preserved except ORG001033 trade_names,2site+15EVD additions, all-CSV byte-identical replay, validator0errors. Address matcher now refuses empty normalized keys (the separate MO/SC Grok finding); blank/blank and leading-hash/blank negatives plus Road/Rd positive pass. No Louisiana verdict changed. Preparer excludes its own created sites during replay. Shared scripts remain unchanged.
+
+Two-family independent completion refutes pending; draft until approved.

@@ -1,0 +1,502 @@
+[
+  {
+    "trifid": "71730GRTLKRT7BO",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71753MFLXX601FI",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71753THYLCROUTE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71770LDWGN52WMA",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71801BRDNC185NI",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71857FRSTNHWY24",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71901LLNCR21CAR",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "71923SPLST35MCC",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72032STLPL1280S",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72076RSTCH1901R",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72143BRYCC450SB",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72208RMSTR5701M",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72209SMTHF2700W",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7236WSNYDR62IND",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72370CYRNDOFFHI",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72402BPCHM8500C",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72443NCHRP105EA",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72450BSTNNDANAD",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72503RKNSSSTATE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72601TNKNT230IN",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72653BXTRH1900N",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72653RQPCRRT2BO",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72761GTSRB1800G",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72764SPRNG81NJE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72801FRSTNHWY64",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "72901CPLSN5106W",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7290WLTCMF4921S",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7291WPTRSN399AY",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "73013JTTCR425CE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "73023MDWSTHWY19",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7311WCSTMC3949N",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "73402THNRY1101U",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "73505GDYRT1GOOD",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74063FBRCS25SOU",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74116STRMS10757",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7411WCNTNM991E5",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74120NRDMC1050E",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74361CHVRNRR3BO",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74362NTRPLHUNTS",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74467LSTMR221SH",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74745STCSL1803S",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74801CNTRLHWY17",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "74820JPMCNONEGE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7486WLTHMP695EG",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7495WCRHMR59SMC",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75020FLRSTFUNDA",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75030STCHL6125W",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75041MPCRP151WA",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75041NNCRB2326L",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75042DSTNC701SH",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7504WNDRSN33WDD",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75051PRNTP2006S",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75067FMSPP590BE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75069QDRNT200IN",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75071MNNRP500IN",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7508WCHNNL17JUS",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75109FRSTN421EH",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75110JTCCHEASTH",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75110PCTVC451EH",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75119KRLND1504S",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75119NNSXT4200K",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75120CRGLLPOBOX",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75134PHLPS151IN",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75160FLXBL501IN",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75160HNTRP1REXE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75160VKSTH17MET",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7516WKNRCM11MUS",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75220GNRLF10726",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75244RMXNC13524",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75428LLNCC3100I",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7548WRMRCK27HER",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75502CPRTRRT12P",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75602WSTLK229CA",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75603HNTSMHWY14",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75607TXSSTOFFHI",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7560WSYNTH3KDAK",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75652FBRGL1505I",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75670FRMNRSCOTT",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75702RXHDN705SO",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75766PRGRS4545N",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75901GRGPC1429E",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75903JWLLH117NR",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75941BRDNN100WE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75941RGDFMBORDE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "75942PRMNTEHWY2",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7600WFRNTR4524J",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7601WHNTSM3315E",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76021RTCSY2100R",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76063PRCHM300SO",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7606WMNRLW248RS",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7606WMRTCH165NH",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76086RCTNN901IN",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76102MPNCX1301C",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76106PRMMP27FRA",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76117SSCTD2417W",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76118SCSTP7112A",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76118TCRBB7101G",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "7611WTRRVL471SE",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76140RTPCX1301J",
+    "latest_year": "2024",
+    "coverage": "found"
+  },
+  {
+    "trifid": "76240MLDDF3333N",
+    "latest_year": "2024",
+    "coverage": "found"
+  }
+]
