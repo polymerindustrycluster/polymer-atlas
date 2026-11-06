@@ -1,0 +1,1617 @@
+[
+  {
+    "cluster_id": "LF-FL-00292",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Hilex Poly",
+      "--street",
+      "500 N Ellis Rd, Suite A",
+      "--city",
+      "Jacksonville",
+      "--state",
+      "FL",
+      "--zip",
+      "32254",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Hilex Poly",
+        "street": "500 N Ellis Rd, Suite A",
+        "city": "Jacksonville",
+        "state": "FL",
+        "zip": "32254"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002521",
+              "name": "Hilex Poly Co. LLC",
+              "city": "Milesburg",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "name key 'hilex poly' = legal_name 'Hilex Poly Co. LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00028",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Sherwin-Williams Company",
+      "--street",
+      "2150 W Sandlake Rd, Orlando, FL 32809",
+      "--city",
+      "Orlando",
+      "--state",
+      "FL",
+      "--zip",
+      "32809",
+      "--json",
+      "--domain",
+      "https://www.sherwin-williams.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sherwin-williams.com",
+        "name": "The Sherwin-Williams Company",
+        "street": "2150 W Sandlake Rd, Orlando, FL 32809",
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32809"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sherwin-williams.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000088",
+              "name": "PPG Industries, Inc.",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            },
+            {
+              "id": "ORG-002886",
+              "name": "CSW Industrials, Inc.",
+              "city": "Dallas",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00217",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Jeld-Wen, Inc",
+      "--street",
+      "355 Center Court",
+      "--city",
+      "Venice",
+      "--state",
+      "FL",
+      "--zip",
+      "34285",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Jeld-Wen, Inc",
+        "street": "355 Center Court",
+        "city": "Venice",
+        "state": "FL",
+        "zip": "34285"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002643",
+              "name": "Jeld-Wen",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "name key 'jeld wen' = legal_name 'Jeld-Wen'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00134",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Plastipak Packaging, Inc.",
+      "--street",
+      "4211 Amberjack Blvd.",
+      "--city",
+      "Plant City",
+      "--state",
+      "FL",
+      "--zip",
+      "33566",
+      "--json",
+      "--domain",
+      "https://www.plastipak.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.plastipak.com/",
+        "name": "Plastipak Packaging, Inc.",
+        "street": "4211 Amberjack Blvd.",
+        "city": "Plant City",
+        "state": "FL",
+        "zip": "33566"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001033",
+              "name": "Plastipak Packaging, Inc.",
+              "city": "Medina",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: plastipak.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001033",
+              "name": "Plastipak Packaging, Inc.",
+              "city": "Medina",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'plastipak packaging' = legal_name 'Plastipak Packaging, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00421",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Mapei - Wildwood",
+      "--street",
+      "4405 Northeast 82nd Ave.",
+      "--city",
+      "Wildwood",
+      "--state",
+      "FL",
+      "--zip",
+      "34785",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Mapei - Wildwood",
+        "street": "4405 Northeast 82nd Ave.",
+        "city": "Wildwood",
+        "state": "FL",
+        "zip": "34785"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00236",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Jacuzzi Brands LLC",
+      "--street",
+      "2452 Lake Emma Road",
+      "--city",
+      "Lake Mary",
+      "--state",
+      "FL",
+      "--zip",
+      "32746",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Jacuzzi Brands LLC",
+        "street": "2452 Lake Emma Road",
+        "city": "Lake Mary",
+        "state": "FL",
+        "zip": "32746"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004311",
+              "name": "Jacuzzi Brands LLC",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_US.csv",
+              "match": "name key 'jacuzzi brands' = legal_name 'Jacuzzi Brands LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00344",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "FXI, Inc.",
+      "--street",
+      "11000 NW 32nd Avenue",
+      "--city",
+      "Miami",
+      "--state",
+      "FL",
+      "--zip",
+      "33167",
+      "--json",
+      "--domain",
+      "https://www.fxi.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.fxi.com/",
+        "name": "FXI, Inc.",
+        "street": "11000 NW 32nd Avenue",
+        "city": "Miami",
+        "state": "FL",
+        "zip": "33167"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000853",
+              "name": "FXI, Inc.",
+              "city": "Spencerville",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: fxi.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000853",
+              "name": "FXI, Inc.",
+              "city": "Spencerville",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'fxi' = legal_name 'FXI, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00261",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Altium Packaging",
+      "--street",
+      "4330 20th St.",
+      "--city",
+      "Zephyrhills",
+      "--state",
+      "FL",
+      "--zip",
+      "33540",
+      "--json",
+      "--domain",
+      "https://altiumpkg.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://altiumpkg.com/",
+        "name": "Altium Packaging",
+        "street": "4330 20th St.",
+        "city": "Zephyrhills",
+        "state": "FL",
+        "zip": "33540"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: altiumpkg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'altium packaging' = legal_name 'Altium Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006136",
+              "name": "Altium Packaging - Newark Plant",
+              "city": "Newark",
+              "state": "DE",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_DE.csv",
+              "match": "legal_name contains 'Altium Packaging'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00116",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Graham Packaging Company",
+      "--street",
+      "1070 County Line Rd",
+      "--city",
+      "Lakeland",
+      "--state",
+      "FL",
+      "--zip",
+      "33815",
+      "--json",
+      "--domain",
+      "https://www.grahampackaging.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.grahampackaging.com/",
+        "name": "Graham Packaging Company",
+        "street": "1070 County Line Rd",
+        "city": "Lakeland",
+        "state": "FL",
+        "zip": "33815"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001403",
+              "name": "Graham Packaging Company",
+              "city": "Fremont",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: grahampackaging.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001403",
+              "name": "Graham Packaging Company",
+              "city": "Fremont",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'graham packaging' = legal_name 'Graham Packaging Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00441",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Sealed Air",
+      "--street",
+      "5135 Drane Field Road",
+      "--city",
+      "Lakeland",
+      "--state",
+      "FL",
+      "--zip",
+      "33811",
+      "--json",
+      "--domain",
+      "https://www.sealedair.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sealedair.com/",
+        "name": "Sealed Air",
+        "street": "5135 Drane Field Road",
+        "city": "Lakeland",
+        "state": "FL",
+        "zip": "33811"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000566",
+              "name": "Sealed Air Corporation",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "domain exact: sealedair.com"
+            },
+            {
+              "id": "ORG-000237",
+              "name": "Sealed Air - Automated Packaging Systems",
+              "city": "Streetsboro",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sealedair.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000566",
+              "name": "Sealed Air Corporation",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "name key 'sealed air' = legal_name 'Sealed Air Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000237",
+              "name": "Sealed Air - Automated Packaging Systems",
+              "city": "Streetsboro",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Sealed Air'"
+            },
+            {
+              "id": "ORG-000934",
+              "name": "Liquibox",
+              "city": "Upper Sandusky",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Sealed Air'"
+            },
+            {
+              "id": "ORG-001105",
+              "name": "Liquibox",
+              "city": "Ashland",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Sealed Air'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00014",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Cork Industries, Inc.",
+      "--street",
+      "5555 W Beaver Street",
+      "--city",
+      "Jacksonville",
+      "--state",
+      "FL",
+      "--zip",
+      "32254",
+      "--json",
+      "--domain",
+      "https://corkindustries.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://corkindustries.com",
+        "name": "Cork Industries, Inc.",
+        "street": "5555 W Beaver Street",
+        "city": "Jacksonville",
+        "state": "FL",
+        "zip": "32254"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002349",
+              "name": "Cork Industries Inc.",
+              "city": "Folcroft",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "domain exact: corkindustries.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002349",
+              "name": "Cork Industries Inc.",
+              "city": "Folcroft",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "name key 'cork industries' = legal_name 'Cork Industries Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00286",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "LATICRETE International, Inc.",
+      "--street",
+      "6769 White Drive",
+      "--city",
+      "West Palm Beach",
+      "--state",
+      "FL",
+      "--zip",
+      "33407",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "LATICRETE International, Inc.",
+        "street": "6769 White Drive",
+        "city": "West Palm Beach",
+        "state": "FL",
+        "zip": "33407"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004965",
+              "name": "LATICRETE International, Inc.",
+              "city": "Bethany",
+              "state": "CT",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CT.csv",
+              "match": "name key 'laticrete international' = legal_name 'LATICRETE International, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00379",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Toro Company",
+      "--street",
+      "3000 MELLONVILLE AVE, BLDG 422",
+      "--city",
+      "SANFORD",
+      "--state",
+      "FL",
+      "--zip",
+      "32773",
+      "--json",
+      "--domain",
+      "https://www.toro.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.toro.com/",
+        "name": "The Toro Company",
+        "street": "3000 MELLONVILLE AVE, BLDG 422",
+        "city": "SANFORD",
+        "state": "FL",
+        "zip": "32773"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004516",
+              "name": "The Toro Company",
+              "city": "Bloomington",
+              "state": "MN",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_MN.csv",
+              "match": "domain exact: toro.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004516",
+              "name": "The Toro Company",
+              "city": "Bloomington",
+              "state": "MN",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_MN.csv",
+              "match": "name key 'toro' = legal_name 'The Toro Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00009",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Amrize Building Envelope LLC",
+      "--street",
+      "6831 Stuart Ave",
+      "--city",
+      "Jacksonville",
+      "--state",
+      "FL",
+      "--zip",
+      "32254",
+      "--json",
+      "--domain",
+      "https://www.elevatecommercialbp.com/latam-en/resources/about-us"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.elevatecommercialbp.com/latam-en/resources/about-us",
+        "name": "Amrize Building Envelope LLC",
+        "street": "6831 Stuart Ave",
+        "city": "Jacksonville",
+        "state": "FL",
+        "zip": "32254"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002723",
+              "name": "Amrize Building Envelope LLC",
+              "city": "Youngwood",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "domain exact: elevatecommercialbp.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002723",
+              "name": "Amrize Building Envelope LLC",
+              "city": "Youngwood",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "name key 'amrize building envelope' = legal_name 'Amrize Building Envelope LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00337",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "American Vinyl Company",
+      "--street",
+      "600 W 83rd St",
+      "--city",
+      "Hialeah",
+      "--state",
+      "FL",
+      "--zip",
+      "33014",
+      "--json",
+      "--domain",
+      "https://avcplastics.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://avcplastics.com",
+        "name": "American Vinyl Company",
+        "street": "600 W 83rd St",
+        "city": "Hialeah",
+        "state": "FL",
+        "zip": "33014"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007606",
+              "name": "American Vinyl Company",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_US.csv",
+              "match": "domain exact: avcplastics.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007606",
+              "name": "American Vinyl Company",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_US.csv",
+              "match": "name key 'american vinyl' = legal_name 'American Vinyl Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00209",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Storopack, Inc.",
+      "--street",
+      "11825 NW 100th Road Suite 4",
+      "--city",
+      "Medley",
+      "--state",
+      "FL",
+      "--zip",
+      "33178",
+      "--json",
+      "--domain",
+      "https://www.storopack.us/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.storopack.us/",
+        "name": "Storopack, Inc.",
+        "street": "11825 NW 100th Road Suite 4",
+        "city": "Medley",
+        "state": "FL",
+        "zip": "33178"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: storopack.us"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00154",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Storopack, Inc.",
+      "--street",
+      "4724 Transport Drive",
+      "--city",
+      "Tampa",
+      "--state",
+      "FL",
+      "--zip",
+      "33605",
+      "--json",
+      "--domain",
+      "https://www.storopack.us/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.storopack.us/",
+        "name": "Storopack, Inc.",
+        "street": "4724 Transport Drive",
+        "city": "Tampa",
+        "state": "FL",
+        "zip": "33605"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: storopack.us"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00582",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "CANTEX INC.",
+      "--street",
+      "202 Progress Rd.",
+      "--city",
+      "Auburndale",
+      "--state",
+      "FL",
+      "--zip",
+      "33823",
+      "--json",
+      "--domain",
+      "https://www.cantexinc.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.cantexinc.com/",
+        "name": "CANTEX INC.",
+        "street": "202 Progress Rd.",
+        "city": "Auburndale",
+        "state": "FL",
+        "zip": "33823"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000259",
+              "name": "CANTEX Inc.",
+              "city": "Aurora",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: cantexinc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000259",
+              "name": "CANTEX Inc.",
+              "city": "Aurora",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'cantex' = legal_name 'CANTEX Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00744",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "CKS Packaging, Inc.",
+      "--street",
+      "333 W. Michigan St",
+      "--city",
+      "Orlando",
+      "--state",
+      "FL",
+      "--zip",
+      "32806",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "CKS Packaging, Inc.",
+        "street": "333 W. Michigan St",
+        "city": "Orlando",
+        "state": "FL",
+        "zip": "32806"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004995",
+              "name": "CKS Packaging",
+              "city": "Naugatuck",
+              "state": "CT",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CT.csv",
+              "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-FL-00835",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "ISCO Industries, Inc",
+      "--street",
+      "460 Fife Road",
+      "--city",
+      "Mulberry",
+      "--state",
+      "FL",
+      "--zip",
+      "33850",
+      "--json",
+      "--domain",
+      "https://isco-pipe.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://isco-pipe.com/",
+        "name": "ISCO Industries, Inc",
+        "street": "460 Fife Road",
+        "city": "Mulberry",
+        "state": "FL",
+        "zip": "33850"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000905",
+              "name": "ISCO Industries, Inc.",
+              "city": "Louisville",
+              "state": "KY",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_KY.csv",
+              "match": "domain exact: isco-pipe.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000905",
+              "name": "ISCO Industries, Inc.",
+              "city": "Louisville",
+              "state": "KY",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_KY.csv",
+              "match": "name key 'isco industries' = legal_name 'ISCO Industries, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006247",
+              "name": "Isco Industries, Inc. - Salt Lake City",
+              "city": "West Jordan",
+              "state": "UT",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_UT.csv",
+              "match": "legal_name contains 'ISCO Industries, Inc'"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,4 +1,4 @@
-FINAL v4 PR145 corrected rerefute. Return VERDICT APPROVE or REFUTE. Kaneka held; six added/9 changed routes checked;1049/212 canonical census plus injected omission test;hold/staleness prose fixed.115pages+41feeds=156cells,934holds. PCI andShintech onlynewpages;PCIfeedheld. Also fixed relatedPR152 query-slash bug at all URL comparison sites; regression tests cover redirect and feed article query differences. Complete code/accepted URLs follow.
+FINAL v4 PR145 rerefute:115pages+41feeds=156emptycells,934holds,1049 canonical-source IDs. Kaneka held; six omissions fetched;9 corrected routes rechecked; canonical9d69978 census+injected historical omission fail; hold/stale prose fixed; query-slash defect fixed in redirect AND feed item URL comparison with negative tests;45s bounded fetch cap addresses known32s-valid feed. No status/tier/ownership fields changed. Full code/accepted URLs below.
 # L9 newsroom navigation — Tier-1, 2026-11-06
 
 Claim atlas-L9-newsroom; branch agent/codex/newsroom-urls, PR145. Controller delegated application of newsroom_url/newsroom_feed_url. First user: existing news-monitor operator (L8/controller), usable after merge; no new operator system.
@@ -80,6 +80,10 @@ Cross-PR coverage gate now PASS against named source9d69978:1049+772+2258=4079 d
 
 Cross-lane Codex PR152 gate finding substantiated: full-string rstrip erased trailing slashes inside query values. Replaced all URL comparisons (redirects and feed-article overlap) with urlsplit keys that normalize only parsed path trailing slash, preserving query and fragment. Injected changed-query redirect and changed-query article permalink fail; benign path-only slash still passes. No current live misredirect claimed; no field changes from this gate correction.
 
+Known slow-valid feed observation from PR152:Pretium feed returned200RSS after32.3s to Grok. Fetch cap raised18→45s (connect8s unchanged) for reliable bounded rechecks; initial frozen discovery attempts used18s. No timeout is an absence/status finding.
+
+Final v4 integration main97ee6bc2a4475a47d8449ca79db688fb9114ab0f:exact-main orgs+builder,115pages/41feeds unchanged;parsed-query URL gate full156 fresh checks passed. Source cohort remains9d69978.
+
 CODE discover.py
 """Bounded own-domain discovery; candidates require human review before build.py."""
 import concurrent.futures, csv, json, re, subprocess, sys
@@ -112,7 +116,7 @@ class Links(HTMLParser):
             self.links.append((self.href,' '.join(' '.join(self.label).split()))); self.href=None
 
 def fetch(url):
-    p=subprocess.run(['curl','-L','--max-redirs','5','--max-time','18','--connect-timeout','8','-sS','-A','Mozilla/5.0', '-w','\n%{http_code}\t%{url_effective}',url],capture_output=True,text=True,errors='replace')
+    p=subprocess.run(['curl','-L','--max-redirs','5','--max-time','45','--connect-timeout','8','-sS','-A','Mozilla/5.0', '-w','\n%{http_code}\t%{url_effective}',url],capture_output=True,text=True,errors='replace')
     body,_,meta=p.stdout.rpartition('\n'); code,_,final=meta.partition('\t')
     return {'url':url,'final':final,'status':code,'body':body,'error':p.stderr[:180]}
 
