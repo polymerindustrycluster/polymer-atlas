@@ -41,18 +41,20 @@ def tasks_with_checks(repo, ref):
                                     capture_output=True).returncode == 0)
 
 
-def pass_state(repo, ref, slug):
-    """(tree commit, origin/main commit) the check's author validated against."""
-    intro = git(repo, 'log', '--first-parent', '--diff-filter=A', '--format=%H', ref, '--', f'tasks/{slug}/check.py').splitlines()[-1]
-    parents = git(repo, 'rev-list', '--parents', '-1', intro).split()[1:]
+def pass_state(repo, main, ref, slug):
+    """(tree commit, origin/main commit) the check's author validated against, from main's first-parent history."""
+    adds = git(repo, 'log', '--first-parent', '--diff-filter=A', '--format=%H', main, '--', f'tasks/{slug}/check.py').splitlines()
+    if not adds:  # a check new in `ref` itself (a PR under test): run it on that tree
+        return ref, git(repo, 'merge-base', ref, main)
+    parents = git(repo, 'rev-list', '--parents', '-1', adds[-1]).split()[1:]
     if len(parents) == 2:
         return parents[1], git(repo, 'merge-base', *parents)
-    return intro, parents[0] if parents else intro
+    return adds[-1], parents[0] if parents else adds[-1]
 
 
-def run_one(repo, ref, slug, at, timeout):
+def run_one(repo, main, ref, slug, at, timeout):
     """Return (status, commit, seconds, output tail) for one task's check."""
-    tree, base = (ref, ref) if at == 'head' else pass_state(repo, ref, slug)
+    tree, base = (ref, ref) if at == 'head' else pass_state(repo, main, ref, slug)
     tmp = Path(tempfile.mkdtemp(prefix=f'task-check-{slug[:30]}-'))
     start = time.time()
     try:
@@ -82,12 +84,12 @@ def main(argv=None):
     ap.add_argument('--repo', type=Path, default=ROOT)
     ap.add_argument('--ref', default='origin/main', help='tree whose task folders are overlaid (use HEAD to test a PR before merge)')
     args = ap.parse_args(argv)
-    ref = git(args.repo, 'rev-parse', args.ref)
+    ref, main = git(args.repo, 'rev-parse', args.ref), git(args.repo, 'rev-parse', 'origin/main')
     slugs = [s for s in tasks_with_checks(args.repo, ref) if not args.names or any(n in s for n in args.names)]
     if not slugs:
         sys.exit('no task check.py matched')
     with ThreadPoolExecutor(max_workers=args.jobs) as ex:
-        results = list(ex.map(lambda s: run_one(args.repo, ref, s, args.at, args.timeout), slugs))
+        results = list(ex.map(lambda s: run_one(args.repo, main, ref, s, args.at, args.timeout), slugs))
     for slug, (status, commit, secs, tail) in zip(slugs, results):
         print(f'{status:8} {slug} @{commit} {secs:.0f}s')
         if status != 'PASS':

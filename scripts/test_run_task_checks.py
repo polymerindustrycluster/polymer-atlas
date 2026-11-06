@@ -50,7 +50,7 @@ class RunTaskChecks(unittest.TestCase):
             code = run_task_checks.main(['--repo', str(self.repo), *argv])
         return code, out.getvalue()
 
-    def test_passes_at_its_own_merge_not_on_drifted_head(self):
+    def test_passes_at_its_pass_state_not_on_drifted_head(self):
         code, out = self.run_at('good', '--at', 'pass')
         self.assertEqual(code, 0, out)
         self.assertIn('PASS     good', out)
@@ -58,7 +58,7 @@ class RunTaskChecks(unittest.TestCase):
         self.assertEqual(code, 1, out)
         self.assertIn('FAIL     good', out)
 
-    def test_broken_check_fails_at_merge(self):
+    def test_broken_check_fails_at_its_pass_state(self):
         code, out = self.run_at('broken', '--at', 'pass')
         self.assertEqual(code, 1, out)
         self.assertIn('defect', out)
