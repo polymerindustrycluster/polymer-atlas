@@ -35,8 +35,9 @@ def main(data, apply=False):
     assert all(r['outcome'] in ('HQ_FOUND', 'STILL_UNKNOWN') for r in verdicts)
     assert all(r['settling_fact'] for r in verdicts if r['outcome'] == 'STILL_UNKNOWN')
     updates = json.loads((HERE / 'updates.json').read_text())
+    assert 'ORG-004391' not in updates, 'IDEX privacy-contact address is not explicit HQ'
     assert 'ORG-004522' not in updates, 'B-PARENT(a): HB&G proposal is held'
-    assert all(s['evidence']['evidence_id'] != 'EVD-315006' for s in updates.values()), 'retired evidence ID'
+    assert all(s['evidence']['evidence_id'] not in ('EVD-315005', 'EVD-315006', 'EVD-315008') for s in updates.values()), 'retired evidence ID'
     assert set(updates) == {r['org_id'] for r in verdicts if r['outcome'] == 'HQ_FOUND'}
     tables = {p.name: read(p) for p in data.glob('organizations_*.csv')}
     evidence = {p.name: read(p) for p in data.glob('evidence_*.csv')}

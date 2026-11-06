@@ -119,30 +119,6 @@
       "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
     }
   },
-  "ORG-004391": {
-    "fields": {
-      "hq_city": "Rohnert Park",
-      "hq_state": "CA",
-      "hq_country": "US",
-      "hq_county": "",
-      "hq_in_scope": "national_us",
-      "sources": "Places/directory listing for IDEX Health and Science, 110 Halcyon Dr, Bristol, CT (operator domain idex-hs.com); https://www.idex-hs.com/about/legal-notices/privacy-statement",
-      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:idex-health-and-science-llc (freeze tier B; design tier A). Created in PKT-031 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt031_verdicts.csv / pkt031_evidence_rows.csv. Packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
-    },
-    "evidence": {
-      "evidence_id": "EVD-315005",
-      "record_table": "organizations",
-      "record_id": "ORG-004391",
-      "claim_type": "address",
-      "claim_detail": "HQ Rohnert Park, CA, US: \"our corporate headquarters || IDEX Health & Science, LLC 600 Park Court Rohnert Park, CA 94928 Unites States\"",
-      "source_class": "own_site",
-      "source_ref": "https://www.idex-hs.com/about/legal-notices/privacy-statement",
-      "observed_date": "2026-11-06",
-      "tier_effect": "supports_A",
-      "created_by": "codex atlas-L5b-residual-hq",
-      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
-    }
-  },
   "ORG-004523": {
     "fields": {
       "hq_city": "Lafayette",

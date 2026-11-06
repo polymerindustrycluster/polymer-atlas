@@ -64,6 +64,9 @@ if __name__ == '__main__':
     for r in rows:
         if r['org_id'] == 'ORG-004522':
             r.update(outcome='STILL_UNKNOWN', source_class='press', settling_fact='HB&G-issued HQ witness, state registry or dated primary public record for the held entity.', note='B-PARENT(a): MBP is not an already-recorded parent; portfolio source is press ceiling B and undated, not admitted by this pass. EVD-315006 retired; no ownership edit.')
+    for r in rows:
+        if r['org_id'] == 'ORG-004391':
+            r.update(outcome='STILL_UNKNOWN', settling_fact='Explicit IDEX Health & Science HQ designation; privacy-contact address alone is insufficient.', note='Grok refute: HQ clause points to affiliates list; later Park Court privacy address is a separate referent. EVD-315005 retired.')
     previous = json.loads((HERE / 'updates.json').read_text()) if (HERE / 'updates.json').exists() else {}
     candidates = [r for r in rows if r['outcome'] == 'HQ_FOUND']
     receipts = json.loads((HERE / 'rawcheck.json').read_text()) if (HERE / 'rawcheck.json').exists() else []

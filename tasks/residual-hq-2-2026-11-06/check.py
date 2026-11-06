@@ -50,14 +50,15 @@ if __name__ == '__main__':
                 assert row[key] not in dest
                 dest[row[key]] = row
     updates = json.loads((HERE / 'updates.json').read_text())
-    assert 'ORG-004522' not in updates
+    assert not {'ORG-004391', 'ORG-004522'} & set(updates)
     noworg = union(data, 'organizations_*.csv', 'org_id')
     nowev = union(data, 'evidence_*.csv', 'evidence_id')
     assert noworg.keys() == oldorg.keys(), 'organization union changed'
     for oid, old in oldorg.items():
         assert noworg[oid] == old | updates.get(oid, {}).get('fields', {}), oid
     assert all(nowev[eid] == old for eid, old in oldev.items()), 'old evidence content changed'
-    assert 'EVD-315006' not in nowev and 'EVD-315008' not in nowev
+    assert not {'EVD-315005', 'EVD-315006', 'EVD-315008'} & set(nowev)
+    assert noworg['ORG-004391'] == oldorg['ORG-004391'], 'held IDEX row changed'
     assert noworg['ORG-004522'] == oldorg['ORG-004522'], 'held HQ or ownership changed'
     assert set(nowev) - set(oldev) == {s['evidence']['evidence_id'] for s in updates.values()}
     for spec in updates.values():
@@ -89,28 +90,29 @@ if __name__ == '__main__':
         packet.mkdir()
         for name in ('cohort.csv', 'verdicts.csv', 'updates.json'):
             shutil.copy2(HERE / name, packet / name)
-        poisoned = json.loads((packet / 'updates.json').read_text())
-        poisoned['ORG-004522'] = json.loads((HERE / 'withdrawn-proposals.json').read_text())['ORG-004522']
-        (packet / 'updates.json').write_text(json.dumps(poisoned))
-        verdict_rows = read(packet / 'verdicts.csv')
-        for row in verdict_rows:
-            if row['org_id'] == 'ORG-004522':
-                row['outcome'] = 'HQ_FOUND'
-        with (packet / 'verdicts.csv').open('w', newline='') as out:
-            writer = csv.DictWriter(out, fieldnames=list(verdict_rows[0]), lineterminator='\n')
-            writer.writeheader()
-            writer.writerows(verdict_rows)
         spec = importlib.util.spec_from_file_location('poisoned_builder', HERE / 'build.py')
         builder = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(builder)
         builder.HERE = packet
-        before = hashes(scratch)
-        try:
-            builder.main(scratch, apply=True)
-            raise RuntimeError('HB&G unrecorded-parent proposal was admitted')
-        except AssertionError as exc:
-            assert 'B-PARENT(a)' in str(exc), exc
-        assert hashes(scratch) == before, 'held unrecorded-parent mutation caused writes'
+        for held_id, error_text in [('ORG-004522', 'B-PARENT(a)'), ('ORG-004391', 'privacy-contact')]:
+            poisoned = dict(updates)
+            poisoned[held_id] = json.loads((HERE / 'withdrawn-proposals.json').read_text())[held_id]
+            (packet / 'updates.json').write_text(json.dumps(poisoned))
+            verdict_rows = read(HERE / 'verdicts.csv')
+            for row in verdict_rows:
+                if row['org_id'] == held_id:
+                    row['outcome'] = 'HQ_FOUND'
+            with (packet / 'verdicts.csv').open('w', newline='') as out:
+                writer = csv.DictWriter(out, fieldnames=list(verdict_rows[0]), lineterminator='\n')
+                writer.writeheader()
+                writer.writerows(verdict_rows)
+            before = hashes(scratch)
+            try:
+                builder.main(scratch, apply=True)
+                raise RuntimeError(f'{held_id} held proposal was admitted')
+            except AssertionError as exc:
+                assert error_text in str(exc), exc
+            assert hashes(scratch) == before, f'{held_id} mutation caused writes'
         oid = next(iter(updates))
         target = next(p for p in scratch.glob('organizations_*.csv') if any(r['org_id'] == oid for r in read(p)))
         original = target.read_bytes()
@@ -137,4 +139,4 @@ if __name__ == '__main__':
         before = hashes(scratch)
         run(scratch, expect=1)
         assert hashes(scratch) == before, 'evidence conflict caused writes'
-    print(f'PASS: exact 100 verdicts; {len(updates)} HQ moves; full organization/evidence unions; raw receipts; byte-idempotency; 4 no-write faults including HB&G source admission; 2 quote substitutions')
+    print(f'PASS: exact 100 verdicts; {len(updates)} HQ moves; full organization/evidence unions; raw receipts; byte-idempotency; 5 no-write faults including HB&G and IDEX admission; 2 quote substitutions')
