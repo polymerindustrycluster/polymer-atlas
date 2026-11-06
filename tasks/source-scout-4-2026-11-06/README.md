@@ -33,3 +33,9 @@ PR131 review correction is separate: Codex exposed51 as a hidden location inters
 ## Independent refutation
 
 Grok/xAI APPROVE,0findings,39849c0: independent oracle, validator, row-loss, live ACMA252/98/seed20, CDRbyte-identical replay and independent SQL counts, all21 held duplicate endpoints and source terms/gates checked. Report: controller review ledger reviews/162-clerk-grok-3.md. Following that report the lane independently raw-fetched Vinyl terms with the working full Chrome UA and replaced the raw-access hold with the publication-permission hold; counts, samples and source standings unchanged. Codex/OpenAI review pending; PR remains draft.
+
+## Codex review correction
+
+Codex/OpenAI REFUTE598d910 identified one ACMA RL Industries discovery snippet containing generic business phone/fax/email text, outside an appropriate schema field. Removed that entire non-evidentiary excerpt, and the generator now omits excerpts containing contact text. The oracle tests clean materials text plus email/PH/FX/bare-phone fixtures, checks every committed ACMA snippet, and detects the original defect. All40sample identities/verdicts, counts, source standings and metrics remain unchanged. Targeted Codex re-review pending; Grok APPROVE39849c0 remains recorded.
+
+Correction checks: named oracle PASS; restoring the original RL excerpt makes it fail with "contact data in discovery excerpt" (expected negative control); clean snapshot passes. Fresh RL homepage HTTP200 passed the updated generator contact-omission check. CSV comparison to reviewed packet shows exactly one scope_quote changed, with every identity/verdict/count unchanged. Merged current main2742438c3c; validator0errors and row-loss guard --base origin/main PASS; data/scripts/docs net diff0.

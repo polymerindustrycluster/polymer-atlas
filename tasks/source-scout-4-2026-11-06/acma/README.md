@@ -17,3 +17,5 @@ All-shard dedupe uses scripts/atlas.py: domain, normalized legal/trade name, the
 |---|---|---|
 | Directory publication | Explicit reuse right/authorization for public membership snapshots | CORROBORATION_ONLY, no edges |
 | Four identity/scope uncertainties | Primary polymer-process evidence and legal identity/US business address | No create or merge from category or substring alone |
+
+Review correction: the RL Industries homepage context window included generic contact information. The stored excerpt is now empty; the generator omits complete excerpts containing email/phone/fax indicators, with recurrence checks in ../check.py. No claim relies on that snippet, and RL Industries remains STILL_UNCERTAIN.

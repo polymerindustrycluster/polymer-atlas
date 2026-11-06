@@ -51,6 +51,13 @@ def main():
  for n in ['325211 Resin','326199 Plastics','326299 Rubber']:assert cdr.in_slice({'SITE NAICS CODE 1':n})
  for n in ['332618 Wire','CBI','NKRA','19326199 Fake']:assert not cdr.in_slice({'SITE NAICS CODE 1':n})
  acma=module(HERE/'acma/scout.py');fixture={str(i):dict(recordId=str(i),state=state,opt=opt,**{'organization-type':typ}) for i,(state,opt,typ) in enumerate([('OH',False,'Manufacturer'),('ON',False,'Manufacturer'),('OH',True,'Manufacturer'),('OH',False,'Supplier')])};assert len(acma.frame(fixture))==1
+ # The review defect must be caught both during generation and in committed samples.
+ assert acma.excerpt('Fiberglass components for industrial service')=='Fiberglass components for industrial service'
+ for contact in ['PH: 555-010-2345','FX: 555-010-2345','sales@example.com','(555) 010-2345']:
+  assert acma.excerpt('Fiberglass components '+contact)==''
+  assert acma.CONTACT.search('Fiberglass components '+contact)
+ for row in read(HERE/'acma/sample.csv'):
+  assert not acma.CONTACT.search(row['scope_quote']),f"contact data in discovery excerpt: {row['record_id']}"
  c=json.loads((HERE/'acma/counts.json').read_text());assert c==dict(public_listings=252,manufacturer_listings=121,us_manufacturer_not_opted_out=98,sampled=20)
  metrics['frames']=dict(cdr_input_rows=counts['input_chemical_reporting_rows'],cdr_all_site_ids=counts['all_tsca_site_ids'],cdr_slice_site_ids=len(frame),cdr_slice_chemical_rows=2924,acma_public_listings=252,acma_us_manufacturer_not_opted_out=98)
  routes=read(HERE/'routes.csv');assert len(routes)==9 and all(r['http_status'] and r['sha256'] for r in routes)
