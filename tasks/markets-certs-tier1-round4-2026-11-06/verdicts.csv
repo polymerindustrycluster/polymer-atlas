@@ -1,0 +1,101 @@
+org_id,verdict,detail
+ORG-001175,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001198,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001205,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001206,STILL_UNCERTAIN,Global Yanfeng products do not identify the named US Automotive Interior Systems II LLC scope. Need an own entity-scoped market/current-certificate witness; no group union copied.
+ORG-001346,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001407,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001415,STILL_UNCERTAIN,Own pages describe odor-control products and janitorial use without a clean controlled served-market match. Need explicit current served sectors or owner vocabulary ruling for janitorial/facilities; do not infer construction or personal care.
+ORG-001420,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001425,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001428,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001430,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001443,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001444,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001445,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001457,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001474,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-001476,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001520,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001542,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001545,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001582,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001605,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001606,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001610,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001611,STILL_UNCERTAIN,Flint global packaging business is not attributed to held North America Corporation. Need explicit held-entity/business link and scoped market/current certificate; global union held.
+ORG-001618,STILL_UNCERTAIN,Quanex global page identifies IGSystems as one of several ExtrudedSolutions entities but does not assign the segment market union to it. Need an IGSystems-scoped product/market or certificate witness.
+ORG-001658,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-001729,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001732,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001824,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-001833,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002065,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002066,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002181,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002185,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002192,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002199,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002216,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002227,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002239,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002241,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002245,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002248,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002251,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002266,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002271,STILL_UNCERTAIN,Recorded domain is Jennmar parent/group. Need explicit JLok identity/product-market linkage or named-entity current certificate; no parent market union copied.
+ORG-002275,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002279,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002294,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002302,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002307,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002308,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002324,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002326,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002330,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002333,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002335,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002348,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002351,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002353,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002375,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002401,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002421,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002438,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002441,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002443,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002450,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002456,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002462,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002465,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002474,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002491,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002496,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002497,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002499,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002500,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002527,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002530,STILL_UNCERTAIN,"Own IndustriesServed page describes substrate/coating breadth, not explicit served end sectors. Need a company served-market witness from vocabulary or owner reading for general-industrial coatings; ISO9001:2015 is superseded and held."
+ORG-002534,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002536,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002537,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002539,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002543,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002545,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002546,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002547,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002556,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002581,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002583,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002591,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002592,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002612,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002630,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002633,STILL_UNCERTAIN,Direct/fallback own-site route unavailable or challenge-only. Need a retrievable own-site market/current-certificate witness; failed retrieval is not absence or closure.
+ORG-002643,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002656,VERIFIED,"At least one value supported in inputs.csv; unfilled fields remain unknown, not negative claims."
+ORG-002659,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002662,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002675,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.
+ORG-002688,STILL_UNCERTAIN,No recorded website to establish own-site publisher. Need a public own-domain identity and scoped market/current-certificate witness; website field is outside this lane and remains unchanged. No absence/closure conclusion.

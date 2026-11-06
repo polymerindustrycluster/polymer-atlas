@@ -82,3 +82,7 @@ Cross-lane Codex PR152 gate finding substantiated: full-string rstrip erased tra
 Known slow-valid feed observation from PR152:Pretium feed returned200RSS after32.3s to Grok. Fetch cap raised18→45s (connect8s unchanged) for reliable bounded rechecks; initial frozen discovery attempts used18s. No timeout is an absence/status finding.
 
 Final v4 integration main97ee6bc2a4475a47d8449ca79db688fb9114ab0f:exact-main orgs+builder,115pages/41feeds unchanged;parsed-query URL gate full156 fresh checks passed. Source cohort remains9d69978.
+
+Final v4 two-family verdicts: **Codex1 APPROVE08baaa7,0 findings** and **Grok3 APPROVE08baaa7,0 findings**, superseding their84145bb REFUTEs. Both independently confirmed Kaneka empty, all1049 frozen IDs including six former omissions, corrected holds/staleness prose and query-value negative tests. Reports are in the controller review ledger (145-clerk-codex-1.md,145-clerk-grok-3-rereview.md). Source/fill/hold counts remain115pages+41feeds/934holds.
+
+Controller requested integration replay on main542629e53a0d07d55cf49b6da958f2219fbb5ba5 after both approvals: restored every main organization shard and ran the approved builder unchanged. Exact field-boundary census:156 previously empty cells/115existing organizations/28shards, only the two navigation columns; no row loss. Builder second run0; self_check PASS; validator0. No research packet or builder/checker code changed in this replay. Frozen9d69978 census continues to govern this pass.
