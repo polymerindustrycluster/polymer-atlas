@@ -48,21 +48,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012181",
-            "name": "Michelin North America, Inc. - Piedmont",
-            "org_id": "ORG-003093",
-            "city": "Piedmont",
-            "state": "SC",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_SC.csv",
-            "street": "1610 Old Grove Road",
-            "operator": "Michelin North America, Inc.",
-            "match": "street key '1610 old grove rd'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -133,21 +119,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012198",
-            "name": "American Roller Company LLC - Rock Hill",
-            "org_id": "ORG-004217",
-            "city": "Rock Hill",
-            "state": "SC",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_SC.csv",
-            "street": "1550 Cedar Line Drive",
-            "operator": "American Roller Company LLC",
-            "match": "street key '1550 cedar line dr'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -207,21 +179,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012199",
-            "name": "Amrize Building Envelope LLC - Wellford",
-            "org_id": "ORG-002723",
-            "city": "Wellford",
-            "state": "SC",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_SC.csv",
-            "street": "320 Innovation Way",
-            "operator": "Amrize Building Envelope LLC",
-            "match": "street key '320 innovation way'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -281,21 +239,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012208",
-            "name": "Alpek Polyester USA, LLC - Moncks Corner",
-            "org_id": "ORG-003945",
-            "city": "Moncks Corner",
-            "state": "SC",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_SC.csv",
-            "street": "3350 Cypress Gardens Rd.",
-            "operator": "Alpek Polyester USA, LLC",
-            "match": "street key '3350 cypress gardens rd'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -355,21 +299,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012219",
-            "name": "Sterilite Corporation - Clinton",
-            "org_id": "ORG-001384",
-            "city": "Clinton",
-            "state": "SC",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_SC.csv",
-            "street": "1939 Charlottes Road",
-            "operator": "Sterilite Corporation",
-            "match": "street key '1939 charlottes rd'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -418,21 +348,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012226",
-            "name": "Berry Global - Greenville",
-            "org_id": "ORG-002544",
-            "city": "Greenville",
-            "state": "SC",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_SC.csv",
-            "street": "200 ARROWHEAD CT",
-            "operator": "Berry Global",
-            "match": "street key '200 arrowhead ct'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {

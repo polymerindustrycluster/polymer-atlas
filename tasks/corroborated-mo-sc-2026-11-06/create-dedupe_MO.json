@@ -48,21 +48,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012107",
-            "name": "Buckhorn, Inc. - Springfield",
-            "org_id": "ORG-000714",
-            "city": "Springfield",
-            "state": "MO",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_MO.csv",
-            "street": "2727 N. Partnership Blvd",
-            "operator": "Buckhorn, Inc.",
-            "match": "street key '2727 n partnership blvd'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -132,21 +118,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012118",
-            "name": "Sealed Air Corporation - Saint Joseph",
-            "org_id": "ORG-000566",
-            "city": "Saint Joseph",
-            "state": "MO",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_MO.csv",
-            "street": "2313 & 2315 SW Lower Lake Road",
-            "operator": "Sealed Air Corporation",
-            "match": "street key '2313 and 2315 sw lower lake rd'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -237,21 +209,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012127",
-            "name": "Graham Packaging Company - Joplin",
-            "org_id": "ORG-001403",
-            "city": "Joplin",
-            "state": "MO",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_MO.csv",
-            "street": "3876 E 25th Street",
-            "operator": "Graham Packaging Company",
-            "match": "street key '3876 e 25 st'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
@@ -311,21 +269,7 @@
         "step": 3,
         "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
         "skipped": null,
-        "hits": [
-          {
-            "id": "SITE-012148",
-            "name": "Spartech - cape girardeau",
-            "org_id": "ORG-001119",
-            "city": "cape girardeau",
-            "state": "MO",
-            "status": "unknown",
-            "tier": "C",
-            "file": "sites_MO.csv",
-            "street": "2500 spartech drive",
-            "operator": "Spartech",
-            "match": "street key '2500 spartech dr'"
-          }
-        ],
+        "hits": [],
         "other_localities": []
       },
       {
