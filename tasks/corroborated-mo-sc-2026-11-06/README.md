@@ -1,7 +1,7 @@
 # L3 CORROBORATED continuation — MO/SC
 
 All143 CORROBORATED establishment clusters in Missouri63 and South Carolina80 are screened. Final verdicts:10 VERIFIED
-(4MO/6SC),132 STILL_UNCERTAIN (58MO/74SC),1 DUPLICATE_OF (MO). This is an exhaustive two-state census, not a sample.
+(4MO/6SC),133 STILL_UNCERTAIN (59MO/74SC),0 DUPLICATE_OF. This is an exhaustive two-state census, not a sample.
 No organizations are created. LA42 clusters are the next separate PR under the controller's ≤150-cluster cap.
 
 Every create is provisional tier C, current operating_status unknown. The witness is the employer's OSHA ITA CY2025
@@ -32,10 +32,11 @@ or operating claim. All70 site observations remain supports_C;10 new plants rema
 
 ## Holds
 
-The full holds table is verdicts.csv:132 STILL_UNCERTAIN rows with a named settling fact. In particular:
+The full holds table is verdicts.csv:133 STILL_UNCERTAIN rows with a named settling fact. In particular:
 
 | Cluster | Settling fact |
 |---|---|
+| LF-MO-00380 | Held operator identity for Aurora Technologies Inc at #6 Capper Drive, Pacific MO; empty normalized street keys cannot establish a duplicate |
 | LF-MO-00442 | Legal/operator continuity between Festus lamp-shade filing and held Ohio Crown Plastics UHMW maker |
 | LF-SC-00014 | Actual function of Duncan Innovation: production plant versus R&D/innovation center |
 | LF-SC-00285 | Polymer-binder activity witness; paint and varnish remover alone does not establish polymer formulation |
@@ -43,7 +44,7 @@ The full holds table is verdicts.csv:132 STILL_UNCERTAIN rows with a named settl
 | Alltrista/Jadex, CCP/American Plastics and other name-only variant cases | Primary confirmation of filed company versus held operator, rather than inheriting parent/division identity |
 
 No scope or ownership ruling is self-made; no closure/status change or merge is applied. Source absence is not closure.
-No borderline inclusion-log create; unsettled cases are held. DUPLICATE_OF terminates at a held site.
+No borderline inclusion-log create; unsettled cases are held. No duplicate verdict remains in this census.
 
 ## Checks
 
@@ -77,3 +78,5 @@ Updated-main integration: conflicts resolved with main data then both-state buil
 - MO: strict326 43→47/368, 11.68%→12.77%; this batch still adds 4 NAICS326 sites.
 - SC: strict326 52→57/406, 12.81%→14.04%; this batch still adds 5 NAICS326 sites.
 Updated main boundary comparison PASS: every original record/evidence retained; only four registrant alias fields gain values. Replay byte-identical. validate0errors, source/census/T3 checks PASS, both SITE and EVD cross-shard defect injections fail before writes.
+
+Grok3 REFUTE accepted: LF-MO-00380 was falsely linked to blank-street Avient SITE-002896 because the house street normalizer strips leading `#6` and returns empty. The lane now requires a nonempty normalized street key before matching. Aurora is STILL_UNCERTAIN with no duplicate target or create. Counts supersede the earlier 132-hold/one-duplicate result:10 VERIFIED,133 STILL_UNCERTAIN. The checker injects the exact reported false duplicate and rejects it; blank/blank and hash-leading/blank comparisons are false, while a real road/Rd variant still matches. Preparer ignores this lane's own created sites so replay does not relabel its creates as duplicates. Ten site creates and74 evidence rows are unchanged. Shared atlas.py normalization is not modified; controller notified of its leading-hash limitation. Targeted Grok3 re-review pending; Codex review pending.

@@ -1,3 +1,4 @@
 cluster_id,reason
 LF-MO-00442,"Need legal/operator continuity: held Crown Plastics makes UHMW belt-press sheet in Ohio; the Festus filing says plastic lamp shades. Same normalized name alone does not settle these operators."
 LF-SC-00014,"Need actual establishment function: federal establishment_name is Duncan Innovation. Resolve R&D/innovation center versus a production plant before assigning manufacturing_plant."
+LF-MO-00380,"Need a held operator identity for Aurora Technologies Inc at #6 Capper Drive, Pacific MO; blank normalized street keys are not duplicate evidence. No site create."

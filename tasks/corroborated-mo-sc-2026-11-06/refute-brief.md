@@ -1,7 +1,10 @@
+LATEST CURE: Grok3 false Aurora/Avient duplicate REFUTE accepted. LF-MO-00380 now STILL_UNCERTAIN, no target/create. Nonempty street_key required; exact reported false-link injection rejected, blank/hash-leading controls plus real Road/Rd match PASS. All143 re-screened,10VERIFIED133holds0duplicates;10creates74EVD unchanged.
+
 LATEST HEAD UPDATE: main now includes mergedSTRONG PR141, baseline.json pins current source. Final T3 MO43→47/368, SC52→57/406, batch increments unchanged+4/+5. Added explicit global SITE/EVD uniqueness checks before dictionary construction; both cross-shard duplicate injections fail before any data writes. Prior canonical records preserved and replaybyte-identical; counts10Csites/74EVD unchanged.
 
-Adversarial two-family completion refute requested: PR continuation L3,143 CORROBORATED clusters (MO63 SC80). Full census10 proposed new sites, all provisional C and operating_status unknown,0orgs,74 evidence (70 siteC+4 primary-government registrant identity observations A);4 held trade_names variants added. No own_site quotes or fresh operating checks claimed. Banked ITA CY2025 witnessed packet2026-11-01 reviewed2026-11-06, official URL keyed establishment_ID. Government primary identity observations support A only for filed company_name, never promote plant tier/scope/liveness. Class ceiling government_filing permits A. Known3identity answers+ambiguous alias mutation passed. All143 exactverdicts;10verified132uncertain1duplicate. Primary federal company name must independently resolve exact normalized legal/trade name of one active surviving held operator. Plantlabels/parentvariant alone held. Production code+explicitpolymermanufacture text required; paintremover/distribution and Crown identity/DuncanInnovation held. No sourceabsenceclosure inference.
+Adversarial two-family completion refute requested: PR continuation L3,143 CORROBORATED clusters (MO63 SC80). Full census10 proposed new sites, all provisional C and operating_status unknown,0orgs,74 evidence (70 siteC+4 primary-government registrant identity observations A);4 held trade_names variants added. No own_site quotes or fresh operating checks claimed. Banked ITA CY2025 witnessed packet2026-11-01 reviewed2026-11-06, official URL keyed establishment_ID. Government primary identity observations support A only for filed company_name, never promote plant tier/scope/liveness. Class ceiling government_filing permits A. Known3identity answers+ambiguous alias mutation passed. All143 exactverdicts;10verified133uncertain0duplicate. Primary federal company name must independently resolve exact normalized legal/trade name of one active surviving held operator. Plantlabels/parentvariant alone held. Production code+explicitpolymermanufacture text required; paintremover/distribution and Crown identity/DuncanInnovation held. No sourceabsenceclosure inference.
 Check.py allPASS: exactcensus/sourcebinding,countryCunknown,global/reservedIDs,T3+4MO/+5SC; three censusdefects caught; wrong-shard-ID injection fails beforewrites. Existingcanonical rows comparedagainstbdb8b98: only4trade_names additions; evidenceappend-only. Allstatebuilderreplaybyteidentical. validate.py0errors. Entire10createcensus in blind-full-census.csv, inspect all10 not20sample since fewercreates. ReservedSITE012100+frozenindex;EVD300000+20index under controllergrant300000..309999. Goal legalverdictpercluster, uncertainallowed; do not demandholdsintegrate. End APPROVE or REFUTE with material findings and coverage. Never modify this lane worktree.
+
 
 
 FILE LANE_BRIEF.md
@@ -36,7 +39,7 @@ FILE README.md
 # L3 CORROBORATED continuation — MO/SC
 
 All143 CORROBORATED establishment clusters in Missouri63 and South Carolina80 are screened. Final verdicts:10 VERIFIED
-(4MO/6SC),132 STILL_UNCERTAIN (58MO/74SC),1 DUPLICATE_OF (MO). This is an exhaustive two-state census, not a sample.
+(4MO/6SC),133 STILL_UNCERTAIN (59MO/74SC),0 DUPLICATE_OF. This is an exhaustive two-state census, not a sample.
 No organizations are created. LA42 clusters are the next separate PR under the controller's ≤150-cluster cap.
 
 Every create is provisional tier C, current operating_status unknown. The witness is the employer's OSHA ITA CY2025
@@ -67,10 +70,11 @@ or operating claim. All70 site observations remain supports_C;10 new plants rema
 
 ## Holds
 
-The full holds table is verdicts.csv:132 STILL_UNCERTAIN rows with a named settling fact. In particular:
+The full holds table is verdicts.csv:133 STILL_UNCERTAIN rows with a named settling fact. In particular:
 
 | Cluster | Settling fact |
 |---|---|
+| LF-MO-00380 | Held operator identity for Aurora Technologies Inc at #6 Capper Drive, Pacific MO; empty normalized street keys cannot establish a duplicate |
 | LF-MO-00442 | Legal/operator continuity between Festus lamp-shade filing and held Ohio Crown Plastics UHMW maker |
 | LF-SC-00014 | Actual function of Duncan Innovation: production plant versus R&D/innovation center |
 | LF-SC-00285 | Polymer-binder activity witness; paint and varnish remover alone does not establish polymer formulation |
@@ -78,7 +82,7 @@ The full holds table is verdicts.csv:132 STILL_UNCERTAIN rows with a named settl
 | Alltrista/Jadex, CCP/American Plastics and other name-only variant cases | Primary confirmation of filed company versus held operator, rather than inheriting parent/division identity |
 
 No scope or ownership ruling is self-made; no closure/status change or merge is applied. Source absence is not closure.
-No borderline inclusion-log create; unsettled cases are held. DUPLICATE_OF terminates at a held site.
+No borderline inclusion-log create; unsettled cases are held. No duplicate verdict remains in this census.
 
 ## Checks
 
@@ -112,6 +116,91 @@ Updated-main integration: conflicts resolved with main data then both-state buil
 - MO: strict326 43→47/368, 11.68%→12.77%; this batch still adds 4 NAICS326 sites.
 - SC: strict326 52→57/406, 12.81%→14.04%; this batch still adds 5 NAICS326 sites.
 Updated main boundary comparison PASS: every original record/evidence retained; only four registrant alias fields gain values. Replay byte-identical. validate0errors, source/census/T3 checks PASS, both SITE and EVD cross-shard defect injections fail before writes.
+
+Grok3 REFUTE accepted: LF-MO-00380 was falsely linked to blank-street Avient SITE-002896 because the house street normalizer strips leading `#6` and returns empty. The lane now requires a nonempty normalized street key before matching. Aurora is STILL_UNCERTAIN with no duplicate target or create. Counts supersede the earlier 132-hold/one-duplicate result:10 VERIFIED,133 STILL_UNCERTAIN. The checker injects the exact reported false duplicate and rejects it; blank/blank and hash-leading/blank comparisons are false, while a real road/Rd variant still matches. Preparer ignores this lane's own created sites so replay does not relabel its creates as duplicates. Ten site creates and74 evidence rows are unchanged. Shared atlas.py normalization is not modified; controller notified of its leading-hash limitation. Targeted Grok3 re-review pending; Codex review pending.
+
+
+FILE prep.py
+#!/usr/bin/env python3
+"""Screen all 143 MO/SC CORROBORATED leads; reuse atlas entity/street normalization.
+Adapted from L11 CORROBORATED prep.py; no data writes. Federal-only creates require
+unambiguous held operator + explicit polymer manufacturing activity in a reliable ITA row.
+"""
+import csv,json,re,sys
+from collections import defaultdict,Counter
+from pathlib import Path
+H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
+import atlas
+
+def read(p):
+ with open(p,newline='') as f:return list(csv.DictReader(f))
+def write(p,rows,fields=None):
+ with open(p,'w',newline='') as f:
+  w=csv.DictWriter(f,fieldnames=fields or list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
+def same_street(a,b):
+ key=atlas.street_key(a)
+ return bool(key) and key==atlas.street_key(b)
+def main():
+ tables={}
+ for name in ['organizations','sites','ecosystem']:
+  t=atlas.Table(name)
+  for p in (sorted((ROOT/'data').glob(name+'_*.csv')) if name!='ecosystem' else [ROOT/'data/ecosystem.csv']):
+   for r in read(p):
+    if name=='sites' and r['created_by']=='atlas-L3-corroborated-mo-sc':continue
+    r['__file__']=str(p.relative_to(ROOT));r['__line__']=0;t.rows.append(r)
+  tables[name]=t
+ orgs={r['org_id']:r for r in tables['organizations'].rows};idx=defaultdict(set)
+ for oid,r in orgs.items():
+  for name in [r['legal_name']]+r['trade_names'].split(';'):
+   key=atlas.name_key(name)
+   if key:idx[key].add(oid)
+ def terminal(oid):
+  seen=set()
+  while orgs[oid]['successor_org_id']:
+   if oid in seen:return None
+   seen.add(oid);oid=orgs[oid]['successor_org_id']
+   if oid not in orgs:return None
+  return oid
+ def operators(names):return {terminal(oid) for n in names for oid in idx[atlas.name_key(n)]}
+ # Three known held operator identities and one ambiguity injection before trusting the matcher.
+ known=[]
+ for needle in ['Plastipak Packaging','Nike IHM','Hydrite Chemical']:
+  matches=[r for r in orgs.values() if needle.casefold() in r['legal_name'].casefold()]
+  assert len(matches)==1,(needle,len(matches));r=matches[0]
+  assert operators([r['legal_name']])=={terminal(r['org_id'])}
+  known.append({'name':r['legal_name'],'expected_org_id':terminal(r['org_id']),'result':'PASS'})
+ key=atlas.name_key(known[0]['name']);saved=idx[key].copy();idx[key].add(known[1]['expected_org_id'])
+ assert len(operators([known[0]['name']]))==2;idx[key]=saved
+ (H/'known-answers.json').write_text(json.dumps({'real_identity_answers':known,'injected_ambiguity':'rejected'},indent=2)+'\n')
+ ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
+ cs=[r for r in read(ROOT/'tasks/lead-fusion-2026-11-01/clusters.csv') if r['state'] in ('MO','SC') and r['class']=='CORROBORATED']
+ cs.sort(key=lambda c:(c['state'],-int(c['score']),c['cluster_id']));assert len(cs)==143
+ write(H/'input.csv',cs);out=[];report={}
+ for c in cs:
+  fed=[ita[i[4:]] for i in c['sources_with_ids'].split(';') if i.startswith('ITA:')]
+  names=[c['best_name']]+c['name_variants'].split(' | ')+[r['company_name'] for r in fed]+[r['establishment_name'] for r in fed]
+  held=operators(names);d=atlas.dedupe(tables,name=c['best_name'],street=c['street'],city=c['city'],state=c['state'],zip_=c['zip5'])
+  # Physical address wins over spelling of the postal city/ZIP, across all site shards.
+  street=[r for r in tables['sites'].rows if r['state']==c['state'] and same_street(r['street_address'],c['street'])]
+  v='STILL_UNCERTAIN';oid='';dupe='';reason='Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.'
+  if street:v='DUPLICATE_OF';dupe=street[0]['site_id'];reason='Physical street/state already held; no create.'
+  elif len(held)!=1 or None in held:reason='Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve '+str(sorted(x or 'unresolved successor' for x in held))+'.'
+  elif fed:
+   oid=next(iter(held));f=fed[0]
+   if operators([f['company_name']])!={oid}:reason='Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.'
+   elif orgs[oid]['status']!='active':reason='Held operator status is not active; need a current operating/identity witness.'
+   elif any(not r['street'] or not r['city'] or not r['zip5'] or r['state']!=c['state'] or atlas.street_key(r['street'])!=atlas.street_key(c['street']) or r['naics_code']!=f['naics_code'] or r['reliability']!='ok' for r in fed):reason='Need reconciled reliable federal street/state/NAICS across the linked ITA records.'
+   elif not (f['naics_code'].startswith('326') or f['naics_code'] in {'325211','325212','325510','325520','325910'}) or re.search(r'remover|stripper|cleaner',f['industry_description'],re.I) or f['schema_2_2_signal']!='P' or not re.search(r'plastic|polymer|rubber|resin|paint|coating|\binks?\b',f['industry_description'],re.I):reason='Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.'
+   elif any(s['org_id']==oid and s['state']==c['state'] and atlas.squash(s['city'])==atlas.squash(f['city']) and not s['street_address'] for s in tables['sites'].rows):reason='Held operator has an unresolved blank-street site in this locality; need address resolution before a create.'
+   else:v='VERIFIED';reason='Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown.'
+  out.append(dict(cluster_id=c['cluster_id'],state=c['state'],verdict=v,held_org_id=oid if v=='VERIFIED' else '',duplicate_of=dupe,establishment_id=fed[0]['establishment_id'] if fed else '',reason=reason))
+  report[c['cluster_id']]={'house_dedupe':d,'exact_name_terminal_orgs':sorted(x or 'unresolved' for x in held),'street_hits':[r['site_id'] for r in street]}
+ reviewed={r['cluster_id']:r['reason'] for r in read(H/'holds-reviewed.csv')}
+ for row in out:
+  if row['cluster_id'] in reviewed:row.update(verdict='STILL_UNCERTAIN',held_org_id='',duplicate_of='',reason=reviewed[row['cluster_id']])
+ write(H/'verdicts.csv',out);(H/'dedupe.json').write_text(json.dumps(report,indent=2)+'\n')
+ print(Counter((r['state'],r['verdict']) for r in out))
+if __name__=='__main__':main()
 
 
 FILE build.py
@@ -155,7 +244,7 @@ def main():
   create_dedupe[v['cluster_id']]=dedupe(tables,domain=org['website'] or None,name=f['company_name'],street=f['street'],city=f['city'],state=a.state,zip_=f['zip5'])
   aliases=[org['legal_name']]+org['trade_names'].split(';');assert name_key(f['company_name']) in {name_key(x) for x in aliases}
   assert all(r['reliability']=='ok' and r['state']==a.state and r['naics_code']==f['naics_code'] and street_key(r['street'])==street_key(f['street']) for r in fed)
-  assert f['street'] and f['city'] and f['zip5'] and f['schema_2_2_signal']=='P'
+  assert street_key(f['street']) and f['city'] and f['zip5'] and f['schema_2_2_signal']=='P'
   assert f['naics_code'].startswith('326') or f['naics_code'] in {'325211','325212','325510','325520','325910'}, 'not a producer code'
   assert re.search(r'plastic|polymer|rubber|resin|paint|coating|\binks?\b',f['industry_description'],re.I) and not re.search(r'remover|stripper|cleaner',f['industry_description'],re.I), 'activity does not settle polymer manufacturing'
   assert v['cluster_id'] not in {r['cluster_id'] for r in read(H/'holds-reviewed.csv')}, 'manual identity/function hold'
@@ -218,6 +307,14 @@ def census(source,vs):
  assert len(source)==len(vs)==143 and len({r['cluster_id'] for r in vs})==143
  assert Counter(r['cluster_id'] for r in source)==Counter(r['cluster_id'] for r in vs)
  assert all(r['verdict'] in {'VERIFIED','REJECT','STILL_UNCERTAIN','DUPLICATE_OF'} and r['reason'] for r in vs)
+def duplicate_links(vs,source,sites):
+ byc={r['cluster_id']:r for r in source}
+ sys.path.insert(0,str(H));from prep import same_street
+ for r in vs:
+  if r['verdict']=='DUPLICATE_OF':
+   c=byc[r['cluster_id']];site=sites[r['duplicate_of']]
+   assert site['state']==c['state'] and same_street(site['street_address'],c['street']),'invalid duplicate street link'
+  else:assert not r['duplicate_of'],'non-duplicate target'
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--negative-controls',action='store_true');a=ap.parse_args()
  source=[r for r in read(ROOT/'tasks/lead-fusion-2026-11-01/clusters.csv') if r['class']=='CORROBORATED' and r['state'] in ('MO','SC')]
@@ -231,6 +328,15 @@ def main():
  assert Counter(r['cluster_id'] for r in alloc)==Counter(r['cluster_id'] for r in vs if r['verdict']=='VERIFIED')
  ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
  sites={r['site_id']:r for p in (ROOT/'data').glob('sites_*.csv') for r in read(p)}
+ duplicate_links(vs,source,sites)
+ bad=[dict(r) for r in vs];aurora=next(r for r in bad if r['cluster_id']=='LF-MO-00380');assert aurora['verdict']=='STILL_UNCERTAIN'
+ aurora.update(verdict='DUPLICATE_OF',duplicate_of='SITE-002896')
+ try:duplicate_links(bad,source,sites)
+ except AssertionError:pass
+ else:raise AssertionError('reported blank-key false duplicate escaped')
+ from prep import same_street
+ assert not same_street('','') and not same_street('#6 Capper Drive','')
+ assert same_street('126 Glassmaster Road','126 Glassmaster Rd')
  ev=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
  lane=[r for r in ev if r['created_by']=='atlas-L3-corroborated-mo-sc']
  assert len(alloc)==10 and len(lane)==74,(len(alloc),len(lane))
@@ -263,7 +369,7 @@ def main():
     assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
     assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
     wrong.write_bytes(original)
- print('PASS exact143 census;3 census defects caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
+ print('PASS exact143 census;3 census defects and reported blank-key duplicate caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
  if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
 if __name__=='__main__':main()
 

@@ -1425,13 +1425,7 @@
       ]
     },
     "exact_name_terminal_orgs": [],
-    "street_hits": [
-      "SITE-002896",
-      "SITE-002903",
-      "SITE-003591",
-      "SITE-003887",
-      "SITE-003963"
-    ]
+    "street_hits": []
   },
   "LF-MO-00410": {
     "house_dedupe": {

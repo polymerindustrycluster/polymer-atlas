@@ -10,6 +10,14 @@ def census(source,vs):
  assert len(source)==len(vs)==143 and len({r['cluster_id'] for r in vs})==143
  assert Counter(r['cluster_id'] for r in source)==Counter(r['cluster_id'] for r in vs)
  assert all(r['verdict'] in {'VERIFIED','REJECT','STILL_UNCERTAIN','DUPLICATE_OF'} and r['reason'] for r in vs)
+def duplicate_links(vs,source,sites):
+ byc={r['cluster_id']:r for r in source}
+ sys.path.insert(0,str(H));from prep import same_street
+ for r in vs:
+  if r['verdict']=='DUPLICATE_OF':
+   c=byc[r['cluster_id']];site=sites[r['duplicate_of']]
+   assert site['state']==c['state'] and same_street(site['street_address'],c['street']),'invalid duplicate street link'
+  else:assert not r['duplicate_of'],'non-duplicate target'
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--negative-controls',action='store_true');a=ap.parse_args()
  source=[r for r in read(ROOT/'tasks/lead-fusion-2026-11-01/clusters.csv') if r['class']=='CORROBORATED' and r['state'] in ('MO','SC')]
@@ -23,6 +31,15 @@ def main():
  assert Counter(r['cluster_id'] for r in alloc)==Counter(r['cluster_id'] for r in vs if r['verdict']=='VERIFIED')
  ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
  sites={r['site_id']:r for p in (ROOT/'data').glob('sites_*.csv') for r in read(p)}
+ duplicate_links(vs,source,sites)
+ bad=[dict(r) for r in vs];aurora=next(r for r in bad if r['cluster_id']=='LF-MO-00380');assert aurora['verdict']=='STILL_UNCERTAIN'
+ aurora.update(verdict='DUPLICATE_OF',duplicate_of='SITE-002896')
+ try:duplicate_links(bad,source,sites)
+ except AssertionError:pass
+ else:raise AssertionError('reported blank-key false duplicate escaped')
+ from prep import same_street
+ assert not same_street('','') and not same_street('#6 Capper Drive','')
+ assert same_street('126 Glassmaster Road','126 Glassmaster Rd')
  ev=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
  lane=[r for r in ev if r['created_by']=='atlas-L3-corroborated-mo-sc']
  assert len(alloc)==10 and len(lane)==74,(len(alloc),len(lane))
@@ -55,6 +72,6 @@ def main():
     assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
     assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
     wrong.write_bytes(original)
- print('PASS exact143 census;3 census defects caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
+ print('PASS exact143 census;3 census defects and reported blank-key duplicate caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
  if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
 if __name__=='__main__':main()

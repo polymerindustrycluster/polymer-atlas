@@ -14,12 +14,17 @@ def read(p):
 def write(p,rows,fields=None):
  with open(p,'w',newline='') as f:
   w=csv.DictWriter(f,fieldnames=fields or list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
+def same_street(a,b):
+ key=atlas.street_key(a)
+ return bool(key) and key==atlas.street_key(b)
 def main():
  tables={}
  for name in ['organizations','sites','ecosystem']:
   t=atlas.Table(name)
   for p in (sorted((ROOT/'data').glob(name+'_*.csv')) if name!='ecosystem' else [ROOT/'data/ecosystem.csv']):
-   for r in read(p):r['__file__']=str(p.relative_to(ROOT));r['__line__']=0;t.rows.append(r)
+   for r in read(p):
+    if name=='sites' and r['created_by']=='atlas-L3-corroborated-mo-sc':continue
+    r['__file__']=str(p.relative_to(ROOT));r['__line__']=0;t.rows.append(r)
   tables[name]=t
  orgs={r['org_id']:r for r in tables['organizations'].rows};idx=defaultdict(set)
  for oid,r in orgs.items():
@@ -53,7 +58,7 @@ def main():
   names=[c['best_name']]+c['name_variants'].split(' | ')+[r['company_name'] for r in fed]+[r['establishment_name'] for r in fed]
   held=operators(names);d=atlas.dedupe(tables,name=c['best_name'],street=c['street'],city=c['city'],state=c['state'],zip_=c['zip5'])
   # Physical address wins over spelling of the postal city/ZIP, across all site shards.
-  street=[r for r in tables['sites'].rows if r['state']==c['state'] and atlas.street_key(r['street_address'])==atlas.street_key(c['street'])]
+  street=[r for r in tables['sites'].rows if r['state']==c['state'] and same_street(r['street_address'],c['street'])]
   v='STILL_UNCERTAIN';oid='';dupe='';reason='Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.'
   if street:v='DUPLICATE_OF';dupe=street[0]['site_id'];reason='Physical street/state already held; no create.'
   elif len(held)!=1 or None in held:reason='Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve '+str(sorted(x or 'unresolved successor' for x in held))+'.'
@@ -69,7 +74,7 @@ def main():
   report[c['cluster_id']]={'house_dedupe':d,'exact_name_terminal_orgs':sorted(x or 'unresolved' for x in held),'street_hits':[r['site_id'] for r in street]}
  reviewed={r['cluster_id']:r['reason'] for r in read(H/'holds-reviewed.csv')}
  for row in out:
-  if row['cluster_id'] in reviewed:row.update(verdict='STILL_UNCERTAIN',held_org_id='',reason=reviewed[row['cluster_id']])
+  if row['cluster_id'] in reviewed:row.update(verdict='STILL_UNCERTAIN',held_org_id='',duplicate_of='',reason=reviewed[row['cluster_id']])
  write(H/'verdicts.csv',out);(H/'dedupe.json').write_text(json.dumps(report,indent=2)+'\n')
  print(Counter((r['state'],r['verdict']) for r in out))
 if __name__=='__main__':main()

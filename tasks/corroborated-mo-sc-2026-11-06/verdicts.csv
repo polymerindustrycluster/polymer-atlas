@@ -30,7 +30,7 @@ LF-MO-00295,MO,VERIFIED,ORG-001403,,174664,"Exact held operator identity; reliab
 LF-MO-00300,MO,STILL_UNCERTAIN,,,1437872,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
 LF-MO-00325,MO,STILL_UNCERTAIN,,,646575,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-MO-00374,MO,STILL_UNCERTAIN,,,1414104,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
-LF-MO-00380,MO,DUPLICATE_OF,,SITE-002896,1006554,Physical street/state already held; no create.
+LF-MO-00380,MO,STILL_UNCERTAIN,,,1006554,"Need a held operator identity for Aurora Technologies Inc at #6 Capper Drive, Pacific MO; blank normalized street keys are not duplicate evidence. No site create."
 LF-MO-00410,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-MO-00417,MO,STILL_UNCERTAIN,,,998402,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-MO-00085,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
