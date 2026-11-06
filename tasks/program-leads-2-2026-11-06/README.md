@@ -114,4 +114,6 @@ address EVD285003 registry/supports_C (no tier change); old evidence preserved.
 Total evidence now4. Named checks rerun; rereview requested from same refuting clerk.
 This supersedes earlier3-evidence snapshots. New raw registry fact, no new own-page quote.
 
-Grok/xAI (thr_swjbz4p3am) APPROVE0findings on36b07296dd13 aftercountyfix. Independently downloaded HD2024 and matched hash/6072rowyield/UNITID166513, confirmed localitydefault/EVDcap, rawpriorquotes, validator/check/row-preservation/replay. Fullscripts suite/futureadmissions notchecked. Codex1 samefindingfixed rereview remains pending; no two-family completion approval yet.
+Grok/xAI (thr_swjbz4p3am) APPROVE0findings on36b07296dd13 aftercountyfix. Independently downloaded HD2024 and matched hash/6072rowyield/UNITID166513, confirmed localitydefault/EVDcap, rawpriorquotes, validator/check/row-preservation/replay. Fullscripts suite/futureadmissions notchecked. Codex1 rereview now APPROVE; see final receipt below.
+
+Codex/OpenAI (thr_86bb34wxm8) APPROVE0findings on1e6eae9 (same correction data/code36b0729): county default/independent fresh HD2024 hash and identity, old three evidence preserved, registry cap, validator0, row-loss, named check, blank-county injection and fresh-base byte-identical replay PASS. Two-family approvals now recorded. Review targeted county; original own-page sample/dedupe and full scripts pytest not repeated; future admissions remain unknown.
