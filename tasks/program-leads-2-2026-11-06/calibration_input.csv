@@ -1,5 +1,0 @@
-lead_id,source,institution,state,lead,lead_url,org_id,match,held_programs,held_same_name,note
-L13-002,crosswalk:non_degree_credential,Grand Rapids Community College,MI,Plastics-Polymer Engineering Technology Certificate,https://www.grcc.edu/programs/plasticspolymer-engineering-technology-certificate,ORG-002091,exact name,Plastics-Polymer Engineering Technology,True,community-college-noncredit
-L13-003,crosswalk:abet_accredited,Pittsburg State University,KS,"Plastics Engineering Technology (Bachelor's, ABET ETAC since Oct 1, 1979)",https://www.pittstate.edu,ORG-002092,exact name,Plastics Engineering Technology,True,
-L13-006,crosswalk:abet_accredited,University of Wisconsin - Stout,WI,"Plastics Engineering (Bachelor's, ABET EAC since Oct 1, 2011)",https://www.uwstout.edu,ORG-002090,exact name,Plastics Engineering,True,
-L13-010,crosswalk:abet_accredited,Winona State University,MN,"Composite Materials Engineering (Bachelor's, ABET EAC since Oct 1, 1992)",https://www.winona.edu,ORG-004665,exact name,Composite Materials Engineering,True,

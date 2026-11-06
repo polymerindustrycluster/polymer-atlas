@@ -107,7 +107,7 @@ LF-SC-00236,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this str
 LF-SC-00237,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-SC-00275,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-SC-00285,SC,STILL_UNCERTAIN,,,1519257,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
-LF-SC-00287,SC,VERIFIED,ORG-003945,,1439038,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00287,SC,STILL_UNCERTAIN,,,1439038,Need primary reconciliation of surviving or restarted polymer production at Cooper River: Alpek 4Q2023 results p4 report PET production transferred elsewhere; its 2025 annual report p80 records decommissioning/dismantling and remediation. A later ITA filing does not settle current plant activity. No closure/status change or create; SITE-012208/EVD-302160–302166 remain unused.
 LF-SC-00359,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-SC-00369,SC,STILL_UNCERTAIN,,,927470,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
 LF-SC-00411,SC,STILL_UNCERTAIN,,,1284603,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].

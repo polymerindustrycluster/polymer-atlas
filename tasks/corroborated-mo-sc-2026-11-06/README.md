@@ -1,84 +1,44 @@
-# L3 CORROBORATED continuation — MO/SC
+# L3 CORROBORATED MO/SC — corrected final packet
 
-All143 CORROBORATED establishment clusters in Missouri63 and South Carolina80 are screened. Final verdicts:10 VERIFIED
-(4MO/6SC),133 STILL_UNCERTAIN (59MO/74SC),0 DUPLICATE_OF. This is an exhaustive two-state census, not a sample.
-No organizations are created. LA42 clusters are the next separate PR under the controller's ≤150-cluster cap.
+All143 CORROBORATED establishment clusters(MO63,SC80) appear exactly once:9 VERIFIED(MO4,SC5),134 STILL_UNCERTAIN(MO59,SC75),0 DUPLICATE_OF/REJECT. Creates9 provisionalC/operating_status unknown sites under held operators,0 organizations. Adds67 evidence observations(63siteC+4primary-government registrant identityA);four held organization trade_names fields gain actual filed company names. No other old field/tier/status/registry/qualifier/graph change. Full9-create source census is blind-full-census.csv; every create was independently reviewed. LA42,MN119,NJ91 are separate PRs198/202/204.
 
-Every create is provisional tier C, current operating_status unknown. The witness is the employer's OSHA ITA CY2025
-establishment filing (public raw extract already banked under tasks/osha-ita-2026-11-01), packet observed2026-11-01,
-reviewed2026-11-06. We do not claim a fresh government download, own-site witness, or present-day operation. Sources resolve
-to the official CY2025 URL plus establishment_ID. No ECHO/FRS identifiers enter registry links. County stays unset.
+## Source and creation gates
 
-Reuses the L11 MI/IL CORROBORATED prep/build/check pattern from PR138 and the house atlas/shard_io functions. Acceptance,
-first user/use date and ID allocations are in LANE_BRIEF.md. Controller06:40 assigned EVD300000–309999; no old gaps reused.
-Sites are allocated by frozen input index in SITE012100+, evidence300000+20*index. The20-row spacing is a fixed allocation,
-not permission to fill the unused gaps. All IDs are checked across every shard before writes.
+Source: controller-admitted banked public OSHA ITA CY2025 establishment extract; packet observed2026-11-01/reviewed2026-11-06. Official source URL keyedestablishment_ID on every observation. No fresh federal download,own-site witness or present-day operation asserted. Every new site remainsC/unknown; primary registrant identity supports_A is claim-local and changes no held tier. County remains unset.0newown_site rows meets controller07:20 pagefacts-only rule.
 
-## Identity and scope gates
+Filed company_name must independently match exactly one active surviving held legal/trade identity, not merely a plant/parent label. Reliable consistent street/state/code and explicit polymer manufacture required. House domain/name/trade/street/successor dedupe across all shards before every create. Nonempty normalized street keys required; parent/locality blank-street overlap blocks create. Known3 held operators(Plastipak,NikeIHM,Hydrite) and ambiguous-alias negative pass before matcher use. No new network fetcher/matcher.
 
-A filed company_name must independently normalize to one active, surviving held organization legal/trade name. A plant
-label or parent-group variant alone is insufficient. Exact street/state and every linked ITA NAICS must agree. All ITA
-records must be reliable. Explicit polymer manufacturing descriptions and primary scope codes are required; paint-remover
-and distribution-only records do not become plants. Names/notes/street dedupe is recorded in dedupe.json, against all shards.
-Existing street/state sites and same-parent/locality blank-street sites block creates.
+Acceptance/firstuser/ID allocations in LANE_BRIEF.md. Stable SITE012100+inputindex, EVD300000+20*index under controller300000–309999 grant; fixedunusedgaps permanent. Main merge/restore/baseline all use the same pinned SHA in baseline.json, never a moving origin/main ref. Canonical files restored from that main and builder replayed, no hand CSV merge. Historical checkpoints in pass-journal.md are superseded by this README.
 
-Known-answer operator tests passed for Plastipak Packaging, Nike IHM and Hydrite Chemical. Injecting an ambiguous alias
-produced two operators and was rejected. These tests preceded use of the name matcher; no new network fetcher is involved.
+## Refute findings and holds
 
-Four held organization trade_names fields gain actual filed company_name variants. City/unit establishment labels remain
-in site notes, not parent aliases. Each registrant identity observation cites its actual government filing (supports_A:
-primary employer-reported registrant identity under SCHEMA4.13). That strength is identity-local; it changes no held tier
-or operating claim. All70 site observations remain supports_C;10 new plants remain C/unknown.
-
-## Holds
-
-The full holds table is verdicts.csv:133 STILL_UNCERTAIN rows with a named settling fact. In particular:
-
-| Cluster | Settling fact |
+| Finding / cluster | Final verdict and settling fact |
 |---|---|
-| LF-MO-00380 | Held operator identity for Aurora Technologies Inc at #6 Capper Drive, Pacific MO; empty normalized street keys cannot establish a duplicate |
-| LF-MO-00442 | Legal/operator continuity between Festus lamp-shade filing and held Ohio Crown Plastics UHMW maker |
-| LF-SC-00014 | Actual function of Duncan Innovation: production plant versus R&D/innovation center |
-| LF-SC-00285 | Polymer-binder activity witness; paint and varnish remover alone does not establish polymer formulation |
-| LF-SC-00267 | Polymer warehouse/site function witness; wholesale NAICS does not establish a manufacturing plant |
-| Alltrista/Jadex, CCP/American Plastics and other name-only variant cases | Primary confirmation of filed company versus held operator, rather than inheriting parent/division identity |
+| Grok3 REFUTE,LF-MO-00380 Aurora | STILL_UNCERTAIN. Need held-operator identity at #6CapperDrive PacificMO. House normalizer strips leading hash to empty; empty-v-empty cannot link to Avient SITE002896. No target/create. Lane nonempty-key guard and exact false-link injection added. |
+| Codex3 REFUTE,LF-SC-00287 Cooper River | STILL_UNCERTAIN. Need primary reconciliation of surviving/restarted polymer manufacturing after reported PET halt/production transfer and subsequent decommissioning/dismantling/remediation. Later OSHA filing alone does not settle activity. |
+| LF-MO-00442 Crown Festus | Legal/operator continuity between lamp-shade filing and held Ohio UHMW maker. |
+| LF-SC-00014 Duncan Innovation | Resolve production plant versus innovation/R&D function. |
+| Remaining130 holds | Named activity/address/identity settling facts in verdicts.csv; no closure/absence inference or self-ruled scope/ring. |
 
-No scope or ownership ruling is self-made; no closure/status change or merge is applied. Source absence is not closure.
-No borderline inclusion-log create; unsettled cases are held. No duplicate verdict remains in this census.
+Cooper River evidence: freshly curl/browser-UA fetched two own-issued Alpek PDFs, bothHTTP200. 4Q2023 results physicalp4 report PET halt and completed transfer of production.2025annualreport physicalp80/note2(f) reports decommissioning/dismantling,environmentalcleanup/remediation and closure costs. Raw quotes match using calibrated STRONG/evidence-repair token matcher; fabricated suffixes rejected. URLs/PDFsizes/SHA256/page/quotes in cooper-river-rawcheck.json. These facts establish a contradiction to reconcile, not authority to close/reject the address or infer all activity ceased. AGENTS2.8–9/3/4 govern. No status changes applied; Form5500 closure-reject gate not invoked because this is a hold, not a closure REJECT.
 
-## Checks
+Unmerged proposed SITE012208 and EVD302160–302166 are withdrawn by fresh-main builder regeneration and remain permanent unused IDs. No evidence row present on the pinned main is edited/deleted. Cooper River is325211, so withdrawing it changes no strict326 numerator. Full initial10-create audit becomes final9-create census plus1held conflict. All other nine create facts remain unchanged. This correction supersedes10V133U/10sites74EVD in prior checkpoints.
 
-`python3 tasks/corroborated-mo-sc-2026-11-06/prep.py` reproduces input/verdict/dedupe/known answers from canonical data.
-`python3 tasks/corroborated-mo-sc-2026-11-06/build.py --state MO --apply` (then SC) applies via append_sorted.
-`python3 tasks/corroborated-mo-sc-2026-11-06/check.py --negative-controls` binds all10 sites and70 site evidence rows to
-actual ITA values, exact143 census, reserved/global IDs, and a wrong-shard ID collision that must fail before any writes.
-`python3 scripts/validate.py` must have0errors. All existing canonical rows are preserved except the four alias additions.
-Source-class/tier gates do not require weakening any held organization.
+## Counts and checks
 
-T3 uses scripts/build_qcew_denominators.py::atlas_numerators, unit NAICS326 US establishments with active/unknown status and
-A/B/C tier; denominator QCEW2023 private NAICS326 establishments. Baseline bdb8b98: MO37/368, SC49/406. Ratios are counts,
-not matched coverage. Final deltas must equal the actual created-site NAICS326 subset (ring1 is not identical to NAICS326).
+| State | Clusters | VERIFIED / holds | New C/unknown sites | New evidence | Strict326 before→after / QCEW2023 |
+|---|---:|---:|---:|---:|---:|
+| MO |63|4 /59|4|31(28siteC+3identityA)|43→47 /368|
+| SC |80|5 /75|5|36(35siteC+1identityA)|52→57 /406|
 
-On moving main, take main's data, replay the builder and recompute before/after; do not hand-merge CSV conflicts.
-No shared scripts changed, so scripts pytest is not required. Final checks and independent two-family refutes below.
+Count ratios MO11.68→12.77%,SC12.81→14.04%; numerator active/unknown US A/B/C primaryNAICS326 establishments, denominator QCEW2023private326. Ratios are counts, not matched establishment coverage. Delta+4/+5 reconciles exactly to the9creates, all now326.
 
-- Missouri application:4 new C/unknown establishments,31 evidence observations(28 site +3 registrant identity),0 new organizations. validate.py0errors.
+Named runnable checks:
+- `python3 tasks/corroborated-mo-sc-2026-11-06/prep.py` reproduces143input/verdict/dedupe/knownanswers, excluding this lane's own creates on replay.
+- `python3 tasks/corroborated-mo-sc-2026-11-06/build.py --state MO --apply`, thenSC, idempotent sorted appends with globalID/uniqueoperator preflight.
+- `python3 tasks/corroborated-mo-sc-2026-11-06/check.py --negative-controls`: exact143census/3censusdefects,Aurora false-link regression,9Cunknownsites/67source-boundEVD,retiredCooperIDs absent,globalreservedIDs/T3; SITE/EVD cross-shard duplicates and ambiguous company fail beforewrites. Exact refuted Cooper create re-enabled in isolated packet must fail manualhold before ANY write; tempCSVhashes unchanged.
+- `python3 scripts/validate.py`:0errors required; alloldcanonicalrows preserved exceptsame4aliasfields; allCSVreplay byte-identical.
 
-- South Carolina application:6 C/unknown establishments,43 evidence observations(42 site+1 registrant identity),0 organizations. Final74 evidence observations;4 aliases on held organizations, all prior canonical rows otherwise unchanged.
-- Final checks: validator0errors; check.py PASS143/143 exact census,3 census mutations caught,10 C sites/74 evidence source-bound; wrong-shard SITE collision rejected before writes; both-state replay byte-identical. Full10-create census supplied for independent review in blind-full-census.csv (fewer than20 creates).
+Codex3/OpenAI REFUTE on c9adf8a accepted; corrected packet awaiting targeted Codex3/Grok3 re-review. Earlier Grok3 Aurora finding also accepted/cured. No final two-family approval/Done claim. No shared scripts changed; fullscripts pytest and fresh bulk federal/current-operation checks not performed. The banked-vintage/provisional-tier limits remain.
 
-| State | Strict NAICS326 establishments before | After | QCEW2023 private326 establishments | Count ratio before → after |
-|---|---:|---:|---:|---:|
-| MO | 37 | 41 | 368 | 10.05% → 11.14% |
-| SC | 49 | 54 | 406 | 12.07% → 13.30% |
-
-LA reuse exposed an order-dependent global-ID dictionary-collapse defect. The builder now asserts SITE and EVD input-ID uniqueness before constructing either lookup; both wrong-shard duplicate types are injected and must fail before any data write. This supersedes the earlier SITE-only negative-control coverage. No duplicate was applied to canonical data.
-
-Updated-main integration: conflicts resolved with main data then both-state builder replay, no hand CSV merges. Baseline is now recorded in baseline.json (includes mergedSTRONG PR141); original bdb8b98 ratios above are the earlier checkpoint, superseded for this PR's final integration.
-- MO: strict326 43→47/368, 11.68%→12.77%; this batch still adds 4 NAICS326 sites.
-- SC: strict326 52→57/406, 12.81%→14.04%; this batch still adds 5 NAICS326 sites.
-Updated main boundary comparison PASS: every original record/evidence retained; only four registrant alias fields gain values. Replay byte-identical. validate0errors, source/census/T3 checks PASS, both SITE and EVD cross-shard defect injections fail before writes.
-
-Grok3 REFUTE accepted: LF-MO-00380 was falsely linked to blank-street Avient SITE-002896 because the house street normalizer strips leading `#6` and returns empty. The lane now requires a nonempty normalized street key before matching. Aurora is STILL_UNCERTAIN with no duplicate target or create. Counts supersede the earlier 132-hold/one-duplicate result:10 VERIFIED,133 STILL_UNCERTAIN. The checker injects the exact reported false duplicate and rejects it; blank/blank and hash-leading/blank comparisons are false, while a real road/Rd variant still matches. Preparer ignores this lane's own created sites so replay does not relabel its creates as duplicates. Ten site creates and74 evidence rows are unchanged. Shared atlas.py normalization is not modified; controller notified of its leading-hash limitation. Targeted Grok3 re-review pending; Codex review pending.
-
-Pinned-main integration d9527fe: all canonical data restored from the same pinned main SHA used for merge/baseline, then both builders replayed. This avoids the shared origin/main ref advancing between operations. An earlier preservation assertion correctly detected an OH-baseline mismatch; no passing preservation claim was made for that attempt. Final exact10datafiles/all old canonical rows preserved except four alias fields,10sites74EVD, all-CSV replay PASS. LA-equivalent unique-active-company-name guard and third ambiguous-company no-write fault now pass alongside both ID faults, Aurora false-link regression, census/T3 and validator0errors.
+Executed corrected-tree checks PASS: pinnedmain43326cd alloldcanonicalrows preserved except4aliasfields,exact10datafiles/9newsites/67EVD,allCSVreplaybyte-identical;exactrefutedCooperproposal andother3no-writefaults rejected;validator0errors. Freshprimary2PDFquotes+2fabricatedsuffixnegativesPASS.

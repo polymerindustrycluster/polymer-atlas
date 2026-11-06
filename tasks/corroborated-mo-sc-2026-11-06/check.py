@@ -41,8 +41,10 @@ def main():
  assert not same_street('','') and not same_street('#6 Capper Drive','')
  assert same_street('126 Glassmaster Road','126 Glassmaster Rd')
  ev=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
+ assert 'SITE-012208' not in sites and not ({f'EVD-{n:06d}' for n in range(302160,302167)} & {r['evidence_id'] for r in ev}),'held Cooper River IDs reappeared'
+ assert next(r for r in vs if r['cluster_id']=='LF-SC-00287')['verdict']=='STILL_UNCERTAIN'
  lane=[r for r in ev if r['created_by']=='atlas-L3-corroborated-mo-sc']
- assert len(alloc)==10 and len(lane)==74,(len(alloc),len(lane))
+ assert len(alloc)==9 and len(lane)==67,(len(alloc),len(lane))
  for r in alloc:
   s=sites[r['site_id']];f=ita[r['establishment_id']]
   assert (s['org_id'],s['verification_tier'],s['operating_status'],s['country'])==(r['org_id'],'C','unknown','US')
@@ -82,6 +84,17 @@ def main():
    assert run.returncode and 'ambiguous filed operator' in run.stderr,run.stderr
    assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
    wrong.write_bytes(original)
- print('PASS exact143 census;3 census defects and reported blank-key duplicate caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected cross-shard SITE/EVD collisions and ambiguous company refused before any data write')
+   # Re-enable the exact refuted create in an isolated packet; the manual hold must stop it before writes.
+   packet=Path(d)/'tasks'/H.name;packet.parent.mkdir();shutil.copytree(H,packet)
+   (Path(d)/'scripts').symlink_to(ROOT/'scripts',target_is_directory=True)
+   (packet.parent/'osha-ita-2026-11-01').symlink_to(ROOT/'tasks/osha-ita-2026-11-01',target_is_directory=True)
+   bad=read(packet/'verdicts.csv');next(r for r in bad if r['cluster_id']=='LF-SC-00287').update(verdict='VERIFIED',held_org_id='ORG-003945')
+   with (packet/'verdicts.csv').open('w',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=list(bad[0]),lineterminator='\n');w.writeheader();w.writerows(bad)
+   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   run=subprocess.run([sys.executable,str(packet/'build.py'),'--state','SC','--data-dir',str(data),'--apply'],capture_output=True,text=True)
+   assert run.returncode and 'manual identity/function hold' in run.stderr,run.stderr
+   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'refuted Cooper River create wrote data'
+ print('PASS exact143 census;3 census defects and reported blank-key duplicate caught;9C sites/67 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
+ if a.negative_controls:print('PASS injected SITE/EVD/company faults and exact refuted Cooper River create refused before any data write')
 if __name__=='__main__':main()
