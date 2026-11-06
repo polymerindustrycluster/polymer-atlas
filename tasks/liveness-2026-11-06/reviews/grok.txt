@@ -1,0 +1,28 @@
+council-ask: grok effort=deep -> model=grok-4.7 reasoning=xhigh
+APPROVE
+
+The bounded 2026-11-06 packet matches the stated liveness contract on every behavior that can be checked from the task sources and the inlined artifacts. Closure safety, exact-key grain, one active/unknown row per organization, and the November 1 domain comparison all hold. Remaining queue scope stays a hold, and it is separate from those checks.
+
+### Verified compliant
+- Ranked grain is one row per `active`/`unknown` organization and ecosystem id. Missing sweep rows become `NOT_SWEPT` and stay in `signals.csv`. Shared-domain sweep ids are split on `;` and rejected if an id is repeated. `check.py` recomputes that same active/unknown set, requires ranks `1..n`, and requires nonincreasing scores.
+- EIN and TRI joins are exact `registry_id` lookups. Unmatched EINs stay in `federal_link_signals.csv` as `NOT_IN_SPINE`. Duplicate TRI keys are collapsed only for the DMAP query; link-grain rows are all written. A successful EPA page cannot introduce facility ids outside the requested batch.
+- Absent federal years add no staleness points. `max(year) < 2024` fires only when every parsed matched year is older than 2024. The score weights match the README: NXDOMAIN 30, parked 25, cross-domain redirect 20, EIN-age 10, any `latest_py_all_final_or_short == '1'` 10, TRI-age 5. Ties break by `org_id`.
+- Domain comparison is on unique normalized domains, full frames and the intersection, plus entrants and leavers. The inlined counts reconcile: 3629 − 35 = 3594 common, 3594 + 733 = 4327, prior NXDOMAIN 24 stays inside the common frame, current 31 − 29 = 2 NXDOMAIN on the new frame only. `comparison.csv` is the full union. Those figures are domain observations.
+- All ten verdicts are `STILL_UNCERTAIN`. `rawcheck.csv` records two quote hits (Midlands contact address, Chemstar “Kittyhawk Molding”) and eight unfetchable pages. Notes call those hits word checks. No status, ownership, evidence, or `data/` write exists in the new scripts. Registry use is a task-folder snapshot read.
+- New code stays in the task folder and imports the existing sweep as an unchanged command. The attested `scripts/test_liveness_sweep.py` result (26) and `validate.py` (0 errors) were not re-run here.
+
+### Verified defects (bounded)
+- `federal_signals.fetch` catches every exception, stores blank `latest_year` plus the exception name, and caches that batch by offset. A later run with the cache present treats that file as success after a trifid-set check. `check.py` still passes if only the three known TRI years match. Blank coverage correctly adds no TRI points, and it also means a green check does not prove the README sentence that all 2,150 keys came back as 2024.
+- The DMAP query uses `limit: 10000` with `groupBy`. The guard `len(rows) < 10000` misses a pre-aggregation cut that still returns one row per facility. `known_answers.json` field `rows` (99 / 8 / 180) is never asserted; only `expected_year` is. The three known maxima support `fn__max` for those ids.
+- `check.py` does not recompute queue scores from `signal_class` and year columns, does not count 2,473 link rows or 320 EIN hits, and does not require `coverage == 'found'`. `git diff HEAD -- data/` sees uncommitted `data/` edits only. It does not anchor history to `bd57a08` or snapshot commit `d26438057e4e0199a2407d2a9508238494f31deb`.
+- Sponsor and TRI dict builds keep the last duplicate key with no uniqueness assert on the Form 5500 spine. An EIN present in the spine with an empty year is labeled `NOT_IN_SPINE`.
+- `research.fetch` returns on the first HTTP 200 and uses a substring test. A 200 interstitial never reaches the jina route. The eight failures in `rawcheck.csv` are 401/422 on the fallback route, so this path did not create the two `raw=yes` rows. `test_research.py` covers the classifier and is outside the attested command list. Cache, limit, and compare paths have no unit tests.
+- Direct failures are replayed through `https://r.jina.ai/`. The Fay L Wagner URL sends its reseller `RecordID` to that host. README also prints two Form 5500 sponsor street addresses.
+
+### Uninspected
+- `tri_years.csv`, `registry_links_snapshot.csv`, `sweep/signals.csv`, ranked `signals.csv`, the Form 5500 spine, `data/organizations_*.csv`, `data/ecosystem.csv`, and the November 1 sweep file. Population claims 2,150 years equal to 2024, 320/320 EIN hits, 5,288 rows, and 154 positive scores are README attestations. `check.py`’s own print, if it passed, does establish distinct TRI key count, the three TRI years, the three EIN years, unique ranked ids equal to active/unknown data rows, sort/rank shape, and a clean `data/` diff against `HEAD`.
+- `scripts/liveness_sweep.py`, `scripts/validate.py`, and the body of the 26 existing tests. Snapshot bytes versus commit `d264380` and PR 129. Whether any `data/` change is already committed on the branch. Live EPA behavior beyond the three known maxima.
+
+The refutation attempt fails on false joins, dropped or duplicate ranked organizations, stale-from-missing scoring, misleading common-domain arithmetic, and unsupported closure or ownership edits. The all-key year-2024 line and the 99/8/180 REST recount remain journal claims plus a three-key year check.
+
+APPROVE

@@ -1,0 +1,74 @@
+{
+  "query": {
+    "domain": "storopack.us",
+    "name": "Storopack, Inc.",
+    "street": "320 Craig Road",
+    "city": "Hillside",
+    "state": "IL",
+    "zip": null
+  },
+  "stop_at_step": 1,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-001128",
+          "name": "Storopack, Inc.",
+          "city": "Cincinnati",
+          "state": "OH",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_OH.csv",
+          "match": "domain exact: storopack.us"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-001128",
+          "name": "Storopack, Inc.",
+          "city": "Cincinnati",
+          "state": "OH",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_OH.csv",
+          "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "SITE-019009",
+          "name": "Storopack, Inc. - Hillside",
+          "org_id": "ORG-001128",
+          "city": "Hillside",
+          "state": "IL",
+          "status": "unknown",
+          "tier": "C",
+          "file": "sites_IL.csv",
+          "street": "320 Craig Road",
+          "operator": "Storopack, Inc.",
+          "match": "street key '320 craig rd'"
+        }
+      ],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": []
+    }
+  ]
+}
