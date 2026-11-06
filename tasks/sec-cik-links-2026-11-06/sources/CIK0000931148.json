@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000931148.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000931148",
+  "name": "GRAFTECH INTERNATIONAL LTD",
+  "tickers": [
+    "EAF"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "1249e2dca7b31d3076b4af46682d7c26717bf06c7744b3fa264141fd52409144",
+  "raw_name_token": "\"GRAFTECH INTERNATIONAL LTD\""
+}

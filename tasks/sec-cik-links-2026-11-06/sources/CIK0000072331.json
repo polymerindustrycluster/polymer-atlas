@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000072331.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000072331",
+  "name": "NORDSON CORP",
+  "tickers": [
+    "NDSN"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "58475f5eda226f49ca2dcd50124a30c92761567e41aa21770d0ea662dbe08dca",
+  "raw_name_token": "\"NORDSON CORP\""
+}

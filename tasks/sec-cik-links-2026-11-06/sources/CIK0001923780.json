@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001923780.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001923780",
+  "name": "Northann Corp.",
+  "tickers": [
+    "NCL"
+  ],
+  "exchanges": [
+    null
+  ],
+  "raw_sha256": "66745d225a57a1b7e641df2cf6ad3b4ce4ed81070a6207dab9cbf855fad026fb",
+  "raw_name_token": "\"Northann Corp.\""
+}

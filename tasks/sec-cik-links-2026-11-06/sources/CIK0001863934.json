@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001863934.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001863934",
+  "name": "ADURO CLEAN TECHNOLOGIES INC.",
+  "tickers": [
+    "ADUR"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "1655060b83be468b8b5837bce6e34dd9ce92446147ac758ea138860c3af7f88d",
+  "raw_name_token": "\"ADURO CLEAN TECHNOLOGIES INC.\""
+}

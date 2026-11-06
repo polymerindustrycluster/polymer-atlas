@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000016040.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000016040",
+  "name": "CABOT CORP",
+  "tickers": [
+    "CBT"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "c3bd4caf936ef28a8506ef2d2fa42a56083fc8553598a46641cb6818b968fee3",
+  "raw_name_token": "\"CABOT CORP\""
+}

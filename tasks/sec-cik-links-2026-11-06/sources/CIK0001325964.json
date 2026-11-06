@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001325964.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001325964",
+  "name": "Lightwave Logic, Inc.",
+  "tickers": [
+    "LWLG"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "1193e8e6a9816001eba0b5d01c6167fdab421466c9af1fa533abb6637ba5b7d1",
+  "raw_name_token": "\"Lightwave Logic, Inc.\""
+}

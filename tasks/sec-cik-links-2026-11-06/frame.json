@@ -1,0 +1,929 @@
+[
+  {
+    "org_id": "ORG-000001",
+    "legal_name": "Avient Corporation",
+    "trade_names": "PolyOne",
+    "stock_ticker": "AVNT",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=AVNT; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,AZ,CO,CT,GA,IL,IN,MA,ME,MI,MN,MO,NC,OH,PA,TN,VA (17)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000006",
+    "legal_name": "RPM International Inc.",
+    "trade_names": "RPM",
+    "stock_ticker": "RPM",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=RPM; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=GA,IL,IN,LA,MA,MD,MN,MO,NC,NJ,NV,OH,TX,WI,WV (15)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000009",
+    "legal_name": "Myers Industries Inc.",
+    "trade_names": "Myers Industries; MYERS TIRE SUPPLY CO.",
+    "stock_ticker": "MYE",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=MYE; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=CO,FL,IA,IL,IN,MI,MO,NC,OH,OK,WA (11)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000042",
+    "legal_name": "Multibase, Inc.",
+    "trade_names": "",
+    "stock_ticker": "",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: sec_cik_parent_filer=0001666700 (DuPont de Nemours, Inc.)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000138",
+    "legal_name": "Permatex",
+    "trade_names": "",
+    "stock_ticker": "",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: sec_cik_parent_filer=0000049826 (Illinois Tool Works Inc.); tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000142",
+    "legal_name": "Nordson Corporation",
+    "trade_names": "U. S. AUTOMATIC CORPORATION",
+    "stock_ticker": "NDSN",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=NDSN",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000157",
+    "legal_name": "GrafTech International",
+    "trade_names": "",
+    "stock_ticker": "EAF",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=EAF",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000372",
+    "legal_name": "Huntsman Corporation",
+    "trade_names": "Huntsman Advanced Materials",
+    "stock_ticker": "HUN",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=HUN; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,CA,FL,IL,LA,MI,OH,SC,TX (9)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000483",
+    "legal_name": "Pentair",
+    "trade_names": "PENTAIR WATER PURIFICATION; Pentair Water Filtration",
+    "stock_ticker": "PNR",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=PNR; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000562",
+    "legal_name": "Schneller LLC",
+    "trade_names": "",
+    "stock_ticker": "",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: sec_cik_parent_filer=0001260221 (TransDigm Group Incorporated); tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000651",
+    "legal_name": "Advanced Drainage Systems, Inc.",
+    "trade_names": "Advanced Drainage Systems (Napoleon); Advanced Drainage Systems (New Miami); Advanced Drainage Systems (Wooster)",
+    "stock_ticker": "WMS",
+    "tier1_qualifier": "public_parent;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=WMS; national_footprint: states=CA,FL,GA,KY,MA,OH,PA,UT,WA (9)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000756",
+    "legal_name": "Core Molding Technologies, Inc.",
+    "trade_names": "CORE MATERIALS CORP",
+    "stock_ticker": "CMT",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CMT; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=MN,OH,SC (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000781",
+    "legal_name": "Commercial Vehicle Group, Inc.",
+    "trade_names": "CVG - Commercial Vehicle Group; CVG",
+    "stock_ticker": "CVGI",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CVGI; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-000931",
+    "legal_name": "Lear Corporation",
+    "trade_names": "Lear Corporation - Hebron; Lear Seating Corporation",
+    "stock_ticker": "LEA",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=LEA; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,MI,OH (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001007",
+    "legal_name": "Owens Corning",
+    "trade_names": "",
+    "stock_ticker": "OC",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=OC; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AR,AZ,FL,GA,IL,KS,NY,OH,OR,TN,TX,UT (12)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001441",
+    "legal_name": "Tempcraft Corporation",
+    "trade_names": "Howmet Aerospace Tooling Business Center",
+    "stock_ticker": "",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: sec_cik_parent_filer=0000004281 (Howmet Aerospace Inc.); tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001443",
+    "legal_name": "Alliance Carpet Cushion",
+    "trade_names": "Mohawk Cushion",
+    "stock_ticker": "",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: sec_cik_parent_filer=0000851968 (Mohawk Industries, Inc.)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001447",
+    "legal_name": "Axalta Coating Systems USA LLC",
+    "trade_names": "",
+    "stock_ticker": "",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: sec_cik_parent_filer=0001616862 (Axalta Coating Systems Ltd.); tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,CA,IA,MI,NC,OH,TX,VA (8)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001545",
+    "legal_name": "AtriCure, Inc.",
+    "trade_names": "",
+    "stock_ticker": "ATRC",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ATRC",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001549",
+    "legal_name": "STERIS Corporation",
+    "trade_names": "",
+    "stock_ticker": "STE",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=STE; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-001824",
+    "legal_name": "Greif Inc",
+    "trade_names": "",
+    "stock_ticker": "GEF",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=GEF",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002873",
+    "legal_name": "The Chemours Company",
+    "trade_names": "Chemours",
+    "stock_ticker": "CC",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CC; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=KY,MD,NC,NJ,TX,WV (6)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002874",
+    "legal_name": "Solstice Advanced Materials Inc.",
+    "trade_names": "Solstice; Spectra; Aclar; Solstice yf; Solstice LBA",
+    "stock_ticker": "SOLS",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SOLS; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=LA,MO,NJ,TX,VA (5)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002875",
+    "legal_name": "Rogers Corporation",
+    "trade_names": "Rogers Corp; PORON; BISCO; DeWAL; ARLON; XRD; eSorba",
+    "stock_ticker": "ROG",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ROG; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AZ,CT,DE,IL,RI (5)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002876",
+    "legal_name": "Hexcel Corporation",
+    "trade_names": "Hexcel Corp; HexTow; HexPly; HexWeb; HexBond; ARC Technologies",
+    "stock_ticker": "HXL",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=HXL; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,AZ,CT,MA,PA,TX,UT,WA (8)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002877",
+    "legal_name": "The AZEK Company Inc.",
+    "trade_names": "TimberTech;Versatex;StruXure;AZEK Trim;AZEK Exteriors;Vycom;Scranton Products (divested 2025-06);UltraLox;Return Polymers",
+    "stock_ticker": "AZEK (delisted 2025 on James Hardie acquisition)",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=AZEK (delisted 2025 on James Hardie acquisition); tri_reporter: registry_links TRI_TRIFID; national_footprint: states=ID,IL,PA (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002878",
+    "legal_name": "AptarGroup, Inc.",
+    "trade_names": "Aptar;Aptar Pharma;Aptar Beauty;Aptar Closures;Aptar CSP Technologies;Seaquist Closures (legacy)",
+    "stock_ticker": "ATR",
+    "tier1_qualifier": "public_parent;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ATR; national_footprint: states=AL,IL,NC,NJ,NY (5)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002879",
+    "legal_name": "AdvanSix Inc.",
+    "trade_names": "AdvanSix Resins & Chemicals LLC;Aegis;U.S. Amines",
+    "stock_ticker": "ASIX",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ASIX",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002880",
+    "legal_name": "Olin Corporation",
+    "trade_names": "Blue Cube Operations LLC;Olin Epoxy",
+    "stock_ticker": "OLN",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=OLN",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002881",
+    "legal_name": "Entegris, Inc.",
+    "trade_names": "",
+    "stock_ticker": "ENTG",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ENTG; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=CO,MA,MN (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002882",
+    "legal_name": "Enpro Inc.",
+    "trade_names": "Garlock;STEMCO;Technetics Group",
+    "stock_ticker": "NPO",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=NPO",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002883",
+    "legal_name": "Brady Corporation",
+    "trade_names": "Brady Worldwide; W.H. Brady",
+    "stock_ticker": "BRC",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=BRC",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002884",
+    "legal_name": "Tredegar Corporation",
+    "trade_names": "Tredegar Film Products; Tredegar Surface Protection; Bonnell Aluminum (out-of-build segment)",
+    "stock_ticker": "TG",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TG",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002885",
+    "legal_name": "Latham Group, Inc.",
+    "trade_names": "Latham Pool Products; Viking Pools; Trilogy; Blue Hawaiian",
+    "stock_ticker": "SWIM",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SWIM; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=CA,FL,IA,IN,LA,NC,OK,TN,WV (9)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002886",
+    "legal_name": "CSW Industrials, Inc.",
+    "trade_names": "RectorSeal; Whitmore; Jet-Lube; Deacon; Smoke Guard; Balco; Greco",
+    "stock_ticker": "CSWI",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CSWI",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002887",
+    "legal_name": "Hillenbrand, Inc.",
+    "trade_names": "Mold-Masters; DME; Tirad; Coperion; Batesville",
+    "stock_ticker": "HI",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=HI",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002888",
+    "legal_name": "Albemarle Corporation",
+    "trade_names": "Albemarle; Ketjen",
+    "stock_ticker": "ALB",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ALB; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002889",
+    "legal_name": "Ingevity Corporation",
+    "trade_names": "Ingevity; Westvaco (legacy)",
+    "stock_ticker": "NGVT",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=NGVT; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002890",
+    "legal_name": "Northann Corp.",
+    "trade_names": "Benchwick;Dotfloor",
+    "stock_ticker": "NCL",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=NCL",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002891",
+    "legal_name": "Karat Packaging Inc.",
+    "trade_names": "Karat;Karat Earth;Tea Zone;Lollicup",
+    "stock_ticker": "KRT",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=KRT",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002892",
+    "legal_name": "Reynolds Consumer Products Inc.",
+    "trade_names": "Reynolds;Reynolds Wrap;Reynolds Kitchens;Hefty;Presto;Fresh-Lock",
+    "stock_ticker": "REYN",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=REYN; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=IL,NC,TX,UT,VA,WI (6)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002894",
+    "legal_name": "Loop Industries, Inc.",
+    "trade_names": "Loop; Infinite Loop; Twist",
+    "stock_ticker": "LOOP",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=LOOP",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002895",
+    "legal_name": "Aduro Clean Technologies Inc.",
+    "trade_names": "Aduro; Hydrochemolytic",
+    "stock_ticker": "ADUR",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=ADUR",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002900",
+    "legal_name": "Flexible Solutions International, Inc.",
+    "trade_names": "Flexible Solutions; NanoChem Solutions; ENP",
+    "stock_ticker": "FSI",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=FSI",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002903",
+    "legal_name": "Yunhong Green CTI Ltd.",
+    "trade_names": "CTI Industries; Yunhong CTI",
+    "stock_ticker": "YHGJ",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=YHGJ",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002904",
+    "legal_name": "Vystar Corp",
+    "trade_names": "Vytex",
+    "stock_ticker": "VYST",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=VYST",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002905",
+    "legal_name": "Lightwave Logic, Inc.",
+    "trade_names": "Lightwave Logic; Perkinamine",
+    "stock_ticker": "LWLG",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=LWLG",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002906",
+    "legal_name": "Kraig Biocraft Laboratories, Inc.",
+    "trade_names": "Kraig Labs; Dragon Silk",
+    "stock_ticker": "KBLB",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=KBLB",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002907",
+    "legal_name": "Amcor plc",
+    "trade_names": "Amcor",
+    "stock_ticker": "AMCR",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=AMCR; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AZ,CA,CO (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002908",
+    "legal_name": "Cabot Corporation",
+    "trade_names": "Cabot Corp",
+    "stock_ticker": "CBT",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CBT; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=IL,KY,LA,MA,MI,TX (6)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002909",
+    "legal_name": "Celanese Corporation",
+    "trade_names": "Ticona;Celanese Engineered Materials;Hoechst Celanese (former)",
+    "stock_ticker": "CE",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CE; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=FL,IN,KY,MN,NC,SC,TX,VA,WV (9)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002911",
+    "legal_name": "Chevron Corporation",
+    "trade_names": "Chevron",
+    "stock_ticker": "CVX",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CVX",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002912",
+    "legal_name": "Phillips 66",
+    "trade_names": "Phillips 66 Company",
+    "stock_ticker": "PSX",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=PSX",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002913",
+    "legal_name": "Dow Inc.",
+    "trade_names": "The Dow Chemical Company;Union Carbide Corporation;Dow Silicones Corporation;Dow Corning",
+    "stock_ticker": "DOW",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=DOW; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=GA,KY,LA,MI,TN,TX,WV (7)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002915",
+    "legal_name": "Eastman Chemical Company",
+    "trade_names": "Solutia;Taminco;Eastman Performance Films",
+    "stock_ticker": "EMN",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=EMN; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,FL,LA,MA,MD,NY,SC,TN,TX,VA (10)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002916",
+    "legal_name": "Exxon Mobil Corporation",
+    "trade_names": "ExxonMobil;Exxon;Mobil;Esso;ExxonMobil Product Solutions;ExxonMobil Chemical Company",
+    "stock_ticker": "XOM",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=XOM; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002917",
+    "legal_name": "Honeywell International Inc.",
+    "trade_names": "",
+    "stock_ticker": "HON",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=HON",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002918",
+    "legal_name": "Thermo Fisher Scientific Inc.",
+    "trade_names": "",
+    "stock_ticker": "TMO",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TMO; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=MA,NY,UT (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002926",
+    "legal_name": "Evonik Corporation",
+    "trade_names": "",
+    "stock_ticker": "EVK (Xetra, parent)",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=EVK (Xetra, parent); tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,NJ,TX (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002932",
+    "legal_name": "Mitsui Chemicals America, Inc.",
+    "trade_names": "",
+    "stock_ticker": "4183 (TSE, parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=4183 (TSE, parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002940",
+    "legal_name": "Tokai Carbon CB Ltd.",
+    "trade_names": "",
+    "stock_ticker": "TYO: 5301 (parent Tokai Carbon Co.)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TYO: 5301 (parent Tokai Carbon Co.)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-002963",
+    "legal_name": "Toray Composite Materials America, Inc.",
+    "trade_names": "TORAYCA",
+    "stock_ticker": "TYO:3402",
+    "tier1_qualifier": "public_parent;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TYO:3402; national_footprint: states=AL,SC,WA (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003028",
+    "legal_name": "Asahi Kasei Plastics North America, Inc.",
+    "trade_names": "APNA; Asaclean (merged 2023)",
+    "stock_ticker": "3407 (TSE, parent)",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=3407 (TSE, parent); tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003031",
+    "legal_name": "Clariant Corporation",
+    "trade_names": "",
+    "stock_ticker": "CLN (SIX, parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CLN (SIX, parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003035",
+    "legal_name": "Japan Steel Works America, Inc.",
+    "trade_names": "JSW America",
+    "stock_ticker": "5631 (TSE, parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=5631 (TSE, parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003039",
+    "legal_name": "NOF America Corporation",
+    "trade_names": "",
+    "stock_ticker": "4403 (TYO, parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=4403 (TYO, parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003041",
+    "legal_name": "Universal Dynamics, Inc.",
+    "trade_names": "Piovan UnaDyn; UnaDyn; Una-Dyn",
+    "stock_ticker": "PVN (BIT, parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=PVN (BIT, parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003048",
+    "legal_name": "Yushin America, Inc.",
+    "trade_names": "",
+    "stock_ticker": "6482 (TSE, parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=6482 (TSE, parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003067",
+    "legal_name": "Westlake Corporation",
+    "trade_names": "",
+    "stock_ticker": "WLK",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=WLK; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=FL,IL,KS,KY,LA,MS,TX (7)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003082",
+    "legal_name": "NanoXplore Inc.",
+    "trade_names": "NanoXplore",
+    "stock_ticker": "GRA",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=GRA",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003163",
+    "legal_name": "Stepan Company",
+    "trade_names": "",
+    "stock_ticker": "SCL",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SCL; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=GA,IL,NC (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003173",
+    "legal_name": "Elkhart Plastics LLC",
+    "trade_names": "",
+    "stock_ticker": "MYE (parent)",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=MYE (parent)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003178",
+    "legal_name": "3M Company",
+    "trade_names": "Minnesota Mining and Manufacturing Company",
+    "stock_ticker": "MMM",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=MMM; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,DE,IA,IL,IN,MA,MN,MO,NE,NY,TX,WI (12)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003190",
+    "legal_name": "Sasol Chemicals (USA) LLC",
+    "trade_names": "",
+    "stock_ticker": "SOL (parent, JSE)",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SOL (parent, JSE); tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003200",
+    "legal_name": "Park Aerospace Corp.",
+    "trade_names": "",
+    "stock_ticker": "PKE",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=PKE",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003277",
+    "legal_name": "Watts Water Technologies, Inc.",
+    "trade_names": "Watts; Watts Radiant",
+    "stock_ticker": "WTS",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=WTS",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003360",
+    "legal_name": "Valmont Composite Structures",
+    "trade_names": "Shakespeare Composite Structures; Tuff-Pole",
+    "stock_ticker": "VMI",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=VMI; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003375",
+    "legal_name": "Synventive Molding Solutions, Inc.",
+    "trade_names": "Synventive; Barnes Molding Solutions",
+    "stock_ticker": "B",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=B",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003437",
+    "legal_name": "AirBoss Rubber Solutions",
+    "trade_names": "Ace Elastomer; AirBoss Silicone",
+    "stock_ticker": "BOS",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=BOS; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003639",
+    "legal_name": "Douglas Dynamics Inc.",
+    "trade_names": "SnowEx",
+    "stock_ticker": "PLOW",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=PLOW",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003652",
+    "legal_name": "Johnson Outdoors Inc.",
+    "trade_names": "Old Town",
+    "stock_ticker": "JOUT",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=JOUT",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003655",
+    "legal_name": "Legend Brands Inc.",
+    "trade_names": "Dri-Eaz",
+    "stock_ticker": "RPM",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=RPM",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003930",
+    "legal_name": "Sonoco Products Company",
+    "trade_names": "Sonoco",
+    "stock_ticker": "SON",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SON; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=CO,MS,NC,SC (4)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-003978",
+    "legal_name": "Republic Services, Inc.",
+    "trade_names": "Republic Services",
+    "stock_ticker": "RSG",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=RSG",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004018",
+    "legal_name": "Sudarshan Chemical Industries Limited",
+    "trade_names": "Sudarshan; Sudarshan USA; Sudarshan North America Inc.; Heubach",
+    "stock_ticker": "SUDARSCHEM",
+    "tier1_qualifier": "public_parent",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SUDARSCHEM",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004247",
+    "legal_name": "Lippert Components, Inc.",
+    "trade_names": "Lippert; Taylor Made",
+    "stock_ticker": "LCII",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=LCII; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,NY,TX (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004249",
+    "legal_name": "Carfair Composites USA Inc.",
+    "trade_names": "Carfair Composites",
+    "stock_ticker": "NFI",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=NFI; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,MN,WI (3)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004252",
+    "legal_name": "Carlstar Group LLC",
+    "trade_names": "Carlstar",
+    "stock_ticker": "TWI",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TWI; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004254",
+    "legal_name": "Mohawk Industries, Inc.",
+    "trade_names": "Aladdin; IVC US",
+    "stock_ticker": "MHK",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=MHK; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=CT,GA,TX,WA (4)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004261",
+    "legal_name": "Air Products and Chemicals, Inc.",
+    "trade_names": "Air Products",
+    "stock_ticker": "APD",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=APD; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004270",
+    "legal_name": "Caterpillar Inc.",
+    "trade_names": "",
+    "stock_ticker": "CAT",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CAT; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004278",
+    "legal_name": "Magnera Corporation",
+    "trade_names": "",
+    "stock_ticker": "MAGN",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=MAGN; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004289",
+    "legal_name": "Trex Company, Inc.",
+    "trade_names": "",
+    "stock_ticker": "TREX",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TREX; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004329",
+    "legal_name": "Gates Corporation",
+    "trade_names": "",
+    "stock_ticker": "GTES",
+    "tier1_qualifier": "public_parent;tri_reporter;national_footprint",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=GTES; tri_reporter: registry_links TRI_TRIFID; national_footprint: states=AL,AR,IL,KS,MO (5)",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004330",
+    "legal_name": "Oxy Vinyls LP",
+    "trade_names": "OxyVinyls",
+    "stock_ticker": "OXY",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=OXY; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004331",
+    "legal_name": "Occidental Chemical Corporation",
+    "trade_names": "OxyChem",
+    "stock_ticker": "OXY",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=OXY; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004348",
+    "legal_name": "Amerityre Corp",
+    "trade_names": "",
+    "stock_ticker": "AMTY",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=AMTY; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004371",
+    "legal_name": "Church & Dwight Co Inc",
+    "trade_names": "",
+    "stock_ticker": "CHD",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=CHD; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004503",
+    "legal_name": "Standard Motor Products, Inc.",
+    "trade_names": "SMP; Standard; BWD; Intermotor; Four Seasons",
+    "stock_ticker": "SMP",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=SMP; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004516",
+    "legal_name": "The Toro Company",
+    "trade_names": "Toro",
+    "stock_ticker": "TTC",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=TTC; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004564",
+    "legal_name": "Preformed Line Products Company",
+    "trade_names": "",
+    "stock_ticker": "PLPC",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=PLPC; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004587",
+    "legal_name": "Eastman Kodak Company",
+    "trade_names": "",
+    "stock_ticker": "KODK",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=KODK; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  },
+  {
+    "org_id": "ORG-004600",
+    "legal_name": "Afton Chemical Corporation",
+    "trade_names": "Afton Chemical",
+    "stock_ticker": "NEU",
+    "tier1_qualifier": "public_parent;tri_reporter",
+    "tier1_qualifier_basis": "public_parent: stock_ticker=NEU; tri_reporter: registry_links TRI_TRIFID",
+    "status": "active"
+  }
+]

@@ -1,0 +1,367 @@
+[
+  {
+    "cik_str": 2115436,
+    "ticker": "XOM",
+    "title": "ExxonMobil Holdings Corp"
+  },
+  {
+    "cik_str": 93410,
+    "ticker": "CVX",
+    "title": "CHEVRON CORP"
+  },
+  {
+    "cik_str": 18230,
+    "ticker": "CAT",
+    "title": "CATERPILLAR INC"
+  },
+  {
+    "cik_str": 97745,
+    "ticker": "TMO",
+    "title": "THERMO FISHER SCIENTIFIC INC."
+  },
+  {
+    "cik_str": 1534701,
+    "ticker": "PSX",
+    "title": "Phillips 66"
+  },
+  {
+    "cik_str": 66740,
+    "ticker": "MMM",
+    "title": "3M CO"
+  },
+  {
+    "cik_str": 1060391,
+    "ticker": "RSG",
+    "title": "REPUBLIC SERVICES, INC."
+  },
+  {
+    "cik_str": 773840,
+    "ticker": "HON",
+    "title": "HONEYWELL INTERNATIONAL INC"
+  },
+  {
+    "cik_str": 2969,
+    "ticker": "APD",
+    "title": "Air Products & Chemicals, Inc."
+  },
+  {
+    "cik_str": 756894,
+    "ticker": "B",
+    "title": "BARRICK MINING CORP"
+  },
+  {
+    "cik_str": 797468,
+    "ticker": "OXY",
+    "title": "OCCIDENTAL PETROLEUM CORP /DE/"
+  },
+  {
+    "cik_str": 313927,
+    "ticker": "CHD",
+    "title": "CHURCH & DWIGHT CO INC /DE/"
+  },
+  {
+    "cik_str": 1751788,
+    "ticker": "DOW",
+    "title": "DOW INC."
+  },
+  {
+    "cik_str": 1101302,
+    "ticker": "ENTG",
+    "title": "ENTEGRIS INC"
+  },
+  {
+    "cik_str": 1757898,
+    "ticker": "STE",
+    "title": "STERIS plc"
+  },
+  {
+    "cik_str": 1748790,
+    "ticker": "AMCR",
+    "title": "Amcor plc"
+  },
+  {
+    "cik_str": 72331,
+    "ticker": "NDSN",
+    "title": "NORDSON CORP"
+  },
+  {
+    "cik_str": 110621,
+    "ticker": "RPM",
+    "title": "RPM INTERNATIONAL INC/DE/"
+  },
+  {
+    "cik_str": 795403,
+    "ticker": "WTS",
+    "title": "WATTS WATER TECHNOLOGIES INC"
+  },
+  {
+    "cik_str": 77360,
+    "ticker": "PNR",
+    "title": "PENTAIR plc"
+  },
+  {
+    "cik_str": 915913,
+    "ticker": "ALB",
+    "title": "ALBEMARLE CORP"
+  },
+  {
+    "cik_str": 1604028,
+    "ticker": "WMS",
+    "title": "ADVANCED DRAINAGE SYSTEMS, INC."
+  },
+  {
+    "cik_str": 737758,
+    "ticker": "TTC",
+    "title": "TORO CO"
+  },
+  {
+    "cik_str": 2064953,
+    "ticker": "SOLS",
+    "title": "Solstice Advanced Materials Inc."
+  },
+  {
+    "cik_str": 1370946,
+    "ticker": "OC",
+    "title": "Owens Corning"
+  },
+  {
+    "cik_str": 896622,
+    "ticker": "ATR",
+    "title": "APTARGROUP, INC."
+  },
+  {
+    "cik_str": 1262823,
+    "ticker": "WLK",
+    "title": "WESTLAKE CORP"
+  },
+  {
+    "cik_str": 851968,
+    "ticker": "MHK",
+    "title": "MOHAWK INDUSTRIES INC"
+  },
+  {
+    "cik_str": 102729,
+    "ticker": "VMI",
+    "title": "VALMONT INDUSTRIES INC"
+  },
+  {
+    "cik_str": 915389,
+    "ticker": "EMN",
+    "title": "EASTMAN CHEMICAL CO"
+  },
+  {
+    "cik_str": 1282637,
+    "ticker": "NEU",
+    "title": "NEWMARKET CORP"
+  },
+  {
+    "cik_str": 717605,
+    "ticker": "HXL",
+    "title": "HEXCEL CORP /DE/"
+  },
+  {
+    "cik_str": 1718512,
+    "ticker": "GTES",
+    "title": "Gates Industrial Corp Ltd."
+  },
+  {
+    "cik_str": 1164863,
+    "ticker": "NPO",
+    "title": "Enpro Inc."
+  },
+  {
+    "cik_str": 842162,
+    "ticker": "LEA",
+    "title": "LEAR CORP"
+  },
+  {
+    "cik_str": 1306830,
+    "ticker": "CE",
+    "title": "Celanese Corp"
+  },
+  {
+    "cik_str": 1786431,
+    "ticker": "REYN",
+    "title": "Reynolds Consumer Products Inc."
+  },
+  {
+    "cik_str": 1069878,
+    "ticker": "TREX",
+    "title": "TREX CO INC"
+  },
+  {
+    "cik_str": 91767,
+    "ticker": "SON",
+    "title": "SONOCO PRODUCTS CO"
+  },
+  {
+    "cik_str": 43920,
+    "ticker": "GEF",
+    "title": "GREIF, INC"
+  },
+  {
+    "cik_str": 1122976,
+    "ticker": "AVNT",
+    "title": "AVIENT CORP"
+  },
+  {
+    "cik_str": 746598,
+    "ticker": "BRC",
+    "title": "BRADY CORP"
+  },
+  {
+    "cik_str": 16040,
+    "ticker": "CBT",
+    "title": "CABOT CORP"
+  },
+  {
+    "cik_str": 1323885,
+    "ticker": "ATRC",
+    "title": "AtriCure, Inc."
+  },
+  {
+    "cik_str": 1653477,
+    "ticker": "NGVT",
+    "title": "Ingevity Corp"
+  },
+  {
+    "cik_str": 763744,
+    "ticker": "LCII",
+    "title": "LCI INDUSTRIES"
+  },
+  {
+    "cik_str": 84748,
+    "ticker": "ROG",
+    "title": "ROGERS CORP"
+  },
+  {
+    "cik_str": 1627223,
+    "ticker": "CC",
+    "title": "Chemours Co"
+  },
+  {
+    "cik_str": 74303,
+    "ticker": "OLN",
+    "title": "OLIN Corp"
+  },
+  {
+    "cik_str": 69488,
+    "ticker": "MYE",
+    "title": "MYERS INDUSTRIES INC"
+  },
+  {
+    "cik_str": 1758021,
+    "ticker": "KRT",
+    "title": "Karat Packaging Inc."
+  },
+  {
+    "cik_str": 93389,
+    "ticker": "SMP",
+    "title": "STANDARD MOTOR PRODUCTS, INC."
+  },
+  {
+    "cik_str": 1287213,
+    "ticker": "PLOW",
+    "title": "DOUGLAS DYNAMICS, INC"
+  },
+  {
+    "cik_str": 31235,
+    "ticker": "KODK",
+    "title": "EASTMAN KODAK CO"
+  },
+  {
+    "cik_str": 1833197,
+    "ticker": "SWIM",
+    "title": "Latham Group, Inc."
+  },
+  {
+    "cik_str": 1325964,
+    "ticker": "LWLG",
+    "title": "Lightwave Logic, Inc."
+  },
+  {
+    "cik_str": 76267,
+    "ticker": "PKE",
+    "title": "PARK AEROSPACE CORP"
+  },
+  {
+    "cik_str": 788329,
+    "ticker": "JOUT",
+    "title": "JOHNSON OUTDOORS INC"
+  },
+  {
+    "cik_str": 1673985,
+    "ticker": "ASIX",
+    "title": "AdvanSix Inc."
+  },
+  {
+    "cik_str": 41719,
+    "ticker": "MAGN",
+    "title": "Magnera Corp"
+  },
+  {
+    "cik_str": 1863934,
+    "ticker": "ADUR",
+    "title": "ADURO CLEAN TECHNOLOGIES INC."
+  },
+  {
+    "cik_str": 899751,
+    "ticker": "TWI",
+    "title": "TITAN INTERNATIONAL INC"
+  },
+  {
+    "cik_str": 931148,
+    "ticker": "EAF",
+    "title": "GRAFTECH INTERNATIONAL LTD"
+  },
+  {
+    "cik_str": 850429,
+    "ticker": "TG",
+    "title": "TREDEGAR CORP"
+  },
+  {
+    "cik_str": 1026655,
+    "ticker": "CMT",
+    "title": "CORE MOLDING TECHNOLOGIES INC"
+  },
+  {
+    "cik_str": 1290900,
+    "ticker": "CVGI",
+    "title": "Commercial Vehicle Group, Inc."
+  },
+  {
+    "cik_str": 1413119,
+    "ticker": "KBLB",
+    "title": "Kraig Biocraft Laboratories, Inc."
+  },
+  {
+    "cik_str": 1069394,
+    "ticker": "FSI",
+    "title": "FLEXIBLE SOLUTIONS INTERNATIONAL INC"
+  },
+  {
+    "cik_str": 1504678,
+    "ticker": "LOOP",
+    "title": "Loop Industries, Inc."
+  },
+  {
+    "cik_str": 1042187,
+    "ticker": "YHGJ",
+    "title": "YUNHONG GREEN CTI LTD."
+  },
+  {
+    "cik_str": 1923780,
+    "ticker": "NCL",
+    "title": "Northann Corp."
+  },
+  {
+    "cik_str": 1308027,
+    "ticker": "VYST",
+    "title": "Vystar Corp"
+  },
+  {
+    "cik_str": 1624794,
+    "ticker": "CSW",
+    "title": "CSW INDUSTRIALS, INC."
+  }
+]

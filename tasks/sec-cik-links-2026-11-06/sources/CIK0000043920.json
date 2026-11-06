@@ -1,0 +1,17 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000043920.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000043920",
+  "name": "GREIF, INC",
+  "tickers": [
+    "GEF",
+    "GEF-B"
+  ],
+  "exchanges": [
+    "NYSE",
+    "NYSE"
+  ],
+  "raw_sha256": "aeda0e7593aca57283a4c0d94f786642d08d0e33e64316873729609450ebfd0c",
+  "raw_name_token": "\"GREIF, INC\""
+}

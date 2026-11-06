@@ -1,0 +1,541 @@
+{
+  "url": "https://www.sec.gov/files/company_tickers.json",
+  "as_of": "2026-11-06",
+  "route": "web.run official URL retrieval; exact JSON entry projections retained",
+  "complete_file": false,
+  "note": "Large-page retrieval is partial. These positive entries are raw-matched; missing candidates are unresolved, never asserted absent. Unrelated listing entries and repeated page excerpts omitted.",
+  "records": [
+    {
+      "cik_str": 2115436,
+      "ticker": "XOM",
+      "title": "ExxonMobil Holdings Corp",
+      "raw_entry": "\"15\":{\"cik_str\":2115436,\"ticker\":\"XOM\",\"title\":\"ExxonMobil Holdings Corp\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 93410,
+      "ticker": "CVX",
+      "title": "CHEVRON CORP",
+      "raw_entry": "\"21\":{\"cik_str\":93410,\"ticker\":\"CVX\",\"title\":\"CHEVRON CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 18230,
+      "ticker": "CAT",
+      "title": "CATERPILLAR INC",
+      "raw_entry": "\"41\":{\"cik_str\":18230,\"ticker\":\"CAT\",\"title\":\"CATERPILLAR INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 97745,
+      "ticker": "TMO",
+      "title": "THERMO FISHER SCIENTIFIC INC.",
+      "raw_entry": "\"49\":{\"cik_str\":97745,\"ticker\":\"TMO\",\"title\":\"THERMO FISHER SCIENTIFIC INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1534701,
+      "ticker": "PSX",
+      "title": "Phillips 66",
+      "raw_entry": "\"158\":{\"cik_str\":1534701,\"ticker\":\"PSX\",\"title\":\"Phillips 66\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 66740,
+      "ticker": "MMM",
+      "title": "3M CO",
+      "raw_entry": "\"187\":{\"cik_str\":66740,\"ticker\":\"MMM\",\"title\":\"3M CO\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1060391,
+      "ticker": "RSG",
+      "title": "REPUBLIC SERVICES, INC.",
+      "raw_entry": "\"244\":{\"cik_str\":1060391,\"ticker\":\"RSG\",\"title\":\"REPUBLIC SERVICES, INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 773840,
+      "ticker": "HON",
+      "title": "HONEYWELL INTERNATIONAL INC",
+      "raw_entry": "\"251\":{\"cik_str\":773840,\"ticker\":\"HON\",\"title\":\"HONEYWELL INTERNATIONAL INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 2969,
+      "ticker": "APD",
+      "title": "Air Products & Chemicals, Inc.",
+      "raw_entry": "\"256\":{\"cik_str\":2969,\"ticker\":\"APD\",\"title\":\"Air Products & Chemicals, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 756894,
+      "ticker": "B",
+      "title": "BARRICK MINING CORP",
+      "raw_entry": "\"286\":{\"cik_str\":756894,\"ticker\":\"B\",\"title\":\"BARRICK MINING CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 797468,
+      "ticker": "OXY",
+      "title": "OCCIDENTAL PETROLEUM CORP /DE/",
+      "raw_entry": "\"288\":{\"cik_str\":797468,\"ticker\":\"OXY\",\"title\":\"OCCIDENTAL PETROLEUM CORP /DE/\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 313927,
+      "ticker": "CHD",
+      "title": "CHURCH & DWIGHT CO INC /DE/",
+      "raw_entry": "\"539\":{\"cik_str\":313927,\"ticker\":\"CHD\",\"title\":\"CHURCH & DWIGHT CO INC /DE/\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1751788,
+      "ticker": "DOW",
+      "title": "DOW INC.",
+      "raw_entry": "\"552\":{\"cik_str\":1751788,\"ticker\":\"DOW\",\"title\":\"DOW INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1101302,
+      "ticker": "ENTG",
+      "title": "ENTEGRIS INC",
+      "raw_entry": "\"576\":{\"cik_str\":1101302,\"ticker\":\"ENTG\",\"title\":\"ENTEGRIS INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1757898,
+      "ticker": "STE",
+      "title": "STERIS plc",
+      "raw_entry": "\"586\":{\"cik_str\":1757898,\"ticker\":\"STE\",\"title\":\"STERIS plc\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1748790,
+      "ticker": "AMCR",
+      "title": "Amcor plc",
+      "raw_entry": "\"601\":{\"cik_str\":1748790,\"ticker\":\"AMCR\",\"title\":\"Amcor plc\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 72331,
+      "ticker": "NDSN",
+      "title": "NORDSON CORP",
+      "raw_entry": "\"658\":{\"cik_str\":72331,\"ticker\":\"NDSN\",\"title\":\"NORDSON CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 110621,
+      "ticker": "RPM",
+      "title": "RPM INTERNATIONAL INC/DE/",
+      "raw_entry": "\"806\":{\"cik_str\":110621,\"ticker\":\"RPM\",\"title\":\"RPM INTERNATIONAL INC/DE/\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 795403,
+      "ticker": "WTS",
+      "title": "WATTS WATER TECHNOLOGIES INC",
+      "raw_entry": "\"864\":{\"cik_str\":795403,\"ticker\":\"WTS\",\"title\":\"WATTS WATER TECHNOLOGIES INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 77360,
+      "ticker": "PNR",
+      "title": "PENTAIR plc",
+      "raw_entry": "\"910\":{\"cik_str\":77360,\"ticker\":\"PNR\",\"title\":\"PENTAIR plc\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 915913,
+      "ticker": "ALB",
+      "title": "ALBEMARLE CORP",
+      "raw_entry": "\"931\":{\"cik_str\":915913,\"ticker\":\"ALB\",\"title\":\"ALBEMARLE CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1604028,
+      "ticker": "WMS",
+      "title": "ADVANCED DRAINAGE SYSTEMS, INC.",
+      "raw_entry": "\"957\":{\"cik_str\":1604028,\"ticker\":\"WMS\",\"title\":\"ADVANCED DRAINAGE SYSTEMS, INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 737758,
+      "ticker": "TTC",
+      "title": "TORO CO",
+      "raw_entry": "\"958\":{\"cik_str\":737758,\"ticker\":\"TTC\",\"title\":\"TORO CO\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 2064953,
+      "ticker": "SOLS",
+      "title": "Solstice Advanced Materials Inc.",
+      "raw_entry": "\"978\":{\"cik_str\":2064953,\"ticker\":\"SOLS\",\"title\":\"Solstice Advanced Materials Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1370946,
+      "ticker": "OC",
+      "title": "Owens Corning",
+      "raw_entry": "\"994\":{\"cik_str\":1370946,\"ticker\":\"OC\",\"title\":\"Owens Corning\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 896622,
+      "ticker": "ATR",
+      "title": "APTARGROUP, INC.",
+      "raw_entry": "\"1024\":{\"cik_str\":896622,\"ticker\":\"ATR\",\"title\":\"APTARGROUP, INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1262823,
+      "ticker": "WLK",
+      "title": "WESTLAKE CORP",
+      "raw_entry": "\"1039\":{\"cik_str\":1262823,\"ticker\":\"WLK\",\"title\":\"WESTLAKE CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 851968,
+      "ticker": "MHK",
+      "title": "MOHAWK INDUSTRIES INC",
+      "raw_entry": "\"1074\":{\"cik_str\":851968,\"ticker\":\"MHK\",\"title\":\"MOHAWK INDUSTRIES INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 102729,
+      "ticker": "VMI",
+      "title": "VALMONT INDUSTRIES INC",
+      "raw_entry": "\"1082\":{\"cik_str\":102729,\"ticker\":\"VMI\",\"title\":\"VALMONT INDUSTRIES INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 915389,
+      "ticker": "EMN",
+      "title": "EASTMAN CHEMICAL CO",
+      "raw_entry": "\"1141\":{\"cik_str\":915389,\"ticker\":\"EMN\",\"title\":\"EASTMAN CHEMICAL CO\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1282637,
+      "ticker": "NEU",
+      "title": "NEWMARKET CORP",
+      "raw_entry": "\"1182\":{\"cik_str\":1282637,\"ticker\":\"NEU\",\"title\":\"NEWMARKET CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 717605,
+      "ticker": "HXL",
+      "title": "HEXCEL CORP /DE/",
+      "raw_entry": "\"1254\":{\"cik_str\":717605,\"ticker\":\"HXL\",\"title\":\"HEXCEL CORP /DE/\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1718512,
+      "ticker": "GTES",
+      "title": "Gates Industrial Corp Ltd.",
+      "raw_entry": "\"1265\":{\"cik_str\":1718512,\"ticker\":\"GTES\",\"title\":\"Gates Industrial Corp Ltd.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1164863,
+      "ticker": "NPO",
+      "title": "Enpro Inc.",
+      "raw_entry": "\"1293\":{\"cik_str\":1164863,\"ticker\":\"NPO\",\"title\":\"Enpro Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 842162,
+      "ticker": "LEA",
+      "title": "LEAR CORP",
+      "raw_entry": "\"1329\":{\"cik_str\":842162,\"ticker\":\"LEA\",\"title\":\"LEAR CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1306830,
+      "ticker": "CE",
+      "title": "Celanese Corp",
+      "raw_entry": "\"1360\":{\"cik_str\":1306830,\"ticker\":\"CE\",\"title\":\"Celanese Corp\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1786431,
+      "ticker": "REYN",
+      "title": "Reynolds Consumer Products Inc.",
+      "raw_entry": "\"1418\":{\"cik_str\":1786431,\"ticker\":\"REYN\",\"title\":\"Reynolds Consumer Products Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1069878,
+      "ticker": "TREX",
+      "title": "TREX CO INC",
+      "raw_entry": "\"1423\":{\"cik_str\":1069878,\"ticker\":\"TREX\",\"title\":\"TREX CO INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 91767,
+      "ticker": "SON",
+      "title": "SONOCO PRODUCTS CO",
+      "raw_entry": "\"1459\":{\"cik_str\":91767,\"ticker\":\"SON\",\"title\":\"SONOCO PRODUCTS CO\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 43920,
+      "ticker": "GEF",
+      "title": "GREIF, INC",
+      "raw_entry": "\"1493\":{\"cik_str\":43920,\"ticker\":\"GEF\",\"title\":\"GREIF, INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1122976,
+      "ticker": "AVNT",
+      "title": "AVIENT CORP",
+      "raw_entry": "\"1614\":{\"cik_str\":1122976,\"ticker\":\"AVNT\",\"title\":\"AVIENT CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 746598,
+      "ticker": "BRC",
+      "title": "BRADY CORP",
+      "raw_entry": "\"1620\":{\"cik_str\":746598,\"ticker\":\"BRC\",\"title\":\"BRADY CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 16040,
+      "ticker": "CBT",
+      "title": "CABOT CORP",
+      "raw_entry": "\"1648\":{\"cik_str\":16040,\"ticker\":\"CBT\",\"title\":\"CABOT CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1323885,
+      "ticker": "ATRC",
+      "title": "AtriCure, Inc.",
+      "raw_entry": "\"1814\":{\"cik_str\":1323885,\"ticker\":\"ATRC\",\"title\":\"AtriCure, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1653477,
+      "ticker": "NGVT",
+      "title": "Ingevity Corp",
+      "raw_entry": "\"1937\":{\"cik_str\":1653477,\"ticker\":\"NGVT\",\"title\":\"Ingevity Corp\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 763744,
+      "ticker": "LCII",
+      "title": "LCI INDUSTRIES",
+      "raw_entry": "\"1959\":{\"cik_str\":763744,\"ticker\":\"LCII\",\"title\":\"LCI INDUSTRIES\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 84748,
+      "ticker": "ROG",
+      "title": "ROGERS CORP",
+      "raw_entry": "\"1991\":{\"cik_str\":84748,\"ticker\":\"ROG\",\"title\":\"ROGERS CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1627223,
+      "ticker": "CC",
+      "title": "Chemours Co",
+      "raw_entry": "\"2106\":{\"cik_str\":1627223,\"ticker\":\"CC\",\"title\":\"Chemours Co\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 74303,
+      "ticker": "OLN",
+      "title": "OLIN Corp",
+      "raw_entry": "\"2111\":{\"cik_str\":74303,\"ticker\":\"OLN\",\"title\":\"OLIN Corp\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 69488,
+      "ticker": "MYE",
+      "title": "MYERS INDUSTRIES INC",
+      "raw_entry": "\"2601\":{\"cik_str\":69488,\"ticker\":\"MYE\",\"title\":\"MYERS INDUSTRIES INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1758021,
+      "ticker": "KRT",
+      "title": "Karat Packaging Inc.",
+      "raw_entry": "\"2610\":{\"cik_str\":1758021,\"ticker\":\"KRT\",\"title\":\"Karat Packaging Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 93389,
+      "ticker": "SMP",
+      "title": "STANDARD MOTOR PRODUCTS, INC.",
+      "raw_entry": "\"2635\":{\"cik_str\":93389,\"ticker\":\"SMP\",\"title\":\"STANDARD MOTOR PRODUCTS, INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1287213,
+      "ticker": "PLOW",
+      "title": "DOUGLAS DYNAMICS, INC",
+      "raw_entry": "\"2761\":{\"cik_str\":1287213,\"ticker\":\"PLOW\",\"title\":\"DOUGLAS DYNAMICS, INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 31235,
+      "ticker": "KODK",
+      "title": "EASTMAN KODAK CO",
+      "raw_entry": "\"2769\":{\"cik_str\":31235,\"ticker\":\"KODK\",\"title\":\"EASTMAN KODAK CO\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1833197,
+      "ticker": "SWIM",
+      "title": "Latham Group, Inc.",
+      "raw_entry": "\"2770\":{\"cik_str\":1833197,\"ticker\":\"SWIM\",\"title\":\"Latham Group, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1325964,
+      "ticker": "LWLG",
+      "title": "Lightwave Logic, Inc.",
+      "raw_entry": "\"2898\":{\"cik_str\":1325964,\"ticker\":\"LWLG\",\"title\":\"Lightwave Logic, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 76267,
+      "ticker": "PKE",
+      "title": "PARK AEROSPACE CORP",
+      "raw_entry": "\"3102\":{\"cik_str\":76267,\"ticker\":\"PKE\",\"title\":\"PARK AEROSPACE CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 788329,
+      "ticker": "JOUT",
+      "title": "JOHNSON OUTDOORS INC",
+      "raw_entry": "\"3225\":{\"cik_str\":788329,\"ticker\":\"JOUT\",\"title\":\"JOHNSON OUTDOORS INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1673985,
+      "ticker": "ASIX",
+      "title": "AdvanSix Inc.",
+      "raw_entry": "\"3353\":{\"cik_str\":1673985,\"ticker\":\"ASIX\",\"title\":\"AdvanSix Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 41719,
+      "ticker": "MAGN",
+      "title": "Magnera Corp",
+      "raw_entry": "\"3354\":{\"cik_str\":41719,\"ticker\":\"MAGN\",\"title\":\"Magnera Corp\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1863934,
+      "ticker": "ADUR",
+      "title": "ADURO CLEAN TECHNOLOGIES INC.",
+      "raw_entry": "\"3596\":{\"cik_str\":1863934,\"ticker\":\"ADUR\",\"title\":\"ADURO CLEAN TECHNOLOGIES INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 899751,
+      "ticker": "TWI",
+      "title": "TITAN INTERNATIONAL INC",
+      "raw_entry": "\"3621\":{\"cik_str\":899751,\"ticker\":\"TWI\",\"title\":\"TITAN INTERNATIONAL INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 931148,
+      "ticker": "EAF",
+      "title": "GRAFTECH INTERNATIONAL LTD",
+      "raw_entry": "\"3682\":{\"cik_str\":931148,\"ticker\":\"EAF\",\"title\":\"GRAFTECH INTERNATIONAL LTD\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 850429,
+      "ticker": "TG",
+      "title": "TREDEGAR CORP",
+      "raw_entry": "\"3894\":{\"cik_str\":850429,\"ticker\":\"TG\",\"title\":\"TREDEGAR CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1026655,
+      "ticker": "CMT",
+      "title": "CORE MOLDING TECHNOLOGIES INC",
+      "raw_entry": "\"4165\":{\"cik_str\":1026655,\"ticker\":\"CMT\",\"title\":\"CORE MOLDING TECHNOLOGIES INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1290900,
+      "ticker": "CVGI",
+      "title": "Commercial Vehicle Group, Inc.",
+      "raw_entry": "\"4402\":{\"cik_str\":1290900,\"ticker\":\"CVGI\",\"title\":\"Commercial Vehicle Group, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1413119,
+      "ticker": "KBLB",
+      "title": "Kraig Biocraft Laboratories, Inc.",
+      "raw_entry": "\"4688\":{\"cik_str\":1413119,\"ticker\":\"KBLB\",\"title\":\"Kraig Biocraft Laboratories, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1069394,
+      "ticker": "FSI",
+      "title": "FLEXIBLE SOLUTIONS INTERNATIONAL INC",
+      "raw_entry": "\"4804\":{\"cik_str\":1069394,\"ticker\":\"FSI\",\"title\":\"FLEXIBLE SOLUTIONS INTERNATIONAL INC\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1504678,
+      "ticker": "LOOP",
+      "title": "Loop Industries, Inc.",
+      "raw_entry": "\"5788\":{\"cik_str\":1504678,\"ticker\":\"LOOP\",\"title\":\"Loop Industries, Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1042187,
+      "ticker": "YHGJ",
+      "title": "YUNHONG GREEN CTI LTD.",
+      "raw_entry": "\"5927\":{\"cik_str\":1042187,\"ticker\":\"YHGJ\",\"title\":\"YUNHONG GREEN CTI LTD.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1923780,
+      "ticker": "NCL",
+      "title": "Northann Corp.",
+      "raw_entry": "\"6016\":{\"cik_str\":1923780,\"ticker\":\"NCL\",\"title\":\"Northann Corp.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1308027,
+      "ticker": "VYST",
+      "title": "Vystar Corp",
+      "raw_entry": "\"6424\":{\"cik_str\":1308027,\"ticker\":\"VYST\",\"title\":\"Vystar Corp\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 1624794,
+      "ticker": "CSW",
+      "title": "CSW INDUSTRIALS, INC.",
+      "raw_entry": "\"1491\":{\"cik_str\":1624794,\"ticker\":\"CSW\",\"title\":\"CSW INDUSTRIALS, INC.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 320193,
+      "ticker": "AAPL",
+      "title": "Apple Inc.",
+      "raw_entry": "\"1\":{\"cik_str\":320193,\"ticker\":\"AAPL\",\"title\":\"Apple Inc.\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 51143,
+      "ticker": "IBM",
+      "title": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "raw_entry": "\"58\":{\"cik_str\":51143,\"ticker\":\"IBM\",\"title\":\"INTERNATIONAL BUSINESS MACHINES CORP\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    },
+    {
+      "cik_str": 89800,
+      "ticker": "SHW",
+      "title": "SHERWIN WILLIAMS CO",
+      "raw_entry": "\"215\":{\"cik_str\":89800,\"ticker\":\"SHW\",\"title\":\"SHERWIN WILLIAMS CO\"}",
+      "retrieval_header": "SEC company_tickers.json; web.run exact official-URL retrieval on 2026-11-06"
+    }
+  ]
+}

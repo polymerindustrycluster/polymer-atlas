@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000737758.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000737758",
+  "name": "TORO CO",
+  "tickers": [
+    "TTC"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "cf7fd548b3c79a7d5f7fd55f0cc77029b0eb3123a3929609df9117cb472f4a52",
+  "raw_name_token": "\"TORO CO\""
+}
