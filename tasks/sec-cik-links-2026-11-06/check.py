@@ -28,7 +28,11 @@ def main():
     assert eligible == {r['org_id'] for r in frame} and len(eligible) == 103, 'independent baseline coverage'
     links, verdicts = packet(ROOT / 'data')
     assert read(HERE / 'new_links.csv') == links and read(HERE / 'verdicts.csv') == verdicts, 'packet drift'
-    assert collections.Counter(r['verdict'] for r in verdicts) == {'VERIFIED': 64, 'STILL_UNCERTAIN': 39}
+    assert collections.Counter(r['verdict'] for r in verdicts) == {'VERIFIED': 67, 'STILL_UNCERTAIN': 36}
+    full = json.loads((HERE / 'sources/company_tickers.json').read_text())
+    candidates = json.loads((HERE / 'sources/ticker-candidates.json').read_text())
+    requested = {'CSW' if r['org_id'] == 'ORG-002886' else r['stock_ticker'] for r in frame}
+    assert {r['ticker'] for r in candidates} == requested & {r['ticker'] for r in full.values()}, 'full ticker candidate census'
     assert all(r['settling_fact'] for r in verdicts if r['verdict'] == 'STILL_UNCERTAIN')
     by_org = {r['org_id']: r for r in verdicts}
     for row in links:
@@ -44,7 +48,7 @@ def main():
     key = lambda r: tuple(r.values())
     assert not (collections.Counter(map(key, original_links)) - collections.Counter(map(key, live))), 'old registry row changed/lost'
     ours = {r['org_id'] for r in links}
-    assert [r for r in live if r['org_id'] in ours and r['registry'] == 'SEC_CIK'] == links, 'applied link census'
+    assert sorted([r for r in live if r['org_id'] in ours and r['registry'] == 'SEC_CIK'], key=lambda r: r['org_id']) == links, 'applied link census'
     with tempfile.TemporaryDirectory() as tmp:
         data = Path(tmp)
         p = data / 'registry_links.csv'
@@ -57,7 +61,7 @@ def main():
         changed = git('diff', '--name-only', *args, '--', 'data/').splitlines()
         assert all(p == 'data/registry_links.csv' for p in changed), ('forbidden canonical delta', args, changed)
     assert not git('ls-files', '--others', '--exclude-standard', 'data/').strip(), 'untracked canonical file'
-    print('PASS sec-identity-census: 103 unique organizations; 64 own CIK links; 39 explicit holds; four known answers; old rows preserved; replay byte-identical; registry-only data boundary')
+    print('PASS sec-identity-census: 103 unique organizations; 10409 ticker associations fully inspected; 67 own CIK links; 36 explicit holds; four known answers; old rows preserved; replay byte-identical; registry-only data boundary')
 
 
 if __name__ == '__main__':

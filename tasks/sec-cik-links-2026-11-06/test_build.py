@@ -50,6 +50,16 @@ class GateTests(unittest.TestCase):
                     with self.assertRaisesRegex(AssertionError, 'frozen frame coverage'):
                         build.packet(build.ROOT / 'data')
 
+    def test_changed_full_snapshot_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            here = Path(tmp) / 'packet'
+            shutil.copytree(build.HERE, here)
+            path = here / 'sources/company_tickers.json'
+            path.write_bytes(path.read_bytes() + b' ')
+            with patch.object(build, 'HERE', here):
+                with self.assertRaisesRegex(AssertionError, 'snapshot hash mismatch'):
+                    build.packet(build.ROOT / 'data')
+
 
 if __name__ == '__main__':
     unittest.main()

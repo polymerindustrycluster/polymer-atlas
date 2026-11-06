@@ -1,6 +1,7 @@
 """Build and append only source-verified own SEC identities; safe to replay."""
 import argparse
 import csv
+import hashlib
 import importlib.util
 import json
 import re
@@ -37,12 +38,21 @@ def packet(data):
     frame = json.loads((HERE / 'frame.json').read_text())
     assert len(frame) == 103 and len({r['org_id'] for r in frame}) == 103, 'frozen frame coverage'
     candidates = json.loads((HERE / 'sources/ticker-candidates.json').read_text())
+    raw_file = (HERE / 'sources/company_tickers.json').read_bytes()
+    manifest = json.loads((HERE / 'sources/ticker-manifest.json').read_text())
+    assert manifest['url'] == 'https://www.sec.gov/files/company_tickers.json'
+    assert hashlib.sha256(raw_file).hexdigest() == manifest['sha256'], 'full ticker snapshot hash mismatch'
+    full = json.loads(raw_file)
+    assert len(raw_file) == manifest['size_bytes'] and len(full) == manifest['association_count'] == 10409
+    full_index = {(r['ticker'], r['cik_str']): r for r in full.values()}
+    assert len(full_index) == 10409 and len({r['cik_str'] for r in full.values()}) == manifest['distinct_ciks'] == 8004
     receipts = json.loads((HERE / 'sources/ticker-receipts.json').read_text())
     assert receipts['url'] == 'https://www.sec.gov/files/company_tickers.json'
     source = {(r['ticker'], r['cik_str']): r for r in receipts['records']}
     by_ticker = {}
     for row in candidates:
         assert row['ticker'] not in by_ticker, 'ambiguous ticker candidate'
+        assert full_index[(row['ticker'], row['cik_str'])] == row, 'candidate not in full SEC snapshot'
         by_ticker[row['ticker']] = row
     orgs = {r['org_id']: r for p in data.glob('organizations_*.csv') for r in read(p)}
     links, verdicts = [], []
@@ -55,7 +65,7 @@ def packet(data):
         v.update({k: held[k] for k in ('org_id', 'legal_name', 'stock_ticker')})
         v['verdict'] = 'STILL_UNCERTAIN'
         if not row:
-            v['finding'] = 'No source-verified own ticker-file candidate in this partial retrieval; no absence or listing-status claim.'
+            v['finding'] = 'Own ticker-file identity unresolved in the full ticker-association subset; this is not an all-EDGAR search or an absence/listing-status claim.'
             if not held['stock_ticker'] or 'parent' in held['stock_ticker'].lower() or ':' in held['stock_ticker']:
                 v['finding'] += ' Held basis may identify a parent or foreign listing, not the held own filer.'
             v['settling_fact'] = 'An own-entity entry in SEC company_tickers.json, confirmed by the SEC company record at the held legal-entity grain.'
@@ -66,6 +76,7 @@ def packet(data):
             assert all(witness[k] == row[k] for k in ('cik_str', 'ticker', 'title')), 'ticker witness mismatch'
             raw = witness['raw_entry'].split(':', 1)[1]
             assert json.loads(raw) == row, 'raw ticker entry mismatch'
+            assert witness['raw_entry'].encode('utf-8') in raw_file, 'literal ticker token absent from full raw source'
             api = json.loads((HERE / 'sources' / f'CIK{cik}.json').read_text())
             url = f'https://data.sec.gov/submissions/CIK{cik}.json'
             v['source_url'] = url

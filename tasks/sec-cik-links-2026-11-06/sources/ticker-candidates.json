@@ -363,5 +363,20 @@
     "cik_str": 1624794,
     "ticker": "CSW",
     "title": "CSW INDUSTRIALS, INC."
+  },
+  {
+    "cik_str": 1307954,
+    "ticker": "HUN",
+    "title": "Huntsman CORP"
+  },
+  {
+    "cik_str": 94049,
+    "ticker": "SCL",
+    "title": "STEPAN CO"
+  },
+  {
+    "cik_str": 80035,
+    "ticker": "PLPC",
+    "title": "PREFORMED LINE PRODUCTS CO"
   }
 ]

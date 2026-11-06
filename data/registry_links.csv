@@ -5436,3 +5436,6 @@ ORG-004371,SEC_CIK,0000313927,sec_ticker_name_match:CHD; sec_submissions_name:CH
 ORG-004503,SEC_CIK,0000093389,"sec_ticker_name_match:SMP; sec_submissions_name:STANDARD MOTOR PRODUCTS, INC.; source:https://data.sec.gov/submissions/CIK0000093389.json",2026-11-06,
 ORG-004516,SEC_CIK,0000737758,sec_ticker_name_match:TTC; sec_submissions_name:TORO CO; source:https://data.sec.gov/submissions/CIK0000737758.json,2026-11-06,
 ORG-004587,SEC_CIK,0000031235,sec_ticker_name_match:KODK; sec_submissions_name:EASTMAN KODAK CO; source:https://data.sec.gov/submissions/CIK0000031235.json,2026-11-06,
+ORG-000372,SEC_CIK,0001307954,sec_ticker_name_match:HUN; sec_submissions_name:Huntsman CORP; source:https://data.sec.gov/submissions/CIK0001307954.json,2026-11-06,
+ORG-003163,SEC_CIK,0000094049,sec_ticker_name_match:SCL; sec_submissions_name:STEPAN CO; source:https://data.sec.gov/submissions/CIK0000094049.json,2026-11-06,
+ORG-004564,SEC_CIK,0000080035,sec_ticker_name_match:PLPC; sec_submissions_name:PREFORMED LINE PRODUCTS CO; source:https://data.sec.gov/submissions/CIK0000080035.json,2026-11-06,
