@@ -74,7 +74,10 @@ class BulkTests(unittest.TestCase):
 
     def test_sec_known_answers(self):
         for cik, name, ticker in self.sec_fixture():
-            self.assertEqual(b.sec_by_cik('CIK' + str(cik).zfill(10), self.cache)['name'], name)
+            issuer = b.sec_by_cik('CIK' + str(cik).zfill(10), self.cache)
+            self.assertEqual(issuer['name'], name)
+            self.assertEqual(issuer['tickers'], [ticker])
+            self.assertIn('filings', issuer)
             self.assertEqual(b.sec_by_ticker(ticker.lower(), self.cache)[0]['cik'], cik)
         self.assertIsNone(b.sec_by_cik('9999999', self.cache))
         with self.assertRaises(ValueError):

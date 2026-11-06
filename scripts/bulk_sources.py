@@ -160,8 +160,7 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
                         key = str(int(row['cik'])).zfill(10)
                         if m != 'CIK' + key + '.json':
                             raise ValueError('SEC member/CIK mismatch')
-                        # Keep full filings in the verified archive, not a duplicate SQLite blob.
-                        add(key, row['name'], '', {'member': m, 'name': row['name'], 'cik': key})
+                        add(key, row['name'], '', row)
                     independent = len(members)
                 elif source in ('frs', 'lei', 'rr'):
                     csvs = [m for m in members if m.lower().endswith('.csv')]
@@ -227,13 +226,7 @@ def sec_by_cik(cik, cache=DEFAULT_CACHE):
     if not value.isdigit() or len(value) > 10:
         raise ValueError('invalid CIK')
     matches = lookup('sec', 'id=?', (str(int(value)).zfill(10),), cache)
-    if not matches:
-        return None
-    cache = cache_dir(cache)
-    with sqlite3.connect((cache / 'sec.sqlite').as_uri() + '?mode=ro', uri=True) as db:
-        manifest = json.loads(db.execute('SELECT json FROM manifest').fetchone()[0])
-    with zipfile.ZipFile(cache / manifest['file']) as z:
-        return json.loads(z.read(matches[0]['member']))
+    return matches[0] if matches else None
 
 
 def sec_by_ticker(ticker, cache=DEFAULT_CACHE):

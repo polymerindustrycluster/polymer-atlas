@@ -71,7 +71,7 @@ All lookup functions accept `cache=`; Census uses its public batch service. Name
 case and whitespace using the existing spine normalizer, not fuzzy identity rules.
 Missing indexes raise; absent keys in an installed snapshot return empty results.
 SEC historical submission JSON members are validated and counted but not indexed
-as extra issuers; full current filing arrays remain in the archive. Relationship
+as extra issuers; full current issuer objects, including filing arrays, are compressed in SQLite for indexed lookup. Relationship
 lookups return outgoing child→parent rows without interpreting their validity.
 Blank FRS IDs are retained/countable; they are never minted as registry links.
 Manifests are embedded in each SQLite database (authoritative), with a combined
@@ -132,3 +132,20 @@ could collapse before both counts. Fixed: require positive indexed yield before
 publication; reject duplicate keys in external JSON objects before indexing.
 Regression `test_history_only_and_duplicate_json_preserve_cache` proves both
 failures preserve existing Apple results. Targeted suite: 10 passed.
+
+SEC national archive reconciled: **997,330 JSON members = 991,914 current issuer
+objects + 5,416 historical submission objects**, plus **1 validated auxiliary
+placeholder**, for **997,331 total archive members**. Raw bytes 1,573,297,672;
+SHA-256 `54cd920bd9cf6be1aca79588437c6f051afc313f4fef070b46b28cb8c6be44f8`.
+SEC ticker file: **10,409 ticker/CIK associations**.
+EPA national Exporter reconciled **3,233,462 CSV rows**, including blank FRS IDs;
+raw bytes 446,459,497; SHA-256
+`db39e0733204652f1016f0f2b9b66f3e5cc53caeca328214351233b2b3aba90a`.
+Three live EPA known answers passed through the installed plain-JSON index with
+new compressed/legacy-compatible lookup code. SEC is being reindexed with the
+post-refute duplicate-key guard before the final live gate.
+
+Live lookup timing exposed costly reconstruction of the million-member SEC ZIP
+central directory on every CIK lookup. The index now stores the full compressed
+issuer JSON rather than a ZIP member pointer; lookup needs no archive scan and
+returns all fields. History JSON remains archive-only and is fully counted.

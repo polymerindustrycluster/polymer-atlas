@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import sqlite3
 import sys
+import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts import bulk_sources as b
@@ -30,9 +31,12 @@ def check(cache):
     for registry_id, name in [('110007881596', 'STAR PLASTICS'), ('110000344253', 'ARMACELL'),
                               ('110072288286', 'DELRIN')]:
         assert any(name in row['FAC_NAME'] for row in b.frs_by_registry_id(registry_id, cache))
+    started = time.perf_counter()
     for cik, ticker in [(320193, 'AAPL'), (789019, 'MSFT'), (1318605, 'TSLA')]:
-        assert int(b.sec_by_cik(cik, cache)['cik']) == cik
+        issuer = b.sec_by_cik(cik, cache)
+        assert int(issuer['cik']) == cik and 'filings' in issuer
         assert any(int(row['cik']) == cik for row in b.sec_by_ticker(ticker, cache))
+    sec_seconds = time.perf_counter() - started
     for lei, legal_name in [('HWUPKR0MPOU8FGXBT394', 'APPLE INC.'),
                             ('7ZW8QJWVPR4P1J1KQY45', 'GOOGLE LLC'),
                             ('5493006MHB84DD0ZWV18', 'ALPHABET INC.')]:
@@ -42,7 +46,7 @@ def check(cache):
     assert any(row['Relationship.EndNode.NodeID'] == '5493006MHB84DD0ZWV18'
                and row['Relationship.RelationshipType'] == 'IS_DIRECTLY_CONSOLIDATED_BY'
                for row in b.lei_relationships('7ZW8QJWVPR4P1J1KQY45', cache))
-    print(json.dumps({'PASS': counts, 'unit': 'CSV rows / SEC JSON members / ticker associations'}))
+    print(json.dumps({'PASS': counts, 'six_sec_lookups_seconds': sec_seconds, 'unit': 'CSV rows / SEC JSON members / ticker associations'}))
 
 
 if __name__ == '__main__':
