@@ -1,0 +1,38 @@
+site_id,street_address,source_zip,quote,url,sha256,checked_urls
+SITE-002807,,,,https://www.adeptcorp.com/about-us/,,https://www.adeptcorp.com/about-us/;https://www.adeptcorp.com/contact-us/
+SITE-002817,,,,https://covingtonplasticmolding.com/,,https://covingtonplasticmolding.com/;https://covingtonplasticmolding.com/#contact-form
+SITE-002822,2727 West 16th St.,16505,"2727 West 16th St. Erie, PA 16505",https://www.executool.net/,d9ba24d43df717bab42b39c90b5b3d2588bed15d26d8aa8e305a69cdeadb480f,https://www.executool.net/
+SITE-002822,2727 West 16th St.,16505,"2727 West 16th St. Erie, PA 16505",https://www.executool.net/,d9ba24d43df717bab42b39c90b5b3d2588bed15d26d8aa8e305a69cdeadb480f,https://www.executool.net/
+SITE-002822,2727 West 16th St.,16505,"2727 West 16th St. Erie, PA 16505",https://www.executool.net/contact-us/,0ff7d14116fee3aa5bfb4221ba6b85139a30946a7deb6cc2d8f989111aba2a9b,https://www.executool.net/;https://www.executool.net/contact-us/
+SITE-002822,2727 West 16th St.,16505,"2727 West 16th St. Erie, PA 16505",https://www.executool.net/contact-us/,0ff7d14116fee3aa5bfb4221ba6b85139a30946a7deb6cc2d8f989111aba2a9b,https://www.executool.net/;https://www.executool.net/contact-us/
+SITE-002824,,,,http://www.geminiplastics.net,,http://www.geminiplastics.net
+SITE-002825,4861 West 23rd Street,16506,"4861 West 23rd Street Erie, PA 16506",https://www.georgeko.com/Contact-GeorgeKo.htm,74a642a21640dcc3f436707cf5d0f44759540dd408e4c4ece5e146ec8e7cc730,https://www.georgeko.com/GeorgeKo-Production-Manufacturing.htm;https://www.georgeko.com/Contact-GeorgeKo.htm
+SITE-002829,,,,https://mqplastics.com/,,https://mqplastics.com/;https://mqplastics.com/contact-us/
+SITE-002831,,,,https://milletplastics-group.com/,,https://milletplastics-group.com/
+SITE-002833,2935 West 17th Street,16505,"2935 West 17th Street Erie, PA 16505",https://www.munotplastics.com/,c0bd6d70303261b406c9295ee70a1a9786abd570ff3ac862d4052c66d8823d06,https://www.munotplastics.com/
+SITE-002833,2935 W 17th St,16505,"2935 W 17th St Erie, PA 16505",https://www.munotplastics.com/contact-us/,403432a6cc81d0eb8d1f78411fc0ca612a4e272781a1228cd107823c857c6e49,https://www.munotplastics.com/;https://www.munotplastics.com/contact-us/
+SITE-002833,2935 West 17th Street,16505,"2935 West 17th Street Erie, PA 16505",https://www.munotplastics.com/contact-us/,403432a6cc81d0eb8d1f78411fc0ca612a4e272781a1228cd107823c857c6e49,https://www.munotplastics.com/;https://www.munotplastics.com/contact-us/
+SITE-002838,,,,,,
+SITE-002840,1 Lark Ave.,17540,"1 Lark Ave., Leola, PA 17540",https://polymar-asm.com/,1561f7475bf9cabb58d72621f89d2bfd6ba769ea58812089ed9965b6e76750d9,https://polymar-asm.com/
+SITE-002840,1 Lark Ave.,17540,"1 Lark Ave., Leola, PA 17540",https://polymar-asm.com/contact-us/,56371af6dba436342a0748d4e28d3ac0da06a0dd6c3225fc56579402b57437b9,https://polymar-asm.com/;https://polymar-asm.com/contact-us/
+SITE-002840,1 Lark Ave.,17540,"1 Lark Ave., Leola, PA 17540",https://polymar-asm.com/contact-us/,56371af6dba436342a0748d4e28d3ac0da06a0dd6c3225fc56579402b57437b9,https://polymar-asm.com/;https://polymar-asm.com/contact-us/
+SITE-002845,,,,https://retalgroup.com/,,https://retalgroup.com/
+SITE-002848,,,,https://vikingplastics.com/,,https://vikingplastics.com/
+SITE-002852,,,,https://www.grahampackaging.com/,,https://www.grahampackaging.com/;https://www.grahampackaging.com/solutions/co-location-manufacturing/;https://www.grahampackaging.com/contact/
+SITE-002853,600 Dietrich Ave,18201,"600 Dietrich Ave, Hazleton, PA 18201",https://multi-plastics.com/,dc555a30df1f5c1fad90ace8d43a5d9251e23a581bab29c2086535de044ac9f8,https://multi-plastics.com/
+SITE-002853,600 Dietrich Ave.,18201,"600 Dietrich Ave. Hazleton, PA 18201",https://multi-plastics.com/contact-us,493c33a4c2bddcc34c6e50e72a86cd0e2587a39ef6ad8baad3fee3ed8ff9ea50,https://multi-plastics.com/;https://multi-plastics.com/contact-us
+SITE-002853,600 Dietrich Ave,18201,"600 Dietrich Ave, Hazleton, PA 18201",https://multi-plastics.com/contact-us,493c33a4c2bddcc34c6e50e72a86cd0e2587a39ef6ad8baad3fee3ed8ff9ea50,https://multi-plastics.com/;https://multi-plastics.com/contact-us
+SITE-002853,600 Dietrich Ave.,18201,"600 Dietrich Ave. Hazleton, PA 18201",https://multi-plastics.com/contact-us/,493c33a4c2bddcc34c6e50e72a86cd0e2587a39ef6ad8baad3fee3ed8ff9ea50,https://multi-plastics.com/;https://multi-plastics.com/contact-us;https://multi-plastics.com/contact-us/
+SITE-002853,600 Dietrich Ave,18201,"600 Dietrich Ave, Hazleton, PA 18201",https://multi-plastics.com/contact-us/,493c33a4c2bddcc34c6e50e72a86cd0e2587a39ef6ad8baad3fee3ed8ff9ea50,https://multi-plastics.com/;https://multi-plastics.com/contact-us;https://multi-plastics.com/contact-us/
+SITE-002854,,,,https://qualityplasticsllc.com,,https://qualityplasticsllc.com
+SITE-002859,1040 Maple Avenue,16423,"1040 Maple Avenue Lake City, PA 16423",https://engineeredplastics.com/,bfc9224d396bdcf27425d2f139e739ab91fed23c9acfa1e0006ba06d9cbd9d5a,https://engineeredplastics.com/
+SITE-002859,1040 Maple Avenue,16423,"1040 Maple Avenue Lake City PA, 16423",https://engineeredplastics.com/contact,43d87ceeac65618d0cd375779e77f0397d144a449f2ca36bd32e3192dab45760,https://engineeredplastics.com/;https://engineeredplastics.com/contact
+SITE-002859,1040 Maple Avenue,16423,"1040 Maple Avenue Lake City, PA 16423",https://engineeredplastics.com/contact,43d87ceeac65618d0cd375779e77f0397d144a449f2ca36bd32e3192dab45760,https://engineeredplastics.com/;https://engineeredplastics.com/contact
+SITE-003584,,,,https://valexgroup.com,,https://valexgroup.com;https://valexgroup.com/contact/;https://valexgroup.com/contact
+SITE-003723,,,,https://www.zurn.com/,,https://www.zurn.com/
+SITE-004115,,,,https://acmos.com,,https://acmos.com
+SITE-004272,,,,,,
+SITE-004299,480 Johnson Road,15301,"480 Johnson Road Washington, PA 15301",https://www.audiaelastomers.com/pages/contact,9c42f44b5ce37d63a272a2e39240d580b49e9548b2848e0bdcf7d1d613810ca8,https://www.audiaelastomers.com;https://www.audiaelastomers.com/pages/contact
+SITE-004558,,,,https://www.noracadditives.com,,https://www.noracadditives.com;https://www.noracadditives.com/contact
+SITE-004560,,,,https://www.sudarshan.com,,https://www.sudarshan.com;https://www.sudarshan.com/contact-us/
+SITE-002834,9 Guttman Avenue,15022,"9 Guttman Avenue Charleroi, PA 15022",https://nationalpolymers.com/about,35a77973e7231a8b155e3daa4c711ada8514680b3d009396aba4c1cdc9a5f79c,https://nationalpolymers.com/about
