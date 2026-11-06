@@ -119,7 +119,7 @@ P("SND-0016", "org", "ORG-002674", "ORG-003282", "DISTINCT", "", "n/a", "",
 C("SND-0020", "Creative Composites Group's own site lists Composite Advantage as one of the group's seven 'Companies' (with Creative Pultrusions, Enduro Composites, E.T. Techtonics, Kenway Composites, Trident Industries, United Fiberglass): group vs member company, DISTINCT. ORG-001790 carries the group name as a trade name, which is what clustered it. Open: SITE-000831 'Creative Composites Group - Dayton' (hq_only, no street, under the group) is the Dayton operation that ORG-001790's notes call Composite Advantage's.",
   "TREE:ORG-000768;TREE:ORG-001790;TREE:SITE-000831;WEB:W05")
 P("SND-0020", "org", "ORG-000768", "ORG-001790", "DISTINCT", "", "n/a", "",
-  "Group site presents Composite Advantage as a member company next to six others; ORG-000768's own note says the group site 'lists its divisions ... incl. Composite Advantage (Dayton)'.", "TREE:ORG-000768;WEB:W05")
+  "Group site presents Composite Advantage as a member company next to six others; ORG-000768's own note says the group site 'lists its divisions with phones, incl. Composite Advantage' (Dayton).", "TREE:ORG-000768;WEB:W05")
 A("SND-0020", "hold_operator", "SITE-000831", "ORG-000768|ORG-001790", "hold",
   "Operator is probably ORG-001790 (Composite Advantage), currently ORG-000768 (the group). Settling fact: the Dayton street address and the Ohio SOS entity record showing whether Composite Advantage is a separate legal entity from the group.",
   "TREE:ORG-001790;TREE:SITE-000831;WEB:W05")
@@ -322,7 +322,7 @@ C("SND-0083", "Republic Powdered Metals Inc (ORG-001724, ultimate_parent_name RP
 P("SND-0083", "org", "ORG-000006", "ORG-001724", "DISTINCT", "", "n/a", "",
   "Parent vs subsidiary (ORG-001724 ultimate_parent_name = RPM International Inc); different legal names.", "TREE:ORG-000006;TREE:ORG-001724")
 P("SND-0083", "site", "SITE-002965", "SITE-001800", "DUPLICATE_OF", "SITE-001800", "to_apply", "same_street",
-  "Both rows are 2628 Pearl Rd, Medina OH 44256 (SITE-001800 notes: 'Street: 2628 Pearl Rd.'); both cite EPA TRI/FRS 110000388937 REPUBLIC POWDERED METALS INC.",
+  "Both rows are 2628 Pearl Rd, Medina OH 44256 (SITE-001800 notes: 'Street: 2628 Pearl Rd.'); SITE-001800's notes cite EPA TRI records for REPUBLIC POWDERED METALS INC at that address; SITE-002965 cites FRS 110000388937 (same registrant name).",
   "TREE:SITE-002965;TREE:SITE-001800;FRS:110000388937")
 
 # ---------------------------------------------------------------- 0084 Royal Building Products

@@ -378,15 +378,33 @@ def run(verdicts, pairs, actions, evidence, frs_rows, leads, orgs, sites, errs=N
     return errs
 
 
+def known_answers():
+    """The street matcher on cases whose answer is known before it is trusted."""
+    errs = []
+    k = lambda street: street_key({"street_address": street, "notes": ""})  # noqa: E731
+    if k("1570 E Highland Rd") != k("1570 Highland Rd"):
+        errs.append("known answer: '1570 E Highland Rd' must equal '1570 Highland Rd'")
+    if k("111 RIDC Park West Drive") != k("111 Park West Dr."):
+        errs.append("known answer: RIDC Park West must equal Park West")
+    if difflib.SequenceMatcher(None, k("48 Powhatten Ave.")[1], k("48 Powhattan Ave.")[1]).ratio() < 0.8:
+        errs.append("known answer: Powhatten/Powhattan must be a street variant")
+    if k("1550 Universal Rd") == k("1441 Universal Rd"):
+        errs.append("known answer: 1550 and 1441 Universal Rd must differ")
+    notes_only = street_key({"street_address": "", "notes": "Source: x. Street (per Grok): 4050 Clough Woods Drive. NAICS"})
+    if notes_only != k("4050 Clough Woods Dr"):
+        errs.append("known answer: street read from notes must equal the street field")
+    return errs
+
+
 def data_untouched():
     errs = []
     try:
-        d1 = subprocess.run(["git", "diff", "--name-only", "origin/main", "--", "data/"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
+        d1 = subprocess.run(["git", "diff", "--name-only", "origin/main...HEAD", "--", "data/"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split()
         d2 = subprocess.run(["git", "status", "--porcelain", "--", "data/"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split("\n")
     except Exception as e:  # noqa: BLE001
         return [f"data: cannot run git ({e}); cannot show data/ is untouched"]
     if d1:
-        errs.append(f"data/ differs from origin/main: {d1[:5]}")
+        errs.append(f"this branch changed data/ relative to origin/main: {d1[:5]}")
     if any(x.strip() for x in d2):
         errs.append(f"data/ has uncommitted changes: {d2[:5]}")
     return errs
@@ -428,14 +446,14 @@ def selftest(base, orgs, sites):
         return next(p for p in d["pairs"] if p["pair_id"] == pid)
 
     ok = True
-    # 1 survivor that is itself a tombstone
+    # 1 survivor that is itself a tombstone (merged org)
     def m1(d):
         p = next(p for p in d["pairs"] if p["verdict"] == "DUPLICATE_OF" and p["level"] == "org" and p["state"] == "to_apply")
-        p["survivor"] = folded_of(p)
+        p["record_b"] = p["survivor"] = "ORG-001846"
         for v in d["verdicts"]:
             if v["cluster"] == p["cluster"]:
                 v["survivor"] = p["survivor"]
-    ok &= mutate(m1, "is not a held active org")
+    ok &= mutate(m1, "is not active")
     # 2 a record folded in two clusters
     def m2(d):
         p = next(p for p in d["pairs"] if p["level"] == "org" and p["verdict"] == "DUPLICATE_OF" and p["state"] == "recorded")
@@ -512,6 +530,7 @@ def main():
     errs = run(base["verdicts"], base["pairs"], base["actions"], base["evidence"], base["frs_rows"], base["leads"], orgs, sites,
                offline=offline)
     errs += data_untouched()
+    errs += known_answers()
     errs += check_counts_and_readme(base["verdicts"], base["pairs"], base["actions"])
     if "--selftest" in sys.argv:
         print("selftest: each planted defect must be caught")
