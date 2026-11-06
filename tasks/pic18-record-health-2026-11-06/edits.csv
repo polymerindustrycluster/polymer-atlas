@@ -1,7 +1,0 @@
-org_id,field,old,new,evidence_ids
-ORG-000132,verification_tier,C,A,EVD-170000;EVD-170001;EVD-170002
-ORG-001087,parent_org_id,,ORG-001088,EVD-170005
-ORG-001470,website,,https://www.pittsburghpaintsco.com/,EVD-170006
-ORG-001470,processes,architectural coatings manufacturing,coating_formulation,EVD-170007
-ORG-001470,materials,water-based latex paints and stains,coatings;adhesives_sealants,EVD-170007
-ORG-001922,website,,https://faullandson.com/,EVD-170009

@@ -5,6 +5,7 @@ from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(H))
 from fetch import read,on_page,write
 BASE=json.loads((H/'baseline.json').read_text())['base']
+FRAME=json.loads((H/'baseline.json').read_text())['frozen_base']
 inputs=read(H/'input.csv');vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');raw=read(H/'rawcheck.csv')
 assert len(inputs)==len(vs)==len({r['site_id'] for r in vs})==35
 assert {r['site_id'] for r in inputs}=={r['site_id'] for r in vs}
@@ -29,7 +30,10 @@ for sid in ids:
 # Freeze creation classes from the merged first packets, excluding retired slots and later PRs.
 expected=set()
 for task in ['corroborated-mi-il-2026-11-06','corroborated-il-2026-11-06']:
- expected|={r['site_id'] for r in read(ROOT/'tasks'/task/'allocations.csv')}
+ rows=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',FRAME+':tasks/'+task+'/allocations.csv'],cwd=ROOT,text=True))))
+ made={r['site_id'] for r in rows};assert len(rows)==len(made)==(17 if 'mi-il' in task else 18)
+ assert not(expected & made)
+ expected|=made
 assert expected=={r['site_id'] for r in inputs}
 changed=subprocess.check_output(['git','diff',BASE,'--name-only','--','data'],cwd=ROOT,text=True).splitlines()
 allowed={'data/sites_MI.csv','data/sites_IL.csv','data/evidence_sites_MI.csv','data/evidence_sites_IL.csv'}

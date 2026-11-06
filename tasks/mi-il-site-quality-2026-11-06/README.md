@@ -89,3 +89,10 @@ Raw cache is local at `build/l11-quality-cache/frozen/`; short quotes and hash/r
 ## Independent refutes
 
 Codex and Grok deep adversarial clerk reviews pending. No Done/merge/approval claim. Limits: no fresh federal bulk download under the explicit packet-vintage exception; no current operating-status adjudication or full scripts test suite. Raw word presence alone is not semantic support, hence the complete source census is requested from both clerks.
+
+
+Codex/OpenAI clerk6 final APPROVEb6994a6,0findings; report reviews/194-clerk-codex-6.md. Independently raw-fetched all8sourcequote/city/binding triples (browser-UA curl/pdftotext), inspected40claims/8ITAfieldsets, renderedTechniplasp1/Averyp2. Exact recordedB-PARENT chain, historicalPella process/vintage, OwensRockfordplantbinding, PretiumSuite140government-only and localMarian/All-Stateconverting scopes confirmed. Existing43discoverytextreceipts scanned foradverse labels;no additional exact-site contradiction. Namedcheck/validator0/rowloss/replay/known3/fourno-writecontrolsPASS. LiveGilkeyfetchfailed;retainedsnapshot supports already-surfaced showroom finding. Grok final review pending; draft/noDone.
+
+Fresh integration pinned 419678b2e3e415194dad804af8daca649b163f3e: exactmain4shards+builder,nohandCSVmerge. All8promotedsite rows and40newEVD field-identicaltoCodex-approvedb6994a6;allcurrentmainrows preserved. Frozen35-siteframe unchanged (150/151excludedatfreeze evenafterlatermerges); baseline.jsonfrozen_base preserves original frame baseline,base tracks integration. No new source/classification/record motion; taskcheck/validator0/rowloss rerun beforepush.
+
+Integration-check dependency correction: current main419678b lacks the original MI first-pass task folder. The first re-run failed visibly on that missing allocations.csv; no data assertion was bypassed. Frame reconciliation now reads both creation manifests from frozen_base97ee6bc via immutable git show, independently asserts17MI/18IL source counts and unique/disjoint siteIDs, then matches the unchanged35input IDs. Current canonical preservation uses separate integration base. Shared task files were not restored or modified.
