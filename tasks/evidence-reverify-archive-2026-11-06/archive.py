@@ -22,6 +22,12 @@ def same_page(a, b):
     return norm(a) == norm(b)
 
 
+def same_capture(a, b):
+    pattern = r'https://web\.archive\.org/web/(\d{14})/(https?://\S+)'
+    left, right = re.fullmatch(pattern, a), re.fullmatch(pattern, b)
+    return bool(left and right and left[1] == right[1] and same_page(left[2], right[2]))
+
+
 def available(url):
     path = CACHE / (hashlib.sha256(url.encode()).hexdigest() + '.available.json')
     if path.exists(): return json.loads(path.read_text())
@@ -66,7 +72,7 @@ def main():
             if code == '429': time.sleep(30)
             effective = f['attempts'][-1]['effective_url']
             # Redirecting to another capture/page cannot bind the discovered timestamp.
-            if f['status'] == 'ok' and effective.rstrip('/') == ref.rstrip('/'):
+            if f['status'] == 'ok' and same_capture(effective, ref):
                 status = 'READABLE'
                 for e in grouped[a['url']]:
                     if on_page(e['quote'], ROOT / f['page']):
