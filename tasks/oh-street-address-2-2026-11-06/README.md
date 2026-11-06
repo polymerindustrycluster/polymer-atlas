@@ -34,3 +34,5 @@ Holds (unit:selected active PIC-18 A/B blank site rows; reasons overlap):
 All40holds have per-site reasons;388unworked rows selected=no in frame.csv, never labeled researched. No owner scope/ring/vocabulary calls or inclusion_log changes. Pre-pass hashes and selected/fill/evidence IDs in journal.json; backups local/ignored. On newer main take main data and rerun builder; it refuses changed locality/notes/tier/provenance or populated conflicting street. Global evidence IDs preflighted across every shard.
 
 Review: controller05:55/06:25 clerk route; two-family technical verdicts pending. Draft stays unapproved until Codex4 and Grok4 refute exact output.
+
+Controller integration note,2026-11-06: PA147 merged as reviewed e77dd5e at11:03:46UTC, before its verdict-documentation commit862f67a reached the branch. Controller explicitly authorized that README-only approval record to ride this next PR; no PA data/code changes ride it. Current main af3f87e merged into this branch before review. All new Ohio data changes remain the20 selected fill rows. My earlier READY message was overtaken by the controller merge; PR147 is MERGED.
