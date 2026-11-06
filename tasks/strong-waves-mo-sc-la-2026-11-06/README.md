@@ -42,3 +42,4 @@ County/HQ are not inferred from postal city or plant location. Blank fields rema
 Application counts, before/after ratios and independent review verdicts are appended below before PR publication.
 
 - Missouri application: 7 new organizations (tier C), 9 new establishments {'C': 1, 'B': 8}; 98 evidence observations. `validate.py`: zero errors. Builder replay: passed.
+- South Carolina application: 4 new organizations (tier C), 6 new establishments (tier B); 64 evidence observations; 2 held-parent alias updates. `validate.py`: zero errors. Builder replay: passed.
