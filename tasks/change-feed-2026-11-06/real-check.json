@@ -1,0 +1,18 @@
+{
+  "main_snapshot": "901af04906ad5ce3e1a1d2318184052a1f2c638a",
+  "data_history_entries": 258,
+  "merged_pr_entries": 122,
+  "direct_commit_entries": 136,
+  "first_generation_seconds": 85.35,
+  "known_answers": "3/3",
+  "evidence_row_balance": 38394,
+  "evidence_rows_at_main": 38394,
+  "deterministic_replay": true,
+  "atom_entries": 258,
+  "output_sha256": {
+    "feed.xml": "75d7bdb34a6fc6bf26c9c3def289c51a2bf56488c9be104b36d616972661d164",
+    "CHANGELOG.md": "72c2fd9a9d11995c3fabf5e36576d7acb4223140ccd947d42bfe30084844c213"
+  },
+  "output_files_committed": false,
+  "check": "PASS"
+}
