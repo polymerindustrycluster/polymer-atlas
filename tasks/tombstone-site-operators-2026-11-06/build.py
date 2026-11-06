@@ -5,6 +5,8 @@ from pathlib import Path
 P=Path(__file__).resolve().parent;ROOT=P.parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from shard_io import append_sorted
+from atlas import name_key
+from research import found
 
 def read(p):
     with open(p,newline='',encoding='utf-8-sig') as f:return list(csv.DictReader(f))
@@ -13,15 +15,28 @@ def write(p,rows):
     with open(p,'w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=rows[0],lineterminator='\n');w.writeheader();w.writerows(rows)
 
+def assert_operator_names(verdicts,gov,orgs,maps,raw):
+    for m in maps:
+        aliases={name_key(n) for n in [orgs[m['operator_org_id']]['legal_name'],*orgs[m['operator_org_id']]['trade_names'].split(';')] if n}
+        assert name_key(m['target_alias']) in aliases,'unheld mapped alias'
+        assert found(m['quote'],m['source_name']+' Doing Business As '+m['target_alias']),'DBA bridge not explicit'
+        assert any(r['source_ref']==m['source_ref'] and r['quote']==m['quote'] and r['raw_check']=='PASS' for r in raw),'DBA raw witness missing'
+    for v in verdicts:
+        if v['verdict']!='VERIFIED':continue
+        o=orgs[v['operator_org_id']];aliases={name_key(n) for n in [o['legal_name'],*o['trade_names'].split(';')] if n}
+        names={name_key(g[k]) for g in gov if g['site_id']==v['site_id'] for k in ['operator','establishment_name']}
+        match=bool(names&aliases) or any(m['operator_org_id']==v['operator_org_id'] and name_key(m['source_name']) in names for m in maps)
+        assert match,('unresolved named operator',v['site_id'],names,aliases)
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--data-dir',type=Path,default=ROOT/'data');a=ap.parse_args()
     frame=read(P/'input.csv');vs=read(P/'verdicts.csv');edits=read(P/'edits.csv');packet=read(P/'evidence_packet.csv')
     assert len(frame)==len(vs)==len({v['site_id'] for v in vs})==14
     assert {r['site_id'] for r in frame}=={v['site_id'] for v in vs}
     assert all(v['verdict'] in {'VERIFIED','STILL_UNCERTAIN'} for v in vs)
-    assert sum(v['action']=='REPOINT' for v in vs)==10 and sum(v['action']=='KEEP' for v in vs)==2 and sum(v['action']=='HOLD' for v in vs)==2
+    assert sum(v['action']=='REPOINT' for v in vs)==8 and sum(v['action']=='KEEP' for v in vs)==2 and sum(v['action']=='HOLD' for v in vs)==4
     verified={v['site_id'] for v in vs if v['verdict']=='VERIFIED'};assert {e['site_id'] for e in edits}==verified
-    assert len(packet)==len({e['evidence_id'] for e in packet})==20
+    assert len(packet)==len({e['evidence_id'] for e in packet})==18
     assert all(188500<=int(e['evidence_id'][4:])<=188999 for e in packet)
     assert all(e['claim_type']=='parent' and e['record_table']=='sites' for e in packet)
     orgs={r['org_id']:r for f in a.data_dir.glob('organizations_*.csv') for r in read(f)}
@@ -39,6 +54,7 @@ def main():
         else:pending[a.data_dir/name].append(e)
         if e['source_class']=='own_site':assert any(r['site_id']==sid and r['source_ref']==e['source_ref'] and r['quote']==e['claim_detail'] and r['raw_check']=='PASS' for r in raw),'own quote receipt gap'
     gov=read(P/'government-review.csv')
+    assert_operator_names(vs,gov,orgs,read(P/'operator-name-map.csv'),raw)
     ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
     osha={r['est_key']:r for r in read(ROOT/'tasks/osha-spine-2026-11-01/establishments.csv')}
     for g in gov:
@@ -74,5 +90,5 @@ def main():
     for path in sorted(touched):write(path,shards[path])
     for path,rs in pending.items():append_sorted(path,rs,'evidence_id')
     write(a.data_dir/'registry_links.csv',links)
-    print('PASS applied10operator re-points,2sourcedkeeps,2unchangedholds;47cells(including1authorizedregistryFK)20append-onlyEVD; no org/status/tier/edge changes')
+    print('PASS applied8operator re-points,2sourcedkeeps,4unchangedholds;39cells(including1authorizedregistryFK)18append-onlyEVD; no org/status/tier/edge changes')
 if __name__=='__main__':main()
