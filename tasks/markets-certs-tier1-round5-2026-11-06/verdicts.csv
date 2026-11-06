@@ -1,0 +1,101 @@
+org_id,verdict,detail
+ORG-002694,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002698,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002700,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002711,STILL_UNCERTAIN,"No recorded own website. Need public own-domain identity and scoped served-market/current-certificate witness; website is outside lane, unchanged. No absence/closure conclusion."
+ORG-002717,STILL_UNCERTAIN,"No recorded own website. Need public own-domain identity and scoped served-market/current-certificate witness; website is outside lane, unchanged. No absence/closure conclusion."
+ORG-002723,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002730,STILL_UNCERTAIN,"No recorded own website. Need public own-domain identity and scoped served-market/current-certificate witness; website is outside lane, unchanged. No absence/closure conclusion."
+ORG-002738,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002757,STILL_UNCERTAIN,"No recorded own website. Need public own-domain identity and scoped served-market/current-certificate witness; website is outside lane, unchanged. No absence/closure conclusion."
+ORG-002770,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002873,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002874,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002875,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002876,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002877,STILL_UNCERTAIN,Recorded AZEK domain now serves JamesHardie parent content. Need a named AZEK legal-entity current market/certificate witness; no status/successor/website/parent change inferred.
+ORG-002878,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002879,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002880,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002881,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002882,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002883,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002884,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002885,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002886,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002887,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002888,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002889,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002890,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002891,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002892,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002894,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002895,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002900,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002903,STILL_UNCERTAIN,"Recovered own route names YunhongCTICorporation, not held YunhongGreenCTILtd. Need explicit legal continuity/name linkage plus scoped market/current certificate before attribution; no rebrand ruling by lane."
+ORG-002904,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002905,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002906,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002907,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002908,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002909,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002910,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002911,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002912,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002913,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002915,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002916,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002917,STILL_UNCERTAIN,"No recorded own website. Need public own-domain identity and scoped served-market/current-certificate witness; website is outside lane, unchanged. No absence/closure conclusion."
+ORG-002918,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002924,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002926,STILL_UNCERTAIN,"US route exposes EvonikGroup/global markets, not held EvonikCorporation scope. Need explicit USentity offerings/certificate witness; no parent union copied."
+ORG-002932,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002935,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002940,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002945,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002946,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002950,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002955,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002961,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-002963,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-002991,STILL_UNCERTAIN,ARLANXEO global union is not assigned to ARLANXEOUSALLC. Need current heldentity served-market or certificate witness.
+ORG-003005,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003024,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003027,STILL_UNCERTAIN,Allnex global pages/copyrightGmbH do not identify AllnexUSAInc served-market scope. Need explicit USentity linkage and scoped market/current certificate.
+ORG-003028,STILL_UNCERTAIN,AsahiKasei global EngineeringPlastics site/copyrightCorporation does not attribute its union to held PlasticsNorthAmericaInc. Need entity-scoped own witness.
+ORG-003031,STILL_UNCERTAIN,Clariant global menu is not attributed to held ClariantCorporation. Need heldentity business/market/current-certificate witness.
+ORG-003035,STILL_UNCERTAIN,Own site is scheduled-maintenance notice. Need a functioning own market/quality page; maintenance proves no absence/closure.
+ORG-003037,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003039,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003041,STILL_UNCERTAIN,PiovanGroup parent menu not attributed to UniversalDynamicsInc. Need explicit current Unadyn legalentity offering/certificate linkage; no parent union copied.
+ORG-003043,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003048,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003050,STILL_UNCERTAIN,BYK global application menu/certificates not scoped to BYKUSALLC. Need current namedUS entity market/certificate witness.
+ORG-003056,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003057,STILL_UNCERTAIN,"Own LionElastomers portal spans GeismarLLC,PortNechesLLC andOrangeLLC with a group application union. Need exact heldLionElastomersLLC market scope/currentcertificate; GeismarGMP andgroupuses not copied."
+ORG-003059,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003064,STILL_UNCERTAIN,"RoyceGlobal site lacks explicit RoyceAssociatesLP identity linkage in fetched pages. Need named heldlegalentity and scoped market/currentcertificate, not brand/group union."
+ORG-003067,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003068,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003071,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003079,STILL_UNCERTAIN,KanekaAmericas/global menu names different MedicalAmerica/Aerospace businesses. Need heldKanekaNorthAmericaLLC current offering/certificate witness; no union copied.
+ORG-003080,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003081,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003082,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003083,STILL_UNCERTAIN,Nouryon global markets not attributed to held NouryonChemicalsLLC. Need heldentity offering/certificate scope.
+ORG-003087,STILL_UNCERTAIN,REPI global site/application union not scoped to held REPILLC. Need exact USentity linkage and offering/currentcert witness.
+ORG-003093,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003094,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003095,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003096,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003097,STILL_UNCERTAIN,"Own brand page names ToyoTireUSACorp, not held ToyoTireHoldingsofAmericasInc. Need namedholdingentity offering/currentcertificate witness; no operating-subsidiary union copied."
+ORG-003098,STILL_UNCERTAIN,Global site/copyrightNokianTyresplc not scoped to NokianTyresInc. Need namedUSunit offerings/currentcertificate witness.
+ORG-003099,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003103,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003105,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003113,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003116,STILL_UNCERTAIN,Direct compressed/plain/Jina route unavailable or challenge-only. Need usable own-site served-market/current-certificate witness; no absence/closure inference.
+ORG-003117,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003119,STILL_UNCERTAIN,Current fiberglasslightpoles/filtertanks/undergroundducts insufficient to settle controlled served end-sector without generic-use inference. Historical agriculture/mine products are not current markets. Need explicit current sector witness.
+ORG-003120,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
+ORG-003121,VERIFIED,"At least one candidate value supported; final raw gate required before application. Unfilled fields remain unknown, tier unchanged."
