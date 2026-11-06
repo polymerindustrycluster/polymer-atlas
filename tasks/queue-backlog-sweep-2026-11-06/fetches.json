@@ -1,0 +1,58 @@
+[
+  {
+    "key": "chromaflo",
+    "url": "https://vibrantz.com/press/prince-international-corporation-completes-acquisition-of-ferro-corporation-combines-with-chromaflo-technologies-and-renames-company-vibrantz-technologies-inc/",
+    "final_url": "https://vibrantz.com/press/prince-international-corporation-completes-acquisition-of-ferro-corporation-combines-with-chromaflo-technologies-and-renames-company-vibrantz-technologies-inc/",
+    "http_status": 200,
+    "sha256": "d423abb5295ce8435c9613d1078db6f7544ac5b9e131e5ae2fa617c9977c59d9",
+    "bytes": 115516
+  },
+  {
+    "key": "northpoint",
+    "url": "https://northpointpolymers.com/about",
+    "final_url": "https://northpointpolymers.com/about",
+    "http_status": 200,
+    "sha256": "63f5e465b4b91704305d9a3326da94841eee94ba49a40b595ed1570548ab0ea0",
+    "bytes": 32742
+  },
+  {
+    "key": "jvis",
+    "url": "https://www.jobsohio.com/newsroom/news-press/jvis-expands-manufacturing-footprint-with-acquisition-of-toledo-molding-die-operations-in-ohio",
+    "final_url": "https://www.jobsohio.com/newsroom/news-press/jvis-expands-manufacturing-footprint-with-acquisition-of-toledo-molding-die-operations-in-ohio",
+    "http_status": 200,
+    "sha256": "c53ecac2a23473279b9a3ac6a6daa891018afd13a4b0e35be4d927e0c32f64ec",
+    "bytes": 373167
+  },
+  {
+    "key": "robin",
+    "url": "https://www.robin-industries.com/contact/",
+    "final_url": "https://www.robin-industries.com/contact-automotive/",
+    "http_status": 200,
+    "sha256": "7af7d91652e64c4206f6ec817a0ee68defcafc7fa0da5ae52af727c95766f364",
+    "bytes": 48782
+  },
+  {
+    "key": "etched",
+    "url": "https://etched-metal.com/",
+    "final_url": "https://etched-metal.com/",
+    "http_status": 200,
+    "sha256": "4eea8dc0aa61f7771883d9e4ee0bbb5d1b4d9b962a5e70d634ce0312da998018",
+    "bytes": 223192
+  },
+  {
+    "key": "wrs",
+    "url": "https://www.wrstool.biz/contact/",
+    "final_url": "https://www.wrstool.biz/contact/",
+    "http_status": 200,
+    "sha256": "d472cffb58745cd9553cbc6c26649397da2da5f1a6c1b9ecde25c4604b5223fe",
+    "bytes": 32200
+  },
+  {
+    "key": "acsic",
+    "url": "https://acsici.com/",
+    "final_url": "https://acsici.com/",
+    "http_status": 200,
+    "sha256": "61756cfeb641867020e4266f5a440565d024f19eaf916243616121cc2d69f12a",
+    "bytes": 36725
+  }
+]

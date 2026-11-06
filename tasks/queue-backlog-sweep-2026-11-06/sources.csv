@@ -1,0 +1,17 @@
+key,url,quote,source_class,format
+acsic,https://acsici.com/,"565 Metro Place S STE300 Dublin, OH 43017",own_site,html
+wrs,https://www.wrstool.biz/contact/,"World Resource Solutions Corp. 8485 Estates Court Plain City, OH 43064",own_site,html
+chromaflo,https://vibrantz.com/press/prince-international-corporation-completes-acquisition-of-ferro-corporation-combines-with-chromaflo-technologies-and-renames-company-vibrantz-technologies-inc/,"In conjunction with the closing of the transaction, the company will also combine with Chromaflo Technologies",own_site,html
+vibrantz-history,https://vibrantz.com/our-company/history/,Chromaflo introduced high bio-based content colorants for industrial coatings and plastics.,own_site,html
+jvis,https://www.jobsohio.com/newsroom/news-press/jvis-expands-manufacturing-footprint-with-acquisition-of-toledo-molding-die-operations-in-ohio,"through its affiliate company, TNJ Ohio, LLC d/b/a JVIS Ohio.",directory,html
+northpoint,https://northpointpolymers.com/about,"Based in Atlanta, GA and Akron, OH",own_site,html
+robin-hq,https://robin-industries.com/locations/,"Corporate Office 8562 Port Jackson Ave. NW, North Canton, OH 44720",own_site,html
+etched,https://etched-metal.com/,"Plastic/Acrylic Nameplates Excellent clarity, stability, heat resistance and impact strength.",own_site,html
+etched-local,https://etched-metal.com/,"All production completed in our Solon, OH facility",own_site,html
+taylor-permit,https://files.dep.state.pa.us/air/AirQuality/AQPortalFiles/Permits/PermitDocuments/1514390%5B15-00049%5D_Issued_v1.pdf,"Name: TAYLOR IND INC Mailing Address: 35 ANDERSON RD PARKERFORD, PA 19457",government_filing,pdf
+synthomer,https://www.synthomer.com/about-us/global-locations/jefferson-hills-pa-us/,Synthomer Jefferson Hills LLC 2200 State Route 837 Jefferson Hills PA 15025 US,own_site,html
+scranton-buyer,https://skyislandcap.com/sky-island-capital-acquires-scranton-products-inc/,it has made a majority investment in Scranton Products Inc.,own_site,html
+franklin,https://gis.franklincountyohio.gov/hosting/rest/services/ParcelFeatures/Parcel_Features_WebMercator/MapServer/0/query?where=SITEADDRESS+LIKE+%27565%25METRO%25%27&outFields=PARCELID%2CSITEADDRESS%2CCVTTXDSCRP%2CZIPCD%2CPRPRTYDSCRP&returnGeometry=false&f=pjson,565 S METRO PL,government_filing,json
+union,https://www7.co.union.oh.us/unioncountyohio/rest/services/parcel/MapServer/0/query?where=houseNumber%3D8485+AND+StreetName+LIKE+%27%25ESTATE%25%27&outFields=ACCOUNT%2CAddress%2ChouseNumber%2CStreetName%2Ctownship%2Ccity%2CZipCode%2CtaxDistrictName%2CPARCELTYPE%2CPropertyCard&returnGeometry=false&f=pjson&resultRecordCount=25,8485 ESTATE COURT,government_filing,json
+ashtabula,https://parcelmap.ashtabulacounty.us/arcgis/rest/services/Parcel_Data/Parcels_Online/MapServer/0/query?where=Location_Address+LIKE+%27%252600%25MICHIGAN%25%27&outFields=Name%2CPIN%2CLocation_Address%2CLanduse_Code%2CLanduse_Class%2CAuditor_Link&returnGeometry=false&f=pjson&resultRecordCount=25,2600 MICHIGAN AVE,government_filing,json
+gleif,https://api.gleif.org/api/v1/lei-records/549300O4T63Z3HULPN02,CHROMAFLO TECHNOLOGIES CORPORATION,registry,json
