@@ -1,9 +1,0 @@
-cluster_id,url,route,fetch,chars
-SITE-014003-2,https://www.dartcontainer.com/ca/about-us/plant-locations,https://www.dartcontainer.com/ca/about-us/plant-locations,loaded,61
-SITE-014005-2,https://www.containersupplycompany.com/services/,https://www.containersupplycompany.com/services/,loaded,2482
-SITE-014006-2,https://www.calspas.com/,https://www.calspas.com/,loaded,9809
-SITE-014017-2,https://atsduct.com/FAQ/,https://atsduct.com/FAQ/,loaded,8398
-SITE-014009-2,https://www.nortonpackaging.com/about-us/,,unfetchable,0
-SITE-014001-2,https://www.ndspro.com/careers,https://www.ndspro.com/careers,loaded,5063
-SITE-014015-2,https://www.mercplastics.com/contact-us,,unfetchable,0
-SITE-014019-2,https://altiumpkg.com/locations/,,unfetchable,0
