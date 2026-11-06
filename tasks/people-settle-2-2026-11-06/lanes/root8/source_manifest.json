@@ -1,0 +1,22 @@
+[
+  {
+    "candidate_id": 11934,
+    "gate": "A",
+    "url": "https://u.osu.edu/smsl/",
+    "retrieved_date": "2026-11-06",
+    "route": "https://u.osu.edu/smsl/",
+    "sanitized_text_sha256": "f891d36ce76f970f07a2970e706cd5e1d1d55690b9df315d0ee882be4dea9cc0",
+    "cache_basename": "8bd40f6e2f8dac5fa3942c00eba1109ec5e94fb3d8e55e145115aad005cb4cc7.json",
+    "inspection": "own lab identity, affiliation, Professor rank and current substantive polymer-metal joining research prose"
+  },
+  {
+    "candidate_id": 11934,
+    "gate": "B",
+    "url": "https://u.osu.edu/smsl/uam/uam-research/",
+    "retrieved_date": "2026-11-06",
+    "route": "https://u.osu.edu/smsl/uam/uam-research/",
+    "sanitized_text_sha256": "45186d67ba1936d38b223fcbe11fba348d9b2ffd43fc1304dfa4921498d1b07d",
+    "cache_basename": "5f57eaaff734ea1f5f31532c730d4e021e5660939d5294a01e00bad4394d4516.json",
+    "inspection": "own lab identity, affiliation, Professor rank and current substantive polymer-metal joining research prose"
+  }
+]

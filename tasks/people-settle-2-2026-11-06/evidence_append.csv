@@ -1,0 +1,2 @@
+evidence_id,record_table,record_id,claim_type,claim_detail,source_class,source_ref,observed_date,tier_effect,created_by,notes
+EVD-282052,people,PERSON-002113,scope,research_specialties characterization_methods; named lab expert methods for physical/mechanical/barrier properties of packaging materials including plastics,own_site,https://cfaes.osu.edu/person/melvin-pascall,2026-11-06,supports_A,codex atlas-L12-people-settle-2,"Raw words in order: The laboratory evaluates the physical, mechanical, and barrier properties of packaging materials"
