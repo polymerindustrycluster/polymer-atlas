@@ -24,6 +24,7 @@ def main():
     evidence=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
     lane=[r for r in evidence if r['created_by']=='atlas-L3-strong-mo-sc-la']
     assert len(lane)==280, ('lane evidence total',len(lane))
+    assert not any(e['source_class']=='own_site' and 'federal registrant aliases' in e['claim_detail'].lower() for e in lane), 'federal alias misattributed to own_site'
     cmp=next(r for r in read(ROOT/'data/organizations_US.csv') if r['org_id']=='ORG-009029')
     assert cmp['ultimate_parent_name']=='Chugoku Marine Paints, Ltd.' and 'Group domain used as website' in cmp['notes']
     assert any(e['evidence_id']=='EVD-169900' and e['claim_type']=='parent' for e in lane)

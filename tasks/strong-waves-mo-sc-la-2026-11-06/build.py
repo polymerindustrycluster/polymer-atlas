@@ -73,7 +73,7 @@ def main():
             aliases=[x for x in aliases if x!=name]
             org=dict(org_id=oid,legal_name=name,trade_names='; '.join(aliases),entity_type='unknown',ring_primary=ring,hq_country='',hq_in_scope='national_us',naics_primary=code,naics_primary_source_type='government_filing' if code else '',naics_primary_source_name=fed[0][0] if code else '',naics_confidence='medium' if code else '',website=own,description_1line=f"Polymer establishment operator in {c['city']}, {a.state}.",pic_relevance='potential_member',status='active',sources=source,verification_tier='C',last_verified=DATE,created_by=BY,notes=note+' HQ not independently established; left blank.',last_activity_evidence_date=DATE,liveness_signal='operating_evidence',monitor_watch='false')
             additions['organizations_US.csv'].append(org)
-            for claim,detail in [('existence',f"legal_name {name}; website {own}; federal registrant aliases {'; '.join(aliases)}"),('scope',f"ring_primary {ring}: {quote}"),('activity',f"operator of polymer establishment: {quote}"),('liveness','Live operator page checked '+DATE)]:E('organizations',oid,claim,detail,effect='supports_C',shard='US')
+            for claim,detail in [('existence',f"legal_name {name}; website {own}"),('scope',f"ring_primary {ring}: {quote}"),('activity',f"operator of polymer establishment: {quote}"),('liveness','Live operator page checked '+DATE)]:E('organizations',oid,claim,detail,effect='supports_C',shard='US')
             if code:E('organizations',oid,'code',f'naics_primary {code}; establishment filing, not company disclosure',fed[0][0],'government_filing',fed[0][1],'supports_C',shard='US')
         else:
             assert oid in orgs and not orgs[oid][1]['successor_org_id'], oid

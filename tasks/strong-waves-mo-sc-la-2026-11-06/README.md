@@ -121,3 +121,18 @@ Evidence final total: 280 = 210 original + 70 append-only supplements. Corrected
 Review limits: Codex targeted re-review did not repeat the full initial random-row/dedupe audit or bulk government downloads.
 Federal-vintage and provisional C limits remain explicit; neither family claimed a new federal download or closure outcome.
 Controller's required two-family completion gate is satisfied for this STRONG PR. Controller alone merges/statuses tasks.
+
+### Subsequent Grok REFUTE — alias source attribution removed at root
+
+R-grok-1 REFUTED bcb3344 after earlier approvals: the original own-site existence rows still asserted federal alias lists.
+The controller agreed, held the PR, and explicitly authorized regenerating these **unmerged lane-only** observations with
+unchanged IDs, superseding the earlier preserve-every-local-observation interpretation for this correction. This does not
+edit any evidence row on main. The builder now writes only legal_name and website on own-site existence observations;
+registrant names remain solely in government observations and trade_names. All280 lane evidence rows were checked:
+**zero own_site rows contain “federal registrant aliases”**; EVD-161300 no longer contains KOLLER ENTERPRISES. Earlier
+statements that all210 original lane observations were unchanged describe the prior reviewed checkpoint and are superseded
+by this authorized regeneration. All pre-existing main evidence is preserved unchanged.
+
+Main bdb8b98 merged by taking main's conflicting evidence_OH and replaying all three state builders on main data. Named
+validator/check/replay gates pass, counts/tiers/T3 unchanged. PR returned to draft. Targeted R-grok-1 re-review pending;
+previous approvals do not override this valid subsequent finding.
