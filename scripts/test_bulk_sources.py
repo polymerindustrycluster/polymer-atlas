@@ -83,6 +83,17 @@ class BulkTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             b.sec_by_cik('bad', self.cache)
 
+    def test_legacy_sec_pointer_fails_explicitly(self):
+        self.sec_fixture()
+        old = dict(cik='0000320193', name='Apple Inc.', member='CIK0000320193.json')
+        with sqlite3.connect(self.cache / 'sec.sqlite') as db:
+            db.execute('UPDATE records SET payload=? WHERE id=?',
+                       (json.dumps(old), '0000320193'))
+        with self.assertRaisesRegex(ValueError, 'legacy SEC pointer cache'):
+            b.sec_by_cik(320193, self.cache)
+        with self.assertRaisesRegex(ValueError, 'legacy SEC pointer cache'):
+            b.sec_by_ticker('AAPL', self.cache)
+
     def test_history_only_and_duplicate_json_preserve_cache(self):
         self.sec_fixture()
         old = b.sec_by_cik(320193, self.cache)

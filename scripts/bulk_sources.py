@@ -226,6 +226,8 @@ def sec_by_cik(cik, cache=DEFAULT_CACHE):
     if not value.isdigit() or len(value) > 10:
         raise ValueError('invalid CIK')
     matches = lookup('sec', 'id=?', (str(int(value)).zfill(10),), cache)
+    if matches and 'member' in matches[0]:
+        raise ValueError('legacy SEC pointer cache; rebuild --sources sec before lookup')
     return matches[0] if matches else None
 
 

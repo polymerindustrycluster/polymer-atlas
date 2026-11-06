@@ -71,7 +71,7 @@ All lookup functions accept `cache=`; Census uses its public batch service. Name
 case and whitespace using the existing spine normalizer, not fuzzy identity rules.
 Missing indexes raise; absent keys in an installed snapshot return empty results.
 SEC historical submission JSON members are validated and counted but not indexed
-as extra issuers; full current issuer objects, including filing arrays, are compressed in SQLite for indexed lookup. Relationship
+as extra issuers; full current filer objects, including filing arrays, are compressed in SQLite for indexed lookup. Relationship
 lookups return outgoing child→parent rows without interpreting their validity.
 Blank FRS IDs are retained/countable; they are never minted as registry links.
 Manifests are embedded in each SQLite database (authoritative), with a combined
@@ -147,5 +147,11 @@ post-refute duplicate-key guard before the final live gate.
 
 Live lookup timing exposed costly reconstruction of the million-member SEC ZIP
 central directory on every CIK lookup. The index now stores the full compressed
-issuer JSON rather than a ZIP member pointer; lookup needs no archive scan and
+filer JSON rather than a ZIP member pointer; lookup needs no archive scan and
 returns all fields. History JSON remains archive-only and is fully counted.
+
+Codex delta REFUTE on `04590fc`: old SEC pointer-format caches could return partial
+records after the direct-payload change. Fixed by explicitly rejecting that legacy
+format with `rebuild --sources sec` guidance; regression checks both CIK and ticker
+APIs. Full-payload indexes return complete records, and prior plain-JSON row
+encoding remains readable. An old pointer cache never reports partial success.
