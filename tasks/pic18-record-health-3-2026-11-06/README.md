@@ -33,3 +33,5 @@ python3 scripts/validate.py
 All PASS:31 raw quotes/19 URLs; exact12-cell/31-evidence delta versus9489b60; all earlier evidence rows unchanged;92/92 unique verdict census; tier evidence covers existence/address/scope; website witness URL matches added website; all other data CSVs unchanged; zero validation errors. Builder replay hashes all data CSVs byte-identical. Negative-control wrong quote rejected before data writes. scripts/ untouched, so scripts pytest requirement not triggered.
 
 Reviews pending Codex4/Grok4. Draft until both independent families approve; no merge or task status change authorized here.
+
+Integration refresh: merged mainbdb8b98 (markets/certs136 andPA-address147),took all main data and replayed only this packet. Exact-delta check baselinebdb8b9879b6a546b913812938710f9d033bcf33e; fresh before428/632 andafter438/632 unchanged. All other data preserved,validate0/checkPASS. This supersedes9489b60 as current integration/check baseline,not the original claim/frame.
