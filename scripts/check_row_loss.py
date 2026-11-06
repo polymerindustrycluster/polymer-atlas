@@ -8,7 +8,8 @@ keyed rows of every data table at a base ref against the working tree (or a seco
 disappeared, unless a REMOVALS.csv manifest anywhere under tasks/ lists it (columns: table,key,reason).
 
 Keys: shards are unioned per table (organizations_*.csv and ecosystem.csv share the org-id space, because an org may
-move between them); registry_links is keyed org_id|registry|registry_id|site_id; people_identifiers
+move between them); tracked files outside data/ are checked by path (table "file", key = the path), so a merge that
+deletes scripts or task folders fails too; registry_links is keyed org_id|registry|registry_id|site_id; people_identifiers
 person_id|identifier_type|identifier_id (SCHEMA §4.21 grain, so an as_of refresh is not a loss); inclusion_log by the
 whole row plus its occurrence number (identical rows are counted, not collapsed); every other table by its first column.
 
@@ -93,6 +94,19 @@ def declared_removals(ref):
     return out
 
 
+def tracked_files(ref):
+    """Tracked file paths at ref, or (working tree) every tracked path that still exists on disk."""
+    # -z: NUL-separated, so paths with spaces or newlines stay whole (Codex/Grok on #210)
+    if ref is None:
+        return {p for p in git("ls-files", "-z").split("\0") if p and (ROOT / p).exists()}
+    return {p for p in git("ls-tree", "-r", "-z", "--name-only", ref).split("\0") if p}
+
+
+def removed_files(base, head, allowed=frozenset()):
+    """Tracked files outside data/ present at base and gone at head, not declared as ("file", path)."""
+    return sorted(p for p in base - head if not p.startswith("data/") and ("file", p) not in allowed)
+
+
 def removed_keys(base, head, allowed=frozenset()):
     """{table: [keys]} present in base, absent from head, and not in allowed {(table, key)}."""
     undeclared = defaultdict(list)
@@ -116,6 +130,9 @@ def main():
     # cannot authorize a later loss, but re-declaring a key in a new manifest file can
     allowed = {(t, k) for _, t, k in declared_removals(a.head) - declared_removals(base)}
     lost = removed_keys(read_tree(base), read_tree(a.head), allowed)
+    gone = removed_files(tracked_files(base), tracked_files(a.head), allowed)
+    if gone:  # a stale-tree merge can delete scripts and task folders while data/ looks intact (#163, 43326cd)
+        lost["file"] = gone
     if not lost:
         print(f"row-loss guard: OK — no keyed row removed from data/ since {a.base} (merge-base {base[:10]})")
         return 0
