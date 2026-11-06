@@ -1,9 +1,7 @@
 weak_evidence_id,evidence_id,shard,record_id
 EVD-016735,EVD-276002,evidence_organizations_MI.csv,ORG-000931
-EVD-006154,EVD-276003,evidence_organizations_NJ.csv,ORG-003784
 EVD-005042,EVD-276009,evidence_organizations_OH.csv,ORG-003488
 EVD-005043,EVD-276010,evidence_organizations_OH.csv,ORG-003488
-EVD-005147,EVD-276014,evidence_organizations_OH.csv,ORG-003527
 EVD-016450,EVD-276022,evidence_organizations_OH.csv,ORG-000671
 EVD-016451,EVD-276023,evidence_organizations_OH.csv,ORG-000671
 EVD-016452,EVD-276024,evidence_organizations_OH.csv,ORG-000671
@@ -46,12 +44,9 @@ EVD-018700,EVD-276132,evidence_sites_OH.csv,SITE-001634
 EVD-018701,EVD-276133,evidence_sites_OH.csv,SITE-001634
 EVD-018729,EVD-276134,evidence_sites_OH.csv,SITE-001698
 EVD-018730,EVD-276135,evidence_sites_OH.csv,SITE-001698
-EVD-018731,EVD-276136,evidence_sites_OH.csv,SITE-001698
 EVD-018732,EVD-276137,evidence_sites_OH.csv,SITE-001698
 EVD-018733,EVD-276138,evidence_sites_OH.csv,SITE-001698
-EVD-018734,EVD-276139,evidence_sites_OH.csv,SITE-001698
 EVD-018737,EVD-276141,evidence_sites_OH.csv,SITE-001698
-EVD-003396,EVD-276159,evidence_organizations_PA.csv,ORG-002988
 EVD-003637,EVD-276171,evidence_organizations_PA.csv,ORG-003072
 EVD-003639,EVD-276172,evidence_organizations_PA.csv,ORG-003072
 EVD-017530,EVD-276228,evidence_organizations_PA.csv,ORG-003104

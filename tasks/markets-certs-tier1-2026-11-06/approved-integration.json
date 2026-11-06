@@ -1,0 +1,11 @@
+{
+  "approved_head": "4eef53f4c9483a9ee2fef2282d070786be10fdc3",
+  "integration_main": "97ee6bc2a4475a47d8449ca79db688fb9114ab0f",
+  "changed_organization_rows": 12,
+  "added_evidence_rows": 60,
+  "approved_lane_delta_equal": true,
+  "old_main_rows_preserved": true,
+  "unrelated_fields_changed": 0,
+  "old_evidence_edited": 0,
+  "replay_changed_bytes": false
+}
