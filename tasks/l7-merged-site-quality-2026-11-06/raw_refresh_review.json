@@ -1,0 +1,10 @@
+{
+  "source_id": "efp",
+  "previous_sha256": "85569d4d17c3eb5edfd7542c443add61b0846593e400cc540dd1873f01c8a980",
+  "fresh_sha256": "889139e58f2574d27ca90b4816c728f302811197a9422a4ed240d184ab9e4705",
+  "changed_text": "Newsletter honeypot label Phone -> Email; both followed by This field is for validation purposes and should be left unchanged.",
+  "semantic_review": "Reviewed full difference: production, Evansville2019 event, issuer, quoted words and location unchanged. No canonical evidence change.",
+  "fresh_URLs": 28,
+  "fresh_site_quote_checks": 31,
+  "other_27_bodies_unchanged": true
+}

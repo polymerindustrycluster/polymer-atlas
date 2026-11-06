@@ -1,0 +1,32 @@
+site_id,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,date_submitted,year_filing_for,reliability,size_code_vs_avg_employees
+SITE-016001,204465,The Sherwin-Williams Company,USA FL Orlando Plant,"2150 W Sandlake Rd, Orlando, FL 32809",Orlando,FL,32809,325510,Paint and Coating Manufacturing,2026-02-12,2025,ok,consistent
+SITE-016011,1454532,"LATICRETE International, Inc.",LATICRETE International Inc - West Palm Beach,6769 White Drive,West Palm Beach,FL,33407,325520,Manufacture of building materials,2026-02-02,2025,ok,consistent
+SITE-016013,995961,Amrize Building Envelope LLC,Jacksonville,6831 Stuart Ave,Jacksonville,FL,32254,326150,Urethane foam products manufacturing,2026-01-28,2025,ok,consistent
+SITE-016018,1527514,"CKS Packaging, Inc.",CKS Michigan,333 W. Michigan St,Orlando,FL,32806,326160,Manufacturing,2026-03-01,2025,ok,consistent
+SITE-016103,1514964,The Goodyear Tire and Rubber Company,The Goodyear Tire and Rubber Company,100 Business Center Drive,Stockbridge,GA,30281,326212,Retreading tires,2026-02-26,2025,ok,consistent
+SITE-016104,208892,The Sherwin-Williams Company,USA GA Lawrenceville Plant,"725 Raco Drive, Lawrenceville, GA 30045",Lawrenceville,GA,30045,325510,Paint and Coating Manufacturing,2026-02-12,2025,ok,consistent
+SITE-016109,1417323,Mapei Corporation,Mapei-Calhoun,201 Enterprise Drive,Calhoun,GA,30701,325520,"Pastes, adhesive, manufacturing",2026-01-08,2025,ok,consistent
+SITE-016110,1466199,Habasit America,Habasit America Suwanee,805 Satellite Blvd NW,Suwanee,GA,30024,326220,Plastics and rubber belts and hoses (without fittings) manufacturing,2026-02-27,2025,ok,consistent
+SITE-016111,345917,The Sherwin-Williams Company,USA GA Covington Plant,"13129 Harland Drive, Covington, GA 30014",Covington,GA,30014,325510,Paint and Coating Manufacturing,2026-02-12,2025,ok,consistent
+SITE-016112,1527500,"CKS Packaging, Inc.",CKS Fisk,300 Fisk Drive,Atlanta,GA,30336,326160,Manufacturing,2026-03-01,2025,ok,consistent
+SITE-016117,1527520,"CKS Packaging, Inc.",CKS Purdue,6195 Purdue Drive,Atlanta,GA,30336,326160,Manufacturing,2026-03-01,2025,ok,consistent
+SITE-016119,1336218,"Crown USA, Inc.","Crown USA, Inc. Thomaston",600 Poplar Drive,Thomaston,GA,30286,325510,Plastisol coating compounds manufacturing,2026-02-23,2025,ok,consistent
+SITE-016120,186782,Apache Mills,A2,197 Royal Drive SE,Calhoun,GA,30701,326299,"Floor mats (e.g., bath, door), rubber, manufacturing",2026-03-02,2025,ok,consistent
+SITE-016500,1097225,Sabert Corporation,Sabert Fort Wayne,3511 Engle Rd,Fort Wayne,IN,46809,326199,"Bowls and bowl covers, plastics, manufacturing",2026-02-18,2025,ok,consistent
+SITE-016501,209276,PRINTPACK INC.,BLOOMINGTON,2121 N ANGELINA LANE,BLOOMINGTON,IN,47404,326111,"Bags, plastics film, single wall or multiwall, manufacturing",2026-02-17,2025,ok,consistent
+SITE-016502,1075021,Berry Global,Berry Global,889 W Gach Rd,Princeton,IN,47670,326199,"Packaging, plastics (e.g., blister, bubble), manufacturing",2026-02-12,2025,ok,consistent
+SITE-016503,1268147,"NIBCO, Inc.",40 Goshen,701 Eisenhower Drive N,Goshen,IN,46526,326122,"Pipe fittings, rigid plastics, manufacturing",2026-02-10,2025,ok,consistent
+SITE-016507,797230,Berry Global,Berry Global,10485 E 1250 N,Odon,IN,47562,326113,Plastics film and unlaminated sheet (except packaging) manufacturing,2026-02-09,2025,ok,consistent
+SITE-016510,1517817,Transcendia,Richmond,300 Industrial Pkwy,Richmond,IN,47374,326113,Polyethylene film and unlaminated sheet (except packaging) manufacturing,2026-02-27,2025,ok,consistent
+SITE-016512,959630,"EFP, LLC","EFP, LLC - Evansville",14636 Foundation Ave,Evansville,IN,47725,326140,Polystyrene foam packaging manufacturing,2026-01-29,2025,ok,consistent
+SITE-016513,1454529,"LATICRETE International, Inc.",LATICRETE International Inc - Indianapolis,"4620 West 84th Street, Building II, Suite 200",Indianapolis,IN,46268,325520,Manufacture of building materials,2026-02-02,2025,ok,consistent
+SITE-016517,177519,"Drug Plastics and Glass Co., Inc.","Drug Plastics and Glass Co., Inc. - Oxford, IN","Five Bottle Drive, SR 352",Oxford,IN,47971,326160,"Bottles, plastics, manufacturing",2026-02-24,2025,ok,consistent
+SITE-016522,956046,PSI Molded Plastics,"PSI Molded Plastics, Inc.",3615 Voorde Drive,South Bend,IN,46628,326199,"Tires, plastics, manufacturing",2026-02-09,2025,ok,consistent
+SITE-016200,80412,Protective Industries Inc.,Caplugs,2150 Elmwood Avenue,Buffalo,NY,14207,326199,"Bottle caps and lids, plastics, manufacturing",2026-02-09,2025,ok,consistent
+SITE-016201,239285,"Tekni-Plex, Inc.","Tri-Seal, a Tekni-Plex Company in Blauvelt, NY",900 Bradley Hill Road,Blauvelt,NY,10913,326112,"Film, plastics, packaging, manufacturing",2026-03-24,2025,ok,consistent
+SITE-016204,998843,Dutchland Plastics LLC,Dutchland - NY,120 Barlow St,Canastota,NY,13032,326199,"Tanks, storage, plastics or fiberglass, manufacturing",2026-02-27,2025,ok,consistent
+SITE-016400,552702,Bemis Manufacturing,Bemis Manufacturing,300 Mill Street,Sheboygan Falls,WI,53085,326199,"Bathroom and toilet accessories, plastics, manufacturing",2026-02-19,2025,ok,consistent
+SITE-016402,1389862,"Hentzen Coatings, Inc.","Hentzen Coatings, Inc. Faulkner Road",8200 North Faulkner Road,Milwaukee,WI,53224,325510,"Primers, paint, manufacturing",2026-01-31,2025,ok,consistent
+SITE-016406,1269065,Ironwood Plastics,Ironwood Plastics,2800 18th street,Two Rivers,WI,54241,326199,"Septic tanks, plastics or fiberglass, manufacturing",2026-01-15,2025,ok,consistent
+SITE-016407,1038820,Teel Plastics,Teel Plastics - Hitchcock,426 Hitchcock Street,Baraboo,WI,53913,326111,"Bags, plastics film, single wall or multiwall, manufacturing",2026-01-27,2025,ok,consistent
+SITE-016409,568224,"Future Foam, Inc.","Future Foam, Inc.- Plant 15",8430 Murphy Dr,Middleton,WI,53562,326150,Polyurethane foam products manufacturing,2026-02-27,2025,ok,consistent
