@@ -1,0 +1,1915 @@
+{
+  "LF-LA-00148": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "NPK ACCESS SOLUTIONS LLC",
+        "street": "2900 Highway 93",
+        "city": "Carencro",
+        "state": "LA",
+        "zip": "70520"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00194": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "CSP Innovations Louisiana, LLC",
+        "street": "26755 Hwy 371",
+        "city": "Sarepta",
+        "state": "LA",
+        "zip": "71071"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00052": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Stowe Woodward LLC LA (Andritz)",
+        "street": "3101 McDonald Ave.",
+        "city": "Ruston",
+        "state": "LA",
+        "zip": "71270"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00167": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Poly Processing Company, LLC",
+        "street": "2201 Old Sterlington Road",
+        "city": "Monroe",
+        "state": "LA",
+        "zip": "71210"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007432",
+              "name": "Poly Processing Company, LLC",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_US.csv",
+              "match": "name key 'poly processing' = legal_name 'Poly Processing Company, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-007432"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00317": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Noble Plastics Inc",
+        "street": "318 Burleigh Lane",
+        "city": "Grand Coteau",
+        "state": "LA",
+        "zip": "70541"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00370": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PacTec, Inc.",
+        "street": "12365 Haynes Street",
+        "city": "Clinton",
+        "state": "LA",
+        "zip": "70722"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00143": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "La Mark Ka  - LA",
+        "street": "10272 S Perdue Ave",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70814"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00267": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PERMANENT COATINGS, INC",
+        "street": "8405 FLORIDA BOULEVARD",
+        "city": "DENHAM SPRINGS",
+        "state": "LA",
+        "zip": "70726"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00294": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Louisiana Plastic Industries",
+        "street": "501 Downing Pines Rd",
+        "city": "West Monroe",
+        "state": "LA",
+        "zip": "71292"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00314": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ACADIANA PLASTICS MFG., INC.",
+        "street": "314 SCHOOL BOARD DR.",
+        "city": "NEW IBERIA",
+        "state": "LA",
+        "zip": "70560"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00326": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "WESTLAKE CHEMICAL & VINYLS LLC",
+        "street": "26100 LA Highway 405",
+        "city": "Plaquemine",
+        "state": "LA",
+        "zip": "70764"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00427": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PLASTIPAK PACKAGING, INC.",
+        "street": "4101 Pardue Rd",
+        "city": "Pineville",
+        "state": "LA",
+        "zip": "71360"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001033",
+              "name": "Plastipak Packaging, Inc.",
+              "city": "Medina",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OH.csv",
+              "match": "name key 'plastipak packaging' = legal_name 'Plastipak Packaging, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001033"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00226": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Petrochemical Complex",
+        "street": "900 Hwy 108",
+        "city": "Sulphur",
+        "state": "LA",
+        "zip": "70663"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00437": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "GRAHAM PACKAGING COMPANY LP",
+        "street": "201 Jefferson Highway",
+        "city": "Jefferson",
+        "state": "LA",
+        "zip": "70121"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00503": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "REGAL PLASTICS",
+        "street": "11776 SOUTH CHOCTAW DRIVE",
+        "city": "BATON ROUGE",
+        "state": "LA",
+        "zip": "70815"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00014": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ESGARD INC",
+        "street": "515 DEBONNAIRE ROAD",
+        "city": "SCOTT",
+        "state": "LA",
+        "zip": "70583"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00038": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "DuPont Pontchartrain",
+        "street": "586 Highway 44",
+        "city": "LaPlace",
+        "state": "LA",
+        "zip": "70068"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00046": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Albemarle Process Development Center",
+        "street": "1201 Gulf States Rd",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70805"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-002888"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00156": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Bio Lab, Inc",
+        "street": "910 I-10 West",
+        "city": "Westlake",
+        "state": "LA",
+        "zip": "70669"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00199": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ADELL COMPOUNDING INC",
+        "street": "30128 EDEN CHURCH RD",
+        "city": "DENHAM SPRINGS",
+        "state": "LA",
+        "zip": "70726"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00229": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "JOHN PAC LLC",
+        "street": "208 AMERICAN LEGION DRIVE",
+        "city": "CROWLEY",
+        "state": "LA",
+        "zip": "70526"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00244": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Olin Corporation",
+        "street": "4205 HIGHWAY 75",
+        "city": "SAINT GABRIEL",
+        "state": "LA",
+        "zip": "70776"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002880",
+              "name": "Olin Corporation",
+              "city": "Clayton",
+              "state": "MO",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_MO.csv",
+              "match": "name key 'olin' = legal_name 'Olin Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002348",
+              "name": "Carpenter Co.",
+              "city": "Richmond",
+              "state": "VA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_VA.csv",
+              "match": "notes contains 'Olin Corporation'"
+            },
+            {
+              "id": "ORG-004633",
+              "name": "Cornell University",
+              "city": "Ithaca",
+              "state": "NY",
+              "status": "active",
+              "tier": "A",
+              "file": "data/ecosystem.csv",
+              "match": "notes contains 'Olin Corporation'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-002880"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00268": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Grace - Baton Rouge",
+        "street": "1201 Gulf States Utility Road",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70805"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00292": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Complex Chemical Co. Inc.",
+        "street": "177 COMPLEX CHEMICAL RD",
+        "city": "Tallulah",
+        "state": "LA",
+        "zip": "71282"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00445": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "DIAMOND PLASTICS CORPORATION",
+        "street": "59005 John Britton Pkwy",
+        "city": "Plaquemine",
+        "state": "LA",
+        "zip": "70764"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004865",
+              "name": "Diamond Plastics Corporation",
+              "city": "Grand Island",
+              "state": "NE",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_NE.csv",
+              "match": "name key 'diamond plastics' = legal_name 'Diamond Plastics Corporation'"
+            },
+            {
+              "id": "ORG-005115",
+              "name": "Diamond Plastics Corporation",
+              "city": "Grand Island",
+              "state": "NE",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_NE.csv",
+              "match": "name key 'diamond plastics' = legal_name 'Diamond Plastics Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002923",
+              "name": "Best Diamond Plastics, LLC",
+              "city": "Chicago",
+              "state": "IL",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_IL.csv",
+              "match": "legal_name contains 'DIAMOND PLASTICS CORPORATION'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-004865",
+      "ORG-005115"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00076": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Riverland Industries, Inc.",
+        "street": "12537 Scenic Highway",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70807"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00243": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SE Tylose Louisiana, LLC",
+        "street": "26270 Hwy 405 - River Road South",
+        "city": "Plaquemine",
+        "state": "LA",
+        "zip": "70764"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00266": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Plaquemine Methocel",
+        "street": "21255 LA Hwy 1 - Block 45",
+        "city": "Plaquemine",
+        "state": "LA",
+        "zip": "70764"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00295": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Mexichem Fluor St. Gabriel (KLEA) Site",
+        "street": "4990B ICI Road",
+        "city": "St. Gabriel",
+        "state": "LA",
+        "zip": "70776"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00430": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SOILEAU INDUSTRIES, INC.",
+        "street": "800 N.W. Railroad Ave.",
+        "city": "Ville Platte",
+        "state": "LA",
+        "zip": "70586"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00475": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "NOBLE MANUFACTURING CO.",
+        "street": "8000 Greenwell Springs Rd.",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70814"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00002": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "JEFFERSON FIBERGLASS CO., INC",
+        "street": "1524 MACARTHUR AVE",
+        "city": "HARVEY",
+        "state": "LA",
+        "zip": "70058"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00013": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Scott Plant",
+        "street": "812 Renaud",
+        "city": "Scott",
+        "state": "LA",
+        "zip": "70583"
+      },
+      "stop_at_step": 4,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004288",
+              "name": "Timken SMO LLC",
+              "city": "Springfield",
+              "state": "MO",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_MO.csv",
+              "match": "notes contains 'Scott Plant'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00035": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Harcros Chemicals",
+        "street": "1011 Jack Wells Blvd",
+        "city": "Shreveport",
+        "state": "LA",
+        "zip": "71107"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00103": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SAG  NA Tire Retail ASC2793  BATON ROUGE LA",
+        "street": "222 Lee Drive",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70808"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000003"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00191": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Ingevity South Carolina, LLC",
+        "street": "400 Crosby Road",
+        "city": "DeRidder",
+        "state": "LA",
+        "zip": "70634"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00202": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SAG  NA Tire Retail ASC2759  HOUMA LA",
+        "street": "1848 Martin Luther King Junior Blvd",
+        "city": "Houma",
+        "state": "LA",
+        "zip": "70360"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000003"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00296": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "INTEGRICO COMPOSITES",
+        "street": "108 INDUCTO WAY",
+        "city": "SAREPTA",
+        "state": "LA",
+        "zip": "71071"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00304": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Bluewater Rubber and Gasket",
+        "street": "1131 Barrow Street",
+        "city": "Houma",
+        "state": "LA",
+        "zip": "70360"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-LA-00331": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "THE DOW CHEMICAL COMPANY",
+        "street": "21255 Highway 1",
+        "city": "Plaquemine",
+        "state": "LA",
+        "zip": "70764"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002913",
+              "name": "Dow Inc.",
+              "city": "Midland",
+              "state": "MI",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_MI.csv",
+              "match": "name key 'dow chemical' = trade_names 'The Dow Chemical Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002730",
+              "name": "Rohm and Haas Chemicals LLC",
+              "city": "Bristol",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'THE DOW CHEMICAL COMPANY'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-002913"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00372": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SOLSTICE ADVANCED MATERIALS US, INC.",
+        "street": "2966 Lupine Ave",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70805"
+      },
+      "stop_at_step": 4,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002874",
+              "name": "Solstice Advanced Materials Inc.",
+              "city": "Morris Plains",
+              "state": "NJ",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_NJ.csv",
+              "match": "notes contains 'SOLSTICE ADVANCED MATERIALS US, INC.'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-002874"
+    ],
+    "street_hits": []
+  },
+  "LF-LA-00443": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "LOUISIANA PLASTIC CONVERTING",
+        "street": "503 DOWNING PINES ROD",
+        "city": "WEST MONROE",
+        "state": "LA",
+        "zip": "71292"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  }
+}

@@ -88,7 +88,7 @@ if __name__ == '__main__':
         shutil.copytree(data, scratch)
         packet = Path(tmp) / 'packet'
         packet.mkdir()
-        for name in ('cohort.csv', 'verdicts.csv', 'updates.json'):
+        for name in ('cohort.csv', 'verdicts.csv', 'updates.json', 'preimages.csv'):
             shutil.copy2(HERE / name, packet / name)
         spec = importlib.util.spec_from_file_location('poisoned_builder', HERE / 'build.py')
         builder = importlib.util.module_from_spec(spec)
