@@ -22,8 +22,8 @@ def main():
     inputs = read(HERE / 'inputs.csv')
     assert len({(r['org_id'], r['field'], r['value']) for r in inputs}) == len(inputs)
     frame_ids = {r['org_id'] for r in read(HERE / 'frame.csv')}
-    old_evidence = [r for p in data.glob('evidence_*.csv') for r in read(p)]
-    evidence = {r['evidence_id']: r for r in old_evidence}
+    old_evidence = [(p, r) for p in data.glob('evidence_*.csv') for r in read(p)]
+    evidence = {r['evidence_id']: (p, r) for p, r in old_evidence}
     assert len(evidence) == len(old_evidence), 'duplicate evidence IDs in current tree'
     append, touched = defaultdict(list), set()
     def counts():
@@ -37,8 +37,7 @@ def main():
         if field == 'certifications':
             assert v['cert_identity_quote']
             if v['cert_basis'] == 'current_edition_page':
-                editions = {'iatf_16949': '2016', 'iso_17025': '2017'}
-                assert v['value'] in editions and editions[v['value']] in v['quote'], 'page edition must be current IATF2016 or ISO17025:2017'
+                assert v['value'] == 'iso_45001' and '2018' in v['quote'], 'page edition must be current ISO45001:2018'
                 assert not (v['cert_start'] or v['cert_expiry'] or v['cert_expiry_quote'])
             else:
                 assert v['cert_basis'] == 'dated_certificate' and v['cert_expiry_quote']
@@ -46,9 +45,7 @@ def main():
         path, row = orgs[v['org_id']]
         assert row['status'] == 'active' and bool(row['tier1_qualifier']) and row['org_id'] in frame_ids
         host = lambda u: urlparse(u if '://' in u else 'https://' + u).hostname.removeprefix('www.')
-        assert host(v.get('source_page_url') or v['source_url']) == host(row['website']), 'publisher domain mismatch'
-        if host(v['source_url']) != host(row['website']):
-            assert field == 'certifications' and v['cert_basis'] == 'dated_certificate' and v['source_page_url'], 'external source needs own certificate-link page'
+        assert host(v['source_url']) == host(row['website']), 'publisher domain mismatch'
         values = row[field].split(';') if row[field] else []
         if v['value'] not in values:
             row[field] = ';'.join(sorted(values + [v['value']])); touched.add(path)
@@ -57,8 +54,12 @@ def main():
                   claim_detail=f'{field} {v["value"]}: "{v["quote"]}"', source_class='own_site',
                   source_ref=v['source_url'], observed_date='2026-11-06', tier_effect='supports_A',
                   created_by='codex atlas-L10-markets-certs-tier1-round5', notes=v['note'] or 'Own-site corporate claim; raw quote checked 2026-11-06; record tier unchanged.')
-        if eid in evidence: assert evidence[eid] == ev, ('ID collision or changed observation', eid)
-        else: append[data / path.name.replace('organizations_', 'evidence_organizations_')].append(ev)
+        target = data / path.name.replace('organizations_', 'evidence_organizations_')
+        if eid in evidence:
+            old_path, old_row = evidence[eid]
+            assert old_path == target, ('evidence shard mismatch', eid, old_path, target)
+            assert old_row == ev, ('ID collision or changed observation', eid)
+        else: append[target].append(ev)
     for path in touched:
         with path.open('w', newline='') as f:
             w = csv.DictWriter(f, fieldnames=list(shards[path][0]), lineterminator='\n'); w.writeheader(); w.writerows(shards[path])
