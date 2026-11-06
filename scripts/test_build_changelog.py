@@ -3,6 +3,7 @@ import csv
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -166,9 +167,9 @@ class ChangeFeedTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unsupported evidence target"):
             feed.read_rows("data/evidence_sites_OH.csv", "evidence_id,record_table\nEVD-000001,private\n")
         with self.assertRaisesRegex(ValueError, "missing key columns"):
-            feed.read_rows("data/equipment.csv", "notes\\nORG-000001\\n")
+            feed.read_rows("data/equipment.csv", "notes\nORG-000001\n")
         with self.assertRaisesRegex(ValueError, "missing key columns"):
-            feed.read_rows("data/registry_links.csv", "org_id,notes\\nORG-000001,hidden\\n")
+            feed.read_rows("data/registry_links.csv", "org_id,notes\nORG-000001,hidden\n")
         self.assertIsNone(feed.table_of("data/organizations_all.csv"))
         self.assertIsNone(feed.table_of("data/inclusion_log.csv"))
 
@@ -192,6 +193,77 @@ class ChangeFeedTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "output must stay"):
             feed.build(self.repo, "main")
         self.assertEqual(list(outside.iterdir()), [])
+
+    def test_table_namespaces_reject_private_and_wrong_table_ids(self):
+        feed.build(self.repo, "main")
+        out = self.repo / "build/changelog"
+        before = {p.name: p.read_bytes() for p in out.iterdir()}
+        for ident in ["PRIVATE_CRM_ACQUISITION_TARGET-000002", "EQP-000002"]:
+            with self.subTest(ident=ident):
+                self.write("organizations_OH", ORG_FIELDS,
+                           [self.org, [ident, "active", "C", "", ""]])
+                self.commit("INVALID_ID")
+                with self.assertRaisesRegex(ValueError, "invalid immutable ID"):
+                    feed.build(self.repo, "main")
+                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
+                self.git("reset", "--hard", "HEAD~1")
+        for table, key in feed.KEYS.items():
+            columns = sorted({key} | set(feed.COMPOSITE.get(table, ())))
+            if table == "evidence":
+                columns.append("record_table")
+            values = {col: "" for col in columns}
+            values[key] = feed.PREFIXES[key] + "-000001"
+            if table == "evidence":
+                values["record_table"] = "sites"
+            data = ",".join(columns) + "\n" + ",".join(values[c] for c in columns) + "\n"
+            self.assertEqual(len(feed.read_rows("data/" + table + ".csv", data)), 1)
+
+    def test_leaf_symlinks_and_readonly_output_preserve_pair(self):
+        feed.build(self.repo, "main")
+        out = self.repo / "build/changelog"
+        before = {p.name: p.read_bytes() for p in out.iterdir()}
+        outside = Path(self.tmp.name) / "outside-sentinel"
+        outside.write_bytes(b"sentinel")
+        for leaf in before:
+            with self.subTest(leaf=leaf):
+                (out / leaf).unlink()
+                (out / leaf).symlink_to(outside)
+                with self.assertRaisesRegex(ValueError, "not a symlink"):
+                    feed.build(self.repo, "main")
+                self.assertEqual(outside.read_bytes(), b"sentinel")
+                (out / leaf).unlink()
+                (out / leaf).write_bytes(before[leaf])
+                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
+        self.org[1] = "closed"
+        self.write("organizations_OH", ORG_FIELDS, [self.org])
+        self.commit("STATUS_CHANGE")
+        (out / "feed.xml").chmod(0o444)
+        try:
+            with self.assertRaises(PermissionError):
+                feed.build(self.repo, "main")
+            self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
+        finally:
+            (out / "feed.xml").chmod(0o644)
+
+    def test_second_replace_failure_rolls_back_existing_and_new_outputs(self):
+        out = self.repo / "build/changelog"
+        replace = feed.os.replace
+        for existing in [False, True]:
+            with self.subTest(existing=existing):
+                if existing:
+                    feed.build(self.repo, "main")
+                before = {p.name: p.read_bytes() for p in out.iterdir()} if out.exists() else {}
+                calls = 0
+                def fail_second(source, target):
+                    nonlocal calls
+                    calls += 1
+                    if calls == 2:
+                        raise OSError("injected publication failure")
+                    return replace(source, target)
+                with patch.object(feed.os, "replace", side_effect=fail_second):
+                    with self.assertRaisesRegex(OSError, "injected publication"):
+                        feed.publish(self.repo, out, {"CHANGELOG.md": b"new MD", "feed.xml": b"new XML"})
+                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
 
 
 if __name__ == "__main__":

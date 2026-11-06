@@ -9,8 +9,11 @@ Only build/changelog/ is written. Fetch full history before running in a shallow
 import argparse
 import csv
 import io
+import os
 import re
+import stat
 import subprocess
+import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -38,7 +41,12 @@ STATUSES = {
     "superseded",
 }
 EVIDENCE_TABLES = {"organizations", "sites", "ecosystem", "programs", "people"}
-ID = re.compile(r"[A-Z][A-Z0-9_]*-\d{6}")
+PREFIXES = {
+    "org_id": "ORG", "site_id": "SITE", "evidence_id": "EVD", "member_row_id": "MBR",
+    "person_id": "PERSON", "program_id": "PROG", "event_id": "EVT", "participation_id": "EVP",
+    "relationship_id": "REL", "capability_id": "CAP", "equipment_id": "EQP",
+    "engagement_id": "ENG", "ref_code_id": "RC", "map_id": "RM", "assignment_id": "CA",
+}
 ET.register_namespace("", ATOM)
 
 
@@ -77,7 +85,7 @@ def read_rows(path, text):
         if None in row or any(value is None for value in row.values()):
             raise ValueError(f"malformed CSV row: {path}")
         ident = row[KEYS[table]]
-        if not ID.fullmatch(ident):
+        if not re.fullmatch(PREFIXES[KEYS[table]] + r"-[0-9]{6}", ident):
             raise ValueError(f"invalid immutable ID: {path}")
         key = tuple(row.get(col, "") for col in COMPOSITE[table]) if table in COMPOSITE else (ident,)
         if table == "evidence" and row.get("record_table") not in EVIDENCE_TABLES:
@@ -210,6 +218,47 @@ def title(entry):
     return "PR #" + entry["pr"] if entry["pr"] else "Commit " + entry["sha"][:12] + " (no PR recorded)"
 
 
+def publish(repo, out, payloads):
+    """Stage both outputs; reject unsafe targets and roll back a failed publication."""
+    repo = repo.resolve()
+    if not out.resolve().is_relative_to(repo / "build"):
+        raise ValueError("output must stay under repository build/")
+    out.mkdir(parents=True, exist_ok=True)
+    previous = {}
+    for name in payloads:
+        target = out / name
+        if target.is_symlink() or (target.exists() and not target.is_file()):
+            raise ValueError("output file must be a regular file, not a symlink")
+        if target.exists():
+            info = target.stat()
+            if not stat.S_IMODE(info.st_mode) & 0o222:
+                raise PermissionError("output file is read-only")
+            previous[name] = (target.read_bytes(), info)
+    with tempfile.TemporaryDirectory(dir=out) as tmp:
+        stage = Path(tmp)
+        for name, data in payloads.items():
+            (stage / ("new-" + name)).write_bytes(data)
+            if name in previous:
+                content, info = previous[name]
+                backup = stage / ("old-" + name)
+                backup.write_bytes(content)
+                backup.chmod(stat.S_IMODE(info.st_mode))
+                os.utime(backup, ns=(info.st_atime_ns, info.st_mtime_ns))
+                (stage / ("new-" + name)).chmod(stat.S_IMODE(info.st_mode))
+        published = []
+        try:
+            for name in payloads:
+                os.replace(stage / ("new-" + name), out / name)
+                published.append(name)
+        except OSError:
+            for name in reversed(published):
+                if name in previous:
+                    os.replace(stage / ("old-" + name), out / name)
+                else:
+                    (out / name).unlink()
+            raise
+
+
 def build(repo, ref):
     repo = Path(repo).resolve()
     out = repo / "build/changelog"
@@ -245,10 +294,11 @@ def build(repo, ref):
         child(atom, "updated", entry["date"])
         child(atom, "link", href=link, rel="alternate")
         child(atom, "content", body, type="text")
-    out.mkdir(parents=True, exist_ok=True)
-    (out / "CHANGELOG.md").write_text(intro + "\n".join(sections), encoding="utf-8")
     ET.indent(feed)
-    ET.ElementTree(feed).write(out / "feed.xml", encoding="utf-8", xml_declaration=True)
+    publish(repo, out, {
+        "CHANGELOG.md": (intro + "\n".join(sections)).encode("utf-8"),
+        "feed.xml": ET.tostring(feed, encoding="utf-8", xml_declaration=True),
+    })
     return entries
 
 
