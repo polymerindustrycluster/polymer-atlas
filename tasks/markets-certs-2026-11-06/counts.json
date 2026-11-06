@@ -1,0 +1,19 @@
+{
+  "before": {
+    "active_organizations": 4884,
+    "markets_served": 394,
+    "certifications": 47
+  },
+  "after": {
+    "active_organizations": 4884,
+    "markets_served": 405,
+    "certifications": 52
+  },
+  "packet_value_rows": 64,
+  "packet_organizations": 14,
+  "tiers": {
+    "B": 8,
+    "A": 6
+  },
+  "new_evidence_rows": 60
+}
