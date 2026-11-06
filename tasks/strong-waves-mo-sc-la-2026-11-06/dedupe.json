@@ -1,0 +1,1711 @@
+{
+  "LF-MO-00006": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.aerofil.com/about-us/facility/",
+        "name": "AEROFIL TECHNOLOGY, INC.",
+        "street": "225 Industrial Dr",
+        "city": "Sullivan",
+        "state": "MO",
+        "zip": "63080"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00017": {
+    "dedupe": {
+      "query": {
+        "domain": "https://watsoncoatings.com/",
+        "name": "WATSON COATINGS INC",
+        "street": "325 PAUL AVE",
+        "city": "ST LOUIS",
+        "state": "MO",
+        "zip": "63135"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00018": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.sterlinglacquer.com/",
+        "name": "STERLING LACQUER MFG-STERLING LACQUER MFG",
+        "street": "3150 BRANNON AVE",
+        "city": "ST. LOUIS",
+        "state": "MO",
+        "zip": "63139"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00023": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.tgmissouri.com/profile/",
+        "name": "TG MISSOURI",
+        "street": "2200 PLATTIN ROAD",
+        "city": "PERRYVILLE",
+        "state": "MO",
+        "zip": "63775"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00031": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.davispaint.com/",
+        "name": "Davis Paint Co",
+        "street": "1311 Iron St.",
+        "city": "North Kansas City",
+        "state": "MO",
+        "zip": "64116"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00053": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.chemispherecorp.com/",
+        "name": "Chemisphere Corporation",
+        "street": "2101 Clifton Avenue",
+        "city": "Saint Louis",
+        "state": "MO",
+        "zip": "63139"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00088": {
+    "dedupe": {
+      "query": {
+        "domain": "https://manchesterpkg.com/",
+        "name": "MANCHESTER PACKAGING COMPANY",
+        "street": "2000 East James Boulevard",
+        "city": "St. James",
+        "state": "MO",
+        "zip": "65559"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00100": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.tntplastics.com/",
+        "name": "T-N-T PLASTICS, INC.",
+        "street": "701 INDUSTRIAL DR.",
+        "city": "PERRYVILLE",
+        "state": "MO",
+        "zip": "63775"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00120": {
+    "dedupe": {
+      "query": {
+        "domain": "https://ati-1.com/",
+        "name": "AURORA TECHNOLOGIES, INC.",
+        "street": "19 Industrial Drive",
+        "city": "Pacific",
+        "state": "MO",
+        "zip": "63069"
+      },
+      "stop_at_step": 4,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007027",
+              "name": "Polyply Composites LLC",
+              "city": "Grand Haven",
+              "state": "MI",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_MI.csv",
+              "match": "notes contains 'AURORA TECHNOLOGIES, INC.'"
+            }
+          ]
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00121": {
+    "dedupe": {
+      "query": {
+        "domain": "https://careers.nike.com/engineer-ii-product-development-design-air-manufacturing-innovation/job/R-96474",
+        "name": "NIKE IHM INC.",
+        "street": "8 Research Park Drive",
+        "city": "St. Charles",
+        "state": "MO",
+        "zip": "63304"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003555",
+              "name": "Nike IHM, Inc.",
+              "city": "Beaverton",
+              "state": "OR",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OR.csv",
+              "match": "domain subdomain: nike.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003555",
+              "name": "Nike IHM, Inc.",
+              "city": "Beaverton",
+              "state": "OR",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OR.csv",
+              "match": "name key 'nike ihm' = legal_name 'Nike IHM, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00153": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.uspaint.com/about-us/",
+        "name": "U.S. Paint Corporation",
+        "street": "831 S. 21st Street",
+        "city": "St. Louis",
+        "state": "MO",
+        "zip": "63103"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00165": {
+    "dedupe": {
+      "query": {
+        "domain": "https://silgandispensing.com/our-locations/",
+        "name": "Silgan Dispensing Systems Corporation",
+        "street": "11901 Grandview Road",
+        "city": "Grandview",
+        "state": "MO",
+        "zip": "64030"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000278",
+              "name": "Silgan Dispensing",
+              "city": "Macedonia",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OH.csv",
+              "match": "domain exact: silgandispensing.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00241": {
+    "dedupe": {
+      "query": {
+        "domain": "https://jmeagle.com/locations",
+        "name": "JM EAGLE",
+        "street": "6500 N. Brown Station Rd",
+        "city": "Columbia",
+        "state": "MO",
+        "zip": "65202"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002261",
+              "name": "Jm Manufacturing Company, Inc.",
+              "city": "Los Angeles",
+              "state": "CA",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_CA.csv",
+              "match": "name key 'jm eagle' = trade_names 'JM Eagle'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002260",
+              "name": "J-M Manufacturing Co. Inc.",
+              "city": "Cochranton",
+              "state": "PA",
+              "status": "merged",
+              "tier": "B",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'JM EAGLE'",
+              "successor_chain": [
+                "ORG-002261"
+              ],
+              "successor_end": "terminal",
+              "successor_terminal": "ORG-002261 Jm Manufacturing Company, Inc. [active]"
+            }
+          ]
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00286": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.koller-craft.com/about",
+        "name": "KOLLER-CRAFT PLASTIC PRODUCTS",
+        "street": "1400 OLD HIGHWAY 141",
+        "city": "FENTON",
+        "state": "MO",
+        "zip": "63026"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-MO-00289": {
+    "dedupe": {
+      "query": {
+        "domain": "https://investors.atkore.com/investors/news/news-details/2022/Atkore-Inc.-Announces-Acquisition-of-United-Poly-Systems/default.aspx",
+        "name": "UNITED POLY SYSTEMS",
+        "street": "4707 E Kearney Street",
+        "city": "SPRINGFIELD",
+        "state": "MO",
+        "zip": "65803"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007207",
+              "name": "Atkore International",
+              "city": "Harvey",
+              "state": "IL",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_IL.csv",
+              "match": "domain subdomain: atkore.com"
+            },
+            {
+              "id": "ORG-003210",
+              "name": "United Poly Systems",
+              "city": "Allendale",
+              "state": "SC",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_SC.csv",
+              "match": "domain subdomain: atkore.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003210",
+              "name": "United Poly Systems",
+              "city": "Allendale",
+              "state": "SC",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_SC.csv",
+              "match": "name key 'united poly systems' = legal_name 'United Poly Systems'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003223",
+              "name": "Endurance Poly Producers LLC",
+              "city": "Tennille",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_GA.csv",
+              "match": "notes contains 'UNITED POLY SYSTEMS'"
+            }
+          ]
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00047": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.atotech.com/usa/",
+        "name": "Atotech USA, LLC",
+        "street": "1750 Overview Drive",
+        "city": "Rock Hill",
+        "state": "SC",
+        "zip": "29730"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00082": {
+    "dedupe": {
+      "query": {
+        "domain": "https://insulfab.com/about",
+        "name": "INSULFAB PLASTICS INC",
+        "street": "834 HAYNE STREET",
+        "city": "SPARTANBURG",
+        "state": "SC",
+        "zip": "29305"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006173",
+              "name": "Insulfab Plastics Inc.",
+              "city": "Franklin",
+              "state": "NH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_NH.csv",
+              "match": "name key 'insulfab plastics' = legal_name 'Insulfab Plastics Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00113": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.emsgrivory.com/en/ems-grivory/about-ems-grivory/company-history/",
+        "name": "EMS-CHEMIE NORTH AMERICA INC",
+        "street": "2060 CORPORATE WAY",
+        "city": "SUMTER",
+        "state": "SC",
+        "zip": "29154"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00129": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.mocom.eu/en/about/who-we-are",
+        "name": "MOCOM COMPOUNDS CORPORATION",
+        "street": "1720 EAST MAIN STREET",
+        "city": "DUNCAN",
+        "state": "SC",
+        "zip": "29334"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00147": {
+    "dedupe": {
+      "query": {
+        "domain": "https://wikoff.com/company/",
+        "name": "WIKOFF COLOR CORPORATION",
+        "street": "1886 Merritt Rd",
+        "city": "Fort Mill",
+        "state": "SC",
+        "zip": "29715"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00198": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.agfa.com/corporate/news-item/agfa-shuts-down-its-bushy-park-site-as-part-of-its-plan-to-optimize-the-global-cost-base-of-its-film-activities/",
+        "name": "Agfa Materials",
+        "street": "1658 Bushy Park Road",
+        "city": "Goose Creek",
+        "state": "SC",
+        "zip": "29445"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00206": {
+    "dedupe": {
+      "query": {
+        "domain": "https://ati-1.com/",
+        "name": "AURORA TECHNOLOGIES INC",
+        "street": "5050 North Blackstock Road",
+        "city": "Spartanburg",
+        "state": "SC",
+        "zip": "29303"
+      },
+      "stop_at_step": 4,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007027",
+              "name": "Polyply Composites LLC",
+              "city": "Grand Haven",
+              "state": "MI",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_MI.csv",
+              "match": "notes contains 'AURORA TECHNOLOGIES INC'"
+            }
+          ]
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00214": {
+    "dedupe": {
+      "query": {
+        "domain": "https://cr.rebuildmanufacturing.com/",
+        "name": "RE: BUILD CR, LLC",
+        "street": "485 Lakeshore Parkway",
+        "city": "Rock Hill",
+        "state": "SC",
+        "zip": "29730"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00253": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+        "name": "YOKOHAMA TWS NORTH AMERICA INC",
+        "street": "570 Trelleborg Drive",
+        "city": "Spartanburg",
+        "state": "SC",
+        "zip": "29301"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001336",
+              "name": "Yokohama TWS North America, Inc.",
+              "city": "Akron",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_OH.csv",
+              "match": "name key 'yokohama tws north america' = legal_name 'Yokohama TWS North America, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003096",
+              "name": "Yokohama Tire Corporation",
+              "city": "Santa Ana",
+              "state": "CA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_CA.csv",
+              "match": "notes contains 'YOKOHAMA TWS NORTH AMERICA INC'"
+            }
+          ]
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00258": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.pidc.com/company/history",
+        "name": "PACIFIC INDUSTRIAL DEVELOPMENT CORPORATION",
+        "street": "351 Campground Rd.",
+        "city": "Spartanburg",
+        "state": "SC",
+        "zip": "29303"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00302": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.hydrite.com/Contact/Locations.htm",
+        "name": "Hydrite Chemical Co.",
+        "street": "400 Catherine Street",
+        "city": "Laurens",
+        "state": "SC",
+        "zip": "29360"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004592",
+              "name": "Hydrite Chemical Co.",
+              "city": "Brookfield",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_WI.csv",
+              "match": "domain exact: hydrite.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004592",
+              "name": "Hydrite Chemical Co.",
+              "city": "Brookfield",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_WI.csv",
+              "match": "name key 'hydrite chemical' = legal_name 'Hydrite Chemical Co.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00313": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+        "name": "HAHL INC",
+        "street": "126 Glassmaster Road",
+        "city": "Lexington",
+        "state": "SC",
+        "zip": "29072"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00326": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.multiplastics.com/",
+        "name": "CURD ENTERPRISES INC",
+        "street": "476 LONG POINT ROAD",
+        "city": "MOUNT PLEASANT",
+        "state": "SC",
+        "zip": "29464"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-SC-00358": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.puraquaproducts.com/about-us",
+        "name": "PurAqua Products Inc.",
+        "street": "1880 Langston Street",
+        "city": "Rock Hill",
+        "state": "SC",
+        "zip": "29730"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00001": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.cmp.co.jp/en/company/group_western-countries/",
+        "name": "CMP Coatings, Inc.",
+        "street": "1610 Engineers Road",
+        "city": "Belle Chasse",
+        "state": "LA",
+        "zip": "70037"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00029": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.ecovyst.com/ecoservices/",
+        "name": "ECO-SERVICES LLC",
+        "street": "1301 Airline Hwy",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70807"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00054": {
+    "dedupe": {
+      "query": {
+        "domain": "https://sunspecialtyproducts.com/about-us/",
+        "name": "Sun Drilling Products Corp.",
+        "street": "503 Main Street",
+        "city": "Belle Chasse",
+        "state": "LA",
+        "zip": "70037"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00183": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.berryglobal.com/",
+        "name": "BERRY GLOBAL INC.",
+        "street": "4611 Central Avenue",
+        "city": "Monroe",
+        "state": "LA",
+        "zip": "71203"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002149",
+              "name": "Berry Global - Streetsboro, OH",
+              "city": "Streetsboro",
+              "state": "OH",
+              "status": "merged",
+              "tier": "A",
+              "file": "data/organizations_OH.csv",
+              "match": "domain exact: berryglobal.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002544",
+              "name": "Berry Global",
+              "city": "Evansville",
+              "state": "IN",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_IN.csv",
+              "match": "name key 'berry global' = legal_name 'Berry Global'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004040",
+              "name": "Vybond Group, Inc.",
+              "city": "Franklin",
+              "state": "KY",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_KY.csv",
+              "match": "notes contains 'BERRY GLOBAL INC.'"
+            },
+            {
+              "id": "ORG-004278",
+              "name": "Magnera Corporation",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_NC.csv",
+              "match": "notes contains 'BERRY GLOBAL INC.'"
+            },
+            {
+              "id": "ORG-002149",
+              "name": "Berry Global - Streetsboro, OH",
+              "city": "Streetsboro",
+              "state": "OH",
+              "status": "merged",
+              "tier": "A",
+              "file": "data/organizations_OH.csv",
+              "match": "legal_name contains 'BERRY GLOBAL INC.'"
+            }
+          ]
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00234": {
+    "dedupe": {
+      "query": {
+        "domain": "https://cornerstonechemco.com/acrylonitrile",
+        "name": "CORNERSTONE CHEMICAL COMPANY, LLC",
+        "street": "10800 RIVER ROAD",
+        "city": "WESTWEGO",
+        "state": "LA",
+        "zip": "70094"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00264": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.ashindustries.com/",
+        "name": "ASH INDUSTRIES, INC.",
+        "street": "1330 W. Willow Street",
+        "city": "Lafayette",
+        "state": "LA",
+        "zip": "70506"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  },
+  "LF-LA-00305": {
+    "dedupe": {
+      "query": {
+        "domain": "https://www.indplastics.com/en/",
+        "name": "INDUSTRIAL PLASTICS & MACHINE",
+        "street": "6829 South Choctaw Drive",
+        "city": "Baton Rouge",
+        "state": "LA",
+        "zip": "70806"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "street_hits": []
+  }
+}

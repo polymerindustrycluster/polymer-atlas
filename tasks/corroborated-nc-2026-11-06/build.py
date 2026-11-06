@@ -13,6 +13,10 @@ def read(p):
  with open(p,newline='',encoding='utf-8') as f:return list(csv.DictReader(f))
 def clean_street(f):
  return re.sub(r',\s*'+re.escape(f['city'])+r'(?:,\s*NC\s+\d{5}(?:-\d{4})?)?$', '', f['street'], flags=re.I)
+def ring_for_naics(code):
+ if code.startswith('326'):return '1'
+ if code in {'325212','325510','325520','325991'}:return '2'
+ raise ValueError('HOLD: explicit site-scope/ring witness required; no blanket 325 fallback (SCHEMA1)')
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');ap.add_argument('--data-dir',type=Path,default=ROOT/'data');a=ap.parse_args();data=a.data_dir
  cs={r['cluster_id']:r for r in read(H/'input.csv')};vs=read(H/'verdicts.csv')
@@ -41,7 +45,7 @@ def main():
    if s['site_id']==sid:continue
    assert not (s['state']=='NC' and street_key(s['street_address'])==street_key(clean_street(f))),(c['cluster_id'],s['site_id'])
    assert not (s['org_id']==oid and s['state']=='NC' and s['city'].casefold()==f['city'].casefold() and not s['street_address']),(c['cluster_id'],s['site_id'])
-  ring='1' if f['naics_code'].startswith('326') else '2'
+  ring=ring_for_naics(f['naics_code'])
   ref=SOURCE+'#establishment_ID='+f['establishment_id']
   notes=f"CY2025 ITA establishment_ID {f['establishment_id']}; date_submitted {f['date_submitted']}; packet observed 2026-11-01, reviewed {DATE}. {v['reason']}"
   out['sites_NC.csv'].append(dict(site_id=sid,org_id=oid,site_name=org['legal_name']+' - '+f['city'],site_type='manufacturing_plant',street_address=street,city=f['city'],state='NC',zip=f['zip5'],country='US',ring_primary=ring,naics_primary=f['naics_code'],naics_primary_source_type='government_filing',naics_confidence='medium',operating_status='active',sources=ref,verification_tier='C',last_verified=DATE,created_by=BY,notes=f"{c['cluster_id']}; Federal-only provisional C, operating evidence is CY2025 filing, not a 2026 observation. {notes}"))

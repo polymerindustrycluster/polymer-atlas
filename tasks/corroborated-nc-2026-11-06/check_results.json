@@ -1,7 +1,7 @@
 {
   "worked_NC_clusters": 110,
-  "sites_C": 15,
-  "blind_recheck_passes": 15,
+  "sites_C": 14,
+  "blind_recheck_passes": 14,
   "known_answer_passes": 3,
   "idempotence": "PASS",
   "conflicting_ID_mutation": "PASS (fails before writes)",
