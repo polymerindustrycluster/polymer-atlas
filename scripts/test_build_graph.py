@@ -81,7 +81,7 @@ class GeoAndEventsTests(unittest.TestCase):
         for l in self.ev["links"]:
             self.assertIn(l["source"], ids)
             self.assertIn(l["target"], ids)
-            self.assertIn(l["role"], {"exhibitor", "sponsor", "speaker", "organizer"})
+            self.assertIn(l["role"], {"exhibitor", "sponsor", "speaker", "organizer", "host", "attendee"})  # SCHEMA 4.12.2 role enum (v1.12)
         self.assertNotIn("PERSON-", json.dumps(self.ev))
 
 
