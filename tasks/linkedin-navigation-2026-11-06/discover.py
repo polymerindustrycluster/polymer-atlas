@@ -56,21 +56,33 @@ def canonical(href):
 class Links(HTMLParser):
     def __init__(self, html):
         super().__init__(convert_charrefs=True)
-        self.stack, self.links = [], []
+        self.stack, self.pending, self.links = [], [], []
         self.feed(html)
+        # A wrapper can reveal body content after its first anchor; decide only after parsing.
+        for href, value, ancestors in self.pending:
+            if any(n['tag'] in {'main','article'} for n in ancestors):
+                continue
+            markers = [n for n in ancestors if n['marker'] and not n['contains_body']]
+            if markers:
+                self.links.append({'href':href,'linkedin_url':value,'location':markers[-1]['location']})
 
     def handle_starttag(self, tag, attrs):
         attrs = {k:(v or '') for k,v in attrs}
-        marker = tag in {'header','footer'} or (tag in {'div','section','nav','aside','ul','li'} and bool(re.search(r'(?:header|footer)', attrs.get('id','') + ' ' + attrs.get('class',''), re.I)))
+        hint = attrs.get('id','') + ' ' + attrs.get('class','')
+        marker = tag in {'header','footer'} or (tag in {'div','section','nav','aside','ul','li'} and
+                  bool(re.search(r'(?:header|footer)',hint,re.I)) and
+                  not re.search(r'(?:article|entry|post)[_-]?header',hint,re.I))
         location = tag + ('#' + attrs['id'] if attrs.get('id') else '') + ('.' + '.'.join(attrs['class'].split()) if attrs.get('class') else '')
-        ancestors = [loc for _, selected, loc in self.stack if selected]
-        if tag == 'a' and ancestors:
+        if tag in {'main','article'}:
+            for node in self.stack:
+                node['contains_body'] = True
+        if tag == 'a':
             href = attrs.get('href','').strip()
             value = canonical(href)
             if value:
-                self.links.append({'href':href,'linkedin_url':value,'location':ancestors[-1]})
+                self.pending.append((href,value,list(self.stack)))
         if tag not in VOID:
-            self.stack.append((tag,marker,location))
+            self.stack.append({'tag':tag,'marker':marker,'location':location,'contains_body':tag in {'main','article'}})
 
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
@@ -79,7 +91,7 @@ class Links(HTMLParser):
 
     def handle_endtag(self, tag):
         for i in range(len(self.stack)-1,-1,-1):
-            if self.stack[i][0] == tag:
+            if self.stack[i]['tag'] == tag:
                 del self.stack[i:]
                 break
 

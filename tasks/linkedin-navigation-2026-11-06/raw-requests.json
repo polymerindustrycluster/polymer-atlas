@@ -35,26 +35,6 @@
     ]
   },
   {
-    "org_id": "ORG-000009",
-    "attempts": [
-      {
-        "url": "https://www.myersindustries.com",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-000010",
-    "attempts": [
-      {
-        "url": "https://www.geon.com",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-000088",
     "attempts": [
       {
@@ -179,16 +159,6 @@
     "attempts": [
       {
         "url": "https://www.paramounttube.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-000483",
-    "attempts": [
-      {
-        "url": "https://www.pentair.com/",
         "status": "200",
         "curl_exit": 0
       }
@@ -369,7 +339,7 @@
     "attempts": [
       {
         "url": "https://www.covestro.com/",
-        "status": "200",
+        "status": "403",
         "curl_exit": 0
       }
     ]
@@ -580,16 +550,6 @@
     ]
   },
   {
-    "org_id": "ORG-001119",
-    "attempts": [
-      {
-        "url": "https://www.spartech.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-001128",
     "attempts": [
       {
@@ -609,16 +569,6 @@
       },
       {
         "url": "https://tekni-plex.com/en",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-001202",
-    "attempts": [
-      {
-        "url": "https://www.woodbridgegroup.com/",
         "status": "200",
         "curl_exit": 0
       }
@@ -1010,16 +960,6 @@
     ]
   },
   {
-    "org_id": "ORG-002874",
-    "attempts": [
-      {
-        "url": "https://www.solstice.com",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-002876",
     "attempts": [
       {
@@ -1309,41 +1249,6 @@
       },
       {
         "url": "https://www.designtanks.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-003132",
-    "attempts": [
-      {
-        "url": "http://www.seasafe.com",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://www.seasafe.com/",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://seasafe.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-003145",
-    "attempts": [
-      {
-        "url": "https://www.americanpackaging.com",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://americanpackaging.com/",
         "status": "200",
         "curl_exit": 0
       }
@@ -2605,21 +2510,6 @@
     ]
   },
   {
-    "org_id": "ORG-004475",
-    "attempts": [
-      {
-        "url": "https://www.premoldcorp.com/",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://premoldcorp.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-004486",
     "attempts": [
       {
@@ -2724,21 +2614,6 @@
     "attempts": [
       {
         "url": "https://www.vailrubber.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-004531",
-    "attempts": [
-      {
-        "url": "https://chemline.net/",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://www.chemline.net/",
         "status": "200",
         "curl_exit": 0
       }
@@ -2970,16 +2845,6 @@
     ]
   },
   {
-    "org_id": "ORG-000059",
-    "attempts": [
-      {
-        "url": "https://lairdplastics.com",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-000087",
     "attempts": [
       {
@@ -3114,12 +2979,7 @@
       },
       {
         "url": "https://www.indelco.com/",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://indelco.com/",
-        "status": "200",
+        "status": "500",
         "curl_exit": 0
       }
     ]
@@ -3134,21 +2994,6 @@
       },
       {
         "url": "https://seglian.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-000156",
-    "attempts": [
-      {
-        "url": "https://www.swagelok.com",
-        "status": "302",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://www.swagelok.com/en",
         "status": "200",
         "curl_exit": 0
       }
@@ -3525,16 +3370,6 @@
     ]
   },
   {
-    "org_id": "ORG-000540",
-    "attempts": [
-      {
-        "url": "https://www.rcsgear.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-000541",
     "attempts": [
       {
@@ -3675,16 +3510,6 @@
     ]
   },
   {
-    "org_id": "ORG-001027",
-    "attempts": [
-      {
-        "url": "https://paramontmachinecompany.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
     "org_id": "ORG-001133",
     "attempts": [
       {
@@ -3699,16 +3524,6 @@
     "attempts": [
       {
         "url": "https://www.shrinktape.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-001391",
-    "attempts": [
-      {
-        "url": "https://www.kongcompany.com/",
         "status": "200",
         "curl_exit": 0
       }
@@ -4019,21 +3834,6 @@
       },
       {
         "url": "https://appliedspecialties.com/",
-        "status": "200",
-        "curl_exit": 0
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-004022",
-    "attempts": [
-      {
-        "url": "https://www.vmi-group.com",
-        "status": "301",
-        "curl_exit": 0
-      },
-      {
-        "url": "https://vmi-group.com/",
         "status": "200",
         "curl_exit": 0
       }

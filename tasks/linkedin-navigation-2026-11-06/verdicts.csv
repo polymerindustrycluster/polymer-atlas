@@ -7,9 +7,9 @@ ORG-000005,tier1,VERIFIED,https://www.linkedin.com/company/day-glo-color-corp/,O
 ORG-000006,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.rpminc.com
 ORG-000007,tier1,VERIFIED,https://www.linkedin.com/company/vibrantztechnologies/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.vibrantz.com
 ORG-000008,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.struktol.com
-ORG-000009,tier1,VERIFIED,https://www.linkedin.com/company/myers-industries/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.myersindustries.com
-ORG-000010,tier1,VERIFIED,https://www.linkedin.com/company/geon-performance-solutions/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.geon.com
-ORG-000011,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://bridgestoneamericas.com
+ORG-000009,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.myersindustries.com
+ORG-000010,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.geon.com
+ORG-000011,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://bridgestoneamericas.com
 ORG-000027,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.hygenic.com
 ORG-000033,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://lyondellbasell.com
 ORG-000034,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,http://www.akronpolymer.com
@@ -58,7 +58,7 @@ ORG-000315,tier1,VERIFIED,https://www.linkedin.com/company/dura-line/,One header
 ORG-000316,tier1,VERIFIED,https://www.linkedin.com/company/duracote-corporation/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.duracote.com/
 ORG-000317,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.duramaxmarine.com/
 ORG-000325,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://www.huntsman.com/
-ORG-000343,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://flexsys.com/
+ORG-000343,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://flexsys.com/
 ORG-000344,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.handifoam.com
 ORG-000345,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.forestcitytech.com/
 ORG-000348,tier1,STILL_UNCERTAIN,,Need current exact-entity own-site navigation; frozen operating status is not active.,https://www.freemansupply.com/
@@ -76,7 +76,7 @@ ORG-000451,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the 
 ORG-000464,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.nipponpaintamericas.com/
 ORG-000473,tier1,VERIFIED,https://www.linkedin.com/company/oldcastle-infrastructure/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://oldcastleinfrastructure.com/
 ORG-000481,tier1,VERIFIED,https://www.linkedin.com/company/paramount-tube/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.paramounttube.com/
-ORG-000483,tier1,VERIFIED,https://www.linkedin.com/company/pentair/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.pentair.com/
+ORG-000483,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.pentair.com/
 ORG-000495,tier1,VERIFIED,https://www.linkedin.com/company/mpc-plating-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.mpcplating.com/
 ORG-000500,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.plastproinc.com/
 ORG-000513,tier1,VERIFIED,https://www.linkedin.com/company/polystar-containment/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://polystarcontainment.com/
@@ -106,7 +106,7 @@ ORG-000642,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavai
 ORG-000650,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://advcmp.com/
 ORG-000651,tier1,VERIFIED,https://www.linkedin.com/company/advanced-drainage-systems-inc-/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.adspipe.com/
 ORG-000655,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.danfoss.com/
-ORG-000658,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.akzonobel.com/
+ORG-000658,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.akzonobel.com/
 ORG-000661,tier1,STILL_UNCERTAIN,,Need current exact-entity own-site navigation; frozen operating status is not active.,https://alliedmoulded.com/
 ORG-000665,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://www.amcor.com/
 ORG-000666,tier1,VERIFIED,https://www.linkedin.com/company/american-colors-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.americancolors.com/
@@ -133,7 +133,7 @@ ORG-000752,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the 
 ORG-000755,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.cooperstandard.com/
 ORG-000756,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://coremt.com/
 ORG-000757,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.cornerstonebuildingbrands.com/
-ORG-000761,tier1,VERIFIED,https://www.linkedin.com/company/covestro/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.covestro.com/
+ORG-000761,tier1,STILL_UNCERTAIN,,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.,https://www.covestro.com/
 ORG-000762,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://www.creativecompositesgroup.com/
 ORG-000763,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://cranecpe.com/
 ORG-000764,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://www.westlakeroyalbuildingproducts.com/
@@ -157,7 +157,7 @@ ORG-000828,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge;
 ORG-000835,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.fiber-tech.net/
 ORG-000846,tier1,VERIFIED,https://www.linkedin.com/company/formica-corporation/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.formica.com/en-us
 ORG-000850,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.franklinap.com/
-ORG-000851,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://transtec.com/
+ORG-000851,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://transtec.com/
 ORG-000853,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.fxi.com/
 ORG-000865,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.greentokai.com/
 ORG-000868,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://guardian-mfg.com/
@@ -195,7 +195,7 @@ ORG-000991,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company
 ORG-000999,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://okamotosandusky.com/
 ORG-001003,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://opcpolymers.com/
 ORG-001005,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://orioncarbons.com/
-ORG-001007,tier1,VERIFIED,https://www.linkedin.com/company/owens-corning/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.owenscorning.com/
+ORG-001007,tier1,STILL_UNCERTAIN,,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.,https://www.owenscorning.com/
 ORG-001012,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.pella.com/
 ORG-001022,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://plastanks.com/
 ORG-001024,tier1,VERIFIED,https://www.linkedin.com/company/plaskolite-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://plaskolite.com/
@@ -222,7 +222,7 @@ ORG-001114,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the 
 ORG-001115,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.silganplastics.com/
 ORG-001116,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://snyderman.com/
 ORG-001117,tier1,VERIFIED,https://www.linkedin.com/company/toppan-packaging-americas/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://packaging.toppan.com/
-ORG-001119,tier1,VERIFIED,https://www.linkedin.com/company/spartech/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.spartech.com/
+ORG-001119,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.spartech.com/
 ORG-001122,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.sperryrice.com/
 ORG-001124,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://standridgecolor.com/
 ORG-001128,tier1,VERIFIED,https://www.linkedin.com/company/storopack/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.storopack.us/
@@ -243,7 +243,7 @@ ORG-001183,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge;
 ORG-001193,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://washingtonpenn.com/
 ORG-001197,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.epcmfg.com/
 ORG-001198,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://willigtire.com/
-ORG-001202,tier1,VERIFIED,https://www.linkedin.com/company/woodbridge/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.woodbridgegroup.com/
+ORG-001202,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.woodbridgegroup.com/
 ORG-001205,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.yusa-oh.com/
 ORG-001206,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.yanfeng.com/
 ORG-001328,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.continental.com/en-us/
@@ -428,7 +428,7 @@ ORG-002769,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company
 ORG-002770,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://superiortire.com/
 ORG-002772,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://westpharma.com/
 ORG-002873,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.chemours.com
-ORG-002874,tier1,VERIFIED,https://www.linkedin.com/company/solstice-advanced-materials/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.solstice.com
+ORG-002874,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.solstice.com
 ORG-002875,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.rogerscorp.com
 ORG-002876,tier1,VERIFIED,https://www.linkedin.com/company/hexcel-corporation/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.hexcel.com
 ORG-002877,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.azekco.com
@@ -477,7 +477,7 @@ ORG-002950,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the 
 ORG-002955,tier1,VERIFIED,https://www.linkedin.com/company/modern-dispersions/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.moderndispersions.com/
 ORG-002961,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.sirmax.com
 ORG-002963,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.toraycma.com/
-ORG-002991,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.arlanxeo.com
+ORG-002991,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.arlanxeo.com
 ORG-003005,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.teijincarbon.com
 ORG-003024,tier1,VERIFIED,https://www.linkedin.com/company/teknor-apex-company/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.teknorapex.com/
 ORG-003027,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.allnex.com
@@ -530,14 +530,14 @@ ORG-003128,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company
 ORG-003129,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.osborneindustries.com
 ORG-003130,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,http://www.prccal.com
 ORG-003131,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://premierfiberglassinc.com/
-ORG-003132,tier1,VERIFIED,https://www.linkedin.com/company/seasafe-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,http://www.seasafe.com
+ORG-003132,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.seasafe.com
 ORG-003133,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.srsmith.com/
 ORG-003134,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.steeleplastics.com/
 ORG-003135,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,http://www.suphome.com
 ORG-003137,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,http://thursdaypools.com/
 ORG-003139,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.warmrain.com
 ORG-003141,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,denka-pe.com
-ORG-003145,tier1,VERIFIED,https://www.linkedin.com/company/american-packaging-corporation/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.americanpackaging.com
+ORG-003145,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.americanpackaging.com
 ORG-003146,tier1,VERIFIED,https://www.linkedin.com/company/printpack-inc-/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.printpack.com
 ORG-003149,tier1,VERIFIED,https://www.linkedin.com/company/jowat/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.jowat.com
 ORG-003150,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.achillesusa.com
@@ -548,7 +548,7 @@ ORG-003154,tier1,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge;
 ORG-003155,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.ineos-styrolution.com
 ORG-003158,tier1,VERIFIED,https://www.linkedin.com/company/paxxus/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.paxxus.com
 ORG-003159,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.pinnaclepolymers.com
-ORG-003160,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.polyplex.com
+ORG-003160,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.polyplex.com
 ORG-003161,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.sabic.com
 ORG-003162,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.sekisui-sc.com
 ORG-003163,tier1,VERIFIED,https://www.linkedin.com/company/stepan-company/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.stepan.com
@@ -695,9 +695,9 @@ ORG-003980,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the 
 ORG-003983,tier1,VERIFIED,https://www.linkedin.com/company/croda/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.croda.com
 ORG-003984,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.diamondvogel.com
 ORG-003985,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.elementis.com
-ORG-003986,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.ellsworth.com
+ORG-003986,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.ellsworth.com
 ORG-003987,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,fgci.com
-ORG-003989,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,generalplastics.com
+ORG-003989,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,generalplastics.com
 ORG-003991,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,blachford.com
 ORG-003994,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,lamberti.com
 ORG-003996,tier1,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,orafol.com
@@ -1149,7 +1149,7 @@ ORG-004471,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company
 ORG-004472,tier1,VERIFIED,https://www.linkedin.com/company/polyjohn-enterprises-corp-/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.polyjohn.com/
 ORG-004473,tier1,VERIFIED,https://www.linkedin.com/company/daramic-llc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.daramic.com/
 ORG-004474,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://powerpipeandtank.com/
-ORG-004475,tier1,VERIFIED,https://www.linkedin.com/company/premold-corp/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.premoldcorp.com/
+ORG-004475,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.premoldcorp.com/
 ORG-004476,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.pro-tops.com/
 ORG-004477,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.purforms.com/
 ORG-004478,tier1,STILL_UNCERTAIN,,Need a verified held own website before navigation discovery.,
@@ -1205,7 +1205,7 @@ ORG-004527,tier1,STILL_UNCERTAIN,,Need a verified held own website before naviga
 ORG-004528,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.alamomarble.com/
 ORG-004529,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://anchorseal.com/
 ORG-004530,tier1,STILL_UNCERTAIN,,Need a verified held own website before navigation discovery.,
-ORG-004531,tier1,VERIFIED,https://www.linkedin.com/company/chemline-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://chemline.net/
+ORG-004531,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://chemline.net/
 ORG-004532,tier1,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://chemtrusion.com/
 ORG-004533,tier1,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.bomar-chem.com/
 ORG-004534,tier1,STILL_UNCERTAIN,,Need a verified held own website before navigation discovery.,
@@ -1331,7 +1331,7 @@ ORG-000053,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/foot
 ORG-000055,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://ultratechpolymers.com
 ORG-000056,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://cfextrusion.com
 ORG-000058,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://steelastic.com
-ORG-000059,pic18_remainder,VERIFIED,https://www.linkedin.com/company/laird-plastics/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://lairdplastics.com
+ORG-000059,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://lairdplastics.com
 ORG-000060,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://esterle.com
 ORG-000061,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://ferriot.com
 ORG-000063,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://akron-gasket.com/
@@ -1394,11 +1394,11 @@ ORG-000145,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; ro
 ORG-000146,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://rubbermachineryparts.com/
 ORG-000147,pic18_remainder,VERIFIED,https://www.linkedin.com/company/chem-materials-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.chem-materials.com/
 ORG-000148,pic18_remainder,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://wvintl.com
-ORG-000149,pic18_remainder,VERIFIED,https://www.linkedin.com/company/indelco-plastics-corporation/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,http://www.indelco.com/
+ORG-000149,pic18_remainder,STILL_UNCERTAIN,,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.,http://www.indelco.com/
 ORG-000150,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,http://nslanalytical.com/
 ORG-000152,pic18_remainder,VERIFIED,https://www.linkedin.com/company/seglian-manufacturing-group-inc/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,http://seglian.com/
 ORG-000153,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.moen.com
-ORG-000156,pic18_remainder,VERIFIED,https://www.linkedin.com/company/swagelok/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.swagelok.com
+ORG-000156,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.swagelok.com
 ORG-000169,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.zatkoff.com/
 ORG-000170,pic18_remainder,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,none_found
 ORG-000171,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.temarex.com
@@ -1637,7 +1637,7 @@ ORG-000535,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; ro
 ORG-000537,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.rainbow-printing.com/
 ORG-000538,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://rapidmolding.com/
 ORG-000539,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.rauhpolymers.com/
-ORG-000540,pic18_remainder,VERIFIED,https://www.linkedin.com/company/raven-concealment-systems/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.rcsgear.com/
+ORG-000540,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.rcsgear.com/
 ORG-000541,pic18_remainder,VERIFIED,https://www.linkedin.com/company/r-d-abbott-company-inc-/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://rdabbott.com/
 ORG-000542,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.redseal.com/
 ORG-000545,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://extera.eco/
@@ -1729,7 +1729,7 @@ ORG-000927,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/foot
 ORG-000951,pic18_remainder,VERIFIED,https://www.linkedin.com/company/md-plastics/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://mdplastics.com/
 ORG-000968,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://mpsco.com/
 ORG-000997,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.ohiofoam.com/
-ORG-001027,pic18_remainder,VERIFIED,https://www.linkedin.com/company/paramont-machine-company/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://paramontmachinecompany.com/
+ORG-001027,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://paramontmachinecompany.com/
 ORG-001040,pic18_remainder,STILL_UNCERTAIN,,Need exact held-entity/parent identity bridge; multiple held entities share this website domain.,https://www.flextechnologies.com/
 ORG-001042,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://polynew.com/
 ORG-001065,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,http://www.r-s-t-inc.com/
@@ -1753,7 +1753,7 @@ ORG-001387,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/foot
 ORG-001388,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.hy-ko.com/
 ORG-001389,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://imlcontainer.com/
 ORG-001390,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.rotomold.com/
-ORG-001391,pic18_remainder,VERIFIED,https://www.linkedin.com/company/kong-company/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.kongcompany.com/
+ORG-001391,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.kongcompany.com/
 ORG-001393,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://www.kaufmancontainer.com/
 ORG-001394,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://kentdisplays.com/
 ORG-001395,pic18_remainder,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://creogroup.com/
@@ -1941,7 +1941,7 @@ ORG-001826,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/foot
 ORG-001829,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://horsemenspride.com
 ORG-001830,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://impactsleeves.com
 ORG-001855,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://newkor.com
-ORG-001856,pic18_remainder,VERIFIED,https://www.linkedin.com/company/novationsi/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://novationsi.com
+ORG-001856,pic18_remainder,STILL_UNCERTAIN,,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.,https://novationsi.com
 ORG-001859,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; route unavailable or external/unsafe redirect blocked. No absence inferred.,https://oem-miller.com
 ORG-001868,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://polymetrecovery.com
 ORG-001869,pic18_remainder,VERIFIED,https://www.linkedin.com/company/pro-line-automation-systems-ltd/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://prolineautomation.com
@@ -2058,5 +2058,5 @@ ORG-003576,pic18_remainder,STILL_UNCERTAIN,,Need reachable own header/footer; ro
 ORG-003746,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.goodyearchemical.com
 ORG-003771,pic18_remainder,STILL_UNCERTAIN,,Need exact held name/trade-name bridge to the published company slug; do not substitute a parent/brand.,https://www.st-blowmoulding.com
 ORG-003885,pic18_remainder,STILL_UNCERTAIN,,Need a verified held own website before navigation discovery.,
-ORG-004022,pic18_remainder,VERIFIED,https://www.linkedin.com/company/vmi-holland-bv/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.vmi-group.com
+ORG-004022,pic18_remainder,STILL_UNCERTAIN,,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.,https://www.vmi-group.com
 ORG-004026,pic18_remainder,VERIFIED,https://www.linkedin.com/company/anderson-international-corp/,One header/footer company anchor; slug matches held legal/trade name; website domain belongs to this one held entity.,https://www.andersonintl.com

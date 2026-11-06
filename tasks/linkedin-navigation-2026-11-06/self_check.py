@@ -12,6 +12,8 @@ known = {
  'https://www.averydennison.com/': 'https://www.linkedin.com/company/avery-dennison/',
 }
 def main():
+    from ancestry_check import main as ancestry_check
+    ancestry_check()
     results=[]
     for url, expected in known.items():
         page=d.fetch(url)

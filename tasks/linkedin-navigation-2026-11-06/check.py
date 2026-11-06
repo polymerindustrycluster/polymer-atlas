@@ -18,6 +18,8 @@ def digest(data):
 
 
 def main():
+    from ancestry_check import main as ancestry_check
+    ancestry_check()
     base=(d.HERE/'base.txt').read_text().strip()
     inputs=b.read(d.HERE/'inputs.csv');proposals=b.read(d.HERE/'proposals.csv');checks=b.read(d.HERE/'rawcheck.csv');verdicts=b.read(d.HERE/'verdicts.csv')
     assert len(inputs)==len(verdicts)==len({r['org_id'] for r in verdicts})==2061
