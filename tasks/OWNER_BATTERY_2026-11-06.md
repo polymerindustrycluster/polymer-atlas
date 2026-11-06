@@ -195,7 +195,7 @@ Read Public access. No authenticated retrieval has been tested in this packet.
 
 ## B-PROGRAM-LEVELS: what do mixed-level IPEDS completions mean for a held program?
 [L13's 147-proposal packet](https://github.com/polymerindustrycluster/polymer-atlas/blob/f67c207d23f99f18e991ecc00ed550532c609c84/tasks/program-completions-2-2026-11-06/README.md#L29) holds mixed-level,
-certificate-contaminated and mismatched totals. Everett's 56 includes 10 associate and 46 certificate awards;
+certificate-contaminated and mismatched totals. Everett's 56 includes 10 associate, 7 short-certificate, and 39 certificate awards;
 PROG-000038/000057 also have postbaccalaureate contamination. Institution×CIP totals are not polymer-track headcounts.
 
 - **(a) Recommended:** hold mixed/mismatched totals and preserve existing values until an owner-defined
@@ -348,7 +348,7 @@ A North Maple WARN is a different establishment; neither it nor the ZIP conflict
   retaining the immutable historical record and explicit uncertainty.
 
 ## B-D10-GEN: out-of-state generalist MEP eligibility
-[PR #206's B-D10-GEN hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L39) identifies a seam between
+[PR #206's B-D10-GEN hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L38) identifies a seam between
 Ring 5's generalist support entities and §4.6's allowance of `polymer_program=false` only for NE Ohio generalists.
 Pennsylvania MEP, Michigan Manufacturing Technology Center and the Purdue case cannot acquire a new geographic
 exception from legacy false/state rows. Generic additive manufacturing does not establish polymer training.
@@ -370,7 +370,7 @@ a separate institution. Ohio's own route failed, so even its proposed grain rema
 - (c) Keep these units as research leads until the owner reviews individual host/program proposals.
 
 ## B-D10-GEO: NEPIRC's multi-county Pennsylvania service region
-[PR #206's B-D10-GEO hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L39) has an own Plastics
+[PR #206's B-D10-GEO hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L40) has an own Plastics
 Processing training pathway and Hanover Township, Pennsylvania contact location. Its multi-county service area
 does not unambiguously fit §4.6's `site_local/county/ne_ohio/ohio/national/international` vocabulary. Legacy
 `pennsylvania` text does not authorize a new enum, and multi-county reach does not mean national reach.
@@ -426,7 +426,8 @@ This is distinct from discounting proved-distinct duplicate pairs in B-L4-T1-ADJ
 - (c) Explicitly retain legal-history organization grain in T1, documenting why active-site bindings keep such rows in scope.
 
 ## B-TRIFID-DEDUPE: five historical identifier-sharing leads from the restore
-[PR #129's restore and review](https://github.com/polymerindustrycluster/polymer-atlas/blob/0dc3886429900127fc94135d98f82bd78ba6b300/tasks/registry-links-restore-2026-11-06/README.md#L35)
+[PR #129's three held pairs](https://github.com/polymerindustrycluster/polymer-atlas/blob/0dc3886429900127fc94135d98f82bd78ba6b300/tasks/registry-links-restore-2026-11-06/README.md#L42) and
+[two restored shared TRIFIDs](https://github.com/polymerindustrycluster/polymer-atlas/blob/0dc3886429900127fc94135d98f82bd78ba6b300/tasks/registry-links-restore-2026-11-06/README.md#L60)
 distinguish three old doubly recorded pairs whose lost side was **not restored**, from two shared TRIFIDs whose
 previous state **was restored**. No new duplicate entity or merger is established by either operation.
 
