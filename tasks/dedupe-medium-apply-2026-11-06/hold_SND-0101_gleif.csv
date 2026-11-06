@@ -1,0 +1,3 @@
+lei,legal_name,legal_city,legal_region,registration_authority,authority_entity_id,entity_status,entity_creation_date,initial_registration_date,registration_status,validation_sources
+549300P7GW6TNUHX2L07,U.S. Farathane Corporation,Auburn Hills,US-MI,RA999999,,ACTIVE,,2013-03-19T12:38:00.000Z,LAPSED,ENTITY_SUPPLIED_ONLY
+549300HLVY1RVM0MPI20,"U.S. Farathane, LLC",WILMINGTON,US-DE,RA000602,5360808,ACTIVE,2013-07-02T00:00:00.000Z,2013-09-16T18:28:00.000Z,ISSUED,FULLY_CORROBORATED
