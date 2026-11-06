@@ -1,0 +1,8 @@
+{
+  "known_new_record": "ORG-000174",
+  "quote": "VERTEX, Incorporated 3956 Mogadore Industrial Parkway Mogadore, Ohio 44260 USA",
+  "raw_path": "raw/ORG-000174/d17c94afa910.txt",
+  "source_ref": "https://vertexseals.com/contact-us/",
+  "positive": "PASS",
+  "wrong_quote_negative": "PASS"
+}

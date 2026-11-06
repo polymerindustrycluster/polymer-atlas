@@ -352,6 +352,16 @@
             "match": "legal_name contains 'Plastic Products Co., Inc.'"
           },
           {
+            "id": "ORG-007066",
+            "name": "Wright Plastic Products Co. L.L.C.",
+            "city": "Sheridan",
+            "state": "MI",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MI.csv",
+            "match": "legal_name contains 'Plastic Products Co., Inc.'"
+          },
+          {
             "id": "ORG-007124",
             "name": "Wisconsin Plastic Products, Inc.",
             "city": "Plymouth",
@@ -560,16 +570,6 @@
             "tier": "B",
             "file": "organizations_MA.csv",
             "match": "notes contains 'Plastic Products Co., Inc.'"
-          },
-          {
-            "id": "ORG-007066",
-            "name": "Wright Plastic Products Co. L.L.C.",
-            "city": "",
-            "state": "",
-            "status": "active",
-            "tier": "C",
-            "file": "organizations_US.csv",
-            "match": "legal_name contains 'Plastic Products Co., Inc.'"
           },
           {
             "id": "ORG-009013",
@@ -970,11 +970,11 @@
           {
             "id": "ORG-007729",
             "name": "T.O. Plastics, Inc.",
-            "city": "",
-            "state": "",
+            "city": "Clearwater",
+            "state": "MN",
             "status": "active",
             "tier": "C",
-            "file": "organizations_US.csv",
+            "file": "organizations_MN.csv",
             "match": "domain exact: toplastics.com"
           }
         ]
@@ -987,11 +987,11 @@
           {
             "id": "ORG-007729",
             "name": "T.O. Plastics, Inc.",
-            "city": "",
-            "state": "",
+            "city": "Clearwater",
+            "state": "MN",
             "status": "active",
             "tier": "C",
-            "file": "organizations_US.csv",
+            "file": "organizations_MN.csv",
             "match": "name key 't o plastics' = legal_name 'T.O. Plastics, Inc.'"
           }
         ]
