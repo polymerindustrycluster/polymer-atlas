@@ -1,0 +1,4474 @@
+[
+  {
+    "url": "http://polymershapes.com/products-by-industry/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/98d3f90e3d82751262f8e031b18d336145e8fb9dbf4292faf8d01f925fabb944.txt",
+    "sha256": "e7452c742c482ad34533962bc77952d93a0e394d7a86af4bef6ebdd50e238e6b",
+    "attempts": [
+      {
+        "route": "http://polymershapes.com/products-by-industry/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://polymershapes.com/products-by-industry/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "http://shamrockplastics.com/contact-shamrock-plastics/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cce1dfba9bb657ed287fe5881280436897bc80966284cf37013b6665047a81b9.txt",
+    "sha256": "4f2af175e132f5763e9602d2f20822d0c3e1e34946fb0fe56991b6e23ac6c6a1",
+    "attempts": [
+      {
+        "route": "http://shamrockplastics.com/contact-shamrock-plastics/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "http://shamrockplastics.com/contact-shamrock-plastics/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://actionrubber.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d6cf692917fe583e9aa26161a70ae88f908734ddb322c1c6c3d569b3c815db8e.txt",
+    "sha256": "b3ff3867c4ededa891709f3165a814319c4f8d9e71bd526986159a9cb34d55a0",
+    "attempts": [
+      {
+        "route": "https://actionrubber.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://actionrubber.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://aerosportadditive.com/about-aerosport-additive/careers/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5fe70f3c55254758a94265114aab39b450a843178fc0d4a6240e8b466b391287.txt",
+    "sha256": "f0221a733fafb68abe9387a258db6ec5bbc280e2c2f7648570d799bd4daab517",
+    "attempts": [
+      {
+        "route": "https://aerosportadditive.com/about-aerosport-additive/careers/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://aerosportadditive.com/about-aerosport-additive/careers/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:35Z"
+  },
+  {
+    "url": "https://alltrista.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/bf994fb97bf8f9c3c5b04cf6aa31b19f85874b528a635875a7872943706fd74a.txt",
+    "sha256": "77b2ae563a82738ded2e861c58a47281bcd072931ba50c262461dd75f5b68bae",
+    "attempts": [
+      {
+        "route": "https://alltrista.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://alltrista.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://altiumpkg.com/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a2dcf0b1b34e4bf9c09f62936663a6c73da280c359cbe8062f540efe07ac76e4.txt",
+    "sha256": "5a95ca5f48decb4d7aa7fabc3393433e4635062319cc3f057daead9754d8b399",
+    "attempts": [
+      {
+        "route": "https://altiumpkg.com/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://altiumpkg.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://altiumpkg.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5ed89b0d39de293fe826630ed198e9808df84898d8a3faae2afad33375fdabc3.txt",
+    "sha256": "183a3e99a38fea4d19cdeec38c6035c72572ef82bed16cb0d12b04f1b70098ea",
+    "attempts": [
+      {
+        "route": "https://altiumpkg.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://altiumpkg.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:35Z"
+  },
+  {
+    "url": "https://audiaelastomers.com/pages/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5163b87db0ad95ecf2f3ade620814fa18cc325fe845455c220995b4e0127db67.txt",
+    "sha256": "23312f9f3f881909848a44e5fcb6c4269989dec9e303d6995951f838b65c4fcf",
+    "attempts": [
+      {
+        "route": "https://audiaelastomers.com/pages/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://audiaelastomers.com/pages/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:35Z"
+  },
+  {
+    "url": "https://audiaelastomers.com/pages/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/91a0bd78a39f835498318b688936cdb41e609512290fec81bb7c10079dbfe2f4.txt",
+    "sha256": "e0e0791f986cf00adc22ee10b658771059dc0127ef9a243e999f0702864ee6c8",
+    "attempts": [
+      {
+        "route": "https://audiaelastomers.com/pages/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://audiaelastomers.com/pages/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:35Z"
+  },
+  {
+    "url": "https://axcessinfrastructure.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/981e61751f215499730c938ea217263631c9d3a3d8256442a4e668d866ebc378.txt",
+    "sha256": "4dcd5bf8b2b34e49b067cb48991d0b6daa78cf79a136b40bf5c6b0300855aedf",
+    "attempts": [
+      {
+        "route": "https://axcessinfrastructure.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://axcessinfrastructure.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://axcessinfrastructure.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e0370a8f816c0b05b11a2240c47eab342d1bb00d7e748e6f6f64780ec482f708.txt",
+    "sha256": "46affabaf5df30bb304fd0384089acaf72d0b2e3d8e0a5a717e2a6985aadfa29",
+    "attempts": [
+      {
+        "route": "https://axcessinfrastructure.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://axcessinfrastructure.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://axcessinfrastructure.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/4cbcdf1e6a9366e3001db294c677a375880ff1fa031046907bf40313fa6276dd.txt",
+    "sha256": "e85518fdadc53ee36bd59778fe9bad3b6a3df7b3f0ed24d229839c7d79b43b45",
+    "attempts": [
+      {
+        "route": "https://axcessinfrastructure.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://axcessinfrastructure.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://axiumpackaging.com/about-axium-packaging/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d9d2c21dd853e9701ac29bd4c2d6650507aabdde67b63e0368409599e842be40.txt",
+    "sha256": "d3ba39aaaea6a6ba47bdb60dfa8aec82c97cbeda1eb067ef09d826296c3e964e",
+    "attempts": [
+      {
+        "route": "https://axiumpackaging.com/about-axium-packaging/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://axiumpackaging.com/about-axium-packaging/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://cannon.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/af49a17c5c63ffb3696b8f9c85efd375d95eee42d6c10d1d7f6325c27b667a8a.txt",
+    "sha256": "711c44804f1e8c388d65f726a8917edefa1c981b98ecdc6cefe2f27af82f2f13",
+    "attempts": [
+      {
+        "route": "https://cannon.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://cannon.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://cannon.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/63651a001d7c1eca304f121c65a299e48abb0449bdbeb33493d9601cb9ee0cf4.txt",
+    "sha256": "7f040531e358366f0478f242c1a880a01acab74609b921d7602b10f5c353cd45",
+    "attempts": [
+      {
+        "route": "https://cannon.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://cannon.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://cascomfg.com/about-us/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://cascomfg.com/about-us/",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://cascomfg.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://cascomfg.com/about-us/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://cascomfg.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://cascomfg.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9057ee8e7285c3d2bd403376a89f013458e11dac3115021b4ecc5ddb1a244aab.txt",
+    "sha256": "fe950fd8a6fa02d61e972703913aa557ae20d7b0cac45b8dadf342cccbda24c0",
+    "attempts": [
+      {
+        "route": "https://cascomfg.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://cascomfg.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://chemquest.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/50e12e5079ff29c36828bf3d67196c4ece16fb80bae28414afe906db51467e27.txt",
+    "sha256": "29ff64d7c25e60c2de829852112e62664ed001ff91a076926b623f163bd913a5",
+    "attempts": [
+      {
+        "route": "https://chemquest.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://chemquest.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://chemquest.com/industries",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/522a45172321f9e460461af57e82decd1fe3de0b7aafea221f75042f98fe3002.txt",
+    "sha256": "fe725b485a8548b60c915502a730e0fc20745ac1b962cb750eabf37d1b2379f9",
+    "attempts": [
+      {
+        "route": "https://chemquest.com/industries",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://chemquest.com/industries/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:36Z"
+  },
+  {
+    "url": "https://ckcomposites.com/about-ck-composites/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f8b40f2ef8c67ef74a31f0d9b2cf6dd26762d70364c184c30c673ee2df4df5c1.txt",
+    "sha256": "e212a0dae9b521b3d65d3ad1a075be86018dba1da0a7152ceeb385f099248ff4",
+    "attempts": [
+      {
+        "route": "https://ckcomposites.com/about-ck-composites/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ckcomposites.com/about-ck-composites/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://ckcomposites.com/contact-ck-composites",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a1cbdd1eb6714af0def4991c173e7abaf9cec964b90760106a03cdcf266b4f7f.txt",
+    "sha256": "3f963b4ade96bfcfecc0a61e955fbb7a014daca6a1857ec08c1d456382e8c59c",
+    "attempts": [
+      {
+        "route": "https://ckcomposites.com/contact-ck-composites",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ckcomposites.com/contact-ck-composites/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://coexcellinc.com/battery-advanced-materials",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d2ec9af3beed8117e607a15e02acdc5da8623db0c0093de546687348e37191e5.txt",
+    "sha256": "7d9526f383f1f698dd1148b8ea48aaf701e184d5fea8dab0eaf647a17bdf9a01",
+    "attempts": [
+      {
+        "route": "https://coexcellinc.com/battery-advanced-materials",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://coexcellinc.com/battery-advanced-materials/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://coexcellinc.com/battery-advanced-materials/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d578fdc8149dbfdc7fdbc1981298c2fbe4e41d990800dfcc3429d6a65ee4cf88.txt",
+    "sha256": "90a5c6a717b3087eee5e592241f1737876a84a94dd9fdff3fde0ebb225a619c6",
+    "attempts": [
+      {
+        "route": "https://coexcellinc.com/battery-advanced-materials/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://coexcellinc.com/battery-advanced-materials/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://coexcellinc.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/3e5949a619d4d38d98d733da10459c2a745dff9c186aa8da227a3e3641ccb3fa.txt",
+    "sha256": "a3736b4bb29fa0f3bc760b1b5cdd31aa95ab1cb50d74a7d26996d40fc67d701a",
+    "attempts": [
+      {
+        "route": "https://coexcellinc.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://coexcellinc.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://coexcellinc.com/iso-certificate/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a3ca4426a7b52ef1f7303fffff04eccc4726f36d2f90e566b09c0257ffa66cb4.txt",
+    "sha256": "8b4019a1e9dafe4e3ae29f20c40f5c7bcc03c55ab6e54816219bcca1b97ad4af",
+    "attempts": [
+      {
+        "route": "https://coexcellinc.com/iso-certificate/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://coexcellinc.com/iso-certificate/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://crownplastics.com/company/equipment/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/386da95d0d443aa646d4e1bd09bccc735663cd42ae0e0c90d430e381b661df95.txt",
+    "sha256": "e7b811eba7220f19866c9ed62bee7dc3d27db18a23f3a53772531911a06d10e1",
+    "attempts": [
+      {
+        "route": "https://crownplastics.com/company/equipment/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://crownplastics.com/company/equipment/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://ctlaerospace.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b7bfdf8712ffc4f310d8e8f94a6598f869df9cbb6d8b7ba3f00b527cf8fa6437.txt",
+    "sha256": "674d273461e751df9dd89256b33086f983a80fcba4c95b1dd17395f04818a4fc",
+    "attempts": [
+      {
+        "route": "https://ctlaerospace.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ctlaerospace.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:37Z"
+  },
+  {
+    "url": "https://ctlaerospace.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5fb0f432255b9a299253bd2ebdb4c0b5de72211dc45d07733cc99ece81de52f7.txt",
+    "sha256": "30f2b06d81127217e641c175f72104526fc64a47945155145d079751cf24b8e7",
+    "attempts": [
+      {
+        "route": "https://ctlaerospace.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ctlaerospace.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://ebeamservices.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/adc19a47c32d4c2ee742dd1ef264a4851f60b1db3e2ff56273e85eacb4c12f1e.txt",
+    "sha256": "72818ce0aea80a27cad830426f51c2d2cdff3303d9e23034fb44723da2cc8ebb",
+    "attempts": [
+      {
+        "route": "https://ebeamservices.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ebeamservices.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://ebeamservices.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ece4eb2035b3c21af863861391cbcd3b6c8a8174a88fed7b56e2a5dad07d237d.txt",
+    "sha256": "9dfb63266e52e98a2c0de11fdbe89d1f98096de1b3594ee89f20738b89bbd177",
+    "attempts": [
+      {
+        "route": "https://ebeamservices.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ebeamservices.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://ebeamservices.com/polymer-modification/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ac8c984158370de16546d8390a8d31c8f48f78f106f2050eb175fbff8bd6d801.txt",
+    "sha256": "26850ca14bf477e32cdcc3053061983e6484c3a5f6e66a7a620fdb1209147693",
+    "attempts": [
+      {
+        "route": "https://ebeamservices.com/polymer-modification/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ebeamservices.com/polymer-modification/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://expertroto.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2d5b77a53f1c77d16c6a5c027dd100c617c55522c393c5a4df1b0c560fd99fac.txt",
+    "sha256": "d747a8cc96e508eeef12de0ca3ca44ff3d2689231b209e8ab30ee729e7ee8dfb",
+    "attempts": [
+      {
+        "route": "https://expertroto.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://expertroto.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://expertroto.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e61657720bbb9e781d636600e41019ce6955c2c243964c481761e7b762ccf3f2.txt",
+    "sha256": "76ed93d60828fdff57c0cd2e3bdfd5a980eea3a822f5e4a947a0773abcfc8460",
+    "attempts": [
+      {
+        "route": "https://expertroto.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://expertroto.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://freepointecosystems.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a4418ff61ee9bafecd71f984140b55f44551272cd7979e81f54b5295de6f1469.txt",
+    "sha256": "b1d79447f7b8041020d51feacbb8255e4ee839efdb9e859ffbe11a05ee8fbed4",
+    "attempts": [
+      {
+        "route": "https://freepointecosystems.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://freepointecosystems.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://freepointecosystems.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/227ddbe0c9d0b451b30ef4e1fbf031063655fc3177a3852b25f4e97df5fcfa55.txt",
+    "sha256": "aac7480e159e9c1ec9d7dbada2c2f0cc99cd4f3fcffb71c78785024e9deee825",
+    "attempts": [
+      {
+        "route": "https://freepointecosystems.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://freepointecosystems.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://freepointecosystems.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b957817c0707207765318ea184e47a09d89e6aba63e6abfaa06d10e99ec3d95d.txt",
+    "sha256": "349b725892b24bd568dbcc99aaddee8e51bf671e91aba00aecee04288e60ea78",
+    "attempts": [
+      {
+        "route": "https://freepointecosystems.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://freepointecosystems.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://guardianmedicalusa.com/about/careers/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/495f2d9938cd22876b1b14850cc97261c8e5a6a1eba1b3cc9b69b838e2e1b9d8.txt",
+    "sha256": "b94a6ea732c75311d775f25d03782a43798b4c7f3da9777613f262a4d6de0efc",
+    "attempts": [
+      {
+        "route": "https://guardianmedicalusa.com/about/careers/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://guardianmedicalusa.com/about/careers/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://guardianmedicalusa.com/about/credentials/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d6ea9bfc399a95b278231cc0f120f9990ba9ea0401d1cbd3a71536811556b612.txt",
+    "sha256": "c7acb1d33b1eb40ab4cc478a51fbdcc03af934769a8ea1e048e8c669ef635c69",
+    "attempts": [
+      {
+        "route": "https://guardianmedicalusa.com/about/credentials/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://guardianmedicalusa.com/about/credentials/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://hammertek.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0dce85d9ee571f431861a45adbb39d24f2c58b20ae4fa6b5f1b7f4b011c4ef09.txt",
+    "sha256": "96592e7346a8a81aa288e549f45115a497defcaa20523c44884f26d9990fddab",
+    "attempts": [
+      {
+        "route": "https://hammertek.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://hammertek.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:38Z"
+  },
+  {
+    "url": "https://hammertek.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/467873c30986b94128ec78fd142bce57931c0ccfb38e60a0ee83f9489b28f705.txt",
+    "sha256": "0dc7b2a8a04dbaf58d96060bf0110dc71a0ccb02459739b388096634642da531",
+    "attempts": [
+      {
+        "route": "https://hammertek.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://hammertek.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://hammertek.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d138f8d1f342746995b796df7236ce2e98c988938c412835bec71653fe28b0cb.txt",
+    "sha256": "32c83c9b5ff7db5cea44f45b19aa99649318849756f59c63bccd9d7ae6c80885",
+    "attempts": [
+      {
+        "route": "https://hammertek.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://hammertek.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://highwood-usa.com/pages/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/17aa38c781b0b5b709dcb834705270eb5cdb3bb4cc0041827a46224b73039062.txt",
+    "sha256": "7442f7b059e4c08fe7becf512341a50c387119f078d48de56834707a276557d4",
+    "attempts": [
+      {
+        "route": "https://highwood-usa.com/pages/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://highwood-usa.com/pages/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://highwood-usa.com/pages/our-story",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c3cd2cbb4a054c5b8e486561d87fd2ec4bcf362722f69cd830dc9aacd32e9376.txt",
+    "sha256": "f6d33cab2d0a070ff3137277068bf9f6a84e549b8a23d3c73e95c1d64d6a7d91",
+    "attempts": [
+      {
+        "route": "https://highwood-usa.com/pages/our-story",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://highwood-usa.com/pages/our-story",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://hydratechllc.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/054ae67c44f1fb011129e360d020f508b09a20d1dc0fd2a47ff808b7b287a35c.txt",
+    "sha256": "e6bea31aebcf0b1b67ab79e4f469396838ae437eac133564e6be192c2e2ff9e9",
+    "attempts": [
+      {
+        "route": "https://hydratechllc.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://hydratechllc.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://hydratechllc.com/about/employment/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/896b9c15814986ad13171460dfe3f332ae8b3efc60424ed104c9fe5f6e82b1a2.txt",
+    "sha256": "a992ea334e86b3a6f23243295d2e329374bc3291b48d7e8d06c0973788334070",
+    "attempts": [
+      {
+        "route": "https://hydratechllc.com/about/employment/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://hydratechllc.com/about/employment/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:42Z"
+  },
+  {
+    "url": "https://iacgroup.com/company-overview",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f5cbfe7f03aa5a6ef1b8160c23dc390134cfedcbb2ea02c99de6202c6a14d84b.txt",
+    "sha256": "1b7bc7148b15d8525582ddff2116dba439577177e4a86e02c706a03cbef0dd5c",
+    "attempts": [
+      {
+        "route": "https://iacgroup.com/company-overview",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://iacgroup.com/company-overview",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://ieg-llc.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/38d8443238ed3bdd8b66fbbec4a0d8267a04811cdcc09b2e268e628df4859944.txt",
+    "sha256": "fe7f1c2ec848fd6f17d1bba3a2334411c894f4f39d73b9675ed791f6af584257",
+    "attempts": [
+      {
+        "route": "https://ieg-llc.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ieg-llc.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://ieg-llc.com/capabilities-2/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5967cc7fe25ea714732541ff89345c89acdec52ee72236b61864be4b9c006d76.txt",
+    "sha256": "f5de489c2dad0bfddf284d5597380f2d7aff6bf533d0952e6431267583afff23",
+    "attempts": [
+      {
+        "route": "https://ieg-llc.com/capabilities-2/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://ieg-llc.com/capabilities-2/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:40Z"
+  },
+  {
+    "url": "https://jmeagle.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/751599cdc8a780d2ad4b3160bbe9713ed66fbb9dfa51c82528d72b104b69e3c4.txt",
+    "sha256": "faedd4b47d9b063d02ba268358e2b6808f78c0e3775e5a95c7cdaa505f1aa5c6",
+    "attempts": [
+      {
+        "route": "https://jmeagle.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://jmeagle.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://jmeagle.com/abc-news-story-about-walter-shirley-wangs-leadership-and-philanthropy-0",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f0be6efdf7477c0ef04ddb3129346d948967b66c746e0e7e4ca3023a89bc8c78.txt",
+    "sha256": "8cab479bf7ba44656dae98d68c725c4d4ce169cb72ddcef7c461cb45df2538b9",
+    "attempts": [
+      {
+        "route": "https://jmeagle.com/abc-news-story-about-walter-shirley-wangs-leadership-and-philanthropy-0",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://jmeagle.com/abc-news-story-about-walter-shirley-wangs-leadership-and-philanthropy-0",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://jmeagle.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/570dd0afb74c7b343a008b9e0b9166cc46a102512356b1bbf6fbfd986dea839b.txt",
+    "sha256": "fe0f4ba9bfdf4a23174de25c2072b99a97a685b91f9c8f23343d33e34c72dcfc",
+    "attempts": [
+      {
+        "route": "https://jmeagle.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://jmeagle.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://kaivac.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0f7ea80803ee40898ab7a3e5e06a02e3726e7849d60f38e945ba8c83ece076d6.txt",
+    "sha256": "2738cbbc11429d2227f83345c47211f6a733fd8a4b58f770f9dd037095d6a6b2",
+    "attempts": [
+      {
+        "route": "https://kaivac.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://kaivac.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:39Z"
+  },
+  {
+    "url": "https://kerotest.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/da28221fda27bf4815a5567da76befeaac1cbf0e745ee468c021ade0420d2186.txt",
+    "sha256": "8b2573d38d3c25241ac382c1c3ea03c535e929486f43ed918c797c983465d066",
+    "attempts": [
+      {
+        "route": "https://kerotest.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://kerotest.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://kerotest.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6f3eac3d80da60550ea950238fd4a4bca59c940d83470c881c76c5caaa8d52d3.txt",
+    "sha256": "aa59c75d4260e4e227ed21109b83a9ae8b6c1e0724885a3cf1817d03fc8d32a6",
+    "attempts": [
+      {
+        "route": "https://kerotest.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://kerotest.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://kerotest.com/about-us/equipment-production-capabilities/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6a990b3bebeb387d840a198b079c0049502c032094d3eac4234c08bf3f982391.txt",
+    "sha256": "64d15fa3b498dbd87485d0047093658c12578a925b265f521f3ca5e315ddffc1",
+    "attempts": [
+      {
+        "route": "https://kerotest.com/about-us/equipment-production-capabilities/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://kerotest.com/about-us/equipment-production-capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://miconveyancesolutions.com/about-us/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://miconveyancesolutions.com/about-us/",
+        "status": "403",
+        "exit": 0,
+        "effective_url": "https://miconveyancesolutions.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://miconveyancesolutions.com/about-us/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://miconveyancesolutions.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:40Z"
+  },
+  {
+    "url": "https://miconveyancesolutions.com/contact-us/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://miconveyancesolutions.com/contact-us/",
+        "status": "403",
+        "exit": 0,
+        "effective_url": "https://miconveyancesolutions.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://miconveyancesolutions.com/contact-us/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://miconveyancesolutions.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:40Z"
+  },
+  {
+    "url": "https://mqplastics.com/certifications/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/4e872acda798fbcbb801ba36e90b0d85f989aa5acc3e78c9ae31dc5b1849c352.txt",
+    "sha256": "80086835c61f5a4c2594597fc5aae8023341727e435682ecdfd3f811d357d320",
+    "attempts": [
+      {
+        "route": "https://mqplastics.com/certifications/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://mqplastics.com/certifications/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:41Z"
+  },
+  {
+    "url": "https://mqplastics.com/certifications/fssc-22000-iso22000-with-pas223/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5ff078516f5676194f4043ab3c6f78c9a5276f591a704a65bc26e12ad6b9c03a.txt",
+    "sha256": "a8b13ed5d1dc4c44577a115fdf8db05cd95933cfedde4507749dfb8e6b4148be",
+    "attempts": [
+      {
+        "route": "https://mqplastics.com/certifications/fssc-22000-iso22000-with-pas223/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://mqplastics.com/certifications/fssc-22000-iso22000-with-pas223/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:41Z"
+  },
+  {
+    "url": "https://namscoplastics.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c1d2a182b3be54608a199c614dac0bbddfa3b529bdbf67c59ff217b628b7eb23.txt",
+    "sha256": "a0a0a1593d8577ab416878d32b577967e1eadfe0acc16b5e6a2a484a8e9a87a2",
+    "attempts": [
+      {
+        "route": "https://namscoplastics.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://namscoplastics.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:41Z"
+  },
+  {
+    "url": "https://namscoplastics.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/02d2e72d99a20f16be67e9d16c9dc442c79cc17267c06c5de1dc1dcc866ddd19.txt",
+    "sha256": "f5d3676b9dbd4560132a794fa44c278775b663ec33d96b7e2b6cdcab56464b03",
+    "attempts": [
+      {
+        "route": "https://namscoplastics.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://namscoplastics.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://nj9562.wixsite.com/lsplasticsinc/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/80d11130684bc32627dc771085526f30a345e94fbfe0de8b58345f293cb0d413.txt",
+    "sha256": "41c53fb6459cd56ce40f8c190ac6a8d413272e8afdcd94e4372ff9a7ea9e026a",
+    "attempts": [
+      {
+        "route": "https://nj9562.wixsite.com/lsplasticsinc/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://nj9562.wixsite.com/lsplasticsinc/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://nj9562.wixsite.com/lsplasticsinc/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2c37d3c06f6b59ac3a63272cf9f753e5cf63fa1370b43fb63376867aee18aaf8.txt",
+    "sha256": "4e4f0a3edbc8dc48e07db1b6f3d3e4e9ab260b1e5b9ea677cda4b5b0dea37506",
+    "attempts": [
+      {
+        "route": "https://nj9562.wixsite.com/lsplasticsinc/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://nj9562.wixsite.com/lsplasticsinc/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://noveltymfg.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b9ab8096cfc7af48abdfe2d0013649aecfc7f6ecfffe12e35c7e161c84324835.txt",
+    "sha256": "5c0cad08884d5c4bc05215c7d4d11f51263c82d15a49fee3a95e098b3f039de7",
+    "attempts": [
+      {
+        "route": "https://noveltymfg.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://noveltymfg.com/about/who-we-are",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://noveltymfg.com/about/company-history",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cf31dd96558e7fe03e8f762086cfa30fe21ecaa1d4f78acf90c782370da3cbb9.txt",
+    "sha256": "facb6c82311f90f91d0a317e23119722e61db3dd0cedad379acd72345492dfcc",
+    "attempts": [
+      {
+        "route": "https://noveltymfg.com/about/company-history",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://noveltymfg.com/about/company-history",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://novolex.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d672cf6ce16c22a23274c0b3586f50cd1708f4febd53f2ad0254ac72af5fc39f.txt",
+    "sha256": "d82128a7950f9b5d4c83b0aa6404876b355f8870f746b088cadc40aee143a9de",
+    "attempts": [
+      {
+        "route": "https://novolex.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://novolex.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://novolex.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ec54d4169a353f215a92021d41867cb5883e58a16ad9ede22a7d86c82425732e.txt",
+    "sha256": "f3bc41986d8df008d3552f0aa3f04dd508b90307ea8e3ef86b8721c2f0a79ab1",
+    "attempts": [
+      {
+        "route": "https://novolex.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://novolex.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://novolex.com/about/applied-innovation-center/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/648e96e35c59dca0d3010454cbf50add932a653d713421598096173ac37b5d8c.txt",
+    "sha256": "0a97cd00419cf14f2ca1c153b50f32da22137f7bb9771dd189e68748da383b5c",
+    "attempts": [
+      {
+        "route": "https://novolex.com/about/applied-innovation-center/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://novolex.com/about/applied-innovation-center/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://npxone.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ef5fa0db1e8177e5f18277676d82b73191ca438dc616c04dc63ea31108050074.txt",
+    "sha256": "263900479d685e78116f5b1c6e30bb2babbb43917e645da00a4cf79d71d85939",
+    "attempts": [
+      {
+        "route": "https://npxone.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://npxone.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://npxone.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/eb8a67a9bddfe61ef836260aec390acc9535816d4e7615c99d6191b548bba3a2.txt",
+    "sha256": "05d00a489d7871d5c8f7c0af02efb1ba79384fe04e6e7a29c68cd3bae38b70e3",
+    "attempts": [
+      {
+        "route": "https://npxone.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://npxone.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://npxone.com/markets/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cfe85a566e0cbec02921639a183edf974a50f03ae853d1a6c21205f901d6077e.txt",
+    "sha256": "ffd33e765eddd7ab200c30a38fddadbe094e1c4ff6417ae8ff560e30d56f6a7f",
+    "attempts": [
+      {
+        "route": "https://npxone.com/markets/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://npxone.com/markets/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://orioncarbons.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/93c734ba9cfa7cb78c16a26be73a3cbc19e4da381ee7e5f32be115926c4d516d.txt",
+    "sha256": "6aa32377f754856b5e86bb04d271a8201ef67e0948697590db04da02adbb4dce",
+    "attempts": [
+      {
+        "route": "https://orioncarbons.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://orioncarbons.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://orioncarbons.com/contact/contact-form/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e595ec64c30ce00bbd3d9129aa32adf04acd5c05fef95ab2e0bd9d3a804b6acf.txt",
+    "sha256": "17ff79d04e9de92ca55db56cf8bc3d7b5209515458015100ca0513b822f441a7",
+    "attempts": [
+      {
+        "route": "https://orioncarbons.com/contact/contact-form/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://orioncarbons.com/contact/contact-form/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:43Z"
+  },
+  {
+    "url": "https://penaplas.com/nsite/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/08e855c88de14ed9986388d366f0051c4c53d3028adb2bae2890aa645d7fa715.txt",
+    "sha256": "73d25c967b989fc2edbe1acd0b51e88442e9288f4d3fb8a676dc4c76924cef9b",
+    "attempts": [
+      {
+        "route": "https://penaplas.com/nsite/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://penaplas.com/nsite/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://penaplas.com/nsite/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e56954a634f0a2f8b6c8b994e184d67ed7df7c0e5d999d3fd5998b526ec4df7c.txt",
+    "sha256": "9afab3c617fe24bc94521e636a3a7b47be3c7b6d35d56fa7978c741ebc46c76b",
+    "attempts": [
+      {
+        "route": "https://penaplas.com/nsite/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://penaplas.com/nsite/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://penaplas.com/nsite/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/30237cf3bdb888a323996615199ba31fdd95434381ace716b069fc9665ccbac5.txt",
+    "sha256": "d0a62fb7838899e9597af214f81f6a44c0ba28f17edad760ca617ac4a8ff2e59",
+    "attempts": [
+      {
+        "route": "https://penaplas.com/nsite/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://penaplas.com/nsite/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://pennturftire.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/35b099a0799347ef3b91fc06fbbe9d003f63b2931c0e220b689f2d3d6e016ac9.txt",
+    "sha256": "10ada8665d1b84b5bb56695115f8107e058aa7d4b178e4f101dc4debc03d8998",
+    "attempts": [
+      {
+        "route": "https://pennturftire.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://pennturftire.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://pennturftire.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2c1c840c4316bc09f26cf2981692b747d974d96ec551d7192e8073e973f8f9bc.txt",
+    "sha256": "7e19a335718a6898e7e2c3379d553864e593e764fa72505085601ae505e9f25f",
+    "attempts": [
+      {
+        "route": "https://pennturftire.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://pennturftire.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://plaskolite.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cf66986f7c7e985909d611b7cbf1c6e0bbfce3689e86118f4cf5c4046dd7d78b.txt",
+    "sha256": "659f499995b961f45059a0133e4a63c29b1ec682d8053a5e7f445d3b2bce660b",
+    "attempts": [
+      {
+        "route": "https://plaskolite.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://plaskolite.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://plaskolite.com/about/Events",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/4038f65886f6af626cfe2dfd10206a0b88d1043bee6b6438a92ce2ffb1f4b3e1.txt",
+    "sha256": "54d1dfe90e0c114b4f9744ce6c02778ff23d7e3ea3e44440c1d4230cf7400a13",
+    "attempts": [
+      {
+        "route": "https://plaskolite.com/about/Events",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://plaskolite.com/about/Events",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://plastikoserie.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/55da2bc84ddee7795c816dc32a2b851dbc2ac592dc0eb0c0853dc7d88e3d0965.txt",
+    "sha256": "9a9f091fc1cbb8f981910768c05dfa74a9a58393c747fb32a2bd008ee01a5d9b",
+    "attempts": [
+      {
+        "route": "https://plastikoserie.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://plastikoserie.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://plastikoserie.com/get-in-touch/literature-and-certifications/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d306ce4a958ac490675055083617251eebd67d182ee851625673506a836c171b.txt",
+    "sha256": "19226eb441355fac8f5331e362070d9fb9f2e87a5d647bacfa9a5d0f8f925d26",
+    "attempts": [
+      {
+        "route": "https://plastikoserie.com/get-in-touch/literature-and-certifications/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://plastikoserie.com/get-in-touch/literature-and-certifications/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://plastikoserie.com/our-market-focus/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7added64e8567ba9fe6e112537034d41a14293d9b64c376dd2e1f1a64c7f261f.txt",
+    "sha256": "5b24b66277d2db22b4264f2b55289f96c4601515260aa926a9cb497fda968fc0",
+    "attempts": [
+      {
+        "route": "https://plastikoserie.com/our-market-focus/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://plastikoserie.com/our-market-focus/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:44Z"
+  },
+  {
+    "url": "https://playworld.com/certifications/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9462b68c252ac098ee8dc521a6682e7c398a73289e789fa5ac3152cd326041cd.txt",
+    "sha256": "753cb72a485c9d051e74c48591436f43df93c4417ca4f9a19398acba89e9fb8a",
+    "attempts": [
+      {
+        "route": "https://playworld.com/certifications/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://playworld.com/certifications/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://polymershapes.com/industry-material-handling/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e5f953d385f0816bf24c6196550f83b357722d4147606490285aefb4753e3ad9.txt",
+    "sha256": "5349d4401f6ac7df99898738e752008cfa6eeb0d690825e4b05aad6f14fe10b7",
+    "attempts": [
+      {
+        "route": "https://polymershapes.com/industry-material-handling/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://polymershapes.com/industry-material-handling/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://polytek.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/11bf41c0944d6a217c8453a7df6c98b6c7f55b420bcee0a0b0db6a5a30692164.txt",
+    "sha256": "6e34c16641c91d3f77e161da41e7c88cfd765b97ef1d10673486e89bcb1ea5ac",
+    "attempts": [
+      {
+        "route": "https://polytek.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://polytek.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://polytek.com/Industries/Composites/NSF-Certified",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e7436ec9feebd35746c410fd715ce86167f58df12f03b37d530be3527af0145d.txt",
+    "sha256": "87011ccd52b31eebd278f19b8947fd7f89dab16eccc9b004d8efa1a21902981c",
+    "attempts": [
+      {
+        "route": "https://polytek.com/Industries/Composites/NSF-Certified",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://polytek.com/Industries/Composites/NSF-Certified",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://polytek.com/about/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2b6f4762b840e383a06f09af293fe168c0b6cc31854f89852ee7ec54e4c8879a.txt",
+    "sha256": "f2d0bededee8f802f117ea0359741d6d5f5f4ef973092355ee04c84a9a68f810",
+    "attempts": [
+      {
+        "route": "https://polytek.com/about/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://polytek.com/about/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://presschem.com/about-pressure-chemical",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6c8bd74b9b5dfaca6793735aae310020f98d0f7763a992a0455dae3348a8675e.txt",
+    "sha256": "4d533421c520709b4f68f66a4d0b3c5e0b6f34c9eb88f3173116b962d9d7686a",
+    "attempts": [
+      {
+        "route": "https://presschem.com/about-pressure-chemical",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.presschem.com/about-pressure-chemical/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:46Z"
+  },
+  {
+    "url": "https://presschem.com/about-pressure-chemical/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a17bb832d4542b9f480d9e36e75dbe472a9cfea7065a3f74648cbbad5e641ea9.txt",
+    "sha256": "4d533421c520709b4f68f66a4d0b3c5e0b6f34c9eb88f3173116b962d9d7686a",
+    "attempts": [
+      {
+        "route": "https://presschem.com/about-pressure-chemical/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.presschem.com/about-pressure-chemical/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:46Z"
+  },
+  {
+    "url": "https://prestotape.com/contact-page/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7f17329572cf42ef4f12d8d43c6c2cd74ac5ede0c0117a79a976cc1369e73912.txt",
+    "sha256": "9b64e138598163a1e103aff06cbf41046c1925393b0dceaabc8a98fee2c5db3d",
+    "attempts": [
+      {
+        "route": "https://prestotape.com/contact-page/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://prestotape.com/contact-page/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://proofresearch.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d863f3a31295f65ccbe8412b4fc8316a1ed1b5c54e4bbaccf1e34ff21d88b82d.txt",
+    "sha256": "33b146ae24ef93d5e4a7d60e13ceef2d50d751f9167365e1421e38fa71d60244",
+    "attempts": [
+      {
+        "route": "https://proofresearch.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://proofresearch.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://proofresearch.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/3447ece9f8ebbd70722a79ca71339474cb030a4805f5909062837227aa7b6d19.txt",
+    "sha256": "d92b0a7e363d93200015d9603aa4c800703a4358a3087d4f8221c11f3bf4f9c2",
+    "attempts": [
+      {
+        "route": "https://proofresearch.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://proofresearch.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:45Z"
+  },
+  {
+    "url": "https://renkertoil.com/category/certifications/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f39f7b3cc07837e8b81c19ed12f47862813035fadb69990b83d3d9ad94c46753.txt",
+    "sha256": "3d6e73fcb07da5808fc1010fdb4c181ea4ff9c47be15a15d4adb58ddfef341d2",
+    "attempts": [
+      {
+        "route": "https://renkertoil.com/category/certifications/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://renkertoil.com/category/certifications/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://renkertoil.com/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/47ea42161d2b22bc0f218441e429304ca569f94b1207b2e603db490a255714c0.txt",
+    "sha256": "ee21b14b3a5d611165bf24649dca9b9d5f8d79566ffcef8bbe762fd713a35056",
+    "attempts": [
+      {
+        "route": "https://renkertoil.com/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://renkertoil.com/contact-us/?doing_wp_cron=1793964046.5902559757232666015625",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://replex.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b8f712aa7b9807e2d21084b7a90aef45a11e4a855b6a1af90a0b91de29ed077c.txt",
+    "sha256": "40d2a953688652f196753f60345c7e81efd280602118b24c37f86fc2bcc9eb53",
+    "attempts": [
+      {
+        "route": "https://replex.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://replex.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:46Z"
+  },
+  {
+    "url": "https://replex.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/20f12777f2c51aaf81492ae90e8ad9543f68783f8d7d42fab354edd6afdbd4cc.txt",
+    "sha256": "40d2a953688652f196753f60345c7e81efd280602118b24c37f86fc2bcc9eb53",
+    "attempts": [
+      {
+        "route": "https://replex.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://replex.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:46Z"
+  },
+  {
+    "url": "https://responsibleproducts.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b36c788470b25e869dd5de6d3ce375ff8e582f519cc9470f152262aebf78d182.txt",
+    "sha256": "5da034b0c9aa2f6304c7d988c02a11fb31b6aa1b20b6df8f76b2305cd1ec708a",
+    "attempts": [
+      {
+        "route": "https://responsibleproducts.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://responsibleproducts.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:46Z"
+  },
+  {
+    "url": "https://roppe.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c257a793ea18baa00eb973313f0913138bba811167897fc869f594eb06121c1d.txt",
+    "sha256": "192b558f669e5f8e59d1ee491aa7d5ec0c7bcfeb3e4801f531d7dacf5b3051bd",
+    "attempts": [
+      {
+        "route": "https://roppe.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://roppe.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://roppe.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d5e834c949b3b04567c6e7d11a9947e89c0c7f3a58e46bb7683f203723d2a06d.txt",
+    "sha256": "dd8c7f8cd150aad190b8ef4bc7982bba8efc4fc41992f48e6d6219c61647d857",
+    "attempts": [
+      {
+        "route": "https://roppe.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://roppe.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://sanpallets.com/contact.php",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/717b44ed062c7331adc0c0e28b477b103eda339c04e9d1c87ffbf614201faa4c.txt",
+    "sha256": "e5db7448dadaafa6f0e8403478c6f60a1e17f044a33e2849883c2f2b373898a1",
+    "attempts": [
+      {
+        "route": "https://sanpallets.com/contact.php",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://sanpallets.com/contact.php",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://shamrockplastics.com/contact-shamrock-plastics/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5ed7831261648200ff30f04d9d648e0aae328cd0463aba7cc4108d60bd332eea.txt",
+    "sha256": "50488d12aa1d61f7761f495a85bd10446d9876fdeac9999d6fbe36a46ee98010",
+    "attempts": [
+      {
+        "route": "https://shamrockplastics.com/contact-shamrock-plastics/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://shamrockplastics.com/contact-shamrock-plastics/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://shcomposites.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/67ad07ce0ee2e858e3e2abb2e071dbda0ae9db02c100337f12aaa1892593f89b.txt",
+    "sha256": "613e2846b4f84a263fd67a0ff03f93d835c2528ddc2e96bac34a1f900fae499e",
+    "attempts": [
+      {
+        "route": "https://shcomposites.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://shcomposites.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://shcomposites.com/market-applications/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d4a0ca06ef982684f888b8b00a6cb3564cec21a6ab6d3913205e7bb3025e5845.txt",
+    "sha256": "674cba0bfd6f672272119a91dee313d34513a8ab4feefe2b78ab08c35dfcf66b",
+    "attempts": [
+      {
+        "route": "https://shcomposites.com/market-applications/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://shcomposites.com/market-applications/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://spinps.com/website/website.nsf",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/91f3da90e60cdf2e8e8e61370a7fc9e56d1b2c5e2980fe33af9049e710b6c32b.txt",
+    "sha256": "b739a72a79c349b17fe082519eab26171841d8b638e03ec8c7c55acbf9326baa",
+    "attempts": [
+      {
+        "route": "https://spinps.com/website/website.nsf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://spinps.com/website/website.nsf",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://standridgecolor.com/markets/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/12b7a987a92de82ac28b02c5dd3570baad2569295c92c1ba0999d16f788f0b5a.txt",
+    "sha256": "8389adb3af0232806d35a6e3077fdc1e40959fbd844e224ecfd1e6e380b40d30",
+    "attempts": [
+      {
+        "route": "https://standridgecolor.com/markets/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://standridgecolor.com/markets/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://stonermolding.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/dde4542d03fda4538800ae569fd58ebc3e9b2cbc19d5dff8a98de071a92401aa.txt",
+    "sha256": "92d332d6d3fce93e64854ad28eb452f240919fed4524056de3d5b09920c4c3fb",
+    "attempts": [
+      {
+        "route": "https://stonermolding.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://stonermolding.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://stonermolding.com/blog/post/knowledge-base/2023/06/15/top-industries-that-rely-on-molding-composites",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0f85f8bc3b677039ed36f409c9bc6cc1f20f0b198e4c9d5c3f07f4848b9a4d33.txt",
+    "sha256": "dc674712ce6c492b6d7afa7e23946dff70b12e608aff55f68ae89567ff86271b",
+    "attempts": [
+      {
+        "route": "https://stonermolding.com/blog/post/knowledge-base/2023/06/15/top-industries-that-rely-on-molding-composites",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://stonermolding.com/blog/post/knowledge-base/2023/06/15/top-industries-that-rely-on-molding-composites",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://stonermolding.com/blog/post/knowledge-base/2023/06/20/polyurethane-products-that-use-industrial-molding",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/bcdf771038c483a15cba627124564f819f64fa8c960188fdd98d0ff1b9faffae.txt",
+    "sha256": "74dcf573501c1cb948c631b590343b99dba9dcf13028206adb29d3f19d8630d6",
+    "attempts": [
+      {
+        "route": "https://stonermolding.com/blog/post/knowledge-base/2023/06/20/polyurethane-products-that-use-industrial-molding",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://stonermolding.com/blog/post/knowledge-base/2023/06/20/polyurethane-products-that-use-industrial-molding",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://stonermolding.com/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/70e1a4fb4ee6b0b47e387791490159d281c3dffee93136904cb00073012133db.txt",
+    "sha256": "0235a8ed7a855cbaaabbe5eba9ebc4779d3b1c964250ae93843e8b34d34c68ad",
+    "attempts": [
+      {
+        "route": "https://stonermolding.com/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://stonermolding.com/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:47Z"
+  },
+  {
+    "url": "https://superiorplasticsinc.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ffa884799a63f902fb24e1f8ebe95f276a6aea8a374bab13e387453b8b8ac92d.txt",
+    "sha256": "ebdaf462d7a7082e46659a4ee829bcecbb48d5b2dc7737663dff44fd8873902f",
+    "attempts": [
+      {
+        "route": "https://superiorplasticsinc.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://superiorplasticsinc.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://usa.sika.com/en/industry/automotive-commercialvehicleaftermarket.html",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/07b27a6904657ba7e52f4232749f63e6c50c41fcbcca2f4410c236e20633e2af.txt",
+    "sha256": "318e035d8de141b3c0136943a82ed46f927b999c0942aa312eb7b633f6faa00c",
+    "attempts": [
+      {
+        "route": "https://usa.sika.com/en/industry/automotive-commercialvehicleaftermarket.html",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://usa.sika.com/en/industry/automotive-commercialvehicleaftermarket.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://usa.sika.com/en/industry/automotive-commercialvehicleaftermarket/automotive-aftermarket.html",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b0fee5e67b6733c140c09885f33a492711be02dc6b12dbb645a8bc2793eb0b90.txt",
+    "sha256": "a9dbc637dfacd91384ccb6dab222deb0716982b92988525858a7d5bdfe35a243",
+    "attempts": [
+      {
+        "route": "https://usa.sika.com/en/industry/automotive-commercialvehicleaftermarket/automotive-aftermarket.html",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://usa.sika.com/en/industry/automotive-commercialvehicleaftermarket/automotive-aftermarket.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://velocityfast.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8ea44263fafeefb5ea9ee10727c6a8bd6086d4f944a20e88d8a2bccfd06a8f83.txt",
+    "sha256": "16bf9460eb369b75f6a51e05a1fcd9f0232590bbfdcd00c7f42356a919192646",
+    "attempts": [
+      {
+        "route": "https://velocityfast.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://velocityfast.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://velocityfast.com/certifications/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ce94f54b6d790100e06d1b9c77a9763ce11327699959c662169ae8f946165943.txt",
+    "sha256": "8c83f078b190caf19de87a2d468e81a05189cd0c9d5da978eb02513c3486e4a9",
+    "attempts": [
+      {
+        "route": "https://velocityfast.com/certifications/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://velocityfast.com/certifications/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://velocityfast.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5950506001364c99d83fd4588db57b6cc2e6df0ec032862ad61138f53b7eea42.txt",
+    "sha256": "c5d52fd78b8044fee16ecb19b11aa787ea5f1aaf7e467c109daedda7ee887d3f",
+    "attempts": [
+      {
+        "route": "https://velocityfast.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://velocityfast.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://visioncolorllc.com/site/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6ea9bc122067c6aedb622ab03475adbf5cde9505c4aba22328ecf0b34dc81b3b.txt",
+    "sha256": "0152c75d10663ae42cd7ac5f60f484b13d34dc8347eba90161543548a96e0d5d",
+    "attempts": [
+      {
+        "route": "https://visioncolorllc.com/site/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://visioncolorllc.com/site/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://visioncolorllc.com/site/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7fd9bc4a42860f61602e4c8e8894337dd09e7533a01dbdb912e27ab50c67b5a3.txt",
+    "sha256": "657b0e42d6d8d38eb36953e3053dc35da5f637e84262264123988a6ded83244d",
+    "attempts": [
+      {
+        "route": "https://visioncolorllc.com/site/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://visioncolorllc.com/site/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://visioncolorllc.com/site/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/978a2740f14adfe71174f8582b7002bee633eb6deef439b29ba839ef40245e5e.txt",
+    "sha256": "657b0e42d6d8d38eb36953e3053dc35da5f637e84262264123988a6ded83244d",
+    "attempts": [
+      {
+        "route": "https://visioncolorllc.com/site/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://visioncolorllc.com/site/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://washingtonpenn.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cbca7a359e28da30344f035294fd5f24e41e354ed83642ad4e89a640fb70aead.txt",
+    "sha256": "2c52bbec61aefc22b5ea99f6fd65b106a42a1cd18df179429c72120924e8d106",
+    "attempts": [
+      {
+        "route": "https://washingtonpenn.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://washingtonpenn.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:48Z"
+  },
+  {
+    "url": "https://washingtonpenn.com/industries",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0919ad0ccc04e5dca21de46f41b40c3aa1ed52988e4b194ef7b982164e045e9c.txt",
+    "sha256": "d4725954fb6e84045d0db79e5d5a6ac17800ee2586b2084b08e98034f45cd34b",
+    "attempts": [
+      {
+        "route": "https://washingtonpenn.com/industries",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://washingtonpenn.com/industries",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://washingtonpenn.com/industries/appliance",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/eab854c598dc9165518caad4e6e50b4a64c83e0fe0bd887479240b33a309ed4c.txt",
+    "sha256": "5f24d4fe33a73c0b27ef8189fa7d347e6f29000a996ca041cc50bfdb895f725f",
+    "attempts": [
+      {
+        "route": "https://washingtonpenn.com/industries/appliance",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://washingtonpenn.com/industries/appliance",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://weatherables.com/pages/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d9dbb13164d4131000ba0f1b2ea33f91eb178e257c015c5e4b5e4d9a88e32521.txt",
+    "sha256": "657087d60e9614e8e3211f9cb4eb29f5bea1ef9b06c212e41016008bb8de988d",
+    "attempts": [
+      {
+        "route": "https://weatherables.com/pages/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://weatherables.com/pages/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://weatherables.com/pages/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2b2cc4b546ad183cf6dd9bcf6f2151f3454ed8bef987218fce3039e74c317b05.txt",
+    "sha256": "387fbbb0fbce85250d9e870943d5783cb4ae2951854c30bb26c2aa6e1ddc3e01",
+    "attempts": [
+      {
+        "route": "https://weatherables.com/pages/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://weatherables.com/pages/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://weaverind.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6ddd915b0ebfef5284d8baeba64d87562596f90808dec8e2da6119418458491f.txt",
+    "sha256": "b88d3b25ab3d8b86c8e3f2aa980f03a34e1ad94e7c39bbed1c53dc051596a9b1",
+    "attempts": [
+      {
+        "route": "https://weaverind.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://weaverind.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://weaverind.com/capabilities",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d8b162f8fe64bd243c99129520c5da65d290236b1d8449f0ec4c1b43be3d7a64.txt",
+    "sha256": "aef21e45f20a13d410ffd471fa24e00d4a73ca4c3e31e88a8d88b496c3d46647",
+    "attempts": [
+      {
+        "route": "https://weaverind.com/capabilities",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://weaverind.com/capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://woodlawnrubber.com/about-woodlawn-rubber/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/fe735a9773a97d8e6283342afd8d07a00ffac451e1d73f9a0d5a9d7d3948cb1d.txt",
+    "sha256": "00f25fc02f0ef67140e180063f767314dcbf1413fec2794171a7fcb794ccb001",
+    "attempts": [
+      {
+        "route": "https://woodlawnrubber.com/about-woodlawn-rubber/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://woodlawnrubber.com/about-woodlawn-rubber/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://woodlawnrubber.com/rubber-manufacturing-capabilities/rubber-materials/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ecae6e237e002ad0e6d58dd9d38982f9d585d23888349a9a8253405ac7f5bac9.txt",
+    "sha256": "9477408cb32d2600b729495bc270168e8d0d37b20cf7b30594b69f595317e15c",
+    "attempts": [
+      {
+        "route": "https://woodlawnrubber.com/rubber-manufacturing-capabilities/rubber-materials/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://woodlawnrubber.com/rubber-manufacturing-capabilities/rubber-materials/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.accu-moldplastics.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ec4a7365fa6b1d6b2f8596372f9eb9fb4e4be6231766e1ccd7bb2544b4e374a2.txt",
+    "sha256": "bb161e8564e70ccd7e1f0f1c8627a839425a79145b9745df65632801a1076434",
+    "attempts": [
+      {
+        "route": "https://www.accu-moldplastics.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.accu-moldplastics.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.accu-moldplastics.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2622dc7e4af8cf280171c854ed929d06c9d90547c998b1fea89dfdf663cdc4b7.txt",
+    "sha256": "cc630c35d6ec40ba9e233e8e8a7cc96b2d1f48d030881638f5da2c738d9c76e4",
+    "attempts": [
+      {
+        "route": "https://www.accu-moldplastics.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.accu-moldplastics.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.alufplastics.com/about-aluf/careers/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/77f9db3abe843895cdeaa3da0a73f879910fa4a0000087d6ddf431ce88165977.txt",
+    "sha256": "0a7620814beb2f12e4c6a2bea1cad9435e2a389f5367ce012dff96b19b0ee330",
+    "attempts": [
+      {
+        "route": "https://www.alufplastics.com/about-aluf/careers/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.alufplastics.com/about-aluf/careers/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.alufplastics.com/about-aluf/innovations/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/47b857eda22c3c9fffa5ebae77126b3743ef4d91af38dd85bc008a238cf0c4ab.txt",
+    "sha256": "7ec8d22b09221c8359a04a11f1dc8f7e8a123822c86c77af4be9c477aefa8258",
+    "attempts": [
+      {
+        "route": "https://www.alufplastics.com/about-aluf/innovations/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.alufplastics.com/about-aluf/innovations/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.arkema.com/usa/en/innovation/lightweight-materials/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5a8583ae043759b457d9078ddbac92c3ee30e64c0f3a15b34908aaf6b245ad8d.txt",
+    "sha256": "455fee612d6b95190ce0f1b5f002388afb23d67875660c0859fed0c63340475b",
+    "attempts": [
+      {
+        "route": "https://www.arkema.com/usa/en/innovation/lightweight-materials/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.arkema.com/usa/en/innovation/lightweight-materials/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.arkema.com/usa/en/innovation/start-up-connect/start-up-connect-contact-form/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f8aeb77442fb598f20a9bef44fd2a702e61d3dde159bad30f2f812862d7d81b8.txt",
+    "sha256": "efd50a533106bde4095000a2ff8b137787b42d09d4a63584877f34f943c1a484",
+    "attempts": [
+      {
+        "route": "https://www.arkema.com/usa/en/innovation/start-up-connect/start-up-connect-contact-form/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.arkema.com/usa/en/innovation/start-up-connect/start-up-connect-contact-form/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.ballyribbon.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5d1ccc1163dff69563cc13120b8a47635a5d3a009da3e65f5ad3dfbe4e89365d.txt",
+    "sha256": "a94c90f5b3348510b0a68a347ff1f0585b1fd0c12854744d8c312a4f0b79cae2",
+    "attempts": [
+      {
+        "route": "https://www.ballyribbon.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ballyribbon.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.ballyribbon.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/52218ae0bef29d7d88cda9ee7aa34be56e9437e6e9e62ff3e790f65749cd1188.txt",
+    "sha256": "e811c29869d7622ed05f77115f6d640aafe08ea83c4779626d9576ff4b6adfe9",
+    "attempts": [
+      {
+        "route": "https://www.ballyribbon.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ballyribbon.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.ballyribbon.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/53280927d4a51a6fd865ad6468391d77a16e837f903adc3552140ea1027690f5.txt",
+    "sha256": "e811c29869d7622ed05f77115f6d640aafe08ea83c4779626d9576ff4b6adfe9",
+    "attempts": [
+      {
+        "route": "https://www.ballyribbon.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ballyribbon.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:49Z"
+  },
+  {
+    "url": "https://www.bawplastics.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/70d6564b263cd142b252f1cb4d32f820c473bffde85a11259eb34589107d880e.txt",
+    "sha256": "6b63210613608b4837ef9e15babc82d70fac247d02c026c29891300c76537fc2",
+    "attempts": [
+      {
+        "route": "https://www.bawplastics.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.bawplastics.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.bawplastics.com/about/careers/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d9add58860c2c49a9bb1e277c19c220e5789f34294fa04bda05f362dfeabb16b.txt",
+    "sha256": "cf3d9af375ab81d7308d65dc11fc6dfad711621229156543b21e14667e0ff81c",
+    "attempts": [
+      {
+        "route": "https://www.bawplastics.com/about/careers/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.bawplastics.com/about/careers/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.benvic.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8e4a8ae2162d6269eef34dc7e73a1874fa8c16f296af734d6a9df71d74281976.txt",
+    "sha256": "1adc396a04ea47cfd15ce2c10989291247edc67a6dae4f63b14c0495ac494e70",
+    "attempts": [
+      {
+        "route": "https://www.benvic.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.benvic.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.benvic.com/Contact/Careers/jobs.html",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cb779159808d6bef24ff6a7c6fe29395d2b3946d50671bebf8f4a872a7e6d75c.txt",
+    "sha256": "c4afb80d6aab2032bcff451f7e14abacff05428da38e2418c3a5b3975f90fae1",
+    "attempts": [
+      {
+        "route": "https://www.benvic.com/Contact/Careers/jobs.html",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.benvic.com/Contact/Careers/jobs.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.benvic.com/about-us.html",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/152a427451c6b9556e8adff536822701b9e25c8cb61f726d169f53f10a3e46e4.txt",
+    "sha256": "be5be1ff1f0234768f9ca369921d2bcec548787f80508d47b929f22a2d1cc6b5",
+    "attempts": [
+      {
+        "route": "https://www.benvic.com/about-us.html",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.benvic.com/about-us.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.brenntag.com/en-us/contact.html",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8ff8e6dce21147e63818aa8e2dfcebf1800aecdad9ceb9850189e76762143d44.txt",
+    "sha256": "8fa72747deb5e1571a82dc1409980ad78875422a5d63884566eef8ec4bfce6ee",
+    "attempts": [
+      {
+        "route": "https://www.brenntag.com/en-us/contact.html",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.brenntag.com/en-us/contact.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.calorplastusa.com/about-calorplast/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1307fec59279265264c1cbf17cfbea0a8267b5be76a2961255f130b547fc85c5.txt",
+    "sha256": "0b781734e4441c074c4900482e6b9700bde9effb2e467492cb323d4a978312e1",
+    "attempts": [
+      {
+        "route": "https://www.calorplastusa.com/about-calorplast/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.calorplastusa.com/about-calorplast/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.centorrx.com/company/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/888eb30a52a30bf6da6a74d522963b1ab88c753e0264f363b1e00e8d65344383.txt",
+    "sha256": "6b79016f6083a4ca64f8741b0d39d90c6703233976a9ee6f9103553aa8c124f3",
+    "attempts": [
+      {
+        "route": "https://www.centorrx.com/company/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.centorrx.com/company/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.centorrx.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7bd985863f52455e246237bf6b01768f6e20ba4eef8c6af544862305b7e36d3e.txt",
+    "sha256": "d53b7eb20ae6d67717c9be0228003f196cea0dc8b742dbe4f4c7cafd4a71eff7",
+    "attempts": [
+      {
+        "route": "https://www.centorrx.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.centorrx.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.chasedoors.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2187e931b884e782e689db1ce0f575af876bab92237fab4aeb96fe2832b15c65.txt",
+    "sha256": "ffb3304fe298cb60d4be9692e649ae024facdf5f10ce32d26d0b329f2e507cfe",
+    "attempts": [
+      {
+        "route": "https://www.chasedoors.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.chasedoors.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.chasedoors.com/about-us/location-and-contact-info",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/28eaf2ce0398d198fb628b0fbbfe5759665292d964efff3396ff6eca16d228c9.txt",
+    "sha256": "7c8b1d7e021c60a80a2dd4f7fba458f0465ccc1fb829a1d8537d62704b30e1e4",
+    "attempts": [
+      {
+        "route": "https://www.chasedoors.com/about-us/location-and-contact-info",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.chasedoors.com/about-us/location-and-contact-info",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.chemcoat.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/57c748fc5c06fde2f3de30ed9dc2b94f2d494b737d518f75d1b6351d59f4a4a9.txt",
+    "sha256": "557949c8c57b6f776c714f5eedaaaa6cbedf6eda6d7bd61581ce18e8d9d4bba8",
+    "attempts": [
+      {
+        "route": "https://www.chemcoat.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.chemcoat.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.cjrobinson.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/777ed37eb4ef821eb7053d1d08199d21e92b1738da20aa0301013753fc6e8141.txt",
+    "sha256": "186d9d283aeb98135f97066210c46b33c26fa7be81a3692d7321244c82c3ec06",
+    "attempts": [
+      {
+        "route": "https://www.cjrobinson.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.cjrobinson.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.cjrobinson.com/about.htm",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ea0899605aee8f9581edb203fdea38c836a1b2dfdd288c98ccc0a21cf081da1d.txt",
+    "sha256": "de48c985fd0b51f4bf8a792ab0b13cd9884ea15df2ca8bda3d678095b6b3a3b2",
+    "attempts": [
+      {
+        "route": "https://www.cjrobinson.com/about.htm",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.cjrobinson.com/about.htm",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.cjrobinson.com/contact.htm",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6b616cce6590af550247d2f7e0ec00a698c3a9e06ddb2080177d96324d6bafad.txt",
+    "sha256": "8d037de1b600364e56edcd9734d7ea6506895ae5a0999bf341920a26239e3cc2",
+    "attempts": [
+      {
+        "route": "https://www.cjrobinson.com/contact.htm",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.cjrobinson.com/contact.htm",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.clydefoam.com/contact.html",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c28c21753e42e877fb4df109a800087743555c4715801d054d5b8a123003c019.txt",
+    "sha256": "5997862040c824014836e831b26630a870117e120985fac55d0ac99dab90b94c",
+    "attempts": [
+      {
+        "route": "https://www.clydefoam.com/contact.html",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.clydefoam.com/contact.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:50Z"
+  },
+  {
+    "url": "https://www.continental.com/en-us/career/contact-faqs/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/367fbcdd935a205de7385aa0bfdabcb383219f7773dec9c08bf9f4a0d4010962.txt",
+    "sha256": "33a5b21563bc0e0248c353a0a8c2ce0ad63c901537755b6d8073b260f7dbeb72",
+    "attempts": [
+      {
+        "route": "https://www.continental.com/en-us/career/contact-faqs/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.continental.com/en-us/career/contact-faqs/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.continental.com/en-us/career/teams/sales-marketing-1/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/177fc7515fe89e1f5d5c4f1d7a359549b54207397b5ade3970933a9fab3a0239.txt",
+    "sha256": "66ba3a03827f365df848370176037ed28f8803905e62640374e32c4b36e9bbdd",
+    "attempts": [
+      {
+        "route": "https://www.continental.com/en-us/career/teams/sales-marketing-1/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.continental.com/en-us/career/teams/sales-marketing-1/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.custometch.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ae3f269efbda57416855472f74635142a424b18b19646558c377ed55d7cb6755.txt",
+    "sha256": "d19f0b516d66fdcb6e8c9dd404b4658d0cda1618690efbf8d8017d56dec9d844",
+    "attempts": [
+      {
+        "route": "https://www.custometch.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.custometch.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.custometch.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/bd572c458bd4531fd2a2c5a3b188e480b4adf7e3f972d03b2551c80f9e99598f.txt",
+    "sha256": "7727c10e53656528f89a592f031c98c64dc4d28c1313e8e11865d22a9f7cc293",
+    "attempts": [
+      {
+        "route": "https://www.custometch.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.custometch.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.deltaducon.com/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/05ce66266ff850687912ace5d4a628e78bcc2d531bc77371645274113eb4341a.txt",
+    "sha256": "d994c91bbd5e6d0db0a5b7b00e3ee1df1dcb306b4abbd7375f1b13e74c527faf",
+    "attempts": [
+      {
+        "route": "https://www.deltaducon.com/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.deltaducon.com/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.deltaducon.com/industries",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6fd0c53afe7b27231f571ff0a0ad1a68eed8f0778565c45379ec9223b3ab900e.txt",
+    "sha256": "90cfe17ba6440866561ae95fa3b1bddce1c5e09c16d882decada27f5dfbec8d3",
+    "attempts": [
+      {
+        "route": "https://www.deltaducon.com/industries",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.deltaducon.com/industries",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.eliteprecisionplastics.com/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7698ca2ea7a1511affd6200536a72db25fc5073ae6d13a43faaa04b2936b82a6.txt",
+    "sha256": "591609435743eb599d2053a31ee4ada5037d40a3e4459038c097f523ee74a20c",
+    "attempts": [
+      {
+        "route": "https://www.eliteprecisionplastics.com/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.eliteprecisionplastics.com/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.engelglobal.com/en/ca/`tel:${(contactPerson.phone).replace(/\\s/g, ",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.engelglobal.com/en/ca/`tel:${(contactPerson.phone).replace(/\\s/g, ",
+        "status": "",
+        "exit": 3,
+        "effective_url": "",
+        "error": "curl: (3) unmatched brace in URL position 41:\nhttps://www.engelglobal.com/en/ca/`tel:${(contactPerson.phone).replace(/\\s/g, \n                                        ^",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.engelglobal.com/en/ca/`tel:${(contactPerson.phone).replace(/\\s/g, ",
+        "status": "",
+        "exit": 3,
+        "effective_url": "",
+        "error": "curl: (3) unmatched brace in URL position 59:\nhttps://r.jina.ai/https://www.engelglobal.com/en/ca/`tel:${(contactPerson.phone).replace(/\\s/g, \n                                                          ^",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.engelglobal.com/en/ca/industries/injection-molding-electronics",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/59be15323b33dc8cc8dbe218a35a856649fbab804e6f29fe2c48e64624f3e960.txt",
+    "sha256": "83f11f9553e96435ae4646f141a88b4250c441991af5e156444e77c81c06fab6",
+    "attempts": [
+      {
+        "route": "https://www.engelglobal.com/en/ca/industries/injection-molding-electronics",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.engelglobal.com/en/ca/industries/injection-molding-electronics",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.engelglobal.com/en/ca/industries/medical-technology-products",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/61f0ff7b8a3dcf12d868ab7d80b3eb621c7defd7e4972ef3675a798583d33822.txt",
+    "sha256": "71bd9e93b6b762b543382564e9f878861ef9bf2575580d1519057630705ea70a",
+    "attempts": [
+      {
+        "route": "https://www.engelglobal.com/en/ca/industries/medical-technology-products",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.engelglobal.com/en/ca/industries/medical-technology-products",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.entechplastics.com/assembly-capabilities",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a9c327477df1749b5eca6fa8e4162aadee82da1f0f025ccf6a60d7f67c43e470.txt",
+    "sha256": "2b690c952788a6babb98f1e58d03f58df8d12d587fd1e7bf82d5926050e99d91",
+    "attempts": [
+      {
+        "route": "https://www.entechplastics.com/assembly-capabilities",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.entechplastics.com/assembly-capabilities",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.evercoat.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c61221098e3e76761dd8ed28adf702c8ec25907506a8eb6ad91896f4fd1a8ff5.txt",
+    "sha256": "2453b463a0b03f95653bf2cc3a3767755183d3440be6c555f4c5943dcab0e616",
+    "attempts": [
+      {
+        "route": "https://www.evercoat.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.evercoat.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:51Z"
+  },
+  {
+    "url": "https://www.futurefoam.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f0c3675d56f5f10aa4e8bcba2e237e7d562cf650d635c5a983aa01633097c516.txt",
+    "sha256": "3044cff77d9035ea34e3293d5863a83603b24a312594177b0e5efa58afe972f7",
+    "attempts": [
+      {
+        "route": "https://www.futurefoam.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.futurefoam.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.futurefoam.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5bc0b6d729c5bcf47ac58886edc8c5cc67e10c28dee8d16eb6466a76e7857522.txt",
+    "sha256": "6a8301b9ce75f9e03bf4c3ffb5a44a979a6a77fed2fbeed74d5cbd909fd36dc0",
+    "attempts": [
+      {
+        "route": "https://www.futurefoam.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.futurefoam.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.gehring-montgomery.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/86c3cd5cef98fc6927cf10a777470bbbe661ade606c1d8fa7bdb9f2c10af8fa4.txt",
+    "sha256": "ae24544867c904632fe5795e0957b4b190fe44af732cbe9ba25818212e46ec19",
+    "attempts": [
+      {
+        "route": "https://www.gehring-montgomery.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gehring-montgomery.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.gehring-montgomery.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c0b9baededb9f60f919e53728730ad385350aa0b25f36e7a220e2124a4818a48.txt",
+    "sha256": "9ab1f05e4a96bf044d6231c0b80997f1ea06f68fe8a301de6deaadb6bc422c16",
+    "attempts": [
+      {
+        "route": "https://www.gehring-montgomery.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gehring-montgomery.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:52Z"
+  },
+  {
+    "url": "https://www.gehring-montgomery.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/433a6920e02b769565250089af21f69cc12360893d6a7b953598b335f7446c40.txt",
+    "sha256": "42f8ee9d9804e8fe1ba363a9e64a207d2cfca616fd1169096000ead5a0415066",
+    "attempts": [
+      {
+        "route": "https://www.gehring-montgomery.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gehring-montgomery.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gelest.com/about-gelest",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6958ee2cee8338f406dd917f3442547a08e77bce3c24f78814a133a54f98aace.txt",
+    "sha256": "f0ca2f7ca66d3392b301957814c85a677e5700169b222ac723c86d12f6ad7f14",
+    "attempts": [
+      {
+        "route": "https://www.gelest.com/about-gelest",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gelest.com/about-gelest/company-overview/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gelest.com/about-gelest/capabilities",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e47bb49607e7ab0d1bee89410fcf6491c5d68ad6b62f2726b23e0ab502fcee36.txt",
+    "sha256": "0a35280cfc2a6e45adb699b2c0bb8199a3a836238698b3d78b11505bc495c467",
+    "attempts": [
+      {
+        "route": "https://www.gelest.com/about-gelest/capabilities",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gelest.com/about-gelest/capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gelest.com/about-gelest/capabilities/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5ce614a533d39df7b0b09da26eaa76f704c7386858970550729ebccf938d3faa.txt",
+    "sha256": "fb2082d2cfda5a6d045e58b878eca46e87e28a286ed89b94d074514709272275",
+    "attempts": [
+      {
+        "route": "https://www.gelest.com/about-gelest/capabilities/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gelest.com/about-gelest/capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gelest.com/about-gelest/company-overview/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f26cb44d6e11a1286ffe1b18ef3f1a51f4e0b6c980f169d75606df838bf642f9.txt",
+    "sha256": "c3ec932409ea711db50cf71582797841024330629d7e03bf5df14a7f9492eaf2",
+    "attempts": [
+      {
+        "route": "https://www.gelest.com/about-gelest/company-overview/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gelest.com/about-gelest/company-overview/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gerresheimer.com/en",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/408ce78036a73c1b344a0dbe01f42af4e2c3c03424f561fc0e0061166b428da3.txt",
+    "sha256": "9e0aa9348eaacd20b5ba76abe4faf126d8179fe2c0b4467e0190f56e937c6337",
+    "attempts": [
+      {
+        "route": "https://www.gerresheimer.com/en",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gerresheimer.com/en",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gerresheimer.com/en/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/cd445985fdf3b286ad8fd73bb3f77b31b5e71d70b007255d96f6bcebb7576847.txt",
+    "sha256": "d48f222ae3a4de10461e9d0260c5a6203a49393c4d16002054cf24ff564d4387",
+    "attempts": [
+      {
+        "route": "https://www.gerresheimer.com/en/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gerresheimer.com/en/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.gerresheimer.com/en/customer/company/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/3495b5e83f5b1304b207545a13c81be95404c19ad67e7862f993e54a388027c8.txt",
+    "sha256": "170e28c4daeb750c95502fb0d4001885625c82f96c1edbb6db18f075336f41e1",
+    "attempts": [
+      {
+        "route": "https://www.gerresheimer.com/en/customer/company/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gerresheimer.com/en/customer/company/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.grahamengineering.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/23764b3e636f2047b7fd9df5771bb2bcf9e24f615cee1e33e15484db1c992b2b.txt",
+    "sha256": "1199912eb974a78f3ee08a66f97eab9769ae1388a297956603d2d3266d65ead8",
+    "attempts": [
+      {
+        "route": "https://www.grahamengineering.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.grahamengineering.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.grahamengineering.com/about/approach/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1cab457273e1a5e6b51a40dab837ef1bd7a2ba2e73ceae3527bb3257b8d6e789.txt",
+    "sha256": "855e2aca643f939f307877f607f52aafab4dab6e9a78c36b178b12c347b0e9eb",
+    "attempts": [
+      {
+        "route": "https://www.grahamengineering.com/about/approach/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.grahamengineering.com/about/approach/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.grangerplastics.com/about-granger-plastics-company",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/760290a84239b8c7e1a3ef1856d27ea38a32f19e9c66da9a384ac0652e520fa6.txt",
+    "sha256": "af005963bce5a986b54b0aa470f75b13cbfbb58fa8a941d0349d46c197fd6440",
+    "attempts": [
+      {
+        "route": "https://www.grangerplastics.com/about-granger-plastics-company",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.grangerplastics.com/pages/about-granger-plastics-company/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.hgilab.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b09fed716dfd37c80ea0545d1e916c32331be814f4123bacfc8db8324a023f26.txt",
+    "sha256": "341b1d4351ea5ed1c64035a07e155a128cbfd81a58d6cb7f7f24350cc70fdd99",
+    "attempts": [
+      {
+        "route": "https://www.hgilab.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.hgilab.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.ineos.com/no/Industri/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/723fc732b2f2d741e95e321f0e95384eb97b378869ed75ce6c154bbbfebd80d2.txt",
+    "sha256": "27451511e13ec8fe0b2082a4a61553bb34899ef8e6d4d6d99573c21243c45e8d",
+    "attempts": [
+      {
+        "route": "https://www.ineos.com/no/Industri/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ineos.com/no/industri/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.ineos.com/no/Industri/Produkter/Kjemikalier/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/44947fe13d3ee2a50bc8d544011599fa05f076b2ab61fcc1ff887a8b263fee13.txt",
+    "sha256": "3c4f92fede6e6e48b11bc5ed91db339324275483ec51801c291766fbf8a3422a",
+    "attempts": [
+      {
+        "route": "https://www.ineos.com/no/Industri/Produkter/Kjemikalier/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ineos.com/no/industri/produkter/kjemikalier/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.innopak.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1cc07c85314fdfd198a681ff06382c9e26e36a8e93d636e83c3db155f25789e3.txt",
+    "sha256": "0cdf615bc0a93936c09cb915b03d1cbad09e7d2c1c467f07557031a41bdda3a8",
+    "attempts": [
+      {
+        "route": "https://www.innopak.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.innopak.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:53Z"
+  },
+  {
+    "url": "https://www.innopak.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/72f5ab6d2ca126f54ded210bf935cd2dd0000ed99a095b50f8177453ee97f0fc.txt",
+    "sha256": "2df62aa29ac2a0bc6269d582fe89e51f4b0d020303ec52a9d9e4267cfff12dfb",
+    "attempts": [
+      {
+        "route": "https://www.innopak.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.innopak.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.innopak.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/944f73a06f6cf61521f60901ec068d38bbb1860dd73bd96a7c80af37abe07f35.txt",
+    "sha256": "b3233fdc8087e6c669f5090a8dfbb43aff603e5446eaf864878a6b3c8588f8fc",
+    "attempts": [
+      {
+        "route": "https://www.innopak.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.innopak.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.inoex.com/company/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/b8fb5d8cc08701d7db4ada23ca881cb701ef73a45502782d5dc20871097e34a4.txt",
+    "sha256": "cac529507c2c47cae8525d8c70cf0e31945f6d39b02ef78805e5a07464203db4",
+    "attempts": [
+      {
+        "route": "https://www.inoex.com/company/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.inoex.com/company/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.inoex.com/company/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/50e3e86eff6db9c03785ff113db7e36163a87d6996ef1f3b8205033f594bc7f2.txt",
+    "sha256": "0770c1535a038e296417f4a8ee42b6212b1201d81fea3fbe6b45158a0efcac40",
+    "attempts": [
+      {
+        "route": "https://www.inoex.com/company/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.inoex.com/company/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.inoex.com/company/about-us/page",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e8c26bfed24449f3f0964bbf65abb68bc10bf7e01dee978dd65244b3183789d3.txt",
+    "sha256": "f5b935b42b975da2b919015d43144c0d9d605b5323b40b2f258c5898d8988f99",
+    "attempts": [
+      {
+        "route": "https://www.inoex.com/company/about-us/page",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.inoex.com/company/about-us/page",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.inouemfg.com/en/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/63c495a23cc5aca9168134c51131066498a279db388f193837c6009d283c3fb6.txt",
+    "sha256": "33857e29db6ec3564e3f3ac43810673bb9134044417f6ec5510f77efd7950ce7",
+    "attempts": [
+      {
+        "route": "https://www.inouemfg.com/en/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.inouemfg.com/en/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:54Z"
+  },
+  {
+    "url": "https://www.inouemfg.com/en/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/88bec1ca65175cea6e3744e60531e3567eee0bc6aa3b9483aa1f5abaaa8f4b55.txt",
+    "sha256": "0b410da855d2cf0b9344b04b2ff732fa1eb733fce587d11c1f03057612714578",
+    "attempts": [
+      {
+        "route": "https://www.inouemfg.com/en/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.inouemfg.com/en/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.interstatebldg.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2d9b98db5a1215d9b97614afdb5a550d05a528a710c747e093a997e2c2cf5dcc.txt",
+    "sha256": "170c688f5047b5bd773348db2b429234d42b1bad534d1db647432c7db595dbc7",
+    "attempts": [
+      {
+        "route": "https://www.interstatebldg.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.interstatebldg.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.interstatebldg.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/15f979545bd0c66e6ae9f4fc9af6e4d0f422d9f715d8cea5a413c37c04b8b0b3.txt",
+    "sha256": "170c688f5047b5bd773348db2b429234d42b1bad534d1db647432c7db595dbc7",
+    "attempts": [
+      {
+        "route": "https://www.interstatebldg.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.interstatebldg.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.intraplas-packaging.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0ab8ced4dbf5f392b3b09f6179576ecf2f611e0ba91b5d793d201b084170029c.txt",
+    "sha256": "9e742c3fa3d1920f7b10610f6bd4841a5e3a6d51242b769e7afd779b4bd1c122",
+    "attempts": [
+      {
+        "route": "https://www.intraplas-packaging.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.intraplas-packaging.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.intraplas-packaging.com/dairy-packaging-materials/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/4e6457b393e39ebef4d2789e47ec761b589f0a5dc3a8e9725277fb53dd6f2a3f.txt",
+    "sha256": "b96422be219f255a04a8baf368738238bcd677b3f2775931b0d5e4f14c6acb01",
+    "attempts": [
+      {
+        "route": "https://www.intraplas-packaging.com/dairy-packaging-materials/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.intraplas-packaging.com/dairy-packaging-materials/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.jkfoamfab.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/6599a90b6837ca022bd03cf12367e215cff2feaffa122dd3a8b477b2632f54e0.txt",
+    "sha256": "1498b4a9fc363872b70c36deda7494ff40bee8efe9a67ea05528f525f3cc68aa",
+    "attempts": [
+      {
+        "route": "https://www.jkfoamfab.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.jkfoamfab.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.jkfoamfab.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/5e9a3bdd91f81dd57e2364eb5bcf837c5a094d42f96e6c399793a77a3f12d305.txt",
+    "sha256": "b531556c3853473c92883d7b5f0e1fa6735ed7252d6872298411c076b0392800",
+    "attempts": [
+      {
+        "route": "https://www.jkfoamfab.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.jkfoamfab.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.kpfilms.com/en/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8d65b1dbdd6b11bb3725cdc868f1d9862251c7b84c413bd8d98e577d9c403a7c.txt",
+    "sha256": "b90ad5574c361c56c3b4b204a366db68f204f7bec87bf995d93679b53a99c2fa",
+    "attempts": [
+      {
+        "route": "https://www.kpfilms.com/en/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.kpfilms.com/en/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.kpfilms.com/en/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/03237746cafce8c6e1f818f661032a5175c77786d4521675127d083bd770440b.txt",
+    "sha256": "7e3fd31b3029de4bc716db3b7ff8aede528b17c80724a2f150beca7f08680429",
+    "attempts": [
+      {
+        "route": "https://www.kpfilms.com/en/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.kpfilms.com/en/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.kpfilms.com/en/about-us/Certifications.php",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1fefa4dab95e16aefcf276ef19acefeea40c5729bb3c10801cbd5a1b0bf29fc6.txt",
+    "sha256": "35ad1238124e0d0c67ae4b3f042f208414fffc30a7f80b73ff1584911dabffd2",
+    "attempts": [
+      {
+        "route": "https://www.kpfilms.com/en/about-us/Certifications.php",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.kpfilms.com/en/about-us/certifications",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.lear.com/contact-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/abd19e6822416c416973f864af6ab4c07c8660f786fae0b8cbbaeb902811ae32.txt",
+    "sha256": "73ced0be70ba42c373f7a842977b5351f88786a5222c7882f9964a4749fb589a",
+    "attempts": [
+      {
+        "route": "https://www.lear.com/contact-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.lear.com/contact-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.lear.com/technology/seating/core-capabilities",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a7739d5d27df20fe59864c55f6f94dc4159841ae24a9e4cdd72eeb86728d7d90.txt",
+    "sha256": "a0a009f7b8c211f8c8c5db8d8a6f0dd3a49c230b156d563c994bed5f18aef194",
+    "attempts": [
+      {
+        "route": "https://www.lear.com/technology/seating/core-capabilities",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.lear.com/technology/seating/core-capabilities",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:55Z"
+  },
+  {
+    "url": "https://www.llplastic.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2087b6781acc0c421b817720e7ffd156913d1619ae0e94c9c15974d26882128a.txt",
+    "sha256": "b3881f44fc5fd944dd5cc5005adf506880ad7b41d50c7980c1098eda65bb16d3",
+    "attempts": [
+      {
+        "route": "https://www.llplastic.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.llplastic.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.matrixadhesives.com/blogs/news/matrix-adhesives-group-acquires-ips-adhesives-to-expand-its-technology-branded-portfolio-and-market-reach",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e091fda7a0da008184c13e5c9b4973b2c94ba8d9024278fe120e94c6219cee4b.txt",
+    "sha256": "1d13e8f2af7238d512a519a149946ebe605fd1ba28196d1512985a3fea94a365",
+    "attempts": [
+      {
+        "route": "https://www.matrixadhesives.com/blogs/news/matrix-adhesives-group-acquires-ips-adhesives-to-expand-its-technology-branded-portfolio-and-market-reach",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.matrixadhesives.com/blogs/news/matrix-adhesives-group-acquires-ips-adhesives-to-expand-its-technology-branded-portfolio-and-market-reach",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.matrixadhesives.com/collections/industrial-chemicals",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9af1e566988b8b53b129ba4234a6f2ced86a6bf8a05058b2d2aae341383e037a.txt",
+    "sha256": "90f688da26c951e1a7bcc4b39baf5b0c8dd1d0fa28af8bbffa8cba7a0b751133",
+    "attempts": [
+      {
+        "route": "https://www.matrixadhesives.com/collections/industrial-chemicals",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.matrixadhesives.com/collections/industrial-chemicals",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.midwestelastomers.com/ISO-Certification",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7b2e0817a94d0f91a55ebe021dd0f209f104d5e9b602ffb70b7d5bce254d3820.txt",
+    "sha256": "f9cf13c153b73947ebd56a26c74a25ac7587811eef76239b9ad4fc52786d7af3",
+    "attempts": [
+      {
+        "route": "https://www.midwestelastomers.com/ISO-Certification",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.midwestelastomers.com/ISO-Certification",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.midwestelastomers.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/819368819282c27e0421ca7a7ea444b8988c797a80f3622aeffa662b24e8c874.txt",
+    "sha256": "e596d85c1fcd7cfe095e842dcf0059ae2f64c4710a19505aaebf01bd2febc513",
+    "attempts": [
+      {
+        "route": "https://www.midwestelastomers.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.midwestelastomers.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.millerplastics.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/22aa14daf67b80be02b87bcb4a84a2c9f89b07b8a51a0d7a36bee4a63ee436cc.txt",
+    "sha256": "3ca6ea863ba9ac40655231bc6fbbb63def8a0ca7e2020c27a74d5eae403258c2",
+    "attempts": [
+      {
+        "route": "https://www.millerplastics.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.millerplastics.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.millerplastics.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0400a5fc453c611381011d4db85cb316a177e785ca8a81e4ac9de16a984a067d.txt",
+    "sha256": "753c287583af3107dfe3e081388d67d8465c27303534e28519486c70ab127f8e",
+    "attempts": [
+      {
+        "route": "https://www.millerplastics.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.millerplastics.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:56Z"
+  },
+  {
+    "url": "https://www.molten.co.jp/corporate/jp/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/deb12bfbb7dce6005f0dd21f8d5e63a63328ba7095ae58c4fbddafe3df85781e.txt",
+    "sha256": "4655fa72bb05706cdca3416b823ade91f767a8708bd939c7eeb812d9affb5296",
+    "attempts": [
+      {
+        "route": "https://www.molten.co.jp/corporate/jp/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.molten.co.jp/corporate/jp/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.molten.co.jp/corporate/jp/about/brand/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2997ae1df3510f3ac21eff01935d497ee5d70d9aa4468be41aec2e94a809b877.txt",
+    "sha256": "7e293f4ce119e5ad863147531a50477e35d3541c02ea50c9d2b69bdcaaddd56c",
+    "attempts": [
+      {
+        "route": "https://www.molten.co.jp/corporate/jp/about/brand/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.molten.co.jp/corporate/jp/about/brand/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.moretto.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c6fbb01b956d1719f52bb66a1e01dc8cf1017dcc550ec3a8268fbf68c61a77be.txt",
+    "sha256": "2ac7af578a66f28a8025a34f5581f4c7fc9a91a078bbaa02c0b512f75004819f",
+    "attempts": [
+      {
+        "route": "https://www.moretto.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.moretto.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.moretto.com/about-us",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/068b424bd0f70edb86b3ce31a01180b7458310ac093adcf58fba5cfa5b23e161.txt",
+    "sha256": "c2377aa9942125a3add62b50c86a3a1e007a25efc8f06bf0d032291bed40ee44",
+    "attempts": [
+      {
+        "route": "https://www.moretto.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.moretto.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.moretto.com/about-us/certifications",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9ef17f3ac3d94bf5f2c82d5a0ae2114221691db14c7ad1aecfdb14fd92dd1741.txt",
+    "sha256": "9acce84ad868e8f6201fb67cebc53a88484d483eba84730427720f63d12c5e86",
+    "attempts": [
+      {
+        "route": "https://www.moretto.com/about-us/certifications",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.moretto.com/about-us/certifications",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.omya.com/en/omya-specialty-materials/industries",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/972e95be370e7e45eef40da42160a51c294864939b5408cbc93f8217b8c9ba2b.txt",
+    "sha256": "5e057b3929e8c12e8a62dca9132a36d0d51c07cac23ce5be554acc6536591d1e",
+    "attempts": [
+      {
+        "route": "https://www.omya.com/en/omya-specialty-materials/industries",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.omya.com/en/omya-specialty-materials/industries",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.omya.com/en/omya-specialty-materials/industries/adhesives-and-sealants",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/aa4c44f1e6576ec3964a716b626e35dfb860b77b8ce67e5715bbf8793461dadb.txt",
+    "sha256": "2000d1ac4d83040cee68ba42f133a2889307d2b1a5c486bbee9775ecd722a9a3",
+    "attempts": [
+      {
+        "route": "https://www.omya.com/en/omya-specialty-materials/industries/adhesives-and-sealants",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.omya.com/en/omya-specialty-materials/industries/adhesives-and-sealants",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.omya.com/en/omya-specialty-materials/products/polymer-additives/innovations/omya-smartfill",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/3c50068eb826c02a35b7f28dab02f7ba14795ec9a7f93ea38f5020d43116b590.txt",
+    "sha256": "44152b6f443da2fb05d022da3ec80ce348b0fb9c26bce6e9d2f2d0191d5c2c87",
+    "attempts": [
+      {
+        "route": "https://www.omya.com/en/omya-specialty-materials/products/polymer-additives/innovations/omya-smartfill",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.omya.com/en/omya-specialty-materials/products/polymer-additives/innovations/omya-smartfill",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.peter-greven.de/en/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/607fbe3fb83e7a891bc0e2e61c4bc024d5fe38f7cb9496eef8278b47c94ce80a.txt",
+    "sha256": "8108e071034ec65bea0d2a77eceb9749cb2c536db1bb937c0338e2b44f9fcc5a",
+    "attempts": [
+      {
+        "route": "https://www.peter-greven.de/en/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.peter-greven.de/en/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.plastinuva.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/dab315be794cd6620138c98659ea5bbf327d2de2f9df8b10d8d5ab95378fc515.txt",
+    "sha256": "75c2e572908dcdc5dbfca0320e44554b9ebd6768c36a3d6418f676b0c9fe47bc",
+    "attempts": [
+      {
+        "route": "https://www.plastinuva.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.plastinuva.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.plastinuva.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e43da5f8e78a351693675df7baa867c0f99ebfd211a721b8a7c9a59c99d6d237.txt",
+    "sha256": "be08f407efede18e4958a507e53af3674e4204350aa461edbf8fbbc711fcfbb7",
+    "attempts": [
+      {
+        "route": "https://www.plastinuva.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.plastinuva.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.porterie.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7e50adcb5a4ea22b614cbec342fa440647844ea33b38cf8d427217287b1169bd.txt",
+    "sha256": "aff5825aa12025a44760d2ac2b093e170eb8075c940136ca9e2700d19b36ade7",
+    "attempts": [
+      {
+        "route": "https://www.porterie.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.porterie.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.porterie.com/plastic-industries/material-handling/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e632f9288687889dccc6235a19ef4ca33d85d2542736f69c1cbb9c30b649bfbe.txt",
+    "sha256": "9e26b2ca5dd6f110ade0b2bb1e86ab1ea13ade02467d5aa9925d7c35a661fdae",
+    "attempts": [
+      {
+        "route": "https://www.porterie.com/plastic-industries/material-handling/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.porterie.com/plastic-industries/material-handling/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.porterie.com/plastic-industries/material-handling/ ",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.porterie.com/plastic-industries/material-handling/ ",
+        "status": "000",
+        "exit": 3,
+        "effective_url": "https://www.porterie.com/plastic-industries/material-handling/ ",
+        "error": "curl: (3) URL rejected: Malformed input to a URL function",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.porterie.com/plastic-industries/material-handling/ ",
+        "status": "000",
+        "exit": 3,
+        "effective_url": "https://r.jina.ai/https://www.porterie.com/plastic-industries/material-handling/ ",
+        "error": "curl: (3) URL rejected: Malformed input to a URL function",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:57Z"
+  },
+  {
+    "url": "https://www.proampac.com/en-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/67c181986f37547bd75599898e4f9cc7fcb445ae5da6a5141fd00006912985fd.txt",
+    "sha256": "e2d7f53af10f308d645f348b5344cba87d7325809cc339a69101cbc8e73d3a4e",
+    "attempts": [
+      {
+        "route": "https://www.proampac.com/en-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.proampac.com/en-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.proampac.com/en-us/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8ebaccae3feedd77a100a0d88d4d2df0a6917b08f74952043eda3b03c9007ba0.txt",
+    "sha256": "0f344292841e243f81d1b3c94a677bb4311ffb5a7489005971fff90b52cddc71",
+    "attempts": [
+      {
+        "route": "https://www.proampac.com/en-us/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.proampac.com/en-us/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.proampac.com/en-us/agriculture-market/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/2e6c16bbbff03b9ed527a34fd8855c935288406fd6f536a45da32a5de93b6b0c.txt",
+    "sha256": "7e34392f9e2d56efbc5d82b4c3e9c3f0690ddff0a4aad46a90db38950a480b33",
+    "attempts": [
+      {
+        "route": "https://www.proampac.com/en-us/agriculture-market/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.proampac.com/en-us/agriculture-market/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.rowainc.net/en/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/268774f2fab7dedf11664db3570b90582a23582f85c7c33aae7aedfdc5a36c05.txt",
+    "sha256": "ba5ea7058e0c64af4255856263baa623c5a1e016d6157576cec0083fa3380c52",
+    "attempts": [
+      {
+        "route": "https://www.rowainc.net/en/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.rowainc.net/en/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.rowainc.net/en/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/d5ecadfd41bc2fe69aef4d9069acc6a119fb95c5f02398fc22d0d1bbbdc8ba75.txt",
+    "sha256": "e7ecbbb1f731efa6ba618d4cab81a11809e58deb4208591cc8d085c606ca9307",
+    "attempts": [
+      {
+        "route": "https://www.rowainc.net/en/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.rowainc.net/en/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.ruralpath.com/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9d426247022570c48dcd56a006220e079d1cab9d111c89888c6c48843ba5c9ae.txt",
+    "sha256": "8d5b70544173c2bfe9f536af03f493cf3aaba724c16ec344143e03ccc531f941",
+    "attempts": [
+      {
+        "route": "https://www.ruralpath.com/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ruralpath.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.ruralpath.com/about-1",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7ac68704b494d62dda8e6ad636caba999255b5af23168b4726f882f932bab73b.txt",
+    "sha256": "8d5b70544173c2bfe9f536af03f493cf3aaba724c16ec344143e03ccc531f941",
+    "attempts": [
+      {
+        "route": "https://www.ruralpath.com/about-1",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.ruralpath.com/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.sbhpp.com/about-sbhpp/group-profile/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/95c739d508a4f4f3b963ba2e12b4ed0f43916e1462249368ef4a0d745ce06d48.txt",
+    "sha256": "492b1ed2bb47bafadfbb10f6b0189bb4c56ebb311a62b21ddb4482fdeafc57e7",
+    "attempts": [
+      {
+        "route": "https://www.sbhpp.com/about-sbhpp/group-profile/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.sbhpp.com/about-sbhpp/group-profile/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.sbhpp.com/about-sbhpp/history/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1fbb7c488672766f557a6a78797ab7461d3f5c423360ef2b2c067cc8de15e83d.txt",
+    "sha256": "c6d7b06a1c62b46df52dd261486e46624e51f30f2cfd3d336c8d5e70dc4d4fe9",
+    "attempts": [
+      {
+        "route": "https://www.sbhpp.com/about-sbhpp/history/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.sbhpp.com/about-sbhpp/history/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.scrantonproducts.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1180d49daee650436c70ad816222f3ec307125a5d22cfc699bdd51f6fa19ff39.txt",
+    "sha256": "0f499095b49c2dc8cbd9a4fee8d2189bb942478c38db5071266a00eb48a2304f",
+    "attempts": [
+      {
+        "route": "https://www.scrantonproducts.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.scrantonproducts.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.scrantonproducts.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9b73098b6810a457103a59bb43fbb6c69ffcf60b4ce3ba4dd58e823a36ffe16a.txt",
+    "sha256": "1cb2bc5bffd56c0b7c45b7fa5d44a611eab124f70c21eb64439f19b7bf53b3ad",
+    "attempts": [
+      {
+        "route": "https://www.scrantonproducts.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.scrantonproducts.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.scrantonproducts.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/c0090cbf0901c7b76942be9715c5d64e33927ce0c4bc37510ecd81010b673c31.txt",
+    "sha256": "9273dfc9ad8be0111e4e4f46f385bb345e0dcc2fbbc286e22085ec1bd71eae15",
+    "attempts": [
+      {
+        "route": "https://www.scrantonproducts.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.scrantonproducts.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.spartech.com/Capabilities",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/0ac732a30e58d541589e7e8828981d9cc9883eee83711c72f693cddb2b016005.txt",
+    "sha256": "db7a076cf206e90654322c01859ad3b777263b7d9e405a5984af99d08671a871",
+    "attempts": [
+      {
+        "route": "https://www.spartech.com/Capabilities",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.spartech.com/Capabilities",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:58Z"
+  },
+  {
+    "url": "https://www.spartech.com/market-segments/industrial",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f36f7e911d0d2fd2fec1d44734f139b06059c5eb685e9150ec1d8976de51463e.txt",
+    "sha256": "79e07d8e342bc92dbce7948fa2c6a5a3f7e17d81f9c1d4dfbb1151d3810ae748",
+    "attempts": [
+      {
+        "route": "https://www.spartech.com/market-segments/industrial",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.spartech.com/market-segments/industrial",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.sudarshan.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/087528b1a5527a6670b2bb01a3d7ee29ef911c9fe1a3fa5fb593696b5c497366.txt",
+    "sha256": "0b7c509c6370852b8ad2d9b6a37f559e21ead9f207f9e615a09d84667c5d9daf",
+    "attempts": [
+      {
+        "route": "https://www.sudarshan.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.sudarshan.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.sudarshan.com/applications/industrial-coatings/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/38a451d3a2c95532fdb88a02867b23f17ab709eba79e06e2efcc1fcd3101911d.txt",
+    "sha256": "83fcefb12075676c06cceef397bda5461ed79426ece9f8f14ce4d2960d0274e4",
+    "attempts": [
+      {
+        "route": "https://www.sudarshan.com/applications/industrial-coatings/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.sudarshan.com/applications/industrial-coatings/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.sudarshan.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f266b9678526cc4b599472c30fbdf56cc58db2a61aeeefa145b22cc048088c31.txt",
+    "sha256": "290eb842ef6603cdcae00e24e07ede24b5cb31b68ac50c07e99af66f39c5f0ac",
+    "attempts": [
+      {
+        "route": "https://www.sudarshan.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.sudarshan.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:00Z"
+  },
+  {
+    "url": "https://www.tiniusolsen.com/by-industry-list/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1d337d6747a20da00ccb63c158af911790ddaedf33f643045d74407b7de26ed3.txt",
+    "sha256": "f2074c3e1839a4d8f84dcddb7ef0a6974526b42f398762e424af9e3214a23011",
+    "attempts": [
+      {
+        "route": "https://www.tiniusolsen.com/by-industry-list/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.tiniusolsen.com/by-industry-list/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.tiniusolsen.com/by-materials-list/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/ed0f7ad841fd713827ce5a139079ec4f688376fb523f697186d33284a6e75d57.txt",
+    "sha256": "a308b3f5f71afa3795e516025da5fb4c78496ae9928b1193457189cda6ac798d",
+    "attempts": [
+      {
+        "route": "https://www.tiniusolsen.com/by-materials-list/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.tiniusolsen.com/by-materials-list/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.tspinc.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/90264e78158f620196b5484aef75206b82cd683d253b22ee59a563b14884677d.txt",
+    "sha256": "3b14375c93563c800fb2074ae215e2e04a0bc61afa14b96eb4ce3ce0135144a7",
+    "attempts": [
+      {
+        "route": "https://www.tspinc.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.tspinc.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.tspinc.com/blog/committed-to-quality-tsp-inc-successfully-renews-iso-90012015-certification/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/df120f50357d8749dcc16c8711d1d6addddfdbeb2dd461685be26b45374afbee.txt",
+    "sha256": "9b4a7ca31106a7e1354053a3a8bf976d75742e2585ca502a6d8052f0a050ce2b",
+    "attempts": [
+      {
+        "route": "https://www.tspinc.com/blog/committed-to-quality-tsp-inc-successfully-renews-iso-90012015-certification/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.tspinc.com/blog/committed-to-quality-tsp-inc-successfully-renews-iso-90012015-certification/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.tsplastics.com/contact/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/f3cad03353a9328bfdfe83e7a9f2329919fa58973c1d589c8e63f0f4d63bca3a.txt",
+    "sha256": "946a8afce9f7b0ae620d1e338421356e9a97b8df595ee3295bdfb1f0206a38cf",
+    "attempts": [
+      {
+        "route": "https://www.tsplastics.com/contact/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.tsplastics.com/contact/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.tsplastics.com/industries-served/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/3fc57beac50022531708ce242d9a1b65ab506245b47f72b95d561aa5c3f94546.txt",
+    "sha256": "61fb33d37a88e71036bab7f0373ebcebc3e0ce45364ebe3fed068f12985e927b",
+    "attempts": [
+      {
+        "route": "https://www.tsplastics.com/industries-served/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.tsplastics.com/industries-served/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.valcomelton.com/en",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/880851260cf9e1f96ea819d6dbe9532304c27ff08c82aca6b0aba39c4dd06122.txt",
+    "sha256": "5f27e77196ef05e1f24c1a29769fce8cfea5e9c159b86b6ffe12914c977a7152",
+    "attempts": [
+      {
+        "route": "https://www.valcomelton.com/en",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.valcomelton.com/en",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.valcomelton.com/en/about",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/bd5a9c6b5bdc92d84ae15eda12d667c1d46cee52c104a2deed62ec651fa82369.txt",
+    "sha256": "64a699738996962d18ff1bd0379217017e30d92c49f57e20173039e398526e74",
+    "attempts": [
+      {
+        "route": "https://www.valcomelton.com/en/about",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.valcomelton.com/en/about",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.valcomelton.com/en/industries/contact-service",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8b940f4f10950a83832389f538c67f65de10b9d2a5dc40d4780b209d5c90cd9e.txt",
+    "sha256": "b3c2730684f3b62c907f76e3e9ec5b25fe08ef32e5c78bd897b00a8f27278127",
+    "attempts": [
+      {
+        "route": "https://www.valcomelton.com/en/industries/contact-service",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.valcomelton.com/en/industries/contact-service",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.venangomachine.com/about/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/64aa56731abe6693148755433a1d610430364ab40c1e05a522d9ba1469aeeb69.txt",
+    "sha256": "0d1613d0e0100dc5886f232da1b8c04d0021f37f39fc3c865773f67f6e5aca42",
+    "attempts": [
+      {
+        "route": "https://www.venangomachine.com/about/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.venangomachine.com/about/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:20:59Z"
+  },
+  {
+    "url": "https://www.venangomachine.com/capabilities",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/9a4ac28a2bbc54465ace189ecfde4d74793efa7a2238079ac1f5fb72e0b0996c.txt",
+    "sha256": "3177d16fbc2bbfd678dddce92550c84ceaa1071c7b24aaa3042351c46fcb9a77",
+    "attempts": [
+      {
+        "route": "https://www.venangomachine.com/capabilities",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.venangomachine.com/capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:00Z"
+  },
+  {
+    "url": "https://www.venangomachine.com/capabilities/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7d24a57851a1954cb9012a40517662d65c91a89a7a351ae5211c9084438a2be7.txt",
+    "sha256": "3177d16fbc2bbfd678dddce92550c84ceaa1071c7b24aaa3042351c46fcb9a77",
+    "attempts": [
+      {
+        "route": "https://www.venangomachine.com/capabilities/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.venangomachine.com/capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:00Z"
+  },
+  {
+    "url": "https://www.vinylkraftwindows.com/contact",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/1a7f7af1e7b24fbe40579ddbd4a613cf8f0746576606a834f0934fa77041cb8b.txt",
+    "sha256": "66fc8306f576faef6774dc6227f0f8d4e99ccc507e8080bca4b561e7c2f0e07a",
+    "attempts": [
+      {
+        "route": "https://www.vinylkraftwindows.com/contact",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.vinylkraftwindows.com/contact",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:00Z"
+  },
+  {
+    "url": "https://www.westlakeplastics.com/about-us/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e38ba1fef7f9810185124df9718cc8d06dbe947ebfb66eabf9c2cd283dec226f.txt",
+    "sha256": "4100758a275ce63f1d9f796e75b474a1f3048153126b4baef6045be3c825c78a",
+    "attempts": [
+      {
+        "route": "https://www.westlakeplastics.com/about-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.westlakeplastics.com/about-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:02Z"
+  },
+  {
+    "url": "https://www.westlakeplastics.com/capabilities/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/a99c5d07d3f654fcaf38f044b8e17592d2e797319fe6235cb56b5a5137f3afb7.txt",
+    "sha256": "455d84225c8d35ecda84d0d1ec74e2e238e0eee1fe1ea8713e47df221014d573",
+    "attempts": [
+      {
+        "route": "https://www.westlakeplastics.com/capabilities/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.westlakeplastics.com/capabilities/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:02Z"
+  },
+  {
+    "url": "https://www.westpharma.com/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/669970bd39c111195c162b17f38c7c8d00f364af85f837ad66c887034023b59c.txt",
+    "sha256": "437372df729b17baf1f20e445f9e8561576069108d523ea1a6ebf12638d21abb",
+    "attempts": [
+      {
+        "route": "https://www.westpharma.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.westpharma.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.westpharma.com/about-west",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/7027260c0dfbc6318412a4f834c01e2b81e48d9e43c114020507af49d88a3147.txt",
+    "sha256": "6655ad795563d2623d42eefacef109d228dab8afc48148eadb08c7181b7d3523",
+    "attempts": [
+      {
+        "route": "https://www.westpharma.com/about-west",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.westpharma.com/about-west",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.westpharma.com/about-west/company-background",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/931d6d8a325e7760b2875dd3bc37036538fe3e6afb43e692b4d9d5f13241713d.txt",
+    "sha256": "7c65314b9eae56a989b95fabd6dcf38aa0c010fab1e9fd67d68f873c488b4c20",
+    "attempts": [
+      {
+        "route": "https://www.westpharma.com/about-west/company-background",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.westpharma.com/about-west/company-background",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.xylem.com:443/en-029/about-xylem/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/e54ba2e856cb3c0a0de7d71f05b78e8002c0062a401c332477f7aac11e196499.txt",
+    "sha256": "bcaaaeb43c1af0e0e768e0f2fa71efa0f6d1ddd3231f57af19d9d05841c331e5",
+    "attempts": [
+      {
+        "route": "https://www.xylem.com:443/en-029/about-xylem/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.xylem.com:443/en-029/about-xylem/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.xylem.com:443/en-029/brands/flygt/flygt-engineering--expertise/imported-engineering--expertise/research-and-development-treatment/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/8cc60375fe20efadcc835de851518d7010c7e0014809747f1d6fd4cc292beaee.txt",
+    "sha256": "5bc1e38b732614a68aadbf2d51d2ccf5b615ef8121eddc57edbfe7ef632eabb8",
+    "attempts": [
+      {
+        "route": "https://www.xylem.com:443/en-029/brands/flygt/flygt-engineering--expertise/imported-engineering--expertise/research-and-development-treatment/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.xylem.com:443/en-029/brands/flygt/flygt-engineering--expertise/imported-engineering--expertise/research-and-development-treatment/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  },
+  {
+    "url": "https://www.xylem.com:443/en-029/markets/general-industry/",
+    "status": "ok",
+    "page": "build/l11-repair4-cache/3700060e621e6994c77bf463dd937646144ce1159a032e250542bf904244eb14.txt",
+    "sha256": "6bd69cb73a04ee05d361d43997d91b7b362e13cd81e3a30169e55af06125004f",
+    "attempts": [
+      {
+        "route": "https://www.xylem.com:443/en-029/markets/general-industry/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.xylem.com:443/en-029/markets/general-industry/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:21:01Z"
+  }
+]

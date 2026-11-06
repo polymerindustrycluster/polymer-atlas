@@ -1,0 +1,17 @@
+{
+  "base": "419678b2e3e415194dad804af8daca649b163f3e",
+  "organizations": 30,
+  "changed_cells": {
+    "markets_served": 30,
+    "certifications": 3
+  },
+  "new_evidence_by_shard": {
+    "evidence_organizations_OH.csv": 20,
+    "evidence_organizations_PA.csv": 73
+  },
+  "new_evidence_rows": 93,
+  "existing_row_loss": 0,
+  "changed_unrelated_columns": 0,
+  "edited_existing_evidence": 0,
+  "replay_changed_bytes": false
+}
