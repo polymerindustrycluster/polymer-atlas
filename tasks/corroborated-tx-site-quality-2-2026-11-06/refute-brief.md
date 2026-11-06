@@ -1,0 +1,17 @@
+# Adversarial completion refute — L6 Texas quality continuation
+
+Try to REFUTE this immutable PR packet, effort deep. Read all11 source-only blind-input.csv records and independently assess government plus own plant sources BEFORE allocations/verdicts/evidence_packet. Save blind observations first. Then reconcile all11 accepted sites and27holds. No creates; full11 census replaces a20-create sample.
+
+Cohort is exactly38 tier-C Texas sites already merged from148(20) and177(18), excluding unmerged170/180 and withdrawn FXI/CDI. Proposed delta: 11C→B sites,22sitecells (tier/sources only),57append-onlyEVD188100–188156; 27unchangedholds,0creates. StrictTX326145→145/953. All11operating_status unknown retained, no current-operation assertion. Government10ITA+1OSHA source records re-observed under controller2026-11-01 admission, not fresh bulk. Own13quotes/11URLs fresh fetched, literal page words only. ORBIS release2026-06-04 uses live NAS Firecrawl rawHtml/maxAge0 after curl/Jina failed, no summary/snippet admitted; route metadata/hashes supplied. Cantex category and city/address are in the same pipe-extrusion section, other distribution/molding addresses excluded. Pretium Suite111 retained, own base address omits it. All own pages are operator-issued, no parent relation created to qualify a page.
+
+Named checks:
+python3 tasks/corroborated-tx-site-quality-2-2026-11-06/check.py
+python3 scripts/validate.py
+python3 scripts/check_row_loss.py --base origin/main (after main restoration209; before it the identical approved script is executed from bce296a history, recorded blob/result).
+Fresh raw: Firecrawl scrape ORBIS URL with formats=[rawHtml],maxAge=0, save rawHtml, then python3 tasks/corroborated-tx-site-quality-2-2026-11-06/refetch.py --orbis-html <saved-file>. This command refetches other10URLs and rejects any quote/hash change; do not silently skip ORBIS. All caches available under /tmp on shared host, uncommitted.
+
+Checks already pass full source census, raw13, all-current-main preservation, exact22-cell/57EVD boundary, byte-identical builder replay, all11rejected without13ownscope witnesses, identical-payload finalEVD wrong-shard and wrong-city semantic controls reject with every CSV hash unchanged. Three actual known operators (Rubbercraft/SSI/AmericanPolyFoam) and two wrong-city/order controls pass. No shared scripts modified.
+
+What could be wrong: same-city different plant, a companywide activity mistaken for city-specific manufacturing, generic manufacture insufficient in page context, wrong legal operator/group authorship, a conflicting own address hidden in another page, weak Bmust-have re-observation or unsupported code/scope inference, fresh-route/rawHTML mismatch, new evidence-ID collision in another shard, unintended replay modifications to main, or a held case accidentally promoted. Inspect all57 new evidence rows and random10changed rows as required. Government IDs/dates/fields independently checkable in banked packets; failed live routes are availability only. Do not treat inherited provisionalC as a current operating-status assertion.
+
+Controller confirms main deletion incident affects non-data supporting files only, restored byte-for-byte by209; this draft may proceed, but Ready is gated on209 landing and another main integration. Report any blocking issue separately from that known prerequisite. Codex and Grok independent approvals required; no worker merge or Done claim.
