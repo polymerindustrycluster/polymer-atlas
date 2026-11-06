@@ -1,0 +1,17 @@
+{
+  "approved_code_head": "ae05702",
+  "integrated_main": "80bb5140e0f1598d85fe30b28777def59c9b83c6",
+  "implementation_identical": true,
+  "owned_rows": {
+    "sites": {
+      "rows": 21,
+      "approved_values_identical": true,
+      "sha256": "0041f2a07e9c8984f5b0ed6ee62a0a0d842a32460639a4d110e5b053318ec140"
+    },
+    "evidence_sites": {
+      "rows": 147,
+      "approved_values_identical": true,
+      "sha256": "dff59d61d5238c1a8d40c92e7a6bd7647b1df7aa66a127683c7c2b65f40a0cbf"
+    }
+  }
+}

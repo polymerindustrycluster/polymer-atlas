@@ -1,0 +1,209 @@
+{
+  "LF-MI-00673": {
+    "query": {
+      "domain": "https://www.soprema.us/",
+      "name": "SOPREMA",
+      "street": "353 East Lyons",
+      "city": "Schoolcraft",
+      "state": "MI",
+      "zip": "49087"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001619",
+            "name": "SOPREMA Inc",
+            "city": "Wadsworth",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: soprema.us"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001619",
+            "name": "SOPREMA Inc",
+            "city": "Wadsworth",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "name key 'soprema' = legal_name 'SOPREMA Inc'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MI-00087": {
+    "query": {
+      "domain": "",
+      "name": "Cytiva",
+      "street": "1740 Whitehall Road",
+      "city": "Muskegon",
+      "state": "MI",
+      "zip": "49445"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004308",
+            "name": "Cytiva US LLC",
+            "city": "Marlborough",
+            "state": "MA",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_MA.csv",
+            "match": "name key 'cytiva' = trade_names 'Cytiva'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MI-00491": {
+    "query": {
+      "domain": "https://www.paramelt.com",
+      "name": "M Argueso & Co dba Paramelt",
+      "street": "2817 McCracken St",
+      "city": "Muskegon",
+      "state": "MI",
+      "zip": "49441"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002039",
+            "name": "M. Argueso & Co., Inc.",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: paramelt.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MI-01094": {
+    "query": {
+      "domain": "https://www.aptar.com",
+      "name": "Aptar Group",
+      "street": "2202 Ridgewood Drive",
+      "city": "Midland",
+      "state": "MI",
+      "zip": "48862"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002878",
+            "name": "AptarGroup, Inc.",
+            "city": "Crystal Lake",
+            "state": "IL",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_IL.csv",
+            "match": "domain exact: aptar.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+}

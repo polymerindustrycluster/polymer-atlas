@@ -1,0 +1,12 @@
+{
+  "approved_tip": "fcd54ab",
+  "main": "c2674712c0c9f8aeefac9179597b8a4c6e5eda5f",
+  "delta": {
+    "organizations_US.csv": 2,
+    "sites_TX.csv": 18,
+    "evidence_organizations_US.csv": 8,
+    "evidence_sites_TX.csv": 106
+  },
+  "all_main_rows_preserved": true,
+  "approved_data_field_identical": true
+}
