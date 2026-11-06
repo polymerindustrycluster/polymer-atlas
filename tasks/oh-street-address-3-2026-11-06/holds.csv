@@ -1,0 +1,63 @@
+site_id,verdict,street_address,evidence_id,reason
+SITE-000158,STILL_UNCERTAIN,2121 Euclid Avenue,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+SITE-000179,STILL_UNCERTAIN,101 Ascot Parkway,,notes address conflicts; dated adjudication needed
+SITE-000183,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000199,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000202,STILL_UNCERTAIN,689 Weber Drive,,notes address conflicts; dated adjudication needed
+SITE-000203,STILL_UNCERTAIN,300 First Street,,notes address conflicts; dated adjudication needed
+SITE-000204,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000212,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000213,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000216,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000217,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000218,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000220,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000221,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000222,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000227,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000241,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000245,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000250,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000271,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000272,STILL_UNCERTAIN,23940 Mercantile Rd.,,notes address conflicts; dated adjudication needed
+SITE-000276,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000281,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000285,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000286,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000312,STILL_UNCERTAIN,1801 W. 47th St,,notes address conflicts; dated adjudication needed
+SITE-000336,STILL_UNCERTAIN,860 Garden St.,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-000342,STILL_UNCERTAIN,70 Cuyahoga Falls Ind. Pkwy,,notes address conflicts; dated adjudication needed
+SITE-000343,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000362,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000383,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000418,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000421,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000426,STILL_UNCERTAIN,42 W. Buckeye Street,,notes address conflicts; dated adjudication needed
+SITE-000445,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000455,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000456,STILL_UNCERTAIN,3291 Center Road,,notes address conflicts; dated adjudication needed
+SITE-000466,STILL_UNCERTAIN,5156 Richmond Road,,notes address conflicts; dated adjudication needed
+SITE-000473,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000480,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000481,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000483,STILL_UNCERTAIN,2925 MFG Place,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+SITE-000487,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000488,STILL_UNCERTAIN,577 Oberlin Road,,notes address conflicts; dated adjudication needed
+SITE-000522,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000525,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000528,STILL_UNCERTAIN,30250 Carter St,,notes address conflicts; dated adjudication needed
+SITE-000533,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000535,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000545,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000557,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000574,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000587,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000588,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000591,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000601,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000603,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000605,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000623,STILL_UNCERTAIN,5857 N. Apple Creek Road,,notes address conflicts; dated adjudication needed
+SITE-000631,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000646,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000647,STILL_UNCERTAIN,125 Blaze Industrial Parkway,,notes address conflicts; dated adjudication needed

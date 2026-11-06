@@ -1,0 +1,12 @@
+site_id,state,site_name,establishment_id,naics_primary,existing_ring,explicit_ring,schema_basis,evidence_id
+SITE-016001,FL,The Sherwin-Williams Company - Orlando,204465,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206000
+SITE-016004,FL,MAPEI Corporation - Wildwood,1558286,325520,2,2,SCHEMA2.2 Ring2 exact code 325520,EVD-206001
+SITE-016010,FL,Cork Industries Inc. - Jacksonville,1248403,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206002
+SITE-016011,FL,"LATICRETE International, Inc. - West Palm Beach",1454532,325520,2,2,SCHEMA2.2 Ring2 exact code 325520,EVD-206003
+SITE-016104,GA,The Sherwin-Williams Company - Lawrenceville,208892,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206004
+SITE-016106,GA,Penn Color Inc. - Ringgold,1427307,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206005
+SITE-016108,GA,MAPEI Corporation - Dalton,519695,325520,2,2,SCHEMA2.2 Ring2 exact code 325520,EVD-206006
+SITE-016109,GA,MAPEI Corporation - Calhoun,1417323,325520,2,2,SCHEMA2.2 Ring2 exact code 325520,EVD-206007
+SITE-016111,GA,The Sherwin-Williams Company - Covington,345917,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206008
+SITE-016115,GA,The Sherwin-Williams Company - Morrow,208942,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206009
+SITE-016119,GA,"Crown USA, Inc. - Thomaston",1336218,325510,2,2,SCHEMA2.2 Ring2 exact code 325510,EVD-206010

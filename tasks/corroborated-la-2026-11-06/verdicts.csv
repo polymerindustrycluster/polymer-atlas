@@ -1,0 +1,43 @@
+cluster_id,state,verdict,held_org_id,duplicate_of,establishment_id,reason
+LF-LA-00148,LA,STILL_UNCERTAIN,,,1470578,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00194,LA,STILL_UNCERTAIN,,,1076547,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00052,LA,STILL_UNCERTAIN,,,56843,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00167,LA,VERIFIED,ORG-007432,,288347,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-LA-00317,LA,STILL_UNCERTAIN,,,821647,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00370,LA,STILL_UNCERTAIN,,,1413717,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00143,LA,STILL_UNCERTAIN,,,1515762,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00267,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00294,LA,STILL_UNCERTAIN,,,302454,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00314,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00326,LA,STILL_UNCERTAIN,,,1051142,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00427,LA,VERIFIED,ORG-001033,,192504,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-LA-00226,LA,STILL_UNCERTAIN,,,78200,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00437,LA,STILL_UNCERTAIN,,,348980,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00503,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00014,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00038,LA,STILL_UNCERTAIN,,,303961,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00046,LA,STILL_UNCERTAIN,,,450251,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-LA-00156,LA,STILL_UNCERTAIN,,,1094797,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00199,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00229,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00244,LA,STILL_UNCERTAIN,,,1428972,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-LA-00268,LA,STILL_UNCERTAIN,,,501618,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00292,LA,STILL_UNCERTAIN,,,918944,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00445,LA,STILL_UNCERTAIN,,,551202,"Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve ['ORG-004865', 'ORG-005115']."
+LF-LA-00076,LA,STILL_UNCERTAIN,,,717864,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00243,LA,STILL_UNCERTAIN,,,1082938,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00266,LA,STILL_UNCERTAIN,,,564629,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00295,LA,STILL_UNCERTAIN,,,82938,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00430,LA,STILL_UNCERTAIN,,,298536,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00475,LA,STILL_UNCERTAIN,,,998548,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00002,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00013,LA,STILL_UNCERTAIN,,,243057,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00035,LA,STILL_UNCERTAIN,,,231100,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00103,LA,STILL_UNCERTAIN,,,1458347,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-LA-00191,LA,STILL_UNCERTAIN,,,69791,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00202,LA,STILL_UNCERTAIN,,,1458341,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-LA-00296,LA,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00304,LA,STILL_UNCERTAIN,,,251933,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-LA-00331,LA,STILL_UNCERTAIN,,,1084922,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-LA-00372,LA,STILL_UNCERTAIN,,,1424734,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-LA-00443,LA,STILL_UNCERTAIN,,,504068,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
