@@ -1,0 +1,70 @@
+# L10 Tier1 markets/certifications round6
+
+Controller assigned continuation after round5yield51%;next100,newbranchagent/codex/markets-certs-tier1-round6 frompinnedmaininframe.json;EVD240800+. Acceptancebeforework:active+storedTier1+blankmarkets,anyheldOHPIC18site first thenorg_id,noURLfilter,excludeallprior30+100+100+100frames plusunresolvedORG62/101. Freeze100uniqueIDs. FirstuserPICsuppliermatchingstaff;nonusereview2026-12-15.
+
+Onlymarkets_served/certifications andappend-onlymirrorevidence,exactSCHEMA vocabulary. Corporateentityservedmarkets,notgenericmaterialproperties/parentunions. R3c/R12currentcertificateORcurrentownpagenon-supersedededition;identity/scope/date/expirywhenknown,unknownexplicit. SupersededISO9001/14001ownertransitionbatteryheld,no self-ruling;editionless/productcomplianceheld. OEM-typeparts,fitmentselectors,IATF notOEMcustomerproof. Failedfetch/maintenance/softblocknotabsence/closure. Cap~6distinctprimarypages/org;reverificationadditional.
+
+Gates:known4/fabrication4/3softblock/forcedplainfallback beforefetcheruse;everyacceptedquote freshraw;freshseeded30valueaudit0errors;100uniqueverdictcoverage;globalID+correctmirrorshard/payloadpreflight beforewrites;no-writeguards;oldrow/fields/evidenceboundary+byteidenticalreplay;validate0;two-familydeeprefutesbeforeReady. Historicalmerged136/157buildersunchanged/mustnotrerunpercontroller;activeonesonly. Prior179/215clerkfixesfirst,separatepackets. Researchunapplied/unapproved.
+
+Research checkpoint beforeapplication:100name lookups;97ownURLs attempted,67FETCHED/30UNFETCHABLE/3NO_WEBSITE. HTTPS retry of30failedrecordedroutesrecovered0;failedfetchesremainavailabilityonly. Known4/fabrication4passed before unchangedfetcheruse;3softblock/forcedplainfallbackcontrolsretained. Helper-baseline.json pins copiedR5helpers;guardcheck later replaces unusedcurrentpage-editionmutation with futureeffective-date mutation because round6 accepts one datedcertificate,not a current-page cert.
+
+173candidatevalues:171VERIFIED=170markets+1cert;2held.49VERIFIEDorgs/51STILL_UNCERTAIN;100claim/org holds=51nofill+49partial. Tiersof49 A5/B39/C5unchanged. ProposedIDs240800–240972,permanentunused240945(Milescommunicationsvehicle→telecomunsettled)and240970(WestfallCPGcustomer→packagingunsettled). Inputindexesfixed. No dataappliedyet;freshrawgatepending. CurrentTeeloriginalISO13485:2016certificatecheckedidentity/cycle2024-06-10/expiry2027-06-09;Amtivo266920,Baraboo1060TeelCourt,customextrusion/molding/compounds/laboratorybags scope. TeelAnalyticalLabISO17025differentnamedunit heldpendingbridge;editionlessPAXXUSBoxcertfilesuninspectedheld. NoISOtransitionexception.
+
+## Applied packet and provenance
+
+**100unique frame organizations=49 VERIFIED/51 STILL_UNCERTAIN**,yield49%. VERIFIED means at least one accepted value,not a tier upgrade/allfields verified. **173candidatevalues=171accepted(170markets+1cert)/2held**. IDs **EVD240800–240972**,permanentunused **240945**(Milescommunicationsvehicle→telecommarketunsettled)and **240970**(WestfallCPGcustomer→packagingmanufactureunsettled). **50cells/49active stored-Tier1 organizations**:49market+1certcells; unchangedtiers **A5/B39/C5**. **171append-only evidence rows** in30home-shardpairs,per-shardcounts inboundary.json. No creates/tier/status/parent/website/notes/sources/registry/qualifier/newsroom edits. Dedupe-create inapplicable.
+
+**100claim/org holds=51nofill+49partial** with settling facts. 67FETCHED/30UNFETCHABLE/3NO_WEBSITE organizations. Correction to earlier route wording:97organizations have websites sharing **96distinctURLs** (twoEnvaliorentities shareone); no websitefilter or silent omission. Both PIC18selected records are holds (unavailableSilgan/blankYokohamaTWSwebsite). No private/licensedcontent;name resolver100,Macestatecatalogueplatformgapstillincomplete,notcompletenessproof. Allacceptedfacts frompubliccompanymarket/industry/productpages orcompanyoriginalPDFs;quotes+URLs/2026-11-06observation ininputs/evidence. No failureprovesclosure/absence.
+
+Initialmain e008ab9 unitactivecanonicalorganizations4899:populatedmarkets **446→495**,certifications **57→58**. Activestored-Tier1subset1293:markets **221→270**,certs **21→22**. counts.json application/counts.sql independentcanonicalrecount excludesgeneratedexports;filled-orgcountsnotvaluecounts. Frame1293censusfrozen;latermaincounts maychange.
+
+Onlycertfill: **TeelPlasticsLLC ISO13485:2016**,originalcompany-hostedAmtivo266920PDF,1060TeelCourtBarabooWI;currentcycle **2024-06-10**,latestissue2024-12-18,expiry **2027-06-09**. Scope customplasticextrusion,injectionmolding,compoundednatural/syntheticmaterials andlaboratorysamplingbags;appendixnamesTeelCourt overalllocation,multistructuredoesnotclaimallcorporatesites. Identity/edition/expiryquotesanddateboundschecked. TeelAnalyticalLabISO17025differentnamedunitheldpendingbridge;PAXXUSeditionlessISO/Boxpubliccertfilesuninspectedheld;no standardlogo asproof. ISO13485editioncurrent perofficialISOcontextinpriorpackets;ISO9001/14001transitionownerbatteryheld,noexception.
+
+## Semantics and holds
+
+Exactownentity/corporateofferingonly. HubbellLenoirCity/globalHubbell,Envalior2units,PolyplexUSA,TotalEnergiesUSApetrochemicalunit,TSRCLLC,SasolUSA,AscendHoldings allparent/operating-unitunionsheld. GEOTEKIncvsLLCnamehold,PremierFiberglassdomainunrelatedUSNewscoincontenthold,Hoodunrelatedspamcontentreliabilityhold;noidentity/statusmotion. Marvinparentwindowdoorbusinessnotattributedtosubsidiarywithoutownofferingwitness. Shintech/Pinnaclebroadresinbusinessnotgenericdownstreamsectorunion.
+
+AchillesUSA actualIndustriesmenuexplicitlyincludesAutomotiveOEM,whereasOsborne/MoldingProducts/ClassAproperty/genericOEMnotOEMcustomers. PAXXUSexplicitmedicaldevice/pharmapackagingmarkets,Teelmedicaldevices,WestfallmedicaldeviceOEMcustomersegment;notcertificationinferences. WestfallCPG→packagingcandidateheld. Milesmilitary/RV/wind/railcurrentproductsaccepted,communicationsvehicle→telecomheld. DaikinAmerica andTorayPlasticsAmericaexplicitUSentityownofferings,notglobalparents. SekisuiSpecialtyChemicalsAmericaowncopyright/scopedApplications. Provider-ownedFRP/SMC/foam/ductofferings explicitlyidentifyapplications/customers;not genericFRP/PVCchemistrypossibleuses. AmFinepublishedElectonics typoquotedonly,vocabularycanonical. ToraySolarControlWindownotrenewablespower. Orencocurrentwastewatertreatmentactualbusiness. Nofood-processing→packagingmixups;NSF/FDA/ADA/FIAproductcomplianceandmilitaryspecsnotfacilitycertification. No publicpersonalcontacts committed.
+
+## Named checks and replay
+
+Fromrepo root:
+
+```sh
+python3 tasks/markets-certs-tier1-round6-2026-11-06/check.py
+python3 tasks/markets-certs-tier1-round6-2026-11-06/guardcheck.py
+python3 tasks/markets-certs-tier1-round6-2026-11-06/build.py
+python3 tasks/markets-certs-tier1-round6-2026-11-06/boundary.py <pinned-main-sha>
+duckdb :memory: < tasks/markets-certs-tier1-round6-2026-11-06/counts.sql
+python3 scripts/validate.py
+```
+
+Beforeuse4/4liveknownanswers(CIMAmarkets/ESTERLEISO/HudsonISOpositive,CIMAqualityISOnegative);4/4fabricatedquotesrejected. Threecachedredirect/JS-only/networkblockbodiesrejectonallroutes;forcedcompressedfailure/plainGETsuccessPASS. MatcherhouseWfromevidence-repair-2/prep.py(requestedownershiprawchecktoolabsent),browserUAcurlcompressed/plain/Jina,pdftotext;orderednormalizedtokens,notCSSvisibility. HelpercarriedforwardfromR5exceptlane/ID/seed;currentpagecertmutationreplacedwithfuture-effective-datedcertmutationbecausecurrentpagecertnotused. No dependency/sharedscriptchange.
+
+Fresh **171/171acceptedquotes** andTeelidentity/expiryquotesPASS,zeroacceptedunavailablepages. **Freshseed20361110random30VERIFIEDvalues,0rawerrors**,routes/parsedtextSHA256inaudit30.csv. Not30distinctorganizationsorsemanticreview.2heldvaluesexplicitlyexcludedfromapplication/rawgate,notcalledverified. SixguardcontrolsPASS:duplicateglobalEVD,identicalplannedEVDmovedtoforeignshard,future-effectivecert,expiredcert,foreignpublisher,99/100yield;allbuilderfailurecasesleaveeverycanonicalCSVbyteunchanged. Correctmirrorshard+exactpayloadpreflightbeforewrites. Initialboundary49org/50cells/171EVD,0oldkeyloss/unrelatedfields/legacyEVDedits,replaybyte-identical;validator **0errors,37724EVD**oninitialbase. Existingwarningsremainwarnings. Sharedscriptsuntouchedbylane,pytestscriptsgatenottriggered.
+
+Mainreplay:preservehistory,pinmain,restoreALLownedorganization/evidencepairs listed inboundary.json (30pairs/60files),replaybuilder/namedchecks,refreshcounts. NeverhandmergeCSV. Frame/inputIDindexesfixed. Historicalmerged136/157builderslackthisguard/mustnotrerunpercontroller;activeonesonly. Prior179/215separatepackets,notbundledasR6delta.
+
+## Refutes and unchecked work
+
+Two-familydeepreviews pending,draftnotDone. Unselectedorgs andfailedroutesunknown;PAXXUSpublicBoxcerts,unreadablecertimages,issuer-suspensionregistries,identity/parentrulings,privatecorpuscompleteness andownerISOtransitionexceptionunchecked. HostedCIafterPRpending. Noadditionalroundassignmentinferred.
+
+Latestintegration:pinned main **5574d48f4060f3b03633399f707047db0314e28b**,restoredALL60ownedorganization/evidencefiles across30home-shardpairs thenunchangedbuilder/inputreplay,nohandCSVmerge. integration-replay.json independentlyconfirms49orgcelldeltasand171fullEVDpayloadsequalinitial5e97722/e008ab9. Boundary0old-keyloss/unrelatedfields/oldEVDedits,replaybyteidentical;sixguards/validator0(**37812EVD**)PASS. Countsremainactive4899 markets446→495 cert57→58;storedTier1active1293 markets221→270 cert21→22. Prior215notinbaseandseparate;itscoincidentallysame+49marketcellsdonotmeanthesameorganizations. Counts/boundaryreceiptsdescribethisbase;freshraw171/random30zeroapplyunchangedpacket.
+
+Continuation ownership update — controller/owner direction after PR220: round7 belongs to a fresh Terra thread, L10b (fresh thread per batch). This lane retains only review fixes and replays for its existing PR136–220 packets; **do not start another frame**. This supersedes any earlier continuation expectation. Historical136/157 builder restriction still stands: leave them unchanged and do not rerun; active packet fixes/replays use their hardened builders. No new frame, ID allocation or data change accompanies this ownership note.
+
+## Review fix 2026-11-06 — four Grok-refuted values withdrawn (supersedes the counts above)
+
+Grok deep refute of 9ad1c7a (REFUTE, 4 findings) was accepted in full. Four market values are withdrawn: **ORG-003375 Synventive consumer_goods_housewares (EVD-240968)**, **ORG-003163 Stepan consumer_goods_housewares (EVD-240841)**, **ORG-003162 Sekisui Specialty Chemicals America consumer_goods_housewares (EVD-240838)**, **ORG-003333 Miles Fiberglass furniture_office (EVD-240947)**. Each quote supports a neighbouring reading (consumer goods; household/institutional cleaning; PVOH film for household-cleaning pods; a chair and outdoor planters), not the controlled value. The four rows are now STILL_UNCERTAIN in inputs.csv, the reason is appended to each organization's holds.csv row, and **EVD-240838, 240841, 240947, 240968 are permanently unused** beside 240945 and 240970 (IDs stay index-derived, so no other ID moves). No value changed and no row was added; the packet is a strict subset of the reviewed one.
+
+Current packet: **173 candidate values = 167 accepted (166 markets + 1 cert) / 6 held**; **49 VERIFIED / 51 STILL_UNCERTAIN organizations** (each of the four keeps at least one other accepted value); **167 append-only evidence rows**; 49 organization market cells + 1 cert cell; tiers A5/B39/C5 unchanged. Retired EVD IDs inside 240800–240972: 240838, 240841, 240945, 240947, 240968, 240970.
+
+Rebased onto main 1cd71d0 (rounds 5 and 7 merged) by restoring main's copy of all 60 owned organization/evidence files and re-running build.py; no hand CSV merge. Unit active canonical organizations 4899: markets_served populated 561→610, certifications 64→65; stored-Tier1 subset 1293: markets 336→385, certs 28→29 (counts.json, counts.sql). check.py on the 167 accepted quotes (known answers 4/4, fabricated 4/4, 0 unavailable pages, seed-20361110 random 30 values 0 errors; audit30.csv regenerated), guardcheck.py six PASS, boundary.py vs main 0 old-key loss/0 unrelated columns/0 edited evidence/replay byte-identical, validate.py 0 errors, check_row_loss OK. Two-family re-review of the withdrawal-only delta is the controller's call; the fixed delta vs 9ad1c7a is pure withdrawal (see delta_compare in the PR comment).
+
+## Review fix 2 2026-11-06 — one Codex-refuted value withdrawn (supersedes the counts above)
+
+Codex deep refute of 48967bc (REFUTE, 1 finding) was accepted. Withdrawn: **ORG-003180 Dynamic Systems, Inc. toys_sporting_goods (EVD-240868)**. The quote is navigation ("Racing & Sports ..."); the actual Racing & Sports section describes Formula One headrests and drivers of competitive sports vehicles, i.e. motorsport components, not toys or sporting goods. The row is STILL_UNCERTAIN in inputs.csv, the reason is appended to the organization's holds.csv row, and **EVD-240868 is permanently unused**. Need an explicit toy/sporting-goods product or customer witness. No value changed and no row was added; strict subset of the reviewed 48967bc.
+
+Current packet: **173 candidate values = 166 accepted (165 markets + 1 cert) / 7 held**; **49 VERIFIED / 51 STILL_UNCERTAIN organizations** (ORG-003180 keeps four other accepted values); **166 append-only evidence rows**; tiers A5/B39/C5 unchanged. Retired EVD IDs inside 240800–240972: 240838, 240841, 240868, 240945, 240947, 240968, 240970. Org-grain counts unchanged (active 4899: markets 561→610, certs 64→65; stored-Tier1 1293: markets 336→385, certs 28→29).
+
+Rebased onto main 7cf7b93 by restoring main's copy of all 60 owned organization/evidence files and re-running build.py. check.py (known answers 4/4, fabricated 4/4, 166 quotes, 0 unavailable pages, seed-20361110 random 30 values 0 errors; audit30.csv regenerated), guardcheck.py six PASS, boundary.py vs main replay byte-identical, validate.py 0 errors, check_row_loss OK.

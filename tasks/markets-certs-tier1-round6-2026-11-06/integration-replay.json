@@ -1,0 +1,18 @@
+{
+  "initial_packet_head": "5e97722",
+  "reviewed_head": "48967bca829df860fbac24b5e181267f08e3fee0",
+  "integration_main": "7cf7b93bbc6b8217ec6e221b75420d5974ea4548",
+  "withdrawn_values": 1,
+  "withdrawn_evidence_ids_unused": [
+    "EVD-240868"
+  ],
+  "remaining_org_cell_deltas_equal_reviewed": true,
+  "historical_builders_unchanged": true,
+  "remaining_166_full_evidence_rows_equal_reviewed": true,
+  "earlier_withdrawal_9ad1c7a_to_48967bc": [
+    "EVD-240838",
+    "EVD-240841",
+    "EVD-240947",
+    "EVD-240968"
+  ]
+}
