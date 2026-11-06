@@ -1,0 +1,20 @@
+site_id,source_ref,sha256,result,error
+SITE-000005,https://www.dayglo.com/contact-us/,6f62f63a229a1ad1cae957bd97cc6991f32c73235219b6875281b8f9faea9436,PASS,
+SITE-000017,https://theacerubber.com,adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b,PASS,
+SITE-000038,https://pioneerplasticscorp.com/contact,7c9e6a46cea01cf0c0eddd892573a6b90f66cbcba368b87f939b27894949456f,PASS,
+SITE-000039,https://landmarkplastic.com,e356557a50a2314de9bc1f21c7eabbf97afe142392d77eb74491091d8928beb4,PASS,
+SITE-000060,https://esterle.com,25d7b1c4b8ff8c96850387c591da7e4387b6d44ccfe2f670705c148215e389c0,PASS,
+SITE-000071,https://milesrubber.com/contact-us,b2b4c6be2e931f738c7292ec6afd7ac79c2682081ead12931ada488043bda7c4,PASS,
+SITE-000072,https://cimaplastics.com,7db45d057caa82c8f77822bbb7049a5d378f712e4b06e979f25024ac69d089b8,PASS,
+SITE-000074,https://mrpsolutions.com/contact-us,e3841b01af8b0270df49b4506dfca511810440aaf930cf61a1bf62f46bb7322e,PASS,
+SITE-000075,https://industrialmold.com,1afcaef402c1d2016308fe0384d1b8cfd9166c8916b8e690ff58e0005a136517,PASS,
+SITE-000081,https://novexinc.com,7bc4297a0c5c609375b58d3ea346488792645551ba187c02ca1078abde6fe1d5,PASS,
+SITE-000082,https://merryweather.com,fcedc4591a36db0d6d120c84ba2ff0cfa047fa95c9fb1a376bccaba1afd25499,PASS,
+SITE-000086,https://rubberassociates.com,,FAIL,HTTP/transport failure 35
+SITE-000087,https://rainbowrubber.com,,FAIL,HTTP/transport failure 28
+SITE-000107,https://hpmanufacturing.com,,FAIL,HTTP/transport failure 35
+SITE-000109,https://teamplasticsinc.com/,,FAIL,HTTP/transport failure 35
+SITE-000111,https://tricomachine.com,26905a209d3a6ae77ad4dc57bc0f7d2ee64b065e34cb147094fbc4f9ba1fcdc4,PASS,
+SITE-000116,https://noramcobag.com/contact-us/,b7e7a425b250c09f18751953393a6c9204cf4d0b8ee6ee1230ba370c1d83f932,PASS,
+SITE-000117,https://gshindustries.com,37bceacbf151016f1df887691ac92805d35b96a2efac459b936378907c332877,PASS,
+SITE-000125,https://cpipp.com/,7c7cfa47ab57aa4639dbbb1533ae29da8f7a859f967a25ab28a817882e4ea87f,PASS,

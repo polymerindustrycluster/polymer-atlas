@@ -129,5 +129,17 @@
   "latest_outputs": {
     "sites_OH.csv": "5befc5335b5ec438e0b51e6c0025120b04116897bb431485f7452763d361d3fb",
     "evidence_sites_OH.csv": "e8d33c9bce368e5faae5bd747e1f36287da704e24a0f7e1faf0d7b14944470b1"
+  },
+  "postal_context_revision": {
+    "held_site": "SITE-000008",
+    "retired_evidence_id": "EVD-152005",
+    "fills": 19,
+    "holds": 41,
+    "remaining_evidence_identical_to_prior_minus_postal": true,
+    "main": "18a8f8aae6a8a2cd9a71a2d68e6b0e8d856c4589",
+    "outputs": {
+      "sites_OH.csv": "d81d538bf9d21e49ea2979096528131355112bee2e75cb0ad9004f51e3636918",
+      "evidence_sites_OH.csv": "cac67cb5be0fb916638e72efa81d7681066236b686857417721deccceb79fd1d"
+    }
   }
 }

@@ -1,19 +1,7 @@
-Adversarial completion review. Lane L2 Ohio streets round2, branch agent/codex/oh-street-address-2. End VERDICT: APPROVE/REFUTE with demonstrated defects; no mutations or merge. Scope:20 existing active PIC18 A/B site street fills,20 own_site/address/supports_A evidence, unchanged record tiersA12/B8. Only street_address/sources columns change; no entities/IDs created except address evidence, no county/county_source/ZIP/status/tier/registry/ring/qualifier changes.
-
-Frozen frame448 eligible prior-PR134-held active PIC18 A/B sites with operator website. Worked first60 immutable IDs, source yields60 site IDs exactly;20VERIFIED/40STILL_UNCERTAIN;388frame rows explicitly unworked. PriorOH134 fills excluded by held-ID membership; PA separate/merged. Current main includes mergedOH134: this PR alone changes286/1883→306/1883 (15.19→16.25%). Old143→163 planning snapshot superseded for the current diff. All20plannedsite/evidencevalues identical0cc6fa0 after main-file replay. EVD152000–152447 sparse frame-position allocation; accepted152002–152053. Controller06:30 continuation and original L2 application delegation.
-
-Sources:128attempts=104fetched+24unavailable;26sites rawaddressblocks,20admitted. Own host-bound raw HTML via curl browserUA; redirects outside held operator host rejected, personal contacts/fullHTML not retained. Address-only quote exact word order; quote-to-street/city/ZIP/held-host/digest binding asserted. Five research fetches/operator +sixth freshaudit. Other pages fail/unknown→HOLD, no absence inference. Samecity multipleaddresses/ZIPs, recordedZIP or notedstreetconflicts, mailing-only contexts→HOLD. No paid/private/CRM sources.
-
-Ground truth: check.py PASS20fills onlystreet/sources, same secondbuild bytes; pre-existing street and foreign evidence-shard collision reject BEFORE canonical writes. Three literal LIVE calibration addresses pass before scaling:Chardon373Washington;Freeman1101MooreAvon;ShinEtsu1150DamarAkron, plus wrongcity/PObox/phoneprefix mutation fixtures. Full accepted-fill census20/20 freshly refetched,0errors (population<30). validate.py0errors; no scripts/ changes. mainbdb8b98 merged viaf9a96a9, checksrePASS; no foreign data changes in diff. PA README-only note permitted explicitly by controller because PA147 merged before862f67a documentation. Also carries OH134 READMEverdicts+approved-replay.json after that PR merged befored9dd945 documentation. No earlier-pass data/code rides this PR.
-
-Potential failures: wrongoperator/locationfooter, mailing-vsphysical, unparsed note street, false normalizedstreetagreement, weak geography, hidden record loss fromrebase, incomplete IDpreflight, applybeforefailure, extractor's numericprefix, underreturnedsource counts. Challenge actual evidence, not hypotheticalquota ofbugs.
-
-Commands (from a clean review checkout of branch; mutating apply only in temp):
-python3 tasks/oh-street-address-2-2026-11-06/check.py
-python3 scripts/validate.py
-python3 tasks/oh-street-address-2-2026-11-06/audit.py
-python3 tasks/oh-street-address-2-2026-11-06/fetch.py --known
-Full448 input frame.csv and sourceattempts page_checks.csv in taskfolder. Below all code, selected60 compactinputs,20evidence,60verdicts,20audit. Inspect fullnotes inframe ifneeded; compactinput preserves named street leads.
+Corrected adversarial completion review PR156. ONE material finding fixed: actual Myers source says "You can reach us by mail at this address:". Before-fix reproducer FAILED as expected (mailing-regression-before.txt). Hold SITE000008 and permanentlyretire EVD152005; no claimstreetfalse, physicaluseunsatisfied. Add exact by-mail classifier+fixtures, samefunction inproduction fetch andmonotonic recheck. Fresh37uniqueURL contextrecheck ofALLoriginal20positive sites flagsONLYMyers; remaining19unchangedevidence values equal9ef7eb1 minusMyers. Email/physical fixture staysnegative. No favorable source/denominator substitution.
+CURRENTscope60selected of448=19VERIFIED/41holds;388unworked.19street/sources-only edits+19append-only own_site/address/supports_A EVD,tiersA11B8unchanged. Ohio286→305/1883(15.19→16.20%). Mainfiles+unchanged19plan replay, validator0/check19/idempotence/street+foreignID-before-write mutations PASS. Full19/19freshquote audit0errors (one precedingrunhad4TLS/timeoutfailures, savedseparately; fullrerunrecovered). Original raw research128=104fetched24unavailable; oldpositive20audit is historical/superseded. GlobalID slot152005retiredforever, allremainingIDs fixed.
+Potentialwhatcouldbewrong: classifierstillmissesby-mail; retirementmerelymasksgate; otheracceptedpagesmailonly; underlyingquote/physical use; newIDreuse; class/fieldleak; replaylostlegacyrows. Check actual phrase fixture, mailing_recheck rows and raw source. No schemas/rings/status/tiers/counties/ZIPs/registry/derivedfields changed;noentitiescreated/deleted. CurrentmainincludesfirstOH134/PA147; theirdocumentation-onlyreceiptsalreadypermitted. OriginalGrok APPROVE20doesNOTgrantnew19finalapproval. Please refute correctedscope thenendVERDICT:APPROVE/REFUTE,readonly,no merge.
+Named commands: python3 tasks/oh-street-address-2-2026-11-06/check.py; python3 scripts/validate.py; python3 tasks/oh-street-address-2-2026-11-06/audit.py. Classifierfixtures incheck.py; recheck_posture.py fresh37URL contexts. DataCSVsscope60/448 inputs inframe.csv; originalpostalproposedIDwithdrawnfromunmergedPRnotdeletedfrommain. Evidenceappend-onlymainrowsunchanged. Fullcode/currentwitnesses/currentverdicts/currentaudit below.
 
 FILE fetch.py
 """Raw-check held PIC-18 Ohio operator pages; only complete physical street/city/state/ZIP blocks become candidates."""
@@ -47,6 +35,11 @@ def extract(text,city):
  pattern=r'\b(\d{1,6}\s+(?:(?!\d+\b)[A-Za-z0-9.#/-]+\s+){0,8}?'+suffix+r')[, •|]*\s*'+re.escape(city)+r'\s*[, •|]*\s*(?:OH|Ohio)\s*[, •|]*\s*(\d{5}(?:-\d{4})?)\b'
  text=' '.join(text.split())
  return [(m[1].strip(),m[2],m[0]) for m in re.finditer(pattern,text,re.I)]
+def mailing_posture(text,quote):
+ text=' '.join(text.split());pos=text.find(quote)
+ if pos<0:return 'quote absent on fresh fetch'
+ context=text[max(0,pos-80):pos+len(quote)]
+ return 'mailing-only context' if re.search(r'(?i)mailing\s+address|postal\s+address|\bby\s+mail\b',context) else ''
 def known():
  cases=[('373 Washington St. Chardon OH 44024','Chardon','373 Washington St.','44024'),
         ('1101 Moore Road, Avon, Ohio 44011','Avon','1101 Moore Road','44011'),
@@ -83,8 +76,7 @@ def main():
     text,links,sha=fetch(u);found=0
     for r in rows:
      for street,zip_,quote in extract(text,r['city']):
-      pos=' '.join(text.split()).find(quote);context=' '.join(text.split())[max(0,pos-80):pos+len(quote)]
-      posture='mailing-only context' if re.search(r'(?i)mailing\s+address|postal\s+address',context) else ''
+      posture=mailing_posture(text,quote)
       out.append(dict(site_id=r['site_id'],street_address=street,source_zip=zip_,quote=quote,url=u,sha256=sha,posture=posture));found+=1
     pages.append(dict(org_id=oid,url=u,outcome='fetched',address_blocks=found,error=''))
     links=sorted(links,key=lambda x:('location' not in x.lower(),len(x)))
@@ -129,9 +121,11 @@ def plan():
  assert len(frame)==448 and len({s['site_id'] for s in frame})==448
  assert len(selected)==60 and len({s['reserved_evidence_id'] for s in frame})==448
  assert {r['site_id'] for r in checks}=={s['site_id'] for s in selected},'source yield mismatch'
+ retired={r['record_id']:r['evidence_id'] for r in read(TASK/'retired_ids.csv')}
  verdicts=[];ev=[]
  for s in selected:
   rows=[r for r in checks if r['site_id']==s['site_id'] and r['street_address']];why=[]
+  if s['site_id'] in retired:why.append('retired postal-only witness proposal '+retired[s['site_id']]+'; physical witness needs new ID in later pass')
   if not rows:why.append('need own-page physical street block at recorded city; no admissible block fetched')
   if any(r['posture'] for r in rows):why.append('mailing-only or ambiguous address context')
   host=lambda u:(urlparse(u if '://' in u else 'https://'+u).hostname or '').removeprefix('www.')
@@ -195,10 +189,16 @@ FILE check.py
 import contextlib,hashlib,io,shutil,tempfile
 from pathlib import Path
 import build
+from fetch import mailing_posture
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  root=build.ROOT;selected,verdicts,ev=build.plan()
- assert len(ev)==20,'frozen acceptance count changed; inspect before revising'
+ quote='1293 South Main Street Akron, Ohio 44301'
+ for prefix in ('You can reach us by mail at this address: ','Mailing address: ','Postal address: '):assert mailing_posture(prefix+quote,quote)=='mailing-only context'
+ assert not mailing_posture('Email us. Physical address: '+quote,quote)
+ assert next(v for v in verdicts if v['site_id']=='SITE-000008')['verdict']=='STILL_UNCERTAIN'
+ assert 'EVD-152005' not in {e['evidence_id'] for e in ev}
+ assert len(ev)==19,'frozen acceptance count changed; inspect before revising'
  with tempfile.TemporaryDirectory() as tmp:
   build.ROOT=Path(tmp);(build.ROOT/'data').mkdir()
   for p in (root/'data').glob('evidence_*.csv'):shutil.copyfile(p,build.ROOT/'data'/p.name)
@@ -219,7 +219,7 @@ def main():
    assert fields <= {'street_address','sources'},(a['site_id'],fields)
    if fields:
     changed+=1;assert not a['street_address'] and b['street_address'] and a['operating_status']=='active'
-  assert changed==20
+  assert changed==19
   paths=list((build.ROOT/'data').glob('*.csv'));hashes={p.name:digest(p) for p in paths}
   with contextlib.redirect_stdout(io.StringIO()):build.run(apply=True)
   assert hashes=={p.name:digest(p) for p in paths},'not byte-idempotent'
@@ -240,11 +240,11 @@ def main():
   else:raise AssertionError('foreign-shard evidence collision accepted')
   assert hashes=={p.name:digest(p) for p in paths},'wrote before global collision refusal'
  build.ROOT=root
- print('PASS 20 fills; street/sources only; byte-idempotent; street and foreign-ID mutations rejected before canonical writes')
+ print('PASS 19 fills; street/sources only; byte-idempotent; street and foreign-ID mutations rejected before canonical writes')
 if __name__=='__main__':main()
 
 FILE audit.py
-"""Fresh raw-page census of all accepted fills (20 < the requested 30-row sample)."""
+"""Fresh raw-page census of all accepted fills (19 < the requested 30-row sample)."""
 import concurrent.futures,json
 from build import TASK,read
 from fetch import fetch,write,extract
@@ -262,73 +262,36 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:out=list(pool.
 write(TASK/'audit.csv',out)
 summary=dict(accepted_fills=len(evidence),audited=len(out),errors=sum(bool(r['error']) for r in out))
 (TASK/'audit_summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(summary)
-assert len(out)==20 and summary['errors']==0,out
+assert len(out)==19 and summary['errors']==0,out
 
-COMPACT INPUTS site_id|operator site|city|existingZIP|county|tier|website|parsedstreetleads
-SITE-000002 | Lubrizol — Wickliffe HQ | Wickliffe | 44077 | Lake | B | https://www.lubrizol.com | ['155 FREEDOM ROAD', '155 FREEDOM ROAD']
-SITE-000004 | Parker-Hannifin — Cleveland HQ | Cleveland | 44124 | Cuyahoga | B | https://www.parker.com | []
-SITE-000005 | Day-Glo — Cleveland HQ | Cleveland |  | Cuyahoga | B | https://www.dayglo.com | []
-SITE-000006 | Vibrantz (Chromaflo legacy) — Ashtabula | Ashtabula |  | Ashtabula | B | https://www.vibrantz.com | []
-SITE-000007 | Struktol — Stow HQ | Stow | 44223 | Summit | B | https://www.struktol.com | ['201 E. STEELS CORNERS ROAD', '201 E. STEELS CORNERS ROAD']
-SITE-000008 | Myers Industries — Akron HQ | Akron | 44301 | Summit | B | https://www.myersindustries.com | ['1293 S MAIN ST', '1293 S MAIN ST']
-SITE-000009 | GEON - Westlake HQ | Westlake | 44131 | Cuyahoga | B | https://www.geon.com | ['6100 OAK TREE BLVD', '6100 OAK TREE BLVD']
-SITE-000010 | Bridgestone Americas Technology Center - Akron | Akron | 44317 | Summit | B | https://bridgestoneamericas.com | ['1200 FIRESTONE PARKWAY', '1200 FIRESTONE PARKWAY']
-SITE-000014 | Diamond America — Akron | Akron |  | Summit | A | https://daextrusion.com | []
-SITE-000017 | Ace Rubber Products — Akron | Akron |  | Summit | A | https://theacerubber.com | ['1200 Devalera St', '1200 Devalera St']
-SITE-000035 | Saint-Gobain Performance Plastics — Akron | Akron | 44305 | Summit | A | https://saint-gobain.com | ['2664 GILCHRIST RD', '2664 GILCHRIST RD']
-SITE-000037 | HKB Enterprises, Inc. — Akron | Akron |  | Summit | A | https://hkbenterprises.com | []
-SITE-000038 | Pioneer Plastics Corp. — Akron | Akron | 44312 | Summit | A | https://pioneerplasticscorp.com | ['3330 MASSILLON ROAD', '3330 Massillon Rd', '3330 MASSILLON ROAD']
-SITE-000039 | Landmark Plastic Corp. — Akron | Akron | 44306 | Summit | A | https://landmarkplastic.com | ['1331 KELLY AVE', '1331 KELLY AVE']
-SITE-000043 | Alterra Energy — Akron | Akron | 44306 | Summit | B | https://alterra360.com/ | ['1200 EAST WATERLOO ROAD', '1200 EAST WATERLOO ROAD', '1200 E Waterloo Rd']
-SITE-000044 | APV Engineered Coatings — Akron | Akron |  | Summit | A | https://apvcoatings.com | ['1390 Firestone Parkway']
-SITE-000047 | Smithers — Akron | Akron |  | Summit | B | https://smithers.com | ['425 West Market Street', '425 West Market Street']
-SITE-000048 | Akrochem Corp. — Akron | Akron | 44333 | Summit | B | https://akrochem.com | ['3770 EMBASSY PARKWAY', '3770 Embassy Parkway', '3770 EMBASSY PARKWAY']
-SITE-000050 | Synthomer, Inc. — Mogadore | Mogadore | 44260 | Portage | A | https://synthomer.com | ['165 S. Cleveland Ave']
-SITE-000051 | Continental ContiTech USA — Fairlawn | Fairlawn |  | Summit | B | https://continental-industry.com | []
-SITE-000052 | Harwick Standard Distribution Corp. — Akron | Akron | 44305 | Summit | A | https://harwickstandard.com | ['60 S. SEIBERLING ST.', '60 S. Seiberling Street', '60 S. SEIBERLING ST.']
-SITE-000056 | CF Extrusion Technologies — Cuyahoga Falls | Cuyahoga Falls |  | Summit | A | https://cfextrusion.com | []
-SITE-000058 | Steelastic — Cuyahoga Falls | Cuyahoga Falls |  | Summit | A | https://steelastic.com | []
-SITE-000060 | Esterle Mold & Machine Co., Inc. — Stow | Stow |  | Summit | B | https://esterle.com | ['1539 Commerce Drive', '1539 Commerce Drive']
-SITE-000061 | Ferriot, Inc. — Akron | Akron | 44312 | Summit | A | https://ferriot.com | ['2685 MOGADORE ROAD', '2685 MOGADORE ROAD']
-SITE-000070 | Plastic Materials, Inc. — Macedonia | Macedonia | 44056 | Summit | B | https://plasticmaterialsinc.com | ['775 E HIGHLAND RD', '775 E HIGHLAND RD']
-SITE-000071 | Miles Rubber & Packing — Twinsburg | Twinsburg |  | Summit | A | https://milesrubber.com | ['9020 Dutton Dr']
-SITE-000072 | Cima Plastics Group — Twinsburg | Twinsburg |  | Summit | B | https://cimaplastics.com | []
-SITE-000074 | MRP Solutions — Twinsburg | Twinsburg | 44087 | Summit | A | https://mrpsolutions.com/ | ['2222 HIGHLAND RD', '2222 Highland Road', '2222 HIGHLAND RD']
-SITE-000075 | Industrial Mold & Machine — Twinsburg | Twinsburg | 44087 | Summit | B | https://industrialmold.com | ['2057 EAST AURORA RD', '2057 EAST AURORA RD']
-SITE-000076 | Crown Composites Tooling — Twinsburg | Twinsburg |  | Summit | A | https://crownmold.net | []
-SITE-000077 | Mantaline Corp. — Twinsburg | Twinsburg |  | Summit | B | https://mantaline.com | []
-SITE-000078 | Giesecke+Devrient America — Twinsburg | Twinsburg |  | Summit | B | https://gi-de.com | []
-SITE-000079 | General Plastex, Inc. — Barberton | Barberton | 44203 | Summit | A | https://generalplastex.com | ['35 STUVER PL.', '235 Stuver Place', '35 STUVER PL.']
-SITE-000081 | Novex, Inc. — Barberton | Barberton | 44203 | Summit | B | https://novexinc.com | ['74 ROBINSON AVE', '74 ROBINSON AVE']
-SITE-000082 | Merryweather Foam, Inc. — Barberton | Barberton | 44203 | Summit | A | https://merryweather.com | ['11 BROWN ST', '11 Brown St.', '11 BROWN ST', '11 Brown St']
-SITE-000083 | Michael Day Enterprises, LLC — Norton | Norton |  | Summit | A | https://mdayinc.com | ['3960 Summit Rd']
-SITE-000085 | Ohio Precision Molding — Barberton | Barberton | 44203 | Summit | B | https://ohioprecisionmolding.com | ['122 E. Tuscarawas Ave']
-SITE-000086 | Rubber Associates, Inc. — Barberton | Barberton | 44203 | Summit | A | https://rubberassociates.com | ['1522 W TURKEYFOOT LAKE RD', '1522 W. Turkeyfoot Lake Road', '1522 W TURKEYFOOT LAKE RD']
-SITE-000087 | Rainbow Rubber Extrusions — Barberton | Barberton |  | Summit | A | https://rainbowrubber.com | ['1580 West Turkeyfoot Lake Rd.']
-SITE-000092 | Ohio Rubber Group — Hudson | Hudson | 44236 | Summit | B | https://ohiorubbergroup.org | []
-SITE-000101 | Polymerics, Inc. — Cuyahoga Falls | Cuyahoga Falls | 44221 | Summit | A | http://www.polymericsinc.com | ['2828 2ND ST', '2828 Second Street', '2828 2ND ST']
-SITE-000105 | PharoPLAST — Cleveland | Cleveland |  | Cuyahoga | A | https://www.pharoplast.com/ | ['1643 Eddy Rd']
-SITE-000106 | T&M Plastics Co. — Cleveland | Cleveland |  | Cuyahoga | B | http://www.tmplasticsusa.com | ['1249 W 78TH ST', '1249 W 78TH ST']
-SITE-000107 | HP Manufacturing — Cleveland | Cleveland | 44115 | Cuyahoga | A | https://hpmanufacturing.com | ['3705 CARNEGIE AVE.', '3705 Carnegie Avenue', '3705 CARNEGIE AVE.']
-SITE-000109 | Team Plastic — Cleveland | Cleveland | 44111 | Cuyahoga | A | https://teamplasticsinc.com/ | ['3901 W 150th St', '3901 W 150th St']
-SITE-000111 | Trico Machine Products — Cleveland | Bedford Heights |  | Cuyahoga | B | https://tricomachine.com | []
-SITE-000112 | Custom Rubber Corp. — Cleveland | Cleveland | 44114 | Cuyahoga | A | https://customrubbercorp.com | ['3710 PAYNE AVE', '3710 PAYNE AVE']
-SITE-000114 | Cuyahoga Plastics — Euclid | Euclid | 44132 | Cuyahoga | A | http://www.cuyahogaplastics.com/ | ['1265 BABBITT RD.', '1265 BABBITT RD.']
-SITE-000115 | AMD Plastics — Euclid | Euclid |  | Cuyahoga | A | https://www.amdplastics.com/ | []
-SITE-000116 | North American Plastics-Chem — Euclid | Euclid |  | Cuyahoga | B | https://noramcobag.com | ['1400 E. 222nd St.']
-SITE-000117 | GSH Industries — Strongsville | Strongsville | 44149 | Cuyahoga | A | https://gshindustries.com | ['15242 FOLTZ INDUSTRIAL PKWY', '15242 Foltz Industrial Pkwy', '15242 FOLTZ INDUSTRIAL PKWY', '15242 Foltz Industrial Pkwy']
-SITE-000123 | Prime Conduit — Beachwood | Beachwood |  | Cuyahoga | B | https://primeconduit.com | []
-SITE-000125 | Cardinal Products — North Royalton | North Royalton |  | Cuyahoga | A | https://cpipp.com/ | []
-SITE-000129 | Peak Nano — Valley View | Valley View |  | Cuyahoga | B | https://www.peaknano.com | []
-SITE-000133 | Oatey — Cleveland | Cleveland | 44135 | Cuyahoga | A | https://oatey.com | ['4700 W. 160TH ST.', '4700 West 160th St.', '4700 W. 160TH ST.', '4700 West 160th St.']
-SITE-000134 | Novagard Solutions — Cleveland | Cleveland | 44114 | Cuyahoga | A | https://novagard.com | ['2720 E 79TH ST', '5109 Hamilton Ave', '2720 E 79TH ST']
-SITE-000136 | Roto Polymers — Warrensville Heights | Warrensville Heights |  | Cuyahoga | A | https://rotopolymers.com | ['26210 Emery Road']
-SITE-000145 | Plastics Machinery Group — Bedford Heights | Bedford Heights |  | Cuyahoga | A | https://plasticsmg.com | ['5455 Perkins Road']
-SITE-000150 | NSL Analytical Services — Warrensville Heights | Warrensville Heights | 44128 | Cuyahoga | B | http://nslanalytical.com/ | ['7650 HUB PKWY', '7650 HUB PKWY']
+FILE recheck_posture.py
+"""Monotonic source-context correction: re-fetch only previously accepted witness URLs."""
+import concurrent.futures
+from fetch import TASK,read,write,fetch,mailing_posture
+verdicts=read(TASK/'verdicts.csv');ids={v['site_id'] for v in verdicts if v['verdict']=='VERIFIED'}|{'SITE-000008'}
+rows=read(TASK/'rawchecks.csv');urls=sorted({r['url'] for r in rows if r['site_id'] in ids and r['street_address']})
+def one(u):
+ try:text,links,sha=fetch(u);return u,text,sha,''
+ except Exception as ex:return u,'','',str(ex)
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:pages={u:(text,sha,error) for u,text,sha,error in pool.map(one,urls)}
+log=[]
+for r in rows:
+ if r['site_id'] not in ids or not r['street_address']:continue
+ text,sha,error=pages[r['url']]
+ posture='source unavailable on posture recheck' if error else mailing_posture(text,r['quote'])
+ # A previous negative remains negative: broadening the gate never creates a new positive.
+ r['posture']=r['posture'] or posture
+ log.append(dict(site_id=r['site_id'],url=r['url'],quote=r['quote'],fresh_sha256=sha,posture=r['posture'],error=error))
+write(TASK/'rawchecks.csv',rows);write(TASK/'mailing_recheck.csv',log)
+print('previous-positive site IDs',len(ids),'uniqueURLs',len(urls),'newly flagged',sorted({r['site_id'] for r in log if r['posture']}))
+
+FILE retired_ids.csv
+evidence_id,record_id,reason
+EVD-152005,SITE-000008,Proposed witness was explicitly by-mail contact only; retire proposal permanently and require physical witness under new ID in a later pass
+
 FILE evidence.csv
 evidence_id,record_table,record_id,claim_type,claim_detail,source_class,source_ref,observed_date,tier_effect,created_by,notes
 EVD-152002,sites,SITE-000005,address,"street_address 4515 St. Clair Avenue, Cleveland, OH; own-page ZIP 44103",own_site,https://www.dayglo.com/contact-us/,2026-11-06,supports_A,atlas-L2-oh-address-2,"Raw checked 2026-11-06; SHA-256 16617eb93bcc5bac01c4d5352a16d52640d788a47edd8906291c0473dd018394; quote: 4515 St. Clair Avenue Cleveland, OH 44103. County, county_source, ZIP and record tier unchanged."
-EVD-152005,sites,SITE-000008,address,"street_address 1293 South Main Street, Akron, OH; own-page ZIP 44301",own_site,https://www.myersindustries.com/contact-us/,2026-11-06,supports_A,atlas-L2-oh-address-2,"Raw checked 2026-11-06; SHA-256 735c1b8c5eb63d756e9f806ccbfbc99bbaf22881031dfd1a4d024d12a7f03582; quote: 1293 South Main Street Akron, Ohio 44301. County, county_source, ZIP and record tier unchanged."
 EVD-152009,sites,SITE-000017,address,"street_address 1200 Devalera St, Akron, OH; own-page ZIP 44310",own_site,https://theacerubber.com,2026-11-06,supports_A,atlas-L2-oh-address-2,"Raw checked 2026-11-06; SHA-256 adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b; quote: 1200 Devalera St, Akron, Ohio 44310. County, county_source, ZIP and record tier unchanged."
 EVD-152012,sites,SITE-000038,address,"street_address 3330 Massillon Road, Akron, OH; own-page ZIP 44312",own_site,https://pioneerplasticscorp.com/contact,2026-11-06,supports_A,atlas-L2-oh-address-2,"Raw checked 2026-11-06; SHA-256 7c9e6a46cea01cf0c0eddd892573a6b90f66cbcba368b87f939b27894949456f; quote: 3330 Massillon Road Akron, OH 44312. County, county_source, ZIP and record tier unchanged."
 EVD-152013,sites,SITE-000039,address,"street_address 1331 Kelly Ave., Akron, OH; own-page ZIP 44306",own_site,https://landmarkplastic.com,2026-11-06,supports_A,atlas-L2-oh-address-2,"Raw checked 2026-11-06; SHA-256 e356557a50a2314de9bc1f21c7eabbf97afe142392d77eb74491091d8928beb4; quote: 1331 Kelly Ave. Akron, Ohio 44306. County, county_source, ZIP and record tier unchanged."
@@ -355,7 +318,7 @@ SITE-000004,STILL_UNCERTAIN,,,need own-page physical street block at recorded ci
 SITE-000005,VERIFIED,4515 St. Clair Avenue,EVD-152002,
 SITE-000006,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
 SITE-000007,STILL_UNCERTAIN,201 East Steels Corners Road,,own-page street blocks disagree; own-page ZIP conflicts with current site ZIP
-SITE-000008,VERIFIED,1293 South Main Street,EVD-152005,
+SITE-000008,STILL_UNCERTAIN,1293 South Main Street,,retired postal-only witness proposal EVD-152005; physical witness needs new ID in later pass; mailing-only or ambiguous address context
 SITE-000009,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
 SITE-000010,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
 SITE-000014,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
@@ -413,12 +376,11 @@ SITE-000150,STILL_UNCERTAIN,,,need own-page physical street block at recorded ci
 
 FILE audit.csv
 site_id,source_ref,sha256,result,error
-SITE-000005,https://www.dayglo.com/contact-us/,bc854408663dd11ff143b33d890c1976cd7b572d12c423076902d3f77646a7fa,PASS,
-SITE-000008,https://www.myersindustries.com/contact-us/,735c1b8c5eb63d756e9f806ccbfbc99bbaf22881031dfd1a4d024d12a7f03582,PASS,
+SITE-000005,https://www.dayglo.com/contact-us/,e9c2c216f103a72576175a8b16744cbe5042ff0c7a5a5abc451a948b6c2c433f,PASS,
 SITE-000017,https://theacerubber.com,adb5d12c62a0caf491866e51dae6eca8a713b6f0e9cf8d3eb4d81e699dc31a6b,PASS,
 SITE-000038,https://pioneerplasticscorp.com/contact,7c9e6a46cea01cf0c0eddd892573a6b90f66cbcba368b87f939b27894949456f,PASS,
 SITE-000039,https://landmarkplastic.com,e356557a50a2314de9bc1f21c7eabbf97afe142392d77eb74491091d8928beb4,PASS,
-SITE-000060,https://esterle.com,6ff737214ab5d0b117fca04db9ab6d88990ec9dc2dbc834f49edcef5c1f834cc,PASS,
+SITE-000060,https://esterle.com,f4875563cce77882293bb3a53fd897796cb8549b60818ce8657d224cd3c6d47c,PASS,
 SITE-000071,https://milesrubber.com/contact-us,b2b4c6be2e931f738c7292ec6afd7ac79c2682081ead12931ada488043bda7c4,PASS,
 SITE-000072,https://cimaplastics.com,7db45d057caa82c8f77822bbb7049a5d378f712e4b06e979f25024ac69d089b8,PASS,
 SITE-000074,https://mrpsolutions.com/contact-us,e3841b01af8b0270df49b4506dfca511810440aaf930cf61a1bf62f46bb7322e,PASS,
@@ -426,9 +388,9 @@ SITE-000075,https://industrialmold.com,1afcaef402c1d2016308fe0384d1b8cfd9166c891
 SITE-000081,https://novexinc.com,7bc4297a0c5c609375b58d3ea346488792645551ba187c02ca1078abde6fe1d5,PASS,
 SITE-000082,https://merryweather.com,fcedc4591a36db0d6d120c84ba2ff0cfa047fa95c9fb1a376bccaba1afd25499,PASS,
 SITE-000086,https://rubberassociates.com,24bad599f084e6903c3601bee6feef918772db4ea09468b3e9e4226cf07bb526,PASS,
-SITE-000087,https://rainbowrubber.com,202a95deea9562095715fb8e883623190cc66cd94a68e2688b3b7f6fe383aac5,PASS,
+SITE-000087,https://rainbowrubber.com,ed97f98a64d651f080e847499f21b108565be478c8170526a240cdb15a6763f3,PASS,
 SITE-000107,https://hpmanufacturing.com,6c0d55d62c1d9660f650e6cc8faab3cc0169875ebfdbcca3dd2b8678978f276f,PASS,
-SITE-000109,https://teamplasticsinc.com/,953ee1934649501db3b2b5e351998c35113158bb8a761eaa588c368cf8167bf5,PASS,
+SITE-000109,https://teamplasticsinc.com/,d60f1b904a113cc9eb0d41a2de92a8fabe5b54c5edacde1bfe80939dcec891e5,PASS,
 SITE-000111,https://tricomachine.com,26905a209d3a6ae77ad4dc57bc0f7d2ee64b065e34cb147094fbc4f9ba1fcdc4,PASS,
 SITE-000116,https://noramcobag.com/contact-us/,b7e7a425b250c09f18751953393a6c9204cf4d0b8ee6ee1230ba370c1d83f932,PASS,
 SITE-000117,https://gshindustries.com,37bceacbf151016f1df887691ac92805d35b96a2efac459b936378907c332877,PASS,
@@ -439,9 +401,9 @@ FILE summary.json
   "eligible_sites": 448,
   "worked": 60,
   "unworked": 388,
-  "fills": 20,
-  "holds": 40,
+  "fills": 19,
+  "holds": 41,
   "active_ohio_sites": 1883,
   "before_streets": 286,
-  "after_streets": 306
+  "after_streets": 305
 }
