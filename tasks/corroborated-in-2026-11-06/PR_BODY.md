@@ -4,6 +4,6 @@ Controller-claimed L7 continuation from current main 8e8c71a, independent of Wis
 
 Checks: validate.py zero errors; exact 145/145 verdict census; deterministic checks across all 21 creates and a seeded 20/20 blind source-first sample; three known answers; held duplicate chain; prior-row preservation; byte-idempotence; and injected same-shard/cross-shard ID collisions rejected before writes. Per-create atlas.py CLI dedupe logs retained. Strict IN NAICS 326 sites / QCEW 2023 private establishments rises 110/512 (21.48%) →129/512 (25.20%); count ratio, not matched coverage. Only the two IN site/evidence shards change. No scripts, registry links or qualifiers change.
 
-IN reserves SITE-016500–016599 / EVD-205000–205999; issued IDs SITE-016500–016504,016506–016508,016510–016522 / EVD-205000–205034,205042–205062,205070–205160. Retired slots remain permanently unused. Independent Codex/Grok approval pending; draft.
+IN reserves SITE-016500–016599 / EVD-205000–205999; issued IDs SITE-016500–016504,016506–016508,016510–016522 / EVD-205000–205034,205042–205062,205070–205160. Retired slots remain permanently unused. Grok/xAI clerk1 APPROVE at745dbde after both operator findings were held. Targeted Codex/OpenAI re-review of the final operator guard remains pending; draft.
 
 🤖 Generated with Codex (bb child of thr_9i2c6byhcz)
