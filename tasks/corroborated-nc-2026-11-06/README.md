@@ -16,7 +16,7 @@ Checks:
 - python3 tasks/corroborated-nc-2026-11-06/build.py --apply: secondrun pending0.
 No sharedscripts edited; scripts pytest notapplicable.
 
-NC strict NAICS326 sites (active/unknown,A/B/C,US-or-blankcountry perofficial numerator)/QCEW2023privateestablishments:91/453=20.0883% before,103/453=22.7373% after.12creates carry326;threecarry3252/3255. Count ratio,not matchedcoverage. Denominator is heldofficialBLS reference;NY unchanged inthisPR.
+NC strict NAICS326 sites (active/unknown,A/B/C,US-or-blankcountry perofficial numerator)/QCEW2023privateestablishments:91/453=20.0883% before,103/453=22.7373% after.12creates carry326;twocarry325510. Count ratio,not matchedcoverage. Denominator is heldofficialBLS reference;NY unchanged inthisPR.
 
 Pre-pass backup: branchbase9489b60. IDs SITE-016300–016301,016303–016314 / EVD-203000–203013,203021–203104; ORG blockunused. Onlysites_NC.csv/evidence_sites_NC.csv changed. No registry_links,tier1,QUEUE orvalidator edits. Mainupdates via merge andmain-data+builder replay,never hand CSVmerges. CurrentmainPAstreetmerge will be incorporated before newreview request percontroller07:05. FL132,GA142,NY153 are separate drafts; thisPR doesnot depend onthem.
 
@@ -54,6 +54,7 @@ Pending Codex3/Grok3 under controller06:25 newodd-lane clerkassignment; draft on
 |LF-NC-00514|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00466|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00145|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
+|LF-NC-00423|HOLD: Alpek 2025-10-21 3Q25 report records permanent Cedar Creek closure; 2025-05-30 announcement identifies Fayetteville. CY2025 ITA is not evidence of reopening. Resolve status/current activity and standalone-resin ring under SCHEMA1 before any create; no active site applied.|
 |LF-NC-00209|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00460|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00171|HOLD: Taylorsville Carpenter filing gives only Highway90East; obtain sufficiently precise distinct-establishment witness.|
@@ -119,6 +120,7 @@ Pending Codex3/Grok3 under controller06:25 newodd-lane clerkassignment; draft on
 |LF-NC-00453|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00493|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00386|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
+
 
 Main-refresh journal: merged origin/main bdb8b9879b6a546b913812938710f9d033bcf33e before review; replay pending0,full14/14census andvalidate0 re-pass. Counter baseline unchanged91strictNC326 sites. Controller07:20 own_site boundary audit: zero unmerged NC own_site rows; all98new evidence rows are government_filing.
 
