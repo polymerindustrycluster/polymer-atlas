@@ -72,3 +72,8 @@ No shared scripts changed, so scripts pytest is not required. Final checks and i
 | SC | 49 | 54 | 406 | 12.07% → 13.30% |
 
 LA reuse exposed an order-dependent global-ID dictionary-collapse defect. The builder now asserts SITE and EVD input-ID uniqueness before constructing either lookup; both wrong-shard duplicate types are injected and must fail before any data write. This supersedes the earlier SITE-only negative-control coverage. No duplicate was applied to canonical data.
+
+Updated-main integration: conflicts resolved with main data then both-state builder replay, no hand CSV merges. Baseline is now recorded in baseline.json (includes mergedSTRONG PR141); original bdb8b98 ratios above are the earlier checkpoint, superseded for this PR's final integration.
+- MO: strict326 43→47/368, 11.68%→12.77%; this batch still adds 4 NAICS326 sites.
+- SC: strict326 52→57/406, 12.81%→14.04%; this batch still adds 5 NAICS326 sites.
+Updated main boundary comparison PASS: every original record/evidence retained; only four registrant alias fields gain values. Replay byte-identical. validate0errors, source/census/T3 checks PASS, both SITE and EVD cross-shard defect injections fail before writes.

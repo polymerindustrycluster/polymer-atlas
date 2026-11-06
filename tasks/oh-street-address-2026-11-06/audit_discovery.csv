@@ -1,0 +1,12 @@
+site_id,street_address,source_class,transcription,independently_corroborated,fresh_source_url,detail,error
+SITE-002081,38620 Chester Rd.,government_filing,PASS,no,,no exact/strong site-keyed FRS record available,
+SITE-000335,860 Garden St.,own_site,not_ITA,yes,https://www.duraline.com/contact/,"fresh own page, exact quote checked; SHA-256 144ec9e8d2820780dbe51e027a0823e9d01f68ea7dccec0737cdc93b9dc3a2b2",
+SITE-000505,16125 Industrial PKWY,government_filing,PASS,no,,no exact/strong site-keyed FRS record available,
+SITE-000621,708 Lowell St,government_filing,PASS,no,,no exact/strong site-keyed FRS record available,
+SITE-000809,2915 County Hwy 96,government_filing,PASS,no,https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110000605382&output=JSON,,independent FRS street disagrees: 2915 CO RD 96
+SITE-000239,222 N. Lake St.,government_filing,PASS,no,,no exact/strong site-keyed FRS record available,
+SITE-001304,151 JAMISON RD. SW,registry,not_ITA,yes,https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110000382194&output=JSON,fresh FRS corroboration,
+SITE-000918,2020 BRUCK STREET,registry,not_ITA,yes,https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110000382345&output=JSON,fresh FRS corroboration,
+SITE-001031,9080 Shell Road,government_filing,PASS,yes,https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110064365725&output=JSON,fresh FRS corroboration,
+SITE-000849,10 s Electric st,government_filing,PASS,yes,https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id=110000394494&output=JSON,fresh FRS corroboration,
+SITE-000240,5285 HUDSON DR.,government_filing,PASS,no,,no exact/strong site-keyed FRS record available,

@@ -1,18 +1,18 @@
 {
   "MO": {
-    "strict": 37,
+    "strict": 43,
     "qcew": 368,
-    "strict_after": 41,
+    "strict_after": 47,
     "added_326": 4,
-    "share_before": 0.10054347826086957,
-    "share_after": 0.11141304347826086
+    "share_before": 0.11684782608695653,
+    "share_after": 0.12771739130434784
   },
   "SC": {
-    "strict": 49,
+    "strict": 52,
     "qcew": 406,
-    "strict_after": 54,
+    "strict_after": 57,
     "added_326": 5,
-    "share_before": 0.1206896551724138,
-    "share_after": 0.1330049261083744
+    "share_before": 0.12807881773399016,
+    "share_after": 0.14039408866995073
   }
 }

@@ -1,0 +1,19 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+Two material provenance issues block approval.
+
+1. **Federal aliases are attributed to own-site pages.** [build.py:65](/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_3v6jwtntvp-1/polymer-atlas/tasks/strong-waves-mo-sc-la-2026-11-06/build.py:65) uses `own_site` for the alias observations of 14 new organizations. Concrete failure: EVD-161300 attributes `KOLLER ENTERPRISES, INC.` to Koller Craft’s About page, which does not contain that name. The name comes from Form 5500 EIN 430608772. Cite the actual federal witness, as the lane’s B-ALIAS contract requires.
+
+2. **CMP’s own-site classification bypasses B-PARENT.** ORG-009029 has blank `parent_org_id` and `ultimate_parent_name`, but EVD-162905 onward classify Chugoku’s group-company page as `own_site`. The [owner ruling](/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_3v6jwtntvp-1/polymer-atlas/tasks/OWNER_BATTERY_2026-11-04.md:26) requires that relationship to be recorded; otherwise the source is `press`. Reconcile the source classification and SITE-012029’s B tier. This concerns provenance, not the permitted plant-only witness.
+
+The mechanical claims checked out:
+
+- Exactly 36 unique verdicts: MO 9 verified/6 uncertain; SC 6/7/1 reject; LA 4/3.
+- Actual additions: 15 organizations, 19 sites, 210 evidence rows.
+- Every pre-existing evidence row preserved; only four existing organization alias fields changed.
+- IDs unique and within reserved ranges; no duplicate establishment found.
+- Independently reproduced strict counts: MO 37→43, SC 49→52, LA 6→7.
+- Fresh fetches confirmed all 19 verified quotes with script/style excluded.
+
+Inspected the worktree against `bd57a08`, federal extracts, dedupe packet, allocations, evidence rows, scripts, Michigan recipe, owner rulings, regulator PDF, and saved validation output. Ran no builders and edited no files. The 16 named holds need no creates.
+
+REFUTE

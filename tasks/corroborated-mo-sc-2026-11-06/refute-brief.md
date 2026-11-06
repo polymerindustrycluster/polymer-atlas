@@ -1,3 +1,5 @@
+LATEST HEAD UPDATE: main now includes mergedSTRONG PR141, baseline.json pins current source. Final T3 MO43→47/368, SC52→57/406, batch increments unchanged+4/+5. Added explicit global SITE/EVD uniqueness checks before dictionary construction; both cross-shard duplicate injections fail before any data writes. Prior canonical records preserved and replaybyte-identical; counts10Csites/74EVD unchanged.
+
 Adversarial two-family completion refute requested: PR continuation L3,143 CORROBORATED clusters (MO63 SC80). Full census10 proposed new sites, all provisional C and operating_status unknown,0orgs,74 evidence (70 siteC+4 primary-government registrant identity observations A);4 held trade_names variants added. No own_site quotes or fresh operating checks claimed. Banked ITA CY2025 witnessed packet2026-11-01 reviewed2026-11-06, official URL keyed establishment_ID. Government primary identity observations support A only for filed company_name, never promote plant tier/scope/liveness. Class ceiling government_filing permits A. Known3identity answers+ambiguous alias mutation passed. All143 exactverdicts;10verified132uncertain1duplicate. Primary federal company name must independently resolve exact normalized legal/trade name of one active surviving held operator. Plantlabels/parentvariant alone held. Production code+explicitpolymermanufacture text required; paintremover/distribution and Crown identity/DuncanInnovation held. No sourceabsenceclosure inference.
 Check.py allPASS: exactcensus/sourcebinding,countryCunknown,global/reservedIDs,T3+4MO/+5SC; three censusdefects caught; wrong-shard-ID injection fails beforewrites. Existingcanonical rows comparedagainstbdb8b98: only4trade_names additions; evidenceappend-only. Allstatebuilderreplaybyteidentical. validate.py0errors. Entire10createcensus in blind-full-census.csv, inspect all10 not20sample since fewercreates. ReservedSITE012100+frozenindex;EVD300000+20index under controllergrant300000..309999. Goal legalverdictpercluster, uncertainallowed; do not demandholdsintegrate. End APPROVE or REFUTE with material findings and coverage. Never modify this lane worktree.
 
@@ -104,6 +106,13 @@ No shared scripts changed, so scripts pytest is not required. Final checks and i
 | MO | 37 | 41 | 368 | 10.05% → 11.14% |
 | SC | 49 | 54 | 406 | 12.07% → 13.30% |
 
+LA reuse exposed an order-dependent global-ID dictionary-collapse defect. The builder now asserts SITE and EVD input-ID uniqueness before constructing either lookup; both wrong-shard duplicate types are injected and must fail before any data write. This supersedes the earlier SITE-only negative-control coverage. No duplicate was applied to canonical data.
+
+Updated-main integration: conflicts resolved with main data then both-state builder replay, no hand CSV merges. Baseline is now recorded in baseline.json (includes mergedSTRONG PR141); original bdb8b98 ratios above are the earlier checkpoint, superseded for this PR's final integration.
+- MO: strict326 43→47/368, 11.68%→12.77%; this batch still adds 4 NAICS326 sites.
+- SC: strict326 52→57/406, 12.81%→14.04%; this batch still adds 5 NAICS326 sites.
+Updated main boundary comparison PASS: every original record/evidence retained; only four registrant alias fields gain values. Replay byte-identical. validate0errors, source/census/T3 checks PASS, both SITE and EVD cross-shard defect injections fail before writes.
+
 
 FILE build.py
 #!/usr/bin/env python3
@@ -172,6 +181,8 @@ def main():
    out[f"evidence_organizations_{op.stem.split('_')[-1]}.csv"].append(dict(evidence_id=f'EVD-{eid:06d}',record_table='organizations',record_id=oid,claim_type='existence',claim_detail='Federal registrant trade_names: '+registrant,source_class='government_filing',source_ref=ref,observed_date='2026-11-01',tier_effect='supports_A',created_by=BY,notes=notes))
   alloc.append(dict(cluster_id=c['cluster_id'],site_id=sid,org_id=oid,establishment_id=f['establishment_id'],state=a.state))
  # Global cross-shard ID collision preflight, including records in unexpected shards.
+ assert len(oldsites)==len({r['site_id'] for r in oldsites}), 'conflicting ID: duplicate SITE across shards'
+ assert len(oldev)==len({r['evidence_id'] for r in oldev}), 'conflicting ID: duplicate EVD across shards'
  allids={'site_id':{r['site_id']:r for r in oldsites},'evidence_id':{r['evidence_id']:r for r in oldev}}
  pending={}
  for name,rows in out.items():
@@ -243,14 +254,17 @@ def main():
  if a.negative_controls:
   with tempfile.TemporaryDirectory() as d:
    data=Path(d)/'data';shutil.copytree(ROOT/'data',data)
-   target=alloc[0]['site_id'];wrong=data/'sites_AL.csv';rows=read(wrong);injected={**rows[0],'site_id':target,'street_address':'999 COLLISION ROAD'}
-   with wrong.open('a',newline='') as f:csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n').writerow(injected)
-   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
-   run=subprocess.run([sys.executable,str(H/'build.py'),'--state',alloc[0]['state'],'--data-dir',str(data),'--apply'],capture_output=True,text=True)
-   assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
-   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
+   for wrong,key,target in [(data/'sites_AL.csv','site_id',alloc[0]['site_id']),(data/'evidence_sites_AL.csv','evidence_id',lane[0]['evidence_id'])]:
+    original=wrong.read_bytes();rows=read(wrong);injected={**rows[0],key:target}
+    if key=='site_id':injected['street_address']='999 COLLISION ROAD'
+    with wrong.open('a',newline='') as f:csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n').writerow(injected)
+    before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+    run=subprocess.run([sys.executable,str(H/'build.py'),'--state',alloc[0]['state'],'--data-dir',str(data),'--apply'],capture_output=True,text=True)
+    assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
+    assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
+    wrong.write_bytes(original)
  print('PASS exact143 census;3 census defects caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected cross-shard SITE collision refused before any data write')
+ if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
 if __name__=='__main__':main()
 
 
@@ -271,19 +285,19 @@ LF-SC-00512,SITE-012226,ORG-002544,671466,Berry Global,Berry Global,200 ARROWHEA
 FILE qcew-after.json
 {
   "MO": {
-    "strict": 37,
+    "strict": 43,
     "qcew": 368,
-    "strict_after": 41,
+    "strict_after": 47,
     "added_326": 4,
-    "share_before": 0.10054347826086957,
-    "share_after": 0.11141304347826086
+    "share_before": 0.11684782608695653,
+    "share_after": 0.12771739130434784
   },
   "SC": {
-    "strict": 49,
+    "strict": 52,
     "qcew": 406,
-    "strict_after": 54,
+    "strict_after": 57,
     "added_326": 5,
-    "share_before": 0.1206896551724138,
-    "share_after": 0.1330049261083744
+    "share_before": 0.12807881773399016,
+    "share_after": 0.14039408866995073
   }
 }

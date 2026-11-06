@@ -1,0 +1,1662 @@
+[
+  {
+    "cluster_id": "LF-GA-00204",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Pactiv, LLC",
+      "--street",
+      "8170 Alcovy Road NE",
+      "--city",
+      "Covington",
+      "--state",
+      "GA",
+      "--zip",
+      "30014",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Pactiv, LLC",
+        "street": "8170 Alcovy Road NE",
+        "city": "Covington",
+        "state": "GA",
+        "zip": "30014"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002537",
+              "name": "Pactiv Corporation",
+              "city": "Mount Carmel",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "name key 'pactiv' = legal_name 'Pactiv Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002395",
+              "name": "Fabri Kal Corp.",
+              "city": "Hazleton",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Pactiv, LLC'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00199",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "New Wincup Holdings, Inc.",
+      "--street",
+      "4640 Lewis Rd",
+      "--city",
+      "Stone Mountain",
+      "--state",
+      "GA",
+      "--zip",
+      "30083",
+      "--json",
+      "--domain",
+      "https://wincup.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://wincup.com/",
+        "name": "New Wincup Holdings, Inc.",
+        "street": "4640 Lewis Rd",
+        "city": "Stone Mountain",
+        "state": "GA",
+        "zip": "30083"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000984",
+              "name": "WinCup",
+              "city": "Atlanta",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: wincup.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000984",
+              "name": "WinCup",
+              "city": "Atlanta",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "name key 'new wincup holdings' = trade_names 'New Wincup Holdings, INC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00170",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Pactiv LLC",
+      "--street",
+      "1501 Rockdale Industrial Blvd",
+      "--city",
+      "Conyers",
+      "--state",
+      "GA",
+      "--zip",
+      "30012",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Pactiv LLC",
+        "street": "1501 Rockdale Industrial Blvd",
+        "city": "Conyers",
+        "state": "GA",
+        "zip": "30012"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002537",
+              "name": "Pactiv Corporation",
+              "city": "Mount Carmel",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "name key 'pactiv' = legal_name 'Pactiv Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002395",
+              "name": "Fabri Kal Corp.",
+              "city": "Hazleton",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Pactiv LLC'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00303",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Goodyear Tire and Rubber Company",
+      "--street",
+      "100 Business Center Drive",
+      "--city",
+      "Stockbridge",
+      "--state",
+      "GA",
+      "--zip",
+      "30281",
+      "--json",
+      "--domain",
+      "https://www.goodyear.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.goodyear.com",
+        "name": "The Goodyear Tire and Rubber Company",
+        "street": "100 Business Center Drive",
+        "city": "Stockbridge",
+        "state": "GA",
+        "zip": "30281"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000003",
+              "name": "The Goodyear Tire & Rubber Company",
+              "city": "Akron",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: goodyear.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000003",
+              "name": "The Goodyear Tire & Rubber Company",
+              "city": "Akron",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'goodyear tire and rubber' = legal_name 'The Goodyear Tire & Rubber Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00030",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Sherwin-Williams Company",
+      "--street",
+      "725 Raco Drive",
+      "--city",
+      "Lawrenceville",
+      "--state",
+      "GA",
+      "--zip",
+      "30045",
+      "--json",
+      "--domain",
+      "https://www.sherwin-williams.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sherwin-williams.com",
+        "name": "The Sherwin-Williams Company",
+        "street": "725 Raco Drive",
+        "city": "Lawrenceville",
+        "state": "GA",
+        "zip": "30045"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sherwin-williams.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000088",
+              "name": "PPG Industries, Inc.",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            },
+            {
+              "id": "ORG-002886",
+              "name": "CSW Industrials, Inc.",
+              "city": "Dallas",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00389",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "GAF",
+      "--street",
+      "2100 Steeda Way",
+      "--city",
+      "Valdosta",
+      "--state",
+      "GA",
+      "--zip",
+      "31601",
+      "--json",
+      "--domain",
+      "https://www.gaf.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.gaf.com/",
+        "name": "GAF",
+        "street": "2100 Steeda Way",
+        "city": "Valdosta",
+        "state": "GA",
+        "zip": "31601"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004251",
+              "name": "GAF Materials Corporation",
+              "city": "Parsippany",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NJ.csv",
+              "match": "domain exact: gaf.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004251",
+              "name": "GAF Materials Corporation",
+              "city": "Parsippany",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NJ.csv",
+              "match": "name key 'gaf' = trade_names 'GAF'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00259",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Penn Color",
+      "--street",
+      "540 Hackett Mill Road",
+      "--city",
+      "Ringgold",
+      "--state",
+      "GA",
+      "--zip",
+      "30736",
+      "--json",
+      "--domain",
+      "https://www.penncolor.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.penncolor.com/",
+        "name": "Penn Color",
+        "street": "540 Hackett Mill Road",
+        "city": "Ringgold",
+        "state": "GA",
+        "zip": "30736"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002281",
+              "name": "Penn Color Inc.",
+              "city": "Doylestown",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "domain exact: penncolor.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002281",
+              "name": "Penn Color Inc.",
+              "city": "Doylestown",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "name key 'penn color' = legal_name 'Penn Color Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00128",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Storopack, Inc.",
+      "--street",
+      "6140 Duquesne Drive",
+      "--city",
+      "Atlanta",
+      "--state",
+      "GA",
+      "--zip",
+      "30336",
+      "--json",
+      "--domain",
+      "https://www.storopack.us/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.storopack.us/",
+        "name": "Storopack, Inc.",
+        "street": "6140 Duquesne Drive",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30336"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: storopack.us"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00332",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Mapei",
+      "--street",
+      "2308 Dalton Industrial Court",
+      "--city",
+      "Dalton",
+      "--state",
+      "GA",
+      "--zip",
+      "30721",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Mapei",
+        "street": "2308 Dalton Industrial Court",
+        "city": "Dalton",
+        "state": "GA",
+        "zip": "30721"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004300",
+              "name": "MAPEI Corporation",
+              "city": "Deerfield Beach",
+              "state": "FL",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_FL.csv",
+              "match": "name key 'mapei' = legal_name 'MAPEI Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002397",
+              "name": "Polyglass USA",
+              "city": "Hazleton",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Mapei'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00362",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Mapei Corporation",
+      "--street",
+      "201 Enterprise Drive",
+      "--city",
+      "Calhoun",
+      "--state",
+      "GA",
+      "--zip",
+      "30701",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "Mapei Corporation",
+        "street": "201 Enterprise Drive",
+        "city": "Calhoun",
+        "state": "GA",
+        "zip": "30701"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004300",
+              "name": "MAPEI Corporation",
+              "city": "Deerfield Beach",
+              "state": "FL",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_FL.csv",
+              "match": "name key 'mapei' = legal_name 'MAPEI Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002397",
+              "name": "Polyglass USA",
+              "city": "Hazleton",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Mapei Corporation'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00794",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Apache Mills",
+      "--street",
+      "197 Royal Drive SE",
+      "--city",
+      "Calhoun",
+      "--state",
+      "GA",
+      "--zip",
+      "30701",
+      "--json",
+      "--domain",
+      "http://www.apachemills.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "http://www.apachemills.com/",
+        "name": "Apache Mills",
+        "street": "197 Royal Drive SE",
+        "city": "Calhoun",
+        "state": "GA",
+        "zip": "30701"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004055",
+              "name": "Apache Mills, Inc.",
+              "city": "Calhoun",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: apachemills.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004055",
+              "name": "Apache Mills, Inc.",
+              "city": "Calhoun",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "name key 'apache mills' = legal_name 'Apache Mills, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00715",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Habasit America",
+      "--street",
+      "805 Satellite Blvd NW",
+      "--city",
+      "Suwanee",
+      "--state",
+      "GA",
+      "--zip",
+      "30024",
+      "--json",
+      "--domain",
+      "https://www.habasit.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.habasit.com/",
+        "name": "Habasit America",
+        "street": "805 Satellite Blvd NW",
+        "city": "Suwanee",
+        "state": "GA",
+        "zip": "30024"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004392",
+              "name": "Habasit America, Inc.",
+              "city": "Suwanee",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: habasit.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004392",
+              "name": "Habasit America, Inc.",
+              "city": "Suwanee",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "name key 'habasit america' = legal_name 'Habasit America, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00812",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Sherwin-Williams Company",
+      "--street",
+      "13129 Harland Drive",
+      "--city",
+      "Covington",
+      "--state",
+      "GA",
+      "--zip",
+      "30014",
+      "--json",
+      "--domain",
+      "https://www.sherwin-williams.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sherwin-williams.com",
+        "name": "The Sherwin-Williams Company",
+        "street": "13129 Harland Drive",
+        "city": "Covington",
+        "state": "GA",
+        "zip": "30014"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sherwin-williams.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000088",
+              "name": "PPG Industries, Inc.",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            },
+            {
+              "id": "ORG-002886",
+              "name": "CSW Industrials, Inc.",
+              "city": "Dallas",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00757",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "CKS Packaging, Inc.",
+      "--street",
+      "300 Fisk Drive",
+      "--city",
+      "Atlanta",
+      "--state",
+      "GA",
+      "--zip",
+      "30336",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "CKS Packaging, Inc.",
+        "street": "300 Fisk Drive",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30336"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004995",
+              "name": "CKS Packaging",
+              "city": "Naugatuck",
+              "state": "CT",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CT.csv",
+              "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00559",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Advanced Drainage Systems",
+      "--street",
+      "1005 Valley Drive",
+      "--city",
+      "Perry",
+      "--state",
+      "GA",
+      "--zip",
+      "31069",
+      "--json",
+      "--domain",
+      "https://www.adspipe.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.adspipe.com/",
+        "name": "Advanced Drainage Systems",
+        "street": "1005 Valley Drive",
+        "city": "Perry",
+        "state": "GA",
+        "zip": "31069"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000651",
+              "name": "Advanced Drainage Systems, Inc.",
+              "city": "Hilliard",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: adspipe.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000651",
+              "name": "Advanced Drainage Systems, Inc.",
+              "city": "Hilliard",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'advanced drainage systems' = legal_name 'Advanced Drainage Systems, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00719",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Axium Packaging, LLC",
+      "--street",
+      "1775 Macleod Dr.",
+      "--city",
+      "Lawrenceville",
+      "--state",
+      "GA",
+      "--zip",
+      "30043",
+      "--json",
+      "--domain",
+      "https://axiumpackaging.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://axiumpackaging.com/",
+        "name": "Axium Packaging, LLC",
+        "street": "1775 Macleod Dr.",
+        "city": "Lawrenceville",
+        "state": "GA",
+        "zip": "30043"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000690",
+              "name": "Axium Packaging Inc",
+              "city": "New Albany",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: axiumpackaging.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000690",
+              "name": "Axium Packaging Inc",
+              "city": "New Albany",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "name key 'axium packaging' = legal_name 'Axium Packaging Inc'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00796",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Sherwin-Williams Company",
+      "--street",
+      "6795 Jonesboro Rd",
+      "--city",
+      "Morrow",
+      "--state",
+      "GA",
+      "--zip",
+      "30260",
+      "--json",
+      "--domain",
+      "https://www.sherwin-williams.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sherwin-williams.com",
+        "name": "The Sherwin-Williams Company",
+        "street": "6795 Jonesboro Rd",
+        "city": "Morrow",
+        "state": "GA",
+        "zip": "30260"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sherwin-williams.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000088",
+              "name": "PPG Industries, Inc.",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            },
+            {
+              "id": "ORG-002886",
+              "name": "CSW Industrials, Inc.",
+              "city": "Dallas",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00846",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Altium Packaging",
+      "--street",
+      "6220 Duquesne Dr SW",
+      "--city",
+      "Atlanta",
+      "--state",
+      "GA",
+      "--zip",
+      "30336",
+      "--json",
+      "--domain",
+      "https://altiumpkg.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://altiumpkg.com/",
+        "name": "Altium Packaging",
+        "street": "6220 Duquesne Dr SW",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30336"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: altiumpkg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'altium packaging' = legal_name 'Altium Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006136",
+              "name": "Altium Packaging - Newark Plant",
+              "city": "Newark",
+              "state": "DE",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_DE.csv",
+              "match": "legal_name contains 'Altium Packaging'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00764",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "CKS Packaging, Inc.",
+      "--street",
+      "6195 Purdue Drive",
+      "--city",
+      "Atlanta",
+      "--state",
+      "GA",
+      "--zip",
+      "30336",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "CKS Packaging, Inc.",
+        "street": "6195 Purdue Drive",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30336"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004995",
+              "name": "CKS Packaging",
+              "city": "Naugatuck",
+              "state": "CT",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CT.csv",
+              "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-GA-00637",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Crown USA, Inc.",
+      "--street",
+      "600 Poplar Drive",
+      "--city",
+      "Thomaston",
+      "--state",
+      "GA",
+      "--zip",
+      "30286",
+      "--json",
+      "--domain",
+      "https://crownusa.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://crownusa.com",
+        "name": "Crown USA, Inc.",
+        "street": "600 Poplar Drive",
+        "city": "Thomaston",
+        "state": "GA",
+        "zip": "30286"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007510",
+              "name": "Crown USA, Inc.",
+              "city": "Woodbury",
+              "state": "GA",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: crownusa.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007510",
+              "name": "Crown USA, Inc.",
+              "city": "Woodbury",
+              "state": "GA",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_GA.csv",
+              "match": "name key 'crown usa' = legal_name 'Crown USA, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  }
+]
