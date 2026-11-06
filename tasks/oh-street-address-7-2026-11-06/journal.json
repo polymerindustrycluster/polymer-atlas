@@ -223,5 +223,8 @@
   "canonical_hashes": {
     "sites_OH.csv": "a78f81935d7a6c25d373f3ceb0bb215b1a89131fb0ccac25437c9311b5fbf244",
     "evidence_sites_OH.csv": "8a9e826c8e165885360e3c162463c759234f4890cf3285ce1d9abbc7fa8d49e9"
-  }
+  },
+  "replayed_main": "4ea5659562be6f267d84c450f3c9fb133ff61fe2",
+  "replay_payload_identical_to": "ff0f9d1",
+  "merged_main_parent": "1e5834394f592f7237a5919500d9fbd5f2c48ad5"
 }
