@@ -11,7 +11,7 @@ Work and reviews in progress. No completion claimed.
 
 ## Applied packet and named results (supersedes preliminary candidate counts)
 
-45 fresher own_site evidence rows append across6 shards;113 holds out of158 weak rows. No organization/site field, tier, weak evidence row, registry link or derived field changed. Original values compare equal against pinned main9d69978; append_sorted reserializes quoting/newlines in some shard files but existing parsed records are identical. IDs use275000 plus frozen input position (permanent gaps); all inside275000–279999.
+45 fresher own_site evidence rows append across6 shards;113 holds out of158 weak rows. No organization/site field, tier, weak evidence row, registry link or derived field changed. Original values compare equal against pinned main8e8c71ada1f63b7c4d90867027efb8cea57f03a0; append_sorted reserializes quoting/newlines in some shard files but existing parsed records are identical. IDs use275000 plus frozen input position (permanent gaps); all inside275000–279999.
 
 Candidate50 quotes passed re-fetch on27 URLs;5 then held at own-domain boundary (3 Molding Dynamics hyphenated-domain redirects,2 Simplay3 rows whose held organization has no website). Final45 approved receipts/quotes on25 URLs. Technoform body order changed on re-fetch; used its fixed named Industries navigation context, not the missing original body span. Semantic interpretation is explicit, pending refute. Site binding for Akron Gasket,AmericanWire,Eagle,MPS is the same cited page's physical-city/address footer. Premere's address is printed on its own page. Corporate address rows quote explicit headquarters/office labels; no address data fields changed.
 
@@ -24,3 +24,5 @@ Holds: verdicts.csv names the specific original claim and required settling own 
 Counts:37 scope,7 address,1 existence observation;40 supports_A,3 supports_B,2 supports_C;23 distinct record IDs,25 cited own-site URLs. No record tier upgraded.
 
 No approval/Done claim: Codex/Grok deep clerk reviews and semantic refutation remain pending. This is a bounded repair yield, not158fully repaired claims.
+
+Integrated newer main 8e8c71a using exact-main copies of all6 affected evidence shards followed by builder replay; no CSV conflict was hand-merged. Weak4ef764e frame and45repair witnesses unchanged. This supersedes the earlier main-baseline hash only.
