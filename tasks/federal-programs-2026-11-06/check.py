@@ -17,7 +17,7 @@ hashes = lambda data: {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p 
 base = subprocess.check_output(["git", "merge-base", "HEAD", "origin/main"], cwd=ROOT, text=True).strip()
 verdicts = build.read(HERE / "verdicts.csv")
 assert Counter(r["verdict"] for r in verdicts) == {"VERIFIED": 1, "DUPLICATE_OF": 5, "STILL_UNCERTAIN": 6}
-for filename, key, expected in [("ecosystem.csv", "org_id", 1), ("evidence_ecosystem.csv", "evidence_id", 5)]:
+for filename, key, expected in [("ecosystem.csv", "org_id", 1), ("evidence_ecosystem.csv", "evidence_id", 6)]:
     old = list(csv.DictReader(io.StringIO(subprocess.check_output(["git", "show", f"{base}:data/{filename}"], cwd=ROOT, text=True))))
     new = build.read(ROOT / "data" / filename)
     current = {r[key]: r for r in new}
@@ -56,8 +56,18 @@ with tempfile.TemporaryDirectory() as tmp:
     before = hashes(data)
     build.HERE = packet
     try:
+        creates = build.read(packet / 'creates_ecosystem.csv')
+        creates[0]['pic_relevance'] = ''
+        with (packet / 'creates_ecosystem.csv').open('w', newline='') as f:
+            w = csv.DictWriter(f, fieldnames=list(creates[0]), lineterminator='\n'); w.writeheader(); w.writerows(creates)
+        try: build.plan(data)
+        except AssertionError as error: assert str(error) == 'missing ecosystem PIC relevance', str(error)
+        else: raise AssertionError('blank relevance passed')
+        assert hashes(data) == before
+        shutil.copyfile(HERE / 'creates_ecosystem.csv', packet / 'creates_ecosystem.csv')
+        print('PASS blank relevance refused before any write')
         write_evidence([r for r in evidence if r["claim_type"] != "address"])
-        assert len(build.read(packet / "evidence_rows.csv")) == 3
+        assert len(build.read(packet / "evidence_rows.csv")) == 4
         try: build.plan(data)
         except AssertionError as error: assert str(error) == "missing ecosystem must-have evidence", str(error)
         else: raise AssertionError("missing typed address evidence passed")
@@ -83,4 +93,4 @@ with tempfile.TemporaryDirectory() as tmp:
         print("PASS fabricated evidence quote refuses; all CSVs unchanged")
     finally:
         build.HERE = HERE
-print("PASS census12/12;1Cecosystem+5EVD exact main delta; all main rows preserved; all-CSV replay byte-identical")
+print("PASS census12/12;1Cecosystem+6EVD exact main delta; all main rows preserved; all-CSV replay byte-identical")

@@ -45,6 +45,11 @@ def plan(data):
     assert {r["org_id"] for r in creates} == {r["held_or_new_id"] for r in verdicts if r["verdict"] == "VERIFIED"}
     assert len({r["org_id"] for r in creates}) == len(creates)
     for row in creates:
+        assert row['pic_relevance'].strip(), 'missing ecosystem PIC relevance'
+        assert row['pic_relevance'] == 'potential_member', 'relevance differs from justified potential-member assessment'
+        assert any(r['record_id'] == row['org_id'] and r['claim_type'] == 'scope' and
+                   'pic_relevance=potential_member' in r['claim_detail'] and
+                   r['source_ref'] == 'https://lift.technology/resources/' for r in evidence), 'missing relevance assessment witness'
         assert 13300 <= int(row["org_id"][4:]) <= 13399
         claims = {r["claim_type"] for r in evidence if r["record_table"] == "ecosystem" and r["record_id"] == row["org_id"]}
         assert {"existence", "address", "scope"} <= claims, "missing ecosystem must-have evidence"
@@ -97,8 +102,8 @@ def raw_check():
             assert len(counties) == 1 and counties[0]["NAME"] == "Wayne County" and counties[0]["GEOID"] == "26163"
         assert not has(text, "Fabricated Federal Polymer Program XYZ"), "negative quote control"
         print("RAW PASS", url, flush=True)
-    assert checked == len(evidence) == 5
-    print("PASS raw5/5 observations over4/4 sources; known operator/plasma/HIP words; fabricated negative", flush=True)
+    assert checked == len(evidence) == 6
+    print("PASS raw6/6 observations over4/4 sources; known operator/plasma/HIP words; fabricated negative", flush=True)
 
 
 def main():
@@ -114,7 +119,7 @@ def main():
         for path, rows, key in pending:
             if rows:
                 append_sorted(path, rows, key)
-    print("PASS census12/12; known held3/3; proposed1 C ecosystem+5 evidence rows; pending",
+    print("PASS census12/12; known held3/3; proposed1 C ecosystem+6 evidence rows; pending",
           sum(len(rows) for _, rows, _ in pending), "rows")
 
 
