@@ -141,3 +141,11 @@ this single historical creation, not another active company under the same domai
 ORG001475ChromaScape mentions the former company in acquisition notes; it is a distinct
 held buyer, not the Chromaflo legal predecessor. No organization lives in two tables;
 ecosystem shared namespace checked before create. atlas shard-of confirms OH placement.
+
+## Grok approval receipt
+
+Grok/xAI clerk3 (thr_4g4uwqjxjv) APPROVE 188deead996ba3fbc9e790e1c27670ac7c4551db, zero findings. Reviewed data commit83d8c9a unchanged by the prior README receipt. All12 verdicts and all16 quotations independently rechecked against fresh sources. Confirmed official Franklin273-001702, Union15-0027019.0230 and Ashtabula05-318-00-006-00 parcel matches; no Avalon or third-party.0270 substitution. Chromaflo remains the SCHEMA5.2 historical acquired U record; GLEIF renamed legal entity remains ACTIVE, not closed. NAICS325130 remains explicitly inferred/low/U.
+
+Fresh-base replay, old-row preservation, global collision/preimage zero-write tests, four parcel defects, validator0 and row-loss pass. Canonical delta unchanged:1 U historical organization,1 generated successor edge,16 appended evidence rows,8 existing site rows edited; no new active organization/site, registry or script edit. Eight holds and all owner questions remain unresolved; no PA folds. Taylor permit quotation is a mailing address, not proof warranting consolidation. Report: controller reviews/185-clerk-grok-3.md.
+
+Codex approval remains pending; PR stays draft without a two-family completion claim. This receipt changes documentation only. No fresh source fetches or full scripts pytest repeated for the receipt.
