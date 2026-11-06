@@ -8,7 +8,7 @@ Scope fixed before work: packet/docs only; no data edits, no IDs, no membership 
 | PMA Processor Members | CORROBORATION_ONLY | 3/20 VERIFIED new; 15%, Wilson 95% 5.24–36.04% | Publication rights; 10 uncertain entries |
 | PatentsView / USPTO bulk | CORROBORATION_ONLY | 0/20 VERIFIED new; 0%, Wilson 95% 0–16.11% | Current operation/identity; confirmed PIC-18 patent count |
 
-See each source subfolder for route, terms clause or explicit inability to obtain one, count units, sampling frame, dedupe limitations and holds. No automated-use right was inferred from public accessibility. PatentsView sample is a bulk-evidence sufficiency scout, not an own-site verification campaign; zero does not mean no opportunity. 79 PIC-18 held organization candidates are not 51 confirmed patent-owning organizations.
+See each source subfolder for route, terms clause or explicit inability to obtain one, count units, sampling frame, dedupe limitations and holds. No automated-use right was inferred from public accessibility. PatentsView sample is a bulk-evidence sufficiency scout, not an own-site verification campaign; zero does not mean no opportunity. Neither the79 broad candidates nor the51 patent-location intersection confirms patent ownership.
 
 CBP request resolved: CSV already contains all six counties (160 rows; 16 totals reconciled to fresh Census API). Fresh bulk rebuild is byte-identical. Updated stale reporting selection from PIC-12 to regions.PIC18; PIC-18 NAICS 326 total 401 establishments.
 
@@ -35,3 +35,5 @@ Bulk reproducibility: `duckdb /tmp/l5-patents.duckdb < tasks/source-scout-3-2026
 ## Review correction — 2026-11-06
 
 Grok/xAI APPROVE on a81ee1d (0 findings), independently recomputed raw quotes, samples, bulk and CBP totals. Codex/OpenAI REFUTE on4afcb40: (1) valid geography-label finding corrected by broadening pic18_matches.csv to all79 exact-name held-footprint candidates, retaining51 with PIC18 patent location as an explicitly flagged intersection; independent oracle now derives both populations from committed assignees and held HQ/sites. (2) current-main row-loss findings were stale-base additions; merged origin/main9489b60 via controller06:12 normalization recipe, preserving all upstream evidence/relationships. Both findings addressed; Codex re-review pending. Neither79 nor51 confirms patent ownership.
+
+Grok/xAI final corrected-packet verdict: APPROVE,0findings, a51135a (supersedes a81ee1d). Independently recomputed79 broad/51 intersection sets and byte-identical patent aggregate outputs, source yields/CBP16 totals/held targets, validator and row-loss. Subsequent commits merge newer main and record this verdict; candidate/sample definitions unchanged. Codex/OpenAI re-review remains pending.
