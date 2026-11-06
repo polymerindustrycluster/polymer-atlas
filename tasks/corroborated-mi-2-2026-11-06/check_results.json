@@ -1,0 +1,13 @@
+{
+  "state": "MI",
+  "worked_clusters": 48,
+  "creates_C": 4,
+  "evidence_rows": 28,
+  "known_answers": 3,
+  "blind_census_size": 4,
+  "before_strict326": 121,
+  "after_strict326": 121,
+  "qcew2023_private_establishments326": 819,
+  "strict_share_percent": 14.774114774114775,
+  "delta": 0
+}
