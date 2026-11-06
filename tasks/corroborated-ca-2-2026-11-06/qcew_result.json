@@ -1,0 +1,9 @@
+{
+  "unit": "CA US establishments, NAICS primary starts326, tiersA/B/C, statusactive/unknown",
+  "qcew_2023_private_establishments": 1306,
+  "atlas_strict": 75,
+  "atlas_strict_after": 92,
+  "delta_strict": 17,
+  "before_pct": 5.742725880551301,
+  "after_pct": 7.044410413476263
+}
