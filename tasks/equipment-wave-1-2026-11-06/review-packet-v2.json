@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "scope": "L14 equipment34 rows plus controller-authorized fixture ID and nonempty equipment rendering fixes. scripts changes fully represented by fixture.patch/render.patch and available in branch checkout; canonical projection in inputs.csv. Initial manifest superseded. Grok technical approval is recorded for29c62fe; subsequent changes only add its receipt. Scripts and equipment remain identical; Codex final technical approval still pending.",
+  "scope": "L14 equipment34 rows plus controller-authorized fixture ID and nonempty equipment rendering fixes. scripts changes fully represented by fixture.patch/render.patch and available in branch checkout; canonical projection in inputs.csv. Initial manifest superseded. Grok technical approval is recorded for29c62fe; subsequent changes only add its receipt. Scripts and equipment remain identical; Codex final technical approval still pending. Codex and Grok now both technically APPROVE29c62fe. Approved-integration.json proves the reviewed implementation/data unchanged after merging main412391a0a4; receipt-only additions do not change claims.",
   "criteria": [
     "34 equipment rows have own-host citations and valid schema classes, access and held hosts",
     "Raw quotes/names match with no source skips; three hand-confirmed instruments pass",
@@ -10,7 +10,7 @@
     "Full equipment inventory",
     "Other inherited federal-frame CRLF changes"
   ],
-  "revision": "01a40a3f82332f88dba4daace0a00439ae48337a",
+  "revision": "a025fadac4f9ae8e43aa07b7e79a4cb1c64fc043",
   "tool_access": "Clerks may inspect full worktree and fetch source URLs; all packet evidence must be read.",
   "required_families": [
     "codex",
@@ -19,7 +19,7 @@
   "evidence": [
     {
       "path": "README.md",
-      "sha256": "783e08b93114370f7536c0a3142c0bb96d7e025da79621155523b0a15875a89b"
+      "sha256": "34f1707238996d5b5d8de8a3aef7ec1349811dee24d94be97e41f587561e0c9a"
     },
     {
       "path": "brief.md",
