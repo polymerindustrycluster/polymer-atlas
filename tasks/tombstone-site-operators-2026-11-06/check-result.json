@@ -1,0 +1,18 @@
+{
+  "base_ref": "10dda828c327b9abf8c65edcaa7eb02cadb30405",
+  "frame_site_records": 14,
+  "frame_tombstoned_orgs": 10,
+  "verified_operator_verdicts": 10,
+  "repoints": 8,
+  "sourced_keeps": 2,
+  "holds": 4,
+  "site_cells": 38,
+  "registry_cells": 1,
+  "new_parent_evidence_rows": 18,
+  "raw_quote_rows": 7,
+  "raw_urls": 4,
+  "remaining_tombstone_site_bindings": 6,
+  "operating_status_changes": 0,
+  "tier_changes": 0,
+  "site_folds": 0
+}

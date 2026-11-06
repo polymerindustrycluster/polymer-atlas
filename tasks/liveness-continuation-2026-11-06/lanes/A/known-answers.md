@@ -1,0 +1,1 @@
+Calibration before adjudication: curl example.com title Example Domain PASS; documentation-examples sentence PASS; absent business quote rejected PASS; reserved .invalid DNS failure rejected PASS. Matcher uses house NFKD ASCII lowercase word sequences, with HTML entity decoding and text extraction; matching never decides status.

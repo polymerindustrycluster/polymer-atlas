@@ -1,0 +1,10 @@
+{
+  "kind": "organizations",
+  "state": "MI",
+  "country": null,
+  "shard": "MI",
+  "file": "data/organizations_MI.csv",
+  "status": "ok",
+  "note": "USPS state code",
+  "file_exists": true
+}

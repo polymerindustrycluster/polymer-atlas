@@ -1,0 +1,1 @@
+SELECT o.org_id,s.site_id FROM read_csv('data/organizations_*.csv',all_varchar=true,union_by_name=true) o JOIN read_csv('data/sites_*.csv',all_varchar=true,union_by_name=true) s ON o.org_id=s.org_id WHERE o.status IN ('merged','acquired') AND s.operating_status IS DISTINCT FROM 'closed' ORDER BY o.org_id,s.site_id;

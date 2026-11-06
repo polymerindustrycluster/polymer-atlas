@@ -1,0 +1,10 @@
+{
+  "retired": [
+    "EVD-188147",
+    "EVD-188148",
+    "EVD-188149",
+    "EVD-188150",
+    "EVD-188151"
+  ],
+  "reason": "Dacon scope promotion withdrawn before merge; all five proposed Dacon observations remain task-only, IDs never reused."
+}

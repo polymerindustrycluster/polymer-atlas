@@ -1,0 +1,572 @@
+{
+  "83": {
+    "verdict": "VERIFIED",
+    "finding": "Observed 2026-11-06: redirect reaches GF-issued Central Plastics page identifying Georg Fischer Central Plastics LLC at Shawnee, with current custom fabrication and HDPE products/training offer. Same held business, no ownership/status motion.",
+    "quote": "Nobody is better equipped to custom fabricate fittings for your system than Georg Fischer Central Plastics."
+  },
+  "84": {
+    "verdict": "VERIFIED",
+    "finding": "Observed 2026-11-06: NatureFlex redirects to Futamura group site, which explicitly identifies Futamura USA Inc. at Tecumseh KS and currently offers NatureFlex/Cellophane films and Americas enquiry channel. Current US identity and offering witnessed.",
+    "quote": "NatureFlex\u2122 Certified compostable cellulose film made from wood pulp"
+  },
+  "85": {
+    "verdict": "STILL_UNCERTAIN",
+    "finding": "Observed live UPM Adhesive Materials pressure-sensitive materials manufacturing offer. Group page does not yet bind held UPM Raflatac Inc. to the rebranded group or its current US operation; group offering alone insufficient.",
+    "quote": "We manufacture pressure-sensitive label stock, graphics films, industrial material solutions and consumer-ready products.",
+    "settling": "UPM-issued current US location/legal document connecting UPM Raflatac Inc. to the Adhesive Materials offering and US operation.",
+    "hold": "HOLD US legal identity/rebrand grain"
+  },
+  "86": {
+    "verdict": "VERIFIED",
+    "finding": "Observed 2026-11-06: own site names Shintech Inc., identifies Houston/Freeport facilities and currently represents itself as PVC producer with products and operating-facility offer.",
+    "quote": "Shintech Inc. is the world\u2019s largest producer of polyvinyl chloride (PVC)."
+  },
+  "87": {
+    "verdict": "VERIFIED",
+    "finding": "Observed 2026-11-06: issuer's US site identifies Ritmo America LLC at Lake Wales and Tomball and offers current welding machines, technical support and equipment warranty; direct identity plus operating offering.",
+    "quote": "For over 40 years we have been designing welding machines for plastics, ensuring precision, safety and continuity."
+  },
+  "88": {
+    "verdict": "VERIFIED",
+    "quote": "Located 30 miles south of Atlanta, our US production plant is where we design and manufacture polyolefin-based compounds.",
+    "finding": "Observed 2026-11-06: Own group page names SILON US LLC Peachtree City production plant and explicitly describes present manufacture and custom compounding offer.",
+    "n": 1
+  },
+  "90": {
+    "verdict": "VERIFIED",
+    "quote": "GatorBar is readily available nationwide, with products stocked in all 50 states and supported by a national network of Sales Reps and Engineers.",
+    "finding": "Observed 2026-11-06: Own history page explicitly binds Neuvokas Corp founding to GatorBar, with present nationwide stocked products and ongoing manufacture; home also witnesses Ahmeek MI production.",
+    "n": 3
+  },
+  "93": {
+    "verdict": "VERIFIED",
+    "quote": "COMPLETE INJECTION MOLD FINISHING, REPAIR, & MAINTENANCE",
+    "finding": "Observed 2026-11-06: Own site identifies Alliance with Wauconda locations, detailed current laser equipment, mold repair/maintenance services and contact offer; same held business.",
+    "n": 1
+  },
+  "94": {
+    "verdict": "VERIFIED",
+    "quote": "Synventive is a global leader in hot runner technology, offering customized systems for efficient, high-quality injection molding.",
+    "finding": "Observed 2026-11-06: Own redirected Synventive page offers live hot-runner configurator and technical services for this named business. SPECTRIX group reference is ownership/grain lead only; no status motion.",
+    "n": 1
+  },
+  "95": {
+    "verdict": "VERIFIED",
+    "quote": "Evosys North America",
+    "finding": "Observed 2026-11-06: Issuer current contact page lists United States Evosys North America as local point of contact for its presently offered laser plastic welding systems. Same business identified alongside global product/services portfolio.",
+    "n": 2
+  },
+  "96": {
+    "verdict": "VERIFIED",
+    "quote": "A global presence and support are guaranteed by offices and subsidiaries in the USA",
+    "finding": "Observed 2026-11-06: Own group current contact page names held US business at Schaumburg IL; current home offers SIGMASOFT simulation software, paid services and Academy booking. Both identity and offering read.",
+    "n": 2
+  },
+  "97": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "In 2023, Hudson-Sharp was brought together with five other Barry-Wehmiller companies to form BW Converting, unifying the legacy of quality and innovation of each product",
+    "finding": "Own current brand page offers bag machinery but explicitly styles Hudson-Sharp as BW Converting brand. Historical company identity is proven; continuing held parent grain is unresolved.",
+    "settling": "Issuer legal/operator document establishing whether Hudson-Sharp Machine Company continues independently or only as BW Converting brand, plus dated transaction evidence before any status proposal.",
+    "n": 2,
+    "hold": "HOLD company versus brand grain"
+  },
+  "98": {
+    "verdict": "VERIFIED",
+    "quote": "Biobag\u2019s small food scrap liners are certified compostable waste bags designed for organic waste in kitchens and small food waste bins.",
+    "finding": "Observed 2026-11-06: Own current site names Biobag Americas Inc Dunedin FL and offers specified compostable products, wholesale portal and store locator; same US business. Novamont group reference not an acquisition-status decision.",
+    "n": 1
+  },
+  "100": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "13 Silos \u2013 each containing a rail car full of plastic pellets \u2013 fuels the 24/7 plastic bag manufacturing factory in Corona, California.",
+    "finding": "Current Republic Bag URL redirects to Sigma Commercial Bag; current manufacturing witnessed, but page does not explicitly establish Republic Bag Inc legal identity continuity.",
+    "settling": "Issuer document connecting Republic Bag Inc legal entity to Sigma Commercial Bag Corona operating business and explaining rebrand/ownership grain.",
+    "n": 3,
+    "hold": "HOLD Republic/Sigma legal identity"
+  },
+  "101": {
+    "verdict": "VERIFIED",
+    "quote": "Our new short-run vinyl program is now available for orders of 100, 200 and 300 units, and ready in 4-6 weeks!",
+    "finding": "Observed 2026-11-06: Own Memphis Record Pressing site identifies named business and concrete current vinyl pressing order/lead-time offer; same held business.",
+    "n": 1
+  },
+  "102": {
+    "verdict": "VERIFIED",
+    "quote": "We offer numerous products across a wide range of markets. Check out which markets we currently serve!",
+    "finding": "Observed 2026-11-06: Own McNeely site identifies business and currently offers converter/consumer/industrial packaging products, extrusion/converting certifications and enquiry channel.",
+    "n": 1
+  },
+  "103": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Five Star brings together five specialized packaging divisions, each with deep expertise in its own products, materials and manufacturing processes.",
+    "finding": "Current issuer Polytex page explicitly folds former company into unified Five Star packaging divisions. Active production at branded division witnessed; continuing held legal parent grain unproven.",
+    "settling": "Issuer legal/transaction document identifying continuing Polytex legal operator and dated ownership/grain change; lead must rule parent versus division before application.",
+    "n": 1,
+    "hold": "HOLD unified Five Star/division grain"
+  },
+  "104": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "This Five Star location combines advanced film manufacturing with precision printing to create flexible packaging that performs on the line, protects the product, and commands",
+    "finding": "Current issuer Starpak page explicitly folds former company into unified Five Star packaging divisions. Active production at branded division witnessed; continuing held legal parent grain unproven.",
+    "settling": "Issuer legal/transaction document identifying continuing Starpak legal operator and dated ownership/grain change; lead must rule parent versus division before application.",
+    "n": 1,
+    "hold": "HOLD unified Five Star/division grain"
+  },
+  "108": {
+    "verdict": "VERIFIED",
+    "quote": "Revolv Manufacturing is the Midwest\u2019s premier provider of plastic rotational molding and thermoforming services.",
+    "finding": "Observed 2026-11-06: Own page names Revolv Manufacturing and current rotational molding/thermoforming and quote/assembly offer. Stern Assembly rebrand explicitly stated; no new identity or status assumed.",
+    "n": 1
+  },
+  "111": {
+    "verdict": "VERIFIED",
+    "quote": "Join Bekum America Corporation at PACK EXPO International 2026",
+    "finding": "Observed 2026-11-06: Current own site names Bekum America Corporation and offers blow-molding machinery, technical assistance and spare parts, with current US recruitment and event invitation.",
+    "n": 1
+  },
+  "114": {
+    "verdict": "VERIFIED",
+    "quote": "At Davis Rubber Company, we transform the end of a tire's road life into a new beginning.",
+    "finding": "Observed 2026-11-06: Own named company site describes current tire recycling, collection centers and enquiry channel; same held business, no closure inference from old signals.",
+    "n": 1
+  },
+  "115": {
+    "verdict": "VERIFIED",
+    "quote": "CyCan develops and produces spray-ready adhesives, sealants, coatings and specialty chemicals for teams that need dependable performance and consistent delivery.",
+    "finding": "Observed 2026-11-06: Own current CyCan site identifies business and concrete formulation/packaging and industry product offering.",
+    "n": 1
+  },
+  "116": {
+    "verdict": "VERIFIED",
+    "quote": "TPC Group is a recognized global leader in producing value-added products derived from petrochemical raw materials such as C4 hydrocarbons, and a provider of critical",
+    "finding": "Observed 2026-11-06: Own current TPC site identifies business and products/service operations; fresh operating offering witnessed, no claim about individual legacy sites.",
+    "n": 1
+  },
+  "120": {
+    "verdict": "VERIFIED",
+    "quote": "Standard belts are in stock and ready to ship promptly",
+    "finding": "Observed 2026-11-06: Own Belt Concepts of America site identifies Spring Hope NC headquarters and live stocked conveyor-belt shipping/custom products offer; current operation witnessed.",
+    "n": 1
+  },
+  "89": {
+    "verdict": "VERIFIED",
+    "quote": "Formcrete offers custom parts through 3D modeling and in-house mold making on our CNC machine",
+    "finding": "Observed 2026-11-06: Issuer acquisition notice effective 2026-03-20 explicitly names Oklahoma Formcrete fiberglass manufacturer and current custom-parts offer, with existing plant and planned expansion; this is same held business, not a closure.",
+    "n": 3,
+    "date": "2026-03-20"
+  },
+  "106": {
+    "verdict": "VERIFIED",
+    "quote": "Your Technical & Sales Partner in America",
+    "finding": "Observed 2026-11-06: Own group current Americas page identifies UNIMATEC Chemicals America Inc Novi MI as sales/technical partner; home offers current elastomer/PFPE products. Same held US business.",
+    "n": 2
+  },
+  "109": {
+    "verdict": "VERIFIED",
+    "quote": "Hennecke Inc. US 1000 Energy Drive",
+    "finding": "Observed 2026-11-06: Own current locations page identifies Hennecke Inc US operation, alongside current machinery and lifecycle support offered on homepage. Br\u00fcckner group relationship requires separate grain review.",
+    "n": 2,
+    "parent": "Br\u00fcckner Group",
+    "hold": "HOLD group parent link; liveness only verified"
+  },
+  "126": {
+    "verdict": "VERIFIED",
+    "quote": "Petroleum Containment, Inc. (PCI) manufactures fiberglass tank sumps, dispenser sumps, transition sumps, tank collars, and penetration fittings",
+    "finding": "Observed 2026-11-06: Own current site explicitly names legal entity and detailed current fuel-system manufacturing/product/training offer.",
+    "n": 1
+  },
+  "133": {
+    "verdict": "VERIFIED",
+    "quote": "is a primary producer of acrylamide monomer and producer of water soluble polymers.",
+    "finding": "Observed 2026-11-06: Own Aurora Specialty Chemistries site identifies business, primary polymer production, detailed reactor capabilities and current industry product offering.",
+    "n": 1
+  },
+  "137": {
+    "verdict": "VERIFIED",
+    "quote": "Since 2000, we\u2019ve specialized in designing and manufacturing thermoplastic products",
+    "finding": "Observed 2026-11-06: Own PM Plastics site identifies Orchard Park business and current injection molding, tooling, engineering and value-added services. Old shortlink redirect signal no longer represents current own site.",
+    "n": 1
+  },
+  "138": {
+    "verdict": "VERIFIED",
+    "quote": "Mantaline designs, validates, and manufactures elastomeric sealing systems for mission critical applications across a variety of end markets.",
+    "finding": "Observed 2026-11-06: Own Mantaline site current engineering and elastomer manufacturing offering plus named company identity; old HTTP5xx signal not repeated.",
+    "n": 1
+  },
+  "143": {
+    "verdict": "VERIFIED",
+    "quote": "Discover our solutions for sound and vibration protection.",
+    "finding": "Observed 2026-11-06: Own live page explicitly names US legal business, Lebanon address, recycled-rubber products and current sports/acoustics/construction flooring offer.",
+    "n": 1
+  },
+  "145": {
+    "verdict": "VERIFIED",
+    "quote": "Get a quote, request a sample, or ask us a question.",
+    "finding": "Observed 2026-11-06: Own current Vanderbilt Chemicals LLC page explicitly names held legal entity and chemical product finder, quote/sample order support.",
+    "n": 1
+  },
+  "147": {
+    "verdict": "VERIFIED",
+    "quote": "BADGER COLOR USA is a trusted U.S.-based manufacturer specializing in custom color solutions for a wide range of polymers.",
+    "finding": "Observed 2026-11-06: Own current site names Badger Color Concentrates Inc with Fox St address; detailed present color/additive manufacturing and collaboration offer.",
+    "n": 1
+  },
+  "149": {
+    "verdict": "VERIFIED",
+    "quote": "We are the industry leader in supplying quality products to our customers with fill rates above industry standards.",
+    "finding": "Observed 2026-11-06: Own Handgards page identifies El Paso manufacturing business and live food-service disposables product/case offer and current product selection tools.",
+    "n": 1
+  },
+  "151": {
+    "verdict": "VERIFIED",
+    "quote": "We Provide Customized Rubber And Polyurethane Products Worldwide",
+    "finding": "Observed 2026-11-06: Own site names Durable Products LLC, Crossville address, current rubber/polyurethane product and request offer; same held business.",
+    "n": 1
+  },
+  "146": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Petroflex North America, LLC. is the sole owner of the information on this website.",
+    "finding": "Current own site proves Petroflex North America conduit manufacture in Gainesville, but legal notice identifies LLC while held record is Ltd. Current operation witnessed; exact legal continuity unresolved.",
+    "settling": "Issuer legal document establishing continuity/conversion between held Petroflex North America Ltd and current LLC, with dated effective change.",
+    "n": 1,
+    "hold": "HOLD Ltd versus LLC identity; no reactivation",
+    "parent": ""
+  },
+  "124": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Since the acquisition, our day-to-day business has continued as usual and your current contacts remain the same.",
+    "finding": "Current own LFM site explicitly reports August 2022 acquisition by NOV Fiber Glass Systems and continuing production; unresolved independent parent versus division grain.",
+    "settling": "Dated issuer transaction/operator document settling whether L.F. Manufacturing Inc continues as independent parent or NOV division; lead determines grain before any status proposal.",
+    "n": 1,
+    "hold": "HOLD NOV versus LFM grain; held NOV ORG-004877",
+    "parent": "NOV Inc."
+  },
+  "134": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Controlled-release fertilizers deliver optimized plant nutrition.",
+    "finding": "Old Florikan site redirects to Profile Products current Florikan-branded nutrition offer, but brand liveness alone cannot prove held Florikan E.S.A. LLC parent operation.",
+    "settling": "Issuer document linking Florikan E.S.A. LLC continuing legal operator to current fertilizer manufacture and settling Profile Products acquisition grain.",
+    "n": 1,
+    "hold": "HOLD Florikan versus Profile Products grain",
+    "parent": "Profile Products LLC"
+  },
+  "91": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current rspoles route challenge; Jina401; new Resilient Structures own route also403. Search identifies operating-plant/rebrand leads, but no raw current held-identity witness obtained. No negative-status inference.",
+    "settling": "RS-issued current operating location/legal document connecting RS Utility Structures Inc. to Resilient Structures composite pole manufacturing.",
+    "n": 1,
+    "hold": "HOLD RS rebrand/US legal grain",
+    "parent": "",
+    "date": ""
+  },
+  "92": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Live Seda group packaging site does not establish held North America operating entity; location routes returned404 or group home. No closure inference.",
+    "settling": "Seda-issued current North America manufacturing/location page identifying held entity and current Wisconsin packaging operation.",
+    "n": 1,
+    "hold": "HOLD group versus North America identity",
+    "parent": "",
+    "date": ""
+  },
+  "99": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "We manufacture a range of compostable products under the Wave Ware brand",
+    "finding": "Own company brochure rawPDF200 witnesses current Wave Ware manufacture and names NantBioRenewables at Gasden AL (issuer spelling). This is a positive operating lead, but brochure does not establish exact NantBioRenewables AL LLC legal operator/grain; domain routes remain403.",
+    "settling": "Nant-issued current Gadsden AL operating/manufacturing witness explicitly identifying NantBioRenewables AL LLC and its Wave Ware offering.",
+    "n": 4,
+    "hold": "HOLD NantBioRenewables group versus AL LLC identity",
+    "parent": "",
+    "date": ""
+  },
+  "105": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Corr-Tech, now a division of Indelco",
+    "finding": "Current Indelco issuer page explicitly identifies Corr-Tech as division and offers piping fabrication services. Division liveness does not settle held Corr Tech Inc independent parent grain.",
+    "settling": "Issuer dated operator/acquisition document settling continuing Corr Tech Inc versus Indelco division grain; held Indelco ORG-000149 exists, but successor is not presumed.",
+    "n": 3,
+    "hold": "HOLD Corr-Tech division versus parent grain",
+    "parent": "",
+    "date": ""
+  },
+  "107": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Dakota current domain produced no operating content; Jina401; Nott issuer route unavailable. Nott acquisition lead followed, but neither current Dakota operation nor exact post-acquisition grain established raw.",
+    "settling": "Nott-issued current Fargo Dakota Molding operator/manufacturing witness identifying its operating establishment, plus a dated acquisition document settling the surviving legal entity grain.",
+    "n": 1,
+    "hold": "HOLD Nott/Dakota acquisition grain",
+    "parent": "",
+    "date": ""
+  },
+  "110": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Own Kent site403; Jina401; obvious Sur-Seal affiliation lead followed to Sur-Seal issuer route, also403. None establishes closure or legal/operator continuity.",
+    "settling": "Sur-Seal/Kent-issued current operating document linking held Kent Manufacturing Company to current Kent Manufacturing LLC, its Grand Rapids establishment, and dated legal/acquisition continuity.",
+    "n": 1,
+    "hold": "HOLD Kent Company versus LLC/Sur-Seal grain",
+    "parent": "",
+    "date": ""
+  },
+  "112": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current TFP site403, Jina401, James Cropper issuer rebrand FAQ403. Search leads indicate division realignment, not proof that held US Inc ceased or continues at its grain.",
+    "settling": "James Cropper-issued current Technical Fibre Products Inc US operation/identity document and dated rebrand/operator continuity evidence.",
+    "n": 1,
+    "hold": "HOLD US Inc versus James Cropper division grain",
+    "parent": "",
+    "date": ""
+  },
+  "113": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "You can rent our pelletizer before you decide to buy.",
+    "finding": "Live ECON group machinery/rental offering proven, but contact followups404 and home identifies Austrian GmbH, not held ECON Inc Monroe MI.",
+    "settling": "ECON-issued current US operation/contact/legal page explicitly identifying ECON Inc and current local service/technical activity.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "118": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Lintech own site403; Jina401; issuer About route403 despite useful search-index content. No raw quote or current activity assertion.",
+    "settling": "Raw Lintech-issued current product/warehouse order witness naming Lintech International LLC; current About route is a precise retry target.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "119": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Hanson own domain403 on browser-UA retry and Jina401. Search-index offerings are discovery only; raw operating witness unavailable.",
+    "settling": "Hanson-issued current Alpharetta/Georgia polyurea/polyurethane formulation or order witness naming The Hanson Group LLC.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "121": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current BOGE group website offers NVH/lightweight technologies, but no current held Boge Rubber & Plastics USA LLC identity/location witness established. German group offer alone insufficient.",
+    "settling": "BOGE-issued current USA LLC location/manufacturing document explicitly connecting the held legal entity to its current US production.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "122": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Avantor current own route403 and Jina401; NuSil primary brand route produced no usable raw content. Historical 2016 merger lead does not establish current NuSil LLC operation.",
+    "settling": "Avantor-issued current NuSil Technology LLC manufacturing/operator witness with US location and document settling legal continuity after the 2016 combination.",
+    "n": 1,
+    "hold": "HOLD NuSil LLC versus Avantor grain",
+    "parent": "",
+    "date": ""
+  },
+  "123": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current Carlstar tire offer is Titan-branded; Titan acquisition release challenge-blocked and SEC acquisition record attempted. Active brand does not establish held Carlstar Group LLC parent continuity.",
+    "settling": "Titan-issued current Carlstar Group LLC operator document and dated transaction record; resolve subsidiary versus division grain before any status motion.",
+    "n": 1,
+    "hold": "HOLD Carlstar/Titan acquisition grain",
+    "parent": "",
+    "date": ""
+  },
+  "125": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Arcosa Marine own domain403 and Jina401; neither establishes closure/inactivity.",
+    "settling": "Arcosa-issued current Marine Products Inc manufacturing/order witness at the held operating location.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "127": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Collins Aerospace own domain presents Cloudflare challenge; Jina401. No raw current business witness retrieved.",
+    "settling": "RTX/Collins-issued current business/operating page naming the held Collins Aerospace business and specific current aerospace offering.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "128": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current advanceet domain displays unrelated Indonesian gaming content. Search yields namesakes rather than proven held Advance Energy Technologies Inc. Domain contamination is not business closure.",
+    "settling": "Held Advance Energy Technologies Inc-issued current operator/product/location witness, with explicit primary identity link to any replacement domain.",
+    "n": 1,
+    "hold": "HOLD replacement-domain identity; unrelated current content",
+    "parent": "",
+    "date": ""
+  },
+  "129": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Wolf acquires Carstin Kitchen & Bath Surfaces",
+    "finding": "Current Wolf issuer history dates Carstin acquisition to2019; live Wolf offering does not establish continuing Carstin Brands LLC parent operation. No exact transaction day invented.",
+    "settling": "Wolf-issued current Carstin Brands LLC operator/legal document and dated transaction close record to settle parent versus product-collection grain.",
+    "n": 3,
+    "hold": "HOLD Carstin/Wolf acquisition grain",
+    "parent": "Wolf Home Products",
+    "date": ""
+  },
+  "130": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "A Brand New Domain!",
+    "finding": "Current New Boston RTM domain is a Porkbun domain landing page. This is domain availability/ownership signal only, not closure.",
+    "settling": "New Boston RTM Inc-issued current operating/order or manufacturing witness tying held business identity and New Boston location to an active offering.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "131": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current Gemstone/Newlett own domain406 and Jina401. Prior Newlett/Gemstone product-literature lead retained; failed routes establish no status.",
+    "settling": "Newlett Inc/Gemstone-issued current solid-surface manufacturing/order document naming Newlett Inc and Elkhart operating location.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "132": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Current Sanco Systems domain406 and Jina401. Old Sanco Polymers rebrand lead not independently settled.",
+    "settling": "Sanco-issued current polymer production/order document explicitly connecting Sanco Inc and Sanco Systems to the held Dalton establishment.",
+    "n": 1,
+    "hold": "HOLD Sanco rebrand legal identity",
+    "parent": "",
+    "date": ""
+  },
+  "135": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Specialty Custom Manufacturing",
+    "finding": "Own APN brand page witnesses detailed coating manufacture at3321 County Rd A, but styles A.P. Nonweiler as brand under APN Performance Coatings; held company legal grain unresolved.",
+    "settling": "APN-issued legal/operator document connecting continuing A.P. Nonweiler Company Inc to current brand operation and settling APN/Renovo company grain.",
+    "n": 2,
+    "hold": "HOLD APN brand versus legal parent",
+    "parent": "",
+    "date": ""
+  },
+  "136": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Minigrip own and Medegen affiliate routes return JavaScript redirection/challenge page rather than business content. Affiliate lead followed; current held Minigrip LLC operation not raw witnessed.",
+    "settling": "Inteplast/Medegen-issued current manufacturing/operator page explicitly naming Minigrip LLC with held US location and its current product offering.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "139": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Applied Specialties Innovations",
+    "finding": "Own current site offers water treatment under Applied Specialties Innovations/Tidal Vision. Current held Applied Specialties Inc legal continuity versus renamed LLC not established.",
+    "settling": "Tidal Vision-issued current legal/operator document connecting Applied Specialties Inc to Applied Specialties Innovations LLC and Avon Lake production, plus dated transaction continuity.",
+    "n": 1,
+    "hold": "HOLD Inc versus Innovations LLC/Tidal Vision grain",
+    "parent": "",
+    "date": ""
+  },
+  "140": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "LMC-Plasticsource is a leading manufacturer and supplier of composite fabrication products.",
+    "finding": "Discovery leads identify lmcplasticsource.com for held Laminated Materials Corp. Current own home and quality page offer thermoset-composite fabrication/manufacture, but do not explicitly name held legal entity or Bensalem address. Initial guessed-domain/Jina failures are availability only.",
+    "settling": "LMC-issued current legal/operator or ISO document explicitly binding Laminated Materials Corp and625 Winks Ln Bensalem to current LMC-Plasticsource composite manufacturing.",
+    "n": 3,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "141": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "NewGuard Plastic Cards, LLC Announces the Acquisition of Allegheny Card Solutions",
+    "finding": "Own current Allegheny Card Solutions site reports2024-09-30 NewGuard acquisition and current card manufacturing. Held Allegheny Plastics Inc legal identity/grain to acquired Card Solutions not proven.",
+    "settling": "Issuer legal/operator document connecting Allegheny Plastics Inc to current Card Solutions and specifying surviving entity/parent grain after NewGuard acquisition.",
+    "n": 2,
+    "hold": "HOLD Allegheny Plastics/Card Solutions/NewGuard grain",
+    "parent": "NewGuard Plastic Cards LLC",
+    "date": "2024-09-30"
+  },
+  "142": {
+    "verdict": "VERIFIED",
+    "quote": "Plastek Industries Inc., dba The Plastek Group.",
+    "finding": "Observed 2026-11-06: Own US locations page explicitly identifies held legal business as The Plastek Group DBA with Erie headquarters, current US production and current mold-building/packaging services.",
+    "n": 2
+  },
+  "144": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Magee Plastics Is now part of Trelleborg",
+    "finding": "Own Magee route403; Trelleborg current issuer landing names Magee as part of Trelleborg and offers project support. This establishes acquired-brand activity, not continued independent held-company operation. Historical2024 acquisition still requires grain/successor review.",
+    "settling": "Trelleborg-issued current Magee operating/manufacturing witness and dated acquisition record with exact held successor identity/grain.",
+    "n": 3,
+    "hold": "HOLD Magee/Trelleborg subsidiary versus division grain",
+    "parent": "",
+    "date": ""
+  },
+  "148": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Genpak own site403 and Jina401; availability only, no closure inference.",
+    "settling": "Genpak LLC-issued current food-packaging manufacture/order witness naming held business and current US operating location.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "150": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "",
+    "finding": "Cutting Edge Composites own site406 and Jina401; availability only, no closure inference.",
+    "settling": "Cutting Edge Composites Inc-issued current fiberglass/composites order or manufacturing witness at held Summerville SC location.",
+    "n": 1,
+    "hold": "",
+    "parent": "",
+    "date": ""
+  },
+  "152": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Our company currently employs over 450 staff and operates five production facilities in Canada and the United States.",
+    "finding": "Current Carfair group site witnesses FRP manufacture and US/Canada facilities, but page identifies Carfair Composites Inc, not held Carfair Composites USA Inc legal operator.",
+    "settling": "NFI/Carfair-issued current US legal operator document naming Carfair Composites USA Inc and tying it to current held US FRP production.",
+    "n": 2,
+    "hold": "HOLD group versus US legal operator",
+    "parent": "",
+    "date": ""
+  },
+  "153": {
+    "verdict": "VERIFIED",
+    "quote": "Barrette Outdoor Living is a leader in the outdoor living product industry",
+    "finding": "Observed 2026-11-06: Own About page identifies current named business and detailed outdoor-products/distribution/warranty offer; Catalyst fence rebrand is separately held, not a parent-status inference.",
+    "n": 2
+  },
+  "154": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "Now part of Bio_Sole International Group Ltd., a subsidiary of autonomous_ID Corporation",
+    "finding": "Current Atlantic Footcare issuer page witnesses Rhode Island insole manufacturing but explicitly reports Bio_Sole/autonomous_ID affiliation. Held Atlantic Footcare Inc legal parent grain unresolved.",
+    "settling": "Issuer dated transaction/operator document confirming Atlantic Footcare Inc continuing legal identity/parent grain and exact acquirer; current production alone does not settle status.",
+    "n": 3,
+    "hold": "HOLD Atlantic/Bio_Sole grain",
+    "parent": "autonomous_ID Corporation",
+    "date": ""
+  },
+  "117": {
+    "verdict": "STILL_UNCERTAIN",
+    "quote": "We blend creativity with best-in-class R&D, manufacturing, and processing",
+    "finding": "Own Nagase America page offers current materials and technical services, but page identity is group/brand Nagase America and footer Nagase & Co Ltd; held Nagase America LLC legal linkage not established.",
+    "settling": "Nagase-issued current US legal/contact document naming Nagase America LLC and tying it to current US material sales/service operation.",
+    "hold": "HOLD Nagase US LLC versus group grain"
+  }
+}

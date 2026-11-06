@@ -1,0 +1,10 @@
+source,route,url,observed_date,http_status,content_verdict,bytes,sha256
+ohio-air,issued_guidance,https://epa.ohio.gov/divisions-and-offices/air-pollution-control/permitting/issued-air-permits,2026-11-06,200,PUBLIC_GUIDANCE,370508,b58f3ae08c8233620a35abaf6c482b819fa7344aa199cbc15498cb0cfe8aea0d
+ohio-air,edocument_search,https://edocpub.epa.ohio.gov/publicportal/edochome.aspx,2026-11-06,200,CHALLENGE,49690,d8c4c68044aa50192f7cb46128438be33279348dd19fbb63d2a1681152a08969
+ohio-air,ebiz_facility,https://ebiz.epa.ohio.gov/air/FACILITY_SEARCH/search.html,2026-11-06,200,LOGIN_REDIRECT_SHELL,155,049e90a57ebf297933815f9efb357de811671b035bf363a963cec127a56fc3bf
+ohio-air,pbr_workbook,https://dam.assets.ohio.gov/raw/upload/v1719438323/epa.ohio.gov/Public/DAPC/PermitbyRule.xlsx,2026-11-06,200,WORKBOOK_PBR_ONLY,2488413,e15af4624245a11b9de2eb9ff7d689ac9289baf52bae15e77df1f7d2f58dd9b1
+ocs-blue,homepage,https://opcleansweep.org/,2026-11-06,200,TERMS_LINK_DISCOVERY,65569,92e2bff9ca3689b26ec037e929d3c66747c6397d4482b419ba28439902ed8d32
+ocs-blue,terms,https://www.plasticsindustry.org/terms-of-use/,2026-11-06,403,RAW_TERMS_UNAVAILABLE,1662,725bab862c0926ace13aa0df4ec1a1fbfde4505c925061617414b5506d3f21a4
+caa-sb54,terms,https://circularactionalliance.org/online-terms-of-use,2026-11-06,200,TERMS_STOP,259010,535c52f313c79a274c5bc70ff1cc14deb2e24c81cb61394391f7ccb5ed851a33
+nsf61,search_form,https://info.nsf.org/Certified/PwsComponents/,2026-11-06,200,SEARCH_FORM_ONLY,12652,831ba8c5db4e84edbd89b74f433147a796b400525d1b971d2c9450f066200c71
+nsf61,terms_nas_firecrawl,https://www.nsf.org/privacy-copyright,2026-11-06,200,RAW_TERMS_STOP,254683,fb9d15dc86e2e604ef84fa9325437fe01721f8b8348f5546a5468a8711994255

@@ -1,0 +1,16 @@
+{
+  "original_ref": "ba1b96d",
+  "integrated_main": "6157e683fa07fff7098075665041c08f4156167a",
+  "retained_upgrades_field_identical": 10,
+  "retained_EVD_field_identical": 52,
+  "Dacon_entire_row_equals_main": true,
+  "withdrawn_site_cells": 2,
+  "retired_EVD_ids": [
+    "EVD-188147",
+    "EVD-188148",
+    "EVD-188149",
+    "EVD-188150",
+    "EVD-188151"
+  ],
+  "new_EVD_ids": 0
+}
