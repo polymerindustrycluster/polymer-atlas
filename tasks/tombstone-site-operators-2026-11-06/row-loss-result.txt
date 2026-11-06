@@ -7,3 +7,6 @@ row-loss guard: FAIL — 1 keyed rows removed since origin/main (merge-base 5a90
   registry_links: 1 removed, e.g. ORG-002260|FRS|110001516832|SITE-006049
 If a removal is intended (a re-point, a merge), list each key in a REMOVALS.csv in your task folder (columns table,key,reason); for inclusion_log the key is the whole row plus '#<occurrence>'. Records themselves are tombstoned, never deleted (AGENTS.md §3).
 Expected failure confirmed; manifest restored.
+
+Final post-integration check: python3 scripts/check_row_loss.py --base origin/main
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base d9527fed7a)
