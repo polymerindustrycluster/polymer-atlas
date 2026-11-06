@@ -118,7 +118,9 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assert_fails_with("(V-57)")
 
     def test_v52_equipment_row_accepted(self):
-        self.append_row("equipment.csv", dict(self.EQP_OK))
+        with (self.data / "equipment.csv").open(newline="", encoding="utf-8") as handle:
+            next_id = max((int(r["equipment_id"][4:]) for r in csv.DictReader(handle)), default=0) + 1
+        self.append_row("equipment.csv", dict(self.EQP_OK, equipment_id=f"EQP-{next_id:06d}"))
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-1500:])
 
