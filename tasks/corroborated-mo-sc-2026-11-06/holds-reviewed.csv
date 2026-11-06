@@ -1,0 +1,3 @@
+cluster_id,reason
+LF-MO-00442,"Need legal/operator continuity: held Crown Plastics makes UHMW belt-press sheet in Ohio; the Festus filing says plastic lamp shades. Same normalized name alone does not settle these operators."
+LF-SC-00014,"Need actual establishment function: federal establishment_name is Duncan Innovation. Resolve R&D/innovation center versus a production plant before assigning manufacturing_plant."

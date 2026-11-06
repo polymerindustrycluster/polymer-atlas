@@ -1,0 +1,144 @@
+cluster_id,state,verdict,held_org_id,duplicate_of,establishment_id,reason
+LF-MO-00005,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00037,MO,STILL_UNCERTAIN,,,101113,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00290,MO,STILL_UNCERTAIN,,,93062,"Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve ['ORG-007002', 'ORG-007061']."
+LF-MO-00378,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00040,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00184,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00200,MO,STILL_UNCERTAIN,,,1119456,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-MO-00258,MO,VERIFIED,ORG-000714,,1082833,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MO-00367,MO,STILL_UNCERTAIN,,,554593,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00384,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00011,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00082,MO,STILL_UNCERTAIN,,,1257840,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-MO-00102,MO,STILL_UNCERTAIN,,,169107,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-MO-00203,MO,STILL_UNCERTAIN,,,1114526,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00297,MO,STILL_UNCERTAIN,,,1361673,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00302,MO,STILL_UNCERTAIN,,,1306129,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-MO-00331,MO,STILL_UNCERTAIN,,,1050635,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00029,MO,STILL_UNCERTAIN,,,1246971,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00033,MO,VERIFIED,ORG-000566,,46085,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MO-00075,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00095,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00156,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00163,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00211,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00214,MO,STILL_UNCERTAIN,,,453002,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00284,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00292,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00295,MO,VERIFIED,ORG-001403,,174664,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MO-00300,MO,STILL_UNCERTAIN,,,1437872,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-MO-00325,MO,STILL_UNCERTAIN,,,646575,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00374,MO,STILL_UNCERTAIN,,,1414104,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00380,MO,DUPLICATE_OF,,SITE-002896,1006554,Physical street/state already held; no create.
+LF-MO-00410,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00417,MO,STILL_UNCERTAIN,,,998402,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00085,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00107,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00115,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00183,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00308,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00397,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00434,MO,STILL_UNCERTAIN,,,1019475,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00568,MO,STILL_UNCERTAIN,,,957172,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00208,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00296,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00372,MO,STILL_UNCERTAIN,,,1251685,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00382,MO,STILL_UNCERTAIN,,,1428557,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00517,MO,STILL_UNCERTAIN,,,1527509,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-MO-00546,MO,STILL_UNCERTAIN,,,652351,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00499,MO,VERIFIED,ORG-001119,,1470290,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MO-00532,MO,STILL_UNCERTAIN,,,362342,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00010,MO,STILL_UNCERTAIN,,,1520722,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-MO-00385,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00442,MO,STILL_UNCERTAIN,,,1098323,Need legal/operator continuity: held Crown Plastics makes UHMW belt-press sheet in Ohio; the Festus filing says plastic lamp shades. Same normalized name alone does not settle these operators.
+LF-MO-00455,MO,STILL_UNCERTAIN,,,1285513,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00538,MO,STILL_UNCERTAIN,,,417596,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00547,MO,STILL_UNCERTAIN,,,664849,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-MO-00573,MO,STILL_UNCERTAIN,,,998735,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00112,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00149,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00394,MO,STILL_UNCERTAIN,,,943373,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00470,MO,STILL_UNCERTAIN,,,1428556,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00336,MO,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MO-00475,MO,STILL_UNCERTAIN,,,1433946,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00031,SC,STILL_UNCERTAIN,,,325314,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00054,SC,STILL_UNCERTAIN,,,1476797,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00080,SC,STILL_UNCERTAIN,,,137994,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00116,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00174,SC,STILL_UNCERTAIN,,,1304395,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00178,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00255,SC,STILL_UNCERTAIN,,,1102317,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00361,SC,STILL_UNCERTAIN,,,1030979,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00064,SC,STILL_UNCERTAIN,,,138004,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00071,SC,STILL_UNCERTAIN,,,1437407,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00163,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00167,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00209,SC,STILL_UNCERTAIN,,,136570,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00227,SC,STILL_UNCERTAIN,,,917877,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00243,SC,STILL_UNCERTAIN,,,1521839,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-SC-00248,SC,STILL_UNCERTAIN,,,626556,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00256,SC,STILL_UNCERTAIN,,,683156,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-SC-00264,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00295,SC,VERIFIED,ORG-003093,,1260524,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00324,SC,STILL_UNCERTAIN,,,327456,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00345,SC,STILL_UNCERTAIN,,,1068455,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00378,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00005,SC,STILL_UNCERTAIN,,,147591,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00103,SC,STILL_UNCERTAIN,,,171160,"Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve ['ORG-001117', 'ORG-003930']."
+LF-SC-00175,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00273,SC,STILL_UNCERTAIN,,,1056866,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-SC-00291,SC,STILL_UNCERTAIN,,,823662,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00294,SC,STILL_UNCERTAIN,,,1283910,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00309,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00321,SC,STILL_UNCERTAIN,,,1063689,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00349,SC,STILL_UNCERTAIN,,,634839,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00014,SC,STILL_UNCERTAIN,,,1442777,Need actual establishment function: federal establishment_name is Duncan Innovation. Resolve R&D/innovation center versus a production plant before assigning manufacturing_plant.
+LF-SC-00033,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00046,SC,STILL_UNCERTAIN,,,556976,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00067,SC,STILL_UNCERTAIN,,,558984,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00118,SC,VERIFIED,ORG-004217,,84686,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00152,SC,VERIFIED,ORG-002723,,996243,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00155,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00172,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00186,SC,STILL_UNCERTAIN,,,1102968,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00229,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00236,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00237,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00275,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00285,SC,STILL_UNCERTAIN,,,1519257,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00287,SC,VERIFIED,ORG-003945,,1439038,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00359,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00369,SC,STILL_UNCERTAIN,,,927470,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00411,SC,STILL_UNCERTAIN,,,1284603,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00029,SC,STILL_UNCERTAIN,,,304200,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00076,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00105,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00115,SC,STILL_UNCERTAIN,,,1064237,Need reconciled reliable federal street/state/NAICS across the linked ITA records.
+LF-SC-00213,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00233,SC,STILL_UNCERTAIN,,,1302410,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-SC-00320,SC,STILL_UNCERTAIN,,,552109,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00503,SC,VERIFIED,ORG-001384,,588267,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00026,SC,STILL_UNCERTAIN,,,291300,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00077,SC,STILL_UNCERTAIN,,,1293047,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00336,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00370,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00429,SC,STILL_UNCERTAIN,,,1445335,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-SC-00430,SC,STILL_UNCERTAIN,,,1452069,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00512,SC,VERIFIED,ORG-002544,,671466,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-SC-00515,SC,STILL_UNCERTAIN,,,794370,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00021,SC,STILL_UNCERTAIN,,,1553787,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00134,SC,STILL_UNCERTAIN,,,1495640,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00228,SC,STILL_UNCERTAIN,,,1467363,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00263,SC,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00425,SC,STILL_UNCERTAIN,,,1437155,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00495,SC,STILL_UNCERTAIN,,,453454,Need reconciled reliable federal street/state/NAICS across the linked ITA records.
+LF-SC-00535,SC,STILL_UNCERTAIN,,,993506,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00002,SC,STILL_UNCERTAIN,,,1517239,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00312,SC,STILL_UNCERTAIN,,,655024,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00389,SC,STILL_UNCERTAIN,,,1082242,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00510,SC,STILL_UNCERTAIN,,,652371,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00518,SC,STILL_UNCERTAIN,,,811276,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00036,SC,STILL_UNCERTAIN,,,303649,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00278,SC,STILL_UNCERTAIN,,,1259614,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-SC-00267,SC,STILL_UNCERTAIN,,,415594,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
