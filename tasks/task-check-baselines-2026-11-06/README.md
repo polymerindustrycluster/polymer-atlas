@@ -21,13 +21,13 @@ No `data/` file, task result, verdict or builder is changed. Units below: **task
 
 | Run | Passed | Failed |
 |---|---|---|
-| Current `origin/main` (2b2e698bc), `--at head` | 33 of 96 | 63 |
-| Each check at its own pass state, before repairs | 83 of 95 | 12 |
-| Each check at its own pass state, after the 3 repairs (`--ref HEAD`) | 86 of 95 | 9 |
+| Current `origin/main` (2b39aa65f), `--at head` | 30 of 96 | 66 |
+| Each check at its own pass state, before repairs (tree of 14f134dd9) | 83 of 95 | 12 |
+| Same, after the 3 repairs (`--ref HEAD`) | 86 of 95 | 9 |
+| Same, on the merged tree f49540cd8 (96 checks) | 84 of 96 | 12 (the 9, plus 3 live-fetch `newsroom-urls*`, see below) |
 
-An earlier head census at 14f134dd9 gave 34 of 95. Of the 63 head failures, 53 pass at their own pass state (the data is
-fine, the pins moved), 9 fail at both (table below), and 1 (`ifs-coatings-gainesville`, merged after this branch was cut) was
-not run at its pass state. **No real data defect was found.**
+An earlier head census at 14f134dd9 gave 34 of 95. Of the 66 head failures at 2b39aa65f, 55 pass at their own pass state
+(the data is fine, the pins moved) and 11 fail at both. **No real data defect was found.**
 
 ## Baseline journal (before / after)
 
@@ -40,7 +40,7 @@ not run at its pass state. **No real data defect was found.**
 `qcew_result.json` in both CA folders is a recorded result and is left as written (it still shows the 93 base; the check
 rewrites it when run in place).
 
-## The 9 that still fail at their own pass state (none is a data defect)
+## The 12 that still fail at their own pass state on the merged tree (none is a data defect)
 
 | Task check | Class | Evidence |
 |---|---|---|
@@ -49,14 +49,14 @@ rewrites it when run in place).
 | creation-error-corrections, evidence-repair-3, mi-il-site-quality, pic18-fetch-retry | untracked cache | need gitignored `build/...-cache` pages that exist on no clean clone; no acquire script for them. Not run past the missing file, so any stale pin behind it is unknown |
 | strong-wave-site-quality | cache, then stale pin | cache acquired with `acquire.py`, then `git diff BASE -- data` fails: `baseline.json` `base` is both the frame base `build.py` consumes and the check's diff base. Moving it to the merge parent (2fc6c508e) breaks `build.py --apply`, so a baseline-file edit cannot fix it; the check needs a separate diff-base pin |
 | evidence-repair-4 | local branch ref | runs `git show agent/codex/evidence-repair-3:...`; passes only in a checkout holding that branch name (it exists in the shared repo here, not in a clone). Replace with the merge SHA |
-| markets-certs-tier1-round3 | live network | fetch of nipponpaintamericas.com fails ("unfetchable") on two runs; a different task (round6) flaked once and then passed |
+| markets-certs-tier1-round3, newsroom-urls, newsroom-urls-other, newsroom-urls-pic18 | live network | these re-fetch live pages. round3: nipponpaintamericas.com "unfetchable" on 5 of 6 runs (it passed once, in the head census). The three newsroom checks passed on all three earlier full runs, then returned HTTP 403 on every run after repeated census runs from this machine (likely a bot block caused by the census itself). Availability, not a baseline or data finding; rerun later from a quiet host |
 
 To run the persistent ones, put their caches under the controller's `persist/<task-slug>/` (CONTRACT-CLAUDE) and point the
 check there, or commit the small public ones; that is outside this lane.
 
 ## Named checks
 
-- `python3 scripts/run_task_checks.py --at pass --ref HEAD` -> 86/95 (the 9 above).
+- `python3 scripts/run_task_checks.py --at pass --ref HEAD` -> 86/95 before merging main (the 9 non-network rows above); 84/96 after (those 9 plus 3 live-fetch 403s).
 - `python3 scripts/run_task_checks.py corroborated-ca-3 corroborated-ca-4 people-titles-3 --ref HEAD` -> 3/3 PASS; before the edits the same three FAIL at the same state.
 - `python3 -m unittest scripts/test_run_task_checks.py`: a check passes at its pass state and fails on a drifted head; a deliberately broken check fails with its message.
 - `python3 scripts/validate.py` 0 errors; `python3 scripts/check_row_loss.py --base origin/main` OK.
