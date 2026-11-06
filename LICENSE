@@ -1,13 +1,13 @@
 Polymer Atlas: data license
 ===========================
 
-Scope. The original database content compiled in this repository (the files under data/, and the documentation
-under docs/ and tasks/) is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0),
-reproduced below. Attribution: "Polymer Atlas, Polymer Industry Cluster", with a link to this repository.
+Scope. The original database content compiled in this repository, the files under data/, is licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0), reproduced below. Attribution: "Polymer Atlas,
+Polymer Industry Cluster", with a link to this repository.
 
 Not covered. Facts are cited to their primary or public sources; this license grants nothing in those sources.
 Licensed third-party datasets (Plastics News, Rubber News, D&B and similar) are never republished here
-(AGENTS.md §5). Code under scripts/ is not covered by this file.
+(AGENTS.md §5). Nothing outside data/ (including docs/, tasks/ and scripts/) is covered by this file.
 
 -----------------------------------------------------------------------
 
