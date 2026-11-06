@@ -1,0 +1,1 @@
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base 88a7156604)
