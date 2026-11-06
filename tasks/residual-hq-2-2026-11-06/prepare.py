@@ -61,10 +61,23 @@ if __name__ == '__main__':
     for r in rows:
         if r['org_id'] == 'ORG-004530':
             r.update(outcome='STILL_UNKNOWN', settling_fact='Own-site or government HQ witness sufficient for the held B-tier address claim.', note='WV SOS principal office is explicit but registry address caps at C (SCHEMA 4.13); V-25 prevents applying it to held B tier without an unauthorized downgrade. EVD-315008 retired after local preflight, never published.')
+    for r in rows:
+        if r['org_id'] == 'ORG-004522':
+            r.update(outcome='STILL_UNKNOWN', source_class='press', settling_fact='HB&G-issued HQ witness, state registry or dated primary public record for the held entity.', note='B-PARENT(a): MBP is not an already-recorded parent; portfolio source is press ceiling B and undated, not admitted by this pass. EVD-315006 retired; no ownership edit.')
     previous = json.loads((HERE / 'updates.json').read_text()) if (HERE / 'updates.json').exists() else {}
     candidates = [r for r in rows if r['outcome'] == 'HQ_FOUND']
+    receipts = json.loads((HERE / 'rawcheck.json').read_text()) if (HERE / 'rawcheck.json').exists() else []
+    saved = {r['org_id']: r for r in receipts}
+    jobs = []
+    for r in candidates:
+        if r['org_id'] in saved:
+            rc = saved[r['org_id']]
+            assert rc['url'] == r['source_url'] and rc['quote'] == r['quote']
+            assert hashlib.sha256(Path(rc['path']).read_bytes()).hexdigest() == rc['raw_sha256']
+        else:
+            jobs.append(r)
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
-        receipts = list(pool.map(observe, candidates))
+        receipts += list(pool.map(observe, jobs))
     byid = {r['org_id']: r for r in receipts}
     old = {r['org_id']: r for r in csv.DictReader((HERE / 'cohort.csv').open())}
     updates = {}

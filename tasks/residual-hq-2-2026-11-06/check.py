@@ -50,12 +50,15 @@ if __name__ == '__main__':
                 assert row[key] not in dest
                 dest[row[key]] = row
     updates = json.loads((HERE / 'updates.json').read_text())
+    assert 'ORG-004522' not in updates
     noworg = union(data, 'organizations_*.csv', 'org_id')
     nowev = union(data, 'evidence_*.csv', 'evidence_id')
     assert noworg.keys() == oldorg.keys(), 'organization union changed'
     for oid, old in oldorg.items():
         assert noworg[oid] == old | updates.get(oid, {}).get('fields', {}), oid
     assert all(nowev[eid] == old for eid, old in oldev.items()), 'old evidence content changed'
+    assert 'EVD-315006' not in nowev and 'EVD-315008' not in nowev
+    assert noworg['ORG-004522'] == oldorg['ORG-004522'], 'held HQ or ownership changed'
     assert set(nowev) - set(oldev) == {s['evidence']['evidence_id'] for s in updates.values()}
     for spec in updates.values():
         assert nowev[spec['evidence']['evidence_id']] == spec['evidence']
@@ -97,7 +100,14 @@ if __name__ == '__main__':
         assert hashes(scratch) == before, 'header conflict caused writes'
         target.write_bytes(original)
         evpath = next(p for p in scratch.glob('evidence_*.csv') if updates[oid]['evidence']['evidence_id'] in p.read_text())
-        evpath.write_text(evpath.read_text().replace(updates[oid]['evidence']['source_ref'], 'https://example.invalid/conflict', 1))
+        mutated = read(evpath)
+        for row in mutated:
+            if row['evidence_id'] == updates[oid]['evidence']['evidence_id']:
+                row['source_ref'] = 'https://example.invalid/conflict'
+        with evpath.open('w', newline='') as out:
+            writer = csv.DictWriter(out, fieldnames=list(mutated[0]), lineterminator='\n')
+            writer.writeheader()
+            writer.writerows(mutated)
         before = hashes(scratch)
         run(scratch, expect=1)
         assert hashes(scratch) == before, 'evidence conflict caused writes'

@@ -143,30 +143,6 @@
       "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
     }
   },
-  "ORG-004522": {
-    "fields": {
-      "hq_city": "Troy",
-      "hq_state": "AL",
-      "hq_country": "US",
-      "hq_county": "",
-      "hq_in_scope": "national_us",
-      "sources": "Graham Partners portfolio profile, HB&G Building Products (grahampartners.net); USPTO trademark record for PERMACAST; https://mbpgroup.com/companies/",
-      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:hb-g-building-products-inc (freeze tier B; design tier B). Created in PKT-034 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt034_verdicts.csv / pkt034_evidence_rows.csv. Coordinator held-org leads and packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
-    },
-    "evidence": {
-      "evidence_id": "EVD-315006",
-      "record_table": "organizations",
-      "record_id": "ORG-004522",
-      "claim_type": "address",
-      "claim_detail": "HQ Troy, AL, US: \"HB&G Building Products || We\u2019re headquartered in Troy, AL\"",
-      "source_class": "own_site",
-      "source_ref": "https://mbpgroup.com/companies/",
-      "observed_date": "2026-11-06",
-      "tier_effect": "supports_A",
-      "created_by": "codex atlas-L5b-residual-hq",
-      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
-    }
-  },
   "ORG-004523": {
     "fields": {
       "hq_city": "Lafayette",
