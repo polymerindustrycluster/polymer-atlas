@@ -1,5 +1,5 @@
 """Restate only the frozen Texas C→B cells; preflight all claims and IDs before writes."""
-import argparse,csv,hashlib,sys
+import argparse,csv,hashlib,json,sys
 from pathlib import Path
 from research import found
 P=Path(__file__).resolve().parent;ROOT=P.parents[1]
@@ -18,14 +18,17 @@ def main():
     assert {r['site_id'] for r in frame}=={v['site_id'] for v in vs}
     assert all(v['verdict'] in {'VERIFIED','STILL_UNCERTAIN'} for v in vs)
     upgraded={v['site_id'] for v in vs if v['verdict']=='VERIFIED'}
-    assert len(upgraded)==11 and {e['site_id'] for e in edits}==upgraded and len(edits)==22
-    assert len(packet)==len({e['evidence_id'] for e in packet})==57
+    assert len(upgraded)==10 and {e['site_id'] for e in edits}==upgraded and len(edits)==20
+    assert len(packet)==len({e['evidence_id'] for e in packet})==52
     assert all(188100<=int(e['evidence_id'][4:])<=188499 for e in packet)
     sites=read(a.data_dir/'sites_TX.csv');byid={r['site_id']:r for r in sites};assert len(byid)==len(sites)
     orgs={r['org_id']:r for f in a.data_dir.glob('organizations_*.csv') for r in read(f)}
     all_ev=[(f.name,e) for f in a.data_dir.glob('evidence_*.csv') for e in read(f)]
     assert len(all_ev)==len({e['evidence_id'] for _,e in all_ev}),'existing duplicate evidence IDs'
     held={e['evidence_id']:(name,e) for name,e in all_ev}
+    retired=set(json.loads((P/'retired-evidence-ids.json').read_text())['retired'])
+    assert not retired & {e['evidence_id'] for e in packet},'retired ID reallocated'
+    assert not retired & held.keys(),'retired proposal evidence still exists'
     for e in packet:
         assert e['record_table']=='sites' and e['record_id'] in upgraded and e['tier_effect']=='supports_B'
         if e['evidence_id'] in held:assert held[e['evidence_id']]==('evidence_sites_TX.csv',e),'global evidence ID collision'
@@ -39,7 +42,7 @@ def main():
         assert current==expected,('frozen site drift',r['site_id'])
         o=orgs[r['org_id']]
         for k in ['legal_name','website','parent_org_id','ultimate_parent_name']:assert o[k]==r['org_'+k],('operator drift',r['site_id'],k)
-    assert len(gov)==len({g['site_id'] for g in gov})==11 and {g['site_id'] for g in gov}==upgraded
+    assert len(gov)==len({g['site_id'] for g in gov})==11 and upgraded<={g['site_id'] for g in gov}
     ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')};osha={r['est_key']:r for r in read(ROOT/'tasks/osha-spine-2026-11-01/establishments.csv')}
     for g in gov:
         if g['source_kind']=='ITA':
@@ -62,5 +65,5 @@ def main():
     pending=[e for e in packet if e['evidence_id'] not in held]
     write(a.data_dir/'sites_TX.csv',sites)
     if pending:append_sorted(a.data_dir/'evidence_sites_TX.csv',pending,'evidence_id')
-    print('PASS 11C→B sites/27holds;22cells/57append-onlyEVD;government11/raw13;all preflight before writes')
+    print('PASS 10C→B sites/28holds;20cells/52append-onlyEVD;government11reviewed/raw13;Dacon C/5IDsretired;all preflight before writes')
 if __name__=='__main__':main()

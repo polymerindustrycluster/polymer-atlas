@@ -1,16 +1,21 @@
 {
-  "integrated_main": "1e5834394f592f7237a5919500d9fbd5f2c48ad5",
-  "original_proposal_ref": "3abccb0",
-  "restoration_209_merged": true,
-  "site_records_field_identical": 11,
-  "evidence_records_field_identical": 57,
-  "immutable_logic_and_source_files": [
-    "build.py",
-    "check.py",
-    "input.csv",
-    "verdicts.csv",
-    "evidence_packet.csv",
-    "government-review.csv",
-    "rawcheck.csv"
-  ]
+  "original_ref": "ba1b96d",
+  "integrated_main": "6157e683fa07fff7098075665041c08f4156167a",
+  "retained_upgrades_field_identical": 10,
+  "retained_EVD_field_identical": 52,
+  "Dacon_entire_row_equals_main": true,
+  "withdrawn_site_cells": 2,
+  "retired_EVD_ids": [
+    "EVD-188147",
+    "EVD-188148",
+    "EVD-188149",
+    "EVD-188150",
+    "EVD-188151"
+  ],
+  "new_EVD_ids": 0,
+  "supersedes": "Prior eleven-site/57EVD replay metadata; current packet is10sites/52EVD/20cells.",
+  "government_source_records_reviewed": 11,
+  "government_records_published": 10,
+  "raw_quote_rows_reviewed": 13,
+  "own_scope_rows_published": 12
 }

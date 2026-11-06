@@ -1,0 +1,183 @@
+# L13 deterministic completions application
+
+Controller assigned all147 unapplied proposals first, on a new branch off current main,
+then remaining169 national leads if time allows. Branch agent/codex/program-completions-2.
+PR144 and PR160 remain independent unchanged. Controller integrator delegation unchanged.
+First user: Atlas/PIC program researcher; non-use finding date2026-12-06.
+
+## Acceptance before application
+
+- Reconcile exactly147 proposal rows to held program IDs and current institution UNITID,
+  CIP, program_type and levels. IPEDS never establishes programme existence/scope.
+- Only held degree records with unambiguous matching identity/CIP/count/award-level
+  coverage may receive completions fields; certificate/center/training/etc excluded.
+- Recompute first-major totals from NCES raw C2024_A, excluding total/second-major
+  records and non-detail award levels. Reconcile against committed completions extract
+  and proposal totals; stop on conflicts. Do not narrow/expand a mixed-level count by
+  self-ruling: hold mixed/mismatch/certificate-contaminated proposals for owner semantics.
+- No first_year_awarded fill from a finite observation window without actual-start
+  evidence/ruling. last_year_awarded explicitly means last observed positive year,
+  not final award/closure. No status, tier, own-program verification date or CIP changes.
+- Keep all existing evidence; add program activity evidence for applied numeric fields
+  in EVD285100–289999, leaving PR144/160 allocations untouched. Source cite raw NCES
+  with vintage and join key, not a task packet. Only programs/evidence_programs change.
+- Idempotent builder, preimage conflicts fail before writes, old-row preservation;
+  known-answer fixture before using new join; inject wrong-key/mixed-level defects.
+  validate.py zeroerrors. Codex3/Grok3 deep refutes before completion approval; draft
+  allowed under controller05:55/06:25 routing, only controller merges/closes.
+
+## Semantics holds to request
+
+The source REPORT expressly says level narrowing is an integrator/owner call, not
+specified in SCHEMA. Recommend hold mixed/mismatch/postbacc contamination; keep held
+counts unchanged and apply only keys whose positive awards fit the held levels.
+The finite2011–2024 window and CIP recoding do not prove a true first award year;
+recommend keep first_year_awarded blank until owner approves bounded-first semantics
+or a primary actual-start witness. Unaffected aligned counts can proceed.
+
+## Applied results (unit: proposal rows / held programs)
+
+147 unique proposals adjudicated: **34 VERIFIED /81 REJECT /32 STILL_UNCERTAIN**.
+REJECT here rejects a numeric-field proposal on a non-degree row under SCHEMA4.11;
+it never rejects the held programme or changes status. Each32 hold has a settling
+fact in verdicts.csv. All9 proposed first-year fields are separately held in
+field_holds.csv, including five on otherwise eligible confirmed programs.
+
+34 held degree programs receive112 cells: last_year_awarded34, sources34, notes34,
+latest_completions5, completions_year5. **Five blank count pairs filled;29 held pairs
+confirmed.** All34 last-observed-year cells filled with2024; no program row created,
+no CIP/UNITID/level/status/tier/own-page verification-date edits. Sources/notes explicitly
+state whole institution×CIP counts, not polymer-track headcounts. No ecosystem row edit.
+34 append-only program activity evidence rows EVD285100–285133 (registry/supports_C
+observations only), without changing any existing record tier or existence/scope basis.
+
+Base commit bdb8b98, main at branch creation. Programs166→166; evidence_programs293→327.
+PR144 and PR160 do not ride this branch, and their ID blocks are disjoint.
+
+## Provenance and exact semantics
+
+Fresh NCES `C2024_A.zip` fetched2026-11-06. Existing house parser
+scripts/build_ipeds_completions.py is reused without modifying it, restricted in the
+local module instance to collection year2024. source.json records the raw member hash,
+URL and vintage (awards2023-07-01 to2024-06-30, provisional release as source packet).
+raw_2024.csv is 104 detail-level rows over 43 distinct UNITID×CIP keys from 44 numeric proposal rows, with first-major
+flags (all R) and second-major counts kept separate. All44 numeric proposal totals
+reconcile to the fresh raw source, not merely to the old packet summary.
+
+Independent DuckDB inspection of the full raw source:307707 raw rows =307707 unique
+UNITID×CIP×MAJORNUM×AWLEVEL keys; major1 has286979 rows, major2 has20728; no other
+major code. Detail award-level vocabulary checked; source aggregate/total rows and
+second majors never enter the first-major totals. No extra program code is inferred.
+
+Known answers before trusting the join: Shawnee6=1associate+5bachelor; Ferris30=
+12associate+18bachelor; Everett56=10associate+7short-certificate+39certificate.
+Everett's held10 is NOT overwritten with56. PROG38 and57 also stay held because their
+all-level counts include postbaccalaureate awards. Neither all-level nor narrowed counts
+are applied to mixed cases before an owner semantics ruling.
+
+identity_check.csv records34 current held institution joins against fresh HD2024 name/
+domain records (same2026-11-06 identity pull used in prior batch, no program evidence).
+Penn State Behrend alias vs Pennsylvania State University-Penn State Erie-Behrend College
+is preserved at UNITID214591, same institutional campus; no fuzzy re-pointing. Current
+held institution IDs, CIP codes, types and levels must match frozen joins before writes.
+
+No first_year_awarded inference: the finite observation window and CIP recoding can
+make an old program appear new. last_year_awarded2024 means only a positive award count
+observed in2024, never program closure or last-ever award. Broad14.1801 counts are the
+whole MSE CIP totals, not the polymer track. All existing own-program evidence remains
+unchanged; the statistical registry is never used to create or prove an in-scope program.
+
+## Reproduce / named checks
+
+1. Download https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip and extract member
+   C2024_a.csv into `<raw>/x_C2024_A/` (case-insensitive member selection is in house parser).
+2. On main's pre-application data, `python3 tasks/program-completions-2-2026-11-06/prepare.py --raw-dir <raw>`
+   generates the frozen packets: PASS all44 raw totals/3 known answers,147 dispositions.
+   prepare is a packet-preparation step, not the replay command after application.
+3. `python3 tasks/program-completions-2-2026-11-06/check.py`: PASS147 frame/dispositions,
+   all44 raw totals,112cell/34program accounting,34evidence, known mixed-count holds,
+   old-row/evidence preservation, byte-identical replay, and injected wrong-UNITID plus
+   wrong-shard EVD no-write failures.
+4. `python3 tasks/program-completions-2-2026-11-06/build.py`: PASS112 declared cells,
+   34evidence appends; second run0appends. Globally checks every preimage/join/evidence ID
+   before any canonical write. New evidence uses append_sorted.
+5. `python3 scripts/validate.py`: PASS zero errors. No scripts/ changes, so scripts pytest
+   suite not run; task check covers this builder, existing parser known answers and failure cases.
+
+After main moves, merge main; on conflicting owned CSVs take main's files and rerun
+builder. A join/preimage drift fails closed and requires re-preparation/review, never
+hand-merge numeric cells. Branch base history is pre-pass backup; README is pass journal.
+
+## Review / remaining work
+
+Independent deep Codex3 review pending under06:25 route; Grok3 approval recorded below. Draft allowed under
+05:55 override; no completion approval or Done claim until findings resolved. Registry
+counts need no fabricated natural-language quotes: exact raw numeric rows, join keys,
+parser, totals and source hash are the witnesses. No personal records involved.
+
+Controller was notified of recommendations to hold mixed/mismatch/postbacc counts and
+first-year semantics; no owner ruling presumed. Remaining169 national leads are not
+worked by this branch. The94 batch2 STILL_UNCERTAIN settling facts remain committed in
+PR160 holds.csv and are targeted follow-ups, not silently discarded leads.
+
+Draft PR https://github.com/polymerindustrycluster/polymer-atlas/pull/168 .
+Codex3/Grok3 deep review requests queued for head72c9de9; Grok3 reviewed f67c207 (same data plus README), Codex3 verdict pending.
+Earlier PR144/160 remain unchanged on their own branches and review queues.
+
+## Grok family approval receipt
+
+Grok/xAI clerk3thr_4g4uwqjxjv APPROVE f67c207d23f99f18e991ecc00ed550532c609c84,0findings. Independently verified 147proposals=34VERIFIED/81degree-onlynumericREJECT/32holds;112cells/34programs;5newblankcountpairs/29confirmedpairs;34registry supports_C EVD285100–133 append-only. Fresh raw C2024_a hash a7f6d0f03093eef933ea5a31474ca1289cb97c73062b7cc1245fc3cabaff7c61 matched 307,707 unique IPEDS keys (major 1 = 286,979; major 2 = 20,728). Recomputed mixed-award Shawnee6,Ferris30,Everett56 remainunapplied;GT114 ondegreelevels only. No first-year write;2024 notclosure; institution×CIP notpolymer-trackheadcount. Check/replay/wrongUNITID+wrongshardzero-write/validate0/row-loss PASS. Latermain changes needintegratorreplay; notcontent defect. Report: reviews/168-clerk-grok-3.md incontrollerstorage. Codex3 approval remains pending; no two-family completion approval/Done claim. No freshweb or fullscriptspytest repeated for this docs-only receipt.
+
+## Codex source-binding correction — supersedes the earlier guard claim
+
+Codex3 REFUTE accepted: mutable edits.csv could change PROG-000109 from the source-derived19 to20 while old checks still passed and evidence retained19. Actual committed values were correct. Standalone build.py now independently sums the hash-anchored raw subset by UNITID/CIP and detail award level, verifies all positive awards fit the held level set, and derives expected count/year/last-observed year before any write. Every numeric edit and every projected final numeric value, including29 unchanged held pairs, must equal that source result. Each evidence claim must exactly match the source-derived count, key, held levels, year and expected witness metadata. prepare.py and build.py share the same claim formatter; no canonical evidence row changed.
+
+The exact19→20 edit, a2024→2025 edit, and a falsified evidence count are injected on both initial-application and replay data; all six fail before any CSV write. A seventh test mutates an unedited held count and proves source drift is rejected on replay. Existing wrongUNITID and wrong-shard tests remain. Source metadata now anchors raw_2024.csv SHA256 and explicitly records44 numeric proposal rows /43 distinct UNITID×CIP keys. The shared GT key139755×14.1801 appears in two proposals (PROG99 applied, PROG143 held), not two independent keys; no numeric or verdict change.
+
+Actual preparation rerun on reconstructed pre-application data using the same verified NCES raw member; all frozen canonical value/evidence packets reproduce unchanged. All checks and validator rerun for the corrected head. Previous Grok approval covers the old guard; both corrected-head family rereviews required. No full scripts pytest or unchanged program-own-page re-verification.
+
+## Fresh-main replay
+
+Merged main542629e53a0d07d55cf49b6da958f2219fbb5ba5; took both owned canonical CSVs
+exactly from main then reran corrected source-bound builder. No CSV hand merge.
+All167 main programs preserved, exactly112cells on34programs changed, all main program
+EVD preserved and exactly34EVD appended. Frozen input/joins/edits/verdicts/raw/evidence
+packet hashes unchanged from30aaf79. integration-main.json records counts and hashes.
+Check/replay/7source-derived no-write mutations plus wrongUNITID/wrongshard tests and
+validator0 PASS on integrated tree. Sourceguard family rereviews requested at30aaf79;
+this integration changes context only, not packet/builder semantics. No scripts diff
+relative to main; fullscripts pytest/unchanged primary-program research not repeated.
+
+Additional direct reproduction of the reported real-file defect: in disposable copies,
+physically edited only edits.csv PROG000109 latest_completions19→20, separately on initial
+and replay states. Both check.py and standalone build.py exit1 with the source-derived
+numeric conflict, and every canonical CSV hash remains unchanged. This uses the actual
+mutated CSV, not only mocked packet reads; physical_count_mutation.json records results.
+No new canonical changes or source research. Integrated packet47d4dda otherwise unchanged.
+
+## Grok corrected source-guard approval
+
+Grok/xAI clerk3thr_4g4uwqjxjv APPROVE65129c5,0findings, explicitly for the corrected30aaf79guard as contained in the fresh-main replay, not merely the oldf67approval. Verified hash-anchored104uniquefirst-major rows,44numericproposalrows/43keys,allnumeric/projected-value/evidencebindingsbeforewrite;all7newinitial/replayfaults andoldUNITID/shardtests zerowrite. Full34-countcensus/112cells/34EVD-onlydelta vs542629e5;5fills19/35/86/27/17,29confirmed,postbacc+second-major contamination excluded,9first-yearholds unchanged. Check/validator0/rowloss PASS. FullC2024zip not re-fetched for rereview; frozen raw bytes/hash match earlier approved source. Codex corrected-guard rereview remains pending; draft maintained. No packet/data/code change in this receipt. Report controller reviews/168-clerk-grok-3-rereview.md.
+
+## Both final family approvals and identical-delta integration
+
+Codex/OpenAI clerk3 (thr_jukpm97t9c) APPROVE a91009e, zero blocking findings; Grok/xAI
+clerk3 APPROVE65129c5, zero findings. The only65129c5→a91009e change is README.md's
+Grok approval receipt: no guard code, frozen payload, source subset, canonical value or
+hold changed. Both cover the same corrected30aaf79 source-binding guard and payload.
+Codex physically tested count/year/evidence/unedited count/witness URL/raw-hash defects
+through24 entry-point runs, all refusing without writes. Actual pre-pass preparation
+reproduces all seven generated CSVs. Grok independently checked full34-count census,
+level/postbacc/second-major exclusions and seven no-write source faults. Rereviews did
+not repeat fresh NCES downloads/own-program research/fullscripts pytest.
+
+Replayed on current main d2c41b7461925abc525d3216b64c806ce782e4ef: took both owned
+canonical files exactly from main and ran the unchanged approved builder. No CSV
+hand merge. All171 main program rows and311 existing program evidence rows preserved;
+exactly112cells/34programs changed and34EVD appended (345program evidence total).
+Every task CSV, build.py/check.py/prepare.py and source.json hash is unchanged from the
+approved head. integration-final.json records these hashes/counts and resulting data.
+Named source-binding/replay/seven source-faults plus wrongUNITID/wrong-shard tests,
+old-row/evidence preservation and validator0 PASS on integrated tree. No scripts diff
+relative to main. Controller requested this identical-delta head for serial merge;
+worker does not merge or alter task status.

@@ -1,15 +1,15 @@
 {
-  "base_ref": "1e5834394f592f7237a5919500d9fbd5f2c48ad5",
+  "base_ref": "6157e683fa07fff7098075665041c08f4156167a",
   "frame_C_site_records": 38,
-  "upgraded_B_site_records": 11,
-  "held_C_site_records": 27,
-  "changed_site_cells": 22,
-  "append_only_evidence_rows": 57,
+  "upgraded_B_site_records": 10,
+  "held_C_site_records": 28,
+  "changed_site_cells": 20,
+  "append_only_evidence_rows": 52,
   "raw_quotes": 13,
   "raw_urls": 11,
   "government_records": 11,
-  "strict326_before": 145,
-  "strict326_after": 145,
+  "strict326_before": 149,
+  "strict326_after": 149,
   "qcew_denominator": 953,
-  "strict_share_pct": 15.21511017838405
+  "strict_share_pct": 15.634837355718783
 }

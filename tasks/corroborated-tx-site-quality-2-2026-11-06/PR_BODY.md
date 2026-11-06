@@ -1,25 +1,25 @@
 ## Summary
 
-```diff
+~~~diff
 - 38 tier-C Texas sites in the frozen merged #148/#177 cohort
-+ 11 tier-B sites and 27 unchanged tier-C holds
-+ 57 append-only evidence rows; 22 existing site cells changed
-```
++ 10 tier-B sites and 28 entirely unchanged tier-C holds
++ 52 append-only evidence rows; 20 existing site cells changed
+~~~
 
-Controller-assigned L6 quality continuation. Accredo Sugar Land, ORBIS Greenville, Overwraps Dallas, GTI Stafford, VPET Garland, Cantex Mineral Wells, WL Plastics Bowie, Pretium Carrollton, Charlotte Pipe Cameron, Dacon Jacksonville and Blue Diamond Aubrey gain B from raw operator-issued plant city/activity witnesses plus re-observed government identity/address/code/operator claims. No new organizations/sites or status/type/address/parent/NAICS/capability/derived-field changes. All eleven operating statuses remain unknown.
-
-Sources: ten ITA CY2025 records and one dated OSHA inspection under the controller's admitted2026-11-01 packet basis; thirteen literal own-page quotes over eleven URLs (ten curl, ORBIS live NAS Firecrawl rawHtml/maxAge0). Own evidence contains only page words. No new group relationship was invented for B-PARENT eligibility. No fresh federal bulk download or current-operation census claimed. EVD-188100–188156 only; every pre-existing evidence row retained.
+Controller-assigned L6 quality continuation. Accredo Sugar Land, ORBIS Greenville, Overwraps Dallas, GTI Stafford, VPET Garland, Cantex Mineral Wells, WL Plastics Bowie, Pretium Carrollton, Charlotte Pipe Cameron and Blue Diamond Aubrey gain B. No organizations/sites created; no status/type/address/parent/NAICS/capability/derived motion. All ten operating statuses remain unknown. Sources:9ITA+1OSHA admitted2026-11-01 packets and12raw literal own-scope quotes/10URLs; no fresh bulk or current-operation assertion.
 
 ## Evidence
 
-Named check passes38unique verdicts/11upgrades/27holds, exact22-cell boundary/57EVD, all old main rows preserved, field-by-field government11/raw13, byte-identical replay, strict TX326145→145/QCEW953. Removing all13 own-scope rows makes the validator reject all11 promotions. Actual identical-payload wrong-shard final-ID and wrong-city binding mutations fail before every CSV write. Three known operator records and wrong-city/word-order controls pass; validate.py0errors and unchanged PR130 row-loss guard pass. Full11 source-only blind census supplied; no creates exist for a20-create sample.
+Codex4 REFUTEba1b96d accepted: Dacon contact proves manufacturing/address, not polymer/rubber activity. SITE015413 remainsC; its two proposed cells withdrawn. EVD188147–188151 are absent and permanently retired; its real address quote/hash and banked record remain task-only observations. No replacement IDs or unsupported activity inference. A plant-linked own polymer/rubber witness is the named settling fact.
 
-Twenty-seven holds name their settling facts in verdicts.csv and README (plant-specific activity, unresolved physical address/entity, own-source integrity or route availability). Both-family deep reviews pending; draft. Restoration #209 has landed; exact main1e583439 was integrated, both complete TX files taken from main, and the unchanged builder replayed. All11 site records/57EVD and7logic/source files are identical to original3abccb0; restored row-loss guard and all checks pass. Final review receipt for merged #186 is carried in this README; its canonical packet is unchanged.
+Integrated main6157e683, took both complete TX files, replayed corrected builder. dacon-correction.json proves all other10promoted site records/52EVD field-identical to ba1b96d and Dacon's entire row equals main.52IDs retain their original positions (188100–188146 and188152–188156). Original source census11gov/13raw retains the held Dacon observation; accepted packet uses10gov/12ownscope rows.
+
+Namedcheck passes38verdicts/10upgrades/28holds,20cells52EVD, oldmainpreservation/replay/raw13/gov11; removing12ownscope rows rejects all10Bpromotions. The actual original Dacon C→B defect triggersV-25; retired-ID/shard/city guards reject before writes. Validator0,row-lossPASS. StrictTX326149→149/QCEW953 unchanged. Corrected-head two-family reviews pending; draft.
 
 ## Merge Danger
 
-**Door:** two-way. **Blast Radius:** evidence and verification tier for eleven existing Texas sites.
+**Door:** two-way. **Blast Radius:** evidence/tier for ten existing Texas sites.
 
-A company may have multiple functions in one city; accepted plant-specific witnesses and filed establishment addresses govern. Promotion changes evidence strength, with no new operating-status or physical-establishment assertion. Historical source dates and the admitted federal packet vintage remain explicit.
+Generic manufacture does not settle polymer scope. Holds remainC; no absence, closure or capability fact is inferred. No published evidence is edited or deleted; five unmerged proposed IDs are withdrawn and never reused.
 
 🤖 Generated with Codex (bb child of thr_9i2c6byhcz)

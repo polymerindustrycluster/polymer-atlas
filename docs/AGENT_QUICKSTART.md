@@ -99,3 +99,5 @@ python3 -m unittest discover -s scripts -p 'test_*.py'   # all tests (~12 s)
 | Relationships (generated, not authored) | `### 4.14` |
 | Dedupe and entity resolution | `## 5.` |
 | Which shard a record goes in | `## Appendix C` (or `atlas.py shard-of`) |
+
+For local keyed CSV merges, run `scripts/setup_merge_driver.sh` in each checkout. It registers a Git merge driver in local configuration and attributes; conflicting edits, changed headers, and deletions still require manual resolution and the row-loss guard remains mandatory.

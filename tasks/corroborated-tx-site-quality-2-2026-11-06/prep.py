@@ -1,5 +1,5 @@
 """Freeze re-observed source atoms and the exact quality packet; no canonical writes."""
-import csv,hashlib,json,re
+import csv,hashlib,json,re,io,subprocess
 from pathlib import Path
 from research import found
 P=Path(__file__).resolve().parent;ROOT=P.parents[1]
@@ -10,6 +10,10 @@ def write(p,rows):
         w=csv.DictWriter(f,fieldnames=rows[0],lineterminator='\n');w.writeheader();w.writerows(rows)
 frame=read(P/'input.csv');raw=read(P/'rawcheck.csv');byid={r['site_id']:r for r in frame}
 assert len(frame)==len(byid)==38
+original=lambda name:list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','ba1b96d:'+str(P.relative_to(ROOT))+'/'+name],text=True))))
+reserved=original('evidence_packet.csv')
+ids={(e['record_id'],e['claim_type'],e['claim_detail'],e['source_ref']):e['evidence_id'] for e in reserved}
+assert len(ids)==57
 holds={
 '015000':'Obtain a plant/unit-specific Lolita production witness linking the filed Inteplast establishment, rather than inferring the excluded IBS unit from broad historical campus activity.',
 '015001':'Obtain a raw operator-issued Kilgore manufacturing witness for Southern Plastics/CSI; group products alone do not locate the activity.',
@@ -37,12 +41,13 @@ holds={
 '015410':'Assign polymer manufacturing specifically to the Sanderson Houston site; global PVC products and contact address alone are insufficient.',
 '015414':'Obtain Graham-issued Rockwall plant manufacturing evidence rather than infer process from a material-handler job or global products.',
 '015416':'Obtain polymer activity at the UFP El Paso establishment; historical molded-fiber expansion and warehouse/fabrication descriptions do not settle polymer manufacture.',
+'015413':'Obtain an operator-issued plant-linked polymer/rubber activity witness for119Progress/Jacksonville. The contact page establishes Offices & Manufacturing/address only; federal classification remains scope C.',
 '015418':'Obtain Fischbach-issued polymer manufacture at1901HuttonCourt, distinguishing office/contact function from a plant.'}
-upgraded={r['site_id'] for r in raw};assert len(upgraded)==11 and set(holds)=={s.removeprefix('SITE-') for s in byid if s not in upgraded}
+upgraded={r['site_id'] for r in raw if r['claim_type']=='scope'};assert len(upgraded)==10 and set(holds)=={s.removeprefix('SITE-') for s in byid if s not in upgraded}
 ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')};osha={r['est_key']:r for r in read(ROOT/'tasks/osha-spine-2026-11-01/establishments.csv')}
 packet=[];gov=[];edits=[];verdicts=[]
 def evidence(sid,claim,detail,cls,source,notes):
-    packet.append(dict(record_table='sites',record_id=sid,claim_type=claim,claim_detail=detail,source_class=cls,source_ref=source,observed_date='2026-11-06',tier_effect='supports_B',created_by='atlas-L6-corr-ca-tx',notes=notes,evidence_id=f'EVD-{188100+len(packet):06d}'))
+    packet.append(dict(record_table='sites',record_id=sid,claim_type=claim,claim_detail=detail,source_class=cls,source_ref=source,observed_date='2026-11-06',tier_effect='supports_B',created_by='atlas-L6-corr-ca-tx',notes=notes,evidence_id=ids[sid,claim,detail,source]))
 for r in frame:
  sid=r['site_id']
  if sid not in upgraded:
@@ -66,12 +71,13 @@ for r in frame:
  urls=list(dict.fromkeys(x['source_ref'] for x in own));new_sources=r['sources']+'; '+'; '.join(urls)
  edits.extend([dict(site_id=sid,field='verification_tier',old='C',new='B'),dict(site_id=sid,field='sources',old=r['sources'],new=new_sources)])
  verdicts.append(dict(site_id=sid,verdict='VERIFIED',action='RESTATEMENT_C_TO_B',settling_fact='Raw operator-issued city/activity witness plus re-observed site-grade government identity/address/code; no current-operation assertion.',own_source='; '.join(urls)))
-assert len(packet)==57 and len(edits)==22 and len(gov)==11
+assert len(packet)==52 and len(edits)==20 and len(gov)==10
+reviewed=original('government-review.csv');assert all(g in reviewed for g in gov);gov=reviewed
 for name,rows in [('verdicts.csv',verdicts),('edits.csv',edits),('evidence_packet.csv',packet),('government-review.csv',gov)]:write(P/name,rows)
 blind=[]
 for g in gov:
     rs=[r for r in raw if r['site_id']==g['site_id']]
     blind.append({**g,'own_urls':'; '.join(dict.fromkeys(r['source_ref'] for r in rs)),'own_cache_files':'; '.join(dict.fromkeys(r['cache_file'] for r in rs))})
 write(P/'blind-input.csv',blind)
-(P/'reserved-ids.json').write_text(json.dumps(dict(evidence_block='EVD-188100–EVD-188499',allocated=[r['evidence_id'] for r in packet],unused_remain_reserved=True),indent=2)+'\n')
-print('PASS packet38=11Brestatements27holds;22cells57EVD,government11/11,raw13/13')
+(P/'reserved-ids.json').write_text(json.dumps(dict(evidence_block='EVD-188100–EVD-188499',original_reserved_ids=[r['evidence_id'] for r in reserved],published_ids=[r['evidence_id'] for r in packet],retired=[f'EVD-{n}' for n in range(188147,188152)],unused_remain_reserved=True),indent=2)+'\n')
+print('PASS packet38=10Brestatements28holds;20cells52EVD,government11reviewed/10published,raw13reviewed/12scopepublished')
