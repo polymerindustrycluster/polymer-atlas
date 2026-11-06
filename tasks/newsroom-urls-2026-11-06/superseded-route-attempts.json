@@ -1,0 +1,227 @@
+[
+  {
+    "org_id": "ORG-002066",
+    "legal_name": "Catexel Nease LLC",
+    "website": "https://www.neaseco.com",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "Catexel",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://www.neaseco.com",
+        "final": "https://www.catexel.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002886",
+    "legal_name": "CSW Industrials, Inc.",
+    "website": "https://www.cswindustrials.com",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://www.cswindustrials.com",
+        "final": "https://csw.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003186",
+    "legal_name": "Shintech Inc.",
+    "website": "http://www.shintechinc.com/",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "Shin-Etsu Chemical Co., Ltd.",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "http://www.shintechinc.com/",
+        "final": "https://www.shintech.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004073",
+    "legal_name": "The Hanson Group, LLC",
+    "website": "http://www.hansonco.net/",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "http://www.hansonco.net/",
+        "final": "http://www.hansonco.net/",
+        "status": "409",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004161",
+    "legal_name": "Boge Rubber & Plastics USA LLC",
+    "website": "http://www.boge-rubber-plastics.com/",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "http://www.boge-rubber-plastics.com/",
+        "final": "https://www.boge.tech/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004274",
+    "legal_name": "Petroleum Containment, Inc.",
+    "website": "https://www.petroleumcontainment.com/",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://www.petroleumcontainment.com/",
+        "final": "https://www.petroleum-containment.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004570",
+    "legal_name": "Sanco Inc.",
+    "website": "https://sancopolymers.com",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://sancopolymers.com",
+        "final": "http://sancosystems.com/",
+        "status": "406",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004581",
+    "legal_name": "Aurora Specialty Chemistries",
+    "website": "https://auroraspchm.com",
+    "priority": "tier1",
+    "verification_tier": "C",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://auroraspchm.com",
+        "final": "https://auroraspecialtychemistries.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004606",
+    "legal_name": "A. P. Nonweiler Company, Inc.",
+    "website": "https://www.apnonweiler.com/",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "Renovo Capital",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://www.apnonweiler.com/",
+        "final": "https://www.apncoatings.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "approved_head": "8e15714",
+  "integrated_main": "620c2ec9f0f05decdfb869e82c994477207a300c",
+  "implementation_identical": true,
+  "owned_evidence": {
+    "FL": {
+      "rows": 4,
+      "approved_values_identical": true,
+      "sha256": "f0bc4b4f3429af7f82cfa24f7ab1a1f3c8281989f108b1b6487783f8913f38fc"
+    },
+    "GA": {
+      "rows": 7,
+      "approved_values_identical": true,
+      "sha256": "f88f6dab321259ab1b2930c7266265f447a04f735e7cc53bdde300cbe825b164"
+    }
+  }
+}

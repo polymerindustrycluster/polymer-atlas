@@ -1,0 +1,7 @@
+{
+  "source_url": "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+  "retrieved_date": "2026-11-06",
+  "sha256": "d98425c123d7c0e872aec6e83960dfb501884818bf17385c340790f3d1f28345",
+  "member": "HD2024.csv",
+  "use": "Institution identity, UNITID, city/state/county only; never program evidence"
+}

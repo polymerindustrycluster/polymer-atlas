@@ -1,0 +1,38 @@
+[
+  {
+    "quote": "a leading manufacturer of high-performance polyurethane conveyor belting and sheeting",
+    "org_id": "CAL-novex",
+    "kind": "calibration_curl",
+    "attempted_url": "https://novexinc.com/",
+    "final_url": "https://novexinc.com/",
+    "http_status": "200",
+    "availability": "available",
+    "raw_path": "raw/CAL-novex/8e69deaf1668.txt",
+    "observed_date": "2026-11-06",
+    "notes": "HTML Text; "
+  },
+  {
+    "quote": "We are the manufacturer and packager of 100% solids epoxy flooring repair and resurfacing materials",
+    "org_id": "CAL-mipco",
+    "kind": "calibration_curl",
+    "attempted_url": "https://mipco.org/",
+    "final_url": "https://mipco.org/",
+    "http_status": "200",
+    "availability": "available",
+    "raw_path": "raw/CAL-mipco/cdd9a8423ada.txt",
+    "observed_date": "2026-11-06",
+    "notes": "HTML Text; "
+  },
+  {
+    "quote": "TUFTEX Balloons are made from 100% natural rubber latex",
+    "org_id": "CAL-tuftex",
+    "kind": "calibration_curl",
+    "attempted_url": "https://tuftexballoons.com/",
+    "final_url": "https://www.tuftexballoons.com/",
+    "http_status": "200",
+    "availability": "available",
+    "raw_path": "raw/CAL-tuftex/67c547a40f26.txt",
+    "observed_date": "2026-11-06",
+    "notes": "HTML Text; "
+  }
+]
