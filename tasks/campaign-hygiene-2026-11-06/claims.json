@@ -1,0 +1,682 @@
+[
+  {
+    "number": 128,
+    "branch": "agent/claude-code/ownership-round-2",
+    "title": "Ownership round 2: 2 parents, 2 ultimate parents, 32 websites (two-family reviewed)",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 129,
+    "branch": "agent/claude-code/registry-links-restore",
+    "title": "Registry-links restore: 3,348 restored link rows; 805528a merged via PR #68",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 130,
+    "branch": "agent/claude-code/row-loss-guard",
+    "title": "Keyed row-loss guard (separate from the tier1 derivation in PR #163)",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 131,
+    "branch": "agent/codex/source-scout-3",
+    "title": "L5: scout IAF, PMA and PatentsView; refresh PIC18 CBP report",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 132,
+    "branch": "agent/codex/corroborated-fl-ga",
+    "title": "Florida CORROBORATED: 17 provisional C sites, 86 research holds",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "ORG-011000\u2013011999, SITE-016000\u2013017999, EVD-200000\u2013219999"
+  },
+  {
+    "number": 133,
+    "branch": "agent/codex/pic18-record-health",
+    "title": "PIC18 record health baseline and first evidenced fixes",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "ORG-009500\u2013009599, SITE-013000\u2013013099, EVD-170000\u2013179999, REL-000400\u2013000449"
+  },
+  {
+    "number": 134,
+    "branch": "agent/codex/oh-street-address",
+    "title": "Recover street addresses for 143 active Ohio sites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "EVD-150000\u2013159999"
+  },
+  {
+    "number": 135,
+    "branch": "agent/codex/corroborated-ca-tx",
+    "title": "CA CORROBORATED: 19 establishments after scope refute",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "ORG-010000\u2013010999, SITE-014000\u2013015999, EVD-180000\u2013199999"
+  },
+  {
+    "number": 136,
+    "branch": "agent/codex/markets-certs",
+    "title": "Fill PIC-18 organization markets and current certifications",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "EVD-240000\u2013259999"
+  },
+  {
+    "number": 137,
+    "branch": "agent/codex/evidence-reverify-archive",
+    "title": "PIC-18 quote audit: 3,683 evidence rows and 34 archive links",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "EVD-140000\u2013149999"
+  },
+  {
+    "number": 138,
+    "branch": "agent/codex/corroborated-mi-il",
+    "title": "Michigan CORROBORATED wave: 17 provisional federal sites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "ORG-012000\u2013012999, SITE-018000\u2013019999, EVD-260000\u2013279999"
+  },
+  {
+    "number": 139,
+    "branch": "agent/claude-code/lf-federal-frame",
+    "title": "Normalize two federal-frame task files to LF (content unchanged)",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 140,
+    "branch": "agent/codex/equipment-wave-1",
+    "title": "Equipment: first 34 rows from six Ohio institutions",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "EQP-000001\u2013000999, EVD-290000\u2013294999"
+  },
+  {
+    "number": 141,
+    "branch": "agent/codex/strong-waves-mo-sc-la",
+    "title": "Adjudicate STRONG establishment clusters in MO, SC and LA",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "ORG-009000\u2013009499, SITE-012000\u2013012999, EVD-160000\u2013169999"
+  },
+  {
+    "number": 142,
+    "branch": "agent/codex/corroborated-ga",
+    "title": "Georgia CORROBORATED: 20 provisional C sites, 127 research holds",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 143,
+    "branch": "agent/codex/corroborated-il",
+    "title": "Illinois CORROBORATED wave: 18 provisional federal sites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 144,
+    "branch": "agent/codex/program-leads-2",
+    "title": "Verify six national program leads; add UMass Lowell plastics seminars",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "PROG-000300\u2013000499, ORG-013000\u2013013199, EVD-285000\u2013289999"
+  },
+  {
+    "number": 145,
+    "branch": "agent/codex/newsroom-urls",
+    "title": "Fill newsroom URLs for 115 active Tier-1 organizations",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": "EVD-230000\u2013239999"
+  },
+  {
+    "number": 146,
+    "branch": "agent/codex/pic18-record-health-2",
+    "title": "PIC18 capability-only enrichment: 17 organizations, 85 dispositions",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 147,
+    "branch": "agent/codex/pa-street-address",
+    "title": "Recover street addresses for seven active Pennsylvania sites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 148,
+    "branch": "agent/codex/corroborated-tx",
+    "title": "TX CORROBORATED: 21 establishments from 40 core clusters",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 149,
+    "branch": "agent/codex/people-settle",
+    "title": "Settle Yavitt rank and evidence people title/census rechecks",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": "PERSON-002000\u2013002499, EVD-280000\u2013284999"
+  },
+  {
+    "number": 150,
+    "branch": "agent/codex/corroborated-mi-2",
+    "title": "Michigan CORROBORATED residue: two provisional sites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 151,
+    "branch": "agent/codex/corroborated-il-2",
+    "title": "Illinois CORROBORATED residue: three provisional sites",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 152,
+    "branch": "agent/codex/newsroom-urls-pic18",
+    "title": "Fill newsroom URLs for 38 active PIC18 organizations outside Tier-1",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 153,
+    "branch": "agent/codex/corroborated-ny",
+    "title": "New York CORROBORATED: 7 tier C sites, 1 duplicate, 73 holds",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 154,
+    "branch": "agent/codex/pic18-record-health-3",
+    "title": "PIC18 T1 round 3: ten evidenced tier restatements and two websites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 155,
+    "branch": "agent/codex/evidence-reverify-archive-oh-pa",
+    "title": "L1 continuation: audit 3,586 OH/PA evidence rows; archives pending",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 156,
+    "branch": "agent/codex/oh-street-address-2",
+    "title": "Recover 19 held PIC-18 site streets from physical operator witnesses",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 157,
+    "branch": "agent/codex/markets-certs-tier1",
+    "title": "Fill Tier-1 organization markets and certifications (round 2)",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 158,
+    "branch": "agent/codex/corroborated-nc",
+    "title": "North Carolina CORROBORATED: 14 tier C sites, 2 duplicates, 94 holds",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 159,
+    "branch": "agent/codex/pic18-discovery-residue",
+    "title": "PIC-18 residue: add Peak Performance and reconcile 26 leads",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 160,
+    "branch": "agent/codex/program-leads-3",
+    "title": "Verify four named programs from the next 100 national leads",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 161,
+    "branch": "agent/codex/liveness-sweep-2",
+    "title": "L8 liveness: full signal sweep and first ten held investigations",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": "EVD-220000\u2013229999"
+  },
+  {
+    "number": 162,
+    "branch": "agent/codex/source-scout-4",
+    "title": "L5: scout APR, Vinyl, ACMA, EPA CDR and SAM public extracts",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 163,
+    "branch": "agent/claude-code/tier1-rederive-2",
+    "title": "tier1_qualifier re-derive: 52 national_footprint gains (V-29 drift \u2192 0)",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 164,
+    "branch": "agent/codex/corroborated-mo-sc",
+    "title": "Screen 143 MO and SC CORROBORATED clusters; add 10 provisional sites",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 165,
+    "branch": "agent/codex/evidence-repair-3",
+    "title": "Repair 45 PIC-18 own-site evidence claims, append only",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 166,
+    "branch": "agent/codex/corroborated-ca-2",
+    "title": "CA CORROBORATED batch 2: 18 establishments from next 40 clusters",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 167,
+    "branch": "agent/codex/corroborated-wi",
+    "title": "Wisconsin CORROBORATED: 10 tier C sites, 115 holds",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 168,
+    "branch": "agent/codex/program-completions-2",
+    "title": "Apply 34 aligned IPEDS completions proposals; hold ambiguous award counts",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 169,
+    "branch": "agent/codex/newsroom-urls-other",
+    "title": "Fill newsroom URLs for 167 active organizations outside Tier-1 and PIC18",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 170,
+    "branch": "agent/codex/corroborated-tx-2",
+    "title": "TX CORROBORATED batch 2: 17 establishments, conflicting codes held",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 171,
+    "branch": "agent/codex/oh-street-address-3",
+    "title": "Recover 38 streets from next 100 PIC-18 operator sites",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 172,
+    "branch": "agent/codex/pic18-record-health-4",
+    "title": "PIC18 round 4: duplicate adjudications and capability second pass",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 173,
+    "branch": "agent/codex/corroborated-in",
+    "title": "Indiana CORROBORATED: 21 tier C sites, 1 duplicate, 123 holds",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 174,
+    "branch": "agent/codex/program-leads-final",
+    "title": "Record final 169 programme lead verdicts and targeted settling facts",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 175,
+    "branch": "agent/codex/corroborated-ca-3",
+    "title": "CA CORROBORATED batch 3: 12 establishments, 28 explicit holds",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 176,
+    "branch": "agent/codex/evidence-repair-4",
+    "title": "Repair 62 Ohio and Pennsylvania own-site evidence claims",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 177,
+    "branch": "agent/codex/corroborated-tx-3",
+    "title": "TX CORROBORATED batch 3: 19 establishments, mostly held parents",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 178,
+    "branch": "agent/codex/corroborated-ca-4",
+    "title": "CA CORROBORATED batch 4: 8 establishments, service-center conflicts held",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 179,
+    "branch": "agent/codex/markets-certs-tier1-round3",
+    "title": "Enrich 100 Tier-1 organizations with own-site markets and certifications",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 180,
+    "branch": "agent/codex/corroborated-tx-4",
+    "title": "TX CORROBORATED ranks 121\u2013160: four provisional plants",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 181,
+    "branch": "agent/codex/equipment-wave-2",
+    "title": "Add 53 equipment rows from Ohio and Pennsylvania facilities",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 182,
+    "branch": "agent/codex/liveness-continuation-144",
+    "title": "L8 continuation: adjudicate all 144 remaining liveness priorities",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 183,
+    "branch": "agent/codex/pic18-record-health-5",
+    "title": "PIC18 round 5: nine tier restatements and combined raw T1 projection",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 184,
+    "branch": "agent/codex/source-scout-5",
+    "title": "L5: scout Ohio air permits, OCS Blue, CAA SB54 and NSF61 routes",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 185,
+    "branch": "agent/codex/queue-backlog-sweep",
+    "title": "Settle two parcel counties and sweep 12 discrete queue items",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 186,
+    "branch": "agent/codex/corroborated-ca-tx-quality",
+    "title": "Corroborate four merged California sites from C to B",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 187,
+    "branch": "agent/codex/owner-battery-2026-11-06",
+    "title": "Draft November 6 owner battery: 35 sourced decision items",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 188,
+    "branch": "agent/codex/issue-forms",
+    "title": "Propose company correction and owner-routed person removal forms",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 189,
+    "branch": "agent/codex/residual-hq-2",
+    "title": "Resolve ten residual organization HQ placements with primary evidence",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 190,
+    "branch": "agent/codex/markets-certs-tier1-round4",
+    "title": "Enrich next 100 Tier-1 organizations with markets and current certifications",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 191,
+    "branch": "agent/codex/explicit-ring-basis-fl-ga",
+    "title": "Restate explicit Ring 2 basis for 11 merged FL/GA sites",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 192,
+    "branch": "agent/codex/oh-street-address-cu",
+    "title": "Recover 24 C/U Ohio streets from fresh EPA FRS records",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 193,
+    "branch": "agent/codex/change-feed",
+    "title": "Generate public Markdown and Atom feeds from Atlas change history",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 194,
+    "branch": "agent/codex/mi-il-site-quality",
+    "title": "Raise eight merged MI/IL plants from tier C to B",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 195,
+    "branch": "agent/codex/residual-hq-3",
+    "title": "Resolve twelve HQ placements in residual organizations 101\u2013200",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 196,
+    "branch": "agent/codex/l3-parent-provenance-fix",
+    "title": "Document group-parent provenance for L3 STRONG sites",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 197,
+    "branch": "agent/claude-code/street-key-fix",
+    "title": "atlas.py street_key: stop collapsing '#6 Capper Drive' and 'Suite 100, 200 Main St' to an empty key",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 198,
+    "branch": "agent/codex/corroborated-la",
+    "title": "Adjudicate all 42 Louisiana CORROBORATED clusters",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 199,
+    "branch": "agent/codex/residual-hq-4",
+    "title": "Resolve eight HQ placements in final residual tail batch",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 200,
+    "branch": "agent/codex/blind-audit-9",
+    "title": "Blind audit 9: fifty new state-wave sites, stratified by lane and tier",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 201,
+    "branch": "agent/codex/tombstone-site-operators",
+    "title": "Resolve site operators under merged and acquired organizations",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 202,
+    "branch": "agent/codex/corroborated-mn",
+    "title": "Adjudicate all 119 Minnesota CORROBORATED clusters",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 203,
+    "branch": "agent/codex/creation-error-corrections",
+    "title": "Correct surfaced site types, street, disruption watch and dated closure",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 204,
+    "branch": "agent/codex/corroborated-nj",
+    "title": "Adjudicate all 91 New Jersey CORROBORATED clusters",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 205,
+    "branch": "agent/codex/pic18-record-health-6",
+    "title": "PIC-18 health: classify remaining blockers and resolve eight desk gaps",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 206,
+    "branch": "agent/codex/federal-programs",
+    "title": "Add LIFT ecosystem anchor and document federal-program holds",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 207,
+    "branch": "agent/codex/oh-street-address-5",
+    "title": "Fill 25 Ohio streets from the next 100 PIC-18 A/B sites",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 208,
+    "branch": "agent/codex/oh-street-address-6",
+    "title": "Fill 36 Ohio streets from A/B frame positions 261\u2013360",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 209,
+    "branch": "agent/claude-code/restore-163-damage",
+    "title": "Restore 319 non-data paths deleted or reverted by the #163 merge (data unaffected)",
+    "state": "merged",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 210,
+    "branch": "agent/claude-code/file-loss-guard",
+    "title": "Row-loss guard: fail on tracked files deleted outside data/ (stacked on #209)",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 211,
+    "branch": "agent/codex/oh-street-address-7",
+    "title": "Fill final 24 Ohio A/B streets and flag three address-overlap leads",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  },
+  {
+    "number": 212,
+    "branch": "agent/codex/corroborated-tx-site-quality-2",
+    "title": "Restate eleven merged Texas plants at tier B",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
+  }
+]

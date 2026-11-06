@@ -1,0 +1,236 @@
+[
+  {
+    "pr": 131,
+    "source_commit": "57c77f750344f7b0f2ebc1841d6342823a878368",
+    "source_paths": [
+      "tasks/source-scout-3-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/source-scout-3-2026-11-06/README.md"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "ded770139b94dfa51f0a65383bce5bca7ef78441",
+    "installed_sha256": {
+      "tasks/source-scout-3-2026-11-06/README.md": "236ea4c7f0513675c885557b7662d4a37c16364f4adce1f05bf98bbcf9ab38ff"
+    }
+  },
+  {
+    "pr": 134,
+    "source_commit": "d9dd945734b0fbe7051027d5f3c063ebcb8928d5",
+    "source_paths": [
+      "tasks/oh-street-address-2026-11-06/README.md",
+      "tasks/oh-street-address-2026-11-06/approved-replay.json"
+    ],
+    "selected_paths": [
+      "tasks/oh-street-address-2026-11-06/README.md",
+      "tasks/oh-street-address-2026-11-06/approved-replay.json"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "d6c49bd925ce9f7162d7b5c708d3642729c9075c",
+    "installed_sha256": {
+      "tasks/oh-street-address-2026-11-06/README.md": "b26f539bcddd75f714b6e8f8e5e87e768226458c991468f233e0795f630d3ba3",
+      "tasks/oh-street-address-2026-11-06/approved-replay.json": "2f0cc90863716049ff67947196a8101856675df44dd207a0bf3ba0e2b642932d"
+    }
+  },
+  {
+    "pr": 140,
+    "source_commit": "30fb413bd73bd0b3f6a2b259a38a953eb295b005",
+    "source_paths": [
+      "tasks/equipment-wave-1-2026-11-06/review-packet-v2.json"
+    ],
+    "selected_paths": [
+      "tasks/equipment-wave-1-2026-11-06/review-packet-v2.json"
+    ],
+    "excluded_paths": [],
+    "disposition": "already_in_main",
+    "receipt_commit": null,
+    "installed_sha256": {
+      "tasks/equipment-wave-1-2026-11-06/review-packet-v2.json": "043133ee340edddbd04e7d76d8f039d37fc7cfbad347a45721d6422683387ba1"
+    }
+  },
+  {
+    "pr": 138,
+    "source_commit": "c2c472940b690c6096993e0493e7be502b9c28ff",
+    "source_paths": [
+      "tasks/corroborated-mi-il-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/corroborated-mi-il-2026-11-06/README.md"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "a839a2e8f792660672af562e8d6778b6a752ada7",
+    "installed_sha256": {
+      "tasks/corroborated-mi-il-2026-11-06/README.md": "3998bb65534583e8348edc8a02836f8279e33eef832d54f3c72bee3cb3cd59cd"
+    }
+  },
+  {
+    "pr": 143,
+    "source_commit": "661a9b6804bbe5974ce3499f82e5ad35a018cf76",
+    "source_paths": [
+      "tasks/corroborated-il-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/corroborated-il-2026-11-06/README.md"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "1ebfd078f84ddbca41bd40ef75dc3d42a824de15",
+    "installed_sha256": {
+      "tasks/corroborated-il-2026-11-06/README.md": "b87c0a3f3d84d66329ac5e34b16b519681eb820f768e70d1f8f2168939a711e5"
+    }
+  },
+  {
+    "pr": 150,
+    "source_commit": "2f5639cb41b42387f8e6d00d45e53f3f591c1be2",
+    "source_paths": [
+      "tasks/corroborated-mi-2-2026-11-06/README.md",
+      "tasks/corroborated-mi-2-2026-11-06/check.py"
+    ],
+    "selected_paths": [
+      "tasks/corroborated-mi-2-2026-11-06/README.md"
+    ],
+    "excluded_paths": [
+      "tasks/corroborated-mi-2-2026-11-06/check.py"
+    ],
+    "disposition": "selected_receipt",
+    "receipt_commit": "6328a8a50d3b08f223fea347a66ce30d19cc8750",
+    "installed_sha256": {
+      "tasks/corroborated-mi-2-2026-11-06/README.md": "b94d98131c8171c448ae77cc441e6691ed848235939a8c8ed810a9f47ed99698"
+    }
+  },
+  {
+    "pr": 174,
+    "source_commit": "80123b16a0791c6c89d42759867d3f1c1e398f0a",
+    "source_paths": [
+      "tasks/program-leads-final-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/program-leads-final-2026-11-06/README.md"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "79598594d7693e7f88cfb5ce8d7372c3e39f81bd",
+    "installed_sha256": {
+      "tasks/program-leads-final-2026-11-06/README.md": "cca273309e9d3d86e3a27d67776315d18df6d158caa9c51bd2fddde9e808966b"
+    }
+  },
+  {
+    "pr": 147,
+    "source_commit": "862f67a325b4505ec25fe424da1993d07b2e6daa",
+    "source_paths": [
+      "tasks/pa-street-address-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/pa-street-address-2026-11-06/README.md"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "70dd6d0ec5e43f07a9a0a6c88bb7de1a88f4b045",
+    "installed_sha256": {
+      "tasks/pa-street-address-2026-11-06/README.md": "34c198e53160a742595f30f8473c84bd55e94138d43d34a883258b89f33e05ff"
+    }
+  },
+  {
+    "pr": 142,
+    "source_commit": "e39f6af616ccb371dddd6e724e57914db4320b18",
+    "source_paths": [
+      "tasks/corroborated-ga-2026-11-06/README.md",
+      "tasks/corroborated-wi-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/corroborated-ga-2026-11-06/README.md"
+    ],
+    "excluded_paths": [
+      "tasks/corroborated-wi-2026-11-06/README.md"
+    ],
+    "disposition": "already_in_main",
+    "receipt_commit": null,
+    "installed_sha256": {
+      "tasks/corroborated-ga-2026-11-06/README.md": "f049b7496ef2a90167f91536e017edc6f505b690279f1bec7fafc4f9cfa98148"
+    }
+  },
+  {
+    "pr": 171,
+    "source_commit": "87d2fb071e144649207136bd6236c21719f9a933",
+    "source_paths": [
+      "data/evidence_sites_OH.csv",
+      "data/sites_OH.csv",
+      "tasks/oh-street-address-3-2026-11-06/README.md",
+      "tasks/oh-street-address-5-2026-11-06/.gitignore",
+      "tasks/oh-street-address-5-2026-11-06/README.md",
+      "tasks/oh-street-address-5-2026-11-06/audit.csv",
+      "tasks/oh-street-address-5-2026-11-06/audit.py",
+      "tasks/oh-street-address-5-2026-11-06/audit_summary.json",
+      "tasks/oh-street-address-5-2026-11-06/build.py",
+      "tasks/oh-street-address-5-2026-11-06/check.py",
+      "tasks/oh-street-address-5-2026-11-06/county_known_1.json",
+      "tasks/oh-street-address-5-2026-11-06/county_known_2.json",
+      "tasks/oh-street-address-5-2026-11-06/county_known_3.json",
+      "tasks/oh-street-address-5-2026-11-06/county_known_answers.csv",
+      "tasks/oh-street-address-5-2026-11-06/evidence.csv",
+      "tasks/oh-street-address-5-2026-11-06/fetch.py",
+      "tasks/oh-street-address-5-2026-11-06/frame.csv",
+      "tasks/oh-street-address-5-2026-11-06/holds.csv",
+      "tasks/oh-street-address-5-2026-11-06/known_answers.csv",
+      "tasks/oh-street-address-5-2026-11-06/notes_regression.csv",
+      "tasks/oh-street-address-5-2026-11-06/page_checks.csv",
+      "tasks/oh-street-address-5-2026-11-06/polynew_county_reference.json",
+      "tasks/oh-street-address-5-2026-11-06/rawchecks.csv",
+      "tasks/oh-street-address-5-2026-11-06/summary.json",
+      "tasks/oh-street-address-5-2026-11-06/verdicts.csv"
+    ],
+    "selected_paths": [
+      "tasks/oh-street-address-3-2026-11-06/README.md"
+    ],
+    "excluded_paths": [
+      "data/evidence_sites_OH.csv",
+      "data/sites_OH.csv",
+      "tasks/oh-street-address-5-2026-11-06/.gitignore",
+      "tasks/oh-street-address-5-2026-11-06/README.md",
+      "tasks/oh-street-address-5-2026-11-06/audit.csv",
+      "tasks/oh-street-address-5-2026-11-06/audit.py",
+      "tasks/oh-street-address-5-2026-11-06/audit_summary.json",
+      "tasks/oh-street-address-5-2026-11-06/build.py",
+      "tasks/oh-street-address-5-2026-11-06/check.py",
+      "tasks/oh-street-address-5-2026-11-06/county_known_1.json",
+      "tasks/oh-street-address-5-2026-11-06/county_known_2.json",
+      "tasks/oh-street-address-5-2026-11-06/county_known_3.json",
+      "tasks/oh-street-address-5-2026-11-06/county_known_answers.csv",
+      "tasks/oh-street-address-5-2026-11-06/evidence.csv",
+      "tasks/oh-street-address-5-2026-11-06/fetch.py",
+      "tasks/oh-street-address-5-2026-11-06/frame.csv",
+      "tasks/oh-street-address-5-2026-11-06/holds.csv",
+      "tasks/oh-street-address-5-2026-11-06/known_answers.csv",
+      "tasks/oh-street-address-5-2026-11-06/notes_regression.csv",
+      "tasks/oh-street-address-5-2026-11-06/page_checks.csv",
+      "tasks/oh-street-address-5-2026-11-06/polynew_county_reference.json",
+      "tasks/oh-street-address-5-2026-11-06/rawchecks.csv",
+      "tasks/oh-street-address-5-2026-11-06/summary.json",
+      "tasks/oh-street-address-5-2026-11-06/verdicts.csv"
+    ],
+    "disposition": "selected_receipt",
+    "receipt_commit": "87824347c56676cf5b45484d877a070979367a21",
+    "installed_sha256": {
+      "tasks/oh-street-address-3-2026-11-06/README.md": "55b9e5e0577b801ff4157b54bf2266f4f83a4d79578df779605763843e84a12e"
+    }
+  },
+  {
+    "pr": 137,
+    "source_commit": "03359c366474dd2859b5413120e531898cf69579",
+    "source_paths": [
+      "tasks/evidence-reverify-archive-2026-11-06/README.md"
+    ],
+    "selected_paths": [
+      "tasks/evidence-reverify-archive-2026-11-06/README.md"
+    ],
+    "excluded_paths": [],
+    "disposition": "cherry_pick_patch",
+    "receipt_commit": "09cb848b0400fff55f5e8eee0a0b0cfa41cb1e2a",
+    "installed_sha256": {
+      "tasks/evidence-reverify-archive-2026-11-06/README.md": "79aa704a2aa2a2e2d160a722b035dd794782299be6988e64ab3154d5548328de"
+    }
+  }
+]
