@@ -44,3 +44,10 @@ proposal head `db3007e` (clerk 5). Independently checked all four files, officia
 syntax, owner assignability, YAML/negative controls, validator and change boundaries.
 Live chooser/submission remains untested. Grok review is pending; this is not a completion
 or activation approval. This receipt changes no YAML or proposed intake behavior.
+
+Grok/xAI clerk1 APPROVE (2026-11-06), zero findings, tip `2f1dec1`:
+independently checked both forms and chooser configuration against official GitHub
+syntax, exact required fields and privacy constraints, owner assignability (HTTP 204),
+evidence flow, path boundaries, validator, and injected privacy-field rejections.
+Both families approve the proposed files; this receipt changes no YAML. The PR stays
+draft for controller handling. Owner activation and live chooser/submission are untested.
