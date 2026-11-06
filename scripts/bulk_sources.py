@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from urllib.request import Request, urlopen
 import uuid
 import zipfile
+import zlib
 
 try:
     from .build_echo_spine import squash
@@ -106,12 +107,12 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
     db = sqlite3.connect(tmp)
     count = indexed = historical = 0
     try:
-        db.execute('CREATE TABLE records (id TEXT, name TEXT, city TEXT, payload TEXT)')
+        db.execute('CREATE TABLE records (id TEXT, name TEXT, city TEXT, payload BLOB)')
         def add(key, label, city, row):
             nonlocal indexed
             db.execute('INSERT INTO records VALUES (?,?,?,?)',
                        (key, label.upper() if source == "tickers" else squash(label), squash(city),
-                        json.dumps(row, ensure_ascii=False)))
+                        zlib.compress(json.dumps(row, ensure_ascii=False).encode(), level=1)))
             indexed += 1
         if source == 'tickers':
             rows = json.loads(path.read_text()).values()
@@ -185,7 +186,8 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
 def lookup(source, clause, args, cache=DEFAULT_CACHE):
     path = cache_dir(cache) / (source + '.sqlite')
     with sqlite3.connect(path.as_uri() + '?mode=ro', uri=True) as db:
-        return [json.loads(r[0]) for r in db.execute('SELECT payload FROM records WHERE ' + clause, args)]
+        return [json.loads(zlib.decompress(r[0]) if isinstance(r[0], bytes) else r[0])
+                for r in db.execute('SELECT payload FROM records WHERE ' + clause, args)]
 
 
 def frs_by_registry_id(registry_id, cache=DEFAULT_CACHE):

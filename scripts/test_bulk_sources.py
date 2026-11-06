@@ -2,6 +2,7 @@
 import csv
 import io
 import json
+import sqlite3
 from pathlib import Path
 import tempfile
 import unittest
@@ -46,6 +47,11 @@ class BulkTests(unittest.TestCase):
         for row in rows[:3]:
             self.assertEqual(b.frs_by_registry_id(row['REGISTRY_ID'], self.cache), [row])
             self.assertEqual(b.frs_by_name_city(row['FAC_NAME'].lower(), row['FAC_CITY'], self.cache), [row])
+        with sqlite3.connect(self.cache / 'frs.sqlite') as db:
+            self.assertEqual(db.execute('SELECT typeof(payload) FROM records LIMIT 1').fetchone()[0], 'blob')
+            # Previously installed plain-JSON indexes remain readable.
+            db.execute('UPDATE records SET payload=? WHERE id=?', (json.dumps(rows[0]), rows[0]['REGISTRY_ID']))
+        self.assertEqual(b.frs_by_registry_id(rows[0]['REGISTRY_ID'], self.cache), [rows[0]])
         self.assertEqual(b.frs_by_registry_id('absent', self.cache), [])
         with self.assertRaises(ValueError):
             b.frs_by_registry_id('', self.cache)
@@ -109,7 +115,6 @@ class BulkTests(unittest.TestCase):
             with self.assertRaises((ValueError, KeyError)):
                 b.index_file('frs', self.archive('bad.zip', {'x.csv': text}), self.cache)
         row = {'LEI': 'same', 'Entity.LegalName': 'a', 'Entity.LegalAddress.City': 'b'}
-        import sqlite3
         with self.assertRaises(sqlite3.IntegrityError):
             b.index_file('lei', self.csvzip('duplicate', [row, row]), self.cache)
         with self.assertRaises(ValueError):

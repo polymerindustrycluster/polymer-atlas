@@ -110,3 +110,10 @@ The live gate checks three LEIs (Apple, Google LLC, Alphabet Inc.) and the
 [Google→Alphabet direct-parent relationship](https://api.gleif.org/api/v1/lei-records/7ZW8QJWVPR4P1J1KQY45/direct-parent-relationship),
 independently fetched 2026-11-06: child `7ZW8QJWVPR4P1J1KQY45`, parent
 `5493006MHB84DD0ZWV18`, type `IS_DIRECTLY_CONSOLIDATED_BY`.
+
+Full-file exercise found that GLEIF's 338-column rows expand to roughly 77 GiB of
+repeated JSON keys before SQLite overhead. The first temporary LEI build was
+stopped before publication. Payloads now use stdlib zlib compression per row;
+lookups return the identical dictionaries. Existing plain-JSON cache indexes remain
+readable. Raw archives are retained. This is a storage correction, not a filter:
+all rows and fields remain, and the same count/known-answer gates apply.
