@@ -26,6 +26,12 @@ def main():
     assert rows and len({r['equipment_id'] for r in rows}) == len(rows)
     assert len({(r['host_org_id'], r['name'].strip().lower()) for r in rows}) == len(rows)
     assert all(100 <= int(r['equipment_id'][4:]) <= 999 for r in rows)
+    by_id = {r['equipment_id']: r for r in rows}
+    for ident in range(116, 123):
+        row = by_id[f'EQP-{ident:06}']
+        assert row['access_mode'] == 'fee_for_service' and row['access_quote'] == 'We offer very competitive external rates for assisted and unassisted use of the instruments.', 'UC external-rate witness lost'
+    assert by_id['EQP-000144']['name'] == 'Differential Scanning Calorimeter (PerkinElmer)', 'DSC/FSC grain differs'
+    assert by_id['EQP-000153']['name'] == 'Fast Scanning Calorimeter (Mettler Toledo)', 'DSC/FSC grain differs'
     hosts = {r['org_id'] for p in [args.data_dir / 'ecosystem.csv', *sorted(args.data_dir.glob('organizations_*.csv'))] for r in read(p)}
     assert all(r['host_org_id'] in hosts for r in rows), 'unheld host'
     programs = {r['program_id']: r for r in read(args.data_dir / 'programs.csv')}

@@ -23,7 +23,7 @@ fields = list(current[0])
 assert all(by_id[r['equipment_id']] == {k: r[k] for k in fields} for r in rows)
 assert {r['equipment_id'] for r in current} == {r['equipment_id'] for r in main + rows}
 verdicts = lane.read(HERE / 'verdicts.csv')
-assert len(verdicts) == len(rows) == 53
+assert len(verdicts) == len(rows) == 54
 assert {r['equipment_id'] for r in verdicts if r['verdict'] == 'VERIFIED'} == {r['equipment_id'] for r in rows}
 with tempfile.TemporaryDirectory() as d:
     data = Path(d)
@@ -39,23 +39,25 @@ with tempfile.TemporaryDirectory() as d:
     before = digest()
     subprocess.run(cmd, check=True, capture_output=True)
     assert digest() == before, 'replay changed CSV bytes'
-    for mutation in ['existing_id', 'duplicate_name', 'unheld_host']:
+    for mutation in ['existing_id', 'duplicate_name', 'unheld_host', 'uc_access', 'combined_calorimeters']:
         bad = [dict(r) for r in rows]
         if mutation == 'existing_id': bad[0]['notes'] += ' Fabricated mutation.'
         if mutation == 'duplicate_name': bad[0]['equipment_id'] = 'EQP-000999'
         if mutation == 'unheld_host': bad[0]['host_org_id'] = 'ORG-999999'
+        if mutation == 'uc_access': bad[16]['access_mode'] = 'not_stated'
+        if mutation == 'combined_calorimeters': bad[44]['name'] += ' + Fast Scanning Calorimeter (Mettler Toledo)'
         badpath = Path(d).parent / (data.name + '-bad.csv')
         try:
             with badpath.open('w', newline='') as f:
                 w = csv.DictWriter(f, fieldnames=list(bad[0])); w.writeheader(); w.writerows(bad)
             result = subprocess.run(cmd + ['--inputs', str(badpath)], capture_output=True, text=True)
-            expected = {'existing_id': 'existing ID differs', 'duplicate_name': 'existing instrument duplicate', 'unheld_host': 'unheld host'}[mutation]
+            expected = {'existing_id': 'existing ID differs', 'duplicate_name': 'existing instrument duplicate', 'unheld_host': 'unheld host', 'uc_access': 'UC external-rate witness lost', 'combined_calorimeters': 'DSC/FSC grain differs'}[mutation]
             assert result.returncode and expected in result.stderr, (mutation, result.stderr)
             assert digest() == before, mutation + ' wrote data'
         finally:
             badpath.unlink()
         print(mutation, 'refused before any write')
-print('PASS: 53/53 VERIFIED equipment rows; main rows preserved; exact projection; byte-idempotent replay; 3 negative controls')
+print('PASS: 54/54 VERIFIED equipment rows; main rows preserved; exact projection; byte-idempotent replay; 5 negative controls')
 
 if '--pages' in sys.argv:
     import html
