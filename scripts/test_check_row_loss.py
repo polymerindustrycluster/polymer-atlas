@@ -58,5 +58,54 @@ class EndToEnd(unittest.TestCase):
             self.assertEqual(self.run_guard(root, "--base", "HEAD"), 0)
 
 
+class ReviewFindings(unittest.TestCase):
+    """Regressions for the PR #130 Codex and Grok clerk findings."""
+
+    def repo(self, d):
+        git = lambda *a: subprocess.run(["git", "-C", d, *a], check=True, capture_output=True)
+        git("init", "-q"); git("config", "user.email", "t@t"); git("config", "user.name", "t")
+        (Path(d) / "data").mkdir(); (Path(d) / "tasks").mkdir()
+        return git
+
+    def guard(self, root, *args):
+        return EndToEnd.run_guard(self, Path(root), *args)
+
+    def test_old_manifest_does_not_authorize_a_later_loss(self):
+        with tempfile.TemporaryDirectory() as d:
+            git = self.repo(d); s = Path(d) / "data" / "sites_OH.csv"
+            s.write_text("site_id,name\nSITE-1,a\nSITE-2,b\n"); git("add", "."); git("commit", "-qm", "1")
+            s.write_text("site_id,name\nSITE-2,b\n")
+            (Path(d) / "tasks" / "REMOVALS.csv").write_text("table,key,reason\nsites,SITE-1,test\n")
+            git("add", "."); git("commit", "-qm", "declared removal")
+            self.assertEqual(self.guard(d, "--base", "HEAD~1"), 0)
+            s.write_text("site_id,name\nSITE-1,a\nSITE-2,b\n"); git("add", "."); git("commit", "-qm", "restored")
+            s.write_text("site_id,name\nSITE-2,b\n")  # accidental second loss, manifest untouched
+            self.assertEqual(self.guard(d, "--base", "HEAD"), 1)
+
+    def test_people_identifier_as_of_refresh_is_not_a_loss(self):
+        with tempfile.TemporaryDirectory() as d:
+            git = self.repo(d); p = Path(d) / "data" / "people_identifiers.csv"
+            p.write_text("person_id,identifier_type,identifier_id,match_basis,as_of\nPERSON-1,ORCID,0000,x,2026-11-01\n")
+            git("add", "."); git("commit", "-qm", "1")
+            p.write_text("person_id,identifier_type,identifier_id,match_basis,as_of\nPERSON-1,ORCID,0000,x,2026-11-06\n")
+            self.assertEqual(self.guard(d, "--base", "HEAD"), 0)
+
+    def test_one_of_two_identical_rows_removed_is_seen(self):
+        with tempfile.TemporaryDirectory() as d:
+            git = self.repo(d); p = Path(d) / "data" / "inclusion_log.csv"
+            p.write_text("date,record\n2026-10-28,X\n2026-10-28,X\n"); git("add", "."); git("commit", "-qm", "1")
+            p.write_text("date,record\n2026-10-28,X\n")
+            self.assertEqual(self.guard(d, "--base", "HEAD"), 1)
+
+    def test_lagging_branch_is_not_blamed_for_rows_main_added(self):
+        with tempfile.TemporaryDirectory() as d:
+            git = self.repo(d); s = Path(d) / "data" / "sites_OH.csv"
+            s.write_text("site_id\nSITE-1\n"); git("add", "."); git("commit", "-qm", "1"); git("branch", "-M", "main")
+            git("checkout", "-qb", "lane")
+            git("checkout", "-q", "main"); s.write_text("site_id\nSITE-1\nSITE-2\n"); git("commit", "-qam", "main adds")
+            git("checkout", "-q", "lane")
+            self.assertEqual(self.guard(d, "--base", "main"), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -8,8 +8,13 @@ keyed rows of every data table at a base ref against the working tree (or a seco
 disappeared, unless a REMOVALS.csv manifest anywhere under tasks/ lists it (columns: table,key,reason).
 
 Keys: shards are unioned per table (organizations_*.csv and ecosystem.csv share the org-id space, because an org may
-move between them); registry_links is keyed org_id|registry|registry_id|site_id; inclusion_log and
-people_identifiers by the whole row; every other table by its first column.
+move between them); registry_links is keyed org_id|registry|registry_id|site_id; people_identifiers
+person_id|identifier_type|identifier_id (SCHEMA §4.21 grain, so an as_of refresh is not a loss); inclusion_log by the
+whole row plus its occurrence number (identical rows are counted, not collapsed); every other table by its first column.
+
+The base side is the merge-base of --base and the head, so a branch (or a PR merge ref) that lags main is not blamed
+for rows main added since. A removal is allowed only by a REMOVALS.csv row that is new in the compared range (present
+at the head, absent at the merge-base): a manifest from an earlier change cannot authorize a later, unrelated loss.
 
 Usage:
   python3 scripts/check_row_loss.py --base origin/main            # base ref vs working tree
@@ -20,7 +25,11 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-WHOLE_ROW = {"inclusion_log", "people_identifiers"}
+WHOLE_ROW = {"inclusion_log"}
+COMPOSITE = {
+    "registry_links": ("org_id", "registry", "registry_id", "site_id"),
+    "people_identifiers": ("person_id", "identifier_type", "identifier_id"),
+}
 
 
 def table_of(path):
@@ -32,9 +41,9 @@ def table_of(path):
 
 
 def row_key(table, header, row):
-    if table == "registry_links":
+    if table in COMPOSITE:
         d = dict(zip(header, row))
-        return "|".join(d.get(c, "") for c in ("org_id", "registry", "registry_id", "site_id"))
+        return "|".join(d.get(c, "") for c in COMPOSITE[table])
     if table in WHOLE_ROW:
         return "|".join(row)
     return row[0]
@@ -58,9 +67,14 @@ def read_tree(ref):
         if not rows:
             continue
         header = rows[0]
+        seen = defaultdict(int)
         for row in rows[1:]:
             if row:
-                keys[t].add(row_key(t, header, row))
+                k = row_key(t, header, row)
+                if t in WHOLE_ROW:  # count duplicates so removing one of several identical rows is seen
+                    seen[k] += 1
+                    k = f"{k}#{seen[k]}"
+                keys[t].add(k)
     return keys
 
 
@@ -93,16 +107,19 @@ def main():
     ap.add_argument("--base", required=True, help="git ref to compare against (e.g. origin/main)")
     ap.add_argument("--head", help="git ref for the new side (default: the working tree)")
     a = ap.parse_args()
-    lost = removed_keys(read_tree(a.base), read_tree(a.head), declared_removals(a.head))
+    base = git("merge-base", a.base, a.head or "HEAD").strip()
+    allowed = declared_removals(a.head) - declared_removals(base)  # only manifests added in this range count
+    lost = removed_keys(read_tree(base), read_tree(a.head), allowed)
     if not lost:
-        print(f"row-loss guard: OK — no keyed row removed from data/ since {a.base}")
+        print(f"row-loss guard: OK — no keyed row removed from data/ since {a.base} (merge-base {base[:10]})")
         return 0
     total = sum(len(v) for v in lost.values())
-    print(f"row-loss guard: FAIL — {total} keyed rows removed since {a.base} and not declared in a tasks/**/REMOVALS.csv")
+    print(f"row-loss guard: FAIL — {total} keyed rows removed since {a.base} (merge-base {base[:10]}) and not declared "
+          "in a REMOVALS.csv added in this change")
     for t, ks in sorted(lost.items()):
         print(f"  {t}: {len(ks)} removed, e.g. {', '.join(ks[:5])}")
-    print("If a removal is intended (a re-point, a merge), list each key in your task folder's REMOVALS.csv "
-          "(columns table,key,reason). Records themselves are tombstoned, never deleted (AGENTS.md §3).")
+    print("If a removal is intended (a re-point, a merge), list each key in a REMOVALS.csv in your task folder "
+          "(columns table,key,reason); for inclusion_log the key is the whole row plus '#<occurrence>'. Records themselves are tombstoned, never deleted (AGENTS.md §3).")
     return 1
 
 
