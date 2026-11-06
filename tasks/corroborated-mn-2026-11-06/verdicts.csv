@@ -1,0 +1,120 @@
+cluster_id,state,verdict,held_org_id,duplicate_of,establishment_id,reason
+LF-MN-00006,MN,STILL_UNCERTAIN,,,,Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.
+LF-MN-00092,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00333,MN,STILL_UNCERTAIN,,,1259269,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00097,MN,STILL_UNCERTAIN,,,1399534,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-MN-00116,MN,STILL_UNCERTAIN,,,,Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.
+LF-MN-00195,MN,STILL_UNCERTAIN,,,1049294,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00214,MN,STILL_UNCERTAIN,,,290349,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00348,MN,STILL_UNCERTAIN,,,917624,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00363,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00176,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00242,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00268,MN,STILL_UNCERTAIN,,,796415,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00277,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00286,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00288,MN,STILL_UNCERTAIN,,,899105,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00308,MN,STILL_UNCERTAIN,,,1090086,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00329,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00337,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00604,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00033,MN,VERIFIED,ORG-004926,,1436736,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00069,MN,VERIFIED,ORG-002348,,327162,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00086,MN,STILL_UNCERTAIN,,,1254341,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00123,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00187,MN,STILL_UNCERTAIN,,,1129459,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00199,MN,STILL_UNCERTAIN,,,1074796,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00203,MN,STILL_UNCERTAIN,,,1538719,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00227,MN,STILL_UNCERTAIN,,,1335084,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00228,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00230,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00232,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00233,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00241,MN,STILL_UNCERTAIN,,,160468,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00264,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00267,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00271,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00276,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00278,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00284,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00290,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00299,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00302,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00311,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00313,MN,STILL_UNCERTAIN,,,937137,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00314,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00323,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00325,MN,STILL_UNCERTAIN,,,1258937,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00327,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00345,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00024,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00032,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00111,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00139,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00141,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00151,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00270,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00275,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00280,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00289,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00291,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00321,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00007,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00091,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00208,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00300,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00458,MN,STILL_UNCERTAIN,,,1528879,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00465,MN,STILL_UNCERTAIN,,,1559862,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00479,MN,STILL_UNCERTAIN,,,344486,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.
+LF-MN-00483,MN,STILL_UNCERTAIN,,,364504,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00484,MN,VERIFIED,ORG-007732,,393578,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00499,MN,VERIFIED,ORG-000133,,564340,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00507,MN,VERIFIED,ORG-003553,,821597,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00516,MN,VERIFIED,ORG-002907,,919508,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00034,MN,STILL_UNCERTAIN,,,1182045,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00095,MN,STILL_UNCERTAIN,,,,Need a reliable plant-grain ITA witness; registry/employer-only families cannot attest this plant.
+LF-MN-00110,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00213,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00341,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00376,MN,STILL_UNCERTAIN,,,1072506,Need reconciled reliable federal street/state/NAICS across the linked ITA records.
+LF-MN-00409,MN,STILL_UNCERTAIN,,,1304537,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00451,MN,STILL_UNCERTAIN,,,1506424,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00489,MN,STILL_UNCERTAIN,,,441708,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00495,MN,STILL_UNCERTAIN,,,498490,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00506,MN,VERIFIED,ORG-003819,,820197,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00080,MN,STILL_UNCERTAIN,,,312807,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00235,MN,STILL_UNCERTAIN,,,800317,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00310,MN,STILL_UNCERTAIN,,,,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00381,MN,STILL_UNCERTAIN,,,1085847,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00392,MN,STILL_UNCERTAIN,,,1154010,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00393,MN,STILL_UNCERTAIN,,,1182394,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00396,MN,STILL_UNCERTAIN,,,1190083,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00404,MN,STILL_UNCERTAIN,,,1267619,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00415,MN,STILL_UNCERTAIN,,,1348585,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00420,MN,STILL_UNCERTAIN,,,1420299,Need distinct-establishment/address reconciliation: held Revolv notes already name 1100 Industrial Park Rd SW Brainerd as the same operation as SITE-004094 Baxter HQ/plant. Do not create a second site from an unresolved alternate address.
+LF-MN-00424,MN,STILL_UNCERTAIN,,,1429148,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00428,MN,STILL_UNCERTAIN,,,1436752,Need independently sourced operator reconciliation for Maple Lake Foam Fabricators: ITA1436752 EIN411284688 matches American Converters filings1436736/1436749; own FoamFabricatorsMN/Rogers/Amcon pages bind Minnesota operator. Held ORG002228 is Bloomsburg PA Altor chain with permitEIN43-0730823. Common normalized name is insufficient; do not self-repoint. SITE012694/EVD308752–759 permanently unused.
+LF-MN-00433,MN,STILL_UNCERTAIN,,,1451169,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00437,MN,STILL_UNCERTAIN,,,1456064,Need primary confirmation that the filed company_name is this held operator; matching a plant label or parent-company variant alone is insufficient.
+LF-MN-00455,MN,STILL_UNCERTAIN,,,1522910,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00468,MN,STILL_UNCERTAIN,,,1568591,"Need plant-specific activity/NAICS reconciliation: Hoyt Lakes ITA says polyethylene resin manufacturing (325211), while held Revolv is a rotational molder/thermoformer. Settle standalone resin production versus converting before assigning the site code/ring."
+LF-MN-00474,MN,STILL_UNCERTAIN,,,307591,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00481,MN,VERIFIED,ORG-007729,,346569,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00488,MN,STILL_UNCERTAIN,,,411259,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00491,MN,STILL_UNCERTAIN,,,477570,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00500,MN,STILL_UNCERTAIN,,,632870,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00501,MN,STILL_UNCERTAIN,,,653859,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00508,MN,STILL_UNCERTAIN,,,858065,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00529,MN,VERIFIED,ORG-003687,,998685,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00008,MN,STILL_UNCERTAIN,,,866302,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00070,MN,STILL_UNCERTAIN,,,866289,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00152,MN,STILL_UNCERTAIN,,,204573,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00180,MN,STILL_UNCERTAIN,,,866292,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00255,MN,STILL_UNCERTAIN,,,1423822,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00260,MN,STILL_UNCERTAIN,,,1125280,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00326,MN,STILL_UNCERTAIN,,,565766,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00367,MN,VERIFIED,ORG-000651,,1000450,"Exact held operator identity; reliable ITA plant street/state and explicit filed polymer manufacturing activity. Provisional federal-only C, current operating status unknown."
+LF-MN-00408,MN,STILL_UNCERTAIN,,,1290249,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00324,MN,STILL_UNCERTAIN,,,1243575,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00482,MN,STILL_UNCERTAIN,,,359325,Need unambiguous operator identity at this street; exact legal/trade/federal-company names resolve [].
+LF-MN-00297,MN,STILL_UNCERTAIN,,,1401222,Need an explicit polymer manufacturing activity witness; the filed description does not settle scope.

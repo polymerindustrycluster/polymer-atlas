@@ -1,0 +1,8 @@
+site_id,establishment_id,operator,result
+SITE-016202,1288423,"Habasit America, Inc.",PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016206,1308375,Parker-Hannifin Corporation,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016200,80412,Caplugs,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016201,239285,"TekniPlex, Inc.",PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016205,803502,Altium Packaging,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016203,342419,Pregis LLC,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016204,998843,Dutchland Plastics LLC,PASS: held operator + physical address + filed NAICS; federal-only C
