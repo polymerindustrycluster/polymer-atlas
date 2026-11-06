@@ -34,7 +34,7 @@ assert len(dups)==2
 for v in dups:
  assert sites[v['duplicate_of']]['org_id']==v['held_org_id']
 for fn in ['sites_NC.csv','evidence_sites_NC.csv']:
- old=list(csv.DictReader(subprocess.check_output(['git','show','9489b60:data/'+fn],text=True).splitlines()))
+ old=list(csv.DictReader(subprocess.check_output(['git','show','bdb8b9879b6a546b913812938710f9d033bcf33e:data/'+fn],text=True).splitlines()))
  key=list(old[0])[0];new={r[key]:r for r in read(R/'data'/fn)}
  assert all(new.get(r[key])==r for r in old)
 # Byte idempotence, and a mutation: an occupied lane ID must fail without modifying any file.
@@ -61,7 +61,7 @@ for dest,key,value in [('sites_FL.csv','site_id','SITE-016300'),('evidence_organ
   assert before_bad=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
 # State strict numerator definition is reused from the official denominator builder.
 now=atlas_numerators(str(R))[('NC','326')][1]
-base=list(csv.DictReader(subprocess.check_output(['git','show','9489b60:data/sites_NC.csv'],text=True).splitlines()))
+base=list(csv.DictReader(subprocess.check_output(['git','show','bdb8b9879b6a546b913812938710f9d033bcf33e:data/sites_NC.csv'],text=True).splitlines()))
 old=sum(r.get('country','US') in ('','US') and r['naics_primary'].startswith('326') and r['operating_status'] in ('active','unknown') and r['verification_tier'] in ('A','B','C') for r in base)
 q=next(r for r in read(R/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']=='37000' and r['year']=='2023' and r['industry_code']=='326')
 den=float(q['annual_avg_estabs'])

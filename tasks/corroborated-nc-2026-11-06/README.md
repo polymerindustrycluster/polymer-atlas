@@ -119,3 +119,5 @@ Pending Codex3/Grok3 under controller06:25 newodd-lane clerkassignment; draft on
 |LF-NC-00453|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00493|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
 |LF-NC-00386|HOLD: resolve ultimate operator,distinct establishment and primary polymer-scope witness; no new parent from federal cluster alone.|
+
+Main-refresh journal: merged origin/main bdb8b9879b6a546b913812938710f9d033bcf33e before review; replay pending0,full15/15census andvalidate0 re-pass. Counter baseline unchanged91strictNC326 sites. Controller07:20 own_site boundary audit: zero unmerged NC own_site rows; all105new evidence rows are government_filing.
