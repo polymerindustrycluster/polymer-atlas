@@ -23,19 +23,20 @@ class Page(HTMLParser):
         if not self.skip: self.parts.append(text)
 
 def fetch(url):
-    for route in (url, 'https://r.jina.ai/' + url):
-        r = subprocess.run(['curl', '--compressed', '-fLsS', '--max-time', '35', '-A', 'Mozilla/5.0', route], capture_output=True)
+    for route, compressed in ((url, True), (url, False), ('https://r.jina.ai/' + url, True)):
+        args = ['curl', *(['--compressed'] if compressed else []), '-fLsS', '--max-time', '35', '-A', 'Mozilla/5.0', route]
+        r = subprocess.run(args, capture_output=True)
         if r.returncode: continue
         if r.stdout.startswith(b'%PDF'):
             with tempfile.TemporaryDirectory() as d:
                 path = Path(d) / 'certificate.pdf'; path.write_bytes(r.stdout)
                 pdf = subprocess.run(['pdftotext', '-layout', str(path), '-'], capture_output=True, check=True)
-                return pdf.stdout.decode('utf-8'), [], route
+                return pdf.stdout.decode('utf-8'), [], route + ('' if compressed else ' [uncompressed]')
         raw = r.stdout.decode('utf-8', 'replace')
         p = Page(); p.feed(raw)
         text = ' '.join(' '.join(p.parts).split()) if route == url else raw
         if len(text) > 100 and not any(marker in text[:500].lower() for marker in ('just a moment...', 'you are being redirected', 'access denied', "doesn't work properly without javascript", 'request rejected network security system')):
-            return text, p.links, route
+            return text, p.links, route + ('' if compressed else ' [uncompressed]')
     raise RuntimeError('unfetchable: ' + url)
 
 def found(text, quote):

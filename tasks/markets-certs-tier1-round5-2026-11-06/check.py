@@ -30,7 +30,11 @@ def main():
         with patch('fetch.subprocess.run', return_value=SimpleNamespace(returncode=0, stdout=body)):
             try: fetch('https://example.invalid/challenge'); raise AssertionError('challenge accepted')
             except RuntimeError: pass
-    print('3 redirect/JS-only/network-rejection controls refused on both routes')
+    print('3 redirect/JS-only/network-rejection controls refused on all routes')
+    with patch('fetch.subprocess.run', side_effect=[SimpleNamespace(returncode=22, stdout=b''), SimpleNamespace(returncode=0, stdout=b'<html><body>' + b'Known plain route witness for the fallback control. ' * 4 + b'</body></html>')]):
+        plain, _, route = fetch('https://example.invalid/plain')
+        assert found(plain, 'Known plain route witness') and route.endswith(' [uncompressed]')
+    print('compressed failure/plain success control passed')
     print('known answers: 4/4; injected fabricated quotes refused: 4/4')
     rows = list(csv.DictReader((HERE / 'inputs.csv').open()))
     assert all(r['verdict'] in ('VERIFIED', 'STILL_UNCERTAIN') for r in rows)
