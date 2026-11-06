@@ -50,6 +50,11 @@ with tempfile.TemporaryDirectory(prefix='l6-quality-check-') as tmp:
     else:raise AssertionError('late cross-shard collision accepted')
     assert h==all_hash(),'collision caused partial writes'
     print('PASS final-EVD collision across shards rejected before any write')
-n=atlas_numerators(str(ROOT));count=n['CA','326'][1];assert count==93
-(P/'check-result.json').write_text(json.dumps(dict(frame_C_sites=16,promoted_B_sites=4,held_C_sites=12,changed_cells=8,appended_evidence=22,raw_urls=5,raw_quotes=6,strict326_before=93,strict326_after=count,qcew_denominator=1306,strict_share_pct=100*count/1306),indent=2)+'\n')
-print('PASS 16 exact verdicts / 4 upgrades / 12 holds; 8 cells,22EVD; old main rows preserved; raw6/6; replay; strict32693→93/1306')
+n=atlas_numerators(str(ROOT));count=n['CA','326'][1]
+with tempfile.TemporaryDirectory(prefix='l6-quality-qcew-') as tmp:
+    d=Path(tmp)/'data';d.mkdir()
+    (d/'sites_CA.csv').write_bytes(subprocess.check_output(['git','show','origin/main:data/sites_CA.csv']))
+    baseline=atlas_numerators(tmp)['CA','326'][1]
+assert count==baseline,('unexpected strict establishment gain',baseline,count)
+(P/'check-result.json').write_text(json.dumps(dict(frame_C_sites=16,promoted_B_sites=4,held_C_sites=12,changed_cells=8,appended_evidence=22,raw_urls=5,raw_quotes=6,strict326_before=baseline,strict326_after=count,qcew_denominator=1306,strict_share_pct=100*count/1306),indent=2)+'\n')
+print('PASS 16 exact verdicts / 4 upgrades / 12 holds; 8 cells,22EVD; old main rows preserved; raw6/6; replay; strict326',baseline,'→',count,'/1306')
