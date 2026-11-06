@@ -1,0 +1,31 @@
+# L5 source scout4 — atlas-L5-scout-3, 2026-11-06
+
+Controller06:30 continuation, NEW branch agent/codex/source-scout-4 from origin/main9489b60. Packet only: no data/ writes, IDs, membership edges, scope/ring/vocabulary decisions or tracker status changes. PR131 remains separate. First user: Atlas controller/PIC researcher, source prioritization by2026-11-13; non-use then is a controller review finding, not a new commitment.
+
+Acceptance: route and terms checked for all5 sources; terms/auth/raw-access gates stop extraction and remain explicitly unmeasured. For usable ACMA/CDR routes: precise discovery-frame units/filter,20 unique seeded sample units, all-shard dedupe with unknown fields disclosed, legal row verdicts/settling facts, verified-new yield with Wilson interval from CSV, independent count checks and executable negative controls. Keep vs corroboration vs closed is a source-route verdict, never an organization operating-status decision. No closure REJECTs or Form5500 closure decisions.
+
+| Source | Source-route verdict | Frame/sample and measured new yield | Hold |
+|---|---|---|---|
+| Association of Plastic Recyclers | CLOSED automated extraction | NOT MEASURED, terms stop | Prior written permission |
+| Vinyl Institute | CLOSED this raw/publication scout | NOT MEASURED, raw terms406/Jina401; no clause claimed raw-verified | Raw terms and reuse right |
+| ACMA composites public directory | CORROBORATION_ONLY |98 US/nonoptout Manufacturer listings;0/20 new organization leads, Wilson95%0–16.11% |4 identity/scope uncertainties, publication rights |
+| EPA2024 CDR | CORROBORATION_ONLY |290 core-NAICS TSCA site IDs;0/20 new sites established current, Wilson95%0–16.11% |15 site/operator/current-process uncertainties; report vintage2023 |
+| SAM.gov PUBLIC entity extract | CORROBORATION_ONLY, credential/route held | NOT MEASURED; terms/route only as assigned | Read Public key and successful authenticated extract |
+
+CDR20:5DUPLICATE_OF held sites /15STILL_UNCERTAIN. ACMA20:16DUPLICATE_OF held organizations /4STILL_UNCERTAIN. No REJECT, no VERIFIED-new. Zero current verified-new under the documented bulk-evidence/one-homepage budget does not mean source absence or ultimate discovery yield zero. Association directory category and CDR NAICS/import records do not establish current polymer operations. Sample CIs are descriptive at their different listing/site-ID grains and must not be pooled into a parent-level estimate.
+
+## Checks and reproducibility
+
+`python3 tasks/source-scout-4-2026-11-06/check.py` is the named offline check: recomputes every yield/CI from the40 committed sample rows; verifies duplicate endpoints, unknown metrics for gates, unique source IDs, CDR290 IDs/2924row yield, ACMA98 slice, known matcher/NAICS/optout answers and intentional duplicate/boundary defects. `--write` refreshes metrics.json, default rejects drift.
+
+`python3 tasks/source-scout-4-2026-11-06/fetch_routes.py` re-probes9 bounded public URLs and writes routes.csv status/hash metadata. Non200 is a recorded route observation, never an empty dataset. Expected usable APR terms/ACMA/EPA routes must succeed for the offline gate; Vinyl/SAM failures remain explicit. Raw pages/JSON/downloads remain under /tmp; no full directory/contact payload is committed.
+
+`epa-cdr/build.py` re-builds frame/sample from the strict source CSV. `acma/scout.py` re-fetches company homepages from a locally downloaded public directory JSON and reproduces seeded sample20; raw directory acquisition URL is in its README. All script output targets stay in this packet; canonical tables are read-only. A changed upstream roster/release must be investigated before changing pinned counts. No dependencies added or scripts/ changed, so no unrelated full-suite rerun required.
+
+Checks: named offline check PASS; source count reconciliation PASS; five raw terms excerpts PASS (terms_checks.csv, house evidence-repair word normalizer); `python3 scripts/validate.py` PASS0errors. Current-main row-loss guard PASS; CDR builder second run byte-identical; ACMA live252/98/seeded20 check with three real category known answers PASS. Two-family reviews pending. Clerk pairs06:25: new request Codex3 thr_jukpm97t9c + Grok3 thr_4g4uwqjxjv. Clerk-only --mode queue exception supersedes the general never-queue contract.
+
+## Ledger / holds
+
+Controller notified of assignment/source gates; no peer ownership agreements. Estate search was partial because the Windows Documents inventory and corpus are absent on this Mac; no private source copied. Proposed source-ledger/IDEAS changes are in docs_proposals.md, keeping this main-based continuation independent of PR131's edits to those shared files.
+
+PR131 review correction is separate: Codex exposed51 as a hidden location intersection; that PR now reports79 broad held-PIC18 footprint patent candidates and51 explicitly flagged intersection, with current-main row-loss guard passing. No PR131 files or old results are bundled into this continuation.

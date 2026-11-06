@@ -1,0 +1,10 @@
+source,route,url,observed_date,http_status,fetch_rc,bytes,sha256
+apr,terms,https://plasticsrecycling.org/wp-content/uploads/2024/08/APR-Terms-of-Use-8-16-2024.pdf,2026-11-06,200,0,382440,ce5ac5ba2941b3532190581f5178a09873ea10daf21ebc05ce99235e437c7073
+vinyl-institute,terms,https://www.vinylinfo.org/terms-and-conditions/,2026-11-06,406,0,226,80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4
+acma,directory_page,https://acmanet.org/membership/why-membership-matters/membership-directory/,2026-11-06,200,0,125444,d70b92e76620502b22b6ad47929412e9f2dc531d08f9661a477014cdb8475d32
+acma,public_list_api,https://acmanet.org/wp-json/mg/v1/content/directory?type=&state=,2026-11-06,200,0,49007,0afec7ee4119eefc13fd72716c2805e56cb3f6d8ef34d94bf264c31ef9b4e380
+acma,terms,https://acmanet.org/tcs/,2026-11-06,200,0,134395,68ed0db4bc7ad494602744af62f789ab1b29b69a53a02173a15d3315b70b5a62
+epa-cdr,access,https://www.epa.gov/chemical-data-reporting/access-chemical-data-reporting-data,2026-11-06,200,0,75186,035f2f48e8fe89f50d920e91dd52ac26266c616e3684d39585e8539b2ef80f00
+epa-cdr,license,https://edg.epa.gov/data/EPA_Data_License.html,2026-11-06,200,0,10968,deff40a15da6593a56f4c3bf4a975b1430c809635d382da95cb9dbd3da4ef052
+sam-gov,terms,https://sam.gov/about/terms-of-use,2026-11-06,200,0,63262,595c4dca937cd3b3d6fa30b7a7741ec74c2eeaba522f66e838663614411e6230
+sam-gov,anonymous_public_extract,https://api.sam.gov/data-services/v1/extracts?fileType=ENTITY&sensitivity=PUBLIC,2026-11-06,404,0,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855

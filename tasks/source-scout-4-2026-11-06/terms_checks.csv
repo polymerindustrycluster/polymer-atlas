@@ -1,0 +1,6 @@
+source,url,quote,raw_words_in_order,raw_sha256,observed_date
+apr,https://plasticsrecycling.org/wp-content/uploads/2024/08/APR-Terms-of-Use-8-16-2024.pdf,"will not monitor, gather, copy, or distribute the Content",PASS,ac8f707aa75161110d858d82a86cd709f14568802a43aa39d217d026ae046bd8,2026-11-06
+apr,https://plasticsrecycling.org/wp-content/uploads/2024/08/APR-Terms-of-Use-8-16-2024.pdf,"by using any robot, rover, “bot”, spider, scraper, crawler",PASS,ac8f707aa75161110d858d82a86cd709f14568802a43aa39d217d026ae046bd8,2026-11-06
+acma,https://acmanet.org/tcs/,"Postings may not violate or infringe copyright, trademark, trade secret, privacy, personal publicity or proprietary rights.",PASS,68ed0db4bc7ad494602744af62f789ab1b29b69a53a02173a15d3315b70b5a62,2026-11-06
+epa-cdr,https://edg.epa.gov/data/EPA_Data_License.html,all data produced by the U.S EPA is by default in the public domain,PASS,deff40a15da6593a56f4c3bf4a975b1430c809635d382da95cb9dbd3da4ef052,2026-11-06
+sam-gov,https://sam.gov/about/terms-of-use,"Automated data gathering, web scraping tools are prohibited",PASS,595c4dca937cd3b3d6fa30b7a7741ec74c2eeaba522f66e838663614411e6230,2026-11-06
