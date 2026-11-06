@@ -40,6 +40,11 @@ def main():
     with patch.object(d.subprocess,'run',side_effect=redirect):
         page=d.fetch('https://www.avient.com/redirect-negative')
         assert page['status']=='blocked_external_or_unsafe' and calls==['https://www.avient.com/redirect-negative']
+    from rawcheck import verify
+    row={'source_url':'https://www.avient.com','linkedin_url':'https://www.linkedin.com/company/fabricated/','href':'https://www.linkedin.com/company/fabricated/'}
+    with patch.object(d,'fetch',return_value={'body':'<footer><a href="https://www.linkedin.com/company/avient-corporation/">LinkedIn</a></footer>','status':'200','raw_sha256':'0'*64,'url':'https://www.avient.com','attempts':[]}):
+        outcome,_=verify(row)
+        assert outcome['result']=='FAIL'
     (d.HERE/'known-answers.json').write_text(json.dumps(results,indent=2)+'\n')
     print('PASS realknown3/3; personal/share/body/unsafeURL/encoded-dot negatives; direct and redirectedLinkedIn blocked before request.')
 

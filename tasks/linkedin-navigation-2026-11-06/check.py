@@ -86,7 +86,14 @@ def main():
             pass
         else:
             raise AssertionError('identity-poisoned packet accepted')
-    print('PASS',len(proposals),'navigation cells;',len(inputs),'frame outcomes;',len(changed),'shards; all other canonical bytes/keys/fields preserved, byte replay, 3 zero-write negatives, LinkedIn request exclusion.')
+        poisoned=[dict(r) for r in proposals];poisoned[0]['verification_tier']='FABRICATED'
+        try:
+            b.plan(data,poisoned,inputs,checks)
+        except AssertionError as exc:
+            assert 'frozen reporting metadata differs' in str(exc)
+        else:
+            raise AssertionError('poisoned frozen tier metadata accepted')
+    print('PASS',len(proposals),'navigation cells;',len(inputs),'frame outcomes;',len(changed),'shards; all other canonical bytes/keys/fields preserved, byte replay, 4 zero-write negatives, LinkedIn request exclusion.')
     print('By cohort',dict(collections.Counter(r['cohort'] for r in proposals)),'by frozen tier',dict(collections.Counter(r['verification_tier'] for r in proposals)))
 
 

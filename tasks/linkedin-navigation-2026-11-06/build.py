@@ -54,6 +54,8 @@ def plan(data, proposals, inputs, rawchecks):
         assert oid in held and oid in frozen, 'unheld or unfrozen org'
         p,row=held[oid]
         original=frozen[oid]
+        assert all(proposal[k]==original[k] for k in ['cohort','verification_tier']), 'frozen reporting metadata differs'
+        assert proposal['observed_date']=='2026-11-06', 'observation date differs'
         assert all(row[k]==original[k] for k in IDENTITY), 'entity/website preimage changed'
         value=proposal['linkedin_url']
         assert original['status']=='active' and not original['linkedin_url'], 'not a blank active frozen row'

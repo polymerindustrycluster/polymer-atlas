@@ -1,98 +1,98 @@
-organizations shards: AL 46, AR 24, AZ 18, CA 117, CO 28, CT 58, DE 24, FL 61, GA 92, IA 36, ID 17, IL 102, IN 111, INTL 38, KS 44, KY 39, LA 14, MA 72, MD 18, ME 6, MI 167, MN 66, MO 34, MS 18, MT 5, NC 110, ND 7, NE 15, NH 45, NJ 85, NM 5, NV 44, NY 78, OH 1787, OK 19, OR 36, PA 641, RI 34, SC 58, SD 9, TN 58, TX 177, US 262, UT 58, VA 30, VT 6, WA 37, WI 107, WV 19, WY 3 (4985 total)
+organizations shards: AL 46, AR 24, AZ 18, CA 121, CO 28, CT 59, DE 24, FL 61, GA 92, IA 36, ID 17, IL 102, IN 113, INTL 38, KS 44, KY 39, LA 16, MA 72, MD 18, ME 7, MI 168, MN 68, MO 35, MS 18, MT 5, NC 110, ND 7, NE 15, NH 45, NJ 85, NM 5, NV 45, NY 78, OH 1787, OK 19, OR 36, PA 641, RI 34, SC 59, SD 9, TN 58, TX 177, US 246, UT 58, VA 30, VT 6, WA 37, WI 107, WV 19, WY 3 (4985 total)
 sites shards: AL 108, AR 67, AZ 43, CA 211, CO 47, CT 77, DE 23, FL 115, GA 181, IA 75, ID 27, IL 215, IN 229, INTL 8, KS 77, KY 103, LA 70, MA 115, MD 45, ME 12, MI 277, MN 104, MO 92, MS 60, MT 7, NC 206, ND 10, NE 32, NH 52, NJ 112, NM 8, NV 63, NY 111, OH 2009, OK 42, OR 63, PA 777, PR 2, RI 42, SC 126, SD 14, TN 128, TX 443, UT 84, VA 78, VT 10, WA 69, WI 172, WV 46, WY 4 (7091 total)
-WARN  organizations.csv:181 ORG-006188 missing description_1line
-WARN  organizations.csv:311 ORG-006132 missing description_1line
-WARN  organizations.csv:312 ORG-006133 missing description_1line
-WARN  organizations.csv:313 ORG-006134 missing description_1line
-WARN  organizations.csv:314 ORG-006135 missing description_1line
-WARN  organizations.csv:315 ORG-006136 missing description_1line
-WARN  organizations.csv:316 ORG-006137 missing description_1line
-WARN  organizations.csv:513 ORG-006138 missing description_1line
-WARN  organizations.csv:514 ORG-006139 missing description_1line
-WARN  organizations.csv:515 ORG-006140 missing description_1line
-WARN  organizations.csv:516 ORG-006141 missing description_1line
-WARN  organizations.csv:517 ORG-006142 missing description_1line
-WARN  organizations.csv:518 ORG-006143 missing description_1line
-WARN  organizations.csv:519 ORG-006144 missing description_1line
-WARN  organizations.csv:520 ORG-006145 missing description_1line
-WARN  organizations.csv:521 ORG-006146 missing description_1line
-WARN  organizations.csv:522 ORG-006147 missing description_1line
-WARN  organizations.csv:1408 ORG-006148 missing description_1line
-WARN  organizations.csv:1409 ORG-006149 missing description_1line
-WARN  organizations.csv:1410 ORG-006150 missing description_1line
-WARN  organizations.csv:1411 ORG-006151 missing description_1line
-WARN  organizations.csv:1412 ORG-006152 missing description_1line
-WARN  organizations.csv:1413 ORG-006153 missing description_1line
-WARN  organizations.csv:1414 ORG-006154 missing description_1line
-WARN  organizations.csv:1415 ORG-006155 missing description_1line
-WARN  organizations.csv:1416 ORG-006156 missing description_1line
-WARN  organizations.csv:1417 ORG-006157 missing description_1line
-WARN  organizations.csv:1418 ORG-006158 missing description_1line
-WARN  organizations.csv:1419 ORG-006159 missing description_1line
-WARN  organizations.csv:1420 ORG-006160 missing description_1line
-WARN  organizations.csv:1421 ORG-006161 missing description_1line
-WARN  organizations.csv:1422 ORG-006162 missing description_1line
-WARN  organizations.csv:1423 ORG-006163 missing description_1line
-WARN  organizations.csv:1424 ORG-006164 missing description_1line
-WARN  organizations.csv:1425 ORG-006165 missing description_1line
-WARN  organizations.csv:1426 ORG-006166 missing description_1line
-WARN  organizations.csv:1427 ORG-006167 missing description_1line
-WARN  organizations.csv:1428 ORG-006168 missing description_1line
-WARN  organizations.csv:1429 ORG-006169 missing description_1line
-WARN  organizations.csv:1430 ORG-006170 missing description_1line
-WARN  organizations.csv:1431 ORG-006171 missing description_1line
-WARN  organizations.csv:1432 ORG-006172 missing description_1line
-WARN  organizations.csv:1433 ORG-006173 missing description_1line
-WARN  organizations.csv:1535 ORG-006174 missing description_1line
-WARN  organizations.csv:1536 ORG-006175 missing description_1line
-WARN  organizations.csv:1537 ORG-006176 missing description_1line
-WARN  organizations.csv:1538 ORG-006177 missing description_1line
-WARN  organizations.csv:1539 ORG-006178 missing description_1line
-WARN  organizations.csv:1540 ORG-006179 missing description_1line
-WARN  organizations.csv:1541 ORG-006180 missing description_1line
-WARN  organizations.csv:1542 ORG-006181 missing description_1line
-WARN  organizations.csv:1543 ORG-006182 missing description_1line
-WARN  organizations.csv:1544 ORG-006183 missing description_1line
-WARN  organizations.csv:1545 ORG-006184 missing description_1line
-WARN  organizations.csv:1546 ORG-006185 missing description_1line
-WARN  organizations.csv:1547 ORG-006186 missing description_1line
-WARN  organizations.csv:1548 ORG-006187 missing description_1line
-WARN  organizations.csv:1549 ORG-006189 missing description_1line
-WARN  organizations.csv:1550 ORG-006190 missing description_1line
-WARN  organizations.csv:1551 ORG-006191 missing description_1line
-WARN  organizations.csv:1552 ORG-006192 missing description_1line
-WARN  organizations.csv:1553 ORG-006193 missing description_1line
-WARN  organizations.csv:1554 ORG-006194 missing description_1line
-WARN  organizations.csv:1555 ORG-006195 missing description_1line
-WARN  organizations.csv:1556 ORG-006196 missing description_1line
-WARN  organizations.csv:1557 ORG-006197 missing description_1line
-WARN  organizations.csv:1558 ORG-006198 missing description_1line
-WARN  organizations.csv:1559 ORG-006199 missing description_1line
-WARN  organizations.csv:1560 ORG-006200 missing description_1line
-WARN  organizations.csv:1561 ORG-006201 missing description_1line
-WARN  organizations.csv:1562 ORG-006202 missing description_1line
-WARN  organizations.csv:1563 ORG-006203 missing description_1line
-WARN  organizations.csv:1564 ORG-006204 missing description_1line
-WARN  organizations.csv:1565 ORG-006205 missing description_1line
-WARN  organizations.csv:1566 ORG-006206 missing description_1line
-WARN  organizations.csv:1567 ORG-006207 missing description_1line
-WARN  organizations.csv:4146 ORG-006208 missing description_1line
-WARN  organizations.csv:4147 ORG-006209 missing description_1line
-WARN  organizations.csv:4148 ORG-006210 missing description_1line
-WARN  organizations.csv:4149 ORG-006211 missing description_1line
-WARN  organizations.csv:4150 ORG-006212 missing description_1line
-WARN  organizations.csv:4151 ORG-006213 missing description_1line
-WARN  organizations.csv:4152 ORG-006214 missing description_1line
-WARN  organizations.csv:4153 ORG-006215 missing description_1line
-WARN  organizations.csv:4154 ORG-006216 missing description_1line
-WARN  organizations.csv:4155 ORG-006217 missing description_1line
-WARN  organizations.csv:4156 ORG-006218 missing description_1line
-WARN  organizations.csv:4157 ORG-006219 missing description_1line
-WARN  organizations.csv:4158 ORG-006220 missing description_1line
-WARN  organizations.csv:4159 ORG-006221 missing description_1line
-WARN  organizations.csv:4160 ORG-006222 missing description_1line
-WARN  organizations.csv:4161 ORG-006223 missing description_1line
-WARN  organizations.csv:4162 ORG-006224 missing description_1line
+WARN  organizations.csv:182 ORG-006188 missing description_1line
+WARN  organizations.csv:316 ORG-006132 missing description_1line
+WARN  organizations.csv:317 ORG-006133 missing description_1line
+WARN  organizations.csv:318 ORG-006134 missing description_1line
+WARN  organizations.csv:319 ORG-006135 missing description_1line
+WARN  organizations.csv:320 ORG-006136 missing description_1line
+WARN  organizations.csv:321 ORG-006137 missing description_1line
+WARN  organizations.csv:518 ORG-006138 missing description_1line
+WARN  organizations.csv:519 ORG-006139 missing description_1line
+WARN  organizations.csv:520 ORG-006140 missing description_1line
+WARN  organizations.csv:521 ORG-006141 missing description_1line
+WARN  organizations.csv:522 ORG-006142 missing description_1line
+WARN  organizations.csv:523 ORG-006143 missing description_1line
+WARN  organizations.csv:524 ORG-006144 missing description_1line
+WARN  organizations.csv:525 ORG-006145 missing description_1line
+WARN  organizations.csv:526 ORG-006146 missing description_1line
+WARN  organizations.csv:527 ORG-006147 missing description_1line
+WARN  organizations.csv:1422 ORG-006148 missing description_1line
+WARN  organizations.csv:1423 ORG-006149 missing description_1line
+WARN  organizations.csv:1424 ORG-006150 missing description_1line
+WARN  organizations.csv:1425 ORG-006151 missing description_1line
+WARN  organizations.csv:1426 ORG-006152 missing description_1line
+WARN  organizations.csv:1427 ORG-006153 missing description_1line
+WARN  organizations.csv:1428 ORG-006154 missing description_1line
+WARN  organizations.csv:1429 ORG-006155 missing description_1line
+WARN  organizations.csv:1430 ORG-006156 missing description_1line
+WARN  organizations.csv:1431 ORG-006157 missing description_1line
+WARN  organizations.csv:1432 ORG-006158 missing description_1line
+WARN  organizations.csv:1433 ORG-006159 missing description_1line
+WARN  organizations.csv:1434 ORG-006160 missing description_1line
+WARN  organizations.csv:1435 ORG-006161 missing description_1line
+WARN  organizations.csv:1436 ORG-006162 missing description_1line
+WARN  organizations.csv:1437 ORG-006163 missing description_1line
+WARN  organizations.csv:1438 ORG-006164 missing description_1line
+WARN  organizations.csv:1439 ORG-006165 missing description_1line
+WARN  organizations.csv:1440 ORG-006166 missing description_1line
+WARN  organizations.csv:1441 ORG-006167 missing description_1line
+WARN  organizations.csv:1442 ORG-006168 missing description_1line
+WARN  organizations.csv:1443 ORG-006169 missing description_1line
+WARN  organizations.csv:1444 ORG-006170 missing description_1line
+WARN  organizations.csv:1445 ORG-006171 missing description_1line
+WARN  organizations.csv:1446 ORG-006172 missing description_1line
+WARN  organizations.csv:1447 ORG-006173 missing description_1line
+WARN  organizations.csv:1550 ORG-006174 missing description_1line
+WARN  organizations.csv:1551 ORG-006175 missing description_1line
+WARN  organizations.csv:1552 ORG-006176 missing description_1line
+WARN  organizations.csv:1553 ORG-006177 missing description_1line
+WARN  organizations.csv:1554 ORG-006178 missing description_1line
+WARN  organizations.csv:1555 ORG-006179 missing description_1line
+WARN  organizations.csv:1556 ORG-006180 missing description_1line
+WARN  organizations.csv:1557 ORG-006181 missing description_1line
+WARN  organizations.csv:1558 ORG-006182 missing description_1line
+WARN  organizations.csv:1559 ORG-006183 missing description_1line
+WARN  organizations.csv:1560 ORG-006184 missing description_1line
+WARN  organizations.csv:1561 ORG-006185 missing description_1line
+WARN  organizations.csv:1562 ORG-006186 missing description_1line
+WARN  organizations.csv:1563 ORG-006187 missing description_1line
+WARN  organizations.csv:1564 ORG-006189 missing description_1line
+WARN  organizations.csv:1565 ORG-006190 missing description_1line
+WARN  organizations.csv:1566 ORG-006191 missing description_1line
+WARN  organizations.csv:1567 ORG-006192 missing description_1line
+WARN  organizations.csv:1568 ORG-006193 missing description_1line
+WARN  organizations.csv:1569 ORG-006194 missing description_1line
+WARN  organizations.csv:1570 ORG-006195 missing description_1line
+WARN  organizations.csv:1571 ORG-006196 missing description_1line
+WARN  organizations.csv:1572 ORG-006197 missing description_1line
+WARN  organizations.csv:1573 ORG-006198 missing description_1line
+WARN  organizations.csv:1574 ORG-006199 missing description_1line
+WARN  organizations.csv:1575 ORG-006200 missing description_1line
+WARN  organizations.csv:1576 ORG-006201 missing description_1line
+WARN  organizations.csv:1577 ORG-006202 missing description_1line
+WARN  organizations.csv:1578 ORG-006203 missing description_1line
+WARN  organizations.csv:1579 ORG-006204 missing description_1line
+WARN  organizations.csv:1580 ORG-006205 missing description_1line
+WARN  organizations.csv:1581 ORG-006206 missing description_1line
+WARN  organizations.csv:1582 ORG-006207 missing description_1line
+WARN  organizations.csv:4161 ORG-006208 missing description_1line
+WARN  organizations.csv:4162 ORG-006209 missing description_1line
+WARN  organizations.csv:4163 ORG-006210 missing description_1line
+WARN  organizations.csv:4164 ORG-006211 missing description_1line
+WARN  organizations.csv:4165 ORG-006212 missing description_1line
+WARN  organizations.csv:4166 ORG-006213 missing description_1line
+WARN  organizations.csv:4167 ORG-006214 missing description_1line
+WARN  organizations.csv:4168 ORG-006215 missing description_1line
+WARN  organizations.csv:4169 ORG-006216 missing description_1line
+WARN  organizations.csv:4170 ORG-006217 missing description_1line
+WARN  organizations.csv:4171 ORG-006218 missing description_1line
+WARN  organizations.csv:4172 ORG-006219 missing description_1line
+WARN  organizations.csv:4173 ORG-006220 missing description_1line
+WARN  organizations.csv:4174 ORG-006221 missing description_1line
+WARN  organizations.csv:4175 ORG-006222 missing description_1line
+WARN  organizations.csv:4176 ORG-006223 missing description_1line
+WARN  organizations.csv:4177 ORG-006224 missing description_1line
 WARN  organizations.csv:4741 ORG-006131 missing description_1line
 WARN  organizations.csv:4742 ORG-006225 missing description_1line
 WARN  organizations.csv:4743 ORG-006226 missing description_1line
@@ -243,18 +243,18 @@ WARN  ecosystem.csv:230 ORG-004646 claims a polymer program with no program rows
 WARN  ecosystem.csv:231 ORG-004647 claims a polymer program with no program rows — un-decomposed claim (V-16)
 WARN  ecosystem.csv:232 ORG-004648 claims a polymer program with no program rows — un-decomposed claim (V-16)
 WARN  ecosystem.csv:233 ORG-004649 claims a polymer program with no program rows — un-decomposed claim (V-16)
-WARN  organizations.csv:267 ORG-004965 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
-WARN  organizations.csv:443 ORG-004392 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
-WARN  organizations.csv:561 ORG-003470 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
-WARN  organizations.csv:1065 ORG-004107 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
-WARN  organizations.csv:1607 ORG-004243 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
-WARN  organizations.csv:2040 ORG-000474 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
-WARN  organizations.csv:2128 ORG-000582 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
-WARN  organizations.csv:2284 ORG-000770 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
-WARN  organizations.csv:2727 ORG-001426 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
-WARN  organizations.csv:3596 ORG-002281 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
-WARN  organizations_US.csv holds 262 residual rows — placement-review queue (V-38)
+WARN  organizations.csv:272 ORG-004965 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:448 ORG-004392 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:566 ORG-003470 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:1076 ORG-004107 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:1622 ORG-004243 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:2055 ORG-000474 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:2143 ORG-000582 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:2299 ORG-000770 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:2742 ORG-001426 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:3611 ORG-002281 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations_US.csv holds 246 residual rows — placement-review queue (V-38)
 WARN  code assignments: 61 rows over 61 orgs (SIC 61); polymer-bound ref_codes by system: CIP 3, CPC 1, HS 2, NAICS 35, OPENALEX 1, SIC 25 (V-44)
 
-4985 organizations, 7091 sites, 402 ecosystem rows, 5373 registry links, 60 member rows, 1431 people rows, 171 program rows, 71 event series, 37553 evidence rows, 357 relationship rows, 497 capability rows, 34 equipment rows, 0 engagement rows, 0 person-identifier links, 970 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+4985 organizations, 7091 sites, 402 ecosystem rows, 5373 registry links, 60 member rows, 1431 people rows, 171 program rows, 71 event series, 37569 evidence rows, 357 relationship rows, 497 capability rows, 34 equipment rows, 0 engagement rows, 0 person-identifier links, 970 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
 OK — validation passed.
