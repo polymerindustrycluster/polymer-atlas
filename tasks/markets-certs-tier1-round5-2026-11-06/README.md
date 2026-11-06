@@ -1,0 +1,7 @@
+# L10 Tier-1 markets/certifications round5
+
+Controller assigned next100, new branch agent/codex/markets-certs-tier1-round5 from pinned current main in frame.json; EVD240500+. Acceptance before research/application: active stored-Tier1 with blankmarkets, any held PIC18 Ohio county-site first thenorg_id, no website filter; exclude all prior30+100+100frames plus unresolved ORG62/101. Freeze100 unique IDs. First user PIC supplier-matching staff; non-use review2026-12-15.
+
+Only markets_served/certifications plus matching append-only evidence. Exact schema vocabulary and corporate entity-served markets; no parent/global unions or generic-material-use inference. R3c/R12 current-cert or current-page/non-superseded-edition rules; expiry noted when known; expired/superseded/editionless/product-compliance ambiguities held. No ISO-transition self-ruling; failed fetch proves no absence. Own company-linked PDFs allowed with exact own-page href proof. Effort~6distinct primary pages/org; raw verification additional.
+
+Gates:4known/4fabricated+challenge controls; everyacceptedquote fresh rawcheck; fresh seeded30value audit0errors;100uniqueverdictcoverage;no-write guards;oldrecord/evidence/two-column boundary+byte-identical replay;validator0;deep Codex+Grok approval before ready. Prior179/190 stay separate, fixes first. Yield = organizations receiving at least one fill /100frame organizations. If below20%, stop after this round and report. No new scope beyond that instruction; research not applied or approved yet.
