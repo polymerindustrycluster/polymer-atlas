@@ -1,0 +1,9 @@
+# PIC-18 discovery residue — L14 continuation
+
+Controller 06:30 BOARD ruling delegates new branch/PR off main9489b60; claims these exact26 prior STILL_UNCERTAIN leads and4 registry candidates. This supersedes the old packet-only LANE_BRIEF for application authority; all current AGENTS constraints apply. Only controller closes tasks. ID blocks ORG009600–009699, SITE013100–013199, EVD295000–299999.
+
+Acceptance: reconcile all26 unique lead IDs to one legal verdict; fresh primary sources settle creates, with existence/scope/address evidence; dedupe all shards/domain/name/address/trade_names; no unsupported closure/status/ring/vocab rulings. Every remaining hold names settling fact. Registry candidates remain packet-only until PR129 merges and require source-system verification regardless. Reuse shard_io.append_sorted; idempotent application and validate.py zero errors; at least3 hand-known positive/negative answers and independent Codex/Grok refute of final PR. No existing records changed by this continuation unless explicitly required by approved scope; no registry_links edits while hold remains.
+
+First user: PIC industry staff finding regional polymer establishments. Non-use review2026-12-06; no usage claim. Process packet here; public data carries only sourced facts. Branch history backup, README pass journal. PR140 remains independently reviewable at76d32ac; this branch does not include its equipment rows.
+
+Registry hold release: controller confirms PR129 merged main9d69978; application now authorized for each source-verified candidate. This supersedes the initial gate only; R10/R11, no phantom IDs, operator identity, append-only evidence and independent review still bind. Fresh FRS/DOL and Ohio EPA corroboration settle4/4 candidates; no existing record fields/status/parent change.
