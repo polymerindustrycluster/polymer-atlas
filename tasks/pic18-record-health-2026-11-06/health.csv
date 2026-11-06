@@ -1,0 +1,633 @@
+org_id,legal_name,gap_tier,gap_duplicate,gap_website,gap_capabilities,duplicate_org_ids,gap_count,healthy
+ORG-000001,Avient Corporation,0,0,0,0,,0,1
+ORG-000002,The Lubrizol Corporation,0,1,0,0,ORG-004610,1,0
+ORG-000003,The Goodyear Tire & Rubber Company,0,0,0,0,,0,1
+ORG-000004,Parker-Hannifin Corporation,0,0,0,0,,0,1
+ORG-000005,Day-Glo Color Corp,0,0,0,0,,0,1
+ORG-000006,RPM International Inc.,0,0,0,0,,0,1
+ORG-000007,Vibrantz Technologies Inc.,0,0,0,0,,0,1
+ORG-000008,Struktol Company of America LLC,0,0,0,0,,0,1
+ORG-000009,Myers Industries Inc.,0,0,0,0,,0,1
+ORG-000010,GEON Performance Solutions,0,0,0,0,,0,1
+ORG-000011,"Bridgestone Americas, Inc.",0,0,0,0,,0,1
+ORG-000012,Akron Polymer Systems,1,0,0,0,,1,0
+ORG-000014,"D & D Plastics, Inc.",1,0,1,1,,3,0
+ORG-000016,Gabriel Performance Products,1,0,0,0,,1,0
+ORG-000017,Chemigon LLC,1,0,0,1,,2,0
+ORG-000018,Ace Rubber Products,0,0,0,0,,0,1
+ORG-000021,Paddington Group,1,0,1,1,,3,0
+ORG-000025,Musson Rubber Co.,1,0,0,0,,1,0
+ORG-000026,"Enterprise Rubber, Inc.",1,0,0,0,,1,0
+ORG-000027,The Hygenic Corp.,1,0,0,0,,1,0
+ORG-000031,Akron Porcelain & Plastics Co.,0,0,0,0,,0,1
+ORG-000033,LyondellBasell,1,1,0,0,ORG-000735,2,0
+ORG-000034,Akron Polymer Products,1,0,0,0,,1,0
+ORG-000035,Saint-Gobain Performance Plastics,1,0,0,0,,1,0
+ORG-000036,Win Plastic Extrusions LLC,1,0,0,0,,1,0
+ORG-000037,"HKB Enterprises, Inc.",0,0,0,0,,0,1
+ORG-000038,Pioneer Plastics Corp.,0,0,0,0,,0,1
+ORG-000039,Landmark Plastic Corp.,0,0,0,0,,0,1
+ORG-000040,Spectrum Plastics Corp.,0,0,0,0,,0,1
+ORG-000042,"Multibase, Inc.",1,1,0,0,ORG-000313;ORG-000785;ORG-000805;ORG-000806,2,0
+ORG-000044,APV Engineered Coatings,0,0,0,0,,0,1
+ORG-000049,"Akron Polymer Solutions, Inc.",1,0,0,1,,2,0
+ORG-000050,"Synthomer, Inc.",0,1,0,0,ORG-002915,1,0
+ORG-000051,Continental ContiTech USA,0,0,0,0,,0,1
+ORG-000054,"Americhem, Inc.",1,0,0,0,,1,0
+ORG-000055,"Ultratech Polymers, Inc.",0,0,0,0,,0,1
+ORG-000057,Smithers-Oasis Co.,0,0,0,0,,0,1
+ORG-000061,"Ferriot, Inc.",0,0,0,0,,0,1
+ORG-000062,Chemionics,1,0,0,0,,1,0
+ORG-000063,Akron Gasket,1,0,0,0,,1,0
+ORG-000064,"Green Technologies of Ohio, LLC",1,0,0,0,,1,0
+ORG-000065,"Hudson Extrusions, Inc.",1,0,0,0,,1,0
+ORG-000066,"Custom Plastic Extrusions, Ltd.",1,0,1,0,,2,0
+ORG-000067,R.C. Graham Co. LLC (dba Hand-Tite),0,0,0,0,,0,1
+ORG-000069,Design Molded Plastics,0,0,0,0,,0,1
+ORG-000070,"Plastic Materials, Inc.",0,0,0,0,,0,1
+ORG-000071,Miles Rubber & Packing,0,0,0,0,,0,1
+ORG-000072,Cima Plastics Group,0,0,0,0,,0,1
+ORG-000074,MRP Solutions,0,0,0,0,,0,1
+ORG-000077,Mantaline Corp.,0,0,0,0,,0,1
+ORG-000078,Giesecke+Devrient America,0,0,0,1,,1,0
+ORG-000080,Ace Plastics,1,0,0,0,,1,0
+ORG-000081,"Novex Operating Company, LLC",0,0,0,1,,1,0
+ORG-000082,"Merryweather Foam, Inc.",0,0,0,0,,0,1
+ORG-000083,"Michael Day Enterprises, LLC",0,0,0,0,,0,1
+ORG-000085,"Ohio Precision Molding, Inc.",0,0,0,0,,0,1
+ORG-000086,"Rubber Associates, Inc.",0,0,0,0,,0,1
+ORG-000087,"Rainbow Rubber Extrusions, Inc.",0,0,0,0,,0,1
+ORG-000088,"PPG Industries, Inc.",0,0,0,0,,0,1
+ORG-000097,BioVerde Tech LLC,1,0,0,0,,1,0
+ORG-000098,Spazzolplastica North America LLC,0,0,0,0,,0,1
+ORG-000099,Materium Technologies,1,0,0,0,,1,0
+ORG-000101,"Polymerics, Inc.",0,0,0,0,,0,1
+ORG-000103,HEXPOL Compounding,0,0,0,0,,0,1
+ORG-000105,Transcendia Inc.,1,0,0,0,,1,0
+ORG-000106,PharoPLAST,0,0,0,0,,0,1
+ORG-000107,T&M Plastics Co.,1,0,0,1,,2,0
+ORG-000108,HP Manufacturing,0,0,0,0,,0,1
+ORG-000110,"Team Plastics, Inc.",0,0,0,0,,0,1
+ORG-000112,Trico Machine Products Corp.,0,0,0,0,,0,1
+ORG-000113,Custom Rubber Corporation,0,0,0,0,,0,1
+ORG-000115,Cuyahoga Plastics,0,0,0,0,,0,1
+ORG-000116,AMD Plastics,0,0,0,0,,0,1
+ORG-000117,North American Plastics-Chem,0,0,0,0,,0,1
+ORG-000118,GSH Industries,0,0,0,0,,0,1
+ORG-000119,Mechanical Rubber Ohio LLC,0,1,0,0,ORG-007802,1,0
+ORG-000120,Molding Dynamics Inc.,0,0,0,0,,0,1
+ORG-000122,Lattice Composites LLC,0,0,0,0,,0,1
+ORG-000123,Anita Plastics Inc.,0,0,0,0,,0,1
+ORG-000124,Prime Conduit Inc.,1,0,0,0,,1,0
+ORG-000126,CPI Precision Plastics LLC,0,0,0,0,,0,1
+ORG-000128,Compking,1,0,0,0,,1,0
+ORG-000129,Playground Plastics,0,0,0,0,,0,1
+ORG-000130,Peak Nano,0,0,0,0,,0,1
+ORG-000131,Tarkett North America,0,0,0,0,,0,1
+ORG-000132,The Sherwin-Williams Company,0,0,0,0,,0,1
+ORG-000133,Oatey Co.,0,0,0,0,,0,1
+ORG-000134,Novagard Solutions,0,0,0,0,,0,1
+ORG-000135,Valtris Specialty Chemicals,0,0,0,0,,0,1
+ORG-000136,Roto Polymers,0,0,0,0,,0,1
+ORG-000137,Protective Industrial Polymers,0,0,0,0,,0,1
+ORG-000138,Permatex,0,0,0,0,,0,1
+ORG-000139,FedPro,0,0,0,0,,0,1
+ORG-000140,"Cleveland Specialty Products, Inc.",0,0,0,0,,0,1
+ORG-000172,"Graphic Arts Rubber, LLC",0,0,0,0,,0,1
+ORG-000174,"Vertex, Inc.",1,0,0,0,,1,0
+ORG-000175,Harwood Rubber Products,1,0,0,0,,1,0
+ORG-000176,Kent Elastomer Products,0,0,0,0,,0,1
+ORG-000177,Seal Master Corp.,1,0,0,0,,1,0
+ORG-000178,Elbex Corp.,1,0,0,0,,1,0
+ORG-000179,Jet Rubber Company,0,0,0,0,,0,1
+ORG-000180,Enduro Rubber Company,1,0,0,0,,1,0
+ORG-000181,SpringSeal Inc.,1,0,0,0,,1,0
+ORG-000182,Orazen Extruded Polymers,0,0,0,0,,0,1
+ORG-000183,Die-Cut Products Co.,1,0,0,0,,1,0
+ORG-000186,SKF USA Inc.,1,0,0,0,,1,0
+ORG-000188,Universal Polymer & Rubber,1,0,0,0,,1,0
+ORG-000189,GBSA Inc.,0,0,0,0,,0,1
+ORG-000190,Clark Rubber & Plastics Co.,1,0,0,0,,1,0
+ORG-000191,Ohio Elastomers,0,0,0,0,,0,1
+ORG-000193,TMI Inc.,1,1,0,0,ORG-002611,2,0
+ORG-000194,Salem-Republic Rubber Co.,0,0,0,0,,0,1
+ORG-000195,Qualiform Inc.,0,0,0,0,,0,1
+ORG-000198,Ziegler Tire,1,0,0,0,,1,0
+ORG-000199,Seaman Corporation,0,0,0,0,,0,1
+ORG-000201,Ashtabula Rubber Co.,0,0,0,0,,0,1
+ORG-000202,Quality Belt Maintenance Ltd.,1,0,0,0,,1,0
+ORG-000204,Hankook Tire America Corp.,0,0,0,0,,0,1
+ORG-000207,A.R.E. Accessories,0,0,0,1,,1,0
+ORG-000208,A-ROO Company,0,0,0,0,,0,1
+ORG-000209,ABC Plastics,0,0,0,0,,0,1
+ORG-000210,Addipel,0,1,0,1,ORG-000242,2,0
+ORG-000211,"Additive Engineering Solutions, LLC",0,0,0,0,,0,1
+ORG-000214,"Advanced Poly-Packaging, Inc.",0,0,0,0,,0,1
+ORG-000215,Advanced Polymer Coatings,0,0,0,0,,0,1
+ORG-000219,Akro-Plastics,0,0,0,0,,0,1
+ORG-000220,"Akron Coating & Adhesives, Inc.",0,0,0,0,,0,1
+ORG-000223,"All Foam Products Co., Inc.",0,0,0,0,,0,1
+ORG-000224,"Alliance Equipment Company, Inc.",0,0,0,0,,0,1
+ORG-000225,Allpass Corporation,0,0,0,0,,0,1
+ORG-000226,ALTTRAN,0,0,0,0,,0,1
+ORG-000227,American Foam Products,0,0,0,0,,0,1
+ORG-000230,American Wire & Cable Co.,0,0,0,0,,0,1
+ORG-000231,"Apollo Plastics, Inc.",0,0,0,0,,0,1
+ORG-000233,"Arc Rubber, Inc.",0,0,0,0,,0,1
+ORG-000234,"Architectural Fiberglass, Inc.",0,0,0,0,,0,1
+ORG-000235,"Assembly Specialist, Inc.",0,0,0,0,,0,1
+ORG-000236,"Associated Materials, LLC",0,0,0,0,,0,1
+ORG-000237,Sealed Air - Automated Packaging Systems,0,1,0,0,ORG-000566,1,0
+ORG-000238,Avery Dennison,0,0,0,0,,0,1
+ORG-000239,The B.B. Bradley Company,0,0,0,0,,0,1
+ORG-000240,"Baker Plastics, Inc.",0,0,0,0,,0,1
+ORG-000246,BioThane Coated Webbing,0,0,0,0,,0,1
+ORG-000247,Blade-Tech Industries,0,0,0,0,,0,1
+ORG-000248,Blair Rubber Company,0,0,0,0,,0,1
+ORG-000249,BMS Burns,0,0,0,1,,1,0
+ORG-000250,"Boardman Molded Products, Inc.",0,0,0,0,,0,1
+ORG-000255,"Buckeye Packaging Co., Inc.",0,0,0,0,,0,1
+ORG-000256,Buckeye Rubber & Packing Co.,0,0,0,0,,0,1
+ORG-000257,BVPV Styrenics LLC,0,0,0,0,,0,1
+ORG-000258,"C.A. Litzler Co., Inc.",0,0,0,0,,0,1
+ORG-000259,CANTEX Inc.,0,0,0,0,,0,1
+ORG-000261,Carbon Polymers Company,0,0,0,0,,0,1
+ORG-000262,Carlisle Polyurethane Systems,0,0,0,0,,0,1
+ORG-000263,Carney Plastics Inc.,0,0,0,0,,0,1
+ORG-000264,"Cast Nylons, LTD",0,0,0,0,,0,1
+ORG-000265,CCL Label,0,1,0,0,ORG-003535,1,0
+ORG-000266,CermeTech LLC,0,0,0,1,,1,0
+ORG-000267,"CG Thermal, LLC",0,0,0,0,,0,1
+ORG-000268,"Chapin Manufacturing, Inc.",0,0,0,0,,0,1
+ORG-000271,"Chem Technologies, Ltd.",0,0,0,0,,0,1
+ORG-000274,"Chemsultants International, Inc.",0,0,0,0,,0,1
+ORG-000279,Colonial Machine,0,0,0,0,,0,1
+ORG-000286,Container Compliance Corp.,0,0,0,1,,1,0
+ORG-000289,"Corrosion Resistant Technologies, Inc.",0,0,0,1,,1,0
+ORG-000290,Cosmo Corporation,0,0,0,0,,0,1
+ORG-000291,Creative Packaging Concepts,0,0,0,0,,0,1
+ORG-000293,"Creative Millwork of Ohio, Inc.",0,0,0,0,,0,1
+ORG-000296,Dalton Manufacturing and Consulting Group,0,0,0,1,,1,0
+ORG-000299,DCA Construction Products,0,0,0,0,,0,1
+ORG-000301,DEM Manufacturing LLC,0,0,0,0,,0,1
+ORG-000302,"DermaMed Coatings Company, LLC",0,0,0,0,,0,1
+ORG-000303,Desenco Inc.,0,0,0,0,,0,1
+ORG-000306,Dinesol Plastics Inc,0,0,0,0,,0,1
+ORG-000308,Dott Products,0,0,0,0,,0,1
+ORG-000310,Dreco,0,0,0,0,,0,1
+ORG-000311,Drummond Corp.,0,0,0,0,,0,1
+ORG-000312,Duo-Corp,0,0,0,0,,0,1
+ORG-000313,DuPont — Valley View (Vespel) plant,0,1,0,0,ORG-000042;ORG-000785;ORG-000805;ORG-000806,1,0
+ORG-000315,Dura-Line,0,0,0,0,,0,1
+ORG-000316,Duracote Corporation,0,0,0,0,,0,1
+ORG-000317,"Duramax Marine, LLC",0,0,0,0,,0,1
+ORG-000318,"E.L. Mustee & Sons, Inc.",0,0,0,1,,1,0
+ORG-000321,Eagle Elastomer Inc.,0,0,0,0,,0,1
+ORG-000322,ECP Corp dba Polycase,0,0,0,0,,0,1
+ORG-000323,"Electra Tarp, Inc.",0,0,0,0,,0,1
+ORG-000325,Huntsman Advanced Materials Americas LLC,0,1,0,0,ORG-000372,1,0
+ORG-000327,Enterprise Plastics Inc.,0,0,0,0,,0,1
+ORG-000332,Essentialware,0,0,0,0,,0,1
+ORG-000333,Evans Industries,0,0,0,0,,0,1
+ORG-000336,Extrudex,0,0,0,0,,0,1
+ORG-000340,"Flambeau, Inc.",0,0,0,0,,0,1
+ORG-000341,"Flavorseal, LLC",0,0,0,0,,0,1
+ORG-000343,Flexsys America L.P.,0,0,0,1,,1,0
+ORG-000344,"Fomo Products, Inc.",0,0,0,0,,0,1
+ORG-000345,Forest City Technologies,0,0,0,0,,0,1
+ORG-000347,Four Seasons Industries,0,0,0,0,,0,1
+ORG-000349,Full Circle Technologies,0,0,0,0,,0,1
+ORG-000351,"Gem City Plastic Machinery, Inc.",0,0,0,1,,1,0
+ORG-000352,General Color & Chemical,0,0,0,0,,0,1
+ORG-000354,GMR Companies,0,0,0,0,,0,1
+ORG-000355,Godfrey & Wing,0,0,0,0,,0,1
+ORG-000358,GRAFIX,0,0,0,1,,1,0
+ORG-000361,"H & B Machine & Tool Co., Inc.",0,0,0,0,,0,1
+ORG-000363,"Hanlon Composites, LLC",0,0,0,1,,1,0
+ORG-000365,Harrison Machine & Plastic Corp.,0,0,0,0,,0,1
+ORG-000372,Huntsman Corporation,0,1,0,0,ORG-000325,1,0
+ORG-000373,IER Fujikura,0,0,0,0,,0,1
+ORG-000378,Infinity Composites Inc.,0,0,0,0,,0,1
+ORG-000379,Infinity Engineered Products,0,0,0,1,,1,0
+ORG-000381,"Integrated Chemical Concepts, Inc.",0,0,0,0,,0,1
+ORG-000384,"Intralox, L.L.C.",0,0,0,0,,0,1
+ORG-000385,Iten Defense,0,0,0,0,,0,1
+ORG-000386,"Iten Industries, Inc.",0,0,0,0,,0,1
+ORG-000387,"J.B. Polymers, Inc.",0,0,0,0,,0,1
+ORG-000389,"J.J. White Products, Inc.",0,0,0,1,,1,0
+ORG-000390,J & O Plastics Inc.,0,0,0,0,,0,1
+ORG-000391,JACO Manufacturing Co.,0,0,0,0,,0,1
+ORG-000392,Jaco Products Co.,0,0,0,0,,0,1
+ORG-000395,Jet Dock Systems,0,0,0,1,,1,0
+ORG-000396,JK Plastics,0,0,0,0,,0,1
+ORG-000397,Johnson Brothers Rubber Co.,0,0,0,0,,0,1
+ORG-000399,"Joslyn Manufacturing Co., Inc.",0,0,0,0,,0,1
+ORG-000400,JRM Chemical,0,0,0,1,,1,0
+ORG-000401,JuggerBot 3D LLC,0,0,0,1,,1,0
+ORG-000402,Kent Adhesive Products Company,0,0,0,0,,0,1
+ORG-000403,Karman Rubber Company,0,0,0,0,,0,1
+ORG-000407,American Marble Industries,0,0,0,1,,1,0
+ORG-000408,Kes Industries,0,1,0,0,ORG-000518,1,0
+ORG-000410,"Killian Latex, Inc.",0,0,0,0,,0,1
+ORG-000413,Knight Material Technologies,0,0,0,0,,0,1
+ORG-000414,Koroseal Interior Products,0,0,0,1,,1,0
+ORG-000416,GLI Pool Products,0,0,0,0,,0,1
+ORG-000417,Lerner Molded Plastics,0,0,0,0,,0,1
+ORG-000418,Lewart Plastics,0,0,0,0,,0,1
+ORG-000419,LG Chem America Inc.,0,0,0,0,,0,1
+ORG-000420,"Linden Industries, Inc. dba Linden Polyurethane",0,0,0,1,,1,0
+ORG-000424,LT Molding Solutions,0,0,0,0,,0,1
+ORG-000425,"M&M Industries, Inc.",0,0,0,0,,0,1
+ORG-000426,MacDivitt Rubber Co. LLC,0,0,0,0,,0,1
+ORG-000430,Mar-Bal Inc.,0,1,0,0,ORG-001327,1,0
+ORG-000431,"Mercury Plastics, Inc.",0,0,0,0,,0,1
+ORG-000433,McCann Plastics,0,0,0,1,,1,0
+ORG-000434,"MCI Technologies, Inc.",0,0,0,0,,0,1
+ORG-000435,Medco Coated Products,0,0,0,0,,0,1
+ORG-000438,Mexichem Specialty Resins Inc.,0,0,0,0,,0,1
+ORG-000439,Mickey Thompson Performance Tires & Wheels,0,0,0,1,,1,0
+ORG-000441,Mid-west Poly Pak,0,0,0,1,,1,0
+ORG-000442,"Middlefield Plastics, Inc.",0,0,0,0,,0,1
+ORG-000444,Midwest Industrial Products Corporation,0,0,0,1,,1,0
+ORG-000446,"MMI Textiles, Inc.",0,0,0,1,,1,0
+ORG-000449,Aptyx,0,0,0,0,,0,1
+ORG-000450,"Molded Extruded Specialties, Div. of Frank Novak & Sons, Inc.",0,0,0,0,,0,1
+ORG-000451,Molded Fiber Glass Companies,0,0,0,0,,0,1
+ORG-000454,"Montville Plastics & Rubber, LLC",0,0,0,0,,0,1
+ORG-000457,National Polymer,0,0,0,0,,0,1
+ORG-000458,Neff-Perkins Company,0,0,0,0,,0,1
+ORG-000460,Newko Polymers,0,0,0,0,,0,1
+ORG-000462,Next Dimension Components (current trade name unresolved,0,0,0,0,,0,1
+ORG-000464,"Nippon Paint Automotive Americas, Inc.",0,0,0,0,,0,1
+ORG-000469,"Northeastern Plastics International, Inc.",0,0,0,0,,0,1
+ORG-000470,Nova TLC,0,0,0,1,,1,0
+ORG-000471,Novis Works LLC,0,0,0,0,,0,1
+ORG-000473,Oldcastle Infrastructure (IPG,0,0,0,0,,0,1
+ORG-000474,ORBIS Corporation,0,0,0,0,,0,1
+ORG-000483,Pentair,0,0,0,0,,0,1
+ORG-000484,Performance Elastomers,0,0,0,1,,1,0
+ORG-000485,"Perry Fiberglass Products, Inc.",0,0,0,0,,0,1
+ORG-000486,PET Processors LLC,0,0,0,0,,0,1
+ORG-000487,"The Plastic Forming Company, Inc.",0,0,0,0,,0,1
+ORG-000488,Pharmacy-Lite Packaging,0,0,0,1,,1,0
+ORG-000490,Philpott Solutions Group,0,0,0,0,,0,1
+ORG-000492,"Pilot Plastics, Inc.",0,0,0,0,,0,1
+ORG-000493,Plas-Mac Corporation,0,0,0,1,,1,0
+ORG-000495,"MPC Plating, Inc.",0,0,0,0,,0,1
+ORG-000496,Plastics R Unique,0,0,0,0,,0,1
+ORG-000500,Plastpro 2000 Inc.,0,0,0,0,,0,1
+ORG-000506,Greenbridge,0,0,0,0,,0,1
+ORG-000508,Polymer 5,0,0,0,0,,0,1
+ORG-000511,"Polymer Packaging, Inc.",0,0,0,0,,0,1
+ORG-000512,"PolyStamp, LLC",0,0,0,0,,0,1
+ORG-000513,Polystar Containment,0,0,0,0,,0,1
+ORG-000515,"Precision Foam Fabrication, Inc.",0,0,0,0,,0,1
+ORG-000519,Premier Building Solutions,0,0,0,0,,0,1
+ORG-000521,Premier OEM,0,0,0,0,,0,1
+ORG-000522,"Premix-Hadlock Composites, LLC",0,0,0,0,,0,1
+ORG-000523,Pretium Packaging,0,0,0,0,,0,1
+ORG-000524,Primeline Industries,0,0,0,0,,0,1
+ORG-000527,Progressive Foam Technologies,0,0,0,0,,0,1
+ORG-000528,Promerus,0,0,0,0,,0,1
+ORG-000529,"Prospect Mold, Inc.",0,0,0,0,,0,1
+ORG-000530,Protectoplas Company,0,0,0,0,,0,1
+ORG-000532,Q Medical Devices,0,0,0,0,,0,1
+ORG-000533,Laird Performance Materials,0,0,0,0,,0,1
+ORG-000534,Quality Synthetic Rubber,0,1,0,0,ORG-004822,1,0
+ORG-000535,"R2 Sealant Systems, LLC",0,0,0,0,,0,1
+ORG-000537,Rainbow Printing,0,0,0,0,,0,1
+ORG-000538,Rapid Molding,0,0,0,0,,0,1
+ORG-000539,Rauh Polymers,0,0,0,0,,0,1
+ORG-000540,Raven Concealment Systems,0,0,0,0,,0,1
+ORG-000543,"Refcotec, Inc.",0,0,0,0,,0,1
+ORG-000544,Foundation Wellness,0,0,0,0,,0,1
+ORG-000547,LANXESS Rhein Chemie,0,1,0,0,ORG-003919,1,0
+ORG-000549,"Robin Industries, Inc.",0,1,0,0,ORG-000814,1,0
+ORG-000550,Röchling Automotive USA LLP,0,1,0,0,ORG-000551;ORG-004176,1,0
+ORG-000551,"Roechling Industrial Cleveland, LP",1,1,0,0,ORG-000550;ORG-004176,2,0
+ORG-000552,Rogers Industrial Products,0,0,0,1,,1,0
+ORG-000553,"Royal Plastics, Inc.",0,1,0,0,ORG-004863,1,0
+ORG-000554,RP+M,0,0,0,0,,0,1
+ORG-000555,Rubbermaid,0,0,0,0,,0,1
+ORG-000556,SACO AEI Polymers,0,0,0,0,,0,1
+ORG-000562,Schneller LLC,0,0,0,0,,0,1
+ORG-000563,"Scott Bader, Inc.",0,0,0,0,,0,1
+ORG-000564,"Scott Molders, Inc.",0,0,0,0,,0,1
+ORG-000567,Seco Machine,0,0,0,0,,0,1
+ORG-000569,"Shin-Etsu Silicones of America, Inc.",0,0,0,0,,0,1
+ORG-000571,"ShurTech Brands, LLC",0,0,0,0,,0,1
+ORG-000572,"Silco, Inc.",0,0,0,0,,0,1
+ORG-000573,Silicone Solutions,0,0,0,0,,0,1
+ORG-000576,"Soft-Lite, LLC",0,0,0,0,,0,1
+ORG-000580,Specialty Hose Corp.,0,0,0,0,,0,1
+ORG-000581,Speed North America,0,0,0,1,,1,0
+ORG-000582,Spencer Industries Incorporated,0,0,0,0,,0,1
+ORG-000583,"Spiral Brushes, Inc.",0,0,0,0,,0,1
+ORG-000584,"Sprosty Bag Co., Inc.",0,0,0,0,,0,1
+ORG-000586,"Spunfab, Ltd.",0,0,0,0,,0,1
+ORG-000588,"Steere Enterprises, Inc.",0,0,0,0,,0,1
+ORG-000589,The Step2 Company,0,0,0,0,,0,1
+ORG-000592,"Sun State Plastics, Inc.",0,0,0,0,,0,1
+ORG-000593,Suncolor Corporation,0,0,0,0,,0,1
+ORG-000595,System Seals,0,0,0,0,,0,1
+ORG-000598,Team Wendy,0,0,0,0,,0,1
+ORG-000600,Technoform,0,0,0,0,,0,1
+ORG-000601,The Technology House,0,0,0,0,,0,1
+ORG-000603,Tesla NanoCoatings Inc.,0,0,0,0,,0,1
+ORG-000606,Third Dimension Division,0,0,0,0,,0,1
+ORG-000607,"Timco Rubber Products, Inc.",0,0,0,0,,0,1
+ORG-000608,Tomlinson Industries,0,0,0,1,,1,0
+ORG-000610,"Tower Industries, LLC",0,0,0,0,,0,1
+ORG-000611,Treemen Industries,0,0,0,0,,0,1
+ORG-000612,Trelleborg Sealing Profiles U.S. Inc.,0,1,0,0,ORG-004243,1,0
+ORG-000613,The Trexler Rubber Company,0,0,0,0,,0,1
+ORG-000614,"Tri-Craft, Inc.",0,0,0,0,,0,1
+ORG-000616,Tribotech Composites,0,0,0,0,,0,1
+ORG-000617,Tymex Plastics,0,0,0,0,,0,1
+ORG-000618,United Initiators Inc.,0,0,0,0,,0,1
+ORG-000620,"Universal Plastics Group, Inc.",0,0,0,0,,0,1
+ORG-000623,Uniwall Mfg,0,0,0,0,,0,1
+ORG-000626,"Vinylume Products, Inc.",0,0,0,0,,0,1
+ORG-000628,Wacker Chemical Corporation,0,0,0,0,,0,1
+ORG-000630,Waterlox Coatings Corporation,0,0,0,0,,0,1
+ORG-000631,"Wooster Elastomers, LLC",0,0,0,0,,0,1
+ORG-000632,West & Barker,0,0,0,0,,0,1
+ORG-000634,David Wolfe Design Inc.,0,0,0,0,,0,1
+ORG-000635,The Wooster Brush Company,0,0,0,1,,1,0
+ORG-000636,Wrap Tite,0,0,0,0,,0,1
+ORG-000638,Yokohama Industries Americas Ohio Inc.,0,0,0,0,,0,1
+ORG-000640,Zehrco-Giancola Composites,0,0,0,0,,0,1
+ORG-000643,31 Inc.,0,0,0,1,,1,0
+ORG-000651,"Advanced Drainage Systems, Inc.",0,0,0,0,,0,1
+ORG-000658,AkzoNobel Coatings Inc.,0,0,0,0,,0,1
+ORG-000665,"Amcor Flexibles North America, Inc.",0,1,0,0,ORG-002907,1,0
+ORG-000666,American Colors Inc.,0,0,0,0,,0,1
+ORG-000683,"Bostik, Inc.",0,0,0,0,,0,1
+ORG-000684,ASK Chemicals LP,0,0,0,0,,0,1
+ORG-000688,Autoneum,0,0,0,1,,1,0
+ORG-000697,"Ball, Bounce and Sport, Inc.",0,0,0,1,,1,0
+ORG-000698,BASF Corporation,0,1,0,0,ORG-004037,1,0
+ORG-000706,Bob Sumerel Tire Co,0,0,0,0,,0,1
+ORG-000728,Charter Next Generation,0,0,0,0,,0,1
+ORG-000735,LyondellBasell Advanced Polymers Inc.,0,1,0,0,ORG-000033,1,0
+ORG-000751,Convertapax,0,0,0,0,,0,1
+ORG-000752,"Polynt Composites USA, Inc.",0,0,0,0,,0,1
+ORG-000790,Denney Plastics Machining,0,0,0,0,,0,1
+ORG-000799,Dover High Performance Plastics,0,0,0,0,,0,1
+ORG-000813,Edge Plastics,0,0,0,0,,0,1
+ORG-000820,Emerald FX,0,0,0,0,,0,1
+ORG-000823,SIMONA Boltaron Inc.,0,0,0,0,,0,1
+ORG-000830,"Extol of Ohio, Inc.",0,0,0,0,,0,1
+ORG-000832,"FabOhio, Inc.",0,0,0,0,,0,1
+ORG-000841,Flex Technologies,0,1,0,0,ORG-001040,1,0
+ORG-000862,Golf Ball Refurbishers LLC,0,0,0,0,,0,1
+ORG-000868,Guardian Manufacturing Company,0,0,0,0,,0,1
+ORG-000870,H.B. Fuller Company,0,0,0,0,,0,1
+ORG-000873,Hamilton Polymers Company,0,0,0,1,,1,0
+ORG-000883,"Hub Plastics, Inc.",0,0,0,0,,0,1
+ORG-000884,"Hueter Toledo, Inc.",0,0,0,0,,0,1
+ORG-000902,"Premere Enterprises, Inc.",0,0,0,0,,0,1
+ORG-000909,"Jerico Plastic Industries, Inc.",0,0,0,0,,0,1
+ORG-000911,Johns Manville,0,1,0,0,ORG-002913,1,0
+ORG-000913,JP Industrial Products,0,0,0,0,,0,1
+ORG-000917,Kar-Del Plastics Inc.,0,0,0,1,,1,0
+ORG-000927,Prettl PMA,0,0,0,1,,1,0
+ORG-000947,Mason Color Works,0,0,0,0,,0,1
+ORG-000955,Meteor Sealing Systems,0,0,0,0,,0,1
+ORG-000968,MPS Manufacturing Company,0,0,0,0,,0,1
+ORG-000997,Ohio Foam Corp.,0,0,0,0,,0,1
+ORG-000999,Okamoto Sandusky Manufacturing,0,0,0,1,,1,0
+ORG-001007,Owens Corning,0,0,0,0,,0,1
+ORG-001033,"Plastipak Packaging, Inc.",0,0,0,0,,0,1
+ORG-001040,Polyflex,0,1,0,0,ORG-000841,1,0
+ORG-001048,"Primary Packaging, Inc.",0,0,0,0,,0,1
+ORG-001053,ProVia LLC,0,0,0,0,,0,1
+ORG-001065,"R & S Technologies, Inc.",0,0,0,0,,0,1
+ORG-001078,Rhetech Colors,0,0,0,0,,0,1
+ORG-001079,"Rich Industries, Inc.",0,0,0,0,,0,1
+ORG-001105,Liquibox,0,1,0,0,ORG-000934,1,0
+ORG-001116,"Snyder Manufacturing, Inc.",0,0,0,0,,0,1
+ORG-001128,"Storopack, Inc.",0,0,0,0,,0,1
+ORG-001133,SUPERB Industries Inc.,0,0,0,0,,0,1
+ORG-001147,CSP,0,0,0,0,,0,1
+ORG-001183,Ventra (Flex-N-Gate),0,1,0,1,ORG-004272,2,0
+ORG-001327,AltraSet Composite Technologies,0,1,0,0,ORG-000430,1,0
+ORG-001330,Finite Fiber,0,0,0,0,,0,1
+ORG-001332,Seauciel LLC,0,0,0,0,,0,1
+ORG-001335,"Polychem Dispersions, Inc.",0,0,0,0,,0,1
+ORG-001379,Elyria Plastic Products,0,0,0,0,,0,1
+ORG-001380,Bauer Corporation,0,0,0,0,,0,1
+ORG-001381,Hyload Inc.,0,0,0,0,,0,1
+ORG-001382,SR Products,0,0,0,0,,0,1
+ORG-001384,Sterilite Corporation,0,0,0,0,,0,1
+ORG-001385,Aexcel Corp.,0,0,0,0,,0,1
+ORG-001386,Ergomat Inc.,0,0,0,0,,0,1
+ORG-001387,Etched Metal,0,0,0,0,,0,1
+ORG-001388,Hy-Ko Products Company,0,0,0,1,,1,0
+ORG-001389,"IML Containers Ohio, Inc.",0,0,0,0,,0,1
+ORG-001390,"Interpak, Inc.",0,0,0,0,,0,1
+ORG-001392,Kalcor Coatings Company,0,0,0,0,,0,1
+ORG-001394,"Kent Displays, Inc.",0,0,0,0,,0,1
+ORG-001395,CREO Greenhouse,0,0,0,0,,0,1
+ORG-001396,Sure-foot Industries Corporation,0,0,0,0,,0,1
+ORG-001398,"Smithers Medical Products, Inc.",0,0,0,0,,0,1
+ORG-001404,"Deflecto, LLC",0,0,0,0,,0,1
+ORG-001409,American Bath Group,0,0,0,0,,0,1
+ORG-001422,Elster Perfection Corporation,0,0,0,0,,0,1
+ORG-001423,ABC Technologies Inc.,0,0,1,0,,1,0
+ORG-001426,Techniplas US LLC,0,0,1,0,,1,0
+ORG-001432,Cell-O-Core Company,0,0,0,0,,0,1
+ORG-001433,"Extruded Silicone Products, Inc.",0,0,0,0,,0,1
+ORG-001435,"Meese, Inc.",0,0,0,0,,0,1
+ORG-001436,"Modern Builders Supply, Inc.",0,0,0,0,,0,1
+ORG-001438,Thogus Products Company,0,0,0,0,,0,1
+ORG-001447,Axalta Coating Systems USA LLC,0,0,1,0,,1,0
+ORG-001452,"dlhBOWLES, Inc.",1,0,1,0,,2,0
+ORG-001453,Flow Polymers LLC,0,0,1,1,,2,0
+ORG-001455,"Lamports Filter Media, Inc.",0,0,0,0,,0,1
+ORG-001458,Polyram USA,0,0,1,0,,1,0
+ORG-001459,RFD Beaufort Inc.,0,0,1,1,,2,0
+ORG-001460,"Spectrum Dispersions, Inc.",0,0,0,0,,0,1
+ORG-001461,"Stuchell Products, LLC",0,0,0,0,,0,1
+ORG-001462,Clevite Elastomers Technical Center (Tenneco),0,0,1,1,,2,0
+ORG-001465,Chalfant Sewing Fabricators Inc,0,0,0,0,,0,1
+ORG-001466,Henkel Corporation,0,0,0,0,,0,1
+ORG-001469,"FDIE, LLC",0,0,1,0,,1,0
+ORG-001470,The Pittsburgh Paint Company,0,0,0,0,,0,1
+ORG-001472,ChemMasters Inc.,0,0,0,0,,0,1
+ORG-001475,"ChromaScape, Inc.",0,0,0,0,,0,1
+ORG-001477,Aurora Material Solutions,0,0,0,0,,0,1
+ORG-001479,O2 RegenTech LLC,1,0,0,0,,1,0
+ORG-001490,Chardon Custom Polymers,0,0,0,1,,1,0
+ORG-001506,"ValenSil Technologies, LLC",0,0,0,1,,1,0
+ORG-001526,"Viscus Biologics, LLC",0,0,0,1,,1,0
+ORG-001528,Mabel Dental Lab,0,0,0,0,,0,1
+ORG-001565,Automation Plastics Corporation,0,0,0,0,,0,1
+ORG-001576,Aabaco Plastics Inc,0,0,0,0,,0,1
+ORG-001577,Master Builders Solutions US LLC,0,0,0,0,,0,1
+ORG-001578,Bright Idea Shops LLC,0,0,0,0,,0,1
+ORG-001580,Chemical Solvents Inc,0,0,0,1,,1,0
+ORG-001581,ePac Flexible Packaging,0,0,0,0,,0,1
+ORG-001583,Grand River Rubber & Plastics Company,0,0,0,0,,0,1
+ORG-001585,High Tech Extrusions Ltd,0,0,0,0,,0,1
+ORG-001586,Jos-Tech Inc,0,0,0,0,,0,1
+ORG-001589,The Ruscoe Company,0,0,0,0,,0,1
+ORG-001590,Therm-O-Link Inc,1,0,0,0,,1,0
+ORG-001591,Winsell Incorporated,0,0,0,0,,0,1
+ORG-001593,Amros Industries Inc,0,0,0,0,,0,1
+ORG-001595,Eleven 10 LLC,0,0,0,1,,1,0
+ORG-001597,International Technical Polymer Systems Inc,0,0,0,1,,1,0
+ORG-001598,J B Jewitt Co Inc,0,0,0,1,,1,0
+ORG-001599,MultiPlast Systems Inc,0,0,0,1,,1,0
+ORG-001600,North Shore Strapping Company,0,0,0,0,,0,1
+ORG-001601,Pison Stream Solutions Inc,1,0,0,0,,1,0
+ORG-001602,Royal Powder Corp,0,0,0,0,,0,1
+ORG-001603,Speedline Corporation,0,0,0,1,,1,0
+ORG-001609,"Morgan Adhesives Company, LLC",0,0,0,0,,0,1
+ORG-001619,SOPREMA Inc,0,0,0,0,,0,1
+ORG-001622,ABSOLUTE POLYMERS INC,0,0,0,0,,0,1
+ORG-001623,ADCAL ADHESIVE COATINGS AND LAMINATIONS LLC,0,0,0,0,,0,1
+ORG-001624,ADVANCED CRYOGENIC ENTERPRISES,0,0,0,0,,0,1
+ORG-001630,AKRON BELTING & SUPPLY CO,0,0,0,0,,0,1
+ORG-001631,AKRON DISPERSIONS INC,0,0,0,1,,1,0
+ORG-001634,ASTRA PRODUCTS OF OHIO LTD,0,0,0,0,,0,1
+ORG-001635,EAGLE PLASTICS GROUP,0,0,0,0,,0,1
+ORG-001636,ENGINEERED LAMINATES & COATINGS,0,0,0,0,,0,1
+ORG-001637,FTM ENGINEERING GROUP,0,0,0,0,,0,1
+ORG-001639,PLASTIC ENTERPRISES,0,0,0,0,,0,1
+ORG-001641,MAINE RUBBER PREFORMS AND EXTRUSIONS LLC,0,0,0,0,,0,1
+ORG-001642,MOTIVO DISPLAY SOLUTIONS,0,0,0,1,,1,0
+ORG-001643,OVERMOLD EXPRESS,0,0,0,0,,0,1
+ORG-001644,RPM INDUSTRIES,0,0,0,0,,0,1
+ORG-001645,RTS COMPANIES INC.,0,0,0,0,,0,1
+ORG-001646,TUSCO PRODUCTS,0,0,0,0,,0,1
+ORG-001647,V&A PROCESS,0,0,0,0,,0,1
+ORG-001648,WORTHINGTON PRODUCTS,0,0,0,1,,1,0
+ORG-001649,YOUNGSTOWN RUBBER PRODUCTS,1,0,1,0,,2,0
+ORG-001653,Bruns Brush Inc,0,0,0,1,,1,0
+ORG-001656,ClearSonic Manufacturing Inc,0,0,0,0,,0,1
+ORG-001657,Comdess Company Inc,0,0,0,0,,0,1
+ORG-001665,Dischem International Inc,0,0,0,0,,0,1
+ORG-001666,Drossbach Inc,0,0,0,0,,0,1
+ORG-001667,Dudick Inc,0,0,0,0,,0,1
+ORG-001668,Durable Corporation,0,0,0,0,,0,1
+ORG-001670,Enpac LLC,0,0,0,0,,0,1
+ORG-001671,FastForming.com LLC,0,0,0,0,,0,1
+ORG-001672,Flash It LLC,0,0,0,0,,0,1
+ORG-001678,Harrison Paint Company,0,0,0,0,,0,1
+ORG-001680,Hytech Silicone Products Inc,0,0,0,0,,0,1
+ORG-001682,Invisible Repair Products Inc,0,0,0,0,,0,1
+ORG-001694,Novatex North America Inc,0,0,0,0,,0,1
+ORG-001698,Prime Engineered Plastics,0,0,0,1,,1,0
+ORG-001699,Aerocase Inc.,0,0,0,0,,0,1
+ORG-001700,"Certon Technologies, Inc.",0,0,0,0,,0,1
+ORG-001701,Cru Performance Coatings LLC,0,0,0,0,,0,1
+ORG-001703,"Premier Aerosol Packaging, Inc.",0,0,0,1,,1,0
+ORG-001707,Dyna Flex Inc,0,0,0,0,,0,1
+ORG-001708,ECM Performance Materials Corp,1,0,0,1,,2,0
+ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),0,0,0,1,,1,0
+ORG-001714,"AML Industries, Inc.",0,0,0,1,,1,0
+ORG-001715,"Axion Labs, Inc.",0,0,0,0,,0,1
+ORG-001716,"Firestone Polymers, LLC",0,0,1,0,,1,0
+ORG-001717,"FlexLink, LLC",0,0,0,1,,1,0
+ORG-001719,"Pyramid Plastics, Inc.",1,0,0,1,,2,0
+ORG-001720,"Sun Art Decals, Inc.",0,0,0,0,,0,1
+ORG-001721,"Truco, Inc.",1,0,1,1,,3,0
+ORG-001722,"Kinzie Advanced Polymers, LLC dba Grove Bags",0,0,0,0,,0,1
+ORG-001723,P&T Products Inc,0,0,0,0,,0,1
+ORG-001724,Republic Powdered Metals Inc,0,0,0,1,,1,0
+ORG-001725,Thorworks Industries Inc,0,0,0,0,,0,1
+ORG-001726,"Endura Plastics, Inc.",1,0,1,1,,3,0
+ORG-001730,3D Dental Designs and Development LLC,0,0,0,1,,1,0
+ORG-001747,P3 Infrastructure Inc.,1,0,0,0,,1,0
+ORG-001748,"PKG, LLC",1,0,0,0,,1,0
+ORG-001753,Foundation Industries Inc,1,0,0,0,,1,0
+ORG-001757,"ACO Polymer Products, Inc.",0,0,0,0,,0,1
+ORG-001758,Niles Building Products Company,0,0,0,0,,0,1
+ORG-001760,"Pioneer Manufacturing Company, Inc.",0,0,0,0,,0,1
+ORG-001763,Rubber Mold Design LLC,0,0,0,0,,0,1
+ORG-001764,NMC Metals Inc,0,0,1,1,,2,0
+ORG-001768,"Action Super Abrasive Products, Inc.",0,0,0,1,,1,0
+ORG-001769,Adherex Packaging,0,0,0,0,,0,1
+ORG-001777,American Consolidated Industries Inc,0,0,0,1,,1,0
+ORG-001781,Astro Manufacturing & Design Corp,0,0,0,0,,0,1
+ORG-001783,Beacon Gasket & Seals Co,0,0,0,0,,0,1
+ORG-001793,Custom Tarpaulin Products Inc,0,0,0,0,,0,1
+ORG-001794,Dal-Little Fabricating Inc,1,0,0,1,,2,0
+ORG-001806,ENPRESS LLC,0,0,0,0,,0,1
+ORG-001810,Expert Gasket & Seal LLC,0,0,0,0,,0,1
+ORG-001817,G2 Materials Corp,0,0,0,0,,0,1
+ORG-001829,HP Enterprise Inc,0,0,0,0,,0,1
+ORG-001830,Impact Sleeve,0,0,0,0,,0,1
+ORG-001836,Johnsonite Inc.,1,0,0,0,,1,0
+ORG-001855,NewKor Inc.,0,0,0,0,,0,1
+ORG-001856,Novation Solutions LLC,0,0,0,0,,0,1
+ORG-001859,OEM/Miller,0,0,0,0,,0,1
+ORG-001877,Quality Plastics LLC,0,1,0,0,ORG-004844,1,0
+ORG-001878,Qube Corporation,0,0,0,0,,0,1
+ORG-001879,Rainbow Master Mixing LLC,0,0,0,0,,0,1
+ORG-001891,"Scherba Industries, Inc.",0,0,0,1,,1,0
+ORG-001905,Thermoprene Inc,0,0,0,0,,0,1
+ORG-001916,Zero D Products Inc,0,0,0,0,,0,1
+ORG-001919,"Catalyst Systems, Inc.",0,0,1,1,,2,0
+ORG-001920,"Lawrence Machine, Inc.",1,0,1,1,,3,0
+ORG-001921,Potter's Inc,1,0,1,1,,3,0
+ORG-001922,Faull and Son,0,0,0,0,,0,1
+ORG-001923,"Artemis Polymer Processing, Inc.",0,0,0,0,,0,1
+ORG-001927,GlueTread LLC,1,0,0,0,,1,0
+ORG-001929,Saint-Gobain HyComp LLC (Hycomp LLC),0,0,0,1,,1,0
+ORG-001930,Industrial Thermoset Plastics (IT Plastics),0,0,0,0,,0,1
+ORG-001931,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),0,0,0,1,,1,0
+ORG-001933,Performance Additives of America LLC,0,0,0,0,,0,1
+ORG-001934,Rack Coating Services Inc.,0,0,0,1,,1,0
+ORG-001937,"Smetzer's Tire Center, Inc.",0,0,0,0,,0,1
+ORG-001939,Synesis LLC,0,0,0,0,,0,1
+ORG-001940,Synthetic Rubber Technologies,1,0,0,1,,2,0
+ORG-001941,"Thermo Packaging Suppliers, Inc.",0,0,0,0,,0,1
+ORG-001943,Trans-Foam Inc.,0,0,0,1,,1,0
+ORG-001944,"Tristan Rubber Molding, Inc.",1,0,1,1,,3,0
+ORG-001945,"Vinyl Profiles, LLC (Vinyl Profiles Inc)",0,0,0,1,,1,0
+ORG-001992,Precision Polymer Casting LLC (dba Castinite),0,0,0,0,,0,1
+ORG-001997,"Quikey Manufacturing Co, Inc.",0,0,0,1,,1,0
+ORG-001998,R A M Plastics Co Inc,0,0,0,0,,0,1
+ORG-001999,"Raydar of Ohio, Inc.",0,0,0,1,,1,0
+ORG-002007,S&A Industries Corporation,0,0,0,0,,0,1
+ORG-002010,Sherwood Advanced Composite Technologies Corp,0,0,0,1,,1,0
+ORG-002011,"Solutions in Polycarbonate, LLC",0,0,0,1,,1,0
+ORG-002022,The Simplay3 Co,0,0,0,0,,0,1
+ORG-002024,Tolloti Pipe LLC,0,0,1,1,,2,0
+ORG-002030,Veretec Inc,1,0,0,1,,2,0
+ORG-002031,Vinyltech International LLC,0,0,0,1,,1,0
+ORG-002034,Whip Guide Company,0,0,0,1,,1,0
+ORG-002039,"M. Argueso & Co., Inc.",0,0,0,0,,0,1
+ORG-002041,May Lin Silicone Products Inc.,1,0,0,0,,1,0
+ORG-002043,"Mitsubishi Chemical America, Inc. (Bellevue Plant)",0,0,0,0,,0,1
+ORG-002047,Wayne-Dalton Plastics (Wayne Dalton Corp),0,0,0,1,,1,0
+ORG-002049,Sietins Plastics Inc (Sietins Precision),0,0,0,1,,1,0
+ORG-002050,"Diskin Enterprises, LLC",0,0,1,1,,2,0
+ORG-002053,STUCK LLC,1,0,0,0,,1,0
+ORG-002055,Neo Industries Inc,1,0,0,1,,2,0
+ORG-002056,P & E Sales Ltd.,1,0,0,0,,1,0
+ORG-002057,Quality Fiberglass,1,0,0,1,,2,0
+ORG-002060,Canfield Plastics Inc,1,0,0,0,,1,0
+ORG-002064,Poly Tech Plastics,1,0,0,1,,2,0
+ORG-002073,EnergyEne Inc.,0,0,0,0,,0,1
+ORG-002080,Mitsubishi Chemical Performance Polymers Inc,0,0,1,1,,2,0
+ORG-002134,Pu1Tec Oh LLC,0,0,0,0,,0,1
+ORG-002135,Applied Specialties Inc,0,0,0,1,,1,0
+ORG-002136,Kongsberg Automotive,0,0,0,0,,0,1
+ORG-002145,All Coatings Corp.,0,0,1,1,,2,0
+ORG-002146,"Altor Solutions, Inc.",0,0,0,1,,1,0
+ORG-002148,THE ARTHUR CORPORATION,0,0,0,1,,1,0
+ORG-002153,Checkpoint Systems,0,0,0,1,,1,0
+ORG-002157,"Custom Pultrusions, Inc.",0,0,0,1,,1,0
+ORG-002159,"ENCORE INDUSTRIES, INC.",0,0,1,1,,2,0
+ORG-002167,"PLYMOUTH FOAM, LLC",0,0,0,1,,1,0
+ORG-002168,Revlis Corporation,0,0,1,1,,2,0
+ORG-002544,Berry Global,0,0,1,0,,1,0
+ORG-002948,Covia Holdings LLC,0,0,0,1,,1,0
+ORG-003030,"Budenheim USA, Inc.",0,0,0,0,,0,1
+ORG-003101,"CW Ohio, Inc.",0,0,1,0,,1,0
+ORG-003196,Eckart America Corporation,0,0,0,0,,0,1
+ORG-003545,"G-3 Chickadee Purchaser, LLC",1,0,0,0,,1,0
+ORG-003885,Radici Plastics USA Inc.,1,0,1,0,,2,0
