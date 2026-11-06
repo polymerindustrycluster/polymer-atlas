@@ -134,9 +134,10 @@ def frame():
     return rows
 
 
-def bound_verdicts():
+def bound_verdicts(here=None):
+    here = here or HERE
     canonical = {r['evidence_id']: r for p in sorted((ROOT/'data').glob('evidence_*.csv')) for r in read(p)}
-    inputs, verdicts = read(HERE/'inputs.csv'), read(HERE/'verdicts.csv')
+    inputs, verdicts = read(here/'inputs.csv'), read(here/'verdicts.csv')
     assert len(inputs) == len({r['evidence_id'] for r in inputs})
     assert len(verdicts) == len({r['evidence_id'] for r in verdicts})
     indexed = {r['evidence_id']:r for r in inputs}
