@@ -1,0 +1,32 @@
+{
+  "merged_main": "85b85600c77e72c91fde772b0cf3c25e51c321ab",
+  "unchanged_packet_reference": "cf6c9cd",
+  "canonical_preservation": {
+    "data/organizations_US.csv": {
+      "main_rows_preserved": 247,
+      "rows_added": 1
+    },
+    "data/sites_OH.csv": {
+      "main_rows_preserved": 2009,
+      "rows_added": 1
+    },
+    "data/evidence_organizations_US.csv": {
+      "main_rows_preserved": 1019,
+      "rows_added": 4
+    },
+    "data/evidence_organizations_OH.csv": {
+      "main_rows_preserved": 2549,
+      "rows_added": 1
+    },
+    "data/evidence_sites_OH.csv": {
+      "main_rows_preserved": 4226,
+      "rows_added": 8
+    },
+    "data/registry_links.csv": {
+      "main_rows_preserved": 5373,
+      "rows_added": 4
+    }
+  },
+  "checks": "PASS26census;allCSVreplay;cross-shardIDandregistrytripleconflict-before-write;validator0errors",
+  "equipment_review_receipts": "Already on main85b8560 via commits a025fad and30fb413; no extra equipment receipt delta needed"
+}

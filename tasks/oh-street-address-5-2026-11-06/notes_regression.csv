@@ -1,0 +1,4 @@
+city,notes,expected_street,old_leads,corrected_leads,old_false_veto,corrected_match
+Elyria,"Street: 710 Taylor Street, Elyria, OH 44035",710 Taylor Street,"['710 Taylor Street', '710 Taylor Street, Elyria, OH 44035']","['710 Taylor Street', '710 Taylor Street']",yes,yes
+Avon,Street: 34910 Commerce Way (address per FDA establishment registration; verified). FDA FEI 123,34910 Commerce Way,['34910 Commerce Way (address per FDA establishment registration; verified). FDA FEI 123'],['34910 Commerce Way'],yes,yes
+Youngstown,Street (per Grok): 3745 Hendricks Rd. county UNVERIFIED — Grok county_check=TRUE,3745 Hendricks Rd,['3745 Hendricks Rd. county UNVERIFIED — Grok county_check=TRUE'],['3745 Hendricks Rd'],yes,yes

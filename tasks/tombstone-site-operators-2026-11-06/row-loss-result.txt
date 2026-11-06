@@ -1,0 +1,12 @@
+PR130 guard source 1c8addfcd72665f64b7d865cab5ace2d8f2fc28c SHA256 05de4412a1b2bec342b03e56e140e7e7189d7da3d763da35992b0312c686491d
+Command: python3 scripts/check_row_loss.py --base origin/main
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base 5a90bb17f5)
+
+Negative control: temporarily withheld only this pass REMOVALS manifest; guard must reject the undeclared old-key loss.
+row-loss guard: FAIL — 1 keyed rows removed since origin/main (merge-base 5a90bb17f5) and not declared in a REMOVALS.csv added in this change
+  registry_links: 1 removed, e.g. ORG-002260|FRS|110001516832|SITE-006049
+If a removal is intended (a re-point, a merge), list each key in a REMOVALS.csv in your task folder (columns table,key,reason); for inclusion_log the key is the whole row plus '#<occurrence>'. Records themselves are tombstoned, never deleted (AGENTS.md §3).
+Expected failure confirmed; manifest restored.
+
+Final post-integration check: python3 scripts/check_row_loss.py --base origin/main
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base d9527fed7a)

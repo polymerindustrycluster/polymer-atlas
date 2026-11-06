@@ -11,6 +11,18 @@ assert {r['cluster_id'] for r in vs}=={r['cluster_id'] for r in cs}
 assert len(alloc)==len({r['site_id'] for r in alloc})==17
 assert len(blind)==len({r['cluster_id'] for r in blind})==17
 assert {r['cluster_id'] for r in blind}<={r['cluster_id'] for r in alloc}
+# AGENTS §2 rule 8: a hold names its settling fact, never the VERIFIED boilerplate (Codex4 REFUTE of IFS LF-TX-00505).
+BOILER='Resolvableconcordantcorepolymerfederalmanufacturingestablishment'
+def holds_named(vs):
+    ver={v['deciding_fact'] for v in vs if v['verdict']=='VERIFIED'}
+    for v in vs:
+        f=v['deciding_fact'].strip()
+        if v['verdict']!='VERIFIED':assert f and BOILER not in f.replace(' ','') and f not in ver,('hold without a settling fact',v['cluster_id'])
+holds_named(vs);assert sum(v['verdict']=='STILL_UNCERTAIN' for v in vs)==23
+bad=[dict(v) for v in vs];next(v for v in bad if v['verdict']=='STILL_UNCERTAIN')['deciding_fact']=next(v['deciding_fact'] for v in vs if v['verdict']=='VERIFIED')
+try:holds_named(bad)
+except AssertionError:pass
+else:raise AssertionError('Injected boilerplate hold accepted')
 paths=[ROOT/'data'/n for n in ['organizations_US.csv','sites_TX.csv','evidence_organizations_US.csv','evidence_sites_TX.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in paths]
 subprocess.run([sys.executable,str(P/'build.py'),'--apply'],check=True)

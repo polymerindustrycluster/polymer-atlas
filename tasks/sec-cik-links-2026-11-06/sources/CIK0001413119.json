@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001413119.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001413119",
+  "name": "Kraig Biocraft Laboratories, Inc.",
+  "tickers": [
+    "KBLB"
+  ],
+  "exchanges": [
+    "OTC"
+  ],
+  "raw_sha256": "122126eb2e54abee6f632e84abf664aa2c16b860d565bb2971416bb0db7401f1",
+  "raw_name_token": "\"Kraig Biocraft Laboratories, Inc.\""
+}

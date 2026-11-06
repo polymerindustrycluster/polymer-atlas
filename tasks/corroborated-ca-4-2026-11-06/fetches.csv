@@ -1,0 +1,13 @@
+cluster_id,url,route,fetch,chars
+LF-CA-01235,https://www.durabag.net/,https://www.durabag.net/,loaded,1741
+LF-CA-02033,https://www.columbiapkg.com/,https://www.columbiapkg.com/,loaded,3547
+LF-CA-02979,https://www.trmcompany.com/,https://www.trmcompany.com/,loaded,2393
+LF-CA-03161,https://www.pactiv.com/,https://www.pactiv.com/,loaded,3391
+LF-CA-03284,https://altiumpkg.com/,,unfetchable,0
+LF-CA-00400,https://www.snydernet.com/,https://www.snydernet.com/,loaded,4524
+LF-CA-01121,https://www.newpridetire.com/contact,https://www.newpridetire.com/contact,loaded,1296
+LF-CA-01151,https://martinrubber.com/,https://martinrubber.com/,loaded,1716
+LF-CA-01313,https://altiumpkg.com/,,unfetchable,0
+LF-CA-02109,https://stytek.com/,https://stytek.com/,loaded,3798
+LF-CA-03045,https://tru-formplastics.com/,,unfetchable,0
+LF-CA-03177,https://www.amcor.com/,https://www.amcor.com/,loaded,4159

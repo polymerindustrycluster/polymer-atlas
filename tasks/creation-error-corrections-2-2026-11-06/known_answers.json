@@ -1,0 +1,17 @@
+[
+  {
+    "key": "CANTEX_DISTRIBUTION",
+    "result": "PASS",
+    "negative": "fabricatedwordsrejected"
+  },
+  {
+    "key": "VALMET_SERVICE",
+    "result": "PASS",
+    "negative": "fabricatedwordsrejected"
+  },
+  {
+    "key": "MIDLAND_MACHINING",
+    "result": "PASS",
+    "negative": "fabricatedwordsrejected"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "first_attempt": [
+    {
+      "site_id": "SITE-011028",
+      "status": "PASS",
+      "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1700+67th+Ave+N&city=Minneapolis&state=MN&zip=55430&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+      "county": "Hennepin County",
+      "geoid": "27053",
+      "matched_address": "1700 67TH AVE N, MINNEAPOLIS, MN, 55430",
+      "raw_file": "build/l11-strong-quality/county/SITE-011028.json",
+      "raw_sha256": "bad61830e8c5e63f1634c8e3f33d417efb034c758496906ac81e09a39921c64f",
+      "observed_date": "2026-11-06",
+      "reason": "Address-exact county geography, no coordinates used"
+    },
+    {
+      "site_id": "SITE-011011",
+      "status": "HOLD",
+      "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1904+Willow+Street&city=Mankato&state=MN&zip=56001&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+      "reason": "Matched physical street differs: 1904 WILLOW ST, MANKATO, MN, 56001"
+    },
+    {
+      "site_id": "SITE-011151",
+      "status": "HOLD",
+      "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1220+Lee+Rd&city=Rochester&state=NY&zip=14606&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+      "reason": "Matched physical street differs: 1220 LEE RD, ROCHESTER, NY, 14606"
+    }
+  ],
+  "correction": "Use matchedAddress, not street-range endpoint fromAddress; three known cases then passed before remaining candidate lookups."
+}

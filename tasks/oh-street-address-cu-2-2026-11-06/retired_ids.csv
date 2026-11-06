@@ -1,0 +1,3 @@
+site_id,evidence_id,reason
+SITE-000025,EVD-153012,cited FRS audit source remains unavailable after bounded retry; successful fresh recheck required before physical street fill
+SITE-000156,EVD-153081,cited FRS audit source remains unavailable after bounded retry; successful fresh recheck required before physical street fill

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000076267.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000076267",
+  "name": "PARK AEROSPACE CORP",
+  "tickers": [
+    "PKE"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "46f7ae83a1c2cd952493999eecbe8eb151ec49e6ee5bd5461e763ef661e987b8",
+  "raw_name_token": "\"PARK AEROSPACE CORP\""
+}

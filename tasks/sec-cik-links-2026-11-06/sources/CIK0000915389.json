@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000915389.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000915389",
+  "name": "EASTMAN CHEMICAL CO",
+  "tickers": [
+    "EMN"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "c6fc467db138b5d16650cd21bd5abf98bc2772ecd9255f99b261079fb2089576",
+  "raw_name_token": "\"EASTMAN CHEMICAL CO\""
+}

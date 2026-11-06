@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000746598.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000746598",
+  "name": "BRADY CORP",
+  "tickers": [
+    "BRC"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "4a9213b44cc7da9c83372876f0e7da1744d485750870063cfeea1df6470f7e4f",
+  "raw_name_token": "\"BRADY CORP\""
+}

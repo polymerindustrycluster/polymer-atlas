@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000089800.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000089800",
+  "name": "SHERWIN WILLIAMS CO",
+  "tickers": [
+    "SHW"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "5d176e940371bc4f78b5da514515914a1b6b6e407b8d162c320e40335660908f",
+  "raw_name_token": "\"SHERWIN WILLIAMS CO\""
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001101302.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001101302",
+  "name": "ENTEGRIS INC",
+  "tickers": [
+    "ENTG"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "a204f3a4898765736fec8bafb1344ebcc127641f448c9f14996d140cfdf6f086",
+  "raw_name_token": "\"ENTEGRIS INC\""
+}

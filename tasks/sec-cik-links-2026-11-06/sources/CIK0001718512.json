@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001718512.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001718512",
+  "name": "Gates Industrial Corp Ltd.",
+  "tickers": [
+    "GTES"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "bcb61821159fadac57120f8de137792b8acfe7ebe426e52b08c9f41e16843de0",
+  "raw_name_token": "\"Gates Industrial Corp Ltd.\""
+}

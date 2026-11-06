@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000842162.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000842162",
+  "name": "LEAR CORP",
+  "tickers": [
+    "LEA"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "85a867faa7d832ef383204c7db29bc029e0a427869c10a5b2644154fd4791fee",
+  "raw_name_token": "\"LEAR CORP\""
+}

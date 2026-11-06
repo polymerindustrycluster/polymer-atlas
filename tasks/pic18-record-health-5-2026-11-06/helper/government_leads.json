@@ -1,0 +1,60 @@
+{
+  "ORG-002057": [],
+  "ORG-001927": [],
+  "ORG-001479": [],
+  "ORG-001708": [],
+  "ORG-002055": [],
+  "ORG-003545": [
+    {
+      "source_ref": "https://fintel.io/doc/sec-goodyear-tire-rubber-co-oh-42582-8k-2025-may-22-20230-771",
+      "claim_type": "existence",
+      "observed_date": "2026-10-30",
+      "claim_detail": "SEC Form 8-K (filed 2025-05-22, accession via SEC database): Goodyear / G-3 Chickadee Purchaser, LLC asset purchase agreement for the polymer chemicals business"
+    }
+  ],
+  "ORG-001601": [],
+  "ORG-001794": [],
+  "ORG-001921": [],
+  "ORG-001922": [],
+  "ORG-001944": [],
+  "ORG-003885": [
+    {
+      "source_ref": "DOL EFAST2 Form 5500-SF, sponsor RADICI PLASTICS USA, INC., PY2025, plan 001, ACK_ID 20260410111106NAL0014301040001",
+      "claim_type": "size_band",
+      "observed_date": "2026-11-01",
+      "claim_detail": "employee_band_ohio=50-99: Form 5500 plan year 2025, active participants 88 \u2192 band 50-99 (band only, not a headcount)"
+    }
+  ],
+  "ORG-001836": [],
+  "ORG-000175": [
+    {
+      "source_ref": "DOL EFAST2 Form 5500-SF, sponsor HARWOOD RUBBER PRODUCTS, INC., PY2023, plan 001, ACK_ID 20240414104620NAL0000413040001",
+      "claim_type": "size_band",
+      "observed_date": "2026-11-01",
+      "claim_detail": "employee_band_ohio=10-49: Form 5500 plan year 2023, active participants 13 \u2192 band 10-49 (band only, not a headcount)"
+    }
+  ],
+  "ORG-001726": [],
+  "ORG-001920": [],
+  "ORG-002041": [],
+  "ORG-001590": [],
+  "ORG-002060": [],
+  "ORG-002056": [],
+  "ORG-000202": [],
+  "ORG-000181": [],
+  "ORG-002064": [],
+  "ORG-001719": [],
+  "ORG-001721": [],
+  "ORG-001747": [],
+  "ORG-000198": [],
+  "ORG-002053": [],
+  "ORG-000551": [],
+  "ORG-002030": [],
+  "ORG-000186": [],
+  "ORG-000190": [],
+  "ORG-001940": [],
+  "ORG-000174": [],
+  "ORG-000183": [],
+  "ORG-000188": [],
+  "ORG-001452": []
+}

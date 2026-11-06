@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001069394.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001069394",
+  "name": "FLEXIBLE SOLUTIONS INTERNATIONAL INC",
+  "tickers": [
+    "FSI"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "a0338189fdc1231e3f604190d3c7c8bf97720b7e477a2a149d7fee05e74e22e3",
+  "raw_name_token": "\"FLEXIBLE SOLUTIONS INTERNATIONAL INC\""
+}

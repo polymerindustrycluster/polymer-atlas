@@ -1,0 +1,89 @@
+site_id,verdict,street_address,evidence_id,reason
+SITE-001851,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001852,VERIFIED,3100 Hamilton Avenue,EVD-152361,
+SITE-001854,VERIFIED,565 Lafollette St.,EVD-152362,
+SITE-001855,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001856,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001858,VERIFIED,5718 Transportation Blvd.,EVD-152365,
+SITE-001859,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001860,VERIFIED,34459 Curtis Boulevard,EVD-152367,
+SITE-001861,VERIFIED,1610 Coutant Avenue,EVD-152368,
+SITE-001862,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001864,VERIFIED,920 OVERHOLT RD,EVD-152370,
+SITE-001865,STILL_UNCERTAIN,395 Portage Blvd,,mailing-only or ambiguous address context
+SITE-001867,VERIFIED,8095 Southern Blvd.,EVD-152372,
+SITE-001873,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001874,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001875,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001876,VERIFIED,1700 London Road,EVD-152376,
+SITE-001880,VERIFIED,390 Portage Blvd.,EVD-152377,
+SITE-001882,VERIFIED,10008 State Route 43,EVD-152378,
+SITE-001883,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001888,VERIFIED,10410 Berea Road,EVD-152380,
+SITE-001889,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001891,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001893,VERIFIED,1280 Devalera St.,EVD-152383,
+SITE-001894,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001895,VERIFIED,16744 West Park Circle Drive,EVD-152385,
+SITE-001896,VERIFIED,467 Dan St.,EVD-152386,
+SITE-001897,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001898,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001899,VERIFIED,2880 Interstate Parkway,EVD-152389,
+SITE-001900,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001904,VERIFIED,5718 Transportation Blvd,EVD-152391,
+SITE-001905,VERIFIED,487 Wellington Avenue,EVD-152392,
+SITE-001908,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001909,STILL_UNCERTAIN,3637 Medina Rd,,notes address conflicts; dated adjudication needed
+SITE-001916,STILL_UNCERTAIN,2040 Cellar Drive,,notes address conflicts; dated adjudication needed
+SITE-001917,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001922,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001923,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001924,VERIFIED,7675 Jenther Dr,EVD-152399,
+SITE-001927,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001928,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001930,VERIFIED,1900 Englewood Ave,EVD-152402,
+SITE-001931,STILL_UNCERTAIN,352 W. Liberty St.,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001933,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001935,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001937,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001939,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001940,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001941,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001943,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001945,VERIFIED,527 Ternes Ln,EVD-152411,
+SITE-001951,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001952,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001953,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001957,VERIFIED,36 Castle Dr,EVD-152415,
+SITE-001959,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001972,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001980,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001986,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001991,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001992,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001993,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002001,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002004,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002005,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002008,VERIFIED,2184 State Route 43,EVD-152426,
+SITE-002012,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002016,VERIFIED,9450 Rosemont Drive,EVD-152428,
+SITE-002025,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002028,VERIFIED,16829 Park Circle Drive,EVD-152430,
+SITE-002031,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002032,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002033,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002037,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002038,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002041,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002043,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002052,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002067,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002068,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002069,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002073,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002079,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002082,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002084,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002110,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-002904,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched

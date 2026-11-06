@@ -1,0 +1,905 @@
+[
+  {
+    "url": "https://careers.cooperstandard.com/job/16061424/3rd-shift-toolmaker-gaylord-mi/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/97f732ca83cbad2d157be82e97772fbc36d8398c5f29eb5cf1519407cf6cf786.txt",
+    "sha256": "5d7aad4e9e002180ff5557ba4393642fe5f6824bcbd00cd50cbe7fd364062dc5",
+    "attempts": [
+      {
+        "route": "https://careers.cooperstandard.com/job/16061424/3rd-shift-toolmaker-gaylord-mi/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://careers.cooperstandard.com/job/16061424/3rd-shift-toolmaker-gaylord-mi/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://careers.owenscorning.com/job/Rockford-Production-Associate-IL-61109/1446312100/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/e7bf8de7126e4c29d16a5f90cfbef8c62a8b5b5acf530116cc344ec74e782f6f.txt",
+    "sha256": "8e78bc8cc01ab62e29acc75bce53ee64393c2404141a2c346f46e08baeea047e",
+    "attempts": [
+      {
+        "route": "https://careers.owenscorning.com/job/Rockford-Production-Associate-IL-61109/1446312100/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://careers.owenscorning.com/job/Rockford-Production-Associate-IL-61109/1446312100/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://eastjordanplastics.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/75a6c3d662ad5e3d5a39a199ed74a3a555b11a95d1fba0a0829f126db67d2d19.txt",
+    "sha256": "00c5ef8be72c97633b558cb1ff2819d70eb3e717ac87f7f1399d2efc10cd7ed9",
+    "attempts": [
+      {
+        "route": "https://eastjordanplastics.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://eastjordanplastics.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/cd03a06d9ab1339f3a9bd5a68e729c6843756f039207bce05da36251669dc5fe.txt",
+    "sha256": "cb878ba86f6ebde2c13ad70dca9f90a879a33be43e6eb9aa9c8ecfa8c128a4e2",
+    "attempts": [
+      {
+        "route": "https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://eastjordanplastics.com/the-sustainable-choice/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/b0d0cb1b8132c27391aafeef8da2855a81a93742a4b3e2ce7c980030a571bde8.txt",
+    "sha256": "7eb08e6438af92764d1d4aa7a8f0fa62a860aa58337cb7be371a1176f9275a2f",
+    "attempts": [
+      {
+        "route": "https://eastjordanplastics.com/the-sustainable-choice/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://eastjordanplastics.com/the-sustainable-choice/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://join.reynoldsconsumerproducts.com/jobs/3753?lang=en-us",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://join.reynoldsconsumerproducts.com/jobs/3753?lang=en-us",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://join.reynoldsconsumerproducts.com/jobs/3753?lang=en-us",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://join.reynoldsconsumerproducts.com/jobs/3753?lang=en-us",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://join.reynoldsconsumerproducts.com/jobs/3753?lang=en-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://lacksenterprises.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/3e7ef7c5a1481ced6840ef4f5a517c38655c1036539d2e875434a81dfaf8ba52.txt",
+    "sha256": "c48429a900a61ac26be8ad9d0a226e1ec8173e31acd19ed5191905498a8f0914",
+    "attempts": [
+      {
+        "route": "https://lacksenterprises.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://lacksenterprises.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://marianinc.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/ed57bc3a774229d2c3005f6375b10d69d1792740b3e961876693a3f4774202fb.txt",
+    "sha256": "0f07f5960169c08fc99d9a2be56399b7c8cd2bbe9a19d9b1adde488fd09c4553",
+    "attempts": [
+      {
+        "route": "https://marianinc.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://marianinc.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://marianinc.com/marian-chicago/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/4e93c671dd09dec8f80f1e6c118324d75e36ff551a1b1de96948415cb2f49779.txt",
+    "sha256": "6e87353937112e8a70cadbe99306df18bde16b73c7776dd725cfee05e23be3d2",
+    "attempts": [
+      {
+        "route": "https://marianinc.com/marian-chicago/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://marianinc.com/marian-chicago/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://mauserpackaging.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/b9364d1108f0b235c260be56ab71be06818d18827e53f0c4bb95429070856c48.txt",
+    "sha256": "379f0e420746de7d1707cc1315571c03f8e7c08a59d0ed8d5fe0367cb1e7d0e0",
+    "attempts": [
+      {
+        "route": "https://mauserpackaging.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://mauserpackaging.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://mauserpackaging.com/about-mauser/locations/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/51641239fe5335f0cca85b7ff47f1fdfef7a634c95072f493898d05d3f45dbb0.txt",
+    "sha256": "5b98f6857fb25c4efc8f28240983fc8d3ca066cd88e314f24884b0f97e586fc0",
+    "attempts": [
+      {
+        "route": "https://mauserpackaging.com/about-mauser/locations/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://mauserpackaging.com/about-mauser/locations/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://plasticade.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/aa46b7e72fb435964a826cde222ff93126cee6d2b629c7208e1a7682351e8733.txt",
+    "sha256": "552b7ac20b215111110561ff51be1d806aafdd952866c11439d007844cae28fd",
+    "attempts": [
+      {
+        "route": "https://plasticade.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://plasticade.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://pressroom.pella.com/women-leaders-at-pella-corporation-recognized-for-excellence-in-manufacturing/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/d46c060bb431e0cc98856a24736be8fd8bd66c49ddf2b9fbf52f5fa6b9fe1236.txt",
+    "sha256": "5fbb7fa3349bb827fac2380c53b86b32f5532e2a2c8415c23006636008c5b322",
+    "attempts": [
+      {
+        "route": "https://pressroom.pella.com/women-leaders-at-pella-corporation-recognized-for-excellence-in-manufacturing/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://pressroom.pella.com/women-leaders-at-pella-corporation-recognized-for-excellence-in-manufacturing/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://prismplastics.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/28703f024ec208de0ad71f0a085bc360a85323370efc56cdeef6daf8be22149e.txt",
+    "sha256": "5699444ebddd2769d8da7b5ca1e7ac4f4c201fa7d718a458faa7b87be447fd0f",
+    "attempts": [
+      {
+        "route": "https://prismplastics.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://prismplastics.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:07Z"
+  },
+  {
+    "url": "https://prismplastics.com/chesterfield/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://prismplastics.com/chesterfield/",
+        "status": "500",
+        "exit": 0,
+        "effective_url": "https://prismplastics.com/chesterfield/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://prismplastics.com/chesterfield/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://prismplastics.com/chesterfield/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://prismplastics.com/port-huron/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://prismplastics.com/port-huron/",
+        "status": "500",
+        "exit": 0,
+        "effective_url": "https://prismplastics.com/port-huron/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://prismplastics.com/port-huron/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://prismplastics.com/port-huron/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://rohrer.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/5ef6fb240d736f9eeaf8694ede8996e93ae50db3f8612ac860317fc1ba0c9aed.txt",
+    "sha256": "ddcdf5234ce4d3e32f338c447f2eb04b735252e9f9c5d0a532da283ab5eac8b9",
+    "attempts": [
+      {
+        "route": "https://rohrer.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.rohrer.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://tapes.averydennison.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/cc5d7f5ba52f976227143c99575e887393da920fd888f72311a1e96cf153e65b.txt",
+    "sha256": "06a0ba5417b0d9e7a744b29567a64aa7de4d44a0a7bd70969c16350ac9bc42b1",
+    "attempts": [
+      {
+        "route": "https://tapes.averydennison.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://tapes.averydennison.com/na/en/home.html",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://www.adspipe.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/e86e8ede542c02d78e3dea23194c57722c7accb8be6c998ee38c7eccdf0df51e.txt",
+    "sha256": "1c724068dd5c9a26c625d5d90070e924cb2a1882ccb72097eba46a836475a6e0",
+    "attempts": [
+      {
+        "route": "https://www.adspipe.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.adspipe.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://www.all-stateind.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/aefff778df04cdf90845aa86296aeeb0f08b4844b71a9c8da2fef1f564bf877f.txt",
+    "sha256": "f169a4f5d3c49ccf039a384910de75102f550149f6065f4b5852498abe76a704",
+    "attempts": [
+      {
+        "route": "https://www.all-stateind.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.all-stateind.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://www.all-stateind.com/contact/locations/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/3a1f0a8b19557244439b005307d005aa6eb14885dd731d9b3fd60714d78316d1.txt",
+    "sha256": "67256b276a7c5453626a416d14f1b0e34c16ef95183f214fe04e5934dbb662e7",
+    "attempts": [
+      {
+        "route": "https://www.all-stateind.com/contact/locations/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.all-stateind.com/contact/locations/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://www.amcor.com/careers/job-details/req_96546",
+    "status": "ok",
+    "page": "build/l11-quality-cache/363b241c9e5cdfc3f9c95925bef0bac9fa4d624e9be9dac8532f9aecc17b94fe.txt",
+    "sha256": "fd6e27a253f7af4dd765200aaab259876cf50edbd235903276fceafc891e8d95",
+    "attempts": [
+      {
+        "route": "https://www.amcor.com/careers/job-details/req_96546",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.amcor.com/careers/job-details/req_96546",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.amcor.com/careers/job-details/req_96924",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.amcor.com/careers/job-details/req_96924",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://www.amcor.com/careers/job-details/req_96924",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.amcor.com/careers/job-details/req_96924",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.amcor.com/careers/job-details/req_96924",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.cooperstandard.com/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.cooperstandard.com/",
+        "status": "307",
+        "exit": 0,
+        "effective_url": "https://www.cooperstandard.com/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.cooperstandard.com/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.cooperstandard.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.dwfinepack.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/5b0dd0eaeb14a58a6ba6df7a5a09f4d90a32dd3883a56e3d478e2dffcce18299.txt",
+    "sha256": "07a1822ed580ef1333df965640831bd37a827681ef8fc514fb5c7a60f64b0876",
+    "attempts": [
+      {
+        "route": "https://www.dwfinepack.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.dwfinepack.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:10Z"
+  },
+  {
+    "url": "https://www.gilkey.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/34226ad2f0d8a385a54aa986399c61cd2206b6886a6697f04521eeaf1db6bce2.txt",
+    "sha256": "80f680b42fb919a0fdc3bb72ea6dd786010182c88288410ef95a08ebce8877a0",
+    "attempts": [
+      {
+        "route": "https://www.gilkey.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gilkey.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://www.gilkey.com/location/chicago-ridge-il/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/72d7ddc713a5ec624be0093f978f6918c8cb8c7f20cd944bf5eb51abd11dfa61.txt",
+    "sha256": "3016fcce20dd781109fbc35720d9e6e941d2b24cb2d83cf0188bc83faae5ff76",
+    "attempts": [
+      {
+        "route": "https://www.gilkey.com/location/chicago-ridge-il/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gilkey.com/location/chicago-ridge-il/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:08Z"
+  },
+  {
+    "url": "https://www.owenscorning.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/f18fdf469167502c3b82e96d0047c9619d65dc03e618a38ce6e69b83fac58134.txt",
+    "sha256": "f3d84686a3ba0450162a06fa5f35f94d11e94f0f4bb3a841fa63678b8c6375b8",
+    "attempts": [
+      {
+        "route": "https://www.owenscorning.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.owenscorning.com/en-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:21Z"
+  },
+  {
+    "url": "https://www.pactiv.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/66c766421e20f638c41f40111c01c52d657b79e793d6ffdb5c97e57821d10fc0.txt",
+    "sha256": "3e18b6de4f1e930e20d08e4f3a8776c6e41b726c7af96e97e72fe9b35336601b",
+    "attempts": [
+      {
+        "route": "https://www.pactiv.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://novolex.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.pella.com/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.pella.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.pella.com/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.pella.com/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.pella.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.plastipak.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/2093da7f0ed25d01604c41accf6e3287cc14b6daaa358ab60be856ea9376fc34.txt",
+    "sha256": "dd055681e1e538e1ba9c3d2a0bcdd8f3bf392f7d80d8c402d8019a46a3f12558",
+    "attempts": [
+      {
+        "route": "https://www.plastipak.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.plastipak.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:10Z"
+  },
+  {
+    "url": "https://www.pregis.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/5591e3afaae68de55046bbd67e1006a1d4746a91e498a43f09b46602edb7b0c9.txt",
+    "sha256": "8c2f4e7cbac2dbdf9938fa5c05a42afb2f6fb36ea4e3bd8a2cb12abe9e077744",
+    "attempts": [
+      {
+        "route": "https://www.pregis.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.pregis.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.pregis.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/82c0daef1c1bd713f0b3cbe3b5d689d17a86c0917178e5bf641a7f9b7dce9ca7.txt",
+    "sha256": "4452ef60032bd03447ff67638591c7bc1e4ad97ce5278cd7d69ae40db0eb0d04",
+    "attempts": [
+      {
+        "route": "https://www.pregis.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.pregis.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.pregis.com/knowledge-hub/pregis-acquires-rex-performance-products/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/a852ddc9ab945e2c362d2030debb642ca21232aae1f3aa54af5be15c0745298f.txt",
+    "sha256": "44954cf6bc0c299c128b77fa94d52ff44c6c81916e9bafa2a993cd8fec7ee560",
+    "attempts": [
+      {
+        "route": "https://www.pregis.com/knowledge-hub/pregis-acquires-rex-performance-products/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.pregis.com/knowledge-hub/pregis-acquires-rex-performance-products/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.pretiumpkg.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/e6a17969085d9311c2bd6a2e0dea262e799d4856b9c992db5819f9ef3bf21ab9.txt",
+    "sha256": "45c05946e870079b80aeb0c1994bc9929a120b0948949b8e4a7f64db39bdd65e",
+    "attempts": [
+      {
+        "route": "https://www.pretiumpkg.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.pretiumpkg.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:11Z"
+  },
+  {
+    "url": "https://www.pretiumpkg.com/locations/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/503c9e8e53edb2cff7e00a2088e364586d4d92210baedfc4dced0adca86c0f3d.txt",
+    "sha256": "97b17408cc86d3427f5c2c1bfdba92a75f24fac982ab683d2e889240b5c50961",
+    "attempts": [
+      {
+        "route": "https://www.pretiumpkg.com/locations/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.pretiumpkg.com/locations/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:12Z"
+  },
+  {
+    "url": "https://www.reynoldsconsumerproducts.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/98781ebd2583067d24c5146fe5e5986331141b78276615e7f3a068fa1adcfed5.txt",
+    "sha256": "f51a368e9b5a485e1d93ddfcf339098ff990bedec6f59c02ae433992e306def3",
+    "attempts": [
+      {
+        "route": "https://www.reynoldsconsumerproducts.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.reynoldsconsumerproducts.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.rohrer.com/about-us/locations/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/564e8b619330c3a6c3b9a1f10cf1394781766ef2b71f7967e6834d36680af532.txt",
+    "sha256": "f82746d001e695b77d25fc5da8d00ff527aff23dea2eed243a0e78cae56f9206",
+    "attempts": [
+      {
+        "route": "https://www.rohrer.com/about-us/locations/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.rohrer.com/about-us/locations/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:09Z"
+  },
+  {
+    "url": "https://www.sherwin-williams.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/8d47f10cca67f8973333d4d4dd2ae144693b624040b2900b4cb863ce588f1e2b.txt",
+    "sha256": "9fc03b62d8cb76c7084d28297eb3265b08452d509b5ec4b3c771b99c6e2bb655",
+    "attempts": [
+      {
+        "route": "https://www.sherwin-williams.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.sherwin-williams.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:10Z"
+  },
+  {
+    "url": "https://www.spiratex.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/8a751c7950a45c54c9f7b48f02059fa17bccb4c77a89b83f2e4a38b91e739061.txt",
+    "sha256": "9cf1560df957ca0e508a2aea82b7d3621a2a59936e5b6695e45ea6365d2fde2f",
+    "attempts": [
+      {
+        "route": "https://www.spiratex.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.spiratex.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:13Z"
+  },
+  {
+    "url": "https://www.spiratex.com/careers/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/4dd017f963cf584538bc3e2ebda36c1df6ddd489d913fd5bcdad0f48de94ece4.txt",
+    "sha256": "e5d455c90d86056c1611352834a5a08bab664a606e19e89a1f6ff2ae54179d06",
+    "attempts": [
+      {
+        "route": "https://www.spiratex.com/careers/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.spiratex.com/careers/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:13Z"
+  },
+  {
+    "url": "https://www.spiratex.com/contact-us/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/4cb2b30f0e11c9465e37fbe55437eaa8d558cd3a03eb9e1e8a146aa7aebc5ab5.txt",
+    "sha256": "471874777e36a4ab04ac16c056106c1562de78c12245932a53002a736b3d91da",
+    "attempts": [
+      {
+        "route": "https://www.spiratex.com/contact-us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.spiratex.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:13Z"
+  },
+  {
+    "url": "https://www.storopack.us/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/cbf2e21ac42724f8458bd1ef863eb65888de5b5b3fd093641e8814d89d7a3417.txt",
+    "sha256": "145b93527d181e648d78830c8576334a7288f2431d0480d3052e860432bfdd2a",
+    "attempts": [
+      {
+        "route": "https://www.storopack.us/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.storopack.us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:10Z"
+  },
+  {
+    "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "status": "000",
+        "exit": 28,
+        "effective_url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "error": "curl: (28) Connection timed out after 25007 milliseconds",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:36Z"
+  },
+  {
+    "url": "https://www.summitpolymers.com/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.summitpolymers.com/",
+        "status": "000",
+        "exit": 28,
+        "effective_url": "https://www.summitpolymers.com/",
+        "error": "curl: (28) Connection timed out after 25001 milliseconds",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.summitpolymers.com/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.summitpolymers.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:36Z"
+  },
+  {
+    "url": "https://www.techniplas.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/99afa1572d58fa1c0eb68fa12b9bfa8ad8fc8005abd3d7cfbe22c3bb9a9d961b.txt",
+    "sha256": "93595801e2bfe25881d964892807d5bbaec9ff7e51902fc312a6e74bbeffb78c",
+    "attempts": [
+      {
+        "route": "https://www.techniplas.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.techniplas.com/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:13Z"
+  },
+  {
+    "url": "https://www.trelleborg.com/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/9f9a9b457a6eebbed013576cf11d11c7b47a080c58e5cf4223bf60246357c7da.txt",
+    "sha256": "3b5278c26d8fe5c512c94cfeb7236503ffa4b768c05aba5edf328b24c76fbd61",
+    "attempts": [
+      {
+        "route": "https://www.trelleborg.com/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.trelleborg.com/en",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:13Z"
+  },
+  {
+    "url": "https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/streamwood-usa",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.trelleborg.com/en/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:14Z"
+  },
+  {
+    "url": "https://www.trelleborg.com/fi-fi/seals/about-us/manufacturing-capabilities/streamwood-usa",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.trelleborg.com/fi-fi/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://www.trelleborg.com/fi-fi/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.trelleborg.com/fi-fi/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.trelleborg.com/fi-fi/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:53:14Z"
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "query": {
+    "domain": "csuohio.edu",
+    "name": "Cleveland State University",
+    "street": null,
+    "city": null,
+    "state": null,
+    "zip": null
+  },
+  "stop_at_step": 1,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-000158",
+          "name": "Cleveland State University",
+          "city": "Cleveland",
+          "state": "OH",
+          "status": "active",
+          "tier": "U",
+          "file": "ecosystem.csv",
+          "match": "domain exact: csuohio.edu"
+        },
+        {
+          "id": "ORG-002107",
+          "name": "Cleveland State University Technology Transfer",
+          "city": "Cleveland",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "ecosystem.csv",
+          "match": "domain exact: csuohio.edu"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-000158",
+          "name": "Cleveland State University",
+          "city": "Cleveland",
+          "state": "OH",
+          "status": "active",
+          "tier": "U",
+          "file": "ecosystem.csv",
+          "match": "name key 'cleveland state university' = legal_name 'Cleveland State University'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": "no --street",
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002107",
+          "name": "Cleveland State University Technology Transfer",
+          "city": "Cleveland",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "ecosystem.csv",
+          "match": "legal_name contains 'Cleveland State University'"
+        }
+      ]
+    }
+  ]
+}
