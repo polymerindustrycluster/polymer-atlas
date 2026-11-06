@@ -365,6 +365,11 @@ class StreetKey(unittest.TestCase):
     def test_digit_free_comma_street_keeps_whole_string(self):
         self.assertEqual(atlas.street_key("Ironstone House, Ironstone Way"), "ironstone house ironstone way")
 
+    def test_digit_free_street_before_numbered_part_is_kept(self):
+        # Codex on #197: SITE-016517 "Five Bottle Drive, SR 352"; postal-code control from SITE-002457/002459
+        self.assertEqual(atlas.street_key("Five Bottle Drive, SR 352"), "five bottle dr sr 352")
+        self.assertNotEqual(atlas.street_key("Lenni Rd., Lenni, PA 19052"), atlas.street_key("West Lenni Rd., Lenni, PA 19052"))
+
     def test_unit_only_is_empty(self):
         self.assertEqual(atlas.street_key("Unit 4"), "")
         self.assertEqual(atlas.street_key(""), "")

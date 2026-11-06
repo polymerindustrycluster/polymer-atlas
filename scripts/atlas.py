@@ -247,14 +247,17 @@ UNIT_ONLY_RE = re.compile(r"^\s*(?:(?:suite|ste|unit|apt|apartment|bldg|building
 
 def street_key(s):
     """Normalized street line for address-first dedupe (AGENTS §3 step 3); empty only when no street is present."""
-    parts = [p for p in (s or "").lower().split(",")]
-    # the street is the first comma part with a digit that is not just a unit ("Suite 100, 200 Main St")
-    # no comma part with a street number: keep the whole string, as before ("Ironstone House, Ironstone Way")
-    street = next((p for p in parts if re.search(r"\d", p) and not UNIT_ONLY_RE.match(p)), (s or "").lower())
+    parts = (s or "").lower().split(",")
+    # drop only LEADING unit-only parts ("Suite 100, 200 Main St"); any other comma part is kept as before
+    while len(parts) > 1 and UNIT_ONLY_RE.match(parts[0]):
+        parts = parts[1:]
+    rest = ",".join(parts)
+    street = parts[0] if re.search(r"\d", parts[0]) else rest  # original rule, applied after the unit prefix
     street = re.sub(r"^\s*#\s*(?=\d)", "", street)  # a leading "#6" is a building number, not a unit
     s = UNIT_RE.sub("", street)
     s = re.sub(r"\b(\d+)(st|nd|rd|th)\b", r"\1", s)
     return " ".join(SUFFIX.get(t, t) for t in squash(s).split())
+
 
 # ---------------------------------------------------------------- dedupe-check
 
