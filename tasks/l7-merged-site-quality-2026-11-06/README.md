@@ -10,12 +10,12 @@ Sources: public operator pages/documents; banked CY2025 ITA under controller's i
 
 ## Applied packet
 
-75 merged tier-C establishments screened =31 VERIFIED C→B upgrades +44 STILL_UNCERTAIN holds. No creates or REJECTs. Exactly62changed cells (31tier,31sources),217append-only evidence observations (186government_filing,31own_site scope),all supports_B. Existing status,site_type,org_id,NAICS,ring,address,county,org rows and historical evidence remain unchanged. No inclusion_log entries. IDs use frozen frame-index slots207000+10×index; id_reservations.csv reserves all75slots,including unused gaps,inside207000–209999. evidence_packet.csv lists the217issued IDs.
+75 merged tier-C establishments screened =30 VERIFIED C→B upgrades +45 STILL_UNCERTAIN holds. No creates or REJECTs. Exactly60changed cells (30tier,30sources),210append-only evidence observations (180government_filing,30own_site scope),all supports_B. Existing status,site_type,org_id,NAICS,ring,address,county,org rows and historical evidence remain unchanged. No inclusion_log entries. IDs use frozen frame-index slots207000+10×index; id_reservations.csv reserves all75slots,including unused gaps,inside207000–209999. evidence_packet.csv lists the210issued IDs.
 
 |State|Merged C establishments screened|C→B establishments|Held C establishments|New evidence observations|Strict326/QCEW before→after|
 |---|---:|---:|---:|---:|---|
 |FL|17|4|13|28|50→50 /798 (6.2657%→6.2657%)|
-|GA|20|9|11|63|75→75 /491 (15.2749%→15.2749%)|
+|GA|20|8|12|56|75→75 /491 (15.2749%→15.2749%)|
 |NY|7|3|4|21|50→50 /410 (12.1951%→12.1951%)|
 |IN|21|10|11|70|129→129 /512 (25.1953%→25.1953%)|
 |WI|10|5|5|35|87→87 /456 (19.0789%→19.0789%)|
@@ -24,7 +24,7 @@ Strict numerator: active/unknown US-or-blank-country NAICS326 sites,tiersA/B/C; 
 
 ## Raw/identity checks and source limits
 
-Reused mergedL6curl(browserUA)/Jina fetcher and repair2 W-token matcher; no shared-tool edits. Three fresh known answers(Hentzen,Valmet,Dutchland) and three fabricated suffix negatives passed before relying on matcher. Attempted82distinct primaryURLs across54held operators:59loaded,21unfetchable,2unreadable;fetches.csv accounts for all82. No more than4distinct discoveryURLs per operator; retries/final raw checks are same-source routes. Final fresh pass re-fetched28admittedURLs and matched all31quotes/location anchors. EFPbody changed only a newsletter honeypot label(Phone→Email); full difference reviewed, manufacturing and issuer context unchanged, raw_refresh_review.json records the hash refresh. refetch.py deliberately stops on unreviewed full-body drift; review context before refreshing a receipt.
+Reused mergedL6curl(browserUA)/Jina fetcher and repair2 W-token matcher; no shared-tool edits. Three fresh known answers(Hentzen,Valmet,Dutchland) and three fabricated suffix negatives passed before relying on matcher. Attempted82distinct primaryURLs across54held operators:59loaded,21unfetchable,2unreadable;fetches.csv accounts for all82. No more than4distinct discoveryURLs per operator; retries/final raw checks are same-source routes. Final fresh pass re-fetched28URLs/31quotes; the retained subset is27URLs/30quotes with matching location anchors. EFPbody changed only a newsletter honeypot label(Phone→Email); full difference reviewed, manufacturing and issuer context unchanged, raw_refresh_review.json records the hash refresh. refetch.py deliberately stops on unreviewed full-body drift; review context before refreshing a receipt.
 
 Own-site claim_detail is literal page words only. Per-site issuer/city/address/activity reasoning is explicit in source_eligibility.csv and witnesses.csv. Berry Princeton/Odon use already-recorded parent_org_id=ORG-002907 Amcor; HabasitSuwanee uses already-recorded ultimate_parent_name=HabasitAG. MAPEI Calhoun magazine expressly names MAPEICorporation as publisher and copyrightowner,so it is the operator own-issued document,not an inferred group relationship. No ownership edits. HSMbranding/issuer bridge remains held.
 
@@ -32,13 +32,13 @@ Historical witnesses are dated as such: SherwinISO2015,Goodyearannual2019,TekniP
 
 ## Named checks
 
-`python3 tasks/l7-merged-site-quality-2026-11-06/check.py`: PASS75verdicts/31fullsourceandphysicalfieldchecks/20seed7731source-firstsample/3freshknownanswers/complete7claimBcoverage/unchangedallotherfieldsandallunrelatedcanonicalfiles/append-only217EVD/byte-idempotent replay. Six real temp-data mutations(latewrong-shardEVD,scopegap,badquotechangedconsistentlyacrosspacketandreceipts,wronglocationanchor,missingAmcorparent,unexpectedstreetdrift) fail before any canonical write. Independent validator experiment withholdingall31new ownscope rows rejectsall31Bpromotions.
+`python3 tasks/l7-merged-site-quality-2026-11-06/check.py`: PASS75verdicts/30fullsourceandphysicalfieldchecks/20seed7731source-firstsample/3freshknownanswers/complete7claimBcoverage/unchangedallotherfieldsandallunrelatedcanonicalfiles/append-only210EVD/byte-idempotent replay. Six real temp-data mutations(latewrong-shardEVD,scopegap,badquotechangedconsistentlyacrosspacketandreceipts,wronglocationanchor,missingAmcorparent,unexpectedstreetdrift) fail before any canonical write. Independent validator experiment withholdingall30new ownscope rows rejectsall30Bpromotions.
 
-`python3 scripts/validate.py`: PASS0errors. `python3 scripts/check_row_loss.py --base origin/main`: PASS0removals. No sharedscripts edited; scriptspytest not applicable. Branch history is pre-passbackup; maina876ae0+exactownedshards+unchangedbuilder replay is the latest integration checkpoint. Unpublished packet was regenerated before review after trimming literal excerpts; only main evidence is the append-only baseline.
+`python3 scripts/validate.py`: PASS0errors. `python3 scripts/check_row_loss.py --base origin/main`: PASS0removals. No sharedscripts edited; scriptspytest not applicable. Branch history is pre-passbackup; pinneda7cd761 is the latest integration checkpoint, with the Apache strict-subset withdrawal recorded below. Unpublished packet was regenerated before review after trimming literal excerpts; only main evidence is the append-only baseline.
 
 ## Refutes
 
-Codex/OpenAI +Grok deep adversarial review pending; draft only. Controller06:25 assignedclerk route/queueexception supersedes original council-only route and no-queue rule for these requests. No Done/merge claim.
+Grok REFUTE accepted and Apache withdrawn; Codex/OpenAI review pending. Draft only. Controller06:25 assignedclerk route/queueexception supersedes original council-only route and no-queue rule for these requests. No Done/merge claim.
 
 ## Holds and findings
 
@@ -46,6 +46,7 @@ Holds are unfinished bounded research,not absence or closure verdicts. Primary C
 
 |Site|Settling fact|
 |---|---|
+|SITE-016120|Grok223 refute accepted: Apache Calhoun corporate recycled-tire process is not bound to197RoyalDrive independently of held811MarineDrive/417SRiverSt plants. Obtain address-specific primary polymer-production witness; city-only match and manufacturing/shipping label do not settle it.|
 |SITE-016000|B-PARENT: Novolex location page names JacksonvilleHilex but no recorded Novolex parent linkage or direct Hilex-issued site polymer-production witness. Settle issuer/operator bridge and plant activity before upgrade.|
 |SITE-016002|JELD-WEN primary site route unavailable; obtain raw own-issued Venice355CenterCourt polymer-manufacturing witness. Search/availability failures imply no absence or closure.|
 |SITE-016003|Own survey lists PlantCity among plants but does not state the actual polymer process/product at4211Amberjack. Obtain site-specific primary plastic-packaging production witness.|
@@ -91,7 +92,7 @@ Holds are unfinished bounded research,not absence or closure verdicts. Primary C
 |SITE-016405|PennColor corporate thermoplastic/location text does not settle1474PutmanParkway actual production scope; primary scope certificate unavailable raw. Obtain explicit Milton site polymer process and reconcile coating/concentrate basis.|
 |SITE-016410|Own Midland history records DePere CNC machining investments; location also appears in retail-store context. Settle dominant2151AmericanBlvd physical function and actual polymer conversion before manufacturing tier upgrade.|
 
-Main refresh before publication: merged pinneda7cd761a7db45e984d2bc35dd78f3e2c52dcf2d1, restored all10exactmainownedshards and replayed unchangedbuilder. integration.json proves31site/217EVD values and executablebuild/check identical to e2d04dc; no hand CSVmerge. Namedcheck/validator0/row-loss rerun on this tree.
+Main refresh before publication: merged pinneda7cd761a7db45e984d2bc35dd78f3e2c52dcf2d1, restored all10exactmainownedshards and replayed unchangedbuilder. Historical pre-withdrawal integration.json proves31site/217EVD values and executablebuild/check identical to e2d04dc; no hand CSVmerge. Namedcheck/validator0/row-loss rerun on this tree.
 
 ## Correction-lane ownership agreement
 
@@ -100,3 +101,8 @@ Controller assigned L11(thr_nn5sx8c9ji), branchagent/codex/creation-error-correc
 GAF exact allocation LF-IN-00282→SITE-016514,ORG-004251,ITA381771,submitted2026-01-22,held6101LowerHarmonyRoad/Mt.VernonIN47620,establishmentnameMt.VernonTPO. The901GivensRoadTPO address is an indexed own-brochure lead only: both www.gaf.com and documents.gaf.com brochure rawroutes failed. No campus/street/production equivalence was established and no GAF quote admitted. ValdostaSITE-016105 is separate. A provisional cluster label sent before reading the allocation was explicitly superseded byLF-IN-00282 in the follow-up; only the authoritative allocation governs.
 
 Conservation directive (controller,2026-11-06) supersedes earlier continuation instructions: finish this existing75-site frame/PR223 and its review fixes only; no new frame/batch. Disputed promotions are withdrawn to STILL_UNCERTAIN, preserving a strict subset of the reviewed packet and permanently reserving their unused evidence IDs, rather than launching another review round. Existing two-family approvals remain required for the surviving packet; no Done claim while pending.
+
+## Grok refute resolution — strict subset
+
+Grok clerk3 REFUTEff22dd5 accepted: Apache SITE-016120 primary Calhoun-wide recycled-tire prose does not bind197RoyalDrive independently of the other held Calhoun plants. Restored its frozen pre-pass C/site-sources row and withdrew EVD-207360–207366,permanently reserved by id_reservations.csv. No new evidence or research; no replacement upgrade. withdrawal.json proves every other canonical site/evidence row dictionary-identical to reviewedff22dd5. Final75=30VERIFIED+45holds,60cells210EVD(180government+30ownscope),27retainedownURLs. Prior31/217 counts/integration are historical and superseded for the current packet. Refute report: reviews/223-clerk-grok-3.md. Conservation directive applied; no new review round requested. Codex review remains pending; Grok objection is cured by withdrawal,not an approval claim.
+

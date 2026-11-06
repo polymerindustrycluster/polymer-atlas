@@ -11,10 +11,13 @@ frame=read(P/'input.csv');vs=read(P/'verdicts.csv');packet=read(P/'evidence_pack
 before={r['site_id']:r for r in json.loads((P/'before.json').read_text())['sites']}
 assert len(frame)==len(vs)==len(before)==len({r['site_id'] for r in vs})==75
 assert Counter(r['state'] for r in frame)=={'FL':17,'GA':20,'NY':7,'IN':21,'WI':10}
-up={r['site_id'] for r in vs if r['verdict']=='VERIFIED'};assert len(up)==31
-assert len(read(P/'holds.csv'))==44 and len(packet)==217 and len(edits)==62
+up={r['site_id'] for r in vs if r['verdict']=='VERIFIED'};assert len(up)==30
+assert len(read(P/'holds.csv'))==45 and len(packet)==210 and len(edits)==60
+assert 'SITE-016120' not in up
+retired={f'EVD-{i}' for i in range(207360,207367)}
+assert not retired & {r['evidence_id'] for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)}
 raw=read(P/'rawcheck.csv');witnesses={r['site_id']:r for r in read(P/'witnesses.csv')}
-assert len(raw)==31 and len({r['source_ref'] for r in raw})==28
+assert len(raw)==30 and len({r['source_ref'] for r in raw})==27
 for r in raw:
  text=Path(r['cache_file']).read_text()
  assert found(text,r['quote']) and found(text,witnesses[r['site_id']]['location_anchor'])
@@ -68,8 +71,8 @@ with tempfile.TemporaryDirectory() as td:
  for state in ['FL','GA','NY','IN','WI']:
   p=data/f'evidence_sites_{state}.csv';rows=read(p);write(p,[r for r in rows if r['evidence_id'] not in {e['evidence_id'] for e in packet if e['source_class']=='own_site'}])
  result=subprocess.run([sys.executable,str(ROOT/'scripts/validate.py')],env={**os.environ,'ATLAS_DATA_DIR':str(data)},capture_output=True,text=True)
- assert result.returncode!=0 and all(sid in result.stdout for sid in up),'missing scope did not reject all31 B sites'
-print('PASS: withholding own scope independently rejects all31 B promotions via validator')
+ assert result.returncode!=0 and all(sid in result.stdout for sid in up),'missing scope did not reject all30 B sites'
+print('PASS: withholding own scope independently rejects all30 B promotions via validator')
 for mutation in ['late_global_id','scope_gap','bad_quote','wrong_location','missing_parent','field_drift']:
  with tempfile.TemporaryDirectory(dir=ROOT/'tasks') as pt,tempfile.TemporaryDirectory() as dt:
   q=Path(pt);shutil.copytree(P,q,dirs_exist_ok=True);data=Path(dt)/'data';shutil.copytree(ROOT/'data',data)
@@ -111,5 +114,5 @@ for state in ['FL','GA','NY','IN','WI']:
  fips={'FL':'12000','GA':'13000','NY':'36000','IN':'18000','WI':'55000'}[state]
  den=float(next(r['annual_avg_estabs'] for r in read(ROOT/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']==fips and r['year']=='2023' and r['industry_code']=='326'))
  shares[state]=dict(strict326_before=previous,strict326_after=count,QCEW2023_private_establishments=den,share_before=previous/den,share_after=count/den)
-result=dict(frame_sites=75,promoted_B_sites=31,held_C_sites=44,changed_cells=62,appended_evidence=217,government_observations=186,own_scope_quotes=31,own_scope_URLs=28,known_answers=3,blind_sample=20,source_URLs_attempted=len(fetches),fetch_outcomes=dict(Counter(r['fetch'] for r in fetches)),all6_mutations='PASS before writes',replay='PASS',state_counts=shares)
+result=dict(frame_sites=75,promoted_B_sites=30,held_C_sites=45,changed_cells=60,appended_evidence=210,government_observations=180,own_scope_quotes=30,own_scope_URLs=27,known_answers=3,blind_sample=20,source_URLs_attempted=len(fetches),fetch_outcomes=dict(Counter(r['fetch'] for r in fetches)),all6_mutations='PASS before writes',replay='PASS',state_counts=shares)
 (P/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

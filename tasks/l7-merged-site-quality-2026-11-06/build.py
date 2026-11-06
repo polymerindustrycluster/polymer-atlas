@@ -14,11 +14,11 @@ def main():
  assert len(frame)==len(verdicts)==len(before)==len({r['site_id'] for r in verdicts})==75
  assert set(before)=={r['site_id'] for r in frame}=={r['site_id'] for r in verdicts}
  upgraded={r['site_id'] for r in verdicts if r['verdict']=='VERIFIED'}
- assert len(upgraded)==31 and upgraded==set(witnesses)==set(eligibility)=={r['site_id'] for r in edits}
+ assert len(upgraded)==30 and upgraded==set(witnesses)==set(eligibility)=={r['site_id'] for r in edits}
  assert all(r['verdict'] in {'VERIFIED','STILL_UNCERTAIN'} for r in verdicts)
- assert len(packet)==len({r['evidence_id'] for r in packet})==217
+ assert len(packet)==len({r['evidence_id'] for r in packet})==210
  assert all(207000<=int(r['evidence_id'][4:])<=209999 and r['record_id'] in upgraded for r in packet)
- assert {r['site_id'] for r in raw}==upgraded and len(raw)==31
+ assert {r['site_id'] for r in raw}==upgraded and len(raw)==30
  orgs={r['org_id']:r for p in data.glob('organizations_*.csv') for r in read(p)}
  for sid in upgraded:
   es=[r for r in packet if r['record_id']==sid]
@@ -61,5 +61,5 @@ def main():
  # Every source, claim, field drift and cross-shard ID is checked before any canonical write.
  for state,rows in site_rows.items():write(data/f'sites_{state}.csv',rows)
  for name,rows in grouped.items():append_sorted(data/name,rows,'evidence_id')
- print('PASS: 31 C→B sites / 62 cells / 217 append-only observations; complete B claims and source/ID preflights.')
+ print('PASS: 30 C→B sites / 60 cells / 210 append-only observations; complete B claims and source/ID preflights.')
 if __name__=='__main__':main()

@@ -17,7 +17,7 @@ def main():
   for a in read(ROOT/f'tasks/{slug}-2026-11-06/allocations.csv'):
    assert a['site_id'] not in allocations;allocations[a['site_id']]=a
  assert len(frame)==len(before)==len(allocations)==75 and set(before)==set(allocations)
- assert len(witnesses)==31 and set(witnesses)<=set(before)
+ assert len(witnesses)==30 and set(witnesses)<=set(before)
  holds={r['site_id']:r for r in read(P/'holds.csv')};assert set(holds)==set(before)-set(witnesses)
  evidence=[];edits=[];verdicts=[];raw=[];gov=[];eligibility=[];reservations=[]
  for index,r in enumerate(frame):
