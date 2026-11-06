@@ -1,10 +1,10 @@
 {
   "frame": 158,
-  "repaired_evidence": 45,
-  "holds": 113,
+  "repaired_evidence": 43,
+  "holds": 115,
   "shards": 6,
   "known_answers": 3,
-  "raw_checks": 45,
+  "raw_checks": 43,
   "mutation_checks": [
     "fabricated quote",
     "changed frozen source hash",

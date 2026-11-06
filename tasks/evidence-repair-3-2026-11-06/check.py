@@ -4,15 +4,17 @@ from collections import Counter
 from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(H))
 from fetch import read,on_page
-BASE='8e8c71ada1f63b7c4d90867027efb8cea57f03a0'
+BASE='e1a1b6609472c5e73bc7c47afddcda079e31f5c7'
 leads=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','4ef764e:tasks/evidence-reverify-archive-2026-11-06/repair_leads.csv'],cwd=ROOT,text=True))))
 expected=[r for r in leads if r['judgment'] in ['NOT_SUPPORTED','WRONG_PAGE','PARTIAL']]
 assert read(H/'input.csv')==expected and len(expected)==158
 vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');raw=read(H/'rawcheck.csv')
 assert len(vs)==158==len({r['evidence_id'] for r in vs})
 assert {r['evidence_id'] for r in vs}=={r['evidence_id'] for r in expected}
-assert Counter(r['verdict'] for r in vs)=={'VERIFIED':45,'STILL_UNCERTAIN':113}
-assert len(raw)==len(alloc)==45==len({r['evidence_id'] for r in alloc})
+assert Counter(r['verdict'] for r in vs)=={'VERIFIED':43,'STILL_UNCERTAIN':115}
+assert len(raw)==len(alloc)==43==len({r['evidence_id'] for r in alloc})
+retired={r['evidence_id'] for r in read(H/'retired_ids.csv')};assert len(retired)==2
+assert not(retired & {r['evidence_id'] for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)})
 for r in raw:
  p=ROOT/r['page'];assert hashlib.sha256(p.read_bytes()).hexdigest()==r['page_sha256'];assert on_page(r['quote'],p)
  assert not on_page(r['quote']+' ZZZ ABSENT INJECTED DEFECT 999',p)
@@ -46,5 +48,5 @@ with tempfile.TemporaryDirectory() as d:
  target=data/'evidence_people.csv';new=read(paths[0])[0].copy();new['evidence_id']=alloc[0]['evidence_id']
  with target.open('a',newline='') as f:csv.DictWriter(f,fieldnames=list(new),lineterminator='\n').writerow(new)
  refuse()
-result=dict(frame=158,repaired_evidence=45,holds=113,shards=6,known_answers=3,raw_checks=45,mutation_checks=['fabricated quote','changed frozen source hash','global duplicate EVD'],existing_rows_unchanged=True,replay_byte_identical=True)
+result=dict(frame=158,repaired_evidence=43,holds=115,shards=6,known_answers=3,raw_checks=43,mutation_checks=['fabricated quote','changed frozen source hash','global duplicate EVD'],existing_rows_unchanged=True,replay_byte_identical=True)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print('PASS',result)

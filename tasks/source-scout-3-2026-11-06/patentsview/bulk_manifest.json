@@ -1,0 +1,71 @@
+{
+  "productIdentifier": "PVGPATDIS",
+  "productDescriptionText": "Includes 35 files for patents granted from January 1976 to the present. Information is included on applicants, assignees (both disambiguated and not disambiguated), inventors (both disambiguated and not disambiguated), and locations of inventors, assignees, and applicants. Also included are technology categories, patents and non-patent literature cited, examiner name, and statements of government interest.",
+  "productTitleText": "PatentsView Granted Patent Disambiguated Data",
+  "productFrequencyText": "QUARTERLY",
+  "daysOfWeekText": "MONDAY",
+  "productLabelArrayText": [
+    "Patent",
+    "Research"
+  ],
+  "productDatasetArrayText": [
+    "PatentsView"
+  ],
+  "productDatasetCategoryArrayText": [
+    "Issued patents (patent grants)",
+    "PatentsView"
+  ],
+  "productFromDate": "1976-01-01",
+  "productToDate": "2025-12-31",
+  "productTotalFileSize": 34207398236,
+  "productFileTotalQuantity": 39,
+  "lastModifiedDateTime": "2026-10-06 14:12:53",
+  "mimeTypeIdentifierArrayText": [
+    "TSV"
+  ],
+  "productFileBag": {
+    "count": 39,
+    "fileDataBag": [
+      {
+        "fileName": "g_patent.tsv.zip",
+        "fileSize": 232076712,
+        "fileDataFromDate": "1976-01-01",
+        "fileDataToDate": "2025-12-31",
+        "fileTypeText": "Data",
+        "fileDownloadURI": "https://api.uspto.gov/api/v1/datasets/products/files/PVGPATDIS/g_patent.tsv.zip",
+        "fileReleaseDate": "2026-04-10 17:53:29",
+        "fileLastModifiedDateTime": "2026-03-12 22:29:41"
+      },
+      {
+        "fileName": "g_location_disambiguated.tsv.zip",
+        "fileSize": 2697159,
+        "fileDataFromDate": "1976-01-01",
+        "fileDataToDate": "2025-12-31",
+        "fileTypeText": "Data",
+        "fileDownloadURI": "https://api.uspto.gov/api/v1/datasets/products/files/PVGPATDIS/g_location_disambiguated.tsv.zip",
+        "fileReleaseDate": "2026-04-10 17:48:32",
+        "fileLastModifiedDateTime": "2026-03-12 22:27:08"
+      },
+      {
+        "fileName": "g_cpc_current.tsv.zip",
+        "fileSize": 503091774,
+        "fileDataFromDate": "1976-01-01",
+        "fileDataToDate": "2025-12-31",
+        "fileTypeText": "Data",
+        "fileDownloadURI": "https://api.uspto.gov/api/v1/datasets/products/files/PVGPATDIS/g_cpc_current.tsv.zip",
+        "fileReleaseDate": "2026-04-10 17:48:00",
+        "fileLastModifiedDateTime": "2026-03-12 22:25:56"
+      },
+      {
+        "fileName": "g_assignee_disambiguated.tsv.zip",
+        "fileSize": 362741666,
+        "fileDataFromDate": "1976-01-01",
+        "fileDataToDate": "2025-12-31",
+        "fileTypeText": "Data",
+        "fileDownloadURI": "https://api.uspto.gov/api/v1/datasets/products/files/PVGPATDIS/g_assignee_disambiguated.tsv.zip",
+        "fileReleaseDate": "2026-04-10 17:42:57",
+        "fileLastModifiedDateTime": "2026-03-12 22:25:09"
+      }
+    ]
+  }
+}
