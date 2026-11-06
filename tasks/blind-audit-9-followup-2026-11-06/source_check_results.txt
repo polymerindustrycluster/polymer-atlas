@@ -1,0 +1,7 @@
+Parent reran both researcher checker commands; outputs below.
+PASS audit9-follow-a: unique8; quote sequences match hashed retrieved bodies/OCR; no error without primary evidence; settling facts7; 0 data diff; branch unchanged; attempts {'SITE-016105': 10, 'SITE-019009': 7, 'SITE-016015': 6, 'SITE-018015': 10, 'SITE-019001': 4, 'SITE-016000': 10, 'SITE-014010': 10, 'SITE-016009': 9}
+grades {'agreement': 1, 'unresolved': 7}
+
+PASS audit9-followup-blind-b: unique8; 19 quotes replayed from hashed raw; attempts {'SITE-016010': 1, 'SITE-014007': 8, 'SITE-019002': 6, 'SITE-019011': 9, 'SITE-014015': 5, 'SITE-016006': 5, 'SITE-016101': 8, 'SITE-016116': 9}; branch unchanged; zero staged/unstaged data diff
+
+Parent rawcheck.py independently regenerated all32quote observations from81hash/byte verifiedbodies, includingGAFpage25OCR;36unarchiveddiscovery/failed routesexplicitlyexcludedfrompositiveevidence.

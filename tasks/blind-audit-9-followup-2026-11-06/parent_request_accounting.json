@@ -1,0 +1,14 @@
+{
+  "known_answer_and_diagnostic_http_requests": 5,
+  "site_budget_charges": {
+    "SITE-019001": 2,
+    "SITE-016010": 1,
+    "SITE-019009": 2,
+    "SITE-016015": 2
+  },
+  "shared_request_note": "Two Storopack page fetches each cover both listed site addresses, conservatively charged to both sites; therefore seven site charges from five actual HTTP requests.",
+  "unarchived_diagnostic_body": 1,
+  "diagnostic_limitation": "Initial literal NW normalization request failed strict match before body hash receipt was written. No outcome or positive claim used it. Later verbatim request hash and positive/negative results are in parent_calibration.json.",
+  "pella_receipt": "parent_first_site.json",
+  "cork_receipt": "parent_first_site_b.json"
+}

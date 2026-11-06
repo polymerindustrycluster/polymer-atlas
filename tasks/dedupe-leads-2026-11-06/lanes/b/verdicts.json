@@ -1,0 +1,312 @@
+[
+  {
+    "pair_id": "D06",
+    "record_table": "sites",
+    "a_id": "SITE-001858",
+    "b_id": "SITE-001904",
+    "description": "American Sign/Thermoprene",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "The 2024-05-20 own Innoplast release names Thermoprene and American Sign Products as separate subsidiaries of its portfolio. Their shared address does not prove same legal operator or same establishment.",
+    "settling_fact": "Dated legal/DBA record establishing whether American Sign Products Inc and Thermoprene Inc are distinct legal operators or aliases, plus establishment/unit boundaries at 5718 Transportation Blvd.",
+    "recommendation": "Retain both site records; flag possible co-location/group affiliation only. Do not author parent or site-group edges from this hypothesis.",
+    "evidence": [
+      {
+        "source_url": "https://innoplast.com/blog/scalecos-innoplast-holdings-acquires-shur-tite-products/",
+        "source_class": "own_site",
+        "source_date": "2024-05-20",
+        "date_basis": "JSON-LD datePublished",
+        "retrieved_date": "2026-11-06",
+        "quote": "subsidiaries Thermoprene and American Sign Products",
+        "raw_sha256": "5a863f35c5305aade18608d8d0e30ef453457bdf64b249157295fff9b6b0fbf2",
+        "receipt_id": "ORG-001779-3",
+        "role": "separate subsidiaries, not legal identity",
+        "endpoints": [
+          "SITE-001858",
+          "SITE-001904"
+        ]
+      },
+      {
+        "source_url": "https://americansignproducts.com/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "5718 Transportation Blvd., Garfield Heights, OH 44125",
+        "raw_sha256": "5ec63573abaa53100827e6decfbbb7b4b2bcbac10c77dfd7cebc7d6cf7be1972",
+        "receipt_id": "ORG-001779-1",
+        "role": "endpoint A address",
+        "endpoints": [
+          "SITE-001858"
+        ]
+      },
+      {
+        "source_url": "https://thermoprene.com/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "5718 Transportation Blvd, Garfield Heights, OH 44125",
+        "raw_sha256": "fca5d8f1acdf3965ed1508fc061187b7cd6e730a163638b80efa013066428304",
+        "receipt_id": "ORG-001905-1",
+        "role": "endpoint B address",
+        "endpoints": [
+          "SITE-001904"
+        ]
+      }
+    ]
+  },
+  {
+    "pair_id": "D07",
+    "record_table": "sites",
+    "a_id": "SITE-001882",
+    "b_id": "SITE-001721",
+    "description": "Horsemen Pride/Tusco",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Both own brands list 10008 State Route 43 and distinct brand terms-of-service. Neither explicitly identifies HP Enterprise Inc as legal operator of Tusco or dates a same-entity establishment consolidation.",
+    "settling_fact": "Dated primary acquisition/DBA/legal operator document tying Tusco Products and HP Enterprise Inc to the same legal operator AND same manufacturing establishment; common holding company alone is insufficient.",
+    "recommendation": "Retain both records; flag shared-address and potential affiliated operations. No inferred merge or site group.",
+    "evidence": [
+      {
+        "source_url": "https://horsemenspride.com/pages/about-us",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "10008 State Route 43 Streetsboro, Ohio 44241",
+        "raw_sha256": "26090b110b3310e998f4f02ddee57e6ce7dee77fc4c6db56835554c3e1904a00",
+        "receipt_id": "ORG-001829-2",
+        "role": "endpoint A address",
+        "endpoints": [
+          "SITE-001882"
+        ]
+      },
+      {
+        "source_url": "https://www.tuscoproducts.com/pages/the-tusco-advantage",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "10008 State Route 43 Streetsboro, Ohio 44241",
+        "raw_sha256": "39340c5214d56e802e0ed3a106cd9cf5dde53ef68724851b9ac69f3f90f5a77c",
+        "receipt_id": "ORG-001646-2",
+        "role": "endpoint B address",
+        "endpoints": [
+          "SITE-001721"
+        ]
+      },
+      {
+        "source_url": "https://horsemenspride.com/policies/terms-of-service",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "This website is operated by Horsemen's Pride.",
+        "raw_sha256": "759afb81740248309c05c734e9f7a139470c5a326c41bcd4dfbb3d8d9608d1e8",
+        "receipt_id": "ORG-001829-4",
+        "role": "brand terms, not HP Enterprise legal bridge",
+        "endpoints": []
+      },
+      {
+        "source_url": "https://www.tuscoproducts.com/policies/terms-of-service",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "This website is operated by Tusco Products.",
+        "raw_sha256": "d031f7d4049b8485fa6f8aa2c30f0b6dc7d1c4972a1342df8eaa1f143ead93a6",
+        "receipt_id": "ORG-001646-5",
+        "role": "brand terms, not common legal operator",
+        "endpoints": []
+      }
+    ]
+  },
+  {
+    "pair_id": "D08",
+    "record_table": "sites",
+    "a_id": "SITE-001924",
+    "b_id": "SITE-001717",
+    "description": "IT Plastics/Overmold",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "IT Plastics and Overmold Express own pages both identify 7675 Jenther Drive. Overmold names its founder but no retrieved dated primary source states legal DBA/acquisition identity with Industrial Thermoset Plastics.",
+    "settling_fact": "Dated primary legal-name/DBA, merger or operator-continuity document explicitly connecting Industrial Thermoset Plastics and Overmold Express at this establishment, and whether simultaneous units or time-separated operators.",
+    "recommendation": "Retain both records and flag identity question. Same address and matching capabilities do not establish duplicate.",
+    "evidence": [
+      {
+        "source_url": "http://www.itplastics.com/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "7675 Jenther Dr Mentor, Ohio",
+        "raw_sha256": "1eebc6846e0a0c0f3f981aa732d659a3c124fee7cdbba701339749f99f61b84e",
+        "receipt_id": "ORG-001930-1",
+        "role": "endpoint A address",
+        "endpoints": [
+          "SITE-001924"
+        ]
+      },
+      {
+        "source_url": "https://overmoldexpress.com/about/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "7675 Jenther Dr, Mentor, OH 44060",
+        "raw_sha256": "bf3d7d454b960457c04c5be80e399bc4cc9cae0b717ef3e98a304852a5b806bc",
+        "receipt_id": "ORG-001643-3",
+        "role": "endpoint B address",
+        "endpoints": [
+          "SITE-001717"
+        ]
+      }
+    ]
+  },
+  {
+    "pair_id": "D09",
+    "record_table": "sites",
+    "a_id": "SITE-002301",
+    "b_id": "SITE-002302",
+    "description": "Esstech overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Esstech own current pages name Esstech Inc at 48 Powhattan Ave. Esschem own history calls Esstech an affiliate. This does not date or legally resolve legacy Esstech Division Of Esschem Co versus Esstech Inc at one establishment. The held org tombstone is not independent site-duplicate proof.",
+    "settling_fact": "Dated primary record explicitly establishing the legal continuity or DBA between legacy Esstech Division Of Esschem Co and Esstech Inc, plus same establishment rather than an historic operator succession.",
+    "recommendation": "Retain both sites pending legal/establishment witness. Do not use prior merged-org successor as merge evidence.",
+    "evidence": [
+      {
+        "source_url": "https://www.esstechinc.com/contact-us/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "48 Powhattan Ave Essington, PA 19029-0039",
+        "raw_sha256": "d8bca1a2c4ce18a3b8c8b224548e1a32860391cd1b2d1fbd96b2d2d100273997",
+        "receipt_id": "ORG-002324-3",
+        "role": "current endpoint B address; not legacy legal bridge",
+        "endpoints": [
+          "SITE-002302"
+        ]
+      },
+      {
+        "source_url": "https://www.esschem.com/about-us/",
+        "source_class": "own_site",
+        "source_date": "",
+        "date_basis": "undated page; retrieval is not publication",
+        "retrieved_date": "2026-11-06",
+        "quote": "With our affiliates, Esstech, Esschem Europe and EssPac",
+        "raw_sha256": "3c6dbd92af5c379897bebb7b8a2668421494b45c299f7dfce4c1c18f29caf0a9",
+        "receipt_id": "ORG-002324-4",
+        "role": "affiliate context, not legal identity",
+        "endpoints": []
+      }
+    ]
+  },
+  {
+    "pair_id": "D10",
+    "record_table": "sites",
+    "a_id": "SITE-002364",
+    "b_id": "SITE-002304",
+    "description": "APT overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Own APT route blocked; Sunbiz and OSHA routes blocked; two IPOPHL attempts returned empty HTTP200. Indexed official recordal lead suggests Harmony-to-Evans City address change, but no inspectable dated raw bridge retrieved. Existing merged organization and same109 Conica address are not sufficient site-duplicate proof.",
+    "settling_fact": "Inspectable dated primary legal record naming APT Advanced Polymer Technology Corp at both Harmony and Evans City109 Conica addresses, plus explicit establishment continuity/address correction rather than relocation or separate premises.",
+    "recommendation": "Hold both sites; no rekey or merge. No additional fetch to rescue yield: actual6 attempts exceeded helper5 through cache-name collision; one body uninspectable.",
+    "evidence": [],
+    "discovery_leads": [
+      {
+        "url": "https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+        "note": "Indexed recordal dated2023-05-05 describes applicant Harmony and registrant Evans City; raw empty, not admitted evidence"
+      }
+    ]
+  },
+  {
+    "pair_id": "D11",
+    "record_table": "sites",
+    "a_id": "SITE-003477",
+    "b_id": "SITE-001399",
+    "description": "Johnsonite/Tarkett Middlefield legacy/current overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Dated Ohio EPA permit row names Tarkett USA Inc at Middlefield16035 Industrial Pkwy; legacy held endpoint is attributed to Tarkett North America. No dated typed legal identity/DBA bridge between these organizations was retrieved. Shared Tarkett brand/address alone does not resolve same legal operator.",
+    "settling_fact": "Dated legal/DBA/operator-continuity witness connecting Tarkett USA Inc dba Johnsonite and held Tarkett North America to the exact16035 Industrial Pkwy establishment, without assuming group identity.",
+    "recommendation": "Retain both Middlefield records; flag potential duplicate pending legal bridge. No physical closure or org rekey.",
+    "evidence": [
+      {
+        "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+        "source_class": "government_filing",
+        "source_date": "2024-08-27",
+        "date_basis": "permit row date",
+        "retrieved_date": "2026-11-06",
+        "quote": "Tarkett USA, Inc. || 16035 Industrial || 8/27/2024",
+        "raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0",
+        "receipt_id": "ORG-000131-1",
+        "role": "Middlefield permit, not rename or legal alias",
+        "endpoints": [
+          "SITE-003477",
+          "SITE-001399"
+        ]
+      }
+    ]
+  },
+  {
+    "pair_id": "D12",
+    "record_table": "sites",
+    "a_id": "SITE-003478",
+    "b_id": "SITE-000427",
+    "description": "Johnsonite/Tarkett Chagrin Falls legacy/current overlap",
+    "verdict": "STILL_UNCERTAIN",
+    "decision": "LINK_FLAG",
+    "canonical_id": "",
+    "same_legal_entity_proven": false,
+    "same_establishment_proven": false,
+    "merge_authorized": false,
+    "reason": "Ohio EPA dated2017-03-01 row names JOHNSONITE at16910 Munn Road Chagrin Falls. No dated typed legal bridge from Tarkett USA Inc dba Johnsonite to Tarkett North America was retrieved. Same brand/address is insufficient for legal identity.",
+    "settling_fact": "Dated primary operator/legal continuity tying both held organization attributions to the exact16910 Munn Road establishment; retain distinction from Middlefield and17340 Munn Road.",
+    "recommendation": "Retain both Chagrin Falls records; flag potential duplicate pending exact legal bridge. Do not infer closure or merge the separate Middlefield plant.",
+    "evidence": [
+      {
+        "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+        "source_class": "government_filing",
+        "source_date": "2017-03-01",
+        "date_basis": "permit row date",
+        "retrieved_date": "2026-11-06",
+        "quote": "JOHNSONITE 16910 MUNN RD || 3/1/2017",
+        "raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0",
+        "receipt_id": "ORG-000131-1",
+        "role": "Chagrin Falls permit, not rename or legal alias",
+        "endpoints": [
+          "SITE-003478",
+          "SITE-000427"
+        ]
+      }
+    ]
+  }
+]
