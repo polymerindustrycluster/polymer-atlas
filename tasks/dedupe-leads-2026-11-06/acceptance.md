@@ -1,0 +1,18 @@
+# Dedupe-lead queue acceptance — 2026-11-06
+
+Controller's clock correction withdraws the prior stop. New branch agent/codex/dedupe-leads-2026-11-06, base542629e. Exact12pairs D01–D12/endpoints in pairs.json: Cooper; Iten/TDM; Roppe; two sharedTRIFID org pairs; threeL2co-location pairs; Esstech/APT/Johnsonite-Tarkett. No unlisted scope. L5bthr_ii6ybubss4 soledatawriter; helperspacketsonlytheirlanes.
+
+Each pair gets one AGENTS verdict VERIFIED/STILL_UNCERTAIN/DUPLICATE_OFheldsurvivor/REJECTdecidingfact, plus decision and settlingfact if unresolved. Merge requires dated primary SAME legalentity and SAMEestablishment for sites. Address/domain/TRIFID/parentgroup alone insufficient; time-separated operators not automatically duplicates. Otherwise link-and-flag clearly as hypothesis, with evidence and settlingfact. Failedfetchavailabilitynotabsence; max~6primaryfetches/org, reservelead1. Appliedquotesindependentlyrawmatched,datesdistinguishedfromretrieval. No private/CRM/licensedfacts.
+
+Never delete records. Proven duplicate org tombstoned merged/successor/date/source and generatedrelationshipparity. Proven duplicate site retained as merged operatingstatus tombstone with datedsource/canonicalheldsiteIDinnotes (no successor-site column), notphysicalclosure. If procedure/survivor needsowneruling,HOLDwithrecommendation. No newsitegroup fromsameaddress. No impliedlegalalias/parent fromsuccessorpointer orregistryparentlabel.
+
+EVD318000–318999only, allocationfrozenbeforeapply,gapspermanent. Evidenceappend-only,oldIDs/contentpreserved; everyaddedfacthasmatchingclaimevidencecorrectshard. No falseidentityclaimforuncertainpairs. No qualifiers/coordinates/scriptsvalidateedits. Registrylinksretainedunlessexactsource-systemverificationprovesnecessaryrekeywithincontrollerinstruction; anyoldcompositekeyremovaldeclaredtaskREMOVALS.csvwithevidence/reason. No masscleanup.
+
+Builderidempotent; fullpreimages/headers/evidenceIDs/registrycompositekeyscheckedbeforewrites. Manifestrestrictsfields. Freshmainrestore+replay,nohandCSVmerge;branchhistorybackup,READMEjournal. Namedchecks:exact12uniqueverdicts/endpoints,quote/date/entityguards;3knownanswers+actualnegativecontrols(sameaddressdifferententity,parentvsoperator,missingdate,fabricatedquote),fullorg/siteIDandoldEVDcontentunions,exactchangedfields,retirement/noIDreuse,sourceceilings/relationshipparity,registryREMOVALS,rowloss,byte-idempotency,latecollision/preimage/forbiddenphysicalclosurefail-beforewrite,validate0. Scripts pytest ifscriptschanged. IndependentdeepCodex+Grokclerksbeforeapproval.
+
+FirstuserAtlascontroller/PICresearcher;nonusefinding2026-11-13. Controllerownstracker/status/merge. NoDonebeforegates. Catalogue search partial; Mac entityindexmissing, not evidenceofabsence.
+
+
+Controller correction supersedes originalJohnsonitepair: D11SITE003477↔001399Middlefield,D12SITE003478↔000427ChagrinFalls. Literal001399↔000427retainedasdistinct-locationcontrol,notathirteenthmergecandidate. Bnowowns7pairs. Allotherendpointclaimsunchanged.
+
+Controller packet-only ruling supersedes the provisional canonical-application plan: all12adjudications+24bidirectionalheld-IDflags/settlingfacts are the deliverable; no canonical notes/merges/EVD/registry/status changes. Source-backeddistinctnotesareoptional;lanechoosespacketonlyforbothdistinctpairs too. EVD318000blockunused,noremovals/rekeys. build.py writesonlytaskoutputsverdicts.json/flags.csv,notdata. Namedoracle nowasserts allcanonicalCSVbytes unchanged, exact12/24+endpointidentity, source/raw/date/knownanswercoverage, exclusion of every merge/rekey, builderidempotencyandnegativecontrols,validator0/rowloss. No latecanonicalwritefault machinery needed because builder has no canonicalwrite route.
