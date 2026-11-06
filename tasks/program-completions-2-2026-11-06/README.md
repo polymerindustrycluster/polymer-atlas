@@ -110,7 +110,7 @@ hand-merge numeric cells. Branch base history is pre-pass backup; README is pass
 
 ## Review / remaining work
 
-Independent deep Codex3/Grok3 clerk review pending under06:25 route. Draft allowed under
+Independent deep Codex3 review pending under06:25 route; Grok3 approval recorded below. Draft allowed under
 05:55 override; no completion approval or Done claim until findings resolved. Registry
 counts need no fabricated natural-language quotes: exact raw numeric rows, join keys,
 parser, totals and source hash are the witnesses. No personal records involved.
@@ -121,5 +121,9 @@ worked by this branch. The94 batch2 STILL_UNCERTAIN settling facts remain commit
 PR160 holds.csv and are targeted follow-ups, not silently discarded leads.
 
 Draft PR https://github.com/polymerindustrycluster/polymer-atlas/pull/168 .
-Codex3/Grok3 deep review requests queued for head72c9de9; no verdict yet.
+Codex3/Grok3 deep review requests queued for head72c9de9; Grok3 reviewed f67c207 (same data plus README), Codex3 verdict pending.
 Earlier PR144/160 remain unchanged on their own branches and review queues.
+
+## Grok family approval receipt
+
+Grok/xAI clerk3thr_4g4uwqjxjv APPROVE f67c207d23f99f18e991ecc00ed550532c609c84,0findings. Independently verified 147proposals=34VERIFIED/81degree-onlynumericREJECT/32holds;112cells/34programs;5newblankcountpairs/29confirmedpairs;34registry supports_C EVD285100–133 append-only. Fresh raw C2024_a hash a7f6d0f03093eef933ea5a31474ca1289cb97c73062b7cc1245fc3cabaff7c61 matched307707unique keys (major1286979/major220728). Recomputed mixed-award Shawnee6,Ferris30,Everett56 remainunapplied;GT114 ondegreelevels only. No first-year write;2024 notclosure; institution×CIP notpolymer-trackheadcount. Check/replay/wrongUNITID+wrongshardzero-write/validate0/row-loss PASS. Latermain changes needintegratorreplay; notcontent defect. Report: reviews/168-clerk-grok-3.md incontrollerstorage. Codex3 approval remains pending; no two-family completion approval/Done claim. No freshweb or fullscriptspytest repeated for this docs-only receipt.
