@@ -21,6 +21,7 @@ def write(p,rows):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');a=ap.parse_args()
     cs={r['cluster_id']:r for r in read(P/'input.csv')};vs=read(P/'verdicts.csv')
+    reserved={r['cluster_id']:r for r in json.loads((P/'reserved-ids.json').read_text())}
     assert len(vs)==len(cs)==len({v['cluster_id'] for v in vs}) and set(cs)=={v['cluster_id'] for v in vs}
     assert all(v['verdict'] in {'VERIFIED','REJECT','STILL_UNCERTAIN','DUPLICATE_OF'} for v in vs)
     ds={r['cluster_id']:r['result'] for r in json.loads((P/'dedupe.json').read_text())}
@@ -42,10 +43,11 @@ def main():
     for v in vs:
         if v['verdict']!='VERIFIED':continue
         c=cs[v['cluster_id']];fed=[];band='unknown'
+        slot=reserved[c['cluster_id']];eidn=slot['evidence_start']
         for token in c['sources_with_ids'].split(';'):
             kind,num=token.split(':',1)
             if kind=='ITA':
-                r=ita[num];band=r['band_from_avg_employees'] or 'unknown';assert r['state']=='CA' and key(r['street'])==key(c['street'])
+                r=ita[num];band=(r['band_from_avg_employees'] or 'unknown') if r['reliability']=='ok' and r['size_code_vs_avg_employees']=='consistent' else 'unknown';assert r['state']=='CA' and key(r['street'])==key(c['street'])
                 fed.append((f"OSHA ITA Form 300A CY{r['year_filing_for']} establishment {num} ({r['establishment_name']}); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted {r['date_submitted'][:10]}; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv",r['naics_code'],r['date_submitted'][:10],r.get('industry_description','')))
                 blind.append(dict(cluster_id=c['cluster_id'],source_family='ITA',**r))
             elif kind=='OSHA':
@@ -72,16 +74,21 @@ def main():
         oid=v['held_org_id']
         if not oid:
             assert not [h for s in ds[c['cluster_id']]['steps'] for h in s['hits']],c['cluster_id']
-            oid=f'ORG-{oidn:06d}';oidn+=1
+            oid=slot['org_id'];oidn+=1
             out['organizations_US.csv'].append(dict(org_id=oid,legal_name=v['org_legal_name'],entity_type='unknown',ring_primary=ring,hq_in_scope='national_us',naics_primary=naics,naics_primary_source_type='government_filing',naics_primary_source_name=ref,naics_confidence='medium',website=v['org_website'],description_1line=f"Federal-recorded polymer manufacturer with an establishment in {c['city']}, California.",pic_relevance='potential_member',status='unknown',sources=ref,verification_tier='C',last_verified=DATE,created_by=BY,notes=notes+' HQ not established; federal establishment address is not asserted as HQ.',monitor_watch='false'))
             for claim,detail in [('existence',v['org_legal_name']),('address','HQ not established; federal establishment only: '+c['street']+', '+c['city']),('scope',f'Government manufacturing classification NAICS {naics}; provisional C, no capability inference'),('code',naics)]:evidence('evidence_organizations_US.csv','organizations',oid,claim,detail,ref)
         else:assert oid in orgs
-        sid=f'SITE-{sidn:06d}';sidn+=1
-        out['sites_CA.csv'].append(dict(site_id=sid,org_id=oid,site_name=c['best_name'],site_type='manufacturing_plant',street_address=c['street'],city=c['city'],state='CA',zip=c['zip5'],country='US',ring_primary=ring,naics_primary=naics,naics_primary_source_type='government_filing',naics_confidence='medium',employee_band_site=band,operating_status='unknown',sources=ref+('; '+v['own_url'] if rawok else ''),verification_tier=tier,last_verified=DATE,created_by=BY,notes=notes+' Federal-only scope remains provisional C unless own witness is cited; current status not adjudicated.'))
+        sid=slot['site_id'];sidn+=1
+        out['sites_CA.csv'].append(dict(site_id=sid,org_id=oid,site_name=c['best_name'],site_type='manufacturing_plant',street_address=v.get('street_override') or c['street'],city=c['city'],state='CA',zip=c['zip5'],country='US',ring_primary=ring,naics_primary=naics,naics_primary_source_type='government_filing',naics_confidence='medium',employee_band_site=band,operating_status='unknown',sources=ref+('; '+v['own_url'] if rawok else ''),verification_tier=tier,last_verified=DATE,created_by=BY,notes=notes+' Federal-only scope remains provisional C unless own witness is cited; current status not adjudicated.'))
         for claim,detail in [('existence',f"{c['best_name']} at {c['street']}"),('address',f"{c['street']}, {c['city']}, CA {c['zip5']}; county unverified"),('scope',f'Federal manufacturing classification NAICS {naics}: {description}; no capability inference'),('code',naics),('parent',f"Federal operator {v['org_legal_name']} linked to {oid}")]:
-            evidence('evidence_sites_CA.csv','sites',sid,claim,detail,ref,tier=tier)
+            evidence('evidence_sites_CA.csv','sites',sid,claim,detail,ref,tier='C' if claim=='scope' else tier)
         if band!='unknown':evidence('evidence_sites_CA.csv','sites',sid,'size_band','employee_band_site='+band,ref,tier=tier)
         if rawok:evidence('evidence_sites_CA.csv','sites',sid,'scope',own,v['own_url'],'own_site',tier)
+        if v.get('street_override'):
+            addr=read(P/'address-rawcheck.csv')[0]
+            assert addr['cluster_id']==c['cluster_id'] and addr['raw']=='yes' and addr['quote']==v['street_override']
+            eidn=181000
+            evidence('evidence_sites_CA.csv','sites',sid,'address',addr['quote'],addr['url'],'own_site',tier)
         alloc.append(dict(cluster_id=c['cluster_id'],org_id=oid,site_id=sid,tier=tier))
     assert oidn<=11000 and sidn<=16000 and eidn<=200000
     write(P/'allocations.csv',alloc)
