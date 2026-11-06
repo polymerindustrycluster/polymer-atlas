@@ -1,0 +1,52 @@
+{
+  "attempted": 11,
+  "successful": 10,
+  "unavailable": 1,
+  "retained_successes": [
+    {
+      "site_id": "SITE-011009",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:30.161579+00:00",
+      "route": "direct"
+    },
+    {
+      "site_id": "SITE-011010",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:30.333264+00:00",
+      "route": "direct"
+    },
+    {
+      "site_id": "SITE-011011",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:32.502120+00:00",
+      "route": "direct"
+    },
+    {
+      "site_id": "SITE-011028",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:31.694654+00:00",
+      "route": "direct"
+    },
+    {
+      "site_id": "SITE-011151",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:32.473804+00:00",
+      "route": "direct"
+    },
+    {
+      "site_id": "SITE-011155",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:32.756782+00:00",
+      "route": "direct"
+    },
+    {
+      "site_id": "SITE-011158",
+      "status": "PASS",
+      "fetched_at": "2026-11-06T14:06:32.940255+00:00",
+      "route": "direct"
+    }
+  ],
+  "retired_success": "SITE-011032",
+  "held_availability": "SITE-011165",
+  "availability_reason": "Fresh independent acquisition ROBOTS_BLOCKED; prior readable snapshot retained as historical receipt only"
+}

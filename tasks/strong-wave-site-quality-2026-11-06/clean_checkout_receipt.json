@@ -1,0 +1,10 @@
+{
+  "commit": "53a3887",
+  "cache_copied": false,
+  "public_own_sources": 7,
+  "public_county_sources": 7,
+  "county_known_answers": 3,
+  "acquisition": "PASS",
+  "named_check": "PASS",
+  "check_result": "PASS {\"frame\": 40, \"original_eligible\": 161, \"unworked\": 121, \"promotions\": 7, \"holds\": 33, \"evidence\": 49, \"government\": 28, \"own\": 21, \"raw_pages\": 7, \"positive_quotes\": 29, \"known_answers\": 3, \"county_known_answers\": 3, \"all_seven_claims\": true, \"replay_byte_identical\": true, \"no_write_faults\": 7, \"retired_ids\": 28, \"strict_counts\": {\"MN\": {\"before\": 58, \"after\": 58}, \"NY\": {\"before\": 50, \"after\": 50}}}"
+}
