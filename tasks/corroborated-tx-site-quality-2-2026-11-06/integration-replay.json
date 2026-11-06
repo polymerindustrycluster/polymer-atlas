@@ -1,0 +1,16 @@
+{
+  "integrated_main": "1e5834394f592f7237a5919500d9fbd5f2c48ad5",
+  "original_proposal_ref": "3abccb0",
+  "restoration_209_merged": true,
+  "site_records_field_identical": 11,
+  "evidence_records_field_identical": 57,
+  "immutable_logic_and_source_files": [
+    "build.py",
+    "check.py",
+    "input.csv",
+    "verdicts.csv",
+    "evidence_packet.csv",
+    "government-review.csv",
+    "rawcheck.csv"
+  ]
+}

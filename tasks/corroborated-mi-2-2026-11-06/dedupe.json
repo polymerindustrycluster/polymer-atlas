@@ -1,0 +1,241 @@
+{
+  "LF-MI-01263": [],
+  "LF-MI-00373": [],
+  "LF-MI-01282": [
+    {
+      "id": "ORG-002637",
+      "name": "Tray-Pak Corporation",
+      "city": "Reading",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'EASYPAK LLC'"
+    },
+    {
+      "id": "ORG-007412",
+      "name": "Nuconic Packaging, LLC",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'EASYPAK LLC'"
+    }
+  ],
+  "LF-MI-01084": [],
+  "LF-MI-00087": [
+    {
+      "id": "ORG-004308",
+      "name": "Cytiva US LLC",
+      "city": "Marlborough",
+      "state": "MA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MA.csv",
+      "match": "name key 'cytiva' = trade_names 'Cytiva'"
+    }
+  ],
+  "LF-MI-00256": [],
+  "LF-MI-00673": [
+    {
+      "id": "ORG-001619",
+      "name": "SOPREMA Inc",
+      "city": "Wadsworth",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'soprema' = legal_name 'SOPREMA Inc'"
+    }
+  ],
+  "LF-MI-00848": [],
+  "LF-MI-00025": [],
+  "LF-MI-00051": [],
+  "LF-MI-00069": [],
+  "LF-MI-00686": [],
+  "LF-MI-00833": [],
+  "LF-MI-00031": [],
+  "LF-MI-00034": [],
+  "LF-MI-00065": [],
+  "LF-MI-00084": [],
+  "LF-MI-00116": [],
+  "LF-MI-00226": [],
+  "LF-MI-00234": [],
+  "LF-MI-00262": [],
+  "LF-MI-00408": [],
+  "LF-MI-00570": [],
+  "LF-MI-00740": [],
+  "LF-MI-00878": [],
+  "LF-MI-00037": [],
+  "LF-MI-00243": [],
+  "LF-MI-00266": [
+    {
+      "id": "ORG-002080",
+      "name": "Mitsubishi Chemical Performance Polymers Inc",
+      "city": "Bellevue",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'mitsubishi chemical performance polymers' = legal_name 'Mitsubishi Chemical Performance Polymers Inc'"
+    },
+    {
+      "id": "ORG-002043",
+      "name": "Mitsubishi Chemical America, Inc. (Bellevue Plant)",
+      "city": "Bellevue",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'MITSUBISHI CHEMICAL PERFORMANCE POLYMERS INC'"
+    }
+  ],
+  "LF-MI-00659": [],
+  "LF-MI-00228": [
+    {
+      "id": "ORG-001466",
+      "name": "Henkel Corporation",
+      "city": "Warrensville Heights",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'henkel' = legal_name 'Henkel Corporation'"
+    },
+    {
+      "id": "ORG-003973",
+      "name": "Stahl USA",
+      "city": "Peabody",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'Henkel'"
+    },
+    {
+      "id": "ORG-000345",
+      "name": "Forest City Technologies",
+      "city": "Wellington",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Henkel'"
+    },
+    {
+      "id": "ORG-001611",
+      "name": "Flint Group North America Corporation",
+      "city": "Lebanon",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Henkel'"
+    }
+  ],
+  "LF-MI-00415": [],
+  "LF-MI-00652": [],
+  "LF-MI-00794": [],
+  "LF-MI-00862": [
+    {
+      "id": "ORG-007054",
+      "name": "Diversitak, Inc.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'DIVERSIFIED CHEMICAL TECHNOLOGIES INC'"
+    }
+  ],
+  "LF-MI-01094": [
+    {
+      "id": "ORG-002878",
+      "name": "AptarGroup, Inc.",
+      "city": "Crystal Lake",
+      "state": "IL",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_IL.csv",
+      "match": "name key 'aptargroup' = legal_name 'AptarGroup, Inc.'"
+    }
+  ],
+  "LF-MI-01103": [],
+  "LF-MI-00491": [
+    {
+      "id": "ORG-002039",
+      "name": "M. Argueso & Co., Inc.",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'm argueso and' = legal_name 'M. Argueso & Co., Inc.'"
+    }
+  ],
+  "LF-MI-00712": [],
+  "LF-MI-00773": [],
+  "LF-MI-01143": [
+    {
+      "id": "ORG-003187",
+      "name": "Specialty Materials, Inc.",
+      "city": "Lowell",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "name key 'smi' = trade_names 'SMI'"
+    },
+    {
+      "id": "ORG-004818",
+      "name": "Sports Molding, Inc.",
+      "city": "Clearfield",
+      "state": "UT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_UT.csv",
+      "match": "trade_names contains 'SMI'"
+    }
+  ],
+  "LF-MI-00820": [],
+  "LF-MI-01060": [],
+  "LF-MI-01153": [
+    {
+      "id": "ORG-001114",
+      "name": "Sika Corporation",
+      "city": "Marion",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'sika' = legal_name 'Sika Corporation'"
+    },
+    {
+      "id": "ORG-001577",
+      "name": "Master Builders Solutions US LLC",
+      "city": "Beachwood",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SIKA CORPORATION'"
+    }
+  ],
+  "LF-MI-01177": [],
+  "LF-MI-00560": [],
+  "LF-MI-00661": [],
+  "LF-MI-00265": [],
+  "LF-MI-01206": [
+    {
+      "id": "ORG-004054",
+      "name": "Universal Products, Inc.",
+      "city": "Goddard",
+      "state": "KS",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_KS.csv",
+      "match": "name key 'universal products' = legal_name 'Universal Products, Inc.'"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ Sources: ten ITA CY2025 records and one dated OSHA inspection under the controll
 
 Named check passes38unique verdicts/11upgrades/27holds, exact22-cell boundary/57EVD, all old main rows preserved, field-by-field government11/raw13, byte-identical replay, strict TX326145→145/QCEW953. Removing all13 own-scope rows makes the validator reject all11 promotions. Actual identical-payload wrong-shard final-ID and wrong-city binding mutations fail before every CSV write. Three known operator records and wrong-city/word-order controls pass; validate.py0errors and unchanged PR130 row-loss guard pass. Full11 source-only blind census supplied; no creates exist for a20-create sample.
 
-Twenty-seven holds name their settling facts in verdicts.csv and README (plant-specific activity, unresolved physical address/entity, own-source integrity or route availability). Both-family deep reviews pending; draft. Main supporting-file restoration #209 must land and main must be integrated again before Ready, per controller. Final review receipt for merged #186 is carried in this README; its canonical packet is unchanged.
+Twenty-seven holds name their settling facts in verdicts.csv and README (plant-specific activity, unresolved physical address/entity, own-source integrity or route availability). Both-family deep reviews pending; draft. Restoration #209 has landed; exact main1e583439 was integrated, both complete TX files taken from main, and the unchanged builder replayed. All11 site records/57EVD and7logic/source files are identical to original3abccb0; restored row-loss guard and all checks pass. Final review receipt for merged #186 is carried in this README; its canonical packet is unchanged.
 
 ## Merge Danger
 

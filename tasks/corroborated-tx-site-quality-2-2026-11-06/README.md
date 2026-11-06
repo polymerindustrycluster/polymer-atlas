@@ -67,3 +67,5 @@ Prior merged quality186 receipt carried here as instructed: Codex5(OpenAI,thr_pf
 | SITE-015418 FISCHBACH USA INC. | STILL_UNCERTAIN | Obtain Fischbach-issued polymer manufacture at1901HuttonCourt, distinguishing office/contact function from a plant. |
 
 Independent Codex and Grok deep refutes pending; draft only, no Ready/Done claim. All source-specific limitations and27 settling facts remain part of this packet.
+
+Restoration prerequisite resolved: #209 merged at1e5834394f592f7237a5919500d9fbd5f2c48ad5. Integrated that exact main, took both complete main TX canonical files and replayed the unchanged builder. integration-replay.json independently proves all11site records and57EVD records field-identical to original3abccb0, with7logic/source files byte-identical. Full named gate, validator0 and restored scripts/check_row_loss.py --base origin/main PASS. StrictTX326 remains145→145/953. This supersedes the pending-restoration prerequisite above; both-family reviews remain pending and the PR stays draft.
