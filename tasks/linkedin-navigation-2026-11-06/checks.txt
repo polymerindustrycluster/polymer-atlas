@@ -1,4 +1,5 @@
+PASS six ancestry negatives reject in extractor and production raw verifier; four independent header/footer positives survive.
 navigation_conflict refused before any CSV write
 entity_preimage refused before any CSV write
-PASS 345 navigation cells; 2061 frame outcomes; 40 shards; all other canonical bytes/keys/fields preserved, byte replay, 4 zero-write negatives, LinkedIn request exclusion.
-By cohort {'tier1': 245, 'pic18_remainder': 100} by frozen tier {'B': 180, 'A': 136, 'U': 1, 'C': 28}
+PASS 325 navigation cells; 2061 frame outcomes; 39 shards; all other canonical bytes/keys/fields preserved, byte replay, 4 zero-write negatives, LinkedIn request exclusion.
+By cohort {'tier1': 233, 'pic18_remainder': 92} by frozen tier {'B': 172, 'A': 129, 'C': 24}
