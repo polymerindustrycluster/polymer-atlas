@@ -24,7 +24,7 @@ holds.csv is the holds table (22 claim/organization cases, STILL_UNCERTAIN, each
 
 The named ownership-status-2 raw checker was absent. fetch.py reuses the existing evidence-repair-2 prep.W token normalization/contiguous-order matcher, with curl browser UA (compressed responses supported), Jina fallback and pdftotext for PDF. HTML text (script/style excluded; hidden content not evaluated) is matched, never a model summary. Known answers caught a gzip response issue before inputs were trusted. Fallback failure is availability only. Source snapshots were temporary; only public claim excerpts are committed. Network re-checks can later fail if a witness changes.
 
-Rebase: restore fresh main's data/organizations_OH.csv and data/evidence_organizations_OH.csv, then rerun build.py and validate; never hand-merge CSV. Preserve this inputs.csv ordering because IDs derive from it. The branch base is the pre-pass backup.
+Replay: restore fresh main's data/organizations_OH.csv, data/organizations_WI.csv, data/evidence_organizations_OH.csv and data/evidence_organizations_WI.csv, then rerun build.py and validate; never hand-merge CSV. Preserve this inputs.csv ordering because IDs derive from it. The branch base is the pre-pass backup.
 
 ## Coordination and review
 
@@ -50,3 +50,5 @@ Initial review findings resolved: Codex and Sonnet both REFUTED the superseded p
 Initial Grok council verdict: APPROVE on superseded 49-value packet; not treated as final approval (it did not inspect live edition status). Initial Codex verdict: REFUTE (Rainbow, duplicate evidence-ID masking), both resolved. Initial Sonnet verdict: REFUTE; certificate identity/expiry and audit limits addressed, ISO9001/Rainbow/EV-market cases held. Controller-designated final Codex/Grok clerks remain the final gate.
 
 Integration replay: main advanced to 9489b60 while reviews queued. Per controller 06:12 BOARD recipe, merged main, took main versions of all four lane data shards (including conflicted evidence shards), and reran build.py. No CSV conflict was hand merged; unrelated main changes retained. Final populated counts and scope unchanged; validate passed with 35,445 total evidence rows. Federal-frame LF changes are main-only and net zero in this PR.
+
+Final Codex clerk verdict APPROVE (0 blocking findings), head15809db vs main9489b60. Independently ran validate0errors/35,445evidence, live64quotes and fresh30value audit0errors, independent10row sample, all5 certificate identities/dates/scope and official edition sources; row-loss0, unrelated-column0, replay idempotent, duplicate-ID injection refused before writes. Receipt: controller storage reviews/136-clerk-codex-2.md (thr_mdr3gn2xmm). Corrected older replay sentence to name all four OH/WI shards. Hosted validate also PASS at inspected15809db; final Grok approval pending.
