@@ -557,7 +557,7 @@ class AtlasIdx:
                 self.by_street_any[s["__skey"]].append(s)
         self.namekey_orgs = defaultdict(set)
         for oid, r in self.orgs.items():
-            for nm in [r.get("legal_name", "")] + atlas.tokens_semicolon(r.get("trade_names")):
+            for _, nm in atlas.org_name_fields(r):
                 k = atlas.name_key(nm)
                 if k:
                     self.namekey_orgs[k].add(oid)
