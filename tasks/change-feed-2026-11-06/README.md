@@ -29,3 +29,15 @@ The real-history check pins c2674712c0c9f8aeefac9179597b8a4c6e5eda5f. It verifie
 No Pages hook: its current workflow checkout is depth1, so a one-line invocation would fail the complete-history requirement. Publication/subscription URL configuration is not part of this tooling PR. PR attribution relies on standard Git merge/squash markers; rebase merges without PR markers remain unassociated commit entries. Default origin/main is the locally fetched snapshot, not a network refresh. Fail-closed checks may require an explicit policy update when a new canonical table or historical CSV layout appears.
 
 Independent Codex and Grok clerk refutes are pending; this is not ready for merge. No hosted publication, feed-reader UI test, external Atom validator or end-user usage test was performed.
+
+## Codex correction, round 2
+
+Codex1 REFUTE at0f0551f demonstrated three accepted defects: final output-file symlinks escaped build/, a read-only XML target left a changed Markdown paired with stale XML, and a generic ID pattern admitted arbitrary/private or wrong-table prefixes. adversarial-before.json records all five successful attacks; adversarial-after.json records all five refusing generation without outside writes, pair changes or publication of invalid identifiers.
+
+The correction validates the schema namespace for each table key, rejects symlinks/non-regular or read-only final targets, stages both serialized artifacts and backups, and rolls back replacements on an output exception. Eight disposable-repository tests include every declared namespace, both leaf symlinks, read-only XML and an injected second-replacement failure with and without prior outputs. Required-key fixtures now contain real CSV newlines. This is in-process rollback; abrupt process/machine failure or a second failure during rollback is outside its transaction guarantee. No concurrent-writer coordination is claimed.
+
+The initial five-test/226-test results and pending-review note above describe the original packet. The v2 logs below supersede them; corrections await both-family review. No canonical data, Pages workflow or deployment changes.
+
+Corrected real-history replay pins main09df9e9:227 history entries (91 PR /136 direct),37,390 evidence rows balanced,three known answers,Atom structure/privacy checks and byte-identical second generation PASS. First generation60.08seconds. This newer snapshot supersedes initial214/36,606 figures for the v2 check only.
+
+Grok1 APPROVE0f0551f,zero findings: original packet/history independently checked including current-main227entry replay. This is historical approval for the original code; Codex1's demonstrated boundary defects supersede it for merge readiness. Both actual reviewing clerks receive the corrected8b22ed5 implementation and fresh v2 packet. Reports codex-refute.md/grok-initial.md retain full scope and limitations.

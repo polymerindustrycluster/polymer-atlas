@@ -1,9 +1,9 @@
 diff --git a/scripts/build_changelog.py b/scripts/build_changelog.py
 new file mode 100644
-index 0000000..fe81b88
+index 0000000..da44758
 --- /dev/null
 +++ b/scripts/build_changelog.py
-@@ -0,0 +1,264 @@
+@@ -0,0 +1,314 @@
 +#!/usr/bin/env python3
 +"""Build public change Markdown and Atom from full main history; stdlib only.
 +
@@ -15,8 +15,11 @@ index 0000000..fe81b88
 +import argparse
 +import csv
 +import io
++import os
 +import re
++import stat
 +import subprocess
++import tempfile
 +from collections import Counter, defaultdict
 +from pathlib import Path
 +import xml.etree.ElementTree as ET
@@ -44,7 +47,12 @@ index 0000000..fe81b88
 +    "superseded",
 +}
 +EVIDENCE_TABLES = {"organizations", "sites", "ecosystem", "programs", "people"}
-+ID = re.compile(r"[A-Z][A-Z0-9_]*-\d{6}")
++PREFIXES = {
++    "org_id": "ORG", "site_id": "SITE", "evidence_id": "EVD", "member_row_id": "MBR",
++    "person_id": "PERSON", "program_id": "PROG", "event_id": "EVT", "participation_id": "EVP",
++    "relationship_id": "REL", "capability_id": "CAP", "equipment_id": "EQP",
++    "engagement_id": "ENG", "ref_code_id": "RC", "map_id": "RM", "assignment_id": "CA",
++}
 +ET.register_namespace("", ATOM)
 +
 +
@@ -83,7 +91,7 @@ index 0000000..fe81b88
 +        if None in row or any(value is None for value in row.values()):
 +            raise ValueError(f"malformed CSV row: {path}")
 +        ident = row[KEYS[table]]
-+        if not ID.fullmatch(ident):
++        if not re.fullmatch(PREFIXES[KEYS[table]] + r"-[0-9]{6}", ident):
 +            raise ValueError(f"invalid immutable ID: {path}")
 +        key = tuple(row.get(col, "") for col in COMPOSITE[table]) if table in COMPOSITE else (ident,)
 +        if table == "evidence" and row.get("record_table") not in EVIDENCE_TABLES:
@@ -216,6 +224,47 @@ index 0000000..fe81b88
 +    return "PR #" + entry["pr"] if entry["pr"] else "Commit " + entry["sha"][:12] + " (no PR recorded)"
 +
 +
++def publish(repo, out, payloads):
++    """Stage both outputs; reject unsafe targets and roll back a failed publication."""
++    repo = repo.resolve()
++    if not out.resolve().is_relative_to(repo / "build"):
++        raise ValueError("output must stay under repository build/")
++    out.mkdir(parents=True, exist_ok=True)
++    previous = {}
++    for name in payloads:
++        target = out / name
++        if target.is_symlink() or (target.exists() and not target.is_file()):
++            raise ValueError("output file must be a regular file, not a symlink")
++        if target.exists():
++            info = target.stat()
++            if not stat.S_IMODE(info.st_mode) & 0o222:
++                raise PermissionError("output file is read-only")
++            previous[name] = (target.read_bytes(), info)
++    with tempfile.TemporaryDirectory(dir=out) as tmp:
++        stage = Path(tmp)
++        for name, data in payloads.items():
++            (stage / ("new-" + name)).write_bytes(data)
++            if name in previous:
++                content, info = previous[name]
++                backup = stage / ("old-" + name)
++                backup.write_bytes(content)
++                backup.chmod(stat.S_IMODE(info.st_mode))
++                os.utime(backup, ns=(info.st_atime_ns, info.st_mtime_ns))
++                (stage / ("new-" + name)).chmod(stat.S_IMODE(info.st_mode))
++        published = []
++        try:
++            for name in payloads:
++                os.replace(stage / ("new-" + name), out / name)
++                published.append(name)
++        except OSError:
++            for name in reversed(published):
++                if name in previous:
++                    os.replace(stage / ("old-" + name), out / name)
++                else:
++                    (out / name).unlink()
++            raise
++
++
 +def build(repo, ref):
 +    repo = Path(repo).resolve()
 +    out = repo / "build/changelog"
@@ -251,10 +300,11 @@ index 0000000..fe81b88
 +        child(atom, "updated", entry["date"])
 +        child(atom, "link", href=link, rel="alternate")
 +        child(atom, "content", body, type="text")
-+    out.mkdir(parents=True, exist_ok=True)
-+    (out / "CHANGELOG.md").write_text(intro + "\n".join(sections), encoding="utf-8")
 +    ET.indent(feed)
-+    ET.ElementTree(feed).write(out / "feed.xml", encoding="utf-8", xml_declaration=True)
++    publish(repo, out, {
++        "CHANGELOG.md": (intro + "\n".join(sections)).encode("utf-8"),
++        "feed.xml": ET.tostring(feed, encoding="utf-8", xml_declaration=True),
++    })
 +    return entries
 +
 +
@@ -270,15 +320,16 @@ index 0000000..fe81b88
 +    main()
 diff --git a/scripts/test_build_changelog.py b/scripts/test_build_changelog.py
 new file mode 100644
-index 0000000..7bcfc22
+index 0000000..7efcb68
 --- /dev/null
 +++ b/scripts/test_build_changelog.py
-@@ -0,0 +1,198 @@
+@@ -0,0 +1,270 @@
 +"""Known-answer and adversarial change-feed checks against throwaway Git repositories."""
 +import csv
 +import sys
 +import tempfile
 +import unittest
++from unittest.mock import patch
 +from pathlib import Path
 +import xml.etree.ElementTree as ET
 +
@@ -442,9 +493,9 @@ index 0000000..7bcfc22
 +        with self.assertRaisesRegex(ValueError, "unsupported evidence target"):
 +            feed.read_rows("data/evidence_sites_OH.csv", "evidence_id,record_table\nEVD-000001,private\n")
 +        with self.assertRaisesRegex(ValueError, "missing key columns"):
-+            feed.read_rows("data/equipment.csv", "notes\\nORG-000001\\n")
++            feed.read_rows("data/equipment.csv", "notes\nORG-000001\n")
 +        with self.assertRaisesRegex(ValueError, "missing key columns"):
-+            feed.read_rows("data/registry_links.csv", "org_id,notes\\nORG-000001,hidden\\n")
++            feed.read_rows("data/registry_links.csv", "org_id,notes\nORG-000001,hidden\n")
 +        self.assertIsNone(feed.table_of("data/organizations_all.csv"))
 +        self.assertIsNone(feed.table_of("data/inclusion_log.csv"))
 +
@@ -468,6 +519,77 @@ index 0000000..7bcfc22
 +        with self.assertRaisesRegex(ValueError, "output must stay"):
 +            feed.build(self.repo, "main")
 +        self.assertEqual(list(outside.iterdir()), [])
++
++    def test_table_namespaces_reject_private_and_wrong_table_ids(self):
++        feed.build(self.repo, "main")
++        out = self.repo / "build/changelog"
++        before = {p.name: p.read_bytes() for p in out.iterdir()}
++        for ident in ["PRIVATE_CRM_ACQUISITION_TARGET-000002", "EQP-000002"]:
++            with self.subTest(ident=ident):
++                self.write("organizations_OH", ORG_FIELDS,
++                           [self.org, [ident, "active", "C", "", ""]])
++                self.commit("INVALID_ID")
++                with self.assertRaisesRegex(ValueError, "invalid immutable ID"):
++                    feed.build(self.repo, "main")
++                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++                self.git("reset", "--hard", "HEAD~1")
++        for table, key in feed.KEYS.items():
++            columns = sorted({key} | set(feed.COMPOSITE.get(table, ())))
++            if table == "evidence":
++                columns.append("record_table")
++            values = {col: "" for col in columns}
++            values[key] = feed.PREFIXES[key] + "-000001"
++            if table == "evidence":
++                values["record_table"] = "sites"
++            data = ",".join(columns) + "\n" + ",".join(values[c] for c in columns) + "\n"
++            self.assertEqual(len(feed.read_rows("data/" + table + ".csv", data)), 1)
++
++    def test_leaf_symlinks_and_readonly_output_preserve_pair(self):
++        feed.build(self.repo, "main")
++        out = self.repo / "build/changelog"
++        before = {p.name: p.read_bytes() for p in out.iterdir()}
++        outside = Path(self.tmp.name) / "outside-sentinel"
++        outside.write_bytes(b"sentinel")
++        for leaf in before:
++            with self.subTest(leaf=leaf):
++                (out / leaf).unlink()
++                (out / leaf).symlink_to(outside)
++                with self.assertRaisesRegex(ValueError, "not a symlink"):
++                    feed.build(self.repo, "main")
++                self.assertEqual(outside.read_bytes(), b"sentinel")
++                (out / leaf).unlink()
++                (out / leaf).write_bytes(before[leaf])
++                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++        self.org[1] = "closed"
++        self.write("organizations_OH", ORG_FIELDS, [self.org])
++        self.commit("STATUS_CHANGE")
++        (out / "feed.xml").chmod(0o444)
++        try:
++            with self.assertRaises(PermissionError):
++                feed.build(self.repo, "main")
++            self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
++        finally:
++            (out / "feed.xml").chmod(0o644)
++
++    def test_second_replace_failure_rolls_back_existing_and_new_outputs(self):
++        out = self.repo / "build/changelog"
++        replace = feed.os.replace
++        for existing in [False, True]:
++            with self.subTest(existing=existing):
++                if existing:
++                    feed.build(self.repo, "main")
++                before = {p.name: p.read_bytes() for p in out.iterdir()} if out.exists() else {}
++                calls = 0
++                def fail_second(source, target):
++                    nonlocal calls
++                    calls += 1
++                    if calls == 2:
++                        raise OSError("injected publication failure")
++                    return replace(source, target)
++                with patch.object(feed.os, "replace", side_effect=fail_second):
++                    with self.assertRaisesRegex(OSError, "injected publication"):
++                        feed.publish(self.repo, out, {"CHANGELOG.md": b"new MD", "feed.xml": b"new XML"})
++                self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
 +
 +
 +if __name__ == "__main__":
