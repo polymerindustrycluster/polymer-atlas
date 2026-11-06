@@ -3,6 +3,9 @@
 **Finding (PR #170 worker):** lane dedupe never searched `sites.site_name`, so "IFS Coatings - Ardmore" (SITE-006097, under
 ORG-002633 "Ifs Industries Inc.") went unnoticed. Two deliverables: (1) close the gap in `scripts/atlas.py dedupe-check`;
 (2) a **leads-only** sweep of the existing tree. No `data/` edit, no merge, no verdict (AGENTS §3: when in doubt, do not merge).
+*Update (main f8306f7):* PR #243 has since created ORG-013500 "IFS Coatings, Inc." and moved SITE-006097 under it, so IFS now
+stops at step 2 and is no longer a step-5-only case. The known answer below was replaced; IFS was never in the sweep (one
+record, one org), so `leads.csv` is unchanged.
 
 ## 1. `dedupe-check` step 5 (site names)
 
@@ -12,11 +15,16 @@ ORG-002633 "Ifs Industries Inc.") went unnoticed. Two deliverables: (1) close th
 - `dedupe()` gains **step 5**, after the four AGENTS §3 steps (existing step numbers and `stop_at_step` semantics unchanged). It
   matches the query name (and the query with `--city` removed) against each site's full-name key and stripped key, and reports
   site id, site name, operator org, street, city. `--name` is the only input.
-- Known answer: `python3 scripts/atlas.py dedupe-check --name "IFS Coatings"` now stops at step 5 with SITE-006097
-  (operator ORG-002633, 3430 Cypert Way). Before the change it reported "No hits".
+- Known answer: `python3 scripts/atlas.py dedupe-check --name "Garlock Sealing Technologies"` stops at step 5 with SITE-003064
+  "Garlock Sealing Technologies - Palmyra" (tier A, active, operator ORG-002882 Enpro Inc., 1666 Division St); steps 2 and 4 find
+  nothing (verified at main f8306f7). Chosen from a scan of the tree for sites whose stripped name is no organization's name,
+  not a substring of any trade_names / notes / legal_name, and unique among sites (391 such sites, 46 of them active tier A).
+  Why stable: the site id is permanent and its name changes only with dated evidence, and the test pins **only** step 5
+  (`SITE-003064 in step-5 hits`), so a later org create named "Garlock Sealing Technologies" (what PR #243 did for IFS) cannot
+  break it. Step 5 itself is proved on a fixture, where steps 2 and 4 are asserted empty and `stop_at_step == 5`.
 - Tests in `scripts/test_atlas_cli.py`: `site_name_key` cases, a three-form hit (hyphen / em dash / parenthesis) with operator and
-  street asserted, near-misses that must not match (`IFS Coatings Group`, `IFS Coatings - Annex`, `Ifs Holdings`), and the
-  `--city` query form, and a real-data known answer in `RealDataSmoke` (IFS Coatings finds exactly SITE-006097). Run:
+  street asserted, near-misses that must not match (`IFS Coatings Group`, `IFS Coatings - Annex`, `Ifs Holdings`; fixture names),
+  the `--city` query form, and the real-data Garlock known answer in `RealDataSmoke`. Run:
   `python3 -m unittest discover -s scripts -p "test_*.py"` (276 tests, OK; pytest is not installed here).
 - **Behavior change:** a query that used to end "No hits" (exit 0) can now stop at step 5 (exit 1). That is the gap being closed.
   Consumers: `build_form5500_spine.py` and `build_lead_fusion.py` compare steps 2 and 3 only, so they are unaffected. The ten
@@ -43,7 +51,7 @@ a cluster. The key `headquarters` (a kind of place, not a company) is dropped an
 - `orgs_linked`: **all** / **some** / **none** of the cluster's orgs are joined by a direct `parent_org_id` or `successor_org_id`
   (`all` means the relationship is already recorded, so these are lowest priority).
 
-## Counts (input: 7,188 sites rows; 5,023 organizations rows; 402 ecosystem rows)
+## Counts (input: 7,188 sites rows; 5,024 organizations rows; 402 ecosystem rows)
 
 | Unit | Count |
 |---|---|
@@ -61,7 +69,7 @@ in the tree, and none of their cross-org site pairs share a name key (0 pairs, c
 
 ## Checks (`python3 tasks/site-name-dedupe-2026-11-06/check.py`)
 
-- Known answers on the real tree: step 5 returns exactly SITE-006097 for "IFS Coatings"; the Snyder Industries and Latham Pool
+- Known answers on the real tree: step 5 returns SITE-003064 for "Garlock Sealing Technologies"; the Snyder Industries and Latham Pool
   Products clusters contain the expected records and orgs.
 - Planted fixture: a cross-org pair on one street is found (strong); a parent-linked pair is found (`orgs_linked=all`); a
   same-org control, a near-miss name and generic "Headquarters" sites are **not**. With the locality-stripping defect injected the

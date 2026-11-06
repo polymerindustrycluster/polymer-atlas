@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Named check for the site-name dedupe lane. Exit 0 only if every assertion holds.
 
-1. Known answers on the real tree: `dedupe-check --name "IFS Coatings"` finds SITE-006097 (step 5); two real clusters
+1. Known answers on the real tree: `dedupe-check --name "Garlock Sealing Technologies"` finds SITE-003064 (step 5); two real clusters
    (Snyder Industries, Latham Pool Products) appear in leads.csv with the expected records.
 2. Injected defects on a planted fixture: the sweep must find the planted cross-org pair (strong: same street) and the
    linked pair, and must NOT report a same-org pair, a near-miss name, or a generic "Headquarters" key.
@@ -56,8 +56,9 @@ def fixture_clusters():
 def main():
     # 1. known answers on the real tree
     tables = atlas.load_tables(str(ROOT / "data"))
-    hits = [h["id"] for h in atlas.dedupe(tables, name="IFS Coatings")["steps"][4]["hits"]]
-    assert hits == ["SITE-006097"], hits
+    # only step 5 is pinned (an org create with the same name would add a step-2 hit, which is fine)
+    hits = [h["id"] for h in atlas.dedupe(tables, name="Garlock Sealing Technologies")["steps"][4]["hits"]]
+    assert "SITE-003064" in hits, hits
     leads = {r["name_key"]: r for r in csv.DictReader(open(HERE / "leads.csv", encoding="utf-8"))}
     snyder = set(leads["snyder industries"]["record_ids"].split(";"))
     assert {"SITE-005080", "ORG-004866"} <= snyder and {"ORG-003687", "ORG-004866"} <= set(leads["snyder industries"]["org_ids"].split(";"))

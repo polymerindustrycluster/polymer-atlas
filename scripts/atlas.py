@@ -11,7 +11,7 @@ Usage (run from the repo root; add --data-dir PATH to point at another tree):
   python3 scripts/atlas.py dedupe-check --domain avient.com --name "Avient Corp"
   python3 scripts/atlas.py dedupe-check --street "554 Moore Road" --city "Avon Lake" --state OH --zip 44012
   python3 scripts/atlas.py dedupe-check --name "PolyOne" --json
-  python3 scripts/atlas.py dedupe-check --name "IFS Coatings"   # step 5 also searches sites.site_name ("IFS Coatings - Ardmore")
+  python3 scripts/atlas.py dedupe-check --name "Garlock Sealing Technologies"   # step 5 also searches sites.site_name ("... - Palmyra")
   python3 scripts/atlas.py show ORG-000010        # record + evidence + relationships + sites
   python3 scripts/atlas.py show SITE-000001 --json
   python3 scripts/atlas.py shard-of --hq-state TX             # organizations_TX.csv

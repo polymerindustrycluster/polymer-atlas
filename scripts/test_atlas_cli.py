@@ -266,7 +266,7 @@ class DedupeTests(FixtureCase):
         write(self.d, "sites_IN.csv", SITE_COLS, [site(i, o, st, city=c, state="IN", site_name=n) for i, o, st, c, n in rows])
 
     def test_step5_site_name_hit_reports_operator_and_street(self):
-        # known answer: SITE-006097 "IFS Coatings - Ardmore" sits under "Ifs Industries Inc.", so steps 1-4 miss it
+        # modeled on the PR #170 miss ("IFS Coatings - Ardmore" under "Ifs Industries Inc."): steps 1-4 cannot see a site_name
         self.add_sites(("SITE-006097", "ORG-000001", "3430 Cypert Way", "Ardmore", "IFS Coatings - Ardmore"),
                        ("SITE-006098", "ORG-000004", "1 Elm St", "Canton", "IFS Coatings \u2014 Canton"),
                        ("SITE-006099", "ORG-000020", "2 Elm St", "Peru", "IFS Coatings (Peru)"))
@@ -392,13 +392,13 @@ class RealDataSmoke(unittest.TestCase):
         self.assertEqual(r["duplicates"], {})
 
     @unittest.skipUnless((HERE.parent / "data" / "sites_OK.csv").exists(), "real data not present")
-    def test_known_answer_site_name_step5_finds_ifs_coatings(self):
-        # SITE-006097 "IFS Coatings - Ardmore" sits under "Ifs Industries Inc.": only the site_name step can see it
-        p = subprocess.run([sys.executable, str(HERE / "atlas.py"), "dedupe-check", "--name", "IFS Coatings", "--json"],
+    def test_known_answer_site_name_step5_finds_garlock(self):
+        # SITE-003064 "Garlock Sealing Technologies - Palmyra" (tier A, under Enpro Inc.) is no organization's name. Only step 5
+        # is pinned: a later org create named "Garlock Sealing Technologies" (what PR #243 did for IFS Coatings) must not break this.
+        p = subprocess.run([sys.executable, str(HERE / "atlas.py"), "dedupe-check", "--name", "Garlock Sealing Technologies", "--json"],
                            capture_output=True, text=True, cwd=HERE.parent)
         res = json.loads(p.stdout)
-        self.assertEqual([h["id"] for h in res["steps"][4]["hits"]], ["SITE-006097"])
-        self.assertEqual(res["steps"][1]["hits"] + res["steps"][3]["hits"], [])
+        self.assertIn("SITE-003064", [h["id"] for h in res["steps"][4]["hits"]])
 
 
 class StreetKey(unittest.TestCase):
