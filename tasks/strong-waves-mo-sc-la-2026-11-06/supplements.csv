@@ -1,0 +1,6 @@
+cluster_id,claim_type,source_url,quote,raw,route,note
+LF-MO-00031,scope,https://www.davispaint.com/,From high-performance industrial coatings to custom products and creative partnerships,yes,https://www.davispaint.com/,Supplement after Grok refute; original evidence retained.
+LF-LA-00001,existence,https://www.cmp.co.jp/en/company/group_western-countries/,"CMP COATINGS, INC. 1610 Engineers Road, Belle Chasse, Louisiana, 70037, U.S.A",yes,https://www.cmp.co.jp/en/company/group_western-countries/,Supplement after Grok refute; original evidence retained.
+LF-SC-00313,existence,https://www.perlon.com/en/portrait-perlon/current-vacancies-2/,"Hahl Inc. 126 Glassmaster Road 29072 Lexington, S.C.",yes,https://www.perlon.com/en/portrait-perlon/current-vacancies-2/,Supplement after Grok refute; original evidence retained.
+LF-LA-00054,existence,https://sunspecialtyproducts.com/about-us/,"manufacturing facility in Belle Chasse, Louisiana",yes,https://sunspecialtyproducts.com/about-us/,Supplement after Grok refute; original evidence retained.
+LF-LA-00054,scope,https://sunspecialtyproducts.com/wp-content/uploads/2024/09/Lubra-Glide-Beads-Technical-Data-Sheet-2018-August-06.pdf,Lubra-Glide® copolymer beads are manufactured by SUN Specialty Products,yes,curl / pdftotext -raw,Supplement after Grok refute; original evidence retained.

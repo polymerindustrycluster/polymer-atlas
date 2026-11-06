@@ -1,0 +1,4 @@
+registry_id,expected_street,actual_street,result
+110000745766,160 Parker Ct,160 PARKER CT.,PASS
+110000391415,350 N Buckeye St,350 N. BUCKEYE ST.,PASS
+110000383941,555 W Linfoot St,555 W. LINFOOT ST.,PASS
