@@ -1,0 +1,3 @@
+cluster_id,site_id,held_org_id,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,reliability,year_filing_for,date_submitted
+LF-LA-00167,SITE-012503,ORG-007432,288347,"Poly Processing Company, LLC","Poly Processing Company, LLC Monroe",2201 Old Sterlington Road,Monroe,LA,71210,326199,"Tanks, storage, plastics or fiberglass, manufacturing",ok,2025,2026-01-12
+LF-LA-00427,SITE-012511,ORG-001033,192504,Plastipak Packaging Inc.,Plastipak- Pineville,4101 Pardue Rd,Pineville,LA,71360,326160,"Bottles, plastics, manufacturing",ok,2025,2026-01-16
