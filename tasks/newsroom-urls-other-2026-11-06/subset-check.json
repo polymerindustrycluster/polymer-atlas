@@ -22,5 +22,12 @@
     "newsroom_feed_url"
   ],
   "remaining_verdicts_identical": true,
-  "rowsets_unchanged": true
+  "rowsets_unchanged": true,
+  "final_replay": {
+    "main_base": "4f30a8ebf5dde4a2d84618ba02163bb2bad4c375",
+    "same_251_empty_cells": true,
+    "same_163_orgs_33_shards": true,
+    "rowsets_unchanged": true,
+    "approved_55da43d_code_packet_unchanged": true
+  }
 }
