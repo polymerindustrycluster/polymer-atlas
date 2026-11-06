@@ -29,7 +29,7 @@ def main():
     plans={r['ein']:r for r in read(ROOT/'tasks/form5500-spine-2026-11-01/sponsors.csv')}
     orgs={r['org_id']:(p,r) for p in (ROOT/'data').glob('organizations_*.csv') for r in read(p)}
     additions=defaultdict(list);alias_updates={};alloc=[]
-    cmp_flag=' Group domain used as website; ultimate parent documented by the Chugoku Marine Paints group-company listing (B-PARENT/B-PARENT-WEB).' 
+    cmp_flag=' Group domain used as website; ultimate parent documented by the Chugoku Marine Paints group-company listing (B-PARENT/B-PARENT-WEB).'
     for idx,v in enumerate(vs):
         if v['state']!=a.state or v['verdict']!='VERIFIED':continue
         c=inputs[v['cluster_id']];assert raw[v['cluster_id']]['raw']=='yes' and v['own_quote']
