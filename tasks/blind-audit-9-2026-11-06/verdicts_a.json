@@ -1,0 +1,592 @@
+[
+  {
+    "site_id": "SITE-012034",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own site identifies plastic/silicone injection molding under one roof at its Lafayette facility and publishes the asserted street address; current activity supported.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.ashindustries.com/",
+        "source_class": "own_site",
+        "quote": "1330 W. Willow St. Lafayette, LA 70506",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.ashindustries.com/",
+        "source_class": "own_site",
+        "quote": "Plastic, metal, and silicone injection molding\u2014all in one facility.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.ashindustries.com/",
+        "source_class": "own_site",
+        "quote": "All manufacturing is done in-house at our Lafayette, Louisiana, facility.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:53:09.829800+00:00"
+  },
+  {
+    "site_id": "SITE-018006",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own-site contact address and Monroe-specific ram extrusion history/current production lines establish operator, address and polymer processing plant. Unknown canonical status is not contradicted by activity.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.spiratex.com/contact-us/",
+        "source_class": "own_site",
+        "quote": "1916 Frenchtown Center Dr. Monroe, Michigan 48162",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.spiratex.com/about/",
+        "source_class": "own_site",
+        "quote": "1995: To accommodate growth, the ram extrusion division was moved to its own facility in Monroe, Michigan.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.spiratex.com/about/",
+        "source_class": "own_site",
+        "quote": "Today: Our Ram Extrusion Division boasts over 110 production lines",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.spiratex.com/about/",
+        "source_class": "own_site",
+        "quote": "The Spiratex Company has been a leader in custom plastic extrusion.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:53:46.585828+00:00"
+  },
+  {
+    "site_id": "SITE-018000",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "EGLE plant-specific permit identifies Summit Plant 18 at asserted address (North/N variant); automotive plastic parts coating and polypropylene flame treatment establish polymer transformation on site. Permit is dated 2022; current operational status not independently determined.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.egle.state.mi.us/aps/downloads/permits/finpticon/2017/64-17B.pdf",
+        "source_class": "government_filing",
+        "quote": "ISSUED TO Summit Polymers, Inc. \u2013 Plant 18 LOCATED AT 5858 East North Avenue Kalamazoo, Michigan 49048",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.egle.state.mi.us/aps/downloads/permits/finpticon/2017/64-17B.pdf",
+        "source_class": "government_filing",
+        "quote": "An automotive plastic parts coating line consisting of a flame treat for polypro parts",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:53:46.587709+00:00"
+  },
+  {
+    "site_id": "SITE-014003",
+    "grade": "field_error",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Current own-site location page explicitly calls this address a distribution center, rather than manufacturing. Same physical Dart establishment remains lawful under SCHEMA 4.5/5.3. Own-site ZIP also differs. Legacy location URL fetched only a 2KB client shell; indexed legacy Manufacturing label cannot override specific current description.",
+    "field_errors": [
+      {
+        "field": "site_type",
+        "held_value": "manufacturing_plant",
+        "proposed_value": "warehouse_distribution",
+        "source_url": "https://corporate.dartcontainer.com/location/corona-ca/",
+        "quote": "our Corona Distribution Center has more than 1 million square feet under roof."
+      },
+      {
+        "field": "zip",
+        "held_value": "92880",
+        "proposed_value": "92878",
+        "source_url": "https://corporate.dartcontainer.com/location/corona-ca/",
+        "quote": "150 S. Maple Street, Corona, CA 92878"
+      }
+    ],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+        "source_class": "own_site",
+        "quote": "our Corona Distribution Center has more than 1 million square feet under roof.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+        "source_class": "own_site",
+        "quote": "150 S. Maple Street, Corona, CA 92878",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Dominant function from current own-site page; historical manufacturing may have occurred. Site-specific polymer stock contents not independently enumerated; no closure inference or ring adjudication. NAICS/county/headcount excluded.",
+    "locked_at_utc": "2026-11-06T11:54:54.483613+00:00"
+  },
+  {
+    "site_id": "SITE-019012",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Village 2024 active business licenses place Berry Plastics at 12900 S Pulaski under MANUFACTURING PLETHYLENE BLOWN FILM, directly supporting operator/address/function/polymer scope. Avenue/Road naming variant is not sufficient proof of a wrong physical site. Unknown canonical status is not treated as an error; 2024 license does not establish 2026 activity.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://villageofalsip.org/Current%20Licenses%2005282024.pdf",
+        "source_class": "own_site",
+        "quote": "BERRY PLASTICS CORPORATION",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://villageofalsip.org/Current%20Licenses%2005282024.pdf",
+        "source_class": "own_site",
+        "quote": "12900 S PULASKI RD ALSIP IL 608032005",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://villageofalsip.org/Current%20Licenses%2005282024.pdf",
+        "source_class": "own_site",
+        "quote": "TOTALS FOR - MANUFACTURING PLETHYLENE BLOWN FILM",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:54:54.503393+00:00"
+  },
+  {
+    "site_id": "SITE-014008",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "City 2026 silo-work permit names ADS at exact street; own-site case study explicitly says polypropylene HP Storm is manufactured in Madera. Address and city-specific production corroborate plant function; unknown status left unchanged.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.madera.gov/media/tsgh1yj5/issued-permits-february-2026.pdf",
+        "source_class": "government_filing",
+        "quote": "1025 COMMERCE DR 009-120-023 ADVANCED DRAINAGE SYSTEMS INC",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.adspipe.com/resources/case-studies/hp-storm-creates-savings-in-california-right-of-way-install",
+        "source_class": "own_site",
+        "quote": "HP Storm, manufactured from polypropylene",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.adspipe.com/resources/case-studies/hp-storm-creates-savings-in-california-right-of-way-install",
+        "source_class": "own_site",
+        "quote": "since it is manufactured in Madera, CA",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:54:54.506062+00:00"
+  },
+  {
+    "site_id": "SITE-016109",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own-hosted 2025 certificate identifies production/R&D at 201 Enterprise Dr Calhoun. Own magazine describes Calhoun manufacture of coatings and multi-flooring adhesives using automatic production/mixing equipment, supporting Ring 2 polymer formulation. Current activity consistent with active but no independent continuous operation census.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/iso-certifications/iso-9001-2015.pdf?sfvrsn=429e7574_15",
+        "source_class": "own_site",
+        "quote": "201 Enterprise Dr., Calhoun, GA, 30701,",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/realta-mapei-magazine/24-2045-rmna38-fullissue-en.pdf?sfvrsn=3cc81888_5",
+        "source_class": "own_site",
+        "quote": "MAPEI\u2019s Calhoun plant is designed to manufacture coatings as well as multi-flooring adhesives",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:55:55.871718+00:00"
+  },
+  {
+    "site_id": "SITE-016000",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Two own-site records independently establish Jacksonville Hilex operator and exact Suite A address, but neither distinguishes physical manufacturing from office/distribution at this address.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://novolex.com/pages.php?pageid=101",
+        "source_class": "own_site",
+        "quote": "Jacksonville (Hilex) 500 N. Ellis Rd., Suite A, Jacksonville, FL 32254",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://novolex.com/content/PDF/Novolex-Supplier-Onboarding-FAQ.pdf",
+        "source_class": "own_site",
+        "quote": "HILEX 500 ELLIS RD N STE A JACKSONVILLE FL 32254-2843 US",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "A site-specific own-site process description, permit or inspection proving plastic bag/film manufacturing at 500 N Ellis Rd Suite A and dated current activity.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:55:55.874646+00:00"
+  },
+  {
+    "site_id": "SITE-016015",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own-site directory verifies Storopack at exact Medley suite, labeled Miami (Packaging). Packaging division label does not distinguish manufacturing from warehouse/sales nor identify polymer conversion at this site.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "source_class": "own_site",
+        "quote": "Miami (Packaging) Storopack Inc. 11825 N.W.100th Road, Suite 4 Medley, Florida 33178",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Site-specific process/permit or own-site description identifying the dominant physical function and polymer products processed or handled at Medley Suite 4, plus current activity.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:55:55.875611+00:00"
+  },
+  {
+    "site_id": "SITE-019001",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Pella own pressroom explicitly confirms vinyl-window production at Macomb manufacturing plant. Exact street still rests on unfetchable OSHA discovery result; 403 is availability only. A guessed inspection route was not evidence and not used.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://pressroom.pella.com/women-leaders-at-pella-corporation-recognized-for-excellence-in-manufacturing/",
+        "source_class": "own_site",
+        "quote": "team members producing vinyl windows at Pella\u2019s Macomb plant",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Fetchable own-site or official address record linking Pella Macomb vinyl-window plant to 111 Pella Place; dated activity if current status is to be adjudicated.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:55:55.876764+00:00"
+  },
+  {
+    "site_id": "SITE-019008",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own-hosted Orkot manual identifies Streamwood 901 Phoenix Lake address and fiber-reinforced plastic material; Streamwood-specific manufacturing capabilities profile describes fabrication of nylon/engineered plastic components. Unknown operating status left unchanged; manufacturing profile is historical.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/brochures/orkot_marine_bearings_engineering_manual_en.pdf",
+        "source_class": "own_site",
+        "quote": "901 Phoenix Lake Ave.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/brochures/orkot_marine_bearings_engineering_manual_en.pdf",
+        "source_class": "own_site",
+        "quote": "General Description: Fiber reinforced plastic material",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/brochures/manufact_capabilities_gb_en.pdf",
+        "source_class": "own_site",
+        "quote": "Trelleborg Sealing Solutions Streamwood (USA)",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/brochures/manufact_capabilities_gb_en.pdf",
+        "source_class": "own_site",
+        "quote": "unique blends of nylons and other engineered plastics fabricated into components",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:56:51.952631+00:00"
+  },
+  {
+    "site_id": "SITE-016103",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Georgia official registered retreading facilities record names Goodyear at exact street. Current corporate location list identifies Stockbridge Aircraft Tire Retreading, establishing rubber transformation/manufacturing. Present listing supports active operation without asserting every field.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://epd.georgia.gov/document/document/procsortretrlandjuly2017pdf/download",
+        "source_class": "government_filing",
+        "quote": "The Goodyear Tire & Rubber Company 100 Business Center Drive Stockbridge GA 30281",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://corporate.goodyear.com/us/en/company/locations.html",
+        "source_class": "own_site",
+        "quote": "Stockbridge, Georgia Aircraft Tire Retreading",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:56:51.954577+00:00"
+  },
+  {
+    "site_id": "SITE-012023",
+    "grade": "field_error",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Official WARN identifies Yokohama TWS at exact 570 Trelleborg address with 2025 closure notice. Later issuer fiscal-2025 results briefing explicitly confirms Spartanburg plant closed, supplying dated outcome beyond WARN alone under AGENTS status rule. Historical own-site tire building/curing confirms manufacturing scope. Real historical plant remains lawful; this is operating_status error, not a creation rejection.",
+    "field_errors": [
+      {
+        "field": "operating_status",
+        "held_value": "active",
+        "proposed_value": "closed",
+        "source_url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+        "quote": "Y-TWS Spartanburg Plant Closed"
+      }
+    ],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+        "source_class": "own_site",
+        "quote": "Y-TWS Spartanburg Plant Closed",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+        "source_class": "government_filing",
+        "quote": "Yokohama TWS North America Spartanburg 2/18/2025 4/19/2025 90 Permanent Closure 570 Trelleborg Dr., Spartanburg, SC 29301",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.yokohama-tws.com/en/news/trelleborg-tires-news/trelleborg-tires-manufacturing-spartanburg",
+        "source_class": "own_site",
+        "quote": "from the preparation of semi-finished products through tire building and curing",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Exact effective closure day not settled: WARN projected 2025-04-19 is not an outcome date. No Form5500 gate run because no creation_error/no-establishment rejection proposed; existing historical site retained. NAICS/county/headcount excluded.",
+    "locked_at_utc": "2026-11-06T11:56:51.957252+00:00"
+  },
+  {
+    "site_id": "SITE-018015",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Michigan Treasury certificate verifies Lacks Trim Systems industrial facility at exact 5801 Kraft street. Own supplier manual discovery labels Kraft Mold, but raw route returned 404 and staging route failed; those labels are not settled manufacturing/polymer evidence. Municipal Cascade township versus held Kentwood postal city is not by itself an address error.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/treasury/BLGSS/PSD_CSD/Industrial-Facility-Exemption/2020-STC-Certs/Amended-Certificates-081820.pdf?hash=B0534876C464EA071CCEFF4FEBAB5DEF&rev=716eea688af64e3daeba1eec540fcf8e",
+        "source_class": "government_filing",
+        "quote": "Lacks Exterior Trim Systems Dba Lacks Trim Systems LLC, and located at 5801 Kraft Ave. SE",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Fetchable site-specific permit or own-site text identifying plastic molding or other polymer transformation and dominant function at 5801 Kraft, plus current operation if status adjudicated.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:56:51.957877+00:00"
+  },
+  {
+    "site_id": "SITE-014015",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "County CUPA active-facility list independently verifies Mercury Plastics at 14849 Salt Lake. Own-site COI factory discovery instead publishes 14825, but HTTP406 prevented raw checking; OSHA plastics bag manufacturing record also blocked. Could be adjacent buildings/campus: no unsupported address correction or wrong-operator rejection.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.fire.lacounty.gov/wp-content/uploads/2023/07/CUPA-List-Active-7.11.23.pdf",
+        "source_class": "government_filing",
+        "quote": "MERCURY PLASTICS INC 14849 SALT LAKE AVE INDUSTRY 91746",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Fetchable site-specific process/permit proving polymer manufacturing at 14849 and explaining relationship to own-site 14825 COI factory address; current status also unconfirmed.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:56:52.034652+00:00"
+  },
+  {
+    "site_id": "SITE-016009",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Fresh Sealed Air employer posting confirms machinery production in Lakeland but does not publish 5135 Drane Field address or polymer substrate. Third-party permit/job snippets are discovery only. No primary exact-address/function/polymer intersection settled.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://careers.sealedair.com/en/jobs/operator-mailer-night-shift-en-57054",
+        "source_class": "own_site",
+        "quote": "Operators are responsible for the safe and efficient operation of assigned machinery throughout their shift.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Own-site or official address-specific record linking 5135 Drane Field to Sealed Air polymer packaging production, rather than an office or another Lakeland facility; dated status evidence.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:56:52.035475+00:00"
+  },
+  {
+    "site_id": "SITE-016116",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "operator",
+      "polymer_scope",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Altium own homepage and locations routes returned HTTP403; OSHA inspection route also blocked. Discovery results name Fulton plastic bottles manufacturing at 6220 Duquesne, but no fetchable primary deciding text was obtained. Availability is not evidence of absence.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [],
+    "settling_fact": "Fetchable official inspection/permit or own-site record naming Altium at 6220 Duquesne and confirming plastic bottle manufacturing versus R&D/distribution, plus current status.",
+    "limitations": "NAICS, county, headcount, verification tier and other untested fields excluded; live page is activity evidence, not a dated status adjudication.",
+    "locked_at_utc": "2026-11-06T11:56:52.035685+00:00"
+  }
+]

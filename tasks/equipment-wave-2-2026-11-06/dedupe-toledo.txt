@@ -1,0 +1,71 @@
+{
+  "query": {
+    "domain": "utoledo.edu",
+    "name": "The University of Toledo",
+    "street": null,
+    "city": null,
+    "state": null,
+    "zip": null
+  },
+  "stop_at_step": 1,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002111",
+          "name": "University of Toledo Technology Transfer",
+          "city": "Toledo",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "ecosystem.csv",
+          "match": "domain exact: utoledo.edu"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-001316",
+          "name": "The University of Toledo",
+          "city": "Toledo",
+          "state": "OH",
+          "status": "active",
+          "tier": "C",
+          "file": "ecosystem.csv",
+          "match": "name key 'university of toledo' = legal_name 'The University of Toledo'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": "no --street",
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002111",
+          "name": "University of Toledo Technology Transfer",
+          "city": "Toledo",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "ecosystem.csv",
+          "match": "legal_name contains 'The University of Toledo'"
+        }
+      ]
+    }
+  ]
+}

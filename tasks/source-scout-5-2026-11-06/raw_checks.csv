@@ -1,0 +1,5 @@
+source,url,quote,raw_words_in_order,raw_sha256,observed_date
+ohio-air,https://epa.ohio.gov/divisions-and-offices/air-pollution-control/permitting/issued-air-permits,The Ohio EPA eDocument System must now be used to search for air permits online.,PASS,b58f3ae08c8233620a35abaf6c482b819fa7344aa199cbc15498cb0cfe8aea0d,2026-11-06
+ohio-air,https://epa.ohio.gov/divisions-and-offices/air-pollution-control/permitting/issued-air-permits,courtesy to the public and regulated community,PASS,b58f3ae08c8233620a35abaf6c482b819fa7344aa199cbc15498cb0cfe8aea0d,2026-11-06
+caa-sb54,https://circularactionalliance.org/online-terms-of-use,"use any automatic device, program, algorithm, or methodology to use, access, copy, acquire information",PASS,535c52f313c79a274c5bc70ff1cc14deb2e24c81cb61394391f7ccb5ed851a33,2026-11-06
+nsf61,https://www.nsf.org/privacy-copyright,"nor may these materials be modified or reposted to other sites, without the prior express written permission of NSF.",PASS,fb9d15dc86e2e604ef84fa9325437fe01721f8b8348f5546a5468a8711994255,2026-11-06

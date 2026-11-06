@@ -1,0 +1,678 @@
+[
+  {
+    "site_id": "SITE-012001",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own manufacturer SDS identifies Watson at 325 Paul Avenue, St. Louis and water-based acrylic coating; current company site remains at the same address (Ferguson locality). Manufacturing and polymer-binder coating scope agree.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://watsoncoatings.com/wp-content/uploads/2025/07/White_AntiClimb_SafetyData.pdf",
+        "source_class": "own_site",
+        "quote": "Product Description: WATER-BASED ACRYLIC COATING Manufactured by: Watson Coatings, Inc. 325 Paul Avenue St. Louis, MO 63135",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://watsoncoatings.com/about-us/",
+        "source_class": "own_site",
+        "quote": "325 Paul Avenue Ferguson, MO 63135",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount and unprovided fields were not audited; current own-site listing is not a dated operating-status event.",
+    "locked_at_utc": "2026-11-06T11:55:01.913810+00:00"
+  },
+  {
+    "site_id": "SITE-016017",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "2025 own-hosted EPD identifies the exact address as a Cantex pipe extrusion facility in a PVC extruded electrical conduit declaration.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.cantexinc.com/Portals/0/CANTEX-PVC-Extruded-Electrical-Conduit-Environmental-Product-Declaration-EPD.pdf",
+        "source_class": "own_site",
+        "quote": "Cantex Pipe Extrusion Facility 202 Progress Rd, Auburndale, FL 33823, USA",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.cantexinc.com/Portals/0/CANTEX-PVC-Extruded-Electrical-Conduit-Environmental-Product-Declaration-EPD.pdf",
+        "source_class": "own_site",
+        "quote": "Product Name: PVC Extruded Electrical Conduit",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount and unprovided fields were not audited; current own-site listing is not a dated operating-status event.",
+    "locked_at_utc": "2026-11-06T11:56:19.099728+00:00"
+  },
+  {
+    "site_id": "SITE-016111",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Own location detail calls this exact Covington address a manufacturing site for coil and extrusion coatings, explicitly where coatings are formulated; matches Ring2 manufacturing.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://industrial.sherwin-williams.com/na/us/en/aerospace/find-location/location-detail.undefined.en_US-10371519-PCG_Manufacturing_GID.html",
+        "source_class": "own_site",
+        "quote": "13129 Harland Drive 13129 Harland Drive Covington, GA, 30014",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://industrial.sherwin-williams.com/na/us/en/aerospace/find-location/location-detail.undefined.en_US-10371519-PCG_Manufacturing_GID.html",
+        "source_class": "own_site",
+        "quote": "Sherwin-Williams is a manufacturing facility where coatings are formulated and delivered to our customers, distributors and blending facilities.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount and unprovided fields were not audited; current own-site listing is not a dated operating-status event.",
+    "locked_at_utc": "2026-11-06T11:56:19.100562+00:00"
+  },
+  {
+    "site_id": "SITE-018007",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "EGLE inspected Pregis at the exact Wills Street address in February2024 and described polyethylene foam extrusion; current Pregis location page retains that address.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.egle.state.mi.us/aps/downloads/srn/N6944/N6944_SAR_20240201.pdf",
+        "source_class": "government_filing",
+        "quote": "Pregis located at 2700 Wills Street, Marysville, Michigan 48040",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.egle.state.mi.us/aps/downloads/srn/N6944/N6944_SAR_20240201.pdf",
+        "source_class": "government_filing",
+        "quote": "The facility has 4 lines through which polyethylene pellets are melted, injected with isobutane as a blowing agent, and pushed out through pressurized barrels (extruders) to form final foam products.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.pregis.com/contact-us/",
+        "source_class": "own_site",
+        "quote": "Marysville 2700 Wills Street Marysville, MI 48040",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount and unprovided fields were not audited; current own-site listing is not a dated operating-status event.",
+    "locked_at_utc": "2026-11-06T11:57:25.379780+00:00"
+  },
+  {
+    "site_id": "SITE-014017",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "ATS independently states Richmond manufacturing space, vinyl ester resin duct construction, and its Goodrick address. This supplies site-specific production evidence beyond general corporate capability.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://atsduct.com/FAQ/",
+        "source_class": "own_site",
+        "quote": "ATS has a total of 80,000 square feet (8,000 m\u00b2) of manufacturing space across two locations: Richmond, California, and Johor, Malaysia, each with 40,000 square feet (4,000 m\u00b2).",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://atsduct.com/FAQ/",
+        "source_class": "own_site",
+        "quote": "The corrosion resistance is mainly determined by the resin used, which is a high-grade vinyl ester resin applied to the initial liner layer.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://atsduct.com/about-us/",
+        "source_class": "own_site",
+        "quote": "2785 Goodrick Ave. Richmond, CA, USA 94801",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount and unprovided fields were not audited; current own-site listing is not a dated operating-status event.",
+    "locked_at_utc": "2026-11-06T11:57:25.381546+00:00"
+  },
+  {
+    "site_id": "SITE-012026",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Perlon identifies Hahl Lexington synthetic-filament manufacture; current site advertises Lexington extrusion operators with the exact Hahl postal address. Ring1 physical extrusion aligns; resin NAICS not audited.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.perlon.com/wp-content/uploads/2019/03/Perlon_Press_March_2017_en.pdf",
+        "source_class": "own_site",
+        "quote": "USA: Hahl Inc., Lexington \u2013 South Carolina",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.perlon.com/wp-content/uploads/2019/03/Perlon_Press_March_2017_en.pdf",
+        "source_class": "own_site",
+        "quote": "The construction of a new 650m\u00b2 warehouse for finished products on the company site in Lexington will provide the company with the urgently required space in the production hall for synthetic filaments.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+        "source_class": "own_site",
+        "quote": "EXTRUSION OPERATOR (M/F/D) Location: Lexington / USA",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.perlon.com/en/portrait-perlon/current-vacancies-2/",
+        "source_class": "own_site",
+        "quote": "POSTAL ADDRESS Hahl Inc. 126 Glassmaster Road 29072 Lexington, S.C.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS/county/headcount not audited. Own-hosted2025 ISO PDF fetched but image-only extraction was empty and is not cited. Current recruitment plus historical production establish scope, not a new dated status event.",
+    "locked_at_utc": "2026-11-06T11:57:25.382660+00:00"
+  },
+  {
+    "site_id": "SITE-018001",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Official on-site inspection establishes Plastipak at 1351 Hix Road in Westland and expressly describes bottle manufacture using two types of plastic molding lines. Current EGLE master list continues to list the facility; no adverse status inference from age.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N3206/N3206_SAR_20160405.pdf",
+        "source_class": "government_filing",
+        "quote": "FACILITY: PLASTIPAK PACKAGING INC LOCATION: 1351 HIX RD, WESTLAND CITY: WESTLAND",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.egle.state.mi.us/aps/downloads/SRN/N3206/N3206_SAR_20160405.pdf",
+        "source_class": "government_filing",
+        "quote": "Plastipak is a plastic bottle manufacturing facility. The facility operates two different types of plastic molding lines to make different types of bottles.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Production inspection dated2016; current master list is a regulatory listing, not proof of current throughput. ZIP48185 corroborated in fresh search but not separately raw-certified. NAICS/county/headcount not audited.",
+    "locked_at_utc": "2026-11-06T11:58:26.460410+00:00"
+  },
+  {
+    "site_id": "SITE-016004",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "MAPEI own EPD explicitly includes Wildwood manufacture of polymer-enriched mortar; own-hosted 2025 ISO appendix identifies the exact street address as Production. Supports polymer formulation plant at the supplied address.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/products-documents/7_large-tile-and-stone-mortar-white_822e0934af184e5b87c5a7415f8cf2cc.pdf?Status=Master&sfvrsn=4548c265_0",
+        "source_class": "own_site",
+        "quote": "Large Tile & Stone Mortar white manufactured in Mapei Corp. located in Calhoun (GA), Wildwood (FL)",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/products-documents/7_large-tile-and-stone-mortar-white_822e0934af184e5b87c5a7415f8cf2cc.pdf?Status=Master&sfvrsn=4548c265_0",
+        "source_class": "own_site",
+        "quote": "Large Tile & Stone Mortar white is a premium, regular-setting, polymer-enriched",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://cdnmedia.mapei.com/docs/librariesprovider10/iso-certifications/iso-14001-2015.pdf?sfvrsn=449e7574_23",
+        "source_class": "own_site",
+        "quote": "MAPEI Corporation 4405 Northeast 82nd Avenue, Wildwood, FL, 34785, USA Production",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "NAICS, county, headcount and unprovided fields were not audited; current own-site listing is not a dated operating-status event.",
+    "locked_at_utc": "2026-11-06T11:58:26.462266+00:00"
+  },
+  {
+    "site_id": "SITE-016119",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Crown own history identifies its second manufacturing facility at Thomaston in2019 within its thermoplastic pavement-marking business; its current directions identifies exact600 Poplar address. No operator disagreement demonstrated.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://crownusa.com/our-story/",
+        "source_class": "own_site",
+        "quote": "Crown expanded its operation by opening a second manufacturing facility in Thomaston, GA",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://crownusa.com/our-story/",
+        "source_class": "own_site",
+        "quote": "Their extensive knowledge in the thermoplastic marking materials field was a valuable asset in producing top-quality thermoplastic.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://crownusa.com/directions/",
+        "source_class": "own_site",
+        "quote": "Crown USA, Inc Thomaston 600 Poplar Dr, Thomaston, GA 30286",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Exact site products within thermoplastic/paint portfolio and Ring1-vs-Ring2 process distinction not independently settled; owner grain questions reserved. No adverse status evidence. NAICS/county/headcount not audited.",
+    "locked_at_utc": "2026-11-06T11:58:47.460653+00:00"
+  },
+  {
+    "site_id": "SITE-018017",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Public national pipe-testing report identifies ADS manufacturer and its Owosso plant address with corrugated polyethylene pipe; fresh IDOT producer list repeats same address and plastic-pipe designation. Establishment/operator/manufacturing polymer scope agree.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://onlinepubs.trb.org/onlinepubs/Archive/NotesDocs/20-07%28191%29_FR.pdf",
+        "source_class": "government_filing",
+        "quote": "Plant Name: Advanced Drainage Systems, Inc. Manufacturer: Advanced Drainage Systems, Inc.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://onlinepubs.trb.org/onlinepubs/Archive/NotesDocs/20-07%28191%29_FR.pdf",
+        "source_class": "government_filing",
+        "quote": "Plant Address: 770 S. Chestnut St. City: Owosso State: MI Zip: 48867",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://onlinepubs.trb.org/onlinepubs/Archive/NotesDocs/20-07%28191%29_FR.pdf",
+        "source_class": "government_filing",
+        "quote": "Product Description: Corrugated Polyethylene Pipe",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://idot.illinois.gov/content/dam/soi/en/web/idot/documents/doing-business/specialty-lists/highways/materials/materials---physical-research/misticproducers.pdf",
+        "source_class": "government_filing",
+        "quote": "ADVANCED DRAINAGE MI OWOSSO 48867 770 S. CHESTNUT ST. 000 00 PLPIPE",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Manufacturing report historical2003; current IDOT listing does not certify throughput. OSHA raw403, unused for settlement. No assertion on current operating_status unknown, NAICS/county/headcount.",
+    "locked_at_utc": "2026-11-06T11:58:47.533127+00:00"
+  },
+  {
+    "site_id": "SITE-019014",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Mauser-authored public closing instructions explicitly list1350 Arthur among plastic manufacturing locations. Current own locations directory independently retains operator/address. Supplier-hosted manufacturer document, not supplier interpretation, supplies function/scope.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.usplastic.com/catalog/files/specsheets/UNClosingInstructions.pdf",
+        "source_class": "manufacturer_document",
+        "quote": "MAUSER PACKAGING SOLUTIONS \u2013 PLASTIC MANUFACTURING LOCATIONS \u2013 SMALL CONTAINERS",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.usplastic.com/catalog/files/specsheets/UNClosingInstructions.pdf",
+        "source_class": "manufacturer_document",
+        "quote": "Elk Grove Village, Illinois, 1350 Arthur Avenue, Elk Grove Village, Illinois 60007",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://mauserpackaging.com/about-mauser/locations/",
+        "source_class": "own_site",
+        "quote": "Mauser - Elk Grove Village, IL - Arthur Ave. 1350 Arthur Avenue Elk Grove Village, IL 60007",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "2022 manufacturer-authored document publicly hosted by distributor. Current own drum instructions cover different drum plants and do not negate small-container production. NAICS/county/headcount/status event not audited.",
+    "locked_at_utc": "2026-11-06T11:58:47.556565+00:00"
+  },
+  {
+    "site_id": "SITE-014006",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Cal Spas own factory-tour newsletter identifies spa/hot-tub manufacture at its Pomona headquarters; current about/contact pages retain Pomona headquarters and1462 E9th. Current spa-care page explicitly identifies acrylic shell, supporting polymer-product scope.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://dealers.calspas.com/pdf/newsletter/2017_01_se.pdf",
+        "source_class": "own_site",
+        "quote": "Cal Spas, 1462 East Ninth Street, Pomona California 91766",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://dealers.calspas.com/pdf/newsletter/2017_01_se.pdf",
+        "source_class": "own_site",
+        "quote": "spa and hot tub manufacturing facility.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://calspas.com/contact",
+        "source_class": "own_site",
+        "quote": "1462 E. 9th Street Pomona, CA 91766",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://calspas.com/spa-cover",
+        "source_class": "own_site",
+        "quote": "Heat damage will weaken the acrylic shell of the spa.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Factory-tour account dated2017; current address and product continuity corroborate but do not prove current throughput. HQ/plant dominant-function choice not overturned; no all-fields/NAICS/headcount/county certification.",
+    "locked_at_utc": "2026-11-06T11:59:29.966015+00:00"
+  },
+  {
+    "site_id": "SITE-019009",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Current primary directory establishes Storopack at320 Craig Place, not held320 Craig Road. Directory labels Packaging but does not independently establish on-site polymer manufacturing; corporate portfolio and third-party warehouse descriptions do not settle physical function.",
+    "field_errors": [
+      {
+        "field": "street_address",
+        "held_value": "320 Craig Road",
+        "proposed_value": "320 Craig Place",
+        "source_url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "quote": "Chicago (Packaging) Storopack Inc. 320 Craig Place Hillside, Illinois 60162"
+      }
+    ],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "source_class": "own_site",
+        "quote": "Chicago (Packaging) Storopack Inc. 320 Craig Place Hillside, Illinois 60162",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Site-specific primary process/function statement for the Hillside establishment: whether polymer transformation occurs here or the physical function is sales/distribution.",
+    "limitations": "Address field error is raw-proven but overall grade remains unresolved under instruction requiring site-specific function/scope settlement. No closure/phantom inference. NAICS/county/headcount/status event not certified.",
+    "locked_at_utc": "2026-11-06T12:00:25.718840+00:00"
+  },
+  {
+    "site_id": "SITE-019002",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "IDOT primary document identifies Pactiv and1050 Sycamore Road, Manteno60950, as a rail insured. Own2024 CDP report names Manteno but supplies coordinates only; those are reference data and cannot certify scope. Fresh searches did not yield raw site-specific polymer production/function evidence.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://apps.dot.illinois.gov/eplan/desenv/082214/66429-015/66429-015.pdf",
+        "source_class": "government_filing",
+        "quote": "1050 Sycamore Road",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://apps.dot.illinois.gov/eplan/desenv/082214/66429-015/66429-015.pdf",
+        "source_class": "government_filing",
+        "quote": "Manteno, IL 60950",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "A primary site-specific production description linking Pactiv at1050 Sycamore to polymer transformation/manufacturing, plus current physical-function confirmation.",
+    "limitations": "Historical address established; current operator/function/polymer scope remain unconfirmed. Company homepage now Novolex-branded does not settle legal operator lineage. No absence/closure/creation error inference; no Form5500 rejection proposed.",
+    "locked_at_utc": "2026-11-06T12:00:25.733988+00:00"
+  },
+  {
+    "site_id": "SITE-014010",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Official California EIR explicitly identifies Heritage Bag manufacturing at12320 Fourth; own Novolex locations and supplier onboarding list Heritage at same address. Fetched primary descriptions do not expressly identify polymer material/process at this individual plant. A historic public polymer-bag supplier lead was found, but official publication URL returns withdrawal notice.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://files.ceqanet.lci.ca.gov/265020-3/attachment/asDIyxasBHOFATlXQOmeEpQysSnhxSEbUUMmlO4iFsdAxn2z3VlcB9q85fawfkDPVIemgExYzKWfrHrT0",
+        "source_class": "government_filing",
+        "quote": "The Heritage Bag manufacturing facility is the nearest industrial/commercial receptor, which is located approximately 120 feet west of the Project site\u2019s western boundary at 12320 4th Street.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://novolex.com/pages.php?pageid=101",
+        "source_class": "own_site",
+        "quote": "Rancho Cucamonga (Heritage) 12320 Fourth St Rancho Cucamonga, CA 91730",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "A site-specific primary statement that this Rancho Cucamonga plant manufactures plastic/polymer bags or identifying its polymer extrusion/conversion process.",
+    "limitations": "Existence/operator/address/manufacturing supported; polymer material not inherited from company identity. Withdrawn Ecology publication is unavailable evidence, not absence. Six primary routes used; NAICS/county/headcount/status event not certified.",
+    "locked_at_utc": "2026-11-06T12:00:25.771354+00:00"
+  },
+  {
+    "site_id": "SITE-016010",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Fresh indexed own-site text identifies Jacksonville Lab & Manufacture at5555 W Beaver and coatings formulation, but raw curl responses were307 Sucuri Javascript challenges. Official Sunbiz route403. Search index text remains a discovery lead, not a settled audit.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://corkindustries.com/",
+        "source_class": "own_site",
+        "quote": "Jacksonville, Florida Lab & Manufacture 5555 W. Beaver St Jacksonville, FL 32254",
+        "raw_checked": false,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Raw-accessible company or official site-specific evidence tying Cork at5555 W Beaver to polymer coating formulation/manufacturing and present physical operation.",
+    "limitations": "Own-site307 challenge on four routes and Sunbiz403; no raw deciding quote. Availability only, never closure/absence. No creation error or Form5500 rejection proposed; no all-field certification.",
+    "locked_at_utc": "2026-11-06T12:00:25.771607+00:00"
+  },
+  {
+    "site_id": "SITE-016105",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "operator_identity",
+      "polymer_scope_at_site",
+      "site_type",
+      "operating_status"
+    ],
+    "observations": "Fresh indexed GAF TPO brochure identifies Valdosta manufacturing and2100 Steeda Way but gives ZIP31606 versus held31601. Raw own-site/documents fetches403; a city-hosted PDF containing brochure pages yielded no relevant text extraction. Neither ZIP correction nor full establishment agreement is promoted from snippets.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://documents.gaf.com/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+        "source_class": "own_site",
+        "quote": "Valdosta, GA 2100 Steeda Way, Valdosta, GA 31606",
+        "raw_checked": false,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Raw primary brochure or official establishment record confirming operator,2100 Steeda physical address/ZIP and current TPO manufacture; specifically resolve31601 versus31606.",
+    "limitations": "GAF raw routes403; official-city-hosted image content not OCR-certified. Indexed ZIP discrepancy is a lead, not an adjudicated field error. No absence/closure/creation error inference. No all-field certification.",
+    "locked_at_utc": "2026-11-06T12:00:25.771828+00:00"
+  }
+]

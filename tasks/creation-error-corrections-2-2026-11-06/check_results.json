@@ -1,0 +1,34 @@
+{
+  "frame": 5,
+  "verified_type_corrections": 2,
+  "held_cases": 3,
+  "annotated_site_rows": 3,
+  "appended_evidence": 4,
+  "owner_seams": 3,
+  "known_answers": 3,
+  "raw_census": 4,
+  "old_rows_preserved": true,
+  "replay_byte_identical": true,
+  "no_write_mutations": [
+    "fabricated quote",
+    "wrong binding",
+    "changed hash",
+    "missing verdict",
+    "late stale site preimage",
+    "late cross-shard EVD"
+  ],
+  "state_counts": {
+    "FL": {
+      "code_count_before": 50,
+      "code_count_after": 50,
+      "plant_count_before": 50,
+      "plant_count_after": 49
+    },
+    "WI": {
+      "code_count_before": 87,
+      "code_count_after": 87,
+      "plant_count_before": 87,
+      "plant_count_after": 86
+    }
+  }
+}

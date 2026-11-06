@@ -1,0 +1,20 @@
+{
+  "site_id": "SITE-016010",
+  "quote_checks": [
+    {
+      "url": "https://corkindustries.net/",
+      "quote": "Jacksonville, Florida Lab & Manufacture 5555 W. Beaver St Jacksonville, FL 32254",
+      "sha256": "1b82c64d2d9807043de8fe745dd9c099346a44c04fbe27bd200689606d984aa2",
+      "bytes": 154162,
+      "raw": "yes"
+    },
+    {
+      "url": "https://corkindustries.net/",
+      "quote": "Cork is an Industry Leader in the Formulation of Sustainable Aqueous, UV, and EB Coatings, Varnishes, Adhesives, and UV inks for Graphic Arts and Packaging.",
+      "sha256": "1b82c64d2d9807043de8fe745dd9c099346a44c04fbe27bd200689606d984aa2",
+      "bytes": 154162,
+      "raw": "yes"
+    }
+  ],
+  "qualification": "Exact Jacksonville laboratory/manufacture address plus formulations. No registered entity continuity/currentstatus/allfield certification inferred."
+}

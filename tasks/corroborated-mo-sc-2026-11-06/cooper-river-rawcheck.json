@@ -1,0 +1,26 @@
+[
+  {
+    "source_url": "https://www.alpek.com/wp-content/uploads/2024/02/Alpek-4Q23-Report-ENG.pdf",
+    "pdf_page": 4,
+    "http_status": 200,
+    "bytes": 1145767,
+    "sha256": "6f08c10d8363a55183c1f85f543faa97ac3a8d46b7ac80d093fa2b1c98ed389e",
+    "quote": "all production was transferred to other facilities",
+    "words_in_order": true,
+    "fabricated_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "method": "curl browser UA + pdftotext -layout; reused calibrated STRONG/evidence-repair token matcher"
+  },
+  {
+    "source_url": "https://www.alpek.com/wp-content/uploads/2026/03/Alpek-Annual-Report-2025.pdf",
+    "pdf_page": 80,
+    "http_status": 200,
+    "bytes": 19636674,
+    "sha256": "2cd2233aa27f32be34ededaf1f0727649dcfefa85c198ccb723d465b3aeb08f7",
+    "quote": "The Company started the process of decommissioning and dismantling of assets",
+    "words_in_order": true,
+    "fabricated_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "method": "curl browser UA + pdftotext -layout; reused calibrated STRONG/evidence-repair token matcher"
+  }
+]

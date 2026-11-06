@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://response.epa.gov/site/site_profile.aspx?site_id=17451",
+    "status": "ok",
+    "page": "build/l11-correction-cache/36e496267a2a29a901c93985eea27cbd1592bf56ac27a4e7404de836a67665f7.txt",
+    "sha256": "6c8b181c10780d5f04a65d74cdb6054da3c5817a8a4c14d94ae7119ed41423f6",
+    "attempts": [
+      {
+        "route": "https://response.epa.gov/site/site_profile.aspx?site_id=17451",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://response.epa.gov/site/site_profile.aspx?site_id=17451",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T12:13:14Z"
+  },
+  {
+    "url": "https://wsprings.com/DocumentCenter/View/9389/Saving-Styrofoam-to-Recycle-Flyer",
+    "status": "ok",
+    "attempts": [
+      {
+        "route": "https://wsprings.com/DocumentCenter/View/9389/Saving-Styrofoam-to-Recycle-Flyer",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://wsprings.com/DocumentCenter/View/9389/Saving-Styrofoam-to-Recycle-Flyer"
+      }
+    ],
+    "fetched_at": "2026-11-06T12:13:14Z",
+    "page": "build/l11-correction-cache/54e82edc6168c46b3edfbc2bb9c9eeb7ea2371cfaf0da170ef5dbe59b62ab4ca.txt",
+    "sha256": "479adb92664f793cc9cc24a7350f421d80ac896bc7fc7bd65c9f9949b13d00da",
+    "extraction": "pdftotext -layout"
+  }
+]

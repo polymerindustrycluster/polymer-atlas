@@ -1,0 +1,89 @@
+{
+  "normalizer": "W assignment AST-extracted verbatim from authorized prep.py; no module execution",
+  "extraction": "stdlib HTMLParser excluding script/style; pdftotext -layout for PDFs",
+  "probes": [
+    {
+      "quote": "5555 W. Beaver St",
+      "expected": true,
+      "observed": true,
+      "raw_path": "/tmp/audit9-follow-b/rawpages/SITE-016010-0239781d90af.raw",
+      "text_path": "/tmp/audit9-follow-b/rawpages/SITE-016010-0239781d90af.txt"
+    },
+    {
+      "quote": "Lab & Manufacture",
+      "expected": true,
+      "observed": true,
+      "raw_path": "/tmp/audit9-follow-b/rawpages/SITE-016010-0239781d90af.raw",
+      "text_path": "/tmp/audit9-follow-b/rawpages/SITE-016010-0239781d90af.txt"
+    },
+    {
+      "quote": "Formulation of Sustainable Aqueous",
+      "expected": true,
+      "observed": true,
+      "raw_path": "/tmp/audit9-follow-b/rawpages/SITE-016010-0239781d90af.raw",
+      "text_path": "/tmp/audit9-follow-b/rawpages/SITE-016010-0239781d90af.txt"
+    },
+    {
+      "quote": "This facility manufactures lunar titanium bananas",
+      "expected": false,
+      "observed": false
+    }
+  ],
+  "passed": true,
+  "pdf_probes": [
+    {
+      "quote": "2343 PEGASUS DRIVE",
+      "expected": true,
+      "observed": true,
+      "raw_path": "/tmp/audit9-follow-b/rawpages/SITE-014007-074ac7d71293.raw",
+      "sha256": "351a875e2ee25dc5d9ea2dbb4a9fecfd9aa86d6a455766c4ea2924fbc198dd9e",
+      "text_path": "/tmp/audit9-follow-b/rawpages/SITE-014007-074ac7d71293.txt",
+      "page": 1
+    },
+    {
+      "quote": "manufactures oriented polystyrene sheet",
+      "expected": true,
+      "observed": true,
+      "raw_path": "/tmp/audit9-follow-b/rawpages/SITE-019002-430a4df82f56.raw",
+      "sha256": "06fc4cf749c3c7eeba82b8fc259c6a20bf281fd9b43312341c3b4eef73962b0a",
+      "text_path": "/tmp/audit9-follow-b/rawpages/SITE-019002-430a4df82f56.txt",
+      "page": 1
+    },
+    {
+      "quote": "The operation of an expanded polystyrene facility to manufacture cups and food containers.",
+      "expected": true,
+      "observed": true,
+      "raw_path": "/tmp/audit9-follow-b/rawpages/SITE-016101-02e68b0ffe77.raw",
+      "sha256": "f22128332fec1fc5eb0b56bec566e5abc482fac594bd1a72ccbfe545f53de504",
+      "text_path": "/tmp/audit9-follow-b/rawpages/SITE-016101-02e68b0ffe77.txt",
+      "page": 1
+    },
+    {
+      "quote": "This facility manufactures lunar marshmallows",
+      "expected": false,
+      "observed": false
+    }
+  ],
+  "ocr_used": false,
+  "fault_injection": "Fabricated replacement quote is rejected by the same matcher used on all cited source text.",
+  "named_check": {
+    "command": "python3 /tmp/audit9-follow-b/check.py",
+    "outcome": "PASS: unique eight inputs/outputs; 19 quotes; replay HTML extraction or pdftotext from all hashed raw pages; unresolved settling facts; max nine attempts/site; no staged/unstaged data diff; branch unchanged",
+    "check_script_sha256": "8f3e93d374dce7f1e8bb860fa37c5ef8984e49331fca5904e2d8d0c79114fbb4"
+  },
+  "attempt_counts": {
+    "SITE-016010": 1,
+    "SITE-014007": 8,
+    "SITE-019002": 6,
+    "SITE-019011": 9,
+    "SITE-014015": 5,
+    "SITE-016006": 5,
+    "SITE-016101": 8,
+    "SITE-016116": 9
+  },
+  "http_200_count": 24,
+  "total_route_attempts": 51,
+  "budget_definition": "Distinct requested source fetch URLs per site, including failures, query variants, redirected routes and shells; web search used only for discovery and no indexed text admitted without raw fetch. No shared source fetched for more than one site.",
+  "attestation": "audit9-followup-blind-b: read only AGENTS.md, relevant SCHEMA rules, permitted README.md and blind_b.csv as record inputs; authorized prep.py W assignment only (AST extracted, no module execution). Never read original data/evidence rows, sources/notes/registry links, sibling/previous audit files, previous verdicts/reports/URLs or main changes. Every verdict appended and locked once; no locked object edited. Only three owned repo JSON outputs written. No git mutation. Parent first example review approved Cork source checks; parent independently adjudicates final grades.",
+  "unrun": "Repository validator not run because it loads prohibited original data/evidence; controller owns that broader check. No OCR used; only HTMLParser and pdftotext."
+}
