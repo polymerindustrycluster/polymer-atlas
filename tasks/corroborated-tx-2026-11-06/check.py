@@ -8,7 +8,7 @@ from build import read
 vs=read(P/'verdicts.csv');cs=read(P/'input.csv');alloc=read(P/'allocations.csv');blind=read(P/'blind-input.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==40
 assert {r['cluster_id'] for r in vs}=={r['cluster_id'] for r in cs}
-assert len(alloc)==len({r['site_id'] for r in alloc})==21
+assert len(alloc)==len({r['site_id'] for r in alloc})==20
 assert len(blind)==len({r['cluster_id'] for r in blind})==20
 assert {r['cluster_id'] for r in blind}<={r['cluster_id'] for r in alloc}
 paths=[ROOT/'data'/n for n in ['organizations_US.csv','sites_TX.csv','evidence_organizations_US.csv','evidence_sites_TX.csv']]
