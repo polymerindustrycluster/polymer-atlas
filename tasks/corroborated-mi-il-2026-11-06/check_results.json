@@ -2,12 +2,12 @@
   "state": "MI",
   "qcew_2023_private_establishments_326": 819,
   "before_strict_sites": 121,
-  "after_strict_sites": 139,
+  "after_strict_sites": 138,
   "before_percent": 14.774114774114775,
-  "after_percent": 16.971916971916972,
+  "after_percent": 16.84981684981685,
   "known_answers": 3,
   "worked_clusters": 150,
   "unique_verdicts": 150,
-  "creates_C": 18,
-  "evidence_rows": 126
+  "creates_C": 17,
+  "evidence_rows": 119
 }
