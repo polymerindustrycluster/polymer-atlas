@@ -1,0 +1,1321 @@
+{
+  "LF-IL-00040": {
+    "query": {
+      "domain": "https://greif.com",
+      "name": "Greif",
+      "street": "290 E Fullerton Ave",
+      "city": "Carol Stream",
+      "state": "IL",
+      "zip": "60188"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001824",
+            "name": "Greif Inc",
+            "city": "Delaware",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: greif.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001824",
+            "name": "Greif Inc",
+            "city": "Delaware",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'greif' = legal_name 'Greif Inc'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-01154": {
+    "query": {
+      "domain": "https://mauserpackaging.com/",
+      "name": "BWAY",
+      "street": "1350 Arthur Ave",
+      "city": "Elk Grove Village",
+      "state": "IL",
+      "zip": "60007"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000717",
+            "name": "Mauser Packaging Solutions",
+            "city": "Monroe",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: mauserpackaging.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-006250",
+            "name": "Bway Corporation",
+            "city": "Cedar City",
+            "state": "UT",
+            "status": "merged",
+            "tier": "B",
+            "file": "organizations_UT.csv",
+            "match": "name key 'bway' = legal_name 'Bway Corporation'",
+            "successor_chain": [
+              "ORG-000717"
+            ],
+            "successor_end": "terminal",
+            "successor_terminal": "ORG-000717 Mauser Packaging Solutions [active]"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000717",
+            "name": "Mauser Packaging Solutions",
+            "city": "Monroe",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "trade_names contains 'BWAY'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-00979": {
+    "query": {
+      "domain": "https://www.gilkey.com/",
+      "name": "Gilkey Window Company",
+      "street": "10160 Virginia Ave.",
+      "city": "Chicago Ridge",
+      "state": "IL",
+      "zip": "60415"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000855",
+            "name": "Gilkey Window Company",
+            "city": "Cincinnati",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: gilkey.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000855",
+            "name": "Gilkey Window Company",
+            "city": "Cincinnati",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'gilkey window' = legal_name 'Gilkey Window Company'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-00290": {
+    "query": {
+      "domain": "",
+      "name": "Pactiv, LLC",
+      "street": "7200 S Mason Ave",
+      "city": "Bedford Park",
+      "state": "IL",
+      "zip": "60638"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002537",
+            "name": "Pactiv Corporation",
+            "city": "Mount Carmel",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "name key 'pactiv' = legal_name 'Pactiv Corporation'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002395",
+            "name": "Fabri Kal Corp.",
+            "city": "Hazleton",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Pactiv, LLC'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-01069": {
+    "query": {
+      "domain": "https://www.pretiumpkg.com/",
+      "name": "Pretium Packaging",
+      "street": "2560 White Oak Circle Suite 140",
+      "city": "Aurora",
+      "state": "IL",
+      "zip": "60502"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000523",
+            "name": "Pretium Packaging",
+            "city": "St. Louis",
+            "state": "MO",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_MO.csv",
+            "match": "domain exact: pretiumpkg.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000523",
+            "name": "Pretium Packaging",
+            "city": "St. Louis",
+            "state": "MO",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_MO.csv",
+            "match": "name key 'pretium packaging' = legal_name 'Pretium Packaging'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002219",
+            "name": "Alpha Packaging",
+            "city": "Bethlehem",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Pretium Packaging'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-00097": {
+    "query": {
+      "domain": "https://www.sherwin-williams.com",
+      "name": "The Sherwin-Williams Company",
+      "street": "901 N. Greenwood Avenue, Kankakee",
+      "city": "Kankakee",
+      "state": "IL",
+      "zip": "60901"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000132",
+            "name": "The Sherwin-Williams Company",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: sherwin-williams.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000132",
+            "name": "The Sherwin-Williams Company",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000088",
+            "name": "PPG Industries, Inc.",
+            "city": "Pittsburgh",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'The Sherwin-Williams Company'"
+          },
+          {
+            "id": "ORG-002886",
+            "name": "CSW Industrials, Inc.",
+            "city": "Dallas",
+            "state": "TX",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_TX.csv",
+            "match": "notes contains 'The Sherwin-Williams Company'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-00103": {
+    "query": {
+      "domain": "https://www.owenscorning.com/",
+      "name": "Owens Corning",
+      "street": "2710 Laude Drive",
+      "city": "Rockford",
+      "state": "IL",
+      "zip": "61109"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001007",
+            "name": "Owens Corning",
+            "city": "Toledo",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: owenscorning.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001007",
+            "name": "Owens Corning",
+            "city": "Toledo",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'owens corning' = legal_name 'Owens Corning'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-01005": {
+    "query": {
+      "domain": "",
+      "name": "Berry Global",
+      "street": "12900 S. Pulaski Avenue",
+      "city": "Alsip",
+      "state": "IL",
+      "zip": "60803"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002544",
+            "name": "Berry Global",
+            "city": "Evansville",
+            "state": "IN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IN.csv",
+            "match": "name key 'berry global' = legal_name 'Berry Global'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004040",
+            "name": "Vybond Group, Inc.",
+            "city": "Franklin",
+            "state": "KY",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_KY.csv",
+            "match": "notes contains 'Berry Global'"
+          },
+          {
+            "id": "ORG-004278",
+            "name": "Magnera Corporation",
+            "city": "Charlotte",
+            "state": "NC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NC.csv",
+            "match": "notes contains 'Berry Global'"
+          },
+          {
+            "id": "ORG-002149",
+            "name": "Berry Global - Streetsboro, OH",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "legal_name contains 'Berry Global'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-00218": {
+    "query": {
+      "domain": "",
+      "name": "PACTIV",
+      "street": "1050 Sycamore Road",
+      "city": "Manteno",
+      "state": "IL",
+      "zip": "60950"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002537",
+            "name": "Pactiv Corporation",
+            "city": "Mount Carmel",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "name key 'pactiv' = legal_name 'Pactiv Corporation'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002395",
+            "name": "Fabri Kal Corp.",
+            "city": "Hazleton",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'PACTIV'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-01193": {
+    "query": {
+      "domain": "https://marianinc.com",
+      "name": "Marian Inc.",
+      "street": "396 Wegner Drive",
+      "city": "West Chicago",
+      "state": "IL",
+      "zip": "60185"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-005114",
+            "name": "Marian, Inc.",
+            "city": "Indianapolis",
+            "state": "IN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_IN.csv",
+            "match": "domain exact: marianinc.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-005114",
+            "name": "Marian, Inc.",
+            "city": "Indianapolis",
+            "state": "IN",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_IN.csv",
+            "match": "name key 'marian' = legal_name 'Marian, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-00488": {
+    "query": {
+      "domain": "https://www.trelleborg.com/",
+      "name": "Trelleborg Sealing Solutions",
+      "street": "901 Phoenix Lake Ave, Streamwood, IL 60107",
+      "city": "Streamwood",
+      "state": "IL",
+      "zip": "60107"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004243",
+            "name": "Trelleborg Corp",
+            "city": "Pawling",
+            "state": "NY",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NY.csv",
+            "match": "domain exact: trelleborg.com"
+          },
+          {
+            "id": "ORG-000612",
+            "name": "Trelleborg Sealing Profiles U.S. Inc.",
+            "city": "Aurora",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: trelleborg.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004243",
+            "name": "Trelleborg Corp",
+            "city": "Pawling",
+            "state": "NY",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NY.csv",
+            "match": "name key 'trelleborg sealing solutions' = trade_names 'Trelleborg Sealing Solutions'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-01060": {
+    "query": {
+      "domain": "https://www.liquibox.com/",
+      "name": "Liquibox/Sealedair",
+      "street": "1201 Windham Pkwy",
+      "city": "Romeoville",
+      "state": "IL",
+      "zip": "60446"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000934",
+            "name": "Liquibox",
+            "city": "Upper Sandusky",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: liquibox.com"
+          },
+          {
+            "id": "ORG-001105",
+            "name": "Liquibox",
+            "city": "Ashland",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: liquibox.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-00520": {
+    "query": {
+      "domain": "",
+      "name": "Berry Global",
+      "street": "921 Industrial Drive",
+      "city": "Aurora",
+      "state": "IL",
+      "zip": "60506"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002544",
+            "name": "Berry Global",
+            "city": "Evansville",
+            "state": "IN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IN.csv",
+            "match": "name key 'berry global' = legal_name 'Berry Global'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004040",
+            "name": "Vybond Group, Inc.",
+            "city": "Franklin",
+            "state": "KY",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_KY.csv",
+            "match": "notes contains 'Berry Global'"
+          },
+          {
+            "id": "ORG-004278",
+            "name": "Magnera Corporation",
+            "city": "Charlotte",
+            "state": "NC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NC.csv",
+            "match": "notes contains 'Berry Global'"
+          },
+          {
+            "id": "ORG-002149",
+            "name": "Berry Global - Streetsboro, OH",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "legal_name contains 'Berry Global'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-00166": {
+    "query": {
+      "domain": "https://tapes.averydennison.com/",
+      "name": "Avery Dennison",
+      "street": "902 Feehanville Dr",
+      "city": "Mt. Prospect",
+      "state": "IL",
+      "zip": "60056"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000238",
+            "name": "Avery Dennison",
+            "city": "Mentor",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: tapes.averydennison.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000238",
+            "name": "Avery Dennison",
+            "city": "Mentor",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'avery dennison' = legal_name 'Avery Dennison'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004025",
+            "name": "Adhesive Products, Inc.",
+            "city": "Albany",
+            "state": "CA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_CA.csv",
+            "match": "notes contains 'Avery Dennison'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-00222": {
+    "query": {
+      "domain": "https://www.storopack.us/",
+      "name": "Storopack, Inc.",
+      "street": "320 Craig Road",
+      "city": "Hillside",
+      "state": "IL",
+      "zip": "60162"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001128",
+            "name": "Storopack, Inc.",
+            "city": "Cincinnati",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: storopack.us"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001128",
+            "name": "Storopack, Inc.",
+            "city": "Cincinnati",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-00462": {
+    "query": {
+      "domain": "https://www.pella.com/",
+      "name": "Pella",
+      "street": "111 Pella Place",
+      "city": "Macomb",
+      "state": "IL",
+      "zip": "61455"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001012",
+            "name": "Pella Corporation",
+            "city": "Troy",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: pella.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001012",
+            "name": "Pella Corporation",
+            "city": "Troy",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "name key 'pella' = legal_name 'Pella Corporation'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-00522": {
+    "query": {
+      "domain": "https://rohrer.com",
+      "name": "Rohrer Corporation",
+      "street": "325 S Lombard Rd",
+      "city": "Addison",
+      "state": "IL",
+      "zip": "60101"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001885",
+            "name": "Rohrer Corporation",
+            "city": "Wadsworth",
+            "state": "OH",
+            "status": "active",
+            "tier": "U",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: rohrer.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001885",
+            "name": "Rohrer Corporation",
+            "city": "Wadsworth",
+            "state": "OH",
+            "status": "active",
+            "tier": "U",
+            "file": "organizations_OH.csv",
+            "match": "name key 'rohrer' = legal_name 'Rohrer Corporation'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-00689": {
+    "query": {
+      "domain": "https://plasticade.com/",
+      "name": "Plasticade",
+      "street": "100 Howard Avenue",
+      "city": "Des Plaines",
+      "state": "IL",
+      "zip": "60018"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004284",
+            "name": "Plasticade",
+            "city": "Eugene",
+            "state": "OR",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OR.csv",
+            "match": "domain exact: plasticade.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004284",
+            "name": "Plasticade",
+            "city": "Eugene",
+            "state": "OR",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OR.csv",
+            "match": "name key 'plasticade' = legal_name 'Plasticade'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-01145": {
+    "query": {
+      "domain": "https://www.reynoldsconsumerproducts.com",
+      "name": "Reynolds Consumer Products LLC",
+      "street": "2226 E. Morton Avenue",
+      "city": "Jacksonville",
+      "state": "IL",
+      "zip": "62650"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002892",
+            "name": "Reynolds Consumer Products Inc.",
+            "city": "Lake Forest",
+            "state": "IL",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_IL.csv",
+            "match": "domain exact: reynoldsconsumerproducts.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002892",
+            "name": "Reynolds Consumer Products Inc.",
+            "city": "Lake Forest",
+            "state": "IL",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_IL.csv",
+            "match": "name key 'reynolds consumer products' = legal_name 'Reynolds Consumer Products Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002671",
+            "name": "Transwestern Polymer",
+            "city": "Tamaqua",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Reynolds Consumer Products LLC'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-01307": {
+    "query": {
+      "domain": "https://www.all-stateind.com/category/blog/",
+      "name": "ALL-STATE INDUSTRIES, INC.",
+      "street": "2651 CARL BLVD",
+      "city": "ELK GROVE VILLAGE",
+      "state": "IL",
+      "zip": "60007"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004090",
+            "name": "All-State Industries, Inc.",
+            "city": "West Des Moines",
+            "state": "IA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_IA.csv",
+            "match": "domain exact: all-stateind.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004090",
+            "name": "All-State Industries, Inc.",
+            "city": "West Des Moines",
+            "state": "IA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_IA.csv",
+            "match": "name key 'all state industries' = legal_name 'All-State Industries, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+}

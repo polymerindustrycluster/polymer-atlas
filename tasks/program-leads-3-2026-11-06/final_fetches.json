@@ -1,0 +1,86 @@
+[
+  {
+    "lead_ids": [
+      "L13B-022"
+    ],
+    "url": "https://www.otech.edu/program/composites/",
+    "final_url": "https://www.otech.edu/program/composites/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 880061,
+    "sha256": "47dd7cd7f64f5704ecaa59b904f1e5800703da6cd4d4a2b0c97c8f6e1d81d983",
+    "cache_key": "77e0da34a2aecad4"
+  },
+  {
+    "lead_ids": [
+      "L13B-009"
+    ],
+    "url": "https://r.jina.ai/https://www.davistech.edu/programs/composites",
+    "final_url": "https://r.jina.ai/https://www.davistech.edu/programs/composites",
+    "http_status": "401",
+    "curl_rc": 0,
+    "bytes": 371,
+    "sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+    "cache_key": "aa3e4f5b27f698db"
+  },
+  {
+    "lead_ids": [
+      "L13B-021"
+    ],
+    "url": "https://r.jina.ai/https://www.northwoodtech.edu/academic-programs/degree-programs-and-certificates/injection-mold-set-up-plastic-apprentice/",
+    "final_url": "https://r.jina.ai/https://www.northwoodtech.edu/academic-programs/degree-programs-and-certificates/injection-mold-set-up-plastic-apprentice/",
+    "http_status": "401",
+    "curl_rc": 0,
+    "bytes": 371,
+    "sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+    "cache_key": "fecfc51d44c6fde0"
+  },
+  {
+    "lead_ids": [
+      "L13B-029"
+    ],
+    "url": "https://r.jina.ai/https://www.rubber.org/self-paced-training/",
+    "final_url": "https://r.jina.ai/https://www.rubber.org/self-paced-training/",
+    "http_status": "401",
+    "curl_rc": 0,
+    "bytes": 371,
+    "sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+    "cache_key": "5230de316478d9cc"
+  },
+  {
+    "lead_ids": [
+      "L13B-001"
+    ],
+    "url": "https://r.jina.ai/https://www.aiche.org/ili/academy/aiche-academy-course-offerings",
+    "final_url": "https://r.jina.ai/https://www.aiche.org/ili/academy/aiche-academy-course-offerings",
+    "http_status": "401",
+    "curl_rc": 0,
+    "bytes": 371,
+    "sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+    "cache_key": "b30eba6ff25bc536"
+  },
+  {
+    "lead_ids": [
+      "L13B-043"
+    ],
+    "url": "https://uwm.edu/",
+    "final_url": "https://uwm.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 78606,
+    "sha256": "4ad62abf12c1b050b4effb2325fc87dd42cf07f7c1d7938de2c3504bcdac398a",
+    "cache_key": "fb9c6817cfa61325"
+  },
+  {
+    "lead_ids": [
+      "L13B-020"
+    ],
+    "url": "https://www.macomb.edu/programs-courses/programs/applied-technology-apprenticeship.html",
+    "final_url": "https://www.macomb.edu/programs-courses/programs/applied-technology-apprenticeship.html",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 76519,
+    "sha256": "27791de0eba31f51954dcad479f487394397a12a844d3cda28ab6ef940fbc775",
+    "cache_key": "f6baafeb3a1b6755"
+  }
+]

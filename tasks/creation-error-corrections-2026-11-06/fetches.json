@@ -1,0 +1,102 @@
+[
+  {
+    "url": "https://www.gilkey.com/location/chicago-ridge-il/",
+    "status": "ok",
+    "page": "build/l11-correction-cache/72d7ddc713a5ec624be0093f978f6918c8cb8c7f20cd944bf5eb51abd11dfa61.txt",
+    "sha256": "9b1c4a1d405d953a6cfd7bd4cf40dab31757c729289491cb02f7cd892927bf27",
+    "attempts": [
+      {
+        "route": "https://www.gilkey.com/location/chicago-ridge-il/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.gilkey.com/location/chicago-ridge-il/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T12:08:57Z"
+  },
+  {
+    "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+    "status": "ok",
+    "page": "build/l11-correction-cache/da17b38127222c6cfbde697ae56a16f39a1f1faa4e2fbf60f1fe5664086c3ad3.txt",
+    "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27",
+    "attempts": [
+      {
+        "route": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T12:08:58Z"
+  },
+  {
+    "url": "https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/",
+    "status": "ok",
+    "page": "build/l11-correction-cache/cd03a06d9ab1339f3a9bd5a68e729c6843756f039207bce05da36251669dc5fe.txt",
+    "sha256": "cb878ba86f6ebde2c13ad70dca9f90a879a33be43e6eb9aa9c8ecfa8c128a4e2",
+    "attempts": [
+      {
+        "route": "https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://eastjordanplastics.com/blog/statement-regarding-our-south-haven-facility/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T12:08:57Z"
+  },
+  {
+    "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+    "status": "ok",
+    "page": "build/l11-correction-cache/c217e3a0e819fa94e6d08d4f7d225a3b50f42f36e08aed38bbf8df8b28218642.txt",
+    "sha256": "d2ea297b23ad1e18ac99f880b48ca05dc19c90b8dc3fcae7ef5209989e87b669",
+    "attempts": [
+      {
+        "route": "https://corporate.dartcontainer.com/location/corona-ca/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://corporate.dartcontainer.com/location/corona-ca/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T12:08:57Z"
+  },
+  {
+    "url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+    "status": "ok",
+    "attempts": [
+      {
+        "route": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T12:08:59Z",
+    "page": "build/l11-correction-cache/0a0105aa4fcd7d2c0cc83a580d9ac47cf699c470e3b3e0892052da5372451f0c.txt",
+    "sha256": "33208e277c5849207e72889142b62616dce4cbc1f3449f39ad3ceb8f21b94ef9",
+    "extraction": "pdftotext -layout"
+  },
+  {
+    "url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+    "status": "ok",
+    "attempts": [
+      {
+        "route": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T12:09:00Z",
+    "page": "build/l11-correction-cache/2367c33e3105c231306eb602e7a9e2d8e813ad20dc3b081da9ac5d7857eae1b5.txt",
+    "sha256": "6dc3f90eaa27643780d36351aca33207864e73f43258e4a3856411122f7bb945",
+    "extraction": "pdftotext -layout"
+  }
+]

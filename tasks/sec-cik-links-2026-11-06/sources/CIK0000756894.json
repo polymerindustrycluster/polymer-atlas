@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000756894.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000756894",
+  "name": "BARRICK MINING CORP",
+  "tickers": [
+    "B"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "9cd27c9da3ecfca51317c586c039bc71851361da516180694952a1dafde59b11",
+  "raw_name_token": "\"BARRICK MINING CORP\""
+}

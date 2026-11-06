@@ -1,0 +1,11 @@
+# L6 CA4 adversarial review
+
+Review branch agent/codex/corroborated-ca-4, task tasks/corroborated-ca-4-2026-11-06. Return APPROVE/REFUTE with concrete record findings and inspected/missing yield. BLIND FIRST read blind-input.csv, full8-create census, before allocations/verdicts. Assess identity, physical address, scope/operator independently; then reconcile.
+
+40 ranked core clusters121–160.8VERIFIED/32holds;3newparentC,8siteC,55EVD. AllC, no own_site claim rows or capability/current operation/HQ/county inference. Banked ITA2025/inspection packets vintage2026-11-01 admitted by controller; citations actual bulkURL/ID/date. IDs ORG10300+/SITE14600+/EVD186000+ unused L6 subset, frozen. Main includes merged CA135, not CA2/3 pending. Strict32693→101/1306(7.1210→7.7335%),count ratio not matched coverage.
+
+Held-site operators ColumbiaORG003465,PactivORG002537,AltiumORG001408,SnyderORG004866,AmcorFlexiblesNorthAmericaORG000665. Exact ITA legal employer distinguishes Amcor operating parent from shared domain AmcorplcORG002907. New labels Durabag,TRM,Stytek: verify correct domains and plant applicability. Pactiv older unitlessOSHA excluded,ITA BldgH-1 supports create. AltiumITA326160 versus inspection326199 same3261,source differences noted,not product tags. No other parent corrections or novel scope ruling.
+
+All nonconcordant four-digit families held. ECHO/employer/award-only without resolved plant witness held. NewPride current own contact page calls DelAmo ServiceCenter and places RetreadingPlant at Paramount: hold. MartinRubber inactive CUPA entry prompts direct reconciliation,not closureREJECT. ConsolidatedContainer/Altium operator held. Intertrade/TruForm resin code versus formed/prototyping scope and malformed address/city held. No artificial20sample inflation;full8census.
+
+Run python3 scripts/validate.py(0errors);python3 tasks/corroborated-ca-4-2026-11-06/check.py(40uniqueverdicts/full8sources/idempotent replay/QCEW/global cross-shard lateEVDcollision rejects before any writes). Existing main values unchanged by parsedID comparison. No RegistryLinks/derived/sharedscripts/federal-frame edits;noFRSREST/private/licensedcontent. Failedfetch availability only. Try false domain/operator links, source/code/address discrepancy, phantom witness, omitted preflight, partial writes. No Done claim; draft under clerk route.

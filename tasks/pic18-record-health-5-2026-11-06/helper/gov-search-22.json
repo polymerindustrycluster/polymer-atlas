@@ -1,0 +1,24 @@
+{
+  "org_ids": [
+    "ORG-001921",
+    "ORG-001922",
+    "ORG-001927",
+    "ORG-001940"
+  ],
+  "queries": [
+    {
+      "q": "\"Potter's\" Cleveland (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Faull and Son\" Niles (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"GlueTread\" Hiram (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Synthetic Rubber Technologies\" Uniontown (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "16ec7624db2ae01bffc621a7f02bf7da483925d597e602db957bc70f171833f1",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}

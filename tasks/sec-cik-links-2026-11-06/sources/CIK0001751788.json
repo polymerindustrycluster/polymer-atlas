@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001751788.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001751788",
+  "name": "DOW INC.",
+  "tickers": [
+    "DOW"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "291ddaf1bc62d42998982ddd83575c011db063ce07f2b3ad3a0004c63334fd91",
+  "raw_name_token": "\"DOW INC.\""
+}

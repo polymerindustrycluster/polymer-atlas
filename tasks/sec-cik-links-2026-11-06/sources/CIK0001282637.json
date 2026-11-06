@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001282637.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001282637",
+  "name": "NEWMARKET CORP",
+  "tickers": [
+    "NEU"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "7a035398c7b2c1f6f1248d5dcf8efb0a05d7316e7368649ff613d136b9c688bb",
+  "raw_name_token": "\"NEWMARKET CORP\""
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001757898.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001757898",
+  "name": "STERIS plc",
+  "tickers": [
+    "STE"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "05fa040489034331b0f01b3da544e6e7e2c77306c21ccdf7f425895d80326a34",
+  "raw_name_token": "\"STERIS plc\""
+}

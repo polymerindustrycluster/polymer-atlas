@@ -1,0 +1,74 @@
+[
+  {
+    "cluster_id": "LF-q3-buckhorn",
+    "url": "https://buckhorninc.com/",
+    "quote": "Springfield",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://buckhorninc.com/: curl=0; https://r.jina.ai/https://buckhorninc.com/: curl=56"
+  },
+  {
+    "cluster_id": "LF-q3-sealedair",
+    "url": "https://www.sealedair.com/",
+    "quote": "Joseph",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://www.sealedair.com/: curl=0; https://r.jina.ai/https://www.sealedair.com/: curl=56"
+  },
+  {
+    "cluster_id": "LF-q3-graham",
+    "url": "https://www.grahampackaging.com/about-us/",
+    "quote": "Joplin",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://www.grahampackaging.com/about-us/: curl=0; https://r.jina.ai/https://www.grahampackaging.com/about-us/: curl=56"
+  },
+  {
+    "cluster_id": "LF-q3-spartech",
+    "url": "https://spartech.com/facilities/cape-girardeau-missouri",
+    "quote": "Cape Girardeau",
+    "raw": "yes",
+    "route": "https://spartech.com/facilities/cape-girardeau-missouri",
+    "attempts": "https://spartech.com/facilities/cape-girardeau-missouri: curl=0"
+  },
+  {
+    "cluster_id": "LF-q3-spartechloc",
+    "url": "https://www.spartech.com/locations",
+    "quote": "Cape Girardeau",
+    "raw": "yes",
+    "route": "https://www.spartech.com/locations",
+    "attempts": "https://www.spartech.com/locations: curl=0"
+  },
+  {
+    "cluster_id": "LF-q3-michelin",
+    "url": "https://jobs.michelinman.com/recruitment-sites/piedmont-sc",
+    "quote": "Piedmont",
+    "raw": "yes",
+    "route": "https://jobs.michelinman.com/recruitment-sites/piedmont-sc",
+    "attempts": "https://jobs.michelinman.com/recruitment-sites/piedmont-sc: curl=0"
+  },
+  {
+    "cluster_id": "LF-q3-roller",
+    "url": "https://americanroller.com/the-american-roller-way/",
+    "quote": "Rock Hill",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://americanroller.com/the-american-roller-way/: curl=56; https://r.jina.ai/https://americanroller.com/the-american-roller-way/: curl=56"
+  },
+  {
+    "cluster_id": "LF-q3-sterilite",
+    "url": "https://www.sterilite.com/",
+    "quote": "Clinton",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://www.sterilite.com/: curl=56; https://r.jina.ai/https://www.sterilite.com/: curl=56"
+  },
+  {
+    "cluster_id": "LF-q3-berry",
+    "url": "https://www.berryglobal.com/",
+    "quote": "Greenville",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://www.berryglobal.com/: curl=0; https://r.jina.ai/https://www.berryglobal.com/: curl=56"
+  }
+]

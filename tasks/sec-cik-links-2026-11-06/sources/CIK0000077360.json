@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000077360.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000077360",
+  "name": "PENTAIR plc",
+  "tickers": [
+    "PNR"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "dd6f444fb3b651602ae0ee8d42e70496d6d861ae4dfa59f980aca8cb1f957cd6",
+  "raw_name_token": "\"PENTAIR plc\""
+}

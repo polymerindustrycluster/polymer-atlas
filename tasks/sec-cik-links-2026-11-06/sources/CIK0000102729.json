@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000102729.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000102729",
+  "name": "VALMONT INDUSTRIES INC",
+  "tickers": [
+    "VMI"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "bf06412d0a29454accfa2dbabaf2bc00f0a54f3ef59668e548410066198f911b",
+  "raw_name_token": "\"VALMONT INDUSTRIES INC\""
+}

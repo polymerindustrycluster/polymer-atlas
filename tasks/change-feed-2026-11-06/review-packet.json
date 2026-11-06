@@ -1,0 +1,93 @@
+{
+  "schema_version": 2,
+  "scope": "C04 L14 tooling: scripts/build_changelog.py and test_build_changelog.py; full sources in implementation.patch. Main first-parent keyed diffs to build/changelog Markdown+Atom; no canonical data or deployment changes.",
+  "criteria": [
+    "Per-main-update net keyed creations/status/tier/new-evidence counts; merged standard PR attribution and explicit unmarked direct history",
+    "Shard/type moves, historical ID collisions, composites and restorations counted honestly with units",
+    "Public allowlist only; no notes/CRM/contacts/metadata leaks; invalid source/output state fails closed",
+    "Five disposable real-Git tests and full scripts226pass1skip45subtests; validator0; actualmain214entries/known3/evidencebalance36606/deterministic replay"
+  ],
+  "out_of_scope": [
+    "Full GitHub API attribution for unmarked rebase merges",
+    "Pages workflow/full-history checkout/deployment",
+    "External Atom/feed-reader UI/usage validation",
+    "Canonical data edits"
+  ],
+  "revision": "a2a0a1e54b7a6cf8d1e52e8d6d4193b62c61be0d",
+  "tool_access": "Clerks have full branch/source access, may use throwaway repositories and inspect full main history. Complete implementation.patch plus all packet evidence must be read; use PR ref if worker checkout moved.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "53a97400228efcbc84a02c7cc90eb04b0f2ea668c5b2765892b26f64792417cb"
+    },
+    {
+      "path": "README.md",
+      "sha256": "005286308d5fc6959a60425916898b6e422159201cdcaccc719d4494df41d1d3"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "df86e1148f1dcdede996dfd3684e74a7eb4127813b6c4b43159a1c2e4240e2af"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "dbdd8421ab8bd07f4fcdc3bfc8c7a9529d49339721b4ce0f58879f79aafa8479"
+    },
+    {
+      "path": "check_real_history.py",
+      "sha256": "b99184684595af4fdedc93dd5be4c5f501c465204fbd3a03f03addb9d9b97eb7"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "3f0fd72237e92f6b8115b8dc394133ac1f9f1b4cd5549c5ae188da13cbfae96a"
+    },
+    {
+      "path": "implementation.patch",
+      "sha256": "84765f8c3ab334b10918e5ec18177ced39efa0bb765eb8f15eae675def6b56b7"
+    },
+    {
+      "path": "pytest.txt",
+      "sha256": "d1909a665bf5243a83259c1b2d64303f729b860d8253ab98caab8a4793f82a13"
+    },
+    {
+      "path": "real-check.json",
+      "sha256": "a91efd2b0e167e0b5d730e8153af6c9dc061e4a4540c747751ab6c917ccf9482"
+    },
+    {
+      "path": "unit-tests.txt",
+      "sha256": "c959531312d1a86f0f31a224fe50593111ec191d9638e5224e4928224271e6b9"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "49d2cc891e0625aaf999c2eb803fbf331b07e8d7be532fb0484a3e102d68f82a"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 -m unittest scripts.test_build_changelog",
+      "outcome": "pass",
+      "evidence": "unit-tests.txt"
+    },
+    {
+      "command": "uv run --no-project --with pytest python3 -m pytest -q scripts/",
+      "outcome": "pass",
+      "evidence": "pytest.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "python3 tasks/change-feed-2026-11-06/check_real_history.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}
