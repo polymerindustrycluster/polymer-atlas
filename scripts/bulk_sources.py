@@ -30,6 +30,19 @@ URLS = {
 }
 
 
+def unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError('duplicate JSON key: ' + key)
+        result[key] = value
+    return result
+
+
+def parse_json(data):
+    return json.loads(data, object_pairs_hook=unique_object)
+
+
 def cache_dir(path=DEFAULT_CACHE):
     path = Path(path).expanduser().resolve()
     if path == REPO or REPO in path.parents or any(
@@ -117,11 +130,11 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
                         zlib.compress(json.dumps(row, ensure_ascii=False).encode(), level=1)))
             indexed += 1
         if source == 'tickers':
-            rows = json.loads(path.read_text()).values()
+            rows = parse_json(path.read_text()).values()
             for row in rows:
                 count += 1
                 add(str(int(row['cik_str'])).zfill(10), row['ticker'].upper(), '', row)
-            independent = len(json.loads(path.read_text()))
+            independent = len(parse_json(path.read_text()))
         else:
             with zipfile.ZipFile(path) as z:
                 members = [m for m in z.namelist() if not m.endswith('/')]
@@ -137,7 +150,7 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
                     if not members or any(not re.fullmatch(r'CIK\d{10}(?:-submissions-\d+)?\.json', m) for m in members):
                         raise ValueError('unexpected SEC archive member')
                     for m in members:
-                        row = json.loads(z.read(m))
+                        row = parse_json(z.read(m))
                         count += 1
                         if '-submissions-' in m:
                             historical += 1
@@ -167,7 +180,7 @@ def index_file(source, path, cache=DEFAULT_CACHE, metadata=None, expected_count=
                     independent = sum(1 for _ in csv_rows(z, m))
                 else:
                     raise ValueError('unknown source: ' + source)
-        if not count or count != independent or indexed + historical != count:
+        if not indexed or count != independent or indexed + historical != count:
             raise ValueError('input/index row reconciliation failed')
         if expected_count is not None and count != expected_count:
             raise ValueError(f'published record count mismatch: {count} != {expected_count}')
@@ -252,7 +265,7 @@ def build(sources, cache, contact):
             kind = 'lei2' if source == 'lei' else 'rr'
             url = f'https://goldencopy.gleif.org/api/v2/golden-copies/publishes/{kind}/latest'
             with urlopen(Request(url, headers={'User-Agent': agent}), timeout=120) as r:
-                release = json.load(r)['data']
+                release = parse_json(r.read())['data']
             info = release['full_file']['csv']
             url, size, expected_count = info['url'], info['size'], info['record_count']
         else:

@@ -80,6 +80,21 @@ class BulkTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             b.sec_by_cik('bad', self.cache)
 
+    def test_history_only_and_duplicate_json_preserve_cache(self):
+        self.sec_fixture()
+        old = b.sec_by_cik(320193, self.cache)
+        path = self.archive('history.zip', {
+            'CIK0000320193-submissions-001.json': json.dumps({'accessionNumber': ['1']})})
+        with self.assertRaisesRegex(ValueError, 'reconciliation'):
+            b.index_file('sec', path, self.cache)
+        self.assertEqual(b.sec_by_cik(320193, self.cache), old)
+        path = self.cache / 'duplicate.json'
+        row = json.dumps(dict(cik_str=320193, ticker='AAPL', title='Apple'))
+        path.write_text('{"0":' + row + ',"0":' + row + '}')
+        with self.assertRaisesRegex(ValueError, 'duplicate JSON key'):
+            b.index_file('tickers', path, self.cache)
+        self.assertEqual(b.sec_by_ticker('AAPL', self.cache)[0], old)
+
     def test_ticker_punctuation_and_missing_submission(self):
         self.sec_fixture()
         path = self.cache / 'ticks.json'

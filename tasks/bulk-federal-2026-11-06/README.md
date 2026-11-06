@@ -123,3 +123,12 @@ bytes are `Placeholder file`. The importer explicitly validates and reports it i
 `auxiliary_members`; it is not a JSON issuer/history row. Every other member must
 match the CIK JSON grammar. `archive_members = row_count + len(auxiliary_members)`
 records the complete archive accounting; unknown files still fail the build.
+
+## Review dispositions
+
+Codex clerk-6 REFUTE on `aede40e`: (1) a history-only SEC ZIP could replace a
+populated issuer index with zero indexed issuers; (2) duplicate ticker JSON keys
+could collapse before both counts. Fixed: require positive indexed yield before
+publication; reject duplicate keys in external JSON objects before indexing.
+Regression `test_history_only_and_duplicate_json_preserve_cache` proves both
+failures preserve existing Apple results. Targeted suite: 10 passed.
