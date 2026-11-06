@@ -8,7 +8,7 @@ from health import read, self_check, health
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-BASE = 'bd57a08dfe87bce7ee82894ae02eb9212200205c'
+BASE = '9489b607c19b450c195c2353944c61719105e1f9'
 
 def old(path):
     return list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',f'{BASE}:{path.relative_to(ROOT)}'],text=True,cwd=ROOT))))
