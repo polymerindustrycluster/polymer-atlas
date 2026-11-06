@@ -49,4 +49,6 @@ Fresh-main identity preflight also asserts the filed company_name resolves to ex
 
 Fresh-main integration at5a90bb1: all four affected canonical files restored from main before builder replay; baseline refreshed. Exact four-file boundary/all old canonical rows preserved except ORG001033 trade_names,2site+15EVD additions, all-CSV byte-identical replay, validator0errors. Address matcher now refuses empty normalized keys (the separate MO/SC Grok finding); blank/blank and leading-hash/blank negatives plus Road/Rd positive pass. No Louisiana verdict changed. Preparer excludes its own created sites during replay. Shared scripts remain unchanged.
 
-Two-family independent completion refutes pending; draft until approved.
+Codex completion refute pending; draft until both independent families approve.
+
+Grok/xAI deep completion refute: APPROVE,0findings on99c9f38 (clerk-grok-5,thr_r5auppm5ps). Report: controller reviews/198-clerk-grok-5.md. Independent live OSHA ITA bulk row check matched both establishment IDs288347/192504,company/street/state/ZIP/NAICS/submission dates; no other held site street hit. Exact2site/15EVD/1alias delta versus5a90bb1,tiersC/statusunknown/countiesblank,check42/T3 7→9/117,validator0,row-loss andID allocation PASS. Reviewer identified apparent main-versus-head tier/website differences as stale-behind, not this PR's delta. This approval-record update changes no data/code. Current operation remains unchecked; Codex approval still pending.
