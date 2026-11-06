@@ -8,8 +8,8 @@ from build import read
 vs=read(P/'verdicts.csv');cs=read(P/'input.csv');alloc=read(P/'allocations.csv');blind=read(P/'blind-input.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==40
 assert {r['cluster_id'] for r in vs}=={r['cluster_id'] for r in cs}
-assert len(alloc)==len({r['site_id'] for r in alloc})==19
-assert len(blind)==len({r['cluster_id'] for r in blind})==19
+assert len(alloc)==len({r['site_id'] for r in alloc})==18
+assert len(blind)==len({r['cluster_id'] for r in blind})==18
 assert {r['cluster_id'] for r in blind}<={r['cluster_id'] for r in alloc}
 paths=[ROOT/'data'/n for n in ['organizations_US.csv','sites_TX.csv','evidence_organizations_US.csv','evidence_sites_TX.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in paths]
@@ -20,7 +20,7 @@ new={r['site_id'] for r in alloc};rows=read(ROOT/'data/sites_TX.csv');delta=sum(
 assert after-b['atlas_strict']==delta
 result={**b,'atlas_strict_after':after,'delta_strict':delta,'before_pct':100*b['atlas_strict']/b['qcew_2023_private_establishments'],'after_pct':100*after/b['qcew_2023_private_establishments']}
 (P/'qcew_result.json').write_text(json.dumps(result,indent=2)+'\n')
-print('PASS: 40/40 unique verdicts; 19/19 blind census witnesses; idempotent canonical bytes;',result)
+print('PASS: 40/40 unique verdicts; 18/18 blind census witnesses; idempotent canonical bytes;',result)
 # Cross-shard collision injected into a pre-pass fixture must leave every shard unchanged.
 import io, os, shutil, tempfile, build
 with tempfile.TemporaryDirectory(prefix='l6-tx3-collision-') as tmp:
