@@ -19,6 +19,7 @@ at the head, absent at the merge-base): a manifest from an earlier change cannot
 Usage:
   python3 scripts/check_row_loss.py --base origin/main            # base ref vs working tree
   python3 scripts/check_row_loss.py --base 92393de --head 805528a # two refs (known-answer: 3,351 links)
+  python3 scripts/check_row_loss.py --base <before-sha> --literal  # push events: judge against the replaced commit
 """
 import argparse, csv, io, re, subprocess, sys
 from collections import defaultdict
@@ -106,8 +107,11 @@ def main():
     ap = argparse.ArgumentParser(description="Fail when keyed rows vanish from data/ without a REMOVALS.csv entry.")
     ap.add_argument("--base", required=True, help="git ref to compare against (e.g. origin/main)")
     ap.add_argument("--head", help="git ref for the new side (default: the working tree)")
+    ap.add_argument("--literal", action="store_true",
+                    help="compare --base itself, not its merge-base with the head (push events: a rollback or "
+                         "non-fast-forward update must be judged against the commit it replaced)")
     a = ap.parse_args()
-    base = git("merge-base", a.base, a.head or "HEAD").strip()
+    base = git("rev-parse", a.base).strip() if a.literal else git("merge-base", a.base, a.head or "HEAD").strip()
     # a declaration counts only if its (manifest file, table, key) row is new in this range: an untouched old manifest
     # cannot authorize a later loss, but re-declaring a key in a new manifest file can
     allowed = {(t, k) for _, t, k in declared_removals(a.head) - declared_removals(base)}

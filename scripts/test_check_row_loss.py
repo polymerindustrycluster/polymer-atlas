@@ -108,6 +108,16 @@ class ReviewFindings(unittest.TestCase):
             p.write_text("date,record\n2026-10-28,X\n")
             self.assertEqual(self.guard(d, "--base", "HEAD"), 1)
 
+    def test_push_rollback_is_caught_with_literal(self):
+        with tempfile.TemporaryDirectory() as d:
+            git = self.repo(d); s = Path(d) / "data" / "sites_OH.csv"
+            s.write_text("site_id\nSITE-1\n"); git("add", "."); git("commit", "-qm", "1")
+            s.write_text("site_id\nSITE-1\nSITE-2\n"); git("commit", "-qam", "2")
+            before = subprocess.run(["git", "-C", d, "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+            git("reset", "-q", "--hard", "HEAD~1")  # main moved backwards: SITE-2 is gone
+            self.assertEqual(self.guard(d, "--base", before, "--literal"), 1)
+            self.assertEqual(self.guard(d, "--base", before), 0)  # merge-base mode alone cannot see it
+
     def test_lagging_branch_is_not_blamed_for_rows_main_added(self):
         with tempfile.TemporaryDirectory() as d:
             git = self.repo(d); s = Path(d) / "data" / "sites_OH.csv"
