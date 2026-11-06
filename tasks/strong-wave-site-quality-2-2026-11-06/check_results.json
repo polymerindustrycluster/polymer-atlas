@@ -1,0 +1,34 @@
+{
+  "frame": "41-80 of 161",
+  "original_eligible": 161,
+  "frame_sites": 40,
+  "promotions": 9,
+  "holds": 31,
+  "evidence": 63,
+  "government": 36,
+  "own": 27,
+  "raw_pages": 9,
+  "positive_quotes": 41,
+  "known_answers": 3,
+  "bulk_known_answers": 3,
+  "county_known_answers": 3,
+  "all_seven_claims": true,
+  "own_site_page_words_only": true,
+  "replay_byte_identical": true,
+  "no_write_faults": 7,
+  "retired_ids": 0,
+  "strict_counts": {
+    "NC": {
+      "before": 103,
+      "after": 103
+    },
+    "NJ": {
+      "before": 33,
+      "after": 33
+    },
+    "NY": {
+      "before": 50,
+      "after": 50
+    }
+  }
+}

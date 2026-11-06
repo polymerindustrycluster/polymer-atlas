@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://www.masterbond.com/content/our-company",
+    "status": "ok",
+    "http_status": 200,
+    "final_url": "https://www.masterbond.com/content/our-company",
+    "route": "direct",
+    "fetched_at": "2026-11-06T15:33:00.650324+00:00",
+    "sha256": "d258533aebbfbce8ea86dba318862626714fc48b6ddeb3e630d793b9b351aa64",
+    "raw_file": "d258533aebbfbce8ea86dba318862626714fc48b6ddeb3e630d793b9b351aa64.raw",
+    "text_file": "1adc7352054c35efe82922b596c04a36d10f2a0c153b3072cc820a0cadfa0a01.txt",
+    "text_sha256": "1adc7352054c35efe82922b596c04a36d10f2a0c153b3072cc820a0cadfa0a01",
+    "extraction_version": 3,
+    "error": ""
+  },
+  {
+    "url": "https://www.masterbond.com/content/how-purchase-our-products",
+    "status": "ok",
+    "http_status": 200,
+    "final_url": "https://www.masterbond.com/content/how-purchase-our-products",
+    "route": "direct",
+    "fetched_at": "2026-11-06T15:33:01.641466+00:00",
+    "sha256": "922a122a8449d51220c116a2e886d09a167e7e67119e63f63a9e94a3f0c6c290",
+    "raw_file": "922a122a8449d51220c116a2e886d09a167e7e67119e63f63a9e94a3f0c6c290.raw",
+    "text_file": "1180661f27be8743a57757ff0f6459afc5af414f7285d4ec8a09337cd7eb8e9c.txt",
+    "text_sha256": "1180661f27be8743a57757ff0f6459afc5af414f7285d4ec8a09337cd7eb8e9c",
+    "extraction_version": 3,
+    "error": ""
+  },
+  {
+    "url": "https://www.modernpolymers.com/",
+    "status": "ROBOTS_BLOCKED",
+    "http_status": 0,
+    "final_url": "https://www.modernpolymers.com/",
+    "route": "direct",
+    "fetched_at": "2026-11-06T15:33:00.827490+00:00",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw_file": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.raw",
+    "text_file": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.txt",
+    "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extraction_version": 3,
+    "error": ""
+  },
+  {
+    "url": "http://modernpolymers.com/",
+    "status": "ROBOTS_BLOCKED",
+    "http_status": 0,
+    "final_url": "http://modernpolymers.com/",
+    "route": "direct",
+    "fetched_at": "2026-11-06T15:33:00.664933+00:00",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw_file": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.raw",
+    "text_file": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.txt",
+    "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extraction_version": 3,
+    "error": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "site_id": "SITE-011028",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1700+67th+Ave+N&city=Minneapolis&state=MN&zip=55430&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Hennepin County",
+    "geoid": "27053",
+    "matched_address": "1700 67TH AVE N, MINNEAPOLIS, MN, 55430",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011028.json",
+    "raw_sha256": "bad61830e8c5e63f1634c8e3f33d417efb034c758496906ac81e09a39921c64f",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011011",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1904+Willow+Street&city=Mankato&state=MN&zip=56001&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Blue Earth County",
+    "geoid": "27013",
+    "matched_address": "1904 WILLOW ST, MANKATO, MN, 56001",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011011.json",
+    "raw_sha256": "311f6fe05aca5642c4738501b4c83027cc080ea2ab7fa00a55b4f763895bc3e9",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011151",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=1220+Lee+Rd&city=Rochester&state=NY&zip=14606&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Monroe County",
+    "geoid": "36055",
+    "matched_address": "1220 LEE RD, ROCHESTER, NY, 14606",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011151.json",
+    "raw_sha256": "d85901cbead8a98b99ad4cc07463dd15cfd83fb09b48e4e73130488692f916f2",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  }
+]

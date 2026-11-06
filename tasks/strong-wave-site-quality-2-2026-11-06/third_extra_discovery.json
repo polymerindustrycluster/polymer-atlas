@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://rimcoplastics.com/contact/",
+    "status": "ok",
+    "http_status": 200,
+    "final_url": "https://rimcoplastics.com/contact/",
+    "route": "direct",
+    "fetched_at": "2026-11-06T15:38:02.132185+00:00",
+    "sha256": "ac813792fb11116c22f9c7b020d4bb8336fe3680f10474f10cd653afe412282b",
+    "raw_file": "ac813792fb11116c22f9c7b020d4bb8336fe3680f10474f10cd653afe412282b.raw",
+    "text_file": "6e06677cfff7d1711816b55ecc4dade2b9d7aebe17e0603b42e42bec9ae710f2.txt",
+    "text_sha256": "6e06677cfff7d1711816b55ecc4dade2b9d7aebe17e0603b42e42bec9ae710f2",
+    "extraction_version": 3,
+    "error": ""
+  }
+]

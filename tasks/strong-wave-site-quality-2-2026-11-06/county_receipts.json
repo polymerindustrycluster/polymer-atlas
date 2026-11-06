@@ -1,0 +1,110 @@
+[
+  {
+    "site_id": "SITE-011167",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=160+COMMERCE+DR&city=ROCHESTER&state=NY&zip=14623&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Monroe County",
+    "geoid": "36055",
+    "matched_address": "160 COMMERCE DR, ROCHESTER, NY, 14623",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011167.json",
+    "raw_sha256": "e9009725f206d40d93013a7ddb15688f06ee2d2fb0997b7c3a3ba672e3634af8",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011169",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=87+Prospect+Avenue&city=Binghamton&state=NY&zip=13901&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Broome County",
+    "geoid": "36007",
+    "matched_address": "87 PROSPECT AVE, BINGHAMTON, NY, 13901",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011169.json",
+    "raw_sha256": "e6c7d7d45f0f3a55916c38ba7b128930f03852b098ee4eac7a51771ed8585378",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011171",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=5900+SUCCESS+DRIVE&city=ROME&state=NY&zip=13440&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Oneida County",
+    "geoid": "36065",
+    "matched_address": "5900 SUCCESS DR, ROME, NY, 13440",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011171.json",
+    "raw_sha256": "283743881efe6cbdc0f42bfbcf7c7d7d0c3ba43c7ee6ad57e5f3c54803fa4c20",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011172",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=115+Engineers+RD&city=Hauppauge&state=NY&zip=11788&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Suffolk County",
+    "geoid": "36103",
+    "matched_address": "115 ENGINEERS RD, HAUPPAUGE, NY, 11788",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011172.json",
+    "raw_sha256": "306ce071e226cd176c56b9b82001668b614223dd73d2aace80cacb19085b01d8",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011302",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=154+Hobart+Street&city=Hackensack&state=NJ&zip=07601&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Bergen County",
+    "geoid": "34003",
+    "matched_address": "154 HOBART ST, HACKENSACK, NJ, 07601",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011302.json",
+    "raw_sha256": "ead3936e4238154d419954c12eeaf9139a18b43ddf9147d6f2b0c269e57704bb",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011306",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=610+EAST+36TH+STREET&city=PATERSON&state=NJ&zip=07513&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Passaic County",
+    "geoid": "34031",
+    "matched_address": "610 E 36TH ST, PATERSON, NJ, 07513",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011306.json",
+    "raw_sha256": "6aac8a314462dc71d6fb48c4fe4babd22e77337d7274a931f420f96abb7ca127",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011313",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=257+WILSON+AVE&city=NEWARK&state=NJ&zip=07105&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Essex County",
+    "geoid": "34013",
+    "matched_address": "257 WILSON AVE, NEWARK, NJ, 07105",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011313.json",
+    "raw_sha256": "fe63107b3f8e7d2a771fc61cbe341160b7b71789286b9abbc19239557ab2b1d8",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011317",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=49+ACKERMAN+ST.&city=BLOOMFIELD&state=NJ&zip=07003&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Essex County",
+    "geoid": "34013",
+    "matched_address": "49 ACKERMAN ST, BLOOMFIELD, NJ, 07003",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011317.json",
+    "raw_sha256": "27e32daac57a7732e0eefbfd5de771fd6962725f575900f9d714df6f1fdd3886",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  },
+  {
+    "site_id": "SITE-011456",
+    "status": "PASS",
+    "source_url": "https://geocoding.geo.census.gov/geocoder/geographies/address?street=403+Industrial+Drive&city=New+Bern&state=NC&zip=28562&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json",
+    "county": "Craven County",
+    "geoid": "37049",
+    "matched_address": "403 INDUSTRIAL DR, NEW BERN, NC, 28562",
+    "raw_file": "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/strong-wave-site-quality-2/county/SITE-011456.json",
+    "raw_sha256": "b358a62770007c82bce1791c2b23ad19d1823abe68964f5d1cc6282679ff98a4",
+    "observed_date": "2026-11-06",
+    "reason": "Address-exact county geography, no coordinates used"
+  }
+]

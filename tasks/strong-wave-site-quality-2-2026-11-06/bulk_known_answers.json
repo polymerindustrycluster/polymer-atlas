@@ -1,0 +1,29 @@
+[
+  {
+    "site_id": "SITE-011166",
+    "registry_id": "110000323258",
+    "expected_name": "MERCURY PAINT CORPORATION",
+    "expected_street": "4808 FARRAGUT ROAD",
+    "bulk_name": "MERCURY PAINT CORPORATION",
+    "bulk_street": "4808 FARRAGUT ROAD",
+    "result": "PASS"
+  },
+  {
+    "site_id": "SITE-011171",
+    "registry_id": "110019390201",
+    "expected_name": "NORTEK POWDER COATING LLC",
+    "expected_street": "5900 SUCCESS DRIVE",
+    "bulk_name": "NORTEK POWDER COATING LLC",
+    "bulk_street": "5900 SUCCESS DR",
+    "result": "PASS"
+  },
+  {
+    "site_id": "SITE-011302",
+    "registry_id": "110004168926",
+    "expected_name": "Master Bond Inc.",
+    "expected_street": "154 Hobart Street",
+    "bulk_name": "MASTER BOND INC",
+    "bulk_street": "154 HOBART ST",
+    "result": "PASS"
+  }
+]
