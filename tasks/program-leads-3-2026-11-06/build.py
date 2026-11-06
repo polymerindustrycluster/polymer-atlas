@@ -19,6 +19,8 @@ def apply(data):
         for r in rows:
             low,high=(301,499) if key=='program_id' else (13000,13199) if key=='org_id' else (285010,289999)
             assert low<=int(r[key].split('-')[1])<=high,r[key]
+    packet_eids=[r['evidence_id'] for f,rows in packets.items() if tables[f]=='evidence_id' for r in rows]
+    assert len(packet_eids)==len(set(packet_eids)), 'cross-packet evidence ID collision'
     pending={}
     for f,key in tables.items():
         old={r[key]:r for r in read(data/f)}

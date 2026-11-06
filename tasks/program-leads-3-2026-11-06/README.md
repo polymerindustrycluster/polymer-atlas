@@ -153,3 +153,11 @@ defaults, not new campuses/HQ assertions. Added append-only addressEVD285028–0
 old18 evidence unchanged; total20. Locality now asserted nonempty in task check.
 Paulson default provenance is its held operator, not a new current address observation
 on the online-offer page; worldwide delivery and tierA existence/scope are unchanged.
+
+## Both-family refute correction (supersedes20EVDcount)
+
+Codex3 REFUTE valid standalone-builder trust-boundary defect: two new packet evidence shards could use the sameEVD before either was held. Added aggregate packet-EVD uniqueness before any write, with explicit new-versus-new evidence collision on fresh pre-pass data; all CSV bytes unchanged on rejection. Existing cross-shard-held and preimage defects also pass.
+
+Grok3 REFUTE valid witness mismatch: EVD285028 offer page does not state Paulson locality. Binding append-only rule prevents repointing/deleting that committed row. Preserve original20EVD byte-values and append EVD285030own-site city/state from Paulson about page (Headquartered in Chester, Connecticut), plus EVD285031government county-composition table directly names Chester under Middlesex County. Both fresh browser-UA raw-word matched, negative rejected; paulson_locality_raw.json receipts. Corrects attribution without changing permitted institution-default fields, program tier or identity. It does not assert online physical campus. Old offer-page address attribution is explicitly superseded in new notes.
+
+Final22EVD (15program/7ecosystem),4Aprograms/2Cinstitutions unchanged. check.py PASS full100census4V2D94U/replay/oldrowpreservation/3no-write mutations incl newpacketcollision;validate0PASS. No scripts/ edits/fullpytest. Both same clerks corrected-head rereviews pending; neither initialREFUTE is an approval.

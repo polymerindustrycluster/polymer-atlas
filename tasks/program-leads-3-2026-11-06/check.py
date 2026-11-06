@@ -27,10 +27,10 @@ def main():
     assert {(r['lead_id'],r['source_url'],r['quote']) for r in quotes}=={(r['lead_id'],r['source_url'],r['quote']) for r in raw}
     assert len(raw)==len(quotes)==16 and all(r['raw']=='yes' for r in raw)
     packets={f:read(HERE/f) for f in ('programs.csv','ecosystem.csv','evidence_programs.csv','evidence_ecosystem.csv')}
-    assert list(map(len,packets.values()))==[4,2,13,7]
+    assert list(map(len,packets.values()))==[4,2,15,7]
     assert {r['record_id'] for r in verdicts if r['verdict']=='VERIFIED'}=={r['program_id'] for r in packets['programs.csv']}
     evidence=packets['evidence_programs.csv']+packets['evidence_ecosystem.csv']
-    assert len(evidence)==len({r['evidence_id'] for r in evidence})==20
+    assert len(evidence)==len({r['evidence_id'] for r in evidence})==22
     for f,key in (('programs.csv','program_id'),('ecosystem.csv','org_id')):
         for row in packets[f]:assert {'existence','scope'}<={r['claim_type'] for r in evidence if r['record_id']==row[key]}
     for r in packets['programs.csv']:
@@ -51,6 +51,28 @@ def main():
                 if f=='ecosystem.csv' and r[key]=='ORG-002844':
                     for col in ('polymer_program_name','polymer_program_url'):want[col]=now[r[key]][col]
                 assert now[r[key]]==want,(f,r[key])
+        # Two individually clean NEW packet shards must share the global EVD namespace.
+        from unittest.mock import patch
+        import build
+        scratch=Path(tmp)/'fresh';shutil.copytree(canonical,scratch)
+        # Remove all this packet's creations so the collision is new-vs-new, not against held rows.
+        for name,packet in packets.items():
+            key='program_id' if name=='programs.csv' else 'org_id' if name=='ecosystem.csv' else 'evidence_id'
+            ids={r[key] for r in packet};kept=[r for r in read(scratch/name) if r[key] not in ids]
+            with (scratch/name).open('w',newline='') as fh:
+                writer=csv.DictWriter(fh,fieldnames=list(kept[0]),lineterminator='\n');writer.writeheader();writer.writerows(kept)
+        normal=build.read
+        def altered(path):
+            rows=normal(path)
+            if path==HERE/'evidence_ecosystem.csv':
+                rows[0]=dict(rows[0],evidence_id=packets['evidence_programs.csv'][0]['evidence_id'])
+            return rows
+        before=digest(scratch)
+        with patch.object(build,'read',altered):
+            try:apply(scratch)
+            except AssertionError as e:assert 'cross-packet evidence ID collision' in str(e)
+            else:raise AssertionError('new-vs-new packet collision accepted')
+        assert before==digest(scratch),'new packet collision caused partial writes'
         # Wrong-shard collision must fail before ANY write, even if target shard itself is clean.
         extra=next(p for p in data.glob('evidence*.csv') if p.name not in ('evidence_programs.csv','evidence_ecosystem.csv'))
         append_sorted(extra,[packets['evidence_programs.csv'][0]],'evidence_id')
@@ -67,7 +89,7 @@ def main():
         except AssertionError as e:assert 'ID collision/drift' in str(e)
         else:raise AssertionError('occupied ID passed')
         assert before==digest(data),'conflict caused partial writes'
-    print('PASS 100 exact next leads =4VERIFIED/2DUPLICATE_OF/94STILL_UNCERTAIN;4programs/2institutions/20evidence;16rawquotes;replay,prior-row preservation,two no-write defect injections')
+    print('PASS 100 exact next leads =4VERIFIED/2DUPLICATE_OF/94STILL_UNCERTAIN;4programs/2institutions/22evidence;16rawquotes;replay,prior-row preservation,three no-write defect injections incl new-vs-new pending EVD collision')
 
 
 if __name__=='__main__':main()
