@@ -1,0 +1,140 @@
+[
+  {
+    "url": "https://www.trelleborg.com/cs-cz/seals/about-us/manufacturing-capabilities/streamwood-usa",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.trelleborg.com/cs-cz/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://www.trelleborg.com/cs-cz/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.trelleborg.com/cs-cz/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.trelleborg.com/cs-cz/seals/about-us/manufacturing-capabilities/streamwood-usa",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:38Z"
+  },
+  {
+    "url": "https://www.prismplastics.com/chesterfield/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.prismplastics.com/chesterfield/",
+        "status": "500",
+        "exit": 0,
+        "effective_url": "https://www.prismplastics.com/chesterfield/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://www.prismplastics.com/chesterfield/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://www.prismplastics.com/chesterfield/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:38Z"
+  },
+  {
+    "url": "https://prismplastics.com/contact-us/",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://prismplastics.com/contact-us/",
+        "status": "500",
+        "exit": 0,
+        "effective_url": "https://prismplastics.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://prismplastics.com/contact-us/",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://prismplastics.com/contact-us/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:37Z"
+  },
+  {
+    "url": "https://pressroom.pella.com/a-look-back-at-manufacturing-month-2026-across-pella-corporation/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/c544145d567a3967b29480afdd5050b8b88117d841b15fd650532bcb1e182ca9.txt",
+    "sha256": "d9a00fe2a8b356d4f1d0666623100f0ad8d5ff06af979317e205dc39f5850a1f",
+    "attempts": [
+      {
+        "route": "https://pressroom.pella.com/a-look-back-at-manufacturing-month-2026-across-pella-corporation/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://pressroom.pella.com/a-look-back-at-manufacturing-month-2026-across-pella-corporation/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:38Z"
+  },
+  {
+    "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+    "status": "ok",
+    "page": "build/l11-quality-cache/da17b38127222c6cfbde697ae56a16f39a1f1faa4e2fbf60f1fe5664086c3ad3.txt",
+    "sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27",
+    "attempts": [
+      {
+        "route": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:38Z"
+  },
+  {
+    "url": "https://www.techniplas.com/wp-content/uploads/2024/12/Jonesville-ISO_14001-2015_Jonesville_261220.pdf",
+    "status": "ok",
+    "attempts": [
+      {
+        "route": "https://www.techniplas.com/wp-content/uploads/2024/12/Jonesville-ISO_14001-2015_Jonesville_261220.pdf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.techniplas.com/wp-content/uploads/2024/12/Jonesville-ISO_14001-2015_Jonesville_261220.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:27Z",
+    "page": "build/l11-quality-cache/a2601ebb4346fa6cce0b2e20f9831cf0cd210306e6243cdb3534df91ca4b8a2d.txt",
+    "sha256": "72bc9038fcb7de13327d852da4a02ec46f4a711d4ce27c530e96c2acb78362d3",
+    "extraction": "pdftotext -layout; Poppler26.10.0"
+  },
+  {
+    "url": "https://label.averydennison.com/content/dam/averydennison/lpm-responsive/na/doc/technical-bulletins/product/sustainable-solutions/iso-9001-2015-certificate.pdf",
+    "status": "ok",
+    "attempts": [
+      {
+        "route": "https://label.averydennison.com/content/dam/averydennison/lpm-responsive/na/doc/technical-bulletins/product/sustainable-solutions/iso-9001-2015-certificate.pdf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://label.averydennison.com/content/dam/averydennison/lpm-responsive/na/doc/technical-bulletins/product/sustainable-solutions/iso-9001-2015-certificate.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T11:57:26Z",
+    "page": "build/l11-quality-cache/30be251fc29d56b1bcbd6783ef0542bf626599c8c23506881ed3a90b7137dec7.txt",
+    "sha256": "828be98c8964ad63923eb8b755d9f671b8067e0b0953dfd6858c7537818c6e96",
+    "extraction": "pdftotext -layout; Poppler26.10.0"
+  }
+]

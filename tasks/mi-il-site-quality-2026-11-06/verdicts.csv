@@ -1,0 +1,36 @@
+site_id,verdict,reason
+SITE-018000,STILL_UNCERTAIN,Kalamazoo address requires own plant-specific activity evidence; global injection-molding capabilities do not bind this street; root timed out.
+SITE-018001,STILL_UNCERTAIN,"Westland named on own survey and corporate news, but no raw-approved Westland-specific polymer-production witness; needs location/activity binding."
+SITE-018002,STILL_UNCERTAIN,"3505 Kraft is Raleigh East in older supplier-manual lead; needs raw own statement of polymer activity at this street, distinct from nearby Lacks plants."
+SITE-018003,STILL_UNCERTAIN,Own Gaylord toolmaker job describes tool-room work; old sealing-product release is 2012. Needs current or corroborable plant-specific polymer-production witness.
+SITE-018005,STILL_UNCERTAIN,Leonard plant award lead does not establish this plant’s polymer process; needs explicit own city/activity witness.
+SITE-018006,VERIFIED,Monroe ram-extrusion job is paired with own contact page at 1916 Frenchtown Center Dr.; plastic-extrusion context and filed 326199. Contact address independently raw-checked; only one held Spiratex Monroe plant.
+SITE-018007,STILL_UNCERTAIN,Own Marysville acquisition article is 2018; current contact page alone does not establish plant activity. Needs fresher location-bound polymer-production evidence.
+SITE-018008,STILL_UNCERTAIN,Gladwin requires raw own city/activity witness at1191 Wolfson Ct; discovery did not produce an approved plant-specific page.
+SITE-018009,STILL_UNCERTAIN,Brockton Mold older supplier-manual label alone is not raw-verified polymer production; needs own city/activity binding at4251 Brockton Ct.
+SITE-018010,STILL_UNCERTAIN,Vicksburg needs own plant-specific activity binding; company-wide molding capabilities and older location-list leads do not establish this plant.
+SITE-018012,VERIFIED,Own-domain certificate p1 names the exact operator/address and process. Existing ultimate_parent_name Techniplas qualifies B-PARENT. Process witness at stated 2023-12-19 revision; no certification-validity or current-operation assertion.
+SITE-018014,STILL_UNCERTAIN,Own South Haven page reports substantial fire and disruption. Need dated recovery/operations evidence and identity binding; fire is not closure proof.
+SITE-018015,STILL_UNCERTAIN,5801 Kraft needs own plant-specific activity evidence; cannot inherit nearby Kraft Plater or other Lacks facilities’ processes.
+SITE-018016,STILL_UNCERTAIN,"ADS locator mixes plants/yards/distribution centers; needs own Clifford-specific polymer-production witness, not company-wide pipe capabilities."
+SITE-018017,STILL_UNCERTAIN,"ADS locator mixes plants/yards/distribution centers; needs own Owosso-specific polymer-production witness, not company-wide pipe capabilities."
+SITE-018018,STILL_UNCERTAIN,"Chesterfield specific page has useful indexed text but fresh curl500/Jina401; needs retrievable primary city/activity evidence, failed fetch is not absence."
+SITE-018019,STILL_UNCERTAIN,Port Huron page/contact routes failed fresh retrieval; older history is insufficient for selected promotion. Needs raw own plant-city/activity witness.
+SITE-019000,STILL_UNCERTAIN,Pactiv Bedford Park needs own operator-bound city/activity witness; no held parent relationship permits substituting a presumed parent page.
+SITE-019001,VERIFIED,"Dated 2023-03-01 own corporate release identifies Macomb vinyl-window manufacturing; CY2025 filing supplies exact address/operator/code, and there is only one held Pella Macomb plant. Historical process corroboration, not a fresh operating-status assertion."
+SITE-019002,STILL_UNCERTAIN,Pactiv Manteno needs own operator-bound city/activity witness; no held parent relationship permits substituting a presumed parent page.
+SITE-019003,STILL_UNCERTAIN,"Recorded Amcor parent permits B-PARENT, but Aurora IL raw job page lacks plant-specific polymer-production text; exclude Aurora OH jobs."
+SITE-019004,STILL_UNCERTAIN,Plasticade Des Plaines address/product-catalog lead alone does not establish polymer manufacturing at100 Howard; needs city/activity bound own witness.
+SITE-019006,VERIFIED,Own career subdomain names Rockford polystyrene-foam manufacturing; CY2025 filing supplies 2710 Laude Drive/code/operator. Only one held Owens Corning Rockford site; no current-status change.
+SITE-019007,VERIFIED,"Own-domain annex page2 explicitly applies manufacturing scope to all locations on that page, including bottom-middle Avery Dennison 902 Feehanville Drive, Mount Prospect IL60056. Page2 independently rendered and checked; Mt. abbreviates Mount. Recorded ultimate_parent_name Avery Dennison Corporation supplies B-PARENT for corporate subdomain. Process scope only, no current certificate claim."
+SITE-019008,STILL_UNCERTAIN,"Trelleborg Streamwood process text is indexed, but all tried specific page routes raw404. Needs retrievable own city/activity witness under recorded parent."
+SITE-019009,STILL_UNCERTAIN,"Own Hillside page says320 Craig Place; held filing says320 Craig Road. Also only Packaging label, no local manufacturing process. Reconcile street and activity."
+SITE-019010,STILL_UNCERTAIN,Own Addison location lists325 South Lombard Road but global manufacturing wording does not specify polymer work there. Needs local process witness.
+SITE-019011,STILL_UNCERTAIN,"Jacksonville East job route404; needs own location-bound polymer-production witness at2226 East Morton, distinct from any other Jacksonville operation."
+SITE-019012,STILL_UNCERTAIN,Recorded Amcor parent permits B-PARENT; Alsip job fetch failed and generic packaging language does not establish local polymer process. Needs raw plant witness.
+SITE-019014,STILL_UNCERTAIN,Own Mauser locator names Arthur and Lively streets in Elk Grove. Small Packaging label/city-only product manufacture cannot allocate process to Arthur; needs street binding.
+SITE-019015,VERIFIED,"Location is explicitly Aurora Illinois Manufacturing Plant in bottle-plant list, distinct from warehouse/office entries. Own page omits Suite140; unchanged suite is supported by CY2025 filing, not attributed to own page."
+SITE-019016,VERIFIED,Own facility page binds Chicago capability narrative to 396 Wegner Drive West Chicago. Flexible component fabrication and silicone context plus filed 326299 corroborate polymer converting; no manufacturing techniques added to canonical cells.
+SITE-019017,VERIFIED,"Specific Elk Grove section pairs 2651 Carl Blvd with die cutting, water jet cutting, thermal bending and assembly. Page titled plastic/rubber manufacturing solutions, filed 326299, no transfer of another plant’s cast-polyurethane process."
+SITE-019018,STILL_UNCERTAIN,Possible creation error: exact own address is styled Showroom/Office and local page describes replacement/installations. Needs direct evidence manufacturing occurs there; controller correction pass.
+SITE-019019,STILL_UNCERTAIN,Kankakee coating-site and lab leads do not independently bind polymer production to901 North Greenwood. Needs raw own plant city/activity witness.
