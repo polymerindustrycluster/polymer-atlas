@@ -1,0 +1,6 @@
+Unit: unique normalized eligible domains (not business closures).
+previous_full 3629 NXDOMAIN 24 PARKED_SUSPECT 3 combined 27
+current_full 4327 NXDOMAIN 31 PARKED_SUSPECT 3 combined 34
+common_previous 3594 NXDOMAIN 24 PARKED_SUSPECT 3 combined 27
+common_current 3594 NXDOMAIN 29 PARKED_SUSPECT 3 combined 32
+new frame 733 left frame 35

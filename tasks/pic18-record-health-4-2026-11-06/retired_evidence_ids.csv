@@ -1,0 +1,19 @@
+evidence_id,reason
+EVD-170068,"Withdrawn unmerged misattribution; source establishes ORG-004844, not ORG-001877"
+EVD-170069,"Withdrawn unmerged misattribution; source establishes ORG-001877, not ORG-004844"
+EVD-170070,"Withdrawn unmerged misattribution; source establishes ORG-001877, not ORG-004844"
+EVD-170073,"Withdrawn unmerged misattribution; source establishes ORG-000551, not ORG-000550"
+EVD-170074,"Withdrawn unmerged misattribution; source establishes ORG-000550, not ORG-000551"
+EVD-170077,"Withdrawn unmerged misattribution; source establishes ORG-004822, not ORG-000534"
+EVD-170078,"Withdrawn unmerged misattribution; source establishes ORG-000534, not ORG-004822"
+EVD-170080,"Withdrawn unmerged misattribution; source establishes ORG-002907, not ORG-000665"
+EVD-170083,"Withdrawn unmerged misattribution; source establishes ORG-000665, not ORG-002907"
+EVD-170085,"Withdrawn unmerged misattribution; source establishes ORG-004037, not ORG-000698"
+EVD-170086,"Withdrawn unmerged misattribution; source establishes ORG-000698, not ORG-004037"
+EVD-170088,Withdrawn redundant unmerged observation; retained EVD-170072
+EVD-170089,"Withdrawn unmerged misattribution; source establishes ORG-004176, not ORG-000550"
+EVD-170090,"Withdrawn unmerged misattribution; source establishes ORG-000550, not ORG-004176"
+EVD-170092,Withdrawn redundant unmerged observation; retained EVD-170075
+EVD-170093,"Withdrawn unmerged misattribution; source establishes ORG-004176, not ORG-000551"
+EVD-170094,"Withdrawn unmerged misattribution; source establishes ORG-000551, not ORG-004176"
+EVD-170095,Withdrawn redundant unmerged observation; retained EVD-170091
