@@ -32,6 +32,10 @@
     "size_class_rows": 160,
     "naics326_establishments": 50
   },
+  "pic18_patent_candidates": {
+    "held_footprint": 79,
+    "held_footprint_and_patent_location": 51
+  },
   "patent_match_rate": {
     "matched_assignee_candidates": 525,
     "assignees": 12939,

@@ -8,7 +8,7 @@ Scope fixed before work: packet/docs only; no data edits, no IDs, no membership 
 | PMA Processor Members | CORROBORATION_ONLY | 3/20 VERIFIED new; 15%, Wilson 95% 5.24–36.04% | Publication rights; 10 uncertain entries |
 | PatentsView / USPTO bulk | CORROBORATION_ONLY | 0/20 VERIFIED new; 0%, Wilson 95% 0–16.11% | Current operation/identity; confirmed PIC-18 patent count |
 
-See each source subfolder for route, terms clause or explicit inability to obtain one, count units, sampling frame, dedupe limitations and holds. No automated-use right was inferred from public accessibility. PatentsView sample is a bulk-evidence sufficiency scout, not an own-site verification campaign; zero does not mean no opportunity. 51 PIC-18 held organization candidates are not 51 confirmed patent-owning organizations.
+See each source subfolder for route, terms clause or explicit inability to obtain one, count units, sampling frame, dedupe limitations and holds. No automated-use right was inferred from public accessibility. PatentsView sample is a bulk-evidence sufficiency scout, not an own-site verification campaign; zero does not mean no opportunity. 79 PIC-18 held organization candidates are not 51 confirmed patent-owning organizations.
 
 CBP request resolved: CSV already contains all six counties (160 rows; 16 totals reconciled to fresh Census API). Fresh bulk rebuild is byte-identical. Updated stale reporting selection from PIC-12 to regions.PIC18; PIC-18 NAICS 326 total 401 establishments.
 
@@ -31,3 +31,7 @@ Council deep calls were refused by shared-host burst limits (no verdict). Contro
 Additional checks: `python3 tasks/source-scout-3-2026-11-06/association/check_frame.py` PASS: live95-element processor frame, seeded20 identities equal committed sample, three-item parser known answer and missing-boundary negative check. `python3 -m unittest discover -s scripts -p test_*.py` PASS:221 tests,1 skipped.
 
 Bulk reproducibility: `duckdb /tmp/l5-patents.duckdb < tasks/source-scout-3-2026-11-06/patentsview/extract.sql` then `python3 tasks/source-scout-3-2026-11-06/patentsview/build.py /tmp/l5-pairs.csv` PASS on the existing scratch DB; committed assignee aggregate, PIC-18 candidate file, sample and counts reproduced byte-identically. SQL uses CREATE OR REPLACE; raw data remain outside the repo.
+
+## Review correction — 2026-11-06
+
+Grok/xAI APPROVE on a81ee1d (0 findings), independently recomputed raw quotes, samples, bulk and CBP totals. Codex/OpenAI REFUTE on4afcb40: (1) valid geography-label finding corrected by broadening pic18_matches.csv to all79 exact-name held-footprint candidates, retaining51 with PIC18 patent location as an explicitly flagged intersection; independent oracle now derives both populations from committed assignees and held HQ/sites. (2) current-main row-loss findings were stale-base additions; merged origin/main9489b60 via controller06:12 normalization recipe, preserving all upstream evidence/relationships. Both findings addressed; Codex re-review pending. Neither79 nor51 confirms patent ownership.

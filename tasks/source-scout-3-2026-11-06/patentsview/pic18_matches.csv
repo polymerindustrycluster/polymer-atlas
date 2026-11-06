@@ -1,52 +1,80 @@
-org_id,atlas_name,patent_count
-ORG-000001,Avient Corporation,24
-ORG-000002,The Lubrizol Corporation,11
-ORG-000003,The Goodyear Tire & Rubber Company,261
-ORG-000004,Parker-Hannifin Corporation,5
-ORG-000007,Vibrantz Technologies Inc.,1
-ORG-000010,GEON Performance Solutions,4
-ORG-000012,Akron Polymer Systems,5
-ORG-000035,Saint-Gobain Performance Plastics,49
-ORG-000042,"Multibase, Inc.",1
-ORG-000050,"Synthomer, Inc.",2
-ORG-000058,"The Steelastic Company, LLC",2
-ORG-000061,"Ferriot, Inc.",1
-ORG-000132,The Sherwin-Williams Company,35
-ORG-000133,Oatey Co.,9
-ORG-000142,Nordson Corporation,39
-ORG-000156,Swagelok,4
-ORG-000238,Avery Dennison,84
-ORG-000245,Luxium Solutions,1
-ORG-000247,Blade-Tech Industries,1
-ORG-000334,Everhard Products Inc.,1
-ORG-000343,Flexsys America L.P.,2
-ORG-000377,"Industrial Technologies, Inc.",1
-ORG-000379,Infinity Engineered Products,1
-ORG-000431,"Mercury Plastics, Inc.",2
-ORG-000438,Mexichem Specialty Resins Inc.,2
-ORG-000445,Miller Weldmaster Corporation,2
-ORG-000451,Molded Fiber Glass Companies,2
-ORG-000471,Novis Works LLC,4
-ORG-000527,Progressive Foam Technologies,1
-ORG-000528,Promerus,39
-ORG-000562,Schneller LLC,3
-ORG-000588,"Steere Enterprises, Inc.",2
-ORG-000589,The Step2 Company,1
-ORG-000603,Tesla NanoCoatings Inc.,7
-ORG-001330,Finite Fiber,1
-ORG-001386,Ergomat Inc.,1
-ORG-001394,"Kent Displays, Inc.",1
-ORG-001590,Therm-O-Link Inc,1
-ORG-001601,Pison Stream Solutions Inc,2
-ORG-001609,"Morgan Adhesives Company, LLC",1
-ORG-001716,"Firestone Polymers, LLC",1
-ORG-001773,Akron Special Machinery,5
-ORG-001806,ENPRESS LLC,1
-ORG-001807,The Euclid Chemical Company,2
-ORG-001908,Tremco CPG Inc.,2
-ORG-001927,GlueTread LLC,1
-ORG-001986,Optimax Plastic LLC,1
-ORG-002069,"Summit Glove, Inc.",1
-ORG-002948,Covia Holdings LLC,1
-ORG-003196,Eckart America Corporation,1
-ORG-003576,"Micro-Poise Measurement Systems, LLC",2
+org_id,atlas_name,patent_count,has_pic18_assignee_location
+ORG-000001,Avient Corporation,24,1
+ORG-000002,The Lubrizol Corporation,11,1
+ORG-000003,The Goodyear Tire & Rubber Company,261,1
+ORG-000004,Parker-Hannifin Corporation,5,1
+ORG-000007,Vibrantz Technologies Inc.,3,1
+ORG-000010,GEON Performance Solutions,4,1
+ORG-000011,"Bridgestone Americas, Inc.",3,0
+ORG-000012,Akron Polymer Systems,5,1
+ORG-000035,Saint-Gobain Performance Plastics,49,1
+ORG-000042,"Multibase, Inc.",1,1
+ORG-000049,"Akron Polymer Solutions, Inc.",6,0
+ORG-000050,"Synthomer, Inc.",2,1
+ORG-000058,"The Steelastic Company, LLC",2,1
+ORG-000061,"Ferriot, Inc.",1,1
+ORG-000116,AMD Plastics,1,0
+ORG-000132,The Sherwin-Williams Company,35,1
+ORG-000133,Oatey Co.,9,1
+ORG-000142,Nordson Corporation,39,1
+ORG-000156,Swagelok,4,1
+ORG-000238,Avery Dennison,84,1
+ORG-000245,Luxium Solutions,1,1
+ORG-000247,Blade-Tech Industries,1,1
+ORG-000259,CANTEX Inc.,2,0
+ORG-000265,CCL Label,5,0
+ORG-000315,Dura-Line,3,0
+ORG-000325,Huntsman Advanced Materials Americas LLC,8,0
+ORG-000334,Everhard Products Inc.,1,1
+ORG-000343,Flexsys America L.P.,2,1
+ORG-000377,"Industrial Technologies, Inc.",1,1
+ORG-000379,Infinity Engineered Products,1,1
+ORG-000431,"Mercury Plastics, Inc.",2,1
+ORG-000438,Mexichem Specialty Resins Inc.,2,1
+ORG-000445,Miller Weldmaster Corporation,2,1
+ORG-000451,Molded Fiber Glass Companies,2,1
+ORG-000471,Novis Works LLC,4,1
+ORG-000473,Oldcastle Infrastructure (IPG,1,0
+ORG-000474,ORBIS Corporation,10,0
+ORG-000527,Progressive Foam Technologies,1,1
+ORG-000528,Promerus,39,1
+ORG-000541,"R.D. Abbott Company, Inc.",1,0
+ORG-000562,Schneller LLC,3,1
+ORG-000563,"Scott Bader, Inc.",1,0
+ORG-000574,SMC Ltd.,2,0
+ORG-000588,"Steere Enterprises, Inc.",2,1
+ORG-000589,The Step2 Company,1,1
+ORG-000603,Tesla NanoCoatings Inc.,7,1
+ORG-000651,"Advanced Drainage Systems, Inc.",7,0
+ORG-000665,"Amcor Flexibles North America, Inc.",11,0
+ORG-000683,"Bostik, Inc.",18,0
+ORG-000735,LyondellBasell Advanced Polymers Inc.,5,0
+ORG-000752,"Polynt Composites USA, Inc.",5,0
+ORG-000870,H.B. Fuller Company,40,0
+ORG-000894,INEOS USA,3,0
+ORG-000911,Johns Manville,95,0
+ORG-001033,"Plastipak Packaging, Inc.",25,0
+ORG-001128,"Storopack, Inc.",1,0
+ORG-001147,CSP,22,0
+ORG-001330,Finite Fiber,1,1
+ORG-001386,Ergomat Inc.,1,1
+ORG-001394,"Kent Displays, Inc.",1,1
+ORG-001423,ABC Technologies Inc.,3,0
+ORG-001590,Therm-O-Link Inc,1,1
+ORG-001601,Pison Stream Solutions Inc,2,1
+ORG-001609,"Morgan Adhesives Company, LLC",1,1
+ORG-001619,SOPREMA Inc,3,0
+ORG-001716,"Firestone Polymers, LLC",1,1
+ORG-001718,Kimberly-Clark Corporation,1,0
+ORG-001773,Akron Special Machinery,5,1
+ORG-001806,ENPRESS LLC,1,1
+ORG-001807,The Euclid Chemical Company,2,1
+ORG-001908,Tremco CPG Inc.,2,1
+ORG-001927,GlueTread LLC,1,1
+ORG-001986,Optimax Plastic LLC,1,1
+ORG-002069,"Summit Glove, Inc.",1,1
+ORG-002544,Berry Global,27,0
+ORG-002948,Covia Holdings LLC,1,1
+ORG-003196,Eckart America Corporation,1,1
+ORG-003576,"Micro-Poise Measurement Systems, LLC",2,1
+ORG-004022,VMI Holland B.V.,58,0

@@ -62,6 +62,15 @@ def main():
  counts=json.loads((HERE/'patentsview/counts.json').read_text());assert counts['organization_assignees']==len(assignees)
  assert counts['exact_name_candidates']==sum(bool(r['atlas_ids']) for r in assignees)
  assert counts['pic18_location_assignees']==sum(int(r['pic18_assignee_location']) for r in assignees)
+ footprint={r['org_id'] for r in tables['sites'].rows if r['state']=='OH' and r['county'] in PIC18}
+ footprint|={r['org_id'] for r in tables['organizations'].rows if r['hq_state']=='OH' and r['hq_county'] in PIC18}
+ broad={oid for r in assignees for oid in r['atlas_ids'].split(';') if oid in footprint}
+ narrow={oid for r in assignees if r['pic18_assignee_location']=='1' for oid in r['atlas_ids'].split(';') if oid in footprint}
+ picrows=list(csv.DictReader((HERE/'patentsview/pic18_matches.csv').open()))
+ assert {r['org_id'] for r in picrows}==broad and len(picrows)==len(broad)==counts['pic18_held_organization_candidates']
+ assert {r['org_id'] for r in picrows if r['has_pic18_assignee_location']=='1'}==narrow
+ assert len(narrow)==counts['pic18_location_and_footprint_candidates']
+ metrics['pic18_patent_candidates']=dict(held_footprint=len(broad),held_footprint_and_patent_location=len(narrow))
  metrics['patent_match_rate']=dict(matched_assignee_candidates=counts['exact_name_candidates'],assignees=len(assignees),fraction=counts['exact_name_candidates']/len(assignees))
  us=[r for r in assignees if 'US' in r['countries'].split(';')]
  metrics['us_patent_match_rate']=dict(matched_assignee_candidates=sum(bool(r['atlas_ids']) for r in us),assignees=len(us),fraction=sum(bool(r['atlas_ids']) for r in us)/len(us))
