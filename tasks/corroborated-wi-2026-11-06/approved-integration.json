@@ -1,0 +1,17 @@
+{
+  "approved_head": "14e587f",
+  "integrated_main": "2e3daefb152fdce9f6e79d6084ac87716a08f79f",
+  "implementation_identical": true,
+  "owned_rows": {
+    "sites": {
+      "rows": 10,
+      "approved_values_identical": true,
+      "sha256": "6c0d813a1386815f5ac30dbee4a82943beab6ec8a4d622a4a48d813d8708f404"
+    },
+    "evidence_sites": {
+      "rows": 70,
+      "approved_values_identical": true,
+      "sha256": "c761512da61936f981e79b6a1374e772823b86a3c2034b72ced1d3cced9a3376"
+    }
+  }
+}

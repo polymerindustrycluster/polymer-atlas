@@ -1,3 +1,4 @@
 cluster_id,reason
 LF-MN-00420,Need distinct-establishment/address reconciliation: held Revolv notes already name 1100 Industrial Park Rd SW Brainerd as the same operation as SITE-004094 Baxter HQ/plant. Do not create a second site from an unresolved alternate address.
 LF-MN-00468,"Need plant-specific activity/NAICS reconciliation: Hoyt Lakes ITA says polyethylene resin manufacturing (325211), while held Revolv is a rotational molder/thermoformer. Settle standalone resin production versus converting before assigning the site code/ring."
+LF-MN-00428,Need independently sourced operator reconciliation for Maple Lake Foam Fabricators: ITA1436752 EIN411284688 matches American Converters filings1436736/1436749; own FoamFabricatorsMN/Rogers/Amcon pages bind Minnesota operator. Held ORG002228 is Bloomsburg PA Altor chain with permitEIN43-0730823. Common normalized name is insufficient; do not self-repoint. SITE012694/EVD308752–759 permanently unused.

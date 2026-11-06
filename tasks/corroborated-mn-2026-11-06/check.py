@@ -33,7 +33,10 @@ def main():
   else:assert not r['duplicate_of'],'non-duplicate target'
  ev=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
  lane=[r for r in ev if r['created_by']=='atlas-L3-corroborated-mn']
- assert len(alloc)==11 and len(lane)==86,(len(alloc),len(lane))
+ assert 'SITE-012694' not in sites and not ({f'EVD-{n:06d}' for n in range(308752,308760)} & {r['evidence_id'] for r in ev}),'wrong-parent retired IDs reappeared'
+ assert next(r for r in vs if r['cluster_id']=='LF-MN-00428')['verdict']=='STILL_UNCERTAIN'
+ assert ita['1436752']['ein']==ita['1436736']['ein']==ita['1436749']['ein']=='411284688','known federal EIN conflict changed'
+ assert len(alloc)==10 and len(lane)==78,(len(alloc),len(lane))
  for r in alloc:
   s=sites[r['site_id']];f=ita[r['establishment_id']]
   assert (s['org_id'],s['verification_tier'],s['operating_status'],s['country'])==(r['org_id'],'C','unknown','US')
@@ -47,7 +50,7 @@ def main():
   assert e['claim_detail']=='Federal registrant trade_names: '+matches[0]['company_name'].strip(),'registrant source binding'
  aliases=[e for e in lane if e['record_table']=='organizations']
  for e in aliases:registrant(e)
- assert len(aliases)==9
+ assert len(aliases)==8
  try:registrant({**aliases[0],'claim_detail':aliases[0]['claim_detail']+' fabricated alias'})
  except AssertionError:pass
  else:raise AssertionError('false registrant alias escaped')
@@ -105,6 +108,17 @@ def main():
    assert run.returncode and 'ambiguous filed operator' in run.stderr,run.stderr
    assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
    wrong.write_bytes(original)
- print('PASS exact119 census;3 census defects caught;11C sites/86 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected SITE/EVD collisions and ambiguous filed operator refused before any data write')
+   # Actual common-name/EIN wrong-parent proposal must never re-enter through a unique name hit.
+   packet=Path(d)/'tasks'/H.name;packet.parent.mkdir();shutil.copytree(H,packet)
+   (Path(d)/'scripts').symlink_to(ROOT/'scripts',target_is_directory=True)
+   (packet.parent/'osha-ita-2026-11-01').symlink_to(ROOT/'tasks/osha-ita-2026-11-01',target_is_directory=True)
+   bad=read(packet/'verdicts.csv');next(r for r in bad if r['cluster_id']=='LF-MN-00428').update(verdict='VERIFIED',held_org_id='ORG-002228')
+   with (packet/'verdicts.csv').open('w',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=list(bad[0]),lineterminator='\n');w.writeheader();w.writerows(bad)
+   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   run=subprocess.run([sys.executable,str(packet/'build.py'),'--state','MN','--data-dir',str(data),'--apply'],capture_output=True,text=True)
+   assert run.returncode and 'manual identity/function hold' in run.stderr,run.stderr
+   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'wrong-parent proposal wrote data'
+ print('PASS exact119 census;3 census defects caught;10C sites/78 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
+ if a.negative_controls:print('PASS injected SITE/EVD collisions, ambiguous company and actual wrong-parent proposal refused before any data write')
 if __name__=='__main__':main()

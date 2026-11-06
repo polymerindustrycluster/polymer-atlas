@@ -1,4 +1,4 @@
-Adversarial two-family deep completion refute L3 Minnesota CORROBORATED continuation. All119clusters=11VERIFIED108STILL_UNCERTAIN0duplicates/rejects;11newC/unknownsites,0org,86EVD(77siteC9primaryregistrantidentityA),8trade_names edits. Full11-create census required, not20sample. BankedITA CY2025 observed2026-11-01 reviewed2026-11-06 officialURLkeyedID; nofreshdownload/ownsite/currentoperationclaim. Exactfiledcompany independentlymatches oneactiveheldoperator; plant/parentlabels alone held.13initialcandidates reviewed,RevolvBrainerdalternateaddresssameheldoperation andHoytLakes325211vsheldrotomolding conflict held, nevercreated. Allcreates326 ring1, strict48→59/368 countshare13.04→16.03%. Pinnedmain baseline and IDs inREADME;SITE12600+index,EVD308000+8index,nogapreuse. Checkall119/sourcebound11sites9registrantEVD/alloldcanonicalrowspreservedexcept8aliases/allCSVreplay/3censusdefects/fabricatedalias/nonemptystreetcontrols/3beforewritefaults/validate0PASS. Known3identities+ambiguityPASS. Controller07:20audit0ownsite rows. Please independently try to REFUTE source/operator/physical-establishment/scope/ring/field boundary/vintage/count claims. Return APPROVE or REFUTE with findings and checked/uninspected coverage. Inspect PR refs in own checkout; do not switch/write worker checkout. Existing164/196/198 reviewfixes remainpriority.
+TARGETED DEEP RE-REFUTE PR202 wrong-parentcure. Codex2REFUTEaccepted:MapleLakeLF-MN00428heldnorepoint;SITE12694/EVD308752–759permanentunused,wrongnewORG002228aliaswithdrawnonly.4freshprimarycurl200/housequotematch+4fakenegatives:MNownexactstreet/Rogerssubsidiarylist/AmconownAmericanConverters/PADEPp1Altor+differentEIN. ITAknown1436752/1436736/1436749EIN411284688asserted. ExactrefutedcommonnamePAparentproposalreenabledtempfailsmanualholdBEFOREANYwrite,plusSITE/EVD/company3faults. Final119=10V109U/10Cunknownsites78EVD70siteC8registrantidentityA/7aliases0org;strict48→58/368. PAorg/evidencebyteidenticaltopinnedmaine008ab9;ALLsurviving10sites78EVDfield-identicaltoa579771,only9retiredIDswithdrawn. Pinnedmainallcanonicalrestore+builderreplay/exact13files/oldrowpreserve/sourceall10+8alias/fakealias/4no-writefaults/census/T3/allCSVreplay/validate0PASS. No ownsite rows/freshfederaldownload/currentoperationclaim;house bankedvintage remains. Full10sourcecensus. Pleasetargeteddeeprefuteoperatorhold,nonreuse,onlywrongaliasreversion,realwrongparentregression,counts/preservation; priorfull11auditother10no demonstrateddefect acknowledged. EndAPPROVEorREFUTEwithlimits;PRrefsowncheckoutnolaneedits.
 
 
 FILE LANE_BRIEF.md
@@ -14,31 +14,31 @@ Reuse audited L3 LA/MO-SC prep/build/check and house atlas/shard_io, no shared s
 
 
 FILE README.md
-# L3 continuation — CORROBORATED Minnesota
+# L3 Minnesota CORROBORATED — corrected final packet
 
-Controller assigns all119 Minnesota CORROBORATED lead-fusion establishment clusters, then New Jersey91 separately. This pass is independent off pinned current main (baseline.json), not an extension of prior PRs. First user: controller/research integrator; intended review2026-11-06. No tracker/status/merge writes by worker.
+All119 Minnesota CORROBORATED establishment clusters exactlyonce:10VERIFIED,109STILL_UNCERTAIN,0DUPLICATE_OF/REJECT. Creates10provisionalC/unknownsitesunderheldoperators,0organizations. Adds78EVD(70siteC+8primarygovernmentregistrantidentityA);7heldtrade_namesfields gainactualfiledvariants. No otheroldrecordfield/status/tier/HQ/website/qualifier/registry/graphchange. Full10-create sourcecensus blind-full-census.csv; no20samplebecausefewercreates.13initialcandidates→10creates+3namedholds below. Historical11/86checkpoint inpass-journal.md superseded.
 
-Acceptance before application: every MN CORROBORATED cluster exactly once in verdicts.csv; independently resolved filed company_name to exactly one active surviving held legal/trade identity; reliable ITA physical street/state/code and explicit polymer manufacturing description; hard dedupe all shards before each create. Empty normalized street keys never establish duplicate identity. Plant/parent labels alone, ambiguous name/blank-street overlap, unsettled scope/function are holds with settling facts, no self-ruling. New organizations not intended; only sites under held operators. Federal-only provisional C, operating_status unknown, no current operating claim. Sources are banked public OSHA ITA CY2025, packet observed2026-11-01/review2026-11-06. Actual federal registrant aliases go on government_filing evidence + trade_names; own_site rows may state only cited-page facts (controller07:20). This recipe adds zero own_site rows.
+## Blocking review accepted
 
-IDs reserved in unused original L3 block: SITE012600+frozen input index (119slots, through012718), EVD308000+8*index (through308951) in new308000–309999 grant. Eighth slot only for initial actual registrant alias observation; unused gaps remain permanent. NJ reserves separate SITE012800+index/EVD309000+8*index. No ORGs allocated/created.
+Codex2/OpenAI REFUTEa579771:MapleLakeFoamFabricators LF-MN-00428 matchedunrelatedBloomsburgPAORG002228fromcommonname. ITA1436752EIN411284688 equalsAmericanConverters1436736Fridley/1436749Longmont; ownfoamfabmn.com bindsMapleLake4560112thStNW, RogerssubsidiarylistbindsFoamFabricatorsMN+Amconlocations,andAmconowncontactnamesAmericanConverters. PADEP2025permitp1namesAltorSolutions/17IndustrialDrBloomsburg/FederalTaxID43-0730823-1. All4primaryroutesfreshcurl200;housecalibratedrawmatcher4quotes/4fake-suffixnegativesPASS,URL/hash receiptswrong-parent-rawcheck.json. Fullrawpermitcontactsstay/tmp,notpublicrepo.
 
-Reuse audited L3 LA/MO-SC prep/build/check and house atlas/shard_io, no shared scripts edit. Known3 held operator identities and injected ambiguity before trusting matcher; nonempty street controls. Named check exact119 census, source binding/all creates, IDs, no-write SITE/EVD/company-ambiguity injections, validator0errors, old-row preservation and byte-identical replay; QCEW strictNAICS326 before/after per house numerator. Full-create census and two-family deep refutes required; no Done until both approve. Any fresh own-site witness needs raw-verbatim check; no such network parser introduced.
+DecisionunderAGENTS3falsemergecaution/2.8–9/4:holdoperatorreconciliation,doNOTself-repointtoAmericanConverters/Rogers/Altor. UnmergedSITE012694/EVD308752–308759withdrawn bypinnedmainrestore+builderreplay,permanentunusedIDs. Onlynewwrongaliasreverted; PAorganization/evidencefilesbyte-identicaltopinnedmain. No mainrow/evidence deleted/edited. Unique normalizedname doesnotsettleoperatoridentity; realcommon-name/EINcasecapturedmanualhold/negativecontrol. Re-enablingexactwrongparentproposalintempfailsmanualholdBEFOREANYwrite,allCSVhashesunchanged.
 
-Final census:119 Minnesota CORROBORATED establishment clusters =11 VERIFIED,108 STILL_UNCERTAIN,0 DUPLICATE_OF,0 REJECT. Full11-create source census is blind-full-census.csv, with actual company, establishment, street, code, activity and submission date. No organizations created. Creates11 tierC/operating_status unknown sites;86 evidence observations(77siteC,9government-primary registrant identityA). Eight existing organization trade_names fields gain actual filed company names; the ninth identity observation corroborates an already-held alias. No held tier/status/HQ/website, registry, county, qualifier or graph changes.
+Other10createfacts+78EVD field-identicaltopriorreviewedproposal; fullcensusreviewfoundnootherblockingfinding. RevolvBrainerdLF-MN00420heldalternateaddresssameheldBaxteroperation;HoytLakesLF-MN00468held325211resinvsheldrotomoldingfunctionreconciliation. Remaining106holds namedinverdicts.csv; noabsence/closureinference orscope/ring/parentruling.
 
-Every proposal was inspected.13 initial candidates reduced to11: Revolv Brainerd LF-MN-00420 held because existing org notes already call its street an alternate for held SITE-004094 Baxter operation; distinct establishment/move must be reconciled. Hoyt Lakes LF-MN-00468 held for resin-production325211 versus held rotational-molding/thermoforming activity reconciliation. No operator re-point or ring ruling applied. Other106 holds need the exact settling facts in verdicts.csv. No failed availability/absence/closure inference.
+## Provenance and IDs
 
-Primary source is the same controller-admitted banked public OSHA ITA CY2025 extract, observed2026-11-01/reviewed2026-11-06. Government registrant identity supports_A is claim-local; all new sites and their77 observations remain provisionalC. Federal rows cite the actual official bulk URL and establishment_ID; no fresh government download/current operation/own-site witness claimed. Controller07:20 audit:0 new own_site observations; no federal aliases/ids attributed to company pages.
+Controller-admittedpublicbankedOSHAITA CY2025,packetobserved2026-11-01/review2026-11-06;officialbulkURLkeyedestablishment_ID. No freshfederaldownload/currentoperation/ownsitewitnessclaim.0own_site rowsmeets07:20pagefacts-onlyrule. Registrantgovsupports_A isidentity-local,notheldtierpromotion;70siteobservationsC,10sitesC/unknown. Countyblank. Actualfiledcompany independentlymatchesoneactiveheldlegal/tradeidentity,sourcephysicalstreet/state/code/reliabilityandexplicitpolymermanufacturebound; harddomain/name/trade/street/notes/survivordedupeallshards,nonemptykeyguard. Known3operators+ambiguityPASSbeforeuse.
 
-Known3 held operator identities PASS before matcher use; injected ambiguous alias rejected. Empty/hash-leading/blank street comparisons rejected, actual Road/Rd positive retained. Full119 prep replay reproduced11V108U after application by excluding this lane's own creates. Source-binding check covers all11 sites and9 registrant observations, including a fabricated-alias negative. Exact three census mutations and all three before-write faults(SITE/EVD cross-shard duplicates, filed-company ambiguity) rejected without changing any temp data CSV.
+ReservedSITE12600+frozenindexthrough12718,EVD308000+8indexthrough308951;unusedslotspermanent,includingretiredMapleLake. NoORGSallocated. Controllergrant308000–309999disjointNJ309000+. Acceptance/firstuser/sourcevintage inLANE_BRIEF.md; nofork/sharedscriptdependency. Reuseshouseatlas/shard_io andL3LA/MOSCmechanism.
 
-T3 NAICS326 strict establishments(active/unknown US,A/B/C)48→59; QCEW2023 privateNAICS326 denominator368. Count ratio13.04%→16.03%, not matched coverage. All11 new site codes begin326; two held325211 proposals are excluded from the numerator and creations.
+## Named checks and outcomes
 
-Named checks: `python3 tasks/corroborated-mn-2026-11-06/check.py --negative-controls`; `python3 scripts/validate.py`; `build.py --state MN --apply` replay. Checker additionally compares every old canonical row to the same pinned branch baseline, allowing only the8 alias fields, exact11site/86evidence additions and no foreign creates. All prior evidence rows preserved by field values. House append_sorted may reserialize CSV quoting; no old observation is edited. Replay must leave every data CSV byte-identical.
+`python3 tasks/corroborated-mn-2026-11-06/check.py --negative-controls`:PASS119/10/78/sourcebinding10sites8registrantrows/fabricatedalias/globalreservedIDs/retiredIDsabsent/knownactualEINconflict/T3/alloldrowspreservedexcept7aliasfields. Threecensusdefects,nonemptykeypositivenegatives,4no-writefaults(SITE/EVD/companyambiguity/exactwrongparentproposal)rejected. All10sitecodes326ring1. StrictNAICS326active/unknownUS A/B/C establishments48→58/368QCEW2023private326=13.04→15.76%;countshare,notmatchedcoverage. This supersedes48→59.
 
-No shared scripts changed, so full scripts pytest not run. Two-family deep completion refutes pending; controller alone merges/changes status. No new primary network source is required by this conservative federal-only recipe.
+Pinnedmaine008ab9 consistentlyusedmerge/fullcanonicalrestore/baseline;unchangedbuilderreplay,nohandCSVmerge. `build.py --state MN --apply` secondrunallcanonicalCSVbyte-identical. No other creation class; exact10sites78EVD,7aliasfields,13datafiles. `python3 scripts/validate.py`:0errors. Everypriorcanonicalrow/EVDpreserved;only7sourcebackedaliases. PAwrongoperatorrowfullpreimagepreserved. Allsurviving10site/78EVDrowsfield-identicaltoa579771;only9retiredrecordIDswithdrawn.
 
-Final executed checks PASS: validator0errors, source/census/preservation/T3/registrant-fabrication/SITE+EVD+companyambiguity gates, allCSV byte-identical replay.13candidate fullmanualreview→11creates2namedRevolvholds; acceptedfull11census retained.
+Codex2REFUTEaccepted/cured;targetedCodex2/Grokdeepre-reviewpending. NoDone/workermerge/statusclaim. No sharedscriptsedited,fullpytestnotrun. Sourcevintage/currentoperationlimitationsremain. Qualitypasspausedforthisprioritycorrection.
 
 
 FILE prep.py
@@ -253,7 +253,10 @@ def main():
   else:assert not r['duplicate_of'],'non-duplicate target'
  ev=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
  lane=[r for r in ev if r['created_by']=='atlas-L3-corroborated-mn']
- assert len(alloc)==11 and len(lane)==86,(len(alloc),len(lane))
+ assert 'SITE-012694' not in sites and not ({f'EVD-{n:06d}' for n in range(308752,308760)} & {r['evidence_id'] for r in ev}),'wrong-parent retired IDs reappeared'
+ assert next(r for r in vs if r['cluster_id']=='LF-MN-00428')['verdict']=='STILL_UNCERTAIN'
+ assert ita['1436752']['ein']==ita['1436736']['ein']==ita['1436749']['ein']=='411284688','known federal EIN conflict changed'
+ assert len(alloc)==10 and len(lane)==78,(len(alloc),len(lane))
  for r in alloc:
   s=sites[r['site_id']];f=ita[r['establishment_id']]
   assert (s['org_id'],s['verification_tier'],s['operating_status'],s['country'])==(r['org_id'],'C','unknown','US')
@@ -267,7 +270,7 @@ def main():
   assert e['claim_detail']=='Federal registrant trade_names: '+matches[0]['company_name'].strip(),'registrant source binding'
  aliases=[e for e in lane if e['record_table']=='organizations']
  for e in aliases:registrant(e)
- assert len(aliases)==9
+ assert len(aliases)==8
  try:registrant({**aliases[0],'claim_detail':aliases[0]['claim_detail']+' fabricated alias'})
  except AssertionError:pass
  else:raise AssertionError('false registrant alias escaped')
@@ -325,8 +328,19 @@ def main():
    assert run.returncode and 'ambiguous filed operator' in run.stderr,run.stderr
    assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
    wrong.write_bytes(original)
- print('PASS exact119 census;3 census defects caught;11C sites/86 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected SITE/EVD collisions and ambiguous filed operator refused before any data write')
+   # Actual common-name/EIN wrong-parent proposal must never re-enter through a unique name hit.
+   packet=Path(d)/'tasks'/H.name;packet.parent.mkdir();shutil.copytree(H,packet)
+   (Path(d)/'scripts').symlink_to(ROOT/'scripts',target_is_directory=True)
+   (packet.parent/'osha-ita-2026-11-01').symlink_to(ROOT/'tasks/osha-ita-2026-11-01',target_is_directory=True)
+   bad=read(packet/'verdicts.csv');next(r for r in bad if r['cluster_id']=='LF-MN-00428').update(verdict='VERIFIED',held_org_id='ORG-002228')
+   with (packet/'verdicts.csv').open('w',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=list(bad[0]),lineterminator='\n');w.writeheader();w.writerows(bad)
+   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   run=subprocess.run([sys.executable,str(packet/'build.py'),'--state','MN','--data-dir',str(data),'--apply'],capture_output=True,text=True)
+   assert run.returncode and 'manual identity/function hold' in run.stderr,run.stderr
+   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'wrong-parent proposal wrote data'
+ print('PASS exact119 census;3 census defects caught;10C sites/78 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
+ if a.negative_controls:print('PASS injected SITE/EVD collisions, ambiguous company and actual wrong-parent proposal refused before any data write')
 if __name__=='__main__':main()
 
 
@@ -339,7 +353,6 @@ LF-MN-00499,SITE-012669,ORG-000133,564340,Oatey Company,Cherne Industries,2300 V
 LF-MN-00507,SITE-012670,ORG-003553,821597,Morris Packaging,"Morris Packaging, LLC","17100 Medina Rd,",Plymouth,MN,55447,326112,"Film, plastics, packaging, manufacturing",ok,2025,2026-01-28
 LF-MN-00516,SITE-012671,ORG-002907,919508,Amcor,Amcor Healthcare Packaging,1301 3rd Ave,Mankato,MN,56001,326199,"Packaging, plastics (e.g., blister, bubble), manufacturing",ok,2025,2026-01-29
 LF-MN-00506,SITE-012682,ORG-003819,820197,Revolution Sustainable Solutions LLC,Revolution Sustainable Solutions LLC,5301 Hadley Ave N,Oakdale,MN,55128,326112,"Film, plastics, packaging, manufacturing",ok,2025,2026-01-08
-LF-MN-00428,SITE-012694,ORG-002228,1436752,Foam Fabricators,Foam Fab,4560 112th St NW,Maple Lake,MN,55358,326150,"Packaging, foam plastics (except polystyrene), manufacturing",ok,2025,2026-01-23
 LF-MN-00481,SITE-012700,ORG-007729,346569,"T.O. Plastics, Inc.",Otsego,6035 Queens Ave NE,Otsego,MN,55330,326199,"Packaging, plastics (e.g., blister, bubble), manufacturing",ok,2025,2026-02-16
 LF-MN-00529,SITE-012706,ORG-003687,998685,Tank Holding Corp,Solar - Delano,860 Johnson Dr,Delano,MN,55328,326199,"Tanks, storage, plastics or fiberglass, manufacturing",ok,2025,2026-02-27
 LF-MN-00367,SITE-012714,ORG-000651,1000450,Advanced Drainage Systems,Fairmont,1001 Timberlake Road,Fairmont,MN,56031,326122,Plastic Pipe Manufacturing,ok,2025,2026-02-19
@@ -349,6 +362,52 @@ FILE holds-reviewed.csv
 cluster_id,reason
 LF-MN-00420,Need distinct-establishment/address reconciliation: held Revolv notes already name 1100 Industrial Park Rd SW Brainerd as the same operation as SITE-004094 Baxter HQ/plant. Do not create a second site from an unresolved alternate address.
 LF-MN-00468,"Need plant-specific activity/NAICS reconciliation: Hoyt Lakes ITA says polyethylene resin manufacturing (325211), while held Revolv is a rotational molder/thermoformer. Settle standalone resin production versus converting before assigning the site code/ring."
+LF-MN-00428,Need independently sourced operator reconciliation for Maple Lake Foam Fabricators: ITA1436752 EIN411284688 matches American Converters filings1436736/1436749; own FoamFabricatorsMN/Rogers/Amcon pages bind Minnesota operator. Held ORG002228 is Bloomsburg PA Altor chain with permitEIN43-0730823. Common normalized name is insufficient; do not self-repoint. SITE012694/EVD308752–759 permanently unused.
+
+
+FILE wrong-parent-rawcheck.json
+[
+  {
+    "source_url": "https://foamfabmn.com/contact-us/",
+    "quote": "4560 112th Street Northwest Maple Lake, MN 55358",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "7ed744f538a88de5244afd03535e51f7dea29331db401aeb8674808a333b857d",
+    "pdf_page": null,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://www.rogersfoam.com/contact-us/locations/",
+    "quote": "Foam Fabricators of Minnesota 4560 112th Street Northwest Maple Lake, MN 55358",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "7f849e2d0d5e88c0ef5149944cdd3fa311931b79f67bce2424769008a0d4ef24",
+    "pdf_page": null,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://amconfoam.com/contact-us/",
+    "quote": "American Converters does not sell to the general public",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "34c83c10b04277cade31238fdac4fe17c2917620c8f22e6d61c5ec4ee2d47d48",
+    "pdf_page": null,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://files.dep.state.pa.us/air/AirQuality/AQPortalFiles/Permits/PermitDocuments/1514656%5B19-00002%5D_Issued_v1.pdf",
+    "quote": "Federal Tax Id - Plant Code: 43-0730823-1",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "c819a53b3930daf7752e0a60383201157676892662872ea0a88f340bbd733dde",
+    "pdf_page": 1,
+    "fabricated_suffix_rejected": true
+  }
+]
 
 
 FILE qcew-after.json
@@ -356,9 +415,9 @@ FILE qcew-after.json
   "MN": {
     "strict": 48,
     "qcew": 368,
-    "strict_after": 59,
-    "added_326": 11,
+    "strict_after": 58,
+    "added_326": 10,
     "share_before": 0.13043478260869565,
-    "share_after": 0.16032608695652173
+    "share_after": 0.15760869565217392
   }
 }
