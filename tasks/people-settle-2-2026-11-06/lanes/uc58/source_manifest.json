@@ -1,0 +1,60 @@
+[
+  {
+    "url": "https://researchdirectory.uc.edu/p/jiangjb",
+    "route": "https://researchdirectory.uc.edu/p/jiangjb",
+    "status": "ok",
+    "sha256": "91fca38a95d55391ec6797f8e4a278e1315f97288d8b23b41c9ef9caf466ddc0",
+    "raw_response_status": "refetched",
+    "raw_response_sha256": "0605e38de29e700fa7d92caf2a62cd99532cf61883e157a6935448afe5b9c999"
+  },
+  {
+    "url": "https://researchdirectory.uc.edu/p/parkye",
+    "route": "https://researchdirectory.uc.edu/p/parkye",
+    "status": "ok",
+    "sha256": "113f66b21eca00cdb1b100c21060df4e9dc10908bad543c40f019b911f579d94",
+    "raw_response_status": "refetched",
+    "raw_response_sha256": "2dd257eef836163313c84b002bb96f7fcac082294b8f96e221a9f2e450f4826f"
+  },
+  {
+    "url": "https://www.artsci.uc.edu/natural-sciences/chemistry/faculty-and-staff-directory.html",
+    "route": "https://www.artsci.uc.edu/natural-sciences/chemistry/faculty-and-staff-directory.html",
+    "status": "ok",
+    "sha256": "2e103938a1e09ef7b6369efe9470de613955e7bf3397839b109315ed7acb9ac8",
+    "raw_response_status": "refetched",
+    "raw_response_sha256": "d71a49414e24ca17e3c9d0864fc9e937c87032aba088fa991d7d81434af9fb73"
+  },
+  {
+    "url": "https://www.ceas.uc.edu/academics/departments/chemical-environmental-engineering/people.html",
+    "route": "https://www.ceas.uc.edu/academics/departments/chemical-environmental-engineering/people.html",
+    "status": "ok",
+    "sha256": "cc26514803983a4f49d05da8337327031efc2d963fd452a6571a1503ce563918",
+    "raw_response_status": "refetched",
+    "raw_response_sha256": "41cf6e4ec1fb2b820d0a74b8fcfd5c3e4ec10563c984db18532c156ea05cdc4f"
+  },
+  {
+    "url": "https://www.ceas.uc.edu/academics/departments/engineering-education/protege-undergraduate-research-program/long-term-dose-controllable-drug-delivery.html",
+    "route": "https://www.ceas.uc.edu/academics/departments/engineering-education/protege-undergraduate-research-program/long-term-dose-controllable-drug-delivery.html",
+    "status": "ok",
+    "sha256": "5b5e3d859fac83a6ea1b534b79923740a077d4e4c909fb7c7e67b32272bd7d37",
+    "raw_response_status": "refetched",
+    "raw_response_sha256": "efe19ec234889fee70c515a6cf035b89f0b350cc11c1ade3723aaf8eb47382a6"
+  },
+  {
+    "url": "https://www.jianbingjiang.com/_files/ugd/4edab6_aa09756a2d6040d991785395c61d20dd.pdf",
+    "route": "https://www.jianbingjiang.com/_files/ugd/4edab6_aa09756a2d6040d991785395c61d20dd.pdf",
+    "status": "ok",
+    "pdf_pages_expected": 9,
+    "pdf_pages_extracted": 9,
+    "raw_response_sha256": "6ca4f857ae2b38e916e4556066397bd5553fe73f085170a90542c27dbc6d1763",
+    "sha256": "753a8c52056fb981198dcbf12d71ab5f39ff81612d4ad2da951c9a7a5b2bba07",
+    "raw_response_status": "refetched"
+  },
+  {
+    "url": "https://www.uc.edu/news/articles/2023/09/wvxu-highlights-uc-students-efficient-battery-for-green-energy.html",
+    "route": "https://www.uc.edu/news/articles/2023/09/wvxu-highlights-uc-students-efficient-battery-for-green-energy.html",
+    "status": "ok",
+    "sanitized_text_sha256": "50c445f279d84bace523775a3a5fe2ddbeef13504fc3a4dbaf3f37e1e1a999c2",
+    "hash_basis": "sanitized extracted text; browser-UA direct URL via house fetch.get; no raw HTTP bytes retained",
+    "source_role": "dated rank corroboration only"
+  }
+]

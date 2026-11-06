@@ -1,0 +1,42 @@
+[
+  {
+    "candidate_id": 16874,
+    "gate": "A",
+    "url": "https://cfaes.osu.edu/person/melvin-pascall",
+    "retrieved_date": "2026-11-06",
+    "retrieval_route": "NAS Firecrawl",
+    "sanitized_text_sha256": "209619f5608dfdc1482f3653de1cc773036349732ccecfec26327fee7eb18eb4",
+    "cache_basename": "c3d7a2b2f2cf01719940663c3b2d9d0cf580e29cc8d61dc1500c265d346a260d.json",
+    "inspection": "person identity, current exact eligible rank, institution affiliation, named research body; not publications or page menus"
+  },
+  {
+    "candidate_id": 16874,
+    "gate": "B",
+    "url": "https://cfaes.osu.edu/person/melvin-pascall",
+    "retrieved_date": "2026-11-06",
+    "retrieval_route": "NAS Firecrawl",
+    "sanitized_text_sha256": "209619f5608dfdc1482f3653de1cc773036349732ccecfec26327fee7eb18eb4",
+    "cache_basename": "c3d7a2b2f2cf01719940663c3b2d9d0cf580e29cc8d61dc1500c265d346a260d.json",
+    "inspection": "person identity, current exact eligible rank, institution affiliation, named research body; not publications or page menus"
+  },
+  {
+    "candidate_id": 9452,
+    "gate": "A",
+    "url": "https://bme.osu.edu/zhao-laboratory-biomedical-microsystems",
+    "retrieved_date": "2026-11-06",
+    "retrieval_route": "NAS Firecrawl",
+    "sanitized_text_sha256": "9388e7f3e0e67c1d7b23a89f1970285640ea28c83876beba97b8ef1d76bd6edf",
+    "cache_basename": "0bfd5c70c83b674b756dea4d7047da4e85271bfe3d1a7d1f0ac6ffc4fbdfba99.json",
+    "inspection": "person identity, current exact eligible rank, institution affiliation, named research body; not publications or page menus"
+  },
+  {
+    "candidate_id": 9452,
+    "gate": "B",
+    "url": "https://bme.osu.edu/zhao-laboratory-biomedical-microsystems",
+    "retrieved_date": "2026-11-06",
+    "retrieval_route": "NAS Firecrawl",
+    "sanitized_text_sha256": "9388e7f3e0e67c1d7b23a89f1970285640ea28c83876beba97b8ef1d76bd6edf",
+    "cache_basename": "0bfd5c70c83b674b756dea4d7047da4e85271bfe3d1a7d1f0ac6ffc4fbdfba99.json",
+    "inspection": "person identity, current exact eligible rank, institution affiliation, named research body; not publications or page menus"
+  }
+]
