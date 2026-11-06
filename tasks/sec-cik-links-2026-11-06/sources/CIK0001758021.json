@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001758021.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001758021",
+  "name": "Karat Packaging Inc.",
+  "tickers": [
+    "KRT"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "8fcb687e1ba874d175a5db6673df47db163f975f236bd070269f24dfb9c1c525",
+  "raw_name_token": "\"Karat Packaging Inc.\""
+}

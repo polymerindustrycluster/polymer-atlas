@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000074303.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000074303",
+  "name": "OLIN Corp",
+  "tickers": [
+    "OLN"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "e822c285fbe96d400e25e5d5158ecf7a8bc905fd33a3845dcf6bf6a52c7bc9db",
+  "raw_name_token": "\"OLIN Corp\""
+}

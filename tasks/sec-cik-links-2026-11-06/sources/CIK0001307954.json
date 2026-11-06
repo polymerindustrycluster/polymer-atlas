@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001307954.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001307954",
+  "name": "Huntsman CORP",
+  "tickers": [
+    "HUN"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "5aed4e80bb305b2ffc294ed5d2cfd132530800fcf5e94cc15daad51bcd8ffbdb",
+  "raw_name_token": "\"Huntsman CORP\""
+}

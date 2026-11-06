@@ -1,0 +1,16 @@
+{
+  "org_id": "ORG-004867",
+  "url": "https://hexagonagility.com/news",
+  "attempts": [
+    {
+      "status": "000",
+      "gate": "first conservation full gate"
+    },
+    {
+      "status": "000",
+      "gate": "unchanged bounded retry"
+    }
+  ],
+  "disposition": "STILL_UNCERTAIN",
+  "settling_fact": "Successful HTTP200 re-fetch at stored route; failures assert no absence or closure"
+}

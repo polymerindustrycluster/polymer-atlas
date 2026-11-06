@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001069878.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001069878",
+  "name": "TREX CO INC",
+  "tickers": [
+    "TREX"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "df83726114581f112c2f9aa4dbff9f41604493fe5e77b3b8aab4ef222119aba4",
+  "raw_name_token": "\"TREX CO INC\""
+}

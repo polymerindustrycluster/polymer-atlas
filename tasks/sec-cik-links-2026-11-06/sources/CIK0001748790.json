@@ -1,0 +1,17 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001748790.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001748790",
+  "name": "Amcor plc",
+  "tickers": [
+    "AMCR",
+    "AMCCF"
+  ],
+  "exchanges": [
+    "NYSE",
+    "OTC"
+  ],
+  "raw_sha256": "f8b448bb95b2b7761508504e03c1da0f5c93338078fe6bd1d05c9c70aa5d17a8",
+  "raw_name_token": "\"Amcor plc\""
+}

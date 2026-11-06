@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001164863.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001164863",
+  "name": "Enpro Inc.",
+  "tickers": [
+    "NPO"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "d98b4999b12312c0ed3806b7516324f6368ba778d62ab7f4e9759b185a984908",
+  "raw_name_token": "\"Enpro Inc.\""
+}

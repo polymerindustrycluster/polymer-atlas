@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001624794.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001624794",
+  "name": "CSW INDUSTRIALS, INC.",
+  "tickers": [
+    "CSW"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "dce407aea77e7979caffac7c2dddd09ee0db0f7233d6122d00da0b7bd3689b70",
+  "raw_name_token": "\"CSW INDUSTRIALS, INC.\""
+}

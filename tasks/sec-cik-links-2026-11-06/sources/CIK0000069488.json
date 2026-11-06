@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000069488.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000069488",
+  "name": "MYERS INDUSTRIES INC",
+  "tickers": [
+    "MYE"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "a4e2e3378176c747569584cc87001cba52e019c980fddd6a82c1f0192b081f42",
+  "raw_name_token": "\"MYERS INDUSTRIES INC\""
+}
