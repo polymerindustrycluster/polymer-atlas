@@ -1,8 +1,6 @@
-Adversarial completion refute. Independently assess this 20-row blind re-check from raw banked CY2025 ITA source rows without seeing lane verdicts first. For EACH cluster return PASS or HOLD with reason on identity/operator, scope at provisional federal-only C, address distinctness. Existing same-parent different street is allowed, same-campus ambiguity is HOLD. No claim of current operating status (unknown); no capabilities/HQ inferred. Source extract admissible at observed_date 2026-11-01 by owner ruling. Evidence URL is OSHA ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID=ID. Govt manufacturing NAICS only carries provisional C per campaign convention. Then refute builder/check, uniqueness, dates, provenance, idempotence and count-ratio claim. State APPROVE or REFUTE, inspected limits. 150 selected core326-first score-desc IL CORROBORATED clusters; 20 creates and 130 explicit holds; 0 org changes; 140 append-only evidence. Check validate 0 errors; check.py passes known3 + duplicate-injection fails + idempotent + strict68->87 /797 QCEW2023 count ratio (not matched coverage). PR approval only; controller controls Done. No network needed.
-
-BLIND SOURCE ROWS
+Final revised deep refute PR143.150screened IL CORROBORATED clusters:18Csite creates,126 supports_C evidence,132holds. Grok Liquibox/Sealedair competingheldsignals and AmericanFlange/Greif legal-operator alias findings nowheld despite originalCodexAPPROVE. SITE019005/019013 and14EVD slotsretired;id_slots.csv preservesall survivingIDs. Source-only18 fullcreatecensus below (controller-approved when<20). SourcebankedCY2025ITA observed2026-11-01;no currentoperationclaim;government-onlyprovisionalC. validate0/check/replay/oldrowsunchanged;strict68→85/797QCEW2023private326 count ratio(notmatchedcoverage),onecoatingssiteoutside326. Prior20/140snapshots and oldapproval superseded by final18patch. Refute sources/operator/address/evidence/IDs;returnAPPROVE|REFUTE.
+SOURCE18
 cluster_id,held_operator_id,held_operator_name,held_operator_status,successor,held_operator_domain,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,schema_2_2_signal,date_submitted,year_filing_for,prior_IL_sites,identity_context
-LF-IL-00040,ORG-001824,Greif Inc,active,,https://greif.com,1123458,Greif,American Flange & MFG CO,290 E Fullerton Ave,Carol Stream,IL,60188,326199,"Drums, plastics (i.e., containers), manufacturing",P,2026-01-05,2025,[],
 LF-IL-01154,ORG-000717,Mauser Packaging Solutions,active,,https://mauserpackaging.com/,1522621,BWAY,BWAY Arthur,1350 Arthur Ave,Elk Grove Village,IL,60007,326199,"Pails, plastics, manufacturing",P,2026-02-27,2025,"[{""site_id"": ""SITE-008186"", ""street"": ""1350 W. Fullerton Avenue"", ""city"": ""Addison""}]","Bway ORG-006250 is merged into Mauser ORG-000717, held successor chain"
 LF-IL-00979,ORG-000855,Gilkey Window Company,active,,https://www.gilkey.com/,114099,Gilkey Window Company,Gilkey Window Company Chicago,10160 Virginia Ave.,Chicago Ridge,IL,60415,326199,"Windows and window frames, vinyl, manufacturing",P,2026-02-27,2025,[],
 LF-IL-00290,ORG-002537,Pactiv Corporation,active,,,1476795,"Pactiv, LLC",Foodservice BEDFORD PARK INJ,7200 S Mason Ave,Bedford Park,IL,60638,326199,All Other Plastics Product Manufacturing,P,2026-02-17,2025,[],
@@ -13,7 +11,6 @@ LF-IL-01005,ORG-002544,Berry Global,active,,,1266984,Berry Global,"Berry Global 
 LF-IL-00218,ORG-002537,Pactiv Corporation,active,,,1493157,PACTIV,Food and Beverage Business Unit MANTENO,1050 Sycamore Road,Manteno,IL,60950,326113,Laminated plastics film and sheet (except packaging) manufacturing,P,2026-02-20,2025,[],
 LF-IL-01193,ORG-005114,"Marian, Inc.",active,,https://marianinc.com,272933,Marian Inc.,Marian Chicago,396 Wegner Drive,West Chicago,IL,60185,326299,"Rolls and roll coverings, rubber (e.g., industrial, papermill, painters', steelmill) manufacturing",P,2026-01-23,2025,[],
 LF-IL-00488,ORG-004243,Trelleborg Corp,active,,https://www.trelleborg.com/,1324114,Trelleborg Sealing Solutions,Trelleborg Sealing Solutions,"901 Phoenix Lake Ave, Streamwood, IL 60107",Streamwood,IL,60107,326130,"Laminated plastics plate, rod, and sheet, manufacturing",P,2026-01-29,2025,[],
-LF-IL-01060,ORG-000934,Liquibox,active,,https://www.liquibox.com/,1427927,Liquibox/Sealedair,Liquibox/Sealedair-Romeoville,1201 Windham Pkwy,Romeoville,IL,60446,326111,"Bags, plastics film, single wall or multiwall, manufacturing",P,2026-01-13,2025,[],
 LF-IL-00520,ORG-002544,Berry Global,active,,,935581,Berry Global,Berry Global,921 Industrial Drive,Aurora,IL,60506,326111,"Bags, plastics film, single wall or multiwall, manufacturing",P,2026-01-20,2025,[],
 LF-IL-00166,ORG-000238,Avery Dennison,active,,https://tapes.averydennison.com/,213557,Avery Dennison,Mt. Prospect,902 Feehanville Dr,Mt. Prospect,IL,60056,326111,"Bags, plastics film, single wall or multiwall, manufacturing",P,2026-03-02,2025,"[{""site_id"": ""SITE-003103"", ""street"": ""7542 N Natchez Ave"", ""city"": ""Niles""}]",
 LF-IL-00222,ORG-001128,"Storopack, Inc.",active,,https://www.storopack.us/,1082283,"Storopack, Inc.","Storopack, Inc. - Hillside",320 Craig Road,Hillside,IL,60162,326140,Polystyrene foam packaging manufacturing,P,2026-01-14,2025,[],
@@ -47,7 +44,9 @@ def main():
  orgs={r['org_id']:r for p in data.glob('organizations_*.csv') for r in read(p)}
  oldsites=[r for p in data.glob('sites_*.csv') for r in read(p)]
  out=defaultdict(list);eid=270000;alloc=[]
- for idx,v in enumerate(v for v in vs if v['verdict']=='VERIFIED'):
+ slots={r['cluster_id']:int(r['slot']) for r in read(H/'id_slots.csv')}
+ for v in (v for v in vs if v['verdict']=='VERIFIED'):
+  idx=slots[v['cluster_id']];eid=270000+7*idx
   c=cs[v['cluster_id']];oid=v['held_org_id'];org=orgs[oid];assert org['status']=='active' and not org['successor_org_id']
   fed=[ita[s[4:]] for s in c['sources_with_ids'].split(';') if s.startswith('ITA:')]
   assert fed and all(r['state']=='IL' for r in fed)
@@ -88,7 +87,7 @@ def main():
    if rows:append_sorted(data/name,rows,'site_id' if name.startswith('sites_') else 'evidence_id')
  with open(H/'allocations.csv','w') as f:
   w=csv.DictWriter(f,fieldnames=list(alloc[0]),lineterminator='\n');w.writeheader();w.writerows(alloc)
- print(json.dumps({'worked_IL_clusters':len(vs),'verdicts':dict(Counter(v['verdict'] for v in vs)),'sites_C':len(alloc),'organizations_created':0,'evidence_rows':eid-270000,'pending_rows':{k:len(v) for k,v in pending.items()}}))
+ print(json.dumps({'worked_IL_clusters':len(vs),'verdicts':dict(Counter(v['verdict'] for v in vs)),'sites_C':len(alloc),'organizations_created':0,'evidence_rows':sum(len(r) for k,r in out.items() if k.startswith('evidence_')),'pending_rows':{k:len(v) for k,v in pending.items()}}))
 if __name__=='__main__':main()
 
 CHECK
@@ -106,12 +105,12 @@ frame_check(cs,vs)
 try:frame_check(cs,vs[:-1]+[vs[0]])
 except AssertionError:pass
 else:raise AssertionError('duplicate injected verdict escaped')
-assert len(alloc)==20==len({r['site_id'] for r in alloc})
+assert len(alloc)==18==len({r['site_id'] for r in alloc})
 for name,key in [('sites_IL.csv','site_id'),('evidence_sites_IL.csv','evidence_id')]:
- old=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','HEAD:data/'+name],cwd=ROOT,text=True))))
+ old=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','9489b607c19b450c195c2353944c61719105e1f9:data/'+name],cwd=ROOT,text=True))))
  now={r[key]:r for r in read(ROOT/'data'/name)}
  assert all(now[r[key]]==r for r in old),'changed existing row'
-assert len(read(H/'blind-input.csv'))==20
+assert len(read(H/'blind-input.csv'))==18
 T=load_tables(ROOT/'data');known={} 
 for name,domain,oid in [('Plastipak Packaging, Inc.','plastipak.com','ORG-001033'),('Advanced Drainage Systems, Inc.','adspipe.com','ORG-000651'),('Lacks Enterprises, Inc.','lacksenterprises.com','ORG-003325')]:
  d=dedupe(T,name=name,domain=domain);assert oid in {h['id'] for s in d['steps'] for h in s['hits']};known[name]=d
@@ -121,6 +120,6 @@ subprocess.run([sys.executable,str(H/'build.py'),'--apply'],check=True)
 assert before==[hashlib.sha256(p.read_bytes()).hexdigest() for p in paths]
 rows=read(ROOT/'data/sites_IL.csv');ids={r['site_id'] for r in alloc};strict=lambda r:r['operating_status'] in ['active','unknown'] and r['verification_tier'] in ['A','B','C'] and r['naics_primary'].startswith('326')
 after=sum(strict(r) for r in rows);baseline=sum(strict(r) for r in rows if r['site_id'] not in ids)
-assert baseline==68 and after==87
-result=dict(state='IL',qcew_2023_private_establishments_326=797,before_strict_sites=baseline,after_strict_sites=after,before_percent=100*baseline/797,after_percent=100*after/797,known_answers=3,worked_clusters=150,unique_verdicts=150,creates_C=20,evidence_rows=140)
+assert baseline==68 and after==85
+result=dict(state='IL',qcew_2023_private_establishments_326=797,before_strict_sites=baseline,after_strict_sites=after,before_percent=100*baseline/797,after_percent=100*after/797,known_answers=3,worked_clusters=150,unique_verdicts=150,creates_C=18,evidence_rows=126)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print('PASS',result)

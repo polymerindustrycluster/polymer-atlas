@@ -2,12 +2,12 @@
   "state": "IL",
   "qcew_2023_private_establishments_326": 797,
   "before_strict_sites": 68,
-  "after_strict_sites": 87,
+  "after_strict_sites": 85,
   "before_percent": 8.531994981179423,
-  "after_percent": 10.915934755332497,
+  "after_percent": 10.664993726474279,
   "known_answers": 3,
   "worked_clusters": 150,
   "unique_verdicts": 150,
-  "creates_C": 20,
-  "evidence_rows": 140
+  "creates_C": 18,
+  "evidence_rows": 126
 }
