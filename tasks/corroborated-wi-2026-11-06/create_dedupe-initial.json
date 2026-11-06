@@ -1,0 +1,1075 @@
+[
+  {
+    "cluster_id": "LF-WI-00154",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Bemis Manufacturing",
+      "--street",
+      "300 Mill Street",
+      "--city",
+      "Sheboygan Falls",
+      "--state",
+      "WI",
+      "--zip",
+      "53085",
+      "--json",
+      "--domain",
+      "https://www.bemismfg.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.bemismfg.com/",
+        "name": "Bemis Manufacturing",
+        "street": "300 Mill Street",
+        "city": "Sheboygan Falls",
+        "state": "WI",
+        "zip": "53085"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004135",
+              "name": "Bemis Manufacturing Co",
+              "city": "Sheboygan Falls",
+              "state": "WI",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_WI.csv",
+              "match": "domain exact: bemismfg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004135",
+              "name": "Bemis Manufacturing Co",
+              "city": "Sheboygan Falls",
+              "state": "WI",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_WI.csv",
+              "match": "name key 'bemis manufacturing' = legal_name 'Bemis Manufacturing Co'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00047",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Valmet, Inc",
+      "--street",
+      "1615 Matthews St",
+      "--city",
+      "Neenah",
+      "--state",
+      "WI",
+      "--zip",
+      "54956",
+      "--json",
+      "--domain",
+      "https://valmet.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://valmet.com/",
+        "name": "Valmet, Inc",
+        "street": "1615 Matthews St",
+        "city": "Neenah",
+        "state": "WI",
+        "zip": "54956"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002255",
+              "name": "Valmet Inc.",
+              "city": "Clarks Summit",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "domain exact: valmet.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002255",
+              "name": "Valmet Inc.",
+              "city": "Clarks Summit",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "name key 'valmet' = legal_name 'Valmet Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00258",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Hentzen Coatings, Inc.",
+      "--street",
+      "8200 North Faulkner Road",
+      "--city",
+      "Milwaukee",
+      "--state",
+      "WI",
+      "--zip",
+      "53224",
+      "--json",
+      "--domain",
+      "https://www.hentzen.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.hentzen.com/",
+        "name": "Hentzen Coatings, Inc.",
+        "street": "8200 North Faulkner Road",
+        "city": "Milwaukee",
+        "state": "WI",
+        "zip": "53224"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003966",
+              "name": "Hentzen Coatings, Inc.",
+              "city": "Milwaukee",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "domain exact: hentzen.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003966",
+              "name": "Hentzen Coatings, Inc.",
+              "city": "Milwaukee",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "name key 'hentzen coatings' = legal_name 'Hentzen Coatings, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00190",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Westlake",
+      "--street",
+      "210 S Arch St",
+      "--city",
+      "Janesville",
+      "--state",
+      "WI",
+      "--zip",
+      "53548",
+      "--json",
+      "--domain",
+      "https://www.westlake.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.westlake.com/",
+        "name": "Westlake",
+        "street": "210 S Arch St",
+        "city": "Janesville",
+        "state": "WI",
+        "zip": "53548"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003067",
+              "name": "Westlake Corporation",
+              "city": "Houston",
+              "state": "TX",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_TX.csv",
+              "match": "domain exact: westlake.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003067",
+              "name": "Westlake Corporation",
+              "city": "Houston",
+              "state": "TX",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_TX.csv",
+              "match": "name key 'westlake' = legal_name 'Westlake Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003472",
+              "name": "Genpak LLC",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-000253",
+              "name": "Borchers Americas Inc.",
+              "city": "Westlake",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-000480",
+              "name": "Palmer Holland, Inc",
+              "city": "Westlake",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-000531",
+              "name": "Q-Lab Corporation",
+              "city": "Westlake",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-000764",
+              "name": "Royal Building Products",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-000793",
+              "name": "Dimex LLC",
+              "city": "Marietta",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-001076",
+              "name": "Return Polymers",
+              "city": "Ashland",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-001091",
+              "name": "Royal Building Products (Westlake Royal Building Products)",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-001562",
+              "name": "Bay Corporation",
+              "city": "Westlake",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-001563",
+              "name": "SurgTech, Inc.",
+              "city": "Westlake",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-002472",
+              "name": "Westlake Plastics Co.",
+              "city": "Lenni",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-002473",
+              "name": "Westlake Plastics Iwtp",
+              "city": "Lenni",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-002477",
+              "name": "North Amer Pipe Corp.",
+              "city": "Leola",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-002478",
+              "name": "North American Pipe Corporation (Westlake Pipe & Fittings)",
+              "city": "Leola",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-003574",
+              "name": "Wedlake Industries",
+              "city": "Hohenwald",
+              "state": "TN",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_TN.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-003258",
+              "name": "Pipeline Plastics, LLC",
+              "city": "Westlake",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'Westlake'"
+            },
+            {
+              "id": "ORG-004623",
+              "name": "Lotte Chemical USA Corporation",
+              "city": "Houston",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'Westlake'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00272",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Charter Next Generation",
+      "--street",
+      "751 N Vickerman Road",
+      "--city",
+      "Milton",
+      "--state",
+      "WI",
+      "--zip",
+      "53563",
+      "--json",
+      "--domain",
+      "https://cnginc.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://cnginc.com/",
+        "name": "Charter Next Generation",
+        "street": "751 N Vickerman Road",
+        "city": "Milton",
+        "state": "WI",
+        "zip": "53563"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000728",
+              "name": "Charter Next Generation",
+              "city": "Delaware",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: cnginc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000728",
+              "name": "Charter Next Generation",
+              "city": "Delaware",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "name key 'charter next generation' = legal_name 'Charter Next Generation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00254",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Penn Color",
+      "--street",
+      "1474 Putman Parkway",
+      "--city",
+      "Milton",
+      "--state",
+      "WI",
+      "--zip",
+      "53563",
+      "--json",
+      "--domain",
+      "https://www.penncolor.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.penncolor.com/",
+        "name": "Penn Color",
+        "street": "1474 Putman Parkway",
+        "city": "Milton",
+        "state": "WI",
+        "zip": "53563"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002281",
+              "name": "Penn Color Inc.",
+              "city": "Doylestown",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "domain exact: penncolor.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002281",
+              "name": "Penn Color Inc.",
+              "city": "Doylestown",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "name key 'penn color' = legal_name 'Penn Color Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00213",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Ironwood Plastics",
+      "--street",
+      "2800 18th street",
+      "--city",
+      "Two Rivers",
+      "--state",
+      "WI",
+      "--zip",
+      "54241",
+      "--json",
+      "--domain",
+      "https://www.ironwood.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.ironwood.com",
+        "name": "Ironwood Plastics",
+        "street": "2800 18th street",
+        "city": "Two Rivers",
+        "state": "WI",
+        "zip": "54241"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007037",
+              "name": "Ironwood Plastics, Inc.",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_US.csv",
+              "match": "domain exact: ironwood.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007037",
+              "name": "Ironwood Plastics, Inc.",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_US.csv",
+              "match": "name key 'ironwood plastics' = legal_name 'Ironwood Plastics, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00443",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Teel Plastics",
+      "--street",
+      "426 Hitchcock Street",
+      "--city",
+      "Baraboo",
+      "--state",
+      "WI",
+      "--zip",
+      "53913",
+      "--json",
+      "--domain",
+      "https://www.teel.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.teel.com",
+        "name": "Teel Plastics",
+        "street": "426 Hitchcock Street",
+        "city": "Baraboo",
+        "state": "WI",
+        "zip": "53913"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003273",
+              "name": "Teel Plastics, LLC",
+              "city": "Baraboo",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "domain exact: teel.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003273",
+              "name": "Teel Plastics, LLC",
+              "city": "Baraboo",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "name key 'teel plastics' = legal_name 'Teel Plastics, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00381",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Allied Plastics LLC",
+      "--street",
+      "150 Holy Hill Road",
+      "--city",
+      "Twin Lakes",
+      "--state",
+      "WI",
+      "--zip",
+      "53181",
+      "--json",
+      "--domain",
+      "https://alliedplasticsoftoledo.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://alliedplasticsoftoledo.com/",
+        "name": "Allied Plastics LLC",
+        "street": "150 Holy Hill Road",
+        "city": "Twin Lakes",
+        "state": "WI",
+        "zip": "53181"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000662",
+              "name": "Allied Plastics",
+              "city": "Toledo",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: alliedplasticsoftoledo.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000662",
+              "name": "Allied Plastics",
+              "city": "Toledo",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'allied plastics' = legal_name 'Allied Plastics'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00632",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Future Foam, Inc.",
+      "--street",
+      "8430 Murphy Dr",
+      "--city",
+      "Middleton",
+      "--state",
+      "WI",
+      "--zip",
+      "53562",
+      "--json",
+      "--domain",
+      "https://www.futurefoam.com/facility/fairless-hills-pa/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.futurefoam.com/facility/fairless-hills-pa/",
+        "name": "Future Foam, Inc.",
+        "street": "8430 Murphy Dr",
+        "city": "Middleton",
+        "state": "WI",
+        "zip": "53562"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002336",
+              "name": "Future Foam Inc.",
+              "city": "Fairless Hills",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "domain exact: futurefoam.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002336",
+              "name": "Future Foam Inc.",
+              "city": "Fairless Hills",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "name key 'future foam' = legal_name 'Future Foam Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006245",
+              "name": "Future Foam - Plant 12",
+              "city": "West Valley City",
+              "state": "UT",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_UT.csv",
+              "match": "legal_name contains 'Future Foam, Inc.'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-WI-00554",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Midland Plastics",
+      "--street",
+      "2151 American Blvd",
+      "--city",
+      "De Pere",
+      "--state",
+      "WI",
+      "--zip",
+      "54115",
+      "--json",
+      "--domain",
+      "https://www.midlandplastics.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.midlandplastics.com/",
+        "name": "Midland Plastics",
+        "street": "2151 American Blvd",
+        "city": "De Pere",
+        "state": "WI",
+        "zip": "54115"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003607",
+              "name": "Midland Plastics, Inc.",
+              "city": "New Berlin",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "domain exact: midlandplastics.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003607",
+              "name": "Midland Plastics, Inc.",
+              "city": "New Berlin",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "name key 'midland plastics' = legal_name 'Midland Plastics, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  }
+]

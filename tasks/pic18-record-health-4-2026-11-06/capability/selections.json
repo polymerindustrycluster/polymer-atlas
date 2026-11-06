@@ -1,0 +1,106 @@
+[
+  [
+    "ORG-000318",
+    "materials",
+    "composites_frp",
+    "665-36 TOPAZ – Fits Mustee’s Topaz bathtub T6036R/L-AFD. Fiberglass construction; mounts",
+    "Rev01-26_ELM_LPC-14_6.pdf",
+    "Own Mustee TOPAZ product construction; fiberglass composite family only, no resin inferred."
+  ],
+  [
+    "ORG-000493",
+    "processes",
+    "injection_molding",
+    "Complete Wax and Plastic Investment Casting Pattern Injection, Finishing, and Mold Assembly",
+    "/plas-mac-corporation/",
+    "Own plastic pattern injection service; not investment-metal casting or machinery sold."
+  ],
+  [
+    "ORG-000643",
+    "materials",
+    "elastomers_rubber",
+    "These repair units are rubber reinforced and ideal for puncture repair in tubeless radial and bias ply tires",
+    "Catalog-316-Online",
+    "Own XtraSeal tire-repair catalog; rubber family only. Own manufacture corroborated by about page; no tire manufacture inferred."
+  ],
+  [
+    "ORG-001599",
+    "materials",
+    "polymer_additives",
+    "Our innovative additive accelerates the degradation process of plastic products",
+    "https://multiplastsystems.com/",
+    "Own BEDA product claim; no endorsement of degradation performance or specific polymer chemistry."
+  ],
+  [
+    "ORG-001599",
+    "materials",
+    "polyethylene_pe",
+    "Tortilla Bags Size: 8.5-15\" x 10-21\" Material: Low density polyethylene",
+    "/product/tbd/",
+    "Own product material specification; no processing method inferred."
+  ],
+  [
+    "ORG-001599",
+    "materials",
+    "films_flexible_packaging",
+    "Tortilla Bags Size: 8.5-15\" x 10-21\" Material: Low density polyethylene",
+    "/product/tbd/",
+    "Own flexible tortilla bag product; packaging family only."
+  ],
+  [
+    "ORG-001631",
+    "materials",
+    "polymer_additives",
+    "We specialize in producing emulsions of antioxidants and plasticizers",
+    "/products/",
+    "Own producer claim of polymer additives; industry navigation labels alone excluded."
+  ],
+  [
+    "ORG-001730",
+    "materials",
+    "composites_unspecified",
+    "Joy Nano-Hybrid Composite A unique resin composite technology with the most advanced Nano filler elements on the market",
+    "https://3d-dent.com/",
+    "Own Joy resin-composite product description, corroborated by product page; no fiber, cure chemistry, or manufacturing process inferred."
+  ],
+  [
+    "ORG-002146",
+    "materials",
+    "polystyrene_ps_hips",
+    "Expanded Polystyrene (EPS) EPS is a trusted insulation material",
+    "/cold-chain-packaging/insulated-shippers/",
+    "Own insulated-shipper product material; EPS maps to polystyrene, not bead molding without a current process claim."
+  ],
+  [
+    "ORG-002146",
+    "materials",
+    "polyurethane_pu",
+    "Polyurethane (PUR) PUR solutions can be tailored to specific shipper designs",
+    "/cold-chain-packaging/insulated-shippers/",
+    "Own PUR insulated-shipper offering; no foaming process inferred."
+  ],
+  [
+    "ORG-002146",
+    "materials",
+    "polypropylene_pp",
+    "Expanded Polypropylene (EPP) is a durable, closed-cell foam",
+    "/cold-chain-packaging/insulated-shippers/",
+    "Own EPP cooler material explicitly identified."
+  ],
+  [
+    "ORG-002146",
+    "materials",
+    "foams_polymeric",
+    "Expanded Polypropylene (EPP) is a durable, closed-cell foam",
+    "/cold-chain-packaging/insulated-shippers/",
+    "Explicit own-product polymer foam family; historical block molding and EPP molding excluded as current process evidence."
+  ],
+  [
+    "ORG-002948",
+    "materials",
+    "polymer_additives",
+    "Covia’s nepheline syenite functional fillers and additives are produced",
+    "covia_safety-briefpdftds.pdf",
+    "Own neutral nepheline-syenite filler/additive production descriptor; polymer application corroborated by own HIFILL N rubber product page. No safety, regulatory approval, or customer process claim proposed."
+  ]
+]
