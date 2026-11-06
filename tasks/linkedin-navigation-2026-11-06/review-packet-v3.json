@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "scope": "L14 own-site LinkedIn navigation only:345 blank org cells,40shards; exact public header/footer anchors. Never request LinkedIn, zeroEVD/IDs/otherfields.",
+  "criteria": [
+    "325navigationcells39shards;2061frame/1708ownURLs/329rawcandidates325PASS4HOLD/1736holds;allolddataunchanged",
+    "Globalheader/footeronly:deferredwholeparse,main/articleancestryblocked,body-containingmarkerwrappersdisqualified;6negativesand4positives;1285cachedpagesreparsed/20unmergedwithdrawals",
+    "Exactheldname/tradealias+uniquedomain/ownsource,neverLinkedInrequests/evidence/monitoring;2additivepublicmainaliaspreimagesdocumented",
+    "Productioncheck/4zero-writefaults/byte-replay/exactall-dataprojection/validator0/nativeguard;known3+transportguardunchanged"
+  ],
+  "out_of_scope": [
+    "LinkedIn destination reading/verification (explicitly forbidden)",
+    "JS-only/footer browser rendering or nationwide complete org census",
+    "Owner/parent/alias rulings and evidence/tier/website edits",
+    "Hosted deployment/usage claims"
+  ],
+  "revision": "436ace4c39240a6e86160c01b0ef6729184ad66a",
+  "tool_access": "Complete branch/PR/source packet; raw HTML only uncommittedbuild/linkedin-navigation/raw, may independently fetch own source websites only. No LinkedIn requests. No edits or merge.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "a3dde2f3e657d8a243d4e1ec55e9fb6afa867a3aa1d1e625750a33a287d680ad"
+    },
+    {
+      "path": "README.md",
+      "sha256": "87d9419467532cd7eaea144867ab87340fc459e33c61735ace6a47d01a0f5045"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "42d81c60e147bf3c25dea7ad03b9fb08ec1727d1dc0e98c2b1445f7133e518cc"
+    },
+    {
+      "path": "ancestry-reconciliation.json",
+      "sha256": "942bc74df98347c1b740ed5ed69d5e1a307782d8fd56d1dc56dd8f08e6cb38d2"
+    },
+    {
+      "path": "ancestry_check.py",
+      "sha256": "adde7f145822da31f9ae9e487b13487965a638d5d0a8cb9dbe9acc3d80155488"
+    },
+    {
+      "path": "application.txt",
+      "sha256": "3ccd6eb00d709f74d2dbfdea2cb1070ae68bcf542a78087b306c30715f75f927"
+    },
+    {
+      "path": "base.txt",
+      "sha256": "55f55895e7123bdd3c0b02a30d7e18fa32ebd1fe84977f43e11f0170cbc68bd2"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "c9b62e56a68ed53d2539d5ccf8ef2a085f70c22a43a0f2e17faa2b88b415b42a"
+    },
+    {
+      "path": "build.py",
+      "sha256": "852423f0f07e80539ef6e7d256d99ed3104d33d85b94395aa55e59a3b6d2e7a6"
+    },
+    {
+      "path": "check.py",
+      "sha256": "5f93ab00bbda01d9a2a55426090275a676456eb7572a3eb8c20d9b09c69fab58"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "4a1517298fca2c4455fdc7991132aa3a7ef997428b7e3d2b957858953f84ba30"
+    },
+    {
+      "path": "classify.py",
+      "sha256": "7488609c20a4de823b28f427af2776941825b31148cd67380af330a47850f84d"
+    },
+    {
+      "path": "discover.py",
+      "sha256": "14e96e28f413d61645d2f39328913270ede559850f454ca548f8bf0a84c94e1c"
+    },
+    {
+      "path": "discovery.json",
+      "sha256": "8520dcb1688b59459a3e86d1d0257a7c7c090d43288dab60952b518939155465"
+    },
+    {
+      "path": "frame-base.txt",
+      "sha256": "955c5d51cbef4682702806a374f7b7b628911f918b111455d4407d1a4be19f49"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "854936aab509e1cde0ff8687a32530e93d70b7bd01fb0ca7bfc64d50e9123e05"
+    },
+    {
+      "path": "known-answers.json",
+      "sha256": "a5da0238fe9f42fc0cbf4725a3f243262833784193597b5c1c780f34edee4e75"
+    },
+    {
+      "path": "preimage-refresh.csv",
+      "sha256": "d9f3fab16d73e9ad669b3334e089c69f29efeffe33e42e3a166ea0ec4e9ff8b3"
+    },
+    {
+      "path": "proposals.csv",
+      "sha256": "c4332268cef27d3437dac08ed3ec123cb3a36b8b0c020b3a38168ec183abda22"
+    },
+    {
+      "path": "raw-outcomes.csv",
+      "sha256": "f4e91d2638a509e8d2dfff6698a650592ff957d673931a69dc098fe3882d9162"
+    },
+    {
+      "path": "raw-requests.json",
+      "sha256": "324681bf86a3700fca4d3f53705de00ae3d8b689ada550fe214dd46a18c24f2e"
+    },
+    {
+      "path": "rawcheck-log.txt",
+      "sha256": "79f4d053a7f603817a0e4443fad0c9f5cad10f60788c8e6a8c6ee2b508270f17"
+    },
+    {
+      "path": "rawcheck.csv",
+      "sha256": "2df4bf32288932e3821aebc06637b3ca38a0a6ce16f79b0d904998dca1af9584"
+    },
+    {
+      "path": "rawcheck.py",
+      "sha256": "97a56c1907741870db4177e8e9190a7195fe9711cd8760228b191b1accf5ff77"
+    },
+    {
+      "path": "row-loss.txt",
+      "sha256": "1e158d07a8bcad22852095c9cc4ca916a6e7037ca4e185de3a0fdc59e66378b3"
+    },
+    {
+      "path": "self-check.txt",
+      "sha256": "a71b227bbc9062d6b68d02798b9637299138fdf8be8145514597c7fd88c88d4c"
+    },
+    {
+      "path": "self_check.py",
+      "sha256": "ea855e84b5734230c5f3810e683fdf107f5af5d560f124ad9030f704a0edf207"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "f28a9d334f4f8b825226984a512bafad54a274de90f325e9961308831b98cd5a"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "79c5d486a6a53f8393b323b0e0197e3da9bd4683a97d5afd60f6d9df95a84fc3"
+    },
+    {
+      "path": "withdrawn-navigation.csv",
+      "sha256": "4087017aba807619a64cf11c6c76dc2e294600d0ea0b0fb278c3d7c928897df1"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "python3 scripts/check_row_loss.py --base origin/main",
+      "outcome": "pass",
+      "evidence": "row-loss.txt"
+    },
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/rawcheck.py",
+      "outcome": "pass",
+      "evidence": "rawcheck-log.txt"
+    },
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/self_check.py",
+      "outcome": "pass",
+      "evidence": "self-check.txt"
+    },
+    {
+      "command": "python3 tasks/linkedin-navigation-2026-11-06/ancestry_check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [
+    {
+      "id": "codex7-full-initial",
+      "findings": [
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "ambiguous-body-ancestry",
+          "evidence": "Article-header/main andglobalwrapperreprosaccepted;deferredstructuralqualification+6negative4positive fixtures,all1285cachesreparsed,20unmergedwithdrawals,325finalfreshPASS. Correctedactualrefuter7/fullGrokrequired;Codex6guard-onlynotfullapproval."
+        }
+      ]
+    }
+  ],
+  "receipts": []
+}
