@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Idempotent integrator application of reviewed L3 STRONG verdicts.
 Run from repository root: python3 tasks/strong-waves-mo-sc-la-2026-11-06/build.py --state MO --apply
-Stable IDs are input-index offsets within the owner's reserved block, never gap-filled.
+Stable IDs are frozen-verdict-order offsets within the owner's reserved block, never gap-filled.
 """
 import argparse, csv, json, re, sys
 from collections import Counter, defaultdict
@@ -19,7 +19,9 @@ def write(p,rows,fields):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--state',choices=['MO','SC','LA'],required=True);ap.add_argument('--apply',action='store_true');a=ap.parse_args()
+    supplements=read(HERE/'supplements.csv')
     inputs={r['cluster_id']:r for r in read(HERE/'input.csv')};vs=read(HERE/'verdicts.csv')
+    assert [v['cluster_id'] for v in vs]==sorted(inputs,key=lambda k:({'MO':0,'SC':1,'LA':2}[inputs[k]['state']],k)), 'verdict order changed'
     assert len(inputs)==len(vs)==36 and Counter(r['cluster_id'] for r in vs)==Counter(inputs.keys()), 'verdict census mismatch'
     raw={r['cluster_id']:r for r in read(HERE/'rawcheck.csv')}
     ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
@@ -30,18 +32,26 @@ def main():
     for idx,v in enumerate(vs):
         if v['state']!=a.state or v['verdict']!='VERIFIED':continue
         c=inputs[v['cluster_id']];assert raw[v['cluster_id']]['raw']=='yes' and v['own_quote']
-        fed=[];aliases=[];code='';last=''
+        fed=[];aliases=[];alias_sources=[];code='';last='';industry=''
+        fed_streets=[]
         for token in c['sources_with_ids'].split(';'):
             family,ident=token.split(':',1)
             if family=='ITA':
                 r=ita[ident];ref=f"OSHA ITA Form 300A CY{r['year_filing_for']} establishment {ident} ({r['establishment_name']})"
                 fed.append((ref,r['date_submitted'][:10]));aliases += [r['establishment_name'],r['company_name']]
+                alias_sources.append(([r['establishment_name'],r['company_name']],ref,r['date_submitted'][:10]))
+                fed_streets.append((r['street'],r['city'],r['state'],r['zip5']))
+                if not industry:industry=r['industry_description']
                 if not code:code=r['naics_code']
             elif family=='OSHA':
                 r=osha[ident];ref=f"OSHA inspection {r['latest_activity_nr']} ({r['name']}), https://www.osha.gov/ords/imis/establishment.inspection_detail?id={r['latest_activity_nr']}"
                 fed.append((ref,r['latest_inspection'][:10]));aliases.append(r['name'])
+                alias_sources.append(([r['name']],ref,r['latest_inspection'][:10]))
+                fed_streets.append((r['street'],r['city'],r['state'],r['zip'][:5]))
                 if not code:code=r['naics_latest']
-            elif family=='F5500':aliases.append(plans[ident]['sponsor_name'])
+            elif family=='F5500':
+                r=plans[ident];aliases.append(r['sponsor_name'])
+                alias_sources.append(([r['sponsor_name']],f"DOL EFAST2 Form 5500 EIN {ident}, sponsor {r['sponsor_name']}, PY{r['plan_year']}, plan {r['plan_number']}, acknowledgement {r['ack_id']}",r['plan_year']+'-12-31'))
         assert not code or re.fullmatch(r'\d{6}',code), (v['cluster_id'],code)
         aliases=list(dict.fromkeys(x.strip() for x in aliases if x.strip()))
         own=v['own_url'];quote=v['own_quote'];ring=v['ring']
@@ -82,6 +92,26 @@ def main():
             E('sites',sid,'code',f'naics_primary {code}',fed[0][0],'government_filing',fed[0][1])
         else:
             E('sites',sid,'address',f"{c['street']}, {c['city']}, {a.state} {c['zip5']}")
+        # Supplement, never replace, the original own-site attribution and weak quotations.
+        eid=165000+idx*100
+        org_shard=orgs[oid][0].stem.split('_')[-1] if v['held_org_id'] else 'US'
+        for names,ref,asof in alias_sources:
+            values=[n for n in names if n and n!=name]
+            if values:E('organizations',oid,'existence','Federal registrant aliases: '+'; '.join(values),ref,'government_filing',asof,'supports_C',shard=org_shard)
+        for extra in supplements:
+            if extra['cluster_id']!=v['cluster_id']:continue
+            assert extra['raw']=='yes'
+            kind=extra['claim_type'];detail=f"Raw-checked supplemental witness: {extra['quote']}"
+            E('sites',sid,kind,detail,extra['source_url'])
+            E('organizations',oid,kind,detail,extra['source_url'],effect='supports_C',shard=org_shard)
+            if kind=='scope':
+                E('sites',sid,'activity',detail,extra['source_url'])
+                E('organizations',oid,'activity',detail,extra['source_url'],effect='supports_C',shard=org_shard)
+        if industry:
+            # The filing's own activity description complements plant-only own-site witnesses.
+            for kind in ('scope','activity'):E('sites',sid,kind,'Filed establishment activity: '+industry,fed[0][0],'government_filing',fed[0][1])
+        import atlas
+        assert all(atlas.street_key(street)==atlas.street_key(c['street']) and state==c['state'] for street,city,state,zip_ in fed_streets), ('federal street mismatch',v['cluster_id'],fed_streets)
         alloc.append(dict(cluster_id=v['cluster_id'],org_id=oid,new_org=str(not bool(v['held_org_id'])).lower(),site_id=sid,tier=tier))
     if a.apply:
         for filename,rows in additions.items():

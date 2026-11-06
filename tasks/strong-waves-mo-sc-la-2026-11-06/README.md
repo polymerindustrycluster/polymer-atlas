@@ -45,7 +45,7 @@ Application counts, before/after ratios and independent review verdicts are appe
 - South Carolina application: 4 new organizations (tier C), 6 new establishments (tier B); 64 evidence observations; 2 held-parent alias updates. `validate.py`: zero errors. Builder replay: passed.
 - Louisiana application: 4 new organizations (tier C), 4 new establishments (tier B); 48 evidence observations. `validate.py`: zero errors. Builder replay: passed.
 
-Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 210 evidence rows; 4 held-parent alias additions.
+Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 279 evidence rows (210 original + 69 supplemental); 4 held-parent alias additions.
 
 | State | QCEW 2023 NAICS 326 private establishments | Atlas strict before | Atlas strict after | Strict/QCEW before → after |
 |---|---:|---:|---:|---:|
@@ -77,3 +77,23 @@ Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36
 | LF-LA-00234 | Precursor-only Ring 3 precedent applies, but dated current operating outcome and operator after restructuring must be settled before active create. |
 
 Controller 2026-11-06 authorized merge of origin/main instead of rebase to preserve the two pre-existing CRLF-dirty federal-frame files; this supersedes the lane rebase-only route for this integration. Controller also authorized publishing draft for queued refute-clerk review while saturated council calls remain pending; two-family approval is still required. Reviews pending at this checkpoint.
+
+### Grok initial REFUTE and correction
+
+The initial Grok 4.7 deep review REFUTED four weak scope/plant witnesses, own-site attribution of new-org federal aliases,
+and missing address/count-composition checks. All original evidence rows remain untouched. Five raw-checked supplemental
+quotes in `supplements.csv` now provide Davis coating activity, CMP's Louisiana address, Hahl's Lexington address, Sun's
+Belle Chasse manufacturing location, and its own Lubra-Glide copolymer manufacturing technical sheet. The PDF was freshly
+fetched with curl and extracted with pdftotext 26.10.0; its manufacturer sentence is verbatim. Government filing activity
+descriptions complement plant-only own-site witnesses. Every federal alias group now has a source-specific government
+observation (including the actual EFAST2 sponsor filing); these answer the earlier weak own-site attribution. Supplemental
+IDs occupy 165000+ within the lane block. Total evidence observations are now 279 (69 appended); creates unchanged.
+
+The builder now asserts every used federal street matches the input physical street using atlas.street_key and the same
+state, and refuses changed verdict order. `check.py` ties raw quote/URL to verdicts, supplements to evidence, checks exact
+15/19/279 counts, and reconciles each state's strict 326 increment against the actual created-site codes: MO +6, SC +3,
+LA +1. Ring 1 counts differ because federal NAICS codes outside 326 remain as filed; no count is hidden or relabelled.
+The reviewer had only a text packet and explicitly did not inspect federal data. Follow-up review includes the resolved
+federal witness metadata and created-site code composition.
+
+Corrected validation: `validate.py` zero errors; `check.py` PASS; `prepare.py --supplements-only` 5/5 raw quotes, PDF mutation rejected. Every prior evidence row byte-for-field identical across 8 supplemental shards; all-state builder replay byte-identical. Corrected re-review pending.

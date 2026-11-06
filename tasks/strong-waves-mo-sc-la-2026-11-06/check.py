@@ -13,14 +13,24 @@ def census(source,verdicts):
 def main():
     source=[r for r in read(ROOT/'tasks/lead-fusion-2026-11-01/clusters.csv') if r['state'] in ('MO','SC','LA') and r['class']=='STRONG']
     verdicts=read(HERE/'verdicts.csv');census(source,verdicts)
-    assert Counter(r['cluster_id'] for r in read(HERE/'input.csv'))==Counter(r['cluster_id'] for r in source)
+    assert {r['cluster_id']:r for r in read(HERE/'input.csv')}=={r['cluster_id']:r for r in source}, 'input facts changed'
     for defect in (verdicts[:-1],verdicts+[verdicts[0]],verdicts[:-1]+[verdicts[0]]):
         try:census(source,defect)
         except AssertionError:pass
         else:raise AssertionError('census gate failed injected defect')
     raw={r['cluster_id']:r for r in read(HERE/'rawcheck.csv')}
+    for v in verdicts:
+        if v['verdict']=='VERIFIED':assert v['own_quote']==raw[v['cluster_id']]['quote'] and v['own_url']==raw[v['cluster_id']]['url']
+    evidence=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
+    lane=[r for r in evidence if r['created_by']=='atlas-L3-strong-mo-sc-la']
+    assert len(lane)==279, ('lane evidence total',len(lane))
+    for extra in read(HERE/'supplements.csv'):
+        assert extra['raw']=='yes'
+        assert any(extra['quote'] in e['claim_detail'] and extra['source_url']==e['source_ref'] for e in lane),extra
+
     allocations=[r for st in ('MO','SC','LA') for r in read(HERE/f'allocations_{st}.csv')]
     assert Counter(r['cluster_id'] for r in allocations)==Counter(r['cluster_id'] for r in verdicts if r['verdict']=='VERIFIED')
+    assert len(allocations)==19 and sum(r['new_org']=='true' for r in allocations)==15
     sites={r['site_id']:r for p in (ROOT/'data').glob('sites_*.csv') for r in read(p)}
     for r in allocations:
         s=sites[r['site_id']];assert s['org_id']==r['org_id'] and s['verification_tier']==r['tier']
@@ -33,6 +43,8 @@ def main():
     nums=m.atlas_numerators(str(ROOT));before=json.loads((HERE/'qcew-before.json').read_text());after={}
     for st,b in before.items():
         n=nums[(st,'326')][1];assert n>b['strict_before'],(st,n,b)
+        delta=sum(sites[r['site_id']]['naics_primary'].startswith('326') for r in allocations if sites[r['site_id']]['state']==st)
+        assert n-b['strict_before']==delta,(st,'unreconciled numerator delta',delta)
         after[st]={**b,'strict_after':n,'share_before':b['strict_before']/float(b['qcew_2023']),'share_after':n/float(b['qcew_2023'])}
     (HERE/'qcew-after.json').write_text(json.dumps(after,indent=2)+'\n')
     print('PASS: 36/36 exact STRONG verdicts; census defects 3/3 caught;',len(allocations),'applied sites; IDs unique; NAICS 326 strict/QCEW rises in MO/SC/LA')
