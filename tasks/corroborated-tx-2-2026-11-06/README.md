@@ -19,3 +19,5 @@ OriginalCA1andTX1refuteswereappliedupstreamtocontinuation:classificationonlyscop
 Checks/refutespending;notDone.
 
 Namedchecks2026-11-06: validate0errors/OK;check.pyPASS40uniqueverdicts/full17-sourcecensus/byte-identicalreplay/latecross-shardEVDcollisionzerowrites. ExistingmainrowsallpreservedbyID. Own_siteattributionauditclean. Strict326107→122/953(11.2277%→12.8017%),15strict326sitesplus2resins/rubbercodes325211/325212. NoDoneclaim;two-familyreviewsrequestedafterdraftpush.
+
+Codex4 REFUTE518da00 accepted: held IFS Coatings LF-TX-00505 deciding_fact erroneously carried VERIFIED boilerplate. Replaced with actual settling fact: plant-specific polymer binder/resin manufacturing witness for OSHA325510 and reconciliation of cluster326299 to same establishment. Remains STILL_UNCERTAIN, no data/verdict disposition/allocation change. This is the corrected23rd settling fact; prior semantic/source/count checks passed.

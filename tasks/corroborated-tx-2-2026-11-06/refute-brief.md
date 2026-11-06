@@ -16,3 +16,5 @@ python3 tasks/corroborated-tx-2-2026-11-06/build.py #dryrun
 AllmainrowsunchangedbyIDcomparison.Own_siteattributionauditclean. QCEW2023private326953;strictTX107→122(+15of17),11.2277%→12.8017%;twoothers325211/325212. Count ratio,notmatchedcoverage. Currentmain412391aincludesCA135;TX148isindependentpendingandnotinbaseline. IDsORG10600+/SITE15200+/EVD192000+,disjointpriorL6batches,frozenreserved-ids.json;retiredslotsneverreused. NoRegistryLinks/derived/sharedscriptchanges.NoFRSREST/private/licensedcontent.
 
 Checkphantomwitnesses,oldoperatorlabels,officevsmanufacture,allsource-addresscodeagreement,partialwritesandfalseparentlinks. FullcensuswhenN<20undercontrollercontract. Draftbeforeapprovalallowedby05:55/06:25;noDoneclaim.
+
+Codex4 REFUTE518da00 accepted: held IFS Coatings LF-TX-00505 deciding_fact erroneously carried VERIFIED boilerplate. Replaced with actual settling fact: plant-specific polymer binder/resin manufacturing witness for OSHA325510 and reconciliation of cluster326299 to same establishment. Remains STILL_UNCERTAIN, no data/verdict disposition/allocation change. This is the corrected23rd settling fact; prior semantic/source/count checks passed.
