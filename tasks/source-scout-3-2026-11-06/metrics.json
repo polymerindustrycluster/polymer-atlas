@@ -1,0 +1,49 @@
+{
+  "association": {
+    "sampled": 20,
+    "verified_new": 3,
+    "yield_fraction": 0.15,
+    "wilson95": [
+      0.052369,
+      0.360419
+    ],
+    "verdicts": {
+      "DUPLICATE_OF": 7,
+      "STILL_UNCERTAIN": 10,
+      "VERIFIED": 3
+    }
+  },
+  "patentsview": {
+    "sampled": 20,
+    "verified_new": 0,
+    "yield_fraction": 0.0,
+    "wilson95": [
+      0,
+      0.161125
+    ],
+    "verdicts": {
+      "DUPLICATE_OF": 3,
+      "STILL_UNCERTAIN": 17
+    }
+  },
+  "cbp": {
+    "counties": 6,
+    "county_naics_totals_reconciled": 16,
+    "size_class_rows": 160,
+    "naics326_establishments": 50
+  },
+  "pic18_patent_candidates": {
+    "held_footprint": 79,
+    "held_footprint_and_patent_location": 51
+  },
+  "patent_match_rate": {
+    "matched_assignee_candidates": 525,
+    "assignees": 12939,
+    "fraction": 0.0405750057964294
+  },
+  "us_patent_match_rate": {
+    "matched_assignee_candidates": 494,
+    "assignees": 4507,
+    "fraction": 0.1096072775682272
+  }
+}

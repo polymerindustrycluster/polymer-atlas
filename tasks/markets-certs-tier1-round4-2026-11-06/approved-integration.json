@@ -1,0 +1,20 @@
+{
+  "approved_codex": "18d56a0",
+  "approved_grok": "ee2fe57",
+  "integration_main": "419678b2e3e415194dad804af8daca649b163f3e",
+  "reviewed_30_org_cell_deltas_equal": true,
+  "reviewed_93_full_evidence_rows_equal": true,
+  "hardened_builder_and_checks_unchanged": true,
+  "old_main_keys_fields_evidence_preserved": true,
+  "replay_changed_bytes": false,
+  "before_active_stored_tier1": {
+    "active_stored_tier1": 1293,
+    "markets": 191,
+    "certifications": 18
+  },
+  "after_active_stored_tier1": {
+    "active_stored_tier1": 1293,
+    "markets": 221,
+    "certifications": 21
+  }
+}
