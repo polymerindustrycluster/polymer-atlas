@@ -21,11 +21,10 @@ and findable." This pass relies on that ruling for AMI, CAMX, the Battery Show, 
 4. **`build.py`:** it mints only for series held in `events.csv`. Edition city and dates come from the conferences
    repo's series YAML (organizer-checked), never from the series' home city.
 
-## Applied: `event_participation.csv` +258 rows (organization × event edition)
+## Applied: `event_participation.csv` +178 rows (organization × event edition)
 
 | Event | Edition | Rows |
 |-|-|-:|
-| EVT-000020 Foam Expo (includes co-located Adhesives & Bonding names) | 2027 | 80 |
 | EVT-000003 Global Polymer Summit | 2027, Cleveland | 62 |
 | EVT-000007 AMI Plastics World Expos (umbrella) | 2026, Cleveland | 58 |
 | EVT-000014 CAMX | 2027, Anaheim | 52 |
@@ -39,9 +38,9 @@ and findable." This pass relies on that ruling for AMI, CAMX, the Battery Show, 
   - The others need an `events.csv` row through the normal gate first.
 - **Pre-show rosters:** upcoming editions were read while their rosters were still filling (§4.12.2), so later
   re-reads diff against these.
-- **Foam Expo:** its 2027 list includes the co-located Adhesives & Bonding Expo exhibitors under one page. They are
-  recorded under Foam Expo because that is the roster that names them. A reviewer should decide whether the adhesives
-  names belong to EVT-000021.
+- **Foam Expo, all 80 rows skipped.** foam-expo.com lists Foam Expo and the co-located Adhesives & Bonding Expo
+  together on one page, and does not say which show each company is at. 79 of its 80 matches were already held as
+  A&B 2027 exhibitors from A&B's own roster. Foam Expo rows need a roster that separates the two shows.
 
 ## Leads, not records: `leads.csv` (4,155 names)
 These are exhibitor names with no single exact Atlas match. They are discovery leads for the dedupe and scope test.
