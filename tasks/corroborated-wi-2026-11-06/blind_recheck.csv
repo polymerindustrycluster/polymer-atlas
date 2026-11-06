@@ -1,0 +1,12 @@
+site_id,establishment_id,operator,result
+SITE-016405,1427308,Penn Color Inc.,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016406,1269065,"Ironwood Plastics, Inc.",PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016400,552702,Bemis Manufacturing Co,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016408,266922,Allied Plastics,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016402,1389862,"Hentzen Coatings, Inc.",PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016404,1450047,Charter Next Generation,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016401,1423098,Valmet Inc.,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016403,1022173,Westlake Corporation,PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016410,1455390,"Midland Plastics, Inc.",PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016407,1038820,"Teel Plastics, LLC",PASS: held operator + physical address + filed NAICS; federal-only C
+SITE-016409,568224,Future Foam Inc.,PASS: held operator + physical address + filed NAICS; federal-only C

@@ -1,0 +1,13 @@
+{
+  "worked_WI_clusters": 125,
+  "sites_C": 11,
+  "blind_recheck_passes": 11,
+  "known_answer_passes": 3,
+  "idempotence": "PASS",
+  "conflicting_ID_mutation": "PASS (fails before writes)",
+  "NAICS326_strict_sites_before": 79,
+  "NAICS326_strict_sites_after": 88,
+  "QCEW2023_private_establishments": 456.0,
+  "strict_share_before": 0.17324561403508773,
+  "strict_share_after": 0.19298245614035087
+}
