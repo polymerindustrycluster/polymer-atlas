@@ -41,10 +41,20 @@ with tempfile.TemporaryDirectory() as d:
  r=subprocess.run([sys.executable,str(H/'build.py'),'--data-dir',str(data),'--apply'],capture_output=True)
  assert r.returncode!=0 and b'conflicting ID' in r.stderr
  assert before_bad=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+for dest,key,value in [('sites_FL.csv','site_id','SITE-016100'),('evidence_organizations_FL.csv','evidence_id','EVD-201000')]:
+ with tempfile.TemporaryDirectory() as d:
+  data=Path(d)/'data';shutil.copytree(R/'data',data)
+  p=data/dest;rows=read(p);bad=dict(rows[0]);bad[key]=value
+  with p.open('a') as f:
+   w=csv.DictWriter(f,fieldnames=list(bad),lineterminator='\n');w.writerow(bad)
+  before_bad={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+  r=subprocess.run([sys.executable,str(H/'build.py'),'--data-dir',str(data),'--apply'],capture_output=True)
+  assert r.returncode!=0 and b'conflicting ID' in r.stderr
+  assert before_bad=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
 # State strict numerator definition is reused from the official denominator builder.
 now=atlas_numerators(str(R))[('GA','326')][1]
 base=list(csv.DictReader(subprocess.check_output(['git','show','c71c0413f0054bc99bf341a8c75dff36609d24d7:data/sites_GA.csv'],text=True).splitlines()))
-old=sum(r['naics_primary'].startswith('326') and r['operating_status'] in ('active','unknown') and r['verification_tier'] in ('A','B','C') for r in base)
+old=sum(r.get('country','US') in ('','US') and r['naics_primary'].startswith('326') and r['operating_status'] in ('active','unknown') and r['verification_tier'] in ('A','B','C') for r in base)
 q=next(r for r in read(R/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']=='13000' and r['year']=='2023' and r['industry_code']=='326')
 den=float(q['annual_avg_estabs'])
 assert now==old+sum(sites[r["site_id"]]["naics_primary"].startswith("326") for r in alloc)

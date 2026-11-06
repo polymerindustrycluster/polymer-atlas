@@ -57,13 +57,19 @@ def main():
    assert eid<=219999
    out['evidence_sites_GA.csv'].append(dict(evidence_id=f'EVD-{eid:06d}',record_table='sites',record_id=sid,claim_type=claim,claim_detail=detail,source_class='government_filing',source_ref=ref,observed_date='2026-11-01',tier_effect='supports_C',created_by=BY,notes=notes));eid+=1
   alloc.append(dict(cluster_id=c['cluster_id'],site_id=sid,org_id=oid,establishment_id=f['establishment_id']))
- # Preflight every file before any write; conflicting IDs fail closed.
+ # Check namespaces across all shards before any mutation, including the alias update.
  pending={}
  for name,rows in out.items():
-  p=data/name;old=read(p);key='site_id' if name.startswith('sites_') else 'evidence_id';by={r[key]:r for r in old};header=list(old[0])
+  key='site_id' if name.startswith('sites_') else 'evidence_id'
+  seen=defaultdict(list)
+  for p in data.glob('sites_*.csv' if key=='site_id' else 'evidence_*.csv'):
+   for r in read(p):seen[r[key]].append((p.name,r))
+  with (data/name).open() as f:header=next(csv.reader(f))
+  assert len({r[key] for r in rows})==len(rows)
   for r in rows:
-   if r[key] in by: assert by[r[key]]=={k:r.get(k,'') for k in header},('conflicting ID',r[key])
-  pending[name]=[r for r in rows if r[key] not in by]
+   if r[key] in seen:
+    assert seen[r[key]]==[(name,{k:r.get(k,'') for k in header})],('conflicting ID',r[key])
+  pending[name]=[r for r in rows if r[key] not in seen]
  if a.apply:
   for name,rows in pending.items():
    if rows:append_sorted(data/name,rows,'site_id' if name.startswith('sites_') else 'evidence_id')

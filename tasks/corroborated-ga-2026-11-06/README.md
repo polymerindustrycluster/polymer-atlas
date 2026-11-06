@@ -152,3 +152,5 @@ Pending Codex and Grok approval; draft only.
 |LF-GA-00716|HOLD: needs an unambiguous operator/ultimate-parent and distinct site-scope witness; recommend primary operator page or campus reconciliation before creation.|
 
 Refute-driven hardening: Standridge Jasper/Greensboro mismatch held; replacement Apache A2 at197 Royal Drive SE verified against held Apache parent, separate from417 S River and811 Marine sites. Original Standridge SITE-016118/EVD-201126–201132 remain reserved gaps and are never reused. Explicit establishment-name review fixtures now fail closed on changed labels; reliability screens required; embedded city/state/ZIP removed from Sherwin street fields. Strict numerator increment asserted.
+
+Codex FL refute generalized to GA: fail-closed ID preflight now checks global SITE/EVD namespaces across all shards before any mutation; dedicated wrong-site-shard and wrong-evidence-shard injected-collision tests fail with all data byte-unchanged. Country predicate now matches official numerator. Revised checks pass. Two-family approval still pending.
