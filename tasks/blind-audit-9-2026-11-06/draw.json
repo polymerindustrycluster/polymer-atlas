@@ -1,0 +1,23 @@
+{
+  "seed": "BLIND-AUDIT-9-2026-11-06-v1",
+  "rng": "Python Random seeded by SHA256(seed|lane|tier), sample sorted IDs per stratum",
+  "frame_sha256": "62a638269aecac27eb6875b4579de057b00d46d32b79cc0cfd7ffe858faa812e",
+  "sample_sha256": "ec9b5cb11ef3c61e30a78df32c06608fca335da57f2d298ba0c775bde4eac39e",
+  "population": {
+    "C": 89,
+    "B": 21
+  },
+  "sample": {
+    "C": 44,
+    "B": 6
+  },
+  "blind_fields_withheld": [
+    "sources",
+    "notes",
+    "created_by",
+    "last_verified",
+    "evidence rows",
+    "original lane packets"
+  ],
+  "frozen_utc": "2026-11-06T11:51:25.121869+00:00"
+}
