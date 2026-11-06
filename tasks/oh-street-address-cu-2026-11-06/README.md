@@ -28,5 +28,11 @@ Holds (unit:selected active Ohio C/U blank site rows, reasons overlap):
 
 | Filter | Rows | Settling fact |
 |---|---:|---|
-| No admissible witness after unavailable FRS | 1 | Successful site-keyed source with physical street/locality |\n| Notes street disagreement/unresolved spelling | 5 | Dated street/suite/direction adjudication |\n| ITA city/ZIP conflict or missing | 5 | Reconcile primary establishment locality without changing it here |\n| FRS county conflict/missing | 4 | Address-exact county/source linkage adjudication |\n| FRS ZIP conflict/missing | 2 | Confirm source linkage and recorded ZIP |\n| FRS city conflict | 1 | Confirm physical locality/source linkage |\n
+| No admissible witness after unavailable FRS | 1 | Successful site-keyed source with physical street/locality |
+| Notes street disagreement/unresolved spelling | 5 | Dated street/suite/direction adjudication |
+| ITA city/ZIP conflict or missing | 5 | Reconcile primary establishment locality without changing it here |
+| FRS county conflict/missing | 4 | Address-exact county/source linkage adjudication |
+| FRS ZIP conflict/missing | 2 | Confirm source linkage and recorded ZIP |
+| FRS city conflict | 1 | Confirm physical locality/source linkage |
+
 All16hold reasons and all40outcomes in holds.csv/verdicts.csv; unworked779frame rows selected=no, not described as investigated. Pre-pass/current hashes and exactIDs in journal.json; backups local/ignored. Controller originaldelegation andoptionalR4claim authorize application. Codex4/Grok4 refutes pending before readiness; neither correctsourceclassnorpassingvalidator establishes physical use without the stated source gate.
