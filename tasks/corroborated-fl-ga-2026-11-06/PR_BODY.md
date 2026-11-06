@@ -6,6 +6,6 @@ Dedupe: domain where held, legal and registrant/trade names, physical addresses 
 
 Validation: validate.py 0 errors; task check.py passes 103/103 verdict census, 3 known answers, 17/17 shuffled source-first re-checks, byte idempotence, and deliberate occupied-ID failure before writes. Florida strict NAICS326 sites / QCEW2023 private establishments increases 37/798 (4.64%) → 50/798 (6.27%); count ratio, not matched coverage. No shared scripts changed.
 
-Initial deep Codex/Grok REFUTE findings fixed; revised two-family approval pending. Controller approves full17/17 census replacing20sample after three creates were held. Dropped IDs remain reserved. GA is a separate continuation PR.
+Initial deep Codex/Grok REFUTE findings fixed. Codex/OpenAI clerk3 APPROVE on ce4909b; Grok final approval pending. Controller approves full17/17 census replacing20sample after three creates were held. Dropped IDs remain reserved. GA is a separate continuation PR.
 
 🤖 Generated with Codex (bb child of thr_9i2c6byhcz)

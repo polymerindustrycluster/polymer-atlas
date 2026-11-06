@@ -118,3 +118,5 @@ Grok deep REFUTE: Jacuzzi/Aurora establishment operator conflicts and ISCO relia
 |LF-FL-00831|HOLD: needs an unambiguous operator/ultimate-parent and site-scope witness; federal cluster alone does not settle ownership or current scope. Recommend primary operator page before creation.|
 
 Codex clerk3 targeted REFUTE (head7cdcf03): stale326split and20-create docstring only; all prior code/data findings cleared,validator/row-loss/namedcheck passed. Corrected README13+4=17 and check docstring17. Targeted re-review requested; approval still pending.
+
+Codex/OpenAI clerk3 APPROVE on ce4909b (2026-11-06): final13NAICS326+4NAICS3255=17 count/docstring corrected; priorcode/datafindingsclear. Validator0errors,17/17census/replay/globalcollision/rowloss PASS,strict37→50/798. Receipt reviews/132-clerk-codex-3.md; this supersedes Codex earlierREFUTE. Targeted docreview,not a fresh-source audit; Grokfinalapproval stillpending.
