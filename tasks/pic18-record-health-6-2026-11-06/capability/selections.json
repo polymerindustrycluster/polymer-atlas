@@ -1,0 +1,114 @@
+[
+  [
+    "ORG-000210",
+    "materials",
+    "polymer_additives",
+    "Located in Elyria, OH, Addipel manufactures American- made powder blends and compacted pellets of any non-pigmentary polymer additives",
+    "/knowledge/",
+    "Explicit Addipel-specific manufacture on parent's own site, not generic Barentz distribution or group capability."
+  ],
+  [
+    "ORG-000210",
+    "processes",
+    "additive_dry_blending",
+    "Addipel manufactures American- made powder blends and compacted pellets of any non-pigmentary polymer additives",
+    "/knowledge/",
+    "Own manufacture of polymer-additive powder blends; no extrusion/pigment inference."
+  ],
+  [
+    "ORG-000414",
+    "materials",
+    "pvc",
+    "The wallcovering is composed of a combination of PVC film",
+    "17953?disposition=inline",
+    "Own Koroseal EPD identifies PVC film in its own manufactured wallcovering; document version2024-05-08, retrieved2026-11-06."
+  ],
+  [
+    "ORG-000414",
+    "processes",
+    "laminating",
+    "manufactured by laminating flexible vinyl film to a cotton and polyester woven backing",
+    "17953?disposition=inline",
+    "Own EPD explicitly identifies Koroseal wallcovering lamination, not customer installation; version2024-05-08."
+  ],
+  [
+    "ORG-000484",
+    "materials",
+    "thermoplastics",
+    "Manufacture of Thermoplastic, Silicone, Solid and Sponge Rubber Extrusions",
+    "Ravenna-ISO9001_2015",
+    "Exact certificate named party Performance Elastomers7162StateRoute88Ravenna, not PexcoLLC as party. Held acquired status/successorORG002534 preserved; no liveness or status implication. Reissued2025-12-03, valid2028-03-11."
+  ],
+  [
+    "ORG-000484",
+    "materials",
+    "silicones",
+    "Manufacture of Thermoplastic, Silicone, Solid and Sponge Rubber Extrusions",
+    "Ravenna-ISO9001_2015",
+    "Exact named party Performance Elastomers; certificate is own-hosted on Pexco domain. Acquired-party/grain limitation flagged for root; no parent capability transfer or status edit."
+  ],
+  [
+    "ORG-000484",
+    "materials",
+    "elastomers_rubber",
+    "Manufacture of Thermoplastic, Silicone, Solid and Sponge Rubber Extrusions",
+    "Ravenna-ISO9001_2015",
+    "Exact Performance Elastomers certificate manufacturing scope, not generic Pexco corporate capability. Acquired status preserved."
+  ],
+  [
+    "ORG-000484",
+    "processes",
+    "rubber_extrusion",
+    "Manufacture of Thermoplastic, Silicone, Solid and Sponge Rubber Extrusions",
+    "Ravenna-ISO9001_2015",
+    "Exact Performance Elastomers named-party manufacture and rubber extrusion; no subtype guessed or liveness/status motion."
+  ],
+  [
+    "ORG-000379",
+    "materials",
+    "natural_rubber_nr",
+    "Chemical additives infused into natural rubber walls provide",
+    "INFY_AirSpringSellSheet",
+    "Own document explicitly brands Infinity Engineered Products Super Cushion air springs and natural-rubber walls; core polymer product material, not customer equipment or nylon component in another product. Historical2020 own brochure; no current process/status inference."
+  ],
+  [
+    "ORG-000379",
+    "materials",
+    "elastomers_rubber",
+    "Chemical additives infused into natural rubber walls provide",
+    "INFY_AirSpringSellSheet",
+    "Rubber family follows explicit natural-rubber walls of owned air-spring product. No claim that Infinity manufactures natural rubber resin, nor inferred molding process."
+  ],
+  [
+    "ORG-001931",
+    "processes",
+    "extrusion_unspecified",
+    "with the ability to produce custom extruded and molded sealing products",
+    "ISG-Sealing-Design-Guide",
+    "Intro names Cooper Standard Industrial and Specialty Group(ISG), held named business; own custom sealing production, not generic parent Cooper Standard activity. No site or extrusion subtype transfer."
+  ],
+  [
+    "ORG-001931",
+    "processes",
+    "molding_unspecified",
+    "with the ability to produce custom extruded and molded sealing products",
+    "ISG-Sealing-Design-Guide",
+    "Explicit held ISG own production capability; generic handbook descriptions later in PDF are not independent capabilities."
+  ],
+  [
+    "ORG-001931",
+    "materials",
+    "elastomers_rubber",
+    "We are a single-source supplier of rubber, plastic and innovative material platforms",
+    "ISG-Sealing-Design-Guide",
+    "Same introductory paragraph explicitly says ISG can produce custom extruded/molded seals; not a vendor material table or unrelated parent claim."
+  ],
+  [
+    "ORG-000414",
+    "materials",
+    "thermoplastics",
+    "The wallcovering is composed of a combination of PVC film",
+    "17953?disposition=inline",
+    "SCHEMA3.2 known-family tag for explicitly stated PVC film in own manufactured wallcovering. Taxonomic mapping from specific resin to family, not inference of an unstated resin from a family."
+  ]
+]

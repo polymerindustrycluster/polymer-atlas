@@ -1,0 +1,31 @@
+org_id,verdict,detail
+ORG-000011,STILL_UNCERTAIN,"Reviewed corporate home/business page has generic tires/mobility/fleet claims, not an explicit automotive OEM/aftermarket or other end market; need narrower own-site customer/market page."
+ORG-000033,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000035,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000038,STILL_UNCERTAIN,Own home/about describe molding and assembly but no explicit end markets; ISO9001:2015 held per superseded-edition/owner-transition battery. Need explicit markets and current eligible certificate.
+ORG-000043,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000052,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000103,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000131,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000134,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000142,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000154,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000155,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000157,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000196,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000201,STILL_UNCERTAIN,Stored ashtabularubber.com returned ASC Engineered Solutions content. Need own-site legal/operator linkage before attributing any ASC market/certificate to Ashtabula Rubber. No website/status edits.
+ORG-000207,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000210,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000215,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000230,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000234,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000242,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000248,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000271,STILL_UNCERTAIN,"Home/about describe custom mixing, dispersions and product applications; no explicit customer end-market statement. Need own-site markets/customers page. ISO9001:2015 held pending owner transition ruling."
+ORG-000316,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000325,STILL_UNCERTAIN,"Stored domain serves Huntsman Corporation parent-wide markets, not the specific Advanced Materials Americas subsidiary. Need subsidiary-specific corporate claim before copying parent tags."
+ORG-000345,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000350,VERIFIED,Own-site supported values in inputs.csv; unfilled field/value is not a negative claim.
+ORG-000366,STILL_UNCERTAIN,Own-site direct/Jina route unavailable. Need retrievable own-site industries/quality page; no absence or closure inference.
+ORG-000419,STILL_UNCERTAIN,Global LG Chem page not America-entity scoped; need LG Chem America specific claim before corporate market union.
+ORG-000438,STILL_UNCERTAIN,USA page verifies Mexichem Specialty Resins locations/products but lacks explicit customer end markets; global Vestolit markets must not be copied to subsidiary without attribution.
