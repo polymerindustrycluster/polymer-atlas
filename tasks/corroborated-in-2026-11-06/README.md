@@ -4,7 +4,7 @@ Acceptance before application: full145-clusterframe,max150;21proposed held-paren
 
 Reserved IN SITE-016500–016599/EVD-205000–205999; WI SITE-016400–016499/EVD-204000–204999 staysseparatePR167. Branchbase 8e8c71ada1f63b7c4d90867027efb8cea57f03a0;main after registryrestore andGAmerge. No registry/qualifier edits.
 
-Full frame outcome: 145 Indiana CORROBORATED candidate establishment clusters =21 VERIFIED new sites under20 held parents +1DUPLICATE_OF held GlobalComposites Plant6 SITE-005614 +123STILL_UNCERTAIN researchholds. No new organizations or REJECTs. All21new sites tierC,147append-only government_filing/supports_C evidence rows; no own_site,org edits,alias/status/tier/registry/qualifier changes. No inclusion_log entries; unresolvedcases held.
+Full frame outcome: 145 Indiana CORROBORATED candidate establishment clusters =21 VERIFIED new sites under18 held parents +1DUPLICATE_OF held GlobalComposites Plant6 SITE-005614 +123STILL_UNCERTAIN researchholds. No new organizations or REJECTs. All21new sites tierC,147append-only government_filing/supports_C evidence rows; no own_site,org edits,alias/status/tier/registry/qualifier changes. No inclusion_log entries; unresolvedcases held.
 
 Sources: banked OSHA ITA CY2025 establishment filings, https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv . Controller explicitly authorizes inheritedfederal packets at observed2026-11-01 without fresh download; each cite retains establishment_ID/date_submitted and actual review2026-11-06. Federal-onlyC scope perCAMPAIGN; active is provisional at filing vintage,not a2026 live-operation finding. No private/licensed facts,personal contacts,injury metrics or precise headcounts copied. Counties not inferred fromcity.
 
@@ -14,7 +14,7 @@ Dedupe: prep.py/dedupe.json all145original cluster names/variants; per-create at
 
 Checks: python3 scripts/validate.py PASS0errors; python3 tasks/corroborated-in-2026-11-06/check.py PASS145/145verdictcensus,21/21deterministic sourcechecks,seed7731 shuffled20/20blindcreate sample,3knownanswers,heldduplicatechain,priorrowpreservation,147government evidence rows,byte-idempotence,and same-shard/cross-site/cross-evidence injectedID collisions fail beforewrites. build.py --apply secondrun pending0. No scripts/ edits; scripts pytest notapplicable.
 
-Indiana strict NAICS326 sites (active/unknown,A/B/C,US-or-blankcountry perofficial numerator)/QCEW2023private establishments:110/512=21.4844% before,129/512=25.1953% after.19creates carry326;twocarry325212/325520. Count ratio,not matchedcoverage. Actual IDs SITE-016500–016522/EVD-205000–205160,reserved sub-blocks listedabove,disjoint fromallpreviousL7 packets. Only sites_IN.csv/evidence_sites_IN.csv change. Refresh frommain via main-data+builder,never hand-merge CSVs. Restoredregistry_links preserved; controller-only qualifiers untouched.
+Indiana strict NAICS326 sites (active/unknown,A/B/C,US-or-blankcountry perofficial numerator)/QCEW2023private establishments:110/512=21.4844% before,129/512=25.1953% after.19creates carry326;twocarry325212/325520. Count ratio,not matchedcoverage. Actual IDs SITE-016500–016504,016506–016508,016510–016522 / EVD-205000–205034,205042–205062,205070–205160,reserved sub-blocks listedabove,disjoint fromallpreviousL7 packets. Only sites_IN.csv/evidence_sites_IN.csv change. Refresh frommain via main-data+builder,never hand-merge CSVs. Restoredregistry_links preserved; controller-only qualifiers untouched.
 
 ## Refutes
 Pending independent Codex3/Grok3 approval; draft. Controller06:25 newodd-lane clerkassignment andqueueexception apply;07:20 own_site audit findszero newown_site rows.
@@ -44,11 +44,13 @@ Pending independent Codex3/Grok3 approval; draft. Controller06:25 newodd-lane cl
 |LF-IN-00564|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00539|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00216|HOLD: Sonoco name hits SonocoProducts andTOPPAN heldparents; settle actual Portland operator instead of inferring acquisition.|
+|LF-IN-00238|HOLD: Meese Inc ORG-001435 and TankHolding ORG-003687 are distinct heldrecords; filingcompany/plantlabels do notsettle operator. Need primary ownership/operator witness; retain retiredIDs.|
 |LF-IN-00494|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00418|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00394|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00380|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00437|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
+|LF-IN-00085|HOLD: inputprelinks LyondellBasellAdvancedPolymers ORG-000735 while shortfilername hits parentORG-000033. Do notoverride prelinked subsidiary without primary operator resolution; retain retiredIDs.|
 |LF-IN-00167|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00289|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00373|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
@@ -143,6 +145,7 @@ Pending independent Codex3/Grok3 approval; draft. Controller06:25 newodd-lane cl
 |LF-IN-00831|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00804|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00728|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
+
 
 Main-refresh journal: merged origin/main 412391a0a462105a73e322ea67291d24088cfe7a before review (CA135 integration);INbuilder pending0,23-source/20-sample checks andvalidate0 re-pass;INbaseline110strict326 sites unchanged. All161ownproposals government_filing;07:20 own_site audit zero matches. No WI/CAdata/code changes innetdiff.
 
