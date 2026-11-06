@@ -78,3 +78,9 @@ Rebase: take fresh main equipment.csv and rerun `build.py --apply`; never hand-m
 ## Review
 
 Pending independent Codex and Grok refute clerks, controller 05:55 directive supersedes council-only invocation requirement for this campaign.
+
+### CI fixture repair (controller authorization, 2026-11-06)
+
+Hosted CI exposed `test_v52_equipment_row_accepted` hard-coding EQP-000001, which collides with the newly populated table. Controller explicitly authorized only this fixture in scripts/test_validate.py to allocate above the fixture copy's current maximum. Validator rules are unchanged. Before: targeted unittest failed on duplicate EQP-000001. After: targeted unittest passes with the34 real rows present. Main's LF-only federal-frame normalization is incorporated per controller06:12; net diff versus main for those files is zero.
+
+The base Python has no pytest; the required scripts suite runs through an ephemeral pytest environment (`uv run --no-project --with pytest python3 -m pytest -q scripts/`), without adding a dependency or environment file to the repository. Full result recorded in fixture-checks.txt.
