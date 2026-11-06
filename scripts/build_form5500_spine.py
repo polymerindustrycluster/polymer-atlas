@@ -295,9 +295,8 @@ class AtlasIndex:
         self.fuzzy_idx = collections.defaultdict(list)
         self.hay = []
         for tn, r in self.orgs:
-            fields = [("legal_name", r["legal_name"])] + [("trade_names", t) for t in atlas.tokens_semicolon(r.get("trade_names"))]
             seen = set()
-            for fld, val in fields:
+            for fld, val in atlas.org_name_fields(r):
                 k = atlas.name_key(val)
                 if k and (k, fld) not in seen:
                     seen.add((k, fld))
