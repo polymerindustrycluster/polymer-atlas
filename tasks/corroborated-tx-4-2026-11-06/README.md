@@ -1,0 +1,13 @@
+# L6 TX CORROBORATED batch 4
+
+Acceptance fixed before application: work ranks 121–160 once each, core NAICS first then score; validate with zero errors; preserve every main row; global ID uniqueness and zero-write collision control; full create census, raw packet source resolution and byte-identical builder replay; strict-site NAICS 326/QCEW denominator comparison. Codex and Grok refutes required before ready. First user: campaign integrator on 2026-11-06; non-use finding date 2026-11-13.
+
+Controller delegated integration within L6. Reserved unused sub-block ORG-010800+, SITE-015600+, EVD-196000+; freeze after first allocation. Branch history is pre-pass backup. Final new CORROBORATED batch per controller; next work is merged-record quality.
+
+Four provisional C site creates: ADS Hempstead, J & M Plastics Royse City, Prime Industries Schulenburg, Ken Ross Wylie. Three new C parent labels; ADS uses held ORG-000651. Federal source packets vintage 2026-11-01 admitted by controller, not claimed freshly downloaded. ITA citations retain establishment ID, submission date and official CY2025 URL. No current-operation, county, HQ or capability assertion. ADS inconsistent ITA size code is not used for a band. All nonconcordant code families held. ISCO Houston held because filed chemical-toilet code conflicts with own pipe/fittings certificate.
+
+Dedupe: CLI domain, name, street, trade names for all 40 inputs. Known answers ADS ORG-000651, ISCO ORG-000905 and Industrial Models ORG-004425 pass. The last exposed a CLI street-token miss: WESTAIR versus Westaire; existing sources explicitly name 1711 Westaire Dr, so DUPLICATE_OF SITE-005750. Cross-packet same-parent/city audit also withdrew TX3 FXI duplicate (separate PR177). No matcher changed or authoritative scope ruling invented. No own_site evidence in this packet. No registry, derived field, shared script or CRLF federal-frame edit.
+
+Settling facts for all holds and the held duplicate target are in verdicts.csv. Failed fetches are availability only. Refute approvals pending; no Done claim.
+
+Checks 2026-11-06: validator 0 errors; check.py PASS, 40 unique verdicts, full 4/4 source census, byte-identical canonical replay, cross-shard ID collision rejected before any write. All main rows field-identical. Result: 4 VERIFIED / 35 STILL_UNCERTAIN / 1 DUPLICATE_OF; 3 C parents + 4 C sites + 35 evidence rows. Strict326 107→111/953 (11.2277%→11.6474%). Full census replaces a 20-case sample because only 4 creates exist. No approvals yet.

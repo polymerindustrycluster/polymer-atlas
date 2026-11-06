@@ -1,0 +1,9 @@
+{
+  "unit": "TX US sites, NAICS primary 326 prefix, tier A/B/C, status active/unknown",
+  "qcew_2023_private_establishments": 953,
+  "atlas_strict": 107,
+  "atlas_strict_after": 111,
+  "delta_strict": 4,
+  "before_pct": 11.227701993704093,
+  "after_pct": 11.647429171038825
+}
