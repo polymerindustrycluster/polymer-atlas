@@ -1,0 +1,56 @@
+{
+  "url": "https://gis.franklincountyohio.gov/hosting/rest/services/ParcelFeatures/Parcel_Features_WebMercator/MapServer/0/query?where=SITEADDRESS+LIKE+%27565%25METRO%25%27&outFields=PARCELID%2CSITEADDRESS%2CCVTTXDSCRP%2CZIPCD%2CPRPRTYDSCRP&returnGeometry=false&f=pjson",
+  "result": {
+    "displayFieldName": "CNVYNAME",
+    "fieldAliases": {
+      "PARCELID": "PARCELID",
+      "SITEADDRESS": "Site Address",
+      "CVTTXDSCRP": "Tax District Description",
+      "ZIPCD": "Zip Code",
+      "PRPRTYDSCRP": "Legal Desc. 1"
+    },
+    "fields": [
+      {
+        "name": "PARCELID",
+        "type": "esriFieldTypeString",
+        "alias": "PARCELID",
+        "length": 11
+      },
+      {
+        "name": "SITEADDRESS",
+        "type": "esriFieldTypeString",
+        "alias": "Site Address",
+        "length": 70
+      },
+      {
+        "name": "CVTTXDSCRP",
+        "type": "esriFieldTypeString",
+        "alias": "Tax District Description",
+        "length": 200
+      },
+      {
+        "name": "ZIPCD",
+        "type": "esriFieldTypeString",
+        "alias": "Zip Code",
+        "length": 5
+      },
+      {
+        "name": "PRPRTYDSCRP",
+        "type": "esriFieldTypeString",
+        "alias": "Legal Desc. 1",
+        "length": 100
+      }
+    ],
+    "features": [
+      {
+        "attributes": {
+          "PARCELID": "273-001702",
+          "SITEADDRESS": "565 S METRO PL",
+          "CVTTXDSCRP": "CITY OF DUBLIN-WASH TWP-DUBLIN",
+          "ZIPCD": "43017",
+          "PRPRTYDSCRP": "565 METRO PL S           "
+        }
+      }
+    ]
+  }
+}

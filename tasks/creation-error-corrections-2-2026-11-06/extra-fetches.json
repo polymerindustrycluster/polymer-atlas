@@ -1,0 +1,46 @@
+[
+  {
+    "url": "https://www.gaf.com/en-us/document-library/documents/codes/code__declaration_of_performance__dop_0001cpr496720201007__12_eg_ex_tpo_mv_.pdf",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.gaf.com/en-us/document-library/documents/codes/code__declaration_of_performance__dop_0001cpr496720201007__12_eg_ex_tpo_mv_.pdf",
+        "status": "403",
+        "exit": 0,
+        "effective_url": "https://www.gaf.com/en-us/document-library/documents/codes/code__declaration_of_performance__dop_0001cpr496720201007__12_eg_ex_tpo_mv_.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T13:26:30Z"
+  },
+  {
+    "url": "https://www.in.gov/idem/files/notice_20261110_npdes_in0051667.pdf",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/2694eef127659aaab3c2db884cb9cbfab9c58f6818fe21f32f3e50c3eb9808a1.txt",
+    "attempts": [
+      {
+        "route": "https://www.in.gov/idem/files/notice_20261110_npdes_in0051667.pdf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.in.gov/idem/files/notice_20261110_npdes_in0051667.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T13:26:30Z",
+    "sha256": "d536f5e5de486a3fd631e9c2196016aad6ac7179baba24e808650ae4e29ba9d9",
+    "extraction": "pdftotext -layout"
+  },
+  {
+    "url": "https://documents.gaf.com/codes/code__declaration_of_performance__dop_0001cpr496720201007__12_eg_ex_tpo_mv_.pdf",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://documents.gaf.com/codes/code__declaration_of_performance__dop_0001cpr496720201007__12_eg_ex_tpo_mv_.pdf",
+        "status": "403",
+        "exit": 56,
+        "effective_url": "https://documents.gaf.com/codes/code__declaration_of_performance__dop_0001cpr496720201007__12_eg_ex_tpo_mv_.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T13:27:11Z"
+  }
+]

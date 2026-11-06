@@ -1,0 +1,10 @@
+{
+  "url": "https://www.storopack.us/company/about-us/storopack-worldwide/",
+  "fresh_sha256": "ac13f7a609b097312ddc998fc3ea6d0f65be270691a118b2aed4460842893b27",
+  "bytes": 67729,
+  "verbatim_address_matches": 2,
+  "fabricated_quote_rejected": true,
+  "literal_hypothesis_failure": "First check of invented normalized NW form failed because source has N.W.100th; fixed to verbatim quote, not loosened matcher. No positive grade inferred from address alone.",
+  "intended_use": "Exact public address extraction works; Packaging label alone does not certify manufacturing/function. B launch occurred after synthetic known-answer probes but before this parent successful literal calibration; no outcome has relied on the failed hypothesis.",
+  "checked": "2026-11-06"
+}

@@ -1,0 +1,19 @@
+{
+  "site_id": "SITE-014014",
+  "first_lock_hash": "97deaa854c3f135ac663181731e31a12734adf8eea2d4d3d73ccfa8de40bf344",
+  "final_hash": "90440f2ba108b7ee491f6419516ea08a2180ff6949439c40aaa67f51ed282f75",
+  "changed_pointers": [
+    "/sources/0/source_class",
+    "/sources/1/source_class"
+  ],
+  "before": "company_website",
+  "after": "certification_registry",
+  "initial_locked_at": "2026-11-06T11:59:35.074735+00:00",
+  "mutation_command_start_utc": "2026-11-06T12:01:38.237Z",
+  "mutation_command_end_utc": "2026-11-06T12:01:43.037Z",
+  "exact_write_instant_unknown": true,
+  "prior_object_reconstructed_not_retained": true,
+  "reconstruction": "Reverse exactly two source_class values from final object; canonical JSON hash equals independently saved first-lock hash. No other field differs.",
+  "original_evidence_unseen": true,
+  "limitation": "Violates first-object immutability; no grade/facts/quotes/URLs/raw/timestamp edits and no evidence unblinding. Final file and both states retained. Do not claim perfect incremental immutability."
+}

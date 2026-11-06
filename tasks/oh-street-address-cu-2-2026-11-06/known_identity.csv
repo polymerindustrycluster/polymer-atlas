@@ -1,0 +1,4 @@
+registry_id,expected_operator,fresh_facility_name,result,negative_wrong_operator
+110000745766,Rhein Chemie Corp,RHEIN CHEMIE CORP,PASS,rejected
+110000391415,"A. Schulman, Inc.",A SCHULMAN INC,PASS,rejected
+110000383941,Lear Corporation,LEAR CORP,PASS,rejected

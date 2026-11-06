@@ -1,0 +1,71 @@
+{
+  "query": {
+    "domain": "vibrantz.com",
+    "name": "Chromaflo Technologies Corporation",
+    "street": "2600 Michigan Avenue",
+    "city": "Ashtabula",
+    "state": "OH",
+    "zip": "44004"
+  },
+  "stop_at_step": 1,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-000007",
+          "name": "Vibrantz Technologies Inc.",
+          "city": "Houston",
+          "state": "TX",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_TX.csv",
+          "match": "domain exact: vibrantz.com"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-000007",
+          "name": "Vibrantz Technologies Inc.",
+          "city": "Houston",
+          "state": "TX",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_TX.csv",
+          "match": "name key 'chromaflo technologies' = trade_names 'Chromaflo Technologies'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": null,
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-001475",
+          "name": "ChromaScape, Inc.",
+          "city": "Twinsburg",
+          "state": "OH",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_OH.csv",
+          "match": "notes contains 'Chromaflo Technologies Corporation'"
+        }
+      ]
+    }
+  ]
+}

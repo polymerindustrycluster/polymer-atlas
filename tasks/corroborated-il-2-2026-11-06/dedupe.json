@@ -1,0 +1,612 @@
+{
+  "LF-IL-00602": [],
+  "LF-IL-00606": [],
+  "LF-IL-00819": [],
+  "LF-IL-00852": [],
+  "LF-IL-00920": [
+    {
+      "id": "ORG-003461",
+      "name": "beyondGREEN biotech, Inc.",
+      "city": "Santa Ana",
+      "state": "CA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_CA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-003682",
+      "name": "SKB Cases, LLC",
+      "city": "Orange",
+      "state": "CA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_CA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-003306",
+      "name": "Fiber Care Baths, Inc.",
+      "city": "Jerome",
+      "state": "ID",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_ID.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002900",
+      "name": "Flexible Solutions International, Inc.",
+      "city": "Taber",
+      "state": "AB",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_INTL.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002902",
+      "name": "G.G.S. Plastic Engineering Inc.",
+      "city": "Bolton",
+      "state": "ON",
+      "status": "acquired",
+      "tier": "C",
+      "file": "organizations_INTL.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-003926",
+      "name": "RH Adhesives",
+      "city": "Acton",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-003167",
+      "name": "UPM Raflatac Inc.",
+      "city": "Mills River",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-004833",
+      "name": "American Performance Polymers LLC",
+      "city": "Colebrook",
+      "state": "NH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-004362",
+      "name": "Bumper Specialties Inc",
+      "city": "West Deptford",
+      "state": "NJ",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_NJ.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-004108",
+      "name": "American Casting & Manufacturing Corp",
+      "city": "Plainview",
+      "state": "NY",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NY.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-000624",
+      "name": "Uway Extrusion LLC",
+      "city": "Warren",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-000716",
+      "name": "Building Composites LLC",
+      "city": "Moraine",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-000723",
+      "name": "Provient Industrial",
+      "city": "Fairfield",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-000743",
+      "name": "Comfort Line Ltd.",
+      "city": "Toledo",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-000820",
+      "name": "Emerald FX",
+      "city": "Norwalk",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-000969",
+      "name": "MTM Molded Products Co.",
+      "city": "Dayton",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'Factory'"
+    },
+    {
+      "id": "ORG-001096",
+      "name": "Edge Adhesives",
+      "city": "Grove City",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001484",
+      "name": "Hexa Americas Inc.",
+      "city": "Sidney",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001509",
+      "name": "Health-Mor, Inc",
+      "city": "Brooklyn",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001566",
+      "name": "Deimling/jeliho Plastics, Inc.",
+      "city": "Amelia",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001608",
+      "name": "KLINGER Thermoseal",
+      "city": "Sidney",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001736",
+      "name": "Miami Valley Plastics, Inc.",
+      "city": "Eldorado",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001746",
+      "name": "Lancaster Commercial Products LLC",
+      "city": "Jackson",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001759",
+      "name": "The Original Mattress Factory, Inc.",
+      "city": "CLEVELAND",
+      "state": "OH",
+      "status": "closed",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001837",
+      "name": "Harrison Paint Corp.",
+      "city": "Canton",
+      "state": "OH",
+      "status": "merged",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'",
+      "successor_chain": [
+        "ORG-001678"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-001678 Harrison Paint Company [active]"
+    },
+    {
+      "id": "ORG-001860",
+      "name": "Ohio Rotational Molding",
+      "city": "Holgate",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001916",
+      "name": "Zero D Products Inc",
+      "city": "Willoughby",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-001944",
+      "name": "Tristan Rubber Molding, Inc.",
+      "city": "North Canton",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002153",
+      "name": "Checkpoint Systems",
+      "city": "Canton",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002288",
+      "name": "Crayola LLC - Kresslersville Rd Plant",
+      "city": "Easton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002465",
+      "name": "Regupol America LLC",
+      "city": "Lebanon",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002482",
+      "name": "Lighthouse Man LLC",
+      "city": "Lewisburg",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002524",
+      "name": "Colorcoat Incorporated",
+      "city": "Milton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002642",
+      "name": "Schweitzer-Mauduit International, Inc.",
+      "city": "Richland",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002720",
+      "name": "Spx Cooling Technologies",
+      "city": "York",
+      "state": "PA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Factory'"
+    },
+    {
+      "id": "ORG-002831",
+      "name": "Innovation Works, Inc.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'Factory'"
+    }
+  ],
+  "LF-IL-00932": [],
+  "LF-IL-00006": [],
+  "LF-IL-00015": [],
+  "LF-IL-00075": [
+    {
+      "id": "ORG-002947",
+      "name": "Cargill, Incorporated",
+      "city": "Wayzata",
+      "state": "MN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MN.csv",
+      "match": "name key 'cargill' = legal_name 'Cargill, Incorporated'"
+    },
+    {
+      "id": "ORG-002957",
+      "name": "NatureWorks LLC",
+      "city": "Plymouth",
+      "state": "MN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MN.csv",
+      "match": "notes contains 'Cargill Incorporated'"
+    }
+  ],
+  "LF-IL-00363": [],
+  "LF-IL-00380": [],
+  "LF-IL-00879": [],
+  "LF-IL-00995": [
+    {
+      "id": "ORG-000033",
+      "name": "LyondellBasell",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "name key 'lyondellbasell' = legal_name 'LyondellBasell'"
+    },
+    {
+      "id": "ORG-004619",
+      "name": "Louisiana Integrated Polyethylene JV LLC",
+      "city": "Westlake",
+      "state": "LA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_LA.csv",
+      "match": "notes contains 'Lyondellbasell'"
+    },
+    {
+      "id": "ORG-000735",
+      "name": "LyondellBasell Advanced Polymers Inc.",
+      "city": "Perrysburg",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Lyondellbasell'"
+    },
+    {
+      "id": "ORG-002822",
+      "name": "Closed Loop Partners, LLC",
+      "city": "New York",
+      "state": "NY",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'Lyondellbasell'"
+    }
+  ],
+  "LF-IL-00117": [
+    {
+      "id": "ORG-004600",
+      "name": "Afton Chemical Corporation",
+      "city": "Richmond",
+      "state": "VA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_VA.csv",
+      "match": "name key 'afton chemical' = legal_name 'Afton Chemical Corporation'"
+    }
+  ],
+  "LF-IL-00539": [],
+  "LF-IL-00576": [],
+  "LF-IL-00820": [
+    {
+      "id": "ORG-002920",
+      "name": "Freepoint Eco Systems Holdings, Inc.",
+      "city": "Stamford",
+      "state": "CT",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_CT.csv",
+      "match": "notes contains 'ACC'"
+    },
+    {
+      "id": "ORG-002795",
+      "name": "Plastics Industry Association",
+      "city": "Washington",
+      "state": "DC",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'ACC'"
+    },
+    {
+      "id": "ORG-002810",
+      "name": "Plastics Division, American Chemistry Council",
+      "city": "Washington",
+      "state": "DC",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'ACC'"
+    }
+  ],
+  "LF-IL-00982": [
+    {
+      "id": "ORG-000870",
+      "name": "H.B. Fuller Company",
+      "city": "St. Paul",
+      "state": "MN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MN.csv",
+      "match": "name key 'h b fuller' = legal_name 'H.B. Fuller Company'"
+    },
+    {
+      "id": "ORG-004072",
+      "name": "TEC Specialty Products, LLC",
+      "city": "Aurora",
+      "state": "IL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IL.csv",
+      "match": "notes contains 'HB Fuller'"
+    }
+  ],
+  "LF-IL-01068": [
+    {
+      "id": "ORG-004327",
+      "name": "Chroma Color Corporation",
+      "city": "McHenry",
+      "state": "IL",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_IL.csv",
+      "match": "name key 'chroma color' = legal_name 'Chroma Color Corporation'"
+    },
+    {
+      "id": "ORG-002702",
+      "name": "J Meyer & Sons, Inc.",
+      "city": "West Point",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'CHROMA COLOR CORPORATION'"
+    }
+  ],
+  "LF-IL-01260": [
+    {
+      "id": "ORG-000438",
+      "name": "Mexichem Specialty Resins Inc.",
+      "city": "Avon Lake",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'mexichem specialty resins' = legal_name 'Mexichem Specialty Resins Inc.'"
+    }
+  ],
+  "LF-IL-00072": [],
+  "LF-IL-00280": [],
+  "LF-IL-00294": [],
+  "LF-IL-00434": [],
+  "LF-IL-00467": [],
+  "LF-IL-00548": [],
+  "LF-IL-00889": [],
+  "LF-IL-01011": [
+    {
+      "id": "ORG-004534",
+      "name": "DynaChem Inc.",
+      "city": "Westville",
+      "state": "IL",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_IL.csv",
+      "match": "name key 'dynachem' = legal_name 'DynaChem Inc.'"
+    }
+  ],
+  "LF-IL-01250": [],
+  "LF-IL-00139": [],
+  "LF-IL-00333": [],
+  "LF-IL-00505": [],
+  "LF-IL-00556": [],
+  "LF-IL-00695": [],
+  "LF-IL-00707": [],
+  "LF-IL-00929": [],
+  "LF-IL-01004": [],
+  "LF-IL-01112": [],
+  "LF-IL-01180": [],
+  "LF-IL-01204": [
+    {
+      "id": "ORG-000132",
+      "name": "The Sherwin-Williams Company",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-000088",
+      "name": "PPG Industries, Inc.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'THE SHERWIN WILLIAMS COMPANY'"
+    },
+    {
+      "id": "ORG-002886",
+      "name": "CSW Industrials, Inc.",
+      "city": "Dallas",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'THE SHERWIN WILLIAMS COMPANY'"
+    }
+  ],
+  "LF-IL-01297": [],
+  "LF-IL-01314": [],
+  "LF-IL-00215": [],
+  "LF-IL-00666": [],
+  "LF-IL-00937": []
+}

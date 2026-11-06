@@ -1,0 +1,335 @@
+{
+  "sample_sites": 50,
+  "population_sites": 110,
+  "strata": [
+    {
+      "lane": "L11-IL",
+      "creation_tier": "C",
+      "population_sites": 18,
+      "sampled_sites": 9,
+      "inclusion_probability": 0.5,
+      "census": false,
+      "agreement": 6,
+      "agreement_rate": 0.6666666666666666,
+      "agreement_wilson95": [
+        0.354202,
+        0.879416
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.299145
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.299145
+      ],
+      "unresolved": 3,
+      "unresolved_rate": 0.3333333333333333,
+      "unresolved_wilson95": [
+        0.120584,
+        0.645798
+      ],
+      "confirmed_error": 0,
+      "confirmed_error_rate": 0.0,
+      "confirmed_error_wilson95": [
+        0,
+        0.299145
+      ]
+    },
+    {
+      "lane": "L11-MI",
+      "creation_tier": "C",
+      "population_sites": 17,
+      "sampled_sites": 8,
+      "inclusion_probability": 0.47058823529411764,
+      "census": false,
+      "agreement": 7,
+      "agreement_rate": 0.875,
+      "agreement_wilson95": [
+        0.529112,
+        0.977583
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.324408
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.324408
+      ],
+      "unresolved": 1,
+      "unresolved_rate": 0.125,
+      "unresolved_wilson95": [
+        0.022417,
+        0.470888
+      ],
+      "confirmed_error": 0,
+      "confirmed_error_rate": 0.0,
+      "confirmed_error_wilson95": [
+        0,
+        0.324408
+      ]
+    },
+    {
+      "lane": "L3-MO-SC-LA",
+      "creation_tier": "B",
+      "population_sites": 18,
+      "sampled_sites": 5,
+      "inclusion_probability": 0.2777777777777778,
+      "census": false,
+      "agreement": 4,
+      "agreement_rate": 0.8,
+      "agreement_wilson95": [
+        0.375535,
+        0.963776
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.434482
+      ],
+      "creation_error": 1,
+      "creation_error_rate": 0.2,
+      "creation_error_wilson95": [
+        0.036224,
+        0.624465
+      ],
+      "unresolved": 0,
+      "unresolved_rate": 0.0,
+      "unresolved_wilson95": [
+        0,
+        0.434482
+      ],
+      "confirmed_error": 1,
+      "confirmed_error_rate": 0.2,
+      "confirmed_error_wilson95": [
+        0.036224,
+        0.624465
+      ]
+    },
+    {
+      "lane": "L3-MO-SC-LA",
+      "creation_tier": "C",
+      "population_sites": 1,
+      "sampled_sites": 1,
+      "inclusion_probability": 1.0,
+      "census": true,
+      "agreement": 1,
+      "agreement_rate": 1.0,
+      "agreement_wilson95": [
+        0.206549,
+        1
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.793451
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.793451
+      ],
+      "unresolved": 0,
+      "unresolved_rate": 0.0,
+      "unresolved_wilson95": [
+        0,
+        0.793451
+      ],
+      "confirmed_error": 0,
+      "confirmed_error_rate": 0.0,
+      "confirmed_error_wilson95": [
+        0,
+        0.793451
+      ]
+    },
+    {
+      "lane": "L6-CA",
+      "creation_tier": "B",
+      "population_sites": 3,
+      "sampled_sites": 1,
+      "inclusion_probability": 0.3333333333333333,
+      "census": false,
+      "agreement": 1,
+      "agreement_rate": 1.0,
+      "agreement_wilson95": [
+        0.206549,
+        1
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.793451
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.793451
+      ],
+      "unresolved": 0,
+      "unresolved_rate": 0.0,
+      "unresolved_wilson95": [
+        0,
+        0.793451
+      ],
+      "confirmed_error": 0,
+      "confirmed_error_rate": 0.0,
+      "confirmed_error_wilson95": [
+        0,
+        0.793451
+      ]
+    },
+    {
+      "lane": "L6-CA",
+      "creation_tier": "C",
+      "population_sites": 16,
+      "sampled_sites": 9,
+      "inclusion_probability": 0.5625,
+      "census": false,
+      "agreement": 5,
+      "agreement_rate": 0.5555555555555556,
+      "agreement_wilson95": [
+        0.266651,
+        0.811221
+      ],
+      "field_error": 1,
+      "field_error_rate": 0.1111111111111111,
+      "field_error_wilson95": [
+        0.019891,
+        0.435
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.299145
+      ],
+      "unresolved": 3,
+      "unresolved_rate": 0.3333333333333333,
+      "unresolved_wilson95": [
+        0.120584,
+        0.645798
+      ],
+      "confirmed_error": 1,
+      "confirmed_error_rate": 0.1111111111111111,
+      "confirmed_error_wilson95": [
+        0.019891,
+        0.435
+      ]
+    },
+    {
+      "lane": "L7-FL",
+      "creation_tier": "C",
+      "population_sites": 17,
+      "sampled_sites": 8,
+      "inclusion_probability": 0.47058823529411764,
+      "census": false,
+      "agreement": 4,
+      "agreement_rate": 0.5,
+      "agreement_wilson95": [
+        0.215216,
+        0.784784
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.324408
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.324408
+      ],
+      "unresolved": 4,
+      "unresolved_rate": 0.5,
+      "unresolved_wilson95": [
+        0.215216,
+        0.784784
+      ],
+      "confirmed_error": 0,
+      "confirmed_error_rate": 0.0,
+      "confirmed_error_wilson95": [
+        0,
+        0.324408
+      ]
+    },
+    {
+      "lane": "L7-GA",
+      "creation_tier": "C",
+      "population_sites": 20,
+      "sampled_sites": 9,
+      "inclusion_probability": 0.45,
+      "census": false,
+      "agreement": 6,
+      "agreement_rate": 0.6666666666666666,
+      "agreement_wilson95": [
+        0.354202,
+        0.879416
+      ],
+      "field_error": 0,
+      "field_error_rate": 0.0,
+      "field_error_wilson95": [
+        0,
+        0.299145
+      ],
+      "creation_error": 0,
+      "creation_error_rate": 0.0,
+      "creation_error_wilson95": [
+        0,
+        0.299145
+      ],
+      "unresolved": 3,
+      "unresolved_rate": 0.3333333333333333,
+      "unresolved_wilson95": [
+        0.120584,
+        0.645798
+      ],
+      "confirmed_error": 0,
+      "confirmed_error_rate": 0.0,
+      "confirmed_error_wilson95": [
+        0,
+        0.299145
+      ]
+    }
+  ],
+  "unweighted_counts": {
+    "agreement": 34,
+    "field_error": 1,
+    "unresolved": 14,
+    "creation_error": 1
+  },
+  "unweighted_observed_rates": {
+    "agreement": 0.68,
+    "field_error": 0.02,
+    "creation_error": 0.02,
+    "unresolved": 0.28
+  },
+  "design_weighted_observed_points": {
+    "agreement": 0.6908838383838384,
+    "field_error": 0.01616161616161616,
+    "creation_error": 0.03272727272727273,
+    "unresolved": 0.26022727272727275
+  },
+  "weighted_unresolved_sensitivity": [
+    0.04888888888888889,
+    0.3091161616161616
+  ],
+  "interval_note": "Wilson binary intervals per observed finding category, denominator all sampled in stratum incl unresolved. Not latent-error confidence bounds; no pooled iid CI or population-wide accuracy claim. Census strata Wilson shown as requested binomial reference, not sampling uncertainty.",
+  "followup_sites": 16,
+  "design_note": "Additional effort targets the original16unresolved cases. These updated observed-category rates reuse the original50site sample and strata; unequal verification effort means they are not an independently drawn second survey or causal accuracy improvement."
+}
