@@ -62,7 +62,7 @@ PRESS = {  # key -> (url, source_class, quote, what it dates)
                   "The acquisition includes two manufacturing plants in Houston and Beaumont, Texas",
                   "Gemspring Capital's release dated 2025-11-03 announces that an affiliate has completed the acquisition of Goodyear's polymer chemicals business (the release does not state the completion date)"),
     "goodyear": ("https://news.goodyear.com/2025-11-03-Goodyear-Completes-Divestiture-of-Chemical-Business", "press",
-                 "effective Oct. 31, 2025", "Goodyear's release dated 2025-11-03 states that the Goodyear Chemical divestiture to a Gemspring affiliate was effective 2025-10-31"),
+                 "effective Oct. 31, 2025", "the Goodyear Chemical divestiture to a Gemspring affiliate was effective 2025-10-31"),
 }
 BASIS_TEXT = {"shared_frs_id": "same EPA FRS id", "same_street": "same street address", "street_variant": "same street, spelling variant",
               "same_city_streetless": "the operator's one plant in that city"}
@@ -281,7 +281,11 @@ def main():
                       f"registrant the Atlas holds as {nn} at Middlefield (FRS 110009662855, link on SITE-001399), not {on}")
             return url, dict(source_class="government_filing", source_ref=url, observed_date=DATE, tier_effect="supports_B"), detail
         url, sc, quote, what = PRESS[key]
-        detail = f"{what}: \"{quote}\"; bears on the operator of this establishment (held under {on}, moved to {nn})"
+        if key == "floordaily":   # an acquisition announcement does not by itself show who operates the plant (Codex, PR 256)
+            tail = f"bears on the operator of this establishment (held under {on}, moved to {nn})"
+        else:
+            tail = f"operator of this establishment is {nn}, no longer {on}"
+        detail = f"{what}: \"{quote}\"; {tail}"
         return url, dict(source_class=sc, source_ref=url, observed_date=DATE, tier_effect="supports_B"), detail
 
     for table in (WITNESS, EXTRA_WITNESS):
@@ -294,7 +298,8 @@ def main():
                 if (sid, url) in have:
                     continue
                 row.update(evidence_id=f"EVD-{eid:06d}", record_table="sites", record_id=sid, claim_type="parent", claim_detail=detail, created_by=BY,
-                           notes=f"dedupe-medium apply {DATE} (PR #254 verdict {x['cluster']}); operator-only observation; page read {DATE}, raw copy in tasks/dedupe-medium-apply-2026-11-06 or persist/")
+                           notes=f"dedupe-medium apply {DATE} (PR #254 verdict {x['cluster']}); operator-only observation; page read {DATE}, "
+                                 + ("raw JSON in the lane's persist/ (it carries a public-contact name, phone and email)" if kind == "tri" else "raw copy in tasks/dedupe-medium-apply-2026-11-06"))
                 ev_new.setdefault(data / f"evidence_sites_{shard}.csv", []).append(row)
                 eid += 1
     n_ev = sum(len(v) for v in ev_new.values())

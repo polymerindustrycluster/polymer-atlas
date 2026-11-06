@@ -57,7 +57,7 @@ Corporation was converted into, merged into, or still operates beside the LLC. `
 1. **EVD-333004 / EVD-333006** said the Gemspring affiliate completed the acquisition "on 2025-11-03". The release is dated November 3 and says the
    acquisition has completed; it gives no completion date. Restated as "Gemspring Capital's release dated 2025-11-03 announces that an affiliate has
    completed the acquisition ... (the release does not state the completion date)". The effective date 2025-10-31 stays on the Goodyear rows
-   (EVD-333005/333007, "Goodyear's release dated 2025-11-03 states ... effective 2025-10-31"). `PRESS['gemspring']` in `build.py` carries the new wording,
+   (EVD-333005/333007). `PRESS['gemspring']` in `build.py` carries the new wording,
    and `check.py` fails if a Gemspring row dates completion.
 2. **EVD-333008** (SITE-003478) said FRS names Tarkett as operator; FRS 110000385244 says JOHNSONITE. It now records the literal registrant and
    address and states no operator. The 2005 acquisition row (EVD-333009) now says it is an acquisition, not a statement of who operates the plant.
@@ -67,9 +67,9 @@ Corporation was converted into, merged into, or still operates beside the LLC. `
    (the WoodFloorBusiness relocation article returned 403).
    `check.py` now also fails if an FRS row says a registrant "names the operator" while sharing no leading word with the target org's name.
 
-In-place corrections through the builder (rows are new in this PR): EVD-333004, 333006, 333008, 333009 and, for the same wording, 333005, 333007, 333011
-(press rows no longer assert "operator is X, no longer Y"; they say what the page says and that it bears on the operator linkage). The same ids stay; the one
-new row is EVD-333015, placed last so no id shifts.
+In-place corrections through the builder (the rows are new in this PR): EVD-333004, 333006 (finding 1), EVD-333008, 333009 (finding 2) and EVD-333011
+(SITE-003477's copy of the same acquisition-announcement row, same reasoning; no longer asserts "operator is X, no longer Y"). Their ids stay. EVD-333005/333007
+(Goodyear release, effective 2025-10-31, accepted by the reviewer) are unchanged. The one new row is EVD-333015, placed last so no id shifts.
 
 ## Tier-1 qualifier effect (derive_tier1.py --packet, nothing written)
 
