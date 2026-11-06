@@ -60,9 +60,22 @@ with tempfile.TemporaryDirectory() as tmp:
         creates[0]['pic_relevance'] = ''
         with (packet / 'creates_ecosystem.csv').open('w', newline='') as f:
             w = csv.DictWriter(f, fieldnames=list(creates[0]), lineterminator='\n'); w.writeheader(); w.writerows(creates)
-        try: build.plan(data)
-        except AssertionError as error: assert str(error) == 'missing ecosystem PIC relevance', str(error)
-        else: raise AssertionError('blank relevance passed')
+        unapplied = Path(tmp) / 'unapplied'
+        shutil.copytree(data, unapplied)
+        for filename, key, excluded in [
+            ('ecosystem.csv', 'org_id', {'ORG-013300'}),
+            ('evidence_ecosystem.csv', 'evidence_id', {r['evidence_id'] for r in evidence})]:
+            path = unapplied / filename
+            rows = build.read(path)
+            with path.open('w', newline='') as f:
+                w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
+                w.writeheader(); w.writerows(r for r in rows if r[key] not in excluded)
+        fresh_before = hashes(unapplied)
+        with patch.object(build.sys, 'argv', ['build.py', '--data-dir', str(unapplied), '--apply']):
+            try: build.main()
+            except AssertionError as error: assert str(error) == 'missing ecosystem PIC relevance', str(error)
+            else: raise AssertionError('blank new-record relevance passed')
+        assert hashes(unapplied) == fresh_before
         assert hashes(data) == before
         shutil.copyfile(HERE / 'creates_ecosystem.csv', packet / 'creates_ecosystem.csv')
         print('PASS blank relevance refused before any write')

@@ -2,5 +2,5 @@ RAW PASS https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?ad
 RAW PASS https://lift.technology/
 RAW PASS https://lift.technology/facilities/
 RAW PASS https://lift.technology/resources/
-PASS raw5/5 observations over4/4 sources; known operator/plasma/HIP words; fabricated negative
-PASS census12/12; known held3/3; proposed1 C ecosystem+5 evidence rows; pending 0 rows
+PASS raw6/6 observations over4/4 sources; known operator/plasma/HIP words; fabricated negative
+PASS census12/12; known held3/3; proposed1 C ecosystem+6 evidence rows; pending 7 rows

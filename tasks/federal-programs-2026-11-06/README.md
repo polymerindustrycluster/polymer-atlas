@@ -15,7 +15,7 @@ Unit/filter:12 selected institution/program/network candidates from the controll
 | Sustainable Polymers Tech Hub |1|0|1|0|
 | Total |12|1|5|6|
 
-Canonical additions:1 tier-C ecosystem institution, LIFT ORG-013300 (Detroit, Michigan, Wayne), and5 append-only ecosystem evidence rows EVD-296000–296004. New A/B/U rows0; existing canonical row edits0. No tier/status change, organization-shard/site/program/registry/derived-column change or inclusion_log entry. New ecosystem subtype count: nonprofit_rd_consortium1 ecosystem row.
+Canonical additions:1 tier-C ecosystem institution, LIFT ORG-013300 (Detroit, Michigan, Wayne), and6 append-only ecosystem evidence rows EVD-296000–296005. New A/B/U rows0; existing canonical row edits0. No tier/status change, organization-shard/site/program/registry/derived-column change or inclusion_log entry. New ecosystem subtype count: nonprofit_rd_consortium1 ecosystem row.
 
 Duplicates terminate at held MAGNET ORG000159; IACMI ORG002099; America Makes ORG001217; REMADE ORG002100; Sustainable Polymers Tech Hub ORG002825. No source/tier/location/status/funding fact is applied to those rows. Both EDA/Ohio hub designations already ride one held Tech Hub record; its existing Chamber parent is preserved.
 
@@ -25,7 +25,7 @@ The own homepage states LIFT's ALMMII operator and nonprofit public-private iden
 
 Typed scope observations cover nonprofit_rd_consortium, polymer_program=true, generalist=false (research institute with named material services, not a geographic generalist EDO), facilities access/technical assistance, national geography and the description. The homepage's national-institute statement supports geography. The own facilities page labels Detroit headquarters and publishes1400 Rosa Parks Boulevard, Detroit MI48216. County Wayne comes from a Census address-geography match: exact matched address/one county/GEOID26163. Only street/city/state/county text is used; no coordinates are inspected, copied or used for verification tier. Source_class government_filing uses §4.13's “government record of fact” branch, not a corporate-filing assertion.
 
-All5 observations use supports_C, consistent with AGENTS §3 new-create C/U. Statusunknown: no liveness, current federal grant amount or funding commitment is asserted. Evidence existence/address/scope cover every populated substantive field; observation dates, author and tier are researcher metadata.
+All6 observations use supports_C, consistent with AGENTS §3 new-create C/U. Statusunknown: no liveness, current federal grant amount or funding commitment is asserted. Evidence existence/address/scope cover every populated substantive field; observation dates, author and tier are researcher metadata.
 
 Dedupe: house atlas.py across all organization shards/ecosystem by domain/name/street/trade names, including LIFT, ALMMII, full American Lightweight Materials Manufacturing Innovation Institute, and former Lightweight Innovations for Tomorrow. No hits before creation. Builder reuses atlas.load_tables/dedupe on the actual data tree and preflights global ORG/EVD namespaces before writing. shard-of --hq-state MI was run (shard-reference.json); §4.6 Ring5 institutions remain in unsharded ecosystem.csv, with evidence_ecosystem.csv, rather than organization state shards.
 
@@ -49,7 +49,7 @@ Six STILL_UNCERTAIN candidates:
 
 ## Availability and limits
 
-source-fetches.csv logs all selected URLs/roles. Admitted yield4/4 URLs (3own LIFT pages + Census), producing5/5 observations. Primary discovery stayed within~6 distinct routes per organization; validation re-fetches repeat admitted URLs. A LIFT2025 equipment poster was fetched as a lead only; current HTML is the admitted service witness.
+source-fetches.csv logs all selected URLs/roles. Admitted yield4/4 URLs (3own LIFT pages + Census), producing6/6 observations. Primary discovery stayed within~6 distinct routes per organization; validation re-fetches repeat admitted URLs. A LIFT2025 equipment poster was fetched as a lead only; current HTML is the admitted service witness.
 
 Failed routes: NIIMBL6, Ohio development MEP route, Tech Hub homepage, America Makes homepage and REMADE homepage, all curl56/no body here. Route availability is never absence/closure; held identities still resolve and no status changes follow. MAGNET/IACMI, PA MEP, Michigan Center, Purdue MEP, NEPIRC and all admitted LIFT pages were reachable. Estate lookup was partial on this Mac (missing Windows Documents catalogues), not an absence finding.
 
@@ -58,10 +58,20 @@ No regional completeness claim: other Ohio operators and Pennsylvania affiliates
 ## Named checks and review
 
 - Three hand-known held identities: MAGNET→ORG000159, IACMI→ORG002099, REMADE→ORG002100. Reused house dedupe finds3/3 before application. No new fuzzy matcher.
-- House word-sequence matcher reused from equipment wave1/rawcheck conventions. Operator, Plasmatreat and HIP source words manually confirmed first. build.py --raw-check:5/5 observations/4of4 URLs, no admitted-source skips; fabricated-program negative rejected. Census parser checks exact matched address and Wayne/GEOID26163.
-- check.py:12/12 census; exact1Cecosystem/5EVD main delta; all main rows unchanged; all-CSV replay byte-identical. Cross-shard ORG/EVD ID collisions each refuse before writes. Removing both address witnesses leaves3 valid rows and fails typed evidence preflight; fabricated quote fails raw check with all CSVs unchanged.
+- House word-sequence matcher reused from equipment wave1/rawcheck conventions. Operator, Plasmatreat and HIP source words manually confirmed first. build.py --raw-check:6/6 observations/4of4 URLs, no admitted-source skips; fabricated-program negative rejected. Census parser checks exact matched address and Wayne/GEOID26163.
+- check.py:12/12 census; exact1Cecosystem/6EVD main delta; all main rows unchanged; all-CSV replay byte-identical. Cross-shard ORG/EVD ID collisions each refuse before writes. Removing both address witnesses leaves4 valid rows and fails typed evidence preflight; fabricated quote fails raw check with all CSVs unchanged.
 - validate.py: zero errors; full validate.txt. No scripts/ changes, so full scripts pytest was not repeated for this data packet.
 
 Codex/Grok completion refutes pending; not ready for merge. Review should challenge the named-service scope, ALMMII dedupe/grain, county and evidence-backed fields/holds. No current funding/liveness check, individual inventory of every regional MEP, hosted deployment or physical facility inspection was performed.
 
-Integration journal: merged main80bb5140e0f1598d85fe30b28777def59c9b83c6; restored exact main copies of both owned canonical files and replayed the builder. integration.json proves all prior rows unchanged and exactly1ecosystem/5EVD added. The scope check was rerun after the merge commit so HEAD includes the new main base; post-merge raw5/5, all failure/replay checks and validator0 pass. No hand CSV conflict merge.
+Initial integration journal (before the relevance correction): merged main80bb5140e0f1598d85fe30b28777def59c9b83c6; restored exact main copies of both owned canonical files and replayed the builder. integration.json proves all prior rows unchanged and exactly1ecosystem/5EVD added. The scope check was rerun after the merge commit so HEAD includes the new main base; post-merge raw5/5, all failure/replay checks and validator0 pass. No hand CSV conflict merge.
+
+## Codex refute accepted: mandatory PIC relevance
+
+Codex4/OpenAI REFUTEee004fd identified one P2: pic_relevance was blank despite SCHEMA4.4/4.6/4.7 MUST and4.3's retained relevance vocabulary. Accepted. ORG013300 now uses existing controlled potential_member as a researcher assessment of published polymer-capable R&D resources. It asserts no current membership, existing PIC partnership, outreach, or entitlement to membership. The PIC membership flag remains blank. No new vocabulary or owner ruling is inferred.
+
+Append-only EVD296005(scope,own_site,supports_C) explicitly ties that assessment to the LIFT resources page's polymer-powder processing disclosure. All original5evidence observations are byte-for-field unchanged; the proposed institution differs from ee004fd only in pic_relevance. Corrected canonical delta1Cecosystem+6EVD; sourceyield6/6observations/4of4URLs. Twelve candidate outcomes and six holds are unchanged.
+
+Builder refuses a blank relevance value, an unsupported alternate relevance assertion and a missing relevance witness before any write. Permanent negative removes only relevance from the new create in a copied packet, removes the unmerged create/evidence from disposable data, then calls actual build.main --apply: exact missing-relevance assertion, zero CSV writes. Existing typed-address/globalORG/globalEVD/fakequote/replay controls remain passing. Source quotes freshly rechecked6/6.
+
+Integrated current main9ea45cdd via canonicaldata restore and unchanged packet replay; no CSV hand merge. check.py all-main-row preservation/exact7rowdelta/allCSVreplay/negatives, validator0 and native row-loss PASS. Codex4 targeted re-review and corrected Grok full review remain required. Physical/current-funding/liveness and held-route recovery were not expanded.

@@ -1,6 +1,7 @@
 PASS cross-shard org_id collision refused before any write
 PASS cross-shard evidence_id collision refused before any write
+PASS blank relevance refused before any write
 PASS missing typed evidence refused before any write
 RAW PASS https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1400+Rosa+Parks+Boulevard+Detroit+MI+48216&benchmark=Public_AR_Current&vintage=Current_Current&format=json
 PASS fabricated evidence quote refuses; all CSVs unchanged
-PASS census12/12;1Cecosystem+5EVD exact main delta; all main rows preserved; all-CSV replay byte-identical
+PASS census12/12;1Cecosystem+6EVD exact main delta; all main rows preserved; all-CSV replay byte-identical
