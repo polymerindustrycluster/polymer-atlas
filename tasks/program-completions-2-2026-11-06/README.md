@@ -154,3 +154,7 @@ and replay states. Both check.py and standalone build.py exit1 with the source-d
 numeric conflict, and every canonical CSV hash remains unchanged. This uses the actual
 mutated CSV, not only mocked packet reads; physical_count_mutation.json records results.
 No new canonical changes or source research. Integrated packet47d4dda otherwise unchanged.
+
+## Grok corrected source-guard approval
+
+Grok/xAI clerk3thr_4g4uwqjxjv APPROVE65129c5,0findings, explicitly for the corrected30aaf79guard as contained in the fresh-main replay, not merely the oldf67approval. Verified hash-anchored104uniquefirst-major rows,44numericproposalrows/43keys,allnumeric/projected-value/evidencebindingsbeforewrite;all7newinitial/replayfaults andoldUNITID/shardtests zerowrite. Full34-countcensus/112cells/34EVD-onlydelta vs542629e5;5fills19/35/86/27/17,29confirmed,postbacc+second-major contamination excluded,9first-yearholds unchanged. Check/validator0/rowloss PASS. FullC2024zip not re-fetched for rereview; frozen raw bytes/hash match earlier approved source. Codex corrected-guard rereview remains pending; draft maintained. No packet/data/code change in this receipt. Report controller reviews/168-clerk-grok-3-rereview.md.
