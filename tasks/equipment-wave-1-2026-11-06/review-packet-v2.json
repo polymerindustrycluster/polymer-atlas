@@ -10,7 +10,7 @@
     "Full equipment inventory",
     "Other inherited federal-frame CRLF changes"
   ],
-  "revision": "69fabfab798ca285dc9661ef6cac9b94a857f50e",
+  "revision": "60d66a581b8b1f7834269dff51fb7b1bd31f9adc",
   "tool_access": "Clerks may inspect full worktree and fetch source URLs; all packet evidence must be read.",
   "required_families": [
     "codex",
@@ -19,7 +19,7 @@
   "evidence": [
     {
       "path": "README.md",
-      "sha256": "43c64b1182b363f8beb7293d07051587f859499d28205e1a914d0f787aa309ac"
+      "sha256": "5db74c355401aba8f397468d5c8237123c453178d5751c27a41ca4e2d1113ae5"
     },
     {
       "path": "brief.md",
@@ -47,7 +47,7 @@
     },
     {
       "path": "render-checks.txt",
-      "sha256": "c3e995d8cf2736e652c7a1ea98a8a2d9a51aa695459c34551b73c434618855ef"
+      "sha256": "885be9871df5bbb00256aa6d4528ecd3befb4848fd33f1593cebe390e3dcba01"
     },
     {
       "path": "render.patch",
@@ -80,6 +80,11 @@
     },
     {
       "command": "python3 scripts/build_site.py --rebuild-db --out build/equipment-wave-1/site",
+      "outcome": "pass",
+      "evidence": "render-checks.txt"
+    },
+    {
+      "command": "python3 scripts/build_pages.py",
       "outcome": "pass",
       "evidence": "render-checks.txt"
     }
