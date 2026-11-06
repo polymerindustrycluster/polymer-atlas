@@ -136,3 +136,5 @@ Pending Codex3/Grok3 independent review; draft only. Controller06:25 clerk assig
 |LF-WI-00216|HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.|
 |LF-WI-00382|HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.|
 |LF-WI-00372|HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.|
+
+Main-refresh journal: merged origin/main8e8c71a (controller mergedGA142) before review; WI counts unchanged. Controller explicitly authorizes GA README-only Grok receipt inthisPR,same asL2PAreceipt convention. No GAdata/code changes.
