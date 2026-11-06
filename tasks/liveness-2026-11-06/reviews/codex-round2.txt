@@ -1,0 +1,37 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+I reproduced a remaining defect in the final `check.py` mutation gate.
+
+**Verified blocking finding:** `git diff --exit-code base -- data/` compares the base with the working-tree content. A committed or staged mutation can be hidden by an unstaged restoration.
+
+In isolated repositories, I tested both cases:
+
+- Commit `active→closed`, then restore the working file to `active`: the supplied gate **passes**, while the base-to-HEAD comparison fails.
+- Stage `active→closed`, then restore the working file to `active`: the supplied gate **passes**, while the HEAD-to-index comparison fails.
+
+The untracked-data check also passes. [Standalone reproducer](/tmp/liveness-round2-review.ngLbUw/reproduce_git_gate.py). This establishes a validation defect; it does **not** establish that the actual packet contains an unauthorized mutation.
+
+Check the three states separately, retaining the untracked-file check:
+
+```sh
+git diff --exit-code "$base" HEAD -- data/
+git diff --cached --exit-code HEAD -- data/
+git diff --exit-code -- data/
+```
+
+Add both masking cases as regression tests.
+
+Additional verified hardening gaps: the checker accepts duplicate sponsor rows, duplicate historical domain observations, and incorrectly ordered equal-score rows outside the researched ten. The builder/comparator reject the duplicate inputs themselves, so these findings concern incomplete offline validation, not demonstrated corruption of the supplied outputs.
+
+Evidence supporting the other changes:
+
+- Live legacy REST counts independently returned **99 / 8 / 180**. Ungrouped DMAP returned all **287 forms**, each control’s maximum year **2024**.
+- A grouped query with `limit: 3` still counted all 287 forms, supporting aggregation before the result limit for these controls.
+- Synthetic tests of the final checker rejected all four reported round-one injections.
+- Fetcher tests preserved every requested key across batch boundaries, missing returns, timeouts, and cached reruns; duplicate and foreign API keys were rejected.
+- The supplied comparison arithmetic is consistent. I found no demonstrated false-key match, closure inference, privacy violation, or unsupported ownership change in the inline packet.
+
+**Unverified material:** the workspace is empty. Both requested commands failed because their files were absent. I could not independently inspect the actual CSV populations, pinned snapshot bytes, repository history, unchanged sweep implementation, or reported repository validation results. Isolated checker tests used synthetic inputs, a corresponding fixture hash, and a substitute hostname normalizer; they do not verify the actual populations.
+
+The remaining 144 held investigations are consistent with the bounded scope and are not grounds for this verdict. The remaining mutation-gate defect is.
+
+**REFUTE**
