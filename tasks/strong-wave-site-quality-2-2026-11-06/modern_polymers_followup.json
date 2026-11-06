@@ -1,0 +1,38 @@
+{
+  "read_utc": "2026-11-06T15:57:56+00:00",
+  "robots_txt_https": 200,
+  "pages": [
+    {
+      "url": "https://modernpolymers.com/contact/",
+      "http_default_curl_agent": 200,
+      "http_house_agent": 520,
+      "raw_sha256": "89219345a825d43831753f68a1d954ef8e2a97760c5062e28bc0a36527cb09bd",
+      "text_sha256": "3ac47cbcc6aa1d13d09452aa8f66219ca352a30f52ced55e9fcbccf35c5e4ca4",
+      "quotes_in_order": [
+        "Modern Polymers, Inc. 901 W Academy St. Cherryville, NC 28021",
+        "Whether you need custom molded EPS or EPP foam solutions for automotive, aerospace, or packaging applications"
+      ]
+    },
+    {
+      "url": "https://modernpolymers.com/facilities/",
+      "http_default_curl_agent": 200,
+      "http_house_agent": 520,
+      "raw_sha256": "5883b350aa00d0064af0d2ad7fb4e3df490f463e11f4f0300ff177161b54d033",
+      "text_sha256": "b178e22dd74d66911c737bfb8de60c630f97c6fa4d5cc4603b668d1742c4d6e9",
+      "quotes_in_order": [
+        "Located in Cherryville NC EPS Division: 68,000 Sq. Ft."
+      ]
+    }
+  ],
+  "robots_disallow_lines": [
+    "User-agent: *",
+    "Disallow: /wp-admin/"
+  ],
+  "census_address_check": {
+    "status": "PASS",
+    "county": "Gaston County",
+    "geoid": "37071",
+    "matched_address": "901 W ACADEMY ST, CHERRYVILLE, NC, 28021",
+    "raw_sha256": "33b59f632a4a287f3d18453e7c4466849666e8edf0d0b537625b695f043d75a7"
+  }
+}

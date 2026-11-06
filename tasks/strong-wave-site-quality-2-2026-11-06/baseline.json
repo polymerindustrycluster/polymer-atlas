@@ -1,0 +1,9 @@
+{
+  "base": "170b6a18bb6fd280565643f9dd3ec85cca0636c1",
+  "frame_rows": "41-80",
+  "input_sites": 40,
+  "echo_rows": 27,
+  "corpus_pages": 20,
+  "frame_commit": "1cd71d0947bf19ee7de05ef7786a641949c7674b",
+  "note": "base = integration pin (origin/main merged); frame_commit = main when rows 41-80 were frozen"
+}
