@@ -15,7 +15,7 @@ def main(route,only=None):
  kept={r[KEY[route]]:r for r in csv.DictReader(open(HERE/route/'sample.csv'))} if only else {}  # --only SUBSTRING re-verifies matching rows and keeps the rest
  for r in rows:
   if only and only not in r[KEY[route]]:out.append(kept[r[KEY[route]]]);continue
-  ch='';note='';v=dict(fetches=0,url='',status='',sha256='',address_found=0,name_found=0,polymer_words='',process_hit=0,quote='',note='')
+  ch='';note='';v=dict(fetches=0,url='',status='',sha256='',address_found=0,name_found=0,polymer_words='',process_hit=0,process_witness='',quote='',note='')
   if r['duplicate_of']:verdict,reason='DUPLICATE_OF',f"held {r['duplicate_of']} by registry link or singleton exact street+locality; not re-verified"
   else:
    ch=verify.corpus_hit(r['street']) if r.get('street') else ''
@@ -24,11 +24,12 @@ def main(route,only=None):
    if su:v['fetches']+=1  # the SearXNG search that produced the seed URL
    if note and not su:v['fetches']=1
    v['note']=(v['note']+' '+note).strip() if note else v['note']
-   if v['address_found'] and v['name_found'] and v['process_hit']:verdict,reason='VERIFIED',f"own site states the entity name and street address, and on that same page a polymer word within 80 chars of a process word; fetched {today}; existence/address/liveness plus a scope lead, ring/scope is an owner ruling"
+   if v['address_found'] and v['name_found'] and v['process_hit'] and v['polymer_words'] and v['process_witness']:verdict,reason='VERIFIED',f"own site states the entity name and street address, and on that same page a polymer word within 80 chars of a process word; fetched {today}; existence/address/liveness plus a scope lead, ring/scope is an owner ruling"
    elif v['address_found'] and v['name_found']:verdict,reason='STILL_UNCERTAIN',f"own site states the address (live {today}) but no polymer process wording on that page ({v['fetches']} fetches){('; '+v['note'].strip()) if v['note'].strip() else ''}; settling fact: own-site statement of a polymer process at this site"
    else:verdict,reason='STILL_UNCERTAIN',f"no own-site page stating this street address within {v['fetches']} fetches ({v['note'].strip() or 'no address on visited pages'}); settling fact: own-site or primary record of the establishment at this address; a failed or unmatched fetch is not evidence of closure"
   out.append(dict(r,verdict=verdict,verified_new=int(verdict=='VERIFIED'),verify_fetches=v['fetches'],verify_url=v['url'],verify_http=v['status'],verify_sha256=v['sha256'],verify_address_found=v['address_found'],
-   verify_name_found=v['name_found'],verify_polymer_words=v['polymer_words'],verify_process_hit=v['process_hit'],verify_quote=v['quote'] if verdict=='VERIFIED' else '',seed_note=note if not r['duplicate_of'] else '',verify_date=today if not r['duplicate_of'] else '',corpus_street_hit=(ch if not r['duplicate_of'] else ''),reason=reason,source=SRC[route]))
+   verify_name_found=v['name_found'],verify_polymer_words=v['polymer_words'],verify_process_hit=v['process_hit'],verify_process_witness=v['process_witness'] if verdict=='VERIFIED' else '',verify_quote=v['quote'] if verdict=='VERIFIED' else '',seed_note=note if not r['duplicate_of'] else '',verify_date=today if not r['duplicate_of'] else '',corpus_street_hit=(ch if not r['duplicate_of'] else ''),reason=reason,source=SRC[route]))
   print(route,r[KEY[route]],verdict,v['fetches'],flush=True)
- common.write_csv(HERE/route/'sample.csv',out)
+ for d in out:d.setdefault('verify_process_witness','')  # rows kept by --only predate the column
+ common.write_csv(HERE/route/'sample.csv',[{**{'verify_process_witness':''},**d} for d in out],list(max(out,key=len)))
 if __name__=='__main__':main(sys.argv[1],sys.argv[3] if len(sys.argv)>3 and sys.argv[2]=='--only' else None)

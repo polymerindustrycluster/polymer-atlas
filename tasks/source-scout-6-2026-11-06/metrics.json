@@ -34,19 +34,18 @@
   "fetches_spent": 92,
   "frame_units": 689,
   "frame_units_in_ohio": 25,
-  "live_address_confirmed_scope_unknown": 5,
+  "live_address_confirmed_scope_unknown": 8,
   "sampled": 20,
   "site_or_registry_match": 0,
   "verdicts": {
-   "STILL_UNCERTAIN": 17,
-   "VERIFIED": 3
+   "STILL_UNCERTAIN": 20
   },
-  "verified_new": 3,
+  "verified_new": 0,
   "verified_new_wilson95": [
-   0.052369,
-   0.360419
+   0,
+   0.161125
   ],
-  "verified_new_yield": 0.15
+  "verified_new_yield": 0.0
  },
  "fied": {
   "any_atlas_match": 6,
@@ -108,18 +107,17 @@
   "duplicate_of": 0,
   "fetches_spent": 87,
   "frame_units": 1564,
-  "live_address_confirmed_scope_unknown": 1,
+  "live_address_confirmed_scope_unknown": 2,
   "sampled": 20,
   "site_or_registry_match": 0,
   "verdicts": {
-   "STILL_UNCERTAIN": 19,
-   "VERIFIED": 1
+   "STILL_UNCERTAIN": 20
   },
-  "verified_new": 1,
+  "verified_new": 0,
   "verified_new_wilson95": [
-   0.008881,
-   0.236131
+   0,
+   0.161125
   ],
-  "verified_new_yield": 0.05
+  "verified_new_yield": 0.0
  }
 }

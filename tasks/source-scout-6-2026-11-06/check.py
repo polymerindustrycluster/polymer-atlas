@@ -23,6 +23,11 @@ def yields(rows,key):
   verified_new=k,verified_new_yield=k/20,verified_new_wilson95=common.wilson(k,20),
   live_address_confirmed_scope_unknown=sum(r['verdict']=='STILL_UNCERTAIN' and r.get('verify_address_found')=='1' for r in rows),
   fetches_spent=sum(int(r.get('verify_fetches') or 0) for r in rows))
+def witness_ok(r,ver):
+ """A VERIFIED row needs a polymer-word witness: polymer words found on the address page AND a committed span in which a polymer MATERIAL word sits within 80 chars of a process word."""
+ w=r.get('verify_process_witness','')
+ assert r['verify_polymer_words'].strip(),f"{r.get('registration_number') or r.get('unit_key') or r.get('uei')}: verified_new row with an empty polymer-word witness"
+ assert ver.PROCESS.search(w) and ver.POLY.search(w) and not ver.SURG.search(w),f"verified_new row whose process witness fails the rule: {w!r}"
 def duckdb(sql):
  return subprocess.run(['duckdb','-csv','-noheader','-c',sql],capture_output=True,text=True,check=True).stdout.strip()
 def main():
@@ -35,6 +40,12 @@ def main():
  try:yields([dict(a=str(i),verdict='VERIFIED',verified_new='0',duplicate_of='',atlas_ids='',site_hits='',registry_hits='') for i in range(20)],'a')
  except AssertionError:pass
  else:raise AssertionError('verdict/verified_new mismatch escaped')
+ ver=module(HERE/'verify.py')
+ for bad in (dict(verify_polymer_words='',verify_process_witness='Extruded Dense Extruded'),dict(verify_polymer_words='plastic',verify_process_witness='Plastic and Cosmetic Surgery Products'),dict(verify_polymer_words='plastic',verify_process_witness='')):
+  try:witness_ok(bad,ver)
+  except AssertionError:pass
+  else:raise AssertionError(f'witness gate let through {bad}')
+ witness_ok(dict(verify_polymer_words='plastics',verify_process_witness='Plastics Contract Manufacturing'),ver)
  tables=common.atlas.load_tables(common.ROOT/'data');orgids={r['org_id'] for t in ('organizations','ecosystem') for r in tables[t].rows};siteids={r['site_id'] for r in tables['sites'].rows}
  A=common.Atlas()
  for name,reg,want in [('The Goodyear Tire & Rubber Company',('UEI','WPMTYSB6BFN1'),'ORG-000003'),('zzz none',('FRS','110000462936'),'SITE-004945'),('Avient Corporation',None,'ORG-000001')]:
@@ -49,6 +60,7 @@ def main():
    for f,v in byk[r[key]].items():assert r[f]==v,(route,r[key],f)
    for ref in filter(None,(r['duplicate_of'],*r['site_hits'].split(';'))):assert ref in orgids|siteids,(route,ref)
    if r['verdict']=='VERIFIED':
+    witness_ok(r,ver)
     assert r['verify_url'] and r['verify_address_found']=='1' and r['verify_name_found']=='1' and r['verify_process_hit']=='1' and r['verify_sha256'],(route,r[key])
     assert (r['street'].split() or [''])[0] in r['verify_quote'],f'{route}: verified quote lacks the street number'
   metrics[route]=yields(sample,key);metrics[route]['frame_units']=len(frame)
@@ -72,7 +84,7 @@ def main():
  fied=module(HERE/'fied/build.py');assert fied.in_slice(fied.naics('326199.0')) and fied.in_slice('32551') and not fied.in_slice(fied.naics('332618.0')) and fied.zip5('2134.0')=='02134'
  ftz=module(HERE/'ftz/build.py');assert ftz.poly_product({'PartType':'Product','HTSUS':'3920.10'}) and not ftz.poly_product({'PartType':'Component','HTSUS':'3920.10'}) and not ftz.poly_product({'PartType':'Product','HTSUS':'8414.59'})
  dol=module(HERE/'dol/build.py');assert dol.in_slice('326199') and dol.in_slice('3261') and not dol.in_slice('541511') and dol.zip5('44316-0001')=='44316'
- ver=module(HERE/'verify.py');assert ver.addr_found('Visit us at 33587 Walker Rd., Avon Lake','33587 Walker Road') and not ver.addr_found('33587 Walter Rd','33587 Walker Road') and not ver.addr_found('Suite 5587 Walker','33587 Walker Road')
+ assert ver.addr_found('Visit us at 33587 Walker Rd., Avon Lake','33587 Walker Road') and not ver.addr_found('33587 Walter Rd','33587 Walker Road') and not ver.addr_found('Suite 5587 Walker','33587 Walker Road')
  assert ver.PROCESS.search('We manufacture custom rubber and plastic parts') and not ver.PROCESS.search('Contact us about our supply of office products')
  # independent census (DuckDB over the persist cache) when present; explicit SKIPPED otherwise, never a silent pass
  P=common.PERSIST;ind=[]

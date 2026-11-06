@@ -9,9 +9,14 @@ UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, l
 SKIP=('linkedin.','facebook.','instagram.','twitter.','x.com','youtube.','bing.','google.','yelp.','mapquest.','dnb.com','zoominfo.','bloomberg.','crunchbase.','manta.','buzzfile.',
  'opencorporates.','bbb.org','yellowpages.','chamberofcommerce.','indeed.','glassdoor.','wikipedia.','usaspending.','sam.gov','fda.gov','epa.gov','thomasnet.','alibaba.','amazon.','ebay.','dol.gov','trade.gov',
  'gov/','.gov','datanyze.','rocketreach.','apollo.io','cylex','loc8nearme.','nearme','mapcarta','bizapedia','opengovus','corporationwiki','govtribe','highergov','govcb','sec.gov','pinterest.','tiktok.','reddit.','scribd.','issuu.','pdfslide','data.gov','data.world','mapcarta','cybo.')
-POLY=re.compile(r'\b(plastics?|polymers?|polymeric|rubber|resins?|elastomers?|silicones?|thermoplastics?|thermoset|injection[- ]mold\w*|extru\w+|thermoform\w*|latex|polyethylene|polypropylene|pvc|nylon|polyurethane|ptfe|peek)\b',re.I)  # materials only: coatings/adhesives/composites/foam/gaskets are not polymer evidence by themselves
-PROC=r'(?:manufactur\w*|mold\w*|extru\w+|compound\w*|fabricat\w*|produc\w+|thermoform\w*|process\w*|cast\w*|laminat\w*|convert\w*|formulat\w*)'
-PROCESS=re.compile(r'\b'+POLY.pattern[3:-3]+r'\b.{0,80}?\b'+PROC+r'\b|\b'+PROC+r'\b.{0,80}?\b'+POLY.pattern[3:-3]+r'\b',re.I)
+POLY=re.compile(r'\b(plastics?|polymers?|polymeric|rubber|resins?|elastomers?|silicones?|thermoplastics?|thermoset|latex|polyethylene|polypropylene|pvc|nylon|polyurethane|ptfe|peek)\b',re.I)  # MATERIALS only (processes such as extrusion/thermoforming/injection molding live in PROC): coatings/adhesives/composites/foam/gaskets are not polymer evidence by themselves
+PROC=r'(?:manufactur\w*|mold\w*|extru\w+|compound\w*|fabricat\w*|thermoform\w*|laminat\w*|formulat\w*|produc(?:e|es|ed|ing|tion)|process(?:ing|ed|or|ors))'  # real process terms only: the noun 'product(s)' is catalog text, not a process
+SURG=re.compile(r'\bplastics?\s+(?:and\s+\w+\s+)?surg\w+',re.I)  # 'plastic surgery' is a medical specialty, not a polymer
+ALT=POLY.pattern[3:-3]  # the alternatives inside \b( ... )\b; they MUST be grouped before being embedded (an ungrouped '|' made bare 'ptfe' inside 'ePTFE' a process hit)
+PROCESS=re.compile(r'\b(?:'+ALT+r')\b.{0,80}?\b'+PROC+r'\b|\b'+PROC+r'\b.{0,80}?\b(?:'+ALT+r')\b',re.I)
+def process_witness(page):
+ """The matched polymer-word/process-word span (<=160 chars), committed so check.py can re-test it offline; '' if none."""
+ m=PROCESS.search(page);return re.sub(r'\s+',' ',page[m.start():m.end()])[:160] if m else ''
 def fetch(url,timeout=25):
  try:
   p=subprocess.run(['curl','-sL','-m',str(timeout),'-A',UA,'--max-filesize','3000000','-w','\n%{http_code} %{url_effective}',url],capture_output=True,timeout=timeout+10)
@@ -74,7 +79,7 @@ def address_quote(page,street):
  q=page[max(0,m.start()-25):m.end()+60];return EMAIL.sub('[email]',PHONE.sub('[phone]',q)).strip()
 def verify(name,street,city,state,seed_urls=(),max_fetch=6):
  """Returns dict(fetches,url,status,sha256,address_found,name_found,polymer_words,process_hit,quote,note). process_hit = a polymer word within 80 chars of a process word on the visited pages of that domain."""
- used=0;pages=[];out=dict(fetches=0,url='',status='',sha256='',address_found=0,name_found=0,polymer_words='',process_hit=0,quote='',note='')
+ used=0;pages=[];out=dict(fetches=0,url='',status='',sha256='',address_found=0,name_found=0,polymer_words='',process_hit=0,process_witness='',quote='',note='')
  urls=list(seed_urls)
  if not urls:
   n,urls=candidates(name,street,city,state);used+=n
@@ -92,9 +97,9 @@ def verify(name,street,city,state,seed_urls=(),max_fetch=6):
     h=urllib.parse.urljoin(final,html.unescape(h))
     if urllib.parse.urlparse(h).netloc.lower().removeprefix('www.')==host and re.search(r'contact|location|about|facilit|plant|where',h,re.I) and h not in seen and h not in queue:queue.append(h)
  for final,code,sha,t in pages:
-  a,n=addr_found(t,street),name_found(t,name);w=sorted({m.group(1).lower() for m in POLY.finditer(t)})[:6]
+  t=SURG.sub(' ',t);a,n=addr_found(t,street),name_found(t,name);w=sorted({m.group(1).lower() for m in POLY.finditer(t)})[:6]
   if a and n:
-   out.update(url=final,status=code,sha256=sha,address_found=1,name_found=1,polymer_words=';'.join(w),process_hit=int(bool(PROCESS.search(t))),quote=address_quote(t,street),
+   out.update(url=final,status=code,sha256=sha,address_found=1,name_found=1,polymer_words=';'.join(w),process_hit=int(bool(PROCESS.search(t))),process_witness=process_witness(t),quote=address_quote(t,street),
     note=(out['note']+' domain-wide process wording on another visited page; not the address page; ' if PROCESS.search(' '.join(p[3] for p in pages)) and not PROCESS.search(t) else out['note']));break
  else:
   if pages:final,code,sha,t=pages[0];out.update(url=final,status=code,sha256=sha,name_found=int(name_found(t,name)),polymer_words=';'.join(sorted({m.group(1).lower() for m in POLY.finditer(t)})[:6]))
@@ -104,7 +109,8 @@ def known_answers():
  a=verify('Eptam Plastics','2 Riverside Business Park','Northfield','NH');assert a['address_found']==1 and a['name_found']==1,a
  b=verify('Eptam Plastics','999 Nowhere Boulevard','Northfield','NH');assert b['address_found']==0,b
  c=verify('Avient Corporation','33587 Walker Road','Avon Lake','OH');assert c['address_found']==1,c
- assert PROCESS.search('We manufacture custom rubber and plastic parts') and PROCESS.search('Injection molding of thermoplastic resins') and not PROCESS.search('Contact us about our supply of office products')
+ assert not PROCESS.search('ePTFE membranes are made worldwide. Our manufacturing sites are listed below') and not PROCESS.search('We manufacture speakers and peeking devices') and not PROCESS.search('Plastic bags for sale '+'x '*60+'manufacturing sites')  # grouping bug class: bare alternatives, word-internal matches, out-of-range\n assert not PROCESS.search('Extruded Dense Extruded') and not PROCESS.search('Contact us about injection molding and extrusion') and PROCESS.search('Rubber extrusion and plastic injection molding')  # a process word is not a polymer word
+ assert not PROCESS.search('Plastic and Cosmetic Surgery Products') and not PROCESS.search(SURG.sub(' ','plastic and cosmetic surgery manufacturing')) and not PROCESS.search('Products Anti-Static Bags, Poly / Plastic') and not PROCESS.search('Products AllStock Yorker Packaging KOVA Plastics')  # the five re-checked witnesses that were noun/catalog text\n assert PROCESS.search('We manufacture custom rubber and plastic parts') and PROCESS.search('Injection molding of thermoplastic resins') and not PROCESS.search('Contact us about our supply of office products')
  assert name_found('FilmTec Water Singapore Pte','FilmTec Water USA, LLC')==False and name_found('Ebco Inc Elgin','Ebco, Inc.') and name_found('visit forbo siegling llc','Forbo Siegling LLC')
  assert '[phone]' in address_quote('Contact 1330 Holmes Road Elgin IL 60123 Phone: 847-531-9500 x','1330 Holmes Road') and '[email]' in address_quote('1330 Holmes Road info@ebcoinc.com','1330 Holmes Road')
  assert addr_found('Visit us at 33587 Walker Rd., Avon Lake','33587 Walker Road') and not addr_found('33587 Walter Rd','33587 Walker Road') and not addr_found('Suite 5587 Walker','33587 Walker Road')
