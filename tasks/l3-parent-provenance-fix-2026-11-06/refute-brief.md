@@ -3,6 +3,7 @@ Targeted adversarial completion refute: follow-up to merged PR141, requested by 
 
 
 
+
 FILE LANE_BRIEF.md
 # L3 priority correction — group-domain provenance
 
@@ -82,6 +83,8 @@ verified raw; matcher reused from the previously calibrated evidence-repair/STRO
 suffix tests also failed as expected. No new network parser was introduced.
 
 Two-family targeted completion refutes pending. Controller alone merges and changes tracker status.
+
+Main integration: restored all six affected canonical files from main5a90bb1 before builder replay; refreshed baseline org snapshots/commit. Exact field/evidence boundaries and ten fault controls still pass, validator0errors, six-file replay byte-identical. No hand-merged canonical CSV.
 
 
 FILE audit.csv
