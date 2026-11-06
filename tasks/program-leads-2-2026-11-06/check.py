@@ -1,5 +1,6 @@
 """L13 packet accounting, replay, and deliberate defect checks."""
 import shutil, tempfile
+from collections import Counter
 from pathlib import Path
 from build import HERE, apply, read
 
@@ -15,6 +16,10 @@ def main():
     assert set(ids) == {r['lead_id'] for r in verdicts}
     assert set(ids) | calibration_ids == {r['lead_id'] for r in raw}
     assert len(verdicts) == 6 and len(raw) == 10
+    assert Counter(r['verdict'] for r in verdicts) == {'VERIFIED':1,'DUPLICATE_OF':4,'STILL_UNCERTAIN':1}
+    raw_by_id = {r['lead_id']:r for r in raw}
+    for row in verdicts + calibration:
+        assert all(row[k] == raw_by_id[row['lead_id']][k] for k in ('source_url','quote'))
     assert all(r['raw'] == 'yes' and r['observed_date'] == '2026-11-06' for r in raw)
     programs = read(HERE / 'programs.csv'); evidence = read(HERE / 'evidence_programs.csv')
     assert len(programs) == 1 and programs[0]['program_id'] == 'PROG-000300'
