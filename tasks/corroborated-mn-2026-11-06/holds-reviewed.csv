@@ -1,0 +1,3 @@
+cluster_id,reason
+LF-MN-00420,Need distinct-establishment/address reconciliation: held Revolv notes already name 1100 Industrial Park Rd SW Brainerd as the same operation as SITE-004094 Baxter HQ/plant. Do not create a second site from an unresolved alternate address.
+LF-MN-00468,"Need plant-specific activity/NAICS reconciliation: Hoyt Lakes ITA says polyethylene resin manufacturing (325211), while held Revolv is a rotational molder/thermoformer. Settle standalone resin production versus converting before assigning the site code/ring."
