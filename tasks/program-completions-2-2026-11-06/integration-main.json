@@ -1,0 +1,23 @@
+{
+  "main_pin": "542629e53a0d07d55cf49b6da958f2219fbb5ba5",
+  "method": "merged main, took exact main versions of both owned canonical files, replayed source-bound builder; no CSV hand merge",
+  "packet_hashes": {
+    "edits.csv": "b4fd0ac8a9459a8bad5885007b89690810059ce0c8dc987f64ae977221d180d4",
+    "joins.csv": "eab6440b424a6726d1b5d91200c1b079cb11a17847c7d0f7564fc84aeeef2864",
+    "evidence_programs.csv": "30911fcd3a34417653733565982fcbbbe7f14cfa54f7d0b2075daa3b8db09eb9",
+    "verdicts.csv": "33fde16eeaa30e4de294d518363818206312aeed4e51be57177425bb53276c5d",
+    "input.csv": "0151bfbcf5338e119ed4f7abfd09ae68041372f3e21979cf64ed8bed106d8402",
+    "raw_2024.csv": "24d8cf75f38de970c8d73d50cb00af8d33ad275e4a1d1d22f1346a76f1119645"
+  },
+  "unchanged_program_count": 167,
+  "main_programs_preserved": 167,
+  "actual_cell_edits": 112,
+  "edited_programs": 34,
+  "main_evidence_preserved": 296,
+  "appended_evidence": 34,
+  "canonical_hashes": {
+    "programs.csv": "ca56e36dce3b887d92a1c90ef289c50ceb32235158bf1d6753b06962107c1d7e",
+    "evidence_programs.csv": "dc1bb25d1f9e68e96efbebf3f8387972bbe29bd807257a11485504cb6dba32eb"
+  },
+  "checks": "source-binding7mutations,wrongUNITID,wrongshard,replay,rowpreservation,validator0 PASS"
+}
