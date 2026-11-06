@@ -1,0 +1,20 @@
+{
+  "real_identity_answers": [
+    {
+      "name": "Plastipak Packaging, Inc.",
+      "expected_org_id": "ORG-001033",
+      "result": "PASS"
+    },
+    {
+      "name": "Nike IHM, Inc.",
+      "expected_org_id": "ORG-003555",
+      "result": "PASS"
+    },
+    {
+      "name": "Hydrite Chemical Co.",
+      "expected_org_id": "ORG-004592",
+      "result": "PASS"
+    }
+  ],
+  "injected_ambiguity": "rejected"
+}

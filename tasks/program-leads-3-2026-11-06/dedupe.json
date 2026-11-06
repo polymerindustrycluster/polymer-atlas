@@ -1,0 +1,215 @@
+{
+  "candidates": [
+    {
+      "institution": "Macomb Community College",
+      "unitid": "170790",
+      "result": {
+        "query": {
+          "domain": "www.macomb.edu",
+          "name": "Macomb Community College",
+          "street": null,
+          "city": null,
+          "state": null,
+          "zip": null
+        },
+        "stop_at_step": null,
+        "steps": [
+          {
+            "step": 1,
+            "name": "website domain (organizations_*.csv + ecosystem.csv)",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 2,
+            "name": "normalized name vs legal_name/trade_names",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 3,
+            "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+            "skipped": "no --street",
+            "hits": [],
+            "other_localities": []
+          },
+          {
+            "step": 4,
+            "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+            "skipped": null,
+            "hits": []
+          }
+        ]
+      }
+    },
+    {
+      "institution": "Davis Technical College",
+      "unitid": "230162",
+      "result": {
+        "query": {
+          "domain": "www.davistech.edu",
+          "name": "Davis Technical College",
+          "street": null,
+          "city": null,
+          "state": null,
+          "zip": null
+        },
+        "stop_at_step": null,
+        "steps": [
+          {
+            "step": 1,
+            "name": "website domain (organizations_*.csv + ecosystem.csv)",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 2,
+            "name": "normalized name vs legal_name/trade_names",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 3,
+            "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+            "skipped": "no --street",
+            "hits": [],
+            "other_localities": []
+          },
+          {
+            "step": 4,
+            "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+            "skipped": null,
+            "hits": []
+          }
+        ]
+      }
+    },
+    {
+      "institution": "Ogden-Weber Technical College",
+      "unitid": "230490",
+      "result": {
+        "query": {
+          "domain": "www.otech.edu",
+          "name": "Ogden-Weber Technical College",
+          "street": null,
+          "city": null,
+          "state": null,
+          "zip": null
+        },
+        "stop_at_step": null,
+        "steps": [
+          {
+            "step": 1,
+            "name": "website domain (organizations_*.csv + ecosystem.csv)",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 2,
+            "name": "normalized name vs legal_name/trade_names",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 3,
+            "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+            "skipped": "no --street",
+            "hits": [],
+            "other_localities": []
+          },
+          {
+            "step": 4,
+            "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+            "skipped": null,
+            "hits": []
+          }
+        ]
+      }
+    },
+    {
+      "institution": "Northwood Technical College",
+      "unitid": "240198",
+      "result": {
+        "query": {
+          "domain": "www.northwoodtech.edu",
+          "name": "Northwood Technical College",
+          "street": null,
+          "city": null,
+          "state": null,
+          "zip": null
+        },
+        "stop_at_step": null,
+        "steps": [
+          {
+            "step": 1,
+            "name": "website domain (organizations_*.csv + ecosystem.csv)",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 2,
+            "name": "normalized name vs legal_name/trade_names",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 3,
+            "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+            "skipped": "no --street",
+            "hits": [],
+            "other_localities": []
+          },
+          {
+            "step": 4,
+            "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+            "skipped": null,
+            "hits": []
+          }
+        ]
+      }
+    },
+    {
+      "institution": "University of Wisconsin-Milwaukee",
+      "unitid": "240453",
+      "result": {
+        "query": {
+          "domain": "uwm.edu",
+          "name": "University of Wisconsin-Milwaukee",
+          "street": null,
+          "city": null,
+          "state": null,
+          "zip": null
+        },
+        "stop_at_step": null,
+        "steps": [
+          {
+            "step": 1,
+            "name": "website domain (organizations_*.csv + ecosystem.csv)",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 2,
+            "name": "normalized name vs legal_name/trade_names",
+            "skipped": null,
+            "hits": []
+          },
+          {
+            "step": 3,
+            "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+            "skipped": "no --street",
+            "hits": [],
+            "other_localities": []
+          },
+          {
+            "step": 4,
+            "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+            "skipped": null,
+            "hits": []
+          }
+        ]
+      }
+    }
+  ],
+  "held_unitid_matches": []
+}

@@ -1,0 +1,45 @@
+# PROPOSED: owner copies this file to .github/ISSUE_TEMPLATE/ to activate it.
+name: Claim or correct my company record
+description: Suggest a correction to an existing company or establishment record.
+title: "[Company correction] "
+assignees:
+  - LynyrdGrynyrd
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue and your answers will be public. Use public business facts only.
+        Do not include individual emails, direct-dial numbers, home addresses, private documents or credentials.
+        A claim requests review; it does not confer editing access or verify ownership of a record.
+        Submit one field correction per issue. The owner reviews the source before any Atlas change.
+  - type: input
+    id: record_id
+    attributes:
+      label: Record ID
+      description: The ORG- or SITE- identifier shown on the Atlas record.
+      placeholder: ORG-000001 or SITE-000001
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field to correct
+      description: The business field shown on the record, such as website or business street address.
+      placeholder: website
+    validations:
+      required: true
+  - type: textarea
+    id: correct_value
+    attributes:
+      label: Correct value
+      description: The proposed public business fact. Do not include personal contact information.
+    validations:
+      required: true
+  - type: input
+    id: public_source_url
+    attributes:
+      label: Public source URL
+      description: A publicly accessible company page or government record supporting this specific correction.
+      placeholder: https://example.com/locations
+    validations:
+      required: true

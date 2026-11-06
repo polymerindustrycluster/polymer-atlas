@@ -1,0 +1,38 @@
+{
+  "query": {
+    "domain": "peakperformancepolymers.com",
+    "name": "Peak Performance Polymers",
+    "street": "9109 State Route 250 NW",
+    "city": "Strasburg",
+    "state": "OH",
+    "zip": null
+  },
+  "stop_at_step": null,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": null,
+      "hits": []
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": []
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": null,
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": []
+    }
+  ]
+}

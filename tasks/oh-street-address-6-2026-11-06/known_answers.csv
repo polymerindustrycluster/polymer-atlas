@@ -1,0 +1,4 @@
+url,city,expected_street,expected_zip,sha256,result
+https://chardoncp.com/,Chardon,373 Washington St.,44024,69f86117482e93b4eeeff1b3366760a1386a157d29b17e92fba30148f9fa149b,PASS
+https://www.freemansupply.com/,Avon,1101 Moore Road,44011,b3f770220d41b7e47dbe7ed1e92f58c193a1a5d6f14990d31795a5501fab6dec,PASS
+https://www.shinetsusilicones.com/,Akron,1150 Damar Drive,44305-1201,5fc5b13600ecbe3c22c2fbca8e9b96cb3901a5480ae1b8ac2a9f47914a75d54b,PASS

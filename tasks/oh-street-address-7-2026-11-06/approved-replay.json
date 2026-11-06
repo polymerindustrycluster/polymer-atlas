@@ -1,0 +1,14 @@
+{
+  "main_base": "a876ae05196aecef1422c68490ad91b2b6fdf2af",
+  "approved_payload": "b99e6fe1ba074741aac71d6a89f67f72de96b177",
+  "changed_records": 26,
+  "street_fills": 24,
+  "note_suffixes": 6,
+  "evidence_appends": 26,
+  "all_authored_values_identical": true,
+  "all_main_keys_and_legacy_evidence_preserved": true,
+  "round6_streets_preserved": [
+    "SITE-001717",
+    "SITE-001721"
+  ]
+}

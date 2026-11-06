@@ -12,8 +12,8 @@
   "packet_value_rows": 159,
   "packet_organizations": 48,
   "tiers": {
-    "B": 24,
     "A": 22,
+    "B": 24,
     "U": 2
   },
   "new_evidence_rows": 157
