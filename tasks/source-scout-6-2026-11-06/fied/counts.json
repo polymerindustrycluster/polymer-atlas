@@ -1,0 +1,12 @@
+{
+ "unit_rows": 644881,
+ "facilities_all": 502165,
+ "slice_facilities": 20834,
+ "slice_unit_rows": 35566,
+ "slice_naics_prefix_counts": {
+  "3252": 2610,
+  "3255": 4161,
+  "326": 14063
+ },
+ "input_sha256": "b4760df3537a5fa700c3b55730ea3a538ed118412034fe8cfcb14c09dc8a7aba"
+}

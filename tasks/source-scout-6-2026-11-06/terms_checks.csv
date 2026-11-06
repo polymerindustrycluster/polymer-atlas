@@ -1,0 +1,7 @@
+source,url,http_status,quote,raw_words_in_order,observed
+fda,https://www.fda.gov/about-fda/about-website/website-policies,200,"They are in the public domain and may be republished, reprinted and otherwise used freely by anyone without the need to obtain permission from FDA",PASS,2026-11-06
+fied,https://data.openei.org/submissions/6158,200,Content is available under Creative Commons Attribution 4.0 unless otherwise noted,PASS,2026-11-06
+nei,https://edg.epa.gov/data/EPA_Data_License.html,200,all data produced by the U.S EPA is by default in the public domain,PASS,2026-11-06
+ftz,https://catalog.data.gov/search?q=foreign-trade,200,http://www.usa.gov/publicdomain/label/1.0/,PASS,2026-11-06
+dol,https://web.archive.org/web/2026/https://www.dol.gov/general/aboutdol/copyright,200,"Materials created by the federal government are generally part of the public domain and may be used, reproduced and distributed without permission",PASS,2026-11-06
+usaspending,https://raw.githubusercontent.com/fedspendingtransparency/usaspending-api/master/LICENSE,200,CC0 1.0 Universal,PASS,2026-11-06

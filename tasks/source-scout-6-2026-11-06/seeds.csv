@@ -1,0 +1,26 @@
+route,key_contains,url,note
+fda,3031168520,https://cg-labs.com/,SearXNG 2026-11-06 returned the parent C.G. Laboratories site; CG Converting and Packaging is a 2023 joint venture (press release) so the registrant name may not appear on the site
+fda,1226544,https://millstonemedical.com/facilities/fall-river,
+fda,1531174,https://www.norwoodmedical.com/contact-us/,
+fda,1000577893,https://www.himed.com/contact,
+fda,3020703621,https://www.machmedicalcmo.com/contact/,
+fda,3003910212,https://www.gore.com/contact/locations,
+fda,2523835,https://www.alcon.com/,
+fda,3045325156,https://gelsanatherapeutics.com/contact-us/,
+fda,1422572,https://www.paragonmedical.com/about-us/Locations,SearXNG 2026-11-06: Paragon Medical lists 250 Madsen Drive Bloomingdale IL as 'Paragon Medical – Bloomingdale'; the FDA registrant name LaVezzi Precision differs (operator rename or successor not resolved)
+fda,2433012,https://busseinc.com/contact-us/,
+fda,1828288,https://www.orchid-ortho.com/Contact/Locations/Bridgeport-MI,SearXNG 2026-11-06: a job posting says 'Tecomet and Orchid are now one company'; registrant 'Orchid Unique' may be renamed
+fda,2027467,https://atecspine.com/,
+fied,110002099434,https://rutherfordncedc.com/newsdetail_T9_R57.php,secondary source (county EDC): Molding Dynamics' Fairground Road plant was acquired by Alliance Precision Plastics; operator at the FRS address has changed
+fied,110031505645,https://www.lathampool.com/,
+fied,110001532404,https://flexonhose.com/locations/,Flexon's own site lists 366 Frelinghuysen Ave Newark NJ; a 2021 Belleville redevelopment plan says the 630 Washington Ave site formerly housed Flexon Industries (secondary source) - FIED 2017 address looks stale
+fied,110007272735,,SearXNG 2026-11-06: the Webster Rubber Company Plant on Greene St Sabattus is a National Register historic site (Wikipedia); no operating-company site found
+fied,110013358570,,SearXNG 2026-11-06: a 2003 Illinois WARN list shows Jackson Plastics Inc. closing at 3404 Lynch Creek Road Danville (secondary source); FIED 2017 record likely stale
+dol,forbo siegling,https://www.forbo.com/movement/en-us/contact/p26nvr,
+dol,alltrista plastics,https://alltrista.com/greer-sc,
+dol,ebco,https://ebcoinc.com/contact,
+dol,filmtec,https://www.dupont.com/locations.html,
+dol,global packaging,https://www.globalsupplyco.com/contact-us,SearXNG 2026-11-06 found 'Global Supply Company' at the same street address; DOL employer name 'Global Packaging Supply' differs
+usaspending,E8DPL4KSPGU5,https://www.woodward.com/about/locations-and-certifications/,candidate URL from a Bing results page on 2026-11-06 (first discovery pass)
+usaspending,G8X5AYHAEMK8,https://www.uline.com/CustomerService/ContactUs_Menu,candidate URL from a Bing results page on 2026-11-06 (first discovery pass)
+fda,1052728,https://www.invotec.net/products.html,candidate URL from a Bing results page on 2026-11-06 (first discovery pass)
