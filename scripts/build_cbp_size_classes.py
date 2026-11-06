@@ -29,7 +29,7 @@ estab_flag stays 'N'. The total (EST) is always as published.
 
 Filters: NAICS 326, 3261, 3262, 3252, 3259 (CBP stores them padded, e.g.
 '326///'); US (all legal forms), the 50 states + DC, and every Ohio (39) and
-Pennsylvania (42) county that has a row (the PIC-18 counties are inside Ohio).
+Pennsylvania (42) county that has a row (the PIC-12 counties are inside Ohio).
 The county zip is stream-filtered row by row; it is never loaded whole.
 
 Stdlib only. Usage:
@@ -86,16 +86,12 @@ BANDS = OrderedDict([
     ("20-99", ["20_49", "50_99"]),
     ("100+", ["100_249", "250_499", "500_999", "1000plus"]),
 ])
-from regions import PIC18
-
-PIC_COUNTIES = OrderedDict(("39" + fips, name + " County") for fips, name in [
-    ("005", "Ashland"), ("007", "Ashtabula"), ("029", "Columbiana"), ("035", "Cuyahoga"),
-    ("043", "Erie"), ("055", "Geauga"), ("077", "Huron"), ("085", "Lake"),
-    ("093", "Lorain"), ("099", "Mahoning"), ("103", "Medina"), ("133", "Portage"),
-    ("139", "Richland"), ("151", "Stark"), ("153", "Summit"), ("155", "Trumbull"),
-    ("157", "Tuscarawas"), ("169", "Wayne"),
-] if name in PIC18)
-assert {n.removesuffix(" County") for n in PIC_COUNTIES.values()} == set(PIC18)
+PIC12 = OrderedDict([  # county FIPS -> county name as in the Census reference file
+    ("39007", "Ashtabula County"), ("39035", "Cuyahoga County"), ("39055", "Geauga County"),
+    ("39085", "Lake County"), ("39093", "Lorain County"), ("39099", "Mahoning County"),
+    ("39103", "Medina County"), ("39133", "Portage County"), ("39151", "Stark County"),
+    ("39153", "Summit County"), ("39155", "Trumbull County"), ("39169", "Wayne County"),
+])
 # Top-15 NAICS 326 gap states, in the rank order of docs/denominators/README.md
 # ("Top 15 areas by gap (QCEW minus strict Atlas), NAICS 326").
 TOP15 = ["CA", "TX", "FL", "MI", "IL", "GA", "IN", "WI", "NY", "NC", "SC", "NJ", "TN", "MN", "MO"]
@@ -170,10 +166,10 @@ def build(raw_dir):
         paths[key] = ensure(raw_dir, zname, BASE + zname)
     names_path = ensure(raw_dir, COUNTY_NAMES_FILE, COUNTY_NAMES_URL)
     cnames = load_county_names(names_path)
-    for fips, nm in PIC_COUNTIES.items():
+    for fips, nm in PIC12.items():
         got = cnames.get(fips, ("<missing>", ""))[0]
         if got != nm:
-            sys.exit("ABORT: PIC-18 FIPS %s expected %r, Census reference file says %r" % (fips, nm, got))
+            sys.exit("ABORT: PIC-12 FIPS %s expected %r, Census reference file says %r" % (fips, nm, got))
 
     out = []  # one dict per output row
     seen = set()
@@ -341,27 +337,27 @@ def tables_md(out):
                  " | ".join(fmt(d["cells"][s]) for _c, s, _l in SIZES), resid))
     L.append("")
 
-    # 4. PIC-18
-    L.append("#### Table 4. PIC-18 counties, NAICS 326, CBP 2023: share of establishments by band\n")
-    L.append("Unit and filter: **share of employer establishments**, NAICS 326, all legal forms, county-level CBP rows (the county file has no legal-form column). The `PIC-18 sum` row adds the 18 counties' published cells; its `N`-cell residual is summed over counties, so its bounds are for the sum of published county rows. Bounds as in Table 3.\n")
+    # 4. PIC-12
+    L.append("#### Table 4. PIC-12 counties, NAICS 326, CBP 2023: share of establishments by band\n")
+    L.append("Unit and filter: **share of employer establishments**, NAICS 326, all legal forms, county-level CBP rows (the county file has no legal-form column). The `PIC-12 sum` row adds the 12 counties' published cells; its `N`-cell residual is summed over counties, so its bounds are for the sum of published county rows. Bounds as in Table 3.\n")
     L.append(hdr_band)
-    pic_fips = list(PIC_COUNTIES)
-    for f in pic_fips:
+    fips12 = list(PIC12)
+    for f in fips12:
         parts, miss = parts_for(idx, "county", [f], "326")
-        label = "%s (%s)" % (PIC_COUNTIES[f].replace(" County", ""), f)
+        label = "%s (%s)" % (PIC12[f].replace(" County", ""), f)
         L.append(band_row(label, parts) if parts else "| %s | no row | | | | |" % label)
-    parts, miss = parts_for(idx, "county", pic_fips, "326")
-    L.append(band_row("**PIC-18 sum** (%d of 18 counties with a row)" % len(parts), parts))
+    parts, miss = parts_for(idx, "county", fips12, "326")
+    L.append(band_row("**PIC-12 sum** (%d of 12 counties with a row)" % len(parts), parts))
     L.append("")
-    L.append("#### Table 4b. PIC-18 counties, NAICS 326, CBP 2023: establishments by size class\n")
+    L.append("#### Table 4b. PIC-12 counties, NAICS 326, CBP 2023: establishments by size class\n")
     L.append("Unit and filter: **employer establishments**, NAICS 326, all legal forms. `N` is not zero.\n")
     L.append("| County (FIPS) | EST | <5 | 5-9 | 10-19 | 20-49 | 50-99 | 100-249 | 250-499 | 500-999 | 1000+ | In N cells |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
     tot = {s: 0 for _c, s, _l in SIZES}
     tn = {s: False for _c, s, _l in SIZES}
     est_t = resid_t = 0
-    for f in pic_fips:
+    for f in fips12:
         d = idx.get(("county", f, "326"))
-        label = "%s (%s)" % (PIC_COUNTIES[f].replace(" County", ""), f)
+        label = "%s (%s)" % (PIC12[f].replace(" County", ""), f)
         if d is None:
             L.append("| %s | no row |" % label)
             continue
@@ -374,7 +370,7 @@ def tables_md(out):
             else:
                 tot[s] += v
         L.append("| %s | %s | %s | %s |" % (label, d["est"], " | ".join(fmt(d["cells"][s]) for _c, s, _l in SIZES), resid))
-    L.append("| **PIC-18 sum of published cells** | **%s** | %s | %s |" % (
+    L.append("| **PIC-12 sum of published cells** | **%s** | %s | %s |" % (
         est_t, " | ".join(("%s%s" % (tot[s], "+N" if tn[s] else "")) for _c, s, _l in SIZES), resid_t))
     L.append("")
     L.append("`+N` in the sum row marks a class where at least one county cell is `N`, so the figure is a published-cells-only lower bound.\n")

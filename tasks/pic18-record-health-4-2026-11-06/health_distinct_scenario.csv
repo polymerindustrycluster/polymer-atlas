@@ -51,7 +51,7 @@ ORG-000074,MRP Solutions,0,0,0,0,,0,1
 ORG-000077,Mantaline Corp.,0,0,0,0,,0,1
 ORG-000078,Giesecke+Devrient America,0,0,0,1,,1,0
 ORG-000080,Ace Plastics,1,0,0,0,,1,0
-ORG-000081,"Novex Operating Company, LLC",0,0,0,1,,1,0
+ORG-000081,"Novex Operating Company, LLC",0,0,0,0,,0,1
 ORG-000082,"Merryweather Foam, Inc.",0,0,0,0,,0,1
 ORG-000083,"Michael Day Enterprises, LLC",0,0,0,0,,0,1
 ORG-000085,"Ohio Precision Molding, Inc.",0,0,0,0,,0,1
@@ -167,7 +167,7 @@ ORG-000289,"Corrosion Resistant Technologies, Inc.",0,0,0,1,,1,0
 ORG-000290,Cosmo Corporation,0,0,0,0,,0,1
 ORG-000291,Creative Packaging Concepts,0,0,0,0,,0,1
 ORG-000293,"Creative Millwork of Ohio, Inc.",0,0,0,0,,0,1
-ORG-000296,Dalton Manufacturing and Consulting Group,0,0,0,1,,1,0
+ORG-000296,Dalton Manufacturing and Consulting Group,0,0,0,0,,0,1
 ORG-000299,DCA Construction Products,0,0,0,0,,0,1
 ORG-000301,DEM Manufacturing LLC,0,0,0,0,,0,1
 ORG-000302,"DermaMed Coatings Company, LLC",0,0,0,0,,0,1
@@ -192,7 +192,7 @@ ORG-000333,Evans Industries,0,0,0,0,,0,1
 ORG-000336,Extrudex,0,0,0,0,,0,1
 ORG-000340,"Flambeau, Inc.",0,0,0,0,,0,1
 ORG-000341,"Flavorseal, LLC",0,0,0,0,,0,1
-ORG-000343,Flexsys America L.P.,0,0,0,1,,1,0
+ORG-000343,Flexsys America L.P.,0,0,0,0,,0,1
 ORG-000344,"Fomo Products, Inc.",0,0,0,0,,0,1
 ORG-000345,Forest City Technologies,0,0,0,0,,0,1
 ORG-000347,Four Seasons Industries,0,0,0,0,,0,1
@@ -201,7 +201,7 @@ ORG-000351,"Gem City Plastic Machinery, Inc.",0,0,0,1,,1,0
 ORG-000352,General Color & Chemical,0,0,0,0,,0,1
 ORG-000354,GMR Companies,0,0,0,0,,0,1
 ORG-000355,Godfrey & Wing,0,0,0,0,,0,1
-ORG-000358,GRAFIX,0,0,0,1,,1,0
+ORG-000358,GRAFIX,0,0,0,0,,0,1
 ORG-000361,"H & B Machine & Tool Co., Inc.",0,0,0,0,,0,1
 ORG-000363,"Hanlon Composites, LLC",0,0,0,1,,1,0
 ORG-000365,Harrison Machine & Plastic Corp.,0,0,0,0,,0,1
@@ -218,7 +218,7 @@ ORG-000389,"J.J. White Products, Inc.",0,0,0,1,,1,0
 ORG-000390,J & O Plastics Inc.,0,0,0,0,,0,1
 ORG-000391,JACO Manufacturing Co.,0,0,0,0,,0,1
 ORG-000392,Jaco Products Co.,0,0,0,0,,0,1
-ORG-000395,Jet Dock Systems,0,0,0,1,,1,0
+ORG-000395,Jet Dock Systems,0,0,0,0,,0,1
 ORG-000396,JK Plastics,0,0,0,0,,0,1
 ORG-000397,Johnson Brothers Rubber Co.,0,0,0,0,,0,1
 ORG-000399,"Joslyn Manufacturing Co., Inc.",0,0,0,0,,0,1
@@ -248,8 +248,8 @@ ORG-000438,Mexichem Specialty Resins Inc.,0,0,0,0,,0,1
 ORG-000439,Mickey Thompson Performance Tires & Wheels,0,0,0,1,,1,0
 ORG-000441,Mid-west Poly Pak,0,0,0,1,,1,0
 ORG-000442,"Middlefield Plastics, Inc.",0,0,0,0,,0,1
-ORG-000444,Midwest Industrial Products Corporation,0,0,0,1,,1,0
-ORG-000446,"MMI Textiles, Inc.",0,0,0,1,,1,0
+ORG-000444,Midwest Industrial Products Corporation,0,0,0,0,,0,1
+ORG-000446,"MMI Textiles, Inc.",0,0,0,0,,0,1
 ORG-000449,Aptyx,0,0,0,0,,0,1
 ORG-000450,"Molded Extruded Specialties, Div. of Frank Novak & Sons, Inc.",0,0,0,0,,0,1
 ORG-000451,Molded Fiber Glass Companies,0,0,0,0,,0,1
@@ -260,7 +260,7 @@ ORG-000460,Newko Polymers,0,0,0,0,,0,1
 ORG-000462,Next Dimension Components (current trade name unresolved,0,0,0,0,,0,1
 ORG-000464,"Nippon Paint Automotive Americas, Inc.",0,0,0,0,,0,1
 ORG-000469,"Northeastern Plastics International, Inc.",0,0,0,0,,0,1
-ORG-000470,Nova TLC,0,0,0,1,,1,0
+ORG-000470,Nova TLC,0,0,0,0,,0,1
 ORG-000471,Novis Works LLC,0,0,0,0,,0,1
 ORG-000473,Oldcastle Infrastructure (IPG,0,0,0,0,,0,1
 ORG-000474,ORBIS Corporation,0,0,0,0,,0,1
@@ -364,7 +364,7 @@ ORG-000665,"Amcor Flexibles North America, Inc.",0,0,0,0,,0,1
 ORG-000666,American Colors Inc.,0,0,0,0,,0,1
 ORG-000683,"Bostik, Inc.",0,0,0,0,,0,1
 ORG-000684,ASK Chemicals LP,0,0,0,0,,0,1
-ORG-000688,Autoneum,0,0,0,1,,1,0
+ORG-000688,Autoneum,0,0,0,0,,0,1
 ORG-000697,"Ball, Bounce and Sport, Inc.",0,0,0,1,,1,0
 ORG-000698,BASF Corporation,0,0,0,0,,0,1
 ORG-000706,Bob Sumerel Tire Co,0,0,0,0,,0,1
@@ -390,7 +390,7 @@ ORG-000902,"Premere Enterprises, Inc.",0,0,0,0,,0,1
 ORG-000909,"Jerico Plastic Industries, Inc.",0,0,0,0,,0,1
 ORG-000911,Johns Manville,0,1,0,0,ORG-002913,1,0
 ORG-000913,JP Industrial Products,0,0,0,0,,0,1
-ORG-000917,Kar-Del Plastics Inc.,0,0,0,1,,1,0
+ORG-000917,Kar-Del Plastics Inc.,0,0,0,0,,0,1
 ORG-000927,Prettl PMA,0,0,0,1,,1,0
 ORG-000947,Mason Color Works,0,0,0,0,,0,1
 ORG-000955,Meteor Sealing Systems,0,0,0,0,,0,1
@@ -458,8 +458,8 @@ ORG-001472,ChemMasters Inc.,0,0,0,0,,0,1
 ORG-001475,"ChromaScape, Inc.",0,0,0,0,,0,1
 ORG-001477,Aurora Material Solutions,0,0,0,0,,0,1
 ORG-001479,O2 RegenTech LLC,1,0,0,0,,1,0
-ORG-001490,Chardon Custom Polymers,0,0,0,1,,1,0
-ORG-001506,"ValenSil Technologies, LLC",0,0,0,1,,1,0
+ORG-001490,Chardon Custom Polymers,0,0,0,0,,0,1
+ORG-001506,"ValenSil Technologies, LLC",0,0,0,0,,0,1
 ORG-001526,"Viscus Biologics, LLC",0,0,0,1,,1,0
 ORG-001528,Mabel Dental Lab,0,0,0,0,,0,1
 ORG-001565,Automation Plastics Corporation,0,0,0,0,,0,1
@@ -476,13 +476,13 @@ ORG-001590,Therm-O-Link Inc,1,0,0,0,,1,0
 ORG-001591,Winsell Incorporated,0,0,0,0,,0,1
 ORG-001593,Amros Industries Inc,0,0,0,0,,0,1
 ORG-001595,Eleven 10 LLC,0,0,0,1,,1,0
-ORG-001597,International Technical Polymer Systems Inc,0,0,0,1,,1,0
-ORG-001598,J B Jewitt Co Inc,0,0,0,1,,1,0
+ORG-001597,International Technical Polymer Systems Inc,0,0,0,0,,0,1
+ORG-001598,J B Jewitt Co Inc,0,0,0,0,,0,1
 ORG-001599,MultiPlast Systems Inc,0,0,0,0,,0,1
 ORG-001600,North Shore Strapping Company,0,0,0,0,,0,1
 ORG-001601,Pison Stream Solutions Inc,1,0,0,0,,1,0
 ORG-001602,Royal Powder Corp,0,0,0,0,,0,1
-ORG-001603,Speedline Corporation,0,0,0,1,,1,0
+ORG-001603,Speedline Corporation,0,0,0,0,,0,1
 ORG-001609,"Morgan Adhesives Company, LLC",0,0,0,0,,0,1
 ORG-001619,SOPREMA Inc,0,0,0,0,,0,1
 ORG-001622,ABSOLUTE POLYMERS INC,0,0,0,0,,0,1
@@ -525,7 +525,7 @@ ORG-001701,Cru Performance Coatings LLC,0,0,0,0,,0,1
 ORG-001703,"Premier Aerosol Packaging, Inc.",0,0,0,1,,1,0
 ORG-001707,Dyna Flex Inc,0,0,0,0,,0,1
 ORG-001708,ECM Performance Materials Corp,1,0,0,1,,2,0
-ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),0,0,0,1,,1,0
+ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),0,0,0,0,,0,1
 ORG-001714,"AML Industries, Inc.",0,0,0,1,,1,0
 ORG-001715,"Axion Labs, Inc.",0,0,0,0,,0,1
 ORG-001716,"Firestone Polymers, LLC",0,0,1,0,,1,0
