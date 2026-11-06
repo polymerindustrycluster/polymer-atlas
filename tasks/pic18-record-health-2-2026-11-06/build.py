@@ -30,7 +30,11 @@ def main():
  vocab=json.loads((ROOT/'docs/schema/vocab.json').read_text())['vocabularies']
  paths={p:read(p) for p in sorted(a.data_dir.glob('organizations_*.csv')) if not p.name.endswith('_all.csv')}
  org={r['org_id']:(p,r) for p,rows in paths.items() for r in rows}
- ev={r['evidence_id']:r for p in a.data_dir.glob('evidence_*.csv') for r in read(p)}
+ ev={}
+ for path in a.data_dir.glob('evidence_*.csv'):
+  for row in read(path):
+   assert row['evidence_id'] not in ev, 'duplicate global evidence ID'
+   ev[row['evidence_id']]=(path,row)
  pending=defaultdict(list);touched=set()
  for e in edits:
   assert e['field'] in {'processes','materials'}
@@ -42,7 +46,7 @@ def main():
  for r in packet:
   path=a.data_dir/('evidence_'+org[r['record_id']][0].name)
   fields=list(read(path)[0]);entry={k:r[k] for k in fields}
-  if r['evidence_id'] in ev:assert ev[r['evidence_id']]==entry,'evidence collision'
+  if r['evidence_id'] in ev:assert ev[r['evidence_id']]==(path,entry),'evidence collision or wrong shard'
   else:pending[path].append(entry)
  for path in touched:write(path,paths[path])
  for path,rows in pending.items():append_sorted(path,rows,'evidence_id')

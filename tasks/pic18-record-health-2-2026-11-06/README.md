@@ -40,3 +40,5 @@ Grok2 REFUTE fixed:JJWhitecustomer-nylonfabric doesnotsettleownnylonresinclaim. 
 Controllerrequestedrefresh atopapprovedfirstPR931e7ec8b0d7e1285efc2dbd9e60b7ddb5af53f1:allparentdata+this18-cell/22-EVDpacketreplayed;exactdelta baselineupdated. JJWhiteholdretained. Finalfamilyrereviewsstillpendinged5e456revision.
 
 Controllerrequestedrefresh atopapproved154 f078dd58fc7134594f0b7a9e75fb522f7315f935:takeparentdata+unchanged18-cell22-EVDpacket. Checkbaselineupdated;JJholdretained. Currentmainprojectionincludes133and154;historicalstandaloneT1countsareseparatebaselines. No newclaims.
+
+Sibling172Codex preflight finding applied here:global evidence retains shard path and rejects identical payload in the wrong shard,not just different content. Temporary EVD170012OH→DE fixture rejected with all hashes unchanged. Data packet remains18 cells/22 evidence,JJWhite held. This builder correction is included in final pending review.
