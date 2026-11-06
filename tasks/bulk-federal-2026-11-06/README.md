@@ -142,8 +142,7 @@ EPA national Exporter reconciled **3,233,462 CSV rows**, including blank FRS IDs
 raw bytes 446,459,497; SHA-256
 `db39e0733204652f1016f0f2b9b66f3e5cc53caeca328214351233b2b3aba90a`.
 Three live EPA known answers passed through the installed plain-JSON index with
-new compressed/legacy-compatible lookup code. SEC is being reindexed with the
-post-refute duplicate-key guard before the final live gate.
+new compressed/legacy-compatible lookup code. SEC was reindexed with the post-refute duplicate-key guard and full compressed filer payloads before the final live gate.
 
 Live lookup timing exposed costly reconstruction of the million-member SEC ZIP
 central directory on every CIK lookup. The index now stores the full compressed
@@ -155,3 +154,54 @@ records after the direct-payload change. Fixed by explicitly rejecting that lega
 format with `rebuild --sources sec` guidance; regression checks both CIK and ticker
 APIs. Full-payload indexes return complete records, and prior plain-JSON row
 encoding remains readable. An old pointer cache never reports partial success.
+
+Codex clerk-6 final **APPROVE**, implementation `764190b`: independently reran
+cross-version legacy-cache reproducer and all 11 targeted tests; prior malformed
+imports preserve SQLite byte-for-byte; validator and row-loss guard pass. Approval
+covers code, not a claim that live national cache checks were run by the reviewer.
+Report: controller storage `reviews/bulk-federal-clerk-codex-6.md`.
+
+Final full-payload SEC cache live known answers passed: Apple `320193`/`AAPL`,
+Microsoft `789019`/`MSFT`, Tesla `1318605`/`TSLA`, with full `filings` present.
+Six lookups took **0.00766 seconds total** on this host (measurement of lookup
+cost, not merely record presence; rerun via the live gate for current timing).
+
+Final named deterministic checks on implementation `764190b`:
+
+- `uv run --with pytest python3 -m pytest -q scripts/`: **242 passed,
+  1 pre-existing skip, 45 subtests passed** (70.37 seconds). The existing skip is
+  `test_atlas_cli`'s real-data-presence guard; the T2 tests do not skip sources.
+- `uv run --with pytest python3 -m pytest -q scripts/test_bulk_sources.py`:
+  **11 passed**, including injected duplicate-key, empty-issuer, legacy-cache,
+  malformed-row, bad-count, truncated-download and Census ID mismatch defects.
+- `python3 scripts/validate.py`: **OK — validation passed, 0 errors**.
+- `python3 scripts/check_row_loss.py --base origin/main`: **OK — no keyed data row removed**.
+
+GLEIF LEI-CDF national snapshot (2026-11-06 08:00 release): **3,486,713 LEI CSV rows**,
+matching independent CSV reread, SQLite yield and the release's published count
+exactly. Raw bytes 508,236,315; SHA-256
+`3d260ca09809d6a2113b28fdbc004da4f028ebc6eb30499fda329b33881319ea`.
+
+Grok clerk-6 final **APPROVE**, implementation `764190b`, **0 findings**:
+11 tests pass; independently checked BLOB legacy-pointer rejection, nested
+`filings.member` acceptance and a live Apple SEC object against the parser.
+Prior malformed-input guards remain covered. Source SHA-256
+`69a05e485ec11f8834eb3e8537842514736cddc73f42093647695e8bb2240cd9`.
+Approval covers the code; this clerk did not run the national live gate.
+Report: controller storage `reviews/bulk-federal-clerk-grok-6.md`.
+
+GLEIF RR-CDF national snapshot (same 2026-11-06 08:00 release): **492,848 relationship
+CSV rows**, matching independent reread, SQLite yield and published count exactly.
+Raw bytes 24,492,270; SHA-256
+`f584f3d9227f6328d1c3a5ac8c118720fa44d3459dc307782b05fc8f06718f75`.
+
+`python3 tasks/bulk-federal-2026-11-06/check.py`: **PASS**, all five snapshots
+required and inspected; raw sizes and SHA-256 rechecked, source/SQLite counts
+reconciled, three FRS + three SEC + three LEI known answers and the independently
+verified Google→Alphabet relationship pass. Six SEC lookups: **0.005858 seconds**.
+Final live Census headquarters recheck: **PASS Match/Exact**, ID parity and bounds.
+
+**Holds: none.** Source coverage limitations above remain: these snapshots do not
+settle Atlas identity, scope, status, tier or parent/operator decisions. No canonical
+rows were changed. Existing full cache occupies about 30 GiB on this host; raw
+snapshots and complete indexes are external artifacts, never PR contents.
