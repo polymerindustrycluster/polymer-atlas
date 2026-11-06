@@ -37,13 +37,10 @@ if __name__=='__main__':
     rows=[r for r in csv.DictReader(open(HERE/'verdicts.csv')) if r['verdict']=='VERIFIED']
     assert rows and len({r['org_id'] for r in rows})==len(rows)
     actual={r['org_id']:r for path in (ROOT/'data').glob('organizations_*.csv') if path.name!='organizations_all.csv' for r in csv.DictReader(open(path))}
-    import sys
-    sys.path.insert(0,str(ROOT/'scripts'))
-    from regions import PIC18
-    pic={r['org_id'] for path in (ROOT/'data').glob('sites_*.csv') if path.name!='sites_all.csv' for r in csv.DictReader(open(path)) if r['state']=='OH' and r['county'].removesuffix(' County') in PIC18}
     for r in rows:
-        assert r['org_id'] in pic
-        a=actual[r['org_id']]; assert a['status']=='active' and not a['tier1_qualifier']
+        a=actual[r['org_id']]; assert a['status']=='active'
+        website=a['website'] if '://' in a['website'] else 'https://'+a['website']
+        assert website==r['website'],(r['org_id'],'current canonical website mismatch')
         assert all(a[col]==r[col] for col in ('newsroom_url','newsroom_feed_url')),(r['org_id'],'builder not applied')
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool: result=list(pool.map(check,rows))
     (HERE/'refetch.json').write_text(json.dumps(result,indent=2)+'\n')

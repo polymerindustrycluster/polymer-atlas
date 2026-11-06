@@ -1,0 +1,601 @@
+org_id,kind,source_ref,final_url,http_status,availability,raw_path,error
+ORG-000078,sitemap,https://gi-de.com/sitemap.xml,https://www.gi-de.com/sitemap.xml,200,available,raw/ORG-000078/8c4647ccabe0.txt,
+ORG-000078,home,https://gi-de.com,https://www.gi-de.com/en/,200,available,raw/ORG-000078/93a371ce8df9.txt,
+ORG-000078,product_or_capability,https://www.gi-de.com/en/about-us/press,https://www.gi-de.com/en/about-us/press,200,available,raw/ORG-000078/4a3edba0863b.txt,
+ORG-000078,product_or_capability,https://www.gi-de.com/en/about-us/company,https://www.gi-de.com/en/about-us/company,200,available,raw/ORG-000078/589ea61d02c6.txt,
+ORG-000078,pdf,https://www.gi-de.com/corporate/Group/Downloaddokumente/Annual_reports/G_D_GB2020_E.pdf,https://www.gi-de.com/corporate/Group/Downloaddokumente/Annual_reports/G_D_GB2020_E.pdf,200,available,raw/ORG-000078/af8bf6373e38.txt, 
+ORG-000078,pdf,https://www.gi-de.com/corporate/Group/Downloaddokumente/Annual_reports/G_D_GB2019_E.pdf,https://www.gi-de.com/corporate/Group/Downloaddokumente/Annual_reports/G_D_GB2019_E.pdf,200,available,raw/ORG-000078/8a2f75384ccc.txt, 
+ORG-000078,targeted_product_followup,https://www.gi-de.com/en/industries/payment/eco-innovations,https://www.gi-de.com/en/industries/payment/eco-innovations,404,failed_or_empty,raw/ORG-000078/a12792e23e6d.txt,
+ORG-000207,sitemap,https://realtruck.com/sitemap.xml,https://realtruck.com/sitemap.xml,404,failed_or_empty,raw/ORG-000207/e325b162d622.txt,
+ORG-000207,home,https://realtruck.com/,https://realtruck.com/,202,failed_or_empty,raw/ORG-000207/82367823d8f5.txt,
+ORG-000207,jina_home,https://r.jina.ai/https://realtruck.com/,https://r.jina.ai/https://realtruck.com/,401,failed_or_empty,raw/ORG-000207/b1ba832f37f3.txt,
+ORG-000207,product_probe,https://realtruck.com/products/,https://realtruck.com/products/,404,failed_or_empty,raw/ORG-000207/f7fdeb08ef27.txt,
+ORG-000207,product_or_capability,https://realtruck.com/new-products/,https://realtruck.com/new-products/,200,available,raw/ORG-000207/dfe3c66733b4.txt,
+ORG-000207,product_or_capability,https://realtruck.com/about-realtruck/,https://realtruck.com/about-realtruck/,200,available,raw/ORG-000207/c2c4462069da.txt,
+ORG-000249,sitemap,https://www.bmsburns.com/sitemap.xml,https://www.bmsburns.com/sitemap_index.xml,200,available,raw/ORG-000249/ede33deaf6cf.txt,
+ORG-000249,home,https://www.bmsburns.com/,https://www.bmsburns.com/,200,available,raw/ORG-000249/89b22df33047.txt,
+ORG-000249,product_or_capability,https://bmsburns.com/about-bms/,https://www.bmsburns.com/about-bms/,200,available,raw/ORG-000249/5f640fad5560.txt,
+ORG-000249,product_or_capability,https://www.bmsburns.com/products/,https://www.bmsburns.com/products/,200,available,raw/ORG-000249/524ccc8ebd18.txt,
+ORG-000249,product_or_capability,https://www.bmsburns.com/about-bms/,https://www.bmsburns.com/about-bms/,200,available,raw/ORG-000249/8d706f55ccf7.txt,
+ORG-000249,product_or_capability,https://www.bmsburns.com/products/feed/,https://www.bmsburns.com/products/feed/,200,available,raw/ORG-000249/e5f373e04c0b.txt,
+ORG-000266,sitemap,https://www.cermetech.com/sitemap.xml,https://www.cermetech.com/sitemap.xml,200,available,raw/ORG-000266/05493aabcb84.txt,
+ORG-000266,home,https://www.cermetech.com,https://www.cermetech.com/,200,available,raw/ORG-000266/2cffbc65a202.txt,
+ORG-000266,product_or_capability,https://www.cermetech.com/about,https://www.cermetech.com/about,200,available,raw/ORG-000266/c6b2e2dcffc1.txt,
+ORG-000266,product_or_capability,https://www.cermetech.com/products,https://www.cermetech.com/products,200,available,raw/ORG-000266/6d7937365fcf.txt,
+ORG-000266,product_probe,https://www.cermetech.com/products/,https://www.cermetech.com/products/,200,available,raw/ORG-000266/5c547fa06a6b.txt,
+ORG-000266,sitemap_probe,https://www.cermetech.com/wp-sitemap.xml,https://www.cermetech.com/wp-sitemap.xml,404,failed_or_empty,raw/ORG-000266/6181abea9851.txt,
+ORG-000286,sitemap,https://www.containercompliance.com/sitemap.xml,https://www.containercompliance.com/sitemap.xml,200,available,raw/ORG-000286/5eb9b9dd35ad.txt,
+ORG-000286,home,https://www.containercompliance.com/,https://www.containercompliance.com/,200,available,raw/ORG-000286/431c5970a203.txt,
+ORG-000286,pdf,https://www.containercompliance.com/pdfs/2024 Member Certificate CCC.pdf,https://www.containercompliance.com/pdfs/2024 Member Certificate CCC.pdf,000,failed_or_empty,raw/ORG-000286/09a3cb47837c.txt,curl: (3) URL rejected: Malformed input to a URL function
+ORG-000286,product_or_capability,https://www.containercompliance.com/about.htm,https://www.containercompliance.com/about.htm,200,available,raw/ORG-000286/bfc1434198a8.txt,
+ORG-000286,pdf,https://www.containercompliance.com/disclosure.pdf,https://www.containercompliance.com/disclosure.pdf,200,failed_or_empty,raw/ORG-000286/de30f932283e.txt, 
+ORG-000286,product_or_capability,https://www.containercompliance.com/retail-about-us.html,https://www.containercompliance.com/retail-about-us.html,200,available,raw/ORG-000286/04bf51fcd6db.txt,
+ORG-000289,sitemap,https://www.corrosionresistanttech.com/sitemap.xml,https://www.corrosionresistanttech.com/sitemap.xml,404,failed_or_empty,raw/ORG-000289/2682b1e76103.txt,
+ORG-000289,home,https://www.corrosionresistanttech.com/,https://www.corrosionresistanttech.com/,200,available,raw/ORG-000289/68a98fa18773.txt,
+ORG-000289,product_or_capability,https://www.corrosionresistanttech.com/about.shtml,https://www.corrosionresistanttech.com/about.shtml,200,available,raw/ORG-000289/d9dbda5205c2.txt,
+ORG-000289,product_probe,https://www.corrosionresistanttech.com/products/,https://www.corrosionresistanttech.com/products/,404,failed_or_empty,raw/ORG-000289/82ab0327bedb.txt,
+ORG-000289,sitemap_probe,https://www.corrosionresistanttech.com/wp-sitemap.xml,https://www.corrosionresistanttech.com/wp-sitemap.xml,404,failed_or_empty,raw/ORG-000289/a130804e95b7.txt,
+ORG-000289,product_probe,https://www.corrosionresistanttech.com/capabilities/,https://www.corrosionresistanttech.com/capabilities/,404,failed_or_empty,raw/ORG-000289/d583d9c36ed2.txt,
+ORG-000318,sitemap,https://mustee.com/sitemap.xml,https://mustee.com/sitemap_index.xml,200,available,raw/ORG-000318/15b6ed95c640.txt,
+ORG-000318,home,https://mustee.com/,https://mustee.com/,200,available,raw/ORG-000318/69bf46467410.txt,
+ORG-000318,product_or_capability,https://mustee.com/about-mustee/,https://mustee.com/about-mustee/,200,available,raw/ORG-000318/e4832b129bd6.txt,
+ORG-000318,product_or_capability,https://mustee.com/product-sitemap.xml,https://mustee.com/product-sitemap.xml,200,available,raw/ORG-000318/4ac25beec923.txt,
+ORG-000318,product_or_capability,https://mustee.com/product-literature/,https://mustee.com/product-literature/,200,available,raw/ORG-000318/0452d13ca9f6.txt,
+ORG-000318,pdf,https://mustee.com/wp-content/uploads/2026/02/Rev01-26_ELM_LPC-14_6.pdf,https://mustee.com/wp-content/uploads/2026/02/Rev01-26_ELM_LPC-14_6.pdf,200,available,raw/ORG-000318/a7dfdfd8e65c.txt, 
+ORG-000351,sitemap,https://www.gemcity1.com/sitemap.xml,https://www.gemcity1.com/sitemap.xml,200,failed_or_empty,raw/ORG-000351/176041622491.txt,
+ORG-000351,home,https://www.gemcity1.com/,https://www.gemcity1.com/,200,available,raw/ORG-000351/3ab19bcf9b5b.txt,
+ORG-000351,product_or_capability,https://www.gemcity1.com/product-lines,https://www.gemcity1.com/product-lines,200,available,raw/ORG-000351/558ac108a27f.txt,
+ORG-000351,pdf,https://www.gemcity1.com/_files/ugd/1cf5f3_a4ca8143bde1473db16b45bfbf445437.pdf,https://www.gemcity1.com/_files/ugd/1cf5f3_a4ca8143bde1473db16b45bfbf445437.pdf,200,available,raw/ORG-000351/107d803d3c28.txt, 
+ORG-000351,product_or_capability,https://www.gemcity1.com/process-cooling,https://www.gemcity1.com/process-cooling,200,available,raw/ORG-000351/57af201de6d4.txt,
+ORG-000351,product_or_capability,https://www.gemcity1.com/maguire-products,https://www.gemcity1.com/maguire-products,200,available,raw/ORG-000351/503aec04d941.txt,
+ORG-000363,sitemap,https://www.hanloncomposites.com/sitemap.xml,https://www.hanloncomposites.com/sitemap.xml,000,failed_or_empty,raw/ORG-000363/398ed5e20897.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-000363,home,https://www.hanloncomposites.com/,https://www.hanloncomposites.com/,000,failed_or_empty,raw/ORG-000363/1819126aa905.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-000363,jina_home,https://r.jina.ai/https://www.hanloncomposites.com/,https://r.jina.ai/https://www.hanloncomposites.com/,401,failed_or_empty,raw/ORG-000363/e30c8cbcb1e6.txt,
+ORG-000363,product_probe,https://www.hanloncomposites.com/products/,https://www.hanloncomposites.com/products/,000,failed_or_empty,raw/ORG-000363/02206edb0311.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-000363,sitemap_probe,https://www.hanloncomposites.com/wp-sitemap.xml,https://www.hanloncomposites.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-000363/0950f0fb26e9.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-000363,product_probe,https://www.hanloncomposites.com/capabilities/,https://www.hanloncomposites.com/capabilities/,000,failed_or_empty,raw/ORG-000363/1b4d9be674c9.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-000379,sitemap,https://goodyearairsprings.com/sitemap.xml,https://goodyearairsprings.com/sitemap.xml,200,failed_or_empty,raw/ORG-000379/feb7ac155ef6.txt,
+ORG-000379,home,https://goodyearairsprings.com/,https://goodyearairsprings.com/,403,failed_or_empty,raw/ORG-000379/1cba0bcd3479.txt,
+ORG-000379,jina_home,https://r.jina.ai/https://goodyearairsprings.com/,https://r.jina.ai/https://goodyearairsprings.com/,401,failed_or_empty,raw/ORG-000379/2a2d134abdfd.txt,
+ORG-000379,sitemap_child,https://goodyearairsprings.com/default-sitemap.xsl?sitemap=root,https://goodyearairsprings.com/default-sitemap.xsl?sitemap=root,403,failed_or_empty,raw/ORG-000379/4891c968ccdd.txt,
+ORG-000379,product_probe,https://goodyearairsprings.com/products/,https://goodyearairsprings.com/products/,403,failed_or_empty,raw/ORG-000379/e6d4826d29f1.txt,
+ORG-000379,sitemap_probe,https://goodyearairsprings.com/wp-sitemap.xml,https://goodyearairsprings.com/sitemap.xml,200,failed_or_empty,raw/ORG-000379/eb075be4a62e.txt,
+ORG-000400,sitemap,https://soilmoist.com/sitemap.xml,https://soilmoist.com/sitemap.xml,200,available,raw/ORG-000400/1e295e397e3c.txt,
+ORG-000400,home,https://soilmoist.com/,https://soilmoist.com/,200,available,raw/ORG-000400/afaf2c411b49.txt,
+ORG-000400,pdf,http://www.soilmoist.com/forms/Form_181.pdf,https://www.soilmoist.com/forms/Form_181.pdf,200,available,raw/ORG-000400/5def3b6e0c21.txt, 
+ORG-000400,pdf,http://www.soilmoist.com/forms/Form_180.pdf,https://www.soilmoist.com/forms/Form_180.pdf,200,available,raw/ORG-000400/6e8264aa7449.txt, 
+ORG-000400,pdf,http://www.soilmoist.com/forms/Form_143.pdf,https://www.soilmoist.com/forms/Form_143.pdf,200,available,raw/ORG-000400/795e263e3c1e.txt, 
+ORG-000400,pdf,http://www.soilmoist.com/forms/Form_200.pdf,https://www.soilmoist.com/forms/Form_200.pdf,200,available,raw/ORG-000400/f8927764da4c.txt, 
+ORG-000401,sitemap,https://juggerbot3d.com/sitemap.xml,https://juggerbot3d.com/sitemap.xml,406,failed_or_empty,raw/ORG-000401/7cc51bfda807.txt,
+ORG-000401,home,https://juggerbot3d.com,https://juggerbot3d.com/,406,failed_or_empty,raw/ORG-000401/082333fc116e.txt,
+ORG-000401,jina_home,https://r.jina.ai/https://juggerbot3d.com,https://r.jina.ai/https://juggerbot3d.com,401,failed_or_empty,raw/ORG-000401/bd5912d4a795.txt,
+ORG-000401,product_probe,https://juggerbot3d.com/products/,https://juggerbot3d.com/products/,000,failed_or_empty,raw/ORG-000401/28d8a44aafec.txt,curl: (28) Failed to connect to juggerbot3d.com port 443 after 8011 ms: Timeout was reached
+ORG-000401,sitemap_probe,https://juggerbot3d.com/wp-sitemap.xml,https://juggerbot3d.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-000401/eaa55dd76b33.txt,curl: (28) Failed to connect to juggerbot3d.com port 443 after 8009 ms: Timeout was reached
+ORG-000401,product_probe,https://juggerbot3d.com/capabilities/,https://juggerbot3d.com/capabilities/,000,failed_or_empty,raw/ORG-000401/d8a1cb1b3251.txt,curl: (28) Failed to connect to juggerbot3d.com port 443 after 8007 ms: Timeout was reached
+ORG-000407,sitemap,https://amisurfaces.com/sitemap.xml,https://amisurfaces.com/sitemap_index.xml,200,available,raw/ORG-000407/9e501333bc02.txt,
+ORG-000407,home,https://amisurfaces.com/,https://amisurfaces.com/,200,available,raw/ORG-000407/9f91a3f0c867.txt,
+ORG-000407,pdf,https://amisurfaces.com/wp-content/uploads/2025/01/New-flipbook.pdf,https://amisurfaces.com/wp-content/uploads/2025/01/New-flipbook.pdf,200,available,raw/ORG-000407/f638b995b8da.txt, 
+ORG-000407,product_or_capability,https://amisurfaces.com/our-product,https://amisurfaces.com/our-product/,200,available,raw/ORG-000407/00f57073f382.txt,
+ORG-000407,pdf,https://amisurfaces.com/wp-content/uploads/2025/03/March-revised-Product-Catalog.pdf,https://amisurfaces.com/wp-content/uploads/2025/03/March-revised-Product-Catalog.pdf,200,available,raw/ORG-000407/f9f91ce6f100.txt, 
+ORG-000407,product_or_capability,https://amisurfaces.com/our-product/,https://amisurfaces.com/our-product/,200,available,raw/ORG-000407/2040891fa571.txt,
+ORG-000414,sitemap,https://koroseal.com/sitemap.xml,https://koroseal.com/sitemap.xml,200,available,raw/ORG-000414/c4cf00ddf9ad.txt,
+ORG-000414,home,https://koroseal.com/,https://koroseal.com/,200,available,raw/ORG-000414/74c53f07f541.txt,
+ORG-000414,product_or_capability,https://koroseal.com/about,https://koroseal.com/about,200,available,raw/ORG-000414/0585ffea04d6.txt,
+ORG-000414,product_or_capability,https://koroseal.com/products,https://koroseal.com/NotFound,404,failed_or_empty,raw/ORG-000414/81e662410145.txt,
+ORG-000414,product_or_capability,https://koroseal.com/about/careers,https://koroseal.com/about/careers,200,available,raw/ORG-000414/e597194aad06.txt,
+ORG-000414,product_or_capability,https://koroseal.com/regional-products,https://koroseal.com/regional-products,200,available,raw/ORG-000414/97603eb3e1d5.txt,
+ORG-000414,targeted_product_followup,https://koroseal.com/products/architectural-systems/architectural-products/surface-materials/high-pressure-laminate-(hpl)-ha2t,https://koroseal.com/products/architectural-systems/architectural-products/surface-materials/high-pressure-laminate-(hpl)-ha2t,500,failed_or_empty,raw/ORG-000414/d6a6ebca2f61.txt,
+ORG-000420,sitemap,https://www.lindenindustries.com/sitemap.xml,https://www.lindenindustries.com/sitemap_index.xml,200,available,raw/ORG-000420/c951acf8b94b.txt,
+ORG-000420,home,https://www.lindenindustries.com/,https://www.lindenindustries.com/,200,available,raw/ORG-000420/cbad34635b3f.txt,
+ORG-000420,pdf,https://www.lindenindustries.com/wp-content/uploads/2025/10/Linden-Warranty-Policy.pdf,https://www.lindenindustries.com/wp-content/uploads/2025/10/Linden-Warranty-Policy.pdf,200,available,raw/ORG-000420/95247e5fca99.txt, 
+ORG-000420,pdf,https://www.lindenindustries.com/wp-content/uploads/2025/10/Linden-Terms-and-Conditions.pdf,https://www.lindenindustries.com/wp-content/uploads/2025/10/Linden-Terms-and-Conditions.pdf,200,available,raw/ORG-000420/c984a49a1fd6.txt, 
+ORG-000420,product_or_capability,https://www.lindenindustries.com/about/,https://www.lindenindustries.com/about/,200,available,raw/ORG-000420/7dbe46e81f00.txt,
+ORG-000420,product_or_capability,https://www.lindenindustries.com/about/gmpg.org/xfn/11,https://www.lindenindustries.com/,200,available,raw/ORG-000420/887c8bc1450f.txt,
+ORG-000433,sitemap,https://mccannplastics.com/sitemap.xml,https://mccannplastics.com/sitemap.xml,401,failed_or_empty,raw/ORG-000433/b4607ceef9fb.txt,
+ORG-000433,home,https://mccannplastics.com/,https://mccannplastics.com/,401,failed_or_empty,raw/ORG-000433/5c0b9bcc1132.txt,
+ORG-000433,jina_home,https://r.jina.ai/https://mccannplastics.com/,https://r.jina.ai/https://mccannplastics.com/,401,failed_or_empty,raw/ORG-000433/b88726859ff6.txt,
+ORG-000433,product_probe,https://mccannplastics.com/products/,https://mccannplastics.com/products/,401,failed_or_empty,raw/ORG-000433/165380736784.txt,
+ORG-000433,sitemap_probe,https://mccannplastics.com/wp-sitemap.xml,https://mccannplastics.com/wp-sitemap.xml,401,failed_or_empty,raw/ORG-000433/4fafac18301e.txt,
+ORG-000433,product_probe,https://mccannplastics.com/capabilities/,https://mccannplastics.com/capabilities/,401,failed_or_empty,raw/ORG-000433/411361a4ebf5.txt,
+ORG-000439,sitemap,https://www.mickeythompsontires.com/sitemap.xml,https://www.mickeythompsontires.com/sitemap.xml,200,failed_or_empty,raw/ORG-000439/67d0981bc4ae.txt,
+ORG-000439,home,https://www.mickeythompsontires.com/,https://www.mickeythompsontires.com/en-us,200,available,raw/ORG-000439/cee1776809a3.txt,
+ORG-000439,product_or_capability,https://www.mickeythompsontires.com/en-us/support/product-brochures,https://www.mickeythompsontires.com/en-us/support/product-brochures,200,available,raw/ORG-000439/544d1af786c7.txt,
+ORG-000439,sitemap_child,https://www.mickeythompsontires.com/en-us/sitemap.xml,https://www.mickeythompsontires.com/en-us/sitemap.xml,200,available,raw/ORG-000439/de5e7b942ca8.txt,
+ORG-000439,product_or_capability,https://www.mickeythompsontires.com/en-us/product-sitemap.xml,https://www.mickeythompsontires.com/en-us/product-sitemap.xml,200,available,raw/ORG-000439/c4c6539af67a.txt,
+ORG-000439,sitemap_child,https://www.mickeythompsontires.com/en-us/sitemap,https://www.mickeythompsontires.com/en-us/sitemap,200,available,raw/ORG-000439/a9081a94d304.txt,
+ORG-000439,targeted_product_followup,https://www.mickeythompsontires.com/en-us/tires,https://www.mickeythompsontires.com/en-us/tires,200,available,raw/ORG-000439/7f26239b308f.txt,
+ORG-000441,sitemap,https://midwestpolypak.com/sitemap.xml,https://midwestpolypak.com/sitemap.xml,404,failed_or_empty,raw/ORG-000441/a0fe090d21cb.txt,
+ORG-000441,home,https://midwestpolypak.com/,https://midwestpolypak.com/,200,available,raw/ORG-000441/fb448e95c265.txt,
+ORG-000441,product_probe,https://midwestpolypak.com/products/,https://midwestpolypak.com/products/,404,failed_or_empty,raw/ORG-000441/37bc63221ee4.txt,
+ORG-000441,sitemap_probe,https://midwestpolypak.com/wp-sitemap.xml,https://midwestpolypak.com/wp-sitemap.xml,404,failed_or_empty,raw/ORG-000441/645df44988c0.txt,
+ORG-000441,product_probe,https://midwestpolypak.com/capabilities/,https://midwestpolypak.com/capabilities/,404,failed_or_empty,raw/ORG-000441/30796582b22e.txt,
+ORG-000441,product_probe,https://midwestpolypak.com/about-us/,https://midwestpolypak.com/about-us/,404,failed_or_empty,raw/ORG-000441/1a187938b0bb.txt,
+ORG-000484,sitemap,https://www.pexco.com/sitemap.xml,https://www.pexco.com/sitemap.xml,403,failed_or_empty,raw/ORG-000484/20e895d0c1c4.txt,
+ORG-000484,home,https://www.pexco.com/,https://www.pexco.com/,403,failed_or_empty,raw/ORG-000484/f41cfd8986c3.txt,
+ORG-000484,jina_home,https://r.jina.ai/https://www.pexco.com/,https://r.jina.ai/https://www.pexco.com/,401,failed_or_empty,raw/ORG-000484/ad0049461394.txt,
+ORG-000484,product_probe,https://www.pexco.com/products/,https://www.pexco.com/products/,403,failed_or_empty,raw/ORG-000484/34dafe74a060.txt,
+ORG-000484,sitemap_probe,https://www.pexco.com/wp-sitemap.xml,https://www.pexco.com/wp-sitemap.xml,403,failed_or_empty,raw/ORG-000484/3022160e37f1.txt,
+ORG-000484,product_probe,https://www.pexco.com/capabilities/,https://www.pexco.com/capabilities/,403,failed_or_empty,raw/ORG-000484/089ac0532129.txt,
+ORG-000488,sitemap,https://pharmacylite.com/sitemap.xml,https://pharmacylite.com/sitemap.xml,406,failed_or_empty,raw/ORG-000488/44b54a5f1ac2.txt,
+ORG-000488,home,https://pharmacylite.com/,https://pharmacylite.com/,406,failed_or_empty,raw/ORG-000488/da2fd19e26a1.txt,
+ORG-000488,jina_home,https://r.jina.ai/https://pharmacylite.com/,https://r.jina.ai/https://pharmacylite.com/,401,failed_or_empty,raw/ORG-000488/219f1f219219.txt,
+ORG-000488,product_probe,https://pharmacylite.com/products/,https://pharmacylite.com/products/,406,failed_or_empty,raw/ORG-000488/85a08d89b62e.txt,
+ORG-000488,sitemap_probe,https://pharmacylite.com/wp-sitemap.xml,https://pharmacylite.com/wp-sitemap.xml,406,failed_or_empty,raw/ORG-000488/e49a0cf0c57a.txt,
+ORG-000488,product_probe,https://pharmacylite.com/capabilities/,https://pharmacylite.com/capabilities/,406,failed_or_empty,raw/ORG-000488/4f63dcaa9149.txt,
+ORG-000493,sitemap,https://mercurymachine.com/sitemap.xml,https://mercurymachine.com/wp-sitemap.xml,200,failed_or_empty,raw/ORG-000493/1c000e697f98.txt,
+ORG-000493,home,https://mercurymachine.com/plas-mac-corporation/,https://mercurymachine.com/plas-mac-corporation/,200,available,raw/ORG-000493/75b56bd31415.txt,
+ORG-000493,product_or_capability,https://mercurymachine.com/plas-mac-corporation/about/,https://mercurymachine.com/plas-mac-corporation/about/,200,available,raw/ORG-000493/083ec44bfee5.txt,
+ORG-000493,product_or_capability,https://mercurymachine.com/plas-mac-corporation/capabilities/,https://mercurymachine.com/plas-mac-corporation/capabilities/,200,available,raw/ORG-000493/125f2591dd98.txt,
+ORG-000493,product_or_capability,https://mercurymachine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmercurymachine.com%2Fplas-mac-corporation%2Fabout%2F,https://mercurymachine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmercurymachine.com%2Fplas-mac-corporation%2Fabout%2F,200,available,raw/ORG-000493/2b15539c3a0f.txt,
+ORG-000493,product_or_capability,https://mercurymachine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmercurymachine.com%2Fplas-mac-corporation%2Fabout%2F&,https://mercurymachine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmercurymachine.com%2Fplas-mac-corporation%2Fabout%2F&,200,available,raw/ORG-000493/fd39c7dcac34.txt,
+ORG-000552,sitemap,https://rogersusa.com/sitemap.xml,https://rogersusa.com/sitemap_index.xml,200,failed_or_empty,raw/ORG-000552/55005c5ba672.txt,
+ORG-000552,home,https://rogersusa.com/,https://rogersusa.com/,200,available,raw/ORG-000552/e12c91c9bbbc.txt,
+ORG-000552,product_or_capability,https://rogersusa.com/about/,https://rogersusa.com/about/,200,available,raw/ORG-000552/04c130718309.txt,
+ORG-000552,product_or_capability,https://rogersusa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frogersusa.com%2Fabout%2F,https://rogersusa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frogersusa.com%2Fabout%2F,200,available,raw/ORG-000552/261363f00e49.txt,
+ORG-000552,product_or_capability,https://rogersusa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frogersusa.com%2Fabout%2F&,https://rogersusa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frogersusa.com%2Fabout%2F&,200,available,raw/ORG-000552/f96c3f30bda9.txt,
+ORG-000552,sitemap_child,https://rogersusa.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl,https://rogersusa.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl,200,available,raw/ORG-000552/b4c51ba89575.txt,
+ORG-000552,targeted_product_followup,https://rogersusa.com/products/,https://rogersusa.com/products/,404,failed_or_empty,raw/ORG-000552/6facaa575db7.txt,
+ORG-000581,sitemap,https://speedgroupe.com/sitemap.xml,https://speedgroupe.com/sitemap_index.xml,200,available,raw/ORG-000581/e14a6513fcf3.txt,
+ORG-000581,home,https://speedgroupe.com/,https://speedgroupe.com/fr/accueil/,200,available,raw/ORG-000581/d4fe7d4024b7.txt,
+ORG-000581,pdf,https://speedgroupe.com/wp-content/uploads/2020/06/Speedgroup-Enquete-FR.pdf,https://speedgroupe.com/wp-content/uploads/2020/06/Speedgroup-Enquete-FR.pdf,200,available,raw/ORG-000581/8fe34250962a.txt, 
+ORG-000581,product_or_capability,https://speedgroupe.com/product-sitemap.xml,https://speedgroupe.com/product-sitemap.xml,200,available,raw/ORG-000581/64ee39fb223a.txt,
+ORG-000581,product_or_capability,https://speedgroupe.com/fr/product/damier/,https://speedgroupe.com/fr/product/damier/,200,available,raw/ORG-000581/003677576a1b.txt,
+ORG-000581,product_or_capability,https://speedgroupe.com/product/damier/,https://speedgroupe.com/fr/product/damier/,200,available,raw/ORG-000581/3eb106a5a508.txt,
+ORG-000608,sitemap,https://www.tomlinson1880.com/sitemap.xml,https://www.tomlinson1880.com/sitemap_index.xml,200,available,raw/ORG-000608/186309461a4b.txt,
+ORG-000608,home,https://www.tomlinson1880.com/,https://www.tomlinson1880.com/,200,available,raw/ORG-000608/920f88b570b5.txt,
+ORG-000608,product_or_capability,https://www.tomlinson1880.com/about-us/,https://www.tomlinson1880.com/about-us/,200,available,raw/ORG-000608/30ba1f062d7f.txt,
+ORG-000608,pdf,https://www.tomlinson1880.com/wp-content/uploads/2023/01/A-Tomlinson_Meyer-History-1.pdf,https://www.tomlinson1880.com/wp-content/uploads/2023/01/A-Tomlinson_Meyer-History-1.pdf,200,available,raw/ORG-000608/11a9828147af.txt, 
+ORG-000608,product_or_capability,https://www.tomlinson1880.com/our-products/,https://www.tomlinson1880.com/our-products/,200,available,raw/ORG-000608/e8be06584215.txt,
+ORG-000608,product_or_capability,https://www.tomlinson1880.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tomlinson1880.com%2Fabout-us%2F,https://www.tomlinson1880.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tomlinson1880.com%2Fabout-us%2F,200,available,raw/ORG-000608/48ff86f295ea.txt,
+ORG-000635,sitemap,https://www.woosterbrush.com/sitemap.xml,https://www.woosterbrush.com/sitemap_index.xml,200,available,raw/ORG-000635/c6fce7e92db0.txt,
+ORG-000635,home,https://www.woosterbrush.com/,https://www.woosterbrush.com/,403,failed_or_empty,raw/ORG-000635/06d3252c8c13.txt,
+ORG-000635,jina_home,https://r.jina.ai/https://www.woosterbrush.com/,https://r.jina.ai/https://www.woosterbrush.com/,401,failed_or_empty,raw/ORG-000635/6599b51f42a5.txt,
+ORG-000635,product_or_capability,https://www.woosterbrush.com/products-sitemap.xml,https://www.woosterbrush.com/products-sitemap.xml,200,available,raw/ORG-000635/0ba21e4de02c.txt,
+ORG-000635,product_or_capability,https://www.woosterbrush.com/products/hook-hold/,https://www.woosterbrush.com/products/hook-hold/,403,failed_or_empty,raw/ORG-000635/5077b45e35ed.txt,
+ORG-000635,product_or_capability,https://www.woosterbrush.com/product_category-sitemap.xml,https://www.woosterbrush.com/product_category-sitemap.xml,200,available,raw/ORG-000635/14d8ed7eeccd.txt,
+ORG-000643,sitemap,https://31inc.com/sitemap.xml,https://31inc.com/wp-sitemap.xml,200,available,raw/ORG-000643/74f0fa1d1f4f.txt,
+ORG-000643,home,https://31inc.com/,https://31inc.com/,200,available,raw/ORG-000643/04c7e0091bfa.txt,
+ORG-000643,pdf,http://31inc.com/wp-content/uploads/2021/03/31-Incorporated-Catalog-316-Online-030821-3.pdf,http://31inc.com/wp-content/uploads/2021/03/31-Incorporated-Catalog-316-Online-030821-3.pdf,200,available,raw/ORG-000643/1712222a1b48.txt," Syntax Warning: Invalid Font Weight
+Syntax Warning: Invalid Font Weight
+Syntax Warning: Invalid Font Weight
+Syntax Warning: Invalid Font Weight"
+ORG-000643,product_or_capability,https://31inc.com/about/,https://31inc.com/about/,200,available,raw/ORG-000643/c8d31ffa3319.txt,
+ORG-000643,product_or_capability,http://31inc.com/products/,https://31inc.com/products/,200,available,raw/ORG-000643/bdf1f3c0d1bc.txt,
+ORG-000643,product_or_capability,https://31inc.com/products/,https://31inc.com/products/,200,available,raw/ORG-000643/29c670e949f9.txt,
+ORG-000697,sitemap,https://hedstrom.com/sitemap.xml,https://hedstrom.com/sitemap_index.xml,200,available,raw/ORG-000697/792577978fac.txt,
+ORG-000697,home,https://hedstrom.com/,https://hedstrom.com/,200,available,raw/ORG-000697/ad0d3c97bbab.txt,
+ORG-000697,product_or_capability,https://hedstrom.com/products,https://hedstrom.com/products/,200,available,raw/ORG-000697/398ed347eba3.txt,
+ORG-000697,product_or_capability,https://hedstrom.com/about-us,https://hedstrom.com/about-us/,200,available,raw/ORG-000697/f8fb6f17907d.txt,
+ORG-000697,product_or_capability,https://hedstrom.com/products/,https://hedstrom.com/products/,200,available,raw/ORG-000697/f2f9c5a53957.txt,
+ORG-000697,product_or_capability,https://hedstrom.com/about-us/,https://hedstrom.com/about-us/,200,available,raw/ORG-000697/414b179c7adb.txt,
+ORG-000873,sitemap,https://hamiltonpolymers.com/sitemap.xml,https://hamiltonpolymers.com/sitemap.xml,200,failed_or_empty,raw/ORG-000873/4130cb512ef2.txt,
+ORG-000873,home,https://hamiltonpolymers.com/,https://hamiltonpolymers.com/,200,failed_or_empty,raw/ORG-000873/be9ac167f382.txt,
+ORG-000873,jina_home,https://r.jina.ai/https://hamiltonpolymers.com/,https://r.jina.ai/https://hamiltonpolymers.com/,401,failed_or_empty,raw/ORG-000873/9ca1e77d57bb.txt,
+ORG-000873,product_or_capability,https://hamiltonpolymers.com/_assets/ac66d648e1a7e091.js,https://hamiltonpolymers.com/_assets/ac66d648e1a7e091.js,200,available,raw/ORG-000873/7dc07a3ec80c.txt,
+ORG-000873,product_or_capability,https://hamiltonpolymers.com/_assets/static_font_4.ltr.css,https://hamiltonpolymers.com/_assets/static_font_4.ltr.css,200,available,raw/ORG-000873/89b136c04cb7.txt,
+ORG-000873,product_or_capability,https://hamiltonpolymers.com/_assets/eb1c88196dd2a442.ltr.css,https://hamiltonpolymers.com/_assets/eb1c88196dd2a442.ltr.css,200,available,raw/ORG-000873/d4301424c579.txt,
+ORG-000873,targeted_product_followup,https://hamiltonpolymers.com/products/,https://hamiltonpolymers.com/products/,404,failed_or_empty,raw/ORG-000873/b321036a7e4e.txt,
+ORG-000927,sitemap,https://www.prettl-pma.com/sitemap.xml,https://www.prettl-pma.com/sitemap.xml,200,available,raw/ORG-000927/9cbb0795ccd5.txt,
+ORG-000927,home,https://www.prettl-pma.com/,https://www.prettl-pma.com/en/startseite,200,available,raw/ORG-000927/4766c3c6394e.txt,
+ORG-000927,product_or_capability,https://www.prettl-pma.com/en/product,https://www.prettl-pma.com/en/product,200,available,raw/ORG-000927/5fbcd8737d40.txt,
+ORG-000927,product_or_capability,https://www.prettl-pma.com/en/products,https://www.prettl-pma.com/en/products,200,available,raw/ORG-000927/75119bb524a4.txt,
+ORG-000927,product_or_capability,https://www.prettl-pma.com/en/about-us,https://www.prettl-pma.com/en/about-us,200,available,raw/ORG-000927/10ccd6e7d744.txt,
+ORG-000927,pdf,https://www.prettl-pma.com/en/files/00_pma/05_downloads/DE/pdf/Verhaltenskodex%20der%20PMA%20Gruppe_Code%20of%20Coduct_V4.pdf,https://www.prettl-pma.com/en/startseite,200,available,raw/ORG-000927/ff5c4a4c1c2c.txt,
+ORG-000999,sitemap,https://okamotosandusky.com/sitemap.xml,https://okamotosandusky.com/sitemap.xml,000,failed_or_empty,raw/ORG-000999/be1d9aaa77d2.txt,curl: (28) Failed to connect to okamotosandusky.com port 443 after 8005 ms: Timeout was reached
+ORG-000999,home,https://okamotosandusky.com/,https://okamotosandusky.com/,000,failed_or_empty,raw/ORG-000999/5a936e689d3e.txt,curl: (28) Failed to connect to okamotosandusky.com port 443 after 8009 ms: Timeout was reached
+ORG-000999,jina_home,https://r.jina.ai/https://okamotosandusky.com/,https://r.jina.ai/https://okamotosandusky.com/,401,failed_or_empty,raw/ORG-000999/b8338988df90.txt,
+ORG-000999,product_probe,https://okamotosandusky.com/products/,https://okamotosandusky.com/products/,000,failed_or_empty,raw/ORG-000999/fdde5e3da1da.txt,curl: (28) Failed to connect to okamotosandusky.com port 443 after 8004 ms: Timeout was reached
+ORG-000999,sitemap_probe,https://okamotosandusky.com/wp-sitemap.xml,https://okamotosandusky.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-000999/87b7a5092569.txt,curl: (28) Failed to connect to okamotosandusky.com port 443 after 8006 ms: Timeout was reached
+ORG-000999,product_probe,https://okamotosandusky.com/capabilities/,https://okamotosandusky.com/capabilities/,000,failed_or_empty,raw/ORG-000999/e48964066f57.txt,curl: (28) Failed to connect to okamotosandusky.com port 443 after 8004 ms: Timeout was reached
+ORG-001388,sitemap,https://www.hy-ko.com/sitemap.xml,https://www.hy-ko.com/sitemap.xml,200,available,raw/ORG-001388/f5f6f8c69912.txt,
+ORG-001388,home,https://www.hy-ko.com/,https://www.hy-ko.com/,200,available,raw/ORG-001388/bcfc68e3a9da.txt,
+ORG-001388,product_or_capability,https://www.hy-ko.com/about,https://www.hy-ko.com/about,200,available,raw/ORG-001388/a4b4c9f5b1d3.txt,
+ORG-001388,product_or_capability,https://www.hy-ko.com/products,https://www.hy-ko.com/products,200,available,raw/ORG-001388/93fd0d07d9b2.txt,
+ORG-001388,product_or_capability,https://www.hy-ko.com/products/new-products,https://www.hy-ko.com/products/new-products,200,available,raw/ORG-001388/870c8f1025c6.txt,
+ORG-001388,pdf,https://www.hy-ko.com/hubfs/Products_PDF/KL-C3XPD%200417.pdf,https://www.hy-ko.com/hubfs/Products_PDF/KL-C3XPD%200417.pdf,200,available,raw/ORG-001388/d8d303b21135.txt, 
+ORG-001526,sitemap,https://viscusbiologics.com/sitemap.xml,https://viscusbiologics.com/sitemap_index.xml,200,failed_or_empty,raw/ORG-001526/43d11b33be72.txt,
+ORG-001526,home,https://viscusbiologics.com/,https://viscusbiologics.com/,403,failed_or_empty,raw/ORG-001526/5f9ab60dbcb1.txt,
+ORG-001526,jina_home,https://r.jina.ai/https://viscusbiologics.com/,https://r.jina.ai/https://viscusbiologics.com/,401,failed_or_empty,raw/ORG-001526/53e991af1da0.txt,
+ORG-001526,sitemap_child,https://viscusbiologics.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl,https://viscusbiologics.com/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl,403,failed_or_empty,raw/ORG-001526/6c95328bdc59.txt,
+ORG-001526,sitemap_child,https://viscusbiologics.com/page-sitemap.xml,https://viscusbiologics.com/page-sitemap.xml,200,available,raw/ORG-001526/57d1afb11142.txt,
+ORG-001526,product_or_capability,https://viscusbiologics.com/contract-manufacturing/,https://viscusbiologics.com/contract-manufacturing/,403,failed_or_empty,raw/ORG-001526/36e2bfc0c244.txt,
+ORG-001580,sitemap,https://chemicalsolvents.com/sitemap.xml,https://chemicalsolvents.com/wp-sitemap.xml,200,available,raw/ORG-001580/2df86920182a.txt,
+ORG-001580,home,https://chemicalsolvents.com/,https://chemicalsolvents.com/,200,available,raw/ORG-001580/96800bac9cbd.txt,
+ORG-001580,product_or_capability,https://chemicalsolvents.com/about/,https://chemicalsolvents.com/about/,200,available,raw/ORG-001580/ab70a56c520c.txt,
+ORG-001580,product_or_capability,https://chemicalsolvents.com/about/our-team/,https://chemicalsolvents.com/about/our-team/,200,available,raw/ORG-001580/e3b9a53bca9d.txt,
+ORG-001580,product_or_capability,https://chemicalsolvents.com/about/virtual-tour/,https://chemicalsolvents.com/about/virtual-tour/,200,available,raw/ORG-001580/0c5c3a48b6c3.txt,
+ORG-001580,product_or_capability,https://chemicalsolvents.com/about/affiliations/,https://chemicalsolvents.com/about/affiliations/,200,available,raw/ORG-001580/ff4822818032.txt,
+ORG-001580,targeted_product_followup,https://chemicalsolvents.com/toll-manufacturing/,https://chemicalsolvents.com/toll-manufacturing/,200,available,raw/ORG-001580/168ad64fbc8a.txt,
+ORG-001595,sitemap,https://1110gear.com/sitemap.xml,https://1110gear.com/sitemap.xml,200,available,raw/ORG-001595/90c7adb13189.txt,
+ORG-001595,home,https://1110gear.com/,https://1110gear.com/,200,available,raw/ORG-001595/46d944e3b1a3.txt,
+ORG-001595,product_or_capability,https://1110gear.com/pages/about-us,https://1110gear.com/pages/about-us,200,available,raw/ORG-001595/e2e7abe9a2c0.txt,
+ORG-001595,product_or_capability,https://1110gear.com/products/medical-tape-lanyard,https://1110gear.com/products/medical-tape-lanyard,429,failed_or_empty,raw/ORG-001595/83c1831d1df4.txt,
+ORG-001595,product_or_capability,https://1110gear.com/products/x-series-entry-med-pack,https://1110gear.com/products/x-series-entry-med-pack,429,failed_or_empty,raw/ORG-001595/c0c6163c38ce.txt,
+ORG-001595,product_or_capability,https://1110gear.com/products/1x3-med-name-tape-patch,https://1110gear.com/products/1x3-med-name-tape-patch,429,failed_or_empty,raw/ORG-001595/c2ef735d9765.txt,
+ORG-001599,sitemap,https://multiplastsystems.com/sitemap.xml,https://multiplastsystems.com/sitemap_index.xml,200,available,raw/ORG-001599/73d23338ebc9.txt,
+ORG-001599,home,https://multiplastsystems.com/,https://multiplastsystems.com/,200,available,raw/ORG-001599/2cbcfbc9bafa.txt,
+ORG-001599,product_or_capability,https://multiplastsystems.com/about/,https://multiplastsystems.com/about/,200,available,raw/ORG-001599/e8bb1f563b28.txt,
+ORG-001599,product_or_capability,https://multiplastsystems.com/product-sitemap.xml,https://multiplastsystems.com/product-sitemap.xml,200,available,raw/ORG-001599/65e3edfa4115.txt,
+ORG-001599,product_or_capability,https://multiplastsystems.com/product/,https://multiplastsystems.com/product/,200,available,raw/ORG-001599/979fc6feb662.txt,
+ORG-001599,product_or_capability,https://multiplastsystems.com/product/tbd/,https://multiplastsystems.com/product/tbd/,200,available,raw/ORG-001599/7c7e17084f76.txt,
+ORG-001631,sitemap,http://www.akrondispersions.com/sitemap.xml,https://www.akrondispersions.com/sitemap.xml,200,failed_or_empty,raw/ORG-001631/18b7f2d5ab45.txt,
+ORG-001631,home,http://www.akrondispersions.com/,https://www.akrondispersions.com/,200,available,raw/ORG-001631/1ed68cba4d64.txt,
+ORG-001631,product_or_capability,https://www.akrondispersions.com/about/,https://www.akrondispersions.com/about/,200,available,raw/ORG-001631/0fec4f813c70.txt,
+ORG-001631,product_or_capability,https://www.akrondispersions.com/products/,https://www.akrondispersions.com/products/,200,available,raw/ORG-001631/0b89e64f8ced.txt,
+ORG-001631,product_or_capability,https://www.akrondispersions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.akrondispersions.com%2Fabout%2F,https://www.akrondispersions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.akrondispersions.com%2Fabout%2F,200,available,raw/ORG-001631/b1c43e7b6eff.txt,
+ORG-001631,product_or_capability,https://www.akrondispersions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.akrondispersions.com%2Fabout%2F&,https://www.akrondispersions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.akrondispersions.com%2Fabout%2F&,200,available,raw/ORG-001631/607cd7d5afe1.txt,
+ORG-001631,targeted_product_followup,https://www.akrondispersions.com/products/dispersions/,https://www.akrondispersions.com/dispersions/,200,available,raw/ORG-001631/924163404e80.txt,
+ORG-001642,sitemap,http://www.motivodisplay.com/sitemap.xml,https://www.motivodisplay.com/sitemap.xml,200,available,raw/ORG-001642/7ba19ff084f7.txt,
+ORG-001642,home,http://www.motivodisplay.com/,https://www.motivodisplay.com/,200,available,raw/ORG-001642/cd87bc3ac923.txt,
+ORG-001642,product_probe,http://www.motivodisplay.com/products/,https://www.motivodisplay.com/products/,404,failed_or_empty,raw/ORG-001642/9e437f29cc76.txt,
+ORG-001642,sitemap_probe,http://www.motivodisplay.com/wp-sitemap.xml,https://www.motivodisplay.com/wp-sitemap.xml,404,failed_or_empty,raw/ORG-001642/083fcf91f889.txt,
+ORG-001642,product_probe,http://www.motivodisplay.com/capabilities/,https://www.motivodisplay.com/capabilities/,404,failed_or_empty,raw/ORG-001642/71ea748cc6e3.txt,
+ORG-001642,product_probe,http://www.motivodisplay.com/about-us/,https://www.motivodisplay.com/about-us/,404,failed_or_empty,raw/ORG-001642/080c45584c0c.txt,
+ORG-001648,sitemap,http://tuffboom.com/sitemap.xml,https://tuffboom.com/sitemap.xml,200,available,raw/ORG-001648/bd33c148556c.txt,
+ORG-001648,home,http://tuffboom.com/,https://tuffboom.com/,200,available,raw/ORG-001648/4878f646ef4f.txt,
+ORG-001648,sitemap_child,https://tuffboom.com/sitemap-index.xsl,https://tuffboom.com/sitemap-index.xsl,200,available,raw/ORG-001648/f37fc3b392f0.txt,
+ORG-001648,sitemap_child,https://tuffboom.com/sitemap-1.xml,https://tuffboom.com/sitemap-1.xml,200,available,raw/ORG-001648/0228871653be.txt,
+ORG-001648,sitemap_child,https://tuffboom.com/image-sitemap-1.xml,https://tuffboom.com/image-sitemap-1.xml,200,available,raw/ORG-001648/e6bae3c92456.txt,
+ORG-001648,sitemap_child,https://tuffboom.com/sitemap.xsl,https://tuffboom.com/sitemap.xsl,200,available,raw/ORG-001648/c5f1db1a6a8a.txt,
+ORG-001648,targeted_product_followup,https://tuffboom.com/products/,https://tuffboom.com/products/,404,failed_or_empty,raw/ORG-001648/015bc52dcfd7.txt,
+ORG-001653,sitemap,https://brunsbrush.com/sitemap.xml,https://brunsbrush.com/sitemap.xml,404,failed_or_empty,raw/ORG-001653/0c6d883fd7e3.txt,
+ORG-001653,home,https://brunsbrush.com/,https://brunsbrush.com/,200,available,raw/ORG-001653/fa26582c6f9e.txt,
+ORG-001653,product_or_capability,https://brunsbrush.com/products.html,https://brunsbrush.com/products.html,200,available,raw/ORG-001653/843dac99db82.txt,
+ORG-001653,product_or_capability,https://brunsbrush.com/aboutourbrushes.html,https://brunsbrush.com/aboutourbrushes.html,200,available,raw/ORG-001653/20948759c40e.txt,
+ORG-001653,product_probe,https://brunsbrush.com/products/,https://brunsbrush.com/products/,404,failed_or_empty,raw/ORG-001653/2c73d463c8cb.txt,
+ORG-001653,sitemap_probe,https://brunsbrush.com/wp-sitemap.xml,https://brunsbrush.com/wp-sitemap.xml,404,failed_or_empty,raw/ORG-001653/efca09bb04b5.txt,
+ORG-001698,sitemap,https://www.prime-plastics.com/sitemap.xml,https://www.prime-plastics.com/sitemap.xml,000,failed_or_empty,raw/ORG-001698/6bc5e2df3dcc.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.prime-plastics.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001698,home,https://www.prime-plastics.com/,https://www.prime-plastics.com/,000,failed_or_empty,raw/ORG-001698/2b32595d86d4.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.prime-plastics.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001698,jina_home,https://r.jina.ai/https://www.prime-plastics.com/,https://r.jina.ai/https://www.prime-plastics.com/,401,failed_or_empty,raw/ORG-001698/00250be034a1.txt,
+ORG-001698,product_probe,https://www.prime-plastics.com/products/,https://www.prime-plastics.com/products/,000,failed_or_empty,raw/ORG-001698/2934323f133d.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.prime-plastics.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001698,sitemap_probe,https://www.prime-plastics.com/wp-sitemap.xml,https://www.prime-plastics.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001698/fe0c6d6af534.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.prime-plastics.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001698,product_probe,https://www.prime-plastics.com/capabilities/,https://www.prime-plastics.com/capabilities/,000,failed_or_empty,raw/ORG-001698/ffd70c4a9807.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.prime-plastics.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001703,sitemap,https://premieraerosol.com/sitemap.xml,https://premieraerosol.com/sitemap.xml,000,failed_or_empty,raw/ORG-001703/4d98f620109b.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'premieraerosol.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001703,home,https://premieraerosol.com,https://premieraerosol.com/,000,failed_or_empty,raw/ORG-001703/570ae9bd52dd.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'premieraerosol.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001703,jina_home,https://r.jina.ai/https://premieraerosol.com,https://r.jina.ai/https://premieraerosol.com,401,failed_or_empty,raw/ORG-001703/93ee3a0c3b95.txt,
+ORG-001703,product_probe,https://premieraerosol.com/products/,https://premieraerosol.com/products/,000,failed_or_empty,raw/ORG-001703/66a9043a8ea0.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'premieraerosol.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001703,sitemap_probe,https://premieraerosol.com/wp-sitemap.xml,https://premieraerosol.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001703/61362ef573ad.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'premieraerosol.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001703,product_probe,https://premieraerosol.com/capabilities/,https://premieraerosol.com/capabilities/,000,failed_or_empty,raw/ORG-001703/3599a9bbb33d.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'premieraerosol.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001714,sitemap,https://amlube.com/sitemap.xml,https://amlube.com/sitemap.xml,406,failed_or_empty,raw/ORG-001714/d287ac61bb2e.txt,
+ORG-001714,home,https://amlube.com,https://amlube.com/,406,failed_or_empty,raw/ORG-001714/3d60bdb52e6b.txt,
+ORG-001714,jina_home,https://r.jina.ai/https://amlube.com,https://r.jina.ai/https://amlube.com,401,failed_or_empty,raw/ORG-001714/1053b004d9ca.txt,
+ORG-001714,product_probe,https://amlube.com/products/,https://amlube.com/products/,406,failed_or_empty,raw/ORG-001714/20fd3f00d1aa.txt,
+ORG-001714,sitemap_probe,https://amlube.com/wp-sitemap.xml,https://amlube.com/wp-sitemap.xml,406,failed_or_empty,raw/ORG-001714/9033a11318cd.txt,
+ORG-001714,product_probe,https://amlube.com/capabilities/,https://amlube.com/capabilities/,406,failed_or_empty,raw/ORG-001714/32f35242a7d2.txt,
+ORG-001717,sitemap,https://flexlinkllc.com/sitemap.xml,https://flexlinkllc.com/sitemap.xml,200,failed_or_empty,raw/ORG-001717/6a4cbe70a02d.txt,
+ORG-001717,home,https://flexlinkllc.com,https://flexlinkllc.com/,200,available,raw/ORG-001717/04ed8309bc55.txt,
+ORG-001717,product_or_capability,https://flexlinkllc.com/about-us/,https://flexlinkllc.com/about-us/,200,available,raw/ORG-001717/6f0808fffb33.txt,
+ORG-001717,product_or_capability,https://flexlinkllc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflexlinkllc.com%2Fabout-us%2F,https://flexlinkllc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflexlinkllc.com%2Fabout-us%2F,200,available,raw/ORG-001717/f583f63461d9.txt,
+ORG-001717,product_or_capability,https://flexlinkllc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflexlinkllc.com%2Fabout-us%2F&,https://flexlinkllc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflexlinkllc.com%2Fabout-us%2F&,200,available,raw/ORG-001717/99b1751ff14c.txt,
+ORG-001717,sitemap_child,https://flexlinkllc.com/default-sitemap.xsl?sitemap=root,https://flexlinkllc.com/default-sitemap.xsl?sitemap=root,200,available,raw/ORG-001717/63458c2d405a.txt,
+ORG-001717,targeted_product_followup,https://flexlinkllc.com/our-products/,https://flexlinkllc.com/our-products/,404,failed_or_empty,raw/ORG-001717/658c74158a0d.txt,
+ORG-001724,sitemap,https://www.rpmrepublic.com/sitemap.xml,https://www.rpmrepublic.com/sitemap.xml,000,failed_or_empty,raw/ORG-001724/ae4f60aea827.txt,curl: (28) Failed to connect to www.rpmrepublic.com port 443 after 8005 ms: Timeout was reached
+ORG-001724,home,https://www.rpmrepublic.com/,https://www.rpmrepublic.com/,000,failed_or_empty,raw/ORG-001724/8a7b6d75ac67.txt,curl: (28) Failed to connect to www.rpmrepublic.com port 443 after 8002 ms: Timeout was reached
+ORG-001724,jina_home,https://r.jina.ai/https://www.rpmrepublic.com/,https://r.jina.ai/https://www.rpmrepublic.com/,401,failed_or_empty,raw/ORG-001724/6c8d4eed63aa.txt,
+ORG-001724,product_probe,https://www.rpmrepublic.com/products/,https://www.rpmrepublic.com/products/,000,failed_or_empty,raw/ORG-001724/ee61f9461405.txt,curl: (28) Failed to connect to www.rpmrepublic.com port 443 after 8010 ms: Timeout was reached
+ORG-001724,sitemap_probe,https://www.rpmrepublic.com/wp-sitemap.xml,https://www.rpmrepublic.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001724/060b4b757942.txt,curl: (28) Failed to connect to www.rpmrepublic.com port 443 after 8011 ms: Timeout was reached
+ORG-001724,product_probe,https://www.rpmrepublic.com/capabilities/,https://www.rpmrepublic.com/capabilities/,000,failed_or_empty,raw/ORG-001724/70f679c1c5a2.txt,curl: (28) Failed to connect to www.rpmrepublic.com port 443 after 8005 ms: Timeout was reached
+ORG-001730,sitemap,https://3d-dent.com/sitemap.xml,https://3d-dent.com/sitemap_index.xml,200,available,raw/ORG-001730/27dfc5f6a480.txt,
+ORG-001730,home,https://3d-dent.com/,https://3d-dent.com/,200,available,raw/ORG-001730/782b52f2e077.txt,
+ORG-001730,product_or_capability,https://3d-dent.com/about-us/,https://3d-dent.com/about-us/,200,available,raw/ORG-001730/38543df1d758.txt,
+ORG-001730,product_or_capability,https://3d-dent.com/product/egg/,https://3d-dent.com/product/egg/,200,available,raw/ORG-001730/538da799ff51.txt,
+ORG-001730,product_or_capability,https://3d-dent.com/all-products/,https://3d-dent.com/all-products/,200,available,raw/ORG-001730/ea90a5bb3b93.txt,
+ORG-001730,product_or_capability,https://3d-dent.com/product/silk/,https://3d-dent.com/product/silk/,200,available,raw/ORG-001730/f3c87d109a1f.txt,
+ORG-001730,targeted_product_followup,https://3d-dent.com/product/nano-hybrid-composite-syringe/,https://3d-dent.com/product/nano-hybrid-composite-syringe/,200,available,raw/ORG-001730/147d0a3b4301.txt,
+ORG-001768,sitemap,https://actionsuper.com/sitemap.xml,https://actionsuper.com/sitemap_index.xml,200,available,raw/ORG-001768/a27b76523ff3.txt,
+ORG-001768,home,https://actionsuper.com,https://actionsuper.com/,200,available,raw/ORG-001768/535e45325480.txt,
+ORG-001768,pdf,https://actionsuper.com/wp-content/uploads/2023/09/Flyer_ASA300w_EN-1.pdf,https://actionsuper.com/wp-content/uploads/2023/09/Flyer_ASA300w_EN-1.pdf,200,available,raw/ORG-001768/2f516c010fa4.txt, 
+ORG-001768,pdf,https://actionsuper.com/wp-content/uploads/2025/03/ISO-Certificate-of-Program-03-25.pdf,https://actionsuper.com/wp-content/uploads/2025/03/ISO-Certificate-of-Program-03-25.pdf,200,available,raw/ORG-001768/44b642c7af56.txt, 
+ORG-001768,product_or_capability,https://actionsuper.com/products/,https://actionsuper.com/products/,200,available,raw/ORG-001768/9d03f2525522.txt,
+ORG-001768,product_or_capability,https://actionsuper.com/about-us/,https://actionsuper.com/about-us/,200,available,raw/ORG-001768/fbe85a43a485.txt,
+ORG-001768,targeted_product_followup,https://actionsuper.com/products/bonded-grinding-wheels/resin-bond-wheels/,https://actionsuper.com/products/bonded-grinding-wheels/resin-bond-wheels/,200,available,raw/ORG-001768/9e4b7f74f4b4.txt,
+ORG-001777,sitemap,https://anchor-online.com/sitemap.xml,https://anchor-online.com/sitemap_index.xml,200,available,raw/ORG-001777/36903ba3ada5.txt,
+ORG-001777,home,https://anchor-online.com,https://anchor-online.com/,200,available,raw/ORG-001777/a1bb57c1d364.txt,
+ORG-001777,product_or_capability,https://anchor-online.com/about-us/,https://anchor-online.com/about-us/,200,available,raw/ORG-001777/a2acf43e468b.txt,
+ORG-001777,product_or_capability,https://anchor-online.com/products/engine-mounts/,https://anchor-online.com/products/engine-mounts/,200,available,raw/ORG-001777/da2710082f3b.txt,
+ORG-001777,pdf,https://anchor-online.com/wp-content/uploads/2018/03/Anchor-Engine-Transmission-Mount-Bulletin.compressed.pdf,https://anchor-online.com/wp-content/uploads/2018/03/Anchor-Engine-Transmission-Mount-Bulletin.compressed.pdf,200,available,raw/ORG-001777/efb56a0313fa.txt, 
+ORG-001777,product_or_capability,https://anchor-online.com/products/transmission-mounts/,https://anchor-online.com/transmission-mounts/,200,available,raw/ORG-001777/3b6475523584.txt,
+ORG-001891,sitemap,https://inflatableimages.com/sitemap.xml,https://inflatableimages.com/sitemap.xml,404,failed_or_empty,raw/ORG-001891/b8428854d08e.txt,
+ORG-001891,home,https://inflatableimages.com,https://www.inflatableimages.com/,200,available,raw/ORG-001891/9a6028dec200.txt,
+ORG-001891,product_or_capability,https://inflatableimages.com/products/,https://www.inflatableimages.com/inflatable-products/,200,available,raw/ORG-001891/e819296e0e09.txt,
+ORG-001891,product_or_capability,https://www.inflatableimages.com/products/,https://www.inflatableimages.com/inflatable-products/,200,available,raw/ORG-001891/c4353f662995.txt,
+ORG-001891,product_or_capability,https://www.inflatableimages.com/product-showcase/,https://www.inflatableimages.com/product-showcase/,200,available,raw/ORG-001891/1171b0eb9fcc.txt,
+ORG-001891,product_or_capability,https://www.inflatableimages.com/inflatable-products/,https://www.inflatableimages.com/inflatable-products/,200,available,raw/ORG-001891/c0f5ceea3bf8.txt,
+ORG-001891,targeted_product_followup,https://inflatableimages.com/custom-inflatable-manufacturer/,https://www.inflatableimages.com/custom-inflatable-manufacturer/,200,available,raw/ORG-001891/e7718ffdd503.txt,
+ORG-001929,sitemap,https://hycompinc.com/sitemap.xml,https://hycompinc.com/sitemap.xml,000,failed_or_empty,raw/ORG-001929/6b07430000c0.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'hycompinc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001929,home,https://hycompinc.com,https://hycompinc.com/,000,failed_or_empty,raw/ORG-001929/023004d03d53.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'hycompinc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001929,jina_home,https://r.jina.ai/https://hycompinc.com,https://r.jina.ai/https://hycompinc.com,401,failed_or_empty,raw/ORG-001929/74076d435e3e.txt,
+ORG-001929,product_probe,https://hycompinc.com/products/,https://hycompinc.com/products/,000,failed_or_empty,raw/ORG-001929/114b945acf13.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'hycompinc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001929,sitemap_probe,https://hycompinc.com/wp-sitemap.xml,https://hycompinc.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001929/e9ba972b5497.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'hycompinc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001929,product_probe,https://hycompinc.com/capabilities/,https://hycompinc.com/capabilities/,000,failed_or_empty,raw/ORG-001929/042c9d56c8d8.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'hycompinc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001931,sitemap,https://www.cooperstandard-isg.com/sitemap.xml,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,307,failed_or_empty,raw/ORG-001931/c7aa2c40d720.txt,
+ORG-001931,home,https://www.cooperstandard-isg.com/,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,307,failed_or_empty,raw/ORG-001931/97ddafaeb732.txt,
+ORG-001931,jina_home,https://r.jina.ai/https://www.cooperstandard-isg.com/,https://r.jina.ai/https://www.cooperstandard-isg.com/,401,failed_or_empty,raw/ORG-001931/3014393dd97d.txt,
+ORG-001931,product_probe,https://www.cooperstandard-isg.com/products/,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,307,failed_or_empty,raw/ORG-001931/5a30cf973cc1.txt,
+ORG-001931,sitemap_probe,https://www.cooperstandard-isg.com/wp-sitemap.xml,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,307,failed_or_empty,raw/ORG-001931/b455b8d10015.txt,
+ORG-001931,product_probe,https://www.cooperstandard-isg.com/capabilities/,https://www.cooperstandard.com/products/industrial-and-specialty-group-isg,307,failed_or_empty,raw/ORG-001931/9cb8f83e7cb5.txt,
+ORG-001934,sitemap,https://rackpowdercoating.com/sitemap.xml,https://rackpowdercoating.com/sitemap.xml,000,failed_or_empty,raw/ORG-001934/a1170571ea15.txt,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001934,home,https://rackpowdercoating.com,https://rackpowdercoating.com/,000,failed_or_empty,raw/ORG-001934/997ecd7901f5.txt,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001934,jina_home,https://r.jina.ai/https://rackpowdercoating.com,https://r.jina.ai/https://rackpowdercoating.com,401,failed_or_empty,raw/ORG-001934/b70e51736768.txt,
+ORG-001934,product_probe,https://rackpowdercoating.com/products/,https://rackpowdercoating.com/products/,000,failed_or_empty,raw/ORG-001934/54c3f547f162.txt,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001934,sitemap_probe,https://rackpowdercoating.com/wp-sitemap.xml,https://rackpowdercoating.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001934/a58876162b91.txt,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001934,product_probe,https://rackpowdercoating.com/capabilities/,https://rackpowdercoating.com/capabilities/,000,failed_or_empty,raw/ORG-001934/4494b1a5ff7a.txt,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-001943,sitemap,https://trans-foam.com/sitemap.xml,https://trans-foam.com/sitemap.xml,000,failed_or_empty,raw/ORG-001943/bc10c8ec049b.txt,curl: (28) Failed to connect to trans-foam.com port 443 after 8010 ms: Timeout was reached
+ORG-001943,home,https://trans-foam.com,https://trans-foam.com/,000,failed_or_empty,raw/ORG-001943/098a016d9f7c.txt,curl: (28) Failed to connect to trans-foam.com port 443 after 8004 ms: Timeout was reached
+ORG-001943,jina_home,https://r.jina.ai/https://trans-foam.com,https://r.jina.ai/https://trans-foam.com,401,failed_or_empty,raw/ORG-001943/f7e52db9d382.txt,
+ORG-001943,product_probe,https://trans-foam.com/products/,https://trans-foam.com/products/,000,failed_or_empty,raw/ORG-001943/8b58ddbdfc0b.txt,curl: (28) Failed to connect to trans-foam.com port 443 after 8003 ms: Timeout was reached
+ORG-001943,sitemap_probe,https://trans-foam.com/wp-sitemap.xml,https://trans-foam.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001943/4c01ceb5febf.txt,curl: (28) Failed to connect to trans-foam.com port 443 after 8009 ms: Timeout was reached
+ORG-001943,product_probe,https://trans-foam.com/capabilities/,https://trans-foam.com/capabilities/,000,failed_or_empty,raw/ORG-001943/6afe1ff5a632.txt,curl: (28) Failed to connect to trans-foam.com port 443 after 8011 ms: Timeout was reached
+ORG-001945,sitemap,https://vinylprofilesinc.com/sitemap.xml,https://vinylprofilesinc.com/sitemap.xml,000,failed_or_empty,raw/ORG-001945/6cf051923249.txt,curl: (6) Could not resolve host: vinylprofilesinc.com
+ORG-001945,home,https://vinylprofilesinc.com,https://vinylprofilesinc.com/,000,failed_or_empty,raw/ORG-001945/05b0aaee6569.txt,curl: (6) Could not resolve host: vinylprofilesinc.com
+ORG-001945,jina_home,https://r.jina.ai/https://vinylprofilesinc.com,https://r.jina.ai/https://vinylprofilesinc.com,422,failed_or_empty,raw/ORG-001945/298c4a4d56eb.txt,
+ORG-001945,product_probe,https://vinylprofilesinc.com/products/,https://vinylprofilesinc.com/products/,000,failed_or_empty,raw/ORG-001945/bac40dfa614e.txt,curl: (6) Could not resolve host: vinylprofilesinc.com
+ORG-001945,sitemap_probe,https://vinylprofilesinc.com/wp-sitemap.xml,https://vinylprofilesinc.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-001945/0da3c82db02b.txt,curl: (6) Could not resolve host: vinylprofilesinc.com
+ORG-001945,product_probe,https://vinylprofilesinc.com/capabilities/,https://vinylprofilesinc.com/capabilities/,000,failed_or_empty,raw/ORG-001945/e76ac5aca66a.txt,curl: (6) Could not resolve host: vinylprofilesinc.com
+ORG-001997,sitemap,https://quikey.com/sitemap.xml,https://www.quikey.com/sitemap.xml,200,available,raw/ORG-001997/d3c92aeb41dd.txt,
+ORG-001997,home,https://quikey.com,https://www.quikey.com/,500,failed_or_empty,raw/ORG-001997/286291532b21.txt,
+ORG-001997,jina_home,https://r.jina.ai/https://quikey.com,https://r.jina.ai/https://quikey.com,401,failed_or_empty,raw/ORG-001997/287d419bbd36.txt,
+ORG-001997,sitemap_child,https://www.quikey.com/sitemap-1.xml,https://www.quikey.com/sitemap-1.xml,200,available,raw/ORG-001997/84a784e47abd.txt,
+ORG-001997,product_or_capability,https://www.quikey.com/info/about_us,https://www.quikey.com/info/about_us,500,failed_or_empty,raw/ORG-001997/a0a593b56bf9.txt,
+ORG-001997,product_or_capability,https://www.quikey.com/info/production_time,https://www.quikey.com/info/production_time,500,failed_or_empty,raw/ORG-001997/c81c23ecd35d.txt,
+ORG-001999,sitemap,https://raydarrubber.com/sitemap.xml,https://raydarrubber.com/sitemap.xml,200,failed_or_empty,raw/ORG-001999/0a0c77c3bd89.txt,
+ORG-001999,home,https://raydarrubber.com,https://raydarrubber.com/,200,failed_or_empty,raw/ORG-001999/275360dd4998.txt,
+ORG-001999,jina_home,https://r.jina.ai/https://raydarrubber.com,https://r.jina.ai/https://raydarrubber.com,401,failed_or_empty,raw/ORG-001999/caf7972bab7f.txt,
+ORG-001999,product_or_capability,https://raydarrubber.com/lander,https://raydarrubber.com/lander,200,failed_or_empty,raw/ORG-001999/80a041833be2.txt,
+ORG-001999,product_probe,https://raydarrubber.com/products/,https://raydarrubber.com/products/,200,failed_or_empty,raw/ORG-001999/945c2ac52247.txt,
+ORG-001999,sitemap_probe,https://raydarrubber.com/wp-sitemap.xml,https://raydarrubber.com/wp-sitemap.xml,200,failed_or_empty,raw/ORG-001999/931275b4430b.txt,
+ORG-002010,sitemap,https://sherwoodcorp.com/sitemap.xml,https://sherwoodcorp.com/sitemap.xml,200,failed_or_empty,raw/ORG-002010/4b4c068555c1.txt,
+ORG-002010,home,https://sherwoodcorp.com,https://sherwoodcorp.com/,200,failed_or_empty,raw/ORG-002010/9f554f6a9c84.txt,
+ORG-002010,jina_home,https://r.jina.ai/https://sherwoodcorp.com,https://r.jina.ai/https://sherwoodcorp.com,401,failed_or_empty,raw/ORG-002010/4d8b18f2ac18.txt,
+ORG-002010,product_probe,https://sherwoodcorp.com/products/,https://sherwoodcorp.com/products/,200,failed_or_empty,raw/ORG-002010/59a9dd9fa517.txt,
+ORG-002010,sitemap_probe,https://sherwoodcorp.com/wp-sitemap.xml,https://sherwoodcorp.com/wp-sitemap.xml,200,failed_or_empty,raw/ORG-002010/b9f4f23fb685.txt,
+ORG-002010,product_probe,https://sherwoodcorp.com/capabilities/,https://sherwoodcorp.com/capabilities/,200,failed_or_empty,raw/ORG-002010/1b23e0f1cafd.txt,
+ORG-002011,sitemap,https://solutionsinpc.com/sitemap.xml,https://solutionsinpc.com/sitemap.xml,000,failed_or_empty,raw/ORG-002011/740515e2baa3.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'solutionsinpc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002011,home,https://solutionsinpc.com,https://solutionsinpc.com/,000,failed_or_empty,raw/ORG-002011/abfe540e8c53.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'solutionsinpc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002011,jina_home,https://r.jina.ai/https://solutionsinpc.com,https://r.jina.ai/https://solutionsinpc.com,401,failed_or_empty,raw/ORG-002011/c3c2db4d5b95.txt,
+ORG-002011,product_probe,https://solutionsinpc.com/products/,https://solutionsinpc.com/products/,000,failed_or_empty,raw/ORG-002011/fbcf42ddcedc.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'solutionsinpc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002011,sitemap_probe,https://solutionsinpc.com/wp-sitemap.xml,https://solutionsinpc.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-002011/30f8f0e9a1f2.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'solutionsinpc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002011,product_probe,https://solutionsinpc.com/capabilities/,https://solutionsinpc.com/capabilities/,000,failed_or_empty,raw/ORG-002011/6cbdf2a8e3e0.txt,"curl: (60) SSL: no alternative certificate subject name matches target host name 'solutionsinpc.com'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002031,sitemap,https://vinyltechint.com/sitemap.xml,https://vinyltechint.com/sitemap.xml,000,failed_or_empty,raw/ORG-002031/5590ff23d23d.txt,curl: (6) Could not resolve host: vinyltechint.com
+ORG-002031,home,https://vinyltechint.com,https://vinyltechint.com/,000,failed_or_empty,raw/ORG-002031/a39cd3561f20.txt,curl: (6) Could not resolve host: vinyltechint.com
+ORG-002031,jina_home,https://r.jina.ai/https://vinyltechint.com,https://r.jina.ai/https://vinyltechint.com,422,failed_or_empty,raw/ORG-002031/457e788bbf69.txt,
+ORG-002031,product_probe,https://vinyltechint.com/products/,https://vinyltechint.com/products/,000,failed_or_empty,raw/ORG-002031/e32926bc8c8a.txt,curl: (6) Could not resolve host: vinyltechint.com
+ORG-002031,sitemap_probe,https://vinyltechint.com/wp-sitemap.xml,https://vinyltechint.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-002031/329d1ff68d8e.txt,curl: (6) Could not resolve host: vinyltechint.com
+ORG-002031,product_probe,https://vinyltechint.com/capabilities/,https://vinyltechint.com/capabilities/,000,failed_or_empty,raw/ORG-002031/714ef43caf34.txt,curl: (6) Could not resolve host: vinyltechint.com
+ORG-002034,sitemap,https://gizmowhipguide.com/sitemap.xml,https://gizmowhipguide.com/sitemap.xml,200,available,raw/ORG-002034/434a2f6ffdd9.txt,
+ORG-002034,home,https://gizmowhipguide.com,https://gizmowhipguide.com/,200,available,raw/ORG-002034/f06b906fdb20.txt,
+ORG-002034,product_probe,https://gizmowhipguide.com/products/,https://gizmowhipguide.com/products/,404,failed_or_empty,raw/ORG-002034/04c4c6e9c77d.txt,
+ORG-002034,sitemap_probe,https://gizmowhipguide.com/wp-sitemap.xml,https://gizmowhipguide.com/wp-sitemap.xml,404,failed_or_empty,raw/ORG-002034/d0c377babbd7.txt,
+ORG-002034,product_probe,https://gizmowhipguide.com/capabilities/,https://gizmowhipguide.com/capabilities/,404,failed_or_empty,raw/ORG-002034/315472d344af.txt,
+ORG-002034,product_probe,https://gizmowhipguide.com/about-us/,https://gizmowhipguide.com/about-us/,404,failed_or_empty,raw/ORG-002034/6ca258c84f4c.txt,
+ORG-002047,sitemap,https://wayne-dalton.com/sitemap.xml,https://www.wayne-dalton.com/sitemap.xml,403,failed_or_empty,raw/ORG-002047/acbd24083225.txt,
+ORG-002047,home,https://wayne-dalton.com,https://www.wayne-dalton.com/,403,failed_or_empty,raw/ORG-002047/31babdfe42af.txt,
+ORG-002047,jina_home,https://r.jina.ai/https://wayne-dalton.com,https://r.jina.ai/https://wayne-dalton.com,401,failed_or_empty,raw/ORG-002047/32dc517d7e2d.txt,
+ORG-002047,product_probe,https://wayne-dalton.com/products/,https://www.wayne-dalton.com/products/,403,failed_or_empty,raw/ORG-002047/f67f87b0ecbf.txt,
+ORG-002047,sitemap_probe,https://wayne-dalton.com/wp-sitemap.xml,https://www.wayne-dalton.com/wp-sitemap.xml,403,failed_or_empty,raw/ORG-002047/075ce3f69487.txt,
+ORG-002047,product_probe,https://wayne-dalton.com/capabilities/,https://www.wayne-dalton.com/capabilities/,403,failed_or_empty,raw/ORG-002047/23aec25a0036.txt,
+ORG-002049,sitemap,https://sietins.com/sitemap.xml,https://www.sietins.com/sitemap.xml,301,failed_or_empty,raw/ORG-002049/21b5c0c2524a.txt,curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)
+ORG-002049,home,https://sietins.com,https://www.sietins.com/,301,failed_or_empty,raw/ORG-002049/4f623f0fafe8.txt,curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)
+ORG-002049,jina_home,https://r.jina.ai/https://sietins.com,https://r.jina.ai/https://sietins.com,401,failed_or_empty,raw/ORG-002049/842ff2c76051.txt,
+ORG-002049,product_probe,https://sietins.com/products/,https://www.sietins.com/products/,301,failed_or_empty,raw/ORG-002049/db0c49be7635.txt,curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)
+ORG-002049,sitemap_probe,https://sietins.com/wp-sitemap.xml,https://www.sietins.com/wp-sitemap.xml,301,failed_or_empty,raw/ORG-002049/203339c7decb.txt,curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)
+ORG-002049,product_probe,https://sietins.com/capabilities/,https://www.sietins.com/capabilities/,301,failed_or_empty,raw/ORG-002049/8fb8397aaf8c.txt,curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)
+ORG-002135,sitemap,https://www.appliedspecialties.com/sitemap.xml,https://appliedspecialties.com/sitemap_index.xml,200,failed_or_empty,raw/ORG-002135/57f4d3e650f8.txt,
+ORG-002135,home,https://www.appliedspecialties.com,https://appliedspecialties.com/,200,available,raw/ORG-002135/1c3a4034db18.txt,
+ORG-002135,product_or_capability,https://appliedspecialties.com/about/,https://appliedspecialties.com/about/,200,available,raw/ORG-002135/8276b7099814.txt,
+ORG-002135,product_or_capability,https://appliedspecialties.com/product-portfolio/,https://appliedspecialties.com/product-portfolio/,200,available,raw/ORG-002135/d190eebdf343.txt,
+ORG-002135,product_or_capability,https://appliedspecialties.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fappliedspecialties.com%2Fabout%2F,https://appliedspecialties.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fappliedspecialties.com%2Fabout%2F,200,available,raw/ORG-002135/4b1f53f2b4dc.txt,
+ORG-002135,product_or_capability,https://appliedspecialties.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fappliedspecialties.com%2Fabout%2F&,https://appliedspecialties.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fappliedspecialties.com%2Fabout%2F&,200,available,raw/ORG-002135/20577bbe16a0.txt,
+ORG-002146,sitemap,https://altorsolutions.com/sitemap.xml,https://altorsolutions.com/sitemap.xml,200,available,raw/ORG-002146/8703618a202a.txt,
+ORG-002146,home,https://altorsolutions.com,https://altorsolutions.com/,200,available,raw/ORG-002146/8aea2fb16522.txt,
+ORG-002146,product_or_capability,https://altorsolutions.com/about-us/,https://altorsolutions.com/about-us/,200,available,raw/ORG-002146/ee7a260765c2.txt,
+ORG-002146,product_or_capability,https://altorsolutions.com/our-process/,https://altorsolutions.com/our-process/,200,available,raw/ORG-002146/ac80c567486e.txt,
+ORG-002146,product_or_capability,https://altorsolutions.com/company/about-us/,https://altorsolutions.com/about-us/,200,available,raw/ORG-002146/7c79b32c975d.txt,
+ORG-002146,product_or_capability,https://altorsolutions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Faltorsolutions.com%2Fabout-us%2F,https://altorsolutions.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Faltorsolutions.com%2Fabout-us%2F,200,available,raw/ORG-002146/a4663b762e5a.txt,
+ORG-002146,targeted_product_followup,https://altorsolutions.com/cold-chain-packaging/insulated-shippers/,https://altorsolutions.com/insulated-shippers/,200,available,raw/ORG-002146/c68653dff0ce.txt,
+ORG-002148,sitemap,http://arthurcorp.com/sitemap.xml,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,200,available,raw/ORG-002148/a905cfde2687.txt,
+ORG-002148,home,http://arthurcorp.com,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,200,available,raw/ORG-002148/16da10ba25b4.txt,
+ORG-002148,product_probe,http://arthurcorp.com/products/,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,200,available,raw/ORG-002148/1bdeb2366327.txt,
+ORG-002148,sitemap_probe,http://arthurcorp.com/wp-sitemap.xml,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,200,available,raw/ORG-002148/d06c03921a24.txt,
+ORG-002148,product_probe,http://arthurcorp.com/capabilities/,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,200,available,raw/ORG-002148/1b47b74bbeae.txt,
+ORG-002148,product_probe,http://arthurcorp.com/about-us/,http://arthurcorp.com/cgi-sys/suspendedpage.cgi,200,available,raw/ORG-002148/48d954719977.txt,
+ORG-002153,sitemap,https://alphaworld.com/sitemap.xml,https://alphaworld.com/sitemap.xml,200,available,raw/ORG-002153/f33162f13317.txt,
+ORG-002153,home,https://alphaworld.com,https://www.alphaworld.com/,200,available,raw/ORG-002153/290ef32c7f9a.txt,
+ORG-002153,product_or_capability,https://www.alphaworld.com/about-alpha/case-studies,https://www.alphaworld.com/about-alpha/case-studies,200,available,raw/ORG-002153/131b1aadd74f.txt,
+ORG-002153,product_or_capability,https://www.alphaworld.com/resources/product-catalog,https://www.alphaworld.com/resources/product-catalog,200,available,raw/ORG-002153/71171d355941.txt,
+ORG-002153,product_or_capability,https://www.alphaworld.com/solutions/product-locationing,https://www.alphaworld.com/solutions/product-locationing,200,available,raw/ORG-002153/dad727e80133.txt,
+ORG-002153,product_or_capability,https://www.alphaworld.com/about-alpha/ongoing-innovation,https://www.alphaworld.com/about-alpha/ongoing-innovation,200,available,raw/ORG-002153/167861d9af8c.txt,
+ORG-002153,targeted_product_followup,https://www.alphaworld.com/products,https://www.alphaworld.com/products,404,failed_or_empty,raw/ORG-002153/48a77f337fcf.txt,
+ORG-002157,sitemap,http://custompultrusions.com/sitemap.xml,http://www.custompultrusions.com:80/,301,failed_or_empty,raw/ORG-002157/e363eec8d4f8.txt,curl: (28) Failed to connect to www.custompultrusions.com port 80 after 8002 ms: Timeout was reached
+ORG-002157,home,http://custompultrusions.com,http://www.custompultrusions.com:80/,301,failed_or_empty,raw/ORG-002157/8e25a41b35bf.txt,curl: (28) Failed to connect to www.custompultrusions.com port 80 after 8007 ms: Timeout was reached
+ORG-002157,jina_home,https://r.jina.ai/http://custompultrusions.com,https://r.jina.ai/http://custompultrusions.com,401,failed_or_empty,raw/ORG-002157/e65c4d866f4a.txt,
+ORG-002157,product_probe,http://custompultrusions.com/products/,http://www.custompultrusions.com:80/,301,failed_or_empty,raw/ORG-002157/75fea306de11.txt,curl: (28) Failed to connect to www.custompultrusions.com port 80 after 8008 ms: Timeout was reached
+ORG-002157,sitemap_probe,http://custompultrusions.com/wp-sitemap.xml,http://www.custompultrusions.com:80/,301,failed_or_empty,raw/ORG-002157/61aaa29c2fd4.txt,curl: (28) Failed to connect to www.custompultrusions.com port 80 after 8002 ms: Timeout was reached
+ORG-002157,product_probe,http://custompultrusions.com/capabilities/,http://www.custompultrusions.com:80/,301,failed_or_empty,raw/ORG-002157/f8e78e8ab86d.txt,curl: (28) Failed to connect to www.custompultrusions.com port 80 after 8011 ms: Timeout was reached
+ORG-002167,sitemap,https://www.plymouthfoam.com/sitemap.xml,https://www.plymouthfoam.com/sitemap.xml,000,failed_or_empty,raw/ORG-002167/5d4d8a72ec92.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002167,home,https://www.plymouthfoam.com,https://www.plymouthfoam.com/,000,failed_or_empty,raw/ORG-002167/ea5d4a4ccfea.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002167,jina_home,https://r.jina.ai/https://www.plymouthfoam.com,https://r.jina.ai/https://www.plymouthfoam.com,401,failed_or_empty,raw/ORG-002167/0082a5a60fa8.txt,
+ORG-002167,product_probe,https://www.plymouthfoam.com/products/,https://www.plymouthfoam.com/products/,000,failed_or_empty,raw/ORG-002167/93c3a6752e5c.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002167,sitemap_probe,https://www.plymouthfoam.com/wp-sitemap.xml,https://www.plymouthfoam.com/wp-sitemap.xml,000,failed_or_empty,raw/ORG-002167/d2d84b1cf82c.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002167,product_probe,https://www.plymouthfoam.com/capabilities/,https://www.plymouthfoam.com/capabilities/,000,failed_or_empty,raw/ORG-002167/73d9e98cdc94.txt,"curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above."
+ORG-002948,sitemap,https://www.coviacorp.com/sitemap.xml,https://www.coviacorp.com/sitemap.xml,200,available,raw/ORG-002948/643831441811.txt,
+ORG-002948,home,https://www.coviacorp.com,https://www.coviacorp.com/,200,available,raw/ORG-002948/88b447f324be.txt,
+ORG-002948,pdf,https://www.coviacorp.com/media/ajdhru2y/bestsand_top-100-courses.pdf,https://www.coviacorp.com/media/ajdhru2y/bestsand_top-100-courses.pdf,200,available,raw/ORG-002948/7cbe2bacef7e.txt, 
+ORG-002948,product_or_capability,https://www.coviacorp.com/rubber/,https://www.coviacorp.com/rubber/,200,available,raw/ORG-002948/8517cc0817c8.txt,
+ORG-002948,pdf,https://www.coviacorp.com/media/ex1ba2i4/hifilln_techbulletin.pdf,https://www.coviacorp.com/media/ex1ba2i4/hifilln_techbulletin.pdf,200,available,raw/ORG-002948/59e89e822290.txt, 
+ORG-002948,pdf,https://www.coviacorp.com/media/y4kpxoxh/covia_safety-briefpdftds.pdf,https://www.coviacorp.com/media/y4kpxoxh/covia_safety-briefpdftds.pdf,200,available,raw/ORG-002948/1ba8930f395f.txt, 

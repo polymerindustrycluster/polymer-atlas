@@ -1,0 +1,18 @@
+{
+  "new_route": {
+    "org_id": "ORG-000414",
+    "kind": "curl_browserUA",
+    "attempted_url": "https://koroseal.com/getmedia/717ccc84-ec0a-43c9-a4f2-c21a8d97c667/17953?disposition=inline",
+    "final_url": "https://koroseal.com/getmedia/717ccc84-ec0a-43c9-a4f2-c21a8d97c667/17953?disposition=inline",
+    "http_status": "200",
+    "availability": "available",
+    "raw_path": "raw/ORG-000414/c03b013ca2ad.txt",
+    "observed_date": "2026-11-06",
+    "notes": "pdftotext -layout;  "
+  },
+  "positive_quote": "The wallcovering is composed of a combination of PVC film",
+  "value": "pvc",
+  "positive": "PASS",
+  "wrong_quote_negative": "PASS",
+  "prior_controls": "Round4 Novex polyurethane, MIPCO epoxy, TUFTEX natural rubber controls remain read-only; no old quotes become new evidence."
+}

@@ -4,7 +4,7 @@ Controller BOARD06:30 continuation, branch agent/codex/newsroom-urls-pic18,PR152
 
 ## Scope and sources
 
-Named source snapshot9d69978:772 distinct active organizations with website,tier1_qualifier empty,>=1 physical OH site in PIC18. County suffix normalized;regions.py controls region. Frozen inputs/discovery/verdicts all772;independent snapshot frame recomputed from canonical tables. Current builder/check revalidate each accepted record's website,active/non-tier1/PIC18 membership and packet values. Later parallel creates outside manifest. Priority counts:attempt tier1=0,PIC18 non-tier1=772,other=0.
+Named source snapshot9d69978:772 distinct active organizations with website,tier1_qualifier empty,>=1 physical OH site in PIC18. County suffix normalized;regions.py controls region. Frozen inputs/discovery/verdicts all772;independent snapshot frame recomputed from canonical tables. Current builder/check revalidate each accepted record's website,active status and packet values; frozen source census governs membership. Later parallel creates outside manifest. Priority counts:attempt tier1=0,PIC18 non-tier1=772,other=0.
 
 Primary sources are held own websites and linked news/press indexes. discovery.json records <=6 initial discovery requests/org and115 candidates;audit.json raw visible-text date samples;verdicts.csv one disposition/input. No full website/sitemap crawl;route failure never absence/closure. No private/licensed/contact data. SCHEMA4.4/V-58 navigation aids need no EVD;block unused. No records created,dedupe/ID allocation/inclusion decisions;no tiers,status,liveness,registry,derived,LinkedIn or evidence fields authored.
 
@@ -19,7 +19,7 @@ python3 tasks/newsroom-urls-pic18-2026-11-06/check.py
 python3 scripts/validate.py
 ```
 
-**38 active PIC18 non-tier1 organizations:38 pages+11 feeds=49 empty cells/4 shards.** Other priority classes0. Unchanged source tiers:A=15,B=17,C=6,U=0.734 organization holds:657 no bounded-nav candidate,77 candidate identity/purpose/accessibility.5 overlapping feed-only holds:Vertex,BaseTek,Flambeau,Godfrey&Wing,iCHOR(no article overlap). No inclusion_log changes.
+**38 active organizations in the frozen PIC18 cohort:38 pages+11 feeds=49 empty cells/4 shards.** Other priority classes0. Unchanged source tiers:A=15,B=17,C=6,U=0.734 organization holds:657 no bounded-nav candidate,77 candidate identity/purpose/accessibility.5 overlapping feed-only holds:Vertex,BaseTek,Flambeau,Godfrey&Wing,iCHOR(no article overlap). No inclusion_log changes.
 
 | Hold group | Active organizations | Still needed before fill |
 |---|---:|---|
@@ -53,3 +53,5 @@ Only current VERIFIED indexes listed;Keener removed. Samples have only pre-2024 
 | ORG-001717 FlexLink, LLC | March 28, 2016 |
 | ORG-001830 Impact Sleeve | May 10, 2017 |
 | ORG-001937 Smetzer's Tire Center, Inc. | March 28, 2014 |
+
+Controller frame instruction: frozen9d69978 membership governs; rank was ordering only. Runtime rank/region guards removed; frozen772 census, current active status, exact canonical website, own publisher/domain and value-conflict preflight retained. Pretium ORG-000523 gained national_footprint tier1 on later main, but stays in this frozen PIC18 cohort under that instruction. No tier1 edits by L9. Current-main542629e replay originally stopped on that runtime guard before writing; after the controller-directed guard removal it applies the same38-page/11-feed packet.

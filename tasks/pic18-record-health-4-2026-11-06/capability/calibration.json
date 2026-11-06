@@ -1,0 +1,26 @@
+{
+  "positive_checks": [
+    {
+      "org_id": "CAL-novex",
+      "value": "polyurethane_pu",
+      "quote": "a leading manufacturer of high-performance polyurethane conveyor belting and sheeting",
+      "source_ref": "https://novexinc.com/",
+      "raw_path": "raw/CAL-novex/8e69deaf1668.txt"
+    },
+    {
+      "org_id": "CAL-mipco",
+      "value": "epoxy",
+      "quote": "We are the manufacturer and packager of 100% solids epoxy flooring repair and resurfacing materials",
+      "source_ref": "https://mipco.org/",
+      "raw_path": "raw/CAL-mipco/cdd9a8423ada.txt"
+    },
+    {
+      "org_id": "CAL-tuftex",
+      "value": "natural_rubber_nr",
+      "quote": "TUFTEX Balloons are made from 100% natural rubber latex",
+      "source_ref": "https://tuftexballoons.com/",
+      "raw_path": "raw/CAL-tuftex/67c547a40f26.txt"
+    }
+  ],
+  "wrong_quote_negative": "PASS: Novex manufactures epoxy floor patch from natural rubber rejected"
+}

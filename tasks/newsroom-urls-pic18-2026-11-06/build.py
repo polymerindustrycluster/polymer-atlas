@@ -7,10 +7,9 @@ def main():
     assert len({r['org_id'] for r in verdicts})==len(verdicts)
     edits={r['org_id']:r for r in verdicts if r['verdict']=='VERIFIED'}
     assert edits
-    import sys
-    sys.path.insert(0,str(ROOT/'scripts'))
-    from regions import PIC18
-    pic={r['org_id'] for path in (ROOT/'data').glob('sites_*.csv') if path.name!='sites_all.csv' for r in csv.DictReader(open(path)) if r['state']=='OH' and r['county'].removesuffix(' County') in PIC18}
+    source=list(csv.DictReader(open(HERE/'inputs.csv')))
+    assert len({r['org_id'] for r in source})==len(source)
+    assert {r['org_id'] for r in verdicts}=={r['org_id'] for r in source},'frozen packet membership mismatch'
     found=set(); writes=[]; cells=0
     for path in sorted((ROOT/'data').glob('organizations_*.csv')):
         if path.name=='organizations_all.csv': continue
@@ -19,7 +18,7 @@ def main():
         for row in rows:
             if row['org_id'] not in edits: continue
             v=edits[row['org_id']];found.add(row['org_id'])
-            assert row['status']=='active' and not row['tier1_qualifier'] and row['org_id'] in pic,row['org_id']
+            assert row['status']=='active',row['org_id']
             website=row['website'] if '://' in row['website'] else 'https://'+row['website']
             assert website==v['website'],row['org_id']
             assert domain(v['newsroom_url'])==domain(website)
@@ -34,5 +33,5 @@ def main():
             buf=io.StringIO();w=csv.DictWriter(buf,fieldnames=header,lineterminator='\n');w.writeheader();w.writerows(rows);writes.append((path,buf.getvalue()))
     assert found==set(edits),(set(edits)-found)
     for path,text in writes:path.write_text(text)
-    print(f'{len(edits)} active PIC18 non-tier1 organizations; {cells} cells changed; {len(writes)} shards written')
+    print(f'{len(edits)} active organizations in frozen PIC18 cohort; {cells} cells changed; {len(writes)} shards written')
 if __name__=='__main__':main()
