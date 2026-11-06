@@ -1,0 +1,2187 @@
+{
+  "LF-GA-00105": [
+    {
+      "id": "ORG-000675",
+      "name": "Anomatic Corporation",
+      "city": "Blacklick",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Plant 22'"
+    },
+    {
+      "id": "ORG-004215",
+      "name": "Shaw Industries Group, Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'shaw industries group' = legal_name 'Shaw Industries Group, Inc.'"
+    }
+  ],
+  "LF-GA-00161": [],
+  "LF-GA-00541": [],
+  "LF-GA-00270": [
+    {
+      "id": "ORG-003146",
+      "name": "Printpack Inc.",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'printpack' = legal_name 'Printpack Inc.'"
+    }
+  ],
+  "LF-GA-00478": [
+    {
+      "id": "ORG-003769",
+      "name": "Side America Corp.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'Sidel Inc'"
+    }
+  ],
+  "LF-GA-00204": [
+    {
+      "id": "ORG-002537",
+      "name": "Pactiv Corporation",
+      "city": "Mount Carmel",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'pactiv' = legal_name 'Pactiv Corporation'"
+    },
+    {
+      "id": "ORG-002395",
+      "name": "Fabri Kal Corp.",
+      "city": "Hazleton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Pactiv, LLC'"
+    }
+  ],
+  "LF-GA-00490": [],
+  "LF-GA-00210": [],
+  "LF-GA-00201": [
+    {
+      "id": "ORG-004215",
+      "name": "Shaw Industries Group, Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'shaw industries group' = legal_name 'Shaw Industries Group, Inc.'"
+    }
+  ],
+  "LF-GA-00261": [
+    {
+      "id": "ORG-004215",
+      "name": "Shaw Industries Group, Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'shaw industries group' = legal_name 'Shaw Industries Group, Inc.'"
+    }
+  ],
+  "LF-GA-00309": [],
+  "LF-GA-00144": [],
+  "LF-GA-00292": [],
+  "LF-GA-00353": [],
+  "LF-GA-00473": [],
+  "LF-GA-00481": [],
+  "LF-GA-00355": [],
+  "LF-GA-00463": [],
+  "LF-GA-00199": [
+    {
+      "id": "ORG-000984",
+      "name": "WinCup",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'new wincup holdings' = trade_names 'New Wincup Holdings, INC'"
+    }
+  ],
+  "LF-GA-00296": [
+    {
+      "id": "SITE-010757",
+      "name": "SK Microworks America PET film plant (Covington)",
+      "org_id": "ORG-007507",
+      "city": "Covington",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "sites_GA.csv",
+      "street": "1000 Skc Dr",
+      "operator": "SK Microworks America, Inc.",
+      "match": "street key '1000 skc dr'"
+    },
+    {
+      "id": "ORG-007507",
+      "name": "SK Microworks America, Inc.",
+      "city": "Covington",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'SKC, INC.'"
+    }
+  ],
+  "LF-GA-00358": [],
+  "LF-GA-00345": [],
+  "LF-GA-00328": [
+    {
+      "id": "ORG-003146",
+      "name": "Printpack Inc.",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'printpack' = legal_name 'Printpack Inc.'"
+    }
+  ],
+  "LF-GA-00170": [
+    {
+      "id": "ORG-002537",
+      "name": "Pactiv Corporation",
+      "city": "Mount Carmel",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'pactiv' = legal_name 'Pactiv Corporation'"
+    },
+    {
+      "id": "ORG-002395",
+      "name": "Fabri Kal Corp.",
+      "city": "Hazleton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Pactiv LLC'"
+    }
+  ],
+  "LF-GA-00177": [
+    {
+      "id": "ORG-006250",
+      "name": "Bway Corporation",
+      "city": "Cedar City",
+      "state": "UT",
+      "status": "merged",
+      "tier": "B",
+      "file": "organizations_UT.csv",
+      "match": "name key 'bway' = legal_name 'Bway Corporation'",
+      "successor_chain": [
+        "ORG-000717"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-000717 Mauser Packaging Solutions [active]"
+    },
+    {
+      "id": "ORG-000717",
+      "name": "Mauser Packaging Solutions",
+      "city": "Monroe",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'Bway'"
+    }
+  ],
+  "LF-GA-00369": [],
+  "LF-GA-00094": [
+    {
+      "id": "ORG-004587",
+      "name": "Eastman Kodak Company",
+      "city": "Rochester",
+      "state": "NY",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NY.csv",
+      "match": "name key 'eastman kodak' = legal_name 'Eastman Kodak Company'"
+    }
+  ],
+  "LF-GA-00181": [],
+  "LF-GA-00398": [],
+  "LF-GA-00530": [
+    {
+      "id": "ORG-003534",
+      "name": "British American Rubber Company, LLC",
+      "city": "Tallapoosa",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'british american rubber' = legal_name 'British American Rubber Company, LLC'"
+    }
+  ],
+  "LF-GA-00302": [],
+  "LF-GA-00223": [
+    {
+      "id": "ORG-002478",
+      "name": "North American Pipe Corporation (Westlake Pipe & Fittings)",
+      "city": "Leola",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Westlake Pipe & Fittings'"
+    }
+  ],
+  "LF-GA-00486": [],
+  "LF-GA-00454": [],
+  "LF-GA-00300": [],
+  "LF-GA-00289": [],
+  "LF-GA-00156": [
+    {
+      "id": "ORG-000984",
+      "name": "WinCup",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-002951",
+      "name": "Huber Engineered Materials",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003001",
+      "name": "Next Generation Recycling Machines, Inc.",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003018",
+      "name": "Nexus Circular LLC",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003529",
+      "name": "Advanced Polymer Recycling, LLC",
+      "city": "Peachtree City",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-007511",
+      "name": "Enplas (U.S.A.), Inc.",
+      "city": "Marietta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    }
+  ],
+  "LF-GA-00303": [
+    {
+      "id": "ORG-000003",
+      "name": "The Goodyear Tire & Rubber Company",
+      "city": "Akron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'goodyear tire and rubber' = legal_name 'The Goodyear Tire & Rubber Company'"
+    }
+  ],
+  "LF-GA-00030": [
+    {
+      "id": "ORG-000132",
+      "name": "The Sherwin-Williams Company",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-000088",
+      "name": "PPG Industries, Inc.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-002886",
+      "name": "CSW Industrials, Inc.",
+      "city": "Dallas",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'The Sherwin-Williams Company'"
+    }
+  ],
+  "LF-GA-00166": [
+    {
+      "id": "ORG-003632",
+      "name": "Cellofoam North America Inc.",
+      "city": "Conyers",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'cellofoam north america' = legal_name 'Cellofoam North America Inc.'"
+    }
+  ],
+  "LF-GA-00081": [],
+  "LF-GA-00380": [
+    {
+      "id": "ORG-001908",
+      "name": "Tremco CPG Inc.",
+      "city": "Beachwood",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'tremco' = trade_names 'Tremco'"
+    },
+    {
+      "id": "ORG-006166",
+      "name": "Schul - Willseal - Tremco",
+      "city": "Hudson",
+      "state": "NH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NH.csv",
+      "match": "legal_name contains 'Tremco'"
+    },
+    {
+      "id": "ORG-000006",
+      "name": "RPM International Inc.",
+      "city": "Medina",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Tremco'"
+    }
+  ],
+  "LF-GA-00250": [],
+  "LF-GA-00312": [],
+  "LF-GA-00433": [],
+  "LF-GA-00141": [],
+  "LF-GA-00099": [
+    {
+      "id": "ORG-001489",
+      "name": "Sun Chemical Corporation",
+      "city": "Parsippany",
+      "state": "NJ",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_NJ.csv",
+      "match": "name key 'sun chemical' = legal_name 'Sun Chemical Corporation'"
+    },
+    {
+      "id": "ORG-001752",
+      "name": "Performance Plastics Ltd.",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "acquired",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Sun Chemical'",
+      "successor_chain": [
+        "ORG-002534"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-002534 Pexco LLC [active]"
+    }
+  ],
+  "LF-GA-00341": [],
+  "LF-GA-00036": [],
+  "LF-GA-00013": [],
+  "LF-GA-00553": [],
+  "LF-GA-00155": [],
+  "LF-GA-00032": [],
+  "LF-GA-00008": [
+    {
+      "id": "ORG-000984",
+      "name": "WinCup",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-002951",
+      "name": "Huber Engineered Materials",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003001",
+      "name": "Next Generation Recycling Machines, Inc.",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003018",
+      "name": "Nexus Circular LLC",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003529",
+      "name": "Advanced Polymer Recycling, LLC",
+      "city": "Peachtree City",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-007511",
+      "name": "Enplas (U.S.A.), Inc.",
+      "city": "Marietta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-005009",
+      "name": "Nazdar",
+      "city": "Shawnee",
+      "state": "KS",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_KS.csv",
+      "match": "name key 'nazdar' = legal_name 'Nazdar'"
+    }
+  ],
+  "LF-GA-00327": [
+    {
+      "id": "ORG-000008",
+      "name": "Struktol Company of America LLC",
+      "city": "Stow",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'struktol' = trade_names 'Struktol'"
+    }
+  ],
+  "LF-GA-00366": [
+    {
+      "id": "ORG-002628",
+      "name": "Ammeraal Beltech Modular, Incorporated",
+      "city": "Reading",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Ammeraal Beltech'"
+    }
+  ],
+  "LF-GA-00108": [],
+  "LF-GA-00389": [
+    {
+      "id": "ORG-004251",
+      "name": "GAF Materials Corporation",
+      "city": "Parsippany",
+      "state": "NJ",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NJ.csv",
+      "match": "name key 'gaf' = trade_names 'GAF'"
+    }
+  ],
+  "LF-GA-00259": [
+    {
+      "id": "ORG-002281",
+      "name": "Penn Color Inc.",
+      "city": "Doylestown",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "name key 'penn color' = legal_name 'Penn Color Inc.'"
+    }
+  ],
+  "LF-GA-00147": [],
+  "LF-GA-00260": [
+    {
+      "id": "ORG-000984",
+      "name": "WinCup",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta, GA'"
+    },
+    {
+      "id": "ORG-003018",
+      "name": "Nexus Circular LLC",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta, GA'"
+    },
+    {
+      "id": "ORG-007511",
+      "name": "Enplas (U.S.A.), Inc.",
+      "city": "Marietta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta, GA'"
+    }
+  ],
+  "LF-GA-00128": [
+    {
+      "id": "ORG-001128",
+      "name": "Storopack, Inc.",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+    }
+  ],
+  "LF-GA-00039": [],
+  "LF-GA-00332": [
+    {
+      "id": "ORG-004300",
+      "name": "MAPEI Corporation",
+      "city": "Deerfield Beach",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "name key 'mapei' = legal_name 'MAPEI Corporation'"
+    },
+    {
+      "id": "ORG-002397",
+      "name": "Polyglass USA",
+      "city": "Hazleton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Mapei Corporation'"
+    }
+  ],
+  "LF-GA-00362": [
+    {
+      "id": "ORG-004300",
+      "name": "MAPEI Corporation",
+      "city": "Deerfield Beach",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "name key 'mapei' = legal_name 'MAPEI Corporation'"
+    },
+    {
+      "id": "ORG-002397",
+      "name": "Polyglass USA",
+      "city": "Hazleton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Mapei Corporation'"
+    }
+  ],
+  "LF-GA-00060": [
+    {
+      "id": "ORG-004321",
+      "name": "Solenis LLC",
+      "city": "Wilmington",
+      "state": "DE",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_DE.csv",
+      "match": "name key 'solenis' = legal_name 'Solenis LLC'"
+    }
+  ],
+  "LF-GA-00114": [],
+  "LF-GA-00781": [
+    {
+      "id": "ORG-004953",
+      "name": "MW Manufacturers Inc.",
+      "city": "Auburn",
+      "state": "WA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_WA.csv",
+      "match": "name key 'mw manufacturers' = legal_name 'MW Manufacturers Inc.'"
+    }
+  ],
+  "LF-GA-00681": [],
+  "LF-GA-00887": [
+    {
+      "id": "ORG-003507",
+      "name": "Winpak Films Inc.",
+      "city": "Senoia",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'winpak films' = legal_name 'Winpak Films Inc.'"
+    },
+    {
+      "id": "ORG-003575",
+      "name": "Winpak Portion Packaging, Inc.",
+      "city": "South Chicago Heights",
+      "state": "IL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IL.csv",
+      "match": "notes contains 'WINPAK FILMS INC.'"
+    }
+  ],
+  "LF-GA-00794": [
+    {
+      "id": "ORG-004055",
+      "name": "Apache Mills, Inc.",
+      "city": "Calhoun",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'apache mills' = legal_name 'Apache Mills, Inc.'"
+    }
+  ],
+  "LF-GA-00715": [
+    {
+      "id": "ORG-004392",
+      "name": "Habasit America, Inc.",
+      "city": "Suwanee",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'habasit america' = legal_name 'Habasit America, Inc.'"
+    }
+  ],
+  "LF-GA-00650": [
+    {
+      "id": "ORG-001124",
+      "name": "Standridge Color Corporation",
+      "city": "Defiance",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'standridge color' = legal_name 'Standridge Color Corporation'"
+    },
+    {
+      "id": "ORG-006144",
+      "name": "Standridge Color Id",
+      "city": "Burley",
+      "state": "ID",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_ID.csv",
+      "match": "legal_name contains 'STANDRIDGE COLOR CORPORATION'"
+    }
+  ],
+  "LF-GA-00124": [
+    {
+      "id": "ORG-001184",
+      "name": "Vernay Laboratories, Inc.",
+      "city": "Yellow Springs",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'vernay laboratories' = legal_name 'Vernay Laboratories, Inc.'"
+    }
+  ],
+  "LF-GA-00224": [
+    {
+      "id": "ORG-004578",
+      "name": "Zschimmer & Schwarz Interpolymer Inc.",
+      "city": "Louisville",
+      "state": "KY",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_KY.csv",
+      "match": "notes contains 'Zschimmer & Schwarz, Inc.'"
+    }
+  ],
+  "LF-GA-00515": [],
+  "LF-GA-00401": [],
+  "LF-GA-00052": [
+    {
+      "id": "ORG-003936",
+      "name": "Textile Rubber & Chemical Co., Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'textile rubber and chemical' = legal_name 'Textile Rubber & Chemical Co., Inc.'"
+    }
+  ],
+  "LF-GA-00427": [],
+  "LF-GA-00323": [],
+  "LF-GA-00037": [],
+  "LF-GA-00451": [],
+  "LF-GA-00134": [],
+  "LF-GA-00097": [],
+  "LF-GA-00843": [],
+  "LF-GA-00812": [
+    {
+      "id": "ORG-000132",
+      "name": "The Sherwin-Williams Company",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-000088",
+      "name": "PPG Industries, Inc.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'SHERWIN-WILLIAMS'"
+    },
+    {
+      "id": "ORG-002886",
+      "name": "CSW Industrials, Inc.",
+      "city": "Dallas",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'SHERWIN-WILLIAMS'"
+    }
+  ],
+  "LF-GA-00495": [],
+  "LF-GA-00576": [
+    {
+      "id": "ORG-000003",
+      "name": "The Goodyear Tire & Rubber Company",
+      "city": "Akron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'goodyear' = trade_names 'Goodyear'"
+    },
+    {
+      "id": "ORG-000379",
+      "name": "Infinity Engineered Products",
+      "city": "Fairlawn",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Goodyear'"
+    },
+    {
+      "id": "ORG-001425",
+      "name": "Cooper Tire & Rubber Company",
+      "city": "Findlay",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Goodyear'"
+    },
+    {
+      "id": "ORG-001819",
+      "name": "Gem City Tire Inc",
+      "city": "Dayton",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Goodyear'"
+    },
+    {
+      "id": "ORG-003746",
+      "name": "Goodyear Chemical",
+      "city": "Akron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Goodyear'"
+    },
+    {
+      "id": "ORG-000203",
+      "name": "Eliokem",
+      "city": "",
+      "state": "",
+      "status": "acquired",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'Goodyear'",
+      "successor_chain": [
+        "ORG-000104",
+        "ORG-000050"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-000050 Synthomer, Inc. [active]"
+    }
+  ],
+  "LF-GA-00777": [],
+  "LF-GA-00757": [
+    {
+      "id": "ORG-004995",
+      "name": "CKS Packaging",
+      "city": "Naugatuck",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+    }
+  ],
+  "LF-GA-00763": [
+    {
+      "id": "ORG-004995",
+      "name": "CKS Packaging",
+      "city": "Naugatuck",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+    }
+  ],
+  "LF-GA-00765": [
+    {
+      "id": "ORG-004995",
+      "name": "CKS Packaging",
+      "city": "Naugatuck",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+    }
+  ],
+  "LF-GA-00851": [
+    {
+      "id": "ORG-001148",
+      "name": "TekniPlex, Inc.",
+      "city": "Holland",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'TEKNI-PLEX, INC.'"
+    }
+  ],
+  "LF-GA-00643": [
+    {
+      "id": "ORG-007514",
+      "name": "Polytech Fibers, LLC",
+      "city": "Chatsworth",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "name key 'polytech fibers' = legal_name 'Polytech Fibers, LLC'"
+    }
+  ],
+  "LF-GA-00559": [
+    {
+      "id": "ORG-000651",
+      "name": "Advanced Drainage Systems, Inc.",
+      "city": "Hilliard",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'advanced drainage systems' = legal_name 'Advanced Drainage Systems, Inc.'"
+    },
+    {
+      "id": "ORG-004469",
+      "name": "Perry Foam Products, Inc.",
+      "city": "Lafayette",
+      "state": "IN",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_IN.csv",
+      "match": "notes contains 'Perry'"
+    },
+    {
+      "id": "ORG-000191",
+      "name": "Ohio Elastomers",
+      "city": "Perry",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Perry'"
+    },
+    {
+      "id": "ORG-000426",
+      "name": "MacDivitt Rubber Co. LLC",
+      "city": "Perry",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Perry'"
+    },
+    {
+      "id": "ORG-000485",
+      "name": "Perry Fiberglass Products, Inc.",
+      "city": "Elyria",
+      "state": "OH",
+      "status": "unknown",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'Perry'"
+    },
+    {
+      "id": "ORG-002308",
+      "name": "Haysite Reinforced Plastics LLC",
+      "city": "Erie",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Perry'"
+    },
+    {
+      "id": "ORG-002373",
+      "name": "Controlled Molding",
+      "city": "Hadley",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Perry'"
+    },
+    {
+      "id": "ORG-002510",
+      "name": "Holbrook Tool & Molding Inc.",
+      "city": "Meadville",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Perry'"
+    },
+    {
+      "id": "ORG-002687",
+      "name": "Medical Precision Plastics",
+      "city": "Warminster",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Perry'"
+    }
+  ],
+  "LF-GA-00719": [
+    {
+      "id": "ORG-000690",
+      "name": "Axium Packaging Inc",
+      "city": "New Albany",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'axium packaging' = legal_name 'Axium Packaging Inc'"
+    }
+  ],
+  "LF-GA-00796": [
+    {
+      "id": "ORG-000132",
+      "name": "The Sherwin-Williams Company",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-000088",
+      "name": "PPG Industries, Inc.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'THE SHERWIN-WILLIAMS COMPANY'"
+    },
+    {
+      "id": "ORG-002886",
+      "name": "CSW Industrials, Inc.",
+      "city": "Dallas",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'THE SHERWIN-WILLIAMS COMPANY'"
+    }
+  ],
+  "LF-GA-00675": [],
+  "LF-GA-00846": [
+    {
+      "id": "ORG-001408",
+      "name": "Altium Packaging",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'altium packaging' = legal_name 'Altium Packaging'"
+    },
+    {
+      "id": "ORG-006136",
+      "name": "Altium Packaging - Newark Plant",
+      "city": "Newark",
+      "state": "DE",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_DE.csv",
+      "match": "legal_name contains 'Altium Packaging'"
+    }
+  ],
+  "LF-GA-00665": [],
+  "LF-GA-00791": [],
+  "LF-GA-00638": [
+    {
+      "id": "ORG-002544",
+      "name": "Berry Global",
+      "city": "Evansville",
+      "state": "IN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IN.csv",
+      "match": "name key 'berry global' = legal_name 'Berry Global'"
+    },
+    {
+      "id": "ORG-004040",
+      "name": "Vybond Group, Inc.",
+      "city": "Franklin",
+      "state": "KY",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_KY.csv",
+      "match": "notes contains 'BERRY GLOBAL INC.'"
+    },
+    {
+      "id": "ORG-004278",
+      "name": "Magnera Corporation",
+      "city": "Charlotte",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'BERRY GLOBAL INC.'"
+    },
+    {
+      "id": "ORG-002149",
+      "name": "Berry Global - Streetsboro, OH",
+      "city": "Streetsboro",
+      "state": "OH",
+      "status": "merged",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "legal_name contains 'BERRY GLOBAL INC.'"
+    }
+  ],
+  "LF-GA-00416": [],
+  "LF-GA-00472": [],
+  "LF-GA-00494": [],
+  "LF-GA-00062": [],
+  "LF-GA-00365": [
+    {
+      "id": "ORG-000642",
+      "name": "20/20 Custom Molded Plastics, Ltd.",
+      "city": "Holiday City",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key '20 20 custom molded plastics' = legal_name '20/20 Custom Molded Plastics, Ltd.'"
+    }
+  ],
+  "LF-GA-00220": [],
+  "LF-GA-00586": [],
+  "LF-GA-00764": [
+    {
+      "id": "ORG-004995",
+      "name": "CKS Packaging",
+      "city": "Naugatuck",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+    }
+  ],
+  "LF-GA-00558": [
+    {
+      "id": "ORG-000651",
+      "name": "Advanced Drainage Systems, Inc.",
+      "city": "Hilliard",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'advanced drainage systems' = legal_name 'Advanced Drainage Systems, Inc.'"
+    },
+    {
+      "id": "ORG-003206",
+      "name": "Additive Plastics Group, Inc.",
+      "city": "Buford",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Buford'"
+    },
+    {
+      "id": "ORG-003993",
+      "name": "KRAIBURG TPE Corporation",
+      "city": "Buford",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Buford'"
+    }
+  ],
+  "LF-GA-00714": [
+    {
+      "id": "ORG-001470",
+      "name": "The Pittsburgh Paint Company",
+      "city": "Huron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'pittsburgh paint' = legal_name 'The Pittsburgh Paint Company'"
+    }
+  ],
+  "LF-GA-00680": [
+    {
+      "id": "ORG-002374",
+      "name": "Accu Mold & Tool MFG",
+      "city": "Halifax",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'PRECISION MEDICAL, INC.'"
+    }
+  ],
+  "LF-GA-00881": [
+    {
+      "id": "ORG-004865",
+      "name": "Diamond Plastics Corporation",
+      "city": "Grand Island",
+      "state": "NE",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NE.csv",
+      "match": "name key 'diamond plastics' = legal_name 'Diamond Plastics Corporation'"
+    },
+    {
+      "id": "ORG-005115",
+      "name": "Diamond Plastics Corporation",
+      "city": "Grand Island",
+      "state": "NE",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NE.csv",
+      "match": "name key 'diamond plastics' = legal_name 'Diamond Plastics Corporation'"
+    },
+    {
+      "id": "ORG-002923",
+      "name": "Best Diamond Plastics, LLC",
+      "city": "Chicago",
+      "state": "IL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IL.csv",
+      "match": "legal_name contains 'DIAMOND PLASTICS CORPORATION'"
+    }
+  ],
+  "LF-GA-00866": [],
+  "LF-GA-00567": [
+    {
+      "id": "ORG-000802",
+      "name": "Alleguard",
+      "city": "Lancaster",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'FOAM HOLDINGS, INC.'"
+    }
+  ],
+  "LF-GA-00382": [],
+  "LF-GA-00753": [],
+  "LF-GA-00005": [],
+  "LF-GA-00281": [
+    {
+      "id": "ORG-002999",
+      "name": "Main Tech America Inc",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-003536",
+      "name": "Challenger Turf, Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-003560",
+      "name": "Polyloom Corporation of America",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-003936",
+      "name": "Textile Rubber & Chemical Co., Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-003826",
+      "name": "TenCate Turf Recycling Solutions, LLC",
+      "city": "Baton Rouge",
+      "state": "LA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_LA.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-007314",
+      "name": "Sinicon Plastics, Inc.",
+      "city": "Dalton",
+      "state": "MA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-000296",
+      "name": "Dalton Manufacturing and Consulting Group",
+      "city": "Cleveland Heights",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'Dalton'"
+    },
+    {
+      "id": "ORG-002047",
+      "name": "Wayne-Dalton Plastics (Wayne Dalton Corp)",
+      "city": "Conneaut",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Dalton'"
+    },
+    {
+      "id": "ORG-007408",
+      "name": "International Coatings Company, Inc.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'Dalton'"
+    }
+  ],
+  "LF-GA-00333": [
+    {
+      "id": "ORG-000315",
+      "name": "Dura-Line",
+      "city": "Elyria",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'dura line' = legal_name 'Dura-Line'"
+    }
+  ],
+  "LF-GA-00503": [],
+  "LF-GA-00802": [],
+  "LF-GA-00668": [
+    {
+      "id": "ORG-004938",
+      "name": "Creative Foam Products, LLC",
+      "city": "North Little Rock",
+      "state": "AR",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_AR.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-006139",
+      "name": "Northwest Foam Products Inc.",
+      "city": "Twin Falls",
+      "state": "ID",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_ID.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-004469",
+      "name": "Perry Foam Products, Inc.",
+      "city": "Lafayette",
+      "state": "IN",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_IN.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002535",
+      "name": "Rogers Foam Corp.",
+      "city": "Somerville",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-003716",
+      "name": "Schmitz Foam Products LLC",
+      "city": "Coldwater",
+      "state": "MI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MI.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-007013",
+      "name": "Michigan Foam Products, LLC",
+      "city": "Wyoming",
+      "state": "MI",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MI.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000223",
+      "name": "All Foam Products Co., Inc.",
+      "city": "Middlefield",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000227",
+      "name": "American Foam Products",
+      "city": "Painesville",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000308",
+      "name": "Dott Products",
+      "city": "Avon",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000845",
+      "name": "Foam Concepts & Design, Inc.",
+      "city": "Hamilton",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000906",
+      "name": "ISO Technologies, Inc.",
+      "city": "Hebron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000908",
+      "name": "iVEX Packaging",
+      "city": "Sidney",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000997",
+      "name": "Ohio Foam Corp.",
+      "city": "Bucyrus",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001010",
+      "name": "Palpac Industries, Inc.",
+      "city": "Ottawa",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001044",
+      "name": "Custom Foam Products, Inc.",
+      "city": "Fort Loramie",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001469",
+      "name": "FDIE, LLC",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001985",
+      "name": "Operational Support Services LLC",
+      "city": "Findlay",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002216",
+      "name": "L & P Berwick Div Leggett & Platt",
+      "city": "Berwick",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002242",
+      "name": "Huntington Foam LLC",
+      "city": "Brockway",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002245",
+      "name": "Jsp Intl MFG",
+      "city": "Butler",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002248",
+      "name": "Atlas Roofing Corporation",
+      "city": "Camp Hill",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002289",
+      "name": "Ecopax, LLC",
+      "city": "Easton",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002332",
+      "name": "Packaging Technology, Inc.",
+      "city": "Exton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002335",
+      "name": "Hunter Panels LLC",
+      "city": "Fairchance",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002475",
+      "name": "G & T Industries Of Pennsylvania Inc. Lancaster Div",
+      "city": "Leola",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002484",
+      "name": "Carpenter Co. Incorporated",
+      "city": "Lititz",
+      "state": "PA",
+      "status": "merged",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'",
+      "successor_chain": [
+        "ORG-002348"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-002348 Carpenter Co. [active]"
+    },
+    {
+      "id": "ORG-002703",
+      "name": "General Foam Co.",
+      "city": "Wilkes-Barre",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002711",
+      "name": "Bryn Hill Industries",
+      "city": "Yeadon",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-004861",
+      "name": "Benchmark Foam, Inc.",
+      "city": "Watertown",
+      "state": "SD",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_SD.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    }
+  ],
+  "LF-GA-00813": [],
+  "LF-GA-00750": [],
+  "LF-GA-00824": [],
+  "LF-GA-00657": [
+    {
+      "id": "ORG-001124",
+      "name": "Standridge Color Corporation",
+      "city": "Defiance",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'standridge color' = legal_name 'Standridge Color Corporation'"
+    },
+    {
+      "id": "ORG-006144",
+      "name": "Standridge Color Id",
+      "city": "Burley",
+      "state": "ID",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_ID.csv",
+      "match": "legal_name contains 'STANDRIDGE COLOR CORPORATION'"
+    }
+  ],
+  "LF-GA-00662": [],
+  "LF-GA-00738": [],
+  "LF-GA-00510": [],
+  "LF-GA-00523": [
+    {
+      "id": "ORG-003345",
+      "name": "Reeve Industries, Inc.",
+      "city": "Savannah",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Savannah'"
+    },
+    {
+      "id": "ORG-004019",
+      "name": "Susonity Commercial GmbH",
+      "city": "Gernsheim",
+      "state": "",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_INTL.csv",
+      "match": "notes contains 'Savannah'"
+    },
+    {
+      "id": "ORG-004646",
+      "name": "Savannah River National Laboratory",
+      "city": "Aiken",
+      "state": "SC",
+      "status": "active",
+      "tier": "B",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'Savannah'"
+    }
+  ],
+  "LF-GA-00522": [],
+  "LF-GA-00265": [
+    {
+      "id": "ORG-000003",
+      "name": "The Goodyear Tire & Rubber Company",
+      "city": "Akron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'goodyear tire and rubber' = legal_name 'The Goodyear Tire & Rubber Company'"
+    }
+  ],
+  "LF-GA-00324": [],
+  "LF-GA-00056": [
+    {
+      "id": "ORG-003083",
+      "name": "Nouryon Chemicals LLC",
+      "city": "Chicago",
+      "state": "IL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IL.csv",
+      "match": "name key 'nouryon' = trade_names 'Nouryon'"
+    }
+  ],
+  "LF-GA-00269": [
+    {
+      "id": "ORG-007408",
+      "name": "International Coatings Company, Inc.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "name key 'international coatings' = legal_name 'International Coatings Company, Inc.'"
+    }
+  ],
+  "LF-GA-00247": [],
+  "LF-GA-00467": [],
+  "LF-GA-00588": [
+    {
+      "id": "ORG-004570",
+      "name": "Sanco Inc.",
+      "city": "Dalton",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "name key 'sanco' = legal_name 'Sanco Inc.'"
+    }
+  ],
+  "LF-GA-00637": [
+    {
+      "id": "ORG-007510",
+      "name": "Crown USA, Inc.",
+      "city": "Woodbury",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "name key 'crown usa' = legal_name 'Crown USA, Inc.'"
+    }
+  ],
+  "LF-GA-00647": [],
+  "LF-GA-00875": [],
+  "LF-GA-00572": [],
+  "LF-GA-00471": [
+    {
+      "id": "ORG-004938",
+      "name": "Creative Foam Products, LLC",
+      "city": "North Little Rock",
+      "state": "AR",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_AR.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-006139",
+      "name": "Northwest Foam Products Inc.",
+      "city": "Twin Falls",
+      "state": "ID",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_ID.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-004469",
+      "name": "Perry Foam Products, Inc.",
+      "city": "Lafayette",
+      "state": "IN",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_IN.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002535",
+      "name": "Rogers Foam Corp.",
+      "city": "Somerville",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-003716",
+      "name": "Schmitz Foam Products LLC",
+      "city": "Coldwater",
+      "state": "MI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MI.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-007013",
+      "name": "Michigan Foam Products, LLC",
+      "city": "Wyoming",
+      "state": "MI",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MI.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000223",
+      "name": "All Foam Products Co., Inc.",
+      "city": "Middlefield",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000227",
+      "name": "American Foam Products",
+      "city": "Painesville",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "legal_name contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000308",
+      "name": "Dott Products",
+      "city": "Avon",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000845",
+      "name": "Foam Concepts & Design, Inc.",
+      "city": "Hamilton",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000906",
+      "name": "ISO Technologies, Inc.",
+      "city": "Hebron",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000908",
+      "name": "iVEX Packaging",
+      "city": "Sidney",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-000997",
+      "name": "Ohio Foam Corp.",
+      "city": "Bucyrus",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001010",
+      "name": "Palpac Industries, Inc.",
+      "city": "Ottawa",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001044",
+      "name": "Custom Foam Products, Inc.",
+      "city": "Fort Loramie",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001469",
+      "name": "FDIE, LLC",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-001985",
+      "name": "Operational Support Services LLC",
+      "city": "Findlay",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002216",
+      "name": "L & P Berwick Div Leggett & Platt",
+      "city": "Berwick",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002242",
+      "name": "Huntington Foam LLC",
+      "city": "Brockway",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002245",
+      "name": "Jsp Intl MFG",
+      "city": "Butler",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002248",
+      "name": "Atlas Roofing Corporation",
+      "city": "Camp Hill",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002289",
+      "name": "Ecopax, LLC",
+      "city": "Easton",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002332",
+      "name": "Packaging Technology, Inc.",
+      "city": "Exton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002335",
+      "name": "Hunter Panels LLC",
+      "city": "Fairchance",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002475",
+      "name": "G & T Industries Of Pennsylvania Inc. Lancaster Div",
+      "city": "Leola",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002484",
+      "name": "Carpenter Co. Incorporated",
+      "city": "Lititz",
+      "state": "PA",
+      "status": "merged",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'",
+      "successor_chain": [
+        "ORG-002348"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-002348 Carpenter Co. [active]"
+    },
+    {
+      "id": "ORG-002703",
+      "name": "General Foam Co.",
+      "city": "Wilkes-Barre",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-002711",
+      "name": "Bryn Hill Industries",
+      "city": "Yeadon",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    },
+    {
+      "id": "ORG-004861",
+      "name": "Benchmark Foam, Inc.",
+      "city": "Watertown",
+      "state": "SD",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_SD.csv",
+      "match": "notes contains 'FOAM PRODUCTS CORP.'"
+    }
+  ],
+  "LF-GA-00830": [],
+  "LF-GA-00716": [
+    {
+      "id": "ORG-000073",
+      "name": "Professional Plastics",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_US.csv",
+      "match": "name key 'professional plastics' = legal_name 'Professional Plastics'"
+    },
+    {
+      "id": "ORG-000984",
+      "name": "WinCup",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-002951",
+      "name": "Huber Engineered Materials",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003001",
+      "name": "Next Generation Recycling Machines, Inc.",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003018",
+      "name": "Nexus Circular LLC",
+      "city": "Atlanta",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-003529",
+      "name": "Advanced Polymer Recycling, LLC",
+      "city": "Peachtree City",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    },
+    {
+      "id": "ORG-007511",
+      "name": "Enplas (U.S.A.), Inc.",
+      "city": "Marietta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'Atlanta'"
+    }
+  ]
+}

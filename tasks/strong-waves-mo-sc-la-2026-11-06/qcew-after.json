@@ -1,0 +1,23 @@
+{
+  "MO": {
+    "strict_before": 37,
+    "qcew_2023": "368",
+    "strict_after": 43,
+    "share_before": 0.10054347826086957,
+    "share_after": 0.11684782608695653
+  },
+  "SC": {
+    "strict_before": 49,
+    "qcew_2023": "406",
+    "strict_after": 52,
+    "share_before": 0.1206896551724138,
+    "share_after": 0.12807881773399016
+  },
+  "LA": {
+    "strict_before": 6,
+    "qcew_2023": "117",
+    "strict_after": 7,
+    "share_before": 0.05128205128205128,
+    "share_after": 0.05982905982905983
+  }
+}

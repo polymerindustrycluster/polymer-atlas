@@ -1,0 +1,34 @@
+{
+  "approved_head": "c049463564812bf3945debac03903bde4aea0214",
+  "integrated_main": "85b85600c77e72c91fde772b0cf3c25e51c321ab",
+  "touched_lane_records": 138,
+  "row_delta": {
+    "sites_FL.csv": {
+      "new_rows": 17,
+      "changed_main_rows": [],
+      "approved_rows_identical": true,
+      "prior_main_rows_preserved": true
+    },
+    "evidence_sites_FL.csv": {
+      "new_rows": 119,
+      "changed_main_rows": [],
+      "approved_rows_identical": true,
+      "prior_main_rows_preserved": true
+    },
+    "evidence_organizations_FL.csv": {
+      "new_rows": 1,
+      "changed_main_rows": [],
+      "approved_rows_identical": true,
+      "prior_main_rows_preserved": true
+    },
+    "organizations_FL.csv": {
+      "new_rows": 0,
+      "changed_main_rows": [
+        "ORG-004300"
+      ],
+      "approved_rows_identical": true,
+      "prior_main_rows_preserved": true
+    }
+  },
+  "approved_rows_sha256": "c6deb5bf3457ef4703714690e411d4b4acdd759fad0587add9cd6aaf89c0e175"
+}

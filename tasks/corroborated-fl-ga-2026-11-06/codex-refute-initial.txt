@@ -1,0 +1,24 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+**The builder’s fail-closed ID preflight has a concrete hole.**
+
+In `build.py`, existing IDs are checked separately within each destination file. Meanwhile, `oldsites` skips any row whose ID equals the proposed ID, regardless of its shard.
+
+Consequently:
+
+- An existing `SITE-016000` in `sites_GA.csv` bypasses the site guard and is absent from the `sites_FL.csv` preflight.
+- An existing `EVD-200000` in `evidence_organizations_FL.csv` does not block creation of that same ID in `evidence_sites_FL.csv`.
+
+Both collisions reach the alias-writing step. Even if `append_sorted` subsequently detects them, the alias has already been written. The supplied FL-row corruption test passes but does not cover these paths. Check IDs globally, allowing an existing row only when its destination shard and full contents match, before any writes.
+
+Other assessment:
+
+- **Parents and provenance:** No concrete parent contradiction appears in the supplied records. The authorized inherited ITA evidence supports the stated provisional C treatment.
+- **Addresses:** Sherwin-Williams’ source `street` already contains city/state/ZIP. The builder consequently generates an address evidence string containing `Orlando, FL 32809` twice. Separate the street portion while preserving the filed string.
+- **Duplicates/campuses:** CANTEX’s `ita_estabs_at_address=2` identifies a campus question, but does not establish that this create duplicates an existing site.
+- **Evidence and counts:** Twenty sites under nineteen parents, seven evidence rows per site plus one alias row, and sixteen additional 326 sites reconcile.
+- **Baseline:** The reported percentage arithmetic is correct. However, `check.py`’s baseline predicate omits the stated `country == 'US'` restriction; the packet does not establish whether that omission changes 37.
+- **Idempotence:** The reported exact-rerun success stands. It does not cure the cross-shard collision defect.
+
+The ID preflight defect is sufficient to reject the builder’s advertised fail-closed guarantee.
+
+REFUTE
