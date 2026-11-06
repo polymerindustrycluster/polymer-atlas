@@ -1,0 +1,8 @@
+{
+  "reviewed_head": "61ed9bf",
+  "integration_main": "80bb5140e0f1598d85fe30b28777def59c9b83c6",
+  "reviewed_48_org_cell_deltas_equal": true,
+  "reviewed_158_full_evidence_rows_equal": true,
+  "inputs_frame_raw_checker_fetcher_unchanged": true,
+  "historical_builders_unchanged": true
+}
