@@ -5453,23 +5453,27 @@
   {
     "org_id": "ORG-004896",
     "status": "200",
-    "final": "https://www.dunnedwards.com/press-releases/in-the-news/",
+    "final": "https://www.dunnedwards.com/press-releases/",
+    "title": "Read the Latest News and Press Releases From Dunn-Edwards Paints",
     "dates": [
-      "July 7, 2026",
-      "June 26, 2026",
-      "June 25, 2026",
-      "May 30, 2026",
-      "May 25, 2026",
-      "May 18, 2026",
-      "May 13, 2026",
-      "May 3, 2026",
-      "April 29, 2026",
-      "April 28, 2026",
-      "April 26, 2026",
-      "April 24, 2026"
+      "Sep 29, 2026",
+      "May 15, 2026",
+      "Oct 09, 2025",
+      "Sep 25, 2025",
+      "Sep 09, 2025",
+      "Aug 01, 2025",
+      "Apr 24, 2025",
+      "Apr 08, 2025",
+      "Feb 04, 2025",
+      "Nov 22, 2024",
+      "March 1, 2025",
+      "Oct 01, 2024"
     ],
-    "title": "Dunn Edwards in the News - View Features, Mentions, &amp; Press Here",
-    "newsroom_url": "https://www.dunnedwards.com/press-releases/in-the-news/"
+    "newsroom_url": "https://www.dunnedwards.com/press-releases/",
+    "feeds": [
+      "https://www.dunnedwards.com/feed/",
+      "https://www.dunnedwards.com/comments/feed/"
+    ]
   },
   {
     "org_id": "ORG-004923",

@@ -4,7 +4,7 @@ Controller approved third class as a separate branch/PR under original priority 
 
 ## Scope and acceptance before application
 
-Full frame2258 distinct **active organizations** with website, tier1_qualifier empty and no physical OH site in PIC18. inputs.csv freezes scope; regions.py supplies counties. The earlier2256 census was correct at bd57a08; independent ref-by-ref recomputation reconciled current2258 = old2256 + ORG-002487 + ORG-002729, no losses. No silent count discrepancy. Unit/filter: tier1=0, PIC18 non-tier1=0, other=2258 attempted in this pass.
+Frozen9d69978 frame:2258 distinct **active organizations** with website, tier1_qualifier empty and no physical OH site in PIC18 at that snapshot. inputs.csv freezes scope; regions.py supplies counties. The earlier2256 census was correct at bd57a08; independent ref-by-ref recomputation reconciled current2258 = old2256 + ORG-002487 + ORG-002729, no losses. No silent count discrepancy. Unit/filter: tier1=0, PIC18 non-tier1=0, other=2258 attempted in this pass.
 
 Use only own-domain news/press/announcements indexes found from canonical website navigation. Hold home redirects, broader parent/division/brand mismatches, template/tag/post uncertainty and unreachable routes; failed fetches assert no absence/closure. <=6 discovery requests per org, all input IDs reconciled to dispositions. No full website/sitemap crawl; explicit residual holds. Every retained URL HTTP200, final path/domain unchanged; feed parses RSS/Atom with >=1 article entry, at least one article permalink linked from selected newsroom; no channel/feed metadata or comments-feed acceptance. Conservative gates inherit PR145 Codex/Grok refute fixes before work starts.
 
@@ -23,27 +23,33 @@ Self-check:3 fresh known answers (Avient/RPM/GEON), injected HTTP403/off-domain/
 
 ## Final application and checks
 
-Source manifest is frozen at9d69978 (2258 IDs, same class as af3f87e). Latest integration replay pinned main412391a0a462105a73e322ea67291d24088cfe7a; exact main organization files restored, builder applied only reviewed cells. Later parallel main creates are outside this pass. Current eligibility/value assertions still run on every accepted row; no CSV conflict hand-merged.
+Source manifest is frozen at9d69978 (2258 IDs, same class as af3f87e). Latest integration replay pinned main09df9e9d7ff09858b5ff02c9637de517242e4230; exact main organization files restored, builder applied only reviewed cells. Later parallel main creates are outside this pass. Current eligibility/value assertions still run on every accepted row; no CSV conflict hand-merged.
 
-**167 active other non-tier1 organizations:167 newsroom pages+89 feeds=256 empty cells,33 organization shards.** Priority fills:tier1=0,PIC18 non-tier1=0,other=167. Tiers unchanged:A=15,B=97,C=54,U=1.2091 organization holds:1701 no bounded-nav candidate,390 candidate purpose/identity/accessibility/re-fetch holds.15 overlapping feed-only holds (14 no article-item overlap,IC3D comments). Technetics re-fetch failed; route hold, never absence. All2258 IDs reconcile to explicit verdicts.
+**165 active organizations in the frozen other cohort:165 newsroom pages+89 feeds=254 empty cells,33 organization shards.** Frozen-cohort fills:tier1=0,PIC18 non-tier1=0,other=165. Tiers unchanged:A=15,B=96,C=53,U=1.2093 organization holds:1701 no bounded-nav candidate,392 candidate purpose/identity/accessibility/re-fetch holds.15 overlapping feed-only holds (14 no article-item overlap,IC3D comments). Technetics re-fetch failed; route hold, never absence. All2258 IDs reconcile to explicit verdicts.
 
 Purpose review held A.M.Toolbox's single release. Avian USA's page is a multi-item index, but it identifies Shanghai as publisher: identity hold, not a false claim that article-shaped URL means single post. ETI/Starwin joint publisher held pending entity-specific confirmation. Crayola,Plustech,Formed Plastics,Elinor media centers read raw and show company announcements, not just contacts/galleries. No body/contact text retained. Parent/regional,division,tag,template and brand ambiguities remain held, no self-ruling.
 
-Related-case fix from PR145 Codex Kaneka finding: also held ORG-003396 Kongskilde Industries USA,003692 Aplix Inc.,003725 Zotefoams Inc.,003766 Roctool Inc. Canonical records name same-brand parents; global news pages need organization-specific publisher/region confirmation. Four pages+their four feeds removed before completion review. Initial171+93=264 is superseded by final167+89=256.
+Related-case fix from PR145 Codex Kaneka finding: also held ORG-003396 Kongskilde Industries USA,003692 Aplix Inc.,003725 Zotefoams Inc.,003766 Roctool Inc. Canonical records name same-brand parents; global news pages need organization-specific publisher/region confirmation. Four pages+their four feeds removed before completion review. Initial171+93=264 was reduced to167+89=256 before review, then165+89=254 after the publisher corrections below.
 
 | Hold group | Active organizations | Settling fact/recommendation |
 |---|---:|---|
-| No bounded-nav candidate |1701|Reachable own-domain index confirmed; no absence asserted|
-| Candidate identity/purpose/accessibility |390|Organization-specific publisher/index confirmed, including listed parent/single-post/identity questions|
-| Feed-only, overlaps accepted orgs |15|Dedicated article feed/overlap confirmed; pages retained|
+| No bounded-nav candidate |1701|Need a reachable own-domain index; no absence asserted|
+| Candidate identity/purpose/accessibility |392|Need organization-specific publisher/index confirmation, including listed parent/single-post/identity questions|
+| Feed-only, overlaps accepted orgs |15|Need dedicated article feed/overlap confirmation; pages retained|
 
-- `build.py`:256 cells/167orgs; immediate second run0cells/0shards.
+- `build.py`:254 cells/165orgs; immediate second run0cells/0shards.
 - `self_check.py --live`:PASS,3 fresh known answers; all injected defects caught; immutable9d69978 frame2258 independently recomputed; allinput/discovery/verdictIDs match,<=6 current discovery requests/org.
-- `check.py`: **PASS:167 active organizations;256 URLs,all HTTP200 and feeds nonempty**; exact stored path/domain,article-item overlap,currentdata=packet and current eligibility.
+- `check.py`: **PASS:165 active organizations;254 URLs,all HTTP200 and feeds nonempty**; exact stored path/domain,article-item overlap,currentdata=packet and current eligibility.
 - `python3 scripts/validate.py`: **0 errors,V-58 clean**.
-- Immutable-main comparison:256 previously empty cells/167 existing IDs/two named columns only; no rowset changes. No scripts/ code/dependency changes.
+- Immutable-main comparison:254 previously empty cells/165 existing IDs/two named columns only; no rowset changes. No scripts/ code/dependency changes.
 
-Final Codex/Grok deep clerk reviews pending; draft until resolved. No Done claim. Cross-PR union gate found first1043+PIC18772+other2258=4073 disjoint original IDs; source snapshot9d69978 has4079 active-with-website IDs. Six newly website-populated tier1 IDs are being added to PR145's frame, with9 changed canonical routes rechecked. No false all-current-tree completeness claim beyond named source snapshots.
+Codex1 APPROVE08ce3fe (0 findings) covered the previous167-page packet. Grok1 REFUTE08ce3fe: Stockhausen ORG-008010 and Wickert ORG-002942 now held for organization-specific publisher confirmation; no status/ownership repair. Dunn-Edwards ORG-004896's mentions archive was replaced with its own [announcements index](https://www.dunnedwards.com/press-releases/), fetched200, with dated company releases; feed remained held after failing the same gate. Hold-table prose now states the missing facts.
+
+The igus finding is disputed on primary publisher evidence: the portal's own [Contact page](https://press.igus.com/contact/) identifies **igus, Inc., Rumford, RI**, matching ORG-004835; it does not identify igus GmbH as publisher. The portal's “global leader” wording does not negate that explicit identity. SCHEMA4.4 own-company rule governs; no parent-site exception is claimed. Minimal nonpersonal receipt is publisher-recheck.json. Final two-family review of these corrections remains pending.
+
+Controller frame clarification: frozen9d69978 membership governs; tier1 rank was ordering only. Runtime rank/region guards were removed, while frozen census, current active status, exact canonical website, own-domain/publisher and value-conflict checks remain. INOAC USA ORG-003702 moved to tier1 on later main (national_footprint), as did WL Plastics ORG-003282 and Inteplast ORG-003476; they remain in this frozen cohort, with no tier1 edits by L9. This controller frame instruction supersedes the earlier runtime rank/region exclusion. Query-value redirect and article-link mutations now fail; only path trailing slashes normalize. Fetch timeout45s accommodates slow valid feeds; failure never establishes absence.
+
+Cross-PR union:1049 tier1+772 PIC18+2258 other=4079 distinct active-with-website source-snapshot organizations; all attempted. No claim covers later-main creates or website gains outside that frozen census.
 
 ## Potential staleness leads
 

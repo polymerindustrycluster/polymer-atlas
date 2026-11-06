@@ -524,16 +524,6 @@
     ]
   },
   {
-    "org_id": "ORG-002942",
-    "checks": [
-      {
-        "url": "https://wickert-usa.com/news/",
-        "final": "https://wickert-usa.com/news/",
-        "status": "200"
-      }
-    ]
-  },
-  {
     "org_id": "ORG-002944",
     "checks": [
       {
@@ -1847,8 +1837,8 @@
     "org_id": "ORG-004896",
     "checks": [
       {
-        "url": "https://www.dunnedwards.com/press-releases/in-the-news/",
-        "final": "https://www.dunnedwards.com/press-releases/in-the-news/",
+        "url": "https://www.dunnedwards.com/press-releases/",
+        "final": "https://www.dunnedwards.com/press-releases/",
         "status": "200"
       }
     ]
@@ -2234,16 +2224,6 @@
       {
         "url": "http://randdplastics.com/News.htm",
         "final": "http://randdplastics.com/News.htm",
-        "status": "200"
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-008010",
-    "checks": [
-      {
-        "url": "https://www.stockhausen.com/en/news",
-        "final": "https://www.stockhausen.com/en/news",
         "status": "200"
       }
     ]

@@ -29,7 +29,7 @@ class Links(HTMLParser):
             self.links.append((self.href,' '.join(' '.join(self.label).split()))); self.href=None
 
 def fetch(url):
-    p=subprocess.run(['curl','-L','--max-redirs','5','--max-time','18','--connect-timeout','8','-sS','-A','Mozilla/5.0', '-w','\n%{http_code}\t%{url_effective}',url],capture_output=True,text=True,errors='replace')
+    p=subprocess.run(['curl','-L','--max-redirs','5','--max-time','45','--connect-timeout','8','-sS','-A','Mozilla/5.0', '-w','\n%{http_code}\t%{url_effective}',url],capture_output=True,text=True,errors='replace')
     body,_,meta=p.stdout.rpartition('\n'); code,_,final=meta.partition('\t')
     return {'url':url,'final':final,'status':code,'body':body,'error':p.stderr[:180]}
 

@@ -75,3 +75,21 @@ pic={r['org_id'] for r in snapshot_rows('sites') if r['state']=='OH' and r['coun
 frame={r['org_id'] for r in snapshot_rows('organizations') if r['status']=='active' and r['website'] and not r['tier1_qualifier'] and r['org_id'] not in pic}
 assert frame=={r['org_id'] for r in inputs}
 print('PASS: independent frozen 9d69978 active/nonPIC18/non-tier1/website frame matches inputs; current accepted eligibility checked by builder/check')
+
+qrow={'org_id':'query-test','website':'https://example.com','newsroom_url':'https://example.com/?page_id=52','newsroom_feed_url':''}
+qpage={'url':qrow['newsroom_url'],'final':qrow['newsroom_url']+'/','status':'200','body':'<h1>News</h1>'}
+with patch('check.fetch',return_value=qpage):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('query value52→52/ accepted')
+qrow['newsroom_url']='https://example.com/news/?page_id=52'
+qpage.update(url=qrow['newsroom_url'],final='https://example.com/news?page_id=52')
+with patch('check.fetch',return_value=qpage):assert len(check(qrow)['checks'])==1
+qrow.update(newsroom_url='https://example.com/news',newsroom_feed_url='https://example.com/feed')
+qpage.update(url=qrow['newsroom_url'],final=qrow['newsroom_url'],body='<a href="/article?id=52">News release</a>')
+qfeed={'url':qrow['newsroom_feed_url'],'final':qrow['newsroom_feed_url'],'status':'200','body':'<rss><channel><title>News</title><item><link>https://example.com/article?id=52/</link></item></channel></rss>'}
+with patch('check.fetch',side_effect=[qpage,qfeed]):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('different query article IDs falsely overlap')
+print('PASS: changed query values rejected for redirects and feed articles; path-only slash normalization retained')

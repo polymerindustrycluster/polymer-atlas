@@ -1,0 +1,13 @@
+RAW PASS https://case.edu/morecenter/equipment/characterization-equipment
+RAW PASS https://sites.google.com/udayton.edu/bams-lab/facilities
+RAW PASS https://u.osu.edu/alternativematters/instruments/
+RAW PASS https://www.kent.edu/amlci/characterization-facility-tools
+RAW PASS https://www.uakron.edu/npic/testing/
+RAW PASS https://ysu.edu/excellence-training-center/resources
+Raw-check yield: 34 / 34 equipment rows; no skipped sources
+Known-answer 3/3; negative matcher check passed; 34 equipment rows; 34 new
+By host: {'ORG-000501': 7, 'ORG-000502': 4, 'ORG-000503': 7, 'ORG-001284': 8, 'ORG-001315': 2, 'ORG-002175': 6}
+By class: {'dsc': 3, 'dma': 1, 'gpc_sec': 1, 'impact_tester': 1, 'melt_flow_indexer': 1, 'universal_tester': 3, 'tga': 2, 'sem': 3, 'afm': 2, 'optical_microscopy': 2, 'hardness_tester': 2, 'ftir': 1, 'rheometer_rotational': 2, 'twin_screw_compounder': 1, 'compression_press': 1, 'additive_manufacturing_polymer': 7, 'nmr': 1}
+Known-answer 3/3; negative matcher check passed; 34 equipment rows; 0 new
+By host: {'ORG-000501': 7, 'ORG-000502': 4, 'ORG-000503': 7, 'ORG-001284': 8, 'ORG-001315': 2, 'ORG-002175': 6}
+By class: {'dsc': 3, 'dma': 1, 'gpc_sec': 1, 'impact_tester': 1, 'melt_flow_indexer': 1, 'universal_tester': 3, 'tga': 2, 'sem': 3, 'afm': 2, 'optical_microscopy': 2, 'hardness_tester': 2, 'ftir': 1, 'rheometer_rotational': 2, 'twin_screw_compounder': 1, 'compression_press': 1, 'additive_manufacturing_polymer': 7, 'nmr': 1}

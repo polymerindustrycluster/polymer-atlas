@@ -1769,7 +1769,7 @@ def equipment_block(rows):
     body = "".join(
         f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
         f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
-        (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+        + (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
         for r in sorted(rows, key=lambda r: (r.get("equipment_class") or "", (r.get("name") or "").lower())))
     return (f"<h2>Equipment and testing ({fmt_int(len(rows))} equipment rows)</h2>"
             '<p class="small muted">Instruments and pilot lines this organization lists on its own pages. Ask the host about access.</p>'
