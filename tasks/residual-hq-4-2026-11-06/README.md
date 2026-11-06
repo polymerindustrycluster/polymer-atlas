@@ -38,4 +38,4 @@ ReviewpendingCodex3/Grok3. Finalmainreplayifneededrecordedbelow. Thisiscontrolle
 
 ## Final fresh-main replay
 
-Mainadvancedto4b69ed3(PR154included). Restoredcompletecurrentmaincanonicaldata/,updatedbase.txt,reranidempotentbuilder. All8HQupdatesstillapplywithsameIDs/content;46oldEVDimmutable. Full49frame/fullorg+EVDunion/content/exclusions/receipt/replay/3no-writefaultsPASS. validate.pyPASSzeroerrors:4972organizations,7032sites,36803evidenceobservations. Residual249→241. frame-base8a5821bunchanged. Noothermainchangesrideaslanediff. Finalbranchhistoryispre-passbackup;READMEispassjournal.
+Mainadvancedto4b69ed3(PR154included). Restoredcompletecurrentmaincanonicaldata/,updatedbase.txt,reranidempotentbuilder. All8HQupdatesstillapplywithsameIDs/content;46oldEVDimmutable. Full49frame/fullorg+EVDunion/content/exclusions/receipt/replay/3no-writefaultsPASS. validate.pyPASSzeroerrors:4972organizations,7032sites,36812evidenceobservations. Residual249→241. frame-base8a5821bunchanged. Noothermainchangesrideaslanediff. Finalbranchhistoryispre-passbackup;READMEispassjournal.
