@@ -113,3 +113,5 @@ confirmed against fresh NCES HD2024 UNITID166513, county_identity.csv. Added app
 address EVD285003 registry/supports_C (no tier change); old evidence preserved.
 Total evidence now4. Named checks rerun; rereview requested from same refuting clerk.
 This supersedes earlier3-evidence snapshots. New raw registry fact, no new own-page quote.
+
+Grok/xAI (thr_swjbz4p3am) APPROVE0findings on36b07296dd13 aftercountyfix. Independently downloaded HD2024 and matched hash/6072rowyield/UNITID166513, confirmed localitydefault/EVDcap, rawpriorquotes, validator/check/row-preservation/replay. Fullscripts suite/futureadmissions notchecked. Codex1 samefindingfixed rereview remains pending; no two-family completion approval yet.
