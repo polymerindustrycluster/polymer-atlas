@@ -13,7 +13,7 @@
 >   Read Public credential that the owner provides or authorizes through the secure credential route (B-SAM-KEY).
 > - Owner clarification, 2026-11-06 (in session): B-VINYL-RIGHTS and B-ACMA-RIGHTS hold new extraction and new
 >   `member_of` edges only. The 35 existing edges (Vinyl Institute 5, ACMA 30), minted 2026-10-30 under that day's
->   events-pass ruling, are kept, and the permission drafts disclose them. The 206 edges for the other 13
+>   events-pass ruling, are kept. The 206 edges for the other 13
 >   associations stay under the 2026-10-30 ruling; no new rights check is commissioned.
 
 Every item needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation, marked (a), with the
