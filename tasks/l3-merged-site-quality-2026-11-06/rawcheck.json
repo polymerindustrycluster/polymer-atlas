@@ -1,0 +1,29 @@
+[
+  {
+    "source_url": "https://watsoncoatings.com/",
+    "quote": "Your Trusted Coating Manufacturer.",
+    "raw": true,
+    "http_status": 200,
+    "raw_sha256": "c65a16569be7f083a8d2df4a98d8e665bab937fa860e897a59d41354f82e07d7",
+    "retrieved_date": "2026-11-06",
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://watsoncoatings.com/",
+    "quote": "325 Paul Avenue Ferguson, MO 63135",
+    "raw": true,
+    "http_status": 200,
+    "raw_sha256": "c65a16569be7f083a8d2df4a98d8e665bab937fa860e897a59d41354f82e07d7",
+    "retrieved_date": "2026-11-06",
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://watsoncoatings.com/about-us/",
+    "quote": "water-reducible alkyd, acrylic, polyester, and phenolic enamel coatings",
+    "raw": true,
+    "http_status": 200,
+    "raw_sha256": "6caeb419c19c02a4cbf591ef2516ab76a5e8afb983bf0f434cf9ae054e024f33",
+    "retrieved_date": "2026-11-06",
+    "fabricated_suffix_rejected": true
+  }
+]
