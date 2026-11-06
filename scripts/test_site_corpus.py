@@ -155,3 +155,27 @@ def test_specific_bot_rules_not_browser_prefix(tmp_path):
     with patch.object(c, 'request', return_value=response(robots)) as request:
         assert c.rawcheck('https://example.org/', 'quote') == 'unfetchable'
         assert request.call_count == 1
+
+
+def test_redirect_limit_cannot_fallback_past_policy(tmp_path):
+    c = Corpus(tmp_path); seen = []
+    def request(u, delay=1):
+        seen.append(u)
+        if u.endswith('/robots.txt'): return response(code=404)
+        n = int(u.rsplit('/', 1)[-1])
+        return response(code=302, location='https://deny.org/private' if n == 5 else f'https://example.org/{n+1}')
+    with patch.object(c, 'request', side_effect=request):
+        assert c.fetch('https://example.org/0')['status'] == 'FETCH_FAILED'
+    assert all('r.jina.ai' not in x and 'deny.org' not in x for x in seen)
+
+
+def test_proxy_cannot_mint_another_pages_quote(tmp_path):
+    c = Corpus(tmp_path)
+    def request(u, delay=1):
+        if u.endswith('/robots.txt'): return response(code=404)
+        if u.startswith('https://r.jina.ai/'):
+            return response('URL Source: https://deny.org/private\nMarkdown Content:\nForbidden quote')
+        return response(code=403)
+    with patch.object(c, 'request', side_effect=request):
+        assert c.rawcheck('https://example.org/', 'Forbidden quote') == 'wrong_page'
+        assert c.cached('https://example.org/')['status'] == 'WRONG_PAGE'

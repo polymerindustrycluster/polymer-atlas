@@ -145,7 +145,7 @@ class Corpus:
         meta = self.cache / (key(target) + '.json')
         if not meta.exists(): return None
         r = json.loads(meta.read_text())
-        if r.get('extraction_version') != 2: return None
+        if r.get('extraction_version') != 3: return None
         if r['url'] != target: raise ValueError('Cache URL mismatch')
         if hashlib.sha256((self.cache / r['raw_file']).read_bytes()).hexdigest() != r['sha256']:
             raise ValueError('Cache hash mismatch: ' + target)
@@ -188,7 +188,7 @@ class Corpus:
         r = dict(url=target, status=status, http_status=response.get('code', 0),
                  final_url=final, route=route, fetched_at=datetime.now(timezone.utc).isoformat(),
                  sha256=hashlib.sha256(raw).hexdigest(), raw_file=raw_name, text_file=text_name,
-                 text_sha256=hashlib.sha256(text.encode()).hexdigest(), extraction_version=2,
+                 text_sha256=hashlib.sha256(text.encode()).hexdigest(), extraction_version=3,
                  error=response.get('error', ''))
         meta = self.cache / (stem + '.json.tmp')
         meta.write_text(json.dumps(r)); meta.replace(self.cache / (stem + '.json'))
@@ -232,19 +232,26 @@ class Corpus:
                     if robots and urlsplit(current).path != '/robots.txt': break
                     continue
                 break
+            if response.get('code') in (301, 302, 303, 307, 308):
+                return self.save(target, response, 'FETCH_FAILED', current, 'direct')
             if response.get('exit') == 0 and response.get('code') == 200:
                 r = self.save(target, response, 'ok', current, 'direct')
                 if r['status'] == 'ok' or robots: return r
             if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai':
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:
-                    return self.save(target, fallback, 'ok', current, 'jina')
+                    source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', fallback['raw'].decode('utf-8', 'replace'))
+                    if not source or not same_page(current, source[1]):
+                        return self.save(target, fallback, 'WRONG_PAGE', current, 'jina')
+                    allowed, _ = self.policy(source[1])
+                    return self.save(target, fallback, 'ok' if allowed else 'ROBOTS_BLOCKED', current, 'jina')
             return self.save(target, response, 'FETCH_FAILED', current, 'direct')
 
     def rawcheck(self, target, quote):
         """Return yes/no/unfetchable; a fetch failure says nothing about the claim."""
         if not words(quote): return 'no_quote'
         r = self.fetch(target)
+        if r['status'] == 'WRONG_PAGE': return 'wrong_page'
         if r['status'] != 'ok': return 'unfetchable'
         if not same_page(target, r['final_url']): return 'wrong_page'
         return 'yes' if on_page(quote, (self.cache / r['text_file']).read_text()) else 'no'
