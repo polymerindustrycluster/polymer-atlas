@@ -678,5 +678,13 @@
     "state": "open",
     "date": "2026-11-06",
     "ids": ""
+  },
+  {
+    "number": 213,
+    "branch": "agent/codex/campaign-hygiene-2026-11-06",
+    "title": "Reconcile campaign queue and carry postmerge receipt notes",
+    "state": "open",
+    "date": "2026-11-06",
+    "ids": ""
   }
 ]

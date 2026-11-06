@@ -408,12 +408,12 @@ Status snapshot and provenance: `tasks/campaign-hygiene-2026-11-06/README.md`. `
 - [ ] `in-pr:codex 2026-11-06 #210` **Row-loss guard: fail on tracked files deleted outside data/ (stacked on #209)** Branch `agent/claude-code/file-loss-guard`.
 - [ ] `in-pr:codex 2026-11-06 #211` **Fill final 24 Ohio A/B streets and flag three address-overlap leads** Branch `agent/codex/oh-street-address-7`.
 - [ ] `in-pr:codex 2026-11-06 #212` **Restate eleven merged Texas plants at tier B** Branch `agent/codex/corroborated-tx-site-quality-2`.
+- [ ] `in-pr:codex 2026-11-06 #213` **Reconcile campaign queue and carry postmerge receipt notes** Branch `agent/codex/campaign-hygiene-2026-11-06`.
 
 ### Claimed continuations without a PR at the snapshot
 
 - [ ] `claimed:codex 2026-11-06` **Second people-settlement pass; 342 source people rows; public-professional-facts boundary unchanged. BOARD continuation; PR not yet opened.** Branch `agent/codex/people-settle-2`.
 - [ ] `claimed:codex 2026-11-06` **Next 100 Tier-1 organizations with blank markets_served; EVD-240500 onward. BOARD continuation; PR not yet opened.** Branch `agent/codex/markets-certs-tier1-round5`.
-- [ ] `claimed:codex 2026-11-06` **Campaign queue and postmerge receipts; docs/tasks only (this pass).** Branch `agent/codex/campaign-hygiene-2026-11-06`.
 
 ### Open follow-ups (public counts only)
 
