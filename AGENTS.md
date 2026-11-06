@@ -150,7 +150,12 @@ contributions. No other section is amended by this revision.*
    owned by the *operator* (who runs the process), never the brand owner.
 4. Search trade_names / notes for rebrands and acquisitions; follow
    `successor_org_id`.
-5. No hit → create the record at tier **U** or **C**, and note in the PR
+5. Search the site shards by **site name**, normalized like an
+   organization name with a trailing locality removed ("IFS Coatings -
+   Ardmore" → "IFS Coatings"): `python3 scripts/atlas.py dedupe-check`
+   runs this as its step 5. A site name that matches another
+   organization's site or name is a lead to settle, not a merge.
+6. No hit → create the record at tier **U** or **C**, and note in the PR
    which searches you ran.
 
 **IDs — allocate from the maximum, never fill a gap.** Before creating
@@ -334,3 +339,9 @@ No data file is changed by this revision.*
 NEO-SMART 18-county region, which equals the JobsOhio Team NEO (14) and Lake to River (4) regions together. PIC-12 is kept
 as the historical definition for earlier reports, and the 19-county GAC proposal is superseded. No data file is changed by
 this revision.*
+
+*Revision note — 2026-11-06 (owner instruction in session): §3 gains
+step 5, a site-name search, after the 2026-11-06 IFS Coatings case
+(PR #243), where a site named for its operator sat under another
+organization because no step searched site names. The tool support
+landed in PR #244. No data file is changed by this revision.*
