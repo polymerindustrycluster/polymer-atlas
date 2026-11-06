@@ -1,0 +1,260 @@
+organizations shards: AL 46, AR 24, AZ 18, CA 117, CO 28, CT 58, DE 24, FL 61, GA 92, IA 36, ID 17, IL 102, IN 111, INTL 38, KS 44, KY 39, LA 14, MA 72, MD 18, ME 6, MI 167, MN 66, MO 34, MS 18, MT 5, NC 110, ND 7, NE 15, NH 45, NJ 85, NM 5, NV 44, NY 78, OH 1787, OK 19, OR 36, PA 641, RI 34, SC 58, SD 9, TN 58, TX 177, US 259, UT 58, VA 30, VT 6, WA 37, WI 107, WV 19, WY 3 (4982 total)
+sites shards: AL 108, AR 67, AZ 43, CA 211, CO 47, CT 77, DE 23, FL 115, GA 181, IA 75, ID 27, IL 215, IN 229, INTL 8, KS 77, KY 103, LA 68, MA 115, MD 45, ME 12, MI 277, MN 104, MO 92, MS 60, MT 7, NC 206, ND 10, NE 32, NH 52, NJ 112, NM 8, NV 63, NY 111, OH 2009, OK 42, OR 63, PA 777, PR 2, RI 42, SC 126, SD 14, TN 128, TX 439, UT 84, VA 78, VT 10, WA 69, WI 172, WV 46, WY 4 (7085 total)
+WARN  organizations.csv:181 ORG-006188 missing description_1line
+WARN  organizations.csv:311 ORG-006132 missing description_1line
+WARN  organizations.csv:312 ORG-006133 missing description_1line
+WARN  organizations.csv:313 ORG-006134 missing description_1line
+WARN  organizations.csv:314 ORG-006135 missing description_1line
+WARN  organizations.csv:315 ORG-006136 missing description_1line
+WARN  organizations.csv:316 ORG-006137 missing description_1line
+WARN  organizations.csv:513 ORG-006138 missing description_1line
+WARN  organizations.csv:514 ORG-006139 missing description_1line
+WARN  organizations.csv:515 ORG-006140 missing description_1line
+WARN  organizations.csv:516 ORG-006141 missing description_1line
+WARN  organizations.csv:517 ORG-006142 missing description_1line
+WARN  organizations.csv:518 ORG-006143 missing description_1line
+WARN  organizations.csv:519 ORG-006144 missing description_1line
+WARN  organizations.csv:520 ORG-006145 missing description_1line
+WARN  organizations.csv:521 ORG-006146 missing description_1line
+WARN  organizations.csv:522 ORG-006147 missing description_1line
+WARN  organizations.csv:1408 ORG-006148 missing description_1line
+WARN  organizations.csv:1409 ORG-006149 missing description_1line
+WARN  organizations.csv:1410 ORG-006150 missing description_1line
+WARN  organizations.csv:1411 ORG-006151 missing description_1line
+WARN  organizations.csv:1412 ORG-006152 missing description_1line
+WARN  organizations.csv:1413 ORG-006153 missing description_1line
+WARN  organizations.csv:1414 ORG-006154 missing description_1line
+WARN  organizations.csv:1415 ORG-006155 missing description_1line
+WARN  organizations.csv:1416 ORG-006156 missing description_1line
+WARN  organizations.csv:1417 ORG-006157 missing description_1line
+WARN  organizations.csv:1418 ORG-006158 missing description_1line
+WARN  organizations.csv:1419 ORG-006159 missing description_1line
+WARN  organizations.csv:1420 ORG-006160 missing description_1line
+WARN  organizations.csv:1421 ORG-006161 missing description_1line
+WARN  organizations.csv:1422 ORG-006162 missing description_1line
+WARN  organizations.csv:1423 ORG-006163 missing description_1line
+WARN  organizations.csv:1424 ORG-006164 missing description_1line
+WARN  organizations.csv:1425 ORG-006165 missing description_1line
+WARN  organizations.csv:1426 ORG-006166 missing description_1line
+WARN  organizations.csv:1427 ORG-006167 missing description_1line
+WARN  organizations.csv:1428 ORG-006168 missing description_1line
+WARN  organizations.csv:1429 ORG-006169 missing description_1line
+WARN  organizations.csv:1430 ORG-006170 missing description_1line
+WARN  organizations.csv:1431 ORG-006171 missing description_1line
+WARN  organizations.csv:1432 ORG-006172 missing description_1line
+WARN  organizations.csv:1433 ORG-006173 missing description_1line
+WARN  organizations.csv:1535 ORG-006174 missing description_1line
+WARN  organizations.csv:1536 ORG-006175 missing description_1line
+WARN  organizations.csv:1537 ORG-006176 missing description_1line
+WARN  organizations.csv:1538 ORG-006177 missing description_1line
+WARN  organizations.csv:1539 ORG-006178 missing description_1line
+WARN  organizations.csv:1540 ORG-006179 missing description_1line
+WARN  organizations.csv:1541 ORG-006180 missing description_1line
+WARN  organizations.csv:1542 ORG-006181 missing description_1line
+WARN  organizations.csv:1543 ORG-006182 missing description_1line
+WARN  organizations.csv:1544 ORG-006183 missing description_1line
+WARN  organizations.csv:1545 ORG-006184 missing description_1line
+WARN  organizations.csv:1546 ORG-006185 missing description_1line
+WARN  organizations.csv:1547 ORG-006186 missing description_1line
+WARN  organizations.csv:1548 ORG-006187 missing description_1line
+WARN  organizations.csv:1549 ORG-006189 missing description_1line
+WARN  organizations.csv:1550 ORG-006190 missing description_1line
+WARN  organizations.csv:1551 ORG-006191 missing description_1line
+WARN  organizations.csv:1552 ORG-006192 missing description_1line
+WARN  organizations.csv:1553 ORG-006193 missing description_1line
+WARN  organizations.csv:1554 ORG-006194 missing description_1line
+WARN  organizations.csv:1555 ORG-006195 missing description_1line
+WARN  organizations.csv:1556 ORG-006196 missing description_1line
+WARN  organizations.csv:1557 ORG-006197 missing description_1line
+WARN  organizations.csv:1558 ORG-006198 missing description_1line
+WARN  organizations.csv:1559 ORG-006199 missing description_1line
+WARN  organizations.csv:1560 ORG-006200 missing description_1line
+WARN  organizations.csv:1561 ORG-006201 missing description_1line
+WARN  organizations.csv:1562 ORG-006202 missing description_1line
+WARN  organizations.csv:1563 ORG-006203 missing description_1line
+WARN  organizations.csv:1564 ORG-006204 missing description_1line
+WARN  organizations.csv:1565 ORG-006205 missing description_1line
+WARN  organizations.csv:1566 ORG-006206 missing description_1line
+WARN  organizations.csv:1567 ORG-006207 missing description_1line
+WARN  organizations.csv:4146 ORG-006208 missing description_1line
+WARN  organizations.csv:4147 ORG-006209 missing description_1line
+WARN  organizations.csv:4148 ORG-006210 missing description_1line
+WARN  organizations.csv:4149 ORG-006211 missing description_1line
+WARN  organizations.csv:4150 ORG-006212 missing description_1line
+WARN  organizations.csv:4151 ORG-006213 missing description_1line
+WARN  organizations.csv:4152 ORG-006214 missing description_1line
+WARN  organizations.csv:4153 ORG-006215 missing description_1line
+WARN  organizations.csv:4154 ORG-006216 missing description_1line
+WARN  organizations.csv:4155 ORG-006217 missing description_1line
+WARN  organizations.csv:4156 ORG-006218 missing description_1line
+WARN  organizations.csv:4157 ORG-006219 missing description_1line
+WARN  organizations.csv:4158 ORG-006220 missing description_1line
+WARN  organizations.csv:4159 ORG-006221 missing description_1line
+WARN  organizations.csv:4160 ORG-006222 missing description_1line
+WARN  organizations.csv:4161 ORG-006223 missing description_1line
+WARN  organizations.csv:4162 ORG-006224 missing description_1line
+WARN  organizations.csv:4738 ORG-006131 missing description_1line
+WARN  organizations.csv:4739 ORG-006225 missing description_1line
+WARN  organizations.csv:4740 ORG-006226 missing description_1line
+WARN  organizations.csv:4741 ORG-006227 missing description_1line
+WARN  organizations.csv:4742 ORG-006228 missing description_1line
+WARN  organizations.csv:4743 ORG-006229 missing description_1line
+WARN  organizations.csv:4744 ORG-006230 missing description_1line
+WARN  organizations.csv:4745 ORG-006231 missing description_1line
+WARN  organizations.csv:4746 ORG-006232 missing description_1line
+WARN  organizations.csv:4747 ORG-006233 missing description_1line
+WARN  organizations.csv:4748 ORG-006234 missing description_1line
+WARN  organizations.csv:4749 ORG-006235 missing description_1line
+WARN  organizations.csv:4750 ORG-006236 missing description_1line
+WARN  organizations.csv:4751 ORG-006237 missing description_1line
+WARN  organizations.csv:4752 ORG-006238 missing description_1line
+WARN  organizations.csv:4753 ORG-006239 missing description_1line
+WARN  organizations.csv:4754 ORG-006240 missing description_1line
+WARN  organizations.csv:4755 ORG-006241 missing description_1line
+WARN  organizations.csv:4756 ORG-006242 missing description_1line
+WARN  organizations.csv:4757 ORG-006243 missing description_1line
+WARN  organizations.csv:4758 ORG-006244 missing description_1line
+WARN  organizations.csv:4759 ORG-006245 missing description_1line
+WARN  organizations.csv:4760 ORG-006246 missing description_1line
+WARN  organizations.csv:4761 ORG-006247 missing description_1line
+WARN  organizations.csv:4762 ORG-006248 missing description_1line
+WARN  organizations.csv:4763 ORG-006249 missing description_1line
+WARN  organizations.csv:4764 ORG-006250 missing description_1line
+WARN  organizations.csv:4765 ORG-006251 missing description_1line
+WARN  organizations.csv:4766 ORG-006252 missing description_1line
+WARN  organizations.csv:4767 ORG-006253 missing description_1line
+WARN  organizations.csv:4768 ORG-006254 missing description_1line
+WARN  organizations.csv:4769 ORG-006255 missing description_1line
+WARN  organizations.csv:4770 ORG-006256 missing description_1line
+WARN  organizations.csv:4771 ORG-006257 missing description_1line
+WARN  organizations.csv:4772 ORG-006258 missing description_1line
+WARN  organizations.csv:4773 ORG-006259 missing description_1line
+WARN  organizations.csv:4774 ORG-006260 missing description_1line
+WARN  organizations.csv:4775 ORG-006261 missing description_1line
+WARN  organizations.csv:4776 ORG-006262 missing description_1line
+WARN  organizations.csv:4777 ORG-006263 missing description_1line
+WARN  organizations.csv:4778 ORG-006264 missing description_1line
+WARN  organizations.csv:4779 ORG-006265 missing description_1line
+WARN  organizations.csv:4780 ORG-006266 missing description_1line
+WARN  organizations.csv:4781 ORG-006267 missing description_1line
+WARN  ecosystem.csv:20 ORG-001211 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: AFRL's own page for the Polymer Matrix Composite Materials and Processing Research Team (or its parent Materials and Manufacturing Directorate polymer page) on afrl.af.mil. Current evidence is a GovTribe contract record — not a program page.
+WARN  ecosystem.csv:21 ORG-001212 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: The museum's own Polymer Palooza program/event page URL. Current evidence is the PIC homepage (a partner listing), not the program's page.
+WARN  ecosystem.csv:22 ORG-001213 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: Akron Public Schools' own Zipping to STEM program page URL. Current evidence is a Greater Akron Chamber cluster-update article — a partner's page, not the program's.
+WARN  ecosystem.csv:24 ORG-001224 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: Barberton City Schools' own Polymer Pathway page URL. Current evidence is the funder initiative's page (greaterakronchamber.org/goodjobschallenge) — the initiative's page, not the schools' pathway page.
+WARN  ecosystem.csv:25 ORG-001225 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: The Polymer Pathway program page (the foundation's own page, or the schools' pathway page adopted as the program's public page). Current evidence is the funder initiative's page only.
+WARN  ecosystem.csv:26 ORG-001230 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: The chamber's own APEX (Advanced Polymer and Manufacturing Excellence) program page URL. Current evidence is the Good Jobs Challenge initiative page, not the APEX page.
+WARN  ecosystem.csv:31 ORG-001247 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: The foundation's own Once Upon a Polymer program page URL. Current evidence is a NEO-SMART partners listing.
+WARN  ecosystem.csv:38 ORG-001264 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: NASA Glenn's own Polymers Branch page URL (nasa.gov/glenn). Current evidence is an NTRS technical-report PDF — a publication, not the branch's page.
+WARN  ecosystem.csv:43 ORG-001278 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: ODOD's own Ohio Innovation Hubs program page URL (development.ohio.gov). Current evidence is a PIC news post and an ODOD news release — announcements, not the program page.
+WARN  ecosystem.csv:50 ORG-001311 polymer_program=true without polymer_program_url — pending since 2026-10-29; settles with: The Tire Society's own conference page URL (Annual Conference on Tire Science and Technology). The record carries no website at all; its only evidence URL is a chamber directory listing.
+WARN  sites.csv:4642 SITE-001850 Ohio site without county (parcel candidate queue — permitted, owner ruling 2026-10-29)
+WARN  sites.csv:4698 SITE-001907 Ohio site without county (parcel candidate queue — permitted, owner ruling 2026-10-29)
+WARN  V-45: 36 baselined rows still violate (grandfathered debt; run with --debt-details to list)
+WARN  V-46: 182 baselined rows still violate (grandfathered debt; run with --debt-details to list)
+WARN  V-47: 22 baselined rows still violate (grandfathered debt; run with --debt-details to list)
+WARN  V-48: 20 baselined rows still violate (grandfathered debt; run with --debt-details to list)
+WARN  V-49: 6 baselined rows still violate (grandfathered debt; run with --debt-details to list)
+WARN  V-55: 2884 baselined rows still violate (grandfathered debt; run with --debt-details to list)
+WARN  V-55: 1 baselined rows now pass — remove from scripts/validate_debt_baseline.json: ORG-001470
+WARN  ecosystem.csv:2 ORG-000089 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:3 ORG-000090 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:4 ORG-000091 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:5 ORG-000092 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:6 ORG-000093 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:10 ORG-000160 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:13 ORG-000163 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:20 ORG-001211 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:21 ORG-001212 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:22 ORG-001213 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:23 ORG-001217 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:24 ORG-001224 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:25 ORG-001225 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:26 ORG-001230 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:27 ORG-001233 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:31 ORG-001247 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:38 ORG-001264 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:42 ORG-001273 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:43 ORG-001278 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:45 ORG-001292 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:48 ORG-001304 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:50 ORG-001311 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:55 ORG-001463 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:58 ORG-001594 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:59 ORG-001917 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:60 ORG-002081 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:65 ORG-002086 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:66 ORG-002087 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:77 ORG-002098 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:78 ORG-002099 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:79 ORG-002100 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:80 ORG-002101 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:81 ORG-002102 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:130 ORG-002795 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:131 ORG-002796 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:132 ORG-002797 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:133 ORG-002798 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:134 ORG-002799 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:135 ORG-002800 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:136 ORG-002801 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:137 ORG-002802 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:138 ORG-002803 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:139 ORG-002804 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:140 ORG-002805 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:141 ORG-002806 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:142 ORG-002807 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:143 ORG-002808 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:144 ORG-002809 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:145 ORG-002810 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:146 ORG-002811 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:147 ORG-002812 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:148 ORG-002813 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:150 ORG-002815 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:151 ORG-002816 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:156 ORG-002821 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:157 ORG-002822 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:158 ORG-002823 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:159 ORG-002824 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:160 ORG-002825 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:161 ORG-002826 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:172 ORG-002837 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:173 ORG-002838 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:175 ORG-002840 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:193 ORG-002858 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:194 ORG-002859 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:195 ORG-002860 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:196 ORG-002861 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:197 ORG-002862 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:198 ORG-002863 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:199 ORG-002864 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:200 ORG-002865 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:201 ORG-002866 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:202 ORG-002867 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:203 ORG-002868 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:204 ORG-002869 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:205 ORG-002870 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:206 ORG-002871 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:207 ORG-002872 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:224 ORG-004640 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:225 ORG-004641 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:226 ORG-004642 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:227 ORG-004643 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:229 ORG-004645 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:230 ORG-004646 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:231 ORG-004647 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:232 ORG-004648 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  ecosystem.csv:233 ORG-004649 claims a polymer program with no program rows — un-decomposed claim (V-16)
+WARN  organizations.csv:267 ORG-004965 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:443 ORG-004392 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:561 ORG-003470 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:1065 ORG-004107 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:1607 ORG-004243 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:2040 ORG-000474 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:2128 ORG-000582 tier1_qualifier drift: stored [] vs derived ['national_footprint'] (V-29)
+WARN  organizations.csv:2284 ORG-000770 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:2727 ORG-001426 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations.csv:3596 ORG-002281 tier1_qualifier drift: stored ['tri_reporter'] vs derived ['national_footprint', 'tri_reporter'] (V-29)
+WARN  organizations_US.csv holds 259 residual rows — placement-review queue (V-38)
+WARN  code assignments: 61 rows over 61 orgs (SIC 61); polymer-bound ref_codes by system: CIP 3, CPC 1, HS 2, NAICS 35, OPENALEX 1, SIC 25 (V-44)
+
+4982 organizations, 7085 sites, 400 ecosystem rows, 5373 registry links, 60 member rows, 1431 people rows, 167 program rows, 71 event series, 37407 evidence rows, 357 relationship rows, 497 capability rows, 34 equipment rows, 0 engagement rows, 0 person-identifier links, 970 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+OK — validation passed.
