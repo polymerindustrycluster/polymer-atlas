@@ -1,0 +1,72 @@
+event_id,name,pic_events_slug,basis,note
+EVT-000001,NPE: The Plastics Show,npe-the-plastics-show,exact name,
+EVT-000002,SPE ANTEC,spe-antec,exact name,
+EVT-000003,Global Polymer Summit,global-polymer-summit,exact name,
+EVT-000004,"Rubber Division, ACS Spring Technical Meeting",rubber-division-acs-spring-technical-meeting,exact name,
+EVT-000005,Ohio Rubber Group Technical Meetings,ohio-rubber-group-winter-technical-meeting;ohio-rubber-group-spring-technical-meeting;ohio-rubber-group-fall-technical-meeting,curated,series = the group's three yearly technical meetings
+EVT-000006,Polymer Cluster Connectivity Conference (PC3),annual-polymer-cluster-connectivity-conference,curated,PC3
+EVT-000007,AMI Plastics World Expos North America,ami-plastics-world-expos-north-america,exact name,
+EVT-000008,Compounding World Expo,ami-compounding-world-expo-north-america,curated,
+EVT-000009,Plastics Recycling World Expo,ami-plastics-recycling-world-expo-north-america,curated,
+EVT-000010,Plastics Recycling Conference,plastics-recycling-conference-prc,exact name,
+EVT-000011,PTXPO (Plastics Technology Expo),ptxpo-plastics-technology-expo,exact name,
+EVT-000012,Molding Conference,molding-conference,exact name,
+EVT-000013,Extrusion Conference,,curated,no conferences series
+EVT-000014,CAMX - The Composites and Advanced Materials Expo,camx-composites-and-advanced-materials-expo,exact name,
+EVT-000015,Plastics News Executive Forum,,curated,no conferences series
+EVT-000016,Polyurethanes Technical Conference,polyurethanes-technical-conference,exact name,
+EVT-000017,SPE Annual Blow Molding Conference,spe-annual-blow-molding-conference-abc,curated,
+EVT-000018,SPE Thermoforming Conference,spe-thermoforming-conference,exact name,
+EVT-000019,SPE Automotive Composites Conference & Expo (ACCE),spe-automotive-composites-conference-and-expo-acce,exact name,
+EVT-000020,Foam Expo North America,foam-expo-north-america,exact name,
+EVT-000021,Adhesives & Bonding Expo,adhesives-and-bonding-expo-north-america,exact name,
+EVT-000022,MAPP Benchmarking and Best Practices Conference,mapp-benchmarking-and-best-practices-conference,exact name,
+EVT-000023,Silicone Expo USA,materials-week-usa,curated,Silicone Expo USA now runs inside Materials Week USA (Detroit) with Specialty Polymers World and Gaskets & Seals; reviewer to confirm umbrella vs series
+EVT-000024,National Plastics Conference,national-plastics-conference,exact name,
+EVT-000025,Global Plastics Summit,,curated,no conferences series
+EVT-000026,Innovation and Emerging Plastics Technologies Conference,,curated,no conferences series
+EVT-000027,K (K Fair / K Show),k-placeholder-every-3-yrs,curated,"K, Dusseldorf (conferences slug is a placeholder name)"
+EVT-000028,CHINAPLAS,chinaplas,exact name,
+EVT-000029,JEC World,jec-world,exact name,
+EVT-000030,Tire Technology Expo,tire-technology-expo,exact name,
+EVT-000031,Gordon Research Conference on Polymers,grc-polymers-gordon-research-conference,curated,
+EVT-000032,Polymer Initiative of Northeast Ohio (PiNO) Conference,polymer-initiative-of-northeast-ohio-pino,exact name,
+EVT-000033,SPE Plastics in Electric & Autonomous Vehicles Conference,spe-plastics-in-electric-and-autonomous-vehicles-conference,exact name,
+EVT-000034,ASC Annual Convention & EXPO,asc-annual-convention-and-expo,exact name,
+EVT-000035,SAMPE Conference & Exhibition,sampe-conference-and-exhibition,exact name,
+EVT-000036,AMI Fire Retardants in Plastics Conference,ami-fire-retardants-in-plastics-north-america,curated,atlas series is the North America edition; the Europe slug is a different series
+EVT-000037,American Coatings Show & Conference,american-coatings-show-and-conference,exact name,
+EVT-000038,Interplas,interplas,exact name,
+EVT-000039,AMI Polymers in Cables Conference,ami-polymers-in-cables-north-america,curated,
+EVT-000040,Future of Advanced Recycling North America,future-of-advanced-recycling-north-america,exact name,
+EVT-000041,Gordon Research Conference on Polymer Physics,grc-polymer-physics,curated,
+EVT-000042,International Symposium on Coating Science and Technology (ISCST),intl-coating-science-and-technology-symposium;23rd-international-coating-science-and-technology-symposium,curated,two conferences slugs for one series (conferences-side duplicate)
+EVT-000043,SPE Color and Appearance Conference (CAD RETEC),spe-color-and-appearance-conference-cad-retec,exact name,
+EVT-000044,LSR Conference,lsr-liquid-silicone-rubber-conference,curated,
+EVT-000045,Tire Society Annual Conference on Tire Science and Technology,the-tire-society-annual-conference,curated,
+EVT-000046,SPE TPO Global Automotive Engineered Polyolefins Conference,spe-tpo-global-automotive-engineered-polyolefins-conference,exact name,
+EVT-000047,Fakuma,fakuma,exact name,
+EVT-000048,SPE Vinyltec,spe-vinyltec,exact name,
+EVT-000049,OCS CON (Operation Clean Sweep Conference),ocs-con,curated,
+EVT-000050,Detroit Rubber Group Technical Meetings,detroit-rubber-group-fall-technical-meeting,curated,only the fall meeting is in the conferences list
+EVT-000051,Plastics Extrusion World Expo,ami-plastics-extrusion-world-expo-north-america,curated,
+EVT-000052,Polymer Testing World Expo,ami-polymer-testing-world-expo-north-america,curated,
+EVT-000053,POLYCHAR (World Forum on Advanced Materials),polychar-intl-polymer-characterization-forum,curated,
+EVT-000054,European Bioplastics Conference,european-bioplastics-conference-ebc26,curated,
+EVT-000055,IPF Japan (International Plastic Fair),ipf-japan-international-plastic-fair,exact name,
+EVT-000056,AMI Stretch and Shrink Film Conference,stretch-and-shrink-film-north-america,curated,atlas series is North America; the Europe slug is a different series
+EVT-000057,SPE International Polyolefins Conference,spe-international-polyolefins-conference,exact name,
+EVT-000058,Ohio Polymer & Soft Matter Symposium (OPoSM),,curated,no conferences series
+EVT-000059,SPE TPE TopCon,,curated,no conferences series (thermoset TopCon is a different series)
+EVT-000060,Adhesion Society Annual Meeting,adhesion-society-annual-meeting,exact name,
+EVT-000061,PPS Annual Meeting (International Conference of the Polymer Processing Society),pps-polymer-processing-society-annual-meeting;pps-42-international-conference-of-the-polymer-processing-society,curated,two conferences slugs for one series (conferences-side duplicate)
+EVT-000062,SPE Thermoset TopCon,spe-thermoset-topcon,exact name,
+EVT-000063,International Rubber Conference (IRC),international-rubber-conference,curated,
+EVT-000064,Michigan Rubber Group Technical Meetings,michigan-rubber-group-technical-meeting,curated,
+EVT-000065,Vinyl Week,vinyl-week,exact name,
+EVT-000066,Clemson University Global Tire Industry Conference,clemson-university-global-tire-industry-conference,exact name,
+EVT-000067,Tire Recycling Conference,10th-tire-recycling-conference,exact name,
+EVT-000068,Novel Trends in Rheology,novel-trends-in-rheology-xi,curated,
+EVT-000069,Plastic Pipes Conference,ppxxiii-plastic-pipes-conference-and-exhibition;plastic-pipes-conference-and-exhibition,curated,two conferences slugs for one series (conferences-side duplicate)
+EVT-000070,AMI Polyethylene Films Conference,,curated,conferences row held private (ami-polyethylene-films-north-america: review hold)
+EVT-000071,SPE FOAMS,spe-foams-foam-expo-north-america,exact name,
