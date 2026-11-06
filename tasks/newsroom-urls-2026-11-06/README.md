@@ -87,3 +87,5 @@ Pending Codex and Grok deep refute verdicts. No completion claim until both reso
 The 925 organization holds are the first two rows, not plus the 18 overlapping feed-only holds.
 
 Feed-gate correction before publication: the initial overlap implementation counted channel-level links, so a shared homepage could give a false match. Restricted overlap to RSS item / Atom entry article links, ignoring channel/self metadata; added injected channel-home fixture. This caught 15 additional feeds, now omitted (18 total feed-only holds including initial three). Final fill = 118 pages +44 feeds. This supersedes the initial 177-URL/59-feed figures sent to the controller and v1 review packet.
+
+Codex deep v1 review **REFUTE**: identified Synray comments feed and channel/feed metadata producing false item overlap. Both findings substantiated. The corrected gate already omitted Synray among the 15 removed feeds; added explicit comments-feed rejection and injected test (even an overlapping comments item fails). Rerunning final checks and requesting a focused final refute. No other data fields changed.

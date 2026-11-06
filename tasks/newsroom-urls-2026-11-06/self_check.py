@@ -42,3 +42,9 @@ with patch('check.fetch',side_effect=[page,feed]):
 page['body']='<a href="/unlisted">Actual release</a>'
 with patch('check.fetch',side_effect=[page,feed]):assert check(row)['checks'][1]['linked_items']==1
 print('PASS: channel metadata link cannot satisfy item overlap; actual item link does')
+feed['final']='https://example.com/comments/feed/'
+with patch('check.fetch',side_effect=[page,feed]):
+    try:check(row)
+    except AssertionError:pass
+    else:raise AssertionError('comments feed accepted')
+print('PASS: comments feed rejected even when its item links overlap')

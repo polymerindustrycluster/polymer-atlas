@@ -16,6 +16,9 @@ def check(r):
         if col=='newsroom_feed_url':
             result['items']=feed_count(p['body']); assert result['items']>0
             root=ET.fromstring(p['body']); links=set()
+            titles=root.findall('./channel/title')+root.findall('{http://www.w3.org/2005/Atom}title')
+            assert '/comments/' not in p['final'].lower() and 'feed=comments' not in p['final'].lower()
+            assert not any('comments' in (e.text or '').lower() for e in titles),'comments feed'
             entries=[e for e in root.iter() if e.tag in ('item','{http://www.w3.org/2005/Atom}entry','{http://purl.org/rss/1.0/}item')]
             for entry in entries:
                 links.update(e.text.strip().rstrip('/') for e in entry.iter('link') if e.text)
