@@ -119,3 +119,7 @@ Controller was notified of recommendations to hold mixed/mismatch/postbacc count
 first-year semantics; no owner ruling presumed. Remaining169 national leads are not
 worked by this branch. The94 batch2 STILL_UNCERTAIN settling facts remain committed in
 PR160 holds.csv and are targeted follow-ups, not silently discarded leads.
+
+Draft PR https://github.com/polymerindustrycluster/polymer-atlas/pull/168 .
+Codex3/Grok3 deep review requests queued for head72c9de9; no verdict yet.
+Earlier PR144/160 remain unchanged on their own branches and review queues.
