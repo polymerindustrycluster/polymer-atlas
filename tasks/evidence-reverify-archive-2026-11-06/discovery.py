@@ -48,13 +48,19 @@ def main():
     grouped={}
     for e in read(HERE/'verdicts.csv'):
         if e['judgment']=='SUPPORTED':grouped.setdefault(e['url'],[]).append(e)
+    supported_ids = {e['evidence_id'] for rows in grouped.values() for e in rows}
     results=ROOT/'build/l1-discovery';results.mkdir(exist_ok=True)
+    all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links'] if r['evidence_id'] in supported_ids]
+    write(ROOT/'build/l1-cdx-links.csv',sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
     for i,(url,rows) in enumerate(sorted(grouped.items()),1):
         if time.monotonic() >= END: break
         path=results/(hashlib.sha256(url.encode()).hexdigest()+'.json')
         if path.exists():continue
         refs,status=cdx(url)
-        if status in ('NO_CAPTURE','NO_EXACT_CAPTURE'):
+        if status in ('NO_CAPTURE','NO_EXACT_CAPTURE') and urllib.parse.urlsplit(url).query:
+            # shortcut: query-string SPN targets held until an encoded submit route is verified.
+            status = 'SPN_QUERY_HOLD'
+        elif status in ('NO_CAPTURE','NO_EXACT_CAPTURE'):
             _,code,_=request('https://web.archive.org/save/'+url,'spn',20)
             if code in ('200','201','202','302'):
                 time.sleep(20); refs,status=cdx(url)
@@ -78,7 +84,7 @@ def main():
                     stamp=re.search(r'/web/(\d{14})/',ref)[1]
                     links.append(dict(evidence_id=e['evidence_id'],archive_ref=ref,captured_at=stamp[:4]+'-'+stamp[4:6]+'-'+stamp[6:8],created_by='atlas-L1-reverify-archive'))
         path.write_text(json.dumps(dict(url=url,status=status,links=links)))
-        all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links']]
+        all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links'] if r['evidence_id'] in supported_ids]
         write(ROOT/'build/l1-cdx-links.csv',sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
         print(i,'/',len(grouped),'CDX',status,'links',len(all_links),flush=True)
 

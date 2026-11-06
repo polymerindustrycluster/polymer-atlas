@@ -92,9 +92,35 @@ def fetch(url, refresh=False, fallback=True):
 
 def quote(e):
     m = re.search(r'Quote:\s*["“](.*?)["”](?:\s*\||\s*$)', e['notes'], re.S)
-    if m: return m.group(1).strip()
-    m = re.search(r'["“](.+)["”]', e['claim_detail'], re.S)
-    return m.group(1).strip() if m else ''
+    if m: q = m.group(1).strip()
+    else:
+        spans = re.findall(r'["“]([^"“”]+)["”]', e['claim_detail'], re.S)
+        q = spans[0].strip() if len(spans) == 1 else ''
+    return q if ns['words'](q) else ''
+
+
+def live_posture(f, url):
+    if f['status'] != 'ok': return 'FETCH_FAILED'
+    text = (ROOT / f['page']).read_text()
+    lower = text.lower()
+    if '\ufffd' in text or any(x in lower for x in ("this site can't be reached", 'enable javascript and cookies to continue', 'checking if the site connection is secure', 'access to this page has been denied', 'please complete the security check', 'request blocked')):
+        return 'FETCH_FAILED'
+    attempt = f['attempts'][-1]
+    effective = attempt['effective_url']
+    if attempt['route'] != url:
+        # Jina's URL Source header, not its wrapper URL, identifies the returned page.
+        key = hashlib.sha256(url.encode()).hexdigest()
+        effective = ''
+        for raw in CACHE.glob(key + '*.raw'):
+            if hashlib.sha256(raw.read_bytes()).hexdigest() == f.get('sha256'):
+                m = re.search(r'(?m)^URL Source:\s*(https?://\S+)', raw.read_text(errors='replace'))
+                effective = m[1] if m else ''
+                break
+    if not effective: return 'FETCH_FAILED'
+    from urllib.parse import urlsplit
+    a,b = urlsplit(url),urlsplit(effective)
+    norm = lambda x: (x.hostname.lower().removeprefix('www.') if x.hostname else '', x.path.rstrip('/'), x.query)
+    return 'ok' if norm(a) == norm(b) else 'WRONG_PAGE'
 
 
 def frame():
@@ -108,6 +134,21 @@ def frame():
     return rows
 
 
+def bound_verdicts():
+    canonical = {r['evidence_id']: r for p in sorted((ROOT/'data').glob('evidence_*.csv')) for r in read(p)}
+    inputs, verdicts = read(HERE/'inputs.csv'), read(HERE/'verdicts.csv')
+    assert len(inputs) == len({r['evidence_id'] for r in inputs})
+    assert len(verdicts) == len({r['evidence_id'] for r in verdicts})
+    indexed = {r['evidence_id']:r for r in inputs}
+    assert set(indexed) == {r['evidence_id'] for r in verdicts}
+    for v in verdicts:
+        e, i = canonical[v['evidence_id']], indexed[v['evidence_id']]
+        assert all(i[k] == v[k] == value for k,value in e.items()), v['evidence_id']
+        assert i['quote'] == v['quote'] == quote(e), v['evidence_id']
+        assert i['url'] == v['url'] == e['source_ref'], v['evidence_id']
+    return {r['evidence_id']:r for r in verdicts}
+
+
 def audit():
     rows = frame()
     urls = sorted({r['url'] for r in rows})
@@ -118,7 +159,9 @@ def audit():
     results = []
     for e in rows:
         f = fetch(e['url'])
-        if f['status'] != 'ok': judgment, reason = 'FETCH_FAILED', 'No readable live page via direct or Jina route; availability only.'
+        posture = live_posture(f,e['url'])
+        if posture == 'FETCH_FAILED': judgment, reason = 'FETCH_FAILED', 'No unambiguous readable UTF-8 primary page; transport, decoding or challenge hold.'
+        elif posture == 'WRONG_PAGE': judgment, reason = 'WRONG_PAGE', 'Cited URL redirects to a different host, path or query; identity/page review required.'
         elif not e['quote']: judgment, reason = 'PARTIAL', 'No preserved verbatim quote: manual claim judgment needed; not an adverse claim verdict.'
         elif on_page(e['quote'], ROOT / f['page']): judgment, reason = 'SUPPORTED', 'Preserved quote occurs as contiguous normalized words; claim semantics not independently rejudged.'
         else: judgment, reason = 'NOT_SUPPORTED', 'Preserved quote not found as contiguous normalized words; claim itself may still be true.'

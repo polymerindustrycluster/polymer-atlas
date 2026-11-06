@@ -15,10 +15,11 @@ AVAILABILITY_STOP = threading.Event()
 
 
 def same_page(a, b):
-    norm = lambda u: re.sub(r'^(https?://)?(www\.)?', '', u.strip()).rstrip('/')
-    na, nb = norm(a), norm(b)
-    ha, _, pa = na.partition('/'); hb, _, pb = nb.partition('/')
-    return ha.lower() == hb.lower() and pa == pb
+    from urllib.parse import urlsplit
+    def norm(url):
+        p = urlsplit(url.strip())
+        return (p.netloc.lower().removeprefix('www.'), p.path.rstrip('/'), p.query, p.fragment)
+    return norm(a) == norm(b)
 
 
 def available(url):

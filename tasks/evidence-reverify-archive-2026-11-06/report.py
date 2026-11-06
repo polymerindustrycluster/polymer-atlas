@@ -1,10 +1,17 @@
 """Deterministic yield and per-claim rates; no skipped rows can pass reconciliation."""
 from collections import Counter
-from run import HERE, ROOT, read, wilson
-r = read(HERE/'verdicts.csv'); inputs = read(HERE/'inputs.csv'); leads = read(HERE/'repair_leads.csv')
+import io, sys
+real_print = print
+buffer = io.StringIO()
+def print(*args, **kwargs):
+ kwargs["file"] = buffer
+ real_print(*args, **kwargs)
+from run import HERE, ROOT, read, wilson, bound_verdicts
+r = list(bound_verdicts().values()); inputs = read(HERE/'inputs.csv'); leads = read(HERE/'repair_leads.csv')
 assert {x['evidence_id'] for x in inputs} == {x['evidence_id'] for x in r}
 assert len(r) == len(inputs) == len({x['evidence_id'] for x in r}) == 3683
 assert len({x['source_ref'] for x in inputs}) == 1120
+assert len(leads) == len({x['evidence_id'] for x in leads})
 assert {x['evidence_id'] for x in leads} == {x['evidence_id'] for x in r if x['judgment'] != 'SUPPORTED'}
 print('PIC18 evidence rows:', len(r), 'distinct cited refs:',len({x['source_ref'] for x in r}))
 print('Judgments:',dict(Counter(x['judgment'] for x in r)))
@@ -20,5 +27,13 @@ if (HERE/'archive_links.csv').exists():
  links=read(HERE/'archive_links.csv');out=read(HERE/'archive_outcomes.csv')
  assert len(links)+len(out)==sum(x['judgment']=='SUPPORTED' for x in r)
  assert len({x['evidence_id'] for x in links+out})==len(links)+len(out)
+ assert {x['evidence_id'] for x in links+out} == {x['evidence_id'] for x in r if x['judgment']=='SUPPORTED'}
  print('Archive packet:',len(links),'rows /',len({x['archive_ref'] for x in links}),'captures')
  print('Archive holds:',dict(Counter(x['status'] for x in out)))
+
+text = buffer.getvalue()
+real_print(text,end='')
+if '--emit' not in sys.argv:
+ document = (HERE/'README.md').read_text()
+ rendered = document.split('<!-- RESULTS BEGIN -->\n',1)[1].split('<!-- RESULTS END -->',1)[0]
+ assert rendered == text, 'README result block differs from recomputed results'

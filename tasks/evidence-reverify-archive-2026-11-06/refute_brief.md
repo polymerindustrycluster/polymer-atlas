@@ -1,137 +1,138 @@
-Try to REFUTE this partial PR for PIC18 preserved-quote audit and verified Wayback links. Return APPROVE or REFUTE for correctness of this scoped deliverable, with concrete reproducible findings. This is not full semantic claim re-verification or archive completeness; those limitations/holds must remain explicit. Controller authorized shipping verified subset while an 11-hour resumable CDX/SPN worker produces local candidates. Do not approve missing gates: identify pending checks as pending.
+RE-REVIEW PR #137 L1: try to REFUTE correctness of a scoped preserved-quote audit + verified archive subset. No semantic claim verification or archive completeness is claimed. Current outputs: 3,683 evidence rows / 1,120 refs, 3,261 quote matches / 422 repair-availability leads (75 quote absent, 34 no-quote holds, 264 fetch failures, 49 redirect holds). 34 archive links / 11 freshly checked captures / 0 failures; 3,227 supported-row archive holds. Canonical data changes remain exactly 34 archive links; no evidence/tier/org/site changes.
 
-Ground truth frame at bd57a08: OH physical PIC18 sites plus their parent organizations regardless of HQ, no status filter. 3,683 own_site rows, 1,120 distinct references. 3,344 quote matches, 76 absent quotes, 35 readable/no preserved quote holds, 228 fetch failures. 339 repair/availability leads. We never change evidence or tiers. Only archive_links.csv is applied. archive packet is still growing during review; eventual check_archives.py must freshly re-fetch every included capture and match its quote before PR publication. validate.py must pass; report.py must reconcile all counts. Four real inspected known answers plus inserted/reversed quote mutations pass. Baseline validate passes. There is no claim that the earlier 74% semantic support rose to the new quote-presence percentage.
+Initial Codex and Grok councils REFUTED the earlier in-flight code. Fixes: parse archive URLs structurally (query trailing slash/case preserved), bind every verdict/input/quote to canonical evidence, exact disposition sets and unique leads, narrow HTML claim to text-node extraction rather than visibility, conservative redirect/wall/decoding posture, hold ambiguous quote spans, hash-frozen publication packet, fresh checked receipts required BEFORE builder application, default fresh checker covers whole canonical table, replay retry/backoff and deadline guards, worker aggregate regenerated on resume and filtered to current eligible IDs. SPN query submissions held until encoded route verified.
 
-Inspect correctness, URL/capture binding, idempotence, quote extraction, skipped/uninspected cases, failure behavior, rate-limit handling, and whether README overclaims. New code is task-local, no scripts/ edits. Local raw pages are not committed. Optional replacements skipped. Scope holds and all archive unavailability must remain visible.
+Ground-truth checks: known_answers.py PASS (4 inspected records + matcher/CDX/URL/posture adversarial fixtures); check_mutations.py PASS (forged quote, duplicate lead, unknown disposition ID, missing receipt each fail); check_archives.py --packet-only PASS 34/11/0; report.py PASS exact yields + exact generated README results; build.py rerun 0 additions; validate.py zero errors. Run from current worktree; caches under build/l1-cache, not committed. Worker writes ONLY build/ candidates; frozen PR files are not mutated by it.
 
-Named checks: python3 tasks/evidence-reverify-archive-2026-11-06/{known_answers,report,build,check_archives}.py and python3 scripts/validate.py. check_archives explicitly fails for a zero-row packet. All assertions are required. Data builder rerun must add zero rows.
-
-
-Final snapshot update: 34 links / 11 captures, fresh re-fetch 0 failures after bounded retries. All rows supports_A already; no evidence or tier changes. 3,310 supported rows remain archive holds. validate.py zero errors; builder rerun zero additions. CDX worker is background/local-only. Controller 05:55 permits draft PR before two-family clerk reviews. Changes since the initial packet include global availability stop, shared rate-limit holds, bounded fresh transport retries, collision-safe raw/page cache writes, exponential replay backoff, deadline guard, and CDX known-answer fixtures. Review the current files below, not the initial in-flight snapshot.
+Review all current files below and identify concrete defects, distinguishing the original in-flight code from current code. Return VERDICT APPROVE or REFUTE with inspected/uninspected scope. Original council findings are recorded in README; raw outputs remain worktree build/l1-refute-{codex,grok}.txt.
 
 --- README.md ---
-# PIC-18 own-site quote re-verification and archive links, 2026-11-06
+# PIC-18 preserved-quote re-verification and archive links — 2026-11-06
 
-L1, claimed by controller thr_9i2c6byhcz for atlas-L1-reverify-archive. Source tree: bd57a08.
-First users: Atlas integrator and evidence auditors, beginning with this PR on 2026-11-06; no operational UI is added.
+L1 (`atlas-L1-reverify-archive`), controller-claimed; draft PR #137. Frame pinned to bd57a08: every OH site whose
+physical county, stripping a trailing ` County`, is in `scripts/regions.py` PIC18, plus those sites' parent organizations,
+regardless of HQ. No status/tier filter. Exactly 3,683 own_site evidence rows / 1,120 distinct cited references;
+4 references (8 rows) are not bare URLs. This matches the controller's baseline. HQ-only and HQ-plus-footprint
+alternatives are excluded. First users: Atlas integrator and evidence auditors, from PR review on 2026-11-06.
 
-Frame: every OH site whose physical county, after stripping a trailing ` County`, is in `scripts/regions.py` PIC18;
-plus the organizations operating those sites, regardless of HQ. No status/tier filter. The union contributes
-**3,683 own_site evidence rows / 1,120 distinct cited references**, exactly the controller's baseline. Four references
-(8 rows) are not bare URLs. Organization HQ-only selection would instead yield 3,540 rows / 1,073 references;
-including all PIC18 HQ organizations plus site parents would yield 3,765 / 1,149. Neither alternative is used.
+## Results (unit: evidence rows)
 
-## What the judgments mean
+This measures **preserved quote presence**, not the semantic truth of a claim or site attribution. SUPPORTED requires
+contiguous normalized words, using the unchanged `words`, `on_page`, and `wilson` functions from the calibrated
+2026-11-03 audit. NOT_SUPPORTED means the preserved quote is absent from the readable returned text, not that the
+underlying claim is false. PARTIAL is a no-preserved-quote/ambiguous-quote hold; it does not assert semantic partial
+support. WRONG_PAGE holds a redirect to another host/path/query, even if the destination might be a valid successor.
+FETCH_FAILED is transport, recognized wall, uncertain decoding, or unavailable source identity; never evidence of absence.
+All unresolved records have lane posture STILL_UNCERTAIN; there are no organization REJECT/status decisions.
 
-This pass tests **preserved quote presence**, using the unchanged `words`, `on_page`, and `wilson` implementations
-loaded from the calibrated 2026-11-03 audit's `analyze.py` via AST (without executing its CLI). Contiguous normalized
-words must match; punctuation and accents follow the original matcher. Quote extraction uses `notes`' `Quote: "..."`
-format, then quoted `claim_detail`. No inference from a match to the underlying claim's truth is made.
+The 2026-11-03 audit's 142/191 (74%, Wilson 68–80%) assessed claim semantics on a different sampled frame, then checked
+its selected quotes. The table below puts it beside the new quote-presence rates for context. These different
+estimands do **not** demonstrate an improvement in semantic support. All-row denominators count availability/no-quote
+holds against support. Readable denominators exclude FETCH_FAILED; redirect holds still count against support.
+Wilson intervals are descriptive binomial reference intervals on a full frame, not sampling uncertainty.
 
-Live URLs were fetched once per exact reference and cached (curl/browser UA, Jina raw fallback). Script/style/noscript
-content is excluded; visible HTML text is used, Jina's response metadata is excluded. Raw responses and full page
-text stay in ignored `build/l1-cache/`, never in the PR. No truncation. Fetch errors, unsupported PDF extraction,
-challenge walls, non-URL references and insufficient readable content are availability failures, never evidence of absence.
-A failed cached fetch is not silently retried. `fetched_at` and route metadata live in the local cache; verdicts carry checked_at.
-
-**3,344 SUPPORTED** means the preserved quote's words occur in order. **76 NOT_SUPPORTED** means that exact quote is
-absent from the readable cited page, not that the claim is false. **35 PARTIAL** rows are holds: readable page but no
-preserved quote to test; no semantic partial-support assertion is intended. **228 FETCH_FAILED** rows are availability
-holds. `repair_leads.csv` includes all 339 non-supported rows, including availability holds, and names the settling claim/page.
-Lane-level posture for every unresolved row is STILL_UNCERTAIN; none is an organization rejection or status change.
-
-The prior audit judged **claim semantics**, then verified its newly chosen quotes. Its 74% support rate (142/191
-readable sampled pages; 68–80% Wilson CI) is a different estimand, geography, and sampling design. The comparison
-below is context, **not evidence that semantic support improved**. This pass does not independently validate that
-site-level claims are locally attributable, or that a quoted capability maps to the claimed vocabulary term.
-All-frame denominators count fetch/no-quote holds against support; readable denominators exclude FETCH_FAILED only.
-Wilson intervals are descriptive binomial reference intervals on this full frame, not uncertainty from random sampling.
+<!-- RESULTS BEGIN -->
 PIC18 evidence rows: 3683 distinct cited refs: 1120
-Judgments: {'SUPPORTED': 3344, 'PARTIAL': 35, 'NOT_SUPPORTED': 76, 'FETCH_FAILED': 228}
-Repair/availability leads: 339 / 3683
+Judgments: {'SUPPORTED': 3261, 'PARTIAL': 34, 'NOT_SUPPORTED': 75, 'FETCH_FAILED': 264, 'WRONG_PAGE': 49}
+Repair/availability leads: 422 / 3683
 | Claim | Quote supported / all rows | Rate (Wilson 95% CI) | Supported / readable | Rate (Wilson 95% CI) | 2026-11-03 semantic audit |
 |-|-:|-|-:|-|-|
 | activity | 0/3 | 0.0% (0–56%) | 0/1 | 0.0% (0–79%) | not sampled |
 | address | 19/37 | 51.4% (36–67%) | 19/28 | 67.9% (49–82%) | 7/13 (54%; 29–77%) |
-| existence | 32/59 | 54.2% (42–66%) | 32/46 | 69.6% (55–81%) | 12/24 (50%; 31–69%) |
+| existence | 30/59 | 50.8% (38–63%) | 30/46 | 65.2% (51–77%) | 12/24 (50%; 31–69%) |
 | liveness | 0/2 | 0.0% (0–66%) | 0/1 | 0.0% (0–79%) | not sampled |
 | parent | 5/7 | 71.4% (36–92%) | 5/5 | 100.0% (57–100%) | 0/2 (0%; 0–66%) |
-| scope | 3288/3575 | 92.0% (91–93%) | 3288/3374 | 97.5% (97–98%) | 122/151 (81%; 74–86%) |
+| scope | 3207/3575 | 89.7% (89–91%) | 3207/3338 | 96.1% (95–97%) | 122/151 (81%; 74–86%) |
+Archive packet: 34 rows / 11 captures
+Archive holds: {'CAPTURE_FETCH_FAILED': 82, 'NO_CAPTURE': 25, 'CAPTURE_REDIRECT_HOLD': 5, 'FRESH_RECHECK_FAILED': 50, 'CAPTURE_PENDING': 106, 'RATE_LIMIT_HOLD': 2959}
+<!-- RESULTS END -->
 
-## Archive snapshot and continuation
+## Method and artifact boundary
 
-The snapshot currently applies **34 archive links / 11 captures**, each citing the same page under V-59's exact
-normalization. All 34 referenced evidence rows already have `tier_effect=supports_A`; zero evidence rows, organizations,
-sites, or verification tiers are created/changed. No replacement EVD IDs were minted. No inclusion decisions or
-inclusion-log entries. No dedupe/create procedure is triggered. Existing evidence and links are immutable.
-The controller designated L1 as sole archive-file writer under AGENTS §2.7; git bd57a08 is the pre-pass backup.
-`build.py` uses `shard_io.append_sorted`, skips byte-equivalent existing rows and refuses conflicting links.
+Fetch once per exact cited reference, curl/browser UA with Jina raw fallback, local cache in ignored `build/l1-cache/`.
+HTML text nodes exclude script/style/noscript; this is **not** a browser visibility/rendering audit (hidden/template
+nodes may remain). No truncation; undecodable cached text is held if replacement characters occur. Recognized
+challenge walls are held; no fixed phrase list can identify every interstitial. Source-ref redirects are compared
+structurally, preserving query values; Jina must supply a matching URL Source header. Unverifiable response identity
+is held. Raw bodies, headers, effective URLs, hashes and timestamps are local; verdicts retain observation timestamps.
+No private, licensed, CRM, vault or personal information is used. Data-estate lookup reported missing Windows-only
+Documents catalogues on this Mac; repository references and the live public pages suffice for this pass.
 
-Discovery through `/wayback/available` hit sustained 429s after roughly 100 successful responses. The initial parallel
-batch lacked shared backoff; it was stopped and replaced by a global API stop, then the controller's paced CDX worker.
-Normal replay URLs work where `id_` replay was rate-limited. Every candidate requires readable normal replay, exact
-capture/page binding (replay redirects held), and the same quote match before it is eligible. An initial 101-row packet
-was reduced after fresh transport failures; exclusions are explicit, not claims of quote contradiction. Raw request
-metadata are local. The full-frame yield check failed while the archive snapshot was incomplete, as intended.
+Quote extraction uses the house `Quote: "..." | ...` notes format, then an unambiguous single quoted claim_detail span.
+Multiple quoted fragments and punctuation-only quotes are held. Inputs, verdicts, and quotes are bound field-for-field
+to the canonical evidence; a forged verdict quote fails. No evidence row, tier, org/site, inclusion decision or registry
+link changes. No new EVD IDs are allocated. No dedupe/create procedure is triggered. All 34 archive links reference
+existing supports_A evidence rows; the archive has no tier effect.
 
-`discovery.py` is a resumable local worker: CDX at most one call per five seconds, Save Page Now at most one per 20 seconds
-when CDX returns no exact capture, exponential 429 backoff from 60 seconds. No link is added because SPN accepted a request:
-it must appear in CDX, be readable, and contain the quote. A worker run has an 11-hour ceiling and resumes per-URL JSON
-receipts from `build/l1-discovery/`. It writes only local `build/l1-cdx-links.csv`, never canonical or committed packet files.
-A later top-up must apply the same strict re-fetch and review gates. Receipt files with transport errors are holds,
-not absence findings. To retry those URLs on another run, move their receipts aside in the local cache first.
+The controller delegated sole archive_links.csv application to L1 under AGENTS §2.7. Git bd57a08 is the pre-pass backup;
+this README is the pass journal. An initially verified 101-row capture packet was reduced to 34 after fresh transport
+failures. These are availability exclusions, not quote contradictions. The revised conservative live classification
+changed the preliminary 3,344 matches to 3,261 (redirect/decoding/ambiguous-quote holds); no matching threshold changed.
+Existing evidence and published archive facts remain append-only. All 34 included rows still pass the revised live posture.
 
-| Hold | Count (evidence rows) | Settling fact/action |
-|-|-:|-|
-| Preserved quote absent | 76 | Own-site page with the claimed words, or a separately reviewed fresher evidence row |
-| No preserved quote on readable page | 35 | Manual semantic review and selection of a supporting quote |
-| Live fetch failed | 228 | Readable cited primary page; no absence inference |
-| Archive not in this snapshot | 3,310 | Exact readable capture with matching quote; includes rate-limit, pending, missing and failed re-fetch cases |
+## Archive discovery and holds
 
-Rest-of-Ohio and PA continuation belongs to a second PR; this first snapshot does not include them. Semantic claim
-re-judgment, replacements, owner/ring/vocabulary changes, PDF text extraction and site-attribution repair are not claimed.
-The read-only data-estate lookup had Mac platform gaps in the Windows-only Documents catalogues; repository sources
-and the live cited web pages suffice for this pass. No CRM, private vault, licensed sources or personal data were used.
+Legacy availability discovery hit sustained 429s after approximately 100 successful responses; the parallel batch
+lacked shared backoff and was stopped. The snapshot collector now uses a shared global stop and labels rate-limit holds.
+No unavailable capture ever becomes an archive link. Normal replay is required; a replay redirect is held. URL binding
+is stricter than V-59 on query values: scheme/www/host case and a trailing **path** slash may differ; query case and
+slashes must not. Raw metadata stay local. `archive_outcomes.csv` supplies exactly one outcome for every supported
+row without a link. `repair_leads.csv` supplies exactly one settling-fact lead for every non-supported live row.
 
-## Reproduce and gates
+The controller authorized a resumable `discovery.py` worker (11-hour run window): CDX at most once per five seconds,
+Save Page Now at most once per 20 seconds when no exact capture is returned, 429 exponential backoff from 60 seconds.
+Numeric Retry-After is honored. Accepted SPN is not evidence of a capture: CDX must expose a readable exact capture
+containing the quote. Query-string SPN submissions are held until the encoded submit route is verified;
+existing query-string captures can still qualify. Per-URL receipts under `build/l1-discovery/` support resume; the aggregate is rebuilt on restart.
+The worker writes only local `build/l1-cdx-links.csv`, never canonical or frozen PR files. Restart errors are explicit
+holds; move aside failed URL receipts locally to retry. The worker's deadline cannot reuse a preceding URL's replay.
+No archive completeness is claimed. A later top-up requires fresh checks and review. Rest-OH then PA are a separate PR.
 
-Run from repository root (Python 3.15, curl 8.7.1; standard library only):
+## Named checks and reproduction
 
 ```sh
 python3 tasks/evidence-reverify-archive-2026-11-06/run.py
 python3 tasks/evidence-reverify-archive-2026-11-06/known_answers.py
-python3 tasks/evidence-reverify-archive-2026-11-06/archive.py --cached-only
+python3 tasks/evidence-reverify-archive-2026-11-06/check_mutations.py
+# Discovery may regenerate a candidate packet; do not change the frozen packet during checking.
+python3 tasks/evidence-reverify-archive-2026-11-06/check_archives.py --packet-only
 python3 tasks/evidence-reverify-archive-2026-11-06/build.py
-python3 tasks/evidence-reverify-archive-2026-11-06/check_archives.py
 python3 tasks/evidence-reverify-archive-2026-11-06/report.py
 python3 scripts/validate.py
 ```
 
-The archive command regenerates from local discovery cache; a fresh machine must populate it using `archive.py` or
-`discovery.py` first. It will not silently claim zero archives as a pass. `check_archives.py` independently refreshes
-all distinct captures and fails on any unreadable or unmatched row, including an empty packet. It retries transient
-failures at most twice and backs off on 429. Live cache reuse is intentional; remove only the relevant local cache
-receipt to request a new live observation. Never commit raw caches.
+Fresh `check_archives.py --packet-only`: **34 rows / 11 captures / 0 failures**, PASS. It binds canonical quotes,
+re-fetches every capture, rejects any packet mutation, and writes per-row receipts bound to the packet/quote hashes.
+Failures clear the receipts and fail closed. `build.py` refuses any row without that successful receipt; application
+therefore follows the content gate. The default check also requires the whole canonical archive table to equal the
+checked packet, so an earlier applied row cannot disappear from verification. Builder rerun: zero additions, PASS.
+`report.py`: exact canonical/input/verdict binding, unique leads, exact disposition sets and README-result equality,
+PASS. `validate.py`: zero errors after application, PASS. No scripts/ edits, so its pytest gate is not triggered.
 
-Known-answer gate: EVD-013356, EVD-013357, EVD-013360 and EVD-013379 were inspected in raw fetched page text. All four
-matched; inserting a unique absent token or reversing their word order failed. Empty quote returned None. V-59 binding
-mutations reject a different path, path case, and query string; permitted scheme/www/host-case/trailing-slash changes pass.
-`known_answers.py`: PASS. `build.py` rerun: zero additions, PASS. `report.py`: full frame/lead/archive counts reconcile,
-PASS. Baseline `python3 scripts/validate.py`: zero errors, PASS. No `scripts/` files changed, so the scripts pytest gate
-is not triggered. Fresh capture gate and two-family review results are recorded below when terminal.
+Known answers: four inspected real records EVD-013356/013357/013360/013379; inserted words and reversed order fail,
+empty quote returns None. URL mutations reject another path, path case, query value case and query trailing slash.
+Controlled redirect, ASCII challenge-wall and decoding-error fixtures hold. CDX known answers cover exact/other/empty/
+HTTP error/invalid JSON. All PASS. `check_mutations.py` injects forged verdict quote, duplicate repair lead and unknown
+archive-outcome ID, plus a missing fresh-check receipt before application; every defect fails the named report check and all originals restore byte-for-byte.
 
-Fresh archive gate: `python3 tasks/evidence-reverify-archive-2026-11-06/check_archives.py` —
-**34 rows / 11 distinct captures / 0 failures**, PASS after bounded retry of transport failures. Earlier failed
-101-row and 34-row checks were retained locally as diagnostics; this result follows exclusion of the first failing
-candidates and retrying connection failures. No quote-match threshold was changed. Every row now included was freshly
-re-fetched and its quote found. Validation after application: zero errors; builder idempotence: zero additions.
+## Independent refute record
 
-Controller 05:55 ruling supersedes the council-only ordering: draft PR publication may precede refutes; reviewer
-threads are an approved alternative while council is saturated. Required families remain Codex + Grok. The original
-deep council calls are still pending. Clerk reviews will be requested after branch publication; no Done claim.
-Additional known-answer fixtures check CDX exact-page binding, another page, no captures, transport HTTP error and
-invalid JSON, all PASS. Worker deadline handling and exponential replay backoff were tightened before restarting
-from saved progress. The restarted worker uses the same local receipts and does not mutate the 34-row snapshot.
+Initial council Codex (gpt-6-astra/max, `--effort deep`): REFUTE. Valid findings: structural query URL binding;
+canonical quote binding; missing exact disposition/lead uniqueness assertions; overclaim of visible text; packet freeze;
+worker aggregate recovery. Fixed with structural URL parsing, canonical cross-checks, exact set/uniqueness checks,
+narrowed text-extraction description, packet hash checks and restart aggregate regeneration. Ambiguous spans now hold.
+
+Initial council Grok (grok-4.7/xhigh, `--effort deep`): REFUTE. Valid findings: unflagged final-page redirects, wall/
+decoding ambiguity, quote extraction ambiguity, apply-before-fresh-check and canonical rows outside packet. Fixed with
+conservative response posture, guarded quotes, mandatory fresh receipts and whole-table default archive check. Settling
+page wording describes a future readable source, not an assertion that failed pages loaded. Sticky legacy cache is
+explicit; the controller's paced CDX/SPN worker is the continuation route. Some review findings concerned the earlier
+in-flight code and were already fixed before publication (429 label/backoff, terminal gates, deadline handling).
+
+Controller 05:55 ruling supersedes council-only ordering and permits draft publication before refutes. Codex and Grok
+clerk re-review of the corrected commit is pending; **no Done claim**. The original refute outputs are local, with the
+verdicts and responses recorded here. No semantic claim re-verification, replacement evidence, scope/ring/vocabulary
+ruling, rendered visibility audit or PDF text extraction is claimed.
 
 --- run.py ---
 #!/usr/bin/env python3
@@ -228,9 +229,35 @@ def fetch(url, refresh=False, fallback=True):
 
 def quote(e):
     m = re.search(r'Quote:\s*["“](.*?)["”](?:\s*\||\s*$)', e['notes'], re.S)
-    if m: return m.group(1).strip()
-    m = re.search(r'["“](.+)["”]', e['claim_detail'], re.S)
-    return m.group(1).strip() if m else ''
+    if m: q = m.group(1).strip()
+    else:
+        spans = re.findall(r'["“]([^"“”]+)["”]', e['claim_detail'], re.S)
+        q = spans[0].strip() if len(spans) == 1 else ''
+    return q if ns['words'](q) else ''
+
+
+def live_posture(f, url):
+    if f['status'] != 'ok': return 'FETCH_FAILED'
+    text = (ROOT / f['page']).read_text()
+    lower = text.lower()
+    if '\ufffd' in text or any(x in lower for x in ("this site can't be reached", 'enable javascript and cookies to continue', 'checking if the site connection is secure', 'access to this page has been denied', 'please complete the security check', 'request blocked')):
+        return 'FETCH_FAILED'
+    attempt = f['attempts'][-1]
+    effective = attempt['effective_url']
+    if attempt['route'] != url:
+        # Jina's URL Source header, not its wrapper URL, identifies the returned page.
+        key = hashlib.sha256(url.encode()).hexdigest()
+        effective = ''
+        for raw in CACHE.glob(key + '*.raw'):
+            if hashlib.sha256(raw.read_bytes()).hexdigest() == f.get('sha256'):
+                m = re.search(r'(?m)^URL Source:\s*(https?://\S+)', raw.read_text(errors='replace'))
+                effective = m[1] if m else ''
+                break
+    if not effective: return 'FETCH_FAILED'
+    from urllib.parse import urlsplit
+    a,b = urlsplit(url),urlsplit(effective)
+    norm = lambda x: (x.hostname.lower().removeprefix('www.') if x.hostname else '', x.path.rstrip('/'), x.query)
+    return 'ok' if norm(a) == norm(b) else 'WRONG_PAGE'
 
 
 def frame():
@@ -244,6 +271,21 @@ def frame():
     return rows
 
 
+def bound_verdicts():
+    canonical = {r['evidence_id']: r for p in sorted((ROOT/'data').glob('evidence_*.csv')) for r in read(p)}
+    inputs, verdicts = read(HERE/'inputs.csv'), read(HERE/'verdicts.csv')
+    assert len(inputs) == len({r['evidence_id'] for r in inputs})
+    assert len(verdicts) == len({r['evidence_id'] for r in verdicts})
+    indexed = {r['evidence_id']:r for r in inputs}
+    assert set(indexed) == {r['evidence_id'] for r in verdicts}
+    for v in verdicts:
+        e, i = canonical[v['evidence_id']], indexed[v['evidence_id']]
+        assert all(i[k] == v[k] == value for k,value in e.items()), v['evidence_id']
+        assert i['quote'] == v['quote'] == quote(e), v['evidence_id']
+        assert i['url'] == v['url'] == e['source_ref'], v['evidence_id']
+    return {r['evidence_id']:r for r in verdicts}
+
+
 def audit():
     rows = frame()
     urls = sorted({r['url'] for r in rows})
@@ -254,7 +296,9 @@ def audit():
     results = []
     for e in rows:
         f = fetch(e['url'])
-        if f['status'] != 'ok': judgment, reason = 'FETCH_FAILED', 'No readable live page via direct or Jina route; availability only.'
+        posture = live_posture(f,e['url'])
+        if posture == 'FETCH_FAILED': judgment, reason = 'FETCH_FAILED', 'No unambiguous readable UTF-8 primary page; transport, decoding or challenge hold.'
+        elif posture == 'WRONG_PAGE': judgment, reason = 'WRONG_PAGE', 'Cited URL redirects to a different host, path or query; identity/page review required.'
         elif not e['quote']: judgment, reason = 'PARTIAL', 'No preserved verbatim quote: manual claim judgment needed; not an adverse claim verdict.'
         elif on_page(e['quote'], ROOT / f['page']): judgment, reason = 'SUPPORTED', 'Preserved quote occurs as contiguous normalized words; claim semantics not independently rejudged.'
         else: judgment, reason = 'NOT_SUPPORTED', 'Preserved quote not found as contiguous normalized words; claim itself may still be true.'
@@ -287,10 +331,11 @@ AVAILABILITY_STOP = threading.Event()
 
 
 def same_page(a, b):
-    norm = lambda u: re.sub(r'^(https?://)?(www\.)?', '', u.strip()).rstrip('/')
-    na, nb = norm(a), norm(b)
-    ha, _, pa = na.partition('/'); hb, _, pb = nb.partition('/')
-    return ha.lower() == hb.lower() and pa == pb
+    from urllib.parse import urlsplit
+    def norm(url):
+        p = urlsplit(url.strip())
+        return (p.netloc.lower().removeprefix('www.'), p.path.rstrip('/'), p.query, p.fragment)
+    return norm(a) == norm(b)
 
 
 def available(url):
@@ -409,13 +454,19 @@ def main():
     grouped={}
     for e in read(HERE/'verdicts.csv'):
         if e['judgment']=='SUPPORTED':grouped.setdefault(e['url'],[]).append(e)
+    supported_ids = {e['evidence_id'] for rows in grouped.values() for e in rows}
     results=ROOT/'build/l1-discovery';results.mkdir(exist_ok=True)
+    all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links'] if r['evidence_id'] in supported_ids]
+    write(ROOT/'build/l1-cdx-links.csv',sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
     for i,(url,rows) in enumerate(sorted(grouped.items()),1):
         if time.monotonic() >= END: break
         path=results/(hashlib.sha256(url.encode()).hexdigest()+'.json')
         if path.exists():continue
         refs,status=cdx(url)
-        if status in ('NO_CAPTURE','NO_EXACT_CAPTURE'):
+        if status in ('NO_CAPTURE','NO_EXACT_CAPTURE') and urllib.parse.urlsplit(url).query:
+            # shortcut: query-string SPN targets held until an encoded submit route is verified.
+            status = 'SPN_QUERY_HOLD'
+        elif status in ('NO_CAPTURE','NO_EXACT_CAPTURE'):
             _,code,_=request('https://web.archive.org/save/'+url,'spn',20)
             if code in ('200','201','202','302'):
                 time.sleep(20); refs,status=cdx(url)
@@ -439,7 +490,7 @@ def main():
                     stamp=re.search(r'/web/(\d{14})/',ref)[1]
                     links.append(dict(evidence_id=e['evidence_id'],archive_ref=ref,captured_at=stamp[:4]+'-'+stamp[4:6]+'-'+stamp[6:8],created_by='atlas-L1-reverify-archive'))
         path.write_text(json.dumps(dict(url=url,status=status,links=links)))
-        all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links']]
+        all_links=[r for p in results.glob('*.json') for r in json.loads(p.read_text())['links'] if r['evidence_id'] in supported_ids]
         write(ROOT/'build/l1-cdx-links.csv',sorted(all_links,key=lambda x:x['evidence_id']),FIELDS)
         print(i,'/',len(grouped),'CDX',status,'links',len(all_links),flush=True)
 
@@ -450,9 +501,10 @@ if __name__=='__main__':main()
 #!/usr/bin/env python3
 """Apply the verified archive packet; existing links are immutable. Re-run after rebasing."""
 import re
+import hashlib
 import sys
 from archive import FIELDS, same_page
-from run import HERE, ROOT, read
+from run import HERE, ROOT, read, bound_verdicts
 sys.path.insert(0, str(ROOT / 'scripts'))
 from shard_io import append_sorted
 
@@ -460,12 +512,20 @@ from shard_io import append_sorted
 def main():
     evidence = {r['evidence_id']:r for p in sorted((ROOT/'data').glob('evidence_*.csv')) for r in read(p)}
     packet = read(HERE/'archive_links.csv')
+    verdicts = bound_verdicts()
+    receipts = {r['evidence_id']:r for r in read(HERE/'archive_checks.csv')}
+    assert set(receipts) == {r['evidence_id'] for r in packet}, 'Run fresh packet check before application'
+    digest = hashlib.sha256((HERE/'archive_links.csv').read_bytes()).hexdigest()
     assert len({r['evidence_id'] for r in packet}) == len(packet)
     target = ROOT/'data/archive_links.csv'
     old = {r['evidence_id']:r for r in read(target)}
     additions = []
     for r in packet:
         eid = r['evidence_id']
+        v, receipt = verdicts[eid], receipts[eid]
+        assert v['judgment'] == 'SUPPORTED' and v['quote'], eid
+        assert receipt['archive_ref'] == r['archive_ref'] and receipt['packet_sha256'] == digest, eid
+        assert receipt['quote_sha256'] == hashlib.sha256(v['quote'].encode()).hexdigest(), eid
         match = re.fullmatch(r'https://web\.archive\.org/web/(\d{14})/(https?://\S+)',r['archive_ref'])
         assert match and eid in evidence and same_page(match[2],evidence[eid]['source_ref']),r
         stamp = match[1]
@@ -482,21 +542,28 @@ if __name__ == '__main__': main()
 #!/usr/bin/env python3
 """Freshly fetch every packet capture and fail on missing/unreadable/mismatched content."""
 import re
+import sys
+import hashlib
 import time
 from archive import same_page
-from run import HERE, ROOT, read, fetch, on_page
+from run import HERE, ROOT, read, fetch, on_page, bound_verdicts, write
 
 
 def main():
+    frozen = (HERE/'archive_links.csv').read_bytes()
     packet = read(HERE/'archive_links.csv')
-    verdicts = {r['evidence_id']:r for r in read(HERE/'verdicts.csv')}
+    verdicts = bound_verdicts()
+    receipts = []
+    fields = ['evidence_id','archive_ref','quote_sha256','packet_sha256','checked_at']
+    write(HERE/'archive_checks.csv',[],fields)
     canonical = {r['evidence_id']:r for r in read(ROOT/'data/archive_links.csv')}
     assert len({r['evidence_id'] for r in packet}) == len(packet)
     pages = {}; failures = []
     for r in packet:
         eid,ref = r['evidence_id'],r['archive_ref']
         v = verdicts[eid]
-        assert canonical.get(eid) == r, ('packet not applied',eid)
+        if '--packet-only' not in sys.argv:
+            assert canonical.get(eid) == r, ('packet not applied',eid)
         assert v['judgment'] == 'SUPPORTED' and v['quote'], eid
         match = re.fullmatch(r'https://web\.archive\.org/web/(\d{14})/(https?://\S+)',ref)
         assert match and same_page(match[2],v['source_ref']),eid
@@ -510,15 +577,22 @@ def main():
         f = pages[ref]
         if f['status'] != 'ok' or f['attempts'][-1]['effective_url'].rstrip('/') != ref.rstrip('/') or not on_page(v['quote'],ROOT/f['page']):
             failures.append(eid)
+        else:
+            receipts.append(dict(evidence_id=eid,archive_ref=ref,quote_sha256=hashlib.sha256(v['quote'].encode()).hexdigest(),packet_sha256=hashlib.sha256(frozen).hexdigest(),checked_at=f['fetched_at']))
     print('archive fresh re-fetch:',len(packet),'rows;',len(pages),'captures;',len(failures),'failures',flush=True)
+    assert (HERE/'archive_links.csv').read_bytes() == frozen, 'packet changed during check'
+    if '--packet-only' not in sys.argv:
+        assert set(canonical) == {r['evidence_id'] for r in packet}, 'canonical rows outside checked packet'
     assert not failures, failures
     assert packet, 'No archive rows verified: archive gate incomplete (not a vacuous pass)'
+    write(HERE/'archive_checks.csv',receipts,fields)
 
 
 if __name__ == '__main__': main()
 
 --- known_answers.py ---
 """Four inspected live-page examples plus adversarial matcher mutations."""
+from pathlib import Path
 from run import HERE, ROOT, read, fetch, on_page
 rows = {r['evidence_id']: r for r in read(HERE / 'inputs.csv')}
 for eid in ('EVD-013356', 'EVD-013357', 'EVD-013360', 'EVD-013379'):
@@ -550,15 +624,66 @@ for payload, code, expected in ((valid,'200','FOUND'), (wrong,'200','NO_EXACT_CA
         assert status == expected, (status, expected)
         if refs: assert refs == ['https://web.archive.org/web/20260102030405/https://example.com/claim']
 print('CDX known-answer exact-page/other-page/empty/error/invalid-response PASS')
+assert not same_page('https://example.com/page?key=a/','https://example.com/page?key=a')
+assert not same_page('https://example.com?key=A','https://example.com?key=a')
+from run import quote
+assert quote(dict(notes='',claim_detail='Uses "metal forming" and "laser cutting"')) == ''
+assert quote(dict(notes='',claim_detail='"!!!"')) == ''
+print('Query-value and ambiguous/empty-token quote mutations PASS')
+from run import CACHE, live_posture
+import tempfile
+with tempfile.NamedTemporaryFile(mode='w+',dir=CACHE,suffix='.txt') as page:
+    page.write('Known raw company page with ordinary readable text and a complete quoted activity statement.'); page.flush()
+    state = dict(status='ok',page=str(Path(page.name).relative_to(ROOT)),attempts=[dict(route='https://example.com/page',effective_url='https://www.example.com/page/')])
+    assert live_posture(state,'https://example.com/page') == 'ok'
+    state['attempts'][0]['effective_url'] = 'https://example.com/other'
+    assert live_posture(state,'https://example.com/page') == 'WRONG_PAGE'
+    page.seek(0);page.truncate();page.write("this site can't be reached");page.flush()
+    assert live_posture(state,'https://example.com/page') == 'FETCH_FAILED'
+    page.seek(0);page.truncate();page.write('invalid decoding \ufffd');page.flush()
+    assert live_posture(state,'https://example.com/page') == 'FETCH_FAILED'
+print('Redirect, recognized wall and undecodable-text mutations PASS')
+
+--- check_mutations.py ---
+"""Prove reconciliation fails on the defects found by the independent refute."""
+import subprocess
+import sys
+from run import HERE, read, write
+
+
+def reject(name, mutate, command="report.py"):
+    p = HERE/name
+    before = p.read_bytes()
+    try:
+        rows = read(p); fields = list(rows[0]); mutate(rows)
+        write(p,rows,fields)
+        r = subprocess.run([sys.executable,str(HERE/command)],capture_output=True,text=True)
+        assert r.returncode != 0 and 'AssertionError' in r.stderr, (name,r.stdout,r.stderr)
+        print(name,'injected defect rejected')
+    finally: p.write_bytes(before)
+
+
+reject('verdicts.csv', lambda rows: rows[0].update(quote='forged replacement quote'))
+reject('repair_leads.csv', lambda rows: rows.append(dict(rows[0])))
+reject('archive_outcomes.csv', lambda rows: rows[0].update(evidence_id='EVD-NOT-IN-FRAME'))
+reject('archive_checks.csv', lambda rows: rows.pop(), 'build.py')
+print('Mutation checks PASS; all originals restored byte-for-byte')
 
 --- report.py ---
 """Deterministic yield and per-claim rates; no skipped rows can pass reconciliation."""
 from collections import Counter
-from run import HERE, ROOT, read, wilson
-r = read(HERE/'verdicts.csv'); inputs = read(HERE/'inputs.csv'); leads = read(HERE/'repair_leads.csv')
+import io, sys
+real_print = print
+buffer = io.StringIO()
+def print(*args, **kwargs):
+ kwargs["file"] = buffer
+ real_print(*args, **kwargs)
+from run import HERE, ROOT, read, wilson, bound_verdicts
+r = list(bound_verdicts().values()); inputs = read(HERE/'inputs.csv'); leads = read(HERE/'repair_leads.csv')
 assert {x['evidence_id'] for x in inputs} == {x['evidence_id'] for x in r}
 assert len(r) == len(inputs) == len({x['evidence_id'] for x in r}) == 3683
 assert len({x['source_ref'] for x in inputs}) == 1120
+assert len(leads) == len({x['evidence_id'] for x in leads})
 assert {x['evidence_id'] for x in leads} == {x['evidence_id'] for x in r if x['judgment'] != 'SUPPORTED'}
 print('PIC18 evidence rows:', len(r), 'distinct cited refs:',len({x['source_ref'] for x in r}))
 print('Judgments:',dict(Counter(x['judgment'] for x in r)))
@@ -574,5 +699,13 @@ if (HERE/'archive_links.csv').exists():
  links=read(HERE/'archive_links.csv');out=read(HERE/'archive_outcomes.csv')
  assert len(links)+len(out)==sum(x['judgment']=='SUPPORTED' for x in r)
  assert len({x['evidence_id'] for x in links+out})==len(links)+len(out)
+ assert {x['evidence_id'] for x in links+out} == {x['evidence_id'] for x in r if x['judgment']=='SUPPORTED'}
  print('Archive packet:',len(links),'rows /',len({x['archive_ref'] for x in links}),'captures')
  print('Archive holds:',dict(Counter(x['status'] for x in out)))
+
+text = buffer.getvalue()
+real_print(text,end='')
+if '--emit' not in sys.argv:
+ document = (HERE/'README.md').read_text()
+ rendered = document.split('<!-- RESULTS BEGIN -->\n',1)[1].split('<!-- RESULTS END -->',1)[0]
+ assert rendered == text, 'README result block differs from recomputed results'
