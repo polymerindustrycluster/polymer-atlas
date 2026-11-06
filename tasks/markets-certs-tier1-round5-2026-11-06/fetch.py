@@ -34,7 +34,7 @@ def fetch(url):
         raw = r.stdout.decode('utf-8', 'replace')
         p = Page(); p.feed(raw)
         text = ' '.join(' '.join(p.parts).split()) if route == url else raw
-        if len(text) > 100 and not any(marker in text[:500].lower() for marker in ('just a moment...', 'you are being redirected', 'access denied')):
+        if len(text) > 100 and not any(marker in text[:500].lower() for marker in ('just a moment...', 'you are being redirected', 'access denied', "doesn't work properly without javascript", 'request rejected network security system')):
             return text, p.links, route
     raise RuntimeError('unfetchable: ' + url)
 

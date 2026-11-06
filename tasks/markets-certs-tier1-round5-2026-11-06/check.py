@@ -29,10 +29,13 @@ def main():
         text, _, _ = fetch(url)
         assert found(text, quote) == expected, (url, quote)
         assert not found(text, 'L10 deliberately fabricated defect phrase'), url
-    with patch('fetch.subprocess.run', return_value=SimpleNamespace(returncode=0, stdout=b'You are being redirected... Javascript is required. Please enable javascript before you are allowed to see this page.')):
-        try: fetch('https://example.invalid/challenge'); raise AssertionError('challenge accepted')
-        except RuntimeError: pass
-    print('JS redirect challenge refused on both routes')
+    for body in [b'You are being redirected... Javascript is required. Please enable javascript before you are allowed to see this page.',
+                 b"prospira.us doesn't work properly without JavaScript enabled. Please enable it to continue. " * 2,
+                 b'Request Rejected Network security system Dear user, the requested URL has been rejected for security reasons. ' * 2]:
+        with patch('fetch.subprocess.run', return_value=SimpleNamespace(returncode=0, stdout=body)):
+            try: fetch('https://example.invalid/challenge'); raise AssertionError('challenge accepted')
+            except RuntimeError: pass
+    print('3 redirect/JS-only/network-rejection controls refused on both routes')
     print('known answers: 4/4; injected fabricated quotes refused: 4/4')
     rows = list(csv.DictReader((HERE / 'inputs.csv').open()))
     assert all(r['verdict'] in ('VERIFIED', 'STILL_UNCERTAIN') for r in rows)
