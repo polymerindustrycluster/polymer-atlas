@@ -1,0 +1,363 @@
+[
+  {
+    "receipt_id": "ORG-000131-1",
+    "org_id": "ORG-000131",
+    "attempt": "1",
+    "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+    "http_result": "200 https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+    "raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-000131-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001643-1",
+    "org_id": "ORG-001643",
+    "attempt": "1",
+    "source_url": "https://www.overmoldexpress.com/",
+    "http_result": "200 https://overmoldexpress.com/",
+    "raw_sha256": "7133716e8923fa8a399deacb6f1ac62661bc4ec442fa650fe729f09485c7b8b8",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001643-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001643-2",
+    "org_id": "ORG-001643",
+    "attempt": "2",
+    "source_url": "https://overmoldexpress.com/about-us/",
+    "http_result": "404 https://overmoldexpress.com/about-us/",
+    "raw_sha256": "e81d2bb8fa30d80da54090a40fc437f46957c73b707ab34577012951ba609951",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001643-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001643-3",
+    "org_id": "ORG-001643",
+    "attempt": "3",
+    "source_url": "https://overmoldexpress.com/about/",
+    "http_result": "200 https://overmoldexpress.com/about/",
+    "raw_sha256": "bf3d7d454b960457c04c5be80e399bc4cc9cae0b717ef3e98a304852a5b806bc",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001643-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001643-4",
+    "org_id": "ORG-001643",
+    "attempt": "4",
+    "source_url": "https://overmoldexpress.com/news/",
+    "http_result": "200 https://overmoldexpress.com/news/",
+    "raw_sha256": "a213cc8a2059c026bbab8368ab7a82b852097eaa0d6c320ed571cb085a60036e",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001643-4.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001643-5",
+    "org_id": "ORG-001643",
+    "attempt": "5",
+    "source_url": "https://overmoldexpress.com/privacy-policy/",
+    "http_result": "404 https://overmoldexpress.com/privacy-policy/",
+    "raw_sha256": "e81d2bb8fa30d80da54090a40fc437f46957c73b707ab34577012951ba609951",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001643-5.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001646-1",
+    "org_id": "ORG-001646",
+    "attempt": "1",
+    "source_url": "https://www.tuscoproducts.com/",
+    "http_result": "200 https://www.tuscoproducts.com/",
+    "raw_sha256": "0678ce7cfef45de71b6457693c2c2d5bd5d9f141189103a4c4297cb333aadcdf",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001646-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001646-2",
+    "org_id": "ORG-001646",
+    "attempt": "2",
+    "source_url": "https://www.tuscoproducts.com/pages/the-tusco-advantage",
+    "http_result": "200 https://www.tuscoproducts.com/pages/the-tusco-advantage",
+    "raw_sha256": "39340c5214d56e802e0ed3a106cd9cf5dde53ef68724851b9ac69f3f90f5a77c",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001646-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001646-3",
+    "org_id": "ORG-001646",
+    "attempt": "3",
+    "source_url": "https://www.taholdings.com/",
+    "http_result": "200 https://www.taholdings.com/",
+    "raw_sha256": "6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001646-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001646-4",
+    "org_id": "ORG-001646",
+    "attempt": "4",
+    "source_url": "https://www.tenthavenueholdings.com/",
+    "http_result": "000 https://www.tenthavenueholdings.com/",
+    "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001646-4.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001646-5",
+    "org_id": "ORG-001646",
+    "attempt": "5",
+    "source_url": "https://www.tuscoproducts.com/policies/terms-of-service",
+    "http_result": "200 https://www.tuscoproducts.com/policies/terms-of-service",
+    "raw_sha256": "d031f7d4049b8485fa6f8aa2c30f0b6dc7d1c4972a1342df8eaa1f143ead93a6",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001646-5.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001779-1",
+    "org_id": "ORG-001779",
+    "attempt": "1",
+    "source_url": "https://americansignproducts.com/",
+    "http_result": "200 https://americansignproducts.com/",
+    "raw_sha256": "5ec63573abaa53100827e6decfbbb7b4b2bcbac10c77dfd7cebc7d6cf7be1972",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001779-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001779-2",
+    "org_id": "ORG-001779",
+    "attempt": "2",
+    "source_url": "https://americansignproducts.com/about-us/",
+    "http_result": "404 https://americansignproducts.com/about-us/",
+    "raw_sha256": "d31a02997c6f55e042997188985021671be56b50e82d67e592cdf1a4fc66e27b",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001779-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001779-3",
+    "org_id": "ORG-001779",
+    "attempt": "3",
+    "source_url": "https://innoplast.com/blog/scalecos-innoplast-holdings-acquires-shur-tite-products/",
+    "http_result": "200 https://innoplast.com/blog/scalecos-innoplast-holdings-acquires-shur-tite-products/",
+    "raw_sha256": "5a863f35c5305aade18608d8d0e30ef453457bdf64b249157295fff9b6b0fbf2",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001779-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001829-1",
+    "org_id": "ORG-001829",
+    "attempt": "1",
+    "source_url": "https://horsemenspride.com/",
+    "http_result": "200 https://horsemenspride.com/",
+    "raw_sha256": "f5e8f7cd326ebe197dddef169e7371f3eb9219aa416849d5e2e42c2ce2749d85",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001829-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001829-2",
+    "org_id": "ORG-001829",
+    "attempt": "2",
+    "source_url": "https://horsemenspride.com/pages/about-us",
+    "http_result": "200 https://horsemenspride.com/pages/about-us",
+    "raw_sha256": "26090b110b3310e998f4f02ddee57e6ce7dee77fc4c6db56835554c3e1904a00",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001829-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001829-3",
+    "org_id": "ORG-001829",
+    "attempt": "3",
+    "source_url": "https://horsemenspride.com/pages/terms-of-service",
+    "http_result": "404 https://horsemenspride.com/pages/terms-of-service",
+    "raw_sha256": "c1d25aeccd6b0a4dcfdcbb7ee2df57ca0abe4b4cf860367fd70b28b7eba828e0",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001829-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001829-4",
+    "org_id": "ORG-001829",
+    "attempt": "4",
+    "source_url": "https://horsemenspride.com/policies/terms-of-service",
+    "http_result": "200 https://horsemenspride.com/policies/terms-of-service",
+    "raw_sha256": "759afb81740248309c05c734e9f7a139470c5a326c41bcd4dfbb3d8d9608d1e8",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001829-4.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001905-1",
+    "org_id": "ORG-001905",
+    "attempt": "1",
+    "source_url": "https://thermoprene.com/",
+    "http_result": "200 https://thermoprene.com/",
+    "raw_sha256": "fca5d8f1acdf3965ed1508fc061187b7cd6e730a163638b80efa013066428304",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001905-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001905-2",
+    "org_id": "ORG-001905",
+    "attempt": "2",
+    "source_url": "https://innoplast.com/blog/tag/news/",
+    "http_result": "200 https://innoplast.com/blog/tag/news/",
+    "raw_sha256": "39c82fd9fa88590656ebe3bfe395a8b31ce6f8768700b45d0f7a50c601036acc",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001905-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001905-3",
+    "org_id": "ORG-001905",
+    "attempt": "3",
+    "source_url": "https://innoplast.com/blog/innoplast-named-one-of-clevelands-fastest-growing-companies/",
+    "http_result": "200 https://innoplast.com/blog/innoplast-named-one-of-clevelands-fastest-growing-companies/",
+    "raw_sha256": "3c2023f130c801987136b3107e89266f36584117c47467d32fb48ae49d325ae5",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001905-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001930-1",
+    "org_id": "ORG-001930",
+    "attempt": "1",
+    "source_url": "http://www.itplastics.com/",
+    "http_result": "200 http://itplastics.com/",
+    "raw_sha256": "1eebc6846e0a0c0f3f981aa732d659a3c124fee7cdbba701339749f99f61b84e",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001930-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001930-2",
+    "org_id": "ORG-001930",
+    "attempt": "2",
+    "source_url": "https://itplastics.com/contact-us/",
+    "http_result": "200 https://itplastics.com/contact-us/",
+    "raw_sha256": "a411c5bf42e8d66039c71f7b038af334bb0672c5dddeacd9a3a0f14f2cd7c290",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001930-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001930-3",
+    "org_id": "ORG-001930",
+    "attempt": "3",
+    "source_url": "https://itplastics.com/news/",
+    "http_result": "200 https://itplastics.com/news/",
+    "raw_sha256": "481e0788868e265ff7d564c8619f65a66a1f8899aaf2ef789dd442cd98e6993b",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001930-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001930-4",
+    "org_id": "ORG-001930",
+    "attempt": "4",
+    "source_url": "https://itplastics.com/contact-us/",
+    "http_result": "200 https://itplastics.com/contact-us/",
+    "raw_sha256": "a411c5bf42e8d66039c71f7b038af334bb0672c5dddeacd9a3a0f14f2cd7c290",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001930-4.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-001930-5",
+    "org_id": "ORG-001930",
+    "attempt": "5",
+    "source_url": "https://itplastics.com/power-up-with-custom-lithium-battery-packs/",
+    "http_result": "200 https://itplastics.com/power-up-with-custom-lithium-battery-packs/",
+    "raw_sha256": "5228cac50750661ffab06b694f1d51281230789faa0cfd087f18a8cc75bbd42f",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-001930-5.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002324-1",
+    "org_id": "ORG-002324",
+    "attempt": "1",
+    "source_url": "https://www.esstechinc.com/",
+    "http_result": "200 https://www.esstechinc.com/",
+    "raw_sha256": "9e25fa38045b5d0ca430abd21595f9d92c6e70293da5731940daa6760c2a5a1d",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002324-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002324-2",
+    "org_id": "ORG-002324",
+    "attempt": "2",
+    "source_url": "https://www.esstechinc.com/about-us/",
+    "http_result": "200 https://www.esstechinc.com/about-us/",
+    "raw_sha256": "8f3ca09b851364aa3f88b912af99ccae5c9e6cfe0bb594ddfdb80264419120ce",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002324-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002324-3",
+    "org_id": "ORG-002324",
+    "attempt": "3",
+    "source_url": "https://www.esstechinc.com/contact-us/",
+    "http_result": "200 https://www.esstechinc.com/contact-us/",
+    "raw_sha256": "d8bca1a2c4ce18a3b8c8b224548e1a32860391cd1b2d1fbd96b2d2d100273997",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002324-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002324-4",
+    "org_id": "ORG-002324",
+    "attempt": "4",
+    "source_url": "https://www.esschem.com/about-us/",
+    "http_result": "200 https://www.esschem.com/about-us/",
+    "raw_sha256": "3c6dbd92af5c379897bebb7b8a2668421494b45c299f7dfce4c1c18f29caf0a9",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002324-4.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002325-1",
+    "org_id": "ORG-002325",
+    "attempt": "1",
+    "source_url": "https://advpolytech.com/",
+    "http_result": "403 https://advpolytech.com/",
+    "raw_sha256": "45bd5011d3480967f719057f86266f6b17d85bd6850041757425caa7e572fe85",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002325-1.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002325-2",
+    "org_id": "ORG-002325",
+    "attempt": "2",
+    "source_url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f10000002226-444a5d82-bc42-4b95-bbed-b00e784d6940&directionType=ForwardList&inquirytype=EntityName&listNameOrder=APTA1+L110000596340&searchNameOrder=APTADVANCEDPOLYMERTECHNOLOGY+F100000022260&searchTerm=Apt+2%2C+LLC",
+    "http_result": "403 https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?aggregateId=forp-f10000002226-444a5d82-bc42-4b95-bbed-b00e784d6940&directionType=ForwardList&inquirytype=EntityName&listNameOrder=APTA1+L110000596340&searchNameOrder=APTADVANCEDPOLYMERTECHNOLOGY+F100000022260&searchTerm=Apt+2%2C+LLC",
+    "raw_sha256": "d086d085f76ab7651d37b7347fb45c2c3e799bdaf291930e47f4916b0aa950ad",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002325-2.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002325-3",
+    "org_id": "ORG-002325",
+    "attempt": "3",
+    "source_url": "https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+    "http_result": "200 https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+    "raw_sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002325-3.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002325-4",
+    "org_id": "ORG-002325",
+    "attempt": "4",
+    "source_url": "https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+    "http_result": "200 https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+    "raw_sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002325-4.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002325-5",
+    "org_id": "ORG-002325",
+    "attempt": "5",
+    "source_url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1376993.015",
+    "http_result": "403 https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1376993.015",
+    "raw_sha256": "6044523a1979061e92d678343b6d01c56500e5f037b097cb65b19bfd687efd27",
+    "raw_cache": "/tmp/dedupe-leads-b/ORG-002325-5.raw",
+    "inspection": "INSPECTABLE"
+  },
+  {
+    "receipt_id": "ORG-002325-3-overwritten",
+    "org_id": "ORG-002325",
+    "attempt": "3a",
+    "source_url": "https://onlineservices.ipophil.gov.ph/tmgazette/Unlimited/Attachment/JOURNAL_RECORDAL_APRIL_20230505.PDF",
+    "http_result": "200; empty result observed before overwrite",
+    "raw_sha256": "",
+    "raw_cache": "",
+    "inspection": "UNINSPECTABLE",
+    "reason": "Parallel same-org request reused attempt3 cache filename; overwritten by privacy-page response. Hash-before unknown; surviving hash-after in ORG-002325-3. Included in actual6 attempts; no additional requests."
+  }
+]
