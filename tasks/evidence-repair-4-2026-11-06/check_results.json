@@ -1,0 +1,15 @@
+{
+  "frame": 269,
+  "repaired_evidence": 62,
+  "holds": 207,
+  "shards": 6,
+  "known_answers": 3,
+  "raw_checks": 62,
+  "mutation_checks": [
+    "fabricated quote",
+    "changed frozen source hash",
+    "global duplicate EVD"
+  ],
+  "existing_rows_unchanged": true,
+  "replay_byte_identical": true
+}
