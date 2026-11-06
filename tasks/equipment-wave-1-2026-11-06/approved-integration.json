@@ -1,0 +1,17 @@
+{
+  "reviewed_revision": "29c62fe14bf0538b1fb5ca0fab4e355ccf7e9eae",
+  "merged_main": "412391a0a462105a73e322ea67291d24088cfe7a",
+  "unchanged_reviewed_files": {
+    "data/equipment.csv": "c93f577449cf281ec281dd15d35edf898c377bd0b5851d4db52f4ed926c0e83f",
+    "scripts/build_site.py": "5ed957231efaead0a641f6e99696963e9cf9050cee3a93beba8980ae0a52829a",
+    "scripts/test_build_site.py": "f2b08c898a84cd84c5a22a7337267c05f8cbbc9cc237b2e1610df1aa46e4e17b",
+    "scripts/test_validate.py": "25ebaa00108e34191d35d96fc19300307e332040005a32b7e1cf72d650b0d50a"
+  },
+  "codex": "APPROVE, zero remaining blockers",
+  "grok": "APPROVE, zero findings",
+  "validator": "PASS zero errors",
+  "builder": "PASS34 equipment rows,0 new,known3/3 and negative control",
+  "row_loss_guard": "PASS against current origin/main; merge-base412391a0a4; guard loaded without modification from origin/agent/claude-code/row-loss-guard with ROOT=current checkout",
+  "guard_revision": "0afb556a101da35421afba59e2219f4260ae9b07",
+  "hosted_deployment": "not run"
+}

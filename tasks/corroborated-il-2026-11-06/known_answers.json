@@ -1,0 +1,182 @@
+{
+  "Plastipak Packaging, Inc.": {
+    "query": {
+      "domain": "plastipak.com",
+      "name": "Plastipak Packaging, Inc.",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001033",
+            "name": "Plastipak Packaging, Inc.",
+            "city": "Medina",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: plastipak.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001033",
+            "name": "Plastipak Packaging, Inc.",
+            "city": "Medina",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'plastipak packaging' = legal_name 'Plastipak Packaging, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "Advanced Drainage Systems, Inc.": {
+    "query": {
+      "domain": "adspipe.com",
+      "name": "Advanced Drainage Systems, Inc.",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000651",
+            "name": "Advanced Drainage Systems, Inc.",
+            "city": "Hilliard",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: adspipe.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000651",
+            "name": "Advanced Drainage Systems, Inc.",
+            "city": "Hilliard",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'advanced drainage systems' = legal_name 'Advanced Drainage Systems, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "Lacks Enterprises, Inc.": {
+    "query": {
+      "domain": "lacksenterprises.com",
+      "name": "Lacks Enterprises, Inc.",
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003325",
+            "name": "Lacks Enterprises, Inc.",
+            "city": "Grand Rapids",
+            "state": "MI",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_MI.csv",
+            "match": "domain exact: lacksenterprises.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003325",
+            "name": "Lacks Enterprises, Inc.",
+            "city": "Grand Rapids",
+            "state": "MI",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_MI.csv",
+            "match": "name key 'lacks enterprises' = legal_name 'Lacks Enterprises, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": "no --street",
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+}
