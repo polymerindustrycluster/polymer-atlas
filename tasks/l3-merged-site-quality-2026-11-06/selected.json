@@ -1,0 +1,20 @@
+[
+  {
+    "site_id": "SITE-012511",
+    "establishment_id": "192504",
+    "source_url": "https://plastipak.wd1.myworkdayjobs.com/wday/cxs/plastipak/Plastipak/job/Process-Technician--Day-Shift_REQ24583",
+    "public_job_url": "https://plastipak.wd1.myworkdayjobs.com/Plastipak/job/Plastipak---Pineville-LA/Process-Technician--Day-Shift_REQ24583",
+    "quote": "As a Process Technician, you operate equipment to manufacture plastic containers for leading consumer brands.",
+    "city_quote": "Plastipak - Pineville, LA",
+    "issuer_quote": "1000 Plastipak Packaging Inc. (US)",
+    "source_date": "2026-09-23",
+    "retrieved_date": "2026-11-06",
+    "raw_path": "/tmp/l3-quality-plastipak-job.json",
+    "raw_sha256": "9f65ba63b4b99455542c6323972294651151cb07014b95003ad59852e9cc7516",
+    "own_issued_bridge_url": "https://www.plastipak.com/careers/",
+    "bridge_raw_path": "/tmp/l3-quality-plastipak-careers.html",
+    "bridge_sha256": "24f17afd199aa69d81c41ac215b9488969480088141d1a1c3401796b2013815e",
+    "raw": true,
+    "note": "Company-issued job via Workday tenant linked by own careers page; JSON names Pineville LA,plastic container manufacturing and hiring issuer. Source date2026-09-23; no current-status change. Own claim_detail only quoted job words."
+  }
+]

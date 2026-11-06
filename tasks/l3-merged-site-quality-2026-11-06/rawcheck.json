@@ -25,5 +25,25 @@
     "raw_sha256": "6caeb419c19c02a4cbf591ef2516ab76a5e8afb983bf0f434cf9ae054e024f33",
     "retrieved_date": "2026-11-06",
     "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://www.polyprocessing.com/contact-us/",
+    "quote": "Monroe, LA 71203",
+    "raw": true,
+    "http_status": 200,
+    "raw_text_path": "/tmp/l3-quality-poly-contact.txt",
+    "raw_sha256": "2b07d4d59e9f2bae1e424460ffa23b7ba6ec95c3e43408aad55b1bd3d13fb6ec",
+    "retrieved_date": "2026-11-06",
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://blog.polyprocessing.com/blog/poly-processing-tank-shipping-procedure",
+    "quote": "Poly Processing has three strategically located manufacturing plants, headquartered in Monroe, Louisiana",
+    "raw": true,
+    "http_status": 200,
+    "raw_text_path": "/tmp/l3-quality-poly-shipping.txt",
+    "raw_sha256": "d8d26627dee00754ceb1394867d27f507d03afaccdb3dac0d5216c09fae44546",
+    "retrieved_date": "2026-11-06",
+    "fabricated_suffix_rejected": true
   }
 ]
