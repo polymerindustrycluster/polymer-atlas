@@ -40,6 +40,8 @@ def main():
   rr=json.loads((H/f'receipts_{k}.json').read_text());attempts+=rr
   cal=json.loads((H/f'calibration_{k}.json').read_text());assert cal,'missing calibration record'
  counts=Counter(r['site_id'] for r in attempts);assert set(counts)==set(pin['followup_ids']) and max(counts.values())<=10,'research budget/extraction coverage failure'
+ from check_supplement import main as supplement_check
+ supplement_check()
  raw=json.loads((H/'rawcheck_results.json').read_text());assert raw['attempted_routes']==len(attempts) and raw['raw_bodies_verified']+len(raw['unarchived_discovery_or_failed_routes'])==len(attempts)
  assert raw['checked_quote_observations']==sum(bool(s['raw_checked']) for r in rows for s in r['sources'])
  for cached in [False,True]:subprocess.run(['git','diff']+(['--cached'] if cached else [])+['--quiet','--exit-code','--','data/'],check=True)

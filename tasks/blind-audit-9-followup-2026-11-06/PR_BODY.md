@@ -29,4 +29,6 @@ Pella Macomb and Cork Jacksonville now have fresh site-specific corroboration. F
 
 Packet-only addendum, dependent on PR200. Evidence blindness is based on workflow/attestations, not omniscient proof of no access. Sixteen additional checks resolve two cases; fourteen remain uncertain. Original findings and correction ownership remain intact.
 
+Final bounded recovery used three rendered-route known-record calibrations and six target calls, with zero new site facts. Four target holds remain unchanged; frozen16objects untouched. Source accounting now91verifier requests +5parentknown-answer/diagnosticcalls=96actualcalls, allsitebudgets≤10 with shared-page charges. Initial81rawcaptures +9renderedHTML/transport groups verified separately;36search/failedmissingbodies +1failedparentdiagnosticbody explicitly excluded from positive evidence. Twoinitial unavailable renders preceded KAT instruction but were never trusted; all3KAT+fakes passed before remaining targets/locks. check_supplement.py passes. Updated rates remain34/1/1/14.
+
 🤖 Generated with Codex (bb child of thr_9i2c6byhcz)

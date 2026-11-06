@@ -64,3 +64,28 @@ AllPASS:16exactuniqueinputs/results/34resolvedunchanged,firsthashlocks/finalhash
 (source_check_results.txt). python3 scripts/validate.py0errors. No scripts/edits,fullpytest
 notrun. OriginalbaselinePR200andallolderdataPRsremainindependentreviews; noapprovalclaim
 orDoneuntilthisfollowup'sownCodex+Grokrefuteapprovals. CurrentbranchdependsPR200baseline.
+
+## Final bounded rendered recovery (original16 locks unchanged)
+
+Tried remaining employer/official routes through available NASFirecrawl rawHtml/html,
+maxAge0, noAIextractor/crawl. Three own-fresh known-record probes+fabricated negatives
+PASS. Two initial unavailable responses preceded the calibration instruction but were
+never trusted as positive facts; remaining targets/supplement locks followed calibration.
+Six target requests: Altium missingjob, Reynolds/FXIOSHAchallenge, FXIADPshellthenrendered
+careerswithoutMiamilink, WinCuppagewithout4640link. Four supplements remainUNRESOLVED;
+0newsitefacts/gradechanges. Nevereditedoriginalverdicts_b/receipts_b/calibration_b.
+Supplement hashes and rawHTML+tooltransport hashes, quotes, actualbudgetcharges checked
+by check_supplement.py. maxAge0request isnotorigin-cache-ageattestation.
+
+Finalverifier source requests91, plus5parentknown-answer/diagnostic HTTPrequests=96actual
+sourcecalls; sharedStoropackfetcheschargedtotwosites,allsitebudgets<=10. Parentdiagnostic
+firstliteralNWbodywasnotarchivedbeforefailure,explicitinparent_request_accounting.json;
+neverusedaspositivefact. Additional35loggedAsearches/Bunloggeddiscoveryqueriesarenot
+sourcefetches. Initial81archivedrawbodies+9renderedHTML/transportcapturegroupsverified;
+initial36search/failedmissingbodiesand1parentdiagnosticbodyexplicitlyexcluded.32admitted
+sitequotationobservationsunchanged; known-answer/availabilityquotestestedseparately.
+Bothprivateresearcherchecks+parentsupplementcheckreplayed,source_check_results.txt.
+
+Draft PR218 https://github.com/polymerindustrycluster/polymer-atlas/pull/218 dependsPR200;
+noCodex/Grokapprovalclaimeduntilitsownnewrequests. Parentclockcorrection9hoursrecorded;
+thislargerbudgetcheckdoesnotsettle14unknownfactsorconfirmthemabsent.
