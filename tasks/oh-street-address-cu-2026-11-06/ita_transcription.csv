@@ -1,0 +1,7 @@
+site_id,establishment_id,street,city,zip,result
+SITE-000140,467055,2130 W 110th Street,Cleveland,44102,PASS
+SITE-000252,1437432,25900 Solon Rd,Bedford,44146,PASS
+SITE-000273,1433786,786 Hardy Road,Painesville Twp,44077,PASS
+SITE-000412,1025096,4001 Benefit Avenue,Ashtabula,44004,PASS
+SITE-000556,1457222,3479 State Road,Cuyahoga Falls,44223,PASS
+SITE-000589,1564903,4321 Glenridge Road,South Euclid,44131,PASS

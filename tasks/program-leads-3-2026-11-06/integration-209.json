@@ -1,0 +1,53 @@
+{
+  "main_pin": "4ea5659562be6f267d84c450f3c9fb133ff61fe2",
+  "contains_required_PR209": "1e5834394f592f7237a5919500d9fbd5f2c48ad5",
+  "approved_packet_sha256": {
+    "programs.csv": "11926ec6ff402d5f731a1cb4ada9104ed80806d55380159ff124e306a395bea4",
+    "ecosystem.csv": "900d8f01a3f4a65d7ad96bd1b93a3bb1d64655e8751cb309bd8538925507def1",
+    "evidence_programs.csv": "561d5d993483933aedb2de7af820ef66bf7f32b07f6ce036eccd1ccfbb8b187d",
+    "evidence_ecosystem.csv": "9c871482e4dea071bcaba0efef9bc83169149e7d562d44546bb4ac38e2a4342f"
+  },
+  "all_approved_packet_values_unchanged": true,
+  "counts": {
+    "programs.csv": {
+      "main_rows": 167,
+      "new_rows": 171,
+      "added_rows": 4,
+      "old_rows_preserved": 167,
+      "sha256": "c4cb6ab5bd7de9feb33992715d443a893c7cff6932f1d9a239df247dd4e0b6bf"
+    },
+    "ecosystem.csv": {
+      "main_rows": 400,
+      "new_rows": 402,
+      "added_rows": 2,
+      "old_rows_preserved": 400,
+      "sha256": "a311f57d95eef08dd08a838e8aacb196ca6756b8abd52351f3b1ce5b22a2bc40"
+    },
+    "evidence_programs.csv": {
+      "main_rows": 296,
+      "new_rows": 311,
+      "added_rows": 15,
+      "old_rows_preserved": 296,
+      "sha256": "6df9ede2855fbff54687161dbf61d0b59bb351023c4030ee6349e1f40c3c0045"
+    },
+    "evidence_ecosystem.csv": {
+      "main_rows": 407,
+      "new_rows": 414,
+      "added_rows": 7,
+      "old_rows_preserved": 407,
+      "sha256": "ea50c2883e006c8d0e3740181013c918669ddc9cfb1d1dc0f3799cde8ae050eb"
+    }
+  },
+  "existing_authorized_rollup_cells": [
+    {
+      "file": "ecosystem.csv",
+      "id": "ORG-002844",
+      "field": "polymer_program_name",
+      "before": "Materials Science and Engineering; Materials Science and Engineering \u2014 Polymer and Fiber Materials; Center for Composite and Hybrid Materials Interfacing (CHMI)",
+      "after": "Materials Science and Engineering; Materials Science and Engineering \u2014 Polymer and Fiber Materials; Center for Composite and Hybrid Materials Interfacing (CHMI); Multidisciplinary Composites Certificate Program"
+    }
+  ],
+  "resolution": "All four owned canonical files taken exactly from pinned main, then unchanged builder replayed; no CSV hand merge.",
+  "dedupe": "Fresh main house atlas dedupe domain/name UWM and Davis found no hits before creates.",
+  "checks": "check.py/three no-write injections/replay/validator0/main-row-and-evidence preservation PASS"
+}
