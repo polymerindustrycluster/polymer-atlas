@@ -43,3 +43,37 @@ Application counts, before/after ratios and independent review verdicts are appe
 
 - Missouri application: 7 new organizations (tier C), 9 new establishments {'C': 1, 'B': 8}; 98 evidence observations. `validate.py`: zero errors. Builder replay: passed.
 - South Carolina application: 4 new organizations (tier C), 6 new establishments (tier B); 64 evidence observations; 2 held-parent alias updates. `validate.py`: zero errors. Builder replay: passed.
+- Louisiana application: 4 new organizations (tier C), 4 new establishments (tier B); 48 evidence observations. `validate.py`: zero errors. Builder replay: passed.
+
+Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 210 evidence rows; 4 held-parent alias additions.
+
+| State | QCEW 2023 NAICS 326 private establishments | Atlas strict before | Atlas strict after | Strict/QCEW before → after |
+|---|---:|---:|---:|---:|
+| MO | 368 | 37 | 43 | 10.05% → 11.68% |
+| SC | 406 | 49 | 52 | 12.07% → 12.81% |
+| LA | 117 | 6 | 7 | 5.13% → 5.98% |
+
+`check.py`: PASS, exact 36/36 verdict census, 3/3 injected census defects caught, 19 applied sites, unique IDs, T3 rises in all states. Prior-row comparison against pre-pass commit: every old evidence row preserved; only four old organization trade_names fields gained aliases. All three builder replays are byte-identical across 16 changed data files.
+
+### Held clusters and settling facts
+
+| Cluster | Settling fact |
+|---|---|
+| LF-MO-00006 | Need a polymer formulation or captive shaping witness; contract filling alone does not settle scope. |
+| LF-MO-00018 | Need a raw-verifiable polymer activity witness and operator/site identity; available fetch routes did not verify the selected quote. |
+| LF-MO-00053 | Need polymer-binder formulation at Clifton Avenue; broad chemical blending and distribution does not settle site scope. |
+| LF-MO-00120 | Need a raw-verifiable polymer activity witness and operator/site identity; available fetch routes did not verify the selected quote. |
+| LF-MO-00165 | Need a raw-verifiable polymer activity witness and operator/site identity; available fetch routes did not verify the selected quote. |
+| LF-MO-00289 | Need a raw-verifiable polymer activity witness and operator/site identity; available fetch routes did not verify the selected quote. |
+| LF-SC-00047 | Need polymer-specific production or qualifying polymer value-chain focus at Rock Hill; metal finishing alone is insufficient. |
+| LF-SC-00129 | Need a raw-verifiable polymer activity witness and operator/site identity; available fetch routes did not verify the selected quote. |
+| LF-SC-00198 | Closure reporting found; need dated primary outcome and address-matched EFAST2 check before any closure REJECT. No active create. |
+| LF-SC-00206 | Need a raw-verifiable polymer activity witness and operator/site identity; available fetch routes did not verify the selected quote. |
+| LF-SC-00302 | Need Laurens foam-control product binder/composition; silicone/polymer formulation versus nonpolymer defoamer not settled. |
+| LF-SC-00326 | Need primary operator identity linking Curd Enterprises to Multiplastics and current manufacturing at 476 Long Point Road. |
+| LF-SC-00358 | Need captive polymer processing or site-grain Ring 4 two-of-three test; chlorination equipment alone is insufficient. |
+| LF-LA-00029 | Need dedicated polymer line or polymer-specific value-chain witness; sulfuric acid regeneration alone is insufficient. |
+| LF-LA-00183 | Need current operator/site identity after Berry/Amcor transaction, and plant-specific polymer scope at 4611 Central Avenue. |
+| LF-LA-00234 | Precursor-only Ring 3 precedent applies, but dated current operating outcome and operator after restructuring must be settled before active create. |
+
+Controller 2026-11-06 authorized merge of origin/main instead of rebase to preserve the two pre-existing CRLF-dirty federal-frame files; this supersedes the lane rebase-only route for this integration. Controller also authorized publishing draft for queued refute-clerk review while saturated council calls remain pending; two-family approval is still required. Reviews pending at this checkpoint.
