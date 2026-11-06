@@ -46,7 +46,7 @@ def main():
     grouped = {}
     for r in verdicts:
         if r['judgment'] == 'SUPPORTED': grouped.setdefault(r['url'], []).append(r)
-    if any(json.loads(p.read_text()).get('availability_status') == '429' for p in CACHE.glob('*.available.json')):
+    if '--cached-only' in sys.argv or any(json.loads(p.read_text()).get('availability_status') == '429' for p in CACHE.glob('*.available.json')):
         AVAILABILITY_STOP.set()
     with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
         availability = list(pool.map(available, sorted(grouped)))
