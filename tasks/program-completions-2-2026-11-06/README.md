@@ -60,7 +60,7 @@ Fresh NCES `C2024_A.zip` fetched2026-11-06. Existing house parser
 scripts/build_ipeds_completions.py is reused without modifying it, restricted in the
 local module instance to collection year2024. source.json records the raw member hash,
 URL and vintage (awards2023-07-01 to2024-06-30, provisional release as source packet).
-raw_2024.csv is104 detail-level rows over the44 numeric proposal keys, with first-major
+raw_2024.csv is 104 detail-level rows over 43 distinct UNITID×CIP keys from 44 numeric proposal rows, with first-major
 flags (all R) and second-major counts kept separate. All44 numeric proposal totals
 reconcile to the fresh raw source, not merely to the old packet summary.
 
@@ -127,3 +127,11 @@ Earlier PR144/160 remain unchanged on their own branches and review queues.
 ## Grok family approval receipt
 
 Grok/xAI clerk3thr_4g4uwqjxjv APPROVE f67c207d23f99f18e991ecc00ed550532c609c84,0findings. Independently verified 147proposals=34VERIFIED/81degree-onlynumericREJECT/32holds;112cells/34programs;5newblankcountpairs/29confirmedpairs;34registry supports_C EVD285100–133 append-only. Fresh raw C2024_a hash a7f6d0f03093eef933ea5a31474ca1289cb97c73062b7cc1245fc3cabaff7c61 matched 307,707 unique IPEDS keys (major 1 = 286,979; major 2 = 20,728). Recomputed mixed-award Shawnee6,Ferris30,Everett56 remainunapplied;GT114 ondegreelevels only. No first-year write;2024 notclosure; institution×CIP notpolymer-trackheadcount. Check/replay/wrongUNITID+wrongshardzero-write/validate0/row-loss PASS. Latermain changes needintegratorreplay; notcontent defect. Report: reviews/168-clerk-grok-3.md incontrollerstorage. Codex3 approval remains pending; no two-family completion approval/Done claim. No freshweb or fullscriptspytest repeated for this docs-only receipt.
+
+## Codex source-binding correction — supersedes the earlier guard claim
+
+Codex3 REFUTE accepted: mutable edits.csv could change PROG-000109 from the source-derived19 to20 while old checks still passed and evidence retained19. Actual committed values were correct. Standalone build.py now independently sums the hash-anchored raw subset by UNITID/CIP and detail award level, verifies all positive awards fit the held level set, and derives expected count/year/last-observed year before any write. Every numeric edit and every projected final numeric value, including29 unchanged held pairs, must equal that source result. Each evidence claim must exactly match the source-derived count, key, held levels, year and expected witness metadata. prepare.py and build.py share the same claim formatter; no canonical evidence row changed.
+
+The exact19→20 edit, a2024→2025 edit, and a falsified evidence count are injected on both initial-application and replay data; all six fail before any CSV write. A seventh test mutates an unedited held count and proves source drift is rejected on replay. Existing wrongUNITID and wrong-shard tests remain. Source metadata now anchors raw_2024.csv SHA256 and explicitly records44 numeric proposal rows /43 distinct UNITID×CIP keys. The shared GT key139755×14.1801 appears in two proposals (PROG99 applied, PROG143 held), not two independent keys; no numeric or verdict change.
+
+Actual preparation rerun on reconstructed pre-application data using the same verified NCES raw member; all frozen canonical value/evidence packets reproduce unchanged. All checks and validator rerun for the corrected head. Previous Grok approval covers the old guard; both corrected-head family rereviews required. No full scripts pytest or unchanged program-own-page re-verification.

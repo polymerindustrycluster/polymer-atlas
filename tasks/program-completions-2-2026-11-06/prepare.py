@@ -4,6 +4,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parents[1]/'scripts'))
 import build_ipeds_completions as ipeds
+from build import activity_detail
 
 
 def read(path):
@@ -55,19 +56,20 @@ def main(raw_dir,data):
                 if r[k]!=v:edits.append(dict(program_id=r['program_id'],column=k,old_value=r[k],new_value=v))
             selected.append(p)
             ev=f'EVD-{285100+len(evidence):06}'
-            evidence.append(dict(evidence_id=ev,record_table='programs',record_id=r['program_id'],claim_type='activity',claim_detail=f"latest_completions {all_n}; completions_year 2024; last_year_awarded 2024 (last observed, not final). UNITID {p['ipeds_unitid']} x CIP {p['cip_code']}; MAJORNUM=1; sum CTOTALT across detail AWLEVELs, total {all_n}; all positive award levels covered by held level set {r['level']}. {caveat}",source_class='registry',source_ref=base,observed_date='2026-11-06',tier_effect='supports_C',created_by='atlas-L13-program-completions-2',notes='C2024_A fetched 2026-11-06; raw hash/rows in source.json/raw_2024.csv. Statistical completion observation only; no program existence, scope, liveness, tier or own-page verification-date assertion. First award year withheld as finite-window/coding seam.'))
+            evidence.append(dict(evidence_id=ev,record_table='programs',record_id=r['program_id'],claim_type='activity',claim_detail=activity_detail(dict(p,level=r['level']),all_n,caveat),source_class='registry',source_ref=base,observed_date='2026-11-06',tier_effect='supports_C',created_by='atlas-L13-program-completions-2',notes='C2024_A fetched 2026-11-06; raw hash/rows in source.json/raw_2024.csv. Statistical completion observation only; no program existence, scope, liveness, tier or own-page verification-date assertion. First award year withheld as finite-window/coding seam.'))
             verdict='VERIFIED';why='Fresh raw first-major count reconciles proposal and held identity/CIP; all positive awards within held levels. '+('Blank count pair filled.' if not r['latest_completions'] else 'Held count pair confirmed.')+' Last-observed positive year filled; first-year field held.'
         verdicts.append(dict(program_id=r['program_id'],proposal_status=p['proposal_status'],verdict=verdict,reason_or_settling_fact=why))
     write('input.csv',proposals);write('edits.csv',edits);write('verdicts.csv',verdicts)
     write('joins.csv',[{k:(p[k] if k=='ipeds_unitid' else held[p['program_id']][k]) for k in ('program_id','institution_org_id','program_type','cip_code','level','ipeds_unitid')} for p in selected])
     write('evidence_programs.csv',evidence,next(csv.reader(open(data/'evidence_programs.csv'))))
     keys={(p['ipeds_unitid'],p['cip_code']) for p in proposals if p['prop_latest_completions']}
+    assert sum(bool(p['prop_latest_completions']) for p in proposals)==44 and len(keys)==43
     raw_rows=[]
     for (year,u,c,l),(n,second,flag,secondflag) in sorted(comp.items()):
         if (u,c) in keys:raw_rows.append(dict(unitid=u,cip_code=c,award_level_code=str(l),completions_year='2024',completions_first_major=str(n),first_major_flag=flag,completions_second_major=str(second)))
     write('raw_2024.csv',raw_rows)
     file=raw_dir/'x_C2024_A'/src[2024][0]
-    (HERE/'source.json').write_text(json.dumps(dict(url=base,fetched='2026-11-06',raw_member=file.name,raw_sha256=hashlib.sha256(file.read_bytes()).hexdigest(),positive_numeric_proposals_reconciled=44,known_answers={'Shawnee_all':6,'Ferris_all':30,'Everett_all':56,'Everett_associate_only':10},source_vintage='C2024_A provisional as in original packet; collection year2024 = awards2023-07-01 through2024-06-30'),indent=2)+'\n')
+    (HERE/'source.json').write_text(json.dumps(dict(url=base,fetched='2026-11-06',raw_member=file.name,raw_sha256=hashlib.sha256(file.read_bytes()).hexdigest(),positive_numeric_proposals_reconciled=44,distinct_numeric_keys_reconciled=43,raw_subset_sha256=hashlib.sha256((HERE/'raw_2024.csv').read_bytes()).hexdigest(),known_answers={'Shawnee_all':6,'Ferris_all':30,'Everett_all':56,'Everett_associate_only':10},source_vintage='C2024_A provisional as in original packet; collection year2024 = awards2023-07-01 through2024-06-30'),indent=2)+'\n')
     from collections import Counter
     print('147proposals',Counter(v['verdict'] for v in verdicts),'selected',len(selected),'edits',len(edits),'evidence',len(evidence))
 

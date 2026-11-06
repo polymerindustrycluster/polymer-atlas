@@ -4,6 +4,8 @@
   "raw_member": "C2024_a.csv",
   "raw_sha256": "a7f6d0f03093eef933ea5a31474ca1289cb97c73062b7cc1245fc3cabaff7c61",
   "positive_numeric_proposals_reconciled": 44,
+  "distinct_numeric_keys_reconciled": 43,
+  "raw_subset_sha256": "24d8cf75f38de970c8d73d50cb00af8d33ad275e4a1d1d22f1346a76f1119645",
   "known_answers": {
     "Shawnee_all": 6,
     "Ferris_all": 30,

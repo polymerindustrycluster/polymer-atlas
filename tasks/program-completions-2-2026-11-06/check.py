@@ -1,5 +1,7 @@
 """Completions reconciliation and no-write failure checks, using frozen raw source subset."""
-import csv,hashlib,json,shutil,tempfile
+import copy,csv,hashlib,json,shutil,tempfile
+from unittest.mock import patch
+import build
 from collections import Counter,defaultdict
 from pathlib import Path
 from build import HERE,read,apply
@@ -23,6 +25,10 @@ def main():
     assert len(edits)==112 and len(evidence)==len({r['evidence_id'] for r in evidence})==34
     assert {e['program_id'] for e in edits}=={v['program_id'] for v in verdicts if v['verdict']=='VERIFIED'}=={e['record_id'] for e in evidence}
     assert Counter(e['column'] for e in edits)=={'last_year_awarded':34,'sources':34,'notes':34,'latest_completions':5,'completions_year':5}
+    numeric_proposals=[p for p in inputs if p['prop_latest_completions']]
+    assert len(numeric_proposals)==44
+    assert len({(p['ipeds_unitid'],p['cip_code']) for p in numeric_proposals})==43
+    assert len({(r['unitid'],r['cip_code']) for r in raw})==43
     totals=Counter();perlevel=Counter()
     assert len(raw)==len({(r['unitid'],r['cip_code'],r['award_level_code'],r['completions_year']) for r in raw})
     for r in raw:
@@ -47,6 +53,43 @@ def main():
             assert after[r['program_id']]=={k:expected.get((r['program_id'],k),v) for k,v in r.items()},r['program_id']
         new_ev={r['evidence_id']:r for r in read(data/'evidence_programs.csv')}
         assert all(new_ev[r['evidence_id']]==r for r in old_ev),'old evidence edited'
+        # The reported 19->20 defect must fail against source totals at BOTH application states.
+        initial=Path(tmp)/'initial';shutil.copytree(canonical,initial)
+        programs=read(initial/'programs.csv');by_id={r['program_id']:r for r in programs}
+        for e in edits:by_id[e['program_id']][e['column']]=e['old_value']
+        write(initial/'programs.csv',programs)
+        packet_ids={e['evidence_id'] for e in evidence}
+        write(initial/'evidence_programs.csv',[e for e in read(initial/'evidence_programs.csv') if e['evidence_id'] not in packet_ids])
+        normal_read=build.read
+        for state,fixture in [('initial',initial),('replay',data)]:
+            for defect in ('count','year','evidence'):
+                def changed(path):
+                    rows=normal_read(path)
+                    if path==HERE/'edits.csv' and defect in ('count','year'):
+                        column='latest_completions' if defect=='count' else 'last_year_awarded'
+                        row=next(e for e in rows if e['program_id']=='PROG-000109' and e['column']==column)
+                        if defect=='count':assert row['new_value']=='19'
+                        row['new_value']='20' if defect=='count' else '2025'
+                    if path==HERE/'evidence_programs.csv' and defect=='evidence':
+                        row=next(e for e in rows if e['record_id']=='PROG-000109')
+                        assert 'latest_completions 19;' in row['claim_detail']
+                        row['claim_detail']=row['claim_detail'].replace('latest_completions 19;','latest_completions 20;')
+                    return rows
+                before=digest(fixture)
+                with patch.object(build,'read',changed):
+                    try:apply(fixture)
+                    except AssertionError as e:assert 'source-derived numeric conflict' in str(e) or 'source/evidence numeric conflict' in str(e),(state,defect,str(e))
+                    else:raise AssertionError('source-unbound numeric packet accepted: '+state+'/'+defect)
+                assert digest(fixture)==before, 'source mismatch caused partial writes'
+        # Even a confirmed, unedited held count must still match the raw key on replay.
+        existing=next(j for j in read(HERE/'joins.csv') if not any(e['program_id']==j['program_id'] and e['column']=='latest_completions' for e in edits))
+        programs=read(data/'programs.csv');r=next(r for r in programs if r['program_id']==existing['program_id']);r['latest_completions']=str(int(r['latest_completions'])+1);write(data/'programs.csv',programs)
+        before=digest(data)
+        try:apply(data)
+        except AssertionError as e:assert 'source-derived final value conflict' in str(e)
+        else:raise AssertionError('unedited held count/source drift accepted')
+        assert digest(data)==before
+        shutil.copyfile(canonical/'programs.csv',data/'programs.csv')
         # Wrong current institutional key must fail before ANY data/evidence write.
         eco=read(data/'ecosystem.csv');j=read(HERE/'joins.csv')[0]
         for r in eco:
@@ -63,7 +106,7 @@ def main():
         except AssertionError as e:assert 'wrong-shard evidence collision' in str(e)
         else:raise AssertionError('wrong-shard evidence passed')
         assert digest(data)==before
-    print('PASS147 proposals=34VERIFIED/81schemaREJECT/32holds;112cells on34programs (5new countpairs/29confirmed);34EVD;44raw totals+known answers;replay/preservation/wrong-UNITID+cross-shard no-write failures')
+    print('PASS147 proposals=34VERIFIED/81schemaREJECT/32holds;112cells on34programs (5new countpairs/29confirmed);34EVD;44numeric proposal rows/43distinct raw keys+known answers;replay/preservation/wrong-UNITID+cross-shard and 7source-derived count/year/evidence initial+replay no-write failures')
 
 
 if __name__=='__main__':main()
