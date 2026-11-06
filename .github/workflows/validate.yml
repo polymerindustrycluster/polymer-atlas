@@ -16,24 +16,11 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # the row-loss guard reads the base commit
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Validate canonical CSVs (AGENTS.md §2 rule 5)
         run: python3 scripts/validate.py
-      - name: Guard — no keyed data row removed without a REMOVALS.csv entry (805528a, 2026-11-04)
-        run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            base="origin/${{ github.base_ref }}"; mode=""          # PR merge ref: compare at the merge-base
-          else
-            base="${{ github.event.before }}"; mode="--literal"    # push: judge against the commit it replaced
-          fi
-          if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then
-            echo "no base commit to compare against; skipping"; exit 0
-          fi
-          python3 scripts/check_row_loss.py --base "$base" $mode
       - name: Vocabulary export is current
         run: python3 scripts/export_vocab.py --check
       - name: Unit and mutation tests

@@ -1,3 +1,0 @@
-cluster_id,held_operator_id,held_operator_name,held_operator_status,successor,held_operator_domain,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,schema_2_2_signal,date_submitted,year_filing_for,prior_sites
-LF-MI-00673,ORG-001619,SOPREMA Inc,active,,https://www.soprema.us/,264788,SOPREMA,Chem Link,353 East Lyons,Schoolcraft,MI,49087,325520,Tile adhesives manufacturing,P,2026-01-22,2025,[]
-LF-MI-00491,ORG-002039,"M. Argueso & Co., Inc.",active,,https://www.paramelt.com,912548,M Argueso & Co dba Paramelt,M Argueso & Co dba Paramelt - McCracken,2817 McCracken St,Muskegon,MI,49441,325520,"Adhesives (except asphalt, dental, gypsum base) manufacturing",P,2026-01-27,2025,[]

@@ -1,8 +1,0 @@
-{
-  "active_tier1_organizations": 1261,
-  "markets_populated": 162,
-  "certifications_populated": 13,
-  "eligible_blank_markets_with_website_excluding_two_prior_holds": 860,
-  "selected": 30,
-  "selection": "PIC18 first, then org_id ascending; first30 blank-markets, website HTTP; excludes ORG62/101 prior holds without new evidence"
-}

@@ -4,7 +4,7 @@ from collections import Counter
 from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(H))
 from fetch import read,on_page
-BASE='80bb5140e0f1598d85fe30b28777def59c9b83c6'
+BASE='09df9e9d7ff09858b5ff02c9637de517242e4230'
 leads=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','a012caa:tasks/evidence-reverify-archive-oh-pa-2026-11-06/repair_leads.csv'],cwd=ROOT,text=True))))
 expected=[r for r in leads if r['judgment'] in ['NOT_SUPPORTED','WRONG_PAGE','PARTIAL']]
 assert read(H/'input.csv')==expected and len(expected)==269

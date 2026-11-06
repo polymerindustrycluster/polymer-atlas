@@ -1,5 +1,0 @@
-lead_id,institution,verdict,record_id,source_url,quote,reason
-L13-002,Grand Rapids Community College,DUPLICATE_OF,PROG-000004,https://www.grcc.edu/programs/plasticspolymer-engineering-technology-certificate,The credits you earn in the Plastics-Polymer Engineering Technology Certificate can be applied toward the Plastics-Polymer Engineering Technology Associate Degree,Certificate is already explicitly carried by PROG-000004 (credential_types aas_associate;certificate).
-L13-003,Pittsburg State University,DUPLICATE_OF,PROG-000006,https://www.pittstate.edu/automotive-and-engineering/programs/plastics-engineering-technology/index.html,With a Plastics Engineering Technology degree from Pittsburg State University,Same named bachelor program as PROG-000006.
-L13-006,University of Wisconsin - Stout,DUPLICATE_OF,PROG-000005,https://www.uwstout.edu/programs/bs-plastics-engineering,Bachelor of Science (B.S.) in Plastics Engineering,Same named BS as PROG-000005.
-L13-010,Winona State University,DUPLICATE_OF,PROG-000128,https://www.winona.edu/academics/programs/composite-materials-engineering/,Composite Materials Engineering,Same composite materials degree as PROG-000128.

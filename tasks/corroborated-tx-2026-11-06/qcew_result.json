@@ -1,9 +1,0 @@
-{
-  "unit": "TX US establishments, NAICS primary starts326, tier A/B/C, status active/unknown",
-  "qcew_2023_private_establishments": 953,
-  "atlas_strict": 125,
-  "atlas_strict_after": 145,
-  "delta_strict": 20,
-  "before_pct": 13.116474291710388,
-  "after_pct": 15.21511017838405
-}
