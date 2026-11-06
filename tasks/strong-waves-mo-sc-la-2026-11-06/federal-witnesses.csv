@@ -1,0 +1,29 @@
+cluster_id,family,source_id,registrant,company,street,city,state,zip,naics,industry,date
+LF-MO-00023,ITA,1303906,T G MISSOURI CORPORATION - PERRYVILLE,T G MISSOURI CORPORATION - PERRYVILLE - 01 | 2200 PLATTIN ROAD,2200 PLATTIN ROAD,PERRYVILLE,MO,63775,326299,Interior/Exterior Automotive Parts,2026-02-17
+LF-MO-00023,OSHA,345256077,TG MISSOURI,,2200 PLATTIN ROAD,PERRYVILLE,MO,63775,326199,,2021-04-15
+LF-MO-00031,ITA,903477,Davis Paint Co,Davis Paint Company,1311 Iron St.,North Kansas City,MO,64116,325510,"Architectural coatings (i.e., paint) manufacturing",2026-01-06
+LF-MO-00088,ITA,1425708,Manchester Packaging Company,Manchester Packaging Company,2000 East James Boulevard,St. James,MO,65559,326112,"Packaging film, plastics, single-web or multiweb, manufacturing",2026-01-08
+LF-MO-00088,OSHA,343786869,MANCHESTER PACKAGING COMPANY,,2000 E. JAMES BLVD.,SAINT JAMES,MO,65559,326111,,2019-02-19
+LF-MO-00100,OSHA,344706106,"T-N-T PLASTICS, INC.",,701 INDUSTRIAL DR.,PERRYVILLE,MO,63775,326111,,2020-03-11
+LF-MO-00121,ITA,572867,004-Nike Air Manufacturing Missouri,Nike IHM,8 Research Park Drive,St. Charles,MO,63304,326199,"Footwear parts (e.g., heels, soles), plastics, manufacturing",2026-03-13
+LF-MO-00121,OSHA,347479073,NIKE IHM INC.,,8 RESEARCH PARK DRIVE,SAINT CHARLES,MO,63304,326199,,2024-05-14
+LF-MO-00153,ITA,1428874,U.S. Paint Corporation,U.S. Paint Corporation,831 S. 21st Street,St. Louis,MO,63103,325510,Paints (except artist's) manufacturing,2026-01-28
+LF-MO-00241,ITA,548398,JM Eagle PCO,JM Eagle,6500 N. Brown Station Rd,Columbia,MO,65202,326122,PVC pipe manufacturing,2026-02-11
+LF-MO-00241,OSHA,345012629,JM EAGLE,,6500 N BROWN STATION RD,COLUMBIA,MO,65202,326122,,2020-11-04
+LF-MO-00286,OSHA,347593279,KOLLER-CRAFT PLASTIC PRODUCTS,,1400 OLD HIGHWAY 141,FENTON,MO,63026,326199,,2024-07-02
+LF-SC-00082,OSHA,348160078,INSULFAB PLASTICS INC,,834 HAYNE STREET,SPARTANBURG,SC,29305,326121,,2025-04-02
+LF-SC-00113,OSHA,344027743,EMS-CHEMIE NORTH AMERICA INC,,2060 CORPORATE WAY,SUMTER,SC,29154,325211,,2019-05-21
+LF-SC-00147,ITA,53682,Wikoff Color Corp. - Fort Mill - Plant,Wikoff Color Corp.,1886 Merritt Rd,Fort Mill,SC,29715,325910,Printing inks manufacturing,2026-01-27
+LF-SC-00147,ITA,558589,Wikoff Color Corporation - Fort Mill - Admin,Wikoff Color Corporation,1886 Merritt Rd.,Fort Mill,SC,29715,325910,"Inks, printing, manufacturing",2026-01-27
+LF-SC-00147,OSHA,345036172,WIKOFF COLOR CORPORATION,,1886 MERRITT ROAD,FORT MILL,SC,29715,325910,,2020-11-20
+LF-SC-00214,ITA,1250716,Re:Build Composite Resources,Re:Build Composite Resources,485 Lakeshore Parkway,Rock Hill,SC,29730,326130,"Laminated plastics plate, rod, and sheet, manufacturing",2026-01-09
+LF-SC-00253,ITA,1059636,Yokohama TWS - Spartanburg,"Yokohama TWS North America, INC",570 Trelleborg Drive,Spartanburg,SC,29301,326211,"Tires (e.g., pneumatic, semi-pneumatic, solid rubber) manufacturing",2026-02-09
+LF-SC-00253,OSHA,347711939,YOKOHAMA TWS NORTH AMERICA INC,,570 TRELLEBORG DRIVE,SPARTANBURG,SC,29301,326211,,2024-08-19
+LF-SC-00313,ITA,1328552,Hahl Inc,Hahl Inc.,126 Glassmaster Road,Lexington,SC,29072,325211,"Resins, plastics (except custom compounding purchased resins), manufacturing",2026-01-29
+LF-SC-00313,OSHA,348842915,HAHL INC,,126 GLASSMASTER RD,LEXINGTON,SC,29072,326199,,2026-03-25
+LF-LA-00001,ITA,647354,Belle Chasse Facility,"CMP Coatings, Inc.",1610 Engineers Road,Belle Chasse,LA,70037,325510,Marine paints manufacturing,2026-02-04
+LF-LA-00054,ITA,1067928,Sun Drilling Products Corp.,Sun Drilling Products Corp.,503 Main Street,Belle Chasse,LA,70037,325998,"Drilling mud compounds, conditioners, and additives (except bentonites) manufacturing",2026-01-16
+LF-LA-00264,ITA,57635,"ASH Industries, Inc.","ASH Industries, Inc.",1330 W. Willow Street,Lafayette,LA,70506,326199,"Coolers or ice chests, plastics (except foam), manufacturing",2026-01-26
+LF-LA-00264,OSHA,345487128,"ASH INDUSTRIES, INC.",,1330 WEST WILLOW ST.,LAFAYETTE,LA,70506,326199,,2021-08-19
+LF-LA-00305,ITA,280605,Industrial Plastics & Machine,INDUSTRIAL PLASTICS AND MACHINE,6829 South Choctaw Drive,Baton Rouge,LA,70806,325211,Fluoro-polymer resins manufacturing,2026-03-20
+LF-LA-00305,OSHA,347202467,INDUSTRIAL PLASTICS & MACHINE,,6829 SOUTH CHOCTAW DRIVE,BATON ROUGE,LA,70806,326112,,2024-01-10

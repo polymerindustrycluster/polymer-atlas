@@ -36,3 +36,5 @@ Refresh: merged first PR25c81b2 (which merges main9489b60), took its data wholes
 First-PR Grok Faull refutation propagated: Faull material/tier held on parent; continuation values unchanged. Exact-delta baseline nowc980a66caf3ab0ae97902c3025d6b700bb23a390; firstPR430/632→continuation446/632. Earlier448/632 snapshot superseded.
 
 Grok2 REFUTE fixed:JJWhitecustomer-nylonfabric doesnotsettleownnylonresinclaim. ProposedmaterialseditandunintegratedEVD170017withdrawn;IDretired. VERDICTchangedtoSTILL_UNCERTAIN. Final18cells/16orgs,22EVD,85census16VERIFIED69holds;T1446/632=70.57%. EarlierCodexapprovalsupersededforfinalrevision,rereviewrequested. R4frozen68framepredatesthisnewholdandisnotretroactivelyexpanded.
+
+Controllerrequestedrefresh atopapprovedfirstPR931e7ec8b0d7e1285efc2dbd9e60b7ddb5af53f1:allparentdata+this18-cell/22-EVDpacketreplayed;exactdelta baselineupdated. JJWhiteholdretained. Finalfamilyrereviewsstillpendinged5e456revision.
