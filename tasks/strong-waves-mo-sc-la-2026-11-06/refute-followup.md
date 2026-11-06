@@ -1,4 +1,6 @@
-Follow-up adversarial refute after initial Grok REFUTE. End APPROVE or REFUTE. Prior findings and corrections are in README.md final section and review-grok-initial.txt. This is PR #141 L3, same 36 STRONG clusters / 19 verified sites / 15 C organizations / 1 scope REJECT / 16 holds. Evidence is now 279 observations (210 original unchanged + 69 supplemental), append-only verified against previous commit. Original weak quotes retained as historical observations and answered by stronger witnesses. Five supplemental raw checks pass, including downloaded manufacturer's PDF via pdftotext -raw. Plant-only witnesses are allowed under merged Michigan recipe when federal manufacturing/activity record attests the establishment. New federal alias observations cite each actual ITA/OSHA/F5500 registrant source. Address equality asserted with house atlas.street_key, same state. Exact 15/19/279 counts, raw-verdict quote binding, supplemental-evidence binding, all-state replay byte-identical, zero validate errors. Created-site code table explicitly reconciles T3 +6/+3/+1; Ring1 is not equivalent to NAICS326. Input state/verdict grammar exact 36/36. Frozen order asserted for reserved IDs.
+LATEST CORRECTION: direct Codex initial REFUTE also required B-PARENT provenance for CMP. This is now fixed: ORG-009029 ultimate_parent_name=Chugoku Marine Paints, Ltd., sourced from the corporate group listing explicitly naming CMP Coatings + Belle Chasse address; group-domain notes flag added. New parent EVD-169900. No pre-existing org parent/ownership changes. Evidence total280. Alias issue already answered by source-specific government observations; original rows preserved per append-only rule. The original reviews are in review-codex-initial.txt and review-grok-initial.txt. Review current HEAD; included old copies of source files below may predate this last parent correction. Current build.py/check.py and README.md are authoritative.
+
+Follow-up adversarial refute after initial Grok REFUTE. End APPROVE or REFUTE. Prior findings and corrections are in README.md final section and review-grok-initial.txt. This is PR #141 L3, same 36 STRONG clusters / 19 verified sites / 15 C organizations / 1 scope REJECT / 16 holds. Evidence is now 280 observations (210 original unchanged + 70 supplemental), append-only verified against previous commit. Original weak quotes retained as historical observations and answered by stronger witnesses. Five supplemental raw checks pass, including downloaded manufacturer's PDF via pdftotext -raw. Plant-only witnesses are allowed under merged Michigan recipe when federal manufacturing/activity record attests the establishment. New federal alias observations cite each actual ITA/OSHA/F5500 registrant source. Address equality asserted with house atlas.street_key, same state. Exact 15/19/280 counts, raw-verdict quote binding, supplemental-evidence binding, all-state replay byte-identical, zero validate errors. Created-site code table explicitly reconciles T3 +6/+3/+1; Ring1 is not equivalent to NAICS326. Input state/verdict grammar exact 36/36. Frozen order asserted for reserved IDs.
 Scope/alias rulings AGENTS.md and owner battery B-SCOPE/B-ALIAS 2026-11-04. No existing record change besides four alias fields. No closure rejection. No registry links or qualifier edits. Review actual current PR where tools are available. Below is bounded evidence to permit a text-only verdict too.
 
 
@@ -50,7 +52,7 @@ Application counts, before/after ratios and independent review verdicts are appe
 - South Carolina application: 4 new organizations (tier C), 6 new establishments (tier B); 64 evidence observations; 2 held-parent alias updates. `validate.py`: zero errors. Builder replay: passed.
 - Louisiana application: 4 new organizations (tier C), 4 new establishments (tier B); 48 evidence observations. `validate.py`: zero errors. Builder replay: passed.
 
-Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 279 evidence rows (210 original + 69 supplemental); 4 held-parent alias additions.
+Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 280 evidence rows (210 original + 70 supplemental); 4 held-parent alias additions.
 
 | State | QCEW 2023 NAICS 326 private establishments | Atlas strict before | Atlas strict after | Strict/QCEW before → after |
 |---|---:|---:|---:|---:|
@@ -101,6 +103,18 @@ LA +1. Ring 1 counts differ because federal NAICS codes outside 326 remain as fi
 The reviewer had only a text packet and explicitly did not inspect federal data. Follow-up review includes the resolved
 federal witness metadata and created-site code composition.
 
+Corrected validation: `validate.py` zero errors; `check.py` PASS; `prepare.py --supplements-only` 5/5 raw quotes, PDF mutation rejected. Every prior evidence row byte-for-field identical across 8 supplemental shards; all-state builder replay byte-identical. Corrected re-review pending.
+
+### Codex initial REFUTE and parent correction
+
+Codex independently confirmed the census, source quotes, dedupe, prior-row preservation and T3, but REFUTED alias source
+attribution (answered above) and CMP's group-domain classification without a recorded parent. The source explicitly identifies
+Chugoku Marine Paints and lists CMP Coatings with its Louisiana address. The builder now records `ultimate_parent_name`
+Chugoku Marine Paints, Ltd. on the new CMP organization, adds the B-PARENT-WEB group-domain notes flag, and appends parent
+observation EVD-169900. No pre-existing organization parent or ownership field changes. This satisfies B-PARENT's documented
+relationship condition; CMP's federal marine-paint manufacturing witness and raw group-page plant address supply activity/city.
+Evidence final total: 280 = 210 original + 70 append-only supplements. Corrected validation and replay pass; re-review pending.
+
 
 FILE build.py
 #!/usr/bin/env python3
@@ -134,6 +148,7 @@ def main():
     plans={r['ein']:r for r in read(ROOT/'tasks/form5500-spine-2026-11-01/sponsors.csv')}
     orgs={r['org_id']:(p,r) for p in (ROOT/'data').glob('organizations_*.csv') for r in read(p)}
     additions=defaultdict(list);alias_updates={};alloc=[]
+    cmp_flag=' Group domain used as website; ultimate parent documented by the Chugoku Marine Paints group-company listing (B-PARENT/B-PARENT-WEB).' 
     for idx,v in enumerate(vs):
         if v['state']!=a.state or v['verdict']!='VERIFIED':continue
         c=inputs[v['cluster_id']];assert raw[v['cluster_id']]['raw']=='yes' and v['own_quote']
@@ -217,6 +232,9 @@ def main():
             for kind in ('scope','activity'):E('sites',sid,kind,'Filed establishment activity: '+industry,fed[0][0],'government_filing',fed[0][1])
         import atlas
         assert all(atlas.street_key(street)==atlas.street_key(c['street']) and state==c['state'] for street,city,state,zip_ in fed_streets), ('federal street mismatch',v['cluster_id'],fed_streets)
+        if v['cluster_id']=='LF-LA-00001':
+            eid=169900
+            E('organizations',oid,'parent','ultimate_parent_name Chugoku Marine Paints, Ltd.; CMP Coatings, Inc. is named with its Belle Chasse address on the corporate group-company listing',own,effect='supports_C',shard='US')
         alloc.append(dict(cluster_id=v['cluster_id'],org_id=oid,new_org=str(not bool(v['held_org_id'])).lower(),site_id=sid,tier=tier))
     if a.apply:
         for filename,rows in additions.items():
@@ -225,13 +243,20 @@ def main():
             for r in rows:
                 if r[pk] in old:
                     # Re-running must be a no-op; a changed packet is a conflict, never an evidence rewrite.
-                    assert all(old[r[pk]].get(k,'')==val for k,val in r.items()), (filename,r[pk])
+                    assert all(old[r[pk]].get(k,'')==val or (r[pk]=='ORG-009029' and k=='notes' and old[r[pk]][k]==val+cmp_flag) for k,val in r.items()), (filename,r[pk])
                 else:fresh.append(r)
             if fresh:append_sorted(path,fresh,pk)
         for p,changes in alias_updates.items():
             rows=read(p)
             for r in rows:
                 if r['org_id'] in changes:r['trade_names']=changes[r['org_id']]
+            write(p,rows,list(rows[0]))
+        if a.state=='LA':
+            p=ROOT/'data/organizations_US.csv';rows=read(p)
+            r=next(r for r in rows if r['org_id']=='ORG-009029')
+            assert r['ultimate_parent_name'] in ('','Chugoku Marine Paints, Ltd.'), 'unexpected CMP parent'
+            r['ultimate_parent_name']='Chugoku Marine Paints, Ltd.'
+            if not r['notes'].endswith(cmp_flag):r['notes']+=cmp_flag
             write(p,rows,list(rows[0]))
         write(HERE/f'allocations_{a.state}.csv',alloc,['cluster_id','org_id','new_org','site_id','tier'])
     print(a.state,dict(Counter({f:len(r) for f,r in additions.items()})), 'alias updates',sum(len(x) for x in alias_updates.values()))
@@ -264,7 +289,10 @@ def main():
         if v['verdict']=='VERIFIED':assert v['own_quote']==raw[v['cluster_id']]['quote'] and v['own_url']==raw[v['cluster_id']]['url']
     evidence=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
     lane=[r for r in evidence if r['created_by']=='atlas-L3-strong-mo-sc-la']
-    assert len(lane)==279, ('lane evidence total',len(lane))
+    assert len(lane)==280, ('lane evidence total',len(lane))
+    cmp=next(r for r in read(ROOT/'data/organizations_US.csv') if r['org_id']=='ORG-009029')
+    assert cmp['ultimate_parent_name']=='Chugoku Marine Paints, Ltd.' and 'Group domain used as website' in cmp['notes']
+    assert any(e['evidence_id']=='EVD-169900' and e['claim_type']=='parent' for e in lane)
     for extra in read(HERE/'supplements.csv'):
         assert extra['raw']=='yes'
         assert any(extra['quote'] in e['claim_detail'] and extra['source_url']==e['source_ref'] for e in lane),extra
@@ -315,7 +343,7 @@ LF-MO-00121,OSHA,347479073,NIKE IHM INC.,,8 RESEARCH PARK DRIVE,SAINT CHARLES,MO
 LF-MO-00153,ITA,1428874,U.S. Paint Corporation,U.S. Paint Corporation,831 S. 21st Street,St. Louis,MO,63103,325510,Paints (except artist's) manufacturing,2026-01-28
 LF-MO-00241,ITA,548398,JM Eagle PCO,JM Eagle,6500 N. Brown Station Rd,Columbia,MO,65202,326122,PVC pipe manufacturing,2026-02-11
 LF-MO-00241,OSHA,345012629,JM EAGLE,,6500 N BROWN STATION RD,COLUMBIA,MO,65202,326122,,2020-11-04
-LF-MO-00286,OSHA,347593279,KOLLER-CRAFT PLASTIC PRODUCTS,,1400 OLD HIGHWAY 141,FENTON,MO,63026,326199,,2024-07-02
+LF-MO-00286,OSHA,347593280,KOLLER-CRAFT PLASTIC PRODUCTS,,1400 OLD HIGHWAY 141,FENTON,MO,63026,326199,,2024-07-02
 LF-SC-00082,OSHA,348160078,INSULFAB PLASTICS INC,,834 HAYNE STREET,SPARTANBURG,SC,29305,326121,,2025-04-02
 LF-SC-00113,OSHA,344027743,EMS-CHEMIE NORTH AMERICA INC,,2060 CORPORATE WAY,SUMTER,SC,29154,325211,,2019-05-21
 LF-SC-00147,ITA,53682,Wikoff Color Corp. - Fort Mill - Plant,Wikoff Color Corp.,1886 Merritt Rd,Fort Mill,SC,29715,325910,Printing inks manufacturing,2026-01-27

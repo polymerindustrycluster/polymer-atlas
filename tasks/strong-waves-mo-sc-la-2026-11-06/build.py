@@ -29,6 +29,7 @@ def main():
     plans={r['ein']:r for r in read(ROOT/'tasks/form5500-spine-2026-11-01/sponsors.csv')}
     orgs={r['org_id']:(p,r) for p in (ROOT/'data').glob('organizations_*.csv') for r in read(p)}
     additions=defaultdict(list);alias_updates={};alloc=[]
+    cmp_flag=' Group domain used as website; ultimate parent documented by the Chugoku Marine Paints group-company listing (B-PARENT/B-PARENT-WEB).' 
     for idx,v in enumerate(vs):
         if v['state']!=a.state or v['verdict']!='VERIFIED':continue
         c=inputs[v['cluster_id']];assert raw[v['cluster_id']]['raw']=='yes' and v['own_quote']
@@ -112,6 +113,9 @@ def main():
             for kind in ('scope','activity'):E('sites',sid,kind,'Filed establishment activity: '+industry,fed[0][0],'government_filing',fed[0][1])
         import atlas
         assert all(atlas.street_key(street)==atlas.street_key(c['street']) and state==c['state'] for street,city,state,zip_ in fed_streets), ('federal street mismatch',v['cluster_id'],fed_streets)
+        if v['cluster_id']=='LF-LA-00001':
+            eid=169900
+            E('organizations',oid,'parent','ultimate_parent_name Chugoku Marine Paints, Ltd.; CMP Coatings, Inc. is named with its Belle Chasse address on the corporate group-company listing',own,effect='supports_C',shard='US')
         alloc.append(dict(cluster_id=v['cluster_id'],org_id=oid,new_org=str(not bool(v['held_org_id'])).lower(),site_id=sid,tier=tier))
     if a.apply:
         for filename,rows in additions.items():
@@ -120,13 +124,20 @@ def main():
             for r in rows:
                 if r[pk] in old:
                     # Re-running must be a no-op; a changed packet is a conflict, never an evidence rewrite.
-                    assert all(old[r[pk]].get(k,'')==val for k,val in r.items()), (filename,r[pk])
+                    assert all(old[r[pk]].get(k,'')==val or (r[pk]=='ORG-009029' and k=='notes' and old[r[pk]][k]==val+cmp_flag) for k,val in r.items()), (filename,r[pk])
                 else:fresh.append(r)
             if fresh:append_sorted(path,fresh,pk)
         for p,changes in alias_updates.items():
             rows=read(p)
             for r in rows:
                 if r['org_id'] in changes:r['trade_names']=changes[r['org_id']]
+            write(p,rows,list(rows[0]))
+        if a.state=='LA':
+            p=ROOT/'data/organizations_US.csv';rows=read(p)
+            r=next(r for r in rows if r['org_id']=='ORG-009029')
+            assert r['ultimate_parent_name'] in ('','Chugoku Marine Paints, Ltd.'), 'unexpected CMP parent'
+            r['ultimate_parent_name']='Chugoku Marine Paints, Ltd.'
+            if not r['notes'].endswith(cmp_flag):r['notes']+=cmp_flag
             write(p,rows,list(rows[0]))
         write(HERE/f'allocations_{a.state}.csv',alloc,['cluster_id','org_id','new_org','site_id','tier'])
     print(a.state,dict(Counter({f:len(r) for f,r in additions.items()})), 'alias updates',sum(len(x) for x in alias_updates.values()))

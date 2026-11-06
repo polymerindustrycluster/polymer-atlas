@@ -45,7 +45,7 @@ Application counts, before/after ratios and independent review verdicts are appe
 - South Carolina application: 4 new organizations (tier C), 6 new establishments (tier B); 64 evidence observations; 2 held-parent alias updates. `validate.py`: zero errors. Builder replay: passed.
 - Louisiana application: 4 new organizations (tier C), 4 new establishments (tier B); 48 evidence observations. `validate.py`: zero errors. Builder replay: passed.
 
-Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 279 evidence rows (210 original + 69 supplemental); 4 held-parent alias additions.
+Final census: {'STILL_UNCERTAIN': 16, 'VERIFIED': 19, 'REJECT': 1} across the 36 STRONG establishment clusters. Creates: 15 organizations (C), 19 establishments (18 B / 1 C), 280 evidence rows (210 original + 70 supplemental); 4 held-parent alias additions.
 
 | State | QCEW 2023 NAICS 326 private establishments | Atlas strict before | Atlas strict after | Strict/QCEW before → after |
 |---|---:|---:|---:|---:|
@@ -97,3 +97,13 @@ The reviewer had only a text packet and explicitly did not inspect federal data.
 federal witness metadata and created-site code composition.
 
 Corrected validation: `validate.py` zero errors; `check.py` PASS; `prepare.py --supplements-only` 5/5 raw quotes, PDF mutation rejected. Every prior evidence row byte-for-field identical across 8 supplemental shards; all-state builder replay byte-identical. Corrected re-review pending.
+
+### Codex initial REFUTE and parent correction
+
+Codex independently confirmed the census, source quotes, dedupe, prior-row preservation and T3, but REFUTED alias source
+attribution (answered above) and CMP's group-domain classification without a recorded parent. The source explicitly identifies
+Chugoku Marine Paints and lists CMP Coatings with its Louisiana address. The builder now records `ultimate_parent_name`
+Chugoku Marine Paints, Ltd. on the new CMP organization, adds the B-PARENT-WEB group-domain notes flag, and appends parent
+observation EVD-169900. No pre-existing organization parent or ownership field changes. This satisfies B-PARENT's documented
+relationship condition; CMP's federal marine-paint manufacturing witness and raw group-page plant address supply activity/city.
+Evidence final total: 280 = 210 original + 70 append-only supplements. Corrected validation and replay pass; re-review pending.

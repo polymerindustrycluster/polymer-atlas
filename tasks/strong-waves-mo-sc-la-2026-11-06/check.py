@@ -23,7 +23,10 @@ def main():
         if v['verdict']=='VERIFIED':assert v['own_quote']==raw[v['cluster_id']]['quote'] and v['own_url']==raw[v['cluster_id']]['url']
     evidence=[r for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)]
     lane=[r for r in evidence if r['created_by']=='atlas-L3-strong-mo-sc-la']
-    assert len(lane)==279, ('lane evidence total',len(lane))
+    assert len(lane)==280, ('lane evidence total',len(lane))
+    cmp=next(r for r in read(ROOT/'data/organizations_US.csv') if r['org_id']=='ORG-009029')
+    assert cmp['ultimate_parent_name']=='Chugoku Marine Paints, Ltd.' and 'Group domain used as website' in cmp['notes']
+    assert any(e['evidence_id']=='EVD-169900' and e['claim_type']=='parent' for e in lane)
     for extra in read(HERE/'supplements.csv'):
         assert extra['raw']=='yes'
         assert any(extra['quote'] in e['claim_detail'] and extra['source_url']==e['source_ref'] for e in lane),extra
