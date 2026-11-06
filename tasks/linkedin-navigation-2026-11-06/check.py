@@ -44,6 +44,8 @@ def main():
     assert all(x['check']=='PASS' for x in json.loads((d.HERE/'known-answers.json').read_text()))
     for bad in ['https://www.linkedin.com/in/test-person/','https://evil.example/company/foo/','https://www.linkedin.com/company/%2E%2E/']:
         assert not d.canonical(bad)
+    for unsafe in ['https://www.linkedin.com%2e/company/fabricated/','https://www.%6cinkedin.com/company/fabricated/','https://www.ℓinkedin.com/company/fabricated/']:
+        assert not d.own_url(unsafe,d.domain(unsafe)), 'encoded/nonASCII hostname accepted'
     assert not d.Links('<body class="theme-header-footer"><a href="https://www.linkedin.com/company/fabricated/">body</a></body>').links
     assert not d.Links('<footer><a href>empty</a></footer>').links
     with tempfile.TemporaryDirectory() as tmp:

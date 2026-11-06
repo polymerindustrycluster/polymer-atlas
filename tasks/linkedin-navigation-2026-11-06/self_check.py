@@ -31,6 +31,10 @@ def main():
     with patch.object(d.subprocess,'run') as run:
         page=d.fetch('https://www.linkedin.com/company/foo/')
         assert page['status']=='blocked_external_or_unsafe' and not run.called
+    for unsafe in ['https://www.linkedin.com%2e/company/fabricated/','https://www.%6cinkedin.com/company/fabricated/','https://www.ℓinkedin.com/company/fabricated/']:
+        with patch.object(d.subprocess,'run') as run:
+            page=d.fetch(unsafe)
+            assert page['status']=='blocked_external_or_unsafe' and not run.called
     calls=[]
     def redirect(cmd,**kwargs):
         calls.append(cmd[-1])

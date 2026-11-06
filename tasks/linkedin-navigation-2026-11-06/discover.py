@@ -30,6 +30,7 @@ def own_url(url, owner):
         p.port
         host = (p.hostname or '').lower().rstrip('.')
         return (p.scheme in {'https','http'} and not p.username and not p.password
+                and host.isascii() and '%' not in host
                 and '.' in host and domain(url) == owner
                 and host != 'linkedin.com' and not host.endswith('.linkedin.com'))
     except ValueError:
