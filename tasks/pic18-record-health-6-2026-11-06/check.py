@@ -5,7 +5,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1]
 sys.path.insert(0,str(HERE))
 from health import read
-BASE='2742438c3c6b49869708ab41ebe4f368372a9a9e'
+BASE='1e5834394f592f7237a5919500d9fbd5f2c48ad5'
 def old(p):return list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',f'{BASE}:{p.relative_to(ROOT)}'],text=True))))
 expected={(r['org_id'],r['field']):(r['old'],r['new']) for r in read(HERE/'edits.csv')};actual={}
 for p in ROOT.joinpath('data').glob('*.csv'):
