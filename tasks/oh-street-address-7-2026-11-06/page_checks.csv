@@ -1,0 +1,167 @@
+org_id,url,outcome,address_blocks,error
+ORG-001768,https://actionsuper.com,fetched,0,
+ORG-001768,https://actionsuper.com/contact-us/,fetched,0,
+ORG-001768,https://actionsuper.com/contact-us/request-a-quote/,fetched,0,
+ORG-001769,https://adherexpackaging.com,fetched,1,
+ORG-001769,https://adherexpackaging.com/contact,fetched,1,
+ORG-001769,https://adherexpackaging.com/contact/,fetched,1,
+ORG-001769,https://adherexpackaging.com/contact-us/,fetched,1,
+ORG-001774,https://alcontool.com,fetched,2,
+ORG-001774,https://alcontool.com/contact/,fetched,3,
+ORG-001776,https://slesnick.com,unavailable,0,HTTP/transport failure 56
+ORG-001777,https://anchor-online.com,fetched,0,
+ORG-001777,https://anchor-online.com/contact-us/,fetched,0,
+ORG-001777,https://anchor-online.com/es/contacto/,fetched,0,
+ORG-001779,https://americansignproducts.com,fetched,1,
+ORG-001779,https://americansignproducts.com/contact/,fetched,2,
+ORG-001780,https://americantestingtechnologies.com,fetched,0,
+ORG-001780,https://americantestingtechnologies.com/contact,fetched,0,
+ORG-001781,https://astromfg.com,fetched,0,
+ORG-001781,https://astromfg.com/contact-us,fetched,1,
+ORG-001781,https://astromfg.com/contact-us/,fetched,1,
+ORG-001783,https://beacongasket.com,fetched,3,
+ORG-001783,https://www.beacongasket.com/contact/,fetched,3,
+ORG-001784,https://bfplasticsinc.com,fetched,0,
+ORG-001784,https://bfplasticsinc.com/about-bf/contact.asp,fetched,0,
+ORG-001784,https://bfplasticsinc.com/about-bf/about-bf/contact.asp,unavailable,0,HTTP/transport failure 56
+ORG-001788,https://colonialpatt.com,fetched,1,
+ORG-001788,https://colonialpatt.com/contact-us/,fetched,2,
+ORG-001791,https://cosarmold.com,fetched,1,
+ORG-001791,https://cosarmold.com/contact/,fetched,2,
+ORG-001793,https://customtarpaulin.com,fetched,1,
+ORG-001793,https://www.customtarpaulin.com/contact-us,fetched,2,
+ORG-001806,https://enpress.com,fetched,0,
+ORG-001808,https://eurotechdirect.com,unavailable,0,HTTP/transport failure 56
+ORG-001810,https://expertgasket.com,fetched,0,
+ORG-001810,https://expertgasket.com/contact-us,fetched,0,
+ORG-001810,https://expertgasket.com/contact-us/,fetched,0,
+ORG-001817,https://g2materials.com,fetched,1,
+ORG-001817,https://g2materials.com/contact,fetched,1,
+ORG-001826,https://hapcoinc.com,fetched,1,
+ORG-001826,https://hapcoinc.com/contact-us/,fetched,2,
+ORG-001829,https://horsemenspride.com,fetched,1,
+ORG-001830,https://impactsleeves.com,fetched,0,
+ORG-001830,https://www.impactsleeves.com/about-us/locations,fetched,0,
+ORG-001830,https://impactsleeves.com/contact-us,unavailable,0,HTTP/transport failure 56
+ORG-001830,https://www.impactsleeves.com/contact-us,unavailable,0,HTTP/transport failure 56
+ORG-001830,https://www.impactsleeves.com/contact-us/email,fetched,0,
+ORG-001855,https://newkor.com,fetched,1,
+ORG-001856,https://novationsi.com,fetched,0,
+ORG-001859,https://oem-miller.com,unavailable,0,redirect leaves held operator host
+ORG-001868,https://polymetrecovery.com,fetched,1,
+ORG-001868,https://polymetrecovery.com/contact.html,fetched,1,
+ORG-001869,https://prolineautomation.com,fetched,0,
+ORG-001869,https://www.prolineautomation.com/contact-us/,fetched,0,
+ORG-001878,https://qubeinc.com,fetched,1,
+ORG-001878,https://qubeinc.com/contact/,fetched,1,
+ORG-001879,https://rainbowmastermixing.com,fetched,2,
+ORG-001880,https://razoredgeprecisiongrinding.com,unavailable,0,HTTP/transport failure 60
+ORG-001883,https://rezkemchemicals.com,unavailable,0,HTTP/transport failure 56
+ORG-001891,https://inflatableimages.com,fetched,1,
+ORG-001891,https://inflatableimages.com/contact-us/,fetched,2,
+ORG-001891,https://www.inflatableimages.com/contact-us/,fetched,2,
+ORG-001892,https://schibley.com,fetched,0,
+ORG-001892,https://schibley.com/contact-us,fetched,0,
+ORG-001905,https://thermoprene.com,fetched,1,
+ORG-001905,https://thermoprene.com/contact-thermoprene/,fetched,1,
+ORG-001911,https://unitedfeedscrews.com,fetched,1,
+ORG-001911,https://www.unitedfeedscrews.com/contact,fetched,2,
+ORG-001916,https://zerodproducts.com,fetched,0,
+ORG-001916,https://zerodproducts.com/contact/,fetched,0,
+ORG-001917,https://guildcpo.com,fetched,0,
+ORG-001917,https://guildcpo.com/contact/,fetched,1,
+ORG-000697,https://hedstrom.com/,fetched,1,
+ORG-000697,https://hedstrom.com/resources,fetched,1,
+ORG-000697,https://hedstrom.com/resources/,fetched,1,
+ORG-001923,https://artemispolymerprocessing.com,unavailable,0,HTTP/transport failure 7
+ORG-001928,https://green-processing.com,fetched,0,
+ORG-001928,https://www.green-processing.com/contact/,fetched,0,
+ORG-001929,https://hycompinc.com,unavailable,0,HTTP/transport failure 60
+ORG-001930,http://www.itplastics.com/,fetched,2,
+ORG-001930,http://itplastics.com/contact-us/,fetched,1,
+ORG-001933,https://performance-additives.com,unavailable,0,HTTP/transport failure 6
+ORG-001934,https://rackpowdercoating.com,unavailable,0,HTTP/transport failure 60
+ORG-001936,https://rotocastmold.com,fetched,1,
+ORG-001936,https://rotocastmold.com/contact/,fetched,2,
+ORG-001937,https://smetzertire.com,fetched,2,
+ORG-001937,https://smetzertire.com/Locations,fetched,4,
+ORG-001937,https://smetzertire.com/locations,fetched,4,
+ORG-001937,https://www.smetzertire.com/locations,fetched,4,
+ORG-001937,https://www.smetzertire.com/Locations,fetched,4,
+ORG-001939,https://ecoflexrtpv.com,unavailable,0,HTTP/transport failure 60
+ORG-001941,https://thermopackaging.com,fetched,0,
+ORG-001941,https://www.thermopackaging.com/contact-thermo-packaging-suppliers/,fetched,0,
+ORG-001943,https://trans-foam.com,unavailable,0,HTTP/transport failure 28
+ORG-001945,https://vinylprofilesinc.com,unavailable,0,HTTP/transport failure 6
+ORG-001946,https://waugs.com,unavailable,0,HTTP/transport failure 60
+ORG-001947,https://aammold.com/index.html,unavailable,0,HTTP/transport failure 56
+ORG-001949,https://polinggroup.com,fetched,0,
+ORG-001949,https://polinggroup.com/contact,fetched,0,
+ORG-001949,https://polinggroup.com/contact.php,fetched,0,
+ORG-001951,https://castekusa.com,fetched,0,
+ORG-001951,https://castekusa.com/contact/,fetched,1,
+ORG-001957,http://friessequipment.com/,fetched,0,
+ORG-001957,https://www.friessequipment.com/contact-us/,fetched,0,
+ORG-001958,http://www.icslabs.com/,fetched,0,
+ORG-001958,https://icslabs.com/contact-us/,fetched,0,
+ORG-001959,https://tiremolds.com,unavailable,0,HTTP/transport failure 56
+ORG-001963,https://msbmachine.com,fetched,1,
+ORG-001963,https://msbmachine.com/contact,fetched,1,
+ORG-001965,http://www.mcneilnrm.com/,unavailable,0,HTTP/transport failure 56
+ORG-001978,https://sprayworksequipment.com,fetched,0,
+ORG-001978,https://sprayworksequipment.com/contact-sprayworks/,fetched,0,
+ORG-001986,https://optimaxplastic.com/index.php/rotomolding/,fetched,0,
+ORG-001986,https://optimaxplastic.com/index.php/contact-us/,fetched,0,
+ORG-001992,https://precisionpolymercasting.com/,fetched,0,
+ORG-001992,https://precisionpolymercasting.com/contact/,fetched,0,
+ORG-001997,https://quikey.com,unavailable,0,HTTP/transport failure 56
+ORG-001998,https://ram-plastics.com,fetched,0,
+ORG-001998,https://ram-plastics.com/contact.html,fetched,0,
+ORG-001999,https://raydarrubber.com,fetched,0,
+ORG-002007,http://www.s-aindustries.com/,unavailable,0,HTTP/transport failure 22
+ORG-002010,https://sherwoodcorp.com,fetched,0,
+ORG-002011,https://solutionsinpc.com,unavailable,0,HTTP/transport failure 60
+ORG-002014,http://www.stroupbelting.com/,fetched,1,
+ORG-002018,https://telarcorp.com,fetched,0,
+ORG-002018,https://telarcorp.com/contact-us/,unavailable,0,HTTP/transport failure 56
+ORG-002022,https://simplay3.com,fetched,1,
+ORG-002022,https://simplay3.com/contact-customer-service/,fetched,2,
+ORG-002031,https://vinyltechint.com,unavailable,0,HTTP/transport failure 6
+ORG-002034,https://gizmowhipguide.com,fetched,1,
+ORG-002037,https://zingpac.com,fetched,0,
+ORG-002037,https://zingpac.com/contact-us,fetched,0,
+ORG-002038,https://pinnaclerecyclingllc.com,unavailable,0,redirect leaves held operator host
+ORG-002039,https://www.paramelt.com,fetched,0,
+ORG-002039,https://www.paramelt.com/local-contacts/?cc=US&i=&m=,fetched,0,
+ORG-002039,https://www.paramelt.com/contact/paramelt-offices-sites,fetched,0,
+ORG-002039,https://www.paramelt.com/contact/paramelt-offices-sites/,fetched,0,
+ORG-002039,https://www.paramelt.com/contact/?oId=933,fetched,0,
+ORG-002043,https://mcpp-global.com,fetched,0,
+ORG-002043,https://mcpp-global.com/en/mcpp-america/about-us/locations/,fetched,0,
+ORG-002043,https://mcpp-global.com/en/mcpp-america/contact/,fetched,0,
+ORG-000103,https://hexpolcompounding.com,unavailable,0,HTTP/transport failure 6
+ORG-002047,https://wayne-dalton.com,unavailable,0,HTTP/transport failure 56
+ORG-002049,https://sietins.com,unavailable,0,HTTP/transport failure 92
+ORG-001787,https://circlemold.com,fetched,0,
+ORG-001787,https://circlemold.com/contact.asp,fetched,0,
+ORG-001787,http://www.circlemold.com/contact.asp,fetched,0,
+ORG-001787,http://www.circlemold.com/Contact.asp,fetched,0,
+ORG-002067,https://www.aropha.com,fetched,0,
+ORG-002067,https://www.aropha.com/contact/,fetched,0,
+ORG-002068,https://www.chemstress.com,fetched,0,
+ORG-002068,https://www.chemstress.com/contact/,fetched,0,
+ORG-002069,https://www.summitglove.com,fetched,0,
+ORG-002073,https://energyene.com,unavailable,0,HTTP/transport failure 60
+ORG-000698,https://www.basf.com/us/en.html,fetched,0,
+ORG-000698,https://www.basf.com,fetched,0,
+ORG-000698,https://www.basf.com/us/en/who-we-are/organization/locations,unavailable,0,"expected string or bytes-like object, got 'NoneType'"
+ORG-000698,https://www.basf.com/us/en/legal/contact,unavailable,0,"expected string or bytes-like object, got 'NoneType'"
+ORG-000005,https://www.dayglo.com,fetched,0,
+ORG-000005,https://www.dayglo.com/contact-us/,fetched,0,
+ORG-000002,https://www.lubrizol.com,unavailable,0,HTTP/transport failure 56
+ORG-002153,https://alphaworld.com,fetched,0,
+ORG-002153,https://www.alphaworld.com/solutions/product-locationing,fetched,0,
+ORG-002153,https://www.alphaworld.com/solutions/product-locationing/alpha-zone-2_0,fetched,0,
+ORG-002153,https://www.alphaworld.com/contact,fetched,0,
+ORG-000009,https://www.myersindustries.com,fetched,0,
+ORG-000009,https://www.myersindustries.com/contact-us/,fetched,0,
