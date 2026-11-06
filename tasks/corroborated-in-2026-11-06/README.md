@@ -143,3 +143,5 @@ Pending independent Codex3/Grok3 approval; draft. Controller06:25 newodd-lane cl
 |LF-IN-00831|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00804|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
 |LF-IN-00728|HOLD: resolve ultimate operator,distinct physical establishment and primary scope witness before creation; no new parent from federal cluster alone.|
+
+Main-refresh journal: merged origin/main 412391a0a462105a73e322ea67291d24088cfe7a before review (CA135 integration);INbuilder pending0,23-source/20-sample checks andvalidate0 re-pass;INbaseline110strict326 sites unchanged. All161ownproposals government_filing;07:20 own_site audit zero matches. No WI/CAdata/code changes innetdiff.
