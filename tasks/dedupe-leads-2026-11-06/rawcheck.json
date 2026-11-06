@@ -1,0 +1,272 @@
+[
+  {
+    "source_url": "http://www.itplastics.com/",
+    "raw_path": "/tmp/dedupe-leads-integrator/980a4c03c408dea9.raw",
+    "raw_sha256": "1eebc6846e0a0c0f3f981aa732d659a3c124fee7cdbba701339749f99f61b84e",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "7675 Jenther Dr Mentor, Ohio",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://americansignproducts.com/",
+    "raw_path": "/tmp/dedupe-leads-integrator/efd77211b2426c17.raw",
+    "raw_sha256": "5ec63573abaa53100827e6decfbbb7b4b2bcbac10c77dfd7cebc7d6cf7be1972",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "5718 Transportation Blvd., Garfield Heights, OH 44125",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/PUBLIC/DSW/INDUS.pdf",
+    "raw_path": "/tmp/dedupe-leads-integrator/5b7b9e6c630da16d.raw",
+    "raw_sha256": "3ec68450fa93940ff0593d593fc414f569f69e64262cf8283ff3bb4288675bf1",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "EXTERIOR PORTFOLIO LLC-NORTH PLANT || 1550 UNIVERSAL RD || 9/11/2025 || EXTERIOR PORTFOLIO LLC - SOUTH PLANT || 1441 UNIVERSAL RD || 9/4/2025",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Portals/27/sip/Nonattain/D1-nonEGU_point_source_inv.pdf",
+    "raw_path": "/tmp/dedupe-leads-integrator/8e46515b01f5d8e7.raw",
+    "raw_sha256": "d5fcf5c3403430ea7e4e5d1743bf8ce4a237a19db815585d5cd78a48a01be6f8",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "Iten Industries Inc. (Plant 3) || 1303 West 38th Street, Ashtabula, OH 44004",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Public/DSW/NOE.pdf",
+    "raw_path": "/tmp/dedupe-leads-integrator/59e81411f770528e.raw",
+    "raw_sha256": "cf878899ce369eeb3c06f8917cc39f9821e08dd02fd7823211a2c1de265a0cf0",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "Tarkett USA, Inc. || 16035 Industrial || 8/27/2024",
+        "matched": true
+      },
+      {
+        "quote": "JOHNSONITE 16910 MUNN RD || 3/1/2017",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://fs2.magicalir.net/tdnet/2026/5108/20260227571355.pdf",
+    "raw_path": "/tmp/dedupe-leads-integrator/41d7769080c0d4d2.raw",
+    "raw_sha256": "670bd754238e0e84cb4387d2aa5c6bcedfeb069d136b82b3706934a16a12df56",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "Bridgestone Americas, Inc. || Management of Americas operations || Firestone Polymers, LLC || Manufacture and sale of synthetic rubber",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://horsemenspride.com/pages/about-us",
+    "raw_path": "/tmp/dedupe-leads-integrator/ea3f3c78403058db.raw",
+    "raw_sha256": "5439646f1bdd07d84e556d821f7842acd1bd371dc3d01432c5c609e108830996",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "10008 State Route 43 Streetsboro, Ohio 44241",
+        "matched": false
+      }
+    ],
+    "status": "UNCONFIRMED"
+  },
+  {
+    "source_url": "https://horsemenspride.com/policies/terms-of-service",
+    "raw_path": "/tmp/dedupe-leads-integrator/f2f27fc94b893628.raw",
+    "raw_sha256": "b043ff7e702e560132d06c856c83a6c12ab48740f78e2c1de6ea69da31de3e34",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "This website is operated by Horsemen's Pride.",
+        "matched": false
+      }
+    ],
+    "status": "UNCONFIRMED"
+  },
+  {
+    "source_url": "https://innoplast.com/blog/scalecos-innoplast-holdings-acquires-shur-tite-products/",
+    "raw_path": "/tmp/dedupe-leads-integrator/e87d08e75c778b26.raw",
+    "raw_sha256": "5a863f35c5305aade18608d8d0e30ef453457bdf64b249157295fff9b6b0fbf2",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "subsidiaries Thermoprene and American Sign Products",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://ir.cooperstandard.com/2018-07-03-Cooper-Standard-Agrees-to-Acquire-Lauren-Manufacturing-and-Lauren-Plastics-to-Accelerate-Growth-in-Key-Industrial-Markets",
+    "raw_path": "/tmp/dedupe-leads-integrator/168fdb847f24c8fb.raw",
+    "raw_sha256": "0a6d4aa4da79232cc93d7af05135072484ccb4e0cc06e834d4a21868f6316c7d",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "announced its agreement to acquire Lauren Manufacturing and Lauren Plastics, subject to regulatory approvals and related parties' consent.",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://overmoldexpress.com/about/",
+    "raw_path": "/tmp/dedupe-leads-integrator/336689388f304b0c.raw",
+    "raw_sha256": "bf3d7d454b960457c04c5be80e399bc4cc9cae0b717ef3e98a304852a5b806bc",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "7675 Jenther Dr, Mentor, OH 44060",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://roppe.com/wp-content/uploads/2018/10/Roppe-Press-Release_New-Facility_2018-10-23.pdf",
+    "raw_path": "/tmp/dedupe-leads-integrator/D03-roppe.pdf",
+    "raw_sha256": "7947523689e943c437c6ea7f25a46eaaa1af7df7ee28f6574a7c601e406a6145",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "Roppe Holding Company (RHC), the parent company to commercial flooring leaders Roppe and Flexco",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://roppe.com/wp-content/uploads/2024/12/SCS-EPD-RFCI_LVT-Gluedown.pdf",
+    "raw_path": "/tmp/dedupe-leads-integrator/5068ff60ad5c8757.raw",
+    "raw_sha256": "e0dbab24d370c2926d994df51ea973a49460ade20f8afd8d315bc9116aeacf77",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "Roppe Corporation is a wholly owned division of Roppe Holding Company",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://thermoprene.com/",
+    "raw_path": "/tmp/dedupe-leads-integrator/d8f913df43946a5c.raw",
+    "raw_sha256": "aa1c3880fe4d3a27f061a8f7b80ac50b76961f19378fd3fc24aa54b945ee0ea2",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "5718 Transportation Blvd, Garfield Heights, OH 44125",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/contact-us/locations/administrative-offices.html",
+    "raw_path": "/tmp/dedupe-leads-integrator/db173a7b8cb529a1.raw",
+    "raw_sha256": "7f03b0440f7e4d6c316e77ef2b2e7cf28b86daa9bb2163e4c8d2ce4416ec58dd",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "Firestone Polymers Corporate Headquarters A subsidiary of Bridgestone Americas, Inc.",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://www.esschem.com/about-us/",
+    "raw_path": "/tmp/dedupe-leads-integrator/fc436096f0849cec.raw",
+    "raw_sha256": "3c6dbd92af5c379897bebb7b8a2668421494b45c299f7dfce4c1c18f29caf0a9",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "With our affiliates, Esstech, Esschem Europe and EssPac",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://www.esstechinc.com/contact-us/",
+    "raw_path": "/tmp/dedupe-leads-integrator/d222ffbbaa2dd06f.raw",
+    "raw_sha256": "50fa0d396e6162fa7f8d4e23b5f69a0054d8e450e32c40a4f7d412ffc32a3642",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "48 Powhattan Ave Essington, PA 19029-0039",
+        "matched": true
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "source_url": "https://www.tuscoproducts.com/pages/the-tusco-advantage",
+    "raw_path": "/tmp/dedupe-leads-integrator/64810d074c6f44fe.raw",
+    "raw_sha256": "4b4f27a926d471f92e02ed04e9f5f074e32480f3b4891d6f8d29df1b596f7dd0",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "10008 State Route 43 Streetsboro, Ohio 44241",
+        "matched": false
+      }
+    ],
+    "status": "UNCONFIRMED"
+  },
+  {
+    "source_url": "https://www.tuscoproducts.com/policies/terms-of-service",
+    "raw_path": "/tmp/dedupe-leads-integrator/a099e0ab1756457f.raw",
+    "raw_sha256": "bbfa0d17f758675fdc8bd899410bfd16daf0e53e334c9978ea5550a7614da344",
+    "curl_exit": 0,
+    "error": "",
+    "quotes": [
+      {
+        "quote": "This website is operated by Tusco Products.",
+        "matched": false
+      }
+    ],
+    "status": "UNCONFIRMED"
+  }
+]
