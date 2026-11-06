@@ -87,11 +87,11 @@ Belle Chasse manufacturing location, and its own Lubra-Glide copolymer manufactu
 fetched with curl and extracted with pdftotext 26.10.0; its manufacturer sentence is verbatim. Government filing activity
 descriptions complement plant-only own-site witnesses. Every federal alias group now has a source-specific government
 observation (including the actual EFAST2 sponsor filing); these answer the earlier weak own-site attribution. Supplemental
-IDs occupy 165000+ within the lane block. Total evidence observations are now 279 (69 appended); creates unchanged.
+IDs occupy 165000+ within the lane block. Total evidence observations are now 280 (70 appended); creates unchanged.
 
 The builder now asserts every used federal street matches the input physical street using atlas.street_key and the same
 state, and refuses changed verdict order. `check.py` ties raw quote/URL to verdicts, supplements to evidence, checks exact
-15/19/279 counts, and reconciles each state's strict 326 increment against the actual created-site codes: MO +6, SC +3,
+15/19/280 counts, and reconciles each state's strict 326 increment against the actual created-site codes: MO +6, SC +3,
 LA +1. Ring 1 counts differ because federal NAICS codes outside 326 remain as filed; no count is hidden or relabelled.
 The reviewer had only a text packet and explicitly did not inspect federal data. Follow-up review includes the resolved
 federal witness metadata and created-site code composition.
@@ -107,3 +107,17 @@ Chugoku Marine Paints, Ltd. on the new CMP organization, adds the B-PARENT-WEB g
 observation EVD-169900. No pre-existing organization parent or ownership field changes. This satisfies B-PARENT's documented
 relationship condition; CMP's federal marine-paint manufacturing witness and raw group-page plant address supply activity/city.
 Evidence final total: 280 = 210 original + 70 append-only supplements. Corrected validation and replay pass; re-review pending.
+
+### Final independent completion approval
+
+- **Codex/OpenAI APPROVE**, clerk-codex-3 thr_jukpm97t9c, reviewed bcb3344. Fresh raw quote checks, 27 alias/source observations,
+  injected federal street/state mismatches rejected before writes, all-data replay byte-identical, validator0errors, row-loss
+  guard PASS, exact36/15/19/280 counts and T3 deltas independently reproduced. Original210 observations unchanged,70 appended.
+- **Grok APPROVE**, clerk-grok-3 thr_4g4uwqjxjv, reviewed f903cb0 (same data/code, before authorized normalized-main merge).
+  Findings0. Fresh 5 supplemental quotations/PDF,28 federal street/state matches, full-create dedupe and alias citations,
+  row-loss guard, validator0errors and check.py PASS. Original initial REFUTEs are preserved in the task review files;
+  their substantive findings were fixed, not waived. The Grok stale-count documentation note is corrected here.
+
+Review limits: Codex targeted re-review did not repeat the full initial random-row/dedupe audit or bulk government downloads.
+Federal-vintage and provisional C limits remain explicit; neither family claimed a new federal download or closure outcome.
+Controller's required two-family completion gate is satisfied for this STRONG PR. Controller alone merges/statuses tasks.
