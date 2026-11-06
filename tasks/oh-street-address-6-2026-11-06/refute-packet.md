@@ -296,108 +296,108 @@ summary=dict(accepted_fills=len(evidence),audited=len(out),errors=sum(bool(r['er
 (TASK/'audit_summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(summary)
 assert len(out)==min(30,len(evidence)) and summary['errors']==0,out
 
-SELECTED INPUTS;full notes in frame.csv
-site_id,org_id,site_name,city,zip,county,verification_tier,website,reserved_evidence_id
-SITE-001640,ORG-001573,Prentke Romich Company dba PRC-Saltillo — Wooster,Wooster,,Wayne,B,https://www.prc-saltillo.com/,EVD-152260
-SITE-001647,ORG-001576,Aabaco Plastics Inc — Garfield Heights,Garfield Heights,44125,Cuyahoga,A,https://aabacoplastics.com/,EVD-152261
-SITE-001648,ORG-001577,Master Builders Solutions US LLC — Beachwood,Beachwood,44122,Cuyahoga,B,https://master-builders-solutions.com/,EVD-152262
-SITE-001649,ORG-001578,Bright Idea Shops LLC — Akron,Akron,44301,Summit,A,https://brightideashops.com/,EVD-152263
-SITE-001650,ORG-001579,CartierWilson LLC — Solon,Solon,44139,Cuyahoga,A,https://cartierwilson.com/,EVD-152264
-SITE-001651,ORG-001580,Chemical Solvents Inc — Cleveland,Cleveland,44109,Cuyahoga,B,https://chemicalsolvents.com/,EVD-152265
-SITE-001652,ORG-001581,ePac Flexible Packaging — Solon,Solon,,Cuyahoga,B,https://epacflexibles.com/,EVD-152266
-SITE-001654,ORG-000135,Valtris Specialty Chemicals — Walton Hills,Walton Hills,44146,Cuyahoga,B,https://www.valtris.com,EVD-152267
-SITE-001655,ORG-001583,Grand River Rubber & Plastics Company — Ashtabula,Ashtabula,44004,Ashtabula,A,https://grandriverrubber.com/,EVD-152268
-SITE-001656,ORG-001584,Green Innovations LLC — Solon,Solon,44139,Cuyahoga,B,https://green-innovate.com/,EVD-152269
-SITE-001657,ORG-001585,High Tech Extrusions Ltd — Chardon,Chardon,44024,Geauga,A,https://hitechextrusions.com/,EVD-152270
-SITE-001658,ORG-001586,Jos-Tech Inc — Kent,Kent,44240,Portage,A,https://jos-tech.com/,EVD-152271
-SITE-001659,ORG-001587,Miniature Plastic Molding — Solon,Solon,44139,Cuyahoga,B,https://minijector.com/,EVD-152272
-SITE-001660,ORG-001588,The Kent Mold & Manufacturing Company — Kent,Kent,44240,Portage,A,https://kentmold.com/,EVD-152273
-SITE-001661,ORG-001589,The Ruscoe Company — Akron,Akron,44301,Summit,B,https://ruscoe.com/,EVD-152274
-SITE-001662,ORG-001590,Therm-O-Link Inc — Warren,Warren,,Trumbull,B,https://tolwire.com/,EVD-152275
-SITE-001663,ORG-001591,Winsell Incorporated — Medina,Medina,44256,Medina,B,https://winsellinc.com/,EVD-152276
-SITE-001664,ORG-001592,Alpha Tool & Mold Inc — Highland Heights,Highland Heights,,Cuyahoga,B,https://alphatoolandmold.com/,EVD-152277
-SITE-001665,ORG-001593,Amros Industries Inc — Cleveland,Cleveland,,Cuyahoga,B,https://clamshellusa.com/,EVD-152278
-SITE-001666,ORG-001594,"Coatings Research Group, Inc. — Berea",Berea,44017,Cuyahoga,A,https://crgiconnect.com/,EVD-152279
-SITE-001667,ORG-001595,Eleven 10 LLC — Westlake,Westlake,,Cuyahoga,B,https://1110gear.com/,EVD-152280
-SITE-001668,ORG-001596,Gateway Products Recycling Inc — Cleveland,Cleveland,,Cuyahoga,A,https://gatewayrecycle.com/,EVD-152281
-SITE-001669,ORG-001597,International Technical Polymer Systems Inc — Niles,Niles,,Trumbull,B,https://itps-inc.com/,EVD-152282
-SITE-001670,ORG-001598,J B Jewitt Co Inc — Cleveland,Cleveland,,Cuyahoga,B,https://homesteadfinishingproducts.com/,EVD-152283
-SITE-001671,ORG-001599,MultiPlast Systems Inc — Solon,Solon,,Cuyahoga,B,https://multiplastsystems.com/,EVD-152284
-SITE-001672,ORG-001600,North Shore Strapping Company — Brooklyn Heights,Brooklyn Heights,,Cuyahoga,B,https://northshorestrapping.com/,EVD-152285
-SITE-001674,ORG-001602,Royal Powder Corp — Cleveland,Cleveland,,Cuyahoga,B,https://royalpowder.com/,EVD-152286
-SITE-001675,ORG-001603,Speedline Corporation — Brooklyn Heights,Brooklyn Heights,,Cuyahoga,B,https://speedlinepvc.com/,EVD-152287
-SITE-001680,ORG-001607,Kinetico Incorporated — Newbury,Newbury,,Geauga,B,https://kinetico.com/,EVD-152288
-SITE-001682,ORG-001609,"Morgan Adhesives Company, LLC — Stow",Stow,,Summit,A,https://mactac.com/,EVD-152289
-SITE-001688,ORG-000004,Parker-Hannifin Corporation — Ravenna,Ravenna,,Portage,A,https://www.parker.com,EVD-152290
-SITE-001690,ORG-001619,SOPREMA Inc — Wadsworth,Wadsworth,,Medina,A,https://www.soprema.us/,EVD-152291
-SITE-001693,ORG-001622,ABSOLUTE POLYMERS INC — Salem,Salem,,Columbiana,A,http://www.absolutepolymers.com/,EVD-152292
-SITE-001694,ORG-001623,ADCAL ADHESIVE COATINGS AND LAMINATIONS LLC — Brunswick,Brunswick,,Medina,B,https://adcalinc.com/,EVD-152293
-SITE-001695,ORG-001624,ADVANCED CRYOGENIC ENTERPRISES — Akron,Akron,,Summit,A,http://www.acecryo.com/,EVD-152294
-SITE-001702,ORG-001630,AKRON BELTING & SUPPLY CO — Akron,Akron,,Summit,A,https://www.akronbelting.com/,EVD-152295
-SITE-001703,ORG-001631,AKRON DISPERSIONS INC — Copley,Copley,,Summit,B,http://www.akrondispersions.com/,EVD-152296
-SITE-001707,ORG-001634,ASTRA PRODUCTS OF OHIO LTD — Ravenna,Ravenna,,Portage,A,https://www.astraproductsltd.com/,EVD-152297
-SITE-001708,ORG-001635,EAGLE PLASTICS GROUP — North Canton,Green,,Summit,A,http://www.eagleplasticsgroup.com/,EVD-152298
-SITE-001709,ORG-001636,ENGINEERED LAMINATES & COATINGS — Akron,Akron,,Summit,B,https://pressuresensitivefilms.com/,EVD-152299
-SITE-001710,ORG-001637,FTM ENGINEERING GROUP — Willoughby,Willoughby,,Lake,B,https://www.ftmeng.com/,EVD-152300
-SITE-001712,ORG-001639,PLASTIC ENTERPRISES — Elyria,Elyria,,Lorain,A,http://plastic-enterprises.com,EVD-152301
-SITE-001714,ORG-001640,M-LINE INC — Brunswick,Brunswick,,Medina,A,https://m-line.com/,EVD-152302
-SITE-001715,ORG-001641,MAINE RUBBER PREFORMS AND EXTRUSIONS LLC — Middlefield,Middlefield,,Geauga,A,https://mainerubberpreforms.com/,EVD-152303
-SITE-001716,ORG-001642,MOTIVO DISPLAY SOLUTIONS — Massillon,Massillon,,Stark,B,http://www.motivodisplay.com/,EVD-152304
-SITE-001717,ORG-001643,OVERMOLD EXPRESS — Mentor,Mentor,,Lake,A,https://www.overmoldexpress.com/,EVD-152305
-SITE-001718,ORG-001644,RPM INDUSTRIES — Elyria,Elyria,,Lorain,B,https://www.rpmindinc.com/,EVD-152306
-SITE-001719,ORG-001645,RTS COMPANIES INC. — Austinburg,Austinburg,,Ashtabula,B,http://rtscompaniesinc.com/,EVD-152307
-SITE-001721,ORG-001646,TUSCO PRODUCTS — Streetsboro,Streetsboro,,Portage,B,http://www.tuscoproducts.com/,EVD-152308
-SITE-001722,ORG-001647,V&A PROCESS — Lorain,Lorain,,Lorain,A,http://www.vaprocessinc.com/contact,EVD-152309
-SITE-001723,ORG-001648,WORTHINGTON PRODUCTS — East Canton,East Canton,,Stark,B,http://tuffboom.com/,EVD-152310
-SITE-001725,ORG-000640,Zehrco-Giancola Composites — Ashtabula,Ashtabula,,Ashtabula,B,https://zehrco-giancola.com/,EVD-152311
-SITE-001729,ORG-001653,Bruns Brush Inc — Willoughby,Willoughby,,Lake,A,https://brunsbrush.com/,EVD-152312
-SITE-001731,ORG-001655,C4 Polymers Inc — Chagrin Falls,Chagrin Falls,,Geauga,B,https://c4poly.com/,EVD-152313
-SITE-001732,ORG-001656,ClearSonic Manufacturing Inc — Akron,Akron,,Summit,A,https://clearsonic.com/,EVD-152314
-SITE-001733,ORG-001657,Comdess Company Inc — Seville,Seville,,Medina,B,https://comdess.com/,EVD-152315
-SITE-001741,ORG-001665,Dischem International Inc — North Canton,North Canton,,Stark,A,https://dischem.com/,EVD-152316
-SITE-001742,ORG-001666,Drossbach Inc — Stow,Stow,,Summit,A,https://drossbach.com/,EVD-152317
-SITE-001743,ORG-001667,Dudick Inc — Streetsboro,Streetsboro,,Portage,A,https://dudick.com/,EVD-152318
-SITE-001744,ORG-001668,Durable Corporation — Norwalk,Norwalk,,Huron,A,https://durablecorp.com/,EVD-152319
-SITE-001746,ORG-001670,Enpac LLC — Eastlake,Eastlake,,Lake,A,https://enpac.com/,EVD-152320
-SITE-001747,ORG-001671,FastForming.com LLC — Rittman,Rittman,,Wayne,A,https://fastforming.com/,EVD-152321
-SITE-001748,ORG-001672,Flash It LLC — Mantua,Mantua,,Portage,B,https://flashitllc.com/,EVD-152322
-SITE-001754,ORG-001678,Harrison Paint Company — Canton,Canton,,Stark,A,https://harrisonpaint.com/,EVD-152323
-SITE-001755,ORG-001679,Hollo Plastics Equipment Inc — Northfield,Northfield,,Summit,A,https://holloplastics.com/,EVD-152324
-SITE-001756,ORG-001680,Hytech Silicone Products Inc — Ravenna,Ravenna,,Portage,B,https://hytechproducts.com/,EVD-152325
-SITE-001757,ORG-001681,Inter-Ion Inc — Cuyahoga Falls,Cuyahoga Falls,,Summit,B,https://inter-ion.com/,EVD-152326
-SITE-001758,ORG-001682,Invisible Repair Products Inc — Tallmadge,Tallmadge,,Summit,A,https://vinylleatherrepair.com/,EVD-152327
-SITE-001770,ORG-001694,Novatex North America Inc — Ashland,Ashland,,Ashland,A,https://novatex.us/,EVD-152328
-SITE-001774,ORG-001698,Prime Engineered Plastics,Canton,,Stark,B,https://www.prime-plastics.com/,EVD-152329
-SITE-001775,ORG-001699,Aerocase Inc.,Westlake,,Cuyahoga,B,aerocaseinc.com,EVD-152330
-SITE-001776,ORG-001700,"Certon Technologies, Inc.",Bedford,,Cuyahoga,B,http://www.haradhesive.com/,EVD-152331
-SITE-001777,ORG-001701,Cru Performance Coatings LLC,Cleveland,,Cuyahoga,B,https://www.continentalpaints.com/,EVD-152332
-SITE-001779,ORG-001703,"Premier Aerosol Packaging, Inc.",Valley View,,Cuyahoga,B,premieraerosol.com,EVD-152333
-SITE-001780,ORG-001704,Venus Product Development Corporation,Cleveland,,Cuyahoga,A,vpdcorp.net,EVD-152334
-SITE-001783,ORG-001707,Dyna Flex Inc,Painesville,,Lake,B,dynaflexinc.com,EVD-152335
-SITE-001785,ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),Norwalk,,Huron,A,tuftexballoons.com,EVD-152336
-SITE-001786,ORG-001710,Herbert USA Inc,Akron,,Summit,B,none found,EVD-152337
-SITE-001790,ORG-001714,"AML Industries, Inc.",Warren,,Trumbull,B,amlube.com,EVD-152338
-SITE-001791,ORG-001715,"Axion Labs, Inc.",Cleveland,,Cuyahoga,B,axionlabs.co,EVD-152339
-SITE-001793,ORG-001717,"FlexLink, LLC",Cleveland,18222,Cuyahoga,B,flexlinkllc.com,EVD-152340
-SITE-001796,ORG-001720,"Sun Art Decals, Inc.",Cleveland,,Cuyahoga,A,sunartdecals.com,EVD-152341
-SITE-001798,ORG-001722,"Kinzie Advanced Polymers, LLC dba Grove Bags",Bedford Heights,26201,Cuyahoga,B,grovebags.com,EVD-152342
-SITE-001799,ORG-001723,P&T Products Inc,Sandusky,,Erie,B,https://pntproducts.com/,EVD-152343
-SITE-001800,ORG-001724,Republic Powdered Metals Inc,Medina,,Medina,B,https://www.rpmrepublic.com/,EVD-152344
-SITE-001801,ORG-001725,Thorworks Industries Inc,Sandusky,,Erie,B,https://www.sealmaster.net/,EVD-152345
-SITE-001804,ORG-001728,Buckeye Medical Technologies LLC,Warren,44484,Trumbull,B,https://www.anatotemp.com/#/,EVD-152346
-SITE-001806,ORG-001730,3D Dental Designs and Development LLC,Shaker Heights,16781,Cuyahoga,B,https://3d-dent.com/,EVD-152347
-SITE-001807,ORG-001731,"Nissha Medical Technologies (Ohio), Inc.",Norwalk,44857,Huron,B,https://nissha.medical ; https://nissha.com,EVD-152348
-SITE-001815,ORG-001739,"API II, Inc.",Concord Twp,44077,Lake,A,http://www.api2.net/,EVD-152349
-SITE-001820,ORG-001744,"Jet Di, Inc.",Brunswick,44212,Medina,A,https://jet-di.com/,EVD-152350
-SITE-001831,ORG-001755,Medina Recycling Inc.,Medina,44256,Medina,A,http://www.medinarecycling.com/,EVD-152351
-SITE-001833,ORG-001757,"ACO Polymer Products, Inc.",Mentor,44060,Lake,B,https://acousa.com/,EVD-152352
-SITE-001834,ORG-001758,Niles Building Products Company,Niles,44446,Trumbull,B,http://www.nilesbldg.com/,EVD-152353
-SITE-001836,ORG-000549,"Robin Industries, Inc.",Independence,44131,Cuyahoga,A,https://www.robin-industries.com/,EVD-152354
-SITE-001837,ORG-000057,Smithers-Oasis Company (Smithers-Oasis North America),Kent,44240,Portage,B,https://smithersoasis.com,EVD-152355
-SITE-001840,ORG-000115,Cuyahoga Molded Plastics Corp.,Mentor,44060,Lake,B,http://www.cuyahogaplastics.com/,EVD-152356
-SITE-001842,ORG-000007,Vibrantz Technologies,Orrville,,Wayne,B,https://www.vibrantz.com,EVD-152357
-SITE-001843,ORG-001760,The Pioneer Manufacturing Company,Cleveland,44135,Cuyahoga,B,https://pioneerathletics.com,EVD-152358
-SITE-001846,ORG-001763,Rubber Mold Design LLC,Austinburg,44010,Ashtabula,B,https://dalinmold.com,EVD-152359
+SELECTED INPUTS;full names and notes in frame.csv
+site_id,org_id,city,zip,county,verification_tier,website,reserved_evidence_id
+SITE-001640,ORG-001573,Wooster,,Wayne,B,https://www.prc-saltillo.com/,EVD-152260
+SITE-001647,ORG-001576,Garfield Heights,44125,Cuyahoga,A,https://aabacoplastics.com/,EVD-152261
+SITE-001648,ORG-001577,Beachwood,44122,Cuyahoga,B,https://master-builders-solutions.com/,EVD-152262
+SITE-001649,ORG-001578,Akron,44301,Summit,A,https://brightideashops.com/,EVD-152263
+SITE-001650,ORG-001579,Solon,44139,Cuyahoga,A,https://cartierwilson.com/,EVD-152264
+SITE-001651,ORG-001580,Cleveland,44109,Cuyahoga,B,https://chemicalsolvents.com/,EVD-152265
+SITE-001652,ORG-001581,Solon,,Cuyahoga,B,https://epacflexibles.com/,EVD-152266
+SITE-001654,ORG-000135,Walton Hills,44146,Cuyahoga,B,https://www.valtris.com,EVD-152267
+SITE-001655,ORG-001583,Ashtabula,44004,Ashtabula,A,https://grandriverrubber.com/,EVD-152268
+SITE-001656,ORG-001584,Solon,44139,Cuyahoga,B,https://green-innovate.com/,EVD-152269
+SITE-001657,ORG-001585,Chardon,44024,Geauga,A,https://hitechextrusions.com/,EVD-152270
+SITE-001658,ORG-001586,Kent,44240,Portage,A,https://jos-tech.com/,EVD-152271
+SITE-001659,ORG-001587,Solon,44139,Cuyahoga,B,https://minijector.com/,EVD-152272
+SITE-001660,ORG-001588,Kent,44240,Portage,A,https://kentmold.com/,EVD-152273
+SITE-001661,ORG-001589,Akron,44301,Summit,B,https://ruscoe.com/,EVD-152274
+SITE-001662,ORG-001590,Warren,,Trumbull,B,https://tolwire.com/,EVD-152275
+SITE-001663,ORG-001591,Medina,44256,Medina,B,https://winsellinc.com/,EVD-152276
+SITE-001664,ORG-001592,Highland Heights,,Cuyahoga,B,https://alphatoolandmold.com/,EVD-152277
+SITE-001665,ORG-001593,Cleveland,,Cuyahoga,B,https://clamshellusa.com/,EVD-152278
+SITE-001666,ORG-001594,Berea,44017,Cuyahoga,A,https://crgiconnect.com/,EVD-152279
+SITE-001667,ORG-001595,Westlake,,Cuyahoga,B,https://1110gear.com/,EVD-152280
+SITE-001668,ORG-001596,Cleveland,,Cuyahoga,A,https://gatewayrecycle.com/,EVD-152281
+SITE-001669,ORG-001597,Niles,,Trumbull,B,https://itps-inc.com/,EVD-152282
+SITE-001670,ORG-001598,Cleveland,,Cuyahoga,B,https://homesteadfinishingproducts.com/,EVD-152283
+SITE-001671,ORG-001599,Solon,,Cuyahoga,B,https://multiplastsystems.com/,EVD-152284
+SITE-001672,ORG-001600,Brooklyn Heights,,Cuyahoga,B,https://northshorestrapping.com/,EVD-152285
+SITE-001674,ORG-001602,Cleveland,,Cuyahoga,B,https://royalpowder.com/,EVD-152286
+SITE-001675,ORG-001603,Brooklyn Heights,,Cuyahoga,B,https://speedlinepvc.com/,EVD-152287
+SITE-001680,ORG-001607,Newbury,,Geauga,B,https://kinetico.com/,EVD-152288
+SITE-001682,ORG-001609,Stow,,Summit,A,https://mactac.com/,EVD-152289
+SITE-001688,ORG-000004,Ravenna,,Portage,A,https://www.parker.com,EVD-152290
+SITE-001690,ORG-001619,Wadsworth,,Medina,A,https://www.soprema.us/,EVD-152291
+SITE-001693,ORG-001622,Salem,,Columbiana,A,http://www.absolutepolymers.com/,EVD-152292
+SITE-001694,ORG-001623,Brunswick,,Medina,B,https://adcalinc.com/,EVD-152293
+SITE-001695,ORG-001624,Akron,,Summit,A,http://www.acecryo.com/,EVD-152294
+SITE-001702,ORG-001630,Akron,,Summit,A,https://www.akronbelting.com/,EVD-152295
+SITE-001703,ORG-001631,Copley,,Summit,B,http://www.akrondispersions.com/,EVD-152296
+SITE-001707,ORG-001634,Ravenna,,Portage,A,https://www.astraproductsltd.com/,EVD-152297
+SITE-001708,ORG-001635,Green,,Summit,A,http://www.eagleplasticsgroup.com/,EVD-152298
+SITE-001709,ORG-001636,Akron,,Summit,B,https://pressuresensitivefilms.com/,EVD-152299
+SITE-001710,ORG-001637,Willoughby,,Lake,B,https://www.ftmeng.com/,EVD-152300
+SITE-001712,ORG-001639,Elyria,,Lorain,A,http://plastic-enterprises.com,EVD-152301
+SITE-001714,ORG-001640,Brunswick,,Medina,A,https://m-line.com/,EVD-152302
+SITE-001715,ORG-001641,Middlefield,,Geauga,A,https://mainerubberpreforms.com/,EVD-152303
+SITE-001716,ORG-001642,Massillon,,Stark,B,http://www.motivodisplay.com/,EVD-152304
+SITE-001717,ORG-001643,Mentor,,Lake,A,https://www.overmoldexpress.com/,EVD-152305
+SITE-001718,ORG-001644,Elyria,,Lorain,B,https://www.rpmindinc.com/,EVD-152306
+SITE-001719,ORG-001645,Austinburg,,Ashtabula,B,http://rtscompaniesinc.com/,EVD-152307
+SITE-001721,ORG-001646,Streetsboro,,Portage,B,http://www.tuscoproducts.com/,EVD-152308
+SITE-001722,ORG-001647,Lorain,,Lorain,A,http://www.vaprocessinc.com/contact,EVD-152309
+SITE-001723,ORG-001648,East Canton,,Stark,B,http://tuffboom.com/,EVD-152310
+SITE-001725,ORG-000640,Ashtabula,,Ashtabula,B,https://zehrco-giancola.com/,EVD-152311
+SITE-001729,ORG-001653,Willoughby,,Lake,A,https://brunsbrush.com/,EVD-152312
+SITE-001731,ORG-001655,Chagrin Falls,,Geauga,B,https://c4poly.com/,EVD-152313
+SITE-001732,ORG-001656,Akron,,Summit,A,https://clearsonic.com/,EVD-152314
+SITE-001733,ORG-001657,Seville,,Medina,B,https://comdess.com/,EVD-152315
+SITE-001741,ORG-001665,North Canton,,Stark,A,https://dischem.com/,EVD-152316
+SITE-001742,ORG-001666,Stow,,Summit,A,https://drossbach.com/,EVD-152317
+SITE-001743,ORG-001667,Streetsboro,,Portage,A,https://dudick.com/,EVD-152318
+SITE-001744,ORG-001668,Norwalk,,Huron,A,https://durablecorp.com/,EVD-152319
+SITE-001746,ORG-001670,Eastlake,,Lake,A,https://enpac.com/,EVD-152320
+SITE-001747,ORG-001671,Rittman,,Wayne,A,https://fastforming.com/,EVD-152321
+SITE-001748,ORG-001672,Mantua,,Portage,B,https://flashitllc.com/,EVD-152322
+SITE-001754,ORG-001678,Canton,,Stark,A,https://harrisonpaint.com/,EVD-152323
+SITE-001755,ORG-001679,Northfield,,Summit,A,https://holloplastics.com/,EVD-152324
+SITE-001756,ORG-001680,Ravenna,,Portage,B,https://hytechproducts.com/,EVD-152325
+SITE-001757,ORG-001681,Cuyahoga Falls,,Summit,B,https://inter-ion.com/,EVD-152326
+SITE-001758,ORG-001682,Tallmadge,,Summit,A,https://vinylleatherrepair.com/,EVD-152327
+SITE-001770,ORG-001694,Ashland,,Ashland,A,https://novatex.us/,EVD-152328
+SITE-001774,ORG-001698,Canton,,Stark,B,https://www.prime-plastics.com/,EVD-152329
+SITE-001775,ORG-001699,Westlake,,Cuyahoga,B,aerocaseinc.com,EVD-152330
+SITE-001776,ORG-001700,Bedford,,Cuyahoga,B,http://www.haradhesive.com/,EVD-152331
+SITE-001777,ORG-001701,Cleveland,,Cuyahoga,B,https://www.continentalpaints.com/,EVD-152332
+SITE-001779,ORG-001703,Valley View,,Cuyahoga,B,premieraerosol.com,EVD-152333
+SITE-001780,ORG-001704,Cleveland,,Cuyahoga,A,vpdcorp.net,EVD-152334
+SITE-001783,ORG-001707,Painesville,,Lake,B,dynaflexinc.com,EVD-152335
+SITE-001785,ORG-001709,Norwalk,,Huron,A,tuftexballoons.com,EVD-152336
+SITE-001786,ORG-001710,Akron,,Summit,B,none found,EVD-152337
+SITE-001790,ORG-001714,Warren,,Trumbull,B,amlube.com,EVD-152338
+SITE-001791,ORG-001715,Cleveland,,Cuyahoga,B,axionlabs.co,EVD-152339
+SITE-001793,ORG-001717,Cleveland,18222,Cuyahoga,B,flexlinkllc.com,EVD-152340
+SITE-001796,ORG-001720,Cleveland,,Cuyahoga,A,sunartdecals.com,EVD-152341
+SITE-001798,ORG-001722,Bedford Heights,26201,Cuyahoga,B,grovebags.com,EVD-152342
+SITE-001799,ORG-001723,Sandusky,,Erie,B,https://pntproducts.com/,EVD-152343
+SITE-001800,ORG-001724,Medina,,Medina,B,https://www.rpmrepublic.com/,EVD-152344
+SITE-001801,ORG-001725,Sandusky,,Erie,B,https://www.sealmaster.net/,EVD-152345
+SITE-001804,ORG-001728,Warren,44484,Trumbull,B,https://www.anatotemp.com/#/,EVD-152346
+SITE-001806,ORG-001730,Shaker Heights,16781,Cuyahoga,B,https://3d-dent.com/,EVD-152347
+SITE-001807,ORG-001731,Norwalk,44857,Huron,B,https://nissha.medical ; https://nissha.com,EVD-152348
+SITE-001815,ORG-001739,Concord Twp,44077,Lake,A,http://www.api2.net/,EVD-152349
+SITE-001820,ORG-001744,Brunswick,44212,Medina,A,https://jet-di.com/,EVD-152350
+SITE-001831,ORG-001755,Medina,44256,Medina,A,http://www.medinarecycling.com/,EVD-152351
+SITE-001833,ORG-001757,Mentor,44060,Lake,B,https://acousa.com/,EVD-152352
+SITE-001834,ORG-001758,Niles,44446,Trumbull,B,http://www.nilesbldg.com/,EVD-152353
+SITE-001836,ORG-000549,Independence,44131,Cuyahoga,A,https://www.robin-industries.com/,EVD-152354
+SITE-001837,ORG-000057,Kent,44240,Portage,B,https://smithersoasis.com,EVD-152355
+SITE-001840,ORG-000115,Mentor,44060,Lake,B,http://www.cuyahogaplastics.com/,EVD-152356
+SITE-001842,ORG-000007,Orrville,,Wayne,B,https://www.vibrantz.com,EVD-152357
+SITE-001843,ORG-001760,Cleveland,44135,Cuyahoga,B,https://pioneerathletics.com,EVD-152358
+SITE-001846,ORG-001763,Austinburg,44010,Ashtabula,B,https://dalinmold.com,EVD-152359
 
 FILE evidence.csv
 evidence_id,record_table,record_id,claim_type,claim_detail,source_class,source_ref,observed_date,tier_effect,created_by,notes
