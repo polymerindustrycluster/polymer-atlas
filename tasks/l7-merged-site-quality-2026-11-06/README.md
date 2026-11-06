@@ -38,7 +38,7 @@ Historical witnesses are dated as such: SherwinISO2015,Goodyearannual2019,TekniP
 
 ## Refutes
 
-Grok REFUTE accepted and Apache withdrawn; Codex/OpenAI review pending. Draft only. Controller06:25 assignedclerk route/queueexception supersedes original council-only route and no-queue rule for these requests. No Done/merge claim.
+Controller-approved strict subset: Codex9 approved658c5b8 minus Apache’s nine withdrawn cells; Grok sole finding withdrawn under CAMPAIGN224. Final replay proof below governs; no new family verdict is claimed. Controller06:25 assignedclerk route/queueexception supersedes original council-only route and no-queue rule for these requests. No Done/merge claim.
 
 ## Holds and findings
 
@@ -105,3 +105,9 @@ Conservation directive (controller,2026-11-06) supersedes earlier continuation i
 ## Grok refute resolution — strict subset
 
 Grok clerk3 REFUTEff22dd5 accepted: Apache SITE-016120 primary Calhoun-wide recycled-tire prose does not bind197RoyalDrive independently of the other held Calhoun plants. Restored its frozen pre-pass C/site-sources row and withdrew EVD-207360–207366,permanently reserved by id_reservations.csv. No new evidence or research; no replacement upgrade. withdrawal.json proves every other canonical site/evidence row dictionary-identical to reviewedff22dd5. Final75=30VERIFIED+45holds,60cells210EVD(180government+30ownscope),27retainedownURLs. Prior31/217 counts/integration are historical and superseded for the current packet. Refute report: reviews/223-clerk-grok-3.md. Conservation directive applied; no new review round requested. Codex review remains pending; Grok objection is cured by withdrawal,not an approval claim.
+
+## Owner-approved strict-subset replay
+
+Controller explicitly approves223as Codex9@658c5b8 minus9Apachecells(two sitecells+seven evidence rows),Grokonlyfinding withdrawn,underCAMPAIGN224strict-subsetrule. This supersedes the earlier pending-gate disposition; no new family verdict is claimed. Merged pinnedmain78578da6162952d0c015dff5e6914a0ef1abb0b9,took all10exactmainownedshards and reran unchangedbuilder. approved-subset-replay.json proves all30promotedsite rows/210evidence rows identical to approved658c5b8,and all7retiredIDs absent.
+
+L11owner corrections to heldCANTEX/Valmet rows onmain are preserved. Namedcheck now compares heldrows against mergedmain via its complete row/field preservation gate,while keeping frozen exact-row checks on the30promotions; this is the only check compatibility change. Allsource/claim/ID/quote/parent/mutation/replay controls remain. Namedcheck/validator0/row-loss rerunPASS. No new research/frame/upgrade/evidence.

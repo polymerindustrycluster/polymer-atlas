@@ -60,6 +60,8 @@ for p in (ROOT/'data').glob('*.csv'):
  if p.name.startswith('evidence_'):assert len(new)==len(old)+sum(p.name==f"evidence_sites_{before[e['record_id']]['state']}.csv" for e in packet)
 byid={r['site_id']:r for p in (ROOT/'data').glob('sites_*.csv') for r in read(p)}
 for sid,old in before.items():
+ # Held rows may receive owner-authorized corrections on main; the all-row preservation check above covers them.
+ if sid not in up:continue
  expected=dict(old)
  for e in edits:
   if e['site_id']==sid:expected[e['field']]=e['new']
