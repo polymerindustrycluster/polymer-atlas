@@ -1,0 +1,8 @@
+evidence_id,reason
+EVD-014713,Changed domain needs explicit operator alias verification before own_site evidence
+EVD-014716,Changed domain needs explicit operator alias verification before own_site evidence
+EVD-014717,Changed domain needs explicit operator alias verification before own_site evidence
+EVD-016289,Changed domain needs explicit operator alias verification before own_site evidence
+EVD-016290,Changed domain needs explicit operator alias verification before own_site evidence
+EVD-013345,"Grok REFUTE accepted: consumer products does not explicitly state housewares; full consumer_goods_housewares claim needs an own witness, no retag."
+EVD-016535,"Grok REFUTE accepted: Food tile does not explicitly state packaging or beverage; full packaging_food_beverage claim needs an own witness, no retag."

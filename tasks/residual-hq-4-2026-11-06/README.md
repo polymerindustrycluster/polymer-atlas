@@ -1,0 +1,55 @@
+# Final residual HQ pass 4 — L5b
+
+Controller authorized only the remaining current-main residual rows after positions1–200, then stop. Frozen frame-base8a5821b positions201–249 =49 rows ORG-007428–ORG-010701 outof249residual; cohort.csv and frame-base.txt are immutable. Integrationbase tracked separately in base.txt. Two L3-owned records009017/009026 are explicit ownershipholds, never researched/edited;47eligible. This final branch/PR is separate from189/195. FirstuserAtlascontroller/PICresearcher;nonusefinding2026-11-13. Controller owns tracker/status/merge.
+
+L5bthr_ii6ybubss4soledatawriter;existinghelpersA25 andB24(22eligible+2excluded) write only their respective packetfolders. Max5helperroutes+1independentintegrator;failedfetchesavailabilityneverabsence. Unknown-status organizations may get an evidencedHQ but status remains unchanged; tombstones stayhome. Ownsite/datedprimarypublicrecord/officialstateregistryonly;LEI-onlydiscoveriesheld. Address-onlyregistry capsC andcannotdowngradeA/B. Plant/contact/mailing/parentHQnotinferred. Countyblankifunsupported;OHcounty/scopeunsettledheld. Noowner scope/ring/vocabularyrulingsbylane.
+
+Reusable builder/check/parser/matcher copied from prior provenHQ3pass with changed49frame/EVD317000block. Frozenposition-derivedEVDs preservegaps;append-onlyevidence. ShardmovesAppendixC4 carryallhistoricalevidenceintact;noorg/sitecreates. PermittedfieldsHQcity/state/country/county/scope,sources,appendnotesonly. Tier/status/last_verified/qualifiers/sites/registry_linksunchanged. GlobalIDs/preimages/headerspreflightbeforewrite;freshmaincanonicaldatarestore+builderreplay,neverhandmergeCSV.
+
+## Checks
+
+Namedcommand `python3 tasks/residual-hq-4-2026-11-06/check.py`: exact49frozenpositions/unique/fullcoverage,ownershipexclusionsunchanged,fullorganization/EVDunion/contentpreservation,rawquotehashes,byte-idempotency,missingID/header/EVDcollisionno-writefaults,badquotesubstitutions. Helpersmustpass3–5knownsourceanswersandnegativecontrols;integratorcalibratesfirstrealpositivebeforefullapplication. `python3 scripts/validate.py` mustpasszeroerrors. No scripts/ changes;fullscriptspytestnotrequired. Raw cachesonly/tmp;publicURLs/quotes/hashescommitted. prepare.py reuseshashedreceiptsratherthanrefetching.
+
+## Holds
+
+Finalverdicts.csv is the holds table: everySTILL_UNKNOWNrow names its settling_fact and note. L3ownershipexclusionsremainholdsregardlessofdiscoverableHQ. No row is rejected for missing/unfetchablesource. Pendingownerrulingsretainrecommendation/evidence,neverappliedbylane.
+
+## Reviews and ledger
+
+Pair3Codex/GrokclerksindependentdeeprefutesunderBOARD05:55/06:25;draftuntilbothapprove. NoDone/merge/taskclosureclaim. Controller instruction explicitlystopafterthisbatch,noextrascope. Freeze/boundaries/helperownershiprecordedhereandBOARDbeforeapplication. Finalcounts/knownanswers/replay/validationandreviewreceiptstoappend.
+
+Baseline validate.py PASS zeroerrors; frozen49 heldtiersC49, statusesactive37/unknown12. Three reused raw known-answer pages (Paneltech/Kaysun/Dura) pass with two deliberately wrong mailing/HQ and city substitutions rejected, recordedknown-answers.json. FirstBcalibration CalSpas currentowncontactnarrative explicitlystates today’s40-acreheadquartersinPomonaCA, independentlyrawPASS; unknownstatusuntouched. Receiptstoredonceforreuse.
+
+AcalibrationT.O.Plastics:ownPDFmetadataauthorT.O.Plastics,created2025-11-04;HQleftcolumnClearwaterMN/manufacturingrightcolumnOtsegoMN. Initialcontiguousquote fails-layoutinterleaving;3boundedorderedexcerpts checkedonsamecapturedPDFpass,notclaimedadjacent. Norefetchtocompensate. Rawreceiptretainsinitialfailure/layoutnote;helpernotifiedandquoteagreed.
+
+TPM/PlasmanPrecisionPartscalibration:currentownaboutopeningnamesHopkinsMinnesota,andcurrentHopkinsPlantsectionexpresslylocatestheplantatTPMheadquarters. Samepagenames2023standaloneand2024rebrandfromPlasmanPrecisionPartstoTPM. FreshraworderedexcerptsPASS;supportsheldoperatingbusinessHQwithoutlegalrename/parent/statusmotion. Historical2001MItyponotused. Helperagreementrecordedhereandmessage,receiptcachedonce.
+
+## Applied packet and checks
+
+Final49 organizations =8HQ_FOUND +41STILL_UNKNOWN. The41holds comprise39researchholds+2explicitL3ownershipexclusions. Among47eligibleorganizations yield8/47=17.0%; among49frozenrows8/49=16.3%. All8changedtiersC unchanged; statusactive5/unknown3 unchanged. DestinationsMN2/SC1/LA2/CA3.46historicalevidencerowsmoveintact+8newaddressobservations EVD-317006,317011,317030,317034,317035,317037,317040,317043. Noorg/sitecreates,identityrenames,parent/statusmotions. Residual249→241 onintegration5a90bb1. Nochanges009017/009026.
+
+Rawintegration:9HQproposals independentlycapturedonce,PolyProcessingmanualcontiguousquote not reproduced→holdwithsettlingfact; noabsencefinding. TO PDF3splitexcerptsverifiedagainstsamecapturewithlayoutnote+originalcontiguousfailurepreserved. SunownSDS2023-03-31explicitmanufacturer “SUN DRILLING PRODUCTS CORP. d/b/a SUN SPECIALTY PRODUCTS” independentlyfetched/matched asidentitybridge,URL+quoteaddedaddressEVDnotes;notalegalrename. identity-rawcheck.json retainsseparatereceipt/hash.9HQfetches+1Sunidentityfetch=10integratorrequests;A67+B58+lead10=135routesover47eligibleorganizations,max6perorganization(Sun4helper+2lead). Bothhelpersstopped,nocontinuation.
+
+Namedchecksreproduced: A25exactIDs/3proposals22holds/67hashes/max3helperroutes/3knownsources+parentnegative+6faultsPASS;B24exactIDs/6proposals16researchholds2excluded/58hashes/max4routes/3known+SunlegalDBA+parentnegative+6faultsPASS. Lead3reusedknownrawpages+2badsubstitutionsPASS. check.py full49frame/fullunion+contents/exclusions/evidence/receipt/replay+3no-writefaultsPASS;validate.pyPASSzeroerrors,4972organizations/7032sites/36781evidenceobservations on5a90bb1 replay. Fullscriptspytestnotrun;scriptsunchanged.
+
+Fault-control correction: EVDcollisiontestinitiallyreplacedfirstURLoccurrence,whichwasanolderEVDsharingtheURL,soitdidnotexercisea new-IDcollision. CorrectedtestmutatestheexactnewEVDID’ssource_ref;expectedfailure/nowritesnowobserved. Noacceptancecriterionrelaxed. BuilderandoraclepreserveoldEVDcontentsagainstintegrationbase.
+
+ReviewpendingCodex3/Grok3. Finalmainreplayifneededrecordedbelow. Thisiscontroller’sfinalbatch;researchstopped,nofurtherbatchwillstart.
+
+## Final fresh-main replay
+
+Mainadvancedto4b69ed3(PR154included). Restoredcompletecurrentmaincanonicaldata/,updatedbase.txt,reranidempotentbuilder. All8HQupdatesstillapplywithsameIDs/content;46oldEVDimmutable. Full49frame/fullorg+EVDunion/content/exclusions/receipt/replay/3no-writefaultsPASS. validate.pyPASSzeroerrors:4972organizations,7032sites,36812evidenceobservations. Residual249→241. frame-base8a5821bunchanged. Noothermainchangesrideaslanediff. Finalbranchhistoryispre-passbackup;READMEispassjournal.
+
+## Grok review receipt — APPROVE
+
+2026-11-06 Grok clerk5 thr_r5auppm5ps APPROVE with no findings, bound to payload459843d. Reviewer passed validator0/check.py/row-loss against merge-base4b69ed3 and independently confirmed eight unchanged-tier/status HQ edits,46oldEVDintact+8new317000block,49exactframe and no federal-frame changes. TPM currentHopkins/rebrand,TOclearwaterHQversusOtsegomanufacturingcolumns,Wikoffexplicitheadquarteredseparatefromdateline,ASHcorporateoffice,Watkinsownemployervoice,CalSpascurrentHQ,andSSIexplicitheadquarteredopening verified. Sunliveownpage/SDSroutesunavailable;reviewer verified lane capture SHA336841f934d34d6fdb720d384a7d2b440fe6a7c80ed99506106bef54a061ab7d andSDSraw with exactlegalDBA+503MainStreet/BelleChasseanddate2023-03-31. Approvalincludesexplicitcache-confirmedlimitation,notfreshSunavailabilityclaim.
+
+Receipt changes README only, reviewed payload unchanged. Codex family approval still pending; no two-family completion/merge claim. Prior text saying both families pending is superseded for Grok only. Research remains stopped.
+
+## Codex approval and both-family main replay
+
+Codex/OpenAI clerk2 thr_mdr3gn2xmm APPROVE/zero findings on cce3b13 (payload459843d), report reviews/199-clerk-codex-2.md in controllerstorage. Independently fetched eightHQwitnesses+SunSDS,allHTTP200,8/8quotes;TOvisuallydistinguishedHQClearwatervsOtsegomanufacturing;TPMcurrentHopkins/rebrandandSunlegalDBAverified. Allchecks/helperchecks/validator0/rowlossPASS;clean4b69ed3replayreproduced220canonicalCSVhashes,replayzerowrites,3faultcontrolsPASS. Fullunion8edits/46oldEVDintact8new/49frame,C8/statusactive5unknown3/exclusionsunchanged,135routes47eligiblemax6verified. Approvalpinnedpayload,mainintegrationrequired. Grok5approvalbound459843dalreadyrecordedabove;bothfamilygateestablishedforreviewedpayload.
+
+Controllerrequestedfreshmainreplayafterapproval. Tookcompletecurrentmaincanonicaldata/,preservedcurrentfullrowpreimagesseparatelyinpreimages.csv;original49cohort/frame-baseunchanged. Eightupdates.jsonpayloadsexactlyequal459843d,nonewsource/status/tier/identityfacts. Builderpreflightusescurrentpreimagesratherthanstaleoriginalunrelatedfields;fulloracleprovesallothermaincontentpreserved. Check/validatoroutcomepinnedbelow. Controllerownsmerge/status,nofurtherHQresearch.
+
+Approvedpayloadreplaybase1c0ce33ead018c4d3e522f8518ee7984dc2461d0:checkfull49frame/union/exclusions/raw/replay/3faultsPASS,validate0PASS;residual254→246. Eightpayloadsexact459843d;bothreviewreceiptsincluded.

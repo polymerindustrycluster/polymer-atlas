@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "scope": "Controller-assigned campaign hygiene: QUEUE campaign section and task-only postmerge receipts/audit. No canonical data or production scripts/schema changes.",
+  "criteria": [
+    "Frozen GitHub merged/open states and branches reconcile, continuation claims represented, earlier QUEUE prefix preserved; restore PR68",
+    "Receipt commits/source paths preserved; mixed commits README-only; already-main receipts skipped",
+    "Five follow-up families in six lines with public unique/disjoint counts; no private T1 lists",
+    "Task checker + negative controls/idempotent builder, validator zero errors; protected-path diff empty"
+  ],
+  "out_of_scope": [
+    "Historical source re-verification/old producer checks",
+    "Private outreach/organization list or contacting anyone",
+    "Hosted deployment and later GitHub merges beyond frozen snapshot"
+  ],
+  "revision": "d0ce84942b4c147aed614aee2a93a686f6ee2260",
+  "tool_access": "Clerks may inspect complete source branch/PR/task files and immutable source commits; no edits/merges.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "58696ba85d0055338186167ddb637fe8a68c0784f088a5052a4aa0c1012b6271"
+    },
+    {
+      "path": "README.md",
+      "sha256": "732d0993e933f89c4018afe9524918470faccf99cc3872f57a90ce03f8481e95"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "ae4a526d0fe2b6b77e6273cb61e66b5a38ce881fb66206c2bfbfaad79dc981a2"
+    },
+    {
+      "path": "base.txt",
+      "sha256": "0713010b6d4846611cc85cc6ffaed560b25955cf23d6024c18247365bd49387f"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "4b950e943bd1381e4c7d9f84725b97ce84e982ae68753cb91ec4837b140f435b"
+    },
+    {
+      "path": "build.py",
+      "sha256": "a53d6c8f7854a9ad9919475ad29cb3b0c5082a08646bf6cc5515c1fa95a18c16"
+    },
+    {
+      "path": "check.py",
+      "sha256": "2d06fc9c01b55fa7ea43702323aec7006819669911276ddecbca0d4f9ddcb475"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "a893bf817f3abe6d7a28a1e197a48d74bb1a463a1009a6adccedc1459e92e02c"
+    },
+    {
+      "path": "claims.json",
+      "sha256": "a0c308de5b97ece13b0f2a6efd157047c903ea541d792039a0e8819bf9dad269"
+    },
+    {
+      "path": "continuations.json",
+      "sha256": "8ec9eba42ca28ca63042a548282db856d629c216ee10135f9d0ac870b12ff07a"
+    },
+    {
+      "path": "counts.json",
+      "sha256": "6bf3daa2a5b554c53c505b400bb5c25ba301ba7c58c287ddbfaa6c57b7aa31f0"
+    },
+    {
+      "path": "merged-prs.json",
+      "sha256": "9d7d0b2f2e1a419bd8dcc50392fdfc09e5d34945f9acdcc67972ea4cbc69bf3a"
+    },
+    {
+      "path": "open-prs.json",
+      "sha256": "09ae3237d379685d5fbbe649051e0a1ff3628477d4c5c80585b26e9ffddc65a2"
+    },
+    {
+      "path": "receipts.json",
+      "sha256": "0d95c80707779b299e512b5a29e010ae3612d2ddc0c511ccb2ff7ed7f4b1190b"
+    },
+    {
+      "path": "snapshot.json",
+      "sha256": "870195fce1dad1794b0c0e7e01902f1ab4d8e5a901cb8995077a7bd266c7116b"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "c469c54e3a7c0d8ef47eb14c510e5a7380667dbdfd7d55ac2a4198676ff1a745"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/campaign-hygiene-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [
+    {
+      "id": "codex6-initial",
+      "findings": []
+    }
+  ],
+  "receipts": []
+}
