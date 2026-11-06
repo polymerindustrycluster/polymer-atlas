@@ -72,6 +72,7 @@ python3 scripts/atlas.py next-id --all   # every ID namespace and its next free 
 
 ```bash
 python3 scripts/validate.py                       # must print "OK — validation passed."
+python3 scripts/check_row_loss.py --base origin/main  # no keyed row may vanish; declare intended removals in REMOVALS.csv
 python3 scripts/export_vocab.py --check           # if you touched validator vocabularies
 python3 -m unittest discover -s scripts -p 'test_*.py'   # all tests (~12 s)
 ```
