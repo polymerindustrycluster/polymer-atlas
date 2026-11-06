@@ -18,6 +18,21 @@ universe={r['cluster_id'] for r in read(ROOT/'tasks/lead-fusion-2026-11-01/clust
 assert universe=={r['cluster_id'] for r in prior+cs}
 assert len(alloc)==CREATES==len({r['site_id'] for r in alloc})
 assert len(read(H/'blind-input.csv'))==CREATES
+site_by={r['site_id']:r for r in read(ROOT/'data/sites_IL.csv')};ev_by={r['evidence_id']:r for r in read(ROOT/'data/evidence_sites_IL.csv')}
+def review_cures(morris,matteson,address,scope):
+ assert morris['ring_primary']=='1','resin-production precedent regressed'
+ assert matteson['street_address']=='21901 Central Avenue','street contains locality'
+ assert address['claim_detail'].count('Matteson')==1,'locality repeated'
+ assert 'produces' in scope['claim_detail'] and 'Low-Density Polyethylene' in scope['claim_detail'],'own process witness absent'
+review_cures(site_by['SITE-019020'],site_by['SITE-019022'],ev_by['EVD-270155'],ev_by['EVD-270161'])
+for bad in ['ring','street']:
+ m=site_by['SITE-019020'].copy();a=site_by['SITE-019022'].copy()
+ if bad=='ring':m['ring_primary']='2'
+ else:a['street_address']+=' , Matteson, IL 60443'
+ try:review_cures(m,a,ev_by['EVD-270155'],ev_by['EVD-270161'])
+ except AssertionError:pass
+ else:raise AssertionError('original refute defect escaped')
+
 paths=[ROOT/'data'/('sites_'+STATE+'.csv'),ROOT/'data'/('evidence_sites_'+STATE+'.csv')]
 for p,key in zip(paths,['site_id','evidence_id']):
  old=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',BASE+':data/'+p.name],cwd=ROOT,text=True))))
