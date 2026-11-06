@@ -1,0 +1,39 @@
+# L6 TX CORROBORATED batch2
+
+Controller06:30 grant: next40core ranked TXclusters41–80of233CORROBORATED, newbranch offcurrentmain. Explicit core3252/3261/3262/325991 first,scoredescending,cluster_idascending. Firstusercampaignintegrator2026-11-06; non-usefinding2026-11-13. Controllerownsstate.
+
+Acceptance:validate0;40uniqueclusterverdicts;min(20,N)blindsourcecheck/fullcensusifN<20;IDuniqueness;globalcross-shardcollisionfailurebeforeanywrite;noexistingmainrowedits;byte-identicalreplay;strict326count/QCEWbeforeafterwithscripts/build_qcew_denominators.py;twofamilyreviewapprovalbeforeReady. Draft-before-refute and clerk4pair permitted bycontroller05:55/06:25.
+
+17VERIFIED/23STILL_UNCERTAIN,10newparentC/17siteC/133EVD. Noownscope/Bpromotion. Nochangeexistingrecordstatus,capability,HQorcounty. Allnewstatusunknown;HQblank/residualUS;countyblankorientation-only. IDsORG010600+,SITE015200+,EVD192000+insidelaneanddisjointpriorslots. Freezeallocationsinreserved-ids.jsonbefore review;retiredslotsneverreused. Branchhistoryispre-passbackup;builderonlyintegration.
+
+Sources:bankedITA2025/OSHAinspectionextractsvintage2026-11-01reviewed2026-11-06undercontrollergrant. ITAcitationsactualCY2025largefilesURL,establishmentID,submissiondate. ReliableconsistentITAemployee bands only. RegistryIDs/extraestablishmentfederalframeIDsnotesonly,noFRSREST,registry_linksorderivededits. NoForm5500employerheadcounts/siteclaims. GovernmentmanufacturingclassificationssupportprovisionalC,nocapability/currentoperationinference.
+
+Domain/name/street/trade-name CLIacrossallshards,dedupe.json. KnownZeonORG003068,StoropackORG001128,AndersenORG004305. JMmergedORG002260followssuccessorORG002261. Prestoproducts ownpageexplicitlystatesbusinessunitofReynolds;parentown_site evidencequoteisliteralonly,noalias/code fromgovernmentsource(controller07:20). Onlysiteparentclaimhasown-sitequote. Nootherownrows.
+
+## Holds
+
+23settlingfactsinverdicts.csv. EveryNconcordanceclusterheld(includingINEOSofficesuite,Indoramarecycling,PPGperipheralcodes,TapeInnovationsmixedfamilies,Wincup,Exxon/Lyondellolefins,PolymerProductsandArlon); builderassertsnoNcreate. ReefMykawa acquiredInteplastoperatorstructureheld;AlmedaownfooterSales/CustomerServiceversusMykawaProductionheld. DallasPlasticsHiDeacquisitionnotwronglylinkedtothesubsidiary. Utexlegaloperatorhold;CorpusChristiPET/PTAconstruction/commissioningoutcomehold;M&Qmultiplehelddomainhitshold;Prudentidentityhold;GeotexunitAhold;GSFProctorStreetvsfederalRdhold;MI/Miterparenthold;Connerwood/polymerphysicalscopehold. NoREJECTclosure/noestablishment,noowner-rulingexception.
+
+OriginalCA1andTX1refuteswereappliedupstreamtocontinuation:classificationonlyscopealwaysC;nonconcordantcode/operatorhold;physicalstreetconflicthold;own_siteclaimsnevercopyfederalaliases. Noartificialyieldtarget. Full17blindcensusratherthanduplicatecases toreach20. PrestoOSHAroadmissingEdirectionexcluded;ITAphysicaladdressisused.
+
+Checks/refutespending;notDone.
+
+Namedchecks2026-11-06: validate0errors/OK;check.pyPASS40uniqueverdicts/full17-sourcecensus/byte-identicalreplay/latecross-shardEVDcollisionzerowrites. ExistingmainrowsallpreservedbyID. Own_siteattributionauditclean. Strict326107→122/953(11.2277%→12.8017%),15strict326sitesplus2resins/rubbercodes325211/325212. NoDoneclaim;two-familyreviewsrequestedafterdraftpush.
+
+Codex4 REFUTE518da00 accepted: held IFS Coatings LF-TX-00505 deciding_fact erroneously carried VERIFIED boilerplate. Replaced with actual settling fact: plant-specific polymer binder/resin manufacturing witness for OSHA325510 and reconciliation of cluster326299 to same establishment. Remains STILL_UNCERTAIN, no data/verdict disposition/allocation change. This is the corrected23rd settling fact; prior semantic/source/count checks passed.
+
+## Fix pass 2026-11-06 (Claude, controller thr_9i2c6byhcz): IFS settling fact, hold audit, merge of main
+
+This supersedes the 1aebb16 IFS wording above (the "polymer binder witness" was not the open question).
+
+**IFS Coatings, LF-TX-00505, why it is held.** Six primary fetches (`ifs-research.csv`; ten quotes re-checked raw, in order, with `research.found`; stripped page texts in `thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/corroborated-tx-2-2026-11-06/`). IFS's own site names 3601 N I-35, Gainesville TX 76240 as its primary plant. It says the plant makes thermosetting epoxy, hybrid, polyester, polyurethane and fluoropolymer powder coatings, plus thermoplastic powders, by premix, extrusion and grinding. That settles existence, address and activity. FRS 110059616973 carries 325510 and 326299 at the same street, so the 326299 code is on the same facility record. The open fact is the **parent of record**. Main already places SITE-006097 "IFS Coatings - Ardmore" (OK) under ORG-002633 Ifs Industries Inc., an adhesives maker in Reading PA (ifscos.com). No IFS Coatings page fetched names IFS Industries, and ifscos.com failed with curl rc=60 (TLS), which is an availability signal only. Settles on a primary statement, from either company's own site or a state SOS filing, that names or denies the relationship. A create would be Ring 2 `coating_formulation` (SCHEMA §2, 325510 P*). That is outside this lane's 326 numerator and its 3252/3261/3262/325991 cohort, so it stays held for its own pass either way. No data, disposition or allocation change.
+
+**Hold audit (23 STILL_UNCERTAIN).** Only IFS carried the VERIFIED boilerplate. The other 22 each name an unresolved fact. Three stated the gap without the check that settles it, and gained one "Settles on" sentence built only from facts already in the row: 00164 (PPG Ennis North, which product the plant makes), 01298 (Miter/MI Windows Flower Mound parent of record) and 00258 (Arlon San Antonio primary activity). Dispositions are unchanged. build.py reads only VERIFIED rows, so hold text is data-neutral.
+
+**New check.** check.py now asserts that every hold's deciding_fact is non-empty, does not contain the VERIFIED boilerplate, and does not equal any VERIFIED row's deciding_fact. It also asserts there are 23 holds. An in-check injection (a hold given a VERIFIED row's text) must raise. Separately, check.py run against 518da00's verdicts.csv fails with `hold without a settling fact LF-TX-00505`, so the check catches the refuted defect.
+
+**site_name dedupe sweep.** dedupe.json searched org domain, org name, street and trade names. It never searched `site_name`, which is how the Ardmore placement escaped it. I swept the 17 VERIFIED creates' names against `site_name` in all 7,171 pre-existing site rows on the merged tree. There is no new duplicate. Every same-name hit sits under the same declared parent (Zeon, Storopack, Plaskolite, Presto/Reynolds, Andersen) at another street or state, or is an unrelated token match (J.M. Huber, J & M Plastics in Royse City, Cary IL). Andersen's two Garland sites are distinct establishments: 3801 Regency Crest Dr (new SITE-015216) and 3300 Wood Dr (SITE-005572).
+
+**Merge of main.** Merged origin/main 1cd71d0 with a normal merge. Took main's copy of the 4 conflicting data files and re-ran `build.py --apply`. Result: the same 17 VERIFIED and 23 held, and 160 rows (10 organizations, 17 sites, 133 evidence). The QCEW baseline was stale after main moved, so qcew_before.json was recomputed on origin/main 1cd71d0: TX 326 strict sites are 149 (was 107 at 412391a). After the build it is 164, a delta of 15, so 15.63% → 17.21% of 953 QCEW 2023 private establishments. This is a count ratio, not matched coverage.
+
+**Proposed follow-ups (not changed here).** (1) SITE-006097 "IFS Coatings - Ardmore" under ORG-002633 Ifs Industries Inc. is a probable false parent link. The OK skimpy wave of 2026-11-04 placed an "IFS COATINGS, INC" federal establishment under an adhesives company on name similarity. It needs its own review. (2) The lane dedupe recipe should also search `site_name`.

@@ -1,0 +1,6 @@
+{
+  "unit": "TX US establishments,NAICSprimary starts326,tiersA/B/C,statusactive/unknown",
+  "qcew_2023_private_establishments": 953,
+  "atlas_strict": 149,
+  "baseline": "origin/main 1cd71d0 (recomputed 2026-11-06 after merging main; was 107 at 412391a)"
+}
