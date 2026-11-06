@@ -12,7 +12,8 @@ Scope: the controller's November 6 BOARD and all **54 open/merged PRs #129–#18
 head commits, supplied **155 associated Markdown documents**. Lane README/REPORT holds and referenced relevant
 CSV questions were inspected. Repeated questions are consolidated below; ordinary failed routes, missing addresses,
 and unproved identities remain research, not requests to lower evidence standards. Historical questions explicitly
-requested by the controller are carried forward with their dates. Later PRs are outside this collection.
+requested by the controller are carried forward with their dates. A requested supplement cites PRs #201, #203,
+#205 and #206 plus the final #129 restore receipt; other later PRs are outside this collection.
 [November 4 format](OWNER_BATTERY_2026-11-04.md); campaign decision trail: controller thread `thr_9i2c6byhcz`, November 6 BOARD (private working ledger, not a public source).
 
 ## B-L10-ISO-TRANSITION: superseded editions during an official transition (SCHEMA R3c/R12)
@@ -307,3 +308,158 @@ it is not permission to classify Cytiva by analogy.
   doctrine; no owner exception is needed merely to continue research. Bring a genuinely ambiguous scope case back.
 - (b) Request a case-specific ring decision once the deciding process facts are in hand.
 - (c) Revise the general resin ring boundary by dated schema revision; no automatic non-326→Ring 2 mapping.
+
+## B-CBP-SMALL-SHOPS: what can a suppressed county small-shop denominator support?
+[The PR #131 CBP report](https://github.com/polymerindustrycluster/polymer-atlas/blob/2fb16a3d5b2ada1f31831457558ffc30e2f55076/docs/denominators/CBP_SIZE_CLASSES.md#L218)
+explicitly leaves this owner question open: PIC-18 county size-class cells marked `N` do not supply an exact
+small-shop count. Existing published-cell lower bounds and suppression bounds are not defective merely because
+the exact figure is unknown. A size-class count is establishments in the specified CBP vintage/NAICS, not companies.
+
+- **(a) Recommended:** defer an exact county small-shop denominator; retain `N` as unknown and publish only the
+  already supported, clearly labelled bounds. No zero-fill, midpoint, proportional allocation or Atlas coverage
+  ratio is authorized. A comparable independent source may settle the gap without a new estimation policy.
+- (b) Request a separately scoped alternative-source proposal with matching geography, vintage, size and industry
+  definitions before adopting a denominator; this choice does not commission or claim that work now.
+- (c) Consider a separately labelled modelled estimate only after the owner approves an explicit method and
+  uncertainty treatment. Never relabel an estimate or published-cells-only subtotal as an observed exact count.
+
+## B-GILKEY-SALES: ring and scope for a producer's consumer showroom?
+[PR #203's owner hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/38a44315899a1ad08d4a73608dcb721aece3217c/tasks/creation-error-corrections-2026-11-06/README.md#L9) identifies Gilkey
+Chicago Ridge SITE-019018, 10160 Virginia Avenue. Its [own page](https://www.gilkey.com/location/chicago-ridge-il/)
+calls it a showroom/office, without local polymer transformation. The controller authorized `sales_office` plus
+showroom notes and an inclusion-log seam, retaining historical Ring 1 as disputed, not re-affirmed. B14 bars simply
+inheriting the producer's manufacturing ring. Ring 3's producer services versus consumer retail/install scope is open.
+
+- **(a) Recommended:** explicitly admit a producer's own sales/showroom establishment in Ring 3 when its producer
+  relationship and business function are primary-sourced; never imply on-site transformation. Apply only after ruling.
+- (b) Treat the consumer sales/installation office as outside establishment scope while retaining its historical record.
+- (c) Keep the ring/scope hold until local specification/design or production facts settle the existing test.
+
+## B-DART-WAREHOUSE: ring for finished-products distribution without transformation?
+[PR #203's separate Dart hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/38a44315899a1ad08d4a73608dcb721aece3217c/tasks/creation-error-corrections-2026-11-06/README.md#L17) concerns
+SITE-014003 at 150 South Maple Street, Corona. The [own location page](https://corporate.dartcontainer.com/location/corona-ca/)
+names a distribution center. `warehouse_distribution` was authorized, but the historic Ring 1 remains disputed.
+A North Maple WARN is a different establishment; neither it nor the ZIP conflict establishes closure here.
+
+- **(a) Recommended:** classify the primary-sourced, producer-owned finished-polymer distribution function in Ring 3,
+  documenting its role without claiming manufacturing or copying the parent ring.
+- (b) Define a separate treatment for vertically integrated producer distribution sites by dated scope/ring ruling.
+- (c) Hold or exclude this distribution-only establishment from commercial scope pending local production evidence,
+  retaining the immutable historical record and explicit uncertainty.
+
+## B-D10-GEN: out-of-state generalist MEP eligibility
+[PR #206's B-D10-GEN hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L39) identifies a seam between
+Ring 5's generalist support entities and §4.6's allowance of `polymer_program=false` only for NE Ohio generalists.
+Pennsylvania MEP, Michigan Manufacturing Technology Center and the Purdue case cannot acquire a new geographic
+exception from legacy false/state rows. Generic additive manufacturing does not establish polymer training.
+
+- **(a) Recommended:** retain the existing geographic exception and hold out-of-state generalist-only creates;
+  admit an out-of-state candidate through the existing named polymer-service route when independently proved.
+- (b) Explicitly extend generalist MEP eligibility to a named geographic scope and define its reporting denominator
+  in a dated schema ruling, rather than creating isolated exceptions record by record.
+- (c) Authorize bounded case-specific generalist exceptions with named services/regions and explicit owner reasons.
+
+## B-D10-GRAIN: Ohio MEP and institution-hosted units
+[PR #206's B-D10-GRAIN hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L39) treats Ohio MEP as a
+program-grain candidate; Purdue MEP is a named unit of held Purdue ORG-004662. §4.6 does not turn a program into
+a separate institution. Ohio's own route failed, so even its proposed grain remains a lead, not a verified record.
+
+- **(a) Recommended:** use a supported host annotation or lawful §4.11 program representation after exact host,
+  program type, identity and scope evidence is obtained; no duplicate institution or invented office grain.
+- (b) Define a separately governed MEP-unit/network representation and parent linkage by dated schema revision.
+- (c) Keep these units as research leads until the owner reviews individual host/program proposals.
+
+## B-D10-GEO: NEPIRC's multi-county Pennsylvania service region
+[PR #206's B-D10-GEO hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/ee004fd7d7649da096c517efd410ccf812e2da31/tasks/federal-programs-2026-11-06/README.md#L39) has an own Plastics
+Processing training pathway and Hanover Township, Pennsylvania contact location. Its multi-county service area
+does not unambiguously fit §4.6's `site_local/county/ne_ohio/ohio/national/international` vocabulary. Legacy
+`pennsylvania` text does not authorize a new enum, and multi-county reach does not mean national reach.
+
+- **(a) Recommended:** define a US-state geography value with the narrower service region stated explicitly in a
+  dated schema revision; apply it only to independently sourced geography, not every organization in that state.
+- (b) Explicitly define the existing `county` token to cover enumerated multi-county regions and state how they are listed.
+- (c) Leave the vocabulary unchanged and keep NEPIRC's geography-dependent create held.
+
+## B-L4-MATERIAL-USE: what does purchased material in an owned product establish?
+[PR #205's owner question](https://github.com/polymerindustrycluster/polymer-atlas/blob/f6038096576bd3cbe96b8ec760014ce7423b77d5/tasks/pic18-record-health-6-2026-11-06/README.md#L26) contrasts a company's
+own manufactured laminate/product material with customer-owned nylon fabric and purchased nylon bearings that were
+held. Wooster's nylon-filament brushes and Eleven10's injection-molded case wording remain held where polymer
+conversion/manufacturing operator is unproved. A raw product-material statement need not prove who converted it.
+
+- **(a) Recommended:** distinguish the two claims: an explicit material specification for the company's own offered
+  finished polymer product may support an organization-level offered-material tag; it does not establish polymer
+  conversion, the manufacturing operator, site capability, or Ring 1–2 inclusion. Incidental bought components and
+  customer-owned materials alone do not establish the company's polymer offering. Record this interpretation only
+  after an owner ruling and re-review the affected cases; it creates no automatic T1 gain.
+- (b) Require the company's own conversion/operator evidence for all organization materials tags, even on its own products.
+- (c) Separate offered-product materials from transformed materials by a dated schema proposal, keeping existing holds
+  until their meanings and downstream health/counting effects are explicit.
+
+## B-L4-T1-CEILING: what is the route from desk work to the proposed 90% target?
+[PR #205's frozen dependency analysis](https://github.com/polymerindustrycluster/polymer-atlas/blob/f6038096576bd3cbe96b8ec760014ce7423b77d5/tasks/pic18-record-health-6-2026-11-06/README.md#L16) has
+472 healthy of 632 PIC-18 Ring 1–2 organizations before round 6. Even perfect success on all 75 initially named
+desk-gap routes could improve only 57 fully desk-resolvable organizations: **529/632 = 83.7%**, below the
+**569/632** required for at least 90%. This is an optimistic ceiling, not achieved coverage or a forecast.
+Actual projected round-6 progress is 477/632; 92 further healthy organizations would be needed at that frozen denominator.
+
+[The remaining combinations](https://github.com/polymerindustrycluster/polymer-atlas/blob/f6038096576bd3cbe96b8ec760014ce7423b77d5/tasks/pic18-record-health-6-2026-11-06/README.md#L40) are **50 owner-only,
+93 human/outreach-only, 11 scope re-verification-only and one mixed owner/human organization** (155 total).
+The private 93-organization worksheet is deliberately not published, linked or reproduced here. These are counts of
+organizations by blocker combination, not additive promises that decisions or replies will make them healthy.
+
+- **(a) Recommended:** retain both the original T1 series and the 90% proposal as an unachieved target; prioritize
+  case-specific owner decisions for roughly 50 organizations and consider owner-authorized outreach for roughly 93,
+  with the mixed case and 11 scope cases separately accounted. No outreach is sent or committed by this choice.
+  Recompute denominator/threshold after any actual scope/operator ruling; decisions cannot invent missing evidence.
+- (b) Revise the target/date explicitly to reflect the evidence-access and decision workload while preserving the old series.
+- (c) Keep public-source work only and defer a new target commitment; do not claim the desk ceiling is attained or sufficient.
+
+## B-L4-T1-TOMBSTONE: should active sites keep a tombstoned parent in T1?
+[PR #205's separate target-grain hold](https://github.com/polymerindustrycluster/polymer-atlas/blob/f6038096576bd3cbe96b8ec760014ce7423b77d5/tasks/pic18-record-health-6-2026-11-06/README.md#L14) records that
+original health includes an organization with an active site even when that organization is merged/acquired.
+A legal merge does not automatically prove the establishment's current operator or clear all health blockers.
+This is distinct from discounting proved-distinct duplicate pairs in B-L4-T1-ADJUDICATION above.
+
+- **(a) Recommended:** keep the original series and require site-operator settlement before a separately approved
+  current-operator target definition changes the cohort. Show any alternate definition as a scenario, not adopted T1.
+- (b) Exclude all tombstoned organizations prospectively, with a dated cohort/denominator restatement and preserved history.
+- (c) Explicitly retain legal-history organization grain in T1, documenting why active-site bindings keep such rows in scope.
+
+## B-TRIFID-DEDUPE: five historical identifier-sharing leads from the restore
+[PR #129's restore and review](https://github.com/polymerindustrycluster/polymer-atlas/blob/0dc3886429900127fc94135d98f82bd78ba6b300/tasks/registry-links-restore-2026-11-06/README.md#L35)
+distinguish three old doubly recorded pairs whose lost side was **not restored**, from two shared TRIFIDs whose
+previous state **was restored**. No new duplicate entity or merger is established by either operation.
+
+| Class | Organization pair / disposition at restore |
+|-|-|
+| Held lost side | Iten ORG-000386 / TDM ORG-002079: identifier stays on TDM |
+| Held lost side | Cooper Standard ORG-000755 / Lauren group ORG-001931: stays on Lauren |
+| Held lost side | Roppe Holding ORG-001088 / Roppe Corp. ORG-001087: stays on Roppe Corp. |
+| Restored shared `44319FRSTN381WE` | ORG-000011 / ORG-001716 |
+| Restored shared `43207VNYLM1441U` | ORG-000764 / ORG-001091 |
+
+- **(a) Recommended:** retain all five as source-keyed dedupe/operator leads, with the restore's current endpoints
+  intact pending registry/source identity and dated same-entity proof. A shared facility ID is not permission to merge
+  parents, move a registry link or delete an organization. Return genuinely ambiguous grain cases for owner disposition.
+- (b) Prioritize individual operator/identifier adjudication packets for owner review before any approved repoint/fold.
+- (c) Retain the unresolved shared links with explicit flags and defer structural changes; do not interpret deferral as dedupe approval.
+
+## B-TOMBSTONE-SITE-OPERATORS: which bindings from PR #201 remain held?
+[PR #201's complete census](https://github.com/polymerindustrycluster/polymer-atlas/blob/e0b2849798d6408cc18004cd4a473dff2f8d8ab1/tasks/tombstone-site-operators-2026-11-06/README.md#L10) covered 14 nonclosed
+sites under 10 tombstoned organizations: 10 repoints, **two sourced keeps and two unresolved holds**. The four
+remaining tombstone bindings are therefore not four failed operator findings.
+
+| Site | Evidence / settling fact |
+|-|-|
+| SITE-002364 Harmony PA | Current plant operator plus probable duplicate SITE-002304 at 109 Conica Lane, Evans City. A 2026 Florida legal principal address alone is not plant activity; ORG-002325 is only a conditional endpoint |
+| SITE-003134 Winchester KY | Post-sale legal operator at 605 Rolling Hills Lane and bridge to a held organization. Teknor's 2025-06-10 issuer statement that Danimer continues separately does not identify the old public Danimer entity as that operator |
+| SITE-001828 Cincinnati OH — sourced KEEP | Performance Plastics Limited exact-site certificate and ITA support retaining its held legal operator despite Pexco branding |
+| SITE-008319 Cedar City UT — sourced KEEP | BWAY exact-site OSHA/ITA witness supports the held operator; Mauser branding alone does not prove its legal cessation |
+
+- **(a) Recommended:** keep the two unresolved sites unchanged until plant-specific legal/operator evidence settles
+  the endpoint and the Harmony physical-site duplicate. Preserve both evidenced keeps unless new contrary facts arise.
+  Do not infer closure from insolvency, a dead domain, brand continuity or a blank successor field.
+- (b) Prioritize separate source-backed operator and physical-site disposition packets for the two held cases;
+  any fold/repoint still needs its own evidence and authorized integration.
+- (c) Leave all four bindings as documented history for now and explicitly adopt their treatment in the T1 cohort;
+  do not count legal branding as proof that an establishment changed hands or closed.
