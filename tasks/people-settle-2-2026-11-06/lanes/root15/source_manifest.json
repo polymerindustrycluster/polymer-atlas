@@ -1,0 +1,14 @@
+{
+  "assigned_candidate_people": 15,
+  "verified_proposals": 0,
+  "reject": 2,
+  "still_uncertain": 13,
+  "duplicate_of": 0,
+  "associated_unique_new_urls": 35,
+  "usable_http_sources": 21,
+  "cached_full_own_pages": 2,
+  "unavailable_sources": 12,
+  "full_url_hash_manifest": "private root15/dispositions.json; uncertain/rejected discovery identities not published",
+  "pdf_expected_pages": 55,
+  "pdf_extracted_pages": 55
+}
