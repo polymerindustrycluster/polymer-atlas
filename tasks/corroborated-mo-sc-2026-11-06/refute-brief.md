@@ -1,9 +1,12 @@
+LATEST: main d9527fe pinned once for merge/fullcanonicalrestore/baseline; exact10fileboundary andoldrowpreservation PASS, tencreates74EVD unchanged. Uniquecompanypreflight+thirdambiguityno-writefault added.
+
 LATEST CURE: Grok3 false Aurora/Avient duplicate REFUTE accepted. LF-MO-00380 now STILL_UNCERTAIN, no target/create. Nonempty street_key required; exact reported false-link injection rejected, blank/hash-leading controls plus real Road/Rd match PASS. All143 re-screened,10VERIFIED133holds0duplicates;10creates74EVD unchanged.
 
 LATEST HEAD UPDATE: main now includes mergedSTRONG PR141, baseline.json pins current source. Final T3 MO43→47/368, SC52→57/406, batch increments unchanged+4/+5. Added explicit global SITE/EVD uniqueness checks before dictionary construction; both cross-shard duplicate injections fail before any data writes. Prior canonical records preserved and replaybyte-identical; counts10Csites/74EVD unchanged.
 
 Adversarial two-family completion refute requested: PR continuation L3,143 CORROBORATED clusters (MO63 SC80). Full census10 proposed new sites, all provisional C and operating_status unknown,0orgs,74 evidence (70 siteC+4 primary-government registrant identity observations A);4 held trade_names variants added. No own_site quotes or fresh operating checks claimed. Banked ITA CY2025 witnessed packet2026-11-01 reviewed2026-11-06, official URL keyed establishment_ID. Government primary identity observations support A only for filed company_name, never promote plant tier/scope/liveness. Class ceiling government_filing permits A. Known3identity answers+ambiguous alias mutation passed. All143 exactverdicts;10verified133uncertain0duplicate. Primary federal company name must independently resolve exact normalized legal/trade name of one active surviving held operator. Plantlabels/parentvariant alone held. Production code+explicitpolymermanufacture text required; paintremover/distribution and Crown identity/DuncanInnovation held. No sourceabsenceclosure inference.
 Check.py allPASS: exactcensus/sourcebinding,countryCunknown,global/reservedIDs,T3+4MO/+5SC; three censusdefects caught; wrong-shard-ID injection fails beforewrites. Existingcanonical rows comparedagainstbdb8b98: only4trade_names additions; evidenceappend-only. Allstatebuilderreplaybyteidentical. validate.py0errors. Entire10createcensus in blind-full-census.csv, inspect all10 not20sample since fewercreates. ReservedSITE012100+frozenindex;EVD300000+20index under controllergrant300000..309999. Goal legalverdictpercluster, uncertainallowed; do not demandholdsintegrate. End APPROVE or REFUTE with material findings and coverage. Never modify this lane worktree.
+
 
 
 
@@ -118,6 +121,8 @@ Updated-main integration: conflicts resolved with main data then both-state buil
 Updated main boundary comparison PASS: every original record/evidence retained; only four registrant alias fields gain values. Replay byte-identical. validate0errors, source/census/T3 checks PASS, both SITE and EVD cross-shard defect injections fail before writes.
 
 Grok3 REFUTE accepted: LF-MO-00380 was falsely linked to blank-street Avient SITE-002896 because the house street normalizer strips leading `#6` and returns empty. The lane now requires a nonempty normalized street key before matching. Aurora is STILL_UNCERTAIN with no duplicate target or create. Counts supersede the earlier 132-hold/one-duplicate result:10 VERIFIED,133 STILL_UNCERTAIN. The checker injects the exact reported false duplicate and rejects it; blank/blank and hash-leading/blank comparisons are false, while a real road/Rd variant still matches. Preparer ignores this lane's own created sites so replay does not relabel its creates as duplicates. Ten site creates and74 evidence rows are unchanged. Shared atlas.py normalization is not modified; controller notified of its leading-hash limitation. Targeted Grok3 re-review pending; Codex review pending.
+
+Pinned-main integration d9527fe: all canonical data restored from the same pinned main SHA used for merge/baseline, then both builders replayed. This avoids the shared origin/main ref advancing between operations. An earlier preservation assertion correctly detected an OH-baseline mismatch; no passing preservation claim was made for that attempt. Final exact10datafiles/all old canonical rows preserved except four alias fields,10sites74EVD, all-CSV replay PASS. LA-equivalent unique-active-company-name guard and third ambiguous-company no-write fault now pass alongside both ID faults, Aurora false-link regression, census/T3 and validator0errors.
 
 
 FILE prep.py
@@ -243,6 +248,8 @@ def main():
   f=fed[0];assert f['establishment_id']==v['establishment_id']
   create_dedupe[v['cluster_id']]=dedupe(tables,domain=org['website'] or None,name=f['company_name'],street=f['street'],city=f['city'],state=a.state,zip_=f['zip5'])
   aliases=[org['legal_name']]+org['trade_names'].split(';');assert name_key(f['company_name']) in {name_key(x) for x in aliases}
+  matches={rid for rid,(_,r) in orgs.items() if r['status']=='active' and not r['successor_org_id'] and name_key(f['company_name']) in {name_key(x) for x in [r['legal_name']]+r['trade_names'].split(';')}}
+  assert matches=={oid}, 'ambiguous filed operator'
   assert all(r['reliability']=='ok' and r['state']==a.state and r['naics_code']==f['naics_code'] and street_key(r['street'])==street_key(f['street']) for r in fed)
   assert street_key(f['street']) and f['city'] and f['zip5'] and f['schema_2_2_signal']=='P'
   assert f['naics_code'].startswith('326') or f['naics_code'] in {'325211','325212','325510','325520','325910'}, 'not a producer code'
@@ -369,8 +376,18 @@ def main():
     assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
     assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
     wrong.write_bytes(original)
+   wrong=data/'organizations_AL.csv';original=wrong.read_bytes();rows=read(wrong)
+   other=next(r for r in rows if r['status']=='active' and not r['successor_org_id'])
+   other['trade_names']=(other['trade_names']+'; '+ita[alloc[0]['establishment_id']]['company_name']).strip('; ')
+   with wrong.open('w',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
+   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   run=subprocess.run([sys.executable,str(H/'build.py'),'--state',alloc[0]['state'],'--data-dir',str(data),'--apply'],capture_output=True,text=True)
+   assert run.returncode and 'ambiguous filed operator' in run.stderr,run.stderr
+   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   wrong.write_bytes(original)
  print('PASS exact143 census;3 census defects and reported blank-key duplicate caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
+ if a.negative_controls:print('PASS injected cross-shard SITE/EVD collisions and ambiguous company refused before any data write')
 if __name__=='__main__':main()
 
 
