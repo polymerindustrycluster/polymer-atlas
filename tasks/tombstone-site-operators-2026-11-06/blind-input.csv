@@ -1,0 +1,14 @@
+site_id,source_family,source_id,operator,establishment_name,street,city,state,zip,date,source_ref,packet
+SITE-000518,ITA,1564407,"Pexco, LLC",Performance Elastomers,7162 St. Rt. 88,Ravenna,OH,44266,2026-04-24,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-000527,ITA,1271728,Preformed Line Products Co,Preformed Line Products Peninsula,200 Industrial Drive,Peninsula,OH,44264,2026-01-30,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-001828,ITA,1205448,Performance Plastics,"Pexco, LLC - Cincinnati",4435 Broadway Ave,Cincinnati,OH,45209,2026-07-09,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-003477,ITA,1437380,Tarkett USA Inc. - Middlefield,Tarkett USA Inc. - MIddlefield,16035 Industrial Pkwy.,Middlefield,OH,44062,2026-01-23,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-003478,ITA,836672,Tarkett USA Inc.,Tarkett,16910 Munn Rd.,Chagrin Falls,OH,44023,2026-03-02,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-006049,ITA,859924,JM Eagle,JM Eagle,146 North Maple Avenue,Hastings,NE,68901,2026-01-29,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-006099,OSHA,OSHAE-c327be14c1,"J-M MANUFACTURING CO., INC.","J-M MANUFACTURING CO., INC.",4501 W. 49TH ST.,TULSA,OK,74107,2026-08-18,https://www.osha.gov/ords/imis/establishment.inspection_detail?id=349117804,2026-11-01
+SITE-006143,OSHA,OSHAE-3e9bfb1d20,J-M MANUFACTURING COMPANY INC,J-M MANUFACTURING COMPANY INC,1742 E PLATTEVILLE BLVD,PUEBLO WEST,CO,81007,2025-05-12,https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348240938,2026-11-01
+SITE-006243,ITA,1251593,JM Eagle,JM Eagle,31240 Roxbury Road,Umatilla,OR,97882,2026-01-07,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-002301,ITA,1420514,Justi Group Inc,Esstech Inc,48 Powhattan ave,Essington,PA,19029,2026-02-01,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-002665,ITA,1068204,WL Plastics,WL Plastics - Titusville,221 South Perry Street,Titusville,PA,16354,2026-01-22,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-008319,ITA,1087398,Bway Cedar City,Bway Cedar City,1033 North Production Road,Cedar City,UT,84721,2026-02-18,https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv,2026-11-01
+SITE-008319,OSHA,OSHAE-c6c51829d4,BWAY CORPORATION,BWAY CORPORATION,1033 N PRODUCTION RD,CEDAR CITY,UT,84721,2024-04-18,https://www.osha.gov/ords/imis/establishment.inspection_detail?id=347426389,2026-11-01
