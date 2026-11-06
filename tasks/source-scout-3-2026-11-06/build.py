@@ -63,6 +63,8 @@ def main():
  assert counts['exact_name_candidates']==sum(bool(r['atlas_ids']) for r in assignees)
  assert counts['pic18_location_assignees']==sum(int(r['pic18_assignee_location']) for r in assignees)
  metrics['patent_match_rate']=dict(matched_assignee_candidates=counts['exact_name_candidates'],assignees=len(assignees),fraction=counts['exact_name_candidates']/len(assignees))
+ us=[r for r in assignees if 'US' in r['countries'].split(';')]
+ metrics['us_patent_match_rate']=dict(matched_assignee_candidates=sum(bool(r['atlas_ids']) for r in us),assignees=len(us),fraction=sum(bool(r['atlas_ids']) for r in us)/len(us))
  dest=HERE/'metrics.json'
  if '--write' in sys.argv:dest.write_text(json.dumps(metrics,indent=2)+'\n')
  else:assert json.loads(dest.read_text())==metrics,'metrics stale'

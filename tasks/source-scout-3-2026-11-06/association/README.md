@@ -10,6 +10,8 @@ Sample: seeded uniform draw without replacement, seed 20261106, 20 of 95 process
 
 Domain/name and aliases use the existing `scripts/atlas.py` dedupe function across all organization shards plus ecosystem. Street checks apply when a primary address was obtained; blank streets mean uninspected, never no match. Seven singleton domain/name matches terminate at held IDs. Substring-only matches, multiple IDs and the Universal Seal→HM Royal domain/operator ambiguity are STILL_UNCERTAIN. Failed fetches remain uncertain and were not treated as absence. At most four requests per entry; no closure REJECTs.
 
+`python3 tasks/source-scout-3-2026-11-06/association/check_frame.py` re-fetches the source and reproduces the count and seeded selection; parser fixture and missing-boundary failure are checked first.
+
 Known-answer check: Goodyear ORG-000003, Avient ORG-000001, Lubrizol ORG-000002 resolve with the shared matcher (`../build.py`). The parser boundary was corrected before sampling: `<h3><span>Supplier Members</span></h3>` must end the processor frame; the earlier 146-entry mixed frame was discarded, not used for yields.
 
 | Hold | Settling fact | Recommendation |

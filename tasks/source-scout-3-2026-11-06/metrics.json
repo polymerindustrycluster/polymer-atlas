@@ -36,5 +36,10 @@
     "matched_assignee_candidates": 525,
     "assignees": 12939,
     "fraction": 0.0405750057964294
+  },
+  "us_patent_match_rate": {
+    "matched_assignee_candidates": 494,
+    "assignees": 4507,
+    "fraction": 0.1096072775682272
   }
 }

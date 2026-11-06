@@ -12,7 +12,7 @@ Filter: g_patent grant date >=2020-01-01, withdrawn !=1; g_cpc_current subclass 
 - **79,016 qualifying grants worldwide** including patents without an organization assignee.
 - **76,311 qualifying grants with an organization assignee**; **12,939 disambiguated organization assignees**, worldwide.
 - **525/12,939 exact normalized-name Atlas candidates = 4.0575%** (all organization shards plus ecosystem, legal/trade names); unknown domain/street fields were not inferred. This is a conservative candidate match rate, not resolved ownership coverage.
-- **4,507 US-located assignees** (at least one US assignee location).
+- **4,507 US-located assignees** (at least one US assignee location); **494/4,507 = 10.9607%** have exact-name Atlas candidates. This domestic rate is more relevant to the US Atlas than the worldwide rate.
 - **133 assignees with a PIC-18 OH county location** on qualifying grants, joined by county_fips rather than county spelling.
 - **51 distinct held organizations with a PIC-18 HQ/site footprint are exact-name patent candidates** (`pic18_matches.csv`). This is a **candidate count, not a confirmed count of PIC-18 organizations owning patents**. Names, subsidiaries and successors need identity adjudication; a location on a patent is not a current plant address. The actual confirmed total is held pending that work. Patent counts deduplicate patent_id within each disambiguated assignee then union per held candidate; co-assigned patents may count for more than one organization.
 

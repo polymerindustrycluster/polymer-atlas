@@ -26,4 +26,6 @@ Controller thr_9i2c6byhcz owns integration and status. No sibling agreements or 
 
 ## Independent refutation
 
-Pending Codex + Grok deep completion refutes; results appended after inspection. No claim of Done while a required gate remains open.
+Council deep calls were refused by shared-host burst limits (no verdict). Controller 05:55 ruling supersedes council-only routing: assigned independent Codex/Grok refute clerks will review PR #131. Results appended after inspection. No claim of Done while a required gate remains open.
+
+Additional checks: `python3 tasks/source-scout-3-2026-11-06/association/check_frame.py` PASS: live95-element processor frame, seeded20 identities equal committed sample, three-item parser known answer and missing-boundary negative check. `python3 -m unittest discover -s scripts -p test_*.py` PASS:221 tests,1 skipped.
