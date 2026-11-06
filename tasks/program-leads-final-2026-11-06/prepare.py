@@ -9,7 +9,7 @@ def read(p):return list(csv.DictReader(open(p)))
 
 def main():
     inputs=read(HERE/'input.csv');receipts=[r for f in ('fetches.json','followup_fetches.json') for r in json.load(open(HERE/f))]
-    verdicts=[];quotes=[]
+    verdicts=[];quotes=read(HERE/'degree_research.csv')
     for r in inputs:
         lid=r['lead_id'];fetched=[q for q in receipts if lid in q['lead_ids']];assert fetched,lid
         verdict='STILL_UNCERTAIN';record='';quote='';url=''
@@ -23,17 +23,12 @@ def main():
         if lid=='L13F-040':why='Inherited GONE label is an unverified discovery assertion. Obtain named current catalog +dated operating outcome; Form5500 before any closure REJECT. No closure or status change in this pass.'
         if lid in ('L13F-138','L13F-139'):why='Puerto Rico establishment/schema/program-scope seam: settle institution identity, named polymer offer and lawful geography/schema interpretation. General materials management is not proof of polymer scope; no forced US-state placement.'
         if lid in ('L13F-016','L13F-116'):
-            record,quote=('PROG-000065','Polymer and Color Chemistry') if lid=='L13F-016' else ('PROG-000057','Plastics Engineering')
-            url=next(p['url'] for p in read(HERE.parents[1]/'data/programs.csv') if p['program_id']==record)
-            receipt=next(q for q in fetched if q['url']==url and q['http_status']=='200')
-            assert found((CACHE/(receipt['cache_key']+'.txt')).read_text(),quote)
-            verdict='DUPLICATE_OF';why='Institution own current named programme directly matches the held target; society chapter remains discovery only, not the evidence. No second programme or new entity.'
-            quotes.append(dict(lead_id=lid,source_url=url,quote=quote,raw_sha256=receipt['sha256']))
+            why='Need the institution own named eligible offer independently connected to this SPE student-chapter discovery lead. A held degree page verifies that degree, not the chapter or a duplicate relationship; do not select an arbitrary degree target.'
         verdicts.append(dict(lead_id=lid,source_row=r['source_row'],institution=r['institution'],verdict=verdict,record_id=record,source_url=url,quote=quote,attempt_urls='; '.join(dict.fromkeys(q['url'] for q in fetched)),http_statuses='; '.join(dict.fromkeys(q['http_status'] or '000' for q in fetched)),settling_fact_or_reason=why))
     for name,rows in [('verdicts.csv',verdicts),('holds.csv',[v for v in verdicts if v['verdict']=='STILL_UNCERTAIN']),('quotes.csv',quotes)]:
         with open(HERE/name,'w') as f:
             w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
-    print('169leads:0VERIFIED/2DUPLICATE_OF/167STILL_UNCERTAIN;0canonicalwrites')
+    print('169leads:0VERIFIED/0DUPLICATE_OF/169STILL_UNCERTAIN;0canonicalwrites')
 
 
 if __name__=='__main__':main()

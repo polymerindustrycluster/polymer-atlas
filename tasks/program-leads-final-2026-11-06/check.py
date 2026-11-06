@@ -7,6 +7,11 @@ from build import HERE,read,check
 def hashes():return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (HERE.parents[1]/'data').glob('*.csv')}
 
 
+import subprocess,sys
+subprocess.run([sys.executable,str(HERE/'prepare.py')],check=True)
+packets={p.name:p.read_bytes() for p in HERE.glob('*.csv')}
+subprocess.run([sys.executable,str(HERE/'prepare.py')],check=True)
+assert packets=={p.name:p.read_bytes() for p in HERE.glob('*.csv')}, 'producer replay changed packet'
 before=hashes();check();check();assert before==hashes()
 rows=read(HERE/'verdicts.csv')
 for kind in ('duplicate','missing','new_create'):
