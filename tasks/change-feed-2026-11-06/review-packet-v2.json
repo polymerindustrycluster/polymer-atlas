@@ -106,16 +106,27 @@
   "round_limit": 3,
   "rounds": [
     {
-      "round": 1,
-      "family": "codex",
-      "verdict": "REFUTE",
-      "finding": "Leaf symlink escape; pair inconsistency on output error; arbitrary/wrong-table ID namespaces. All accepted and fixed in8b22ed5; rerun adversarial-after and rollback tests."
-    },
-    {
-      "round": 1,
-      "family": "grok",
-      "verdict": "APPROVE",
-      "finding": "Original0f0551f; corrected implementation requires re-review."
+      "id": "initial-codex-grok",
+      "findings": [
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "output-leaf-symlink",
+          "evidence": "Codex1 codex-refute.md; reproduced adversarial-before.json, corrected8b22ed5, adversarial-after.json and eight passing tests. Grok original APPROVE historical only."
+        },
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "output-pair-consistency",
+          "evidence": "Codex1 codex-refute.md; reproduced adversarial-before.json, corrected8b22ed5, adversarial-after.json and eight passing tests. Grok original APPROVE historical only."
+        },
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "table-id-namespace",
+          "evidence": "Codex1 codex-refute.md; reproduced adversarial-before.json, corrected8b22ed5, adversarial-after.json and eight passing tests. Grok original APPROVE historical only."
+        }
+      ]
     }
   ],
   "receipts": []
