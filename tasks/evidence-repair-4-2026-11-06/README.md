@@ -38,3 +38,8 @@ Codex2 REFUTEca0033e accepted: original EVD003639's parent claim includes Caronn
 Discovery yield correction: extra-fetches.json contains261attempts=256statusok+5FETCH_FAILED. Earlier “261pages fetched” overstated successful retrieval; counts now explicit. Availability failures never evidence absence. Namedcheck/validator0/replay/retired6absence/rowloss rerunPASS. No Done; both family final approvals pending.
 
 Count correction after actual allocation/source reconciliation: Cannon parent retirement leaves other Cannon evidence in the surviving packet, so56observations still span20records22URLs. This supersedes interim19/21; all56quotes/IDs remain unchanged.
+
+
+Grok/xAI clerk2 final APPROVE7c00bdd,0findings, report reviews/176-rereview-clerk-grok-2.md. Six retired proposed IDs absent; six original weak rows unchanged and held, including Cannon Caronno Pertusella. Full final269=56V213U/56EVD5shards20records22URLs55scope1existence0parent; discovery261attempts256ok5FETCH_FAILED. Raw/known3/oldrow preservation/replay/retiredabsence/faults/check/validator0/rowlossPASS. Codex finding-specific final re-review pending; draft/noDone.
+
+Fresh integration pinned 80bb5140e0f1598d85fe30b28777def59c9b83c6: exactmain5shards+builder,nohandCSVmerge. All56observations field-identicaltoGrok-approved7c00bdd; all currentmain rows preserved. Taskcheck/validator0/rowloss rerun beforepush. No source/claim/status/record-field change; only main-integration baseline and review receipt updated.
