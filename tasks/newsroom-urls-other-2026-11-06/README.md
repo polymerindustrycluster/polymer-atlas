@@ -21,35 +21,36 @@ python3 scripts/validate.py
 
 Self-check:3 fresh known answers (Avient/RPM/GEON), injected HTTP403/off-domain/emptyfeed/channel-home/comments/same-domain-home failure cases; independent full frozen9d69978-frame reconciliation. Check every accepted data cell equals reviewed packet, then re-fetch all filled URLs and inspect article-item feed overlap. Repeat builder must write0 cells; compare every data field and rowset against main. Final deep Codex/Grok clerk reviews required before completion; no Done claim while pending.
 
-## Application and checks
+## Final application and checks
 
-Refreshed to main9d69978 before application (includes #147, #136 markets/certs, #129 registry restore). Independent frame recheck remained2258, no gains/losses. No hand CSV merges; exact current data preserved, only packet cells added.
+Source manifest is frozen at9d69978 (2258 IDs, same class as af3f87e). Latest integration replay pinned main412391a0a462105a73e322ea67291d24088cfe7a; exact main organization files restored, builder applied only reviewed cells. Later parallel main creates are outside this pass. Current eligibility/value assertions still run on every accepted row; no CSV conflict hand-merged.
 
-**171 active other non-tier1 organizations:171 newsroom pages+93 feeds=264 empty cells,33 organization shards.** Priority fill counts: tier1=0,PIC18 non-tier1=0,other=171. Existing tiers unchanged: A=15,B=99,C=56,U=1. 2,087 organization holds:1,701 no bounded-nav candidate,386 candidate identity/purpose/accessibility/re-fetch holds. Fifteen overlapping feed-only holds (14 no article-item overlap,1 comments feed). Technetics's index re-fetch failed; held as route unavailable, no absence assertion. IC3D's page retained but its comments feed rejected. All2,258 input IDs reconcile to explicit verdicts.
+**167 active other non-tier1 organizations:167 newsroom pages+89 feeds=256 empty cells,33 organization shards.** Priority fills:tier1=0,PIC18 non-tier1=0,other=167. Tiers unchanged:A=15,B=97,C=54,U=1.2091 organization holds:1701 no bounded-nav candidate,390 candidate purpose/identity/accessibility/re-fetch holds.15 overlapping feed-only holds (14 no article-item overlap,IC3D comments). Technetics re-fetch failed; route hold, never absence. All2258 IDs reconcile to explicit verdicts.
 
-Actual-source purpose review held A.M.Toolbox's single press release (not an index) and Avian USA's multi-item page because it states Shanghai as publisher; no claim that its article-shaped URL is itself a single article. ETI/Starwin joint publisher held for entity-specific confirmation. Crayola,Plustech,Formed Plastics,Elinor media centers were read raw and show organization news/press announcements, not merely contacts or galleries. No body/contact text retained. Regional/global parent and technical-division pages remain held, including names/links in verdicts.csv. No scope/identity ruling self-applied.
+Purpose review held A.M.Toolbox's single release. Avian USA's page is a multi-item index, but it identifies Shanghai as publisher: identity hold, not a false claim that article-shaped URL means single post. ETI/Starwin joint publisher held pending entity-specific confirmation. Crayola,Plustech,Formed Plastics,Elinor media centers read raw and show company announcements, not just contacts/galleries. No body/contact text retained. Parent/regional,division,tag,template and brand ambiguities remain held, no self-ruling.
+
+Related-case fix from PR145 Codex Kaneka finding: also held ORG-003396 Kongskilde Industries USA,003692 Aplix Inc.,003725 Zotefoams Inc.,003766 Roctool Inc. Canonical records name same-brand parents; global news pages need organization-specific publisher/region confirmation. Four pages+their four feeds removed before completion review. Initial171+93=264 is superseded by final167+89=256.
 
 | Hold group | Active organizations | Settling fact/recommendation |
 |---|---:|---|
-| No bounded-nav candidate |1701|Reachable own-domain newsroom index confirmed; absence never asserted|
-| Candidate purpose/identity/accessibility |386|Organization-specific maintained index confirmed, including listed parent/region/single-post/identity questions|
-| Feed-only, overlapping accepted orgs |15|Dedicated article feed confirmed; pages retained|
+| No bounded-nav candidate |1701|Reachable own-domain index confirmed; no absence asserted|
+| Candidate identity/purpose/accessibility |390|Organization-specific publisher/index confirmed, including listed parent/single-post/identity questions|
+| Feed-only, overlaps accepted orgs |15|Dedicated article feed/overlap confirmed; pages retained|
 
-- `build.py`:264 cells/171 organizations; second run0cells/0shards.
-- `self_check.py --live`:PASS,3 fresh known answers; injected defects rejected; independent complete2258-ID frame and <=6 discovery requests reconciled.
-- `check.py`: **PASS:171 active organizations;264 URLs, all HTTP200 and feeds nonempty**. Same stored path/domain; feed article-item overlap; current canonical data equals packet. refetch.json records every result.
+- `build.py`:256 cells/167orgs; immediate second run0cells/0shards.
+- `self_check.py --live`:PASS,3 fresh known answers; all injected defects caught; immutable9d69978 frame2258 independently recomputed; allinput/discovery/verdictIDs match,<=6 current discovery requests/org.
+- `check.py`: **PASS:167 active organizations;256 URLs,all HTTP200 and feeds nonempty**; exact stored path/domain,article-item overlap,currentdata=packet and current eligibility.
 - `python3 scripts/validate.py`: **0 errors,V-58 clean**.
-- Field-boundary comparison against current main:264 previously empty cells in171 existing organization IDs, only two named columns; no rowset changes. No scripts/ code change or dependency added.
+- Immutable-main comparison:256 previously empty cells/167 existing IDs/two named columns only; no rowset changes. No scripts/ code/dependency changes.
 
-Final deep Codex/Grok clerk reviews pending; draft until resolved. No completion/Done claim.
+Final Codex/Grok deep clerk reviews pending; draft until resolved. No Done claim. Cross-PR union gate found first1043+PIC18772+other2258=4073 disjoint original IDs; source snapshot9d69978 has4079 active-with-website IDs. Six newly website-populated tier1 IDs are being added to PR145's frame, with9 changed canonical routes rechecked. No false all-current-tree completeness claim beyond named source snapshots.
 
 ## Potential staleness leads
 
-Only pre-2024 fully parsed dates occur in these saved index samples (up to12 dates, nonstandard dates may be missed). Candidate liveness signals only, not assertions of newest release or operating status. Old newsrooms still count under B-NEWS. Posted to BOARD for L8; no liveness/status fields changed.
+Only pre-2024 fully parsed dates in saved samples below (up to12 dates; nonstandard dates may be missed). These are candidate liveness leads, never newest-release or operating-status assertions. Old newsrooms still qualify B-NEWS; BOARD/L8 notified. No liveness/status fields changed.
 
 | Active organization | Date sample |
 |---|---|
-
 | ORG-000726 Century Label | November 9, 2021;October 21, 2021;October 8, 2021;September 28, 2021;September 21, 2021;September 17 |
 | ORG-000801 Haviland Drainage Products | October 19, 2018 |
 | ORG-001118 Southeastern Container, Inc. | 2021-10-20;2023-03-16;2021-05-28;2020-07-31;2020-06-01;2020-05-01;2020-03-31;2019-10-22 |
@@ -81,7 +82,3 @@ Only pre-2024 fully parsed dates occur in these saved index samples (up to12 dat
 | ORG-007717 7-Sigma Incorporated | Aug 2 2019 |
 | ORG-007721 Avon Plastics, Inc. | April 18, 2017 |
 | ORG-008004 R&D Plastics of Hickory, Ltd. | October 15, 2015;January 1, 2015 |
-
-The input manifest was fixed before application at2258 IDs (source snapshot9d69978, same class as af3f87e). Later parallel main creates are outside this pass, not silently added. Self_check independently recomputes the manifest from immutable9d69978 tables; builder/check revalidate current eligibility and values for accepted records. Incoming main changes are retained by merge/replay. No claim of whole-current-tree coverage beyond the named snapshot.
-
-Final integration replay pinned main 412391a0a462105a73e322ea67291d24088cfe7a; exact main organization shards restored, builder264 cells,0 on repeat; field-boundary264/171/2columns PASS against this immutable ref. Later main creates stay outside frozen source manifest9d69978.

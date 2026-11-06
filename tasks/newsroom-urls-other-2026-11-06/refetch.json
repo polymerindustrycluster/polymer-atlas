@@ -973,23 +973,6 @@
     ]
   },
   {
-    "org_id": "ORG-003396",
-    "checks": [
-      {
-        "url": "https://kongskilde-industries.com/news/",
-        "final": "https://kongskilde-industries.com/news/",
-        "status": "200"
-      },
-      {
-        "url": "https://kongskilde-industries.com/feed/",
-        "final": "https://kongskilde-industries.com/feed/",
-        "status": "200",
-        "items": 10,
-        "linked_items": 10
-      }
-    ]
-  },
-  {
     "org_id": "ORG-003399",
     "checks": [
       {
@@ -1415,23 +1398,6 @@
     ]
   },
   {
-    "org_id": "ORG-003692",
-    "checks": [
-      {
-        "url": "https://www.aplix.com/en/news",
-        "final": "https://www.aplix.com/en/news",
-        "status": "200"
-      },
-      {
-        "url": "https://www.aplix.com/en/rss.xml",
-        "final": "https://www.aplix.com/en/rss.xml",
-        "status": "200",
-        "items": 10,
-        "linked_items": 2
-      }
-    ]
-  },
-  {
     "org_id": "ORG-003702",
     "checks": [
       {
@@ -1459,23 +1425,6 @@
       {
         "url": "https://www.mhxco.com/feed/",
         "final": "https://www.mhxco.com/feed/",
-        "status": "200",
-        "items": 10,
-        "linked_items": 9
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-003725",
-    "checks": [
-      {
-        "url": "https://www.zotefoams.com/news-centre/news/",
-        "final": "https://www.zotefoams.com/news-centre/news/",
-        "status": "200"
-      },
-      {
-        "url": "https://www.zotefoams.com/feed/",
-        "final": "https://www.zotefoams.com/feed/",
         "status": "200",
         "items": 10,
         "linked_items": 9
@@ -1540,23 +1489,6 @@
         "status": "200",
         "items": 10,
         "linked_items": 10
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-003766",
-    "checks": [
-      {
-        "url": "https://www.roctool.com/news-releases/",
-        "final": "https://www.roctool.com/news-releases/",
-        "status": "200"
-      },
-      {
-        "url": "https://www.roctool.com/feed/",
-        "final": "https://www.roctool.com/feed/",
-        "status": "200",
-        "items": 10,
-        "linked_items": 6
       }
     ]
   },
