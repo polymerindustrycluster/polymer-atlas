@@ -20,5 +20,17 @@
   "needed_for90": 92,
   "initial_desk_routes": 75,
   "resolved_initial_gaps": 8,
-  "newly_exposed_gaps": 1
+  "newly_exposed_gaps": 1,
+  "remaining_org_class_combinations": {
+    "b": 50,
+    "c": 93,
+    "d": 11,
+    "bc": 1
+  },
+  "dated_distinct_scenario_after": {
+    "healthy": 483,
+    "total": 632,
+    "percent": 76.42,
+    "needed_for90": 86
+  }
 }

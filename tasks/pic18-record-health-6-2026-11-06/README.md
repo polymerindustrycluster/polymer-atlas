@@ -25,3 +25,41 @@ The123 single-gap organizations break down as61 capability,28tier,27duplicate an
 Owner item B-L4-MATERIAL-USE:clarify whether an explicit material in an owned finished product is sufficient for a materials[] tag when polymer conversion/operator evidence is absent. Prior accepted/refuted examples differ:customer-owned nylon fabric and purchased nylon bearings were held; a company's own manufactured laminate/product material can be supported. Round6 conservatively holds Wooster nylon-filament brushes without filament-conversion proof and Eleven10 injection-molded case wording without its manufacturing operator. No scope/material-use definition is self-adopted to produce a health gain. Their initial desk rows retain attempted/uncertain outcomes and postwork owner-routing flags.
 
 Class(d) means a lead that the held Ring1–2 producer classification may be wrong, not necessarily exclusion from the whole Atlas:for example,machinery suppliers may belong in Ring3. No record is closed,removed,re-ringed or counted as a successful desk fix by this analysis. Any justified future scope/status change would require a fresh denominator and90% threshold;the current569/632 calculation deliberately keeps the frozen denominator.
+
+## Result after working the identified desk routes
+
+All75 initially named desk routes were attempted:13lead tier/website routes and62capability routes. Eight original gaps are resolved:three website gaps andfive capability gaps. One additional probable-duplicate flag becomes visible after filling the Clevite website;it is recorded separately in new_gap_routes.csv. No failed lookup is interpreted as absence,closure,scope rejection or automatic tier support.
+
+The data packet changes12 cells across8 organizations:3website,5materials and4process cells,carrying14controlled capability values and3website values. Append17 evidence rows EVD170144–170160 (15own_site,2government_filing);changed organizations retain2A/6B tiers. No creates,deletes,site edits,tier/status/HQ/legal-name/parent/registry changes or inclusion decisions. No messages or outreach were sent.
+
+Admitted capability facts:explicit Addipel polymer-additive powder-blend manufacture;Koroseal's own PVC-film wallcovering lamination and its known thermoplastic family;the certificate's exact PerformanceElastomers party and thermoplastic/silicone/rubber extrusion scope;Infinity's explicitly named own natural-rubber-wall air-spring product;and Cooper-StandardIndustrial&SpecialtyGroup's own extruded/molded seals. The Cooper guide names the LLC in its copyright and its NorthAmerica business contact;no unrelated parent capability is transferred. All14capability value quotes match the lead's independently fetched five source URLs. Three website quotes independently match the newly found primary documents. Raw source extracts remain local,not committed full pages.
+
+The initial204-gap table remains an audit of the frozen160-organization remainder. gap_routes.csv keeps initial_class plus attempt/outcome and postwork_class. gap_routes_initial.csv is immutable;classification_counts.json records the starting workload. remaining_gap_routes.csv is the current155-organization/197-gap action table after fixes:55owner-decision gaps,131human/outreach gaps and11positive scope re-verification leads. No currently untried desk route is asserted in that final table;new public evidence can reopen one. These figures do not claim that the internet contains no further witnesses.
+
+Current remaining organization combinations:50have only owner-decision gaps,93only human/outreach gaps,11only scope re-verification leads,and1has both owner and human blockers. Decisions alone do not invent missing facts:the named identity/HQ/material-boundary evidence conditions still apply. Class(d) does not authorize deleting or re-ringing11organizations.
+
+## Health and distance to90%
+
+On current-main e1a1b66 (PR133 and154 included),this branch alone changes440/632→445/632 healthy PIC18Ring1–2organizations (69.62%→70.41%). It is not appropriate to compare that main-only number directly with the projected all-open baseline.
+
+The isolated all-pending-packet replay remains exactly the frozen472/632=74.68% before round6;reversing only the12round6 edits reproduces every one of632frozen health-flag rows,not merely the numerator. After round6,the raw projection is **477/632=75.47%**,five newly healthy organizations and none newly unhealthy. Addipel's duplicate remains;RFD's capability remains;Clevite exchanges its website gap for a newly visible duplicate,so8edited organizations do not mean8newly healthy organizations.
+
+At the frozen denominator,90%requires569healthy organizations: **92additional organizations remain necessary** after this packet. The initially optimistic desk-only ceiling529/632=83.70% assumed every candidate route would succeed;actual admitted yield was8resolved gaps/75routes and5newly healthy organizations. It would be misleading to report that ceiling as achieved coverage.
+
+Scenario only,not an adopted target:excluding just the already-supported seven dated distinct-pair adjudications gives483/632=76.42%,still86short of569. Owner items for target/tombstone grain and material-use boundaries remain unresolved;the original raw T1 series is unchanged.
+
+## Checks and review gate
+
+Named commands:
+- python3 tasks/pic18-record-health-6-2026-11-06/check_routes.py --require-work
+- python3 tasks/pic18-record-health-6-2026-11-06/build.py --raw-check
+- python3 tasks/pic18-record-health-6-2026-11-06/check.py
+- python3 tasks/pic18-record-health-6-2026-11-06/health.py --self-check --output tasks/pic18-record-health-6-2026-11-06/health_current_branch.csv
+- python3 tasks/pic18-record-health-6-2026-11-06/project_open_prs.py --include-round6
+- python3 scripts/validate.py
+
+PASS:160organizations/204initial gaps reconcile exactly;all75desk outcomes have named attempts;12cells/17append-only evidence observations and no other data delta;17/17quotes in lead raw witnesses across8URLs;five capability documents pass identity/context checks;original health self-check;isolated full replay477/632;zero validator errors. Data hashes are identical on repeat. Missing-classification-row mutation fails. Mutating a packet quote invalidates its stored raw-check fingerprint before any write;an identical EVD170144 payload movedOH→DE in a temporary copy also fails with every CSV hash unchanged. The preflight retains shard paths,following the Codex172finding. Fresh independent checks of source text,rather than the helper's early completion claims,govern admission.
+
+Helper correction log:it initially announced14rows before its final regeneration/check had completed during a shared-branch switch;it retracted that claim. Final separate commands then produced14rows and a passing93-census/62-outcome/128-route/positive+negative check. Lead had already independently verified the first13rows;the final additional thermoplastics row is only the controlled known-family mapping for explicit PVC,also checked against the raw Koroseal PDF. No earlier premature claim is treated as a passing gate.
+
+Source/effort limits:the helper logged128search/fetch attempts;the lead worked13named document searches and independently re-fetched admitted witnesses. Bounded search and failed transport cannot establish universal absence. Full billing/time cost was not audited. No scripts/ changes,so scripts pytest requirement is not triggered. Both independent family refutes are still required;draft until approved. Only the controller merges or changes task status.

@@ -31,6 +31,19 @@ def check(rows,require_work=False):
  for r in rows:org[r['org_id']].add(r['initial_class'])
  all_a=sum(s=={'a'} for s in org.values());assert all_a==57
  assert 569-472-all_a==40
+ if require_work:
+  after=read(HERE/'health_projected_after.csv');remaining=read(HERE/'remaining_gap_routes.csv')
+  result=json.loads((HERE/'work_results.json').read_text())
+  assert len(after)==len({r['org_id'] for r in after})==632
+  assert sum(r['healthy']=='1' for r in after)==result['healthy_after']==477
+  expected_after={(r['org_id'],g) for r in after for g in ['tier','duplicate','website','capabilities'] if r['gap_'+g]=='1'}
+  assert {(r['org_id'],r['gap']) for r in remaining}==expected_after
+  assert len(remaining)==len(expected_after)==result['remaining_gaps']==197
+  assert len({r['org_id'] for r in remaining})==result['remaining_organizations']==155
+  assert Counter(r['class_now'] for r in remaining)==result['remaining_classes']=={'b':55,'c':131,'d':11}
+  assert result['needed_for90']==569-477==92
+  assert expected_after-expected=={('ORG-001462','duplicate')}
+  assert len(expected-expected_after)==result['resolved_initial_gaps']==8
  return counts
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--require-work',action='store_true');a=p.parse_args()
