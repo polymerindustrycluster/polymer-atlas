@@ -31,11 +31,11 @@ Firecrawl is a live rawHTML fallback, not AI extraction. One Revolution request 
 
 ## Nine holds
 
-holds.csv names each settling fact:
+holds.csv names each settling fact; holds-sources.json supplies its primary URLs and raw cache:
 - Amcon Fridley: own contact uses Minneapolis for the same street/ZIP; a raw Fridley-specific process/locality bridge is still needed.
 - Morris Plymouth: own contact describes print/lamination; reconcile with filed plastics-film manufacturing code before promotion.
 - Amcor Mankato: the located own job names2111 Third Avenue, while this site is1301 Third Avenue. Same city does not bind the other street.
-- Tank/Solar Delano: Solar's own job binds Delano rotomolding, but its separate Solar Plastics LLC issuer is not yet bridged to the held Tank Holding operator under B-PARENT. No repoint/parent invention.
+- Tank/Solar Delano: Solar's own job binds Delano rotomolding, but its distinct Solar Plastics issuer is not yet bridged to the held Tank Holding operator under B-PARENT. No repoint/parent invention.
 - ADS Fairmont: own maintenance job identifies Fairmont and plant maintenance; corporate plastic-recycling boilerplate does not independently establish this site's polymer process.
 - Graham Seabrook: fetched own about/careers pages do not settle this specific plant's city/activity.
 - Homeland: own extrusion job names Millville while the filing has Milville; an exact street/locality bridge is still needed. No silent spelling/address correction.

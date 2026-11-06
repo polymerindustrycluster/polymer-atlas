@@ -1,6 +1,7 @@
 Deep adversarial completion refute: L3 merged-site quality batch2,15frozenmergedCsites from202MN10/204NJ5 onframe_commitbe76f04;prior2163sitesandOPEN164excluded.6C→B(5MN1NJ),9namedholds,0creates/statusaddresscodechanges.30appendB EVD304100+6frozenindex:24government_filing existence/address/code/operator frombankedITA2025observed2026-11-01+6own_site scopeEXACTpagewordsper07:20. All5mandatoryclaimsB/unknownstatusretained; noA/currentoperationclaim. OwnlocalwitnessesCarpenterAlbertLeapolyetherfoam,PPCPrincetonplasticinjection,OateyShakopeerubbercoresdated2021-07-15,RevolutionOakdalefilmblowing,T.O.Otsegothermoforming,BenMooreNewarkpaints/coatings. BlankwebsiteCarpenterexactoperatorpageidentity,Revolutionexactrawog:site_namelegalidentity; noorgwebsitefill ornewparentinference. RevolutionFirecrawlLIVErawHtml200aftercurl/Jina4fails;issuer+localscopehashbound/tmp,notAIsummary. NineholdsincludePoly-likePretiumZIPconflict,Homelandspelling,Amcorotherstreet,Morrisprintlaminationversusfiledfilmmfg,SolarseparateissuerunbridgedTank,ADSgenericmaintenance,Grahamnoplantsignal,Ringaddressonly,Amconlocality. Full6promotioncensus/all15holds required;sourcecacheabsolute/tmpusableowncheckout,neverwrite/switchworker. Housematcherknown3+fake3/sixselectedpositives+sixnegatives;checkindependentlyreconstructs15mergedframe/6V9U/fiveBclaims30missing-claimfaults,7beforewritefaults(EVDcollision,fabricatedscope,absentcity,issuer,hash,URLmisattribution,anotherrealcityonthesamepage). Exact4datafiles18cells30EVD/everyoldrowpreserved/allCSVbyteidenticalreplay/validator0PASS;T3MN58/NJ33unchangedalreadyCcounted. Primaryroutes<=approx6perorg;failedavailabilitynotabsence. Please REFUTE ownissuerclassification/blankwebsiteidentity/B-PARENT/source-age/jointBfederalclaimstrength/localplantbinding/operator/codeconflicts/all5weakestclaims/preservation/holddecisions. END APPROVEorREFUTE with materialfindings+inspected/uninspectedcoverage. No peerapprovalasproof.
 
 
+
 FILE README.md
 # L3 merged-site quality, batch2
 
@@ -35,11 +36,11 @@ Firecrawl is a live rawHTML fallback, not AI extraction. One Revolution request 
 
 ## Nine holds
 
-holds.csv names each settling fact:
+holds.csv names each settling fact; holds-sources.json supplies its primary URLs and raw cache:
 - Amcon Fridley: own contact uses Minneapolis for the same street/ZIP; a raw Fridley-specific process/locality bridge is still needed.
 - Morris Plymouth: own contact describes print/lamination; reconcile with filed plastics-film manufacturing code before promotion.
 - Amcor Mankato: the located own job names2111 Third Avenue, while this site is1301 Third Avenue. Same city does not bind the other street.
-- Tank/Solar Delano: Solar's own job binds Delano rotomolding, but its separate Solar Plastics LLC issuer is not yet bridged to the held Tank Holding operator under B-PARENT. No repoint/parent invention.
+- Tank/Solar Delano: Solar's own job binds Delano rotomolding, but its distinct Solar Plastics issuer is not yet bridged to the held Tank Holding operator under B-PARENT. No repoint/parent invention.
 - ADS Fairmont: own maintenance job identifies Fairmont and plant maintenance; corporate plastic-recycling boilerplate does not independently establish this site's polymer process.
 - Graham Seabrook: fetched own about/careers pages do not settle this specific plant's city/activity.
 - Homeland: own extrusion job names Millville while the filing has Milville; an exact street/locality bridge is still needed. No silent spelling/address correction.
@@ -394,12 +395,125 @@ site_id,verdict,reason
 SITE-012619,STILL_UNCERTAIN,"Need plant-locality/activity reconciliation: own Amcon contact names5360MainStNE MinneapolisMN55421, heldITA/sitecityFridley. Careers route did not provide a raw Fridley polymer-process witness. No city/status/tier correction."
 SITE-012670,STILL_UNCERTAIN,Need primary process/code reconciliation: own contact calls17100MedinaRdPlymouth Print and Lamination Division; ITA/site326112 asserts plastics film manufacturing. Resolve film production versus print/lamination function before B; no code/ring edit.
 SITE-012671,STILL_UNCERTAIN,Need a plant-specific witness for1301 3rdAveMankato: raw own jobnames manufacturing/converting at2111 3rdAve. Samecity alone doesnot bind this other street; no move/status/address inference.
-SITE-012706,STILL_UNCERTAIN,"Need issuer/operator bridge before using Solar Plastics LLC Delano job as own_site for held Tank Holding Corp. Raw jobbinds860JohnsonDrive/Delanorotomolding, but Tankpage didnotsettle this distinct issuer link. Do not inventparent/repoint/groupownsiteclassification."
+SITE-012706,STILL_UNCERTAIN,"Need issuer/operator bridge before using Solar Plastics Delano job as own_site for held Tank Holding Corp. Raw jobbinds860JohnsonDrive/Delanorotomolding, but Tankpage didnotsettle this distinct issuer link. Do not inventparent/repoint/groupownsiteclassification."
 SITE-012714,STILL_UNCERTAIN,"Need raw Fairmont-specific polymer production/process witness: own-issued maintenancejob namesFairmont andplantmaintenance, but polymer recycling is corporate boilerplate. No plantprocess inference/promotion fromgenericcompanyscope."
 SITE-012828,STILL_UNCERTAIN,Need raw Seabrook plant-city/polymer-activity witness: fetchedGrahamabout/careers pages supportgroupbusiness butdonotsettle this exactestablishment. No absence/closure inference.
 SITE-012861,STILL_UNCERTAIN,"Need exactstreet/locality corroboration of filedMilville vsownMillville beforepromotion: raw extrusionjobnamesMillvilleNJ, but owncontactroute didnotbind1701EdenRd. No silentcitycorrection/statuschange."
 SITE-012862,STILL_UNCERTAIN,"Need ZIPreconciliation: ownlocations names208CougarCourtHillsboroughNJ08854, heldITA/site08844. Samephysicalstreetbut contradictorypostalcode; no ZIP/tier/addresscorrection."
 SITE-012881,STILL_UNCERTAIN,"Need raw Springfield-specific polymermanufacturingactivity: Firecrawlraw200locations binds50FademRdSpringfieldNJ butnotplantpolymerprocess. Curl/Jinafailureswereavailabilityonly, notabsence/closure."
+
+
+FILE holds-sources.json
+[
+  {
+    "site_id": "SITE-012619",
+    "source_url": "https://amconfoam.com/contact-us/",
+    "quote": "5360 Main St. NE Minneapolis, MN 55421",
+    "raw_text_path": "/tmp/l3-q2-amconpdfbridge.txt",
+    "sha256": "cd5c3a7d88f61a5ae3714bb47cc19a9965c088263b7bc8c58f8fede5be9e2604",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012670",
+    "source_url": "https://www.morrispkg.com/contact",
+    "quote": "Print and Lamination Division 17100 Medina Rd. Plymouth, MN 55447",
+    "raw_text_path": "/tmp/l3-q2-morriscontact.txt",
+    "sha256": "10423f4abe1119e5724fd5114c774bf68d86fe5cce7aac9533bbd5a4ac2c5958",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012671",
+    "source_url": "https://www.amcor.com/careers/job-details/req_97678",
+    "quote": "located in Mankato Minnesota at 2111 3rd Avenue",
+    "raw_text_path": "/tmp/l3-q2-amcor.txt",
+    "sha256": "ec988ec4a113427204823a631b2a09c5e5ba7e45860e3a44d3d6b655a9ca83b4",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012706",
+    "source_url": "https://solarplastics.com/careers/operator-trimmer/",
+    "quote": "860 Johnson Drive Delano, MN 55328",
+    "raw_text_path": "/tmp/l3-q2-solar.txt",
+    "sha256": "69de2d43472e20ec065cfbd7f0fc7544dab37c153e3f1b177f15c4ac842cc335",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012714",
+    "source_url": "https://careers-adspipe.icims.com/jobs/21883/maintenance-technician/job?in_iframe=1",
+    "quote": "Job Locations US-MN-Fairmont",
+    "raw_text_path": "/tmp/l3-q2-ads.txt",
+    "sha256": "b8987489518480e5b351af50a79382478e20a9b8a9797dc64f89c4e4d8e40756",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012828",
+    "source_url": "https://www.grahampackaging.com/about-us/",
+    "quote": "Graham Packaging Locations",
+    "raw_text_path": "/tmp/l3-q2-grahamabout.txt",
+    "sha256": "0915b1248b16c68c62deea6842134279bcff2ec1f2ad99b8e348613812804187",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012861",
+    "source_url": "https://homelandvinyl.com/employment/experienced-extrusion-operators/",
+    "quote": "Millville, NJ",
+    "raw_text_path": "/tmp/l3-q2-012861.txt",
+    "sha256": "470dd22c4ab4efaace646398eed72f5e794f8e8b5b6e9c86563f82f2a2eb4761",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012862",
+    "source_url": "https://www.pretiumpkg.com/locations/",
+    "quote": "208 Cougar Court Hillsborough, New Jersey 08854",
+    "raw_text_path": "/tmp/l3-q2-012862.txt",
+    "sha256": "bfe8d96d8db06d9c7f58e5dbebd11b7e56e19f8d6c5cc60bba12863221abd6ca",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012881",
+    "source_url": "https://ringcontainer.com/locations/",
+    "quote": "Springfield, NJ 50 Fadem Rd.",
+    "raw_text_path": "/tmp/l3-q2-ring-firecrawl.txt",
+    "sha256": "7a0ce67e978169ec934c34069161dfccfdc455edb16a8dc23aa05f8dd051eda3",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "Firecrawl rawHTML live200",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  }
+]
 
 
 FILE full-promotion-census.csv
