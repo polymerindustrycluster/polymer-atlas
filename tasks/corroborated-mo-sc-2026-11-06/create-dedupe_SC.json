@@ -1,0 +1,403 @@
+{
+  "LF-SC-00295": {
+    "query": {
+      "domain": "https://www.michelinman.com",
+      "name": "Michelin North America",
+      "street": "1610 Old Grove Road",
+      "city": "Piedmont",
+      "state": "SC",
+      "zip": "29673"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003093",
+            "name": "Michelin North America, Inc.",
+            "city": "Greenville",
+            "state": "SC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_SC.csv",
+            "match": "domain exact: michelinman.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003093",
+            "name": "Michelin North America, Inc.",
+            "city": "Greenville",
+            "state": "SC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_SC.csv",
+            "match": "name key 'michelin north america' = legal_name 'Michelin North America, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012181",
+            "name": "Michelin North America, Inc. - Piedmont",
+            "org_id": "ORG-003093",
+            "city": "Piedmont",
+            "state": "SC",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_SC.csv",
+            "street": "1610 Old Grove Road",
+            "operator": "Michelin North America, Inc.",
+            "match": "street key '1610 old grove rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-003106",
+            "name": "Compagnie Generale des Etablissements Michelin SCA",
+            "city": "",
+            "state": "",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_INTL.csv",
+            "match": "notes contains 'Michelin North America'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-SC-00118": {
+    "query": {
+      "domain": "americanroller.com",
+      "name": "American Roller Company LLC",
+      "street": "1550 Cedar Line Drive",
+      "city": "Rock Hill",
+      "state": "SC",
+      "zip": "29730"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004217",
+            "name": "American Roller Company LLC",
+            "city": "Union Grove",
+            "state": "WI",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_WI.csv",
+            "match": "domain exact: americanroller.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004217",
+            "name": "American Roller Company LLC",
+            "city": "Union Grove",
+            "state": "WI",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_WI.csv",
+            "match": "name key 'american roller' = legal_name 'American Roller Company LLC'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012198",
+            "name": "American Roller Company LLC - Rock Hill",
+            "org_id": "ORG-004217",
+            "city": "Rock Hill",
+            "state": "SC",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_SC.csv",
+            "street": "1550 Cedar Line Drive",
+            "operator": "American Roller Company LLC",
+            "match": "street key '1550 cedar line dr'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-SC-00152": {
+    "query": {
+      "domain": "https://www.elevatecommercialbp.com/latam-en/resources/about-us",
+      "name": "Amrize Building Envelope LLC",
+      "street": "320 Innovation Way",
+      "city": "Wellford",
+      "state": "SC",
+      "zip": "29385"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002723",
+            "name": "Amrize Building Envelope LLC",
+            "city": "Youngwood",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "domain exact: elevatecommercialbp.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002723",
+            "name": "Amrize Building Envelope LLC",
+            "city": "Youngwood",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "name key 'amrize building envelope' = legal_name 'Amrize Building Envelope LLC'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012199",
+            "name": "Amrize Building Envelope LLC - Wellford",
+            "org_id": "ORG-002723",
+            "city": "Wellford",
+            "state": "SC",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_SC.csv",
+            "street": "320 Innovation Way",
+            "operator": "Amrize Building Envelope LLC",
+            "match": "street key '320 innovation way'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-SC-00503": {
+    "query": {
+      "domain": "https://www.sterilite.com/",
+      "name": "Sterilite Corporation",
+      "street": "1939 Charlottes Road",
+      "city": "Clinton",
+      "state": "SC",
+      "zip": "29325"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001384",
+            "name": "Sterilite Corporation",
+            "city": "Massillon",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: sterilite.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001384",
+            "name": "Sterilite Corporation",
+            "city": "Massillon",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'sterilite' = legal_name 'Sterilite Corporation'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012219",
+            "name": "Sterilite Corporation - Clinton",
+            "org_id": "ORG-001384",
+            "city": "Clinton",
+            "state": "SC",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_SC.csv",
+            "street": "1939 Charlottes Road",
+            "operator": "Sterilite Corporation",
+            "match": "street key '1939 charlottes rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-SC-00512": {
+    "query": {
+      "domain": null,
+      "name": "Berry Global",
+      "street": "200 ARROWHEAD CT",
+      "city": "Greenville",
+      "state": "SC",
+      "zip": "29605"
+    },
+    "stop_at_step": 2,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": "no --domain",
+        "hits": []
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002544",
+            "name": "Berry Global",
+            "city": "Evansville",
+            "state": "IN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_IN.csv",
+            "match": "name key 'berry global' = legal_name 'Berry Global'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012226",
+            "name": "Berry Global - Greenville",
+            "org_id": "ORG-002544",
+            "city": "Greenville",
+            "state": "SC",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_SC.csv",
+            "street": "200 ARROWHEAD CT",
+            "operator": "Berry Global",
+            "match": "street key '200 arrowhead ct'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004040",
+            "name": "Vybond Group, Inc.",
+            "city": "Franklin",
+            "state": "KY",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_KY.csv",
+            "match": "notes contains 'Berry Global'"
+          },
+          {
+            "id": "ORG-004278",
+            "name": "Magnera Corporation",
+            "city": "Charlotte",
+            "state": "NC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NC.csv",
+            "match": "notes contains 'Berry Global'"
+          },
+          {
+            "id": "ORG-002149",
+            "name": "Berry Global - Streetsboro, OH",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "merged",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "legal_name contains 'Berry Global'"
+          }
+        ]
+      }
+    ]
+  }
+}

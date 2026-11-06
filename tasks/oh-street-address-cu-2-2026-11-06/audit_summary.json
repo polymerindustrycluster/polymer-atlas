@@ -1,0 +1,14 @@
+{
+  "original_candidates": 9,
+  "sampled": 9,
+  "original_transcription_errors": 0,
+  "original_address_disagreements": 0,
+  "fresh_source_matches": 7,
+  "not_freshly_checkable": 2,
+  "held_for_unavailable_audit": 2,
+  "accepted_fills": 7,
+  "accepted_fresh_matches": 7,
+  "accepted_errors": 0,
+  "ita_sampled": 0,
+  "replacement_sample": false
+}

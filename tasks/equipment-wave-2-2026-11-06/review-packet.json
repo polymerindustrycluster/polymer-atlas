@@ -1,0 +1,160 @@
+{
+  "schema_version": 2,
+  "scope": "L14 equipment wave2: 53 rows from 8 held host own pages, EQP-000100..000152; only equipment.csv changes. Full canonical projection in inputs.csv. Ten source/host/grain holds. All 34 prior rows preserved.",
+  "criteria": [
+    "Own-host raw names/quotes 53/53 across8 sources; correct held hosts, grain/classes/access/FKs",
+    "Known-answer3/3, fabricated-name negative, replay and collision-before-write checks pass",
+    "Validator0errors and actual Pages row reconciliation53/53",
+    "Independent Codex and Grok refute completion before ready"
+  ],
+  "out_of_scope": [
+    "Full institutional machine inventory",
+    "Operating availability, commercial booking, hosted deployment",
+    "New hosts/sites or registry identifiers"
+  ],
+  "revision": "e22cfb97c1899e0a5c87b45550a557b69e8eb9e2",
+  "tool_access": "Reviewers have full branch and file access, may re-fetch primary pages, and must inspect the complete packet. Use the PR ref if the worker worktree moves.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "00131198e61a16dc45c00ba990f9a6017647bd35e71e5d471b99416ab08b162a"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8664b72d1e9296576d3429e5f9331a65acb4d7ae0548d47ef4fbd5b1e52c2aa2"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "7719f3daa2a0f811e2c1fc586e087bef45dd9779f8d16bc4f64985b0cff7c85e"
+    },
+    {
+      "path": "application.txt",
+      "sha256": "3dfdbc9809f68bb362e1e9e0fc5b803cff991905dcdc74127500ecafd2de6c41"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "abeb4347e2c3640dd7cb300a3638134af39d0c086c907c32273b0f0bdcf0bf8b"
+    },
+    {
+      "path": "build.py",
+      "sha256": "a7d24d31166eae4a589b1008f43a1c7107b51abebabc1717e8c045d09ebafec1"
+    },
+    {
+      "path": "check.py",
+      "sha256": "16e7e13948c47fef264fcb59b8abc923a51e5a38f076f269c52d7412307a5e42"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "18cb9048ed9b7ab513df7dc14e592c7ab69daed764c0795332c7f9901bce62b5"
+    },
+    {
+      "path": "dedupe-cincinnati.txt",
+      "sha256": "c819ff518a9068e3516ec7ad8d0f7e031dff3f5c9be69530dd2514de50040809"
+    },
+    {
+      "path": "dedupe-cmu.txt",
+      "sha256": "3ac6bcd2e11447b848c30c1a98fd5bd0852f142f72e8f84040faa2b51eba0e79"
+    },
+    {
+      "path": "dedupe-csu.txt",
+      "sha256": "62aa960d9d34afd4559881d5b7d80c168a5a07e551924a5a6944c8546b2f8dfc"
+    },
+    {
+      "path": "dedupe-lehigh.txt",
+      "sha256": "418fda9e5bed987aa8f2d384caa2e7085905dc39ea256b912ca5528208c32d85"
+    },
+    {
+      "path": "dedupe-lorain.txt",
+      "sha256": "41a370911abe484639111521cd33606a4b20b3caa1306c3ebce1b50ca8bb24c4"
+    },
+    {
+      "path": "dedupe-michigan.txt",
+      "sha256": "f065ddc930f32d76c90d70f7d92ea6b4906e700e0bfe6f7ce8fe1d19aee1d8c0"
+    },
+    {
+      "path": "dedupe-msu.txt",
+      "sha256": "ce775e9bffcc1fc7e18ae0ac9b8059659867f9123afe193507b4bcfa396cb0f8"
+    },
+    {
+      "path": "dedupe-nasa.txt",
+      "sha256": "39b1e0b0f9ca2bd92f2e0e2128bfe17c614603b4b9587e0dc5ce009813be0c2a"
+    },
+    {
+      "path": "dedupe-ohio.txt",
+      "sha256": "c1de9d8aa2cbeb60ddceef022f43cd4d44e61cf58391c671f5b72ebf7599b8d6"
+    },
+    {
+      "path": "dedupe-psu.txt",
+      "sha256": "7a049de618b9062afcfb61af842b604b48a5de9f9d95bf445c70a6c217094ae5"
+    },
+    {
+      "path": "dedupe-stark.txt",
+      "sha256": "66ba672eb91b9f039fc34c5f8a374546eec71f694f06452cc1a8c0c2a025897a"
+    },
+    {
+      "path": "dedupe-toledo.txt",
+      "sha256": "516d47e9c1a58f65b094b2764b6b93448b0cd1803cc778659f7a9d72ba48c36d"
+    },
+    {
+      "path": "dedupe-wright.txt",
+      "sha256": "37f7b3777352ef6f8a5f299a855c25bbba093e47b0e5095ca462a95f86480a7f"
+    },
+    {
+      "path": "holds.csv",
+      "sha256": "f32198235ca7e0a8644dddcf8a0ddfd1a5921768b48bf0e123ebd9427e6800fd"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "1b66d5330df3bef95e0e80af34bd5a3902fe0f31df309219085f8b904a8d5416"
+    },
+    {
+      "path": "pages-build.txt",
+      "sha256": "18c58e035a50aaa167c4822aaee633b17a0f12e346ac09faec986f4da2854443"
+    },
+    {
+      "path": "raw-checks.txt",
+      "sha256": "d6b57c2bbeefb3ae03cd8f92d5f17401e172d6b96a6dbffb8d998b59ec3cc436"
+    },
+    {
+      "path": "source-fetches.csv",
+      "sha256": "b5533136278fd84af69a37ec2c53c0b17d19a3ae9a506ffd81600a4f0ff346c6"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "1a92f5c9e01341c39d687137824a8c9be5b8b9e6ea16bed550f12c2a962f0bb8"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "05141f6617e1dcb96f17628479198d62ee288cf29a6a551aa36b3c6e36f4b71e"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/equipment-wave-2-2026-11-06/build.py --raw-check",
+      "outcome": "pass",
+      "evidence": "raw-checks.txt"
+    },
+    {
+      "command": "python3 tasks/equipment-wave-2-2026-11-06/check.py --pages",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "python3 scripts/build_pages.py",
+      "outcome": "pass",
+      "evidence": "pages-build.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}

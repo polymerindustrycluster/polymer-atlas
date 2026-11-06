@@ -120,7 +120,7 @@ page wording describes a future readable source, not an assertion that failed pa
 explicit; the controller's paced CDX/SPN worker is the continuation route. Some review findings concerned the earlier
 in-flight code and were already fixed before publication (429 label/backoff, terminal gates, deadline handling).
 
-Controller 05:55 ruling supersedes council-only ordering and permits draft publication before refutes. Codex clerk re-review is pending; Grok clerk approved the replay correction at8533b8e; **no Done claim**. The original refute outputs are local, with the
+Controller 05:55 ruling supersedes council-only ordering and permits draft publication before refutes. Both independent families approve the corrected snapshot: Codex3 reviewed7484791 (code8533b8e), Grok3 approved8533b8e. Full archive completeness is not claimed. The original refute outputs are local, with the
 verdicts and responses recorded here. No semantic claim re-verification, replacement evidence, scope/ring/vocabulary
 ruling, rendered visibility audit or PDF text extraction is claimed.
 
@@ -130,7 +130,7 @@ have no queries; no bad current row was demonstrated. Fixed all three replay-eff
 same_capture: exact capture timestamp plus structural original-page comparison, preserving query case/slashes.
 check_replay_binding.py exercises the actual receipt gate: exact replay passes; changed query and capture timestamp
 fail and leave no successful receipt. PASS. The continuation cache collector receives the same shared guard.
-Existing frame, judgments, quotes and canonical archive rows do not change. Corrected clerk re-review is required.
+Existing frame, judgments, quotes and canonical archive rows do not change. The targeted cure subsequently passed both clerk re-reviews.
 
 
 Grok3 clerk @8533b8e7e5bc8eeaeadb897c970f661cfd34d12a: **APPROVE, zero findings**. Targeted replay-cure review
@@ -139,4 +139,14 @@ passes; extra probes reject another query value and id_ modifier, and preserve p
 normalization. validate.py zero errors; keyed row-loss guard PASS against merge-base bd57a08dfe. No data differs from
 4ef764e: same34 archive rows, none with queries, frozen judgments unchanged. The prior Grok review independently
 re-fetched7captures covering10rows with matching quotes; network captures were not re-fetched again for this code-only
-cure. Codex3 targeted cure approval remains pending, so this PR stays draft.
+cure. Codex3 subsequently approved the same code cure, as recorded below.
+
+
+Codex3/OpenAI clerk: **APPROVE, zero remaining findings**, code cure8533b8e reviewed at7484791 (documentation-only
+receipt afterward). Original redirected-query reproducer now fails at the actual gate; permanent replay-binding
+regression passes. Eight additional controlled query/timestamp/modifier/host/path/encoded-slash mutations reject
+and clear a pre-seeded stale receipt; allowed scheme/www/path-slash normalization passes. validate.py zero errors,
+row-loss guard PASS against pinned origin/main (merge-base bd57a08), report exact3261/422/34/3227 PASS. Canonical
+data and frozen quote/judgment/ID packets unchanged from4ef764e, no forbidden federal-frame files in committed diff.
+The unchanged34links/11captures and1120live references were not re-fetched for this targeted code cure. Both-family
+approval is for the scoped quote audit and verified34-link snapshot; the3227 archive holds and long worker remain open.
