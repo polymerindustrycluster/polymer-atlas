@@ -3,7 +3,7 @@
 Controller-assigned continuation of PR #237 (`tasks/strong-wave-site-quality-2026-11-06/`, merged: 7 C→B, 33 held). It works rows 41-80 of that task's frozen `eligible_frame.csv` (161 tier-C sites, order preserved) and nothing else. Claude worker L15 (Sonnet), branch `agent/claude-code/strong-wave-site-quality-2`, evidence block EVD-330000–330999. First user: the controller and Atlas research lanes, 2026-11-06.
 
 Acceptance criteria, fixed before research:
-- Every framed site gets exactly one verdict; rows 1-40 (round 1) and 82-161 are untouched. `input.csv` must equal `eligible_frame.csv[40:80]` and every framed site row must still equal the frame on the pinned main.
+- Every framed site gets exactly one verdict; rows 1-40 (round 1) and 81-161 are untouched. `input.csv` must equal `eligible_frame.csv[40:80]` and every framed site row must still equal the frame on the pinned main.
 - Consult T2's read-only bulk ECHO index and T1's site corpus before any live request; no index rebuild, no FRS REST.
 - Promote C→B only with all seven must-have site claims at B, activity/liveness included (these records stay active). One raw own-site page must name the plant city and a present-tense activity, bound to the held operator by its own domain and by the filed street (B-PARENT: no parent-page exceptions are used). Own-site rows contain only actual page words (07:20 rule).
 - Hold ambiguous identity, scope, ring, street, county and source availability, each with a settling fact. A failed or robots-blocked fetch is availability, never absence.
