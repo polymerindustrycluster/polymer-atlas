@@ -51,3 +51,11 @@ Catalogue search was partial; the Mac lacks the configured Documents entity inde
 ## Final verification receipt
 
 Integration base5574d48f40, frozen research frame542629e. `main-snapshot-drift.json` is empty: all24 endpoint snapshots remain unchanged on the refreshed main. `check.py` PASS exact12/24,2dateddistinct/10holds,19sources15confirmed4unconfirmed,allcanonicalCSVbytesunchanged,rebuildidempotent,3knownanswers+6admissionfaults. `validate.py` PASS zeroerrors:4985organizationrows/7096siterows/37641evidenceobservations. `check_row_loss.py --base origin/main` PASS no keyed row removed,merge-base5574d48f40. No canonical changes or EVD/REL allocations. Fullscripts pytest notrun because scripts/unchanged. Deepindependentfamilyreviewsrequestedondraft;noDone/mergeclaim.
+
+## Codex review receipt — APPROVE
+
+Codex/OpenAI clerk7 thr_4a74hsbtsd APPROVE with zero blocking findings, bound to356bebd7c89a. Independently verified validator0, native row-loss guard (merge-base5574d48), task checks/replay/three known answers/six faults and both helper checks. All220 canonical CSV files are byte-identical to5574d48; diff confined to29 task paths; no data/scripts/QUEUE/federal-frame edits or IDs minted. Counts recompute12pairs=2distinct+10holds/24reciprocalflags/20observations over19URLs=15confirmed+4unconfirmed;REMOVALS has zero body rows.
+
+Independent seed22207 sample10/19URLs:8HTTP200 with ordered quotes confirmed,2HTTP403 matching recorded D07 unconfirmed holds. Sample includes all four D03/D04 witnesses; context supports parent/operator distinction and no-merge result. All12 settling facts inspected; legal/operator/TRI uncertainties stay held. APT overwritten capture remains explicitly UNINSPECTABLE; APT6/Tusco7 effort exceptions remain disclosed. Limits: nine remaining fresh URLs, missing APT body, legal/TRI source-system adjudication, hosted output/fullscripts pytest not inspected. Packet-only scope grants no canonical merge/note/rekey authority. Report: controllerstorage2026-11-06-atlas/reviews/222-clerk-codex-7.md.
+
+This receipt changes README only. Reviewed packet inputs, adjudications, flags and code remain unchanged. Grok verdict is pending; no two-family completion or merge claim. Earlier statements that both family reviews are pending are superseded for Codex only.
