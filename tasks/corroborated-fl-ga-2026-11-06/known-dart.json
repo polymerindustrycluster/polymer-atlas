@@ -1,0 +1,60 @@
+{
+  "query": {
+    "domain": null,
+    "name": "DART CONTAINER CORP",
+    "street": "1605 TURKEY CREEK ROAD",
+    "city": null,
+    "state": "FL",
+    "zip": null
+  },
+  "stop_at_step": 2,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": "no --domain",
+      "hits": []
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002441",
+          "name": "Dart Container Corporation",
+          "city": "Lancaster",
+          "state": "PA",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_PA.csv",
+          "match": "name key 'dart container' = legal_name 'Dart Container Corporation'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": null,
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-002474",
+          "name": "Dart Container Corp. Of Pennsylvania",
+          "city": "Leola",
+          "state": "PA",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_PA.csv",
+          "match": "notes contains 'DART CONTAINER CORP'"
+        }
+      ]
+    }
+  ]
+}
