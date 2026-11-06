@@ -1,0 +1,918 @@
+{
+  "LF-FL-00109": [],
+  "LF-FL-00450": [],
+  "LF-FL-00343": [],
+  "LF-FL-00370": [],
+  "LF-FL-00381": [],
+  "LF-FL-00544": [],
+  "LF-FL-00425": [
+    {
+      "id": "ORG-001395",
+      "name": "CREO Greenhouse",
+      "city": "Mogadore",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'NURSERY SUPPLIES, INC.'"
+    }
+  ],
+  "LF-FL-00292": [
+    {
+      "id": "ORG-002521",
+      "name": "Hilex Poly Co. LLC",
+      "city": "Milesburg",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'hilex poly' = legal_name 'Hilex Poly Co. LLC'"
+    }
+  ],
+  "LF-FL-00385": [],
+  "LF-FL-00403": [
+    {
+      "id": "ORG-004874",
+      "name": "KP Building Products (Kaycan Ltd.)",
+      "city": "Holly Springs",
+      "state": "MS",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MS.csv",
+      "match": "notes contains 'SAINT-GOBAIN'"
+    },
+    {
+      "id": "ORG-000245",
+      "name": "Luxium Solutions",
+      "city": "Hiram",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'SAINT-GOBAIN'"
+    },
+    {
+      "id": "ORG-001929",
+      "name": "Saint-Gobain HyComp LLC (Hycomp LLC)",
+      "city": "Middleburg Heights",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SAINT-GOBAIN'"
+    },
+    {
+      "id": "ORG-000035",
+      "name": "Saint-Gobain Performance Plastics",
+      "city": "Malvern",
+      "state": "PA",
+      "status": "active",
+      "tier": "U",
+      "file": "organizations_PA.csv",
+      "match": "legal_name contains 'SAINT-GOBAIN'"
+    },
+    {
+      "id": "ORG-002738",
+      "name": "CertainTeed LLC",
+      "city": "Malvern",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'SAINT-GOBAIN'"
+    }
+  ],
+  "LF-FL-00028": [
+    {
+      "id": "ORG-000132",
+      "name": "The Sherwin-Williams Company",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-000088",
+      "name": "PPG Industries, Inc.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'The Sherwin-Williams Company'"
+    },
+    {
+      "id": "ORG-002886",
+      "name": "CSW Industrials, Inc.",
+      "city": "Dallas",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'The Sherwin-Williams Company'"
+    }
+  ],
+  "LF-FL-00217": [
+    {
+      "id": "ORG-002643",
+      "name": "Jeld-Wen",
+      "city": "Charlotte",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "name key 'jeld wen' = legal_name 'Jeld-Wen'"
+    }
+  ],
+  "LF-FL-00134": [
+    {
+      "id": "ORG-001033",
+      "name": "Plastipak Packaging, Inc.",
+      "city": "Medina",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'plastipak packaging' = legal_name 'Plastipak Packaging, Inc.'"
+    }
+  ],
+  "LF-FL-00092": [
+    {
+      "id": "ORG-001052",
+      "name": "Proto Plastics, Inc.",
+      "city": "Tipp City",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'PROTO, CORP.'"
+    },
+    {
+      "id": "ORG-001995",
+      "name": "Proto Mold Products Co., Inc.",
+      "city": "Piqua",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "legal_name contains 'PROTO, CORP.'"
+    },
+    {
+      "id": "ORG-002278",
+      "name": "Proto-Cast LLC",
+      "city": "Douglassville",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "legal_name contains 'PROTO, CORP.'"
+    },
+    {
+      "id": "ORG-007729",
+      "name": "T.O. Plastics, Inc.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'PROTO, CORP.'"
+    }
+  ],
+  "LF-FL-00338": [],
+  "LF-FL-00485": [],
+  "LF-FL-00487": [],
+  "LF-FL-00526": [],
+  "LF-FL-00250": [],
+  "LF-FL-00060": [],
+  "LF-FL-00421": [
+    {
+      "id": "ORG-004300",
+      "name": "MAPEI Corporation",
+      "city": "Deerfield Beach",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "name key 'mapei' = legal_name 'MAPEI Corporation'"
+    },
+    {
+      "id": "ORG-002397",
+      "name": "Polyglass USA",
+      "city": "Hazleton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'MAPEI CORP'"
+    }
+  ],
+  "LF-FL-00236": [
+    {
+      "id": "ORG-004311",
+      "name": "Jacuzzi Brands LLC",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_US.csv",
+      "match": "name key 'jacuzzi brands' = legal_name 'Jacuzzi Brands LLC'"
+    }
+  ],
+  "LF-FL-00344": [
+    {
+      "id": "ORG-000853",
+      "name": "FXI, Inc.",
+      "city": "Spencerville",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'fxi' = legal_name 'FXI, Inc.'"
+    }
+  ],
+  "LF-FL-00435": [],
+  "LF-FL-00520": [],
+  "LF-FL-00098": [],
+  "LF-FL-00047": [
+    {
+      "id": "ORG-003169",
+      "name": "TSE Industries, Inc.",
+      "city": "Clearwater",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "name key 'tse industries' = legal_name 'TSE Industries, Inc.'"
+    }
+  ],
+  "LF-FL-00006": [],
+  "LF-FL-00358": [
+    {
+      "id": "ORG-002441",
+      "name": "Dart Container Corporation",
+      "city": "Lancaster",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'dart container' = legal_name 'Dart Container Corporation'"
+    },
+    {
+      "id": "ORG-002474",
+      "name": "Dart Container Corp. Of Pennsylvania",
+      "city": "Leola",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'DART CONTAINER CORP'"
+    }
+  ],
+  "LF-FL-00022": [],
+  "LF-FL-00081": [],
+  "LF-FL-00155": [],
+  "LF-FL-00392": [],
+  "LF-FL-00261": [
+    {
+      "id": "ORG-001408",
+      "name": "Altium Packaging",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'altium packaging' = legal_name 'Altium Packaging'"
+    },
+    {
+      "id": "ORG-006136",
+      "name": "Altium Packaging - Newark Plant",
+      "city": "Newark",
+      "state": "DE",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_DE.csv",
+      "match": "legal_name contains 'Altium Packaging'"
+    }
+  ],
+  "LF-FL-00529": [],
+  "LF-FL-00115": [],
+  "LF-FL-00151": [
+    {
+      "id": "ORG-002709",
+      "name": "Finzer Roller Inc. Willow Street",
+      "city": "Willow Street",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'FINZER ROLLER, INC.'"
+    }
+  ],
+  "LF-FL-00116": [
+    {
+      "id": "ORG-003316",
+      "name": "Industrial Plastic Systems",
+      "city": "Lakeland",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'Lakeland'"
+    },
+    {
+      "id": "ORG-007601",
+      "name": "Maclan Corporation",
+      "city": "Lakeland",
+      "state": "FL",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'Lakeland'"
+    },
+    {
+      "id": "ORG-003168",
+      "name": "Resinall Corp",
+      "city": "Flowood",
+      "state": "MS",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_MS.csv",
+      "match": "notes contains 'Lakeland'"
+    },
+    {
+      "id": "ORG-000116",
+      "name": "AMD Plastics",
+      "city": "Euclid",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Lakeland'"
+    },
+    {
+      "id": "ORG-001403",
+      "name": "Graham Packaging Company",
+      "city": "Fremont",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'graham packaging' = legal_name 'Graham Packaging Company'"
+    }
+  ],
+  "LF-FL-00196": [],
+  "LF-FL-00441": [
+    {
+      "id": "ORG-000566",
+      "name": "Sealed Air Corporation",
+      "city": "Charlotte",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "name key 'sealed air' = legal_name 'Sealed Air Corporation'"
+    },
+    {
+      "id": "ORG-000237",
+      "name": "Sealed Air - Automated Packaging Systems",
+      "city": "Streetsboro",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Sealed Air'"
+    },
+    {
+      "id": "ORG-000934",
+      "name": "Liquibox",
+      "city": "Upper Sandusky",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Sealed Air'"
+    },
+    {
+      "id": "ORG-001105",
+      "name": "Liquibox",
+      "city": "Ashland",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Sealed Air'"
+    }
+  ],
+  "LF-FL-00070": [],
+  "LF-FL-00014": [
+    {
+      "id": "ORG-002349",
+      "name": "Cork Industries Inc.",
+      "city": "Folcroft",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "name key 'cork industries' = legal_name 'Cork Industries Inc.'"
+    }
+  ],
+  "LF-FL-00404": [
+    {
+      "id": "ORG-000850",
+      "name": "Franklin Adhesives & Polymers",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'FRANKLIN INTERNATIONAL, INC.'"
+    }
+  ],
+  "LF-FL-00345": [],
+  "LF-FL-00363": [],
+  "LF-FL-00286": [
+    {
+      "id": "ORG-004965",
+      "name": "LATICRETE International, Inc.",
+      "city": "Bethany",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "name key 'laticrete international' = legal_name 'LATICRETE International, Inc.'"
+    }
+  ],
+  "LF-FL-00815": [],
+  "LF-FL-00176": [],
+  "LF-FL-00379": [
+    {
+      "id": "ORG-004516",
+      "name": "The Toro Company",
+      "city": "Bloomington",
+      "state": "MN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MN.csv",
+      "match": "name key 'toro' = legal_name 'The Toro Company'"
+    },
+    {
+      "id": "ORG-004325",
+      "name": "POLYVANTIS Sanford LLC",
+      "city": "Sanford",
+      "state": "ME",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_ME.csv",
+      "match": "notes contains 'SANFORD'"
+    },
+    {
+      "id": "ORG-004390",
+      "name": "GVS N.A.",
+      "city": "Sanford",
+      "state": "ME",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_ME.csv",
+      "match": "notes contains 'SANFORD'"
+    },
+    {
+      "id": "ORG-003485",
+      "name": "PlantSwitch Inc.",
+      "city": "Sanford",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'SANFORD'"
+    },
+    {
+      "id": "ORG-003766",
+      "name": "Roctool Inc.",
+      "city": "Sanford",
+      "state": "NC",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'SANFORD'"
+    },
+    {
+      "id": "ORG-003934",
+      "name": "STI Polymer Inc",
+      "city": "Sanford",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'SANFORD'"
+    }
+  ],
+  "LF-FL-00009": [
+    {
+      "id": "ORG-002723",
+      "name": "Amrize Building Envelope LLC",
+      "city": "Youngwood",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "name key 'amrize building envelope' = legal_name 'Amrize Building Envelope LLC'"
+    },
+    {
+      "id": "ORG-003272",
+      "name": "Strongbridge International LLC",
+      "city": "Jacksonville",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'Jacksonville'"
+    },
+    {
+      "id": "ORG-002892",
+      "name": "Reynolds Consumer Products Inc.",
+      "city": "Lake Forest",
+      "state": "IL",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_IL.csv",
+      "match": "notes contains 'Jacksonville'"
+    },
+    {
+      "id": "ORG-003452",
+      "name": "Nordmann US Inc.",
+      "city": "Charlotte",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'Jacksonville'"
+    },
+    {
+      "id": "ORG-003228",
+      "name": "Flying 'W' Plastics, Inc.",
+      "city": "Glenville",
+      "state": "WV",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WV.csv",
+      "match": "notes contains 'Jacksonville'"
+    }
+  ],
+  "LF-FL-00337": [
+    {
+      "id": "ORG-007606",
+      "name": "American Vinyl Company",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "name key 'american vinyl' = legal_name 'American Vinyl Company'"
+    }
+  ],
+  "LF-FL-00087": [
+    {
+      "id": "ORG-002484",
+      "name": "Carpenter Co. Incorporated",
+      "city": "Lititz",
+      "state": "PA",
+      "status": "merged",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'carpenter' = legal_name 'Carpenter Co. Incorporated'",
+      "successor_chain": [
+        "ORG-002348"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-002348 Carpenter Co. [active]"
+    },
+    {
+      "id": "ORG-002348",
+      "name": "Carpenter Co.",
+      "city": "Richmond",
+      "state": "VA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_VA.csv",
+      "match": "name key 'carpenter' = legal_name 'Carpenter Co.'"
+    }
+  ],
+  "LF-FL-00209": [
+    {
+      "id": "ORG-001128",
+      "name": "Storopack, Inc.",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+    }
+  ],
+  "LF-FL-00225": [],
+  "LF-FL-00154": [
+    {
+      "id": "ORG-001128",
+      "name": "Storopack, Inc.",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+    }
+  ],
+  "LF-FL-00549": [],
+  "LF-FL-00369": [
+    {
+      "id": "ORG-005044",
+      "name": "Homeland Vinyl Products",
+      "city": "Pinson",
+      "state": "AL",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_AL.csv",
+      "match": "name key 'homeland vinyl products' = legal_name 'Homeland Vinyl Products'"
+    },
+    {
+      "id": "ORG-006237",
+      "name": "Homeland Vinyl Products, Inc. Utah",
+      "city": "Ogden",
+      "state": "UT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_UT.csv",
+      "match": "legal_name contains 'HOMELAND VINYL PRODUCTS INC.'"
+    }
+  ],
+  "LF-FL-00437": [],
+  "LF-FL-00278": [],
+  "LF-FL-00454": [],
+  "LF-FL-00333": [
+    {
+      "id": "ORG-000665",
+      "name": "Amcor Flexibles North America, Inc.",
+      "city": "Bellevue",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'AMCOR RIGID PACKAGING'"
+    }
+  ],
+  "LF-FL-00867": [],
+  "LF-FL-00378": [],
+  "LF-FL-00334": [],
+  "LF-FL-00290": [],
+  "LF-FL-00582": [
+    {
+      "id": "ORG-000259",
+      "name": "CANTEX Inc.",
+      "city": "Aurora",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'cantex' = legal_name 'CANTEX Inc.'"
+    }
+  ],
+  "LF-FL-00744": [
+    {
+      "id": "ORG-004995",
+      "name": "CKS Packaging",
+      "city": "Naugatuck",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+    }
+  ],
+  "LF-FL-00812": [],
+  "LF-FL-00277": [],
+  "LF-FL-00118": [],
+  "LF-FL-00299": [],
+  "LF-FL-00248": [],
+  "LF-FL-00311": [],
+  "LF-FL-00234": [],
+  "LF-FL-00052": [
+    {
+      "id": "ORG-003081",
+      "name": "Milliken & Company",
+      "city": "Spartanburg",
+      "state": "SC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_SC.csv",
+      "match": "name key 'milliken and' = legal_name 'Milliken & Company'"
+    }
+  ],
+  "LF-FL-00041": [
+    {
+      "id": "ORG-002386",
+      "name": "Advanced Composite Products Inc.",
+      "city": "Harrisburg",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Mulberry'"
+    }
+  ],
+  "LF-FL-00597": [
+    {
+      "id": "ORG-002140",
+      "name": "Paragon Plastics Inc",
+      "city": "New Middletown",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Paragon'"
+    },
+    {
+      "id": "ORG-003762",
+      "name": "Paragon D&E",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MI.csv",
+      "match": "trade_names contains 'Paragon'"
+    },
+    {
+      "id": "ORG-001575",
+      "name": "Life Sciences - Vandalia, LLC",
+      "city": "Dayton",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'Paragon'"
+    }
+  ],
+  "LF-FL-00832": [],
+  "LF-FL-00436": [
+    {
+      "id": "ORG-001148",
+      "name": "TekniPlex, Inc.",
+      "city": "Holland",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'GLOBAL INNOVATION, LLC'"
+    }
+  ],
+  "LF-FL-00386": [],
+  "LF-FL-00284": [],
+  "LF-FL-00845": [],
+  "LF-FL-00102": [],
+  "LF-FL-00270": [],
+  "LF-FL-00495": [],
+  "LF-FL-00050": [],
+  "LF-FL-00552": [],
+  "LF-FL-00265": [],
+  "LF-FL-00181": [
+    {
+      "id": "ORG-008210",
+      "name": "Signode Industrial Group LLC",
+      "city": "Tampa",
+      "state": "FL",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'Tampa'"
+    },
+    {
+      "id": "ORG-003343",
+      "name": "Precision Tank LLC",
+      "city": "Springfield",
+      "state": "IL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IL.csv",
+      "match": "notes contains 'Tampa'"
+    },
+    {
+      "id": "ORG-003513",
+      "name": "Budnick Converting, Inc.",
+      "city": "Columbia",
+      "state": "IL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IL.csv",
+      "match": "notes contains 'Tampa'"
+    },
+    {
+      "id": "ORG-003913",
+      "name": "ICP Construction Inc.",
+      "city": "Andover",
+      "state": "MA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'Tampa'"
+    },
+    {
+      "id": "ORG-007606",
+      "name": "American Vinyl Company",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'Tampa'"
+    }
+  ],
+  "LF-FL-00362": [
+    {
+      "id": "ORG-003850",
+      "name": "Bamberger Amco Polymers",
+      "city": "Orlando",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'Orlando'"
+    },
+    {
+      "id": "ORG-003902",
+      "name": "3D Barrier Bags, Inc.",
+      "city": "Orlando",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'Orlando'"
+    }
+  ],
+  "LF-FL-00527": [],
+  "LF-FL-00648": [
+    {
+      "id": "ORG-003914",
+      "name": "IPS Adhesives",
+      "city": "Durham",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'IPS CORPORATION'"
+    }
+  ],
+  "LF-FL-00835": [
+    {
+      "id": "ORG-000905",
+      "name": "ISCO Industries, Inc.",
+      "city": "Louisville",
+      "state": "KY",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_KY.csv",
+      "match": "name key 'isco industries' = legal_name 'ISCO Industries, Inc.'"
+    },
+    {
+      "id": "ORG-006247",
+      "name": "Isco Industries, Inc. - Salt Lake City",
+      "city": "West Jordan",
+      "state": "UT",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_UT.csv",
+      "match": "legal_name contains 'ISCO INDUSTRIES, INC.'"
+    }
+  ],
+  "LF-FL-00630": [],
+  "LF-FL-00030": [],
+  "LF-FL-00319": [],
+  "LF-FL-00523": [],
+  "LF-FL-00374": [],
+  "LF-FL-00059": [],
+  "LF-FL-00101": [],
+  "LF-FL-00787": [],
+  "LF-FL-00224": [
+    {
+      "id": "ORG-000745",
+      "name": "Composites One LLC",
+      "city": "Dublin",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'composites one' = legal_name 'Composites One LLC'"
+    },
+    {
+      "id": "ORG-000859",
+      "name": "GLS Corp.",
+      "city": "Dayton",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Composites One LLC'"
+    }
+  ],
+  "LF-FL-00831": []
+}

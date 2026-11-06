@@ -135,3 +135,15 @@ Codex3 REFUTE accepted: mutable edits.csv could change PROG-000109 from the sour
 The exact19→20 edit, a2024→2025 edit, and a falsified evidence count are injected on both initial-application and replay data; all six fail before any CSV write. A seventh test mutates an unedited held count and proves source drift is rejected on replay. Existing wrongUNITID and wrong-shard tests remain. Source metadata now anchors raw_2024.csv SHA256 and explicitly records44 numeric proposal rows /43 distinct UNITID×CIP keys. The shared GT key139755×14.1801 appears in two proposals (PROG99 applied, PROG143 held), not two independent keys; no numeric or verdict change.
 
 Actual preparation rerun on reconstructed pre-application data using the same verified NCES raw member; all frozen canonical value/evidence packets reproduce unchanged. All checks and validator rerun for the corrected head. Previous Grok approval covers the old guard; both corrected-head family rereviews required. No full scripts pytest or unchanged program-own-page re-verification.
+
+## Fresh-main replay
+
+Merged main542629e53a0d07d55cf49b6da958f2219fbb5ba5; took both owned canonical CSVs
+exactly from main then reran corrected source-bound builder. No CSV hand merge.
+All167 main programs preserved, exactly112cells on34programs changed, all main program
+EVD preserved and exactly34EVD appended. Frozen input/joins/edits/verdicts/raw/evidence
+packet hashes unchanged from30aaf79. integration-main.json records counts and hashes.
+Check/replay/7source-derived no-write mutations plus wrongUNITID/wrongshard tests and
+validator0 PASS on integrated tree. Sourceguard family rereviews requested at30aaf79;
+this integration changes context only, not packet/builder semantics. No scripts diff
+relative to main; fullscripts pytest/unchanged primary-program research not repeated.

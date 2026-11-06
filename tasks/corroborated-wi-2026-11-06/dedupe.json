@@ -1,0 +1,1407 @@
+{
+  "LF-WI-00154": [
+    {
+      "id": "ORG-004135",
+      "name": "Bemis Manufacturing Co",
+      "city": "Sheboygan Falls",
+      "state": "WI",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_WI.csv",
+      "match": "name key 'bemis manufacturing' = legal_name 'Bemis Manufacturing Co'"
+    }
+  ],
+  "LF-WI-00320": [],
+  "LF-WI-00156": [
+    {
+      "id": "ORG-004358",
+      "name": "Belmark Inc",
+      "city": "De Pere",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "name key 'belmark' = legal_name 'Belmark Inc'"
+    }
+  ],
+  "LF-WI-00065": [
+    {
+      "id": "ORG-004874",
+      "name": "KP Building Products (Kaycan Ltd.)",
+      "city": "Holly Springs",
+      "state": "MS",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MS.csv",
+      "match": "notes contains 'Saint-Gobain'"
+    },
+    {
+      "id": "ORG-000245",
+      "name": "Luxium Solutions",
+      "city": "Hiram",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "trade_names contains 'Saint-Gobain'"
+    },
+    {
+      "id": "ORG-001929",
+      "name": "Saint-Gobain HyComp LLC (Hycomp LLC)",
+      "city": "Middleburg Heights",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Saint-Gobain'"
+    },
+    {
+      "id": "ORG-000035",
+      "name": "Saint-Gobain Performance Plastics",
+      "city": "Malvern",
+      "state": "PA",
+      "status": "active",
+      "tier": "U",
+      "file": "organizations_PA.csv",
+      "match": "legal_name contains 'Saint-Gobain'"
+    },
+    {
+      "id": "ORG-002738",
+      "name": "CertainTeed LLC",
+      "city": "Malvern",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Saint-Gobain'"
+    }
+  ],
+  "LF-WI-00071": [],
+  "LF-WI-00338": [],
+  "LF-WI-00322": [],
+  "LF-WI-00080": [],
+  "LF-WI-00388": [],
+  "LF-WI-00426": [],
+  "LF-WI-00286": [],
+  "LF-WI-00137": [
+    {
+      "id": "ORG-007718",
+      "name": "PPC Industries, Inc. (dba Spectrum Plastics Group)",
+      "city": "Alpharetta",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'PPC INDUSTRIES, INC.'"
+    }
+  ],
+  "LF-WI-00326": [],
+  "LF-WI-00153": [
+    {
+      "id": "ORG-000665",
+      "name": "Amcor Flexibles North America, Inc.",
+      "city": "Bellevue",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'amcor flexibles north america' = legal_name 'Amcor Flexibles North America, Inc.'"
+    }
+  ],
+  "LF-WI-00057": [],
+  "LF-WI-00420": [],
+  "LF-WI-00082": [],
+  "LF-WI-00167": [],
+  "LF-WI-00110": [],
+  "LF-WI-00102": [
+    {
+      "id": "ORG-007107",
+      "name": "TriEnda Holdings, LLC",
+      "city": "Portage",
+      "state": "WI",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_WI.csv",
+      "match": "notes contains 'Kruger Family Industries'"
+    }
+  ],
+  "LF-WI-00327": [
+    {
+      "id": "ORG-002345",
+      "name": "Novares Us, LLC - Felton Plant",
+      "city": "Felton",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Novares'"
+    }
+  ],
+  "LF-WI-00053": [],
+  "LF-WI-00314": [],
+  "LF-WI-00345": [],
+  "LF-WI-00008": [],
+  "LF-WI-00025": [],
+  "LF-WI-00296": [],
+  "LF-WI-00429": [],
+  "LF-WI-00054": [],
+  "LF-WI-00047": [
+    {
+      "id": "ORG-002255",
+      "name": "Valmet Inc.",
+      "city": "Clarks Summit",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "name key 'valmet' = legal_name 'Valmet Inc.'"
+    }
+  ],
+  "LF-WI-00282": [],
+  "LF-WI-00351": [],
+  "LF-WI-00258": [
+    {
+      "id": "ORG-003966",
+      "name": "Hentzen Coatings, Inc.",
+      "city": "Milwaukee",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "name key 'hentzen coatings' = legal_name 'Hentzen Coatings, Inc.'"
+    }
+  ],
+  "LF-WI-00190": [
+    {
+      "id": "ORG-002478",
+      "name": "North American Pipe Corporation (Westlake Pipe & Fittings)",
+      "city": "Leola",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-002477",
+      "name": "North Amer Pipe Corp.",
+      "city": "Leola",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-003067",
+      "name": "Westlake Corporation",
+      "city": "Houston",
+      "state": "TX",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_TX.csv",
+      "match": "name key 'westlake' = legal_name 'Westlake Corporation'"
+    },
+    {
+      "id": "ORG-003472",
+      "name": "Genpak LLC",
+      "city": "Charlotte",
+      "state": "NC",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-000253",
+      "name": "Borchers Americas Inc.",
+      "city": "Westlake",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-000480",
+      "name": "Palmer Holland, Inc",
+      "city": "Westlake",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-000531",
+      "name": "Q-Lab Corporation",
+      "city": "Westlake",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-000764",
+      "name": "Royal Building Products",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-000793",
+      "name": "Dimex LLC",
+      "city": "Marietta",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-001076",
+      "name": "Return Polymers",
+      "city": "Ashland",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-001091",
+      "name": "Royal Building Products (Westlake Royal Building Products)",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-001562",
+      "name": "Bay Corporation",
+      "city": "Westlake",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-001563",
+      "name": "SurgTech, Inc.",
+      "city": "Westlake",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-002472",
+      "name": "Westlake Plastics Co.",
+      "city": "Lenni",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-002473",
+      "name": "Westlake Plastics Iwtp",
+      "city": "Lenni",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-003574",
+      "name": "Wedlake Industries",
+      "city": "Hohenwald",
+      "state": "TN",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_TN.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-003258",
+      "name": "Pipeline Plastics, LLC",
+      "city": "Westlake",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'Westlake'"
+    },
+    {
+      "id": "ORG-004623",
+      "name": "Lotte Chemical USA Corporation",
+      "city": "Houston",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'Westlake'"
+    }
+  ],
+  "LF-WI-00272": [
+    {
+      "id": "ORG-000728",
+      "name": "Charter Next Generation",
+      "city": "Delaware",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'charter next generation' = legal_name 'Charter Next Generation'"
+    }
+  ],
+  "LF-WI-00139": [
+    {
+      "id": "ORG-002248",
+      "name": "Atlas Roofing Corporation",
+      "city": "Camp Hill",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'atlas roofing' = legal_name 'Atlas Roofing Corporation'"
+    }
+  ],
+  "LF-WI-00376": [],
+  "LF-WI-00115": [],
+  "LF-WI-00315": [],
+  "LF-WI-00311": [],
+  "LF-WI-00350": [],
+  "LF-WI-00501": [],
+  "LF-WI-00015": [
+    {
+      "id": "ORG-001466",
+      "name": "Henkel Corporation",
+      "city": "Warrensville Heights",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'henkel' = legal_name 'Henkel Corporation'"
+    },
+    {
+      "id": "ORG-003973",
+      "name": "Stahl USA",
+      "city": "Peabody",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "notes contains 'HENKEL CORPORATION'"
+    },
+    {
+      "id": "ORG-000345",
+      "name": "Forest City Technologies",
+      "city": "Wellington",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'HENKEL CORPORATION'"
+    },
+    {
+      "id": "ORG-001611",
+      "name": "Flint Group North America Corporation",
+      "city": "Lebanon",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'HENKEL CORPORATION'"
+    }
+  ],
+  "LF-WI-00081": [],
+  "LF-WI-00430": [],
+  "LF-WI-00294": [],
+  "LF-WI-00199": [],
+  "LF-WI-00413": [],
+  "LF-WI-00202": [],
+  "LF-WI-00380": [],
+  "LF-WI-00352": [],
+  "LF-WI-00332": [],
+  "LF-WI-00333": [],
+  "LF-WI-00342": [],
+  "LF-WI-00343": [],
+  "LF-WI-00305": [],
+  "LF-WI-00398": [],
+  "LF-WI-00087": [],
+  "LF-WI-00339": [],
+  "LF-WI-00280": [],
+  "LF-WI-00297": [],
+  "LF-WI-00173": [],
+  "LF-WI-00379": [],
+  "LF-WI-00084": [],
+  "LF-WI-00233": [],
+  "LF-WI-00227": [],
+  "LF-WI-00244": [],
+  "LF-WI-00289": [],
+  "LF-WI-00418": [],
+  "LF-WI-00254": [
+    {
+      "id": "ORG-002281",
+      "name": "Penn Color Inc.",
+      "city": "Doylestown",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "name key 'penn color' = legal_name 'Penn Color Inc.'"
+    }
+  ],
+  "LF-WI-00036": [
+    {
+      "id": "ORG-001489",
+      "name": "Sun Chemical Corporation",
+      "city": "Parsippany",
+      "state": "NJ",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_NJ.csv",
+      "match": "name key 'sun chemical' = legal_name 'Sun Chemical Corporation'"
+    },
+    {
+      "id": "ORG-001752",
+      "name": "Performance Plastics Ltd.",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "acquired",
+      "tier": "C",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Sun Chemical'",
+      "successor_chain": [
+        "ORG-002534"
+      ],
+      "successor_end": "terminal",
+      "successor_terminal": "ORG-002534 Pexco LLC [active]"
+    }
+  ],
+  "LF-WI-00213": [
+    {
+      "id": "ORG-007037",
+      "name": "Ironwood Plastics, Inc.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "name key 'ironwood plastics' = legal_name 'Ironwood Plastics, Inc.'"
+    }
+  ],
+  "LF-WI-00266": [],
+  "LF-WI-00265": [],
+  "LF-WI-00463": [],
+  "LF-WI-00125": [
+    {
+      "id": "ORG-002635",
+      "name": "Polyfab Corporation",
+      "city": "Reading",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'polyfab' = legal_name 'Polyfab Corporation'"
+    },
+    {
+      "id": "ORG-003229",
+      "name": "Forge PolyFab, LLC",
+      "city": "Justin",
+      "state": "TX",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'Polyfab LLC'"
+    }
+  ],
+  "LF-WI-00421": [
+    {
+      "id": "ORG-004483",
+      "name": "Ritus Corporation",
+      "city": "Milwaukee",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "name key 'vrc engineered solutions' = trade_names 'VRC Engineered Solutions'"
+    },
+    {
+      "id": "ORG-006141",
+      "name": "Vrc Engineered Solutions-Coeur D'Alene",
+      "city": "Coeur D'Alene",
+      "state": "ID",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_ID.csv",
+      "match": "legal_name contains 'VRC Engineered Solutions'"
+    },
+    {
+      "id": "ORG-006118",
+      "name": "Vanseal Corporation dba VRC Engineered Solutions",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "legal_name contains 'VRC Engineered Solutions'"
+    }
+  ],
+  "LF-WI-00059": [
+    {
+      "id": "ORG-007716",
+      "name": "Cortec Corporation",
+      "city": "St. Paul",
+      "state": "MN",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MN.csv",
+      "match": "name key 'cortec' = legal_name 'Cortec Corporation'"
+    }
+  ],
+  "LF-WI-00201": [],
+  "LF-WI-00204": [],
+  "LF-WI-00650": [],
+  "LF-WI-00468": [
+    {
+      "id": "ORG-003986",
+      "name": "Ellsworth Adhesives",
+      "city": "Germantown",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "legal_name contains 'Ellsworth Corporation'"
+    }
+  ],
+  "LF-WI-00323": [
+    {
+      "id": "ORG-004118",
+      "name": "Anlin Windows & Doors",
+      "city": "Clovis",
+      "state": "CA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_CA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-003112",
+      "name": "Freepoint Commodities LLC",
+      "city": "Stamford",
+      "state": "CT",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CT.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004300",
+      "name": "MAPEI Corporation",
+      "city": "Deerfield Beach",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004345",
+      "name": "American Polymer Co",
+      "city": "Pompano Beach",
+      "state": "FL",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004361",
+      "name": "Blue Water Dynamics LLC",
+      "city": "Edgewater",
+      "state": "FL",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004372",
+      "name": "Classic Cultured Marble Inc.",
+      "city": "Riviera Beach",
+      "state": "FL",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_FL.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-003011",
+      "name": "Cutmetall North America LP",
+      "city": "Tyrone",
+      "state": "GA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004301",
+      "name": "Polyventive LLC",
+      "city": "Calhoun",
+      "state": "GA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_GA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004534",
+      "name": "DynaChem Inc.",
+      "city": "Westville",
+      "state": "IL",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_IL.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004297",
+      "name": "Aurorium LLC",
+      "city": "Indianapolis",
+      "state": "IN",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_IN.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004378",
+      "name": "Coulter LLC",
+      "city": "Middlebury",
+      "state": "IN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IN.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004540",
+      "name": "Estron Chemical, Inc.",
+      "city": "Calvert City",
+      "state": "KY",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_KY.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004095",
+      "name": "LymTal International, Inc.",
+      "city": "Lake Orion",
+      "state": "MI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MI.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004353",
+      "name": "Armaly Sponge Co.",
+      "city": "Walled Lake",
+      "state": "MI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MI.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004366",
+      "name": "General Formulations Inc",
+      "city": "Sparta",
+      "state": "MI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MI.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004621",
+      "name": "National Composites, LLC",
+      "city": "Troy",
+      "state": "MI",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_MI.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-003022",
+      "name": "STADLER America LLC",
+      "city": "Winston-Salem",
+      "state": "NC",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004365",
+      "name": "Carter Millwork Inc.",
+      "city": "Lexington",
+      "state": "NC",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_NC.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004362",
+      "name": "Bumper Specialties Inc",
+      "city": "West Deptford",
+      "state": "NJ",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_NJ.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004371",
+      "name": "Church & Dwight Co Inc",
+      "city": "Ewing",
+      "state": "NJ",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NJ.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004386",
+      "name": "Dicar Inc",
+      "city": "Pine Brook",
+      "state": "NJ",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NJ.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004315",
+      "name": "Pall Corporation",
+      "city": "Port Washington",
+      "state": "NY",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NY.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-000211",
+      "name": "Additive Engineering Solutions, LLC",
+      "city": "Akron",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-000257",
+      "name": "BVPV Styrenics LLC",
+      "city": "Painesville",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-000693",
+      "name": "B&B Molded Products Inc.",
+      "city": "Defiance",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-000996",
+      "name": "OCTAL Extrusion Corporation",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001445",
+      "name": "Arclin USA LLC",
+      "city": "Toledo",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001999",
+      "name": "Raydar of Ohio, Inc.",
+      "city": "Wadsworth",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-003263",
+      "name": "Reel Power Industrial, Inc.",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_OK.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-002363",
+      "name": "Cott MFG",
+      "city": "Glassport",
+      "state": "PA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-003090",
+      "name": "Tinius Olsen, Inc.",
+      "city": "Horsham",
+      "state": "PA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004124",
+      "name": "AHF Products LLC",
+      "city": "Mountville",
+      "state": "PA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_PA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-003956",
+      "name": "Explore Industries USA Inc.",
+      "city": "Knoxville",
+      "state": "TN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TN.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004357",
+      "name": "Bailey-Parks Urethane Inc",
+      "city": "Memphis",
+      "state": "TN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TN.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-002914",
+      "name": "Univation Technologies, LLC",
+      "city": "Houston",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004369",
+      "name": "Channell Commercial Corporation",
+      "city": "Rockwall",
+      "state": "TX",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_TX.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004377",
+      "name": "Consolidated Metco Inc",
+      "city": "Vancouver",
+      "state": "WA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_WA.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004358",
+      "name": "Belmark Inc",
+      "city": "De Pere",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-004552",
+      "name": "Molded Dimensions, Inc.",
+      "city": "Port Washington",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001240",
+      "name": "Cuyahoga County",
+      "city": "Cleveland",
+      "state": "OH",
+      "status": "active",
+      "tier": "U",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001278",
+      "name": "Ohio Department of Development",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001284",
+      "name": "The Ohio State University",
+      "city": "Columbus",
+      "state": "OH",
+      "status": "unknown",
+      "tier": "C",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001314",
+      "name": "University of Cincinnati",
+      "city": "Cincinnati",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001315",
+      "name": "University of Dayton",
+      "city": "Dayton",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    },
+    {
+      "id": "ORG-001316",
+      "name": "The University of Toledo",
+      "city": "Toledo",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'SHARE CORPORATION'"
+    }
+  ],
+  "LF-WI-00640": [],
+  "LF-WI-00665": [
+    {
+      "id": "ORG-002132",
+      "name": "International Converter, Inc.",
+      "city": "Caldwell",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'QUALITY PACKAGING INC.'"
+    }
+  ],
+  "LF-WI-00444": [],
+  "LF-WI-00663": [],
+  "LF-WI-00229": [],
+  "LF-WI-00029": [],
+  "LF-WI-00394": [],
+  "LF-WI-00166": [
+    {
+      "id": "ORG-002157",
+      "name": "Custom Pultrusions, Inc.",
+      "city": "Aurora",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_OH.csv",
+      "match": "name key 'custom pultrusions' = legal_name 'Custom Pultrusions, Inc.'"
+    }
+  ],
+  "LF-WI-00164": [],
+  "LF-WI-00061": [],
+  "LF-WI-00344": [],
+  "LF-WI-00307": [],
+  "LF-WI-00055": [
+    {
+      "id": "ORG-007404",
+      "name": "Westcoat Specialty Coating Systems",
+      "city": "San Diego",
+      "state": "CA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_CA.csv",
+      "match": "legal_name contains 'Specialty Coating Systems, Inc.'"
+    }
+  ],
+  "LF-WI-00309": [],
+  "LF-WI-00103": [],
+  "LF-WI-00552": [],
+  "LF-WI-00588": [],
+  "LF-WI-00681": [],
+  "LF-WI-00474": [],
+  "LF-WI-00619": [],
+  "LF-WI-00443": [
+    {
+      "id": "ORG-003273",
+      "name": "Teel Plastics, LLC",
+      "city": "Baraboo",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "name key 'teel plastics' = legal_name 'Teel Plastics, LLC'"
+    }
+  ],
+  "LF-WI-00450": [],
+  "LF-WI-00381": [
+    {
+      "id": "ORG-000662",
+      "name": "Allied Plastics",
+      "city": "Toledo",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "name key 'allied plastics' = legal_name 'Allied Plastics'"
+    }
+  ],
+  "LF-WI-00448": [
+    {
+      "id": "ORG-003504",
+      "name": "Primex Plastics Corporation",
+      "city": "Richmond",
+      "state": "IN",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_IN.csv",
+      "match": "name key 'primex plastics' = legal_name 'Primex Plastics Corporation'"
+    },
+    {
+      "id": "ORG-006178",
+      "name": "Primex Plastics Mesquite",
+      "city": "Mesquite",
+      "state": "NV",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_NV.csv",
+      "match": "legal_name contains 'PRIMEX PLASTICS CORPORATION'"
+    },
+    {
+      "id": "ORG-005108",
+      "name": "B & F Plastics, Inc.",
+      "city": "",
+      "state": "",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_US.csv",
+      "match": "notes contains 'PRIMEX PLASTICS CORPORATION'"
+    }
+  ],
+  "LF-WI-00583": [
+    {
+      "id": "ORG-004064",
+      "name": "Lavelle Industries, Inc.",
+      "city": "Burlington",
+      "state": "WI",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_WI.csv",
+      "match": "name key 'lavelle industries' = legal_name 'Lavelle Industries, Inc.'"
+    }
+  ],
+  "LF-WI-00330": [],
+  "LF-WI-00484": [],
+  "LF-WI-00467": [
+    {
+      "id": "ORG-000933",
+      "name": "Liberty Tire Recycling",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'liberty tire recycling' = legal_name 'Liberty Tire Recycling'"
+    },
+    {
+      "id": "ORG-006246",
+      "name": "Liberty Tire Recycling - Ogden, Ut",
+      "city": "Ogden",
+      "state": "UT",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_UT.csv",
+      "match": "legal_name contains 'LIBERTY TIRE RECYCLING'"
+    }
+  ],
+  "LF-WI-00632": [
+    {
+      "id": "ORG-002336",
+      "name": "Future Foam Inc.",
+      "city": "Fairless Hills",
+      "state": "PA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_PA.csv",
+      "match": "name key 'future foam' = legal_name 'Future Foam Inc.'"
+    },
+    {
+      "id": "ORG-006245",
+      "name": "Future Foam - Plant 12",
+      "city": "West Valley City",
+      "state": "UT",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_UT.csv",
+      "match": "legal_name contains 'FUTURE FOAM, INC.'"
+    }
+  ],
+  "LF-WI-00582": [],
+  "LF-WI-00554": [
+    {
+      "id": "ORG-003607",
+      "name": "Midland Plastics, Inc.",
+      "city": "New Berlin",
+      "state": "WI",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_WI.csv",
+      "match": "name key 'midland plastics' = legal_name 'Midland Plastics, Inc.'"
+    }
+  ],
+  "LF-WI-00447": [
+    {
+      "id": "ORG-003187",
+      "name": "Specialty Materials, Inc.",
+      "city": "Lowell",
+      "state": "MA",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_MA.csv",
+      "match": "name key 'specialty materials' = legal_name 'Specialty Materials, Inc.'"
+    },
+    {
+      "id": "ORG-004198",
+      "name": "ACCI Specialty Materials LLC",
+      "city": "HARRISONVILLE",
+      "state": "MO",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MO.csv",
+      "match": "notes contains 'Specialty Materials'"
+    },
+    {
+      "id": "ORG-002874",
+      "name": "Solstice Advanced Materials Inc.",
+      "city": "Morris Plains",
+      "state": "NJ",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_NJ.csv",
+      "match": "notes contains 'Specialty Materials'"
+    },
+    {
+      "id": "ORG-000436",
+      "name": "Merit Specialty Chemicals",
+      "city": "Peninsula",
+      "state": "OH",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_OH.csv",
+      "match": "notes contains 'Specialty Materials'"
+    },
+    {
+      "id": "ORG-003166",
+      "name": "TSRC Specialty Materials LLC",
+      "city": "Katy",
+      "state": "TX",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_TX.csv",
+      "match": "legal_name contains 'Specialty Materials'"
+    },
+    {
+      "id": "ORG-002089",
+      "name": "Ferris State University",
+      "city": "Big Rapids",
+      "state": "MI",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'Specialty Materials'"
+    },
+    {
+      "id": "ORG-002090",
+      "name": "University of Wisconsin\u2013Stout",
+      "city": "Menomonie",
+      "state": "WI",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'Specialty Materials'"
+    }
+  ],
+  "LF-WI-00455": [],
+  "LF-WI-00672": [],
+  "LF-WI-00673": [],
+  "LF-WI-00527": [
+    {
+      "id": "ORG-003819",
+      "name": "Revolution Sustainable Solutions, LLC",
+      "city": "Little Rock",
+      "state": "AR",
+      "status": "active",
+      "tier": "B",
+      "file": "organizations_AR.csv",
+      "match": "name key 'revolution sustainable solutions' = legal_name 'Revolution Sustainable Solutions, LLC'"
+    }
+  ],
+  "LF-WI-00301": [],
+  "LF-WI-00624": [
+    {
+      "id": "ORG-004192",
+      "name": "Plastics Engineering Company",
+      "city": "SHEBOYGAN",
+      "state": "WI",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_WI.csv",
+      "match": "name key 'plastics engineering' = legal_name 'Plastics Engineering Company'"
+    },
+    {
+      "id": "ORG-007313",
+      "name": "Pittsfield Plastics Engineering, LLC",
+      "city": "Pittsfield",
+      "state": "MA",
+      "status": "active",
+      "tier": "C",
+      "file": "organizations_MA.csv",
+      "match": "legal_name contains 'PLASTICS ENGINEERING COMPANY'"
+    },
+    {
+      "id": "ORG-001298",
+      "name": "Shawnee State University",
+      "city": "Portsmouth",
+      "state": "OH",
+      "status": "active",
+      "tier": "C",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'PLASTICS ENGINEERING COMPANY'"
+    },
+    {
+      "id": "ORG-002090",
+      "name": "University of Wisconsin\u2013Stout",
+      "city": "Menomonie",
+      "state": "WI",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'PLASTICS ENGINEERING COMPANY'"
+    },
+    {
+      "id": "ORG-002092",
+      "name": "Pittsburg State University",
+      "city": "Pittsburg",
+      "state": "KS",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'PLASTICS ENGINEERING COMPANY'"
+    },
+    {
+      "id": "ORG-002175",
+      "name": "Youngstown State University",
+      "city": "Youngstown",
+      "state": "OH",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'PLASTICS ENGINEERING COMPANY'"
+    },
+    {
+      "id": "ORG-002779",
+      "name": "Penn State Behrend",
+      "city": "Erie",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'PLASTICS ENGINEERING COMPANY'"
+    },
+    {
+      "id": "ORG-004627",
+      "name": "West Virginia University at Parkersburg",
+      "city": "Parkersburg",
+      "state": "WV",
+      "status": "active",
+      "tier": "A",
+      "file": "ecosystem.csv",
+      "match": "notes contains 'PLASTICS ENGINEERING COMPANY'"
+    }
+  ],
+  "LF-WI-00208": [],
+  "LF-WI-00216": [],
+  "LF-WI-00382": [
+    {
+      "id": "ORG-002608",
+      "name": "Parker Plastics Corp.",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "status": "active",
+      "tier": "A",
+      "file": "organizations_PA.csv",
+      "match": "name key 'parker plastics' = legal_name 'Parker Plastics Corp.'"
+    }
+  ],
+  "LF-WI-00372": []
+}
