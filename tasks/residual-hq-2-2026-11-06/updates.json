@@ -1,0 +1,242 @@
+{
+  "ORG-004062": {
+    "fields": {
+      "hq_city": "Troy",
+      "hq_state": "MI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.atlasholdingsllc.com/news/atlas-holdings-launches-resrg-automotive-with-acquisitions-of-rehau-automotive-and-srg-global/; https://www.resrgautomotive.com/en/contact",
+      "notes": "Created 2026-10-30 in integration pass 22 from TRI national wave P013-P018 org design NEW:resrg-automotive (freeze tier B; design tier B). Created in PKT-017 (TRI national reverse-yield wave, tranche 3) on the evidence cited in pkt017_verdicts.csv / pkt017_evidence_rows.csv. Packet prep assignment (ORG-000413) was a matcher artifact (TRI parent KOCH INC vs 'Koch Knight') and was NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315000",
+      "record_table": "organizations",
+      "record_id": "ORG-004062",
+      "claim_type": "address",
+      "claim_detail": "HQ Troy, MI, US: \"Headquarters 800 Stephenson Highway Troy, Michigan, USA 48083\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.resrgautomotive.com/en/contact",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004134": {
+    "fields": {
+      "hq_city": "Bloomington",
+      "hq_state": "CA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.duratechnologiesinc.com/; https://www.duratechnologiesinc.com/careers/",
+      "notes": "Created 2026-10-30 in integration pass 23 from TRI national wave P019-P024 org design NEW:dura-technologies-inc (freeze tier B; design tier B). Created in PKT-019 (TRI national reverse-yield wave, tranche 4) on the evidence cited in pkt019_verdicts.csv / pkt019_evidence_rows.csv. Packet adjacency org was a near-name magnet and was NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315001",
+      "record_table": "organizations",
+      "record_id": "ORG-004134",
+      "claim_type": "address",
+      "claim_detail": "HQ Bloomington, CA, US: \"Our headquarters is conveniently located in Bloomington, California.\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.duratechnologiesinc.com/careers/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004348": {
+    "fields": {
+      "hq_city": "Boulder City",
+      "hq_state": "NV",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://amerityre.com/; https://amerityre.com/company/",
+      "notes": "Created 2026-10-30 in integration pass 24 from TRI national wave P025-P030 org design NEW:amerityre-corp (freeze tier B; design tier B). Created in PKT-030 (TRI national reverse-yield wave, tranche 5) on the evidence cited in pkt030_verdicts.csv / pkt030_evidence_rows.csv. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315002",
+      "record_table": "organizations",
+      "record_id": "ORG-004348",
+      "claim_type": "address",
+      "claim_detail": "HQ Boulder City, NV, US: \"From its headquarters and manufacturing facility in Boulder City, Nevada, Amerityre produces\"",
+      "source_class": "own_site",
+      "source_ref": "https://amerityre.com/company/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004350": {
+    "fields": {
+      "hq_city": "Lewiston",
+      "hq_state": "ME",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Polymer Laboratories and Solutions LLC own document printing '765 Webster Street, Lewiston, ME 04240'; FAME Maine / Mainebiz acquisition reporting (2020; 2024); https://polyurethanelaboratories.com/poly-labs-fluid-focus/",
+      "notes": "Created 2026-10-30 in integration pass 24 from TRI national wave P025-P030 org design NEW:polymer-laboratories-and-solutions-llc (freeze tier A; design tier A). Created in PKT-030 (TRI national reverse-yield wave, tranche 5) on the evidence cited in pkt030_verdicts.csv / pkt030_evidence_rows.csv. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315003",
+      "record_table": "organizations",
+      "record_id": "ORG-004350",
+      "claim_type": "address",
+      "claim_detail": "HQ Lewiston, ME, US: \"manufacturing company headquartered in Lewiston, Maine, USA.\"",
+      "source_class": "own_site",
+      "source_ref": "https://polyurethanelaboratories.com/poly-labs-fluid-focus/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004383": {
+    "fields": {
+      "hq_city": "Elkhart",
+      "hq_state": "IN",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Directory record for Delivery Concepts Inc headquarters, 29301 County Road 20, Elkhart, IN (deliveryconcepts.com); http://deliveryconcepts.com/",
+      "notes": "Created 2026-10-30 in integration pass 24 from TRI national wave P025-P030 org design NEW:delivery-concepts-inc (freeze tier C; design tier C). Created in PKT-030 (TRI national reverse-yield wave, tranche 5) on the evidence cited in pkt030_verdicts.csv / pkt030_evidence_rows.csv. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315004",
+      "record_table": "organizations",
+      "record_id": "ORG-004383",
+      "claim_type": "address",
+      "claim_detail": "HQ Elkhart, IN, US: \"CORPORATE HQ: 29385 County Road 20 Elkhart, IN\"",
+      "source_class": "own_site",
+      "source_ref": "http://deliveryconcepts.com/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004391": {
+    "fields": {
+      "hq_city": "Rohnert Park",
+      "hq_state": "CA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Places/directory listing for IDEX Health and Science, 110 Halcyon Dr, Bristol, CT (operator domain idex-hs.com); https://www.idex-hs.com/about/legal-notices/privacy-statement",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:idex-health-and-science-llc (freeze tier B; design tier A). Created in PKT-031 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt031_verdicts.csv / pkt031_evidence_rows.csv. Packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315005",
+      "record_table": "organizations",
+      "record_id": "ORG-004391",
+      "claim_type": "address",
+      "claim_detail": "HQ Rohnert Park, CA, US: \"our corporate headquarters || IDEX Health & Science, LLC 600 Park Court Rohnert Park, CA 94928 Unites States\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.idex-hs.com/about/legal-notices/privacy-statement",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004522": {
+    "fields": {
+      "hq_city": "Troy",
+      "hq_state": "AL",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Graham Partners portfolio profile, HB&G Building Products (grahampartners.net); USPTO trademark record for PERMACAST; https://mbpgroup.com/companies/",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:hb-g-building-products-inc (freeze tier B; design tier B). Created in PKT-034 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt034_verdicts.csv / pkt034_evidence_rows.csv. Coordinator held-org leads and packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315006",
+      "record_table": "organizations",
+      "record_id": "ORG-004522",
+      "claim_type": "address",
+      "claim_detail": "HQ Troy, AL, US: \"HB&G Building Products || We\u2019re headquartered in Troy, AL\"",
+      "source_class": "own_site",
+      "source_ref": "https://mbpgroup.com/companies/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004523": {
+    "fields": {
+      "hq_city": "Lafayette",
+      "hq_state": "IN",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Wabash place listing, onewabash.com; https://news.onewabash.com/wabash-recognizes-outstanding-suppliers-for-2025/",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:wabash-national-corporation (freeze tier C; design tier C). Created in PKT-034 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt034_verdicts.csv / pkt034_evidence_rows.csv. Coordinator held-org leads and packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315007",
+      "record_table": "organizations",
+      "record_id": "ORG-004523",
+      "claim_type": "address",
+      "claim_detail": "HQ Lafayette, IN, US: \"Headquartered in Lafayette, Indiana, Wabash designs, manufactures, and services\"",
+      "source_class": "own_site",
+      "source_ref": "https://news.onewabash.com/wabash-recognizes-outstanding-suppliers-for-2025/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004531": {
+    "fields": {
+      "hq_city": "St. Louis",
+      "hq_state": "MO",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Missouri DNR Permit to Construct 122015-008 (dnr.mo.gov); Chemline own site (chemline.net); https://chemline.net/about/our-history/",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:chemline-inc (freeze tier A; design tier A). Created in PKT-034 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt034_verdicts.csv / pkt034_evidence_rows.csv. Coordinator held-org leads and packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315009",
+      "record_table": "organizations",
+      "record_id": "ORG-004531",
+      "claim_type": "address",
+      "claim_detail": "HQ St. Louis, MO, US: \"St. Louis, MO || Our St. Louis location acts as our headquarters\"",
+      "source_class": "own_site",
+      "source_ref": "https://chemline.net/about/our-history/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  },
+  "ORG-004533": {
+    "fields": {
+      "hq_city": "Torrington",
+      "hq_state": "CT",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "Bomar Oligomers Selector Guide (bomar-chem.com); https://bomar-chem.com/content/download/933/file/b22ddc7688358a265f86a6060e43f1f0.pdf",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:bomar-specialties-llc (freeze tier B; design tier B). Created in PKT-034 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt034_verdicts.csv / pkt034_evidence_rows.csv. Coordinator held-org leads and packet adjacency orgs were near-name magnets and were NOT used as identity evidence. Direct parent (unheld, name only): Dymax Corp. | HQ placement 2026-11-06: explicit entity HQ; prior county cleared where unsupported. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-315010",
+      "record_table": "organizations",
+      "record_id": "ORG-004533",
+      "claim_type": "address",
+      "claim_detail": "HQ Torrington, CT, US: \"Global Headquarters: 51 Greenwoods Road | Torrington, CT 06790 | USA\"",
+      "source_class": "own_site",
+      "source_ref": "https://bomar-chem.com/content/download/933/file/b22ddc7688358a265f86a6060e43f1f0.pdf",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq",
+      "notes": "Own-site HQ designation independently re-fetched raw 2026-11-06; county left blank unless evidenced; record tier unchanged."
+    }
+  }
+}
