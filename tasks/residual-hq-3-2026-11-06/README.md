@@ -29,3 +29,11 @@ Frozen100 organizations = 12 HQ_FOUND / 88 STILL_UNKNOWN (12% of reviewed organi
 Lead check.py PASS: exact main frame positions101–200, 100 verdicts, full organization/evidence unions/content, raw receipts, byte-idempotency, three no-write faults, two wrong quote substitutions. validate.py PASS zero errors. Independently reproduced helper A check:50IDs/5positive/45hold/103routes/max3/3knownanswers+5faults. Helper B check result recorded after receipt. Integrator fetches exactly12 unique positive sources, 2 calibration captures reused plus10 finalfetches; no duplicate integrator requests.
 
 Main advanced to merge #177 during research; before final push the lane restores fresh-main canonical data and replays the builder. Integration base and resulting census are recorded below, while frame-base remains frozen.
+
+## Fresh-main replay receipt
+
+Integration base 8a5821b (main PR177 included): restored main's complete data/ tree, then reran build.py. Check.py PASS proves all main organization/evidence rows preserved, exact permitted twelve updates only, 68 old evidence rows intact and 12 new. Frame remains original c267471 positions101–200; no replacement with a shifted main slice. Main added two unrelated residual organizations, so current residual249 →237 (earlier247→235 is the frozen-base scenario, not current-main count). Full validate.py PASS zero errors: 4,972 organizations /7,025 sites /36,732 evidence observations checked. Byte-idempotency and three no-write faults PASS on this exact replay.
+
+Helper B check independently rerun PASS:50/50 IDs,7proposals/43holds,121 receipt hashes,max4 routes (cap5),4 positive source/parser cases+2parentholds+6faultcontrols. Both helpers’ packets and all12 integrator raw quotes are complete; A103+B121+integrator12=236 source-route attempts across100 reviewed organizations; no fetch budget exceeded. Final twelve changed organization tiers A1/C11 unchanged; no stronger tier implied by address evidence.
+
+Independent Codex3/Grok3 review pending; draft until both approve. Full scripts tests not run because scripts/ unchanged. Raw /tmp cache lifetime is a reproducibility limitation; URLs/quote hashes are committed and prepare.py can regenerate after explicit cache replacement if needed.
