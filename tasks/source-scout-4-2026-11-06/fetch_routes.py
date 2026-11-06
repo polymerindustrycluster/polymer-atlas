@@ -17,7 +17,7 @@ def main():
  with tempfile.TemporaryDirectory() as d:
   def probe(pair):
    i,(source,route,url)=pair;p=Path(d)/str(i)
-   c=subprocess.run(['curl','-LsS','--max-time','45','-A','Mozilla/5.0',url,'-o',str(p),'-w','%{http_code}'],capture_output=True,text=True)
+   c=subprocess.run(['curl','-LsS','--max-time','45','-A',('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' if source=='vinyl-institute' else 'Mozilla/5.0'),url,'-o',str(p),'-w','%{http_code}'],capture_output=True,text=True)
    b=p.read_bytes() if p.exists() else b''
    return dict(source=source,route=route,url=url,observed_date='2026-11-06',http_status=c.stdout,fetch_rc=c.returncode,bytes=len(b),sha256=hashlib.sha256(b).hexdigest())
   with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:out=list(pool.map(probe,enumerate(ROUTES)))

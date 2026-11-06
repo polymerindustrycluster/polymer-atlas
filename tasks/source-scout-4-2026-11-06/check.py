@@ -54,8 +54,8 @@ def main():
  c=json.loads((HERE/'acma/counts.json').read_text());assert c==dict(public_listings=252,manufacturer_listings=121,us_manufacturer_not_opted_out=98,sampled=20)
  metrics['frames']=dict(cdr_input_rows=counts['input_chemical_reporting_rows'],cdr_all_site_ids=counts['all_tsca_site_ids'],cdr_slice_site_ids=len(frame),cdr_slice_chemical_rows=2924,acma_public_listings=252,acma_us_manufacturer_not_opted_out=98)
  routes=read(HERE/'routes.csv');assert len(routes)==9 and all(r['http_status'] and r['sha256'] for r in routes)
- assert all(r['http_status']=='200' for r in routes if r['source'] in ['apr','acma','epa-cdr'])
- terms=read(HERE/'terms_checks.csv');assert len(terms)==5 and {r['source'] for r in terms}=={'apr','acma','epa-cdr','sam-gov'}
+ assert all(r['http_status']=='200' for r in routes if r['source'] in ['apr','acma','epa-cdr','vinyl-institute'])
+ terms=read(HERE/'terms_checks.csv');assert len(terms)==6 and {r['source'] for r in terms}=={'apr','acma','epa-cdr','sam-gov','vinyl-institute'}
  for r in terms:assert r['raw_words_in_order']=='PASS' and r['quote'] in (HERE/r['source']/'README.md').read_text()
  dest=HERE/'metrics.json'
  if '--write' in sys.argv:dest.write_text(json.dumps(metrics,indent=2)+'\n')
