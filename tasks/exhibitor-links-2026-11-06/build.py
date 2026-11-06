@@ -31,6 +31,10 @@ UMBRELLA = {"EVT-000008", "EVT-000009", "EVT-000051", "EVT-000052"}  # AMI co-lo
 # a per-show row: foam-expo.com lists Foam Expo and Adhesives & Bonding Expo together (79 of its 80 matches were
 # already A&B 2027 exhibitors from A&B's own roster).
 COMBINED = {"foam-expo-north-america"}
+# An edition abroad whose roster gives no country: a trade-name match can land on the US subsidiary instead of the
+# foreign exhibitor (codex review: Momentive GmbH, Leverkusen, matched MPM Silicones LLC, Waterford NY). Held until
+# the roster's own address/country confirms the entity.
+NO_COUNTRY_ABROAD = {"tire-technology-expo"}
 
 
 def edition(conf_dir, slug, year):
@@ -69,6 +73,8 @@ def main():
         ev = "EVT-000007" if m["event_id"] in UMBRELLA else m["event_id"]
         if m["conf_key"] in COMBINED:
             skipped["combined two-show roster"] += 1; continue
+        if m["conf_key"] in NO_COUNTRY_ABROAD:
+            skipped["edition abroad, roster gives no country"] += 1; continue
         if ev not in events:
             skipped["series not held"] += 1; continue
         yr = m["edition_year"]

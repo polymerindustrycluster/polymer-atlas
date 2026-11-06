@@ -21,14 +21,23 @@ and findable." This pass relies on that ruling for AMI, CAMX, the Battery Show, 
 4. **`build.py`:** it mints only for series held in `events.csv`. Edition city and dates come from the conferences
    repo's series YAML (organizer-checked), never from the series' home city.
 
-## Applied: `event_participation.csv` +178 rows (organization × event edition)
+## Applied: `event_participation.csv` +172 rows (organization × event edition)
+
+Reviewer fixes (codex record-level review, 2026-11-06):
+- **Tire Technology Expo, 6 rows held.** That edition is abroad and its roster gives no country, so a trade-name
+  match can land on the US subsidiary instead of the foreign exhibitor. Momentive Performance Materials GmbH
+  (Leverkusen) had matched MPM Silicones LLC (Waterford, NY). The rows are held until the roster's own address
+  confirms each entity.
+- **For the integrator (organization record, not this PR):** ORG record "LG Chem America" carries the trade name
+  "LG Chem Ohio Petrochemical" and an HQ in Ravenna, OH. LG's own location data lists two companies: LG Chem America
+  in Atlanta, GA, and LG Chem Ohio Petrochemical in Ravenna. The AMI 2026 profile gives Atlanta. The record needs
+  splitting or correcting. The participation row (LG Chem America at AMI 2026) is right.
 
 | Event | Edition | Rows |
 |-|-|-:|
 | EVT-000003 Global Polymer Summit | 2027, Cleveland | 62 |
 | EVT-000007 AMI Plastics World Expos (umbrella) | 2026, Cleveland | 58 |
 | EVT-000014 CAMX | 2027, Anaheim | 52 |
-| EVT-000030 Tire Technology Expo | 2027, Hannover | 6 |
 
 - **Skipped as already held:** 42 rows from the 2026-11-04 pass, which read only the first page of each Map Your
   Show gallery.
