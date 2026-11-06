@@ -1,0 +1,35 @@
+equipment_id,host_org_id,name,verdict,source_ref
+EQP-000001,ORG-000501,Differential Scanning Calorimetry (DSC),VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000002,ORG-000501,Dynamic Mechanical Analyzer (DMA),VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000003,ORG-000501,"Gel Permeation Chromatography (GPC) with quad detection (MALS, RI, IV, UV)",VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000004,ORG-000501,Impact Tester,VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000005,ORG-000501,Melt Flow Index,VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000006,ORG-000501,Tensile Tester,VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000007,ORG-000501,Thermal Gravimetric Analysis (TGA),VERIFIED,https://www.uakron.edu/npic/testing/
+EQP-000008,ORG-000502,Scanning Electron Microscope (SEM),VERIFIED,https://case.edu/morecenter/equipment/characterization-equipment
+EQP-000009,ORG-000502,Atomic Force Microscope (AFM),VERIFIED,https://case.edu/morecenter/equipment/characterization-equipment
+EQP-000010,ORG-000502,Optical Microscope,VERIFIED,https://case.edu/morecenter/equipment/characterization-equipment
+EQP-000011,ORG-000502,Microindenter,VERIFIED,https://case.edu/morecenter/equipment/characterization-equipment
+EQP-000012,ORG-000503,Scanning Electron Microscope (SEM),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000013,ORG-000503,Atomic Force Microscope (TT-AFM),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000014,ORG-000503,Quanta450 FEG SEM/EBL (Quanta450),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000015,ORG-000503,Bruker FTIR (FTIR ),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000016,ORG-000503,ThermoFisher Scientific Rheometer HAAKE MARS II (Rheometer),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000017,ORG-000503,Confocal Laser Scanning Microscope (Confocal),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000018,ORG-000503,Differential Scanning Calorimeter (DSC),VERIFIED,https://www.kent.edu/amlci/characterization-facility-tools
+EQP-000019,ORG-001284,TA Discovery Hybrid Rheometer,VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000020,ORG-001284,TA Differential Scanning Calorimeter (DSC),VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000021,ORG-001284,TA Thermogravimetric Analyzers (TGA),VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000022,ORG-001284,Instron Universal Testing Machine,VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000023,ORG-001284,Twin-Screw Extruder,VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000024,ORG-001284,Compression Molding Press,VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000025,ORG-001284,3D Printers,VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000026,ORG-001284,60MHz Bencthop NMR- Spinsolve 60 Carbon,VERIFIED,https://u.osu.edu/alternativematters/instruments/
+EQP-000027,ORG-001315,Instron 3365 extended-height load frame,VERIFIED,https://sites.google.com/udayton.edu/bams-lab/facilities
+EQP-000028,ORG-001315,PCE-DD-A Shore A durometer,VERIFIED,https://sites.google.com/udayton.edu/bams-lab/facilities
+EQP-000029,ORG-002175,Lulzbot Taz 6 (Fused deposition modeling),VERIFIED,https://ysu.edu/excellence-training-center/resources
+EQP-000030,ORG-002175,Prusa Mk3+ S (Fused deposition modeling),VERIFIED,https://ysu.edu/excellence-training-center/resources
+EQP-000031,ORG-002175,Stratasys Fortus 250mc (Fused deposition modeling),VERIFIED,https://ysu.edu/excellence-training-center/resources
+EQP-000032,ORG-002175,Up mini (Fused deposition modeling),VERIFIED,https://ysu.edu/excellence-training-center/resources
+EQP-000033,ORG-002175,"Markforged Mark Two (Fused deposition modeling, carbon fiber filament)",VERIFIED,https://ysu.edu/excellence-training-center/resources
+EQP-000034,ORG-002175,Formlabs Form 2 (SLA),VERIFIED,https://ysu.edu/excellence-training-center/resources
