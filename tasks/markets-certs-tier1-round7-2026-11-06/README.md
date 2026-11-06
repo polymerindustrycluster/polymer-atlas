@@ -1,0 +1,22 @@
+# L10 round 7 — Tier-1 markets and certifications
+
+Acceptance before research: select 100 active organizations with stored Tier-1 qualifier and blank markets_served, excluding every organization in rounds 1–6; any held Ohio PIC-18 site sorts first, then org_id. No website filter. Frame pinned to main 965bc4d6e1ba680bd799e3ab4bc57b1e2fe20866: 682 eligible organizations, 100 selected, zero with a PIC-18 site. Round 1 has no frame file: its 24 distinct organizations are the union of its inputs and holds; subsequent frames contain 30, 100, 100, 100 and 100 organizations, with two overlaps. First user PIC supplier-matching staff; non-use review 2026-12-15.
+
+Only own-site statements of the held entity's actual markets and certifications; exact SCHEMA §3 vocabulary. No parent-wide union or generic material applications. Certifications require a current certificate or current page with a non-superseded edition, and identity, effective date and expiry when applicable. ISO 9001:2015 is held for owner ruling. Failures to fetch are availability only. Maximum approximately six primary pages per organization; raw rechecks additional. Each accepted value has one append-only own-site evidence row in EVD-241000–241399 in its matching shard; existing evidence and other organization fields remain untouched.
+
+Before application: four known answers and fabricated negatives, every quote freshly checked, independent fresh seeded 30-value raw audit, all 100 frame organizations accounted for, global evidence ID and shard collision checks before writes, negative guard tests, exact row/field boundary and replay checks, validator zero errors, and independent deep Codex and Grok refutes. Research and application pending.
+
+## Packet and holds
+
+100 framed active stored-Tier-1 organizations: 17 VERIFIED at least one market, 83 STILL_UNCERTAIN, yielding 17%. 56 market values and 56 evidence rows EVD-241000–241055; 17 market cells, no certification cells, on unchanged tiers A3/B11/C3. Sources and precise claims appear in inputs.csv; company pages include INOAC USA, Current Composites, Inteplast, Worthen, Augusta Fiberglass, Ortec and others. No organizations created, no tier, status, qualifier or other columns changed. No inclusion-log decisions. The holds.csv contains 100 organization/claim holds: 83 with no fill and 17 with incomplete market/certification coverage. These are not evidence of absence. Preliminary homepage/cached-page screening yielded 66 organizations with text, 26 unavailable and 8 without websites; subsequent raw checks concern accepted values only. Website availability is not a closure signal. The low yield and shallow homepage screening leave substantial unresolved research; the frame is not a complete certification census. Parent and unit unions, ambiguous product categories and generic consumer products were not promoted. No ISO transition exception was applied.
+
+Active organization markets populated 446→463 of 4,899 active organizations; certification cells remain 57. Counts reflect base 965bc4d, not later main. Sources are company-hosted pages, not licensed or private sources.
+
+## Checks
+
+- `python3 tasks/markets-certs-tier1-round7-2026-11-06/check.py`: four known answers and four fabricated negatives passed; 56/56 accepted quotes re-fetched and matched; seeded independent fresh 30 value-row sample, zero quote errors. This does not establish semantic attribution or independent source corroboration.
+- `python3 tasks/markets-certs-tier1-round7-2026-11-06/guardcheck.py`: global duplicate ID, identical evidence in wrong shard, future and expired synthetic certificate, foreign publisher, and incomplete verdict frame all rejected; all builder failures left data unchanged. Synthetic certificate rows are test inputs, not accepted claims.
+- `python3 tasks/markets-certs-tier1-round7-2026-11-06/boundary.py 965bc4d6e1ba680bd799e3ab4bc57b1e2fe20866`: 17 changed market cells, 56 evidence rows, no old row loss, unrelated field or historical evidence change; replay byte-identical.
+- `python3 scripts/validate.py`: passed, zero errors, 37,794 evidence rows on this base. Existing warnings remain. Shared scripts untouched.
+
+Codex and Grok independent deep refutes pending; draft, not completion-approved. Research is limited to initial homepage/cache screening and accepted-page raw checks, not exhaustive six-page research for every organization. Certificate issuer suspension and inaccessible pages remain unchecked. Owner ISO transition ruling remains pending.

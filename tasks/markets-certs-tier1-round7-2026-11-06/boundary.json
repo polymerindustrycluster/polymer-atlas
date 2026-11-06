@@ -1,0 +1,26 @@
+{
+  "base": "965bc4d6e1ba680bd799e3ab4bc57b1e2fe20866",
+  "organizations": 17,
+  "changed_cells": {
+    "markets_served": 17
+  },
+  "new_evidence_by_shard": {
+    "evidence_organizations_CT.csv": 8,
+    "evidence_organizations_INTL.csv": 4,
+    "evidence_organizations_KY.csv": 5,
+    "evidence_organizations_MI.csv": 5,
+    "evidence_organizations_MS.csv": 4,
+    "evidence_organizations_NH.csv": 4,
+    "evidence_organizations_NJ.csv": 6,
+    "evidence_organizations_SC.csv": 9,
+    "evidence_organizations_TN.csv": 1,
+    "evidence_organizations_TX.csv": 6,
+    "evidence_organizations_WA.csv": 2,
+    "evidence_organizations_WI.csv": 2
+  },
+  "new_evidence_rows": 56,
+  "existing_row_loss": 0,
+  "changed_unrelated_columns": 0,
+  "edited_existing_evidence": 0,
+  "replay_changed_bytes": false
+}
