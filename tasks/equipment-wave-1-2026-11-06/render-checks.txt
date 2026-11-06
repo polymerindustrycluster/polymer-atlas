@@ -1,0 +1,74 @@
+Before regression:
+EE
+======================================================================
+ERROR: test_nonempty_equipment_renders_source_cell (scripts.test_build_site.BuildSiteTest.test_nonempty_equipment_renders_source_cell) (source='https://example.edu/equipment')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/test_build_site.py", line 158, in test_nonempty_equipment_renders_source_cell
+    html = build_site.equipment_block([{"name": "DSC", "equipment_class": "dsc",
+                                       "access_mode": "not_stated", "source_ref": source}])
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/build_site.py", line 1769, in equipment_block
+    body = "".join(
+        f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+        f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
+        (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+        for r in sorted(rows, key=lambda r: (r.get("equipment_class") or "", (r.get("name") or "").lower())))
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/build_site.py", line 1770, in <genexpr>
+    f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable
+
+======================================================================
+ERROR: test_nonempty_equipment_renders_source_cell (scripts.test_build_site.BuildSiteTest.test_nonempty_equipment_renders_source_cell) (source='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/test_build_site.py", line 158, in test_nonempty_equipment_renders_source_cell
+    html = build_site.equipment_block([{"name": "DSC", "equipment_class": "dsc",
+                                       "access_mode": "not_stated", "source_ref": source}])
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/build_site.py", line 1769, in equipment_block
+    body = "".join(
+        f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+        f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
+        (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+        for r in sorted(rows, key=lambda r: (r.get("equipment_class") or "", (r.get("name") or "").lower())))
+  File "/Users/johnswanson/.bb/plugins/environment-git-worktree/host-data/worktrees/thr_yk63cjf9xu-1/polymer-atlas/scripts/build_site.py", line 1770, in <genexpr>
+    f'<tr><th scope="row">{esc(r.get("name"))}</th><td>{esc(str(r.get("equipment_class") or "").replace("_", " "))}</td>'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable
+
+----------------------------------------------------------------------
+Ran 1 test in 0.036s
+
+FAILED (errors=2)
+
+After regression:
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.035s
+
+OK
+
+Full scripts suite:
+.................................s.......................................................................... [ 48%]
+................................................................. [ 77%]
+.................................................                      [100%]
+221 passed, 1 skipped, 45 subtests passed in 63.90s (0:01:03)
+
+Real site build:
+Building database with scripts/build_sqlite.py ...
+Built build/equipment-wave-1/site: 5432 HTML pages (4945 organization, 400 ecosystem, 81 county + index, index/map/search), 5453 files, 38.5 MB; 4156 site rows on the map
+
+Independent host HTML sections:34equipment rows/6hosts, names+row counts all matched.
+Final validate: OK — validation passed.
+Builder:
+Known-answer 3/3; negative matcher check passed; 34 equipment rows; 0 new
+By host: {'ORG-000501': 7, 'ORG-000502': 4, 'ORG-000503': 7, 'ORG-001284': 8, 'ORG-001315': 2, 'ORG-002175': 6}
+By class: {'dsc': 3, 'dma': 1, 'gpc_sec': 1, 'impact_tester': 1, 'melt_flow_indexer': 1, 'universal_tester': 3, 'tga': 2, 'sem': 3, 'afm': 2, 'optical_microscopy': 2, 'hardness_tester': 2, 'ftir': 1, 'rheometer_rotational': 2, 'twin_screw_compounder': 1, 'compression_press': 1, 'additive_manufacturing_polymer': 7, 'nmr': 1}
