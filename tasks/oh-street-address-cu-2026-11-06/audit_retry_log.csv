@@ -1,0 +1,3 @@
+site_id,registry_id,prior,after,result
+SITE-000303,110031434213,FRS fetch failed: 22,"fresh identifier,street,city,ZIP,county,state agree on bounded retry",yes
+SITE-000378,110031249682,FRS fetch failed: 22,"fresh identifier,street,city,ZIP,county,state agree on bounded retry",yes

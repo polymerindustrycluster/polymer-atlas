@@ -13,8 +13,8 @@
   "packet_organizations": 49,
   "tiers": {
     "B": 39,
-    "C": 5,
-    "A": 5
+    "A": 5,
+    "C": 5
   },
   "new_evidence_rows": 171
 }

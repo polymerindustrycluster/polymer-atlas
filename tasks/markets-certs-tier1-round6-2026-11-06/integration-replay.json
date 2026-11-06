@@ -1,0 +1,8 @@
+{
+  "initial_packet_head": "5e97722",
+  "integration_main": "5574d48f4060f3b03633399f707047db0314e28b",
+  "all_49_org_cell_deltas_equal": true,
+  "all_171_full_evidence_rows_equal": true,
+  "old_main_rows_preserved": true,
+  "historical_builders_unchanged": true
+}

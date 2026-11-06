@@ -1,0 +1,25 @@
+site_id,source_class,registry_id,transcription,detail,error,fresh_source_match
+SITE-000637,registry,110043989020,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000238,registry,110000390229,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000244,registry,110002111063,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000303,registry,110031434213,not_ITA,"fresh identifier,street,city,ZIP,county,state agree on bounded retry",,yes
+SITE-000378,registry,110031249682,not_ITA,"fresh identifier,street,city,ZIP,county,state agree on bounded retry",,yes
+SITE-000233,registry,110015666992,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000462,registry,110004597240,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000517,registry,110000385333,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000432,registry,110002111660,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000547,registry,110009634495,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000590,registry,110004731112,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000628,registry,110002111376,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000521,registry,110000385930,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000580,registry,110012175243,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000664,registry,110001624582,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000248,registry,110006519026,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000670,registry,110070207909,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000439,registry,110009821336,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000367,registry,110000388429,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000657,registry,110046559434,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000305,registry,110002452603,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000570,registry,110002110448,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000494,registry,110046273938,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
+SITE-000634,registry,110071381043,not_ITA,"fresh identifier,street,city,ZIP,county,state agree",,yes
