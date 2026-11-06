@@ -23,8 +23,8 @@
     "EVD-153081"
   ],
   "active_ohio_sites": 1883,
-  "before_streets": 324,
-  "after_streets": 331,
+  "before_streets": 348,
+  "after_streets": 355,
   "site_changes": [
     {
       "site_id": "SITE-000028",
@@ -86,7 +86,8 @@
     "EVD-153100"
   ],
   "canonical_hashes": {
-    "sites_OH.csv": "f00913178393ff9e30f93ad2f0beb0a4d39defba160c4cf74b10222d15cd9e00",
-    "evidence_sites_OH.csv": "aa280c03a30d41847f7c80ca3456c49b872541c1451a503a476143b7fbcc0c57"
-  }
+    "sites_OH.csv": "7ee2fb58b216727ff6f6041d56b5f02520dda1109812651d219e6e8a150158d6",
+    "evidence_sites_OH.csv": "54d996715b19448d0cfb68f9f162b72ecb982075bef8ce994b5de0fa0acc4de4"
+  },
+  "replayed_main": "5574d48f4060f3b03633399f707047db0314e28b"
 }

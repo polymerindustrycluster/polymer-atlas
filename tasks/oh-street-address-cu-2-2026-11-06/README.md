@@ -37,3 +37,5 @@ Named checks:
 - Keyed baseline comparison:allsitekeys/legacyEVD retained;exact7edits7appends,retiredabsent,0structuredaddressoverlaps.
 
 Review fixes156/192/207/208/211 retainpriority; two-family deep refutes for this pass stillpending. Firstuser/non-use date unchanged. No Done/readiness/mergeclaim.
+
+Fresh main replay beforePR: explicitpinned5574d48f4060f3b03633399f707047db0314e28b,takebothOhiofiles+builder. Allkeys/legacyEVDpreserved,exact7edits7appends;coverage348→355/1883. Check7/retiredglobalIDfaultPASS,validator/nativeguardrerunbeforepush. Earlier324→331baseline remains historical if mainaddressmergesadvanced.

@@ -1,0 +1,194 @@
+{
+  "ORG-007712": {
+    "fields": {
+      "hq_city": "Hopkins",
+      "hq_state": "MN",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://tpmmfg.com/about/; OSHA ITA Form 300A CY2025 establishment 1373336 (Plasman Precision Parts LLC); OSHA inspection 348324070 (PLASMAN PRECISION PARTS LLC), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348324070; https://tpmmfg.com/about/",
+      "notes": "Created 2026-11-04 in the Minnesota STRONG wave (tasks/mn-strong-wave-2026-11-04) from lead-fusion cluster LF-MN-00340 (STRONG: ITA:1373336;OSHA:OSHAE-09531257ca;F5500:473254278). Tier C at birth (AGENTS \u00a73 step 5). Site-level tier B (federal ITA+OSHA+5500 plus own-site witness; org tier C). Federal names Plasman Precision Parts LLC / Precision Parts, USA; D&B says Plasman Precision Parts USA Inc. Own site brand is TPM; legal entity to be confirmed. Three of the four facilities are in Mexico (Juarez, Monterrey, | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317006",
+      "record_table": "organizations",
+      "record_id": "ORG-007712",
+      "claim_type": "address",
+      "claim_detail": "HQ Hopkins, MN, US: \"Hopkins, Minnesota || Hopkins Plant TPM HOP is located at the TPM headquarters.\"",
+      "source_class": "own_site",
+      "source_ref": "https://tpmmfg.com/about/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007729": {
+    "fields": {
+      "hq_city": "Clearwater",
+      "hq_state": "MN",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.toplastics.com/contact; OSHA ITA Form 300A CY2025 establishment 346560 (Clearwater); OSHA inspection 346319726 (TO PLASTICS INC), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=346319726; https://www.toplastics.com/hubfs/Resources/Medical/TO%20Plastics_Custom%20Solutions.pdf",
+      "notes": "Created 2026-11-04 in the Minnesota STRONG wave (tasks/mn-strong-wave-2026-11-04) from lead-fusion cluster LF-MN-00119 (STRONG: ITA:346560;OSHA:OSHAE-5cce96e5ff;ECHO:110008673462). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110008673462. Dedupe: step 2 name and domain searches found no hit; the step4 ORG ids in the input are substring noise (Roto Plastics, Proto Plastics, etc.), none related. Second facility at 6035 Queens Ave NE, Otsego, MN (Medical & Life Sciences) is NOT claimed in this record. HQ not stated on the site, left bla | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317011",
+      "record_table": "organizations",
+      "record_id": "ORG-007729",
+      "claim_type": "address",
+      "claim_detail": "HQ Clearwater, MN, US: \"HEADQUARTERS || P.O. Box 37 | 830 County Road 75 || Clearwater, MN 55320\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.toplastics.com/hubfs/Resources/Medical/TO%20Plastics_Custom%20Solutions.pdf",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-009019": {
+    "fields": {
+      "hq_city": "Fort Mill",
+      "hq_state": "SC",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://wikoff.com/company/; OSHA ITA Form 300A CY2025 establishment 53682 (Wikoff Color Corp. - Fort Mill - Plant); OSHA ITA Form 300A CY2025 establishment 558589 (Wikoff Color Corporation - Fort Mill - Admin); OSHA inspection 345036172 (WIKOFF COLOR CORPORATION), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=345036172; https://wikoff.com/news/wikoff-names-sachin-nayar-chief-technology-officer/",
+      "notes": "L3 STRONG LF-SC-00147; held federal packet identifiers (not fresh registry evidence): ITA:53682;ITA:558589;OSHA:OSHAE-0e3b86545c;ECHO:110008554135;F5500:560633683. HQ not independently established; left blank. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317030",
+      "record_table": "organizations",
+      "record_id": "ORG-009019",
+      "claim_type": "address",
+      "claim_detail": "HQ Fort Mill, SC, US: \"headquartered in Fort Mill, South Carolina, Wikoff\"",
+      "source_class": "own_site",
+      "source_ref": "https://wikoff.com/news/wikoff-names-sachin-nayar-chief-technology-officer/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-009031": {
+    "fields": {
+      "hq_city": "Belle Chasse",
+      "hq_state": "LA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://sunspecialtyproducts.com/about-us/; OSHA ITA Form 300A CY2025 establishment 1067928 (Sun Drilling Products Corp.); https://sunspecialtyproducts.com/about-us/",
+      "notes": "L3 STRONG LF-LA-00054; held federal packet identifiers (not fresh registry evidence): ITA:1067928;ECHO:110000794409;F5500:720577128. HQ not independently established; left blank. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317034",
+      "record_table": "organizations",
+      "record_id": "ORG-009031",
+      "claim_type": "address",
+      "claim_detail": "HQ Belle Chasse, LA, US: \"Our headquarters and manufacturing facility in Belle Chasse, Louisiana\"",
+      "source_class": "own_site",
+      "source_ref": "https://sunspecialtyproducts.com/about-us/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged. Identity bridge: SDS 2023-03-31, https://sunspecialtyproducts.com/wp-content/uploads/2024/09/2023-SDS-COASTAL-SPOT.pdf states \"SUN DRILLING PRODUCTS CORP. d/b/a SUN SPECIALTY PRODUCTS\"; independently fetched 2026-11-06."
+    }
+  },
+  "ORG-009034": {
+    "fields": {
+      "hq_city": "Lafayette",
+      "hq_state": "LA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.ashindustries.com/; OSHA ITA Form 300A CY2025 establishment 57635 (ASH Industries, Inc.); OSHA inspection 345487128 (ASH INDUSTRIES, INC.), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=345487128; https://www.ashindustries.com/contact-us/",
+      "notes": "L3 STRONG LF-LA-00264; held federal packet identifiers (not fresh registry evidence): ITA:57635;OSHA:OSHAE-93e91dfe4c;ECHO:110070282548;F5500:721201955. HQ not independently established; left blank. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317035",
+      "record_table": "organizations",
+      "record_id": "ORG-009034",
+      "claim_type": "address",
+      "claim_detail": "HQ Lafayette, LA, US: \"Ash industries Corporate office 1330 W. Willow St. Lafayette, LA 70506\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.ashindustries.com/contact-us/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-010000": {
+    "fields": {
+      "hq_city": "Vista",
+      "hq_state": "CA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "OSHA ITA Form 300A CY2025 establishment 1560193 (Watkins Wellness); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-19; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv; https://jobs.masco.com/watkinswellness/us/en/about",
+      "notes": "LF-CA-00077; CORROBORATED; ITA:1560193;ECHO:110000478732. . HQ not established; federal establishment address is not asserted as HQ. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317037",
+      "record_table": "organizations",
+      "record_id": "ORG-010000",
+      "claim_type": "address",
+      "claim_detail": "HQ Vista, CA, US: \"Headquartered in Vista, California\"",
+      "source_class": "own_site",
+      "source_ref": "https://jobs.masco.com/watkinswellness/us/en/about",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-010003": {
+    "fields": {
+      "hq_city": "Pomona",
+      "hq_state": "CA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "OSHA ITA Form 300A CY2025 establishment 1008715 (Cal spas); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-03-02; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv; https://www.calspas.com/about/contact-us",
+      "notes": "LF-CA-00489; CORROBORATED; ITA:1008715;ECHO:110002692667. federal-frame FRS=110002692667 ITA=1008715 INSP=OSHAE-ea84bafe71. HQ not established; federal establishment address is not asserted as HQ. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317040",
+      "record_table": "organizations",
+      "record_id": "ORG-010003",
+      "claim_type": "address",
+      "claim_detail": "HQ Pomona, CA, US: \"headquarters in Pomona, California\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.calspas.com/about/contact-us",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-010007": {
+    "fields": {
+      "hq_city": "Lodi",
+      "hq_state": "CA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "OSHA ITA Form 300A CY2025 establishment 1404026 (Scientific Specialties, Inc.); https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv; submitted 2026-02-24; packet 2026-11-01 tasks/osha-ita-2026-11-01/establishments.csv; https://www.ssibio.com/privacy-policy/",
+      "notes": "LF-CA-02629; CORROBORATED; ITA:1404026;F5500:680212062. . ITA says1310ThurmanRd; current operator contact page explicitly prints1310ThurmanStreet,LodiCA95240; physical address corrected to primary witness per lane brief. HQ not established; federal establishment address is not asserted as HQ. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-317043",
+      "record_table": "organizations",
+      "record_id": "ORG-010007",
+      "claim_type": "address",
+      "claim_detail": "HQ Lodi, CA, US: \"Scientific Specialties, Inc. || headquartered at 1310 Thurman Street, Lodi, CA 95240\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.ssibio.com/privacy-policy/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq4",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  }
+}
