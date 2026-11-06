@@ -39,6 +39,14 @@ for sid,r in chosen.items():
   try:require_five([e for e in rows if e['claim_type']!=claim])
   except AssertionError:pass
   else:raise AssertionError(('missing mandatory claim accepted',sid,claim))
+receipts=json.loads((H/'holds-sources.json').read_text());assert {r['site_id'] for r in receipts}=={r['site_id'] for r in vs if r['verdict']=='STILL_UNCERTAIN'}
+def hold_receipt(r):
+ p=Path(r['raw_text_path']);assert hashlib.sha256(p.read_bytes()).hexdigest()==r['sha256'] and raw.contains(p.read_text(),r['quote']),'hold quote/source mismatch'
+for r in receipts:hold_receipt(r);assert not raw.contains(Path(r['raw_text_path']).read_text(),r['quote']+' fabricatedholdproof7731')
+bad=copy.deepcopy(receipts[0]);bad['quote']+=' fabricatedholdproof7731'
+try:hold_receipt(bad)
+except AssertionError:pass
+else:raise AssertionError('fabricated hold quote accepted')
 if a.negative_controls:
  with tempfile.TemporaryDirectory() as d:
   root=Path(d);data=root/'data';shutil.copytree(ROOT/'data',data);packet=root/'tasks'/H.name;packet.parent.mkdir();shutil.copytree(H,packet);(root/'scripts').symlink_to(ROOT/'scripts',target_is_directory=True)

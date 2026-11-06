@@ -2,6 +2,7 @@ Deep adversarial completion refute: L3 merged-site quality batch2,15frozenmerged
 
 
 
+
 FILE README.md
 # L3 merged-site quality, batch2
 
@@ -53,7 +54,7 @@ These are unsettled facts, not absence or closure verdicts. Failed routes were a
 
 Reuses #216's builder/check pattern, the calibrated STRONG/evidence-repair matcher and house append_sorted. Before relying on matches, three independently read known sources(Carpenter,PPC,T.O.) and fabricated-suffix negatives pass; all6 selected scope/city/binding quotes and six negatives pass. No new network fetcher was introduced. The standard metadata string check binds Revolution's issuer.
 
-Run build.py --apply, check.py --negative-controls, and python3 scripts/validate.py. Results: independently reconstructed15-site merged-only census;6V9holds;30B rows; exact4 data files/18 cells; all old canonical rows/evidence preserved. The actual mandatory-claim gate rejects all30 single-missing-claim cases. Seven injected defects(EVD cross-shard collision, fabricated scope, absent city, issuer, hash, misattributed URL, and another real city from the same page) fail before any canonical write. Temp CSV hashes stay unchanged. Both build replay and all canonical CSV hashes are byte-identical. Validator:0 errors. Full6-promotion census replaces a20-row sample because there are only6 promotions. No shared scripts changed, so full scripts pytest was not run.
+Run build.py --apply, check.py --negative-controls, and python3 scripts/validate.py. Results: independently reconstructed15-site merged-only census;6V9holds;30B rows; exact4 data files/18 cells; all old canonical rows/evidence preserved. The actual mandatory-claim gate rejects all30 single-missing-claim cases. Nine hold source receipts also pass raw hash/quote and fake-suffix tests; an injected fabricated hold quote is rejected. Seven injected defects(EVD cross-shard collision, fabricated scope, absent city, issuer, hash, misattributed URL, and another real city from the same page) fail before any canonical write. Temp CSV hashes stay unchanged. Both build replay and all canonical CSV hashes are byte-identical. Validator:0 errors. Full6-promotion census replaces a20-row sample because there are only6 promotions. No shared scripts changed, so full scripts pytest was not run.
 
 Strict NAICS326 counts are unchanged: MN58/368 and NJ33/368 QCEW2023 private establishments. C already entered the strict numerator; Benjamin Moore is325510 and remains outside it. Ratios are counts, not matched coverage.
 
@@ -188,6 +189,14 @@ for sid,r in chosen.items():
   try:require_five([e for e in rows if e['claim_type']!=claim])
   except AssertionError:pass
   else:raise AssertionError(('missing mandatory claim accepted',sid,claim))
+receipts=json.loads((H/'holds-sources.json').read_text());assert {r['site_id'] for r in receipts}=={r['site_id'] for r in vs if r['verdict']=='STILL_UNCERTAIN'}
+def hold_receipt(r):
+ p=Path(r['raw_text_path']);assert hashlib.sha256(p.read_bytes()).hexdigest()==r['sha256'] and raw.contains(p.read_text(),r['quote']),'hold quote/source mismatch'
+for r in receipts:hold_receipt(r);assert not raw.contains(Path(r['raw_text_path']).read_text(),r['quote']+' fabricatedholdproof7731')
+bad=copy.deepcopy(receipts[0]);bad['quote']+=' fabricatedholdproof7731'
+try:hold_receipt(bad)
+except AssertionError:pass
+else:raise AssertionError('fabricated hold quote accepted')
 if a.negative_controls:
  with tempfile.TemporaryDirectory() as d:
   root=Path(d);data=root/'data';shutil.copytree(ROOT/'data',data);packet=root/'tasks'/H.name;packet.parent.mkdir();shutil.copytree(H,packet);(root/'scripts').symlink_to(ROOT/'scripts',target_is_directory=True)
