@@ -335,7 +335,7 @@ def main():
                 for result in pool.map(work, batch):
                     w.writerow(result); f.flush()
                     print(json.dumps(result), flush=True)
-            print(group, len(batch), 'active organizations with website processed', flush=True)
+            print(group, len(batch), 'selected organizations with website processed', flush=True)
 
 
 if __name__ == '__main__': main()
