@@ -22,6 +22,8 @@ def main():
  cs={r['cluster_id']:r for r in read(H/'input.csv')};vs=read(H/'verdicts.csv')
  assert len(vs)==len(cs)==125 and len({v['cluster_id'] for v in vs})==125
  assert set(cs)=={v['cluster_id'] for v in vs}
+ blocked={r['cluster_id'] for r in read(H/'operator_holds.csv')}
+ assert not any(v['verdict']=='VERIFIED' and v['cluster_id'] in blocked for v in vs),'HOLD: unresolved independent operator/domain conflict'
  assert set(v['verdict'] for v in vs)<={'VERIFIED','REJECT','STILL_UNCERTAIN','DUPLICATE_OF'}
  reviewed={r['establishment_id']:r for r in read(H/'reviewed_establishments.csv')}
  ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}

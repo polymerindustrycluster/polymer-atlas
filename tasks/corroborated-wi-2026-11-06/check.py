@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Census the packet and blind-shuffle its 11 creates against banked ITA rows."""
+"""Census the packet and blind-shuffle its 10 creates against banked ITA rows."""
 import csv,hashlib,json,random,subprocess,sys,tempfile,shutil
 from pathlib import Path
 from collections import Counter
@@ -10,7 +10,7 @@ from build import read, clean_street, ring_for_naics
 vs=read(H/'verdicts.csv');cs=read(H/'input.csv');alloc=read(H/'allocations.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==125
 assert {r['cluster_id'] for r in cs}=={r['cluster_id'] for r in vs}
-assert len(alloc)==11 and len({r['site_id'] for r in alloc})==11
+assert len(alloc)==10 and len({r['site_id'] for r in alloc})==10
 T=load_tables(R/'data');ita={r['establishment_id']:r for r in read(R/'tasks/osha-ita-2026-11-01/establishments.csv')}
 sites={r['site_id']:r for r in T['sites'].rows};orgs={r['org_id']:r for r in T['organizations'].rows}
 # Known-answer calibration includes the two registrant-name failures that motivated B-ALIAS.
@@ -38,7 +38,7 @@ for fn in ['sites_WI.csv','evidence_sites_WI.csv']:
  key=list(old[0])[0];new={r[key]:r for r in read(R/'data'/fn)}
  assert all(new.get(r[key])==r for r in old)
 owned=[r for r in T['evidence'].rows if 204000<=int(r['evidence_id'][4:])<=204076]
-assert len(owned)==77 and all(r['source_class']=='government_filing' for r in owned)
+assert len(owned)==70 and all(r['source_class']=='government_filing' for r in owned)
 ff=next(r for r in read(H/'allocations.csv') if r['cluster_id']=='LF-WI-00632')
 assert sum(r['state']=='WI' and r['street_address']=='8430 Murphy Dr' for r in T['sites'].rows)==1
 for r in owned:
@@ -48,6 +48,19 @@ for code,expected in [('326199','1'),('325510','2'),('325520','2'),('325991','2'
 for code in ['325211','325998','325999']:
  try:ring_for_naics(code);raise AssertionError('unresolved ring admitted')
  except ValueError:pass
+assert next(v for v in vs if v['cluster_id']=='LF-WI-00381')['verdict']=='STILL_UNCERTAIN'
+assert 'SITE-016408' not in sites
+assert not({f'EVD-{i:06d}' for i in range(204056,204063)} & {r['evidence_id'] for r in T['evidence'].rows})
+with tempfile.TemporaryDirectory(dir=H.parent) as packet_dir,tempfile.TemporaryDirectory() as data_dir:
+ packet=Path(packet_dir);shutil.copytree(H,packet,dirs_exist_ok=True);verdicts=read(packet/'verdicts.csv')
+ for v in verdicts:
+  if v['cluster_id']=='LF-WI-00381':v.update(verdict='VERIFIED',held_org_id='ORG-000662')
+ with (packet/'verdicts.csv').open('w') as f:
+  w=csv.DictWriter(f,fieldnames=list(verdicts[0]),lineterminator='\n');w.writeheader();w.writerows(verdicts)
+ data=Path(data_dir)/'data';shutil.copytree(R/'data',data);before_bad={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+ bad=subprocess.run([sys.executable,str(packet/'build.py'),'--data-dir',str(data),'--apply'],capture_output=True)
+ assert bad.returncode!=0 and b'HOLD: unresolved independent operator/domain conflict' in bad.stderr
+ assert before_bad=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
 # Byte idempotence, and a mutation: an occupied lane ID must fail without modifying any file.
 files=[R/'data'/f for f in ['sites_WI.csv','evidence_sites_WI.csv','organizations_WI.csv','evidence_organizations_WI.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files]
@@ -77,5 +90,5 @@ old=sum(r.get('country','US') in ('','US') and r['naics_primary'].startswith('32
 q=next(r for r in read(R/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']=='55000' and r['year']=='2023' and r['industry_code']=='326')
 den=float(q['annual_avg_estabs'])
 assert now==old+sum(sites[r["site_id"]]["naics_primary"].startswith("326") for r in alloc)
-result=dict(worked_WI_clusters=125,sites_C=11,blind_recheck_passes=11,known_answer_passes=3,idempotence='PASS',conflicting_ID_mutation='PASS (fails before writes)',NAICS326_strict_sites_before=old,NAICS326_strict_sites_after=now,QCEW2023_private_establishments=den,strict_share_before=old/den,strict_share_after=now/den)
+result=dict(worked_WI_clusters=125,sites_C=10,blind_recheck_passes=10,known_answer_passes=3,idempotence='PASS',conflicting_ID_mutation='PASS (fails before writes)',NAICS326_strict_sites_before=old,NAICS326_strict_sites_after=now,QCEW2023_private_establishments=den,strict_share_before=old/den,strict_share_after=now/den)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

@@ -104,7 +104,7 @@ LF-WI-00474,STILL_UNCERTAIN,,"HOLD: resolve ultimate operator, distinct establis
 LF-WI-00619,STILL_UNCERTAIN,,"HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.",
 LF-WI-00443,VERIFIED,ORG-003273,Held parent and reliable ITA company/plant identity; distinct sourced street; provisional federal-only C.,
 LF-WI-00450,STILL_UNCERTAIN,,"HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.",
-LF-WI-00381,VERIFIED,ORG-000662,Held parent and reliable ITA company/plant identity; distinct sourced street; provisional federal-only C.,
+LF-WI-00381,STILL_UNCERTAIN,,HOLD: TwinLakes AlliedPlasticsLLC(alliedplastics.com) differs from heldToledo ORG-000662(alliedplasticsoftoledo.com). All-State primaryannouncement identifies TwinLakes operator; resolve heldparent with independent primary linkage before create. Selected-parent domain is not candidate-domain evidence.,
 LF-WI-00448,STILL_UNCERTAIN,,"HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.",
 LF-WI-00583,STILL_UNCERTAIN,,"HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.",
 LF-WI-00330,STILL_UNCERTAIN,,"HOLD: resolve ultimate operator, distinct establishment and primary polymer-scope witness; federal cluster alone does not establish a new parent.",

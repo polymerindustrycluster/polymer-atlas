@@ -1,6 +1,8 @@
 [
   {
     "cluster_id": "LF-WI-00154",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -15,37 +17,24 @@
       "WI",
       "--zip",
       "53085",
-      "--json",
-      "--domain",
-      "https://www.bemismfg.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.bemismfg.com/",
+        "domain": null,
         "name": "Bemis Manufacturing",
         "street": "300 Mill Street",
         "city": "Sheboygan Falls",
         "state": "WI",
         "zip": "53085"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-004135",
-              "name": "Bemis Manufacturing Co",
-              "city": "Sheboygan Falls",
-              "state": "WI",
-              "status": "active",
-              "tier": "C",
-              "file": "organizations_WI.csv",
-              "match": "domain exact: bemismfg.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -82,6 +71,8 @@
   },
   {
     "cluster_id": "LF-WI-00047",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -96,37 +87,24 @@
       "WI",
       "--zip",
       "54956",
-      "--json",
-      "--domain",
-      "https://valmet.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://valmet.com/",
+        "domain": null,
         "name": "Valmet, Inc",
         "street": "1615 Matthews St",
         "city": "Neenah",
         "state": "WI",
         "zip": "54956"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-002255",
-              "name": "Valmet Inc.",
-              "city": "Clarks Summit",
-              "state": "PA",
-              "status": "active",
-              "tier": "A",
-              "file": "organizations_PA.csv",
-              "match": "domain exact: valmet.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -163,6 +141,8 @@
   },
   {
     "cluster_id": "LF-WI-00258",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -177,37 +157,24 @@
       "WI",
       "--zip",
       "53224",
-      "--json",
-      "--domain",
-      "https://www.hentzen.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.hentzen.com/",
+        "domain": null,
         "name": "Hentzen Coatings, Inc.",
         "street": "8200 North Faulkner Road",
         "city": "Milwaukee",
         "state": "WI",
         "zip": "53224"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-003966",
-              "name": "Hentzen Coatings, Inc.",
-              "city": "Milwaukee",
-              "state": "WI",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_WI.csv",
-              "match": "domain exact: hentzen.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -244,6 +211,8 @@
   },
   {
     "cluster_id": "LF-WI-00190",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -258,37 +227,24 @@
       "WI",
       "--zip",
       "53548",
-      "--json",
-      "--domain",
-      "https://www.westlake.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.westlake.com/",
+        "domain": null,
         "name": "Westlake",
         "street": "210 S Arch St",
         "city": "Janesville",
         "state": "WI",
         "zip": "53548"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-003067",
-              "name": "Westlake Corporation",
-              "city": "Houston",
-              "state": "TX",
-              "status": "active",
-              "tier": "A",
-              "file": "organizations_TX.csv",
-              "match": "domain exact: westlake.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -496,6 +452,8 @@
   },
   {
     "cluster_id": "LF-WI-00272",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -510,37 +468,24 @@
       "WI",
       "--zip",
       "53563",
-      "--json",
-      "--domain",
-      "https://cnginc.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://cnginc.com/",
+        "domain": null,
         "name": "Charter Next Generation",
         "street": "751 N Vickerman Road",
         "city": "Milton",
         "state": "WI",
         "zip": "53563"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-000728",
-              "name": "Charter Next Generation",
-              "city": "Delaware",
-              "state": "OH",
-              "status": "active",
-              "tier": "A",
-              "file": "organizations_OH.csv",
-              "match": "domain exact: cnginc.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -577,6 +522,8 @@
   },
   {
     "cluster_id": "LF-WI-00254",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -591,37 +538,24 @@
       "WI",
       "--zip",
       "53563",
-      "--json",
-      "--domain",
-      "https://www.penncolor.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.penncolor.com/",
+        "domain": null,
         "name": "Penn Color",
         "street": "1474 Putman Parkway",
         "city": "Milton",
         "state": "WI",
         "zip": "53563"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-002281",
-              "name": "Penn Color Inc.",
-              "city": "Doylestown",
-              "state": "PA",
-              "status": "active",
-              "tier": "A",
-              "file": "organizations_PA.csv",
-              "match": "domain exact: penncolor.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -658,6 +592,8 @@
   },
   {
     "cluster_id": "LF-WI-00213",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -672,37 +608,24 @@
       "WI",
       "--zip",
       "54241",
-      "--json",
-      "--domain",
-      "https://www.ironwood.com"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.ironwood.com",
+        "domain": null,
         "name": "Ironwood Plastics",
         "street": "2800 18th street",
         "city": "Two Rivers",
         "state": "WI",
         "zip": "54241"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-007037",
-              "name": "Ironwood Plastics, Inc.",
-              "city": "",
-              "state": "",
-              "status": "active",
-              "tier": "C",
-              "file": "organizations_US.csv",
-              "match": "domain exact: ironwood.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -739,6 +662,8 @@
   },
   {
     "cluster_id": "LF-WI-00443",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -753,37 +678,24 @@
       "WI",
       "--zip",
       "53913",
-      "--json",
-      "--domain",
-      "https://www.teel.com"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.teel.com",
+        "domain": null,
         "name": "Teel Plastics",
         "street": "426 Hitchcock Street",
         "city": "Baraboo",
         "state": "WI",
         "zip": "53913"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-003273",
-              "name": "Teel Plastics, LLC",
-              "city": "Baraboo",
-              "state": "WI",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_WI.csv",
-              "match": "domain exact: teel.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -819,88 +731,9 @@
     }
   },
   {
-    "cluster_id": "LF-WI-00381",
-    "command": [
-      "python3",
-      "scripts/atlas.py",
-      "dedupe-check",
-      "--name",
-      "Allied Plastics LLC",
-      "--street",
-      "150 Holy Hill Road",
-      "--city",
-      "Twin Lakes",
-      "--state",
-      "WI",
-      "--zip",
-      "53181",
-      "--json",
-      "--domain",
-      "https://alliedplasticsoftoledo.com/"
-    ],
-    "result": {
-      "query": {
-        "domain": "https://alliedplasticsoftoledo.com/",
-        "name": "Allied Plastics LLC",
-        "street": "150 Holy Hill Road",
-        "city": "Twin Lakes",
-        "state": "WI",
-        "zip": "53181"
-      },
-      "stop_at_step": 1,
-      "steps": [
-        {
-          "step": 1,
-          "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-000662",
-              "name": "Allied Plastics",
-              "city": "Toledo",
-              "state": "OH",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_OH.csv",
-              "match": "domain exact: alliedplasticsoftoledo.com"
-            }
-          ]
-        },
-        {
-          "step": 2,
-          "name": "normalized name vs legal_name/trade_names",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-000662",
-              "name": "Allied Plastics",
-              "city": "Toledo",
-              "state": "OH",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_OH.csv",
-              "match": "name key 'allied plastics' = legal_name 'Allied Plastics'"
-            }
-          ]
-        },
-        {
-          "step": 3,
-          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
-          "skipped": null,
-          "hits": [],
-          "other_localities": []
-        },
-        {
-          "step": 4,
-          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
-          "skipped": null,
-          "hits": []
-        }
-      ]
-    }
-  },
-  {
     "cluster_id": "LF-WI-00632",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -915,37 +748,24 @@
       "WI",
       "--zip",
       "53562",
-      "--json",
-      "--domain",
-      "https://www.futurefoam.com/facility/fairless-hills-pa/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.futurefoam.com/facility/fairless-hills-pa/",
+        "domain": null,
         "name": "Future Foam, Inc.",
         "street": "8430 Murphy Dr",
         "city": "Middleton",
         "state": "WI",
         "zip": "53562"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-002336",
-              "name": "Future Foam Inc.",
-              "city": "Fairless Hills",
-              "state": "PA",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_PA.csv",
-              "match": "domain exact: futurefoam.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
@@ -993,6 +813,8 @@
   },
   {
     "cluster_id": "LF-WI-00554",
+    "baseline": "e1a1b6609472c5e73bc7c47afddcda079e31f5c7",
+    "domain_posture": "Candidate domain not independently supplied; held-parent domain is not used as candidate evidence.",
     "command": [
       "python3",
       "scripts/atlas.py",
@@ -1007,37 +829,24 @@
       "WI",
       "--zip",
       "54115",
-      "--json",
-      "--domain",
-      "https://www.midlandplastics.com/"
+      "--json"
     ],
     "result": {
       "query": {
-        "domain": "https://www.midlandplastics.com/",
+        "domain": null,
         "name": "Midland Plastics",
         "street": "2151 American Blvd",
         "city": "De Pere",
         "state": "WI",
         "zip": "54115"
       },
-      "stop_at_step": 1,
+      "stop_at_step": 2,
       "steps": [
         {
           "step": 1,
           "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-003607",
-              "name": "Midland Plastics, Inc.",
-              "city": "New Berlin",
-              "state": "WI",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_WI.csv",
-              "match": "domain exact: midlandplastics.com"
-            }
-          ]
+          "skipped": "no --domain",
+          "hits": []
         },
         {
           "step": 2,
