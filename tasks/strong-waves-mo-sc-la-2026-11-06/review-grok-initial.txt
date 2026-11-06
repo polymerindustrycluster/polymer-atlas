@@ -1,0 +1,44 @@
+council-ask: grok effort=deep -> model=grok-4.7 reasoning=xhigh
+REFUTE
+
+Inspected only the lane text in this prompt: `LANE_BRIEF.md`, `build.py`, `check.py`, `prepare.py`, `verdicts.csv` (36 data rows), `rawcheck.csv` (36), `qcew-after.json`. No data CSVs, `input.csv`, `research.py`, `allocations_*.csv`, federal spines, held-org rows, `validate.py`, `qcew-before.json`, or `atlas_numerators` were in the packet. Those gaps block any confirmation of NAICS, street match, successor-empty held parents, the single C site’s identity, and the T3 composition.
+
+## Census (packet-internal)
+
+36 unique `cluster_id`s, one verdict each: MO 15, SC 14, LA 7. Outcomes: 19 `VERIFIED`, 16 `STILL_UNCERTAIN`, 1 `REJECT` (`LF-SC-00258`). Held parents on the four named rows only: `ORG-003555`, `ORG-002261`, `ORG-006173`, `ORG-001336`. New-org count 19−4=15. Every `VERIFIED` row has `raw=yes` and the same quote/URL as `rawcheck.csv`. Holds and the alumina non-create are the right side of the ledger. Agfa stays `STILL_UNCERTAIN` (no closure `REJECT`). Cornerstone stays held.
+
+`check.py` proves three census mutations throw, allocation ids match `VERIFIED`, site tier matches the allocation file, ids are unique, and NAICS 326 strict rose. It does not bind verdict quotes to `rawcheck` quotes, evidence text, or a 15/19/210 target.
+
+## Load-bearing fidelity breaks
+
+1. `LF-LA-00001` is `VERIFIED` on the quote `CMP COATINGS, INC.` from `cmp.co.jp/.../group_western-countries/`. That string is a parent-group name. It is neither a polymer/coatings activity witness nor a plant-only witness (no Louisiana address or city). `build.py` still writes `site_type=manufacturing_plant`, ring 2, and `website` = that Japanese group URL.
+
+2. `LF-MO-00031` activity/scope text is `Private Labeling & Custom Manufacturing`. The ledger quote has no paint, coating, polymer, or plant fact. `davispaint.com` is not a substitute for the stored claim.
+
+3. `LF-SC-00313` activity/scope text is the vacancy title `EXTRUSION OPERATOR` (no polymer, no city). Ring 1 and `supports_B` are inferred past the quote.
+
+4. `LF-LA-00054` quote is a patent-issuance sentence for thermoset processes. That is IP history, not a plant operating witness, and it names no site.
+
+5. New-org alias rule miss. Held orgs get a `government_filing` alias observation. New orgs put federal/F5500 aliases into `trade_names` and into an **existence** row whose defaults are `source_class=own_site`, `source_ref=own_url`, `tier_effect=supports_C`. The lane requires B-ALIAS names to land with a federal evidence observation. `F5500` correctly does not set `fed` (employer filings do not make a plant).
+
+6. For every B site, scope and activity are `supports_B` on the own-page quote, and `site_type` is hardcoded `manufacturing_plant`. Address/NAICS rows do cite `fed[0]` as `government_filing`, but the address string is the cluster’s street, not a field read from the filing. ITA/OSHA address equality is not in this packet.
+
+`LF-MO-00241` (`Columbia, MO 65202` on `jmeagle.com/locations`) fits the allowed plant-only witness. The activity row is still that ZIP line.
+
+## Counts and IDs
+
+Evidence arithmetic in `build.py` matches **210** only under this shape: 14 new orgs × (5 org + 7 site) B-with-NAICS rows, 1 new org × (4+6) C-without-fed rows, 4 held B orgs × (1 alias + 7 site) = 168+10+32. That matches the stated 15 C orgs, 18 B sites, 1 C site, 4 alias updates. It is not recomputeable here without `sources_with_ids`.
+
+Reserved IDs follow `enumerate(verdicts.csv)`, not input order: new orgs `ORG-{9000+idx:06d}`, sites `SITE-{12000+idx:06d}`, evidence `160000+idx*100` stepping by 1. Max index 35 stays inside `ORG-009000–009499`, `SITE-012000–012999`, `EVD-160000–169999`. Non-creates leave gaps. Spacing of 100 covers the ~12 rows per create. Replay appends only new primary keys and refuses changed packets. Alias rewrites are idempotent if trade names already contain the new tokens. Comment “input-index” is wrong; stability depends on frozen `verdicts.csv` order.
+
+`qcew-after.json` rises are MO 37→43 (+6), SC 49→52 (+3), LA 6→7 (+1). Visible ring-1 `VERIFIED` counts are MO 6, SC 5, LA 3. MO matches +6. SC is short 2 and LA is short 2 against ring-1 creates (5 ring-2 creates also sit outside a 326-strict rise). `check.py` only asserts `strict_after > strict_before`. The shortfall is an open count-composition gap (non-326 federal NAICS, numerator filters, or an already-counted address). It is not something this packet can clear.
+
+## Other rows (uncertainty kept)
+
+Accept as held or non-create: `LF-MO-00006`, `00018`, `00053`, `00120`, `00165`, `00289`; `LF-SC-00047`, `00129`, `00198`, `00206`, `00258`, `00302`, `00326`, `00358`; `LF-LA-00029`, `00183`, `00234`. `LF-MO-00053` and `LF-SC-00198` deciding facts talk about page substance or closure while `rawcheck` is `not_verified` (Agfa curl returned 0 and still missed `Bushy Park`). Outcome stays non-create. PIDC `REJECT` rests on the DES PDF, which is not a raw-checked quote; the checked quote is only `PIDC launches Alumax`.
+
+Accept as creates under a broad activity quote plus an unseen federal packet: `LF-MO-00017`, `00023`, `00088`, `00100`, `00153`, `00286`; `LF-SC-00082`, `00113`, `00214`, `00253`; `LF-LA-00264`, `00305`. Cautions, not separate breaks: `LF-MO-00121` (careers sentence states Nike Air manufacturing and does not name a plant; role path is product-development), `LF-SC-00147` (`began as` an ink/coatings manufacturer), `LF-SC-00113` (history tense, but Sumter + polyamide are in the quote), `LF-LA-00305` (molded PTFE stock; “supplier” is soft).
+
+`prepare.py` skips `script`/`style`, passes the three known quotes, and rejects `quote + " nonexistentdefect7731"`. That is the defect test present.
+
+`validate.py` at 0 errors and the two untouched CRLF federal-frame files are outside this packet.

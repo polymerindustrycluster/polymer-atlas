@@ -1,0 +1,12 @@
+{
+  "reviewed_tip": "bb10e98",
+  "main": "c2674712c0c9f8aeefac9179597b8a4c6e5eda5f",
+  "delta": {
+    "organizations_US.csv": 13,
+    "sites_CA.csv": 18,
+    "evidence_organizations_US.csv": 52,
+    "evidence_sites_CA.csv": 104
+  },
+  "all_main_rows_preserved": true,
+  "intended_packet_field_identical": true
+}
