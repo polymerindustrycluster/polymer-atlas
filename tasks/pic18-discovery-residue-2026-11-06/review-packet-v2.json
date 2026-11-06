@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "scope": "L14 pinned26 discovery leads plus4 freshly source-verified registry candidates after PR129 restoration. Canonical delta1Corganization1Csite13append-only evidence4newregistrylinks. No existing record/link/evidence changes.",
+  "scope": "L14 pinned26 discovery leads plus4 freshly source-verified registry candidates after PR129 restoration. Canonical delta1Corganization1Csite13append-only evidence4newregistrylinks. No existing record/link/evidence changes. Integrated main85b8560 with main-copies+unchanged builder. integration-replay.json proves unchanged cf6c9cd packet and preservation of all newer main canonical rows; equipment receipts already on main.",
   "criteria": [
     "26 unique leads have one justified verdict;4 prior registry candidates now source-verified and applied after main restoration",
     "New1Corg1Csite retain raw source support;13 evidence rows total;registry links match FRS/DOL identity and R10/R11",
@@ -12,7 +12,7 @@
     "Unresolved holds are not promoted",
     "PR140 equipment changes"
   ],
-  "revision": "9dbf1b65e35271158dfacb706ed19a146f764d4e",
+  "revision": "9a53aa83a4b5b41a92cb6a53c932ddbd5d224789",
   "tool_access": "Reviewers may read full checkout and fetch primary sources; inspect all packet files plus canonical diff.",
   "required_families": [
     "codex",
@@ -21,7 +21,7 @@
   "evidence": [
     {
       "path": "README.md",
-      "sha256": "b8980563ac5ae0b1dea3132a8877cfa4ff269c6308c1a1d3da48b6953638b352"
+      "sha256": "142d9dfab689a324d4a1f901cb91298c944ad0a6afc5524653af7e5c04e45439"
     },
     {
       "path": "SPEC.md",
