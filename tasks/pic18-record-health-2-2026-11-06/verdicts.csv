@@ -13,7 +13,7 @@ ORG-000351,"Gem City Plastic Machinery, Inc.",STILL_UNCERTAIN,"Obtain explicit c
 ORG-000358,GRAFIX,VERIFIED,Own-site corporate process/material values raw checked in packet,fetched
 ORG-000363,"Hanlon Composites, LLC",STILL_UNCERTAIN,"Obtain explicit corporate process/material witness in schema vocabulary; equipment, customer applications, ambiguous chemistry and transport failures do not establish a capability",unfetchable
 ORG-000379,Infinity Engineered Products,STILL_UNCERTAIN,"Obtain explicit corporate process/material witness in schema vocabulary; equipment, customer applications, ambiguous chemistry and transport failures do not establish a capability",unfetchable
-ORG-000389,"J.J. White Products, Inc.",VERIFIED,Own-site corporate process/material values raw checked in packet,fetched
+ORG-000389,"J.J. White Products, Inc.",STILL_UNCERTAIN,Grokrefute:customer-ownednylonfabricadhesiontreatment doesnotestablishownnylonresinclaim;needexplicitowncontrolledprocess/materialwitness.,fetched
 ORG-000395,Jet Dock Systems,VERIFIED,Own-site corporate process/material values raw checked in packet,fetched
 ORG-000400,JRM Chemical,STILL_UNCERTAIN,"Obtain explicit corporate process/material witness in schema vocabulary; equipment, customer applications, ambiguous chemistry and transport failures do not establish a capability",fetched
 ORG-000401,JuggerBot 3D LLC,STILL_UNCERTAIN,"Obtain explicit corporate process/material witness in schema vocabulary; equipment, customer applications, ambiguous chemistry and transport failures do not establish a capability",unfetchable

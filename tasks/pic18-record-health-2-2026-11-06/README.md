@@ -5,9 +5,9 @@ Acceptance before application: work the frozen 85 capability-only organizations 
 
 ## Result
 
-Baseline for this PR is first-pass commit 04592d0 (PR #133): **430/632 PIC18 Ring1–2 organizations = 68.04%** free of T1 blocking gaps. After: **447/632 = 70.73%**, +17 organizations. Original campaign baseline remains **428/632 = 67.72%**.
+Baseline for this PR is first-pass commit 04592d0 (PR #133): **430/632 PIC18 Ring1–2 organizations = 68.04%** free of T1 blocking gaps. After: **446/632 = 70.57%**, +16 organizations. Original campaign baseline remains **428/632 = 67.72%**.
 
-Frozen frame.csv: 85 unique organizations whose only original blocking gap was capabilities. Verdict census: 17 VERIFIED; 68 STILL_UNCERTAIN. Added 23 controlled values in 19 cells across 17 organization rows; 23 append-only own_site scope evidence rows EVD-170012–170034, each supports_A for that claim only. No verification tiers changed. No entities, sites or relationships created. No inclusion decisions or merges. Evidence shards follow each organization's existing shard. No L9/L10 columns touched.
+Frozen frame.csv: 85 unique organizations whose only original blocking gap was capabilities. Verdict census: 16 VERIFIED; 69 STILL_UNCERTAIN. Added 22 controlled values in 18 cells across 17 organization rows; 22 append-only own_site scope evidence rows EVD-170012–170034, each supports_A for that claim only. No verification tiers changed. No entities, sites or relationships created. No inclusion decisions or merges. Evidence shards follow each organization's existing shard. No L9/L10 columns touched.
 
 Own-site sources: Novex, Dalton, Flexsys, Grafix, J.J. White, Jet Dock, MIPCO, MMI, Nova, Autoneum, Kar-Del, Chardon Custom Polymers, ValenSil, ITPS, Homestead Finishing, Speedline, TUFTEX. evidence_packet.csv carries exact URLs and short quotes per value. Corporate offerings are not assigned to individual plants. Common-name/material words in customer descriptions or machinery listings are not process witnesses. Anchor/ACI domain-to-parent identity is held. Polycarbosilane and general water-storing polymers are not forced into a family tag.
 
@@ -31,6 +31,8 @@ Reviews: pending assigned Codex and Grok clerks under controller BOARD 05:55 aut
 
 Negative control: removed one packet evidence row temporarily, ran check.py, observed nonzero failure, restored packet. Replay hashes of all data CSVs unchanged.
 
-Refresh: merged first PR25c81b2 (which merges main9489b60), took its data wholesale, replayed this builder. Exact-delta checker baseline now25c81b2. First-pass check.py intentionally applies to first-pass tree; continuation checker covers this tree. Refreshed health447/632 and validate0 pass. Controller authorized main's LF federal-frame normalization; net diff versus main zero. Original inherited bytes remain backed up. No evidence values changed during refresh.
+Refresh: merged first PR25c81b2 (which merges main9489b60), took its data wholesale, replayed this builder. Exact-delta checker baseline now25c81b2. First-pass check.py intentionally applies to first-pass tree; continuation checker covers this tree. Refreshed health446/632 and validate0 pass. Controller authorized main's LF federal-frame normalization; net diff versus main zero. Original inherited bytes remain backed up. No evidence values changed during refresh.
 
-First-PR Grok Faull refutation propagated: Faull material/tier held on parent; continuation values unchanged. Exact-delta baseline nowc980a66caf3ab0ae97902c3025d6b700bb23a390; firstPR430/632→continuation447/632. Earlier448/632 snapshot superseded.
+First-PR Grok Faull refutation propagated: Faull material/tier held on parent; continuation values unchanged. Exact-delta baseline nowc980a66caf3ab0ae97902c3025d6b700bb23a390; firstPR430/632→continuation446/632. Earlier448/632 snapshot superseded.
+
+Grok2 REFUTE fixed:JJWhitecustomer-nylonfabric doesnotsettleownnylonresinclaim. ProposedmaterialseditandunintegratedEVD170017withdrawn;IDretired. VERDICTchangedtoSTILL_UNCERTAIN. Final18cells/16orgs,22EVD,85census16VERIFIED69holds;T1446/632=70.57%. EarlierCodexapprovalsupersededforfinalrevision,rereviewrequested. R4frozen68framepredatesthisnewholdandisnotretroactivelyexpanded.
