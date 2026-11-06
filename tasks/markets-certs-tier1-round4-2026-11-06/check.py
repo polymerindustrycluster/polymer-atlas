@@ -8,6 +8,10 @@ from urllib.parse import urljoin
 from fetch import fetch, found
 HERE = Path(__file__).resolve().parent
 
+def linked(page, asset):
+    _, links, _ = fetch(page)
+    return asset in {urljoin(page, link) for link in links}
+
 def main():
     frame = list(csv.DictReader((HERE / 'frame.csv').open()))
     verdicts = list(csv.DictReader((HERE / 'verdicts.csv').open()))
@@ -31,6 +35,15 @@ def main():
     print('JS redirect challenge refused on both routes')
     print('known answers: 4/4; injected fabricated quotes refused: 4/4')
     rows = list(csv.DictReader((HERE / 'inputs.csv').open()))
+    assert all(r['verdict'] in ('VERIFIED', 'STILL_UNCERTAIN') for r in rows)
+    candidates = len(rows)
+    rows = [r for r in rows if r['verdict'] == 'VERIFIED']
+    print('candidate values:', candidates, '; raw/application required:', len(rows), '; explicit unapplied holds:', candidates - len(rows))
+    assets = [r for r in rows if r.get('source_page_url')]
+    assert len(assets) == 2
+    for r in assets: assert linked(r['source_page_url'], r['source_url'])
+    assert not linked(assets[0]['source_page_url'], 'https://example.invalid/fabricated-certificate.pdf')
+    print('own-page asset links: 2 known positives; fabricated asset refused')
     routes = {}
     def retrieve(url):
         text, _, route = fetch(url); routes[url] = route
@@ -39,8 +52,7 @@ def main():
     for r in rows:
         assert found(pages[r['source_url']], r['quote']), r
         if r.get('source_page_url'):
-            _, links, _ = fetch(r['source_page_url'])
-            assert r['source_url'] in {urljoin(r['source_page_url'], link) for link in links}, 'certificate not linked by own page'
+            assert linked(r['source_page_url'], r['source_url']), 'certificate not linked by own page'
         if r['verdict'] == 'VERIFIED' and r['field'] == 'certifications':
             assert found(pages[r['source_url']], r['cert_identity_quote']), r
             if r['cert_basis'] == 'dated_certificate':

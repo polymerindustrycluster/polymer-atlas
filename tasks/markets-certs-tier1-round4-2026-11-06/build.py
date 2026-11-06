@@ -46,7 +46,7 @@ def main():
         path, row = orgs[v['org_id']]
         assert row['status'] == 'active' and bool(row['tier1_qualifier']) and row['org_id'] in frame_ids
         host = lambda u: urlparse(u if '://' in u else 'https://' + u).hostname.removeprefix('www.')
-        assert host(v.get('source_page_url') or v['source_url']) == host(row['website']), v
+        assert host(v.get('source_page_url') or v['source_url']) == host(row['website']), 'publisher domain mismatch'
         if host(v['source_url']) != host(row['website']):
             assert field == 'certifications' and v['cert_basis'] == 'dated_certificate' and v['source_page_url'], 'external source needs own certificate-link page'
         values = row[field].split(';') if row[field] else []
