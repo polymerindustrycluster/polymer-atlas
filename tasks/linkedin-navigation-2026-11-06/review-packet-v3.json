@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "scope": "L14 own-site LinkedIn navigation only:345 blank org cells,40shards; exact public header/footer anchors. Never request LinkedIn, zeroEVD/IDs/otherfields.",
+  "scope": "L14 own-site navigation:325blanklinkedin_urlcells/39orgshards,325currentrawPASS,1736holds;zeroLinkedInrequests/EVD/IDs/otherfields;ambiguousbodyancestryrejected.",
   "criteria": [
     "325navigationcells39shards;2061frame/1708ownURLs/329rawcandidates325PASS4HOLD/1736holds;allolddataunchanged",
     "Globalheader/footeronly:deferredwholeparse,main/articleancestryblocked,body-containingmarkerwrappersdisqualified;6negativesand4positives;1285cachedpagesreparsed/20unmergedwithdrawals",
