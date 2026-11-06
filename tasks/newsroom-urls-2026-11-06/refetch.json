@@ -672,16 +672,6 @@
     ]
   },
   {
-    "org_id": "ORG-003079",
-    "checks": [
-      {
-        "url": "https://www.kaneka.com/kaneka-americas/newsroom/",
-        "final": "https://www.kaneka.com/kaneka-americas/newsroom/",
-        "status": "200"
-      }
-    ]
-  },
-  {
     "org_id": "ORG-003082",
     "checks": [
       {
@@ -779,6 +769,16 @@
         "status": "200",
         "items": 3,
         "linked_items": 3
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003186",
+    "checks": [
+      {
+        "url": "https://www.shintech.com/news",
+        "final": "https://www.shintech.com/news",
+        "status": "200"
       }
     ]
   },
@@ -1166,6 +1166,16 @@
       {
         "url": "https://futurepipe.com/news-events/",
         "final": "https://futurepipe.com/news-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004274",
+    "checks": [
+      {
+        "url": "https://www.petroleum-containment.com/category/news/",
+        "final": "https://www.petroleum-containment.com/category/news/",
         "status": "200"
       }
     ]

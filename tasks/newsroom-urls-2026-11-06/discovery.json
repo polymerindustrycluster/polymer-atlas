@@ -8620,7 +8620,7 @@
   {
     "org_id": "ORG-002066",
     "legal_name": "Catexel Nease LLC",
-    "website": "https://www.neaseco.com",
+    "website": "https://catexel.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
@@ -8635,10 +8635,10 @@
     "note": "Need reachable own-domain newsroom navigation",
     "attempts": [
       {
-        "url": "https://www.neaseco.com",
-        "final": "https://www.catexel.com/",
-        "status": "200",
-        "error": ""
+        "url": "https://catexel.com/",
+        "final": "https://catexel.com/",
+        "status": "000",
+        "error": "curl: (7) Failed to connect to catexel.com port 443 after 132 ms: Couldn't connect to server\n"
       }
     ]
   },
@@ -10686,7 +10686,7 @@
   {
     "org_id": "ORG-002886",
     "legal_name": "CSW Industrials, Inc.",
-    "website": "https://www.cswindustrials.com",
+    "website": "https://csw.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
@@ -10701,9 +10701,15 @@
     "note": "Need reachable own-domain newsroom navigation",
     "attempts": [
       {
-        "url": "https://www.cswindustrials.com",
+        "url": "https://csw.com/",
         "final": "https://csw.com/",
         "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://ir.csw.com/investor-news",
+        "final": "https://ir.csw.com/investor-news",
+        "status": "403",
         "error": ""
       }
     ]
@@ -14555,24 +14561,42 @@
   {
     "org_id": "ORG-003186",
     "legal_name": "Shintech Inc.",
-    "website": "http://www.shintechinc.com/",
+    "website": "https://shintech.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
     "ultimate_parent_name": "Shin-Etsu Chemical Co., Ltd.",
     "verdict": "STILL_UNCERTAIN",
-    "newsroom_url": "",
+    "newsroom_url": "https://www.shintech.com/news",
     "newsroom_feed_url": "",
-    "label": "",
-    "title": "",
-    "years": "",
+    "label": "News",
+    "title": " News | Shintech News ",
+    "years": "2018;2021;2026",
     "feed_items": 0,
-    "note": "Need reachable own-domain newsroom navigation",
+    "note": "Candidate: review purpose and dated items",
     "attempts": [
       {
-        "url": "http://www.shintechinc.com/",
+        "url": "https://shintech.com/",
         "final": "https://www.shintech.com/",
         "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.shintech.com/news",
+        "final": "https://www.shintech.com/news",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.shintech.com/feed/",
+        "final": "https://www.shintech.com/feed",
+        "status": "404",
+        "error": ""
+      },
+      {
+        "url": "https://www.shintech.com/rss.xml",
+        "final": "https://www.shintech.com/rss.xml",
+        "status": "404",
         "error": ""
       }
     ]
@@ -18967,6 +18991,56 @@
     ]
   },
   {
+    "org_id": "ORG-004065",
+    "legal_name": "Mid-States Rubber Products, Inc.",
+    "website": "https://mid-states.com/",
+    "priority": "tier1",
+    "verification_tier": "C",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://mid-states.com/",
+        "final": "https://mid-states.com/",
+        "status": "403",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004069",
+    "legal_name": "Y-TEX Corporation",
+    "website": "https://y-tex.com/",
+    "priority": "tier1",
+    "verification_tier": "A",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://y-tex.com/",
+        "final": "https://www.y-tex.com/",
+        "status": "403",
+        "error": ""
+      }
+    ]
+  },
+  {
     "org_id": "ORG-004070",
     "legal_name": "EFI Polymers",
     "website": "https://www.efipolymers.com/",
@@ -19031,7 +19105,7 @@
   {
     "org_id": "ORG-004073",
     "legal_name": "The Hanson Group, LLC",
-    "website": "http://www.hansonco.net/",
+    "website": "https://thehansongroup.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
@@ -19046,9 +19120,9 @@
     "note": "Need reachable own-domain newsroom navigation",
     "attempts": [
       {
-        "url": "http://www.hansonco.net/",
-        "final": "http://www.hansonco.net/",
-        "status": "409",
+        "url": "https://thehansongroup.com/",
+        "final": "https://thehansongroup.com/",
+        "status": "403",
         "error": ""
       }
     ]
@@ -19196,6 +19270,31 @@
     ]
   },
   {
+    "org_id": "ORG-004079",
+    "legal_name": "Advanced Adhesive Systems, Inc.",
+    "website": "https://advadh.com/",
+    "priority": "tier1",
+    "verification_tier": "C",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://advadh.com/",
+        "final": "https://www.advadh.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
     "org_id": "ORG-004080",
     "legal_name": "Rahco Rubber, Inc.",
     "website": "https://rahco-rubber.com/about-us/news/",
@@ -19277,6 +19376,81 @@
         "url": "https://www.sbhpp.com/rss.xml",
         "final": "https://www.sbhpp.com/rss.xml",
         "status": "500",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004083",
+    "legal_name": "Essential Industries, Inc.",
+    "website": "https://essind.com/",
+    "priority": "tier1",
+    "verification_tier": "A",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://essind.com/",
+        "final": "https://www.essind.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004084",
+    "legal_name": "Hearing Components, Inc.",
+    "website": "https://complyfoam.com/",
+    "priority": "tier1",
+    "verification_tier": "B",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://complyfoam.com/",
+        "final": "https://www.complyfoam.com/",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004085",
+    "legal_name": "Piedmont Composites & Tooling, LLC",
+    "website": "https://piedmontcomposites.com/",
+    "priority": "tier1",
+    "verification_tier": "C",
+    "parent_org_id": "",
+    "ultimate_parent_name": "",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "",
+    "newsroom_feed_url": "",
+    "label": "",
+    "title": "",
+    "years": "",
+    "feed_items": 0,
+    "note": "Need reachable own-domain newsroom navigation",
+    "attempts": [
+      {
+        "url": "https://piedmontcomposites.com/",
+        "final": "https://piedmontcomposites.com/",
+        "status": "200",
         "error": ""
       }
     ]
@@ -21058,23 +21232,41 @@
   {
     "org_id": "ORG-004161",
     "legal_name": "Boge Rubber & Plastics USA LLC",
-    "website": "http://www.boge-rubber-plastics.com/",
+    "website": "https://boge.tech/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
     "ultimate_parent_name": "",
     "verdict": "STILL_UNCERTAIN",
-    "newsroom_url": "",
-    "newsroom_feed_url": "",
-    "label": "",
-    "title": "",
-    "years": "",
-    "feed_items": 0,
-    "note": "Need reachable own-domain newsroom navigation",
+    "newsroom_url": "https://www.boge.tech/de/news",
+    "newsroom_feed_url": "https://www.boge.tech/rss.xml",
+    "label": "News",
+    "title": "News BOGE - Aktuelle News und Pressemeldungen.",
+    "years": "2026",
+    "feed_items": 10,
+    "note": "Candidate: review purpose and dated items",
     "attempts": [
       {
-        "url": "http://www.boge-rubber-plastics.com/",
+        "url": "https://boge.tech/",
         "final": "https://www.boge.tech/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.boge.tech/de/news",
+        "final": "https://www.boge.tech/de/news",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.boge.tech/feed/",
+        "final": "https://www.boge.tech/feed/",
+        "status": "404",
+        "error": ""
+      },
+      {
+        "url": "https://www.boge.tech/rss.xml",
+        "final": "https://www.boge.tech/rss.xml",
         "status": "200",
         "error": ""
       }
@@ -23385,23 +23577,35 @@
   {
     "org_id": "ORG-004274",
     "legal_name": "Petroleum Containment, Inc.",
-    "website": "https://www.petroleumcontainment.com/",
+    "website": "https://petroleum-containment.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
     "ultimate_parent_name": "",
     "verdict": "STILL_UNCERTAIN",
-    "newsroom_url": "",
-    "newsroom_feed_url": "",
-    "label": "",
-    "title": "",
-    "years": "",
-    "feed_items": 0,
-    "note": "Need reachable own-domain newsroom navigation",
+    "newsroom_url": "https://www.petroleum-containment.com/category/news/",
+    "newsroom_feed_url": "https://www.petroleum-containment.com/feed/",
+    "label": "News",
+    "title": "News &#8211; PCI Sumps",
+    "years": "2024;2025;2026",
+    "feed_items": 10,
+    "note": "Candidate: review purpose and dated items",
     "attempts": [
       {
-        "url": "https://www.petroleumcontainment.com/",
+        "url": "https://petroleum-containment.com/",
         "final": "https://www.petroleum-containment.com/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.petroleum-containment.com/category/news/",
+        "final": "https://www.petroleum-containment.com/category/news/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.petroleum-containment.com/feed/",
+        "final": "https://www.petroleum-containment.com/feed/",
         "status": "200",
         "error": ""
       }
@@ -30086,7 +30290,7 @@
   {
     "org_id": "ORG-004570",
     "legal_name": "Sanco Inc.",
-    "website": "https://sancopolymers.com",
+    "website": "https://sancosystems.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
@@ -30101,8 +30305,8 @@
     "note": "Need reachable own-domain newsroom navigation",
     "attempts": [
       {
-        "url": "https://sancopolymers.com",
-        "final": "http://sancosystems.com/",
+        "url": "https://sancosystems.com/",
+        "final": "https://sancosystems.com/",
         "status": "406",
         "error": ""
       }
@@ -30340,7 +30544,7 @@
   {
     "org_id": "ORG-004581",
     "legal_name": "Aurora Specialty Chemistries",
-    "website": "https://auroraspchm.com",
+    "website": "https://auroraspecialtychemistries.com/",
     "priority": "tier1",
     "verification_tier": "C",
     "parent_org_id": "",
@@ -30355,7 +30559,7 @@
     "note": "Need reachable own-domain newsroom navigation",
     "attempts": [
       {
-        "url": "https://auroraspchm.com",
+        "url": "https://auroraspecialtychemistries.com/",
         "final": "https://auroraspecialtychemistries.com/",
         "status": "200",
         "error": ""
@@ -30992,24 +31196,42 @@
   {
     "org_id": "ORG-004606",
     "legal_name": "A. P. Nonweiler Company, Inc.",
-    "website": "https://www.apnonweiler.com/",
+    "website": "https://apncoatings.com/",
     "priority": "tier1",
     "verification_tier": "B",
     "parent_org_id": "",
     "ultimate_parent_name": "Renovo Capital",
     "verdict": "STILL_UNCERTAIN",
-    "newsroom_url": "",
+    "newsroom_url": "https://www.apncoatings.com/news-events/",
     "newsroom_feed_url": "",
-    "label": "",
-    "title": "",
-    "years": "",
+    "label": "News",
+    "title": "News &amp; Events | APN",
+    "years": "2015;2026",
     "feed_items": 0,
-    "note": "Need reachable own-domain newsroom navigation",
+    "note": "Candidate: review purpose and dated items",
     "attempts": [
       {
-        "url": "https://www.apnonweiler.com/",
+        "url": "https://apncoatings.com/",
         "final": "https://www.apncoatings.com/",
         "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.apncoatings.com/news-events/",
+        "final": "https://www.apncoatings.com/news-events/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.apncoatings.com/feed/",
+        "final": "https://www.apncoatings.com/feed/",
+        "status": "404",
+        "error": ""
+      },
+      {
+        "url": "https://www.apncoatings.com/rss.xml",
+        "final": "https://www.apncoatings.com/rss.xml",
+        "status": "404",
         "error": ""
       }
     ]

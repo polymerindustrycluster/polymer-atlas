@@ -2282,6 +2282,21 @@
     "newsroom_url": "https://amfine.com/news/"
   },
   {
+    "org_id": "ORG-003186",
+    "status": "200",
+    "final": "https://www.shintech.com/news",
+    "dates": [
+      "March 4, 2026",
+      "December 29, 2021",
+      "May 4, 2021",
+      "February 3, 2021",
+      "January 26, 2021",
+      "July 24, 2018"
+    ],
+    "title": " News | Shintech News ",
+    "newsroom_url": "https://www.shintech.com/news"
+  },
+  {
     "org_id": "ORG-003188",
     "status": "200",
     "final": "https://www.heritage-plastics.com/",
@@ -3141,6 +3156,14 @@
     "newsroom_url": "https://www.gspolymers.com/news/"
   },
   {
+    "org_id": "ORG-004161",
+    "status": "200",
+    "final": "https://www.boge.tech/de/news",
+    "dates": [],
+    "title": "News BOGE - Aktuelle News und Pressemeldungen.",
+    "newsroom_url": "https://www.boge.tech/de/news"
+  },
+  {
     "org_id": "ORG-004171",
     "status": "200",
     "final": "https://www.opwglobal.com/news",
@@ -3505,6 +3528,25 @@
     ],
     "title": "News &amp; Events - Future Pipe Industries",
     "newsroom_url": "https://futurepipe.com/news-events/"
+  },
+  {
+    "org_id": "ORG-004274",
+    "status": "200",
+    "final": "https://www.petroleum-containment.com/category/news/",
+    "dates": [
+      "August 25, 2026",
+      "May 13, 2026",
+      "February 10, 2026",
+      "November 16, 2025",
+      "October 16, 2025",
+      "September 27, 2025",
+      "August 27, 2025",
+      "July 7, 2025",
+      "June 26, 2025",
+      "June 4, 2025"
+    ],
+    "title": "News &#8211; PCI Sumps",
+    "newsroom_url": "https://www.petroleum-containment.com/category/news/"
   },
   {
     "org_id": "ORG-004277",
@@ -4442,6 +4484,16 @@
     ],
     "title": "Proviron Inc - news, blog and resources",
     "newsroom_url": "https://proviron.com/america/america-news/"
+  },
+  {
+    "org_id": "ORG-004606",
+    "status": "200",
+    "final": "https://www.apncoatings.com/news-events/",
+    "dates": [
+      "February 5, 2026"
+    ],
+    "title": "News &amp; Events | APN",
+    "newsroom_url": "https://www.apncoatings.com/news-events/"
   },
   {
     "org_id": "ORG-004609",

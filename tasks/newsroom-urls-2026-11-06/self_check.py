@@ -27,11 +27,11 @@ import csv
 inputs=list(csv.DictReader(open(HERE/'inputs.csv')))
 verdicts=list(csv.DictReader(open(HERE/'verdicts.csv')))
 discovery=json.loads((HERE/'discovery.json').read_text())
-for rows in (inputs,verdicts,discovery):assert len({r['org_id'] for r in rows})==len(rows)==1043
+for rows in (inputs,verdicts,discovery):assert len({r['org_id'] for r in rows})==len(rows)==1049
 assert {r['org_id'] for r in inputs}=={r['org_id'] for r in verdicts}=={r['org_id'] for r in discovery}
 assert all(1<=len(r['attempts'])<=6 for r in discovery)
 assert all(r['note'] for r in verdicts if r['verdict']=='STILL_UNCERTAIN')
-print('PASS: 1043/1043 input IDs uniquely reconciled to discovery and verdicts; discovery fetch budget <=6; holds explicit')
+print('PASS: 1049/1049 input IDs uniquely reconciled to discovery and verdicts; discovery fetch budget <=6; holds explicit')
 row={'org_id':'test','website':'https://example.com','newsroom_url':'https://example.com/news','newsroom_feed_url':'https://example.com/feed'}
 page={'status':'200','url':row['newsroom_url'],'final':row['newsroom_url'],'body':'<a href="/">Home</a>'}
 feed={'status':'200','url':row['newsroom_feed_url'],'final':row['newsroom_feed_url'],'body':'<rss><channel><link>https://example.com/</link><item><link>https://example.com/unlisted</link></item></channel></rss>'}
@@ -63,3 +63,24 @@ if '--live' in sys.argv:
         result=discover({'org_id':saved['org_id'],'website':saved['website']})
         assert result['newsroom_url']==saved['newsroom_url'],result
     print('PASS: 3 fresh live known-answer newsroom discoveries')
+
+from discover import ROOT
+import subprocess,io
+snapshot='9d69978'
+paths=subprocess.check_output(['git','ls-tree','-r','--name-only',snapshot,'data'],cwd=ROOT,text=True).splitlines()
+records=[r for path in paths if path.startswith('data/organizations_') and not path.endswith('_all.csv') for r in csv.DictReader(io.StringIO(subprocess.check_output(['git','show',snapshot+':'+path],cwd=ROOT,text=True)))]
+eligible={r['org_id']:r for r in records if r['status']=='active' and r['tier1_qualifier'] and r['website']}
+assert len(records)==len({r['org_id'] for r in records})==4945
+def verify_snapshot_packet(candidate):
+    assert set(eligible)=={r['org_id'] for r in candidate},'canonical eligible ID set mismatch'
+    for r in candidate:
+        url=eligible[r['org_id']]['website']; url=url if '://' in url else 'https://'+url
+        assert r['website']==url,(r['org_id'],'snapshot website mismatch')
+verify_snapshot_packet(inputs)
+historical_omissions={'ORG-004065','ORG-004069','ORG-004079','ORG-004083','ORG-004084','ORG-004085'}
+try:verify_snapshot_packet([r for r in inputs if r['org_id'] not in historical_omissions])
+except AssertionError:pass
+else:raise AssertionError('historical six-ID omission escaped canonical census')
+print('PASS: injected historical six-ID omission rejected by canonical census')
+assert len([r for r in records if r['status']=='active' and r['tier1_qualifier']])==1261
+print('PASS: named canonical snapshot9d69978 has1261 active tier1,1049 websites,212 blank; input IDs and website values exactly match')

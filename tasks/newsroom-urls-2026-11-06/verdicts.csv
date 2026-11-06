@@ -279,7 +279,7 @@ ORG-001931,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufactur
 ORG-002042,HA-International LLC,https://ha-international.com,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.ha-international.com/news,
 ORG-002043,"Mitsubishi Chemical America, Inc. (Bellevue Plant)",https://mcpp-global.com,tier1,A,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.mcpp-global.com/en/mcpp-america/news/,
 ORG-002065,Ashland Inc. (Ohio site operators: ISP Chemicals LLC - Columbus; ISP Lima LLC - Lima),https://www.ashland.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
-ORG-002066,Catexel Nease LLC,https://www.neaseco.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-002066,Catexel Nease LLC,https://catexel.com/,tier1,B,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-002157,"Custom Pultrusions, Inc.",http://custompultrusions.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-002174,Parker Rust-Proof of Cleveland,https://www.parkerhq.com,tier1,B,VERIFIED,https://www.parkerhq.com/news,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,07/08/2022;3/19/2020;2/26/2020
 ORG-002185,Penn Foam Corporation,https://pennfoam.com/,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
@@ -347,7 +347,7 @@ ORG-002882,Enpro Inc.,https://www.enpro.com,tier1,A,STILL_UNCERTAIN,,,Need reach
 ORG-002883,Brady Corporation,https://www.bradycorp.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-002884,Tredegar Corporation,https://www.tredegar.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-002885,"Latham Group, Inc.",https://www.lathampool.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
-ORG-002886,"CSW Industrials, Inc.",https://www.cswindustrials.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-002886,"CSW Industrials, Inc.",https://csw.com/,tier1,B,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-002887,"Hillenbrand, Inc.",https://www.hillenbrand.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-002888,Albemarle Corporation,https://www.albemarle.com,tier1,A,VERIFIED,https://www.albemarle.com/us/en/newsroom,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only; feed held: no feed item linked from selected index,"September 29, 2026;March 31, 2026;January 14, 2026;November 04, 2026;Nov. 4, 2026;September 30, 2026;October 26, 2026;Oct. 26, 2026;Jan. 4, 2027;October 01, 2026;November 4, 2026;Oct. 1, 2026"
 ORG-002889,Ingevity Corporation,https://www.ingevity.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
@@ -402,7 +402,7 @@ ORG-003064,Royce Associates LP,https://royceglobal.com,tier1,A,STILL_UNCERTAIN,,
 ORG-003067,Westlake Corporation,https://www.westlake.com/,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-003068,Zeon Chemicals L.P.,https://zeonchemicals.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-003071,Bayport Polymers LLC,https://baystar.com/,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.baystar.com/resources/news/,
-ORG-003079,Kaneka North America LLC,https://www.kaneka.com/,tier1,A,VERIFIED,https://www.kaneka.com/kaneka-americas/newsroom/,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,"September 07, 2026"
+ORG-003079,Kaneka North America LLC,https://www.kaneka.com/,tier1,A,STILL_UNCERTAIN,,,Codex parent-publisher hold: Kaneka North America is explicitly a subsidiary of Kaneka Americas Holding; need North America-specific newsroom or owner ruling,
 ORG-003080,"L&L Products, Inc.",https://www.llproducts.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-003081,Milliken & Company,https://www.milliken.com/,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.milliken.com/en-us/textiles/knowledge-center/news,
 ORG-003082,NanoXplore Inc.,https://nanoxplore.ca,tier1,C,VERIFIED,https://nanoxplore.ca/press-releases/,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,"November 2, 2026;October 5, 2026;September 17, 2026;September 15, 2026;August 31, 2026;July 6, 2026;June 15, 2026;May 19, 2026"
@@ -472,7 +472,7 @@ ORG-003182,Plastomer Corporation,http://www.plastomer.com/,tier1,B,STILL_UNCERTA
 ORG-003183,AmFine Chemical Corporation,https://www.amfine.com,tier1,B,VERIFIED,https://amfine.com/news/,https://amfine.com/news/feed/,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,"November 12, 2015;June 4, 2014;April 11, 2014"
 ORG-003184,ENTEK International LLC,https://entek.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-003185,"MasterMold, LLC",https://www.mastermoldllc.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
-ORG-003186,Shintech Inc.,http://www.shintechinc.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-003186,Shintech Inc.,https://shintech.com/,tier1,B,VERIFIED,https://www.shintech.com/news,,Fresh canonical own news index; matching Shintech title and dated items,"March 4, 2026;December 29, 2021;May 4, 2021;February 3, 2021;January 26, 2021;July 24, 2018"
 ORG-003188,"Heritage Plastics, Inc.",http://www.heritage-plastics.com/,tier1,C,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.heritage-plastics.com/,
 ORG-003189,KW Plastics,https://www.kwplastics.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-003190,Sasol Chemicals (USA) LLC,https://chemicals.sasol.com,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://chemicals.sasol.com/newsandevents/news,
@@ -620,15 +620,21 @@ ORG-004059,Altec Engineering Inc,https://altecengineering.com/,tier1,B,STILL_UNC
 ORG-004061,Motiva Enterprises LLC,https://www.motiva.com,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.motiva.com/news-media-library,
 ORG-004062,RESRG Automotive,https://resrgautomotive.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004064,"Lavelle Industries, Inc.",http://lavelle.com/about-lavelle,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004065,"Mid-States Rubber Products, Inc.",https://mid-states.com/,tier1,C,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
+ORG-004069,Y-TEX Corporation,https://y-tex.com/,tier1,A,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-004070,EFI Polymers,https://www.efipolymers.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004071,"Manner Polymers, Inc.",https://mannerpolymers.com/,tier1,B,VERIFIED,https://mannerpolymers.com/manner-polymers-news/,https://mannerpolymers.com/feed/,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,"October 6, 2025;July 18, 2025;November 12, 2024;July 17, 2024;June 5, 2024;June 1, 2023;August 25, 2020;August 5, 2019;April 17, 2019;April 10, 2019"
-ORG-004073,"The Hanson Group, LLC",http://www.hansonco.net/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004073,"The Hanson Group, LLC",https://thehansongroup.com/,tier1,B,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-004074,"GRT Rubber Technologies, LLC",https://www.grtrubber.com/,tier1,A,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://grtrubber.com/home-three/news/,
 ORG-004075,Diamond Fiberglass,https://www.andronaco.com/andronaco-products/vessels-and-tanks/fiberglass-tanks,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004077,"Nylon Corporation of America, Inc. (NYCOA)",https://nycoa.com/,tier1,A,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://nycoa.com/new-page,
 ORG-004078,"Syn-Mar Products, Inc.",http://www.syn-marproducts.com/,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004079,"Advanced Adhesive Systems, Inc.",https://advadh.com/,tier1,C,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-004080,"Rahco Rubber, Inc.",https://rahco-rubber.com/about-us/news/,tier1,A,VERIFIED,https://rahco-rubber.com/about-us/news/,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,"October 12, 2026;August 5, 2026"
 ORG-004081,"Sumitomo Bakelite North America, Inc.",https://www.sbhpp.com/about-sbhpp/worldwide-locations/americas-menu/manchester-plant-usa/,tier1,A,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.sbhpp.com/news/,
+ORG-004083,"Essential Industries, Inc.",https://essind.com/,tier1,A,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
+ORG-004084,"Hearing Components, Inc.",https://complyfoam.com/,tier1,B,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
+ORG-004085,"Piedmont Composites & Tooling, LLC",https://piedmontcomposites.com/,tier1,C,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-004086,"Precision Fiberglass Products, Ltd.",https://precisionfiberglassproductsltd.com/services/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004087,"R&S Processing Co., Inc.",http://www.rsprocessing.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004088,"Tandem Products, Inc.",https://www.schwickerts.com/project/tandem-products/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
@@ -693,7 +699,7 @@ ORG-004155,3D Plastics Inc.,https://www.3d-plastics.com/,tier1,B,STILL_UNCERTAIN
 ORG-004157,Akwel Cadillac USA Inc.,https://akwel-automotive.com/,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004158,"B & D Plastics, LLC",https://bdplastics.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004160,Belt Concepts of America Inc,http://www.belt-concepts.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
-ORG-004161,Boge Rubber & Plastics USA LLC,http://www.boge-rubber-plastics.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004161,Boge Rubber & Plastics USA LLC,https://boge.tech/,tier1,B,STILL_UNCERTAIN,,,Parent/platform publisher uncertainty; need organization-specific newsroom rather than BOGE global/APN platform,
 ORG-004162,Duna USA Inc,https://www.dunagroup.com/usa/contact-us,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004164,Fiberglass Engineering Co,http://www.fiberglass-planters.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004165,"Fiberglass Products, Inc.",https://www.fiberglassproductsinc.net/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
@@ -770,7 +776,7 @@ ORG-004269,"Bullfrog International, L.C.",https://www.bullfrogspas.com/,tier1,A,
 ORG-004270,Caterpillar Inc.,https://www.cat.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004272,Flex-N-Gate Corporation,https://www.flex-n-gate.com/,tier1,B,VERIFIED,https://flex-n-gate.com/news/,https://flex-n-gate.com/feed/,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,16 October 2026;22 July 2026;14 April 2026;17 March 2026;26 January 2026;27 November 2025;30 October 2025;18 September 2025;26 August 2025
 ORG-004273,Future Pipe Industries,https://futurepipe.com/,tier1,B,VERIFIED,https://futurepipe.com/news-events/,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only,24 September 2026;10 September 2026;10 August 2026;22 May 2026;12 May 2026;30 April 2026
-ORG-004274,"Petroleum Containment, Inc.",https://www.petroleumcontainment.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004274,"Petroleum Containment, Inc.",https://petroleum-containment.com/,tier1,B,VERIFIED,https://www.petroleum-containment.com/category/news/,,Fresh canonical own news index; PCI acronym explicitly identified as Petroleum Containment Inc on own home page; feed held: no article item linked from selected index,"August 25, 2026;May 13, 2026;February 10, 2026;November 16, 2025;October 16, 2025;September 27, 2025;August 27, 2025;July 7, 2025;June 26, 2025;June 4, 2025"
 ORG-004275,Griffith Rubber Mills,https://www.griffithrubber.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004276,Henniges Automotive Inc.,https://www.hennigesautomotive.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004277,LexaMar Corp.,https://www.magna.com/,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.magna.com/newsroom/news,
@@ -997,7 +1003,7 @@ ORG-004566,"R&D Marble, Inc.",https://www.rdmarble.com/,tier1,B,STILL_UNCERTAIN,
 ORG-004567,Res-Tek Inc.,https://res-tek.net,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004568,Resin Solutions LLC,https://www.resinsolutions.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004569,Safas Corporation,https://safascorp.com,tier1,A,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://safascorp.com/news_events.html,
-ORG-004570,Sanco Inc.,https://sancopolymers.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004570,Sanco Inc.,https://sancosystems.com/,tier1,B,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-004572,SolEpoxy Inc.,https://solepoxy.com,tier1,A,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://solepoxy.com/Tools/Broadcaster/frontend/itemlist.asp?reset=1&lngdisplay=7,
 ORG-004574,SwimEx Inc.,https://www.swimex.com,tier1,C,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004575,Synray Corporation,https://synray.com,tier1,B,VERIFIED,https://synray.com/news/,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only; feed held: no article-item overlap (channel metadata excluded),"April 30, 2026;March 31, 2025"
@@ -1005,7 +1011,7 @@ ORG-004576,"Townley Engineering & Manufacturing Co., Inc.",https://www.townley.c
 ORG-004577,W&W Fiberglass Tank Co.,https://wwtank.com/,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004578,Zschimmer & Schwarz Interpolymer Inc.,https://www.zschimmer-schwarz.com,tier1,C,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.zschimmer-schwarz.com/,
 ORG-004579,Advance Coatings Company,https://advancecoatings.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
-ORG-004581,Aurora Specialty Chemistries,https://auroraspchm.com,tier1,C,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004581,Aurora Specialty Chemistries,https://auroraspecialtychemistries.com/,tier1,C,STILL_UNCERTAIN,,,Refreshed canonical website route; need reachable organization-specific newsroom index,
 ORG-004582,CAAP Co Inc.,https://caapco.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004583,Chemence Inc.,https://www.chemence.com,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004584,C. L. Hauthaway & Sons Corporation,https://hauthaway.com,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
@@ -1027,7 +1033,7 @@ ORG-004601,"Pflaumer Brothers, Inc.",https://www.pflaumer.com/,tier1,A,STILL_UNC
 ORG-004602,Polyset Company Inc.,https://www.polyset.com/,tier1,A,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004604,Florikan E.S.A. LLC,https://www.florikan.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004605,Proviron Inc.,https://proviron.com/america,tier1,B,VERIFIED,https://proviron.com/america/america-news/,,Own-domain newsroom navigation and matching organization title; dated items present; navigation only; feed held: global parent stream for regional index,"October 13, 2026;September 8, 2026;July 14, 2026;July 8, 2026;June 25, 2026;June 12, 2026;June 11, 2026;June 10, 2026;May 20, 2026"
-ORG-004606,"A. P. Nonweiler Company, Inc.",https://www.apnonweiler.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
+ORG-004606,"A. P. Nonweiler Company, Inc.",https://apncoatings.com/,tier1,B,STILL_UNCERTAIN,,,Parent/platform publisher uncertainty; need organization-specific newsroom rather than BOGE global/APN platform,
 ORG-004607,Ryvec Inc.,https://ryvec.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004608,"The Seydel Companies, Inc.",https://www.seydel.com/,tier1,B,STILL_UNCERTAIN,,,Need reachable own-domain newsroom index; no matching navigation link or route unavailable,
 ORG-004609,SICPA Securink Corporation,https://www.sicpa.com/,tier1,B,STILL_UNCERTAIN,,,Need page-purpose/organization identity confirmation; candidate held: https://www.sicpa.com/newsroom,

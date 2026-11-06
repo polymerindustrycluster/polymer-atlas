@@ -279,7 +279,7 @@ ORG-001931,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufactur
 ORG-002042,HA-International LLC,https://ha-international.com,tier1,B,,
 ORG-002043,"Mitsubishi Chemical America, Inc. (Bellevue Plant)",https://mcpp-global.com,tier1,A,,
 ORG-002065,Ashland Inc. (Ohio site operators: ISP Chemicals LLC - Columbus; ISP Lima LLC - Lima),https://www.ashland.com,tier1,A,,"Ashland Inc. (HQ Wilmington, DE)"
-ORG-002066,Catexel Nease LLC,https://www.neaseco.com,tier1,B,,Catexel
+ORG-002066,Catexel Nease LLC,https://catexel.com/,tier1,B,,Catexel
 ORG-002157,"Custom Pultrusions, Inc.",http://custompultrusions.com,tier1,A,,
 ORG-002174,Parker Rust-Proof of Cleveland,https://www.parkerhq.com,tier1,B,,
 ORG-002185,Penn Foam Corporation,https://pennfoam.com/,tier1,A,,
@@ -347,7 +347,7 @@ ORG-002882,Enpro Inc.,https://www.enpro.com,tier1,A,,
 ORG-002883,Brady Corporation,https://www.bradycorp.com,tier1,A,,
 ORG-002884,Tredegar Corporation,https://www.tredegar.com,tier1,A,,
 ORG-002885,"Latham Group, Inc.",https://www.lathampool.com,tier1,A,,
-ORG-002886,"CSW Industrials, Inc.",https://www.cswindustrials.com,tier1,B,,
+ORG-002886,"CSW Industrials, Inc.",https://csw.com/,tier1,B,,
 ORG-002887,"Hillenbrand, Inc.",https://www.hillenbrand.com,tier1,B,,
 ORG-002888,Albemarle Corporation,https://www.albemarle.com,tier1,A,,
 ORG-002889,Ingevity Corporation,https://www.ingevity.com,tier1,A,,
@@ -472,7 +472,7 @@ ORG-003182,Plastomer Corporation,http://www.plastomer.com/,tier1,B,,
 ORG-003183,AmFine Chemical Corporation,https://www.amfine.com,tier1,B,,ADEKA Corporation
 ORG-003184,ENTEK International LLC,https://entek.com,tier1,B,,
 ORG-003185,"MasterMold, LLC",https://www.mastermoldllc.com/,tier1,B,,
-ORG-003186,Shintech Inc.,http://www.shintechinc.com/,tier1,B,,"Shin-Etsu Chemical Co., Ltd."
+ORG-003186,Shintech Inc.,https://shintech.com/,tier1,B,,"Shin-Etsu Chemical Co., Ltd."
 ORG-003188,"Heritage Plastics, Inc.",http://www.heritage-plastics.com/,tier1,C,,
 ORG-003189,KW Plastics,https://www.kwplastics.com/,tier1,B,,
 ORG-003190,Sasol Chemicals (USA) LLC,https://chemicals.sasol.com,tier1,B,,Sasol Limited
@@ -620,15 +620,21 @@ ORG-004059,Altec Engineering Inc,https://altecengineering.com/,tier1,B,,
 ORG-004061,Motiva Enterprises LLC,https://www.motiva.com,tier1,B,,Saudi Aramco
 ORG-004062,RESRG Automotive,https://resrgautomotive.com,tier1,B,,Atlas Holdings
 ORG-004064,"Lavelle Industries, Inc.",http://lavelle.com/about-lavelle,tier1,A,,
+ORG-004065,"Mid-States Rubber Products, Inc.",https://mid-states.com/,tier1,C,,
+ORG-004069,Y-TEX Corporation,https://y-tex.com/,tier1,A,,
 ORG-004070,EFI Polymers,https://www.efipolymers.com/,tier1,B,,
 ORG-004071,"Manner Polymers, Inc.",https://mannerpolymers.com/,tier1,B,,
-ORG-004073,"The Hanson Group, LLC",http://www.hansonco.net/,tier1,B,,
+ORG-004073,"The Hanson Group, LLC",https://thehansongroup.com/,tier1,B,,
 ORG-004074,"GRT Rubber Technologies, LLC",https://www.grtrubber.com/,tier1,A,,
 ORG-004075,Diamond Fiberglass,https://www.andronaco.com/andronaco-products/vessels-and-tanks/fiberglass-tanks,tier1,B,,"Andronaco Industries, Inc."
 ORG-004077,"Nylon Corporation of America, Inc. (NYCOA)",https://nycoa.com/,tier1,A,,
 ORG-004078,"Syn-Mar Products, Inc.",http://www.syn-marproducts.com/,tier1,A,,
+ORG-004079,"Advanced Adhesive Systems, Inc.",https://advadh.com/,tier1,C,,
 ORG-004080,"Rahco Rubber, Inc.",https://rahco-rubber.com/about-us/news/,tier1,A,,
 ORG-004081,"Sumitomo Bakelite North America, Inc.",https://www.sbhpp.com/about-sbhpp/worldwide-locations/americas-menu/manchester-plant-usa/,tier1,A,,"Sumitomo Bakelite Co., Ltd."
+ORG-004083,"Essential Industries, Inc.",https://essind.com/,tier1,A,,
+ORG-004084,"Hearing Components, Inc.",https://complyfoam.com/,tier1,B,,
+ORG-004085,"Piedmont Composites & Tooling, LLC",https://piedmontcomposites.com/,tier1,C,,
 ORG-004086,"Precision Fiberglass Products, Ltd.",https://precisionfiberglassproductsltd.com/services/,tier1,B,,
 ORG-004087,"R&S Processing Co., Inc.",http://www.rsprocessing.com/,tier1,B,,
 ORG-004088,"Tandem Products, Inc.",https://www.schwickerts.com/project/tandem-products/,tier1,B,,
@@ -693,7 +699,7 @@ ORG-004155,3D Plastics Inc.,https://www.3d-plastics.com/,tier1,B,,
 ORG-004157,Akwel Cadillac USA Inc.,https://akwel-automotive.com/,tier1,A,,
 ORG-004158,"B & D Plastics, LLC",https://bdplastics.com/,tier1,B,,
 ORG-004160,Belt Concepts of America Inc,http://www.belt-concepts.com/,tier1,B,,
-ORG-004161,Boge Rubber & Plastics USA LLC,http://www.boge-rubber-plastics.com/,tier1,B,,
+ORG-004161,Boge Rubber & Plastics USA LLC,https://boge.tech/,tier1,B,,
 ORG-004162,Duna USA Inc,https://www.dunagroup.com/usa/contact-us,tier1,B,,
 ORG-004164,Fiberglass Engineering Co,http://www.fiberglass-planters.com/,tier1,B,,
 ORG-004165,"Fiberglass Products, Inc.",https://www.fiberglassproductsinc.net/,tier1,B,,
@@ -770,7 +776,7 @@ ORG-004269,"Bullfrog International, L.C.",https://www.bullfrogspas.com/,tier1,A,
 ORG-004270,Caterpillar Inc.,https://www.cat.com/,tier1,B,,
 ORG-004272,Flex-N-Gate Corporation,https://www.flex-n-gate.com/,tier1,B,,
 ORG-004273,Future Pipe Industries,https://futurepipe.com/,tier1,B,,"Future Pipe Industries Group (Dubai, UAE)"
-ORG-004274,"Petroleum Containment, Inc.",https://www.petroleumcontainment.com/,tier1,B,,
+ORG-004274,"Petroleum Containment, Inc.",https://petroleum-containment.com/,tier1,B,,
 ORG-004275,Griffith Rubber Mills,https://www.griffithrubber.com/,tier1,B,,
 ORG-004276,Henniges Automotive Inc.,https://www.hennigesautomotive.com/,tier1,B,,Aviation Industry Corporation of China (AVIC)
 ORG-004277,LexaMar Corp.,https://www.magna.com/,tier1,B,,Magna International Inc.
@@ -994,10 +1000,10 @@ ORG-004561,"Polyurethane Specialties Company, Inc.",http://www.polyurethanespeci
 ORG-004562,"Polywood, Inc.",https://www.polywood.com/,tier1,B,,
 ORG-004563,Prefere Melamines LLC,https://prefere.com/en/melamines,tier1,B,,Prefere Resins Holding GmbH
 ORG-004566,"R&D Marble, Inc.",https://www.rdmarble.com/,tier1,B,,
-ORG-004567,Res-Tek Inc.,https://res-tek.net,tier1,A,,
+ORG-004567,Res-Tek Inc.,https://res-tek.net,tier1,A,ORG-004606,
 ORG-004568,Resin Solutions LLC,https://www.resinsolutions.com,tier1,B,,
 ORG-004569,Safas Corporation,https://safascorp.com,tier1,A,,
-ORG-004570,Sanco Inc.,https://sancopolymers.com,tier1,B,,
+ORG-004570,Sanco Inc.,https://sancosystems.com/,tier1,B,,
 ORG-004572,SolEpoxy Inc.,https://solepoxy.com,tier1,A,,
 ORG-004574,SwimEx Inc.,https://www.swimex.com,tier1,C,,
 ORG-004575,Synray Corporation,https://synray.com,tier1,B,,
@@ -1005,7 +1011,7 @@ ORG-004576,"Townley Engineering & Manufacturing Co., Inc.",https://www.townley.c
 ORG-004577,W&W Fiberglass Tank Co.,https://wwtank.com/,tier1,A,,
 ORG-004578,Zschimmer & Schwarz Interpolymer Inc.,https://www.zschimmer-schwarz.com,tier1,C,,
 ORG-004579,Advance Coatings Company,https://advancecoatings.com,tier1,B,,
-ORG-004581,Aurora Specialty Chemistries,https://auroraspchm.com,tier1,C,,
+ORG-004581,Aurora Specialty Chemistries,https://auroraspecialtychemistries.com/,tier1,C,,
 ORG-004582,CAAP Co Inc.,https://caapco.com/,tier1,B,,
 ORG-004583,Chemence Inc.,https://www.chemence.com,tier1,B,,
 ORG-004584,C. L. Hauthaway & Sons Corporation,https://hauthaway.com,tier1,A,,
@@ -1027,7 +1033,7 @@ ORG-004601,"Pflaumer Brothers, Inc.",https://www.pflaumer.com/,tier1,A,,
 ORG-004602,Polyset Company Inc.,https://www.polyset.com/,tier1,A,,
 ORG-004604,Florikan E.S.A. LLC,https://www.florikan.com/,tier1,B,,Profile Products LLC
 ORG-004605,Proviron Inc.,https://proviron.com/america,tier1,B,,Proviron NV
-ORG-004606,"A. P. Nonweiler Company, Inc.",https://www.apnonweiler.com/,tier1,B,,Renovo Capital
+ORG-004606,"A. P. Nonweiler Company, Inc.",https://apncoatings.com/,tier1,B,,Renovo Capital
 ORG-004607,Ryvec Inc.,https://ryvec.com/,tier1,B,,
 ORG-004608,"The Seydel Companies, Inc.",https://www.seydel.com/,tier1,B,,
 ORG-004609,SICPA Securink Corporation,https://www.sicpa.com/,tier1,B,,SICPA Holding
