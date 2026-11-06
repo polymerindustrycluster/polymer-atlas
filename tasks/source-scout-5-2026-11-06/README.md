@@ -27,3 +27,7 @@ Validator0errors PASS; packetbuilder rerun byte-identical PASS. Current-main row
 ## Ledger / limits
 
 Controller notified that Ohio requested public portal is a challenge and available browser controls are unusable; no CAPTCHA bypass or login attempt. PBR fallback explicitly separated in status message and packet. No peer ownership transfers. docs_proposals.md provides proposed SOURCES/IDEAS lines for controller integration, avoiding concurrent shared-doc edits. Estate search incomplete due Windows Documents/corpus not on Mac; no private holdings copied. PR131/162 review work remains separate; no prior scout files bundled here.
+
+## Independent refutation
+
+Grok/xAI APPROVE d5872df9055806bd4f1e241f1ddcf4d1bf06cd80,0findings. Independently ran named oracle, validator and row-loss; PBR frame/sample/count replay byte-identical, native19443populated+1blank rows and seed20 identities reconciled; both singleton held-site matches and all four unmeasured requested-source gates verified. Raw terms/route bodies match receipts, with no result/roster claimed from challenge/403/login shell. Report: controller review ledger reviews/184-clerk-grok-3.md. Codex/OpenAI review pending; PR remains draft. This change records the receipt only; samples/counts/builders unchanged.
