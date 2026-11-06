@@ -1,15 +1,16 @@
 {
   "private_runtime": "/Users/johnswanson/.bb/thread-storage/thr_mcdghpxw8c/people-settle-2-private",
-  "summary_sha256": "3cad2e539d425d6cfd71fc4f0d3a4ac36c16a5b8c5c23d50309f1c6f8adf7542",
+  "summary_sha256": "87af7e1278e0be626f779a2287a347135e9538dd54107171bacb1e7ee8e0a618",
   "disposition_sha256": {
-    "helper/dispositions.json": "d02f8da9417990e7e0e3a76b13417cbf92aeb069171619dc72786000dd1d160e",
+    "helper/dispositions.json": "12534914e683fddf3cd9d2c9dd5ced47d5c9de68fa101dedac1e8afa8230447f",
     "uc58/dispositions.json": "77e9d7bb42a095c431474893ee22b5c2c75a71aecf1f3e053f33be4a9d2412f9",
     "osu60/dispositions.json": "20216eced0387617ab94e6ebbc9049a9ee7e8f6059608b5c737d97c2bd42807d",
     "root15/dispositions.json": "a45e7aaedc933aaac3b9e8a255217cc1154fdba025cb9c34758c91b569562162",
     "root8/dispositions.json": "6de92f4412903260647b26dfc3ec5b20dd530482760246bc5bc442d736828276",
-    "root30/dispositions.json": "07f6be4b883170d8ab12f67840dc057655cb1f371872dd3a64cef3ff1cb00709"
+    "root30/dispositions.json": "67387cb4891be309f69f5a2d04c6af8623f7e45555f293965a2c93beda599807"
   },
   "frame_sha256": "9debeb4456e82d6d8bc175652bcb85a0df89b8070fa58c39373966707e2644ec",
   "source_archive_sha256": "5a7f6bb37c1e838b31bba5f457b6d927d2ee28449b4e91f6d5aa993afc71fb85",
-  "published_content": "Only verified institution-supported professional facts, aggregate counts, source quote certificates and runnable builders/checks; full discovery identities private."
+  "published_content": "Only verified institution-supported professional facts, aggregate counts, source quote certificates and runnable builders/checks; full discovery identities private.",
+  "source_archive_verification": "Provenance pointer to original first-pass archive; this342checker recomputes frame/disposition hashes, not that separate archive hash"
 }

@@ -18,7 +18,7 @@ def near(text,quote,surname):
  t,q=words(text),words(quote)
  return any(t[i:i+len(q)]==q and surname.lower() in t[max(0,i-40):i+len(q)+40] for i in range(len(t)-len(q)+1))
 # Calibrate the inherited proximity check on five actual, manually bounded person entries.
-for cid in ['21568','900','8328','8713','18213']:
+for cid in ['21568','900','18213','8713','18181']:
  r=next(x for x in rows if x['candidate_id']==cid);u=r['gate_a_url'];d=json.loads((CACHE/(hashlib.sha256(u.encode()).hexdigest()+'.json')).read_text())
  assert near(d['text'],r['gate_a_quote'],words(r['full_name'])[-1])
 assert not near('Fisch '+'gap '*41+'Associate Professor','Associate Professor','Fisch')
@@ -29,13 +29,15 @@ held=list(csv.DictReader((ROOT/'data/people.csv').open()))
 pending=list(csv.DictReader((PRIVATE/'pending_first_pass_people.csv').open()))
 overrides={str(x['candidate_id']):x for x in json.load(open(PRIVATE/'helper/home_overrides.json'))}
 ecosystem={x['org_id']:x for x in csv.DictReader((ROOT/'data/ecosystem.csv').open())}
-allowed_specialties={'composites_unspecified','characterization_methods','polymer_physics','biomedical_polymers','composites_mechanics'}
+allowed_specialties={'composites_unspecified','characterization_methods','polymer_physics','composites_mechanics'}
 def valid_specialties(value):return bool(value) and set(value.split(';'))<=allowed_specialties
 assert valid_specialties('composites_unspecified')
 assert not valid_specialties('Polymer composites and nanocomposites')
 assert not valid_specialties('Polymeric sorbents')
-applied_ids={'21568':'PERSON-002104','900':'PERSON-002105','574':'PERSON-002106','8328':'PERSON-002107','18213':'PERSON-002108','8713':'PERSON-002109','18181':'PERSON-002110'}
+applied_ids={'21568':'PERSON-002104','900':'PERSON-002105','18213':'PERSON-002108','8713':'PERSON-002109','18181':'PERSON-002110'}
 reviewed={r['candidate_id']:r for r in csv.DictReader((ROOT/'tasks/people-settle-2-2026-11-06/reviewed.csv').open())}
+assert len(rows)==5 and {r['candidate_id'] for r in rows}==set(applied_ids)
+assert not {'PERSON-002106','PERSON-002107'} & set(applied_ids.values())
 for r in rows:
  approved=reviewed[r['candidate_id']];assert approved['allocated_person_id']==applied_ids[r['candidate_id']]
  for k in ['full_name','institution_org_id','role','role_as_published','research_specialties','public_profile_url','gate_a_url','gate_a_quote','gate_b_url','gate_b_quote']:assert approved[k]==r[k],(r['candidate_id'],k,'reviewed-map mismatch')
@@ -66,4 +68,4 @@ for r in rows:
    assert found(d['text'],r['role_as_published'])
  raw=' '.join(r.values());assert not re.search(r'[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}|\(at\)|\d{3}[ .-]\d{3}[ .-]\d{4}',raw)
 assert b'\r' not in (Path(__file__).parent/'verified.csv').read_bytes()
-print('PASS 14 calibrated token/proximity/identity/defect checks + 3 controlled-tag checks; public proposal identities',len(rows),'raw quotes',2*len(rows),'title/surname/provenance/privacy/LF/main+pending dedupe; strict reviewed/canonical parity for seven allocated self IDs')
+print('PASS 14 calibrated token/proximity/identity/defect checks + 3 controlled-tag checks; public proposal identities',len(rows),'raw quotes',2*len(rows),'title/surname/provenance/privacy/LF/main+pending dedupe; strict reviewed/canonical parity for five allocated self IDs')

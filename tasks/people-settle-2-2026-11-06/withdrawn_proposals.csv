@@ -1,2 +1,7 @@
 candidate_id,person_id,evidence_ids,reason
 25924,PERSON-002114,EVD-282042;EVD-282043;EVD-282044,Owner vocabulary hold: electrospinning is not in controlled §3.1/§3.2/§3.5; no substitute process/material inferred.
+11893,PERSON-002101,EVD-282003;EVD-282004;EVD-282005,Owner mapping hold: functional macromolecular/supramolecular synthesis does not clearly state polymer_synthesis under narrow SCHEMA3.5 definition; no replacement tag.
+10407,PERSON-002102,EVD-282006;EVD-282007;EVD-282008,Owner mapping hold: excited-state dynamics/ultrafast spectroscopy of coordination-polymer materials does not clearly state polymer structure/property characterization_methods; no replacement tag.
+574,PERSON-002106,EVD-282018;EVD-282019;EVD-282020,Owner mapping hold: nanoparticle optics in polymer/liquid-crystal dispersions does not clearly state polymer-system structure-property/thermodynamics/statistical-mechanics polymer_physics; no replacement tag.
+8328,PERSON-002107,EVD-282021;EVD-282022;EVD-282023,Owner mapping hold: engineered glycopolymer probes do not clearly state biomedical_polymers medical-device/drug-delivery/tissue-engineering specialty; no replacement tag.
+,,EVD-282051,Grok REFUTE a68c873: claim_detail states facts from other UC pages (2018 Assistant start; current department header), violating the own_site source-only rule. Withdrawn with no replacement row; Person002111 retained (Associate rank rests on the current department directory EVD-282033 and the research-directory header EVD-282035).

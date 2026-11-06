@@ -13,7 +13,7 @@ def require_claims(evidence, pid):
 
 def main():
     packet = read(HERE / 'reviewed.csv')
-    assert len(packet) == 16 and len({r['candidate_id'] for r in packet}) == 16
+    assert len(packet) == 12 and len({r['candidate_id'] for r in packet}) == 12
     frame = json.loads((PRIVATE / 'frame.json').read_text())
     assert len(frame) == len({r['id'] for r in frame}) == 342
     expected = {r['id'] for r in frame}
@@ -33,7 +33,7 @@ def main():
     ids = [r['candidate_id'] for r in dispositions]
     assert len(ids) == len(set(ids)) == 342 and set(ids) == expected, 'overlap, omission or extra candidate'
     counts = {v: sum(r['verdict'] == v for r in dispositions) for v in VERDICTS}
-    assert counts == {'VERIFIED': 16, 'REJECT': 25, 'STILL_UNCERTAIN': 298, 'DUPLICATE_OF': 3}, counts
+    assert counts == {'VERIFIED': 12, 'REJECT': 25, 'STILL_UNCERTAIN': 302, 'DUPLICATE_OF': 3}, counts
     assert {r['candidate_id'] for r in dispositions if r['verdict'] == 'VERIFIED'} == {int(r['candidate_id']) for r in packet}
     held = read(ROOT / 'data/people.csv')
     held_by_id = {r['person_id']: r for r in held}
@@ -74,7 +74,7 @@ def main():
         assert hashlib.sha256(d['text'].encode()).hexdigest() == ck['sanitized_text_sha256'], ('source changed; recheck required', ck['url'])
         assert found(d['text'], ck['quote']) and len(ck['quote'].split()) <= 25
     people, evidence = build.records()
-    assert len(people) == 16 and len(evidence) == 50
+    assert len(people) == 12 and len(evidence) == 37
     for r in people:
         assert r['verification_tier'] == 'C'
         require_claims(evidence, r['person_id'])
@@ -105,7 +105,7 @@ def main():
     hashes = [hashlib.sha256(f.read_bytes()).hexdigest() for f in paths]
     subprocess.run([sys.executable, str(HERE / 'build.py')], cwd=ROOT, check=True)
     assert hashes == [hashlib.sha256(f.read_bytes()).hexdigest() for f in paths], 'replay changed bytes'
-    print('PASS342unique candidate people=16V/25R/298U/3D;16newC/50append-onlyEVD;41rawquote keys;vocabulary+missing-parent defects rejected;pre-pass preservation;byte-identical replay')
+    print('PASS342unique candidate people=12V/25R/302U/3D;12newC/37append-onlyEVD;41rawquote keys;vocabulary+missing-parent defects rejected;pre-pass preservation;byte-identical replay')
 
 if __name__ == '__main__':
     main()
