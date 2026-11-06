@@ -5,8 +5,7 @@ from fetch import TASK,ROOT,frs,read,write
 sys.path.insert(0,str(ROOT/'scripts'))
 from shard_io import append_sorted
 DATE='2026-11-06'
-def namekey(value):
- return ' '.join(t for t in re.findall('[A-Z0-9]+',value.upper()) if t not in {'THE','INC','INCORPORATED','LLC','CORP','CORPORATION','CO','COMPANY','LTD','LIMITED'})
+from fetch_bulk import facility as bulk_facility,namekey
 def identity(s,f):
  names=[s['held_legal_name']]+s['held_trade_names'].split(';')
  return any(namekey(n)==namekey(f.get('FacilityName') or '') for n in names if n.strip())
@@ -19,7 +18,7 @@ def note_streets(s):
  if m:out.append(re.split(r'\.\s+(?=PASS|BAND|CERT|Ring|INTEGRATION|Parcel|Re-pointed|NAICS|Source|(?i:county UNVERIFIED)|\[)',m[1])[0].rstrip('. '))
  return out
 def plan():
- frame=read(TASK/'frame.csv');selected=[s for s in frame if s['selected']=='yes'];links=read(TASK/'registry_links_input.csv')+read(TASK/'frs_notes_leads.csv')+read(TASK/'frs_packet_leads.csv');ids={s['site_id'] for s in selected}
+ frame=read(TASK/'frame.csv');selected=[s for s in frame if s['selected']=='yes'];links=read(TASK/'bulk_bindings.csv');ids={s['site_id'] for s in selected}
  assert len(frame)==len({s['site_id'] for s in frame})==819
  assert len(selected)==len(ids)==100 and len({s['reserved_evidence_id'] for s in frame})==819
  assert [s['reserved_evidence_id'] for s in frame]==[f'EVD-{153000+i:06d}' for i in range(819)]
@@ -27,27 +26,29 @@ def plan():
  assert {r['site_id'] for r in links}<=ids
  byid={s['site_id']:s for s in selected}
  assert all(r['registry_id'] in re.findall(r'\b110\d{9}\b',byid[r['site_id']]['notes']) and r['org_id']==byid[r['site_id']]['org_id'] for r in read(TASK/'frs_notes_leads.csv')),'notes lead ID/operator not frozen in site notes'
- fetches={r['registry_id']:r for r in read(TASK/'fetch_log.csv')}
- assert fetches.keys()=={r['registry_id'] for r in links},'FRS request yield incomplete'
+ source=json.loads((TASK/'bulk_manifest.json').read_text())['source'];assert source['url']=='https://echo.epa.gov/files/echodownloads/echo_exporter.zip'
+ fetches={r['registry_id']:r for r in read(TASK/'bulk_log.csv')}
+ assert fetches.keys()=={r['registry_id'] for r in links},'bulk identifier yield incomplete'
  ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
  matches=[m for m in read(ROOT/'tasks/osha-ita-2026-11-01/site_matches.csv') if m['site_id'] in ids and m['match_strength'] in ('exact','strong')]
  existing=[e for e in read(ROOT/'data/evidence_sites_OH.csv') if e['record_id'] in ids and e['claim_type']=='address' and e['created_by']!='atlas-L2-oh-address-cu-2']
  assert not existing,'new held address evidence needs priority/adjudication before this frozen pass'
- ev=[];verdicts=[];transcription=[]
+ ev=[];verdicts=[];transcription=[];canonical=read(ROOT/'data/sites_OH.csv')
  for s in selected:
   sid=s['site_id'];why=[];candidates=[];unavailable=[]
+  peers=[r for r in canonical if r['site_id']!=sid and r['org_id']==s['org_id'] and r['operating_status']=='active' and frs.norm(r['city'])==frs.norm(s['city']) and (not r['zip'] or not s['zip'] or r['zip'][:5]==s['zip'][:5])]
   for link in [r for r in links if r['site_id']==sid]:
    rid=link['registry_id'];row=fetches[rid]
    if link['org_id']!=s['org_id']:why.append('registry link operator differs from Atlas operator')
-   if row['result']!='OK':unavailable.append(rid+': '+row['error']);continue
-   f=frs.facility(json.loads((TASK/'raw'/f'{rid}.json').read_text()),rid)
-   if not identity(s,f):why.append('fresh FRS facility name lacks exact held legal/trade-name identity; operator adjudication needed')
-   if link.get('lead_basis') and not note_streets(s):why.append('notes-only identifier lacks street binding to this site')
+   if row['result']!='OK':why.append('bulk identifier ambiguous');unavailable.append(rid+': '+row['result']);continue
+   f=bulk_facility(json.loads((TASK/'bulk_raw'/f'{rid}.json').read_text()),rid)
+   if not identity(s,f):why.append('bulk facility name lacks exact held legal/trade-name identity; operator adjudication needed')
+   if peers and not note_streets(s):why.append('bulk address lacks site-specific binding among same-operator city/ZIP peers')
    conflict=frs.conflict(s,f)
    if conflict:why.append('FRS '+rid+': '+conflict)
    if re.search(r'(?i)\bP\.?\s*O\.?\s*BOX\b|mailing',f.get('SupplementalLocation') or ''):why.append('supplemental mailing/PO-box ambiguity')
-   candidates.append(dict(street=f['LocationAddress'],source_class='registry',ref=frs.FRSU+rid+'&output=JSON',date=DATE,
-                          effect='supports_C',notes=f"EPA FRS registry {rid}; fetched {DATE}; raw copy tasks/oh-street-address-cu-3-2026-11-06/raw/{rid}.json",source_id=rid))
+   candidates.append(dict(street=f['LocationAddress'],source_class='registry',ref=source['url'],date=source['date'][:10],
+                          effect='supports_C',notes=f"EPA ECHO REGISTRY_ID {rid}; bulk download {source['date']}; archive SHA-256 {source['sha256']}; raw projection tasks/oh-street-address-cu-3-2026-11-06/bulk_raw/{rid}.json; retrieval date not address-effective date",source_id=rid))
   for m in [m for m in matches if m['site_id']==sid]:
    r=ita[m['establishment_id']]
    assert m['street']==r['street'] and m['city']==r['city'] and m['zip5']==r['zip5'],'inherited ITA transcription drift'
@@ -59,12 +60,21 @@ def plan():
     why.append('ITA physical street ambiguous');continue
    candidates.append(dict(street=r['street'],source_class='government_filing',ref=ITA_URL,date='2026-11-01',effect='supports_A',
      notes=f"OSHA ITA CY2025 establishment_ID {r['establishment_id']}; date_submitted {r['date_submitted']}; owner-supplied filtered extract SHA-256 {ITA_SHA}; inherited bulk exception controller2026-11-06",source_id=r['establishment_id']))
+  # Previously fetched REST records remain contradiction checks, never relabeled as bulk observations.
+  historical=read(TASK/'registry_links_input.csv')+read(TASK/'frs_notes_leads.csv')+read(TASK/'frs_packet_leads.csv')
+  for old in [r for r in historical if r['site_id']==sid]:
+   path=TASK/'raw'/(old['registry_id']+'.json')
+   if not path.exists():continue
+   fresh=frs.facility(json.loads(path.read_text()),old['registry_id'])
+   if not identity(s,fresh) or frs.conflict(s,fresh):why.append('earlier fresh REST identity/locality conflicts; source reconciliation needed')
+   if candidates and any(frs.streetkey(c['street'])!=frs.streetkey(fresh['LocationAddress']) for c in candidates):why.append('bulk and earlier fresh REST streets disagree')
   if len({frs.streetkey(c['street']) for c in candidates})>1:why.append('federal sources disagree on street')
   street=candidates[0]['street'] if candidates else ''
   # shortcut: written ordinals/dotted diagonals remain distinct; adjudicate held aliases before widening matching.
   if candidates and any(frs.streetkey(n)!=frs.streetkey(street) for n in note_streets(s)):why.append('notes street conflicts; dated address adjudication needed')
   if sid in {r['site_id'] for r in read(TASK/'retired_ids.csv')}:why.append('cited FRS audit source unavailable after bounded retry; successful fresh recheck required')
   if not candidates:why.append('need admissible physical street witness; no qualifying federal route or source unavailable')
+  why=list(dict.fromkeys(why))
   v=dict(site_id=sid,verdict='STILL_UNCERTAIN' if why else 'VERIFIED',street_address=street,evidence_id='' if why else s['reserved_evidence_id'],reason='; '.join(why),availability='; '.join(unavailable))
   verdicts.append(v)
   if not why:
@@ -75,7 +85,8 @@ def plan():
  assert len(verdicts)==len({v['site_id'] for v in verdicts})==100
  return selected,links,verdicts,ev,transcription
 def run(apply=False):
- selected,links,verdicts,ev,transcription=plan();sites=read(ROOT/'data/sites_OH.csv');byid={s['site_id']:s for s in sites};frozen={s['site_id']:s for s in selected};eb={e['record_id']:e for e in ev}
+ selected,links,verdicts,ev,transcription=plan();assert len(ev)==7,'frozen adjudication yield changed before writes'
+ sites=read(ROOT/'data/sites_OH.csv');byid={s['site_id']:s for s in sites};frozen={s['site_id']:s for s in selected};eb={e['record_id']:e for e in ev}
  live_links={(r['org_id'],r['registry_id'],r['site_id']) for r in read(ROOT/'data/registry_links.csv') if r['registry']=='FRS'}
  assert all((r['org_id'],r['registry_id'],r['site_id']) in live_links for r in read(TASK/'registry_links_input.csv')),'main link no longer held'
  existing={};planned_ids={e['evidence_id'] for e in ev};retired={r['evidence_id'] for r in read(TASK/'retired_ids.csv')}

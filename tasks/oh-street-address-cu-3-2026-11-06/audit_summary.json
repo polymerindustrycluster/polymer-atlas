@@ -1,10 +1,13 @@
 {
-  "original_candidates": 3,
-  "accepted_fills": 3,
-  "sampled": 3,
-  "ita_sampled": 0,
-  "transcription_errors": 0,
-  "fresh_source_matches": 3,
-  "not_freshly_checkable": 0,
-  "address_errors": 0
+  "original_candidates": 7,
+  "sampled": 7,
+  "accepted_fills": 7,
+  "archive_rows_reconciled": 3233462,
+  "bulk_transcription_errors": 0,
+  "fresh_rest_matches": 7,
+  "rest_unavailable": 0,
+  "rest_incomplete": 0,
+  "address_disagreements": 0,
+  "source_download_date": "2026-11-06T13:12:33.594168+00:00",
+  "source_is_address_effective_date": false
 }

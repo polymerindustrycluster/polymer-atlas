@@ -1,4 +1,8 @@
-site_id,source_class,registry_id,transcription,fresh_source_match,detail,error
-SITE-000208,registry,110000385093,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
-SITE-000195,registry,110004707924,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
-SITE-000197,registry,110004619226,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+site_id,registry_id,bulk_transcription,bulk_row_sha256,fresh_rest_match,rest_detail,error
+SITE-000365,110004620544,PASS,77171dd4ff7f5879977496440fb603653a5cfea89e475358b87a965f30a80894,yes,fresh optional REST re-fetch,
+SITE-000195,110004707924,PASS,9c32e0e38febdd773a8a8d235f7a011c4b280ec89cd6d19b10607cf8f97ff83f,yes,"prior same-task fresh REST audit, retained independently",
+SITE-000379,110037437850,PASS,fadb7085218bae04e594bf5760734f7ed8dd33f3039a6dbe8e4940a4aff4e915,yes,fresh optional REST re-fetch,
+SITE-000197,110004619226,PASS,65a578cbb1be309b1ed4db3e159e8f4a1a011afed3f53d6dc0ab03dd9c163c56,yes,"prior same-task fresh REST audit, retained independently",
+SITE-000357,110032654660,PASS,817cf8972a9bbb5e620948de20e1c600849b8dcc76ad532ac936d928e102a6c0,yes,fresh optional REST re-fetch,
+SITE-000208,110000385093,PASS,1c550bed53c6a4e4476a23016201337978e4c04ff43f7866c069b9147aaba02e,yes,"prior same-task fresh REST audit, retained independently",
+SITE-000246,110070122366,PASS,4af166415016a09e168fa061f081cdc5e866ac104220961dcfbd6b27576181eb,yes,fresh optional REST re-fetch,

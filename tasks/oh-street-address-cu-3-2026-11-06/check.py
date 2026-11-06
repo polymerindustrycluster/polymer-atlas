@@ -20,9 +20,22 @@ def main():
  proposed=build.read(build.TASK/'evidence_proposed.csv')
  sample=random.Random(20261106).sample(sorted(proposed,key=lambda e:e['record_id']),min(30,len(proposed)))
  assert {r['site_id'] for r in audit}=={e['record_id'] for e in sample} and len(audit)==len(sample)
- assert all(r['fresh_source_match']=='yes' and not r['error'] for r in audit if r['source_class']=='registry' and r['site_id'] in {e['record_id'] for e in ev})
+ assert all(r['bulk_transcription']=='PASS' and not r['error'] for r in audit if r['site_id'] in {e['record_id'] for e in ev})
 
  assert build.note_streets(dict(city='South Euclid',notes='Street (per Grok): 4321 Glenridge Road. county UNVERIFIED — Grok county_check=TRUE'))==['4321 Glenridge Road']
+ assert len(ev)==7,'frozen bulk-source yield changed; inspect before revising'
+ assert len(build.read(build.TASK/'bulk_known.csv'))==3
+ import json,re,subprocess,csv
+ original=list(csv.DictReader(subprocess.check_output(['git','show','a9af228:tasks/oh-street-address-cu-2026-11-06/frame.csv'],text=True).splitlines()))
+ assert [(r['site_id'],r['reserved_evidence_id']) for r in frame]==[(r['site_id'],r['reserved_evidence_id']) for r in original]
+ prior=build.read(build.TASK/'prior_worked.csv')
+ assert len(prior)==len({r['site_id'] for r in prior})==140 and not {r['site_id'] for r in prior}&{r['site_id'] for r in selected}
+ manifest=json.loads((build.TASK/'bulk_manifest.json').read_text())['source']
+ for e in ev:
+  assert e['source_class']=='registry' and e['tier_effect']=='supports_C' and e['source_ref']==manifest['url'] and e['observed_date']==manifest['date'][:10]
+  assert 'retrieval date not address-effective date' in e['notes'] and re.search(r'REGISTRY_ID \d{12};',e['notes'])
+ for sid in ('SITE-000184','SITE-000185','SITE-000205','SITE-000234','SITE-000256','SITE-000282','SITE-000297','SITE-000309','SITE-000333','SITE-000355','SITE-000360','SITE-000387','SITE-000393','SITE-000414','SITE-000427'):
+  assert next(v for v in verdicts if v['site_id']==sid)['verdict']=='STILL_UNCERTAIN',sid
  expected=len(ev)
  with tempfile.TemporaryDirectory() as tmp:
   build.ROOT=Path(tmp);(build.ROOT/'data').mkdir()

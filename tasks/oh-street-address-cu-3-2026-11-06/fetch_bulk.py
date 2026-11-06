@@ -67,6 +67,7 @@ def main():
  folder=TASK/'bulk_raw';folder.mkdir(exist_ok=True)
  for rid,rows in raw.items():(folder/(rid+'.json')).write_text(json.dumps(rows,indent=2)+'\n')
  write(TASK/'bulk_bindings.csv',bindings,['site_id','org_id','registry_id','binding','query']);write(TASK/'bulk_queries.csv',queries)
+ write(TASK/'bulk_log.csv',[dict(registry_id=rid,result='OK' if len(rows)==1 else 'AMBIGUOUS',row_count=len(rows)) for rid,rows in sorted(raw.items())],['registry_id','result','row_count'])
  (TASK/'bulk_manifest.json').write_text(json.dumps(dict(source=before,helper_commit=HELPER_COMMIT,source_caveats=['retrieval date not address-effective date','same archive SHA as held Nov1 spine','permit activity not establishment operating status','18887 source rows have blank registry IDs','ECHO covers regulated facilities, not all FRS']),indent=2)+'\n')
  print('PASS bulkknown3;selected',len(selected),'lookupcalls',len(queries),'returnedrows',sum(r['rows_returned'] for r in queries),'uniqueIDbindings',len(bindings),'uniqueIDs',len(raw))
 if __name__=='__main__':main()
