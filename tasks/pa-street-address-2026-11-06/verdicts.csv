@@ -1,0 +1,25 @@
+site_id,verdict,street_address,reason,evidence_id
+SITE-002807,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002817,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002822,STILL_UNCERTAIN,2727 West 16th St.,existing ZIP conflicts with own-page ZIP; geography correction is outside this pass,
+SITE-002824,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002825,VERIFIED,4861 West 23rd Street,,EVD-155004
+SITE-002829,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002831,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002833,VERIFIED,2935 West 17th Street,,EVD-155007
+SITE-002834,VERIFIED,9 Guttman Avenue,,EVD-155008
+SITE-002838,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002840,VERIFIED,1 Lark Ave.,,EVD-155010
+SITE-002845,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002848,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002852,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002853,VERIFIED,600 Dietrich Ave,,EVD-155014
+SITE-002854,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-002859,VERIFIED,1040 Maple Avenue,,EVD-155016
+SITE-003584,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-003723,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-004115,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-004272,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-004299,VERIFIED,480 Johnson Road,,EVD-155021
+SITE-004558,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
+SITE-004560,STILL_UNCERTAIN,,need own-operator physical street page for this city; none raw-checked within cap,
