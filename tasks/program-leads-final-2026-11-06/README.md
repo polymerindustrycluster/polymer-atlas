@@ -36,18 +36,14 @@ framework. Private raw files in /tmp/l13f-pages, not committed (unnecessary cont
 
 ## Results (unit: pending input leads)
 
-169 exact remaining leads = **0 VERIFIED /2 DUPLICATE_OF /167 STILL_UNCERTAIN**.
+169 exact remaining leads = **0 VERIFIED /0 DUPLICATE_OF /169 STILL_UNCERTAIN**.
 Verified yield **0/169 worked leads (0.0%)**, alongside prior OH/PA **4/49 leads
 (8.2%)** applied-program comparison. This is initial route screening plus selected
 own-program checks, not exhaustive searches or evidence of national programme absence.
-All167 holds name their settling fact; research budget is a cap, not an absence test.
+All169 holds name their settling fact; research budget is a cap, not an absence test.
 No canonical data edits, no program/institution/evidence/registry IDs minted or reused.
 
-The2 duplicates are NCSU Polymer and Color Chemistry PROG000065 and UMass Lowell
-Plastics Engineering PROG000057. Their institution own pages name those held offers;
-the input society chapters remain discovery, never programme evidence. Raw quotes
-freshly re-fetched2/2; no source skipped. Existing programme name/URL must match each
-DUPLICATE_OF target exactly. No fuzzy merges or chained missing targets.
+The NCSU/UMass Lowell SPE student-chapter leads are held. Their degree pages independently verify existing degrees but do not identify the chapter as a duplicate programme. No arbitrary degree target is assigned; record_id is blank. Two raw degree-title checks remain research receipts, not positive chapter evidence.
 
 161 research route receipts cover169 input leads, including shared routes. HTTP200
 alone is not verification. Blocked/404/empty routes remain named settling-fact holds.
@@ -56,7 +52,7 @@ unnecessary staff contacts. Raw downloads private /tmp/l13f-pages.
 
 ## Owner holds / targeted follow-up
 
-All167 settling facts are in holds.csv. Particularly:
+All169 settling facts are in holds.csv. Particularly:
 
 - RJG Master Molder I/II and Train the Trainer: current own pages and future course
   calendars are readable, but credential names are generic while descriptions teach
@@ -78,21 +74,21 @@ All167 settling facts are in holds.csv. Particularly:
 - research.py calibration before population:3 held programme known positives +fabricated
   negative PASS. calibration.json records sources/hashes; house W normalizer reused.
 - rawcheck.py:PASS2/2 fresh own programme title quotes,0skipped,negative rejected.
-- build.py:PASS169 exact source-row exhaustion,106 exclusions,2 held targets,167 holds;
+- build.py:PASS169 exact source-row exhaustion,106 exclusions,0 duplicate targets,169 holds;
   explicitly no new VERIFIED creates and no canonical writes.
-- check.py:PASSbyte-identical no-write rerun plus injected false-duplicate target,
+- check.py:PASSbyte-identical no-write rerun plus injected chapter-as-held-degree duplicate,
   missing input lead and unauthorized VERIFIED create all fail, no data mutation.
 - python3 scripts/validate.py:PASSzero errors on unchanged canonical tree.
 
 No scripts/ changes; scripts pytest not run. There is no positive new matcher decision
 that writes data; the final builder is a conservative packet gate. It cannot silently
-promote any generic candidate. Raw programme evidence exists only for2 duplicate
-identity matches; holds do not masquerade as source-verified negative findings.
+promote any generic candidate. Raw programme-title research exists only for2 existing degrees, with no duplicate
+identity assertion; holds do not masquerade as source-verified negative findings.
 
 ## Lane reconciliation / stopping point
 
 275 pending leads reconciled across independent PRs: PR1446 +PR160100 +this169.
-Combined dispositions:5 VERIFIED new programme leads,8 DUPLICATE_OF,262 STILL_UNCERTAIN;
+Combined dispositions:5 VERIFIED new programme leads,6 DUPLICATE_OF,264 STILL_UNCERTAIN;
 no closure/absence REJECT. Four earlier calibration rows excluded. The147 completions
 proposals are a distinct unit and separate PR168:34eligible/81schema-only rejects/32holds.
 Those cohorts must never be summed as company/programme counts.
@@ -102,3 +98,9 @@ PR144 county refute fixed in36b0729; Grok APPROVE received for that head, Codex 
 pending. PR160 and PR168 independent reviewer requests remain pending. Final packet
 requires own Codex3/Grok3 deep refutes; draft before verdicts allowed under05:55/06:25.
 Branch base history is pre-pass backup; no canonical pass needed for this packet.
+
+## Refute correction — supersedes initial 0/2/167 and 5/8/262 snapshots
+
+Grok/xAI clerk1thr_swjbz4p3am REFUTE86d040d valid: L13F016/116 input grain is SPE student chapter, not the arbitrary held degrees. Fixed both to STILL_UNCERTAIN, blank target, explicit settling fact; all169holds now exhaustive. Added explicit chapter-as-valid-held-degree false-duplicate injection, rejected with no data mutation. Governing AGENTS2.8 DUPLICATE_OF identity and SCHEMA4.11 named own-program grain. No programme create or canonical change. Other six duplicates across144/160 inspected: none are society_chapter leads; no scope extension made.
+
+Codex/OpenAI clerk1thr_86bb34wxm8 APPROVE86d040d original bounded packet, zero findings, but that approval predates this two-row semantic correction and is not counted as final. Both same-family clerks requested corrected-head rereview. Reviewer readback:169=0V0D169U; combined275=5V6D264U, calibration/completions separate. Fullscripts pytest/all161routes notrefetched.

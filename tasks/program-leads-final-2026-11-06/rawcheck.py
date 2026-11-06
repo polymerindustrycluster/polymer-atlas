@@ -1,4 +1,4 @@
-"""Re-fetch both duplicate identity quotes; calibration already ran before research."""
+"""Re-fetch two existing-degree research quotes (not chapter duplicate evidence); calibration already ran before research."""
 import csv
 from research import HERE,CACHE,fetch,found
 

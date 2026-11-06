@@ -12,7 +12,7 @@ rows=read(HERE/'verdicts.csv')
 for kind in ('duplicate','missing','new_create'):
     bad=copy.deepcopy(rows)
     if kind=='duplicate':
-        row=next(r for r in bad if r['verdict']=='DUPLICATE_OF');row['record_id']='PROG-000001'
+        row=next(r for r in bad if r['lead_id']=='L13F-016');row.update(verdict='DUPLICATE_OF',record_id='PROG-000065')
     elif kind=='missing':bad.pop()
     else:bad[0]['verdict']='VERIFIED'
     try:check(bad)
