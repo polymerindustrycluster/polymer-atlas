@@ -1,0 +1,26 @@
+[
+  {
+    "source_url": "https://www.uwstout.edu/programs/bs-plastics-engineering",
+    "quote": "Bachelor of Science (B.S.) in Plastics Engineering",
+    "positive": true,
+    "fabricated_negative_rejected": true,
+    "raw_sha256": "0c0b63246a9c260322699244f22bb4af31ac1e9d2f19f270a9df321cc220da48",
+    "observed_date": "2026-11-06"
+  },
+  {
+    "source_url": "https://www.winona.edu/academics/programs/composite-materials-engineering/",
+    "quote": "Composite Materials Engineering",
+    "positive": true,
+    "fabricated_negative_rejected": true,
+    "raw_sha256": "96a4bd0b0b10933984f06db51cf68c31987a127836c71a22edb2cb0ce1db905a",
+    "observed_date": "2026-11-06"
+  },
+  {
+    "source_url": "https://engineeringdesign.wwu.edu/polymer-materials-engineering",
+    "quote": "formerly Polymer Materials Engineering",
+    "positive": true,
+    "fabricated_negative_rejected": true,
+    "raw_sha256": "507bcebed4b2ae1bc9e80aa4c9f3cd7ea41c65de553f6ec8c7124565a8a083e6",
+    "observed_date": "2026-11-06"
+  }
+]

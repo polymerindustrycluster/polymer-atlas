@@ -1,0 +1,21 @@
+org_id,linkedin_url,source_url,reason
+ORG-000009,https://www.linkedin.com/company/myers-industries/,https://www.myersindustries.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-000010,https://www.linkedin.com/company/geon-performance-solutions/,https://www.geon.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-000483,https://www.linkedin.com/company/pentair/,https://www.pentair.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-000761,https://www.linkedin.com/company/covestro/,https://www.covestro.com/,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.
+ORG-001007,https://www.linkedin.com/company/owens-corning/,https://www.owenscorning.com/,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.
+ORG-001119,https://www.linkedin.com/company/spartech/,https://www.spartech.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-001202,https://www.linkedin.com/company/woodbridge/,https://www.woodbridgegroup.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-002874,https://www.linkedin.com/company/solstice-advanced-materials/,https://www.solstice.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-003132,https://www.linkedin.com/company/seasafe-inc/,http://www.seasafe.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-003145,https://www.linkedin.com/company/american-packaging-corporation/,https://www.americanpackaging.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-004475,https://www.linkedin.com/company/premold-corp/,https://www.premoldcorp.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-004531,https://www.linkedin.com/company/chemline-inc/,https://chemline.net/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-000059,https://www.linkedin.com/company/laird-plastics/,https://lairdplastics.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-000149,https://www.linkedin.com/company/indelco-plastics-corporation/,http://www.indelco.com/,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.
+ORG-000156,https://www.linkedin.com/company/swagelok/,https://www.swagelok.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-000540,https://www.linkedin.com/company/raven-concealment-systems/,https://www.rcsgear.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-001027,https://www.linkedin.com/company/paramont-machine-company/,https://paramontmachinecompany.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-001391,https://www.linkedin.com/company/kong-company/,https://www.kongcompany.com/,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.
+ORG-001856,https://www.linkedin.com/company/novationsi/,https://novationsi.com,Need a fresh exact own header/footer anchor; raw re-fetch failed or published anchor changed. No absence inferred.
+ORG-004022,https://www.linkedin.com/company/vmi-holland-bv/,https://www.vmi-group.com,Need one unambiguous own header/footer company-page link; zero or multiple recognized company URLs.

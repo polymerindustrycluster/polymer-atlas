@@ -1,0 +1,13 @@
+item_id,slug,subject,held_ids,source_task,acceptance
+L13Q-01,chromaflo,Chromaflo acquired predecessor,ORG-000007,QUEUE9;SCHEMA5.2,Create only dated primary-supported acquired tombstone under standing Vibrantz precedent
+L13Q-02,jvis-tnj,TNJ Ohio LLC d/b/a JVIS Ohio,ORG-001160;ORG-004139,QUEUE50,Resolve legal operator without conflating MI JVIS entity or automatically repointing TMD plants
+L13Q-03,northpoint,K20 NorthPoint Polymers,,QUEUE28,Standard company verification; ORG001918 permanently unallocated
+L13Q-04,equistar,Equistar subsidiary grain,SITE-001394,QUEUE49,Owner HOLD +recommendation
+L13Q-05,parcel-acsic,ACSIC Ingredients,SITE-001850,QUEUE48,Situs county from parcel fabric only
+L13Q-06,parcel-wrs,World Resource Solutions,SITE-001907,QUEUE48,Situs county from parcel fabric only
+L13Q-07,pa-tredegar,Tredegar same-street,SITE-002486;SITE-002612,QUEUE100,"Check prior pass16 retirement; link+flag, do not delete"
+L13Q-08,pa-scranton,CPG /Scranton Products same-street,SITE-002521;SITE-002645,QUEUE100,Operator conflict may be two businesses; link+flag unless dated exact proof
+L13Q-09,pa-taylor,Taylor same-street,SITE-002569;SITE-002657,QUEUE100,Link+flag unless dated same-entity proof
+L13Q-10,pa-synthomer,Synthomer same-street,SITE-002690;SITE-002756,QUEUE100,Link+flag unless dated same-entity proof
+L13Q-11,r6-etched,Etched Metal Ring4 test,SITE-001426;ORG-001387,QUEUE179;SCHEMA R6,Owner HOLD ring reading +two-of-three packet/recommendation
+L13Q-12,r6-robin,Robin Independence re-verification,SITE-001836;ORG-000549,QUEUE179;SCHEMA R6,"Verify specific office grain, do not copy parent manufacturing claims"

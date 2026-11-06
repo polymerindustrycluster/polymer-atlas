@@ -1,0 +1,2 @@
+Raw census: 329 candidates = 325 PASS + 4 held organization rows; no skipped candidate.
+Final {'VERIFIED': 325, 'STILL_UNCERTAIN': 1736}

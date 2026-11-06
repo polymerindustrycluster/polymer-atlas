@@ -1,0 +1,44 @@
+dedupe-check {'domain': 'manufacturingsuccess.org', 'name': 'MAGNET'}  (AGENTS.md §3; searches the union of ALL shards)
+STEP 1 website domain (organizations_*.csv + ecosystem.csv): 1 hit(s)
+  ORG-000159  MAGNET  [Cleveland, OH]  status=active tier=B  (ecosystem.csv)
+      match: domain exact: manufacturingsuccess.org
+
+--- for information (steps after the stop) ---
+STEP 2 normalized name vs legal_name/trade_names: 1 hit(s)
+  ORG-000159  MAGNET  [Cleveland, OH]  status=active tier=B  (ecosystem.csv)
+      match: name key 'magnet' = legal_name 'MAGNET'
+STEP 3 street address (sites_*.csv; one address = one site, owned by the operator): skipped (no --street)
+STEP 4 trade_names/notes/legal_name substring + successor_org_id chain: 84 hit(s)
+  ORG-004130  Strand Composites LLC  [Harrison, AR]  status=active tier=B  (organizations_AR.csv)
+      match: notes contains 'MAGNET'
+  ORG-004116  Spears Manufacturing Co  [Sylmar, CA]  status=active tier=C  (organizations_CA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004118  Anlin Windows & Doors  [Clovis, CA]  status=active tier=B  (organizations_CA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004607  Ryvec Inc.  [Anaheim, CA]  status=active tier=B  (organizations_CA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004612  Stabond Corporation  [Gardena, CA]  status=active tier=B  (organizations_CA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004613  StanChem Inc.  [East Berlin, CT]  status=active tier=A  (organizations_CT.csv)
+      match: notes contains 'MAGNET'
+  ORG-004604  Florikan E.S.A. LLC  [Sarasota, FL]  status=active tier=B  (organizations_FL.csv)
+      match: notes contains 'MAGNET'
+  ORG-004096  MFG Chemical Inc.  [Dalton, GA]  status=active tier=B  (organizations_GA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004599  Liochem Inc.  [Conyers, GA]  status=active tier=B  (organizations_GA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004608  The Seydel Companies, Inc.  [Pendergrass, GA]  status=active tier=B  (organizations_GA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004614  Superior Essex Inc.  [Atlanta, GA]  status=active tier=B  (organizations_GA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004109  Bowie International LLC  [Lake City, IA]  status=active tier=B  (organizations_IA.csv)
+      match: notes contains 'MAGNET'
+  ORG-004126  J6 Polymers LLC  [Genoa, IL]  status=active tier=A  (organizations_IL.csv)
+      match: notes contains 'MAGNET'
+  ORG-004593  INX International Ink Co.  [Schaumburg, IL]  status=active tier=B  (organizations_IL.csv)
+      match: notes contains 'MAGNET'
+  ORG-004596  Kempen Paint Co.  [East Carondelet, IL]  status=active tier=C  (organizations_IL.csv)
+      match: notes contains 'MAGNET'
+  ... 69 more (use --json)
+
+=> STOP at step 1: a hit exists. Use/link the existing record; do not create a duplicate. When in doubt do NOT merge - create/link and flag (AGENTS.md §3).

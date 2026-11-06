@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000002969.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000002969",
+  "name": "Air Products & Chemicals, Inc.",
+  "tickers": [
+    "APD"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "429de177dd49355fe029bad6310538210c2fd3a1d51796109de609d35ec8a925",
+  "raw_name_token": "\"Air Products & Chemicals, Inc.\""
+}

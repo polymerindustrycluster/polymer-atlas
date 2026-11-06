@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "raw_path": "/tmp/residual-hq3-integrator/ORG-004558_15ae3c24e1.raw",
+      "quote": "Paneltech along with its sister company, PaperStone, is headquartered at the Port of Grays Harbor in Hoquiam, Washington.",
+      "result": "PASS"
+    },
+    {
+      "raw_path": "/tmp/residual-hq3-integrator/ORG-007106_5b9c4d4acb.raw",
+      "quote": "A bright, clean, and safe headquarters in Manitowoc, Wisconsin",
+      "result": "PASS"
+    },
+    {
+      "raw_path": "/tmp/residual-hq2-lead/ORG-004134_a1f8c84d03.raw",
+      "quote": "Our headquarters is conveniently located in Bloomington, California.",
+      "result": "PASS"
+    }
+  ],
+  "negative_controls": [
+    "mailing label cannot become headquarters",
+    "wrong city cannot match"
+  ],
+  "outcome": "3 known raw sources + 2 negative controls PASS"
+}

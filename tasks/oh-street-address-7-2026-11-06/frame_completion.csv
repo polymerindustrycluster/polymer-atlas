@@ -1,0 +1,449 @@
+batch_pr,source_commit,site_id,verdict,street_address,evidence_id,reason
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000002,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000004,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000005,VERIFIED,4515 St. Clair Avenue,EVD-152002,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000006,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000007,STILL_UNCERTAIN,201 East Steels Corners Road,,own-page street blocks disagree; own-page ZIP conflicts with current site ZIP
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000008,STILL_UNCERTAIN,1293 South Main Street,,retired postal-only witness proposal EVD-152005; physical witness needs new ID in later pass; mailing-only or ambiguous address context
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000009,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000010,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000014,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000017,VERIFIED,1200 Devalera St,EVD-152009,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000035,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000037,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000038,VERIFIED,3330 Massillon Road,EVD-152012,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000039,VERIFIED,1331 Kelly Ave.,EVD-152013,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000043,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000044,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000047,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000048,STILL_UNCERTAIN,3770 Embassy Parkway,,own-page street blocks disagree; own-page ZIPs disagree; own-page ZIP conflicts with current site ZIP
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000050,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000051,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000052,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000056,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000058,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000060,VERIFIED,1539 Commerce Drive,EVD-152023,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000061,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000070,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000071,VERIFIED,9020 Dutton Drive,EVD-152026,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000072,VERIFIED,2146 Enterprise Parkway,EVD-152027,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000074,VERIFIED,2222 Highland Road,EVD-152028,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000075,VERIFIED,2057 E. Aurora Rd.,EVD-152029,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000076,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000077,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000078,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000079,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000081,VERIFIED,74 Robinson Ave,EVD-152034,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000082,VERIFIED,11 Brown St.,EVD-152035,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000083,STILL_UNCERTAIN,3960 Summit Rd,,own-page ZIPs disagree
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000085,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000086,VERIFIED,1522 W. Turkeyfoot Lake Road,EVD-152038,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000087,VERIFIED,1580 West Turkeyfoot Lake Rd.,EVD-152039,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000092,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000101,STILL_UNCERTAIN,2828 Second Street,,notes address conflicts; dated adjudication needed
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000105,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000106,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000107,VERIFIED,3705 Carnegie Avenue,EVD-152044,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000109,VERIFIED,3901 W 150th St,EVD-152045,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000111,VERIFIED,5081 Corbin Drive,EVD-152046,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000112,STILL_UNCERTAIN,1274 East 55th Street,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000114,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000115,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000116,VERIFIED,1400 E. 222nd. St.,EVD-152050,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000117,VERIFIED,15242 Foltz Industrial Pkwy,EVD-152051,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000123,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000125,VERIFIED,11929 Abbey Rd,EVD-152053,
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000129,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000133,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000134,STILL_UNCERTAIN,5109 Hamilton Ave,,notes address conflicts; dated adjudication needed
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000136,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000145,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+156,511a5af102ded9bdf39b6a1e38893e6c1c5c3a17,SITE-000150,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000158,STILL_UNCERTAIN,2121 Euclid Avenue,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000179,STILL_UNCERTAIN,101 Ascot Parkway,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000183,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000186,VERIFIED,4457 Tallmadge Road,EVD-152063,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000189,VERIFIED,999 South Chillicothe Rd.,EVD-152064,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000192,VERIFIED,10391 Brecksville Road,EVD-152065,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000196,VERIFIED,112 Parker Court,EVD-152066,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000198,VERIFIED,3470 Blackmore Road,EVD-152067,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000199,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000201,VERIFIED,475 W. California Avenue,EVD-152069,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000202,STILL_UNCERTAIN,689 Weber Drive,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000203,STILL_UNCERTAIN,300 First Street,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000204,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000206,VERIFIED,1000 Venture Boulevard,EVD-152073,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000212,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000213,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000216,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000217,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000218,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000220,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000221,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000222,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000224,VERIFIED,990 Evans Ave,EVD-152082,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000227,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000241,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000245,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000247,VERIFIED,100 Water Street,EVD-152086,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000250,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000263,VERIFIED,10125 Wellman Road,EVD-152088,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000264,VERIFIED,5020 Enterprise Parkway,EVD-152089,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000271,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000272,STILL_UNCERTAIN,23940 Mercantile Rd.,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000276,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000281,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000285,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000286,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000310,VERIFIED,214 Brace Avenue,EVD-152096,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000312,STILL_UNCERTAIN,1801 W. 47th St,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000318,VERIFIED,10421 Industrial Drive,EVD-152098,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000325,VERIFIED,195 East Park Ave.,EVD-152099,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000327,VERIFIED,1273 Lear Industrial Pkwy.,EVD-152100,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000336,STILL_UNCERTAIN,860 Garden St.,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000337,VERIFIED,350 N Diamond Street,EVD-152102,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000342,STILL_UNCERTAIN,70 Cuyahoga Falls Ind. Pkwy,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000343,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000348,VERIFIED,838 Overholt Rd.,EVD-152105,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000362,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000368,VERIFIED,299 Cloud Street,EVD-152107,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000383,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000386,VERIFIED,1390 East 40th Street,EVD-152109,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000390,VERIFIED,11614 State Route 88,EVD-152110,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000396,VERIFIED,700 Pro-Gram Parkway,EVD-152111,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000398,VERIFIED,8271 Bavaria Road,EVD-152112,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000403,VERIFIED,2905 N Bend Rd,EVD-152113,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000418,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000421,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000423,VERIFIED,7970 Boneta Rd.,EVD-152116,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000426,STILL_UNCERTAIN,42 W. Buckeye Street,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000429,VERIFIED,4881 NEO Parkway,EVD-152118,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000441,VERIFIED,1600 Terex Rd.,EVD-152119,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000445,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000455,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000456,STILL_UNCERTAIN,3291 Center Road,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000458,VERIFIED,7333 Corporate Boulevard,EVD-152123,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000460,VERIFIED,10095 Queens Way,EVD-152124,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000461,VERIFIED,787 Renaissance Pkwy,EVD-152125,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000466,STILL_UNCERTAIN,5156 Richmond Road,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000473,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000480,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000481,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000483,STILL_UNCERTAIN,2925 MFG Place,,own-page ZIP conflicts with current site ZIP; notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000486,VERIFIED,15567 Main Market Rd.,EVD-152131,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000487,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000488,STILL_UNCERTAIN,577 Oberlin Road,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000496,VERIFIED,11110 Berea Road,EVD-152134,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000500,VERIFIED,7621 HUB PARKWAY,EVD-152135,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000522,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000525,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000528,STILL_UNCERTAIN,30250 Carter St,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000533,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000535,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000538,VERIFIED,6277 Heisley Road,EVD-152141,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000539,VERIFIED,16066 Industrial Parkway,EVD-152142,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000540,VERIFIED,7000 Denison Avenue,EVD-152143,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000545,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000546,VERIFIED,427 Thacher Ln,EVD-152145,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000557,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000564,VERIFIED,225 W Bartges St,EVD-152147,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000574,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000586,VERIFIED,300 West Clay Street,EVD-152149,
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000587,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000588,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000591,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000601,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000603,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000605,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000623,STILL_UNCERTAIN,5857 N. Apple Creek Road,,notes address conflicts; dated adjudication needed
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000631,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000646,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+171,7af42197932bd67c11831403324a7898b88124ba,SITE-000647,STILL_UNCERTAIN,125 Blaze Industrial Parkway,,notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000648,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000667,VERIFIED,3745 Hendricks Rd,EVD-152161,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000676,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000677,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000678,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000680,VERIFIED,474 Newell St,EVD-152165,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000683,VERIFIED,1501 West 47th Street,EVD-152166,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000717,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000755,VERIFIED,2040 Cellar Drive,EVD-152168,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000788,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000789,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000864,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-000879,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001125,VERIFIED,3557 State Route 93,EVD-152173,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001311,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001316,STILL_UNCERTAIN,1150 Damar Drive,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001317,STILL_UNCERTAIN,1150 Damar Drive,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001390,VERIFIED,710 Taylor Street,EVD-152177,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001394,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001396,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001400,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001416,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001417,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001418,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001419,STILL_UNCERTAIN,2540 Progress Drive,,notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001420,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001421,VERIFIED,276 State St.,EVD-152186,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001423,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001424,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001425,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001426,VERIFIED,30200 Solon Industrial Parkway,EVD-152190,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001427,VERIFIED,60 Meadow Lane,EVD-152191,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001428,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001429,VERIFIED,7278 Justin Way,EVD-152193,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001431,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001432,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001433,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001434,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001435,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001436,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001437,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001438,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001439,VERIFIED,20260 First Avenue,EVD-152202,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001440,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001441,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001449,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001455,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001468,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001480,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001481,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001483,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001484,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001485,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001487,VERIFIED,33490 Pin Oak Parkway,EVD-152213,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001505,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001506,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001511,VERIFIED,225 West Lake St,EVD-152216,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001512,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001522,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001524,STILL_UNCERTAIN,11525 Madison Avenue,,own-page ZIP conflicts with current site ZIP; existing notes name an unresolved ZIP discrepancy; reconcile primary locality first
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001525,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001529,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001534,VERIFIED,300 Edwards Street,EVD-152222,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001538,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001539,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001543,VERIFIED,9280 Jefferson St.,EVD-152225,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001546,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001560,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001563,VERIFIED,38241 Willoughby Parkway,EVD-152228,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001567,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001568,VERIFIED,1800 Triplett Boulevard,EVD-152230,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001570,VERIFIED,34910 Commerce Way,EVD-152231,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001571,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001573,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001577,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001578,VERIFIED,3690 Zorn Drive,EVD-152235,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001579,STILL_UNCERTAIN,549 E Washington Street,,notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001588,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001589,VERIFIED,4919 Warrensville Center Rd,EVD-152238,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001590,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001591,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001593,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001599,STILL_UNCERTAIN,200 West Ohio Ave,,mailing-only or ambiguous address context
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001603,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001604,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001605,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001606,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001611,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001613,VERIFIED,7740 Metric Dr.,EVD-152248,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001614,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001615,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001616,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001617,VERIFIED,7893 Enterprise Dr,EVD-152252,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001621,VERIFIED,300 Artino St.,EVD-152253,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001622,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001623,VERIFIED,76 Burton Street,EVD-152255,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001629,VERIFIED,867 CANTERBURY ROAD,EVD-152256,
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001630,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001632,STILL_UNCERTAIN,150 Lena Drive,,notes address conflicts; dated adjudication needed
+207,bf4467729b9724cd6dfb6a8914d5ac6635490712,SITE-001637,STILL_UNCERTAIN,345 S. Mill St,,notes address conflicts; dated adjudication needed
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001640,VERIFIED,1022 Heyl Rd,EVD-152260,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001647,VERIFIED,9520 Midwest Avenue,EVD-152261,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001648,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001649,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001650,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001651,STILL_UNCERTAIN,3751 Jennings Road,,own-page street blocks disagree
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001652,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001654,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001655,VERIFIED,2029 Aetna Rd,EVD-152268,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001656,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001657,VERIFIED,12621 Chardon Windsor Road,EVD-152270,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001658,VERIFIED,852 West Main St.,EVD-152271,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001659,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001660,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001661,STILL_UNCERTAIN,485 Kenmore Boulevard,,notes address conflicts; dated adjudication needed
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001662,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001663,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001664,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001665,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001666,VERIFIED,125 Pelret Industrial Parkway,EVD-152279,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001667,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001668,VERIFIED,4223 East 49th Street,EVD-152281,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001669,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001670,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001671,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001672,VERIFIED,1400 Valley Belt Road,EVD-152285,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001674,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001675,VERIFIED,1215 Valley Belt Road,EVD-152287,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001680,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001682,VERIFIED,4560 Darrow Road,EVD-152289,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001688,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001690,STILL_UNCERTAIN,310 Quadral Drive,,notes address conflicts; dated adjudication needed
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001693,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001694,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001695,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001702,VERIFIED,1244 Home Ave,EVD-152295,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001703,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001707,VERIFIED,7154 State Route 88,EVD-152297,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001708,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001709,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001710,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001712,VERIFIED,41520 Schaden Road,EVD-152301,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001714,VERIFIED,2906 Nationwide Pkwy,EVD-152302,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001715,STILL_UNCERTAIN,16090 Industrial Parkway,,notes address conflicts; dated adjudication needed
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001716,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001717,VERIFIED,7675 Jenther Dr,EVD-152305,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001718,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001719,VERIFIED,2900 Industrial Park Drive,EVD-152307,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001721,VERIFIED,10008 State Route 43,EVD-152308,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001722,VERIFIED,2345 E. 28th St.,EVD-152309,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001723,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001725,STILL_UNCERTAIN,1501 West 47th Street,,notes address conflicts; dated adjudication needed
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001729,VERIFIED,36650 Reading Ave.,EVD-152312,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001731,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001732,VERIFIED,1025 Evans Ave,EVD-152314,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001733,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001741,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001742,VERIFIED,1500 Commerce Drive,EVD-152317,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001743,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001744,VERIFIED,75 N. Pleasant St,EVD-152319,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001746,VERIFIED,34355 Melinz Parkway,EVD-152320,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001747,VERIFIED,300 Morning Star Drive,EVD-152321,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001748,VERIFIED,4494 Orchard Street,EVD-152322,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001754,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001755,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001756,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001757,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001758,VERIFIED,218 S. Thomas Rd.,EVD-152327,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001770,VERIFIED,1070 Faultless Dr,EVD-152328,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001774,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001775,VERIFIED,1061 Bradley Road,EVD-152330,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001776,VERIFIED,60 South Park Street,EVD-152331,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001777,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001779,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001780,VERIFIED,3600 Ridge Road,EVD-152334,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001783,VERIFIED,1000 Bacon Road,EVD-152335,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001785,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001786,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001790,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001791,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001793,STILL_UNCERTAIN,18222 LANKEN AVE.,,own-page ZIP conflicts with current site ZIP
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001796,VERIFIED,3001 Superior Ave.,EVD-152341,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001798,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001799,VERIFIED,472 Industrial Parkway,EVD-152343,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001800,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001801,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001804,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001806,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001807,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001815,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001820,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001831,VERIFIED,370 Lake Road,EVD-152351,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001833,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001834,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001836,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001837,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001840,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001842,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001843,VERIFIED,4529 Industrial Parkway,EVD-152358,
+208,8d911d68a86a9a4aa351b7efa3d32ff365592fd4,SITE-001846,VERIFIED,2915 Industrial Pk Dr,EVD-152359,
+round7,this packet,SITE-001851,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001852,VERIFIED,3100 Hamilton Avenue,EVD-152361,
+round7,this packet,SITE-001854,VERIFIED,565 Lafollette St.,EVD-152362,
+round7,this packet,SITE-001855,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001856,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001858,VERIFIED,5718 Transportation Blvd.,EVD-152365,
+round7,this packet,SITE-001859,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001860,VERIFIED,34459 Curtis Boulevard,EVD-152367,
+round7,this packet,SITE-001861,VERIFIED,1610 Coutant Avenue,EVD-152368,
+round7,this packet,SITE-001862,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001864,VERIFIED,920 OVERHOLT RD,EVD-152370,
+round7,this packet,SITE-001865,STILL_UNCERTAIN,395 Portage Blvd,,mailing-only or ambiguous address context
+round7,this packet,SITE-001867,VERIFIED,8095 Southern Blvd.,EVD-152372,
+round7,this packet,SITE-001873,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001874,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001875,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001876,VERIFIED,1700 London Road,EVD-152376,
+round7,this packet,SITE-001880,VERIFIED,390 Portage Blvd.,EVD-152377,
+round7,this packet,SITE-001882,VERIFIED,10008 State Route 43,EVD-152378,
+round7,this packet,SITE-001883,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001888,VERIFIED,10410 Berea Road,EVD-152380,
+round7,this packet,SITE-001889,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001891,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001893,VERIFIED,1280 Devalera St.,EVD-152383,
+round7,this packet,SITE-001894,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001895,VERIFIED,16744 West Park Circle Drive,EVD-152385,
+round7,this packet,SITE-001896,VERIFIED,467 Dan St.,EVD-152386,
+round7,this packet,SITE-001897,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001898,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001899,VERIFIED,2880 Interstate Parkway,EVD-152389,
+round7,this packet,SITE-001900,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001904,VERIFIED,5718 Transportation Blvd,EVD-152391,
+round7,this packet,SITE-001905,VERIFIED,487 Wellington Avenue,EVD-152392,
+round7,this packet,SITE-001908,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001909,STILL_UNCERTAIN,3637 Medina Rd,,notes address conflicts; dated adjudication needed
+round7,this packet,SITE-001916,STILL_UNCERTAIN,2040 Cellar Drive,,notes address conflicts; dated adjudication needed
+round7,this packet,SITE-001917,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001922,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001923,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001924,VERIFIED,7675 Jenther Dr,EVD-152399,
+round7,this packet,SITE-001927,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001928,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001930,VERIFIED,1900 Englewood Ave,EVD-152402,
+round7,this packet,SITE-001931,STILL_UNCERTAIN,352 W. Liberty St.,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+round7,this packet,SITE-001933,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001935,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001937,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001939,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001940,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001941,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001943,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001945,VERIFIED,527 Ternes Ln,EVD-152411,
+round7,this packet,SITE-001951,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001952,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001953,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001957,VERIFIED,36 Castle Dr,EVD-152415,
+round7,this packet,SITE-001959,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001972,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001980,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001986,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001991,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001992,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-001993,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002001,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002004,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002005,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002008,VERIFIED,2184 State Route 43,EVD-152426,
+round7,this packet,SITE-002012,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002016,VERIFIED,9450 Rosemont Drive,EVD-152428,
+round7,this packet,SITE-002025,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002028,VERIFIED,16829 Park Circle Drive,EVD-152430,
+round7,this packet,SITE-002031,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002032,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002033,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002037,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002038,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002041,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002043,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002052,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002067,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002068,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002069,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002073,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002079,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002082,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002084,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002110,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+round7,this packet,SITE-002904,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched

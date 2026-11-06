@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000080035.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000080035",
+  "name": "PREFORMED LINE PRODUCTS CO",
+  "tickers": [
+    "PLPC"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "ceced235b7e6bac8542aa9a72a8a9b93bf6fab7b227d03d07f55d171be8cb773",
+  "raw_name_token": "\"PREFORMED LINE PRODUCTS CO\""
+}

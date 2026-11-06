@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001122976.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001122976",
+  "name": "AVIENT CORP",
+  "tickers": [
+    "AVNT"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "0b3e2fa08bfe67b2a010351cf0d14c2ffeb539f727eff6c77085f89c47db0de8",
+  "raw_name_token": "\"AVIENT CORP\""
+}

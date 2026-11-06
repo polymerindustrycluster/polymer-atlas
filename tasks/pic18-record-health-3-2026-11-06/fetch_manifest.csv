@@ -1,0 +1,205 @@
+org_id,url,result,detail
+ORG-000012,https://akronpolysys.com,fetched,2949
+ORG-000012,https://akronpolysys.com/contact,fetched,1463
+ORG-000012,https://akronpolysys.com/company,fetched,1899
+ORG-000014,none_found,no_website,
+ORG-000016,https://gabrielchem.com,unfetchable,"curl: (28) Connection timed out after 20010 milliseconds
+"
+ORG-000017,https://chemigon.com,unfetchable,"curl: (22) The requested URL returned error: 404
+"
+ORG-000021,,no_website,
+ORG-000025,http://www.mussonrubber.com,fetched,147
+ORG-000026,http://www.enterpriserubber.com,fetched,21437
+ORG-000026,http://www.enterpriserubber.com/pages/contact-us,fetched,12769
+ORG-000026,http://www.enterpriserubber.com/pages/about-us,fetched,14307
+ORG-000027,https://www.hygenic.com,fetched,10074
+ORG-000027,https://www.hygenic.com/about-us,fetched,9069
+ORG-000033,https://lyondellbasell.com,fetched,18383
+ORG-000033,https://lyondellbasell.com/en/contact-us/,fetched,6353
+ORG-000034,http://www.akronpolymer.com,unfetchable,"curl: (22) The requested URL returned error: 403
+"
+ORG-000035,https://saint-gobain.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000036,https://extrudedplastics.com,fetched,19021
+ORG-000036,https://extrudedplastics.com/contact-us/,fetched,3215
+ORG-000042,https://dupont.com/multibase-family.html,unfetchable,"curl: (7) Failed to connect to dupont.com port 443 after 36 ms: Couldn't connect to server
+"
+ORG-000049,https://www.akronpolymersolutions.com/,fetched,3670
+ORG-000049,https://www.akronpolymersolutions.com/contact-us,fetched,2538
+ORG-000049,https://www.akronpolymersolutions.com/about-prophene,fetched,4292
+ORG-000054,https://americhem.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000062,https://www.chemionics.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000063,https://akron-gasket.com/,fetched,3792
+ORG-000063,https://akron-gasket.com/contact/,fetched,2724
+ORG-000063,https://akron-gasket.com/about/,fetched,3314
+ORG-000064,https://greentechofohio.com,fetched,5082
+ORG-000064,https://greentechofohio.com/contact-us,fetched,3378
+ORG-000064,https://greentechofohio.com/contact-us/,fetched,3378
+ORG-000064,https://greentechofohio.com/about-us/,fetched,4054
+ORG-000065,https://www.hudsonextrusions.com,fetched,5486
+ORG-000065,https://www.hudsonextrusions.com/contact-us/,fetched,4004
+ORG-000065,https://www.hudsonextrusions.com/about-us/,fetched,6481
+ORG-000066,none_found,no_website,
+ORG-000080,https://aceframes.com,unfetchable,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/"
+ORG-000097,https://bioverde.us,fetched,12574
+ORG-000099,https://www.materiumtech.com,fetched,2827
+ORG-000105,https://www.transcendia.com,fetched,6913
+ORG-000105,https://www.transcendia.com/locations,fetched,7898
+ORG-000105,https://www.transcendia.com/contact-us,fetched,16538
+ORG-000105,https://www.transcendia.com/about-us,fetched,5860
+ORG-000107,http://www.tmplasticsusa.com,fetched,779
+ORG-000124,https://primeconduit.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-000128,https://compking.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-000132,https://www.sherwin-williams.com,held_prior_PR133,
+ORG-000174,http://www.vertexseals.com/,fetched,4975
+ORG-000175,https://corelinerollers.com/,fetched,9226
+ORG-000175,https://corelinerollers.com/contact-us/,fetched,6101
+ORG-000175,https://corelinerollers.com/about/,fetched,5776
+ORG-000175,https://corelinerollers.com/about/careers/,fetched,10838
+ORG-000177,http://www.sealmaster.com/,fetched,14000
+ORG-000177,https://www.sealmaster.com/contact/,fetched,8450
+ORG-000177,https://www.sealmaster.com/who-we-are/company-overview/,fetched,8615
+ORG-000178,http://www.elbex-us.com/,fetched,36058
+ORG-000178,http://www.elbex-us.com/contact-us,fetched,17075
+ORG-000178,http://www.elbex-us.com/about/history,fetched,19202
+ORG-000180,https://www.endurorubber.com/,fetched,11274
+ORG-000180,https://www.endurorubber.com/contact-us.html,fetched,4876
+ORG-000180,https://www.endurorubber.com/about-us.html,fetched,10760
+ORG-000181,http://www.springsealinc.com/,unfetchable,"curl: (22) The requested URL returned error: 403
+"
+ORG-000183,http://www.diecut.com/,unfetchable,"curl: (22) The requested URL returned error: 406
+"
+ORG-000186,https://www.skf.com,fetched,194
+ORG-000188,https://universalpolymer.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-000190,http://www.clarkrandp.com/,unfetchable,"curl: (22) The requested URL returned error: 403
+"
+ORG-000193,http://www.teamtmi.com/,fetched,16010
+ORG-000193,http://www.teamtmi.com/contact-rfq/,fetched,3507
+ORG-000198,https://www.zieglertire.com/,fetched,29745
+ORG-000198,https://www.zieglertire.com/locations,fetched,18385
+ORG-000198,https://www.zieglertire.com/contact-us,fetched,22247
+ORG-000198,https://www.zieglertire.com/retail-locations,fetched,18385
+ORG-000202,https://qbm.ca,fetched,15088
+ORG-000202,https://qbm.ca/contact-us/,fetched,7109
+ORG-000202,https://qbm.ca/on-location/,fetched,3882
+ORG-000202,https://qbm.ca/contact-us/careers/,fetched,3640
+ORG-000551,https://www.roechling.com/,fetched,34986
+ORG-000551,https://www.roechling.com/contact/contact-form,fetched,27572
+ORG-000551,https://www.roechling.com/newsroom/press-contacts,fetched,24755
+ORG-000551,https://www.roechling.com/group/about-the-group/locations-worldwide,fetched,79736
+ORG-001423,,no_website,
+ORG-001426,,no_website,
+ORG-001447,,no_website,
+ORG-001452,,no_website,
+ORG-001453,,no_website,
+ORG-001458,,no_website,
+ORG-001459,,no_website,
+ORG-001462,,no_website,
+ORG-001469,,no_website,
+ORG-001470,,held_prior_PR133,
+ORG-001479,http://www.o2regentech.com,unfetchable,"curl: (6) Could not resolve host: www.o2regentech.com
+"
+ORG-001590,https://tolwire.com/,fetched,8148
+ORG-001601,https://pisonstreamsolutions.com/,fetched,6911
+ORG-001601,https://pisonstreamsolutions.com/about-us/,fetched,15878
+ORG-001649,,no_website,
+ORG-001708,https://ecmpmc.com,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-001716,,no_website,
+ORG-001719,https://pyramidplasticsinc.com,unfetchable,"curl: (6) Could not resolve host: pyramidplasticsinc.com
+"
+ORG-001721,,no_website,
+ORG-001726,,no_website,
+ORG-001747,https://p3-i.com/,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-001748,https://pkgllc.com/,fetched,3762
+ORG-001748,https://pkgllc.com/contact/,fetched,1736
+ORG-001753,https://foundationind.com/,fetched,3246
+ORG-001753,https://foundationind.com/contact/contact-us/,fetched,1863
+ORG-001753,https://foundationind.com/contact/get-a-quote/,fetched,1975
+ORG-001753,https://foundationind.com/about-us/,fetched,3571
+ORG-001764,,no_website,
+ORG-001794,https://dallittle.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-001836,https://johnsonite.com,fetched,3582
+ORG-001919,,no_website,
+ORG-001920,,no_website,
+ORG-001921,,no_website,
+ORG-001922,,held_prior_PR133,
+ORG-001927,https://gluetread.com,fetched,166362
+ORG-001927,https://gluetread.com/pages/contact-us,fetched,160630
+ORG-001927,https://gluetread.com/pages/about,fetched,161635
+ORG-001940,https://srtpolymers.com,unfetchable,"curl: (6) Could not resolve host: srtpolymers.com
+"
+ORG-001944,,no_website,
+ORG-002024,,no_website,
+ORG-002030,https://veretec.com/ (fetch failed - no extractable content),malformed_held,
+ORG-002041,https://www.may-lin.com,unfetchable,"curl: (60) SSL: no alternative certificate subject name matches target host name 'www.may-lin.com'
+M"
+ORG-002050,,no_website,
+ORG-002053,https://stuckyourself.com,unfetchable,"curl: (56) The requested URL returned error: 406
+"
+ORG-002055,https://neoindustriesinc.com,unfetchable,"curl: (35) Recv failure: Connection reset by peer
+"
+ORG-002056,https://pesalesohio.wordpress.com,fetched,3592
+ORG-002056,https://pesalesohio.wordpress.com/contacts/,fetched,2171
+ORG-002057,https://qualityfiberglass.net,unfetchable,"curl: (60) SSL certificate problem: self signed certificate
+More details here: https://curl.se/docs/"
+ORG-002060,https://canfieldplastics.com,unfetchable,"curl: (60) SSL certificate problem: certificate has expired
+More details here: https://curl.se/docs/"
+ORG-002064,https://polytechmolding.com (404 - not this firm's site),malformed_held,
+ORG-002080,,no_website,
+ORG-002145,,no_website,
+ORG-002159,,no_website,
+ORG-002168,,no_website,
+ORG-002544,,no_website,
+ORG-003101,,no_website,
+ORG-003545,https://g-3chickadee.com/,fetched,2596
+ORG-003545,https://g-3chickadee.com/contact,fetched,1996
+ORG-003545,https://g-3chickadee.com/locations,fetched,3954
+ORG-003545,https://g-3chickadee.com/about-us,fetched,2355
+ORG-003885,,no_website,
+ORG-001423,https://abcgroup.com/about/,unfetchable,"curl: (28) Connection timed out after 20003 milliseconds
+"
+ORG-001426,https://www.techniplas.com/,fetched,5713
+ORG-001426,https://www.techniplas.com/contact/,fetched,4980
+ORG-001426,https://www.techniplas.com/locations/,fetched,5876
+ORG-001426,https://www.techniplas.com/locations-overview/,fetched,11609
+ORG-001447,https://www.axalta.com/,fetched,6657
+ORG-001447,https://www.axalta.com/corporate/en_US/contacts.html,fetched,5012
+ORG-001447,https://www.axalta.com/corporate/en_US/about-axalta.html,fetched,3642
+ORG-001453,https://www.flowpolymers.com/,unfetchable,"curl: (56) The requested URL returned error: 403
+"
+ORG-001458,https://polyram-group.com/distributors/usa/,fetched,10138
+ORG-001458,https://polyram-group.com/contact-us/,fetched,6909
+ORG-001458,https://polyram-group.com/about/,fetched,8294
+ORG-001458,https://polyram-group.com/about-laboratory/,fetched,5967
+ORG-001649,https://www.midstate-sales.com/youngstown-rubber-products/rubber-products,fetched,3422
+ORG-001649,https://www.midstate-sales.com/info/contact,fetched,2451
+ORG-001649,https://www.midstate-sales.com/info/about-us,fetched,14199
+ORG-001716,https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/contact-us/locations/administrative-offices.html,fetched,29610
+ORG-001716,https://www.bridgestoneamericas.com/en/contact-us,fetched,15757
+ORG-001716,https://www.bridgestoneamericas.com/en/contact-us/locations,fetched,15077
+ORG-001716,https://www.bridgestoneamericas.com/en/contact-us/write-to-us,fetched,16435
+ORG-001764,https://www.nmcmetals.com/,fetched,0
+ORG-002168,https://www.akrochem.com/company_history.php,fetched,9191
+ORG-002168,https://www.akrochem.com/contact.php,fetched,9017
+ORG-002168,https://www.akrochem.com/locations.php,fetched,9063
+ORG-002168,https://www.akrochem.com/company_profile.php,fetched,8177
+ORG-002544,https://www.berryglobal.com/,fetched,4162
+ORG-002544,https://www.berryglobal.com/contact-us,fetched,2009
+ORG-002544,https://www.berryglobal.com/media/media-contacts,unfetchable,"curl: (56) The requested URL returned error: 404
+"
+ORG-002544,https://www.berryglobal.com/about,unfetchable,"curl: (56) The requested URL returned error: 404
+"
+ORG-003101,https://www.cwohio.com/,fetched,52408
+ORG-003101,https://www.cwohio.com/contact-locations/,unfetchable,"curl: (22) The requested URL returned error: 404
+"
+ORG-003885,https://www.radicigroup.com/en/contacts/companies/high-performance-polymers/usa/radici-plastics-usa-inc/,unfetchable,"curl: (56) The requested URL returned error: 403
+"

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000093389.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000093389",
+  "name": "STANDARD MOTOR PRODUCTS, INC.",
+  "tickers": [
+    "SMP"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "53fc3c40f32312eac698cee6b68290e4a96ed3f1d2bf5e81a5e646ad4a9d8970",
+  "raw_name_token": "\"STANDARD MOTOR PRODUCTS, INC.\""
+}

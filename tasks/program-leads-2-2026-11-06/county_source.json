@@ -1,0 +1,8 @@
+{
+  "source_url": "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+  "fetched": "2026-11-06",
+  "sha256": "d98425c123d7c0e872aec6e83960dfb501884818bf17385c340790f3d1f28345",
+  "unitid": "166513",
+  "county": "Middlesex County",
+  "use": "SCHEMA4.11 institutional locality default only"
+}

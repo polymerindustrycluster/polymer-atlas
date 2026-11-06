@@ -1,0 +1,8 @@
+{
+  "source_revision": "1342f2d41a4b8c096f1e34b21a0a363d5c804ebd",
+  "reason": "Unmerged proposal held under AGENTS2.9/SCHEMA1+4.6 after contradictory named-service readings; no owner ruling self-applied.",
+  "files": {
+    "creates_ecosystem.csv": "3346f01f00973fc264de27c65144749fec97aa9a6a59b0edbbce7f3184ca9c86",
+    "evidence_rows.csv": "a958be5048ea00869d50e67f2af538257489627367cb1ecf818c90aaab1d76aa"
+  }
+}

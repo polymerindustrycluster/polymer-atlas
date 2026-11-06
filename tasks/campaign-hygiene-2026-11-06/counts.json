@@ -1,0 +1,87 @@
+{
+  "base": "a90d8e362226eb4cdcfaa8f5d4f51692a6b224f6",
+  "archive_unlinked_supported_rows": [
+    3227,
+    2975
+  ],
+  "archive_union": 6202,
+  "residual_hq_cohorts": {
+    "residual-hq-2": {
+      "STILL_UNKNOWN": 92,
+      "HQ_FOUND": 8
+    },
+    "residual-hq-3": {
+      "STILL_UNKNOWN": 88,
+      "HQ_FOUND": 12
+    },
+    "residual-hq-4": {
+      "STILL_UNKNOWN": 41,
+      "HQ_FOUND": 8
+    }
+  },
+  "residual_hq_unique_organizations": 249,
+  "residual_hq_holds": 221,
+  "t1_unhealthy_organizations": 155,
+  "t1_gap_memberships": 197,
+  "t1_class_combinations": {
+    "b": 50,
+    "c": 93,
+    "d": 11,
+    "bc": 1
+  },
+  "t1_gap_classes": {
+    "b": 55,
+    "c": 131,
+    "d": 11
+  },
+  "human_only_gap_memberships": 130,
+  "human_only_gap_types": {
+    "tier": 37,
+    "website": 20,
+    "capabilities": 73
+  },
+  "active_oh_sites": 1883,
+  "active_oh_blank_streets": 1559,
+  "sources": [
+    {
+      "revision": "03359c366474dd2859b5413120e531898cf69579",
+      "path": "tasks/evidence-reverify-archive-2026-11-06/archive_outcomes.csv",
+      "sha256": "0d7c4c9d8e5a88bfce3cdaf85f5011a41421a6982bb721bd5d0436ba152ad5b3"
+    },
+    {
+      "revision": "c611ce36132b2e84df8fe66165dfd08b53c55f90",
+      "path": "tasks/evidence-reverify-archive-oh-pa-2026-11-06/archive_outcomes.csv",
+      "sha256": "f17efa38e5970c29db0e057c5fa225f4749dc3d1ecd926603c67cef0b38075d8"
+    },
+    {
+      "revision": "4636f8e779019ba1dc50189fb8468c5c5572b899",
+      "path": "tasks/residual-hq-2-2026-11-06/verdicts.csv",
+      "sha256": "9185c5cc3f238f77efabe752dde1ab1b393b1f955e9eaf0f38abbb39f72bbdc1"
+    },
+    {
+      "revision": "fd0d6e6e29b360e914d38bd4898cdca1ee004b60",
+      "path": "tasks/residual-hq-3-2026-11-06/verdicts.csv",
+      "sha256": "791b71b11571b0424b8e2123d34655e78b4e096590d282033233ef7dc44c8954"
+    },
+    {
+      "revision": "cce3b13c968245c17c6674dd6e8c42ffb762a255",
+      "path": "tasks/residual-hq-4-2026-11-06/verdicts.csv",
+      "sha256": "275cb8801cf1227e2b11e63c3fae3b34e50c539cac33c65fc264ec28b8ef6c8e"
+    },
+    {
+      "revision": "a90d8e362226eb4cdcfaa8f5d4f51692a6b224f6",
+      "path": "tasks/pic18-record-health-6-2026-11-06/remaining_gap_routes.csv",
+      "sha256": "a927c672bb7e92a7ef1dc23cd48c5444763c3886ffe725c40e516fdc4740b694"
+    },
+    {
+      "revision": "a90d8e362226eb4cdcfaa8f5d4f51692a6b224f6",
+      "path": "data/sites_OH.csv",
+      "sha256": "be0c7d3e10e6e16cd8d81e21011d30724fdaeb9dcb978084eb86b0532e0c0bfe"
+    },
+    {
+      "revision": "bce296a64e1e7481388b053dc94e26e8e4dd4ec8",
+      "path": "tasks/tombstone-site-operators-2026-11-06/verdicts.csv",
+      "sha256": "01868038a6615fb51cc37d15203c4e14b219317e495f1325eb7d7e6d47381a58"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001287213.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001287213",
+  "name": "DOUGLAS DYNAMICS, INC",
+  "tickers": [
+    "PLOW"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "bded4f2cd9c43ec8f732955a23246543b58cfff9f002c216bcb6aa5f328c0192",
+  "raw_name_token": "\"DOUGLAS DYNAMICS, INC\""
+}

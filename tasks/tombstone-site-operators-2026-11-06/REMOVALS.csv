@@ -1,0 +1,2 @@
+table,key,reason
+registry_links,ORG-002260|FRS|110001516832|SITE-006049,"follows site re-point to ORG-002261, evidence EVD-188507 and EVD-188508; controller narrow exception supersedes original L6 rule7 for this one org_id cell"

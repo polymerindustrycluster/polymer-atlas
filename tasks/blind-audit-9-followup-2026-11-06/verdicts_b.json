@@ -1,0 +1,311 @@
+[
+  {
+    "site_id": "SITE-016010",
+    "grade": "agreement",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Cork Industries company-authored homepage identifies Jacksonville Lab & Manufacture at the exact address and describes formulation of coatings, adhesives and UV inks. These formulated coatings support Ring 2 under SCHEMA \u00a71. Current page is positive operational evidence; frozen active is consistent. No claim that NAICS or every held field is independently certified.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://corkindustries.net/",
+        "source_class": "own_site",
+        "quote": "Jacksonville, Florida Lab & Manufacture 5555 W. Beaver St Jacksonville, FL 32254",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://corkindustries.net/",
+        "source_class": "own_site",
+        "quote": "Cork is an Industry Leader in the Formulation of Sustainable Aqueous, UV, and EB Coatings, Varnishes, Adhesives, and UV inks for Graphic Arts and Packaging.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "",
+    "limitations": "Undated live company page observed 2026-11-06; not a historical operating chronology. Exact legal suffix corroboration and NAICS not certified. No independent lab-process inspection.",
+    "locked_at_utc": "2026-11-06T13:03:26.362391+00:00"
+  },
+  {
+    "site_id": "SITE-019002",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Historical court decision establishes oriented-polystyrene manufacturing at 1050 Sycamore Street under Reynolds Packaging KAMA. Illinois DOT independently identifies PACTIV at the held 1050 Sycamore Road. Company CDP identifies Manteno but does not tie its city-level facility to this address. Road/Street alias is not automatically a field error. Current legal operator and exact-site process continuity are not settled.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.oshrc.gov/wp-content/uploads/08-1554.pdf",
+        "source_class": "government_filing",
+        "quote": "Reynolds Packaging KAMA, Inc., (Reynolds), manufactures oriented polystyrene sheet for use in food packaging at its facility in Manteno, Illinois.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://apps.dot.illinois.gov/eplan/desenv/082214/66429-015/66429-015.pdf",
+        "source_class": "government_filing",
+        "quote": "1050 Sycamore Road",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Current employer-controlled or regulator process document tying the held address and Pactiv operator to polymer manufacturing, and an authoritative situs explanation of Street/Road.",
+    "limitations": "Court concerns 2008 inspection; DOT document is 2014. CDP is 2024 city-level. Jobs discovery syndication was blocked raw. Frozen unknown status is not called an error. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.126893+00:00"
+  },
+  {
+    "site_id": "SITE-019011",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Exact Morton Avenue Reynolds plant independently reported in dated local journalism on a 2024 zoning proceeding. Company SEC property tables and government inspection are indexed publicly but raw fetches blocked, so neither is treated as verified positive evidence. Raw TraceGains route returns a shell without quoted facility content. Exact-site polymer product/process remains unsettled in admitted raw evidence.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.myjournalcourier.com/news/article/jacksonville-reynolds-solar-project-19961647.php",
+        "source_class": "public_news",
+        "quote": "Jacksonville Plan Commission agreed to recommend a proposed zoning change for the Reynolds Consumer Products plant at 2226-2230 E. Morton Ave. to the council at its Wednesday meeting.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Raw employer-controlled or government source tying 2226 E Morton Avenue Reynolds plant to plastics film/bag manufacturing and operator identity.",
+    "limitations": "News article dated 2024-12-06; address range includes held street number but does not specify polymer output. Search-only government NAICS differences not certified as error. Unknown status not penalized. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.127733+00:00"
+  },
+  {
+    "site_id": "SITE-014007",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "California agency adjudication establishes exact-address NuSil employer and manufacturing activity. NuSil-authored 2013 CareSil prototype composition document hosted by a distributor lists silicone formulation and both Carpinteria and Bakersfield manufacturing addresses, with contingency manufacturing caveat. This is historical site-specific support, insufficient for exact-site current polymer manufacturing continuity or dominant function. Pegasus Road/Drive discrepancy not self-adjudicated.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.dir.ca.gov/oshab/DECISIONS-ALJ/2020/1195278-Nusil-Technology.pdf",
+        "source_class": "government_filing",
+        "quote": "NuSil Technology, LLC (Employer) is a manufacturer of medical devices and components.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.dir.ca.gov/oshab/DECISIONS-ALJ/2020/1195278-Nusil-Technology.pdf",
+        "source_class": "government_filing",
+        "quote": "2343 Pegasus Drive in Bakersfield, California",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.ewlerp.com/___country___/uploadedfile/rawmaterial/cb/CES-1104%20-%20COMPOSITION.pdf",
+        "source_class": "manufacturer_document_distributor_host",
+        "quote": "MANUFACTURER NuSil Technology LLC 1050 Cindy Lane, Carpinteria and 2343 Pegasus Road, Bakersfield California, USA",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Current exact-address NuSil process/manufacturing document linking silicone formulation to 2343 Pegasus and resolving dominant plant versus R&D function.",
+    "limitations": "Manufacturer document copyright 2013; agency decision arises from 2016 inspection. Distributor hosting is not authorship: document is NuSil Regulatory Affairs. Current Avantor research article fetch returned empty extracted body, not positive evidence. Frozen unknown status not error. No owner ruling on standalone resin versus formulated silicone is made. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.131340+00:00"
+  },
+  {
+    "site_id": "SITE-014015",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Sigma parent company page links Mercury polyethylene film extrusion, printing and converting to 14825 Salt Lake Ave. County 2023 active-facility inventory independently records Mercury at frozen 14849 Salt Lake Ave. State Water Board 2009 actions list 14825. Conflicting primary addresses remain unresolved; do not infer phantom or incorrect street from two spellings alone.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.sigmaplasticsgroup.com/location/mercury-plastics-inc-ca/",
+        "source_class": "own_site",
+        "quote": "Mercury Plastics, Inc. is a vertically integrated custom manufacturer who extrudes mono and co-ex layer polyethylene films",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.sigmaplasticsgroup.com/location/mercury-plastics-inc-ca/",
+        "source_class": "own_site",
+        "quote": "Address: 14825 Salt Lake Ave, City of Industry, CA 91746",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://fire.lacounty.gov/wp-content/uploads/2023/07/CUPA-List-Active-7.11.23.pdf",
+        "source_class": "government_filing",
+        "quote": "MERCURY PLASTICS INC 14849 SALT LAKE AVE INDUSTRY 91746",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Authoritative parcel/situs or regulator process record establishing whether 14849 is the same Mercury manufacturing campus as 14825, or a distinct physical function/operator.",
+    "limitations": "County inventory active means registry presence, not proof of current operation. Manufacturer evidence covers 14825, not automatically 14849. Parent trade-name PolyPak linkage not independently certified; no owner scope decision. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.239476+00:00"
+  },
+  {
+    "site_id": "SITE-016006",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "FXI company page lists Miami in its manufacturing network. Syndicated Machine operator advert has exact 11000 Northwest 32nd Avenue and fabrication responsibilities; retained as discovery only. Company-authorized ADP career route returns a JavaScript shell, not exact-site job content. Thus exact site operator/process does not meet admission threshold.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.fxi.com/what-we-do",
+        "source_class": "own_site",
+        "quote": "Miami, FL",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.fxi.com/what-we-do",
+        "source_class": "own_site",
+        "quote": "With 33 facilities across the U.S. and Mexico, our robust manufacturing network reduces lead time and logistics costs.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://diversityjobs.com/career/18293668/Machine-Operator-Florida-Miami",
+        "source_class": "discovery_employer_advert_syndicated",
+        "quote": "Conducts set-up and operates a variety of fabricating devices",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Employer-controlled exact-address job/process page confirming FXI fabrication/foam work at 11000 NW 32nd Avenue and current legal operator.",
+    "limitations": "DiversityJobs display dated 2026-10-13, employer content attribution not independently authenticated. Company city network is not exact site manufacturing proof. Frozen active remains unverified, not contradicted. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.240470+00:00"
+  },
+  {
+    "site_id": "SITE-016101",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Georgia EPD 2018 renewal review ties New WinCup Holdings plant and WinCup parent to exact 4640 Lewis Road and expanded polystyrene cup/container manufacturing. Historical company catalog also lists Stone Mountain corporate office, compatible with co-located plant under SCHEMA \u00a74.5/5.3. No current exact-site primary operational evidence was retrievable; current active and dominant function are not certified.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://epd.georgia.gov/document/document/08900097narpdf/download",
+        "source_class": "government_filing",
+        "quote": "This facility manufactures cups and food containers from expanded polystyrene.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://epd.georgia.gov/document/document/08900097narpdf/download",
+        "source_class": "government_filing",
+        "quote": "4640 Lewis Road Stone Mountain, Georgia, 30083 DeKalb County",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://epd.georgia.gov/document/document/08900097notpdf/download",
+        "source_class": "government_filing",
+        "quote": "This facility manufactures cups and food containers from expanded polystyrene.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Current exact-address company or regulator process record confirming WinCup EPS manufacturing continues at 4640 Lewis Road under the held operator.",
+    "limitations": "EPD permit is DRAFT; review/notice historical 2018 and not proof of current operation. 2025 local district report blocked raw, 2026 OSHA route blocked. No inference that corporate office excludes a plant; no NAICS error inferred from indexed conflicting classifications. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.242548+00:00"
+  },
+  {
+    "site_id": "SITE-016116",
+    "grade": "unresolved",
+    "fields_tested": [
+      "street_address",
+      "city",
+      "state",
+      "zip",
+      "parent_name",
+      "site_type",
+      "ring_primary",
+      "operating_status"
+    ],
+    "observations": "Employer Workday page routes return JavaScript shells with no job description in raw parsed body; CXS routes return 403. Talent.com syndicates an Altium advert with exact 6220 Duquesne Drive and blow-mold/PET/injection machines. Syndication remains discovery only, so exact-site operator/function/polymer work is not admitted as verified.",
+    "field_errors": [],
+    "creation_error_reason": "",
+    "sources": [
+      {
+        "url": "https://www.talent.com/view?id=625134914376697815",
+        "source_class": "discovery_employer_advert_syndicated",
+        "quote": "Location Address: 6220 Duquesne Drive, Atlanta, Georgia 30336",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      },
+      {
+        "url": "https://www.talent.com/view?id=625134914376697815",
+        "source_class": "discovery_employer_advert_syndicated",
+        "quote": "The Machine Operator will operate blow-mold/PET/injection molding machines, grinders, trimmer machines, and conveyor systems.",
+        "raw_checked": true,
+        "observed_date": "2026-11-06"
+      }
+    ],
+    "settling_fact": "Raw employer-controlled job or government process document tying Altium legal operator and plastics container manufacturing to 6220 Duquesne Drive.",
+    "limitations": "Search-index Workday text and syndicated advert cannot replace raw employer-controlled body. Page status 200 with empty content is counted unavailable for positive verification. Frozen active not contradicted. No closure/no-establishment creation_error is asserted; Form 5500 gate was not invoked. No temporal change after frozen 2026-11-06 is inferred. No all-field certification.",
+    "locked_at_utc": "2026-11-06T13:08:16.243407+00:00"
+  }
+]

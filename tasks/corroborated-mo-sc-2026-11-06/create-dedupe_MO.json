@@ -1,0 +1,350 @@
+{
+  "LF-MO-00258": {
+    "query": {
+      "domain": "https://buckhorninc.com/",
+      "name": "Buckhorn Inc",
+      "street": "2727 N. Partnership Blvd",
+      "city": "Springfield",
+      "state": "MO",
+      "zip": "65803"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000714",
+            "name": "Buckhorn, Inc.",
+            "city": "Milford",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: buckhorninc.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000714",
+            "name": "Buckhorn, Inc.",
+            "city": "Milford",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "name key 'buckhorn' = legal_name 'Buckhorn, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012107",
+            "name": "Buckhorn, Inc. - Springfield",
+            "org_id": "ORG-000714",
+            "city": "Springfield",
+            "state": "MO",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MO.csv",
+            "street": "2727 N. Partnership Blvd",
+            "operator": "Buckhorn, Inc.",
+            "match": "street key '2727 n partnership blvd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MO-00033": {
+    "query": {
+      "domain": "https://www.sealedair.com/",
+      "name": "Sealed Air",
+      "street": "2313 & 2315 SW Lower Lake Road",
+      "city": "Saint Joseph",
+      "state": "MO",
+      "zip": "64504"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000566",
+            "name": "Sealed Air Corporation",
+            "city": "Charlotte",
+            "state": "NC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NC.csv",
+            "match": "domain exact: sealedair.com"
+          },
+          {
+            "id": "ORG-000237",
+            "name": "Sealed Air - Automated Packaging Systems",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: sealedair.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000566",
+            "name": "Sealed Air Corporation",
+            "city": "Charlotte",
+            "state": "NC",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NC.csv",
+            "match": "name key 'sealed air' = legal_name 'Sealed Air Corporation'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012118",
+            "name": "Sealed Air Corporation - Saint Joseph",
+            "org_id": "ORG-000566",
+            "city": "Saint Joseph",
+            "state": "MO",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MO.csv",
+            "street": "2313 & 2315 SW Lower Lake Road",
+            "operator": "Sealed Air Corporation",
+            "match": "street key '2313 and 2315 sw lower lake rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000237",
+            "name": "Sealed Air - Automated Packaging Systems",
+            "city": "Streetsboro",
+            "state": "OH",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Sealed Air'"
+          },
+          {
+            "id": "ORG-000934",
+            "name": "Liquibox",
+            "city": "Upper Sandusky",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Sealed Air'"
+          },
+          {
+            "id": "ORG-001105",
+            "name": "Liquibox",
+            "city": "Ashland",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Sealed Air'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-MO-00295": {
+    "query": {
+      "domain": "https://www.grahampackaging.com/",
+      "name": "Graham Packaging Company",
+      "street": "3876 E 25th Street",
+      "city": "Joplin",
+      "state": "MO",
+      "zip": "64804"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001403",
+            "name": "Graham Packaging Company",
+            "city": "Fremont",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: grahampackaging.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001403",
+            "name": "Graham Packaging Company",
+            "city": "Fremont",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'graham packaging' = legal_name 'Graham Packaging Company'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012127",
+            "name": "Graham Packaging Company - Joplin",
+            "org_id": "ORG-001403",
+            "city": "Joplin",
+            "state": "MO",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MO.csv",
+            "street": "3876 E 25th Street",
+            "operator": "Graham Packaging Company",
+            "match": "street key '3876 e 25 st'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-MO-00499": {
+    "query": {
+      "domain": "https://www.spartech.com/",
+      "name": "spartech",
+      "street": "2500 spartech drive",
+      "city": "cape girardeau",
+      "state": "MO",
+      "zip": "63701"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001119",
+            "name": "Spartech",
+            "city": "Greenville",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: spartech.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001119",
+            "name": "Spartech",
+            "city": "Greenville",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'spartech' = legal_name 'Spartech'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012148",
+            "name": "Spartech - cape girardeau",
+            "org_id": "ORG-001119",
+            "city": "cape girardeau",
+            "state": "MO",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_MO.csv",
+            "street": "2500 spartech drive",
+            "operator": "Spartech",
+            "match": "street key '2500 spartech dr'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-006160",
+            "name": "Spartech LLC - Tufpak",
+            "city": "Ossipee",
+            "state": "NH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_NH.csv",
+            "match": "legal_name contains 'spartech'"
+          }
+        ]
+      }
+    ]
+  }
+}
