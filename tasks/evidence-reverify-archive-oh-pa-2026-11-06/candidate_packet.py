@@ -4,7 +4,7 @@ import json
 import re
 from urllib.parse import urlsplit
 from shared import HERE,ROOT,BASE,house,bound_verdicts
-from archive import FIELDS
+from archive import FIELDS, same_capture
 
 
 def key(url):
@@ -25,7 +25,7 @@ def main():
         if not meta.exists():continue
         f=json.loads(meta.read_text())
         m=re.fullmatch(r'https://web\.archive\.org/web/(\d{14})/(https?://\S+)',ref)
-        if m and f['status']=='ok' and f['attempts'][-1]['effective_url'].rstrip('/')==ref.rstrip('/'):
+        if m and f['status']=='ok' and same_capture(f['attempts'][-1]['effective_url'],ref):
             captures.setdefault(key(m[2]),[]).append((ref,m[1],f))
     inherited=house.read(BASE/'archive_links.csv')
     old_ids={r['evidence_id'] for r in house.read(BASE/'inputs.csv')}

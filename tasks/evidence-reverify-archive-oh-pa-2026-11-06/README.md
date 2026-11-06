@@ -76,3 +76,5 @@ canonical binding and yield mutations from PR137. `report.py` independently reco
 canonical data, checks disjoint IDs, exact repair/disposition yields, and exact README result text. These pass.
 The zero-new-capture archive gate intentionally fails, leaving the work pending. Two-family continuation refute is
 pending, as is archive application; no script/validator code changed so scripts/ pytest is not triggered.
+
+L11 also owns round4 replacements for PR155 a012caa: OH143weak +PA126weak =269, excluding342FETCH_FAILED. No L1 replacements. The replay-query guard correction changes code only, not either frozen evidence frame, judgments or quotes. All four replay-response comparison callers (including this continuation cache collector) now use the shared timestamp/query-preserving guard.
