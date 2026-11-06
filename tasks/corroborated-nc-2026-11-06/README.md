@@ -21,7 +21,7 @@ NC strict NAICS326 sites (active/unknown,A/B/C,US-or-blankcountry perofficial nu
 Pre-pass backup: branchbase9489b60. IDs SITE-016300–016301,016303–016314 / EVD-203000–203013,203021–203104; ORG blockunused. Onlysites_NC.csv/evidence_sites_NC.csv changed. No registry_links,tier1,QUEUE orvalidator edits. Mainupdates via merge andmain-data+builder replay,never hand CSVmerges. CurrentmainPAstreetmerge will be incorporated before newreview request percontroller07:05. FL132,GA142,NY153 are separate drafts; thisPR doesnot depend onthem.
 
 ## Refutes
-Pending Codex3/Grok3 under controller06:25 newodd-lane clerkassignment; draft only. Queueexception supersedes never-queue for clerkrequests. ControllerNY/NCfullcensus ruling recordedabove.
+Grok3 APPROVEbe08c5a (0 findings), superseding its REFUTE000b4a9; Codex3 targeted re-review pending; draft only. Queueexception supersedes never-queue for clerkrequests. ControllerNY/NCfullcensus ruling recordedabove.
 
 ## Holds (unit: candidate establishment clusters)
 |Cluster|Settling fact/recommendation|
@@ -129,3 +129,5 @@ Codex3 and Grok3 REFUTE head000b4a9: accepted both Alpek findings. LF-NC-00423 n
 Ringfallback fixed:325211 andunknowncodes raiseHOLD for explicit site/scope interpretation;326 maps1 and the exact existingSCHEMA2.2 codes325212/325510/325520/325991 map2. Fiveknowncode checks and actual isolated re-enabling ofthe refutedAlpek proposal now fail before anydatawrite. No newowner/ring/vocabulary ruling. Current110census=14VERIFIED/2DUPLICATE_OF/94STILL_UNCERTAIN,14Csites/12parents/98EVD,12NAICS326+2NAICS325510. Strict326unchanged91→103/453. Bothrefutes preserved incontrollerreviews/158-clerk-{codex,grok}-3.md; revised approvals pending. ActualissuedIDs SITE016300–016301/016303–016314,EVD203000–203013/203021–203104. Canonicalmain+builderreplay retains everypriormain row unchanged.
 
 New hold: LF-NC-00423 — closure/status and standalone-resin ring reconciliation; primaryreport andannouncement above.
+
+Grok family clerk3 thr_4g4uwqjxjv APPROVEbe08c5a,0findings, supersedes priorrefute. Alpekheld/016302+203014–020 retired;other14sitevalues field-identical to000b4a9,12NAICS326Ring1+2NAICS325510Ring2,no325211. Full14census/known3/replay/actualAlpekre-enable no-write/globalcollision/validate0/row-loss PASS. ClosureprimaryreportHTTP200/hash/page5 checked;no canonicalstatus change or REJECT. Report: /Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/reviews/158-clerk-grok-3-rereview.md . Receipt-only change;data/code unchanged. Codex3 revised approval pending.
