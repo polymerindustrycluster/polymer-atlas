@@ -17,6 +17,8 @@ periods and suppression rules (see "CBP versus QCEW" below). No ratio in this
 file or its CSV divides a CBP number by a QCEW number or fills one source's
 suppressed cell from the other.
 
+PIC-18 refresh (2026-11-06): the rebuilt 5,190-row CSV is byte-identical: all six added counties were already present. The report tables now use `regions.PIC18`; the six added counties reconcile to the Census API in `tasks/source-scout-3-2026-11-06/cbp/`.
+
 ## Retrieval
 
 - **Retrieved:** 2026-11-01 (UTC). **Reference year:** 2023 (mid-March employment-size class; 2017 NAICS). No API and no key: the Census Data API's data endpoint answered every query from this environment with a redirect to a "missing key" page, so the public bulk files were used instead. Metadata (`variables.json`) was reachable, but no data was pulled from the API.
@@ -24,7 +26,7 @@ suppressed cell from the other.
   - <https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23us.zip> (nation)
   - <https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23st.zip> (states)
   - <https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23co.zip> (counties; stream-filtered to NAICS 326/3261/3262/3252/3259 rows for FIPS state 39 and 42, never loaded whole)
-- **County names only** (no data): <https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt>; the script aborts if any PIC-12 FIPS does not match its expected county name.
+- **County names only** (no data): <https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt>; the script aborts if any PIC-18 FIPS does not match its expected county name.
 - **Record layouts** used to verify field names (linked from <https://www.census.gov/programs-surveys/cbp/technical-documentation/record-layouts.html>): `us-layout-2018.txt` (U.S., 2018-2023), `state-layout-2020.txt`, `county-layout-2020.txt` (County, 2020-2023), all under <https://www2.census.gov/programs-surveys/cbp/technical-documentation/records-layouts/>.
 - **Methodology page:** <https://www.census.gov/programs-surveys/cbp/technical-documentation/methodology.html>. The page itself carries a notice (read 2026-11-01) that it "is no longer current" because the Census Bureau is evaluating alternatives to noise infusion; the statements used below are the ones on that page.
 
@@ -40,7 +42,7 @@ SHA-256 of the downloaded files (re-download and compare to detect a later revis
 ## Method and fields
 
 - **Fields (verified in the layouts, not assumed):** `naics`, `lfo` (nation and state files only; `-` = all legal forms; the county file has no `lfo` column and is all forms), `est` (total establishments) and the establishment-count size-class columns `n<5, n5_9, n10_19, n20_49, n50_99, n100_249, n250_499, n500_999, n1000`. The county file also carries `n1000_1`..`n1000_4` sub-classes of 1,000+; they are not used.
-- **Filters:** NAICS 326, 3261, 3262, 3252, 3259 (CBP stores them padded, e.g. `326///`); legal form `-` (all) for nation and states; United States, 50 state-level rows, and every Ohio and Pennsylvania county that has a row (the PIC-12 counties are Ohio counties). Puerto Rico is not in these files.
+- **Filters:** NAICS 326, 3261, 3262, 3252, 3259 (CBP stores them padded, e.g. `326///`); legal form `-` (all) for nation and states; United States, 50 state-level rows, and every Ohio and Pennsylvania county that has a row (the PIC-18 counties are Ohio counties). Puerto Rico is not in these files.
 - **Unit:** employer establishments (locations with paid employees at any time in the year; government establishments are excluded except a short list of government-sponsored industries). Size class is by **mid-March 2023 paid employment**. The `<5` class (formerly "1 to 4") includes establishments that reported no mid-March paid employees but paid wages at some time during the year (methodology page). So `<5` is not strictly "1-4 employees".
 - **Noise and flags.** CBP noise-infuses employment and payroll (flags G/H/J on those fields). The layouts give **no noise flag** on `est` or on the size-class establishment counts, and this file uses only those counts, not employment or payroll. The only flag on a size-class count is **`N`: "Not available or not comparable"** (layout). The methodology page states that since reference year 2017 a cell is published only if it holds three or more establishments, and otherwise it is dropped. The CSV preserves `N` as an empty `estab` with `estab_flag = N`. **An `N` cell is never read as zero.**
 - **What `N` hides, arithmetically.** `EST` is always published. In every row with no `N` cell the nine size classes sum to `EST` exactly (the script aborts otherwise; none failed). So in a row with `N` cells, `EST` minus the published cells is the number of establishments sitting in the `N` cells together. This residual is arithmetic, not an official value (Census: values derived by subtraction "are not official"), and it does not say how the residual divides among the `N` cells.
@@ -133,54 +135,67 @@ Unit and filter: **employer establishments**, NAICS 326, all legal forms. `N` = 
 | MN | 276 | 53 | 38 | 42 | 60 | 33 | 41 | 7 | N | N | 2 |
 | MO | 241 | 41 | 33 | 29 | 58 | 35 | 37 | 8 | N | N | 0 |
 
-#### Table 4. PIC-12 counties, NAICS 326, CBP 2023: share of establishments by band
+#### Table 4. PIC-18 counties, NAICS 326, CBP 2023: share of establishments by band
 
-Unit and filter: **share of employer establishments**, NAICS 326, all legal forms, county-level CBP rows (the county file has no legal-form column). The `PIC-12 sum` row adds the 12 counties' published cells; its `N`-cell residual is summed over counties, so its bounds are for the sum of published county rows. Bounds as in Table 3.
+Unit and filter: **share of employer establishments**, NAICS 326, all legal forms, county-level CBP rows (the county file has no legal-form column). The `PIC-18 sum` row adds the 18 counties' published cells; its `N`-cell residual is summed over counties, so its bounds are for the sum of published county rows. Bounds as in Table 3.
 
 | Geography | Establishments (EST) | <20 employees | 20-99 | 100+ | Any N-flagged cell? |
 |---|---:|---:|---:|---:|---|
+| Ashland (39005) | 4 | 0.0-100.0% | 0.0-100.0% | 0.0-100.0% | yes (4 estab in N cells) |
 | Ashtabula (39007) | 25 | 28.0-36.0% | 44.0% | 20.0-28.0% | yes (2 estab in N cells) |
+| Columbiana (39029) | 3 | 0.0-100.0% | 0.0-100.0% | 0.0-100.0% | yes (3 estab in N cells) |
 | Cuyahoga (39035) | 55 | 56.4% | 30.9% | 10.9-12.7% | yes (1 estab in N cells) |
+| Erie (39043) | 5 | 0.0-100.0% | 0.0-100.0% | 0.0-100.0% | yes (5 estab in N cells) |
 | Geauga (39055) | 25 | 40.0-56.0% | 32.0% | 12.0-28.0% | yes (4 estab in N cells) |
+| Huron (39077) | 8 | 0.0-100.0% | 0.0-100.0% | 0.0-100.0% | yes (8 estab in N cells) |
 | Lake (39085) | 21 | 33.3-38.1% | 42.9% | 19.0-23.8% | yes (1 estab in N cells) |
 | Lorain (39093) | 27 | 40.7% | 40.7% | 18.5% | no |
 | Mahoning (39099) | 14 | 0.0-57.1% | 42.9% | 0.0-57.1% | yes (8 estab in N cells) |
 | Medina (39103) | 17 | 35.3-82.4% | 17.6-64.7% | 0.0-47.1% | yes (8 estab in N cells) |
 | Portage (39133) | 42 | 26.2% | 50.0% | 23.8% | no |
+| Richland (39139) | 5 | 0.0-100.0% | 0.0-100.0% | 0.0-100.0% | yes (5 estab in N cells) |
 | Stark (39151) | 29 | 55.2% | 31.0% | 0.0-13.8% | yes (4 estab in N cells) |
 | Summit (39153) | 75 | 48.0% | 37.3% | 9.3-14.7% | yes (4 estab in N cells) |
 | Trumbull (39155) | 8 | 0.0-100.0% | 0.0-100.0% | 0.0-100.0% | yes (8 estab in N cells) |
+| Tuscarawas (39157) | 25 | 24.0-44.0% | 32.0% | 24.0-44.0% | yes (5 estab in N cells) |
 | Wayne (39169) | 13 | 0.0-46.2% | 30.8-76.9% | 23.1-69.2% | yes (6 estab in N cells) |
-| **PIC-12 sum** (12 of 12 counties with a row) | 351 | 38.5-51.6% | 36.2-49.3% | 12.3-25.4% | yes (46 estab in N cells) |
+| **PIC-18 sum** (18 of 18 counties with a row) | 401 | 35.2-54.1% | 33.7-52.6% | 12.2-31.2% | yes (76 estab in N cells) |
 
-#### Table 4b. PIC-12 counties, NAICS 326, CBP 2023: establishments by size class
+#### Table 4b. PIC-18 counties, NAICS 326, CBP 2023: establishments by size class
 
 Unit and filter: **employer establishments**, NAICS 326, all legal forms. `N` is not zero.
 
 | County (FIPS) | EST | <5 | 5-9 | 10-19 | 20-49 | 50-99 | 100-249 | 250-499 | 500-999 | 1000+ | In N cells |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Ashland (39005) | 4 | N | N | N | N | N | N | N | N | N | 4 |
 | Ashtabula (39007) | 25 | 4 | N | 3 | 5 | 6 | 5 | N | N | N | 2 |
+| Columbiana (39029) | 3 | N | N | N | N | N | N | N | N | N | 3 |
 | Cuyahoga (39035) | 55 | 19 | 7 | 5 | 10 | 7 | 6 | N | N | N | 1 |
+| Erie (39043) | 5 | N | N | N | N | N | N | N | N | N | 5 |
 | Geauga (39055) | 25 | 4 | N | 6 | 5 | 3 | 3 | N | N | N | 4 |
+| Huron (39077) | 8 | N | N | N | N | N | N | N | N | N | 8 |
 | Lake (39085) | 21 | 4 | N | 3 | 5 | 4 | 4 | N | N | N | 1 |
 | Lorain (39093) | 27 | 3 | 4 | 4 | 5 | 6 | 5 | N | N | N | 0 |
 | Mahoning (39099) | 14 | N | N | N | 3 | 3 | N | N | N | N | 8 |
 | Medina (39103) | 17 | 3 | 3 | N | 3 | N | N | N | N | N | 8 |
 | Portage (39133) | 42 | 3 | 4 | 4 | 9 | 12 | 7 | 3 | N | N | 0 |
+| Richland (39139) | 5 | N | N | N | N | N | N | N | N | N | 5 |
 | Stark (39151) | 29 | 8 | 4 | 4 | 5 | 4 | N | N | N | N | 4 |
 | Summit (39153) | 75 | 17 | 8 | 11 | 15 | 13 | 7 | N | N | N | 4 |
 | Trumbull (39155) | 8 | N | N | N | N | N | N | N | N | N | 8 |
+| Tuscarawas (39157) | 25 | N | N | 6 | 5 | 3 | 6 | N | N | N | 5 |
 | Wayne (39169) | 13 | N | N | N | 4 | N | 3 | N | N | N | 6 |
-| **PIC-12 sum of published cells** | **351** | 65+N | 30+N | 40+N | 69+N | 58+N | 40+N | 3+N | 0+N | 0+N | 46 |
+| **PIC-18 sum of published cells** | **401** | 65+N | 30+N | 46+N | 74+N | 61+N | 46+N | 3+N | 0+N | 0+N | 76 |
 
 `+N` in the sum row marks a class where at least one county cell is `N`, so the figure is a published-cells-only lower bound.
+
 
 
 ### Reading the tables
 
 - **National (measured):** of 11,392 NAICS 326 employer establishments, **45.2% (5,145) have fewer than 20 employees**, 35.5% (4,043) have 20-99, and 19.3% (2,204) have 100 or more. Every national cell is published, so these are exact for CBP. The 3261 (plastics products) mix is close to 326; 3262 (rubber products) and especially 3259 (other chemical products, 61.5% under 20) skew smaller.
 - **Top-15 gap states (measured):** the under-20 share runs from 31.4% (IN) to 66.5% (FL); CA is 58.3%, TX 48.7%, MI 38.8%. `N` cells in a state are few (1 to 3 establishments in `N` cells in the seven states that have any among these 15), so their bounds are narrow. These bands describe CBP's establishment frame in each state, not Atlas coverage.
-- **PIC-12 (measured, wide bounds):** the 12 counties hold 351 CBP establishments in NAICS 326 (sum of the 12 county rows). County cells are often `N`: 46 of the 351 establishments sit in `N` cells, so the PIC-12 under-20 share is bounded at 38.5-51.6% and the 100+ share at 12.3-25.4%; several small counties (Trumbull 8 establishments, Mahoning 14, Wayne 13, Medina 17) have half or more of their establishments in `N` cells and carry little usable band information. Use the PIC-12 line as a range, not a point.
+- **PIC-18:** see Tables 4 and 4b for the 18-county totals and suppression bounds. Suppressed cells remain unknown; these are establishment counts, never organization counts.
 - A share of *establishments* is not a share of employment, output or emissions. Employment is noise-infused in CBP and was not used here.
 - CBP's under-20 count is probably not an upper estimate of the population of small shops: the methodology says undercoverage is concentrated in multi-unit companies and very small employers, and Census has no estimate of it. Direction and size of any bias in the shares are not measured here.
 
@@ -200,4 +215,4 @@ Takeaways for the owner, as reasoning only:
 
 1. TRI plus ITA, even if each worked perfectly, can only address establishments with roughly 10 or 20 and more employees. CBP says that is about 55% of national NAICS 326 establishments. The remaining roughly 45% are the part only directories, registries and local lists can find.
 2. The gap states differ by about a factor of two in small-shop share (IN 31.4% to FL 66.5%), so the right source mix is state-specific: the large-plant programs go further in IN, NC, GA, SC and TN than in FL, CA and NY.
-3. If PIC-12 reporting needs a small-shop count, CBP county cells for the smaller counties are mostly `N`; a county-level small-shop denominator would need a different source or an owner ruling on how to treat that gap. Per AGENTS.md section 9 this is an owner scope question and is not decided here.
+3. If PIC-18 reporting needs a small-shop count, CBP county cells for the smaller counties are mostly `N`; a county-level small-shop denominator would need a different source or an owner ruling on how to treat that gap. Per AGENTS.md section 9 this is an owner scope question and is not decided here.

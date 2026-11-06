@@ -1,0 +1,5 @@
+Command: python3 scripts/validate.py
+Existing warnings omitted; no errors.
+
+4946 organizations, 6898 sites, 400 ecosystem rows, 2025 registry links, 60 member rows, 1431 people rows, 166 program rows, 71 event series, 35397 evidence rows, 356 relationship rows, 497 capability rows, 0 equipment rows, 0 engagement rows, 0 person-identifier links, 970 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+OK — validation passed.

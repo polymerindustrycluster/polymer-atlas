@@ -1,0 +1,4 @@
+site_id,own_street,old_note_values,new_note_values,result
+SITE-001640,1022 Heyl Rd,1022 Heyl Rd (per the operator's own site / wave-2 verdict W2-026 evidence),1022 Heyl Rd,false provenance-tail veto reproduced and fixed
+SITE-001666,125 Pelret Industrial Parkway,125 Pelret Industrial Pkwy (per wave-3 verdict W3-0166 evidence; own-site spelling 'Pelret'). Ecosystem org ORG-001594 — FK resolves in ecosystem.csv,125 Pelret Industrial Pkwy,false provenance-tail veto reproduced and fixed
+SITE-001843,4529 Industrial Parkway,"4529 Industrial Pkwy. Filing basis: Check RUN and POSITIVE: main-form filings PY2022-PY2024 at the exact address under the candidate's own legal name (the matcher's ADDR_ONLY class is an artifact of the leading 'THE' in the staged name), business code 325500 (paint and coating manufacturing) cor…",4529 Industrial Pkwy,false provenance-tail veto reproduced and fixed

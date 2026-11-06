@@ -1,0 +1,150 @@
+{
+  "LF-LA-00167": {
+    "query": {
+      "domain": "https://www.polyprocessing.com",
+      "name": "Poly Processing Company, LLC",
+      "street": "2201 Old Sterlington Road",
+      "city": "Monroe",
+      "state": "LA",
+      "zip": "71210"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007432",
+            "name": "Poly Processing Company, LLC",
+            "city": "",
+            "state": "",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_US.csv",
+            "match": "domain exact: polyprocessing.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-007432",
+            "name": "Poly Processing Company, LLC",
+            "city": "",
+            "state": "",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_US.csv",
+            "match": "name key 'poly processing' = legal_name 'Poly Processing Company, LLC'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012503",
+            "name": "Poly Processing Company, LLC - Monroe",
+            "org_id": "ORG-007432",
+            "city": "Monroe",
+            "state": "LA",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_LA.csv",
+            "street": "2201 Old Sterlington Road",
+            "operator": "Poly Processing Company, LLC",
+            "match": "street key '2201 old sterlington rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-LA-00427": {
+    "query": {
+      "domain": "https://www.plastipak.com/",
+      "name": "Plastipak Packaging Inc.",
+      "street": "4101 Pardue Rd",
+      "city": "Pineville",
+      "state": "LA",
+      "zip": "71360"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001033",
+            "name": "Plastipak Packaging, Inc.",
+            "city": "Medina",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: plastipak.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001033",
+            "name": "Plastipak Packaging, Inc.",
+            "city": "Medina",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'plastipak packaging' = legal_name 'Plastipak Packaging, Inc.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012511",
+            "name": "Plastipak Packaging, Inc. - Pineville",
+            "org_id": "ORG-001033",
+            "city": "Pineville",
+            "state": "LA",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_LA.csv",
+            "street": "4101 Pardue Rd",
+            "operator": "Plastipak Packaging, Inc.",
+            "match": "street key '4101 pardue rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+}

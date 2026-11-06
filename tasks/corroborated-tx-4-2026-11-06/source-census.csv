@@ -1,0 +1,5 @@
+cluster_id,site_id,source_id,address_code_result,company_name,description,tier_assessment
+LF-TX-01218,SITE-015601,1338257,PASS,J  M PLASTICS INC,PLASTICS PLUMBING FIXTURE MFG.,"C provisional, not current-operation verification"
+LF-TX-01497,SITE-015602,272005,PASS,Prime Industries,"Bottles, plastics, manufacturing","C provisional, not current-operation verification"
+LF-TX-01548,SITE-015603,541534,PASS,"Ken Ross, Inc.","Utility containers (e.g., baskets, bins, boxes, buckets, dishpans, pails), plastics (except foam), manufacturing","C provisional, not current-operation verification"
+LF-TX-01030,SITE-015600,1000453,PASS,Advanced Drainage Systems,Plastic Pipe Manufacturing,"C provisional, not current-operation verification"

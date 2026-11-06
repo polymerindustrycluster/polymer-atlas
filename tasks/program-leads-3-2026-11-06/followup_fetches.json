@@ -1,0 +1,278 @@
+[
+  {
+    "lead_ids": [
+      "L13B-009"
+    ],
+    "url": "https://www.davistech.edu/programs/composites",
+    "final_url": "https://www.davistech.edu/programs/composites",
+    "http_status": "000",
+    "curl_rc": 6,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache_key": "73d64e8958e81cee"
+  },
+  {
+    "lead_ids": [
+      "L13B-021"
+    ],
+    "url": "https://www.northwoodtech.edu/manufacturing/",
+    "final_url": "https://www.northwoodtech.edu/manufacturing/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5421,
+    "sha256": "8854d41a15aa80858b1c7f056024c021d5fabe1f90ce67a1410c986c7e34e4cd",
+    "cache_key": "6fa85c40bd623715"
+  },
+  {
+    "lead_ids": [
+      "L13B-022"
+    ],
+    "url": "https://www.otech.edu/find-your-program/",
+    "final_url": "https://www.otech.edu/find-your-program/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 937178,
+    "sha256": "16a27bb83c0d3c5afac1037c5f39155a6ac506252db7ce13f559bfb214d21bdd",
+    "cache_key": "942c0c8bbb37dc29"
+  },
+  {
+    "lead_ids": [
+      "L13B-029"
+    ],
+    "url": "https://www.rubber.org/self-paced-training/",
+    "final_url": "https://www.rubber.org/self-paced-training/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 4545,
+    "sha256": "5445e05fe9f8adda457e6941e5d1bcbd67d4e4d0e8bcf4ea229066abe51fbebf",
+    "cache_key": "86663422a8562b1b"
+  },
+  {
+    "lead_ids": [
+      "L13B-043"
+    ],
+    "url": "https://sce-register.uwm.edu/public/category/courseCategoryCertificateProfile.do?certificateId=1044130&method=load&selectedProgramAreaId=1030321&selectedProgramStreamId=1030346",
+    "final_url": "https://sce-register.uwm.edu/public/category/courseCategoryCertificateProfile.do?certificateId=1044130&method=load&selectedProgramAreaId=1030321&selectedProgramStreamId=1030346",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 82941,
+    "sha256": "24ec5d6ede5c6f547f477f985e465ec93b9f6f1205b69ae3116a35ea5fd14968",
+    "cache_key": "d8d5943418b8647b"
+  },
+  {
+    "lead_ids": [
+      "L13B-041"
+    ],
+    "url": "https://www.uml.edu/engineering/plastics/",
+    "final_url": "https://www.uml.edu/engineering/plastics/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 34922,
+    "sha256": "d21527b7e53a98eb4bd5225a54db4ec26b670f7820a8655badf2e9dc23c262b3",
+    "cache_key": "6d4332d6a02d6178"
+  },
+  {
+    "lead_ids": [
+      "L13B-091"
+    ],
+    "url": "https://www.iyrs.edu/programs-of-study/programs-of-study-advanced-manufacturing-programs",
+    "final_url": "https://www.iyrs.edu/programs-of-study/programs-of-study-advanced-manufacturing-programs",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 55652,
+    "sha256": "35a06d749845c3862f10eafb63c42fd788d839fd04ddca28a605080e35433eaf",
+    "cache_key": "eaae3c1148b3d1a3"
+  },
+  {
+    "lead_ids": [
+      "L13B-023"
+    ],
+    "url": "https://www.olympic.edu/",
+    "final_url": "https://www.olympic.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 146522,
+    "sha256": "dcc3e18d43f8d030970ba9d675a61d099ccdd2d06729efac026f29690a212252",
+    "cache_key": "946ea21394041167"
+  },
+  {
+    "lead_ids": [
+      "L13B-026"
+    ],
+    "url": "https://pencol.edu/",
+    "final_url": "https://pencol.edu/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 5369,
+    "sha256": "f885a758173e9f6098b3b6b756e63b557d35200aea477bdbd472b35977956cac",
+    "cache_key": "10e1d4cb5cef074d"
+  },
+  {
+    "lead_ids": [
+      "L13B-035"
+    ],
+    "url": "https://scc.spokane.edu/",
+    "final_url": "https://scc.spokane.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 55976,
+    "sha256": "f57065d3ef0062967826ab8266a38e1c526ee803703a1d385788b44c0b933cba",
+    "cache_key": "993010da030b192f"
+  },
+  {
+    "lead_ids": [
+      "L13B-039"
+    ],
+    "url": "https://www.apprenticeship.gov/apprenticeship-occupations",
+    "final_url": "https://www.apprenticeship.gov/apprenticeship-occupations",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 133146,
+    "sha256": "947ea1cbf6abf654a7d8cd24abe9c077bf979aa9677c57ed3f8ef6f1d2eb65a8",
+    "cache_key": "56e9c4e1c44c0801"
+  },
+  {
+    "lead_ids": [
+      "L13B-065"
+    ],
+    "url": "https://www.csuchico.edu/",
+    "final_url": "https://www.csuchico.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 1304703,
+    "sha256": "e892b2a2bb922de47a933718bb40b6c02189e5d430e3e4d1a4e052152272d5b6",
+    "cache_key": "2af83c476ea401a7"
+  },
+  {
+    "lead_ids": [
+      "L13B-084"
+    ],
+    "url": "https://www.eng.famu.fsu.edu/",
+    "final_url": "https://eng.famu.fsu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 73431,
+    "sha256": "f96501822ca38a063ade51a0ac46146feda1dcb2939b0e6780e227ff1efea0eb",
+    "cache_key": "7f98a97f6e6c3701"
+  },
+  {
+    "lead_ids": [
+      "L13B-097"
+    ],
+    "url": "https://www.kettering.edu/",
+    "final_url": "https://www.kettering.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 120632,
+    "sha256": "b035daa08ed0a830d3b7a7d1f3aa0e87282ffe083379ffae5d7320821b6aa0a6",
+    "cache_key": "e3d5aa0b5b3d5828"
+  },
+  {
+    "lead_ids": [
+      "L13B-099"
+    ],
+    "url": "https://www.lamar.edu/",
+    "final_url": "https://www.lamar.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 64677,
+    "sha256": "c722d8351cbffad3777f9f83906b82a8bee7e392789fdfb53de8452805edbb3c",
+    "cache_key": "0c7148f3359ffa59"
+  },
+  {
+    "lead_ids": [
+      "L13B-017"
+    ],
+    "url": "https://www.gsu.edu/",
+    "final_url": "https://www.gsu.edu/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 493162,
+    "sha256": "e039af71d827894a3b0b2d4a2e9d26bd9001c26e3f6ace49033b165424cf8f67",
+    "cache_key": "c6a94e0125467076"
+  },
+  {
+    "lead_ids": [
+      "L13B-051"
+    ],
+    "url": "https://semte.engineering.asu.edu/materials-science-engineering/",
+    "final_url": "https://semte.engineering.asu.edu/materials-science-engineering/",
+    "http_status": "403",
+    "curl_rc": 0,
+    "bytes": 4545,
+    "sha256": "660b9da7252475c0ffbc40ed31fe5c1641b98b446586fe8a54d98cd70146edab",
+    "cache_key": "581753d0f20c8c46"
+  },
+  {
+    "lead_ids": [
+      "L13B-055"
+    ],
+    "url": "https://eng.auburn.edu/program/materials-engineering-undergraduate",
+    "final_url": "https://eng.auburn.edu/program/materials-engineering-undergraduate",
+    "http_status": "404",
+    "curl_rc": 0,
+    "bytes": 196,
+    "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+    "cache_key": "62d195cc39331299"
+  },
+  {
+    "lead_ids": [
+      "L13B-063"
+    ],
+    "url": "https://catalog.calpoly.edu/collegesandprograms/collegeofengineering/materialsengineering/bsmaterialsengineering/",
+    "final_url": "https://catalog.calpoly.edu/collegesandprograms/collegeofengineering/materialsengineering/bsmaterialsengineering/",
+    "http_status": "404",
+    "curl_rc": 0,
+    "bytes": 71945,
+    "sha256": "55a2bd0d3b5c8b0c432e8cdf4fb9c4928ab10fbdad613d2c7dc3604e5c403c7f",
+    "cache_key": "d1a8b2fcc4302e64"
+  },
+  {
+    "lead_ids": [
+      "L13B-077"
+    ],
+    "url": "https://engineering.dartmouth.edu/undergraduate",
+    "final_url": "https://engineering.dartmouth.edu/undergraduate",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 85791,
+    "sha256": "51082227bb99b2378dcefd417f132b03feea855892fdcec85dd3981ee011235f",
+    "cache_key": "654b2a0c5c3e19f8"
+  },
+  {
+    "lead_ids": [
+      "L13B-078"
+    ],
+    "url": "https://engineering.dartmouth.edu/graduate/meng",
+    "final_url": "https://engineering.dartmouth.edu/graduate/meng",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 121801,
+    "sha256": "0f7feb74b9c2d57681a7d98dff597b6d57df41d1bebae6e69a0f0e4a1177d8bf",
+    "cache_key": "6b44be97ccc1aa4f"
+  },
+  {
+    "lead_ids": [
+      "L13B-092"
+    ],
+    "url": "https://www.iit.edu/academics/programs/materials-science-and-engineering-bs",
+    "final_url": "https://www.iit.edu/academics/programs/materials-science-and-engineering-bs",
+    "http_status": "404",
+    "curl_rc": 0,
+    "bytes": 47448,
+    "sha256": "113b6bd6e7930889b8de91bfc6875a42aeb54dbd084c29840ecdfc1ce712ac2b",
+    "cache_key": "7adafb2ae91c2a08"
+  },
+  {
+    "lead_ids": [
+      "L13B-094"
+    ],
+    "url": "https://catalog.iastate.edu/collegeofengineering/materialsengineering/",
+    "final_url": "https://catalog.iastate.edu/collegeofengineering/materialsengineering/",
+    "http_status": "200",
+    "curl_rc": 0,
+    "bytes": 54397,
+    "sha256": "3d632a09d403e83535d8e293fa75067a30baf5f7c50cb9b0961814e3fd94070f",
+    "cache_key": "15e2e8bc2bee9b96"
+  }
+]
