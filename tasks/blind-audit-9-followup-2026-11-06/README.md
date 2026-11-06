@@ -95,7 +95,13 @@ thislargerbudgetcheckdoesnotsettle14unknownfactsorconfirmthemabsent.
 Published corrected follow-up head df37fef, DRAFT PR218. Controller14:00 clerk-pool ruling
 (any family clerk, prefer shortest queue) supersedes the older06:25 fixed-pair route.
 Queried live queues: Codex5thr_pf5j2nisg7=0, Grok5thr_r5auppm5ps=2 and shortest Grok;
-queued one deep adversarial request to each with brief.md. Both approvals pending;
+queued one deep adversarial request to each with brief.md. Codex approval recorded below; Grok approval pending;
 no Done/ready/merge claim. Existing PR185finding rereview stays with refutingCodex3;
 other priorPRs have independent gates. This dispatch receipt changes documentation only;
 all16 source verdicts, supplemental hashes, statistics and originalreportprefix unchanged.
+
+## Codex approval receipt
+
+Codex/OpenAI clerk5 (thr_pf5j2nisg7) APPROVE 3afd790a498255d1cbc7485ab150b84d01067e12, zero findings. Independently reproduced exact16followup/original34unchanged/same50sites/110frame/8strata, immutable locks/report-prefix hash, Wilson intervals and design weights34A1F1C14U and69.088/1.616/3.273/26.023%. Rejected missing/duplicate/post-lock/fabricated-quote controls; reconciled91verifier+5parent requests and conservative per-site charges≤10. Fresh curl of all22cited URLs returned200 and all32quotations matched, including regenerated/visually checked GAFp25. Pella and Cork limited agreements supported; all14hold rationales reviewed without false absence or automatic postal errors.
+
+Validator0, row-loss, rawcheck/check_supplement/statistics/report/namedcheck/diffcheck pass and deterministic reruns preserve committed outputs. Zero data/scripts/schema/federal-frame edits. No independent no-access proof or fullscripts pytest;14facts remain unresolved. Report: controller reviews/218-clerk-codex-5.md. Grok review remains pending, and PR200 must merge before218. This documentation-only receipt changes no frozen verdict, source, rate, report prefix or check code.
