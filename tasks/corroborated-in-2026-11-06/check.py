@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Census the packet and blind-shuffle its 23 creates against banked ITA rows."""
+"""Census the packet and blind-shuffle its 21 creates against banked ITA rows."""
 import csv,hashlib,json,random,subprocess,sys,tempfile,shutil
 from pathlib import Path
 from collections import Counter
 H=Path(__file__).resolve().parent;R=H.parents[1];sys.path.insert(0,str(R/'scripts'))
 from atlas import load_tables,dedupe,name_key
 from build_qcew_denominators import atlas_numerators
-from build import read, clean_street, ring_for_naics
+from build import read, clean_street, ring_for_naics, operator_index, operator_candidates
 vs=read(H/'verdicts.csv');cs=read(H/'input.csv');alloc=read(H/'allocations.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==145
 assert {r['cluster_id'] for r in cs}=={r['cluster_id'] for r in vs}
-assert len(alloc)==23 and len({r['site_id'] for r in alloc})==23
+assert len(alloc)==21 and len({r['site_id'] for r in alloc})==21
 T=load_tables(R/'data');ita={r['establishment_id']:r for r in read(R/'tasks/osha-ita-2026-11-01/establishments.csv')}
 sites={r['site_id']:r for r in T['sites'].rows};orgs={r['org_id']:r for r in T['organizations'].rows}
 # Known-answer calibration includes the two registrant-name failures that motivated B-ALIAS.
@@ -38,12 +38,31 @@ for fn in ['sites_IN.csv','evidence_sites_IN.csv']:
  key=list(old[0])[0];new={r[key]:r for r in read(R/'data'/fn)}
  assert all(new.get(r[key])==r for r in old)
 owned=[r for r in T['evidence'].rows if 205000<=int(r['evidence_id'][4:])<=205160]
-assert len(owned)==161 and all(r['source_class']=='government_filing' for r in owned)
+assert len(owned)==147 and all(r['source_class']=='government_filing' for r in owned)
 assert len(read(H/'blind_recheck.csv'))==20
 for code,expected in [('326199','1'),('325510','2'),('325520','2'),('325991','2'),('325212','2')]:assert ring_for_naics(code)==expected
 for code in ['325211','325998','325999']:
  try:ring_for_naics(code);raise AssertionError('unresolved ring admitted')
  except ValueError:pass
+retired_sites={'SITE-016505','SITE-016509'}
+retired_evidence={f'EVD-{i:06d}' for i in list(range(205035,205042))+list(range(205063,205070))}
+assert not(retired_sites & set(sites)) and not(retired_evidence & {r['evidence_id'] for r in T['evidence'].rows})
+cs_by={r['cluster_id']:r for r in cs};reservations={r['cluster_id']:r for r in read(H/'id_reservations.csv')};index=operator_index(orgs)
+for cid,expected in [('LF-IN-00238',{'ORG-001435','ORG-003687'}),('LF-IN-00085',{'ORG-000033','ORG-000735'}),('LF-IN-00361',{'ORG-001403'}),('LF-IN-00135',{'ORG-000105'})]:
+ f=ita[reservations[cid]['establishment_id']]
+ assert operator_candidates(cs_by[cid],f,index,orgs)==expected
+for cid,oid in [('LF-IN-00238','ORG-003687'),('LF-IN-00085','ORG-000033')]:
+ assert next(v for v in vs if v['cluster_id']==cid)['verdict']=='STILL_UNCERTAIN'
+ with tempfile.TemporaryDirectory(dir=H.parent) as packet_dir,tempfile.TemporaryDirectory() as data_dir:
+  packet=Path(packet_dir);shutil.copytree(H,packet,dirs_exist_ok=True);verdicts=read(packet/'verdicts.csv')
+  for v in verdicts:
+   if v['cluster_id']==cid:v.update(verdict='VERIFIED',held_org_id=oid)
+  with (packet/'verdicts.csv').open('w') as f:
+   w=csv.DictWriter(f,fieldnames=list(verdicts[0]),lineterminator='\n');w.writeheader();w.writerows(verdicts)
+  data=Path(data_dir)/'data';shutil.copytree(R/'data',data);before_bad={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+  bad=subprocess.run([sys.executable,str(packet/'build.py'),'--data-dir',str(data),'--apply'],capture_output=True)
+  assert bad.returncode!=0 and b'HOLD: competing held operators' in bad.stderr
+  assert before_bad=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
 # Byte idempotence, and a mutation: an occupied lane ID must fail without modifying any file.
 files=[R/'data'/f for f in ['sites_IN.csv','evidence_sites_IN.csv','organizations_IN.csv','evidence_organizations_IN.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files]
@@ -73,5 +92,5 @@ old=sum(r.get('country','US') in ('','US') and r['naics_primary'].startswith('32
 q=next(r for r in read(R/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']=='18000' and r['year']=='2023' and r['industry_code']=='326')
 den=float(q['annual_avg_estabs'])
 assert now==old+sum(sites[r["site_id"]]["naics_primary"].startswith("326") for r in alloc)
-result=dict(worked_IN_clusters=145,sites_C=23,blind_recheck_passes=20,known_answer_passes=3,idempotence='PASS',conflicting_ID_mutation='PASS (fails before writes)',NAICS326_strict_sites_before=old,NAICS326_strict_sites_after=now,QCEW2023_private_establishments=den,strict_share_before=old/den,strict_share_after=now/den)
+result=dict(worked_IN_clusters=145,sites_C=21,blind_recheck_passes=20,known_answer_passes=3,operator_guard_calibration=4,idempotence='PASS',conflicting_ID_mutation='PASS (fails before writes)',NAICS326_strict_sites_before=old,NAICS326_strict_sites_after=now,QCEW2023_private_establishments=den,strict_share_before=old/den,strict_share_after=now/den)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

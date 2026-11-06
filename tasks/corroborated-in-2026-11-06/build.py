@@ -6,7 +6,7 @@ from pathlib import Path
 H=Path(__file__).resolve().parent; ROOT=H.parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from shard_io import append_sorted
-from atlas import street_key
+from atlas import street_key, name_key, successor_chain
 DATE='2026-11-06'; BY='codex atlas-L7-corr-fl-ga'
 SOURCE='https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv'
 def read(p):
@@ -17,6 +17,23 @@ def ring_for_naics(code):
  if code.startswith('326'):return '1'
  if code in {'325212','325510','325520','325991'}:return '2'
  raise ValueError('HOLD: explicit site-scope/ring witness required; no blanket 325 fallback (SCHEMA1)')
+def operator_index(orgs):
+ index=defaultdict(set)
+ for oid,o in orgs.items():
+  for n in [o['legal_name']]+o['trade_names'].split(';'):
+   key=name_key(n.strip().removesuffix(' (federal registrant name)'))
+   if key:index[key].add(oid)
+ return index
+def operator_candidates(c,f,index,orgs):
+ names=[f['company_name']]+[n for n in [c['best_name']]+c['name_variants'].split('|') if name_key(n)!=name_key(c['city'])]
+ # City-only lead refs are discovery hints; operator matches require specific legal/trade names.
+ ids={oid for n in names for oid in index.get(name_key(n.strip()),set())}
+ by_id={oid:[o] for oid,o in orgs.items()};terminal=set()
+ for oid in ids:
+  chain,end=successor_chain(oid,by_id)
+  if end!='terminal' or oid not in orgs:raise ValueError('HOLD: unresolved successor chain')
+  terminal.add(chain[-1] if chain else oid)
+ return terminal
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');ap.add_argument('--data-dir',type=Path,default=ROOT/'data');a=ap.parse_args();data=a.data_dir
  cs={r['cluster_id']:r for r in read(H/'input.csv')};vs=read(H/'verdicts.csv')
@@ -27,13 +44,15 @@ def main():
  ita={r['establishment_id']:r for r in read(ROOT/'tasks/osha-ita-2026-11-01/establishments.csv')}
  orgs={r['org_id']:r for p in data.glob('organizations_*.csv') for r in read(p)}
  oldsites=[r for p in data.glob('sites_*.csv') for r in read(p)]
+ operators=operator_index(orgs)
  out=defaultdict(list);eid=205000;alloc=[]
  reservations={r['cluster_id']:r for r in read(H/'id_reservations.csv')}
  for idx,v in enumerate(v for v in vs if v['verdict']=='VERIFIED'):
   c=cs[v['cluster_id']];oid=v['held_org_id'];org=orgs[oid];assert org['status']=='active' and not org['successor_org_id']
   fed=[ita[s.strip()[4:]] for s in c['sources_with_ids'].split(';') if s.strip().startswith('ITA:')]
   assert fed and all(r['state']=='IN' for r in fed)
-  f=fed[0];assert (f['company_name'],f['establishment_name'])==(reviewed[f['establishment_id']]['company_name'],reviewed[f['establishment_id']]['establishment_name'])
+  f=fed[0];assert operator_candidates(c,f,operators,orgs)=={oid},('HOLD: competing held operators',c['cluster_id'])
+  assert (f['company_name'],f['establishment_name'])==(reviewed[f['establishment_id']]['company_name'],reviewed[f['establishment_id']]['establishment_name'])
   assert f['schema_2_2_signal']=='P' and f['naics_code'][:3] in ('326','325')
   assert all(r['naics_code']==f['naics_code'] and street_key(r['street'])==street_key(clean_street(f)) for r in fed)
   assert f['street'] and f['city'] and f['zip5']
