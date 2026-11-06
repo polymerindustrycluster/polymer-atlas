@@ -1,77 +1,34 @@
-# D10 federal-program anchors — 2026-11-06
+# D10 federal-program anchors — corrected hold packet
 
-Controller assigns agent/codex/federal-programs, ORG013300–013399 / EVD296000–296999, delegated application under AGENTS §2.7. Reservation recorded on BOARD before work; new branch off main. SPEC.md records acceptance. Branch history is the pre-pass backup; this folder is the packet/pass journal. Only ecosystem.csv and evidence_ecosystem.csv change.
+Controller-assigned branch agent/codex/federal-programs; ORG013300–013399/EVD296000–296999 reservation. Research acceptance in SPEC preceded fetching. The final packet changes no canonical data. Twelve frozen candidate units=0VERIFIED/5DUPLICATE_OF/7STILL_UNCERTAIN. No creates, evidence appends, tier/status/alias/registry/program/site/derived-field changes. The five duplicates terminate at held MAGNET159/IACMI2099/AmericaMakes1217/REMADE2100/NEOhioSustainablePolymersTechHub2825, not new records.
 
-First user: PIC staff locating manufacturing/federal support anchors. Non-use review2026-12-06; no use or current funding commitment claimed.
+## LIFT withdrawal and immutable archive
 
-## Census and additions
+The unmerged LIFT proposal ORG013300 and EVD296000–296005 are withdrawn from canonical application. All seven IDs are permanently retired in retired_ids.csv. Main was checked to contain none of them; no published record or evidence observation was deleted. Canonical data were restored exactly from current main889a60e2, and the hold-only builder makes no writes.
 
-Unit/filter:12 selected institution/program/network candidates from the controller's named targets plus NEPIRC, not companies or an inventory of every regional MEP affiliate. 1VERIFIED,5DUPLICATE_OF,6STILL_UNCERTAIN; zeroREJECT. inputs.csv/verdicts.csv reconcile exactly by candidate_id.
+withdrawn/creates_ecosystem.csv and withdrawn/evidence_rows.csv preserve the exact1342f2d proposal, including the original five observations and the sixth relevance-assessment witness. check.py compares both files byte-for-byte with that immutable commit; withdrawn/manifest.json records hashes. These are historical research proposals, not current canonical evidence or a permitted create. Current root creates_ecosystem.csv/evidence_rows.csv contain only their headers. No observation was rewritten to turn incidental capability into inclusion.
 
-| Candidate family | Candidate units | New ecosystem rows | Held duplicates | Holds |
-|---|---:|---:|---:|---:|
-| MEP institutions/networks/units |6|0|1|5|
-| Manufacturing USA institutes |5|1|3|1|
-| Sustainable Polymers Tech Hub |1|0|1|0|
-| Total |12|1|5|6|
+Codex4 initially accepted the named-service reading but REFUTED the blank mandatory pic_relevance. That P2 was corrected at1342f2d with controlled potential_member, explicitly a researcher assessment and not PIC membership/partnership/outreach, plus immutable scope observation296005. Blank new-record relevance failed actual --apply before writes. Grok4 accepted that correction but REFUTED named-polymer-service inclusion. The disagreement invokes AGENTS2.9: lanes do not self-rule scope. No generalist flip or formal PIC relationship is used to bypass the hold.
 
-Canonical additions:1 tier-C ecosystem institution, LIFT ORG-013300 (Detroit, Michigan, Wayne), and6 append-only ecosystem evidence rows EVD-296000–296005. New A/B/U rows0; existing canonical row edits0. No tier/status change, organization-shard/site/program/registry/derived-column change or inclusion_log entry. New ecosystem subtype count: nonprofit_rd_consortium1 ecosystem row.
+## Owner battery items
 
-Duplicates terminate at held MAGNET ORG000159; IACMI ORG002099; America Makes ORG001217; REMADE ORG002100; Sustainable Polymers Tech Hub ORG002825. No source/tier/location/status/funding fact is applied to those rows. Both EDA/Ohio hub designations already ride one held Tech Hub record; its existing Chamber parent is preserved.
-
-## LIFT scope and provenance
-
-The own homepage states LIFT's ALMMII operator and nonprofit public-private identity. Its own resources page offers members access to named high-bay resources and collaboration with LIFT experts. It explicitly names Plasmatreat Cell and Hot Isostatic Processing, treatment of plastics, and processing of polymer powders. These concrete named member services support §1/§4.6's named-service test; a generic advanced-manufacturing mission alone would not suffice. polymer_program_name records both published service names, with the own resources URL. No polymer-exclusive mission or unobserved degree/project is asserted.
-
-Typed scope observations cover nonprofit_rd_consortium, polymer_program=true, generalist=false (research institute with named material services, not a geographic generalist EDO), facilities access/technical assistance, national geography and the description. The homepage's national-institute statement supports geography. The own facilities page labels Detroit headquarters and publishes1400 Rosa Parks Boulevard, Detroit MI48216. County Wayne comes from a Census address-geography match: exact matched address/one county/GEOID26163. Only street/city/state/county text is used; no coordinates are inspected, copied or used for verification tier. Source_class government_filing uses §4.13's “government record of fact” branch, not a corporate-filing assertion.
-
-All6 observations use supports_C, consistent with AGENTS §3 new-create C/U. Statusunknown: no liveness, current federal grant amount or funding commitment is asserted. Evidence existence/address/scope cover every populated substantive field; observation dates, author and tier are researcher metadata.
-
-Dedupe: house atlas.py across all organization shards/ecosystem by domain/name/street/trade names, including LIFT, ALMMII, full American Lightweight Materials Manufacturing Innovation Institute, and former Lightweight Innovations for Tomorrow. No hits before creation. Builder reuses atlas.load_tables/dedupe on the actual data tree and preflights global ORG/EVD namespaces before writing. shard-of --hq-state MI was run (shard-reference.json); §4.6 Ring5 institutions remain in unsharded ecosystem.csv, with evidence_ecosystem.csv, rather than organization state shards.
-
-## Owner battery and holds
-
-Controller explicitly agreed the first two hold families and will carry them into the battery. No scope/grain/vocabulary ruling is self-applied.
-
-| Item | Governing rule and recommendation | Settling decision |
+| Item | Governing question, evidence and recommendation | Settling fact |
 |---|---|---|
-| B-D10-GEN: out-of-state generalist MEPs | §1 Ring5 item2 admits in-scope generalist EDO/workforce entities; §4.6 says polymer_program=false only for NE Ohio generalists. Hold PA/MI/IN generalist-only creates. | Owner explicitly settles geographic exception, or own named polymer service is verified. Legacy false/state rows are not authority for a new exception. |
-| B-D10-GRAIN: Ohio/institution-hosted MEP units | §4.6 ecosystem grain excludes program; §4.11 governs program rows. Ohio MEP is a program-grain candidate; Purdue MEP is a named unit of held Purdue ORG004662. Ohio own route failed, so its reading remains a lead. Recommend host annotation or lawful program after grain/type/host evidence is settled. | Owner names permitted representation. No separate institution, invented office grain or unallocated PROG ID here. |
-| B-D10-GEO: NEPIRC | Own online training explicitly names Plastics Processing; own contact places office at Hanover Township PA. Its multi-county PA service lacks an unambiguous §4.6 geography_served token (site_local/county/ne_ohio/ohio/national/international). | Recommend dated US-state values with narrower service region stated, or explicitly define county for multi-county service. Do not copy legacy pennsylvania or invent national reach. |
+| B-D10-LIFT | SCHEMA1/4.6 requires a named polymer/plastics/rubber program or service. The own resources page names Plasmatreat Cell and Hot Isostatic Processing; descriptions list plastics/polymer alongside other material classes. Its member-access sentence offers exclusive Detroit equipment use and collaboration with experts (exact original text archived in EVD296002). **Codex4 reading:** the named resources, explicit polymer capability and member access together establish a named service. **Grok4 reading:** generic equipment/process definitions with incidental materials lists do not establish a polymer-specific offering; the access sentence is not polymer-specific. **Recommendation: HOLD**, pending explicit own polymer-specific named service evidence or an owner ruling on that boundary. Neither reading is self-applied as an owner decision. | Owner settles whether named equipment plus a materials list and general member access meets the named-polymer-service test; alternatively an explicit own polymer-focused program/service page. Any future create needs fresh unused IDs. |
+| B-D10-GEN | Out-of-state generalist MEPs: SCHEMA1 admission and4.6's false-only-for-NEOhio wording need an owner geographic reading. | Dated exception or own named polymer service. Legacy records are not authority. |
+| B-D10-GRAIN | Ohio MEP apparent program grain; Purdue MEP is a named unit of held Purdue. No ecosystem institution clone or improvised office/program row. | Owner specifies lawful representation and verified host/program evidence. |
+| B-D10-GEO | NEPIRC own Plastics Processing pathway exists, but multi-county PA service has no unambiguous current geography_served token. | Owner geography reading or dated controlled vocabulary revision. |
 
-Six STILL_UNCERTAIN candidates:
-- Ohio MEP: lawful program/host representation and reachable own source.
-- Pennsylvania MEP: generalist geographic ruling or own named polymer offer.
-- Michigan Manufacturing Technology Center: same ruling or material-specific pathway; generic additive manufacturing is not assumed polymer training.
-- Purdue MEP: host/program grain and generalist eligibility; no clone of Purdue institution.
-- NIIMBL: six www/non-www/about/contact/project/fallback routes returned curl56/no body. Need accessible own identity/address and its named single-use-plastics project. The indexed project is a discovery lead only, with no excerpt integrated.
-- NEPIRC: named Plastics Processing pathway verified on own page; B-D10-GEO remains.
+The controller previously agreed GEN/GRAIN holds; LIFT is a new battery item from the contradictory reviews. Resources boundary source:https://lift.technology/resources/; identity/facility sources:https://lift.technology/ and https://lift.technology/facilities/. Census address-county proof remains historical research in the archive, with no coordinates copied into records.
 
-## Availability and limits
-
-source-fetches.csv logs all selected URLs/roles. Admitted yield4/4 URLs (3own LIFT pages + Census), producing6/6 observations. Primary discovery stayed within~6 distinct routes per organization; validation re-fetches repeat admitted URLs. A LIFT2025 equipment poster was fetched as a lead only; current HTML is the admitted service witness.
-
-Failed routes: NIIMBL6, Ohio development MEP route, Tech Hub homepage, America Makes homepage and REMADE homepage, all curl56/no body here. Route availability is never absence/closure; held identities still resolve and no status changes follow. MAGNET/IACMI, PA MEP, Michigan Center, Purdue MEP, NEPIRC and all admitted LIFT pages were reachable. Estate lookup was partial on this Mac (missing Windows Documents catalogues), not an absence finding.
-
-No regional completeness claim: other Ohio operators and Pennsylvania affiliates were not individually inventoried. Raw pages/PDF/JSON stay uncommitted under build/. No personal contacts, CRM, private or licensed data are copied into records or packet quotes.
+Seven uncertain candidates:OhioMEP,PA-MEP,MichiganManufacturingTechnologyCenter,PurdueMEP,NIIMBL,NEPIRC,LIFT. NIIMBL's six failed routes and other route failures are availability signals, never absence/closure. source-fetches.csv roles describe the original research stage; none now authorizes canonical creation. No complete regional/affiliate inventory is claimed.
 
 ## Named checks and review
 
-- Three hand-known held identities: MAGNET→ORG000159, IACMI→ORG002099, REMADE→ORG002100. Reused house dedupe finds3/3 before application. No new fuzzy matcher.
-- House word-sequence matcher reused from equipment wave1/rawcheck conventions. Operator, Plasmatreat and HIP source words manually confirmed first. build.py --raw-check:6/6 observations/4of4 URLs, no admitted-source skips; fabricated-program negative rejected. Census parser checks exact matched address and Wayne/GEOID26163.
-- check.py:12/12 census; exact1Cecosystem/6EVD main delta; all main rows unchanged; all-CSV replay byte-identical. Cross-shard ORG/EVD ID collisions each refuse before writes. Removing both address witnesses leaves4 valid rows and fails typed evidence preflight; fabricated quote fails raw check with all CSVs unchanged.
-- validate.py: zero errors; full validate.txt. No scripts/ changes, so full scripts pytest was not repeated for this data packet.
+Run python3 tasks/federal-programs-2026-11-06/build.py --raw-check --apply, then check.py. The builder reconciles12candidate IDs/5heldduplicate chains/7holds, rechecks three known house-dedupe answers (MAGNET/IACMI/REMADE), requires both canonical proposal files empty and all seven retired IDs absent from canonical data. It deliberately performs no source fetch for zero admitted evidence rows; prior6/6raw observations over4sources remain archived, not inclusion proof.
 
-Codex/Grok completion refutes pending; not ready for merge. Review should challenge the named-service scope, ALMMII dedupe/grain, county and evidence-backed fields/holds. No current funding/liveness check, individual inventory of every regional MEP, hosted deployment or physical facility inspection was performed.
+Named check proves zero canonical delta versus integration main, exact immutable1create/6EVD archive, all-CSV no-op replay, and actual --apply refusal when either the archived create or archived evidence is injected back into the root packet. Every canonical byte stays unchanged. Validator0/native row-loss guardPASS. No scripts/ changes, so full scripts pytest is not repeated.
 
-Initial integration journal (before the relevance correction): merged main80bb5140e0f1598d85fe30b28777def59c9b83c6; restored exact main copies of both owned canonical files and replayed the builder. integration.json proves all prior rows unchanged and exactly1ecosystem/5EVD added. The scope check was rerun after the merge commit so HEAD includes the new main base; post-merge raw5/5, all failure/replay checks and validator0 pass. No hand CSV conflict merge.
+Corrected hold-packet Codex4/Grok4 review remains required. Their earlier REFUTEs are not approvals of this disposition. Reports206-clerk-codex-4.md and206-clerk-grok-4.md are in controller review storage. Controller owns merge/status; no child Done/merge.
 
-## Codex refute accepted: mandatory PIC relevance
-
-Codex4/OpenAI REFUTEee004fd identified one P2: pic_relevance was blank despite SCHEMA4.4/4.6/4.7 MUST and4.3's retained relevance vocabulary. Accepted. ORG013300 now uses existing controlled potential_member as a researcher assessment of published polymer-capable R&D resources. It asserts no current membership, existing PIC partnership, outreach, or entitlement to membership. The PIC membership flag remains blank. No new vocabulary or owner ruling is inferred.
-
-Append-only EVD296005(scope,own_site,supports_C) explicitly ties that assessment to the LIFT resources page's polymer-powder processing disclosure. All original5evidence observations are byte-for-field unchanged; the proposed institution differs from ee004fd only in pic_relevance. Corrected canonical delta1Cecosystem+6EVD; sourceyield6/6observations/4of4URLs. Twelve candidate outcomes and six holds are unchanged.
-
-Builder refuses a blank relevance value, an unsupported alternate relevance assertion and a missing relevance witness before any write. Permanent negative removes only relevance from the new create in a copied packet, removes the unmerged create/evidence from disposable data, then calls actual build.main --apply: exact missing-relevance assertion, zero CSV writes. Existing typed-address/globalORG/globalEVD/fakequote/replay controls remain passing. Source quotes freshly rechecked6/6.
-
-Integrated current main9ea45cdd via canonicaldata restore and unchanged packet replay; no CSV hand merge. check.py all-main-row preservation/exact7rowdelta/allCSVreplay/negatives, validator0 and native row-loss PASS. Codex4 targeted re-review and corrected Grok full review remain required. Physical/current-funding/liveness and held-route recovery were not expanded.
+First user:PICstaffassessingmanufacturing-supportanchors;non-usereview2026-12-06. No current federal funding/liveness/physical facility audit, exhaustive regional inventory, held-route recovery or hosted deployment was performed. No personal contacts/CRM/private/licensed data entered the packet.

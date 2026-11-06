@@ -1,1 +1,2 @@
-PASS census12/12; known held3/3; proposed1 C ecosystem+5 evidence rows; pending 6 rows
+No admitted evidence rows; no source fetch. Prior raw6/6 research archived, not inclusion evidence.
+PASS census12=0VERIFIED/5DUPLICATE/7STILL_UNCERTAIN; knownheld3/3; 7unmergedIDs retired; canonical changes0
