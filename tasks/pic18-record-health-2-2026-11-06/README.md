@@ -30,3 +30,5 @@ Known answers: existing first-pass HTML extractor and token matcher reused; Nove
 Reviews: pending assigned Codex and Grok clerks under controller BOARD 05:55 authorization (supersedes council-only route). Draft until both families approve. PR is stacked on #133; controller must merge #133 first, then refresh main data and rerun this builder if needed. Only the controller merges or changes task status.
 
 Negative control: removed one packet evidence row temporarily, ran check.py, observed nonzero failure, restored packet. Replay hashes of all data CSVs unchanged.
+
+Refresh: merged first PR25c81b2 (which merges main9489b60), took its data wholesale, replayed this builder. Exact-delta checker baseline now25c81b2. First-pass check.py intentionally applies to first-pass tree; continuation checker covers this tree. Refreshed health448/632 and validate0 pass. Controller authorized main's LF federal-frame normalization; net diff versus main zero. Original inherited bytes remain backed up. No evidence values changed during refresh.
