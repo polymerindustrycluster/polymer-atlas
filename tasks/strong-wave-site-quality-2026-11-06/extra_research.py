@@ -8,4 +8,4 @@ if __name__=='__main__':
  urls=json.loads(Path(sys.argv[1]).read_text());assert len(urls)==len(set(urls));rs=[];c=Corpus(CACHE)
  with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
   for u,r in zip(urls,pool.map(c.fetch,urls)):
-   rs.append(r);(H/'extra_discovery.json').write_text(json.dumps(rs,indent=2)+'\n');print(r['status'],u,flush=True)
+   rs.append(r);(H/('second_extra_discovery.json' if 'second_' in sys.argv[1] else 'extra_discovery.json')).write_text(json.dumps(rs,indent=2)+'\n');print(r['status'],u,flush=True)

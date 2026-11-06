@@ -35,7 +35,10 @@
     }
   },
   "frame_sites": 220,
-  "input_sites": 161,
+  "input_sites": 40,
   "echo_rows": 132,
-  "corpus_pages": 73
+  "corpus_pages": 73,
+  "original_eligible_sites": 161,
+  "unworked_sites": 121,
+  "cap_authority": "Controller conservation instruction: first40 of already frozen frame only; no continuation batch"
 }

@@ -1,0 +1,41 @@
+site_id,cluster_id,verdict,reason
+SITE-011001,LF-MN-00164,STILL_UNCERTAIN,Explicit dated linkage between filed pinta elements and held pinta acoustic legal operator is required.
+SITE-011002,LF-MN-00076,STILL_UNCERTAIN,"A current plant-specific manufacturing witness at New Hope is required; reviewed history identifies HQ/home and historical expansion, not an unambiguous present local process."
+SITE-011003,LF-MN-00113,STILL_UNCERTAIN,"Plant/process raw witness passed, but address-exact Census county corroboration was absent/ambiguous; held county must-have cannot be raised to B. Resolve physical address/county; no address, county or status changes applied."
+SITE-011004,LF-MN-00045,STILL_UNCERTAIN,Settle Ceramic Industrial Coatings versus held Ceram-Traz operator naming with explicit legal/alias linkage.
+SITE-011005,LF-MN-00303,STILL_UNCERTAIN,Plant-specific Plymouth production witness required; generic silicone-overmolding article and footer address do not settle site function.
+SITE-011006,LF-MN-00253,STILL_UNCERTAIN,"Raw own-site plant witness required; facility route is ROBOTS_BLOCKED, an availability hold."
+SITE-011007,LF-MN-00246,STILL_UNCERTAIN,Raw witness tying Anoka physical site to the manufacturing activity is required; overview lacks Anoka and contact page alone is an address.
+SITE-011008,LF-MN-00192,STILL_UNCERTAIN,Resolve the two ITA codes/operator variants and suite discrepancy before all must-have claims can support B.
+SITE-011009,LF-MN-00309,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011010,LF-MN-00283,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011011,LF-MN-00083,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011012,LF-MN-00340,STILL_UNCERTAIN,Resolve filed machinery NAICS333249 versus own thermoplastic-molding activity and original legal-entity caveat; no code/ring self-ruling.
+SITE-011014,LF-MN-00351,STILL_UNCERTAIN,Resolve filed Velosity versus Teamvantage legal operator linkage and local manufacturing scope rather than a multi-site footer.
+SITE-011016,LF-MN-00140,STILL_UNCERTAIN,Raw plant-specific St Paul manufacturing witness required; own corporate-book PDF was unavailable through the chosen route.
+SITE-011025,LF-MN-00124,STILL_UNCERTAIN,Explicit operator linkage for Beacon Engineered Solutions-MN plus a readable Alexandria plant/process witness; contact route ROBOTS_BLOCKED.
+SITE-011026,LF-MN-00160,STILL_UNCERTAIN,Resolve filed Waterous Company versus held Northern Prairie Polymers legal operator; own about route blocked.
+SITE-011027,LF-MN-00144,STILL_UNCERTAIN,"A raw Waconia manufacturing/process witness is required; contact is an address, follow-up about route unavailable."
+SITE-011028,LF-MN-00077,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011029,LF-MN-00119,STILL_UNCERTAIN,"Plant/process raw witness passed, but address-exact Census county corroboration was absent/ambiguous; held county must-have cannot be raised to B. Resolve physical address/county; no address, county or status changes applied."
+SITE-011030,LF-MN-00263,STILL_UNCERTAIN,Readable own Spring Lake Park plant/process witness required; reviewed route ROBOTS_BLOCKED.
+SITE-011031,LF-MN-00223,STILL_UNCERTAIN,A raw Hutchinson plant/process witness and filed Pride-to-legal-operator linkage required; capability route blocked.
+SITE-011032,LF-MN-00075,STILL_UNCERTAIN,Reconcile competing ITA row1521612 names3M Company/NAICS327910 at30355Akerson versus Plastic Products326199; possible source-fusion mismatch. Hold without resolving operator/code conflict in this quality pass.
+SITE-011033,LF-MN-00082,STILL_UNCERTAIN,Reconcile newer ITA326291 versus held/older OSHA326299 primary code; do not select the older code silently.
+SITE-011034,LF-MN-00001,STILL_UNCERTAIN,Readable own Cottage Grove plant/process witness required; 3M route blocked.
+SITE-011035,LF-MN-00058,STILL_UNCERTAIN,Resolve Wilbert plastic versus held Wilbert Inc operator and site-code/source conflict; generic multi-site thermoforming page alone does not settle the operator.
+SITE-011151,LF-NY-00331,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011152,LF-NY-00528,STILL_UNCERTAIN,"Current Warwick plant-specific manufacturing witness required; Durox acquisition describes Strongsville production and Warwick administration, not manufacturing at Warwick."
+SITE-011153,LF-NY-00380,STILL_UNCERTAIN,"Current manufacturing/process binding to Middletown required; reviewed Made-in-USA page is mainly navigation and contact, and home does not explicitly bind local production."
+SITE-011154,LF-NY-00334,STILL_UNCERTAIN,"Current production scope at 700 Visions Drive Skaneateles required; acquisition news and contact bind headquarters, not that street’s physical manufacturing function."
+SITE-011155,LF-NY-00491,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011156,LF-NY-00315,STILL_UNCERTAIN,A complete federal identity/address/primary-code set and raw local production witness required; own page also prints conflicting Cohoes postal codes12407/12047.
+SITE-011157,LF-NY-00324,STILL_UNCERTAIN,Readable raw Plattsburgh plant/process witness required; own facility-history route blocked.
+SITE-011158,LF-NY-00497,VERIFIED,All seven must-have claims at B; raw own-site city/activity plus held operator/address/code corroboration.
+SITE-011159,LF-NY-00495,STILL_UNCERTAIN,Readable raw Holland plant/process witness required; own home route blocked.
+SITE-011160,LF-NY-00519,STILL_UNCERTAIN,A current local manufacturing/process witness required; Production Underway article describes a historical start-up and live homepage alone does not settle current plant production.
+SITE-011161,LF-NY-00486,STILL_UNCERTAIN,Resolve newer filed NAICS332996 versus held plastic scope/primary-code assignment before promotion.
+SITE-011162,LF-NY-00357,STILL_UNCERTAIN,Explicit ADDMAN-to-Harbec legal operator linkage is required; government names Harbec and the corporate site alone cannot create a legal alias.
+SITE-011163,LF-NY-00329,STILL_UNCERTAIN,Reconcile newer ITA325110 versus held/OSHA325510 primary code; historical company news does not settle current primary code.
+SITE-011164,LF-NY-00235,STILL_UNCERTAIN,A current plant-specific production witness in Lockport is required; reviewed pages separately call Lockport headquarters and describe equipment without an explicit same-page city/process binding.
+SITE-011165,LF-NY-00092,STILL_UNCERTAIN,"Original raw own page supported Oneida plant/molding, but fresh independent public acquisition returned ROBOTS_BLOCKED. Hold promotion until reproducible raw access; failure is availability only, not absence/closure."

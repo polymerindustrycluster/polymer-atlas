@@ -13,9 +13,10 @@ def main():
    f=(ita if kind=='ITA' else osha)[fid]
    if kind=='ITA': r=dict(kind=kind,key=fid,name=f['company_name'],street=f['street'],city=f['city'],state=f['state'],zip=f['zip5'],code=f['naics_code'],date=f['date_submitted'][:10],url='https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv#establishment_ID='+fid)
    else:r=dict(kind=kind,key=fid,name=f['name'],street=f['street'],city=f['city'],state=f['state'],zip=f['zip'],code=f['naics_latest'],date=f['latest_inspection'][:10],url='https://www.osha.gov/ords/imis/establishment.inspection_detail?id='+f['latest_activity_nr'])
+   r['physical_street']=re.sub(r'^PO\s+Box\s+\d+\s+', '',r['street'],flags=re.I)
    candidates.append(r)
-  exact=[f for f in candidates if name_key(f['name']) in aliases and f['state']==s['state'] and f['zip']==s['zip'] and street_key(f['street'])==street_key(s['street_address']) and f['code']==s['naics_primary']]
-  same_street=[f for f in candidates if street_key(f['street'])==street_key(s['street_address']) and f['state']==s['state']]
+  exact=[f for f in candidates if name_key(f['name']) in aliases and f['state']==s['state'] and f['zip']==s['zip'] and street_key(f['physical_street'])==street_key(s['street_address']) and f['code']==s['naics_primary']]
+  same_street=[f for f in candidates if street_key(f['physical_street'])==street_key(s['street_address']) and f['state']==s['state']]
   conflicts=[f for f in same_street if f['code'] and f['code']!=s['naics_primary']]
   chosen=next((f for f in exact if f['kind']=='ITA'),exact[0] if exact else None)
   # A newer conflicting code is held; selecting an older matching inspection would hide it.
