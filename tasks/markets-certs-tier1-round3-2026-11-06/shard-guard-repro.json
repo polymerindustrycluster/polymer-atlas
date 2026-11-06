@@ -1,0 +1,63 @@
+{
+  "before": [
+    {
+      "identical_payload": false,
+      "injected_id": "EVD-240160",
+      "record_id": "ORG-000464",
+      "injected_shard": "evidence_organizations_DE.csv",
+      "expected_shard": "evidence_organizations_OH.csv",
+      "accepted": false,
+      "error": "('ID collision or changed observation', 'EVD-240160')",
+      "changed_shards": [],
+      "correct_shard_contains_id": false
+    },
+    {
+      "identical_payload": true,
+      "injected_id": "EVD-240160",
+      "record_id": "ORG-000464",
+      "injected_shard": "evidence_organizations_DE.csv",
+      "expected_shard": "evidence_organizations_OH.csv",
+      "accepted": true,
+      "error": null,
+      "changed_shards": [
+        "evidence_organizations_MN.csv",
+        "evidence_organizations_NC.csv",
+        "evidence_organizations_NJ.csv",
+        "evidence_organizations_OH.csv",
+        "evidence_organizations_TN.csv",
+        "evidence_organizations_TX.csv",
+        "organizations_MN.csv",
+        "organizations_NC.csv",
+        "organizations_NJ.csv",
+        "organizations_OH.csv",
+        "organizations_TN.csv",
+        "organizations_TX.csv"
+      ],
+      "correct_shard_contains_id": false
+    }
+  ],
+  "after": [
+    {
+      "identical_payload": false,
+      "injected_id": "EVD-240160",
+      "record_id": "ORG-000464",
+      "injected_shard": "evidence_organizations_DE.csv",
+      "expected_shard": "evidence_organizations_OH.csv",
+      "accepted": false,
+      "error": "('evidence shard mismatch', 'EVD-240160', PosixPath('/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/clerk179-collision-_4qpj1oq/data/evidence_organizations_DE.csv'), PosixPath('/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/clerk179-collision-_4qpj1oq/data/evidence_organizations_OH.csv'))",
+      "changed_shards": [],
+      "correct_shard_contains_id": false
+    },
+    {
+      "identical_payload": true,
+      "injected_id": "EVD-240160",
+      "record_id": "ORG-000464",
+      "injected_shard": "evidence_organizations_DE.csv",
+      "expected_shard": "evidence_organizations_OH.csv",
+      "accepted": false,
+      "error": "('evidence shard mismatch', 'EVD-240160', PosixPath('/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/clerk179-collision-is8gxyxo/data/evidence_organizations_DE.csv'), PosixPath('/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/clerk179-collision-is8gxyxo/data/evidence_organizations_OH.csv'))",
+      "changed_shards": [],
+      "correct_shard_contains_id": false
+    }
+  ]
+}

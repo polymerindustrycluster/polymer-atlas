@@ -1,0 +1,80 @@
+# Residual HQ determination, pass 2 — L5b
+
+**Current corrected result (supersedes historical ten- and nine-move receipts below): 100 frozen organizations = eight HQ_FOUND /92 STILL_UNKNOWN. Both refutes accepted: HB&G unrecorded-parent source and IDEX privacy-contact/HQ join are held. Unmerged EVD-315005/315006 proposals withdrawn and permanently retired (315008 remains retired). Integration base09df9e9, original frame97ee6bc. Changed tiers A2/B4/C2 unchanged;16oldEVD move intact+8newaddress observations; residual259→251. Both held rows and all main evidence preserved.**
+
+Acceptance is frozen in acceptance.md; cohort.csv holds the first 100 eligible ID-sorted organizations from the 247-row residual shard at base.txt. Excludes ORG-009017/009026. First user: Atlas controller/PIC researcher; non-use finding date 2026-11-13. Controller owns tracker/status/merge. This lane is the delegated single data writer.
+
+Sources: each verdict names its public primary URL; rawcheck.json records independent integrator curl/browser-UA checks and hashes. PDF witnesses use pdftotext -layout. Source text caches remain outside the repository in /tmp, not public artifacts. Parser and token matching reuse lane A's HTML reader and the house evidence-repair prep.W normalizer. Ordered `||` excerpts are checked separately, in page order, never treated as adjacent source words.
+
+The packet verdicts in lanes/a and lanes/b are proposals. Final verdicts.csv governs integration. LEI discovery addresses are held because the pass calls for own-site, state registry or dated public records; the West Virginia state principal-office proposal caps address evidence at supports_C and is held because its organization remains B tier. Parent/group HQ, mailing-only contacts, unsupported county, and tombstone moves are not inferred. No tiers, statuses, qualifiers, relationships, sites or registry links change. A move is not re-verification; last_verified remains unchanged. Historical evidence moves intact with its organization. Append-only new address observations use EVD-315000–319999.
+
+## Holds
+
+All STILL_UNKNOWN rows in verdicts.csv form the holds table, one organization per row, with settling_fact and note. In particular LyondellBasell's own page lists three HQ cities; recommendation: owner select the intended canonical HQ before applying a single placement. Subsidiaries retain unknown HQ when only the parent HQ is stated. Tombstones remain in their old shard under Appendix C §2. Registry-only Professional Plastics/Jacuzzi/Armorock/DiversiTech discoveries remain proposals, not applied facts.
+
+## Checks
+
+- Baseline `python3 scripts/validate.py`: PASS, zero errors.
+- House reader/parser: three known primary-page quote answers (Dura Bloomington, RESRG Troy, Synthomer group London) PASS. Synthomer's parser answer is deliberately not an entity-grain acceptance. Mailing/HQ and wrong-city substitutions fail. Lane A check: 30 exact IDs, six proposed positives, 52 receipts, maximum three attempts/entity; missing/duplicate/fabricated quote mutations fail as expected. Lane B supplies its own checks/receipts.
+- `python3 tasks/residual-hq-2-2026-11-06/check.py`: full organization ID/content and old evidence ID/content union proof against base.txt, exact 100 final verdicts, raw hashes, byte-idempotent builder replay, missing ID/header/evidence-collision no-write fault checks.
+- `python3 scripts/validate.py`: final result recorded below after application.
+
+Builders preflight all before writes and preserve unrelated main rows. Rebase by replacing canonical files with fresh main, updating base.txt, and rerunning builder/check; stop on any cohort preimage conflict rather than hand-merging CSVs.
+
+## Review
+
+BOARD 05:55 and 06:25 explicitly supersede the original council-only gate. Request independent deep refutation from R-codex-3 and R-grok-3 using a draft PR and refute.md. Approvals remain pending until received; no Done/merge/issue closure claimed.
+
+## Handoff ledger
+
+2026-11-06: L5b thr_ii6ybubss4 took over thr_3mzpqc9u48's existing checkout/branch, acceptance and frozen cohort. Existing helpers A thr_cbqmb8vyh7 and B thr_niknbt9gc4 continue packet-only, no shared data edits. Helper A delivered 30 rows/6 proposals/24 holds; integrator independently qualifies and re-fetches every proposed source. Same agreement and facts appended to the controller BOARD. Review clerk messages use queue mode only under explicit BOARD exception.
+
+## Applied result and validation
+
+Final unit/filter: 100 frozen residual organizations reviewed = 10 HQ_FOUND placements + 90 STILL_UNKNOWN holds. Ten existing organizations moved from US to AL 1, CA 2, CT 1, IN 2, ME 1, MI 1, MO 1, NV 1. Residual shard 247 → 237 organizations. No organizations or sites created. Held organization tiers unchanged: A 2, B 6, C 2, U 0. Twenty old evidence rows moved with those ten organizations, byte-equivalent at row-content grain; ten new address evidence rows appended (EVD-315000–315007 and EVD-315009–315010). EVD-315008 retired after a local validation rejection, never published.
+
+`python3 tasks/residual-hq-2-2026-11-06/check.py`: PASS — exact100 coverage, full organization and old evidence union/content preservation, ten permitted HQ edits, receipts, byte-idempotency, three no-write faults, two quote substitutions. `python3 scripts/validate.py`: PASS, zero errors, 4,970 organizations / 7,007 sites / 36,556 evidence observations checked. Existing repository-wide warnings remain; none waived here. No scripts/ changes, so full pytest not required/run.
+
+The first local application exposed WV SOS APG's address-only registry ceiling C versus held B (V-25). APG is now held rather than downgraded; its proposed evidence ID is retired. American Renolit's certificate quote did not reproduce in the independent integrator extraction and is held, not treated as an absence finding. Three LEI-only proposals are held by the source restriction. Fresh corrected build replay and validation both pass.
+
+Helper B delivered 30 unique verdicts, seven proposals, 23 holds; 87 raw route attempts, max six per organization, 3 real parser cases and 3 negative controls. Lead reran both helper checks successfully. Raw caches in /tmp are needed for receipt rechecks; canonical preservation and replay checks use committed inputs and git base. Cross-thread receipt facts recorded here and on BOARD; no helper is an integration writer.
+
+## Original-session collision reconciliation
+
+Controller confirmed sole-writer L5b after original L5 resumed. Its only uncommitted lead/verdicts.csv overwrite was restored from committed HEAD, then the three independent findings were compared deliberately: RESRG Troy and Dura Bloomington agree with the applied observations; Professional Plastics GLEIF Fullerton is retained as a fourth registry-only discovery hold, without changing canonical data. Its 16 independent positive receipts (15 raw PASS, Renolit split-layout FAIL) are preserved in original-l5-rawcheck.json; all 16 hashes independently reproduced. Renolit remains held. No helper results or data were overwritten during this reconciliation.
+
+Fetch-budget exception: Wabash helper used six routes; original L5 then independently fetched once, and L5b independently fetched twice (the second replay followed the APG V-25 correction): nine total source fetches, exceeding the approximate six-route effort cap. No further Wabash fetch is needed. This collision/redundant replay is disclosed rather than hidden. All fetched affirmative content agrees; it does not change acceptance criteria.
+
+## Codex refute accepted — HB&G source admission
+
+Codex clerk5 thr_pf5j2nisg7 REFUTE at88970e3, one blocking finding, report reviews/189-clerk-codex-5.md under controller storage. Governing owner ruling B-PARENT(a), tasks/OWNER_BATTERY_2026-11-04.md: MBP is not an already-recorded parent of ORG-004522 (parent_org_id empty, ultimate_parent_name GrahamPartners). Its exact HB&G portfolio section is therefore press/ceilingB, not own_site/supportsA; undated page also misses this pass's restricted admission. Final verdict is STILL_UNKNOWN with HB&G-issued/state-registry/datedprimaryHQ settling fact. No ownership/schema/source-rule change made to make it eligible.
+
+Withdrew only the unmerged proposal EVD-315006; its exact previous payload is archived in withdrawn-proposals.json, ID permanently retired alongside315008. All evidence already present on main remains unchanged. HB&G canonical row and its old evidence now match current main in residualUS; count9 positives/91holds supersedes all earlier10/90 claims. Historical receipts remain as history, not current approval. Raw MBP quote matching was never the failing criterion.
+
+Fresh-main replay: merge419678b, restorecompletecanonicalmain data/, updateintegrationbase.txt, rerunbuilder. Nine organization moves,18oldEVD intact,9newEVD315000–5/315007/315009–10;tiersA2B5C2unchanged;residual259→250. Frame remains97ee6bc100IDs (frame-base.txt), not a shifted currentmain slice. check.py PASS exact100, fullorg/EVDunion/content,HB&Gfullrowunchanged,315006+315008absent,rawreceipts,replaybyteidentity,FOURno-writefaults (including reintroducedHB&G+HQ_FOUNDpoisonedpacket),twobadquotesubstitutions. Exact-new-EVDcollisiontestusesIDtargeting,notfirstURLreplacement. validate.pyPASSzeroerrors:4982organizations/7085sites/37281evidenceobservations.
+
+prepare.py reproducesHB&Gholdandhash-checks/reusespriorrawreceiptsratherthanaddingresearchfetches. ReviewerfreshsourcecensusalltenoriginalURLsmatched,original16hashesverified;reviewlimit90originalholdsnotre-researched. Refuteaddressedbyhold,noadditionalresearchorcontinuation. Codex5focusedrereview/Groklatestheadreviewpending;noapproval/Doneclaim.
+
+## Grok refute accepted — IDEX privacy-contact referent
+
+Grok5thr_r5auppm5ps REFUTE atold88970e3: privacy page's “our corporate headquarters” clause routes to affiliates-list; laterParkCourt/RohnertParkaddressisforprivacycorrespondence. Savedrawcontextindependentlyinspected; orderedwordmatchingdoesnotproveHQreferent. ORG004391nowSTILL_UNKNOWNwith explicitexact-entityHQsettlingfact. Unmerged315005proposalwithdrawn,exactpayloadpreservedwithdrawn-proposals.json,IDpermanentlyretired;nochangealready-on-mainEVD. Noextraresearch/fetches,newstatusfacts,orownershipedit.
+
+Finalfreshmain09df9e9 canonicalfilesrestoredcomplete,includingconflictedNV evidence shard;builderreplayed,nomanualCSVmerge. Eightmoves,16oldEVDintact,8newEVD315000–4/315007/315009–10;changedtiersA2B4C2unchanged;residual259→251. Original100frame97ee6bcunchanged. FullcheckPASS exact100,fullorg/EVDunion/content,IDEX+HB&Gfullrowsunchanged,retired315005/6/8absent,rawhashes,replaybyteidentity,FIVEno-writefaults(separatepoisonedHQ_FOUNDreadmissionsofbothheldproposals,missingID,header,exactnewEVDcollision),twobadquotesubstitutions. validate.pyPASSzeroerrors4982organizations/7085sites/37398evidenceobservations.
+
+This supersedes all earlier nine/91 and ten/90 current-result claims. Historical rawchecks remain accurate as quote-presence observations, not HQadmissibility. Codex5/Grok5latestheadrereviewsrequested;priorverdictsnotfinalapproval. Researchremainsstopped.
+
+## Codex re-review receipt — APPROVE on 4636f8e
+
+2026-11-06 Codex/OpenAI clerk5 thr_pf5j2nisg7 APPROVE with zero findings, focused fixes-only re-review bound4636f8e. Independentbase09df9e9 comparisonconfirmedHB&G/IDEXcompletecanonicalrows,USplacementsandhistoricalEVDunchanged;noownership/HQ/sourceworkaround. Bothupdatesexcluded,settlingfactsexplicit. Rejected315005/315006/315008absentcanonical;withdrawn-proposals.jsonexactoldpayloadsverifiedagainst88970e3. Eightremainingpayloadsmatchoriginalexactly;fullunion8HQmoves/16oldEVDintact/8new/100=8+92/tiersA2B4C2/residual259→251 recomputed. Fullcheck/replay/5no-writefaults/twoquotenegatives,validator0,rowlossfallbackanddiffcheckPASS. ReviewerinspectedbothspecificpoisonedreadmissionsfailcorrectgateswithoutCSVhashchange. Noadditionalresearch/sourceauditperformed. Reportcontrollerstorage/reviews/189-clerk-codex-5.md;initialREFUTEarchived189-clerk-codex-5-88970e3.md.
+
+This is a README-only receipt; admitted payload unchanged. Grok latest-head approval stillpending;noDone/two-familycompletion/mergeclaim. Dedupecontinuationisasparatecontroller-authorizedtask;noHQresearchresumed.
+
+## Both-family approval and controller-requested main replay
+
+Grok5 APPROVE/no findings bound4636f8e, supersedes88970e3REFUTE. Reviewer verified HB&G/IDEXrows unchanged,retired005/006/008absent,eightHQupdatesA2/B4/C2unchanged,16oldEVDintact8new,all8cachedrawhashes/quotes,validator/check/rowlossPASS. Noadditionalfetch;approvalboundedremaining8andholds,notnewstatusfacts. Codex5approvalat4636f8ealreadyrecordedabove. Bothindependentfamilyapprovalsestablishedforreviewedpayload.
+
+Controller requestedfreshmainreplaye008ab9beforemerge. Tookcomplete main data/,reranbuilder,nomanualCSVconflictresolution. PreservedupstreamWabashnewsroom_url/newsroom_feed_urlandBomarnewsroom_url:only3unrelatedfieldsacross2admittedorgs differfromoriginalfrozencohort;explicitcomparisonassertedthatboundary. preimages.csv nowseparatescurrent-mainfullrowpreimagesfromimmutableoriginalcohort. NoHQfields/notes/sources/EVDpayloads/admittedIDschanged;rawmatchingnotrerun/researched. Existingbuilderpreflightnowusesexplicitcurrentpreimages,notstaleoriginalnewsroomfields. Fullbase-equalityoracleprovesallothermainfieldsandoldEVDremainintact.
+
+Finalmainreplaycheck/validatorresultsrecordedafterrun. Thisreceipt+replaynotanewresearchbatch;controllerownsmerge/status. Subsequentintegrationbasechangesrequireexplicitpreimagerefreshandfulloracleagain.
+
+Final e008ab9 replay PASS: exact100/original8payloadidentityagainst4636f8e/fullmainunion+contents/retiredIDs/heldrows/newsroompreservation/replay/5faults/validator0. Mainresidual262→254;4985organizations/7091sites/37561evidenceobservations. Approvedeightpayloadsbyte-equivalentJSONto4636f8e;onlyintegrationpreimages/builderpreservationcheck/docschange.

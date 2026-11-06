@@ -4,11 +4,11 @@ import argparse,copy,csv,hashlib,io,json,shutil,subprocess,sys,tempfile
 from pathlib import Path
 from build import H,ROOT,read,witness,raw,BY,require_five
 ap=argparse.ArgumentParser();ap.add_argument('--negative-controls',action='store_true');a=ap.parse_args()
-base=json.loads((H/'baseline.json').read_text())['commit'];frame=read(H/'input.csv');vs=read(H/'verdicts.csv');sel=json.loads((H/'selected.json').read_text());assert len(frame)==len(vs)==3 and {r['site_id'] for r in frame}=={r['site_id'] for r in vs}
+baseline=json.loads((H/'baseline.json').read_text());base=baseline['commit'];freeze=baseline.get('frame_commit',base);frame=read(H/'input.csv');vs=read(H/'verdicts.csv');sel=json.loads((H/'selected.json').read_text());assert len(frame)==len(vs)==3 and {r['site_id'] for r in frame}=={r['site_id'] for r in vs}
 frozen=[]
-for path in subprocess.check_output(['git','ls-tree','-r','--name-only',base,'data/'],cwd=ROOT,text=True).splitlines():
+for path in subprocess.check_output(['git','ls-tree','-r','--name-only',freeze,'data/'],cwd=ROOT,text=True).splitlines():
  if path.startswith('data/sites_') and path.endswith('.csv'):
-  frozen.extend(r for r in csv.DictReader(io.StringIO(subprocess.check_output(['git','show',base+':'+path],cwd=ROOT,text=True))) if r['verification_tier']=='C' and r['created_by'] in {'atlas-L3-strong-mo-sc-la','atlas-L3-corroborated-mo-sc','atlas-L3-corroborated-la','atlas-L3-corroborated-mn','atlas-L3-corroborated-nj'})
+  frozen.extend(r for r in csv.DictReader(io.StringIO(subprocess.check_output(['git','show',freeze+':'+path],cwd=ROOT,text=True))) if r['verification_tier']=='C' and r['created_by'] in {'atlas-L3-strong-mo-sc-la','atlas-L3-corroborated-mo-sc','atlas-L3-corroborated-la','atlas-L3-corroborated-mn','atlas-L3-corroborated-nj'})
 assert {r['site_id']:r for r in frozen}=={r['site_id']:r for r in frame},'under-returned merged frame'
 assert sum(r['verdict']=='VERIFIED' for r in vs)==1 and sum(r['verdict']=='STILL_UNCERTAIN' for r in vs)==2
 text=witness(sel[0]);bad=copy.deepcopy(sel[0]);bad['quote']+=' fabricatedplantproof7731'

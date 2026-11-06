@@ -1,0 +1,23 @@
+source_key,source_ref,observed_date,result,role
+lift-resources,https://lift.technology/resources/,2026-11-06,body fetched,admitted own source
+lift-facilities,https://lift.technology/facilities/,2026-11-06,body fetched,admitted own source
+niimbl-about,https://www.niimbl.org/about/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+niimbl-contact,https://www.niimbl.org/about/contact/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+niimbl-project,https://www.niimbl.org/projects/scale-up-studies-on-single-use-settlers-for-clarifying-cell-culture-broth/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+mep-ohio,https://development.ohio.gov/home/news-and-events/all-news/2021-1001-News-Release-State-Supports-Ohio-Manufacturers,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+pa-mep,https://www.pamep.org/,2026-11-06,body fetched,calibration or held-candidate research only
+mi-mep,https://www.the-center.org/,2026-11-06,body fetched,calibration or held-candidate research only
+in-mep,https://mep.purdue.edu/about-us/about-mep/,2026-11-06,body fetched,calibration or held-candidate research only
+niimbl-project-fallback,https://r.jina.ai/https://www.niimbl.org/projects/scale-up-studies-on-single-use-settlers-for-clarifying-cell-culture-broth/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+niimbl-contact-no-www,https://niimbl.org/about/contact/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+niimbl-project-no-www,https://niimbl.org/projects/scale-up-studies-on-single-use-settlers-for-clarifying-cell-culture-broth/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+lift-home,https://lift.technology/,2026-11-06,body fetched,admitted own source
+nepirc-training,https://nepirc.com/online-training/,2026-11-06,body fetched,calibration or held-candidate research only
+nepirc-contact,https://nepirc.com/contact/,2026-11-06,body fetched,calibration or held-candidate research only
+known-magnet,https://www.manufacturingsuccess.org/,2026-11-06,body fetched,calibration or held-candidate research only
+known-iacmi,https://iacmi.org/,2026-11-06,body fetched,calibration or held-candidate research only
+known-hub,https://polymerindustrycluster.org/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+known-america,https://www.americamakes.us/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+known-remade,https://remadeinstitute.org/,2026-11-06,curl56/no body; availability only,calibration or held-candidate research only
+lift-county,https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1400+Rosa+Parks+Boulevard+Detroit+MI+48216&benchmark=Public_AR_Current&vintage=Current_Current&format=json,2026-11-06,one exact address match; Wayne County/GEOID26163,admitted geographic government record; no coordinates copied
+lift-poster-lead,https://lift.technology/wp-content/uploads/2025/03/Equipment-Posters-2025-v3.pdf,2026-11-06,body fetched,not admitted; current own HTML supplies the scoped services

@@ -1,0 +1,57 @@
+{
+  "acma": {
+    "sampled": 20,
+    "verified_new": 0,
+    "yield_fraction": 0.0,
+    "wilson95": [
+      0,
+      0.161125
+    ],
+    "verdicts": {
+      "DUPLICATE_OF": 16,
+      "STILL_UNCERTAIN": 4
+    }
+  },
+  "epa-cdr": {
+    "sampled": 20,
+    "verified_new": 0,
+    "yield_fraction": 0.0,
+    "wilson95": [
+      0,
+      0.161125
+    ],
+    "verdicts": {
+      "DUPLICATE_OF": 5,
+      "STILL_UNCERTAIN": 15
+    }
+  },
+  "apr": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "terms/raw-route/credential gate; not sampled"
+  },
+  "vinyl-institute": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "terms/raw-route/credential gate; not sampled"
+  },
+  "sam-gov": {
+    "sampled": null,
+    "verified_new": null,
+    "yield_fraction": null,
+    "wilson95": null,
+    "reason": "terms/raw-route/credential gate; not sampled"
+  },
+  "frames": {
+    "cdr_input_rows": 50433,
+    "cdr_all_site_ids": 4528,
+    "cdr_slice_site_ids": 290,
+    "cdr_slice_chemical_rows": 2924,
+    "acma_public_listings": 252,
+    "acma_us_manufacturer_not_opted_out": 98
+  }
+}

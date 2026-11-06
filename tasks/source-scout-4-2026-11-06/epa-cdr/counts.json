@@ -1,0 +1,7 @@
+{
+  "input_chemical_reporting_rows": 50433,
+  "all_tsca_site_ids": 4528,
+  "slice_tsca_site_ids": 290,
+  "slice_chemical_reporting_rows": 2924,
+  "input_sha256": "fcbce4fb8ec8c84d704ec2075cd14d87f919e3fc257e7b524f3ad56a1e29471e"
+}

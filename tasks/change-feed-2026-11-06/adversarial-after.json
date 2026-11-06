@@ -1,0 +1,30 @@
+[
+  {
+    "case": "leaf_symlink_CHANGELOG.md",
+    "error": "ValueError: output file must be a regular file, not a symlink",
+    "outside_overwritten": false
+  },
+  {
+    "case": "leaf_symlink_feed.xml",
+    "error": "ValueError: output file must be a regular file, not a symlink",
+    "outside_overwritten": false
+  },
+  {
+    "case": "readonly_xml_preserves_previous_pair",
+    "error": "PermissionError: output file is read-only",
+    "changed_files": [],
+    "uid": 501
+  },
+  {
+    "case": "arbitrary_or_wrong_table_id",
+    "id": "PRIVATE_CRM_ACQUISITION_TARGET-000002",
+    "error": "ValueError: invalid immutable ID: data/organizations_OH.csv",
+    "published_in_both": false
+  },
+  {
+    "case": "arbitrary_or_wrong_table_id",
+    "id": "EQP-000002",
+    "error": "ValueError: invalid immutable ID: data/organizations_OH.csv",
+    "published_in_both": false
+  }
+]
