@@ -21,22 +21,30 @@ def main():
   write(HERE/'rawcheck.csv',[dict(evidence_id=r['evidence_id'],raw='yes') for r in packet])
  assert {r['evidence_id'] for r in read(HERE/'rawcheck.csv') if r['raw']=='yes'}=={r['evidence_id'] for r in packet}
  shards={p:read(p) for p in sorted(a.data_dir.glob('organizations_*.csv')) if not p.name.endswith('_all.csv')};org={r['org_id']:(p,r) for p,rows in shards.items() for r in rows}
- held={r['evidence_id']:r for p in a.data_dir.glob('evidence_*.csv') for r in read(p)};ev={r['evidence_id']:r for r in packet}
+ held={}
+ for path in a.data_dir.glob('evidence_*.csv'):
+  for r in read(path):
+   assert r['evidence_id'] not in held, 'duplicate global evidence ID'
+   held[r['evidence_id']]=(path,r)
+ ev={r['evidence_id']:r for r in packet}
  vocab=json.loads((ROOT/'docs/schema/vocab.json').read_text())['vocabularies'];touched=set();pending=defaultdict(list)
  for e in edits:
   assert e['field'] in {'notes','processes','materials'}
   path,r=org[e['org_id']];assert r[e['field']] in {e['old'],e['new']},('drift',e)
-  proofs=[ev[x] for x in e['evidence_ids'].split(';')];assert proofs and all(x['record_id']==e['org_id'] for x in proofs)
+  proofs=[ev[x] for x in e['evidence_ids'].split(';')];assert proofs and any(x['record_id']==e['org_id'] for x in proofs)
   if e['field']!='notes':
+   assert all(x['record_id']==e['org_id'] for x in proofs)
    assert set(e['new'].split(';'))<=set(vocab[e['field'].upper()]['values'])
    assert {x['value'] for x in proofs}==set(e['new'].split(';')) and all(x['field']==e['field'] and x['kind']=='capability' for x in proofs)
   else:
    assert all(x['kind']=='distinct' for x in proofs)
+   peers={r['right'] if r['left']==e['org_id'] else r['left'] for r in read(HERE/'duplicate_verdicts.csv') if e['org_id'] in {r['left'],r['right']} and r['adjudication']=='distinct'}
+   assert all(x['record_id'] in peers|{e['org_id']} for x in proofs)
    assert e['new'].startswith(e['old'])
   if r[e['field']]!=e['new']:r[e['field']]=e['new'];touched.add(path)
  for r in packet:
   path=a.data_dir/('evidence_'+org[r['record_id']][0].name);fields=list(read(path)[0]);entry={k:r[k] for k in fields}
-  if r['evidence_id'] in held:assert held[r['evidence_id']]==entry,('global evidence collision',r['evidence_id'])
+  if r['evidence_id'] in held:assert held[r['evidence_id']]==(path,entry),('global evidence collision or wrong shard',r['evidence_id'])
   else:pending[path].append(entry)
  # All drift, vocabulary, proof and global-ID checks finish before any data write.
  for p in touched:write(p,shards[p])
