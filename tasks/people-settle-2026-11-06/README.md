@@ -6,8 +6,8 @@ base_commit.txt is the pre-pass backup; reviewed.csv,expected.json,rawcheck.csv,
 
 ## Applied packet
 
-43 reviewed people:31 existing(28A/3B),12 newC.18 printed titles and5 controlled roles change.
-130 own_site observations:existence/scope/affiliation for each43person(129),plus the dated Park rank witness.
+42 reviewed people:31 existing(28A/3B),11 newC.18 printed titles and5 controlled roles change.
+127 own_site observations:existence/scope/affiliation for each42person(126),plus the dated Park rank witness.
 New people require all3 claims prospectively. Unchanged legacy affiliations did not require backfill; this packet
 retains the fresh own-profile observations it checked. No pre-pass held people/evidence/institutions are deleted.
 
@@ -15,7 +15,7 @@ retains the fresh own-profile observations it checked. No pre-pass held people/e
 - Maiti PERSON000621:research_scientist→group_leader from Deputy Group Leader,Multiscale Modeling.
 - Scott PERSON000920 and Ayzner PERSON001139:associate_professor→professor.
 - Fernandez-Ballester PERSON001238:assistant_professor→associate_professor.
-- Four census creates:PERSON002000 Sletten,002002 Lee,002003 VanTassel,002004 Heilshorn.
+- Three census creates:PERSON002000 Sletten,002003 VanTassel,002004 Heilshorn.
 - Eight fresh-Ohio creates:PERSON002005,002007,002009–002011,002013–002014 and002016.
 - EVD280000–280144 with permanent gaps listed in withdrawn_proposals.csv; no retired ID is reused.
 
@@ -30,7 +30,7 @@ Unit:candidate people within each named source/filter. Title lists overlap; neve
 
 | Source/filter | Candidates | VERIFIED | REJECT | STILL_UNCERTAIN | DUPLICATE_OF |
 |---|---:|---:|---:|---:|---:|
-| census-gap-2 uncertain.csv,all rows |79|4|4|45|26|
+| census-gap-2 uncertain.csv,all rows |79|3|4|46|26|
 | atlas-cleanup holds.csv,role-title rows |214|30|0|184|0|
 | role-title-recheck-2 holds.csv,all rows |149|14|0|135|0|
 | fresh Ohio frame,after final-refute corrections |432|8|8|346|70|
@@ -65,6 +65,7 @@ append-only after_refute revisions report8VERIFIED/346UNCERTAIN. The original ar
 | Huichun(Judy)Zhang | Own page states polymeric sorbents. Source wording does not authorize a new controlled specialty under SCHEMA4.9/§3 and AGENTS2.9. Recommend owner govern a sorbent term or supported mapping. |Unmerged PERSON002008 and EVD280078/79/126/143 withdrawn and permanently unused.|
 | John D.Protasiewicz | Current own scope says Polymers, which is not a controlled specialty. No narrower polymer_synthesis/physics tag inferred. |Owner supported mapping; unmerged PERSON002006/EVD280074/75/124 withdrawn permanently.|
 | Pavel Anzenbacher | Current own scope says polymer chemistry, which is not a controlled specialty. No synthesis tag inferred from that broad phrase. |Owner supported mapping; unmerged PERSON002012/EVD280086/87/130 withdrawn permanently.|
+| Sang Bok Lee | [Own profile](https://chem.umd.edu/people/sang-bok-lee) states electrochemical growth of conductive-polymer heterogeneous nanostructures; polymer_synthesis requires explicit polymerization/architecture specialty. Recommend owner govern mapping; no proxy tag. |Unmerged PERSON002002/EVD280048/49/111 withdrawn permanently.|
 | Sara Molinari | UMD page now describes engineering cells and biopolymer matrix;earlier B-CG-2 explicitly did not admit her. |Hold for owner review rather than silently reverse that ruling.|
 | Qiang Wang title lead | A surname-proximate rank at /people/david-wang/ does not settle full identity. |Own-institution identity confirmation before editing.|
 | Teaching/practice titles | Governed by B-CG-1;senior_lecturer exception is distinct. |No inferred eligible research rank.|
@@ -72,8 +73,7 @@ append-only after_refute revisions report8VERIFIED/346UNCERTAIN. The original ar
 
 Wong's unmerged create repeated its original held example list and was withdrawn earlier;
 PERSON002001/EVD280046–47 remain permanently unused. Heilshorn instead has a freshly fetched Stanford
-lab statement engineering protein hydrogels(B-CG-2). Lee now has current primary Chemistry rank2013-present
-and explicit conductive-polymer nanostructure work. VanTassel has his own lab nanofilm-material construction project.
+lab statement engineering protein hydrogels(B-CG-2). Lee has current primary Chemistry rank and polymer nanostructure work, but the specialty mapping remains an owner hold. VanTassel has his own lab nanofilm-material construction project.
 These withdrawals revise unmerged proposals only; all pre-pass held rows remain intact.
 
 ## Durable continuation and privacy
@@ -89,7 +89,7 @@ Only institution-supported professional facts publish;no CRM/private census/band
 ## Named checks
 
 - python3 tasks/people-settle-2026-11-06/check.py — PASS:79/79 census,214/214+149/149 title-source rows;
-  43 reviewed people,12 creates,130 evidence;unchanged non-owned cells;no pre-pass loss;byte-identical replay.
+  42 reviewed people,11 creates,127 evidence;unchanged non-owned cells;no pre-pass loss;byte-identical replay.
 - Known answers:Yavitt assistant rank,Sletten professor rank,Mai assistant rank.7 injected negatives include
   wrong rank/person,empty-token surname,polymer inside depolymerization/polymers,materials inside biomaterials,
   and noncontiguous words. Missing-parent mutation on a NEW create fails. Fall2026 Park styling is independently checked.
@@ -110,8 +110,12 @@ Only institution-supported professional facts publish;no CRM/private census/band
   Julie is held/withdrawn;Park now has a current dated official syllabus witness. The later Codex finding supersedes the intermediate literal-specialty correction, which was not authorized vocabulary.
   Grok approved those fixes at86b79e0;Codex refuted the literal-specialty allowance.
 - 86b79e0 Codex REFUTE:source-supported literal specialties are not authorized vocabulary. Full new-row audit additionally found broad Polymers/polymer chemistry. All three affected unmerged admissions are withdrawn for owner mapping. A canonical-vocabulary gate now checks every NEW create, and an injected Polymeric sorbents value fails. This supersedes the earlier literal-specialty interpretation; unchanged legacy specialties remain grandfathered.
-- Fourth targeted review will check the withdrawals and all12 retained new specialty mappings; no replacement tag was self-selected for the held candidates.
+- 73cd5ee Codex APPROVE:all12 then-retained mappings and all deterministic checks. Grok fourth-round REFUTE:Lee polymer_synthesis is not clearly stated; all other11 mappings passed refreshed pages. Lee admission/threeEVD withdrawn. Controller explicitly accepts the strict-subset rule: no fifth full review; current delta must equal73cd5ee minusLee, with fresh-main replay. No replacement tag.
 - Legacy-parent correction:SCHEMA4.13 tier-restatement3 does not independently require unchanged legacy
   affiliation backfill. No new repository-wide rule was introduced.
 - Controller's clerk route supersedes council-only dispatch;final Grok runs xhigh. No completion approval
-  is claimed until both families approve the revised artifact.
+  is inferred from an obsolete approval. Final subset basis is stated below.
+
+Controller closeout: fourth-review finding changes exactly1unmerged person/3evidence rows, census3VERIFIED/46UNCERTAIN; no change to31legacy edits or8Ohio admissions. Original main people/evidence files are byte-identical to currentmain6157e68; fresh-main replay and strict-subset guard are required before push. Skill review-loop ceiling reported to controller; controller explicitly authorizes strict-subset completion instead of a fifth full review.
+
+Final strict-subset receipt: canonical people/evidence equal73cd5ee minus exactlyPERSON002002 andEVD280048/49/111; every surviving row/value/order identical. Fresh clean current-main7d526c83ae2cf5e2530472fd4514054dd1ba2deb replay produces byte-identical two owned CSVs. Rootcheck42/11/127,Ohio8/16,privatev2,validator0 and current-main row-loss guard allPASS. Codex approved73cd5ee; Grok fourth review found onlyLee and accepted remaining11 mappings. Controller explicitly accepts this common retained subset and authorizes merge without a fifth full review. No exact-new-head technical APPROVE is invented.
