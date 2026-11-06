@@ -24,5 +24,24 @@
     "ab": 3
   },
   "desk_only_best_case_healthy": 529,
-  "minimum_additional_non_desk_organizations_for90": 40
+  "minimum_additional_non_desk_organizations_for90": 40,
+  "single_gap_breakdown": {
+    "duplicate": 27,
+    "tier": 28,
+    "capabilities": 61,
+    "website": 7
+  },
+  "dated_distinct_pair_scenario_before_fixes": {
+    "healthy": 478,
+    "total": 632,
+    "percent": 75.63,
+    "gained_org_ids": [
+      "ORG-000534",
+      "ORG-000550",
+      "ORG-000551",
+      "ORG-000665",
+      "ORG-000698",
+      "ORG-001877"
+    ]
+  }
 }
