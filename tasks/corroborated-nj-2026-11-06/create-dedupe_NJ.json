@@ -1,0 +1,394 @@
+{
+  "LF-NJ-00035": {
+    "query": {
+      "domain": "benjaminmoore.com",
+      "name": "Benjamin Moore & Co.",
+      "street": "134 Lister Ave.",
+      "city": "NEWARK",
+      "state": "NJ",
+      "zip": "07105"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004216",
+            "name": "Benjamin Moore & Co.",
+            "city": "Montvale",
+            "state": "NJ",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NJ.csv",
+            "match": "domain exact: benjaminmoore.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004216",
+            "name": "Benjamin Moore & Co.",
+            "city": "Montvale",
+            "state": "NJ",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_NJ.csv",
+            "match": "name key 'benjamin moore and' = legal_name 'Benjamin Moore & Co.'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012809",
+            "name": "Benjamin Moore & Co. - NEWARK",
+            "org_id": "ORG-004216",
+            "city": "NEWARK",
+            "state": "NJ",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_NJ.csv",
+            "street": "134 Lister Ave.",
+            "operator": "Benjamin Moore & Co.",
+            "match": "street key '134 lister ave'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-NJ-00416": {
+    "query": {
+      "domain": "https://www.grahampackaging.com/",
+      "name": "Graham Packaging Company",
+      "street": "1043 West Parsonage Road",
+      "city": "Seabrook",
+      "state": "NJ",
+      "zip": "08302"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001403",
+            "name": "Graham Packaging Company",
+            "city": "Fremont",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: grahampackaging.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001403",
+            "name": "Graham Packaging Company",
+            "city": "Fremont",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "name key 'graham packaging' = legal_name 'Graham Packaging Company'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012828",
+            "name": "Graham Packaging Company - Seabrook",
+            "org_id": "ORG-001403",
+            "city": "Seabrook",
+            "state": "NJ",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_NJ.csv",
+            "street": "1043 West Parsonage Road",
+            "operator": "Graham Packaging Company",
+            "match": "street key '1043 w parsonage rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-NJ-00733": {
+    "query": {
+      "domain": "https://homelandvinyl.com/",
+      "name": "Homeland Vinyl Products, Inc.",
+      "street": "1701 Eden Road",
+      "city": "Milville",
+      "state": "NJ",
+      "zip": "08332"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-005044",
+            "name": "Homeland Vinyl Products",
+            "city": "Pinson",
+            "state": "AL",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_AL.csv",
+            "match": "domain exact: homelandvinyl.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-005044",
+            "name": "Homeland Vinyl Products",
+            "city": "Pinson",
+            "state": "AL",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_AL.csv",
+            "match": "name key 'homeland vinyl products' = legal_name 'Homeland Vinyl Products'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012861",
+            "name": "Homeland Vinyl Products - Milville",
+            "org_id": "ORG-005044",
+            "city": "Milville",
+            "state": "NJ",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_NJ.csv",
+            "street": "1701 Eden Road",
+            "operator": "Homeland Vinyl Products",
+            "match": "street key '1701 eden rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-006237",
+            "name": "Homeland Vinyl Products, Inc. Utah",
+            "city": "Ogden",
+            "state": "UT",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_UT.csv",
+            "match": "legal_name contains 'Homeland Vinyl Products, Inc.'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-NJ-00777": {
+    "query": {
+      "domain": "https://www.pretiumpkg.com/",
+      "name": "Pretium Packaging",
+      "street": "208 Cougar Court",
+      "city": "Hillsborough",
+      "state": "NJ",
+      "zip": "08844"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000523",
+            "name": "Pretium Packaging",
+            "city": "St. Louis",
+            "state": "MO",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_MO.csv",
+            "match": "domain exact: pretiumpkg.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000523",
+            "name": "Pretium Packaging",
+            "city": "St. Louis",
+            "state": "MO",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_MO.csv",
+            "match": "name key 'pretium packaging' = legal_name 'Pretium Packaging'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012862",
+            "name": "Pretium Packaging - Hillsborough",
+            "org_id": "ORG-000523",
+            "city": "Hillsborough",
+            "state": "NJ",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_NJ.csv",
+            "street": "208 Cougar Court",
+            "operator": "Pretium Packaging",
+            "match": "street key '208 cougar ct'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-002219",
+            "name": "Alpha Packaging",
+            "city": "Bethlehem",
+            "state": "PA",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'Pretium Packaging'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-NJ-00857": {
+    "query": {
+      "domain": "https://ringcontainer.com/",
+      "name": "Ring Container Technologies",
+      "street": "50 Fadem Road",
+      "city": "Springfield",
+      "state": "NJ",
+      "zip": "07081"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001082",
+            "name": "Ring Container Technologies",
+            "city": "Oakland",
+            "state": "TN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_TN.csv",
+            "match": "domain exact: ringcontainer.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-001082",
+            "name": "Ring Container Technologies",
+            "city": "Oakland",
+            "state": "TN",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_TN.csv",
+            "match": "name key 'ring container technologies' = legal_name 'Ring Container Technologies'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "SITE-012881",
+            "name": "Ring Container Technologies - Springfield",
+            "org_id": "ORG-001082",
+            "city": "Springfield",
+            "state": "NJ",
+            "status": "unknown",
+            "tier": "C",
+            "file": "sites_NJ.csv",
+            "street": "50 Fadem Road",
+            "operator": "Ring Container Technologies",
+            "match": "street key '50 fadem rd'"
+          }
+        ],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  }
+}

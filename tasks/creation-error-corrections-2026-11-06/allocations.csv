@@ -1,0 +1,10 @@
+key,evidence_id,record_id,shard
+GILKEY_TYPE,EVD-278500,SITE-019018,evidence_sites_IL.csv
+STOROPACK_OWN,EVD-278501,SITE-019009,evidence_sites_IL.csv
+STOROPACK_MUNICIPAL,EVD-278502,SITE-019009,evidence_sites_IL.csv
+EJP_DISRUPTION,EVD-278503,SITE-018014,evidence_sites_MI.csv
+EJP_WATCH,EVD-278504,ORG-007011,evidence_organizations_MI.csv
+EJP_DATED,EVD-278505,SITE-018014,evidence_sites_MI.csv
+DART_TYPE,EVD-278506,SITE-014003,evidence_sites_CA.csv
+YOKO_OUTCOME,EVD-278507,SITE-012023,evidence_sites_SC.csv
+YOKO_BINDING,EVD-278508,SITE-012023,evidence_sites_SC.csv

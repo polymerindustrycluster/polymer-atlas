@@ -1,0 +1,26 @@
+{
+  "approved_superset": "2b2b427",
+  "main_base": "6c1f03b388cc49b7d848b28f6300de8757a15242",
+  "strict_subset_withdrawn": [
+    "ORG-004835",
+    "ORG-004867"
+  ],
+  "accepted_orgs": 163,
+  "pages": 163,
+  "feeds": 88,
+  "cells": 251,
+  "shards": 33,
+  "holds": 2095,
+  "current_tiers": {
+    "C": 51,
+    "A": 15,
+    "B": 96,
+    "U": 1
+  },
+  "only_columns": [
+    "newsroom_url",
+    "newsroom_feed_url"
+  ],
+  "remaining_verdicts_identical": true,
+  "rowsets_unchanged": true
+}

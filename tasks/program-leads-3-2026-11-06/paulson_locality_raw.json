@@ -1,0 +1,20 @@
+[
+  {
+    "source_url": "https://paulsontraining.com/paulson-training-programs/",
+    "quote": "Headquartered in Chester, Connecticut",
+    "source_class": "own_site",
+    "raw": "yes",
+    "observed_date": "2026-11-06",
+    "sha256": "c76614376255924f025c045d4f11f9cf8716d54e6535885787b7ce398a372676",
+    "bytes": 162523
+  },
+  {
+    "source_url": "https://portal.ct.gov/sots/register-manual/section-vi/counties---table-of-contents/state-marshals-by-county-and-composition-of-counties",
+    "quote": "Middlesex County Chester Clinton Cromwell Deep River",
+    "source_class": "government_filing",
+    "raw": "yes",
+    "observed_date": "2026-11-06",
+    "sha256": "ca3d11f918db84824b77cff724b025fc6fa7aff24aa11f9c0518d804f8b5ad06",
+    "bytes": 63716
+  }
+]

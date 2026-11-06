@@ -1743,23 +1743,6 @@
     ]
   },
   {
-    "org_id": "ORG-004835",
-    "checks": [
-      {
-        "url": "https://press.igus.com/",
-        "final": "https://press.igus.com/",
-        "status": "200"
-      },
-      {
-        "url": "https://press.igus.com/feed/",
-        "final": "https://press.igus.com/feed/",
-        "status": "200",
-        "items": 10,
-        "linked_items": 10
-      }
-    ]
-  },
-  {
     "org_id": "ORG-004855",
     "checks": [
       {
@@ -1802,16 +1785,6 @@
       {
         "url": "https://www.snydernet.com/news",
         "final": "https://www.snydernet.com/news",
-        "status": "200"
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-004867",
-    "checks": [
-      {
-        "url": "https://hexagonagility.com/news",
-        "final": "https://hexagonagility.com/news",
         "status": "200"
       }
     ]

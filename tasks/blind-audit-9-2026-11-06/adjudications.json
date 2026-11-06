@@ -1,0 +1,31 @@
+{
+  "written_at_utc": "2026-11-06T12:01:54.937392+00:00",
+  "original_evidence_unseen": true,
+  "decisions": [
+    {
+      "site_id": "SITE-014003",
+      "final_grade": "field_error",
+      "confirmed_fields": [
+        "site_type"
+      ],
+      "held_type": "manufacturing_plant",
+      "proposed_type": "warehouse_distribution",
+      "decision": "Current own location calls exact address Corona Distribution Center. ZIP92878 vs92880 is only a published conflict; exclude ZIP from confirmed errors pending independent postal/site reconciliation.",
+      "governing": "SCHEMA4.5/5.3 real warehouse is lawful establishment; audit8 postal-variant caution",
+      "before_original_evidence": true
+    },
+    {
+      "site_id": "SITE-012023",
+      "final_grade": "creation_error",
+      "confirmed_fields": [
+        "operating_status"
+      ],
+      "held_status": "active",
+      "proposed_status": "closed",
+      "decision": "New task explicitly includes closed among creation errors. Issuer2026-02-19 outcome says Spartanburg Plant Closed, before2026-11-06 active creation; WARN anchors570TrelleborgDr but its projectedApr19date is not used as actual closure date. Preserve historic site and propose statusreview, no deletion.",
+      "governing": "Controller audit9 assignment creation_error(closed) supersedes helper field-error taxonomy for this report; AGENTS statusdatedoutcome and2.8Form5500gate",
+      "form5500_gate": "Fresh2025bulk allplans/codes EIN061316073 usesWakefieldMA, not570TrelleborgDr. No sponsor-address counter-signal at this establishment; no absence inference.",
+      "before_original_evidence": true
+    }
+  ]
+}

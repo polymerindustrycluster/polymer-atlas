@@ -1,0 +1,172 @@
+[
+  {
+    "url": "https://www.cantexinc.com/about-us",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/d7647e6a9c1b8ab2ffb3ddd7839a84cb2ea05236ab9a817c08ae62d6add17ed5.txt",
+    "sha256": "044517e30ce2a47a079f34a458d1d2e9d354e19e71ed16131c2f479fbc3ac1d9",
+    "attempts": [
+      {
+        "route": "https://www.cantexinc.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.cantexinc.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:44Z"
+  },
+  {
+    "url": "https://www.valmet.com/service/service-centers/north-america/neenah/",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/5ce155191a2e24352cf979e5564dcbf910189ef0d7e10aacafda4b5649021849.txt",
+    "sha256": "5327eb48a9f203333463ac67427698406124555554cc20c13ef8c20826cfa9e6",
+    "attempts": [
+      {
+        "route": "https://www.valmet.com/service/service-centers/north-america/neenah/",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://www.valmet.com/service/service-centers/north-america/neenah/",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:44Z"
+  },
+  {
+    "url": "https://midlandplastics.com/about-us",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/d60a5dfd0cc8975677ddefffd1ea4c8472f3b77b0910df16bdd8b0c4f0980657.txt",
+    "sha256": "a95b10bce55e1725559432d9825fa6d7765c29403bbeb28af308802abf996432",
+    "attempts": [
+      {
+        "route": "https://midlandplastics.com/about-us",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://midlandplastics.com/about-us",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:46Z"
+  },
+  {
+    "url": "https://midlandplastics.com/locations",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/cb91187418377ef72b7e61cb1f4dee3edf16531d697ee38497049c4ccf39b718.txt",
+    "sha256": "7fef9c0af9c789d1c366216ffa0f181bd5ab7e11004fef36a1ec82254de49a91",
+    "attempts": [
+      {
+        "route": "https://midlandplastics.com/locations",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://midlandplastics.com/locations",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:44Z"
+  },
+  {
+    "url": "https://midlandplastics.com/locations/retail-locations",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/d3758bf1046f185b8fdde5bddbc37a8d5ca8bdb2e6d9ce79d86f24e187959f14.txt",
+    "sha256": "293853461ce3494d2ef15c8798c161195428ec57aff7c53545814d6e582e8568",
+    "attempts": [
+      {
+        "route": "https://midlandplastics.com/locations/retail-locations",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://midlandplastics.com/locations/retail-locations",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:44Z"
+  },
+  {
+    "url": "https://midlandplastics.com/blog/acrylic-sheet-uses-custom-fabrication",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/fee9ebaa679f061e70594f76cbd919025e08d1c3c43ea1b763e453b56b125355.txt",
+    "sha256": "81dab20677fd23ec8ab1a070860b90ff983691e0543c1355aebf083acdd160c5",
+    "attempts": [
+      {
+        "route": "https://midlandplastics.com/blog/acrylic-sheet-uses-custom-fabrication",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://midlandplastics.com/blog/acrylic-sheet-uses-custom-fabrication",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:44Z"
+  },
+  {
+    "url": "https://midlandplastics.com/careers/manufacturing-manager",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://midlandplastics.com/careers/manufacturing-manager",
+        "status": "404",
+        "exit": 0,
+        "effective_url": "https://midlandplastics.com/careers/manufacturing-manager",
+        "error": "",
+        "retry_after": 0
+      },
+      {
+        "route": "https://r.jina.ai/https://midlandplastics.com/careers/manufacturing-manager",
+        "status": "401",
+        "exit": 0,
+        "effective_url": "https://r.jina.ai/https://midlandplastics.com/careers/manufacturing-manager",
+        "error": "",
+        "retry_after": 0
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:45Z"
+  },
+  {
+    "url": "https://industrial.sherwin-williams.com/content/dam/pcg/sherwin-williams/automotive/na/ca/fr-ca/pdfs/marketing-uploads/ISO9001.pdf",
+    "status": "ok",
+    "page": "build/l11-correction2-cache/270b26d1887e0a8f9cc6930bcfafa80e33db8c1af68fe6acf4e8628e80712437.txt",
+    "attempts": [
+      {
+        "route": "https://industrial.sherwin-williams.com/content/dam/pcg/sherwin-williams/automotive/na/ca/fr-ca/pdfs/marketing-uploads/ISO9001.pdf",
+        "status": "200",
+        "exit": 0,
+        "effective_url": "https://industrial.sherwin-williams.com/content/dam/pcg/sherwin-williams/automotive/na/ca/fr-ca/pdfs/marketing-uploads/ISO9001.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:46Z",
+    "sha256": "5790ed649665d5db7cc92e74571bb9138240ea19813fc6874d8ef734ab873f86",
+    "extraction": "pdftotext -layout"
+  },
+  {
+    "url": "https://www.gaf.com/en-us/document-library/documents/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://www.gaf.com/en-us/document-library/documents/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+        "status": "403",
+        "exit": 0,
+        "effective_url": "https://www.gaf.com/en-us/document-library/documents/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:46Z"
+  },
+  {
+    "url": "https://documents.gaf.com/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+    "status": "FETCH_FAILED",
+    "page": "",
+    "attempts": [
+      {
+        "route": "https://documents.gaf.com/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf",
+        "status": "403",
+        "exit": 0,
+        "effective_url": "https://documents.gaf.com/brochures-%26-literature/everguard-tpo-brochure-comeg417.pdf"
+      }
+    ],
+    "fetched_at": "2026-11-06T13:25:46Z"
+  }
+]

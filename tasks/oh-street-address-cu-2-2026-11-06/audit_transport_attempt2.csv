@@ -1,0 +1,10 @@
+site_id,source_class,registry_id,transcription,fresh_source_match,detail,error
+SITE-000025,registry,110004599596,not_ITA,no,FRS fetch failed: 22,
+SITE-000028,registry,110004720384,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000164,registry,110063155482,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000156,registry,110004726761,not_ITA,no,FRS fetch failed: 22,
+SITE-000182,registry,110006269313,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000031,registry,110001625180,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree on bounded retry",
+SITE-000153,registry,110004733646,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000034,registry,110004711660,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",
+SITE-000057,registry,110010739772,not_ITA,yes,"fresh identifier,street,city,ZIP,county,state agree",

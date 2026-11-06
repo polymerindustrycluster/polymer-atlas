@@ -1,0 +1,290 @@
+{
+  "ORG-004558": {
+    "fields": {
+      "hq_city": "Hoquiam",
+      "hq_state": "WA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "EPA news release, Paneltech International LLC (epa.gov, 2007-01-22); Paneltech Environmental Product Declaration (2023-01-31); http://paneltechintl.com/",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 org design NEW:paneltech-international-llc (freeze tier A; design tier A). Created in PKT-034 (TRI national reverse-yield wave, tranche 6) on the evidence cited in pkt034_verdicts.csv / pkt034_evidence_rows.csv. Coordinator held-org leads and packet adjacency orgs were near-name magnets and were NOT used as identity evidence. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316005",
+      "record_table": "organizations",
+      "record_id": "ORG-004558",
+      "claim_type": "address",
+      "claim_detail": "HQ Hoquiam, WA, US: \"Paneltech along with its sister company, PaperStone, is headquartered at the Port of Grays Harbor in Hoquiam, Washington.\"",
+      "source_class": "own_site",
+      "source_ref": "http://paneltechintl.com/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-006109": {
+    "fields": {
+      "hq_city": "West Chicago",
+      "hq_state": "IL",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "OSHA ITA Form 300A CY2025 establishment 1315510 (Central Ink Corporation - Headquarters); OSHA inspection 347862989 (CENTRAL INK CORPORATION), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=347862989; https://cicink.com/contact/",
+      "notes": "Created 2026-11-04 in the Illinois STRONG wave (tasks/il-strong-wave-2026-11-04) from lead-fusion cluster LF-IL-00768 (STRONG: ITA:1315510;OSHA:OSHAE-77b687e538;F5500:362898076). Tier C at birth (AGENTS \u00a73 step 5). Dedupe: 0 hits. SCOPE FLAG: inks are Ring 2 only 'where polymer/resin is the functional binder' (SCHEMA section 1); the pages read never name a resin or varnish, so the binder test is not shown on the page - the integrator may prefer to hold at U/C or raise as a scope item. Federal row has no county | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316026",
+      "record_table": "organizations",
+      "record_id": "ORG-006109",
+      "claim_type": "address",
+      "claim_detail": "HQ West Chicago, IL, US: \"CIC Corporate Headquarters 1100 N. Harvester Road West Chicago, IL 60185\"",
+      "source_class": "own_site",
+      "source_ref": "https://cicink.com/contact/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-006114": {
+    "fields": {
+      "hq_city": "Port Byron",
+      "hq_state": "IL",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.sandstromproducts.com/; OSHA ITA Form 300A CY2025 establishment 278763 (SANDSTROM Products Company); https://www.sandstromproducts.com/the-company/contact-us/",
+      "notes": "Created 2026-11-04 in the Illinois STRONG wave (tasks/il-strong-wave-2026-11-04) from lead-fusion cluster LF-IL-00105 (STRONG: ITA:278763;ECHO:110000437581;F5500:362251795). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110000437581. Page lists dry film lubricants, PTFE coatings, conductive and heat-resistant coatings, and a waterborne coating. Resin binder chemistry is not stated, so no resin terms tagged; scope rests on the PIC rule that paints/coatings are Ring 2. Page does not say plant-level production in Port Byron beyond | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316031",
+      "record_table": "organizations",
+      "record_id": "ORG-006114",
+      "claim_type": "address",
+      "claim_detail": "HQ Port Byron, IL, US: \"Sandstrom Products Company Headquarters PO Box 547 224 South Main Street Port Byron, IL 61275\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.sandstromproducts.com/the-company/contact-us/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007026": {
+    "fields": {
+      "hq_city": "Troy",
+      "hq_state": "MI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://nationalmanufacturing.group/location/molded-plastics-industries/; OSHA ITA Form 300A CY2025 establishment 989505 (Molded Plastics Industries, LLC); OSHA inspection 347942690 (MOLDED PLASTICS INC.), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=347942690; https://nationalmanufacturing.group",
+      "notes": "Created 2026-11-04 in the Michigan STRONG wave (tasks/mi-strong-wave-2026-11-04) from lead-fusion cluster LF-MI-00050 (STRONG: ITA:989505;OSHA:OSHAE-0047232e38;ECHO:110000408247). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110000408247. Federal name Molded Plastics Inc.; own-site MPI is 'A Division of National Composites' under National Manufacturing Group (Troy MI address on page, not labeled HQ, so HQ blank). Step 4 dedupe hits were name-substring noise (PSI Molded Plastics NH etc.), none this site. Domain nationalmanufacturing.g | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316044",
+      "record_table": "organizations",
+      "record_id": "ORG-007026",
+      "claim_type": "address",
+      "claim_detail": "HQ Troy, MI, US: \"our sales team located in our Troy Michigan headquarters\"",
+      "source_class": "own_site",
+      "source_ref": "https://nationalmanufacturing.group",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007032": {
+    "fields": {
+      "hq_city": "Macomb",
+      "hq_state": "MI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://teampti.com; OSHA ITA Form 300A CY2025 establishment 1013524 (PTI Engineered Plastics); https://teampti.com/pti-engineered-plastics-has-been-awarded-the-top-workplace-of-the-year-for-2023-by-the-detroit-free-press/",
+      "notes": "Created 2026-11-04 in the Michigan STRONG wave (tasks/mi-strong-wave-2026-11-04) from lead-fusion cluster LF-MI-00542 (STRONG: ITA:1013524;ECHO:110037403208;F5500:382534809). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110037403208. Site tier B proposed; org new so C. Page title gives the legal form \"PTI Engineered Plastics, Inc.\". HQ not stated as such on the page. No resin names on the home page (materials left blank). | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316046",
+      "record_table": "organizations",
+      "record_id": "ORG-007032",
+      "claim_type": "address",
+      "claim_detail": "HQ Macomb, MI, US: \"Headquartered in Macomb, MI, PTI Engineered Plastics\"",
+      "source_class": "own_site",
+      "source_ref": "https://teampti.com/pti-engineered-plastics-has-been-awarded-the-top-workplace-of-the-year-for-2023-by-the-detroit-free-press/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007045": {
+    "fields": {
+      "hq_city": "Romulus",
+      "hq_state": "MI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.spiratex.com/about; OSHA ITA Form 300A CY2025 establishment 96771 (Romulus Division); https://spiratex.com/wp-content/uploads/2022/02/Spiratex_Catalog.pdf",
+      "notes": "Created 2026-11-04 in the Michigan STRONG wave (tasks/mi-strong-wave-2026-11-04) from lead-fusion cluster LF-MI-00855 (STRONG: ITA:96771;F5500:381859432;USASPEND:K5ZNLMDPDLT6). Tier C at birth (AGENTS \u00a73 step 5). County blank in federal row; Wayne supplied from the city (Romulus). Company also operates a Monroe, MI ram-extrusion plant (separate site, not in this packet). HQ not stated as such, so org_hq_* left blank. Tubing and profile wording is from the home page ('plastic tubing in virtually any configura | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316055",
+      "record_table": "organizations",
+      "record_id": "ORG-007045",
+      "claim_type": "address",
+      "claim_detail": "HQ Romulus, MI, US: \"Corporate Headquarters || Romulus, Michigan 48174\"",
+      "source_class": "own_site",
+      "source_ref": "https://spiratex.com/wp-content/uploads/2022/02/Spiratex_Catalog.pdf",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007052": {
+    "fields": {
+      "hq_city": "Mattawan",
+      "hq_state": "MI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://westerndp.com/; OSHA ITA Form 300A CY2025 establishment 61877 (Western Diversified Plastics); OSHA inspection 348145418 (WESTERN DIVERSIFIED PLASTICS), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348145418; https://westerndp.com/contact-wdp/",
+      "notes": "Created 2026-11-04 in the Michigan STRONG wave (tasks/mi-strong-wave-2026-11-04) from lead-fusion cluster LF-MI-00644 (STRONG: ITA:61877;OSHA:OSHAE-bcaf9cd166;ECHO:110054842015;F5500:043807855). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110054842015. Process not stated (page lists product design, manufacturing, validation, in-house tool design and build), so processes left blank. HQ not labeled on page. Tier C because new org. Dedupe: 0 hits at steps 2-4. | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316057",
+      "record_table": "organizations",
+      "record_id": "ORG-007052",
+      "claim_type": "address",
+      "claim_detail": "HQ Mattawan, MI, US: \"Headquarters Western Diversified Plastics 53150 North Main Street Mattawan, MI 49071\"",
+      "source_class": "own_site",
+      "source_ref": "https://westerndp.com/contact-wdp/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007066": {
+    "fields": {
+      "hq_city": "Sheridan",
+      "hq_state": "MI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://wppllc.com/; OSHA ITA Form 300A CY2025 establishment 928828 (St. Clair); OSHA inspection 348569005 (WRIGHT PLASTIC PRODUCTS CO L.L.C.), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348569005; https://wppllc.com/Contact",
+      "notes": "Created 2026-11-04 in the Michigan STRONG wave (tasks/mi-strong-wave-2026-11-04) from lead-fusion cluster LF-MI-00621 (STRONG: ITA:928828;OSHA:OSHAE-698292dc72;ECHO:110044977291). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110044977291. Third-party summaries (not evidence) place the company in St. Clair and Sheridan MI; HQ left blank. Plastics News 2014/2017 items on St. Clair two-shot molding and expansion were seen only as search snippets. NAICS set carries two 6-digit codes (326199, 333249) so none chosen. County: federal 'St Cl | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316068",
+      "record_table": "organizations",
+      "record_id": "ORG-007066",
+      "claim_type": "address",
+      "claim_detail": "HQ Sheridan, MI, US: \"Headquarters 201 Condensery Rd. Sheridan, MI 48884\"",
+      "source_class": "own_site",
+      "source_ref": "https://wppllc.com/Contact",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007103": {
+    "fields": {
+      "hq_city": "Sussex",
+      "hq_state": "WI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "OSHA ITA Form 300A CY2025 establishment 1427011 (Sussex IM Inc.); https://www.sussexim.com/contact-sussex-im/",
+      "notes": "Created 2026-11-04 in the Wisconsin STRONG wave (tasks/wi-strong-wave-2026-11-04) from lead-fusion cluster LF-WI-00074 (STRONG: ITA:1427011;ECHO:110001929469;F5500:900508625). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110001929469. Exact-string check passed for quote and footer address. Resins not named on site, so materials blank. HQ not labeled as such; org_hq_* blank. 'Insert molding' mapped to insert_overmolding; 'two-shot and multi-shot' to two_shot_molding; 'IML and decoration, pad printing' to printing_decorating_plasti | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316070",
+      "record_table": "organizations",
+      "record_id": "ORG-007103",
+      "claim_type": "address",
+      "claim_detail": "HQ Sussex, WI, US: \"Headquarters & Manufacturing Facility N65 W24770 Main Street Sussex, WI 53089\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.sussexim.com/contact-sussex-im/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007106": {
+    "fields": {
+      "hq_city": "Manitowoc",
+      "hq_state": "WI",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://www.kaysun.com/about-kaysun-corporation; OSHA ITA Form 300A CY2025 establishment 1442090 (Kaysun Corporation); OSHA inspection 343991964 (KAYSUN CORPORATION), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=343991964; https://www.kaysun.com/careers",
+      "notes": "Created 2026-11-04 in the Wisconsin STRONG wave (tasks/wi-strong-wave-2026-11-04) from lead-fusion cluster LF-WI-00329 (STRONG: ITA:1442090;OSHA:OSHAE-8a4064ae4c;F5500:391223795). Tier C at birth (AGENTS \u00a73 step 5). Exact-string check passed on the About page. Site does not say Manitowoc is HQ or the plant, so org_hq_* blank; the only address printed is the Manitowoc footer. A MapQuest listing marking it 'Closed' is availability noise, not evidence (job postings 2023-2026 found). County from city. Two-shot not | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316073",
+      "record_table": "organizations",
+      "record_id": "ORG-007106",
+      "claim_type": "address",
+      "claim_detail": "HQ Manitowoc, WI, US: \"A bright, clean, and safe headquarters in Manitowoc, Wisconsin\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.kaysun.com/careers",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007309": {
+    "fields": {
+      "hq_city": "Hanover",
+      "hq_state": "MA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "OSHA ITA Form 300A CY2025 establishment 49401 (Manufacturing); OSHA inspection 348006305 (CRI-TECH, INC.), https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348006305; https://www.critechinc.com/wp-content/uploads/2026/03/Cri-Line-Brochure-3-24-2026.pdf",
+      "notes": "Created 2026-11-04 in the Massachusetts STRONG wave (tasks/ma-strong-wave-2026-11-04) from lead-fusion cluster LF-MA-00310 (STRONG: ITA:49401;OSHA:OSHAE-0034a0a6cb;ECHO:110024347429). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110024347429. cri-tech.com returned HTTP 403 (availability only), so there is no own-site witness and org_website is left blank rather than guessed. Third-party only: compounding of rubber and fluoropolymer, so processes and materials are blank per the own-page rule; likely custom_compounding, rubber_mixing_compo | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316082",
+      "record_table": "organizations",
+      "record_id": "ORG-007309",
+      "claim_type": "address",
+      "claim_detail": "HQ Hanover, MA, US: \"Headquarters, technical development, laboratories, and manufacturing facilities are located in Hanover, Massachusetts, USA\"",
+      "source_class": "own_site",
+      "source_ref": "https://www.critechinc.com/wp-content/uploads/2026/03/Cri-Line-Brochure-3-24-2026.pdf",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  },
+  "ORG-007405": {
+    "fields": {
+      "hq_city": "Burlingame",
+      "hq_state": "CA",
+      "hq_country": "US",
+      "hq_county": "",
+      "hq_in_scope": "national_us",
+      "sources": "https://merrills.com/contact-us/; OSHA ITA Form 300A CY2025 establishment 294491 (Merrill's Packaging Inc.); https://merrills.com/contact-us/",
+      "notes": "Created 2026-11-04 in the California STRONG wave (tasks/ca-strong-wave-2026-11-04) from lead-fusion cluster LF-CA-01432 (STRONG: ITA:294491;ECHO:110070448361;F5500:941503082). Tier C at birth (AGENTS \u00a73 step 5). ECHO/FRS 110070448361. Fetched own pages do not print Burlingame (address blocks render empty; contact page says only 'strategic facilities in California and Costa Rica'), so HQ left blank and plant city rests on federal rows - integrator to confirm in a browser render. thermoforming_unspecified comes from the home page t | HQ placement 2026-11-06: explicit entity HQ; unsupported prior county cleared. Move is not a tier/status re-verification."
+    },
+    "evidence": {
+      "evidence_id": "EVD-316087",
+      "record_table": "organizations",
+      "record_id": "ORG-007405",
+      "claim_type": "address",
+      "claim_detail": "HQ Burlingame, CA, US: \"US Headquarters Merrill\u2019s Packaging 1529 Rollins Road, Burlingame, CA 94010\"",
+      "source_class": "own_site",
+      "source_ref": "https://merrills.com/contact-us/",
+      "observed_date": "2026-11-06",
+      "tier_effect": "supports_A",
+      "created_by": "codex atlas-L5b-residual-hq3",
+      "notes": "HQ witness independently re-fetched raw; fetched 2026-11-06; county unsupported and blank; record tier unchanged."
+    }
+  }
+}

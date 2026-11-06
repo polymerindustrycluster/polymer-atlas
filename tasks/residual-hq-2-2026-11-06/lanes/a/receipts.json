@@ -1,0 +1,370 @@
+{
+  "observed_date": "2026-11-06",
+  "input_sha256": "f1eca60142700a01b9e02053d093a2a0219348b032631792d17f38d19dfcc1e4",
+  "fetches": [
+    {
+      "org_id": "ORG-004293",
+      "url": "https://corporate.delaval.com/wp-content/uploads/2025/05/DeLaval_Group_Entities_-v.2.0_06052025_MASTER.pdf",
+      "raw_sha256": "61e4e9a2e4a3576da4f44db2ae308f60d0f3eccb67889726f2fd85feea877738",
+      "path": "/tmp/residual-hq2-a/ORG-004293_1f230b497f.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004310",
+      "url": "https://hutchinsonna.com/",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "/tmp/residual-hq2-a/ORG-004310_1506a8cb51.raw",
+      "error": "curl: (60) SSL certificate problem: unable to get local issuer certificate\nMore details here: https:"
+    },
+    {
+      "org_id": "ORG-004310",
+      "url": "https://www.hutchinson.com/",
+      "raw_sha256": "3baa79c0d3520276467f8120dcb9958f9b551fa930d220cf06c5498cf3319ce9",
+      "path": "/tmp/residual-hq2-a/ORG-004310_71f25a9ba7.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004311",
+      "url": "https://lei.bloomberg.com/leis/view/549300PSHUGBOQ47QR63",
+      "raw_sha256": "f5647be0a9d40dd6abfd9146fcc951979fd534d28a8d03edfbd818e8319a1e07",
+      "path": "/tmp/residual-hq2-a/ORG-004311_a7e62e9b3e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004326",
+      "url": "https://www.royal-mfg.com/",
+      "raw_sha256": "0352b16952b187aca36d93351c965bf994a34211a94eaa3dd509e1d3823f2e8d",
+      "path": "/tmp/residual-hq2-a/ORG-004326_0c03f060c7.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004326",
+      "url": "https://www.royalbaths.com/",
+      "raw_sha256": "3b3e4c0399636adfce8fabc9b16f6ab5f95022ba5f06f987ea2b85c2ec0f9b27",
+      "path": "/tmp/residual-hq2-a/ORG-004326_a74b1b2082.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004346",
+      "url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+      "raw_sha256": "1c266f182c15a99ee3faaf98e30fe7b3f3c12672fc2d5b30491ed6b4f278024d",
+      "path": "/tmp/residual-hq2-a/ORG-004346_d3a283c52b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004347",
+      "url": "https://americh.com/pages/contact",
+      "raw_sha256": "371d023d5bd33886eace454dbd7fc686d7bc0867e3b8d8055623ff893c6158a4",
+      "path": "/tmp/residual-hq2-a/ORG-004347_1d5299f036.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004347",
+      "url": "https://americh.com/pages/about-us",
+      "raw_sha256": "9bd41298238c66b6a7dc6dfe5779f21ed3add274c461ce054e518d4db38084d8",
+      "path": "/tmp/residual-hq2-a/ORG-004347_f02ea43b4b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004348",
+      "url": "https://amerityre.com/company/",
+      "raw_sha256": "2b00535dc49d2dd31034d226a691bbc74d308e1cb18e26b5082f8dbfab61095e",
+      "path": "/tmp/residual-hq2-a/ORG-004348_363dcf64c3.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004348",
+      "url": "https://amerityre.com/",
+      "raw_sha256": "86e90420f7202c7e6555f282cadb97c1694c75446fcbab2d9db161953065b0b7",
+      "path": "/tmp/residual-hq2-a/ORG-004348_9bc633c812.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004349",
+      "url": "https://chemprene.com/contact/",
+      "raw_sha256": "a9710aae8d9859fabf9c64091ae48c185130be7892afc9cf9f379cf006153f37",
+      "path": "/tmp/residual-hq2-a/ORG-004349_20c2af232c.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004349",
+      "url": "https://chemprene.com/",
+      "raw_sha256": "e0b2167391a7b8a05350aa881730592462f5beb57a180b5cac2f9a8ab5b9a8c5",
+      "path": "/tmp/residual-hq2-a/ORG-004349_8be3dfbfe7.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004350",
+      "url": "https://polyurethanelaboratories.com/poly-labs-fluid-focus/",
+      "raw_sha256": "29e6711602531ed49b6027b2400b6c01cfc2f224096177de669725189d599f5f",
+      "path": "/tmp/residual-hq2-a/ORG-004350_e1ad81ad9f.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004351",
+      "url": "https://www.pinal.gov/375/Arizona-Environmental-Container-Corp",
+      "raw_sha256": "c360dbfd272e0113b042c751d9da4acc1615cd10c0b7b19177bf21f5d1647923",
+      "path": "/tmp/residual-hq2-a/ORG-004351_c0beefd0cf.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004352",
+      "url": "https://www.armadarubber.com/about.aspx",
+      "raw_sha256": "7f5b802bbcb5b7f58b51bd6169255f0dd0849a8980d7b1b589ad77cb1dd8f46c",
+      "path": "/tmp/residual-hq2-a/ORG-004352_9f9e1cd30e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004354",
+      "url": "https://lei.bloomberg.com/leis/view/2549007IFQ78ZCCHZO05",
+      "raw_sha256": "2de9477430f85d1a58334f0443dcc4fe4bbb0860e8b7a19b2f639081fa140abc",
+      "path": "/tmp/residual-hq2-a/ORG-004354_7f41e8742f.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004354",
+      "url": "https://armorock.com/",
+      "raw_sha256": "86096c20c4f6e49701e0711b7b345963a2c1ccbd9ced3feedeb1e9dba8b99b3c",
+      "path": "/tmp/residual-hq2-a/ORG-004354_bac102b0c5.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004355",
+      "url": "https://arropol.com/about-us/",
+      "raw_sha256": "6f488c8412bc27711e47d2575455d52f11a31b1e40bb04993f1ac68f21a0fa9c",
+      "path": "/tmp/residual-hq2-a/ORG-004355_0caf4e8064.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004355",
+      "url": "https://arropol.com/",
+      "raw_sha256": "da5ff71e353e3ffcbb26ed1b8ca02ac076eb0141272d42de8ee6a259e9b2e40f",
+      "path": "/tmp/residual-hq2-a/ORG-004355_5c91536a36.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004356",
+      "url": "https://atlanticfootcare.com/about-us/",
+      "raw_sha256": "d0d7174ceb9c02a01ddf453e26ec8805a6dcacadeb295d68d1d2929899278d56",
+      "path": "/tmp/residual-hq2-a/ORG-004356_3fdf77d9cc.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004356",
+      "url": "https://prothotics.com/",
+      "raw_sha256": "428811dc7bfc9cf5a4e04fb3846188383d2b9f681eaf0328448d71f955469ef7",
+      "path": "/tmp/residual-hq2-a/ORG-004356_724b1dd25b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004356",
+      "url": "https://atlanticfootcare.com/contact-us/",
+      "raw_sha256": "765b6ac71ccfa3f5bc406ab478a50e4eb344cea326cba023abc4627926f87dbe",
+      "path": "/tmp/residual-hq2-a/ORG-004356_8a3cb4faa1.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004363",
+      "url": "https://carstensindustries.com/contact-us/",
+      "raw_sha256": "21ba20bc6208a63c605cbeb08467e0bff5cde14c68b99c06f3d5915c76dc18e5",
+      "path": "/tmp/residual-hq2-a/ORG-004363_b30cfad818.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004363",
+      "url": "https://carstensindustries.com/",
+      "raw_sha256": "96d0527f780fce69b39ecd20cd051a8450fd499cf97f331ba090ac19f0a19817",
+      "path": "/tmp/residual-hq2-a/ORG-004363_b9556af303.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004363",
+      "url": "https://carstensindustries.com/about/",
+      "raw_sha256": "37272d7a198b1faabf2f87b585084d921622d2b3a6d8e413ec38c1eeb188dde0",
+      "path": "/tmp/residual-hq2-a/ORG-004363_f7c43a2c4b.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004364",
+      "url": "https://carstinbrands.com/",
+      "raw_sha256": "8bf20ce56b13a33030e9556906e41234c78129b7fd1ac84671dff57d3880ede8",
+      "path": "/tmp/residual-hq2-a/ORG-004364_581c19637e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004367",
+      "url": "https://centralmarbleproducts.com/contact.html",
+      "raw_sha256": "2b39e8642c42bac3cb8d4a1b877dc6631f319fece14f16e366b661e02f83d113",
+      "path": "/tmp/residual-hq2-a/ORG-004367_7eea8a43c5.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004367",
+      "url": "https://centralmarbleproducts.com/",
+      "raw_sha256": "73d45ff5aef48687e9f941b343a84f202f1e42dacf6595d29c8ffdb3b8c27d13",
+      "path": "/tmp/residual-hq2-a/ORG-004367_dc0c656070.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004368",
+      "url": "https://www.cfmaier.com/news/mayor-crespin-visits-c-f-maier",
+      "raw_sha256": "c1b92c046bfbd4526f4e8cd3c35b8a9bf5b89ce53803a1028dddcb8e6421b605",
+      "path": "/tmp/residual-hq2-a/ORG-004368_5ca3e006ee.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004368",
+      "url": "https://www.cfmaier.com/locations",
+      "raw_sha256": "b418ba11c72fbf4d5444a139b0965c61fe6f452d57071bd5da3e8ba30f213cd4",
+      "path": "/tmp/residual-hq2-a/ORG-004368_8e79b33ae6.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004368",
+      "url": "https://cfmaier.com/",
+      "raw_sha256": "f0cdfaaccbf3cd1643da1554b817724307a603d01029bf0171e1e7570a9066f1",
+      "path": "/tmp/residual-hq2-a/ORG-004368_c648eecfa8.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004370",
+      "url": "https://www.chemelex.com/en-us/chemelex/about-us",
+      "raw_sha256": "0ff7f6298cf8e08bd689638115a647869216f26e1a29822148646630982adce9",
+      "path": "/tmp/residual-hq2-a/ORG-004370_736188ddb2.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004370",
+      "url": "https://r.jina.ai/https://www.chemelex.com/en-us/about-us",
+      "raw_sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+      "path": "/tmp/residual-hq2-a/ORG-004370_7fbb7a103c.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004370",
+      "url": "https://www.chemelex.com/en-us/about-us",
+      "raw_sha256": "6bffc780277d06883d9084058eb3db64c8bacdc9da71d64f4b98539b71d39618",
+      "path": "/tmp/residual-hq2-a/ORG-004370_b676665552.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004373",
+      "url": "https://comcasturethane.com/about/",
+      "raw_sha256": "31be41da701aa471311c81de56359d2207c182c44322b59d530e641d634077d6",
+      "path": "/tmp/residual-hq2-a/ORG-004373_35d56be971.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004374",
+      "url": "https://r.jina.ai/https://comfortrevolution.com/",
+      "raw_sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+      "path": "/tmp/residual-hq2-a/ORG-004374_228d6bf9e3.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004374",
+      "url": "https://comfortrevolution.com/",
+      "raw_sha256": "e407cdc706d06b7797ddbfe1c65cda5e0511430adb55783fd0bf828445299d68",
+      "path": "/tmp/residual-hq2-a/ORG-004374_5e6f6243e0.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004375",
+      "url": "https://completehomeconcepts.com/about-us/",
+      "raw_sha256": "ade856021b24ad9e8eed294c714acc654e1385e832d801c3fd2e734002d77929",
+      "path": "/tmp/residual-hq2-a/ORG-004375_794ba15118.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004375",
+      "url": "https://completehomeconcepts.com/",
+      "raw_sha256": "c36fa7c6b6746c3b04bd7b3b07f11c387c3f419d79c37fa64db89b60c795c6c9",
+      "path": "/tmp/residual-hq2-a/ORG-004375_7b1a581c93.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004376",
+      "url": "http://compositedesigns.biz/",
+      "raw_sha256": "71e0e1236ca9079af9a616d27645c6237b1266caa5556192509edbc88e21fdb4",
+      "path": "/tmp/residual-hq2-a/ORG-004376_eb6e45bcec.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004379",
+      "url": "https://r.jina.ai/https://www.customfiberglassmolding.com/",
+      "raw_sha256": "f18f91c88e088cfb556cd773a3912ec4ce62a7f803ffde5e20015a4406cd2719",
+      "path": "/tmp/residual-hq2-a/ORG-004379_76b6b13703.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004379",
+      "url": "https://www.customfiberglassmolding.com/",
+      "raw_sha256": "80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4",
+      "path": "/tmp/residual-hq2-a/ORG-004379_93f2119877.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004380",
+      "url": "http://wyomingcustomfiberglass.com/",
+      "raw_sha256": "fac9d4763e0384bac286acd90ec4151d0aad528321d2baab1eeab1d23aaa6d66",
+      "path": "/tmp/residual-hq2-a/ORG-004380_8688a334e0.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004380",
+      "url": "https://wyomingcustomfiberglass.com/about",
+      "raw_sha256": "9d7484f4f214efbb13e7649b3f06f74b05087ba7a21285c7503eeaad01aa5125",
+      "path": "/tmp/residual-hq2-a/ORG-004380_f1e5d5e105.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004381",
+      "url": "http://www.dadibath.com/about.php",
+      "raw_sha256": "ba593c5ec405ccf55f6d06a4d41cbbaae23cb4fbb2222b96b47a14656057ddbc",
+      "path": "/tmp/residual-hq2-a/ORG-004381_770d56eb9e.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004381",
+      "url": "http://www.dadibath.com/",
+      "raw_sha256": "8be3f9d8898d285054eb478219ab3f1669343329e46ad356f92e8fcc9134a468",
+      "path": "/tmp/residual-hq2-a/ORG-004381_c9d5e7654c.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004382",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1738014.015",
+      "raw_sha256": "1e8a39cf6a32017d55f012db830c109f73cbdc13df4036fcc644b1dfeff94b51",
+      "path": "/tmp/residual-hq2-a/ORG-004382_0a034cce6f.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004382",
+      "url": "https://dakotafiberglass.com/",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "/tmp/residual-hq2-a/ORG-004382_e2acb66d1f.raw",
+      "error": "curl: (6) Could not resolve host: dakotafiberglass.com\n"
+    },
+    {
+      "org_id": "ORG-004383",
+      "url": "http://deliveryconcepts.com/",
+      "raw_sha256": "1ba67ca8766995512548e3677ed17df02bd72f026fafe913871b3cbb32ea9ee7",
+      "path": "/tmp/residual-hq2-a/ORG-004383_e77dd4a3c1.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004384",
+      "url": "https://dfa-us.com/",
+      "raw_sha256": "80a265bed528211aa708dcd58f7a95db36eeb7f873c6fe4ddab0b3a1dc0973a4",
+      "path": "/tmp/residual-hq2-a/ORG-004384_521bfb5631.raw",
+      "error": ""
+    },
+    {
+      "org_id": "ORG-004384",
+      "url": "https://www.daviecountyedc.com/news/dfa-expands-capacity-by-relocating-to-mocksville/",
+      "raw_sha256": "a27fcc4a3e66b872c2e582dd11f55055b20cee18b87ae0879800dbf3aec4a8ea",
+      "path": "/tmp/residual-hq2-a/ORG-004384_90d0321382.raw",
+      "error": ""
+    }
+  ]
+}
