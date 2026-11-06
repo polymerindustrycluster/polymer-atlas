@@ -1,0 +1,34 @@
+[
+  {
+    "source_url": "https://www.avient.com",
+    "final_url": "https://www.avient.com",
+    "expected": "https://www.linkedin.com/company/avient-corporation/",
+    "raw_sha256": "b045351b0cfee8f4fe31b649cc06e603f9752125fdfc53a97b6a44a5c1a7d18c",
+    "locations": [
+      "footer",
+      "li.footer-content-wrap"
+    ],
+    "check": "PASS"
+  },
+  {
+    "source_url": "https://www.rtpcompany.com/",
+    "final_url": "https://www.rtpcompany.com/",
+    "expected": "https://www.linkedin.com/company/rtp-company/",
+    "raw_sha256": "c3089d0be045801cb45e6c610f56f6e8b8ada5df6f07fcf8e9d88461a0f22e05",
+    "locations": [
+      "div.fusion-fullwidth.fullwidth-box.fusion-builder-row-1.fusion-flex-container.nonhundred-percent-fullwidth.non-hundred-percent-height-scrolling.global-header-top",
+      "div.fusion-fullwidth.fullwidth-box.fusion-builder-row-9.fusion-flex-container.nonhundred-percent-fullwidth.non-hundred-percent-height-scrolling.footer-columns"
+    ],
+    "check": "PASS"
+  },
+  {
+    "source_url": "https://www.averydennison.com/",
+    "final_url": "https://www.averydennison.com/en/home.html",
+    "expected": "https://www.linkedin.com/company/avery-dennison/",
+    "raw_sha256": "10d0ceb01b3df4bc663a53f60705e67405a44190d4acc311479865a818c291ef",
+    "locations": [
+      "footer.footer-redesign"
+    ],
+    "check": "PASS"
+  }
+]

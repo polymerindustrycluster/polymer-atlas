@@ -1,0 +1,243 @@
+{
+  "LF-IL-00995": {
+    "query": {
+      "domain": "https://lyondellbasell.com",
+      "name": "Lyondellbasell",
+      "street": "8805 North Tabler Rd",
+      "city": "Morris",
+      "state": "IL",
+      "zip": "60450"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000735",
+            "name": "LyondellBasell Advanced Polymers Inc.",
+            "city": "Perrysburg",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: lyondellbasell.com"
+          },
+          {
+            "id": "ORG-000033",
+            "name": "LyondellBasell",
+            "city": "",
+            "state": "",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_US.csv",
+            "match": "domain exact: lyondellbasell.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000033",
+            "name": "LyondellBasell",
+            "city": "",
+            "state": "",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_US.csv",
+            "match": "name key 'lyondellbasell' = legal_name 'LyondellBasell'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-004619",
+            "name": "Louisiana Integrated Polyethylene JV LLC",
+            "city": "Westlake",
+            "state": "LA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_LA.csv",
+            "match": "notes contains 'Lyondellbasell'"
+          },
+          {
+            "id": "ORG-000735",
+            "name": "LyondellBasell Advanced Polymers Inc.",
+            "city": "Perrysburg",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "notes contains 'Lyondellbasell'"
+          },
+          {
+            "id": "ORG-002822",
+            "name": "Closed Loop Partners, LLC",
+            "city": "New York",
+            "state": "NY",
+            "status": "active",
+            "tier": "A",
+            "file": "ecosystem.csv",
+            "match": "notes contains 'Lyondellbasell'"
+          }
+        ]
+      }
+    ]
+  },
+  "LF-IL-01004": {
+    "query": {
+      "domain": "https://meridianadhesives.com/evans/",
+      "name": "Evans Adhesives Prime Blend",
+      "street": "1300 Pratt Blvd Suite 200",
+      "city": "Elk Grove Village",
+      "state": "IL",
+      "zip": "60007"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000828",
+            "name": "Evans Adhesive Corporation",
+            "city": "Columbus",
+            "state": "OH",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: meridianadhesives.com"
+          },
+          {
+            "id": "ORG-003922",
+            "name": "Meridian Adhesives Group LLC",
+            "city": "Houston",
+            "state": "TX",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_TX.csv",
+            "match": "domain exact: meridianadhesives.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": []
+      }
+    ]
+  },
+  "LF-IL-01204": {
+    "query": {
+      "domain": "https://www.sherwin-williams.com",
+      "name": "The Sherwin-Williams Company",
+      "street": "21901 Central Avenue, Matteson, IL 60443",
+      "city": "Matteson",
+      "state": "IL",
+      "zip": "60443"
+    },
+    "stop_at_step": 1,
+    "steps": [
+      {
+        "step": 1,
+        "name": "website domain (organizations_*.csv + ecosystem.csv)",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000132",
+            "name": "The Sherwin-Williams Company",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "domain exact: sherwin-williams.com"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "name": "normalized name vs legal_name/trade_names",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000132",
+            "name": "The Sherwin-Williams Company",
+            "city": "Cleveland",
+            "state": "OH",
+            "status": "active",
+            "tier": "C",
+            "file": "organizations_OH.csv",
+            "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+        "skipped": null,
+        "hits": [],
+        "other_localities": []
+      },
+      {
+        "step": 4,
+        "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+        "skipped": null,
+        "hits": [
+          {
+            "id": "ORG-000088",
+            "name": "PPG Industries, Inc.",
+            "city": "Pittsburgh",
+            "state": "PA",
+            "status": "active",
+            "tier": "A",
+            "file": "organizations_PA.csv",
+            "match": "notes contains 'The Sherwin-Williams Company'"
+          },
+          {
+            "id": "ORG-002886",
+            "name": "CSW Industrials, Inc.",
+            "city": "Dallas",
+            "state": "TX",
+            "status": "active",
+            "tier": "B",
+            "file": "organizations_TX.csv",
+            "match": "notes contains 'The Sherwin-Williams Company'"
+          }
+        ]
+      }
+    ]
+  }
+}

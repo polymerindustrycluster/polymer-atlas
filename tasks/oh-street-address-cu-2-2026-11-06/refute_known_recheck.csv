@@ -1,0 +1,4 @@
+kind,registry_id,street,city,zip,result,detail
+known,110000745766,160 Parker Ct,Chardon,44024,PASS,
+known,110000391415,350 N Buckeye St,Bellevue,44811,PASS,
+known,110000383941,555 W Linfoot St,Wauseon,43567,PASS,

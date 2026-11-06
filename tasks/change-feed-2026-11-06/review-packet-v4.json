@@ -1,0 +1,137 @@
+{
+  "schema_version": 2,
+  "scope": "C04publicchangefeedtooling:2approvedscriptsunchangeded6258d/8b22ed5,integratedmain901af049;canonicaldelta0;generatedMarkdown+Atomonlybuild/.",
+  "criteria": [
+    "Per-main-update net keyed creations/status/tier/new-evidence counts; merged standard PR attribution and explicit unmarked direct history",
+    "Shard/type moves, historical ID collisions, composites and restorations counted honestly with units",
+    "Public allowlist only; no notes/CRM/contacts/metadata leaks; invalid source/output state fails closed",
+    "Currentlanding8unit/full254pass1skip51subtests,validator0/nativeguard,real901af049258entries122PR136direct/38394EVD/known3/Atomprivacy/twoidenticalpasses;codeunchangedbothfamiliesapproved."
+  ],
+  "out_of_scope": [
+    "Full GitHub API attribution for unmarked rebase merges",
+    "Pages workflow/full-history checkout/deployment",
+    "External Atom/feed-reader UI/usage validation",
+    "Canonical data edits"
+  ],
+  "revision": "38a79f378054716c2939573c51c7a33e717fcc85",
+  "tool_access": "Clerks have full branch/source access, may use throwaway repositories and inspect full main history. Complete implementation.patch plus all packet evidence must be read; use PR ref if worker checkout moved.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "83ac72e43bb35322649bb1f2eebc0c4ad057c2bd0f05c3b2ce3fe72eff5980ea"
+    },
+    {
+      "path": "README.md",
+      "sha256": "62f4f21b36a2f96922a22657251110553df0bb3545527763d66ce6ed40f3a0b7"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "df86e1148f1dcdede996dfd3684e74a7eb4127813b6c4b43159a1c2e4240e2af"
+    },
+    {
+      "path": "adversarial-after.json",
+      "sha256": "aa0e1a618e1a6ff7fd3c3940a1b4bf4cbd98e8f256aef87398c161fb7d512353"
+    },
+    {
+      "path": "adversarial-before.json",
+      "sha256": "6e8a596a3a065fe8047cdf561ad07f430e373215052cce058f367dae12456954"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "037815f6fe34e87c63389c349f6bef8519add0926cbdcef7085caefb2be395f2"
+    },
+    {
+      "path": "check_real_history.py",
+      "sha256": "b99184684595af4fdedc93dd5be4c5f501c465204fbd3a03f03addb9d9b97eb7"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "07658056a7b88eb9aa21120dd9210ee7a4a5d2d34da73a3bca62daeb662bf35d"
+    },
+    {
+      "path": "codex-refute.md",
+      "sha256": "f31390ae4d74a6d8d1279e3e9b60c621659b9133c6f10230f71416a1513a0d33"
+    },
+    {
+      "path": "grok-initial.md",
+      "sha256": "bb5699849b1021b323241580eb855b9593a44f571394ac98099f416db0854c08"
+    },
+    {
+      "path": "implementation.patch",
+      "sha256": "4c643163aa84c7ce82cf3e403ee40c62b9a533dc4715b02cb62e8244cb62147a"
+    },
+    {
+      "path": "pytest.txt",
+      "sha256": "50acaeb4e45477a190819aafc1f9a41c7a8995299ddd9dd1cd64ace52999acad"
+    },
+    {
+      "path": "real-check.json",
+      "sha256": "c8ffbdd46e766ad416f186b578b5fdcc2922b17d1c7acfc517874890e622fe6b"
+    },
+    {
+      "path": "row-loss-final.txt",
+      "sha256": "5d14163ab2d3b225823b857f25564c75fceef1bbd52141ae344e2135544f3f94"
+    },
+    {
+      "path": "unit-tests.txt",
+      "sha256": "c9dafd5b3a7ae9aef9d7a4c2428774a6482029a7b441d42529796970708ac1aa"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "815cf786749346d08b8978ccdabc62d3c2c921f085e6adec1babc8ebbcc4cf24"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 -m unittest scripts.test_build_changelog",
+      "outcome": "pass",
+      "evidence": "unit-tests.txt"
+    },
+    {
+      "command": "uv run --no-project --with pytest python3 -m pytest -q scripts/",
+      "outcome": "pass",
+      "evidence": "pytest.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "python3 tasks/change-feed-2026-11-06/check_real_history.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [
+    {
+      "id": "initial-codex-grok",
+      "findings": [
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "output-leaf-symlink",
+          "evidence": "Codex1 codex-refute.md; reproduced adversarial-before.json, corrected8b22ed5, adversarial-after.json and eight passing tests. Grok original APPROVE historical only."
+        },
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "output-pair-consistency",
+          "evidence": "Codex1 codex-refute.md; reproduced adversarial-before.json, corrected8b22ed5, adversarial-after.json and eight passing tests. Grok original APPROVE historical only."
+        },
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "table-id-namespace",
+          "evidence": "Codex1 codex-refute.md; reproduced adversarial-before.json, corrected8b22ed5, adversarial-after.json and eight passing tests. Grok original APPROVE historical only."
+        }
+      ]
+    }
+  ],
+  "receipts": []
+}

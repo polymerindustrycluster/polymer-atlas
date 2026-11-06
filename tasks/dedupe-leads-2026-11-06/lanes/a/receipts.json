@@ -1,0 +1,222 @@
+{
+  "observed_date": "2026-11-06",
+  "baseline": "542629e",
+  "input_sha256": "b96731f59132bb7d12aa135ad74cc5ba40284b641b8d973b20cacc351eab1318",
+  "fetches": [
+    {
+      "pair_id": "D01",
+      "org_ids": [
+        "ORG-000755",
+        "ORG-001931"
+      ],
+      "url": "https://www.cooperstandard.com/sites/default/files/2019-01/iso-14001-quality-certification.pdf",
+      "raw_sha256": "490c9d22a82d944dca649391520352f9f2f27e3915acd0a23bc370baedcd45c8",
+      "path": "/tmp/dedupe-leads-a/D01_025de2ff8f.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D01",
+      "org_ids": [
+        "ORG-000755",
+        "ORG-001931"
+      ],
+      "url": "https://ir.cooperstandard.com/2018-07-03-Cooper-Standard-Agrees-to-Acquire-Lauren-Manufacturing-and-Lauren-Plastics-to-Accelerate-Growth-in-Key-Industrial-Markets",
+      "raw_sha256": "9748b94d5df60ab149ff7ca5d151c9c0183347ec581c04b7322c96d911f848ed",
+      "path": "/tmp/dedupe-leads-a/D01_168fdb847f.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D01",
+      "org_ids": [
+        "ORG-000755",
+        "ORG-001931"
+      ],
+      "url": "https://www.cooperstandard.com/sites/default/files/ISO%2014001%20Certificate%202023-2026%20NP%20CSISG.pdf",
+      "raw_sha256": "d5f63a4abfd32b87a5ebcaebcd38eb2dd93f19f648d09821001232d55d576022",
+      "path": "/tmp/dedupe-leads-a/D01_8bb8c08735.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D01",
+      "org_ids": [
+        "ORG-000755",
+        "ORG-001931"
+      ],
+      "url": "https://www.cooperstandard-isg.com/",
+      "raw_sha256": "0ed848bb96a2cf6168b2d317d494da5417d6a63ab4c09a778a58d343fb96f950",
+      "path": "/tmp/dedupe-leads-a/D01_97ddafaeb7.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D01",
+      "org_ids": [
+        "ORG-000755",
+        "ORG-001931"
+      ],
+      "url": "https://www.cooperstandard.com/lauren-manufacturing",
+      "raw_sha256": "7a465e1fb395e47432049b26b92a1390bb546dfc7fb8978a13e540679a9efcff",
+      "path": "/tmp/dedupe-leads-a/D01_f934e46ab8.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D02",
+      "org_ids": [
+        "ORG-000386"
+      ],
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1305025.015",
+      "raw_sha256": "ae73abbd5dd840b3598bc214d123f8bbc2a5461638dcabe83bb5b259c9647357",
+      "path": "/tmp/dedupe-leads-a/D02_264d1114fb.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D02",
+      "org_ids": [
+        "ORG-002079"
+      ],
+      "url": "https://enviro.epa.gov/triexplorer/release_fac_profile?TRI=44004TNNDS4001B&YEAR=2024",
+      "raw_sha256": "47e93f7073f967ac1cb2a2f40dedacf951365a174fecae2509f69f474b1618b1",
+      "path": "/tmp/dedupe-leads-a/D02_39661150f5.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D02",
+      "org_ids": [
+        "ORG-000386"
+      ],
+      "url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/Portals/27/sip/Nonattain/D1-nonEGU_point_source_inv.pdf",
+      "raw_sha256": "d5fcf5c3403430ea7e4e5d1743bf8ce4a237a19db815585d5cd78a48a01be6f8",
+      "path": "/tmp/dedupe-leads-a/D02_8e46515b01.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D02",
+      "org_ids": [
+        "ORG-000386"
+      ],
+      "url": "https://www.itenindustries.com/",
+      "raw_sha256": "9928b8b9c97530dc49bcc26ea01791e2e37585f574036e11ba93eb90ad2bc3c4",
+      "path": "/tmp/dedupe-leads-a/D02_93e01bbabc.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D02",
+      "org_ids": [
+        "ORG-002079"
+      ],
+      "url": "https://www.tdmfuelcellstore.com/",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "/tmp/dedupe-leads-a/D02_bd96e8efb5.raw",
+      "error": "curl: (6) Could not resolve host: www.tdmfuelcellstore.com\n"
+    },
+    {
+      "pair_id": "D03",
+      "org_ids": [
+        "ORG-001088",
+        "ORG-001087"
+      ],
+      "url": "https://roppe.com/wp-content/uploads/2024/12/SCS-EPD-RFCI_LVT-Gluedown.pdf",
+      "raw_sha256": "e0dbab24d370c2926d994df51ea973a49460ade20f8afd8d315bc9116aeacf77",
+      "path": "/tmp/dedupe-leads-a/D03_5068ff60ad.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D03",
+      "org_ids": [
+        "ORG-001088",
+        "ORG-001087"
+      ],
+      "url": "https://roppe.com/wp-content/uploads/2018/10/Roppe-Press-Release_New-Facility_2018-10-23.pdf",
+      "raw_sha256": "7947523689e943c437c6ea7f25a46eaaa1af7df7ee28f6574a7c601e406a6145",
+      "path": "/tmp/dedupe-leads-a/D03_a28e417cf2.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D04",
+      "org_ids": [
+        "ORG-000011",
+        "ORG-001716"
+      ],
+      "url": "https://www.bridgestone.com/corporate/library/shareholders/pdf/107_Business_Report.pdf",
+      "raw_sha256": "0a196d41698e346b5c30f37647428a45117bb023c9fbaf7fc89d32d8dd97c2e8",
+      "path": "/tmp/dedupe-leads-a/D04_04f3655f67.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D04",
+      "org_ids": [
+        "ORG-000011",
+        "ORG-001716"
+      ],
+      "url": "https://fs2.magicalir.net/tdnet/2026/5108/20260227571355.pdf",
+      "raw_sha256": "670bd754238e0e84cb4387d2aa5c6bcedfeb069d136b82b3706934a16a12df56",
+      "path": "/tmp/dedupe-leads-a/D04_41d7769080.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D04",
+      "org_ids": [
+        "ORG-000011",
+        "ORG-001716"
+      ],
+      "url": "https://www.bridgestoneamericas.com/en/newsroom/press-releases/2022/pepc-receives-iscc-plus-certification",
+      "raw_sha256": "de6b2bd309645473244e9e4689c53138ac8374aacfa3c6bff9bc5b34bd8709cc",
+      "path": "/tmp/dedupe-leads-a/D04_6fef988366.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D04",
+      "org_ids": [
+        "ORG-000011",
+        "ORG-001716"
+      ],
+      "url": "https://www.bridgestoneamericas.com/content/bscorpcomm-sites/americas/en/contact-us/locations/administrative-offices.html",
+      "raw_sha256": "050a64c999053ae4e739fc9d16897229eb15faef2dcfd6b30123dafa36d7a051",
+      "path": "/tmp/dedupe-leads-a/D04_db173a7b8c.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D05",
+      "org_ids": [
+        "ORG-000764",
+        "ORG-001091"
+      ],
+      "url": "https://dam.assets.ohio.gov/image/upload/epa.ohio.gov/PUBLIC/DSW/INDUS.pdf",
+      "raw_sha256": "3ec68450fa93940ff0593d593fc414f569f69e64262cf8283ff3bb4288675bf1",
+      "path": "/tmp/dedupe-leads-a/D05_5b7b9e6c63.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D05",
+      "org_ids": [
+        "ORG-000764",
+        "ORG-001091"
+      ],
+      "url": "https://enviro.epa.gov/triexplorer/release_fac_profile?TRI=43207CRNPR1550U&YEAR=2024",
+      "raw_sha256": "47e93f7073f967ac1cb2a2f40dedacf951365a174fecae2509f69f474b1618b1",
+      "path": "/tmp/dedupe-leads-a/D05_746f5af3ae.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D05",
+      "org_ids": [
+        "ORG-000764",
+        "ORG-001091"
+      ],
+      "url": "https://enviro.epa.gov/triexplorer/release_fac_profile?TRI=43207VNYLM1441U&YEAR=2024",
+      "raw_sha256": "47e93f7073f967ac1cb2a2f40dedacf951365a174fecae2509f69f474b1618b1",
+      "path": "/tmp/dedupe-leads-a/D05_e1c8cc3094.raw",
+      "error": ""
+    },
+    {
+      "pair_id": "D05",
+      "org_ids": [
+        "ORG-000764",
+        "ORG-001091"
+      ],
+      "url": "https://www.westlakeroyalbuildingproducts.com/",
+      "raw_sha256": "238b10cc9a901eb214c57143029e5f9f30a3c7de3bac452ec22e73f1f2e9a8b0",
+      "path": "/tmp/dedupe-leads-a/D05_f3234e12ac.raw",
+      "error": ""
+    }
+  ]
+}

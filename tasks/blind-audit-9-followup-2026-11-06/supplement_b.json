@@ -1,0 +1,181 @@
+[
+  {
+    "site_id": "SITE-016116",
+    "supersedes_original_followup_hash": "bee7340507a43bf0a0dc04ede7717674266cde73e7b5ed1b93c8ec1f2ba5f02f",
+    "grade": "unresolved",
+    "observations": "Rendered employer Workday page says the requested job does not exist. This establishes route unavailability only; no site address/process content was recovered. Original unresolved grade retained.",
+    "sources": [
+      {
+        "url": "https://ccc.wd5.myworkdayjobs.com/en-US/ccc_external/job/Atlanta-GA/Machine-Operator---Days_R20586",
+        "source_class": "route_availability_only",
+        "source_authorship": "Altium employer Workday recruiting tenant",
+        "quote": "The page you are looking for doesn't exist.",
+        "raw_checked": true,
+        "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-altium.html",
+        "sha256": "55352070f254cc42a043d1a30ced7c295164a1bada359a780551af2c0eb1c598",
+        "status": 200,
+        "observed_date": "2026-11-06",
+        "limitation": "Quote documents fetched page/availability, not positive site operation or absence."
+      }
+    ],
+    "raw_checked": true,
+    "settlingfact": "Raw employer-controlled or official evidence tying Altium at 6220 Duquesne Drive to local plastics manufacturing.",
+    "settling_fact": "Raw employer-controlled or official evidence tying Altium at 6220 Duquesne Drive to local plastics manufacturing.",
+    "limitations": "One target connector attempt; site lifetime routes=10/10. No inference that plant does not exist from missing job. Original locked verdict/receipts/calibration unchanged. No original evidence or old audit sources accessed. No closure or no-establishment finding. Current render observed after original follow-up lock on 2026-11-06; job availability is temporal, not a site-status ruling.",
+    "locked_at_utc": "2026-11-06T13:18:17.497574+00:00",
+    "calibration": {
+      "passed": true,
+      "positive_records": [
+        {
+          "site_id": "SITE-016010",
+          "positive_quote": "Jacksonville, Florida Lab & Manufacture 5555 W. Beaver St Jacksonville, FL 32254",
+          "positive_word_sequence_match": true,
+          "fabricated_negative": "This facility manufactures lunar titanium bananas",
+          "negative_word_sequence_match": false,
+          "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-kat-cork.html",
+          "raw_sha256": "9c1b0bf222cb98b3f0ce831889cbefee3e87a9fc72227ca0bb060c3f82c2aa98",
+          "status": 200,
+          "final_url": "https://corkindustries.net/"
+        },
+        {
+          "site_id": "SITE-016006",
+          "positive_quote": "With 33 facilities across the U.S. and Mexico, our robust manufacturing network reduces lead time and logistics costs.",
+          "positive_word_sequence_match": true,
+          "fabricated_negative": "This facility manufactures lunar titanium bananas",
+          "negative_word_sequence_match": false,
+          "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-kat-fxi.html",
+          "raw_sha256": "e0b4acac974fca4e758ee6d5d151e5c2d556bea6817be7bf6683466f93a805b9",
+          "status": 200,
+          "final_url": "https://www.fxi.com/what-we-do"
+        },
+        {
+          "site_id": "SITE-014007",
+          "positive_quote": "2343 PEGASUS DRIVE BAKERSFIELD, CA 93308",
+          "positive_word_sequence_match": true,
+          "fabricated_negative": "This facility manufactures lunar titanium bananas",
+          "negative_word_sequence_match": false,
+          "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-kat-nusil.html",
+          "raw_sha256": "ad3383c6b74831b014aa1787bbf9f945a81c3aa65611ce6b6185de09a7585a76",
+          "status": 200,
+          "final_url": "https://www.dir.ca.gov/oshab/DECISIONS-ALJ/2020/1195278-Nusil-Technology.pdf"
+        }
+      ],
+      "normalizer": "Authorized house W reused from prior calibration; stdlib HTMLParser text from returned rawHtml, excludes script/style; direct ordered word-sequence matching. No LLM/AI extraction or summary requested.",
+      "timing": "First two target responses (Altium/Reynolds) fetched before parent requested three-record KAT, but not trusted as positive evidence. All KATs passed before subsequent four targets and any supplement locks.",
+      "rendering_capability": "JavaScript rendering observed: Workday renders job-not-found; longer ADP wait renders employer careers content. Underlying app content still may be unavailable. PDF KAT uses tool deterministic PDF-to-HTML rendition checked against already known exact address; not treated as new site research."
+    },
+    "named_check": {
+      "command": "python3 /tmp/audit9-follow-b/check_supplement.py",
+      "expected": "PASS four unique target holds; six target+three KAT calls counted; every receipt response/raw/text hash replay; quotes and3KAT+negative replay; all site totals<=10; frozen original hashes unchanged; branch unchanged and0data diff",
+      "combined_attempt_counts": {
+        "SITE-016010": 2,
+        "SITE-014007": 9,
+        "SITE-019002": 6,
+        "SITE-019011": 10,
+        "SITE-014015": 5,
+        "SITE-016006": 8,
+        "SITE-016101": 10,
+        "SITE-016116": 10
+      }
+    }
+  },
+  {
+    "site_id": "SITE-019011",
+    "supersedes_original_followup_hash": "bee7340507a43bf0a0dc04ede7717674266cde73e7b5ed1b93c8ec1f2ba5f02f",
+    "grade": "unresolved",
+    "observations": "Rendered OSHA inspection route returns human-verification content, HTTP405. No underlying inspection record recovered. Original unresolved grade retained.",
+    "sources": [
+      {
+        "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1025009.015",
+        "source_class": "route_availability_only",
+        "source_authorship": "US Department of Labor OSHA",
+        "quote": "Let's confirm you are human",
+        "raw_checked": true,
+        "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-reynolds.html",
+        "sha256": "fcccdd1aa6329ba2ae342f81bdf1ba8b005683da39ab728c9d9be0b830ffb799",
+        "status": 405,
+        "observed_date": "2026-11-06",
+        "limitation": "Quote documents fetched page/availability, not positive site operation or absence."
+      }
+    ],
+    "raw_checked": true,
+    "settlingfact": "Raw primary exact-address Reynolds operator and polymer process evidence for 2226 E Morton Avenue.",
+    "settling_fact": "Raw primary exact-address Reynolds operator and polymer process evidence for 2226 E Morton Avenue.",
+    "limitations": "One target connector attempt; site lifetime routes=10/10. Verification challenge not positive evidence. Original locked verdict/receipts/calibration unchanged. No original evidence or old audit sources accessed. No closure or no-establishment finding. Current render observed after original follow-up lock on 2026-11-06; job availability is temporal, not a site-status ruling.",
+    "locked_at_utc": "2026-11-06T13:18:17.497596+00:00"
+  },
+  {
+    "site_id": "SITE-016006",
+    "supersedes_original_followup_hash": "bee7340507a43bf0a0dc04ede7717674266cde73e7b5ed1b93c8ec1f2ba5f02f",
+    "grade": "unresolved",
+    "observations": "First rendered employer ADP attempt contains only FXI Careers; second attempt with15-second wait renders actual FXI careers page and recent jobs in other cities. Neither contains Miami or 11000 address in raw body. Company KAT independently re-confirms city-level Miami network only. Original hold remains.",
+    "sources": [
+      {
+        "url": "https://myjobs.adp.com/fxiexternalsite",
+        "source_class": "route_availability_only",
+        "source_authorship": "FXI employer ADP recruiting tenant linked by company site",
+        "quote": "FXI Careers",
+        "raw_checked": true,
+        "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-fxi-careers.html",
+        "sha256": "f790b9ef386a86d5e4d2a15c5a8c445c841fdc583c940fceaf3e745b7b6ad878",
+        "status": 200,
+        "observed_date": "2026-11-06",
+        "limitation": "Quote documents fetched page/availability, not positive site operation or absence."
+      },
+      {
+        "url": "https://myjobs.adp.com/fxiexternalsite",
+        "source_class": "route_availability_only",
+        "source_authorship": "FXI employer ADP recruiting tenant linked by company site",
+        "quote": "FXI Career Page",
+        "raw_checked": true,
+        "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-fxi-careers-longwait.html",
+        "sha256": "b5b24889857e2ca65686351a40ea139f602b720b8f8ce1d9ee153512982c587f",
+        "status": 200,
+        "observed_date": "2026-11-06",
+        "limitation": "Quote documents fetched page/availability, not positive site operation or absence."
+      }
+    ],
+    "raw_checked": true,
+    "settlingfact": "Employer-controlled exact-address page linking FXI operator, local foam fabrication and 11000 NW32nd Avenue.",
+    "settling_fact": "Employer-controlled exact-address page linking FXI operator, local foam fabrication and 11000 NW32nd Avenue.",
+    "limitations": "Two target attempts plus one KAT; site lifetime routes=8/10. A general careers page and jobs elsewhere cannot establish Miami site process, and absence from recent job listing does not establish closure. Original locked verdict/receipts/calibration unchanged. No original evidence or old audit sources accessed. No closure or no-establishment finding. Current render observed after original follow-up lock on 2026-11-06; job availability is temporal, not a site-status ruling.",
+    "locked_at_utc": "2026-11-06T13:18:17.497701+00:00"
+  },
+  {
+    "site_id": "SITE-016101",
+    "supersedes_original_followup_hash": "bee7340507a43bf0a0dc04ede7717674266cde73e7b5ed1b93c8ec1f2ba5f02f",
+    "grade": "unresolved",
+    "observations": "Rendered company homepage is accessible as content but metadata reports307; it supplies generic cups/foam product statements without exact4640 address/process link. Rendered2026 OSHA route returns human-verification content HTTP405. No new settling site fact. Historical actual EPS manufacturing remains supported by original fresh EPD review, current active continuity unresolved.",
+    "sources": [
+      {
+        "url": "https://wincup.com/",
+        "source_class": "route_availability_only",
+        "source_authorship": "WinCup company homepage",
+        "quote": "Product Catalog",
+        "raw_checked": true,
+        "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-wincup-home.html",
+        "sha256": "d74e324d3497b0c7431d736bfa7ff15fd58a02517c5368edef52fc5ee81ab174",
+        "status": 307,
+        "observed_date": "2026-11-06",
+        "limitation": "Quote documents fetched page/availability, not positive site operation or absence."
+      },
+      {
+        "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=348699208",
+        "source_class": "route_availability_only",
+        "source_authorship": "US Department of Labor OSHA",
+        "quote": "Let's confirm you are human",
+        "raw_checked": true,
+        "raw_path": "/tmp/audit9-follow-b/rawpages/supplement-wincup-osha.html",
+        "sha256": "40110789b0cfa10fa12edb96ab1c30add1cf95407f80ca88063119c82b55aa57",
+        "status": 405,
+        "observed_date": "2026-11-06",
+        "limitation": "Quote documents fetched page/availability, not positive site operation or absence."
+      }
+    ],
+    "raw_checked": true,
+    "settlingfact": "Current exact4640 Lewis Road WinCup operator/polymer manufacturing evidence supporting frozen active status.",
+    "settling_fact": "Current exact4640 Lewis Road WinCup operator/polymer manufacturing evidence supporting frozen active status.",
+    "limitations": "Two target attempts; site lifetime routes=10/10. Homepage temporary-redirect metadata disclosed; no claim of verified200 homepage. No conclusion from bot challenge or non-site-specific marketing. Original locked verdict/receipts/calibration unchanged. No original evidence or old audit sources accessed. No closure or no-establishment finding. Current render observed after original follow-up lock on 2026-11-06; job availability is temporal, not a site-status ruling.",
+    "locked_at_utc": "2026-11-06T13:18:17.497764+00:00"
+  }
+]

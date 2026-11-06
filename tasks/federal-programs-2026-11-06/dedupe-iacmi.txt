@@ -1,0 +1,15 @@
+dedupe-check {'domain': 'iacmi.org', 'name': 'IACMI'}  (AGENTS.md §3; searches the union of ALL shards)
+STEP 1 website domain (organizations_*.csv + ecosystem.csv): 1 hit(s)
+  ORG-002099  IACMI, The Composites Institute  []  status=active tier=C  (ecosystem.csv)
+      match: domain exact: iacmi.org
+
+--- for information (steps after the stop) ---
+STEP 2 normalized name vs legal_name/trade_names: 0 hit(s)
+STEP 3 street address (sites_*.csv; one address = one site, owned by the operator): skipped (no --street)
+STEP 4 trade_names/notes/legal_name substring + successor_org_id chain: 2 hit(s)
+  ORG-002099  IACMI, The Composites Institute  []  status=active tier=C  (ecosystem.csv)
+      match: notes contains 'IACMI'
+  ORG-002840  Bio-Optimized Technologies to Keep Thermoplastics out of Landfills and the Environment (BOTTLE) Consortium  []  status=active tier=A  (ecosystem.csv)
+      match: notes contains 'IACMI'
+
+=> STOP at step 1: a hit exists. Use/link the existing record; do not create a duplicate. When in doubt do NOT merge - create/link and flag (AGENTS.md §3).
