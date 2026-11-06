@@ -121,4 +121,3 @@ def live_posture(f, url):
     a,b = urlsplit(url),urlsplit(effective)
     norm = lambda x: (x.hostname.lower().removeprefix('www.') if x.hostname else '', x.path.rstrip('/'), x.query)
     return 'ok' if norm(a) == norm(b) else 'WRONG_PAGE'
-

@@ -4,7 +4,7 @@ from collections import Counter
 from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(H))
 from fetch import read,on_page
-BASE='5a90bb17f52ad3ae7fa86482f8cd0b2e8d57b8a1'
+BASE='2742438c3c6b49869708ab41ebe4f368372a9a9e'
 leads=list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show','a012caa:tasks/evidence-reverify-archive-oh-pa-2026-11-06/repair_leads.csv'],cwd=ROOT,text=True))))
 expected=[r for r in leads if r['judgment'] in ['NOT_SUPPORTED','WRONG_PAGE','PARTIAL']]
 assert read(H/'input.csv')==expected and len(expected)==269
@@ -13,9 +13,9 @@ assert not ({r['evidence_id'] for r in prior}&{r['evidence_id'] for r in expecte
 vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');raw=read(H/'rawcheck.csv')
 assert len(vs)==269==len({r['evidence_id'] for r in vs})
 assert {r['evidence_id'] for r in vs}=={r['evidence_id'] for r in expected}
-assert Counter(r['verdict'] for r in vs)=={'VERIFIED':57,'STILL_UNCERTAIN':212}
-assert len(raw)==len(alloc)==57==len({r['evidence_id'] for r in alloc})
-retired={r['evidence_id'] for r in read(H/'retired_ids.csv')};assert len(retired)==5
+assert Counter(r['verdict'] for r in vs)=={'VERIFIED':56,'STILL_UNCERTAIN':213}
+assert len(raw)==len(alloc)==56==len({r['evidence_id'] for r in alloc})
+retired={r['evidence_id'] for r in read(H/'retired_ids.csv')};assert len(retired)==6
 assert not(retired & {r['evidence_id'] for p in (ROOT/'data').glob('evidence_*.csv') for r in read(p)})
 for r in raw:
  p=ROOT/r['page'];assert hashlib.sha256(p.read_bytes()).hexdigest()==r['page_sha256'];assert on_page(r['quote'],p)
@@ -50,5 +50,5 @@ with tempfile.TemporaryDirectory() as d:
  target=data/'evidence_people.csv';new=read(paths[0])[0].copy();new['evidence_id']=alloc[0]['evidence_id']
  with target.open('a',newline='') as f:csv.DictWriter(f,fieldnames=list(new),lineterminator='\n').writerow(new)
  refuse()
-result=dict(frame=269,repaired_evidence=57,holds=212,shards=5,known_answers=3,raw_checks=57,mutation_checks=['fabricated quote','changed frozen source hash','global duplicate EVD'],existing_rows_unchanged=True,replay_byte_identical=True)
+result=dict(frame=269,repaired_evidence=56,holds=213,shards=5,known_answers=3,raw_checks=56,mutation_checks=['fabricated quote','changed frozen source hash','global duplicate EVD'],existing_rows_unchanged=True,replay_byte_identical=True)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print('PASS',result)
