@@ -2,10 +2,16 @@
 import contextlib,hashlib,io,shutil,tempfile
 from pathlib import Path
 import build
+from fetch import mailing_posture
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  root=build.ROOT;selected,verdicts,ev=build.plan()
- assert len(ev)==20,'frozen acceptance count changed; inspect before revising'
+ quote='1293 South Main Street Akron, Ohio 44301'
+ for prefix in ('You can reach us by mail at this address: ','Mailing address: ','Postal address: '):assert mailing_posture(prefix+quote,quote)=='mailing-only context'
+ assert not mailing_posture('Email us. Physical address: '+quote,quote)
+ assert next(v for v in verdicts if v['site_id']=='SITE-000008')['verdict']=='STILL_UNCERTAIN'
+ assert 'EVD-152005' not in {e['evidence_id'] for e in ev}
+ assert len(ev)==19,'frozen acceptance count changed; inspect before revising'
  with tempfile.TemporaryDirectory() as tmp:
   build.ROOT=Path(tmp);(build.ROOT/'data').mkdir()
   for p in (root/'data').glob('evidence_*.csv'):shutil.copyfile(p,build.ROOT/'data'/p.name)
@@ -26,7 +32,7 @@ def main():
    assert fields <= {'street_address','sources'},(a['site_id'],fields)
    if fields:
     changed+=1;assert not a['street_address'] and b['street_address'] and a['operating_status']=='active'
-  assert changed==20
+  assert changed==19
   paths=list((build.ROOT/'data').glob('*.csv'));hashes={p.name:digest(p) for p in paths}
   with contextlib.redirect_stdout(io.StringIO()):build.run(apply=True)
   assert hashes=={p.name:digest(p) for p in paths},'not byte-idempotent'
@@ -47,5 +53,5 @@ def main():
   else:raise AssertionError('foreign-shard evidence collision accepted')
   assert hashes=={p.name:digest(p) for p in paths},'wrote before global collision refusal'
  build.ROOT=root
- print('PASS 20 fills; street/sources only; byte-idempotent; street and foreign-ID mutations rejected before canonical writes')
+ print('PASS 19 fills; street/sources only; byte-idempotent; street and foreign-ID mutations rejected before canonical writes')
 if __name__=='__main__':main()

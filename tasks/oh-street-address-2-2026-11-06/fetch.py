@@ -29,6 +29,11 @@ def extract(text,city):
  pattern=r'\b(\d{1,6}\s+(?:(?!\d+\b)[A-Za-z0-9.#/-]+\s+){0,8}?'+suffix+r')[, •|]*\s*'+re.escape(city)+r'\s*[, •|]*\s*(?:OH|Ohio)\s*[, •|]*\s*(\d{5}(?:-\d{4})?)\b'
  text=' '.join(text.split())
  return [(m[1].strip(),m[2],m[0]) for m in re.finditer(pattern,text,re.I)]
+def mailing_posture(text,quote):
+ text=' '.join(text.split());pos=text.find(quote)
+ if pos<0:return 'quote absent on fresh fetch'
+ context=text[max(0,pos-80):pos+len(quote)]
+ return 'mailing-only context' if re.search(r'(?i)mailing\s+address|postal\s+address|\bby\s+mail\b',context) else ''
 def known():
  cases=[('373 Washington St. Chardon OH 44024','Chardon','373 Washington St.','44024'),
         ('1101 Moore Road, Avon, Ohio 44011','Avon','1101 Moore Road','44011'),
@@ -65,8 +70,7 @@ def main():
     text,links,sha=fetch(u);found=0
     for r in rows:
      for street,zip_,quote in extract(text,r['city']):
-      pos=' '.join(text.split()).find(quote);context=' '.join(text.split())[max(0,pos-80):pos+len(quote)]
-      posture='mailing-only context' if re.search(r'(?i)mailing\s+address|postal\s+address',context) else ''
+      posture=mailing_posture(text,quote)
       out.append(dict(site_id=r['site_id'],street_address=street,source_zip=zip_,quote=quote,url=u,sha256=sha,posture=posture));found+=1
     pages.append(dict(org_id=oid,url=u,outcome='fetched',address_blocks=found,error=''))
     links=sorted(links,key=lambda x:('location' not in x.lower(),len(x)))

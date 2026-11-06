@@ -1,4 +1,4 @@
-"""Fresh raw-page census of all accepted fills (20 < the requested 30-row sample)."""
+"""Fresh raw-page census of all accepted fills (19 < the requested 30-row sample)."""
 import concurrent.futures,json
 from build import TASK,read
 from fetch import fetch,write,extract
@@ -16,4 +16,4 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:out=list(pool.
 write(TASK/'audit.csv',out)
 summary=dict(accepted_fills=len(evidence),audited=len(out),errors=sum(bool(r['error']) for r in out))
 (TASK/'audit_summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(summary)
-assert len(out)==20 and summary['errors']==0,out
+assert len(out)==19 and summary['errors']==0,out

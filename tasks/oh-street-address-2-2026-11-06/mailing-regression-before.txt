@@ -1,0 +1,4 @@
+Source explicitly labels postal contact: You can reach us by mail at this address:
+Quoted address: 1293 South Main Street Akron, Ohio 44301
+Computed posture: '' Committed plan: VERIFIED EVD-152005
+Observed expected failure: the old plan admitted a postal-only witness; reproduced before correction.

@@ -22,9 +22,11 @@ def plan():
  assert len(frame)==448 and len({s['site_id'] for s in frame})==448
  assert len(selected)==60 and len({s['reserved_evidence_id'] for s in frame})==448
  assert {r['site_id'] for r in checks}=={s['site_id'] for s in selected},'source yield mismatch'
+ retired={r['record_id']:r['evidence_id'] for r in read(TASK/'retired_ids.csv')}
  verdicts=[];ev=[]
  for s in selected:
   rows=[r for r in checks if r['site_id']==s['site_id'] and r['street_address']];why=[]
+  if s['site_id'] in retired:why.append('retired postal-only witness proposal '+retired[s['site_id']]+'; physical witness needs new ID in later pass')
   if not rows:why.append('need own-page physical street block at recorded city; no admissible block fetched')
   if any(r['posture'] for r in rows):why.append('mailing-only or ambiguous address context')
   host=lambda u:(urlparse(u if '://' in u else 'https://'+u).hostname or '').removeprefix('www.')
