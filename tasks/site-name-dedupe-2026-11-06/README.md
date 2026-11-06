@@ -16,7 +16,12 @@ ORG-002633 "Ifs Industries Inc.") went unnoticed. Two deliverables: (1) close th
   (operator ORG-002633, 3430 Cypert Way). Before the change it reported "No hits".
 - Tests in `scripts/test_atlas_cli.py`: `site_name_key` cases, a three-form hit (hyphen / em dash / parenthesis) with operator and
   street asserted, near-misses that must not match (`IFS Coatings Group`, `IFS Coatings - Annex`, `Ifs Holdings`), and the
-  `--city` query form. Run: `python3 -m unittest discover -s scripts -p "test_*.py"` (275 tests, OK; pytest is not installed here).
+  `--city` query form, and a real-data known answer in `RealDataSmoke` (IFS Coatings finds exactly SITE-006097). Run:
+  `python3 -m unittest discover -s scripts -p "test_*.py"` (276 tests, OK; pytest is not installed here).
+- **Behavior change:** a query that used to end "No hits" (exit 0) can now stop at step 5 (exit 1). That is the gap being closed.
+  Consumers: `build_form5500_spine.py` and `build_lead_fusion.py` compare steps 2 and 3 only, so they are unaffected. The ten
+  `tasks/corroborated-*/check.py` files that read `dedupe()['steps']` already fail on current `main` (data moved since their PRs);
+  they fail identically before and after this change, so none is newly broken. Re-run them on their own PR's data, not here.
 - `docs/AGENT_QUICKSTART.md` mentions step 5. `AGENTS.md` §3 is **not** edited (binding protocol; suggest the owner add
   "site names" to its list if wanted).
 

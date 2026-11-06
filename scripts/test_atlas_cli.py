@@ -391,6 +391,15 @@ class RealDataSmoke(unittest.TestCase):
         self.assertGreater(int(r["next_id"].split("-")[1]), int(r["max_id"].split("-")[1]))
         self.assertEqual(r["duplicates"], {})
 
+    @unittest.skipUnless((HERE.parent / "data" / "sites_OK.csv").exists(), "real data not present")
+    def test_known_answer_site_name_step5_finds_ifs_coatings(self):
+        # SITE-006097 "IFS Coatings - Ardmore" sits under "Ifs Industries Inc.": only the site_name step can see it
+        p = subprocess.run([sys.executable, str(HERE / "atlas.py"), "dedupe-check", "--name", "IFS Coatings", "--json"],
+                           capture_output=True, text=True, cwd=HERE.parent)
+        res = json.loads(p.stdout)
+        self.assertEqual([h["id"] for h in res["steps"][4]["hits"]], ["SITE-006097"])
+        self.assertEqual(res["steps"][1]["hits"] + res["steps"][3]["hits"], [])
+
 
 class StreetKey(unittest.TestCase):
     """street_key must not collapse a real street to '' (L3 finding on #164: '#6 Capper Drive' -> '' matched another blank)."""
