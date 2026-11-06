@@ -92,3 +92,9 @@ Holds are unfinished bounded research,not absence or closure verdicts. Primary C
 |SITE-016410|Own Midland history records DePere CNC machining investments; location also appears in retail-store context. Settle dominant2151AmericanBlvd physical function and actual polymer conversion before manufacturing tier upgrade.|
 
 Main refresh before publication: merged pinneda7cd761a7db45e984d2bc35dd78f3e2c52dcf2d1, restored all10exactmainownedshards and replayed unchangedbuilder. integration.json proves31site/217EVD values and executablebuild/check identical to e2d04dc; no hand CSVmerge. Namedcheck/validator0/row-loss rerun on this tree.
+
+## Correction-lane ownership agreement
+
+Controller assigned L11(thr_nn5sx8c9ji), branchagent/codex/creation-error-corrections-2,EVD278600+, the five held creation findings: CANTEX SITE-016017,Valmet SITE-016401,Midland SITE-016410,SherwinMorrow SITE-016115,and GAFMountVernon SITE-016514. L7ownsqualityonly; these five receive no field/evidence motion in223. Neitherlane edits the other taskfiles. L11 independently refetches primary evidence,holds owner ring/scope questions,and makes no status motion without datedoutcome.
+
+GAF exact allocation LF-IN-00282→SITE-016514,ORG-004251,ITA381771,submitted2026-01-22,held6101LowerHarmonyRoad/Mt.VernonIN47620,establishmentnameMt.VernonTPO. The901GivensRoadTPO address is an indexed own-brochure lead only: both www.gaf.com and documents.gaf.com brochure rawroutes failed. No campus/street/production equivalence was established and no GAF quote admitted. ValdostaSITE-016105 is separate. A provisional cluster label sent before reading the allocation was explicitly superseded byLF-IN-00282 in the follow-up; only the authoritative allocation governs.
