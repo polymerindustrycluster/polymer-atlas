@@ -59,13 +59,14 @@ def assess(url,route,raw_path,receipt,source_url=None):
 def fetch(url,route,refresh=False):
     stem=CACHE/key(url,route);meta=stem.with_suffix('.json');raw=stem.with_suffix('.raw');headers=stem.with_suffix('.headers')
     if meta.exists() and not refresh:return json.loads(meta.read_text())
-    endpoint=('https://'+url[7:] if route=='curl_https' else url) if route in {'curl','curl_https'} else 'https://r.jina.ai/'+url
+    endpoint=('https://'+url[7:] if route=='curl_https' else url) if route in {'curl','curl_https','curl_http1','curl_www'} else 'https://r.jina.ai/'+url
+    if route=='curl_www':endpoint=endpoint.replace('://www.','://',1) if '://www.' in endpoint else endpoint.replace('://','://www.',1)
     host=urlsplit(endpoint).hostname or '';lock=locks.setdefault(host,threading.Lock())
     with lock:
         if host in rate_limited:
             result=dict(url=url,route=route,http_status=429,posture='FETCH_FAILED',reason='Host stopped after429; no additional request',request_performed=False,fetched_at=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),text_path='',text_sha256='')
             meta.write_text(json.dumps(result,indent=2)+'\n');return result
-        p=subprocess.run(['curl','-L','-sS','--compressed','-A',UA,'--max-time','25','--max-filesize','16000000','-D',str(headers),'-o',str(raw),'-w','%{http_code}\n%{url_effective}',endpoint],capture_output=True,text=True)
+        p=subprocess.run(['curl',*(['--http1.1'] if route=='curl_http1' else []),'-L','-sS','--compressed','-A',UA,'--max-time','25','--max-filesize','16000000','-D',str(headers),'-o',str(raw),'-w','%{http_code}\n%{url_effective}',endpoint],capture_output=True,text=True)
         code,_,effective=p.stdout.partition('\n');status=int(code) if code.isdigit() else 0
         if status==429:rate_limited.add(host)
     if not raw.exists():raw.write_bytes(b'')
@@ -73,15 +74,16 @@ def fetch(url,route,refresh=False):
     receipt=dict(request_performed=True,http_status=status,effective_url=effective,exit_code=p.returncode,charset=cs[-1] if cs else '',fetched_at=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),error=p.stderr.strip()[:300])
     result=assess(url,route,raw,receipt);meta.write_text(json.dumps(result,indent=2)+'\n');return result
 def needs_more(url,rows):
-    results=[json.loads(p.read_text()) for p in CACHE.glob('*.json') if p.name in {key(url,r)+'.json' for r in ['curl','curl_https','jina','firecrawl','firecrawl_pdf_text']}]
+    results=[json.loads(p.read_text()) for p in CACHE.glob('*.json') if p.name in {key(url,r)+'.json' for r in ['curl','curl_https','curl_http1','curl_www','jina','firecrawl','firecrawl_pdf_text']}]
     readable=[r for r in results if r['posture']=='ok']
     return not readable or any(e['quote'] and not any(on_page(e['quote'],ROOT/r['text_path']) is True for r in readable) for e in rows)
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--route',choices=['curl','curl_https','jina'],required=True);ap.add_argument('--refresh',action='store_true');a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--route',choices=['curl','curl_https','curl_http1','curl_www','jina'],required=True);ap.add_argument('--refresh',action='store_true');a=ap.parse_args()
     rows=read(P/'input.csv');groups={target(r['url']):[] for r in rows if target(r['url'])}
     for r in rows:
         if target(r['url']):groups[target(r['url'])].append(r)
     urls=sorted(u for u,rs in groups.items() if a.route=='curl' or ((a.route!='curl_https' or u.startswith('http://')) and needs_more(u,rs)))
+    if a.route=='curl_http1':urls=[u for u in urls if json.loads((CACHE/(key(u,'curl')+'.json')).read_text()).get('exit_code') in {16,92}]
     print('Retry',a.route,len(urls),'explicit URLs',flush=True)
     with ThreadPoolExecutor(max_workers=4) as pool:
         for i,r in enumerate(pool.map(lambda u:fetch(u,a.route,a.refresh),urls),1):print(i,'/',len(urls),r['posture'],r['url'],flush=True)

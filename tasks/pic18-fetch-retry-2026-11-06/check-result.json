@@ -1,0 +1,10 @@
+{
+  "frozen_rows": 264,
+  "supported": 195,
+  "not_supported": 0,
+  "holds": 69,
+  "raw_receipts": 227,
+  "canonical_changes": 0,
+  "replay": "byte-identical",
+  "adversarial_controls": 5
+}
