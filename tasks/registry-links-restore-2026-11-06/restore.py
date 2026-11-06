@@ -88,7 +88,9 @@ print(Counter(j["action"] for j in journal))
 print(Counter(j["registry"] for j in journal if j["action"].startswith("RESTORE")))
 assert len({key(x) for x in restore}) == len(restore), "duplicate restored keys"
 if "--write" in sys.argv:
-    # journal only on --write, so a later dry run cannot overwrite the record of what was applied
+    if not restore:
+        sys.exit("nothing left to restore; journal.csv kept as the record of the first --write")
+    # journal only on a --write that restores rows, so a later run cannot overwrite the record
     with open(OUT / "journal.csv", "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(journal[0].keys()), lineterminator="\n"); w.writeheader(); w.writerows(journal)
     with open(D / "registry_links.csv", "a", newline="") as f:

@@ -50,6 +50,25 @@ left to restore.
 - The `tier1_qualifier` column is not touched here. The 52 gains go in a separate re-derive PR after this one merges,
   as in `tasks/tier1-rederive-2026-11-02/`.
 
+## Review (2026-11-06)
+Grok (grok-4.7, deep) returned REFUTE. It could not run git or the validator, so most findings say a check was
+unverified. Each was checked against the data:
+- *Could a later commit have meant to delete a restored row?* No task folder dated 2026-11-04 to 11-06 describes
+  removing, purging or retiring a registry link, and no commit between `92393de` and `805528a` exists (one is the
+  other's parent).
+- *Do restored rows put one registry id on two organizations?* 2 restored TRIFIDs are each on two organizations
+  (`44319FRSTN381WE`: ORG-000011 / ORG-001716; `43207VNYLM1441U`: ORG-000764 / ORG-001091). Both pairs were exactly so at
+  `92393de`, so the restore recreates the pre-loss state and adds no new conflict. They are dedupe leads, like the
+  three holds.
+- *Which side of each held TRIFID survives?* TDM ORG-002079, Cooper Standard Lauren ORG-001931 and Roppe Corp.
+  ORG-001087 hold them at HEAD, and they stay there. The rows lost from Iten ORG-000386, Cooper Standard ORG-000755
+  and Roppe Holding ORG-001088 are not restored.
+- *Did any restored link's organization change identity after 2026-11-04?* Two became `acquired`: Johnsonite
+  ORG-001836, successor ORG-000131, and Pilot Plastics ORG-000492, successor ORG-004564. Both links are
+  organization-grain (a TRIFID and an LEI), so they stay on the acquired record as history. No restored link's
+  organization was renamed.
+- *A second `--write` overwrote the journal.* Fixed: `--write` now refuses to run when nothing is left to restore.
+
 ## Not done here
 - No guard yet stops a file losing rows. A row-count floor in `validate.py` follows in its own PR.
 - The Cooper Standard pair is already queued as a possible duplicate site (SITE-000818 / SITE-001925, 2228 Reiser
