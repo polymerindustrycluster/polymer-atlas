@@ -108,6 +108,16 @@ class ReviewFindings(unittest.TestCase):
             p.write_text("date,record\n2026-10-28,X\n")
             self.assertEqual(self.guard(d, "--base", "HEAD"), 1)
 
+    def test_deleted_task_file_fails_until_declared(self):
+        with tempfile.TemporaryDirectory() as d:
+            git = self.repo(d); f = Path(d) / "tasks" / "lane" / "README.md"; f.parent.mkdir(parents=True)
+            f.write_text("x\n"); (Path(d) / "data" / "sites_OH.csv").write_text("site_id\nSITE-1\n")
+            git("add", "."); git("commit", "-qm", "1")
+            f.unlink()
+            self.assertEqual(self.guard(d, "--base", "HEAD"), 1)
+            (Path(d) / "tasks" / "REMOVALS.csv").write_text("table,key,reason\nfile,tasks/lane/README.md,moved\n")
+            self.assertEqual(self.guard(d, "--base", "HEAD"), 0)
+
     def test_push_rollback_is_caught_with_literal(self):
         with tempfile.TemporaryDirectory() as d:
             git = self.repo(d); s = Path(d) / "data" / "sites_OH.csv"
