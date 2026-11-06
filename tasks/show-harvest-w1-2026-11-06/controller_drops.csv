@@ -1,0 +1,19 @@
+show_key,role,name,reason
+hannover-messe:2027,speaker,Robert Bittig,a person's name in the company slot
+hannover-messe:2027,speaker,Pauline Kynast,a person's name in the company slot
+hannover-messe:2027,speaker,Bao Nguyen,a person's name in the company slot
+hannover-messe:2027,speaker,Larissa Niedecken,a person's name in the company slot
+hannover-messe:2028,speaker,Robert Bittig,a person's name in the company slot
+hannover-messe:2028,speaker,Pauline Kynast,a person's name in the company slot
+hannover-messe:2028,speaker,Bao Nguyen,a person's name in the company slot
+hannover-messe:2028,speaker,Larissa Niedecken,a person's name in the company slot
+tire-technology-expo:2027,speaker,Robert Weibold,a person's name in the company slot
+coatings-trends-and-technologies-summit:2027,attendee,Michael Praw,a person's name in the company slot
+great-lakes-coatings-conference:2027,attendee,Sam Morell,a sole proprietor listed by personal name
+spe-international-polyolefins-conference:2027,attendee,Self Employed,not an organization
+great-lakes-coatings-conference:2027,attendee,Retired,not an organization
+coatings-trends-and-technologies-summit:2027,attendee,More Videos,page label
+acs-spring:2027,exhibitor,ACS Booth,page label (the organizer's own booth)
+md-and-m-midwest:2027,exhibitor,Exhibitor Suite by Informa,page label
+mrs-fall-meeting-and-exhibit:2026,exhibitor,Exhibitor Lounge,page label
+selectusa-investment-summit:2027,speaker,North Carolina,a place name with no organization
