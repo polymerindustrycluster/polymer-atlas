@@ -1,0 +1,253 @@
+{
+  "result": {
+    "input": {
+      "address": {
+        "address": "3557 State Route 93, Baltic, OH 43804"
+      },
+      "vintage": {
+        "isDefault": true,
+        "id": "4",
+        "vintageName": "Current_Current",
+        "vintageDescription": "Current Vintage - Current Benchmark"
+      },
+      "benchmark": {
+        "isDefault": true,
+        "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+        "id": "4",
+        "benchmarkName": "Public_AR_Current"
+      }
+    },
+    "addressMatches": [
+      {
+        "tigerLine": {
+          "side": "R",
+          "tigerLineId": "652383019"
+        },
+        "geographies": {
+          "States": [
+            {
+              "STATENS": "01085497",
+              "GEOID": "39",
+              "CENTLAT": "+40.4097282",
+              "AREAWATER": 10273801409,
+              "STATE": "39",
+              "BASENAME": "Ohio",
+              "STUSAB": "OH",
+              "OID": "2749046634335",
+              "LSADC": "00",
+              "FUNCSTAT": "A",
+              "INTPTLAT": "+40.4149297",
+              "DIVISION": "3",
+              "NAME": "Ohio",
+              "REGION": "2",
+              "OBJECTID": 40,
+              "CENTLON": "-082.7168529",
+              "AREALAND": 105824555281,
+              "INTPTLON": "-082.7119975",
+              "MTFCC": "G4000"
+            }
+          ],
+          "Combined Statistical Areas": [
+            {
+              "POP100": "",
+              "GEOID": "184",
+              "CENTLAT": "+41.3173535",
+              "AREAWATER": 8822711441,
+              "BASENAME": "Cleveland-Akron-Canton, OH",
+              "OID": "2619034687908001",
+              "LSADC": "M0",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+41.3176369",
+              "NAME": "Cleveland-Akron-Canton, OH CSA",
+              "OBJECTID": 144,
+              "CSA": "184",
+              "CENTLON": "-081.7250465",
+              "INTPTLON": "-081.7301327",
+              "AREALAND": 19850273136,
+              "HU100": "",
+              "MTFCC": "G3100"
+            }
+          ],
+          "County Subdivisions": [
+            {
+              "COUSUB": "09988",
+              "GEOID": "3915709988",
+              "CENTLAT": "+40.4023899",
+              "AREAWATER": 12702,
+              "STATE": "39",
+              "BASENAME": "Bucks",
+              "OID": "27690375588009",
+              "LSADC": "44",
+              "FUNCSTAT": "A",
+              "INTPTLAT": "+40.3980406",
+              "NAME": "Bucks township",
+              "OBJECTID": 14792,
+              "CENTLON": "-081.6657720",
+              "COUSUBCC": "T1",
+              "AREALAND": 58698694,
+              "INTPTLON": "-081.6734614",
+              "MTFCC": "G4040",
+              "COUSUBNS": "01087051",
+              "COUNTY": "157"
+            }
+          ],
+          "Counties": [
+            {
+              "GEOID": "39157",
+              "CENTLAT": "+40.4407934",
+              "AREAWATER": 10250138,
+              "STATE": "39",
+              "BASENAME": "Tuscarawas",
+              "OID": "27590375583852",
+              "LSADC": "06",
+              "FUNCSTAT": "A",
+              "INTPTLAT": "+40.4475729",
+              "NAME": "Tuscarawas County",
+              "OBJECTID": 1322,
+              "CENTLON": "-081.4737422",
+              "COUNTYCC": "H1",
+              "COUNTYNS": "01074090",
+              "AREALAND": 1470097259,
+              "INTPTLON": "-081.4710695",
+              "MTFCC": "G4020",
+              "COUNTY": "157"
+            }
+          ],
+          "2026 State Legislative Districts - Upper": [
+            {
+              "GEOID": "39031",
+              "CENTLAT": "+40.3621794",
+              "AREAWATER": 40790609,
+              "STATE": "39",
+              "BASENAME": "31",
+              "OID": "2129042465487264",
+              "SLDU": "031",
+              "LSADC": "LU",
+              "FUNCSTAT": "N",
+              "INTPTLAT": "+40.6822367",
+              "NAME": "State Senate District 31",
+              "OBJECTID": 1211,
+              "CENTLON": "-081.7445562",
+              "LSY": "2026",
+              "AREALAND": 5579746925,
+              "INTPTLON": "-081.5081972",
+              "MTFCC": "G5210",
+              "LDTYP": "O"
+            }
+          ],
+          "120th Congressional Districts": [
+            {
+              "STGEOMETRY_Area": 17880738681.788486,
+              "CD120": "06",
+              "GEOID": "3906",
+              "CENTLAT": "+40.5254430",
+              "CDSESSN": "120",
+              "AREAWATER": 112479937,
+              "STATE": "39",
+              "BASENAME": "6",
+              "OID": "2119042393345242",
+              "LSADC": "C2",
+              "FUNCSTAT": "N",
+              "INTPTLAT": "+40.5182035",
+              "NAME": "Congressional District 6",
+              "OBJECTID": 301,
+              "CENTLON": "-081.1322854",
+              "STGEOMETRY_Length": 914879.7556570317,
+              "AREALAND": 10207028143,
+              "INTPTLON": "-081.1328054",
+              "MTFCC": "G5200"
+            }
+          ],
+          "2026 State Legislative Districts - Lower": [
+            {
+              "GEOID": "39051",
+              "CENTLAT": "+40.4883088",
+              "SLDL": "051",
+              "AREAWATER": 10828990,
+              "STATE": "39",
+              "BASENAME": "51",
+              "OID": "2139042471332927",
+              "LSADC": "LL",
+              "FUNCSTAT": "N",
+              "INTPTLAT": "+40.4897984",
+              "NAME": "State House District 51",
+              "OBJECTID": 3052,
+              "CENTLON": "-081.4809602",
+              "LSY": "2026",
+              "AREALAND": 1792017780,
+              "INTPTLON": "-081.4809449",
+              "MTFCC": "G5220",
+              "LDTYP": "O"
+            }
+          ],
+          "2020 Census Blocks": [
+            {
+              "SUFFIX": "",
+              "GEOID": "391570213003062",
+              "CENTLAT": "+40.4292205",
+              "BLOCK": "3062",
+              "AREAWATER": 12702,
+              "STATE": "39",
+              "BASENAME": "3062",
+              "OID": "210701006159440",
+              "LSADC": "BK",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+40.4292310",
+              "NAME": "Block 3062",
+              "OBJECTID": 6816151,
+              "TRACT": "021300",
+              "CENTLON": "-081.6986136",
+              "BLKGRP": "3",
+              "AREALAND": 2461666,
+              "INTPTLON": "-081.6985703",
+              "MTFCC": "G5040",
+              "LWBLKTYP": "B",
+              "UR": "R",
+              "COUNTY": "157"
+            }
+          ],
+          "Census Tracts": [
+            {
+              "GEOID": "39157021300",
+              "CENTLAT": "+40.4658961",
+              "AREAWATER": 12702,
+              "STATE": "39",
+              "BASENAME": "213",
+              "OID": "20790375592069",
+              "LSADC": "CT",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+40.4641878",
+              "NAME": "Census Tract 213",
+              "OBJECTID": 49920,
+              "TRACT": "021300",
+              "CENTLON": "-081.6570660",
+              "AREALAND": 64959643,
+              "INTPTLON": "-081.6572064",
+              "MTFCC": "G5020",
+              "COUNTY": "157"
+            }
+          ]
+        },
+        "coordinates": {
+          "x": -81.70524030782,
+          "y": 40.434475693537
+        },
+        "addressComponents": {
+          "zip": "43804",
+          "streetName": "93",
+          "preType": "STATE RTE",
+          "city": "BALTIC",
+          "preDirection": "",
+          "suffixDirection": "",
+          "fromAddress": "3599",
+          "state": "OH",
+          "suffixType": "",
+          "toAddress": "3459",
+          "suffixQualifier": "",
+          "preQualifier": ""
+        },
+        "matchedAddress": "3557 STATE RTE 93, BALTIC, OH, 43804"
+      }
+    ]
+  }
+}

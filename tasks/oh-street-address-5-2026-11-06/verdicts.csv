@@ -1,0 +1,101 @@
+site_id,verdict,street_address,evidence_id,reason
+SITE-000648,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000667,VERIFIED,3745 Hendricks Rd,EVD-152161,
+SITE-000676,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000677,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000678,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000680,VERIFIED,474 Newell St,EVD-152165,
+SITE-000683,VERIFIED,1501 West 47th Street,EVD-152166,
+SITE-000717,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000755,VERIFIED,2040 Cellar Drive,EVD-152168,
+SITE-000788,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000789,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000864,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-000879,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001125,VERIFIED,3557 State Route 93,EVD-152173,
+SITE-001311,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001316,STILL_UNCERTAIN,1150 Damar Drive,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001317,STILL_UNCERTAIN,1150 Damar Drive,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001390,VERIFIED,710 Taylor Street,EVD-152177,
+SITE-001394,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001396,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001400,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001416,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001417,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001418,STILL_UNCERTAIN,285 Commerce St.,,generic corporate address lacks site-specific binding among same-operator city/ZIP records
+SITE-001419,STILL_UNCERTAIN,2540 Progress Drive,,notes address conflicts; dated adjudication needed
+SITE-001420,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001421,VERIFIED,276 State St.,EVD-152186,
+SITE-001423,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001424,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001425,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001426,VERIFIED,30200 Solon Industrial Parkway,EVD-152190,
+SITE-001427,VERIFIED,60 Meadow Lane,EVD-152191,
+SITE-001428,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001429,VERIFIED,7278 Justin Way,EVD-152193,
+SITE-001431,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001432,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001433,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001434,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001435,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001436,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001437,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001438,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001439,VERIFIED,20260 First Avenue,EVD-152202,
+SITE-001440,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001441,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001449,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001455,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001468,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001480,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001481,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001483,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001484,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001485,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001487,VERIFIED,33490 Pin Oak Parkway,EVD-152213,
+SITE-001505,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001506,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001511,VERIFIED,225 West Lake St,EVD-152216,
+SITE-001512,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001522,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001524,STILL_UNCERTAIN,11525 Madison Avenue,,own-page ZIP conflicts with current site ZIP; existing notes name an unresolved ZIP discrepancy; reconcile primary locality first
+SITE-001525,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001529,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001534,VERIFIED,300 Edwards Street,EVD-152222,
+SITE-001538,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001539,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001543,VERIFIED,9280 Jefferson St.,EVD-152225,
+SITE-001546,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001560,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001563,VERIFIED,38241 Willoughby Parkway,EVD-152228,
+SITE-001567,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001568,VERIFIED,1800 Triplett Boulevard,EVD-152230,
+SITE-001570,VERIFIED,34910 Commerce Way,EVD-152231,
+SITE-001571,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001573,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001577,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001578,VERIFIED,3690 Zorn Drive,EVD-152235,
+SITE-001579,STILL_UNCERTAIN,549 E Washington Street,,notes address conflicts; dated adjudication needed
+SITE-001588,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001589,VERIFIED,4919 Warrensville Center Rd,EVD-152238,
+SITE-001590,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001591,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001593,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001599,STILL_UNCERTAIN,200 West Ohio Ave,,mailing-only or ambiguous address context
+SITE-001603,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001604,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001605,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001606,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001611,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001613,VERIFIED,7740 Metric Dr.,EVD-152248,
+SITE-001614,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001615,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001616,STILL_UNCERTAIN,5960 Heisley Road,,own-page street blocks disagree; notes address conflicts; dated adjudication needed
+SITE-001617,VERIFIED,7893 Enterprise Dr,EVD-152252,
+SITE-001621,VERIFIED,300 Artino St.,EVD-152253,
+SITE-001622,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001623,VERIFIED,76 Burton Street,EVD-152255,
+SITE-001629,VERIFIED,867 CANTERBURY ROAD,EVD-152256,
+SITE-001630,STILL_UNCERTAIN,,,need own-page physical street block at recorded city; no admissible block fetched
+SITE-001632,STILL_UNCERTAIN,150 Lena Drive,,notes address conflicts; dated adjudication needed
+SITE-001637,STILL_UNCERTAIN,345 S. Mill St,,notes address conflicts; dated adjudication needed
