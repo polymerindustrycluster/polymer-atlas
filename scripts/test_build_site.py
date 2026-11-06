@@ -152,6 +152,15 @@ class BuildSiteTest(unittest.TestCase):
     def all_text_files(self):
         return [p for p in self.out.rglob("*") if p.is_file() and p.suffix in {".html", ".json", ".js", ".css"}]
 
+    def test_nonempty_equipment_renders_source_cell(self):
+        for source in ("https://example.edu/equipment", ""):
+            with self.subTest(source=source):
+                html = build_site.equipment_block([{"name": "DSC", "equipment_class": "dsc",
+                                                   "access_mode": "not_stated", "source_ref": source}])
+                self.assertIn("1 equipment rows", html)
+                self.assertIn('<th scope="row">DSC</th>', html)
+                self.assertIn("host page</a></td></tr>" if source else "<td></td></tr>", html)
+
     def test_pages_exist(self):
         for rel in ["index.html", "map.html", "search.html", "sites.json", "orgs.json", "style.css",
                     "map.js", "search.js", "counties/index.html", "experts.html", "experts.js", "experts.json"]:

@@ -66,7 +66,30 @@ if '--live' in sys.argv:
 from discover import ROOT
 sys.path.insert(0,str(ROOT/'scripts'))
 from regions import PIC18
-pic={r['org_id'] for p in (ROOT/'data').glob('sites_*.csv') if p.name!='sites_all.csv' for r in csv.DictReader(open(p)) if r['state']=='OH' and r['county'].removesuffix(' County') in PIC18}
-frame={r['org_id'] for p in (ROOT/'data').glob('organizations_*.csv') if p.name!='organizations_all.csv' for r in csv.DictReader(open(p)) if r['status']=='active' and r['website'] and not r['tier1_qualifier'] and r['org_id'] in pic}
+import subprocess,io
+snapshot='9d69978'
+paths=subprocess.check_output(['git','ls-tree','-r','--name-only',snapshot,'data'],cwd=ROOT,text=True).splitlines()
+def snapshot_rows(prefix):
+    return [r for path in paths if path.startswith('data/'+prefix+'_') and not path.endswith('_all.csv') for r in csv.DictReader(io.StringIO(subprocess.check_output(['git','show',snapshot+':'+path],cwd=ROOT,text=True)))]
+pic={r['org_id'] for r in snapshot_rows('sites') if r['state']=='OH' and r['county'].removesuffix(' County') in PIC18}
+frame={r['org_id'] for r in snapshot_rows('organizations') if r['status']=='active' and r['website'] and not r['tier1_qualifier'] and r['org_id'] in pic}
 assert frame=={r['org_id'] for r in inputs}
-print('PASS: full independent current active/PIC18/non-tier1/website frame matches inputs')
+print('PASS: independent frozen9d69978 active/PIC18/non-tier1/website frame matches inputs; current accepted eligibility checked by builder/check')
+
+qrow={'org_id':'query-test','website':'https://example.com','newsroom_url':'https://example.com/?page_id=52','newsroom_feed_url':''}
+qpage={'url':qrow['newsroom_url'],'final':qrow['newsroom_url']+'/','status':'200','body':'<h1>News</h1>'}
+with patch('check.fetch',return_value=qpage):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('query value52→52/ accepted')
+qrow['newsroom_url']='https://example.com/news/?page_id=52'
+qpage.update(url=qrow['newsroom_url'],final='https://example.com/news?page_id=52')
+with patch('check.fetch',return_value=qpage):assert len(check(qrow)['checks'])==1
+qrow.update(newsroom_url='https://example.com/news',newsroom_feed_url='https://example.com/feed')
+qpage.update(url=qrow['newsroom_url'],final=qrow['newsroom_url'],body='<a href="/article?id=52">News release</a>')
+qfeed={'url':qrow['newsroom_feed_url'],'final':qrow['newsroom_feed_url'],'status':'200','body':'<rss><channel><title>News</title><item><link>https://example.com/article?id=52/</link></item></channel></rss>'}
+with patch('check.fetch',side_effect=[qpage,qfeed]):
+    try:check(qrow)
+    except AssertionError:pass
+    else:raise AssertionError('different query article IDs falsely overlap')
+print('PASS: changed query values rejected for redirects and feed articles; path-only slash normalization retained')

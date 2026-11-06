@@ -154,16 +154,6 @@
     ]
   },
   {
-    "org_id": "ORG-000405",
-    "checks": [
-      {
-        "url": "http://www.keenerrubber.com/news.htm",
-        "final": "http://www.keenerrubber.com/news.htm",
-        "status": "200"
-      }
-    ]
-  },
-  {
     "org_id": "ORG-000412",
     "checks": [
       {

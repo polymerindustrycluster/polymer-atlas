@@ -1,16 +1,16 @@
-# L9 newsroom round 2 — PIC-18, 2026-11-06
+# L9 newsroom round2 — PIC18, 2026-11-06
 
-Claim: atlas-L9-newsroom continuation, controller BOARD06:30; branch agent/codex/newsroom-urls-pic18, NEW branch off main9489b60. Integrator delegation remains limited to newsroom_url/newsroom_feed_url. PR145 tier1 work is separate and unchanged. First user: existing news-monitor operator (L8/controller), usable after merge; no new operator system.
+Controller BOARD06:30 continuation, branch agent/codex/newsroom-urls-pic18,PR152. NEW separate pass from PR145/169; integrator delegation only newsroom_url/newsroom_feed_url. First user:existing news-monitor operator(L8/controller),usable after merge;no new operator system.
 
-## Acceptance and provenance
+## Scope and sources
 
-Full772 distinct active organizations with website, empty tier1_qualifier, and >=1 physical OH site in PIC18 (county suffix normalized). inputs.csv freezes scope; independent self_check recomputes it from canonical org/site shards using scripts/regions.py. Priority counts are mutually exclusive: this pass tier1=0, PIC18 non-tier1=772, other=0. No region tags written to data.
+Named source snapshot9d69978:772 distinct active organizations with website,tier1_qualifier empty,>=1 physical OH site in PIC18. County suffix normalized;regions.py controls region. Frozen inputs/discovery/verdicts all772;independent snapshot frame recomputed from canonical tables. Current builder/check revalidate each accepted record's website,active/non-tier1/PIC18 membership and packet values. Later parallel creates outside manifest. Priority counts:attempt tier1=0,PIC18 non-tier1=772,other=0.
 
-Primary sources are the held canonical own websites and directly linked news/press/announcements indexes. discovery.json records <=6 discovery fetches/org and115 candidate indexes; audit.json records title and parsed visible-text date samples; verdicts.csv has exactly772 dispositions, no silent skips. No full website/sitemap crawl; no matching nav link is a route hold, never absence/closure. No licensed, private or contact data. SCHEMA4.4/V-58 navigation aids need no EVD; lane EVD block unused. No creates (dedupe/ID allocation/append_sorted inapplicable), no tier/status/derived/evidence/registry/LinkedIn/inclusion_log changes.
+Primary sources are held own websites and linked news/press indexes. discovery.json records <=6 initial discovery requests/org and115 candidates;audit.json raw visible-text date samples;verdicts.csv one disposition/input. No full website/sitemap crawl;route failure never absence/closure. No private/licensed/contact data. SCHEMA4.4/V-58 navigation aids need no EVD;block unused. No records created,dedupe/ID allocation/inclusion decisions;no tiers,status,liveness,registry,derived,LinkedIn or evidence fields authored.
 
-Accept own-domain organization-specific newsroom indexes. Hold homepage redirects, parent/division/brand mismatches, template/tag/post ambiguity and unreachable routes. Final URL must stay on stored path, trailing slash tolerated. Feeds must parse RSS/Atom with >=1 article entry and link at least one article also linked from the selected index; exclude channel/feed metadata and comments feeds. Builder preflights conflicting populated cells, website/eligibility/PIC18 changes and off-domain/comment URLs before writes. Re-fetch also checks current data matches packet and PIC18 eligibility.
+## Gates and results
 
-## Reproduce and current results
+Accept own organization-specific news/press/announcements indexes;hold home redirects,parent/publisher/brand mismatches,template/tag/post/changelog uncertainty and unavailable routes. Exact parsed URL components required except path trailing slash;query and fragment preserved. Feeds RSS/Atom>=1 article,item permalink also linked from selected index;channel/feed metadata/comments excluded. Builder preflights all affected shards/conflicting cells before writes. Branch history is pre-pass backup,this README pass journal. No CSV conflict hand-merged;latest main c2674712c0c9f8aeefac9179597b8a4c6e5eda5f integrated by exact-main organization files plus builder.
 
 ```
 python3 tasks/newsroom-urls-pic18-2026-11-06/self_check.py --live
@@ -19,31 +19,36 @@ python3 tasks/newsroom-urls-pic18-2026-11-06/check.py
 python3 scripts/validate.py
 ```
 
-**39 active PIC18 non-tier1 organizations:39 newsroom pages+11 feeds=50 empty cells,4 organization shards.** Filled tier1=0; PIC18 non-tier1=39;other=0. Tiers unchanged: A=15, B=18, C=6, U=0. 733 organization holds:657 no candidate,76 candidate identity/purpose/accessibility holds. Five overlapping feed-only holds (Vertex,BaseTek,Flambeau,Godfrey & Wing,iCHOR) because no article item also linked from selected index. Only two named fields change. Branch history is pre-pass backup; this README is pass journal. No borderline inclusion decisions or record creation.
+**38 active PIC18 non-tier1 organizations:38 pages+11 feeds=49 empty cells/4 shards.** Other priority classes0. Unchanged source tiers:A=15,B=17,C=6,U=0.734 organization holds:657 no bounded-nav candidate,77 candidate identity/purpose/accessibility.5 overlapping feed-only holds:Vertex,BaseTek,Flambeau,Godfrey&Wing,iCHOR(no article overlap). No inclusion_log changes.
 
-| Hold group | Active organizations | Settling fact/recommendation |
+| Hold group | Active organizations | Still needed before fill |
 |---|---:|---|
-| No bounded-navigation candidate |657|Reachable own-domain index confirmed; no absence asserted|
-| Candidate purpose/identity/accessibility |76|Organization-specific reachable index confirmed; candidates individually named in verdicts.csv|
-| Feed-only (overlaps accepted organizations) |5|Dedicated feed/article-item overlap confirmed; pages retained|
+| No bounded-nav candidate |657|Still need reachable own-domain newsroom index;none confirmed by bounded route|
+| Candidate purpose/identity/accessibility |77|Still need organization-specific maintained news index/publisher confirmation|
+| Feed-only,overlaps accepted orgs |5|Still need dedicated article-feed overlap confirmation;page retained,feed empty|
 
-Manual identity/purpose exclusions include broad Sealed Air/DuPont/Röchling/Honeywell/Datwyler parent pages, Kenda/Nexen technical-center versus tire-company indexes, Prospect Group versus Prospect Mold, Terry versus Tederic, Beacon versus CleveMed, Rubber Mold Design versus Dalin, broad product divisions, homepage redirects and blog-purpose ambiguity. No identity/scope/vocabulary ruling self-applied. Regional routes Spazzolplastica /us/, Hankook /us/, Yokohamaiaohio own domain and BoleAmerica own domain distinguish their own regional indexes.
+Parent/home/purpose exclusions include broad SealedAir/DuPont/Röchling/Honeywell/Datwyler pages,Kenda/Nexen technical-center versus tire-company indexes,ProspectGroup versusProspectMold,Terry versusTederic,Beacon versusCleveMed,RubberMoldDesign versusDalin and ambiguous blogs. No scope/identity ruling self-applied. Filled regional sources include Spazzolplastica /us/,Yokohamaiaohio andBoleAmerica. **Hankook000204 remains held**,both cells empty;its candidate was not filled.
 
-Calibration inherited the same standard-library fetcher already tested on Avient,RPM,GEON; --live freshly repeats all3 expected URL discoveries for this pass. Default self_check verifies saved results, not fresh fetching. Prior PR145 Codex/Grok v1 REFUTE lessons are built in before this pass: RSS item/Atom entry-only overlap, comments-feed rejection, same-domain home-redirect rejection, conservative parent/tag/template holds. Defect injections prove each rejection, plus403/off-domain/emptyfeed. No new scripts/ change or dependency.
+Checks:build49cells/38orgs,immediate repeat0cells/0shards;self_check --live3 fresh known answers plus immutable772frame reconciliation and defect injections PASS;check.py **PASS38 active organizations;49URLs,allHTTP200 and feeds nonempty**;validate.py0errors,V-58clean. Immutable-main boundary only49 previously empty cells/38 existing IDs/two named columns. scripts/ unchanged,no new dependencies.
 
-Checks: build applied50 cells/39 orgs; immediate second run0cells/0shards. Fresh3knownanswers,self_check full772-frame reconciliation, final50-URL refetch and validate0 must pass before push; results in refetch.json. Review status: final Codex/Grok clerk refutes pending; no Done claim.
+## Refute responses
+
+Codex3 REFUTE on c71bb0f:full-URL rstrip erased a slash inside query values. Exact actual-Plastipak reproduction run before fix and showed false acceptance;after fix it raises the specific redirect assertion. All URL comparisons now use urlsplit keys,normalizing only path trailing slash,including feed article overlap. Negative tests reject query52→52/ redirects and different article query values;benign path-only slash still accepted. Applied same root fix to allthree checkers,not a Plastipak-specific exception.
+
+Grok3 REFUTE on c71bb0f:Keener000405 is website maintenance history,not confirmed organization-news index;held andcellcleared. This is purpose uncertainty,not old dates or closure. Hankook prose corrected to held. Known valid Pretium feed took32.3s in reviewer fetch:fetch cap raised18→45s(connect8s unchanged),bounded final49URL gate passes. Initial discovery attempts used18s;timeout is never evidence of absence.
+
+All original findings fixed or held. Final corrected two-family rereviews pending;draft/no Done claim. Previous39page/50cell/733hold figures superseded. All772 source IDs still attempted;holds unresolved,not silently skipped.
 
 ## Potential staleness leads
 
-Only pre-2024 fully parsed dates occur in the following saved index samples (up to12 distinct dates; nonstandard dates may be missed). Candidate liveness signals only, not newest-release/closure assertions. Old newsrooms still qualify under B-NEWS. Posted to BOARD for L8, no liveness/status fields changed.
+Only current VERIFIED indexes listed;Keener removed. Samples have only pre-2024 fully parsed dates(up to12 dates,nonstandard dates may be missed). Candidate liveness signals only,not newest-release/operating-status claims. B-NEWS allows old newsrooms;BOARD/L8 informed,no status fields changed.
 
-| Active organization | Parsed date sample |
+| Active organization | Date sample |
 |---|---|
 | ORG-000156 Swagelok | July 31, 2022 |
 | ORG-000174 Vertex, Inc. | October 26, 2018;June 3, 2021;June 5, 2017 |
 | ORG-000251 Bole Machinery Inc. | Sep 22, 2023;Aug 18, 2023;May 15, 2023;May 12, 2023;April 17, 2023;April 15, 2023;April 14, 2023;Mar |
 | ORG-000340 Flambeau, Inc. | July 23, 2023;February 20, 2023;February 2, 2023;May 16, 2022;March 7, 2022;January 6, 2022;December |
-| ORG-000405 Keener Rubber Company | 6/15/2000;7/25/2000;11/15/2000;1/18/2001;1/25/2001;10/2/2001;2/19/2002;5/15/2002;7/23/2002;July 23,  |
 | ORG-001327 AltraSet Composite Technologies | Feb 18, 2019 |
 | ORG-001717 FlexLink, LLC | March 28, 2016 |
 | ORG-001830 Impact Sleeve | May 10, 2017 |
