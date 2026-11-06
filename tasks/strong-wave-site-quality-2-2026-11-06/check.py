@@ -16,6 +16,8 @@ r1=read(R1/'verdicts.csv');assert not({r['site_id'] for r in r1}&{r['site_id'] f
 assert len(vs)==len({r['site_id'] for r in vs})==40 and {r['site_id'] for r in vs}=={r['site_id'] for r in inputs}
 assert Counter(r['verdict'] for r in vs)=={'VERIFIED':len(sel),'STILL_UNCERTAIN':40-len(sel)} and all(r['reason'].strip() for r in vs if r['verdict']=='STILL_UNCERTAIN')
 assert {r['site_id'] for r in sel}=={r['site_id'] for r in vs if r['verdict']=='VERIFIED'} and len(sel)==9
+mp=next(r for r in vs if r['site_id']=='SITE-011453');assert mp['verdict']=='STILL_UNCERTAIN' and 'Not an availability block' in mp['reason'] and not re.search(r'ROBOTS_BLOCKED|FETCH_FAILED',mp['reason']),'011453 hold must carry the corrected reason'
+fu=json.loads((H/'modern_polymers_followup.json').read_text());assert all(p['http_default_curl_agent']==200 and p['quotes_in_order'] for p in fu['pages']) and fu['census_address_check']['status']=='PASS'
 # Evidence IDs: only inside EVD-330000..330999, seven per promotion, immutable slots, no retired reuse.
 assert len(alloc)==7*len(sel) and len({r['evidence_id'] for r in alloc})==len(alloc) and not(retired&{r['evidence_id'] for r in alloc})
 assert all(330000<=int(r['evidence_id'][4:])<=330999 for r in alloc) and sorted(int(r['slot']) for r in slots)==list(range(len(sel)))
