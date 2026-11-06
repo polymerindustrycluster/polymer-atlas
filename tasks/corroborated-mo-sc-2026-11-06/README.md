@@ -62,3 +62,11 @@ On moving main, take main's data, replay the builder and recompute before/after;
 No shared scripts changed, so scripts pytest is not required. Final checks and independent two-family refutes below.
 
 - Missouri application:4 new C/unknown establishments,31 evidence observations(28 site +3 registrant identity),0 new organizations. validate.py0errors.
+
+- South Carolina application:6 C/unknown establishments,43 evidence observations(42 site+1 registrant identity),0 organizations. Final74 evidence observations;4 aliases on held organizations, all prior canonical rows otherwise unchanged.
+- Final checks: validator0errors; check.py PASS143/143 exact census,3 census mutations caught,10 C sites/74 evidence source-bound; wrong-shard SITE collision rejected before writes; both-state replay byte-identical. Full10-create census supplied for independent review in blind-full-census.csv (fewer than20 creates).
+
+| State | Strict NAICS326 establishments before | After | QCEW2023 private326 establishments | Count ratio before → after |
+|---|---:|---:|---:|---:|
+| MO | 37 | 41 | 368 | 10.05% → 11.14% |
+| SC | 49 | 54 | 406 | 12.07% → 13.30% |

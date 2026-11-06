@@ -2,7 +2,7 @@
 """L3 federal-only C continuation, adapted from L11's CORROBORATED builder.
 Preflight all outputs before writes; replay compares complete canonical rows.
 """
-import argparse,csv,json,sys
+import argparse,csv,json,re,sys
 from collections import Counter,defaultdict
 from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
@@ -39,6 +39,9 @@ def main():
   aliases=[org['legal_name']]+org['trade_names'].split(';');assert name_key(f['company_name']) in {name_key(x) for x in aliases}
   assert all(r['reliability']=='ok' and r['state']==a.state and r['naics_code']==f['naics_code'] and street_key(r['street'])==street_key(f['street']) for r in fed)
   assert f['street'] and f['city'] and f['zip5'] and f['schema_2_2_signal']=='P'
+  assert f['naics_code'].startswith('326') or f['naics_code'] in {'325211','325212','325510','325520','325910'}, 'not a producer code'
+  assert re.search(r'plastic|polymer|rubber|resin|paint|coating|\binks?\b',f['industry_description'],re.I) and not re.search(r'remover|stripper|cleaner',f['industry_description'],re.I), 'activity does not settle polymer manufacturing'
+  assert v['cluster_id'] not in {r['cluster_id'] for r in read(H/'holds-reviewed.csv')}, 'manual identity/function hold'
   sid=f'SITE-{12100+idx:06d}';eid=300000+idx*20;assert 12100+idx<=12999
   for s in oldsites:
    if s['site_id']==sid:continue
