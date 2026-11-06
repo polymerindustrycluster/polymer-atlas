@@ -37,7 +37,9 @@ csv.field_size_limit(10 ** 9)
 
 VERDICT_COLS = ["cluster", "name_key", "records", "verdict", "survivor", "org_state", "deciding_or_settling_fact", "sources",
                 "site_folds_to_apply", "operator_actions", "lookups"]
-PAIR_COLS = ["pair_id", "cluster", "level", "record_a", "record_b", "verdict", "survivor", "state", "basis", "fact", "sources"]
+COST_COLS = ["folded_evidence", "folded_registry_links", "folded_relationships", "survivor_evidence", "survivor_registry_links", "survivor_relationships"]
+PAIR_COLS = ["pair_id", "cluster", "level", "record_a", "record_b", "verdict", "survivor", "state", "basis", "operator_org", "fact",
+             "sources"] + COST_COLS
 ACTION_COLS = ["action_id", "cluster", "action", "record", "target", "state", "fact", "sources"]
 GRAMMAR = {"DUPLICATE_OF", "DISTINCT", "STILL_UNCERTAIN"}
 EXPECTED_MEDIUM = 34          # independent count: strength == medium in PR #244's leads.csv README table
@@ -242,6 +244,8 @@ def run(verdicts, pairs, actions, evidence, frs_rows, leads, orgs, sites, errs=N
         if s in folded_map:
             E(f"survivor {s} (pair {p['pair_id']}) is itself folded in {folded_map[s][2]['pair_id']}")
         # state-specific proof against data/
+        if p["state"] == "to_apply" and history(s) < history(f):
+            E(f"pair {p['pair_id']}: survivor {s} holds less history {history(s)} than folded {f} {history(f)} (links, evidence)")
         if p["level"] == "org":
             fr = orgs.get(f, {})
             if p["state"] == "recorded":
@@ -277,7 +281,18 @@ def run(verdicts, pairs, actions, evidence, frs_rows, leads, orgs, sites, errs=N
                 if not site_basis_ok(p["basis"], fs, ss, p["sources"]):
                     E(f"pair {p['pair_id']}: basis {p['basis']!r} does not hold for {f} / {s} in data/")
                 po = ss.get("org_id", "")
-                if not live_org(po) and not any(a["action"] == "repoint_site" and a["record"] == s for a in actions):
+                rep = [a for a in actions if a["action"] == "repoint_site" and a["record"] == s]
+                op = p.get("operator_org", "")
+                if op:
+                    if not live_org(op):
+                        E(f"pair {p['pair_id']}: operator_org {op} is not an active org")
+                    elif po != op and not any(a["target"] == op for a in rep):
+                        E(f"pair {p['pair_id']}: survivor {s} sits under {po}, operator is {op}, and no repoint_site moves it")
+                    elif po == op and rep:
+                        E(f"pair {p['pair_id']}: survivor {s} is already under the operator {op} but has a repoint action")
+                elif not any(a["action"] == "hold_operator" and a["record"] == s for a in actions):
+                    E(f"pair {p['pair_id']}: operator unsettled (operator_org blank) but no hold_operator on survivor {s}")
+                if not live_org(po) and not rep:
                     E(f"pair {p['pair_id']}: survivor site {s} sits under non-active org {po} with no repoint action")
     # verdict rows
     for v in verdicts:
@@ -375,6 +390,52 @@ def run(verdicts, pairs, actions, evidence, frs_rows, leads, orgs, sites, errs=N
             got = (p["FAC_NAME"], p["FAC_STREET"], p["FAC_CITY"], p["FAC_STATE"], p["FAC_ZIP"])
             if got != (r["fac_name"], r["fac_street"], r["fac_city"], r["fac_state"], r["fac_zip"]):
                 E(f"frs {r['registry_id']}: excerpt differs from cache {got}")
+    return errs
+
+
+_LC = []
+
+
+def link_counts():
+    """Rows that reference each record id: evidence (record_id), registry_links (org_id/site_id), relationships (from/to)."""
+    if _LC:
+        return _LC[0]
+    ev, rl, rel = Counter(), Counter(), Counter()
+    for f in glob.glob(str(ROOT / "data/evidence_*.csv")):
+        for r in read_csv(f):
+            ev[r["record_id"]] += 1
+    for r in read_csv(ROOT / "data/registry_links.csv"):
+        rl[r["org_id"]] += 1
+        if r["site_id"]:
+            rl[r["site_id"]] += 1
+    for r in read_csv(ROOT / "data/relationships.csv"):
+        rel[r["from_org_id"]] += 1
+        rel[r["to_org_id"]] += 1
+    _LC.append((ev, rl, rel))
+    return _LC[0]
+
+
+def history(rec):
+    """(registry_links + relationships, evidence rows): what a fold would orphan if this record were the folded side."""
+    ev, rl, rel = link_counts()
+    return rl[rec] + rel[rec], ev[rec]
+
+
+def fold_cost(p, lc):
+    """The six COST_COLS for one to_apply DUPLICATE_OF pair (folded side vs survivor side)."""
+    ev, rl, rel = lc
+    f, s = folded_of(p), p["survivor"]
+    return dict(folded_evidence=ev[f], folded_registry_links=rl[f], folded_relationships=rel[f],
+                survivor_evidence=ev[s], survivor_registry_links=rl[s], survivor_relationships=rel[s])
+
+
+def check_costs(pairs):
+    errs, lc = [], link_counts()
+    for p in pairs:
+        want = fold_cost(p, lc) if (p["verdict"] == "DUPLICATE_OF" and p["state"] == "to_apply") else {c: "" for c in COST_COLS}
+        for c in COST_COLS:
+            if str(want[c]) != str(p.get(c, "")):
+                errs.append(f"pair {p['pair_id']}: {c} is {p.get(c)!r}, data/ says {want[c]!r}")
     return errs
 
 
@@ -520,6 +581,19 @@ def selftest(base, orgs, sites):
         q["record_a"], q["record_b"], q["survivor"] = "ORG-002674", p["survivor"], p["survivor"]
         d["pairs"].append(q)
     ok &= mutate(m12, "survivor in two clusters")
+    # 13 survivor holding less history than the folded record
+    def m13(d):
+        p = next(p for p in d["pairs"] if p["record_a"] == "SITE-004181")
+        p["survivor"] = "SITE-004181"
+    ok &= mutate(m13, "holds less history")
+    # 14 unsettled operator without a hold_operator action
+    def m14(d):
+        d["actions"] = [a for a in d["actions"] if not (a["action"] == "hold_operator" and a["record"] == "SITE-003765")]
+    ok &= mutate(m14, "no hold_operator on survivor")
+    # 15 survivor under a non-operator org without a repoint
+    def m15(d):
+        d["actions"] = [a for a in d["actions"] if not (a["action"] == "repoint_site" and a["record"] == "SITE-002962")]
+    ok &= mutate(m15, "no repoint_site moves it")
     return ok
 
 
@@ -531,6 +605,7 @@ def main():
                offline=offline)
     errs += data_untouched()
     errs += known_answers()
+    errs += check_costs(base["pairs"])
     errs += check_counts_and_readme(base["verdicts"], base["pairs"], base["actions"])
     if "--selftest" in sys.argv:
         print("selftest: each planted defect must be caught")

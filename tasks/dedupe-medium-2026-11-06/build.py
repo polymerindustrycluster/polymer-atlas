@@ -58,8 +58,12 @@ def main():
 
     # ---- pairs / actions
     pairs, actions = [], []
+    lc = check.link_counts()
     for i, p in enumerate(D.PAIRS, 1):
-        pairs.append(dict(pair_id=f"P{i:03d}", **p))
+        row = dict(pair_id=f"P{i:03d}", **p)
+        row.update(check.fold_cost(row, lc) if (row["verdict"] == "DUPLICATE_OF" and row["state"] == "to_apply")
+                   else {c: "" for c in check.COST_COLS})
+        pairs.append(row)
     for i, a in enumerate(D.ACTIONS, 1):
         actions.append(dict(action_id=f"A{i:03d}", **a))
     write_csv("pairs.csv", check.PAIR_COLS, pairs)
