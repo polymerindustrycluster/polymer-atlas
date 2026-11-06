@@ -6,7 +6,7 @@ from collections import Counter
 H=Path(__file__).resolve().parent;R=H.parents[1];sys.path.insert(0,str(R/'scripts'))
 from atlas import load_tables,dedupe,name_key
 from build_qcew_denominators import atlas_numerators
-from build import read, clean_street
+from build import read, clean_street, ring_for_naics
 vs=read(H/'verdicts.csv');cs=read(H/'input.csv');alloc=read(H/'allocations.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==125
 assert {r['cluster_id'] for r in cs}=={r['cluster_id'] for r in vs}
@@ -44,6 +44,10 @@ assert sum(r['state']=='WI' and r['street_address']=='8430 Murphy Dr' for r in T
 for r in owned:
  if r['record_id']==ff['site_id']:
   assert '568224' in r['notes'] and '568232' in r['notes']
+for code,expected in [('326199','1'),('325510','2'),('325520','2'),('325991','2'),('325212','2')]:assert ring_for_naics(code)==expected
+for code in ['325211','325998','325999']:
+ try:ring_for_naics(code);raise AssertionError('unresolved ring admitted')
+ except ValueError:pass
 # Byte idempotence, and a mutation: an occupied lane ID must fail without modifying any file.
 files=[R/'data'/f for f in ['sites_WI.csv','evidence_sites_WI.csv','organizations_WI.csv','evidence_organizations_WI.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files]
