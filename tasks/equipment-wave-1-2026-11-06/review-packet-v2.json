@@ -1,0 +1,90 @@
+{
+  "schema_version": 2,
+  "scope": "L14 equipment34 rows plus controller-authorized fixture ID and nonempty equipment rendering fixes. scripts changes fully represented by fixture.patch/render.patch and available in branch checkout; canonical projection in inputs.csv. Initial manifest superseded.",
+  "criteria": [
+    "34 equipment rows have own-host citations and valid schema classes, access and held hosts",
+    "Raw quotes/names match with no source skips; three hand-confirmed instruments pass",
+    "Builder idempotent and validator reports zero errors"
+  ],
+  "out_of_scope": [
+    "Full equipment inventory",
+    "Other inherited federal-frame CRLF changes"
+  ],
+  "revision": "69fabfab798ca285dc9661ef6cac9b94a857f50e",
+  "tool_access": "Clerks may inspect full worktree and fetch source URLs; all packet evidence must be read.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "README.md",
+      "sha256": "43c64b1182b363f8beb7293d07051587f859499d28205e1a914d0f787aa309ac"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "cebef49d934cecb0c465586cf28b6f38ca8d6b0861c7a8bae4fa9d40d5b7e156"
+    },
+    {
+      "path": "build.py",
+      "sha256": "7cf3e6168a774eb7cdaddafa8326c115460fc749809cd167d71181f907f3d29e"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "282444858aca3a4ceac6f29ccded99e36d8f2f92b420a2b3bb2a114148bf056a"
+    },
+    {
+      "path": "fixture-checks.txt",
+      "sha256": "ea78a0eee3784868d7f48c51e3c8b72eee0170638c704471e2f5a3864dadb862"
+    },
+    {
+      "path": "fixture.patch",
+      "sha256": "cd43d8eecff875cf524ef2781da5b9f54f9126c43d175942edf4d49574f3079d"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "4fceed088ca45aa2648fdf83df017c99139db172736311cbb3d44811e8a7bc12"
+    },
+    {
+      "path": "render-checks.txt",
+      "sha256": "c3e995d8cf2736e652c7a1ea98a8a2d9a51aa695459c34551b73c434618855ef"
+    },
+    {
+      "path": "render.patch",
+      "sha256": "722ece9605bc4182bf550ba66258ff70257f157dfb303d09a37cac125fd51598"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "9740253c3ccc73fdbc9e319afe1e8fc1743c61e84a6d7f0007f02f061f13b432"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "67e18c4ebc059aaa468cfd0f970e68431cdc8ff78e576087d825554b95044c48"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/equipment-wave-1-2026-11-06/build.py --raw-check --apply",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "uv run --no-project --with pytest python3 -m pytest -q scripts/",
+      "outcome": "pass",
+      "evidence": "render-checks.txt"
+    },
+    {
+      "command": "python3 scripts/build_site.py --rebuild-db --out build/equipment-wave-1/site",
+      "outcome": "pass",
+      "evidence": "render-checks.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}
