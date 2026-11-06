@@ -1,0 +1,226 @@
+{
+  "schema_version": 2,
+  "scope": "D10 research hold packet only:12candidates0creates5duplicates7holds,canonicaldelta0;immutablearchivedLIFTproposal/6EVDwith7retiredIDs,ownerbatteryboundary not self-ruled.",
+  "criteria": [
+    "Zero canonicaldata delta;12candidate census0V5D7H;fivechainsheld,threeknownhousematches",
+    "Exact1342f2darchive1create6observationsunchanged,retired7IDsabsentfrommain/no reuse/no published deletion",
+    "Both scope readings and materials-list/memberaccessboundary in ownerbattery;LIFTheld,notgeneralistflip/formalPICrelationship",
+    "Actualapply rejects archivedcreate/evidencere-admission;allCSVno-opreplay/validator0/nativeguard"
+  ],
+  "out_of_scope": [
+    "Current federal funding or operating liveness",
+    "Program/table/vocabulary changes gated by owner battery",
+    "Complete regional MEP affiliate inventory",
+    "Hosted deployment or physical inspection"
+  ],
+  "revision": "3a6606787da13d4562659e087e653aed19a65c15",
+  "tool_access": "Reviewers have full branch/canonical data access and may fetch admitted own sources, Census county record and held candidates. Inspect complete packet; use PR ref if worker checkout moves.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "18bd36896c4e7241da1b1a0a754023c6516422e684c2257701c33e0cb4f722db"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7b0d543ac654f59dfde5847a71ed9c47ea400072cf5c7a27b8ffe4caae5b31bf"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "d09e141d2c5cc753109c54370ece5d96f7ec9f92225c4a481de1ed302c643776"
+    },
+    {
+      "path": "application.txt",
+      "sha256": "56ed6a5ab83e77e8f6e32e7790a5c69bf3a039899c0c6545eac6e81a95a117fe"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "8d23735bf2d20d6eb37f193687cfccfa7f7036c42b5998313817e653bda91871"
+    },
+    {
+      "path": "build.py",
+      "sha256": "b1531842e357648fc2257365aa651ba29fd3e8b09598956cda55f1afe2d32fbb"
+    },
+    {
+      "path": "check.py",
+      "sha256": "3c95fdf3a19a62448a227320adc58fa4f18f8789bc3342402889479002bcac5f"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "bfe64f94915e17d3e9c47a5ad5f96dfce869c64541bf28cbb18ccedc897424bc"
+    },
+    {
+      "path": "creates_ecosystem.csv",
+      "sha256": "f52ce90b0ad1eb800f6e2cca57fd5213ed5490c77e7a150f7dc7e7aeca12cb2a"
+    },
+    {
+      "path": "dedupe-america.txt",
+      "sha256": "07426d4f7bb63be322d334372939a3122d0428d178072db6fed0f97fef516ee5"
+    },
+    {
+      "path": "dedupe-hub.txt",
+      "sha256": "92097c4d397d4d8fff886905e6b39ce95db3ecba3a117c24ed4a4470f1c31a1d"
+    },
+    {
+      "path": "dedupe-iacmi.txt",
+      "sha256": "86d977392ff51c6f9c03baad3ee9cbaf572704b133267a51977a9d03e8499615"
+    },
+    {
+      "path": "dedupe-lift-alias.txt",
+      "sha256": "f0a08a0263534c1fe6a08d0766c80a35333d6da57e4e9ee0a8bcad4cfd3a5863"
+    },
+    {
+      "path": "dedupe-lift-old.txt",
+      "sha256": "6fbf331fe7a26606b268f2358f5c6cd5ba3c17848c3a52b87ea3796190c6a01f"
+    },
+    {
+      "path": "dedupe-lift-operator.txt",
+      "sha256": "012d75f8274318fbdb61f9cf691b3ed98a9679f01a2c573e17d44da8621ea257"
+    },
+    {
+      "path": "dedupe-lift.txt",
+      "sha256": "54f2ea428148ecafcafd7566f1fe9684cc2181917c00b07090e57d15506e5405"
+    },
+    {
+      "path": "dedupe-magnet.txt",
+      "sha256": "d7b7e8aa514b93dae94cfff497490e5a1d24a69214a04ee418ca6d04f3abbbd7"
+    },
+    {
+      "path": "dedupe-michigan-mep.txt",
+      "sha256": "4ef87258b7d5e4721238bbed04710fab1aa9003c6fd3b0d06a507cb160db1e4a"
+    },
+    {
+      "path": "dedupe-nepirc.txt",
+      "sha256": "17c3d6903745ca79036d1be8b37cbb878ba97d2c2013edae9711e3d05eaf0391"
+    },
+    {
+      "path": "dedupe-niimbl-alias.txt",
+      "sha256": "20d46baa6fdebd622b004f7ccb821132712c42db4a1666c6af2cbf442ae91576"
+    },
+    {
+      "path": "dedupe-niimbl.txt",
+      "sha256": "953560c332f8d9017aa5d85685709a5585b51776be81bc52d7256ab65083c2ff"
+    },
+    {
+      "path": "dedupe-ohio-mep.txt",
+      "sha256": "a5d3d659cce7fcba9ce94132386748ac2fefb6d1638229ea319a251cf3caa847"
+    },
+    {
+      "path": "dedupe-pa-mep.txt",
+      "sha256": "271407fcf71aca5faf5fba05f9869259a2abdaf0292f474196f4281987131fde"
+    },
+    {
+      "path": "dedupe-purdue-mep.txt",
+      "sha256": "eb8a6cb9a413e010023abb364d5005f2eb6560723ae49f4123f099cee8658044"
+    },
+    {
+      "path": "dedupe-remade.txt",
+      "sha256": "b395bbd50ba2f1d7871377f39051c7cb6645d33e833d5de9e5fd0c20386923a2"
+    },
+    {
+      "path": "evidence_rows.csv",
+      "sha256": "5f6f0573febe1e437aa5f0873bc9b07310357fdade2f52725f997a7fcef69c17"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "2b166361444c61eadb750acf9de07c2994b4b21422c1f06c7e140b916e225a27"
+    },
+    {
+      "path": "integration.json",
+      "sha256": "e69c12d91683f5d8b9d7cf492b177d806a72c90480fd3644f6ba5aa441d800ec"
+    },
+    {
+      "path": "raw-checks.txt",
+      "sha256": "ce810bc41e8a36193295fd263c9d0fe9ff51da24692bcf99ab8d15d6fa2e76f5"
+    },
+    {
+      "path": "retired_ids.csv",
+      "sha256": "eeb33ec4ce332719cedb977f36b2d21f9c67991f592fe90e0679080055a551e1"
+    },
+    {
+      "path": "row-loss.txt",
+      "sha256": "7508d1b9c4fb630ffed4cf628b21bb71beb279b714f4cd2c99b572b67cd8ab9c"
+    },
+    {
+      "path": "shard-reference.json",
+      "sha256": "6fa40bf99d03fd7e530b2e8bfba039304f8e0a192f24532e0478271bf2a593c6"
+    },
+    {
+      "path": "source-fetches.csv",
+      "sha256": "026b01e65bcf4842ea150b518531163b90915dde41b2b694f4dfe4937d9584d3"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "f2fd3b861b3d2e495dcb1b7d1ffc11d510b43c6c6ea256ec166c4829a804515a"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "5fc40824f6b1ca2dbe14c63b105af441712094f40b9d68397a6ef34619b03a5d"
+    },
+    {
+      "path": "withdrawn/application.txt",
+      "sha256": "19fe37aef9c101dc47f35f313177b6033eed07eeece9c9e1cd49b66ab7d2dd8e"
+    },
+    {
+      "path": "withdrawn/creates_ecosystem.csv",
+      "sha256": "3346f01f00973fc264de27c65144749fec97aa9a6a59b0edbbce7f3184ca9c86"
+    },
+    {
+      "path": "withdrawn/evidence_rows.csv",
+      "sha256": "a958be5048ea00869d50e67f2af538257489627367cb1ecf818c90aaab1d76aa"
+    },
+    {
+      "path": "withdrawn/integration.json",
+      "sha256": "e69c12d91683f5d8b9d7cf492b177d806a72c90480fd3644f6ba5aa441d800ec"
+    },
+    {
+      "path": "withdrawn/manifest.json",
+      "sha256": "fe62590cdd84d068b724223f293e2de3599b824bb23b7e26268b4049e891ac3f"
+    },
+    {
+      "path": "withdrawn/raw-checks.txt",
+      "sha256": "ce810bc41e8a36193295fd263c9d0fe9ff51da24692bcf99ab8d15d6fa2e76f5"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/federal-programs-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validate.txt"
+    },
+    {
+      "command": "python3 scripts/check_row_loss.py --base origin/main",
+      "outcome": "pass",
+      "evidence": "row-loss.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [
+    {
+      "id": "codex4-relevance-grok4-inclusion",
+      "findings": [
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "missing-mandatory-relevance",
+          "evidence": "Correctedresearchproposal archivedexact;no currentcreate."
+        },
+        {
+          "kind": "insufficient_evidence",
+          "disposition": "parked",
+          "class": "named-polymer-service-boundary",
+          "evidence": "Conflicting Codex4/Grok4readings=>AGENTS2.9hold,B-D10-LIFT,0data,retired7IDs;ownerreadingrequired."
+        }
+      ]
+    }
+  ],
+  "receipts": []
+}
