@@ -4,7 +4,7 @@ from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from atlas import load_tables,dedupe
 from build import read
-STATE='IL';N=45;CREATES=3;BASE='9489b607c19b450c195c2353944c61719105e1f9'
+STATE='IL';N=45;CREATES=3;BASE='80bb5140e0f1598d85fe30b28777def59c9b83c6'
 cs=read(H/'input.csv');vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');prior=read(H/'prior-input.csv')
 def frame_check(vs):
  assert len(cs)==len(vs)==len({v['cluster_id'] for v in vs})==N
@@ -55,6 +55,6 @@ for name,oid in [('Plastipak Packaging, Inc.','ORG-001033'),('Advanced Drainage 
  assert oid in {h['id'] for s in dedupe(T,name=name)['steps'] for h in s['hits']}
 rows=read(paths[0]);ids={r['site_id'] for r in alloc};strict=lambda r:r['operating_status'] in ['active','unknown'] and r['verification_tier'] in ['A','B','C'] and r['naics_primary'].startswith('326')
 after=sum(strict(r) for r in rows);before=sum(strict(r) for r in rows if r['site_id'] not in ids)
-assert before==68 and after==before
+assert before==85 and after==before
 result=dict(state=STATE,worked_clusters=N,creates_C=CREATES,evidence_rows=7*CREATES+1,known_answers=3,blind_census_size=CREATES,before_strict326=before,after_strict326=after,qcew2023_private_establishments326=797,strict_share_percent=100*after/797,delta=0)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print('PASS',result)

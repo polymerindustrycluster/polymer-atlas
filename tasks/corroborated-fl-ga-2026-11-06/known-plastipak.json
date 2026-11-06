@@ -1,0 +1,49 @@
+{
+  "query": {
+    "domain": null,
+    "name": "Plastipak Packaging",
+    "street": null,
+    "city": null,
+    "state": null,
+    "zip": null
+  },
+  "stop_at_step": 2,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": "no --domain",
+      "hits": []
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-001033",
+          "name": "Plastipak Packaging, Inc.",
+          "city": "Medina",
+          "state": "OH",
+          "status": "active",
+          "tier": "B",
+          "file": "organizations_OH.csv",
+          "match": "name key 'plastipak packaging' = legal_name 'Plastipak Packaging, Inc.'"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": "no --street",
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": []
+    }
+  ]
+}
