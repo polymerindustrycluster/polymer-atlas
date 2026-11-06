@@ -209,6 +209,7 @@ def check(base, cur, exp, changed_files, files_expected, raw_dir=HERE / "raw", s
         # raw witness
         m = re.search(r'registry id (\d{12})', r["claim_detail"])
         quote = re.findall(r'"([^"]+)"', r["claim_detail"])
+        tri = re.match(r"https://data\.epa\.gov/efservice/TRI_FACILITY/TRI_FACILITY_ID/(\w+)/JSON$", r["source_ref"])
         if m:
             f = raw_dir / f"frs_{m.group(1)}.json"
             if not f.exists():
@@ -219,12 +220,37 @@ def check(base, cur, exp, changed_files, files_expected, raw_dir=HERE / "raw", s
                     E(f"evidence {k}: registrant/address in the row do not equal the raw FRS JSON")
                 if r["source_ref"] != f"https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id={m.group(1)}&output=JSON":
                     E(f"evidence {k}: source_ref is not the FRS REST URL of {m.group(1)}")
+                # a registrant may be said to NAME THE OPERATOR only if it shares its leading word with the target org's name
+                if "names the operator" in r["claim_detail"]:
+                    target = orgs[moves[r["record_id"]][1]] if r["record_id"] in moves else {}
+                    names = [target.get("legal_name", "")] + target.get("trade_names", "").split(";")
+                    lead = lambda t: next(iter(re.findall(r"[a-z0-9]+", re.sub(r"^the\s+", "", t.lower()))), "")  # noqa: E731
+                    if lead(j["FacilityName"]) not in {lead(n) for n in names if n.strip()}:
+                        E(f"evidence {k}: registrant {j['FacilityName']!r} is said to name the operator but shares no leading word with {target.get('legal_name')!r}")
+        elif tri:
+            ff, fo = PERSIST / f"tri_facility_{tri.group(1)}.json", PERSIST / f"tri_form_{tri.group(1)}.json"
+            if not ff.exists() or not fo.exists():
+                E(f"evidence {k}: cached TRI JSON for {tri.group(1)} missing (cannot inspect)")
+            else:
+                fac, forms = json.loads(ff.read_text())[0], json.loads(fo.read_text())
+                got = re.search(r"received (\d{4}-\d{2}-\d{2})", r["claim_detail"])
+                if not quote or quote[0] != fac["facility_name"] or fac["street_address"] not in r["claim_detail"]:
+                    E(f"evidence {k}: facility name/address in the row do not equal the TRI facility JSON")
+                if not got or got.group(1) not in {f["received_date"][:10] for f in forms}:
+                    E(f"evidence {k}: the filing date in the row is not a received_date in the TRI form JSON")
         else:
             fn = PRESS_FILE.get(r["source_ref"])
             if not fn or not (PERSIST / fn).exists():
                 E(f"evidence {k}: cached page for {r['source_ref']} missing (cannot inspect)")
-            elif not quote or norm(quote[-1]) not in norm((PERSIST / fn).read_text(errors="ignore")):
-                E(f"evidence {k}: quote {quote[-1:]!r} not found on the cached page")
+            else:
+                page = norm((PERSIST / fn).read_text(errors="ignore"))
+                if not quote or norm(quote[-1]) not in page:
+                    E(f"evidence {k}: quote {quote[-1:]!r} not found on the cached page")
+                if "gemspring.com" in r["source_ref"] and ("November 3, 2025" not in page or "release dated 2025-11-03" not in r["claim_detail"]
+                                                          or re.search(r"completed .{0,80} on 2025-11-03", r["claim_detail"])):
+                    E(f"evidence {k}: the Gemspring release is dated 2025-11-03 but does not date completion; the row must say 'release dated 2025-11-03' only")
+                if "goodyear.com" in r["source_ref"] and "effective Oct. 31, 2025" in r["claim_detail"] and "effective 2025-10-31" not in r["claim_detail"]:
+                    E(f"evidence {k}: effective date must be stated as 2025-10-31")
     for sid in rp:
         if sid not in by_site:
             E(f"repointed site {sid}: no evidence row")
@@ -425,6 +451,12 @@ def selftest(base, cur, exp, changed, files_expected, srcs):
     ok &= mut(lambda c: c["orgs"].update({"ORG-099999": dict(c["orgs"][s0], org_id="ORG-099999")}), "was added")
     ok &= mut(lambda c: c["links"].pop(next(iter(c["links"]))), "registry_links: row count changed")
     ok &= mut(lambda c: c["caps"][cap_moved].update(org_id="ORG-000006"), "does not equal its site's org_id")
+    gem = next(k for k in new_ev if "gemspring.com" in cur["evidence"][k]["source_ref"])
+    ok &= mut(lambda c: c["evidence"][gem].update(claim_detail=c["evidence"][gem]["claim_detail"].replace("release dated 2025-11-03 announces that an affiliate has completed", "an affiliate completed", 1).replace("(the release does not state the completion date)", "on 2025-11-03")), "does not date completion")
+    lit = next(k for k in new_ev if cur["evidence"][k]["record_id"] == "SITE-003478" and "states no operator" in cur["evidence"][k]["claim_detail"])
+    ok &= mut(lambda c: c["evidence"][lit].update(claim_detail=c["evidence"][lit]["claim_detail"].split(": the registrant name")[0] + " names the operator of this establishment: ORG-000131 (Tarkett North America), not ORG-001836 (Johnsonite Inc.)"), "shares no leading word")
+    tri = next(k for k in new_ev if "TRI_FACILITY" in cur["evidence"][k]["source_ref"])
+    ok &= mut(lambda c: c["evidence"][tri].update(claim_detail=c["evidence"][tri]["claim_detail"].replace("received 2025-06-27", "received 2024-01-01")), "not a received_date")
     return ok
 
 

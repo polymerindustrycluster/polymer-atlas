@@ -50,18 +50,19 @@ WITNESS = {
     "SITE-000168": [("frs", "110000386920")], "SITE-001530": [("frs", "110000387554")],
     "SITE-006423": [("frs", "110071944474")],
     "SITE-003477": [("frs", "110009662855"), ("press", "floordaily")],
-    "SITE-003478": [("frs", "110000385244"), ("press", "floordaily")],
+    "SITE-003478": [("frs_literal", "110000385244"), ("press", "floordaily")],
     "SITE-002868": [("press", "gemspring"), ("press", "goodyear")],
     "SITE-002870": [("press", "gemspring"), ("press", "goodyear")],
 }
+EXTRA_WITNESS = {"SITE-003478": [("tri", "44022JHNSN16910")]}   # appended after the main rows so existing EVD ids do not shift
 PRESS = {  # key -> (url, source_class, quote, what it dates)
     "floordaily": ("https://www.floordaily.net/flooring-news/tarkett-announces-acquisition-of-johnsonite/", "press",
-                   "Tarkett announced the acquisition of Johnsonite of Chagrin Falls, OH", "Tarkett acquired Johnsonite (announced 2005-12-08)"),
+                   "Tarkett announced the acquisition of Johnsonite of Chagrin Falls, OH", "Tarkett's release dated 2005-12-08 announces the acquisition of Johnsonite (an acquisition, not by itself a statement of who operates this plant)"),
     "gemspring": ("https://www.gemspring.com/gemspring-capital-completes-acquisition-of-the-goodyear-tire-rubber-companys-polymer-chemicals-business", "press",
                   "The acquisition includes two manufacturing plants in Houston and Beaumont, Texas",
-                  "a Gemspring affiliate completed the acquisition of Goodyear's polymer chemicals business on 2025-11-03"),
+                  "Gemspring Capital's release dated 2025-11-03 announces that an affiliate has completed the acquisition of Goodyear's polymer chemicals business (the release does not state the completion date)"),
     "goodyear": ("https://news.goodyear.com/2025-11-03-Goodyear-Completes-Divestiture-of-Chemical-Business", "press",
-                 "effective Oct. 31, 2025", "the Goodyear Chemical divestiture to a Gemspring affiliate was effective 2025-10-31"),
+                 "effective Oct. 31, 2025", "Goodyear's release dated 2025-11-03 states that the Goodyear Chemical divestiture to a Gemspring affiliate was effective 2025-10-31"),
 }
 BASIS_TEXT = {"shared_frs_id": "same EPA FRS id", "same_street": "same street address", "street_variant": "same street, spelling variant",
               "same_city_streetless": "the operator's one plant in that city"}
@@ -84,6 +85,10 @@ SOURCES = [  # (id, url, cached text file, quote): pages cited by evidence rows 
     ("S4", "https://www.ludlowcomp.com/about-ludlow-composites", "ludlow-about.txt",
      "began operating the Ludlow name as the parent company"),
     ("S5", "https://www.dpcpipe.com/", "dpc-home.txt", "Diamond Plastics Corporation 1212 Johnstown Road Grand Island, NE 68803"),
+    ("S6", "https://data.epa.gov/efservice/TRI_FACILITY/TRI_FACILITY_ID/44022JHNSN16910/JSON", "tri_facility_44022JHNSN16910.json",
+     "TARKETT USA INC DBA JOHNSONITE"),   # raw JSON also carries a public-contact name, phone and email: kept in persist/, never committed
+    ("S7", "https://data.epa.gov/efservice/tri_reporting_form/tri_facility_id/44022JHNSN16910/reporting_year/2024/JSON", "tri_form_44022JHNSN16910.json",
+     '"received_date": "2025-06-27 00:00:00"'),
 ]
 
 
@@ -252,27 +257,46 @@ def main():
     ev_new = {}
     eid = EVD_FIRST
     have = {(e["record_id"], e["source_ref"]) for f in sorted(data.glob("evidence_sites_*.csv")) for e in read_rows(f)[0] if e["created_by"] == BY}
-    for x in repoints:
-        sid, new = x["record"], x["target"]
-        old = moved_sites[sid][0]
-        shard = site_file[sid].stem.split("_", 1)[1]
-        for kind, key in WITNESS[sid]:
+
+    def witness_row(kind, key, sid, old, new):
+        on = f"{old} ({org_by[old]['legal_name']})"
+        nn = f"{new} ({org_by[new]['legal_name']})"
+        if kind in ("frs", "frs_literal"):
+            url = f"https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id={key}&output=JSON"
+            j = json.loads((HERE / "raw" / f"frs_{key}.json").read_text())["Results"]["FRSFacility"][0]
+            where = f"EPA FRS registrant \"{j['FacilityName']}\" at {j['LocationAddress']}, {j['CityName']} {j['StateAbbr']} (registry id {key})"
             if kind == "frs":
-                url = f"https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?registry_id={key}&output=JSON"
-                j = json.loads((HERE / "raw" / f"frs_{key}.json").read_text())["Results"]["FRSFacility"][0]
-                detail = (f"EPA FRS registrant \"{j['FacilityName']}\" at {j['LocationAddress']}, {j['CityName']} {j['StateAbbr']} (registry id {key}) names the operator "
-                          f"of this establishment: {new} ({org_by[new]['legal_name']}), not {old} ({org_by[old]['legal_name']})")
-                row = dict(source_class="government_filing", source_ref=url, observed_date=DATE, tier_effect="supports_B")
-            else:
-                url, sc, quote, what = PRESS[key]
-                detail = f"{what}: \"{quote}\"; operator of this establishment is {new} ({org_by[new]['legal_name']}), no longer {old} ({org_by[old]['legal_name']})"
-                row = dict(source_class=sc, source_ref=url, observed_date=DATE, tier_effect="supports_B")
-            if (sid, row["source_ref"]) in have:
-                continue
-            row.update(evidence_id=f"EVD-{eid:06d}", record_table="sites", record_id=sid, claim_type="parent", claim_detail=detail, created_by=BY,
-                       notes=f"dedupe-medium apply {DATE} (PR #254 verdict {x['cluster']}); operator-only observation; page read {DATE}, raw copy in tasks/dedupe-medium-apply-2026-11-06")
-            ev_new.setdefault(data / f"evidence_sites_{shard}.csv", []).append(row)
-            eid += 1
+                detail = f"{where} names the operator of this establishment: {nn}, not {on}"
+            else:  # the registrant is the acquired brand's name: recorded literally; the operator statement rests on the TRI row
+                detail = (f"{where}: the registrant name recorded for this establishment is the acquired brand's name; this row states no operator, "
+                          f"which rests on the dated TRI filing row")
+            return url, dict(source_class="government_filing", source_ref=url, observed_date=DATE, tier_effect="supports_B"), detail
+        if kind == "tri":
+            url = f"https://data.epa.gov/efservice/TRI_FACILITY/TRI_FACILITY_ID/{key}/JSON"
+            fac = json.loads((PERSIST / f"tri_facility_{key}.json").read_text())[0]
+            form = json.loads((PERSIST / f"tri_form_{key}.json").read_text())
+            got = sorted({f["received_date"][:10] for f in form})
+            detail = (f"EPA TRI facility {key}: facility name and mailing name \"{fac['facility_name']}\" at {fac['street_address']}, {fac['city_name']} {fac['state_abbr']}; "
+                      f"its RY{form[0]['reporting_year']} TRI form was received {got[-1]}. The filer at this address is Tarkett USA Inc (dba Johnsonite), the "
+                      f"registrant the Atlas holds as {nn} at Middlefield (FRS 110009662855, link on SITE-001399), not {on}")
+            return url, dict(source_class="government_filing", source_ref=url, observed_date=DATE, tier_effect="supports_B"), detail
+        url, sc, quote, what = PRESS[key]
+        detail = f"{what}: \"{quote}\"; bears on the operator of this establishment (held under {on}, moved to {nn})"
+        return url, dict(source_class=sc, source_ref=url, observed_date=DATE, tier_effect="supports_B"), detail
+
+    for table in (WITNESS, EXTRA_WITNESS):
+        for x in repoints:
+            sid, new = x["record"], x["target"]
+            old = moved_sites[sid][0]
+            shard = site_file[sid].stem.split("_", 1)[1]
+            for kind, key in table.get(sid, []):
+                url, row, detail = witness_row(kind, key, sid, old, new)
+                if (sid, url) in have:
+                    continue
+                row.update(evidence_id=f"EVD-{eid:06d}", record_table="sites", record_id=sid, claim_type="parent", claim_detail=detail, created_by=BY,
+                           notes=f"dedupe-medium apply {DATE} (PR #254 verdict {x['cluster']}); operator-only observation; page read {DATE}, raw copy in tasks/dedupe-medium-apply-2026-11-06 or persist/")
+                ev_new.setdefault(data / f"evidence_sites_{shard}.csv", []).append(row)
+                eid += 1
     n_ev = sum(len(v) for v in ev_new.values())
     rel_base = max([int(x["relationship_id"][4:]) for x in rels["rows"]] + [REL_FIRST - 1]) + 1
     for i, r in enumerate(new_rel):
