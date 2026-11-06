@@ -1,0 +1,18 @@
+# L6 TX batch2 independent refute
+
+Review agent/codex/corroborated-tx-2, task tasks/corroborated-tx-2-2026-11-06. Return VERDICT:APPROVE or REFUTE with concrete record-level findings and inspected/missingyield. No approval for unreadmaterial.
+
+BLINDFIRST: readblind-input.csv beforeallocations/verdicts; full17-createcensus. Independentlyassessidentity,physicaladdress,scope,operatorpercluster;thencomparetocanonicalproposal.40rankedcoreclusters41–80,17VERIFIED/23holds.10newparentC/17siteC/133EVD. Twofileshaveprimarygovernmentrecord,sourcepacket2026-11-01 admittedbycontroller; ITAcitationsincludeID/submissiondate/correctCY2025bulkURL. NoownscopeorBclaim/currentoperationclaim. Allsite/parentstatusunknown,HQ/countyblankdeliberate. FederalclassificationC,nocapabilityinference.
+
+Criticalholdpolicy: allcore_naics_4digit_concordant=Nclustersheld (includingWincup,Arlon,TapeInnovations,PolymerProducts,PPGandolefins);builderassertsnoneiscreated. ReefproductionMykawaownpageacquisitionInteplastparentstructureheld;AlmedaownpageSales/CustomerServiceheld. DallasPlasticsownsHiDe(h eldrecordissubsidiary),bothheldbeforecreatingnewparent. M&QandMI/Miterambiguousheldparentsheld. CorpusChristiPolymersconstruction/commissioningoutcomeheld. Connerwood/polymerprocesssitehold. GSFprimaryProctorStreetversusITARdheld,GeotexunitAheld. Prudent,Utexoperatorheld. NoREJECTclosure/no-establishment.
+
+Verifiedheldlinks: ZeonORG003068,JMORG002260merged→ORG002261survivor,StoropackORG001128,AirliteORG002553,PlaskoliteORG001024,AndersenORG004305;PrestoprimaryhomepageexplicitbusinessunitReynoldsORG002892,oneown_siteparentrowquotesliteralpagewords(nofederalaliases/IDsper07:20). PrestoOSHAnoEdirectionexcluded; matchingITAused. NewparentsGTProducts(notAGT),AllSource,PSIUrethanes(notPSIPolymerSystems),Concord,ReliantWorldwide(notReliantMolding),Cary,Dexas,Apex,Coverlay,Plastiform:checkdomaincollision/historicaloperator/siteapplicabilitycarefully. GTfiled325211siliconeresins,Zeon325212acrylaterubber,codeprovenancenotcapability.
+
+Namedchecks:
+python3 scripts/validate.py #0errors
+python3 tasks/corroborated-tx-2-2026-11-06/check.py #40unique/full17blindcensus/replay/QCEW/globalcross-shardEVDcollisionzerowrites
+python3 tasks/corroborated-tx-2-2026-11-06/build.py #dryrun
+
+AllmainrowsunchangedbyIDcomparison.Own_siteattributionauditclean. QCEW2023private326953;strictTX107→122(+15of17),11.2277%→12.8017%;twoothers325211/325212. Count ratio,notmatchedcoverage. Currentmain412391aincludesCA135;TX148isindependentpendingandnotinbaseline. IDsORG10600+/SITE15200+/EVD192000+,disjointpriorL6batches,frozenreserved-ids.json;retiredslotsneverreused. NoRegistryLinks/derived/sharedscriptchanges.NoFRSREST/private/licensedcontent.
+
+Checkphantomwitnesses,oldoperatorlabels,officevsmanufacture,allsource-addresscodeagreement,partialwritesandfalseparentlinks. FullcensuswhenN<20undercontrollercontract. Draftbeforeapprovalallowedby05:55/06:25;noDoneclaim.
