@@ -1,0 +1,1439 @@
+[
+  {
+    "org_id": "ORG-000001",
+    "checks": [
+      {
+        "url": "https://www.avient.com/company/news-events",
+        "final": "https://www.avient.com/company/news-events",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000006",
+    "checks": [
+      {
+        "url": "https://www.rpminc.com/news/",
+        "final": "https://www.rpminc.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000010",
+    "checks": [
+      {
+        "url": "https://www.geon.com/news",
+        "final": "https://www.geon.com/news",
+        "status": "200"
+      },
+      {
+        "url": "https://www.geon.com/news/rss.xml",
+        "final": "https://www.geon.com/news/rss.xml",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000134",
+    "checks": [
+      {
+        "url": "https://novagard.com/news-events/",
+        "final": "https://novagard.com/news-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000135",
+    "checks": [
+      {
+        "url": "https://www.valtris.com/news/category/news/",
+        "final": "https://www.valtris.com/news/category/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.valtris.com/news/category/news/feed/",
+        "final": "https://www.valtris.com/news/category/news/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000138",
+    "checks": [
+      {
+        "url": "https://www.permatex.com/category/news-events/",
+        "final": "https://www.permatex.com/category/news-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000196",
+    "checks": [
+      {
+        "url": "https://goldsmith-eggleton.com/latest-news/",
+        "final": "https://goldsmith-eggleton.com/latest-news/",
+        "status": "200"
+      },
+      {
+        "url": "https://goldsmith-eggleton.com/feed/",
+        "final": "https://goldsmith-eggleton.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000234",
+    "checks": [
+      {
+        "url": "https://www.fiberglass-afi.com/press-releases/",
+        "final": "https://www.fiberglass-afi.com/press-releases/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.fiberglass-afi.com/feed/",
+        "final": "https://www.fiberglass-afi.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000317",
+    "checks": [
+      {
+        "url": "https://www.duramaxmarine.com/news-articles/",
+        "final": "https://www.duramaxmarine.com/news-articles/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000372",
+    "checks": [
+      {
+        "url": "https://www.huntsman.com/news",
+        "final": "https://www.huntsman.com/news",
+        "status": "200"
+      },
+      {
+        "url": "https://www.huntsman.com/news/media-releases/rss",
+        "final": "https://www.huntsman.com/news/media-releases/rss",
+        "status": "200",
+        "items": 10,
+        "linked_items": 4
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000430",
+    "checks": [
+      {
+        "url": "https://www.mar-bal.com/category/news/",
+        "final": "https://www.mar-bal.com/category/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000451",
+    "checks": [
+      {
+        "url": "https://moldedfiberglass.com/category/company-news/",
+        "final": "https://moldedfiberglass.com/category/company-news/",
+        "status": "200"
+      },
+      {
+        "url": "https://moldedfiberglass.com/category/company-news/feed/",
+        "final": "https://moldedfiberglass.com/category/company-news/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000473",
+    "checks": [
+      {
+        "url": "https://oldcastleinfrastructure.com/press-releases/",
+        "final": "https://oldcastleinfrastructure.com/press-releases/",
+        "status": "200"
+      },
+      {
+        "url": "https://oldcastleinfrastructure.com/feed/",
+        "final": "https://oldcastleinfrastructure.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000483",
+    "checks": [
+      {
+        "url": "https://www.pentair.com/en-us/about-pentair/newsroom.html",
+        "final": "https://www.pentair.com/en-us/about-pentair/newsroom.html",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000543",
+    "checks": [
+      {
+        "url": "https://www.refcotec.com/news",
+        "final": "https://www.refcotec.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000544",
+    "checks": [
+      {
+        "url": "https://foundationwellness.com/blogs/news",
+        "final": "https://foundationwellness.com/blogs/news",
+        "status": "200"
+      },
+      {
+        "url": "https://foundationwellness.com/blogs/news.atom",
+        "final": "https://foundationwellness.com/blogs/news.atom",
+        "status": "200",
+        "items": 5,
+        "linked_items": 5
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000566",
+    "checks": [
+      {
+        "url": "https://www.sealedair.com/company/media-center/press-releases",
+        "final": "https://www.sealedair.com/company/media-center/press-releases",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000569",
+    "checks": [
+      {
+        "url": "https://www.shinetsusilicones.com/news.aspx",
+        "final": "https://www.shinetsusilicones.com/news.aspx",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000698",
+    "checks": [
+      {
+        "url": "https://www.basf.com/us/en/media",
+        "final": "https://www.basf.com/us/en/media",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000720",
+    "checks": [
+      {
+        "url": "https://capitalresin.com/news/",
+        "final": "https://capitalresin.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000763",
+    "checks": [
+      {
+        "url": "https://cranecpe.com/news-events/",
+        "final": "https://cranecpe.com/news-events/",
+        "status": "200"
+      },
+      {
+        "url": "https://cranecpe.com/feed/",
+        "final": "https://cranecpe.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 6
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000768",
+    "checks": [
+      {
+        "url": "https://www.creativecompositesgroup.com/about-us/newsroom",
+        "final": "https://www.creativecompositesgroup.com/about-us/newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000769",
+    "checks": [
+      {
+        "url": "https://creativefoam.com/news/",
+        "final": "https://creativefoam.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000786",
+    "checks": [
+      {
+        "url": "https://deceuninckna.com/news-and-press/",
+        "final": "https://deceuninckna.com/news-and-press/",
+        "status": "200"
+      },
+      {
+        "url": "https://deceuninckna.com/news-and-press/feed/",
+        "final": "https://deceuninckna.com/news-and-press/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000821",
+    "checks": [
+      {
+        "url": "https://www.emeryoleo.com/news",
+        "final": "https://www.emeryoleo.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000835",
+    "checks": [
+      {
+        "url": "https://www.fiber-tech.net/news",
+        "final": "https://www.fiber-tech.net/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000868",
+    "checks": [
+      {
+        "url": "https://guardian-mfg.com/news/",
+        "final": "https://guardian-mfg.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000880",
+    "checks": [
+      {
+        "url": "https://www.hexion.com/news",
+        "final": "https://www.hexion.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000931",
+    "checks": [
+      {
+        "url": "https://www.lear.com/newsroom",
+        "final": "https://www.lear.com/newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000947",
+    "checks": [
+      {
+        "url": "https://www.masoncolor.com/about/news",
+        "final": "https://www.masoncolor.com/about/news",
+        "status": "200"
+      },
+      {
+        "url": "https://www.masoncolor.com/feed",
+        "final": "https://www.masoncolor.com/feed",
+        "status": "200",
+        "items": 2,
+        "linked_items": 2
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000975",
+    "checks": [
+      {
+        "url": "https://nagasechemtex.com/news/",
+        "final": "https://nagasechemtex.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-000979",
+    "checks": [
+      {
+        "url": "https://www.neaton.com/neaton-newsroom",
+        "final": "https://www.neaton.com/neaton-newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001080",
+    "checks": [
+      {
+        "url": "https://ridgecorp.com/category/news/",
+        "final": "https://ridgecorp.com/category/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://ridgecorp.com/category/news/feed/",
+        "final": "https://ridgecorp.com/category/news/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001090",
+    "checks": [
+      {
+        "url": "https://www.rowmark.com/news",
+        "final": "https://www.rowmark.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001109",
+    "checks": [
+      {
+        "url": "https://www.shelterworks.com/news.html",
+        "final": "https://www.shelterworks.com/news.html",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001110",
+    "checks": [
+      {
+        "url": "https://www.shepherdcolor.com/news-events/",
+        "final": "https://www.shepherdcolor.com/news-events/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.shepherdcolor.com/feed/",
+        "final": "https://www.shepherdcolor.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 4
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001202",
+    "checks": [
+      {
+        "url": "https://www.woodbridgegroup.com/Resources/Newsroom",
+        "final": "https://www.woodbridgegroup.com/Resources/Newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001545",
+    "checks": [
+      {
+        "url": "https://news.atricure.com/",
+        "final": "https://news.atricure.com/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-001572",
+    "checks": [
+      {
+        "url": "https://www.thermatru.com/newsroom/",
+        "final": "https://www.thermatru.com/newsroom/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002174",
+    "checks": [
+      {
+        "url": "https://www.parkerhq.com/news",
+        "final": "https://www.parkerhq.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002350",
+    "checks": [
+      {
+        "url": "https://www.vekainc.com/resources/news-events/",
+        "final": "https://www.vekainc.com/resources/news-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002353",
+    "checks": [
+      {
+        "url": "https://amstabilizers.com/latest/news",
+        "final": "https://amstabilizers.com/latest/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002401",
+    "checks": [
+      {
+        "url": "https://miwindows.com/news",
+        "final": "https://miwindows.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002497",
+    "checks": [
+      {
+        "url": "https://murus.com/about/newspress-materials/",
+        "final": "https://murus.com/about/newspress-materials/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002547",
+    "checks": [
+      {
+        "url": "https://patrickind.com/news/",
+        "final": "https://patrickind.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002758",
+    "checks": [
+      {
+        "url": "https://www.nevchem.com/news/",
+        "final": "https://www.nevchem.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.nevchem.com/feed/",
+        "final": "https://www.nevchem.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002874",
+    "checks": [
+      {
+        "url": "https://www.solstice.com/us/en/news-events",
+        "final": "https://www.solstice.com/us/en/news-events",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002875",
+    "checks": [
+      {
+        "url": "https://www.rogerscorp.com/news",
+        "final": "https://www.rogerscorp.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002879",
+    "checks": [
+      {
+        "url": "https://www.advansix.com/newsroom/",
+        "final": "https://www.advansix.com/newsroom/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.advansix.com/feed/",
+        "final": "https://www.advansix.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002888",
+    "checks": [
+      {
+        "url": "https://www.albemarle.com/us/en/newsroom",
+        "final": "https://www.albemarle.com/us/en/newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002890",
+    "checks": [
+      {
+        "url": "https://www.northann.com/news",
+        "final": "https://www.northann.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002892",
+    "checks": [
+      {
+        "url": "https://www.reynoldsconsumerproducts.com/news",
+        "final": "https://www.reynoldsconsumerproducts.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002908",
+    "checks": [
+      {
+        "url": "https://www.cabotcorp.com/company/newsroom",
+        "final": "https://www.cabotcorp.com/company/newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002910",
+    "checks": [
+      {
+        "url": "https://www.cpchem.com/media-events/news",
+        "final": "https://www.cpchem.com/media-events/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-002955",
+    "checks": [
+      {
+        "url": "https://www.moderndispersions.com/news/",
+        "final": "https://www.moderndispersions.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.moderndispersions.com/feed/",
+        "final": "https://www.moderndispersions.com/feed/",
+        "status": "200",
+        "items": 4,
+        "linked_items": 4
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003057",
+    "checks": [
+      {
+        "url": "https://www.lionelastomers.com/news",
+        "final": "https://www.lionelastomers.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003082",
+    "checks": [
+      {
+        "url": "https://nanoxplore.ca/press-releases/",
+        "final": "https://nanoxplore.ca/press-releases/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003095",
+    "checks": [
+      {
+        "url": "https://continentaltire.com/learn/news-and-events",
+        "final": "https://continentaltire.com/learn/news-and-events",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003104",
+    "checks": [
+      {
+        "url": "https://www.gelest.com/about-gelest/news/",
+        "final": "https://www.gelest.com/about-gelest/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003129",
+    "checks": [
+      {
+        "url": "https://www.osborneindustries.com/news/",
+        "final": "https://www.osborneindustries.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.osborneindustries.com/feed/",
+        "final": "https://www.osborneindustries.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003132",
+    "checks": [
+      {
+        "url": "https://seasafe.com/news/",
+        "final": "https://seasafe.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://seasafe.com/feed/",
+        "final": "https://seasafe.com/feed/",
+        "status": "200",
+        "items": 9,
+        "linked_items": 5
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003151",
+    "checks": [
+      {
+        "url": "https://brycecorp.com/news",
+        "final": "https://brycecorp.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003163",
+    "checks": [
+      {
+        "url": "https://www.stepan.com/content/stepan-dot-com/en/news-events.html",
+        "final": "https://www.stepan.com/content/stepan-dot-com/en/news-events.html",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003183",
+    "checks": [
+      {
+        "url": "https://amfine.com/news/",
+        "final": "https://amfine.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://amfine.com/news/feed/",
+        "final": "https://amfine.com/news/feed/",
+        "status": "200",
+        "items": 3,
+        "linked_items": 3
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003186",
+    "checks": [
+      {
+        "url": "https://www.shintech.com/news",
+        "final": "https://www.shintech.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003191",
+    "checks": [
+      {
+        "url": "https://www.alberdingkusa.com/News/",
+        "final": "https://www.alberdingkusa.com/News/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003194",
+    "checks": [
+      {
+        "url": "https://www.rextac.com/about-us/news-and-events/",
+        "final": "https://www.rextac.com/about-us/news-and-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003208",
+    "checks": [
+      {
+        "url": "https://www.ascendmaterials.com/about/newsroom",
+        "final": "https://www.ascendmaterials.com/about/newsroom",
+        "status": "200"
+      },
+      {
+        "url": "https://www.ascendmaterials.com/feeds/feed.rss",
+        "final": "https://www.ascendmaterials.com/feeds/feed.rss",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003219",
+    "checks": [
+      {
+        "url": "https://covationbio.com/press-room",
+        "final": "https://covationbio.com/press-room",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003258",
+    "checks": [
+      {
+        "url": "https://www.pipe.us/news-events/",
+        "final": "https://www.pipe.us/news-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003286",
+    "checks": [
+      {
+        "url": "https://www.altec.com/about-altec/press-releases",
+        "final": "https://www.altec.com/about-altec/press-releases",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003318",
+    "checks": [
+      {
+        "url": "https://interplastic.com/category/news-events/news/",
+        "final": "https://interplastic.com/category/news-events/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://interplastic.com/feed/",
+        "final": "https://interplastic.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 8
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003361",
+    "checks": [
+      {
+        "url": "https://valtoem.com/news/",
+        "final": "https://valtoem.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://valtoem.com/feed/",
+        "final": "https://valtoem.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 6
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003639",
+    "checks": [
+      {
+        "url": "https://www.douglasdynamics.com/news/",
+        "final": "https://www.douglasdynamics.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003922",
+    "checks": [
+      {
+        "url": "https://meridianadhesives.com/about/news/",
+        "final": "https://meridianadhesives.com/about/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://meridianadhesives.com/feed/",
+        "final": "https://meridianadhesives.com/feed/",
+        "status": "200",
+        "items": 12,
+        "linked_items": 12
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003952",
+    "checks": [
+      {
+        "url": "https://www.augustafiberglass.com/news-augusta-fiberglass.html",
+        "final": "https://www.augustafiberglass.com/news-augusta-fiberglass.html",
+        "status": "200"
+      },
+      {
+        "url": "https://www.augustafiberglass.com/feed/",
+        "final": "https://www.augustafiberglass.com/feed/",
+        "status": "200",
+        "items": 4,
+        "linked_items": 4
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003960",
+    "checks": [
+      {
+        "url": "https://ortecinc.com/news/",
+        "final": "https://ortecinc.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://ortecinc.com/feed/",
+        "final": "https://ortecinc.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 5
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003970",
+    "checks": [
+      {
+        "url": "https://www.us.coimgroup.com/about/news-and-events/",
+        "final": "https://www.us.coimgroup.com/about/news-and-events/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.us.coimgroup.com/feed/",
+        "final": "https://www.us.coimgroup.com/feed/",
+        "status": "200",
+        "items": 4,
+        "linked_items": 4
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-003989",
+    "checks": [
+      {
+        "url": "https://www.generalplastics.com/news-events",
+        "final": "https://www.generalplastics.com/news-events",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004040",
+    "checks": [
+      {
+        "url": "https://vybond.com/news/",
+        "final": "https://vybond.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004071",
+    "checks": [
+      {
+        "url": "https://mannerpolymers.com/manner-polymers-news/",
+        "final": "https://mannerpolymers.com/manner-polymers-news/",
+        "status": "200"
+      },
+      {
+        "url": "https://mannerpolymers.com/feed/",
+        "final": "https://mannerpolymers.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 6
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004080",
+    "checks": [
+      {
+        "url": "https://rahco-rubber.com/about-us/news/",
+        "final": "https://rahco-rubber.com/about-us/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004106",
+    "checks": [
+      {
+        "url": "https://iracore.com/about-us/news/",
+        "final": "https://iracore.com/about-us/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://iracore.com/feed/",
+        "final": "https://iracore.com/feed/",
+        "status": "200",
+        "items": 12,
+        "linked_items": 12
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004123",
+    "checks": [
+      {
+        "url": "https://www.sterlingspec.com/news/",
+        "final": "https://www.sterlingspec.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004135",
+    "checks": [
+      {
+        "url": "https://www.bemismfg.com/blog",
+        "final": "https://www.bemismfg.com/blog",
+        "status": "200"
+      },
+      {
+        "url": "https://www.bemismfg.com/blog-feed.xml",
+        "final": "https://www.bemismfg.com/blog-feed.xml",
+        "status": "200",
+        "items": 2,
+        "linked_items": 2
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004137",
+    "checks": [
+      {
+        "url": "https://www.r3composites.com/r3c/news-events",
+        "final": "https://www.r3composites.com/r3c/news-events",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004147",
+    "checks": [
+      {
+        "url": "https://www.gspolymers.com/news/",
+        "final": "https://www.gspolymers.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.gspolymers.com/feed/",
+        "final": "https://www.gspolymers.com/feed/",
+        "status": "200",
+        "items": 2,
+        "linked_items": 2
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004185",
+    "checks": [
+      {
+        "url": "https://www.andersondevelopment.com/news_events/",
+        "final": "https://www.andersondevelopment.com/news_events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004215",
+    "checks": [
+      {
+        "url": "https://shawinc.com/Newsroom",
+        "final": "https://shawinc.com/Newsroom",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004219",
+    "checks": [
+      {
+        "url": "https://www.snf.com/news/",
+        "final": "https://www.snf.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004256",
+    "checks": [
+      {
+        "url": "https://hkresearch.com/category/news/",
+        "final": "https://hkresearch.com/category/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://hkresearch.com/feed/",
+        "final": "https://hkresearch.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004258",
+    "checks": [
+      {
+        "url": "https://www.barretteoutdoorliving.com/newsroom",
+        "final": "https://www.barretteoutdoorliving.com/newsroom",
+        "status": "200"
+      },
+      {
+        "url": "https://www.barretteoutdoorliving.com/feed",
+        "final": "https://www.barretteoutdoorliving.com/feed",
+        "status": "200",
+        "items": 12,
+        "linked_items": 6
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004272",
+    "checks": [
+      {
+        "url": "https://flex-n-gate.com/news/",
+        "final": "https://flex-n-gate.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://flex-n-gate.com/feed/",
+        "final": "https://flex-n-gate.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 9
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004273",
+    "checks": [
+      {
+        "url": "https://futurepipe.com/news-events/",
+        "final": "https://futurepipe.com/news-events/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004274",
+    "checks": [
+      {
+        "url": "https://www.petroleum-containment.com/category/news/",
+        "final": "https://www.petroleum-containment.com/category/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004278",
+    "checks": [
+      {
+        "url": "https://magnera.com/news/",
+        "final": "https://magnera.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://magnera.com/feed/",
+        "final": "https://magnera.com/feed/",
+        "status": "200",
+        "items": 12,
+        "linked_items": 12
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004289",
+    "checks": [
+      {
+        "url": "https://www.trex.com/our-company/news/",
+        "final": "https://www.trex.com/our-company/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004291",
+    "checks": [
+      {
+        "url": "https://www.viskase.com/news-events/",
+        "final": "https://www.viskase.com/news-events/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.viskase.com/feed/",
+        "final": "https://www.viskase.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004309",
+    "checks": [
+      {
+        "url": "https://www.flexcon.com/press-releases",
+        "final": "https://www.flexcon.com/press-releases",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004316",
+    "checks": [
+      {
+        "url": "https://www.stryten.com/blog/",
+        "final": "https://www.stryten.com/blog/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.stryten.com/feed/",
+        "final": "https://www.stryten.com/feed/",
+        "status": "200",
+        "items": 12,
+        "linked_items": 12
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004317",
+    "checks": [
+      {
+        "url": "https://www.strongwell.com/news/",
+        "final": "https://www.strongwell.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004324",
+    "checks": [
+      {
+        "url": "https://www.toraypmc.com/news",
+        "final": "https://www.toraypmc.com/news",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004328",
+    "checks": [
+      {
+        "url": "https://www.techmerpm.com/press-releases/",
+        "final": "https://www.techmerpm.com/press-releases/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.techmerpm.com/feed/",
+        "final": "https://www.techmerpm.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 5
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004386",
+    "checks": [
+      {
+        "url": "https://dicar.com/news/",
+        "final": "https://dicar.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004449",
+    "checks": [
+      {
+        "url": "https://microporous.net/newsroom/",
+        "final": "https://microporous.net/newsroom/",
+        "status": "200"
+      },
+      {
+        "url": "https://microporous.net/feed/",
+        "final": "https://microporous.net/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 4
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004452",
+    "checks": [
+      {
+        "url": "https://www.milleringenuity.com/news/",
+        "final": "https://www.milleringenuity.com/news/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.milleringenuity.com/feed/",
+        "final": "https://www.milleringenuity.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 10
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004500",
+    "checks": [
+      {
+        "url": "https://special-lite.com/news/",
+        "final": "https://special-lite.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004523",
+    "checks": [
+      {
+        "url": "https://news.onewabash.com/",
+        "final": "https://news.onewabash.com/",
+        "status": "200"
+      },
+      {
+        "url": "https://news.onewabash.com/feed/",
+        "final": "https://news.onewabash.com/feed/",
+        "status": "200",
+        "items": 25,
+        "linked_items": 7
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004533",
+    "checks": [
+      {
+        "url": "https://bomar-chem.com/resources/news-and-media",
+        "final": "https://bomar-chem.com/resources/news-and-media",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004539",
+    "checks": [
+      {
+        "url": "https://www.epicresins.com/News",
+        "final": "https://www.epicresins.com/News",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004540",
+    "checks": [
+      {
+        "url": "https://estron.com/news/",
+        "final": "https://estron.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004575",
+    "checks": [
+      {
+        "url": "https://synray.com/news/",
+        "final": "https://synray.com/news/",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004585",
+    "checks": [
+      {
+        "url": "https://www.roddapaint.com/about-us/newsroom/",
+        "final": "https://www.roddapaint.com/about-us/newsroom/",
+        "status": "200"
+      },
+      {
+        "url": "https://www.roddapaint.com/feed/",
+        "final": "https://www.roddapaint.com/feed/",
+        "status": "200",
+        "items": 10,
+        "linked_items": 5
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004592",
+    "checks": [
+      {
+        "url": "https://www.hydrite.com/News-Events/Press-Releases.htm",
+        "final": "https://www.hydrite.com/News-Events/Press-Releases.htm",
+        "status": "200"
+      }
+    ]
+  },
+  {
+    "org_id": "ORG-004605",
+    "checks": [
+      {
+        "url": "https://proviron.com/america/america-news/",
+        "final": "https://proviron.com/america/america-news/",
+        "status": "200"
+      }
+    ]
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "schema_version": 2,
+  "scope": "Resolve the pinned26 PIC18 residue leads and carry4 held registry candidates. Canonical diff is exactly creates_orgs.csv,creates_sites.csv,evidence_rows.csv projected to destination CSVs. No existing record edits.",
+  "criteria": [
+    "Exact26 unique leads each have one justified verdict;4 registry candidates held",
+    "1C organization and1C site have raw primary existence/scope/address support;8 evidence rows appended",
+    "Duplicate terminates at held SITE001473;2 historical rejects meet dated outcome+5500-screen gate",
+    "Validator zero errors; replay byte-identical and collision rejected before writes"
+  ],
+  "out_of_scope": [
+    "Full discovery census",
+    "Unresolved holds are not promoted",
+    "PR140 equipment changes"
+  ],
+  "revision": "32b4e510003f3282444a1867977064c91fb46640",
+  "tool_access": "Reviewers may read full checkout and fetch primary sources; inspect all packet files plus canonical diff.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "README.md",
+      "sha256": "24b4892bf260b8c525dfbc9d0ced4ddc85371c1d4804840edb22d00a8761f4a1"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "fc0b46c52e4c9b78634038796cf63a14ebc47f858a70a0617fbebed91cdf0f7f"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "aa3d553939afb2bec6727d8c832e8c43e5a0c1e7c00fc2ab5a2012ff4e134b40"
+    },
+    {
+      "path": "build.py",
+      "sha256": "8ef1afc2feb02efe488600aba5d0b8c2ce04878d889e0022748c202499e56b22"
+    },
+    {
+      "path": "check.py",
+      "sha256": "824e4ba83bcaf6f36b7f4833076fcb5db73cc5304479b00dca864f1bdf5b55cf"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "ae4773e83c023c883efe4702cf1c1e16f34e0a1a4448aebc304116dcc730862c"
+    },
+    {
+      "path": "creates_orgs.csv",
+      "sha256": "2581fd78fd12d0822dd39e130279dc00888f1dce4e9a48a1e9ca95daf6f89a7d"
+    },
+    {
+      "path": "creates_sites.csv",
+      "sha256": "7254483b0bbfe846801b531241b521cfc4ecb0b3b7925c05af6577e0bc436900"
+    },
+    {
+      "path": "dedupe.json",
+      "sha256": "9b9dd9653a6995bf1f2c793e4b6e2035375bcfbd1982f040dc694b860455aa06"
+    },
+    {
+      "path": "evidence_rows.csv",
+      "sha256": "166835b7e29948100d0ff193a9522cd56aa254ed7fff1a80a2ce8e055a454bd8"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "857d05b39434bf74d4241eeb867346cf03eee3997d1e4108f9081d498526015b"
+    },
+    {
+      "path": "registry_holds.csv",
+      "sha256": "7c58b40dddf32999f6c05dbaa555319418e426068f0ebbe09412c5131e3fc80c"
+    },
+    {
+      "path": "validation-summary.txt",
+      "sha256": "66e309e1e714c8f2868cb8b61a3b7a3c3ee42ab4246573a0770964e346e19b47"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "551971c74ac79378e24bba54091df36a23c5dabe467ab2079f9c4ba2a94e450b"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/pic18-discovery-residue-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "validation-summary.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [],
+  "receipts": []
+}

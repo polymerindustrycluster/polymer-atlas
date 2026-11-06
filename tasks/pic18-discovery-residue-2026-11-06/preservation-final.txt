@@ -1,0 +1,7 @@
+data/evidence_organizations_OH.csv preserved old rows 2768 exact approved appended rows 1
+data/evidence_organizations_US.csv preserved old rows 972 exact approved appended rows 4
+data/evidence_sites_OH.csv preserved old rows 4373 exact approved appended rows 9
+data/organizations_US.csv preserved old rows 234 exact approved appended rows 1
+data/registry_links.csv preserved old rows 5373 exact approved appended rows 4
+data/sites_OH.csv preserved old rows 2009 exact approved appended rows 1
+PASS six canonical files only; all old rows/fields preserved,20 new rows exactly match approved669e507; all other data bytes unchanged.

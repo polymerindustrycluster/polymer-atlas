@@ -1,0 +1,13 @@
+{
+  "worked_NC_clusters": 110,
+  "sites_C": 14,
+  "blind_recheck_passes": 14,
+  "known_answer_passes": 3,
+  "idempotence": "PASS",
+  "conflicting_ID_mutation": "PASS (fails before writes)",
+  "NAICS326_strict_sites_before": 91,
+  "NAICS326_strict_sites_after": 103,
+  "QCEW2023_private_establishments": 453.0,
+  "strict_share_before": 0.20088300220750552,
+  "strict_share_after": 0.22737306843267108
+}

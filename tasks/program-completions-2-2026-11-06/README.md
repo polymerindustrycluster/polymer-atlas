@@ -158,3 +158,26 @@ No new canonical changes or source research. Integrated packet47d4dda otherwise 
 ## Grok corrected source-guard approval
 
 Grok/xAI clerk3thr_4g4uwqjxjv APPROVE65129c5,0findings, explicitly for the corrected30aaf79guard as contained in the fresh-main replay, not merely the oldf67approval. Verified hash-anchored104uniquefirst-major rows,44numericproposalrows/43keys,allnumeric/projected-value/evidencebindingsbeforewrite;all7newinitial/replayfaults andoldUNITID/shardtests zerowrite. Full34-countcensus/112cells/34EVD-onlydelta vs542629e5;5fills19/35/86/27/17,29confirmed,postbacc+second-major contamination excluded,9first-yearholds unchanged. Check/validator0/rowloss PASS. FullC2024zip not re-fetched for rereview; frozen raw bytes/hash match earlier approved source. Codex corrected-guard rereview remains pending; draft maintained. No packet/data/code change in this receipt. Report controller reviews/168-clerk-grok-3-rereview.md.
+
+## Both final family approvals and identical-delta integration
+
+Codex/OpenAI clerk3 (thr_jukpm97t9c) APPROVE a91009e, zero blocking findings; Grok/xAI
+clerk3 APPROVE65129c5, zero findings. The only65129c5→a91009e change is README.md's
+Grok approval receipt: no guard code, frozen payload, source subset, canonical value or
+hold changed. Both cover the same corrected30aaf79 source-binding guard and payload.
+Codex physically tested count/year/evidence/unedited count/witness URL/raw-hash defects
+through24 entry-point runs, all refusing without writes. Actual pre-pass preparation
+reproduces all seven generated CSVs. Grok independently checked full34-count census,
+level/postbacc/second-major exclusions and seven no-write source faults. Rereviews did
+not repeat fresh NCES downloads/own-program research/fullscripts pytest.
+
+Replayed on current main d2c41b7461925abc525d3216b64c806ce782e4ef: took both owned
+canonical files exactly from main and ran the unchanged approved builder. No CSV
+hand merge. All171 main program rows and311 existing program evidence rows preserved;
+exactly112cells/34programs changed and34EVD appended (345program evidence total).
+Every task CSV, build.py/check.py/prepare.py and source.json hash is unchanged from the
+approved head. integration-final.json records these hashes/counts and resulting data.
+Named source-binding/replay/seven source-faults plus wrongUNITID/wrong-shard tests,
+old-row/evidence preservation and validator0 PASS on integrated tree. No scripts diff
+relative to main. Controller requested this identical-delta head for serial merge;
+worker does not merge or alter task status.

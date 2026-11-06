@@ -1,0 +1,207 @@
+# T2 bulk federal cache — atlas-T2-bulk-federal
+
+Acceptance criteria (written before implementation): official national ECHO CSV,
+SEC submissions archive and ticker JSON, GLEIF LEI and relationship Golden Copy
+CSV archives download outside the repository; atomic verified indexes expose local
+lookups; manifests include URL, retrieval date, bytes, SHA-256 and reconciled row
+counts. Failures must preserve an existing index and never become empty successes.
+Census helper enforces 1–10,000 uniquely keyed business addresses and reconciles
+response IDs. Known-answer and injected-defect checks cover every source.
+No canonical Atlas rows change (0 organizations, 0 sites, 0 evidence rows at any tier).
+First users: campaign research lanes, 2026-11-06; non-use finding date: 2026-11-07.
+
+## Source terms checked 2026-11-06
+
+- [EPA disclaimers](https://www.epa.gov/web-policies-and-procedures/epa-disclaimers):
+  “Individual documents on the EPA website may have different copyright conditions”.
+  [ECHO download page](https://echo.epa.gov/tools/data-downloads) explicitly offers
+  the national Exporter download; it is the task's permitted alternative to separate
+  FRS facility/NAICS/program tables. It covers regulated facilities, not all FRS.
+- [SEC fair access](https://www.sec.gov/about/developer-resources):
+  “no more than 10 requests per second”. [SEC FAQ](https://www.sec.gov/about/webmaster-frequently-asked-questions)
+  requires a declared User-Agent with contact. The CLI requires an explicit contact
+  email; sequential bulk requests avoid per-entity crawling. [Official API docs](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)
+  link the bulk archive on **www.sec.gov**, not data.sec.gov. company_tickers.json
+  likewise lives on www.sec.gov/files/. These official locations govern the URLs.
+- [GLEIF terms](https://www.gleif.org/en/meta/lei-data-terms-of-use):
+  “The data available through the Access Service are provided under the CC0 licence”.
+  Use the complete Golden Copy CSVs (LEI-CDF and RR-CDF), not deltas. The live
+  metadata endpoint supplies each release URL, compressed size and record count.
+- [Census batch API](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html):
+  “There is currently an upper limit of 10,000 records per batch file.”
+  Coordinates are interpolated reference data, never verification evidence.
+
+## Reuse and boundaries
+
+Reuses `scripts/build_echo_spine.py`'s `squash` normalizer and its established
+ECHO_EXPORTER.csv mapping. Inspected tasks/echo-frs-spine-2026-11-01 (report and
+CSV packets), tasks/form5500-spine-2026-11-01, and tasks/registry-links-2026-11-02.
+Those are filtered research/matching products, not reusable national cache writers;
+Form 5500 remains separate. Exact normalized name/city lookup returns all candidates;
+it never resolves parent/operator identity or assigns status, scope or tiers.
+
+## Use
+
+```sh
+python3 tasks/bulk-federal-2026-11-06/build.py --contact 'YOUR_REAL_CONTACT_EMAIL'
+# Select a subset with --sources frs, or --sources lei rr; --cache-dir overrides default.
+uv run --with pytest python3 -m pytest -q scripts/test_bulk_sources.py
+```
+
+Default cache: `/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/cache/bulk`.
+The same CLI rebuilds a snapshot without appending duplicate records. Downloads
+are content-addressed; previous snapshots remain available to previous indexes.
+Allow tens of GB of disk for archives and indexes; no archives are extracted.
+SQLite is built in a temporary file and atomically replaces each source index.
+There is one writer per cache; lanes use read-only lookup connections.
+
+```python
+from scripts.bulk_sources import (
+    frs_by_registry_id, frs_by_name_city, sec_by_ticker, sec_by_cik,
+    lei_by_name, lei_by_lei, lei_relationships, census_batch,
+)
+frs_by_registry_id('110007881596')  # list of complete ECHO CSV rows
+sec_by_cik('0000320193')           # full submissions object or None
+sec_by_ticker('AAPL')              # list of full submissions objects
+lei_by_lei('HWUPKR0MPOU8FGXBT394') # list of complete LEI-CDF rows
+census_batch([['1', '4600 Silver Hill Rd', 'Washington', 'DC', '20233']])
+```
+
+All lookup functions accept `cache=`; Census uses its public batch service. Name lookups normalize punctuation,
+case and whitespace using the existing spine normalizer, not fuzzy identity rules.
+Missing indexes raise; absent keys in an installed snapshot return empty results.
+SEC historical submission JSON members are validated and counted but not indexed
+as extra issuers; full current filer objects, including filing arrays, are compressed in SQLite for indexed lookup. Relationship
+lookups return outgoing child→parent rows without interpreting their validity.
+Blank FRS IDs are retained/countable; they are never minted as registry links.
+Manifests are embedded in each SQLite database (authoritative), with a combined
+`manifest.json` convenience export. SHA-256 is a locally observed digest, not an
+upstream authenticity signature. ZIP CRC plus HTTPS and byte counts check transfer
+integrity. Each CSV is independently reread and reconciled against SQLite yield;
+GLEIF additionally reconciles against its published per-release record_count.
+SEC reconciles issuer + historical counts against archive member count. ECHO and
+SEC do not publish an exact row total in the files: no invented upstream total.
+
+## Known-answer checks
+
+Offline fixtures test three ECHO facility ID/name/city pairs from the independent
+held spine (Star Plastics Ravenswood, Armacell Spencer, Delrin Washington), three
+SEC issuer CIK/ticker pairs (Apple, Microsoft, Tesla), Apple LEI/name and the Google→Alphabet direct-parent
+RR pair independently checked against GLEIF. The Census fixture checks the business address
+of Census headquarters and the multipart request/response contract. These establish
+parser behavior, not a live response; live verification results are recorded below.
+
+## Live verification
+
+2026-11-06: Census headquarters address returned Match / Exact, longitude
+-76.92836638093, latitude 38.84505589808 (business address; no personal data).
+The helper sent one input row and received the same one ID.
+
+Census's [general API terms](https://www.census.gov/data/developers/about/terms-of-service.html)
+also state: “You may use the Census Bureau API to develop a service”. The batch
+service's own documentation supplies its distinct request parameters and limits.
+
+Named live gate: `python3 tasks/bulk-federal-2026-11-06/check.py`. It requires all five installed snapshots, rehashes raw files and checks known answers; missing sources fail.
+
+The independent live [GLEIF Apple record](https://api.gleif.org/api/v1/lei-records/HWUPKR0MPOU8FGXBT394)
+confirmed `HWUPKR0MPOU8FGXBT394` → `Apple Inc.` on 2026-11-06.
+
+The live gate checks three LEIs (Apple, Google LLC, Alphabet Inc.) and the
+[Google→Alphabet direct-parent relationship](https://api.gleif.org/api/v1/lei-records/7ZW8QJWVPR4P1J1KQY45/direct-parent-relationship),
+independently fetched 2026-11-06: child `7ZW8QJWVPR4P1J1KQY45`, parent
+`5493006MHB84DD0ZWV18`, type `IS_DIRECTLY_CONSOLIDATED_BY`.
+
+Full-file exercise found that GLEIF's 338-column rows expand to roughly 77 GiB of
+repeated JSON keys before SQLite overhead. The first temporary LEI build was
+stopped before publication. Payloads now use stdlib zlib compression per row;
+lookups return the identical dictionaries. Existing plain-JSON cache indexes remain
+readable. Raw archives are retained. This is a storage correction, not a filter:
+all rows and fields remain, and the same count/known-answer gates apply.
+
+The official SEC ZIP contains one non-data member, `placeholder.txt`, whose exact
+bytes are `Placeholder file`. The importer explicitly validates and reports it in
+`auxiliary_members`; it is not a JSON issuer/history row. Every other member must
+match the CIK JSON grammar. `archive_members = row_count + len(auxiliary_members)`
+records the complete archive accounting; unknown files still fail the build.
+
+## Review dispositions
+
+Codex clerk-6 REFUTE on `aede40e`: (1) a history-only SEC ZIP could replace a
+populated issuer index with zero indexed issuers; (2) duplicate ticker JSON keys
+could collapse before both counts. Fixed: require positive indexed yield before
+publication; reject duplicate keys in external JSON objects before indexing.
+Regression `test_history_only_and_duplicate_json_preserve_cache` proves both
+failures preserve existing Apple results. Targeted suite: 10 passed.
+
+SEC national archive reconciled: **997,330 JSON members = 991,914 current issuer
+objects + 5,416 historical submission objects**, plus **1 validated auxiliary
+placeholder**, for **997,331 total archive members**. Raw bytes 1,573,297,672;
+SHA-256 `54cd920bd9cf6be1aca79588437c6f051afc313f4fef070b46b28cb8c6be44f8`.
+SEC ticker file: **10,409 ticker/CIK associations**.
+EPA national Exporter reconciled **3,233,462 CSV rows**, including blank FRS IDs;
+raw bytes 446,459,497; SHA-256
+`db39e0733204652f1016f0f2b9b66f3e5cc53caeca328214351233b2b3aba90a`.
+Three live EPA known answers passed through the installed plain-JSON index with
+new compressed/legacy-compatible lookup code. SEC was reindexed with the post-refute duplicate-key guard and full compressed filer payloads before the final live gate.
+
+Live lookup timing exposed costly reconstruction of the million-member SEC ZIP
+central directory on every CIK lookup. The index now stores the full compressed
+filer JSON rather than a ZIP member pointer; lookup needs no archive scan and
+returns all fields. History JSON remains archive-only and is fully counted.
+
+Codex delta REFUTE on `04590fc`: old SEC pointer-format caches could return partial
+records after the direct-payload change. Fixed by explicitly rejecting that legacy
+format with `rebuild --sources sec` guidance; regression checks both CIK and ticker
+APIs. Full-payload indexes return complete records, and prior plain-JSON row
+encoding remains readable. An old pointer cache never reports partial success.
+
+Codex clerk-6 final **APPROVE**, implementation `764190b`: independently reran
+cross-version legacy-cache reproducer and all 11 targeted tests; prior malformed
+imports preserve SQLite byte-for-byte; validator and row-loss guard pass. Approval
+covers code, not a claim that live national cache checks were run by the reviewer.
+Report: controller storage `reviews/bulk-federal-clerk-codex-6.md`.
+
+Final full-payload SEC cache live known answers passed: Apple `320193`/`AAPL`,
+Microsoft `789019`/`MSFT`, Tesla `1318605`/`TSLA`, with full `filings` present.
+Six lookups took **0.00766 seconds total** on this host (measurement of lookup
+cost, not merely record presence; rerun via the live gate for current timing).
+
+Final named deterministic checks on implementation `764190b`:
+
+- `uv run --with pytest python3 -m pytest -q scripts/`: **242 passed,
+  1 pre-existing skip, 45 subtests passed** (70.37 seconds). The existing skip is
+  `test_atlas_cli`'s real-data-presence guard; the T2 tests do not skip sources.
+- `uv run --with pytest python3 -m pytest -q scripts/test_bulk_sources.py`:
+  **11 passed**, including injected duplicate-key, empty-issuer, legacy-cache,
+  malformed-row, bad-count, truncated-download and Census ID mismatch defects.
+- `python3 scripts/validate.py`: **OK — validation passed, 0 errors**.
+- `python3 scripts/check_row_loss.py --base origin/main`: **OK — no keyed data row removed**.
+
+GLEIF LEI-CDF national snapshot (2026-11-06 08:00 release): **3,486,713 LEI CSV rows**,
+matching independent CSV reread, SQLite yield and the release's published count
+exactly. Raw bytes 508,236,315; SHA-256
+`3d260ca09809d6a2113b28fdbc004da4f028ebc6eb30499fda329b33881319ea`.
+
+Grok clerk-6 final **APPROVE**, implementation `764190b`, **0 findings**:
+11 tests pass; independently checked BLOB legacy-pointer rejection, nested
+`filings.member` acceptance and a live Apple SEC object against the parser.
+Prior malformed-input guards remain covered. Source SHA-256
+`69a05e485ec11f8834eb3e8537842514736cddc73f42093647695e8bb2240cd9`.
+Approval covers the code; this clerk did not run the national live gate.
+Report: controller storage `reviews/bulk-federal-clerk-grok-6.md`.
+
+GLEIF RR-CDF national snapshot (same 2026-11-06 08:00 release): **492,848 relationship
+CSV rows**, matching independent reread, SQLite yield and published count exactly.
+Raw bytes 24,492,270; SHA-256
+`f584f3d9227f6328d1c3a5ac8c118720fa44d3459dc307782b05fc8f06718f75`.
+
+`python3 tasks/bulk-federal-2026-11-06/check.py`: **PASS**, all five snapshots
+required and inspected; raw sizes and SHA-256 rechecked, source/SQLite counts
+reconciled, three FRS + three SEC + three LEI known answers and the independently
+verified Google→Alphabet relationship pass. Six SEC lookups: **0.005858 seconds**.
+Final live Census headquarters recheck: **PASS Match/Exact**, ID parity and bounds.
+
+**Holds: none.** Source coverage limitations above remain: these snapshots do not
+settle Atlas identity, scope, status, tier or parent/operator decisions. No canonical
+rows were changed. Existing full cache occupies about 30 GiB on this host; raw
+snapshots and complete indexes are external artifacts, never PR contents.

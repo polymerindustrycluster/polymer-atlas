@@ -1,0 +1,162 @@
+[
+  {
+    "org_id": "ORG-000073",
+    "url": "https://api.gleif.org/api/v1/lei-records/549300MFLP9QIJ7P4L35",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "72a23b313d93d8bb48baf48b1725f11fa5e18a5bacee2a90b51ca53e18957520",
+    "quote": "headquartersAddress || Fullerton || US-CA",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-000073.raw"
+  },
+  {
+    "org_id": "ORG-004062",
+    "url": "https://www.resrgautomotive.com/en/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "06115fa60b7b07779759efbf1989c7fd00a1c57fbe9703f91d8621b1f01583b9",
+    "quote": "Headquarters 800 Stephenson Highway Troy, Michigan, USA 48083",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004062.raw"
+  },
+  {
+    "org_id": "ORG-004134",
+    "url": "https://www.duratechnologiesinc.com/careers/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "dfdc54a855f3dcaa37f059306f83893d7fa1c4ea6302f60d1e2e32435989ded5",
+    "quote": "Our headquarters is conveniently located in Bloomington, California.",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004134.raw"
+  },
+  {
+    "org_id": "ORG-004311",
+    "url": "https://lei.bloomberg.com/leis/view/549300PSHUGBOQ47QR63",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "23f9dafd50b99968d671bfe100fbcdda03fe6421f5b3d9bbe97369d9dd3240f6",
+    "quote": "Headquarters Address (English) 13925 City Center Drive Suite 200 Chino Hills, California (US-CA), 91709 UNITED STATES",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004311.raw"
+  },
+  {
+    "org_id": "ORG-004346",
+    "url": "https://www.renolit.com/fileadmin/renolit/corporate/Certificates/American_RENOLIT_Corporation_La_Porte/Certificate_US019775________Item_1-9C3INIF.pdf",
+    "http_status": "200",
+    "raw": "FAIL",
+    "raw_sha256": "1c266f182c15a99ee3faaf98e30fe7b3f3c12672fc2d5b30491ed6b4f278024d",
+    "quote": "American Renolit Corporation - HQ || 1207 E. Lincolnway LaPorte, IN 46350 USA",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004346.raw"
+  },
+  {
+    "org_id": "ORG-004348",
+    "url": "https://amerityre.com/company/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "2b00535dc49d2dd31034d226a691bbc74d308e1cb18e26b5082f8dbfab61095e",
+    "quote": "From its headquarters and manufacturing facility in Boulder City, Nevada, Amerityre produces",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004348.raw"
+  },
+  {
+    "org_id": "ORG-004350",
+    "url": "https://polyurethanelaboratories.com/poly-labs-fluid-focus/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "29e6711602531ed49b6027b2400b6c01cfc2f224096177de669725189d599f5f",
+    "quote": "manufacturing company headquartered in Lewiston, Maine, USA.",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004350.raw"
+  },
+  {
+    "org_id": "ORG-004354",
+    "url": "https://lei.bloomberg.com/leis/view/2549007IFQ78ZCCHZO05",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "0f57edf7ae450bb787168e68646cced97152fe3dabc701d2f886982b7e72a725",
+    "quote": "Headquarters Address (English) 149 GIBSON RD STE M HENDERSON, Nevada (US-NV), 89014 UNITED STATES",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004354.raw"
+  },
+  {
+    "org_id": "ORG-004383",
+    "url": "http://deliveryconcepts.com/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "25536ea94b4ae2f767a515a125615e6ae7429a15392bbf41980543697a2f678e",
+    "quote": "CORPORATE HQ: 29385 County Road 20 Elkhart, IN",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004383.raw"
+  },
+  {
+    "org_id": "ORG-004387",
+    "url": "https://lei.bloomberg.com/leis/view/549300NPDBOJ7BZAUH48",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "2e7b8e2fc7dac7cc63a0811126de5ec69169b981f40795bb50e1077e49347bb7",
+    "quote": "Headquarters Address (English) 3039 Premier Parkway Suite 600 Duluth, Georgia (US-GA), 30097 UNITED STATES",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004387.raw"
+  },
+  {
+    "org_id": "ORG-004391",
+    "url": "https://www.idex-hs.com/about/legal-notices/privacy-statement",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "3d5d4e22e58a041f541538ef91b828f403e642e20337130aee7a273641683079",
+    "quote": "our corporate headquarters || IDEX Health & Science, LLC 600 Park Court Rohnert Park, CA 94928 Unites States",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004391.raw"
+  },
+  {
+    "org_id": "ORG-004522",
+    "url": "https://mbpgroup.com/companies/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "16158ff0897fcf1ca9c9775c8e52f637f85014444098bc0706f87e2d8c342adf",
+    "quote": "HB&G Building Products || We\u2019re headquartered in Troy, AL",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004522.raw"
+  },
+  {
+    "org_id": "ORG-004523",
+    "url": "https://news.onewabash.com/wabash-recognizes-outstanding-suppliers-for-2025/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "c1419c743b49df4350a2442c26c13d6bf3e77fc5d1e0f195935ebf24da998618",
+    "quote": "Headquartered in Lafayette, Indiana, Wabash designs, manufactures, and services",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004523.raw"
+  },
+  {
+    "org_id": "ORG-004530",
+    "url": "https://apps.sos.wv.gov/business/corporations/organization.aspx?org=376441",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "2ebfbcf74e6c9eb384db232dd50fd7a5102f10edd2e9759b8ec77adbad17494e",
+    "quote": "APG POLYTECH, LLC || Principal Office Address 27610 HUNTINGTON ROAD PO BOX 8 APPLE GROVE, WV, 25502 USA",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004530.raw"
+  },
+  {
+    "org_id": "ORG-004531",
+    "url": "https://chemline.net/about/our-history/",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "94942eefb7184840065ac499b1935b54d6f68677efcbd58b0ca2a6e91700436d",
+    "quote": "St. Louis, MO || Our St. Louis location acts as our headquarters",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004531.raw"
+  },
+  {
+    "org_id": "ORG-004533",
+    "url": "https://bomar-chem.com/content/download/933/file/b22ddc7688358a265f86a6060e43f1f0.pdf",
+    "http_status": "200",
+    "raw": "PASS",
+    "raw_sha256": "f4d68e6134671438e27d890bf1bf0e976d8d7729fa0de899c8a05a65441ca284",
+    "quote": "Global Headquarters: 51 Greenwoods Road | Torrington, CT 06790 | USA",
+    "fetch_count": 1,
+    "cache": "/tmp/l5hq-parent-raw/ORG-004533.raw"
+  }
+]
