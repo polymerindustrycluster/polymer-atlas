@@ -1,8 +1,10 @@
 # Owner battery: 2026-11-06 addendum
 
-> **DRAFT — NOT RULED.** These are additional choices for the repo owner, not adopted rules.
-> - Each approved item requires its own implementation PR and any dated schema revision.
-> - This addendum changes no records, vocabulary, status, tier, or existing ruling.
+> **RULED 2026-11-06: every item (a), as recommended.** The repo owner ruled in session, as multiple choice, on all
+> 7 items.
+> - Each approved item requires its own implementation PR and any dated schema revision; the B-L12-SPECIALTY-VOCAB
+>   additions land only through a dated vocabulary PR.
+> - This ruling changes no records, vocabulary, status, tier or existing ruling by itself.
 
 Same format as the [November 4 battery](OWNER_BATTERY_2026-11-04.md). The
 [merged November 6 battery](OWNER_BATTERY_2026-11-06.md) remains unchanged.

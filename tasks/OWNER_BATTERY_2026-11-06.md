@@ -1,9 +1,15 @@
 # Owner battery: 2026-11-06
 
-> **DRAFT — NOT RULED.** Recommendations below are choices for the repo owner, not adopted rules.
-> - Each approved item is applied in its own PR, which cites this file.
-> - Schema or vocabulary changes require dated SCHEMA revisions; this draft changes neither schema nor data.
-> - Existing rulings remain in force. Controller exceptions below are identified as ratification questions.
+> **RULED 2026-11-06: every item (a), as recommended.** The repo owner ruled in session, as multiple choice, on all
+> 35 items.
+> - Each item that changes records, vocabulary or process is applied in its own PR, which cites this file. Schema or
+>   vocabulary changes land as dated SCHEMA revisions.
+> - Most items rule that a hold stays until its named evidence arrives. Selecting (a) supplies no missing fact and
+>   admits no held record by itself.
+> - B-ITA-ADMISSIBILITY ratifies the bounded inherited federal-packet exception used on 2026-11-06.
+> - Work authorized by (a): a bounded first tranche of band-B census leads (B-CENSUS-B); permission requests for the
+>   owner to send (B-VINYL-RIGHTS, B-PMA-RIGHTS, B-ACMA-RIGHTS); a SAM.gov Read Public credential that the owner
+>   provides through the secure credential route (B-SAM-KEY).
 
 Every item needs the owner's ruling (AGENTS.md §2 rule 9). Each item has a recommendation, marked (a), with the
 evidence behind it. Evidence that is still missing remains a hold; selecting a recommendation cannot supply it.
