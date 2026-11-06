@@ -1,40 +1,32 @@
-Try to REFUTE final L12 packet adversarially, independent Codex/Grok families. Supersedes initial35-person c1528f0 brief.
-Acceptance: every changed/created person has institution-own current GateA professor/federal-lab styling with surname<=40words;
-GateB explicit current polymer research on own profile/lab; printed title exact; no contacts; dedupe before creates;
-all new people require existence+scope+affiliation evidence; no pre-pass data/evidence deleted.
-Final47reviewedpeople=31existing(28A/3B)+16newC.18titlecells/fivecontrolledroles change.
-141 own_site evidence rows; this scoped packet observes all3claims for each47person, though legacy parent backfill is optional.
-Inputs reviewed.csv,expected.json,rawcheck.csv; allocations frozen including PERSON002001/EVD280046-47 permanently unused.
-Census79=4VERIFIED/4REJECT/45UNCERTAIN/26DUPLICATE. Title sources214=30verified184uncertain,
-149=14verified135uncertain (overlap explicit). FreshOhio432 unique people=70DUPLICATE/12VERIFIED/8REJECT/342UNCERTAIN.
-All250 formerly fetched-uninspected inputs received gate/source-inspectability review;1binary-only input is explicitly uninspectable, never passed.58no-usable-source cases have specific route/missing-fact verdicts.
-No claim originalprivate130 names individually recovered. Discovery names/verdicts durably sanitized outside public tree,
-not copied from directory into data. All16creates own-source facts only; no borderline owner Lu/Crespo admissions.
-Prior Codex REFUTE findings and dispositions:
-1 Wong repeated held example-list quote -> withdrawn unmerged proposal,IDs permanently unused. SarahHeilshorn instead
-newly settled by ownStanford lab engineeredprotein hydrogel materials(B-CG-2). Lee now explicit conductivepolymer
-nanostructures/current primary Chemistry rank2013-present; VanTassel own lab projects constructs nanofilm biomaterials.
-2 Newpeople missingparent -> all16new haveparent, plus freshaffiliation observation retained for31legacy. Reviewer
-corrected original claim: missingparent on31legacy was not independently blocking(SCHEMA tier-restatement3).
-3 found() partialword bug -> exact token-list windows. Negatives depolymerization/polymer,polymers/polymer,
-biomaterials/materials,noncontiguouswords fail. Realquotes remain exactwordsinorder. Oracleinjects missingparent from
-a NEWrecord and mustfail before accepting check. Current code uses scoped all47threeclaim check.
-Oracle current command python3 tasks/people-settle-2026-11-06/check.py PASS:
-79+214+149 yield;47 reviewed;16 creates;141 evidence;3positive+7negative fixtures;missing-parent mutation;
-institution-domain trust boundary;unchanged non-owned cells;no old-row loss;append-only evidence;byte-identical replay.
-python3 scripts/validate.py PASS0errors V22/V51. scripts/ unchanged so pytest not required.
-python3 tasks/people-settle-2026-11-06/ohio/check.py checks initial8+additional4 exactIDs,rawquotes and held-name variants.
-Privacy-safe durable accounting checker:
- /Users/johnswanson/.bb/thread-storage/thr_mcdghpxw8c/people-settle-private/check_accounting.py
-Public ohioREADME records aggregate source filters/yield/limits; no under-return hidden as pass.
-Review what could be wrong:
-- false person/title attribution on rosters; expanded legacy first-name aliases unchanged, only source/title edits;
-- current polymer scope versus old publication/grant/metadata;
-- JulieRenner: current ownfaculty PI profile +ownnamedlaboratory group current polyproline monolayer/antifouling work.
-Ownlab/group GateB is explicitly allowed by user; not a generic center/department inference.
-- Skardal: current AreasOfExpertise ECMbioinks +researchparagraph ECMhydrogels/history ending TheseeffortscontinueatOSUtoday.
-- Byung: current AssociateProfessor header +currentengineeredhydrogels versus historical assistantprofessor2018 bio;
-- new-parent must-haves; evidenceID/personID collisions on rebase; any PII/source-license content.
-Inspect the actual data, code, quotes and source pages. Marker/transport/count checks do not establish semantic scope.
-Separate demonstrated defects, insufficient evidence, optional improvements. End VERDICT: APPROVE|REFUTE,
-state exact commit reviewed and inspected/uninspected scope. This review includes finalOhio delta.
+Adversarial final-delta re-review PR149:46people=31existing28A/3B+15newC;140EVD. Supersedes066c448.
+Try to REFUTE fixes to finalGrok's3findings;independently inspect source context,not only quote/count checks.
+1 JulieRenner unmerged create2015 andEVD137–139 withdrawn,permanently unused;owner scope hold.
+Codex accepted own-lab student-project attribution,Grok refuted;no self-ruling. No pre-pass held record deleted.
+2 HuichunZhang PERSON2008:membranes_separations replaced by exactpublished Polymeric sorbents.
+FreshEVD280143 explicitly witnesses that value;no membrane inference/new controlled vocabulary.
+3 ByungPark PERSON2014:headerAssociate/bodypresent-tenseAssistant was genuineconflict.
+Current official Fall2026 syllabus namesPark and InstructorTitleAssociateProfessor:
+https://catalog.ysu.edu/syllabi/2026-fall/chen-6990-04-41034/
+Parent independentlyrawfetched200;Fall2026term and surname<=40words explicitly checked. EVD280144 appends
+current dated rank witness;old true header observation remains. Public packet rationale no longer calls
+all Assistant styling historical. Role unchanged;source list adds dated syllabus.
+Evidence contract:3coreclaims each46person=138,plus2freshcorrection observations=140. Existing legacy31
+parent witnesses optional,retained as scoped observations. No new backfill rule.
+Earlier fixes remain:Wong withdrawn/IDs retired,SarahHeilshorn independentlysettled;Lee explicit
+conductive-polymer project/current primary Chemistry rank;VanTassel ownlab nanofilmconstruction;exacttoken
+windows reject partial/noncontiguousword matches;missing-parent mutation targetsNEWcreate and mustfail.
+All18printedtitle/fivecontrolledrole changes remain. All15creates tierC;allsourceURLs owninstitution.
+No duplicates/deletions/moves,privatecontent or contacts.
+Census79=4V4R45U26D. Title214=30V184U;149=14V135U(overlap).
+FreshOhio432 afterrefute=70DUP11VERIFIED8REJECT343UNCERTAIN. Originalsealed432archive12V/342U unchanged;
+after_refute revision records withdrawal. Secondpass342frame remainsimmutable;Julie newhold outsideit.
+Lu/Crespo remainownerholds. Onebinary-only/58availability cases explicitly notsuccessfulgatechecks.
+Source artifacts:reviewed.csv,rawcheck.csv,evidence_append.csv,withdrawn_proposals.csv,build.py,check.py,
+ohio/{verified.csv,verified_more.csv,check.py,README.md}.
+Checks PASS:maincheck46/15/140+rawquotes+domain+exactIDs+missingparentmutation+byteidenticalreplay;
+Ohio11/22;durable original432/308 andafter_refute432correction;validate0errors;rowloss.
+Durable checker directory:
+/Users/johnswanson/.bb/thread-storage/thr_mcdghpxw8c/people-settle-private/
+Prior finalCodexAPPROVE066 no longer automatically approves this newdelta;finalGrokREFUTE3 dispositionsabove.
+Review15new/31existingasneeded,butfocus resolved findings and no regressions/rowloss. State exactcommit,
+inspected/uninspected scope and evidence. End VERDICT:APPROVE|REFUTE. Two independent families required.

@@ -32,6 +32,7 @@ def main():
  data=ROOT/'data'
  p=read(data/'people.csv');byid={r['person_id']:r for r in p}
  proposals=read(HERE/'reviewed.csv')
+ extra=read(HERE/'evidence_append.csv')
  institutions={r['org_id']:r for f in [data/'ecosystem.csv',*sorted(data.glob('organizations_*.csv'))] for r in read(f)}
  # Expected cells are frozen before application, for fail-closed rebase/replay.
  expected=json.loads((HERE/'expected.json').read_text())
@@ -55,7 +56,7 @@ def main():
    dup=[x['person_id'] for x in p if x['person_id']!=pid and (norm(x['full_name'])==norm(r['full_name']) or (x['institution_org_id']==r['institution_org_id'] and identity(x['full_name'])==identity(r['full_name'])))]
    assert not dup,(r['full_name'],dup)
    record={k:r.get(k,'') for k in p[0]}
-   record.update(person_id=pid,sources=';'.join(dict.fromkeys([r['gate_a_url'],r['gate_b_url']])),verification_tier='C',last_verified=DATE)
+   record.update(person_id=pid,sources=';'.join(dict.fromkeys([r['gate_a_url'],r['gate_b_url']]+[e['source_ref'] for e in extra if e['record_id']==pid])),verification_tier='C',last_verified=DATE)
    if pid in byid:assert byid[pid]==record,(pid,'create replay differs')
    else:additions.append(record)
   else:
@@ -77,6 +78,17 @@ def main():
     claim_detail=f"role {r['role']}; title {r['role_as_published']}" if gate=='a' else (f"institution_org_id {r['institution_org_id']}; current appointment on institution-own profile" if gate=='parent' else 'Gate B: person-level polymer research stated'),
     source_class='own_site',source_ref=r[f'gate_{witness}_url'],observed_date=DATE,tier_effect='supports_A',
     created_by='codex atlas-L12-people-settle',notes=('Affiliation carried by the current own-institution rank/profile; raw words in order: ' if gate=='parent' else 'Raw words in order: ')+r[f'gate_{witness}_quote']))
+ for e in extra:
+  assert e['record_id'] in seen and e['source_class']=='own_site'
+  target=next(r for r in proposals if r['allocated_person_id']==e['record_id'])
+  web=urlparse(institutions[target['institution_org_id']].get('website','')).hostname or ''
+  domains=DOMAIN_OVERRIDES.get(target['institution_org_id'],{'.'.join(web.split('.')[-2:])} if web else set())
+  assert domains and on_domain(e['source_ref'],domains),e['source_ref']
+  assert e['observed_date']==DATE and e['record_table']=='people'
+  q=e['notes'].removeprefix('Raw words in order: ')
+  assert len(q.split())<=25
+  assert raw[(e['source_ref'],q)]['found']=='yes'
+ evidence+=extra
  assert len({r['evidence_id'] for r in evidence})==len(evidence),'duplicate packet evidence IDs'
  existing={r['evidence_id']:r for r in read(data/'evidence_people.csv')}
  for r in evidence:

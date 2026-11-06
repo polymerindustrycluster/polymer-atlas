@@ -26,7 +26,7 @@ assert not found('polymeric materials','polymer')
 packet_files=[HERE/'verified.csv',HERE/'verified_more.csv']
 rows=[r for path in packet_files for r in csv.DictReader(path.open())]
 held=list(csv.DictReader((ROOT/'data/people.csv').open()))
-integrated_names=dict(zip([f'PERSON-{i:06d}' for i in range(2005,2017)],['Faith Wyzgoski','John D. Protasiewicz','Burcu Gurkan','Huichun (Judy) Zhang','John Robert Martin','Jonathan David Nickels','Junhang Dong','Pavel Anzenbacher','Allen Yi','Byung-Wook Park','Julie Renner','Aleksander Skardal']))
+integrated_names=dict(zip([f'PERSON-{i:06d}' for i in list(range(2005,2015))+[2016]],['Faith Wyzgoski','John D. Protasiewicz','Burcu Gurkan','Huichun (Judy) Zhang','John Robert Martin','Jonathan David Nickels','Junhang Dong','Pavel Anzenbacher','Allen Yi','Byung-Wook Park','Aleksander Skardal']))
 integrated=set(integrated_names)
 seen=set()
 for r in rows:

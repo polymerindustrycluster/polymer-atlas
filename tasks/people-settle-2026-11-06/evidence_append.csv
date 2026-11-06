@@ -1,0 +1,3 @@
+evidence_id,record_table,record_id,claim_type,claim_detail,source_class,source_ref,observed_date,tier_effect,created_by,notes
+EVD-280143,people,PERSON-002008,scope,"research_specialties Polymeric sorbents; published wording, no membrane inference",own_site,https://case.edu/susi-building/research/climate-ecosystem-science/huichun-judy-zhang,2026-11-06,supports_A,codex atlas-L12-people-settle,Raw words in order: Polymeric sorbents for the removal of organic contaminants
+EVD-280144,people,PERSON-002014,existence,role associate_professor; official Fall 2026 instructor title resolves undated bio/header conflict,own_site,https://catalog.ysu.edu/syllabi/2026-fall/chen-6990-04-41034/,2026-11-06,supports_A,codex atlas-L12-people-settle,Raw words in order: Associate Professor
