@@ -52,7 +52,9 @@ def main():
    assert eid<=279999
    out['evidence_sites_IL.csv'].append(dict(evidence_id=f'EVD-{eid:06d}',record_table='sites',record_id=sid,claim_type=claim,claim_detail=detail,source_class='government_filing',source_ref=ref,observed_date='2026-11-01',tier_effect='supports_C',created_by=BY,notes=notes));eid+=1
   if c['cluster_id']=='LF-IL-00995':
-   assert witness['url']=='https://www.lyondellbasell.com/en/locations/north-america/united-states/morris-site/';p=ROOT/witness['page'];assert witness['raw']=='yes' and hashlib.sha256(p.read_bytes()).hexdigest()==witness['page_sha256'];assert witness['quote'] in ' '.join(p.read_text().split())
+   assert witness['url']=='https://www.lyondellbasell.com/en/locations/north-america/united-states/morris-site/';p=ROOT/witness['page']
+   assert p.exists(),'Required Morris witness missing; run python3 tasks/corroborated-il-2-2026-11-06/acquire_morris.py'
+   assert witness['raw']=='yes' and hashlib.sha256(p.read_bytes()).hexdigest()==witness['page_sha256'];assert witness['quote'] in ' '.join(p.read_text().split())
    out['evidence_sites_IL.csv'].append(dict(evidence_id='EVD-270161',record_table='sites',record_id=sid,claim_type='scope',claim_detail='"'+witness['quote']+'"',source_class='own_site',source_ref=witness['url'],observed_date=DATE,tier_effect='supports_C',created_by=BY,notes='Process witness for settled SCHEMA§1resin-production classification only; other birth claims remain federalC. Raw fetched '+witness['fetched_at']))
   alloc.append(dict(cluster_id=c['cluster_id'],site_id=sid,org_id=oid,establishment_id=f['establishment_id']))
  # Preflight every file before any write; conflicting IDs fail closed.

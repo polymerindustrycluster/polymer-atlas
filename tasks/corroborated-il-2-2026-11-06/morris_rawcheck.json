@@ -1,9 +1,12 @@
 {
   "url": "https://www.lyondellbasell.com/en/locations/north-america/united-states/morris-site/",
   "quote": "The LyondellBasell Morris Plant produces Ethylene, Propylene, Low-Density Polyethylene, High-Density Polyethylene, and Linear Low-Density Polyethylene",
-  "page": "build/l11-repair4-cache/frozen/0201921a87123e05c8c14766c17fe90b2d112e25ae7aadd2c831a0aa9c3f6baa.txt",
-  "page_sha256": "0201921a87123e05c8c14766c17fe90b2d112e25ae7aadd2c831a0aa9c3f6baa",
+  "page": "build/l11-il2-cache/frozen/36708139af3ede6cf8ba7ad0597ebc42b622523da0d5fde422666cc9cd7fd982.txt",
+  "page_sha256": "36708139af3ede6cf8ba7ad0597ebc42b622523da0d5fde422666cc9cd7fd982",
   "raw": "yes",
   "fetched_at": "2026-11-06T11:33:51Z",
-  "raw_sha256": "e410bc955b8ef9cad08bf3725423c0861f757010d498922436e3ea40e8372c66"
+  "raw_sha256": "e410bc955b8ef9cad08bf3725423c0861f757010d498922436e3ea40e8372c66",
+  "original_page": "build/l11-repair4-cache/frozen/0201921a87123e05c8c14766c17fe90b2d112e25ae7aadd2c831a0aa9c3f6baa.txt",
+  "original_page_sha256": "0201921a87123e05c8c14766c17fe90b2d112e25ae7aadd2c831a0aa9c3f6baa",
+  "normalization": "Collapse whitespace; replace standalone 1-2digit:2digit am/pm clock tokens with [local time]. Original raw/full-text hashes retained as vintage receipts."
 }

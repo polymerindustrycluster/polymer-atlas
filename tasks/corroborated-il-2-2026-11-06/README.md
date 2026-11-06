@@ -41,3 +41,14 @@ Codex3 REFUTE28199e2 resolved: explicit curated ring decisions replace blanketno
 Grok/xAI clerk3 final APPROVE8b78a75,0findings; report reviews/151-clerk-grok-3-rereview.md. Ring1 Morris process boundary and Matteson street/locality cures confirmed, raw Morris SHA0201921a87123e05c8c14766c17fe90b2d112e25ae7aadd2c831a0aa9c3f6baa verified. Full3sourcecensus,22observations,45verdicts3V42holds,validator0/check/rowlossPASS. Codex final re-review still pending: draft/noDone.
 
 Fresh integration pinned 80bb5140e0f1598d85fe30b28777def59c9b83c6: exactmainILshards+builder(nohandmerge). All3sites/22EVD field-identicaltoGrok-approved8b78a75. ILfirstPR143merged, so currentstrict326baseline85/797→85/797=10.6650%,delta0; earlier68baseline is historical, superseded for this integration. Existingmainrows preserved; namedcheck/validator0/rowloss rerun beforepush.
+
+## Clean-checkout witness acquisition (Codex remaining finding)
+
+The original build-only full-text cache was not available in a fresh clone; that blocker is accepted. Before builder/check on a clean checkout, run:
+
+    python3 tasks/corroborated-il-2-2026-11-06/acquire_morris.py
+    python3 tasks/corroborated-il-2-2026-11-06/check.py
+
+Requires Python3 and curl/network access to the public Morris URL in morris_rawcheck.json; no private cache/copy is needed. The acquisition command uses the shipped house HTML extractor, browser-UA curl, and validates the reviewed normalized whole-page SHA256 plus the exact process quote, street and city/ZIP before creating the ignored local witness file. Original full raw/text hashes and original fetched_at are retained as historical receipts; no canonical evidence row/date changes. The live page displays a changing local clock. The documented normalization collapses whitespace and substitutes only standalone clock tokens (1–2digit hour:2digit minute plus am/pm); the normalized source equals the original reviewed page after exactly that normalization. Plant facts are never stripped. A source change or unavailable route fails closed and requires review; builder still fails on a missing witness, hash mismatch or absent quote. Never skip gates or overwrite the reviewed hash automatically.
+
+Before-fix defect reproduced in a fresh local clone: named check fails FileNotFoundError for the original ignored snapshot. After-fix acquisition/check/replay must pass from a separate fresh clone without copying build/. A fabricated quote and changed normalized-page bytes must fail before data writes. Source vintage remains2026-11-06; this is reproducible access/extraction for the same witness, not a new status/tier motion. Codex target re-review pending; Grok8b78a75 approval of unchanged3sites22EVD remains recorded, no Done claim.
