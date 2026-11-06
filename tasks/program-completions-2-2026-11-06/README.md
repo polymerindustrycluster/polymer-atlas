@@ -147,3 +147,10 @@ Check/replay/7source-derived no-write mutations plus wrongUNITID/wrongshard test
 validator0 PASS on integrated tree. Sourceguard family rereviews requested at30aaf79;
 this integration changes context only, not packet/builder semantics. No scripts diff
 relative to main; fullscripts pytest/unchanged primary-program research not repeated.
+
+Additional direct reproduction of the reported real-file defect: in disposable copies,
+physically edited only edits.csv PROG000109 latest_completions19→20, separately on initial
+and replay states. Both check.py and standalone build.py exit1 with the source-derived
+numeric conflict, and every canonical CSV hash remains unchanged. This uses the actual
+mutated CSV, not only mocked packet reads; physical_count_mutation.json records results.
+No new canonical changes or source research. Integrated packet47d4dda otherwise unchanged.
