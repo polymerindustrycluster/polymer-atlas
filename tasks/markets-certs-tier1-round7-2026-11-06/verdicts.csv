@@ -28,13 +28,13 @@ ORG-003756,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement 
 ORG-003910,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003913,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003914,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
-ORG-003916,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
+ORG-003916,VERIFIED,Second pass found an explicit own-entity market; remaining market and certification claims require additional evidence.
 ORG-003917,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003919,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003922,VERIFIED,At least one explicit company market accepted; other market and certification claims require additional entity-specific evidence.
 ORG-003923,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003930,VERIFIED,At least one explicit company market accepted; other market and certification claims require additional entity-specific evidence.
-ORG-003934,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
+ORG-003934,VERIFIED,Second pass found an explicit own-entity market; remaining market and certification claims require additional evidence.
 ORG-003936,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003937,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003938,VERIFIED,At least one explicit company market accepted; other market and certification claims require additional entity-specific evidence.
@@ -77,7 +77,7 @@ ORG-003978,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement 
 ORG-003979,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003980,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003983,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
-ORG-003984,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
+ORG-003984,VERIFIED,Second pass found an explicit own-entity market; remaining market and certification claims require additional evidence.
 ORG-003985,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003986,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
 ORG-003987,STILL_UNCERTAIN,"Need accessible, entity-specific own-site statement of a served market or current certification; unavailable or inconclusive page does not establish absence."
