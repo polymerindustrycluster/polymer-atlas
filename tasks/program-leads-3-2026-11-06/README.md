@@ -138,3 +138,8 @@ Pending Codex3 thr_jukpm97t9c +Grok3 thr_4g4uwqjxjv, under controller06:25 routi
 Draft PR permitted by05:55 override; no completion approval or Done claim until both
 families return and findings are fixed/held. Reviewer requests use queue by explicit
 controller exception. PR144 remains unchanged on its own branch and independent queue.
+
+Draft PR https://github.com/polymerindustrycluster/polymer-atlas/pull/160, heade439bed.
+Both Codex3/Grok3 requests queued; no verdict claimed. The94 settling facts are
+committed in holds.csv. Controller next assignment prioritizes all147 completions
+proposals on a new independent branch, then remaining169 leads if time allows.
