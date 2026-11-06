@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001308027.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001308027",
+  "name": "Vystar Corp",
+  "tickers": [
+    "VYST"
+  ],
+  "exchanges": [
+    "OTC"
+  ],
+  "raw_sha256": "0a05ac9485e8e532bcf8b45d5fc50172cd9322c7758b4474ec4ded6f6d538ea8",
+  "raw_name_token": "\"Vystar Corp\""
+}

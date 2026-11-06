@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000084748.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000084748",
+  "name": "ROGERS CORP",
+  "tickers": [
+    "ROG"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "71a4046900c4d19b229a75c9e64c5ee089f343cddd490bc240e38f8766395e9f",
+  "raw_name_token": "\"ROGERS CORP\""
+}

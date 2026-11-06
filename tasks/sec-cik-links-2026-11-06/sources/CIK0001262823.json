@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001262823.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001262823",
+  "name": "WESTLAKE CORP",
+  "tickers": [
+    "WLK"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "26bbc604b0b949f777404480bfcfc1c2717504e862c5a59340a17f827995d754",
+  "raw_name_token": "\"WESTLAKE CORP\""
+}

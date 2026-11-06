@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0002064953.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0002064953",
+  "name": "Solstice Advanced Materials Inc.",
+  "tickers": [
+    "SOLS"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "746d1be5cd8ebef67232dec06fc54467a60fa8d13f9c831769132d1a51e3703d",
+  "raw_name_token": "\"Solstice Advanced Materials Inc.\""
+}

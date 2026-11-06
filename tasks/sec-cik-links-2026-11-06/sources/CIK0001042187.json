@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001042187.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001042187",
+  "name": "YUNHONG GREEN CTI LTD.",
+  "tickers": [
+    "YHGJ"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "59a44e09835b1d4de2acb224f64705ffd4c79cd56e3e3434cdc604b5ac166c62",
+  "raw_name_token": "\"YUNHONG GREEN CTI LTD.\""
+}

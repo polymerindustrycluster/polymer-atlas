@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001504678.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001504678",
+  "name": "Loop Industries, Inc.",
+  "tickers": [
+    "LOOP"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "raw_sha256": "524044e84226d12c85e5a71fd5bbd5161a1305179761a88e8130d7b5403b5538",
+  "raw_name_token": "\"Loop Industries, Inc.\""
+}

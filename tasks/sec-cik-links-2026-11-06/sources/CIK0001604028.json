@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0001604028.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0001604028",
+  "name": "ADVANCED DRAINAGE SYSTEMS, INC.",
+  "tickers": [
+    "WMS"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "24e76112ff112c555923468856d7bd1642bf520dd4822da5c358957ea9c2519f",
+  "raw_name_token": "\"ADVANCED DRAINAGE SYSTEMS, INC.\""
+}

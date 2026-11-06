@@ -1,0 +1,15 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000051143.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000051143",
+  "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+  "tickers": [
+    "IBM"
+  ],
+  "exchanges": [
+    "NYSE"
+  ],
+  "raw_sha256": "dea6fa640957da78060fce67323e6ff9b567a6deeedcc1e0dc12f13b1ba727e2",
+  "raw_name_token": "\"INTERNATIONAL BUSINESS MACHINES CORP\""
+}

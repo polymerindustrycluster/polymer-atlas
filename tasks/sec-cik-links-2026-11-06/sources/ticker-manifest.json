@@ -1,0 +1,10 @@
+{
+  "url": "https://www.sec.gov/files/company_tickers.json",
+  "retrieved_at": "2026-11-06T13:17:58.062631+00:00",
+  "sha256": "76b4b2abb9f7dd0e9cff38e2f20336952bb41806057b2dd1033e244f3e1faec2",
+  "size_bytes": 796507,
+  "association_count": 10409,
+  "distinct_ciks": 8004,
+  "date_note": "Retrieval timestamp, not publisher/as-of date.",
+  "source_note": "Official SEC source-system extract from T2 read-only bulk cache; independently rehashed/recounted by L8. Ticker associations do not cover all EDGAR filers."
+}

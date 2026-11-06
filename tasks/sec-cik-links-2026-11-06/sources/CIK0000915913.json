@@ -1,0 +1,17 @@
+{
+  "url": "https://data.sec.gov/submissions/CIK0000915913.json",
+  "as_of": "2026-11-06",
+  "http_status": 200,
+  "cik": "0000915913",
+  "name": "ALBEMARLE CORP",
+  "tickers": [
+    "ALB",
+    "ALB-PA"
+  ],
+  "exchanges": [
+    "NYSE",
+    "NYSE"
+  ],
+  "raw_sha256": "0c371fef74252ef67a8f8dc8dc766242398dc7bdd14a8e148b9f1a4d25dc9222",
+  "raw_name_token": "\"ALBEMARLE CORP\""
+}
