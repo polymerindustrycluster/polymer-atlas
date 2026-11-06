@@ -60,3 +60,12 @@ Prior 34 links preserved; canonical 520 links; canonical quote/proof hashes PASS
 Known-answer positive+4negatives PASS; 3real-builder no-write mutations PASS; builder second run0 additions; validate.py0 errors; native row-loss guard49ddb5d PASS.
 
 Codex/OpenAI and Grok/xAI fresh top-up refutes pending. This remains draft until both approve.
+
+Codex8/OpenAI @cf39b0b: **APPROVE, zero blocking findings**. Independently inspected486 canonical quote/source/date
+bindings, all43 capture metadata and all42 successful raw SHA256 responses re-parsed byte-exact to immutable proofs.
+Exact timestamp/query, HTTP200/exit0 and500-outcome reconciliation PASS; failed GSH capture maps exactly to14holds.
+Existing34 unchanged/current520 union, +486/-0 archive-only scope, check/selfcheck/3real-builder no-write mutations,
+idempotent0/validator0/native row-loss PASS. Seed2347731 live10-link/10-URL sample:7 exact capture+quote PASS;
+3 transport timeouts/HTTP000, with recorded raw/proof bindings independently passing. Current availability of those3
+was not reconfirmed; no permanence/semantic/rendered/completeness claim. Full486 live re-fetch/fullsuite not repeated.
+Report: controller review ledger reviews/234-clerk-codex-8.md. Grok family review remains pending; keep draft.
