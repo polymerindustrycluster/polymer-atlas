@@ -1,4 +1,4 @@
 site_id,verdict,reason
 SITE-012001,STILL_UNCERTAIN,"Need site NAICS/provenance at B and plant-locality reconciliation before C→B: held site NAICS is blank; banked FRS325510 and employer-padded Form5500group325500 do not settle a current site code. Own pages state325PaulAvenueFergusonMO63135/coating manufacture, while held postal city isSTLOUIS. No code/city/status/tier correction applied."
 SITE-012503,STILL_UNCERTAIN,Need physical ZIP reconciliation: own contact page names2201OldSterlingtonRd MonroeLA71203; heldbankedITA/siteZIP71210. Ownblog confirmsMonroemanufacturing but doesnotsettlethe conflictingpostalcode. NoZIP/tier/statuschange.
-SITE-012511,STILL_UNCERTAIN,Own-issuedPinevilleplasticmanufacturingjob rawverified; complete joint five-claimB evidence packet/application checks before promotion. Researchcheckpoint paused for priority MN202 wrong-parent correction; no site changes yet.
+SITE-012511,VERIFIED,Five must-have claims atB after federal and company-issued Pineville plastic-container manufacturing corroboration; statusunknown retained.

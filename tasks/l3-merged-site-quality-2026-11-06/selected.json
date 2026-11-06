@@ -13,7 +13,7 @@
     "raw_sha256": "9f65ba63b4b99455542c6323972294651151cb07014b95003ad59852e9cc7516",
     "own_issued_bridge_url": "https://www.plastipak.com/careers/",
     "bridge_raw_path": "/tmp/l3-quality-plastipak-careers.html",
-    "bridge_sha256": "24f17afd199aa69d81c41ac215b9488969480088141d1a1c3401796b2013815e",
+    "bridge_sha256": "1f4aee6b0598281249614b723c6c3c4a400af48eef76bb6bd132b846f2c4b065",
     "raw": true,
     "note": "Company-issued job via Workday tenant linked by own careers page; JSON names Pineville LA,plastic container manufacturing and hiring issuer. Source date2026-09-23; no current-status change. Own claim_detail only quoted job words."
   }
