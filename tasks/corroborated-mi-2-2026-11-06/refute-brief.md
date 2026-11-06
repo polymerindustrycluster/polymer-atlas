@@ -1,4 +1,4 @@
-Revised deep refute PR150 L11 MI2. All48residueclusters screened=2VERIFIED Csites(SOPREMA,Paramelt),14EVD,46holds. Codex3 findingsCytiva unsettled standalone-resin ring andAptar ZIPconflict bothheld;SITE018020/018022 and14EVDslotsretired permanently. StableSOPREMA/ParameltIDslots unchanged. Strict326unchanged121/819. Full2createblindcensus(controllerapproved<20),source-onlybelow. BankedCY2025ITA observed2026-11-01,federal-onlyprovisionalC,nooperation2026claim. validate0/checkPASS:frame/known3,oldrowsunchanged,byteidempotence,globalIDcollision no-write mutation. Prior4/28 snapshots superseded. Refute surviving2andpreservation/IDs;returnAPPROVE|REFUTE.
+Revised deep refute PR150 L11 MI2. All48residueclusters screened=2VERIFIED Csites(SOPREMA,Paramelt),14EVD,46holds. Codex3 findingsCytiva unsettled standalone-resin ring andAptar ZIPconflict bothheld;SITE018020/018022 and14EVDslotsretired permanently. StableSOPREMA/ParameltIDslots unchanged. Currentstrict326unchanged138/819 afterMI1merged;historical121superseded. Full2createblindcensus(controllerapproved<20),source-onlybelow. BankedCY2025ITA observed2026-11-01,federal-onlyprovisionalC,nooperation2026claim. validate0/checkPASS:frame/known3,oldrowsunchanged,byteidempotence,globalIDcollision no-write mutation. Prior4/28 snapshots superseded. Refute surviving2andpreservation/IDs;returnAPPROVE|REFUTE.
 SOURCE2
 cluster_id,held_operator_id,held_operator_name,held_operator_status,successor,held_operator_domain,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,schema_2_2_signal,date_submitted,year_filing_for,prior_sites
 LF-MI-00673,ORG-001619,SOPREMA Inc,active,,https://www.soprema.us/,264788,SOPREMA,Chem Link,353 East Lyons,Schoolcraft,MI,49087,325520,Tile adhesives manufacturing,P,2026-01-22,2025,[]
@@ -89,7 +89,7 @@ from pathlib import Path
 H=Path(__file__).resolve().parent;ROOT=H.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from atlas import load_tables,dedupe
 from build import read
-STATE='MI';N=48;CREATES=2;BASE='9489b607c19b450c195c2353944c61719105e1f9'
+STATE='MI';N=48;CREATES=2;BASE='f437e0b89149e19e9c21e3ce360f983927b3d6bc'
 cs=read(H/'input.csv');vs=read(H/'verdicts.csv');alloc=read(H/'allocations.csv');prior=read(H/'prior-input.csv')
 def frame_check(vs):
  assert len(cs)==len(vs)==len({v['cluster_id'] for v in vs})==N
@@ -125,6 +125,6 @@ for name,oid in [('Plastipak Packaging, Inc.','ORG-001033'),('Advanced Drainage 
  assert oid in {h['id'] for s in dedupe(T,name=name)['steps'] for h in s['hits']}
 rows=read(paths[0]);ids={r['site_id'] for r in alloc};strict=lambda r:r['operating_status'] in ['active','unknown'] and r['verification_tier'] in ['A','B','C'] and r['naics_primary'].startswith('326')
 after=sum(strict(r) for r in rows);before=sum(strict(r) for r in rows if r['site_id'] not in ids)
-assert before==121 and after==before
+assert before==138 and after==before
 result=dict(state=STATE,worked_clusters=N,creates_C=CREATES,evidence_rows=7*CREATES,known_answers=3,blind_census_size=CREATES,before_strict326=before,after_strict326=after,qcew2023_private_establishments326=819,strict_share_percent=100*after/819,delta=0)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print('PASS',result)

@@ -1,0 +1,2 @@
+county,url,response_sha256,response_records,retained_records,registry_ids,error
+Allen,https://frs-public.epa.gov/ords/frs_public2/frs_rest_services.get_facilities?state_abbr=OH&county_name=ALLEN&output=JSON,7a45f2d167eabc8e27a13983cfe719f98f5c216c0227c820088d28a959d71323,0,0,,'FRSFacility'
