@@ -92,3 +92,9 @@ The34-row wave activates a previously unexercised equipment_block path: an f-str
 Final checks: ephemeral full scripts pytest **221 passed,1 skipped,45 subtests passed**; validator zero errors; builder replay zero additions; real `python3 scripts/build_site.py --rebuild-db --out build/equipment-wave-1/site` built5432 HTML pages. All34 equipment rows were independently reconciled to the six generated host-page sections. Mainbdb8b98 merged cleanly; canonical net diff remains equipment.csv only. Results in render-checks.txt. The initial review-packet.json is historical; review-packet-v2.json supersedes it for final review, including the authorized script fixes. Reviews remain pending.
 
 Exact reviewer reproduction `python3 scripts/build_pages.py`: PASS,5435 HTML files/42.6MB. Codex REFUTE on old d6871e5 identified the same rendering defect already fixed in69fabfa; final-head re-review remains queued. No hosted deployment claimed.
+
+### Independent review receipt — Grok APPROVE
+
+Grok clerk thr_f2fcbx6tq8 reviewed29c62fe: **APPROVE,0 findings**. Independently fetched all six source pages plus the official Dayton lab directory; confirmed34/34 names/quotes,7/7 fee excerpts, host/program FKs, classes/access/grain and34 rows on six generated host pages. Validator and replay passed; full unittest suite221 passed/1 skipped; nonempty-render regression and5432-page site build passed. Source scripts and equipment data are byte-identical to b398365. Reviewer report is recorded in grok-review.md.
+
+Codex's earlier **REFUTE** at d6871e5 concerned the nonempty renderer crash; fixed69fabfa, with fail-before/pass-after regression and exact build_pages.py PASS5435 HTML pages. Codex final-head technical verdict is still pending. Grok approval alone does not complete the two-family gate; PR remains draft. This addendum records review evidence only and changes no scripts or equipment rows.
