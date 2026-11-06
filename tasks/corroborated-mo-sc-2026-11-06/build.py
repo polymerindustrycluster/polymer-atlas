@@ -64,6 +64,8 @@ def main():
    out[f"evidence_organizations_{op.stem.split('_')[-1]}.csv"].append(dict(evidence_id=f'EVD-{eid:06d}',record_table='organizations',record_id=oid,claim_type='existence',claim_detail='Federal registrant trade_names: '+registrant,source_class='government_filing',source_ref=ref,observed_date='2026-11-01',tier_effect='supports_A',created_by=BY,notes=notes))
   alloc.append(dict(cluster_id=c['cluster_id'],site_id=sid,org_id=oid,establishment_id=f['establishment_id'],state=a.state))
  # Global cross-shard ID collision preflight, including records in unexpected shards.
+ assert len(oldsites)==len({r['site_id'] for r in oldsites}), 'conflicting ID: duplicate SITE across shards'
+ assert len(oldev)==len({r['evidence_id'] for r in oldev}), 'conflicting ID: duplicate EVD across shards'
  allids={'site_id':{r['site_id']:r for r in oldsites},'evidence_id':{r['evidence_id']:r for r in oldev}}
  pending={}
  for name,rows in out.items():

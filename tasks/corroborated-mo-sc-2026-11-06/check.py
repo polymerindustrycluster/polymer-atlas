@@ -46,12 +46,15 @@ def main():
  if a.negative_controls:
   with tempfile.TemporaryDirectory() as d:
    data=Path(d)/'data';shutil.copytree(ROOT/'data',data)
-   target=alloc[0]['site_id'];wrong=data/'sites_AL.csv';rows=read(wrong);injected={**rows[0],'site_id':target,'street_address':'999 COLLISION ROAD'}
-   with wrong.open('a',newline='') as f:csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n').writerow(injected)
-   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
-   run=subprocess.run([sys.executable,str(H/'build.py'),'--state',alloc[0]['state'],'--data-dir',str(data),'--apply'],capture_output=True,text=True)
-   assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
-   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
+   for wrong,key,target in [(data/'sites_AL.csv','site_id',alloc[0]['site_id']),(data/'evidence_sites_AL.csv','evidence_id',lane[0]['evidence_id'])]:
+    original=wrong.read_bytes();rows=read(wrong);injected={**rows[0],key:target}
+    if key=='site_id':injected['street_address']='999 COLLISION ROAD'
+    with wrong.open('a',newline='') as f:csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n').writerow(injected)
+    before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+    run=subprocess.run([sys.executable,str(H/'build.py'),'--state',alloc[0]['state'],'--data-dir',str(data),'--apply'],capture_output=True,text=True)
+    assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
+    assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
+    wrong.write_bytes(original)
  print('PASS exact143 census;3 census defects caught;10C sites/74 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected cross-shard SITE collision refused before any data write')
+ if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
 if __name__=='__main__':main()

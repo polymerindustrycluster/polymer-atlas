@@ -70,3 +70,5 @@ No shared scripts changed, so scripts pytest is not required. Final checks and i
 |---|---:|---:|---:|---:|
 | MO | 37 | 41 | 368 | 10.05% → 11.14% |
 | SC | 49 | 54 | 406 | 12.07% → 13.30% |
+
+LA reuse exposed an order-dependent global-ID dictionary-collapse defect. The builder now asserts SITE and EVD input-ID uniqueness before constructing either lookup; both wrong-shard duplicate types are injected and must fail before any data write. This supersedes the earlier SITE-only negative-control coverage. No duplicate was applied to canonical data.
