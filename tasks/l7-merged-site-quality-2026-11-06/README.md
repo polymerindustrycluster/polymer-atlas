@@ -105,4 +105,3 @@ Conservation directive (controller,2026-11-06) supersedes earlier continuation i
 ## Grok refute resolution — strict subset
 
 Grok clerk3 REFUTEff22dd5 accepted: Apache SITE-016120 primary Calhoun-wide recycled-tire prose does not bind197RoyalDrive independently of the other held Calhoun plants. Restored its frozen pre-pass C/site-sources row and withdrew EVD-207360–207366,permanently reserved by id_reservations.csv. No new evidence or research; no replacement upgrade. withdrawal.json proves every other canonical site/evidence row dictionary-identical to reviewedff22dd5. Final75=30VERIFIED+45holds,60cells210EVD(180government+30ownscope),27retainedownURLs. Prior31/217 counts/integration are historical and superseded for the current packet. Refute report: reviews/223-clerk-grok-3.md. Conservation directive applied; no new review round requested. Codex review remains pending; Grok objection is cured by withdrawal,not an approval claim.
-
