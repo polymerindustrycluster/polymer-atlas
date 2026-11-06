@@ -1,0 +1,24 @@
+{
+  "org_ids": [
+    "ORG-001708",
+    "ORG-001719",
+    "ORG-001721",
+    "ORG-001726"
+  ],
+  "queries": [
+    {
+      "q": "\"ECM Performance Materials Corp\" Medina (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Pyramid Plastics\" Cleveland (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Truco\" Cleveland (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Endura Plastics\" Kirtland (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "16ec7624db2ae01bffc621a7f02bf7da483925d597e602db957bc70f171833f1",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}

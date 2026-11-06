@@ -1,0 +1,4203 @@
+{
+  "LF-NJ-00246": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "American Spraytech L.L.C.",
+        "street": "205 Meister Avenue",
+        "city": "Branchburg",
+        "state": "NJ",
+        "zip": "08876"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00475": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "RESINTECH CAMDEN",
+        "street": "1801 FEDERAL STREET",
+        "city": "CAMDEN",
+        "state": "NJ",
+        "zip": "08105"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00709": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "AIR CRUISERS COMPANY, INC",
+        "street": "1747 STATE ROUTE 34",
+        "city": "WALL TOWNSHIP",
+        "state": "NJ",
+        "zip": "07727"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004876",
+              "name": "Air Cruisers Company, LLC",
+              "city": "Liberty",
+              "state": "MS",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_MS.csv",
+              "match": "name key 'air cruisers' = legal_name 'Air Cruisers Company, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-004876"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00193": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "New Wincup Holdings, Inc.",
+        "street": "190 Liberty St",
+        "city": "Metuchen",
+        "state": "NJ",
+        "zip": "08840"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000984",
+              "name": "WinCup",
+              "city": "Atlanta",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_GA.csv",
+              "match": "name key 'new wincup holdings' = trade_names 'New Wincup Holdings, INC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000984"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00489": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "CCL Label Lumberton Tube",
+        "street": "92 Ark Road",
+        "city": "Lumberton",
+        "state": "NJ",
+        "zip": "08048"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00511": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "LPS Industries LLC",
+        "street": "10 Caesar Place",
+        "city": "Moonachie",
+        "state": "NJ",
+        "zip": "07074"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00564": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "X-L PLASTICS INC",
+        "street": "220 CLIFTON BOULEVARD",
+        "city": "CLIFTON",
+        "state": "NJ",
+        "zip": "07011"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00582": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "THERMWELL PRODUCTS COMPANY, INC.",
+        "street": "420 ROUTE 17 SOUTH",
+        "city": "MAHWAH",
+        "state": "NJ",
+        "zip": "07430"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00011": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PRIMEX PLASTICS CORPORATION",
+        "street": "65 RIVER DRIVE",
+        "city": "GARFIELD",
+        "state": "NJ",
+        "zip": "07026"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003504",
+              "name": "Primex Plastics Corporation",
+              "city": "Richmond",
+              "state": "IN",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_IN.csv",
+              "match": "name key 'primex plastics' = legal_name 'Primex Plastics Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006178",
+              "name": "Primex Plastics Mesquite",
+              "city": "Mesquite",
+              "state": "NV",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_NV.csv",
+              "match": "legal_name contains 'PRIMEX PLASTICS CORPORATION'"
+            },
+            {
+              "id": "ORG-005108",
+              "name": "B & F Plastics, Inc.",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_US.csv",
+              "match": "notes contains 'PRIMEX PLASTICS CORPORATION'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-003504"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00035": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Benjamin Moore & Co.",
+        "street": "134 Lister Ave.",
+        "city": "NEWARK",
+        "state": "NJ",
+        "zip": "07105"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004216",
+              "name": "Benjamin Moore & Co.",
+              "city": "Montvale",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_NJ.csv",
+              "match": "name key 'benjamin moore and' = legal_name 'Benjamin Moore & Co.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-004216"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00061": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Prestone Products",
+        "street": "250 Halls Mill Road",
+        "city": "Freehold",
+        "state": "NJ",
+        "zip": "07728"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00137": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "BETA PLASTICS CORPORATION",
+        "street": "120 AMOR AVE",
+        "city": "CARLSTADT",
+        "state": "NJ",
+        "zip": "07072"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00351": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "National Paint Industries",
+        "street": "1999 Elizabeth Street",
+        "city": "North Brunswick",
+        "state": "NJ",
+        "zip": "08902"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00353": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "INNOPHOS, INC.",
+        "street": "259 PROSPECT PLAINS RD BLDG B S",
+        "city": "CRANBURY",
+        "state": "NJ",
+        "zip": "08512"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00427": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ASC - Philadelphia",
+        "street": "823 East Gate Drive",
+        "city": "Mount Laurel",
+        "state": "NJ",
+        "zip": "08054"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000088"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00453": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Agilex Fragrances",
+        "street": "20 Roosevelt Ave",
+        "city": "Somerset",
+        "state": "NJ",
+        "zip": "08873"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00462": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "S & A MOLDERS, INC.",
+        "street": "75 MOUNT VERNON ROAD",
+        "city": "MANALAPAN",
+        "state": "NJ",
+        "zip": "07726"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00481": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Precision Concepts - Vineland",
+        "street": "2617 N Mill Road",
+        "city": "Vineland",
+        "state": "NJ",
+        "zip": "08360"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00498": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "NAP INDUSTRIES GROUP LLC",
+        "street": "80 AVE K",
+        "city": "NEWARK",
+        "state": "NJ",
+        "zip": "07105"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00591": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ACME PLASTICS INC",
+        "street": "222 BROWERTOWN RD",
+        "city": "WOODLAND PARK",
+        "state": "NJ",
+        "zip": "07424"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00068": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Bostik, Inc.",
+        "street": "2000 Nolte Drive",
+        "city": "Paulsboro",
+        "state": "NJ",
+        "zip": "08066"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000683",
+              "name": "Bostik, Inc.",
+              "city": "Wauwatosa",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_WI.csv",
+              "match": "name key 'bostik' = legal_name 'Bostik, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000683"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00072": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Actega North America, LLC.",
+        "street": "1050 Taylors Lane",
+        "city": "Actega North America",
+        "state": "NJ",
+        "zip": "08077"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00077": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "KAYLINE PROCESSING, INC.",
+        "street": "31 COATES ST.",
+        "city": "TRENTON",
+        "state": "NJ",
+        "zip": "08611"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00081": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "MON-ECO INDUSTRIES, INC.",
+        "street": "5 JOANNA COURT",
+        "city": "EAST BRUNSWICK",
+        "state": "NJ",
+        "zip": "08816"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00126": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "CROSSFIELD PRODUCTS CORP",
+        "street": "140 VALLEY RD",
+        "city": "ROSELLE PARK",
+        "state": "NJ",
+        "zip": "07204"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00157": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "E@H LAMINATING",
+        "street": "138 GRAND ST",
+        "city": "PATERSON",
+        "state": "NJ",
+        "zip": "07501"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00251": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Nekoosa CET Films",
+        "street": "1650 Corporate rd west",
+        "city": "lakewood",
+        "state": "NJ",
+        "zip": "08701"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00348": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Garratt-Callahan",
+        "street": "306 Talmadge Rd",
+        "city": "Edison",
+        "state": "NJ",
+        "zip": "08817"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00416": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Seabrook",
+        "street": "1043 West Parsonage Road",
+        "city": "Seabrook",
+        "state": "NJ",
+        "zip": "08302"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001403"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00420": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Storopack, Inc.",
+        "street": "87 Sunfield Avenue",
+        "city": "Edison",
+        "state": "NJ",
+        "zip": "08837"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001128",
+              "name": "Storopack, Inc.",
+              "city": "Cincinnati",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OH.csv",
+              "match": "name key 'storopack' = legal_name 'Storopack, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001128"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00424": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "GRIGNARD CO LLC",
+        "street": "505 CAPOBIANCO PLZ",
+        "city": "RAHWAY CITY",
+        "state": "NJ",
+        "zip": "07065"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00480": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "COMPOSECURE LLC",
+        "street": "309 PIERCE STREET",
+        "city": "SOMERSET",
+        "state": "NJ",
+        "zip": "08873"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00540": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Parkway Plastics Inc",
+        "street": "561 Stelton Rd",
+        "city": "Piscataway",
+        "state": "NJ",
+        "zip": "08854"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00551": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "AARUBCO RUBBER CO INC",
+        "street": "259 2ND STREET",
+        "city": "SADDLE BROOK",
+        "state": "NJ",
+        "zip": "07663"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00566": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PATWIN PLASTICS INC.",
+        "street": "2300 E. LINDEN AVE.",
+        "city": "LINDEN",
+        "state": "NJ",
+        "zip": "07036"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00584": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "I F ASSOCIATES",
+        "street": "3303 ATLANTIC AVENUE",
+        "city": "ALLENWOOD",
+        "state": "NJ",
+        "zip": "08720"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00611": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Petro Extrusion Technologies, Inc.",
+        "street": "205 Hallock Avenue, Suite B",
+        "city": "Middlesex",
+        "state": "NJ",
+        "zip": "08846"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00856": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Mira Plastics Co., Inc.",
+        "street": "123 Fredon Springdale Road",
+        "city": "Newton",
+        "state": "NJ",
+        "zip": "07860"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00868": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "AMERIPACK  INC",
+        "street": "107 NORTH GOLD DRIVE",
+        "city": "ROBBINSVILLE",
+        "state": "NJ",
+        "zip": "08691"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00940": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "IMPERIAL BAG & PAPER CO. LLC",
+        "street": "255 US HIGHWAY 1 & 9",
+        "city": "JERSEY CITY",
+        "state": "NJ",
+        "zip": "07306"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00027": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "STAR-GLO INDUSTRIES, LLC",
+        "street": "2 CARLTON AVE",
+        "city": "EAST RUTHERFORD",
+        "state": "NJ",
+        "zip": "07073"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00038": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "DELTECH RESIN COMPANY",
+        "street": "49 RUTHERFORD ST",
+        "city": "NEWARK",
+        "state": "NJ",
+        "zip": "07105"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00060": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SELECTIVE COATINGS & INKS, INC.",
+        "street": "5008 INDUSTRIAL ROAD",
+        "city": "WALL TOWNSHIP",
+        "state": "NJ",
+        "zip": "07727"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00080": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "East Brunswick (Plastic)",
+        "street": "35 Cotters Lane",
+        "city": "East Brunswick",
+        "state": "NJ",
+        "zip": "08816"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00177": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SEALS EASTERN INC",
+        "street": "134 PEARL ST",
+        "city": "RED BANK",
+        "state": "NJ",
+        "zip": "07701"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00181": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "POLYCEL STRUCTURAL FOAM INC.",
+        "street": "68 COUNTY LINE RD.",
+        "city": "SOMERVILLE",
+        "state": "NJ",
+        "zip": "08876"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00190": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PROCEDYNE CORP",
+        "street": "11 INDUSTRIAL DRIVE",
+        "city": "NEW BRUNSWICK",
+        "state": "NJ",
+        "zip": "08901"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00199": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SEPCO",
+        "street": "15 Home News Row",
+        "city": "New Brunswick",
+        "state": "NJ",
+        "zip": "08901"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00291": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PRC-DESOTO INTERNATIONAL INC",
+        "street": "823 EAST GATE DRIVE",
+        "city": "MOUNT LAUREL",
+        "state": "NJ",
+        "zip": "08054"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00446": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "AEROCOAT SOURCE LLC",
+        "street": "11 MORRIS AVE",
+        "city": "MAPLE SHADE",
+        "state": "NJ",
+        "zip": "08052"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00455": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "EAST COAST PLASTICS",
+        "street": "427 COMMERCE LN - SUITE 7",
+        "city": "WEST BERLIN",
+        "state": "NJ",
+        "zip": "08091"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00617": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "HUTCHINSON INDUSTRIES",
+        "street": "460 SOUTHARD STREET",
+        "city": "TRENTON",
+        "state": "NJ",
+        "zip": "08638"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00660": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ACTEGA NA LLC CINNAMINSON",
+        "street": "1450 Taylors Lane",
+        "city": "Cinnaminson",
+        "state": "NJ",
+        "zip": "08077"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00897": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SHOCK TECH INC.",
+        "street": "211 ISLAND ROAD",
+        "city": "MAHWAH",
+        "state": "NJ",
+        "zip": "07430"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00025": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "FXI, INC.",
+        "street": "13 MANOR RD",
+        "city": "EAST RUTHERFORD",
+        "state": "NJ",
+        "zip": "07073"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000853",
+              "name": "FXI, Inc.",
+              "city": "Spencerville",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OH.csv",
+              "match": "name key 'fxi' = legal_name 'FXI, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000853"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00192": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SWITLIK PARACHUTE CO INC",
+        "street": "1325 EAST STATE STREET",
+        "city": "HAMILTON",
+        "state": "NJ",
+        "zip": "08609"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00262": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "A1 PLASTIC BAGS INC.",
+        "street": "136 TICHENOR RD",
+        "city": "NEWARK",
+        "state": "NJ",
+        "zip": "07105"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00295": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "INNOVATIVE POWDER COATINGS",
+        "street": "9105 BURROUGH DOVER LANE",
+        "city": "PENNSAUKEN",
+        "state": "NJ",
+        "zip": "08110"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00408": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Sika Corporation",
+        "street": "995 Towbin Ave",
+        "city": "Lakewood",
+        "state": "NJ",
+        "zip": "08701"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001114",
+              "name": "Sika Corporation",
+              "city": "Marion",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_OH.csv",
+              "match": "name key 'sika' = legal_name 'Sika Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001577",
+              "name": "Master Builders Solutions US LLC",
+              "city": "Beachwood",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OH.csv",
+              "match": "notes contains 'Sika Corporation'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001114"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00488": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SELECTIVE COATINGS & INKS, INC.",
+        "street": "71 JAMES WAY",
+        "city": "EATONTOWN",
+        "state": "NJ",
+        "zip": "07724"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00528": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "REMPAC LLC",
+        "street": "370 W PASSAIC ST",
+        "city": "ROCHELLE PARK",
+        "state": "NJ",
+        "zip": "07662"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00733": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "HOMELAND VINYL PRODUCTS, INC",
+        "street": "1701 Eden Road",
+        "city": "Milville",
+        "state": "NJ",
+        "zip": "08332"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-005044",
+              "name": "Homeland Vinyl Products",
+              "city": "Pinson",
+              "state": "AL",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_AL.csv",
+              "match": "name key 'homeland vinyl products' = legal_name 'Homeland Vinyl Products'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006237",
+              "name": "Homeland Vinyl Products, Inc. Utah",
+              "city": "Ogden",
+              "state": "UT",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_UT.csv",
+              "match": "legal_name contains 'HOMELAND VINYL PRODUCTS, INC'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-005044"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00777": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "PRETIUM PACKAGING, LLC",
+        "street": "208 Cougar Court",
+        "city": "Hillsborough",
+        "state": "NJ",
+        "zip": "08844"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000523",
+              "name": "Pretium Packaging",
+              "city": "St. Louis",
+              "state": "MO",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_MO.csv",
+              "match": "name key 'pretium packaging' = legal_name 'Pretium Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002219",
+              "name": "Alpha Packaging",
+              "city": "Bethlehem",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'PRETIUM PACKAGING, LLC'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000523"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00789": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "MONTROSE MOLDERS CORPORATION",
+        "street": "25 Howard Street",
+        "city": "Piscataway",
+        "state": "NJ",
+        "zip": "08854"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00850": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "OMEGA PLASTICS CORP.",
+        "street": "757 PAGE AVE BUILDING 4",
+        "city": "LYNDHURST",
+        "state": "NJ",
+        "zip": "07071"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-008102",
+              "name": "Omega Plastics, LLC",
+              "city": "Knoxville",
+              "state": "TN",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_TN.csv",
+              "match": "name key 'omega plastics' = legal_name 'Omega Plastics, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002313",
+              "name": "Havpak International",
+              "city": "Erie",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'OMEGA PLASTICS CORP.'"
+            },
+            {
+              "id": "ORG-007428",
+              "name": "Omega Extruding Corp of California",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_US.csv",
+              "match": "notes contains 'OMEGA PLASTICS CORP.'"
+            },
+            {
+              "id": "ORG-003583",
+              "name": "Omega Tool, Inc.",
+              "city": "Menomonee Falls",
+              "state": "WI",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_WI.csv",
+              "match": "notes contains 'OMEGA PLASTICS CORP.'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-008102"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00862": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "HERITAGE BAG COMPANY",
+        "street": "2321 High Hill Rd",
+        "city": "Logan Township",
+        "state": "NJ",
+        "zip": "08085"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001416",
+              "name": "Heritage Bag Company",
+              "city": "Fairfield",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_OH.csv",
+              "match": "name key 'heritage bag' = legal_name 'Heritage Bag Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001416"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00873": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "MONARCH ART PLASTIC COMPANY LLC.",
+        "street": "3838 CHURCH ROAD",
+        "city": "MOUNT LAUREL",
+        "state": "NJ",
+        "zip": "08054"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00132": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "GENERAL FILM PRODUCTS INC.",
+        "street": "107 TRUMBULL ST",
+        "city": "ELIZABETH",
+        "state": "NJ",
+        "zip": "07206"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00273": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "AERO TEC LABORATORIES INC",
+        "street": "45 SPEAR ROAD",
+        "city": "RAMSEY",
+        "state": "NJ",
+        "zip": "07446"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00555": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Decker Tape Products",
+        "street": "906C Murray Road, Building",
+        "city": "EAST HANOVER",
+        "state": "NJ",
+        "zip": "07936"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00697": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "ENAMINE US INC.",
+        "street": "1 DISTRIBUTION WAY",
+        "city": "MONMOUTH JUNCTION",
+        "state": "NJ",
+        "zip": "08852"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00102": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Valtris Specialty Chemcials-- Delaware River",
+        "street": "170 ROUTE 130 S BRIDGEPORT, NJ 08014",
+        "city": "Bridgeport",
+        "state": "NJ",
+        "zip": "08014"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00277": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Lanxess Corporation",
+        "street": "1020 King George Post Road",
+        "city": "Fords",
+        "state": "NJ",
+        "zip": "08863"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003919",
+              "name": "LANXESS Corporation",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "C",
+              "file": "data/organizations_PA.csv",
+              "match": "name key 'lanxess' = legal_name 'LANXESS Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003077",
+              "name": "The Hallstar Company",
+              "city": "Chicago",
+              "state": "IL",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_IL.csv",
+              "match": "notes contains 'Lanxess Corporation'"
+            },
+            {
+              "id": "ORG-000547",
+              "name": "LANXESS Rhein Chemie",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'Lanxess Corporation'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-003919"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00425": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "CONGOLEUM CORPORATION",
+        "street": "1945 EAST STATE STREET",
+        "city": "TRENTON",
+        "state": "NJ",
+        "zip": "08619"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002677",
+              "name": "Congoleum Corp.",
+              "city": "Trainer",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_PA.csv",
+              "match": "name key 'congoleum' = legal_name 'Congoleum Corp.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-002677"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00465": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "MAPEI",
+        "street": "2155 high hill road",
+        "city": "logan",
+        "state": "NJ",
+        "zip": "08085"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004300",
+              "name": "MAPEI Corporation",
+              "city": "Deerfield Beach",
+              "state": "FL",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_FL.csv",
+              "match": "name key 'mapei' = legal_name 'MAPEI Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002397",
+              "name": "Polyglass USA",
+              "city": "Hazleton",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'MAPEI'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-004300"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00707": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SPECTRUM LABORATORY PRODUCTS, INC.",
+        "street": "769 JERSEY AVENUE",
+        "city": "NEW BRUNSWICK",
+        "state": "NJ",
+        "zip": "08901"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00724": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "NELSON-MILLER GROUP",
+        "street": "104 Gaither Drive",
+        "city": "Mount Laurel",
+        "state": "NJ",
+        "zip": "08054"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00738": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "CRYOPAK, INC.",
+        "street": "551 Raritan Center Pkwy",
+        "city": "Edison",
+        "state": "NJ",
+        "zip": "08837"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00817": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "CENTURY SERVICES AFFILIATES INC",
+        "street": "510 East 31 ST",
+        "city": "Paterson",
+        "state": "NJ",
+        "zip": "07504"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00826": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "INFINITY COMPOUNDING CORPORATION",
+        "street": "2079 Center Square Road",
+        "city": "Swedesboro",
+        "state": "NJ",
+        "zip": "08085"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-000054"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00851": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "B & G PLASTIC INC,",
+        "street": "428 Elizabeth Ave",
+        "city": "Newark",
+        "state": "NJ",
+        "zip": "07112"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00857": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "RING CONTAINER TECHNOLOGIES",
+        "street": "50 Fadem Road",
+        "city": "Springfield",
+        "state": "NJ",
+        "zip": "07081"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001082",
+              "name": "Ring Container Technologies",
+              "city": "Oakland",
+              "state": "TN",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_TN.csv",
+              "match": "name key 'ring container technologies' = legal_name 'Ring Container Technologies'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001082"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00101": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "LANXESS Corp LPT",
+        "street": "200 Birmingham Road",
+        "city": "Birmingham",
+        "state": "NJ",
+        "zip": "08011"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-003919"
+    ],
+    "street_hits": []
+  },
+  "LF-NJ-00443": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Ashland Inc Parlin NJ",
+        "street": "50 South Minisink Ave",
+        "city": "Parlin",
+        "state": "NJ",
+        "zip": "08859"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00607": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Chemtrade Chemicals US LLC Parsippany",
+        "street": "90 East Halsey Road",
+        "city": "Parsippany",
+        "state": "NJ",
+        "zip": "70540"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00650": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "Mercer Rubber Co., Inc.",
+        "street": "110 benigno blvd.",
+        "city": "bellmawr",
+        "state": "NJ",
+        "zip": "08031"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00680": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "NPC GLOBAL CORP",
+        "street": "100 MIDDLESEX AVE STE 2A",
+        "city": "CARTERET",
+        "state": "NJ",
+        "zip": "07008"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00741": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "DANA POLY, INC",
+        "street": "85 Harrison St.",
+        "city": "Dover",
+        "state": "NJ",
+        "zip": "01801"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00815": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "NATIONAL REFRIGERANTS INC",
+        "street": "661 Kenyon Avenue",
+        "city": "Bridgeton",
+        "state": "NJ",
+        "zip": "08302"
+      },
+      "stop_at_step": null,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00835": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "KNF CLEAN ROOM PRODUCTS CORPORATION",
+        "street": "681 N Delsea Drive",
+        "city": "Vineland",
+        "state": "NJ",
+        "zip": "08360"
+      },
+      "stop_at_step": 4,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": []
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002750",
+              "name": "Knf Corp.",
+              "city": "Tamaqua",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'KNF CLEAN ROOM PRODUCTS CORPORATION'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [],
+    "street_hits": []
+  },
+  "LF-NJ-00836": {
+    "house_dedupe": {
+      "query": {
+        "domain": null,
+        "name": "SONOCO PRODUCTS COMPANY",
+        "street": "5 Stults Rd",
+        "city": "Dayton",
+        "state": "NJ",
+        "zip": "08810"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003930",
+              "name": "Sonoco Products Company",
+              "city": "Hartsville",
+              "state": "SC",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_SC.csv",
+              "match": "name key 'sonoco products' = legal_name 'Sonoco Products Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002380",
+              "name": "Sonoco Plastics",
+              "city": "Hanover",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "data/organizations_PA.csv",
+              "match": "notes contains 'SONOCO PRODUCTS COMPANY'"
+            },
+            {
+              "id": "ORG-004041",
+              "name": "Protexic",
+              "city": "",
+              "state": "",
+              "status": "active",
+              "tier": "B",
+              "file": "data/organizations_US.csv",
+              "match": "notes contains 'SONOCO PRODUCTS COMPANY'"
+            }
+          ]
+        }
+      ]
+    },
+    "exact_name_terminal_orgs": [
+      "ORG-001117",
+      "ORG-003930"
+    ],
+    "street_hits": []
+  }
+}

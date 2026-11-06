@@ -163,3 +163,20 @@ Builder now preflights aggregate pending-EVD uniqueness across all shards, and r
 Grok/xAI clerk3 (thr_4g4uwqjxjv) APPROVE 22995200f23b22670f13704e0df8191c6fddfd19, zero findings. This is the corrected-head gate; the earlier188deea approval remains historical. Verified aggregate pending-EVD collision rejection on pristine data before any write; all nine own-site claim_details are literal raw quotations only, with internal-prefix injection refused without writes. Taylor permit rows state mailing-address facts and leave duplicate decisions in notes. Edited tiers independently counted PA2A/4B plus Ohio2A = total4A/4B, no tier edits. Organization, both site shards and relationship payload remain byte-identical to83d8c9a.
 
 Fresh rawcheck16quotations/15URLs, named replay/old-row preservation/four no-write classes/four parcel defects, validator0 and row-loss pass. Same-ID regeneration of the16unmerged evidence rows follows controller ruling; IDs remain absent from main at review. Acquired/U Chromaflo and inferred-low NAICS unchanged. Report: controller reviews/185-clerk-grok-3-rereview (review message receipt). Codex corrected-head rereview remains pending; PR stays draft without a two-family completion claim. This documentation-only receipt changes no data, code or packet. Full scripts pytest and fresh research were not repeated for this receipt.
+
+## Final approvals and main replay
+
+Codex/OpenAI clerk8thr_c3tss59qsx APPROVEa96bd3b,0remaining; Grok/xAI clerk3 APPROVE2299520,
+0findings. Those heads differ only by README receipt; corrected guard and source-only
+payload are identical. Codex independently reproduces pending310010→310000/own-site
+prefix zero-write controls, all9literal own-site details,4A/4Btiercounts, all16fresh
+quotes/15URLs, replay/oldrows/4parceldefects/validator0/rowloss. Targeted re-review only;
+full scripts suite/eight unresolved owner/research holds not settled.
+
+Controller-requested replay on main4f30a8ebf5dde4a2d84618ba02163bb2bad4c375: merged main,
+took all seven owned canonical files exactly from main and ran unchanged builder. No
+CSV hand merge. All approved packet CSVs and builder hash-identical; all main rows and
+old evidence preserved except the exact22declared cells on8sites. Same1Uhistorical org,
+1generatedREL,16EVD; no new site or active company. integration-final.json records counts
+and data hashes. Named check/replay/4zero-write classes/4parceldefects/validator0 PASS.
+base.txt now pins replay main for deterministic fresh-base check; research unchanged.

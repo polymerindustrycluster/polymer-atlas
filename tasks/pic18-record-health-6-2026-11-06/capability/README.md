@@ -1,0 +1,55 @@
+# L4b round6 capability-route handoff — 2026-11-06
+
+Preliminary classification and value proposals only. Worker `atlas-L4b-r6-capability-routes`/`thr_cebszachry`; lead `thr_3zabsave2n`; campaign `thr_9i2c6byhcz`. Only this capability directory written. No canonical data, EVD, tier, status, ring, parent, branch, commit, tracker or controller-ledger writes.
+
+**Frozen census:93 unique capability-gap organizations** from parent160-unhealthy frame. Helper frame.json SHA256 `0af570492d52b4bc4120dfb6cdded2d4ef9e2734c9fd2c0a5d90bc0189682c66`. Projected472/632 rawT1 is the lead-supplied baseline; actual main remains separate. No metric/target definition changed or combined health delta computed here.
+
+## Initial routing and completed work
+
+`classification_routes.csv` has exactly93 unique(org_id,gap=capabilities) rows, with all requested initial fields and appended work outcomes. **Initial classes remain a62/b3/c20/d8**, immutable against `initial_classifications.json`. This initial table was sent to lead before batch source work and incorporated by lead into the committed204-gap table. Initial class meanings: a specific untried public route; b owner ruling; c human/outreach settling fact; d positive scope-reverification lead. Neither c nor failed searches claims internet absence.
+
+All62 initial-a routes were worked: **five VERIFIED proposed-value organizations and57 STILL_UNCERTAIN**. Every initial-a row records the exact attempted named search/source route, date, source/excerpt path or a named missing fact. Unresolved rows now recommend b/c/d; none remains a without a new untried route. Resolved rows have blank postwork class, recorded separately by work_outcome. Across all93, current routing is **five resolved / b5 / c74 / d9**. Original classes/counts never overwritten.
+
+`routes.csv` contains **128 route attempts:61 named official-domain searches and67 fresh source fetches**, with40 extractable and27 failed/sparse fetches. Source-fetch detail:55 novel result URLs from initial searches, one new Koroseal calibration PDF, six bounded targeted new-document/product follow-ups, five NAS raw-HTML fallbacks. Source fetches cover33 frame organizations; the remaining class-a searches produced no admissible new result or only previously tried routes. Those searches are explicit attempts/outcomes, not silently skipped organizations. Three fresh calibration-source fetches outside the93 census are separate in calibration_controls.json/raw/CAL-* and excluded from128.
+
+`prior_routes.csv` reconciles510 globally normalized known prior URLs from rounds1–5 CSV logs and available /tmp URL archives. Normalization treats HTTP/HTTPS and www as equivalent, strips fragments/trailing slash, decodes paths, sorts queries, and removes tracking parameters. All result URLs were checked against the **global** prior index before fetch; known old failed/successful routes were excluded, never called untried because a new query returned them. discovery.json and search-*.json retain exact search queries, result URLs and exclusions. Search snippets/summaries are never evidence. No new generic homepage retries counted as novel sources.
+
+## Proposed values and boundaries
+
+`packet.csv`: **14 proposed values for five organizations**, source_class=own_site, retrieval observed_date2026-11-06, no EVD allocation. Each quote passes normalized contiguous-word checking in its fresh raw excerpt.
+
+- Addipel ORG-000210: explicit company-specific manufacture of polymer-additive powder blends/compacted pellets on Barentz's own knowledge page; polymer_additives and additive_dry_blending. Generic parent distribution is not the witness.
+- Koroseal ORG-000414: new own EPD explicitly identifies PVC film in its own wallcovering and lamination to woven backing; pvc, its SCHEMA3.2 known thermoplastics family, and laminating. Specific-resin-to-known-family taxonomy, not an unstated resin inferred from family. EPD version2024-05-08; customer installation/specification instructions excluded.
+- Performance Elastomers ORG-000484: own-hosted NQA certificate's **exact named party is Performance Elastomers**,7162StateRoute88Ravenna; scope is manufacture of thermoplastic/silicone/solid/sponge-rubber extrusions. It does not name PexcoLLC as certified party. Four proposed values. Held acquired status and successorORG002534 remain untouched; this is not liveness or a transfer from parent Pexco manufacture. Acquired-record/T1 interpretation remains root/owner work. Certificate reissued2025-12-03, valid2028-03-11.
+- Infinity Engineered Products ORG-000379: own branded Super Cushion air-spring sell sheet explicitly names natural-rubber walls, the primary polymer product material; natural_rubber_nr and elastomers_rubber. No assertion that Infinity makes natural-rubber resin or performs an inferred molding process. Historical2020 brochure on live own domain; no new status/liveness conclusion.
+- Cooper Standard Industrial and Specialty Group ORG-001931: named ISG introductory paragraph explicitly says it can produce custom extruded/molded sealing products and supplies rubber material platforms. extrusion_unspecified, molding_unspecified, elastomers_rubber. Generic textbook sections/material tables and unrelated parent-group portfolio are not witnesses; no site/subtype transfer.
+
+The root independently verifies exact party, operator/grain, freshness and source context before admitting any row. These are conservative proposals, not approvals or canonical fixes.
+
+## Explicit holds/refutations
+
+Worthington's new barrier table names HDPE/co-extrusion; Scherba/Inflatable Images' new page names reinforced-vinyl arch printing. Both remain held pending explicit held-operator/owned polymer-production attribution; no value quota. Wooster catalogs describe nylon-filament brushes and Eleven10 describes an injection-molded case, but own filament conversion/molding operator remains unclear: both now recommend owner/resin-use-boundary b. This follows Grok PR133 Faull purchased-nylon-bearing and PR146 JJWhite customer-fabric precedents; no purchased component/customer resin becomes an own capability.
+
+Faull's new FAQ repeats nylon bearing rings and remains held. G+D group recycled PVC, SPEED group extrusion, Flex-N-Gate group plastics and Mitsubishi group materials are not transferred to held subsidiaries/operators. RFD own-hosted USCG certificate is an identity/liferaft-approval witness, not a polymer material inference. Lead supplied a separate4-person certificate route while helper independently fetched20-person certificate; no generic Survitec material transfer. Both are discovery for capability until RFD-specific material/production is explicit.
+
+New AML information sheets describe graphite/water, molybdenum-disulfide and boron-nitride coatings: positive inorganic activity warrants scope re-verification d, not an automatic polymer coating tag or status/ring change. All other unresolved a rows state exactly what source fact is missing and whether the named route returned old URLs, failed, or yielded nondecisive context. Initial owner holds remain JRM acrylic/polyacrylamide-versus-PMMA vocabulary, ASA unspecified/polyimide resin-bond materials, and Clevite technical-center capability grain. No owner ruling self-made.
+
+## Calibration, artifacts and runnable check
+
+Three real routing examples sent initially: **a** new Koroseal own EPD URL absent from prior logs; **b** JRM's prior own synthetic-acrylic water-storage polymer does not establish PMMA and organizations lack material_other_note; **d** Rogers' prior own “Worldwide Manufacturer of Tire Curing Machinery” is a scope re-verification lead, not tire/rubber manufacture.
+
+Before scaling, new Koroseal PDF fetched200 and pdftotext extracted an exact PVC-composition quote; a deliberately wrong polyurethane-tire-machinery quote failed. Three prior known-answer controls (Novex polyurethane, MIPCO epoxy, TUFTEX natural rubber) were freshly reproduced into this directory because old calibration raw paths were not retained in the round6 read-only history copy. They remain controls only, never census evidence. Wrong-quote and substring negatives also pass.
+
+```sh
+python3 tasks/pic18-record-health-6-2026-11-06/capability/check.py
+```
+
+PASS:93 frozen unique classifications, unchanged initial counts, all62 outcomes including57 named-fact holds,14 unique vocabulary-valid raw-matched value rows/five organizations,128 logged route attempts, three reused positive controls plus actual new-PDF control, wrong-quote/subsequence rejection. A missing prior calibration file originally caused this check to fail explicitly; controls were re-fetched, not skipped or treated as a pass.
+
+raw_path is relative to this directory. Fresh curl browserUA; lead raw.Text for HTML; pdftotext -layout for PDFs. Five house NAS Firecrawl fallbacks used formats=html,maxAge=0 and no model summarizer. Archives contain **short contact-redacted excerpts and hashes only**, no full HTML/download bodies or individual contact details. Full search dumps/Firecrawl responses were discarded after retaining queries/URLs/hash metadata. Scripts are research utilities; do not rerun collection/import/archive over reviewed artifacts. finish.py regenerates final CSVs from reviewed selections and immutable initial routes; check.py is the runnable read-only check.
+
+## Coordination record for lead BOARD append
+
+Lead confirmed the initial93 table was committed inside combined204-gap initialtable(75a/52b/67c/10d); helper preserves its own initial62a/3b/20c/8d. Lead instructed all initial-a routes must be attempted, final unresolved recommendations must move to b/c/d, and no unbounded follow-ups/value quota. Helper froze now. Lead's exact acquired-party check, Grok component/customer-use precedents, RFD4-person certificate lead and unchanged raw metric/owner-target questions are preserved above. Lead alone owns canonical integration, EVD170144+, combined health impact, BOARD, and whole-PR Codex/Grok review. No full repo validation, application, tier review or independent council by this preliminary helper; no whole Atlas Done claim.
+
+Final-check correction: while the controller temporarily switched the shared branch for dependency work, parent round6 frame/raw.py became unavailable. The first freeze message's14-value/PASS claim was withdrawn immediately; the then-existing CSV had13 values. Research utility now uses the identical Text implementation locally and the frozen local frame.json; no new source work occurred. finish.py then actually regenerated14 rows and check.py actually printed PASS for14 values/five organizations. The14th row is only Koroseal's SCHEMA3.2 thermoplastics family for explicitly witnessed PVC. Root had independently verified/applied the earlier13-value subset; this packet makes no assertion about application of that family row. Final successful commands: finish.py =>14values/five organizations,93initialclasses and62outcomes; check.py =>PASS14 vocabulary/raw-matched rows,128routes,all controls. Root owns final admission/application.

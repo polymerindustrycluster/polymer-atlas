@@ -1,0 +1,81 @@
+# L10 Tier-1 markets/certifications round 3
+
+Current approved packet: **157 values (154 markets +3 certifications),48 active stored-Tier1 organizations,50 changed cells,67 claim/organization holds**. Permanent unused IDs240188/240254. Final Codex4 APPROVE f8290cc and Grok4 APPROVE3ac79b5(payloadf8290cc),0blockingfindings;earlier158-value/REFUTE/pending receipts below are pass history,not current status. Latest pinned-main replay6157e683fa07fff7098075665041c08f4156167a preserves the exact approved48orgcelldeltas and157fullEVDpayloads/shards (approved-integration.json). All4899activeorganizations:markets446→493,certs57→60;storedTier1active1293:markets221→268,certs21→24. Validator0errors(38236EVD),fiveguards/boundary/replay/SQLPASS. Controlleralone verifies/merges;no new frame authorized for this lane.
+
+
+Branch `agent/codex/markets-certs-tier1-round3`. First user: PIC supplier-matching staff; non-use review date 2026-12-15. Acceptance and frame were recorded before research/application. PR157 remains separately reviewed.
+
+## Acceptance and frame
+
+Controller assigned next 100 active organizations with nonempty stored `tier1_qualifier` and blank markets, PIC-18 site first then org_id. Frozen main bdb8b98 frame excludes prior 30 and unresolved ORG-000062/ORG-000101. `frame.csv` has 100 unique IDs; `frame.json` records 1261 active stored-Tier-1 organizations and 1067 eligible after exclusions. No website filter: 12 organizations lack websites; 88 have websites sharing 85 distinct URLs. Unselected organizations remain unworked.
+
+Only markets_served/certifications and matching append-only evidence may change. Exact SCHEMA vocabulary; explicit served-market claims, never generic material possibilities or parent-wide unions copied to subsidiaries. Bare medical/automotive stay unspecified unless the source is specific. No tier/website/status/notes/sources/parent/registry/derived-field edits. The two tier-U organizations remain U.
+
+Certifications follow R3c/R12: current certificate OR current own page naming a non-superseded edition. Dated certificates require identity/effective/expiry witnesses. Current-edition pages assert no invented dates. Superseded ISO9001/14001 and edition-less claims remain held; PR136's transition-window owner battery is unresolved. Failed fetches prove no absence/closure.
+
+Named gates: validator zero errors; known-answer/defect checks; every candidate quote freshly fetched; random30 raw-value audit with error count; complete unique frame/verdict coverage; no-write mutation failures; two-column/append-only boundary; byte-identical replay; Codex and Grok approval before ready.
+
+## Outcomes and provenance
+
+100 organization-enrichment verdicts = **48 VERIFIED / 52 STILL_UNCERTAIN**. VERIFIED means at least one accepted value, not a tier upgrade or every field verified. 159 candidate value rows = **158 VERIFIED (155 markets + 3 certs) / 1 held**. `holds.csv` records **66 claim/organization cases**: all 52 without fills and 14 partial cases. `attempts.csv`: 68 FETCHED / 20 UNFETCHABLE / 12 NO_WEBSITE organization routes; FETCHED means availability, not acceptance.
+
+**50 changed cells on 48 active stored-Tier-1 organizations**: 47 market cells + 3 certification cells; unchanged tiers A22/B24/U2. **158 new evidence rows**, one per accepted value: MN16/NC1/NJ2/OH128/TN1/TX10. Input-index IDs EVD-240160–240318; **240254 is an unused permanent hold slot**. No organization/site creates. Public own-site industries/products/quality pages and original PDFs only; each evidence row retains quote, URL and 2026-11-06 observation date. No private/licensed content.
+
+Initial bdb8b98 baseline, unit = active canonical organizations (4884): markets **404→451**, certs **52→55**. Active stored-Tier-1 subset (1261 organizations): markets **162→209**, certs **15→18**. These count populated organizations, not tags. `counts.json` records latest first application after main replay; `counts.sql` independently recounts canonical shards, excludes generated exports and reports frame/candidate yield.
+
+Accepted certifications (full own-site URLs and exact quotes in inputs):
+
+| Organization | Witness | Currency/scope |
+|---|---|---|
+| ORG-000823 SIMONA Boltaron | AS9100:D; Intertek 0146420-01 PDF | 2026-04-09 to 2029-04-08; named Newcomerstown entity, specialty thermoplastic sheet/fabricated parts. ISO9001 portion held. |
+| ORG-000612 Trelleborg Sealing Profiles US | IATF16949:2016; Smithers 21.197.2 / IATF0528128 PDF | 2024-07-03 to 2027-07-02; named US entity, Aurora extrusions. No market inferred from cert. |
+| ORG-000987 Nifco America | Current own homepage names QMS IATF16949:2016 | R3c current-edition-page basis; expiry unknown, date fields empty. Linked normative IATF page is not registrar evidence. No expired PDF overruled. |
+
+Scope-sensitive mappings: STERIS Corp/US Endoscopy medical_device use named-entity certificate product scopes (surgical lights/tables; biopsy devices), not ISO-label inference. Freudenberg-NOK OEM/aftermarket uses explicitly attributed TransTec claims. Spartech OEM uses light-truck OEM flooring. H.B. Fuller food packaging uses packaging_food_beverage. Emery textile/leather→apparel stays held. Generic energy→battery and nuclear→oil/gas are not asserted.
+
+Holds name settling facts and source routes. They include unavailable/challenge-only pages; parent/subsidiary attribution (Roechling, United Initiators, Polynt, Covestro, DuPont, Altivia, INEOS, IPL); Kasai's expired 2024 certificate; edition-less MPC/SECO claims; Superior Trim certificates naming different legal entities; off-vocabulary markets. Core Molding/2020 JS challenges are availability holds: fetch.py now rejects that body despite HTTP200. No operating-status conclusion follows.
+
+## Checks and replay
+
+Run from repo root:
+
+```sh
+python3 tasks/markets-certs-tier1-round3-2026-11-06/check.py
+python3 tasks/markets-certs-tier1-round3-2026-11-06/build.py
+python3 tasks/markets-certs-tier1-round3-2026-11-06/guardcheck.py
+python3 tasks/markets-certs-tier1-round3-2026-11-06/boundary.py <integration-main-sha>
+duckdb :memory: < tasks/markets-certs-tier1-round3-2026-11-06/counts.sql
+python3 scripts/validate.py
+```
+
+Before trusting the copied house fetch/matcher, four live known answers passed: CIMA markets positive, ESTERLE ISO2015 positive, Hudson ISO2015 positive, CIMA quality ISO2015 negative. Four fabricated quotes rejected. Raw matching reuses W from `tasks/evidence-repair-2-2026-11-04/prep.py` (requested ownership rawcheck tool absent). Curl browser UA, Jina fallback, pdftotext; ordered normalized tokens, not visual layout. New JS-challenge negative control rejects both routes. **159/159 candidate quotes**, accepted certificate identity/expiry quotes pass; zero unavailable candidate pages. Fresh random sample seed20361107: **30 VERIFIED value rows, 0 raw errors**, routes and parsed-text hashes in audit30.csv. Thirty values, not distinct organizations or semantic-review substitute.
+
+Runnable `guardcheck.py` repeats the following in a temporary copy with canonical-file hashes. Pre-application mutations: duplicate existing evidence ID; IATF page edition2016→2015; dated-cert expiry→2025. Each rejected before writes, canonical hashes unchanged. Dropping a verdict failed 99/100 coverage. boundary.py checks existing keys, old evidence immutability, allowed fields and monotone tag additions, then byte-identical replay. Initial base bdb8b98: 48 orgs/47+3 cells/158 evidence; zero row loss/unrelated fields/old evidence edits. Validator **zero errors**, 35610 evidence rows on initial base. Existing warning queues remain warnings. Shared scripts unchanged; scripts pytest gate not triggered.
+
+On main movement, keep branch history as pre-pass backup. Merge current main per controller-authorized recipe; replace **ALL organization AND evidence shards MN/NC/NJ/OH/TN/TX with main versions**, replay builder, rerun checks. Never retain hand-merged CSV. boundary.json records latest base; refresh counts after replay. Frozen frame/input-index IDs stay unchanged.
+
+Latest integration: merged pinned main **fd55c1049a3aa317e3bef9f4112b739be3500001**, restored all 12 owned data files from that exact base, replayed builder. Active canonical organizations now **4899**, markets **404→451**, certs **52→55**; stored-Tier-1 counts remain **1261 / 162→209 / 15→18**. Same 48 organizations/50 cells/158 evidence, zero old-row loss/unrelated changes, byte-identical replay. Fresh raw159 + random30/0, all four no-write/yield guard checks and validator zero errors (**36563 evidence rows**) pass. Origin/main is moving in parallel; this receipt pins the actual merge parent.
+
+## Refutes and limits
+
+Codex4/Grok4 final deep reviews pending; no completion approval claimed. Refute brief highlights Nifco current-page basis, entity scope and specific market mappings.
+
+Unselected organizations, blocked routes, private-corpus completeness, hosted CI, owner ISO-transition ruling, and status/parent/dedupe settlements are unchecked. Current own-page certificate expiry remains unknown where stated; dated PDFs are point-in-time observations.
+
+Codex4 deep **REFUTE** @61ed9bf: one preflight finding, SCHEMA4.13 mirror placement. An identical planned EVD row in a foreign shard was accepted because payload-only indexing lost its filename. Exact clerk fixture reproduced before fix: identical240160inDE wrote12files and appended157, leavingOH witness absent; different-payload control rejected. **Accepted/fixed**: retain each existing EVD's shard and payload, require both expected home shard and exact observation before replay. `shard-guard-repro.json` records before/after; both foreign-shard variants now reject with0writes. guardcheck.py adds the identical-payload move control, preserving all CSV hashes on rejection; five controls nowPASS. Boundary/replay/validatorPASS; all substantive value/evidence rows remain unchanged. Codex rereview and final Grok pending; no completion approval yet.
+
+Controller ruling after this finding: strengthen active builders only. Historical merged PR136/157 builders lack this shard-provenance guard, are retained unchanged and **must not be re-run**. Their already-merged data was validated; no historical-data finding was reported. Apply/replay current packets only through these hardened active builders.
+
+Guard-fix integration: pinned main **80bb5140e0f1598d85fe30b28777def59c9b83c6**, exactmain copies of all12 owned data files + hardened builder. packet-equivalence.json confirms all48 reviewed organization-cell deltas and158 complete evidence rows equal61ed9bf vsfd55c10; inputs/frame/raw-checker/fetcher identical. Current active4899 markets **416→463**,certs **54→57**; unchangedtiersA22/B24/U2; validator0(**37191EVD**),fiveguardcontrols/boundary/replayPASS. No fullsource rerun for this guard-only fix; prior raw159/fresh30zero and Codex independent54-claim census remain the source-review receipts. Controller's historical-builder stop supersedes their earlier replay recipes;136/157 must not be re-run.
+
+Grok4 deep **REFUTE** @d20d477: EVD240188/ORG000851 automotive_oem overreads TransTec aftermarket kits containing components also supplied to OEMs; that sentence does not state FNST serves OEM customers. **Accepted/withdrawn** before integration: input index28 becomes STILL_UNCERTAIN; EVD240188 is permanently unused, never rewritten/reused. Retain automotive_aftermarket240187. This supersedes earlier README OEM-attribution acceptance/equivalence claims only for this one candidate. Rebuild from exact main files, not edit/delete a main evidence observation. One new named settling-fact hold. All other substantive input indexes/IDs unchanged. Former158accepted/155markets become **157accepted/154markets+3certs**;48enrichedorgs/50cells unchanged;holds66→67claimcases,orgverdicts48/52 unchanged. Fresh source audit will be rerun with157accepted values. Codex's former semantic no-findings receipt does not override this concrete attribution fact; both reviewers receive reduced final packet.
+
+Reduced final-packet integration on **542629e53a0d07d55cf49b6da958f2219fbb5ba5** (includes merged190):exact main copies of all12ownedfiles+builder. packet-equivalence.json independently confirms the sole substantive withdrawal is240188/ORG851automotive_oem; remaining157fullEVD payloads and all other orgtagvalues unchanged. **157accepted=154markets+3certs**,48orgs/50cells,OH127/MN16/NC1/NJ2/TN1/TX10. PermanentunusedIDs240188and240254. Mainactive4899 markets **446→493**,certs **57→60**;mainstoredTier1active1293 markets **221→268**,certs **21→24**. Initialselection1261denominator is historical; no qualifieredits. Freshcheck stillmatches159candidatequotes incl2holds (those aren'tapplied), all3certidentity/expiry conditions;freshseed20361107 random30acceptedvalues0errors. Fiveguards/boundary/replay/validator0(**37631EVD**)PASS. Both rereviews pending on this reduced packet, superseding old158-value snapshots.
+
+Codex4 (OpenAI) **APPROVE — guard correction only**, reviewed d20d477,0findings. Independently reproduced old61ed9bf identicalforeign240160 acceptance/writes versus newbothvariantsreject0writes;fiveguards,oldpacketdelta/shard equality,boundary/replay/validator0 andhistorical-builder nonmutationPASS. Reviewer fetched currentf8290cc and confirmedbuild.py/guardcheck.py byte-identicald20d477. Report controller storage reviews/179-clerk-codex-4-rereview.md. **This settles only the preflight finding**: it does not approve the superseded158-value packet or the laterOEMwithdrawal. Final reduced157-value/67-hold packet remains pending explicit Codex/Grok approval; source/hostedCI not rerun by this guard-only review. No data/code changed for this receipt.
+
+**Final reduced-packet Grok4 APPROVE** @3ac79b5be4f7c77f33b75335f7287c4530e3a3e2 (substantive payload f8290cc),0findings. This approves the157-value packet, not the superseded d20d477158-value packet; its earlierOEM REFUTE remains valid for that old snapshot. Independently confirmed soleinputindex28withdrawal,ORG851aftermarket-only cell/240187 retained,240188absentfrompacketandbase,holes188/254permanent,allother157payloadsandshardsunchanged,48org/47market+3certcells,67holds,allmainkeys/otherfields/legacyEVDpreserved. Recomputedactive4899 markets446→493 cert57→60;Tier1active1293 markets221→268 cert21→24. Fiveguards/boundary/replay/validator0(37631EVD)/row-loss542629ePASS;historicalbuildersunchanged/notrun. Guard-reproJSON records12changedshardsbefore/0after,not an append-count field;the157appendcount came from separate old-builder stdout. Sourcecensus/livecheck andhostedCI not repeated by thisreview;lane'sfreshraw159candidate/fresh30acceptedzero receipt above remains. **Explicit final Codex reduced-packet review pending**;Codexguard-only approval does not substitute. Documentation receipt only, no data/code change.
+
+Final Codex4 (OpenAI) **APPROVE reduced157-value packet** @f8290cc,0findings,notjustguardapproval. Independently re-fetched TransTec aftermarket context,confirmedonlyOEMwithdrawal/index28/240188unused,other157evidencepayloads/shardsandallotherorgtagsunchanged;67holds/fixedIDs/counts. Fiveguards/validator0/rowloss542629e/boundary/replayPASS;exactmainbuilderreproducesallcanonicalbytes. Unchangedsourceclaimsretainprior deepreviewcoverage;159/30sourcecensus andhostedCI not repeated. Report reviews/179-clerk-codex-4-withdrawal.md. This supersedes prior final-Codex-pending text above without changing historicalguard-onlyverdict.
+
+Controller-requested approved replay on **6157e683fa07fff7098075665041c08f4156167a**: restoredALL12ownedMN/NC/NJ/OH/TN/TXorganization/evidencefiles fromthatmain,thenunchangedhardenedbuilder. approved-integration.json independentlycompares actualdelta542629e→f8290ccagainst6157e68→replayedtree:exact48orgcellsetsand157fullEVDrows+shards equal;oldmainkeys/otherfields/legacyEVDpreserved. build/guard/check/fetch/inputs/frame/verdicts/holds byte-identicalapprovedf8290cc. Fiveguards/boundary/replay/validator0(38236EVD)/independentSQLPASS;active4899markets446→493cert57→60,Tier1active1293markets221→268cert21→24. No fullsource rerun for pureintegration. Historicalbuildersunchanged/notrun. Pushed/ready afterthisreceipt;controllerownsmerge/status.

@@ -1,0 +1,110 @@
+[
+  {
+    "org_id": "Avient",
+    "website": "https://www.avient.com/",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "https://www.avient.com/company/news-events",
+    "newsroom_feed_url": "",
+    "label": "News + Events",
+    "title": "Avient News Center: Press Releases &amp; Upcoming Events",
+    "years": "2014;2015;2016;2017;2018;2019;2020;2021;2022;2023;2024;2025;2026",
+    "feed_items": 0,
+    "note": "Candidate: review purpose and dated items",
+    "attempts": [
+      {
+        "url": "https://www.avient.com/",
+        "final": "https://www.avient.com/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.avient.com/company/news-events",
+        "final": "https://www.avient.com/company/news-events",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.avient.com/feed/",
+        "final": "https://www.avient.com/feed/",
+        "status": "404",
+        "error": ""
+      },
+      {
+        "url": "https://www.avient.com/rss.xml",
+        "final": "https://www.avient.com/rss.xml",
+        "status": "403",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "RPM",
+    "website": "https://www.rpminc.com/",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "https://www.rpminc.com/news/",
+    "newsroom_feed_url": "",
+    "label": "News",
+    "title": "Company News | RPM International Inc.",
+    "years": "2016;2017;2018;2019;2020;2021;2022;2023;2024;2025;2026;2027;2029",
+    "feed_items": 0,
+    "note": "Candidate: review purpose and dated items",
+    "attempts": [
+      {
+        "url": "https://www.rpminc.com/",
+        "final": "https://www.rpminc.com/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.rpminc.com/news/",
+        "final": "https://www.rpminc.com/news/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.rpminc.com/feed/",
+        "final": "https://www.rpminc.com/feed/",
+        "status": "404",
+        "error": ""
+      },
+      {
+        "url": "https://www.rpminc.com/rss.xml",
+        "final": "https://www.rpminc.com/rss.xml",
+        "status": "404",
+        "error": ""
+      }
+    ]
+  },
+  {
+    "org_id": "GEON",
+    "website": "https://www.geon.com/",
+    "verdict": "STILL_UNCERTAIN",
+    "newsroom_url": "https://www.geon.com/news",
+    "newsroom_feed_url": "https://www.geon.com/news/rss.xml",
+    "label": "News",
+    "title": "News | GEON\u00ae Performance Solutions",
+    "years": "2024;2025;2026",
+    "feed_items": 10,
+    "note": "Candidate: review purpose and dated items",
+    "attempts": [
+      {
+        "url": "https://www.geon.com/",
+        "final": "https://www.geon.com/",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.geon.com/news",
+        "final": "https://www.geon.com/news",
+        "status": "200",
+        "error": ""
+      },
+      {
+        "url": "https://www.geon.com/news/rss.xml",
+        "final": "https://www.geon.com/news/rss.xml",
+        "status": "200",
+        "error": ""
+      }
+    ]
+  }
+]
