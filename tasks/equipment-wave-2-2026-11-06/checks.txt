@@ -1,0 +1,5 @@
+existing_id refused before any write
+duplicate_name refused before any write
+unheld_host refused before any write
+PASS: 53/53 VERIFIED equipment rows; main rows preserved; exact projection; byte-idempotent replay; 3 negative controls
+PAGES PASS: 53 equipment names/classes/access/source links across 8 actual host HTML sections

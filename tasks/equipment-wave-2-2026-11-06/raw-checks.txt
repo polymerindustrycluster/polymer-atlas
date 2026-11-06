@@ -1,0 +1,12 @@
+RAW PASS 12 equipment rows https://academic.csuohio.edu/center-for-innovation-in-advanced-functional-materials/center-equipment/
+RAW PASS 3 equipment rows https://engineering.cmu.edu/mcf/news/2026/02/12-new-equipment.html
+RAW PASS 5 equipment rows https://ifmd.lehigh.edu/soft-materials-characterization-facility-s-mcf
+RAW PASS 4 equipment rows https://sites.psu.edu/colbyrheology/facilities/
+RAW PASS 7 equipment rows https://www.ceas.uc.edu/research/centers-labs/advanced-materials-characterization-center.html
+RAW PASS 4 equipment rows https://www.nasa.gov/glenn/research/environmental-effects-coatings/
+RAW PASS 6 equipment rows https://www.ohio.edu/engineering/camp/facilities-equipment
+RAW PASS 12 equipment rows https://www.utoledo.edu/engineering/cmsc/instruments/
+RAW yield 53 / 53 equipment rows; no skipped sources
+Known-answer 3/3; fabricated-name negative PASS; 53 equipment rows; 53 new
+By institution: {'NASA Glenn Research Center': 4, 'The University of Toledo': 12, 'University of Cincinnati': 7, 'Cleveland State University': 12, 'Ohio University': 6, 'Pennsylvania State University (University Park)': 4, 'Lehigh University': 5, 'Carnegie Mellon University': 3}
+By equipment_class: {'mass_spectrometry': 3, 'tga': 4, 'dsc': 5, 'sem': 8, 'tem': 2, 'optical_microscopy': 5, 'dma': 1, 'ftir': 3, 'raman': 1, 'xrd': 2, 'rheometer_rotational': 6, 'hardness_tester': 4, 'universal_tester': 2, 'afm': 1, 'permeation_tester': 1, 'additive_manufacturing_polymer': 3, 'fatigue_tester': 1, 'saxs_waxs': 1}
