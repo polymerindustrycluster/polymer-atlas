@@ -1,5 +1,5 @@
 {
-  "commit": "5a90bb17f52ad3ae7fa86482f8cd0b2e8d57b8a1",
+  "commit": "d1e618b06ae71588e80d117b042cf5c0308e0d50",
   "orgs": {
     "ORG-001336": {
       "org_id": "ORG-001336",
@@ -46,8 +46,8 @@
       "last_activity_evidence_date": "2026-10-28",
       "liveness_signal": "",
       "monitor_watch": "false",
-      "tier1_qualifier": "",
-      "tier1_qualifier_basis": "",
+      "tier1_qualifier": "national_footprint",
+      "tier1_qualifier_basis": "national_footprint: states=IA,OH,SC (3)",
       "newsroom_url": "",
       "newsroom_feed_url": "",
       "linkedin_url": ""
@@ -97,8 +97,8 @@
       "last_activity_evidence_date": "2026-10-29",
       "liveness_signal": "",
       "monitor_watch": "false",
-      "tier1_qualifier": "",
-      "tier1_qualifier_basis": "",
+      "tier1_qualifier": "national_footprint",
+      "tier1_qualifier_basis": "national_footprint: states=CA,MO,PA (3)",
       "newsroom_url": "",
       "newsroom_feed_url": "",
       "linkedin_url": ""
