@@ -36,6 +36,8 @@ def main():
   fed=[ita[i[4:]] for i in c['sources_with_ids'].split(';') if i.startswith('ITA:')];assert fed
   f=fed[0];assert f['establishment_id']==v['establishment_id']
   create_dedupe[v['cluster_id']]=dedupe(tables,domain=org['website'] or None,name=f['company_name'],street=f['street'],city=f['city'],state=a.state,zip_=f['zip5'])
+  matches={key for key,(_,r) in orgs.items() if r['status']=='active' and not r['successor_org_id'] and name_key(f['company_name']) in {name_key(n) for n in [r['legal_name']]+r['trade_names'].split(';')}}
+  assert matches=={oid}, 'ambiguous filed operator'
   aliases=[org['legal_name']]+org['trade_names'].split(';');assert name_key(f['company_name']) in {name_key(x) for x in aliases}
   assert all(r['reliability']=='ok' and r['state']==a.state and r['naics_code']==f['naics_code'] and street_key(r['street'])==street_key(f['street']) for r in fed)
   assert f['street'] and f['city'] and f['zip5'] and f['schema_2_2_signal']=='P'

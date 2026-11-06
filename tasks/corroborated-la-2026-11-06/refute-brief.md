@@ -1,3 +1,5 @@
+LATEST: fresh-main re-screen still42=2VERIFIED40holds, T3LA7→9/117. Explicit apply-time unique-active-company-name preflight now rejects a third injected ambiguous-operator mutation before writes, in addition to SITE/EVD duplicate controls. Current baseline in baseline.json; main merge adds no Louisiana records.
+
 Adversarial completion refute L3 CORROBORATED Louisiana, separate new-main branch; inspect full2-create census.42clusters=2VERIFIED40namedholds.2newC/unknownsites under2heldparents,0org,15evidence(14siteC +1primary-governmentregistrantidentity A),1trade_namesvariant. SourcebankedOSHA ITACY2025 packet2026-11-01 reviewed2026-11-06 officialURLkeyedID. No own-site/current-operating/freshdownload claims. Actual filed company independently normalizes to one surviving active heldlegal/tradename; parent/plantlabels alone held. Polymer manufacturing description plusproducer primarycode required; alllinkedITAcode/street/state reliableandconsistent. Dedupeallshards andcreate-timedomainquery. Countyblank. SITE012500+frozeninputindex,EVD306000+20indexwithincontrollerblock300000..309999. No canonical existing data/evidence changed except1alias. Both full-source-census lines provided below. validate0errors,check.pyPASSexact42/2/15,3censusmutations,global/reservedID,sourcefields,CunknownUS,strict3267→9/117. Replaybyteidentical. Negative control found dictionary-collapse risk; fixed with SITE/EVD globaluniqueness assertions before dictionaries. Both wrong-shard duplicates rejected BEFORE ANY WRITES, tempdatahashcomparison proves it. Same fix is propagating to MO/SC PR164. Known3operatorIDs+ambiguousaliasmutation pass. Hold cases need facts, do not demand all42create. End APPROVE or REFUTE with material findings and inspected/uninspected coverage; no edits to lane worktree. Twofamilyapprovalrequired percontrollerclerkroute.
 
 
@@ -69,6 +71,8 @@ T3 strict326 establishments: 7→9 /117 QCEW2023 establishments; 5.98%→7.69%. 
 
 Negative control initially exposed a real global-ID dictionary-collapse bug dependent on shard iteration order. Fixed by asserting SITE and EVD uniqueness before building lookup dictionaries; both injected duplicates now fail before writes. Same fix propagates to pending MO/SC PR164. No canonical data duplication occurred.
 
+Fresh-main identity preflight also asserts the filed company_name resolves to exactly one active surviving organization at application time, preventing stale packet identity from bypassing newly added aliases. A temp-copy mutation adds that company name to another active organization; it is rejected before any data write. SITE/EVD duplicates and ambiguous operator are three independent no-write negative controls. All42 verdicts and2 creates unchanged after fresh-main screening.
+
 
 FILE build.py
 #!/usr/bin/env python3
@@ -109,6 +113,8 @@ def main():
   fed=[ita[i[4:]] for i in c['sources_with_ids'].split(';') if i.startswith('ITA:')];assert fed
   f=fed[0];assert f['establishment_id']==v['establishment_id']
   create_dedupe[v['cluster_id']]=dedupe(tables,domain=org['website'] or None,name=f['company_name'],street=f['street'],city=f['city'],state=a.state,zip_=f['zip5'])
+  matches={key for key,(_,r) in orgs.items() if r['status']=='active' and not r['successor_org_id'] and name_key(f['company_name']) in {name_key(n) for n in [r['legal_name']]+r['trade_names'].split(';')}}
+  assert matches=={oid}, 'ambiguous filed operator'
   aliases=[org['legal_name']]+org['trade_names'].split(';');assert name_key(f['company_name']) in {name_key(x) for x in aliases}
   assert all(r['reliability']=='ok' and r['state']==a.state and r['naics_code']==f['naics_code'] and street_key(r['street'])==street_key(f['street']) for r in fed)
   assert f['street'] and f['city'] and f['zip5'] and f['schema_2_2_signal']=='P'
@@ -219,8 +225,18 @@ def main():
     assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
     assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
     wrong.write_bytes(original)
+   wrong=data/'organizations_AL.csv';original=wrong.read_bytes();rows=read(wrong)
+   other=next(r for r in rows if r['status']=='active' and not r['successor_org_id'])
+   other['trade_names']=(other['trade_names']+'; '+ita[alloc[0]['establishment_id']]['company_name']).strip('; ')
+   with wrong.open('w',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
+   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   run=subprocess.run([sys.executable,str(H/'build.py'),'--state','LA','--data-dir',str(data),'--apply'],capture_output=True,text=True)
+   assert run.returncode and 'ambiguous filed operator' in run.stderr,run.stderr
+   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   wrong.write_bytes(original)
  print('PASS exact42 census;3 census defects caught;2C sites/15 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
+ if a.negative_controls:print('PASS injected SITE/EVD collisions and ambiguous filed operator refused before any data write')
 if __name__=='__main__':main()
 
 

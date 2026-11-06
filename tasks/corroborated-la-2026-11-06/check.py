@@ -55,6 +55,16 @@ def main():
     assert run.returncode and 'conflicting ID' in run.stderr,run.stderr
     assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')},'collision wrote data'
     wrong.write_bytes(original)
+   wrong=data/'organizations_AL.csv';original=wrong.read_bytes();rows=read(wrong)
+   other=next(r for r in rows if r['status']=='active' and not r['successor_org_id'])
+   other['trade_names']=(other['trade_names']+'; '+ita[alloc[0]['establishment_id']]['company_name']).strip('; ')
+   with wrong.open('w',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows)
+   before_bytes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   run=subprocess.run([sys.executable,str(H/'build.py'),'--state','LA','--data-dir',str(data),'--apply'],capture_output=True,text=True)
+   assert run.returncode and 'ambiguous filed operator' in run.stderr,run.stderr
+   assert before_bytes=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
+   wrong.write_bytes(original)
  print('PASS exact42 census;3 census defects caught;2C sites/15 evidence bound to ITA; unique/reserved IDs; T3 reconciled',json.dumps(after))
- if a.negative_controls:print('PASS injected cross-shard SITE and EVD collisions refused before any data write')
+ if a.negative_controls:print('PASS injected SITE/EVD collisions and ambiguous filed operator refused before any data write')
 if __name__=='__main__':main()
