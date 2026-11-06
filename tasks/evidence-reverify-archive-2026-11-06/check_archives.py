@@ -4,7 +4,7 @@ import re
 import sys
 import hashlib
 import time
-from archive import same_page
+from archive import same_page, same_capture
 from run import HERE, ROOT, read, fetch, on_page, bound_verdicts, write
 
 
@@ -34,7 +34,7 @@ def main():
                 code = pages[ref]['attempts'][-1]['status']
                 if attempt < 2: time.sleep(max(60 * 2**attempt, pages[ref]['attempts'][-1].get('retry_after',0)) if code == '429' else 10)
         f = pages[ref]
-        if f['status'] != 'ok' or f['attempts'][-1]['effective_url'].rstrip('/') != ref.rstrip('/') or not on_page(v['quote'],ROOT/f['page']):
+        if f['status'] != 'ok' or not same_capture(f['attempts'][-1]['effective_url'], ref) or not on_page(v['quote'],ROOT/f['page']):
             failures.append(eid)
         else:
             receipts.append(dict(evidence_id=eid,archive_ref=ref,quote_sha256=hashlib.sha256(v['quote'].encode()).hexdigest(),packet_sha256=hashlib.sha256(frozen).hexdigest(),checked_at=f['fetched_at']))

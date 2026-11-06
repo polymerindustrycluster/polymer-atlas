@@ -124,3 +124,11 @@ Controller 05:55 ruling supersedes council-only ordering and permits draft publi
 clerk re-review of the corrected commit is pending; **no Done claim**. The original refute outputs are local, with the
 verdicts and responses recorded here. No semantic claim re-verification, replacement evidence, scope/ring/vocabulary
 ruling, rendered visibility audit or PDF text extraction is claimed.
+
+Codex3 clerk @4ef764e: REFUTE one remaining replay-query gate defect. Reproduced before editing with the clerk's
+controlled fixture: a requested query value key=a/ redirected to key=a passed and wrote a receipt. Current 34 rows
+have no queries; no bad current row was demonstrated. Fixed all three replay-effective-response comparisons via
+same_capture: exact capture timestamp plus structural original-page comparison, preserving query case/slashes.
+check_replay_binding.py exercises the actual receipt gate: exact replay passes; changed query and capture timestamp
+fail and leave no successful receipt. PASS. The continuation cache collector receives the same shared guard.
+Existing frame, judgments, quotes and canonical archive rows do not change. Corrected clerk re-review is required.

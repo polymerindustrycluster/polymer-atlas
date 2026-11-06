@@ -6,6 +6,8 @@ Ground-truth checks: known_answers.py PASS (4 inspected records + matcher/CDX/UR
 
 Review all current files below and identify concrete defects, distinguishing the original in-flight code from current code. Return VERDICT APPROVE or REFUTE with inspected/uninspected scope. Original council findings are recorded in README; raw outputs remain worktree build/l1-refute-{codex,grok}.txt.
 
+Latest correction: Codex3 proved a replay redirect query-value defect in the full-URL rstrip comparison. The new same_capture helper binds exact capture timestamp and structurally compares the captured original URL, preserving query values. It is used by collector, fresh checker and long worker. Actual gate regression tests exact success plus query/timestamp rejection and verifies failed receipts stay empty. No frozen frame/judgments/current34archive rows changed; current rows have no queries. Re-review this fix against 4ef764e.
+
 --- README.md ---
 # PIC-18 preserved-quote re-verification and archive links — 2026-11-06
 
@@ -133,6 +135,14 @@ Controller 05:55 ruling supersedes council-only ordering and permits draft publi
 clerk re-review of the corrected commit is pending; **no Done claim**. The original refute outputs are local, with the
 verdicts and responses recorded here. No semantic claim re-verification, replacement evidence, scope/ring/vocabulary
 ruling, rendered visibility audit or PDF text extraction is claimed.
+
+Codex3 clerk @4ef764e: REFUTE one remaining replay-query gate defect. Reproduced before editing with the clerk's
+controlled fixture: a requested query value key=a/ redirected to key=a passed and wrote a receipt. Current 34 rows
+have no queries; no bad current row was demonstrated. Fixed all three replay-effective-response comparisons via
+same_capture: exact capture timestamp plus structural original-page comparison, preserving query case/slashes.
+check_replay_binding.py exercises the actual receipt gate: exact replay passes; changed query and capture timestamp
+fail and leave no successful receipt. PASS. The continuation cache collector receives the same shared guard.
+Existing frame, judgments, quotes and canonical archive rows do not change. Corrected clerk re-review is required.
 
 --- run.py ---
 #!/usr/bin/env python3
@@ -338,6 +348,12 @@ def same_page(a, b):
     return norm(a) == norm(b)
 
 
+def same_capture(a, b):
+    pattern = r'https://web\.archive\.org/web/(\d{14})/(https?://\S+)'
+    left, right = re.fullmatch(pattern, a), re.fullmatch(pattern, b)
+    return bool(left and right and left[1] == right[1] and same_page(left[2], right[2]))
+
+
 def available(url):
     path = CACHE / (hashlib.sha256(url.encode()).hexdigest() + '.available.json')
     if path.exists(): return json.loads(path.read_text())
@@ -382,7 +398,7 @@ def main():
             if code == '429': time.sleep(30)
             effective = f['attempts'][-1]['effective_url']
             # Redirecting to another capture/page cannot bind the discovered timestamp.
-            if f['status'] == 'ok' and effective.rstrip('/') == ref.rstrip('/'):
+            if f['status'] == 'ok' and same_capture(effective, ref):
                 status = 'READABLE'
                 for e in grouped[a['url']]:
                     if on_page(e['quote'], ROOT / f['page']):
@@ -413,7 +429,7 @@ import subprocess
 import time
 import urllib.parse
 from run import CACHE, HERE, ROOT, read, write, fetch, on_page
-from archive import FIELDS, same_page
+from archive import FIELDS, same_page, same_capture
 
 END = time.monotonic() + 11 * 3600
 LAST = {}
@@ -483,7 +499,7 @@ def main():
                 if f['attempts'][-1]['status']!='429':break
                 print('429 replay backoff',replay_delay,flush=True);time.sleep(max(replay_delay,f['attempts'][-1].get('retry_after',0)));replay_delay=min(replay_delay*2,1800)
             if f is None: raise TimeoutError('Worker window exhausted during replay; resume this URL')
-            if f['status']!='ok' or f['attempts'][-1]['effective_url'].rstrip('/')!=ref.rstrip('/'):continue
+            if f['status']!='ok' or not same_capture(f['attempts'][-1]['effective_url'],ref):continue
             for e in rows:
                 if any(x['evidence_id']==e['evidence_id'] for x in links):continue
                 if on_page(e['quote'],ROOT/f['page']):
@@ -545,7 +561,7 @@ import re
 import sys
 import hashlib
 import time
-from archive import same_page
+from archive import same_page, same_capture
 from run import HERE, ROOT, read, fetch, on_page, bound_verdicts, write
 
 
@@ -575,7 +591,7 @@ def main():
                 code = pages[ref]['attempts'][-1]['status']
                 if attempt < 2: time.sleep(max(60 * 2**attempt, pages[ref]['attempts'][-1].get('retry_after',0)) if code == '429' else 10)
         f = pages[ref]
-        if f['status'] != 'ok' or f['attempts'][-1]['effective_url'].rstrip('/') != ref.rstrip('/') or not on_page(v['quote'],ROOT/f['page']):
+        if f['status'] != 'ok' or not same_capture(f['attempts'][-1]['effective_url'], ref) or not on_page(v['quote'],ROOT/f['page']):
             failures.append(eid)
         else:
             receipts.append(dict(evidence_id=eid,archive_ref=ref,quote_sha256=hashlib.sha256(v['quote'].encode()).hexdigest(),packet_sha256=hashlib.sha256(frozen).hexdigest(),checked_at=f['fetched_at']))
@@ -589,6 +605,52 @@ def main():
 
 
 if __name__ == '__main__': main()
+
+--- check_replay_binding.py ---
+"""Gate-level regression for Codex3's redirected replay-query finding."""
+import csv
+import sys
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
+import check_archives as checker
+from archive import same_capture
+
+SOURCE = 'https://example.test/page?key=a/'
+REF = 'https://web.archive.org/web/20260102030405/' + SOURCE
+QUOTE = 'This known preserved quote names the actual manufacturing activity stated in the evidence record'
+
+
+def gate_case(effective, expected):
+    with tempfile.TemporaryDirectory() as d:
+        root=Path(d);(root/'data').mkdir()
+        row=dict(evidence_id='EVD-TEST',archive_ref=REF,captured_at='2026-01-02',created_by='test')
+        for target in (root/'archive_links.csv',root/'data/archive_links.csv'):
+            with target.open('w') as f:
+                w=csv.DictWriter(f,fieldnames=list(row));w.writeheader();w.writerow(row)
+        (root/'page.txt').write_text(QUOTE)
+        verdict=dict(judgment='SUPPORTED',quote=QUOTE,source_ref=SOURCE)
+        response=dict(status='ok',page='page.txt',attempts=[dict(effective_url=effective,status='200')],fetched_at='2026-11-06T11:00:00Z')
+        with patch.object(checker,'HERE',root),patch.object(checker,'ROOT',root),patch.object(checker,'bound_verdicts',return_value={'EVD-TEST':verdict}),patch.object(checker,'fetch',return_value=response),patch.object(checker.time,'sleep',return_value=None),patch.object(sys,'argv',['check_archives.py']):
+            try:
+                checker.main()
+            except AssertionError as e:
+                assert not expected and e.args == (['EVD-TEST'],), e
+            else:
+                assert expected, 'redirected capture incorrectly passed fresh gate'
+        receipts=list(csv.DictReader((root/'archive_checks.csv').open()))
+        assert len(receipts) == int(expected)
+
+
+assert same_capture(REF,REF)
+assert not same_capture(REF,REF[:-1])
+assert not same_capture(REF,REF.replace('key=a/','key=A/'))
+assert not same_capture(REF,REF.replace('20260102030405','20260102030406'))
+assert same_capture('https://web.archive.org/web/20260102030405/https://www.example.test/page/', 'https://web.archive.org/web/20260102030405/http://example.test/page')
+gate_case(REF,True)
+gate_case(REF[:-1],False)
+gate_case(REF.replace('20260102030405','20260102030406'),False)
+print('Replay binding PASS: exact positive, redirected query and different timestamp rejected; no failed receipts')
 
 --- known_answers.py ---
 """Four inspected live-page examples plus adversarial matcher mutations."""

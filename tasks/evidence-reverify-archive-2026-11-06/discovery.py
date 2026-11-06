@@ -7,7 +7,7 @@ import subprocess
 import time
 import urllib.parse
 from run import CACHE, HERE, ROOT, read, write, fetch, on_page
-from archive import FIELDS, same_page
+from archive import FIELDS, same_page, same_capture
 
 END = time.monotonic() + 11 * 3600
 LAST = {}
@@ -79,7 +79,7 @@ def main(results=None, output=None):
                 if f['attempts'][-1]['status']!='429':break
                 print('429 replay backoff',replay_delay,flush=True);time.sleep(max(replay_delay,f['attempts'][-1].get('retry_after',0)));replay_delay=min(replay_delay*2,1800)
             if f is None: raise TimeoutError('Worker window exhausted during replay; resume this URL')
-            if f['status']!='ok' or f['attempts'][-1]['effective_url'].rstrip('/')!=ref.rstrip('/'):continue
+            if f['status']!='ok' or not same_capture(f['attempts'][-1]['effective_url'],ref):continue
             for e in rows:
                 if any(x['evidence_id']==e['evidence_id'] for x in links):continue
                 if on_page(e['quote'],ROOT/f['page']):
