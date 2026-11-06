@@ -32,4 +32,17 @@ The only new matching change in this batch is the literal Rte→Route abbreviati
 
 Pre-pass backups local/ignored; baseline/journal pin source main, fields, evidence IDs, counts and hashes. Deep Codex+Grok refutes remain pending. This final cohort ends new rounds; review fixes on156/192/207/208 and this PR remain owned.
 
-Original A/B frame completion, unit448 unique active blank-street site rows frozen after the first Ohio pass: PR15660=19VERIFIED41holds; merged171100=38VERIFIED62holds;207100=25VERIFIED75holds;208100=36VERIFIED64holds;final888=24VERIFIED64holds. Total448=142VERIFIED306holds,0unworked. frame_completion.csv/summary.json reconcile exact IDs and source commits. Only38 are merged in this baseline;104 remain proposed across156/207/208/final88, with all reviews still respected. The separate40-row C/U packet192 is outside this A/B frame.
+Original A/B frame completion, unit:448 unique active blank-street site rows frozen after the first Ohio pass.
+
+| Cohort | Site rows | VERIFIED | Holds |
+|---|---:|---:|---:|
+|PR156|60|19|41|
+|Merged171|100|38|62|
+|PR207|100|25|75|
+|PR208|100|36|64|
+|Final88|88|24|64|
+|Total|448|142|306|
+
+frame_completion.csv and frame_completion_summary.json reconcile exact IDs and source commits;0unworked. Only38fills are merged in this baseline;104 remain proposed across156/207/208/final88, with all reviews still respected. The separate40-row C/U packet192 is outside this A/B frame.
+
+Pre-restoration row-loss check: PASS at HEAD66cc2d7 against explicit419678b2e3e415194dad804af8daca649b163f3e, using the unchanged house scripts/check_row_loss.py from round6's branch. Since the incident removed that script from this branch, it was executed with __file__ bound to this worktree's scripts/check_row_loss.py (ROOT=this cwd), not /tmp. Native guard must be rerun after209restores main; no pre-restoration result is presented as a native-file run.

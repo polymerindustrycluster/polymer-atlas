@@ -7,6 +7,14 @@ def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  root=build.ROOT;selected,verdicts,ev=build.plan()
  flags,note_ev=build.note_plan();flag_byid={r['site_id']:r for r in flags}
+ completion=build.read(build.TASK/'frame_completion.csv')
+ assert len(completion)==len({r['site_id'] for r in completion})==448
+ assert {r['site_id'] for r in completion}=={r['site_id'] for r in build.read(build.TASK/'frame.csv')}
+ assert {r['site_id'] for r in completion if r['batch_pr']=='round7'}=={r['site_id'] for r in selected}
+ for batch,n,fills in (('156',60,19),('171',100,38),('207',100,25),('208',100,36),('round7',88,24)):
+  rows=[r for r in completion if r['batch_pr']==batch]
+  assert len(rows)==n and sum(r['verdict']=='VERIFIED' for r in rows)==fills and sum(r['verdict']=='STILL_UNCERTAIN' for r in rows)==n-fills
+
  quote='1293 South Main Street Akron, Ohio 44301'
  for prefix in ('You can reach us by mail at this address: ','Mailing address: ','Postal address: '):assert mailing_posture(prefix+quote,quote)=='mailing-only context'
  assert not mailing_posture('Email us. Physical address: '+quote,quote)
