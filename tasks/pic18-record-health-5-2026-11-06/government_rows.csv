@@ -1,3 +1,6 @@
-establishment_id,ita_row_id,ein,ein_quality,company_name,establishment_name,street,city,state,zip5,zip_as_filed,naics_code,naics_year,industry_description,family4,scope_class,schema_2_2_ring,schema_2_2_signal,establishment_type,size_code,annual_average_employees,band_from_avg_employees,size_code_vs_avg_employees,hours_per_employee_screen,reliability,date_submitted,amended_filing,year_filing_for,ita_estabs_at_address
-939047,3229097,341529799,ok,Akron Polymer Products,Akron Polymer Products,1471 Exeter Road,Akron,OH,44306,44306,326199,2012,"Motor vehicle moldings and extrusions, plastics, manufacturing",3261,core_P,Ring 1,P,1,22,78,50-99,inconsistent,ok,review,2026-03-02,N,2025,1
-157063,2936432,340127105,ok,"Americhem, Inc.",CFO,2000 Americhem Way,Cuyahoga Falls,OH,44221,44221,325991,2012,"Custom compounding (i.e., blending and mixing) of purchased plastics resins",3259,core_P,Ring 2,P,1,2,86,50-99,consistent,ok,ok,2026-01-20,N,2025,1
+establishment_id,ita_row_id,company_name,establishment_name,street,city,state,zip5,date_submitted,year_filing_for
+939047,3229097,Akron Polymer Products,Akron Polymer Products,1471 Exeter Road,Akron,OH,44306,2026-03-02,2025
+157063,2936432,"Americhem, Inc.",CFO,2000 Americhem Way,Cuyahoga Falls,OH,44221,2026-01-20,2025
+213800,3051424,Universal Polymer & Rubber LTD,MIDDLEFIELD,15730 Madison Road,Middlefield,OH,44062,2026-02-11,2025
+306684,2945477,"Vertex, Inc.","Vertex, Inc.",3956 Mogadore Industrial Pkwy,Mogadore,OH,44260,2026-01-22,2025
+1564903,3292129,Roechling Industrial Cleveland,"Roechling Industrial Cleveland, L.P.",4321 Glenridge Road,South Euclid,OH,44131,2026-05-01,2025

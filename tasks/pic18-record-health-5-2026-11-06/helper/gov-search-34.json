@@ -1,0 +1,20 @@
+{
+  "org_ids": [
+    "ORG-002064",
+    "ORG-003545",
+    "ORG-003885"
+  ],
+  "queries": [
+    {
+      "q": "\"Poly Tech Plastics\" Middlefield (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"G-3 Chickadee Purchaser,\" Houston (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Radici Plastics USA\" Wadsworth (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "3231f8d6e64a72882db183462b0bdc89da5a6832d9a212631ba3bcea9f0e23fc",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}
