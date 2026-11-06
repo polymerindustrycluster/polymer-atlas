@@ -1,0 +1,167 @@
+{
+  "schema_version": 2,
+  "scope": "L14 pinned26 discovery leads plus4 source-verified registry candidates; corrected parent witness EVD295013. Delta1Corg1Csite14append-only EVD4links, all prior rows preserved. Fresh main97ee6bc integrated by exact main copies + builder replay.",
+  "criteria": [
+    "New-site parent must have a typed append-only witness supporting SITE013100 -> ORG009600 under SCHEMA4.13",
+    "All old13 observations and existing main rows unchanged; count14EVD and fixed packet identity stable",
+    "Fresh parent quote/permit columns verified; missing-parent negative fails before any writes; replay and validator0",
+    "Prior26lead verdicts and4source-system identifiers unchanged; targeted independent Codex+Grok correction approval"
+  ],
+  "out_of_scope": [
+    "Full discovery census",
+    "Unresolved holds are not promoted",
+    "PR140 equipment changes"
+  ],
+  "revision": "ea50289e493752e0d288764db61ae1457e90f6f9",
+  "tool_access": "Reviewers may read full checkout and fetch primary sources; inspect all packet files plus canonical diff.",
+  "required_families": [
+    "codex",
+    "grok"
+  ],
+  "evidence": [
+    {
+      "path": "PR_BODY.md",
+      "sha256": "13f54f7f5bef26513608f2c8fe95793fdb27213446ba09d574be9f00aabe55b0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "db2ecaeef47a81b2a6cf473a9709e9ad2ddb7609fe6af73dee9df9ebb4473aea"
+    },
+    {
+      "path": "SPEC.md",
+      "sha256": "bc463c105d6370341a95944f452f227e74f2f2bf1186b80515c2250b8f873eee"
+    },
+    {
+      "path": "brief.md",
+      "sha256": "0f3e8c074a2021b071ff519d67061acccc52009f0545912470ba89a268b5dcaf"
+    },
+    {
+      "path": "build.py",
+      "sha256": "51e506e602f587e18185a7da8218417efd0019b202fcd9c8915b1d0feee39bc6"
+    },
+    {
+      "path": "check.py",
+      "sha256": "96eb8cb4b61f78a83643c3818c922e11158bdc38d8df29cda432ae984f4df46c"
+    },
+    {
+      "path": "checks.txt",
+      "sha256": "1189fe53334be68cfcc2a192760691ca11fb0e032f713ce6bba3b3d971c25c4a"
+    },
+    {
+      "path": "codex-refute.md",
+      "sha256": "1507654a54b92197b30374ab7a1f902b4eb2d6ba39d9374a94ebffd1963abc70"
+    },
+    {
+      "path": "creates_orgs.csv",
+      "sha256": "2581fd78fd12d0822dd39e130279dc00888f1dce4e9a48a1e9ca95daf6f89a7d"
+    },
+    {
+      "path": "creates_sites.csv",
+      "sha256": "7254483b0bbfe846801b531241b521cfc4ecb0b3b7925c05af6577e0bc436900"
+    },
+    {
+      "path": "dedupe.json",
+      "sha256": "9b9dd9653a6995bf1f2c793e4b6e2035375bcfbd1982f040dc694b860455aa06"
+    },
+    {
+      "path": "evidence_rows.csv",
+      "sha256": "3e488c057b52422febaf16538e272a9547f9923facc308d3857adf71dc99fb36"
+    },
+    {
+      "path": "grok-review.md",
+      "sha256": "e08031a07d7f6add1644ee30f8f7e240af2d88f09a80057f9f9167607f2b9978"
+    },
+    {
+      "path": "inputs.csv",
+      "sha256": "857d05b39434bf74d4241eeb867346cf03eee3997d1e4108f9081d498526015b"
+    },
+    {
+      "path": "integration-replay.json",
+      "sha256": "28aa8a6532a46a31ab548ff083027ce8648d306598db6bfbf3fe3057956f0b07"
+    },
+    {
+      "path": "parent-checks.txt",
+      "sha256": "349be9207169ba7a6acde9f5615e3b34e4b5d36352b001dbe13c805c5768ae8e"
+    },
+    {
+      "path": "parent-claim-counts.csv",
+      "sha256": "767e9d743ae08e88d1b1b2e89e5f00564200023d6501e3be091456f687961b4d"
+    },
+    {
+      "path": "parent-integration.json",
+      "sha256": "b8eefd4dd4c2c87c87b20c8bca227f206943142dcf07188a16c75f3d860e15c7"
+    },
+    {
+      "path": "preservation-final.txt",
+      "sha256": "ed94f614f3f4874075d4f9c7f87272e2a7da9104086fa0b68f83060369ba3481"
+    },
+    {
+      "path": "registry-checks.txt",
+      "sha256": "b10821a6596e45ae121b63f40f35a354d8e9559f262f45dabf904fd36975eeea"
+    },
+    {
+      "path": "registry_additions.csv",
+      "sha256": "d7f238f33a166dbafd6b22b932f3f8e4b39f16ae13e366e1696b43d7f8f2c826"
+    },
+    {
+      "path": "registry_holds.csv",
+      "sha256": "a3db2bb64225404dde44cc13ee94bae253e912ddea60bb09293db0ecbf04bb06"
+    },
+    {
+      "path": "registry_sources.csv",
+      "sha256": "5e0d31026e2c1a7319bbf604a0c928b3ed1fc995e5c2295436a404dfa5fa4686"
+    },
+    {
+      "path": "row-loss-final.txt",
+      "sha256": "aed762f317e034edd39bab5095d1de19f14408c049a22dbe9395deedb70768f1"
+    },
+    {
+      "path": "validate.txt",
+      "sha256": "f8e6e58a98e8adfe11f07cd19d8b55d7c8bec73cba08f3c1633973a8f7879c48"
+    },
+    {
+      "path": "validation-summary.txt",
+      "sha256": "66e309e1e714c8f2868cb8b61a3b7a3c3ee42ab4246573a0770964e346e19b47"
+    },
+    {
+      "path": "verdicts.csv",
+      "sha256": "551971c74ac79378e24bba54091df36a23c5dabe467ab2079f9c4ba2a94e450b"
+    },
+    {
+      "path": "verify_registry.py",
+      "sha256": "be93e414db58e263eacc5bc30d74fdf45371e6b15c886de59ad1db580b08b2d6"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 tasks/pic18-discovery-residue-2026-11-06/build.py --raw-check",
+      "outcome": "pass",
+      "evidence": "parent-checks.txt"
+    },
+    {
+      "command": "python3 tasks/pic18-discovery-residue-2026-11-06/check.py",
+      "outcome": "pass",
+      "evidence": "parent-checks.txt"
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "outcome": "pass",
+      "evidence": "parent-checks.txt"
+    }
+  ],
+  "round_limit": 3,
+  "rounds": [
+    {
+      "id": "typed-parent-correction-codex4",
+      "findings": [
+        {
+          "kind": "defect",
+          "disposition": "fixed",
+          "class": "new-site-parent-observation",
+          "evidence": "EVD295013append-onlygovernment_filingtypedparentfreshEPAapplicant/facilitycolumns;missing-only-parentnegativezero-write. Codex4APPROVE669e507,report159-clerk-codex-4-rereview.md,raw9/9+4registryidentities/25hashes/validator0. Grok4correctedpending."
+        }
+      ]
+    }
+  ],
+  "receipts": []
+}
