@@ -32,3 +32,6 @@ Named results: refetch.py PASS5/5URLs6/6quotes; check.py PASS16uniqueverdicts/4u
 | SITE-014019 Altium Packaging - Corona | Altium own route unavailable. CoronaPlasticPackaging microsite has matching address/Altium marketing but authorship/domain ownership not established by Atlas entity-owned domain; obtain operator-issued plant witness. |
 
 Codex/Grok deep refutes pending; draft and no Done claim.
+
+
+Grok4 (xAI) APPROVE6521a1cc057647b0d64f7bcad5a884f57bf5e092,0findings,2026-11-06: independent curl and house word-order matcher found all6quotes over5URLs; CalSpas2015Pomona, NuSilBakersfield/recordedAvantorparent, ADSown-issuedCASQAapplication and ATSoperator/Richmond/resin all accepted. Government atoms match banked IDs. Exact4C→B/12holds/8cells/22EVD, oldmain rows preserved, validator0/replay/collision/own-scope removal and QCEW93→93/1306 pass. No fresh bulk or 12hold-page re-fetch. Codex remains pending; no Ready/Done claim. Controller later assigns unusedEVD188500–188999 to tombstone-site-operators201; that slice is excluded from this quality continuation reservation. Current186EVD188000–188021 unchanged.
