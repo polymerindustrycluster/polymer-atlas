@@ -1,0 +1,68 @@
+[
+  {
+    "site_id": "SITE-012620",
+    "source_url": "https://carpenter.com/location/albert-lea-minnesota/",
+    "page_sha256": "a24b514ad4f20ec331ba2a10f65f866a3962c7a92ee8bfc911aa49ce4ee03bc8",
+    "capture_sha256": "a24b514ad4f20ec331ba2a10f65f866a3962c7a92ee8bfc911aa49ce4ee03bc8",
+    "retrieved_date": "2026-11-06",
+    "http_status": 200,
+    "route": "house curl/browser-UA raw HTML text",
+    "quote_raw_verified": true,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "site_id": "SITE-012668",
+    "source_url": "https://www.plasticproductsco.com/facility/princeton-mn/",
+    "page_sha256": "8cf2e3478a60940e0b8e98780fb77f75ccc8d2d4de42aa02ccdd01d4d10fb072",
+    "capture_sha256": "8cf2e3478a60940e0b8e98780fb77f75ccc8d2d4de42aa02ccdd01d4d10fb072",
+    "retrieved_date": "2026-11-06",
+    "http_status": 200,
+    "route": "house curl/browser-UA raw HTML text",
+    "quote_raw_verified": true,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "site_id": "SITE-012669",
+    "source_url": "https://www.oatey.com/news-press/cherne-relocates-headquarters-and-manufacturing-state-art-130000-square-foot-production",
+    "page_sha256": "7c32df3358adf42172e1aa70bf61807c531f3029798406938ff40852cfb730cb",
+    "capture_sha256": "7c32df3358adf42172e1aa70bf61807c531f3029798406938ff40852cfb730cb",
+    "retrieved_date": "2026-11-06",
+    "http_status": 200,
+    "route": "house curl/browser-UA raw HTML text",
+    "quote_raw_verified": true,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "site_id": "SITE-012682",
+    "source_url": "https://www.revolutioncompany.com/about/locations/",
+    "page_sha256": "6fd50514598ebd5620c85dc49a9a860eff10104941f78ebe9808099250ae51a3",
+    "capture_sha256": "c57c834856c2c9f462401f4510ae903b9e678606fa9b223a5ff1ed327e35ad61",
+    "retrieved_date": "2026-11-06",
+    "http_status": 200,
+    "route": "Firecrawl rawHtml live HTTP200 after curl/Jina failures",
+    "quote_raw_verified": true,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "site_id": "SITE-012700",
+    "source_url": "https://www.toplastics.com/capabilities/quality-certifications",
+    "page_sha256": "de894b339683ec12f1eac3c10ed84f9b3cc6c4c0e331df19d4c56c26289ec2f6",
+    "capture_sha256": "de894b339683ec12f1eac3c10ed84f9b3cc6c4c0e331df19d4c56c26289ec2f6",
+    "retrieved_date": "2026-11-06",
+    "http_status": 200,
+    "route": "house curl/browser-UA raw HTML text",
+    "quote_raw_verified": true,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "site_id": "SITE-012809",
+    "source_url": "https://www.benjaminmoore.com/en-us/faq",
+    "page_sha256": "e25e4ebd7b9468b682277e129e9430340b93863c6c8bdf155f3a008ce204c225",
+    "capture_sha256": "e25e4ebd7b9468b682277e129e9430340b93863c6c8bdf155f3a008ce204c225",
+    "retrieved_date": "2026-11-06",
+    "http_status": 200,
+    "route": "house curl/browser-UA raw HTML text",
+    "quote_raw_verified": true,
+    "fabricated_suffix_rejected": true
+  }
+]
