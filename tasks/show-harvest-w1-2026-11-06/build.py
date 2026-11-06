@@ -18,7 +18,7 @@ every list under `out/raw/`; never committed). Method as tasks/exhibitor-links-2
 - Attendee lists wait for schema v1.12 (PR #250) and a terms check (SCHEMA 4.12.2 harvest-only rule 4).
 Writes matches.csv and participation_append.csv here; unmatched names go to <harvest>/controller/ (never committed).
 """
-import argparse, csv, html, json, re, sys
+import argparse, csv, hashlib, html, json, re, sys
 from collections import Counter
 from pathlib import Path
 
@@ -91,7 +91,8 @@ def main():
     events = {e["event_id"]: e for e in read(data / "events.csv")}
     emap = {r["conf_slug"]: r["event_id"] for r in read(HERE / "event_map.csv")}
     shows = {r["show_key"]: r for r in read(hv / "shows.csv")}
-    drops = {(r["show_key"], r["role"], r["name"]) for r in read(HERE / "controller_drops.csv")}
+    # names are stored hashed: several drops are people's names, and this repo is public (AGENTS section 6)
+    drops = {(r["show_key"], r["role"], r["name_sha256_16"]) for r in read(HERE / "controller_drops.csv")}
     by_key = org_index(data)
     part = read(data / "event_participation.csv")
     have = {(p["event_id"], p["org_id"], p["edition_year"], p["role"]) for p in part}
@@ -124,7 +125,7 @@ def main():
             lists_used[(key, role, yr)] += 1
             for c in L["companies"]:
                 name = c["name"].strip()
-                if (key, role, name) in drops:
+                if (key, role, hashlib.sha256(name.encode("utf-8")).hexdigest()[:16]) in drops:
                     skip["controller drop"] += 1; continue
                 if c.get("show_assignment") and A.name_key(c["show_assignment"]) != A.name_key(events[ev]["name"]):
                     skip["labelled for a co-located show"] += 1; continue
