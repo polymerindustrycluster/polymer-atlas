@@ -1,0 +1,94 @@
+[
+  {
+    "org_id": "ORG-010003",
+    "url": "https://www.calspas.com/about/contact-us",
+    "raw_sha256": "cd1c79296a3d249c589e445acb609806bff294b18412c3e204991c21ad8f60ab",
+    "path": "/tmp/residual-hq4-integrator/ORG-010003_768a73ae37.raw",
+    "error": "",
+    "matched": true,
+    "quote": "headquarters in Pomona, California",
+    "text_sha256": "e85a54851457cb8eacb0e326c1e5ce5cfca7f96e6c233540226e69b8ea7e1cf6"
+  },
+  {
+    "org_id": "ORG-007729",
+    "url": "https://www.toplastics.com/hubfs/Resources/Medical/TO%20Plastics_Custom%20Solutions.pdf",
+    "raw_sha256": "762a2c30ecb4a9fde3370827b5f2de718bc7c62bb4cc6d788513e2c26097045b",
+    "path": "/tmp/residual-hq4-integrator/ORG-007729_3538f8c763.raw",
+    "error": "",
+    "matched": true,
+    "quote": "HEADQUARTERS || P.O. Box 37 | 830 County Road 75 || Clearwater, MN 55320",
+    "text_sha256": "d47d2ef7a6069bceeeda0db88e05924116c120de65c130a60f5792501137a3a7",
+    "initial_contiguous_quote_match": false,
+    "layout_note": "HQ left column Clearwater; manufacturing right column Otsego interleaves in -layout; three bounded ordered excerpts checked against same captured PDF."
+  },
+  {
+    "org_id": "ORG-007712",
+    "url": "https://tpmmfg.com/about/",
+    "raw_sha256": "15a611a67e09f767471853d0c9ad51f0edf3d9ad5fe130e00a4bb62c6c90237b",
+    "path": "/tmp/residual-hq4-integrator/ORG-007712_94096e8e3d.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Hopkins, Minnesota || Hopkins Plant TPM HOP is located at the TPM headquarters.",
+    "text_sha256": "fba1373765ffb05b2e178c16b55bbcf3cd02dcb26b525a557c6e79f357555aaf"
+  },
+  {
+    "org_id": "ORG-007432",
+    "url": "https://tanks.polyprocessing.com/hubfs/Installation%20Operation%20Maintenance%20Manual/PPC%20Installation%2C%20Operation%2C%20and%20Maintenance%20Manual%209-2023.pdf",
+    "raw_sha256": "8d1c3da4c684d749f2db483fdf5b05599c73d7295823b5cbd5ec335c9d38f780",
+    "path": "/tmp/residual-hq4-integrator/ORG-007432_657e6924e1.raw",
+    "error": "",
+    "matched": false,
+    "quote": "Company Headquarters || P.O. Box 4150 (71211) 2201 Old Sterlington Road Monroe, Louisiana 71203",
+    "text_sha256": "6c0933c87807ef2c83c7f056f79d4355ca7afb3fa2b734f42dff93cc07b59093"
+  },
+  {
+    "org_id": "ORG-009019",
+    "url": "https://wikoff.com/news/wikoff-names-sachin-nayar-chief-technology-officer/",
+    "raw_sha256": "b89023db3d69279815a6c7ca243a0ecab318f77048728fd725d3002007a29896",
+    "path": "/tmp/residual-hq4-integrator/ORG-009019_7ceb367d49.raw",
+    "error": "",
+    "matched": true,
+    "quote": "headquartered in Fort Mill, South Carolina, Wikoff",
+    "text_sha256": "acf398209609a435f02c23b6acd70069e50095470dae7b6d1cd4ad364ab7df74"
+  },
+  {
+    "org_id": "ORG-009031",
+    "url": "https://sunspecialtyproducts.com/about-us/",
+    "raw_sha256": "336841f934d34d6fdb720d384a7d2b440fe6a7c80ed99506106bef54a061ab7d",
+    "path": "/tmp/residual-hq4-integrator/ORG-009031_b56574cf0b.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Our headquarters and manufacturing facility in Belle Chasse, Louisiana",
+    "text_sha256": "ed8a00e25909ca19657e62cf8f2706d4d873362e6ae897045dab928cfb7cc07d"
+  },
+  {
+    "org_id": "ORG-009034",
+    "url": "https://www.ashindustries.com/contact-us/",
+    "raw_sha256": "381e6dd6c4c172564114ff7722c777cdb379fa61f4cc7aa9c6d79b5907eb7e30",
+    "path": "/tmp/residual-hq4-integrator/ORG-009034_177b348814.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Ash industries Corporate office 1330 W. Willow St. Lafayette, LA 70506",
+    "text_sha256": "c145950be35c2b49532e86c690fa8168d9b57cd959e5202bae2fb96d0d17727a"
+  },
+  {
+    "org_id": "ORG-010000",
+    "url": "https://jobs.masco.com/watkinswellness/us/en/about",
+    "raw_sha256": "0b7f0007d993acee0434d360adaf818c8ee54a2796d00709f87277b0ba964595",
+    "path": "/tmp/residual-hq4-integrator/ORG-010000_3d16cb1010.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Headquartered in Vista, California",
+    "text_sha256": "5f3e1921f6179f47fcba6d5b10dd482e406e24c02bb12043e741b85e8a296354"
+  },
+  {
+    "org_id": "ORG-010007",
+    "url": "https://www.ssibio.com/privacy-policy/",
+    "raw_sha256": "472e5ab4bcef2475a7169a26c2dda464d2523d5fa24bfb64607bc464cdba6592",
+    "path": "/tmp/residual-hq4-integrator/ORG-010007_3fece3618c.raw",
+    "error": "",
+    "matched": true,
+    "quote": "Scientific Specialties, Inc. || headquartered at 1310 Thurman Street, Lodi, CA 95240",
+    "text_sha256": "70d88a6845522a5799220ee5afc937e67fb7f1091e04aff9fd89ad1d04b6915d"
+  }
+]
