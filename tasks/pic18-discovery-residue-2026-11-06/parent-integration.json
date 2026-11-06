@@ -1,0 +1,41 @@
+{
+  "merged_main": "97ee6bc2a4475a47d8449ca79db688fb9114ab0f",
+  "prior_reviewed_payload": "9a0622c",
+  "only_new_observation": "EVD-295013 sites.parent SITE-013100 -> ORG-009600",
+  "canonical_preservation": {
+    "organizations_US.csv": {
+      "main_rows_preserved": 247,
+      "rows_added": 1
+    },
+    "sites_OH.csv": {
+      "main_rows_preserved": 2009,
+      "rows_added": 1
+    },
+    "evidence_organizations_US.csv": {
+      "main_rows_preserved": 1019,
+      "rows_added": 4
+    },
+    "evidence_organizations_OH.csv": {
+      "main_rows_preserved": 2558,
+      "rows_added": 1
+    },
+    "evidence_sites_OH.csv": {
+      "main_rows_preserved": 4226,
+      "rows_added": 9
+    },
+    "registry_links.csv": {
+      "main_rows_preserved": 5373,
+      "rows_added": 4
+    }
+  },
+  "original_13_observations_unchanged": true,
+  "stable_packet_files": [
+    "creates_orgs.csv",
+    "creates_sites.csv",
+    "inputs.csv",
+    "verdicts.csv",
+    "registry_additions.csv",
+    "registry_sources.csv"
+  ],
+  "checks": "raw9/9 and4registry identities;26census;allCSVreplay;parent/ID/registry negative controls;validator0"
+}

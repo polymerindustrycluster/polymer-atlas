@@ -104,7 +104,7 @@ ORG-000637,Xaloy LLC,,https://www.xaloy.com/,active,,,A,tri_reporter,,organizati
 ORG-000640,Zehrco-Giancola Composites,Zehrco Giancola Composites Inc - Z2; ZEHRCO GIANCOLA COMPOSITES INC PLANT 4,https://zehrco-giancola.com/,active,,,A,tri_reporter,,organizations_OH.csv,tier1
 ORG-000642,"20/20 Custom Molded Plastics, Ltd.",,https://www.2020cmp.com/,active,,,B,employees_250plus,,organizations_OH.csv,tier1
 ORG-000650,"Advanced Composites, Inc.",,https://advcmp.com/,active,,,A,tri_reporter,,organizations_OH.csv,tier1
-ORG-000651,"Advanced Drainage Systems, Inc.",Advanced Drainage Systems (Napoleon); Advanced Drainage Systems (New Miami); Advanced Drainage Systems (Wooster),https://www.adspipe.com/,active,,,B,public_parent;national_footprint,,organizations_OH.csv,tier1
+ORG-000651,"Advanced Drainage Systems, Inc.",Advanced Drainage Systems (Napoleon); Advanced Drainage Systems (New Miami); Advanced Drainage Systems (Wooster); Advanced Drainage Systems,https://www.adspipe.com/,active,,,B,public_parent;national_footprint,,organizations_OH.csv,tier1
 ORG-000655,Danfoss Power Solutions,AEROQUIP CORPORATION,https://www.danfoss.com/,active,,,U,tri_reporter;national_footprint,,organizations_MI.csv,tier1
 ORG-000658,AkzoNobel Coatings Inc.,AKZO NOBEL COATINGS INC,https://www.akzonobel.com/,active,,,A,tri_reporter;national_footprint,,organizations_OH.csv,tier1
 ORG-000661,"Allied Moulded Products, Inc.",ALLIED MOULDED PRODUCTS INC. - PLANT 3,https://alliedmoulded.com/,unknown,,,A,tri_reporter,,organizations_OH.csv,tier1
@@ -1384,7 +1384,7 @@ ORG-000126,CPI Precision Plastics LLC,Cardinal Products Inc.,https://cpipp.com/,
 ORG-000128,Compking,,https://compking.com,active,,,U,,,organizations_OH.csv,pic18_remainder
 ORG-000129,Playground Plastics,,https://www.playgroundplastics.com/,active,,,B,,,organizations_OH.csv,pic18_remainder
 ORG-000130,Peak Nano,PolymerPlus LLC,https://www.peaknano.com,active,,,B,,,organizations_OH.csv,pic18_remainder
-ORG-000133,Oatey Co.,,https://oatey.com,active,,,A,,,organizations_OH.csv,pic18_remainder
+ORG-000133,Oatey Co.,Oatey Company,https://oatey.com,active,,,A,,,organizations_OH.csv,pic18_remainder
 ORG-000136,Roto Polymers,,https://rotopolymers.com,active,,,B,,,organizations_OH.csv,pic18_remainder
 ORG-000137,Protective Industrial Polymers,,https://protectiveindustrialpolymers.com,active,,,B,,,organizations_OH.csv,pic18_remainder
 ORG-000139,FedPro,Gasoila,https://fedpro.com,active,,,B,,,organizations_OH.csv,pic18_remainder
