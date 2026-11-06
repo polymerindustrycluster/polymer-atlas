@@ -462,7 +462,7 @@ def cmd_dedupe(a, tables):
         print(f"\n=> STOP at step {stop}: a hit exists. Use/link the existing record; do not create a duplicate. "
               "When in doubt do NOT merge - create/link and flag (AGENTS.md §3).")
     else:
-        print("\n=> No hits at any step run. Create at tier U or C and record which searches you ran (AGENTS.md §3 step 5).")
+        print("\n=> No hits at any step run. Create at tier U or C and record which searches you ran (AGENTS.md §3 step 6).")
     return 1 if anyhit else 0
 
 # ---------------------------------------------------------------- show
