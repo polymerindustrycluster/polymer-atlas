@@ -1,0 +1,22 @@
+source_key,url,observed_date,result,interpretation
+toledo,https://www.utoledo.edu/engineering/cmsc/instruments/,2026-11-06,HTTP 200,listing parsed
+toledo-polymer,https://www.utoledo.edu/engineering/polymer-institute/research.html,2026-11-06,HTTP 200,listing parsed
+uc,https://www.ceas.uc.edu/research/centers-labs/advanced-materials-characterization-center.html,2026-11-06,HTTP 200,listing parsed
+csu,https://academic.csuohio.edu/center-for-innovation-in-advanced-functional-materials/center-equipment/,2026-11-06,HTTP 200,listing parsed
+ohio,https://www.ohio.edu/engineering/camp/facilities-equipment,2026-11-06,HTTP 200,listing parsed
+nasa-index,https://www.nasa.gov/glenn-labs-and-test-facilities/,2026-11-06,HTTP 200,listing parsed
+nasa-thermal,https://www.nasa.gov/glenn/research/environmental-effects-coatings/,2026-11-06,HTTP 200,listing parsed
+stark,https://www.starkstate.edu/academics/programs/mechanical-engineering-technology/,2026-11-06,HTTP 200,listing parsed
+psu,https://knowledgepark.psu.edu/rd-resources/,2026-11-06,HTTP 403,curl failed; no absence inference
+lehigh,https://ifmd.lehigh.edu/soft-materials-characterization-facility-s-mcf,2026-11-06,HTTP 200,listing parsed
+cmu,https://www.cmu.edu/engineering/materials/facilities/general/physical_property_measurements.html,2026-11-06,HTTP 200,listing parsed
+psu-colby,https://sites.psu.edu/colbyrheology/facilities/,2026-11-06,HTTP 200,listing parsed
+michigan,https://cheresearch.engin.umich.edu/scott/labtour.html,2026-11-06,HTTP 403,curl failed; no absence inference
+msu,https://www.canr.msu.edu/packaging/learn-collaborate/testing_services/,2026-11-06,HTTP 200 bot wall,Incapsula incident response; no equipment inspected
+cmu-news,https://engineering.cmu.edu/mcf/news/2026/02/12-new-equipment.html,2026-11-06,HTTP 200,listing parsed
+michigan-jina,https://r.jina.ai/https://cheresearch.engin.umich.edu/scott/labtour.html,2026-11-06,HTTP 403,curl failed; no absence inference
+michigan-battery,https://umbatterylab.engin.umich.edu/characterization-instruments/,2026-11-06,HTTP 403,curl failed; no absence inference
+msu-alt,https://msu-prod.dotcms.cloud/packaging/learn-collaborate/testing_services/,2026-11-06,HTTP 200 bot wall,Incapsula incident response; no equipment inspected
+msu-rheology,https://www.chems.msu.edu/groups/jay/facilities.html,2026-11-06,curl 28 timeout,no body; no absence inference
+michigan-facilities,https://che.engin.umich.edu/research/facilities/,2026-11-06,HTTP 403,curl failed; no absence inference
+psu-jina,https://r.jina.ai/https://knowledgepark.psu.edu/rd-resources/,2026-11-06,HTTP 403,fallback failed; no absence inference

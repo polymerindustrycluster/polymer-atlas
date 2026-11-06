@@ -1,0 +1,8 @@
+{
+  "active_tier1_organizations": 1261,
+  "markets_populated": 162,
+  "certifications_populated": 15,
+  "eligible_remaining": 1067,
+  "selected": 100,
+  "selection": "active + nonempty stored tier1_qualifier + blank markets, excludes prior30 frame and unresolved ORG62/101; PIC18 county-site first thenorgid; unlike prior batch no website filter"
+}

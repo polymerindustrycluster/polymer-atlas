@@ -1,0 +1,2 @@
+site_id,registry_id,attempt,result,detail
+SITE-000182,110006269313,1,PASS,"fresh ID,held name,street,city,ZIP,county,state match"

@@ -1,0 +1,17 @@
+[
+  {
+    "key": "GILKEY_TYPE",
+    "result": "PASS",
+    "negative": "absentwordsrefused"
+  },
+  {
+    "key": "DART_TYPE",
+    "result": "PASS",
+    "negative": "absentwordsrefused"
+  },
+  {
+    "key": "YOKO_OUTCOME",
+    "result": "PASS",
+    "negative": "absentwordsrefused"
+  }
+]

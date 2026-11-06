@@ -1,0 +1,31 @@
+{
+  "main_pin": "d2c41b7461925abc525d3216b64c806ce782e4ef",
+  "approved_code_packet_hashes": {
+    "field_holds.csv": "bfc3eae4b064397d55ebfff47be7c32908027f1914742718eefc3ce02d833b86",
+    "input.csv": "0151bfbcf5338e119ed4f7abfd09ae68041372f3e21979cf64ed8bed106d8402",
+    "joins.csv": "eab6440b424a6726d1b5d91200c1b079cb11a17847c7d0f7564fc84aeeef2864",
+    "identity_check.csv": "5bc1bccd22fc13c24dc0fef061eb92d90867b9dac008c2d17f13210a7caa8f6d",
+    "raw_2024.csv": "24d8cf75f38de970c8d73d50cb00af8d33ad275e4a1d1d22f1346a76f1119645",
+    "edits.csv": "b4fd0ac8a9459a8bad5885007b89690810059ce0c8dc987f64ae977221d180d4",
+    "verdicts.csv": "33fde16eeaa30e4de294d518363818206312aeed4e51be57177425bb53276c5d",
+    "evidence_programs.csv": "30911fcd3a34417653733565982fcbbbe7f14cfa54f7d0b2075daa3b8db09eb9",
+    "build.py": "a73a4c12b2ab53851ca56c7443784bc5a5c7c1268523b5a20cc79c1174e42820",
+    "check.py": "752094a0e1cc931efd86c70f210573edd0876d9883fe3b434ba95d956d7a8665",
+    "prepare.py": "24e56195743874597d3a44b3c7abadf2db5e4cbf470174b93c0e0068e10982a0",
+    "source.json": "67f96b361efbe35a693c6708898b86bc03e6eb9f042279ddbbadf42556be037d"
+  },
+  "approved_code_and_all_packet_csvs_unchanged": true,
+  "programs_preserved": 171,
+  "programs_after": 171,
+  "changed_cells": 112,
+  "changed_programs": 34,
+  "program_evidence_preserved": 311,
+  "appended_evidence": 34,
+  "after_program_evidence": 345,
+  "canonical_hashes": {
+    "programs.csv": "6f83801aa623cf7c1dc84b7cc1ade712b63abbb51872048dbcb3609d9431f89e",
+    "evidence_programs.csv": "c8455a2b1e770aa96474013a92e394443e1f4b349500ddc4eca916bd16cb06f6"
+  },
+  "resolution": "Both owned canonical files taken exactly from fresh main; unchanged approved source-bound builder replayed; no CSV hand merge",
+  "checks": "named check/replay/source-derived seven failures + old UNITID/shard mutations/old-row preservation/validator0 PASS"
+}

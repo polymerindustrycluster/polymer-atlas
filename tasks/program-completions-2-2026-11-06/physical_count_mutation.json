@@ -1,0 +1,18 @@
+[
+  {
+    "state": "initial",
+    "mutated_file": "edits.csv",
+    "mutation": "PROG-000109 latest_completions19\u219220",
+    "check_exit": 1,
+    "build_exit": 1,
+    "all_canonical_hashes_unchanged": true
+  },
+  {
+    "state": "replay",
+    "mutated_file": "edits.csv",
+    "mutation": "PROG-000109 latest_completions19\u219220",
+    "check_exit": 1,
+    "build_exit": 1,
+    "all_canonical_hashes_unchanged": true
+  }
+]
