@@ -90,3 +90,5 @@ Holds are unfinished bounded research,not absence or closure verdicts. Primary C
 |SITE-016404|Own CNG report describes a new Milton expansion less than2miles from existingfacility. Bind film production specifically to751NVickermanRoad rather than assigning expansion activity across nearby sites.|
 |SITE-016405|PennColor corporate thermoplastic/location text does not settle1474PutmanParkway actual production scope; primary scope certificate unavailable raw. Obtain explicit Milton site polymer process and reconcile coating/concentrate basis.|
 |SITE-016410|Own Midland history records DePere CNC machining investments; location also appears in retail-store context. Settle dominant2151AmericanBlvd physical function and actual polymer conversion before manufacturing tier upgrade.|
+
+Main refresh before publication: merged pinneda7cd761a7db45e984d2bc35dd78f3e2c52dcf2d1, restored all10exactmainownedshards and replayed unchangedbuilder. integration.json proves31site/217EVD values and executablebuild/check identical to e2d04dc; no hand CSVmerge. Namedcheck/validator0/row-loss rerun on this tree.
