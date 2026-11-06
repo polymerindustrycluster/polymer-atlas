@@ -308,7 +308,7 @@ assert frame=={r['org_id'] for r in inputs}
 print('PASS: full independent current active/PIC18/non-tier1/website frame matches inputs')
 
 ALL ACCEPTED (id|name|website|newsroom|feed|title|dates):
-ORG-000060 | Esterle Mold & Machine Co., Inc. | https://esterle.com | https://esterle.com/news |  | News &amp; Updates - ESTERLE Mold &amp; Machine | August 2, 2026;May 10, 2025;November 6, 2023;August 5, 2023;August 2, 
+ORG-000060 | Esterle Mold & Machine Co., Inc. | https://esterle.com | https://esterle.com/news |  | News &amp; Updates - ESTERLE Mold &amp; Machine | August 2, 2026;May 10, 2025;November 6, 2023;August 5, 2023;August 2,
 ORG-000098 | Spazzolplastica North America LLC | https://www.spazzolplastica.it | https://www.spazzolplastica.it/us/news-index |  | Company news and updates | Spazzolplastica | 16 October 2026;09 September 2026;05 August 2026;07 July 2026;30 April
 ORG-000105 | Transcendia Inc. | https://www.transcendia.com | https://www.transcendia.com/company-news | https://www.transcendia.com/rss.xml | Company News | Transcendia | June 3, 2025;September 10, 2024;May 2, 2024;September 20, 2021;Decembe
 ORG-000130 | Peak Nano | https://www.peaknano.com | https://www.peaknano.com/newsroom |  | Newsroom | Peak Nano | October 19, 2026;September 16, 2026;July 13, 2026;April 26, 2026;April
@@ -318,7 +318,7 @@ ORG-000174 | Vertex, Inc. | http://www.vertexseals.com/ | https://vertexseals.co
 ORG-000243 | BaseTek, LLC | https://basetek.com/ | https://basetek.com/news/ |  | News - BaseTek | September 14, 2026;June 26, 2026;March 26, 2026;November 25, 2025;Octo
 ORG-000251 | Bole Machinery Inc. | https://boleamerica.com/ | https://boleamerica.com/news/ |  | News - Bole Machinery USA | Sep 22, 2023;Aug 18, 2023;May 15, 2023;May 12, 2023;April 17, 2023;Apr
 ORG-000259 | CANTEX Inc. | https://www.cantexinc.com/ | https://www.cantexinc.com/news |  |  Latest News and Upcoming Events Calendar | Cantex Inc  | February 11, 2026;January 3, 2022;July 18, 2019
-ORG-000315 | Dura-Line | https://www.duraline.com/ | https://www.duraline.com/about-us/news/ |  | News - About Us | Dura-Line | May 15, 2026;October 03, 2025;May 29, 2025;January 15, 2024;April 26, 
+ORG-000315 | Dura-Line | https://www.duraline.com/ | https://www.duraline.com/about-us/news/ |  | News - About Us | Dura-Line | May 15, 2026;October 03, 2025;May 29, 2025;January 15, 2024;April 26,
 ORG-000340 | Flambeau, Inc. | https://www.flambeau.com/ | https://www.flambeau.com/news/ |  | Latest Corporate News and Updates | Flambeau, Inc | July 23, 2023;February 20, 2023;February 2, 2023;May 16, 2022;March 7,
 ORG-000355 | Godfrey & Wing | https://www.godfreywing.com/ | https://www.godfreywing.com/news-events/ |  | News &amp; Events - Godfrey ＆ Wing | February 1, 2024
 ORG-000384 | Intralox, L.L.C. | https://www.intralox.com/ | https://www.intralox.com/media/news |  | News &amp; Insights | Intralox | November 5, 2026;October 29, 2026;October 16, 2026;September 11, 2026;
@@ -328,11 +328,11 @@ ORG-000523 | Pretium Packaging | https://www.pretiumpkg.com/ | https://www.preti
 ORG-000570 | Shini USA | https://www.shiniusa.com/ | https://www.shiniusa.com/our-company/news/ | https://www.shiniusa.com/feed/ | News | Blog Posts | Plastics Industry News | Shini USA | October 14, 2024;October 15, 2024;September 14, 2021;October 20, 2022;
 ORG-000603 | Tesla NanoCoatings Inc. | https://teslanano.com/ | https://teslanano.com/offshore-coatings-newsroom/ | https://teslanano.com/feed/ | Tesla NanoCoatings Newsroom: Offshore Coating Insights | October 26, 2026;October 21, 2026;April 11, 2025;March 11, 2025;Februa
 ORG-000624 | Uway Extrusion LLC | https://www.uwayextrusion.com/ | https://www.uwayextrusion.com/news |  | News-UWAY | 2026-10-23;2026-11-02;2026-10-16;2026-09-23;2026-09-11;2026-08-27
-ORG-000625 | Venture Plastics, Inc. | https://ventureplastics.com/ | https://www.ventureplastics.com/news/ |  | Company News &amp; Case Studies | Venture Plastics, Inc. | June 30, 2026;May 1, 2025;September 18, 2024;April 15, 2022;September 
+ORG-000625 | Venture Plastics, Inc. | https://ventureplastics.com/ | https://www.ventureplastics.com/news/ |  | Company News &amp; Case Studies | Venture Plastics, Inc. | June 30, 2026;May 1, 2025;September 18, 2024;April 15, 2022;September
 ORG-000638 | Yokohama Industries Americas Ohio Inc. | https://www.yokohamaiaohio.com/ | https://www.yokohamaiaohio.com/about-us/news |  | News | Yokohama | 7/31/2026;October 30, 2026
 ORG-000688 | Autoneum | https://autoneum.com/ | https://autoneum.com/news |  | Autoneum | News &amp; Events | November 2, 2026;October 30, 2026;October 12, 2026;October 10, 2026;No
 ORG-000883 | Hub Plastics, Inc. | https://hubplastics.com/ | https://hubplastics.com/announcements/ |  | Announcements | Hub Plastics | 05/15/2024;4/4/2023;9/19/2022;5/1/2019
-ORG-001033 | Plastipak Packaging, Inc. | https://www.plastipak.com/ | https://www.plastipak.com/?page_id=52 | https://www.plastipak.com/feed/ | Plastipak Newsroom - Plastipak Packaging, Inc. | Oct 14, 2026;Oct 1, 2026;Aug 21, 2026;Jul 9, 2026;Jul 2, 2026;Jun 12, 
+ORG-001033 | Plastipak Packaging, Inc. | https://www.plastipak.com/ | https://www.plastipak.com/?page_id=52 | https://www.plastipak.com/feed/ | Plastipak Newsroom - Plastipak Packaging, Inc. | Oct 14, 2026;Oct 1, 2026;Aug 21, 2026;Jul 9, 2026;Jul 2, 2026;Jun 12,
 ORG-001078 | Rhetech Colors | https://www.rhetechcolors.com/ | https://www.rhetechcolors.com/news-and-events/ | https://www.rhetechcolors.com/feed/ | News &amp; events - RheTech Colors - Additive Masterbatches | January 29, 2026;July 31, 2026;March 4, 2026
 ORG-001105 | Liquibox | https://www.liquibox.com/ | https://www.liquibox.com/news/news-and-press-releases/ |  | News and Press Releases Archives - Liquibox- Sealed Air | May 13, 2024;January 18, 2024;February 22, 2023;February 01, 2023;Janu
 ORG-001327 | AltraSet Composite Technologies | https://altraset.mar-bal.com/ | https://altraset.mar-bal.com/news/ | https://altraset.mar-bal.com/feed/ | AltraSet Composite Technologies | News | Feb 18, 2019
