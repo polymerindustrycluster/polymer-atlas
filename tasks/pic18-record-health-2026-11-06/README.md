@@ -53,3 +53,5 @@ Builder re-run: identical data hashes (idempotent). It preserves unrelated colum
 Reviews: pending.
 
 Takeover atlas-L4b-pic18-health: repeated health self-check, check.py, seven-source raw refetch, build.py --raw-check (12/12), and validate.py (zero errors) successfully. Prior council output files were empty. Controller BOARD 05:55 supersedes council-only routing and authorizes draft PR before clerk review. Reviews remain pending; no completion claim yet.
+
+Refresh on main 9489b60: controller explicitly authorized taking main's LF federal-frame files (#139), then merging main and replaying data builder (supersedes earlier no-touch constraint for this integration only). Original dirty bytes preserved in /tmp/l4b-inherited-federal-backup. Net federal-frame diff vs main is zero. All main data taken before builder replay; exact-delta check now compares against refreshed main. T1 remains431/632; original frozen campaign baseline unchanged. Validate0 and raw packet checks pass.
