@@ -2,8 +2,7 @@
 import hashlib
 import re
 from collections import Counter
-from check_archives import HERE,ROOT,house,same_capture,same_page
-from pathlib import Path
+from check_archives import HERE,ROOT,PROOFS,house,same_capture,same_page
 
 def main(applied=True):
     candidates=house.read(HERE/'candidates.csv')
@@ -36,7 +35,7 @@ def main(applied=True):
         assert f['status']=='ok' and f['http']=='200' and same_capture(f['effective_url'],r['archive_ref'])
         assert f['checked_at']==rc['checked_at'] and rc['archive_ref']==r['archive_ref']
         assert rc['packet_sha256']==digest and rc['quote_sha256']==hashlib.sha256(v['quote'].encode()).hexdigest()
-        proof=Path(f['proof'])
+        proof=PROOFS/(hashlib.sha256(r['archive_ref'].encode()).hexdigest()+'.txt')
         assert hashlib.sha256(proof.read_bytes()).hexdigest()==f['page_sha256']
         assert house.on_page(v['quote'],proof)
     print('Topup:',len(pi),'new links /',len({r['archive_ref'] for r in packet}),'captures;',len(outcomes)-len(pi),'held /',len(candidates),'frozen candidates')

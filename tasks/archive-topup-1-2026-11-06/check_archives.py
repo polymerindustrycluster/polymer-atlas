@@ -2,6 +2,7 @@
 """Freeze up to500 candidates, freshly qualify each, and record every excluded row."""
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -14,8 +15,9 @@ import run as house
 from archive import same_page,same_capture,FIELDS
 house.CACHE=ROOT/'build/l1-topup-1-cache'
 house.CACHE.mkdir(exist_ok=True)
-PROOFS=ROOT/'build/l1-topup-1-proof'
-PROOFS.mkdir(exist_ok=True)
+# Proof bodies survive worktree teardown here; override with ARCHIVE_TOPUP_PROOFS. restore_proofs.py rebuilds them from Wayback.
+PROOFS=Path(os.environ.get('ARCHIVE_TOPUP_PROOFS','/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/archive-topup-1'))
+PROOFS.mkdir(parents=True,exist_ok=True)
 
 
 def main():

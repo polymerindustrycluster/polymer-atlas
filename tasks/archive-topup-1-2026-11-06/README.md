@@ -69,3 +69,16 @@ idempotent0/validator0/native row-loss PASS. Seed2347731 live10-link/10-URL samp
 3 transport timeouts/HTTP000, with recorded raw/proof bindings independently passing. Current availability of those3
 was not reconfirmed; no permanence/semantic/rendered/completeness claim. Full486 live re-fetch/fullsuite not repeated.
 Report: controller review ledger reviews/234-clerk-codex-8.md. Grok family review remains pending; keep draft.
+
+## Proof persistence — 2026-11-06 (Grok finding: proof bodies lost with the L1 worktree)
+
+The 42 proof bodies were only in the destroyed L1 worktree. They are rebuilt by `restore_proofs.py`, which re-fetches
+each of the 43 Wayback captures one at a time (5 s apart, curl + the house text extractor) and keeps a body only if its
+sha256 equals the recorded `page_sha256`. Result: 42 of 42 `ok` captures re-fetched and hash-identical (captures are
+immutable); the 43rd (GSH, recorded `FETCH_FAILED`, 14 held rows) was not retried. Bodies live in
+`ARCHIVE_TOPUP_PROOFS` (default `/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/archive-topup-1/`),
+named `sha256(archive_ref).txt`. `check.py` (and so `build.py`, `mutations.py`) now derives each proof path from
+`archive_ref` and ignores the stale absolute `proof` column in `capture_checks.csv`, which is left byte-unchanged as the
+record of the original location. Re-run: `python3 tasks/archive-topup-1-2026-11-06/restore_proofs.py`, then the named checks.
+Re-run after the fix: check.py 486/486 rows recomputed, selfcheck, 3 no-write mutations and second apply (0 additions) PASS;
+a tampered proof body and a missing proof directory both make check.py fail. No `data/` file changed.
