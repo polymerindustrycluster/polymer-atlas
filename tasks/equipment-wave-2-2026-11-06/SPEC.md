@@ -1,0 +1,7 @@
+# L14 equipment wave2 — acceptance before data application
+
+Controller assigns new branch off currentmain85b8560; EQP000100–000999 inside existing block. Scope: Ohio NASA Glenn, Toledo,Cincinnati,Wright State,Ohio University,Cleveland State,Stark State,Lorain CountyCC first; then PennState,Lehigh,CMU,Michigan,MichiganState where feasible. Host must resolve to held organization/ecosystem and correct institution, not TTO or merely shared domain. No new host creation in this equipment-only pass; unheld hosts held.
+
+Same §3.7/§4.19 rules as wave1: own pages only; one instrument/line/named testing service row, exact published names, closest governed class, access not_stated unless explicit, optional site/program FKs only where supported. Fresh raw quote/name checks with no skipped sources, ≥3 hand-known positive instruments and fabricated negative; dedupe host and host/name pairs; idempotent builder with collision-before-write test and preserved prior rows; validate.py0errors; actual Pages build/rendered-row reconciliation; independent Codex+Grok refutes via clerkpair4 before completion. No EVD because equipment excluded from §4.13. No inferred current operating availability.
+
+First user:PIC industry staff seeking testing/fabrication equipment. Non-use review2026-12-06. Branch history backup, README journal. No process/private/contact/licensed data in public rows. Record source availability and unworked/held cases explicitly; optional out-of-state breadth is not a complete inventory claim.

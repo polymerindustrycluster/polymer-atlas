@@ -1,0 +1,17 @@
+{
+  "worker": "audit9-followup-blind-b",
+  "kind": "separate clarification; locked verdict objects unchanged",
+  "SITE-014007": {
+    "missing_current_continuity_only": false,
+    "historical_manufacturing_at_exact_address": "California adjudication affirmatively describes manufacturing rooms/processes under NuSil at 2343 Pegasus Drive. This is actual historical manufacturing evidence, not merely a planned permit.",
+    "remaining_specific_gap": "The admitted NuSil-authored CareSil Rev C ©2013 composition document lists two manufacturer addresses (Carpinteria and 2343 Pegasus Road, Bakersfield), labels the material a prototype not commercially available, and reserves contingency manufacturing elsewhere. It does not assign actual production of this silicone formulation specifically to the 2343 site or establish that site's dominant function. The court confirms manufacturing at 2343 but its generic medical devices/components description does not independently establish polymer output there. Taken together this is substantial historical support, but I did not regard actual site-specific silicone production/dominant plant function as fully settled. Current continuity is an additional limitation, NOT a necessary requirement imposed on frozen unknown status.",
+    "status_rule": "Unknown operating_status is neither false nor an error. If parent finds the historical combined manufacturer/process link sufficient, parent can adjudicate separately; do not rewrite my locked object.",
+    "address_rule": "Drive/Road wording discrepancy is not a confirmed field error; adjudication itself directly corroborates frozen Drive."
+  },
+  "SITE-016101": {
+    "historical_actual_polymer_manufacturing_settled": true,
+    "remaining_hold": "Frozen active status/current continuity as of 2026-11-06 remains unverified in admitted raw primary sources. The July 2018 EPD application review describes existing facility EPS manufacturing and actual molding-equipment replacement; it supplies affirmative historical actual operations evidence. The separate permit is a draft with blank issuance date, so I do not represent it as an issued/current permit. Draft status alone is NOT the reason to doubt the historical plant/process.",
+    "function_rule": "Historical corporate office label does not disprove co-located manufacturing under SCHEMA 4.5/5.3. Dominant current function is not certified without current exact-site evidence."
+  },
+  "attestation": "No original evidence, canonical data, old sources/verdicts or main changes accessed; no additional research routes used for this clarification."
+}

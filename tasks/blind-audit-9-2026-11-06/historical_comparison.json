@@ -1,0 +1,30 @@
+{
+  "audit7": {
+    "unit": "sampled records, grain/frame not re-established",
+    "n": 65,
+    "agreement": 58,
+    "field_error": null,
+    "creation_error": null,
+    "unresolved": null,
+    "source": "tasks/QUEUE.md F1 and audit8 comparison; remaining7unclassified"
+  },
+  "audit8": {
+    "n": 65,
+    "organizations": 29,
+    "sites": 36,
+    "agreement": 53,
+    "field_error": 2,
+    "creation_error": 0,
+    "unresolved": 10,
+    "source_url": "https://github.com/polymerindustrycluster/polymer-atlas/pull/9",
+    "report_commit": "4311e9ecb3d66f4808e803ff70e57dc93b093a22",
+    "report_path": "docs/reviews/f1-audit-8/README.md",
+    "weighted_points": {
+      "agreement": 0.82,
+      "field_error": 0.038,
+      "creation_error": 0,
+      "unresolved": 0.142
+    },
+    "comparability": "Different frames/dates; metadata partially known; mixed org/site unit; observation field coverage limited. No causal improvement comparison."
+  }
+}

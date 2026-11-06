@@ -1,0 +1,8 @@
+dedupe-check {'domain': 'the-center.org', 'name': 'Michigan Manufacturing Technology Center'}  (AGENTS.md §3; searches the union of ALL shards)
+
+STEP 1 website domain (organizations_*.csv + ecosystem.csv): 0 hit(s)
+STEP 2 normalized name vs legal_name/trade_names: 0 hit(s)
+STEP 3 street address (sites_*.csv; one address = one site, owned by the operator): skipped (no --street)
+STEP 4 trade_names/notes/legal_name substring + successor_org_id chain: 0 hit(s)
+
+=> No hits at any step run. Create at tier U or C and record which searches you ran (AGENTS.md §3 step 5).

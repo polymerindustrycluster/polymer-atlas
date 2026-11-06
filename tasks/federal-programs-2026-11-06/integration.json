@@ -1,0 +1,21 @@
+{
+  "merged_main": "80bb5140e0f1598d85fe30b28777def59c9b83c6",
+  "recipe": "exact main versions of both owned canonical files + builder replay; no hand CSV merge",
+  "preservation": {
+    "ecosystem.csv": {
+      "main_rows_preserved": 400,
+      "rows_added": 1
+    },
+    "evidence_ecosystem.csv": {
+      "main_rows_preserved": 407,
+      "rows_added": 5
+    }
+  },
+  "packet_sha256": {
+    "inputs.csv": "2b166361444c61eadb750acf9de07c2994b4b21422c1f06c7e140b916e225a27",
+    "verdicts.csv": "dc166e0346b93212ca792d33f9948039aba77d6e76e99dd87428a8cdeea0b09b",
+    "creates_ecosystem.csv": "6ea7d40dc34ee2b52c1e9c935035bb9c961a48afb5a27ce8af0501770b59e656",
+    "evidence_rows.csv": "6f88bea1c25cbec63e088e9fe918fbd9e3b02d73b4af8549636bafbaa83e587e"
+  },
+  "checks": "PASS post-merge census/replay/ORG+EVD+typed-evidence+fakequote no-write/raw5/5/validator0"
+}

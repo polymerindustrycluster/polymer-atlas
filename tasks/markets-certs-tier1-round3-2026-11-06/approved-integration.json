@@ -1,0 +1,15 @@
+{
+  "approved_codex_head": "f8290cc",
+  "approved_grok_head": "3ac79b5",
+  "integration_main": "6157e683fa07fff7098075665041c08f4156167a",
+  "reviewed_48_org_cell_deltas_equal": true,
+  "reviewed_157_full_evidence_rows_and_shards_equal": true,
+  "hardened_builder_checks_inputs_frame_holds_verdicts_unchanged": true,
+  "old_main_keys_fields_evidence_preserved": true,
+  "replay_changed_bytes": false,
+  "before_active_stored_tier1": {
+    "active_stored_tier1": 1293,
+    "markets": 221,
+    "certifications": 21
+  }
+}

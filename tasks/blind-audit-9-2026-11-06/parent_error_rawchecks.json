@@ -1,0 +1,34 @@
+[
+  {
+    "site_id": "SITE-014003",
+    "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+    "quote": "our Corona Distribution Center has more than 1 million square feet under roof.",
+    "raw_checked": true,
+    "sha256": "d2ea297b23ad1e18ac99f880b48ca05dc19c90b8dc3fcae7ef5209989e87b669",
+    "bytes": 52554
+  },
+  {
+    "site_id": "SITE-014003",
+    "url": "https://corporate.dartcontainer.com/location/corona-ca/",
+    "quote": "150 S. Maple Street, Corona, CA 92878",
+    "raw_checked": true,
+    "sha256": "d2ea297b23ad1e18ac99f880b48ca05dc19c90b8dc3fcae7ef5209989e87b669",
+    "bytes": 52554
+  },
+  {
+    "site_id": "SITE-012023",
+    "url": "https://www.y-yokohama.com/global/ir/pdf/document/25_4Qpresentation_en_transcripts.pdf",
+    "quote": "Y-TWS Spartanburg Plant Closed",
+    "raw_checked": true,
+    "sha256": "33208e277c5849207e72889142b62616dce4cbc1f3449f39ad3ceb8f21b94ef9",
+    "bytes": 2591491
+  },
+  {
+    "site_id": "SITE-012023",
+    "url": "https://dew.sc.gov/sites/dew/files/Documents/2025%20South%20Carolina%20WARN_Report%2003032025.pdf",
+    "quote": "Yokohama TWS North America Spartanburg 2/18/2025 4/19/2025 90 Permanent Closure 570 Trelleborg Dr., Spartanburg, SC 29301",
+    "raw_checked": true,
+    "sha256": "6dc3f90eaa27643780d36351aca33207864e73f43258e4a3856411122f7bb945",
+    "bytes": 20861
+  }
+]

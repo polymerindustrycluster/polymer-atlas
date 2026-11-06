@@ -1,0 +1,18 @@
+Fresh source-system verification run (4identities+joint facility label):
+SOURCE PASS FRS 110000741822 DOVER CHEMICAL CORPORATION 3676 DAVIS RD. N.W.
+SOURCE PASS FRS 110007706900 CONVERTAPAX INC GUNDY DR  BLDG NO 3
+SOURCE PASS FRS 110000390390 QUEST AUTOMOTIVE PRODUCTS 2290 ZIMMERMAN RD. S.E.
+SOURCE PASS EIN 391205755 DOVER CHEMICAL CORPORATION 3676 DAVIS ROAD NW
+PASS4/4 source-system identities;3 hand-known FRS records plus1 exact-name/street EIN filing; joint-name corroboration; negative ID controls
+
+Final composite-key/ID-scope/replay check:
+PASS census26/26; proposed1organization+1site+13evidence+4registrylinks; pending 0 rows
+PASS snapshot2026-11-01 Form5500 screen: IAC3 names/0 establishment matches; Ultimate0 names
+PASS registry composite-key conflict fails before any write
+PASS all-CSV replay byte-identical; injected cross-shard reserved-ID collision fails before write
+
+Final command: python3 scripts/validate.py
+
+4946 organizations, 6898 sites, 400 ecosystem rows, 5377 registry links, 60 member rows, 1431 people rows, 166 program rows, 71 event series, 35465 evidence rows, 356 relationship rows, 497 capability rows, 0 equipment rows, 0 engagement rows, 0 person-identifier links, 970 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+OK — validation passed.
+Old-row comparison to pre-registry HEAD:5373 registry rows preserved +4;4087 evidence_sites_OH rows preserved +4;2546 evidence_organizations_OH rows preserved +1.

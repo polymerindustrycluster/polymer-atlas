@@ -1,0 +1,58 @@
+{
+  "main_pin": "4f30a8ebf5dde4a2d84618ba02163bb2bad4c375",
+  "approved_packet_and_builder_hashes": {
+    "organizations.csv": "9e396f1a15f5e0c1800598dea98314f2e15d7874aa70254ddda3dcfdecc7a4ce",
+    "evidence.csv": "348f62c514f025cf0d601a9e4e4e5ad96fc90578d95ed7aef70fa245f12433ce",
+    "edits.csv": "26ece54f6814645145e96f78bbd199addc72c023d855216f05c76c76a480a1d2",
+    "verdicts.csv": "0339ad4ca50d6bdabd06ece918dfc21e677adb932555619b7cd3091f7e1e48a5",
+    "holds.csv": "2e77d24bbac16b11c592148e748d2dd42b7422031e118a774f4a2a322000541c",
+    "build.py": "6ba7930826bbdc336041c378d796c7115ea3289db1ac6f6c5e77264c2d907700"
+  },
+  "all_approved_packet_and_builder_bytes_unchanged": true,
+  "tables": {
+    "organizations_OH.csv": {
+      "main_rows_preserved": 1787,
+      "added_rows": 1,
+      "edited_cells": 0,
+      "sha256": "8aa679ca8f28629ed797428e8074d8a1c90cdd3dfef3f155c7ec2b49363cd278"
+    },
+    "sites_OH.csv": {
+      "main_rows_preserved": 2010,
+      "added_rows": 0,
+      "edited_cells": 10,
+      "sha256": "649ffe8895707375b3ec5fbcbba020d77e347dc76418f54f1ea2a37dbc22a0ce"
+    },
+    "sites_PA.csv": {
+      "main_rows_preserved": 777,
+      "added_rows": 0,
+      "edited_cells": 12,
+      "sha256": "61e0d66f2dfb24da62eb909d899f9e20e18f9a702f217f1606e75990b1672b1a"
+    },
+    "relationships.csv": {
+      "main_rows_preserved": 357,
+      "added_rows": 1,
+      "edited_cells": 0,
+      "sha256": "66c8e802ce0fb98ee9ad57ffa70fe14d4177e412f215368c92c8a56db6c34773"
+    },
+    "evidence_organizations_OH.csv": {
+      "main_rows_preserved": 2923,
+      "added_rows": 6,
+      "edited_cells": 0,
+      "sha256": "36726359bc8d06828e17f6b2df9c490925d311c1cc3e99e36f85c3ba9e475db5"
+    },
+    "evidence_sites_OH.csv": {
+      "main_rows_preserved": 4409,
+      "added_rows": 4,
+      "edited_cells": 0,
+      "sha256": "a350a20e9f3da7ca22f0f19ee7cc2131523854776aa34a9c57efd8e6b3c2bc90"
+    },
+    "evidence_sites_PA.csv": {
+      "main_rows_preserved": 1379,
+      "added_rows": 6,
+      "edited_cells": 0,
+      "sha256": "7d850858b04d5b545f8bba32f75dc67e53bda62f6a77927bad29e1168cee7309"
+    }
+  },
+  "method": "exact main copies of all seven owned canonical files, unchanged approved builder replay, no CSV hand merge",
+  "checks": "named check/full main-row preservation/replay/4zero-writeclasses/4parceldefects/validator0 PASS"
+}
