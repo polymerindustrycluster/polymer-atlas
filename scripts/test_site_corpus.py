@@ -147,3 +147,11 @@ def test_global_eight_slots_across_instances(tmp_path):
     with ThreadPoolExecutor(max_workers=12) as pool:
         list(pool.map(use, range(12)))
     assert maximum == 8
+
+
+def test_specific_bot_rules_not_browser_prefix(tmp_path):
+    c = Corpus(tmp_path)
+    robots = 'User-agent: AtlasSiteCorpus\nDisallow: /\n\nUser-agent: *\nAllow: /'
+    with patch.object(c, 'request', return_value=response(robots)) as request:
+        assert c.rawcheck('https://example.org/', 'quote') == 'unfetchable'
+        assert request.call_count == 1

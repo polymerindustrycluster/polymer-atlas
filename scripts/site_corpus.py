@@ -31,6 +31,7 @@ from regions import PIC18
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CACHE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/cache/site_corpus')
 UA = 'Mozilla/5.0 (compatible; AtlasSiteCorpus/1.0)'
+ROBOT_AGENT = 'AtlasSiteCorpus'
 KINDS = {
     'about': r'about|company|who-we-are',
     'locations': r'contact|location|facilit',
@@ -209,10 +210,10 @@ class Corpus:
             parser.parse((self.cache / r['text_file']).read_text().splitlines())
         elif r['http_status'] in (404, 410): parser.parse([])
         else: parser.parse(['User-agent: *', 'Disallow: /'])
-        delay = max(1, parser.crawl_delay(UA) or 0)
-        rate = parser.request_rate(UA)
+        delay = max(1, parser.crawl_delay(ROBOT_AGENT) or 0)
+        rate = parser.request_rate(ROBOT_AGENT)
         if rate: delay = max(delay, rate.seconds / rate.requests)
-        return parser.can_fetch(UA, target), delay
+        return parser.can_fetch(ROBOT_AGENT, target), delay
 
     def fetch(self, target, robots=False):
         target = url(target)
@@ -234,7 +235,7 @@ class Corpus:
             if response.get('exit') == 0 and response.get('code') == 200:
                 r = self.save(target, response, 'ok', current, 'direct')
                 if r['status'] == 'ok' or robots: return r
-            if not robots and response.get('code') != 429:
+            if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai':
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:
                     return self.save(target, fallback, 'ok', current, 'jina')
