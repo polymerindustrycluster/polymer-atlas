@@ -43,8 +43,23 @@ page['body']='<a href="/unlisted">Actual release</a>'
 with patch('check.fetch',side_effect=[page,feed]):assert check(row)['checks'][1]['linked_items']==1
 print('PASS: channel metadata link cannot satisfy item overlap; actual item link does')
 feed['final']='https://example.com/comments/feed/'
+row['newsroom_feed_url']=feed['url']=feed['final']
 with patch('check.fetch',side_effect=[page,feed]):
     try:check(row)
     except AssertionError:pass
     else:raise AssertionError('comments feed accepted')
 print('PASS: comments feed rejected even when its item links overlap')
+
+badrow={'org_id':'test','website':'https://example.com','newsroom_url':'https://example.com/news','newsroom_feed_url':''}
+with patch('check.fetch',return_value={'status':'200','url':badrow['newsroom_url'],'final':'https://example.com/','body':'Home'}):
+    try:check(badrow)
+    except AssertionError:pass
+    else:raise AssertionError('same-domain homepage redirect accepted')
+print('PASS: same-domain homepage redirect rejected')
+import sys
+if '--live' in sys.argv:
+    from discover import discover
+    for saved in known:
+        result=discover({'org_id':saved['org_id'],'website':saved['website']})
+        assert result['newsroom_url']==saved['newsroom_url'],result
+    print('PASS: 3 fresh live known-answer newsroom discoveries')

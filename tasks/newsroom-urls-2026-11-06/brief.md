@@ -1,35 +1,61 @@
-FINAL v2 completion refute for Atlas L9. Return VERDICT: APPROVE or REFUTE. Prior Codex v1 REFUTE: Synray comments feed and channel/feed metadata falsely counted as item overlap. Fixed: item/entry-only article links, explicit comments-feed rejection; injected tests prove both defects rejected. 15 additional feeds omitted (including Synray); now118 pages+44 feeds=162 cells. No page changes from v1. Challenge remaining errors in final result. Controller authorized full active tier1 with website frame (1043 attempted), fills + explicit residual holds. §4.4 makes fields navigation aids, never evidence by themselves; own registrable domain only; no EVD needed. All changed cells previously empty; no other field or rowset changed.
+FINAL v3 adversarial completion refute: PR145. v1 Codex/Grok findings fixed or held; v2 superseded. Return VERDICT APPROVE or REFUTE against final exact code/data below. 114 pages+41 feeds=155 empty cells,929 explicit organization holds; full1043 active-tier1 website frame attempted. No EVD needed for navigation columns under SCHEMA4.4. Verify all prior findings resolved; challenge remaining false positives.
 # L9 newsroom navigation — 2026-11-06
 
-Claim: atlas-L9-newsroom; branch agent/codex/newsroom-urls. Controller delegated application of these two columns.
-First user: existing news-monitor operator (L8/controller); URLs usable when this PR lands. This task adds navigation data, not a new user-operated system.
+Claim: atlas-L9-newsroom; branch agent/codex/newsroom-urls; PR145. Controller delegated application of two navigation columns. First user: existing news-monitor operator (L8/controller), usable after merge. No new operator system.
 
-## Scope and acceptance
+## Scope and provenance
 
-Controller ruling 2026-11-06 supersedes the proposed 100-org cap: attempt every active organization with a nonempty tier1_qualifier and website, using the column as-is (pending derivation gains excluded). First PR only; PIC-18 non-tier1 and other organizations belong to subsequent PRs. inputs.csv freezes 1,043 distinct active organizations from the 1,261 active tier1 organizations; 218 without a website are outside the fetch frame.
+Controller ruling supersedes proposed 100-org cap: first PR attempts every active organization with tier1_qualifier nonempty and website, column as-is despite pending derivation. Frozen inputs.csv: 1,043 distinct active organizations; 218 of 1,261 active tier1 organizations have no website and are outside fetch frame. PIC-18 non-tier1 and other organizations are subsequent PR scopes. Primary sources: each canonical own website and directly linked newsroom indexes; routes in discovery.json, dates in audit.json, dispositions in verdicts.csv.
 
-Acceptance: fill only reachable own-domain news/press/announcements indexes; hold redirects to home pages, ambiguous purpose, parent/division mismatches and inaccessible pages. Feeds must parse as RSS/Atom with >=1 item. No status, verification tier, evidence, liveness, derived field, registry or LinkedIn changes. §4.4 explicitly makes these navigation aids, never evidence by themselves; EVD-230000–239999 remains unused. No factual evidence claims or quotes are added. Primary sources are the organization websites and the linked indexes in verdicts.csv.
+SCHEMA §4.4/v1.11 and V-58: navigation aids, never evidence by themselves; no evidence rows or quotes added. EVD-230000–239999 unused. No creates (dedupe/ID allocation/append_sorted inapplicable), no status, tier, liveness, registry, derived, LinkedIn or inclusion_log changes.
 
-## Reproduce
+## Reproduce and acceptance
 
-- `python3 tasks/newsroom-urls-2026-11-06/self_check.py`
-- `python3 tasks/newsroom-urls-2026-11-06/build.py` (idempotent; fail on conflicting nonempty cells, website changes or eligibility changes; fresh-main rebase re-runs this)
-- `python3 tasks/newsroom-urls-2026-11-06/check.py` (every accepted page and feed, HTTP 200, final domain check, nonempty RSS/Atom)
-- `python3 scripts/validate.py` (0 errors, V-58 clean)
+```
+python3 tasks/newsroom-urls-2026-11-06/self_check.py --live
+python3 tasks/newsroom-urls-2026-11-06/build.py
+python3 tasks/newsroom-urls-2026-11-06/check.py
+python3 scripts/validate.py
+```
 
-Branch history is the pre-pass backup. The builder preflights all edited shards before any write. No rows are created, so ID allocation, dedupe and append_sorted do not apply. Only two cells per accepted organization can change; generated exports are untouched. Known CRLF-dirty federal-frame files are excluded.
+Accept reachable same-domain organization-specific news/press/announcements indexes. Hold home redirects, parent/division mismatch, ambiguous purpose, unavailable routes. Final URL must remain the stored path (trailing slash tolerated). Every feed must parse RSS/Atom with >=1 item and have an article-item permalink linked from its selected newsroom; channel/feed metadata never establishes overlap; comments feeds barred. Build refuses conflicting nonempty cells, website or eligibility changes, off-domain URLs and comments routes before any writes. Current data values must equal reviewed packet before re-fetch. Branch history is the pre-pass backup; README is the pass journal.
 
-## Discovery and calibration
+`discover.py` uses exact navigation labels, up to three candidates, advertised alternate feeds or /feed/ and /rss.xml, <=6 discovery requests/org. It retains prior attempts rather than silently retrying. Known-answer live probes Avient /company/news-events, RPM /news/, GEON /news PASS; initial matcher missed Avient “News + Events”, fixed before acceptance. --live freshly repeats these probes; default self_check only checks saved calibration outputs. Injected defects cover HTTP403, off-domain redirects, empty feeds, channel-home false overlap, comments feeds (even overlapping), same-domain homepage redirects. All caught. Date years include copyright; only parsed text date samples are recorded, not liveness evidence. Whole website/sitemap crawling was not done; no matching link never asserts absence.
 
-`discover.py` extracts exact newsroom navigation labels, fetches up to three candidates, then advertised RSS/Atom feeds or /feed/ and /rss.xml. Up to six discovery fetches per organization; prior attempts are retained, not silently retried. No third-party wire service or social platform is accepted. Ambiguous or unavailable routes remain STILL_UNCERTAIN, never evidence of absence.
+## Final results
 
-Three known-answer records: Avient /company/news-events, RPM /news/, GEON /news all PASS (known_answers.json). Initial matcher missed Avient's “News + Events”; fixed before accepting output. Goodyear had no matching link and Lubrizol/Parker returned 403; these are route failures, not negative findings. self_check.py injects 403, an off-domain redirect and empty RSS and confirms each fails. Domain matching mirrors V-58's documented short two-level-suffix heuristic; no new dependency.
+Unit/filter: **active organizations**, mutually exclusive priority buckets, tier1 before PIC-18 non-tier1 before other. Attempted: tier1=1,043; PIC-18 non-tier1=0; other=0. Filled: **tier1=114 organizations with 114 newsroom URLs and 41 feeds (155 empty cells, 27 organization shards); other buckets=0**. Changed organization tiers unchanged: A=37, B=70, C=6, U=1. 929 organization holds, each with settling fact in verdicts.csv. 344 candidate indexes examined. No records created or inclusion decisions changed.
 
-## Results and holds
+| Hold class | Active organizations | Settling fact |
+|---|---:|---|
+| No bounded-navigation candidate | 699 | Reachable own-domain newsroom index confirmed |
+| Candidate purpose/identity/accessibility | 230 | Organization-specific news-index purpose and reachable final URL confirmed |
+| Feed-only holds, overlapping accepted orgs | 19 | Same newsroom article feed confirmed; pages still accepted |
 
-Final verification passed. verdicts.csv contains one disposition per input, with a named settling fact for every STILL_UNCERTAIN row. Discovery is not complete website crawling: pages without a matching nav link are held even if a newsroom may exist elsewhere. Date years in discovery.json include footer years and are not liveness evidence. Staleness is recorded only after actual dated-item review; no status motion follows.
+Specific final refute holds (included above):
 
-Baseline `python3 scripts/validate.py`: PASS (4,945 organization rows; existing warnings only). `council-doctor --json`: healthy, all four configured providers pass. No third-party API bulk sources used. Catalogue search was incomplete because the Mac lacks the Windows Documents catalogues; this is not a finding of absence, and discovery uses the already-held canonical website column.
+| Record | Uncertainty / recommendation |
+|---|---|
+| ORG-004556 Oregon Rubber Mills | Placeholder title [FOCUS AREA 2/3]; confirm this is maintained company news before filling |
+| ORG-004418 Duraco | Blog tag archive; confirm scope as company announcements or obtain owner ruling before filling |
+| ORG-004620 Mississippi Polymers | Post-shaped slug; confirm multi-item news index, not an individual post |
+| ORG-004287 Thorpe Plant Services | Site title Thorpe Specialty Services; confirm canonical identity/alias before filling |
+| ORG-004605 Proviron feed | Regional index with global root stream; confirm dedicated regional feed before filling |
+
+## Checks and reviews
+
+- Baseline and final `python3 scripts/validate.py`: **0 errors / OK — validation passed**, V-58 clean, existing warnings only.
+- Final `check.py`: **PASS: 114 active organizations; 155 URLs, all HTTP 200 and feeds nonempty**. Final report refetch.json includes article-item overlap counts for every feed.
+- `build.py` immediate second run: **0 cells /0 shards written**.
+- `self_check.py --live`: full1,043 IDs uniquely reconciled across input/discovery/verdict; <=6 discovery fetches; three fresh known answers; injected defects rejected.
+- Existing script suite: **221 tests OK (1 skipped)**. Existing build_site.py SyntaxWarning observed; scripts/ unchanged.
+- Final field-boundary check against origin/main: only newsroom_url/newsroom_feed_url, every prior cell empty; row IDs unchanged. No generated exports.
+
+Codex deep v1 **REFUTE**: Synray comments feed and false channel/feed metadata overlap. Substantiated and fixed. Restricted to item/entry article links, explicitly rejected comments, injected regression tests. Removed15 extra feeds (including Synray); initial177 URLs became162.
+
+Grok deep v1 **REFUTE**: same feed defects; same-domain home redirects; Oregon template, Duraco tag, Mississippi index purpose, Thorpe identity, Proviron regional/global feed; static calibration could be mistaken for fresh. Held four organization pages plus their two feeds and Proviron feed; strict same-path check; --live calibration added. Final155 URLs supersedes both earlier figures. No scope/vocabulary/identity ruling self-applied. All findings fixed or held pending confirmation; final two-family rereviews pending, no completion approval claimed.
+
+Controller integration ruling (BOARD06:12) explicitly superseded the hands-off constraint narrowly: take main's exact LF federal-frame files (#139), commit, then merge. Net diff of those files vs main is zero. Merged origin/main9489b60; took all organization shards from main and replayed builder, preserving #128 ownership/evidence changes. No CSV conflict hand-merged. Latest narrowed packet also replayed from main. Catalogue search was incomplete on this Mac (Windows Documents sources absent), not a finding of source absence; canonical held websites supplied the source frame.
 
 ### Potential staleness leads
 
@@ -60,36 +86,6 @@ These indexes have only pre-2024 dates in the parsed date sample (up to 12 disti
 | ORG-004556 Oregon Rubber Mills Co | 6/3/2016 |
 | ORG-004620 Mississippi Polymers, Inc. | 06/01/2017;12/05/2016;11/22/2016;11/01/2016 |
 
-### Final application and checks
-
-Unit/filter: **active organizations**, mutually exclusive priority buckets (tier1 first, then PIC-18 non-tier1, then other). This PR attempts tier1=1,043; PIC-18 non-tier1=0; other=0. Fills: **tier1=118 organizations with 118 newsroom URLs and 44 feeds; PIC-18 non-tier1=0; other=0**. 162 empty cells filled in 118 existing organization rows, across 28 organization shards. No records created. Verification tiers of changed organizations: A=39, B=71, C=7, U=1 (unchanged). 925 STILL_UNCERTAIN organization holds, individually listed in verdicts.csv. No borderline inclusion decisions and no inclusion_log rows.
-
-344 candidate indexes were found. Accepted indexes have an own-domain nav label, matching organization brand in title, and actual text dates in audit.json. Human exclusions include home redirects, parent/group indexes for subsidiary records, investor-only indexes, product-division indexes and page-purpose ambiguity. Identity/page-purpose holds require a confirmed organization-specific index. Route holds require a reachable own-domain index; failed routes make no negative entity assertion. 18 candidate feeds were omitted because no item was also linked from the selected index. No external feed hosts filled.
-
-- `self_check.py`: PASS; 3 live known-answer results; injected failure cases caught; full 1,043-ID reconciliation and <=6 discovery requests per organization.
-- `build.py`: 118 organizations, 162 cells; immediate second run **0 cells, 0 shards written**.
-- `check.py`: **PASS: 118 active organizations; 162 URLs, all HTTP 200 and feeds nonempty**. Every feed additionally has >=1 item linked from its selected newsroom. `refetch.json` records every result.
-- `python3 scripts/validate.py`: **0 errors / OK — validation passed**, V-58 clean, existing warnings unchanged.
-- `python3 -m unittest discover -s scripts -p 'test_*.py'`: **221 tests, OK (skipped=1)**. Existing build_site.py SyntaxWarning observed; no scripts/ files changed.
-- Independent before/after comparison against branch HEAD: **162 changed cells, 118 existing organization IDs, only newsroom_url/newsroom_feed_url, every prior value empty**. No other fields or row sets changed.
-
-### Refute reviews
-
-Pending Codex and Grok deep refute verdicts. No completion claim until both resolved.
-
-### Holds table
-
-| Hold class | Active organizations | Settling fact |
-|---|---:|---|
-| No newsroom candidate from bounded nav discovery | 699 | Reachable own-domain newsroom index confirmed from navigation, sitemap or direct route |
-| Candidate page held | 226 | Confirm organization-specific news-index purpose, identity and accessibility (each candidate URL in verdicts.csv) |
-| Feed only, within accepted organizations | 18 | Feed item linked from the selected index; pages still accepted, feeds omitted |
-
-The 925 organization holds are the first two rows, not plus the 18 overlapping feed-only holds.
-
-Feed-gate correction before publication: the initial overlap implementation counted channel-level links, so a shared homepage could give a false match. Restricted overlap to RSS item / Atom entry article links, ignoring channel/self metadata; added injected channel-home fixture. This caught 15 additional feeds, now omitted (18 total feed-only holds including initial three). Final fill = 118 pages +44 feeds. This supersedes the initial 177-URL/59-feed figures sent to the controller and v1 review packet.
-
-Codex deep v1 review **REFUTE**: identified Synray comments feed and channel/feed metadata producing false item overlap. Both findings substantiated. The corrected gate already omitted Synray among the 15 removed feeds; added explicit comments-feed rejection and injected test (even an overlapping comments item fails). Rerunning final checks and requesting a focused final refute. No other data fields changed.
 
 CODE discover.py
 """Bounded own-domain discovery; candidates require human review before build.py."""
@@ -211,6 +207,8 @@ def main():
             for col in ('newsroom_url','newsroom_feed_url'):
                 value=v[col]
                 if not value: continue
+                assert domain(value)==domain(website),(row["org_id"],col)
+                assert "/comments/" not in value.lower() and "feed=comments" not in value.lower()
                 assert row[col] in ('',value),(row['org_id'],col,'conflict')
                 if row[col]!=value:row[col]=value; changed=True; cells+=1
         if changed:
@@ -233,6 +231,7 @@ def check(r):
         if not r[col]: continue
         p=fetch(r[col]); assert p['status']=='200',(r['org_id'],col,p['status'])
         assert domain(p['final'])==domain(r['website']),(r['org_id'],p['final'])
+        assert p['final'].rstrip('/')==r[col].rstrip('/'),(r['org_id'],'stored URL redirected to another path',p['final'])
         result={k:p[k] for k in ('url','final','status')}
         if col=='newsroom_url':
             page_links={urljoin(p['final'],u.strip()).rstrip('/') for u,l in Links(p['body']).links}
@@ -308,13 +307,28 @@ page['body']='<a href="/unlisted">Actual release</a>'
 with patch('check.fetch',side_effect=[page,feed]):assert check(row)['checks'][1]['linked_items']==1
 print('PASS: channel metadata link cannot satisfy item overlap; actual item link does')
 feed['final']='https://example.com/comments/feed/'
+row['newsroom_feed_url']=feed['url']=feed['final']
 with patch('check.fetch',side_effect=[page,feed]):
     try:check(row)
     except AssertionError:pass
     else:raise AssertionError('comments feed accepted')
 print('PASS: comments feed rejected even when its item links overlap')
 
-ALL ACCEPTED URLS (id|name|website|newsroom|feed|title|dates):
+badrow={'org_id':'test','website':'https://example.com','newsroom_url':'https://example.com/news','newsroom_feed_url':''}
+with patch('check.fetch',return_value={'status':'200','url':badrow['newsroom_url'],'final':'https://example.com/','body':'Home'}):
+    try:check(badrow)
+    except AssertionError:pass
+    else:raise AssertionError('same-domain homepage redirect accepted')
+print('PASS: same-domain homepage redirect rejected')
+import sys
+if '--live' in sys.argv:
+    from discover import discover
+    for saved in known:
+        result=discover({'org_id':saved['org_id'],'website':saved['website']})
+        assert result['newsroom_url']==saved['newsroom_url'],result
+    print('PASS: 3 fresh live known-answer newsroom discoveries')
+
+ALL FINAL ACCEPTED URLS (id|name|website|newsroom|feed|title|dates):
 ORG-000001 | Avient Corporation | https://www.avient.com | https://www.avient.com/company/news-events |  | Avient News Center: Press Releases &amp; Upcoming Events | September 28, 2026;Nov 04, 2026;Oct 14, 2026;Oct 09, 2026;Sep 28, 2026
 ORG-000006 | RPM International Inc. | https://www.rpminc.com | https://www.rpminc.com/news/ |  | Company News | RPM International Inc. | 11/02/2026;10/08/2026;10/06/2026;10/01/2026;09/23/2026;09/04/2026;Octo
 ORG-000010 | GEON Performance Solutions | https://www.geon.com | https://www.geon.com/news | https://www.geon.com/news/rss.xml | News | GEON® Performance Solutions | July 09, 2026;July 9, 2026;March 10, 2026;March 09, 2026;January 21, 2
@@ -410,7 +424,6 @@ ORG-004258 | Barrette Outdoor Living, Inc. | https://www.barretteoutdoorliving.c
 ORG-004272 | Flex-N-Gate Corporation | https://www.flex-n-gate.com/ | https://flex-n-gate.com/news/ | https://flex-n-gate.com/feed/ | News - Flex N Gate | 16 October 2026;22 July 2026;14 April 2026;17 March 2026;26 January 20
 ORG-004273 | Future Pipe Industries | https://futurepipe.com/ | https://futurepipe.com/news-events/ |  | News &amp; Events - Future Pipe Industries | 24 September 2026;10 September 2026;10 August 2026;22 May 2026;12 May 
 ORG-004278 | Magnera Corporation | https://www.magnera.com/ | https://magnera.com/news/ | https://magnera.com/feed/ | Magnera News and Press Releases | Corporate Announcements | October 13, 2026;October 22, 2026;October 5, 2026;September 2, 2026;Au
-ORG-004287 | Thorpe Plant Services, Inc. | https://thorpeplantmaintenanceandengineering.com/ | https://thorpeplantmaintenanceandengineering.com/category/news/ | https://thorpeplantmaintenanceandengineering.com/feed/ | News Archives - Thorpe Specialty Services | September 13, 2022;January 18, 2022;June 13, 2016
 ORG-004289 | Trex Company, Inc. | https://www.trex.com/ | https://www.trex.com/our-company/news/ |  | News | Trex | February 16, 2026;February 13, 2026;January 31, 2026;January 23, 2026;
 ORG-004291 | Viskase Companies, Inc. | https://www.viskase.com/ | https://www.viskase.com/news-events/ | https://www.viskase.com/feed/ | News &#038; Events &#8211; Viskase | May 31, 2022;February 8, 2022;January 4, 2022;October 6, 2021;April 16
 ORG-004309 | FLEXcon Company, Inc. | https://www.flexcon.com/ | https://www.flexcon.com/press-releases |  | Flexcon | Press Releases | 08/24/2026;04/22/2026;03/24/2026;03/09/2026;02/03/2026;02/02/2026;01/0
@@ -419,7 +432,6 @@ ORG-004317 | Strongwell Corporation | https://www.strongwell.com/ | https://www.
 ORG-004324 | Toray Performance Materials Corporation | https://www.toraypmc.com/ | https://www.toraypmc.com/news |  | Latest news and updates - Toray Performance Materials Corporation | 26 August 2026;12 August 2026;1 June 2026;1 April 2026;29 August 2025;
 ORG-004328 | Techmer PM LLC | https://www.techmerpm.com/ | https://www.techmerpm.com/press-releases/ | https://www.techmerpm.com/feed/ | Press Releases - Techmer PM | May 12, 2023;June 3, 2023;April 29, 2023;June 15, 2026;Mar. 12, 2026;O
 ORG-004386 | Dicar Inc | https://www.dicar.com/ | https://dicar.com/news/ |  | News | Dicar | May 31, 2022;Mar 23, 2020;March 22, 2020;Mar 20, 2020;Feb 22, 2019;Sep
-ORG-004418 | Duraco Specialty Tapes LLC | https://www.duraco.com/ | https://duraco.com/blog/tag/news |  | news - Posts - Duraco | November 18, 2024;May 22, 2023;December 8, 2021;December 2, 2021
 ORG-004449 | Microporous LLC | https://www.microporous.net/ | https://microporous.net/newsroom/ | https://microporous.net/feed/ | Newsroom - Microporous | Apr 30, 2026;March 6, 2026
 ORG-004452 | Miller Ingenuity | https://www.milleringenuity.com/ | https://www.milleringenuity.com/news/ | https://www.milleringenuity.com/feed/ |  News | Miller Ingenuity | Oct 28, 2026;Oct 07, 2026;Oct 05, 2026;Sep 23, 2026;Aug 25, 2026;Jul 2
 ORG-004500 | Special-Lite, Inc. | https://special-lite.com/ | https://special-lite.com/news/ |  | News Posts Archive - Special-Lite | March 25, 2026;Oct. 15, 2025
@@ -427,9 +439,7 @@ ORG-004523 | Wabash National Corporation | https://onewabash.com/ | https://news
 ORG-004533 | Bomar Specialties, LLC | https://www.bomar-chem.com/ | https://bomar-chem.com/resources/news-and-media |  | News &amp; Media | Bomar Oligomers | January 31, 2023;May 4, 2022;January 31, 2022;June 8, 2021;April 5, 20
 ORG-004539 | Epic Resins | https://epicresins.com/ | https://www.epicresins.com/News |  | Epoxy Formulator Capitol Equipment Investments | Product Development News | Epic Resins | February 9, 2026;February 3, 2026;January 21, 2026;August 19, 2025;Sep
 ORG-004540 | Estron Chemical, Inc. | https://www.estron.com/ | https://estron.com/news/ |  | News - Estron Chemical | October 14, 2026;October 3, 2026;April 24, 2026;November 12, 2024;Sept
-ORG-004556 | Oregon Rubber Mills Co | https://www.oregonrubbermills.com/ | https://www.oregonrubbermills.com/Contact/News |  |  News | Oregon Rubber Mills in Corvallis, OR, [FOCUS AREA 2] and [FOCUS AREA 3]  | 6/3/2016
 ORG-004575 | Synray Corporation | https://synray.com | https://synray.com/news/ |  | NEWS &#8211; Synray Corporation &#8211; Manufacturers of Alkyd Resins, Polyesters and Chemical Specialties | April 30, 2026;March 31, 2025
 ORG-004585 | Rodda Paint Company | https://www.roddapaint.com | https://www.roddapaint.com/about-us/newsroom/ | https://www.roddapaint.com/feed/ | Newsroom - Rodda-Miller Paint | October 20, 2026;March 18, 2025;December 3, 2024;June 15, 2020;July 31
 ORG-004592 | Hydrite Chemical Co. | https://www.hydrite.com | https://www.hydrite.com/News-Events/Press-Releases.htm |  | Press Releases | Hydrite Chemical Co. | September 3, 2025;April 26, 2024;December 1, 2021;December 15, 2020
-ORG-004605 | Proviron Inc. | https://proviron.com/america | https://proviron.com/america/america-news/ | https://proviron.com/feed/ | Proviron Inc - news, blog and resources | October 13, 2026;September 8, 2026;July 14, 2026;July 8, 2026;June 25,
-ORG-004620 | Mississippi Polymers, Inc. | https://www.mississippipolymers.com/ | https://www.mississippipolymers.com/calendered-film-manufacturer-news/ | https://www.mississippipolymers.com/feed/ | Mississippi Polymers, Inc.—News | 06/01/2017;12/05/2016;11/22/2016;11/01/2016
+ORG-004605 | Proviron Inc. | https://proviron.com/america | https://proviron.com/america/america-news/ |  | Proviron Inc - news, blog and resources | October 13, 2026;September 8, 2026;July 14, 2026;July 8, 2026;June 25,

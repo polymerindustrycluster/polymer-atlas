@@ -22,6 +22,8 @@ def main():
             for col in ('newsroom_url','newsroom_feed_url'):
                 value=v[col]
                 if not value: continue
+                assert domain(value)==domain(website),(row["org_id"],col)
+                assert "/comments/" not in value.lower() and "feed=comments" not in value.lower()
                 assert row[col] in ('',value),(row['org_id'],col,'conflict')
                 if row[col]!=value:row[col]=value; changed=True; cells+=1
         if changed:

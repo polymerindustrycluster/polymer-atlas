@@ -1188,23 +1188,6 @@
     ]
   },
   {
-    "org_id": "ORG-004287",
-    "checks": [
-      {
-        "url": "https://thorpeplantmaintenanceandengineering.com/category/news/",
-        "final": "https://thorpeplantmaintenanceandengineering.com/category/news/",
-        "status": "200"
-      },
-      {
-        "url": "https://thorpeplantmaintenanceandengineering.com/feed/",
-        "final": "https://thorpeplantmaintenanceandengineering.com/feed/",
-        "status": "200",
-        "items": 10,
-        "linked_items": 9
-      }
-    ]
-  },
-  {
     "org_id": "ORG-004289",
     "checks": [
       {
@@ -1306,16 +1289,6 @@
     ]
   },
   {
-    "org_id": "ORG-004418",
-    "checks": [
-      {
-        "url": "https://duraco.com/blog/tag/news",
-        "final": "https://duraco.com/blog/tag/news",
-        "status": "200"
-      }
-    ]
-  },
-  {
     "org_id": "ORG-004449",
     "checks": [
       {
@@ -1407,16 +1380,6 @@
     ]
   },
   {
-    "org_id": "ORG-004556",
-    "checks": [
-      {
-        "url": "https://www.oregonrubbermills.com/Contact/News",
-        "final": "https://www.oregonrubbermills.com/Contact/News",
-        "status": "200"
-      }
-    ]
-  },
-  {
     "org_id": "ORG-004575",
     "checks": [
       {
@@ -1460,30 +1423,6 @@
         "url": "https://proviron.com/america/america-news/",
         "final": "https://proviron.com/america/america-news/",
         "status": "200"
-      },
-      {
-        "url": "https://proviron.com/feed/",
-        "final": "https://proviron.com/feed/",
-        "status": "200",
-        "items": 10,
-        "linked_items": 9
-      }
-    ]
-  },
-  {
-    "org_id": "ORG-004620",
-    "checks": [
-      {
-        "url": "https://www.mississippipolymers.com/calendered-film-manufacturer-news/",
-        "final": "https://www.mississippipolymers.com/calendered-film-manufacturer-news/",
-        "status": "200"
-      },
-      {
-        "url": "https://www.mississippipolymers.com/feed/",
-        "final": "https://www.mississippipolymers.com/feed/",
-        "status": "200",
-        "items": 7,
-        "linked_items": 4
       }
     ]
   }

@@ -10,6 +10,7 @@ def check(r):
         if not r[col]: continue
         p=fetch(r[col]); assert p['status']=='200',(r['org_id'],col,p['status'])
         assert domain(p['final'])==domain(r['website']),(r['org_id'],p['final'])
+        assert p['final'].rstrip('/')==r[col].rstrip('/'),(r['org_id'],'stored URL redirected to another path',p['final'])
         result={k:p[k] for k in ('url','final','status')}
         if col=='newsroom_url':
             page_links={urljoin(p['final'],u.strip()).rstrip('/') for u,l in Links(p['body']).links}
