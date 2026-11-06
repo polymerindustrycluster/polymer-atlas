@@ -63,3 +63,5 @@ No regional completeness claim: other Ohio operators and Pennsylvania affiliates
 - validate.py: zero errors; full validate.txt. No scripts/ changes, so full scripts pytest was not repeated for this data packet.
 
 Codex/Grok completion refutes pending; not ready for merge. Review should challenge the named-service scope, ALMMII dedupe/grain, county and evidence-backed fields/holds. No current funding/liveness check, individual inventory of every regional MEP, hosted deployment or physical facility inspection was performed.
+
+Integration journal: merged main80bb5140e0f1598d85fe30b28777def59c9b83c6; restored exact main copies of both owned canonical files and replayed the builder. integration.json proves all prior rows unchanged and exactly1ecosystem/5EVD added. The scope check was rerun after the merge commit so HEAD includes the new main base; post-merge raw5/5, all failure/replay checks and validator0 pass. No hand CSV conflict merge.
