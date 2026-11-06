@@ -1,0 +1,110 @@
+[
+  {
+    "site_id": "SITE-012619",
+    "source_url": "https://amconfoam.com/contact-us/",
+    "quote": "5360 Main St. NE Minneapolis, MN 55421",
+    "raw_text_path": "/tmp/l3-q2-amconpdfbridge.txt",
+    "sha256": "cd5c3a7d88f61a5ae3714bb47cc19a9965c088263b7bc8c58f8fede5be9e2604",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012670",
+    "source_url": "https://www.morrispkg.com/contact",
+    "quote": "Print and Lamination Division 17100 Medina Rd. Plymouth, MN 55447",
+    "raw_text_path": "/tmp/l3-q2-morriscontact.txt",
+    "sha256": "10423f4abe1119e5724fd5114c774bf68d86fe5cce7aac9533bbd5a4ac2c5958",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012671",
+    "source_url": "https://www.amcor.com/careers/job-details/req_97678",
+    "quote": "located in Mankato Minnesota at 2111 3rd Avenue",
+    "raw_text_path": "/tmp/l3-q2-amcor.txt",
+    "sha256": "ec988ec4a113427204823a631b2a09c5e5ba7e45860e3a44d3d6b655a9ca83b4",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012706",
+    "source_url": "https://solarplastics.com/careers/operator-trimmer/",
+    "quote": "860 Johnson Drive Delano, MN 55328",
+    "raw_text_path": "/tmp/l3-q2-solar.txt",
+    "sha256": "69de2d43472e20ec065cfbd7f0fc7544dab37c153e3f1b177f15c4ac842cc335",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012714",
+    "source_url": "https://careers-adspipe.icims.com/jobs/21883/maintenance-technician/job?in_iframe=1",
+    "quote": "Job Locations US-MN-Fairmont",
+    "raw_text_path": "/tmp/l3-q2-ads.txt",
+    "sha256": "b8987489518480e5b351af50a79382478e20a9b8a9797dc64f89c4e4d8e40756",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012828",
+    "source_url": "https://www.grahampackaging.com/about-us/",
+    "quote": "Graham Packaging Locations",
+    "raw_text_path": "/tmp/l3-q2-grahamabout.txt",
+    "sha256": "0915b1248b16c68c62deea6842134279bcff2ec1f2ad99b8e348613812804187",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012861",
+    "source_url": "https://homelandvinyl.com/employment/experienced-extrusion-operators/",
+    "quote": "Millville, NJ",
+    "raw_text_path": "/tmp/l3-q2-012861.txt",
+    "sha256": "470dd22c4ab4efaace646398eed72f5e794f8e8b5b6e9c86563f82f2a2eb4761",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012862",
+    "source_url": "https://www.pretiumpkg.com/locations/",
+    "quote": "208 Cougar Court Hillsborough, New Jersey 08854",
+    "raw_text_path": "/tmp/l3-q2-012862.txt",
+    "sha256": "bfe8d96d8db06d9c7f58e5dbebd11b7e56e19f8d6c5cc60bba12863221abd6ca",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "house curl/browserUA raw HTML text",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  },
+  {
+    "site_id": "SITE-012881",
+    "source_url": "https://ringcontainer.com/locations/",
+    "quote": "Springfield, NJ 50 Fadem Rd.",
+    "raw_text_path": "/tmp/l3-q2-ring-firecrawl.txt",
+    "sha256": "7a0ce67e978169ec934c34069161dfccfdc455edb16a8dc23aa05f8dd051eda3",
+    "raw": true,
+    "fake_suffix_rejected": true,
+    "retrieved_date": "2026-11-06",
+    "route": "Firecrawl rawHTML live200",
+    "note": "A hold receipt; no canonical field/source-class/status correction or absence inference."
+  }
+]

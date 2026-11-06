@@ -1,0 +1,92 @@
+[
+  {
+    "site_id": "SITE-012668",
+    "cluster_id": "LF-q2-012668",
+    "url": "https://www.plasticproductsco.com/facility/princeton-mn/",
+    "quote": "Princeton",
+    "raw": "yes",
+    "route": "https://www.plasticproductsco.com/facility/princeton-mn/",
+    "attempts": "https://www.plasticproductsco.com/facility/princeton-mn/: curl=0"
+  },
+  {
+    "site_id": "SITE-012700",
+    "cluster_id": "LF-q2-012700",
+    "url": "https://www.toplastics.com/capabilities/quality-certifications",
+    "quote": "Otsego",
+    "raw": "yes",
+    "route": "https://www.toplastics.com/capabilities/quality-certifications",
+    "attempts": "https://www.toplastics.com/capabilities/quality-certifications: curl=0"
+  },
+  {
+    "site_id": "SITE-012682",
+    "cluster_id": "LF-q2-012682",
+    "url": "https://www.revolutioncompany.com/about/locations/",
+    "quote": "Oakdale",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://www.revolutioncompany.com/about/locations/: curl=56; https://r.jina.ai/https://www.revolutioncompany.com/about/locations/: curl=56"
+  },
+  {
+    "site_id": "SITE-012861",
+    "cluster_id": "LF-q2-012861",
+    "url": "https://homelandvinyl.com/employment/experienced-extrusion-operators/",
+    "quote": "Millville",
+    "raw": "yes",
+    "route": "https://homelandvinyl.com/employment/experienced-extrusion-operators/",
+    "attempts": "https://homelandvinyl.com/employment/experienced-extrusion-operators/: curl=0"
+  },
+  {
+    "site_id": "SITE-012862",
+    "cluster_id": "LF-q2-012862",
+    "url": "https://www.pretiumpkg.com/locations/",
+    "quote": "Hillsborough",
+    "raw": "yes",
+    "route": "https://www.pretiumpkg.com/locations/",
+    "attempts": "https://www.pretiumpkg.com/locations/: curl=0"
+  },
+  {
+    "site_id": "SITE-012881",
+    "cluster_id": "LF-q2-012881",
+    "url": "https://ringcontainer.com/locations/",
+    "quote": "Springfield",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://ringcontainer.com/locations/: curl=56; https://r.jina.ai/https://ringcontainer.com/locations/: curl=56"
+  },
+  {
+    "site_id": "SITE-012620",
+    "cluster_id": "LF-q2-012620",
+    "url": "https://carpenter.com/location/albert-lea-minnesota/",
+    "quote": "Albert Lea",
+    "raw": "yes",
+    "route": "https://carpenter.com/location/albert-lea-minnesota/",
+    "attempts": "https://carpenter.com/location/albert-lea-minnesota/: curl=0"
+  },
+  {
+    "site_id": "SITE-012669",
+    "cluster_id": "LF-q2-012669",
+    "url": "https://www.oatey.com/news-press/cherne-relocates-headquarters-and-manufacturing-state-art-130000-square-foot-production",
+    "quote": "Shakopee",
+    "raw": "yes",
+    "route": "https://www.oatey.com/news-press/cherne-relocates-headquarters-and-manufacturing-state-art-130000-square-foot-production",
+    "attempts": "https://www.oatey.com/news-press/cherne-relocates-headquarters-and-manufacturing-state-art-130000-square-foot-production: curl=0"
+  },
+  {
+    "site_id": "SITE-012619",
+    "cluster_id": "LF-q2-012619",
+    "url": "https://amconfoam.com/",
+    "quote": "Fridley",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://amconfoam.com/: curl=0; https://r.jina.ai/https://amconfoam.com/: curl=56"
+  },
+  {
+    "site_id": "SITE-012670",
+    "cluster_id": "LF-q2-012670",
+    "url": "https://www.morrispkg.com/",
+    "quote": "Plymouth",
+    "raw": "not_verified",
+    "route": "",
+    "attempts": "https://www.morrispkg.com/: curl=0; https://r.jina.ai/https://www.morrispkg.com/: curl=56"
+  }
+]
