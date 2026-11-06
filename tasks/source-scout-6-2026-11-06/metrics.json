@@ -9,20 +9,20 @@
   "fetches_spent": 72,
   "frame_units": 114,
   "frame_units_in_ohio": 6,
-  "live_address_confirmed_scope_unknown": 1,
+  "live_address_confirmed_scope_unknown": 2,
   "sampled": 20,
   "site_or_registry_match": 6,
   "verdicts": {
    "DUPLICATE_OF": 6,
-   "STILL_UNCERTAIN": 12,
-   "VERIFIED": 2
+   "STILL_UNCERTAIN": 13,
+   "VERIFIED": 1
   },
-  "verified_new": 2,
+  "verified_new": 1,
   "verified_new_wilson95": [
-   0.027866,
-   0.301034
+   0.008881,
+   0.236131
   ],
-  "verified_new_yield": 0.1
+  "verified_new_yield": 0.05
  },
  "fda": {
   "any_atlas_match": 2,
@@ -105,7 +105,7 @@
    0.360419
   ],
   "duplicate_of": 0,
-  "fetches_spent": 87,
+  "fetches_spent": 86,
   "frame_units": 1564,
   "live_address_confirmed_scope_unknown": 2,
   "sampled": 20,

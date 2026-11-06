@@ -40,7 +40,7 @@ def main():
  try:yields([dict(a=str(i),verdict='VERIFIED',verified_new='0',duplicate_of='',atlas_ids='',site_hits='',registry_hits='') for i in range(20)],'a')
  except AssertionError:pass
  else:raise AssertionError('verdict/verified_new mismatch escaped')
- ver=module(HERE/'verify.py')
+ ver=module(HERE/'verify.py');ver.offline_known_answers()  # regex / element-boundary / matcher known answers; the live fetch ones need network and run from verify.py
  for bad in (dict(verify_polymer_words='',verify_process_witness='Extruded Dense Extruded'),dict(verify_polymer_words='plastic',verify_process_witness='Plastic and Cosmetic Surgery Products'),dict(verify_polymer_words='plastic',verify_process_witness='')):
   try:witness_ok(bad,ver)
   except AssertionError:pass
@@ -59,6 +59,7 @@ def main():
   for r in sample:
    for f,v in byk[r[key]].items():assert r[f]==v,(route,r[key],f)
    for ref in filter(None,(r['duplicate_of'],*r['site_hits'].split(';'))):assert ref in orgids|siteids,(route,ref)
+   for t in filter(None,r.get('verify_polymer_words','').split(';')):assert ver.POLY.fullmatch(t),f"{route} {r[key]}: stale polymer word {t!r} that the committed POLY cannot emit"
    if r['verdict']=='VERIFIED':
     witness_ok(r,ver)
     assert r['verify_url'] and r['verify_address_found']=='1' and r['verify_name_found']=='1' and r['verify_process_hit']=='1' and r['verify_sha256'],(route,r[key])

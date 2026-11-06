@@ -22,8 +22,13 @@ def fetch(url,timeout=25):
   p=subprocess.run(['curl','-sL','-m',str(timeout),'-A',UA,'--max-filesize','3000000','-w','\n%{http_code} %{url_effective}',url],capture_output=True,timeout=timeout+10)
   body,_,tail=p.stdout.rpartition(b'\n');code,_,final=tail.decode('latin-1').partition(' ');return int(code or 0),final.strip(),body
  except Exception:return 0,url,b''
+BLOCK=r'a|li|ul|ol|p|div|br|h[1-6]|tr|td|th|table|nav|header|footer|section|article|aside|main|button|label|option|select|dt|dd|dl|figure|figcaption|blockquote|form|address|summary|title'
 def text(b):
- t=b.decode('utf-8','replace');t=re.sub(r'<script.*?</script>|<style.*?</style>|<noscript.*?</noscript>',' ',t,flags=re.S|re.I);return html.unescape(re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',t)))
+ """Page text with element boundaries (anchors, list items, block tags) turned into newlines. PROCESS never crosses a newline, so a witness can never join
+ two elements ('KOVA Plastics' + 'Contract Manufacturing' navigation anchors); inline tags (b, span, em, ...) stay in the flow and source line wraps are spaces."""
+ t=b.decode('utf-8','replace');t=re.sub(r'<script.*?</script>|<style.*?</style>|<noscript.*?</noscript>',' ',t,flags=re.S|re.I)
+ t=re.sub(r'\s+',' ',t);t=re.sub(r'</?(?:'+BLOCK+r')\b[^>]*>','\n',t,flags=re.I);t=re.sub(r'<[^>]+>',' ',t)
+ return re.sub(r' *\n[ \n]*','\n',re.sub(r'[ \t]+',' ',html.unescape(t))).strip()
 def bing(q):
  """Bing HTML results -> [(url,title,cite,snippet)]; the redirect carries the real URL as base64 after u=a1."""
  code,_,b=fetch('https://www.bing.com/search?q='+urllib.parse.quote_plus(q));out=[]
@@ -76,7 +81,7 @@ def address_quote(page,street):
  w=[x for x in re.findall(r'[A-Za-z]+',street) if len(x)>1];num=street.split()[0]
  m=re.search(rf'{re.escape(num)}\s+(?:[NSEWnsew]\.?\s+)?(?:\w+\s+){{0,2}}?{re.escape(w[0]) if w else ""}',page) or re.search(rf'\b{re.escape(num)}\b',page)
  if not m:return ''
- q=page[max(0,m.start()-25):m.end()+60];return EMAIL.sub('[email]',PHONE.sub('[phone]',q)).strip()
+ q=re.sub(r'\s+',' ',page[max(0,m.start()-25):m.end()+60]);return EMAIL.sub('[email]',PHONE.sub('[phone]',q)).strip()
 def verify(name,street,city,state,seed_urls=(),max_fetch=6):
  """Returns dict(fetches,url,status,sha256,address_found,name_found,polymer_words,process_hit,quote,note). process_hit = a polymer word within 80 chars of a process word on the visited pages of that domain."""
  used=0;pages=[];out=dict(fetches=0,url='',status='',sha256='',address_found=0,name_found=0,polymer_words='',process_hit=0,process_witness='',quote='',note='')
@@ -100,23 +105,32 @@ def verify(name,street,city,state,seed_urls=(),max_fetch=6):
   t=SURG.sub(' ',t);a,n=addr_found(t,street),name_found(t,name);w=sorted({m.group(1).lower() for m in POLY.finditer(t)})[:6]
   if a and n:
    out.update(url=final,status=code,sha256=sha,address_found=1,name_found=1,polymer_words=';'.join(w),process_hit=int(bool(PROCESS.search(t))),process_witness=process_witness(t),quote=address_quote(t,street),
-    note=(out['note']+' domain-wide process wording on another visited page; not the address page; ' if PROCESS.search(' '.join(p[3] for p in pages)) and not PROCESS.search(t) else out['note']));break
+    note=(out['note']+' domain-wide process wording on another visited page; not the address page; ' if PROCESS.search('\n'.join(p[3] for p in pages)) and not PROCESS.search(t) else out['note']));break
  else:
   if pages:final,code,sha,t=pages[0];out.update(url=final,status=code,sha256=sha,name_found=int(name_found(t,name)),polymer_words=';'.join(sorted({m.group(1).lower() for m in POLY.finditer(t)})[:6]))
  out['fetches']=used;return out
-def known_answers():
- """Run on records whose answer we hold: two held sites with their own-site address, a wrong-street control, a no-site control."""
- a=verify('Eptam Plastics','2 Riverside Business Park','Northfield','NH');assert a['address_found']==1 and a['name_found']==1,a
- b=verify('Eptam Plastics','999 Nowhere Boulevard','Northfield','NH');assert b['address_found']==0,b
- c=verify('Avient Corporation','33587 Walker Road','Avon Lake','OH');assert c['address_found']==1,c
- assert not PROCESS.search('ePTFE membranes are made worldwide. Our manufacturing sites are listed below') and not PROCESS.search('We manufacture speakers and peeking devices') and not PROCESS.search('Plastic bags for sale '+'x '*60+'manufacturing sites')  # grouping bug class: bare alternatives, word-internal matches, out-of-range\n assert not PROCESS.search('Extruded Dense Extruded') and not PROCESS.search('Contact us about injection molding and extrusion') and PROCESS.search('Rubber extrusion and plastic injection molding')  # a process word is not a polymer word
- assert not PROCESS.search('Plastic and Cosmetic Surgery Products') and not PROCESS.search(SURG.sub(' ','plastic and cosmetic surgery manufacturing')) and not PROCESS.search('Products Anti-Static Bags, Poly / Plastic') and not PROCESS.search('Products AllStock Yorker Packaging KOVA Plastics')  # the five re-checked witnesses that were noun/catalog text\n assert PROCESS.search('We manufacture custom rubber and plastic parts') and PROCESS.search('Injection molding of thermoplastic resins') and not PROCESS.search('Contact us about our supply of office products')
+def offline_known_answers():
+ """No network. Regex, matcher and element-boundary known answers; check.py calls this on every run."""
+ assert not PROCESS.search('ePTFE membranes are made worldwide. Our manufacturing sites are listed below')  # word-internal match (the original ungrouped-alternation bug)
+ assert not PROCESS.search('We manufacture speakers and peeking devices') and not PROCESS.search('Plastic bags for sale '+'x '*60+'manufacturing sites')  # bare alternative / out of range
+ assert not PROCESS.search('Extruded Dense Extruded') and not PROCESS.search('Contact us about injection molding and extrusion')  # a process word is not a polymer word
+ assert PROCESS.search('Rubber extrusion and plastic injection molding')
+ assert not PROCESS.search('Plastic and Cosmetic Surgery Products') and not PROCESS.search(SURG.sub(' ','plastic and cosmetic surgery manufacturing'))  # plastic surgery
+ assert not PROCESS.search('Products Anti-Static Bags, Poly / Plastic') and not PROCESS.search('Products AllStock Yorker Packaging KOVA Plastics')  # catalog / nav text
+ assert PROCESS.search('We manufacture custom rubber and plastic parts') and PROCESS.search('Injection molding of thermoplastic resins') and not PROCESS.search('Contact us about our supply of office products')
+ # element boundaries: the Alltrista nav (two anchors) must not join into a witness; one anchor 'Rubber Molding' and inline tags still match
+ nav=text(b'<ul><li><a href="/kova-plastics">KOVA Plastics</a></li><li><a href="/contract-manufacturing">Contract Manufacturing</a></li></ul>')
+ assert not PROCESS.search(nav) and PROCESS.search(text(b'<a href="/custom-rubber-molding">Rubber Molding</a>')) and PROCESS.search(text(b'<p>We manufacture\n<b>rubber</b> parts</p>'))
+ assert not PROCESS.search(text(b'<a href="/a">Extruded Sponge</a><a href="/b">Floor Mats</a><a href="/c">Rubber</a>'))
  assert name_found('FilmTec Water Singapore Pte','FilmTec Water USA, LLC')==False and name_found('Ebco Inc Elgin','Ebco, Inc.') and name_found('visit forbo siegling llc','Forbo Siegling LLC')
  assert '[phone]' in address_quote('Contact 1330 Holmes Road Elgin IL 60123 Phone: 847-531-9500 x','1330 Holmes Road') and '[email]' in address_quote('1330 Holmes Road info@ebcoinc.com','1330 Holmes Road')
  assert addr_found('Visit us at 33587 Walker Rd., Avon Lake','33587 Walker Road') and not addr_found('33587 Walter Rd','33587 Walker Road') and not addr_found('Suite 5587 Walker','33587 Walker Road')
+def live_known_answers():
+ """Network: records whose answer we hold: two held sites with their own-site address, a wrong-street control, a no-site control."""
+ a=verify('Eptam Plastics','2 Riverside Business Park','Northfield','NH');assert a['address_found']==1 and a['name_found']==1,a
+ b=verify('Eptam Plastics','999 Nowhere Boulevard','Northfield','NH');assert b['address_found']==0,b
+ c=verify('Avient Corporation','33587 Walker Road','Avon Lake','OH');assert c['address_found']==1,c
  return [a['fetches'],b['fetches'],c['fetches']]
-if __name__=='__main__':print('known answers PASS; fetches',known_answers())
-
 CORPUS=Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/cache/site_corpus')
 def corpus_hit(street):
  """T1 shared site corpus (own sites of held Atlas organizations): does any cached page state this street address? -> source URL or ''."""
@@ -128,3 +142,4 @@ def corpus_hit(street):
   h=subprocess.run(['rg','-l','-F',f'"text_file": "{Path(f).name}"','--glob','*.json',str(CORPUS)],capture_output=True,text=True).stdout.split()
   if h:return json.loads(Path(h[0]).read_text())['final_url']
  return ''
+if __name__=='__main__':offline_known_answers();print('known answers PASS; live fetches',live_known_answers())
