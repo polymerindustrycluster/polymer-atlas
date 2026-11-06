@@ -85,6 +85,32 @@ if __name__ == '__main__':
     with tempfile.TemporaryDirectory() as tmp:
         scratch = Path(tmp) / 'data'
         shutil.copytree(data, scratch)
+        packet = Path(tmp) / 'packet'
+        packet.mkdir()
+        for name in ('cohort.csv', 'verdicts.csv', 'updates.json'):
+            shutil.copy2(HERE / name, packet / name)
+        poisoned = json.loads((packet / 'updates.json').read_text())
+        poisoned['ORG-004522'] = json.loads((HERE / 'withdrawn-proposals.json').read_text())['ORG-004522']
+        (packet / 'updates.json').write_text(json.dumps(poisoned))
+        verdict_rows = read(packet / 'verdicts.csv')
+        for row in verdict_rows:
+            if row['org_id'] == 'ORG-004522':
+                row['outcome'] = 'HQ_FOUND'
+        with (packet / 'verdicts.csv').open('w', newline='') as out:
+            writer = csv.DictWriter(out, fieldnames=list(verdict_rows[0]), lineterminator='\n')
+            writer.writeheader()
+            writer.writerows(verdict_rows)
+        spec = importlib.util.spec_from_file_location('poisoned_builder', HERE / 'build.py')
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        builder.HERE = packet
+        before = hashes(scratch)
+        try:
+            builder.main(scratch, apply=True)
+            raise RuntimeError('HB&G unrecorded-parent proposal was admitted')
+        except AssertionError as exc:
+            assert 'B-PARENT(a)' in str(exc), exc
+        assert hashes(scratch) == before, 'held unrecorded-parent mutation caused writes'
         oid = next(iter(updates))
         target = next(p for p in scratch.glob('organizations_*.csv') if any(r['org_id'] == oid for r in read(p)))
         original = target.read_bytes()
@@ -111,4 +137,4 @@ if __name__ == '__main__':
         before = hashes(scratch)
         run(scratch, expect=1)
         assert hashes(scratch) == before, 'evidence conflict caused writes'
-    print(f'PASS: exact 100 verdicts; {len(updates)} HQ moves; full organization/evidence unions; raw receipts; byte-idempotency; 3 no-write faults; 2 quote substitutions')
+    print(f'PASS: exact 100 verdicts; {len(updates)} HQ moves; full organization/evidence unions; raw receipts; byte-idempotency; 4 no-write faults including HB&G source admission; 2 quote substitutions')
