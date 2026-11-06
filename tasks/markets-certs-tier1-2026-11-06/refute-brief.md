@@ -1,11 +1,11 @@
-Review L10 Tier1 continuation, independent from PR136 (do not inspect PR136 data). Base main9489b60. Frozen30frame:12VERIFIED/18STILL_UNCERTAIN.60filledtags=58markets+2certs;12activeTier1 orgs,tiersA8/B3/C1;12marketcells+2certcells;60newEVD240100–159;25claim-org holds. Active4884:markets394→406,cert47→49;Tier1active1261:markets162→174,cert13→15. CertsNovagardIATF2016expiry2027-05-30 andDuracoteAS9100:2016expiry2027-04-19. No ISO9001/14001 superseded claims filled. Each rawquote identity/date guarded. Namedcheck commands README; all60raw and30freshsample0errors;4knownanswers/4mutants;duplicateIDinjection no-write;missingverdictinjection no-write;scope/replay/validate0errors;SQLrecountmatches. Adversarial semantic sourcegrain, suppliermarket mapping,certcurrencyscope,IDimmutability,exacttwo-columnboundary. APPROVE/REFUTE concrete findings; distinguish liveinspected.
+Review L10 Tier1 continuation, independent from mergedPR136. Latest integrationbase bdb8b98 includes136/147; main data+builder replay,nohandCSVmerge. Frozen30frame:12VERIFIED/18STILL_UNCERTAIN.60tags=58markets+2certs;12activeTier1orgs tiersA8/B3/C1;12marketcells+2certcells;60newEVD240100–159;25claim-org holds. Active4884:markets404→416,cert52→54. Tier1active1261:markets162→174,cert15→17. Frame.json's originalcert13 reflects prePR136 census, not currentbaseline. CertsNovagardIATF2016expiry2027-05-30 andDuracoteAS9100:2016expiry2027-04-19. No supersededISO9001/14001 filled. All60rawquotes+30freshsample0errors;4known/4defects;duplicateIDinjection no-write;29/30verdictfaultno-write;scope/replay/validate0errors+SQLrecountmatches. Adversarial semantic own-site markets/corporategrain/certscope andcurrency,IDimmutability,two-columnboundary. APPROVE/REFUTE concrete findings; distinguish liveinspected.
 
 FILE README.md
 # L10 round 2 — Tier-1-qualified organizations
 
 Controller 06:30 BOARD assignment; new branch agent/codex/markets-certs-tier1 off current main. Scope: markets_served and certifications only, plus append-only own_site evidence. First user PIC supplier-matching staff; use review due 2026-12-15. IDs EVD-240100 onward inside original L10 block (prior PR136 reserves through240063; never reuse).
 
-Acceptance before application: own-site corporate markets using exact SCHEMA vocabulary; automotive unspecified stays unspecified, medical without devices stays medical_healthcare_general. No generic material uses treated as served markets. Current edition + current dates for certifications; identity and expiry quotes checked, no ISO9001:2015 until owner transition ruling. Every added value has its own evidence row; no other organization columns changed, no tier changes. validate0errors, known answers and defect rejection, fresh30-value sample with error count, replay identical, two-family clerks required. PR136 remains separate and draft pending its own reviewers.
+Acceptance before application: own-site corporate markets using exact SCHEMA vocabulary; automotive unspecified stays unspecified, medical without devices stays medical_healthcare_general. No generic material uses treated as served markets. Current edition + current dates for certifications; identity and expiry quotes checked, no ISO9001:2015 until owner transition ruling. Every added value has its own evidence row; no other organization columns changed, no tier changes. validate0errors, known answers and defect rejection, fresh30-value sample with error count, replay identical, two-family clerks required. PR136 was reviewed separately, approved by both families, and merged by the controller (not this lane).
 
 Frozen frame: frame.csv selected30 from1261 active organizations with nonempty stored tier1_qualifier (no rederivation). First30 blank markets + HTTP website, PIC18 first then org_id; excludes two prior holds ORG62/101 without resolving evidence. frame.json records census and filters. Lower-priority unselected rows are unworked, never held or verified by implication.
 
@@ -13,7 +13,7 @@ Research underway; not completion-approved.
 
 ## Results and provenance
 
-Unit/filter: all active organization rows, baseline main9489b60, 4,884. markets_served populated394→406 (+12 organizations); certifications47→49 (+2). Tier-1-filtered active organizations1,261: markets162→174, certifications13→15. These counts are this PR alone; do not add its baseline values to PR136 (separate proposals on main).
+Unit/filter: all active organization rows, integration baseline mainbdb8b98 (includes PR136 and PR147), 4,884. markets_served populated404→416 (+12 organizations); certifications52→54 (+2). Tier-1-filtered active organizations1,261: markets162→174, certifications15→17. These are incremental round2 counts on main after PR136; frame.json preserves the earlier main9489b60 selection census (cert13 before the two Tier1 cert fills in PR136).
 
 30 frozen-frame organizations =12 VERIFIED and18 STILL_UNCERTAIN; verdicts.csv covers all30 exactly once. The12 changed organizations retain tiers A8/B3/C1. inputs.csv contains60 VERIFIED value fills:58 market values and2 certifications, EVD240100–240159. Evidence shards OH42/US18. No organizations/sites created or status/tier/website/parent/newsroom/notes/source columns changed. No inclusion-log entries or dedupe/create needed.
 
@@ -32,7 +32,7 @@ holds.csv has25 claim/organization cases:18 organizations without a fill plus7 p
 - `python3 tasks/markets-certs-tier1-2026-11-06/check.py`: four live known answers4/4, fabricated-quote defects refused4/4; all60 input quotes passed with no unavailable sources, including both certificate identity and expiry quotes. Fresh random30 VERIFIED value rows (seed20361106):0 quote errors. audit30.csv records values, retrieval routes and parsed-text hashes. This is a raw quote-support audit, not30 distinct organizations or an independent human semantic audit. fetched HTML has scripts/styles excluded; CSS visibility is not evaluated. Pages may change later.
 - `python3 tasks/markets-certs-tier1-2026-11-06/build.py`: first run60 appends, second run byte-identical across affected shards. Tree-wide duplicate-ID defect was injected into read() before application: AssertionError before writes, all canonical CSV byte hashes unchanged. Vocabulary, active/storedTier1/frame membership, domain, unique values/recordIDs, certificate dates and immutable evidence collision conditions asserted. Existing observation equality checked.
 - Parsed CSV before/after scope check:12 organizations,12 market fields,2 certification fields,60 evidence rows; zero missing keys, changed unrelated columns or edited existing evidence observations.
-- `python3 scripts/validate.py`: OK validation passed,0errors,35,449 total evidence rows on this main baseline. Existing warnings remain. No scripts/ shared files changed, so shared-script pytest gate is not triggered.
+- `python3 scripts/validate.py`: OK validation passed,0errors,35,512 total evidence rows on this main baseline. Existing warnings remain. No scripts/ shared files changed, so shared-script pytest gate is not triggered.
 
 Reuse: fetch.py/check.py/build.py carry forward the reviewed PR136 helper and guard fixes. Token normalization and contiguous-order matching are imported from the house tasks/evidence-repair-2-2026-11-04/prep.py. No dependency added. Research primary-page budget≤5 distinct own-site pages per organization; required live verification re-fetches are additional checks. Raw bodies lived temporarily under /tmp; only public quotes are committed.
 
@@ -40,9 +40,11 @@ Replay on newer main: restore main's organizations_OH.csv, organizations_US.csv,
 
 ## Coordination and review
 
-Controller06:30 assignment supersedes initial lane's lack of continuation. Branch/ID allocation/frame recorded in BOARD before application. Controller06:25 route supersedes old clerk pair for new requests: Codex4 thr_x5xruuutxp and Grok4 thr_95ffgh3rxy; queue exception applies to requests only. PR136 remains separate, Codex APPROVE recorded there; its Grok verdict is pending. This round's final two-family reviews are pending; no Done claim.
+Controller06:30 assignment supersedes initial lane's lack of continuation. Branch/ID allocation/frame recorded in BOARD before application. Controller06:25 route supersedes old clerk pair for new requests: Codex4 thr_x5xruuutxp and Grok4 thr_95ffgh3rxy; queue exception applies to requests only. PR136 received Codex/Grok APPROVE0blocking, both recorded in its README, and controller merged it. This round's final two-family reviews are pending; no Done claim.
 
 Additional controls: check.py reconciles30unique frame IDs against30unique verdict IDs; injected29/30 extraction fails before network or writes. Independent DuckDB1.5.6 SQL recount (`duckdb :memory: < tasks/markets-certs-tier1-2026-11-06/counts.sql`) confirms the active and storedTier1 filled counts above.
+
+Integration: main advanced to bdb8b98 with controller merges PR136/147. Took main versions of the four affected OH/US shards and reran builder; no hand CSV merges. Original round2 proposal on9489b60 was394→406market/47→49cert; on current main the same60fills give404→416/52→54. No first-PR changes are bundled as round2 changes. Both earlier frame and current counts reconcile by the merged first-PR additions.
 
 FILE build.py
 """Idempotently union the reviewed L10 values and append one immutable evidence row per value."""
@@ -301,20 +303,20 @@ FILE counts.json
 {
   "before": {
     "active_organizations": 4884,
-    "markets_served": 394,
-    "certifications": 47
+    "markets_served": 404,
+    "certifications": 52
   },
   "after": {
     "active_organizations": 4884,
-    "markets_served": 406,
-    "certifications": 49
+    "markets_served": 416,
+    "certifications": 54
   },
   "packet_value_rows": 60,
   "packet_organizations": 12,
   "tiers": {
-    "A": 8,
     "B": 3,
-    "C": 1
+    "C": 1,
+    "A": 8
   },
   "new_evidence_rows": 60
 }
