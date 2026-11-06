@@ -96,9 +96,10 @@ def declared_removals(ref):
 
 def tracked_files(ref):
     """Tracked file paths at ref, or (working tree) every tracked path that still exists on disk."""
+    # -z: NUL-separated, so paths with spaces or newlines stay whole (Codex/Grok on #210)
     if ref is None:
-        return {p for p in git("ls-files").split("\n") if p and (ROOT / p).exists()}
-    return set(git("ls-tree", "-r", "--name-only", ref).split())
+        return {p for p in git("ls-files", "-z").split("\0") if p and (ROOT / p).exists()}
+    return {p for p in git("ls-tree", "-r", "-z", "--name-only", ref).split("\0") if p}
 
 
 def removed_files(base, head, allowed=frozenset()):
