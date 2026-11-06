@@ -1,0 +1,7 @@
+site_id,establishment_id,street,city,zip,result
+SITE-000309,132124,30201 Aurora Rd.,Cleveland,44139,PASS
+SITE-000313,1320804,"8794 Independence Parkway, Suite 155",Cleveland,44087,PASS
+SITE-000333,965602,6200 Hillcrest Drive,Valley View,44125,PASS
+SITE-000393,1089280,1020 Lambert st,Barberton,44203,PASS
+SITE-000410,1501704,2026 Commerce Park,Twinsburg,44087,PASS
+SITE-000427,836672,16910 Munn Rd.,Chagrin Falls,44023,PASS
