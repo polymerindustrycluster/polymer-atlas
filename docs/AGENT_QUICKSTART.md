@@ -31,7 +31,7 @@ python3 scripts/atlas.py next-id --all   # every ID namespace and its next free 
    arrives as packet files (CSV + report under `tasks/…`), never as edits to
    `data/`. Small single-purpose data PRs are the only exception.
 3. **Dedupe before you create:** `python3 scripts/atlas.py dedupe-check --domain … --name … --street …`.
-   It runs AGENTS.md §3 steps 1–4 across all shards. When in doubt, **don't merge**:
+   It runs AGENTS.md §3 steps 1–4 across all shards, plus a step 5 that searches `sites.site_name` (a `- <city>` suffix is ignored). When in doubt, **don't merge**:
    create or link the record and flag it.
 4. **IDs come from the tree-wide maximum, never a gap:** `python3 scripts/atlas.py next-id ORG`.
    Organization and ecosystem rows share the `ORG-` namespace. Only the integrator

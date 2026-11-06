@@ -1,0 +1,31 @@
+{
+  "clusters (name-key groups spanning 2+ orgs, >=1 site name)": 107,
+  "clusters with site names under 2+ orgs (site vs site)": 40,
+  "clusters whose site names sit under one org, matched by another org's name": 67,
+  "clusters by strength": {
+    "weak": 73,
+    "medium": 34
+  },
+  "clusters by orgs_linked": {
+    "none": 70,
+    "all": 35,
+    "some": 2
+  },
+  "clusters by strength x orgs_linked": {
+    "weak/none": 58,
+    "weak/all": 15,
+    "medium/all": 20,
+    "medium/none": 12,
+    "medium/some": 2
+  },
+  "distinct sites in clusters": 248,
+  "distinct organizations in clusters": 200,
+  "generic keys dropped (would be clusters)": [
+    "headquarters"
+  ],
+  "input": {
+    "sites rows": 7188,
+    "organizations rows": 5024,
+    "ecosystem rows": 402
+  }
+}
