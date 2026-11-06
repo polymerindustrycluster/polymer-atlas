@@ -14,10 +14,12 @@ class Text(HTMLParser):
     def handle_data(self,d):
         if not self.skip:self.parts.append(d)
 def words(s):return re.findall(r'[a-z0-9]+',s.lower())
-def found(p,q):return bool(words(q)) and ' '.join(words(q)) in ' '.join(words(p))
-def get(u):
+def found(p,q):
+    p,q=words(p),words(q)
+    return bool(q) and any(p[i:i+len(q)]==q for i in range(len(p)-len(q)+1))
+def get(u, *, refresh=False):
     f=CACHE/(hashlib.sha256(u.encode()).hexdigest()+'.json')
-    if f.exists():return json.loads(f.read_text())
+    if f.exists() and not refresh:return json.loads(f.read_text())
     errors=[]
     for route in (u,'https://r.jina.ai/'+u):
         r=subprocess.run(['curl','-L','--fail','--max-time','25','-sS','-A','Mozilla/5.0',route],capture_output=True,text=True,errors="replace")

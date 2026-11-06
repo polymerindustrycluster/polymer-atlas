@@ -1,5 +1,6 @@
 """Replay the reviewed L12 packet; existing evidence stays byte-for-byte by row."""
-import csv, hashlib, io, json, re, sys
+import csv, hashlib, json, re, sys, unicodedata
+from urllib.parse import urlparse
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
@@ -7,13 +8,19 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from shard_io import append_sorted
 from fetch import found, words
 DATE='2026-11-06'
+# Held institutions with blank websites or an established second university domain.
+DOMAIN_OVERRIDES={'ORG-001314':{'uc.edu'},'ORG-004686':{'uw.edu','washington.edu'},'ORG-002781':{'drexel.edu'},'ORG-001284':{'osu.edu','ohio-state.edu'}}
+def on_domain(url, domains):
+ h=urlparse(url).hostname or ''
+ return any(h==d or h.endswith('.'+d) for d in domains)
 def read(p):
  with open(p,newline='',encoding='utf-8') as f:return list(csv.DictReader(f))
 def write(p,rows,cols):
  with open(p,'w',newline='',encoding='utf-8') as f:
   w=csv.DictWriter(f,fieldnames=cols,lineterminator='\n');w.writeheader();w.writerows(rows)
 def norm(s):
- return ' '.join(w for w in words(s) if len(w)>1)
+ s=''.join(c for c in unicodedata.normalize('NFKD',s).lower() if not unicodedata.combining(c))
+ return ' '.join(w for w in re.findall(r'[^\W\d_]+',s) if len(w)>1)
 def near(text,quote,surname):
  t,a,n=words(text),words(quote),words(surname)
  return bool(a) and bool(n) and any(t[i:i+len(a)]==a and all(x in t[max(0,i-40):i+len(a)+40] for x in n) for i in range(len(t)-len(a)+1))
@@ -25,16 +32,20 @@ def main():
  data=ROOT/'data'
  p=read(data/'people.csv');byid={r['person_id']:r for r in p}
  proposals=read(HERE/'reviewed.csv')
+ institutions={r['org_id']:r for f in [data/'ecosystem.csv',*sorted(data.glob('organizations_*.csv'))] for r in read(f)}
  # Expected cells are frozen before application, for fail-closed rebase/replay.
  expected=json.loads((HERE/'expected.json').read_text())
  raw={(r['url'],r['quote']):r for r in read(HERE/'rawcheck.csv')}
  additions=[];evidence=[];seen=set()
  for i,r in enumerate(proposals):
-  pid=r['person_id'] or f"PERSON-{2000+sum(not x['person_id'] for x in proposals[:i]):06d}"
+  pid=r['allocated_person_id']
   assert pid not in seen;seen.add(pid)
   for gate in ('a','b'):
    u,q=r[f'gate_{gate}_url'],r[f'gate_{gate}_quote']
    assert '@' not in u and u.startswith('https://'),u
+   web=urlparse(institutions[r['institution_org_id']].get('website','')).hostname or ''
+   domains=DOMAIN_OVERRIDES.get(r['institution_org_id'],{'.'.join(web.split('.')[-2:])} if web else set())
+   assert domains and on_domain(u,domains),(pid,'source outside institution',u)
    assert len(q.split())<=25,(pid,gate,'quote too long')
    ck=raw[(u,q)]
    assert ck['found']=='yes'
@@ -58,12 +69,15 @@ def main():
      assert all(u in v.split(';') for u in expected[pid][k].split(';'))
     else:assert record[k] in (expected[pid][k],v),(pid,k,'base changed')
     record[k]=v
-  for j,gate in enumerate(('a','b')):
-   eid=f'EVD-{280000+2*i+j:06d}'
-   evidence.append(dict(evidence_id=eid,record_table='people',record_id=pid,claim_type='existence' if gate=='a' else 'scope',
-    claim_detail=f"role {r['role']}; title {r['role_as_published']}" if gate=='a' else 'Gate B: person-level polymer research stated',
-    source_class='own_site',source_ref=r[f'gate_{gate}_url'],observed_date=DATE,tier_effect='supports_A',
-    created_by='codex atlas-L12-people-settle',notes='Raw words in order: '+r[f'gate_{gate}_quote']))
+  for gate in ('a','b','parent'):
+   eid=r[f'evidence_{gate}_id']
+   witness='a' if gate=='parent' else gate
+   assert 280000<=int(eid[4:])<=284999,eid
+   evidence.append(dict(evidence_id=eid,record_table='people',record_id=pid,claim_type='parent' if gate=='parent' else ('existence' if gate=='a' else 'scope'),
+    claim_detail=f"role {r['role']}; title {r['role_as_published']}" if gate=='a' else (f"institution_org_id {r['institution_org_id']}; current appointment on institution-own profile" if gate=='parent' else 'Gate B: person-level polymer research stated'),
+    source_class='own_site',source_ref=r[f'gate_{witness}_url'],observed_date=DATE,tier_effect='supports_A',
+    created_by='codex atlas-L12-people-settle',notes=('Affiliation carried by the current own-institution rank/profile; raw words in order: ' if gate=='parent' else 'Raw words in order: ')+r[f'gate_{witness}_quote']))
+ assert len({r['evidence_id'] for r in evidence})==len(evidence),'duplicate packet evidence IDs'
  existing={r['evidence_id']:r for r in read(data/'evidence_people.csv')}
  for r in evidence:
   if r['evidence_id'] in existing:assert existing[r['evidence_id']]==r,(r['evidence_id'],'ID collision')

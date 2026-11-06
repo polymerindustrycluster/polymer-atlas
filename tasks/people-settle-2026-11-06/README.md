@@ -6,9 +6,9 @@ Branch history (base_commit.txt) is the pre-pass backup; reviewed.csv, expected.
 
 ## Applied packet
 
-35 reviewed people: 31 existing records (28 tier A, 3 tier B) and 4 new tier C people.
+47 reviewed people: 31 existing records (28 tier A, 3 tier B) and 16 new tier C people.
 18 printed-title values change; five controlled roles change. Remaining cells refresh public sources/verification dates.
-70 append-only own_site evidence observations: one existence and one scope observation per reviewed person.
+141 append-only own_site evidence observations: existence, scope and affiliation/parent for every reviewed person. New records require all three prospectively; unchanged legacy affiliations need not have been backfilled, but this packet records the fresh own-profile observations it checked.
 No existing evidence, people, institutions or relationship records are deleted.
 
 - PERSON-000063 Yavitt: professor → assistant_professor. UC's live roster and research page print Asst Professor (F2)
@@ -16,9 +16,9 @@ No existing evidence, people, institutions or relationship records are deleted.
 - PERSON-000621 Maiti: research_scientist → group_leader, from LLNL's Deputy Group Leader, Multiscale Modeling.
 - PERSON-000920 Scott and PERSON-001139 Ayzner: associate_professor → professor.
 - PERSON-001238 Fernandez-Ballester: assistant_professor → associate_professor.
-- PERSON-002000–002003: Ellen M. Sletten, Gerard Wong, Sang Bok Lee and Paul Van Tassel.
+- PERSON-002000, PERSON-002002–002004: Ellen M. Sletten, Sang Bok Lee, Paul Van Tassel and Sarah Heilshorn.
   Institution-owned profiles state both current professor styling and person-level polymer research.
-- EVD-280000–280069: reserved L12 allocation; two rows per reviewed person.
+- EVD-280000–280142 excluding 280046–280047: reserved L12 allocation; three rows per reviewed person.
   Append-only observations retain existing verification tiers; new people remain C.
 
 Sources are the university/laboratory URLs in reviewed.csv. Every quote was re-fetched with a browser-UA curl route,
@@ -61,14 +61,13 @@ This is the IDEAS F-10 bus-factor risk, confirmed by controller thread thr_9i2c6
 The estate search was incomplete because the Windows Documents catalogs are absent on this Mac; a miss is not absence.
 Controller explicitly replaced waiting for that list with a fresh public-directory rebuild, followed by institution-own checks.
 The live API returns 432 unique object IDs, reconciled against independent total432 across five pages.
-Directory lead content and the full candidate/reject list remain local-only. The preliminary normalized name+institution
-dedupe finds 67 held people and 365 research candidates; this is NOT a claim that the exact original130 have been recovered.
-The packet helper owns ohio/ only, never canonical data. Fresh-wave investigation/application is pending.
+Directory lead content and the full candidate/reject list remain local-only. The initial normalized name+institution dedupe found 67 held people; three additional variants were resolved on review. Final pre-application accounting is70 held people,362 remaining candidate people. This is NOT a claim that the exact original130 have been recovered.
+The packet helper owns ohio/ only, never canonical data. Twelve fresh-wave candidates were independently checked and admitted by this lane as PERSON-002005–002016 (all C). See ohio/README.md for final fresh-frame accounting and holds. Original130 have not been individually recovered.
 
 ## Named checks and replay
 
 - python3 tasks/people-settle-2026-11-06/check.py — PASS:
-  79/79 census rows, 214/214 +149/149 title-source rows;35 reviewed people;4 creates;70 evidence rows;
+  79/79 census rows, 214/214 +149/149 title-source rows;47 reviewed people;16 creates;141 evidence rows;
   unchanged non-owned cells;append-only evidence;byte-identical builder replay.
 - Known answers before accepting the matcher: Yavitt assistant rank, Sletten professor rank, Mai assistant rank
   on freshly fetched institution pages. Injected nonexistent rank, wrong surname and empty-token Cyrillic surname fail.
@@ -81,10 +80,43 @@ The packet helper owns ohio/ only, never canonical data. Fresh-wave investigatio
 
 ## Independent refutes
 
-Pending final Ohio packet. Controller's 05:55 BOARD directive supersedes council-only routing:
+Initial Codex review REFUTE (c1528f0): Wong repeated the original held example list; prospective creates lacked affiliation evidence; the quote matcher accepted partial words. Wong was withdrawn before integration; all47 current records now have source-backed affiliation observations; matching now compares complete token sequences. The oracle injects a missing parent row and confirms rejection for creates, and rejects polymer inside depolymerization/polymers plus materials inside biomaterials.
+
+Reviewer correction: missing parent rows were not independently blocking on the31 legacy edits under tier-restatement clause3. That legacy exception is preserved; the extra affiliation observations are scoped fresh evidence, not a schema/vocabulary change.
+
+Final Codex/Grok re-review pending. Controller's 05:55 BOARD directive supersedes council-only routing:
 Codex clerk thr_mdr3gn2xmm and Grok clerk thr_f2fcbx6tq8, two independent families still required.
-No completion approval claimed while either review or the fresh Ohio scope remains pending.
+No completion approval claimed while either independent review remains pending.
 
 Dedupe cross-check: atlas.py dedupe-check was run with the four new names and UCLA/UMD/Yale domains.
 It resolves existing institutions (organization/site grain only); people-grain admission additionally checks all
 people.csv names with initials removed and first-name/surname matches within the same institution. Both checks are required.
+
+Unmerged draft correction: Wong's quoted example list did not settle the source's named polymer-project fact.
+His proposed create was withdrawn before integration; PERSON-002001 and EVD-280046–280047 are permanently reserved,
+never reused. Sarah Heilshorn is admitted on a newly fetched Stanford lab materials-engineering statement
+(B-CG-2); Lee and Van Tassel use explicit conductive-polymer work / nanofilm material-construction witnesses.
+These changes withdraw draft proposals only; all pre-pass held people/evidence remain unchanged.
+
+
+## Final fresh Ohio coverage
+
+Unit: candidate people within the freshly rebuilt432-profile source frame, with unique normalized(name,institution) identities.
+Final outcomes:70DUPLICATE_OF +12VERIFIED +8REJECT +342STILL_UNCERTAIN =432.
+All250 previously fetched-but-uninspected candidates received explicit gate/source-inspectability review (199helper +51parent). One binary-only source remains uninspectable; it is held rather than passed.
+The58 cases without a usable own-institution page received individual route/missing-fact verdicts; they remain uncertain,
+not negative evidence. There are0 unaccounted input candidates. Of342uncertain candidates,283 have reviewed sources
+that do not settle both gates (including2owner holds),1has only uninspectable binary data, and58 lack a usable institutional source. Owner holds Lu/Crespo remain unapplied.
+
+The full discovery worklist stays outside the public tree, but is now durable:
+ /Users/johnswanson/.bb/thread-storage/thr_mcdghpxw8c/people-settle-private/
+This sanitized packet preserves candidate identities, source URLs/hashes, by-candidate verdicts, bounded-review notes,
+a privacy-filtered API rebuild script, and an independent accounting checker. No directory biographies, contact details,
+salary values, or raw page bodies are retained there. The public ohio/README.md records hashes and checks.
+Only institution-supported VERIFIED professional facts travel in this PR.
+
+Additional Ohio admissions after the first8: Allen Yi (polymer-optics injection molding), Byung-Wook Park
+(current engineered living-material hydrogels), Julie Renner (her own laboratory's current polyproline
+monolayer assembly/antifouling research), Aleksander Skardal (current ECM bioinks expertise with continuing
+ECM-derived hydrogel/biofabrication work). The Julie own-lab attribution and Skardal history/current bridge are
+explicit final-refute targets; neither rests on publication titles alone.
