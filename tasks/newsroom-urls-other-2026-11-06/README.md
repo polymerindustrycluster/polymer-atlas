@@ -83,3 +83,5 @@ Only pre-2024 fully parsed dates occur in these saved index samples (up to12 dat
 | ORG-008004 R&D Plastics of Hickory, Ltd. | October 15, 2015;January 1, 2015 |
 
 The input manifest was fixed before application at2258 IDs (source snapshot9d69978, same class as af3f87e). Later parallel main creates are outside this pass, not silently added. Self_check independently recomputes the manifest from immutable9d69978 tables; builder/check revalidate current eligibility and values for accepted records. Incoming main changes are retained by merge/replay. No claim of whole-current-tree coverage beyond the named snapshot.
+
+Final integration replay pinned main 412391a0a462105a73e322ea67291d24088cfe7a; exact main organization shards restored, builder264 cells,0 on repeat; field-boundary264/171/2columns PASS against this immutable ref. Later main creates stay outside frozen source manifest9d69978.
