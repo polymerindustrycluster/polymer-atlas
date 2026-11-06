@@ -66,7 +66,12 @@ def main():
    assert raw[alias['source_ref']]['raw']=='yes' and raw[alias['source_ref']]['quote']==alias['quote'] and raw[alias['source_ref']]['http_status']=='200'
   shard=next(p for p in data.glob('organizations_*.csv') if any(r['org_id']==oid for r in read(p)))
   alias_updates.setdefault(shard.name,[]).append((oid,alias['alias']+' (federal registrant name)'))
-  out['evidence_'+shard.name].append(dict(evidence_id=f'EVD-{202100+j:06d}',record_table='organizations',record_id=oid,claim_type='existence',claim_detail=f"Registrant alias {alias['alias']} for held {orgs[oid]['legal_name']}; identity only"+(f"; quote: {alias['quote']}" if alias['quote'] else ''),source_class=alias['source_class'],source_ref=alias['source_ref'],observed_date=DATE if alias['source_class']=='own_site' else '2026-11-01',tier_effect='supports_A',created_by=BY,notes=f"B-ALIAS; ITA establishment_ID {f['establishment_id']}, date_submitted {f['date_submitted']}; identity only, no company scope/tier/status edit; reviewed {DATE}"))
+  own=alias['source_class']=='own_site'
+  detail=f"Operator states legal identity: {alias['quote']}" if own else f"Registrant alias {alias['alias']} for held {orgs[oid]['legal_name']}; identity only"
+  note=f"Raw quote checked {DATE}; legal identity only, no company scope/tier/status edit" if own else f"ITA establishment_ID {f['establishment_id']}, date_submitted {f['date_submitted']}; B-ALIAS; identity only, reviewed {DATE}"
+  out['evidence_'+shard.name].append(dict(evidence_id=f'EVD-{202100+j:06d}',record_table='organizations',record_id=oid,claim_type='existence',claim_detail=detail,source_class=alias['source_class'],source_ref=alias['source_ref'],observed_date=DATE if own else '2026-11-01',tier_effect='supports_A',created_by=BY,notes=note))
+  if own:
+   out['evidence_'+shard.name].append(dict(evidence_id='EVD-202103',record_table='organizations',record_id=oid,claim_type='existence',claim_detail=f"ITA company_name {f['company_name']}; federal registrant only",source_class='government_filing',source_ref=SOURCE+'#establishment_ID='+f['establishment_id'],observed_date='2026-11-01',tier_effect='supports_C',created_by=BY,notes=f"ITA establishment_ID {f['establishment_id']}, date_submitted {f['date_submitted']}; relation to Caplugs witnessed separately by operator legal terms; reviewed {DATE}"))
  # Check namespaces across all shards before any mutation, including the alias update.
  pending={}
  for name,rows in out.items():

@@ -34,12 +34,19 @@ assert len(dups)==1 and dups[0]['duplicate_of']=='SITE-003050'
 assert sites[dups[0]['duplicate_of']]['org_id']==dups[0]['held_org_id']
 # Every pre-pass row survives; only the three declared alias cells may differ.
 for fn in ['sites_NY.csv','evidence_sites_NY.csv','organizations_PA.csv','evidence_organizations_PA.csv','organizations_OH.csv','evidence_organizations_OH.csv']:
- old=list(csv.DictReader(subprocess.check_output(['git','show','9489b60:data/'+fn],text=True).splitlines()))
+ old=list(csv.DictReader(subprocess.check_output(['git','show','bdb8b9879b6a546b913812938710f9d033bcf33e:data/'+fn],text=True).splitlines()))
  key=list(old[0])[0];new={r[key]:r for r in read(R/'data'/fn)}
  for r in old:
   assert r[key] in new
   changed={k for k in r if r[k]!=new[r[key]][k]}
   assert not changed or (fn.startswith('organizations_') and r[key] in {'ORG-002737','ORG-001148','ORG-000004'} and changed=={'trade_names'})
+own=[r for p in (R/'data').glob('evidence_*.csv') for r in read(p) if r['created_by']=='codex atlas-L7-corr-fl-ga' and r['source_class']=='own_site' and r['evidence_id']=='EVD-202100']
+assert len(own)==1 and own[0]['claim_detail']=='Operator states legal identity: Protective Industries, Inc. (“Caplugs”)'
+assert 'registrant' not in own[0]['claim_detail'].lower() and 'ITA' not in own[0]['claim_detail']
+expected={f'EVD-{i:06d}' for i in list(range(202000,202049))+list(range(202100,202104))}
+owned=[r for r in T['evidence'].rows if 202000<=int(r['evidence_id'][4:])<=202103]
+assert len(owned)==53 and {r['evidence_id'] for r in owned}==expected
+assert sum(r['source_class']=='own_site' for r in owned)==1
 # Byte idempotence, and a mutation: an occupied lane ID must fail without modifying any file.
 files=[R/'data'/f for f in ['sites_NY.csv','evidence_sites_NY.csv','organizations_PA.csv','evidence_organizations_PA.csv','organizations_OH.csv','evidence_organizations_OH.csv']]
 before=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files]
@@ -64,7 +71,7 @@ for dest,key,value in [('sites_FL.csv','site_id','SITE-016200'),('evidence_organ
   assert before_bad=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in data.glob('*.csv')}
 # State strict numerator definition is reused from the official denominator builder.
 now=atlas_numerators(str(R))[('NY','326')][1]
-base=list(csv.DictReader(subprocess.check_output(['git','show','9489b60:data/sites_NY.csv'],text=True).splitlines()))
+base=list(csv.DictReader(subprocess.check_output(['git','show','bdb8b9879b6a546b913812938710f9d033bcf33e:data/sites_NY.csv'],text=True).splitlines()))
 old=sum(r.get('country','US') in ('','US') and r['naics_primary'].startswith('326') and r['operating_status'] in ('active','unknown') and r['verification_tier'] in ('A','B','C') for r in base)
 q=next(r for r in read(R/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']=='36000' and r['year']=='2023' and r['industry_code']=='326')
 den=float(q['annual_avg_estabs'])
