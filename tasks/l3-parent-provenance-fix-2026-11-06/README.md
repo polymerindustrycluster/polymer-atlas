@@ -64,3 +64,5 @@ suffix tests also failed as expected. No new network parser was introduced.
 Two-family targeted completion refutes pending. Controller alone merges and changes tracker status.
 
 Main integration: restored all six affected canonical files from main5a90bb1 before builder replay; refreshed baseline org snapshots/commit. Exact field/evidence boundaries and ten fault controls still pass, validator0errors, six-file replay byte-identical. No hand-merged canonical CSV.
+
+Codex/OpenAI targeted completion refute: APPROVE,0findings on67788eb (R-codex-1/thr_86bb34wxm8), report controller reviews/196-clerk-codex-1.md. Independent fresh7/7quotes+19/19issuers,26fake-suffix negatives; full source-chain review, exact8cells/5org/7EVD, validator0,row-loss,all6filesfresh-base builder replay,10conditionfaults and conflicting-EVD-before-write mutation PASS. Full scripts pytest/old federal checks not repeated. Grok-family completion refute remains pending. This review-record commit changes no data or code.
