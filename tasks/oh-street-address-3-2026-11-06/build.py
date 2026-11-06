@@ -79,6 +79,6 @@ def run(apply=False):
  active=[r for r in sites if r['operating_status']=='active']
  actual=sum(bool(s['street_address']) for s in active)
  before=actual-len(ev) if all(byid[e['record_id']]['street_address'] for e in ev) else actual
- summary=dict(eligible_sites=448,worked=100,unworked=288,fills=len(ev),holds=100-len(ev),active_ohio_sites=len(active),before_streets=before,after_streets=before+len(ev))
+ summary=dict(eligible_sites=448,prior_batch_sites=60,worked=100,unworked=288,fills=len(ev),holds=100-len(ev),active_ohio_sites=len(active),before_streets=before,after_streets=before+len(ev))
  (TASK/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(summary)
 if __name__=='__main__':run('--apply' in sys.argv)

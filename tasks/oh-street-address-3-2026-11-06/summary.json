@@ -1,5 +1,6 @@
 {
   "eligible_sites": 448,
+  "prior_batch_sites": 60,
   "worked": 100,
   "unworked": 288,
   "fills": 38,

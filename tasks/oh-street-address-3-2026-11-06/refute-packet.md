@@ -1,7 +1,7 @@
 Adversarial completion refute, L2 Ohio street round3, branch agent/codex/oh-street-address-3. Return VERDICT: APPROVE/REFUTE with actual demonstrated defects, no mutations or merge.
 Frozen ORIGINAL448frame positions61–160 (IDs152060–152159) exactly next100 after prior156'sfirst60.100worked=38VERIFIED/62STILL_UNCERTAIN;288futureframe rows unworked. All100 were blank,activePIC18A/B with operatorwebsite on main8e8c71a beforefetch.38street/source-only edits,38append-only own_site/address/supports_A evidence; tiersA27/B11unchanged. No county/county_source/ZIP/status/tier/ring/registry/derived edits, no org/site creates/deletes/inclusionlog. Coverage286/1883→324/1883 (15.19→17.21%), excludes disjoint20pending156. Check currentmain if156merges; replayonmain recipe, not scope growth.
 209rawpage attempts=186fetched+23unavailable; all100siteIDs accounted,54rawaddresssites38admitted. Missingcityblocks/multiple street/ZIPs/knownZIP/notes conflicts/mail-only/cross-host redirects held. Quote-to-field/city/ZIP/digest/held-host binding asserted. Street normalization only suffix/direction abbreviations. Ownpage address blocks only,no personal contacts/fullHTML retained. Five research pages/operator reserves sixth audit; inherited federal exception not used.
-Named ground truth: live three known literal operator addresses before scaling (Chardon373Washington,Freeman1101MooreAvon,ShinEtsu1150DamarAkron),3/3; wrongcity/PObox/phoneprefix injections pass. check.py38fills,boundary,idempotence,preexistingstreet and foreign-shardEVD collisions rejectBEFOREcanonicalwrites. audit.py sortedsiteIDs Random20261106.sample(38,30),fresh30/30,0missingquotes/errors. validate.py0errors; no scripts/ changes; diffcheckPASS. Beforeapply immutable scope/rawchecks/backup/journal fixed. Latermain integration must preserve allkeys/evidence; source/output20?Thisround38 unchanged except intentionalfindings. PriorPR156head9ef stillDRAFT,notbundled.
+Named ground truth: live three known literal operator addresses before scaling (Chardon373Washington,Freeman1101MooreAvon,ShinEtsu1150DamarAkron),3/3; wrongcity/PObox/phoneprefix injections pass. check.py38fills,boundary,idempotence,preexistingstreet and foreign-shardEVD collisions rejectBEFOREcanonicalwrites. audit.py sortedsiteIDs Random20261106.sample(38,30),fresh30/30,0missingquotes/errors. validate.py0errors; no scripts/ changes; diffcheckPASS. Beforeapply immutable scope/rawchecks/backup/journal fixed. Latermain integration must preserve allkeys/evidence; The38outputs remain fixed except verified review findings. PriorPR156head9ef stillDRAFT,notbundled.
 Potential failures: wrongoperatororlocationfooter, mailingvsphysical, sourcecountycontradiction, unparsednotesstreet, normalization falselyequates, URLredirectidentity, numericprefix pollution, globalID/rebase rowloss, applybeforefailure, underreturnedextractor, samplingcoverage.
 Reproduce read-only temp checks:
 python3 tasks/oh-street-address-3-2026-11-06/check.py
@@ -181,7 +181,7 @@ def run(apply=False):
  active=[r for r in sites if r['operating_status']=='active']
  actual=sum(bool(s['street_address']) for s in active)
  before=actual-len(ev) if all(byid[e['record_id']]['street_address'] for e in ev) else actual
- summary=dict(eligible_sites=448,worked=100,unworked=288,fills=len(ev),holds=100-len(ev),active_ohio_sites=len(active),before_streets=before,after_streets=before+len(ev))
+ summary=dict(eligible_sites=448,prior_batch_sites=60,worked=100,unworked=288,fills=len(ev),holds=100-len(ev),active_ohio_sites=len(active),before_streets=before,after_streets=before+len(ev))
  (TASK/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(summary)
 if __name__=='__main__':run('--apply' in sys.argv)
 
@@ -538,6 +538,7 @@ SITE-000189,http://www.orazen.com/,3c3691da2b2448d205236fa0bc405f6ed4d64a8518c07
 FILE summary.json
 {
   "eligible_sites": 448,
+  "prior_batch_sites": 60,
   "worked": 100,
   "unworked": 288,
   "fills": 38,
