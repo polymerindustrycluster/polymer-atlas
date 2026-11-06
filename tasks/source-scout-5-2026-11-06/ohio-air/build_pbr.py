@@ -34,7 +34,12 @@ def main():
   writer=csv.DictWriter(f,fieldnames=FIELDS,lineterminator='\n');writer.writeheader();writer.writerows(rows)
  for fid,name in [('02-28-00-0043','MERCURY PLASTICS INC'),('15-76-05-5084','AmbaFlex Manufacturing Inc.'),('16-77-01-0091','The University of Akron')]:
   known=[r for r in rows if r['facility_id']==fid];assert known and any(r['name']==name and PATTERN.search(r['name']+' '+r['unit_description']) for r in known)
- pic=[r for r in rows if r['county'] in PIC18];groups=defaultdict(list)
+ pic=[r for r in rows if r['county'] in PIC18]
+ oh=[r for r in rows if r['state']=='OH'];pic_oh=[r for r in pic if r['state']=='OH']
+ anomalies=[{k:r[k] for k in ['facility_id','name','street','city','state','zip','county','unit_id']} for r in rows if r['state']!='OH']
+ assert len(anomalies)==3 and {r['facility_id'] for r in anomalies}=={'04-48-01-2010','13-18-00-8701'}
+ write('geography_anomalies.csv',anomalies)
+ groups=defaultdict(list)
  for r in pic:
   if PATTERN.search(r['name']+' '+r['unit_description']):groups[r['facility_id']].append(r)
  tables=atlas.load_tables(ROOT/'data');out=[]
@@ -43,7 +48,8 @@ def main():
   r=rs[0];ded=atlas.dedupe(tables,name=r['name'],street=r['street'],city=r['city'],state=r['state'],zip_=r['zip']);streetids={h['id'] for h in ded['steps'][2]['hits']};other={h['id'] for st in ded['steps'][:2]+ded['steps'][3:] for h in st['hits']}
   out.append(dict(facility_id=fid,name=';'.join(sorted({x['name'] for x in rs})),street=r['street'],city=r['city'],state=r['state'],zip=r['zip'],county=r['county'],unit_rows=len(rs),unit_ids=';'.join(sorted({x['unit_id'] for x in rs})),effective_dates=';'.join(sorted({x['effective_date'] for x in rs})),unit_descriptions=';'.join(sorted({x['unit_description'] for x in rs})),pbr_types=';'.join(sorted({x['pbr_type'] for x in rs})),site_hits=';'.join(sorted(streetids)),org_hits=';'.join(sorted(other)),source_url=URL,domain_check='no domain in workbook',naics_check='no NAICS in workbook; keyword fallback only',verdict='DUPLICATE_OF' if len(streetids)==1 else 'STILL_UNCERTAIN',duplicate_of=next(iter(streetids)) if len(streetids)==1 else '',verified_new=0,reason='singleton held site street/locality; reporting entry is not current operation' if len(streetids)==1 else 'settling fact: current polymer operator and site identity/address; PBR/name keywords are discovery only'))
  assert len(out)==len({r['facility_id'] for r in out})>=20
+ assert not {r['facility_id'] for r in anomalies}&{r['facility_id'] for r in out} and all(r['state']=='OH' for r in out)
  write('pbr_frame.csv',out);sample=random.Random(20261106).sample(out,20);write('pbr_sample.csv',sample)
- stats=dict(input_unit_rows=len(rows),input_blank_rows=blank,ohio_facility_ids=len({r['facility_id'] for r in rows}),pic18_unit_rows=len(pic),pic18_facility_ids=len({r['facility_id'] for r in pic}),keyword_unit_rows=sum(r['unit_rows'] for r in out),keyword_facility_ids=len(out),report_generated=str(pre[2][0]),workbook_sha256=hashlib.sha256(source.read_bytes()).hexdigest())
+ stats=dict(whole_workbook_unit_rows=len(rows),input_blank_rows=blank,whole_workbook_facility_ids=len({r['facility_id'] for r in rows}),state_oh_unit_rows=len(oh),state_oh_facility_ids=len({r['facility_id'] for r in oh}),pic18_county_only_unit_rows=len(pic),pic18_county_only_facility_ids=len({r['facility_id'] for r in pic}),pic18_county_and_state_oh_unit_rows=len(pic_oh),pic18_county_and_state_oh_facility_ids=len({r['facility_id'] for r in pic_oh}),non_oh_coded_unit_rows=len(anomalies),non_oh_coded_facility_ids=len({r['facility_id'] for r in anomalies}),keyword_unit_rows=sum(r['unit_rows'] for r in out),keyword_facility_ids=len(out),report_generated=str(pre[2][0]),workbook_sha256=hashlib.sha256(source.read_bytes()).hexdigest())
  (HERE/'pbr_counts.json').write_text(json.dumps(stats,indent=2)+'\n');print(stats)
 if __name__=='__main__':main()

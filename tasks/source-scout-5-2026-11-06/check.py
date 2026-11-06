@@ -36,8 +36,18 @@ def main():
   if r['verdict']=='DUPLICATE_OF':assert ids=={r['duplicate_of']} and r['duplicate_of'] in sites
   else:assert len(ids)!=1 and r['reason'].startswith('settling fact:')
  assert sum(int(r['unit_rows']) for r in frame)==counts['keyword_unit_rows']==33
- assert (counts['input_unit_rows'],counts['input_blank_rows'],counts['ohio_facility_ids'],counts['pic18_unit_rows'],counts['pic18_facility_ids'],counts['keyword_facility_ids'])==(19443,1,12196,7824,4758,21)
- independent=read(HERE/'ohio-air/independent_counts.csv');assert independent==[dict(unit_rows='19443',facility_ids='12196',pic18_unit_rows='7824',pic18_facility_ids='4758')]
+ expected=dict(whole_workbook_unit_rows=19443,whole_workbook_facility_ids=12196,state_oh_unit_rows=19440,state_oh_facility_ids=12194,pic18_county_only_unit_rows=7824,pic18_county_only_facility_ids=4758,pic18_county_and_state_oh_unit_rows=7822,pic18_county_and_state_oh_facility_ids=4757,non_oh_coded_unit_rows=3,non_oh_coded_facility_ids=2)
+ assert {k:counts[k] for k in expected}==expected and counts['input_blank_rows']==1 and counts['keyword_facility_ids']==21
+ independent=read(HERE/'ohio-air/independent_counts.csv');assert independent==[{k:str(v) for k,v in expected.items()}]
+ anomalies=read(HERE/'ohio-air/geography_anomalies.csv')
+ assert len(anomalies)==counts['non_oh_coded_unit_rows']==counts['whole_workbook_unit_rows']-counts['state_oh_unit_rows']
+ assert {r['facility_id'] for r in anomalies}=={'04-48-01-2010','13-18-00-8701'} and all(r['state']!='OH' for r in anomalies)
+ assert len({r['facility_id'] for r in anomalies})==counts['non_oh_coded_facility_ids']==counts['whole_workbook_facility_ids']-counts['state_oh_facility_ids']
+ pic_anomalies=[r for r in anomalies if r['county'] in PIC18]
+ assert len(pic_anomalies)==counts['pic18_county_only_unit_rows']-counts['pic18_county_and_state_oh_unit_rows']==2
+ assert len({r['facility_id'] for r in pic_anomalies})==counts['pic18_county_only_facility_ids']-counts['pic18_county_and_state_oh_facility_ids']==1
+ assert not {r['facility_id'] for r in anomalies}&set(byid)
+ assert [(r['state'],r['county']) for r in anomalies]==[('IN','Out_of_state_county'),('NC','Cuyahoga'),('NC','Cuyahoga')]
  metrics['pbr_keyword_fallback']=dict(sampled=20,verified_new=0,yield_fraction=0,wilson95=wilson(0,20),duplicate_sample_sites=sum(r['verdict']=='DUPLICATE_OF' for r in sample),uncertain_sample_sites=sum(r['verdict']=='STILL_UNCERTAIN' for r in sample),frame_facility_ids=21,frame_unit_rows=33)
  assert metrics['pbr_keyword_fallback']['duplicate_sample_sites']==2
  metrics['pbr_keyword_fallback']['sample_exact_street_match_fraction']=2/20
