@@ -5,7 +5,7 @@ Acceptance before application: work the frozen 85 capability-only organizations 
 
 ## Result
 
-Baseline for this PR is first-pass commit 04592d0 (PR #133): **431/632 PIC18 Ring1–2 organizations = 68.20%** free of T1 blocking gaps. After: **448/632 = 70.89%**, +17 organizations. Original campaign baseline remains **428/632 = 67.72%**.
+Baseline for this PR is first-pass commit 04592d0 (PR #133): **430/632 PIC18 Ring1–2 organizations = 68.04%** free of T1 blocking gaps. After: **447/632 = 70.73%**, +17 organizations. Original campaign baseline remains **428/632 = 67.72%**.
 
 Frozen frame.csv: 85 unique organizations whose only original blocking gap was capabilities. Verdict census: 17 VERIFIED; 68 STILL_UNCERTAIN. Added 23 controlled values in 19 cells across 17 organization rows; 23 append-only own_site scope evidence rows EVD-170012–170034, each supports_A for that claim only. No verification tiers changed. No entities, sites or relationships created. No inclusion decisions or merges. Evidence shards follow each organization's existing shard. No L9/L10 columns touched.
 
@@ -31,4 +31,6 @@ Reviews: pending assigned Codex and Grok clerks under controller BOARD 05:55 aut
 
 Negative control: removed one packet evidence row temporarily, ran check.py, observed nonzero failure, restored packet. Replay hashes of all data CSVs unchanged.
 
-Refresh: merged first PR25c81b2 (which merges main9489b60), took its data wholesale, replayed this builder. Exact-delta checker baseline now25c81b2. First-pass check.py intentionally applies to first-pass tree; continuation checker covers this tree. Refreshed health448/632 and validate0 pass. Controller authorized main's LF federal-frame normalization; net diff versus main zero. Original inherited bytes remain backed up. No evidence values changed during refresh.
+Refresh: merged first PR25c81b2 (which merges main9489b60), took its data wholesale, replayed this builder. Exact-delta checker baseline now25c81b2. First-pass check.py intentionally applies to first-pass tree; continuation checker covers this tree. Refreshed health447/632 and validate0 pass. Controller authorized main's LF federal-frame normalization; net diff versus main zero. Original inherited bytes remain backed up. No evidence values changed during refresh.
+
+First-PR Grok Faull refutation propagated: Faull material/tier held on parent; continuation values unchanged. Exact-delta baseline nowc980a66caf3ab0ae97902c3025d6b700bb23a390; firstPR430/632→continuation447/632. Earlier448/632 snapshot superseded.
