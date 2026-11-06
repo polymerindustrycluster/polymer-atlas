@@ -187,6 +187,17 @@ class NormalizerTests(unittest.TestCase):
         self.assertEqual(k("Beta Rubber & Polymer LLC"), "beta rubber and polymer")
         self.assertEqual(k("The Company"), "the company")     # never normalize to empty
 
+    def test_site_name_key_strips_only_a_trailing_city_suffix(self):
+        k = atlas.site_name_key
+        self.assertEqual(k("IFS Coatings - Ardmore", "Ardmore"), "ifs coatings")
+        self.assertEqual(k("IFS Coatings \u2014 ARDMORE", "Ardmore"), "ifs coatings")     # SCHEMA default uses the em dash
+        self.assertEqual(k("IFS Coatings (Ardmore)", "Ardmore"), "ifs coatings")
+        self.assertEqual(k("Boomerang Rubber, Inc. \u2014 Botkins (Dinsmore St. Campus)", "Botkins"), "boomerang rubber")
+        self.assertEqual(k("Acme \u2014 Akron (Plant 2)", "Akron"), "acme")
+        self.assertEqual(k("IFS Coatings - Annex", "Ardmore"), "ifs coatings annex")        # suffix is not the city
+        self.assertEqual(k("Orange County Plastics", "Orange"), "orange county plastics")   # no separator, nothing stripped
+        self.assertEqual(k("IFS Coatings - Ardmore", ""), "ifs coatings ardmore")           # no city, nothing stripped
+
     def test_street_key(self):
         k = atlas.street_key
         self.assertEqual(k("100 North Main Street, Suite 4"), k("100 N. Main St"))
@@ -250,6 +261,36 @@ class DedupeTests(FixtureCase):
         self.assertEqual(res["steps"][2]["hits"][0]["operator"], "The Acme Plastics, Inc.")
         _, res = self.dd("--street", "100 North Main Street Suite 9")        # no locality: both count
         self.assertEqual(sorted(self.ids(res, 3)), ["SITE-000001", "SITE-000010"])
+
+    def add_sites(self, *rows):
+        write(self.d, "sites_IN.csv", SITE_COLS, [site(i, o, st, city=c, state="IN", site_name=n) for i, o, st, c, n in rows])
+
+    def test_step5_site_name_hit_reports_operator_and_street(self):
+        # known answer: SITE-006097 "IFS Coatings - Ardmore" sits under "Ifs Industries Inc.", so steps 1-4 miss it
+        self.add_sites(("SITE-006097", "ORG-000001", "3430 Cypert Way", "Ardmore", "IFS Coatings - Ardmore"),
+                       ("SITE-006098", "ORG-000004", "1 Elm St", "Canton", "IFS Coatings \u2014 Canton"),
+                       ("SITE-006099", "ORG-000020", "2 Elm St", "Peru", "IFS Coatings (Peru)"))
+        rc, res = self.dd("--name", "IFS Coatings")
+        self.assertEqual((rc, res["stop_at_step"]), (1, 5))
+        self.assertEqual(self.ids(res, 2) + self.ids(res, 4), [])
+        self.assertEqual(self.ids(res, 5), ["SITE-006097", "SITE-006098", "SITE-006099"])
+        h = res["steps"][4]["hits"][0]
+        self.assertEqual((h["org_id"], h["operator"], h["street"]), ("ORG-000001", "The Acme Plastics, Inc.", "3430 Cypert Way"))
+        _, out, _ = run(["dedupe-check", "--name", "IFS Coatings"], self.d)
+        self.assertIn("STOP at step 5", out)
+        self.assertIn("street: 3430 Cypert Way", out)
+
+    def test_step5_near_misses_do_not_match(self):
+        self.add_sites(("SITE-006097", "ORG-000001", "3430 Cypert Way", "Ardmore", "IFS Coatings Group - Ardmore"),
+                       ("SITE-006098", "ORG-000004", "1 Elm St", "Canton", "IFS Coatings - Annex"),     # suffix is not the city
+                       ("SITE-006099", "ORG-000020", "2 Elm St", "Peru", "Ifs Holdings - Peru"))
+        _, res = self.dd("--name", "IFS Coatings")
+        self.assertEqual(self.ids(res, 5), [])
+        self.assertIsNone(res["stop_at_step"])
+        # a query carrying its own city suffix matches a bare site_name when --city is given
+        self.add_sites(("SITE-006100", "ORG-000001", "3430 Cypert Way", "Ardmore", "IFS Coatings"))
+        _, res = self.dd("--name", "IFS Coatings - Ardmore", "--city", "Ardmore")
+        self.assertEqual(self.ids(res, 5), ["SITE-006100"])
 
     def test_no_hits_exit_zero_and_requires_a_query(self):
         rc, res = self.dd("--name", "Totally Unknown Widgets", "--domain", "nowhere.invalid")

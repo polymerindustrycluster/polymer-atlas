@@ -11,6 +11,7 @@ Usage (run from the repo root; add --data-dir PATH to point at another tree):
   python3 scripts/atlas.py dedupe-check --domain avient.com --name "Avient Corp"
   python3 scripts/atlas.py dedupe-check --street "554 Moore Road" --city "Avon Lake" --state OH --zip 44012
   python3 scripts/atlas.py dedupe-check --name "PolyOne" --json
+  python3 scripts/atlas.py dedupe-check --name "IFS Coatings"   # step 5 also searches sites.site_name ("IFS Coatings - Ardmore")
   python3 scripts/atlas.py show ORG-000010        # record + evidence + relationships + sites
   python3 scripts/atlas.py show SITE-000001 --json
   python3 scripts/atlas.py shard-of --hq-state TX             # organizations_TX.csv
@@ -207,6 +208,31 @@ def name_key(s):
     return " ".join(kept or toks)
 
 
+LOCALITY_SEP_RE = re.compile(r"\s+[-\u2013\u2014]\s+")   # " - ", " – ", " — " (SCHEMA site_name default uses the em dash)
+TRAILING_PAREN_RE = re.compile(r"\s*\(([^()]*)\)\s*$")
+
+
+def _starts_with_city(segment, city_sq):
+    seg = squash(segment)
+    return seg == city_sq or seg.startswith(city_sq + " ")
+
+
+def site_name_key(site_name, city=""):
+    """name_key of a site_name with a trailing locality suffix removed: "X - Ardmore", "X — Ardmore (Plant 2)", "X (Ardmore)".
+    A suffix is locality only when it starts with `city`; with no city nothing is stripped.
+    shortcut: exact word match on the city text (no "St."/"Saint" folding), upgrade if the sweep shows misses."""
+    s = (site_name or "").strip()
+    c = squash(city)
+    if c:
+        m = TRAILING_PAREN_RE.search(s)
+        if m and _starts_with_city(m.group(1), c):
+            s = s[:m.start()]
+        parts = LOCALITY_SEP_RE.split(s)
+        if len(parts) > 1 and _starts_with_city(parts[-1], c):
+            s = " - ".join(parts[:-1])
+    return name_key(s)
+
+
 PLATFORM_HOSTS = {"linkedin.com", "facebook.com", "instagram.com", "twitter.com", "x.com", "youtube.com", "google.com",
                   "sites.google.com", "business.site", "wixsite.com", "wordpress.com", "squarespace.com",
                   "godaddysites.com", "weebly.com", "github.io", "bloomberg.com", "crunchbase.com", "zoominfo.com"}
@@ -355,7 +381,17 @@ def dedupe(tables, domain=None, name=None, street=None, city=None, state=None, z
                     s4["hits"].append({**brief(tn, r), "match": f"{fld} contains {name!r}"}); break
     steps.append(s4)
 
-    for s in steps[:2] + steps[3:]:
+    # 5. site names (not in AGENTS §3's list): sites_*.csv site_name, with a trailing " - <city>" / " (<city>)" removed
+    s5 = {"step": 5, "name": "site_name (sites_*.csv; locality suffix removed)", "skipped": None if name else "no --name", "hits": []}
+    if name:
+        qs = {name_key(name), site_name_key(name, city)} - {""}
+        for r in tables.get("sites", Table("sites")).rows:
+            if qs & ({name_key(r["site_name"]), site_name_key(r["site_name"], r["city"])} - {""}):
+                op = by_id.get(r["org_id"], [{}])[0].get("legal_name", "(org not found)")
+                s5["hits"].append({**brief("sites", r), "operator": op, "match": f"site_name {r['site_name']!r} ~ {name!r}"})
+    steps.append(s5)
+
+    for s in steps[:2] + steps[3:4]:
         for h in s["hits"]:
             ch, end = successor_chain(h["id"], by_id)
             if ch:
