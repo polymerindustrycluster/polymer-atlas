@@ -1,7 +1,7 @@
 """Separate PBR fallback, never substituted for requested PTI/PTIO NAICS frame.
 Input: official PermitbyRule.xlsx. Requires installed openpyxl, outputs task CSVs only.
 """
-import csv,sys,re,json,hashlib,random
+import csv,sys,re,json,hashlib,random,zipfile,xml.etree.ElementTree as ET
 from pathlib import Path
 from collections import defaultdict
 import openpyxl
@@ -26,6 +26,12 @@ def main():
   assert len(values)==15 and values[0] and values[3] is None and values[5] is None
   rows.append({k:v.isoformat()[:10] if hasattr(v,'isoformat') else str(v or '') for k,v in zip(FIELDS,values)})
  assert len(rows)==19443 and blank==1
+ with zipfile.ZipFile(source) as archive:
+  xml=ET.fromstring(archive.read('xl/worksheets/sheet1.xml'));ns={'x':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
+  assert sum(int(r.attrib['r'])>5 for r in xml.findall('x:sheetData/x:row',ns))==len(rows)+blank
+ # Export source rows only to the existing local scratch area for independent DuckDB census.
+ with Path('/tmp/l5c-pbr.csv').open('w') as f:
+  writer=csv.DictWriter(f,fieldnames=FIELDS,lineterminator='\n');writer.writeheader();writer.writerows(rows)
  for fid,name in [('02-28-00-0043','MERCURY PLASTICS INC'),('15-76-05-5084','AmbaFlex Manufacturing Inc.'),('16-77-01-0091','The University of Akron')]:
   known=[r for r in rows if r['facility_id']==fid];assert known and any(r['name']==name and PATTERN.search(r['name']+' '+r['unit_description']) for r in known)
  pic=[r for r in rows if r['county'] in PIC18];groups=defaultdict(list)

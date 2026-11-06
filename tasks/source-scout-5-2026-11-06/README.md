@@ -22,7 +22,7 @@ Four requested sample.csv files are deliberately header-only. Metrics use null, 
 - `duckdb -csv < tasks/source-scout-5-2026-11-06/ohio-air/count.sql`: independent19443/12196/7824/4758 census on source workbook CSV export. Native XLSX XML has19444data row elements after header, reconciling19443populated+1blank; no silent skipped data rows.
 - Four short excerpts raw words-in-order checked using house evidence-repair normalizer (raw_checks.csv); OCS explicitly NOT raw-verified. Source raw bodies and workbook remain/tmp; SHA256 receipts in routes.csv/pbr_counts.json.
 
-Validator0errors PASS; packetbuilder rerun byte-identical PASS. Current-main row-loss and independent Codex+Grok review results appended after execution. New review requests per controller06:25 go Codex3 thr_jukpm97t9c/Grok3 thr_4g4uwqjxjv, --mode queue clerk exception. No Done until both approve.
+Validator0errors PASS; packetbuilder rerun byte-identical PASS. Current-main row-loss guard PASS. Independent Codex+Grok reviews pending; no approval claimed. New review requests per controller06:25 go Codex3 thr_jukpm97t9c/Grok3 thr_4g4uwqjxjv, --mode queue clerk exception. No Done until both approve.
 
 ## Ledger / limits
 
