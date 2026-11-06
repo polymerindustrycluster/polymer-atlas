@@ -27,6 +27,8 @@ def write(path, rows, header):
 
 def main(data, apply=False):
     cohort = read(HERE / 'cohort.csv')
+    preimages = {r['org_id']: r for r in read(HERE / 'preimages.csv')} if (HERE / 'preimages.csv').exists() else {r['org_id']: r for r in cohort}
+    assert set(preimages) == {r['org_id'] for r in cohort}
     verdicts = read(HERE / 'verdicts.csv')
     assert len(cohort) == len(verdicts) == 100
     assert len({r['org_id'] for r in verdicts}) == 100
@@ -50,8 +52,9 @@ def main(data, apply=False):
     changed = set()
     additions = {}
     applied = 0
-    for old in cohort:
-        oid = old['org_id']
+    for frozen in cohort:
+        oid = frozen['org_id']
+        old = preimages[oid]
         if oid not in updates:
             continue
         spec = updates[oid]
