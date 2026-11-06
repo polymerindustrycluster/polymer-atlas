@@ -82,6 +82,13 @@ assigned Codex/Grok refute clerks may review the draft PR. Queue-mode messages a
 authorized for these clerk requests only. council-doctor passed, but no deep council call
 was launched because the controller reported fleet saturation. Independent verdicts pending.
 
+Draft PR: https://github.com/polymerindustrycluster/polymer-atlas/pull/144 .
+Codex clerk thr_86bb34wxm8 request qmsg_7ctfgc82jv and Grok clerk
+thr_swjbz4p3am request qmsg_vkueudz2a6 are queued behind earlier reviews.
+Neither family has returned a verdict; this PR is not completion-approved.
+GitHub validate was still in progress at handoff. The queued reviewer replies
+should resume this worker for fixes, verdict recording and readiness update.
+
 Frame reconciliation: worklist.csv has 353 rows. Non-OH/PA rows number 294,
 of which 19 are already held_same_name=True and **275 are pending (False)**.
 An initial 10-row selection included 4 already-held positives; they are now
