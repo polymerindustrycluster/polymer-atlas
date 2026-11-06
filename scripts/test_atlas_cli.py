@@ -351,10 +351,6 @@ class RealDataSmoke(unittest.TestCase):
         self.assertEqual(r["duplicates"], {})
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class StreetKey(unittest.TestCase):
     """street_key must not collapse a real street to '' (L3 finding on #164: '#6 Capper Drive' -> '' matched another blank)."""
 
@@ -366,6 +362,13 @@ class StreetKey(unittest.TestCase):
         self.assertEqual(atlas.street_key("200 Main St, Suite 100"), "200 main st")
         self.assertEqual(atlas.street_key("200 Main St #4"), "200 main st")
 
+    def test_digit_free_comma_street_keeps_whole_string(self):
+        self.assertEqual(atlas.street_key("Ironstone House, Ironstone Way"), "ironstone house ironstone way")
+
     def test_unit_only_is_empty(self):
         self.assertEqual(atlas.street_key("Unit 4"), "")
         self.assertEqual(atlas.street_key(""), "")
+
+
+if __name__ == "__main__":
+    unittest.main()

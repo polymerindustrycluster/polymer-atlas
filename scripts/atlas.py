@@ -249,7 +249,8 @@ def street_key(s):
     """Normalized street line for address-first dedupe (AGENTS §3 step 3); empty only when no street is present."""
     parts = [p for p in (s or "").lower().split(",")]
     # the street is the first comma part with a digit that is not just a unit ("Suite 100, 200 Main St")
-    street = next((p for p in parts if re.search(r"\d", p) and not UNIT_ONLY_RE.match(p)), parts[0] if parts else "")
+    # no comma part with a street number: keep the whole string, as before ("Ironstone House, Ironstone Way")
+    street = next((p for p in parts if re.search(r"\d", p) and not UNIT_ONLY_RE.match(p)), (s or "").lower())
     street = re.sub(r"^\s*#\s*(?=\d)", "", street)  # a leading "#6" is a building number, not a unit
     s = UNIT_RE.sub("", street)
     s = re.sub(r"\b(\d+)(st|nd|rd|th)\b", r"\1", s)
