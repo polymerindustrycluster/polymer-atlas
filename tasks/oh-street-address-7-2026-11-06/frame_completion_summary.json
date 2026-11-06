@@ -1,0 +1,36 @@
+[
+  {
+    "pr": "156",
+    "selected": 60,
+    "verified": 19,
+    "holds": 41,
+    "source_commit": "511a5af102ded9bdf39b6a1e38893e6c1c5c3a17"
+  },
+  {
+    "pr": "171",
+    "selected": 100,
+    "verified": 38,
+    "holds": 62,
+    "source_commit": "7af42197932bd67c11831403324a7898b88124ba"
+  },
+  {
+    "pr": "207",
+    "selected": 100,
+    "verified": 25,
+    "holds": 75,
+    "source_commit": "bf4467729b9724cd6dfb6a8914d5ac6635490712"
+  },
+  {
+    "pr": "208",
+    "selected": 100,
+    "verified": 36,
+    "holds": 64,
+    "source_commit": "8d911d68a86a9a4aa351b7efa3d32ff365592fd4"
+  },
+  {
+    "pr": "round7",
+    "selected": 88,
+    "verified": 24,
+    "holds": 64
+  }
+]

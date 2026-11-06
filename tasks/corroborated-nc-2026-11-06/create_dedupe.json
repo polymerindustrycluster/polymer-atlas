@@ -1,0 +1,1340 @@
+[
+  {
+    "cluster_id": "LF-NC-00123",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "PRINTPACK INC.",
+      "--street",
+      "100 KENPAK LANE",
+      "--city",
+      "MARSHALL",
+      "--state",
+      "NC",
+      "--zip",
+      "28753",
+      "--json",
+      "--domain",
+      "https://www.printpack.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.printpack.com",
+        "name": "PRINTPACK INC.",
+        "street": "100 KENPAK LANE",
+        "city": "MARSHALL",
+        "state": "NC",
+        "zip": "28753"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003146",
+              "name": "Printpack Inc.",
+              "city": "Atlanta",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: printpack.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003146",
+              "name": "Printpack Inc.",
+              "city": "Atlanta",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "name key 'printpack' = legal_name 'Printpack Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00318",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Automated Solutions, LLC",
+      "--street",
+      "621 Virginia St SW",
+      "--city",
+      "Lenoir",
+      "--state",
+      "NC",
+      "--zip",
+      "28645",
+      "--json",
+      "--domain",
+      "https://automatedsolutionsllc.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://automatedsolutionsllc.com/",
+        "name": "Automated Solutions, LLC",
+        "street": "621 Virginia St SW",
+        "city": "Lenoir",
+        "state": "NC",
+        "zip": "28645"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003693",
+              "name": "Automated Solutions, LLC",
+              "city": "Sawmills",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "domain exact: automatedsolutionsllc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003693",
+              "name": "Automated Solutions, LLC",
+              "city": "Sawmills",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "name key 'automated solutions' = legal_name 'Automated Solutions, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00423",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Alpek Polyester USA, LLC",
+      "--street",
+      "3216 Cedar Creek Rd.",
+      "--city",
+      "Fayetteville",
+      "--state",
+      "NC",
+      "--zip",
+      "28312",
+      "--json",
+      "--domain",
+      "https://alpekpolyesterusacareers.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://alpekpolyesterusacareers.com/",
+        "name": "Alpek Polyester USA, LLC",
+        "street": "3216 Cedar Creek Rd.",
+        "city": "Fayetteville",
+        "state": "NC",
+        "zip": "28312"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003945",
+              "name": "Alpek Polyester USA, LLC",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "domain exact: alpekpolyesterusacareers.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003945",
+              "name": "Alpek Polyester USA, LLC",
+              "city": "Charlotte",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "name key 'alpek polyester usa' = legal_name 'Alpek Polyester USA, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00377",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Pretium Packaging",
+      "--street",
+      "3240 N. Ohenry Blvd.",
+      "--city",
+      "Greensboro",
+      "--state",
+      "NC",
+      "--zip",
+      "27405",
+      "--json",
+      "--domain",
+      "https://www.pretiumpkg.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.pretiumpkg.com/",
+        "name": "Pretium Packaging",
+        "street": "3240 N. Ohenry Blvd.",
+        "city": "Greensboro",
+        "state": "NC",
+        "zip": "27405"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000523",
+              "name": "Pretium Packaging",
+              "city": "St. Louis",
+              "state": "MO",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_MO.csv",
+              "match": "domain exact: pretiumpkg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000523",
+              "name": "Pretium Packaging",
+              "city": "St. Louis",
+              "state": "MO",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_MO.csv",
+              "match": "name key 'pretium packaging' = legal_name 'Pretium Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002219",
+              "name": "Alpha Packaging",
+              "city": "Bethlehem",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Pretium Packaging'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00495",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The AZEK Company",
+      "--street",
+      "482 East Plaza Drive",
+      "--city",
+      "Mooresville",
+      "--state",
+      "NC",
+      "--zip",
+      "28115",
+      "--json",
+      "--domain",
+      "https://www.azekco.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.azekco.com",
+        "name": "The AZEK Company",
+        "street": "482 East Plaza Drive",
+        "city": "Mooresville",
+        "state": "NC",
+        "zip": "28115"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002877",
+              "name": "The AZEK Company Inc.",
+              "city": "Chicago",
+              "state": "IL",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_IL.csv",
+              "match": "domain exact: azekco.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-002877",
+              "name": "The AZEK Company Inc.",
+              "city": "Chicago",
+              "state": "IL",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_IL.csv",
+              "match": "name key 'azek' = legal_name 'The AZEK Company Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000691",
+              "name": "AZEK Building Products",
+              "city": "Wilmington",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "trade_names contains 'The AZEK Company'"
+            },
+            {
+              "id": "ORG-001076",
+              "name": "Return Polymers",
+              "city": "Ashland",
+              "state": "OH",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_OH.csv",
+              "match": "notes contains 'The AZEK Company'"
+            },
+            {
+              "id": "ORG-002533",
+              "name": "Cpg Intl",
+              "city": "Moosic",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The AZEK Company'"
+            },
+            {
+              "id": "ORG-002655",
+              "name": "Scranton Products, Inc.",
+              "city": "Scranton",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The AZEK Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00334",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Altium Packaging",
+      "--street",
+      "1625 Sheep Farm Rd",
+      "--city",
+      "Mt Airy",
+      "--state",
+      "NC",
+      "--zip",
+      "27030",
+      "--json",
+      "--domain",
+      "https://altiumpkg.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://altiumpkg.com/",
+        "name": "Altium Packaging",
+        "street": "1625 Sheep Farm Rd",
+        "city": "Mt Airy",
+        "state": "NC",
+        "zip": "27030"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: altiumpkg.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001408",
+              "name": "Altium Packaging",
+              "city": "Columbus",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'altium packaging' = legal_name 'Altium Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-006136",
+              "name": "Altium Packaging - Newark Plant",
+              "city": "Newark",
+              "state": "DE",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_DE.csv",
+              "match": "legal_name contains 'Altium Packaging'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00363",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Automated Solutions, LLC",
+      "--street",
+      "2020 W Front St",
+      "--city",
+      "Statesville",
+      "--state",
+      "NC",
+      "--zip",
+      "28677",
+      "--json",
+      "--domain",
+      "https://automatedsolutionsllc.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://automatedsolutionsllc.com/",
+        "name": "Automated Solutions, LLC",
+        "street": "2020 W Front St",
+        "city": "Statesville",
+        "state": "NC",
+        "zip": "28677"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003693",
+              "name": "Automated Solutions, LLC",
+              "city": "Sawmills",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "domain exact: automatedsolutionsllc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003693",
+              "name": "Automated Solutions, LLC",
+              "city": "Sawmills",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "name key 'automated solutions' = legal_name 'Automated Solutions, LLC'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00302",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "American Phoenix, Inc.",
+      "--street",
+      "318 Blount St",
+      "--city",
+      "Fayetteville",
+      "--state",
+      "NC",
+      "--zip",
+      "28301",
+      "--json",
+      "--domain",
+      "https://apimix.net"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://apimix.net",
+        "name": "American Phoenix, Inc.",
+        "street": "318 Blount St",
+        "city": "Fayetteville",
+        "state": "NC",
+        "zip": "28301"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003969",
+              "name": "American Phoenix, Inc.",
+              "city": "Eau Claire",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "domain exact: apimix.net"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003969",
+              "name": "American Phoenix, Inc.",
+              "city": "Eau Claire",
+              "state": "WI",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_WI.csv",
+              "match": "name key 'american phoenix' = legal_name 'American Phoenix, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00757",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Sherwin-Williams Company",
+      "--street",
+      "188 Side Track Drive",
+      "--city",
+      "Statesville",
+      "--state",
+      "NC",
+      "--zip",
+      "28625",
+      "--json",
+      "--domain",
+      "https://www.sherwin-williams.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sherwin-williams.com",
+        "name": "The Sherwin-Williams Company",
+        "street": "188 Side Track Drive",
+        "city": "Statesville",
+        "state": "NC",
+        "zip": "28625"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sherwin-williams.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000088",
+              "name": "PPG Industries, Inc.",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            },
+            {
+              "id": "ORG-002886",
+              "name": "CSW Industrials, Inc.",
+              "city": "Dallas",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00733",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Inteplast Group",
+      "--street",
+      "10701 S. Commerce Blvd",
+      "--city",
+      "Charlotte",
+      "--state",
+      "NC",
+      "--zip",
+      "28273",
+      "--json",
+      "--domain",
+      "https://www.inteplast.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.inteplast.com",
+        "name": "Inteplast Group",
+        "street": "10701 S. Commerce Blvd",
+        "city": "Charlotte",
+        "state": "NC",
+        "zip": "28273"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003476",
+              "name": "Inteplast Group",
+              "city": "Livingston",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NJ.csv",
+              "match": "domain exact: inteplast.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-003476",
+              "name": "Inteplast Group",
+              "city": "Livingston",
+              "state": "NJ",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NJ.csv",
+              "match": "name key 'inteplast group' = legal_name 'Inteplast Group'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004229",
+              "name": "Fiber Composites, LLC",
+              "city": "New London",
+              "state": "NC",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_NC.csv",
+              "match": "notes contains 'Inteplast Group'"
+            },
+            {
+              "id": "ORG-002483",
+              "name": "Trinity Plastics",
+              "city": "Lewistown",
+              "state": "PA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'Inteplast Group'"
+            },
+            {
+              "id": "ORG-007217",
+              "name": "Minigrip, LLC",
+              "city": "",
+              "state": "TX",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'Inteplast Group'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00721",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "SOUTHEASTERN CONTAINER",
+      "--street",
+      "1250 Sand Hill Road",
+      "--city",
+      "Candler",
+      "--state",
+      "NC",
+      "--zip",
+      "28715",
+      "--json",
+      "--domain",
+      "https://www.secontainer.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.secontainer.com/",
+        "name": "SOUTHEASTERN CONTAINER",
+        "street": "1250 Sand Hill Road",
+        "city": "Candler",
+        "state": "NC",
+        "zip": "28715"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001118",
+              "name": "Southeastern Container, Inc.",
+              "city": "Enka",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "domain exact: secontainer.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001118",
+              "name": "Southeastern Container, Inc.",
+              "city": "Enka",
+              "state": "NC",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_NC.csv",
+              "match": "name key 'southeastern container' = legal_name 'Southeastern Container, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00718",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "CKS Packaging, Inc.",
+      "--street",
+      "289 Rolling Hill Road",
+      "--city",
+      "Mooresville",
+      "--state",
+      "NC",
+      "--zip",
+      "28117",
+      "--json"
+    ],
+    "result": {
+      "query": {
+        "domain": null,
+        "name": "CKS Packaging, Inc.",
+        "street": "289 Rolling Hill Road",
+        "city": "Mooresville",
+        "state": "NC",
+        "zip": "28117"
+      },
+      "stop_at_step": 2,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": "no --domain",
+          "hits": []
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004995",
+              "name": "CKS Packaging",
+              "city": "Naugatuck",
+              "state": "CT",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_CT.csv",
+              "match": "name key 'cks packaging' = legal_name 'CKS Packaging'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00756",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "The Sherwin-Williams Company",
+      "--street",
+      "10300 Claude Freeman Drive",
+      "--city",
+      "Charlotte",
+      "--state",
+      "NC",
+      "--zip",
+      "28262",
+      "--json",
+      "--domain",
+      "https://www.sherwin-williams.com"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.sherwin-williams.com",
+        "name": "The Sherwin-Williams Company",
+        "street": "10300 Claude Freeman Drive",
+        "city": "Charlotte",
+        "state": "NC",
+        "zip": "28262"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: sherwin-williams.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000132",
+              "name": "The Sherwin-Williams Company",
+              "city": "Cleveland",
+              "state": "OH",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_OH.csv",
+              "match": "name key 'sherwin williams' = legal_name 'The Sherwin-Williams Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-000088",
+              "name": "PPG Industries, Inc.",
+              "city": "Pittsburgh",
+              "state": "PA",
+              "status": "active",
+              "tier": "A",
+              "file": "organizations_PA.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            },
+            {
+              "id": "ORG-002886",
+              "name": "CSW Industrials, Inc.",
+              "city": "Dallas",
+              "state": "TX",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_TX.csv",
+              "match": "notes contains 'The Sherwin-Williams Company'"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00658",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Alliance Precision Plastics",
+      "--street",
+      "171 Fairground Rd",
+      "--city",
+      "Spindale",
+      "--state",
+      "NC",
+      "--zip",
+      "28160",
+      "--json",
+      "--domain",
+      "https://www.allianceppc.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.allianceppc.com/",
+        "name": "Alliance Precision Plastics",
+        "street": "171 Fairground Rd",
+        "city": "Spindale",
+        "state": "NC",
+        "zip": "28160"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007801",
+              "name": "Alliance Precision Plastics Corporation",
+              "city": "Rochester",
+              "state": "NY",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_NY.csv",
+              "match": "domain exact: allianceppc.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-007801",
+              "name": "Alliance Precision Plastics Corporation",
+              "city": "Rochester",
+              "state": "NY",
+              "status": "active",
+              "tier": "C",
+              "file": "organizations_NY.csv",
+              "match": "name key 'alliance precision plastics' = legal_name 'Alliance Precision Plastics Corporation'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
+    "cluster_id": "LF-NC-00739",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Graham Packaging Company",
+      "--street",
+      "125 Industrial Park Rd",
+      "--city",
+      "Hendersonville",
+      "--state",
+      "NC",
+      "--zip",
+      "28792",
+      "--json",
+      "--domain",
+      "https://www.grahampackaging.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "https://www.grahampackaging.com/",
+        "name": "Graham Packaging Company",
+        "street": "125 Industrial Park Rd",
+        "city": "Hendersonville",
+        "state": "NC",
+        "zip": "28792"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001403",
+              "name": "Graham Packaging Company",
+              "city": "Fremont",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "domain exact: grahampackaging.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-001403",
+              "name": "Graham Packaging Company",
+              "city": "Fremont",
+              "state": "OH",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_OH.csv",
+              "match": "name key 'graham packaging' = legal_name 'Graham Packaging Company'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  }
+]
