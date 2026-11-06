@@ -35,6 +35,23 @@ def main():
         write(source, rows + [rows[0]])
         reject('duplicate evidence IDs in current tree')
         source.write_bytes(old)
+        snapshot = {p: p.read_bytes() for p in (root / 'data').glob('*.csv')}
+        subprocess.run([sys.executable, str(task / 'build.py')], check=True, stdout=subprocess.DEVNULL)
+        with inputs.open(newline='') as f: candidates = list(csv.DictReader(f))
+        index = next(i for i, r in enumerate(candidates) if r['verdict'] == 'VERIFIED')
+        planned_id = f'EVD-{240160 + index:06d}'
+        for source in (root / 'data').glob('evidence_*.csv'):
+            with source.open(newline='') as f: rows = list(csv.DictReader(f))
+            planned = next((r for r in rows if r['evidence_id'] == planned_id), None)
+            if planned: break
+        assert planned
+        target = root / 'data/evidence_organizations_DE.csv'
+        assert source != target
+        write(source, [r for r in rows if r['evidence_id'] != planned_id])
+        with target.open(newline='') as f: rows = list(csv.DictReader(f))
+        write(target, rows + [planned])
+        reject('evidence shard mismatch')
+        for p, content in snapshot.items(): p.write_bytes(content)
         for basis, field, value, expected in [
             ('current_edition_page', 'quote', 'IATF 16949:2015', 'page edition must be current IATF2016'),
             ('dated_certificate', 'cert_expiry', '2025-01-01', 'certificate outside observation date'),
@@ -49,7 +66,7 @@ def main():
         write(verdicts, rows[:-1])
         result = subprocess.run([sys.executable, str(task / 'check.py')], capture_output=True, text=True)
         assert result.returncode and 'frame/verdict yield mismatch' in result.stderr, result.stderr
-    print(json.dumps({'duplicate_id_no_write': 'PASS', 'page_edition_no_write': 'PASS',
+    print(json.dumps({'duplicate_id_no_write': 'PASS', 'identical_foreign_shard_no_write': 'PASS', 'page_edition_no_write': 'PASS',
                       'expired_certificate_no_write': 'PASS', 'verdict_yield': 'PASS'}))
 
 if __name__ == '__main__': main()
