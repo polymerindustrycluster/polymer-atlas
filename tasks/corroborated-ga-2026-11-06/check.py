@@ -6,7 +6,7 @@ from collections import Counter
 H=Path(__file__).resolve().parent;R=H.parents[1];sys.path.insert(0,str(R/'scripts'))
 from atlas import load_tables,dedupe,name_key
 from build_qcew_denominators import atlas_numerators
-from build import read
+from build import read, clean_street
 vs=read(H/'verdicts.csv');cs=read(H/'input.csv');alloc=read(H/'allocations.csv')
 assert len(vs)==len(cs)==len({r['cluster_id'] for r in vs})==147
 assert {r['cluster_id'] for r in cs}=={r['cluster_id'] for r in vs}
@@ -20,7 +20,8 @@ for name,oid in [('Dart Container Corp','ORG-002441'),('New Wincup Holdings, Inc
 rows=[];random.Random(7731).shuffle(alloc)
 for a in alloc:
  f=ita[a['establishment_id']];s=sites[a['site_id']];o=orgs[s['org_id']]
- assert (s['street_address'],s['city'],s['zip'],s['naics_primary'])==(f['street'],f['city'],f['zip5'],f['naics_code'])
+ assert (s['street_address'],s['city'],s['zip'],s['naics_primary'])==(clean_street(f),f['city'],f['zip5'],f['naics_code'])
+ assert f['reliability']=='ok' and f['size_code_vs_avg_employees']=='consistent'
  assert s['verification_tier']=='C' and f['year_filing_for']=='2025'
  names={name_key(o['legal_name']),*(name_key(t.removesuffix(' (federal registrant name)').strip()) for t in o['trade_names'].split(';'))}
  # Mapei Wildwood is witnessed by its explicitly preserved registrant alias.
@@ -46,5 +47,6 @@ base=list(csv.DictReader(subprocess.check_output(['git','show','c71c0413f0054bc9
 old=sum(r['naics_primary'].startswith('326') and r['operating_status'] in ('active','unknown') and r['verification_tier'] in ('A','B','C') for r in base)
 q=next(r for r in read(R/'docs/denominators/qcew_state_polymer_2023_2024.csv') if r['area_fips']=='13000' and r['year']=='2023' and r['industry_code']=='326')
 den=float(q['annual_avg_estabs'])
+assert now==old+sum(sites[r["site_id"]]["naics_primary"].startswith("326") for r in alloc)
 result=dict(worked_GA_clusters=147,sites_C=20,blind_recheck_passes=20,known_answer_passes=3,idempotence='PASS',conflicting_ID_mutation='PASS (fails before writes)',NAICS326_strict_sites_before=old,NAICS326_strict_sites_after=now,QCEW2023_private_establishments=den,strict_share_before=old/den,strict_share_after=now/den)
 (H/'check_results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

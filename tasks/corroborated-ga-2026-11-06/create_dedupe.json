@@ -328,7 +328,7 @@
       "--name",
       "The Sherwin-Williams Company",
       "--street",
-      "725 Raco Drive, Lawrenceville, GA 30045",
+      "725 Raco Drive",
       "--city",
       "Lawrenceville",
       "--state",
@@ -343,7 +343,7 @@
       "query": {
         "domain": "https://www.sherwin-williams.com",
         "name": "The Sherwin-Williams Company",
-        "street": "725 Raco Drive, Lawrenceville, GA 30045",
+        "street": "725 Raco Drive",
         "city": "Lawrenceville",
         "state": "GA",
         "zip": "30045"
@@ -823,6 +823,87 @@
     }
   },
   {
+    "cluster_id": "LF-GA-00794",
+    "command": [
+      "python3",
+      "scripts/atlas.py",
+      "dedupe-check",
+      "--name",
+      "Apache Mills",
+      "--street",
+      "197 Royal Drive SE",
+      "--city",
+      "Calhoun",
+      "--state",
+      "GA",
+      "--zip",
+      "30701",
+      "--json",
+      "--domain",
+      "http://www.apachemills.com/"
+    ],
+    "result": {
+      "query": {
+        "domain": "http://www.apachemills.com/",
+        "name": "Apache Mills",
+        "street": "197 Royal Drive SE",
+        "city": "Calhoun",
+        "state": "GA",
+        "zip": "30701"
+      },
+      "stop_at_step": 1,
+      "steps": [
+        {
+          "step": 1,
+          "name": "website domain (organizations_*.csv + ecosystem.csv)",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004055",
+              "name": "Apache Mills, Inc.",
+              "city": "Calhoun",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "domain exact: apachemills.com"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "name": "normalized name vs legal_name/trade_names",
+          "skipped": null,
+          "hits": [
+            {
+              "id": "ORG-004055",
+              "name": "Apache Mills, Inc.",
+              "city": "Calhoun",
+              "state": "GA",
+              "status": "active",
+              "tier": "B",
+              "file": "organizations_GA.csv",
+              "match": "name key 'apache mills' = legal_name 'Apache Mills, Inc.'"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+          "skipped": null,
+          "hits": [],
+          "other_localities": []
+        },
+        {
+          "step": 4,
+          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+          "skipped": null,
+          "hits": []
+        }
+      ]
+    }
+  },
+  {
     "cluster_id": "LF-GA-00715",
     "command": [
       "python3",
@@ -912,7 +993,7 @@
       "--name",
       "The Sherwin-Williams Company",
       "--street",
-      "13129 Harland Drive, Covington, GA 30014",
+      "13129 Harland Drive",
       "--city",
       "Covington",
       "--state",
@@ -927,7 +1008,7 @@
       "query": {
         "domain": "https://www.sherwin-williams.com",
         "name": "The Sherwin-Williams Company",
-        "street": "13129 Harland Drive, Covington, GA 30014",
+        "street": "13129 Harland Drive",
         "city": "Covington",
         "state": "GA",
         "zip": "30014"
@@ -1244,7 +1325,7 @@
       "--name",
       "The Sherwin-Williams Company",
       "--street",
-      "6795 Jonesboro Rd, Morrow, GA 30260",
+      "6795 Jonesboro Rd",
       "--city",
       "Morrow",
       "--state",
@@ -1259,7 +1340,7 @@
       "query": {
         "domain": "https://www.sherwin-williams.com",
         "name": "The Sherwin-Williams Company",
-        "street": "6795 Jonesboro Rd, Morrow, GA 30260",
+        "street": "6795 Jonesboro Rd",
         "city": "Morrow",
         "state": "GA",
         "zip": "30260"
@@ -1493,98 +1574,6 @@
           "name": "trade_names/notes/legal_name substring + successor_org_id chain",
           "skipped": null,
           "hits": []
-        }
-      ]
-    }
-  },
-  {
-    "cluster_id": "LF-GA-00657",
-    "command": [
-      "python3",
-      "scripts/atlas.py",
-      "dedupe-check",
-      "--name",
-      "Standridge Color Corporation",
-      "--street",
-      "111 Stewart Parkway",
-      "--city",
-      "Greensboro",
-      "--state",
-      "GA",
-      "--zip",
-      "30642",
-      "--json",
-      "--domain",
-      "https://standridgecolor.com/"
-    ],
-    "result": {
-      "query": {
-        "domain": "https://standridgecolor.com/",
-        "name": "Standridge Color Corporation",
-        "street": "111 Stewart Parkway",
-        "city": "Greensboro",
-        "state": "GA",
-        "zip": "30642"
-      },
-      "stop_at_step": 1,
-      "steps": [
-        {
-          "step": 1,
-          "name": "website domain (organizations_*.csv + ecosystem.csv)",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-001124",
-              "name": "Standridge Color Corporation",
-              "city": "Defiance",
-              "state": "OH",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_OH.csv",
-              "match": "domain exact: standridgecolor.com"
-            }
-          ]
-        },
-        {
-          "step": 2,
-          "name": "normalized name vs legal_name/trade_names",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-001124",
-              "name": "Standridge Color Corporation",
-              "city": "Defiance",
-              "state": "OH",
-              "status": "active",
-              "tier": "B",
-              "file": "organizations_OH.csv",
-              "match": "name key 'standridge color' = legal_name 'Standridge Color Corporation'"
-            }
-          ]
-        },
-        {
-          "step": 3,
-          "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
-          "skipped": null,
-          "hits": [],
-          "other_localities": []
-        },
-        {
-          "step": 4,
-          "name": "trade_names/notes/legal_name substring + successor_org_id chain",
-          "skipped": null,
-          "hits": [
-            {
-              "id": "ORG-006144",
-              "name": "Standridge Color Id",
-              "city": "Burley",
-              "state": "ID",
-              "status": "active",
-              "tier": "C",
-              "file": "organizations_ID.csv",
-              "match": "legal_name contains 'Standridge Color Corporation'"
-            }
-          ]
         }
       ]
     }

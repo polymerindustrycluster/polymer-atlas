@@ -6,8 +6,8 @@
   "idempotence": "PASS",
   "conflicting_ID_mutation": "PASS (fails before writes)",
   "NAICS326_strict_sites_before": 62,
-  "NAICS326_strict_sites_after": 74,
+  "NAICS326_strict_sites_after": 75,
   "QCEW2023_private_establishments": 491.0,
   "strict_share_before": 0.12627291242362526,
-  "strict_share_after": 0.15071283095723015
+  "strict_share_after": 0.15274949083503056
 }

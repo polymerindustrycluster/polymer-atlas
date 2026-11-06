@@ -13,7 +13,7 @@ Dedupe: atlas.py CLI logs before application in create_dedupe.json; domain where
 `python3 tasks/corroborated-ga-2026-11-06/build.py --apply`: second run pending rows0.
 No scripts/ edits; scripts pytest not applicable.
 
-Georgia strict NAICS326 sites (active/unknown,A/B/C,US)/QCEW2023 private establishments:62/491=12.6273% before,74/491=15.0713% after.12 creates carry326;8 carry3255/3259. Count ratio, not matched coverage. Other states untouched. Pre-pass backup is branch base c71c0413f0054bc99bf341a8c75dff36609d24d7. IDs SITE-016100–016119;EVD-201000–201139. ORG IDs unused. Rebase by restoring main data and rerunning builder, never hand-merge CSVs.
+Georgia strict NAICS326 sites (active/unknown,A/B/C,US)/QCEW2023 private establishments:62/491=12.6273% before,75/491=15.2749% after.13 creates carry326;7 carry3255. Count ratio, not matched coverage. Other states untouched. Pre-pass backup is branch base c71c0413f0054bc99bf341a8c75dff36609d24d7. IDs SITE-016100–016117 and016119–016120;EVD-201000–201125 and201133–201146. ORG IDs unused. Rebase by restoring main data and rerunning builder, never hand-merge CSVs.
 
 Cross-thread: no shared scripts edits; L6 confirms banked official URL and CORROBORATED source gaps. L7 made no FRS REST requests. Controller05:55 clerk policy supersedes original council-only/refutes-before-draft sequence; two-family approval remains mandatory. DATA-ESTATE Documents/RAG layers unavailable on Mac; no estate-absence claim. No private/licensed sources or personal contacts.
 
@@ -150,3 +150,5 @@ Pending Codex and Grok approval; draft only.
 |LF-GA-00471|HOLD: needs an unambiguous operator/ultimate-parent and distinct site-scope witness; recommend primary operator page or campus reconciliation before creation.|
 |LF-GA-00830|HOLD: needs an unambiguous operator/ultimate-parent and distinct site-scope witness; recommend primary operator page or campus reconciliation before creation.|
 |LF-GA-00716|HOLD: needs an unambiguous operator/ultimate-parent and distinct site-scope witness; recommend primary operator page or campus reconciliation before creation.|
+
+Refute-driven hardening: Standridge Jasper/Greensboro mismatch held; replacement Apache A2 at197 Royal Drive SE verified against held Apache parent, separate from417 S River and811 Marine sites. Original Standridge SITE-016118/EVD-201126–201132 remain reserved gaps and are never reused. Explicit establishment-name review fixtures now fail closed on changed labels; reliability screens required; embedded city/state/ZIP removed from Sherwin street fields. Strict numerator increment asserted.
