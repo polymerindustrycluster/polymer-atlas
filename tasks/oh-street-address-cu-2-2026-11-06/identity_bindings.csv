@@ -1,10 +1,10 @@
-site_id,registry_id,held_legal_name,held_trade_names,fresh_facility_name,fresh_street,fresh_city,fresh_zip,fresh_county,fresh_state,notes_street,result
-SITE-000025,110004599596,"Enterprise Rubber, Inc.",,ENTERPRISE RUBBER INC,1070 EVANS AVE,AKRON,44305,SUMMIT,OH,1070 EVANS AVE,literal held-name identity plus street/locality match
-SITE-000028,110004720384,"Akron Rubber Development Laboratory, Inc.",ARDL,AKRON RUBBER DEVELOPMENT LABORATORY INC,2887 GILCHRIST ROAD,AKRON,44305-4415,SUMMIT,OH,2887 GILCHRIST ROAD,literal held-name identity plus street/locality match
-SITE-000031,110001625180,Akron Porcelain & Plastics Co.,,AKRON PORCELAIN & PLASTICS CO.,2719 CORY AVENUE,AKRON,44314,SUMMIT,OH,2719 CORY AVENUE,literal held-name identity plus street/locality match
-SITE-000034,110004711660,Akron Polymer Products,,AKRON POLYMER PRODUCTS,571 KENNEDY RD,AKRON,44305,SUMMIT,OH,571 KENNEDY RD,literal held-name identity plus street/locality match
-SITE-000057,110010739772,Smithers-Oasis Co.,,SMITHERS OASIS CO,2020 FRONT ST STE 301,CUYAHOGA FALLS,44221,SUMMIT,OH,2020 FRONT ST STE 301,literal held-name identity plus street/locality match
-SITE-000153,110004733646,Moen Incorporated,,MOEN INCORPORATED,25300 AL MOEN DR,NORTH OLMSTED,44070,CUYAHOGA,OH,25300 AL MOEN DR,literal held-name identity plus street/locality match
-SITE-000156,110004726761,Swagelok,,SWAGELOK CO,31400 AURORA RD,SOLON,44139,CUYAHOGA,OH,31400 AURORA RD,literal held-name identity plus street/locality match
-SITE-000164,110063155482,Cleveland Clinic,,CLEVELAND CLINIC,9500 EUCLID AVENUE,CLEVELAND,44195,CUYAHOGA,OH,9500 EUCLID AVENUE,literal held-name identity plus street/locality match
-SITE-000182,110006269313,Harwood Rubber Products,Coreline Rollers,HARWOOD RUBBER PRODUCTS INC,1365 ORLEN AVE,CUYAHOGA FALLS,44221,SUMMIT,OH,1365 ORLEN AVE,literal held-name identity plus street/locality match
+site_id,registry_id,held_legal_name,held_trade_names,fresh_facility_name,fresh_street,fresh_city,fresh_zip,fresh_county,fresh_state,notes_street,result,admitted
+SITE-000025,110004599596,"Enterprise Rubber, Inc.",,ENTERPRISE RUBBER INC,1070 EVANS AVE,AKRON,44305,SUMMIT,OH,1070 EVANS AVE,literal held-name identity plus street/locality match,no: audit unavailable
+SITE-000028,110004720384,"Akron Rubber Development Laboratory, Inc.",ARDL,AKRON RUBBER DEVELOPMENT LABORATORY INC,2887 GILCHRIST ROAD,AKRON,44305-4415,SUMMIT,OH,2887 GILCHRIST ROAD,literal held-name identity plus street/locality match,yes
+SITE-000031,110001625180,Akron Porcelain & Plastics Co.,,AKRON PORCELAIN & PLASTICS CO.,2719 CORY AVENUE,AKRON,44314,SUMMIT,OH,2719 CORY AVENUE,literal held-name identity plus street/locality match,yes
+SITE-000034,110004711660,Akron Polymer Products,,AKRON POLYMER PRODUCTS,571 KENNEDY RD,AKRON,44305,SUMMIT,OH,571 KENNEDY RD,literal held-name identity plus street/locality match,yes
+SITE-000057,110010739772,Smithers-Oasis Co.,,SMITHERS OASIS CO,2020 FRONT ST STE 301,CUYAHOGA FALLS,44221,SUMMIT,OH,2020 FRONT ST STE 301,literal held-name identity plus street/locality match,yes
+SITE-000153,110004733646,Moen Incorporated,,MOEN INCORPORATED,25300 AL MOEN DR,NORTH OLMSTED,44070,CUYAHOGA,OH,25300 AL MOEN DR,literal held-name identity plus street/locality match,yes
+SITE-000156,110004726761,Swagelok,,SWAGELOK CO,31400 AURORA RD,SOLON,44139,CUYAHOGA,OH,31400 AURORA RD,literal held-name identity plus street/locality match,no: audit unavailable
+SITE-000164,110063155482,Cleveland Clinic,,CLEVELAND CLINIC,9500 EUCLID AVENUE,CLEVELAND,44195,CUYAHOGA,OH,9500 EUCLID AVENUE,literal held-name identity plus street/locality match,yes
+SITE-000182,110006269313,Harwood Rubber Products,Coreline Rollers,HARWOOD RUBBER PRODUCTS INC,1365 ORLEN AVE,CUYAHOGA FALLS,44221,SUMMIT,OH,1365 ORLEN AVE,literal held-name identity plus street/locality match,yes

@@ -61,13 +61,17 @@ def main():
    else:raise AssertionError('injected '+field+' drift silently accepted')
    assert hashes=={p.name:digest(p) for p in paths},'canonical write before drift refusal'
    target[field]=original;build.write(build.ROOT/'data/sites_OH.csv',after)
-  foreign=build.ROOT/'data/evidence_sites_ZZ.csv';build.write(foreign,[ev[-1]])
-  paths=list((build.ROOT/'data').glob('*.csv'));hashes={p.name:digest(p) for p in paths}
-  try:
-   with contextlib.redirect_stdout(io.StringIO()):build.run(apply=True)
-  except AssertionError:pass
-  else:raise AssertionError('foreign-shard evidence collision accepted')
-  assert hashes=={p.name:digest(p) for p in paths},'canonical write before ID collision refusal'
+  foreign=build.ROOT/'data/evidence_sites_ZZ.csv'
+  retired_row=dict(ev[-1],evidence_id=build.read(build.TASK/'retired_ids.csv')[0]['evidence_id'])
+  for foreign_row in (ev[-1],retired_row):
+   build.write(foreign,[foreign_row])
+   paths=list((build.ROOT/'data').glob('*.csv'));hashes={p.name:digest(p) for p in paths}
+   try:
+    with contextlib.redirect_stdout(io.StringIO()):build.run(apply=True)
+   except AssertionError:pass
+   else:raise AssertionError('foreign-shard or retired evidence collision accepted')
+   assert hashes=={p.name:digest(p) for p in paths},'canonical write before ID collision refusal'
+
  build.ROOT=root
  print(f'PASS {expected} fills; only street/sources; byte-idempotent; street/ZIP/tier/status/foreign-ID mutations reject before writes')
 if __name__=='__main__':main()

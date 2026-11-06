@@ -64,7 +64,7 @@ def plan():
   # shortcut: written ordinals/dotted diagonals remain distinct; adjudicate held aliases before widening matching.
   if candidates and any(frs.streetkey(n)!=frs.streetkey(street) for n in note_streets(s)):why.append('notes street conflicts; dated address adjudication needed')
   if sid in {r['site_id'] for r in read(TASK/'retired_ids.csv')}:why.append('cited FRS audit source unavailable after bounded retry; successful fresh recheck required')
-  if not candidates:why.append('need admissible site-keyed physical street witness; FRS unavailable and no qualifying inherited ITA')
+  if not candidates:why.append('need admissible physical street witness; no qualifying federal route or source unavailable')
   v=dict(site_id=sid,verdict='STILL_UNCERTAIN' if why else 'VERIFIED',street_address=street,evidence_id='' if why else s['reserved_evidence_id'],reason='; '.join(why),availability='; '.join(unavailable))
   verdicts.append(v)
   if not why:

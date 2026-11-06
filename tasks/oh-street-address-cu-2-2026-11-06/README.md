@@ -20,7 +20,7 @@ Audit chronology, fixed nine-candidate population:
 1. Original9address candidates were saved as evidence_proposed9.csv before source audit.
 2. All9 re-fetched:6matches,3HTTP22unavailable,0address disagreements; strict source gate FAIL(audit_transport_attempt1.csv/summary).
 3. RetryONLYthose3 at12secspacing:one recovered, two stillHTTP22;7matches/2uncheckable,0address disagreements, strict gate FAIL(attempt2history/retrylog).
-4. A same-endpoint alternate parameter-order route was attempted ONLY on a known record first; it failed that calibration, so it was not used on candidates. Failed route log retained; no untrusted fetcher added.
+4. A same-endpoint alternate parameter-order route was attempted ONLY on known records first; the first passed but the second returned HTTP22, failing the three-record calibration, so it was not used on candidates. Failed route log retained; no untrusted fetcher added.
 5. SITE000025/EVD153012 andSITE000156/EVD153081 are HOLD for unavailable source re-verification, not false-address/closure findings. No canonical write had occurred. No replacement sample was drawn. Originalaudit.csv retains all9observations, including2uncheckable; audit_admitted.csv is the explicit7accepted subset,7/7fresh matches,0errors. The100-row task outcome becomes7fills/93holds. The original9unit/sample and both failure rates stay visible; no claim that all9freshly passed.
 6. Rerunning audit.py keeps the ORIGINAL9population and requires allcurrently admitted7registry sources to re-fetch, while reporting held unavailable rows separately. The historical retry script is an attempted-all9 gate that failed; it is not reported as the final success command.
 
@@ -33,7 +33,7 @@ Named checks:
 - known_identity.csv:3literal fresh-known company identities PASS,3wrongoperator cases rejected before matcher use. check.py adds exact-name/trade-name controls and rejects different material-family/operator names.
 - check.py:PASS7fills; fixed100selection/original819slots, original9audit binding/admitted7freshgate, genuineconflict holds, street/sources boundary, byte-idempotent, street/ZIP/tier/status/late foreign-ID mutations reject before writes.
 - audit.csv/attempt histories:fixed9census;7fresh matches/2uncheckable withdrawn; admitted7/7fresh matches0errors, no replacement sample. No independent second-source/current-operation claim.
-- validate.py:OK,0errors; native row-loss and git diff --check required before push. No shared scripts modified.
+- validate.py:OK,0errors; native row-loss and git diff --check PASS. No shared scripts modified.
 - Keyed baseline comparison:allsitekeys/legacyEVD retained;exact7edits7appends,retiredabsent,0structuredaddressoverlaps.
 
 Review fixes156/192/207/208/211 retainpriority; two-family deep refutes for this pass stillpending. Firstuser/non-use date unchanged. No Done/readiness/mergeclaim.
