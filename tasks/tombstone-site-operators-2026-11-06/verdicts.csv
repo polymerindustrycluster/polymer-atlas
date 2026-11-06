@@ -1,0 +1,15 @@
+site_id,verdict,action,old_org_id,operator_org_id,deciding_or_settling_fact
+SITE-000518,VERIFIED,REPOINT,ORG-000484,ORG-002534,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-000527,VERIFIED,REPOINT,ORG-000492,ORG-004564,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-001828,VERIFIED,KEEP,ORG-001752,ORG-001752,Current hosted2024–2027certificate namesPerformance PlasticsLimited at4435Brownway;2026ITA companyPerformancePlastics corroborates legal operation despite Pexco branding. FilingBroadway spelling is not adopted.
+SITE-003477,VERIFIED,REPOINT,ORG-001836,ORG-000131,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-003478,VERIFIED,REPOINT,ORG-001836,ORG-000131,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-006049,VERIFIED,REPOINT,ORG-002260,ORG-002261,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-006099,VERIFIED,REPOINT,ORG-002260,ORG-002261,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-006143,VERIFIED,REPOINT,ORG-002260,ORG-002261,2025OSHA348240938 namesJ-MManufacturingCompanyInc at1742EPlatteville;own2024–2027Pueblo certificate matches. ITA1445479street7142excluded.
+SITE-006243,VERIFIED,REPOINT,ORG-002260,ORG-002261,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-002301,VERIFIED,REPOINT,ORG-002323,ORG-002324,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-002364,STILL_UNCERTAIN,HOLD,ORG-002384,,"Settle current plant operator and probable duplicate SITE002304 at109ConicaLaneEvansCity before a physical-site disposition;2026FL annual report establishes legal principal address only, not plant operation. Recommend heldORG002325 if operator proof confirms; no fold in this scope."
+SITE-002665,VERIFIED,REPOINT,ORG-002674,ORG-003282,Dated site-specific government operator witness agrees with the held successor identity; retain historical parent in notes.
+SITE-003134,STILL_UNCERTAIN,HOLD,ORG-002893,,Identify the post-sale legal entity operating605RollingHillsLane and bridge it to a held Atlas operator. Teknor2025release saysDanimer continues separately but does not establish that old publicDanimerScientificInc is the continuing operator; successor_org_id is blank. Never infer closure.
+SITE-008319,VERIFIED,KEEP,ORG-006250,ORG-006250,2024OSHA347426389 namesBWAYCORPORATION at1033NProduction;2026ITA1087398 remainsBwayCedarCity. Mauser branding does not establish that the BWAY legal operator ceased.
