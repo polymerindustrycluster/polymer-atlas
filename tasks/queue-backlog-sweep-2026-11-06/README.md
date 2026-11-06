@@ -129,7 +129,8 @@ status or ring changes outside the one explicitly governed historical predecesso
 
 ## Refute status
 
-Deep adversarial Codex3/Grok3 clerk requests will be queued on the draft PR with brief.md.
+Draft PR185: https://github.com/polymerindustrycluster/polymer-atlas/pull/185
+Deep adversarial Codex3 (thr_jukpm97t9c) /Grok3 (thr_4g4uwqjxjv) requests queued once each on83d8c9a with brief.md. Controller05:55 explicitly supersedes never-mode-queue only for clerk requests;06:25 assigns this pair. This receipt is docs-only; data/code unchanged.
 No two-family approval or Done claim until both verdicts are received and findings fixed/held.
 
 Dedupe command before creation: `python3 scripts/atlas.py dedupe-check --domain vibrantz.com
