@@ -1,0 +1,24 @@
+{
+  "org_ids": [
+    "ORG-002055",
+    "ORG-002056",
+    "ORG-002057",
+    "ORG-002060"
+  ],
+  "queries": [
+    {
+      "q": "\"Neo Industries\" Conneaut (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"P & E Sales Ltd.\" Alliance (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Quality Fiberglass\" Marshallville (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Canfield Plastics\" Canfield (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "b04238644280755ef72b8695e596da62487daaff04ea64ee747967d9207e8f80",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}

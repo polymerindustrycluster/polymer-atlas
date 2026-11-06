@@ -1,0 +1,10 @@
+cluster_id,site_id,held_org_id,establishment_id,company_name,establishment_name,street,city,state,zip5,naics_code,industry_description,reliability,year_filing_for,date_submitted
+LF-MO-00258,SITE-012107,ORG-000714,1082833,Buckhorn Inc,Buckhorn Inc.,2727 N. Partnership Blvd,Springfield,MO,65803,326199,"Utility containers (e.g., baskets, bins, boxes, buckets, dishpans, pails), plastics (except foam), manufacturing",ok,2025,2026-01-30
+LF-MO-00033,SITE-012118,ORG-000566,46085,Sealed Air,Sealed Air - St. Joseph Missouri,2313 & 2315 SW Lower Lake Road,Saint Joseph,MO,64504,326113,"Film, plastics (except packaging), manufacturing",ok,2025,2026-01-07
+LF-MO-00295,SITE-012127,ORG-001403,174664,Graham Packaging Company,Joplin,3876 E 25th Street,Joplin,MO,64804,326160,"Bottles, plastics, manufacturing",ok,2025,2026-03-24
+LF-MO-00499,SITE-012148,ORG-001119,1470290,spartech,spartech,2500 spartech drive,cape girardeau,MO,63701,326113,"Film, plastics (except packaging), manufacturing",ok,2025,2026-02-12
+LF-SC-00295,SITE-012181,ORG-003093,1260524,Michelin North America,Michelin PMG,1610 Old Grove Road,Piedmont,SC,29673,326211,"Tires (e.g., pneumatic, semi-pneumatic, solid rubber) manufacturing",ok,2025,2026-02-16
+LF-SC-00118,SITE-012198,ORG-004217,84686,American Roller Company LLC,Rock Hill - ARCo,1550 Cedar Line Drive,Rock Hill,SC,29730,326299,"Rolls and roll coverings, rubber (e.g., industrial, papermill, painters', steelmill) manufacturing",ok,2025,2026-02-27
+LF-SC-00152,SITE-012199,ORG-002723,996243,Amrize Building Envelope LLC,Wellford,320 Innovation Way,Wellford,SC,29385,326299,"Roofing (i.e., single ply rubber membrane) manufacturing",ok,2025,2026-01-29
+LF-SC-00503,SITE-012219,ORG-001384,588267,Sterilite Corporation,Sterilite Corporation CSC,1939 Charlottes Road,Clinton,SC,29325,326199,Mfg of plastic housewares,ok,2025,2026-01-30
+LF-SC-00512,SITE-012226,ORG-002544,671466,Berry Global,Berry Global,200 ARROWHEAD CT,Greenville,SC,29605,326160,"Bottles, plastics, manufacturing",ok,2025,2026-02-25

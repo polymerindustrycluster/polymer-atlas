@@ -1,0 +1,24 @@
+{
+  "org_ids": [
+    "ORG-001944",
+    "ORG-002030",
+    "ORG-002041",
+    "ORG-002053"
+  ],
+  "queries": [
+    {
+      "q": "\"Tristan Rubber Molding\" North Canton (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"Veretec\" Jefferson (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"May Lin Silicone Products\" Barberton (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    },
+    {
+      "q": "\"STUCK\" Akron (site:osha.gov OR site:epa.ohio.gov OR site:sec.gov)"
+    }
+  ],
+  "result_sha256": "4e1764aab134f15659ceca8caacd898c1e58d7c1a5067ec0e1d71db3ffd071fe",
+  "notes": "Government discovery search only. Broad or unmatched results not evidence; specific primary routes are in routes.csv. Full search dumps discarded to exclude unrelated personal contacts."
+}

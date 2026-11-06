@@ -1,0 +1,42 @@
+[
+  {
+    "source_url": "https://foamfabmn.com/contact-us/",
+    "quote": "4560 112th Street Northwest Maple Lake, MN 55358",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "7ed744f538a88de5244afd03535e51f7dea29331db401aeb8674808a333b857d",
+    "pdf_page": null,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://www.rogersfoam.com/contact-us/locations/",
+    "quote": "Foam Fabricators of Minnesota 4560 112th Street Northwest Maple Lake, MN 55358",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "7f849e2d0d5e88c0ef5149944cdd3fa311931b79f67bce2424769008a0d4ef24",
+    "pdf_page": null,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://amconfoam.com/contact-us/",
+    "quote": "American Converters does not sell to the general public",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "34c83c10b04277cade31238fdac4fe17c2917620c8f22e6d61c5ec4ee2d47d48",
+    "pdf_page": null,
+    "fabricated_suffix_rejected": true
+  },
+  {
+    "source_url": "https://files.dep.state.pa.us/air/AirQuality/AQPortalFiles/Permits/PermitDocuments/1514656%5B19-00002%5D_Issued_v1.pdf",
+    "quote": "Federal Tax Id - Plant Code: 43-0730823-1",
+    "raw": true,
+    "http_status": 200,
+    "retrieved_date": "2026-11-06",
+    "sha256": "c819a53b3930daf7752e0a60383201157676892662872ea0a88f340bbd733dde",
+    "pdf_page": 1,
+    "fabricated_suffix_rejected": true
+  }
+]
