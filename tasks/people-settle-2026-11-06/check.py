@@ -1,6 +1,6 @@
 """L12 oracle: full input yield, scope-limited diff, append-only evidence and replay."""
 import csv, hashlib, io, json, subprocess, sys
-from build import HERE, ROOT, read, near, norm, identity, on_domain
+from build import HERE, ROOT, read, near, norm, identity, on_domain, require_specialties
 from fetch import found, get
 
 def require_claims(rows,pid):
@@ -61,7 +61,17 @@ def main():
   assert found(get(e['source_ref'])['text'],e['notes'].removeprefix('Raw words in order: ')),e['evidence_id']
  byung=get('https://catalog.ysu.edu/syllabi/2026-fall/chen-6990-04-41034/')['text']
  assert found(byung,'Fall 2026 Syllabus') and near(byung,'Associate Professor','Park')
- assert not any(r['allocated_person_id']=='PERSON-002015' for r in packet),'withdrawn Julie proposal resurrected'
+ withdrawn=read(HERE/'withdrawn_proposals.csv')
+ retired_people={r['person_id'] for r in withdrawn}
+ retired_evidence={eid for r in withdrawn for eid in r['evidence_ids'].split(';')}
+ assert not retired_people & set(nowid),'withdrawn proposal resurrected'
+ assert not retired_evidence & set(evmap),'retired evidence resurrected'
+ for r in packet:
+  if not r['person_id']:require_specialties(r)
+ bad=dict(next(r for r in packet if not r['person_id']),research_specialties='Polymeric sorbents')
+ try:require_specialties(bad)
+ except AssertionError:pass
+ else:raise AssertionError('unsupported literal specialty mutation did not fail')
  for r in packet:require_claims(ev,r['allocated_person_id'])
  pid=next(r['allocated_person_id'] for r in packet if not r['person_id'])
  damaged=[e for e in ev if not(e['record_id']==pid and e['claim_type']=='parent')]

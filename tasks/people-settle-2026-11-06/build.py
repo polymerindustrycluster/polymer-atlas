@@ -28,6 +28,10 @@ def identity(s):
  t=norm(s).split()
  assert t,'empty name'
  return t[0],t[-1]
+def require_specialties(r):
+ vocab=json.loads((ROOT/'docs/schema/vocab.json').read_text())['vocabularies']
+ allowed=set().union(*(set(vocab[k]['values']) for k in ('PROCESSES','MATERIALS','RESEARCH_SUPPLEMENT')))
+ assert r['research_specialties'] and set(r['research_specialties'].split(';')) <= allowed,(r['full_name'],'unsupported specialty; owner hold')
 def main():
  data=ROOT/'data'
  p=read(data/'people.csv');byid={r['person_id']:r for r in p}
@@ -52,6 +56,7 @@ def main():
    assert ck['found']=='yes'
    if gate=='a':assert ck['surname_near']=='yes'
   if not r['person_id']:
+   require_specialties(r)
    assert 2000<=int(pid[7:])<=2499
    dup=[x['person_id'] for x in p if x['person_id']!=pid and (norm(x['full_name'])==norm(r['full_name']) or (x['institution_org_id']==r['institution_org_id'] and identity(x['full_name'])==identity(r['full_name'])))]
    assert not dup,(r['full_name'],dup)
