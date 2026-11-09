@@ -1,0 +1,5 @@
+table,key,reason
+registry_links,ORG-000003|FRS|110000462231|SITE-002868,"facility-grain link follows its site to the operator ORG-003746 (V-6, R10); dedupe-medium apply, PR #254 repoint_site"
+registry_links,ORG-000006|FRS|110000386029|SITE-002968,"facility-grain link follows its site to the operator ORG-000005 (V-6, R10); dedupe-medium apply, PR #254 repoint_site"
+registry_links,ORG-000006|FRS|110000386920|SITE-000168,"facility-grain link follows its site to the operator ORG-001807 (V-6, R10); dedupe-medium apply, PR #254 repoint_site"
+registry_links,ORG-000006|FRS|110000387554|SITE-001530,"facility-grain link follows its site to the operator ORG-001908 (V-6, R10); dedupe-medium apply, PR #254 repoint_site"

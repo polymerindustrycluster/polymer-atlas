@@ -1,0 +1,36 @@
+HELD EVD-003872 ORG-003157 existence: review: the quote names the Eagle 3 facility, not Newlight Technologies in Huntington Beach
+FOUND EVD-003873 -> EVD-333016 ORG-003157 scope [own_site, supports_B]
+HELD EVD-004990 ORG-003469 scope: review: the quote describes an HDPE bag system; it does not say the company makes bags at Huntington Park
+HELD EVD-005038 ORG-003486 parent: review: 'joined forces' does not state an acquisition
+HELD EVD-005290 ORG-003570 scope: review: the quote is copolyester distribution, not the PET resin scope claimed
+HELD EVD-006293 ORG-003824 existence: quote not raw-verified (no)
+PARTIAL EVD-006294 -> EVD-333017 ORG-003824 scope [own_site, supports_B]
+HELD EVD-003209 ORG-002941 existence: review: the quote names a subsidiary of R.T. Vanderbilt Holding, not Vanderbilt Chemicals, LLC
+PARTIAL EVD-006376 -> EVD-333018 ORG-003850 existence [own_site, supports_B]
+HELD EVD-004298 ORG-003268 existence: quote not raw-verified (no)
+FOUND EVD-003165 -> EVD-333019 ORG-002923 scope [own_site, supports_B]
+HELD EVD-004781 ORG-003400 scope: review: an address does not establish the claimed product lines
+HELD EVD-004782 ORG-003400 parent: quote not raw-verified (no)
+FOUND EVD-004754 -> EVD-333020 ORG-003392 existence [own_site, supports_B]
+HELD EVD-005085 ORG-003501 existence: review: the quote describes caps and closures without naming Mauer USA
+HELD EVD-005086 ORG-003501 scope: review: the parent group's line gives the Hebron address and 'Produktion', not the claimed scope
+PARTIAL EVD-005646 -> EVD-333021 ORG-003645 liveness [own_site, supports_B]
+FOUND EVD-005389 -> EVD-333022 ORG-003586 existence [own_site, supports_B]
+HELD EVD-005390 ORG-003586 existence: review: the quote lists Kansas City as a branch city only
+PARTIAL EVD-005868 -> EVD-333023 ORG-003693 address [own_site, supports_B]
+HELD EVD-005908 ORG-003711 scope: review: the quote describes foam manufacture without naming Palziv
+HELD EVD-005909 ORG-003711 parent: review: a shared 'Palziv Global' culture does not establish the corporate parent
+PARTIAL EVD-005718 -> EVD-333024 ORG-003661 parent [own_site, supports_B]
+FOUND EVD-003995 -> EVD-333025 ORG-003203 existence [own_site, supports_B]
+HELD EVD-003996 ORG-003203 parent: review: the quote names a group subsidiary's deal, not the ultimate parent claimed
+HELD EVD-006232 ORG-003808 scope: quote not raw-verified (no)
+HELD EVD-006179 ORG-003796 existence: review: representing Gamma Meccanica does not make the company Gamma's own operation
+HELD EVD-006219 ORG-003805 scope: quote not raw-verified (no)
+FOUND EVD-006220 -> EVD-333026 ORG-003805 parent [own_site, supports_B]
+HELD EVD-003199 ORG-002937 existence: quote not raw-verified (no)
+HELD EVD-003200 ORG-002937 scope: review: the quote gives a Knoxville plant only, not the thermoforming scope claimed
+HELD EVD-006226 ORG-003807 existence: review: the regional address listing does not name OMG Thermoforming Inc.
+HELD EVD-006227 ORG-003807 scope: review: an address alone does not establish the claimed activities
+HELD EVD-006228 ORG-003807 parent: the quote only gives OMG srl's Italian location; nothing public states the parent link or names OMG Thermoforming Inc.
+HELD EVD-004058 ORG-003217 existence: review: the quote does not name Century Pipe
+FOUND EVD-003992 -> EVD-333027 SITE-003630 address [own_site, supports_C]
