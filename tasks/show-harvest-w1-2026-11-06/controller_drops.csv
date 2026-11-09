@@ -1,0 +1,19 @@
+show_key,role,name_sha256_16,reason
+hannover-messe:2027,speaker,0e8f257a5bb8a495,a person's name in the company slot
+hannover-messe:2027,speaker,8b09faa155797afd,a person's name in the company slot
+hannover-messe:2027,speaker,4e1dd041601b2f69,a person's name in the company slot
+hannover-messe:2027,speaker,5e5fe68225cee47d,a person's name in the company slot
+hannover-messe:2028,speaker,0e8f257a5bb8a495,a person's name in the company slot
+hannover-messe:2028,speaker,8b09faa155797afd,a person's name in the company slot
+hannover-messe:2028,speaker,4e1dd041601b2f69,a person's name in the company slot
+hannover-messe:2028,speaker,5e5fe68225cee47d,a person's name in the company slot
+tire-technology-expo:2027,speaker,288cba4efd0678e2,a person's name in the company slot
+coatings-trends-and-technologies-summit:2027,attendee,a4e2b9b404bd73c5,a person's name in the company slot
+great-lakes-coatings-conference:2027,attendee,13778e8b588d8f0e,a sole proprietor listed by personal name
+spe-international-polyolefins-conference:2027,attendee,32f074477f7f9efe,not an organization
+great-lakes-coatings-conference:2027,attendee,a9f71bc2404c9193,not an organization
+coatings-trends-and-technologies-summit:2027,attendee,19fe666b0aa4e362,page label
+acs-spring:2027,exhibitor,4bfb512e80c78fc7,page label (the organizer's own booth)
+md-and-m-midwest:2027,exhibitor,ed4d2f78e99001be,page label
+mrs-fall-meeting-and-exhibit:2026,exhibitor,a0a69cbb8b8b6483,page label
+selectusa-investment-summit:2027,speaker,8318bbf6a2108829,a place name with no organization
