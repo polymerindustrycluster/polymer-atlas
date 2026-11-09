@@ -875,14 +875,19 @@ evt_ids = set()
 _slug_events = {}
 for i, r in enumerate(events, 2):
     eid = r["event_id"]
-    # V-60 [v1.12]: cross-repo identity; CI cannot check conferences-repo existence.
+    # V-61 [v1.12]: cross-repo identity; CI cannot check conferences-repo existence. (V-60 is the licensed-source rule.)
     crosswalk = r.get("pic_events_slug") or ""
+    _cell = set()
     for slug in crosswalk.split(";") if crosswalk else []:
         if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", slug):
-            errors.append(f"events.csv:{i} {eid} malformed pic_events_slug {slug!r} (V-60)")
+            errors.append(f"events.csv:{i} {eid} malformed pic_events_slug {slug!r} (V-61)")
+            continue
+        if slug in _cell:
+            errors.append(f"events.csv:{i} {eid} pic_events_slug {slug!r} repeated in one cell (V-61)")
+        _cell.add(slug)
         if slug in _slug_events and _slug_events[slug] != eid:
-            errors.append(f"events.csv:{i} {eid} pic_events_slug {slug!r} already on event {_slug_events[slug]} (V-60)")
-        _slug_events[slug] = eid
+            errors.append(f"events.csv:{i} {eid} pic_events_slug {slug!r} already on event {_slug_events[slug]} (V-61)")
+        _slug_events.setdefault(slug, eid)
     if not re.fullmatch(r"EVT-\d{6}", eid or ""):
         errors.append(f"events.csv:{i} {eid} event_id does not match EVT-###### (V-17)")
     if eid in evt_ids:

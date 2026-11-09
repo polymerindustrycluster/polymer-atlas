@@ -8,8 +8,9 @@ review, commit and release. No tracker or queue change is part of this task.
 
 - Append `pic_events_slug` as the last `data/events.csv` column, populated
   from the supplied `crosswalk.csv` by `event_id`. Preserve every prior byte.
-- V-60 rejects malformed semicolon-separated slugs and a slug on two event
-  rows. Cross-repository existence is deliberately not checked by CI.
+- V-61 rejects malformed semicolon-separated slugs, a slug repeated in one cell, and a slug on two event
+  rows. Cross-repository existence is deliberately not checked by CI. (Renumbered from V-60 on 2026-11-09: V-60 is
+  now the licensed-source rule, #258.)
 - Add `attendee` to V-19 and the generated vocabulary. Schema §4.12.2 limits
   it to organizer-published company lists for a named edition, including
   evidence-dated pre-show registration lists with the pre-show note.

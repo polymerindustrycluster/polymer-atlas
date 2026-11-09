@@ -1416,7 +1416,7 @@ both are seeded, each noting the other. When in doubt, don't merge.
 | `org_id` | FK → organizations ∪ ecosystem | **MUST** | The participating organization **as named by the harvest**, resolved to a held record. Participation never creates organization records: a harvested name with no held record stays a staging discovery candidate until the organization passes the normal §4.7 gate, and only then gains participation rows — backfilled from the banked harvest and cited as such |
 | `edition_year` | integer | **MUST** | The edition's year, on the harvest's own year basis |
 | `edition_name` | string | as applicable | The name the edition actually ran under, when it differs from the series' current name. Predecessor-name editions attach to the successor series row: IEC 2022/2024 editions attach to Global Polymer Summit with `edition_name = "International Elastomer Conference"` |
-| `role` | enum | **MUST** | `exhibitor` \| `sponsor` \| `speaker` \| `organizer` \| `host` \| `attendee` **[v1.12]** — exactly one per row; an organization with two roles at one edition carries two rows. `attendee` means the organization attended a specific edition, as shown by a list the **organizer itself published**: a post-show report, a delegate-company list, or a brochure's "companies attending <edition>". Generic marketing with no named edition ("attendees include companies like …") never mints a row. A pre-show "registered" list is valid only as of its `evidence_date`, with the same pre-show note as exhibitor rosters. Organizations only, as for every role (§6) |
+| `role` | enum | **MUST** | `exhibitor` \| `sponsor` \| `speaker` \| `organizer` \| `host` \| `attendee` **[v1.12]** — exactly one per row; an organization with two roles at one edition carries two rows. `attendee` means the organization attended a specific edition, as shown by a **list of attending companies that the organizer itself published** for that named edition (for example a post-show report's company list). Brochure or marketing lines, and delegate lists that name people, never mint a row (owner ruling 2026-11-09). Generic marketing with no named edition ("attendees include companies like …") never mints a row either. A pre-show "registered" list is valid only as of its `evidence_date`, with the same pre-show note as exhibitor rosters. Organizations only, as for every role (§6) |
 | `role_detail` | string | Nice | As the harvest prints it: booth number, sponsor level, session/track. Verbatim harvest text only, subject to the §6 screen below |
 | `edition_dates` | string | as harvested | The edition's dates **as printed by the harvest** ("September 21–24, 2026"). Within the Atlas, per-edition facts live here — there is no edition table and no speculative calendar. **[v1.12]** The linked conferences repo holds edition dates and place |
 | `edition_city` / `edition_state` | string | as harvested | Where **this** edition ran. `edition_state` is a USPS code, or the full country name for international editions. The series' `home_*` fields are never copied down as a substitute: an edition's city comes from the harvest or stays empty |
@@ -3018,9 +3018,11 @@ unchanged.
   to PERSON-000621 (role `group_leader` → `research_scientist`, its value before PR #149); Kroonblawd stays held (#235).
   Consistent with B-LAB-PROJECT-LEADER (a). No new values, fields or validator rules.
 - **v1.12 — 2026-11-06 (owner decisions B-CROSSWALK and attendee role, 2026-11-06).** §4.12.1 gains the nullable
-  `pic_events_slug` column, last in `events.csv`, joining PIC's conferences series identities. V-60 checks each
-  semicolon-separated slug's shape and prohibits sharing a slug across event rows; CI does not check existence in
+  `pic_events_slug` column, last in `events.csv`, joining PIC's conferences series identities. V-61 checks each
+  semicolon-separated slug's shape and prohibits repeating a slug in one cell or sharing it across event rows (renumbered
+  from V-60 on 2026-11-09, when V-60 went to the licensed-source rule); CI does not check existence in
   the other repository. The owner-supplied `tasks/schema-v1-12/crosswalk.csv` populates the column without changing
-  existing bytes. §4.12.2 gains `attendee`, limited to organizer-published company lists for named editions, with
+  existing bytes. §4.12.2 gains `attendee`, limited to organizer-published lists of attending companies for named
+  editions (no brochure lines or people-naming delegate lists: owner ruling 2026-11-09), with
   dated pre-show registration notes and the standing organizations-only rule. V-19 and the vocabulary export
   carry the new role. No participation row is added or changed.
