@@ -577,6 +577,12 @@ for _p in sorted(DATA.glob("*.csv")):
 for r in people:
     if "@" in (r.get("public_profile_url") or ""):
         debt("V-51", r["person_id"].strip(), f"{r['person_id'].strip()} public_profile_url contains an email-like string (AGENTS.md §6)")
+# V-60 [2026-11-09]: an evidence row never cites a licensed publication (AGENTS.md §5: leads only). Rows that did
+# before the rule are grandfathered; each is answered by a later public-source row (append-only, SCHEMA §4.13).
+LICENSED_SOURCE = re.compile(r"plasticsnews\.com|rubbernews\.com|dnb\.com|zoominfo\.com|data-axle\.com|dataaxle\.com", re.I)
+for r in evidence:
+    if LICENSED_SOURCE.search(r.get("source_ref") or ""):
+        debt("V-60", r["evidence_id"], f"{r['evidence_id']} cites a licensed publication ({r['source_ref'][:60]}); AGENTS.md §5 allows it as a lead only")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
