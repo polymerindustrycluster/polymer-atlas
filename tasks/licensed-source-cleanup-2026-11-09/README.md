@@ -21,13 +21,25 @@ rows cited plasticsnews.com. None copied that publication's text; each cited it 
 ## Outcomes (unit: licensed-source evidence rows; 36)
 | Result | Rows |
 |-|-:|
-| Answered by a public source stating the full claim | 16 |
-| Answered by a public source stating part of the claim (the new row says which part) | 13 |
+| Answered by a public source stating the claim | 7 |
+| Answered by a public source stating part of the claim | 5 |
 | Held: quote not raw-verified | 6 |
 | Held by the integrator: the quote does not bear on the claim (OMG Thermoforming parent link) | 1 |
+| Held after the codex review: the quote does not support the claim, or names another entity or level | 10 |
+| Held after the grok review: the quote never names the record's own entity | 7 |
 
-29 new evidence rows, EVD-333016..EVD-333044, all at `supports_B` or below, plus one `supports_C` on a site address.
-No record row changes.
+12 new evidence rows, EVD-333016..EVD-333027, all at `supports_B` or below, plus one `supports_C` on a site address.
+Each new row claims **only what its quote states** (its claim text is the quote), and it names the row it answers.
+No record row changes. The 24 held rows stay answered by nothing; they remain in V-60's baseline as known debt.
+
+## Review
+Codex and grok each tried to refute the new rows (deep effort, read-only).
+- The first build copied the old row's full claim text, so a quote had to back every detail. Codex flagged 19 of 29.
+  New rows now claim only what the quote states, and 10 rows whose quote did not support the claim type at all are
+  held. Examples: "joined forces" is not an acquisition, and a distributor listing is not ownership.
+- Grok then flagged rows whose quote never names the record's own entity, for example a facility named without
+  Newlight, and caps described without Mauer USA. Seven are held.
+- Every hold and its reason is in `build.py` (`HOLD`) and `journal.txt`.
 
 ## Findings from the lanes (not applied)
 - **Dakota Molding → Nott:** Nott's own release is dated 2023-05-05, not August 2023 as the old row says.
