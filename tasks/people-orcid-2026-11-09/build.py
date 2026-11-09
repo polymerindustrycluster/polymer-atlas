@@ -55,8 +55,10 @@ def name_matches(full, rec, family_only=False):
     family = [t for t in toks(((nm.get("family-name") or {}).get("value"))) if t not in SUFFIX]
     if len(words) < 2 or not given or not family:
         return False
-    if family_only:
-        return words[-len(family):] == family
+    if family_only:  # ... and one of the record's given names is among the ORCID given or other names (grok, #259)
+        other = [t for o in ((rec.get("person") or {}).get("other-names") or {}).get("other-name") or []
+                 for t in toks(o.get("content"))]
+        return words[-len(family):] == family and bool(set(words[:-len(family)]) & set(given + other))
     if not (given[0] == words[0] and words[-len(family):] == family and len(family) < len(words)):
         return False
     # 'Wei A. Gao' is not 'Wei B. Gao': when both sides carry a middle name or initial, its first letter must agree
@@ -75,12 +77,21 @@ def _selftest():
     assert not name_matches("R. Joseph Kline", r("R. Joseph", "Kline"))
     assert name_matches("R. Joseph Kline", r("R. Joseph", "Kline"), family_only=True)
     assert not name_matches("Ann Smith", r("Ann", "Smithson"), family_only=True)
+    assert not name_matches("Xi Chen", r("Chelsea", "Chen"), family_only=True)
+    xi = r("Chelsea", "Chen"); xi["person"]["other-names"] = {"other-name": [{"content": "Xi Chelsea Chen"}]}
+    assert name_matches("Xi Chen", xi, family_only=True)
+    job = lambda **k: {"activities-summary": {"employments": {"affiliation-group": [{"summaries": [
+        {"employment-summary": {"organization": {"name": "University of Akron"}, **k}}]}]}}}
+    assert not current_jobs(job()) and current_jobs(job(**{"role-title": "Professor"}))
 
 
 def current_jobs(rec):
+    """Open employments (no end date) that say what the job is: a line with no role and no department cannot tell a
+    professor from a same-name student at a big school (grok, #259), so it never links."""
     groups = (((rec.get("activities-summary") or {}).get("employments") or {}).get("affiliation-group")) or []
     jobs = [s["employment-summary"] for g in groups for s in g.get("summaries") or []]
-    return [j.get("organization") or {} for j in jobs if not j.get("end-date")]
+    return [j.get("organization") or {} for j in jobs
+            if not j.get("end-date") and ((j.get("role-title") or "").strip() or (j.get("department-name") or "").strip())]
 
 
 def employment_basis(rec, inst):

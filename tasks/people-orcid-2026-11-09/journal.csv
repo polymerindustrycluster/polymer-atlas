@@ -1,5 +1,5 @@
 person_id,candidate_source,outcome
-PERSON-000001,census,linked (ror)
+PERSON-000001,,no candidate passed
 PERSON-000002,census,linked (name)
 PERSON-000003,census,linked (name)
 PERSON-000004,search,linked (ror)
@@ -11,7 +11,7 @@ PERSON-000009,search,linked (ror)
 PERSON-000010,,no candidate passed
 PERSON-000011,,no candidate passed
 PERSON-000012,,no candidate passed
-PERSON-000013,census,linked (ror)
+PERSON-000013,,no candidate passed
 PERSON-000014,,no candidate passed
 PERSON-000015,census,linked (name)
 PERSON-000016,census,linked (name)
@@ -47,7 +47,7 @@ PERSON-000045,,no candidate passed
 PERSON-000046,census,linked (name)
 PERSON-000047,census,linked (ror)
 PERSON-000048,,no candidate passed
-PERSON-000049,census,linked (ror)
+PERSON-000049,,no candidate passed
 PERSON-000050,,no candidate passed
 PERSON-000051,,no candidate passed
 PERSON-000052,census,linked (ror)
@@ -59,7 +59,7 @@ PERSON-000057,search,linked (name)
 PERSON-000058,census,linked (name)
 PERSON-000059,,no candidate passed
 PERSON-000060,,no candidate passed
-PERSON-000061,census,linked (ror)
+PERSON-000061,,no candidate passed
 PERSON-000062,census,linked (ror)
 PERSON-000063,,no candidate found
 PERSON-000064,search,linked (ror)
@@ -92,7 +92,7 @@ PERSON-000090,search,linked (ror)
 PERSON-000091,search,linked (name)
 PERSON-000092,,no candidate passed
 PERSON-000093,census,linked (ror)
-PERSON-000094,census,linked (ror)
+PERSON-000094,,no candidate passed
 PERSON-000095,search,linked (name)
 PERSON-000096,census,linked (name)
 PERSON-000097,,no candidate passed
@@ -122,15 +122,15 @@ PERSON-000120,census,linked (name)
 PERSON-000121,,no candidate found
 PERSON-000122,search,linked (ror)
 PERSON-000123,,no candidate found
-PERSON-000124,census,linked (ror)
-PERSON-000125,census,linked (ror)
+PERSON-000124,,no candidate passed
+PERSON-000125,,no candidate passed
 PERSON-000126,,no candidate passed
 PERSON-000127,census,linked (ror)
 PERSON-000128,,no candidate passed
 PERSON-000129,census,linked (ror)
 PERSON-000130,search,linked (name)
 PERSON-000131,census,linked (name)
-PERSON-000132,census,linked (name)
+PERSON-000132,,no candidate passed
 PERSON-000133,,no candidate passed
 PERSON-000134,,no candidate passed
 PERSON-000135,,no candidate passed
@@ -142,7 +142,7 @@ PERSON-000140,,no candidate passed
 PERSON-000141,search,linked (ror)
 PERSON-000142,census,linked (name)
 PERSON-000143,census,linked (ror)
-PERSON-000144,census,linked (ror)
+PERSON-000144,,no candidate passed
 PERSON-000145,census,linked (name)
 PERSON-000146,,no candidate found
 PERSON-000147,,no candidate passed
@@ -175,20 +175,20 @@ PERSON-000173,,no candidate found
 PERSON-000174,,no candidate found
 PERSON-000175,search,linked (ror)
 PERSON-000176,census,linked (name)
-PERSON-000177,census,linked (ror)
+PERSON-000177,,no candidate passed
 PERSON-000178,census,linked (name)
 PERSON-000179,census,linked (name)
 PERSON-000180,,no candidate passed
-PERSON-000181,search,linked (ror)
+PERSON-000181,,no candidate passed
 PERSON-000182,,no candidate found
 PERSON-000183,search,linked (name)
 PERSON-000184,census,linked (ror)
-PERSON-000185,census,linked (ror)
+PERSON-000185,,no candidate passed
 PERSON-000186,census,linked (ror)
 PERSON-000187,census,linked (ror)
 PERSON-000188,,no candidate passed
 PERSON-000189,,no candidate passed
-PERSON-000190,search,linked (ror)
+PERSON-000190,,no candidate passed
 PERSON-000191,census,linked (ror)
 PERSON-000192,,no candidate passed
 PERSON-000193,,no candidate found
@@ -199,14 +199,14 @@ PERSON-000197,,no candidate passed
 PERSON-000198,,no candidate passed
 PERSON-000199,census,linked (ror)
 PERSON-000200,census,linked (ror)
-PERSON-000201,census,linked (ror)
+PERSON-000201,,no candidate passed
 PERSON-000202,census,linked (ror)
-PERSON-000203,census,linked (name)
+PERSON-000203,,no candidate passed
 PERSON-000204,census,linked (ror)
 PERSON-000205,census,linked (name)
 PERSON-000206,search,linked (ror)
 PERSON-000207,,no candidate passed
-PERSON-000208,census,linked (ror)
+PERSON-000208,,no candidate passed
 PERSON-000209,,no candidate passed
 PERSON-000210,census,linked (name)
 PERSON-000211,,no candidate passed
@@ -219,15 +219,15 @@ PERSON-000217,census,linked (name)
 PERSON-000218,census,linked (ror)
 PERSON-000219,census,linked (name)
 PERSON-000220,census,linked (ror)
-PERSON-000221,census,linked (ror)
+PERSON-000221,,no candidate passed
 PERSON-000222,,no candidate found
 PERSON-000223,census,linked (name)
 PERSON-000224,census,linked (name)
 PERSON-000225,census,linked (name)
-PERSON-000226,census,linked (name)
+PERSON-000226,,no candidate passed
 PERSON-000227,page,linked (page)
 PERSON-000228,,no candidate found
-PERSON-000229,census,linked (ror)
+PERSON-000229,,no candidate passed
 PERSON-000230,census,linked (ror)
 PERSON-000231,,no candidate passed
 PERSON-000232,,no candidate passed
@@ -242,7 +242,7 @@ PERSON-000240,census,linked (name)
 PERSON-000241,,no candidate passed
 PERSON-000242,,no candidate passed
 PERSON-000243,,no candidate passed
-PERSON-000244,census,linked (ror)
+PERSON-000244,,no candidate passed
 PERSON-000245,,no candidate passed
 PERSON-000246,census,linked (name)
 PERSON-000247,census,linked (name)
@@ -255,7 +255,7 @@ PERSON-000253,search,linked (ror)
 PERSON-000254,,no candidate passed
 PERSON-000255,,no candidate passed
 PERSON-000256,,no candidate passed
-PERSON-000257,census,linked (ror)
+PERSON-000257,,no candidate passed
 PERSON-000258,,no candidate passed
 PERSON-000259,,no candidate passed
 PERSON-000260,page,linked (page)
@@ -284,14 +284,14 @@ PERSON-000282,census,linked (name)
 PERSON-000283,census,linked (name)
 PERSON-000284,,no candidate passed
 PERSON-000285,census,linked (name)
-PERSON-000286,search,linked (ror)
+PERSON-000286,,no candidate passed
 PERSON-000287,,no candidate found
 PERSON-000288,,no candidate passed
 PERSON-000289,census,linked (name)
 PERSON-000290,search,linked (ror)
 PERSON-000291,census,linked (ror)
 PERSON-000292,,no candidate passed
-PERSON-000293,census,linked (ror)
+PERSON-000293,,no candidate passed
 PERSON-000294,census,linked (name)
 PERSON-000295,census,linked (ror)
 PERSON-000296,,no candidate found
@@ -309,9 +309,9 @@ PERSON-000307,search,linked (ror)
 PERSON-000308,page,linked (page)
 PERSON-000309,,no candidate passed
 PERSON-000310,search,linked (name)
-PERSON-000311,census,linked (ror)
+PERSON-000311,,no candidate passed
 PERSON-000312,,no candidate passed
-PERSON-000313,census,linked (name)
+PERSON-000313,,no candidate passed
 PERSON-000314,census,linked (name)
 PERSON-000315,,no candidate passed
 PERSON-000316,census,linked (name)
@@ -348,7 +348,7 @@ PERSON-000346,page,linked (page)
 PERSON-000347,census,linked (name)
 PERSON-000348,page,linked (page)
 PERSON-000349,search,linked (name)
-PERSON-000350,census,linked (name)
+PERSON-000350,,no candidate passed
 PERSON-000351,,no candidate passed
 PERSON-000352,,no candidate passed
 PERSON-000353,census,linked (name)
@@ -358,7 +358,7 @@ PERSON-000356,,no candidate passed
 PERSON-000357,,no candidate passed
 PERSON-000358,census,linked (name)
 PERSON-000359,,no candidate found
-PERSON-000360,census,linked (ror)
+PERSON-000360,,no candidate passed
 PERSON-000361,,no candidate passed
 PERSON-000362,census,linked (name)
 PERSON-000363,,no candidate passed
@@ -386,7 +386,7 @@ PERSON-000384,census,linked (name)
 PERSON-000385,search,linked (name)
 PERSON-000386,census,linked (ror)
 PERSON-000387,search,linked (name)
-PERSON-000388,census,linked (name)
+PERSON-000388,,no candidate passed
 PERSON-000389,census,linked (name)
 PERSON-000390,,no candidate passed
 PERSON-000391,census,linked (ror)
@@ -394,9 +394,9 @@ PERSON-000392,search,linked (name)
 PERSON-000393,search,linked (ror)
 PERSON-000394,,no candidate passed
 PERSON-000395,search,linked (ror)
-PERSON-000396,census,linked (ror)
+PERSON-000396,,no candidate passed
 PERSON-000397,census,linked (name)
-PERSON-000398,census,linked (ror)
+PERSON-000398,,no candidate passed
 PERSON-000399,census,linked (name)
 PERSON-000400,census,linked (name)
 PERSON-000401,,held: two or more iDs pass
@@ -437,9 +437,9 @@ PERSON-000435,,no candidate found
 PERSON-000436,,no candidate passed
 PERSON-000437,,no candidate passed
 PERSON-000438,census,linked (name)
-PERSON-000439,census,linked (name)
+PERSON-000439,,no candidate passed
 PERSON-000440,census,linked (name)
-PERSON-000441,census,linked (name)
+PERSON-000441,,no candidate passed
 PERSON-000442,,no candidate found
 PERSON-000443,search,linked (name)
 PERSON-000444,search,linked (name)
@@ -475,7 +475,7 @@ PERSON-000473,search,linked (ror)
 PERSON-000474,census,linked (ror)
 PERSON-000475,census,linked (ror)
 PERSON-000476,search,linked (name)
-PERSON-000477,search,linked (name)
+PERSON-000477,,no candidate passed
 PERSON-000478,page,linked (page)
 PERSON-000479,search,linked (name)
 PERSON-000480,page,linked (page)
@@ -484,14 +484,14 @@ PERSON-000482,page,linked (page)
 PERSON-000483,page,linked (page)
 PERSON-000484,page,linked (page)
 PERSON-000485,,no candidate passed
-PERSON-000486,search,linked (name)
+PERSON-000486,,no candidate passed
 PERSON-000487,page,linked (page)
 PERSON-000488,search,linked (name)
 PERSON-000489,page,linked (page)
 PERSON-000490,page,linked (page)
 PERSON-000491,,no candidate found
 PERSON-000492,page,linked (page)
-PERSON-000493,search,linked (name)
+PERSON-000493,,no candidate passed
 PERSON-000494,page,linked (page)
 PERSON-000495,page,linked (page)
 PERSON-000496,search,linked (name)
@@ -527,7 +527,7 @@ PERSON-000525,page,linked (page)
 PERSON-000526,page,linked (page)
 PERSON-000527,page,linked (page)
 PERSON-000528,page,linked (page)
-PERSON-000529,search,linked (name)
+PERSON-000529,,no candidate passed
 PERSON-000530,page,linked (page)
 PERSON-000531,search,linked (name)
 PERSON-000532,page,linked (page)
@@ -551,14 +551,14 @@ PERSON-000549,page,linked (page)
 PERSON-000550,page,linked (page)
 PERSON-000551,page,linked (page)
 PERSON-000552,page,linked (page)
-PERSON-000553,search,linked (name)
+PERSON-000553,,no candidate passed
 PERSON-000554,,no candidate found
 PERSON-000555,,no candidate found
 PERSON-000556,page,linked (page)
 PERSON-000557,page,linked (page)
 PERSON-000558,page,linked (page)
 PERSON-000559,page,linked (page)
-PERSON-000560,search,linked (name)
+PERSON-000560,,no candidate passed
 PERSON-000561,page,linked (page)
 PERSON-000562,page,linked (page)
 PERSON-000563,search,linked (name)
@@ -576,11 +576,11 @@ PERSON-000574,page,linked (page)
 PERSON-000575,,no candidate found
 PERSON-000576,page,linked (page)
 PERSON-000577,page,linked (page)
-PERSON-000578,search,linked (name)
+PERSON-000578,,no candidate passed
 PERSON-000579,search,linked (name)
 PERSON-000580,page,linked (page)
 PERSON-000581,page,linked (page)
-PERSON-000582,search,linked (name)
+PERSON-000582,,no candidate passed
 PERSON-000583,page,linked (page)
 PERSON-000584,search,linked (name)
 PERSON-000585,search,linked (name)
@@ -595,14 +595,14 @@ PERSON-000593,,held: two or more iDs pass
 PERSON-000594,search,linked (name)
 PERSON-000595,search,linked (name)
 PERSON-000596,search,linked (name)
-PERSON-000597,,"held: dedupe alarm, iD shared with PERSON-000812"
+PERSON-000597,,no candidate passed
 PERSON-000598,search,linked (name)
 PERSON-000599,search,linked (name)
 PERSON-000600,,no candidate found
 PERSON-000601,search,linked (name)
 PERSON-000602,,no candidate found
 PERSON-000603,,no candidate found
-PERSON-000604,search,linked (name)
+PERSON-000604,,no candidate passed
 PERSON-000605,,no candidate found
 PERSON-000606,,no candidate passed
 PERSON-000607,,no candidate found
@@ -612,7 +612,7 @@ PERSON-000610,,no candidate found
 PERSON-000611,,no candidate found
 PERSON-000612,,no candidate found
 PERSON-000613,search,linked (name)
-PERSON-000614,search,linked (name)
+PERSON-000614,,no candidate passed
 PERSON-000615,,no candidate found
 PERSON-000616,,no candidate found
 PERSON-000617,,no candidate passed
@@ -621,7 +621,7 @@ PERSON-000619,search,linked (name)
 PERSON-000620,,no candidate found
 PERSON-000621,,no candidate found
 PERSON-000622,,no candidate found
-PERSON-000623,search,linked (name)
+PERSON-000623,,no candidate passed
 PERSON-000624,,no candidate found
 PERSON-000625,,no candidate found
 PERSON-000626,,no candidate found
@@ -667,9 +667,9 @@ PERSON-000665,,no candidate found
 PERSON-000666,,no candidate passed
 PERSON-000667,census,linked (ror)
 PERSON-000668,,no candidate passed
-PERSON-000669,census,linked (ror)
+PERSON-000669,,no candidate passed
 PERSON-000670,,no candidate passed
-PERSON-000671,census,linked (name)
+PERSON-000671,,no candidate passed
 PERSON-000672,census,linked (name)
 PERSON-000673,,no candidate found
 PERSON-000674,census,linked (ror)
@@ -685,12 +685,12 @@ PERSON-000683,,no candidate passed
 PERSON-000684,search,linked (name)
 PERSON-000685,census,linked (name)
 PERSON-000686,search,linked (name)
-PERSON-000687,census,linked (ror)
+PERSON-000687,,no candidate passed
 PERSON-000688,,no candidate found
 PERSON-000689,,no candidate found
 PERSON-000690,census,linked (name)
 PERSON-000691,census,linked (name)
-PERSON-000692,census,linked (ror)
+PERSON-000692,,no candidate passed
 PERSON-000693,census,linked (ror)
 PERSON-000694,census,linked (name)
 PERSON-000695,,no candidate passed
@@ -699,7 +699,7 @@ PERSON-000697,census,linked (name)
 PERSON-000698,census,linked (name)
 PERSON-000699,census,linked (ror)
 PERSON-000700,census,linked (name)
-PERSON-000701,census,linked (ror)
+PERSON-000701,,no candidate passed
 PERSON-000702,census,linked (name)
 PERSON-000703,,no candidate passed
 PERSON-000704,,no candidate passed
@@ -722,24 +722,24 @@ PERSON-000720,census,linked (ror)
 PERSON-000721,census,linked (name)
 PERSON-000722,census,linked (ror)
 PERSON-000723,search,linked (name)
-PERSON-000724,census,linked (name)
-PERSON-000725,census,linked (name)
+PERSON-000724,,no candidate passed
+PERSON-000725,,no candidate passed
 PERSON-000726,census,linked (ror)
 PERSON-000727,census,linked (name)
 PERSON-000728,census,linked (name)
-PERSON-000729,census,linked (ror)
+PERSON-000729,,no candidate passed
 PERSON-000730,,no candidate passed
 PERSON-000731,census,linked (ror)
 PERSON-000732,census,linked (name)
 PERSON-000733,,no candidate passed
 PERSON-000734,census,linked (name)
 PERSON-000735,,no candidate passed
-PERSON-000736,census,linked (ror)
+PERSON-000736,,no candidate passed
 PERSON-000737,census,linked (name)
 PERSON-000738,census,linked (name)
 PERSON-000739,,no candidate passed
 PERSON-000740,,no candidate passed
-PERSON-000741,census,linked (name)
+PERSON-000741,,no candidate passed
 PERSON-000742,census,linked (name)
 PERSON-000743,census,linked (name)
 PERSON-000744,search,linked (ror)
@@ -747,7 +747,7 @@ PERSON-000745,census,linked (name)
 PERSON-000746,census,linked (name)
 PERSON-000747,census,linked (ror)
 PERSON-000748,,no candidate passed
-PERSON-000749,census,linked (name)
+PERSON-000749,,no candidate passed
 PERSON-000750,,no candidate passed
 PERSON-000751,page,linked (page)
 PERSON-000752,search,linked (ror)
@@ -765,10 +765,10 @@ PERSON-000763,census,linked (ror)
 PERSON-000764,,no candidate passed
 PERSON-000765,census,linked (ror)
 PERSON-000766,search,linked (name)
-PERSON-000767,,held: two or more iDs pass
+PERSON-000767,search,linked (name)
 PERSON-000768,census,linked (name)
 PERSON-000769,,no candidate found
-PERSON-000770,census,linked (name)
+PERSON-000770,,no candidate passed
 PERSON-000771,search,linked (name)
 PERSON-000772,,no candidate passed
 PERSON-000773,,no candidate found
@@ -793,7 +793,7 @@ PERSON-000791,census,linked (ror)
 PERSON-000792,search,linked (name)
 PERSON-000793,,no candidate found
 PERSON-000794,,no candidate passed
-PERSON-000795,search,linked (ror)
+PERSON-000795,,no candidate passed
 PERSON-000796,census,linked (ror)
 PERSON-000797,search,linked (name)
 PERSON-000798,,no candidate passed
@@ -810,13 +810,13 @@ PERSON-000808,,no candidate passed
 PERSON-000809,,no candidate passed
 PERSON-000810,,no candidate passed
 PERSON-000811,census,linked (name)
-PERSON-000812,,"held: dedupe alarm, iD shared with PERSON-000597"
+PERSON-000812,,no candidate passed
 PERSON-000813,search,linked (ror)
 PERSON-000814,census,linked (name)
-PERSON-000815,census,linked (ror)
+PERSON-000815,,no candidate passed
 PERSON-000816,search,linked (name)
 PERSON-000817,,no candidate passed
-PERSON-000818,census,linked (name)
+PERSON-000818,,no candidate passed
 PERSON-000819,,no candidate found
 PERSON-000820,census,linked (ror)
 PERSON-000821,search,linked (ror)
@@ -824,7 +824,7 @@ PERSON-000822,search,linked (name)
 PERSON-000823,,no candidate passed
 PERSON-000824,census,linked (ror)
 PERSON-000825,,no candidate passed
-PERSON-000826,census,linked (name)
+PERSON-000826,,no candidate passed
 PERSON-000827,census,linked (name)
 PERSON-000828,census,linked (ror)
 PERSON-000829,census,linked (ror)
@@ -832,14 +832,14 @@ PERSON-000830,,no candidate passed
 PERSON-000831,census,linked (ror)
 PERSON-000832,,no candidate passed
 PERSON-000833,census,linked (ror)
-PERSON-000834,search,linked (name)
+PERSON-000834,,no candidate passed
 PERSON-000835,,no candidate passed
 PERSON-000836,,no candidate passed
 PERSON-000838,,no candidate passed
 PERSON-000839,,no candidate passed
 PERSON-000840,page,linked (page)
 PERSON-000841,census,linked (name)
-PERSON-000842,census,linked (name)
+PERSON-000842,,no candidate passed
 PERSON-000843,census,linked (name)
 PERSON-000844,census,linked (name)
 PERSON-000845,census,linked (name)
@@ -850,7 +850,7 @@ PERSON-000849,page,linked (page)
 PERSON-000850,,no candidate passed
 PERSON-000851,,no candidate passed
 PERSON-000852,page,linked (page)
-PERSON-000853,search,linked (ror)
+PERSON-000853,,no candidate passed
 PERSON-000854,census,linked (name)
 PERSON-000855,,no candidate passed
 PERSON-000856,search,linked (name)
@@ -858,7 +858,7 @@ PERSON-000857,,no candidate passed
 PERSON-000858,page,linked (page)
 PERSON-000859,census,linked (ror)
 PERSON-000860,,no candidate passed
-PERSON-000861,census,linked (name)
+PERSON-000861,,no candidate passed
 PERSON-000862,,no candidate passed
 PERSON-000863,,no candidate passed
 PERSON-000864,census,linked (ror)
@@ -869,13 +869,13 @@ PERSON-000868,,no candidate found
 PERSON-000869,census,linked (ror)
 PERSON-000870,,no candidate passed
 PERSON-000871,census,linked (ror)
-PERSON-000872,census,linked (ror)
+PERSON-000872,,no candidate passed
 PERSON-000873,census,linked (name)
 PERSON-000874,census,linked (ror)
 PERSON-000875,census,linked (ror)
 PERSON-000876,census,linked (name)
 PERSON-000877,census,linked (name)
-PERSON-000878,census,linked (ror)
+PERSON-000878,,no candidate passed
 PERSON-000879,,no candidate passed
 PERSON-000880,census,linked (name)
 PERSON-000881,,no candidate found
@@ -886,7 +886,7 @@ PERSON-000885,,no candidate passed
 PERSON-000886,census,linked (name)
 PERSON-000887,census,linked (ror)
 PERSON-000888,search,linked (name)
-PERSON-000889,census,linked (ror)
+PERSON-000889,,no candidate passed
 PERSON-000890,census,linked (ror)
 PERSON-000891,,no candidate passed
 PERSON-000892,page,linked (page)
@@ -894,18 +894,18 @@ PERSON-000893,,no candidate passed
 PERSON-000894,census,linked (name)
 PERSON-000895,census,linked (name)
 PERSON-000896,census,linked (name)
-PERSON-000897,census,linked (name)
+PERSON-000897,,no candidate passed
 PERSON-000898,,no candidate passed
 PERSON-000899,census,linked (ror)
 PERSON-000900,census,linked (name)
-PERSON-000901,census,linked (name)
+PERSON-000901,,no candidate passed
 PERSON-000902,census,linked (ror)
 PERSON-000903,search,linked (name)
 PERSON-000904,,no candidate found
 PERSON-000905,search,linked (name)
 PERSON-000906,census,linked (name)
 PERSON-000907,census,linked (name)
-PERSON-000908,census,linked (name)
+PERSON-000908,,no candidate passed
 PERSON-000909,census,linked (name)
 PERSON-000910,page,linked (page)
 PERSON-000911,,no candidate found
@@ -924,13 +924,13 @@ PERSON-000923,census,linked (name)
 PERSON-000924,,no candidate passed
 PERSON-000925,,no candidate passed
 PERSON-000926,census,linked (name)
-PERSON-000927,census,linked (ror)
+PERSON-000927,,no candidate passed
 PERSON-000928,,no candidate passed
 PERSON-000929,census,linked (name)
 PERSON-000930,census,linked (name)
 PERSON-000931,census,linked (ror)
 PERSON-000932,census,linked (ror)
-PERSON-000933,search,linked (ror)
+PERSON-000933,,no candidate passed
 PERSON-000934,census,linked (ror)
 PERSON-000935,census,linked (ror)
 PERSON-000936,census,linked (name)
@@ -957,7 +957,7 @@ PERSON-000958,search,linked (name)
 PERSON-000960,,no candidate passed
 PERSON-000961,page,linked (page)
 PERSON-000962,,no candidate passed
-PERSON-000964,census,linked (ror)
+PERSON-000964,,no candidate passed
 PERSON-000965,census,linked (ror)
 PERSON-000966,census,linked (ror)
 PERSON-000967,,no candidate passed
@@ -965,10 +965,10 @@ PERSON-000968,census,linked (ror)
 PERSON-000969,census,linked (ror)
 PERSON-000970,,no candidate found
 PERSON-000971,,held: two or more iDs pass
-PERSON-000972,census,linked (ror)
+PERSON-000972,,no candidate passed
 PERSON-000974,,no candidate passed
 PERSON-000975,census,linked (ror)
-PERSON-000977,census,linked (name)
+PERSON-000977,,no candidate passed
 PERSON-000978,census,linked (name)
 PERSON-000980,census,linked (name)
 PERSON-000981,,no candidate passed
@@ -981,7 +981,7 @@ PERSON-000988,census,linked (name)
 PERSON-000989,,no candidate passed
 PERSON-000990,,no candidate passed
 PERSON-000991,,no candidate passed
-PERSON-000992,census,linked (ror)
+PERSON-000992,,no candidate passed
 PERSON-000993,,no candidate passed
 PERSON-000994,census,linked (ror)
 PERSON-000995,,no candidate passed
@@ -1000,7 +1000,7 @@ PERSON-001009,,no candidate passed
 PERSON-001010,,no candidate found
 PERSON-001011,,held: two or more iDs pass
 PERSON-001012,search,linked (name)
-PERSON-001014,search,linked (ror)
+PERSON-001014,search,linked (name)
 PERSON-001015,search,linked (ror)
 PERSON-001016,search,linked (ror)
 PERSON-001017,,no candidate found
@@ -1010,27 +1010,27 @@ PERSON-001020,census,linked (name)
 PERSON-001021,census,linked (ror)
 PERSON-001022,search,linked (name)
 PERSON-001023,census,linked (name)
-PERSON-001024,census,linked (ror)
+PERSON-001024,,no candidate passed
 PERSON-001025,census,linked (ror)
 PERSON-001026,,held: two or more iDs pass
-PERSON-001027,census,linked (ror)
+PERSON-001027,,no candidate passed
 PERSON-001028,page,linked (page)
 PERSON-001029,,no candidate passed
 PERSON-001030,census,linked (name)
 PERSON-001031,census,linked (name)
 PERSON-001032,census,linked (name)
-PERSON-001033,search,linked (ror)
+PERSON-001033,,no candidate passed
 PERSON-001034,census,linked (ror)
-PERSON-001036,search,linked (name)
+PERSON-001036,,no candidate passed
 PERSON-001037,census,linked (ror)
 PERSON-001038,census,linked (name)
 PERSON-001039,search,linked (ror)
-PERSON-001040,search,linked (ror)
-PERSON-001041,search,linked (name)
+PERSON-001040,,no candidate passed
+PERSON-001041,,no candidate passed
 PERSON-001042,page,linked (page)
 PERSON-001043,census,linked (ror)
 PERSON-001044,census,linked (ror)
-PERSON-001045,search,linked (ror)
+PERSON-001045,search,linked (name)
 PERSON-001046,census,linked (ror)
 PERSON-001047,,no candidate passed
 PERSON-001048,search,linked (name)
@@ -1051,14 +1051,14 @@ PERSON-001063,,no candidate found
 PERSON-001064,search,linked (name)
 PERSON-001065,census,linked (name)
 PERSON-001066,census,linked (name)
-PERSON-001067,census,linked (ror)
+PERSON-001067,,no candidate passed
 PERSON-001068,census,linked (name)
 PERSON-001069,,no candidate passed
 PERSON-001070,,no candidate passed
 PERSON-001071,,no candidate passed
 PERSON-001072,census,linked (ror)
 PERSON-001073,,no candidate passed
-PERSON-001074,census,linked (ror)
+PERSON-001074,,no candidate passed
 PERSON-001075,census,linked (name)
 PERSON-001076,census,linked (name)
 PERSON-001077,census,linked (ror)
@@ -1087,7 +1087,7 @@ PERSON-001099,search,linked (name)
 PERSON-001100,census,linked (name)
 PERSON-001101,census,linked (name)
 PERSON-001102,,no candidate found
-PERSON-001103,census,linked (ror)
+PERSON-001103,,no candidate passed
 PERSON-001104,,no candidate passed
 PERSON-001105,census,linked (name)
 PERSON-001106,search,linked (name)
@@ -1113,7 +1113,7 @@ PERSON-001125,search,linked (name)
 PERSON-001126,,no candidate found
 PERSON-001127,census,linked (ror)
 PERSON-001128,search,linked (ror)
-PERSON-001129,census,linked (name)
+PERSON-001129,,no candidate passed
 PERSON-001130,census,linked (ror)
 PERSON-001131,,no candidate found
 PERSON-001132,,no candidate passed
@@ -1147,7 +1147,7 @@ PERSON-001159,search,linked (ror)
 PERSON-001160,,no candidate passed
 PERSON-001161,census,linked (ror)
 PERSON-001162,search,linked (ror)
-PERSON-001163,census,linked (name)
+PERSON-001163,,no candidate passed
 PERSON-001164,,no candidate found
 PERSON-001165,,no candidate passed
 PERSON-001166,census,linked (ror)
@@ -1156,12 +1156,12 @@ PERSON-001168,,no candidate found
 PERSON-001169,census,linked (ror)
 PERSON-001170,,no candidate passed
 PERSON-001171,,no candidate passed
-PERSON-001172,search,linked (ror)
+PERSON-001172,,no candidate passed
 PERSON-001173,,no candidate passed
 PERSON-001174,census,linked (name)
 PERSON-001175,,no candidate passed
 PERSON-001176,census,linked (ror)
-PERSON-001177,census,linked (ror)
+PERSON-001177,,no candidate passed
 PERSON-001178,,no candidate passed
 PERSON-001179,,no candidate passed
 PERSON-001180,search,linked (name)
@@ -1186,7 +1186,7 @@ PERSON-001198,,no candidate passed
 PERSON-001199,,no candidate passed
 PERSON-001200,,no candidate passed
 PERSON-001201,census,linked (ror)
-PERSON-001202,census,linked (ror)
+PERSON-001202,,no candidate passed
 PERSON-001203,,no candidate passed
 PERSON-001204,,no candidate passed
 PERSON-001205,,no candidate passed
@@ -1194,13 +1194,13 @@ PERSON-001206,census,linked (name)
 PERSON-001207,census,linked (ror)
 PERSON-001208,census,linked (ror)
 PERSON-001209,census,linked (name)
-PERSON-001210,census,linked (ror)
+PERSON-001210,,no candidate passed
 PERSON-001211,census,linked (ror)
 PERSON-001212,,no candidate passed
 PERSON-001213,,no candidate passed
 PERSON-001214,census,linked (name)
 PERSON-001215,,no candidate found
-PERSON-001216,census,linked (ror)
+PERSON-001216,,no candidate passed
 PERSON-001217,census,linked (name)
 PERSON-001218,,no candidate passed
 PERSON-001219,,no candidate passed
@@ -1217,12 +1217,12 @@ PERSON-001229,census,linked (name)
 PERSON-001230,census,linked (name)
 PERSON-001231,search,linked (name)
 PERSON-001232,search,linked (ror)
-PERSON-001233,census,linked (ror)
+PERSON-001233,,no candidate passed
 PERSON-001234,census,linked (ror)
-PERSON-001235,census,linked (name)
+PERSON-001235,,no candidate passed
 PERSON-001236,census,linked (ror)
 PERSON-001237,census,linked (name)
-PERSON-001238,census,linked (ror)
+PERSON-001238,,no candidate passed
 PERSON-001239,census,linked (name)
 PERSON-001240,,no candidate found
 PERSON-001241,search,linked (ror)
@@ -1235,7 +1235,7 @@ PERSON-001247,census,linked (ror)
 PERSON-001248,census,linked (name)
 PERSON-001249,search,linked (ror)
 PERSON-001250,,no candidate passed
-PERSON-001251,search,linked (ror)
+PERSON-001251,,no candidate passed
 PERSON-001252,search,linked (ror)
 PERSON-001253,census,linked (name)
 PERSON-001254,search,linked (ror)
@@ -1257,7 +1257,7 @@ PERSON-001269,census,linked (ror)
 PERSON-001270,census,linked (ror)
 PERSON-001271,search,linked (ror)
 PERSON-001272,,no candidate passed
-PERSON-001273,census,linked (ror)
+PERSON-001273,,no candidate passed
 PERSON-001274,,no candidate found
 PERSON-001275,search,linked (ror)
 PERSON-001276,census,linked (ror)
@@ -1287,20 +1287,20 @@ PERSON-001299,,no candidate passed
 PERSON-001300,,no candidate passed
 PERSON-001301,,no candidate passed
 PERSON-001302,,no candidate found
-PERSON-001303,census,linked (ror)
+PERSON-001303,,no candidate passed
 PERSON-001304,,no candidate found
 PERSON-001305,,no candidate found
 PERSON-001306,search,linked (ror)
 PERSON-001307,,no candidate passed
 PERSON-001308,census,linked (name)
 PERSON-001309,census,linked (ror)
-PERSON-001310,search,linked (ror)
+PERSON-001310,,no candidate passed
 PERSON-001311,,no candidate passed
 PERSON-001312,,no candidate passed
 PERSON-001313,,no candidate found
 PERSON-001314,,no candidate passed
 PERSON-001315,census,linked (name)
-PERSON-001316,census,linked (ror)
+PERSON-001316,,no candidate passed
 PERSON-001317,census,linked (name)
 PERSON-001318,,no candidate passed
 PERSON-001319,census,linked (name)
@@ -1324,7 +1324,7 @@ PERSON-001336,,no candidate passed
 PERSON-001337,,no candidate passed
 PERSON-001338,search,linked (ror)
 PERSON-001339,census,linked (ror)
-PERSON-001340,search,linked (ror)
+PERSON-001340,,no candidate passed
 PERSON-001341,search,linked (ror)
 PERSON-001342,,no candidate found
 PERSON-001343,census,linked (ror)
@@ -1333,7 +1333,7 @@ PERSON-001345,search,linked (ror)
 PERSON-001346,census,linked (ror)
 PERSON-001347,page,linked (page)
 PERSON-001348,census,linked (ror)
-PERSON-001349,search,linked (ror)
+PERSON-001349,,no candidate passed
 PERSON-001350,,no candidate found
 PERSON-001351,,no candidate passed
 PERSON-001352,census,linked (name)
@@ -1352,7 +1352,7 @@ PERSON-001364,census,linked (name)
 PERSON-001365,census,linked (name)
 PERSON-001366,census,linked (name)
 PERSON-001367,census,linked (ror)
-PERSON-001368,census,linked (ror)
+PERSON-001368,,no candidate passed
 PERSON-001369,census,linked (name)
 PERSON-001370,census,linked (ror)
 PERSON-001371,,no candidate passed
@@ -1365,7 +1365,7 @@ PERSON-001377,,no candidate passed
 PERSON-001378,,no candidate passed
 PERSON-001379,,no candidate passed
 PERSON-001380,search,linked (ror)
-PERSON-001381,census,linked (ror)
+PERSON-001381,,no candidate passed
 PERSON-001382,page,linked (page)
 PERSON-001383,search,linked (ror)
 PERSON-001384,census,linked (ror)
@@ -1380,7 +1380,7 @@ PERSON-001392,,no candidate passed
 PERSON-001393,,no candidate passed
 PERSON-001394,census,linked (ror)
 PERSON-001395,,no candidate found
-PERSON-001396,census,linked (ror)
+PERSON-001396,,no candidate passed
 PERSON-001397,census,linked (name)
 PERSON-001398,census,linked (ror)
 PERSON-001399,,no candidate found
@@ -1399,7 +1399,7 @@ PERSON-001411,,no candidate passed
 PERSON-001412,search,linked (ror)
 PERSON-001413,,no candidate found
 PERSON-001414,,no candidate found
-PERSON-001415,census,linked (ror)
+PERSON-001415,,no candidate passed
 PERSON-001416,census,linked (name)
 PERSON-001417,search,linked (name)
 PERSON-001418,,no candidate found
@@ -1427,12 +1427,12 @@ PERSON-001439,search,linked (name)
 PERSON-001440,,no candidate passed
 PERSON-001441,,no candidate passed
 PERSON-001442,search,linked (name)
-PERSON-001443,search,linked (name)
+PERSON-001443,,no candidate passed
 PERSON-001444,search,linked (name)
 PERSON-001445,search,linked (name)
 PERSON-002000,census,linked (ror)
 PERSON-002003,,no candidate passed
-PERSON-002004,census,linked (ror)
+PERSON-002004,,no candidate passed
 PERSON-002005,,no candidate found
 PERSON-002007,,no candidate passed
 PERSON-002009,census,linked (name)
