@@ -336,6 +336,13 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assertIn("one row per evidence id (V-59)", out)
         self.assertIn("evidence_id 'EVD-999998' does not resolve (V-59)", out)
 
+    def test_v60_new_licensed_citation_rejected(self):
+        with open(self.data / "evidence_organizations_OH.csv", newline="", encoding="utf-8") as f:
+            row = next(csv.DictReader(f))
+        self.append_row("evidence_organizations_OH.csv", dict(row, evidence_id="EVD-999997",
+                        source_ref="https://www.plasticsnews.com/news/example", source_class="press", tier_effect="supports_B"))
+        self.assert_fails_with("new violation (V-60")
+
     def test_v54_orcid_rejects_fullwidth_digits(self):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="００００-０００２-１８２５-００９７"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")

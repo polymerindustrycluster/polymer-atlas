@@ -198,6 +198,19 @@ class NormalizerTests(unittest.TestCase):
         self.assertEqual(k("Orange County Plastics", "Orange"), "orange county plastics")   # no separator, nothing stripped
         self.assertEqual(k("IFS Coatings - Ardmore", ""), "ifs coatings ardmore")           # no city, nothing stripped
 
+    def test_former_names_reads_only_marked_names_in_parentheses(self):
+        f = atlas.former_names
+        self.assertEqual(f("Acme (formerly Bar Inc.)"), ["Bar Inc."])
+        self.assertEqual(f("Acme (fka Bar)"), ["Bar"])
+        self.assertEqual(f("Acme (F/K/A Bar)"), ["Bar"])
+        self.assertEqual(f("Acme (previously Bar)"), ["Bar"])
+        self.assertEqual(f("Acme (dba Bar Co)"), ["Bar Co"])
+        self.assertEqual(f("Acme (Dba Bar) (d/b/a Baz)"), ["Bar", "Baz"])
+        self.assertEqual(f("Acme (formerly: Bar & Sons, Inc.)"), ["Bar & Sons, Inc."])
+        for text in ("Acme (USA), L.P.", "Acme (Ohio plant)", "Acme (former name)", "Acme (formerly)", "Acme (dbase Bar)",
+                     "Acme formerly Bar", "Acme dba Bar", "", None):
+            self.assertEqual(f(text), [], text)
+
     def test_street_key(self):
         k = atlas.street_key
         self.assertEqual(k("100 North Main Street, Suite 4"), k("100 N. Main St"))
@@ -291,6 +304,30 @@ class DedupeTests(FixtureCase):
         self.add_sites(("SITE-006100", "ORG-000001", "3430 Cypert Way", "Ardmore", "IFS Coatings"))
         _, res = self.dd("--name", "IFS Coatings - Ardmore", "--city", "Ardmore")
         self.assertEqual(self.ids(res, 5), ["SITE-006100"])
+
+    def add_orgs(self, *rows):
+        write(self.d, "organizations_IN.csv", ORG_COLS, [org(i, n, trade_names=t, hq_state="IN") for i, n, t in rows])
+
+    def test_step2_hits_a_name_written_in_parentheses_for_each_form(self):
+        self.add_orgs(("ORG-000101", "Alpha Plastics (formerly Anvil Moulding Corp.)", ""),
+                      ("ORG-000102", "Bravo Polymers (fka Boulder Resins)", ""),
+                      ("ORG-000103", "Charlie Foam (f/k/a Cedar Foam & Fabric)", ""),
+                      ("ORG-000104", "Delta Seals (previously Dover Gasket)", ""),
+                      ("ORG-000105", "Echo Films LLC (dba Eagle Film Works)", ""),
+                      ("ORG-000106", "Foxtrot Group", "Foxtrot Group (formerly Falcon Tubing); Fox Pipe"))
+        for oid, former in [("ORG-000101", "Anvil Moulding"), ("ORG-000102", "Boulder Resins"), ("ORG-000103", "Cedar Foam & Fabric"),
+                            ("ORG-000104", "Dover Gasket"), ("ORG-000105", "Eagle Film Works"), ("ORG-000106", "Falcon Tubing")]:
+            rc, res = self.dd("--name", former)
+            self.assertEqual((rc, res["stop_at_step"], self.ids(res, 2)), (1, 2, [oid]), former)
+            self.assertIn("parenthetical name", res["steps"][1]["hits"][0]["match"])
+        _, res = self.dd("--name", "Alpha Plastics (formerly Anvil Moulding Corp.)")   # the full legal name still matches itself
+        self.assertEqual(self.ids(res, 2), ["ORG-000101"])
+
+    def test_step2_does_not_treat_other_parentheticals_as_names(self):
+        self.add_orgs(("ORG-000101", "Golf Glass (USA), L.P.", ""), ("ORG-000102", "Hotel Hoses", "Hotel Hoses (Ohio plant); Hotel (former name)"))
+        for q in ("USA", "Ohio plant", "former name"):
+            _, res = self.dd("--name", q)
+            self.assertEqual(self.ids(res, 2), [], q)
 
     def test_no_hits_exit_zero_and_requires_a_query(self):
         rc, res = self.dd("--name", "Totally Unknown Widgets", "--domain", "nowhere.invalid")
@@ -390,6 +427,17 @@ class RealDataSmoke(unittest.TestCase):
         r = json.loads(p.stdout)["prefixes"][0]
         self.assertGreater(int(r["next_id"].split("-")[1]), int(r["max_id"].split("-")[1]))
         self.assertEqual(r["duplicates"], {})
+
+    @unittest.skipUnless((HERE.parent / "data" / "organizations_OH.csv").exists(), "real data not present")
+    def test_known_answer_step2_finds_reuther_through_a_former_name(self):
+        # No organization is named Reuther. ORG-000453's trade_names and ORG-001935's legal_name (merged into 000453) both read
+        # "Momentous Mold and Machine (formerly Reuther Mold & Manufacturing Co., Inc.)"; before the change this was a step-4
+        # substring hit only. Pinned loosely: rows are tombstoned never deleted, and tidying the text into a plain trade name
+        # still gives an exact step-2 match, so the intersection stays non-empty.
+        p = subprocess.run([sys.executable, str(HERE / "atlas.py"), "dedupe-check", "--name", "Reuther Mold & Manufacturing", "--json"],
+                           capture_output=True, text=True, cwd=HERE.parent)
+        res = json.loads(p.stdout)
+        self.assertTrue({"ORG-000453", "ORG-001935"} & {h["id"] for h in res["steps"][1]["hits"]})
 
     @unittest.skipUnless((HERE.parent / "data" / "sites_OK.csv").exists(), "real data not present")
     def test_known_answer_site_name_step5_finds_garlock(self):
