@@ -849,7 +849,7 @@ EVENT_FIELDS = ["event_id", "name", "trade_names", "organizer_name", "organizer_
                 "home_state", "home_region", "geography_note", "subject_scope",
                 "subject_note", "event_url", "status", "status_date", "status_source",
                 "sources", "verification_tier", "last_verified", "pic_relevance",
-                "created_by", "notes"]
+                "created_by", "notes", "pic_events_slug"]
 PART_FIELDS = ["participation_id", "event_id", "org_id", "edition_year", "edition_name",
                "role", "role_detail", "edition_dates", "edition_city", "edition_state",
                "evidence_source_name", "evidence_source_url", "evidence_date", "sources",
@@ -861,7 +861,7 @@ SUBJECT_VOCAB = {"plastics_general", "rubber_elastomers", "compounding_formulati
 EVENT_FORMATS = {"expo", "conference", "technical_conference", "summit", "meeting_series"}
 CADENCES = {"annual", "biennial", "triennial", "irregular"}
 HOME_REGIONS = {"ne_ohio", "ohio", "national_us", "international"}
-PART_ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host"}  # renamed 2026-11-01: was ROLES, shadowing the people ROLES above
+PART_ROLES = {"exhibitor", "sponsor", "speaker", "organizer", "host", "attendee"}  # renamed 2026-11-01: was ROLES, shadowing the people ROLES above
 EVENT_STATUSES = {"active", "active_idled_partial", "idled", "closed", "acquired",
                   "merged", "relocated_in_scope", "relocated_out_of_scope",
                   "pre_revenue", "unknown"}
@@ -873,13 +873,27 @@ EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"(\(\d{3}\)\s*|\b\d{3}[-.])\d{3}[-.]\d{4}\b")
 if events or participation:
     if event_fields != EVENT_FIELDS:
-        errors.append("events.csv: header does not match the v1.5 field set (V-17)")
+        errors.append("events.csv: header does not match the v1.12 field set (V-17)")
     if part_fields != PART_FIELDS:
         errors.append("event_participation.csv: header does not match the v1.5 field set (V-17)")
 ALL_ORG_IDS = {r["org_id"] for r in orgs} | {r["org_id"] for r in eco}
 evt_ids = set()
+_slug_events = {}
 for i, r in enumerate(events, 2):
     eid = r["event_id"]
+    # V-61 [v1.12]: cross-repo identity; CI cannot check conferences-repo existence. (V-60 is the licensed-source rule.)
+    crosswalk = r.get("pic_events_slug") or ""
+    _cell = set()
+    for slug in crosswalk.split(";") if crosswalk else []:
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", slug):
+            errors.append(f"events.csv:{i} {eid} malformed pic_events_slug {slug!r} (V-61)")
+            continue
+        if slug in _cell:
+            errors.append(f"events.csv:{i} {eid} pic_events_slug {slug!r} repeated in one cell (V-61)")
+        _cell.add(slug)
+        if slug in _slug_events and _slug_events[slug] != eid:
+            errors.append(f"events.csv:{i} {eid} pic_events_slug {slug!r} already on event {_slug_events[slug]} (V-61)")
+        _slug_events.setdefault(slug, eid)
     if not re.fullmatch(r"EVT-\d{6}", eid or ""):
         errors.append(f"events.csv:{i} {eid} event_id does not match EVT-###### (V-17)")
     if eid in evt_ids:

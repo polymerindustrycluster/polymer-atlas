@@ -536,6 +536,7 @@
    "governs": "event_participation.role",
    "section": "SCHEMA §4.12.2",
    "values": [
+    "attendee",
     "exhibitor",
     "host",
     "organizer",

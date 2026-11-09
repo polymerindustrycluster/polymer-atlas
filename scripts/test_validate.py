@@ -221,6 +221,46 @@ class ValidatorMutationTests(unittest.TestCase):
         self.append_row("people_identifiers.csv", dict(self.PIL_OK, identifier_id="0000-0002-1825-009"))
         self.assert_fails_with("is not a 4x4 ORCID iD (V-54)")
 
+    # [v1.12] Crosswalk shape/uniqueness and attendee vocabulary.
+    def test_v61_nullable_single_and_multiple_slugs_accepted(self):
+        for value in ("", "test-event-2026", "test-winter;test-spring;test-fall"):
+            with self.subTest(value=value):
+                self.edit_rows("events.csv", lambda r: True,
+                               lambda r: r.update(pic_events_slug=value))
+                code, out = run_validator(self.data)
+                self.assertEqual(code, 0, out[-1500:])
+
+    def test_v61_malformed_slugs_rejected(self):
+        for value in ("Uppercase", "under_score", "-leading", "trailing-",
+                      "double--hyphen", "two words", "café", "valid;", ";valid",
+                      "valid;;other", "valid; spaced", "valid\n"):
+            with self.subTest(value=value):
+                self.edit_rows("events.csv", lambda r: True,
+                               lambda r: r.update(pic_events_slug=value))
+                self.assert_fails_with("malformed pic_events_slug")
+
+    def test_v61_duplicate_slug_on_different_events_rejected(self):
+        first = self.edit_rows("events.csv", lambda r: True,
+                               lambda r: r.update(pic_events_slug="test-first;test-shared"))
+        self.edit_rows("events.csv", lambda r: r["event_id"] != first["event_id"],
+                       lambda r: r.update(pic_events_slug="test-shared;test-second"))
+        self.assert_fails_with(f"pic_events_slug 'test-shared' already on event {first['event_id']} (V-61)")
+
+    def test_v61_slug_repeated_in_one_cell_rejected(self):  # review 2026-11-09: 'foo;foo' passed before
+        self.edit_rows("events.csv", lambda r: True, lambda r: r.update(pic_events_slug="test-same;test-same"))
+        self.assert_fails_with("pic_events_slug 'test-same' repeated in one cell (V-61)")
+
+    def test_v19_attendee_accepted(self):
+        self.edit_rows("event_participation.csv", lambda r: True,
+                       lambda r: r.update(role="attendee"))
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 0, out[-1500:])
+
+    def test_v19_attendees_typo_rejected(self):
+        self.edit_rows("event_participation.csv", lambda r: True,
+                       lambda r: r.update(role="attendees"))
+        self.assert_fails_with("bad role (V-19)")
+
     # [v1.11] V-58 newsroom / LinkedIn columns; V-59 archive links.
     @staticmethod
     def _has_site(r):

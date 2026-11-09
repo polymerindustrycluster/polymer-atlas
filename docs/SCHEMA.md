@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.11.1 — 2026-11-06 (§4.9: "Deputy Group Leader" is not folded to `group_leader`, owner ruling 2026-11-06). Previous: v1.11 — 2026-11-05 (newsroom, newsroom feed and LinkedIn organization columns; §4.22 evidence archive links — owner battery 2026-11-04 B-NEWS, B-LINKEDIN, B-ARCHIVE). Prior: v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.12 — 2026-11-06 (events crosswalk `pic_events_slug` and participation role `attendee`, §4.12; owner decisions 2026-11-06 B-CROSSWALK and attendee role).
+Previous: v1.11.1 — 2026-11-06 (§4.9: "Deputy Group Leader" is not folded to `group_leader`, owner ruling 2026-11-06). Prior: v1.11 — 2026-11-05 (newsroom, newsroom feed and LinkedIn organization columns; §4.22 evidence archive links — owner battery 2026-11-04 B-NEWS, B-LINKEDIN, B-ARCHIVE). Prior: v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -1310,10 +1311,11 @@ layer over the organizations the Atlas already holds. Events own **no
 ring and no NAICS** — §§1–2 decide what is in scope, and an event row
 never makes an organization in-scope. What the layer records is (a) the
 qualifying event *series* themselves, and (b) dated, harvested proof
-that a held organization exhibited, sponsored, spoke, organized, or
-hosted at a specific edition. Series facts live in `events.csv`;
-everything about a specific edition lives in `event_participation.csv`,
-because per-edition facts exist only where a harvest exists.
+that a held organization exhibited, sponsored, spoke, organized, hosted,
+or attended at a specific edition. Series facts live in `events.csv`;
+harvested edition facts live in `event_participation.csv`.
+**[v1.12]** The `pic_events_slug` crosswalk joins the PIC conferences list,
+which holds edition facts (dates, place); the Atlas holds participation.
 
 #### 4.12.1 Series records (`data/events.csv`) — one row per series, never per edition
 
@@ -1336,6 +1338,7 @@ because per-edition facts exist only where a harvest exists.
 | `event_url` | URL | **MUST** | The series' own site, on the organizer's domain |
 | `status` | §4.2 vocab | **MUST** | Series semantics: `active` (series running) · `closed` (discontinued) · `merged` (folded into a named successor — the successor's `event_id` is named in `notes`) · `unknown`. Every non-`active` status REQUIRES `status_date` and `status_source` (§4.2). A single deferred or postponed **edition** does not change series status — note the deferral; status changes when the series itself ends |
 | backbone (`status_date`, `status_source`, `sources[]`, `verification_tier`, `last_verified`, `pic_relevance[]`, `created_by`, `notes`) | §4.1/§4.2/§4.3 | **MUST** | Tier grammar at this grain: the organizer's own site/program = A-equivalent; trade press or association directory = B; a lone aggregator listing = C. A series row is never U — a series that cannot reach C is not seeded |
+| `pic_events_slug` **[v1.12]** | string, nullable | Nice (column present on every row, last in the CSV) | Series identity in PIC's conferences list, `polymerindustrycluster/conferences`, `data/series/<slug>.yaml`: the join key between the two repositories. One slug, or several separated by `;` when that list splits one Atlas series into several. Each slug matches `^[a-z0-9]+(-[a-z0-9]+)*$`. V-60 errors on malformed slugs or a slug shared by two event rows. Existence in the other repo is **not checked here**, because CI cannot see that repo. Owner decision B-CROSSWALK, 2026-11-06 |
 
 **Backbone fields deliberately not carried, with reasons.** NAICS and
 its §2.1 provenance: company-identity apparatus, meaningless for a
@@ -1413,9 +1416,9 @@ both are seeded, each noting the other. When in doubt, don't merge.
 | `org_id` | FK → organizations ∪ ecosystem | **MUST** | The participating organization **as named by the harvest**, resolved to a held record. Participation never creates organization records: a harvested name with no held record stays a staging discovery candidate until the organization passes the normal §4.7 gate, and only then gains participation rows — backfilled from the banked harvest and cited as such |
 | `edition_year` | integer | **MUST** | The edition's year, on the harvest's own year basis |
 | `edition_name` | string | as applicable | The name the edition actually ran under, when it differs from the series' current name. Predecessor-name editions attach to the successor series row: IEC 2022/2024 editions attach to Global Polymer Summit with `edition_name = "International Elastomer Conference"` |
-| `role` | enum | **MUST** | `exhibitor` \| `sponsor` \| `speaker` \| `organizer` \| `host` — exactly one per row; an organization with two roles at one edition carries two rows |
+| `role` | enum | **MUST** | `exhibitor` \| `sponsor` \| `speaker` \| `organizer` \| `host` \| `attendee` **[v1.12]** — exactly one per row; an organization with two roles at one edition carries two rows. `attendee` means the organization attended a specific edition, as shown by a **list of attending companies that the organizer itself published** for that named edition (for example a post-show report's company list). Brochure or marketing lines, and delegate lists that name people, never mint a row (owner ruling 2026-11-09). Generic marketing with no named edition ("attendees include companies like …") never mints a row either. A pre-show "registered" list is valid only as of its `evidence_date`, with the same pre-show note as exhibitor rosters. Organizations only, as for every role (§6) |
 | `role_detail` | string | Nice | As the harvest prints it: booth number, sponsor level, session/track. Verbatim harvest text only, subject to the §6 screen below |
-| `edition_dates` | string | as harvested | The edition's dates **as printed by the harvest** ("September 21–24, 2026"). Per-edition facts live here and nowhere else — there is no edition table and no speculative calendar |
+| `edition_dates` | string | as harvested | The edition's dates **as printed by the harvest** ("September 21–24, 2026"). Within the Atlas, per-edition facts live here — there is no edition table and no speculative calendar. **[v1.12]** The linked conferences repo holds edition dates and place |
 | `edition_city` / `edition_state` | string | as harvested | Where **this** edition ran. `edition_state` is a USPS code, or the full country name for international editions. The series' `home_*` fields are never copied down as a substitute: an edition's city comes from the harvest or stays empty |
 | `evidence_source_name` | string | **MUST** | The harvest's identity: publication + publisher ("IEC 2024 Official Conference Guide — Rubber Division, ACS"; "NPE2027 exhibitor roster — MapYourShow / PLASTICS") |
 | `evidence_source_url` | URL | **MUST** | The list's published location — or the staging manifest pointer when the live location has decayed. Decay is expected; the banked snapshot is the record |
@@ -1426,7 +1429,8 @@ both are seeded, each noting the other. When in doubt, don't merge.
 
 1. A participation row is created **only** from an actually-harvested
    list in hand — the organizer's published exhibitor roster, show
-   guide/directory, sponsor list, or program/speaker list for a
+   guide/directory, sponsor list, program/speaker list, or **[v1.12]**
+   organizer-published attendee-company list (per the role notes) for a
    specific edition — with the list's identity and `evidence_date`
    recorded on the row. Marketing pages, announcements, press
    roundups, social posts, and memory **never** mint rows; they may
@@ -3013,3 +3017,12 @@ unchanged.
   to `group_leader`; a deputy keeps the person's recognized rank with the exact title in `role_as_published`. Applied
   to PERSON-000621 (role `group_leader` → `research_scientist`, its value before PR #149); Kroonblawd stays held (#235).
   Consistent with B-LAB-PROJECT-LEADER (a). No new values, fields or validator rules.
+- **v1.12 — 2026-11-06 (owner decisions B-CROSSWALK and attendee role, 2026-11-06).** §4.12.1 gains the nullable
+  `pic_events_slug` column, last in `events.csv`, joining PIC's conferences series identities. V-61 checks each
+  semicolon-separated slug's shape and prohibits repeating a slug in one cell or sharing it across event rows (renumbered
+  from V-60 on 2026-11-09, when V-60 went to the licensed-source rule); CI does not check existence in
+  the other repository. The owner-supplied `tasks/schema-v1-12/crosswalk.csv` populates the column without changing
+  existing bytes. §4.12.2 gains `attendee`, limited to organizer-published lists of attending companies for named
+  editions (no brochure lines or people-naming delegate lists: owner ruling 2026-11-09), with
+  dated pre-show registration notes and the standing organizations-only rule. V-19 and the vocabulary export
+  carry the new role. No participation row is added or changed.
