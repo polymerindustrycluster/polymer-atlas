@@ -1,0 +1,1455 @@
+person_id,candidate_source,outcome
+PERSON-000001,census,linked (ror)
+PERSON-000002,census,linked (name)
+PERSON-000003,census,linked (name)
+PERSON-000004,search,linked (ror)
+PERSON-000005,,no candidate passed
+PERSON-000006,,no candidate found
+PERSON-000007,,no candidate passed
+PERSON-000008,,no candidate passed
+PERSON-000009,search,linked (ror)
+PERSON-000010,,no candidate passed
+PERSON-000011,,no candidate passed
+PERSON-000012,,no candidate passed
+PERSON-000013,census,linked (ror)
+PERSON-000014,,no candidate passed
+PERSON-000015,census,linked (name)
+PERSON-000016,census,linked (name)
+PERSON-000017,census,linked (ror)
+PERSON-000018,,no candidate passed
+PERSON-000019,search,linked (name)
+PERSON-000020,census,linked (ror)
+PERSON-000021,,no candidate found
+PERSON-000022,census,linked (name)
+PERSON-000023,search,linked (name)
+PERSON-000024,,no candidate found
+PERSON-000025,,no candidate passed
+PERSON-000026,,no candidate passed
+PERSON-000027,census,linked (name)
+PERSON-000028,census,linked (name)
+PERSON-000029,search,linked (ror)
+PERSON-000030,,no candidate found
+PERSON-000031,,no candidate found
+PERSON-000032,,no candidate found
+PERSON-000033,,no candidate passed
+PERSON-000034,search,linked (ror)
+PERSON-000035,,no candidate passed
+PERSON-000036,search,linked (name)
+PERSON-000037,,no candidate found
+PERSON-000038,search,linked (ror)
+PERSON-000039,,no candidate found
+PERSON-000040,,no candidate passed
+PERSON-000041,census,linked (ror)
+PERSON-000042,,no candidate passed
+PERSON-000043,census,linked (name)
+PERSON-000044,census,linked (ror)
+PERSON-000045,,no candidate passed
+PERSON-000046,census,linked (name)
+PERSON-000047,census,linked (ror)
+PERSON-000048,,no candidate passed
+PERSON-000049,census,linked (ror)
+PERSON-000050,,no candidate passed
+PERSON-000051,,no candidate passed
+PERSON-000052,census,linked (ror)
+PERSON-000053,census,linked (name)
+PERSON-000054,census,linked (name)
+PERSON-000055,census,linked (name)
+PERSON-000056,,no candidate passed
+PERSON-000057,search,linked (name)
+PERSON-000058,census,linked (name)
+PERSON-000059,,no candidate passed
+PERSON-000060,,no candidate passed
+PERSON-000061,census,linked (ror)
+PERSON-000062,census,linked (ror)
+PERSON-000063,,no candidate found
+PERSON-000064,search,linked (ror)
+PERSON-000065,,no candidate passed
+PERSON-000066,search,linked (ror)
+PERSON-000067,,no candidate found
+PERSON-000068,,no candidate found
+PERSON-000069,,no candidate found
+PERSON-000070,,no candidate found
+PERSON-000071,search,linked (ror)
+PERSON-000072,,no candidate found
+PERSON-000073,search,linked (ror)
+PERSON-000074,census,linked (name)
+PERSON-000075,,no candidate passed
+PERSON-000076,search,linked (ror)
+PERSON-000077,,no candidate found
+PERSON-000078,census,linked (ror)
+PERSON-000079,census,linked (name)
+PERSON-000080,census,linked (ror)
+PERSON-000081,census,linked (name)
+PERSON-000082,census,linked (name)
+PERSON-000083,search,linked (ror)
+PERSON-000084,census,linked (name)
+PERSON-000085,census,linked (name)
+PERSON-000086,census,linked (ror)
+PERSON-000087,,no candidate found
+PERSON-000088,,no candidate found
+PERSON-000089,census,linked (name)
+PERSON-000090,search,linked (ror)
+PERSON-000091,search,linked (name)
+PERSON-000092,,no candidate passed
+PERSON-000093,census,linked (ror)
+PERSON-000094,census,linked (ror)
+PERSON-000095,search,linked (name)
+PERSON-000096,census,linked (name)
+PERSON-000097,,no candidate passed
+PERSON-000098,,no candidate passed
+PERSON-000099,,no candidate found
+PERSON-000100,,no candidate passed
+PERSON-000101,,no candidate passed
+PERSON-000102,search,linked (ror)
+PERSON-000103,,no candidate found
+PERSON-000104,search,linked (name)
+PERSON-000105,,no candidate passed
+PERSON-000106,census,linked (ror)
+PERSON-000107,census,linked (ror)
+PERSON-000108,census,linked (ror)
+PERSON-000109,census,linked (name)
+PERSON-000110,,no candidate passed
+PERSON-000111,census,linked (ror)
+PERSON-000112,census,linked (ror)
+PERSON-000113,census,linked (name)
+PERSON-000114,census,linked (ror)
+PERSON-000115,census,linked (ror)
+PERSON-000116,,no candidate passed
+PERSON-000117,census,linked (name)
+PERSON-000118,,no candidate passed
+PERSON-000119,census,linked (ror)
+PERSON-000120,census,linked (name)
+PERSON-000121,,no candidate found
+PERSON-000122,search,linked (ror)
+PERSON-000123,,no candidate found
+PERSON-000124,census,linked (ror)
+PERSON-000125,census,linked (ror)
+PERSON-000126,,no candidate passed
+PERSON-000127,census,linked (ror)
+PERSON-000128,,no candidate passed
+PERSON-000129,census,linked (ror)
+PERSON-000130,search,linked (name)
+PERSON-000131,census,linked (name)
+PERSON-000132,census,linked (name)
+PERSON-000133,,no candidate passed
+PERSON-000134,,no candidate passed
+PERSON-000135,,no candidate passed
+PERSON-000136,census,linked (ror)
+PERSON-000137,census,linked (ror)
+PERSON-000138,,no candidate passed
+PERSON-000139,search,linked (name)
+PERSON-000140,,no candidate passed
+PERSON-000141,search,linked (ror)
+PERSON-000142,census,linked (name)
+PERSON-000143,census,linked (ror)
+PERSON-000144,census,linked (ror)
+PERSON-000145,census,linked (name)
+PERSON-000146,,no candidate found
+PERSON-000147,,no candidate passed
+PERSON-000148,census,linked (ror)
+PERSON-000149,census,linked (name)
+PERSON-000150,,no candidate passed
+PERSON-000151,search,linked (ror)
+PERSON-000152,census,linked (ror)
+PERSON-000153,,no candidate passed
+PERSON-000154,,no candidate passed
+PERSON-000155,,no candidate passed
+PERSON-000156,,no candidate passed
+PERSON-000157,,no candidate passed
+PERSON-000158,census,linked (ror)
+PERSON-000159,census,linked (name)
+PERSON-000160,,no candidate passed
+PERSON-000161,,no candidate found
+PERSON-000162,census,linked (ror)
+PERSON-000163,,no candidate passed
+PERSON-000164,,no candidate passed
+PERSON-000165,,no candidate passed
+PERSON-000166,census,linked (ror)
+PERSON-000167,census,linked (ror)
+PERSON-000168,census,linked (name)
+PERSON-000169,search,linked (ror)
+PERSON-000170,census,linked (name)
+PERSON-000171,search,linked (ror)
+PERSON-000172,census,linked (ror)
+PERSON-000173,,no candidate found
+PERSON-000174,,no candidate found
+PERSON-000175,search,linked (ror)
+PERSON-000176,census,linked (name)
+PERSON-000177,census,linked (ror)
+PERSON-000178,census,linked (name)
+PERSON-000179,census,linked (name)
+PERSON-000180,,no candidate passed
+PERSON-000181,search,linked (ror)
+PERSON-000182,,no candidate found
+PERSON-000183,search,linked (name)
+PERSON-000184,census,linked (ror)
+PERSON-000185,census,linked (ror)
+PERSON-000186,census,linked (ror)
+PERSON-000187,census,linked (ror)
+PERSON-000188,,no candidate passed
+PERSON-000189,,no candidate passed
+PERSON-000190,search,linked (ror)
+PERSON-000191,census,linked (ror)
+PERSON-000192,,no candidate passed
+PERSON-000193,,no candidate found
+PERSON-000194,,held: two or more iDs pass
+PERSON-000195,,no candidate passed
+PERSON-000196,census,linked (name)
+PERSON-000197,,no candidate passed
+PERSON-000198,,no candidate passed
+PERSON-000199,census,linked (ror)
+PERSON-000200,census,linked (ror)
+PERSON-000201,census,linked (ror)
+PERSON-000202,census,linked (ror)
+PERSON-000203,census,linked (name)
+PERSON-000204,census,linked (ror)
+PERSON-000205,census,linked (name)
+PERSON-000206,search,linked (ror)
+PERSON-000207,,no candidate passed
+PERSON-000208,census,linked (ror)
+PERSON-000209,,no candidate passed
+PERSON-000210,census,linked (name)
+PERSON-000211,,no candidate passed
+PERSON-000212,census,linked (name)
+PERSON-000213,census,linked (name)
+PERSON-000214,,no candidate passed
+PERSON-000215,census,linked (ror)
+PERSON-000216,search,linked (name)
+PERSON-000217,census,linked (name)
+PERSON-000218,census,linked (ror)
+PERSON-000219,census,linked (name)
+PERSON-000220,census,linked (ror)
+PERSON-000221,census,linked (ror)
+PERSON-000222,,no candidate found
+PERSON-000223,census,linked (name)
+PERSON-000224,census,linked (name)
+PERSON-000225,census,linked (name)
+PERSON-000226,census,linked (name)
+PERSON-000227,page,linked (page)
+PERSON-000228,,no candidate found
+PERSON-000229,census,linked (ror)
+PERSON-000230,census,linked (ror)
+PERSON-000231,,no candidate passed
+PERSON-000232,,no candidate passed
+PERSON-000233,,no candidate passed
+PERSON-000234,,no candidate passed
+PERSON-000235,,no candidate passed
+PERSON-000236,,no candidate passed
+PERSON-000237,,no candidate passed
+PERSON-000238,census,linked (name)
+PERSON-000239,census,linked (ror)
+PERSON-000240,census,linked (name)
+PERSON-000241,,no candidate passed
+PERSON-000242,,no candidate passed
+PERSON-000243,,no candidate passed
+PERSON-000244,census,linked (ror)
+PERSON-000245,,no candidate passed
+PERSON-000246,census,linked (name)
+PERSON-000247,census,linked (name)
+PERSON-000248,,no candidate passed
+PERSON-000249,,no candidate passed
+PERSON-000250,,no candidate passed
+PERSON-000251,census,linked (ror)
+PERSON-000252,census,linked (name)
+PERSON-000253,search,linked (ror)
+PERSON-000254,,no candidate passed
+PERSON-000255,,no candidate passed
+PERSON-000256,,no candidate passed
+PERSON-000257,census,linked (ror)
+PERSON-000258,,no candidate passed
+PERSON-000259,,no candidate passed
+PERSON-000260,page,linked (page)
+PERSON-000261,search,linked (name)
+PERSON-000262,,no candidate found
+PERSON-000263,census,linked (ror)
+PERSON-000264,census,linked (name)
+PERSON-000265,,no candidate passed
+PERSON-000266,census,linked (name)
+PERSON-000267,,no candidate passed
+PERSON-000268,census,linked (ror)
+PERSON-000269,search,linked (name)
+PERSON-000270,,no candidate passed
+PERSON-000271,,no candidate found
+PERSON-000272,search,linked (name)
+PERSON-000273,search,linked (name)
+PERSON-000274,search,linked (name)
+PERSON-000275,search,linked (name)
+PERSON-000276,census,linked (ror)
+PERSON-000277,search,linked (name)
+PERSON-000278,census,linked (name)
+PERSON-000279,search,linked (name)
+PERSON-000280,,no candidate passed
+PERSON-000281,,no candidate passed
+PERSON-000282,census,linked (name)
+PERSON-000283,census,linked (name)
+PERSON-000284,,no candidate passed
+PERSON-000285,census,linked (name)
+PERSON-000286,search,linked (ror)
+PERSON-000287,,no candidate found
+PERSON-000288,,no candidate passed
+PERSON-000289,census,linked (name)
+PERSON-000290,search,linked (ror)
+PERSON-000291,census,linked (ror)
+PERSON-000292,,no candidate passed
+PERSON-000293,census,linked (ror)
+PERSON-000294,census,linked (name)
+PERSON-000295,census,linked (ror)
+PERSON-000296,,no candidate found
+PERSON-000297,census,linked (name)
+PERSON-000298,census,linked (ror)
+PERSON-000299,census,linked (name)
+PERSON-000300,,no candidate found
+PERSON-000301,search,linked (ror)
+PERSON-000302,census,linked (name)
+PERSON-000303,census,linked (ror)
+PERSON-000304,,no candidate found
+PERSON-000305,search,linked (name)
+PERSON-000306,,no candidate passed
+PERSON-000307,search,linked (ror)
+PERSON-000308,page,linked (page)
+PERSON-000309,,no candidate passed
+PERSON-000310,search,linked (name)
+PERSON-000311,census,linked (ror)
+PERSON-000312,,no candidate passed
+PERSON-000313,census,linked (name)
+PERSON-000314,census,linked (name)
+PERSON-000315,,no candidate passed
+PERSON-000316,census,linked (name)
+PERSON-000317,census,linked (name)
+PERSON-000318,search,linked (ror)
+PERSON-000319,,no candidate found
+PERSON-000320,search,linked (ror)
+PERSON-000321,,no candidate passed
+PERSON-000322,census,linked (name)
+PERSON-000323,census,linked (ror)
+PERSON-000324,search,linked (ror)
+PERSON-000325,search,linked (ror)
+PERSON-000326,,no candidate passed
+PERSON-000327,search,linked (ror)
+PERSON-000328,search,linked (name)
+PERSON-000329,search,linked (ror)
+PERSON-000330,census,linked (name)
+PERSON-000331,census,linked (name)
+PERSON-000332,search,linked (name)
+PERSON-000333,,no candidate passed
+PERSON-000334,,no candidate found
+PERSON-000335,,no candidate found
+PERSON-000336,,no candidate passed
+PERSON-000337,page,linked (page)
+PERSON-000338,census,linked (name)
+PERSON-000339,page,linked (page)
+PERSON-000340,,no candidate found
+PERSON-000341,census,linked (name)
+PERSON-000342,,no candidate passed
+PERSON-000343,,no candidate found
+PERSON-000344,page,linked (page)
+PERSON-000345,,no candidate passed
+PERSON-000346,page,linked (page)
+PERSON-000347,census,linked (name)
+PERSON-000348,page,linked (page)
+PERSON-000349,search,linked (name)
+PERSON-000350,census,linked (name)
+PERSON-000351,,no candidate passed
+PERSON-000352,,no candidate passed
+PERSON-000353,census,linked (name)
+PERSON-000354,,no candidate passed
+PERSON-000355,census,linked (ror)
+PERSON-000356,,no candidate passed
+PERSON-000357,,no candidate passed
+PERSON-000358,census,linked (name)
+PERSON-000359,,no candidate found
+PERSON-000360,census,linked (ror)
+PERSON-000361,,no candidate passed
+PERSON-000362,census,linked (name)
+PERSON-000363,,no candidate passed
+PERSON-000364,,no candidate passed
+PERSON-000365,,no candidate passed
+PERSON-000366,,no candidate passed
+PERSON-000367,,no candidate passed
+PERSON-000368,,no candidate found
+PERSON-000369,,no candidate found
+PERSON-000370,,no candidate passed
+PERSON-000371,census,linked (ror)
+PERSON-000372,,no candidate passed
+PERSON-000373,,no candidate passed
+PERSON-000374,,no candidate passed
+PERSON-000375,census,linked (name)
+PERSON-000376,census,linked (ror)
+PERSON-000377,census,linked (name)
+PERSON-000378,,no candidate passed
+PERSON-000379,census,linked (ror)
+PERSON-000380,,no candidate passed
+PERSON-000381,,no candidate passed
+PERSON-000382,census,linked (name)
+PERSON-000383,census,linked (name)
+PERSON-000384,census,linked (name)
+PERSON-000385,search,linked (name)
+PERSON-000386,census,linked (ror)
+PERSON-000387,search,linked (name)
+PERSON-000388,census,linked (name)
+PERSON-000389,census,linked (name)
+PERSON-000390,,no candidate passed
+PERSON-000391,census,linked (ror)
+PERSON-000392,search,linked (name)
+PERSON-000393,search,linked (ror)
+PERSON-000394,,no candidate passed
+PERSON-000395,search,linked (ror)
+PERSON-000396,census,linked (ror)
+PERSON-000397,census,linked (name)
+PERSON-000398,census,linked (ror)
+PERSON-000399,census,linked (name)
+PERSON-000400,census,linked (name)
+PERSON-000401,,held: two or more iDs pass
+PERSON-000402,census,linked (ror)
+PERSON-000403,,no candidate passed
+PERSON-000404,search,linked (ror)
+PERSON-000405,search,linked (name)
+PERSON-000406,,no candidate passed
+PERSON-000407,census,linked (name)
+PERSON-000408,census,linked (name)
+PERSON-000409,census,linked (ror)
+PERSON-000410,search,linked (name)
+PERSON-000411,census,linked (name)
+PERSON-000412,,no candidate found
+PERSON-000413,,no candidate passed
+PERSON-000414,census,linked (ror)
+PERSON-000415,,no candidate passed
+PERSON-000416,,no candidate passed
+PERSON-000417,search,linked (name)
+PERSON-000418,,no candidate found
+PERSON-000419,,no candidate found
+PERSON-000420,search,linked (name)
+PERSON-000421,,no candidate found
+PERSON-000422,,no candidate passed
+PERSON-000423,search,linked (ror)
+PERSON-000424,,no candidate passed
+PERSON-000425,census,linked (ror)
+PERSON-000426,,no candidate passed
+PERSON-000427,search,linked (ror)
+PERSON-000428,census,linked (name)
+PERSON-000429,,no candidate passed
+PERSON-000430,census,linked (ror)
+PERSON-000431,,no candidate passed
+PERSON-000432,census,linked (ror)
+PERSON-000433,,no candidate passed
+PERSON-000434,search,linked (ror)
+PERSON-000435,,no candidate found
+PERSON-000436,,no candidate passed
+PERSON-000437,,no candidate passed
+PERSON-000438,census,linked (name)
+PERSON-000439,census,linked (name)
+PERSON-000440,census,linked (name)
+PERSON-000441,census,linked (name)
+PERSON-000442,,no candidate found
+PERSON-000443,search,linked (name)
+PERSON-000444,search,linked (name)
+PERSON-000445,search,linked (name)
+PERSON-000446,census,linked (name)
+PERSON-000447,search,linked (name)
+PERSON-000448,search,linked (name)
+PERSON-000449,search,linked (name)
+PERSON-000450,,no candidate passed
+PERSON-000451,search,linked (name)
+PERSON-000452,census,linked (name)
+PERSON-000453,,no candidate passed
+PERSON-000454,census,linked (name)
+PERSON-000455,census,linked (ror)
+PERSON-000456,search,linked (name)
+PERSON-000457,,no candidate passed
+PERSON-000458,search,linked (name)
+PERSON-000459,census,linked (name)
+PERSON-000460,,no candidate passed
+PERSON-000461,census,linked (ror)
+PERSON-000462,census,linked (name)
+PERSON-000463,census,linked (ror)
+PERSON-000464,,no candidate passed
+PERSON-000465,census,linked (name)
+PERSON-000466,census,linked (ror)
+PERSON-000467,census,linked (name)
+PERSON-000468,,no candidate passed
+PERSON-000469,search,linked (ror)
+PERSON-000470,search,linked (name)
+PERSON-000471,,no candidate found
+PERSON-000472,,no candidate found
+PERSON-000473,search,linked (ror)
+PERSON-000474,census,linked (ror)
+PERSON-000475,census,linked (ror)
+PERSON-000476,search,linked (name)
+PERSON-000477,search,linked (name)
+PERSON-000478,page,linked (page)
+PERSON-000479,search,linked (name)
+PERSON-000480,page,linked (page)
+PERSON-000481,search,linked (name)
+PERSON-000482,page,linked (page)
+PERSON-000483,page,linked (page)
+PERSON-000484,page,linked (page)
+PERSON-000485,,no candidate passed
+PERSON-000486,search,linked (name)
+PERSON-000487,page,linked (page)
+PERSON-000488,search,linked (name)
+PERSON-000489,page,linked (page)
+PERSON-000490,page,linked (page)
+PERSON-000491,,no candidate found
+PERSON-000492,page,linked (page)
+PERSON-000493,search,linked (name)
+PERSON-000494,page,linked (page)
+PERSON-000495,page,linked (page)
+PERSON-000496,search,linked (name)
+PERSON-000497,,no candidate found
+PERSON-000498,page,linked (page)
+PERSON-000499,page,linked (page)
+PERSON-000500,search,linked (name)
+PERSON-000501,page,linked (page)
+PERSON-000502,page,linked (page)
+PERSON-000503,search,linked (name)
+PERSON-000504,search,linked (name)
+PERSON-000505,page,linked (page)
+PERSON-000506,page,linked (page)
+PERSON-000507,page,linked (page)
+PERSON-000508,search,linked (name)
+PERSON-000509,search,linked (name)
+PERSON-000510,page,linked (page)
+PERSON-000511,page,linked (page)
+PERSON-000512,page,linked (page)
+PERSON-000513,search,linked (name)
+PERSON-000514,search,linked (name)
+PERSON-000515,page,linked (page)
+PERSON-000516,,no candidate found
+PERSON-000517,,no candidate found
+PERSON-000518,search,linked (name)
+PERSON-000519,page,linked (page)
+PERSON-000520,page,linked (page)
+PERSON-000521,,no candidate found
+PERSON-000522,search,linked (name)
+PERSON-000523,page,linked (page)
+PERSON-000524,,no candidate found
+PERSON-000525,page,linked (page)
+PERSON-000526,page,linked (page)
+PERSON-000527,page,linked (page)
+PERSON-000528,page,linked (page)
+PERSON-000529,search,linked (name)
+PERSON-000530,page,linked (page)
+PERSON-000531,search,linked (name)
+PERSON-000532,page,linked (page)
+PERSON-000533,page,linked (page)
+PERSON-000534,search,linked (name)
+PERSON-000535,page,linked (page)
+PERSON-000536,page,linked (page)
+PERSON-000537,page,linked (page)
+PERSON-000538,page,linked (page)
+PERSON-000539,search,linked (name)
+PERSON-000540,page,linked (page)
+PERSON-000541,,no candidate passed
+PERSON-000542,page,linked (page)
+PERSON-000543,page,linked (page)
+PERSON-000544,search,linked (name)
+PERSON-000545,search,linked (name)
+PERSON-000546,search,linked (name)
+PERSON-000547,page,linked (page)
+PERSON-000548,page,linked (page)
+PERSON-000549,page,linked (page)
+PERSON-000550,page,linked (page)
+PERSON-000551,page,linked (page)
+PERSON-000552,page,linked (page)
+PERSON-000553,search,linked (name)
+PERSON-000554,,no candidate found
+PERSON-000555,,no candidate found
+PERSON-000556,page,linked (page)
+PERSON-000557,page,linked (page)
+PERSON-000558,page,linked (page)
+PERSON-000559,page,linked (page)
+PERSON-000560,search,linked (name)
+PERSON-000561,page,linked (page)
+PERSON-000562,page,linked (page)
+PERSON-000563,search,linked (name)
+PERSON-000564,search,linked (name)
+PERSON-000565,page,linked (page)
+PERSON-000566,page,linked (page)
+PERSON-000567,page,linked (page)
+PERSON-000568,page,linked (page)
+PERSON-000569,page,linked (page)
+PERSON-000570,search,linked (name)
+PERSON-000571,page,linked (page)
+PERSON-000572,search,linked (name)
+PERSON-000573,page,linked (page)
+PERSON-000574,page,linked (page)
+PERSON-000575,,no candidate found
+PERSON-000576,page,linked (page)
+PERSON-000577,page,linked (page)
+PERSON-000578,search,linked (name)
+PERSON-000579,search,linked (name)
+PERSON-000580,page,linked (page)
+PERSON-000581,page,linked (page)
+PERSON-000582,search,linked (name)
+PERSON-000583,page,linked (page)
+PERSON-000584,search,linked (name)
+PERSON-000585,search,linked (name)
+PERSON-000586,,no candidate found
+PERSON-000587,,no candidate passed
+PERSON-000588,,no candidate found
+PERSON-000589,,no candidate found
+PERSON-000590,,no candidate found
+PERSON-000591,search,linked (name)
+PERSON-000592,search,linked (name)
+PERSON-000593,,held: two or more iDs pass
+PERSON-000594,search,linked (name)
+PERSON-000595,search,linked (name)
+PERSON-000596,search,linked (name)
+PERSON-000597,,"held: dedupe alarm, iD shared with PERSON-000812"
+PERSON-000598,search,linked (name)
+PERSON-000599,search,linked (name)
+PERSON-000600,,no candidate found
+PERSON-000601,search,linked (name)
+PERSON-000602,,no candidate found
+PERSON-000603,,no candidate found
+PERSON-000604,search,linked (name)
+PERSON-000605,,no candidate found
+PERSON-000606,,no candidate passed
+PERSON-000607,,no candidate found
+PERSON-000608,,no candidate found
+PERSON-000609,,no candidate found
+PERSON-000610,,no candidate found
+PERSON-000611,,no candidate found
+PERSON-000612,,no candidate found
+PERSON-000613,search,linked (name)
+PERSON-000614,search,linked (name)
+PERSON-000615,,no candidate found
+PERSON-000616,,no candidate found
+PERSON-000617,,no candidate passed
+PERSON-000618,,no candidate found
+PERSON-000619,search,linked (name)
+PERSON-000620,,no candidate found
+PERSON-000621,,no candidate found
+PERSON-000622,,no candidate found
+PERSON-000623,search,linked (name)
+PERSON-000624,,no candidate found
+PERSON-000625,,no candidate found
+PERSON-000626,,no candidate found
+PERSON-000627,,no candidate found
+PERSON-000628,search,linked (name)
+PERSON-000629,page,linked (page)
+PERSON-000630,,no candidate found
+PERSON-000631,page,linked (page)
+PERSON-000632,page,linked (page)
+PERSON-000633,,no candidate found
+PERSON-000634,page,linked (page)
+PERSON-000635,,no candidate found
+PERSON-000636,,no candidate found
+PERSON-000637,page,linked (page)
+PERSON-000638,search,linked (name)
+PERSON-000639,,no candidate found
+PERSON-000640,page,linked (page)
+PERSON-000641,,no candidate found
+PERSON-000642,page,linked (page)
+PERSON-000643,,no candidate found
+PERSON-000644,search,linked (name)
+PERSON-000645,,no candidate found
+PERSON-000646,page,linked (page)
+PERSON-000647,,no candidate found
+PERSON-000648,page,linked (page)
+PERSON-000649,,no candidate found
+PERSON-000650,,no candidate found
+PERSON-000651,page,linked (page)
+PERSON-000652,,no candidate found
+PERSON-000653,,no candidate found
+PERSON-000654,,no candidate found
+PERSON-000655,,no candidate found
+PERSON-000656,,no candidate found
+PERSON-000657,search,linked (name)
+PERSON-000658,,no candidate found
+PERSON-000659,,no candidate found
+PERSON-000660,,no candidate found
+PERSON-000661,,no candidate found
+PERSON-000662,,no candidate found
+PERSON-000663,page,linked (page)
+PERSON-000664,,no candidate found
+PERSON-000665,,no candidate found
+PERSON-000666,,no candidate passed
+PERSON-000667,census,linked (ror)
+PERSON-000668,,no candidate passed
+PERSON-000669,census,linked (ror)
+PERSON-000670,,no candidate passed
+PERSON-000671,census,linked (name)
+PERSON-000672,census,linked (name)
+PERSON-000673,,no candidate found
+PERSON-000674,census,linked (ror)
+PERSON-000675,,no candidate passed
+PERSON-000676,census,linked (name)
+PERSON-000677,search,linked (name)
+PERSON-000678,census,linked (ror)
+PERSON-000679,census,linked (name)
+PERSON-000680,census,linked (name)
+PERSON-000681,,no candidate passed
+PERSON-000682,,no candidate passed
+PERSON-000683,,no candidate passed
+PERSON-000684,search,linked (name)
+PERSON-000685,census,linked (name)
+PERSON-000686,search,linked (name)
+PERSON-000687,census,linked (ror)
+PERSON-000688,,no candidate found
+PERSON-000689,,no candidate found
+PERSON-000690,census,linked (name)
+PERSON-000691,census,linked (name)
+PERSON-000692,census,linked (ror)
+PERSON-000693,census,linked (ror)
+PERSON-000694,census,linked (name)
+PERSON-000695,,no candidate passed
+PERSON-000696,,no candidate passed
+PERSON-000697,census,linked (name)
+PERSON-000698,census,linked (name)
+PERSON-000699,census,linked (ror)
+PERSON-000700,census,linked (name)
+PERSON-000701,census,linked (ror)
+PERSON-000702,census,linked (name)
+PERSON-000703,,no candidate passed
+PERSON-000704,,no candidate passed
+PERSON-000705,,no candidate passed
+PERSON-000706,search,linked (ror)
+PERSON-000707,census,linked (ror)
+PERSON-000708,census,linked (name)
+PERSON-000709,,no candidate passed
+PERSON-000710,census,linked (name)
+PERSON-000711,census,linked (name)
+PERSON-000712,,no candidate found
+PERSON-000713,census,linked (name)
+PERSON-000714,census,linked (ror)
+PERSON-000715,,no candidate passed
+PERSON-000716,census,linked (name)
+PERSON-000717,census,linked (name)
+PERSON-000718,,no candidate passed
+PERSON-000719,,no candidate found
+PERSON-000720,census,linked (ror)
+PERSON-000721,census,linked (name)
+PERSON-000722,census,linked (ror)
+PERSON-000723,search,linked (name)
+PERSON-000724,census,linked (name)
+PERSON-000725,census,linked (name)
+PERSON-000726,census,linked (ror)
+PERSON-000727,census,linked (name)
+PERSON-000728,census,linked (name)
+PERSON-000729,census,linked (ror)
+PERSON-000730,,no candidate passed
+PERSON-000731,census,linked (ror)
+PERSON-000732,census,linked (name)
+PERSON-000733,,no candidate passed
+PERSON-000734,census,linked (name)
+PERSON-000735,,no candidate passed
+PERSON-000736,census,linked (ror)
+PERSON-000737,census,linked (name)
+PERSON-000738,census,linked (name)
+PERSON-000739,,no candidate passed
+PERSON-000740,,no candidate passed
+PERSON-000741,census,linked (name)
+PERSON-000742,census,linked (name)
+PERSON-000743,census,linked (name)
+PERSON-000744,search,linked (ror)
+PERSON-000745,census,linked (name)
+PERSON-000746,census,linked (name)
+PERSON-000747,census,linked (ror)
+PERSON-000748,,no candidate passed
+PERSON-000749,census,linked (name)
+PERSON-000750,,no candidate passed
+PERSON-000751,page,linked (page)
+PERSON-000752,search,linked (ror)
+PERSON-000753,census,linked (name)
+PERSON-000754,census,linked (name)
+PERSON-000755,,no candidate found
+PERSON-000756,page,linked (page)
+PERSON-000757,,no candidate passed
+PERSON-000758,,no candidate passed
+PERSON-000759,,no candidate passed
+PERSON-000760,census,linked (ror)
+PERSON-000761,page,linked (page)
+PERSON-000762,,no candidate passed
+PERSON-000763,census,linked (ror)
+PERSON-000764,,no candidate passed
+PERSON-000765,census,linked (ror)
+PERSON-000766,search,linked (name)
+PERSON-000767,,held: two or more iDs pass
+PERSON-000768,census,linked (name)
+PERSON-000769,,no candidate found
+PERSON-000770,census,linked (name)
+PERSON-000771,search,linked (name)
+PERSON-000772,,no candidate passed
+PERSON-000773,,no candidate found
+PERSON-000774,page,linked (page)
+PERSON-000775,,no candidate passed
+PERSON-000776,page,linked (page)
+PERSON-000777,,no candidate passed
+PERSON-000778,,no candidate found
+PERSON-000779,page,linked (page)
+PERSON-000780,,no candidate passed
+PERSON-000781,,no candidate passed
+PERSON-000782,,no candidate passed
+PERSON-000783,,no candidate found
+PERSON-000784,,no candidate passed
+PERSON-000785,,no candidate passed
+PERSON-000786,,no candidate passed
+PERSON-000787,census,linked (ror)
+PERSON-000788,search,linked (name)
+PERSON-000789,,no candidate passed
+PERSON-000790,census,linked (name)
+PERSON-000791,census,linked (ror)
+PERSON-000792,search,linked (name)
+PERSON-000793,,no candidate found
+PERSON-000794,,no candidate passed
+PERSON-000795,search,linked (ror)
+PERSON-000796,census,linked (ror)
+PERSON-000797,search,linked (name)
+PERSON-000798,,no candidate passed
+PERSON-000799,census,linked (ror)
+PERSON-000800,census,linked (name)
+PERSON-000801,census,linked (name)
+PERSON-000802,census,linked (ror)
+PERSON-000803,,no candidate passed
+PERSON-000804,,no candidate passed
+PERSON-000805,census,linked (name)
+PERSON-000806,,no candidate passed
+PERSON-000807,page,linked (page)
+PERSON-000808,,no candidate passed
+PERSON-000809,,no candidate passed
+PERSON-000810,,no candidate passed
+PERSON-000811,census,linked (name)
+PERSON-000812,,"held: dedupe alarm, iD shared with PERSON-000597"
+PERSON-000813,search,linked (ror)
+PERSON-000814,census,linked (name)
+PERSON-000815,census,linked (ror)
+PERSON-000816,search,linked (name)
+PERSON-000817,,no candidate passed
+PERSON-000818,census,linked (name)
+PERSON-000819,,no candidate found
+PERSON-000820,census,linked (ror)
+PERSON-000821,search,linked (ror)
+PERSON-000822,search,linked (name)
+PERSON-000823,,no candidate passed
+PERSON-000824,census,linked (ror)
+PERSON-000825,,no candidate passed
+PERSON-000826,census,linked (name)
+PERSON-000827,census,linked (name)
+PERSON-000828,census,linked (ror)
+PERSON-000829,census,linked (ror)
+PERSON-000830,,no candidate passed
+PERSON-000831,census,linked (ror)
+PERSON-000832,,no candidate passed
+PERSON-000833,census,linked (ror)
+PERSON-000834,search,linked (name)
+PERSON-000835,,no candidate passed
+PERSON-000836,,no candidate passed
+PERSON-000838,,no candidate passed
+PERSON-000839,,no candidate passed
+PERSON-000840,page,linked (page)
+PERSON-000841,census,linked (name)
+PERSON-000842,census,linked (name)
+PERSON-000843,census,linked (name)
+PERSON-000844,census,linked (name)
+PERSON-000845,census,linked (name)
+PERSON-000846,census,linked (name)
+PERSON-000847,census,linked (name)
+PERSON-000848,,no candidate passed
+PERSON-000849,page,linked (page)
+PERSON-000850,,no candidate passed
+PERSON-000851,,no candidate passed
+PERSON-000852,page,linked (page)
+PERSON-000853,search,linked (ror)
+PERSON-000854,census,linked (name)
+PERSON-000855,,no candidate passed
+PERSON-000856,search,linked (name)
+PERSON-000857,,no candidate passed
+PERSON-000858,page,linked (page)
+PERSON-000859,census,linked (ror)
+PERSON-000860,,no candidate passed
+PERSON-000861,census,linked (name)
+PERSON-000862,,no candidate passed
+PERSON-000863,,no candidate passed
+PERSON-000864,census,linked (ror)
+PERSON-000865,census,linked (ror)
+PERSON-000866,census,linked (name)
+PERSON-000867,census,linked (name)
+PERSON-000868,,no candidate found
+PERSON-000869,census,linked (ror)
+PERSON-000870,,no candidate passed
+PERSON-000871,census,linked (ror)
+PERSON-000872,census,linked (ror)
+PERSON-000873,census,linked (name)
+PERSON-000874,census,linked (ror)
+PERSON-000875,census,linked (ror)
+PERSON-000876,census,linked (name)
+PERSON-000877,census,linked (name)
+PERSON-000878,census,linked (ror)
+PERSON-000879,,no candidate passed
+PERSON-000880,census,linked (name)
+PERSON-000881,,no candidate found
+PERSON-000882,,no candidate passed
+PERSON-000883,census,linked (name)
+PERSON-000884,,no candidate found
+PERSON-000885,,no candidate passed
+PERSON-000886,census,linked (name)
+PERSON-000887,census,linked (ror)
+PERSON-000888,search,linked (name)
+PERSON-000889,census,linked (ror)
+PERSON-000890,census,linked (ror)
+PERSON-000891,,no candidate passed
+PERSON-000892,page,linked (page)
+PERSON-000893,,no candidate passed
+PERSON-000894,census,linked (name)
+PERSON-000895,census,linked (name)
+PERSON-000896,census,linked (name)
+PERSON-000897,census,linked (name)
+PERSON-000898,,no candidate passed
+PERSON-000899,census,linked (ror)
+PERSON-000900,census,linked (name)
+PERSON-000901,census,linked (name)
+PERSON-000902,census,linked (ror)
+PERSON-000903,search,linked (name)
+PERSON-000904,,no candidate found
+PERSON-000905,search,linked (name)
+PERSON-000906,census,linked (name)
+PERSON-000907,census,linked (name)
+PERSON-000908,census,linked (name)
+PERSON-000909,census,linked (name)
+PERSON-000910,page,linked (page)
+PERSON-000911,,no candidate found
+PERSON-000912,search,linked (name)
+PERSON-000913,,no candidate passed
+PERSON-000914,census,linked (name)
+PERSON-000915,search,linked (ror)
+PERSON-000916,census,linked (ror)
+PERSON-000917,census,linked (name)
+PERSON-000918,census,linked (ror)
+PERSON-000919,census,linked (ror)
+PERSON-000920,census,linked (name)
+PERSON-000921,,no candidate passed
+PERSON-000922,search,linked (name)
+PERSON-000923,census,linked (name)
+PERSON-000924,,no candidate passed
+PERSON-000925,,no candidate passed
+PERSON-000926,census,linked (name)
+PERSON-000927,census,linked (ror)
+PERSON-000928,,no candidate passed
+PERSON-000929,census,linked (name)
+PERSON-000930,census,linked (name)
+PERSON-000931,census,linked (ror)
+PERSON-000932,census,linked (ror)
+PERSON-000933,search,linked (ror)
+PERSON-000934,census,linked (ror)
+PERSON-000935,census,linked (ror)
+PERSON-000936,census,linked (name)
+PERSON-000937,,no candidate passed
+PERSON-000938,census,linked (name)
+PERSON-000939,census,linked (name)
+PERSON-000940,,no candidate found
+PERSON-000941,,no candidate passed
+PERSON-000942,census,linked (name)
+PERSON-000943,search,linked (ror)
+PERSON-000944,search,linked (ror)
+PERSON-000945,census,linked (ror)
+PERSON-000946,census,linked (name)
+PERSON-000947,,no candidate passed
+PERSON-000948,search,linked (name)
+PERSON-000949,search,linked (ror)
+PERSON-000950,census,linked (ror)
+PERSON-000952,census,linked (name)
+PERSON-000954,page,linked (page)
+PERSON-000955,census,linked (ror)
+PERSON-000956,search,linked (name)
+PERSON-000957,,no candidate found
+PERSON-000958,search,linked (name)
+PERSON-000960,,no candidate passed
+PERSON-000961,page,linked (page)
+PERSON-000962,,no candidate passed
+PERSON-000964,census,linked (ror)
+PERSON-000965,census,linked (ror)
+PERSON-000966,census,linked (ror)
+PERSON-000967,,no candidate passed
+PERSON-000968,census,linked (ror)
+PERSON-000969,census,linked (ror)
+PERSON-000970,,no candidate found
+PERSON-000971,,held: two or more iDs pass
+PERSON-000972,census,linked (ror)
+PERSON-000974,,no candidate passed
+PERSON-000975,census,linked (ror)
+PERSON-000977,census,linked (name)
+PERSON-000978,census,linked (name)
+PERSON-000980,census,linked (name)
+PERSON-000981,,no candidate passed
+PERSON-000983,,no candidate passed
+PERSON-000984,,no candidate passed
+PERSON-000985,page,linked (page)
+PERSON-000986,search,linked (ror)
+PERSON-000987,census,linked (ror)
+PERSON-000988,census,linked (name)
+PERSON-000989,,no candidate passed
+PERSON-000990,,no candidate passed
+PERSON-000991,,no candidate passed
+PERSON-000992,census,linked (ror)
+PERSON-000993,,no candidate passed
+PERSON-000994,census,linked (ror)
+PERSON-000995,,no candidate passed
+PERSON-000997,,no candidate passed
+PERSON-000998,,no candidate passed
+PERSON-000999,,no candidate passed
+PERSON-001000,census,linked (name)
+PERSON-001001,,no candidate passed
+PERSON-001002,,no candidate passed
+PERSON-001003,,no candidate passed
+PERSON-001004,census,linked (name)
+PERSON-001006,search,linked (name)
+PERSON-001007,census,linked (ror)
+PERSON-001008,census,linked (ror)
+PERSON-001009,,no candidate passed
+PERSON-001010,,no candidate found
+PERSON-001011,,held: two or more iDs pass
+PERSON-001012,search,linked (name)
+PERSON-001014,search,linked (ror)
+PERSON-001015,search,linked (ror)
+PERSON-001016,search,linked (ror)
+PERSON-001017,,no candidate found
+PERSON-001018,,no candidate found
+PERSON-001019,,no candidate found
+PERSON-001020,census,linked (name)
+PERSON-001021,census,linked (ror)
+PERSON-001022,search,linked (name)
+PERSON-001023,census,linked (name)
+PERSON-001024,census,linked (ror)
+PERSON-001025,census,linked (ror)
+PERSON-001026,,held: two or more iDs pass
+PERSON-001027,census,linked (ror)
+PERSON-001028,page,linked (page)
+PERSON-001029,,no candidate passed
+PERSON-001030,census,linked (name)
+PERSON-001031,census,linked (name)
+PERSON-001032,census,linked (name)
+PERSON-001033,search,linked (ror)
+PERSON-001034,census,linked (ror)
+PERSON-001036,search,linked (name)
+PERSON-001037,census,linked (ror)
+PERSON-001038,census,linked (name)
+PERSON-001039,search,linked (ror)
+PERSON-001040,search,linked (ror)
+PERSON-001041,search,linked (name)
+PERSON-001042,page,linked (page)
+PERSON-001043,census,linked (ror)
+PERSON-001044,census,linked (ror)
+PERSON-001045,search,linked (ror)
+PERSON-001046,census,linked (ror)
+PERSON-001047,,no candidate passed
+PERSON-001048,search,linked (name)
+PERSON-001049,search,linked (ror)
+PERSON-001050,census,linked (name)
+PERSON-001051,,no candidate passed
+PERSON-001052,,no candidate passed
+PERSON-001053,,no candidate passed
+PERSON-001054,,no candidate passed
+PERSON-001055,census,linked (name)
+PERSON-001057,,no candidate found
+PERSON-001058,search,linked (ror)
+PERSON-001059,census,linked (name)
+PERSON-001060,,no candidate passed
+PERSON-001061,page,linked (page)
+PERSON-001062,,no candidate passed
+PERSON-001063,,no candidate found
+PERSON-001064,search,linked (name)
+PERSON-001065,census,linked (name)
+PERSON-001066,census,linked (name)
+PERSON-001067,census,linked (ror)
+PERSON-001068,census,linked (name)
+PERSON-001069,,no candidate passed
+PERSON-001070,,no candidate passed
+PERSON-001071,,no candidate passed
+PERSON-001072,census,linked (ror)
+PERSON-001073,,no candidate passed
+PERSON-001074,census,linked (ror)
+PERSON-001075,census,linked (name)
+PERSON-001076,census,linked (name)
+PERSON-001077,census,linked (ror)
+PERSON-001078,census,linked (name)
+PERSON-001079,census,linked (ror)
+PERSON-001080,search,linked (ror)
+PERSON-001081,,no candidate found
+PERSON-001082,census,linked (ror)
+PERSON-001083,,no candidate found
+PERSON-001084,,no candidate passed
+PERSON-001085,search,linked (name)
+PERSON-001086,search,linked (name)
+PERSON-001087,,no candidate passed
+PERSON-001088,census,linked (name)
+PERSON-001089,census,linked (ror)
+PERSON-001090,census,linked (name)
+PERSON-001091,search,linked (name)
+PERSON-001092,census,linked (name)
+PERSON-001093,census,linked (name)
+PERSON-001094,,no candidate found
+PERSON-001095,search,linked (name)
+PERSON-001096,census,linked (name)
+PERSON-001097,,no candidate found
+PERSON-001098,search,linked (name)
+PERSON-001099,search,linked (name)
+PERSON-001100,census,linked (name)
+PERSON-001101,census,linked (name)
+PERSON-001102,,no candidate found
+PERSON-001103,census,linked (ror)
+PERSON-001104,,no candidate passed
+PERSON-001105,census,linked (name)
+PERSON-001106,search,linked (name)
+PERSON-001107,census,linked (ror)
+PERSON-001108,search,linked (ror)
+PERSON-001109,,no candidate found
+PERSON-001110,census,linked (ror)
+PERSON-001111,census,linked (name)
+PERSON-001112,search,linked (ror)
+PERSON-001113,,no candidate passed
+PERSON-001114,,no candidate found
+PERSON-001115,page,linked (page)
+PERSON-001116,,no candidate passed
+PERSON-001117,census,linked (name)
+PERSON-001118,census,linked (name)
+PERSON-001119,census,linked (name)
+PERSON-001120,search,linked (ror)
+PERSON-001121,search,linked (ror)
+PERSON-001122,,no candidate passed
+PERSON-001123,search,linked (name)
+PERSON-001124,,no candidate passed
+PERSON-001125,search,linked (name)
+PERSON-001126,,no candidate found
+PERSON-001127,census,linked (ror)
+PERSON-001128,search,linked (ror)
+PERSON-001129,census,linked (name)
+PERSON-001130,census,linked (ror)
+PERSON-001131,,no candidate found
+PERSON-001132,,no candidate passed
+PERSON-001133,census,linked (name)
+PERSON-001134,search,linked (name)
+PERSON-001135,,no candidate passed
+PERSON-001136,,no candidate passed
+PERSON-001137,,no candidate passed
+PERSON-001138,search,linked (ror)
+PERSON-001139,census,linked (ror)
+PERSON-001140,,no candidate passed
+PERSON-001141,,no candidate passed
+PERSON-001142,,no candidate found
+PERSON-001143,search,linked (name)
+PERSON-001144,census,linked (ror)
+PERSON-001145,census,linked (ror)
+PERSON-001146,census,linked (ror)
+PERSON-001147,census,linked (name)
+PERSON-001148,,no candidate passed
+PERSON-001149,census,linked (name)
+PERSON-001150,census,linked (name)
+PERSON-001151,,no candidate found
+PERSON-001152,census,linked (name)
+PERSON-001153,census,linked (name)
+PERSON-001154,,no candidate found
+PERSON-001155,page,linked (page)
+PERSON-001156,census,linked (ror)
+PERSON-001157,,no candidate passed
+PERSON-001158,census,linked (name)
+PERSON-001159,search,linked (ror)
+PERSON-001160,,no candidate passed
+PERSON-001161,census,linked (ror)
+PERSON-001162,search,linked (ror)
+PERSON-001163,census,linked (name)
+PERSON-001164,,no candidate found
+PERSON-001165,,no candidate passed
+PERSON-001166,census,linked (ror)
+PERSON-001167,census,linked (name)
+PERSON-001168,,no candidate found
+PERSON-001169,census,linked (ror)
+PERSON-001170,,no candidate passed
+PERSON-001171,,no candidate passed
+PERSON-001172,search,linked (ror)
+PERSON-001173,,no candidate passed
+PERSON-001174,census,linked (name)
+PERSON-001175,,no candidate passed
+PERSON-001176,census,linked (ror)
+PERSON-001177,census,linked (ror)
+PERSON-001178,,no candidate passed
+PERSON-001179,,no candidate passed
+PERSON-001180,search,linked (name)
+PERSON-001181,,no candidate found
+PERSON-001182,,no candidate passed
+PERSON-001183,census,linked (name)
+PERSON-001184,,no candidate found
+PERSON-001185,census,linked (ror)
+PERSON-001186,,no candidate passed
+PERSON-001187,,no candidate found
+PERSON-001188,search,linked (name)
+PERSON-001189,search,linked (ror)
+PERSON-001190,census,linked (ror)
+PERSON-001191,census,linked (name)
+PERSON-001192,census,linked (ror)
+PERSON-001193,census,linked (name)
+PERSON-001194,search,linked (name)
+PERSON-001195,census,linked (name)
+PERSON-001196,,no candidate found
+PERSON-001197,census,linked (name)
+PERSON-001198,,no candidate passed
+PERSON-001199,,no candidate passed
+PERSON-001200,,no candidate passed
+PERSON-001201,census,linked (ror)
+PERSON-001202,census,linked (ror)
+PERSON-001203,,no candidate passed
+PERSON-001204,,no candidate passed
+PERSON-001205,,no candidate passed
+PERSON-001206,census,linked (name)
+PERSON-001207,census,linked (ror)
+PERSON-001208,census,linked (ror)
+PERSON-001209,census,linked (name)
+PERSON-001210,census,linked (ror)
+PERSON-001211,census,linked (ror)
+PERSON-001212,,no candidate passed
+PERSON-001213,,no candidate passed
+PERSON-001214,census,linked (name)
+PERSON-001215,,no candidate found
+PERSON-001216,census,linked (ror)
+PERSON-001217,census,linked (name)
+PERSON-001218,,no candidate passed
+PERSON-001219,,no candidate passed
+PERSON-001220,census,linked (ror)
+PERSON-001221,,no candidate passed
+PERSON-001222,census,linked (ror)
+PERSON-001223,census,linked (ror)
+PERSON-001224,,no candidate passed
+PERSON-001225,census,linked (name)
+PERSON-001226,search,linked (ror)
+PERSON-001227,,no candidate found
+PERSON-001228,census,linked (ror)
+PERSON-001229,census,linked (name)
+PERSON-001230,census,linked (name)
+PERSON-001231,search,linked (name)
+PERSON-001232,search,linked (ror)
+PERSON-001233,census,linked (ror)
+PERSON-001234,census,linked (ror)
+PERSON-001235,census,linked (name)
+PERSON-001236,census,linked (ror)
+PERSON-001237,census,linked (name)
+PERSON-001238,census,linked (ror)
+PERSON-001239,census,linked (name)
+PERSON-001240,,no candidate found
+PERSON-001241,search,linked (ror)
+PERSON-001242,census,linked (ror)
+PERSON-001243,search,linked (name)
+PERSON-001244,census,linked (ror)
+PERSON-001245,census,linked (ror)
+PERSON-001246,page,linked (page)
+PERSON-001247,census,linked (ror)
+PERSON-001248,census,linked (name)
+PERSON-001249,search,linked (ror)
+PERSON-001250,,no candidate passed
+PERSON-001251,search,linked (ror)
+PERSON-001252,search,linked (ror)
+PERSON-001253,census,linked (name)
+PERSON-001254,search,linked (ror)
+PERSON-001255,census,linked (name)
+PERSON-001256,,no candidate found
+PERSON-001257,search,linked (name)
+PERSON-001258,census,linked (ror)
+PERSON-001259,,no candidate passed
+PERSON-001260,,no candidate found
+PERSON-001261,search,linked (name)
+PERSON-001262,search,linked (ror)
+PERSON-001263,census,linked (name)
+PERSON-001264,census,linked (ror)
+PERSON-001265,,no candidate found
+PERSON-001266,search,linked (name)
+PERSON-001267,search,linked (name)
+PERSON-001268,search,linked (name)
+PERSON-001269,census,linked (ror)
+PERSON-001270,census,linked (ror)
+PERSON-001271,search,linked (ror)
+PERSON-001272,,no candidate passed
+PERSON-001273,census,linked (ror)
+PERSON-001274,,no candidate found
+PERSON-001275,search,linked (ror)
+PERSON-001276,census,linked (ror)
+PERSON-001277,census,linked (name)
+PERSON-001278,census,linked (name)
+PERSON-001279,census,linked (name)
+PERSON-001280,,held: two or more iDs pass
+PERSON-001281,search,linked (ror)
+PERSON-001282,census,linked (name)
+PERSON-001283,,no candidate found
+PERSON-001284,search,linked (name)
+PERSON-001285,,no candidate found
+PERSON-001286,census,linked (name)
+PERSON-001287,census,linked (name)
+PERSON-001288,census,linked (name)
+PERSON-001289,,no candidate passed
+PERSON-001290,census,linked (ror)
+PERSON-001291,census,linked (ror)
+PERSON-001292,search,linked (ror)
+PERSON-001293,census,linked (ror)
+PERSON-001294,,no candidate passed
+PERSON-001295,census,linked (name)
+PERSON-001296,,no candidate passed
+PERSON-001297,,no candidate passed
+PERSON-001298,,no candidate passed
+PERSON-001299,,no candidate passed
+PERSON-001300,,no candidate passed
+PERSON-001301,,no candidate passed
+PERSON-001302,,no candidate found
+PERSON-001303,census,linked (ror)
+PERSON-001304,,no candidate found
+PERSON-001305,,no candidate found
+PERSON-001306,search,linked (ror)
+PERSON-001307,,no candidate passed
+PERSON-001308,census,linked (name)
+PERSON-001309,census,linked (ror)
+PERSON-001310,search,linked (ror)
+PERSON-001311,,no candidate passed
+PERSON-001312,,no candidate passed
+PERSON-001313,,no candidate found
+PERSON-001314,,no candidate passed
+PERSON-001315,census,linked (name)
+PERSON-001316,census,linked (ror)
+PERSON-001317,census,linked (name)
+PERSON-001318,,no candidate passed
+PERSON-001319,census,linked (name)
+PERSON-001320,search,linked (ror)
+PERSON-001321,search,linked (name)
+PERSON-001322,,no candidate passed
+PERSON-001323,,no candidate passed
+PERSON-001324,,no candidate passed
+PERSON-001325,census,linked (name)
+PERSON-001326,search,linked (ror)
+PERSON-001327,,no candidate found
+PERSON-001328,,no candidate found
+PERSON-001329,,no candidate found
+PERSON-001330,search,linked (name)
+PERSON-001331,,no candidate passed
+PERSON-001332,census,linked (name)
+PERSON-001333,census,linked (ror)
+PERSON-001334,census,linked (ror)
+PERSON-001335,search,linked (name)
+PERSON-001336,,no candidate passed
+PERSON-001337,,no candidate passed
+PERSON-001338,search,linked (ror)
+PERSON-001339,census,linked (ror)
+PERSON-001340,search,linked (ror)
+PERSON-001341,search,linked (ror)
+PERSON-001342,,no candidate found
+PERSON-001343,census,linked (ror)
+PERSON-001344,search,linked (name)
+PERSON-001345,search,linked (ror)
+PERSON-001346,census,linked (ror)
+PERSON-001347,page,linked (page)
+PERSON-001348,census,linked (ror)
+PERSON-001349,search,linked (ror)
+PERSON-001350,,no candidate found
+PERSON-001351,,no candidate passed
+PERSON-001352,census,linked (name)
+PERSON-001353,,no candidate passed
+PERSON-001354,,no candidate passed
+PERSON-001355,,no candidate passed
+PERSON-001356,census,linked (ror)
+PERSON-001357,,no candidate passed
+PERSON-001358,census,linked (name)
+PERSON-001359,,no candidate found
+PERSON-001360,,no candidate passed
+PERSON-001361,census,linked (ror)
+PERSON-001362,,no candidate passed
+PERSON-001363,census,linked (ror)
+PERSON-001364,census,linked (name)
+PERSON-001365,census,linked (name)
+PERSON-001366,census,linked (name)
+PERSON-001367,census,linked (ror)
+PERSON-001368,census,linked (ror)
+PERSON-001369,census,linked (name)
+PERSON-001370,census,linked (ror)
+PERSON-001371,,no candidate passed
+PERSON-001372,,no candidate passed
+PERSON-001373,,no candidate passed
+PERSON-001374,,no candidate passed
+PERSON-001375,census,linked (name)
+PERSON-001376,,no candidate passed
+PERSON-001377,,no candidate passed
+PERSON-001378,,no candidate passed
+PERSON-001379,,no candidate passed
+PERSON-001380,search,linked (ror)
+PERSON-001381,census,linked (ror)
+PERSON-001382,page,linked (page)
+PERSON-001383,search,linked (ror)
+PERSON-001384,census,linked (ror)
+PERSON-001385,search,linked (ror)
+PERSON-001386,,no candidate passed
+PERSON-001387,census,linked (ror)
+PERSON-001388,census,linked (ror)
+PERSON-001389,,no candidate passed
+PERSON-001390,,no candidate passed
+PERSON-001391,census,linked (name)
+PERSON-001392,,no candidate passed
+PERSON-001393,,no candidate passed
+PERSON-001394,census,linked (ror)
+PERSON-001395,,no candidate found
+PERSON-001396,census,linked (ror)
+PERSON-001397,census,linked (name)
+PERSON-001398,census,linked (ror)
+PERSON-001399,,no candidate found
+PERSON-001400,,no candidate found
+PERSON-001401,census,linked (name)
+PERSON-001402,,no candidate passed
+PERSON-001403,,no candidate found
+PERSON-001404,,no candidate found
+PERSON-001405,,no candidate found
+PERSON-001406,search,linked (ror)
+PERSON-001407,search,linked (ror)
+PERSON-001408,census,linked (ror)
+PERSON-001409,search,linked (name)
+PERSON-001410,,no candidate passed
+PERSON-001411,,no candidate passed
+PERSON-001412,search,linked (ror)
+PERSON-001413,,no candidate found
+PERSON-001414,,no candidate found
+PERSON-001415,census,linked (ror)
+PERSON-001416,census,linked (name)
+PERSON-001417,search,linked (name)
+PERSON-001418,,no candidate found
+PERSON-001419,,no candidate found
+PERSON-001420,search,linked (name)
+PERSON-001421,search,linked (name)
+PERSON-001422,,no candidate passed
+PERSON-001423,,no candidate passed
+PERSON-001424,census,linked (name)
+PERSON-001425,page,linked (page)
+PERSON-001426,,no candidate passed
+PERSON-001427,,no candidate passed
+PERSON-001428,,no candidate found
+PERSON-001429,,no candidate found
+PERSON-001430,page,linked (page)
+PERSON-001431,,no candidate passed
+PERSON-001432,,no candidate found
+PERSON-001433,,no candidate found
+PERSON-001434,search,linked (name)
+PERSON-001435,search,linked (ror)
+PERSON-001436,search,linked (name)
+PERSON-001437,,no candidate passed
+PERSON-001438,,no candidate found
+PERSON-001439,search,linked (name)
+PERSON-001440,,no candidate passed
+PERSON-001441,,no candidate passed
+PERSON-001442,search,linked (name)
+PERSON-001443,search,linked (name)
+PERSON-001444,search,linked (name)
+PERSON-001445,search,linked (name)
+PERSON-002000,census,linked (ror)
+PERSON-002003,,no candidate passed
+PERSON-002004,census,linked (ror)
+PERSON-002005,,no candidate found
+PERSON-002007,,no candidate passed
+PERSON-002009,census,linked (name)
+PERSON-002010,search,linked (ror)
+PERSON-002011,search,linked (name)
+PERSON-002013,search,linked (name)
+PERSON-002014,census,linked (name)
+PERSON-002016,census,linked (name)
+PERSON-002100,census,linked (name)
+PERSON-002103,,no candidate passed
+PERSON-002104,search,linked (name)
+PERSON-002105,search,linked (name)
+PERSON-002108,,no candidate passed
+PERSON-002109,census,linked (ror)
+PERSON-002110,search,linked (name)
+PERSON-002111,,no candidate found
+PERSON-002112,,no candidate passed
+PERSON-002113,,no candidate found
+PERSON-002115,,no candidate found
+PERSON-002116,search,linked (name)

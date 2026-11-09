@@ -216,6 +216,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - Details: `tasks/programs-db-crosswalk-2026-11-03/README.md`.
 - [ ] `in-pr:claude-code 2026-11-03` **Census-gap researcher wave (packet lanes ×6):** 73 people records added, all Gate A and Gate B verified on the universities' own pages. 51 held: 47 are already in the Atlas and 4 were held on integrator review. Details: `tasks/census-gap-people-2026-11-03/README.md`.
 - [ ] `in-pr:claude-code 2026-11-03` **People wave 2** (`tasks/census-gap-2-2026-11-03/`): +64 people records, all raw-checked (Gate A with surname proximity). 17 from the census-gap follow-ups below (JHU and Columbia via Tavily, Northeastern roster, the 79 uncertain), 32 from band-A census leads, 15 from a 60-person band-B sample; 22 held. Owner rulings B-CG-1..4 applied.
+- [ ] `in-pr:claude-code 2026-11-09` **ORCID iDs for people records (§4.21, born empty on 11/04):** 910 of 1,454 people records linked; 10 held, including one dedupe alarm (two Jie Xu records, Argonne and UChicago, share one iD). `tasks/people-orcid-2026-11-09/README.md`.
 - [ ] `open` **OWNER: run the remaining 572 band-B census leads?** The sample admitted 15 of 60 (25%; band A 24%), so the rest would yield ~140 records (projection). `tasks/census-gap-2-2026-11-03/README.md`. Still open: Herrera-Alonso (held at another institution; current home not re-checked, jhu.edu blocked).
 - [ ] `open` **Census-gap follow-ups:**
   - Re-run Johns Hopkins and Columbia (both bot-walled).
