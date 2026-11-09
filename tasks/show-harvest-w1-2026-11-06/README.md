@@ -1,5 +1,20 @@
 # Show harvest, wave 1 (2026-11-06)
 
+> **Review, 2026-11-09:** 7 of the 161 rows are dropped, leaving **154** (1,142 → 1,296). Codex and grok each
+> reviewed a 60-row sample, and the integrator then checked all 161 for the pattern they found: a parent or brand name
+> credited as a different entity through `trade_names`.
+>
+> | Dropped | Why |
+> |-|-|
+> | 4 | A different entity: Coperion → Hillenbrand, Cimatron → SigmaTEK, Barnes Molding Solutions → Synventive, and a bare "Continental" |
+> | 2 | The Adhesives & Bonding sponsor page is undated, so the edition year is unresolved |
+> | 1 | Amcor Flexibles credited to a rigid-PET plant record |
+>
+> The other 22 trade-name matches are the same company, for example Nouryon, Magris Talc and Wittmann USA. On 102
+> rows the staging key names a later edition. Their notes now say the row year follows the year printed in the source,
+> which is what both reviewers checked. Details are in `review_fixes.py` and `review_drops.csv`. The per-event table
+> below is from before the drops.
+
 **+161 participation rows** in `data/event_participation.csv` (1,142 → 1,303): 87 exhibitor, 36 sponsor, 38 speaker
 rows, for 12 event series already held in `data/events.csv`. All tier A (the organizer's own published list,
 SCHEMA §4.12.2). No organization, event or other row is added or changed.
