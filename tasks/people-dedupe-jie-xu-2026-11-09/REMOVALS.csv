@@ -1,0 +1,2 @@
+table,key,reason
+people,PERSON-000812,"merged into PERSON-000597 (same person: UChicago assistant professor with a joint Argonne appointment); id retired, never reused; logged in inclusion_log.csv (PR #260)"
