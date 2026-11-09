@@ -60,9 +60,9 @@ def main():
     eh, ev, ee = read(ROOT / "data/evidence_people.csv")
     assert EVD not in {e["evidence_id"] for e in ev} and not any(e["record_id"] == DROP for e in ev)
     ev.append({"evidence_id": EVD, "record_table": "people", "record_id": KEEP, "claim_type": "parent",
-               "claim_detail": f"institution_org_id {UNI}; public_profile_url {URL}", "source_class": "own_site",
-               "source_ref": URL, "observed_date": DATE, "tier_effect": "supports_A", "created_by": BY,
-               "notes": "Raw words in order: " + TITLE + ". Merged duplicate " + DROP + " (joint appointment at Argonne)."})
+               "claim_detail": f"institution_org_id {UNI}; public_profile_url {URL}; merged duplicate {DROP}",
+               "source_class": "own_site", "source_ref": URL, "observed_date": DATE, "tier_effect": "supports_A",
+               "created_by": BY, "notes": "Raw words in order: " + TITLE})  # the page's words only (grok, #260)
     lh, log, le = read(ROOT / "data/inclusion_log.csv")
     log.append({"date": DATE, "entity": f"{DROP} Jie Xu",
                 "decision": f"REMOVED: duplicate of {KEEP} (same person; University of Chicago assistant professor with a "
