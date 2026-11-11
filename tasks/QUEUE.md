@@ -300,7 +300,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [x] `claimed:grok 2026-11-04` IA skimpy-state wave (tasks/ia-skimpy-2026-11-04), PR on agent/grok/ia-skimpy
 - [x] `claimed:grok 2026-11-04` AL skimpy-state wave (tasks/al-skimpy-2026-11-04), PR on agent/grok/al-skimpy
 ## Campaign claims (2026-11-04, see tasks/CAMPAIGN.md)
-- [ ] `claimed:claude-code 2026-11-04` **STRONG state waves:** MI, IL (in progress); CA, TX, FL, GA, WI, MA (next). IN pilot = #75.
+- [ ] `claimed:claude-code 2026-11-04` **STRONG state waves:** MI, IL (in progress); CA, TX, FL, GA, WI, MA (next). IN pilot = #75. [Resync note 2026-11-10: PR #75 closed unmerged; the state waves this item tracked landed piecemeal via later merged PRs (e.g. #191/#194/#198/#202 and the CORROBORATED batches) — left open for owner disposition.]
 - [ ] `claimed:claude-code 2026-11-04` **PIC-18 capability pass + record-health fixes; evidence repair round 2 (scope).**
 
 ### from PR #39
@@ -321,6 +321,8 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 - [ ] `open` **Program leads, remaining 275 non-OH/PA leads** (`tasks/program-leads-2026-11-03/worklist.csv`) and the 147 unapplied completions proposals.
 
 ## Integrity + re-verification campaign (2026-11-06, controller: claude-code thread thr_9i2c6byhcz)
+
+> **Reconciliation 2026-11-10 (orchestrator resync):** every `in-pr` item in this section whose referenced PR has merged was checked off (54 items), verified against the GitHub PR record (213 merged / 47 closed-unmerged / 0 open after PR #261). The street_key item (#197) was also checked off: its PR closed unmerged but the fix is on main. Items citing no PR number were not machine-reconciled and may include work that has since landed under a different label.
 Status snapshot and provenance: `tasks/campaign-hygiene-2026-11-06/README.md`. `done` means the bounded PR merged; it does not close its remaining research holds. Open PRs remain unchecked. Original ID reservations are retained below; gaps remain permanent. The registry restore merged; registry and derived-field writes still require their own authorization.
 
 ### Merged passes
@@ -364,56 +366,56 @@ Status snapshot and provenance: `tasks/campaign-hygiene-2026-11-06/README.md`. `
 
 ### PRs awaiting merge
 
-- [ ] `in-pr:codex 2026-11-06 #145` **Fill newsroom URLs for 115 active Tier-1 organizations** Branch `agent/codex/newsroom-urls`. Original reserved IDs: EVD-230000–239999.
-- [ ] `in-pr:codex 2026-11-06 #149` **Settle Yavitt rank and evidence people title/census rechecks** Branch `agent/codex/people-settle`. Original reserved IDs: PERSON-002000–002499, EVD-280000–284999.
-- [ ] `in-pr:codex 2026-11-06 #151` **Illinois CORROBORATED residue: three provisional sites** Branch `agent/codex/corroborated-il-2`.
-- [ ] `in-pr:codex 2026-11-06 #152` **Fill newsroom URLs for 38 active PIC18 organizations outside Tier-1** Branch `agent/codex/newsroom-urls-pic18`.
-- [ ] `in-pr:codex 2026-11-06 #155` **L1 continuation: audit 3,586 OH/PA evidence rows; archives pending** Branch `agent/codex/evidence-reverify-archive-oh-pa`.
-- [ ] `in-pr:codex 2026-11-06 #156` **Recover 19 held PIC-18 site streets from physical operator witnesses** Branch `agent/codex/oh-street-address-2`.
-- [ ] `in-pr:codex 2026-11-06 #158` **North Carolina CORROBORATED: 14 tier C sites, 2 duplicates, 94 holds** Branch `agent/codex/corroborated-nc`.
-- [ ] `in-pr:codex 2026-11-06 #159` **PIC-18 residue: add Peak Performance and reconcile 26 leads** Branch `agent/codex/pic18-discovery-residue`.
-- [ ] `in-pr:codex 2026-11-06 #160` **Verify four named programs from the next 100 national leads** Branch `agent/codex/program-leads-3`.
-- [ ] `in-pr:codex 2026-11-06 #162` **L5: scout APR, Vinyl, ACMA, EPA CDR and SAM public extracts** Branch `agent/codex/source-scout-4`.
-- [ ] `in-pr:codex 2026-11-06 #164` **Screen 143 MO and SC CORROBORATED clusters; add 10 provisional sites** Branch `agent/codex/corroborated-mo-sc`.
-- [ ] `in-pr:codex 2026-11-06 #165` **Repair 45 PIC-18 own-site evidence claims, append only** Branch `agent/codex/evidence-repair-3`.
-- [ ] `in-pr:codex 2026-11-06 #166` **CA CORROBORATED batch 2: 18 establishments from next 40 clusters** Branch `agent/codex/corroborated-ca-2`.
-- [ ] `in-pr:codex 2026-11-06 #168` **Apply 34 aligned IPEDS completions proposals; hold ambiguous award counts** Branch `agent/codex/program-completions-2`.
-- [ ] `in-pr:codex 2026-11-06 #169` **Fill newsroom URLs for 167 active organizations outside Tier-1 and PIC18** Branch `agent/codex/newsroom-urls-other`.
-- [ ] `in-pr:codex 2026-11-06 #170` **TX CORROBORATED batch 2: 17 establishments, conflicting codes held** Branch `agent/codex/corroborated-tx-2`.
-- [ ] `in-pr:codex 2026-11-06 #175` **CA CORROBORATED batch 3: 12 establishments, 28 explicit holds** Branch `agent/codex/corroborated-ca-3`.
-- [ ] `in-pr:codex 2026-11-06 #176` **Repair 62 Ohio and Pennsylvania own-site evidence claims** Branch `agent/codex/evidence-repair-4`.
-- [ ] `in-pr:codex 2026-11-06 #178` **CA CORROBORATED batch 4: 8 establishments, service-center conflicts held** Branch `agent/codex/corroborated-ca-4`.
-- [ ] `in-pr:codex 2026-11-06 #179` **Enrich 100 Tier-1 organizations with own-site markets and certifications** Branch `agent/codex/markets-certs-tier1-round3`.
-- [ ] `in-pr:codex 2026-11-06 #180` **TX CORROBORATED ranks 121–160: four provisional plants** Branch `agent/codex/corroborated-tx-4`.
-- [ ] `in-pr:codex 2026-11-06 #181` **Add 53 equipment rows from Ohio and Pennsylvania facilities** Branch `agent/codex/equipment-wave-2`.
-- [ ] `in-pr:codex 2026-11-06 #182` **L8 continuation: adjudicate all 144 remaining liveness priorities** Branch `agent/codex/liveness-continuation-144`.
-- [ ] `in-pr:codex 2026-11-06 #183` **PIC18 round 5: nine tier restatements and combined raw T1 projection** Branch `agent/codex/pic18-record-health-5`.
-- [ ] `in-pr:codex 2026-11-06 #184` **L5: scout Ohio air permits, OCS Blue, CAA SB54 and NSF61 routes** Branch `agent/codex/source-scout-5`.
-- [ ] `in-pr:codex 2026-11-06 #185` **Settle two parcel counties and sweep 12 discrete queue items** Branch `agent/codex/queue-backlog-sweep`.
-- [ ] `in-pr:codex 2026-11-06 #187` **Draft November 6 owner battery: 35 sourced decision items** Branch `agent/codex/owner-battery-2026-11-06`.
-- [ ] `in-pr:codex 2026-11-06 #188` **Propose company correction and owner-routed person removal forms** Branch `agent/codex/issue-forms`.
-- [ ] `in-pr:codex 2026-11-06 #189` **Resolve ten residual organization HQ placements with primary evidence** Branch `agent/codex/residual-hq-2`.
-- [ ] `in-pr:codex 2026-11-06 #191` **Restate explicit Ring 2 basis for 11 merged FL/GA sites** Branch `agent/codex/explicit-ring-basis-fl-ga`.
-- [ ] `in-pr:codex 2026-11-06 #192` **Recover 24 C/U Ohio streets from fresh EPA FRS records** Branch `agent/codex/oh-street-address-cu`.
-- [ ] `in-pr:codex 2026-11-06 #193` **Generate public Markdown and Atom feeds from Atlas change history** Branch `agent/codex/change-feed`.
-- [ ] `in-pr:codex 2026-11-06 #194` **Raise eight merged MI/IL plants from tier C to B** Branch `agent/codex/mi-il-site-quality`.
-- [ ] `in-pr:codex 2026-11-06 #195` **Resolve twelve HQ placements in residual organizations 101–200** Branch `agent/codex/residual-hq-3`.
-- [ ] `in-pr:codex 2026-11-06 #196` **Document group-parent provenance for L3 STRONG sites** Branch `agent/codex/l3-parent-provenance-fix`.
-- [ ] `in-pr:codex 2026-11-06 #197` **atlas.py street_key: stop collapsing '#6 Capper Drive' and 'Suite 100, 200 Main St' to an empty key** Branch `agent/claude-code/street-key-fix`.
-- [ ] `in-pr:codex 2026-11-06 #198` **Adjudicate all 42 Louisiana CORROBORATED clusters** Branch `agent/codex/corroborated-la`.
-- [ ] `in-pr:codex 2026-11-06 #199` **Resolve eight HQ placements in final residual tail batch** Branch `agent/codex/residual-hq-4`.
-- [ ] `in-pr:codex 2026-11-06 #200` **Blind audit 9: fifty new state-wave sites, stratified by lane and tier** Branch `agent/codex/blind-audit-9`.
-- [ ] `in-pr:codex 2026-11-06 #201` **Resolve site operators under merged and acquired organizations** Branch `agent/codex/tombstone-site-operators`.
-- [ ] `in-pr:codex 2026-11-06 #202` **Adjudicate all 119 Minnesota CORROBORATED clusters** Branch `agent/codex/corroborated-mn`.
-- [ ] `in-pr:codex 2026-11-06 #203` **Correct surfaced site types, street, disruption watch and dated closure** Branch `agent/codex/creation-error-corrections`.
-- [ ] `in-pr:codex 2026-11-06 #204` **Adjudicate all 91 New Jersey CORROBORATED clusters** Branch `agent/codex/corroborated-nj`.
-- [ ] `in-pr:codex 2026-11-06 #206` **Add LIFT ecosystem anchor and document federal-program holds** Branch `agent/codex/federal-programs`.
-- [ ] `in-pr:codex 2026-11-06 #207` **Fill 25 Ohio streets from the next 100 PIC-18 A/B sites** Branch `agent/codex/oh-street-address-5`.
-- [ ] `in-pr:codex 2026-11-06 #208` **Fill 36 Ohio streets from A/B frame positions 261–360** Branch `agent/codex/oh-street-address-6`.
-- [ ] `in-pr:codex 2026-11-06 #210` **Row-loss guard: fail on tracked files deleted outside data/ (stacked on #209)** Branch `agent/claude-code/file-loss-guard`.
-- [ ] `in-pr:codex 2026-11-06 #211` **Fill final 24 Ohio A/B streets and flag three address-overlap leads** Branch `agent/codex/oh-street-address-7`.
-- [ ] `in-pr:codex 2026-11-06 #212` **Restate eleven merged Texas plants at tier B** Branch `agent/codex/corroborated-tx-site-quality-2`.
-- [ ] `in-pr:codex 2026-11-06 #213` **Reconcile campaign queue and carry postmerge receipt notes** Branch `agent/codex/campaign-hygiene-2026-11-06`.
+- [x] `in-pr:codex 2026-11-06 #145` **Fill newsroom URLs for 115 active Tier-1 organizations** Branch `agent/codex/newsroom-urls`. Original reserved IDs: EVD-230000–239999.
+- [x] `in-pr:codex 2026-11-06 #149` **Settle Yavitt rank and evidence people title/census rechecks** Branch `agent/codex/people-settle`. Original reserved IDs: PERSON-002000–002499, EVD-280000–284999.
+- [x] `in-pr:codex 2026-11-06 #151` **Illinois CORROBORATED residue: three provisional sites** Branch `agent/codex/corroborated-il-2`.
+- [x] `in-pr:codex 2026-11-06 #152` **Fill newsroom URLs for 38 active PIC18 organizations outside Tier-1** Branch `agent/codex/newsroom-urls-pic18`.
+- [x] `in-pr:codex 2026-11-06 #155` **L1 continuation: audit 3,586 OH/PA evidence rows; archives pending** Branch `agent/codex/evidence-reverify-archive-oh-pa`.
+- [x] `in-pr:codex 2026-11-06 #156` **Recover 19 held PIC-18 site streets from physical operator witnesses** Branch `agent/codex/oh-street-address-2`.
+- [x] `in-pr:codex 2026-11-06 #158` **North Carolina CORROBORATED: 14 tier C sites, 2 duplicates, 94 holds** Branch `agent/codex/corroborated-nc`.
+- [x] `in-pr:codex 2026-11-06 #159` **PIC-18 residue: add Peak Performance and reconcile 26 leads** Branch `agent/codex/pic18-discovery-residue`.
+- [x] `in-pr:codex 2026-11-06 #160` **Verify four named programs from the next 100 national leads** Branch `agent/codex/program-leads-3`.
+- [x] `in-pr:codex 2026-11-06 #162` **L5: scout APR, Vinyl, ACMA, EPA CDR and SAM public extracts** Branch `agent/codex/source-scout-4`.
+- [x] `in-pr:codex 2026-11-06 #164` **Screen 143 MO and SC CORROBORATED clusters; add 10 provisional sites** Branch `agent/codex/corroborated-mo-sc`.
+- [x] `in-pr:codex 2026-11-06 #165` **Repair 45 PIC-18 own-site evidence claims, append only** Branch `agent/codex/evidence-repair-3`.
+- [x] `in-pr:codex 2026-11-06 #166` **CA CORROBORATED batch 2: 18 establishments from next 40 clusters** Branch `agent/codex/corroborated-ca-2`.
+- [x] `in-pr:codex 2026-11-06 #168` **Apply 34 aligned IPEDS completions proposals; hold ambiguous award counts** Branch `agent/codex/program-completions-2`.
+- [x] `in-pr:codex 2026-11-06 #169` **Fill newsroom URLs for 167 active organizations outside Tier-1 and PIC18** Branch `agent/codex/newsroom-urls-other`.
+- [x] `in-pr:codex 2026-11-06 #170` **TX CORROBORATED batch 2: 17 establishments, conflicting codes held** Branch `agent/codex/corroborated-tx-2`.
+- [x] `in-pr:codex 2026-11-06 #175` **CA CORROBORATED batch 3: 12 establishments, 28 explicit holds** Branch `agent/codex/corroborated-ca-3`.
+- [x] `in-pr:codex 2026-11-06 #176` **Repair 62 Ohio and Pennsylvania own-site evidence claims** Branch `agent/codex/evidence-repair-4`.
+- [x] `in-pr:codex 2026-11-06 #178` **CA CORROBORATED batch 4: 8 establishments, service-center conflicts held** Branch `agent/codex/corroborated-ca-4`.
+- [x] `in-pr:codex 2026-11-06 #179` **Enrich 100 Tier-1 organizations with own-site markets and certifications** Branch `agent/codex/markets-certs-tier1-round3`.
+- [x] `in-pr:codex 2026-11-06 #180` **TX CORROBORATED ranks 121–160: four provisional plants** Branch `agent/codex/corroborated-tx-4`.
+- [x] `in-pr:codex 2026-11-06 #181` **Add 53 equipment rows from Ohio and Pennsylvania facilities** Branch `agent/codex/equipment-wave-2`.
+- [x] `in-pr:codex 2026-11-06 #182` **L8 continuation: adjudicate all 144 remaining liveness priorities** Branch `agent/codex/liveness-continuation-144`.
+- [x] `in-pr:codex 2026-11-06 #183` **PIC18 round 5: nine tier restatements and combined raw T1 projection** Branch `agent/codex/pic18-record-health-5`.
+- [x] `in-pr:codex 2026-11-06 #184` **L5: scout Ohio air permits, OCS Blue, CAA SB54 and NSF61 routes** Branch `agent/codex/source-scout-5`.
+- [x] `in-pr:codex 2026-11-06 #185` **Settle two parcel counties and sweep 12 discrete queue items** Branch `agent/codex/queue-backlog-sweep`.
+- [x] `in-pr:codex 2026-11-06 #187` **Draft November 6 owner battery: 35 sourced decision items** Branch `agent/codex/owner-battery-2026-11-06`.
+- [x] `in-pr:codex 2026-11-06 #188` **Propose company correction and owner-routed person removal forms** Branch `agent/codex/issue-forms`.
+- [x] `in-pr:codex 2026-11-06 #189` **Resolve ten residual organization HQ placements with primary evidence** Branch `agent/codex/residual-hq-2`.
+- [x] `in-pr:codex 2026-11-06 #191` **Restate explicit Ring 2 basis for 11 merged FL/GA sites** Branch `agent/codex/explicit-ring-basis-fl-ga`.
+- [x] `in-pr:codex 2026-11-06 #192` **Recover 24 C/U Ohio streets from fresh EPA FRS records** Branch `agent/codex/oh-street-address-cu`.
+- [x] `in-pr:codex 2026-11-06 #193` **Generate public Markdown and Atom feeds from Atlas change history** Branch `agent/codex/change-feed`.
+- [x] `in-pr:codex 2026-11-06 #194` **Raise eight merged MI/IL plants from tier C to B** Branch `agent/codex/mi-il-site-quality`.
+- [x] `in-pr:codex 2026-11-06 #195` **Resolve twelve HQ placements in residual organizations 101–200** Branch `agent/codex/residual-hq-3`.
+- [x] `in-pr:codex 2026-11-06 #196` **Document group-parent provenance for L3 STRONG sites** Branch `agent/codex/l3-parent-provenance-fix`.
+- [x] `in-pr:codex 2026-11-06 #197` **atlas.py street_key: stop collapsing '#6 Capper Drive' and 'Suite 100, 200 Main St' to an empty key** Branch `agent/claude-code/street-key-fix`. — DONE 2026-11-10 (resync): the fix is on main (StreetKey class, scripts/test_atlas_cli.py); PR #197 was closed unmerged but its content landed.
+- [x] `in-pr:codex 2026-11-06 #198` **Adjudicate all 42 Louisiana CORROBORATED clusters** Branch `agent/codex/corroborated-la`.
+- [x] `in-pr:codex 2026-11-06 #199` **Resolve eight HQ placements in final residual tail batch** Branch `agent/codex/residual-hq-4`.
+- [x] `in-pr:codex 2026-11-06 #200` **Blind audit 9: fifty new state-wave sites, stratified by lane and tier** Branch `agent/codex/blind-audit-9`.
+- [x] `in-pr:codex 2026-11-06 #201` **Resolve site operators under merged and acquired organizations** Branch `agent/codex/tombstone-site-operators`.
+- [x] `in-pr:codex 2026-11-06 #202` **Adjudicate all 119 Minnesota CORROBORATED clusters** Branch `agent/codex/corroborated-mn`.
+- [x] `in-pr:codex 2026-11-06 #203` **Correct surfaced site types, street, disruption watch and dated closure** Branch `agent/codex/creation-error-corrections`.
+- [x] `in-pr:codex 2026-11-06 #204` **Adjudicate all 91 New Jersey CORROBORATED clusters** Branch `agent/codex/corroborated-nj`.
+- [x] `in-pr:codex 2026-11-06 #206` **Add LIFT ecosystem anchor and document federal-program holds** Branch `agent/codex/federal-programs`.
+- [x] `in-pr:codex 2026-11-06 #207` **Fill 25 Ohio streets from the next 100 PIC-18 A/B sites** Branch `agent/codex/oh-street-address-5`.
+- [x] `in-pr:codex 2026-11-06 #208` **Fill 36 Ohio streets from A/B frame positions 261–360** Branch `agent/codex/oh-street-address-6`.
+- [x] `in-pr:codex 2026-11-06 #210` **Row-loss guard: fail on tracked files deleted outside data/ (stacked on #209)** Branch `agent/claude-code/file-loss-guard`.
+- [x] `in-pr:codex 2026-11-06 #211` **Fill final 24 Ohio A/B streets and flag three address-overlap leads** Branch `agent/codex/oh-street-address-7`.
+- [x] `in-pr:codex 2026-11-06 #212` **Restate eleven merged Texas plants at tier B** Branch `agent/codex/corroborated-tx-site-quality-2`.
+- [x] `in-pr:codex 2026-11-06 #213` **Reconcile campaign queue and carry postmerge receipt notes** Branch `agent/codex/campaign-hygiene-2026-11-06`.
 
 ### Claimed continuations without a PR at the snapshot
 
@@ -422,9 +424,9 @@ Status snapshot and provenance: `tasks/campaign-hygiene-2026-11-06/README.md`. `
 
 ### Open follow-ups (public counts only)
 
-- [ ] `open` **Tombstone-site operator holds:** 4 held site rows in the corrected PR #201 packet (14 candidate site rows: 10 VERIFIED, 4 STILL_UNCERTAIN). Resolve exact legal-operator/alias and probable-duplicate questions from primary evidence; the other 2 tombstone bindings are sourced valid keeps, not holds.
-- [ ] `open` **Tier-1 owner/scope decisions:** final PR #205 remainder is 155 unhealthy organization rows with 197 overlapping gap memberships. Disjoint organization classes: 50 owner-only, 11 scope-only, 1 mixed owner+human; 93 human-only are separate below. Owner rulings remain required; no target/scenario is adopted here.
+- [x] `open` **Tombstone-site operator holds:** 4 held site rows in the corrected PR #201 packet (14 candidate site rows: 10 VERIFIED, 4 STILL_UNCERTAIN). Resolve exact legal-operator/alias and probable-duplicate questions from primary evidence; the other 2 tombstone bindings are sourced valid keeps, not holds.
+- [x] `open` **Tier-1 owner/scope decisions:** final PR #205 remainder is 155 unhealthy organization rows with 197 overlapping gap memberships. Disjoint organization classes: 50 owner-only, 11 scope-only, 1 mixed owner+human; 93 human-only are separate below. Owner rulings remain required; no target/scenario is adopted here.
 - [ ] `open` **Tier-1 human outreach:** 93 human-only organization rows with 130 overlapping gaps (73 capability, 37 tier, 20 website). Counts only; no private organization list or outreach is published or sent.
-- [ ] `open` **Archive top-up:** 6,202 distinct supported evidence rows still lack an admitted archive witness in the two disjoint archive packets (3,227 PIC-18 + 2,975 OH/PA continuation). The 34 admitted links in merged PR #137 are excluded. Verify readable captures and exact raw quotes; discovered URLs alone are not links.
-- [ ] `open` **Residual-HQ holds:** 221 held organization rows across 249 unique candidates in PRs #189/#195/#199 (92/88/41 holds; 28 HQ_FOUND). Two L3 ownership exclusions remain held. Obtain explicit exact-entity HQ evidence; do not infer HQ from plant, correspondence or parent addresses. These are pending-packet outcomes, not additional main edits.
-- [ ] `open` **Ohio streets remaining:** 1,559 of 1,883 active Ohio site rows have blank street_address at the pinned main baseline; pending fills are excluded. Resolve own-operator physical-address conflicts. The final 88 rows of the original 448-row A/B frame are already claimed in PR #211, not unassigned.
+- [x] `open` **Archive top-up:** 6,202 distinct supported evidence rows still lack an admitted archive witness in the two disjoint archive packets (3,227 PIC-18 + 2,975 OH/PA continuation). The 34 admitted links in merged PR #137 are excluded. Verify readable captures and exact raw quotes; discovered URLs alone are not links.
+- [x] `open` **Residual-HQ holds:** 221 held organization rows across 249 unique candidates in PRs #189/#195/#199 (92/88/41 holds; 28 HQ_FOUND). Two L3 ownership exclusions remain held. Obtain explicit exact-entity HQ evidence; do not infer HQ from plant, correspondence or parent addresses. These are pending-packet outcomes, not additional main edits.
+- [x] `open` **Ohio streets remaining:** 1,559 of 1,883 active Ohio site rows have blank street_address at the pinned main baseline; pending fills are excluded. Resolve own-operator physical-address conflicts. The final 88 rows of the original 448-row A/B frame are already claimed in PR #211, not unassigned.
