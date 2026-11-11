@@ -1,0 +1,12 @@
+person_id,identifier_type,identifier_id,match_basis,as_of
+PERSON-000103,ORCID,0000-0003-3778-9183,orcid_record_employment_match_name,2026-11-11
+PERSON-000735,ORCID,0000-0002-1239-9560,orcid_record_employment_match_name,2026-11-11
+PERSON-000759,ORCID,0000-0001-8942-4480,orcid_record_employment_match_name,2026-11-11
+PERSON-000762,ORCID,0000-0003-1916-7145,orcid_on_institution_page,2026-11-11
+PERSON-000778,ORCID,0000-0002-8575-7269,orcid_on_institution_page,2026-11-11
+PERSON-000825,ORCID,0000-0002-4189-7630,orcid_on_institution_page,2026-11-11
+PERSON-000835,ORCID,0000-0002-2368-1887,orcid_on_institution_page,2026-11-11
+PERSON-001097,ORCID,0000-0002-7150-0817,orcid_on_institution_page,2026-11-11
+PERSON-001328,ORCID,0000-0002-2656-2349,orcid_record_employment_match_name,2026-11-11
+PERSON-001329,ORCID,0000-0001-7757-5150,orcid_record_employment_match_name,2026-11-11
+PERSON-002113,ORCID,0000-0002-3601-4012,orcid_record_employment_match_name,2026-11-11

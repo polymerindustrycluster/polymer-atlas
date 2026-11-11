@@ -1,0 +1,6 @@
+lead_class,person_ids,detail,settling_fact
+same_name_same_institution,PERSON-001187;PERSON-001260,miguel modestino at ORG-004705,"compare roles, profile URLs and ORCID iDs; one person at one institution is one record"
+same_name_other_institution,PERSON-000651;PERSON-000813,andrew ferguson at ORG-002815;ORG-004660,"namesakes, a move, or a joint appointment (AGENTS S6: record once, at the primary home)"
+same_name_other_institution,PERSON-000477;PERSON-001402,rigoberto advincula at ORG-002814;ORG-004681,"namesakes, a move, or a joint appointment (AGENTS S6: record once, at the primary home)"
+same_name_other_institution,PERSON-000354;PERSON-000767,wei zhang at ORG-002777;ORG-004655,"namesakes, a move, or a joint appointment (AGENTS S6: record once, at the primary home)"
+same_name_other_institution,PERSON-000167;PERSON-001431,young kim at ORG-002845;ORG-004709,"namesakes, a move, or a joint appointment (AGENTS S6: record once, at the primary home)"
