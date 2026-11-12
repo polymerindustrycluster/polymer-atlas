@@ -22,9 +22,9 @@ SITE-000647,material,natural_rubber_nr,site,menu,https://www.timcorubber.com/,"M
 SITE-001791,process,additive_manufacturing_polymer,site,narrative,https://axionlabs.co/,"We handle milling, 3D printing, and secondary operations under one roof."
 SITE-001791,material,nylon_pa,site,menu,https://axionlabs.co/,"Materials Onyx, Nylon"
 SITE-001791,material,thermoplastic_elastomers_tpe_tpu,site,menu,https://axionlabs.co/,"Materials PLA, PETG, ABS, ASA, PA, TPU"
-SITE-001852,process,laminating,site,narrative,https://www.adherexpackaging.com/capabilities/,"comprehensive capabilities including die-cutting, kiss-cutting, water jet technologies, laminating"
-SITE-001852,process,die_cutting_converting,site,narrative,https://www.adherexpackaging.com/capabilities/,"comprehensive capabilities including die-cutting, kiss-cutting, water jet technologies, laminating"
-SITE-001852,material,adhesives_sealants,site,narrative,https://www.adherexpackaging.com/kiss-cutting-capabilities/,"acrylic adhesive, synthetic rubber hot melt, solvent natural rubbers and solvent acrylic adhesives"
+SITE-001852,process,laminating,org,narrative,https://www.adherexpackaging.com/capabilities/,"comprehensive capabilities including die-cutting, kiss-cutting, water jet technologies, laminating"
+SITE-001852,process,die_cutting_converting,org,narrative,https://www.adherexpackaging.com/capabilities/,"comprehensive capabilities including die-cutting, kiss-cutting, water jet technologies, laminating"
+SITE-001852,material,adhesives_sealants,org,narrative,https://www.adherexpackaging.com/kiss-cutting-capabilities/,"acrylic adhesive, synthetic rubber hot melt, solvent natural rubbers and solvent acrylic adhesives"
 SITE-000623,material,polypropylene_pp,site,menu,https://sprostybag.com/,Multi-Wall Paper Bag with Polypropylene Liner
 SITE-000417,material,nylon_pa,site,narrative,https://www.jjwhite.com/,We will treat Your nylon and Cotton fabrics for adhesion
 SITE-000477,material,nylon_pa,site,menu,https://www.mmitextiles.com/,500D to 1000D mil-spec nylon laminate delivers high strength

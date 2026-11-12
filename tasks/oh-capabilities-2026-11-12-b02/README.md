@@ -76,3 +76,14 @@ The CI `validate` job fails on main too: docs/schema/vocab.json is stale, and te
 
 ---
 Never merged by the author. No Muse files touched; the only QUEUE edit is the #321 claim line. No paid calls.
+
+## Correction 2026-11-12 14:07 ET (Navigator Verifier review)
+- **Adherex (SITE-001852 → ORG-001769), moved from site to org.** The cited capabilities page says "Five distribution centers", so under this lane's multi-location rule these are org-grain facts.
+  - EVD-345105, 345106 and 345107 keep their IDs. They now sit in `evidence_organizations_OH.csv` on ORG-001769, labelled `supports_A` (the org is tier A).
+  - The site's processes and materials are back to blank, as on main.
+  - CAP-001026 (adhesives_sealants) is removed; org grain mints no capability rows.
+  - The org already listed die_cutting_converting and adhesives_sealants; `laminating` is added to its processes. That adds to a field that was already filled, an exception to this lane's fill-blank-only habit made because the move was requested.
+- **Anita Plastics (SITE-000122), EVD-345111/345112 and CAP-001030/001031: notes replaced with the real reason.** The products page says "Anita Plastics serves as a trading group for our parent company, the Mewar Group, which manufactures various products across our India’s plants." Where the fabric is made is unclear. The claim_detail now reads "manufacturing location unclear", with the caveat in the notes.
+  - Effect stays `supports_U`, not `supports_C`. SITE-000122 is tier U, and SCHEMA §4.13 (S4) sets `supports_U` for claims on tier-U records (the relabel above), so the evidence rules require it.
+- **Not edited, recorded only:** Anita's own site says it is based in Solon, Ohio (44139). Main has SITE-000122 / ORG-000123 in Woodmere (pre-existing). This is a relocation or address lead.
+- **Conflict note:** #321 and #324 both touch `data/sites_OH.csv`, `organizations_OH.csv`, `evidence_sites_OH.csv` and `site_capabilities.csv` (appended rows). Whichever merges second needs a normal-merge replay.
