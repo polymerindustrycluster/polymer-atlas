@@ -1,0 +1,19 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000863,PROG-000127,LINK,"Luyi Sun Distinguished Professor of Chemical and Biomolecular Engineering",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-000898,PROG-000127,LINK,"Elena Dormidontova Professor of Physics",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-000906,PROG-000127,LINK,"Douglas Adamson Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001036,PROG-000127,LINK,"Yao Lin Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001038,PROG-000127,LINK,"Mu-Ping Nieh Director, IMS Polymer Program Professor of Chemical and Biomolecular Engineering",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001079,PROG-000127,LINK,"Rajeswari Kasi Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001107,PROG-000127,LINK,"Kelly Burke Department Head and Professor of Chemical and Biomolecular Engineering",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001135,PROG-000127,LINK,"Alexandru Asandei Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001143,,NO_WITNESS,,,institution_page
+PERSON-001151,,NO_WITNESS,,,institution_page
+PERSON-001291,PROG-000127,LINK,"Gregory Sotzing Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001292,,NO_WITNESS,,,institution_page
+PERSON-001293,PROG-000127,LINK,"Yang Qin Associate Professor of Chemical and Biomolecular Engineering",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001294,PROG-000127,LINK,"Thomas Seery Associate Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001295,PROG-000127,LINK,"Jie He Professor of Chemistry",https://polymer.ims.uconn.edu/polymer-program-faculty/,institution_page
+PERSON-001296,,NO_WITNESS,,,institution_page
+PERSON-001344,,NO_WITNESS,,,institution_page
+PERSON-001391,,NO_WITNESS,,,institution_page
