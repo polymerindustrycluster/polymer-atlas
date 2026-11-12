@@ -68,7 +68,7 @@ def run(framefile,fetchfile,outfile):
                 v['reason']='own pages show several streets at the recorded city ('+' || '.join(groups[k][0]['street'] for k in phys)+'); need site-specific binding'
             else:
                 k=phys[0]; cs=groups[k]
-                best=sorted(cs,key=lambda c:(1 if re.search(r'granting|permission|submitting|copyright|©|p\.?\s*o\.?\s*box',c['quote'],re.I) else 0, 0 if c['zip'] else 1, 0 if re.search('contact|location',c['url'],re.I) else 1))[0]
+                best=sorted(cs,key=lambda c:(1 if MAILCTX.search(c['quote'][:62]) else 0, 1 if re.search(r'granting|permission|submitting|copyright|©|p\.?\s*o\.?\s*box',c['quote'],re.I) else 0, 0 if c['zip'] else 1, 0 if re.search('contact|location',c['url'],re.I) else 1))[0]
                 v.update(street=best['street'],url=best['url'],sha256=best['sha256'],quote=best['quote'],page_zip=best['zip'])
                 pz=set(c['zip'] for c in cs if c['zip'])
                 if s['zip'] and pz and s['zip'] not in pz:
@@ -85,6 +85,16 @@ def run(framefile,fetchfile,outfile):
                     if oth: flags.append('ADDRESS-OVERLAP: '+';'.join(f'{x} ({sites[x]["org_id"]} {sites[x]["site_name"][:40]})' for x in oth))
         v['flags']=' | '.join(flags)
         out.append(v)
+    pend={}
+    for pf in glob.glob('b*_verdicts.csv'):
+        if pf.startswith(outfile[:3]): continue
+        for x in csv.DictReader(open(pf)):
+            if x['verdict']=='VERIFIED': pend.setdefault(nk(x['street']),[]).append(x['site_id']+' ('+x['org_id']+' '+x['site_name'][:40]+', pending '+pf[:3]+')')
+    ver=[o for o in out if o['verdict']=='VERIFIED']
+    for o in ver:
+        k=nk(o['street']); others=[f"{x['site_id']} ({x['org_id']} {x['site_name'][:40]}, this batch)" for x in ver if x is not o and nk(x['street'])==k]+pend.get(k,[])
+        if others:
+            o['flags']=(o['flags']+' | ' if o['flags'] else '')+('ADDRESS-OVERLAP: ' if not o['flags'] else '')+';'.join(others)
     w=csv.DictWriter(open(outfile,'w'),fieldnames=list(out[0].keys()));w.writeheader();w.writerows(out)
     import collections
     print(collections.Counter(o['verdict'] for o in out))
