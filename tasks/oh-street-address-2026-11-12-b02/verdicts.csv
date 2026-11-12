@@ -44,7 +44,7 @@ SITE-001565,ORG-001499,Lianda Corporation — Twinsburg,Twinsburg,,B,STILL_UNCER
 SITE-001567,ORG-001501,Polymer Valley Chemicals — Akron,Akron,,B,VERIFIED,1872 Akron-Peninsula Road,EVD-340118,https://polymervalleychemicals.com/contact-us,44313,5,4,,
 SITE-001569,ORG-001505,VisionAir Solutions — Akron,Akron,44306,C,STILL_UNCERTAIN,"526 S. Main St, Suite 509",,https://visionairsolutions.com/,,5,3,own-page ZIP 44311 conflicts with recorded ZIP 44306; need integrator ruling on the ZIP before the street is applied,
 SITE-001577,ORG-001513,Coltene/Whaledent Inc. — Cuyahoga Falls,Cuyahoga Falls,44223,B,STILL_UNCERTAIN,,,,,3,0,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city",
-SITE-001593,ORG-001528,Mabel Dental Lab — Cuyahoga Falls,Cuyahoga Falls,44221,B,VERIFIED,"891 Graham Rd, Ste A",EVD-340119,https://mabeldental.com/contact/,44221,6,4,,
+SITE-001593,ORG-001528,Mabel Dental Lab — Cuyahoga Falls,Cuyahoga Falls,44221,B,VERIFIED,"891 Graham Rd, Ste C",EVD-340119,https://mabeldental.com/contact/,44221,6,4,,
 SITE-001649,ORG-001578,Bright Idea Shops LLC — Akron,Akron,44301,A,STILL_UNCERTAIN,,,,,6,5,"5 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city",
 SITE-001695,ORG-001624,ADVANCED CRYOGENIC ENTERPRISES — Akron,Akron,,A,VERIFIED,1034 Home Ave,EVD-340120,https://acecryo.com,,6,3,,
 SITE-001703,ORG-001631,AKRON DISPERSIONS INC — Copley,Copley,,B,STILL_UNCERTAIN,,,,,4,4,"4 own-site pages read, no street at recorded city Copley; need own-page physical street block at the recorded city",

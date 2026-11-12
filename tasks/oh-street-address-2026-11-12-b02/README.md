@@ -39,3 +39,4 @@ One addition since batch 01: the overlap check now also compares streets across 
   - SITE-002032: several plants elsewhere in Ohio;
   - SITE-000188: Ravenna.
 - Notes-street disagreements are held: Steere ×3 (285 Commerce St vs notes) and Circle Mold.
+- SITE-001593 Mabel Dental Lab: the own page prints Ste C (HQ) and Ste A (footer). Ste C is filled; it agrees with the FDA street in notes.

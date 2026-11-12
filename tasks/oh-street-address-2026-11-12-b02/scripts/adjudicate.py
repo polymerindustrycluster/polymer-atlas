@@ -70,6 +70,9 @@ def run(framefile,fetchfile,outfile):
                 k=phys[0]; cs=groups[k]
                 best=sorted(cs,key=lambda c:(1 if MAILCTX.search(c['quote'][:62]) else 0, 1 if re.search(r'granting|permission|submitting|copyright|©|p\.?\s*o\.?\s*box',c['quote'],re.I) else 0, 0 if c['zip'] else 1, 0 if re.search('contact|location',c['url'],re.I) else 1))[0]
                 v.update(street=best['street'],url=best['url'],sha256=best['sha256'],quote=best['quote'],page_zip=best['zip'])
+                suites=set(re.sub(r'[^a-z0-9]','',c['street'].split(',',1)[1].lower()) if ',' in c['street'] else '' for c in cs)
+                if len(suites-{''})>1:
+                    flags.append('SUITE-CONFLICT on own pages: '+'; '.join(sorted(set(c['street'] for c in cs)))+' (manual pick required)')
                 pz=set(c['zip'] for c in cs if c['zip'])
                 if s['zip'] and pz and s['zip'] not in pz:
                     v['reason']=f'own-page ZIP {"/".join(sorted(pz))} conflicts with recorded ZIP {s["zip"]}; need integrator ruling on the ZIP before the street is applied'
