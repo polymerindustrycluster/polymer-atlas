@@ -62,7 +62,7 @@ Candidates that were not minted are in `not_minted.csv`, each with a reason. The
 No permit rows were minted in this batch. TRI/FRS give NAICS and chemicals, not §3 process terms. Ohio EPA air-permit emission-unit descriptions do name processes, but they need a per-facility document pull. That is left as the next source for the rows still untagged.
 
 ## Yield stop
-This batch gave 7 of 100 records a §3 tag (7%), or 11 of 100 (11%) counting the 4 sites that got capability rows only. b01 was 11%. Both are below the 20% stop rule even with the menu ruling, so **this lane stops here**. Rows 200–306 of the frame (106 rows) are untouched. Restarting needs a different source, such as Ohio EPA air-permit emission-unit text or product-catalog PDFs.
+This batch gave 7 of 100 records a §3 tag (7%), or 10 of 100 (10%) counting the 3 sites that got capability rows only (GRAFIX SITE-000383 laminating has no §3.6 term, so it is held entirely). b01 was 11%. Both are below the 20% stop rule even with the menu ruling, so **this lane stops here**. Rows 200–306 of the frame (106 rows) are untouched. Restarting needs a different source, such as Ohio EPA air-permit emission-unit text or product-catalog PDFs.
 
 ## Leads
 - Mechanical Rubber SITE-000118 (an NY address on its own site), Q Medical Devices SITE-000568 and ePac SITE-001652 (multi-location companies): org grain only, and their org columns were already filled.
