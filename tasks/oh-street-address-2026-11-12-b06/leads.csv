@@ -1,0 +1,11 @@
+site_id,lead_type,detail
+SITE-001308,address_overlap,ADDRESS-OVERLAP: SITE-000460 (ORG-000430 Mar-Bal Inc. — Chagrin Falls)
+SITE-001392,own_site_other_city_address,"recorded city Youngstown; own pages print: 10880 Kenwood Road Bldg. D , Cincinnati, OH 45242 || 1185 E. Waterloo Road , Akron OH 44306 || 1185 E. Waterloo Road , Akron, OH 44306"
+SITE-001484,own_site_other_city_address,"recorded city Austintown; own pages print: 3500 Phillips Avenue , Toledo, OH 43608"
+SITE-001485,own_site_other_city_address,"recorded city Boardman; own pages print: 3500 Phillips Avenue , Toledo, OH 43608"
+SITE-001724,own_site_other_city_address,"recorded city Youngstown; own pages print: 1101 Gahanna Parkway , Columbus, OH 43230 || 21600 Alexander Road , Cleveland, OH 44146 || 629 Old State Route 74 (Suite 100) , Cincinnati, OH 45244"
+SITE-000557,own_site_other_city_address,"recorded city Conneaut (North Kingsville); own pages print: 3365 E Center St Conneaut, OH 44030"
+SITE-001122,own_site_other_city_address,"recorded city Baltic; own pages print: 5479 Gundy Drive • Midvale, Ohio 44653"
+SITE-001137,own_site_other_city_address,"recorded city Strasburg; own pages print: 1550 County Road 140 , Sugarcreek, OH 44681 || 2150 State Route 39 , Sugarcreek, OH 44681 || 425 S. Broadway , Sugarcreek, OH 44681"
+SITE-001693,mail_unit_lead,"Absolute Polymers own page prints 2789 E. State St. Unit 10, Suite 177, Salem; held as a probable mail-receiving unit."
+SITE-001122,cross_operator_address_lead,"SITE-001122 (recorded Baltic) own site prints 5479 Gundy Drive, Midvale, the street filled in this batch for SITE-000909 Flex Technologies; possible common operator or relocation. No merge made."
