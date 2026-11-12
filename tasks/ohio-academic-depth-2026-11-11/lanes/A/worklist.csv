@@ -1,0 +1,16 @@
+program_id,institution,program_type,program_name,url,gaps
+PROG-000007,University of Akron,center,Akron Functional Materials Center,https://www.uakron.edu/afmc/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000008,University of Akron,training,Akron Polymer Training Services,https://www.uakron.edu/apts/,research_areas;facilities_note;scale_band
+PROG-000009,"Akron Rubber Development Laboratory, Inc.",training,Akron Rubber Development Laboratory (ARDL) technical training,https://ardl.com/ardl-technical-training-and-webinars-course-topics/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000010,Bounce Innovation Hub,training,Synthe6,https://bouncehub.org/synthe6,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000014,Kent State University,lab_facility,Kent State AMLCI Characterization Facility,https://www.kent.edu/amlci/characterization-facility,specialty_processes;specialty_materials;scale_band
+PROG-000015,Kent State University,center,Kent State AMLCI Organic Synthesis Facility and Machine Shop,https://www.kent.edu/amlci/organic-synthesis-facility,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000021,University of Akron,training,Akron Global Polymer Academy (AGPA),https://www.uakron.edu/polymer/agpa-k12outreach/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000022,University of Akron,center,National Polymer Innovation Center,https://www.uakron.edu/npic/request,research_areas;scale_band
+PROG-000026,Walsh University,center,Center for Scientific Excellence,https://www.walsh.edu/cse.html,specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000030,"NFM / Welding Engineers, Inc.",center,NFM Welding Engineers Process Development Lab,https://nfm.net/process-development-lab,research_areas;facilities_note;scale_band
+PROG-000031,STEER America,center,Steer America Application Development Center,https://steerworld.com/en/application-development-center,research_areas;facilities_note;scale_band
+PROG-000032,Kent State University,center,Advanced Materials and Liquid Crystal Institute (AMLCI),https://www.kent.edu/amlci/about,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000033,Youngstown State University,center,Youngstown Advanced Manufacturing Innovation Center,https://ysu.edu/center-for-innovation-in-additive-manufacturing,specialty_materials;scale_band
+PROG-000115,University of Akron,degree,Polymer Science and Polymer Engineering,https://bulletin.uakron.edu/graduate/colleges-programs/engineering/polymer-science-engineering/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000116,University of Akron,certificate,Elastomer Science and Engineering,https://bulletin.uakron.edu/graduate/colleges-programs/engineering/polymer-science-engineering/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
