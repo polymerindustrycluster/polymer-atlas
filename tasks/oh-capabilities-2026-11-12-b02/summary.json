@@ -7,21 +7,27 @@
  "pages_ok": 342,
  "candidates": 90,
  "accepted_terms": 33,
- "records_gaining_tag": 10,
- "yield_pct": 10.0,
- "sites_tagged": 10,
+ "records_gaining_tag": 7,
+ "yield_pct": 7.0,
+ "sites_tagged": 6,
  "orgs_tagged": 2,
- "site_evidence": 29,
+ "site_evidence": 11,
  "org_evidence": 2,
  "evidence_rows_by_basis": {
-  "menu": 23,
+  "menu": 6,
   "narrative": 6
  },
  "sites_tagged_by_basis": {
   "narrative": 4,
-  "menu": 7
+  "menu": 3
  },
  "cap_rows": 17,
- "evd_range": "EVD-345100..EVD-345130",
+ "held_tags_V25": 18,
+ "sites_cap_only_V25": [
+  "SITE-000623",
+  "SITE-000647",
+  "SITE-001733"
+ ],
+ "evd_range": "EVD-345100..EVD-345112",
  "cap_range": "CAP-001015..CAP-001031"
 }

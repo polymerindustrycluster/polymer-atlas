@@ -40,17 +40,21 @@ SITE-000174 (Hankook, #322) is not in the frame, and the builder asserts that.
   - Process subtypes roll up to their §3.6 umbrella: custom/unspecified compounding → `compounding`; rubber_molding_* → `rubber_molding`; extrusion_* → `extrusion`; thermoforming_* → `thermoforming`; blow_molding_* → `blow_molding`.
   - Terms with no §3.6 entry get a §3 tag only. These are laminating, die_cutting_converting, transfer_molding, rubber_extrusion, composites_frp, insert_overmolding, recycling_unspecified, potting and the specific elastomers.
 
+## V-25 guard (ruling needed)
+On a tier-A/B record with no A/B-strength scope row, a `supports_C` scope row fails validate (V-25: "must-have claim scope supported only at C strength"). In that case the menu-basis term is minted as a `site_capabilities` row only, with `company_disclosed` provenance and notes saying the §3 tag is held. The §3 column and evidence row wait for a ruling. One option: let own-site menu rows carry `supports_B`. Another: keep menu facts in capabilities only on A/B-tier records.
+
 ## Results
 | | count |
 |---|---|
 | frame rows | 100 (83 with ≥1 page loaded; 342 pages) |
 | candidates judged | 90 |
 | accepted term decisions | 33 (`verdicts.csv`) |
-| records gaining a §3 tag | **10** (10.0% yield) |
-| sites tagged, by basis | narrative (A) 4, menu (C) 7 (a site can have both) |
-| evidence rows by basis | menu 23, narrative 6 (site 29, org 2) |
+| records gaining a §3 tag | **7** (7.0% yield) |
+| sites tagged, by basis | narrative (A) 4, menu (C) 3 (a site can have both) |
+| evidence rows by basis | menu 6, narrative 6 (site 11, org 2) |
+| menu terms held from §3 tag (V-25) | 18 (sites with capability rows only: SITE-000623, SITE-000647, SITE-001733) |
 | site_capabilities rows | 17 (CAP-001015..CAP-001031) |
-| evidence IDs | EVD-345100..EVD-345130 |
+| evidence IDs | EVD-345100..EVD-345112 |
 
 Candidates that were not minted are in `not_minted.csv`, each with a reason. These are not REJECT verdicts on records. When a fetch failed, the source was unavailable; that does not mean the capability is absent.
 
@@ -58,11 +62,14 @@ Candidates that were not minted are in `not_minted.csv`, each with a reason. The
 No permit rows were minted in this batch. TRI/FRS give NAICS and chemicals, not §3 process terms. Ohio EPA air-permit emission-unit descriptions do name processes, but they need a per-facility document pull. That is left as the next source for the rows still untagged.
 
 ## Yield stop
-This batch tagged 10 of 100 records (10%), and b01 tagged 11%. Both are below the 20% stop rule even with the menu ruling, so **this lane stops here**. Rows 200–306 of the frame (106 rows, Cuyahoga tail onward) are untouched. To restart, a different source is needed: Ohio EPA air-permit emission-unit text, or product-catalog PDFs.
+This batch gave 7 of 100 records a §3 tag (7%), or 11 of 100 (11%) counting the 4 sites that got capability rows only. b01 was 11%. Both are below the 20% stop rule even with the menu ruling, so **this lane stops here**. Rows 200–306 of the frame (106 rows) are untouched. Restarting needs a different source, such as Ohio EPA air-permit emission-unit text or product-catalog PDFs.
 
 ## Leads
 - Mechanical Rubber SITE-000118 (an NY address on its own site), Q Medical Devices SITE-000568 and ePac SITE-001652 (multi-location companies): org grain only, and their org columns were already filled.
 - MMI Textiles SITE-000477 shares 1 American Rd with Health-Mor SITE-001573 (the Lane A address-first lead). The nylon tag here is on MMI's own site.
+
+## Correction note
+The first push of this PR (commit 1) failed local validate with 4 V-25 errors. The helper didn't stop on the failure. This commit regenerates the unmerged rows in place: EVD-345113..345130 are no longer used, and CAP IDs are unchanged.
 
 ## CI
 The CI `validate` job fails on main too: docs/schema/vocab.json is stale, and test_audit_evidence_coverage errors on EVD-333167. It is not touched here, per instruction. `python3 scripts/validate.py` passes locally, and `scripts/check_row_loss.py --base origin/main` is OK.
