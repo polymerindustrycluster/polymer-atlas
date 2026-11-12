@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.13 — 2026-11-12 (academic-passes battery, owner rulings 2026-11-12: §3.1 gains `dyeing_finishing` and `fiber_formation` (S2); §3.5 gains `liquid_crystals` (S1); §4.11 `scale_band` conversion rule (S3); §4.13 `tier_effect` gains `supports_U` (S4); §4.21 ORCID name-match clarification for the given-names record shape (S5); §4.9 people field set gains `lab_url` (S6)).
+**Version:** v1.13.1 — 2026-11-12 (§4.21 `identifier_type` enum gains `GOOGLE_SCHOLAR`, `WOS_RESEARCHER_ID`, `GITHUB` under strict per-type mint rules — owner rulings 2026-11-12; no rows minted by the revision itself).
+Previous: v1.13 — 2026-11-12 (academic-passes battery, owner rulings 2026-11-12: §3.1 gains `dyeing_finishing` and `fiber_formation` (S2); §3.5 gains `liquid_crystals` (S1); §4.11 `scale_band` conversion rule (S3); §4.13 `tier_effect` gains `supports_U` (S4); §4.21 ORCID name-match clarification for the given-names record shape (S5); §4.9 people field set gains `lab_url` (S6)).
 Previous: v1.12 — 2026-11-06 (events crosswalk `pic_events_slug` and participation role `attendee`, §4.12; owner decisions 2026-11-06 B-CROSSWALK and attendee role). Prior: v1.11.1 — 2026-11-06 (§4.9: "Deputy Group Leader" is not folded to `group_leader`, owner ruling 2026-11-06). Prior: v1.11 — 2026-11-05 (newsroom, newsroom feed and LinkedIn organization columns; §4.22 evidence archive links — owner battery 2026-11-04 B-NEWS, B-LINKEDIN, B-ARCHIVE). Prior: v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
@@ -2286,7 +2287,7 @@ speculatively and never in bulk from a name match.
 | Field | Type | Notes |
 |---|---|---|
 | `person_id` | FK → people | **MUST** |
-| `identifier_type` | enum | `ORCID` (extensible only by dated revision) |
+| `identifier_type` | enum | `ORCID`, `GOOGLE_SCHOLAR`, `WOS_RESEARCHER_ID`, `GITHUB` (extensible only by dated revision) |
 | `identifier_id` | string | Verbatim as the registry carries it (ORCID iDs with their hyphens; the final character may be the `X` check character) |
 | `match_basis` | string | How the match was established, e.g. `orcid_on_institution_page`, `orcid_record_employment_match` — a guarded no-hit is never recorded as a negative fact |
 | `as_of` | date | The date the registry record was retrieved/verified |
@@ -2309,6 +2310,28 @@ the same iD is a dedupe alarm (the records are presumptively the same
 person), resolved as a record merge — never as a second link row.
 Validator V-54 enforces the field set, the FK, the enum, the ORCID
 shape, and the one-row-per-value rule.
+
+**Google Scholar, ResearcherID, GitHub [v1.13.1] (owner rulings
+2026-11-12).** Three further researcher-published identifier types join
+the table, each minted only on its own exact-match basis, recorded in
+`match_basis`; the one-row-per-value dedupe alarm applies to all types.
+`GOOGLE_SCHOLAR` (the profile's user ID) mints only where the profile
+is linked from the institution's own page for the person, or where the
+profile carries the exact name, a stated affiliation equal to the
+record's institution, and a verified email at that institution's
+domain; harvest is opportunistic in passes that already stand in front
+of the page — never a bulk sweep. `WOS_RESEARCHER_ID` mints on the
+institution-page basis (the ID published on the institution's page for
+the person, or a Web of Science record whose name and current
+employment match). `GITHUB` mints for the computational subset only:
+the profile itself states the person's name and their institution.
+Declined at the same sitting, with reasons recorded in the P2 packet:
+ResearchGate (auto-created unclaimed profiles fail the
+researcher-published test; an institution page linking one may ride in
+`sources` only), Scopus Author ID, Semantic Scholar and OpenAlex
+author IDs (algorithmically assigned — OpenAlex remains discovery
+only), LinkedIn (contact-data line), ISNI and Wikidata. CV PDFs are
+sources, not identifiers.
 
 **Name match — the given-names record shape [v1.13] (owner ruling
 2026-11-12, S5).** Some ORCID records carry the person's full name in
