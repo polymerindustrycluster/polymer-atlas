@@ -1,0 +1,12 @@
+program_id,institution,program_type,program_name,url,gaps
+PROG-000011,Case Western Reserve University,center,Soft Matter Characterization Laboratory,https://cwru.corefacilities.org,specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000012,Case Western Reserve University,center,Solar Durability and Lifetime Extension Research Center (SDLE),https://sdle.case.edu/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000013,EWI,center,EWI Polymers Lab,https://ewi.org/capabilities/materials-engineering-integrity/materials-engineering/polymers/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000017,The Ohio State University,center,Center for Electron Microscopy and Analysis (CEMAS),https://cemas.osu.edu/industry,specialty_processes;specialty_materials;scale_band
+PROG-000018,The Ohio State University,center,Polymer Synthesis Research Facility (PSRF),https://chemistry.osu.edu/polymer-synthesis-research-facility-psrf,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000019,The Ohio State University,center,Program of Excellence in Natural Rubber Alternatives (PENRA),https://u.osu.edu/penra/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000027,Case Western Reserve University,center,Center for Materials Data Science for Reliability and Degradation (MDS-Rely),https://mds-rely.org/,specialty_processes;facilities_note;scale_band
+PROG-000028,Case Western Reserve University,center,CAPP,https://engineering.case.edu/macromolecular-science-and-engineering,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000106,Case Western Reserve University,degree,Materials Science and Engineering,https://bulletin.case.edu/engineering/materials-science-engineering/materials-science-engineering-bse/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000108,The Ohio State University,degree,Materials Science and Engineering,https://mse.osu.edu/undergraduate-student-programs/major-materials-science-and-engineering-mse,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000117,Case Western Reserve University,degree,Macromolecular Science and Engineering,https://bulletin.case.edu/engineering/macromolecular-science-engineering/macromolecular-science-ms/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band

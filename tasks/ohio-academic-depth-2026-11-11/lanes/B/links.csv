@@ -1,0 +1,64 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000005,PROG-000117,LINK,"Abhinendra Singh, Assistant Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000006,PROG-000117,LINK,"Alex Jamieson, Professor Emeritus, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000007,PROG-000117,LINK,"Chung-Fu Cheng, Research Assistant Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000008,PROG-000117,LINK,"David Schiraldi, Professor Emeritus, Macromolecular Science and Engineering",https://engineering.case.edu/materials-branch/faculty,institution_page
+PERSON-000009,PROG-000117,LINK,"Eric Baer, Herbert Henry Dow Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000010,PROG-000117,LINK,"Gary Wnek, Department Chair, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000011,PROG-000117,LINK,"Hatsuo Ishida, Peter A. Asseff PhD Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000012,PROG-000117,LINK,"Ica Manas-Zloczower, Thomas W. and Nancy P. Seitz Professor of Advanced Materials and Energy, Department of Macromolecular Science and Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000013,PROG-000117,LINK,"Joao Maia, Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000013,PROG-000028,LINK,"CAPP is directed by João Maia, a Professor at the Department of Macromolecular Science and Engineering of Case Western Reserve University.",https://engineering.case.edu/research/centers/advanced-polymer-processing/director,institution_page
+PERSON-000014,PROG-000117,LINK,"John Blackwell, Professor Emeritus, Macromolecular Science and Engineering",https://engineering.case.edu/materials-branch/faculty,institution_page
+PERSON-000015,PROG-000117,LINK,"Lei Zhu, Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000015,PROG-000011,LINK,"Soft Matter Characterization Instruments include thermal analysis, molecular weight characterization, microscopy and X-ray scattering. Lei Zhu",https://cwru.corefacilities.org/landing/76,institution_page
+PERSON-000016,PROG-000117,LINK,"Michael J. A. Hore, Associate Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000017,PROG-000117,LINK,"Samuel Root, Assistant Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000018,PROG-000117,LINK,"Valentin Rodionov, Assistant Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000080,PROG-000117,LINK,"Svetlana Morozova, Associate Professor, Department of Macromolecular Science and Engineering, Case School of Engineering",https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff,institution_page
+PERSON-000081,PROG-000117,LINK,Professor of Chemistry Secondary appointment in Macromolecular Science and Engineering,http://caslabs.case.edu/sauve/about-dr-sauve/,institution_page
+PERSON-000082,PROG-000106,LINK,"Roger French, Professor, Materials Science and Engineering",https://engineering.case.edu/materials-branch/faculty,institution_page
+PERSON-000082,PROG-000012,LINK,"Roger French, Director SDLE Research Center, CWRU",https://engineering.case.edu/materials-branch/faculty,institution_page
+PERSON-000084,PROG-000106,LINK,"Laura Bruckman, Associate Professor, Materials Science and Engineering",https://engineering.case.edu/materials-branch/faculty,institution_page
+PERSON-000084,PROG-000012,LINK,"Laura Bruckman, Climo Associate Professor, Department of Materials Science and Engineering, Case School of Engineering",https://engineering.case.edu/centers/sdle/researchers,institution_page
+PERSON-000084,PROG-000027,LINK,"said Laura Bruckman, director of MDS-Rely and the Climo Associate Professor of Materials Science and Engineering at Case Western Reserve",https://case.edu/engineering/about/news/case-western-reserve-adds-third-research-site-center-materials-data-science-reliability-and-degradation,institution_page
+PERSON-000032,PROG-000108,LINK,"Benatar, Avi, Professor, Materials Science and Engineering",https://mse.osu.edu/directory/department-faculty,institution_page
+PERSON-000034,PROG-000108,LINK,"Powell, Heather, Professor, Materials Science and Engineering",https://mse.osu.edu/directory/department-faculty?page=1,institution_page
+PERSON-000099,PROG-000108,LINK,"Li, Jinghua, Associate Professor, Materials Science and Engineering",https://mse.osu.edu/directory/department-faculty,institution_page
+PERSON-000100,PROG-000108,LINK,"Sayre, Jay, Research Associate Professor, Materials Science and Engineering",https://mse.osu.edu/directory/department-faculty?page=1,institution_page
+PERSON-000101,PROG-000019,LINK,Researchers Katrina Cornish,https://u.osu.edu/penra/members/researchers/,institution_page
+PERSON-000092,PROG-000019,LINK,"Program of Excellence in Natural Rubber Alternatives (PENRA) - FABE members include Katrina Cornish, Frederick Michel Jr., Alfred Soboyejo, Ajay Shah, and Judit Puskas",https://fabe.osu.edu/node/10332,institution_page
+PERSON-000083,,NO_WITNESS,,,
+PERSON-000085,,NO_WITNESS,,,
+PERSON-001321,,NO_WITNESS,,,
+PERSON-001351,,NO_WITNESS,,,
+PERSON-001352,,NO_WITNESS,,,
+PERSON-002007,,NO_WITNESS,,,
+PERSON-002105,,NO_WITNESS,,,
+PERSON-000033,,NO_WITNESS,,,
+PERSON-000035,,NO_WITNESS,,,
+PERSON-000036,,NO_WITNESS,,,
+PERSON-000037,,NO_WITNESS,,,
+PERSON-000038,,NO_WITNESS,,,
+PERSON-000093,,NO_WITNESS,,,
+PERSON-000094,,NO_WITNESS,,,
+PERSON-000095,,NO_WITNESS,,,
+PERSON-000096,,NO_WITNESS,,,
+PERSON-000102,,NO_WITNESS,,,
+PERSON-000103,,NO_WITNESS,,,
+PERSON-000476,,NO_WITNESS,,,
+PERSON-001324,,NO_WITNESS,,,
+PERSON-001325,,NO_WITNESS,,,
+PERSON-001326,,NO_WITNESS,,,
+PERSON-001327,,NO_WITNESS,,,
+PERSON-001328,,NO_WITNESS,,,
+PERSON-001329,,NO_WITNESS,,,
+PERSON-001333,,NO_WITNESS,,,
+PERSON-002005,,NO_WITNESS,,,
+PERSON-002013,,NO_WITNESS,,,
+PERSON-002016,,NO_WITNESS,,,
+PERSON-002100,,NO_WITNESS,,,
+PERSON-002103,,NO_WITNESS,,,
+PERSON-002113,,NO_WITNESS,,,
+PERSON-002115,,NO_WITNESS,,,
+PERSON-002116,,NO_WITNESS,,,
