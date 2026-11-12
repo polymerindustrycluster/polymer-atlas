@@ -1,0 +1,27 @@
+{
+ "batch": "b02",
+ "date": "2026-11-12",
+ "frame_rows": 100,
+ "frame_slice": "100:200 of cap_frame (306)",
+ "sites_fetched_ok": 83,
+ "pages_ok": 342,
+ "candidates": 90,
+ "accepted_terms": 33,
+ "records_gaining_tag": 10,
+ "yield_pct": 10.0,
+ "sites_tagged": 10,
+ "orgs_tagged": 2,
+ "site_evidence": 29,
+ "org_evidence": 2,
+ "evidence_rows_by_basis": {
+  "menu": 23,
+  "narrative": 6
+ },
+ "sites_tagged_by_basis": {
+  "narrative": 4,
+  "menu": 7
+ },
+ "cap_rows": 17,
+ "evd_range": "EVD-345100..EVD-345130",
+ "cap_range": "CAP-001015..CAP-001031"
+}
