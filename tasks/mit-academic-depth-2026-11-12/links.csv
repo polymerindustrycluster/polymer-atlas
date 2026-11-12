@@ -1,0 +1,24 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000360,PROG-000061,LINK,"Professor Bradley D. Olsen DEPARTMENT OF CHEMICAL ENGINEERING Block copolymers, Soft condensed matter physics, Protein-based materials, Bioelectronics",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000361,PROG-000061,LINK,Professor Timothy M. Swager DEPARTMENT OF CHEMISTRY Synthesis and characterization of electronically and optically active polymers and polymer sensory materials,https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000362,PROG-000061,LINK,"Professor Zachary P. Smith DEPARTMENT OF CHEMICAL ENGINEERING Membrane separations, polymer physics, polymer chemistry, porous materials, and nanotechnology",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000363,PROG-000061,LINK,"Professor Caroline A. Ross DEPARTMENT OF MATERIALS SCIENCE AND ENGINEERING Magnetic thin films, devices, self-assembly",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000363,PROG-000101,LINK,Caroline A. Ross Professor,https://dmse.mit.edu/people/faculty/,institution_page
+PERSON-000364,PROG-000061,LINK,"Professor Gregory C. Rutledge DEPARTMENT OF CHEMICAL ENGINEERING Polymer Physics, Thermodynamics of bulk polymers molecular modeling",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000365,PROG-000061,LINK,"Professor Aristide Gumyusenge DEPARTMENT OF MATERIALS SCIENCE AND ENGINEERING Electronic Materials, Polymers, Semiconductors, Surfaces, Interfaces, and Thin Films",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000365,PROG-000101,LINK,Aristide Gumyusenge Assistant Professor,https://dmse.mit.edu/people/faculty/,institution_page
+PERSON-000366,PROG-000061,LINK,"Professor Xuanhe Zhao DEPARTMENT OF MECHANICAL ENGINEERING/CEE Soft materials, solid mechanics, bioinspired design, electroactive polymers, surface instabilities, tough hydrogels",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000367,PROG-000061,LINK,"PPSM Director Professor Alfredo Alexander-Katz DEPARTMENT OF MATERIALS SCIENCE & ENGINEERING Polymer physics, drug-delivery, self-assembly, adhesion, driven systems",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000367,PROG-000101,LINK,Alfredo Alexander-Katz Professor,https://dmse.mit.edu/people/faculty/,institution_page
+PERSON-000368,,NO_WITNESS,,,institution_page
+PERSON-000369,PROG-000061,LINK,"Professor Robert J. Macfarlane DEPARTMENT OF MATERIALS SCIENCE AND ENGINEERING Biomaterials, Composites, Electronic, Photonic, and Magnetic Materials, Polymers, Self Assembly",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000369,PROG-000101,LINK,Robert J. Macfarlane Associate Professor,https://dmse.mit.edu/people/faculty/,institution_page
+PERSON-000370,PROG-000061,LINK,"Professor Jeremiah A. Johnson DEPARTMENT OF CHEMISTRY Drug-delivery, Hydrogels, Biopolymers, Nanoparticles, Semiconducting polymers, Organometallic polymers, Photoactive polymers",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000371,PROG-000061,LINK,"Professor Paula T. Hammond DEPARTMENT OF CHEMICAL ENGINEERING Macromolecular Design and Synthesis, Functionalized Polymers, Optical Properties of Polymers, Liquid Crystalline Polymeric Materials",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000372,PROG-000061,LINK,"Professor Patrick S. Doyle DEPARTMENT OF CHEMICAL ENGINEERING Microrheology, Biophysics, Microfluidics Separations, Polymer Physics, Transport Phenomena",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000373,PROG-000061,LINK,"PPSM Affiliates Professor Robert S. Langer DEPARTMENT OF CHEMICAL ENGINEERING Polymeric, controlled drug delivery systems",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000374,,NO_WITNESS,,,institution_page
+PERSON-000375,PROG-000061,LINK,"Professor Rafael Gomez-Bombarelli DEPARTMENT OF MATERIALS SCIENCE AND ENGINEERING Computational materials science, atomistic simulations, machine learning",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000375,PROG-000101,LINK,Rafael Gómez-Bombarelli Associate Professor,https://dmse.mit.edu/people/faculty/,institution_page
+PERSON-000376,PROG-000061,LINK,"Professor Tania Lopez-Silva DEPARTMENT OF MATERIALS SCIENCE AND ENGINEERING Health and Medicine, Soft Matter, Computation and Design, Characterization, Synthesis and Processing",https://ppsm.mit.edu/faculty/,institution_page
+PERSON-000376,PROG-000101,LINK,Tania Lopez-Silva Assistant Professor,https://dmse.mit.edu/people/faculty/,institution_page
