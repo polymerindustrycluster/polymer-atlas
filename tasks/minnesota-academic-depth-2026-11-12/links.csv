@@ -1,0 +1,18 @@
+person_id,verdict,program,witness_url
+PERSON-000105,LINK,PROG-000104,https://cse.umn.edu/iprime/fsp
+PERSON-000106,LINK,PROG-000072,https://cse.umn.edu/chem/marc-hillmyer
+PERSON-000107,LINK,PROG-000104,https://mrsec.umn.edu/research/
+PERSON-000108,LINK,PROG-000104,https://cse.umn.edu/iprime/fsp
+PERSON-000109,LINK,PROG-000104,https://cse.umn.edu/iprime/fsp
+PERSON-000110,LINK,PROG-000072,https://cse.umn.edu/iprime/fsp
+PERSON-000111,LINK,PROG-000104,https://mrsec.umn.edu/research/
+PERSON-000112,LINK,PROG-000104,https://mrsec.umn.edu/research/
+PERSON-000113,NO_WITNESS,,https://mrsec.umn.edu/people/investigators/
+PERSON-000114,LINK,PROG-000072,https://cse.umn.edu/iprime/fsp
+PERSON-000115,NO_WITNESS,,https://cse.umn.edu/iprime/biomaterials-and-pharmaceutical-materials-bpm
+PERSON-000116,LINK,PROG-000072,https://cse.umn.edu/iprime/biomaterials-and-pharmaceutical-materials-bpm
+PERSON-000117,LINK,PROG-000104,https://cse.umn.edu/iprime/fsp
+PERSON-000118,NO_WITNESS,,
+PERSON-000119,LINK,PROG-000104,https://cse.umn.edu/iprime/coating-process-fundamentals-cpf-1
+PERSON-000121,NO_WITNESS,,https://cse.umn.edu/iprime/data-driven-discovery-and-design-4d
+NEW-CANDIDATE (C. Daniel Frisbie),VERIFIED,PROG-000104,https://cse.umn.edu/cems/c-daniel-frisbie

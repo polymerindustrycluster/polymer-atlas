@@ -1,0 +1,7 @@
+program_id,field,proposed_value,witness_url
+PROG-000072,research_areas,polymer_synthesis;polymer_physics;rheology;characterization_methods;membranes_separations;sustainable_feedstocks;biomedical_polymers,https://cse.umn.edu/iprime/fsp
+PROG-000072,specialty_processes,coating_applying;extrusion_unspecified;fiber_formation;polymerization,https://cse.umn.edu/iprime/coating-process-fundamentals-cpf-1
+PROG-000072,specialty_materials,bioplastics_biobased;composites_unspecified;films_flexible_packaging;fluoropolymers,https://cse.umn.edu/iprime/fsp
+PROG-000072,facilities_note,Polymer Characterization Facility (named key facility of the FSP program); CPFP Labs (CPF program); Characterization Facility and Biomedical Image Processing Laboratory (BPM program facilities),https://cse.umn.edu/iprime/fsp
+PROG-000104,research_areas,polymer_synthesis;polymer_physics;rheology;membranes_separations;biomedical_polymers,https://cse.umn.edu/cems/materials-science-phd
+PROG-000104,scale_band,medium,https://apps.grad.umn.edu/stats/en/1052100.shtml
