@@ -1,0 +1,38 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000148,PROG-000063,LINK,"John Matson Organic, macromolecular, and supramolecular synthesis.",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000149,PROG-000063,LINK,Robert Moore Polymer morphology and characterization.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000150,PROG-000063,LINK,Christopher Williams L.S. Randolph Professor,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000151,PROG-000063,LINK,"Learn about Dr. Kevin Edgar, Professor at Virginia Tech's Department of Sustainable Biomaterials.",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000152,PROG-000063,LINK,Michael Bortner,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000153,PROG-000063,LINK,Michael Schulz Polymer synthesis and structure-property relationships.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000154,PROG-000063,LINK,Louis Madsen Materials for sustainable energy and mechanisms of molecular motion.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000155,PROG-000063,LINK,Alan Esker Polymer physical and surface chemistry.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000156,PROG-000063,LINK,Shengfeng Cheng,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000157,PROG-000063,LINK,Justin R. Barone Professor: Biopolymers and polymer processing,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000158,PROG-000063,LINK,"Michael Bartlett Associate Professor, John R. Jones III Faculty Fellow",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000159,PROG-000063,LINK,Rong Tong,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000160,PROG-000063,LINK,Adrian Figg Polymer synthesis for biology and sustainability.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000161,PROG-000063,LINK,Y.A. Liu,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000162,PROG-000063,LINK,Sanket Deshmukh,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000163,PROG-000063,LINK,Anubhav Sarmah Assistant Professor,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000164,PROG-000063,LINK,Erdogan Kiran,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000165,PROG-000063,LINK,"Yifan Cheng Assistant Professor: Food Packaging, Food Process Engineering, Food Safety, Antimicrobial Nanostructures for Food Contact Surfaces, Intelligent Packaging",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000166,PROG-000063,LINK,Scott W. Case Reynolds Metals Professor and Associate Department Head,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000167,PROG-000063,LINK,"Learn about Dr. Young-Teck Kim, Associate Professor at Virginia Tech's Department of Sustainable Biomaterials.",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000168,PROG-000063,LINK,"Learn about Dr. Charles Frazier, Professor at Virginia Tech's Department of Sustainable Biomaterials.",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000169,PROG-000063,LINK,"Learn about Dr. Maren Roman, Professor at Virginia Tech's Department of Sustainable Biomaterials.",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000170,PROG-000063,LINK,Abby Whittington Associate professor Graduate Program Chair in Materials Science and Engineering,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000171,PROG-000063,LINK,Rana Ashkar,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000172,PROG-000063,LINK,"Guoliang (Greg) Liu Polymers and composites for energy, water, and catalysis.",https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000173,PROG-000063,LINK,Paul Deck Fluoroorganic and fluoropolymer chemistry.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000174,PROG-000063,LINK,Josh Worch Intrinsically recyclable polymers from renewable sources.,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000175,PROG-000063,LINK,Jonathan Coote,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000176,PROG-000063,LINK,Stephen Martin,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-001354,PROG-000063,LINK,Richey Davis,https://mii.vt.edu/people/faculty.html,institution_page
+PERSON-000152,PROG-000119,LINK,"Director, MACR Program Michael Bortner, Ph.D.",https://mii.vt.edu/students.html,institution_page
+PERSON-000149,PROG-000119,LINK,"Director, Macromolecular Science & Engineering Graduate Degree Program (MACR), Virginia Tech, 2015–present",https://chem.vt.edu/people/faculty/teaching-and-research/rmoore.html,institution_page
+PERSON-000150,PROG-000119,LINK,"an additive manufacturing course taught by Chris Williams, the L.S. Randolph Professor of Mechanical Engineering, as part of the macromolecular science and engineering curriculum",https://news.vt.edu/articles/2023/07/mii-macr-student-team-wins-digital-manufacturing-award.html,institution_page
+PERSON-000163,PROG-000119,LINK,"Kyle Mirabile (co-advised with Dr. Michael J. Bortner) PhD Student, Macromolecular Science and Engineering, Virginia Tech",https://sarmah.che.vt.edu/People.html,institution_page
+PERSON-000175,PROG-000119,LINK,"Felicia Fianu (co-advised with Dr. Jonathan P. Coote) PhD Student, Macromolecular Science and Engineering, Virginia Tech",https://sarmah.che.vt.edu/People.html,institution_page
+PERSON-001354,PROG-000119,LINK,"Fundamentals of Macromolecular Science and Engineering (MACR 5015 & 5016, co-taught)",https://nanoparticles.che.vt.edu/,institution_page
+PERSON-000170,PROG-000111,LINK,Abby Whittington Associate professor Graduate Program Chair in Materials Science and Engineering,https://mii.vt.edu/people/faculty.html,institution_page
