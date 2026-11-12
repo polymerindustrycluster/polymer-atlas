@@ -1,0 +1,12 @@
+site_id,lead_type,detail
+SITE-000007,zip_conflict,own page https://www.struktol.com/contact-us/ prints 201 E. Steels Corners Road; own-page ZIP 44224 conflicts with recorded ZIP 44223; need integrator ruling on the ZIP before the street is applied
+SITE-000014,own_site_other_city_address,"recorded city Akron; own pages print: 1436 Martin Road Mogadore, OH 44260 || 1436 Martin Road, Mogadore, OH 44260"
+SITE-000022,address_overlap,ADDRESS-OVERLAP: SITE-002107 (ORG-002150 Biena Tech Llc)
+SITE-000043,zip_conflict,own page https://www.alterra360.com/contact-us/ prints 222 S Main Street; own-page ZIP 44308 conflicts with recorded ZIP 44306; need integrator ruling on the ZIP before the street is applied
+SITE-000077,own_site_other_city_address,"recorded city Twinsburg; own pages print: 4754 E. High Street , Mantua, OH 44255 || 6969 Constance Drive , Hiram, OH 44234"
+SITE-000084,own_site_other_city_address,"recorded city Barberton; own pages print: 3414 E Waterloo Rd. , Akron, Ohio 44312"
+SITE-000085,own_site_other_city_address,"recorded city Barberton; own pages print: 8220 Bavaria Dr E, Macedonia, OH 44056"
+SITE-000098,own_site_other_city_address,"recorded city Akron; own pages print: 1699 COMMERCE DRIVE , STOW OH 44224 || 1699 Commerce Drive – Stow, OH 44224 || 9361 HAMILTON DRIVE , MENTOR, OH 44060"
+SITE-000385,same_operator_same_address,SAME-ADDRESS sites: SITE-004436 (ORG-000360 HB Chemical - Twinsburg HQ)
+SITE-000085,cross_operator_address_lead,"Ohio Precision Molding (ORG-000085, recorded Barberton) own site https://ohioprecisionmolding.com prints 8220 Bavaria Dr E, Macedonia, OH 44056 — the street filled in this batch for Design Molded Plastics SITE-000069 (ORG-000069). Possible relocation/co-location or common ownership; no merge, move or status change made. Settling fact: dated statement from either operator or an Ohio SOS/parcel record for 8220 Bavaria Dr E."
+SITE-000008,shared_street_lead,"Myers Industries HQ (SITE-000008) own contact page gives 1293 South Main Street only as a mailing address; SITE-000231 Akro-Mils (ORG-000218, a Myers business) notes the same street. Held; settling fact: Myers 10-K Item 2 or own page naming 1293 S Main St as the physical HQ."
