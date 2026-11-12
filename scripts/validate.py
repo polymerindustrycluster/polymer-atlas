@@ -1026,7 +1026,7 @@ assert PEOPLE_ENGAGEMENT == ENGAGEMENT | {"consulting"}  # SS4.20: the SS4.11 se
 # [v1.10, owner ruling 2026-11-04] Person identifier links (SCHEMA SS4.21):
 # registry identity for people, in its own table on the SS4.8 pattern.
 PIL_FIELDS = ["person_id", "identifier_type", "identifier_id", "match_basis", "as_of"]
-PERSON_ID_TYPES = {"ORCID"}  # extensible only by dated schema revision (SS4.21)
+PERSON_ID_TYPES = {"ORCID", "GOOGLE_SCHOLAR", "WOS_RESEARCHER_ID", "GITHUB"}  # [v1.13.1] extensible only by dated schema revision (SS4.21)
 LIVENESS_SIGNALS = {"operating_evidence", "closure_signature", "sos_confirmed_closed",
                     "sos_active"}
 QUAL_ORDER = ["public_parent", "tri_reporter", "employees_250plus", "national_footprint"]
