@@ -1,0 +1,13 @@
+site_id,lead_type,detail
+SITE-000450,address_overlap,"ADDRESS-OVERLAP: SITE-000454 (ORG-000424 LT Molding Solutions — Hudson, this batch)"
+SITE-000454,address_overlap,"ADDRESS-OVERLAP: SITE-000450 (ORG-000421 Little Tikes — Hudson, this batch)"
+SITE-001316,same_operator_same_address,"SAME-ADDRESS sites: SITE-000608 (ORG-000569 Shin-Etsu Silicones of America, Inc. — A)"
+SITE-001317,same_operator_same_address,"SAME-ADDRESS sites: SITE-000608 (ORG-000569 Shin-Etsu Silicones of America, Inc. — A)"
+SITE-001539,own_site_other_city_address,"recorded city Twinsburg; own pages print: 858 Seasons Road , Stow, OH 44224"
+SITE-001569,zip_conflict,"own page https://visionairsolutions.com/ prints 526 S. Main St, Suite 509; own-page ZIP 44311 conflicts with recorded ZIP 44306; need integrator ruling on the ZIP before the street is applied"
+SITE-001708,own_site_other_city_address,"recorded city Green; own pages print: 5340 Mayfair Rd, North Canton, OH 44720"
+SITE-002032,own_site_other_city_address,"recorded city Akron; own pages print: 1000 N Third St. , Hamilton, OH 45011 || 11775 OH-220 , Waverly, OH 45690 || 1190 Joyce Avenue , Columbus, OH 43219"
+SITE-000188,own_site_other_city_address,"recorded city Streetsboro; own pages print: 800 Enterprise Parkway , Ravenna, Ohio 44266"
+SITE-000370,address_overlap,ADDRESS-OVERLAP: SITE-000318 (ORG-000299 Dca Construction Products — Garrettsvill)
+SITE-000450,address_first_dedupe_lead,"Little Tikes (ORG-000421) lists 'LT Molding Solutions - A Division of Little Tikes' as a trade name, and LT Molding Solutions is also held as its own org ORG-000424 with SITE-000454. Both own sites print 2180 Barlow Rd, Hudson. Probable single establishment under two org records; no merge made. Settling fact: integrator dedupe ruling (division vs separate legal entity, e.g. Ohio SOS record)."
+SITE-001316,address_first_dedupe_lead,"Shin-Etsu Silicones of America holds SITE-000608, SITE-001316 and SITE-001317 in Akron; the own site prints one street, 1150 Damar Drive. Held; settling fact: own page or filing that binds a distinct street to each site, or an integrator dedupe ruling."
