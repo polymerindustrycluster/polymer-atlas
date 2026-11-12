@@ -1,0 +1,48 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000185,PROG-000099,LINK,Blair Brettmann Associate Professor blair.brettmann@mse.gatech.edu,https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000185,PROG-000143,LINK,Research Areas: Biomolecular-Solids Composites Fibers Nanostructures Polymers,https://www.mse.gatech.edu/people/blair-brettmann,institution_page
+PERSON-000186,PROG-000099,LINK,Scott Danielsen is an Assistant Professor in the School of Materials Science and Engineering at the Georgia Institute of Technology,https://www.mse.gatech.edu/people/scott-danielsen,institution_page
+PERSON-000186,PROG-000143,LINK,"Their current primary research interests are the structure and dynamics of nonideal structured fluids, particularly polymer gels and biological fluids",https://www.mse.gatech.edu/people/scott-danielsen,institution_page
+PERSON-000187,PROG-000099,LINK,"Professor of Chemistry and Biochemistry, and Materials Science and Engineering at the Georgia Institute of Technology with expertise in polymer chemistry",https://www.mse.gatech.edu/people/john-reynolds,institution_page
+PERSON-000187,PROG-000143,LINK,"Professor of Chemistry and Biochemistry, and Materials Science and Engineering at the Georgia Institute of Technology with expertise in polymer chemistry",https://www.mse.gatech.edu/people/john-reynolds,institution_page
+PERSON-000188,PROG-000099,LINK,"C. P. Wong Regent’s Professor, The Charles Smithgall Institute Endowed Chair",https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000188,PROG-000143,LINK,Research Areas: Biomolecular-Solids Ceramics Composites Metals Nanostructures Polymers,https://www.mse.gatech.edu/people/c-p-wong,institution_page
+PERSON-000189,PROG-000099,LINK,Jerry Qi Professor qih@me.gatech.edu,https://www.mse.gatech.edu/people,institution_page
+PERSON-000189,PROG-000143,LINK,"His current research projects include 4D printing of active materials, mechanics in 3D printing technology, active polymer design and manufacturing, reprocessing and recycling polymers",https://www.mse.gatech.edu/people/h-jerry-qi,institution_page
+PERSON-000190,PROG-000099,LINK,"Rampi Ramprasad Regents’ Entrepreneur Michael E. Tennenbaum Family Chair , Georgia Research Alliance Eminent Scholar in Energy Sustainability",https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000190,PROG-000143,LINK,Research Areas: Metals Nanostructures Polymers,https://www.mse.gatech.edu/people/rampi-ramprasad,institution_page
+PERSON-000191,PROG-000099,LINK,Vladimir Tsukruk Regents' Professor vladimir@mse.gatech.edu,https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000191,PROG-000143,LINK,Research Areas: Biomolecular-Solids Composites Nanostructures Polymers,https://www.mse.gatech.edu/people/vladimir-tsukruk,institution_page
+PERSON-000192,PROG-000099,LINK,Gutekunst Assistant Professor willgute@gatech.edu,https://www.mse.gatech.edu/people,institution_page
+PERSON-000192,PROG-000143,LINK,the development of small molecule reagents for the dynamic modulation of branched polymer architectures,https://www.mse.gatech.edu/people/will-gutekunst,institution_page
+PERSON-000193,,NO_WITNESS,,,
+PERSON-000194,PROG-000099,LINK,Satish Kumar Professor satish.kumar@mse.gatech.edu,https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000194,PROG-000143,LINK,Research Areas: Composites Fibers Nanostructures Polymers Textiles,https://www.mse.gatech.edu/people/satish-kumar,institution_page
+PERSON-000195,PROG-000099,LINK,Dr. Jason Azoulay is an Associate Professor of Chemistry and Biochemistry and Materials Science and Engineering,https://www.mse.gatech.edu/people/jason-azoulay,institution_page
+PERSON-000195,PROG-000143,LINK,Research efforts within the group encompass homogeneous catalysis applied to polymer synthesis,https://www.mse.gatech.edu/people/jason-azoulay,institution_page
+PERSON-000196,PROG-000099,LINK,"Mark Losego Professor, MSE Faculty Fellow, & Dean’s Education Innovation Professor losego@gatech.edu",https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000196,PROG-000143,LINK,Research Areas: Ceramics Nanostructures Polymers Textiles,https://www.mse.gatech.edu/people/mark-losego,institution_page
+PERSON-000197,,NO_WITNESS,,,
+PERSON-000198,,NO_WITNESS,,,
+PERSON-000199,PROG-000099,LINK,Erin Ratcliff Professor eratcliff8@gatech.edu,https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000199,PROG-000143,LINK,LISPEM Polymer Electrochemistry Perovskites Sensors Organic Electronics Metal Oxide & Quantum Dots,https://www.mse.gatech.edu/people/erin-ratcliff,institution_page
+PERSON-000200,,NO_WITNESS,,,
+PERSON-000201,PROG-000099,LINK,Dr. Meisha L. Shofner is a Professor in the School of Materials Science and Engineering at Georgia Institute of Technology,https://www.mse.gatech.edu/people/meisha-shofner,institution_page
+PERSON-000201,PROG-000143,LINK,Shofner's group investigates processing-structure-property relationships in polymers and composites,https://www.mse.gatech.edu/people/meisha-shofner,institution_page
+PERSON-000202,,NO_WITNESS,,,
+PERSON-000203,PROG-000099,LINK,Professor Stingelin is Chair of the School of Materials Science and Engineering at Georgia Tech (GT),https://www.mse.gatech.edu/people/natalie-stingelin,institution_page
+PERSON-000204,PROG-000099,LINK,Mohan Srinivasarao Professor mohan.srinivasarao@mse.gatech.edu,https://www.mse.gatech.edu/people,institution_page
+PERSON-000204,PROG-000143,LINK,Research Areas: Biomolecular-Solids Composites Nanostructures Polymers,https://www.mse.gatech.edu/people/mohan-srinivasarao,institution_page
+PERSON-000205,PROG-000050,LINK,Donggang (Dong) Yao Site Director Georgia Institute of Technology,https://chmi.isye.gatech.edu/people/facultystaff,institution_page
+PERSON-000205,PROG-000099,LINK,Donggang Yao Professor yao@gatech.edu,https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000205,PROG-000143,LINK,Research Keywords: constitutive modeling continuum mechanics fiber spinning polymer processing rheology viscoelasticity,https://www.mse.gatech.edu/people/donggang-yao,institution_page
+PERSON-000206,PROG-000099,LINK,Karl Jacob Professor karl.jacob@mse.gatech.edu,https://www.mse.gatech.edu/people,institution_page
+PERSON-000206,PROG-000143,LINK,Research Areas: Biomolecular-Solids Composites Fibers Polymers Textiles,https://www.mse.gatech.edu/people/karl-jacob,institution_page
+PERSON-000207,PROG-000099,LINK,Temenoff Associate Professor johnna.temenoff@bme.gatech.edu,https://www.mse.gatech.edu/people,institution_page
+PERSON-000208,PROG-000099,LINK,Kyriaki Kalaitzidou Rae S. and Frank H. Neely Professor kyriaki.kalaitzidou@me.gatech.edu,https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-000208,PROG-000143,LINK,Research Areas: Composites Nanostructures Polymers,https://www.mse.gatech.edu/people/kyriaki-kalaitzidou,institution_page
+PERSON-000209,,NO_WITNESS,,,
+PERSON-001381,PROG-000099,LINK,"Antonio Facchetti Professor, Hightower Chair in MSE afacchetti6@gatech.edu",https://www.mse.gatech.edu/faculty-research-overview,institution_page
+PERSON-001381,PROG-000143,LINK,Research Areas: Biomolecular-Solids Ceramics Composites Fibers Nanostructures Polymers,https://www.mse.gatech.edu/people/antonio-facchetti,institution_page
+PERSON-001437,PROG-000099,LINK,"Paul Russo Professor, Hightower Chair in Biopolymers paul.russo@mse.gatech.edu",https://www.mse.gatech.edu/people,institution_page
+PERSON-001437,PROG-000143,LINK,Research Areas: Biomolecular-Solids Polymers,https://www.mse.gatech.edu/people/paul-russo,institution_page
