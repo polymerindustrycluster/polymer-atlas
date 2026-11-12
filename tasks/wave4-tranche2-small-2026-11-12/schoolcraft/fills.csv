@@ -1,0 +1,6 @@
+program_id,field,proposed_value,verdict,witness_quote,source_url,note
+PROG-000069,research_areas,,REFUSED,,,"Row is tombstoned (retired 2026-10-31, integration pass 37): the Plastic Technology AAS was absent from the 2026-2027 catalog after a 2023-24 'on hold pending inactivation'. Depth fields are not carried on retired rows."
+PROG-000069,specialty_processes,,REFUSED,,,"Tombstoned row — see research_areas note."
+PROG-000069,specialty_materials,,REFUSED,,,"Tombstoned row — see research_areas note."
+PROG-000069,facilities_note,,REFUSED,,,"Tombstoned row — see research_areas note."
+PROG-000069,scale_band,,REFUSED,,,"Tombstoned row — see research_areas note."
