@@ -1,0 +1,20 @@
+site_id,verdict,reason
+SITE-001449,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Dover; need own-page physical street block at the recorded city"
+SITE-001560,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001910,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001927,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city New Philadelphia; need own-page physical street block at the recorded city"
+SITE-002018,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000707,STILL_UNCERTAIN,own-page street disagrees with the street recorded in notes (905); need dated address adjudication
+SITE-000788,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Ontario; need own-page physical street block at the recorded city"
+SITE-000789,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Lexington; need own-page physical street block at the recorded city"
+SITE-000879,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Mansfield; need own-page physical street block at the recorded city"
+SITE-001473,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001940,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000717,STILL_UNCERTAIN,own pages show several streets at the recorded city (4602 Timber Commons Dr || 1110 Edgewater Ave); need site-specific binding
+SITE-001282,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Sandusky; need own-page physical street block at the recorded city"
+SITE-001513,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Milan; need own-page physical street block at the recorded city"
+SITE-000739,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Norwalk; need own-page physical street block at the recorded city"
+SITE-000761,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Monroeville; need own-page physical street block at the recorded city"
+SITE-001150,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001296,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Bellevue; need own-page physical street block at the recorded city"
+SITE-001807,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"

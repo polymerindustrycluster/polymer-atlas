@@ -1,0 +1,16 @@
+site_id,url,fresh_sha256,fresh_bytes,street_in_order,city_bound,result
+SITE-001165,https://www.richindustriesinc.com/ContactRichIndustries.php,fda90cffe4139455b352004500d8a3e5eb059d27653a75e1f8e6314c3383e9e5,16888,1,1,PASS
+SITE-001207,https://snyderman.com/contact-us/,65b7347e6f608fd1a8677feb863c6718ffd57eb61ec23b4cf51b895f414c79e0,144053,1,1,PASS
+SITE-001227,https://www.superbindustries.com/contact,7d1a93e7d76a859d073baa606f3713eb2e6c4d19fda2e9acde38cb4e9f469d66,24162,1,1,PASS
+SITE-001599,https://www.zimmerbiomet.com/en/about-us/contact-us.html,72694b78d6abc515780b66b63d9227b04738a56828c61dd02a06aeb3d63a666a,144611,1,1,PASS
+SITE-000794,https://choicemachinery.com/contact-us/,0f58a7f94ed32ed2490dc176c9ef61561ff4ae684fee1ed69fc33e57434ff403,35262,1,1,PASS
+SITE-000930,https://www.golfballrefurbishers.com/,ef76dc96581d93540754fd32e8f4580a0de8247d50c9b1376cb0b2afff858b34,35403,1,1,PASS
+SITE-000987,https://kar-delplastics.com/,0c067791f04a8d9fd4b92c03ce638829fae834471414197dac6261e22f1aaba1,83090,1,1,PASS
+SITE-001078,https://okamotosandusky.com/contact-us/,93f02cce2351aa6f04e3a178111af8d7110dfbc9339fbca42e2b468b340984c9,159045,1,1,PASS
+SITE-001801,https://sealmaster.net/locations,c53bfc587a096ae518de6c2e62c9d47e6ce3f4e8f16a8f15e0841ed212b0c9d6,313805,1,1,PASS
+SITE-000886,https://thesoakfactory.com/contact-us/,0dd2e4c53e424e5200905e0a464a8bf4ffd7871e01789b9d9d11a4df5b341fc0,78225,1,1,PASS
+SITE-000896,https://extolohio.com/contact/,db0026447fd119b1ec804f4ba125991667b4e510aba8fafc8597ece2111d802d,130636,1,1,PASS
+SITE-000936,https://guardian-mfg.com/,69c98c1cf6b27a763c4ac5d2c6374ca2d4ccb571bedebe511cd12650c604b337,91247,1,1,PASS
+SITE-000952,https://htiplastics.com/,07c35a67e7ecd7a09e053ba52c393ffb26b6e27b516a77231bfb8ba7e0db4933,110838,1,1,PASS
+SITE-001785,https://tuftexballoons.com,a0dd5c3d2b5c88503e7a47195bb340c3d39ff8b27c900ee9ab559e14e7d26116,368780,1,1,PASS
+SITE-002037,https://www.mcpp-global.com/en/mcpp-america/about-us/locations/,1331734c2e81d6583d5d3c1737b75de42f7f3151216de27a293a7d4c04991c3a,77845,1,1,PASS
