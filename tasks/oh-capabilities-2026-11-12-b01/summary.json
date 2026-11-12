@@ -2,15 +2,26 @@
  "batch": "b01",
  "date": "2026-11-12",
  "frame_rows": 100,
+ "frame_slice": "0:100 of cap_frame (306)",
  "sites_fetched_ok": 86,
  "pages_ok": 394,
- "candidates_after_context_filter": 83,
- "accepted_terms": 27,
- "sites_with_new_tag": 11,
+ "candidates": 110,
+ "accepted_terms": 31,
+ "records_gaining_tag": 11,
  "yield_pct": 11.0,
- "site_evidence": 18,
- "org_evidence": 4,
- "cap_rows": 14,
- "evd_range": "EVD-345000..EVD-345021",
- "cap_range": "CAP-001000..CAP-001013"
+ "sites_tagged": 11,
+ "orgs_tagged": 2,
+ "site_evidence": 20,
+ "org_evidence": 5,
+ "evidence_rows_by_basis": {
+  "narrative": 18,
+  "menu": 2
+ },
+ "sites_tagged_by_basis": {
+  "narrative": 11,
+  "menu": 2
+ },
+ "cap_rows": 15,
+ "evd_range": "EVD-345000..EVD-345024",
+ "cap_range": "CAP-001000..CAP-001014"
 }
