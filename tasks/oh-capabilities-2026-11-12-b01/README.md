@@ -66,3 +66,9 @@ The CI `validate` job fails on main too: docs/schema/vocab.json is stale, and te
 
 ---
 Never merged by the author. No Muse files touched; the only QUEUE edit is the #321 claim line. No paid calls.
+
+## Correction 2026-11-12 14:06 ET (Navigator Verifier review)
+- **Removed:** SITE-001437 Kent Displays `potting_encapsulation_casting`, evidence EVD-345024 (unmerged; deleted). I re-checked the cited page (kentdisplays.com/services/low-pressure-injection-molding/). It presents low-pressure molding as an alternative: "Advantages Over Conformal Coating or Potting … Compared to conformal coating and traditional potting, Low‑Pressure Molding (LPM) provides…". It does not say Kent does potting.
+- **Kept:** the site's `processes` is now `insert_overmolding` only, still backed by EVD-345019. That tag had no capability row, so no CAP row changes.
+- **Counts:** 30 accepted terms; 19 site evidence rows; 1 menu-basis row. Logged in `not_minted.csv`.
+- **Conflict note:** #321 and #324 both touch `data/sites_OH.csv`, `organizations_OH.csv`, `evidence_sites_OH.csv` and `site_capabilities.csv` (appended rows). Whichever merges second needs a normal-merge replay.
