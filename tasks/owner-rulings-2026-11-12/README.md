@@ -9,7 +9,7 @@ This file does not edit Ohio data files.
 
 **Owner decision (2026-11-12, 12:51pm America/New_York):** the owner said: "Yes, go with your recommendation on all 9 rulings." Each of the nine items below is recorded as **OWNER-ACCEPTED (a)**, dated 2026-11-12, on that quote.
 
-Data changes authorized by those rulings are applied in a separate PR (branch `agent/grok/owner-rulings-apply-2026-11-12`), not in this packet PR. Holds stay holds. This file still does not edit Ohio data files.
+Data changes authorized by those rulings are applied in a separate PR, https://github.com/polymerindustrycluster/polymer-atlas/pull/322 (branch `agent/grok/owner-rulings-apply-2026-11-12`), not in this packet PR. Holds stay holds. This file still does not edit Ohio data files.
 
 ---
 
