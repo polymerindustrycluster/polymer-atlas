@@ -1,0 +1,27 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000377,PROG-000066,LINK,"Rafael Auras, PhD — Professor, Amcor Endowed Chair in Packaging Sustainability, Associate Director",https://msu-prod.dotcmscloud.com/packaging/our-team/,institution_page
+PERSON-000378,PROG-000066,LINK,"Muhammad Rabnawaz, Ph.D. — Full Professor",https://msu-prod.dotcmscloud.com/packaging/our-team/,institution_page
+PERSON-000386,PROG-000066,LINK,"Tanyaradzwa Muzata, Ph.D. — Assistant Professor",https://msu-prod.dotcmscloud.com/packaging/our-team/,institution_page
+PERSON-000391,PROG-000066,LINK,"Laurent Matuana, PhD, FSPE — Professor",https://msu-prod.dotcmscloud.com/packaging/our-team/,institution_page
+PERSON-000392,PROG-000066,LINK,"Eva Almenar, PhD — Professor",https://msu-prod.dotcmscloud.com/packaging/our-team/,institution_page
+PERSON-000393,PROG-000066,LINK,"Qiang Yang, PhD — Assistant Professor",https://msu-prod.dotcmscloud.com/packaging/our-team/,institution_page
+PERSON-000386,PROG-000073,LINK,Prof. Tanyaradzwa Muzata — Lead Site — Michigan State University — Assistant Professor / School of Packaging,https://c3ps.org/researchers,institution_page
+PERSON-000378,PROG-000073,LINK,"Prof. Muhammad Rabnawaz — Lead Site — Michigan State University — Polymer synthesis, hybrid packaging, packaging expertise, recycling / School of Packaging",https://c3ps.org/researchers,institution_page
+PERSON-000383,PROG-000073,LINK,"Prof. Ramani Narayan — Lead Site — Michigan State University — Biobased materials, biodegradation, polymer processing expertise / Chemical Engineering and Materials Science",https://c3ps.org/researchers,institution_page
+PERSON-000377,PROG-000073,LINK,"Prof. Rafael Auras — Lead Site — Michigan State University — Packaging, LCA, biodegradable and composting expertise / School of Packaging",https://c3ps.org/researchers,institution_page
+PERSON-000379,PROG-000073,LINK,Prof. Shiwang Cheng — Lead Site — Michigan State University — Polymer rheological expertise / Chemical Engineering and Materials Science,https://c3ps.org/researchers,institution_page
+PERSON-000393,PROG-000073,LINK,Prof. Qiang Yang — Lead Site — Michigan State University — Paper chemistry expertise / School of Packaging,https://c3ps.org/researchers,institution_page
+PERSON-000382,PROG-000073,LINK,Prof. Robert C. Ferrier — Lead Site — Michigan State University — Polymer synthesis and polymer physics / Chemical Engineering and Materials Science,https://c3ps.org/researchers,institution_page
+PERSON-000380,PROG-000073,LINK,Prof. Caroline Szczepanski — Lead Site — Michigan State University — Adhesives expertise / Chemical Engineering and Materials Science,https://c3ps.org/researchers,institution_page
+PERSON-000379,PROG-000103,LINK,"With 8 faculty performing polymer research (Shiwang Cheng, John Dorgan, Larry Drzal, Robert Ferrier, K Jayaraman, Andre Lee, Richard Lunt, and Ramani Narayan)",https://www.egr.msu.edu/nicholasgroup/positions.php,institution_page
+PERSON-000387,PROG-000103,LINK,"With 8 faculty performing polymer research (Shiwang Cheng, John Dorgan, Larry Drzal, Robert Ferrier, K Jayaraman, Andre Lee, Richard Lunt, and Ramani Narayan)",https://www.egr.msu.edu/nicholasgroup/positions.php,institution_page
+PERSON-000382,PROG-000103,LINK,"With 8 faculty performing polymer research (Shiwang Cheng, John Dorgan, Larry Drzal, Robert Ferrier, K Jayaraman, Andre Lee, Richard Lunt, and Ramani Narayan)",https://www.egr.msu.edu/nicholasgroup/positions.php,institution_page
+PERSON-000388,PROG-000103,LINK,"With 8 faculty performing polymer research (Shiwang Cheng, John Dorgan, Larry Drzal, Robert Ferrier, K Jayaraman, Andre Lee, Richard Lunt, and Ramani Narayan)",https://www.egr.msu.edu/nicholasgroup/positions.php,institution_page
+PERSON-000389,PROG-000103,LINK,"With 8 faculty performing polymer research (Shiwang Cheng, John Dorgan, Larry Drzal, Robert Ferrier, K Jayaraman, Andre Lee, Richard Lunt, and Ramani Narayan)",https://www.egr.msu.edu/nicholasgroup/positions.php,institution_page
+PERSON-000383,PROG-000103,LINK,"With 8 faculty performing polymer research (Shiwang Cheng, John Dorgan, Larry Drzal, Robert Ferrier, K Jayaraman, Andre Lee, Richard Lunt, and Ramani Narayan)",https://www.egr.msu.edu/nicholasgroup/positions.php,institution_page
+PERSON-000381,,NO_WITNESS,,,institution_page
+PERSON-000384,,NO_WITNESS,,,institution_page
+PERSON-000385,,NO_WITNESS,,,institution_page
+PERSON-000390,,NO_WITNESS,,,institution_page
+PERSON-000394,,NO_WITNESS,,,institution_page
+PERSON-000395,,NO_WITNESS,,,institution_page
