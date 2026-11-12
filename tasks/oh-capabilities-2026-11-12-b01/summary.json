@@ -1,0 +1,16 @@
+{
+ "batch": "b01",
+ "date": "2026-11-12",
+ "frame_rows": 100,
+ "sites_fetched_ok": 86,
+ "pages_ok": 394,
+ "candidates_after_context_filter": 83,
+ "accepted_terms": 27,
+ "sites_with_new_tag": 11,
+ "yield_pct": 11.0,
+ "site_evidence": 18,
+ "org_evidence": 4,
+ "cap_rows": 14,
+ "evd_range": "EVD-345000..EVD-345021",
+ "cap_range": "CAP-001000..CAP-001013"
+}

@@ -1,0 +1,28 @@
+site_id,src_term,type,term,scope,quote
+SITE-000034,nylon_pa,material,nylon_pa,site,out of many types of high performance polyamide (nylon) compounds
+SITE-000034,thermoplastics,material,thermoplastics,site,Thermoplastic Tubing Development & Support Services
+SITE-000081,polyurethane_pu,material,polyurethane_pu,site,Novex’s specially formulated polyurethane belting and sheeting
+SITE-000285,phenolic,material,phenolic,org,our time proven Impervite phenolic impregnation system
+SITE-000367,polyurethane_pu,material,polyurethane_pu,org,"LEADERS IN INNOVATIVE, SUSTAINABLE POLYURETHANE FOAM INSULATION"
+SITE-000373,elastomers_rubber,material,elastomers_rubber,site,"We recycle plastic, rubber, and reprocessed hydraulic oil"
+SITE-000373,elastomers_rubber,process,recycling_unspecified,site,"We recycle plastic, rubber, and reprocessed hydraulic oil"
+SITE-000415,thermoplastics,material,thermoplastics,site,a thermoplastic service oriented supplier and compounder
+SITE-000415,polycarbonate_pc,material,polycarbonate_pc,site,"From engineering grades of polycarbonates and nylons, to commodity grade resins"
+SITE-000415,thermoplastics,process,compounding_unspecified,site,a thermoplastic service oriented supplier and compounder
+SITE-000464,rotational_molding,material,polypropylene_pp,site,"manufactures customized thermoplastic materials, specializing in filled PP, rotational molding compounds and powders."
+SITE-000464,rotational_molding,material,thermoplastics,site,"manufactures customized thermoplastic materials, specializing in filled PP, rotational molding compounds and powders."
+SITE-000464,custom_compounding,process,custom_compounding,site,"At McCann Plastics, we specialize in the custom compounding of thermoplastic resins"
+SITE-000547,composites_frp,material,composites_frp,site,Since we began using fiberglass-reinforced plastics in our dike walls
+SITE-000639,thermoplastics,material,thermoplastics,org,Standard & custom thermoplastic solutions
+SITE-001661,epoxy,material,epoxy,site,"our specialty line. Bonding friction materials, epoxy, thermoplastic urethanes, laminating adhesives"
+SITE-001661,elastomers_rubber,material,adhesives_sealants,site,"Lap Sealant is a one-part, solvent release butyl rubber flexible sealant"
+SITE-001682,laminating,material,adhesives_sealants,org,"PSA materials development for digital printing, mounting, laminating, screen-printing, and cut-vinyl needs."
+SITE-001695,elastomers_rubber,material,elastomers_rubber,org,"We currently process cured and uncured rubber, specialty plastics and other non traditional materials."
+SITE-001883,polystyrene_ps_hips,material,polystyrene_ps_hips,org,"OPS - Oriented Polystyrene film is an environmentally-friendly, and more cost-effective than"
+SITE-001437,insert_overmolding,process,insert_overmolding,site,Cable & Connector Over molding for strain relief and environmental sealing
+SITE-001721,polyethylene_pe,material,polyethylene_pe,site,plastic garden planters are made from 100% high-grade polyethylene
+SITE-000442,thermoplastics,material,thermoplastics,org,Dual laminate products are constructed with a thermoplastic liner interior and a fiberglass-reinforced plastic (FRP) structure
+SITE-000442,thermoplastics,material,composites_frp,org,Dual laminate products are constructed with a thermoplastic liner interior and a fiberglass-reinforced plastic (FRP) structure
+SITE-000522,polyethylene_pe,material,polyethylene_pe,org,PFC cases are made of high density polyethylene (HDPE).
+SITE-000664,composites_frp,material,composites_frp,site,manufacturing a high quality continuous fiberglass pool wall called Uniwall
+SITE-001754,acrylic_pmma,material,coatings,site,Olde Century Colors offers Acrylic and Simulated Milk paints in 58 historic colors.
