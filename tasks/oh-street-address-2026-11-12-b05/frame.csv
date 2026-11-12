@@ -1,0 +1,101 @@
+site_id,org_id,site_name,city,zip,county,tier,website,org_sites_same_city,prior_reason,prior_conflict
+SITE-000642,ORG-000602,"Tempest, Inc. — Cleveland",Cleveland,44111,Cuyahoga,U,https://tempest-eng.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000648,ORG-000608,Tomlinson 1880 — Parma,Parma,44130,Cuyahoga,A,https://www.tomlinson1880.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000649,ORG-000609,Toth Mold/Die Inc — Bedford,Bedford,44146,Cuyahoga,U,https://tothmold.net/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000671,ORG-000630,Waterlox Coatings Corporation — Cleveland,Cleveland,44105,Cuyahoga,U,https://waterlox.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000677,ORG-000636,Wrap Tite - Site 1,Solon,44139,Cuyahoga,A,https://www.wraptite.com/,2,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000678,ORG-000636,Wrap Tite - Site 3,Solon,44139,Cuyahoga,A,https://www.wraptite.com/,2,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001315,ORG-001334,Tederic USA — Middleburg Heights,Middleburg Heights,44130,Cuyahoga,U,https://www.tedericglobal.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001398,ORG-000035,Saint-Gobain HyComp LLC — Cleveland area (provisional),Cleveland area,,Cuyahoga,U,https://saint-gobain.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001432,ORG-000002,Lubrizol Advanced Materials — Brecksville,Brecksville,44141,Cuyahoga,B,https://www.lubrizol.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001433,ORG-000684,ASK Chemicals — Cleveland West,Cleveland,,Cuyahoga,B,https://www.ask-chemicals.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001434,ORG-000684,ASK Chemicals — Cuyahoga Heights,Cuyahoga Heights,,Cuyahoga,B,https://www.ask-chemicals.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001436,ORG-001393,Kaufman Container — Cleveland,Cleveland,44135,Cuyahoga,B,https://www.kaufmancontainer.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001479,ORG-001431,ABC Packaging Direct — Independence,Independence,,Cuyahoga,C,https://standuppouches.net,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001504,ORG-001453,Flow Polymers — Cleveland,Cleveland,44108,Cuyahoga,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001505,ORG-001454,IMCD US — Westlake,Westlake,44145,Cuyahoga,B,https://www.imcdus.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001506,ORG-001455,Lamports Filter Media — Cleveland,Cleveland,,Cuyahoga,B,https://lamports.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001525,ORG-001466,Henkel — Warrensville Heights (LOCTITE Cleveland plant),Warrensville Heights,44128,Cuyahoga,A,https://www.henkel-northamerica.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001528,ORG-001469,"FDIE, LLC — Cleveland",Cleveland,44110,Cuyahoga,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001529,ORG-000006,Tremco CPG — Cleveland (Miles Ave),Cleveland,44128,Cuyahoga,B,https://www.rpminc.com,2,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001571,ORG-001507,HOYA VISION CARE - CLEVELAND — Berea,Berea,44017,Cuyahoga,A,https://hoyavision.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001572,ORG-001508,ICHOR VASCULAR INC — Brecksville,Brecksville,44141,Cuyahoga,C,https://ichorvascular.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001573,ORG-001509,"Health-Mor, Inc — Brooklyn",Brooklyn,44144,Cuyahoga,B,https://filterqueen.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001575,ORG-001511,Beacon Biosignals — Cleveland,Cleveland,44103,Cuyahoga,C,https://clevemed.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001588,ORG-001523,"Centerline Biomedical, Inc. — Warrensville Heights",Warrensville Heights,44128,Cuyahoga,B,https://centerlinebiomedical.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001590,ORG-001525,"SPR Therapeutics, Inc — Cleveland",Cleveland,44122,Cuyahoga,A,https://sprtherapeutics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001591,ORG-001526,"Viscus Biologics, LLC — Cleveland",Cleveland,44128,Cuyahoga,A,https://viscusbiologics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001604,ORG-001539,GuidedSMILE LLC — Independence,Independence,44131,Cuyahoga,B,https://guidedsmile.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001624,ORG-001558,"Myrava, LLC — Parma",Parma,44130,Cuyahoga,C,https://myrava.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001630,ORG-001563,"SurgTech, Inc. — Westlake",Westlake,44145,Cuyahoga,B,https://surgtech-med.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001648,ORG-001577,Master Builders Solutions US LLC — Beachwood,Beachwood,44122,Cuyahoga,B,https://master-builders-solutions.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001650,ORG-001579,CartierWilson LLC — Solon,Solon,44139,Cuyahoga,A,https://cartierwilson.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001652,ORG-001581,ePac Flexible Packaging — Solon,Solon,,Cuyahoga,B,https://epacflexibles.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001654,ORG-000135,Valtris Specialty Chemicals — Walton Hills,Walton Hills,44146,Cuyahoga,B,https://www.valtris.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001656,ORG-001584,Green Innovations LLC — Solon,Solon,44139,Cuyahoga,B,https://green-innovate.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001659,ORG-001587,Miniature Plastic Molding — Solon,Solon,44139,Cuyahoga,B,https://minijector.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001664,ORG-001592,Alpha Tool & Mold Inc — Highland Heights,Highland Heights,,Cuyahoga,B,https://alphatoolandmold.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001665,ORG-001593,Amros Industries Inc — Cleveland,Cleveland,,Cuyahoga,B,https://clamshellusa.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001667,ORG-001595,Eleven 10 LLC — Westlake,Westlake,,Cuyahoga,B,https://1110gear.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001670,ORG-001598,J B Jewitt Co Inc — Cleveland,Cleveland,,Cuyahoga,B,https://homesteadfinishingproducts.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001671,ORG-001599,MultiPlast Systems Inc — Solon,Solon,,Cuyahoga,B,https://multiplastsystems.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001673,ORG-001601,Pison Stream Solutions Inc — Brecksville,Brecksville,,Cuyahoga,C,https://pisonstreamsolutions.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001674,ORG-001602,Royal Powder Corp — Cleveland,Cleveland,,Cuyahoga,B,https://royalpowder.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001777,ORG-001701,Cru Performance Coatings LLC,Cleveland,,Cuyahoga,B,https://www.continentalpaints.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001778,ORG-001702,J T Adams Company,Cleveland,,Cuyahoga,C,tensiletestinginc.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001779,ORG-001703,"Premier Aerosol Packaging, Inc.",Valley View,,Cuyahoga,B,premieraerosol.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001791,ORG-001715,"Axion Labs, Inc.",Cleveland,,Cuyahoga,B,axionlabs.co,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001795,ORG-001719,"Pyramid Plastics, Inc.",Cleveland,,Cuyahoga,C,pyramidplasticsinc.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001797,ORG-001721,"Truco, Inc.",Cleveland,,Cuyahoga,C,,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001798,ORG-001722,"Kinzie Advanced Polymers, LLC dba Grove Bags",Bedford Heights,26201,Cuyahoga,B,grovebags.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001806,ORG-001730,3D Dental Designs and Development LLC,Shaker Heights,16781,Cuyahoga,B,https://3d-dent.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001816,ORG-001740,Auto Technology Company,Strongsville,44149,Cuyahoga,C,https://autotechnology.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001818,ORG-001742,Global Waste and Recycling LLC,Beachwood,44122,Cuyahoga,C,https://globalwasteandrecycling.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001824,ORG-001748,"PKG, LLC",Olmsted Falls,44138,Cuyahoga,C,https://pkgllc.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001836,ORG-000549,"Robin Industries, Inc.",Independence,44131,Cuyahoga,A,https://www.robin-industries.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001856,ORG-001777,American Consolidated Industries Inc (Anchor Industries),Solon,44139,Cuyahoga,A,https://anchor-online.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001868,ORG-001794,Dal-Little Fabricating Inc,Cleveland,,Cuyahoga,C,https://dallittle.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001894,ORG-001869,Pro-Line Automation Systems Ltd. (USA),Solon,44139,Cuyahoga,A,https://prolineautomation.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001912,ORG-001921,Potter's Inc,Cleveland,,Cuyahoga,C,,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001923,ORG-001929,Saint-Gobain HyComp LLC (Hycomp LLC),Middleburg Heights,44130,Cuyahoga,A,https://hycompinc.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002033,ORG-002039,"M. Argueso & Co., Inc.",Cleveland,44111,Cuyahoga,A,https://www.paramelt.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002043,ORG-002049,Sietins Plastics Inc (Sietins Precision),Bedford,44146,Cuyahoga,A,https://sietins.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002067,ORG-002067,Aropha Inc.,Oakwood,44146,Cuyahoga,B,https://www.aropha.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002100,ORG-002143,AXILEA LLC,Beachwood,,Cuyahoga,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000002,ORG-000002,Lubrizol — Wickliffe HQ,Wickliffe,44077,Lake,B,https://www.lubrizol.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000197,ORG-000190,Clark Rubber & Plastics — Mentor,Mentor,44060,Lake,C,http://www.clarkrandp.com/,1,explicit unresolved street/address warning including referenced org note; documented reconciliation ,0
+SITE-000199,ORG-000192,Triangle Chemical — Mentor,Mentor,,Lake,B,http://trianglechem.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000241,ORG-000227,American Foam Products — Painesville,Painesville,44077,Lake,A,https://www.americanfoamproducts.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000245,ORG-000231,"Apollo Plastics, Inc. — Mentor",Mentor,44060,Lake,A,https://apolloplastics.net/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000249,ORG-000235,"Assembly Specialist, Inc. — Painesville",Painesville,44077,Lake,U,https://www.assemblyspecialist.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000255,ORG-000239,The B.B. Bradley Company — Painesville,Painesville,,Lake,C,https://bbbradley.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000281,ORG-000264,Cast Nylons 4366,Willoughby,44094,Lake,B,https://castnylon.com/,3,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000293,ORG-000274,"Chemsultants International, Inc. — Mentor",Mentor,44060,Lake,C,https://www.chemsultants.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000353,ORG-000332,Essentialware — Kirtland,Kirtland,44094,Lake,U,https://essentialware.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000406,ORG-000380,Ingalls Process Equipment Co. — Painesville,Painesville,44077,Lake,C,https://www.ingallsequipment.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000465,ORG-000434,"MCI Technologies, Inc. — Mentor",Mentor,44060,Lake,C,https://mcitechnologies.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000487,ORG-000455,"MUM Industries, Inc. — Mentor",Mentor,44060,Lake,A,https://integraenclosures.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000498,ORG-000466,North American Coating Laboratories — Mentor,Mentor,44060,Lake,U,https://www.nacl.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000506,ORG-000474,ORBIS Corp. — Mentor,Mentor,44060,Lake,C,https://www.orbiscorporation.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000591,ORG-000553,"Royal Plastics, Inc. — Mentor",Mentor,44060,Lake,B,https://royalplastics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000609,ORG-000570,Shini USA — Willoughby,Willoughby,44094,Lake,U,https://www.shiniusa.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000611,ORG-000572,"Silco, Inc. — Mentor",Mentor,44060,Lake,C,https://www.silco-inc.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001313,ORG-001332,Seauciel — Mentor,Mentor,44060,Lake,U,https://seauciel.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001394,ORG-000033,LyondellBasell — Fairport Harbor (Equistar),Fairport Harbor,44077,Lake,B,https://lyondellbasell.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001424,ORG-001385,Aexcel Corp. — Mentor,Mentor,44060,Lake,A,https://www.aexcelcorp.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001431,ORG-001392,Kalcor Coatings Company — Willoughby,Willoughby,44094,Lake,B,https://www.kalcor.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001559,ORG-001493,United Industrial Sales — Willoughby,Willoughby,44094,Lake,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001622,ORG-001556,"FARETEC, Inc. — Painesville",Painesville,44077,Lake,A,https://faretec.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001710,ORG-001637,FTM ENGINEERING GROUP — Willoughby,Willoughby,,Lake,B,https://www.ftmeng.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001802,ORG-001726,"Endura Plastics, Inc.",Kirtland,,Lake,C,,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001815,ORG-001739,"API II, Inc.",Concord Twp,44077,Lake,A,http://www.api2.net/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001833,ORG-001757,"ACO Polymer Products, Inc.",Mentor,44060,Lake,B,https://acousa.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001839,ORG-000098,Spazzolplastica North America LLC,Mentor,44060,Lake,C,https://www.spazzolplastica.it,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001840,ORG-000115,Cuyahoga Molded Plastics Corp.,Mentor,44060,Lake,B,http://www.cuyahogaplastics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001873,ORG-001806,ENPRESS LLC,Eastlake,44095,Lake,B,https://enpress.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001908,ORG-001916,Zero D Products Inc,Willoughby,44094,Lake,A,https://zerodproducts.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001964,ORG-001970,Northcoast Inc Recycling Specialists,Wickliffe,44092,Lake,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001986,ORG-001992,Precision Polymer Casting LLC (dba Castinite),Perry,44081,Lake,B,https://precisionpolymercasting.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002084,ORG-000002,Lubrizol Painesville site,Painesville,44077,Lake,B,https://www.lubrizol.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000212,ORG-000103,HEXPOL Compounding — Burton (Burton Rubber Processing),Burton,,Geauga,A,https://hexpolcompounding.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000213,ORG-000103,HEXPOL Compounding — Middlefield (Gold Key Processing),Middlefield,,Geauga,B,https://hexpolcompounding.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
