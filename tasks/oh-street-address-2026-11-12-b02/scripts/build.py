@@ -16,8 +16,16 @@ def inorder(needle,hay):
     return False
 audit=[]
 cache={}
+import os
+prev={}
+if os.environ.get('REUSE_AUDIT') and os.path.exists(f'{batch}_audit.csv'):
+    prev={a['site_id']:a for a in csv.DictReader(open(f'{batch}_audit.csv'))}
 for v in V:
     if v['verdict']!='VERIFIED': continue
+    if prev:
+        a=prev[v['site_id']]; audit.append(a); v['fresh_sha256']=a['fresh_sha256']; v['audit']=a['result']
+        if a['result']=='FAIL': v['verdict']='STILL_UNCERTAIN'; v['reason']='fresh raw re-fetch did not reproduce the quote (route availability, not absence); need a re-readable own-site page'
+        continue
     u=v['url']
     if u not in cache:
         r=subprocess.run(['curl','-sL','--compressed','-m','30','-A',UA,u],capture_output=True)
@@ -46,10 +54,16 @@ for v in V:
     r=byid[v['site_id']]
     assert r['street_address']=='' , v['site_id']
     eid=f'EVD-{n:06d}'; n+=1; assert n-1<=evd1 and eid not in have
+    if re.search(r'\b[NS]\.[EW]$',v['street']): v['street']+='.'
     r['street_address']=v['street']
     if v.get('flags'):
         r['notes']=(r['notes']+' ' if r['notes'] else '')+f"ADDRESS-OVERLAP LEAD ({today}, {batch}): street {v['street']} also held on {v['flags'].split(': ',1)[1]}. No merge, site_group or status adjudication."
-    q=re.sub(r'\s*,\s*(,\s*)+',', ',v['quote']).strip(' ,')
+    raw=v['quote']; core=re.split(r',\s*(?:Suite|Ste|Unit|#)',v['street'])[0]
+    i=raw.lower().find(core.lower()); raw=raw[i:] if i>=0 else raw
+    raw=re.sub(r'\S+@\S+','',raw); raw=re.sub(r'(?:P:|Ph(?:one)?:?|Fax:?|Tel:?)?\s*\(?\d{3}\)?[\s\.\-]\d{3}[\s\.\-][\d\*]{4}.*$','',raw)
+    mz=re.search(re.escape(v['city'])+r'[\s,\.\-–—•|·]*(Ohio|OH)\b\.?[\s,]*(\d{5}(?:-\d{4})?)?',raw,re.I)
+    if mz: raw=raw[:mz.end()]
+    q=re.sub(r'\s*,\s*(,\s*)+',', ',raw).strip(' ,')
     zipnote=f"; own-page ZIP {v['page_zip']}" if v['page_zip'] else ''
     newe.append(dict(evidence_id=eid,record_table='sites',record_id=v['site_id'],claim_type='address',claim_detail=f"street_address {v['street']}, {v['city']}, OH{zipnote}",source_class='own_site',source_ref=v['url'],observed_date=today,tier_effect='supports_A',created_by=f'grok-oh-street-{batch}',notes=f"Raw checked {today}; SHA-256 {v['fresh_sha256']}; quote: {q[:300]}. County, county_source, ZIP and record tier unchanged."))
     v['evidence_id']=eid
