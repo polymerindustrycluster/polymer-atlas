@@ -1,8 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.12 — 2026-11-06 (events crosswalk `pic_events_slug` and participation role `attendee`, §4.12; owner decisions 2026-11-06 B-CROSSWALK and attendee role).
-Previous: v1.11.1 — 2026-11-06 (§4.9: "Deputy Group Leader" is not folded to `group_leader`, owner ruling 2026-11-06). Prior: v1.11 — 2026-11-05 (newsroom, newsroom feed and LinkedIn organization columns; §4.22 evidence archive links — owner battery 2026-11-04 B-NEWS, B-LINKEDIN, B-ARCHIVE). Prior: v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
+**Version:** v1.13 — 2026-11-12 (academic-passes battery, owner rulings 2026-11-12: §3.1 gains `dyeing_finishing` and `fiber_formation` (S2); §3.5 gains `liquid_crystals` (S1); §4.11 `scale_band` conversion rule (S3); §4.13 `tier_effect` gains `supports_U` (S4); §4.21 ORCID name-match clarification for the given-names record shape (S5); §4.9 people field set gains `lab_url` (S6)).
+Previous: v1.12 — 2026-11-06 (events crosswalk `pic_events_slug` and participation role `attendee`, §4.12; owner decisions 2026-11-06 B-CROSSWALK and attendee role). Prior: v1.11.1 — 2026-11-06 (§4.9: "Deputy Group Leader" is not folded to `group_leader`, owner ruling 2026-11-06). Prior: v1.11 — 2026-11-05 (newsroom, newsroom feed and LinkedIn organization columns; §4.22 evidence archive links — owner battery 2026-11-04 B-NEWS, B-LINKEDIN, B-ARCHIVE). Prior: v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
 leg-(c) styling principle micro-revision: §4.9 gains the
 faculty-rank line — research-professor ranks count as faculty
 at university grain, staff-scientist and research-associate
@@ -648,6 +648,10 @@ doctrine.
 `rubber_molding_unspecified` *(type not stated; never upgraded without a source)* ·
 `reaction_injection_molding`.
 
+**[v1.13] Owner battery 2026-11-12 (S2):**
+`dyeing_finishing` *(textile wet processing: dyeing and finishing of fibers, yarns, and fabrics)* ·
+`fiber_formation` *(fiber spinning and fiber formation processes)*.
+
 ### 3.2 Materials (`materials[]`)
 
 **Families (always tag at least one family if known):**
@@ -659,6 +663,11 @@ doctrine.
 **[v1.9.1] Owner battery B-VOC — 2026-11-03:**
 `carbon_black` · `polymer_additives` · `thermoplastic_olefin_tpo` ·
 `composites_unspecified` *(type not stated; never upgraded without a source)*.
+
+**[v1.13] Owner battery 2026-11-12 (S1):**
+`liquid_crystals` *(liquid-crystalline polymers and mesogenic materials — dual-listed
+with the §3.5 supplement of the same name by this ruling, so the term serves both
+`research_areas[]` and `specialty_materials[]`)*.
 The proposed monomers/intermediates family is not adopted: its source text goes
 to site `materials_other_note` pending a scope ruling, and stays untouched on
 organizations, which have no corresponding note column.
@@ -698,6 +707,7 @@ only honest tag for them.
 | `characterization_methods` | Development or expert application of analytical methods for polymer structure/properties |
 | `sustainable_feedstocks` | Bio-based, waste-derived, or low-carbon feedstocks for polymer production |
 | `elastomer_science` | Rubber elasticity, vulcanization chemistry, and elastomer network science |
+| `liquid_crystals` | Liquid-crystalline polymers, mesogenic materials, and their science **[v1.13, owner ruling 2026-11-12 S1]** |
 
 §3-first examples: a processing professor is tagged `injection_molding` (§3.1), not a
 supplement term; a coatings formulator is `coating_formulation` (§3.1) +
@@ -1072,7 +1082,7 @@ apprenticeship; the program, not the university, is the unit an introduction tar
 | `employer_custom_training` | boolean | training types | Institution states it will run a cohort for one employer |
 | `admissions_status` | enum | training/program types | `admitting` \| `not_admitting` \| `unknown` — Phase A calibration rider: a link's liveness ≠ a program's liveness; training records require an admissions-status check at verification |
 | `facilities_note` | free text, sourced | Nice | Publicly stated labs/equipment |
-| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Calibration: enrollment bands filled 0/12 — pages publish outcomes instead; expect this field to stay sparse |
+| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Conversion (owner ruling 2026-11-12 S3): a published program enrollment converts small <30, medium 30–120, large >120 students; a qualitative size self-characterization converts directly; dollars, faculty counts, credit hours, ratios, and alumni counts never convert |
 | `public_door_url` | URL | **MUST** | The program's public contact/admissions/partnership **page** — never a person's email (§6) |
 
 **Office records** (`record_grain=office`) — a university's tech-transfer / licensing
@@ -1185,6 +1195,7 @@ in every rank.
 | `role_as_published` | string | The institution's exact words — never normalized or inferred |
 | `research_specialties[]` | §3.1/§3.2 vocab first, §3.5 supplement where needed | As publicly stated on the cited page |
 | `public_profile_url` | URL | Their own faculty/lab page |
+| `lab_url` | URL, nullable | The person's research-group / lab website, where one is published on an institutional domain **[v1.13, owner ruling 2026-11-12 S6]** — captured because lab sites carry the group-level research detail (themes, facilities, openings) that directory pages omit |
 | `sources[]` | public citations only | **MUST**, ≥1 per record, every field traceable to a public university/program/lab page |
 | `verification_tier` / `last_verified` | §4.1 | Shortest refresh leash in the layer; a vanished/changed profile downgrades the record to U |
 
@@ -1263,7 +1274,7 @@ office-grain rows (§4.6); institutions remain ecosystem institution rows
 | `employer_custom_training` | boolean | training types | Institution states it will run a cohort for one employer |
 | `admissions_status` | enum | program types | `admitting` \| `not_admitting` \| `unknown` — a link's liveness ≠ a program's liveness; training/program records require an admissions-status check at verification |
 | `facilities_note` | free text, sourced | Nice | Publicly stated labs/equipment |
-| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount |
+| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Conversion per the §4.6 note (owner ruling 2026-11-12 S3) |
 | `geography_served` | §4.6 vocab | **MUST** | Workforce programs are place-bound; research programs are not |
 | `city` / `state` / `county` | string | **MUST** | The campus locality as published; Ohio rows follow the physical-address county rule. Defaults to the institution's values; multi-campus systems carry per-campus values |
 | backbone (`status`, `sources[]`, `verification_tier`, `last_verified`, `pic_relevance`, `created_by`, `notes`) | §4.2/§4.6 | **MUST** | Tier grammar at this grain: the institution's own program page = A-equivalent; state registry / accreditor / association directory = B; lone aggregator = C |
@@ -1518,7 +1529,7 @@ them. |
 | `source_class` | enum | **MUST** | `own_site` \| `government_filing` \| `registry` \| `directory` \| `press` \| `platform_category` \| `harvest_roster` — the class of the witness, not its prestige. `own_site` = the entity's own domain / own issued document. `government_filing` = a dated filing or government record of fact (Form 5500, TRI, WARN, SEC, court record). `registry` = a registry record keyed by an identifier (EPA FRS, GLEIF, Ohio SOS, SAM.gov, IPEDS/ROR identity records). `directory` = an authoritative directory listing (trade-association member directory, EDO directory, verified Thomasnet-class listing). `press` = dated news / trade-press reporting of a specific fact. `platform_category` = a platform-assigned category or profile label (Google Places category, LinkedIn industry, aggregator classification). `harvest_roster` = a harvested list under §4.12's harvest-only rule (exhibitor / sponsor / speaker roster for a named edition) |
 | `source_ref` | string | **MUST** | The witness itself, citable by a stranger: a URL, or a named source plus its identifier where the source is keyed ("EPA FRS registry 110070870004"; "DOL EFAST2 Form 5500, sponsor THE ARTHUR CORPORATION, PY2023, plan 501"). A staging path is admissible **only** in the one case the grep rule below defines (a named raw extract a registry citation resolves into). A reference to our own verdict files, lane notes, or integration journals is **never** a `source_ref` — those are claims about evidence, not evidence (see the grep rule) |
 | `observed_date` | date | **MUST** | The date the lane observed the witness — for a filing, the filing's own as-of / period date where the row's force depends on it, with the retrieval date in `notes`; for a roster, the §4.12 `evidence_date` grammar. Never a scrape-batch date alone where the witness carries its own date |
-| `tier_effect` | enum | **MUST** | `supports_A` \| `supports_B` \| `supports_C` \| `contradicts` — how this row bears on the record's tier **for this claim**. The class-to-effect ceiling is §4.1's ladder restated per class: `own_site` and `government_filing` may carry `supports_A`; `registry` and `directory` may carry at most `supports_B` (a registry/directory *address* alone caps at `supports_C`, per the settled seam-2 ruling); `press` and `harvest_roster` may carry at most `supports_B` and corroborate rather than carry (a roster row is, per §4.12, A-equivalent *for the fact of participation* — as an evidence row that fact is a `liveness`/`activity` claim, and its effect is still capped at `supports_B` here, because participation attests the named organization, not its plant or scope); `platform_category` may carry at most `supports_C`, and for a `scope` claim carries **no** supporting effect at all (the PMIR rule, below). `contradicts` is class-free: any class may contradict, and an `own_site` contradiction is the strongest refutation the system records |
+| `tier_effect` | enum | **MUST** | `supports_A` \| `supports_B` \| `supports_C` \| `supports_U` \| `contradicts` — how this row bears on the record's tier **for this claim**. `supports_U` **[v1.13, owner ruling 2026-11-12 S4]** is the effect for a claim on a tier-U record: it banks the witnessed claim without asserting any tier above U. The class-to-effect ceiling is §4.1's ladder restated per class: `own_site` and `government_filing` may carry `supports_A`; `registry` and `directory` may carry at most `supports_B` (a registry/directory *address* alone caps at `supports_C`, per the settled seam-2 ruling); `press` and `harvest_roster` may carry at most `supports_B` and corroborate rather than carry (a roster row is, per §4.12, A-equivalent *for the fact of participation* — as an evidence row that fact is a `liveness`/`activity` claim, and its effect is still capped at `supports_B` here, because participation attests the named organization, not its plant or scope); `platform_category` may carry at most `supports_C`, and for a `scope` claim carries **no** supporting effect at all (the PMIR rule, below). `contradicts` is class-free: any class may contradict, and an `own_site` contradiction is the strongest refutation the system records |
 | `created_by` | string | **MUST** | The lane / researcher ID that produced the observation, in the `created_by` grammar of the record tables |
 | `notes` | string | Nice | One line: the observation's posture ("roster still filling at harvest"; "fetch via search-index retrieval of the exact URL; direct fetch HTTP 000 — availability noted, content dated 2024-11-14"). Licensed-source discovery provenance, where it exists, lives **here and only here** (see §5 interplay, below) |
 
@@ -2298,6 +2309,14 @@ the same iD is a dedupe alarm (the records are presumptively the same
 person), resolved as a record merge — never as a second link row.
 Validator V-54 enforces the field set, the FK, the enum, the ORCID
 shape, and the one-row-per-value rule.
+
+**Name match — the given-names record shape [v1.13] (owner ruling
+2026-11-12, S5).** Some ORCID records carry the person's full name in
+given-names with family-name empty (a data-entry variant; the exact
+recorded name may also appear in the record's other-names). That shape
+counts as a name match when the record's current employment matches
+the person's `institution_org_id` — the shared iD and the employment
+leg, not the name field's internal split, carry the link.
 
 ### 4.22 Evidence archive links **[v1.11]** (`data/archive_links.csv`)
 

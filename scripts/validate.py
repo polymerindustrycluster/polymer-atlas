@@ -132,7 +132,9 @@ PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_
              # [v1.9.1] owner battery B-VOC, 2026-11-03
              "extrusion_unspecified", "compounding_unspecified", "fabrication_unspecified",
              "foam_production_unspecified", "molding_unspecified", "recycling_unspecified",
-             "rubber_molding_unspecified", "reaction_injection_molding"}
+             "rubber_molding_unspecified", "reaction_injection_molding",
+             # [v1.13] owner battery 2026-11-12 (S2)
+             "dyeing_finishing", "fiber_formation"}
 MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic_elastomers_tpe_tpu",
              "silicones", "fluoropolymers", "bioplastics_biobased", "recycled_content_pcr_pir",
              "composites_frp", "composites_carbon", "composites_thermoset", "composites_thermoplastic",
@@ -145,11 +147,15 @@ MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic
              # [v1.7.6] owner ruling 2026-11-01 (battery R8)
              "asa", "specialty_elastomers", "polyester_vinyl_ester_resins", "acrylic_pmma",
              # [v1.9.1] owner battery B-VOC, 2026-11-03
-             "carbon_black", "polymer_additives", "thermoplastic_olefin_tpo", "composites_unspecified"}
+             "carbon_black", "polymer_additives", "thermoplastic_olefin_tpo", "composites_unspecified",
+             # [v1.13] owner battery 2026-11-12 (S1) — dual-listed with RESEARCH_SUPPLEMENT
+             "liquid_crystals"}
 RESEARCH_SUPPLEMENT = {"polymer_physics", "rheology", "polymer_synthesis", "degradation_biodegradation",
                        "recycling_circularity", "composites_mechanics", "membranes_separations",
                        "biomedical_polymers", "additive_manufacturing_science", "characterization_methods",
-                       "sustainable_feedstocks", "elastomer_science"}
+                       "sustainable_feedstocks", "elastomer_science",
+                       # [v1.13] owner battery 2026-11-12 (S1)
+                       "liquid_crystals"}
 RESEARCH_VOCAB = PROCESSES | MATERIALS | RESEARCH_SUPPLEMENT
 
 # [pass 14 Stage C] Shard discovery (SCHEMA Appendix C): organizations and
@@ -808,7 +814,7 @@ for i, r in enumerate(eco, 2):
 
 # V-11: people
 PEOPLE_FIELDS = ["person_id", "full_name", "institution_org_id", "program_org_id", "role",
-                 "role_as_published", "research_specialties", "public_profile_url", "sources",
+                 "role_as_published", "research_specialties", "public_profile_url", "lab_url", "sources",
                  "verification_tier", "last_verified"]
 if people_fields != PEOPLE_FIELDS:
     errors.append(f"people.csv: header must be exactly the §4.9 field set, got {people_fields}")
@@ -973,11 +979,11 @@ CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness"
 SIZE_BAND_CLASSES = {"government_filing", "own_site"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B
 SOURCE_CLASSES = {"own_site", "government_filing", "registry", "directory", "press",
                   "platform_category", "harvest_roster"}
-TIER_EFFECTS = {"supports_A", "supports_B", "supports_C", "contradicts"}
+TIER_EFFECTS = {"supports_A", "supports_B", "supports_C", "supports_U", "contradicts"}
 CLASS_CEIL = {"own_site": "supports_A", "government_filing": "supports_A",
               "registry": "supports_B", "directory": "supports_B", "press": "supports_B",
               "harvest_roster": "supports_B", "platform_category": "supports_C"}
-EFF_RANK = {"supports_C": 1, "supports_B": 2, "supports_A": 3}
+EFF_RANK = {"supports_U": 0, "supports_C": 1, "supports_B": 2, "supports_A": 3}
 REL_TYPES = {"parent_of", "successor_of", "dba_of", "spun_off_from", "member_of", "merged_into"}
 CAP_MATERIAL = {"thermoplastics", "thermosets", "elastomers_rubber",
                 "thermoplastic_elastomers_tpe_tpu", "thermoplastic_olefin_tpo",
