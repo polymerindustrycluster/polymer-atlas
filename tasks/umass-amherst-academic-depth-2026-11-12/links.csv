@@ -1,0 +1,29 @@
+person_id,program_id,verdict,witness_quote,witness_url,source_kind
+PERSON-000221,PROG-000059,LINK,"Todd Emrick Professor Researching synthetic organic/polymer chemistry, functionalization of nanoscale and 2-D materials, aqueous polymer assembly",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000222,PROG-000059,LINK,"Murugappan Muthukumar Wilmer D. Barrett Distinguished Professor",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000223,PROG-000059,LINK,Alfred J Crosby Professor & Department Head,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000224,PROG-000100,LINK,"Jessica Schiffman Chemical Engineering Engineered-materials that improve human health, Green chemistry and renewable polymers",https://websites.umass.edu/mseidgp/faculty/,institution_page
+PERSON-000225,PROG-000059,LINK,Reika Katsumata Associate Professor,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000226,PROG-000100,LINK,Trisha Andrew Chemistry Wearable electronics,https://websites.umass.edu/mseidgp/faculty/,institution_page
+PERSON-000227,PROG-000059,LINK,"E. Bryan Coughlin Professor We strive, through development of novel, and adaptation of known synthetic methods, to create new polymeric materials",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000228,PROG-000100,LINK,"S. Thai Thayumanavan Chemistry and Biomedical Engineering Polymer self-assembly, responsive materials",https://websites.umass.edu/mseidgp/faculty/,institution_page
+PERSON-000229,PROG-000059,LINK,"Gregory Tew Professor Macromolecular research in this century will be defined by discoveries at the interface of chemistry, biology, and materials science",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000230,PROG-000059,LINK,"Adjunct Professors Sarah Perry My research utilizes self-assembly, molecular design, and microfluidic technologies to generate biologically relevant microenvironments",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000230,PROG-000100,LINK,"Sarah Perry Chemical Engineering Bioinspired materials, Polyelectrolytes, Self-assembly, Soft matter, Microfluidics, X-ray analysis",https://websites.umass.edu/mseidgp/faculty/,institution_page
+PERSON-000231,PROG-000059,LINK,James Watkins Eugene M. and Ronnie Isenberg Professor of Integrative Science,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000232,,NO_WITNESS,,,institution_page
+PERSON-000233,PROG-000100,LINK,"Yanfei Xu Mechanical & Industrial Engineering Engineering polymer-based materials to improve thermal, electrical and optical properties",https://websites.umass.edu/mseidgp/faculty/,institution_page
+PERSON-000234,PROG-000059,LINK,"Greg Grason Professor Our research explores the role of geometric frustration in soft matter and polymeric assemblies",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000235,PROG-000059,LINK,"Alan Lesser Professor The goal of our research group is to develop a new set of theoretical and experimental tools",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000236,,NO_WITNESS,,,institution_page
+PERSON-000237,PROG-000059,LINK,Thomas McCarthy Distinguished Professor,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000238,PROG-000059,LINK,David Hoagland Professor Projects in the Hoagland group examine polymer structure and dynamics,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000239,PROG-000059,LINK,Melody Morris Assistant Professor The Morris group will engineer sustainable macromolecular materials,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000240,PROG-000059,LINK,"Kenneth Carter Professor Our group is interested in the design and fabrication of advanced materials with highly tailored properties",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000241,PROG-000059,LINK,Harry Bermudez Associate Professor At the intersection of materials science and biotechnology,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000242,PROG-000059,LINK,"Steve Granick Robert K. Barrett Professor Current research projects include active polymers, molecules in extreme environments",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000242,PROG-000100,LINK,"Steve Granick Polymer Science & Engineering Soft matter, Living matter, Polymers, Biomaterials",https://websites.umass.edu/mseidgp/faculty/,institution_page
+PERSON-000243,PROG-000059,LINK,Thomas Russell Silvio O. Conte Distinguished Professor,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-000244,PROG-000059,LINK,"Maria Santore Professor Discovering mechanisms for adhesion, lubrication, assembly, response, and reconfiguration in soft material systems",https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-001055,PROG-000059,LINK,Weiguo Hu NMR Director Weiguo Hu is NMR Director in PSE at UMass Amherst,https://www.umass.edu/polymer-science/faculty,institution_page
+PERSON-001359,PROG-000059,LINK,"Samuel Gido Associate Professor My research is focused on understanding how controlled polymer molecular architecture can be used",https://www.umass.edu/polymer-science/faculty,institution_page
