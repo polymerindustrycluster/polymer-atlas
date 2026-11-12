@@ -1,0 +1,4 @@
+program_id,institution,program_type,program_name,url,gaps
+PROG-000089,Cornell University,degree,Fiber Science,https://human.cornell.edu/degrees/grad/fiber-science-ms,research_areas;specialty_processes;specialty_materials;scale_band
+PROG-000090,Cornell University,lab_facility,Polymer Characterization Facility,https://www.ccmr.cornell.edu/category/user-instruments/soft-matterpolymer-analysis/?post_type=aw_instrument,research_areas;specialty_processes;specialty_materials;scale_band
+PROG-000105,Cornell University,degree,Materials Science and Engineering,https://www.mse.cornell.edu/mse/programs,specialty_processes;specialty_materials;facilities_note;scale_band
