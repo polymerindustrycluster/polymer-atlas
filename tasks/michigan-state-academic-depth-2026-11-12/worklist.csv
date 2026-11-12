@@ -1,0 +1,4 @@
+program_id,institution,program_type,program_name,url,gaps
+PROG-000066,Michigan State University,degree,School of Packaging,https://www.canr.msu.edu/packaging/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000073,Michigan State University,center,"Center for Plastic, Paper and Hybrid Packaging End-of-Life Solutions (C3PS)",https://c3ps.org/,research_areas;specialty_processes;specialty_materials;facilities_note;scale_band
+PROG-000103,Michigan State University,degree,Materials Science and Engineering,http://engineering.msu.edu/academics/majors-degrees/materials-science-and-engineering-bs,specialty_processes;facilities_note;scale_band
