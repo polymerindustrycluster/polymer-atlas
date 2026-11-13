@@ -1,0 +1,101 @@
+site_id,org_id,site_name,city,zip,county,tier,website,org_sites_same_city,prior_reason,prior_conflict
+SITE-000601,ORG-000562,Schneller LLC — Kent,Kent,44240,Portage,A,https://www.schneller.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000603,ORG-000564,"Scott Molders, Inc. — Kent",Kent,44240,Portage,B,https://scottmolders.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000605,ORG-000237,Sealed Air (APS- STC),Streetsboro,44241,Portage,B,https://www.sealedair.com/,2,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000654,ORG-000613,The Trexler Rubber Company Inc. — Ravenna,Ravenna,44266,Portage,C,https://trexlerrubber.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001397,ORG-000035,Saint-Gobain Performance Plastics — Ravenna (Aerospace),Ravenna,44266,Portage,C,https://saint-gobain.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001435,ORG-000665,Amcor — Aurora (PVC Stretch Film),Aurora,,Portage,B,https://www.amcor.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001437,ORG-001394,Kent Displays — Kent,Kent,44240,Portage,B,https://kentdisplays.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001546,ORG-001480,ACE Laboratories - Ravenna,Ravenna,44266,Portage,B,https://ace-laboratories.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001605,ORG-001540,"Emergency Products & Research, Inc. — Kent",Kent,44240,Portage,B,https://epandr.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001606,ORG-001541,AlphaMicron Inc. — Kent,Kent,44240,Portage,A,https://alphamicron.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001660,ORG-001588,The Kent Mold & Manufacturing Company — Kent,Kent,44240,Portage,A,https://kentmold.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001688,ORG-000004,Parker-Hannifin Corporation — Ravenna,Ravenna,,Portage,A,https://www.parker.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001743,ORG-001667,Dudick Inc — Streetsboro,Streetsboro,,Portage,A,https://dudick.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001756,ORG-001680,Hytech Silicone Products Inc — Ravenna,Ravenna,,Portage,B,https://hytechproducts.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001837,ORG-000057,Smithers-Oasis Company (Smithers-Oasis North America),Kent,44240,Portage,B,https://smithersoasis.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001851,ORG-001768,"Action Super Abrasive Products, Inc.",Kent,44240,Portage,A,https://actionsuper.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001865,ORG-001791,Cosar Mold Inc,Kent,44240,Portage,A,https://cosarmold.com,1,mailing-only or ambiguous address context,0
+SITE-001891,ORG-001859,OEM/Miller (ILPEA Industries),Aurora,44202,Portage,A,https://oem-miller.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001921,ORG-001927,GlueTread LLC,Hiram,44234,Portage,C,https://gluetread.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001980,ORG-001986,Optimax Plastic LLC,Kent,44240,Portage,B,https://optimaxplastic.com/index.php/rotomolding/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002044,ORG-002050,"Diskin Enterprises, LLC",Garrettsville,44231,Portage,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000220,ORG-000207,A.r.e. Accessories — Massillon,Massillon,44646,Stark,A,https://realtruck.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000271,ORG-000255,"Buckeye Packaging Co., Inc. — Alliance",Alliance,44601,Stark,A,https://www.buckeyepackaging.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000292,ORG-000273,ChemSpec — Canton,Canton,44718,Stark,C,https://www.safic-alcan.com/en-us/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000344,ORG-000323,"Electra Tarp, Inc. — Canton",Canton,44706,Stark,U,https://www.electratarp.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000354,ORG-000333,Evans Industries — Canton,Canton,44702,Stark,C,https://evansind.net/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000364,ORG-000342,Flex-Pack Engineering Inc.,Uniontown,44685,Stark,U,https://www.flexpackeng.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000436,ORG-000407,Kephaco Corporation dba American Marble Industries Plant 1 — Canton,Canton,44705,Stark,C,https://amisurfaces.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000442,ORG-000413,Koch Knight LLC — East Canton,East Canton,,Stark,U,https://knightmaterials.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000474,ORG-000443,"Midlands Technologies, Inc. — Canton",Canton,44705,Stark,U,https://www.midlandstech.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000476,ORG-000445,Miller Weldmaster Corporation — Navarre,Navarre,44662,Stark,U,https://www.weldmaster.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000501,ORG-000469,"Northeastern Plastics International, Inc — Canton",Canton,44707,Stark,C,https://northeasternplastics.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000503,ORG-000471,Novis Works LLC — Canton,Canton,44702,Stark,U,https://www.novisworks.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000522,ORG-000487,PFC-OH — Massillon,Massillon,44646,Stark,A,https://pfccases.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000545,ORG-000511,"Polymer Packaging, Inc. — North Canton",North Canton,44720,Stark,A,https://www.polymerpkg.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000554,ORG-000519,Premier Building Solutions — Massillon,Massillon,44646,Stark,U,https://premierbuildingsolutions.net/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000561,ORG-000525,"Profile Plastics, Inc. — Canton",Canton,44706,Stark,C,https://www.profileplastics.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000571,ORG-000535,"R2 Sealant Systems, LLC. — Massillon",Massillon,44646,Stark,U,https://r2sealants.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000574,ORG-000538,Rapid Molds — North Canton,North Canton,44720,Stark,A,https://rapidmolding.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000587,ORG-000549,"Robin Industries, Inc. — North Canton (HQ)",North Canton,44720,Stark,A,https://www.robin-industries.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000619,ORG-000580,Specialty Hose Corp. — North Canton,North Canton,44720,Stark,C,https://specialtyhose.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000631,ORG-000592,"Sun State Plastics, Inc. — North Canton",North Canton,44720,Stark,B,https://www.sunstateplastics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000632,ORG-000593,Suncolor Corporation — North Canton,North Canton,44720,Stark,U,https://www.suncolorcorp.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000643,ORG-000603,Tesla Nanocoatings — Massillon,Massillon,,Stark,U,https://teslanano.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000662,ORG-000621,Universal Plastics & Machine — Canton,Canton,44720,Stark,U,https://www.universalplasticsmachine.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000685,ORG-000641,"Zeiger Industries, Inc. — Canton",Canton,44707,Stark,C,https://zeigerindustries.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001423,ORG-001384,Sterilite Corporation — Massillon,Massillon,,Stark,B,https://www.sterilite.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001428,ORG-001389,IML Containers Ohio — Alliance,Alliance,,Stark,B,https://imlcontainer.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001440,ORG-001397,PolyKinetix — Massillon,Massillon,44746,Stark,B,https://polykinetix.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001441,ORG-001398,Smithers Medical Products — North Canton,North Canton,,Stark,B,https://smithersmedicalproducts.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001503,ORG-001452,dlhBOWLES — Canton,Canton,44706,Stark,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001512,ORG-001461,Sare Plastics — Alliance,Alliance,44601,Stark,B,https://sareplastics.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001538,ORG-000132,Sherwin-Williams — Massillon,Massillon,44646,Stark,B,https://www.sherwin-williams.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001611,ORG-001546,Earthwalk Orthotics Acquisition Company LLC (Earthwalk Orthotics) — Massillon,Massillon,44646,Stark,A,https://earthwalkorthotics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001716,ORG-001642,MOTIVO DISPLAY SOLUTIONS — Massillon,Massillon,,Stark,B,http://www.motivodisplay.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001723,ORG-001648,WORTHINGTON PRODUCTS — East Canton,East Canton,,Stark,B,http://tuffboom.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001741,ORG-001665,Dischem International Inc — North Canton,North Canton,,Stark,A,https://dischem.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001754,ORG-001678,Harrison Paint Company — Canton,Canton,,Stark,A,https://harrisonpaint.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001774,ORG-001698,Prime Engineered Plastics,Canton,,Stark,B,https://www.prime-plastics.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001825,ORG-001749,"Standards Testing Laboratories, Inc.",Massillon,44646,Stark,C,https://www.stllabs.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001855,ORG-001776,S. Slesnick Company (Slesnick Recycling — Alliance Recycling Center),Alliance,44601,Stark,B,https://slesnick.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001862,ORG-001784,BF Plastics Inc,North Lawrence,44666,Stark,A,https://bfplasticsinc.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001911,ORG-001920,"Lawrence Machine, Inc.",Massillon,,Stark,C,,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001928,ORG-001934,Rack Coating Services Inc.,Canal Fulton,44614,Stark,B,https://rackpowdercoating.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001934,ORG-001940,Synthetic Rubber Technologies,Uniontown,44685,Stark,C,https://srtpolymers.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001938,ORG-001944,"Tristan Rubber Molding, Inc.",North Canton,44720,Stark,C,,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001950,ORG-001956,Eihinger Machine Inc,Massillon,44646,Stark,C,https://eihingermachineinc.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001972,ORG-001978,"Sprayworks Equipment Group, LLC",Canton,44709,Stark,A,sprayworksequipment.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002004,ORG-002010,Sherwood Advanced Composite Technologies Corp,Louisville,44641,Stark,B,sherwoodcorp.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002050,ORG-001776,S. Slesnick Company,Canton,44707,Stark,C,https://slesnick.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-002055,ORG-002056,P & E Sales Ltd.,Alliance,44601,Stark,C,https://pesalesohio.wordpress.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-002069,ORG-002069,"Summit Glove, Inc.",Minerva,44657,Stark,B,https://www.summitglove.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002110,ORG-002153,Checkpoint Systems,Canton,,Stark,A,alphaworld.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000222,ORG-000209,ABC Plastics — Lodi,Lodi,44254,Medina,A,http://www.abcplasticslodi.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000265,ORG-000249,BMS Burns — Medina,Medina,44256,Medina,C,https://www.bmsburns.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000301,ORG-000282,Component Manufacturing & Design — Brunswick,Brunswick,44212,Medina,U,https://cmd-tip.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000362,ORG-000340,Flambeau Sharon Center Plant,Wadsworth,44281,Medina,B,https://www.flambeau.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000443,ORG-000414,Koroseal Interior Products — Medina,Medina,44256,Medina,C,https://koroseal.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000525,ORG-000490,Philpott Solutions Group — Brunswick,Brunswick,44212,Medina,B,https://philpottsolutions.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000537,ORG-000505,Poly Source LLC. — Brunswick,Brunswick,44212,Medina,C,https://www.poly-source.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000562,ORG-000526,"Profile Rubber Corp., Inc. — Wadsworth",Wadsworth,44281,Medina,C,https://profilerubber.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000629,ORG-000590,Stopol — Valley City,Valley City,44280,Medina,U,https://www.stopoles.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000644,ORG-000604,"Thermal Aire Technologies, Inc. — Medina",Medina,44256,Medina,U,https://www.thermalairetech.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000656,ORG-000615,Triaxis Machine & Tool — Valley City,Valley City,44280,Medina,U,https://triaxistool.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001420,ORG-001381,Hyload Inc. — Wadsworth,Wadsworth,44281,Medina,B,https://www.hyload.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001480,ORG-001432,Cell-O-Core — Wadsworth,Wadsworth,44274,Medina,B,https://cellocore.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001561,ORG-001495,Barwell Machinery USA — Brunswick,Brunswick,,Medina,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001603,ORG-001538,Perma Laboratories LLC — Hinckley,Hinckley,44233,Medina,B,https://perma-laboratories.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001663,ORG-001591,Winsell Incorporated — Medina,Medina,44256,Medina,B,https://winsellinc.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001694,ORG-001623,ADCAL ADHESIVE COATINGS AND LAMINATIONS LLC — Brunswick,Brunswick,,Medina,B,https://adcalinc.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001733,ORG-001657,Comdess Company Inc — Seville,Seville,,Medina,B,https://comdess.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001767,ORG-001691,Mike Cindia Sales Inc — Wadsworth,Wadsworth,,Medina,C,https://mcsiengineering.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001784,ORG-001708,ECM Performance Materials Corp,Medina,,Medina,C,ecmpmc.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001820,ORG-001744,"Jet Di, Inc.",Brunswick,44212,Medina,A,https://jet-di.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001952,ORG-001958,ICS Laboratories Inc,Brunswick,44212,Medina,B,http://www.icslabs.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001993,ORG-001999,"Raydar of Ohio, Inc.",Wadsworth,44281,Medina,B,raydarrubber.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002005,ORG-002011,"Solutions in Polycarbonate, LLC",Medina,44256,Medina,A,solutionsinpc.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002072,ORG-002072,Vexor Technology Inc (TRI variant name: Reworld Medina LLC),Medina,44256,Medina,C,http://www.vexortechnology.com,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-002904,ORG-000009,Myers Industries — Wadsworth,Wadsworth,,Medina,B,https://www.myersindustries.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000226,ORG-000651,Advanced Drainage Systems (Wooster),Wooster,44691,Wayne,C,https://www.adspipe.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
