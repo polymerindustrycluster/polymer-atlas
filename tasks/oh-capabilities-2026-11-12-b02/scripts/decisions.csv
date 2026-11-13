@@ -1,0 +1,34 @@
+site_id,type,term,scope,basis,url,quote
+SITE-001733,material,polypropylene_pp,site,menu,https://comdess.com/index.php/content/materials,"Materials , Polyethylene , , Crosslink PE , , Polypropylene"
+SITE-001733,material,polyethylene_pe,site,menu,https://comdess.com/index.php/content/materials,"Materials , Polyethylene"
+SITE-001733,material,polycarbonate_pc,site,menu,https://comdess.com/index.php/content/materials,"Materials , Polyethylene , , Crosslink PE , , Polypropylene , , PCV (Vinyl) , , EVA , , Polycarbonate"
+SITE-001733,material,fluoropolymers,site,menu,https://comdess.com/index.php/content/materials,"Materials , Polyethylene , , Crosslink PE , , Polypropylene , , PCV (Vinyl) , , EVA , , Polycarbonate , , Teflon"
+SITE-001733,process,rotational_molding,site,menu,https://comdess.com/,"Custom Rotational Molding -- Comdess Company, Inc."
+SITE-000118,process,die_cutting_converting,org,menu,https://www.mechanicalrubber.com/,"Processes , , Composite Fabrication , , Die Cut"
+SITE-000118,process,laminating,org,menu,https://www.mechanicalrubber.com/products-services/die-cut/,"Processes , , Stamping , Bonding , Kiss-Cutting and Laminating"
+SITE-000383,process,laminating,site,menu,https://www.grafixplastics.com/,"Services , , Trimming and Sheeting , Precision Slitting , Short Roll Rewinding , Multi-layer Lamination"
+SITE-000475,material,epoxy,site,narrative,https://www.mipco.org/,Manufacturer of Epoxy Flooring Repair and Resurfacing Materials
+SITE-000647,process,rubber_extrusion,site,menu,https://www.timcorubber.com/,"Capabilities , Custom Rubber Products , Rubber Gaskets , Extruded Rubber"
+SITE-000647,process,transfer_molding,site,menu,https://www.timcorubber.com/rubber-capabilities/,"Our rubber product capabilities include: , Injection, compression and transfer molding"
+SITE-000647,process,rubber_molding_injection,site,menu,https://www.timcorubber.com/rubber-capabilities/,"Our rubber product capabilities include: , Injection, compression and transfer molding"
+SITE-000647,process,rubber_molding_compression,site,menu,https://www.timcorubber.com/rubber-capabilities/,"Our rubber product capabilities include: , Injection, compression and transfer molding"
+SITE-000647,process,die_cutting_converting,site,menu,https://www.timcorubber.com/rubber-capabilities/die-cut-parts/,"Capabilities , Die Cut"
+SITE-000647,material,silicones,site,menu,https://www.timcorubber.com/,"Materials , EPDM Rubber , Silicone"
+SITE-000647,material,epdm,site,menu,https://www.timcorubber.com/,"Materials , EPDM"
+SITE-000647,material,nitrile_nbr,site,menu,https://www.timcorubber.com/,"Materials , EPDM Rubber , Silicone Rubber , Neoprene Rubber , Viton , Natural Rubber , Nitrile"
+SITE-000647,material,neoprene_cr,site,menu,https://www.timcorubber.com/,"Materials , EPDM Rubber , Silicone Rubber , Neoprene"
+SITE-000647,material,viton_fkm,site,menu,https://www.timcorubber.com/,"Materials , EPDM Rubber , Silicone Rubber , Neoprene Rubber , Viton"
+SITE-000647,material,natural_rubber_nr,site,menu,https://www.timcorubber.com/,"Materials , EPDM Rubber , Silicone Rubber , Neoprene Rubber , Viton , Natural Rubber"
+SITE-001791,process,additive_manufacturing_polymer,site,narrative,https://axionlabs.co/,"We handle milling, 3D printing, and secondary operations under one roof."
+SITE-001791,material,nylon_pa,site,menu,https://axionlabs.co/,"Materials Onyx, Nylon"
+SITE-001791,material,thermoplastic_elastomers_tpe_tpu,site,menu,https://axionlabs.co/,"Materials PLA, PETG, ABS, ASA, PA, TPU"
+SITE-001852,process,laminating,org,narrative,https://www.adherexpackaging.com/capabilities/,"comprehensive capabilities including die-cutting, kiss-cutting, water jet technologies, laminating"
+SITE-001852,process,die_cutting_converting,org,narrative,https://www.adherexpackaging.com/capabilities/,"comprehensive capabilities including die-cutting, kiss-cutting, water jet technologies, laminating"
+SITE-001852,material,adhesives_sealants,org,narrative,https://www.adherexpackaging.com/kiss-cutting-capabilities/,"acrylic adhesive, synthetic rubber hot melt, solvent natural rubbers and solvent acrylic adhesives"
+SITE-000623,material,polypropylene_pp,site,menu,https://sprostybag.com/,Multi-Wall Paper Bag with Polypropylene Liner
+SITE-000417,material,nylon_pa,site,narrative,https://www.jjwhite.com/,We will treat Your nylon and Cotton fabrics for adhesion
+SITE-000477,material,nylon_pa,site,menu,https://www.mmitextiles.com/,500D to 1000D mil-spec nylon laminate delivers high strength
+SITE-000568,material,silicones,org,menu,https://qmd.net/product/degania-products/,"Silicone Catheters, Surgical Drains & Custom OEM Devices"
+SITE-001652,process,laminating,org,narrative,https://epacflexibles.com/,Our full color rollstock is produced with solventless lamination.
+SITE-000122,material,polypropylene_pp,site,menu,https://www.anitaplastics.com/,PP/HDPE woven and non woven Fabric Manufacturer
+SITE-000122,material,polyethylene_pe,site,menu,https://www.anitaplastics.com/,PP/HDPE woven and non woven Fabric Manufacturer
