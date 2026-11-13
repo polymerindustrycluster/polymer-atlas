@@ -1,0 +1,60 @@
+site_id,verdict,reason
+SITE-000237,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000308,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Chagrin Falls; need own-page physical street block at the recorded city"
+SITE-000330,STILL_UNCERTAIN,own-page street appears only in mailing/warehouse/PO context; need a physical-location statement
+SITE-000425,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Middlefield; need own-page physical street block at the recorded city"
+SITE-000473,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Middlefield; need own-page physical street block at the recorded city"
+SITE-000582,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Middlefield; need own-page physical street block at the recorded city"
+SITE-001609,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Middlefield; need own-page physical street block at the recorded city"
+SITE-001680,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Newbury; need own-page physical street block at the recorded city"
+SITE-001731,STILL_UNCERTAIN,own-page street disagrees with the street recorded in notes (16625); need dated address adjudication
+SITE-002063,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000286,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000388,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000519,STILL_UNCERTAIN,operator holds 2 sites in Elyria; need site-specific binding
+SITE-000576,STILL_UNCERTAIN,own-page street appears only in mailing/warehouse/PO context; need a physical-location statement
+SITE-000592,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Avon Lake; need own-page physical street block at the recorded city"
+SITE-000610,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Avon; need own-page physical street block at the recorded city"
+SITE-001425,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Lorain; need own-page physical street block at the recorded city"
+SITE-001509,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001718,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Elyria; need own-page physical street block at the recorded city"
+SITE-001900,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Elyria; need own-page physical street block at the recorded city"
+SITE-001944,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-002079,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Elyria; need own-page physical street block at the recorded city"
+SITE-000430,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Youngstown; need own-page physical street block at the recorded city"
+SITE-000679,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Austintown; need own-page physical street block at the recorded city"
+SITE-001391,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Youngstown; need own-page physical street block at the recorded city"
+SITE-001392,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Youngstown; need own-page physical street block at the recorded city"
+SITE-001484,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Austintown; need own-page physical street block at the recorded city"
+SITE-001485,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Boardman; need own-page physical street block at the recorded city"
+SITE-001724,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Youngstown; need own-page physical street block at the recorded city"
+SITE-001939,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001968,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001992,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city North Lima; need own-page physical street block at the recorded city"
+SITE-002025,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002053,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002059,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000243,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001662,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Warren; need own-page physical street block at the recorded city"
+SITE-001669,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Niles; need own-page physical street block at the recorded city"
+SITE-001847,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000535,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Ashtabula; need own-page physical street block at the recorded city"
+SITE-000557,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Conneaut (North Kingsville); need own-page physical street block at the recorded city"
+SITE-001468,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Geneva; need own-page physical street block at the recorded city"
+SITE-001483,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001941,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Ashtabula; need own-page physical street block at the recorded city"
+SITE-001966,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-002024,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Jefferson; need own-page physical street block at the recorded city"
+SITE-002041,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002054,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000941,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Leetonia; need own-page physical street block at the recorded city"
+SITE-001455,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Salem; need own-page physical street block at the recorded city"
+SITE-001693,STILL_UNCERTAIN,"own page gives ""2789 E. State St. Unit 10, Suite 177""; the double unit/suite format suggests a mail-receiving unit; need an own-page or filing statement of the physical location"
+SITE-001821,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Columbiana; need own-page physical street block at the recorded city"
+SITE-000863,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Dover; need own-page physical street block at the recorded city"
+SITE-000928,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Bolivar; need own-page physical street block at the recorded city"
+SITE-001029,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Dover; need own-page physical street block at the recorded city"
+SITE-001109,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001122,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Baltic; need own-page physical street block at the recorded city"
+SITE-001131,STILL_UNCERTAIN,"fresh raw re-fetch did not reproduce the quote (route availability, not absence); need a re-readable own-site page"
+SITE-001137,STILL_UNCERTAIN,own pages show several streets at the recorded city (10190 State Route || 10190 State Route 21); need site-specific binding
