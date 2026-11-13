@@ -1,0 +1,35 @@
+site_id,org_id,site_name,city,zip,county,tier,website,org_sites_same_city,prior_reason,prior_conflict
+SITE-001165,ORG-001079,Rich Industries — New Philadelphia,New Philadelphia,44663,Tuscarawas,U,https://www.richindustriesinc.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001207,ORG-001116,"Snyder Manufacturing, Inc. — Dover",Dover,44622,Tuscarawas,C,https://snyderman.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001227,ORG-001133,SUPERB INDUSTRIES INC — Sugarcreek,Sugarcreek,44681,Tuscarawas,U,https://www.superbindustries.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001449,ORG-001404,Deflecto — Dover,Dover,44622,Tuscarawas,B,https://www.deflecto.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001560,ORG-001494,Allied Machine & Engineering — Dover,Dover,,Tuscarawas,A,https://alliedmachine.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001599,ORG-001534,"Zimmer Surgical, Inc. — Dover",Dover,44622,Tuscarawas,B,https://zimmerbiomet.com/,1,mailing-only or ambiguous address context,0
+SITE-001910,ORG-001919,"Catalyst Systems, Inc.",Gnadenhutten,44629,Tuscarawas,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001927,ORG-001933,Performance Additives of America LLC,New Philadelphia,44663,Tuscarawas,B,https://performance-additives.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002018,ORG-002024,Tolloti Pipe LLC,Uhrichsville,44683,Tuscarawas,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000707,ORG-000660,Alliance Innovations — Mansfield,Mansfield,44902,Richland,C,https://www.alliance-innovations.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000788,ORG-000728,Charter Next Generation - Ontario,Ontario,44906,Richland,A,https://cnginc.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000789,ORG-000728,Charter Next Generation — Lexington Campus,Lexington,44904,Richland,A,https://cnginc.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000879,ORG-000813,Edge Plastics — Mansfield,Mansfield,44902,Richland,B,https://edgeplasticsinc.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001473,ORG-001426,Techniplas US LLC dba NEXXTA — Mansfield,Mansfield,44903,Richland,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000794,ORG-000733,"Choice Plastic Machinery, Inc. — Ashland",Ashland,44805,Ashland,U,https://choicemachinery.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000930,ORG-000862,GOLF BALL REFURBISHERS — Loudonville,Loudonville,44842,Ashland,U,https://www.golfballrefurbishers.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000987,ORG-000917,"Kar-Del Plastics, Inc. — Ashland",Ashland,44805,Ashland,C,https://kar-delplastics.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001940,ORG-001946,"WAUGS, Inc.",Ashland,44805,Ashland,B,https://waugs.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000717,ORG-000666,American Colors Inc. — Sandusky,Sandusky,44870,Erie,A,https://www.americancolors.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001078,ORG-000999,Okamoto Sandusky Manufacturing — Sandusky,Sandusky,44870,Erie,C,https://okamotosandusky.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001282,ORG-001183,Ventra Sandusky — Sandusky,Sandusky,44870,Erie,C,https://flex-n-gate.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001513,ORG-001462,Clevite Elastomers Technical Center — Milan,Milan,44846,Erie,B,https://www.tenneco.com/,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-001801,ORG-001725,Thorworks Industries Inc,Sandusky,,Erie,B,https://www.sealmaster.net/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000739,ORG-000688,Autoneum — Norwalk,Norwalk,44857,Huron,U,https://autoneum.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000761,ORG-000665,"Venture Packaging, Inc.",Monroeville,,Huron,C,https://www.amcor.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000886,ORG-000820,EMERALD FX PROPERTY — Norwalk,Norwalk,44857,Huron,U,https://thesoakfactory.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000896,ORG-000830,Extol of Ohio — Norwalk,Norwalk,44857,Huron,C,https://extolohio.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000936,ORG-000868,Guardian Manufacturing Company — Willard,Willard,44890-9525,Huron,C,https://guardian-mfg.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000952,ORG-000884,"Hueter Toledo, Inc. — Bellevue",Bellevue,44811,Huron,U,https://htiplastics.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001150,ORG-001065,"R & S Technologies, Inc. — Bellevue",Bellevue,,Huron,C,http://www.r-s-t-inc.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001296,ORG-001197,Wilbert Plastic Services — Bellevue,Bellevue,44811,Huron,C,https://www.epcmfg.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-001785,ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),Norwalk,,Huron,A,tuftexballoons.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-001807,ORG-001731,"Nissha Medical Technologies (Ohio), Inc.",Norwalk,44857,Huron,B,https://nissha.medical ; https://nissha.com,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-002037,ORG-002043,"Mitsubishi Chemical America, Inc. (Bellevue Plant)",Bellevue,44811,Huron,A,https://mcpp-global.com,1,need own-page physical street block at recorded city; no admissible block fetched,0

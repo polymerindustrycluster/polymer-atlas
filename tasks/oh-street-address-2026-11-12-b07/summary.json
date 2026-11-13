@@ -1,0 +1,26 @@
+{
+ "batch": "b07",
+ "frame": 34,
+ "verdicts": {
+  "VERIFIED": 15,
+  "STILL_UNCERTAIN": 19
+ },
+ "hold_reasons": {
+  "pages read, no street at recorded city": 10,
+  "own-site fetch unavailable": 4,
+  "no held website": 3,
+  "notes street disagrees": 1,
+  "several streets": 1
+ },
+ "fetch_attempts": 162,
+ "fetch_2xx": 108,
+ "verified_by_tier": {
+  "U": 6,
+  "C": 5,
+  "B": 2,
+  "A": 2
+ },
+ "active_oh_sites": 1877,
+ "active_oh_with_street_after": 481,
+ "audit_pass": 15
+}
