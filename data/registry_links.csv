@@ -5443,3 +5443,5 @@ ORG-004503,SEC_CIK,0000093389,"sec_ticker_name_match:SMP; sec_submissions_name:S
 ORG-004516,SEC_CIK,0000737758,sec_ticker_name_match:TTC; sec_submissions_name:TORO CO; source:https://data.sec.gov/submissions/CIK0000737758.json,2026-11-06,
 ORG-004564,SEC_CIK,0000080035,sec_ticker_name_match:PLPC; sec_submissions_name:PREFORMED LINE PRODUCTS CO; source:https://data.sec.gov/submissions/CIK0000080035.json,2026-11-06,
 ORG-004587,SEC_CIK,0000031235,sec_ticker_name_match:KODK; sec_submissions_name:EASTMAN KODAK CO; source:https://data.sec.gov/submissions/CIK0000031235.json,2026-11-06,
+ORG-004923,FRS,110000488623,frs_rest_registry_id_name_street_match:SITE-020002,2026-11-12,SITE-020002
+ORG-004877,FRS,110001239810,frs_rest_registry_id_name_street_match:SITE-020003,2026-11-12,SITE-020003
