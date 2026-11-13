@@ -1,0 +1,67 @@
+site_id,verdict,reason
+SITE-000007,STILL_UNCERTAIN,own-page ZIP 44224 conflicts with recorded ZIP 44223; need integrator ruling on the ZIP before the street is applied
+SITE-000008,STILL_UNCERTAIN,own-page street appears only in mailing/warehouse/PO context; need a physical-location statement
+SITE-000010,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000013,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000014,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000015,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000016,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000018,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000019,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000020,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000021,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000032,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000035,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000036,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000037,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000040,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000041,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000043,STILL_UNCERTAIN,own-page ZIP 44308 conflicts with recorded ZIP 44306; need integrator ruling on the ZIP before the street is applied
+SITE-000047,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000051,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Fairlawn; need own-page physical street block at the recorded city"
+SITE-000052,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000056,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Cuyahoga Falls; need own-page physical street block at the recorded city"
+SITE-000058,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Cuyahoga Falls; need own-page physical street block at the recorded city"
+SITE-000059,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Stow; need own-page physical street block at the recorded city"
+SITE-000062,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000065,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Hudson; need own-page physical street block at the recorded city"
+SITE-000066,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000067,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000068,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Macedonia; need own-page physical street block at the recorded city"
+SITE-000070,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000073,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Twinsburg; need own-page physical street block at the recorded city"
+SITE-000076,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000077,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Twinsburg; need own-page physical street block at the recorded city"
+SITE-000078,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Twinsburg; need own-page physical street block at the recorded city"
+SITE-000079,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Barberton; need own-page physical street block at the recorded city"
+SITE-000080,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000084,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Barberton; need own-page physical street block at the recorded city"
+SITE-000085,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Barberton; need own-page physical street block at the recorded city"
+SITE-000089,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000090,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000091,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000092,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000093,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000094,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000095,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000097,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000098,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000099,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000100,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Hudson; need own-page physical street block at the recorded city"
+SITE-000103,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000177,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000178,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000181,STILL_UNCERTAIN,"fresh raw re-fetch did not reproduce the quote (route availability, not absence); need a re-readable own-site page"
+SITE-000204,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Green; need own-page physical street block at the recorded city"
+SITE-000210,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000211,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000216,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000217,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000218,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000227,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000349,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Fairlawn; need own-page physical street block at the recorded city"
+SITE-000358,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Cuyahoga Falls; need own-page physical street block at the recorded city"
+SITE-000373,STILL_UNCERTAIN,own pages show several streets at the recorded city (345 15th Street || 315 15th Street); need site-specific binding
+SITE-000385,STILL_UNCERTAIN,operator holds 2 sites in Twinsburg; need site-specific binding
+SITE-000389,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Barberton; need own-page physical street block at the recorded city"
+SITE-000415,STILL_UNCERTAIN,own-page street appears only in mailing/warehouse/PO context; need a physical-location statement
