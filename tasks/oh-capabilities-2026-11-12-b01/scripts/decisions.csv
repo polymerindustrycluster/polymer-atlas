@@ -1,0 +1,31 @@
+site_id,type,term,scope,basis,url,quote
+SITE-000034,material,nylon_pa,site,narrative,https://www.akronpolymer.com/manufacturing-of-a-hydraulic-clutch-actuation-tube/,out of many types of high performance polyamide (nylon) compounds
+SITE-000034,material,thermoplastics,site,narrative,https://www.akronpolymer.com/thermoplastic-tubing-development-and-support-services/,Thermoplastic Tubing Development & Support Services
+SITE-000081,material,polyurethane_pu,site,narrative,https://novexinc.com/,Novex’s specially formulated polyurethane belting and sheeting
+SITE-000285,material,phenolic,org,narrative,https://cgthermal.com/capabilities-2/,our time proven Impervite phenolic impregnation system
+SITE-000367,material,polyurethane_pu,org,narrative,https://www.handifoam.com/,"LEADERS IN INNOVATIVE, SUSTAINABLE POLYURETHANE FOAM INSULATION"
+SITE-000373,material,elastomers_rubber,site,narrative,https://fullcircle-tech.com/about,"We recycle plastic, rubber, and reprocessed hydraulic oil"
+SITE-000373,process,recycling_unspecified,site,narrative,https://fullcircle-tech.com/about,"We recycle plastic, rubber, and reprocessed hydraulic oil"
+SITE-000415,material,thermoplastics,site,narrative,https://www.jbpolymers.com/,a thermoplastic service oriented supplier and compounder
+SITE-000415,material,polycarbonate_pc,site,narrative,https://www.jbpolymers.com/about,"From engineering grades of polycarbonates and nylons, to commodity grade resins"
+SITE-000415,process,compounding_unspecified,site,narrative,https://www.jbpolymers.com/,a thermoplastic service oriented supplier and compounder
+SITE-000464,material,polypropylene_pp,site,narrative,https://mccannplastics.com/,"manufactures customized thermoplastic materials, specializing in filled PP, rotational molding compounds and powders."
+SITE-000464,material,thermoplastics,site,narrative,https://mccannplastics.com/,"manufactures customized thermoplastic materials, specializing in filled PP, rotational molding compounds and powders."
+SITE-000464,process,custom_compounding,site,narrative,https://mccannplastics.com/materials/,"At McCann Plastics, we specialize in the custom compounding of thermoplastic resins"
+SITE-000547,material,composites_frp,site,narrative,https://polystarcontainment.com/product/,Since we began using fiberglass-reinforced plastics in our dike walls
+SITE-000639,material,thermoplastics,org,narrative,https://www.technoform.com/en,Standard & custom thermoplastic solutions
+SITE-001661,material,epoxy,site,narrative,https://ruscoe.com/,"our specialty line. Bonding friction materials, epoxy, thermoplastic urethanes, laminating adhesives"
+SITE-001661,material,adhesives_sealants,site,narrative,https://ruscoe.com/product-cat/sealants/,"Lap Sealant is a one-part, solvent release butyl rubber flexible sealant"
+SITE-001682,material,adhesives_sealants,org,narrative,https://www.mactac.com/Catalog/Products/Graphics,"PSA materials development for digital printing, mounting, laminating, screen-printing, and cut-vinyl needs."
+SITE-001695,material,elastomers_rubber,org,narrative,https://acecryo.com/,"We currently process cured and uncured rubber, specialty plastics and other non traditional materials."
+SITE-001883,material,polystyrene_ps_hips,org,narrative,https://www.impactsleeves.com/services/materials,"OPS - Oriented Polystyrene film is an environmentally-friendly, and more cost-effective than"
+SITE-001437,process,insert_overmolding,site,narrative,https://kentdisplays.com/services/low-pressure-injection-molding/,Cable & Connector Over molding for strain relief and environmental sealing
+SITE-001721,material,polyethylene_pe,site,narrative,https://www.tuscoproducts.com/products/hose-pot,plastic garden planters are made from 100% high-grade polyethylene
+SITE-000442,material,thermoplastics,org,narrative,https://knightmaterials.com/,Dual laminate products are constructed with a thermoplastic liner interior and a fiberglass-reinforced plastic (FRP) structure
+SITE-000442,material,composites_frp,org,narrative,https://knightmaterials.com/,Dual laminate products are constructed with a thermoplastic liner interior and a fiberglass-reinforced plastic (FRP) structure
+SITE-000522,material,polyethylene_pe,org,narrative,https://pfccases.com/services/,PFC cases are made of high density polyethylene (HDPE).
+SITE-000664,material,composites_frp,site,narrative,https://familyfunpools.com/about-us/,manufacturing a high quality continuous fiberglass pool wall called Uniwall
+SITE-001754,material,coatings,site,narrative,https://harrisonpaint.com/index.php/about-us/,Olde Century Colors offers Acrylic and Simulated Milk paints in 58 historic colors.
+SITE-000464,material,polyethylene_pe,site,menu,https://mccannplastics.com/materials/,"Materials , We offer custom solutions with a variety of resins, fillers, additives, and colors to meet your needs. , , Polyethylene"
+SITE-000602,material,polyurethane_pu,org,menu,https://www.scottbader.com/north-america/,"Resins , , Urethane"
+SITE-000522,process,blow_molding,org,menu,https://pfccases.com/services/,If you have a custom product and are looking for a blow molding
