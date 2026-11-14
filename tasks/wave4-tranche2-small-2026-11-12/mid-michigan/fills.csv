@@ -1,0 +1,6 @@
+program_id,field,proposed_value,verdict,witness_quote,source_url,note
+PROG-000160,research_areas,,REFUSED,,,"Workforce AAS pathway; no research statements exist. Course-sequence content only."
+PROG-000160,specialty_processes,,REFUSED,,,"No §3.1 process named in a program-level statement. 'PLT.101 Survey of the Plastics Industry' and 'PLT.110 Plastics and Polymer Materials' are course titles; not coded."
+PROG-000160,specialty_materials,,REFUSED,,,"No §3.2 family stated as a program specialty on the college's own pages."
+PROG-000160,facilities_note,,REFUSED,,,"No publicly stated labs/equipment for the pathway found on the college's own pages this pass."
+PROG-000160,scale_band,,REFUSED,,,"No published enrollment. The cost-estimates page publishes tuition by program (60 credit hours, dollar figures) — dollars and credit hours never convert under the SCHEMA v1.13 rule."
