@@ -181,6 +181,11 @@ The same own-site pages are a dated legal identity bridge among `ORG-001029` (pp
 - (b) Merge all three now.
 - (c) Keep all three indefinitely.
 
+**Status update 2026-11-14 (integration of #322):** not applied. The ruling stands, but the fold depended on a
+street address that the cited PPC Flex Payson page does not contain (re-fetched raw and via the
+reader route; Codex refute on #322). The fold is held until a source places the Payson plant at a stated address;
+see `tasks/owner-rulings-apply-2026-11-12/` for the settling fact.
+
 ---
 
 ## Already settled on main (no ruling needed)
