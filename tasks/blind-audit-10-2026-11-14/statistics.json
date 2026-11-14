@@ -1,0 +1,364 @@
+{
+ "corrections": [
+  {
+   "blind_id": "A10-015",
+   "correct_value": "2026-09-28 to 2026-09-30",
+   "current_value": "2026-09-28 to 2026-10-01",
+   "field": "edition_dates",
+   "rationale": "The organizer's 2026 schedule has exactly three days: Monday 9/28 (exhibition set-up and reception), Tuesday 9/29, Wednesday 9/30, and no Thursday. October 1 is only the end of the hotel group-rate window. The 2027 conference is announced as Sept. 27-29 (Monday to Wednesday), the same pattern. Sponsor role (Magris Talc, Gold) is on the organizer's sponsor list.",
+   "record_id": "EVP-001297",
+   "sources": [
+    "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+    "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+    "https://auto-tpo.com/hotel-travel/",
+    "https://www.auto-tpo.com/",
+    "https://auto-tpo.com/wp-content/uploads/2026/09/2026-Sponsorship-Lay-out-Sept-14-2026-Rev3.pdf"
+   ]
+  },
+  {
+   "blind_id": "A10-038",
+   "correct_value": "url and public_door_url https://www.monetcci.org/; partners per the current team page: Duke (lead), Columbia, Johns Hopkins, MIT, Northwestern, Morehouse College, UC San Diego, UIUC, University of Washington (no Michigan)",
+   "current_value": "url and public_door_url https://monet.duke.edu/; description partners Columbia, Johns Hopkins, MIT, Northwestern, UC San Diego, UIUC, Michigan and Washington",
+   "field": "url;public_door_url;description_1line",
+   "rationale": "The held URL is the one the NSF CCI page lists, but monet.duke.edu returns NXDOMAIN on two public resolvers, and Duke's own 2026 Phase II release links https://www.monetcci.org/ (HTTP 200). The partner list is the 2021 roster; the current official team page has no University of Michigan investigator and does list Morehouse College. Reviewer A's third claim (thermosets not stated anywhere) is withdrawn: the NSF CCI page says MONET makes low-flow structural thermosets recyclable and reprocessable, so specialty_materials=thermosets stands.",
+   "record_id": "PROG-000314",
+   "sources": [
+    "dns://monet.duke.edu/A@8.8.8.8",
+    "dns://monet.duke.edu/A@1.1.1.1",
+    "https://chem.duke.edu/news/monet-moves-phase-ii",
+    "https://www.nsfcci.org/currentcenters-1",
+    "https://www.nsfcci.org/currentcenters-1",
+    "https://www.monetcci.org/our-team",
+    "https://www.monetcci.org/our-team",
+    "https://dmi.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials"
+   ]
+  }
+ ],
+ "cross_tab": {
+  "A AGREE / B AGREE": 36,
+  "A AGREE / B UNRESOLVED": 9,
+  "A FIELD_ERROR / B UNRESOLVED": 4,
+  "A UNRESOLVED / B AGREE": 1
+ },
+ "final_counts": {
+  "AGREE": 46,
+  "CREATION_ERROR": 0,
+  "FIELD_ERROR": 2,
+  "UNRESOLVED": 2
+ },
+ "frame_records": 1621,
+ "leads": {
+  "event_participation_rows_with_the_TPO_2026_end_date_2026_10_01": [
+   "EVP-001278",
+   "EVP-001279",
+   "EVP-001280",
+   "EVP-001281",
+   "EVP-001282",
+   "EVP-001283",
+   "EVP-001284",
+   "EVP-001285",
+   "EVP-001286",
+   "EVP-001287",
+   "EVP-001288",
+   "EVP-001289",
+   "EVP-001290",
+   "EVP-001292",
+   "EVP-001293",
+   "EVP-001294",
+   "EVP-001295",
+   "EVP-001296",
+   "EVP-001297",
+   "EVP-001298"
+  ],
+  "note": "rows at HEAD 4ecc7cf (including the sampled one) with the same edition_dates value as the confirmed error; the rest are unsampled, a lead for the controller and not a measured rate"
+ },
+ "reviewer_a_counts": {
+  "AGREE": 45,
+  "FIELD_ERROR": 4,
+  "UNRESOLVED": 1
+ },
+ "reviewer_b_counts": {
+  "AGREE": 37,
+  "UNRESOLVED": 13
+ },
+ "sample_records": 50,
+ "sensitivity_weighted": {
+  "confirmed_only": 0.04611351017890191,
+  "unresolved_counted_as_errors": 0.07083709011531343
+ },
+ "strata": [
+  {
+   "AGREE": 12,
+   "AGREE_rate": 0.9230769230769231,
+   "AGREE_wilson95": [
+    0.66686,
+    0.98629
+   ],
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": [
+    0.0,
+    0.228095
+   ],
+   "FIELD_ERROR": 0,
+   "FIELD_ERROR_rate": 0.0,
+   "FIELD_ERROR_wilson95": [
+    0.0,
+    0.228095
+   ],
+   "UNRESOLVED": 1,
+   "UNRESOLVED_rate": 0.07692307692307693,
+   "UNRESOLVED_wilson95": [
+    0.01371,
+    0.33314
+   ],
+   "census": false,
+   "confirmed_error": 0,
+   "confirmed_error_rate": 0.0,
+   "confirmed_error_wilson95": [
+    0.0,
+    0.228095
+   ],
+   "design_weight": 38.07692307692308,
+   "inclusion_probability": 0.026262626262626262,
+   "population_records": 495,
+   "sampled_records": 13,
+   "table": "people"
+  },
+  {
+   "AGREE": 3,
+   "AGREE_rate": 0.75,
+   "AGREE_wilson95": [
+    0.300642,
+    0.954413
+   ],
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": [
+    0.0,
+    0.489891
+   ],
+   "FIELD_ERROR": 1,
+   "FIELD_ERROR_rate": 0.25,
+   "FIELD_ERROR_wilson95": [
+    0.045587,
+    0.699358
+   ],
+   "UNRESOLVED": 0,
+   "UNRESOLVED_rate": 0.0,
+   "UNRESOLVED_wilson95": [
+    0.0,
+    0.489891
+   ],
+   "census": false,
+   "confirmed_error": 1,
+   "confirmed_error_rate": 0.25,
+   "confirmed_error_wilson95": [
+    0.045587,
+    0.699358
+   ],
+   "design_weight": 36.25,
+   "inclusion_probability": 0.027586206896551724,
+   "population_records": 145,
+   "sampled_records": 4,
+   "table": "programs"
+  },
+  {
+   "AGREE": 2,
+   "AGREE_rate": 0.6666666666666666,
+   "AGREE_wilson95": [
+    0.20766,
+    0.938508
+   ],
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": [
+    0.0,
+    0.561497
+   ],
+   "FIELD_ERROR": 0,
+   "FIELD_ERROR_rate": 0.0,
+   "FIELD_ERROR_wilson95": [
+    0.0,
+    0.561497
+   ],
+   "UNRESOLVED": 1,
+   "UNRESOLVED_rate": 0.3333333333333333,
+   "UNRESOLVED_wilson95": [
+    0.061492,
+    0.79234
+   ],
+   "census": false,
+   "confirmed_error": 0,
+   "confirmed_error_rate": 0.0,
+   "confirmed_error_wilson95": [
+    0.0,
+    0.561497
+   ],
+   "design_weight": 2.0,
+   "inclusion_probability": 0.5,
+   "population_records": 6,
+   "sampled_records": 3,
+   "table": "ecosystem"
+  },
+  {
+   "AGREE": 2,
+   "AGREE_rate": 1.0,
+   "AGREE_wilson95": null,
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": null,
+   "FIELD_ERROR": 0,
+   "FIELD_ERROR_rate": 0.0,
+   "FIELD_ERROR_wilson95": null,
+   "UNRESOLVED": 0,
+   "UNRESOLVED_rate": 0.0,
+   "UNRESOLVED_wilson95": null,
+   "census": true,
+   "confirmed_error": 0,
+   "confirmed_error_rate": 0.0,
+   "confirmed_error_wilson95": null,
+   "design_weight": 1.0,
+   "inclusion_probability": 1.0,
+   "population_records": 2,
+   "sampled_records": 2,
+   "table": "organizations"
+  },
+  {
+   "AGREE": 3,
+   "AGREE_rate": 1.0,
+   "AGREE_wilson95": null,
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": null,
+   "FIELD_ERROR": 0,
+   "FIELD_ERROR_rate": 0.0,
+   "FIELD_ERROR_wilson95": null,
+   "UNRESOLVED": 0,
+   "UNRESOLVED_rate": 0.0,
+   "UNRESOLVED_wilson95": null,
+   "census": true,
+   "confirmed_error": 0,
+   "confirmed_error_rate": 0.0,
+   "confirmed_error_wilson95": null,
+   "design_weight": 1.0,
+   "inclusion_probability": 1.0,
+   "population_records": 3,
+   "sampled_records": 3,
+   "table": "sites"
+  },
+  {
+   "AGREE": 21,
+   "AGREE_rate": 1.0,
+   "AGREE_wilson95": [
+    0.845361,
+    1.0
+   ],
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": [
+    0.0,
+    0.154639
+   ],
+   "FIELD_ERROR": 0,
+   "FIELD_ERROR_rate": 0.0,
+   "FIELD_ERROR_wilson95": [
+    0.0,
+    0.154639
+   ],
+   "UNRESOLVED": 0,
+   "UNRESOLVED_rate": 0.0,
+   "UNRESOLVED_wilson95": [
+    0.0,
+    0.154639
+   ],
+   "census": false,
+   "confirmed_error": 0,
+   "confirmed_error_rate": 0.0,
+   "confirmed_error_wilson95": [
+    0.0,
+    0.154639
+   ],
+   "design_weight": 38.857142857142854,
+   "inclusion_probability": 0.025735294117647058,
+   "population_records": 816,
+   "sampled_records": 21,
+   "table": "people_identifiers"
+  },
+  {
+   "AGREE": 3,
+   "AGREE_rate": 0.75,
+   "AGREE_wilson95": [
+    0.300642,
+    0.954413
+   ],
+   "CREATION_ERROR": 0,
+   "CREATION_ERROR_rate": 0.0,
+   "CREATION_ERROR_wilson95": [
+    0.0,
+    0.489891
+   ],
+   "FIELD_ERROR": 1,
+   "FIELD_ERROR_rate": 0.25,
+   "FIELD_ERROR_wilson95": [
+    0.045587,
+    0.699358
+   ],
+   "UNRESOLVED": 0,
+   "UNRESOLVED_rate": 0.0,
+   "UNRESOLVED_wilson95": [
+    0.0,
+    0.489891
+   ],
+   "census": false,
+   "confirmed_error": 1,
+   "confirmed_error_rate": 0.25,
+   "confirmed_error_wilson95": [
+    0.045587,
+    0.699358
+   ],
+   "design_weight": 38.5,
+   "inclusion_probability": 0.025974025974025976,
+   "population_records": 154,
+   "sampled_records": 4,
+   "table": "event_participation"
+  }
+ ],
+ "unit": "sampled record",
+ "unweighted_confirmed_error": {
+  "count": 2,
+  "rate": 0.04,
+  "wilson95": [
+   0.011039,
+   0.134601
+  ]
+ },
+ "unweighted_counts": {
+  "AGREE": 46,
+  "CREATION_ERROR": 0,
+  "FIELD_ERROR": 2,
+  "UNRESOLVED": 2
+ },
+ "unweighted_note": "simple pooled counts; the sample over-represents small strata (census sites and organizations), so use the weighted estimate for the frame",
+ "unweighted_rates": {
+  "AGREE": 0.92,
+  "CREATION_ERROR": 0.0,
+  "FIELD_ERROR": 0.04,
+  "UNRESOLVED": 0.04
+ },
+ "weighted_to_frame": {
+  "confirmed_error_point": 0.04611351017890191,
+  "confirmed_error_wilson95_at_effective_n": [
+   0.012599,
+   0.1548
+  ],
+  "kish_effective_n": 42.5475469268597,
+  "note": "design-weighted estimate for the 1,621-record frame; the interval is the Wilson interval at the Kish effective sample size, an approximation",
+  "point": {
+   "AGREE": 0.9291629098846865,
+   "CREATION_ERROR": 0.0,
+   "FIELD_ERROR": 0.04611351017890191,
+   "UNRESOLVED": 0.024723579936411524
+  }
+ }
+}

@@ -1,14 +1,19 @@
-"""Named check for blind audit 10 phase 1: frame reproduces from git and reconciles, sample re-draws, blind inputs are
-identical, frozen, and leak-free, and the leak scan / derivation catch planted defects.
+"""Named check for blind audit 10 (phases 1 and 3): frame reproduces from git and reconciles, sample re-draws, blind inputs are
+identical, frozen, and leak-free, the leak scan / derivation catch planted defects, and phase 3 recomputes every count: reviewer
+lock hashes, cross-tab, the 14 adjudications (each quote re-verified), final grades, per-stratum and weighted statistics, the report.
 Run from anywhere: python3 tasks/blind-audit-10-2026-11-14/check.py   (needs full git history: CI validate uses fetch-depth 0)
 """
-import csv, hashlib, json, sys
+import copy, csv, hashlib, json, sys
 from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import adjudicate_fetch as AF
 import frame as F
 import sample as S
+import stale_checkout_check as SC
+import stats as ST
+import write_report as WR
 
 H = F.H
 sha = lambda p: hashlib.sha256((H / p).read_bytes()).hexdigest()
@@ -112,6 +117,66 @@ def check_leak_scan_catches(rows):
     raise AssertionError('header check missed a planted pr column')
 
 
+LOCKED = {'verdicts_a.csv': 'dfd8f49021143b9e36df8584ad08141eee871e367fd057aec91bf2ff3969cf4e', 'verdicts_b.csv': '60efe428329df94808d517e08adab740ebdc6008b43d618b13e97bd53757d7bc'}
+
+
+def check_phase3():
+    for p, h in LOCKED.items():  # the reviewers' locked files, as BOARD recorded them
+        assert sha(p) == h, f'{p} changed after the reviewer lock'
+    a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
+    assert len(a) == len(b) == 50 and a.keys() == b.keys()
+    assert Counter(a.values()) == {'AGREE': 45, 'FIELD_ERROR': 4, 'UNRESOLVED': 1} and Counter(b.values()) == {'AGREE': 37, 'UNRESOLVED': 13}
+    assert Counter((a[i], b[i]) for i in a) == {('AGREE', 'AGREE'): 36, ('AGREE', 'UNRESOLVED'): 9, ('FIELD_ERROR', 'UNRESOLVED'): 4, ('UNRESOLVED', 'AGREE'): 1}
+    adj = json.loads((H / 'adjudication.json').read_text())
+    assert {e['id'] for e in adj} == {i for i in a if a[i] != b[i]} and len(adj) == 14, 'adjudication does not cover exactly the disagreements'
+    full = missing = 0
+    for e in adj:
+        assert e['grade'] in ST.GRADES and (e['grade'] != 'UNRESOLVED' or e['settling_fact']) and (e['grade'] != 'FIELD_ERROR' or (e['current_value'] and e['correct_value']))
+        for r in e['receipts']:
+            assert r['http_status'] == 200 or r['via'] in ('dig', 'curl+xhr-referer'), f"receipt on a page that did not load: {r['url']}"
+            if r.get('quote'):  # committed excerpt (CI-safe): the quote's words appear in order in the page's word stream
+                assert AF.quote_in_order(r['excerpt_words'], r['quote']), f"excerpt lacks quote: {r['url']}"
+            raw = AF.RAW / f"{r['sha256']}.bin"
+            if raw.exists():  # full stored body (persist dir): hash, quote, absence and raw pattern re-verified
+                body = raw.read_bytes()
+                assert hashlib.sha256(body).hexdigest() == r['sha256'] and len(body) == r['bytes'], f"stored body hash mismatch: {r['url']}"
+                text = AF.visible(body, r['url'])
+                assert not r.get('quote') or AF.quote_in_order(text, r['quote']), f"quote not on stored page: {r['url']}"
+                assert all(not AF.re.search(AF.re.escape(t), text, AF.re.I) for t in r.get('absent', [])), f"absent term present: {r['url']}"
+                assert not r.get('raw_re') or AF.re.search(r['raw_re'].encode(), body), f"raw pattern missing: {r['url']}"
+                full += 1
+            else:
+                missing += 1
+                assert not r.get('absent') and not r.get('raw_re'), f"absence/raw receipt cannot be verified without the stored body: {r['url']}"
+    final = ST.final_grades()
+    assert read('final_grades.csv') == [{k: str(v) for k, v in r.items()} for r in final], 'final_grades.csv != recomputation'
+    sample = read('sample.csv')
+    res = ST.summarize(sample, final)
+    stored = json.loads((H / 'statistics.json').read_text())
+    for k, v in res.items():
+        assert json.loads(json.dumps(v)) == stored[k], f'statistics.json {k} != recomputation'
+    assert stored['final_counts'] == {'AGREE': 46, 'FIELD_ERROR': 2, 'CREATION_ERROR': 0, 'UNRESOLVED': 2}
+    assert ST.wilson(0, 20) == [0, 0.161125] and ST.wilson(20, 20) == [0.838875, 1] and ST.wilson(10, 20) == [0.299298, 0.700702]
+    assert stored['corrections'] == ST.corrections(adj) and len(stored['corrections']) == 2
+    dups, n = SC.duplicates()
+    assert n == 50 and not dups, f'duplicates at pinned HEAD: {dups}'
+    assert WR.render() == WR.OUT.read_text(), 'docs/reviews report differs from the regenerated text'
+    # planted defects: each must be rejected, never accepted as a smaller or kinder census
+    sf = ST.final_grades()
+    for bad_final in (sf[:-1], sf + [sf[0]], [dict(r, final_grade='AGREE') if r['final_grade'] == 'UNRESOLVED' else r for r in sf][:-1]):
+        try:
+            ST.summarize(sample, bad_final)
+        except AssertionError:
+            continue
+        raise AssertionError('summarize accepted an incomplete or duplicated verdict census')
+    short = copy.deepcopy(adj)
+    short[0]['receipts'][0]['excerpt_words'] = 'nothing relevant'
+    assert not AF.quote_in_order(short[0]['receipts'][0]['excerpt_words'], short[0]['receipts'][0]['quote']), 'raw-check accepted a quote that is not on the page'
+    return full, missing, stored
+
+
+
+
 if __name__ == '__main__':
     frame, prov = check_frame()
     known_answers(frame)
@@ -120,3 +185,9 @@ if __name__ == '__main__':
     check_leak_scan_catches(rows)
     print(f"PASS blind-audit-10 phase 1: {len(frame)} frame records ({dict(Counter(r['table'] for r in frame))}), 59 first-parent commits, "
           f"{len(sample)} sampled (seed {S.SEED}), blind_a == blind_b, freeze hashes match, leak scan clean and catches 5 planted defects")
+    full, missing, st = check_phase3()
+    print(f"PASS blind-audit-10 phase 3: reviewer locks match, cross-tab 36/9/4/1, 14 adjudications ({full + missing} receipts: {full} re-verified against stored full bodies, "
+          f"{missing} on committed excerpts only), final grades {st['final_counts']}, per-stratum and weighted statistics recomputed, report regenerates identically, "
+          f"no duplicates at pinned HEAD, incomplete/duplicate census and unreadable-quote defects rejected")
+    if missing:
+        print(f"WARNING: {missing} receipts were verified only on the committed excerpt; the stored raw bodies ({AF.RAW}) are not present here, so full-body hashes and absence terms were not re-checked for them")

@@ -1,0 +1,948 @@
+[
+ {
+  "id": "A10-003",
+  "grade": "UNRESOLVED",
+  "fields": "polymer_program;polymer_program_name;polymer_program_url",
+  "settling_fact": "An owner scope ruling on whether a fiber/textile Manufacturing USA institute with no stated polymer program counts as polymer_program=true under SCHEMA 4.6, or an AFFOA page that names polymer fiber work.",
+  "rationale": "Identity, Bedford MA headquarters, Middlesex county, national geography and test/prototype access are supported. The polymer scope claim is not: AFFOA's own home, about, technology and Manufacturing USA pages (HTTP 200) never state a polymer program; the only \"polymer\" on the home page is the name of an accelerator awardee (Z-Polymers). Scope is an owner ruling (AGENTS 2 rule 9), so it is held, not graded as an error and not counted as agreement.",
+  "receipts": [
+   {
+    "url": "https://affoa.org/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 451067,
+    "sha256": "22b08f57cafc7f21ca62f3bdfb96ee8e1d78db22481c728419ec857c13a1d032",
+    "fetched_at": "2026-11-14T17:46:11+00:00",
+    "note": "",
+    "quote": "Four awardees will receive no-cost access to AFFOA’s expertise, prototyping, testing, and scale-up capabilities",
+    "excerpt_words": "read more read more affoa names the lycra company gentex corporation ecotune and macrocycle technologies as awardees in its product accelerator for functional fabrics program four awardees will receive no cost access to affoas expertise prototyping testing and scale up capabilities to read more read more affoa celebrates opening of new headquarters with ribbon cutting ceremony in bedford massachusetts advanced functional fabrics of america marks new"
+   },
+   {
+    "url": "https://affoa.org/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 451067,
+    "sha256": "22b08f57cafc7f21ca62f3bdfb96ee8e1d78db22481c728419ec857c13a1d032",
+    "fetched_at": "2026-11-14T17:46:11+00:00",
+    "note": "",
+    "quote": "AFFOA Celebrates Opening of New Headquarters with Ribbon-Cutting Ceremony in Bedford, Massachusetts",
+    "excerpt_words": "for functional fabrics program four awardees will receive no cost access to affoas expertise prototyping testing and scale up capabilities to read more read more affoa celebrates opening of new headquarters with ribbon cutting ceremony in bedford massachusetts advanced functional fabrics of america marks new chapter in advanced textile innovation at state of the art facility read more read more affoa expands board"
+   },
+   {
+    "url": "https://affoa.org/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 451067,
+    "sha256": "22b08f57cafc7f21ca62f3bdfb96ee8e1d78db22481c728419ec857c13a1d032",
+    "fetched_at": "2026-11-14T17:46:11+00:00",
+    "note": "the only polymer-bearing text on the home page is a company name",
+    "quote": "AFFOA Names Nuream and Z-Polymers the New Awardees of the Product Accelerator for Advanced Fabrics",
+    "excerpt_words": "launch innovative interdisciplinary textile initiative new program aims to optimize cutting edge tactical gear using bemis everfittm technology for commercial and read more read more affoa names nuream and z polymers the new awardees of the product accelerator for advanced fabrics 2 0 affoa names nuream and z polymers the new awardees of the product accelerator for advanced fabrics read more read more affoa earns 2025"
+   },
+   {
+    "url": "https://affoa.org/technology/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 83546,
+    "sha256": "355de571c757b4ca38f38d8b07426b9708b3b9182759893acae82cb38338b418",
+    "fetched_at": "2026-11-14T17:46:14+00:00",
+    "note": "",
+    "absent": [
+     "polymer"
+    ],
+    "page_words": 634
+   },
+   {
+    "url": "https://affoa.org/about/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 84867,
+    "sha256": "d46e28b4dc83442c8bdcce7c0d58212adb1ac9a6d2be43c70057de0b240deccb",
+    "fetched_at": "2026-11-14T17:46:12+00:00",
+    "note": "",
+    "absent": [
+     "polymer"
+    ],
+    "page_words": 628
+   },
+   {
+    "url": "https://affoa.org/about/manufacturing-usa/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 78779,
+    "sha256": "2a1fc8b1d0d0cefcc7f1421ad4f5f4c311e43c87543f74334e61fac735778882",
+    "fetched_at": "2026-11-14T17:52:22+00:00",
+    "note": "",
+    "absent": [
+     "polymer"
+    ],
+    "page_words": 349
+   },
+   {
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=135+South+Rd%2C+Bedford%2C+MA+01730&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 4707,
+    "sha256": "96c4f7279ec1aea876d2ecc95422c6056aa661442d539d6c83effc063ef5ec95",
+    "fetched_at": "2026-11-14T17:52:21+00:00",
+    "note": "",
+    "quote": "\"matchedAddress\":\"135 SOUTH RD, BEDFORD, MA, 01730\"",
+    "excerpt_words": "coordinates x phone y phone addresscomponents zip 01730 streetname south pretype city bedford predirection suffixdirection fromaddress 125 state ma suffixtype rd toaddress 135 suffixqualifier prequalifier matchedaddress 135 south rd bedford ma 01730"
+   },
+   {
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=135+South+Rd%2C+Bedford%2C+MA+01730&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 4707,
+    "sha256": "96c4f7279ec1aea876d2ecc95422c6056aa661442d539d6c83effc063ef5ec95",
+    "fetched_at": "2026-11-14T17:52:21+00:00",
+    "note": "",
+    "quote": "\"NAME\":\"Middlesex County\"",
+    "excerpt_words": "intptlon phone mtfcc g3500 counties geoid 25017 centlat 42 4853699 areawater 75219794 state 25 basename middlesex oid phone lsadc 06 funcstat n intptlat 42 4817215 name middlesex county objectid 2897 centlon phone countycc h4 countyns 00606935 arealand phone intptlon phone mtfcc g4020 county 017 2026 state legislative districts upper geoid 25d15 centlat 42"
+   }
+  ],
+  "record_id": "ORG-013503",
+  "reviewer_a": "FIELD_ERROR",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-007",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "Reviewer A's field error (operated by FlexTech Alliance not on the cited pages) is overturned: the legal entity behind NextFlex is FlexTech Alliance, Inc. doing business as NextFlex (federal registration and trademark records, same San Jose address as the NextFlex footer), and the 2015 DoD award names FlexTech Alliance as the institute manager. The cited pages not naming it is a citation gap, not a wrong value. Polymer substrates, San Jose, Santa Clara county and the technology hub are supported.",
+  "receipts": [
+   {
+    "url": "https://www.highergov.com/awardee/flextech-alliance-inc-10350446/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 111702,
+    "sha256": "7eb95885351d785b4d1362977737777a9185b11a0f0b276001c96c7863c8f459",
+    "fetched_at": "2026-11-14T17:48:45+00:00",
+    "note": "",
+    "quote": "Legal Name FLEXTECH ALLIANCE, INC. DBA NEXTFLEX",
+    "excerpt_words": "results calculating calculating no results calculating calculating no results calculating calculating map heat no results calculating calculating no results calculating calculating federal registration and certifications legal name flextech alliance inc dba nextflex uei gyqkvknngle4 cage code 1rlb8 primary naics 541715 research and development in the physical engineering and life sciences except nanotechnology and biotechnology sba certifications none"
+   },
+   {
+    "url": "https://www.trademarkia.com/nextflex-88213201",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 532722,
+    "sha256": "adaedb83902f1b048f4b3565a29c7988c535e9e6da43df1e4b2ad16c44e9fe06",
+    "fetched_at": "2026-11-14T17:48:47+00:00",
+    "note": "",
+    "quote": "Last Applicant / Owned By FlexTech Alliance, Inc.",
+    "excerpt_words": "institutions nonprofits and governments with a mission to advance manufacturing of flexible hybrid electronics in the united states owner contact information view docket report f last applicant owned by flextech alliance inc legal entity type corporation owner address suite 150 2244 blach place san jose ca 95131 correspondent contact information view law firm p filed by attorney"
+   },
+   {
+    "url": "https://www.trademarkia.com/nextflex-88213201",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 532722,
+    "sha256": "adaedb83902f1b048f4b3565a29c7988c535e9e6da43df1e4b2ad16c44e9fe06",
+    "fetched_at": "2026-11-14T17:48:47+00:00",
+    "note": "",
+    "quote": "Owner Address Suite 150 2244 Blach Place San Jose CA 95131",
+    "excerpt_words": "flexible hybrid electronics in the united states owner contact information view docket report f last applicant owned by flextech alliance inc legal entity type corporation owner address suite 150 2244 blach place san jose ca 95131 correspondent contact information view law firm p filed by attorney paul e thomas p filed by law firm paul e thomas pillsbury winthrop shaw pittman"
+   },
+   {
+    "url": "https://www.nextflex.us/flextech-alliance-receives-75-million-department-defense-award-create-manage-flexible-hybrid-electronics-manufacturing-facility/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 119706,
+    "sha256": "3626c07423e59015e589989bb9d67319a47b9ea9a6908fc6cd042443868dec38",
+    "fetched_at": "2026-11-14T17:48:33+00:00",
+    "note": "",
+    "quote": "awarded FlexTech Alliance a Cooperative Agreement to establish and manage a Manufacturing Innovation Institute",
+    "excerpt_words": "nationwide effort to organize and manage a new manufacturing innovation institute august 28 2015 san jose calif the u s department of defense dod today awarded flextech alliance a cooperative agreement to establish and manage a manufacturing innovation institute mii for flexible hybrid electronics fhe mii the award is for 75 million in federal funding over a five year period and is being matched"
+   },
+   {
+    "url": "https://www.nextflex.us/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 222249,
+    "sha256": "891e916957ed0b76c52d6c6d06e65acaad3c8ae510195556e863307a003bed66",
+    "fetched_at": "2026-11-14T17:47:04+00:00",
+    "note": "",
+    "quote": "2244 Blach Place Suite 150 San Jose, CA 95131",
+    "excerpt_words": "market learn more current members view all menu about us news events hybrid electronics ecosystem membership technology hub education workforce development project call contact us 2244 blach place suite 150 san jose ca 95131 phone phone email email join our newsletter and stay up to date on all developments x twitter this field is for validation purposes and should"
+   },
+   {
+    "url": "https://www.nextflex.us/technology-hub/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 217064,
+    "sha256": "0e770236e95c2fe486200287ee854a6d76debb7bfd60ef0ea1d1f26ec65fc6a8",
+    "fetched_at": "2026-11-14T17:47:05+00:00",
+    "note": "",
+    "quote": "NextFlex replaced the traditional circuit board with a thin, flexible plastic sheet",
+    "excerpt_words": "process flow for manufacturing a flexible arduino that reduced the number of process steps by almost two thirds when compared with traditional electronics manufacturing processes nextflex replaced the traditional circuit board with a thin flexible plastic sheet and used digital printing processes for circuit elements die attach of a thin bare die eliminated traditional microcontroller packaging while further enabling flexibility of the"
+   },
+   {
+    "url": "https://www.nextflex.us/technology-hub/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 217064,
+    "sha256": "0e770236e95c2fe486200287ee854a6d76debb7bfd60ef0ea1d1f26ec65fc6a8",
+    "fetched_at": "2026-11-14T17:47:05+00:00",
+    "note": "",
+    "quote": "including polyimide and thermoplastic polyurethane substrates",
+    "excerpt_words": "key deliverables of this nextflex funded project also included reporting on printing and characterization of rf components reliability assessment of printed interconnections on various materials including polyimide and thermoplastic polyurethane substrates and interconnection methods for ball grid array devices to flex benefits with the assistance of nextflexs fhe expertise ge global research is propelling the future"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/San_Jose,_California",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 1538495,
+    "sha256": "316ec8040e03b4c251fce095130e23fb8070120a0ff6b9c560c4937c52fabe7d",
+    "fetched_at": "2026-11-14T17:48:36+00:00",
+    "note": "",
+    "quote": "is the county seat of Santa Clara County",
+    "excerpt_words": "clara valley on the southern shore of san francisco bay san jose covers an area of 179 97 sq mi 466 1 km 2 and is the county seat of santa clara county before the arrival of the spanish the area around san jose was long inhabited by the tamien nation of the ohlone people san jose was"
+   }
+  ],
+  "record_id": "ORG-013504",
+  "reviewer_a": "FIELD_ERROR",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-011",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "The organizer's own roster endpoint (the JavaScript list on the exhibitor page) returns International Mold Steel for PTXPO 2028, read as raw JSON, so the roster claim is mechanically checked; Reviewer B could not see it because the static page is a shell. Dates and Rosemont IL are on the organizer's site.",
+  "receipts": [
+   {
+    "url": "https://ptxpo28.mapyourshow.com/8_0/ajax/remote-proxy.cfm?action=search&searchtype=exhibitorgallery&search=International+Mold+Steel&searchsize=20&start=0",
+    "via": "curl+xhr-referer",
+    "http_status": 200,
+    "bytes": 1320,
+    "sha256": "ca30651d8e46137e5230748c9d49581da68074464a01af196c7ea280de68358f",
+    "fetched_at": "2026-11-14T17:49:50+00:00",
+    "note": "",
+    "quote": "International Mold Steel offers a unique line of pre-hardened mold steels, tool steels, and cold work die steels",
+    "excerpt_words": "exhalpha l i exhslotted t 0 mys addedtoplanner false boothsdisplay la 434randomstring exhnamesort t international mold steel exhid l 2241 exhbullet t 0 exhdesc t international mold steel offers a unique line of pre hardened mold steels tool steels and cold work die steels to improve the quality and reduce the cost of creating molds dies and tooling we are also pleased to introduce dap am htc powder r"
+   },
+   {
+    "url": "https://www.ptxpo.com/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 838212,
+    "sha256": "8430b4f186624ffb7d922f3b2da40847face81cbfe03264178feb9e2d437b268",
+    "fetched_at": "2026-11-14T17:49:52+00:00",
+    "note": "",
+    "quote": "March 21-23, 2028 ROSEMONT, ILLINOIS USA",
+    "excerpt_words": "maintenance show recap exhibit exhibit information apply for booth space sponsorship advertising exhibitor dashboard login exhibitor floorplan contact apply to exhibit stay up to date march 21 23 2028 rosemont illinois usa apply for booth space questions contact us for a great ptxpo 2026 join us again in 2028 the only north american molding industry event in"
+   },
+   {
+    "url": "https://ptxpo28.mapyourshow.com/8_0/explore/exhibitor-alphalist.cfm?alpha=*",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 525345,
+    "sha256": "3e046307b7c7cfb7b7ed436257f61a2e02eb0639def570c18c7257f8c1792e4e",
+    "fetched_at": "2026-11-14T17:49:03+00:00",
+    "note": "",
+    "quote": "Plastics Technology Expo 2028 Map Your Show DOWNLOAD Mar. 21 - 23 Rosemont",
+    "excerpt_words": "plastics technology expo 2028 search for all exhibitors plastics technology expo 2028 map your show download mar 21 23 rosemont menu see more links my planner my profile sign out search ptxpo featured exhibitors floor plan register now apply for booth space myptxpo planner see"
+   }
+  ],
+  "record_id": "EVP-001227",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-015",
+  "grade": "FIELD_ERROR",
+  "fields": "edition_dates",
+  "current_value": "2026-09-28 to 2026-10-01",
+  "correct_value": "2026-09-28 to 2026-09-30",
+  "settling_fact": "",
+  "rationale": "The organizer's 2026 schedule has exactly three days: Monday 9/28 (exhibition set-up and reception), Tuesday 9/29, Wednesday 9/30, and no Thursday. October 1 is only the end of the hotel group-rate window. The 2027 conference is announced as Sept. 27-29 (Monday to Wednesday), the same pattern. Sponsor role (Magris Talc, Gold) is on the organizer's sponsor list.",
+  "receipts": [
+   {
+    "url": "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 88571,
+    "sha256": "337fadd0112ff3293128eea976cf0641978c200269a367eb3c4aeb2abfa73974",
+    "fetched_at": "2026-11-14T17:50:04+00:00",
+    "note": "",
+    "quote": "MONDAY 9 | 28 12:00 - 6:00PM EXHIBITION SET-UP",
+    "excerpt_words": "monday 9 28 12 00 6 00pm exhibition set up pm 6 00 networking reception sponsored by spe detroit section tuesday 9 29 all times shown in edt usa utc 04 00 am 7 00"
+   },
+   {
+    "url": "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 88571,
+    "sha256": "337fadd0112ff3293128eea976cf0641978c200269a367eb3c4aeb2abfa73974",
+    "fetched_at": "2026-11-14T17:50:04+00:00",
+    "note": "",
+    "quote": "WEDNESDAY 9 | 30 All Times Shown in EDT USA",
+    "excerpt_words": "nayera abdelaziz henkel corporation marziyeh shabani university of akron 5 15 networking session 5 30 networking reception sponsored by advanced composites spe detroit section rev2 wednesday 9 30 all times shown in edt usa utc 04 00 am 7 00 registration expo networking breakfast 8 15 welcome remarks neil fuenmayor orinko advanced plastics north america rob philp president spe"
+   },
+   {
+    "url": "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 88571,
+    "sha256": "337fadd0112ff3293128eea976cf0641978c200269a367eb3c4aeb2abfa73974",
+    "fetched_at": "2026-11-14T17:50:04+00:00",
+    "note": "",
+    "absent": [
+     "THURSDAY"
+    ],
+    "page_words": 1513
+   },
+   {
+    "url": "https://auto-tpo.com/hotel-travel/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 71600,
+    "sha256": "db4a3cc69f27452c06d17ba26b4a04f8aa97afb6d7fbfe31c7d0fea8972e8b1a",
+    "fetched_at": "2026-11-14T17:50:07+00:00",
+    "note": "",
+    "quote": "Hotel Rate – End Date: Thursday, October 1, 2026",
+    "excerpt_words": "your business and look forward to a successful event event summary 2026 spe tpo global automotive conference hotel rate start date monday september 28 2026 hotel rate end date thursday october 1 2026 last day to book with group rate monday september 7 2026 hotel s offering your special group rate detroit marriott troy for 204 usd per"
+   },
+   {
+    "url": "https://www.auto-tpo.com/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 108814,
+    "sha256": "dbb8ea2045e7a2c574a102433625a79abd0ff1ed74e319ed0d953cd46e0ed503",
+    "fetched_at": "2026-11-14T17:50:04+00:00",
+    "note": "",
+    "quote": "Next Year's Conference Sept. 27-29, 2027",
+    "excerpt_words": "evolves to meet global demands creating an exciting and responsible future embed start at view the tpo 2022 global automotive engineered polyolefins conference guide news next year s conference sept 27 29 2027 announcements virtual on demand access info 2026 conference photos 2026 program book 2026 conference schedule latest update 2026 oem panel discussions 2026 keynote address announced"
+   },
+   {
+    "url": "https://auto-tpo.com/wp-content/uploads/2026/09/2026-Sponsorship-Lay-out-Sept-14-2026-Rev3.pdf",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 1299700,
+    "sha256": "ba9666276b9e0be05241f6c05464f087fac4f00545b48a4b769052831ce5b563",
+    "fetched_at": "2026-11-14T17:50:06+00:00",
+    "note": "",
+    "quote": "Magris Talc Gold 20",
+    "excerpt_words": "14 kraiburg tpe exhibitor 49 americhem gold 24 lyondellbasell gold 8 amfine chemical gold 35 m holland notebook no booth aquent advance materials exhibitor 32 magris talc gold 20 arctic minerals exhibitor 31 mid michigan plastics gold 44 asahi kasei plastics gold 4 mitsubishi chemical america gold 15 asahi kasei thermoplastic gold 5 mrc"
+   }
+  ],
+  "record_id": "EVP-001297",
+  "reviewer_a": "FIELD_ERROR",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-018",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "Source-system checks Reviewer B asked for: IPEDS 199847 is Wake Forest University in Forsyth County NC (Urban Institute IPEDS directory), ROR 0207ad724 resolves to Wake Forest University in Winston-Salem, and the physics department states polymer research. Not graded: the record carries polymer_program=false for a non-Ohio university, which SCHEMA 4.6 text restricts to NE Ohio generalists while the data holds 134 such rows (schema/data tension for the owner).",
+  "receipts": [
+   {
+    "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2022/?unitid=199847",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 2328,
+    "sha256": "f337bcb7e1bd83928190078dd869b650c32296338a7c5ace4454dfa84b0b3bda",
+    "fetched_at": "2026-11-14T17:50:49+00:00",
+    "note": "",
+    "quote": "\"unitid\":199847,\"inst_name\":\"Wake Forest University\"",
+    "excerpt_words": "count 1 next null previous null results year 2022 unitid 199847 inst name wake forest university address 1834 wake forest road state abbr nc zip 27106 phone number phone city winston salem county name forsyth county offering highest level 9 region"
+   },
+   {
+    "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2022/?unitid=199847",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 2328,
+    "sha256": "f337bcb7e1bd83928190078dd869b650c32296338a7c5ace4454dfa84b0b3bda",
+    "fetched_at": "2026-11-14T17:50:49+00:00",
+    "note": "",
+    "quote": "\"city\":\"Winston-Salem\",\"county_name\":\"Forsyth County\"",
+    "excerpt_words": "previous null results year 2022 unitid 199847 inst name wake forest university address 1834 wake forest road state abbr nc zip 27106 phone number phone city winston salem county name forsyth county offering highest level 9 region 5 inst control 2 institution level 4 sector 2 fips 37 chief admin name dr susan r wente chief admin"
+   },
+   {
+    "url": "https://api.ror.org/v2/organizations/0207ad724",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 1660,
+    "sha256": "7790d0b3a7a5f6042bae8d18bd82f735b695cd00a1822019b90922cb528f7637",
+    "fetched_at": "2026-11-14T17:50:49+00:00",
+    "note": "",
+    "quote": "\"value\":\"Wake Forest University\"",
+    "excerpt_words": "names lang es types label value universidad de wake forest lang fr types label value universite de wake forest lang en types ror display label value wake forest university relationships label virginia tech wake forest university school of biomedical engineering sciences type child id https ror org 01q1y4t48 label atrium health wake forest baptist"
+   },
+   {
+    "url": "https://physics.wfu.edu/research/condensed-matter/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 164543,
+    "sha256": "496b99147f79f91c72d026223fd16b3e14bbdd2eefcaac0b66bc151f04bf4c26",
+    "fetched_at": "2026-11-14T17:50:50+00:00",
+    "note": "",
+    "quote": "conjugated polymers for organic electronic devices",
+    "excerpt_words": "of experimental materials science research dr kadaba works on understanding semiconductor device physics for efficient electronics her focus is especially on soft electronics which includes conjugated polymers for organic electronic devices and other thin film based material composites that enable flexible electronic devices towards this goal she has experience in large area thin film processing and"
+   }
+  ],
+  "record_id": "ORG-013501",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-019",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "The merged change asserts nothing about ownership: ultimate_parent_name is blank and the description says only that this is a US sales and distribution presence for OMG srl machines, which OMG srl's own agents-and-distributors page supports (3407 Avenue D, Arlington TX listed for USA agents, domain omgusa.net, which is OMG srl's own site). Reviewer A's unsettled question (subsidiary or independent distributor) is not asserted by the record, so it is not an error; it stays open and is not certified.",
+  "receipts": [
+   {
+    "url": "https://www.omgitaly.com/agenti-e-distributori",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 93297,
+    "sha256": "d1694ccbc75dee4ef77739c75127c7b96cc4098b0fc6cb680be2ab52fa9af6d1",
+    "fetched_at": "2026-11-14T17:51:14+00:00",
+    "note": "",
+    "quote": "USA-South and Southwest 3407 Avenue D Arlington TX 76011",
+    "excerpt_words": "arlington tx 76011 mob phone email www omgusa net usa northeastern 9 woodland drive paxton ma 01612 tel phone mob phone email www omgusa net usa south and southwest 3407 avenue d arlington tx 76011 mob phone email www omgusa net canada 1028 rue chopin prevost quebec j0r 1t0 tel phone email www omgcanada net australia new zealand unit 13"
+   },
+   {
+    "url": "https://www.omgusa.net/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 47656,
+    "sha256": "3a0d091ebe9b77ee65db47320893c430536bc0415fa2664d2896143fb8347d79",
+    "fetched_at": "2026-11-14T17:51:23+00:00",
+    "note": "",
+    "quote": "Homepage - OMG Thermoforming",
+    "excerpt_words": "homepage omg thermoforming omg home azienda mission dove siamo il progetto il mercato i risultati produzione industria automobilistica macchine personalizzate industria alimentare settore medico packaging news partners contatti"
+   },
+   {
+    "url": "https://www.omgusa.net/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 47656,
+    "sha256": "3a0d091ebe9b77ee65db47320893c430536bc0415fa2664d2896143fb8347d79",
+    "fetched_at": "2026-11-14T17:51:23+00:00",
+    "note": "",
+    "quote": "Copyright © 2014 O.M.G. srl Via Morghen, 35 10143 - Torino",
+    "excerpt_words": "mail email contact us tel phone via torino 78 10040 givoletto to e mail email copyright 2014 omg thermoforming all rights reserved designed by immagine3000 copyright 2014 o m g srl via morghen 35 10143 torino p iva phone all rights reserved designed by immagine3000"
+   }
+  ],
+  "record_id": "ORG-003807",
+  "reviewer_a": "UNRESOLVED",
+  "reviewer_b": "AGREE"
+ },
+ {
+  "id": "A10-020",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "The company's contact page gives the exact address and ZIP; its materials page names LLDPE, HDPE and PP rotomolding; the census geocoder matches the address in Hillsborough County; a dated 2025-11-12 report says the company relocated its corporate headquarters to this address. Bedford is the only address the company lists, so hq_and_plant and active are supported.",
+  "receipts": [
+   {
+    "url": "https://gregstrom.com/contact/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 93505,
+    "sha256": "e619f282c0e9e17fb8537aba92a2c77e875c60ffd9635aee56173cfaf4ecf4d3",
+    "fetched_at": "2026-11-14T17:51:37+00:00",
+    "note": "",
+    "quote": "Gregstrom Corporation 10 Iron Horse Drive, Unit C, Bedford, NH 03110",
+    "excerpt_words": "rotomolded parts tips for design engineers made in usa rotomolded coolers rotomolded cases superior protection and durability plastic pallet manufacturer made in usa contact gregstrom gregstrom corporation 10 iron horse drive unit c bedford nh 03110 phone phone fax phone email email thank you for choosing to contact gregstrom corporation please complete the form below so that we can respond to"
+   },
+   {
+    "url": "https://gregstrom.com/rotational-molding-materials/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 64631,
+    "sha256": "89448f86527e34771ce4db279c034fb4c0a32fabb6cad90bf9daf1db65273c4e",
+    "fetched_at": "2026-11-14T17:51:38+00:00",
+    "note": "",
+    "quote": "PP Rotational Molding Polypropylene (PP) is a durable plastic",
+    "excerpt_words": "products such as those used in the food processing industries which must meet fda or usda guidelines hdpe is also used in custom plastic shims pp rotational molding polypropylene pp is a durable plastic with a high melting point that can also withstand cold temperature applications pp is resistant to stress even when flexed moreover this versatile plastic material"
+   },
+   {
+    "url": "https://gregstrom.com/rotational-molding-materials/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 64631,
+    "sha256": "89448f86527e34771ce4db279c034fb4c0a32fabb6cad90bf9daf1db65273c4e",
+    "fetched_at": "2026-11-14T17:51:38+00:00",
+    "note": "",
+    "quote": "LLDPE Rotational Molding Linear low-density polyethylene (LLDPE)",
+    "excerpt_words": "course but so is material selection different types of rotomolding materials are available but there several in particular that designers and engineers should know about lldpe rotational molding linear low density polyethylene lldpe is durable provides high tensile strength and offer good impact and puncture resistance applications include plastic tanks buckets bins toys containers and outdoor recreational products"
+   },
+   {
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=10+Iron+Horse+Dr%2C+Bedford%2C+NH+03110&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 4712,
+    "sha256": "263538023be0c704fda77d783bbfca8ed5f2a17990396ece791e92b0d6959e2a",
+    "fetched_at": "2026-11-14T17:52:20+00:00",
+    "note": "",
+    "quote": "\"matchedAddress\":\"10 IRON HORSE DR, BEDFORD, NH, 03110\"",
+    "excerpt_words": "x phone y phone addresscomponents zip 03110 streetname iron horse pretype city bedford predirection suffixdirection fromaddress 2 state nh suffixtype dr toaddress 98 suffixqualifier prequalifier matchedaddress 10 iron horse dr bedford nh 03110"
+   },
+   {
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=10+Iron+Horse+Dr%2C+Bedford%2C+NH+03110&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 4712,
+    "sha256": "263538023be0c704fda77d783bbfca8ed5f2a17990396ece791e92b0d6959e2a",
+    "fetched_at": "2026-11-14T17:52:20+00:00",
+    "note": "",
+    "quote": "\"NAME\":\"Hillsborough County\"",
+    "excerpt_words": "intptlon phone mtfcc g3500 counties geoid 33011 centlat 42 9151896 areawater 41310051 state 33 basename hillsborough oid phone lsadc 06 funcstat a intptlat 42 9115317 name hillsborough county objectid 1344 centlon phone countycc h1 countyns 00873179 arealand phone intptlon phone mtfcc g4020 county 011 2026 state legislative districts upper geoid 33009 centlat 42"
+   },
+   {
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 190253,
+    "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
+    "fetched_at": "2026-11-14T17:52:07+00:00",
+    "note": "LinkedIn post dated November 12, 2025, Bedford NH",
+    "quote": "has relocated their corporate headquarters from Woburn, Massachusetts to 10 Iron Horse Drive, Bedford, New Hampshire",
+    "excerpt_words": "bergeron 1y report this post massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate headquarters from woburn massachusetts to 10 iron horse drive bedford new hampshire the company has leased approximately 50 000 square feet and will be employing 50 people gregstrom corporation owner jeff didonato chose new hampshire based on"
+   }
+  ],
+  "record_id": "SITE-019101",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-032",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "Harvard's profile gives the professor title and the Materials Science & Mechanical Engineering affiliation; his lab page, hosted on the SEAS domain, states his research areas include polymers (amorphous materials: metals, semiconductors, polymers), which meets Gate B as the schema words it (polymer research stated for the person on the institution's own pages). The witness is thin (polymers are one of three material classes); that is a scope-strength note, not an error.",
+  "receipts": [
+   {
+    "url": "https://seas.harvard.edu/person/frans-spaepen",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 135956,
+    "sha256": "7bb1b640d2b7d41eccf7dc2c7d7b3a41b5d6c2c59c3d724fb269f1c82118b4d7",
+    "fetched_at": "2026-11-14T17:52:33+00:00",
+    "note": "",
+    "quote": "Director of Undergraduate Studies, Materials Science & Mechanical Engineering Primary Teaching Area Materials Science & Mechanical Engineering",
+    "excerpt_words": "jobs visit us make a gift search search menu about seas directory frans a spaepen john c and helen f franklin professor of applied physics director of undergraduate studies materials science mechanical engineering primary teaching area materials science mechanical engineering contact pierce 207 email phone websites person name text spaepen seas harvard edu staff contact matthew g zahnzinger pierce 232 email he him his research"
+   },
+   {
+    "url": "https://spaepen.seas.harvard.edu/",
+    "via": "jina",
+    "http_status": 200,
+    "bytes": 1306,
+    "sha256": "9850c6ba8a734de12e6e02d95217de23318e81bb7237be15152a9620df6d39c4",
+    "fetched_at": "2026-11-14T17:52:36+00:00",
+    "note": "",
+    "quote": "Spaepen conducts research in the following areas: Amorphous materials (metals, semiconductors, polymers): structure, formation, stability, mechanical properties",
+    "excerpt_words": "jpg https spaepen seas harvard edu sites g files omnuum6251 files styles hwp 1 1 960x960 scale public spaepen files spaepen 200x300 jpg itok ckpcxfzg spaepen conducts research in the following areas amorphous materials metals semiconductors polymers structure formation stability mechanical properties atomic transport viscosity diffusivity structural relaxation crystallization polytetrahedral structure of liquids and quasicrystals thin films and multilayers preparation stability mechanical properties general effects of size"
+   }
+  ],
+  "record_id": "PERSON-002173",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-033",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "Reviewer B wanted the headquarters relocation stated outright and the county. The company contact page and the Association of Rotational Molders directory list only the Bedford address, a dated 2025-11-12 report says the corporate headquarters relocated from Woburn to 10 Iron Horse Drive, and the geocoder places the address in Hillsborough County.",
+  "receipts": [
+   {
+    "url": "https://gregstrom.com/contact/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 93505,
+    "sha256": "e619f282c0e9e17fb8537aba92a2c77e875c60ffd9635aee56173cfaf4ecf4d3",
+    "fetched_at": "2026-11-14T17:51:37+00:00",
+    "note": "",
+    "quote": "Gregstrom Corporation 10 Iron Horse Drive, Unit C, Bedford, NH 03110",
+    "excerpt_words": "rotomolded parts tips for design engineers made in usa rotomolded coolers rotomolded cases superior protection and durability plastic pallet manufacturer made in usa contact gregstrom gregstrom corporation 10 iron horse drive unit c bedford nh 03110 phone phone fax phone email email thank you for choosing to contact gregstrom corporation please complete the form below so that we can respond to"
+   },
+   {
+    "url": "https://www.rotomolding.org/rotomolder-members/gregstrom-corporation",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 130029,
+    "sha256": "c2319da40cc5cb010cc14ff3ac9576d54e25c9571a1a2afd783ee33d83acdd03",
+    "fetched_at": "2026-11-14T17:52:08+00:00",
+    "note": "",
+    "quote": "Gregstrom Corporation 10 Iron Horse Drive Unit C, Bedford, NH 03110",
+    "excerpt_words": "series arm webinars design guide rotomolder search supplier search legal presentations and papers arm procedures resin properties contact us join login back to rotomolder members gregstrom corporation 10 iron horse drive unit c bedford nh 03110 united states phone visit website rotomolder run of site contact po box 59235 schaumburg illinois 60159 united states phone operator training across our roto sites"
+   },
+   {
+    "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 64332,
+    "sha256": "b487325b7c2dfad090ff887c48a407d39905e4ea8f429e515d328b1b075d9690",
+    "fetched_at": "2026-11-14T17:51:36+00:00",
+    "note": "",
+    "quote": "is moving its rotomolding business from Woburn, Massachusetts to Bedford, New Hampshire",
+    "excerpt_words": "blog home slider gregstrom moves rotomolding business and looks to the future july 30 2025 3120 views gregstrom corporation a 79 year old plastics manufacturer is moving its rotomolding business from woburn massachusetts to bedford new hampshire most of the companys current employees will make the move but the third generation family owned business is also seeking new hires gregstrom was founded"
+   },
+   {
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 190253,
+    "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
+    "fetched_at": "2026-11-14T17:52:07+00:00",
+    "note": "",
+    "quote": "has relocated their corporate headquarters from Woburn, Massachusetts to 10 Iron Horse Drive, Bedford, New Hampshire",
+    "excerpt_words": "bergeron 1y report this post massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate headquarters from woburn massachusetts to 10 iron horse drive bedford new hampshire the company has leased approximately 50 000 square feet and will be employing 50 people gregstrom corporation owner jeff didonato chose new hampshire based on"
+   },
+   {
+    "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=10+Iron+Horse+Dr%2C+Bedford%2C+NH+03110&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 4712,
+    "sha256": "263538023be0c704fda77d783bbfca8ed5f2a17990396ece791e92b0d6959e2a",
+    "fetched_at": "2026-11-14T17:52:20+00:00",
+    "note": "",
+    "quote": "\"NAME\":\"Hillsborough County\"",
+    "excerpt_words": "intptlon phone mtfcc g3500 counties geoid 33011 centlat 42 9151896 areawater 41310051 state 33 basename hillsborough oid phone lsadc 06 funcstat a intptlat 42 9115317 name hillsborough county objectid 1344 centlon phone countycc h1 countyns 00873179 arealand phone intptlon phone mtfcc g4020 county 011 2026 state legislative districts upper geoid 33009 centlat 42"
+   }
+  ],
+  "record_id": "ORG-003645",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-037",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "The UT pages Reviewer B found blocked return HTTP 200 on a plain fetch. They state the five IAMM research areas including Polymer Science, the Polymer Characterization Lab among the core facilities, the 140,000 sq ft Cherokee Farm headquarters, and the polymer-science topics behind the research_areas tags (gas separations, recycling and upcycling, 3D printing, characterization).",
+  "receipts": [
+   {
+    "url": "https://research.utk.edu/iamm/about/core-facilities/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 130779,
+    "sha256": "c730de02366f362c6a2c9a6cfc94265c22ada12ae3a4376320286c759901eecb",
+    "fetched_at": "2026-11-14T17:52:50+00:00",
+    "note": "",
+    "quote": "Polymer Characterization Lab Premier global academic laboratory for characterizing polymers via molecular weight, molecular weight distribution, conformation, size, and thermal properties",
+    "excerpt_words": "for soft and solid materials connect with emc manufacturing core diverse additive and subtractive manufacturing services for advanced manufacturing research and development connect with mcut polymer characterization lab premier global academic laboratory for characterizing polymers via molecular weight molecular weight distribution conformation size and thermal properties connect with pcl other shared facilities advanced photoelectron spectrometer photoemission experiments for analysis of the chemical and electronic properties of various forms of condensed matter"
+   },
+   {
+    "url": "https://research.utk.edu/iamm/about/iamm-hq/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 132613,
+    "sha256": "14a0ad35ac9ae26bd8a94911b33a5aec0d053fef5001c9580ea8c1333a548563",
+    "fetched_at": "2026-11-14T17:52:51+00:00",
+    "note": "",
+    "quote": "headquartered at the UT Research Park at Cherokee Farm . The 140,000 square-foot facility",
+    "excerpt_words": "core facilities iamm headquarters iamm staff forms resources news menu home about iamm headquarters iamm headquarters the institute for advanced materials and manufacturing iamm is headquartered at the ut research park at cherokee farm the 140 000 square foot facility includes state of the art laboratories collaboration spaces lecture halls and offices for ut faculty students staff and co located external partners physically designed to"
+   },
+   {
+    "url": "https://research.utk.edu/iamm/research-areas/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 128793,
+    "sha256": "3141c676191e9e41637ecbcf67b6f52a86c4e48e8fe4c5933edaf309a67843ec",
+    "fetched_at": "2026-11-14T17:53:12+00:00",
+    "note": "",
+    "quote": "Advanced Materials , Advanced Manufacturing , Materials for Extremes , Polymer Science , & Quantum Materials",
+    "excerpt_words": "and engineering quantum system solutions quantum materials at ut institute for advanced materials manufacturing 2641 osprey vista way knoxville tn phone email protected research areas advanced materials advanced manufacturing materials for extremes polymer science quantum materials ut research supports five gateways defining the universitys strategic priorities the institute for advanced materials and manufacturing is one of them find out about the"
+   },
+   {
+    "url": "https://research.utk.edu/iamm/research-areas/polymer-science/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 177667,
+    "sha256": "12aad081e7dbb239f8aa9a29e6924e50e74a34c1609d3471f41f21e2f144c2dd",
+    "fetched_at": "2026-11-14T17:52:50+00:00",
+    "note": "",
+    "quote": "from gas separations and carbon capture to 3D printing and plastics upcycling",
+    "excerpt_words": "for an increasingly circular economy polymer science has implications for the fundamental understanding and design of novel polymeric materials for various current and future technologies from gas separations and carbon capture to 3d printing and plastics upcycling uts world class interdisciplinary polymer science research merges chemistry physics chemical engineering biosystems engineering forestry biomedical engineering and veterinary medicine our faculty and students concentrate"
+   },
+   {
+    "url": "https://research.utk.edu/iamm/research-areas/polymer-science/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 177667,
+    "sha256": "12aad081e7dbb239f8aa9a29e6924e50e74a34c1609d3471f41f21e2f144c2dd",
+    "fetched_at": "2026-11-14T17:52:50+00:00",
+    "note": "",
+    "quote": "as external users from industry and national laboratories",
+    "excerpt_words": "molecular weight molecular weight distribution conformation size and thermal properties these capabilities serve a wide range of users from across the ut campus as well as external users from industry and national laboratories uts approach ut researchers are developing new methods to aid recycling of waste plastics improve the properties of new products and materials made from mixed"
+   }
+  ],
+  "record_id": "PROG-000320",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-038",
+  "grade": "FIELD_ERROR",
+  "fields": "url;public_door_url;description_1line",
+  "current_value": "url and public_door_url https://monet.duke.edu/; description partners Columbia, Johns Hopkins, MIT, Northwestern, UC San Diego, UIUC, Michigan and Washington",
+  "correct_value": "url and public_door_url https://www.monetcci.org/; partners per the current team page: Duke (lead), Columbia, Johns Hopkins, MIT, Northwestern, Morehouse College, UC San Diego, UIUC, University of Washington (no Michigan)",
+  "settling_fact": "",
+  "rationale": "The held URL is the one the NSF CCI page lists, but monet.duke.edu returns NXDOMAIN on two public resolvers, and Duke's own 2026 Phase II release links https://www.monetcci.org/ (HTTP 200). The partner list is the 2021 roster; the current official team page has no University of Michigan investigator and does list Morehouse College. Reviewer A's third claim (thermosets not stated anywhere) is withdrawn: the NSF CCI page says MONET makes low-flow structural thermosets recyclable and reprocessable, so specialty_materials=thermosets stands.",
+  "receipts": [
+   {
+    "url": "dns://monet.duke.edu/A@8.8.8.8",
+    "via": "dig",
+    "http_status": 0,
+    "bytes": 379,
+    "sha256": "bd8a7fb885a58871c68a921641efd1b67779db498456e7c57a1ad61dd3aef226",
+    "fetched_at": "2026-11-14T17:56:36+00:00",
+    "note": "",
+    "quote": "status: NXDOMAIN",
+    "excerpt_words": "dig 9 10 6 monet duke edu a 8 8 8 8 global options cmd got answer header opcode query status nxdomain id 33983 flags qr rd ra query 1 answer 0 authority 0 additional 0 question section monet duke edu in a query time 22 msec"
+   },
+   {
+    "url": "dns://monet.duke.edu/A@1.1.1.1",
+    "via": "dig",
+    "http_status": 0,
+    "bytes": 379,
+    "sha256": "fb7e4e8bc94bfc00b81008457b6e151996c70cbdfe9b8ac140da3491c290c848",
+    "fetched_at": "2026-11-14T17:56:36+00:00",
+    "note": "",
+    "quote": "status: NXDOMAIN",
+    "excerpt_words": "dig 9 10 6 monet duke edu a 1 1 1 1 global options cmd got answer header opcode query status nxdomain id 47735 flags qr rd ra query 1 answer 0 authority 0 additional 0 question section monet duke edu in a query time 18 msec"
+   },
+   {
+    "url": "https://chem.duke.edu/news/monet-moves-phase-ii",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 74888,
+    "sha256": "89069854c49edc5b2801ebf7d03debf0ba6d3ad543a4eacdac088d71cd12c25f",
+    "fetched_at": "2026-11-14T17:53:28+00:00",
+    "note": "Duke 2026 release links the live site",
+    "raw_re": "href=\"https://www\\.monetcci\\.org/\"|https://www\\.monetcci\\.org/"
+   },
+   {
+    "url": "https://www.nsfcci.org/currentcenters-1",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 179734,
+    "sha256": "ce016c92a2b168b634bef681a2ba50bece3583f1e315af361f91d80bf96b3802",
+    "fetched_at": "2026-11-14T17:53:45+00:00",
+    "note": "",
+    "quote": "Website: https://monet.duke.edu/",
+    "excerpt_words": "structural thermosets recyclable and reprocessable soft hydrogels as strong as steel and lending to soft polymer networks the catalytic abilities of hard solid state materials website https monet duke edu twitter ccimonet c cas est 2019 nsf center for computer assisted synthesis the center for computer assisted synthesis c cas uses quantitative data driven approaches"
+   },
+   {
+    "url": "https://www.nsfcci.org/currentcenters-1",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 179734,
+    "sha256": "ce016c92a2b168b634bef681a2ba50bece3583f1e315af361f91d80bf96b3802",
+    "fetched_at": "2026-11-14T17:53:45+00:00",
+    "note": "",
+    "quote": "making low-flow structural thermosets recyclable and reprocessable",
+    "excerpt_words": "with enhanced operational performance and improved end of life value the center seeks to disrupt preconceived notions of what polymer networks are capable of by making low flow structural thermosets recyclable and reprocessable soft hydrogels as strong as steel and lending to soft polymer networks the catalytic abilities of hard solid state materials website https monet duke edu"
+   },
+   {
+    "url": "https://www.monetcci.org/our-team",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 1718565,
+    "sha256": "4724646fb2517008ac8dd66432db214ddc71c2cbad7d4c3b7a83eabbc510b6a2",
+    "fetched_at": "2026-11-14T17:53:27+00:00",
+    "note": "",
+    "quote": "Senior Investigator Juana Mendenhall Senior Investigator Morehouse College",
+    "excerpt_words": "investigator heather kulik senior investigator massachusetts institute of technology heather kulik leverages computational modeling to aid the discovery of new materials and mechanisms learn more senior investigator juana mendenhall senior investigator morehouse college dr mendenhall is currently the walter e massey professor of physical sciences at morehouse college president and founder of theravisctm llc and the tedx licensee"
+   },
+   {
+    "url": "https://www.monetcci.org/our-team",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 1718565,
+    "sha256": "4724646fb2517008ac8dd66432db214ddc71c2cbad7d4c3b7a83eabbc510b6a2",
+    "fetched_at": "2026-11-14T17:53:27+00:00",
+    "note": "",
+    "quote": "Senior Investigator Nicole Steinmetz Senior Investigator University of California, San Diego",
+    "excerpt_words": "urbana champaign nancy sottos studies the mechanical behavior of various complex heterogeneous materials through meso micro and nanoscale characterizing deformation and failure mechanisms learn more senior investigator nicole steinmetz senior investigator university of california san diego nicole steinmetz is helping monet push polymer networks across new frontiers through the design development and testing of materials and biologics derived from conjugated virus"
+   },
+   {
+    "url": "https://www.monetcci.org/our-team",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 1718565,
+    "sha256": "4724646fb2517008ac8dd66432db214ddc71c2cbad7d4c3b7a83eabbc510b6a2",
+    "fetched_at": "2026-11-14T17:53:27+00:00",
+    "note": "",
+    "absent": [
+     "Michigan"
+    ],
+    "page_words": 926
+   },
+   {
+    "url": "https://dmi.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 24874,
+    "sha256": "c36673d398d23e39873363ddf037a37eff52c3804c1f050cd88ed51fb7b96bca",
+    "fetched_at": "2026-11-14T17:53:27+00:00",
+    "note": "the 2021 roster the description copies",
+    "quote": "University of Illinois Urbana–Champaign, University of Michigan and University of Washington",
+    "excerpt_words": "scale modeling and bioconjugation while led by duke the center will include researchers from columbia university johns hopkins mit northwestern university of california san diego university of illinois urbana champaign university of michigan and university of washington the senior investigator team includes in addition to stephen craig dukes michael rubinstein the aleksandar s vesic distinguished professor of mechanical engineering and materials science"
+   }
+  ],
+  "record_id": "PROG-000314",
+  "reviewer_a": "FIELD_ERROR",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-041",
+  "grade": "UNRESOLVED",
+  "fields": "program_org_id",
+  "settling_fact": "A Brown page that lists Srivastava as faculty of the Materials Engineering concentration, or an owner ruling that a School of Engineering research-area listing (Materials Science) ties a person to the Materials Engineering concentration under SCHEMA 4.9.",
+  "rationale": "Rank, polymer research (hydrogels, polymers) and identity are supported. The program link is indirect: the cited I-BEAM profile and his School of Engineering profile tie him to biomedical engineering and name no Materials Engineering link, the concentration page lists no faculty, and the only Brown tie is the research-interests page listing him under the Materials Science research area. SCHEMA 4.9 links a person to a program where the public page ties them to the held program, so the link is neither confirmed nor refuted.",
+  "receipts": [
+   {
+    "url": "https://ibeam.brown.edu/people/vikas-srivastava",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 46897,
+    "sha256": "7c00b0ed2fa9b19165ee3de61d214348b41320eda7fbc6370753c44e8e27c63b",
+    "fetched_at": "2026-11-14T17:54:55+00:00",
+    "note": "",
+    "quote": "Associate Professor of Engineering",
+    "excerpt_words": "training bme graduate program bme undergraduate program events past events news search institute for biology engineering and medicine i beam breadcrumb home people vikas srivastava associate professor of engineering email visit personal website research interests cell mechanics hydrogels materials under extreme environment mechanobiology polymers solid mechanics brown university providence ri 02912 phone quick navigation"
+   },
+   {
+    "url": "https://ibeam.brown.edu/people/vikas-srivastava",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 46897,
+    "sha256": "7c00b0ed2fa9b19165ee3de61d214348b41320eda7fbc6370753c44e8e27c63b",
+    "fetched_at": "2026-11-14T17:54:55+00:00",
+    "note": "",
+    "quote": "Research Interests Cell mechanics, Hydrogels, materials under extreme environment, Mechanobiology, Polymers, Solid mechanics",
+    "excerpt_words": "past events news search institute for biology engineering and medicine i beam breadcrumb home people vikas srivastava associate professor of engineering email visit personal website research interests cell mechanics hydrogels materials under extreme environment mechanobiology polymers solid mechanics brown university providence ri 02912 phone quick navigation visit brown campus map a to z contact us footer navigation news events campus safety accessibility careers"
+   },
+   {
+    "url": "https://engineering.brown.edu/research/research-interests",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 103242,
+    "sha256": "4a221a0eb780f6870067a6824043f53e798d353fe7c6106135bdd0a6af0bf8fb",
+    "fetched_at": "2026-11-14T17:54:54+00:00",
+    "note": "",
+    "quote": "Materials Science Biomaterials Breuer , Coulombe , Dawson , Desai , Palmore , Raimondo , Shukla , Srivastava",
+    "excerpt_words": "breuer dawson powers toussaint soft matter complex fluids and colloidal sciences abriola dawson desai harris henann hurt karniadakis kesari powers rodriguez shukla wong xu zenit materials science biomaterials breuer coulombe dawson desai palmore raimondo shukla srivastava wong xu zenit electronic and magnetic materials caretta chason s kim kingon pacifici padture qi sheldon van de walle xu energy materials ibarra lin pacifici"
+   },
+   {
+    "url": "https://engineering.brown.edu/undergraduate/concentrations/materials-engineering",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 80735,
+    "sha256": "606bcb8b6cfabb7bc22bad68f299e44aa7e15cdf456353ec357145c3d793fcf1",
+    "fetched_at": "2026-11-14T17:55:01+00:00",
+    "note": "",
+    "absent": [
+     "Srivastava"
+    ],
+    "page_words": 1081
+   }
+  ],
+  "record_id": "PERSON-002180",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-044",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "Reviewer B asked for a dated outcome, not the 2025-07-30 plan. A dated 2025-11-12 report says the company relocated its corporate headquarters from Woburn to Bedford, the company contact page and the Association of Rotational Molders directory list only Bedford, and the company's own post says the rotomolding business is moving from Woburn. Together that supports closed for the Woburn plant. Note: SCHEMA 4.2 also offers relocated_in_scope; closed is not wrong.",
+  "receipts": [
+   {
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 190253,
+    "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
+    "fetched_at": "2026-11-14T17:52:07+00:00",
+    "note": "",
+    "quote": "has relocated their corporate headquarters from Woburn, Massachusetts to 10 Iron Horse Drive, Bedford, New Hampshire",
+    "excerpt_words": "bergeron 1y report this post massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate headquarters from woburn massachusetts to 10 iron horse drive bedford new hampshire the company has leased approximately 50 000 square feet and will be employing 50 people gregstrom corporation owner jeff didonato chose new hampshire based on"
+   },
+   {
+    "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 64332,
+    "sha256": "b487325b7c2dfad090ff887c48a407d39905e4ea8f429e515d328b1b075d9690",
+    "fetched_at": "2026-11-14T17:51:36+00:00",
+    "note": "",
+    "quote": "is moving its rotomolding business from Woburn, Massachusetts to Bedford, New Hampshire",
+    "excerpt_words": "blog home slider gregstrom moves rotomolding business and looks to the future july 30 2025 3120 views gregstrom corporation a 79 year old plastics manufacturer is moving its rotomolding business from woburn massachusetts to bedford new hampshire most of the companys current employees will make the move but the third generation family owned business is also seeking new hires gregstrom was founded"
+   },
+   {
+    "url": "https://gregstrom.com/contact/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 93505,
+    "sha256": "e619f282c0e9e17fb8537aba92a2c77e875c60ffd9635aee56173cfaf4ecf4d3",
+    "fetched_at": "2026-11-14T17:51:37+00:00",
+    "note": "",
+    "absent": [
+     "Woburn"
+    ],
+    "page_words": 954
+   },
+   {
+    "url": "https://www.rotomolding.org/rotomolder-members/gregstrom-corporation",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 130029,
+    "sha256": "c2319da40cc5cb010cc14ff3ac9576d54e25c9571a1a2afd783ee33d83acdd03",
+    "fetched_at": "2026-11-14T17:52:08+00:00",
+    "note": "",
+    "absent": [
+     "Woburn"
+    ],
+    "page_words": 361
+   }
+  ],
+  "record_id": "SITE-004416",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ },
+ {
+  "id": "A10-048",
+  "grade": "AGREE",
+  "fields": "",
+  "settling_fact": "",
+  "rationale": "The organizer's speaker page lists the Dow speaker under The Dow Chemical Company (a trade name held on Dow Inc., ORG-002913), and the event page states Savannah, GA on December 7-9, 2026. A speaker is recorded as the employer organization (AGENTS 6).",
+  "receipts": [
+   {
+    "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/speakers",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 714957,
+    "sha256": "4c01a1704c3ccff1718d3adcad5d8bad50a06fe7a7ab4bd06d778f83e39da3c3",
+    "fetched_at": "2026-11-14T17:54:30+00:00",
+    "note": "",
+    "quote": "Akanksha Garg TS&D/Research Scientist The Dow Chemical Company",
+    "excerpt_words": "stephenie henderson vp of sales stretch film amcor flexibles north america find out more esteban sagel principal chemical and polymer market consultants find out more akanksha garg ts d research scientist the dow chemical company find out more jack shirrell principal consultant stretch your pe find out more cherish changala vice president of sustainability and public affairs revolution find out"
+   },
+   {
+    "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/home",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 948235,
+    "sha256": "399c9764c0c378aeaa9f113196d8e5c80da62bee017a3bf350845402b9816d96",
+    "fetched_at": "2026-11-14T17:54:33+00:00",
+    "note": "",
+    "quote": "taking place in Savannah, GA, USA on December 7-9, 2026",
+    "excerpt_words": "celebrating 20 years of innovation in stretch and shrink film celebrate two decades of innovation at the 20th stretch and shrink film north america conference taking place in savannah ga usa on december 7 9 2026 this milestone event brings together global leaders to explore the future of flexible packaging in an era of rapid change gain exclusive insights into performance"
+   }
+  ],
+  "record_id": "EVP-001302",
+  "reviewer_a": "AGREE",
+  "reviewer_b": "UNRESOLVED"
+ }
+]

@@ -1,10 +1,11 @@
-# Blind audit 10 — phase 1: frame, sample, blind inputs
+# Blind audit 10 — frame, sample, blind inputs (phase 1) and adjudicated results (phase 3)
 
 Owner request 2026-11-14: a blind sample audit of the data PRs merged 2026-11-09 to 2026-11-12, which merged on
 "owner-approved" packet checks without a recorded two-family refute and mostly without a task-folder builder or check.
-Controller thr_9i2c6byhcz; lead thr_4tngyjjf65 (Claude). Phase 1 builds the frame, the sample and the blind inputs and
-stops. Branch `agent/claude-code/blind-audit-10`, no PR yet. Phase 2 (two blind reviewers) and phase 3 (lead
-adjudication) are separate instructions. No `data/` edits, no new IDs.
+Controller thr_9i2c6byhcz; lead thr_4tngyjjf65 (Claude). Phase 1 built the frame, the sample and the blind inputs; phase 2 ran
+two blind reviewers (A Claude, B Codex) outside this branch; phase 3 is the lead's adjudication and statistics (below). Branch
+`agent/claude-code/blind-audit-10`, draft PR. No `data/` edits, no new IDs. The report is
+`docs/reviews/BLIND_AUDIT_10_2026-11-14.md`.
 
 **Revision v2, 2026-11-14 (controller rulings; v1 superseded).** Phase 1 first shipped at head `4fd98d7` with a 1,653-record
 frame and seed `...-v1`. The controller then ruled (1) the 32 ecosystem records whose only changes are the generated
@@ -144,14 +145,38 @@ there; its bare `integrat` token was narrowed to `integration pass|integrator` a
 devices" in a legitimate description); `check.py` fails if any changed after the
 freeze.
 
-## What phase 2 and 3 do
+## Phase 2 and 3 — what was done
 
-Phase 2: two reviewers, each given only one blind file and no `council-ask` or OpenAI route (CONTRACT-CLAUDE), research
-every record fresh from primary or public sources (about 6 routes per record, quotes re-checked raw), lock a verdict per
-record before unblinding and before seeing the other reviewer's verdict (the cited sources and evidence URLs in the
-blind file are inputs to their research, not withheld), and use the AGENTS §2 rule 8 grammar (VERIFIED, REJECT with the deciding fact,
-STILL_UNCERTAIN with the settling fact, DUPLICATE_OF) per audited column. Phase 3 (lead): unblind, compare the two
-reviewers with the held evidence, adjudicate disagreements, and report per-table rates (unit and filter stated) with 95%
-Wilson intervals (z = 1.959964), census strata marked, using the audit-9 statistics code adapted for this frame. Error
-rates are reported per stratum as well as overall (controller ruling 2026-11-14); the overall figure uses the design
-weights above and is labelled a weighted estimate.
+Phase 2: two reviewers, each given one copy of the blind file and no OpenAI route for A (CONTRACT-CLAUDE), researched every record
+fresh, locked a verdict per record, and used the AGENTS section 2 rule 8 grammar. Locked outputs are copied here unchanged:
+`verdicts_a.csv` (sha256 `dfd8f490…cf4e`: 45 AGREE / 4 FIELD_ERROR / 0 CREATION / 1 UNRESOLVED) and `verdicts_b.csv`
+(`60efe428…d7bc`: 37 / 0 / 0 / 13), with each reviewer's receipts (`receipts_a.json`, `receipts_b.json`; A did not save page bodies).
+Cross-tab: both AGREE 36; A AGREE / B UNRESOLVED 9; A FIELD_ERROR / B UNRESOLVED 4; A UNRESOLVED / B AGREE 1.
+
+Phase 3 (lead): the 14 disagreements were re-researched from fresh raw fetches (`adjudicate_fetch.py` stores each body hash-named under
+`/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/blind-audit-10/raw/` and appends a receipt to
+`adjudication_receipts.jsonl`; `adjudicate_build.py` holds the 14 decisions, re-verifies every quote as an ordered word sequence on the
+stored page, every absence on a page that returned HTTP 200, and writes `adjudication.json` with a word excerpt per quote so the quotes
+can be re-checked without the raw bodies). A failed fetch is never evidence of absence. Final grade per record is the shared grade where
+the reviewers agreed and the lead's grade otherwise (`final_grades.csv`); `stats.py` writes `statistics.json` (per-stratum counts, rates
+and Wilson 95% intervals with z = 1.959964, design-weighted frame estimate, sensitivity, corrections list); `write_report.py` writes the
+report from those files.
+
+**Result (unit: sampled record; frame 1,621):** 46 AGREE, 2 FIELD_ERROR (EVP-001297 `edition_dates`; PROG-000314 `url`,
+`public_door_url`, partner list), 0 CREATION_ERROR, 2 UNRESOLVED (ORG-013503 AFFOA polymer scope, held for an owner ruling;
+PERSON-002180 program link). Design-weighted confirmed-error rate 4.6%. The corrections are listed in the report and are **not applied**.
+
+**Reviewer A's stale-checkout disclosure:** A's early notes used a checkout behind the audited state; A corrected A10-002 and A10-041 in
+its lock. No grade is affected: A10-002 is AGREE from both reviewers and `scripts/validate.py` passes at the pinned head, A10-041's
+final grade is the lead's own, and `stale_checkout_check.py` re-ran the duplicate checks for all 50 records at the pinned head (none found).
+
+**Check.** `check.py` now also recomputes phase 3: reviewer lock hashes, the cross-tab, that the 14 adjudications are exactly the
+disagreements, every receipt (committed excerpt always; full stored body, hash, absence terms and raw patterns when the persist directory
+is present, with an explicit warning and a failure on absence receipts if it is not), final grades, statistics, the report text, and
+duplicates at the pinned head. It plants an incomplete census, a duplicated verdict and an unreadable quote, and each must be rejected;
+the duplicated-verdict plant exposed a real silent-accept path in `stats.summarize`, now fixed.
+
+## What this audit does not cover
+
+Records outside the frame; evidence-only PRs (#258, #266); fields not under audit for a sampled record; the unsampled rows that may share
+the TPO end-date error (listed as a lead in the report, not rated). No second-family review of the report has run.
