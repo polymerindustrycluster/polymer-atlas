@@ -1,6 +1,6 @@
 site_id,type,term,scope,basis,url,quote
 SITE-000034,material,nylon_pa,site,narrative,https://www.akronpolymer.com/manufacturing-of-a-hydraulic-clutch-actuation-tube/,out of many types of high performance polyamide (nylon) compounds
-SITE-000034,material,thermoplastics,site,narrative,https://www.akronpolymer.com/thermoplastic-tubing-development-and-support-services/,Thermoplastic Tubing Development & Support Services
+SITE-000034,material,thermoplastics,site,menu,https://www.akronpolymer.com/thermoplastic-tubing-development-and-support-services/,Thermoplastic Tubing Development & Support Services
 SITE-000081,material,polyurethane_pu,site,narrative,https://novexinc.com/,Novex’s specially formulated polyurethane belting and sheeting
 SITE-000285,material,phenolic,org,narrative,https://cgthermal.com/capabilities-2/,our time proven Impervite phenolic impregnation system
 SITE-000367,material,polyurethane_pu,org,narrative,https://www.handifoam.com/,"LEADERS IN INNOVATIVE, SUSTAINABLE POLYURETHANE FOAM INSULATION"
@@ -19,7 +19,6 @@ SITE-001661,material,adhesives_sealants,site,narrative,https://ruscoe.com/produc
 SITE-001682,material,adhesives_sealants,org,narrative,https://www.mactac.com/Catalog/Products/Graphics,"PSA materials development for digital printing, mounting, laminating, screen-printing, and cut-vinyl needs."
 SITE-001695,material,elastomers_rubber,org,narrative,https://acecryo.com/,"We currently process cured and uncured rubber, specialty plastics and other non traditional materials."
 SITE-001883,material,polystyrene_ps_hips,org,narrative,https://www.impactsleeves.com/services/materials,"OPS - Oriented Polystyrene film is an environmentally-friendly, and more cost-effective than"
-SITE-001437,process,insert_overmolding,site,narrative,https://kentdisplays.com/services/low-pressure-injection-molding/,Cable & Connector Over molding for strain relief and environmental sealing
 SITE-001721,material,polyethylene_pe,site,narrative,https://www.tuscoproducts.com/products/hose-pot,plastic garden planters are made from 100% high-grade polyethylene
 SITE-000442,material,thermoplastics,org,narrative,https://knightmaterials.com/,Dual laminate products are constructed with a thermoplastic liner interior and a fiberglass-reinforced plastic (FRP) structure
 SITE-000442,material,composites_frp,org,narrative,https://knightmaterials.com/,Dual laminate products are constructed with a thermoplastic liner interior and a fiberglass-reinforced plastic (FRP) structure

@@ -45,12 +45,12 @@ SITE-000174 (Hankook, #322) is not in the frame, and the builder asserts that.
 |---|---|
 | frame rows | 100 (86 with ≥1 page loaded; 394 pages) |
 | candidates judged | 110 |
-| accepted term decisions | 31 (`verdicts.csv`) |
-| records gaining a §3 tag | **11** (11.0% yield) |
-| sites tagged, by basis | narrative (A) 11, menu (C) 2 (a site can have both) |
-| evidence rows by basis | narrative 18, menu 2 (site 20, org 5) |
+| accepted term decisions | 29 (`verdicts.csv`) |
+| records gaining a §3 tag | **10** (10.0% yield) |
+| sites tagged, by basis | narrative (A) 10, menu (C) 2 (a site can have both) |
+| evidence rows by basis | narrative 20, menu 3 (site 18, org 5) |
 | site_capabilities rows | 15 (CAP-001000..CAP-001014) |
-| evidence IDs | EVD-345000..EVD-345024 |
+| evidence IDs | EVD-345000..EVD-345024 (EVD-345017 and EVD-345024 retired; 23 rows live) |
 
 Candidates that were not minted are in `not_minted.csv`, each with a reason. These are not REJECT verdicts on records. When a fetch failed, the source was unavailable; that does not mean the capability is absent.
 
@@ -72,3 +72,15 @@ Never merged by the author. No Muse files touched; the only QUEUE edit is the #3
 - **Kept:** the site's `processes` is now `insert_overmolding` only, still backed by EVD-345019. That tag had no capability row, so no CAP row changes.
 - **Counts:** 30 accepted terms; 19 site evidence rows; 1 menu-basis row. Logged in `not_minted.csv`.
 - **Conflict note:** #321 and #324 both touch `data/sites_OH.csv`, `organizations_OH.csv`, `evidence_sites_OH.csv` and `site_capabilities.csv` (appended rows). Whichever merges second needs a normal-merge replay.
+
+## Withdrawal and relabel, 2026-11-14 (Codex REFUTE of #321 @ 43f12ac)
+The refute: EVD-345001 quotes only a product-line title and EVD-345017 only a "What We Mold" list item, but both were `supports_A`. The recorded owner rule (2026-11-12 13:51 ET) counts self-described menu lists and titles at `supports_C`. Neither quote is a narrative sentence. This is a basis finding, not a claim that the companies lack the capability. (The correction note above names EVD-345019 for Kent; the Kent row on this head is EVD-345017, and EVD-345019 belongs to Tusco.)
+
+- **SITE-000034 Akron Polymer Products, `materials` thermoplastics: relabelled, kept.** EVD-345001 is now `supports_C` with the menu-basis wording the other menu rows use in `claim_detail`; CAP-001001 `notes` gains the same "Basis: self-described menu, lower confidence" sentence. The site is tier C, and its nylon tag keeps an A row (EVD-345000), so V-25 does not apply. No cell value changes.
+- **SITE-001437 Kent Displays, `processes` insert_overmolding: withdrawn (hold).** The site is tier B and this was its only scope row, so a C row fails V-25 ("must-have claim scope supported only at C strength", reproduced by validate). Per the owner's V-25 ruling of 2026-11-14 on #324 (no §3 tag from a C-strength menu term on an A/B record until A/B scope evidence exists), `processes` is back to main's value (empty). EVD-345017 is removed and **retired, never reuse**. The term had no capability row on this head, so none is removed. Not minted: SCHEMA §3.6 rolls `insert_overmolding` up to the `injection_molding` capability, so a capability-only row is possible later, but that is a new row needing its own review.
+
+| Hold | Recommended reading | What would settle it |
+|---|---|---|
+| Kent Displays `insert_overmolding` §3 tag | Tag it once A/B evidence exists; capability row `injection_molding` meanwhile (owner V-25 ruling) | An own-page narrative sentence (not a list item) saying Kent overmolds |
+
+`verdicts.csv`, `scripts/decisions.csv` and `not_minted.csv` follow. Counts after (unit: rows added on this branch against its merge-base): site_capabilities 15; evidence rows 23 (18 in `evidence_sites_OH.csv`, 5 in `evidence_organizations_OH.csv`), of which 3 `supports_C` menu rows; site rows with a cell filled 10 (was 11); organization rows 2. The Results table and `summary.json` above were refreshed to these figures.
