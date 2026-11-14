@@ -162,9 +162,10 @@ the reviewers agreed and the lead's grade otherwise (`final_grades.csv`); `stats
 and Wilson 95% intervals with z = 1.959964, design-weighted frame estimate, sensitivity, corrections list); `write_report.py` writes the
 report from those files.
 
-**Result (unit: sampled record; frame 1,621):** 46 AGREE, 2 FIELD_ERROR (EVP-001297 `edition_dates`; PROG-000314 `url`,
-`public_door_url`, partner list), 0 CREATION_ERROR, 2 UNRESOLVED (ORG-013503 AFFOA polymer scope, held for an owner ruling;
-PERSON-002180 program link). Design-weighted confirmed-error rate 4.6%. The corrections are listed in the report and are **not applied**.
+**Result (unit: sampled record; frame 1,621):** 45 AGREE, 2 FIELD_ERROR (EVP-001297 `edition_dates`; PROG-000314 `url`,
+`public_door_url`, partner list), 0 CREATION_ERROR, 3 UNRESOLVED (ORG-013503 AFFOA polymer scope, held for an owner ruling;
+ORG-003807 OMG Thermoforming, whose description calls OMG srl "the parent" with no source for ownership; PERSON-002180 program link).
+Design-weighted confirmed-error rate 4.6%. The corrections are listed in the report and are **not applied**.
 
 **Reviewer A's stale-checkout disclosure:** A's early notes used a checkout behind the audited state; A corrected A10-002 and A10-041 in
 its lock. No grade is affected: A10-002 is AGREE from both reviewers and `scripts/validate.py` passes at the pinned head, A10-041's
@@ -173,7 +174,8 @@ final grade is the lead's own, and `stale_checkout_check.py` re-ran the duplicat
 **Check.** `check.py` now also recomputes phase 3: reviewer lock hashes, the cross-tab, that the 14 adjudications are exactly the
 disagreements, every receipt (committed excerpt always; full stored body, hash, absence terms and raw patterns when the persist directory
 is present, with an explicit warning and a failure on absence receipts if it is not), final grades, statistics, the report text, and
-duplicates at the pinned head. It plants an incomplete census, a duplicated verdict and an unreadable quote, and each must be rejected;
+duplicates at the pinned head, plus the repo facts the report states (recomputed, not taken from reviewer A) and the two corrected records' values on
+the later main. It plants an incomplete census, a duplicated verdict, an unreadable quote and an empty persist directory, and each must be rejected;
 the duplicated-verdict plant exposed a real silent-accept path in `stats.summarize`, now fixed.
 
 ## What this audit does not cover

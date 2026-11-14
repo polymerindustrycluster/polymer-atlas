@@ -1,6 +1,7 @@
 [
  {
   "id": "A10-003",
+  "key_fact": "AFFOA's own pages never state a polymer program (the only \"polymer\" is an awardee's name, Z-Polymers), so the polymer-scope claim is unsupported and, as a scope question, held for the owner.",
   "grade": "UNRESOLVED",
   "fields": "polymer_program;polymer_program_name;polymer_program_url",
   "settling_fact": "An owner scope ruling on whether a fiber/textile Manufacturing USA institute with no stated polymer program counts as polymer_program=true under SCHEMA 4.6, or an AFFOA page that names polymer fiber work.",
@@ -107,11 +108,34 @@
  },
  {
   "id": "A10-007",
+  "key_fact": "The USPTO trademark record registers NEXTFLEX to FlexTech Alliance, Inc. at the NextFlex address, so \"operated by FlexTech Alliance\" is true; the cited pages just do not say it.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
-  "rationale": "Reviewer A's field error (operated by FlexTech Alliance not on the cited pages) is overturned: the legal entity behind NextFlex is FlexTech Alliance, Inc. doing business as NextFlex (federal registration and trademark records, same San Jose address as the NextFlex footer), and the 2015 DoD award names FlexTech Alliance as the institute manager. The cited pages not naming it is a citation gap, not a wrong value. Polymer substrates, San Jose, Santa Clara county and the technology hub are supported.",
+  "rationale": "Reviewer A's field error (operated by FlexTech Alliance not on the cited pages) is overturned: the USPTO trademark record (read through the USPTO search index) registers the NEXTFLEX service mark, for promoting the flexible-hybrid-electronics consortium, to FlexTech Alliance, Inc. at the NextFlex San Jose address; HigherGov (an aggregator of federal registration data) lists FLEXTECH ALLIANCE, INC. DBA NEXTFLEX; Trademarkia is an aggregator copy of the same USPTO record; and NextFlex's own 2015 release says the DoD awarded FlexTech Alliance the cooperative agreement to establish and manage the institute. The cited pages not naming it is a citation gap, not a wrong value. Polymer substrates, San Jose, Santa Clara county and the technology hub are supported.",
   "receipts": [
+   {
+    "url": "uspto-tmsearch://88213201",
+    "via": "mcp-uspto-tmsearch",
+    "http_status": 200,
+    "bytes": 702,
+    "sha256": "82ca71a5a8c1d300d3994a5c1a9e37bbb9dce00b652d07efc5c879b249b243f1",
+    "fetched_at": "2026-11-14T18:09:49+00:00",
+    "note": "USPTO trademark search-index fields for serial 88213201, copied verbatim from the patents MCP response",
+    "quote": "FlexTech Alliance, Inc. (CORPORATION; DELAWARE, USA); Suite 150, 2244 Blach Place, San Jose, CALIFORNIA 95131",
+    "excerpt_words": "private consortium of companies academic institutions nonprofits and governments with a mission to advance manufacturing of flexible hybrid electronics in the united states ownerfulltext registrant flextech alliance inc corporation delaware usa suite 150 2244 blach place san jose california 95131 united states source tmsearch via patents mcp tm get trademark verbatim fields"
+   },
+   {
+    "url": "uspto-tmsearch://88213201",
+    "via": "mcp-uspto-tmsearch",
+    "http_status": 200,
+    "bytes": 702,
+    "sha256": "82ca71a5a8c1d300d3994a5c1a9e37bbb9dce00b652d07efc5c879b249b243f1",
+    "fetched_at": "2026-11-14T18:09:49+00:00",
+    "note": "",
+    "quote": "promoting the interests of a public-private consortium of companies, academic institutions, nonprofits and governments with a mission to advance manufacturing of flexible-hybrid electronics",
+    "excerpt_words": "serial 88213201 wordmark nextflex registrationid 5757826 registrationdate 2019 05 21 statusdescription section 8 15 accepted and acknowledged goodsandservices ic 035 association services namely promoting the interests of a public private consortium of companies academic institutions nonprofits and governments with a mission to advance manufacturing of flexible hybrid electronics in the united states ownerfulltext registrant flextech alliance inc corporation delaware usa suite 150 2244 blach place san jose california 95131 united states source tmsearch"
+   },
    {
     "url": "https://www.highergov.com/awardee/flextech-alliance-inc-10350446/",
     "via": "curl",
@@ -119,7 +143,7 @@
     "bytes": 111702,
     "sha256": "7eb95885351d785b4d1362977737777a9185b11a0f0b276001c96c7863c8f459",
     "fetched_at": "2026-11-14T17:48:45+00:00",
-    "note": "",
+    "note": "aggregator of SAM.gov registration data",
     "quote": "Legal Name FLEXTECH ALLIANCE, INC. DBA NEXTFLEX",
     "excerpt_words": "results calculating calculating no results calculating calculating no results calculating calculating map heat no results calculating calculating no results calculating calculating federal registration and certifications legal name flextech alliance inc dba nextflex uei gyqkvknngle4 cage code 1rlb8 primary naics 541715 research and development in the physical engineering and life sciences except nanotechnology and biotechnology sba certifications none"
    },
@@ -130,7 +154,7 @@
     "bytes": 532722,
     "sha256": "adaedb83902f1b048f4b3565a29c7988c535e9e6da43df1e4b2ad16c44e9fe06",
     "fetched_at": "2026-11-14T17:48:47+00:00",
-    "note": "",
+    "note": "aggregator copy of the USPTO record",
     "quote": "Last Applicant / Owned By FlexTech Alliance, Inc.",
     "excerpt_words": "institutions nonprofits and governments with a mission to advance manufacturing of flexible hybrid electronics in the united states owner contact information view docket report f last applicant owned by flextech alliance inc legal entity type corporation owner address suite 150 2244 blach place san jose ca 95131 correspondent contact information view law firm p filed by attorney"
    },
@@ -207,6 +231,7 @@
  },
  {
   "id": "A10-011",
+  "key_fact": "The organizer's own exhibitor roster (the JSON behind the page) lists International Mold Steel for PTXPO 2028; dates and Rosemont IL are on the organizer's site.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
@@ -252,6 +277,7 @@
  },
  {
   "id": "A10-015",
+  "key_fact": "The organizer's 2026 schedule runs Monday 9/28 to Wednesday 9/30 with no Thursday; October 1 is only the hotel-block end, so edition_dates should end 2026-09-30.",
   "grade": "FIELD_ERROR",
   "fields": "edition_dates",
   "current_value": "2026-09-28 to 2026-10-01",
@@ -334,6 +360,7 @@
  },
  {
   "id": "A10-018",
+  "key_fact": "IPEDS 199847 (Forsyth County NC) and ROR 0207ad724 both resolve to Wake Forest University, and the physics department states polymer research.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
@@ -390,10 +417,11 @@
  },
  {
   "id": "A10-019",
-  "grade": "AGREE",
-  "fields": "",
-  "settling_fact": "",
-  "rationale": "The merged change asserts nothing about ownership: ultimate_parent_name is blank and the description says only that this is a US sales and distribution presence for OMG srl machines, which OMG srl's own agents-and-distributors page supports (3407 Avenue D, Arlington TX listed for USA agents, domain omgusa.net, which is OMG srl's own site). Reviewer A's unsettled question (subsidiary or independent distributor) is not asserted by the record, so it is not an error; it stays open and is not certified.",
+  "key_fact": "The description calls OMG srl \"the parent\" and no source settles whether OMG Thermoforming Inc. is owned by OMG srl or is an independent distributor.",
+  "grade": "UNRESOLVED",
+  "fields": "ultimate_parent_name;description_1line",
+  "settling_fact": "A primary source stating the corporate relationship between OMG Thermoforming Inc. (Arlington TX) and OMG srl: a Texas filing or an OMG srl statement showing ownership (subsidiary) or an agency/distribution agreement only.",
+  "rationale": "The merged description still calls OMG srl \"the parent\" (\"the parent's own site lists the address in its agent/distributor network\"), which is an ownership claim even though ultimate_parent_name was blanked, so Reviewer A's open question applies to a claim the record makes. What is supported: OMG srl's own agents-and-distributors page lists 3407 Avenue D, Arlington TX under its USA agents with an omgusa.net address, and omgusa.net is OMG srl's own site. What is not settled: whether OMG Thermoforming Inc. is owned by OMG srl or is an independent distributor; the only other source found, a US customs importer aggregator, shows OMG Thermoforming Inc. importing from OMG srl as its supplier, which fits both.",
   "receipts": [
    {
     "url": "https://www.omgitaly.com/agenti-e-distributori",
@@ -427,6 +455,17 @@
     "note": "",
     "quote": "Copyright © 2014 O.M.G. srl Via Morghen, 35 10143 - Torino",
     "excerpt_words": "mail email contact us tel phone via torino 78 10040 givoletto to e mail email copyright 2014 omg thermoforming all rights reserved designed by immagine3000 copyright 2014 o m g srl via morghen 35 10143 torino p iva phone all rights reserved designed by immagine3000"
+   },
+   {
+    "url": "https://www.importgenius.com/importers/omg-thermoforming-inc",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 435309,
+    "sha256": "6d4c540547693aa97bbdc798f6f57a5dc0560d45e549f7a3fd73a2febaee22af",
+    "fetched_at": "2026-11-14T18:08:27+00:00",
+    "note": "US customs importer aggregator; supplier relationship, not ownership",
+    "quote": "including shipments from Omg Srl, a supplier based in Italy",
+    "excerpt_words": "united states importers omg thermoforming inc records omg thermoforming inc us customs records for omg thermoforming inc in arlington see their past imports and exports including shipments from omg srl a supplier based in italy join importgenius to see the import export activity of every company in united states track your competitors get freight forwarding leads enforce exclusivity agreements learn"
    }
   ],
   "record_id": "ORG-003807",
@@ -435,10 +474,11 @@
  },
  {
   "id": "A10-020",
+  "key_fact": "The company contact page gives 10 Iron Horse Drive, Unit C, Bedford NH 03110, its materials page names PE and PP rotomolding, and the geocoder gives Hillsborough County.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
-  "rationale": "The company's contact page gives the exact address and ZIP; its materials page names LLDPE, HDPE and PP rotomolding; the census geocoder matches the address in Hillsborough County; a dated 2025-11-12 report says the company relocated its corporate headquarters to this address. Bedford is the only address the company lists, so hq_and_plant and active are supported.",
+  "rationale": "The company's contact page gives the exact address and ZIP; its materials page names LLDPE, HDPE and PP rotomolding; the census geocoder matches the address in Hillsborough County; a third-party LinkedIn post dated November 12, 2025 says the company relocated its corporate headquarters to this address. Bedford is the only address the company lists, so hq_and_plant and active are supported.",
   "receipts": [
    {
     "url": "https://gregstrom.com/contact/",
@@ -502,9 +542,20 @@
     "bytes": 190253,
     "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
     "fetched_at": "2026-11-14T17:52:07+00:00",
-    "note": "LinkedIn post dated November 12, 2025, Bedford NH",
+    "note": "third-party LinkedIn post",
     "quote": "has relocated their corporate headquarters from Woburn, Massachusetts to 10 Iron Horse Drive, Bedford, New Hampshire",
     "excerpt_words": "bergeron 1y report this post massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate headquarters from woburn massachusetts to 10 iron horse drive bedford new hampshire the company has leased approximately 50 000 square feet and will be employing 50 people gregstrom corporation owner jeff didonato chose new hampshire based on"
+   },
+   {
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 190253,
+    "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
+    "fetched_at": "2026-11-14T17:52:07+00:00",
+    "note": "the post date",
+    "quote": "relocated to southern New Hampshire November 12, 2025, Bedford, NH. Gregstrom Corporation",
+    "excerpt_words": "massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate michael bergeron 26 comments agree join linkedin by clicking continue to join or sign in you"
    }
   ],
   "record_id": "SITE-019101",
@@ -513,6 +564,7 @@
  },
  {
   "id": "A10-032",
+  "key_fact": "Spaepen's SEAS-hosted lab page states his research includes polymers, and his profile gives the professor title and the MSME affiliation.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
@@ -547,10 +599,11 @@
  },
  {
   "id": "A10-033",
+  "key_fact": "The company contact page and the ARM directory list only Bedford, a third-party LinkedIn post dated 2025-11-12 reports the headquarters relocated there, and the geocoder gives Hillsborough County.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
-  "rationale": "Reviewer B wanted the headquarters relocation stated outright and the county. The company contact page and the Association of Rotational Molders directory list only the Bedford address, a dated 2025-11-12 report says the corporate headquarters relocated from Woburn to 10 Iron Horse Drive, and the geocoder places the address in Hillsborough County.",
+  "rationale": "Reviewer B wanted the headquarters relocation stated outright and the county. The company contact page and the Association of Rotational Molders directory list only the Bedford address, a third-party LinkedIn post dated November 12, 2025 says the corporate headquarters relocated from Woburn to 10 Iron Horse Drive, and the geocoder places the address in Hillsborough County.",
   "receipts": [
    {
     "url": "https://gregstrom.com/contact/",
@@ -592,9 +645,20 @@
     "bytes": 190253,
     "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
     "fetched_at": "2026-11-14T17:52:07+00:00",
-    "note": "",
+    "note": "third-party LinkedIn post",
     "quote": "has relocated their corporate headquarters from Woburn, Massachusetts to 10 Iron Horse Drive, Bedford, New Hampshire",
     "excerpt_words": "bergeron 1y report this post massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate headquarters from woburn massachusetts to 10 iron horse drive bedford new hampshire the company has leased approximately 50 000 square feet and will be employing 50 people gregstrom corporation owner jeff didonato chose new hampshire based on"
+   },
+   {
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 190253,
+    "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
+    "fetched_at": "2026-11-14T17:52:07+00:00",
+    "note": "the post date",
+    "quote": "relocated to southern New Hampshire November 12, 2025, Bedford, NH. Gregstrom Corporation",
+    "excerpt_words": "massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate michael bergeron 26 comments agree join linkedin by clicking continue to join or sign in you"
    },
    {
     "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=10+Iron+Horse+Dr%2C+Bedford%2C+NH+03110&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
@@ -614,6 +678,7 @@
  },
  {
   "id": "A10-037",
+  "key_fact": "UT's own IAMM pages (HTTP 200 on a plain fetch) state Polymer Science as one of five research areas, the Polymer Characterization Lab, and the 140,000 sq ft Cherokee Farm headquarters.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
@@ -681,6 +746,7 @@
  },
  {
   "id": "A10-038",
+  "key_fact": "monet.duke.edu returns NXDOMAIN on two resolvers (the live site is monetcci.org per Duke's 2026 release) and the partner list is the 2021 roster (the current team has Morehouse, no Michigan).",
   "grade": "FIELD_ERROR",
   "fields": "url;public_door_url;description_1line",
   "current_value": "url and public_door_url https://monet.duke.edu/; description partners Columbia, Johns Hopkins, MIT, Northwestern, UC San Diego, UIUC, Michigan and Washington",
@@ -795,6 +861,7 @@
  },
  {
   "id": "A10-041",
+  "key_fact": "No Brown page ties him to the Materials Engineering concentration; the only tie is a research-area listing under Materials Science.",
   "grade": "UNRESOLVED",
   "fields": "program_org_id",
   "settling_fact": "A Brown page that lists Srivastava as faculty of the Materials Engineering concentration, or an owner ruling that a School of Engineering research-area listing (Materials Science) ties a person to the Materials Engineering concentration under SCHEMA 4.9.",
@@ -853,10 +920,11 @@
  },
  {
   "id": "A10-044",
+  "key_fact": "A third-party LinkedIn post dated 2025-11-12 reports the headquarters relocated from Woburn to Bedford, and the company contact page and the ARM directory list only Bedford.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",
-  "rationale": "Reviewer B asked for a dated outcome, not the 2025-07-30 plan. A dated 2025-11-12 report says the company relocated its corporate headquarters from Woburn to Bedford, the company contact page and the Association of Rotational Molders directory list only Bedford, and the company's own post says the rotomolding business is moving from Woburn. Together that supports closed for the Woburn plant. Note: SCHEMA 4.2 also offers relocated_in_scope; closed is not wrong.",
+  "rationale": "Reviewer B asked for a dated outcome, not the 2025-07-30 plan. A third-party LinkedIn post dated November 12, 2025 says the company relocated its corporate headquarters from Woburn to Bedford, the company contact page and the Association of Rotational Molders directory list only Bedford, and the company's own post says the rotomolding business is moving from Woburn. Together that supports closed for the Woburn plant. Note: SCHEMA 4.2 also offers relocated_in_scope; closed is not wrong.",
   "receipts": [
    {
     "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
@@ -865,9 +933,20 @@
     "bytes": 190253,
     "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
     "fetched_at": "2026-11-14T17:52:07+00:00",
-    "note": "",
+    "note": "third-party LinkedIn post",
     "quote": "has relocated their corporate headquarters from Woburn, Massachusetts to 10 Iron Horse Drive, Bedford, New Hampshire",
     "excerpt_words": "bergeron 1y report this post massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate headquarters from woburn massachusetts to 10 iron horse drive bedford new hampshire the company has leased approximately 50 000 square feet and will be employing 50 people gregstrom corporation owner jeff didonato chose new hampshire based on"
+   },
+   {
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7394382058858434560/",
+    "via": "curl",
+    "http_status": 200,
+    "bytes": 190253,
+    "sha256": "2946daee546045ba05be9dd05b0d21d38792f3c0b85eae0b79e9f36cb372f634",
+    "fetched_at": "2026-11-14T17:52:07+00:00",
+    "note": "the post date",
+    "quote": "relocated to southern New Hampshire November 12, 2025, Bedford, NH. Gregstrom Corporation",
+    "excerpt_words": "massachusetts manufacturing company relocated to southern new hampshire november 12 2025 bedford nh gregstrom corporation a plastic forming manufacturing company has relocated their corporate michael bergeron 26 comments agree join linkedin by clicking continue to join or sign in you"
    },
    {
     "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
@@ -913,6 +992,7 @@
  },
  {
   "id": "A10-048",
+  "key_fact": "The organizer's speaker page lists the Dow speaker and its event page states Savannah, GA, December 7-9, 2026.",
   "grade": "AGREE",
   "fields": "",
   "settling_fact": "",

@@ -41,10 +41,10 @@
   "A UNRESOLVED / B AGREE": 1
  },
  "final_counts": {
-  "AGREE": 46,
+  "AGREE": 45,
   "CREATION_ERROR": 0,
   "FIELD_ERROR": 2,
-  "UNRESOLVED": 2
+  "UNRESOLVED": 3
  },
  "frame_records": 1621,
  "leads": {
@@ -72,6 +72,18 @@
   ],
   "note": "rows at HEAD 4ecc7cf (including the sampled one) with the same edition_dates value as the confirmed error; the rest are unsampled, a lead for the controller and not a measured rate"
  },
+ "main_recheck": {
+  "EVP_001297_edition_dates": "2026-09-28 to 2026-10-01",
+  "PROG_000314_description_has_michigan": true,
+  "PROG_000314_public_door_url": "https://monet.duke.edu/",
+  "PROG_000314_url": "https://monet.duke.edu/",
+  "main_sha": "304f50ed3060c1f1c1208402a4f76f46c69156a2"
+ },
+ "repo_facts": {
+  "nonohio_university_polymer_program_false_rows": 134,
+  "schema_4_2_status_vocabulary_has_relocated_in_scope": true,
+  "schema_v1_13_dated_2026_11_12_adds_fiber_formation": true
+ },
  "reviewer_a_counts": {
   "AGREE": 45,
   "FIELD_ERROR": 4,
@@ -84,7 +96,7 @@
  "sample_records": 50,
  "sensitivity_weighted": {
   "confirmed_only": 0.04611351017890191,
-  "unresolved_counted_as_errors": 0.07083709011531343
+  "unresolved_counted_as_errors": 0.07145399326151948
  },
  "strata": [
   {
@@ -202,8 +214,8 @@
    "table": "ecosystem"
   },
   {
-   "AGREE": 2,
-   "AGREE_rate": 1.0,
+   "AGREE": 1,
+   "AGREE_rate": 0.5,
    "AGREE_wilson95": null,
    "CREATION_ERROR": 0,
    "CREATION_ERROR_rate": 0.0,
@@ -211,8 +223,8 @@
    "FIELD_ERROR": 0,
    "FIELD_ERROR_rate": 0.0,
    "FIELD_ERROR_wilson95": null,
-   "UNRESOLVED": 0,
-   "UNRESOLVED_rate": 0.0,
+   "UNRESOLVED": 1,
+   "UNRESOLVED_rate": 0.5,
    "UNRESOLVED_wilson95": null,
    "census": true,
    "confirmed_error": 0,
@@ -334,17 +346,17 @@
   ]
  },
  "unweighted_counts": {
-  "AGREE": 46,
+  "AGREE": 45,
   "CREATION_ERROR": 0,
   "FIELD_ERROR": 2,
-  "UNRESOLVED": 2
+  "UNRESOLVED": 3
  },
  "unweighted_note": "simple pooled counts; the sample over-represents small strata (census sites and organizations), so use the weighted estimate for the frame",
  "unweighted_rates": {
-  "AGREE": 0.92,
+  "AGREE": 0.9,
   "CREATION_ERROR": 0.0,
   "FIELD_ERROR": 0.04,
-  "UNRESOLVED": 0.04
+  "UNRESOLVED": 0.06
  },
  "weighted_to_frame": {
   "confirmed_error_point": 0.04611351017890191,
@@ -355,10 +367,10 @@
   "kish_effective_n": 42.5475469268597,
   "note": "design-weighted estimate for the 1,621-record frame; the interval is the Wilson interval at the Kish effective sample size, an approximation",
   "point": {
-   "AGREE": 0.9291629098846865,
+   "AGREE": 0.9285460067384805,
    "CREATION_ERROR": 0.0,
    "FIELD_ERROR": 0.04611351017890191,
-   "UNRESOLVED": 0.024723579936411524
+   "UNRESOLVED": 0.02534048308261757
   }
  }
 }

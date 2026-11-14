@@ -1,7 +1,7 @@
 """Phase 3 statistics for blind audit 10: final grade per sampled record, per-stratum and weighted rates, Wilson intervals, corrections.
 Unit: sampled record (one row of sample.csv). Unresolved stays in every denominator and is never agreement.
 Run: python3 stats.py   (writes final_grades.csv and statistics.json from sample.csv, verdicts_a/b.csv and adjudication.json)"""
-import csv, json, math
+import csv, json, math, subprocess
 from collections import Counter
 from pathlib import Path
 import frame as F
@@ -86,6 +86,27 @@ def leads():
     return dict(event_participation_rows_with_the_TPO_2026_end_date_2026_10_01=same, note='rows at HEAD 4ecc7cf (including the sampled one) with the same edition_dates value as the confirmed error; the rest are unsampled, a lead for the controller and not a measured rate')
 
 
+MAIN_SHA = '304f50ed3060c1f1c1208402a4f76f46c69156a2'  # origin/main after #330, checked 2026-11-14
+
+
+def repo_facts():
+    """Repo facts the report states, recomputed at the pinned HEAD (reviewer A's copies came from a stale checkout)."""
+    eco = F.rows_at(F.HEAD, 'data/ecosystem.csv')
+    schema = subprocess.check_output(['git', 'show', f'{F.HEAD}:docs/SCHEMA.md'], cwd=F.ROOT).decode()
+    s42 = schema.split('### 4.2 Status vocabulary')[1].split('### 4.3')[0]
+    return dict(nonohio_university_polymer_program_false_rows=sum(1 for r in eco if r['ecosystem_subtype'] == 'university_college' and r['state'] != 'OH' and r['polymer_program'] == 'false'),
+                schema_4_2_status_vocabulary_has_relocated_in_scope='relocated_in_scope' in s42,
+                schema_v1_13_dated_2026_11_12_adds_fiber_formation='v1.13 \u2014 2026-11-12' in schema and '`fiber_formation`' in schema)
+
+
+def main_recheck():
+    """The two confirmed corrections' current values, re-read on the later main (#330 merged after the pin)."""
+    ep = {r['participation_id']: r for r in F.rows_at(MAIN_SHA, 'data/event_participation.csv')}
+    pg = {r['program_id']: r for r in F.rows_at(MAIN_SHA, 'data/programs.csv')}
+    return dict(main_sha=MAIN_SHA, EVP_001297_edition_dates=ep['EVP-001297']['edition_dates'], PROG_000314_url=pg['PROG-000314']['url'],
+                PROG_000314_public_door_url=pg['PROG-000314']['public_door_url'], PROG_000314_description_has_michigan='Michigan' in pg['PROG-000314']['description_1line'])
+
+
 def main():
     final = final_grades()
     sample = read('sample.csv')
@@ -94,7 +115,7 @@ def main():
     a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
     res.update(reviewer_a_counts=dict(Counter(a.values())), reviewer_b_counts=dict(Counter(b.values())),
                cross_tab={f'A {x} / B {y}': n for (x, y), n in sorted(Counter((a[i], b[i]) for i in a).items())},
-               final_counts={g: sum(1 for r in final if r['final_grade'] == g) for g in GRADES}, corrections=corrections(adj), leads=leads())
+               final_counts={g: sum(1 for r in final if r['final_grade'] == g) for g in GRADES}, corrections=corrections(adj), leads=leads(), repo_facts=repo_facts(), main_recheck=main_recheck())
     with (H / 'final_grades.csv').open('w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=list(final[0]), lineterminator='\n')
         w.writeheader()

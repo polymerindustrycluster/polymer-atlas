@@ -120,18 +120,8 @@ def check_leak_scan_catches(rows):
 LOCKED = {'verdicts_a.csv': 'dfd8f49021143b9e36df8584ad08141eee871e367fd057aec91bf2ff3969cf4e', 'verdicts_b.csv': '60efe428329df94808d517e08adab740ebdc6008b43d618b13e97bd53757d7bc'}
 
 
-def check_phase3():
-    for p, h in LOCKED.items():  # the reviewers' locked files, as BOARD recorded them
-        # the reviewers wrote CRLF; the repo rule (*.csv eol=lf) stores LF. The change is exactly invertible (every LF is a CRLF pair), so restore CRLF and compare to the lock hash
-        raw = (H / p).read_bytes()
-        assert hashlib.sha256(raw.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')).hexdigest() == h, f'{p} changed after the reviewer lock'
-        assert b'\r' not in raw.replace(b'\r\n', b'') and raw.replace(b'\r\n', b'\n').count(b'\n') == 51, f'{p}: line structure changed'
-    a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
-    assert len(a) == len(b) == 50 and a.keys() == b.keys()
-    assert Counter(a.values()) == {'AGREE': 45, 'FIELD_ERROR': 4, 'UNRESOLVED': 1} and Counter(b.values()) == {'AGREE': 37, 'UNRESOLVED': 13}
-    assert Counter((a[i], b[i]) for i in a) == {('AGREE', 'AGREE'): 36, ('AGREE', 'UNRESOLVED'): 9, ('FIELD_ERROR', 'UNRESOLVED'): 4, ('UNRESOLVED', 'AGREE'): 1}
-    adj = json.loads((H / 'adjudication.json').read_text())
-    assert {e['id'] for e in adj} == {i for i in a if a[i] != b[i]} and len(adj) == 14, 'adjudication does not cover exactly the disagreements'
+def verify_receipts(adj):
+    """(receipts verified on a stored full body, receipts verified on the committed excerpt only). Absence and raw-pattern receipts need the body."""
     full = missing = 0
     for e in adj:
         assert e['grade'] in ST.GRADES and (e['grade'] != 'UNRESOLVED' or e['settling_fact']) and (e['grade'] != 'FIELD_ERROR' or (e['current_value'] and e['correct_value']))
@@ -151,6 +141,22 @@ def check_phase3():
             else:
                 missing += 1
                 assert not r.get('absent') and not r.get('raw_re'), f"absence/raw receipt cannot be verified without the stored body: {r['url']}"
+    return full, missing
+
+
+def check_phase3():
+    for p, h in LOCKED.items():  # the reviewers' locked files, as BOARD recorded them
+        # the reviewers wrote CRLF; the repo rule (*.csv eol=lf) stores LF. The change is exactly invertible (every LF is a CRLF pair), so restore CRLF and compare to the lock hash
+        raw = (H / p).read_bytes()
+        assert hashlib.sha256(raw.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')).hexdigest() == h, f'{p} changed after the reviewer lock'
+        assert b'\r' not in raw.replace(b'\r\n', b'') and raw.replace(b'\r\n', b'\n').count(b'\n') == 51, f'{p}: line structure changed'
+    a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
+    assert len(a) == len(b) == 50 and a.keys() == b.keys()
+    assert Counter(a.values()) == {'AGREE': 45, 'FIELD_ERROR': 4, 'UNRESOLVED': 1} and Counter(b.values()) == {'AGREE': 37, 'UNRESOLVED': 13}
+    assert Counter((a[i], b[i]) for i in a) == {('AGREE', 'AGREE'): 36, ('AGREE', 'UNRESOLVED'): 9, ('FIELD_ERROR', 'UNRESOLVED'): 4, ('UNRESOLVED', 'AGREE'): 1}
+    adj = json.loads((H / 'adjudication.json').read_text())
+    assert {e['id'] for e in adj} == {i for i in a if a[i] != b[i]} and len(adj) == 14, 'adjudication does not cover exactly the disagreements'
+    full, missing = verify_receipts(adj)
     final = ST.final_grades()
     assert read('final_grades.csv') == [{k: str(v) for k, v in r.items()} for r in final], 'final_grades.csv != recomputation'
     sample = read('sample.csv')
@@ -158,7 +164,9 @@ def check_phase3():
     stored = json.loads((H / 'statistics.json').read_text())
     for k, v in res.items():
         assert json.loads(json.dumps(v)) == stored[k], f'statistics.json {k} != recomputation'
-    assert stored['final_counts'] == {'AGREE': 46, 'FIELD_ERROR': 2, 'CREATION_ERROR': 0, 'UNRESOLVED': 2}
+    assert stored['final_counts'] == {'AGREE': 45, 'FIELD_ERROR': 2, 'CREATION_ERROR': 0, 'UNRESOLVED': 3}
+    assert stored['repo_facts'] == ST.repo_facts() and stored['repo_facts']['nonohio_university_polymer_program_false_rows'] == 134 and all(v for k, v in stored['repo_facts'].items() if k != 'nonohio_university_polymer_program_false_rows')
+    assert stored['main_recheck'] == ST.main_recheck() and stored['leads'] == ST.leads(), 'repo facts or later-main recheck differ from recomputation'
     assert ST.wilson(0, 20) == [0, 0.161125] and ST.wilson(20, 20) == [0.838875, 1] and ST.wilson(10, 20) == [0.299298, 0.700702]
     assert stored['corrections'] == ST.corrections(adj) and len(stored['corrections']) == 2
     dups, n = SC.duplicates()
@@ -172,6 +180,18 @@ def check_phase3():
         except AssertionError:
             continue
         raise AssertionError('summarize accepted an incomplete or duplicated verdict census')
+    # the persist directory missing must fail loudly on absence receipts, never pass silently
+    import tempfile
+    real = AF.RAW
+    AF.RAW = Path(tempfile.mkdtemp())
+    try:
+        verify_receipts(adj)
+    except AssertionError:
+        pass
+    else:
+        raise AssertionError('receipts verified without any stored body')
+    finally:
+        AF.RAW = real
     short = copy.deepcopy(adj)
     short[0]['receipts'][0]['excerpt_words'] = 'nothing relevant'
     assert not AF.quote_in_order(short[0]['receipts'][0]['excerpt_words'], short[0]['receipts'][0]['quote']), 'raw-check accepted a quote that is not on the page'
