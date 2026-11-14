@@ -439,6 +439,7 @@
     "fluoropolymers",
     "foams_polymeric",
     "inks_colorants_masterbatch",
+    "liquid_crystals",
     "melamine_urea_formaldehyde",
     "natural_rubber_nr",
     "neoprene_cr",
@@ -563,7 +564,10 @@
    "governs": "people_identifiers.identifier_type",
    "section": "SCHEMA §4.21 (v1.10)",
    "values": [
-    "ORCID"
+    "GITHUB",
+    "GOOGLE_SCHOLAR",
+    "ORCID",
+    "WOS_RESEARCHER_ID"
    ]
   },
   "PROCESSES": {
@@ -595,6 +599,7 @@
     "compression_molding",
     "custom_compounding",
     "die_cutting_converting",
+    "dyeing_finishing",
     "extrusion_film_blown",
     "extrusion_film_cast",
     "extrusion_pipe_tube",
@@ -603,6 +608,7 @@
     "extrusion_unspecified",
     "extrusion_wire_cable_coating",
     "fabrication_unspecified",
+    "fiber_formation",
     "fluoropolymer_lining",
     "foam_extrusion",
     "foam_fabrication",
@@ -716,6 +722,7 @@
     "composites_mechanics",
     "degradation_biodegradation",
     "elastomer_science",
+    "liquid_crystals",
     "membranes_separations",
     "polymer_physics",
     "polymer_synthesis",
@@ -818,7 +825,8 @@
     "contradicts",
     "supports_A",
     "supports_B",
-    "supports_C"
+    "supports_C",
+    "supports_U"
    ]
   },
   "VERIFICATION_TIER": {

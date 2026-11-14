@@ -1,0 +1,11 @@
+program_id,field,proposed_value,verdict,witness_quote,source_url,note
+PROG-000150,research_areas,,REFUSED,,,"Workforce AAS; no research statements on the program's own pages. Curriculum lines (PET plastics-process courses on a legacy pathway sheet) do not set research areas."
+PROG-000150,specialty_processes,,REFUSED,,,"No §3.1 process is named in a program-level statement retrievable this pass; course titles alone were not coded."
+PROG-000150,specialty_materials,,REFUSED,,,"No §3.2 family is stated on the program's own pages."
+PROG-000150,facilities_note,,REFUSED,,,"No publicly stated labs/equipment for the program found on the institution's own pages this pass."
+PROG-000150,scale_band,,REFUSED,,,"No published program enrollment; nothing converts under the SCHEMA v1.13 rule."
+PROG-000151,research_areas,,REFUSED,,,"Certificate; research areas rest on research statements, not curriculum lines — none exist for this workforce certificate."
+PROG-000151,specialty_processes,,REFUSED,,,"No §3.1 process named in a program-level statement retrievable this pass."
+PROG-000151,specialty_materials,,REFUSED,,,"No §3.2 family stated on the program's own pages."
+PROG-000151,facilities_note,,REFUSED,,,"No publicly stated labs/equipment for the certificate found this pass."
+PROG-000151,scale_band,,REFUSED,,,"No published enrollment; nothing converts."
