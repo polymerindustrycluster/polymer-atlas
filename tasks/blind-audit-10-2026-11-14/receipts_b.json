@@ -1,0 +1,548 @@
+[
+  {
+    "url": "https://catalog.cornell.edu/graduate-school/fiber-science-apparel-design/",
+    "http_status": 202,
+    "fetched_at": "2026-11-14T17:12:11.066442+00:00",
+    "sha256": "7c11f546c4bdec90977678807c477b7aac96f4950da80e9839f291ae9c497318"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-8559-2783/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:11.911380+00:00",
+    "sha256": "66049a30419b79333c882c088b7a61501298ca6fc18f3ec9d43aa25aabaf1458"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0001-6484-872X/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:12.027113+00:00",
+    "sha256": "2ec784210e9754d5d97b78596f85dc2577e34b0b3ba42f7604e8c66f8e5d6035"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-9331-6535/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:12.490427+00:00",
+    "sha256": "fe1e055b7c6d345b337b36ca187a93310cb435f4492a3fc320c3a026044d7ac3"
+  },
+  {
+    "url": "https://eng.auburn.edu/cpac/academics",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:13.075926+00:00",
+    "sha256": "1484245962eeb1e5b42baa06d087632c0aa7babaea51d93c070388bc031ba562"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0003-1298-2876/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:13.532896+00:00",
+    "sha256": "3d5e584ec5311a16dc574bc4ff6d2aa0ea57fdb2b379ef9792d7750c2da64646"
+  },
+  {
+    "url": "https://www.nist.gov/people/katherine-evans",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:13.722114+00:00",
+    "sha256": "461240500c9572f72f6aaabe4714ccd609204ee430f7a97171ea80d4aca48b57"
+  },
+  {
+    "url": "https://eng.auburn.edu/online/degree-offerings/chen",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:14.762049+00:00",
+    "sha256": "100c63604ead1c5ef0eb3955e11d75a11924f9d5a1092dd4f63211c8eb97034e"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-0594-5025/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:15.554725+00:00",
+    "sha256": "6f97350f577578599f2964a142d4a1f47dd0f2e4b8b59b3beaf5e496a5e1d8b4"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-6953-4970/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:15.909091+00:00",
+    "sha256": "f7588f7fc2b514cf3f800607c7be64b3153807f27732fa6c7b49b1ff483c3ac2"
+  },
+  {
+    "url": "https://www.mse.cornell.edu/faculty-directory",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:25.534226+00:00",
+    "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1"
+  },
+  {
+    "url": "https://nextflex.us/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:29.399600+00:00",
+    "sha256": "9a6ebcef96d3d4b7af4e1c4dea44e598abd3699c670bec73a9d45c1cf1816bd6"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-3935-7467/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:29.547286+00:00",
+    "sha256": "2a194d8eed017b54afcb8da51d3728a493c524a5c2e9feb36161d066e9398e51"
+  },
+  {
+    "url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:29.751413+00:00",
+    "sha256": "b5274ba75aa96aa9b215699d2780278c1691269f0d6102e5e0d8ae0c7ec28ee9"
+  },
+  {
+    "url": "https://cse.umn.edu/cems/tim-lodge",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:31.091778+00:00",
+    "sha256": "0fe15405b46416ca23692c6773dd679644b8e8afc2f172a0a351279733ca0b55"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-7197-0085/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:31.205079+00:00",
+    "sha256": "cd3760885de9862f59ca240511ec89ee76215b544ae415583b6986b4a54f1021"
+  },
+  {
+    "url": "https://bulletin.auburn.edu/undergraduate/faculty/faculty.pdf",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:31.596699+00:00",
+    "sha256": "5b7a409339387e7043d0606d60820566667bf3a4f047bc6ab32509f416aa09ba"
+  },
+  {
+    "url": "https://www.nextflex.us/technology-hub/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:32.015950+00:00",
+    "sha256": "297f1af93a8dcc2b7ff29c8d6215c932063b915eb455036fabeb99771a97785b"
+  },
+  {
+    "url": "https://lodge.cems.umn.edu",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:34.035861+00:00",
+    "sha256": "5ddc7c26b216f1cd4a473de57e949a5193164db58718537f7fee5dfdd47954c7"
+  },
+  {
+    "url": "https://eng.auburn.edu/cpac/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:34.369939+00:00",
+    "sha256": "144416eedc2f83c1e33fa33b84a1ceb7938df7da9fea4e12c7da4de9fbc4524d"
+  },
+  {
+    "url": "https://mrsec.umn.edu/research/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:37.051440+00:00",
+    "sha256": "3089e70ab6fe2565665405238738753689efb1017683a63471087b2dda93d248"
+  },
+  {
+    "url": "https://affoa.org/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:39.159167+00:00",
+    "sha256": "09a6aace4cc27a370ee2f7ccc6025386e50be6508ff8f2280e79fd4b6f7686b7"
+  },
+  {
+    "url": "https://www.eng.auburn.edu/directory/adanusa.html",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:39.434809+00:00",
+    "sha256": "24f3a1d2c9d6288b0767315c3256760d0ca225127499263ccf9f704ba4bbe5bd"
+  },
+  {
+    "url": "https://www.omgitaly.com/agenti-e-distributori",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:40.766257+00:00",
+    "sha256": "d1694ccbc75dee4ef77739c75127c7b96cc4098b0fc6cb680be2ab52fa9af6d1"
+  },
+  {
+    "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:41.090645+00:00",
+    "sha256": "4aa0e302ff1877e213dd611526577ace87aa0e7ba7ddc57b30699c7acf333168"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-1229-6078/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:42.437396+00:00",
+    "sha256": "d7d9bbf104fdf4e5d774d41e11a10d4b5db461aa319764c22c7aeabda47cc6e7"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0001-7966-1239/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:42.491675+00:00",
+    "sha256": "d97f580454bbaa4f995bcb143a2c42e970391108f816330d45f846044ea4ed3e"
+  },
+  {
+    "url": "http://omgitaly.com/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:42.585318+00:00",
+    "sha256": "3fbb7b65d3bfd63ceb3e4f676b8f28667ea161fd504622601f93dccdbb7dcb0c"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0003-3872-1463/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:42.702663+00:00",
+    "sha256": "5d50b81e2c56a7a210bfe74d153052fb03b36e1c239b331cdb9465dacae011b6"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-2990-923X/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:44.238763+00:00",
+    "sha256": "3a80ba9fc18e1fee305b32234108437c34ed5e14e1e6218b2e445aa132b97922"
+  },
+  {
+    "url": "https://physics.wfu.edu/research/condensed-matter/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:45.426314+00:00",
+    "sha256": "496b99147f79f91c72d026223fd16b3e14bbdd2eefcaac0b66bc151f04bf4c26"
+  },
+  {
+    "url": "https://www.kent.edu/amlci/news/nsf-awards-kent-state-researcher-nearly-1-million-separate-liquid-crystal-studies",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:45.677705+00:00",
+    "sha256": "13b8362154396024a1ea648d49871a241d99caa5bbc546398e1f559de11183ef"
+  },
+  {
+    "url": "https://auto-tpo.com/wp-content/uploads/2026/09/2026-Sponsorship-Lay-out-Sept-14-2026-Rev3.pdf",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:46.147931+00:00",
+    "sha256": "ba9666276b9e0be05241f6c05464f087fac4f00545b48a4b769052831ce5b563"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-3083-7907/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:46.892537+00:00",
+    "sha256": "d9c2688019956eaa5f37bd578acfd4af67fa3ae78f8b8e566d0d56c559967ddc"
+  },
+  {
+    "url": "https://pweus26.mapyourshow.com/8_0/exhibitor/exhibitor-list.cfm?export=pdf",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:48.280600+00:00",
+    "sha256": "b1350490ca9ce62b9b8ff2c25765852ab3991bd8e79ca2c36c3d419440af6b91"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0001-6714-4410/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:48.655322+00:00",
+    "sha256": "0b970b9424f891961ea12c794148a7fac06756239b3866eec6c91a462053c0a8"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-8692-4268/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:49.260944+00:00",
+    "sha256": "73fe22371e443f88b952a8e2ff512d17a1f8d74bbcfb69236f6e8f6bcf3fff25"
+  },
+  {
+    "url": "https://www.duffield.cornell.edu/events/mae-colloquium-jj-yeo-cornell-mae/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:50.396043+00:00",
+    "sha256": "be88589690b6ea328baea8c3c0115ca389429747d199b50962deefb1261e6460"
+  },
+  {
+    "url": "https://www.nist.gov/people/paul-salipante",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:51.155330+00:00",
+    "sha256": "842b53d4c69da671f19885f4b9a1f59ebf748b08105d40f457dd0dc603eb50d6"
+  },
+  {
+    "url": "https://spaepen.seas.harvard.edu/",
+    "http_status": 403,
+    "fetched_at": "2026-11-14T17:12:51.595188+00:00",
+    "sha256": "17f07b5124b00d052fc2445bb54d42f9a39d5824589dd250411c392e87031fd0"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0003-3605-6404/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:51.971890+00:00",
+    "sha256": "82977ada493bab96e66a06486b231b9f1a4b879383e2d541385354ff29f1cfb6"
+  },
+  {
+    "url": "https://engineering.case.edu/materials-branch/faculty",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:52.027547+00:00",
+    "sha256": "de71267c8cb0532465c944788f9fc129010b38989ba3c20fb08a08934484837e"
+  },
+  {
+    "url": "https://seas.harvard.edu/index%2Ephp/person/frans-spaepen",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:52.705234+00:00",
+    "sha256": "366428d69e95bd5a037a8413d1db891e148389c3972385513ba626106020ac9c"
+  },
+  {
+    "url": "https://www.mrsec.harvard.edu/pages/faculty.php",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:54.790636+00:00",
+    "sha256": "8aaac32c31ad20f8b53c3e04cf022790068efb44ea3b91fc23e20792494449ba"
+  },
+  {
+    "url": "https://www.rotomolding.org/rotomolder-members/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:55.655654+00:00",
+    "sha256": "db6a23d01be73d8612d8ba4186ba154d58c28358362c7848bfde3a774ec39f8b"
+  },
+  {
+    "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:55.809878+00:00",
+    "sha256": "b74df2a11a9111f8c99ffabd2b7cc8776ac660a4e1c9c9718572bfa7f8dfecc8"
+  },
+  {
+    "url": "https://www.omgitaly.com/agenti-e-distributori",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:55.838608+00:00",
+    "sha256": "d1694ccbc75dee4ef77739c75127c7b96cc4098b0fc6cb680be2ab52fa9af6d1"
+  },
+  {
+    "url": "https://www.wfu.edu/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:56.266730+00:00",
+    "sha256": "95945f63097e312ef1f6f2fd6c8c885541d83abeddfd455ed28d812ae5fcc125"
+  },
+  {
+    "url": "https://www.umass.edu/polymer-science/about/directory/murugappan-muthukumar",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:57.004026+00:00",
+    "sha256": "0fc8697ec4f9932f93335f1f07c6f31900df6eb74f0f0be36083d01a22df57af"
+  },
+  {
+    "url": "https://www.umass.edu/polymer-science/faculty",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:57.077642+00:00",
+    "sha256": "b90f262a5286cbc1c987d4883a6fe440b2c6bc4e0d6b4ebdb0336fef00a241f1"
+  },
+  {
+    "url": "https://www.mse.cornell.edu/faculty-directory",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:57.890618+00:00",
+    "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1"
+  },
+  {
+    "url": "https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:58.172667+00:00",
+    "sha256": "0e370bfa540bded26177333fa6aa4a7a5e6c814ff3a052b8758303b1c81d2995"
+  },
+  {
+    "url": "https://www.engineering.cornell.edu/faculty-directory/christopher-k-ober",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:58.645801+00:00",
+    "sha256": "2f90aaf39346511a4584c62942f510336f567998fbeffd5c6c9d47115c8070c8"
+  },
+  {
+    "url": "https://www.kent.edu/amlci/people",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:58.955777+00:00",
+    "sha256": "934f8dacabb89af561e67f59206119d5c8d4a154a5a672a2add9bc4341e0e101"
+  },
+  {
+    "url": "https://research.utk.edu/iamm/research-areas/polymer-science/",
+    "http_status": 403,
+    "fetched_at": "2026-11-14T17:12:59.366011+00:00",
+    "sha256": "faf8cc938db19a5642efd94e3c2d88e29aefca0eebfae39340ad055862239b1b"
+  },
+  {
+    "url": "https://ptxpo28.mapyourshow.com/8_0/explore/exhibitor-alphalist.cfm?alpha=*",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:12:59.838560+00:00",
+    "sha256": "a0111c1420225fc167facaacd90a3b169e33f2c174c7b64eb7ea0919bc80dbd6"
+  },
+  {
+    "url": "https://tickle.utk.edu/mae/research/labs-and-centers/",
+    "http_status": 403,
+    "fetched_at": "2026-11-14T17:12:59.846739+00:00",
+    "sha256": "44b18ffdb885ba616d665fa75e6ec8c8728e8bf0548d6e3d218e01265185e5f8"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0001-5617-9220/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:00.699841+00:00",
+    "sha256": "d0aa5af3538a8df3cf500b3806e28f9e44c81af8245f3fbd6d6659f8e75ce23c"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0001-6482-543X/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:01.363661+00:00",
+    "sha256": "63d9ba92ace5de08a8c5635b185224d3c9f7fca4dcda6ebbd531428d80b35da9"
+  },
+  {
+    "url": "https://gregstrom.com/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:01.450943+00:00",
+    "sha256": "7b4397a4a2b83276d540ad3723cf5d65d96c6239987562cbdbc7363000776843"
+  },
+  {
+    "url": "https://ibeam.brown.edu/people/vikas-srivastava",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:01.455499+00:00",
+    "sha256": "7c00b0ed2fa9b19165ee3de61d214348b41320eda7fbc6370753c44e8e27c63b"
+  },
+  {
+    "url": "https://ppsm.mit.edu/faculty/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:01.869171+00:00",
+    "sha256": "7749fad892c3a9b8ff9f346e4fd5f9ff1d98359be0ef2820eca634cc98e04b50"
+  },
+  {
+    "url": "https://www.nist.gov/mml/materials-science-and-engineering-division/polymers-and-complex-fluids-group",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:02.404443+00:00",
+    "sha256": "4e7a197944e7b3d467251672acd724ee3d088e36523bbd4721187e6f8cfc5c1f"
+  },
+  {
+    "url": "https://research.utk.edu/iamm/research-areas/",
+    "http_status": 403,
+    "fetched_at": "2026-11-14T17:13:02.451280+00:00",
+    "sha256": "eb833bb221c9dad0ab8496cc564563268a47c942695f9286415e5bf3e87e35a8"
+  },
+  {
+    "url": "https://dmi.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:02.809105+00:00",
+    "sha256": "f8d1281200732dc1d6327b40232ea3d62570fdf7f6a8cf55d198c8900ea70b35"
+  },
+  {
+    "url": "https://spe-stx.org/wp-content/uploads/2026/03/Exhibitors-2026.csv",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:03.392814+00:00",
+    "sha256": "54701f706482031fbb7202d1d285f20b2617618c74b7bcd9498060f0893702e2"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-0572-7108/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:03.403012+00:00",
+    "sha256": "efeb11f8a552865e319d920f27ddf0beb24a3e0bea3b9d18988b930d36902130"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0002-2650-0746/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:03.655141+00:00",
+    "sha256": "5d84c4956df7d1965bbfc0cc809f8ceaf4c7ce04f2b07705687b4bc4c0560d67"
+  },
+  {
+    "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:04.075483+00:00",
+    "sha256": "15dcda71f0d2a333e2641223c2218d99a179187e00f32177e47feb7a1dbc02f6"
+  },
+  {
+    "url": "https://pub.orcid.org/v3.0/0000-0001-6746-8634/record",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:04.621715+00:00",
+    "sha256": "0eab27c9832c261c4e2d75b10926aa56ccea1b524d95639fdc170ec6a4212622"
+  },
+  {
+    "url": "https://chem.duke.edu/news",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:08.664297+00:00",
+    "sha256": "f20b52b054ba868737dd4911e51802021482e8b4a1493c4eaedd3ea12ed295e9"
+  },
+  {
+    "url": "https://www.aphms.caltech.edu/people/jak",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:08.840172+00:00",
+    "sha256": "3d5ba17f446a630d08a5de6a79d7dab659cc0404faaa0108b9f2eb01bb211a77"
+  },
+  {
+    "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/speakers",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:09.006578+00:00",
+    "sha256": "084450e0157c57c167c21f0f61fd781ff86c8b7c8044fb9b5d91e338c6b9fe4b"
+  },
+  {
+    "url": "https://dmse.mit.edu/news/aristide-gumyusenge-will-receive-the-2026-pmse-early-investigator-award/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:12.472730+00:00",
+    "sha256": "7bc8a489ca9733d01ac54b340e31d237d7710fbaea0be31435b92591f07e748b"
+  },
+  {
+    "url": "https://www.nsfcci.org/currentcenters-1",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:15.384499+00:00",
+    "sha256": "ce016c92a2b168b634bef681a2ba50bece3583f1e315af361f91d80bf96b3802"
+  },
+  {
+    "url": "https://mse.engineering.upenn.edu/faculty/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:15.642629+00:00",
+    "sha256": "a964463523c5cb818ab4f8436e39fb1c758d7f9857ccc65c97cecea1ab3484b1"
+  },
+  {
+    "url": "https://mse.engineering.upenn.edu/people/gradgroup/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:15.715782+00:00",
+    "sha256": "0686026ff7cf100b17cbc0ea9d266b0af5a1c48c004562186928e09baaeb3d30"
+  },
+  {
+    "url": "https://pme.uchicago.edu/faculty-research/lab-groups/patel-group",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:17.074210+00:00",
+    "sha256": "e9c5ee1eeae0217ab7a2bea85ae7ffe5c7d177e71e963fe8429b2a50b885c0ef"
+  },
+  {
+    "url": "https://dmse.mit.edu/people/faculty/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:18.989509+00:00",
+    "sha256": "d37405d89f30786166fadb1d9038260fe2ec2174a686769b15e9872e5851609b"
+  },
+  {
+    "url": "https://pme.uchicago.edu/directory/shrayesh-patel",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:20.130562+00:00",
+    "sha256": "045d68f080e3b2148738138ad7de0fffbdc6f913856e07eba083d68927d50192"
+  },
+  {
+    "url": "https://chem.vt.edu/people/faculty.html",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:25.451254+00:00",
+    "sha256": "291e2712d1d61b279cb60cabdad5f0b919494d30d58e23b4bdb48dfe0fbb4e86"
+  },
+  {
+    "url": "https://mii.vt.edu/people/faculty.html",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:45.747397+00:00",
+    "sha256": "cb2f14be41be7a500f115fff210ba7fb828d7def7ae1717dfcf8fe80d08df133"
+  },
+  {
+    "url": "https://engineering.brown.edu/people/vikas-srivastava",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:54.669849+00:00",
+    "sha256": "1145fb83bdf5eb8d28e51e971adcf27166f6ce89a02e62a2e0486d9569bfdba7"
+  },
+  {
+    "url": "https://gregstrom.com/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:55.421811+00:00",
+    "sha256": "65268e8aa1553baa7ae9a062ca40cc4f95638ce41cc6bdea4d8d13a2a08c7505"
+  },
+  {
+    "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:56.096528+00:00",
+    "sha256": "6dbddff30ec5ec647af8901da9dc9ee348e83d66c5bb27a9f1a8a1aca9e20a2d"
+  },
+  {
+    "url": "https://www.aphms.caltech.edu/people/jak",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:56.252496+00:00",
+    "sha256": "26bdf14a79bfa26e6003081112896dd16b4f05f60e82f747eba3a64d3d09a00e"
+  },
+  {
+    "url": "https://eng.auburn.edu/cpac/academics",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:56.654253+00:00",
+    "sha256": "1484245962eeb1e5b42baa06d087632c0aa7babaea51d93c070388bc031ba562"
+  },
+  {
+    "url": "https://www.mse.cornell.edu/faculty-directory",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:13:59.665680+00:00",
+    "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1"
+  },
+  {
+    "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/speakers",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:14:02.349324+00:00",
+    "sha256": "446eeb706248fb77f71ea544cd0e4e29530a9bf5846680a3be31c3ad5d0ada50"
+  },
+  {
+    "url": "https://mii.vt.edu/people/faculty.html",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:14:24.366122+00:00",
+    "sha256": "cb2f14be41be7a500f115fff210ba7fb828d7def7ae1717dfcf8fe80d08df133"
+  },
+  {
+    "url": "https://bulletin.auburn.edu/undergraduate/faculty/faculty.pdf",
+    "http_status": 200,
+    "fetched_at": "2026-11-14T17:14:37.023304+00:00",
+    "sha256": "5b7a409339387e7043d0606d60820566667bf3a4f047bc6ab32509f416aa09ba"
+  }
+]
