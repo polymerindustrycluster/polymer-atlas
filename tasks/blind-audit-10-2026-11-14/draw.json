@@ -1,0 +1,69 @@
+{
+ "allocation": {
+  "ecosystem": 3,
+  "event_participation": 4,
+  "organizations": 2,
+  "people": 13,
+  "people_identifiers": 21,
+  "programs": 4,
+  "sites": 3
+ },
+ "base": "1fefbd29ea2fa654a59bf4d1e0b9acc8470a010f",
+ "blind_fields": [
+  "blind_id",
+  "table",
+  "record_id",
+  "record_label",
+  "change_kind",
+  "columns_under_audit",
+  "values_json",
+  "context_json",
+  "cited_sources",
+  "evidence_json"
+ ],
+ "blind_whitelist_withheld": [
+  "as_of",
+  "claim_detail",
+  "created_by",
+  "evidence_date",
+  "evidence_id",
+  "last_activity_evidence_date",
+  "last_verified",
+  "notes",
+  "observed_date",
+  "source_class",
+  "tier_effect"
+ ],
+ "census_below": 5,
+ "event_participation_frame_rows_without_http_evidence_url": 0,
+ "floor": 3,
+ "frame_sizes": {
+  "ecosystem": 6,
+  "event_participation": 154,
+  "organizations": 2,
+  "people": 495,
+  "people_identifiers": 816,
+  "programs": 145,
+  "sites": 3
+ },
+ "head": "4ecc7cf87847fbee27111af4c56c9acf92e0c095",
+ "n": 50,
+ "no_public_url_records": 21,
+ "rng": "Python random.Random seeded by int(SHA256(seed|table)), rng.sample over record_ids sorted ascending; blind row order = shuffle seeded by SHA256(seed|order)",
+ "sample_by_change_kind": {
+  "changed": 16,
+  "created": 34
+ },
+ "sample_by_table": {
+  "ecosystem": 3,
+  "event_participation": 4,
+  "organizations": 2,
+  "people": 13,
+  "people_identifiers": 21,
+  "programs": 4,
+  "sites": 3
+ },
+ "seed": "BLIND-AUDIT-10-2026-11-14-v2",
+ "sources_scrubbed_to_urls": 2,
+ "supersedes": "v1 (seed BLIND-AUDIT-10-2026-11-14-v1, head 4fd98d7, receipts in superseded_v1/): its frame kept 32 ecosystem records whose only changes were the generated rollup columns; controller ruled them out 2026-11-14, so the frame shrank 1653 -> 1621 and the draw was redone"
+}
