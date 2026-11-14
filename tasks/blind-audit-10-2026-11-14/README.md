@@ -13,7 +13,11 @@ on 2026-12-14 if no one has read the phase 3 report by then.
 
 `python3 tasks/blind-audit-10-2026-11-14/check.py` — PASS recorded in the controller report. It needs full git history
 (the CI validate job checks out with `fetch-depth: 0`). It re-derives the frame from git, reconciles it, re-draws the
-sample from the seed, and checks that `blind_a.csv` equals `blind_b.csv`, the freeze hashes, and the leak scan. It also
+sample from the seed, and checks that `blind_a.csv` equals `blind_b.csv`, the freeze hashes, and the leak scan. It runs five
+known-answer tests on the derivation (Gregstrom HQ moves across shards as one changed record in #267 with its HQ columns
+flagged; `SITE-019101` created and `SITE-004416` changed; `PERSON-001402` deleted and absent from the frame; identifier
+rows attributed 804 to #259, 11 to #263, 1 to #271; `PROG-000305` created by #284), plus synthetic tests that a
+`tier1_qualifier`-only change is excluded, a content change kept, and a shard move alone is not a change. It also
 plants five defects (a PR number, an `EVD-` id, a "minted in wave 3" phrase, a packet/staging reference, a pass date) and
 a `pr` column in copies of the blind file, and each must be caught.
 
@@ -50,6 +54,9 @@ PR #257, so none exist); records changed only by evidence appends are outside th
 then-reverted 0; created-then-deleted 0; shard-move-only 0. Out-of-scope tables that also changed: `events.csv` (71 rows;
 64 rows gained a value in the new `pic_events_slug` column, 0 rows changed in any other column), `inclusion_log.csv`
 (22 rows appended). 12 frame records were touched by two PRs; the frame lists both PRs and the columns each changed.
+`git diff --numstat` shows +1,514/-1,455 lines in `people.csv` against 495 frame records, because SCHEMA v1.13 inserted
+the `lab_url` column and so rewrote every row (1,454 rows plus the header); frame membership compares parsed column
+values, not lines, so those rewrites do not count. Anyone rebasing people changes will hit that line-level conflict.
 
 **Reconciliation (AGENTS §2 rule 10c).** Derived creations per PR equal the counts the PR titles state outright, for all
 34 (PR, table) pairs a title gives (e.g. #259: 804 identifier rows; #263: 11; #293: 6 center rows; #297: 11 people and 2
@@ -125,7 +132,8 @@ freeze.
 
 Phase 2: two reviewers, each given only one blind file and no `council-ask` or OpenAI route (CONTRACT-CLAUDE), research
 every record fresh from primary or public sources (about 6 routes per record, quotes re-checked raw), lock a verdict per
-record before reading any evidence, and use the AGENTS §2 rule 8 grammar (VERIFIED, REJECT with the deciding fact,
+record before unblinding and before seeing the other reviewer's verdict (the cited sources and evidence URLs in the
+blind file are inputs to their research, not withheld), and use the AGENTS §2 rule 8 grammar (VERIFIED, REJECT with the deciding fact,
 STILL_UNCERTAIN with the settling fact, DUPLICATE_OF) per audited column. Phase 3 (lead): unblind, compare the two
 reviewers with the held evidence, adjudicate disagreements, and report per-table rates (unit and filter stated) with 95%
 Wilson intervals (z = 1.959964), census strata marked, using the audit-9 statistics code adapted for this frame.
