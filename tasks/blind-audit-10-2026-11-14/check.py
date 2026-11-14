@@ -122,7 +122,10 @@ LOCKED = {'verdicts_a.csv': 'dfd8f49021143b9e36df8584ad08141eee871e367fd057aec91
 
 def check_phase3():
     for p, h in LOCKED.items():  # the reviewers' locked files, as BOARD recorded them
-        assert sha(p) == h, f'{p} changed after the reviewer lock'
+        # the reviewers wrote CRLF; the repo rule (*.csv eol=lf) stores LF. The change is exactly invertible (every LF is a CRLF pair), so restore CRLF and compare to the lock hash
+        raw = (H / p).read_bytes()
+        assert hashlib.sha256(raw.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')).hexdigest() == h, f'{p} changed after the reviewer lock'
+        assert b'\r' not in raw.replace(b'\r\n', b'') and raw.replace(b'\r\n', b'\n').count(b'\n') == 51, f'{p}: line structure changed'
     a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
     assert len(a) == len(b) == 50 and a.keys() == b.keys()
     assert Counter(a.values()) == {'AGREE': 45, 'FIELD_ERROR': 4, 'UNRESOLVED': 1} and Counter(b.values()) == {'AGREE': 37, 'UNRESOLVED': 13}

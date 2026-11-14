@@ -150,7 +150,7 @@ freeze.
 Phase 2: two reviewers, each given one copy of the blind file and no OpenAI route for A (CONTRACT-CLAUDE), researched every record
 fresh, locked a verdict per record, and used the AGENTS section 2 rule 8 grammar. Locked outputs are copied here unchanged:
 `verdicts_a.csv` (sha256 `dfd8f490…cf4e`: 45 AGREE / 4 FIELD_ERROR / 0 CREATION / 1 UNRESOLVED) and `verdicts_b.csv`
-(`60efe428…d7bc`: 37 / 0 / 0 / 13), with each reviewer's receipts (`receipts_a.json`, `receipts_b.json`; A did not save page bodies).
+(`60efe428…d7bc`: 37 / 0 / 0 / 13), (sha256 of the reviewers' CRLF originals; the committed copies are the exact LF normalization the repo's `*.csv eol=lf` rule applies, and `check.py` restores CRLF before comparing), with each reviewer's receipts (`receipts_a.json`, `receipts_b.json`; A did not save page bodies).
 Cross-tab: both AGREE 36; A AGREE / B UNRESOLVED 9; A FIELD_ERROR / B UNRESOLVED 4; A UNRESOLVED / B AGREE 1.
 
 Phase 3 (lead): the 14 disagreements were re-researched from fresh raw fetches (`adjudicate_fetch.py` stores each body hash-named under
