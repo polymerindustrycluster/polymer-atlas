@@ -55,9 +55,8 @@ moving a tag. Release notes should state the git commit, the date, the counts
 ### Licensing in the bundle
 
 `datapackage.json` declares the **data** as CC BY 4.0 (README, Licensing
-section) and notes that the **scripts** are MIT. The repository has no
-`LICENSE` file at the time of writing; adding one is an owner decision and
-would go in by pull request. The licensed-source rule (AGENTS.md section 5)
+section) and notes that the **scripts** are MIT. The root `LICENSE`
+file (added 2026-11-06) puts the files under `data/` under CC BY 4.0. The licensed-source rule (AGENTS.md section 5)
 applies to releases as much as to the repo: nothing from Plastics News, D&B
 and similar sources may ride in a public bundle, and neither may any
 information that exists only in the PIC CRM (AGENTS.md sections 5.1 and 6).

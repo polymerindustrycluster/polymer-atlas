@@ -42,7 +42,7 @@ RELEASE = BUILD / "release"
 DB = BUILD / "polymer-atlas.db"
 
 REPO_URL = "https://github.com/polymerindustrycluster/polymer-atlas"
-SHARDED = ("organizations", "sites")
+SHARDED = ("organizations", "sites", "evidence")  # evidence sharded since pass 43b (2026-11-02)
 
 UNIT = {
     "organizations": "parent-organization rows (all HQ states and statuses)",
@@ -61,6 +61,10 @@ UNIT = {
     "code_assignments": "code-assignment rows",
     "ref_codes": "reference-code rows",
     "ref_code_map": "code-concordance rows",
+    "archive_links": "evidence archive-capture rows (§4.22)",
+    "equipment": "equipment rows",
+    "people_engagement": "people-engagement rows",
+    "people_identifiers": "person external-identifier rows (§4.21)",
 }
 
 # --- type inference -------------------------------------------------------
@@ -143,7 +147,7 @@ def ensure_build(mode):
 
 def single_tables():
     return sorted(Path(p).stem for p in data_inputs()
-                  if not re.match(r"(organizations|sites)_", Path(p).name))
+                  if not re.match(r"(organizations|sites|evidence)_", Path(p).name))
 
 
 def infer_field(table, col, values):
@@ -182,6 +186,7 @@ def build_descriptor(version, created, tables, counts):
     org_ids = ids[("organizations", "org_id")]
     site_ids = ids[("sites", "site_id")]
     eco_ids = ids.get(("ecosystem", "org_id"), set())
+    prog_ids = {r["program_id"] for r in tables["programs"][2]} if "programs" in tables else set()
 
     resources = []
     skipped_fk = []
@@ -199,6 +204,8 @@ def build_descriptor(version, created, tables, counts):
         for c in cols:
             if c == "site_id" or c.endswith("_site_id"):
                 target, tids, tpk = "sites", site_ids, "site_id"
+            elif c == "program_org_id":  # SCHEMA §4.9: FK to programs.csv since v1.3, despite the name
+                target, tids, tpk = "programs", prog_ids, "program_id"
             elif c == "org_id" or c.endswith("_org_id"):
                 target, tids, tpk = "organizations", org_ids, "org_id"
             else:
@@ -334,8 +341,7 @@ def main():
 
     created = datetime.datetime.now(datetime.timezone.utc).strftime(
         "%Y-%m-%dT%H:%M:%SZ")
-    order = ["organizations", "sites"] + sorted(
-        t for t in published if t not in SHARDED)
+    order = list(SHARDED) + sorted(t for t in published if t not in SHARDED)
     descriptor = build_descriptor(version, created,
                                   {t: published[t] for t in order}, counts)
     for res in descriptor["resources"]:
