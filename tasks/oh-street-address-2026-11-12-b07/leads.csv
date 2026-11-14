@@ -1,0 +1,3 @@
+site_id,lead_type,detail
+SITE-002037,address_overlap,ADDRESS-OVERLAP: SITE-002855 (ORG-002080 Mitsubishi Chemical Performance Polymers)
+SITE-000936,street_variant,"Guardian Manufacturing own site prints both 302 S. Conwell Ave and 302 Conwell Avenue, Willard 44890 (same street, direction prefix only on one). Filled 302 S. Conwell Ave."

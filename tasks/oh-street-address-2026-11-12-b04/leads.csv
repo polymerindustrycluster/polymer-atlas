@@ -1,0 +1,12 @@
+site_id,lead_type,detail
+SITE-001375,own_site_other_city_address,"recorded city West Salem; own pages print: 3773 State Road , Cuyahoga Falls, Ohio 44223"
+SITE-000009,zip_conflict,"own page https://www.geon.com prints 25777 Detroit Road, Suite 202; own-page ZIP 44145 conflicts with recorded ZIP 44131; need integrator ruling on the ZIP before the street is applied"
+SITE-000108,same_operator_same_address,SAME-ADDRESS sites: SITE-000107 (ORG-000108 HP Manufacturing — Cleveland)
+SITE-000112,zip_conflict,own page https://www.customrubbercorp.com/contact-us.aspx prints 1274 East 55th Street; own-page ZIP 44103 conflicts with recorded ZIP 44114; need integrator ruling on the ZIP before the street is applied
+SITE-000122,own_site_other_city_address,"recorded city Woodmere; own pages print: 38790 Glenlivet Court - Solon, OH 44139 || 38790 Glenlivet Court – Solon, OH 44139"
+SITE-000123,own_site_other_city_address,"recorded city Beachwood; own pages print: 23240 Chagrin Boulevard Suite 405 , Cleveland, OH 44122"
+SITE-000137,own_site_other_city_address,"recorded city Middleburg Heights; own pages print: 7875 Bliss Pkwy , North Ridgeville, OH 44039"
+SITE-000139,own_site_other_city_address,"recorded city Warrensville Heights; own pages print: 4520 Richmond Road , Cleveland, Ohio 44128"
+SITE-000150,own_site_other_city_address,"recorded city Warrensville Heights; own pages print: 4450 Cranwood Parkway , Cleveland, OH 44128 || 4564 Johnston Parkway , Cleveland, OH 44128"
+SITE-000167,own_site_other_city_address,"recorded city Beachwood; own pages print: 2628 Pearl Road , Medina, OH 44256 || 2628 Pearl Road, Medina, OH 44256"
+SITE-000359,own_site_other_city_address,"recorded city Cleveland; own pages print: 7500 East Pleasant Valley Road , Independence, Ohio 44131"
