@@ -1,0 +1,190 @@
+# Owner rulings — 2026-11-12
+
+Packet for held hygiene items and leftover skimpy-state scope/naming questions.
+Research date: 2026-11-12. Public professional facts only. No contact data, no paid calls, no licensed-directory republication.
+
+Each item that still needs a ruling has a recommended choice marked **(a)**. Items that are already settled on `main` are recorded as stale queue entries — no apply is proposed.
+
+This file does not edit Ohio data files.
+
+**Owner decision (2026-11-12, 12:51pm America/New_York):** the owner said: "Yes, go with your recommendation on all 9 rulings." Each of the nine items below is recorded as **OWNER-ACCEPTED (a)**, dated 2026-11-12, on that quote.
+
+Data changes authorized by those rulings are applied in a separate PR, https://github.com/polymerindustrycluster/polymer-atlas/pull/322 (branch `agent/grok/owner-rulings-apply-2026-11-12`), not in this packet PR. Holds stay holds. This file still does not edit Ohio data files.
+
+---
+
+## H-CHROMAFLO: Chromaflo Technologies → Vibrantz tombstone
+
+**QUEUE line (was open; marked done in the apply PR):** "Add tombstone parent record: Chromaflo Technologies → successor Vibrantz (ORG-000007)"
+
+**Deciding facts already on main:**
+- `ORG-000007` Vibrantz Technologies Inc. is the live successor (trade name Chromaflo Technologies; website vibrantz.com).
+- `ORG-013200` Chromaflo Technologies Corporation already exists in `data/organizations_OH.csv`, `status=acquired`, `status_date=2022-04-21`, `successor_org_id=ORG-000007`. Notes cite SCHEMA §5.2 and GLEIF (current legal name Vibrantz Color Solutions Inc.; prior legal name Chromaflo Technologies Corporation).
+
+**Recommendation: (a)** Treat the QUEUE item as already done. Do not mint a second tombstone. Do not edit the Ohio shard.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** QUEUE item marked `done 2026-11-12` in the apply PR. No new tombstone. Ohio shard not edited for this item.
+
+- (b) Still add a new tombstone (would duplicate `ORG-013200`).
+
+---
+
+## H-HANKOOK: ORG-000167 vs ORG-000204
+
+**QUEUE line (was open; marked done in the apply PR):** "Hankook duplicate merge (ORG-000167 vs ORG-000204) — prepared fix, awaiting owner pick"
+
+**Deciding facts already on main:**
+- `ORG-000167` Hankook Tire America is already `status=merged`, `status_date=2026-10-29`, `successor_org_id=ORG-000204`. Notes say it is the same America Technical Center at 3535 Forest Lake Dr, Green, created twice.
+- `ORG-000204` Hankook Tire America Corp. (HQ Nashville, TN) remains active, with active site `SITE-000215` at 3535 Forest Lake Dr, Green, OH (tier B).
+- Leftover: `SITE-000174` "Hankook Tire America Technical Center — Green" is still attached to tombstoned `ORG-000167` and is `operating_status=closed`, with no street on the row. This looks like the unrepointed first site, not a second facility.
+
+**Recommendation: (a)** Confirm the 2026-10-29 org tombstone stands. Authorize a later non-Ohio-or-integrator pass to fold or repoint `SITE-000174` to `ORG-000204` / `SITE-000215` if the owner agrees they are the same Green technical center (address-first: `SITE-000174` currently has a blank street, so this is not a same-street merge on the face of the row). This pass does not edit Ohio site files.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** Org tombstone on `ORG-000167` confirmed as it already stands on main (`status=merged`, `successor_org_id=ORG-000204`, `status_date=2026-10-29`). The authorized fold/repoint of `SITE-000174` to `ORG-000204` (record-level fold, not a plant-closure finding; street left blank) is in the apply PR. `SITE-000215` is not edited.
+
+- (b) Unwind the org merge and keep both organizations.
+- (c) Leave `SITE-000174` as a closed historical row under the tombstoned org indefinitely.
+
+---
+
+## H-ROECHLING: SITE-000589 division assignment
+
+**QUEUE line (was open; marked done in the apply PR):** "SITE-000589 (Röchling Industrial Cleveland) was promoted under ORG-000550 Röchling Automotive USA LLP … distinct Röchling divisions; confirm or unwind"
+
+**Deciding facts already on main:**
+- `SITE-000589` "Roechling Industrial Cleveland, L.P." is already under `ORG-000551` (Roechling Industrial Cleveland, LP, HQ South Euclid), not under Automotive `ORG-000550`.
+- `ORG-000551` notes record a 2026-10-29 ruling (A2 unwind).
+
+**Recommendation: (a)** Treat the QUEUE item as already unwound. No further apply.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** QUEUE item marked `done 2026-11-12` in the apply PR. No further data change.
+
+- (b) Move the site back under Automotive `ORG-000550`.
+
+---
+
+## H-PA-STREET: PA same-street / Conica Lane pair
+
+**Held pair:** `SITE-002364` ↔ `SITE-002304` at 109 Conica Lane, Evans City, PA, carried as STILL_UNCERTAIN in the 2026-11-06 tombstone-site-operator packet and in `tasks/dedupe-leads-2026-11-06` (D10).
+
+**Settling fact still named there:** a dated legal record resolving Harmony/Evans City continuity versus relocation or separate premises. The 2026 Florida annual report cited in that packet was treated as a legal principal address only, not plant operation.
+
+**Recommendation: (a)** Keep the hold. Do not merge on address alone (flag: this would be an address-first merge). A later pass should fetch a current Pennsylvania or operator own-page witness before any fold.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** Owner-confirmed hold. No merge in the apply PR.
+
+- (b) Fold the two site rows now on the shared street.
+
+---
+
+## H-TARKETT: Tarkett USA Inc. vs Tarkett North America (SITE-003477, SITE-003478)
+
+**Settling fact from the PR #201 holds:** a dated primary legal-name bridge equating filed operator Tarkett USA Inc. with held successor `ORG-000131` Tarkett North America, or identification of the actual held legal operator. A successor pointer alone does not settle the naming gap.
+
+**Recommendation: (a)** Keep the hold until that legal-name bridge is in hand. Do not repoint on the group name alone.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** Owner-confirmed hold. Sites not repointed.
+
+- (b) Repoint both sites to `ORG-000131` now.
+
+---
+
+## H-DANIMER: post-sale operator at 605 Rolling Hills Lane (SITE-003134)
+
+**Settling fact from the PR #201 hold:** identify the post-sale legal entity operating 605 Rolling Hills Lane and bridge it to a held Atlas operator. The Teknor 2025 release saying Danimer continues separately does not establish that the old public Danimer Scientific Inc. is the continuing operator.
+
+**Recommendation: (a)** Keep the hold.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** Owner-confirmed hold. No repoint.
+
+- (b) Repoint now to a held Danimer or Teknor organization without a new site-level operator witness.
+
+---
+
+## S-CRM-AZ: naming for CRM of America LLC (Mesa) — QMS-AZ-23
+
+Witnessed by ITA 224680 + OSHA 348264797 (rubber products, NAICS 326299) at 11400 E Pecos Rd, Mesa, but not created because the legal name "CRM of America" trips validate.py V-50 (PIC CRM string).
+
+**Recommendation: (a)** Accept a recorded legal name that does not contain the bare token `CRM` as a standalone acronym, for example `C.R.M. of America LLC` or `CRM of America, LLC` if the validator can be given an allow-list for this EIN/legal name, and then create the org/site from the federal witnesses. Do not self-rule the string.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application:** Owner-confirmed hold in this pass. The owner accepted the approach, but did not pick the exact recorded legal-name string or grant a V-50 allow-list change, and (a) itself says not to self-rule the string. No org/site created. CI `vocab.json` / EVD-333167 was not touched.
+
+- (b) Leave the row uncreated until V-50 is revised.
+- (c) Create under a trade name only, omitting the legal name (not recommended; the federal filings use the legal name).
+
+---
+
+## S-SCOPE: borderline polymer-scope leftover rows
+
+These leftover STILL_UNCERTAIN rows are product-class questions, not operator-identity questions. They are held for the owner (AGENTS.md §2 rule 9). A short recommendation is given. After the 2026-11-12 owner acceptance, the apply PR records the REJECTs and confirmed holds; no org/site rows are created for these candidates.
+
+| ID | Candidate | Question | Recommended lean |
+|---|---|---|---|
+| QMS-AL-09 | Lenzing Fibers, Axis, AL | Is lyocell cellulosic fiber (NAICS 325220) in atlas polymer scope? | **(a)** Hold out of Rings 1–2 unless the owner extends scope to regenerated cellulosic fiber. Cellulose is not a synthetic polymer. |
+| QMS-AZ-01 / LF-RI-00043 | Fujifilm Electronic Materials (Mesa, AZ and North Kingstown, RI) | Are photoresists/polyimides made at these sites, and are they in scope? | **(a)** Hold. Needs a site-level own-page or federal product witness tying polymer binders to the named site. Business-line brochures are not site witnesses. |
+| QMS-AZ-11 | Shin-Etsu MicroSi, Phoenix | Photoresists/encapsulants made on site vs distribution? | **(a)** Hold for an own-site manufacturing witness. |
+| QMS-CO-04 / QMS-CO-11 | Boulder Scientific Mead and Longmont | Polyolefin catalysts vs polymers (NAICS 325199/325412). | **(a)** Treat catalysts as out of Ring 1–2 (precursor/auxiliary, consistent with precursor-only doctrine) unless the owner brings catalyst plants into scope. Do not create until that ruling. |
+| QMS-WV-09 | ICL-IP Gallipolis Ferry | Are products polymer flame-retardant additives? | **(a)** Hold for an own-page product identity. Flame-retardant additives can be in Ring 2 if the product is a polymer additive; the NAICS alone does not say. |
+
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application (apply PR):**
+- **QMS-AL-09 Lenzing Axis lyocell:** REJECT (inclusion_log only; no org/site created). Out of Rings 1–2; owner did not extend scope to regenerated cellulosic fiber.
+- **QMS-AZ-01 / LF-RI-00043 Fujifilm Electronic Materials (Mesa and North Kingstown) and QMS-AZ-11 Shin-Etsu MicroSi Phoenix:** owner-confirmed HOLD for a site-level own-page or manufacturing witness. No create.
+- **QMS-CO-04 / QMS-CO-11 Boulder Scientific Mead and Longmont:** REJECT (inclusion_log only; no org/site created). Catalysts remain out of Rings 1–2 under the precursor-only doctrine; owner did not bring catalyst plants into scope.
+- **QMS-WV-09 ICL-IP Gallipolis Ferry (WV, not Ohio):** owner-confirmed HOLD for an own-page product identity. No Ohio file edited.
+
+Other chemical-plant leftovers (Ricca reagents, ERA standards, Molecular Products CO2 absorbents, Azure water treatment, Brand Nu, MacDermid plating chemicals, Pemco porcelain enamel, etc.) can be settled as factual REJECTs once an own-page or dated product witness is attached in a later pass; they are not being self-ruled as scope expansions in this packet.
+
+---
+
+## S-PPC-PAYSON: which org operates the Payson, UT plant
+
+**Original settling fact:** integrator dedupe ruling on `ORG-001029` vs `ORG-004209`.
+
+**Facts now on main (the question was not settled; a third org was added):**
+- `ORG-001029` PPC Flex (Alliance, OH; website ppcflex.com; tier U; trade name Plastic Packaging Technologies, LLC).
+- `ORG-004209` PPC Flexible Packaging, LLC (North Salt Lake, UT; SITE-005303 at 95 South Riverbend Way; ultimate parent Fisher Container Holdings LLC).
+- `ORG-006226` "Ppc Flexible Packaging - Payson Printing Plant" (Payson, UT; SITE-008292 at 213 South Temkin Way), created 2026-11-04 from Grok P2 packet PR #87.
+
+Lead-fusion cluster LF-UT-00047 already flagged Payson as `HELD_ORG_OTHER_LOCATION` of `ORG-004209`.
+
+**Recommendation: (a)** Do not merge on the name alone. Ask the integrator which legal entity operates 213 South Temkin Way. Likely fold `ORG-006226` into `ORG-004209` if a domain or own-page witness ties Payson to PPC Flexible Packaging, LLC / Fisher Container, and treat `ORG-001029` (ppcflex.com, Ohio) as a separate company unless a dated legal identity bridge exists. Flag: any fold of 006226 into 004209 is not address-first (the sites are in different cities); a fold into 001029 would need more than the shared "PPC" letters.
+
+**Ruling: OWNER-ACCEPTED (a)** — dated 2026-11-12. Owner quote (12:51pm America/New_York, 2026-11-12): "Yes, go with your recommendation on all 9 rulings."
+
+**Application (apply PR):** Own-site witnesses fetched 2026-11-12 satisfy the (a) conditions for folding `ORG-006226` into `ORG-004209` and also show a dated identity bridge to `ORG-001029`:
+- `https://ppcflex.com/locations/payson-ut/` (fetched 2026-11-12) names 213 Temkin Way, Payson, UT 84651 as a PPC Flex plant (same street as `SITE-008292`).
+- `https://ppcflex.com/locations/` (fetched 2026-11-12) lists Payson, UT; North Salt Lake, UT; and Columbus, OH among company locations.
+- `https://ppcflex.com/blog/ppc-flex-announces-strategic-acquisition-of-sudpacks-us-operations/` (dateline January 12, 2026; fetched 2026-11-12) states that PPC Flex, headquartered in Buffalo Grove, IL, operates twelve manufacturing facilities including Payson, UT, North Salt Lake, UT, and Columbus, OH.
+- `https://ppcflex.com/blog/fisher-container-overview/` (dated May 16, 2019; fetched 2026-11-12) publishes the Fisher Container legacy on the same domain; `ORG-004209` already lists Fisher Container Holdings LLC as `ultimate_parent_name`. The North Salt Lake location page is city-level only and does not name 95 South Riverbend Way.
+
+The apply PR therefore tombstones `ORG-006226` (`status=merged`, `successor_org_id=ORG-004209`, `status_date=2026-11-12`) and repoints `SITE-008292` to `ORG-004209`. That fold is not address-first (Payson vs North Salt Lake are different streets and cities).
+
+The same own-site pages are a dated legal identity bridge among `ORG-001029` (ppcflex.com; Columbus plant `SITE-001111`), `ORG-004209` (North Salt Lake), and the Payson plant. A three-way fold of `ORG-001029` / `SITE-001111` is **held in this pass** to avoid editing `organizations_OH.csv` and `sites_OH.csv` beyond the authorized Hankook `SITE-000174` line, because those Ohio files are under active street-fill / capabilities PRs (#307, #314, #315, #317–#321). The bridge is recorded in notes and evidence on the Utah records for a later Ohio-safe fold. No contact data from the fetched pages was copied into the repo.
+
+- (b) Merge all three now.
+- (c) Keep all three indefinitely.
+
+---
+
+## Already settled on main (no ruling needed)
+
+- **QMS-AR-24** Building Materials Manufacturing LLC, Arkadelphia: already `SITE-005437` GAF - Arkadelphia (PMMA) at 151 McClellan/MCCELLAN Blvd under `ORG-004251`. Operator is GAF; product is PMMA.
+- **3form Ecoresin plant, 955 S 3800 W:** already `SITE-008189` under `ORG-004817`, with both EPA FRS 110070516125 and the Utah DAQ FCE memo — the named second-source settling fact is satisfied.
+- **QMS-CT-30, QMS-OR-08, QMS-KS-40:** the pending parent PRs (#69 LATICRETE, #64 Carestream, #57 NOV Inc.) have merged. Sites are applied in the 2026-11-12 state-group data PRs under those existing orgs.

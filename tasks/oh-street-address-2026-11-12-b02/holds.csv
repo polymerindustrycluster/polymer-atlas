@@ -1,0 +1,58 @@
+site_id,verdict,reason
+SITE-000527,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000533,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Twinsburg; need own-page physical street block at the recorded city"
+SITE-000534,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Hudson; need own-page physical street block at the recorded city"
+SITE-000577,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Barberton; need own-page physical street block at the recorded city"
+SITE-000588,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000593,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Mogadore; need own-page physical street block at the recorded city"
+SITE-000602,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Stow; need own-page physical street block at the recorded city"
+SITE-000612,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Cuyahoga Falls; need own-page physical street block at the recorded city"
+SITE-000668,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000669,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city North Canton; need own-page physical street block at the recorded city"
+SITE-001316,STILL_UNCERTAIN,operator holds 3 sites in Akron; need site-specific binding
+SITE-001317,STILL_UNCERTAIN,operator holds 3 sites in Akron; need site-specific binding
+SITE-001396,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Mogadore; need own-page physical street block at the recorded city"
+SITE-001400,STILL_UNCERTAIN,operator holds 2 sites in Tallmadge; need site-specific binding
+SITE-001416,STILL_UNCERTAIN,own-page street disagrees with the street recorded in notes (487); need dated address adjudication
+SITE-001417,STILL_UNCERTAIN,own-page street disagrees with the street recorded in notes (350); need dated address adjudication
+SITE-001418,STILL_UNCERTAIN,own-page street disagrees with the street recorded in notes (303); need dated address adjudication
+SITE-001438,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Mogadore; need own-page physical street block at the recorded city"
+SITE-001481,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001522,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Tallmadge; need own-page physical street block at the recorded city"
+SITE-001539,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Twinsburg; need own-page physical street block at the recorded city"
+SITE-001542,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001545,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-001565,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001569,STILL_UNCERTAIN,own-page ZIP 44311 conflicts with recorded ZIP 44306; need integrator ruling on the ZIP before the street is applied
+SITE-001577,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001649,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-001703,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Copley; need own-page physical street block at the recorded city"
+SITE-001708,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Green; need own-page physical street block at the recorded city"
+SITE-001709,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-001786,STILL_UNCERTAIN,"own-site fetch unavailable (0 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001792,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001897,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001917,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001932,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Hudson; need own-page physical street block at the recorded city"
+SITE-001937,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001953,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-001958,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001959,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-001974,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-001991,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-002002,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-002021,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-002032,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-002035,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002038,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002047,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002052,STILL_UNCERTAIN,own-page street disagrees with the street recorded in notes (83); need dated address adjudication
+SITE-002068,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-002096,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-003983,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Akron; need own-page physical street block at the recorded city"
+SITE-000050,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Mogadore; need own-page physical street block at the recorded city"
+SITE-000183,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Kent; need own-page physical street block at the recorded city"
+SITE-000188,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Streetsboro; need own-page physical street block at the recorded city"
+SITE-000446,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Aurora; need own-page physical street block at the recorded city"
+SITE-000480,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Kent; need own-page physical street block at the recorded city"
+SITE-000594,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Aurora; need own-page physical street block at the recorded city"
