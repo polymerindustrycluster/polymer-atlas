@@ -1,0 +1,1066 @@
+{
+ "base": "1fefbd29ea2fa654a59bf4d1e0b9acc8470a010f",
+ "commit_to_pr": {
+  "0283ee8": 280,
+  "0c95155": 286,
+  "0dcb389": 259,
+  "0f3380c": 304,
+  "1075945": 295,
+  "165df3b": 305,
+  "1880d24": 301,
+  "1918b8b": 261,
+  "1b1aff4": 284,
+  "1dabac3": 292,
+  "1dece04": 291,
+  "1eaab53": 300,
+  "1f4a26c": 298,
+  "1fe2637": 250,
+  "2028372": 285,
+  "223253e": 270,
+  "243d461": 273,
+  "2443c84": 290,
+  "2521a6e": 279,
+  "2c9c477": 265,
+  "3cade2c": 303,
+  "3eddaab": 278,
+  "405b8cf": 316,
+  "4eba6f4": 306,
+  "4ecc7cf": 329,
+  "517030e": 282,
+  "567aad4": 275,
+  "56e08c7": 323,
+  "5a4e741": 277,
+  "616dad4": 288,
+  "621fc6e": 269,
+  "6ac885a": 276,
+  "6f50204": 271,
+  "78ed28c": 326,
+  "79b1f42": 299,
+  "7dbedf6": 268,
+  "848175b": 302,
+  "88ea181": 328,
+  "89004f0": 264,
+  "8aecf0c": 297,
+  "9482206": 252,
+  "a2ac9c2": 258,
+  "a3b395f": 262,
+  "a821310": 266,
+  "a985825": 267,
+  "b6cd23b": 296,
+  "be98710": 263,
+  "bee1055": 274,
+  "ce2bfd2": 325,
+  "cea96d2": 281,
+  "db1184a": 327,
+  "db51af3": 310,
+  "e2bc311": 287,
+  "f2c7c81": 283,
+  "f402cfd": 293,
+  "f43db57": 272,
+  "f4cbe2c": 260,
+  "fd3acdd": 294,
+  "fdaf8c2": 289
+ },
+ "data_files_changed_outside_frame_tables": {
+  "data/events.csv": 1,
+  "data/inclusion_log.csv": 20
+ },
+ "derived_only_by_pr_table": [],
+ "excluded": "tier1_qualifier* columns (derived, AGENTS section 1); evidence_*.csv appends (not a frame table); deleted rows (no current value to audit)",
+ "first_parent_commits": 59,
+ "frame_total": 1653,
+ "head": "4ecc7cf87847fbee27111af4c56c9acf92e0c095",
+ "out_of_scope_tables": {
+  "events": {
+   "base_rows": 71,
+   "head_rows": 71,
+   "rows_with_other_value_change": 0,
+   "rows_with_pic_events_slug_set_in_window": 64
+  },
+  "inclusion_log": {
+   "appended_rows": 22,
+   "base_rows": 142,
+   "head_rows": 164,
+   "removed_rows": 0
+  }
+ },
+ "per_pr_per_table": [
+  {
+   "kind": "created",
+   "pr": 252,
+   "records": 154,
+   "table": "event_participation"
+  },
+  {
+   "kind": "created",
+   "pr": 259,
+   "records": 804,
+   "table": "people_identifiers"
+  },
+  {
+   "kind": "changed",
+   "pr": 260,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "deleted",
+   "pr": 260,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 263,
+   "records": 11,
+   "table": "people_identifiers"
+  },
+  {
+   "kind": "changed",
+   "pr": 264,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "deleted",
+   "pr": 264,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 265,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "deleted",
+   "pr": 265,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 267,
+   "records": 1,
+   "table": "organizations"
+  },
+  {
+   "kind": "changed",
+   "pr": 267,
+   "records": 1,
+   "table": "sites"
+  },
+  {
+   "kind": "created",
+   "pr": 267,
+   "records": 1,
+   "table": "sites"
+  },
+  {
+   "kind": "changed",
+   "pr": 268,
+   "records": 1,
+   "table": "organizations"
+  },
+  {
+   "kind": "changed",
+   "pr": 268,
+   "records": 1,
+   "table": "sites"
+  },
+  {
+   "kind": "changed",
+   "pr": 269,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 269,
+   "records": 65,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 269,
+   "records": 27,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 270,
+   "records": 21,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 270,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 271,
+   "records": 1,
+   "table": "people_identifiers"
+  },
+  {
+   "kind": "changed",
+   "pr": 271,
+   "records": 6,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 272,
+   "records": 30,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 272,
+   "records": 4,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 273,
+   "records": 21,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 273,
+   "records": 4,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 274,
+   "records": 24,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 274,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 275,
+   "records": 17,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 275,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 276,
+   "records": 14,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 276,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 277,
+   "records": 17,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 277,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 278,
+   "records": 13,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 278,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 279,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 280,
+   "records": 9,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 280,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 281,
+   "records": 12,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 281,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 282,
+   "records": 15,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 282,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 283,
+   "records": 2,
+   "table": "people"
+  },
+  {
+   "kind": "deleted",
+   "pr": 283,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 284,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 284,
+   "records": 13,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 284,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 284,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 284,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 285,
+   "records": 11,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 285,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 286,
+   "records": 13,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 286,
+   "records": 4,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 287,
+   "records": 8,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 287,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 288,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 288,
+   "records": 18,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 288,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 289,
+   "records": 5,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 289,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 290,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 290,
+   "records": 4,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 290,
+   "records": 4,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 291,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 291,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 292,
+   "records": 3,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 292,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 293,
+   "records": 6,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 293,
+   "records": 6,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 294,
+   "records": 3,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 294,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 295,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 295,
+   "records": 5,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 295,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 295,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 296,
+   "records": 2,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 297,
+   "records": 2,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 297,
+   "records": 11,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 298,
+   "records": 2,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 298,
+   "records": 22,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 298,
+   "records": 5,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 299,
+   "records": 7,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 299,
+   "records": 3,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 299,
+   "records": 11,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 300,
+   "records": 8,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 300,
+   "records": 8,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 301,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 301,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 301,
+   "records": 3,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 302,
+   "records": 11,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 302,
+   "records": 5,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 303,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 303,
+   "records": 10,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 303,
+   "records": 9,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 303,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 303,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 304,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 304,
+   "records": 12,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 304,
+   "records": 2,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 304,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 304,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 305,
+   "records": 7,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 305,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 306,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 306,
+   "records": 12,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 306,
+   "records": 8,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 306,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 306,
+   "records": 2,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 310,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 310,
+   "records": 9,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 310,
+   "records": 5,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 310,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 310,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 316,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 316,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 323,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 323,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 323,
+   "records": 4,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 323,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 325,
+   "records": 4,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 325,
+   "records": 1,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 326,
+   "records": 9,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 327,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "created",
+   "pr": 327,
+   "records": 4,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 327,
+   "records": 4,
+   "table": "programs"
+  },
+  {
+   "kind": "changed",
+   "pr": 328,
+   "records": 1,
+   "table": "ecosystem"
+  },
+  {
+   "kind": "changed",
+   "pr": 328,
+   "records": 7,
+   "table": "people"
+  },
+  {
+   "kind": "created",
+   "pr": 328,
+   "records": 2,
+   "table": "people"
+  },
+  {
+   "kind": "changed",
+   "pr": 328,
+   "records": 1,
+   "table": "programs"
+  },
+  {
+   "kind": "created",
+   "pr": 328,
+   "records": 1,
+   "table": "programs"
+  }
+ ],
+ "prs": [
+  250,
+  252,
+  258,
+  259,
+  260,
+  261,
+  262,
+  263,
+  264,
+  265,
+  266,
+  267,
+  268,
+  269,
+  270,
+  271,
+  272,
+  273,
+  274,
+  275,
+  276,
+  277,
+  278,
+  279,
+  280,
+  281,
+  282,
+  283,
+  284,
+  285,
+  286,
+  287,
+  288,
+  289,
+  290,
+  291,
+  292,
+  293,
+  294,
+  295,
+  296,
+  297,
+  298,
+  299,
+  300,
+  301,
+  302,
+  303,
+  304,
+  305,
+  306,
+  310,
+  316,
+  323,
+  325,
+  326,
+  327,
+  328,
+  329
+ ],
+ "tables": {
+  "ecosystem": {
+   "base_rows": 402,
+   "changed_nonderived": 32,
+   "created": 6,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 38,
+   "head_rows": 408,
+   "prs_touching_record_sum": 42,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "event_participation": {
+   "base_rows": 1142,
+   "changed_nonderived": 0,
+   "created": 154,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 154,
+   "head_rows": 1296,
+   "prs_touching_record_sum": 154,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "organizations": {
+   "base_rows": 5024,
+   "changed_nonderived": 2,
+   "created": 0,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 2,
+   "head_rows": 5024,
+   "prs_touching_record_sum": 2,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "people": {
+   "base_rows": 1454,
+   "changed_nonderived": 432,
+   "created": 63,
+   "created_then_deleted": 0,
+   "deleted_ids": [
+    "PERSON-000812",
+    "PERSON-001260",
+    "PERSON-001331",
+    "PERSON-001402"
+   ],
+   "deleted_not_in_frame": 4,
+   "derived_only_excluded": 0,
+   "frame": 495,
+   "head_rows": 1513,
+   "prs_touching_record_sum": 497,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "people_identifiers": {
+   "base_rows": 0,
+   "changed_nonderived": 0,
+   "created": 816,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 816,
+   "head_rows": 816,
+   "prs_touching_record_sum": 816,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "programs": {
+   "base_rows": 171,
+   "changed_nonderived": 100,
+   "created": 45,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 145,
+   "head_rows": 216,
+   "prs_touching_record_sum": 151,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "relationships": {
+   "base_rows": 360,
+   "changed_nonderived": 0,
+   "created": 0,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 0,
+   "head_rows": 360,
+   "prs_touching_record_sum": 0,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  },
+  "sites": {
+   "base_rows": 7189,
+   "changed_nonderived": 2,
+   "created": 1,
+   "created_then_deleted": 0,
+   "deleted_ids": [],
+   "deleted_not_in_frame": 0,
+   "derived_only_excluded": 0,
+   "frame": 3,
+   "head_rows": 7190,
+   "prs_touching_record_sum": 3,
+   "reverted_ids": [],
+   "shard_move_only_excluded": 0,
+   "touched_then_reverted": 0,
+   "transient_ids": []
+  }
+ },
+ "unit": "record: one row at HEAD, keyed by table ID (people_identifiers: person_id+identifier_type+identifier_id), created or changed in a non-derived column by a first-parent commit in BASE..HEAD"
+}
