@@ -1,0 +1,54 @@
+site_id,verdict,reason
+SITE-001375,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city West Salem; need own-page physical street block at the recorded city"
+SITE-001676,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Mount Eaton; need own-page physical street block at the recorded city"
+SITE-001933,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-001976,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-002056,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-002073,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000004,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000009,STILL_UNCERTAIN,own-page ZIP 44145 conflicts with recorded ZIP 44131; need integrator ruling on the ZIP before the street is applied
+SITE-000104,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Strongsville; need own-page physical street block at the recorded city"
+SITE-000106,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000108,STILL_UNCERTAIN,operator holds 2 sites in Cleveland; need site-specific binding
+SITE-000112,STILL_UNCERTAIN,own-page ZIP 44103 conflicts with recorded ZIP 44114; need integrator ruling on the ZIP before the street is applied
+SITE-000115,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000121,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Solon; need own-page physical street block at the recorded city"
+SITE-000122,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Woodmere; need own-page physical street block at the recorded city"
+SITE-000123,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Beachwood; need own-page physical street block at the recorded city"
+SITE-000127,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city North Randall; need own-page physical street block at the recorded city"
+SITE-000130,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Solon; need own-page physical street block at the recorded city"
+SITE-000132,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Brecksville; need own-page physical street block at the recorded city"
+SITE-000133,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Cleveland; need own-page physical street block at the recorded city"
+SITE-000136,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Warrensville Heights; need own-page physical street block at the recorded city"
+SITE-000137,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Middleburg Heights; need own-page physical street block at the recorded city"
+SITE-000139,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Warrensville Heights; need own-page physical street block at the recorded city"
+SITE-000142,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000144,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000146,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000147,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Westlake; need own-page physical street block at the recorded city"
+SITE-000148,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Strongsville; need own-page physical street block at the recorded city"
+SITE-000150,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Warrensville Heights; need own-page physical street block at the recorded city"
+SITE-000152,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Oakwood Village; need own-page physical street block at the recorded city"
+SITE-000156,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Solon; need own-page physical street block at the recorded city"
+SITE-000159,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000160,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000161,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000162,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000163,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000166,STILL_UNCERTAIN,no held operator website; need an own-site or filing witness of the physical street at the recorded city
+SITE-000167,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Beachwood; need own-page physical street block at the recorded city"
+SITE-000170,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000172,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000173,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Cleveland; need own-page physical street block at the recorded city"
+SITE-000190,STILL_UNCERTAIN,own-page street appears only in mailing/warehouse/PO context; need a physical-location statement
+SITE-000193,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Highland Heights; need own-page physical street block at the recorded city"
+SITE-000221,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Strongsville; need own-page physical street block at the recorded city"
+SITE-000283,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Strongsville; need own-page physical street block at the recorded city"
+SITE-000311,STILL_UNCERTAIN,"1 own-site pages read, no street at recorded city Parma; need own-page physical street block at the recorded city"
+SITE-000326,STILL_UNCERTAIN,"5 own-site pages read, no street at recorded city Warrensville Heights; need own-page physical street block at the recorded city"
+SITE-000359,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Cleveland; need own-page physical street block at the recorded city"
+SITE-000383,STILL_UNCERTAIN,"2 own-site pages read, no street at recorded city Maple Heights; need own-page physical street block at the recorded city"
+SITE-000407,STILL_UNCERTAIN,"3 own-site pages read, no street at recorded city Brecksville; need own-page physical street block at the recorded city"
+SITE-000424,STILL_UNCERTAIN,"6 own-site pages read, no street at recorded city Cleveland; need own-page physical street block at the recorded city"
+SITE-000481,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
+SITE-000492,STILL_UNCERTAIN,"own-site fetch unavailable (3 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
