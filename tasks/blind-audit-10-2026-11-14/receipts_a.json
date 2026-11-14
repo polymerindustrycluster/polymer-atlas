@@ -1,0 +1,2133 @@
+{
+ "note": "Page bodies not saved. curl receipts = every curl fetch made in this session incl. re-fetches for the mechanical quote check and failed ones (http_status 0/403/404/202 = availability, not evidence of absence). Entries with route != curl were read through Tavily/DNS and carry no body hash.",
+ "receipts": [
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-8559-2783/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:17Z",
+   "sha256": "66049a30419b79333c882c088b7a61501298ca6fc18f3ec9d43aa25aabaf1458",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6484-872X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:17Z",
+   "sha256": "2ec784210e9754d5d97b78596f85dc2577e34b0b3ba42f7604e8c66f8e5d6035",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-9331-6535/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:18Z",
+   "sha256": "fe1e055b7c6d345b337b36ca187a93310cb435f4492a3fc320c3a026044d7ac3",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-1298-2876/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:19Z",
+   "sha256": "3d5e584ec5311a16dc574bc4ff6d2aa0ea57fdb2b379ef9792d7750c2da64646",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-0594-5025/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:23Z",
+   "sha256": "6f97350f577578599f2964a142d4a1f47dd0f2e4b8b59b3beaf5e496a5e1d8b4",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-6953-4970/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:26Z",
+   "sha256": "f7588f7fc2b514cf3f800607c7be64b3153807f27732fa6c7b49b1ff483c3ac2",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-3935-7467/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:44Z",
+   "sha256": "2a194d8eed017b54afcb8da51d3728a493c524a5c2e9feb36161d066e9398e51",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-7197-0085/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:47Z",
+   "sha256": "cd3760885de9862f59ca240511ec89ee76215b544ae415583b6986b4a54f1021",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-7966-1239/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:49Z",
+   "sha256": "d97f580454bbaa4f995bcb143a2c42e970391108f816330d45f846044ea4ed3e",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-1229-6078/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:52Z",
+   "sha256": "d7d9bbf104fdf4e5d774d41e11a10d4b5db461aa319764c22c7aeabda47cc6e7",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-3872-1463/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:53Z",
+   "sha256": "5d50b81e2c56a7a210bfe74d153052fb03b36e1c239b331cdb9465dacae011b6",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-2990-923X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:54Z",
+   "sha256": "3a80ba9fc18e1fee305b32234108437c34ed5e14e1e6218b2e445aa132b97922",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6714-4410/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:12:59Z",
+   "sha256": "0b970b9424f891961ea12c794148a7fac06756239b3866eec6c91a462053c0a8",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-3083-7907/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:02Z",
+   "sha256": "d9c2688019956eaa5f37bd578acfd4af67fa3ae78f8b8e566d0d56c559967ddc",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-8692-4268/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:04Z",
+   "sha256": "73fe22371e443f88b952a8e2ff512d17a1f8d74bbcfb69236f6e8f6bcf3fff25",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-3605-6404/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:04Z",
+   "sha256": "82977ada493bab96e66a06486b231b9f1a4b879383e2d541385354ff29f1cfb6",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6482-543X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:07Z",
+   "sha256": "63d9ba92ace5de08a8c5635b185224d3c9f7fca4dcda6ebbd531428d80b35da9",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-5617-9220/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:08Z",
+   "sha256": "d0aa5af3538a8df3cf500b3806e28f9e44c81af8245f3fbd6d6659f8e75ce23c",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-2650-0746/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:11Z",
+   "sha256": "5d84c4956df7d1965bbfc0cc809f8ceaf4c7ce04f2b07705687b4bc4c0560d67",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-0572-7108/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:12Z",
+   "sha256": "efeb11f8a552865e319d920f27ddf0beb24a3e0bea3b9d18988b930d36902130",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6746-8634/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:13Z",
+   "sha256": "0eab27c9832c261c4e2d75b10926aa56ccea1b524d95639fdc170ec6a4212622",
+   "route": "curl"
+  },
+  {
+   "url": "https://aps.unc.edu/faculty-member/dingemans-theo/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:33Z",
+   "sha256": "f4568d21a2d1f9966099c0348ccd6bc168aa67b31ed20cec2c71fdc01acc41b0",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/people/katherine-evans",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:35Z",
+   "sha256": "c4e2ee5b5073bc861015ca6e1990dad07b81df2d71073d876dbf98db5f719f24",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.uwstout.edu/directory/jordanal",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:38Z",
+   "sha256": "d240b4646e101f08cb145872f6d217ff17c20f0e8e518503e1b66f2a5172b21d",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.uh.edu/nsm/chemistry/people/profiles/robert-comito/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:54Z",
+   "sha256": "a3187c4beda5acac026b9eb42e2fbe5091ce1311fc77b50a4c7ea1f1570c7b32",
+   "route": "curl"
+  },
+  {
+   "url": "https://samueli.ucla.edu/people/timothy-deming/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:13:58Z",
+   "sha256": "9cda855728722037d98bc9991481eba079536f8f9073f2464ef18113364d8c1e",
+   "route": "curl"
+  },
+  {
+   "url": "https://ung.edu/chemistry-biochemistry/faculty-staff-bio/aimee-tomlinson.php",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:00Z",
+   "sha256": "4e27de6f1a4e9307dfc30371c1cb20ee9b187c8958977a4820a7c237f03acafe",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=ali4",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:01Z",
+   "sha256": "743cb1b7a53eeecaf50a92501f9fc2473ec3667971f423987988bd2c6f5d3639",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engin.umich.edu/people/sglotzer",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:14:02Z",
+   "sha256": "d8722c7a3e7e7ba463ca08d8b09637fd8c296506ff950d50d4fea8068608cecd",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.tamu.edu/chemical/profiles/xie-shuyi.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:03Z",
+   "sha256": "a4ef36c78fb5b373ee46f41c38df96e585dd2d0c09eda112116ebcb29467bb12",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ornl.gov/staff-profile/bradley-lokitz?page=5",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:14:04Z",
+   "sha256": "25fb23868ebf48348f9e438e00cb9b9d9b3a054f32482a781c762cc4f9cc6393",
+   "route": "curl"
+  },
+  {
+   "url": "https://chemistry.uconn.edu/person/rajeswari-kasi/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:07Z",
+   "sha256": "cb9ce386049ae1748f9fd03fa2927782d9e5b1bb733a9426823b235d32c3c396",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ornl.gov/staff-profile/jennifer-niedziela?type=publications&page=1",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:14:09Z",
+   "sha256": "25fb23868ebf48348f9e438e00cb9b9d9b3a054f32482a781c762cc4f9cc6393",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ornl.gov/staff-profile/valentino-cooper?type=publications&page=1",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:14:09Z",
+   "sha256": "25fb23868ebf48348f9e438e00cb9b9d9b3a054f32482a781c762cc4f9cc6393",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.montclair.edu/chemistry-biochemistry/news-and-announcements/page/2/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:14:11Z",
+   "sha256": "190c9687c7310d4f4b6b723eac5ba12e454efcd8e1fc875ebc33b277d30d8faa",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/people/paul-salipante",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:12Z",
+   "sha256": "4e2b5ca2d36444535106466096d6cb92a1e9ef2ea8792e0a910d915aa75e8994",
+   "route": "curl"
+  },
+  {
+   "url": "https://espp.msu.edu/directory/drzal-lawrence.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:12Z",
+   "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+   "route": "curl"
+  },
+  {
+   "url": "https://cbe.seas.upenn.edu/dr-amish-patel-promoted-to-full-professor/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:14:17Z",
+   "sha256": "026c8e8a177c6cc445adab5d8ced948dfc657efe2ce431c03ddba1316e6f5132",
+   "route": "curl"
+  },
+  {
+   "url": "https://cals.cornell.edu/people/alireza-abbaspourrad",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:19Z",
+   "sha256": "eca22573ae925d15b0edfd7b1af5b919121d19ddb759d25363211d203f0eed96",
+   "route": "curl"
+  },
+  {
+   "url": "https://catalog.smu.edu/preview_entity.php?catoid=71&ent_oid=7336&returnto=6954",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:14:19Z",
+   "sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.uakron.edu:443/polymer/about-us/our-people/profile.dot?u=swang",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:20Z",
+   "sha256": "a880988ac76fea173773952ee9e1537dd761072ba46f768e24803c6dd1938f1b",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.aphms.caltech.edu/people/jak",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:21Z",
+   "sha256": "26bdf14a79bfa26e6003081112896dd16b4f05f60e82f747eba3a64d3d09a00e",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/people/katherine-evans",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:53Z",
+   "sha256": "94f2ac2dc18f989741f32d0df7715cd577c7269410678906764ba9c1d6e87e30",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/people/paul-salipante",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:54Z",
+   "sha256": "8db54beeaab95ecef0e878b7f9a4d51d38009e26bb1df4cab91cb67cd18e5bd3",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.aphms.caltech.edu/people/jak",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:54Z",
+   "sha256": "26bdf14a79bfa26e6003081112896dd16b4f05f60e82f747eba3a64d3d09a00e",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.aphms.caltech.edu/people/jak",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:14:58Z",
+   "sha256": "26bdf14a79bfa26e6003081112896dd16b4f05f60e82f747eba3a64d3d09a00e",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/01f5ytq51",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:34Z",
+   "sha256": "faa98d89a58ba7df1cdbb751b88d0568a8ab8a2237bd8fb3b9a933ee9433f485",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/02der9h97",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:35Z",
+   "sha256": "e33531e547ab1407041c0eaa0d58e078a5b4b47f5cd4f04d9db0a7c80dfa3ec3",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/01nxc2t48",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:36Z",
+   "sha256": "0d4ef7986bf9668a7bd0777c361f6e1424e78ccbd7770f6edbae0cfcd4dd7b3c",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/05bnh6r87",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:36Z",
+   "sha256": "88d86e37d1829d163a3d13ae42f026af6f68c622a48ce4c466d3a49b1cdea35e",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/042tdr378",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:37Z",
+   "sha256": "9980669d6099f25a524230d64df46830849761ec2cac7a3759e57440e2aae089",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/01qz5mb56",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:37Z",
+   "sha256": "5fc93718c1a6dffad9f06cadb3f7c47caf02c97dfca2aca6e9f71bb75582ef29",
+   "route": "curl"
+  },
+  {
+   "url": "https://api.ror.org/v2/organizations/0207ad724",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:15:38Z",
+   "sha256": "7790d0b3a7a5f6042bae8d18bd82f735b695cd00a1822019b90922cb528f7637",
+   "route": "curl"
+  },
+  {
+   "url": "https://eng.auburn.edu/cpac/academics",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:12Z",
+   "sha256": "1484245962eeb1e5b42baa06d087632c0aa7babaea51d93c070388bc031ba562",
+   "route": "curl"
+  },
+  {
+   "url": "https://eng.auburn.edu/cpac/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:15Z",
+   "sha256": "144416eedc2f83c1e33fa33b84a1ceb7938df7da9fea4e12c7da4de9fbc4524d",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.engineering.cornell.edu/faculty-directory/christopher-k-ober",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:43Z",
+   "sha256": "2f90aaf39346511a4584c62942f510336f567998fbeffd5c6c9d47115c8070c8",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.mse.cornell.edu/faculty-directory",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:44Z",
+   "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1",
+   "route": "curl"
+  },
+  {
+   "url": "https://catalog.cornell.edu/graduate-school/fiber-science-apparel-design/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:46Z",
+   "sha256": "4919713e79fa67cbf18e8f8890000adf67c3c235ca0624d7d8ab6a3a0770372a",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.mse.cornell.edu/faculty-directory",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:54Z",
+   "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.duffield.cornell.edu/events/mae-colloquium-jj-yeo-cornell-mae/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:16:54Z",
+   "sha256": "be88589690b6ea328baea8c3c0115ca389429747d199b50962deefb1261e6460",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.engineering.cornell.edu/faculty-directory/jingjie-yeo",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:04Z",
+   "sha256": "f48bf5f8a1dca507ed39e2f4eff7826fbc76447334dc6c00e43d5a85d6943797",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.mse.cornell.edu/faculty-directory",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:05Z",
+   "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.eng.auburn.edu/directory/adanusa.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:19Z",
+   "sha256": "24f3a1d2c9d6288b0767315c3256760d0ca225127499263ccf9f704ba4bbe5bd",
+   "route": "curl"
+  },
+  {
+   "url": "https://bulletin.auburn.edu/undergraduate/faculty/faculty.pdf",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:27Z",
+   "sha256": "5b7a409339387e7043d0606d60820566667bf3a4f047bc6ab32509f416aa09ba",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.vt.edu/people/faculty/teaching-and-research/pdeck.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:31Z",
+   "sha256": "b5274ba75aa96aa9b215699d2780278c1691269f0d6102e5e0d8ae0c7ec28ee9",
+   "route": "curl"
+  },
+  {
+   "url": "https://mii.vt.edu/people/faculty.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:42Z",
+   "sha256": "cb2f14be41be7a500f115fff210ba7fb828d7def7ae1717dfcf8fe80d08df133",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.vt.edu/people/faculty.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:51Z",
+   "sha256": "291e2712d1d61b279cb60cabdad5f0b919494d30d58e23b4bdb48dfe0fbb4e86",
+   "route": "curl"
+  },
+  {
+   "url": "https://cse.umn.edu/cems/tim-lodge",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:58Z",
+   "sha256": "eb24db6e1a056298792f39e458c857c4ac9a791d58a82c4da88049f7f2a9cab5",
+   "route": "curl"
+  },
+  {
+   "url": "https://lodge.cems.umn.edu",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:58Z",
+   "sha256": "474ff2722c08316a73dda58861552cd67ad85a8eb33cf2d5a91292c3e24ffda7",
+   "route": "curl"
+  },
+  {
+   "url": "https://mrsec.umn.edu/research/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:58Z",
+   "sha256": "3089e70ab6fe2565665405238738753689efb1017683a63471087b2dda93d248",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.kent.edu/amlci/people",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:59Z",
+   "sha256": "934f8dacabb89af561e67f59206119d5c8d4a154a5a672a2add9bc4341e0e101",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.kent.edu/amlci/news/nsf-awards-kent-state-researcher-nearly-1-million-separate-liquid-crystal-studies",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:59Z",
+   "sha256": "13b8362154396024a1ea648d49871a241d99caa5bbc546398e1f559de11183ef",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:17:59Z",
+   "sha256": "0e370bfa540bded26177333fa6aa4a7a5e6c814ff3a052b8758303b1c81d2995",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.case.edu/materials-branch/faculty",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:00Z",
+   "sha256": "de71267c8cb0532465c944788f9fc129010b38989ba3c20fb08a08934484837e",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.umass.edu/polymer-science/about/directory/murugappan-muthukumar",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:06Z",
+   "sha256": "0fc8697ec4f9932f93335f1f07c6f31900df6eb74f0f0be36083d01a22df57af",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.umass.edu/polymer-science/faculty",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:07Z",
+   "sha256": "b90f262a5286cbc1c987d4883a6fe440b2c6bc4e0d6b4ebdb0336fef00a241f1",
+   "route": "curl"
+  },
+  {
+   "url": "https://dmse.mit.edu/people/faculty/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:09Z",
+   "sha256": "1fa1663a6455697bfc6b9f407676c7d8f9772877172cd8de067b3455761d993e",
+   "route": "curl"
+  },
+  {
+   "url": "https://dmse.mit.edu/news/aristide-gumyusenge-will-receive-the-2026-pmse-early-investigator-award/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:11Z",
+   "sha256": "a6ca26bd0eb80a270bb85cfd80b94642098fd3c23943bf5eeb3c62d2cbaef4e8",
+   "route": "curl"
+  },
+  {
+   "url": "https://ppsm.mit.edu/faculty/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:11Z",
+   "sha256": "7749fad892c3a9b8ff9f346e4fd5f9ff1d98359be0ef2820eca634cc98e04b50",
+   "route": "curl"
+  },
+  {
+   "url": "https://pme.uchicago.edu/directory/shrayesh-patel",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:12Z",
+   "sha256": "045d68f080e3b2148738138ad7de0fffbdc6f913856e07eba083d68927d50192",
+   "route": "curl"
+  },
+  {
+   "url": "https://pme.uchicago.edu/faculty-research/lab-groups/patel-group",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:13Z",
+   "sha256": "e9c5ee1eeae0217ab7a2bea85ae7ffe5c7d177e71e963fe8429b2a50b885c0ef",
+   "route": "curl"
+  },
+  {
+   "url": "https://seas.harvard.edu/index%2Ephp/person/frans-spaepen",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:20Z",
+   "sha256": "366428d69e95bd5a037a8413d1db891e148389c3972385513ba626106020ac9c",
+   "route": "curl"
+  },
+  {
+   "url": "https://spaepen.seas.harvard.edu/",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:18:20Z",
+   "sha256": "71ae518d9ee50652cc6d33f599ae4eb779a86ecc60f1de565a3906be0d0e0d0f",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.mrsec.harvard.edu/pages/faculty.php",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:21Z",
+   "sha256": "8aaac32c31ad20f8b53c3e04cf022790068efb44ea3b91fc23e20792494449ba",
+   "route": "curl"
+  },
+  {
+   "url": "https://ibeam.brown.edu/people/vikas-srivastava",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:21Z",
+   "sha256": "7c00b0ed2fa9b19165ee3de61d214348b41320eda7fbc6370753c44e8e27c63b",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/people/gradgroup/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:23Z",
+   "sha256": "85e20e3e17cfefa31fcf1b41a1bb1cd5bca88932c38a0f37aaeeeabdb7402951",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/faculty/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:24Z",
+   "sha256": "f932759f540243d5196020b46f41c29b4b0dda356344e4e0a4dd8745b6bee917",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.mrsec.harvard.edu/pages/faculty.php",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:39Z",
+   "sha256": "8aaac32c31ad20f8b53c3e04cf022790068efb44ea3b91fc23e20792494449ba",
+   "route": "curl"
+  },
+  {
+   "url": "https://web.archive.org/web/2025/https://spaepen.seas.harvard.edu/",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:18:41Z",
+   "sha256": "cc2d2a4243b1eaf680fd0be7c2d4d2bd4ac919c9710115c0f24dac2fb9eeac56",
+   "route": "curl"
+  },
+  {
+   "url": "https://seas.harvard.edu/person/frans-spaepen",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:18:41Z",
+   "sha256": "7bb1b640d2b7d41eccf7dc2c7d7b3a41b5d6c2c59c3d724fb269f1c82118b4d7",
+   "route": "curl"
+  },
+  {
+   "url": "https://spaepen.seas.harvard.edu/research",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:18:41Z",
+   "sha256": "8917b36b30a8c92fab686a04da27b6ee96e30eb89f8780e49704ab36a941f99e",
+   "route": "curl"
+  },
+  {
+   "url": "https://spaepen.seas.harvard.edu/index.html",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:18:41Z",
+   "sha256": "6f4821b7ab600bd5782bb7723f6729774f8c43a502a0ccaa6d3e14c3ec3c093d",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.brown.edu/undergraduate/concentrations/materials-engineering",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:00Z",
+   "sha256": "606bcb8b6cfabb7bc22bad68f299e44aa7e15cdf456353ec357145c3d793fcf1",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.brown.edu/people/vikas-srivastava",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:01Z",
+   "sha256": "1145fb83bdf5eb8d28e51e971adcf27166f6ce89a02e62a2e0486d9569bfdba7",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.brown.edu/research/materials-and-mechanics",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:19:01Z",
+   "sha256": "c6414d8652b10f12cca6c090da8b2e3099168ed043c54629c7a3b586f6af9ac2",
+   "route": "curl"
+  },
+  {
+   "url": "https://vivo.brown.edu/display/vsrivast",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:19:02Z",
+   "sha256": "d778a9905c2d91892e2eccbcc3e3a409288daa8ccf68d18f9a37afc84b0fd391",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.brown.edu/research/research-interests",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:22Z",
+   "sha256": "4a221a0eb780f6870067a6824043f53e798d353fe7c6106135bdd0a6af0bf8fb",
+   "route": "curl"
+  },
+  {
+   "url": "https://sites.brown.edu/srivastavalab/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:24Z",
+   "sha256": "14ec4f3f5e871d3281358fd0176b709dd462803cd710cf1d4b2fb460016b60dd",
+   "route": "curl"
+  },
+  {
+   "url": "https://vivo.brown.edu/display/vsrivas1",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:28Z",
+   "sha256": "909961cd2af371bd1646c10c4e802c8852ebb8922dee39e6388d6657d1422609",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/faculty/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:45Z",
+   "sha256": "ae81c3f1ad4437b4ce2d397343b4f7c5829d1013a63fa8ec934e4f9b60acb321",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/people/vivek-shenoy/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:47Z",
+   "sha256": "189bd790f40b4645da0ed9ed537aa818472b06b2b0848ece2a3c26ea4d3d1a69",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/faculty/vivek-shenoy/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:19:50Z",
+   "sha256": "189bd790f40b4645da0ed9ed537aa818472b06b2b0848ece2a3c26ea4d3d1a69",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/people/vivek-b-shenoy/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:19:52Z",
+   "sha256": "dec7ceaea42dd3a8232b7d14b45e6f9810e4df6c39e9b6b7c1ee909326357ec0",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.seas.upenn.edu/directory/profile.php?ID=114",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:20:09Z",
+   "sha256": "ea3463bba3d1140833477cee8c057a7e44e964f0720d464835a1edd66ffc4f51",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/people/vivek-shenoy/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:20:15Z",
+   "sha256": "189bd790f40b4645da0ed9ed537aa818472b06b2b0848ece2a3c26ea4d3d1a69",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.seas.upenn.edu/directory/profile.php?ID=114",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:20:36Z",
+   "sha256": "ea3463bba3d1140833477cee8c057a7e44e964f0720d464835a1edd66ffc4f51",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:20:44Z",
+   "sha256": "9f3482ed272bb3aa2f1775995e20e9291232d51ad8fd330cabb47ac9d5ade0fc",
+   "route": "curl"
+  },
+  {
+   "url": "https://nextflex.us/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:20:45Z",
+   "sha256": "9a6ebcef96d3d4b7af4e1c4dea44e598abd3699c670bec73a9d45c1cf1816bd6",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/technology-hub/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:20:46Z",
+   "sha256": "dcbc51428ef59a5039929b214e3a801e10efb082cffb5d1b604dbe96c3281165",
+   "route": "curl"
+  },
+  {
+   "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2022/?unitid=199847",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:05Z",
+   "sha256": "f337bcb7e1bd83928190078dd869b650c32296338a7c5ace4454dfa84b0b3bda",
+   "route": "curl"
+  },
+  {
+   "url": "https://nces.ed.gov/collegenavigator/?id=199847",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:07Z",
+   "sha256": "06bcea7223a959052b4381e3af87d1fff10a5a842afdc89d10eb550edbdeebec",
+   "route": "curl"
+  },
+  {
+   "url": "https://physics.wfu.edu/research/condensed-matter/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:08Z",
+   "sha256": "496b99147f79f91c72d026223fd16b3e14bbdd2eefcaac0b66bc151f04bf4c26",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.wfu.edu/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:08Z",
+   "sha256": "95945f63097e312ef1f6f2fd6c8c885541d83abeddfd455ed28d812ae5fcc125",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:29Z",
+   "sha256": "9f3482ed272bb3aa2f1775995e20e9291232d51ad8fd330cabb47ac9d5ade0fc",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/about/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:34Z",
+   "sha256": "77c537a2e77117c6f103692924bac0e2c240e5724299dcce47a90663649702fa",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/technology/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:35Z",
+   "sha256": "04bcd31700e2d649c159948684af0e19139fa44c409926c18121536d33510a23",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/about/manufacturing-usa/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:35Z",
+   "sha256": "77207ff9e18f8f7b7dae0c055738c08c4703c2400861f4924ba43dfd8f625e6f",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/about-us/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:21:38Z",
+   "sha256": "eff2c91786fdd069e1117a19b940644001fdd0db1527ce2254dd546a979d4b14",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/technology-hub/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:38Z",
+   "sha256": "dcbc51428ef59a5039929b214e3a801e10efb082cffb5d1b604dbe96c3281165",
+   "route": "curl"
+  },
+  {
+   "url": "https://nextflex.us/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:52Z",
+   "sha256": "ceba2914f80e198faf8ed3e290dc76efa93b271f9f30352f8c52a126ca63750e",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.manufacturingusa.com/institutes/nextflex",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:54Z",
+   "sha256": "49dffb15eb6f8787e8d9a83c96fc64af8251020a8d4ca31e054103b3ef20b154",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/about-us/manufacturing-usa/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:21:57Z",
+   "sha256": "14050874c73b3244e7b796fec9a736013254b02a6fc7a3b8cd9393bf58bfb2be",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/about/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:01Z",
+   "sha256": "7b15b357fb4f82e16c68d2685bf69d32249e3dc66677c772edd64780379be3ce",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/about/manufacturing-usa/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:01Z",
+   "sha256": "14050874c73b3244e7b796fec9a736013254b02a6fc7a3b8cd9393bf58bfb2be",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/wp-json/wp/v2/search?search=FlexTech&per_page=10",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:17Z",
+   "sha256": "0375bd4ce598a82bcd6b553381284339481bc53030ba2b6d9688f655074c2df0",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/wp-json/wp/v2/search?search=Department+of+Defense&per_page=10",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:18Z",
+   "sha256": "cd80694bc5da9acbb713858254a45c9bcb962d7c882732db8d1c40e6a930e276",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/wp-json/wp/v2/search?search=polymer&per_page=10",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:26Z",
+   "sha256": "db36d92a32996882692b47cfa29e4218e1a0c18a0e2494fad42c8dd118c74874",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/affoa-continues-to-make-progress-on-fiber-computing-technologies/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:51Z",
+   "sha256": "05f248ea53d71c9eb81332507aa760179d2227b2344148fa6c1df868488e6581",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/affoa-a-decade-of-fabric-innovation-and-commercialization-in-the-u-s/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:51Z",
+   "sha256": "72253e548d8a1f2878144925e1cc0558a8d614954217568f59630784df34205d",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.manufacturingusa.com/institutes/affoa",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:52Z",
+   "sha256": "e806d1b6096c933402be885e11b0d0fae39cec687e8abc5578871229d76f7ddd",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:58Z",
+   "sha256": "a6cfb9877bf63857156d6e84e025fbd83e1f2292d8dcd6c2f0f6b441346a93e8",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:22:59Z",
+   "sha256": "cab0106843c877e3a49667723e268b294044ec1aecadd4942cfa2f76b8291c25",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.rotomolding.org/rotomolder-members/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:00Z",
+   "sha256": "f37a587432edd05522b41d20c3382650423672dfcd9a8200025a517b7ea4a17f",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.plasticsnews.com/article/20010806/NEWS/308069999/slowdown-leg-up-for-rotomolders/",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:23:00Z",
+   "sha256": "a6bee2b7736b4b919ce1677c777ba91adcf89ad9ac5372d77f2eea6be055a66e",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:09Z",
+   "sha256": "d674d7fd52a124eba2f822f2e692d2b98146dcdeef3ae06a7c29f7b6bc64df7c",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/contact/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:09Z",
+   "sha256": "fc61cac9347eb7be9cfd63893a0115816181f213f2a6bcd70710a67e17966dbe",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/contact-gregstrom/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:23:09Z",
+   "sha256": "fc12630d7d25db5b6eac4182ee6ef064b819dbacb33dfe66c6acb84485e2ce02",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/about-us/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:23:10Z",
+   "sha256": "70850a2e365ffeb5736018b33d11c3f5a1c6df1c798990f8e7f93e9001255972",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:51Z",
+   "sha256": "9a06e338673feb7ec7667f246204d3a828d5af51b788e6680eb7b3e5062454bb",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/services/rotational-molding-services/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:51Z",
+   "sha256": "c4f00d730b50b2343169bcbc5bacb5b84d38a7917c3ff557b0c0f56d128dd16f",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/rotational-molding-materials/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:51Z",
+   "sha256": "bc3754c425d0ece3fc5d59778f07679ffc2143efb2bd0b6a399187013ac426bd",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.omgitaly.com/agenti-e-distributori",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:57Z",
+   "sha256": "d1694ccbc75dee4ef77739c75127c7b96cc4098b0fc6cb680be2ab52fa9af6d1",
+   "route": "curl"
+  },
+  {
+   "url": "https://prod.plasticsnews.com/node/1160691",
+   "http_status": 0,
+   "fetched_at": "2026-11-14T17:23:57Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "https://pweus26.mapyourshow.com/8_0/exhibitor/exhibitor-list.cfm?export=pdf",
+   "http_status": 202,
+   "fetched_at": "2026-11-14T17:23:57Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "http://omgitaly.com/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:23:57Z",
+   "sha256": "3fbb7b65d3bfd63ceb3e4f676b8f28667ea161fd504622601f93dccdbb7dcb0c",
+   "route": "curl"
+  },
+  {
+   "url": "https://ptxpo28.mapyourshow.com/8_0/explore/exhibitor-alphalist.cfm?alpha=*",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:24:37Z",
+   "sha256": "6c382433f3f00afae7dfa97e2fc4cc9cbb196f42da305e27796c49ba929b2876",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/wp-content/uploads/2026/09/2026-Sponsorship-Lay-out-Sept-14-2026-Rev3.pdf",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:24:39Z",
+   "sha256": "ba9666276b9e0be05241f6c05464f087fac4f00545b48a4b769052831ce5b563",
+   "route": "curl"
+  },
+  {
+   "url": "https://spe-stx.org/wp-content/uploads/2026/03/Exhibitors-2026.csv",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:24:39Z",
+   "sha256": "54701f706482031fbb7202d1d285f20b2617618c74b7bcd9498060f0893702e2",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/speakers",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:24:41Z",
+   "sha256": "7a67cddb4408371d795e2bbf5cd6a2ccafc5d4b80d443907257eb4fdddee59fb",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/speakers",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:24:57Z",
+   "sha256": "ca5db5fa085d3c44d13433328a2cb0238ae3a0a2ecb80b0daa8f405a99207c64",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/home",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:24:59Z",
+   "sha256": "c13fb19e47bf9ac3cfbd2d3664492430ed0fd898183ba4fc8ad8c170c77cdf31",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:02Z",
+   "sha256": "11e8901f63048d51051bacc1b4c8590a4f6cc8a19b1e07074385c68d3fa14a25",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/summary",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:05Z",
+   "sha256": "380674aae4eff3ebad419f9e0067fc67341c72a769c30e31631f489b464f75ba",
+   "route": "curl"
+  },
+  {
+   "url": "https://spe-stx.org/wp-content/uploads/2026/03/Exhibitors-2026.csv",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:19Z",
+   "sha256": "54701f706482031fbb7202d1d285f20b2617618c74b7bcd9498060f0893702e2",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:21Z",
+   "sha256": "ecbff19ffe773bbdc1764fe7909682db4f50e621d283468c5b200f0e1e282da0",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/about/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:23Z",
+   "sha256": "e4e49c674cf6ae0b20f47fe4882a84ee86716024de70bb612bcd8cbd1b90657c",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/sponsors/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:25Z",
+   "sha256": "bd8f940b6c39a41b97bbb1642e8e9ffa11e37aef6a2d29f1c1781dd49d10e320",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/agenda/",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:25:26Z",
+   "sha256": "eb67e76c108b14ecfeed2fb1904cc48f2002bbb4f1c7889fbd80cf620bc23374",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:33Z",
+   "sha256": "f4b27d386a1032c9e17f277f5b5bde9b934255390b1cf3d2f39900caff95c970",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/2026-program-book/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:35Z",
+   "sha256": "9bb8f44a41f736cff6a1614e83f9c00a1656e6a7846f917b9b4057339cac4147",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/2026-registration-info/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:36Z",
+   "sha256": "b7aecd0e501875efba6a84517c533b701d44e85fc6a78d88da9da76f74969435",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/program/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:37Z",
+   "sha256": "9c709f2135ac1afc90dc23ddc16c2460c5535a391a530d328bd4e22f5b5f5783",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/schedule/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:38Z",
+   "sha256": "47ceac2d9f3742067f9c7bcf2b02875336f06eb65afe75e2806db91a60efdeac",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/schedule/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:44Z",
+   "sha256": "4068a23291d474fcd6987347313a2142592627e9dd08d0dff4f64f1f41eef0e3",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/hotel-travel/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:45Z",
+   "sha256": "084c6a2f6c68195d4ab153fb7b78c57c13c4f9fac49ce37b77cc821f01b0dea1",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/future-tpo-conference-dates/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:47Z",
+   "sha256": "279298848d3f292956b59a9bbd1425191fdd56bbe37ee230c06ce0cfabbc4353",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/2026-sponsors-exhibitors-expo-map/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:48Z",
+   "sha256": "31a79af4195ca65d8ee75c84d19f374ec293b496ae03ab205a420119e7b38251",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/conference/2026-sponsorship-levels-benefits/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:49Z",
+   "sha256": "14b75133bd7fa737b37b791eed982aaaa9b55389e33f2d12a9e52867fe17b58a",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/schedule/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:25:59Z",
+   "sha256": "da809bd69fce3077203c14c09890bdc0e0c00d3782df80b12f5e1de4add8cc3f",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/2026-program-book/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:01Z",
+   "sha256": "623bbc42ed9f4bd591546e74322588fc851fcd2c6f48ccabdaf756c5f706caf7",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/2026-registration-info/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:10Z",
+   "sha256": "1a3cea2642fe84ab481b1998e65f3e00de6c4d25220be704ed564fff4a4e334b",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/hotel-travel/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:12Z",
+   "sha256": "cbc85d2c9ac2c50da9eb946dd8f5dd4174e0be74d5b6a85b2a59e8facb06d88c",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/hotel-travel/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:14Z",
+   "sha256": "4b83a8e4f97b167b67b9ddb92d2508e1e50859bcce78dd3d5bfd73fe23d0eaeb",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:19Z",
+   "sha256": "337fadd0112ff3293128eea976cf0641978c200269a367eb3c4aeb2abfa73974",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.polyolefinsconference.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:51Z",
+   "sha256": "22b58178e2c7c5f85e1cb6e8e28e9e7a31bc9dd781af6beda3b5bdf01e359437",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.polyolefinsconference.org/exhibitors",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:26:51Z",
+   "sha256": "3a544106eb185ab7aed03b7da8745541506521877bd1599266f837c86bcd25d3",
+   "route": "curl"
+  },
+  {
+   "url": "https://spe-stx.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:52Z",
+   "sha256": "eab21225afe81d48be2f1dfe093584cfef3d56175d58eafa5932f7f81ab9edbd",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/research-areas/polymer-science/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:58Z",
+   "sha256": "a4eff82e61d2e18db70b44beb9e1996c10cdf7cd7b0d933512c9cb39d1deba6d",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/research-areas/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:58Z",
+   "sha256": "6f2308dc120532c720d15a8e362c654997a1ccb353c4978ec9e9274f446bdedc",
+   "route": "curl"
+  },
+  {
+   "url": "https://tickle.utk.edu/mae/research/labs-and-centers/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:26:59Z",
+   "sha256": "d9d7c03216ea0f9535234320ad69c325600e7b831b1678ec5da6f42fae7aa23e",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/research-areas/polymer-science/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:07Z",
+   "sha256": "f7b0f66601a85dace56b3e353d469a5d5abe1d44ecc298d87e5aa6cc9a0ceb22",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/about/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:08Z",
+   "sha256": "0db738cb3687e220925aca7bd6c1201682ec36c8347c4d239a7ea95c082cb63f",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/about/core-facilities/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:08Z",
+   "sha256": "385e8b362f1a7766ccbf1016db636dafe00b0f2896bce46ce7e9f372acba90da",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/about/iamm-hq/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:08Z",
+   "sha256": "00f1a030bd3195fffde0e99007faa59b43047dd1f699d6fe458750efc43f5f05",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/about/iamm-hq/forms-resources/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:09Z",
+   "sha256": "ab30f3eb37e5b793abcedb84e1d50cba839d0cf6977915d6e24e9d1bf644105a",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/about/iamm-staff/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:10Z",
+   "sha256": "24bc108c2c7bcde6b1b46530b9d8f1245d040b6e5d7333b0d50860e54f904e1b",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/research-areas/polymer-science/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:16Z",
+   "sha256": "cb9076957a8d7366679bd2feb0d92bd0af3bec381e078f1f95fe109a5b234222",
+   "route": "curl"
+  },
+  {
+   "url": "https://dmi.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:22Z",
+   "sha256": "c36673d398d23e39873363ddf037a37eff52c3804c1f050cd88ed51fb7b96bca",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nsfcci.org/currentcenters-1",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:23Z",
+   "sha256": "ce016c92a2b168b634bef681a2ba50bece3583f1e315af361f91d80bf96b3802",
+   "route": "curl"
+  },
+  {
+   "url": "https://monet.duke.edu/",
+   "http_status": 0,
+   "fetched_at": "2026-11-14T17:27:23Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "https://dmi.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:39Z",
+   "sha256": "c36673d398d23e39873363ddf037a37eff52c3804c1f050cd88ed51fb7b96bca",
+   "route": "curl"
+  },
+  {
+   "url": "https://monet.duke.edu",
+   "http_status": 0,
+   "fetched_at": "2026-11-14T17:27:39Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "http://monet.duke.edu/",
+   "http_status": 0,
+   "fetched_at": "2026-11-14T17:27:39Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.monet.duke.edu/",
+   "http_status": 0,
+   "fetched_at": "2026-11-14T17:27:39Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.duke.edu/news",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:39Z",
+   "sha256": "f20b52b054ba868737dd4911e51802021482e8b4a1493c4eaedd3ea12ed295e9",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.duke.edu/news",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:27:45Z",
+   "sha256": "f20b52b054ba868737dd4911e51802021482e8b4a1493c4eaedd3ea12ed295e9",
+   "route": "curl"
+  },
+  {
+   "url": "https://dmi.duke.edu/news/nsf-creates-polymer-chemistry-optimization-center-duke-future-materials",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:00Z",
+   "sha256": "c36673d398d23e39873363ddf037a37eff52c3804c1f050cd88ed51fb7b96bca",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nsfcci.org/currentcenters-1",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:01Z",
+   "sha256": "ce016c92a2b168b634bef681a2ba50bece3583f1e315af361f91d80bf96b3802",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.duke.edu/news",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:03Z",
+   "sha256": "f20b52b054ba868737dd4911e51802021482e8b4a1493c4eaedd3ea12ed295e9",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.duke.edu/news/monet-moves-phase-ii",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:08Z",
+   "sha256": "89069854c49edc5b2801ebf7d03debf0ba6d3ad543a4eacdac088d71cd12c25f",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.monetcci.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:20Z",
+   "sha256": "321e136fba52582d4cdfc13ef3e9a46ec5603e8ef5e9cb1514aff85d9c3397fb",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.monetcci.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:24Z",
+   "sha256": "321e136fba52582d4cdfc13ef3e9a46ec5603e8ef5e9cb1514aff85d9c3397fb",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.monetcci.org/our-team",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:33Z",
+   "sha256": "4724646fb2517008ac8dd66432db214ddc71c2cbad7d4c3b7a83eabbc510b6a2",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.monetcci.org/overview",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:35Z",
+   "sha256": "ba1d60b16c3c4382cca8d7e4a015720597116fae3bff022b1747a07376d62235",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/mml/materials-science-and-engineering-division/polymers-and-complex-fluids-group",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:28:44Z",
+   "sha256": "79013dfca50beabe498bddb10b2d902464e8c6ea1f2101316a495d6513ee97da",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.semi.org/en/resources/member-directory/nextflex",
+   "http_status": 403,
+   "fetched_at": "2026-11-14T17:29:24Z",
+   "sha256": "ad8b188725d0d7d86a597be0caf171cfe53cac2b6bb373d9c15af87757be5cc6",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/flextech-alliance-receives-75-million-department-defense-award-create-manage-flexible-hybrid-electronics-manufacturing-facility/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:29:29Z",
+   "sha256": "3626c07423e59015e589989bb9d67319a47b9ea9a6908fc6cd042443868dec38",
+   "route": "curl"
+  },
+  {
+   "url": "https://ptxpo28.mapyourshow.com/8_0/ajax/remote-proxy.cfm?action=search&searchtype=exhibitorgallery&searchsize=500&start=0&show=ALL&alpha=*",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:29:45Z",
+   "sha256": "00b39d4591ccc375795b4c1746015be2e0a75a2739db2e65503326cd9b53444f",
+   "route": "curl"
+  },
+  {
+   "url": "https://ptxpo28.mapyourshow.com/8_0/exhibitor/exhibitor-details.cfm?exhid=2241",
+   "http_status": 202,
+   "fetched_at": "2026-11-14T17:29:46Z",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "route": "curl"
+  },
+  {
+   "url": "https://ptxpo28.mapyourshow.com/8_0/explore/exhibitor-results",
+   "http_status": 404,
+   "fetched_at": "2026-11-14T17:29:46Z",
+   "sha256": "fb64ccbad8f42ea75fce8896ccac221b857405a08e39689100bcc58862d19a2c",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.brown.edu/research/research-interests",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:36:20Z",
+   "sha256": "4a221a0eb780f6870067a6824043f53e798d353fe7c6106135bdd0a6af0bf8fb",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=10%20Iron%20Horse%20Dr%2C%20Bedford%2C%20NH%2003110&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:17Z",
+   "sha256": "263538023be0c704fda77d783bbfca8ed5f2a17990396ece791e92b0d6959e2a",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2244%20Blach%20Pl%2C%20San%20Jose%2C%20CA%2095131&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:18Z",
+   "sha256": "b5565f9c72c4cf5997edff608bbdabaa6a69adedb9f4bbca8fa4bd80b88fc415",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=135%20South%20Rd%2C%20Bedford%2C%20MA%2001730&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:22Z",
+   "sha256": "96c4f7279ec1aea876d2ecc95422c6056aa661442d539d6c83effc063ef5ec95",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1834%20Wake%20Forest%20Rd%2C%20Winston-Salem%2C%20NC%2027106&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:23Z",
+   "sha256": "2db30764ffa70796d80f28ed436d3af05ca3d4430cc3fcbedb0597b2a97e354d",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=Durham%2C%20NC%2027708&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:27Z",
+   "sha256": "e74ac7378d240847cb078a054234f05ae8263619e3e59a9ca6fb655b8283d970",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2244%20Blach%20Place%2C%20San%20Jose%2C%20CA&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:34Z",
+   "sha256": "6db958fed4bd69f8425d7507797c5cda08aed54af3ed95b9e3bacf50e77fda58",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2244%20Blach%20Pl%2C%20San%20Jose%2C%20CA%2095131&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:35Z",
+   "sha256": "b5565f9c72c4cf5997edff608bbdabaa6a69adedb9f4bbca8fa4bd80b88fc415",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2080%20Duke%20University%20Rd%2C%20Durham%2C%20NC%2027708&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:36Z",
+   "sha256": "a88febe551b76efd3c469ddd2da1cb51160b3d4057ac5e0d81500d96db818050",
+   "route": "curl"
+  },
+  {
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=Science%20Dr%2C%20Durham%2C%20NC%2027708&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:36Z",
+   "sha256": "a733b96e1becfd215fd54f8e3ebde8f0a2fe56819ee0c1d4031517befcba5536",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.monetcci.org/our-team",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:37:51Z",
+   "sha256": "4724646fb2517008ac8dd66432db214ddc71c2cbad7d4c3b7a83eabbc510b6a2",
+   "route": "curl"
+  },
+  {
+   "url": "https://nextflex.us/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:38:14Z",
+   "sha256": "94b1059090f22131a7c46c6280d088f751fe3cc3dc4ce049e76d5afd6146a609",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:38:21Z",
+   "sha256": "94b1059090f22131a7c46c6280d088f751fe3cc3dc4ce049e76d5afd6146a609",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/technology-hub/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:38:24Z",
+   "sha256": "dcbc51428ef59a5039929b214e3a801e10efb082cffb5d1b604dbe96c3281165",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/about/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:38:26Z",
+   "sha256": "7b15b357fb4f82e16c68d2685bf69d32249e3dc66677c772edd64780379be3ce",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/about/manufacturing-usa/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:38:27Z",
+   "sha256": "5528b4eb1187db2febd5515c174b47aede9ac8bbf5f1d14c9a05379935c3d0d0",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/nextflex-proves-manufacturability-flexible-hybrid-electronics-process-creating-first-flexible-arduino-system-ideal-bringing-new-iot-sensor-products-market-fruition/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:38:29Z",
+   "sha256": "153d6a53df3c6e1de51f14cef567e14306d91d72cb295efc5349533efc8ca952",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/wp-content/uploads/2026/09/TPOGuide26-9_22-optimized.pdf",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:39:20Z",
+   "sha256": "3536ae12ec4bfeec012e28659738718232fdc2d28b6a87cd54c6a9ec468ee374",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-8559-2783/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:50Z",
+   "sha256": "6580f65ea3fc0def75b4ec280fd3a808d3e755fc0c4e66802b6786a5c061ba9e",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6484-872X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:50Z",
+   "sha256": "2ec784210e9754d5d97b78596f85dc2577e34b0b3ba42f7604e8c66f8e5d6035",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-9331-6535/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:51Z",
+   "sha256": "fe1e055b7c6d345b337b36ca187a93310cb435f4492a3fc320c3a026044d7ac3",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-1298-2876/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:51Z",
+   "sha256": "f000120bbfeaf8af035416f6227a44e040ae4088c8d840b63b9fd4bf39bb0a7e",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-0594-5025/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:52Z",
+   "sha256": "ba53d8b2ad5a7c4f26aa6401335ca9a5018c9d65a4516ed5dde065f18554b753",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-6953-4970/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:54Z",
+   "sha256": "f7588f7fc2b514cf3f800607c7be64b3153807f27732fa6c7b49b1ff483c3ac2",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-3935-7467/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:59Z",
+   "sha256": "20e777662ab56a7ec65f9d507f6beb59374e0e240155aa1a9d100ae3ad791791",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-7197-0085/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:40:59Z",
+   "sha256": "cd3760885de9862f59ca240511ec89ee76215b544ae415583b6986b4a54f1021",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-7966-1239/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:00Z",
+   "sha256": "304671262f2b7fbcff5bf24adf81e42efd93dfc0f82ce81e889eb11a2553c3ac",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-1229-6078/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:02Z",
+   "sha256": "2678ab3d9671bd0696ac3458d30a7fa7244fcdf7fc2d0af91573a732f1ec3508",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-3872-1463/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:03Z",
+   "sha256": "4f2ae5ed558ea39a096949189145139b76a008a6c7fbec2e592fe6d8bbba3884",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-2990-923X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:03Z",
+   "sha256": "4132dccb72e0dfc58d35aeab1f25d9cca89ca05c4f79410f55a272bcc61527aa",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6714-4410/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:05Z",
+   "sha256": "0b970b9424f891961ea12c794148a7fac06756239b3866eec6c91a462053c0a8",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-3083-7907/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:06Z",
+   "sha256": "6142d0e0a0147134b4363b1303f5e1485ddb64298b733af539e21a24092b53db",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-8692-4268/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:06Z",
+   "sha256": "20dab9685d6cd322dcdec624c04c9289f65bb7fe8505203e2d3598bb843a7d7a",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-3605-6404/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:08Z",
+   "sha256": "82977ada493bab96e66a06486b231b9f1a4b879383e2d541385354ff29f1cfb6",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6482-543X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:09Z",
+   "sha256": "678e984654d246c8fe41749ee90ae10f746241dae139834829334e205c191907",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-5617-9220/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:09Z",
+   "sha256": "8aaf0e3cfbdb8afb17e6cd896ce1f9567e0423e261dd589b45f1f99399ec544e",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-2650-0746/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:11Z",
+   "sha256": "5d84c4956df7d1965bbfc0cc809f8ceaf4c7ce04f2b07705687b4bc4c0560d67",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-0572-7108/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:11Z",
+   "sha256": "a505553a85e122ce33060e3da659fdc3aaffc163d5b5d40de9b63277d5710e87",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6746-8634/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:21Z",
+   "sha256": "0eab27c9832c261c4e2d75b10926aa56ccea1b524d95639fdc170ec6a4212622",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-8559-2783/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:23Z",
+   "sha256": "6580f65ea3fc0def75b4ec280fd3a808d3e755fc0c4e66802b6786a5c061ba9e",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/people/katherine-evans",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:25Z",
+   "sha256": "ae90abc0b28f4aa663073164399474d627db90515cb369e8528b24eb8ac85230",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-9331-6535/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:25Z",
+   "sha256": "fe1e055b7c6d345b337b36ca187a93310cb435f4492a3fc320c3a026044d7ac3",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-1298-2876/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:27Z",
+   "sha256": "f000120bbfeaf8af035416f6227a44e040ae4088c8d840b63b9fd4bf39bb0a7e",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-0594-5025/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:29Z",
+   "sha256": "ba53d8b2ad5a7c4f26aa6401335ca9a5018c9d65a4516ed5dde065f18554b753",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-6953-4970/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:31Z",
+   "sha256": "f7588f7fc2b514cf3f800607c7be64b3153807f27732fa6c7b49b1ff483c3ac2",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-3935-7467/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:35Z",
+   "sha256": "20e777662ab56a7ec65f9d507f6beb59374e0e240155aa1a9d100ae3ad791791",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-7197-0085/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:37Z",
+   "sha256": "cd3760885de9862f59ca240511ec89ee76215b544ae415583b6986b4a54f1021",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-7966-1239/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:38Z",
+   "sha256": "304671262f2b7fbcff5bf24adf81e42efd93dfc0f82ce81e889eb11a2553c3ac",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-1229-6078/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:40Z",
+   "sha256": "2678ab3d9671bd0696ac3458d30a7fa7244fcdf7fc2d0af91573a732f1ec3508",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-3872-1463/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:41Z",
+   "sha256": "4f2ae5ed558ea39a096949189145139b76a008a6c7fbec2e592fe6d8bbba3884",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-2990-923X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:41Z",
+   "sha256": "4132dccb72e0dfc58d35aeab1f25d9cca89ca05c4f79410f55a272bcc61527aa",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6714-4410/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:43Z",
+   "sha256": "0b970b9424f891961ea12c794148a7fac06756239b3866eec6c91a462053c0a8",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-3083-7907/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:43Z",
+   "sha256": "6142d0e0a0147134b4363b1303f5e1485ddb64298b733af539e21a24092b53db",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/people/paul-salipante",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:44Z",
+   "sha256": "ecd37bac9023e6ebd3e2012235ccb1032cc4dd1bfd9087b3c4a0e3aa6b20bdd5",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0003-3605-6404/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:44Z",
+   "sha256": "82977ada493bab96e66a06486b231b9f1a4b879383e2d541385354ff29f1cfb6",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-6482-543X/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:45Z",
+   "sha256": "678e984654d246c8fe41749ee90ae10f746241dae139834829334e205c191907",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0001-5617-9220/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:45Z",
+   "sha256": "8aaf0e3cfbdb8afb17e6cd896ce1f9567e0423e261dd589b45f1f99399ec544e",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-2650-0746/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:46Z",
+   "sha256": "5d84c4956df7d1965bbfc0cc809f8ceaf4c7ce04f2b07705687b4bc4c0560d67",
+   "route": "curl"
+  },
+  {
+   "url": "https://pub.orcid.org/v3.0/0000-0002-0572-7108/record",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:46Z",
+   "sha256": "a505553a85e122ce33060e3da659fdc3aaffc163d5b5d40de9b63277d5710e87",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.aphms.caltech.edu/people/jak",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:47Z",
+   "sha256": "26bdf14a79bfa26e6003081112896dd16b4f05f60e82f747eba3a64d3d09a00e",
+   "route": "curl"
+  },
+  {
+   "url": "https://eng.auburn.edu/cpac/academics",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:50Z",
+   "sha256": "1484245962eeb1e5b42baa06d087632c0aa7babaea51d93c070388bc031ba562",
+   "route": "curl"
+  },
+  {
+   "url": "https://affoa.org/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:41:57Z",
+   "sha256": "22b08f57cafc7f21ca62f3bdfb96ee8e1d78db22481c728419ec857c13a1d032",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.mse.cornell.edu/faculty-directory",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:00Z",
+   "sha256": "d1456e8e15d0a6af1698bf3eaa1b35b7d3a85262075f5f48352a76cb925499e1",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nextflex.us/technology-hub/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:04Z",
+   "sha256": "0e770236e95c2fe486200287ee854a6d76debb7bfd60ef0ea1d1f26ec65fc6a8",
+   "route": "curl"
+  },
+  {
+   "url": "https://bulletin.auburn.edu/undergraduate/faculty/faculty.pdf",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:11Z",
+   "sha256": "5b7a409339387e7043d0606d60820566667bf3a4f047bc6ab32509f416aa09ba",
+   "route": "curl"
+  },
+  {
+   "url": "https://mii.vt.edu/people/faculty.html",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:33Z",
+   "sha256": "cb2f14be41be7a500f115fff210ba7fb828d7def7ae1717dfcf8fe80d08df133",
+   "route": "curl"
+  },
+  {
+   "url": "https://auto-tpo.com/wp-content/uploads/2026/09/TPOSchedule-rev2-9_15_26-FINAL.pdf",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:34Z",
+   "sha256": "337fadd0112ff3293128eea976cf0641978c200269a367eb3c4aeb2abfa73974",
+   "route": "curl"
+  },
+  {
+   "url": "https://cse.umn.edu/cems/tim-lodge",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:35Z",
+   "sha256": "885ad921c7bd1861bf0d0005b37ffdb965c67da9b531273ea2f91d95a4aade21",
+   "route": "curl"
+  },
+  {
+   "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2022/?unitid=199847",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:35Z",
+   "sha256": "f337bcb7e1bd83928190078dd869b650c32296338a7c5ace4454dfa84b0b3bda",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.omgitaly.com/agenti-e-distributori",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:36Z",
+   "sha256": "d1694ccbc75dee4ef77739c75127c7b96cc4098b0fc6cb680be2ab52fa9af6d1",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/contact/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:38Z",
+   "sha256": "812eec5000435802c07966ad23aec7f6ed7010970ea74d9ad4021829aa157b81",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.kent.edu/amlci/people",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:38Z",
+   "sha256": "934f8dacabb89af561e67f59206119d5c8d4a154a5a672a2add9bc4341e0e101",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.engineering.cornell.edu/faculty-directory/jingjie-yeo",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:39Z",
+   "sha256": "f48bf5f8a1dca507ed39e2f4eff7826fbc76447334dc6c00e43d5a85d6943797",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.case.edu/macromolecular-science-and-engineering/faculty-and-staff",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:40Z",
+   "sha256": "0e370bfa540bded26177333fa6aa4a7a5e6c814ff3a052b8758303b1c81d2995",
+   "route": "curl"
+  },
+  {
+   "url": "https://seas.harvard.edu/person/frans-spaepen",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:41Z",
+   "sha256": "7bb1b640d2b7d41eccf7dc2c7d7b3a41b5d6c2c59c3d724fb269f1c82118b4d7",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:41Z",
+   "sha256": "9ed38858e3051cfa755a9c6815f35e1055f34ac066cc0506ac5a7c14c7efd040",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.omgitaly.com/agenti-e-distributori",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:42Z",
+   "sha256": "d1694ccbc75dee4ef77739c75127c7b96cc4098b0fc6cb680be2ab52fa9af6d1",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.umass.edu/polymer-science/about/directory/murugappan-muthukumar",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:43Z",
+   "sha256": "0fc8697ec4f9932f93335f1f07c6f31900df6eb74f0f0be36083d01a22df57af",
+   "route": "curl"
+  },
+  {
+   "url": "https://dmse.mit.edu/people/faculty/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:54Z",
+   "sha256": "bf618818753454b1d5dd9c2705aca21d8a4dcefb46aca8cacd97b869d92787ff",
+   "route": "curl"
+  },
+  {
+   "url": "https://research.utk.edu/iamm/about/core-facilities/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:42:56Z",
+   "sha256": "16f3ebdf7cd7b368ec6f7cc9d89ff542df5fd5ae5958aa61cee771763138c208",
+   "route": "curl"
+  },
+  {
+   "url": "https://chem.duke.edu/news/monet-moves-phase-ii",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:01Z",
+   "sha256": "89069854c49edc5b2801ebf7d03debf0ba6d3ad543a4eacdac088d71cd12c25f",
+   "route": "curl"
+  },
+  {
+   "url": "https://engineering.brown.edu/research/research-interests",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:01Z",
+   "sha256": "4a221a0eb780f6870067a6824043f53e798d353fe7c6106135bdd0a6af0bf8fb",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.nist.gov/mml/materials-science-and-engineering-division/polymers-and-complex-fluids-group",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:02Z",
+   "sha256": "6a7bf32109c388f30442947c445a83f07efbf8dee3e215f09f0e7ad91c0c87e7",
+   "route": "curl"
+  },
+  {
+   "url": "https://pme.uchicago.edu/directory/shrayesh-patel",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:04Z",
+   "sha256": "045d68f080e3b2148738138ad7de0fffbdc6f913856e07eba083d68927d50192",
+   "route": "curl"
+  },
+  {
+   "url": "https://gregstrom.com/gregstrom-moves-rotomolding-business/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:05Z",
+   "sha256": "4038a198345a8d8120cdaed81699b8087ff03e9c6cea6d6ec19292e2ebe84ee0",
+   "route": "curl"
+  },
+  {
+   "url": "https://spe-stx.org/wp-content/uploads/2026/03/Exhibitors-2026.csv",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:06Z",
+   "sha256": "54701f706482031fbb7202d1d285f20b2617618c74b7bcd9498060f0893702e2",
+   "route": "curl"
+  },
+  {
+   "url": "https://www.ami-events.com/event/4be30ecb-2ae0-4f40-a877-a38e69fed6f3/speakers",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:09Z",
+   "sha256": "8f3824abfe60f771e81787b7b5905ec5f38ef6f46da94c077adf5029f43d6530",
+   "route": "curl"
+  },
+  {
+   "url": "https://mse.engineering.upenn.edu/faculty/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14T17:43:12Z",
+   "sha256": "4b0fbc5c1f19685eed148b0d29ba6aac6bcf55564f1b94f24d38859427caba20",
+   "route": "curl"
+  },
+  {
+   "url": "https://spaepen.seas.harvard.edu/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14",
+   "sha256": null,
+   "route": "tavily_extract (curl returned 403 Akamai; body hash unavailable)"
+  },
+  {
+   "url": "https://ptxpo28.mapyourshow.com/8_0/explore/exhibitor-alphalist.cfm?alpha=*",
+   "http_status": 200,
+   "fetched_at": "2026-11-14",
+   "sha256": null,
+   "route": "tavily_extract advanced (curl got JS shell / HTTP 202); quote not mechanically verified"
+  },
+  {
+   "url": "https://www.plasticstechnologyexpo.com/",
+   "http_status": 200,
+   "fetched_at": "2026-11-14",
+   "sha256": null,
+   "route": "tavily_extract"
+  },
+  {
+   "url": "https://prod.plasticsnews.com/node/1160691",
+   "http_status": 0,
+   "fetched_at": "2026-11-14",
+   "sha256": null,
+   "route": "curl HTTP 0 and tavily_extract failed - availability only"
+  },
+  {
+   "url": "dns:monet.duke.edu",
+   "http_status": null,
+   "fetched_at": "2026-11-14",
+   "sha256": null,
+   "route": "nslookup monet.duke.edu 8.8.8.8 -> NXDOMAIN; curl: could not resolve host (corroboration only)"
+  },
+  {
+   "url": "https://www.mapquest.com/us/texas/omg-thermoforming-inc-420593411",
+   "http_status": null,
+   "fetched_at": "2026-11-14",
+   "sha256": null,
+   "route": "tavily_search result snippet only (address listing for Omg Thermoforming Inc); not fetched"
+  }
+ ]
+}

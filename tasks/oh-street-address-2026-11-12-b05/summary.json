@@ -1,0 +1,29 @@
+{
+ "batch": "b05",
+ "frame": 100,
+ "verdicts": {
+  "VERIFIED": 28,
+  "STILL_UNCERTAIN": 72
+ },
+ "hold_reasons": {
+  "own-site fetch unavailable": 17,
+  "same-city sibling sites": 1,
+  "notes street disagrees": 4,
+  "pages read, no street at recorded city": 38,
+  "no held website": 8,
+  "fresh re-fetch failed": 1,
+  "other": 1,
+  "ZIP conflict": 2
+ },
+ "fetch_attempts": 449,
+ "fetch_2xx": 291,
+ "verified_by_tier": {
+  "U": 7,
+  "C": 9,
+  "B": 6,
+  "A": 6
+ },
+ "active_oh_sites": 1877,
+ "active_oh_with_street_after": 494,
+ "audit_pass": 28
+}
