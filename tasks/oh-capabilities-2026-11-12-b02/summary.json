@@ -6,28 +6,28 @@
  "sites_fetched_ok": 83,
  "pages_ok": 342,
  "candidates": 90,
- "accepted_terms": 33,
- "records_gaining_tag": 7,
- "yield_pct": 7.0,
- "sites_tagged": 5,
+ "accepted_terms": 31,
+ "records_gaining_tag": 6,
+ "yield_pct": 6.0,
+ "sites_tagged": 4,
  "orgs_tagged": 2,
- "site_evidence": 8,
+ "site_evidence": 6,
  "org_evidence": 5,
  "evidence_rows_by_basis": {
-  "menu": 6,
+  "menu": 4,
   "narrative": 6
  },
  "sites_tagged_by_basis": {
   "narrative": 3,
-  "menu": 3
+  "menu": 2
  },
- "cap_rows": 16,
+ "cap_rows": 14,
  "held_tags_V25": 18,
  "sites_cap_only_V25": [
   "SITE-000623",
   "SITE-000647",
   "SITE-001733"
  ],
- "evd_range": "EVD-345100..EVD-345112",
- "cap_range": "CAP-001015..CAP-001031 (CAP-001026 withdrawn)"
+ "evd_range": "EVD-345100..EVD-345112 (EVD-345111, EVD-345112 retired)",
+ "cap_range": "CAP-001015..CAP-001031 (CAP-001026, CAP-001030, CAP-001031 withdrawn)"
 }

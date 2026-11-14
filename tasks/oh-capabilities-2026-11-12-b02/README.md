@@ -48,13 +48,13 @@ On a tier-A/B record with no A/B-strength scope row, a `supports_C` scope row fa
 |---|---|
 | frame rows | 100 (83 with ≥1 page loaded; 342 pages) |
 | candidates judged | 90 |
-| accepted term decisions | 33 (`verdicts.csv`) |
-| records gaining a §3 tag | **7** (7.0% yield) |
-| sites tagged, by basis | narrative (A) 4, menu (C) 3 (a site can have both) |
-| evidence rows by basis | menu 6, narrative 6 (site 11, org 2) |
+| accepted term decisions | 31 (`verdicts.csv`) |
+| records gaining a §3 tag | **6** (6.0% yield) |
+| sites tagged, by basis | narrative (A) 4, menu (C) 2 (a site can have both) |
+| evidence rows by basis | menu 4, narrative 6 (site 6, org 5) |
 | menu terms held from §3 tag (V-25) | 18 (sites with capability rows only: SITE-000623, SITE-000647, SITE-001733) |
-| site_capabilities rows | 17 (CAP-001015..CAP-001031) |
-| evidence IDs | EVD-345100..EVD-345112 |
+| site_capabilities rows | 14 (CAP-001015..CAP-001031; CAP-001026, 001030, 001031 withdrawn) |
+| evidence IDs | EVD-345100..EVD-345112 (EVD-345111 and 345112 retired; 11 rows live) |
 
 Candidates that were not minted are in `not_minted.csv`, each with a reason. These are not REJECT verdicts on records. When a fetch failed, the source was unavailable; that does not mean the capability is absent.
 
@@ -62,7 +62,7 @@ Candidates that were not minted are in `not_minted.csv`, each with a reason. The
 No permit rows were minted in this batch. TRI/FRS give NAICS and chemicals, not §3 process terms. Ohio EPA air-permit emission-unit descriptions do name processes, but they need a per-facility document pull. That is left as the next source for the rows still untagged.
 
 ## Yield stop
-This batch gave 7 of 100 records a §3 tag (7%), or 10 of 100 (10%) counting the 3 sites that got capability rows only (GRAFIX SITE-000383 laminating has no §3.6 term, so it is held entirely). b01 was 11%. Both are below the 20% stop rule even with the menu ruling, so **this lane stops here**. Rows 200–306 of the frame (106 rows) are untouched. Restarting needs a different source, such as Ohio EPA air-permit emission-unit text or product-catalog PDFs.
+This batch gave 6 of 100 records a §3 tag (6%), or 9 of 100 (9%) counting the 3 sites that got capability rows only (GRAFIX SITE-000383 laminating has no §3.6 term, so it is held entirely). b01 was 11%. Both are below the 20% stop rule even with the menu ruling, so **this lane stops here**. Rows 200–306 of the frame (106 rows) are untouched. Restarting needs a different source, such as Ohio EPA air-permit emission-unit text or product-catalog PDFs.
 
 ## Leads
 - Mechanical Rubber SITE-000118 (an NY address on its own site), Q Medical Devices SITE-000568 and ePac SITE-001652 (multi-location companies): org grain only, and their org columns were already filled.
@@ -87,3 +87,17 @@ Never merged by the author. No Muse files touched; the only QUEUE edit is the #3
   - Effect stays `supports_U`, not `supports_C`. SITE-000122 is tier U, and SCHEMA §4.13 (S4) sets `supports_U` for claims on tier-U records (the relabel above), so the evidence rules require it.
 - **Not edited, recorded only:** Anita's own site says it is based in Solon, Ohio (44139). Main has SITE-000122 / ORG-000123 in Woodmere (pre-existing). This is a relocation or address lead.
 - **Conflict note:** #321 and #324 both touch `data/sites_OH.csv`, `organizations_OH.csv`, `evidence_sites_OH.csv` and `site_capabilities.csv` (appended rows). Whichever merges second needs a normal-merge replay.
+
+## Withdrawal, 2026-11-14 (Codex REFUTE of #324 @ 79541c4): Anita Plastics site tags held
+The refute: the PP/PE evidence and capability rows attach to `SITE-000122` (Woodmere, tier U, no street), but the company's own site gives a Solon address and its products page says Anita Plastics is a trading group for a parent that manufactures in India. Neither page binds PP/PE manufacture or sales to the held Woodmere establishment, and `supports_U` plus a caveat does not repair that (SCHEMA §4.15, §3.6).
+
+Withdrawn (unit: cells and rows, all new in this PR, so no row loss):
+- `SITE-000122` `materials` back to main's value (empty); it was `polyethylene_pe;polypropylene_pp`. `ORG-000123` already carries both terms at organization grain on main (EVD-013501, EVD-013502), so nothing is lost at org grain.
+- EVD-345111, EVD-345112 removed from `evidence_sites_OH.csv`; CAP-001030, CAP-001031 removed from `site_capabilities.csv`. **Retired, never reuse.**
+- The two terms moved from `verdicts.csv` and `scripts/decisions.csv` to `not_minted.csv` as HOLD (not REJECT).
+
+| Hold | Recommended reading | What would settle it |
+|---|---|---|
+| Site-grain PP/PE tags and capabilities on `SITE-000122` | Org grain only until the location is settled | A page or filing tying PP/PE manufacture or sale to the Woodmere (or Solon) establishment, plus the owner's call on the Woodmere/Solon relocation lead already recorded above |
+
+Counts after withdrawal (unit: rows added on this branch against its merge-base): `site_capabilities` rows 14; evidence rows 11 (6 in `evidence_sites_OH.csv`, 5 in `evidence_organizations_OH.csv`); site-row cells changed 5 (SITE-000417, 475, 477 materials; SITE-001791 processes and materials). The Results table and `summary.json` above were refreshed to these figures, which also clears the stale 17-capability line noted in the review.
