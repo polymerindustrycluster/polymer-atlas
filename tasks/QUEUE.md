@@ -354,6 +354,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 ## Campaign claims (2026-11-04, see tasks/CAMPAIGN.md)
 - [ ] `claimed:claude-code 2026-11-04` **STRONG state waves:** MI, IL (in progress); CA, TX, FL, GA, WI, MA (next). IN pilot = #75. [Resync note 2026-11-10: PR #75 closed unmerged; the state waves this item tracked landed piecemeal via later merged PRs (e.g. #191/#194/#198/#202 and the CORROBORATED batches) — left open for owner disposition.]
 - [ ] `claimed:claude-code 2026-11-04` **PIC-18 capability pass + record-health fixes; evidence repair round 2 (scope).**
+- [ ] `claimed:grok 2026-11-12` **Ohio PIC-18 processes/materials + site_capabilities, own-site route (single-site ring 1–2 orgs).** Branch `agent/grok/oh-capabilities-2026-11-12-bNN`; packets `tasks/oh-capabilities-2026-11-12-bNN/`. Reserved IDs: CAP-001000–001999, EVD-345000–349999. The claude-code claim above has had no capability PR since #124 (2026-11-05); treated as stale, not released.
 
 ### from PR #39
 
