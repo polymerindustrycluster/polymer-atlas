@@ -6,7 +6,7 @@ Owner quote, 12:51pm America/New_York on 2026-11-12: "Yes, go with your recommen
 
 This PR is branch-and-PR only. It does not merge, does not push to `main`, does not touch CI `vocab.json` / EVD-333167, and does not fill Ohio streets. New evidence IDs are from the reserved range EVD-350000–EVD-359999 (this pass: EVD-350230–EVD-350237) after re-checking main and open PRs. No new org or site IDs were minted. Public professional facts only; no contact data from fetched pages was copied into the repo. No banned sources.
 
-Sanitized own-site extracts (phones and a media-contact email omitted) are in `raw/`.
+Sanitized own-site extracts (phones and a media-contact email omitted) are in `raw/` (the Payson-page extract was removed 2026-11-14; see "Withdrawal").
 
 ## Per-ruling application
 
@@ -30,7 +30,7 @@ Sanitized own-site extracts (phones and a media-contact email omitted) are in `r
    - QMS-CO-04 / QMS-CO-11 Boulder Scientific Mead and Longmont: **REJECT** (inclusion_log only). Catalysts remain out of Rings 1–2 under the precursor-only doctrine. No record created.
    - QMS-WV-09 ICL-IP Gallipolis Ferry: **owner-confirmed HOLD** for an own-page product identity. This candidate is in West Virginia, not Ohio; no Ohio file was edited.
 
-9. **S-PPC-PAYSON.** Applied the (a) fold of plant-as-org `ORG-006226` into `ORG-004209` and repointed `SITE-008292`, on 2026-11-12 own-site witnesses:
+9. **S-PPC-PAYSON. WITHDRAWN 2026-11-14 and held; see "Withdrawal" below.** As first applied: the (a) fold of plant-as-org `ORG-006226` into `ORG-004209` and repointed `SITE-008292`, on 2026-11-12 own-site witnesses:
    - `https://ppcflex.com/locations/payson-ut/` names 213 Temkin Way, Payson, UT 84651 (same street as `SITE-008292`).
    - `https://ppcflex.com/locations/` lists Payson, UT; North Salt Lake, UT; and Columbus, OH.
    - `https://ppcflex.com/blog/ppc-flex-announces-strategic-acquisition-of-sudpacks-us-operations/` (dateline January 12, 2026) states that PPC Flex, headquartered in Buffalo Grove, IL, operates twelve manufacturing facilities including Payson, UT, North Salt Lake, UT, and Columbus, OH.
@@ -53,3 +53,28 @@ Three surgical status-line edits (Chromaflo, Hankook, Röchling). PR #307 also a
 ## Validator
 
 `python3 scripts/validate.py` was run locally before opening the PR.
+
+## Withdrawal, 2026-11-14 (Codex REFUTE of #322 @ 1614f9b): S-PPC-PAYSON fold held
+
+The refute: https://ppcflex.com/locations/payson-ut/ does not carry the street the fold was bound to. Re-checked 2026-11-14 by a raw curl (64,048 bytes, HTTP 200) and by the r.jina.ai fallback (2,523 characters): zero occurrences of `Temkin` or `84651`. The page is marketing copy for the Salt Lake City area. A failed or empty fetch is not evidence the plant is absent; the claim is simply unsupported.
+
+The fold identified the plant-as-org `ORG-006226` / `SITE-008292` as PPC Flex's Payson plant by the shared street `213 Temkin Way`. With that witness gone, the match rests on city and company name alone. Owner ruling S-PPC-PAYSON (a) allowed the fold conditional on witnesses, so the condition is unmet and the fold is **held**, not self-ruled.
+
+Restored to their merge-base values (cell for cell):
+- `ORG-006226` (status, status_date, successor_org_id, notes, last_verified) and `SITE-008292` (org_id, notes, last_verified): the whole row is back to main's value.
+- `ORG-004209` `notes`: back to main's value.
+- Relationship edge `REL-000472` removed.
+
+Not refuted, so kept: `ORG-004209` `trade_names` (`PPC Flex`), `website` (`https://ppcflex.com/`) and `last_verified`, with EVD-350230, EVD-350232, EVD-350233 and EVD-350237. The reviewer confirmed the locations index, the 2026-01-12 announcement and the Fisher page as limited domain and name witnesses.
+
+Retired IDs, never reuse (units: evidence rows and relationship edges):
+- EVD-350231 (ORG-004209, Payson page names 213 Temkin Way), EVD-350234 (ORG-006226 fold evidence), EVD-350235 (SITE-008292 address): the three rows the reviewer refuted.
+- EVD-350236 (SITE-008292 parent repoint): not named by the reviewer, withdrawn with the repoint it supported.
+- REL-000472 (`merged_into` ORG-006226 to ORG-004209): withdrawn with the fold.
+- `raw/ppcflex-locations-payson-ut-2026-11-12.md` removed: it asserted the address the live page does not carry.
+
+| Hold | Recommended reading | What would settle it |
+|---|---|---|
+| Fold `ORG-006226` into `ORG-004209` and repoint `SITE-008292` | Fold, once the plant is tied to the street | A reproducible page or issued document that names the PPC Flex Payson plant at 213 (South) Temkin Way, Payson, UT 84651 (own page, state registry, or a federal record paired with a company witness). The Ohio half (`ORG-001029` / `SITE-001111`) stays held as before. |
+
+Counts after withdrawal (unit: rows changed on this branch against its merge-base): evidence rows added 4 (EVD-350230, 350232, 350233, 350237); `ORG-004209` cells changed 3 (trade_names, website, last_verified); relationship edges added 0; inclusion_log rows added 10 and the `SITE-000174` Hankook repoint are unchanged.
