@@ -10,7 +10,7 @@ from pathlib import Path
 import frame as F
 
 H = F.H
-SEED = 'BLIND-AUDIT-10-2026-11-14-v1'
+SEED = 'BLIND-AUDIT-10-2026-11-14-v2'
 N, FLOOR, CENSUS_BELOW = 50, 3, 5
 # Never shown to blind reviewers: they name a pass/lane/builder or date the pass, or are builder prose.
 WITHHELD = {'created_by', 'notes', 'last_verified', 'as_of', 'observed_date', 'evidence_date', 'evidence_id', 'tier_effect', 'claim_detail', 'source_class', 'last_activity_evidence_date'}
@@ -19,7 +19,7 @@ FK = {'people': ['institution_org_id', 'program_org_id'], 'programs': ['institut
       'event_participation': ['org_id', 'event_id'], 'people_identifiers': ['person_id'], 'organizations': ['parent_org_id', 'successor_org_id'],
       'ecosystem': ['parent_institution_org_id']}
 # Words that would name a PR, pass, lane, packet, builder, tier ruling or owner decision in free text
-LEAK = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|\blane\b|\bwave\b|integrat|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
+LEAK = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|\blane\b|\bwave\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
 # ISO dates that fall in the pass window (a source-read date names the pass); checked in citation/evidence/context cells only,
 # because record content such as event dates may legitimately fall in November 2026
 PASS_DATE = re.compile(r'\b2026-(?:10-[23]\d|11-\d\d)\b')
@@ -183,6 +183,7 @@ def main():
     draw_receipt = dict(seed=SEED, rng='Python random.Random seeded by int(SHA256(seed|table)), rng.sample over record_ids sorted ascending; blind row order = shuffle seeded by SHA256(seed|order)',
                         n=N, floor=FLOOR, census_below=CENSUS_BELOW, allocation=alloc, frame_sizes=dict(Counter(r['table'] for r in frame)),
                         sample_by_table=dict(Counter(s['table'] for s in sample)), sample_by_change_kind=dict(Counter(s['change_kind'] for s in sample)),
+                        supersedes='v1 (seed BLIND-AUDIT-10-2026-11-14-v1, head 4fd98d7, receipts in superseded_v1/): its frame kept 32 ecosystem records whose only changes were the generated rollup columns; controller ruled them out 2026-11-14, so the frame shrank 1653 -> 1621 and the draw was redone',
                         base=F.BASE, head=F.HEAD, blind_whitelist_withheld=sorted(WITHHELD), blind_fields=BLIND_FIELDS,
                         event_participation_frame_rows_without_http_evidence_url=sum(1 for r in frame if r['table'] == 'event_participation' and not URL.search(h.t['event_participation'][r['record_id']][0]['evidence_source_url'])),
                         no_public_url_records=sum(1 for r in internal if r['no_public_url'] == 'true'),

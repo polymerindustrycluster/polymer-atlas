@@ -6,6 +6,14 @@ Controller thr_9i2c6byhcz; lead thr_4tngyjjf65 (Claude). Phase 1 builds the fram
 stops. Branch `agent/claude-code/blind-audit-10`, no PR yet. Phase 2 (two blind reviewers) and phase 3 (lead
 adjudication) are separate instructions. No `data/` edits, no new IDs.
 
+**Revision v2, 2026-11-14 (controller rulings; v1 superseded).** Phase 1 first shipped at head `4fd98d7` with a 1,653-record
+frame and seed `...-v1`. The controller then ruled (1) the 32 ecosystem records whose only changes are the generated
+rollup columns are derived and leave the frame, (2) organizations and sites stay a full census with the floor of 3 for the
+other strata, (3) identifier rows stay in proportion, and phase 3 reports error rates per stratum as well as overall.
+Phase 2 had not started, so the draw was redone with seed `BLIND-AUDIT-10-2026-11-14-v2`. v1's receipts are kept in
+`superseded_v1/` (`draw_v1.json`, `freeze_v1.json`); v1's frame, sample and blind files are in git history at `4fd98d7`.
+The v1 blind files were never given to a reviewer.
+
 First user: the repo owner / controller, deciding whether the merged PRs need a two-family refute. Non-use is a finding
 on 2026-12-14 if no one has read the phase 3 report by then.
 
@@ -13,11 +21,13 @@ on 2026-12-14 if no one has read the phase 3 report by then.
 
 `python3 tasks/blind-audit-10-2026-11-14/check.py` — PASS recorded in the controller report. It needs full git history
 (the CI validate job checks out with `fetch-depth: 0`). It re-derives the frame from git, reconciles it, re-draws the
-sample from the seed, and checks that `blind_a.csv` equals `blind_b.csv`, the freeze hashes, and the leak scan. It runs five
+sample from the seed, and checks that `blind_a.csv` equals `blind_b.csv`, the freeze hashes, and the leak scan. It runs seven
 known-answer tests on the derivation (Gregstrom HQ moves across shards as one changed record in #267 with its HQ columns
 flagged; `SITE-019101` created and `SITE-004416` changed; `PERSON-001402` deleted and absent from the frame; identifier
-rows attributed 804 to #259, 11 to #263, 1 to #271; `PROG-000305` created by #284), plus synthetic tests that a
-`tier1_qualifier`-only change is excluded, a content change kept, and a shard move alone is not a change. It also
+rows attributed 804 to #259, 11 to #263, 1 to #271; `PROG-000305` created by #284; `ORG-004660` (UChicago), changed only in rollup columns, absent from the frame and listed as
+excluded; `ORG-013501` (Wake Forest), a created ecosystem row, kept), plus synthetic tests that a `tier1_qualifier`-only
+change is excluded, a content change kept, a shard move alone is not a change, and the rollup predicate excludes an
+ecosystem rollup-only change but nothing else. It also
 plants five defects (a PR number, an `EVD-` id, a "minted in wave 3" phrase, a packet/staging reference, a pass date) and
 a `pr` column in copies of the blind file, and each must be caught.
 
@@ -35,25 +45,30 @@ Two independent derivations must agree, and `frame.py` asserts it: (1) the sum o
 the net changed columns. Every net change must be seen by some commit (none was missed); record IDs are unique within
 every table at HEAD, and `org_id` never appears in both `organizations` and `ecosystem`.
 
-| table (unit: record) | rows at BASE | created | changed (non-derived cols) | **frame** | deleted (not in frame) | rows at HEAD |
-|---|---|---|---|---|---|---|
-| people | 1,454 | 63 | 432 | **495** | 4 | 1,513 |
-| programs | 171 | 45 | 100 | **145** | 0 | 216 |
-| ecosystem | 402 | 6 | 32 | **38** | 0 | 408 |
-| organizations | 5,024 | 0 | 2 | **2** | 0 | 5,024 |
-| sites | 7,189 | 1 | 2 | **3** | 0 | 7,190 |
-| relationships | 360 | 0 | 0 | **0** | 0 | 360 |
-| people_identifiers | 0 | 816 | 0 | **816** | 0 | 816 |
-| event_participation | 1,142 | 154 | 0 | **154** | 0 | 1,296 |
-| **all** | | 1,085 | 568 | **1,653** | 4 | |
+| table (unit: record) | rows at BASE | created | changed (non-derived cols) | rollup-only, excluded | **frame** | deleted (not in frame) | rows at HEAD |
+|---|---|---|---|---|---|---|---|
+| people | 1,454 | 63 | 432 | 0 | **495** | 4 | 1,513 |
+| programs | 171 | 45 | 100 | 0 | **145** | 0 | 216 |
+| ecosystem | 402 | 6 | 32 | 32 | **6** | 0 | 408 |
+| organizations | 5,024 | 0 | 2 | 0 | **2** | 0 | 5,024 |
+| sites | 7,189 | 1 | 2 | 0 | **3** | 0 | 7,190 |
+| relationships | 360 | 0 | 0 | 0 | **0** | 0 | 360 |
+| people_identifiers | 0 | 816 | 0 | 0 | **816** | 0 | 816 |
+| event_participation | 1,142 | 154 | 0 | 0 | **154** | 0 | 1,296 |
+| **all** | | 1,085 | 568 | 32 | **1,621** | 4 | |
 
-Excluded, with counts (unit: record): `tier1_qualifier*`-only changes **0** (the window opens after the tier-1 re-derive
-PR #257, so none exist); records changed only by evidence appends are outside the frame by construction (PRs #258 and
+The "changed" column counts before the rollup exclusion, so frame = created + changed - rollup-only excluded; the 1,621
+frame is 536 changed + 1,085 created.
+
+Excluded, with counts (unit: record): ecosystem records changed only in the §4.11 generated rollup columns
+(`polymer_program`, `polymer_program_name`, `polymer_program_url`, with `last_verified` riding along) **32** (controller
+ruling 2026-11-14; IDs in `frame_provenance.json` under `tables.ecosystem.rollup_excluded_ids`); `tier1_qualifier*`-only
+changes **0** (the window opens after the tier-1 re-derive PR #257, so none exist); records changed only by evidence appends are outside the frame by construction (PRs #258 and
 #266 changed only `evidence_organizations_*` shards, so they contribute no frame record); 4 people rows deleted by merge
 (`PERSON-000812`, `-001260`, `-001331`, `-001402`; PRs #260, #264, #265, #283) have no current value to audit; touched-
 then-reverted 0; created-then-deleted 0; shard-move-only 0. Out-of-scope tables that also changed: `events.csv` (71 rows;
 64 rows gained a value in the new `pic_events_slug` column, 0 rows changed in any other column), `inclusion_log.csv`
-(22 rows appended). 12 frame records were touched by two PRs; the frame lists both PRs and the columns each changed.
+(22 rows appended). 8 frame records were touched by two PRs; the frame lists both PRs and the columns each changed.
 `git diff --numstat` shows +1,514/-1,455 lines in `people.csv` against 495 frame records, because SCHEMA v1.13 inserted
 the `lab_url` column and so rewrote every row (1,454 rows plus the header); frame membership compares parsed column
 values, not lines, so those rewrites do not count. Anyone rebasing people changes will hit that line-level conflict.
@@ -65,18 +80,17 @@ per-PR creations equals the net creations in every table (`check.py`). #263's ti
 and HEAD holds 816: the 816th was created by #271 (SCHEMA v1.13), whose title states no count. Derived-column
 exclusions and tables are in `frame_provenance.json`; per-PR counts per table are in its `per_pr_per_table`.
 
-**Open scope flag.** 32 of the 38 ecosystem records changed only in the §4.11 generated rollup columns
-(`polymer_program`, `polymer_program_name`, `polymer_program_url`) plus `last_verified`. The brief names only
-`tier1_qualifier*` as derived, so they stay in the frame, marked `derived_rollup_only=true` in `frame.csv`. Whether
-rollup-only recomputes are an audit target is an owner/controller call; a change after phase 2 starts costs a re-draw.
+**Rollup exclusion.** The brief names `tier1_qualifier*` as its example of a derived column; the controller ruled the
+generated rollup columns derived too (they are the output of the program rows, which are themselves in the frame). So the
+ecosystem stratum is its 6 created rows. The program rows behind those rollups stay audited in the programs stratum.
 
 ## Sample
 
-50 records, table strata, simple random within stratum. Seed `BLIND-AUDIT-10-2026-11-14-v1`; each stratum draws with
+50 records, table strata, simple random within stratum. Seed `BLIND-AUDIT-10-2026-11-14-v2`; each stratum draws with
 `random.Random(int(SHA256(seed|table)))` over record IDs sorted ascending (`sample.py`, receipt `draw.json`).
 
-Allocation rule (the lead's assumption; the brief asks for proportional with at least 3 per stratum of 5 or more
-records): strata under 5 records are taken whole, every other stratum gets at least 3, and the rest of the 50 is split in
+Allocation rule (the lead's assumption, confirmed by the controller 2026-11-14; the brief asks for proportional with at
+least 3 per stratum of 5 or more records): strata under 5 records are taken whole, every other stratum gets at least 3, and the rest of the 50 is split in
 proportion by largest remainder. Without the census, organizations (2) and sites (3) would round to zero and leave the
 Gregstrom (#267) and OMG Thermoforming (#268) corrections unaudited.
 
@@ -86,14 +100,14 @@ Gregstrom (#267) and OMG Thermoforming (#268) corrections unaudited.
 | people | 495 | 13 | 0.0263 | 38.1 |
 | programs | 145 | 4 | 0.0276 | 36.3 |
 | event_participation | 154 | 4 | 0.0260 | 38.5 |
-| ecosystem | 38 | 3 | 0.0789 | 12.7 |
+| ecosystem | 6 | 3 | 0.5 | 2 |
 | sites | 3 | 3 (census) | 1 | 1 |
 | organizations | 2 | 2 (census) | 1 | 1 |
 | relationships | 0 | 0 | — | — |
 
-31 sampled records are creations and 19 are changes (people: 3 created, 10 changed; programs: 1 created, 3 changed;
-ecosystem: 1 created, 2 changed; sites 1 and 2; organizations 0 and 2). The sample spans 21 PRs (20 of the 21 identifier
-rows come from #259, in proportion to its 804 of 816). Rates must be stated per table stratum, with the unit; the pooled
+34 sampled records are creations and 16 are changes (people: 3 created, 10 changed; programs: 2 created, 2 changed;
+ecosystem: 3 created; sites: 1 created, 2 changed; organizations: 2 changed; identifiers and event rows: all created). The
+sample spans 20 PRs (all 21 identifier rows come from #259, which holds 804 of the 816 identifier rows). Rates must be stated per table stratum, with the unit; the pooled
 frame rate needs the design weights above. No claim covers records outside the frame, and `frame.csv` is not a census of
 everything the PRs touched (evidence-only changes are out).
 
@@ -115,7 +129,7 @@ evidence_json`
   `verification_tier` and, for identifiers, `match_basis`, which are schema fields and not packet verdicts.
 - `context_json`: foreign keys resolved to names (institution, program, parent org, event, person; for an identifier
   row, the person's institution and public profile URL).
-- `cited_sources`: the record's own `sources` text with source-read dates removed; in 4 records the text cited
+- `cited_sources`: the record's own `sources` text with source-read dates removed; in 2 records the text cited
   working-packet or staging paths, so only its public URLs are kept (`sample.csv` column `sources_scrubbed_to_urls`).
 - `evidence_json`: claim type and URL for each current evidence row (people, programs, ecosystem, organizations, sites).
 
@@ -125,7 +139,9 @@ and any packet, verdict or reviewer text. Phase 3 audits those fields unblinded.
 
 **Blindness is by protocol, not access control.** `frame.csv` and `sample.csv` sit beside the blind files and carry PR
 attribution, so hand each reviewer only their blind file. `freeze.json` holds the sha256 of both blind files, the frame,
-the sample, the draw receipt, the provenance, and `frame.py` and `sample.py`; `check.py` fails if any changed after the
+the sample, the draw receipt, the provenance, and `frame.py` and `sample.py` (the leak-scan pattern is also recorded
+there; its bare `integrat` token was narrowed to `integration pass|integrator` after it false-positived on "integrated
+devices" in a legitimate description); `check.py` fails if any changed after the
 freeze.
 
 ## What phase 2 and 3 do
@@ -136,4 +152,6 @@ record before unblinding and before seeing the other reviewer's verdict (the cit
 blind file are inputs to their research, not withheld), and use the AGENTS §2 rule 8 grammar (VERIFIED, REJECT with the deciding fact,
 STILL_UNCERTAIN with the settling fact, DUPLICATE_OF) per audited column. Phase 3 (lead): unblind, compare the two
 reviewers with the held evidence, adjudicate disagreements, and report per-table rates (unit and filter stated) with 95%
-Wilson intervals (z = 1.959964), census strata marked, using the audit-9 statistics code adapted for this frame.
+Wilson intervals (z = 1.959964), census strata marked, using the audit-9 statistics code adapted for this frame. Error
+rates are reported per stratum as well as overall (controller ruling 2026-11-14); the overall figure uses the design
+weights above and is labelled a weighted estimate.

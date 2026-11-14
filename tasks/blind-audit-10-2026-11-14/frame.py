@@ -26,7 +26,12 @@ TABLES = {  # table -> (file regex, key columns)
 }
 DERIVED = lambda c: c.startswith('tier1_qualifier')  # AGENTS §1: derived fields are hands-off; owner brief names tier1_qualifier*
 ROLLUP = {'polymer_program', 'polymer_program_name', 'polymer_program_url'}  # SCHEMA §4.11 generated rollup of an institution's program rows
-FRAME_FIELDS = ['table', 'record_id', 'change_kind', 'prs', 'pr_columns', 'changed_columns', 'derived_rollup_only', 'shard']
+FRAME_FIELDS = ['table', 'record_id', 'change_kind', 'prs', 'pr_columns', 'changed_columns', 'shard']
+
+
+def is_rollup_only(table, cols):
+    """An ecosystem change confined to the generated rollup columns (last_verified rides along): derived, so out of the frame (controller ruling 2026-11-14)."""
+    return table == 'ecosystem' and bool(set(cols) & ROLLUP) and not set(cols) - {'last_verified'} - ROLLUP
 
 
 def git(*a):
@@ -125,11 +130,12 @@ def derive():
     for t in TABLES:
         old, new = load(BASE, fb[t], t), load(HEAD, fh[t], t)
         c, ch, d_only, dele, moves = diff(old, new)
+        rollup_excluded = sorted(k for k, cols in ch.items() if is_rollup_only(t, cols))
         net = {k: ['*created*'] for k in c}
-        net.update(ch)
+        net.update({k: cols for k, cols in ch.items() if k not in rollup_excluded})
         commit_keys = {k for k, v in touched[t].items() if any(cols - {'*deleted*'} for cols in v.values()) and k in new}
         # keys the commits touched with a non-derived change and that still exist at HEAD, minus net-unchanged (reverted) ones
-        reverted = sorted(k for k in commit_keys if k not in net)
+        reverted = sorted(k for k in commit_keys if k not in net and k not in rollup_excluded)
         net_not_in_commits = sorted(k for k in net if k not in commit_keys)
         assert not net_not_in_commits, f'{t}: net change not seen by any first-parent commit: {net_not_in_commits[:5]}'
         transient = sorted(k for k in touched[t] if k not in old and k not in new)
@@ -139,15 +145,13 @@ def derive():
             cols = sorted(net[k], key=lambda c: (list(r).index(c) if c in r else 999)) if net[k] != ['*created*'] else [c for c in r if r[c] != '' and not DERIVED(c)]
             frame.append(dict(table=t, record_id=k, change_kind='created' if k in c else 'changed', prs=';'.join(map(str, prs)),
                               pr_columns=json.dumps({str(p): sorted(touched[t][k][p] - {'*deleted*'}) for p in prs}, sort_keys=True),
-                              changed_columns=';'.join(cols), shard=shard,
-                              # kept in the frame (brief names only tier1_qualifier*); flagged so the owner can rule it out
-                              derived_rollup_only=str(t == 'ecosystem' and k not in c and not set(cols) - {'last_verified'} - ROLLUP).lower()))
+                              changed_columns=';'.join(cols), shard=shard))
         ids = [key_of(t, r) for r, _ in new.values()]
         assert len(ids) == len(set(ids)), f'{t}: record ids not unique at HEAD'
-        prov_tables[t] = dict(base_rows=len(old), head_rows=len(new), created=len(c), changed_nonderived=len(ch), frame=len(net),
+        prov_tables[t] = dict(base_rows=len(old), head_rows=len(new), created=len(c), changed_nonderived=len(ch), derived_rollup_only_excluded=len(rollup_excluded), frame=len(net),
                               derived_only_excluded=len(d_only), deleted_not_in_frame=len(dele), shard_move_only_excluded=len(moves),
                               touched_then_reverted=len(reverted), created_then_deleted=len(transient),
-                              deleted_ids=sorted(dele), reverted_ids=reverted, transient_ids=transient,
+                              deleted_ids=sorted(dele), rollup_excluded_ids=rollup_excluded, reverted_ids=reverted, transient_ids=transient,
                               prs_touching_record_sum=sum(len(touched[t][k]) for k in net))
     # out-of-scope tables that changed in the window (reported, not framed)
     ev_old, ev_new = ({r['event_id']: r for r in rows_at(ref, 'data/events.csv')} for ref in (BASE, HEAD))
@@ -168,7 +172,7 @@ def derive():
                 out_of_scope_tables=out_of_scope, per_pr_per_table=pr_rows, data_files_changed_outside_frame_tables=dict(other_data_files),
                 derived_only_by_pr_table=[dict(pr=p, table=t, records=n) for (p, t), n in sorted(derived_only.items())],
                 unit='record: one row at HEAD, keyed by table ID (people_identifiers: person_id+identifier_type+identifier_id), created or changed in a non-derived column by a first-parent commit in BASE..HEAD',
-                excluded='tier1_qualifier* columns (derived, AGENTS section 1); evidence_*.csv appends (not a frame table); deleted rows (no current value to audit)')
+                excluded='tier1_qualifier* columns (derived, AGENTS section 1); ecosystem records changed only in the generated rollup columns polymer_program/polymer_program_name/polymer_program_url (SCHEMA 4.11, controller ruling 2026-11-14; ids in tables.ecosystem.rollup_excluded_ids); evidence_*.csv appends (not a frame table); deleted rows (no current value to audit)')
     return sorted(frame, key=lambda r: (list(TABLES).index(r['table']), r['record_id'])), prov
 
 

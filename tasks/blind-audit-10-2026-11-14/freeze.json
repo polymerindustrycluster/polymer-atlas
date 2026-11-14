@@ -1,14 +1,14 @@
 {
  "blind_is_protocol_not_access_control": "frame.csv and sample.csv carry PR attribution; hand reviewers only their blind file",
- "leak_scan_pattern": "#\\d+|\\bEVD-\\d+|\\bPR\\b|pull request|\\bpass[- ]?\\d*\\b|packet|\\blane\\b|\\bwave\\b|integrat|codex|claude|grok|gemini|spaghetti|\\bmuse\\b|\\bowner\\b|battery|council|refut|\\bminted\\b|staging|banked|\\bnotes?\\b|created_by|tier[ _]?effect|supports_[ABCU]",
+ "leak_scan_pattern": "#\\d+|\\bEVD-\\d+|\\bPR\\b|pull request|\\bpass[- ]?\\d*\\b|packet|\\blane\\b|\\bwave\\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\\bmuse\\b|\\bowner\\b|battery|council|refut|\\bminted\\b|staging|banked|\\bnotes?\\b|created_by|tier[ _]?effect|supports_[ABCU]",
  "sha256": {
-  "blind_a.csv": "8baaa5cb1eb0fed8d182e9eb6657f41c25a4913d4525890c65ed210520fbc895",
-  "blind_b.csv": "8baaa5cb1eb0fed8d182e9eb6657f41c25a4913d4525890c65ed210520fbc895",
-  "draw.json": "7513cd4395b39d8db2b7827fc7ce7b385718c5485b7de1b681ce47bfcda03988",
-  "frame.csv": "5b10fa25aeba29519a4a3b5103458f1d8b8b634485d5ef5f91546a4a022a5630",
-  "frame.py": "9a3285a52f4a740658bcdeab62794c924e9adbdb6752a55b3aa5022f53a50db7",
-  "frame_provenance.json": "64cc89f5a37b616c993779984a402fe5d93d49a4186b61b3f03e45cb93192618",
-  "sample.csv": "200abbeba744bd8c6fedd679dda0b815eeb2bd9f24e683837c3c3b6f4591fa9e",
-  "sample.py": "5b58787fedf6a69f2214da492633b2794b2c963e9c5b25414e96177dd66fd415"
+  "blind_a.csv": "3d7a3a12dcaa4fc9ac53384e686d5349492ce74938bb7b18273c6f12d63486a8",
+  "blind_b.csv": "3d7a3a12dcaa4fc9ac53384e686d5349492ce74938bb7b18273c6f12d63486a8",
+  "draw.json": "145fb2ae73ffb71fd7d6cab34b8c82a76e43875d1e4fbb8834d26a68434c8364",
+  "frame.csv": "45e118308c392420e54fb60dc5de821b04e685d85964649aa47ab21158081277",
+  "frame.py": "a4d773117064b1139125c3c89468f4ac58422cd94b8114d3b172dc74415400fe",
+  "frame_provenance.json": "927d7b4d3a511d63a7fc6e8e84149c18fdff8323ede4f2add0538651d5ca7771",
+  "sample.csv": "67760db7253f297cb7cc668b7abbbcbd14d1b4d86532e60607a590bd55070328",
+  "sample.py": "a24ba9f0e3808f0eefd2382666734760ce8afb35c15d7cb2a5bb0099a5e896a7"
  }
 }

@@ -38,7 +38,7 @@
  "event_participation_frame_rows_without_http_evidence_url": 0,
  "floor": 3,
  "frame_sizes": {
-  "ecosystem": 38,
+  "ecosystem": 6,
   "event_participation": 154,
   "organizations": 2,
   "people": 495,
@@ -51,8 +51,8 @@
  "no_public_url_records": 21,
  "rng": "Python random.Random seeded by int(SHA256(seed|table)), rng.sample over record_ids sorted ascending; blind row order = shuffle seeded by SHA256(seed|order)",
  "sample_by_change_kind": {
-  "changed": 19,
-  "created": 31
+  "changed": 16,
+  "created": 34
  },
  "sample_by_table": {
   "ecosystem": 3,
@@ -63,6 +63,7 @@
   "programs": 4,
   "sites": 3
  },
- "seed": "BLIND-AUDIT-10-2026-11-14-v1",
- "sources_scrubbed_to_urls": 4
+ "seed": "BLIND-AUDIT-10-2026-11-14-v2",
+ "sources_scrubbed_to_urls": 2,
+ "supersedes": "v1 (seed BLIND-AUDIT-10-2026-11-14-v1, head 4fd98d7, receipts in superseded_v1/): its frame kept 32 ecosystem records whose only changes were the generated rollup columns; controller ruled them out 2026-11-14, so the frame shrank 1653 -> 1621 and the draw was redone"
 }

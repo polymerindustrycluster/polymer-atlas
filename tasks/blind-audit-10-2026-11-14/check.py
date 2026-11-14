@@ -35,12 +35,14 @@ def check_frame():
         assert per.get((pr, t, 'deleted')) == n, f'PR #{pr} {t}: title says {n} deleted'
     for t, v in prov['tables'].items():  # per-table: sum of per-PR creations == net creations; frame == created + changed; head = base + created - deleted
         assert sum(n for (pr, tt, k), n in per.items() if tt == t and k == 'created') == v['created'], t
-        assert v['frame'] == v['created'] + v['changed_nonderived'], t
+        assert v['frame'] == v['created'] + v['changed_nonderived'] - v['derived_rollup_only_excluded'], t
         assert v['head_rows'] == v['base_rows'] + v['created'] - v['deleted_not_in_frame'], t
-    assert prov['frame_total'] == len(frame) == sum(v['frame'] for v in prov['tables'].values()) == 1653
+    assert prov['frame_total'] == len(frame) == sum(v['frame'] for v in prov['tables'].values()) == 1621
     assert Counter(r['table'] for r in frame) == {t: v['frame'] for t, v in prov['tables'].items() if v['frame']}
     assert len({(r['table'], r['record_id']) for r in frame}) == len(frame), 'duplicate frame id'
     assert sum(v['derived_only_excluded'] for v in prov['tables'].values()) == 0  # tier1_qualifier* exclusion removed nothing in this window
+    assert prov['tables']['ecosystem']['derived_rollup_only_excluded'] == 32 == len(prov['tables']['ecosystem']['rollup_excluded_ids'])
+    assert not {r['record_id'] for r in frame if r['table'] == 'ecosystem'} & set(prov['tables']['ecosystem']['rollup_excluded_ids'])
     return frame, prov
 
 
@@ -52,6 +54,10 @@ def known_answers(frame):
     assert ('people', 'PERSON-001402') not in by and 'PERSON-001402' in json.loads((H / 'frame_provenance.json').read_text())['tables']['people']['deleted_ids']
     assert Counter(r['prs'] for r in frame if r['table'] == 'people_identifiers') == {'259': 804, '263': 11, '271': 1}
     assert by[('programs', 'PROG-000305')]['change_kind'] == 'created' and by[('programs', 'PROG-000305')]['prs'] == '284'  # MRSEC row named in the PR title
+    assert ('ecosystem', 'ORG-004660') not in by and 'ORG-004660' in json.loads((H / 'frame_provenance.json').read_text())['tables']['ecosystem']['rollup_excluded_ids']  # UChicago: rollup-only
+    assert by[('ecosystem', 'ORG-013501')]['change_kind'] == 'created'  # Wake Forest: a created ecosystem row stays in
+    assert F.is_rollup_only('ecosystem', ['polymer_program_name', 'last_verified']) and not F.is_rollup_only('ecosystem', ['polymer_program_name', 'website'])
+    assert not F.is_rollup_only('people', ['polymer_program_name']) and not F.is_rollup_only('ecosystem', ['last_verified'])
     # derivation unit tests on synthetic rows: derived-only change excluded, content change kept, shard move alone not a change
     row = lambda **kw: ({'org_id': 'O', 'x': '1', 'tier1_qualifier': '', 'tier1_qualifier_basis': '', **kw})
     old = {'O': (row(), 'a.csv')}
