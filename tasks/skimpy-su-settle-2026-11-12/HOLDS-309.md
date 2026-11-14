@@ -15,6 +15,11 @@ Units: cells and evidence rows in `data/sites_KS.csv` / `data/evidence_sites_KS.
 |---|---|---|
 | EVD-350113 | SITE-020003 `scope`, "ring_primary 1; fiber-glass / FRP pipe products (federal NAICS 326122); process inferred from the held NOV Fiber Glass Systems Iuka sister site" | Its text records an inference, not a witness, for the process. `ring_primary` 1 stays supported by EVD-350112 (naics_primary 326122, OSHA ITA, government_filing). |
 
-## Surfaced, not changed
+## Addendum 2026-11-14 (controller instruction): materials withdrawn too
 
-`materials` on SITE-020003 (`composites_frp;epoxy`) and the row `notes` cell say they were aligned to the Iuka sister site by the same inference. The reviewer did not flag them, so they are untouched here; the next reviewer should decide whether to hold them too.
+| Site | Cell | Withdrawn value | Merge-base value | Reason | What would settle it |
+|---|---|---|---|---|---|
+| SITE-020003 | `materials` | `composites_frp;epoxy` | (row is new; empty) | Rests on the same Iuka sister-site inference the reviewer refuted for `processes`; no Wichita witness names a material. | A Wichita-specific material witness (own page or filed document). |
+
+- No evidence row supported only `materials`: EVD-350109 to EVD-350112 and EVD-350114 to EVD-350116 are identity, address, NAICS, parent, activity and liveness rows. Nothing else retired.
+- `notes` on SITE-020003: the row is new, so there is no merge-base value. I deleted only the sentence that asserted the alignment ("Process/materials aligned to the held Iuka Fiber Glass Systems site; no own-page process read for Wichita, so tier C."). The rest of the creation notes is untouched. Nothing was added.
