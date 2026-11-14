@@ -1,0 +1,101 @@
+site_id,org_id,site_name,city,zip,county,tier,website,org_sites_same_city,prior_reason,prior_conflict
+SITE-000007,ORG-000008,Struktol — Stow HQ,Stow,44223,Summit,B,https://www.struktol.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000008,ORG-000009,Myers Industries — Akron HQ,Akron,44301,Summit,B,https://www.myersindustries.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000010,ORG-000011,Bridgestone Americas Technology Center - Akron,Akron,44317,Summit,B,https://bridgestoneamericas.com,2,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000012,ORG-000013,"E & T Plastics Mfg. Co., Inc. — Akron",Akron,,Summit,C,https://e-tplastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000013,ORG-000014,"D & D Plastics, Inc. — Akron",Akron,,Summit,C,none_found,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000014,ORG-000015,Diamond America — Akron,Akron,,Summit,A,https://daextrusion.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000015,ORG-000016,Gabriel Performance Products — Akron,Akron,,Summit,U,https://gabrielchem.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000016,ORG-000017,Chemigon LLC — Akron,Akron,,Summit,U,https://chemigon.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000018,ORG-000019,King Machine Molds — Akron,Akron,,Summit,U,https://kingmachinemolds.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000019,ORG-000020,Rapid Mold Solutions — Akron,Akron,,Summit,U,none_found,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000020,ORG-000021,Paddington Group — Akron,Akron,,Summit,U,,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000021,ORG-000022,Greatoo Inc. — Akron,Akron,,Summit,U,https://greatoo.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000022,ORG-000023,Ravizza Packaging USA Corp. — Akron,Akron,,Summit,U,https://ravizzapackagingusa.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000023,ORG-000024,ALCO Chemical — Akron,Akron,,Summit,U,https://alco-chem.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000024,ORG-000025,Musson Rubber Co. — Akron,Akron,,Summit,C,http://www.mussonrubber.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000025,ORG-000026,"Enterprise Rubber, Inc. — Akron",Akron,44305,Summit,C,http://www.enterpriserubber.com,1,cited FRS audit source unavailable after bounded retry; successful fresh recheck required,0
+SITE-000027,ORG-000028,The M. F. Murdock Co. — Akron,Akron,,Summit,C,http://www.murdockindustrial.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000029,ORG-000029,"Akron Rubber Development Laboratory, Inc. — Barberton",Barberton,,Summit,C,https://ardl.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000030,ORG-000030,"Piedmont Plastics, Inc. — Akron",Akron,,Summit,C,https://piedmontplastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000032,ORG-000032,"Acme Pattern Works, Inc. — Akron",Akron,,Summit,C,none_found,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000035,ORG-000035,Saint-Gobain Performance Plastics — Akron,Akron,44305,Summit,A,https://saint-gobain.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000036,ORG-000036,Win Plastic Extrusions LLC — Akron,Akron,,Summit,C,https://extrudedplastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000037,ORG-000037,"HKB Enterprises, Inc. — Akron",Akron,,Summit,A,https://hkbenterprises.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000040,ORG-000040,Spectrum Plastics Corp. — Akron,Akron,,Summit,C,https://splastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000041,ORG-000041,Next Generation Plastics — Akron,Akron,,Summit,C,https://nextgenplastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000043,ORG-000043,Alterra Energy — Akron,Akron,44306,Summit,B,https://alterra360.com/,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000044,ORG-000044,APV Engineered Coatings — Akron,Akron,,Summit,A,https://apvcoatings.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000047,ORG-000047,Smithers — Akron,Akron,,Summit,B,https://smithers.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000048,ORG-000048,Akrochem Corp. — Akron,Akron,44333,Summit,B,https://akrochem.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000049,ORG-000049,"Akron Polymer Solutions, Inc. — Akron",Akron,,Summit,U,https://www.akronpolymersolutions.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000051,ORG-000051,Continental ContiTech USA — Fairlawn,Fairlawn,,Summit,B,https://continental-industry.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000052,ORG-000052,Harwick Standard Distribution Corp. — Akron,Akron,44305,Summit,A,https://harwickstandard.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000055,ORG-000055,"Ultratech Polymers, Inc. — Cuyahoga Falls",Cuyahoga Falls,,Summit,C,https://ultratechpolymers.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000056,ORG-000056,CF Extrusion Technologies — Cuyahoga Falls,Cuyahoga Falls,,Summit,A,https://cfextrusion.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000058,ORG-000058,Steelastic — Cuyahoga Falls,Cuyahoga Falls,,Summit,A,https://steelastic.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000059,ORG-000059,Laird Plastics — Stow,Stow,,Summit,C,https://lairdplastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000062,ORG-000062,Chemionics — Tallmadge,Tallmadge,,Summit,C,https://www.chemionics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000063,ORG-000063,Akron Gasket — Tallmadge,Tallmadge,,Summit,C,https://akron-gasket.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000064,ORG-000064,"Green Technologies of Ohio, LLC — Tallmadge",Tallmadge,,Summit,C,https://greentechofohio.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000065,ORG-000065,"Hudson Extrusions, Inc. — Hudson",Hudson,,Summit,C,https://www.hudsonextrusions.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000066,ORG-000066,"Custom Plastic Extrusions, Ltd. — Hudson",Hudson,,Summit,C,none_found,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000067,ORG-000067,Taylor Made Pipe Plugs — Hudson,Hudson,,Summit,C,https://hand-tite.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000068,ORG-000068,"Plastic Process Equipment, Inc. — Macedonia",Macedonia,,Summit,C,https://ppe.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000069,ORG-000069,Design Molded Plastics — Macedonia,Macedonia,,Summit,C,https://designmolded.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000070,ORG-000070,"Plastic Materials, Inc. — Macedonia",Macedonia,44056,Summit,B,https://plasticmaterialsinc.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000073,ORG-000073,Professional Plastics — Twinsburg,Twinsburg,,Summit,C,https://professionalplastics.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000076,ORG-000076,Crown Composites Tooling — Twinsburg,Twinsburg,,Summit,A,https://crownmold.net,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000077,ORG-000077,Mantaline Corp. — Twinsburg,Twinsburg,,Summit,B,https://mantaline.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000078,ORG-000078,Giesecke+Devrient America — Twinsburg,Twinsburg,,Summit,B,https://gi-de.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000079,ORG-000079,"General Plastex, Inc. — Barberton",Barberton,44203,Summit,A,https://generalplastex.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000080,ORG-000080,Ace Plastics — Barberton,Barberton,44203,Summit,C,https://aceframes.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000083,ORG-000083,"Michael Day Enterprises, LLC — Norton",Norton,,Summit,A,https://mdayinc.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000084,ORG-000084,"Q Model, Inc. — Barberton",Barberton,,Summit,U,https://qmodelinc.net,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000085,ORG-000085,Ohio Precision Molding — Barberton,Barberton,44203,Summit,B,https://ohioprecisionmolding.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000089,ORG-000089,Akron Polymer Training Center — Akron,Akron,,Summit,U,,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000090,ORG-000090,"Rubber Division, American Chemical Society — Akron",Akron,,Summit,C,,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000091,ORG-000091,Society of Plastics Engineers - Akron Section — Akron,Akron,,Summit,U,,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000092,ORG-000092,Ohio Rubber Group — Hudson,Hudson,44236,Summit,B,,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000093,ORG-000093,Greater Akron Chamber — Akron,Akron,,Summit,C,,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000094,ORG-000094,Bounce Innovation Hub — Akron,Akron,,Summit,U,,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000095,ORG-000095,"MKV Polymers, Inc. — Akron",Akron,,Summit,U,https://mkv-kunststoff.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000096,ORG-000096,G3 Mixing Technologies — Akron,Akron,,Summit,U,https://g3machinery.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000097,ORG-000097,BioVerde — Akron,Akron,,Summit,U,https://bioverde.us,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000098,ORG-000098,Spazzolplastica — Akron,Akron,,Summit,U,https://www.spazzolplastica.it,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000099,ORG-000099,Materium Technologies — Akron,Akron,,Summit,U,https://www.materiumtech.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000100,ORG-000100,"R. E. Carroll, Inc. — Hudson",Hudson,,Summit,U,https://recarroll.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000101,ORG-000101,"Polymerics, Inc. — Cuyahoga Falls",Cuyahoga Falls,44221,Summit,A,http://www.polymericsinc.com,1,current A/B tier requires own-site address witness (controller ruling); need site-keyed physical str,0
+SITE-000102,ORG-000102,Alpha Technologies — Hudson,Hudson,,Summit,U,https://alpha-technologies.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000103,ORG-000103,HEXPOL Compounding — Copley,Copley,,Summit,U,https://hexpolcompounding.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000176,ORG-000169,Zatkoff Seals & Packings — Twinsburg,Twinsburg,,Summit,C,https://www.zatkoff.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000177,ORG-000170,Tahoma Rubber and Plastics — Barberton,Barberton,44203,Summit,U,none_found,2,fresh FRS facility name lacks exact held legal/trade-name identity; operator adjudication needed,0
+SITE-000178,ORG-000171,Temarex — Akron,Akron,,Summit,U,http://www.temarex.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000181,ORG-000174,Vertex — Mogadore,Mogadore,,Summit,C,http://www.vertexseals.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000204,ORG-000197,Kenda American Technology Center — Green,Green,44720,Summit,B,https://www.kendatire.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000210,ORG-000050,Synthomer — Akron,Akron,,Summit,C,https://synthomer.com,3,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000211,ORG-000103,HEXPOL Compounding — Mogadore,Mogadore,,Summit,C,https://hexpolcompounding.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000216,ORG-000011,Bridgestone Americas - Akron (Advanced Tire Production Center),Akron,,Summit,B,https://bridgestoneamericas.com,2,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000217,ORG-000050,"Synthomer, Inc. - Akron (Akron Technology Center)",Akron,44305,Summit,A,https://synthomer.com,3,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000218,ORG-000050,"Synthomer, Inc. - Akron (Tech Way Drive)",Akron,44306,Summit,A,https://synthomer.com,3,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000227,ORG-000214,"Advanced Poly-Packaging, Inc. — Akron",Akron,44306,Summit,A,https://www.advancedpoly.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000250,ORG-000236,Associated Materials — Cuyahoga Falls,Cuyahoga Falls,44223,Summit,A,https://www.associatedmaterials.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000267,ORG-000251,Bole Machinery Inc. — Stow,Stow,44224,Summit,C,https://boleamerica.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000268,ORG-000252,The Bonnot Company — Akron,Akron,,Summit,C,https://thebonnotco.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000285,ORG-000267,CG Thermal LLC — Twinsburg,Twinsburg,44087,Summit,A,https://cgthermal.com/,1,need own-page physical street block at recorded city; no admissible block fetched,0
+SITE-000304,ORG-000285,"Consolidated Plastics Co., Inc. — Stow",Stow,44224,Summit,C,https://www.consolidatedplastics.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000307,ORG-000288,"Corporate Consulting Service Instruments, Inc. — Akron",Akron,44313,Summit,U,https://www.ccsi-inc.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000322,ORG-000303,Desenco Inc. — Akron,Akron,44306,Summit,U,https://www.desenco.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000324,ORG-000305,"Diemaster Tool & Mold, Inc. — Macedonia",Macedonia,44056,Summit,U,https://www.diemaster.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000340,ORG-000319,"E.L. Stone Co., Inc. — Norton",Norton,44203,Summit,U,https://www.elstone.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000349,ORG-000328,Equalseal.com — Fairlawn,Fairlawn,,Summit,U,https://www.equalseal.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000351,ORG-000330,"ESI-Extrusion Services, Inc. — Akron",Akron,44303,Summit,C,https://esi-extrusion.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000358,ORG-000337,"Facts, Inc. — Cuyahoga Falls",Cuyahoga Falls,44221,Summit,C,https://www.facts-inc.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000373,ORG-000349,Full Circle Technologies — Barberton,Barberton,44203,Summit,C,https://fullcircle-tech.com,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000385,ORG-000360,H.B. Chemical — Twinsburg,Twinsburg,44087,Summit,C,https://www.hbchemical.com/,2,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000389,ORG-000364,"Hannecard Roller Coatings, Inc./ASB Industries — Barberton",Barberton,44203,Summit,U,https://www.hannecard.us/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000405,ORG-000379,Infinity Engineered Products — Fairlawn,Fairlawn,44333,Summit,C,https://goodyearairsprings.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000415,ORG-000387,"J.b. Polymers, Inc — Mogadore",Mogadore,44260,Summit,U,https://www.jbpolymers.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000428,ORG-000399,"Joslyn Manufacturing Co., Inc. — Macedonia",Macedonia,44056,Summit,C,https://joslyn-mfg.com/,1,need admissible physical street witness; no qualifying federal route or source unavailable,0
+SITE-000437,ORG-000408,Kes Industries — Twinsburg,Twinsburg,44087,Summit,U,https://preformsealants.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0
+SITE-000449,ORG-000420,Linden Polyurethane — Cuyahoga Falls,Cuyahoga Falls,44223,Summit,U,https://www.lindenindustries.com/,1,need site-keyed physical street witness with agreeing city and ZIP; none available in this pass,0

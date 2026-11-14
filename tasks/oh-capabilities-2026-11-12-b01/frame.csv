@@ -1,0 +1,101 @@
+site_id,org_id,site_name,city,county,ring,tier,website,site_proc,site_mat,org_proc,org_mat,has_cap
+SITE-000011,ORG-000012,Akron Polymer Systems — Akron,Akron,Summit,2,C,https://akronpolysys.com,,films_flexible_packaging,polymerization,films_flexible_packaging,0
+SITE-000015,ORG-000016,Gabriel Performance Products — Akron,Akron,Summit,2,U,https://gabrielchem.com,,,,epoxy,0
+SITE-000016,ORG-000017,Chemigon LLC — Akron,Akron,Summit,2,U,https://chemigon.com,,,,,0
+SITE-000024,ORG-000025,Musson Rubber Co. — Akron,Akron,Summit,1,C,http://www.mussonrubber.com,,elastomers_rubber;pvc,,elastomers_rubber,0
+SITE-000025,ORG-000026,"Enterprise Rubber, Inc. — Akron",Akron,Summit,1,C,http://www.enterpriserubber.com,,elastomers_rubber;epdm;natural_rubber_nr;neoprene_cr;nitrile_nbr;silicones,,elastomers_rubber,0
+SITE-000034,ORG-000034,Akron Polymer Products — Akron,Akron,Summit,1,C,http://www.akronpolymer.com,extrusion_profile;extrusion_pipe_tube,,extrusion_profile;extrusion_pipe_tube,nylon_pa;polyethylene_pe;thermoplastic_elastomers_tpe_tpu;thermoplastics,0
+SITE-000036,ORG-000036,Win Plastic Extrusions LLC — Akron,Akron,Summit,1,C,https://extrudedplastics.com,extrusion_profile,,extrusion_profile,,0
+SITE-000037,ORG-000037,"HKB Enterprises, Inc. — Akron",Akron,Summit,1,A,https://hkbenterprises.com,,,plastics_machining_cnc;fabrication_unspecified;die_cutting_converting;thermoforming_vacuum;rubber_molding_unspecified;rubber_molding_compression,polyurethane_pu;fluoropolymers;phenolic;acrylic_pmma;polycarbonate_pc;abs;acetal_pom;nylon_pa;polyethylene_pe;epdm;neoprene_cr;nitrile_nbr;sbr;silicones,0
+SITE-000040,ORG-000040,Spectrum Plastics Corp. — Akron,Akron,Summit,1,C,https://splastics.com,,,injection_molding,thermoplastics;peek_high_performance;polycarbonate_pc;nylon_pa;acetal_pom;thermoplastic_elastomers_tpe_tpu,0
+SITE-000049,ORG-000049,"Akron Polymer Solutions, Inc. — Akron",Akron,Summit,2,U,https://www.akronpolymersolutions.com/,,,,,0
+SITE-000067,ORG-000067,Taylor Made Pipe Plugs — Hudson,Hudson,Summit,1,C,https://hand-tite.com,,elastomers_rubber;nylon_pa;polyethylene_pe,,,0
+SITE-000069,ORG-000069,Design Molded Plastics — Macedonia,Macedonia,Summit,1,C,https://designmolded.com,assembly_secondary_ops;injection_molding;printing_decorating_plastics;two_shot_molding,,injection_molding,,0
+SITE-000070,ORG-000070,"Plastic Materials, Inc. — Macedonia",Macedonia,Summit,2,B,https://plasticmaterialsinc.com,,,recycling_unspecified;compounding_unspecified;regrind_pelletizing,,0
+SITE-000074,ORG-000074,MRP Solutions — Twinsburg,Twinsburg,Summit,1,A,https://mrpsolutions.com/,injection_molding,,injection_molding,,1
+SITE-000078,ORG-000078,Giesecke+Devrient America — Twinsburg,Twinsburg,Summit,1,B,https://gi-de.com,,,,,0
+SITE-000080,ORG-000080,Ace Plastics — Barberton,Barberton,Summit,1,C,https://aceframes.com,injection_molding,,injection_molding,,0
+SITE-000081,ORG-000081,"Novex, Inc. — Barberton",Barberton,Summit,1,B,https://novexinc.com,,,,polyurethane_pu,0
+SITE-000085,ORG-000085,Ohio Precision Molding — Barberton,Barberton,Summit,1,B,https://ohioprecisionmolding.com,,,injection_molding;two_shot_molding;insert_overmolding,thermoplastics,0
+SITE-000097,ORG-000097,BioVerde — Akron,Akron,Summit,2,U,https://bioverde.us,,bioplastics_biobased,,bioplastics_biobased,0
+SITE-000099,ORG-000099,Materium Technologies — Akron,Akron,Summit,2,U,https://www.materiumtech.com,,films_flexible_packaging,,coatings;films_flexible_packaging,0
+SITE-000182,ORG-000175,Harwood Rubber Products — Cuyahoga Falls,Cuyahoga Falls,Summit,1,C,https://corelinerollers.com/,,elastomers_rubber,,elastomers_rubber;epdm;neoprene_cr;nitrile_nbr;polyurethane_pu;silicones,0
+SITE-000227,ORG-000214,"Advanced Poly-Packaging, Inc. — Akron",Akron,Summit,1,A,https://www.advancedpoly.com/,"film extrusion, flexographic printing, bag converting",,"film extrusion, flexographic printing, bag converting; machinery_equipment (secondary)",,0
+SITE-000285,ORG-000267,CG Thermal LLC — Twinsburg,Twinsburg,Summit,1,A,https://cgthermal.com/,,,,fluoropolymers,0
+SITE-000322,ORG-000303,Desenco Inc. — Akron,Akron,Summit,1,U,https://www.desenco.com/,mold_tool_making,,,,0
+SITE-000365,ORG-000343,Flexsys America L.P. — Akron,Akron,Summit,1,C,https://flexsys.com/,,,,polymer_additives,0
+SITE-000367,ORG-000344,Fomo Products — Norton,Norton,Summit,1,C,https://www.handifoam.com,,,adhesive_sealant_formulation,adhesives_sealants;foams_polymeric;polyurethane_pu,0
+SITE-000373,ORG-000349,Full Circle Technologies — Barberton,Barberton,Summit,2,C,https://fullcircle-tech.com,,,regrind_pelletizing,elastomers_rubber,0
+SITE-000405,ORG-000379,Infinity Engineered Products — Fairlawn,Fairlawn,Summit,1,C,https://goodyearairsprings.com/,,,,elastomers_rubber;natural_rubber_nr,0
+SITE-000410,ORG-000384,Intralox — Twinsburg,Twinsburg,Summit,1,C,https://www.intralox.com/,,,,thermoplastics,0
+SITE-000415,ORG-000387,"J.b. Polymers, Inc — Mogadore",Mogadore,Summit,2,U,https://www.jbpolymers.com/,,,custom_compounding,abs;acetal_pom;nylon_pa;polycarbonate_pc;thermoplastics,0
+SITE-000449,ORG-000420,Linden Polyurethane — Cuyahoga Falls,Cuyahoga Falls,Summit,1,U,https://www.lindenindustries.com/,,,,,0
+SITE-000454,ORG-000424,LT Molding Solutions — Hudson,Hudson,Summit,1,C,https://ltmolding.com/,assembly_secondary_ops;printing_decorating_plastics;rotational_molding,,,,0
+SITE-000464,ORG-000433,McCann Plastics — North Canton,North Canton,Summit,1,C,https://mccannplastics.com/,,,,,0
+SITE-000470,ORG-000439,Mickey Thompson Tire and Wheels — Stow,Stow,Summit,1,U,https://www.mickeythompsontires.com/,,,,,0
+SITE-000547,ORG-000513,Polystar Containment — Stow,Stow,Summit,1,C,https://polystarcontainment.com/,,,,composites_frp,0
+SITE-000556,ORG-000521,Premier Oem — Cuyahoga Falls,Cuyahoga Falls,Summit,1,C,https://premier-oem.com/,mold_tool_making;rotational_molding,,,,0
+SITE-000564,ORG-000528,Promerus — Akron,Akron,Summit,2,A,https://www.promerus.com/,,,polymerization,,0
+SITE-000565,ORG-000529,"Prospect Mold, Inc. — Cuyahoga Falls",Cuyahoga Falls,Summit,1,C,https://prospectgroup.com/,mold_tool_making;plastics_machining_cnc,,,,0
+SITE-000570,ORG-000534,Quality Synthetic Rubber — Twinsburg,Twinsburg,Summit,2,C,https://www.datwyler.com/,,,,elastomers_rubber,0
+SITE-000588,ORG-000550,Röchling Automotive USA LLP — Akron,Akron,Summit,1,A,https://www.roechling.com/,,,,bioplastics_biobased;thermoplastics,0
+SITE-000590,ORG-000552,Rogers Industrial Products — Akron,Akron,Summit,1,C,https://rogersusa.com/,,,,,0
+SITE-000602,ORG-000563,"Scott Bader, Inc. — Stow",Stow,Summit,2,U,https://www.scottbader.com/north-america/,,,,adhesives_sealants;polyester_vinyl_ester_resins,0
+SITE-000622,ORG-000583,"Spiral Brushes, Inc. — Stow",Stow,Summit,1,U,https://www.spiralbrushes.com,,nylon_pa;polyethylene_pe;polypropylene_pp,,,0
+SITE-000639,ORG-000600,Technoform — Twinsburg,Twinsburg,Summit,1,C,https://www.technoform.com/,,,,thermoplastics,0
+SITE-001311,ORG-001330,Finite Fiber — Akron,Akron,Summit,1,B,https://finitefiber.com/,,elastomers_rubber,,,0
+SITE-001427,ORG-001388,Hy-Ko Products Company — Northfield,Northfield,Summit,1,B,https://www.hy-ko.com/,,,,,0
+SITE-001438,ORG-001395,CREO Greenhouse — Mogadore,Mogadore,Summit,1,B,https://creogroup.com/,thermoforming_unspecified,,thermoforming_unspecified,,0
+SITE-001481,ORG-001433,Extruded Silicone Products — Mogadore,Mogadore,Summit,1,B,https://esprubber.com,extrusion_unspecified,,extrusion_unspecified,,0
+SITE-001593,ORG-001528,Mabel Dental Lab — Cuyahoga Falls,Cuyahoga Falls,Summit,1,B,https://mabeldental.com/,,nylon_pa,,,0
+SITE-001649,ORG-001578,Bright Idea Shops LLC — Akron,Akron,Summit,1,A,https://brightideashops.com/,,polyethylene_pe;recycled_content_pcr_pir,,,0
+SITE-001661,ORG-001589,The Ruscoe Company — Akron,Akron,Summit,2,B,https://ruscoe.com/,,,adhesive_sealant_formulation,adhesives_sealants;natural_rubber_nr;neoprene_cr,0
+SITE-001682,ORG-001609,"Morgan Adhesives Company, LLC — Stow",Stow,Summit,2,A,https://mactac.com/,,,pressure_sensitive_tape_manufacture,adhesives_sealants,0
+SITE-001695,ORG-001624,ADVANCED CRYOGENIC ENTERPRISES — Akron,Akron,Summit,2,A,http://www.acecryo.com/,,,pulverizing_grinding_resin,elastomers_rubber,0
+SITE-001702,ORG-001630,AKRON BELTING & SUPPLY CO — Akron,Akron,Summit,1,A,https://www.akronbelting.com/,plastics_fabrication_welding,,,,0
+SITE-001703,ORG-001631,AKRON DISPERSIONS INC — Copley,Copley,Summit,2,B,http://www.akrondispersions.com/,,,,polymer_additives,0
+SITE-001709,ORG-001636,ENGINEERED LAMINATES & COATINGS — Akron,Akron,Summit,2,B,https://pressuresensitivefilms.com/,,,,adhesives_sealants,0
+SITE-001732,ORG-001656,ClearSonic Manufacturing Inc — Akron,Akron,Summit,1,A,https://clearsonic.com/,,,,acrylic_pmma,0
+SITE-001742,ORG-001666,Drossbach Inc — Stow,Stow,Summit,1,A,https://drossbach.com/,,,extrusion_pipe_tube,nylon_pa;polyethylene_pe;polypropylene_pp,0
+SITE-001758,ORG-001682,Invisible Repair Products Inc — Tallmadge,Tallmadge,Summit,2,A,https://vinylleatherrepair.com/,,adhesives_sealants;coatings,,,0
+SITE-001829,ORG-001753,Foundation Industries Inc,Akron,Summit,1,C,https://foundationind.com/,injection_molding,,,,0
+SITE-001883,ORG-001830,Impact Sleeve (Sleeve Seal / ID Images),Twinsburg,Summit,1,A,https://impactsleeves.com,,,printing_decorating_plastics,pet_petg;pla;polystyrene_ps_hips;pvc,0
+SITE-001937,ORG-001943,Trans-Foam Inc.,Tallmadge,Summit,1,B,https://trans-foam.com,,,,,0
+SITE-001991,ORG-001997,"Quikey Manufacturing Co, Inc.",Akron,Summit,1,B,quikey.com,,,,,0
+SITE-002001,ORG-002007,S&A Industries Corporation,Akron,Summit,1,A,http://www.s-aindustries.com/,,,compression_molding,,0
+SITE-002047,ORG-002053,STUCK LLC,Akron,Summit,1,C,stuckyourself.com,,,die_cutting_converting;printing_decorating_plastics,pvc,0
+SITE-000184,ORG-000177,Seal Master — Kent,Kent,Portage,1,C,http://www.sealmaster.com/,,elastomers_rubber;epdm;natural_rubber_nr;neoprene_cr;nitrile_nbr;polyurethane_pu;sbr;silicones;viton_fkm,,elastomers_rubber,0
+SITE-000263,ORG-000247,Blade-tech Industries — Streetsboro,Streetsboro,Portage,1,A,https://blade-tech.com/,,,thermoforming_vacuum;injection_molding,,0
+SITE-000298,ORG-000279,Colonial Machine — Kent,Kent,Portage,1,C,https://colonial-machine.com/,mold_tool_making,,tooling_mold_die,,0
+SITE-000379,ORG-000355,Godfrey & Wing — Aurora,Aurora,Portage,2,C,https://www.godfreywing.com/,,,adhesive_sealant_formulation,adhesives_sealants,0
+SITE-000601,ORG-000562,Schneller LLC — Kent,Kent,Portage,1,A,https://www.schneller.com/,,,,thermoplastics,0
+SITE-000615,ORG-000576,Soft-lite — Streetsboro,Streetsboro,Portage,1,C,https://www.soft-lite.com/,,pvc,,,0
+SITE-000640,ORG-000601,The Technology House — Streetsboro,Streetsboro,Portage,2,C,https://www.tth.com/,additive_manufacturing_polymer;injection_molding,,,,0
+SITE-000653,ORG-000612,Trelleborg Seals & Profiles Americas,Aurora,Portage,1,C,https://www.trelleborg.com/,,,extrusion_unspecified;injection_molding,epdm;silicones;thermoplastic_elastomers_tpe_tpu,0
+SITE-001437,ORG-001394,Kent Displays — Kent,Kent,Portage,1,B,https://kentdisplays.com/,,,coating_applying;injection_molding;insert_overmolding;laminating,nylon_pa,0
+SITE-001721,ORG-001646,TUSCO PRODUCTS — Streetsboro,Streetsboro,Portage,1,B,http://www.tuscoproducts.com/,rotational_molding,,,,0
+SITE-001743,ORG-001667,Dudick Inc — Streetsboro,Streetsboro,Portage,2,A,https://dudick.com/,,,,coatings;polyester_vinyl_ester_resins,0
+SITE-001748,ORG-001672,Flash It LLC — Mantua,Mantua,Portage,1,B,https://flashitllc.com/,,,plastics_fabrication_welding,thermoplastics,0
+SITE-001851,ORG-001768,"Action Super Abrasive Products, Inc.",Kent,Portage,1,A,https://actionsuper.com,,,,,0
+SITE-001921,ORG-001927,GlueTread LLC,Hiram,Portage,1,C,https://gluetread.com,,adhesives_sealants,,,0
+SITE-002016,ORG-002022,The Simplay3 Co,Streetsboro,Portage,1,A,simplay3.com,rotational_molding,,,,0
+SITE-002114,ORG-002157,"Custom Pultrusions, Inc.",Aurora,Portage,1,A,http://custompultrusions.com,,,,,0
+SITE-000205,ORG-000198,Ziegler Tire — Massillon,Massillon,Stark,1,U,https://www.zieglertire.com/,tire_retreading,,tire_retreading,,0
+SITE-000238,ORG-000224,"Alliance Equipment Company, Inc. — Alliance",Alliance,Stark,1,C,https://alliance-equipment.com/,,composites_frp;polyethylene_pe,,,0
+SITE-000344,ORG-000323,"Electra Tarp, Inc. — Canton",Canton,Stark,1,U,https://www.electratarp.com/,,pvc,,,0
+SITE-000436,ORG-000407,Kephaco Corporation dba American Marble Industries Plant 1 — Canton,Canton,Stark,1,C,https://amisurfaces.com/,,,,,0
+SITE-000442,ORG-000413,Koch Knight LLC — East Canton,East Canton,Stark,2,U,https://knightmaterials.com/,,,,composites_frp;fluoropolymers,0
+SITE-000501,ORG-000469,"Northeastern Plastics International, Inc — Canton",Canton,Stark,1,C,https://northeasternplastics.com/,,,printing_decorating_plastics,pvc,0
+SITE-000503,ORG-000471,Novis Works LLC — Canton,Canton,Stark,2,U,https://www.novisworks.com/,,epoxy,,,0
+SITE-000522,ORG-000487,PFC-OH — Massillon,Massillon,Stark,1,A,https://pfccases.com/,,,blow_molding;mold_tool_making,polyethylene_pe,0
+SITE-000545,ORG-000511,"Polymer Packaging, Inc. — North Canton",North Canton,Stark,1,A,https://www.polymerpkg.com/,,,,nylon_pa;pha;pla;polyethylene_pe,0
+SITE-000643,ORG-000603,Tesla Nanocoatings — Massillon,Massillon,Stark,1,U,https://teslanano.com/,,,coating_formulation,coatings;epoxy,0
+SITE-000650,ORG-000610,Tower Industries LTD — Massillon,Massillon,Stark,1,C,https://www.towersurfaces.com/,plastics_fabrication_welding,,,,0
+SITE-000664,ORG-000623,Uniwall Mfg — Louisville,Louisville,Stark,1,C,https://familyfunpools.com/,,,,composites_frp,0
+SITE-001428,ORG-001389,IML Containers Ohio — Alliance,Alliance,Stark,1,B,https://imlcontainer.com/,injection_molding,,injection_molding;printing_decorating_plastics,polypropylene_pp,1
+SITE-001441,ORG-001398,Smithers Medical Products — North Canton,North Canton,Stark,1,B,https://smithersmedicalproducts.com/,polyurethane_foaming,,polyurethane_foaming,foams_polymeric,0
+SITE-001512,ORG-001461,Sare Plastics — Alliance,Alliance,Stark,1,B,https://sareplastics.com,injection_molding,,injection_molding,,0
+SITE-001716,ORG-001642,MOTIVO DISPLAY SOLUTIONS — Massillon,Massillon,Stark,1,B,http://www.motivodisplay.com/,,,,,0
+SITE-001723,ORG-001648,WORTHINGTON PRODUCTS — East Canton,East Canton,Stark,1,B,http://tuffboom.com/,,,,,0
+SITE-001754,ORG-001678,Harrison Paint Company — Canton,Canton,Stark,2,A,https://harrisonpaint.com/,,,coating_formulation,coatings,0
+SITE-001774,ORG-001698,Prime Engineered Plastics,Canton,Stark,1,B,https://www.prime-plastics.com/,,,,,0
