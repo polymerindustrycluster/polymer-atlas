@@ -62,3 +62,4 @@ SITE-002005,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failu
 SITE-002072,STILL_UNCERTAIN,"own-site fetch unavailable (2 attempts, route failure, not absence); need a readable own-site page with the physical street at the recorded city"
 SITE-002904,STILL_UNCERTAIN,"7 own-site pages read, no street at recorded city Wadsworth; need own-page physical street block at the recorded city"
 SITE-000226,STILL_UNCERTAIN,"4 own-site pages read, no street at recorded city Wooster; need own-page physical street block at the recorded city"
+SITE-001865,STILL_UNCERTAIN,"own-page street block is labelled 'Mailing Address' on https://cosarmold.com/contact/ (Codex refute on #315, 2026-11-14); need a physical-location witness for 395 Portage Blvd, Kent. Fill withdrawn; EVD-340202 retired"
