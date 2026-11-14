@@ -29,7 +29,7 @@ BASE_CLAIMS = {
     "people": {"existence", "scope", "parent"},
 }
 CLAIMS = {"existence", "address", "scope", "code", "parent", "activity", "liveness", "size_band"}  # size_band: B-BAND 2026-11-03
-EFFECTS = {"supports_A", "supports_B", "supports_C", "contradicts"}
+EFFECTS = {"supports_A", "supports_B", "supports_C", "supports_U", "contradicts"}  # supports_U: SCHEMA v1.13 S4
 POSTURES = ("no_rows_history_unknown", "started_with_gaps", "claim_rows_present")
 
 
