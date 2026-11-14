@@ -1,0 +1,101 @@
+site_id,org_id,site_name,city,county,ring,tier,website,site_proc,site_mat,org_proc,org_mat,has_cap
+SITE-001928,ORG-001934,Rack Coating Services Inc.,Canal Fulton,Stark,1,B,https://rackpowdercoating.com,,,,,0
+SITE-001934,ORG-001940,Synthetic Rubber Technologies,Uniontown,Stark,2,C,https://srtpolymers.com,,,,,0
+SITE-002004,ORG-002010,Sherwood Advanced Composite Technologies Corp,Louisville,Stark,1,B,sherwoodcorp.com,,,,,0
+SITE-002055,ORG-002056,P & E Sales Ltd.,Alliance,Stark,1,C,https://pesalesohio.wordpress.com,die_cutting_converting,,,,0
+SITE-002110,ORG-002153,Checkpoint Systems,Canton,Stark,1,A,alphaworld.com,,,,,0
+SITE-000222,ORG-000209,ABC Plastics — Lodi,Lodi,Medina,1,A,http://www.abcplasticslodi.com/,,,injection_molding,,0
+SITE-000264,ORG-000248,Blair Rubber — Seville,Seville,Medina,2,A,https://blairrubber.com/,,elastomers_rubber;natural_rubber_nr;specialty_elastomers;thermoplastics,,,0
+SITE-000265,ORG-000249,BMS Burns — Medina,Medina,Medina,1,C,https://www.bmsburns.com/,,,,,0
+SITE-000443,ORG-000414,Koroseal Interior Products — Medina,Medina,Medina,1,C,https://koroseal.com/,,,laminating,pvc;thermoplastics,0
+SITE-000580,ORG-000544,Foundation Wellness — Wadsworth,Wadsworth,Medina,1,C,https://foundationwellness.com/,,,foam_fabrication;laminating;mold_tool_making,foams_polymeric;polyurethane_pu,0
+SITE-001420,ORG-001381,Hyload Inc. — Wadsworth,Wadsworth,Medina,1,B,https://www.hyload.com/,,thermoplastics,,coatings;thermoplastic_elastomers_tpe_tpu;thermoplastics,1
+SITE-001480,ORG-001432,Cell-O-Core — Wadsworth,Wadsworth,Medina,1,B,https://cellocore.com,extrusion_unspecified,,extrusion_unspecified,,0
+SITE-001510,ORG-001459,RFD Beaufort — Sharon Center,Sharon Center,Medina,1,B,https://survitecgroup.com/,,,,,0
+SITE-001663,ORG-001591,Winsell Incorporated — Medina,Medina,Medina,2,B,https://winsellinc.com/,,,color_masterbatch,inks_colorants_masterbatch,0
+SITE-001733,ORG-001657,Comdess Company Inc — Seville,Seville,Medina,1,B,https://comdess.com/,,,assembly_secondary_ops;insert_overmolding;rotational_molding,foams_polymeric;polyethylene_pe;pvc,0
+SITE-001784,ORG-001708,ECM Performance Materials Corp,Medina,Medina,2,C,ecmpmc.com,,,,,0
+SITE-001899,ORG-001891,"Scherba Industries, Inc.",Brunswick,Medina,1,A,https://inflatableimages.com,,,,,0
+SITE-001993,ORG-001999,"Raydar of Ohio, Inc.",Wadsworth,Medina,1,B,raydarrubber.com,,,,,0
+SITE-002005,ORG-002011,"Solutions in Polycarbonate, LLC",Medina,Medina,1,A,solutionsinpc.com,,,,,0
+SITE-000426,ORG-000397,Johnson Brothers Rubber Co. — West Salem,West Salem,Wayne,1,B,https://www.johnsonbrosrubbercompany.com/,,,rubber_extrusion;rubber_mixing_compounding;rubber_molding_compression;rubber_molding_injection;transfer_molding,epdm;foams_polymeric;natural_rubber_nr;neoprene_cr;nitrile_nbr;sbr;silicones;specialty_elastomers;viton_fkm,0
+SITE-000472,ORG-000441,Mid-west Poly Pak — Doylestown,Doylestown,Wayne,1,C,https://midwestpolypak.com/,,,,,0
+SITE-000579,ORG-000543,Refcotec — Orrville,Orrville,Wayne,2,U,https://www.refcotec.com/,,,coating_formulation,coatings,0
+SITE-000620,ORG-000581,Speed North America — Wooster,Wooster,Wayne,1,C,https://speedgroupe.com/,,,,,0
+SITE-000623,ORG-000584,"Sprosty Bag Co., Inc. — Smithville",Smithville,Wayne,1,B,https://sprostybag.com/,,,printing_decorating_plastics,films_flexible_packaging;polypropylene_pp,0
+SITE-000676,ORG-000635,THE WOOSTER BRUSH COMPANY — Wooster,Wooster,Wayne,1,B,https://www.woosterbrush.com/,,,,,0
+SITE-001419,ORG-001380,Bauer Corporation — Wooster,Wooster,Wayne,1,B,https://bauerladder.com/,,fiberglass_composites,,fiberglass_composites,0
+SITE-001931,ORG-001937,"Smetzer's Tire Center, Inc.",Wooster,Wayne,1,A,https://smetzertire.com,tire_retreading,,,,0
+SITE-001933,ORG-001939,Synesis LLC,Creston,Wayne,2,B,https://ecoflexrtpv.com,,recycled_content_pcr_pir;thermoplastic_elastomers_tpe_tpu,,,0
+SITE-002056,ORG-002057,Quality Fiberglass,Marshallville,Wayne,1,C,https://qualityfiberglass.net,,,,,0
+SITE-002073,ORG-002073,EnergyEne Inc.,Wooster,Wayne,1,B,https://energyene.com,,,,natural_rubber_nr,0
+SITE-000106,ORG-000107,T&M Plastics Co. — Cleveland,Cleveland,Cuyahoga,1,B,http://www.tmplasticsusa.com,,,,,0
+SITE-000111,ORG-000112,Trico Machine Products — Cleveland,Bedford Heights,Cuyahoga,1,B,https://tricomachine.com,plastics_machining_cnc,,plastics_machining_cnc,,0
+SITE-000115,ORG-000116,AMD Plastics — Euclid,Euclid,Cuyahoga,1,A,https://www.amdplastics.com/,,,thermoforming_unspecified;extrusion_sheet;plastics_machining_cnc,polyethylene_pe;abs;thermoplastic_olefin_tpo,0
+SITE-000118,ORG-000119,Mechanical Rubber — Strongsville,Strongsville,Cuyahoga,1,C,https://mechanicalrubber.com/,,elastomers_rubber,die_cutting_converting,elastomers_rubber;thermoplastics;thermosets,0
+SITE-000121,ORG-000122,Lattice Composites — Solon,Solon,Cuyahoga,1,U,https://latticecomposites.com,,adhesives_sealants;composites_carbon;composites_frp;epoxy;phenolic,,composites_frp,0
+SITE-000122,ORG-000123,Anita Plastics — Woodmere,Woodmere,Cuyahoga,1,U,https://www.anitaplastics.com/,plastics_fabrication_welding,,plastics_fabrication_welding,polyethylene_pe;polypropylene_pp,0
+SITE-000127,ORG-000128,Compking — North Randall,North Randall,Cuyahoga,1,U,https://compking.com,,composites_frp,,composites_frp;epoxy,0
+SITE-000128,ORG-000129,Playground Plastics — Cleveland,Cleveland,Cuyahoga,1,C,https://www.playgroundplastics.com/,,,,recycled_content_pcr_pir,0
+SITE-000136,ORG-000136,Roto Polymers — Warrensville Heights,Warrensville Heights,Cuyahoga,2,A,https://rotopolymers.com,pulverizing_grinding_resin;custom_compounding,,pulverizing_grinding_resin;custom_compounding,polyethylene_pe;recycled_content_pcr_pir,1
+SITE-000140,ORG-000140,Cleveland Specialty Products — Cleveland,Cleveland,Cuyahoga,2,C,https://clevelandsp.com/,,,,polyethylene_pe,0
+SITE-000193,ORG-000186,SKF USA — Highland Heights,Highland Heights,Cuyahoga,1,C,https://www.skf.com,,elastomers_rubber,,elastomers_rubber,0
+SITE-000221,ORG-000208,A-Roo Co. — Strongsville,Strongsville,Cuyahoga,1,A,https://www.a-roo.com/,,,die_cutting_converting;printing_decorating_plastics,films_flexible_packaging,0
+SITE-000248,ORG-000234,Architectural Fiberglass — Cleveland,Cleveland,Cuyahoga,1,C,https://www.fiberglass-afi.com/,,composites_frp,,,0
+SITE-000272,ORG-000256,Buckeye Rubber & Packing Co. — Beachwood,Beachwood,Cuyahoga,1,B,https://buckeyerubber.com/,,elastomers_rubber;fluoropolymers;nitrile_nbr;specialty_elastomers,,,0
+SITE-000275,ORG-000258,"C.A. Litzler Co., Inc. — Cleveland",Cleveland,Cuyahoga,1,C,https://calitzler.com/,,,machinery_equipment,,0
+SITE-000279,ORG-000262,Carlisle Polyurethane Systems — Berea,Berea,Cuyahoga,2,C,https://carlisletyrfil.com/,,,,polyurethane_pu,1
+SITE-000283,ORG-000265,CCL Label — Strongsville,Strongsville,Cuyahoga,1,U,https://ccllabel.com/,laminating,,,,0
+SITE-000284,ORG-000266,Cermetech LLC — Cleveland,Cleveland,Cuyahoga,1,U,https://www.cermetech.com,,,,,0
+SITE-000305,ORG-000286,Container Compliance — Cleveland,Cleveland,Cuyahoga,1,U,https://www.containercompliance.com/,,,,,0
+SITE-000309,ORG-000290,Cosmo Corporation — Cleveland (Solon),Cleveland (Solon),Cuyahoga,1,C,https://www.cosmocorp.com/,,,assembly_secondary_ops;mold_tool_making,thermoplastics;thermosets,0
+SITE-000315,ORG-000296,"Dalton Consulting Group, Inc. — Cleveland Heights",Cleveland Heights,Cuyahoga,1,U,https://www.manufactureparts.com/,,,injection_molding,,0
+SITE-000333,ORG-000313,DuPont Valley View — Valley View,Valley View,Cuyahoga,1,C,https://www.dupont.com/,,,plastics_machining_cnc,other_specified_in_notes,0
+SITE-000339,ORG-000318,E.l. Mustee & Sons — Brook Park,Brook Park,Cuyahoga,1,C,https://mustee.com/,,,,composites_frp,0
+SITE-000375,ORG-000351,"Gem City Plastic Machinery, Inc. — Brecksville",Brecksville,Cuyahoga,1,C,https://www.gemcity1.com/,,,,,0
+SITE-000383,ORG-000358,GRAFIX — Maple Heights,Maple Heights,Cuyahoga,1,B,https://www.grafixplastics.com/,,,,polyethylene_pe;polypropylene_pp,0
+SITE-000417,ORG-000389,"J. J. White Products, Inc. — Cleveland",Cleveland,Cuyahoga,1,C,https://www.jjwhite.com/,,,,,0
+SITE-000424,ORG-000395,Jet Dock Systems — Cleveland,Cleveland,Cuyahoga,1,U,https://www.jetdock.com/,,,,polyethylene_pe,0
+SITE-000429,ORG-000400,JRM Chemical — Cleveland,Cleveland,Cuyahoga,1,A,https://soilmoist.com/,,,,,0
+SITE-000475,ORG-000444,Midwest Industrial Products Corporation — Cleveland,Cleveland,Cuyahoga,2,U,https://www.mipco.org/,,,,epoxy,0
+SITE-000477,ORG-000446,"MMI Textiles, Inc. — Brooklyn",Brooklyn,Cuyahoga,1,U,https://www.mmitextiles.com/,,,,nylon_pa,0
+SITE-000492,ORG-000460,Newko 9 — Strongsville,Strongsville,Cuyahoga,2,U,https://www.newkopolymers.com/,,abs;acetal_pom;asa;nylon_pa;polycarbonate_pc;polyethylene_pe;polypropylene_pp;polystyrene_ps_hips;recycled_content_pcr_pir;thermoplastic_elastomers_tpe_tpu,,,0
+SITE-000502,ORG-000470,"Nova Films & Foils, Inc. — Bedford",Bedford,Cuyahoga,2,U,https://novatlc.com/,,,coating_applying;laminating,adhesives_sealants,0
+SITE-000528,ORG-000493,The Plas-mac — Solon,Solon,Cuyahoga,1,B,https://mercurymachine.com/plas-mac-corporation/,,,injection_molding,,0
+SITE-000530,ORG-000495,Plastic Platers — Brooklyn,Brooklyn,Cuyahoga,1,C,https://www.mpcplating.com/,assembly_secondary_ops;coating_applying,,,,0
+SITE-000568,ORG-000532,Q Medical Devices — Pepper Pike,Pepper Pike,Cuyahoga,2,U,https://qmd.net/,,,assembly_secondary_ops,elastomers_rubber;silicones,0
+SITE-000569,ORG-000533,Qnity Cleveland Laird Plant — Cleveland,Cleveland,Cuyahoga,2,C,https://www.qnityelectronics.com/,,,,silicones,0
+SITE-000634,ORG-000595,System Seals — Brecksville,Brecksville,Cuyahoga,2,U,https://www.systemseals.com/,,,,acetal_pom;epdm;fluoropolymers;nitrile_nbr;nylon_pa;peek_high_performance;polyethylene_pe;silicones;thermoplastic_elastomers_tpe_tpu,0
+SITE-000637,ORG-000598,Team Wendy — Cleveland,Cleveland,Cuyahoga,1,C,https://www.teamwendy.com/,,,,foams_polymeric,0
+SITE-000647,ORG-000607,"Timco Rubber Products, Inc. — Berea",Berea,Cuyahoga,2,A,https://www.timcorubber.com/,,,die_cutting_converting;rubber_extrusion;rubber_molding_compression;rubber_molding_injection;transfer_molding,elastomers_rubber;pvc,0
+SITE-000648,ORG-000608,Tomlinson 1880 — Parma,Parma,Cuyahoga,1,A,https://www.tomlinson1880.com/,,,,,0
+SITE-000655,ORG-000614,"Tri-Craft, Inc. — Middleburg Heights",Middleburg Heights,Cuyahoga,1,C,https://www.tc-tm.com/,assembly_secondary_ops;injection_molding;mold_tool_making,,,,0
+SITE-001506,ORG-001455,Lamports Filter Media — Cleveland,Cleveland,Cuyahoga,1,B,https://lamports.com/,,polypropylene_pp,,,0
+SITE-001524,ORG-001465,Chalfant Sewing Fabricators — Cleveland,Cleveland,Cuyahoga,1,B,https://chalfantusa.com/,,,dock seal and shelter fabrication,polyurethane_pu;foams_polymeric,0
+SITE-001530,ORG-001908,Tremco CPG — Cleveland (E 175th St),Cleveland,Cuyahoga,2,B,https://tremcocpg.com/,,,,adhesives_sealants,1
+SITE-001591,ORG-001526,"Viscus Biologics, LLC — Cleveland",Cleveland,Cuyahoga,1,A,https://viscusbiologics.com/,,,,,0
+SITE-001647,ORG-001576,Aabaco Plastics Inc — Garfield Heights,Garfield Heights,Cuyahoga,1,A,https://aabacoplastics.com/,,films_flexible_packaging,,,0
+SITE-001651,ORG-001580,Chemical Solvents Inc — Cleveland,Cleveland,Cuyahoga,2,B,https://chemicalsolvents.com/,,,,,0
+SITE-001652,ORG-001581,ePac Flexible Packaging — Solon,Solon,Cuyahoga,1,B,https://epacflexibles.com/,,,printing_decorating_plastics,films_flexible_packaging,0
+SITE-001667,ORG-001595,Eleven 10 LLC — Westlake,Westlake,Cuyahoga,1,B,https://1110gear.com/,,,,,0
+SITE-001670,ORG-001598,J B Jewitt Co Inc — Cleveland,Cleveland,Cuyahoga,2,B,https://homesteadfinishingproducts.com/,,,,coatings,0
+SITE-001671,ORG-001599,MultiPlast Systems Inc — Solon,Solon,Cuyahoga,2,B,https://multiplastsystems.com/,,,,films_flexible_packaging;polyethylene_pe;polymer_additives,0
+SITE-001672,ORG-001600,North Shore Strapping Company — Brooklyn Heights,Brooklyn Heights,Cuyahoga,1,B,https://northshorestrapping.com/,,,,films_flexible_packaging;foams_polymeric,0
+SITE-001673,ORG-001601,Pison Stream Solutions Inc — Brecksville,Brecksville,Cuyahoga,2,C,https://pisonstreamsolutions.com/,,,coating_formulation,,0
+SITE-001675,ORG-001603,Speedline Corporation — Brooklyn Heights,Brooklyn Heights,Cuyahoga,1,B,https://speedlinepvc.com/,,,,pvc,0
+SITE-001775,ORG-001699,Aerocase Inc.,Westlake,Cuyahoga,1,B,aerocaseinc.com,,abs;polyethylene_pe,,,0
+SITE-001776,ORG-001700,"Certon Technologies, Inc.",Bedford,Cuyahoga,2,B,http://www.haradhesive.com/,,,adhesive_sealant_formulation,adhesives_sealants,0
+SITE-001777,ORG-001701,Cru Performance Coatings LLC,Cleveland,Cuyahoga,2,B,https://www.continentalpaints.com/,,,coating_formulation,coatings;epoxy;polyurethane_pu,0
+SITE-001779,ORG-001703,"Premier Aerosol Packaging, Inc.",Valley View,Cuyahoga,2,B,premieraerosol.com,,,,,0
+SITE-001791,ORG-001715,"Axion Labs, Inc.",Cleveland,Cuyahoga,1,B,axionlabs.co,,,additive_manufacturing_polymer;plastics_machining_cnc,abs;acetal_pom;composites_carbon;nylon_pa;peek_high_performance;pet_petg;pla,0
+SITE-001793,ORG-001717,"FlexLink, LLC",Cleveland,Cuyahoga,1,B,flexlinkllc.com,,,,,0
+SITE-001795,ORG-001719,"Pyramid Plastics, Inc.",Cleveland,Cuyahoga,1,C,pyramidplasticsinc.com,,,,,0
+SITE-001798,ORG-001722,"Kinzie Advanced Polymers, LLC dba Grove Bags",Bedford Heights,Cuyahoga,1,B,grovebags.com,,films_flexible_packaging,,,0
+SITE-001806,ORG-001730,3D Dental Designs and Development LLC,Shaker Heights,Cuyahoga,2,B,https://3d-dent.com/,,,,composites_unspecified,0
+SITE-001824,ORG-001748,"PKG, LLC",Olmsted Falls,Cuyahoga,1,C,https://pkgllc.com/,,,extrusion_film_blown,films_flexible_packaging;nylon_pa;pet_petg;polyethylene_pe;polypropylene_pp,0
+SITE-001852,ORG-001769,Adherex Packaging (Adherex Group),Cleveland,Cuyahoga,1,A,https://adherexpackaging.com,,,die_cutting_converting;printing_decorating_plastics,adhesives_sealants;films_flexible_packaging,0
+SITE-001856,ORG-001777,American Consolidated Industries Inc (Anchor Industries),Solon,Cuyahoga,1,A,https://anchor-online.com,,,,,0
+SITE-001868,ORG-001794,Dal-Little Fabricating Inc,Cleveland,Cuyahoga,1,C,https://dallittle.com,,,,,0
+SITE-001876,ORG-001817,G2 Materials Corp,Cleveland,Cuyahoga,1,A,https://g2materials.com,coating_applying;die_cutting_converting;laminating,,,,0
+SITE-001888,ORG-001855,NewKor Inc.,Cleveland,Cuyahoga,1,A,https://newkor.com,,phenolic,,,0
+SITE-001923,ORG-001929,Saint-Gobain HyComp LLC (Hycomp LLC),Middleburg Heights,Cuyahoga,1,A,https://hycompinc.com,,,,,0
