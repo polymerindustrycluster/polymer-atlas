@@ -68,7 +68,7 @@ def plan(data):
    assert eid<=376999
    effect='supports_U' if record['verification_tier']=='U' else 'supports_B'
    ev=dict(evidence_id=f'EVD-{eid:06d}',record_table=table,record_id=rid,claim_type='size_band',
-    claim_detail=f'{FIELDS[table]}={band(r["JobsReported"])}; SBA PPP BorrowerName="{r["BorrowerName"]}"; JobsReported="{r["JobsReported"]}"; DateApproved="{r["DateApproved"]}"; historical {loan_date(r)[:4]} borrower-reported employment figure, band only',
+    claim_detail=f'{FIELDS[table]}={band(r["JobsReported"])}; SBA PPP BorrowerName="{r["BorrowerName"]}"; BorrowerAddress="{r["BorrowerAddress"]}"; BorrowerCity="{r["BorrowerCity"]}"; JobsReported="{r["JobsReported"]}"; DateApproved="{r["DateApproved"]}"; historical {loan_date(r)[:4]} borrower-reported employment figure, band only',
     source_class='government_filing',source_ref=f'{r["source_url"]} (SBA PPP LoanNumber {r["LoanNumber"]})',observed_date=loan_date(r),tier_effect=effect,
     created_by='codex ppp-size-bands-2026-11-16',notes=f'Owner John Swanson B-PPP 2026-11-16: Strict matches; historical {loan_date(r)[:4]} loan approval date {loan_date(r)}; employment reference period unspecified; retrieved 2026-11-16; release 2024-09-30; source SHA256 {r["source_sha256"]}; exact normalized legal/trade/recorded former name + active-site street key + city; single active site, all held sites Ohio; blank-only fill')
    fills.append(dict(record_table=table,record_id=rid,field=FIELDS[table],old='',new=band(r['JobsReported']),org_id=oid,site_id=s['site_id'],loan_id=r['LoanNumber'],borrower_name=r['BorrowerName'],jobs_reported=r['JobsReported'],loan_date=loan_date(r),evidence_id=ev['evidence_id']))

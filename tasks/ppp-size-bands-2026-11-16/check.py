@@ -30,7 +30,7 @@ def payload(fills,evs):
   assert e['record_table']==table and e['record_id']==u['record_id'] and e['claim_type']=='size_band'
   assert e['source_class']=='government_filing' and e['tier_effect']==('supports_U' if (o if table=='organizations' else s)['verification_tier']=='U' else 'supports_B')
   assert 376000<=int(e['evidence_id'][4:])<=376999 and e['observed_date']==loan_date(r)
-  for key in ['BorrowerName','JobsReported','DateApproved']:assert f'{key}="{r[key]}"' in e['claim_detail']
+  for key in ['BorrowerName','BorrowerAddress','BorrowerCity','JobsReported','DateApproved']:assert f'{key}="{r[key]}"' in e['claim_detail']
   assert 'historical '+loan_date(r)[:4] in e['claim_detail'] and r['source_url'] in e['source_ref'] and r['LoanNumber'] in e['source_ref']
  expected,ee,held,n=plan(before)
  assert fills==expected and evs==ee,'omitted, added, reordered or altered proposal'
@@ -80,6 +80,12 @@ def main():
   try:payload(bad,evs)
   except AssertionError:print('injected defect rejected:',defect)
   else:raise AssertionError('silent pass: '+defect)
+ for key in ['BorrowerAddress','BorrowerCity']:
+  bad=copy.deepcopy(evs);u=fills[0];r=next(r for r in loans() if r['LoanNumber']==u['loan_id'])
+  bad[0]['claim_detail']=bad[0]['claim_detail'].replace(f'; {key}="{r[key]}"','')
+  try:payload(fills,bad)
+  except AssertionError:print('injected evidence defect rejected:',key)
+  else:raise AssertionError('silent pass: missing '+key)
  snapshots={p:p.read_bytes() for p in [ROOT/'data'/n for n in ['organizations_OH.csv','sites_OH.csv','evidence_organizations_OH.csv','evidence_sites_OH.csv']]}
  subprocess.run([sys.executable,str(D/'build.py'),'--apply'],check=True)
  assert all(p.read_bytes()==b for p,b in snapshots.items()),'apply not idempotent'
