@@ -2202,11 +2202,59 @@ def build_eco_page(ctx, e):
                 f"{e.get('legal_name') or eid}: Polymer Industry Atlas ecosystem record.")
 
 
+def process_table(sites, county):
+    """Site rows by recorded process (a site row can list several, so rows do not sum to the total)."""
+    counts, n_unknown = Counter(), 0
+    for s in sites:
+        t = known(vals(s.get("processes")))
+        counts.update(t)
+        n_unknown += not t
+    rows = "".join(f'<tr><th scope="row">{esc(vocab(t))}</th><td class="num">{fmt_int(n)}</td></tr>'
+                   for t, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
+    rows += (f'<tr><th scope="row">Unknown (no process recorded on the site row)</th><td class="num" data-sort="{n_unknown}">'
+             f'{fmt_int(n_unknown)}</td></tr>'
+             f'<tr class="total"><th scope="row">All site rows (each can list several processes)</th>'
+             f'<td class="num">{fmt_int(len(sites))}</td></tr>')
+    return table_wrap(
+        f'<table><caption>{esc(county)} County site rows by process (Ohio; operating status active; tiers A-C)</caption>'
+        f'<thead><tr><th scope="col">Process</th><th scope="col" class="num">Site rows</th></tr></thead><tbody>{rows}</tbody></table>',
+        f"{county} County site rows by process")
+
+
+def band_table(sites, a, county):
+    """Site rows by employee band: the site's own band, else the parent organization's Ohio band, in separate columns."""
+    own, parent, n_unknown = Counter(), Counter(), 0
+    for s in sites:
+        b = s.get("employee_band_site") or ""
+        rec = a.orgs.get(s["org_id"]) or a.eco.get(s["org_id"]) or {}
+        pb = rec.get("employee_band_ohio") or ""
+        if b not in UNKNOWN_VALUES:
+            own[b] += 1
+        elif pb not in UNKNOWN_VALUES:
+            parent[pb] += 1
+        else:
+            n_unknown += 1
+    rows = "".join(
+        f'<tr><th scope="row">{esc(b)}</th><td class="num">{fmt_int(own[b])}</td><td class="num">{fmt_int(parent[b])}</td>'
+        f'<td class="num">{fmt_int(own[b] + parent[b])}</td></tr>'
+        for b in sorted(set(own) | set(parent), key=lambda b: (band_floor(b) or 0, b)))
+    rows += (f'<tr><th scope="row">Unknown (no site band and no parent band)</th><td class="num"></td><td class="num"></td>'
+             f'<td class="num" data-sort="{n_unknown}">{fmt_int(n_unknown)}</td></tr>'
+             f'<tr class="total"><th scope="row">All site rows</th><td class="num">{fmt_int(sum(own.values()))}</td>'
+             f'<td class="num">{fmt_int(sum(parent.values()))}</td><td class="num">{fmt_int(len(sites))}</td></tr>')
+    return table_wrap(
+        f'<table><caption>{esc(county)} County site rows by employee band (Ohio; operating status active; tiers A-C)</caption>'
+        '<thead><tr><th scope="col">Employee band</th><th scope="col" class="num">Site rows with this site band</th>'
+        '<th scope="col" class="num">No site band; parent\'s Ohio band</th><th scope="col" class="num">Site rows</th></tr></thead>'
+        f'<tbody>{rows}</tbody></table>', f"{county} County site rows by employee band")
+
+
 def build_county_page(ctx, county):
     a = ctx.atlas
     sites = [s for s in a.sites if s.get("state") == "OH" and s.get("county") == county]
     active = [s for s in sites if s.get("operating_status") == "active"]
     not_active = len(sites) - len(active)
+    ac = active_ab(sites)   # the tier A-C basis of the headline counts
     org_ids = {s["org_id"] for s in active}
     ring_groups = defaultdict(list)
     for s in active:
@@ -2294,6 +2342,7 @@ that figure; it is not zero.</p>"""
 {("a PIC-18 county (" + JOBSOHIO_REGION[county] + " region)") if county in PIC12 else "outside the PIC-18 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
 <div class="cards">
 <div class="card"><div class="big">{fmt_int(len(active))}</div><div class="unit">Site rows</div><div class="filter">{esc(county)} County, Ohio; operating status active; all verification tiers</div></div>
+<div class="card"><div class="big">{fmt_int(len(ac))}</div><div class="unit">Site rows, tiers A-C</div><div class="filter">{esc(county)} County, Ohio; operating status active; verification tiers A-C (the basis of the headline counts)</div></div>
 <div class="card"><div class="big">{fmt_int(len(org_ids))}</div><div class="unit">Organization rows with an active site row here</div><div class="filter">distinct parent organizations of those site rows; all tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(eco))}</div><div class="unit">Ecosystem organization rows</div><div class="filter">located in the county; all statuses and tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(progs))}</div><div class="unit">Program rows</div><div class="filter">located in the county; status active; all tiers</div></div>
@@ -2306,6 +2355,12 @@ Tier U rows are candidates; they are included here because this page shows all t
 <h2>Establishments by NAICS (3-digit)</h2>
 {naics_tbl}
 <p class="small muted">The site's own NAICS code is used. NAICS values are not company facts by default; see each site's provenance on its organization page.</p>
+<h2>Establishments by process</h2>
+{process_table(ac, county) if ac else "<p>No active tier A-C site rows.</p>"}
+<p class="small muted">Process is what the site row records. Unknown means none is recorded, not that there is none.</p>
+<h2>Establishments by employee band</h2>
+{band_table(ac, a, county) if ac else "<p>No active tier A-C site rows.</p>"}
+<p class="small muted">Bands, not headcounts. Where a site row records no band, the parent organization's Ohio band is counted in its own column.</p>
 <h2>Benchmark: BLS QCEW</h2>
 {qcew_html}
 <h2>Sites</h2>
@@ -2345,16 +2400,25 @@ def build_counties_index(ctx):
     def row(c):
         sites = all_sites.get(c, [])
         n_act = sum(1 for s in sites if s.get("operating_status") == "active")
+        n_ac = len(active_ab(sites))
         label = f'<a href="{esc(slug(c))}.html">{esc(c)}</a>'
         q = ctx.qcew.get(c)
         qn = fmt_int(int(float(q["annual_avg_estabs"]))) if q and nonempty(q.get("annual_avg_estabs")) else "n/a"
         return (f'<tr><th scope="row">{label}</th><td>{("PIC-18 · " + JOBSOHIO_REGION[c]) if c in PIC12 else ""}</td>'
-                f'<td class="num">{fmt_int(n_act)}</td><td class="num">{fmt_int(len(sites))}</td>'
+                f'<td class="num"><strong>{fmt_int(n_ac)}</strong></td><td class="num">{fmt_int(n_act)}</td><td class="num">{fmt_int(len(sites))}</td>'
                 f'<td class="num">{fmt_int(eco_n.get(c, 0))}</td><td class="num">{fmt_int(prog_n.get(c, 0))}</td>'
                 f'<td class="num">{qn}</td></tr>')
     pic_rows = "".join(row(c) for c in PIC12)
+    tot = lambda f: sum(f(all_sites.get(c, [])) for c in PIC12)   # noqa: E731
+    pic_ac = tot(lambda ss: len(active_ab(ss)))
+    pic_rows += (f'<tr class="total"><th scope="row">PIC-18 total</th><td></td>'
+                 f'<td class="num"><strong>{fmt_int(pic_ac)}</strong></td>'
+                 f'<td class="num">{fmt_int(tot(lambda ss: sum(1 for s in ss if s.get("operating_status") == "active")))}</td>'
+                 f'<td class="num">{fmt_int(tot(len))}</td><td class="num">{fmt_int(sum(eco_n.get(c, 0) for c in PIC12))}</td>'
+                 f'<td class="num">{fmt_int(sum(prog_n.get(c, 0) for c in PIC12))}</td><td></td></tr>')
     other_rows = "".join(row(c) for c in names if c not in PIC12)
     head = ("<thead><tr><th scope=\"col\">County</th><th scope=\"col\">Group</th>"
+            "<th scope=\"col\" class=\"num\">Site rows, active, tiers A-C (headline basis)</th>"
             "<th scope=\"col\" class=\"num\">Site rows, active, all tiers</th>"
             "<th scope=\"col\" class=\"num\">Site rows, all statuses</th>"
             "<th scope=\"col\" class=\"num\">Ecosystem organization rows</th>"
@@ -2366,7 +2430,9 @@ def build_counties_index(ctx):
 Team NEO region (Ashland, Cuyahoga, Erie, Geauga, Huron, Lake, Lorain, Medina, Portage, Richland, Stark, Summit,
 Tuscarawas, Wayne) and the 4 of its Lake to River region (Ashtabula, Columbiana, Mahoning, Trumbull). The same
 one-pager exists for every other Ohio county where the Atlas holds at least one row.</p>
-<p>All counts are Atlas database rows by the unit named in the column heading. The QCEW column is a
+<p>The PIC-18 counties' "tiers A-C" column adds up to <strong>{fmt_int(pic_ac)}</strong> site rows: the PIC-18 headline on the
+home page (Ohio county in PIC-18; operating status active; verification tiers A-C). The "all tiers" column also counts tier U
+candidates. All counts are Atlas database rows by the unit named in the column heading. The QCEW column is a
 count benchmark from BLS, not matched coverage; "n/a" means the bundled benchmark file has no row for that
 county, which is not a zero. County is taken from each site's physical address.</p>
 <h2>PIC-18 counties</h2>
