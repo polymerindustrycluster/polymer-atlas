@@ -1,4 +1,4 @@
-"""Reconcile the complete frame, retained-page hashes, proposals and per-field holds."""
+"""Reconcile the immutable manifest-pass1.csv frame, witnesses and field holds."""
 import copy
 import hashlib
 import json

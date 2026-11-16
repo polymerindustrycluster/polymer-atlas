@@ -98,7 +98,7 @@ def apply(inputs, evidence):
 def source():
     orgs = {r['org_id']: (p.name, r) for p in sorted((ROOT / 'data').glob('organizations_*.csv'))
             if p.stem != 'organizations_all' for r in at_base(p)}
-    manifest = read(CORPUS / 'manifest.csv')
+    manifest = read(CORPUS / 'manifest-pass1.csv')
     pages = [r for r in manifest if r['status'] == 'ok' and r['text_file'] and r['raw_file']]
     frame = {oid: orgs[oid] for oid in sorted({r['org_id'] for r in pages})
              if any(not orgs[oid][1][f] for f in FIELDS)}

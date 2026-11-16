@@ -49,3 +49,5 @@ This is Codex's checked application, awaiting the required two-family review bef
 | organizations_OH.csv | 32 | 70 | evidence_organizations_OH.csv | 70 |
 
 No other canonical shard changed. All 645 holds remain as originally submitted.
+
+Review repair: batch 1 now reads immutable corpus `manifest-pass1.csv` (through build.source in both builder and checker), so later corpus passes do not change its frozen frame. No data payload changed. Named check rerun from a clean local clone of the repair commit.
