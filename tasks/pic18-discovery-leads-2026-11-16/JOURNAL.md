@@ -1,0 +1,3 @@
+# Integration pass — 2026-11-16
+
+Scope fixed in SPEC.md before application. Existing rows immutable. Main baseline ef32b5ba73; reserved IDs ORG-014100, SITE-020200, EVD-381000..381008, above baseline maxima ORG-013801/SITE-020005/EVD-350241. Four edited shards backed up in controller persist/pic18-discovery-leads/pre-pass before append. Builder applied 11 new rows; follow-up corrected only this unmerged packet’s required boolean/default county vocabulary after validator rejected the initial values. No other IDs or fields altered. Lane self-review: headquarters function only, no inferred manufacturing/site headcount/NAICS or parent rollup. Controller owns independent completion reviews; this draft is not marked Done.
