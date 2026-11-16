@@ -208,19 +208,25 @@ def name_key(s):
     return " ".join(kept or toks)
 
 
-# A name written inside parentheses after a marker: "(formerly X)", "(fka X)", "(f/k/a X)", "(previously X)", "(dba X)".
+# Marked aliases in parentheses: "(formerly X)", "(fka X)", "(f/k/a X)", "(previously X)", "(dba X)".
 # Other parentheticals ("(USA)", "(Ohio plant)") are not names and do not match.
-# shortcut: one name per parenthetical (no "X and Y" split), and the unparenthesized "X dba Y" / "formerly Y" forms are not read.
+
 FORMER_NAME_RE = re.compile(r"\(\s*(?:formerly|previously|f/k/a|fka|d/b/a|dba)\b[\s:.-]*(\w[^()]*?)\s*\)", re.I)
 
 
 def former_names(text):
-    return FORMER_NAME_RE.findall(text or "")
+    text = text or ""
+    names = FORMER_NAME_RE.findall(text)
+    bare = re.sub(r"\([^()]*\)", "", text)
+    match = re.search(r"\s+(?:dba|d/b/a|formerly)\s+(.+?)\s*$", bare, re.I)
+    if match:
+        names.extend([bare[:match.start()].strip(), match[1]])
+    return names
 
 
 def org_name_fields(r):
     """(field, value) for every name an organization row answers to: legal_name, each trade_names entry, then the names
-    written in parentheses inside either (field is "<source> parenthetical name"). Step 2 of dedupe-check searches these."""
+    marked aliases in either. Step 2 of dedupe-check searches these."""
     fields = [("legal_name", r["legal_name"])] + [("trade_names", t) for t in tokens_semicolon(r.get("trade_names"))]
     return fields + [(f"{fld} parenthetical name", x) for fld, val in fields for x in former_names(val)]
 
@@ -373,7 +379,8 @@ def dedupe(tables, domain=None, name=None, street=None, city=None, state=None, z
         q = street_key(street)
         sites = tables.get("sites", Table("sites")).rows
         for r in sites:
-            if not q or street_key(r.get("street_address", "")) != q:
+            notes_key = " " + street_key(r.get("notes", "")) + " "
+            if not q or (street_key(r.get("street_address", "")) != q and f" {q} " not in notes_key):
                 continue
             mism = []
             if city and r["city"] and squash(city) != squash(r["city"]): mism.append("city")

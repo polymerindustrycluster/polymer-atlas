@@ -22,7 +22,7 @@ ORG_COLS = ["org_id", "legal_name", "trade_names", "successor_org_id", "hq_city"
             "status", "verification_tier", "notes"]
 ECO_COLS = ["org_id", "legal_name", "city", "state", "website", "status", "verification_tier", "notes"]
 SITE_COLS = ["site_id", "org_id", "site_name", "city", "state", "zip", "street_address", "operating_status",
-             "verification_tier", "site_group_id", "country", "processes_other_note", "materials_other_note"]
+             "verification_tier", "site_group_id", "country", "processes_other_note", "materials_other_note", "notes"]
 EVD_COLS = ["evidence_id", "record_table", "record_id", "claim_type", "source_class", "observed_date",
             "tier_effect", "source_ref"]
 REL_COLS = ["relationship_id", "from_org_id", "relationship_type", "to_org_id", "basis"]
@@ -208,8 +208,14 @@ class NormalizerTests(unittest.TestCase):
         self.assertEqual(f("Acme (Dba Bar) (d/b/a Baz)"), ["Bar", "Baz"])
         self.assertEqual(f("Acme (formerly: Bar & Sons, Inc.)"), ["Bar & Sons, Inc."])
         for text in ("Acme (USA), L.P.", "Acme (Ohio plant)", "Acme (former name)", "Acme (formerly)", "Acme (dbase Bar)",
-                     "Acme formerly Bar", "Acme dba Bar", "", None):
+                     "Acme formerly", "Acme dbas Bar", "Formerly Plastics", "", None):
             self.assertEqual(f(text), [], text)
+
+    def test_unparenthesized_aliases(self):
+        for marker in ("dba", "d/b/a", "formerly"):
+            self.assertEqual(atlas.former_names(f"Acme {marker} Bar LLC"), ["Acme", "Bar LLC"])
+        for text in ("Acme dbank Bar", "Acme formerlyKnown Bar", "Dbase Plastics"):
+            self.assertEqual(atlas.former_names(text), [])
 
     def test_street_key(self):
         k = atlas.street_key
@@ -251,6 +257,20 @@ class DedupeTests(FixtureCase):
         self.assertIn("trade_names", res["steps"][1]["hits"][0]["match"])
         _, res = self.dd("--name", "beta rubber and polymer")
         self.assertEqual(self.ids(res, 2), ["ORG-000004"])
+
+    def test_street_in_notes(self):
+        write(self.d, "sites_OH.csv", SITE_COLS, [site("SITE-000863", "ORG-000001", "", notes="Street (per Grok): 3676 Davis Road NW. Ring 3."), site("SITE-001910", "ORG-000001", "", notes="Street: 2290 Zimmerman Rd SE (mailing: PO Box 88).")])
+        for street, expected in (("3676 Davis Rd NW", "SITE-000863"), ("2290 Zimmerman Road SE", "SITE-001910")):
+            _, res = self.dd("--street", street)
+            self.assertEqual(self.ids(res, 3), [expected])
+        _, res = self.dd("--street", "676 Davis Rd NW")
+        self.assertEqual(self.ids(res, 3), [])
+
+    def test_alias_in_legal_and_trade_names(self):
+        write(self.d, "organizations_OH.csv", ORG_COLS, [org("ORG-000001", "Acme d/b/a Bar LLC", trade_names="Brand formerly Old Brand")])
+        for name in ("Acme", "Bar", "Brand", "Old Brand"):
+            _, res = self.dd("--name", name)
+            self.assertEqual(self.ids(res, 2), ["ORG-000001"])
 
     def test_step4_notes_substring_and_successor_chain_to_terminal(self):
         _, res = self.dd("--name", "Gamma Seals")
