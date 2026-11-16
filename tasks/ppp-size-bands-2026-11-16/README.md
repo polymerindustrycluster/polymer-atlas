@@ -6,15 +6,15 @@ Acceptance: re-derive strict rule-b on pinned current main, populate only empty 
 
 ## Applied pass
 
-Base: `ef32b5ba73a2fe7924a67ce3d53e9bc1758e72de` (origin/main at pass start). On this base, PR #341 is open/unmerged; its pending 12 site fills are not part of this base. They must win over PPP if they land before integration: merge current main and re-derive before merging this PR; never resolve an overlap by overwriting the other source. `check.py` pins pre-pass snapshots and checks complete row/field diffs, so a changed band cannot silently enter this pass.
+Base: `4abc9eb46804135778a497024c690fafc135dd8d` (origin/main at pass start). On this base, PR #341 has merged; its 12 site bands are preserved, including six that overlap this pass. They must win over PPP if they land before integration: merge current main and re-derive before merging this PR; never resolve an overlap by overwriting the other source. `check.py` pins pre-pass snapshots and checks complete row/field diffs, so a changed band cannot silently enter this pass.
 
 | Change | Applied | Held / excluded |
 |---|---:|---|
 | Organization Ohio band, previously empty | 117 organization records | All nonempty bands untouched |
-| Site band, previously empty | 137 active PIC-18 site records | All nonempty bands untouched |
-| `size_band` evidence | 254 appended rows | No tier/status/scope/address change |
+| Site band, previously empty | 131 active PIC-18 site records | All nonempty bands untouched |
+| `size_band` evidence | 248 appended rows | No tier/status/scope/address change |
 
-174 organizations meet the strict rule. Proposals are one per record, not summed loan rows; an organization and its site are separate records. The 254 fills comprise **145 observations dated 2020 and 109 dated 2021**. Evidence IDs **EVD-376000–EVD-376253**, checked for tree-wide collision before application. `fills.csv` records exact field deltas and source loan IDs; `evidence_rows.csv` is the append payload. All other borrower/organization cases remain leads. `holds.csv` records 273 named-loan/organization pairs meeting the name/locality/single-site screen but failing active-site street equality or lacking a held street; these are loan/org pairs, not distinct rejected companies and never closure verdicts.
+174 organizations meet the strict rule. Proposals are one per record, not summed loan rows; an organization and its site are separate records. The 248 surviving fills comprise **140 observations dated 2020 and 108 dated 2021**. Evidence IDs **EVD-376000–EVD-376253**, checked for tree-wide collision before application. `fills.csv` records exact field deltas and source loan IDs; `evidence_rows.csv` is the append payload. All other borrower/organization cases remain leads. `holds.csv` records 273 named-loan/organization pairs meeting the name/locality/single-site screen but failing active-site street equality or lacking a held street; these are loan/org pairs, not distinct rejected companies and never closure verdicts.
 
 ## Rule adjudication (deterministic, no new hand checks)
 
@@ -24,7 +24,7 @@ Base: `ef32b5ba73a2fe7924a67ce3d53e9bc1758e72de` (origin/main at pass start). On
 4. Preserve the scout privacy whitelist: named corporations, S corporations, LLCs, partnerships and LLPs only. Sole proprietors, self-employed individuals, independent contractors, unknown types and blank/redacted names are excluded. Addresses are used from the privacy-filtered cache for matching and are not copied into this task or changed in canonical data.
 5. Use positive integral JobsReported only. Map with the existing Form 5500 `band_of` helper to the eight schema bands (`1-9` through `5000+`). Choose the **latest qualifying loan date per organization**, tie-break by loan number, never add loans/draws. Fill only an exactly empty target band. The organization must be in the authorized Ohio shard.
 
-This is a dated borrower statement, not a current employment assertion, an audited employment observation, proof of jobs saved, or a new scope/liveness determination. The schema's existing `size_band` class/effect rules are followed: **government_filing**, ceiling **supports_B** (supports_U would apply on a tier-U record). No record verification tier is modified. Filled records by held tier: organizations A 65 / B 47 / C 5; sites A 54 / B 30 / C 31 / U 22. Evidence effects: 232 supports_B / 22 supports_U.
+This is a dated borrower statement, not a current employment assertion, an audited employment observation, proof of jobs saved, or a new scope/liveness determination. The schema's existing `size_band` class/effect rules are followed: **government_filing**, ceiling **supports_B** (supports_U would apply on a tier-U record). No record verification tier is modified. Filled records by held tier: organizations A 65 / B 47 / C 5; sites A 50 / B 29 / C 30 / U 22. Evidence effects: 226 supports_B / 22 supports_U.
 
 ## Evidence and vintage
 
@@ -53,4 +53,19 @@ Review/validation results are recorded with the PR. The controller supplies inde
 
 Local verification on the applied tree: `check.py` **PASS** (104/106 known answers; all three defects rejected; byte-idempotent); `python3 scripts/validate.py` **OK — validation passed (0 errors)**; `python3 scripts/check_row_loss.py --base origin/main` **OK, no keyed row removed**; `python3 scripts/export_vocab.py --check` **current**. No `scripts/` changes, so the scripts unit suite is not required for this task. Independent completion review and GitHub validate remain controller/PR gates, not claimed here.
 
-Codex clerk correction (PR #348, 2026-11-16): regenerated all 254 new evidence claim texts through `build.py` to quote borrower street and city exactly as filed, alongside name, jobs and loan date. The checker explicitly requires all five fields and rejects either missing location field. No fill, source, ID, date, effect or existing main evidence changed.
+Codex clerk correction (PR #348, 2026-11-16): regenerated all then-254 new evidence claim texts through `build.py` to quote borrower street and city exactly as filed, alongside name, jobs and loan date. The checker explicitly requires all five fields and rejects either missing location field. No fill, source, ID, date, effect or existing main evidence changed.
+
+## Replay after PR #341 (controller-authorized)
+
+Merged origin/main at the pinned base above, took main's four data files, refreshed pre-pass backups, and regenerated only the approved `9976de8` proposal set with its original record-to-EVD allocation (`approved_fills.csv`). Matching, source, band conversion and claim text are unchanged. Six nonblank sites are dropped; no evidence is minted for them and their IDs remain retired:
+
+| Site | Main band preserved | Retired evidence ID |
+|---|---|---|
+| SITE-000039 | 100-249 | EVD-376004 |
+| SITE-000048 | 50-99 | EVD-376006 |
+| SITE-000082 | 50-99 | EVD-376014 |
+| SITE-000134 | 100-249 | EVD-376019 |
+| SITE-000201 | 50-99 | EVD-376030 |
+| SITE-000611 | 50-99 | EVD-376110 |
+
+No organization fills dropped. Final payload: **117 organization bands / 131 site bands / 248 evidence rows**. Surviving fills and evidence rows retain every approved value, including IDs. Checker asserts exactly these six drops, zero retired IDs in the payload, and exact equality of every survivor against `9976de8`. The original backups remain in `pre-pass-original-approved/`; refreshed backups match the new pinned base. No new proposal may enter this replay.

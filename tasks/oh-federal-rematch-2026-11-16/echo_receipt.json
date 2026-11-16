@@ -1,0 +1,17 @@
+{
+  "url": "https://echo.epa.gov/files/echodownloads/echo_exporter.zip",
+  "sha256": "00b3017d9dd5c23b1bcd192c99a895df543a970fd3db210a2701b6d4ead04e1e",
+  "member": "ECHO_EXPORTER.csv",
+  "total": 3239030,
+  "ohio": 64209,
+  "columns": [
+    "REGISTRY_ID",
+    "FAC_NAME",
+    "FAC_STREET",
+    "FAC_CITY",
+    "FAC_STATE",
+    "FAC_ZIP",
+    "TRI_IDS"
+  ],
+  "retrieved": "2026-11-16"
+}

@@ -1,14 +1,14 @@
 {
-  "base": "ef32b5ba73a2fe7924a67ce3d53e9bc1758e72de",
+  "base": "4abc9eb46804135778a497024c690fafc135dd8d",
   "strict_organizations": 174,
   "fills": {
     "organizations": 117,
-    "sites": 137
+    "sites": 131
   },
-  "evidence_rows": 254,
+  "evidence_rows": 248,
   "held_loan_org_pairs": 273,
   "loan_years": {
-    "2020": 145,
-    "2021": 109
+    "2020": 140,
+    "2021": 108
   }
 }

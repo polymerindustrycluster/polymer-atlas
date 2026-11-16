@@ -56,12 +56,17 @@ def plan(data):
    if not s['street_address'] or not r['BorrowerAddress'] or atlas.street_key(s['street_address'])!=atlas.street_key(r['BorrowerAddress']):
     held.append(dict(org_id=oid,site_id=s['site_id'],loan_id=r['LoanNumber'],reason='active-site street missing or not equal'));continue
    strict[oid].append((s,r))
- fills=[];evs=[];eid=376000
+ approved={(u['record_table'],u['record_id']):u for u in read(D/'approved_fills.csv')}
+ fills=[];evs=[]
  for oid,pairs in sorted(strict.items()):
   s,r=max(pairs,key=lambda pair:(loan_date(pair[1]),pair[1]['LoanNumber']))
   for table,record in [('organizations',orgs[oid]),('sites',s)]:
    if record[FIELDS[table]].strip():continue
    rid=record[KEYS[table]]
+   if (table,rid) not in approved:continue
+   allocation=approved[(table,rid)]
+   assert allocation['new']==band(r['JobsReported']) and allocation['loan_id']==r['LoanNumber'],'approved proposal changed'
+   eid=int(allocation['evidence_id'][4:])
    # Scope only permits the Ohio organization shard; never move or silently write another shard.
    if table=='organizations' and oid not in {o['org_id'] for o in read(data/'organizations_OH.csv')}:
     held.append(dict(org_id=oid,site_id=s['site_id'],loan_id=r['LoanNumber'],reason='organization outside authorized OH shard'));continue
@@ -72,7 +77,7 @@ def plan(data):
     source_class='government_filing',source_ref=f'{r["source_url"]} (SBA PPP LoanNumber {r["LoanNumber"]})',observed_date=loan_date(r),tier_effect=effect,
     created_by='codex ppp-size-bands-2026-11-16',notes=f'Owner John Swanson B-PPP 2026-11-16: Strict matches; historical {loan_date(r)[:4]} loan approval date {loan_date(r)}; employment reference period unspecified; retrieved 2026-11-16; release 2024-09-30; source SHA256 {r["source_sha256"]}; exact normalized legal/trade/recorded former name + active-site street key + city; single active site, all held sites Ohio; blank-only fill')
    fills.append(dict(record_table=table,record_id=rid,field=FIELDS[table],old='',new=band(r['JobsReported']),org_id=oid,site_id=s['site_id'],loan_id=r['LoanNumber'],borrower_name=r['BorrowerName'],jobs_reported=r['JobsReported'],loan_date=loan_date(r),evidence_id=ev['evidence_id']))
-   evs.append(ev);eid+=1
+   evs.append(ev)
  return fills,evs,held,len(strict)
 
 def main():

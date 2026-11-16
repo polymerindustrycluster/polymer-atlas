@@ -69,6 +69,17 @@ def main():
  for p in (P/'pre-pass').glob('*.csv'):
   assert p.read_bytes()==subprocess.check_output(['git','show',f'{BASE}:data/{p.name}'],cwd=ROOT),'pre-pass backup differs from base'
  fills=read(D/'fills.csv');evs=read(D/'evidence_rows.csv');held,n=payload(fills,evs);check_tree(fills,evs);known_answers()
+ approved=read(D/'approved_fills.csv');original={(u['record_table'],u['record_id']):u for u in approved}
+ assert (D/'approved_fills.csv').read_bytes()==subprocess.check_output(['git','show','9976de8:tasks/ppp-size-bands-2026-11-16/fills.csv'],cwd=ROOT)
+ assert all(u==original[(u['record_table'],u['record_id'])] for u in fills),'not a strict subset of approved fills'
+ dropped=set(original)-{(u['record_table'],u['record_id']) for u in fills}
+ expected_dropped={('sites',sid) for sid in ['SITE-000039','SITE-000048','SITE-000082','SITE-000134','SITE-000201','SITE-000611']}
+ assert dropped==expected_dropped
+ retired={original[key]['evidence_id'] for key in dropped}
+ assert not retired.intersection({e['evidence_id'] for e in evs})
+ approved_e={e['evidence_id']:e for e in at('9976de8','tasks/ppp-size-bands-2026-11-16/evidence_rows.csv')}
+ assert all(e==approved_e[e['evidence_id']] for e in evs),'surviving evidence changed'
+ print('replay subset: six filled sites dropped, six IDs retired; surviving fills/evidence identical')
  counts=json.loads((D/'counts.json').read_text());assert counts['fills']==dict(Counter(r['record_table'] for r in fills)) and counts['evidence_rows']==len(evs)
  assert counts['strict_organizations']==n and counts['held_loan_org_pairs']==len(held)
  assert read(D/'holds.csv')==held and counts['loan_years']==dict(Counter(r['loan_date'][:4] for r in fills))
