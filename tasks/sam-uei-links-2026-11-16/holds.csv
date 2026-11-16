@@ -1,0 +1,124 @@
+org_id,uei,site_ids,shard,reason
+ORG-000003,C25UE2QK4XT4,SITE-000003,organizations_OH,existing UEI
+ORG-000004,E8LRSM9SXRR7,SITE-016206,organizations_OH,multiple organization registrations
+ORG-000004,FBDPGMSH24K2,SITE-004658,organizations_OH,multiple organization registrations
+ORG-000035,CMAYFRHM3G21,SITE-010647,organizations_PA,existing UEI
+ORG-000035,FZ2FK73JP8T7,SITE-005309,organizations_PA,existing UEI
+ORG-000035,QJP3K672Q8E4,SITE-005308,organizations_PA,existing UEI
+ORG-000088,LQJAQL3WRA95,SITE-002930,organizations_PA,existing UEI
+ORG-000088,M1J7Q733RKX3,SITE-002725,organizations_PA,existing UEI
+ORG-000088,RBUKW28TMLJ2,SITE-002916,organizations_PA,existing UEI
+ORG-000088,VAKRZ1NZ7M45,SITE-002936,organizations_PA,existing UEI
+ORG-000088,WA6MBG28BUQ5,SITE-002778,organizations_PA,existing UEI
+ORG-000088,YZJ2CGFBMVY8,SITE-002917,organizations_PA,existing UEI
+ORG-000088,ZC61C3SJ2HB7,SITE-002941,organizations_PA,existing UEI
+ORG-000132,DJY7MANMW5A1,SITE-003476,organizations_OH,existing UEI
+ORG-000132,FYQ2HD7Y9PB3,SITE-010320,organizations_OH,existing UEI
+ORG-000132,H6MDTBFL5RQ3,SITE-003475,organizations_OH,existing UEI
+ORG-000132,T9BJXJPDAMV6,SITE-006123,organizations_OH,existing UEI
+ORG-000194,RQJGN2NZMNC4,SITE-000201,organizations_OH,existing UEI
+ORG-000317,VD1NLZGAJ2L4,SITE-000338,organizations_OH,existing UEI
+ORG-000402,GM5MMNB6DGB8,SITE-000431,organizations_OH,existing UEI
+ORG-000549,HB19R5SNKPG9,SITE-000587,organizations_OH,existing UEI
+ORG-000549,VLE6LXKUFJV4,SITE-000586,organizations_OH,existing UEI
+ORG-000566,P3JNF64CBLD7,SITE-003015,organizations_NC,existing UEI
+ORG-000582,DFSPWGX5LHN5,SITE-016521,organizations_OH,multiple organization registrations
+ORG-000582,HQDJQ3PPVEU3,SITE-000621,organizations_OH,multiple organization registrations
+ORG-000752,CZ6XGZB84CM6,SITE-004679,organizations_OH,multiple organization registrations
+ORG-000752,LP9ZNYJ1PJ62,SITE-004678,organizations_OH,multiple organization registrations
+ORG-000752,MKEGMEK5KAM1,SITE-004676,organizations_OH,multiple organization registrations
+ORG-000752,N1JQKQAVLDL7,SITE-004682,organizations_OH,multiple organization registrations
+ORG-000870,ET5DB14MQZ93,SITE-003004,organizations_MN,multiple organization registrations
+ORG-000870,Y1D3SL2TJ1J1,SITE-003012,organizations_MN,multiple organization registrations
+ORG-000897,FKSYM421RA77,SITE-000966,organizations_OH,existing UEI
+ORG-001670,LMJ8ZV7GN2W5,SITE-001746,organizations_OH,existing UEI
+ORG-002294,L3BBNXJTTRY3,SITE-002265,organizations_PA,existing UEI
+ORG-002356,S3NZL2S3XRU2,SITE-002334,organizations_PA,existing UEI
+ORG-002378,J7TVNGZH8FM9,SITE-004761,organizations_PA,multiple organization registrations
+ORG-002378,X7F4ZANPT583,SITE-002358,organizations_PA,multiple organization registrations
+ORG-002422,YBWHNBAQKFA5,SITE-002402,organizations_PA,existing UEI
+ORG-002449,Y1KQH3MMQPW5,SITE-002432,organizations_PA,existing UEI
+ORG-002534,CKYMDTZDR6U1,SITE-010489,organizations_GA,multiple organization registrations
+ORG-002534,RXBPX2KT7D93,SITE-005022,organizations_GA,multiple organization registrations
+ORG-002583,PJALL9CCHNH5,SITE-002571,organizations_PA,existing UEI
+ORG-002597,LCY7Z4VFMD56,SITE-002586,organizations_PA,existing UEI
+ORG-002633,DL2KLEG1AF93,SITE-002623,organizations_PA,existing UEI
+ORG-002657,LM5KEWC6RUJ5,SITE-002647,organizations_PA,existing UEI
+ORG-002875,GRNWJAJ7YK36,SITE-003029,organizations_AZ,multiple organization registrations
+ORG-002875,JH7LJCHWFMG3,SITE-003032,organizations_AZ,multiple organization registrations
+ORG-002875,MEUHECEQGJ91,SITE-003034,organizations_AZ,multiple organization registrations
+ORG-002875,NSCTFCRFJJR3,SITE-003031,organizations_AZ,multiple organization registrations
+ORG-002876,F98TZC6J5XV1,SITE-003037,organizations_CT,existing UEI
+ORG-002876,G8JKL23X8N58,SITE-003041,organizations_CT,existing UEI
+ORG-002876,TYWECZBGEHL6,SITE-003040,organizations_CT,existing UEI
+ORG-002926,CF98DGDLRC15,SITE-003234,organizations_NJ,existing UEI
+ORG-002926,KZGEJ29ND6K3,SITE-003234,organizations_NJ,existing UEI
+ORG-002939,PK9NC2USJJX5,SITE-003248,organizations_FL,existing UEI
+ORG-002941,KDKUGGKG8697,SITE-003253,organizations_CT,existing UEI
+ORG-002963,Z9AKAL6G82H8,SITE-003427,organizations_WA,existing UEI
+ORG-002967,M84WKQ93TWC9,SITE-003277,organizations_MI,existing UEI
+ORG-003009,NLCECNKKSUU8,SITE-003257,organizations_PA,existing UEI
+ORG-003065,G16JXJVLKN88,SITE-003371,organizations_CA,existing UEI
+ORG-003081,MAS3JT1VNXS4,SITE-003448,organizations_SC,existing UEI
+ORG-003093,H4LMX9J1H1A8,SITE-003375,organizations_SC,existing UEI
+ORG-003093,J3SVM72J8NN9,SITE-003375,organizations_SC,existing UEI
+ORG-003093,JH96KYJDDXX6,SITE-003375,organizations_SC,existing UEI
+ORG-003102,PM4BWJ44FKJ7,SITE-003473,organizations_IN,existing UEI
+ORG-003120,NPCWMG25HLH8,SITE-003561,organizations_IN,multiple organization registrations
+ORG-003120,W6YDUHZGCJ17,SITE-003559,organizations_IN,multiple organization registrations
+ORG-003130,XE8RAJS3WFB7,SITE-003571,organizations_CA,existing UEI
+ORG-003178,M8CEFA6LAQY6,SITE-004691,organizations_MN,multiple organization registrations
+ORG-003178,QHBQKJ2PLJC7,SITE-004699,organizations_MN,multiple organization registrations
+ORG-003233,NVPEBL51CSF8,SITE-003663,organizations_RI,existing UEI
+ORG-003286,MLMRMEG8KL97,SITE-003726,organizations_AL,multiple organization registrations
+ORG-003286,PMMKCB8KX546,SITE-003726,organizations_AL,multiple organization registrations
+ORG-003291,ETQQPMK58QK5,SITE-003732,organizations_ID,existing UEI
+ORG-003350,JADPLL2DUAU8,SITE-003798,organizations_NC,multiple organization registrations
+ORG-003350,UYBBKNQYD4J3,SITE-003800,organizations_NC,multiple organization registrations
+ORG-003443,XU4WB3GHHJ13,SITE-003863,organizations_WI,existing UEI
+ORG-003448,JT4FKJQPH454,SITE-003869,organizations_MI,existing UEI
+ORG-003589,NZVGS3FGMLP8,SITE-004031,organizations_TX,existing UEI
+ORG-003593,GT17WW2KEGR4,SITE-004035,organizations_TX,existing UEI
+ORG-003601,XNVNL6YVGGQ5,SITE-004044,organizations_CA,existing UEI
+ORG-003648,LA7BJ6MFLBE6,SITE-004419,organizations_CA,existing UEI
+ORG-003655,Q33XJJ13H414,SITE-004426,organizations_WA,existing UEI
+ORG-003736,MX3KNNMVMUA5,SITE-004169,organizations_RI,existing UEI
+ORG-003742,LNFVLS8CSZ84,SITE-004175,organizations_CT,existing UEI
+ORG-003744,T8U2LNHJ2FV5,SITE-004177,organizations_KS,existing UEI
+ORG-003838,W5UKAHMN6334,SITE-004286,organizations_CA,existing UEI
+ORG-003843,K2E8BM8UWYA8,SITE-004291,organizations_NY,multiple organization registrations
+ORG-003843,Z7QMNE4LGKB8,SITE-004291,organizations_NY,multiple organization registrations
+ORG-003847,LQ1LBL5DMTD6,SITE-004296,organizations_ID,existing UEI
+ORG-003919,NLC8NZ912JY3,SITE-004377,organizations_PA,existing UEI
+ORG-003947,UQBFGMMNTMT4,SITE-006125,organizations_SC,existing UEI
+ORG-003959,L6EMG925NF78,SITE-004495,organizations_SC,existing UEI
+ORG-003966,YK4JFU6UVRG3,SITE-010182,organizations_WI,existing UEI
+ORG-004001,Y5WPNHDNNRL5,SITE-004542,organizations_GA,existing UEI
+ORG-004020,K84NBZG5JNJ5,SITE-004562,organizations_NJ,existing UEI
+ORG-004046,FLDEFFBLR5P3,SITE-005000,organizations_MA,existing UEI
+ORG-004067,WXRTZLL25AE5,SITE-005152,organizations_MS,existing UEI
+ORG-004100,PDGSU6FMRHC6,SITE-005186,organizations_TX,existing UEI
+ORG-004108,L38BYGMYHG99,SITE-005196,organizations_NY,existing UEI
+ORG-004126,CM4QQGY449E3,SITE-005214,organizations_IL,existing UEI
+ORG-004179,M6WRACNA2VY6,SITE-005272,organizations_TX,existing UEI
+ORG-004228,GLAZWR3PE9S4,SITE-005354,organizations_WI,existing UEI
+ORG-004238,MGQFK696YYW4,SITE-005387,organizations_CA,existing UEI
+ORG-004259,HKYZS5PCPRR3,SITE-005477,organizations_IA,multiple registration identities
+ORG-004307,CBMZJ3Z5SC89,SITE-005581,organizations_NC,existing UEI
+ORG-004307,QCDMDYHRLJ15,SITE-005582,organizations_NC,existing UEI
+ORG-004314,PXLMXT4LDGX1,SITE-005593,organizations_NJ,existing UEI
+ORG-004328,MJNAJ8PUNFK7,SITE-005633,organizations_TN,existing UEI
+ORG-004341,G718BALVP1M1,SITE-005659,organizations_AR,existing UEI
+ORG-004344,LUKJQHLR55N8,SITE-005662,organizations_AR,existing UEI
+ORG-004352,J8FJBG18M8N4,SITE-005671,organizations_US,existing UEI
+ORG-004435,CUKUZS14YF63,SITE-005760,organizations_IL,existing UEI
+ORG-004462,V559UKDU7D65,SITE-005787,organizations_OK,existing UEI
+ORG-004481,CS88JF7685G7,SITE-005807,organizations_TX,existing UEI
+ORG-004609,JXZLMHMXAFB4,SITE-005947,organizations_VA,existing UEI
+ORG-006173,H36GKM1XKYD7,SITE-008236,organizations_NH,multiple organization registrations
+ORG-006173,YM7GR2SZALL3,SITE-012016,organizations_NH,multiple organization registrations
+ORG-007316,ZKJVN33C83C5,SITE-010466,organizations_MA,multiple organization registrations
+ORG-007316,ZS8LGNK8UPN9,SITE-015416,organizations_MA,multiple organization registrations
+ORG-007435,C1FYYVEZY7N5,SITE-010635,organizations_CA,multiple organization registrations
+ORG-007435,VJL4VUL5FXD5,SITE-010635,organizations_CA,multiple organization registrations
+ORG-007435,WKMTKKLBZVV3,SITE-010635,organizations_CA,multiple organization registrations
