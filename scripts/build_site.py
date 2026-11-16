@@ -1085,6 +1085,7 @@ MAP_JS = r"""(function () {
     function apply(fit) {
       var rings = checked('ring'), tiers = checked('tier'), states = checked('state');
       var allStatus = document.getElementById('f-allstatus').checked;
+      var pic = document.getElementById('f-pic18'), picOnly = pic.checked, picCounties = pic.getAttribute('data-counties').split(',');
       var rs = {}, ts = {}, ss = {};
       rings.forEach(function (v) { rs[v] = 1; }); tiers.forEach(function (v) { ts[v] = 1; });
       states.forEach(function (v) { ss[v] = 1; });
@@ -1094,11 +1095,12 @@ MAP_JS = r"""(function () {
         if (!rs[r[C.ring] || 'x']) return;
         if (!ts[r[C.tier] || 'x']) return;
         if (!ss[r[C.st] || 'x']) return;
+        if (picOnly && !(r[C.st] === 'OH' && picCounties.indexOf(r[C.co]) >= 0)) return;
         if (!allStatus && r[C.status] !== 'active') return;
         group.addLayer(markers[i]); shown.push(markers[i]);
       });
       status.textContent = 'Showing ' + shown.length.toLocaleString() + ' of ' + rows.length.toLocaleString() +
-        ' site rows that have coordinates (filters applied: ring, tier, state' + (allStatus ? '' : ', operating status active only') + ').';
+        ' site rows that have coordinates (filters applied: ring, tier, state' + (picOnly ? ', PIC-18 counties only' : '') + (allStatus ? '' : ', operating status active only') + ').';
       if (fit && shown.length) {
         map.fitBounds(L.featureGroup(shown).getBounds().pad(0.05), {maxZoom: 11});
       }
@@ -1276,6 +1278,10 @@ skyline = importlib.util.module_from_spec(_sk_spec)
 _sk_spec.loader.exec_module(skyline)
 
 GLYPHS = {
+    "prospects": '<svg viewBox="0 0 240 84" aria-hidden="true"><g fill="none" stroke="var(--line)" stroke-width="1.4"><rect x="40" y="10" width="160" height="64" rx="6"/>'
+                 '<line x1="40" y1="28" x2="200" y2="28"/><line x1="40" y1="44" x2="200" y2="44"/><line x1="40" y1="60" x2="200" y2="60"/>'
+                 '<line x1="92" y1="10" x2="92" y2="74"/><line x1="150" y1="10" x2="150" y2="74"/></g><rect x="48" y="33" width="36" height="6" rx="3" fill="var(--accent)"/>'
+                 '<rect x="100" y="49" width="40" height="6" rx="3" fill="var(--r2)"/><rect x="158" y="33" width="30" height="6" rx="3" fill="var(--r1)"/></svg>',
     "graph": '<svg viewBox="0 0 240 84" aria-hidden="true"><g stroke="var(--line)" stroke-width="1.2">'
              '<line x1="40" y1="42" x2="96" y2="20"/><line x1="40" y1="42" x2="92" y2="66"/><line x1="96" y1="20" x2="150" y2="40"/>'
              '<line x1="92" y1="66" x2="150" y2="40"/><line x1="150" y1="40" x2="204" y2="22"/><line x1="150" y1="40" x2="200" y2="64"/>'
@@ -1623,6 +1629,8 @@ def build_index(ctx):
                 f'<span class="go">Open &rarr;</span></a>')
 
     explore = "".join([
+        xcard("prospects.html", "prospects", "PIC-18 prospects",
+              "Build a list: filter the PIC-18 organizations by county, ring, tier, process, size and more, then download it as CSV."),
         xcard("graph/index.html", "graph", "Industry graph",
               "Companies, institutions and the processes and materials that connect them. Hover to trace a supply web."),
         xcard("graph/map.html", "geo", "Map + network",
@@ -1650,7 +1658,7 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 <div><b>{fmt_int(len(active_ab(oh)))}</b><small>in Ohio</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
-<div class="cta"><a class="btn primary" href="graph/map.html">Explore the map</a>
+<div class="cta"><a class="btn primary" href="prospects.html">PIC-18 prospects</a><a class="btn" href="graph/map.html">Explore the map</a>
 <a class="btn" href="graph/index.html">Industry graph</a><a class="btn" href="search.html">Search</a></div>
 </div>
 <div class="hero-legend"><span>Fewer sites</span><span class="ramp"></span><span>More</span><span>· hex ≈ 30 mi</span></div>
@@ -1742,6 +1750,8 @@ organization because the site row has no ring of its own.</div>
 <fieldset><legend>Ring</legend>{rings_cb}</fieldset>
 <fieldset><legend>Verification tier</legend>{tiers_cb}
 <label><input type="checkbox" id="f-allstatus"> Include closed, idled and unknown-status sites</label></fieldset>
+<fieldset><legend>Area</legend>
+<label><input type="checkbox" id="f-pic18" checked data-counties="{esc(",".join(PIC12))}"> Only the 18 PIC counties (Ohio)</label></fieldset>
 <fieldset><legend>State</legend>
 <div class="btn-row"><button type="button" id="st-all">All</button><button type="button" id="st-oh">Ohio only</button><button type="button" id="st-none">None</button></div>
 <div class="scroll">{states_cb}</div></fieldset>
@@ -1764,7 +1774,7 @@ organization because the site row has no ring of its own.</div>
 def sites_json(ctx):
     """Compact site data for the map (only rows with coordinates)."""
     a = ctx.atlas
-    cols = ["id", "lat", "lon", "name", "org", "city", "st", "ring", "inh", "tier", "status"]
+    cols = ["id", "lat", "lon", "name", "org", "city", "st", "ring", "inh", "tier", "status", "co"]
     rows, orgs = [], {}
     for s in a.sites:
         try:
@@ -1774,7 +1784,7 @@ def sites_json(ctx):
         rows.append([s["site_id"], round(lat, 5), round(lon, 5), s.get("site_name") or "",
                      s["org_id"], s.get("city") or "", s.get("state") or "",
                      s["_ring"] or "", 1 if s["_ring_inherited"] else 0,
-                     s.get("verification_tier") or "", s.get("operating_status") or ""])
+                     s.get("verification_tier") or "", s.get("operating_status") or "", s.get("county") or ""])
         orgs[s["org_id"]] = a.name_of(s["org_id"]) or ""
     return {"cols": cols, "orgs": orgs, "rows": rows}
 
