@@ -1,0 +1,12 @@
+{
+  "slice_sites": 110,
+  "term_decisions": 64,
+  "sites_with_applied_terms": 19,
+  "sites_tagged": 18,
+  "capability_rows": 46,
+  "evidence_rows": 63,
+  "changed_site_rows": 18,
+  "held_sites": 92,
+  "verdict_rows": 156,
+  "slice_sites_not_in_frame_now": []
+}

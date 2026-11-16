@@ -1,0 +1,157 @@
+site_id,term,verdict,disposition,settling_fact
+SITE-000198,mold_tool_making,VERIFIED,applied,
+SITE-000198,transfer_molding,VERIFIED,applied,
+SITE-000239,polyethylene_pe,VERIFIED,applied; capability polyethylene_pe,
+SITE-000239,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
+SITE-000243,injection_molding,VERIFIED,applied; capability injection_molding,
+SITE-000243,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-000287,rubber_mixing_compounding,VERIFIED,applied; capability rubber_mixing_compounding,
+SITE-000287,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
+SITE-000402,silicones,VERIFIED,applied; capability silicones,
+SITE-000402,polyurethane_pu,VERIFIED,applied; capability polyurethane_pu,
+SITE-000438,epoxy,VERIFIED,applied; capability epoxy,
+SITE-000458,extrusion_profile,VERIFIED,applied; capability extrusion,
+SITE-000458,extrusion_pipe_tube,VERIFIED,applied,
+SITE-000458,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-000458,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
+SITE-000458,polyethylene_pe,VERIFIED,applied; capability polyethylene_pe,
+SITE-000458,abs,VERIFIED,applied; capability abs,
+SITE-000458,asa,VERIFIED,applied,
+SITE-000458,pvc,VERIFIED,applied; capability pvc,
+SITE-000458,polystyrene_ps_hips,VERIFIED,applied; capability polystyrene_ps_hips,
+SITE-000458,thermoplastic_elastomers_tpe_tpu,VERIFIED,applied; capability thermoplastic_elastomers_tpe_tpu,
+SITE-000458,polycarbonate_pc,VERIFIED,applied; capability polycarbonate_pc,
+SITE-000490,compression_molding,VERIFIED,applied; capability compression_molding,
+SITE-000490,transfer_molding,VERIFIED,applied,
+SITE-000490,injection_molding,VERIFIED,applied; capability injection_molding,
+SITE-000490,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
+SITE-000490,silicones,VERIFIED,applied; capability silicones,
+SITE-000490,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-000490,thermosets,VERIFIED,applied; capability thermosets,
+SITE-000562,compression_molding,VERIFIED,applied; capability compression_molding,
+SITE-000562,transfer_molding,VERIFIED,applied,
+SITE-000562,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
+SITE-000591,injection_molding,VERIFIED,applied; capability injection_molding,
+SITE-000618,recycling_unspecified,VERIFIED,applied,
+SITE-000618,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
+SITE-000618,epdm,VERIFIED,applied,
+SITE-000618,sbr,VERIFIED,applied,
+SITE-000651,injection_molding,VERIFIED,applied; capability injection_molding,
+SITE-000651,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-000651,polycarbonate_pc,VERIFIED,applied; capability polycarbonate_pc,
+SITE-000651,abs,VERIFIED,applied; capability abs,
+SITE-000651,acrylic_pmma,VERIFIED,applied,
+SITE-000651,asa,VERIFIED,applied,
+SITE-000651,nylon_pa,VERIFIED,applied; capability nylon_pa,
+SITE-000651,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
+SITE-000707,compression_molding,VERIFIED,applied; capability compression_molding,
+SITE-000707,thermoforming_unspecified,VERIFIED,applied; capability thermoforming,
+SITE-000909,custom_compounding,VERIFIED,applied; capability compounding,
+SITE-000909,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-000909,pvc,VERIFIED,applied; capability pvc,
+SITE-000909,extrusion_pipe_tube,VERIFIED,applied; capability extrusion,
+SITE-000909,extrusion_profile,VERIFIED,applied,
+SITE-000909,injection_molding,VERIFIED,applied; capability injection_molding,
+SITE-000909,plastics_fabrication_welding,VERIFIED,applied,
+SITE-000987,fabrication_unspecified,VERIFIED,applied,
+SITE-000987,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
+SITE-000987,composites_frp,VERIFIED,applied,
+SITE-000987,pvc,VERIFIED,applied; capability pvc,
+SITE-000987,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-001109,plastics_machining_cnc,VERIFIED,applied,
+SITE-001125,regrind_pelletizing,VERIFIED,applied,
+SITE-001125,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-000546,recycling_unspecified,VERIFIED,applied,
+SITE-000667,extrusion_unspecified,VERIFIED,capability row only; capability extrusion,
+SITE-000014,,STILL_UNCERTAIN,held: off_vocabulary,"Owner vocabulary ruling on whether extrusion-die and custom-tooling manufacture (""forming dies, sheet dies, film dies and other custom tooling"") maps to mold_tool_making; no governed term fits the page words today"
+SITE-000027,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000043,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000047,,STILL_UNCERTAIN,held: testing_or_lab,A page stating that this establishment processes a governed polymer material (stored pages describe testing services)
+SITE-000048,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000052,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000056,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000058,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000059,,STILL_UNCERTAIN,held: multi_location_unbound,"A page tying the fabrication list (thermoforming, plastic welding, CNC machining) to the Stow site rather than the national company (a Texas address is on the same pages)"
+SITE-000075,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000142,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000145,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000148,,STILL_UNCERTAIN,held: locality_not_witnessed,"A page naming the location of the ""ISO 9001:2015 certified compounding facility""; stored pages show no Strongsville address and say stock is held in four states"
+SITE-000150,,STILL_UNCERTAIN,held: testing_or_lab,A page stating that this establishment processes a governed polymer material (stored pages describe testing services)
+SITE-000152,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000153,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000154,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000156,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000157,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000176,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000192,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000223,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000229,,STILL_UNCERTAIN,held: plant_elsewhere,"Page labels the Mantua address 4466 Orchard St as ""Fabrication & Production"" and the Cleveland address as sales and distribution; fabrication cannot be bound to the Cleveland site"
+SITE-000262,,STILL_UNCERTAIN,held: multi_location_unbound,"About page says BioThane has ""two locations in Northeast Ohio""; a page binding fabrication/extrusion or the TPU/PVC/TPE product lines to North Ridgeville"
+SITE-000266,,STILL_UNCERTAIN,held: plant_allocation,Allocate the disclosed capability to the Youngstown plant among Boardman Molded locations (already held in PR #351)
+SITE-000267,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000268,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000286,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000292,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000304,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000308,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000312,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000331,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000338,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000343,,STILL_UNCERTAIN,held: menu_only_no_capability_term,"Tier A site: ""CNC Machining"" is a customization-menu item (supports_C), and plastics_machining_cnc has no section 3.6 term; a narrative sentence that the Avon plant machines parts would settle it"
+SITE-000351,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000360,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000363,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000371,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000387,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000401,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000403,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000406,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000423,,STILL_UNCERTAIN,held: plant_allocation,"Locations page says ""plants in Ohio and Georgia"" and calls Wadsworth the corporate office (Minerva, Ohio is named for logistics); a page placing compounding, toll pulverizing or regrind at Wadsworth"
+SITE-000435,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000441,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000445,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000450,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000453,,STILL_UNCERTAIN,held: plant_allocation,About page lists a New Jersey manufacturing and distribution center and Hartville; a page stating which plant runs the 33 injection molding machines
+SITE-000455,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000462,,STILL_UNCERTAIN,held: multi_location_unbound,"Home page describes ""one of North America's largest custom profile and tubing extrusion operations"" for the company; no Middlefield address or plant statement is stored"
+SITE-000465,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000479,,STILL_UNCERTAIN,held: nothing_found,A narrative sentence stating which polymer process the mold texturing serves; stored pages list tool-finishing steps only
+SITE-000485,,STILL_UNCERTAIN,held: off_vocabulary,"Page says the company ""builds tooling made with composite materials and 3D printing technology""; tooling made from composites has no governed term, and the site already carries tooling_mold_die"
+SITE-000487,,STILL_UNCERTAIN,held: site_type_hq_only,"Atlas site_type is hq_only; a page stating that CNC machining of polycarbonate enclosures is done at 8989 Tyler Blvd (the page says Integra ""offers"" it) or a site_type correction"
+SITE-000488,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000500,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000514,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000519,,STILL_UNCERTAIN,held: locality_not_witnessed,Stored pages carry a 321 area code and no Elyria address; a page binding FRP duct fabrication to the Elyria site
+SITE-000523,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000534,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000535,,STILL_UNCERTAIN,held: menu_only_no_capability_term,"Tier B site: the page names fiberglass doors as a product; composites_frp has no section 3.6 term, and a narrative sentence on how the Ashtabula plant makes them would settle it"
+SITE-000537,,STILL_UNCERTAIN,held: partner_processing,"Page says ""Our manufacturing partners are strategically located""; a page stating that Poly Source processes scrap at the Brunswick address"
+SITE-000539,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000544,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000555,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000563,,STILL_UNCERTAIN,held: plant_allocation,"History page says ""two locations"" (Beach City 111,000 sq ft and Gnadenhutten 220,000 sq ft); a page stating which plant makes foam insulation (Gnadenhutten has no Atlas site: lead)"
+SITE-000567,,STILL_UNCERTAIN,held: testing_or_lab,A page stating that this establishment processes a governed polymer material (stored pages describe testing services)
+SITE-000576,,STILL_UNCERTAIN,held: not_in_house,"Product page says the holster is ""Injection molded from a proprietary polymer blend"" but not that Raven molds it in-house; a page naming in-house molding at North Ridgeville"
+SITE-000577,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000591,,STILL_UNCERTAIN,held: term_hold,"Applied: injection_molding. Held: the menu terms Decorating, Tool Making, CNC Machining (supports_C on a tier B site, and no section 3.6 term); the about page lists RPI-China toolmaking and molding, so tool counts are not bound to Mentor"
+SITE-000626,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
+SITE-000646,,STILL_UNCERTAIN,held: multi_location_unbound,"Capabilities page lists vacuum forming and injection molding as display add-ons; locations page shows plants in several states (WI, AR addresses on stored pages)"
+SITE-000666,,STILL_UNCERTAIN,held: multi_location_unbound,"Home page titles the company ""Custom Injection Molding in Ohio & Texas""; a page binding molding to the Newton Falls plant rather than the Texas plant"
+SITE-000670,,STILL_UNCERTAIN,held: locality_not_witnessed,"Pages say only ""Located in Northeast Ohio""; the Atlas site is a warehouse_distribution site at 20493 Hannan Pkwy, Walton Hills; a page giving that address and stating production there"
+SITE-000679,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000685,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000764,,STILL_UNCERTAIN,held: locality_not_witnessed,"About page calls the company ""one of the industry's largest Truck Tire retreaders"" but no stored page names Dover or 204 Deeds Dr; a page binding retreading to that plant"
+SITE-000863,,STILL_UNCERTAIN,held: not_processor,"Capabilities page lists ""Materials We Support"" (PE, PP, PVC, PET) for an additives producer; that names the polymers its products serve, not materials it processes"
+SITE-000879,,STILL_UNCERTAIN,held: nothing_found,"Injection molding is already tagged; no material term is named (pages say ""industrial polymer storage products"")"
+SITE-000898,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000936,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000983,,STILL_UNCERTAIN,held: multi_location_unbound,JP Industrial describes North American locations including North Carolina and gives no Lisbon address on stored pages; a page binding PVC reprocessing and grinding to the Lisbon plant
+SITE-000997,,STILL_UNCERTAIN,held: nothing_found,"All six stored pages carry the same 4,693-character text (a script-rendered shell); a fetch that renders the site content would settle it"
+SITE-001025,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-001029,,STILL_UNCERTAIN,held: locality_not_witnessed,Home page describes rubber profile manufacturing for the Meteor group; no Dover address is stored; a page binding it to the Dover plant
+SITE-001078,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-001422,,STILL_UNCERTAIN,held: off_vocabulary,"Page lists ""Mold Building & Manufacturing"" and ""Mold Repair"" but also sanitary valves and EDM; no page says the molds serve plastics or rubber"
+SITE-001436,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-001440,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-001449,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-001468,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages

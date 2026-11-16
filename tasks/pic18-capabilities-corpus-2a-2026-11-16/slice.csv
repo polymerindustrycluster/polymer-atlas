@@ -1,0 +1,111 @@
+site_id,org_id,site_name,verification_tier
+SITE-000014,ORG-000015,Diamond America — Akron,A
+SITE-000027,ORG-000028,The M. F. Murdock Co. — Akron,C
+SITE-000043,ORG-000043,Alterra Energy — Akron,B
+SITE-000047,ORG-000047,Smithers — Akron,B
+SITE-000048,ORG-000048,Akrochem Corp. — Akron,B
+SITE-000052,ORG-000052,Harwick Standard Distribution Corp. — Akron,A
+SITE-000056,ORG-000056,CF Extrusion Technologies — Cuyahoga Falls,A
+SITE-000058,ORG-000058,Steelastic — Cuyahoga Falls,A
+SITE-000059,ORG-000059,Laird Plastics — Stow,C
+SITE-000075,ORG-000075,Industrial Mold & Machine — Twinsburg,B
+SITE-000142,ORG-000142,Nordson — Westlake,C
+SITE-000145,ORG-000145,Plastics Machinery Group — Bedford Heights,A
+SITE-000148,ORG-000148,WV International — Strongsville,C
+SITE-000150,ORG-000150,NSL Analytical Services — Warrensville Heights,B
+SITE-000152,ORG-000152,Seglian Manufacturing Group — Oakwood Village,C
+SITE-000153,ORG-000153,Moen — North Olmsted,C
+SITE-000154,ORG-000154,Lincoln Electric — Euclid,C
+SITE-000156,ORG-000156,Swagelok — Solon,C
+SITE-000157,ORG-000157,GrafTech International — Brooklyn Heights,C
+SITE-000176,ORG-000169,Zatkoff Seals & Packings — Twinsburg,C
+SITE-000192,ORG-000185,Anyseals — Brecksville,B
+SITE-000198,ORG-000191,Ohio Elastomers — Perry,B
+SITE-000223,ORG-000210,Addipel — Elyria,C
+SITE-000229,ORG-000216,Aetna Plastics Fabrication — Cleveland,C
+SITE-000239,ORG-000225,Allpass Corporation — Madison,C
+SITE-000243,ORG-000229,"American Molded Plastic, Inc. — Newton Falls",C
+SITE-000262,ORG-000246,Biothane Coated Webbing — North Ridgeville,C
+SITE-000266,ORG-000250,"Boardman Molded Products, Inc. — Youngstown",C
+SITE-000267,ORG-000251,Bole Machinery Inc. — Stow,C
+SITE-000268,ORG-000252,The Bonnot Company — Akron,C
+SITE-000286,ORG-000268,Chapin Custom Molding — Elyria,B
+SITE-000287,ORG-001490,Chardon Rubber Company — Chardon,B
+SITE-000292,ORG-000273,ChemSpec — Canton,C
+SITE-000304,ORG-000285,"Consolidated Plastics Co., Inc. — Stow",C
+SITE-000308,ORG-000289,"Corrosion Resistant Technologies, Inc. — Chagrin Falls",C
+SITE-000312,ORG-000293,"Creative Millwork of Ohio, Inc. — Ashtabula",A
+SITE-000331,ORG-000312,Duo-Corp — North Lima,C
+SITE-000338,ORG-000317,Duramax Marine — Hiram,A
+SITE-000343,ORG-000322,ECP Corp DBA Polycase — Avon,A
+SITE-000351,ORG-000330,"ESI-Extrusion Services, Inc. — Akron",C
+SITE-000360,ORG-000339,Ferry Industries Inc. — Stow,C
+SITE-000363,ORG-000341,Flavorseal — Avon,C
+SITE-000371,ORG-000348,Freeman Manufacturing & Supply Company — Avon,A
+SITE-000387,ORG-000362,"H-P Products, Inc. — Louisville",C
+SITE-000401,ORG-000376,IMS Industrial Molding Supplies — Chagrin Falls,C
+SITE-000402,ORG-000377,"Industrial Technologies, Inc. — Akron",C
+SITE-000403,ORG-000378,Infinity Composites Inc. — Ashtabula,A
+SITE-000406,ORG-000380,Ingalls Process Equipment Co. — Painesville,C
+SITE-000423,ORG-000909,"Jerico Plastic Industries, Inc. — Wadsworth",A
+SITE-000435,ORG-000406,Kent Pultrusion — Kent,C
+SITE-000438,ORG-000409,"Keyland Polymer UV Powder, LLC — Cleveland",C
+SITE-000441,ORG-000412,Kobelco Stewart Bolling — Hudson,A
+SITE-000445,ORG-000416,Latham Pool Products (Youngstown - GLI),A
+SITE-000450,ORG-000421,Little Tikes — Hudson,C
+SITE-000453,ORG-000423,LMT Mercer Group — Hartville,C
+SITE-000455,ORG-000425,"M&M Industries, Inc Lordstown — Lordstown",B
+SITE-000458,ORG-000428,"Malish Corp., Plastic Div. — Mentor",B
+SITE-000462,ORG-000431,Masco (Mercury Plastics),C
+SITE-000465,ORG-000434,"MCI Technologies, Inc. — Mentor",C
+SITE-000479,ORG-000448,Mold Surface Textures LLC — Kent,C
+SITE-000485,ORG-000453,Momentous Mold & Machine LLC — Cuyahoga Falls,C
+SITE-000487,ORG-000455,"MUM Industries, Inc. — Mentor",A
+SITE-000488,ORG-000456,NATIONAL FEEDSCREW & MACHINERY — Massillon,B
+SITE-000490,ORG-000458,Neff-Perkins Company — Middlefield,C
+SITE-000500,ORG-000468,"North American Seal & Supply, Inc. — Cleveland",B
+SITE-000514,ORG-000480,"Palmer Holland, Inc — Westlake",C
+SITE-000519,ORG-000485,Perry Fiberglass OH — Elyria,C
+SITE-000523,ORG-000488,"Pacific Management Holdings, LLC d/b/a Pharmacy-Lite Packaging",C
+SITE-000534,ORG-000499,Plastore Inc. — Hudson,C
+SITE-000535,ORG-000500,PLASTPRO INC — Ashtabula,B
+SITE-000537,ORG-000505,Poly Source LLC. — Brunswick,C
+SITE-000539,ORG-001335,"Polychem Dispersions, Inc. — Middlefield",B
+SITE-000544,ORG-000510,Polymer Machinery Company — Tallmadge,C
+SITE-000546,ORG-000512,"PolyStamp, LLC. — Youngstown",A
+SITE-000555,ORG-000520,Premier Equipment — Beachwood,C
+SITE-000562,ORG-000526,"Profile Rubber Corp., Inc. — Wadsworth",C
+SITE-000563,ORG-000527,Progressive Foam Technologies — Beach City,C
+SITE-000567,ORG-000531,Q-Lab Corporation — Westlake,C
+SITE-000576,ORG-000540,Raven Concealment Systems — North Ridgeville,C
+SITE-000577,ORG-000541,RD Abbott Company — Barberton,C
+SITE-000591,ORG-000553,"Royal Plastics, Inc. — Mentor",B
+SITE-000618,ORG-000579,"Sparton Enterprises, Inc. — Barberton",C
+SITE-000626,ORG-000587,"Squire, T. L. & Co., Inc. — Akron",C
+SITE-000646,ORG-000606,"THIRD DIMENSION, INC. — Geneva",A
+SITE-000651,ORG-000611,Treemen Industries — Boardman,C
+SITE-000666,ORG-000625,"Venture Plastics, Inc. — Newton Falls",C
+SITE-000667,ORG-000626,"Vinylume Products, Inc. — Youngstown",B
+SITE-000670,ORG-000629,Walton Plastics — Walton Hills,C
+SITE-000679,ORG-000637,Xaloy LLC — Austintown,C
+SITE-000685,ORG-000641,"Zeiger Industries, Inc. — Canton",C
+SITE-000707,ORG-000660,Alliance Innovations — Mansfield,C
+SITE-000764,ORG-000706,Bob Sumerel Tire Co — Dover,C
+SITE-000863,ORG-000798,Dover Chemical Corp. — Dover,C
+SITE-000879,ORG-000813,Edge Plastics — Mansfield,B
+SITE-000898,ORG-000832,Fabohio — Uhrichsville,C
+SITE-000909,ORG-000841,"Flex Technologies, Inc. — Midvale",C
+SITE-000936,ORG-000868,Guardian Manufacturing Company — Willard,C
+SITE-000983,ORG-000913,JP Industrial Products — Lisbon,C
+SITE-000987,ORG-000917,"Kar-Del Plastics, Inc. — Ashland",C
+SITE-000997,ORG-000927,Kurz-Kasch Inc. — Newcomerstown,C
+SITE-001025,ORG-000951,Md Plastics Inc. — Columbiana,C
+SITE-001029,ORG-000955,Meteor Sealing Systems — Dover,C
+SITE-001078,ORG-000999,Okamoto Sandusky Manufacturing — Sandusky,C
+SITE-001109,ORG-001027,Plastics Family Holdings Inc (Paramont Machine Company),C
+SITE-001125,ORG-001042,Polynew — Baltic,A
+SITE-001422,ORG-001383,"Delco, LLC — Akron",C
+SITE-001436,ORG-001393,Kaufman Container — Cleveland,B
+SITE-001440,ORG-001397,PolyKinetix — Massillon,B
+SITE-001449,ORG-001404,Deflecto — Dover,B
+SITE-001468,ORG-001422,Elster Perfection — Geneva,B
