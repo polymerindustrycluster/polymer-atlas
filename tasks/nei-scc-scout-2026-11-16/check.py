@@ -8,11 +8,21 @@ def inspect(metrics,frame,sample):
  assert metrics['ohio']['matched_sites']==len(frame),'wrong matched count'
  assert len(sample)==20 and len({r['site_id'] for r in sample})==20
  assert {r['site_id'] for r in sample}=={r['site_id'] for r in read(HERE/'sample_frame.csv')},'seed drift'
+ witnesses={r['site_id']:r for r in json.loads((HERE/'positive_witnesses.json').read_text())}
  receipts=json.loads((P/'sample_fetch.json').read_text())+json.loads((P/'extra_fetch.json').read_text())
  for r in sample:
   assert r['verdict'] in ('VERIFIED','STILL_UNCERTAIN','REJECT')
   assert r['assessment'] and r['disposition']=='held'
   if r['verdict']=='VERIFIED':
+   witness=witnesses[r['site_id']];assert witness['url']==r['url']
+   stored=(P/witness['stored_text']).read_bytes()
+   assert hashlib.sha256(stored).hexdigest()==witness['text_sha256'],'stored witness changed'
+   assert on_page(r['quote'],stored.decode()),'quote absent from stored copy'
+   assert witness['http_status']==200 and witness['route']=='direct'
+   refetch=[f for f in json.loads((P/'positive_refetch.json').read_text()) if f['url']==r['url'] and f['sha256']==witness['refetch_raw_sha256']]
+   assert len(refetch)==1 and refetch[0]['status']=='ok' and refetch[0]['http_status']==200 and refetch[0]['route']=='direct'
+   assert refetch[0]['text_sha256']==witness['text_sha256'] and witness['original_raw_sha256']==r['witness_sha256']
+   assert hashlib.sha256((P/witness['refetch_cache']/witness['refetch_raw_file']).read_bytes()).hexdigest()==witness['refetch_raw_sha256'],'refetch raw changed'
    hit=[f for f in receipts if f.get('url')==r['url'] and f.get('sha256')==r['witness_sha256'] and f['status']=='ok'];assert hit,'missing fetched witness'
    f=hit[0];assert hashlib.sha256((P/'own_site'/f['raw_file']).read_bytes()).hexdigest()==f['sha256']
    assert hashlib.sha256((P/'own_site'/f['text_file']).read_bytes()).hexdigest()==f['text_sha256']
@@ -39,5 +49,12 @@ def main():
   try:inspect(*args)
   except AssertionError:print('Rejected injected defect:',label)
   else:raise AssertionError('silent pass: '+label)
- print('PASS: replay, SQL census, seeded hand checks, 3/3 defects rejected')
+ witness=json.loads((HERE/'positive_witnesses.json').read_text())[0];path=P/witness['stored_text'];saved=path.read_bytes()
+ try:
+  path.write_bytes(saved+b'corruption')
+  try:inspect(m,frame,sample)
+  except AssertionError:print('Rejected injected defect: corrupted stored witness')
+  else:raise AssertionError('silent pass: corrupted stored witness')
+ finally:path.write_bytes(saved)
+ print('PASS: replay, SQL census, seeded hand checks, 4/4 defects rejected')
 if __name__=='__main__':main()
