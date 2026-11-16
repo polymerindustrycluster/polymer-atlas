@@ -1,40 +1,69 @@
-# SAM PUBLIC entity extract scout — terms stop, 2026-11-16
+# SAM PUBLIC entity scout — filtered leads only, 2026-11-16
 
-Worker: atlas-w16-sam-scout. Claim: controller-assigned `sam-entity-scout`, under the November 16 binding worker contract. Packet only; no canonical data changes, evidence IDs, registry links, or inclusion-log entries. First user: Atlas controller/PIC researcher, for this wave's source selection; review non-use by 2026-11-23.
+Worker atlas-w16-sam-scout; controller-assigned claim `sam-entity-scout`; packet only. No data/ edits, IDs, evidence rows, canonical names/addresses, registry links or inclusion-log entries applied. First user: Atlas controller/PIC researcher; review non-use by 2026-11-23.
 
-**Recommendation: do not apply any class.** The brief explicitly says a restrictive term stops the lane. A fresh read of SAM's terms found a conditional restriction on bulk **access and use**, as well as redistribution, of D&B legacy data. This is a terms hold, not an extract refusal or a finding that PUBLIC extracts are generally prohibited. The credential file was not opened; **0 authenticated extract requests** were made. No raw ZIP was created, so no raw ZIP remains to delete. No SQLite index was built.
+## Owner ruling and recommendation
 
-## Terms and permitted redistribution
+The initial terms review held bulk acquisition on SAM's conditional legacy D&B restrictions. On November 16 the owner ruled in session **“Filtered, leads only.”** Controller instruction: download PUBLIC, exclude all D&B-sourced records and records last updated before **2022-04-04** (explicit correction of the initially stated 2026 cutoff); use the remainder only as discovery leads and government-issued UEI-link candidates. Never copy SAM names/addresses into canonical Atlas data: each fact must be verified against another source, following AGENTS §5. That ruling supersedes the initial hold; it does not waive D&B restrictions.
 
-Two official pages were fetched directly, HTTP 200; exact hashes, UTC observation times and short raw-checked witnesses are in `sources.json`. The full HTML witnesses remain in controller persistence (the path in `build.py`), not Git.
+**Recommendation:** use name+street for targeted UEI identity review, name+city for targeted discovery/address research; do not apply name-only or street-only matches automatically. All proposals here are **held**, not applied. The 35 reviewed new UEI pair candidates need integration/identity approval. No population-wide number of mintable links is asserted.
 
-- [SAM terms, Data Access and Restricted Data Use](https://sam.gov/about/terms-of-use): public sharing must use public API versions. Public-facing facts from that route can be shared subject to the applicable data-source restrictions, privacy requirements and any item-specific rights. FOUO/sensitive responses cannot provide a public view. This is not authorization to scrape the browser or automate Login.gov.
-- The same terms require D&B attribution and prohibit bulk access/use/dissemination of D&B Open Data in amounts sufficient to substitute for the source. Covered fields include legal name and physical-address components. The terms identify entity registrations last updated before April 4, 2022 as applicable legacy records and say the Entity Validation Service source is identified in APIs/extracts. Other D&B fields also have commercial/resale/marketing restrictions.
-- [GSA extract API documentation](https://open.gsa.gov/api/sam-entity-extracts-api/): PUBLIC is distinct from opted-out FOUO/Sensitive data. Monthly files cover active registrants plus entities expired within six months, not all firms or proven operating establishments. The scheduled November filename would be `SAM_PUBLIC_MONTHLY_V2_20261101.ZIP`; it was **not requested or verified as a downloaded file**.
+## Source, rights, acquisition and filter
 
-Scout 4 checked general API access but did not record the legacy D&B bulk restriction in its SAM README. Its authorization interpretation remains useful; it does not remove this additional restriction. The monthly population may contain no restricted legacy rows, but that has not been measured. We do not infer that the whole extract is restricted, nor resolve the applicability of a narrower filtered acquisition ourselves.
+[Current SAM terms](https://sam.gov/about/terms-of-use) permit public sharing from public API versions subject to source-specific restrictions. Legacy D&B Open Data requires attribution and cannot be bulk accessed/used/disseminated as a substitute for the source. FOUO and sensitive responses do not authorize public views. Public registrant facts are discovery material here; no personal contact fields were indexed or published. Addresses remain private discovery candidates requiring home-address screening and independent verification before any publication.
 
-## Deliverable and holds
+[Official extract documentation](https://open.gsa.gov/api/sam-entity-extracts-api/) describes monthly PUBLIC active registrations plus registrations expired within six months, **not all firms or proven operating plants**. Two HTTP-200 official-page witnesses are hashed in `sources.json` and cached privately. [PUBLIC V2 layout](https://open.gsa.gov/api/sam-entity-extracts-api/v1/SAM%20Master%20Extract%20Mapping%20v6.0%20Public%20File%20V2%20Layout.xlsx) defines LAST UPDATE DATE (10), D&B OPEN DATA FLAG (24), ENTITY EVS SOURCE (122). The actual extract has 142 pipe-delimited fields; projection uses the documented positions and rejects unexpected widths.
 
-| Proposal or measurement | Applied/held | Settling fact |
+Downloaded `SAM_PUBLIC_MONTHLY_V2_20261101.ZIP`, dated 2026-11-01, 148,636,178 bytes. SHA256 `2db04ae10f237f048b28b6354884431c7b8d61d122b437647b29d23a6cdb5e4d`. It contains a nested ZIP and then a 557,871,365-byte DAT. **911,820 source rows** counted independently, matching both BOF/EOF declared counts. Duplicate UEIs exist (including differing CAGE/DODAAC rows); source-row identity is retained, UEIs are not falsely assumed unique.
+
+Two authenticated API requests (header only), plus one keyless S3 download = **3 total requests**, below the five-request cap. First HTTP 302 was a redirect, not refusal; the second API call followed the redirect without forwarding the key. `download.json` records the sanitized receipt, not a signed URL. Raw outer and inner ZIPs were deleted after hash/count reconciliation. Filtered index: controller persistence `persist/sam-entity-scout/sam.sqlite`, 275 MiB, under 1.5 GB. It retains only UEI/name/DBA/physical address/NAICS/CAGE/registration dates/status/EVS plus derived match keys and source row number; no contact fields.
+
+| Source-row filter | Rows |
+|---|---:|
+| D&B EVS source or D&B Open Data flag | 466 |
+| Valid update date before 2022-04-04 | 0 |
+| Overlap of those two filters | 0 |
+| Additional fail-closed missing/malformed date holds | 2 |
+| Total excluded | 468 |
+| Retained source rows | 911,352 |
+| Distinct retained UEIs | 903,667 |
+
+EVS input distribution: E&Y 830,406; blank 80,948; D&B 466. Blank EVS is not treated as D&B, but the date rule still applies. The D&B flag is blank on every input row. No dropped record's name/address is published.
+
+## Match population and seeded manual samples
+
+Every **5,026 organization** and **7,196 site** row in the baseline was queried. Reuses atlas.py name/street normalization, organization trade names (including held registrant aliases per B-ALIAS), parenthetical aliases and locality-stripped site names; ecosystem operators are resolved for sites. Organization matches use HQ city/state but have no organization street field. Street matches require state agreement; name+city requires state and city agreement. Each Atlas-ID/UEI pair has exactly one strongest class. Names alone may cross states; empty keys never match.
+
+| Class | Atlas-ID/UEI pairs | Manually consistent / sampled | Wilson 95% | Rejected / uncertain |
+|---|---:|---:|---|---|
+| name+street | 685 | 20/20 | 83.9–100% | 0 / 0 |
+| name+city | 1,436 | 14/20 | 48.1–85.5% | 4 / 2 |
+| street-only, different name | 781 | 2/20 | 2.8–30.1% | 5 / 13 |
+| name-only | 86,393 | 0/20 | 0–16.1% | 20 / 0 |
+
+3,990 distinct Atlas records have at least one candidate. Samples are the 20 lowest SHA256 values of `20261116|class|Atlas-ID|UEI`, without replacement within each class. `sample.csv` holds all 80 manual judgments. VERIFIED means pair-consistent at target grain on manual inspection of held Atlas and indexed SAM fields; **not independent source verification**. REJECT rejects that match only, never an organization's existence/status. Uncertainties count as non-successes in the confirmed fraction; Wilson intervals describe that conservative consistency yield, not adjudicated independent identity precision. Sampling unit is a pair, not a parent; name-only is dominated by Sherwin-Williams cross-location pairs. Parent registrant identity cannot locate an individual plant.
+
+## Proposals and remaining holds
+
+| Proposal / metric | Result | Applied/held and settling fact |
 |---|---|---|
-| Download/index complete latest PUBLIC extract | Held | Controller-approved lawful acquisition plan addressing legacy EVS/D&B rows before bulk access/use; confirmation of applicability if needed |
-| Match every Atlas organization/site, including registrant aliases | Held | Terms-cleared extract and complete projected index |
-| Name+street, name+city, different-name street-only, name-only precision | Held; not measured | Match frame and seeded 20-row hand checks for each available class |
-| Mintable UEI links | Held; not measured | Source-verified UEIs and identity adjudication |
-| Street-less PIC-18 physical-address candidates | Held; not measured | Source-cleared physical addresses, identity checks and home-address exclusion |
-| Unheld PIC-18 polymer-NAICS entity leads | Held; not measured | Cleared extract, address-based county evidence, all-shard dedupe and scope follow-up |
+| New UEI pairs in manually consistent sample | 35 (36 consistent pairs minus 1 existing link) | Held; independently confirm exact entity/site binding and integrate government-issued ID only |
+| Population-wide mintable UEI links | Not measured | Held; review all proposed pairs, ambiguous UEIs/registrations and existing links |
+| Street-less PIC-18 sites, all statuses/tiers | 577 in current baseline | Frame count, not the brief's older 419 |
+| Those sites with name+city and nonempty physical street lead | 79 distinct sites | Held; exact site identity, another-source address and home-address screening |
+| Unmatched polymer-NAICS UEIs in held PIC-18 cities | 100 | Held locality-screened leads in `lead_ueis.csv`; verify physical-address county and current polymer activity independently |
+| County-verified unmatched PIC-18 polymer entities | Not measured | Held; city/ZIP is not county; no region assignment inferred |
 
-`metrics.json` records null for every unavailable measurement, including extract hash/date/count and Wilson intervals (within the null per-class precision object); zero downloaded records is a workflow count, not a zero-yield estimate. The brief's 9 existing links and 419 street-less PIC-18 sites were motivation, not recounted findings here.
+Polymer screen: primary or listed NAICS prefix 3252, 3255 or 326, state OH, city casefold-exact in the held PIC-18 site city set, and no match to any queried Atlas row. This city screen can miss or overinclude county-border cases; 100 is **not** a verified PIC-18 count. Estate search for ZIP/county holdings was incomplete because the Documents inventory/RAG layers are unavailable on this Mac; no private CRM or unverified proxy was substituted. Primary/listed NAICS is registrant-level discovery, not proof of polymer production or a plant's code.
 
-## Evidence posture if the hold is resolved
+SCHEMA §4.13: SAM is `registry`; identity/UEI and code corroboration ceiling `supports_B`, registry address alone `supports_C`, claims banked on U rows `supports_U`. Owner's stricter rule here permits UEI links and leads only. No SAM-derived name/address evidence row is proposed. Registration dates/status are not operating-status evidence.
 
-Under SCHEMA §4.13, SAM is `registry`: exact-entity identity/UEI/CAGE and code corroboration cap at `supports_B`; registry address alone caps at `supports_C`. A tier-U record's banked claim uses `supports_U`. Registration status/dates describe registration, not operating status. A registrant's NAICS is not proof of current site polymer activity; unmatched NAICS entities remain discovery leads until primary scope evidence is obtained. No tier or operating-status change is proposed.
+## Checks and reproduction
 
-## Reproduction and verification
+`python3 tasks/sam-entity-scout-2026-11-16/build.py` rebuilds all-shard matches and summaries from the private filtered index. Initial indexing additionally needs the raw archive, deliberately removed per brief; reacquisition is an explicitly budgeted action, not an automatic retry. No dependencies added.
 
-`python3 tasks/sam-entity-scout-2026-11-16/build.py` regenerates the receipt offline and idempotently; it cannot load a key or call the API. `python3 tasks/sam-entity-scout-2026-11-16/check.py` verifies both inputs against their independent cache count, raw hashes, lengths and verbatim excerpt presence; recomputes all receipt counts; and rejects three injected defects (missing input, invented UEI yield, false witness hash). PASS on November 16. Missing caches fail the check. No parser/matcher/index implementation was added because the terms gate prevented acquisition.
+`python3 tasks/sam-entity-scout-2026-11-16/check.py` reconciles source/retained/excluded counts, checks the filtered index and cache hashes, recomputes match totals, reproduces all seeded sample memberships, and recomputes summary/CI/lead counts. Negative controls reject D&B source, legacy date, unknown date and index-row loss. Missing caches fail closed. Source BOF/EOF counts and independent raw-line count were reconciled before deletion; after deletion their provenance is the stored intake receipt, not a fresh raw-file recount.
 
-Proposed follow-ups: resolve the conditional D&B legacy restriction and authorize a narrower acquisition plan if appropriate. Do not treat this packet as a request for a new commitment or as authority to resume extraction.
+Proposed follow-ups: independent identity review for UEI candidates; own-source address verification for the 79 sites; county and polymer-operation verification for the 100 locality-screened leads. These are surfaced holds, not new tracked commitments.
 
-Repository checks: `python3 scripts/validate.py` PASS (0 errors); `python3 scripts/check_row_loss.py --base origin/main` PASS (no keyed row removed); `python3 scripts/export_vocab.py --check` PASS (current). No `scripts/` changes, so its unittest suite was not run. Draft packet remains subject to controller review and CI; no issue is closed by this lane.
+Validation on this revision: packet check PASS (including four injected defects); offline builder rerun PASS after raw deletion; `python3 scripts/validate.py` PASS (0 errors); `python3 scripts/check_row_loss.py --base origin/main` PASS; `python3 scripts/export_vocab.py --check` PASS. No scripts/ edits, so full scripts unittest suite not run. Controller review and CI remain required; this packet does not close an issue or claim the independent identity/county holds complete.
