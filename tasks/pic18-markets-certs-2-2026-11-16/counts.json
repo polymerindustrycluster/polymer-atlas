@@ -1,0 +1,22 @@
+{
+  "blank_field_cells": 353,
+  "data_cells_applied": 16,
+  "extra_fetches": 4,
+  "frame_certifications_blank": 200,
+  "frame_direct_pages": 790,
+  "frame_markets_blank": 153,
+  "frame_organizations": 200,
+  "frame_pages": 893,
+  "frame_reader_pages": 103,
+  "held_field_cells": 337,
+  "manifest_organizations": 745,
+  "proposed_certification_values": 1,
+  "proposed_market_values": 41,
+  "proposed_organization_tiers": {
+    "A": 5,
+    "B": 8,
+    "C": 3
+  },
+  "proposed_organizations": 16,
+  "retained_organizations": 628
+}
