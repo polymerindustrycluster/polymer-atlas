@@ -500,7 +500,7 @@ class ProspectsFixtureTest(unittest.TestCase):
 
     def test_org_page_shows_evidence_rows_not_batch_labels(self):
         org = self.read("orgs/ORG-000001.html")
-        self.assertIn('id="evidence">Evidence (3 rows for this organization)', org)   # EVD-4 cites staging: row withheld
+        self.assertIn('id="evidence">Evidence (3 rows for this organization; 1 more on its site rows below)', org)   # EVD-4 cites staging: row withheld
         self.assertIn("1 evidence row citing internal workflow material omitted", org)
         for col in ("Claim", "Source class", "Strength", "Observed", "Source"):
             self.assertIn(f'<th scope="col">{col}</th>', org)

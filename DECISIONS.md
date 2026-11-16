@@ -23,3 +23,24 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Why:** after #271 (SCHEMA v1.13) left `docs/schema/vocab.json` stale, 37 consecutive pushes merged on a red check,
   and the unit-test, SQLite-build and artifact steps never ran (fixed in #329).
 - **Decided by:** the repo owner, in session, 2026-11-14.
+
+## 2026-11-16: the public site becomes a working tool (PIC-18 prospects, CSV, evidence on organization pages)
+
+- **Decision:** the site gains a PIC-18 prospects page (one row per organization row with at least one site row in a
+  PIC-18 county, operating status active, tier A-C), a "Download these rows (CSV)" button on table pages, a
+  `prospects.csv` built with the site, a latest-release link on every page, an "active, tier A-C" column on the county
+  index that sums to the PIC-18 headline, county tables by process and employee band, and the evidence rows on
+  organization pages in place of source strings. Graph, map + network and street map open on PIC-18.
+- **Why:** the site audit of 2026-11-16 (first user: John Swanson, non-use review 2026-12-14) answered 2 of 12 real
+  tasks, mostly because nothing could be filtered or taken away. Detail and the 12-task tally are in the PR.
+- **Rules fixed here:** (1) an unknown value (blank or the literal "unknown") is shown as unknown and counted per
+  filter, never read as zero or small; (2) employee band is the PIC-18 site band, else the organization's Ohio band,
+  and each row says which; process, material and market follow the same rule; (3) public membership is shown only as
+  "on the public member list" or "not on the public member list" (AGENTS.md section 5.1), and the page says the second is
+  not "not a member"; (4) evidence rows are shown without lane ids or notes, a row whose source cites a contact or a
+  pipeline reference is withheld, and a claim text that does is shown as "detail not shown"; (5) every page number is
+  recomputed from `data/` in `scripts/test_build_site.py`.
+- **Not decided here:** whether to publish a non-member list or keep a private membership overlay (audit finding 3) stays an
+  owner ruling.
+- **Decided by:** built to the controller's task from the audit; no owner ruling is claimed or needed for the wording
+  above, which restates AGENTS.md section 5.1.

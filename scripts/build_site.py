@@ -27,6 +27,7 @@ Usage:
 import argparse
 import importlib.util
 import csv
+import io
 import datetime
 import html
 import json
@@ -1483,8 +1484,6 @@ def prospect_cell(tokens, basis, always_basis=False):
 
 def prospect_tr(r):
     attrs = " ".join(f'data-{k}="{esc(" ".join(row_tokens(r, k)))}"' for k, _ in PROSPECT_FACETS)
-    own = r["own"]
-    site = f"{r['n_sites']}"
     org_rec = ", ".join(x for x in [str(r["status"]).replace("_", " ") if r["status"] else "status unknown",
                                     f"tier {r['org_tier']}" if r["org_tier"] else ""] if x)
     web = f'<a class="url" href="{esc(r["website"])}" rel="noopener nofollow">{esc(r["website"])}</a>' if r["website"] else \
@@ -1493,15 +1492,14 @@ def prospect_tr(r):
     return (f'<tr {attrs}><th scope="row"><a href="orgs/{esc(safe_id(r["id"]))}.html">{esc(r["name"])}</a></th>'
             f'<td>{esc(", ".join(r["counties"]))}</td>{plain(r["rings"])}<td>{esc(", ".join(r["tiers"]))}</td>'
             f'{prospect_cell(*r["proc"])}{prospect_cell(*r["mat"])}{prospect_cell(*r["mkt"])}'
-            f'{prospect_cell(*r["band"], always_basis=True)}{prospect_cell(own, "")}'
+            f'{prospect_cell(*r["band"], always_basis=True)}{prospect_cell(r["own"], "")}'
             f'<td>{MEMBER_YES if r["member"] else MEMBER_NO}</td>'
-            f'<td class="num">{site}</td><td class="num"><a href="orgs/{esc(safe_id(r["id"]))}.html#evidence">{r["evidence"]}</a></td>'
+            f'<td class="num">{r["n_sites"]}</td><td class="num"><a href="orgs/{esc(safe_id(r["id"]))}.html#evidence">{r["evidence"]}</a></td>'
             f'<td>{esc(org_rec)}</td><td>{web}</td></tr>')
 
 
 def prospects_csv(rows, base_url):
     """prospects.csv: the whole prospects table, one row per organization row; unknown is written out, never left blank."""
-    import io
     out = io.StringIO()
     w = csv.writer(out, lineterminator="\r\n")
     w.writerow(["org_id", "organization", "website", "hq_city", "hq_state", "pic18_counties", "pic18_site_rows", "rings",
@@ -2013,7 +2011,9 @@ def evidence_section(a, table, rec, kind):
         return (f'<h2 id="evidence">Sources</h2><p class="small muted">No claim-level evidence rows are recorded for this {kind} yet; '
                 f'the source text on the record is shown. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
                 f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>{source_list(rec.get("sources"))}')
-    return (f'<h2 id="evidence">Evidence ({fmt_int(len(shown))} rows for this {kind})</h2>'
+    n_sites = sum(len(evidence_view(a, "sites", x["site_id"])[0]) for x in a.sites_by_org.get(rec["org_id"], []))
+    more = f"; {fmt_int(n_sites)} more on its site rows below" if n_sites else ""
+    return (f'<h2 id="evidence">Evidence ({fmt_int(len(shown))} rows for this {kind}{more})</h2>'
             '<p class="small muted">Each row is one observation: the claim, the class of source, how strongly it supports the '
             "record's tier, when it was observed, and where. Rows from a platform category or a roster list are leads, "
             f'never proof of scope. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
