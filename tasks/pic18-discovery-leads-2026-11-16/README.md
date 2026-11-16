@@ -6,15 +6,15 @@ Claim: atlas-w16-discovery; designated integrator under controller contract. Fir
 
 342 privacy-filtered PPP loan rows collapse to 296 normalized borrower names. The supplied SAM cache yields 180 unmatched Ohio registration rows under the explicit filter in `frame.py`: city appears in held PIC-18 sites or supplied PIC-18 PPP leads, and primary/listed NAICS begins 325/326. This is broader than the brief's approximate 100: listed codes and city-name inclusion are discovery filters, not independently proved county or polymer scope. No SAM field is published as a company fact. The union has 460 normalized lead names; the largest loan JobsReported per name determines rank (never the sum). Missing PPP employment ranks as zero; ties use normalized name. All selected 80 names have PPP jobs, so this SAM-filter discrepancy does not change their order. Typos/legal alias equivalence remains a hold where not proved; normalized-name uniqueness is not proof of unique legal entities.
 
-80 ranked lead names screened: 1 VERIFIED/applied, 8 DUPLICATE_OF/held alias follow-ups, 71 STILL_UNCERTAIN/held. Zero REJECTs. Net canonical additions: 1 organization at C, 1 headquarters site at C, 9 evidence rows (4 organization, 5 site). No existing record changed. No inclusion-log rows; ambiguous scope held.
+80 ranked lead names screened: 0 VERIFIED/applied, 8 DUPLICATE_OF/held alias follow-ups, 72 STILL_UNCERTAIN/held. All 80 proposals held. Zero REJECTs. Zero canonical data additions or changes. MVP create withdrawn after address-overlap refutation; ORG-014100, SITE-020200 and EVD-381000..381008 permanently retired in retired_ids.csv. No inclusion-log edits.
 
 ## Sources and limits
 
-MVP Plastics' own home/contact pages establish corporate injection-molding activity, legal styling and the physical corporate headquarters. Census address match establishes Geauga County. Its held Form 5500 sponsor spine also names MVP at the same address; no filing employment, code, identifier or mailing-location inference is published. The headquarters site is `hq_only`, with no manufacturing process asserted there. NAICS, employment, ownership, PIC membership and current liveness are unasserted. The false membership/watch booleans are required schema defaults, not evidence of non-membership.
+MVP Plastics' own home/contact pages support its injection-molding business and stated headquarters. The create was nevertheless refuted: held SITE-000237 (All Foam Products, ORG-000223) already names 15005 Enterprise Way in notes, which the structured CLI address step missed. Two additional primary fetches settled the relationship only: All Foam's [about page](https://www.allfoam.com/about/) calls it “An MVP Group Company” and links to MVP Plastics; its [contact page](https://www.allfoam.com/contact-us/) gives the identical address. These facts show related businesses, but do not establish a distinct MVP establishment or settle the exact legal operator/parent/site grain. No merge, parent edge, shared campus, site correction or new row is applied. Settling fact: primary operator/legal-entity and establishment evidence distinguishing MVP's physical establishment from held All Foam SITE-000237. Raw hashes and short exact quotes are in overlap_witnesses.json; raw pages remain in controller persistence. No personal contacts are published.
 
 `research.py` journals up to three candidate-route fetches per lead under controller storage; candidate domains are hypotheses, not verified identities. Some redirects lead to unrelated businesses and are explicitly held. Source availability is never closure evidence. MVP's successful www home/contact follow-ups and brochure retrieval remain below six fetches. Shared corpus manifest was inspected; it covers held organizations rather than establishing net-new company identity, so no new fact cites it. Raw HTML/text hashes and dedupe output remain in private controller persistence, not public contact data. `witnesses.csv` contains short public-source excerpts and exact raw hashes. The checker requires the original controller storage.
 
-Dedupe used the canonical `atlas.dedupe` backend for all 80 across all shards, passing name, candidate domain and street/city; all five steps and successor chains are retained privately in `dedupe.json`. Candidate domains do not settle identity. MVP also received the CLI dedupe check with its verified name/domain/street. A name, address or guessed-domain candidate alone is not marked duplicate without adjudication. No alias is written to existing rows.
+Dedupe used the canonical `atlas.dedupe` backend for all 80 across all shards, passing name, candidate domain and street/city; all five steps and successor chains are retained privately in `dedupe.json`. Candidate domains do not settle identity. MVP also received the CLI dedupe check with its verified name/domain/street. That check missed the held address in site notes; its zero structured hits did not establish net-new identity. A name, address or guessed-domain candidate alone is not marked duplicate without adjudication. No alias is written to existing rows.
 
 ## Applied / held register
 
@@ -44,7 +44,7 @@ Rank refers to the private frozen frame; unverified borrower streets and loan fa
 | 20 | STILL_UNCERTAIN | held |  | Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient. |
 | 21 | STILL_UNCERTAIN | held |  | Owner scope ruling for injectable polymer microspheres and physical production location. |
 | 22 | STILL_UNCERTAIN | held |  | Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient. |
-| 23 | VERIFIED | applied | ORG-014100;SITE-020200 | Own-company headquarters and scope; Census county confirmed. |
+| 23 | STILL_UNCERTAIN | held | | Related to All Foam ORG-000223 / SITE-000237 at the identical street. Establish primary operator/legal-entity and distinct-establishment evidence before any create. |
 | 24 | STILL_UNCERTAIN | held |  | Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient. |
 | 25 | STILL_UNCERTAIN | held |  | Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient. |
 | 26 | DUPLICATE_OF | held | ORG-001806 | Alias follow-up: confirm and bank borrower spelling against held record; no existing row edited. |
@@ -106,8 +106,8 @@ Rank refers to the private frozen frame; unverified borrower streets and loan fa
 ## Replay and verification
 
 `python3 tasks/pic18-discovery-leads-2026-11-16/frame.py` independently rebuilds the supplied lead union and rank order.
-`python3 tasks/pic18-discovery-leads-2026-11-16/build.py --apply` preflights all IDs/headers and uses `scripts/shard_io.py append_sorted`; missing, changed or colliding IDs cannot overwrite held rows. Pre-pass shard backups are in controller persistence under `pre-pass/`.
-`python3 tasks/pic18-discovery-leads-2026-11-16/check.py` recomputes counts/coverage, exact raw quotes, county and byte-identical replay; missing verdict, repeated rank and invented quote controls must fail.
+`python3 tasks/pic18-discovery-leads-2026-11-16/build.py --apply` preflights all IDs/headers and is now a no-op: it refuses nonempty create/evidence packets and refuses any retired ID in canonical data. The original pre-pass backups are retained for audit only. Pre-pass shard backups are in controller persistence under `pre-pass/`.
+`python3 tasks/pic18-discovery-leads-2026-11-16/check.py` recomputes counts/coverage, exact raw quotes, overlap witnesses, county and byte-identical replay; missing verdict, repeated rank, invented quote and retired-create resurrection controls must fail.
 Required pre-push checks: `python3 scripts/validate.py`, `python3 scripts/check_row_loss.py --base origin/main`, `python3 scripts/export_vocab.py --check`. No shared scripts changed.
 
 ## Proposed follow-ups
@@ -115,5 +115,5 @@ Required pre-push checks: `python3 scripts/validate.py`, `python3 scripts/check_
 - Resolve each held identity/scope/address fact above with primary evidence; do not convert route failures into rejections.
 - Resolve the 180-registration SAM filter against the scout's narrower intended city/code frame before expanding beyond this fixed top 80.
 - Resolve near-spelling aliases (including Murubber/Murrubber) before treating the broader union as unique companies.
-- Confirm a manufacturing establishment for MVP independently; the added headquarters record does not establish one.
+- Resolve MVP/All Foam legal-operator and establishment overlap before any later create; all previously proposed IDs remain retired.
 - Controller supplies independent multi-family review before merge. No council calls or other-worker messages made under contract rule 3.

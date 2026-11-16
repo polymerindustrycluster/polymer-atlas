@@ -1,30 +1,29 @@
 ## Summary
 
-Claim: atlas-w16-discovery, designated integrator for PIC-18 discovery; controller thr_9i2c6byhcz.
+Claim: atlas-w16-discovery, controller thr_9i2c6byhcz. Packet only after refutation of the MVP create.
 
 ```text
-342 PPP loans / 296 normalized names + 180 SAM candidates
-→ 460 merged normalized lead names → top 80 by maximum PPP jobs
-→ 1 verified addition / 8 duplicates / 71 unresolved holds
+80 ranked lead names → 0 applied / 8 duplicate aliases / 72 unresolved holds
+Canonical data delta: zero
 ```
 
-Adds MVP Plastics at tier C: one organization, one Middlefield headquarters site, nine evidence rows. Existing rows unchanged. Own company pages establish identity, injection-molding scope and corporate headquarters; Census confirms Geauga County. Site is headquarters-only; manufacturing at that street is not asserted. PPP and SAM remain discovery leads. No loan headcount, NAICS, membership or liveness assertion is copied. No inclusion-log edits; ambiguous scope stays held.
+MVP Plastics states the same headquarters address already in held All Foam SITE-000237 notes. Two additional primary fetches establish that All Foam calls itself “An MVP Group Company” and links to MVP Plastics, and confirms the identical street. This establishes related businesses but does not prove a distinct MVP establishment or the exact legal-operator/parent grain. All proposed data additions withdrawn. ORG-014100, SITE-020200 and EVD-381000..381008 permanently retired; rank23 is STILL_UNCERTAIN/held pending primary operator and distinct-establishment evidence.
+
+Sources: https://www.allfoam.com/about/ and https://www.allfoam.com/contact-us/, with raw hashes/quotes in overlap_witnesses.json and original raw pages in controller storage. Original MVP own-source witnesses remain research receipts only. No relationship, co-location group, merge, site correction, PPP or SAM company fact is applied. No inclusion-log edits.
 
 ## Evidence
 
-- **Before:** MVP name/domain/street produced no held-record match through all five dedupe steps. The canonical backend screened all 80; dedupe receipts stay in controller persistence.
-- **After:** one organization C + one headquarters site C; evidence rows: four organization, five site. Builder replay has zero pending rows.
-- `python3 tasks/pic18-discovery-leads-2026-11-16/check.py`: 80/80 frame/verdict reconciliation; exact source hashes/quotes; Census county; byte-identical replay; three injected defects refused.
-- `python3 scripts/validate.py`: zero errors.
-- `python3 scripts/check_row_loss.py --base origin/main`: passed.
-- `python3 scripts/export_vocab.py --check`: current.
+- **Before:** five-step structured dedupe missed the address in SITE-000237 notes and unsupported new rows were proposed.
+- **After:** four canonical CSVs restored byte-identical to merge-base; all four create/evidence packets header-only. Builder is a no-op and refuses retired-create resurrection.
+- check.py recomputes 80/80 ranked frame/verdict coverage, source hashes/quotes and overlap witnesses; missing verdict, duplicate rank, invented quote and retired-create resurrection controls fail; replay byte-identical.
+- Required checks: validate zero errors; check_row_loss passed; export_vocab current.
 
-README includes an applied/held row for every rank, settling facts and proposed alias follow-ups. The broader SAM city/listed-code filter yields 180 rather than the brief's approximate 100; all top 80 have PPP jobs, so this does not alter the fixed top-80 order. No shared scripts changed; shared-script unit suite not run. No independent multi-family review: controller contract reserves coordination and prohibits council calls. This stays draft.
+342 PPP loan rows / 296 normalized borrower names; broader SAM city/listed-code filter yields180 candidates, union460 normalized names. All selected80 have PPP jobs, so the SAM filter discrepancy does not alter this fixed rank order. These are normalized lead names, not established unique companies. README contains all80 applied/held rows and settling facts.
 
 ## Merge Danger
 
 **Door:** two-way
 
-**Blast Radius:** data
+**Blast Radius:** packet
 
-Two provisional records, with no confirmed manufacturing site. 71 unresolved leads are not established net-new companies. Candidate-domain redirects are not identity proof. Raw source/cache checks require original controller storage. Typographic/legal aliases in the broader frame still need adjudication; do not report 460 unique companies.
+No canonical data changes. 72 unresolved leads remain unproved; eight duplicates are held alias follow-ups. Original cache required to run source checks. Shared-script tests not run (no shared scripts changed). Independent review pending controller; draft remains unmerged.

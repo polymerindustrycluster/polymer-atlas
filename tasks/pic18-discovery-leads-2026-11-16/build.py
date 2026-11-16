@@ -8,21 +8,13 @@ P=Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/pe
 def read(p):
  with Path(p).open(newline='') as f:return list(csv.DictReader(f))
 def plan(data):
- pending=[]
- for src,dest,key,pattern,lo,hi in [('creates_orgs.csv','organizations_OH.csv','org_id','organizations_*.csv',14100,14299),('creates_sites.csv','sites_OH.csv','site_id','sites_*.csv',20200,20399),('evidence_orgs.csv','evidence_organizations_OH.csv','evidence_id','evidence_*.csv',381000,383999),('evidence_sites.csv','evidence_sites_OH.csv','evidence_id','evidence_*.csv',381000,383999)]:
-  existing={}
-  for p in data.glob(pattern):
-   for r in read(p):
-    assert r[key] not in existing,'duplicate existing ID'
-    existing[r[key]]=(p.name,r)
-  rows=read(HERE/src);assert len(rows)==len({r[key] for r in rows}),'duplicate packet ID'
-  header=next(csv.reader((data/dest).open()))
-  for r in rows:
-   assert set(r)==set(header),'header mismatch'
-   assert lo<=int(r[key].split('-')[1])<=hi,'outside reservation'
-   if r[key] in existing:assert existing[r[key]]==(dest,r),'ID collision or changed packet'
-  pending.append((data/dest,key,[r for r in rows if r[key] not in existing]))
- return pending
+ # Refuted creation IDs remain retired; this packet must never reapply them.
+ for src in ('creates_orgs.csv','creates_sites.csv','evidence_orgs.csv','evidence_sites.csv'):
+  assert not read(HERE/src), 'withdrawn create must remain empty'
+ retired={r['record_id'] for r in read(HERE/'retired_ids.csv')}
+ for pattern,key in [('organizations_*.csv','org_id'),('sites_*.csv','site_id'),('evidence_*.csv','evidence_id')]:
+  assert not any(r[key] in retired for p in data.glob(pattern) for r in read(p)), 'retired ID in canonical data'
+ return []
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('--apply',action='store_true');a.add_argument('--data-dir',type=Path,default=ROOT/'data');args=a.parse_args();pending=plan(args.data_dir)
  if args.apply:

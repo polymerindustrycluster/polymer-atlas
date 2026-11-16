@@ -21,7 +21,7 @@ rank,verdict,disposition,record_id,settling_fact,candidate_hits,fetches
 20,STILL_UNCERTAIN,held,,"Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient.",,1
 21,STILL_UNCERTAIN,held,,Owner scope ruling for injectable polymer microspheres and physical production location.,,3
 22,STILL_UNCERTAIN,held,,"Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient.",,1
-23,VERIFIED,applied,ORG-014100;SITE-020200,,,1
+23,STILL_UNCERTAIN,held,,All Foam calls itself an MVP Group Company and publishes the same 15005 Enterprise Way address. Obtain primary operator/legal-entity and establishment evidence distinguishing MVP from held All Foam SITE-000237 before any create; relationship alone does not prove a distinct establishment.,ORG-000223;SITE-000237,1
 24,STILL_UNCERTAIN,held,,"Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient.",,1
 25,STILL_UNCERTAIN,held,,"Independent company identity, polymer activity, physical PIC-18 business address and address-exact county; candidate route unavailable or insufficient.",,1
 26,DUPLICATE_OF,held,ORG-001806,Alias follow-up: confirm and bank borrower spelling against held record; no existing row edited.,ORG-001806,1

@@ -1,6 +1,1 @@
 evidence_id,record_table,record_id,claim_type,claim_detail,source_class,source_ref,observed_date,tier_effect,created_by,notes
-EVD-381003,sites,SITE-020200,existence,"existence: ""Our Corporate Headquarters""",own_site,https://www.mvpplastics.com/contact-us/,2026-11-16,supports_C,atlas-w16-discovery,
-EVD-381004,sites,SITE-020200,scope,"scope: ""MVP Plastics, Inc. is a custom injection molder and assembler of plastics components""",own_site,https://www.mvpplastics.com/,2026-11-16,supports_C,atlas-w16-discovery,
-EVD-381005,sites,SITE-020200,parent,"parent: ""MVP Plastics""",own_site,https://www.mvpplastics.com/,2026-11-16,supports_C,atlas-w16-discovery,
-EVD-381006,sites,SITE-020200,address,"address: ""15005 Enterprise Way""; corporate headquarters, Middlefield OH 44062; county Geauga from Census address match",own_site,https://www.mvpplastics.com/contact-us/,2026-11-16,supports_C,atlas-w16-discovery,
-EVD-381008,sites,SITE-020200,address,"15005 Enterprise Way, Middlefield OH 44062 matches Census county Geauga (39055)",government_filing,https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=15005%20Enterprise%20Way%20Middlefield%20OH%2044062&benchmark=Public_AR_Current&vintage=Current_Current&format=json,2026-11-16,supports_C,atlas-w16-discovery,
