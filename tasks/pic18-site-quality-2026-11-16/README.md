@@ -111,3 +111,9 @@ Repository checks: `python3 scripts/validate.py`; `python3 scripts/check_row_los
 
 - Resolve held operator-grain, exact-plant activity, missing claim and competing-code questions before promotion.
 - Independently refute the three admitted plant bindings and retained county evidence before merge.
+
+## Federal witness inspection supplement
+
+`federal_witnesses.csv` contains exactly the three complete banked ITA packet rows used by the nine government_filing claims (establishment IDs 818456, 519774, 1258989). Each row retains every source column unchanged and adds `source_file` and `source_sha256`: `tasks/osha-ita-2026-11-01/establishments.csv`, SHA-256 `ab3bb14c6a6edbe8f0b0016f752900a336b285dd1046fc70e3a2f68fc089c77f`. No inspection row was quoted as new evidence, so none is included here.
+
+`check.py` verifies the source hash, exact complete-row equality, three-row/nine-claim coverage, literal held operator/alias/street/state/ZIP/code binding, and exact reconstruction of every government claim detail from the witness fields and separately identified held operator. Three additional fault injections (filed code, source hash, government claim detail) must fail. The banked packet is a derived extract; this supplement does not claim to reproduce or independently authenticate the original owner-supplied `filtered_full_value_chain_ITA_300A.tsv`. That original TSV remains unavailable in the searched local corpus; the catalogue search reported platform gaps. No data row changes in this supplement. Independent reviewer acceptance remains pending.

@@ -1,4 +1,7 @@
 {
+  "federal_witness_rows": 3,
+  "federal_claims_verified": 9,
+  "federal_injected_defects_rejected": 3,
   "eligible_sites": 326,
   "worked_sites": 80,
   "promoted_sites": 3,
