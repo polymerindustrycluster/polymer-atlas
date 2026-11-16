@@ -1,0 +1,87 @@
+{
+  "counts": {
+    "input_records": 911820,
+    "missing_or_invalid_date": 2,
+    "drop_db_source": 466,
+    "drop_legacy_date": 0,
+    "drop_overlap": 0,
+    "dropped_union": 468,
+    "declared_record_count": 911820,
+    "indexed_records": 911352
+  },
+  "evs_sources": {
+    "": 80948,
+    "E&Y": 830406,
+    "D&B": 466
+  },
+  "route": "FILTERED_LEADS_ONLY",
+  "authenticated_requests": 2,
+  "download_requests": 1,
+  "extract_file": "SAM_PUBLIC_MONTHLY_V2_20261101.ZIP",
+  "extract_date": "2026-11-01",
+  "extract_sha256": "2db04ae10f237f048b28b6354884431c7b8d61d122b437647b29d23a6cdb5e4d",
+  "atlas_organizations": 5026,
+  "atlas_sites": 7196,
+  "match_pairs_by_class": {
+    "name+city": 1436,
+    "name+street": 685,
+    "name-only": 86393,
+    "street-only different-name": 781
+  },
+  "matched_atlas_records": 3990,
+  "streetless_pic18_sites": 577,
+  "streetless_pic18_address_lead_sites": 79,
+  "sample_pairs": 80,
+  "manual_pair_consistency_by_class": {
+    "name+city": {
+      "n": 20,
+      "confirmed": 14,
+      "rejected": 4,
+      "uncertain": 2,
+      "confirmed_fraction": 0.7,
+      "wilson95": [
+        0.4810271816464765,
+        0.8545227551323956
+      ]
+    },
+    "name+street": {
+      "n": 20,
+      "confirmed": 20,
+      "rejected": 0,
+      "uncertain": 0,
+      "confirmed_fraction": 1.0,
+      "wilson95": [
+        0.8388748419471806,
+        1
+      ]
+    },
+    "name-only": {
+      "n": 20,
+      "confirmed": 0,
+      "rejected": 20,
+      "uncertain": 0,
+      "confirmed_fraction": 0.0,
+      "wilson95": [
+        0,
+        0.16112515805281938
+      ]
+    },
+    "street-only different-name": {
+      "n": 20,
+      "confirmed": 2,
+      "rejected": 5,
+      "uncertain": 13,
+      "confirmed_fraction": 0.1,
+      "wilson95": [
+        0.027866481213768224,
+        0.3010336452284873
+      ]
+    }
+  },
+  "reviewed_new_uei_pair_candidates": 35,
+  "mintable_uei_links": null,
+  "independent_identity_precision_by_class": null,
+  "distinct_indexed_ueis": 903667,
+  "unheld_polymer_uei_pic18_city_screen_leads": 100,
+  "county_verified_unheld_pic18_polymer_entities": null
+}
