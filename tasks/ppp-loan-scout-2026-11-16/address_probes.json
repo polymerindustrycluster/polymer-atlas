@@ -1,0 +1,359 @@
+[
+  {
+    "site_id": "SITE-001651",
+    "checks": [
+      {
+        "url": "https://chemicalsolvents.com/contact/",
+        "sha256": "6c35948e675145f1d20a62c124f20f6fafd6960048fc4b0784fc7b67fa726946",
+        "status": "fetched"
+      },
+      {
+        "url": "https://chemicalsolvents.com/contact-us/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://chemicalsolvents.com/",
+        "sha256": "fa12768596df59e4a1d65a9c3ebd4225db8757bde8c49fad7c96d99b1c38f0b1",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000687",
+    "checks": [
+      {
+        "url": "https://31inc.com/contact/",
+        "sha256": "3fd255ff2533ce8641cef903ef269863fa63ba2ed106d6a42670d17de5d389ab",
+        "status": "fetched"
+      },
+      {
+        "url": "https://31inc.com/contact-us/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://31inc.com/",
+        "sha256": "c68d14b9771a5544d13063e3626784f5a5e2dc977ffcf6019347ccc126553874",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000983",
+    "checks": [
+      {
+        "url": "https://jpindustrial.com/contact/",
+        "sha256": "cf1a4a70b05653ebcc541a3fb45ed5f74b77f5cf860ce8fba1a3b3f42914c65c",
+        "status": "fetched"
+      },
+      {
+        "url": "https://jpindustrial.com/contact-us/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://jpindustrial.com/",
+        "sha256": "f54711f3d931d48025a3e830f2fd38a3bdced92caaa8f2c38817f4c15ff8392e",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000527",
+    "checks": [
+      {
+        "url": "/contact/",
+        "status": "unknown url type: '/contact/'"
+      },
+      {
+        "url": "/contact-us/",
+        "status": "unknown url type: '/contact-us/'"
+      },
+      {
+        "url": "/",
+        "status": "unknown url type: '/'"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001606",
+    "checks": [
+      {
+        "url": "https://alphamicron.com/contact/",
+        "status": "HTTP Error 406: Not Acceptable"
+      },
+      {
+        "url": "https://alphamicron.com/contact-us/",
+        "status": "HTTP Error 406: Not Acceptable"
+      },
+      {
+        "url": "https://alphamicron.com/",
+        "status": "HTTP Error 406: Not Acceptable"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000011",
+    "checks": [
+      {
+        "url": "https://akronpolysys.com/contact/",
+        "sha256": "60842598f428b0045bcf69d3a953d30033446752b00e45c9768ea4f260b3bee1",
+        "status": "fetched"
+      },
+      {
+        "url": "https://akronpolysys.com/contact-us/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://akronpolysys.com/",
+        "sha256": "852bcf54931357c99d01c230dc80cb0bbcc3e03f6ca40a99b4204d1ea120db95",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001694",
+    "checks": [
+      {
+        "url": "https://adcalinc.com/contact/",
+        "sha256": "c8b4e8261ce012a3a37241562e9573f4b92a4c8648c3bdc966740357ea10d7c0",
+        "status": "fetched"
+      },
+      {
+        "url": "https://adcalinc.com/contact-us/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://adcalinc.com/",
+        "sha256": "a35d59e013cf246eed82dea05d4c54547b48f29ec115ab123efad23548ca7674",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001953",
+    "checks": [
+      {
+        "url": "https://tiremolds.com/contact/",
+        "status": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://tiremolds.com/contact-us/",
+        "status": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://tiremolds.com/",
+        "status": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000603",
+    "checks": [
+      {
+        "url": "https://scottmolders.com/contact/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://scottmolders.com/contact-us/",
+        "status": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://scottmolders.com/",
+        "sha256": "f38a51d6b8581ff72e10393a02556fbef3cdf2767dda0da11f47dffa01f45b59",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-002025",
+    "checks": [
+      {
+        "url": "https://vinyltechint.com/contact/",
+        "status": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      },
+      {
+        "url": "https://vinyltechint.com/contact-us/",
+        "status": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      },
+      {
+        "url": "https://vinyltechint.com/",
+        "status": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000582",
+    "checks": [
+      {
+        "url": "https://extera.eco/contact/",
+        "status": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://extera.eco/contact-us/",
+        "status": "HTTP Error 403: Forbidden"
+      },
+      {
+        "url": "https://extera.eco/",
+        "status": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-002021",
+    "checks": [
+      {
+        "url": "/contact/",
+        "status": "unknown url type: '/contact/'"
+      },
+      {
+        "url": "/contact-us/",
+        "status": "unknown url type: '/contact-us/'"
+      },
+      {
+        "url": "/",
+        "status": "unknown url type: '/'"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001974",
+    "checks": [
+      {
+        "url": "/contact/",
+        "status": "unknown url type: '/contact/'"
+      },
+      {
+        "url": "/contact-us/",
+        "status": "unknown url type: '/contact-us/'"
+      },
+      {
+        "url": "/",
+        "status": "unknown url type: '/'"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001660",
+    "checks": [
+      {
+        "url": "https://kentmold.com/contact/",
+        "sha256": "0ab4663901cfa5e81c57ff2d96af999e0857a3e19ac3f27db93f08f5bfa279ad",
+        "status": "fetched"
+      },
+      {
+        "url": "https://kentmold.com/contact-us/",
+        "sha256": "62c8e21aa3cf26b3e7ef5f54253643675bb77c1a157e91c15ae2c13b8ccb976a",
+        "status": "fetched"
+      },
+      {
+        "url": "https://kentmold.com/",
+        "sha256": "7eb99d5a6984b2d90130f9daafb5a6c9b3ba5b2564c5d5cad066003b9049183a",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001559",
+    "checks": [
+      {
+        "url": "/contact/",
+        "status": "unknown url type: '/contact/'"
+      },
+      {
+        "url": "/contact-us/",
+        "status": "unknown url type: '/contact-us/'"
+      },
+      {
+        "url": "/",
+        "status": "unknown url type: '/'"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001756",
+    "checks": [
+      {
+        "url": "https://hytechproducts.com/contact/",
+        "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certif"
+      },
+      {
+        "url": "https://hytechproducts.com/contact-us/",
+        "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certif"
+      },
+      {
+        "url": "https://hytechproducts.com/",
+        "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certif"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-000019",
+    "checks": [
+      {
+        "url": "https://none_found/contact/",
+        "status": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      },
+      {
+        "url": "https://none_found/contact-us/",
+        "status": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      },
+      {
+        "url": "https://none_found/",
+        "status": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-002047",
+    "checks": [
+      {
+        "url": "https://stuckyourself.com/contact/",
+        "status": "HTTP Error 406: Not Acceptable"
+      },
+      {
+        "url": "https://stuckyourself.com/contact-us/",
+        "status": "HTTP Error 406: Not Acceptable"
+      },
+      {
+        "url": "https://stuckyourself.com/",
+        "status": "HTTP Error 406: Not Acceptable"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-002024",
+    "checks": [
+      {
+        "url": "https://veretec.com/contact/",
+        "sha256": "6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023",
+        "status": "fetched"
+      },
+      {
+        "url": "https://veretec.com/contact-us/",
+        "sha256": "6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023",
+        "status": "fetched"
+      },
+      {
+        "url": "https://veretec.com/",
+        "sha256": "6dc9c7fc93bb488bb0520a6c780a8d3c0fb5486a4711aca49b4c53fac7393023",
+        "status": "fetched"
+      }
+    ]
+  },
+  {
+    "site_id": "SITE-001944",
+    "checks": [
+      {
+        "url": "/contact/",
+        "status": "unknown url type: '/contact/'"
+      },
+      {
+        "url": "/contact-us/",
+        "status": "unknown url type: '/contact-us/'"
+      },
+      {
+        "url": "/",
+        "status": "unknown url type: '/'"
+      }
+    ]
+  }
+]

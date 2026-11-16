@@ -1,0 +1,24 @@
+{
+  "frame": 5631,
+  "results": {
+    "Match/Exact": 3999,
+    "Match/Non_Exact": 831,
+    "No_Match": 774,
+    "Tie": 27
+  },
+  "fields": {
+    "latitude": 1208,
+    "longitude": 1208,
+    "geocode_precision": 1208
+  },
+  "changed_sites": 1208,
+  "tiers": {
+    "C": 804,
+    "B": 366,
+    "A": 29,
+    "U": 9
+  },
+  "county_mismatches": 418,
+  "pic18_mismatches": 0,
+  "holds": 1632
+}

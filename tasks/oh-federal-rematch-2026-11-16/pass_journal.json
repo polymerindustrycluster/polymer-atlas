@@ -1,0 +1,73 @@
+{
+  "task": "atlas-w16-fed-rematch",
+  "baseline": "be2e6084d430f1e6f9de0f66289b1d3c2570e255",
+  "allowed_files": [
+    "data/registry_links.csv",
+    "data/sites_OH.csv",
+    "data/evidence_sites_OH.csv"
+  ],
+  "site_cells_changed": [
+    [
+      "SITE-000039",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000048",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000074",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000082",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000101",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000118",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000134",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000149",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000201",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000587",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000611",
+      "employee_band_site"
+    ],
+    [
+      "SITE-000680",
+      "employee_band_site"
+    ]
+  ],
+  "prepass_backup": "controller persistence / persist/oh-federal-rematch/pre-pass",
+  "result": {
+    "frame": 570,
+    "source_rows": {
+      "ITA": 918,
+      "OSHA": 492,
+      "ECHO": 64209
+    },
+    "proposals": 828,
+    "registry_links": 105,
+    "band_fills": 12,
+    "evidence": 103,
+    "baseline": "be2e6084d430f1e6f9de0f66289b1d3c2570e255"
+  }
+}

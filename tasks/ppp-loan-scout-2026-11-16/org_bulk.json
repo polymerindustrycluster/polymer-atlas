@@ -1,0 +1,196 @@
+{
+  "matched_organizations": 415,
+  "matched_sites": 424,
+  "usable_loan_site_pairs": 606,
+  "unusable_loan_site_pairs": 0,
+  "comparisons": [
+    {
+      "grain": "organizations",
+      "cohort": "all_matches",
+      "matched_records": 415,
+      "comparable": 114,
+      "uncomparable": 301,
+      "exact": {
+        "n": 82,
+        "wilson95": [
+          0.630706,
+          0.793593
+        ]
+      },
+      "adjacent": {
+        "n": 30,
+        "wilson95": [
+          0.191,
+          0.350758
+        ]
+      },
+      "off_two_plus": {
+        "n": 2,
+        "wilson95": [
+          0.004824,
+          0.061718
+        ]
+      },
+      "within_one": {
+        "n": 112,
+        "wilson95": [
+          0.938282,
+          0.995176
+        ]
+      }
+    },
+    {
+      "grain": "organizations",
+      "cohort": "single_site_ohio",
+      "matched_records": 392,
+      "comparable": 106,
+      "uncomparable": 286,
+      "exact": {
+        "n": 75,
+        "wilson95": [
+          0.614911,
+          0.785667
+        ]
+      },
+      "adjacent": {
+        "n": 29,
+        "wilson95": [
+          0.197759,
+          0.365247
+        ]
+      },
+      "off_two_plus": {
+        "n": 2,
+        "wilson95": [
+          0.00519,
+          0.066199
+        ]
+      },
+      "within_one": {
+        "n": 104,
+        "wilson95": [
+          0.933801,
+          0.99481
+        ]
+      }
+    },
+    {
+      "grain": "sites",
+      "cohort": "all_matches",
+      "matched_records": 424,
+      "comparable": 76,
+      "uncomparable": 348,
+      "exact": {
+        "n": 56,
+        "wilson95": [
+          0.628188,
+          0.822706
+        ]
+      },
+      "adjacent": {
+        "n": 17,
+        "wilson95": [
+          0.144612,
+          0.329346
+        ]
+      },
+      "off_two_plus": {
+        "n": 3,
+        "wilson95": [
+          0.013515,
+          0.109748
+        ]
+      },
+      "within_one": {
+        "n": 73,
+        "wilson95": [
+          0.890252,
+          0.986485
+        ]
+      }
+    },
+    {
+      "grain": "sites",
+      "cohort": "single_site_ohio",
+      "matched_records": 392,
+      "comparable": 72,
+      "uncomparable": 320,
+      "exact": {
+        "n": 54,
+        "wilson95": [
+          0.639065,
+          0.835609
+        ]
+      },
+      "adjacent": {
+        "n": 16,
+        "wilson95": [
+          0.141674,
+          0.33091
+        ]
+      },
+      "off_two_plus": {
+        "n": 2,
+        "wilson95": [
+          0.007651,
+          0.095742
+        ]
+      },
+      "within_one": {
+        "n": 70,
+        "wilson95": [
+          0.904258,
+          0.992349
+        ]
+      }
+    }
+  ],
+  "fills": [
+    {
+      "match_rule": "name_city_address_present",
+      "rule": "a",
+      "eligible_organizations": 384,
+      "blank_org_bands": 275,
+      "blank_single_site_bands": 294
+    },
+    {
+      "match_rule": "name_city_address_present",
+      "rule": "b",
+      "eligible_organizations": 362,
+      "blank_org_bands": 260,
+      "blank_single_site_bands": 294
+    },
+    {
+      "match_rule": "name_city_address_present",
+      "rule": "c",
+      "eligible_organizations": 193,
+      "blank_org_bands": 114,
+      "blank_single_site_bands": 138
+    },
+    {
+      "match_rule": "name_street_city_exact",
+      "rule": "a",
+      "eligible_organizations": 185,
+      "blank_org_bands": 124,
+      "blank_single_site_bands": 137
+    },
+    {
+      "match_rule": "name_street_city_exact",
+      "rule": "b",
+      "eligible_organizations": 174,
+      "blank_org_bands": 117,
+      "blank_single_site_bands": 137
+    },
+    {
+      "match_rule": "name_street_city_exact",
+      "rule": "c",
+      "eligible_organizations": 92,
+      "blank_org_bands": 47,
+      "blank_single_site_bands": 62
+    }
+  ],
+  "loan_years": {
+    "2020": 447,
+    "2021": 392
+  }
+}
