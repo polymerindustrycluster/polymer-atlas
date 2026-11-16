@@ -1,0 +1,93 @@
+[
+  {
+    "case": "d",
+    "record_id": "ORG-001327",
+    "key": "altraset",
+    "quote": "we launched the AltraSet materials division in 2018",
+    "evidence_id": "EVD-369000"
+  },
+  {
+    "case": "c-ppg",
+    "record_id": "ORG-000088",
+    "key": "ppg",
+    "quote": "PPG Industries, Inc. manufactures and distributes a broad range of paints, coatings and specialty products.",
+    "evidence_id": "EVD-369001"
+  },
+  {
+    "case": "c-shw",
+    "record_id": "ORG-000132",
+    "key": "shw",
+    "quote": "THE SHERWIN-WILLIAMS COMPANY",
+    "evidence_id": "EVD-369002"
+  },
+  {
+    "case": "c-ppg",
+    "record_id": "ORG-000088",
+    "key": "ppg",
+    "quote": "PPG\u2019s corporate headquarters is located in the United States in Pittsburgh, Pa.",
+    "evidence_id": "EVD-369003"
+  },
+  {
+    "case": "c-shw",
+    "record_id": "ORG-000132",
+    "key": "shw",
+    "quote": "1 Sherwin Way Cleveland, Ohio 44113-2206",
+    "evidence_id": "EVD-369004"
+  },
+  {
+    "case": "c-ppg",
+    "record_id": "ORG-000088",
+    "key": "ppg21",
+    "quote": "PPG Industries, Inc. And Consolidated Subsidiaries",
+    "evidence_id": "EVD-369005"
+  },
+  {
+    "case": "c-shw",
+    "record_id": "ORG-000132",
+    "key": "shw21",
+    "quote": "The following is a list of subsidiaries of The Sherwin-Williams Company",
+    "evidence_id": "EVD-369006"
+  },
+  {
+    "case": "e",
+    "record_id": "ORG-001470",
+    "key": "paint",
+    "quote": "The Pittsburgh Paints Company is a leading producer",
+    "evidence_id": "EVD-369007"
+  },
+  {
+    "case": "e",
+    "record_id": "ORG-001470",
+    "key": "paint",
+    "quote": "interior and exterior paints, stains, caulks, repair products, adhesives, and sealants",
+    "evidence_id": "EVD-369008"
+  },
+  {
+    "case": "f-s",
+    "record_id": "SITE-020001",
+    "key": "silgan",
+    "quote": "Our Thomaston location already offers seven product families that are made with mechanical PCR",
+    "evidence_id": "EVD-369009"
+  },
+  {
+    "case": "f-k",
+    "record_id": "SITE-020005",
+    "key": "kingspanhome",
+    "quote": "Kingspan Polyiso Insulation ISO GF, ISO CG, and ISO HD CG Now shipping from our Stillwater, OK manufacturing facility.",
+    "evidence_id": "EVD-369012"
+  },
+  {
+    "case": "f-k",
+    "record_id": "ORG-013801",
+    "key": "kingspanhome",
+    "quote": "Kingspan Polyiso Insulation ISO GF, ISO CG, and ISO HD CG Now shipping from our Stillwater, OK manufacturing facility.",
+    "evidence_id": "EVD-369013"
+  },
+  {
+    "case": "b",
+    "record_id": "SITE-001925",
+    "key": "cooperiso",
+    "quote": "2228 Reiser Avenue SE",
+    "evidence_id": "EVD-369014"
+  }
+]
