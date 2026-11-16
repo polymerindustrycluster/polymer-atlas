@@ -1,0 +1,80 @@
+[
+  {
+    "key": "cooperiso",
+    "url": "https://www.cooperstandard.com/sites/default/files/ISO%2014001%20Certificate%202023-2026%20NP%20CSISG.pdf",
+    "sha256": "aebec46f6c94cf6a996f2ed6b0ecaea1eb9996370cf2f79cbd64b1b9ac19665a",
+    "outcome": "fetched"
+  },
+  {
+    "key": "kingspanhome",
+    "url": "https://roofing.kingspan.com/",
+    "sha256": "62c7070453be3ed6fc17ee7d4814f68a760eca4016463df457577b2b99bb8213",
+    "outcome": "fetched"
+  },
+  {
+    "key": "altraset",
+    "url": "https://altraset.mar-bal.com/about/",
+    "sha256": "d720e77c3fd3508c97f512afbd3ba58f9d933e4e5b06a50361ac2330a260481e",
+    "outcome": "fetched"
+  },
+  {
+    "key": "kingspan",
+    "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8998.pdf",
+    "sha256": "bedb77e1fd804cf76f7462859510636bc39d0ef6cce8cf962a8161bf664adbcd",
+    "outcome": "fetched"
+  },
+  {
+    "key": "silgan",
+    "url": "https://silgandispensing.com/news/two-silgan-dispensing-manufacturing-sites-receive-iscc-plus-certification/",
+    "sha256": "c2518476ce0196d70e5157b5aec8c210b01b71ae63abdeca0e2d7edf66f9179a",
+    "outcome": "fetched"
+  },
+  {
+    "key": "nov",
+    "url": "https://assets.nov.com/NCP4N68N/at/6349njt78mq7q638cjkkqjh/STAR_Anhydride_Line_Pipe_High_Pressure_-_Standard_Design_Data_Sheet.pdf",
+    "sha256": "089bc4f0ab7b664ccaafcf33bce2fd035a40117de1db7c4717b36db905d053de",
+    "outcome": "fetched"
+  },
+  {
+    "key": "ppg",
+    "url": "https://www.sec.gov/Archives/edgar/data/79879/000007987926000046/ppg-20251231.htm",
+    "sha256": "9366e81adac2c7be29a4f7ef38fce48e95f42791c2e59a4a5fff3b02b03f4a13",
+    "outcome": "fetched"
+  },
+  {
+    "key": "shw",
+    "url": "https://www.sec.gov/Archives/edgar/data/89800/000008980026000008/shw-20251231.htm",
+    "sha256": "7b36d6e51f6bc5757e14d44e4c8da4a3fa38dd7e01a5fea54a07ab2d0dd7296b",
+    "outcome": "fetched"
+  },
+  {
+    "key": "paint",
+    "url": "https://www.pittsburghpaintsco.com/",
+    "sha256": "589537d9d9ca837f7ea66f8d17bf9870c907cdfedccfdd574ac9dce517dbca96",
+    "outcome": "fetched"
+  },
+  {
+    "key": "hexpol",
+    "url": "https://www.hexpol.com/rubber/plant-locations/hexpol-silicone-compounding/",
+    "sha256": "c8df8028eee9f0e6e676d68460f468c21fd98e7008931038c6f624179457ee5b",
+    "outcome": "fetched"
+  },
+  {
+    "key": "cooper",
+    "url": "https://www.cooperstandard-isg.com/",
+    "sha256": "",
+    "outcome": "unavailable; HTTP redirect; not evidence"
+  },
+  {
+    "key": "ppg21",
+    "url": "https://www.sec.gov/Archives/edgar/data/79879/000007987926000046/ppg2025ex21-subsidiariesof.htm",
+    "sha256": "88313213b675d88ed893a2fcbb79ebd6dcd8ea9b582b200c79b1322bc9ff9b92",
+    "outcome": "fetched"
+  },
+  {
+    "key": "shw21",
+    "url": "https://www.sec.gov/Archives/edgar/data/89800/000008980026000008/shw-12312025xex211.htm",
+    "sha256": "7c2001f96085bdef807461680949ed6562b1049b35000bf03a3bf11eccee663a",
+    "outcome": "fetched"
+  }
+]
