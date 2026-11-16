@@ -1,0 +1,11 @@
+{
+  "region5_emission_rows": 1517647,
+  "ohio_emission_rows": 205518,
+  "ohio_distinct_projected_rows": 11576,
+  "sha256": "3f317f0a27022caee3e5277e1e985e2a302144beab2530763cb9484bbe851292",
+  "range_sha256": "5a9ee8467c5a675b8e1b038886048895c89142bdcd9545fd09700675fd3597fe",
+  "range_bytes": 29238494,
+  "member": "eis_report_38215_process_R5.zip",
+  "range": "28665921-57904414",
+  "url": "https://gaftp.epa.gov/air/nei/2023/data_summaries/2023nei_facility_process_byregion_21jul2026.zip"
+}
