@@ -1,0 +1,24 @@
+{
+  "seed": 20261116,
+  "atlas_ohio_sites": 2010,
+  "atlas_pic18_sites": 1136,
+  "ohio_index_rows": 11576,
+  "ohio_nei_facilities": 1842,
+  "polymer_relevant_sccs": 225,
+  "crosswalk_rows": 240,
+  "candidate_source_rows": 2644,
+  "ohio": {
+    "matched_sites": 45,
+    "blank_processes": 23,
+    "blank_materials": 20,
+    "either_blank": 25,
+    "tag_candidate_sites": 35
+  },
+  "pic18": {
+    "matched_sites": 30,
+    "blank_processes": 13,
+    "blank_materials": 11,
+    "either_blank": 14,
+    "tag_candidate_sites": 26
+  }
+}
