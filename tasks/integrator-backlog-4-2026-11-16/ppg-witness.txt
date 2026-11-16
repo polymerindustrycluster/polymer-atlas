@@ -1,4 +1,4 @@
 https://www.sec.gov/Archives/edgar/data/79879/000007987926000046/ppg-20251231.htm
-Fetched 2026-11-16; selected verbatim excerpts (full raw in controller cache).
+Fetched 2026-11-16; selected excerpts; complete privacy-filtered witness in controller cache.
 PPG Industries, Inc. manufactures and distributes a broad range of paints, coatings and specialty products.
 PPG’s corporate headquarters is located in the United States in Pittsburgh, Pa.

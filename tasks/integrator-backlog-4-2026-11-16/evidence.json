@@ -130,56 +130,30 @@
     "notes": "Fetched 2026-11-16. Quote: Our Thomaston location already offers seven product families that are made with mechanical PCR"
   },
   {
-    "evidence_id": "EVD-369010",
-    "record_table": "sites",
-    "record_id": "SITE-020003",
-    "claim_type": "scope",
-    "claim_detail": "STAR Anhydride Line Pipe epoxy resin system; manufacturing code W identifies Wichita",
-    "source_class": "own_site",
-    "source_ref": "https://assets.nov.com/NCP4N68N/at/6349njt78mq7q638cjkkqjh/STAR_Anhydride_Line_Pipe_High_Pressure_-_Standard_Design_Data_Sheet.pdf",
-    "observed_date": "2026-11-16",
-    "tier_effect": "supports_A",
-    "created_by": "atlas-w16-fixes",
-    "notes": "Fetched 2026-11-16. Quote: Resin System - Anhydride Cured Epoxy"
-  },
-  {
-    "evidence_id": "EVD-369011",
-    "record_table": "sites",
-    "record_id": "SITE-020003",
-    "claim_type": "scope",
-    "claim_detail": "STAR Anhydride Line Pipe manufacturing location Wichita",
-    "source_class": "own_site",
-    "source_ref": "https://assets.nov.com/NCP4N68N/at/6349njt78mq7q638cjkkqjh/STAR_Anhydride_Line_Pipe_High_Pressure_-_Standard_Design_Data_Sheet.pdf",
-    "observed_date": "2026-11-16",
-    "tier_effect": "supports_A",
-    "created_by": "atlas-w16-fixes",
-    "notes": "Fetched 2026-11-16. Quote: Manufacturing Location - W = Wichita"
-  },
-  {
     "evidence_id": "EVD-369012",
     "record_table": "sites",
     "record_id": "SITE-020005",
     "claim_type": "scope",
-    "claim_detail": "Planned TPO membrane extrusion at Kingspan USA Stillwater; draft construction permit, not proof of operation",
-    "source_class": "government_filing",
-    "source_ref": "https://applications.deq.ok.gov/permitspublic/storedpermits/8998.pdf",
-    "observed_date": "2025-04-29",
-    "tier_effect": "supports_C",
+    "claim_detail": "materials other_specified_in_notes: Polyiso insulation manufactured and shipping from Stillwater",
+    "source_class": "own_site",
+    "source_ref": "https://roofing.kingspan.com/",
+    "observed_date": "2026-11-16",
+    "tier_effect": "supports_A",
     "created_by": "atlas-w16-fixes",
-    "notes": "Fetched 2026-11-16. Quote: Thermoplastic Olefin (TPO) Membrane Extrusion"
+    "notes": "Fetched 2026-11-16. Product heading and adjoining narrative sentence. Quote: Kingspan Polyiso Insulation ISO GF, ISO CG, and ISO HD CG Now shipping from our Stillwater, OK manufacturing facility."
   },
   {
     "evidence_id": "EVD-369013",
     "record_table": "organizations",
     "record_id": "ORG-013801",
     "claim_type": "scope",
-    "claim_detail": "Planned Stillwater TPO membrane extrusion; filed under name Kingspan USA; draft construction permit",
-    "source_class": "government_filing",
-    "source_ref": "https://applications.deq.ok.gov/permitspublic/storedpermits/8998.pdf",
-    "observed_date": "2025-04-29",
-    "tier_effect": "supports_C",
+    "claim_detail": "materials other_specified_in_notes: Polyiso insulation manufactured and shipping from Stillwater",
+    "source_class": "own_site",
+    "source_ref": "https://roofing.kingspan.com/",
+    "observed_date": "2026-11-16",
+    "tier_effect": "supports_A",
     "created_by": "atlas-w16-fixes",
-    "notes": "Fetched 2026-11-16. Quote: Thermoplastic Olefin (TPO) Membrane Extrusion"
+    "notes": "Fetched 2026-11-16. Product heading and adjoining narrative sentence. Quote: Kingspan Polyiso Insulation ISO GF, ISO CG, and ISO HD CG Now shipping from our Stillwater, OK manufacturing facility."
   },
   {
     "evidence_id": "EVD-369014",

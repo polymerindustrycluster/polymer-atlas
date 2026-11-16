@@ -1,4 +1,4 @@
 https://www.sec.gov/Archives/edgar/data/89800/000008980026000008/shw-20251231.htm
-Fetched 2026-11-16; selected verbatim excerpts (full raw in controller cache).
+Fetched 2026-11-16; selected excerpts; complete privacy-filtered witness in controller cache.
 THE SHERWIN-WILLIAMS COMPANY
 1 Sherwin Way Cleveland, Ohio 44113-2206

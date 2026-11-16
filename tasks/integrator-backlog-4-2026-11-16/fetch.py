@@ -30,3 +30,14 @@ if __name__=='__main__':
    s=p.read_text(errors='replace');s=re.sub(r'<(script|style)\b.*?</\1>',' ',s,flags=re.S|re.I);s=re.sub('<[^>]+>',' ',s);s=html.unescape(s)
    (CACHE/(key+'.txt')).write_text(re.sub(r'\s+',' ',s))
   print(key,len(p.read_bytes()),hashlib.sha256(p.read_bytes()).hexdigest(),flush=True)
+ # Persist complete source context with individual contact fields redacted.
+ receipts=[]
+ for key,url in URLS.items():
+  raw=CACHE/(key+'.raw');txt=CACHE/(key+'.txt')
+  if not raw.exists() or not txt.exists():continue
+  text=txt.read_text()
+  text=re.sub(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', '[EMAIL REDACTED]',text)
+  text=re.sub(r'(?<!\d)(?:\+?1[ -]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)','[PHONE REDACTED]',text)
+  witness=CACHE/(key+'.witness.txt');witness.write_text(text)
+  receipts.append(dict(key=key,url=url,raw_sha256=hashlib.sha256(raw.read_bytes()).hexdigest(),witness_file=witness.name,witness_sha256=hashlib.sha256(witness.read_bytes()).hexdigest(),retrieved='2026-11-16',route='urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted'))
+ Path(__file__).with_name('fetch-receipts.json').write_text(json.dumps(receipts,indent=2)+'\n')

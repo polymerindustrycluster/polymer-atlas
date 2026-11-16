@@ -70,31 +70,17 @@
     "evidence_id": "EVD-369009"
   },
   {
-    "case": "f-n",
-    "record_id": "SITE-020003",
-    "key": "nov",
-    "quote": "Resin System - Anhydride Cured Epoxy",
-    "evidence_id": "EVD-369010"
-  },
-  {
-    "case": "f-n",
-    "record_id": "SITE-020003",
-    "key": "nov",
-    "quote": "Manufacturing Location - W = Wichita",
-    "evidence_id": "EVD-369011"
-  },
-  {
     "case": "f-k",
     "record_id": "SITE-020005",
-    "key": "kingspan",
-    "quote": "Thermoplastic Olefin (TPO) Membrane Extrusion",
+    "key": "kingspanhome",
+    "quote": "Kingspan Polyiso Insulation ISO GF, ISO CG, and ISO HD CG Now shipping from our Stillwater, OK manufacturing facility.",
     "evidence_id": "EVD-369012"
   },
   {
     "case": "f-k",
     "record_id": "ORG-013801",
-    "key": "kingspan",
-    "quote": "Thermoplastic Olefin (TPO) Membrane Extrusion",
+    "key": "kingspanhome",
+    "quote": "Kingspan Polyiso Insulation ISO GF, ISO CG, and ISO HD CG Now shipping from our Stillwater, OK manufacturing facility.",
     "evidence_id": "EVD-369013"
   },
   {
