@@ -1,0 +1,15 @@
+{
+  "route": "TERMS_HELD",
+  "sources_checked": 2,
+  "authenticated_requests": 0,
+  "records_downloaded": 0,
+  "extract_file": null,
+  "extract_date": null,
+  "extract_sha256": null,
+  "extract_record_count": null,
+  "indexed_records": null,
+  "precision_by_class": null,
+  "mintable_uei_links": null,
+  "streetless_pic18_address_candidates": null,
+  "unheld_pic18_polymer_leads": null
+}
