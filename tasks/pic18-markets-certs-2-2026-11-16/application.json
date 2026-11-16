@@ -1,0 +1,12 @@
+{
+  "base": "25e6f7666c355e2cd1700635eaf4e4ff40e32941",
+  "by_shard": {
+    "organizations_OH.csv": {
+      "evidence_rows": 42,
+      "field_cells": 16,
+      "value_rows": 42
+    }
+  },
+  "cells": 16,
+  "evidence_rows": 42
+}

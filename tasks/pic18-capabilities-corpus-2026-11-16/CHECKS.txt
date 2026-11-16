@@ -1,0 +1,10 @@
+{'frame_sites': 224, 'accepted_sites': 4, 'applied_sites': 3, 'held_sites': 220, 'term_decisions': 14, 'capability_rows': 8, 'evidence_rows': 11, 'changed_sites': 3}
+detected injected quote
+detected injected term
+detected injected grain_quote
+{'frame_sites': 224, 'accepted_sites': 4, 'applied_sites': 3, 'held_sites': 220, 'term_decisions': 14, 'capability_rows': 8, 'evidence_rows': 11, 'changed_sites': 3}
+PASS: CAP corpus replay / 3 mutations / idempotence
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base ef32b5ba73)
+docs/schema/vocab.json is current
+
+python3 scripts/validate.py: OK — validation passed (0 errors).
