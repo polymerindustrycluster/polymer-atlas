@@ -1,0 +1,110 @@
+[
+  {
+    "key": "cooperiso",
+    "url": "https://www.cooperstandard.com/sites/default/files/ISO%2014001%20Certificate%202023-2026%20NP%20CSISG.pdf",
+    "raw_sha256": "aebec46f6c94cf6a996f2ed6b0ecaea1eb9996370cf2f79cbd64b1b9ac19665a",
+    "witness_file": "cooperiso.witness.txt",
+    "witness_sha256": "cb5b2a67a1c80c2d99f5c4ef0590cc515122d0114e783c49723a1f928061a7d9",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "kingspanhome",
+    "url": "https://roofing.kingspan.com/",
+    "raw_sha256": "62c7070453be3ed6fc17ee7d4814f68a760eca4016463df457577b2b99bb8213",
+    "witness_file": "kingspanhome.witness.txt",
+    "witness_sha256": "7dd6e4c83d6696f9078b9d9c8a55390fb37c5509a8233f8f1db9095c78d83dc3",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "altraset",
+    "url": "https://altraset.mar-bal.com/about/",
+    "raw_sha256": "d720e77c3fd3508c97f512afbd3ba58f9d933e4e5b06a50361ac2330a260481e",
+    "witness_file": "altraset.witness.txt",
+    "witness_sha256": "0570964741b27209273244c163cf064f14110e0256ac1038044717b4e0f2427d",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "kingspan",
+    "url": "https://applications.deq.ok.gov/permitspublic/storedpermits/8998.pdf",
+    "raw_sha256": "bedb77e1fd804cf76f7462859510636bc39d0ef6cce8cf962a8161bf664adbcd",
+    "witness_file": "kingspan.witness.txt",
+    "witness_sha256": "00fde69e90ca920c77d9b8bea23d20ab0296a72c85ff167c5afdb213e791b670",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "silgan",
+    "url": "https://silgandispensing.com/news/two-silgan-dispensing-manufacturing-sites-receive-iscc-plus-certification/",
+    "raw_sha256": "c2518476ce0196d70e5157b5aec8c210b01b71ae63abdeca0e2d7edf66f9179a",
+    "witness_file": "silgan.witness.txt",
+    "witness_sha256": "e5e588cb3431b8df1134a244d2b1c25fabc985da84d1ac81ce5af53f58d0f70d",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "nov",
+    "url": "https://assets.nov.com/NCP4N68N/at/6349njt78mq7q638cjkkqjh/STAR_Anhydride_Line_Pipe_High_Pressure_-_Standard_Design_Data_Sheet.pdf",
+    "raw_sha256": "089bc4f0ab7b664ccaafcf33bce2fd035a40117de1db7c4717b36db905d053de",
+    "witness_file": "nov.witness.txt",
+    "witness_sha256": "4dd6b71965ad9b45c7ebccb433d8cf5e283a9b641cd063a8e5f3116f629b5008",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "ppg",
+    "url": "https://www.sec.gov/Archives/edgar/data/79879/000007987926000046/ppg-20251231.htm",
+    "raw_sha256": "9366e81adac2c7be29a4f7ef38fce48e95f42791c2e59a4a5fff3b02b03f4a13",
+    "witness_file": "ppg.witness.txt",
+    "witness_sha256": "7d6942964264e09f59332f9037a2423694281f5e5cb9db4078fbf26982a8df55",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "shw",
+    "url": "https://www.sec.gov/Archives/edgar/data/89800/000008980026000008/shw-20251231.htm",
+    "raw_sha256": "7b36d6e51f6bc5757e14d44e4c8da4a3fa38dd7e01a5fea54a07ab2d0dd7296b",
+    "witness_file": "shw.witness.txt",
+    "witness_sha256": "11b8d7ef3dc363b63262f0fff63eb6e1ab67cc363aec3a453da27320c4a46b0e",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "paint",
+    "url": "https://www.pittsburghpaintsco.com/",
+    "raw_sha256": "589537d9d9ca837f7ea66f8d17bf9870c907cdfedccfdd574ac9dce517dbca96",
+    "witness_file": "paint.witness.txt",
+    "witness_sha256": "791217a3b2df1e81e9f763e0cd64c88d5a975e4978c877768154d7e799bcc176",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "hexpol",
+    "url": "https://www.hexpol.com/rubber/plant-locations/hexpol-silicone-compounding/",
+    "raw_sha256": "c8df8028eee9f0e6e676d68460f468c21fd98e7008931038c6f624179457ee5b",
+    "witness_file": "hexpol.witness.txt",
+    "witness_sha256": "d51a7b543a5d7624aec669d82fd75f24c6960bd920404a3841c83b27b1ba5a1f",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "ppg21",
+    "url": "https://www.sec.gov/Archives/edgar/data/79879/000007987926000046/ppg2025ex21-subsidiariesof.htm",
+    "raw_sha256": "88313213b675d88ed893a2fcbb79ebd6dcd8ea9b582b200c79b1322bc9ff9b92",
+    "witness_file": "ppg21.witness.txt",
+    "witness_sha256": "0ed1afc78fbbd988eaf8a91fe314810d01f05437fb92bec7b70c7f62851a71ab",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  },
+  {
+    "key": "shw21",
+    "url": "https://www.sec.gov/Archives/edgar/data/89800/000008980026000008/shw-12312025xex211.htm",
+    "raw_sha256": "7c2001f96085bdef807461680949ed6562b1049b35000bf03a3bf11eccee663a",
+    "witness_file": "shw21.witness.txt",
+    "witness_sha256": "9c7a34c12fdf7458facd0c54a3eb461eb376af29ac16f818006889070e7bb52a",
+    "retrieved": "2026-11-16",
+    "route": "urllib.request direct origin, User-Agent: Atlas research contact research@polymerindustrycluster.org; PDF via pdftotext -layout; HTML via fetch.py strip/decode; contact fields redacted"
+  }
+]
