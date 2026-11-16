@@ -1,4 +1,4 @@
-"""Replay the public roster snapshot; never changes organization membership flags."""
+"""Replay the public roster snapshot; includes the authorized Custom Rubber membership flag."""
 import csv
 import html
 import re
@@ -44,8 +44,7 @@ def expected():
                        record_class='organization', org_id='ORG-000113', member_since='',
                        membership_source_url=URL, snapshot_date=DATE,
                        notes='Public roster links customrubbercorp.com; exact domain match to held Custom Rubber Corporation ORG-000113. Dedupe stop at step 1.')
-        if key in by_name:
-            out.append(row)
+        out.append(row)
     assert {r['member_row_id'] for r in old} <= {r['member_row_id'] for r in out}, 'hold missing listings; schema has no lapse field'
     return sorted(out, key=lambda r:r['member_row_id'])
 
@@ -54,6 +53,16 @@ def main():
     target = expected()
     current = read(path)
     assert {r['member_row_id'] for r in current} <= {r['member_row_id'] for r in target}, 'unexpected member IDs'
+    org_path = ROOT / 'data/organizations_OH.csv'
+    orgs = read(org_path)
+    for row in orgs:
+        if row['org_id'] == 'ORG-000113':
+            row['pic_member'] = 'true'
+            row['membership_source_url'] = 'https://polymerindustrycluster.org/'
+    with org_path.open('w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=orgs[0], lineterminator='\n')
+        w.writeheader()
+        w.writerows(orgs)
     if current == target:
         return
     old_ids = {r['member_row_id'] for r in current}
