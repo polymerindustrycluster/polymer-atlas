@@ -1326,12 +1326,18 @@ MEMBER_YES, MEMBER_NO = "on the public member list", "not on the public member l
 # claim text does is shown with the detail withheld, and its class, strength, date and source stay visible.
 PRIVATE_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\(?\b\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b")
 WORKFLOW_RE = re.compile(r"\b(integration pass|pass[- ]\d+|packets?|verdicts?|staging|lanes?[- ]?[A-Z]?\d+|wave[- ]\d+|validator|"
-                         r"owner ruling|minted|freeze[- ]companion|leg [12])\b", re.I)
+                         r"owner ruling|minted|freeze|leg[ _-]?\d|corroboration leg|\w+_ref|batch|integration|design row|org design|site design|"
+                         r"verification (slice|wave)|queue [A-Z])(?![A-Za-z])", re.I)
 EVIDENCE_WITHHELD = "(detail not shown in this view; see the source)"
 
 
+# A source citation can legitimately say "agenda packet", so only unmistakable pipeline references withhold a whole row.
+SOURCE_WORKFLOW_RE = re.compile(r"\bpass[- ]\d+|integration (pass|journal)|minted|repo record|\bverdicts?\b|\bvalidator\b|"
+                                r"owner ruling|\bwave[- ]\d+|packet_|\blane[ _-]?[A-Z]?\d|\bstaging\b", re.I)
+
+
 def clean_source(text):
-    return not (INTERNAL_SOURCE_RE.search(text or "") or PRIVATE_RE.search(text or "") or re.search(r"\bstaging\b", text or "", re.I))
+    return not (INTERNAL_SOURCE_RE.search(text or "") or PRIVATE_RE.search(text or "") or SOURCE_WORKFLOW_RE.search(text or ""))
 
 
 def clean_detail(text):
