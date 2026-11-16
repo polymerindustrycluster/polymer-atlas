@@ -184,7 +184,7 @@ def source_list(sources):
     if not nonempty(sources):
         return '<p class="muted">No source text recorded.</p>'
     parts = [p.strip() for p in re.split(r";\s+", str(sources)) if p.strip()]
-    shown = [p for p in parts if not INTERNAL_SOURCE_RE.search(p)]
+    shown = [p for p in parts if not INTERNAL_SOURCE_RE.search(p) and not WORKFLOW_RE.search(p)]
     hidden = len(parts) - len(shown)
     out = '<ul class="sources">' + "".join(f"<li>{linkify(p)}</li>" for p in shown) + "</ul>" if shown else ""
     if hidden:
@@ -1315,7 +1315,21 @@ PROSPECT_FACETS = [("co", "County"), ("ring", "Ring"), ("tier", "Site tier"), ("
                    ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership"),
                    ("mem", "Public member list")]
 MEMBER_YES, MEMBER_NO = "on the public member list", "not on the public member list"   # AGENTS.md section 5.1
-INTERNAL_EVIDENCE_RE = INTERNAL_SOURCE_RE   # evidence rows citing internal material are withheld like source strings
+# Evidence text is free text written for the repository's lanes: it can quote a scraped page (email addresses, phone
+# numbers) or name pipeline internals ("pass 24", "packet"). A row whose source cites such material is withheld; a row whose
+# claim text does is shown with the detail withheld, and its class, strength, date and source stay visible.
+PRIVATE_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\(?\b\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b")
+WORKFLOW_RE = re.compile(r"\b(integration pass|pass[- ]\d+|packets?|verdicts?|staging|lanes?[- ]?[A-Z]?\d+|wave[- ]\d+|validator|"
+                         r"owner ruling|minted|freeze[- ]companion|leg [12])\b", re.I)
+EVIDENCE_WITHHELD = "(detail not shown in this view; see the source)"
+
+
+def clean_source(text):
+    return not (INTERNAL_SOURCE_RE.search(text or "") or PRIVATE_RE.search(text or "") or re.search(r"\bstaging\b", text or "", re.I))
+
+
+def clean_detail(text):
+    return clean_source(text) and not WORKFLOW_RE.search(text or "")
 
 
 def known(values):
@@ -1338,10 +1352,9 @@ def pic18_active_sites(sites):
 
 
 def evidence_view(a, table, rid):
-    """(shown rows, number withheld) of one record's evidence. Rows citing internal or CRM material are withheld."""
+    """(shown rows, number withheld) of one record's evidence. Rows whose source cites internal material or a contact are withheld."""
     rows = a.evidence.get((table, rid), [])
-    shown = [r for r in rows if not (INTERNAL_EVIDENCE_RE.search(r.get("claim_detail") or "")
-                                     or INTERNAL_EVIDENCE_RE.search(r.get("source_ref") or ""))]
+    shown = [r for r in rows if clean_source(r.get("source_ref"))]
     return shown, len(rows) - len(shown)
 
 
@@ -1942,6 +1955,72 @@ def dl(pairs):
     return f'<dl class="fields">{items}</dl>' if items else ""
 
 
+EVIDENCE_CLASS = {"own_site": "Company's own site", "government_filing": "Government filing", "registry": "Registry record",
+                  "directory": "Directory listing", "press": "News or trade press",
+                  "platform_category": "Platform category (a lead, not proof)", "harvest_roster": "Roster list (a lead, not proof)"}
+EVIDENCE_CLAIM = {"existence": "Exists", "activity": "Does the work", "scope": "Polymer scope", "address": "Address",
+                  "parent": "Parent link", "liveness": "Operating", "code": "Code", "size_band": "Size band"}
+
+
+def evidence_strength(effect):
+    if effect == "contradicts":
+        return "Contradicts the record"
+    t = str(effect or "").replace("supports_", "")
+    return f"Supports tier {t} ({TIERS[t][0].lower()})" if t in TIERS else str(effect or "")
+
+
+def evidence_table(rows, caption, nocsv=False):
+    """Claim, source class, strength, date and link for each evidence row. Never the lane id or the notes."""
+    order = list(EVIDENCE_CLAIM)
+    rows = sorted(sorted(rows, key=lambda r: r.get("observed_date") or "", reverse=True),
+                  key=lambda r: order.index(r["claim_type"]) if r.get("claim_type") in order else len(order))
+    body = "".join(
+        f'<tr><td><strong>{esc(EVIDENCE_CLAIM.get(r.get("claim_type"), r.get("claim_type")))}:</strong> {esc(r.get("claim_detail") if clean_detail(r.get("claim_detail")) else EVIDENCE_WITHHELD)}</td>'
+        f'<td>{esc(EVIDENCE_CLASS.get(r.get("source_class"), r.get("source_class")))}</td>'
+        f'<td>{esc(evidence_strength(r.get("tier_effect")))}</td><td>{esc(r.get("observed_date"))}</td>'
+        f'<td>{linkify(r.get("source_ref"))}</td></tr>' for r in rows)
+    return table_wrap(
+        f'<table{" data-nocsv" if nocsv else ""}><caption>{esc(caption)}</caption><thead><tr><th scope="col">Claim</th>'
+        '<th scope="col">Source class</th><th scope="col">Strength</th><th scope="col">Observed</th><th scope="col">Source</th>'
+        f'</tr></thead><tbody>{body}</tbody></table>', caption)
+
+
+def evidence_withheld_note(n):
+    return (f'<p class="small muted">{n} evidence row{"s" if n != 1 else ""} citing internal workflow material '
+            "omitted from this view; the repository's CSV holds the full evidence.</p>") if n else ""
+
+
+def evidence_section(a, table, rec, kind):
+    """The record's evidence rows; records with none yet fall back to the source text they carry."""
+    shown, hidden = evidence_view(a, table, rec["org_id"])
+    if not shown:
+        return (f'<h2 id="evidence">Sources</h2><p class="small muted">No claim-level evidence rows are recorded for this {kind} yet; '
+                f'the source text on the record is shown. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
+                f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>{source_list(rec.get("sources"))}')
+    return (f'<h2 id="evidence">Evidence ({fmt_int(len(shown))} rows for this {kind})</h2>'
+            '<p class="small muted">Each row is one observation: the claim, the class of source, how strongly it supports the '
+            "record's tier, when it was observed, and where. Rows from a platform category or a roster list are leads, "
+            f'never proof of scope. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
+            f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>'
+            f'{evidence_table(shown, "Evidence for " + str(rec.get("legal_name") or rec["org_id"]))}{evidence_withheld_note(hidden)}')
+
+
+def member_field(rec):
+    if rec.get("pic_member") != "true":
+        return esc(MEMBER_NO)
+    href = safe_href(rec.get("membership_source_url"))
+    return f'<a href="{esc(href)}" rel="noopener nofollow">{MEMBER_YES}</a>' if href else esc(MEMBER_YES)
+
+
+def site_evidence(a, s):
+    shown, hidden = evidence_view(a, "sites", s["site_id"])
+    if not shown:
+        return f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details>'
+    return (f'<details class="srcs"><summary>Evidence for this site ({fmt_int(len(shown))} rows)</summary>'
+            f'{evidence_table(shown, "Evidence for " + str(s.get("site_name") or s["site_id"]), nocsv=True)}'
+            f'{evidence_withheld_note(hidden)}</details>')
+
+
 def site_article(s, a, open_=False):
     """One site as a collapsible row: a one-line summary (place, type, ring, status, tier) that opens to the full record."""
     addr = ", ".join(x for x in [s.get("street_address"), s.get("city")] if nonempty(x))
@@ -1976,7 +2055,7 @@ def site_article(s, a, open_=False):
             f'<summary><span class="s-name">{esc(s.get("site_name") or s["site_id"])}</span>'
             f'<span class="s-meta">{meta}</span><span class="s-badges">{badges}</span></summary>'
             f'<div class="s-body"><p class="muted small">{esc(s["site_id"])}</p>{fields}'
-            f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details></div></details>')
+            f'{site_evidence(a, s)}</div></details>')
 
 
 def program_table(programs, a, with_inst=False, root=""):
@@ -2065,13 +2144,6 @@ def build_org_page(ctx, o):
         if bits:
             naics += f' <span class="muted">({"; ".join(bits)})</span>'
     hq = ", ".join(x for x in [o.get("hq_city"), o.get("hq_state")] if nonempty(x))
-    member = ""
-    if o.get("pic_member") == "true":
-        member = "PIC member (public member list)"
-        if safe_href(o.get("membership_source_url")):
-            member = f'<a href="{esc(o["membership_source_url"])}" rel="noopener nofollow">{member}</a>'
-        else:
-            member = esc(member)
     rings = ring_badge(o.get("ring_primary")) if nonempty(o.get("ring_primary")) else ""
     if nonempty(o.get("ring_secondary")):
         rings += f' <span class="muted">secondary:</span> {ring_badge(o["ring_secondary"])}'
@@ -2098,7 +2170,7 @@ def build_org_page(ctx, o):
         ("Markets served", esc(vocab(o.get("markets_served")))),
         ("Certifications", esc(vocab(o.get("certifications")))),
         ("Ohio employee band", esc(o.get("employee_band_ohio"))),
-        ("PIC membership", member),
+        ("Public member list", member_field(o)),
         ("Verification tier", tier_badge(o.get("verification_tier"))),
         ("Last verified", esc(o.get("last_verified"))),
     ])
@@ -2113,9 +2185,7 @@ def build_org_page(ctx, o):
 {('<h2>Subsidiary and child organizations</h2>' + kids_html) if kids_html else ''}
 {equipment_block(a.equipment_by_host.get(o["org_id"], []))}
 {sites_html}
-<h2>Sources</h2>
-<p class="small muted">Organization-level sources. Last verified {esc(o.get("last_verified")) or "n/a"}; tier {esc(o.get("verification_tier")) or "n/a"}.</p>
-{source_list(o.get("sources"))}
+{evidence_section(a, "organizations", o, "organization")}
 """
     return page(ctx, o.get("legal_name") or oid, body, "../", "",
                 f"{o.get('legal_name') or oid}: Polymer Industry Atlas record.")
@@ -2152,13 +2222,6 @@ def build_eco_page(ctx, e):
     successor = a.merged_into.get(eid)
     loc = ", ".join(x for x in [e.get("city"), e.get("state")] if nonempty(x))
     county = f"{e['county']} County" if nonempty(e.get("county")) else ""
-    member = ""
-    if e.get("pic_member") == "true":
-        member = "PIC member (public member list)"
-        if safe_href(e.get("membership_source_url")):
-            member = f'<a href="{esc(e["membership_source_url"])}" rel="noopener nofollow">{member}</a>'
-        else:
-            member = esc(member)
     parent_inst = a.org_link(e["parent_institution_org_id"]) if nonempty(e.get("parent_institution_org_id")) else ""
     fields = dl([
         ("Record ID", esc(eid)), ("Status", status_badge(e.get("status"))),
@@ -2172,7 +2235,7 @@ def build_eco_page(ctx, e):
         ("Geography served", esc(vocab(e.get("geography_served")))),
         ("Industry partnership modes", esc(vocab(e.get("industry_partnership_modes")))),
         ("Technology areas", esc(vocab(e.get("technology_areas")))),
-        ("PIC membership", member),
+        ("Public member list", member_field(e)),
         ("Verification tier", tier_badge(e.get("verification_tier"))),
         ("Last verified", esc(e.get("last_verified"))),
     ])
@@ -2194,9 +2257,7 @@ def build_eco_page(ctx, e):
 {people_block(a.people_by_inst.get(eid, []), ctx)}
 {equipment_block(a.equipment_by_host.get(eid, []))}
 {sites_html}
-<h2>Sources</h2>
-<p class="small muted">Last verified {esc(e.get("last_verified")) or "n/a"}; tier {esc(e.get("verification_tier")) or "n/a"}.</p>
-{source_list(e.get("sources"))}
+{evidence_section(a, "ecosystem", e, "ecosystem record")}
 """
     return page(ctx, e.get("legal_name") or eid, body, "../", "",
                 f"{e.get('legal_name') or eid}: Polymer Industry Atlas ecosystem record.")
