@@ -290,8 +290,9 @@ class BuildSiteTest(unittest.TestCase):
             self.assertNotRegex(text, r"\bCRM\b", p.name)
             self.assertNotIn("staging working", text, p.name)
         org = self.read("orgs/ORG-000001.html")
-        self.assertIn("https://example.com/about", org)
-        self.assertIn("1 internal workflow reference omitted", org)
+        self.assertIn("https://example.com/about", org)      # the link stays
+        self.assertNotIn("conflict adjudication", org)         # the prose around it never does
+        self.assertNotIn("Company site", org)
 
     def test_tombstone_marked_with_successor_link(self):
         page = self.read("orgs/ORG-000002.html")
@@ -369,8 +370,8 @@ def make_prospect_db(path):
          "https://example.com/about (own site, accessed 2026-10-30)", "2026-10-30", "supports_A", "lane_Z99", "PRIVATE-NOTE-XYZ"),
         ("EVD-2", "organizations", "ORG-000001", "scope", 'page quote: "Email: sales.rep@example.com PH: 330-555-0142"', "own_site",
          "https://example.com/contact", "2026-10-29", "supports_A", "lane_Z99", ""),
-        ("EVD-3", "organizations", "ORG-000001", "activity", "Freeze-minted org-grain row (pass 24), from the packet design",
-         "directory", "https://example.org/directory", "2026-10-28", "supports_B", "lane_Z99", ""),
+        ("EVD-3", "organizations", "ORG-000001", "activity", "Jane Roe (President) and John Poe (Vice President) run the plant",
+         "directory", "https://example.org/directory https://www.linkedin.com/in/jane-roe", "2026-10-28", "supports_B", "lane_Z99", ""),
         ("EVD-4", "organizations", "ORG-000001", "address", "Akron address", "directory",
          "see (staging working/x.csv) for the page", "2026-10-28", "supports_B", "lane_Z99", ""),
         ("EVD-5", "sites", "SITE-000001", "existence", "Akron plant exists", "government_filing",
@@ -498,27 +499,41 @@ class ProspectsFixtureTest(unittest.TestCase):
         portage = self.read("counties/portage.html")
         self.assertRegex(portage, r'<th scope="row">100-249</th><td class="num">0</td><td class="num">1</td><td class="num">1</td>')
 
-    def test_org_page_shows_evidence_rows_not_batch_labels(self):
+    def test_org_page_shows_structured_evidence_only(self):
         org = self.read("orgs/ORG-000001.html")
-        self.assertIn('id="evidence">Evidence (3 rows for this organization; 1 more on its site rows below)', org)   # EVD-4 cites staging: row withheld
-        self.assertIn("1 evidence row citing internal workflow material omitted", org)
+        self.assertIn('id="evidence">Evidence (4 rows for this organization; 1 more on its site rows below)', org)
         for col in ("Claim", "Source class", "Strength", "Observed", "Source"):
             self.assertIn(f'<th scope="col">{col}</th>', org)
-        self.assertIn("Evil Plastics exists and operates", org)
+        self.assertIn("<td>Exists</td>", org)                               # claim type, not claim text
         self.assertIn("Company&#x27;s own site", org)
         self.assertIn("Supports tier A (primary source)", org)
-        self.assertIn('<a href="https://example.com/about" rel="noopener nofollow">https://example.com/about</a> (own site, accessed 2026-10-30)', org)
-        self.assertIn("Akron plant exists", org)                           # the site's evidence sits in its own row
-        for hidden in ("sales.rep@example.com", "330-555-0142", "pass 24", "packet design", "lane_Z99", "PRIVATE-NOTE-XYZ",
-                       "staging", "Atlas verification wave"):
+        self.assertIn('<a href="https://example.com/about" rel="noopener nofollow">https://example.com/about</a>', org)
+        self.assertIn('<a href="https://example.org/directory"', org)
+        self.assertIn("<td>2026-10-30</td>", org)
+        for hidden in ("(own site, accessed", "linkedin.com", "lane_Z99", "PRIVATE-NOTE-XYZ", "staging", "Atlas verification wave"):
             self.assertNotIn(hidden, org)
-        self.assertEqual(org.count("(detail not shown in this view; see the source)"), 2)   # EVD-2 (email), EVD-3 (workflow words)
+        self.assertIn("<td>&mdash;</td>", org)                              # EVD-4 cites no link: nothing is printed instead
         self.assertIn("Roster list (a lead, not proof)", self.read("orgs/ORG-000004.html"))
-        self.assertIn("No claim-level evidence rows are recorded", self.read("orgs/ORG-000003.html"))   # falls back to source text
+        ob = self.read("orgs/ORG-000003.html")
+        self.assertIn("No claim-level evidence rows are recorded", ob)       # falls back to source links
+        self.assertIn('href="https://example.org/k"', ob)
+        self.assertNotIn("Directory https", ob)
+
+    def test_no_evidence_claim_text_on_any_generated_page_or_csv(self):
+        details = [r["claim_detail"] for rows in self.atlas.evidence.values() for r in rows]
+        self.assertGreaterEqual(len(details), 6)
+        texts = [p.read_text(encoding="utf-8") for p in list(self.out.rglob("*.html")) + [self.out / "prospects.csv"]]
+        for d in details:
+            for t in texts:
+                self.assertNotIn(d, t)
+                self.assertNotIn(build_site.esc(d), t)
+        for private in ("Jane Roe", "John Poe", "sales.rep@example.com", "330-555-0142", "Akron plant exists", "Freeze"):
+            for t in texts:
+                self.assertNotIn(private, t)
 
     def test_prospect_evidence_count_matches_the_page(self):
         by = {r["id"]: r["evidence"] for r in build_site.prospect_rows(self.atlas)}
-        self.assertEqual(by["ORG-000001"], 3 + 1)                           # three shown org rows + one site row
+        self.assertEqual(by["ORG-000001"], 4 + 1)                           # four org rows + one site row
         self.assertEqual(by["ORG-000004"], 1)
 
     def test_street_map_and_graph_default_to_pic18(self):
@@ -608,25 +623,48 @@ class RealDataHeadlineTest(unittest.TestCase):
         self.assertLess(len(build_site.build_prospects_page(self.ctx, rows).encode()), 2_000_000)
         self.assertLess(len(build_site.prospects_csv(rows, build_site.SITE_URL).encode()), 2_000_000)
 
-    def test_evidence_shown_on_every_page_has_no_contacts_or_pipeline_words(self):
+    def test_no_evidence_claim_text_on_any_organization_page(self):
+        """Free text cannot be made safe by a pattern filter (it names people): no claim_detail may reach any page."""
+        checked = leaks = 0
+        for table, recs, build in (("organizations", self.atlas.orgs, build_site.build_org_page),
+                                   ("ecosystem", self.atlas.eco, build_site.build_eco_page)):
+            for rec in recs.values():
+                rows = list(self.atlas.evidence.get((table, rec["org_id"]), []))
+                for s in self.atlas.sites_by_org.get(rec["org_id"], []):
+                    rows += self.atlas.evidence.get(("sites", s["site_id"]), [])
+                # Fields the page shows by design can repeat a claim: an address claim repeats the site address, and many
+                # scope claims repeat the organization's one-line description. Short values (a code, a street) can also be a
+                # shown field, so only longer claim text that is not one of those shown names or descriptions is checked.
+                shown = " | ".join(str(rec.get(k) or "") for k in ("legal_name", "trade_names", "description_1line", "ultimate_parent_name"))
+                shown += " | " + " | ".join(str(x.get("site_name") or "") for x in self.atlas.sites_by_org.get(rec["org_id"], []))
+                details = {r["claim_detail"] for r in rows if r["claim_type"] != "address"
+                           and len(r["claim_detail"] or "") >= 40 and r["claim_detail"] not in shown}
+                if not details:
+                    continue
+                page = build(self.ctx, rec)
+                checked += len(details)
+                bad = [d for d in details if d in page or build_site.esc(d) in page]
+                self.assertEqual(bad, [], f"claim text on the page of {rec['org_id']}")
+                leaks += len(bad)
+        self.assertGreater(checked, 5000)                                  # the guard really ran over the evidence
+        csv_text = build_site.prospects_csv(build_site.prospect_rows(self.atlas), build_site.SITE_URL)
+        for rows in self.atlas.evidence.values():
+            for r in rows[:2]:
+                if len(r["claim_detail"] or "") >= 40:
+                    self.assertNotIn(r["claim_detail"], csv_text)
+
+    def test_evidence_tables_print_urls_not_citation_prose(self):
         shown = 0
         for table, recs in (("organizations", self.atlas.orgs), ("ecosystem", self.atlas.eco)):
             for rec in recs.values():
-                # evidence tables only: a record without evidence rows falls back to its source text, as before this change
-                parts = [build_site.evidence_section(self.atlas, table, rec, "organization")] \
-                    if build_site.evidence_view(self.atlas, table, rec["org_id"])[0] else []
-                parts += [build_site.site_evidence(self.atlas, s) for s in self.atlas.sites_by_org.get(rec["org_id"], [])
-                          if build_site.evidence_view(self.atlas, "sites", s["site_id"])[0]]
-                text = re.sub(r"https?://\S+", " ", re.sub(r"<[^>]+>", " ", " ".join(parts)))   # words inside a cited URL are the source's
-                shown += "Evidence (" in text
-                # independent of the builder's own filter; words that no legitimate source citation would contain
-                pipeline = re.compile(r"\bpass[- ]\d+|packet (design|org)|verdict|minted|\bfreeze(?![a-z])|\bstaging\b|\bleg[ _]?\d|lane[ _][A-Z]?\d|"
-                                      r"wave[- ]\d|integration (pass|journal)|see \w+_ref\b", re.I)
-                for rx, what in ((build_site.PRIVATE_RE, "email or phone"), (pipeline, "pipeline word"),
-                                 (re.compile(r"\bCRM\b"), "CRM")):
-                    m = rx.search(text)
-                    self.assertIsNone(m, f"{what} {m.group(0) if m else ''!r} on {rec['org_id']}")
-        self.assertGreater(shown, 1000)                                    # evidence really rendered, not silently skipped
+                rows = self.atlas.evidence.get((table, rec["org_id"]), [])
+                if not rows:
+                    continue
+                html = build_site.evidence_table(rows, "x")
+                shown += 1
+                self.assertNotRegex(html, r"@[A-Za-z0-9-]+\.[A-Za-z]")             # no email address in any cell or link
+                self.assertNotRegex(html, r"linkedin\.com/(in|pub)/")
+        self.assertGreater(shown, 1000)
 
 
 if __name__ == "__main__":

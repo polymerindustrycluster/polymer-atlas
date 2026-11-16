@@ -37,8 +37,10 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   filter, never read as zero or small; (2) employee band is the PIC-18 site band, else the organization's Ohio band,
   and each row says which; process, material and market follow the same rule; (3) public membership is shown only as
   "on the public member list" or "not on the public member list" (AGENTS.md section 5.1), and the page says the second is
-  not "not a member"; (4) evidence rows are shown without lane ids or notes, a row whose source cites a contact or a
-  pipeline reference is withheld, and a claim text that does is shown as "detail not shown"; (5) every page number is
+  not "not a member"; (4) organization pages show evidence only as structured fields (claim type, source class, strength,
+  observed date) and the source links found in the citation; the claim text, notes, lane ids and the prose of source
+  strings are never published, because free text cannot be made safe by a pattern filter (a Codex review found claim text
+  naming individuals, e.g. EVD-128276); (5) every page number is
   recomputed from `data/` in `scripts/test_build_site.py`.
 - **Not decided here:** whether to publish a non-member list or keep a private membership overlay (audit finding 3) stays an
   owner ruling.

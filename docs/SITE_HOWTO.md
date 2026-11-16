@@ -14,7 +14,7 @@ python3 scripts/build_site.py --rebuild-db   # rebuild the .db first, then the s
 python3 -m unittest scripts/test_build_site.py
 ```
 
-Every table page has a "Download these rows (CSV)" button (client-side, the rows and columns on screen); `data-nocsv` on a table opts out and `data-nofilter` keeps the shared text filter off a page that filters its own rows. Every page links `prospects.csv` and the latest GitHub release. Evidence text and source citations that carry an email, a phone number or a pipeline reference are withheld by `clean_source` / `clean_detail` in `build_site.py`.
+Every table page has a "Download these rows (CSV)" button (client-side, the rows and columns on screen); `data-nocsv` on a table opts out and `data-nofilter` keeps the shared text filter off a page that filters its own rows. Every page links `prospects.csv` and the latest GitHub release. Evidence and source strings are published only as structured fields and links: claim type, source class, strength, observed date and the public URLs found in the citation (`source_urls` in `build_site.py`). Claim text (`claim_detail`), notes, lane ids and the prose around a source link are never rendered, in the pages or in `prospects.csv`; `test_no_evidence_claim_text_on_any_organization_page` fails if any appears.
 
 Options: `--db PATH`, `--out DIR`, `--qcew CSV`, `--repo-url URL`. A full build takes a few seconds.
 
@@ -27,7 +27,7 @@ Options: `--db PATH`, `--out DIR`, `--qcew CSV`, `--repo-url URL`. A full build 
 | `search.html`, `orgs.json`, `search.js` | Client-side search over organization and ecosystem rows (name, trade names, city, state, ring) |
 | `counties/index.html`, `counties/<county>.html` | Ohio county index and one-pagers for every Ohio county with Atlas rows, PIC-18 first (AGENTS.md §8): site rows by ring and by 3-digit NAICS with a tier breakdown, site table, programs, ecosystem organizations, and the BLS QCEW 2023 private NAICS 326 count benchmark |
 | `prospects.html`, `prospects.js`, `prospects.csv` | PIC-18 prospects: one row per organization row with an active tier A-C site row in a PIC-18 county. Filters (county, ring, site tier, employee band, process, material, market, ownership, public member list) combine as "or" within one filter and "and" across filters; each lists its unknown count; the address bar holds the state so a view can be shared. `prospects.csv` is the whole table with separate basis columns |
-| `orgs/<record id>.html` | One page per organization and ecosystem organization: fields, sites, the evidence rows (claim, source class, strength, date, link; records with no evidence rows yet fall back to their source text), tier, last verified; tombstones are marked, with a successor link |
+| `orgs/<record id>.html` | One page per organization and ecosystem organization: fields, sites, the evidence rows (claim type, source class, strength, date, source link; records with no evidence rows yet fall back to their source links), tier, last verified; tombstones are marked, with a successor link |
 | `style.css` | The one shared stylesheet (light/dark via `prefers-color-scheme`, mobile friendly) |
 
 The only external requests the site makes are Leaflet (unpkg, version 1.9.4) and OpenStreetMap tiles, both on

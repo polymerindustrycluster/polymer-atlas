@@ -148,24 +148,25 @@ def nonempty(value):
 URL_RE = re.compile(r"https?://[^\s<>\"')\]]+")
 
 
-def linkify(text):
-    """Escape text and turn http(s) URLs into links. Nothing else becomes markup."""
-    text = "" if text is None else str(text)
-    out, pos = [], 0
-    for m in URL_RE.finditer(text):
-        url = m.group(0).rstrip(".,;:")
-        out.append(esc(text[pos:m.start()]))
-        out.append(f'<a href="{esc(url)}" rel="noopener nofollow">{esc(url)}</a>')
-        pos = m.start() + len(url)
-    out.append(esc(text[pos:]))
-    return "".join(out)
+# Free text from source strings and evidence rows (claim text, notes, citations) is never published: it can quote a scraped
+# page or name a person, and no pattern filter makes free text safe. Pages show structured fields and the source links only.
+def public_url(url):
+    """An http(s) link that is not an email address or a personal profile page."""
+    return bool(safe_href(url)) and "@" not in url and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
 
 
-# Source items that point at private/internal workflow material are not shown
-# on the public site (AGENTS.md section 5.1: the PIC CRM is never a cited
-# source; staging paths are workshop-area references). The repository CSVs
-# keep the full source text; the page says how many items were left out.
-INTERNAL_SOURCE_RE = re.compile(r"\bCRM\b|\(staging\b|\bstaging working/|\(working/[\w.-]+/", re.I)
+def source_urls(text):
+    """Distinct public URLs in a source string, in order: the only part of a citation the site shows."""
+    seen = []
+    for m in URL_RE.finditer(str(text or "")):
+        u = m.group(0).rstrip(".,;:")
+        if public_url(u) and u not in seen:
+            seen.append(u)
+    return seen
+
+
+def url_links(urls):
+    return " ".join(f'<a href="{esc(u)}" rel="noopener nofollow">{esc(u)}</a>' for u in urls)
 
 
 CRM_RE = re.compile(r"\bCRM\b")
@@ -182,16 +183,10 @@ def lede(text):
 
 
 def source_list(sources):
-    if not nonempty(sources):
-        return '<p class="muted">No source text recorded.</p>'
-    parts = [p.strip() for p in re.split(r";\s+", str(sources)) if p.strip()]
-    shown = [p for p in parts if not INTERNAL_SOURCE_RE.search(p) and not WORKFLOW_RE.search(p)]
-    hidden = len(parts) - len(shown)
-    out = '<ul class="sources">' + "".join(f"<li>{linkify(p)}</li>" for p in shown) + "</ul>" if shown else ""
-    if hidden:
-        out += (f'<p class="small muted">{hidden} internal workflow reference{"s" if hidden != 1 else ""} '
-                "omitted from this view; the repository's CSV holds the full source text.</p>")
-    return out or '<p class="muted">No source text recorded.</p>'
+    urls = source_urls(sources)
+    if not urls:
+        return '<p class="muted">No source link recorded.</p>'
+    return '<ul class="sources">' + "".join(f"<li>{url_links([u])}</li>" for u in urls) + "</ul>"
 
 
 def safe_href(url):
@@ -1322,29 +1317,6 @@ PROSPECT_FACETS = [("co", "County"), ("ring", "Ring"), ("tier", "Site tier"), ("
                    ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership"),
                    ("mem", "Public member list")]
 MEMBER_YES, MEMBER_NO = "on the public member list", "not on the public member list"   # AGENTS.md section 5.1
-# Evidence text is free text written for the repository's lanes: it can quote a scraped page (email addresses, phone
-# numbers) or name pipeline internals ("pass 24", "packet"). A row whose source cites such material is withheld; a row whose
-# claim text does is shown with the detail withheld, and its class, strength, date and source stay visible.
-PRIVATE_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\(?\b\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b")
-WORKFLOW_RE = re.compile(r"\b(integration pass|pass[- ]\d+|packets?|verdicts?|staging|lanes?[- ]?[A-Z]?\d+|wave[- ]\d+|validator|"
-                         r"owner ruling|minted|freeze|leg[ _-]?\d|corroboration leg|\w+_ref|batch|integration|design row|org design|site design|"
-                         r"verification (slice|wave)|queue [A-Z])(?![A-Za-z])", re.I)
-EVIDENCE_WITHHELD = "(detail not shown in this view; see the source)"
-
-
-# A source citation can legitimately say "agenda packet", so only unmistakable pipeline references withhold a whole row.
-SOURCE_WORKFLOW_RE = re.compile(r"\bpass[- ]\d+|integration (pass|journal)|minted|repo record|\bverdicts?\b|\bvalidator\b|"
-                                r"owner ruling|\bwave[- ]\d+|packet_|\blane[ _-]?[A-Z]?\d|\bstaging\b", re.I)
-
-
-def clean_source(text):
-    return not (INTERNAL_SOURCE_RE.search(text or "") or PRIVATE_RE.search(text or "") or SOURCE_WORKFLOW_RE.search(text or ""))
-
-
-def clean_detail(text):
-    return clean_source(text) and not WORKFLOW_RE.search(text or "")
-
-
 def known(values):
     return sorted({v for v in values if v not in UNKNOWN_VALUES})
 
@@ -1365,17 +1337,15 @@ def pic18_active_sites(sites):
 
 
 def evidence_view(a, table, rid):
-    """(shown rows, number withheld) of one record's evidence. Rows whose source cites internal material or a contact are withheld."""
-    rows = a.evidence.get((table, rid), [])
-    shown = [r for r in rows if clean_source(r.get("source_ref"))]
-    return shown, len(rows) - len(shown)
+    """One record's evidence rows (SCHEMA 4.13)."""
+    return a.evidence.get((table, rid), [])
 
 
 def org_evidence_count(a, oid):
     """Evidence rows the organization page shows: the organization's own plus those of all its site rows."""
     table = "organizations" if oid in a.orgs else "ecosystem"
-    return (len(evidence_view(a, table, oid)[0])
-            + sum(len(evidence_view(a, "sites", s["site_id"])[0]) for s in a.sites_by_org.get(oid, [])))
+    return (len(evidence_view(a, table, oid))
+            + sum(len(evidence_view(a, "sites", s["site_id"])) for s in a.sites_by_org.get(oid, [])))
 
 
 def prospect_rows(a):
@@ -1984,41 +1954,37 @@ def evidence_strength(effect):
 
 
 def evidence_table(rows, caption, nocsv=False):
-    """Claim, source class, strength, date and link for each evidence row. Never the lane id or the notes."""
+    """Claim type, source class, strength, date and source links for each evidence row. Never the claim text, lane id or notes."""
     order = list(EVIDENCE_CLAIM)
     rows = sorted(sorted(rows, key=lambda r: r.get("observed_date") or "", reverse=True),
                   key=lambda r: order.index(r["claim_type"]) if r.get("claim_type") in order else len(order))
     body = "".join(
-        f'<tr><td><strong>{esc(EVIDENCE_CLAIM.get(r.get("claim_type"), r.get("claim_type")))}:</strong> {esc(r.get("claim_detail") if clean_detail(r.get("claim_detail")) else EVIDENCE_WITHHELD)}</td>'
+        f'<tr><td>{esc(EVIDENCE_CLAIM.get(r.get("claim_type"), r.get("claim_type")))}</td>'
         f'<td>{esc(EVIDENCE_CLASS.get(r.get("source_class"), r.get("source_class")))}</td>'
         f'<td>{esc(evidence_strength(r.get("tier_effect")))}</td><td>{esc(r.get("observed_date"))}</td>'
-        f'<td>{linkify(r.get("source_ref"))}</td></tr>' for r in rows)
+        f'<td>{url_links(source_urls(r.get("source_ref"))) or "&mdash;"}</td></tr>' for r in rows)
     return table_wrap(
         f'<table{" data-nocsv" if nocsv else ""}><caption>{esc(caption)}</caption><thead><tr><th scope="col">Claim</th>'
         '<th scope="col">Source class</th><th scope="col">Strength</th><th scope="col">Observed</th><th scope="col">Source</th>'
         f'</tr></thead><tbody>{body}</tbody></table>', caption)
 
 
-def evidence_withheld_note(n):
-    return (f'<p class="small muted">{n} evidence row{"s" if n != 1 else ""} citing internal workflow material '
-            "omitted from this view; the repository's CSV holds the full evidence.</p>") if n else ""
-
-
 def evidence_section(a, table, rec, kind):
-    """The record's evidence rows; records with none yet fall back to the source text they carry."""
-    shown, hidden = evidence_view(a, table, rec["org_id"])
+    """The record's evidence rows; records with none yet fall back to the source links on the record."""
+    shown = evidence_view(a, table, rec["org_id"])
     if not shown:
         return (f'<h2 id="evidence">Sources</h2><p class="small muted">No claim-level evidence rows are recorded for this {kind} yet; '
-                f'the source text on the record is shown. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
+                f'the source links on the record are shown. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
                 f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>{source_list(rec.get("sources"))}')
-    n_sites = sum(len(evidence_view(a, "sites", x["site_id"])[0]) for x in a.sites_by_org.get(rec["org_id"], []))
+    n_sites = sum(len(evidence_view(a, "sites", x["site_id"])) for x in a.sites_by_org.get(rec["org_id"], []))
     more = f"; {fmt_int(n_sites)} more on its site rows below" if n_sites else ""
     return (f'<h2 id="evidence">Evidence ({fmt_int(len(shown))} rows for this {kind}{more})</h2>'
             '<p class="small muted">Each row is one observation: the claim, the class of source, how strongly it supports the '
-            "record's tier, when it was observed, and where. Rows from a platform category or a roster list are leads, "
+            "record's tier, when it was observed, and where. The wording of each claim stays in the repository's data; "
+            "follow the source link to check it. Rows from a platform category or a roster list are leads, "
             f'never proof of scope. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
             f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>'
-            f'{evidence_table(shown, "Evidence for " + str(rec.get("legal_name") or rec["org_id"]))}{evidence_withheld_note(hidden)}')
+            f'{evidence_table(shown, "Evidence for " + str(rec.get("legal_name") or rec["org_id"]))}')
 
 
 def member_field(rec):
@@ -2029,12 +1995,11 @@ def member_field(rec):
 
 
 def site_evidence(a, s):
-    shown, hidden = evidence_view(a, "sites", s["site_id"])
+    shown = evidence_view(a, "sites", s["site_id"])
     if not shown:
         return f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details>'
     return (f'<details class="srcs"><summary>Evidence for this site ({fmt_int(len(shown))} rows)</summary>'
-            f'{evidence_table(shown, "Evidence for " + str(s.get("site_name") or s["site_id"]), nocsv=True)}'
-            f'{evidence_withheld_note(hidden)}</details>')
+            f'{evidence_table(shown, "Evidence for " + str(s.get("site_name") or s["site_id"]), nocsv=True)}</details>')
 
 
 def site_article(s, a, open_=False):
