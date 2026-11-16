@@ -1,0 +1,17 @@
+[
+  {
+    "org_id": "ORG-001524",
+    "value": "iso_13485",
+    "url": "https://kappsurgical.com/wp-content/uploads/2024/06/MD19.4432-KAPP-Surgical-IS-EN-ISO-13485-2016-Certificate-6-10-24.pdf",
+    "sha256": "61ca42a95e5bce159124fe38d6ef1e0c70b8122e5fc3cdad89b82e31591330b6",
+    "raw_file": "../pic18-markets-certs-2/certificates/ORG-001524.pdf",
+    "text_file": "../pic18-markets-certs-2/certificates/ORG-001524.txt",
+    "quote": "I.S. EN ISO 13485:2016",
+    "identity_quote": "KAPP Surgical Instrument, Inc.",
+    "site_quote": "4919 Warrensville Center Rd. Warrensville Heights, OH 44128",
+    "number_quote": "Certificate Number: MD19.4432",
+    "expiry_quote": "Expiry Date: June 09, 2027",
+    "start": "2024-06-10",
+    "expiry": "2027-06-09"
+  }
+]
