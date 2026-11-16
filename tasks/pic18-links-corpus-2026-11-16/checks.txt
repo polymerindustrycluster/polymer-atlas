@@ -1,0 +1,3 @@
+OK — validation passed.
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base ef32b5ba73)
+export_vocab.py --check: current
