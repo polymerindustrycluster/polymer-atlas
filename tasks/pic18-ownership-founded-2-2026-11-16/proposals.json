@@ -1,17 +1,5 @@
 [
   {
-    "org_id": "ORG-000018",
-    "field": "year_founded",
-    "value": "1950",
-    "quote": "Since 1950",
-    "url": "https://theacerubber.com/",
-    "text_file": "ORG-000018/pass2-485b63780c9cac8b849dc2acbdba23723e2dd0cd25aea2bd7d0d1abe4b23fb20.txt",
-    "text_sha256": "663dd5f3b442ca9e92d1c8d1b67d0eba10e65b53785a332284d4d1fce5bc9883",
-    "raw_file": "ORG-000018/pass2-485b63780c9cac8b849dc2acbdba23723e2dd0cd25aea2bd7d0d1abe4b23fb20.html",
-    "raw_sha256": "54a15c6e27b3a03c57d9b57f3cd0b04b29392bfb7b2b4394a742326a54479c99",
-    "via": "direct"
-  },
-  {
     "org_id": "ORG-000029",
     "field": "year_founded",
     "value": "1962",
@@ -21,7 +9,8 @@
     "text_sha256": "f953c56fb8511ab0e4eec05401c9b35f6f46362cef225eb3894108cb8c5abf75",
     "raw_file": "ORG-000029/pass2-6e3475045aa628fc3be2ec09274a2f0d2df66eaf2b756a26c0c7d11d9b78aef4.html",
     "raw_sha256": "a81fb30294c2781502af9f14d5fff66ad0e5fa10b7f8a1aa1e6fa30392c3d631",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373059"
   },
   {
     "org_id": "ORG-000039",
@@ -33,19 +22,8 @@
     "text_sha256": "c3702480d48fa9f7cb47568205de7e3e8f5c5e468053050b89e08404795bd18d",
     "raw_file": "ORG-000039/pass2-bed9cb9d3f9432fadf1f404a48694e63bd85eb1e735117295d0ef1922c7778b7.html",
     "raw_sha256": "18f87be2403301fee07ea89cd2bc59a68cb7bdab147bc8ed2533fb4b6506221e",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000039",
-    "field": "year_founded",
-    "value": "1984",
-    "quote": "products in Akron, Ohio since 1984",
-    "url": "https://www.landmarkplastic.com/About",
-    "text_file": "ORG-000039/pass2-bed9cb9d3f9432fadf1f404a48694e63bd85eb1e735117295d0ef1922c7778b7.txt",
-    "text_sha256": "c3702480d48fa9f7cb47568205de7e3e8f5c5e468053050b89e08404795bd18d",
-    "raw_file": "ORG-000039/pass2-bed9cb9d3f9432fadf1f404a48694e63bd85eb1e735117295d0ef1922c7778b7.html",
-    "raw_sha256": "18f87be2403301fee07ea89cd2bc59a68cb7bdab147bc8ed2533fb4b6506221e",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373060"
   },
   {
     "org_id": "ORG-000044",
@@ -57,7 +35,8 @@
     "text_sha256": "be5abb2ce11d9498fbdff7ad16cac83d4cada10286a1c102b858ff4da1650d99",
     "raw_file": "",
     "raw_sha256": "",
-    "via": "reader"
+    "via": "reader",
+    "evidence_id": "EVD-373062"
   },
   {
     "org_id": "ORG-000058",
@@ -69,7 +48,8 @@
     "text_sha256": "9f8c45b157f43d60fff3932d4f7f6c1ead8ae098f0a9c36df8cfb8fbab0c7ea2",
     "raw_file": "",
     "raw_sha256": "",
-    "via": "reader"
+    "via": "reader",
+    "evidence_id": "EVD-373063"
   },
   {
     "org_id": "ORG-000062",
@@ -81,7 +61,8 @@
     "text_sha256": "e216fb4494b36c09cfc3ed5d27c73781c7d4b0badc1f45ca5c2b05314143cfdf",
     "raw_file": "ORG-000062/pass2-41a6f3adca06b15c47014ddf529437e1aa93899455a61f15077ba2381afc11d9.html",
     "raw_sha256": "5eb25209dcecc3fa2a84960b2ad19497a0de1e62ed19c6d33b92971d100b3130",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373064"
   },
   {
     "org_id": "ORG-000067",
@@ -93,19 +74,8 @@
     "text_sha256": "01a6ee9164c19a889502769777d5ae1b69e144783443565ee2333c02cf1397bf",
     "raw_file": "ORG-000067/pass2-37db7d10393ccc3398a5a4f1e5781ca8f3414e85b03db80739d3a3e608300765.html",
     "raw_sha256": "d23af748b727ed82734948e334bde34162dd372d714dc894314d247f0eaf607a",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000067",
-    "field": "year_founded",
-    "value": "1965",
-    "quote": "R.C Graham Co. LLC. Family owned and operated since 1965",
-    "url": "https://hand-tite.com/about-us/",
-    "text_file": "ORG-000067/pass2-37db7d10393ccc3398a5a4f1e5781ca8f3414e85b03db80739d3a3e608300765.txt",
-    "text_sha256": "01a6ee9164c19a889502769777d5ae1b69e144783443565ee2333c02cf1397bf",
-    "raw_file": "ORG-000067/pass2-37db7d10393ccc3398a5a4f1e5781ca8f3414e85b03db80739d3a3e608300765.html",
-    "raw_sha256": "d23af748b727ed82734948e334bde34162dd372d714dc894314d247f0eaf607a",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373065"
   },
   {
     "org_id": "ORG-000071",
@@ -117,7 +87,8 @@
     "text_sha256": "e257408153ec82d2f66dd779aa9a412f0ef71feb18c4d7fca12725eef20efb41",
     "raw_file": "ORG-000071/pass2-8e113df6996f84a63b243ddad3a64eaba66c9abab025d40369f5019ae49d498f.html",
     "raw_sha256": "0ea0bb723847a385ba7da0404c24d2caa45a84338ca8fe18e2b4080fb90bf139",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373067"
   },
   {
     "org_id": "ORG-000073",
@@ -129,7 +100,8 @@
     "text_sha256": "e15962ce49d124eada77c493af5afbed60d1749cd230fc639ca0585599a5923c",
     "raw_file": "",
     "raw_sha256": "",
-    "via": "reader"
+    "via": "reader",
+    "evidence_id": "EVD-373068"
   },
   {
     "org_id": "ORG-000073",
@@ -141,7 +113,8 @@
     "text_sha256": "e15962ce49d124eada77c493af5afbed60d1749cd230fc639ca0585599a5923c",
     "raw_file": "",
     "raw_sha256": "",
-    "via": "reader"
+    "via": "reader",
+    "evidence_id": "EVD-373069"
   },
   {
     "org_id": "ORG-000083",
@@ -153,19 +126,8 @@
     "text_sha256": "8536aed963ea85d20a85238feda34279ba88de9f84c01018b6a05df3da833044",
     "raw_file": "ORG-000083/pass2-f6573a8e16b59a67d7b34040f526f5ddbc0ef1c3fbac093a7e3c90e249e5d4e2.html",
     "raw_sha256": "1324b06e9bfea1ce048c7a5ae293aa18f053f0fcbcabbdb8b9ddabdf26aa2eab",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000086",
-    "field": "year_founded",
-    "value": "1953",
-    "quote": "The Best Custom Molded Rubber Manufacturer Since 1953",
-    "url": "https://www.rubberassociates.com/about-us",
-    "text_file": "ORG-000086/pass2-290a3b69a5792f66b634a432c1e206ea220a65e03981edbe6230f68959a73385.txt",
-    "text_sha256": "c7058316703d99b8c53b10c7b4031c83d93ff18f3dcdcecef92ecf87c7a7b732",
-    "raw_file": "ORG-000086/pass2-290a3b69a5792f66b634a432c1e206ea220a65e03981edbe6230f68959a73385.html",
-    "raw_sha256": "da2633b120808cbede07bc6d379d756c35caa617890ae8966aa299b9c17e6c7f",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373070"
   },
   {
     "org_id": "ORG-000112",
@@ -177,7 +139,8 @@
     "text_sha256": "3063b18751e84fba08acbf80df8dbb6828ad514a3175317711f2a448c8922c2c",
     "raw_file": "ORG-000112/pass2-2f39c6d05927410651b478794042ec8bcd1056bcae4fb735a3217da460880d61.html",
     "raw_sha256": "c6e1f0e28bba275e92a1f927e6755cbd573d2e3971ebf4298eaa4f2ff462012f",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373072"
   },
   {
     "org_id": "ORG-000117",
@@ -189,7 +152,8 @@
     "text_sha256": "874f44c088394a15b20cd98df5541bbfc928b293876609965f09c502213cecea",
     "raw_file": "ORG-000117/pass2-e536187b2afca6d5820159a168ed81c8be2c2317ceb6eff9af6fe150d459be25.html",
     "raw_sha256": "873500aaa191604c50906868d6014b5518cdac964c6bec5b22b31c67f3ac3c89",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373073"
   },
   {
     "org_id": "ORG-000130",
@@ -201,7 +165,8 @@
     "text_sha256": "7612d6e2f913f8cef3d6b0b17feda6d4751db6ba164eb853e1d47f1227900334",
     "raw_file": "ORG-000130/pass2-886afb422c231c80664caf59400b50009e6c82945d9831dc8cc7cf4e4d1e2a45.html",
     "raw_sha256": "abba6403dff71a9891c4bc3eb6fb64edf66ba784870bffd79b3f92425fe0d6c0",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373074"
   },
   {
     "org_id": "ORG-000134",
@@ -213,19 +178,8 @@
     "text_sha256": "ca4a844602e49f1aa7ace14e13df57e3b84dce0c22e152304e408f57a24b3500",
     "raw_file": "ORG-000134/pass2-c3d61a7ba75677e651263a77157acd783c087fa491fc59013d9d5fd9ee9bc370.html",
     "raw_sha256": "d4e0d610877560b8f092bab95ca66f39ed9db64abefa58b26c14e3d4b83f3076",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000150",
-    "field": "year_founded",
-    "value": "1945",
-    "quote": "In business since 1945, NSL",
-    "url": "https://www.nslanalytical.com/about",
-    "text_file": "ORG-000150/pass2-1d7119998eda63a8976c61ab2d84b460015efd22a0f6ddda96c4fb1387609c3a.txt",
-    "text_sha256": "91326d5f4d8f8f678590c00e45456f40c7d39bbc000497673635f4ad0630942e",
-    "raw_file": "ORG-000150/pass2-1d7119998eda63a8976c61ab2d84b460015efd22a0f6ddda96c4fb1387609c3a.html",
-    "raw_sha256": "a49d39517e6f5e2a0565904dc04b7db352ddd853c4907454b46d55816fb9f1b3",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373075"
   },
   {
     "org_id": "ORG-000156",
@@ -237,19 +191,8 @@
     "text_sha256": "d0a83c8043d97a0b0ed5103ae54d8dbb95518046aa1062f88a9f67817f5c1670",
     "raw_file": "ORG-000156/pass2-954e68eaa41e756a652d00ba23a69c6280997b84f9fffdfaec8720918f89fe61.html",
     "raw_sha256": "78cc3fe2d06a83fcc5fd4647802579f354ec79478ddecaf30befea494da3285a",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000172",
-    "field": "year_founded",
-    "value": "1971",
-    "quote": "Since 1971, Graphic Arts Rubber has provided rubber compounds",
-    "url": "https://www.graphicartsrubber.com/",
-    "text_file": "ORG-000172/pass2-6c2d0c039c555b8cc38e7fd80d6214d0b611de5c4372ca0107c43dc4c45ec221.txt",
-    "text_sha256": "5cb7add373d18ccc033dda8ea9e7f2fcf0dd1e0999540b0608c6d6d8056c8c19",
-    "raw_file": "ORG-000172/pass2-6c2d0c039c555b8cc38e7fd80d6214d0b611de5c4372ca0107c43dc4c45ec221.html",
-    "raw_sha256": "aad4cfcc9523f5771e0cc27f2dfe8b45355dabc1f8a8cdd3cb2397fb32790b62",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373077"
   },
   {
     "org_id": "ORG-000182",
@@ -261,7 +204,8 @@
     "text_sha256": "e675e27ff6c84825d16c03d09380f58ac86881e54687ac18fa6d807fbc588f3c",
     "raw_file": "ORG-000182/pass2-76fc6ff2bef90af3959f0100e75ad4f575a83d89ac4cb4e8d706195d7cfff5cd.html",
     "raw_sha256": "6cc0d602cf136c34de695c5d2d1383551b5dd2faf92270f5cd40fd99aefaf6b2",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373079"
   },
   {
     "org_id": "ORG-000191",
@@ -273,7 +217,8 @@
     "text_sha256": "280490f9126c59c6d80a20381f5c2b33dcd8bf52ede97c8d9b2825bb09fa2e4e",
     "raw_file": "ORG-000191/pass2-4c91de970d3c03f1b8425b00de1a4ca9cd1508d6290caa4d05a100d1ee5b8bf3.html",
     "raw_sha256": "e74ef96be365c73bd15713f24031dbccd3bb2e8b0058ee238504f54b90b937e0",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373080"
   },
   {
     "org_id": "ORG-000193",
@@ -285,7 +230,8 @@
     "text_sha256": "f66cff109f1522b13da8f2ef3f186f1c9855b13fa034af97b90e0d896751fbd6",
     "raw_file": "ORG-000193/pass2-00d8775a5cc2949fae4c81adcbb94af2fb41d17b5352bb3c6adf0d4853749a5d.html",
     "raw_sha256": "4311bc23fcdbf63269a62c0451560b85f18420e9154a02447956f286f1821ee1",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373081"
   },
   {
     "org_id": "ORG-000209",
@@ -297,19 +243,8 @@
     "text_sha256": "2096c48f05b719d5797efb502155fa082e91ec78944d32673a99f99a269f65d3",
     "raw_file": "ORG-000209/pass2-38f35080edc1800dc5e8183001c75c7114ee9604b3ae47d635e095d0e12f5bfc.html",
     "raw_sha256": "df9e0714b3ef4045684cea8617e66961170b41d891bb20f277d49aa90e85b15e",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000229",
-    "field": "year_founded",
-    "value": "1990",
-    "quote": "Since 1990, American Molded Plastic, Inc.",
-    "url": "https://americanmoldedplastic.com/about-us.htm",
-    "text_file": "ORG-000229/pass2-f733c8ac69c95ea3a5655169da5223389b1ac0dad31a03af8f4cd734540356cb.txt",
-    "text_sha256": "c824222715e165d181477fce85a34f455620a26e0127bdef9967f4d57f8cc268",
-    "raw_file": "ORG-000229/pass2-f733c8ac69c95ea3a5655169da5223389b1ac0dad31a03af8f4cd734540356cb.html",
-    "raw_sha256": "0b17a742dce8977c9780efb695d5c7604962a31534c358750ce1047d70c0605c",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373082"
   },
   {
     "org_id": "ORG-000247",
@@ -321,7 +256,8 @@
     "text_sha256": "c1670367d778c342a3db2754c11d6c385d26c8481dbb52d9a08bdfb00b8b991e",
     "raw_file": "ORG-000247/pass2-d111b3fc281ad3692bcfcd3121de8383d153bc4ac82ab932f634e41442a2f3a8.html",
     "raw_sha256": "e1db2cbd27ec29481ebb44bf5dd1d4da278c464098351a09f859fd826db61886",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373084"
   },
   {
     "org_id": "ORG-000290",
@@ -333,7 +269,8 @@
     "text_sha256": "6d46169a599d369e6f3f06c0d203083c60fbc24e8e60439bb5c795e96648d8f4",
     "raw_file": "ORG-000290/pass2-b68e89fb854352c5a9e6aace774512cbd6d517aaea228f3db79f492ba5edc7a4.html",
     "raw_sha256": "e322cc8661a627d6d16122cf348e2f51520c651c333107a38ad54487ef7926d1",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373085"
   },
   {
     "org_id": "ORG-000291",
@@ -345,19 +282,8 @@
     "text_sha256": "6bb5d4cc078e49a62816813268871eb1f0da616f769712d61d73ca9cd8763d70",
     "raw_file": "ORG-000291/pass2-c86e4fda3de8a4275964b55a4709159f6d1202e5ba5ad3f3977c212588f9ef54.html",
     "raw_sha256": "8933c6eb0530103b54b25d9aac2f115aed0609d1af628afe8ec4959ea59a8ed6",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000291",
-    "field": "year_founded",
-    "value": "1983",
-    "quote": "Family-owned since 1983, serving customers nationwide",
-    "url": "https://creativepackagingconcepts.com/",
-    "text_file": "ORG-000291/pass2-4e81c3d35363a6db5cad0db269576535db755bdffa044b9610fd73c28b3a1da6.txt",
-    "text_sha256": "b45dd083d327509dbfc1aff524d9d60f136c968a6709850c3c3be8ee1993c851",
-    "raw_file": "ORG-000291/pass2-4e81c3d35363a6db5cad0db269576535db755bdffa044b9610fd73c28b3a1da6.html",
-    "raw_sha256": "b397aa81387a9cc3265f9510135dcf6c6453635530767bb182d9f7e0e5ea50da",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373086"
   },
   {
     "org_id": "ORG-000318",
@@ -369,7 +295,8 @@
     "text_sha256": "07c8eedaeeb7b3299766276bfa129226225e802885be1fedf109f47ddb429870",
     "raw_file": "ORG-000318/pass2-e4832b129bd6f8081b5e7c5472e2e6511089acd48a98f1a4dfe7d3c6c6538062.html",
     "raw_sha256": "ae0a1027c71653217a4a348ee3e5cf29674cf273a655c54bc2b66e51d166b7ff",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373088"
   },
   {
     "org_id": "ORG-000321",
@@ -381,7 +308,8 @@
     "text_sha256": "43083121c660bc76e7a05d2938eedfc7c574b24a63b559adf342c5d276d629ce",
     "raw_file": "ORG-000321/pass2-d27566b1ad8fe39a0e81e827ad7722bda6d3bc48b25ffc405970201fab33ff59.html",
     "raw_sha256": "33f5b29f29d016fd5ac736513eb08fe6ea139923a7cc8458ca1be6b892260f29",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373089"
   },
   {
     "org_id": "ORG-000327",
@@ -393,7 +321,8 @@
     "text_sha256": "11826452cf4b1ba3f57851e64ee0a22739c420aa18c904b15af6df06377f4d98",
     "raw_file": "ORG-000327/pass2-03fc1a4c6534b75e0e8e99888d11b4a891a0a38c0c78315192ac5a7829326200.html",
     "raw_sha256": "a16cb0bbbac540e8bb402e50930851b7be7ba7b02f951e3d457b9548a6c4d65f",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373090"
   },
   {
     "org_id": "ORG-000355",
@@ -405,7 +334,8 @@
     "text_sha256": "aaf0ae82186d3474a8d61f30286b071c0666f42be1ba5464b9d8cabc17b63399",
     "raw_file": "ORG-000355/pass2-bc1909e0e07194bb2b974591b4d5d435eb62cbfa2707554977706dc1c40d5f1f.html",
     "raw_sha256": "000512d639ee22780181b9007ddd2c004fbc608de52f412f473480f7ec915d4a",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373091"
   },
   {
     "org_id": "ORG-000377",
@@ -417,7 +347,8 @@
     "text_sha256": "a1db4af980e36ecfb965fc88298fe1139570fc50ef5feea3839529f0075d644a",
     "raw_file": "ORG-000377/pass2-c68ff0a5f1229f958ed45be4671f6e136252924596f6a675e9cb945c8cc19d48.html",
     "raw_sha256": "a48ee385a92537a21f6b1ce02060a7f2be4270d5debb53da3f7c0bbc2097124c",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373092"
   },
   {
     "org_id": "ORG-000390",
@@ -429,7 +360,8 @@
     "text_sha256": "7beb439e0c5d7f330d2cabd16c8c47198c23680a9088fc9671b6f7bf2bc3c2f8",
     "raw_file": "ORG-000390/pass2-1e05df7fcea1a933b4cdf76f2411fec90379587dacd152486677b196534cd199.html",
     "raw_sha256": "185cdf61d6d45e75d0721eaa812ff76fcdd8eaefe0f6d6630c8abec85f961b21",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373093"
   },
   {
     "org_id": "ORG-000390",
@@ -441,19 +373,8 @@
     "text_sha256": "7beb439e0c5d7f330d2cabd16c8c47198c23680a9088fc9671b6f7bf2bc3c2f8",
     "raw_file": "ORG-000390/pass2-1e05df7fcea1a933b4cdf76f2411fec90379587dacd152486677b196534cd199.html",
     "raw_sha256": "185cdf61d6d45e75d0721eaa812ff76fcdd8eaefe0f6d6630c8abec85f961b21",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000392",
-    "field": "year_founded",
-    "value": "1948",
-    "quote": "Jaco has manufactured precision custom plastic parts since 1948",
-    "url": "https://jacoproducts.com/services/",
-    "text_file": "ORG-000392/pass2-aecc4995b6e3ffee0eba4631ecd0393501080cf7e7d3d360e56ad3ead3277132.txt",
-    "text_sha256": "7fc891d5fefc1115d6cbfd1e8e724bae818cbbea029233bd1b193803fbe401bd",
-    "raw_file": "ORG-000392/pass2-aecc4995b6e3ffee0eba4631ecd0393501080cf7e7d3d360e56ad3ead3277132.html",
-    "raw_sha256": "db286ffb1653166d2126c522666cc91f375e8e4786a80ea412d0cf79f3933788",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373094"
   },
   {
     "org_id": "ORG-000425",
@@ -465,7 +386,8 @@
     "text_sha256": "1e25443dcf3ea88b5b2fde8629f54b06721fcb06bfe4254a12f99ce7e7e04a96",
     "raw_file": "ORG-000425/pass2-d8d048bc4fae0eb2d2d39bbcfb6e162798d1fb5907420b572be34588e72d5bb3.html",
     "raw_sha256": "55b14346ddd1533d9346d93a5fbd3d3e9fdf2ebf35d121fdaf1acc98f1e8c31f",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373096"
   },
   {
     "org_id": "ORG-000464",
@@ -477,7 +399,8 @@
     "text_sha256": "a7cf30d3ebe14921eb29f52589a69ff0d676f39430f2e91a78f3df02092f4691",
     "raw_file": "ORG-000464/pass2-436a21eee1702833740b714ec52fd5815a82b54df86b389124596442446068e0.html",
     "raw_sha256": "9adcddf0ee9f461af2b5515d362150048ad89c22b57b0e64597d55d53aff6d26",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373097"
   },
   {
     "org_id": "ORG-000485",
@@ -489,7 +412,8 @@
     "text_sha256": "7c6aeaa28509cdd2452c50be83ae5384c8328c8fba67397819a627f2ca9ca198",
     "raw_file": "ORG-000485/pass2-268422d5265e32dfc42cd2d0f03e9604b857c93812cc311dd5bc6e674e7429f1.html",
     "raw_sha256": "fe1c82fb3008caeecfa5f8a8e10c67709c4759c7ee31af1710ed781f93f1e145",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373098"
   },
   {
     "org_id": "ORG-000488",
@@ -501,19 +425,8 @@
     "text_sha256": "c2f2a1469f0ebf077a240d71fce83cfe3cbceda5357c1ba4d4c7d20a87135ad2",
     "raw_file": "ORG-000488/pass2-da2fd19e26a15eb7ff845b5c58346e83c4895e42d41f5650bf32cb59c837ab60.html",
     "raw_sha256": "bc853bff5ef7387058f66d86aff43c5e4d8959a0401fdfe58d14e0bdfbe3e383",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000488",
-    "field": "year_founded",
-    "value": "1991",
-    "quote": "Family-Owned U.S. Manufacturer since 1991",
-    "url": "https://pharmacylite.com/",
-    "text_file": "ORG-000488/pass2-da2fd19e26a15eb7ff845b5c58346e83c4895e42d41f5650bf32cb59c837ab60.txt",
-    "text_sha256": "c2f2a1469f0ebf077a240d71fce83cfe3cbceda5357c1ba4d4c7d20a87135ad2",
-    "raw_file": "ORG-000488/pass2-da2fd19e26a15eb7ff845b5c58346e83c4895e42d41f5650bf32cb59c837ab60.html",
-    "raw_sha256": "bc853bff5ef7387058f66d86aff43c5e4d8959a0401fdfe58d14e0bdfbe3e383",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373099"
   },
   {
     "org_id": "ORG-000496",
@@ -525,7 +438,8 @@
     "text_sha256": "d027a131d44668101e5d60246552512096b22b4a5231971b3e69cff2cff37c9c",
     "raw_file": "ORG-000496/pass2-dc57f6ef805ae1c821c3cbe9ab5258dec868fc8be42e42c9dc79313e871809d0.html",
     "raw_sha256": "c912885bebc3e21d0788108e766a05255b8f93e8f0db3b17994ec62db1f993e6",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373101"
   },
   {
     "org_id": "ORG-000549",
@@ -537,7 +451,8 @@
     "text_sha256": "deedfca54ea279b8856c26fcc96d9b8df87751b94d197f108c91782ead81655b",
     "raw_file": "ORG-000549/pass2-04d46d9859a5894bd1acc44314ddc1b64af10d52f862bd3b6a6af87d0d376f9b.html",
     "raw_sha256": "e61c3fc9a7e1f5efb1458e17dd2e2c9d232fef9600d0f8e78ef7daa62418575b",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373102"
   },
   {
     "org_id": "ORG-000549",
@@ -549,7 +464,8 @@
     "text_sha256": "deedfca54ea279b8856c26fcc96d9b8df87751b94d197f108c91782ead81655b",
     "raw_file": "ORG-000549/pass2-04d46d9859a5894bd1acc44314ddc1b64af10d52f862bd3b6a6af87d0d376f9b.html",
     "raw_sha256": "e61c3fc9a7e1f5efb1458e17dd2e2c9d232fef9600d0f8e78ef7daa62418575b",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373103"
   },
   {
     "org_id": "ORG-000564",
@@ -561,7 +477,8 @@
     "text_sha256": "48b7197c916aae33e0e896f798b68c258e43041edfd045d1ac1515f7cbe4f288",
     "raw_file": "ORG-000564/pass2-239438bf4cc4f0403b1cbc2bf5759eb7262971267be7df6a90179153e964544b.html",
     "raw_sha256": "f32b0c8034485523bee47590652266c6b066082400d88352fabd685a9a511d47",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373104"
   },
   {
     "org_id": "ORG-000588",
@@ -573,7 +490,8 @@
     "text_sha256": "2532f812c0687f1638b150c58fa62ab98cbb929f6c41437762d47b88f84bbf3c",
     "raw_file": "ORG-000588/pass2-64f929e79975c497b348808804f2e2b1916a46ab2495855ab334d764bb76237d.html",
     "raw_sha256": "b0d8f67f44a5e806b55a7d131d86a4127b1335787763987e91c4690b0616ab61",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373105"
   },
   {
     "org_id": "ORG-000589",
@@ -585,7 +503,8 @@
     "text_sha256": "1c99139b0cf296cd1674c4ce5caed434beaa9709cba174222644f79cc01dd176",
     "raw_file": "ORG-000589/pass2-0c242ce4d87f0a367a27fb22cfd3c78bb52d61ee80edac0b26cb06d6dbb901fc.html",
     "raw_sha256": "5d2c3ffd09b55b16e6f2ac03381abcc962e14a7d85aa5b9f560b171886f1b5e6",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373106"
   },
   {
     "org_id": "ORG-000617",
@@ -597,7 +516,8 @@
     "text_sha256": "f9d88a2acd3921ecbc4824a5e47e345d1dd82c4c1fdcfe45d170d08e6038de7f",
     "raw_file": "ORG-000617/pass2-cb65c36a2b3a7df2e2a269878ad6fe0ba750e8bb7649034ddce5cb960d3dc82c.html",
     "raw_sha256": "bb52ba08cfd9024c2c86132b671056b9eed6711f661c4c5380194fcabc5d6619",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373107"
   },
   {
     "org_id": "ORG-000617",
@@ -609,7 +529,8 @@
     "text_sha256": "f9d88a2acd3921ecbc4824a5e47e345d1dd82c4c1fdcfe45d170d08e6038de7f",
     "raw_file": "ORG-000617/pass2-cb65c36a2b3a7df2e2a269878ad6fe0ba750e8bb7649034ddce5cb960d3dc82c.html",
     "raw_sha256": "bb52ba08cfd9024c2c86132b671056b9eed6711f661c4c5380194fcabc5d6619",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373108"
   },
   {
     "org_id": "ORG-000666",
@@ -621,7 +542,8 @@
     "text_sha256": "7aa1e1334d48ea2adf41b10755a079a02701885dc1f2a4e1d86d50d97a806f89",
     "raw_file": "ORG-000666/pass2-cb879bd38e34a678b539fadf7bf6969dbda8d2ae934b6fb238d82bab619d9222.html",
     "raw_sha256": "23dd11e8307a3e313e17f63482c2e93f87c8ae13e6b7d8d279396abd6bc4c521",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373109"
   },
   {
     "org_id": "ORG-000666",
@@ -633,19 +555,8 @@
     "text_sha256": "7aa1e1334d48ea2adf41b10755a079a02701885dc1f2a4e1d86d50d97a806f89",
     "raw_file": "ORG-000666/pass2-cb879bd38e34a678b539fadf7bf6969dbda8d2ae934b6fb238d82bab619d9222.html",
     "raw_sha256": "23dd11e8307a3e313e17f63482c2e93f87c8ae13e6b7d8d279396abd6bc4c521",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000799",
-    "field": "year_founded",
-    "value": "1990",
-    "quote": "Since 1990, Dover High-Performance Plastics",
-    "url": "https://dhpp.net/about-us/",
-    "text_file": "ORG-000799/pass2-a1726ed0f8c41d82c3fd5a431ed26425068de94b4189f9211879cecdaa0f5baf.txt",
-    "text_sha256": "2819731b52972f02ef51ec0afd7b816250523d9bc89342cd6bf63aa9a76ad438",
-    "raw_file": "ORG-000799/pass2-a1726ed0f8c41d82c3fd5a431ed26425068de94b4189f9211879cecdaa0f5baf.html",
-    "raw_sha256": "3cd3894bf9661e84c62823c48a119242a3ce83d44487919178538af74bff2d05",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373110"
   },
   {
     "org_id": "ORG-000813",
@@ -657,7 +568,8 @@
     "text_sha256": "e8aa7de5ae8a372fda9e2360f4104a715e82286ef7435e2669d194ab6e5f815b",
     "raw_file": "ORG-000813/pass2-29fa36ffec6177a240157615cbc86c281b1ed790376bf7333437315a9b4dbbd6.html",
     "raw_sha256": "b5e0224be94673a59c7478d5459e80057f693394e02cbb8d49ccaaa0ae175f94",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373112"
   },
   {
     "org_id": "ORG-000813",
@@ -669,19 +581,8 @@
     "text_sha256": "a8a4cf5439a8dd78a46417b002664306de78b85f6df0257e9a5afc6c648e1e24",
     "raw_file": "ORG-000813/pass2-ce57bf3d96feea16b3c119dea9ddae407fe114bacfcbd749d55630f24049ea8f.html",
     "raw_sha256": "918f51cfc7ff536d16476e545fe02b0d485b30415151fe6b89e61ba5a133e2f6",
-    "via": "direct"
-  },
-  {
-    "org_id": "ORG-000883",
-    "field": "year_founded",
-    "value": "1971",
-    "quote": "Hub Plastics has been building better bottles since 1971",
-    "url": "https://hubplastics.com/about-us/",
-    "text_file": "ORG-000883/pass2-9a651a8ef82db3c8a39c3530c7a2e3e3969e9ae1d5959736c1323cea0c6d0d47.txt",
-    "text_sha256": "4b2ed7ba516f6dcfb6169a6246a335ec8e156ef08a8efb67686fb28cc3111e13",
-    "raw_file": "ORG-000883/pass2-9a651a8ef82db3c8a39c3530c7a2e3e3969e9ae1d5959736c1323cea0c6d0d47.html",
-    "raw_sha256": "b122845095fd4413799990890594e1a916e5b714a107e28159d5f57ed46e723a",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373113"
   },
   {
     "org_id": "ORG-001393",
@@ -693,7 +594,8 @@
     "text_sha256": "a7555659515305814970822f4f447ba02a9beab0025185298abebc42f70419c0",
     "raw_file": "",
     "raw_sha256": "",
-    "via": "reader"
+    "via": "reader",
+    "evidence_id": "EVD-373115"
   },
   {
     "org_id": "ORG-001436",
@@ -705,7 +607,8 @@
     "text_sha256": "9b9cf88dd5166abd6c960cd0db37f7f09cffc98bdc5da84c613b51842912070e",
     "raw_file": "ORG-001436/pass2-13b05e09fc59a5e597cbb04a94ac1a9b2a38031edbb4ed9cf15034a243e12479.html",
     "raw_sha256": "94c0c278c080b925b1513f54bcf6b9be38ea54f7a0870b7cf44d33309b3369d3",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373116"
   },
   {
     "org_id": "ORG-001460",
@@ -717,7 +620,8 @@
     "text_sha256": "905f50fe124aebcf08aa85f4fcc6d6ddc3ffe30c1946b6017b79ce38f0679be3",
     "raw_file": "ORG-001460/pass2-1daefb6ce0a3d86ef1d36342984f8eb8b6d82412d03ad8149aebf4fb5333abc8.html",
     "raw_sha256": "1fd605009060fcef59c4c9f029d0cd8d9064e24602f66f4f7452f51d8c8e2520",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373117"
   },
   {
     "org_id": "ORG-001526",
@@ -729,7 +633,8 @@
     "text_sha256": "2fb0dd8676919a792bc51af7d670c818365f62879cacfd137af650a1c8d455a1",
     "raw_file": "ORG-001526/pass2-a7f131c2d4368c9b867f76cf2205416d5265bdd4bf9a10985981be16baab95e7.html",
     "raw_sha256": "32a06c0e49d3fac0707ef26ee4a6aab359a150a66e0c28df49f93ff2640a7b67",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373118"
   },
   {
     "org_id": "ORG-001528",
@@ -741,7 +646,8 @@
     "text_sha256": "a413dc7cc5ce82d510da699b78f3fda4ff7471a488be36a7f8e75f3dec62eece",
     "raw_file": "ORG-001528/pass2-43b8dc252eee3b00245a40a34d440246d585ee0a4dd9c8f63f554e46a10dc040.html",
     "raw_sha256": "59fb6621e6841ec0272bc302187dd85a8741be6ae4cb923934b30bfe682cfcd4",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373119"
   },
   {
     "org_id": "ORG-001528",
@@ -753,7 +659,8 @@
     "text_sha256": "ec091740af58ee83cba02e554773041e125d86e006b0a145a5d3cc8371a62a9a",
     "raw_file": "ORG-001528/pass2-a3f4c9608b8b3e46bfe45f6a721f39f562a9dfaa10b5b53c64fd0b2996ad47b7.html",
     "raw_sha256": "8aa1a332427636476205929f64f2cd9cf45603ac2da85676acf420034cf967cc",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373120"
   },
   {
     "org_id": "ORG-001556",
@@ -765,7 +672,8 @@
     "text_sha256": "03ec1dc1d9d96b027458023fe55e47ea935520adc95ab329209f884fa31ddede",
     "raw_file": "ORG-001556/pass2-a612348456aa88ffb822409ecb25a5275c76e0f806b910a230a3a21ffcec9563.html",
     "raw_sha256": "220bb2c406648de789c7ffd8bfc2f265e45717a118d085cc5d4593c520a9dc6c",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373121"
   },
   {
     "org_id": "ORG-001565",
@@ -777,7 +685,8 @@
     "text_sha256": "e3dee85c1919c903e355ec9d05f09be1958a19d13e9d15a069a4212af48fcc10",
     "raw_file": "ORG-001565/pass2-b4c409d484b7a8131cc361b8a3a0c4856ba0c7fb094769da4d0dbbe021cf6319.html",
     "raw_sha256": "14bc19a679ca99df4178bfe8718966c7fab8ca7b854fef6907abc5d62911cb2d",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373122"
   },
   {
     "org_id": "ORG-001600",
@@ -789,7 +698,8 @@
     "text_sha256": "7d1147654a718c75aa48087fc7881c7e9f44111cb5c599b64d842560e3e329d7",
     "raw_file": "ORG-001600/pass2-6439481fa98b7f1404cadbfa307183855e6c70c89b5c083858d58df5e894542b.html",
     "raw_sha256": "3edc9229bea29c9d15cb77d4f16ab579f79b4388f2e4416eba2ecc9996e278fa",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373123"
   },
   {
     "org_id": "ORG-001602",
@@ -801,7 +711,8 @@
     "text_sha256": "484cbd9bf7fcda5e154e5b3090369d55d3a3706dba1a37cc87814f9cc21c7a48",
     "raw_file": "ORG-001602/pass2-7c49fcaebe7551b850789f399505b153f271145e15c0dd310a861f9e8b2842c9.html",
     "raw_sha256": "df3b7e46c24f174c7dc70a8ce57b525efcdc9509b50b6e6441d2b51866e9508d",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373124"
   },
   {
     "org_id": "ORG-001602",
@@ -813,7 +724,8 @@
     "text_sha256": "484cbd9bf7fcda5e154e5b3090369d55d3a3706dba1a37cc87814f9cc21c7a48",
     "raw_file": "ORG-001602/pass2-7c49fcaebe7551b850789f399505b153f271145e15c0dd310a861f9e8b2842c9.html",
     "raw_sha256": "df3b7e46c24f174c7dc70a8ce57b525efcdc9509b50b6e6441d2b51866e9508d",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373125"
   },
   {
     "org_id": "ORG-001624",
@@ -825,7 +737,8 @@
     "text_sha256": "3397bcd0f5ae2f3f56548d036026a6f89ef5d713e567fd3f1a4357e246ec9143",
     "raw_file": "ORG-001624/pass2-cb51914c74fb933fa9706f51d2697af1f2cfeff315c3f3643d08df0f6bc68376.html",
     "raw_sha256": "c71dd514b8b1d17657a9d04e15e130bcafe934f12d7800cb857faada70014d36",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373126"
   },
   {
     "org_id": "ORG-001635",
@@ -837,7 +750,8 @@
     "text_sha256": "bc15e3edce60fa1575cdd00ed8023d62542737171a954dfefa35213e5f53a4fd",
     "raw_file": "ORG-001635/pass2-b878f16f54c19357fc44eb8d7638016b52d06b04fe50f4da0da1f65deed47189.html",
     "raw_sha256": "c00964ffedcc2e48ae38a5de523e2da28b15596107a3fd640ef727ed460082b9",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373127"
   },
   {
     "org_id": "ORG-001655",
@@ -849,7 +763,8 @@
     "text_sha256": "b93f0cb22c27b6d0c54f2341b3a5573a39e6903369d15e8ff9d329874e801bed",
     "raw_file": "ORG-001655/pass2-b5b54d305282e18caf7fdba9842d770fe6a84011499ef38f7cf7626ce33629fa.html",
     "raw_sha256": "eb8550e8b68aa2b446b92234ddddfb62eac2df83cf56101f3ca259f0525a41bf",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373128"
   },
   {
     "org_id": "ORG-001694",
@@ -861,7 +776,8 @@
     "text_sha256": "5bb54f467ff3f33d05311efb7194f2a6f26a44353d9d48950e54ed361033e868",
     "raw_file": "ORG-001694/pass2-d42abda383cef6b733fda0ecb183665376be74cda7e193f49274785218a61f02.html",
     "raw_sha256": "dc1be583adc1c3dbf6e9470b3a8fe697ff66a67899d9b04a62f7459fde8e37e0",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373129"
   },
   {
     "org_id": "ORG-001707",
@@ -873,7 +789,8 @@
     "text_sha256": "8de288f6971588ee8dbdafab295cf2a280086bf9dd2c075a9f73bfab2f08d5eb",
     "raw_file": "ORG-001707/pass2-76913415f1462af3ec7b18167945b0ef4c96859679ecb30d46671cfc0dd4c89b.html",
     "raw_sha256": "fe5c169109f0015e942f541bdef2deac2a134f14b236618451f1072200047005",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373130"
   },
   {
     "org_id": "ORG-001714",
@@ -885,7 +802,8 @@
     "text_sha256": "ceea34ae54e4aa44106de1f9ce911850afc5c18732a95265a601b783c372127a",
     "raw_file": "ORG-001714/pass2-cb37cb035e784de6838e1e430c32ae783766bc6a867a672de5228a5f0a735f00.html",
     "raw_sha256": "cc0bdee6ffd136d646b4efd3fa0bd269e252b803d20c276a398360896add9c1e",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373131"
   },
   {
     "org_id": "ORG-001720",
@@ -897,7 +815,8 @@
     "text_sha256": "97988ee7fc181c3050ee5d275ba4f4e134ac893e7dc9bab7c15f2fd600ac7e26",
     "raw_file": "ORG-001720/pass2-40556eae63222303cdd1da20cb22ce44943ec4c94439132195132dda0d4d585d.html",
     "raw_sha256": "1d0f1684cd1314e7f7b1d05d2e9a15c0ac6b084c081a047934dded872d4a5584",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373132"
   },
   {
     "org_id": "ORG-001788",
@@ -909,6 +828,7 @@
     "text_sha256": "966ef77615119c013deb177d50d4279a447ba5a16b83186170ea2201c0dc8c0a",
     "raw_file": "ORG-001788/pass2-b9284dca90a8b18ffff7cb57f7c6d284758d20e54c36b52f9cfcf65b990a47c8.html",
     "raw_sha256": "4760efd40810ed9a387986837105e2b6651bdd785470b04c4bbc96c1ae22c2c7",
-    "via": "direct"
+    "via": "direct",
+    "evidence_id": "EVD-373133"
   }
 ]

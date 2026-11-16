@@ -4,13 +4,17 @@ Claim: atlas-w16-ownership, controller-assigned second OWN batch. Separate from 
 
 Frame: **209 organizations**, whose retained (`status=ok`) pages are **all pass 2**, with a blank ownership_type or year_founded at the git merge-base. The frame has **954 retained pages** and **411 blank organization fields**. It excludes every organization with any retained pass-1 page, regardless of later failures. This is a corpus-conditioned frame, not all PIC-18 organizations.
 
-Applied: **76 field fills across 64 organization rows**: **27 ownership_type** and **49 year_founded** values, with **76 evidence rows**, EVD-373058–373133. Existing organization tiers: **31 A, 32 B, 1 C**. **335 fields held**. No organization or site records created/deleted/moved/re-tiered. Organization sources, notes, last_verified and all other cells remain unchanged. The disposition table covers each of the 411 blank organization fields; applied and held are disjoint at that grain.
+Applied: **64 field fills across 56 organization rows**: **27 ownership_type** and **37 year_founded** values, with **64 evidence rows** within EVD-373058–373133 (12 withdrawn IDs retired). Existing organization tiers: **26 A, 29 B, 1 C**. **347 fields held**. No organization or site records created/deleted/moved/re-tiered. Organization sources, notes, last_verified and all other cells remain unchanged. The disposition table covers each of the 411 blank organization fields; applied and held are disjoint at that grain.
 
-Sources: the shared retained own-site corpus in controller storage `persist/pic18-corpus-2026-11-16/manifest.csv`. `proposals.json` holds small public witness quotes, URLs, route and hashes; full contact-bearing pages are not committed. **71 field witnesses use direct fetches; 5 use the reader route.** Reader receipts have retained text only (no HTML), and are checked against that text's hash; direct receipts check both raw HTML and text hashes. These routes are distinguished in the packet. A route failure is never absence evidence.
+Sources: the shared retained own-site corpus in controller storage `persist/pic18-corpus-2026-11-16/manifest.csv`. `proposals.json` holds small public witness quotes, URLs, route and hashes; full contact-bearing pages are not committed. **59 field witnesses use direct fetches; 5 use the reader route.** Reader receipts have retained text only (no HTML), and are checked against that text's hash; direct receipts check both raw HTML and text hashes. These routes are distinguished in the packet. A route failure is never absence evidence.
 
 Method: reuse batch 1's builder, evidence pattern and normalized contiguous ordered-word check, itself taken from `tasks/ownership-status-2-2026-11-05/rawcheck_tool.py`. No new dependencies or fetching tools. Explicit own-company statements only: private, family or employee control, or a founding/established/since date referring to the company. No demographic ownership, parent ownership inheritance, or parent/product/facility founding dates. `parent` evidence records ownership control, `existence` records founding identity, following earlier ownership evidence precedent; no parent link is authored. Evidence is append-only via scripts/shard_io.py. Selected years were scanned across all retained pages for competing dates; other-company, certification and staff-tenure dates were excluded.
 
 Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independently reconstructs frame and page count from the manifest and merge-base, verifies every packet quote/hash and evidence linkage, compares the entire organization-cell delta, and rejects 3/3 injected defects (fabricated quote, altered text hash, forbidden field). `python3 tasks/pic18-ownership-founded-2-2026-11-16/build.py` is idempotent; repeat appends zero evidence rows. Pre-pass byte backups were saved before application in controller `persist/pic18-ownership-founded-2/preimages`; journal pins pre-pass HEAD.
+
+## Review correction
+
+Codex clerk refuted 12 founding-year inferences at dea97f4. Exactly those fills and their new evidence rows are withdrawn; `withdrawn.json` preserves reasons and permanently retired evidence IDs. The remaining 64 assignments and their evidence IDs are unchanged. Word presence does not prove founding semantics.
 
 ## Proposed follow-ups
 
@@ -38,14 +42,14 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000013 E & T Plastics Mfg. Co., Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000013 E & T Plastics Mfg. Co., Inc. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000018 Ace Rubber Products | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000018 Ace Rubber Products | year_founded | applied | 1950 |
+| ORG-000018 Ace Rubber Products | year_founded | held | The standalone Since 1950 / 75+ years in business claim does not explicitly identify legal-company founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373058. |
 | ORG-000027 The Hygenic Corp. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000028 Murdock Industrial Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000028 Murdock Industrial Inc. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000029 Akron Rubber Development Laboratory, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000029 Akron Rubber Development Laboratory, Inc. | year_founded | applied | 1962 |
 | ORG-000039 Landmark Plastic Corp. | ownership_type | applied | family_owned |
-| ORG-000039 Landmark Plastic Corp. | year_founded | applied | 1984 |
+| ORG-000039 Landmark Plastic Corp. | year_founded | held | Manufacturing specified products in Akron since 1984 dates activity at a location, not company formation. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373061. |
 | ORG-000044 APV Engineered Coatings | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000044 APV Engineered Coatings | year_founded | applied | 1878 |
 | ORG-000047 Smithers | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -59,7 +63,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000062 Chemionics | ownership_type | applied | private_company |
 | ORG-000062 Chemionics | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000067 R.C. Graham Co. LLC (dba Hand-Tite) | ownership_type | applied | family_owned |
-| ORG-000067 R.C. Graham Co. LLC (dba Hand-Tite) | year_founded | applied | 1965 |
+| ORG-000067 R.C. Graham Co. LLC (dba Hand-Tite) | year_founded | held | Family owned and operated since 1965 dates family control/operation, not necessarily founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373066. |
 | ORG-000071 Miles Rubber & Packing | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000071 Miles Rubber & Packing | year_founded | applied | 1954 |
 | ORG-000073 Professional Plastics | ownership_type | applied | family_owned |
@@ -73,7 +77,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000085 Ohio Precision Molding, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000085 Ohio Precision Molding, Inc. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000086 Rubber Associates, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000086 Rubber Associates, Inc. | year_founded | applied | 1953 |
+| ORG-000086 Rubber Associates, Inc. | year_founded | held | Manufacturer/in service since 1953 dates service history rather than explicitly stating founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373071. |
 | ORG-000110 Team Plastics, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000110 Team Plastics, Inc. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000112 Trico Machine Products Corp. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -95,7 +99,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000142 Nordson Corporation | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000142 Nordson Corporation | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000150 NSL Analytical Services, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000150 NSL Analytical Services, Inc. | year_founded | applied | 1945 |
+| ORG-000150 NSL Analytical Services, Inc. | year_founded | held | In business since 1945 establishes operating history, not explicitly legal-company formation. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373076. |
 | ORG-000153 Moen Incorporated | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000153 Moen Incorporated | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000154 Lincoln Electric | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -104,7 +108,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000157 GrafTech International | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000157 GrafTech International | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000172 Graphic Arts Rubber, LLC | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000172 Graphic Arts Rubber, LLC | year_founded | applied | 1971 |
+| ORG-000172 Graphic Arts Rubber, LLC | year_founded | held | Providing rubber compounds since 1971 dates the activity, not explicitly company founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373078. |
 | ORG-000181 SpringSeal Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000181 SpringSeal Inc. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000182 Orazen Extruded Polymers | ownership_type | applied | family_owned |
@@ -124,7 +128,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000225 Allpass Corporation | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000225 Allpass Corporation | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000229 American Molded Plastic, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000229 American Molded Plastic, Inc. | year_founded | applied | 1990 |
+| ORG-000229 American Molded Plastic, Inc. | year_founded | held | Custom injection molding since 1990 dates an activity, not explicitly company founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373083. |
 | ORG-000230 American Wire & Cable Co. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000230 American Wire & Cable Co. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000247 Blade-Tech Industries | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -148,7 +152,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000290 Cosmo Corporation | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000290 Cosmo Corporation | year_founded | applied | 1945 |
 | ORG-000291 Creative Packaging Concepts | ownership_type | applied | family_owned |
-| ORG-000291 Creative Packaging Concepts | year_founded | applied | 1983 |
+| ORG-000291 Creative Packaging Concepts | year_founded | held | Family-owned since 1983 dates ownership, not necessarily founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373087. |
 | ORG-000311 Drummond Corp. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000311 Drummond Corp. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000318 E.L. Mustee & Sons, Inc. | ownership_type | applied | family_owned |
@@ -178,7 +182,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000390 J & O Plastics Inc. | ownership_type | applied | family_owned |
 | ORG-000390 J & O Plastics Inc. | year_founded | applied | 1982 |
 | ORG-000392 Jaco Products Co. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000392 Jaco Products Co. | year_founded | applied | 1948 |
+| ORG-000392 Jaco Products Co. | year_founded | held | Manufacturing precision plastic parts since 1948 dates an activity, not explicitly company founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373095. |
 | ORG-000418 Lewart Plastics | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000418 Lewart Plastics | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000419 LG Chem America Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -198,7 +202,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000485 Perry Fiberglass Products, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000485 Perry Fiberglass Products, Inc. | year_founded | applied | 1984 |
 | ORG-000488 Pharmacy-Lite Packaging | ownership_type | applied | family_owned |
-| ORG-000488 Pharmacy-Lite Packaging | year_founded | applied | 1991 |
+| ORG-000488 Pharmacy-Lite Packaging | year_founded | held | Family-owned manufacturer / serving pharmacies since 1991 dates ownership/service, not explicitly founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373100. |
 | ORG-000496 Plastics R Unique | ownership_type | applied | family_owned |
 | ORG-000496 Plastics R Unique | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000505 Poly Source LLC | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -242,7 +246,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000666 American Colors Inc. | ownership_type | applied | employee_owned |
 | ORG-000666 American Colors Inc. | year_founded | applied | 1975 |
 | ORG-000799 Dover High Performance Plastics | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000799 Dover High Performance Plastics | year_founded | applied | 1990 |
+| ORG-000799 Dover High Performance Plastics | year_founded | held | Supplying components since 1990 dates activity, not explicitly company founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373111. |
 | ORG-000813 Edge Plastics | ownership_type | applied | family_owned |
 | ORG-000813 Edge Plastics | year_founded | applied | 1975 |
 | ORG-000823 SIMONA Boltaron Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
@@ -250,7 +254,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 | ORG-000841 Flex Technologies | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000841 Flex Technologies | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000883 Hub Plastics, Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000883 Hub Plastics, Inc. | year_founded | applied | 1971 |
+| ORG-000883 Hub Plastics, Inc. | year_founded | held | Building bottles since 1971 dates activity; the copyright range does not establish company founding. Settling fact: explicit exact-company founding/formation statement. Retired EVD-373114. |
 | ORG-000927 Prettl PMA | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000927 Prettl PMA | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-001027 Paramont Machine Company | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |

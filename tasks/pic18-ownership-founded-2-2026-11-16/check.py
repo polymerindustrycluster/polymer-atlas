@@ -32,8 +32,8 @@ current = {r['org_id']: r for f in (build.ROOT/'data').glob('organizations_*.csv
 delta = {(oid, k): r[k] for oid, r in current.items() for k in r if r[k] != baseline[oid][k]}
 assert delta == {(p['org_id'], p['field']): p['value'] for p in packet}
 evs = {r['evidence_id']:r for f in (build.ROOT/'data').glob('evidence_organizations_*.csv') for r in build.read(f)}
-for n, p in enumerate(packet, 373058):
-    e = evs[f'EVD-{n:06d}']
+for p in packet:
+    e = evs[p['evidence_id']]
     assert e['record_id'] == p['org_id'] and e['source_ref'] == p['url']
     assert e['claim_detail'] == f'{p["field"]}={p["value"]}: "{p["quote"]}"'
 for key, value in [('quote', 'fabricated sentence absent from the retained source 987654321'), ('text_sha256', '0'*64), ('field', 'sources')]:
@@ -46,10 +46,21 @@ for key, value in [('quote', 'fabricated sentence absent from the retained sourc
         raise AssertionError('mutation survived: '+key)
 print('PASS: frame',len(expected),'blank organization fields across 209 organizations; applied',len(packet),'fields across',len({p['org_id'] for p in packet}),'organizations;',dict(Counter(p['field'] for p in packet)),'; 3/3 injected defects rejected')
 
-assert len(packet) == 76 and len({p['org_id'] for p in packet}) == 64
-assert Counter(p['field'] for p in packet) == {'ownership_type': 27, 'year_founded': 49}
-assert Counter(p['via'] for p in packet) == {'direct': 71, 'reader': 5}
-assert len(frame) - len(packet) == 335
-assert Counter(current[oid]['verification_tier'] for oid in {p['org_id'] for p in packet}) == {'A': 31, 'B': 32, 'C': 1}
+assert len(packet) == 64 and len({p['org_id'] for p in packet}) == 56
+assert Counter(p['field'] for p in packet) == {'ownership_type': 27, 'year_founded': 37}
+assert Counter(p['via'] for p in packet) == {'direct': 59, 'reader': 5}
+assert len(frame) - len(packet) == 347
+withdrawn = json.loads((H/'withdrawn.json').read_text())
+assert len(withdrawn) == 12
+assert len({p['evidence_id'] for p in packet + withdrawn}) == 76
+assert not {p['evidence_id'] for p in withdrawn} & evs.keys()
+assert all(current[p['org_id']]['year_founded'] == '' for p in withdrawn)
 report = (H/'README.md').read_text()
-assert report.count('| applied |') == 76 and report.count('| held |') == 335
+assert report.count('| applied |') == 64 and report.count('| held |') == 347
+assert Counter(current[oid]['verification_tier'] for oid in {p['org_id'] for p in packet}) == {'A': 26, 'B': 29, 'C': 1}
+try:
+    build.validate_packet(packet + [withdrawn[0]])
+except AssertionError:
+    pass
+else:
+    raise AssertionError('withdrawn inference reintroduced')

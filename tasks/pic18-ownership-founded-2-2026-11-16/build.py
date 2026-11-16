@@ -27,6 +27,10 @@ def words(s):
 
 def validate_packet(packet):
     assert len({(p['org_id'], p['field']) for p in packet}) == len(packet)
+    withdrawn = json.loads((HERE / 'withdrawn.json').read_text())
+    retired_keys = {(p['org_id'], p['field']) for p in withdrawn}
+    assert not retired_keys & {(p['org_id'], p['field']) for p in packet}
+    assert len({p['evidence_id'] for p in packet}) == len(packet)
     for p in packet:
         assert p['field'] in ('ownership_type', 'year_founded')
         assert p['value'] in ('family_owned', 'private_company', 'employee_owned') if p['field'] == 'ownership_type' else re.fullmatch(r'(18|19|20)\d{2}', p['value'])
@@ -45,13 +49,32 @@ def main():
     orgs = {r['org_id']: (f, r) for f, rows in groups.items() for r in rows}
     evgroups = {}
     touched = set()
-    for n, p in enumerate(packet, 373058):
+    # Retire only these unmerged PR rows; retain every surviving evidence ID.
+    withdrawn = json.loads((HERE / 'withdrawn.json').read_text())
+    for p in withdrawn:
+        f, o = orgs[p['org_id']]
+        assert o[p['field']] in ('', p['value'])
+        o[p['field']] = ''
+        touched.add(f)
+    retired = {p['evidence_id']: p for p in withdrawn}
+    for ef in sorted((ROOT / 'data').glob('evidence_organizations_*.csv')):
+        rows = read(ef)
+        removed = [r for r in rows if r['evidence_id'] in retired]
+        for r in removed:
+            p = retired[r['evidence_id']]
+            assert r['created_by'] == 'atlas-w16-ownership-2'
+            assert r['record_id'] == p['org_id'] and r['claim_detail'] == f'{p["field"]}={p["value"]}: "{p["quote"]}"'
+        if removed:
+            with ef.open('w', newline='') as out:
+                w = csv.DictWriter(out, fieldnames=list(rows[0]), lineterminator='\n')
+                w.writeheader(); w.writerows(r for r in rows if r['evidence_id'] not in retired)
+    for p in packet:
         f, o = orgs[p['org_id']]
         assert o[p['field']] in ('', p['value']), (p, o[p['field']])
         o[p['field']] = p['value']
         touched.add(f)
         ef = ROOT / 'data' / ('evidence_' + f.name)
-        ev = dict(evidence_id=f'EVD-{n:06d}', record_table='organizations', record_id=p['org_id'],
+        ev = dict(evidence_id=p['evidence_id'], record_table='organizations', record_id=p['org_id'],
                   claim_type='parent' if p['field'] == 'ownership_type' else 'existence',
                   claim_detail=f'{p["field"]}={p["value"]}: "{p["quote"]}"', source_class='own_site',
                   source_ref=p['url'], observed_date='2026-11-16',
