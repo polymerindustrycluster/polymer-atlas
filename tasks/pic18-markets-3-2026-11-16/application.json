@@ -1,0 +1,22 @@
+{
+  "base": "d410968ab2967b9fedc4d7350204289375a3abc4",
+  "by_shard": {
+    "organizations_MO.csv": {
+      "evidence_rows": 2,
+      "market_cells": 1,
+      "market_values": 2
+    },
+    "organizations_OH.csv": {
+      "evidence_rows": 218,
+      "market_cells": 77,
+      "market_values": 218
+    },
+    "organizations_US.csv": {
+      "evidence_rows": 5,
+      "market_cells": 1,
+      "market_values": 5
+    }
+  },
+  "cells": 79,
+  "evidence_rows": 225
+}
