@@ -28,4 +28,8 @@ def main():
  public('band_review.csv',bs)
  m=json.loads((D/'metrics.json').read_text());m['review']={'address_contact_corroborated':5,'address_reviewed':20,'plant_confirmed':0,'jobs_reviewed':20,'site_jobs_confirmed':0,'band_within':sum(r['comparison']=='within' for r in bs),'band_outside':sum(r['comparison']=='outside' for r in bs),'band_uncomparable':sum(r['comparison']=='uncomparable' for r in bs),'address_contact_wilson95':common.wilson(5,20)}
  (D/'metrics.json').write_text(json.dumps(m,indent=2)+'\n')
-if __name__=='__main__':main()
+if __name__=='__main__':
+ main()
+ import org_bulk
+ org_bulk.main()
+ p=D/'README.md';base=p.read_text().split('\n## B-PPP bulk organization-grain addendum')[0];p.write_text(base+org_bulk.render(json.loads((D/'org_bulk.json').read_text())))
