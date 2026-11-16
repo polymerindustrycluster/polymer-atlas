@@ -4,8 +4,11 @@ set -euo pipefail
 PR=$1; AH=$2
 R=$(git rev-parse --show-toplevel); S=$(cd "$(dirname "$0")" && pwd)
 cd "$R"
+source "$S/push_guard.sh"
+BR=$(gh pr view "$PR" --json headRefName --jq .headRefName)
+guard_pr_push "$PR" "$AH:refs/heads/$BR"
 git fetch -q origin main "+refs/pull/$PR/head:refs/remotes/pr/$PR"
-H=$(git rev-parse "pr/$PR"); BR=$(gh pr view "$PR" --json headRefName --jq .headRefName)
+H=$(git rev-parse "pr/$PR")
 W=$(mktemp -d); rmdir "$W"
 trap 'git -C "$R" worktree remove --force "$W" 2>/dev/null || true' EXIT
 if git merge-base --is-ancestor origin/main "$H"; then NEW=$H
@@ -29,5 +32,5 @@ python3 "$S/delta_compare.py" "$AH" "$NEW"
 git diff --exit-code "$AH" "$H" -- . ':(exclude)data' ':(exclude)tasks/*/receipts*'
 git worktree add -q --detach "$W" "$NEW"
 (cd "$W"; python3 scripts/validate.py; python3 scripts/check_row_loss.py --base origin/main)
-if [ "$NEW" != "$H" ]; then git push origin "$NEW:refs/heads/$BR"; fi
+if [ "$NEW" != "$H" ]; then push_pr_head "$PR" "$NEW:refs/heads/$BR"; fi
 printf 'Synced #%s at %s\n' "$PR" "$NEW"

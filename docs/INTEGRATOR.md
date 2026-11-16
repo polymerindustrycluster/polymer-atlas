@@ -35,7 +35,11 @@ worktree. Filesystem write failures can leave partial writes, so retain backups.
 
 Sync tries merge-tree first, otherwise applies the non-data patch to main and
 replays approved cells. It checks identical data delta, non-data head changes,
-validation and row loss before a non-force push. Non-data changes caused solely
+validation and row loss before a non-force push. The shared push guard resolves
+origin's default branch from the remote and refuses main, that default branch
+(including destinations ending in either name), fork PRs, unknown metadata,
+force/deletion refspecs and destinations other than the PR's own head branch.
+It checks before sync mutations and again immediately before pushing. Non-data changes caused solely
 by main may conservatively require manual review. CI waits for `validate` on the
 pushed branch SHA; premerge validates the merged tree, and merge uses an expected
 head guard. Success requires GitHub's state to be MERGED. Never invoke mergepr.sh

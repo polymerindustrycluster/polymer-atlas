@@ -1,4 +1,5 @@
 """Small real Git repositories exercise approved deltas and replay refusals."""
+import os
 import csv
 import importlib.util
 from pathlib import Path
@@ -99,3 +100,64 @@ class IntegrationTests(unittest.TestCase):
         self.write('inclusion_log.csv', 'date,entity,notes\n2026-11-16,A,x\n2026-11-16,A,x\n')
         replay(a, self.r)
         self.assertIn('2026-11-16,B,y', (self.r / 'data/inclusion_log.csv').read_text())
+
+
+class PushGuardTests(unittest.TestCase):
+    def test_reviewer_repro_refuses_main_without_pushing(self):
+        result = subprocess.run([sys.executable, str(TOOLS.resolve() / 'repro_main_push.py')],
+                                cwd=TOOLS.resolve().parents[1], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertNotIn('ATTEMPTED git push', result.stdout)
+
+    def test_push_destinations_and_force_refusals(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / 'git').write_text("""#!/bin/bash
+case "$1" in
+ls-remote) [ "$TEST_DEFAULT" = unknown ] || printf 'ref: refs/heads/%s\tHEAD\n' "$TEST_DEFAULT" ;;
+push) printf '%s\n' "$*" >> "$TEST_PUSH_LOG" ;;
+esac
+""")
+            (root / 'gh').write_text("""#!/bin/bash
+case "$*" in
+*isCrossRepository*) echo "$TEST_FORK" ;;
+*headRefName*) echo "$TEST_BRANCH" ;;
+esac
+""")
+            for name in ('git', 'gh'):
+                (root / name).chmod(0o755)
+            log = root / 'push.log'
+            env = dict(os.environ, PATH=str(root) + ':' + os.environ['PATH'],
+                       TEST_PUSH_LOG=str(log), TEST_DEFAULT='trunk',
+                       TEST_FORK='false', TEST_BRANCH='lane')
+            command = 'source "$1"; shift; push_pr_head "$@"'
+            cases = [
+                ('main', 'main', 'head:refs/heads/main'),
+                ('trunk', 'trunk', 'head:refs/heads/trunk'),
+                ('trunk', 'topic/main', 'head:refs/heads/topic/main'),
+                ('trunk', 'topic/trunk', 'head:refs/heads/topic/trunk'),
+                ('trunk', 'lane', 'head:refs/heads/other'),
+                ('trunk', 'lane', '+head:refs/heads/lane'),
+                ('trunk', 'lane', '--force'),
+                ('trunk', 'lane', ':refs/heads/lane'),
+                ('unknown', 'lane', 'head:refs/heads/lane'),
+            ]
+            for default, branch, spec in cases:
+                with self.subTest(default=default, branch=branch, spec=spec):
+                    r = subprocess.run(['bash', '-c', command, 'test', str(TOOLS.resolve() / 'push_guard.sh'), '1', spec],
+                                       env=dict(env, TEST_DEFAULT=default, TEST_BRANCH=branch), capture_output=True)
+                    self.assertNotEqual(r.returncode, 0)
+                    self.assertFalse(log.exists())
+            for fork in ('true', ''):
+                r = subprocess.run(['bash', '-c', command, 'test', str(TOOLS.resolve() / 'push_guard.sh'),
+                                    '1', 'head:refs/heads/lane'], env=dict(env, TEST_FORK=fork), capture_output=True)
+                self.assertNotEqual(r.returncode, 0)
+                self.assertFalse(log.exists())
+            r = subprocess.run(['bash', '-c', command, 'test', str(TOOLS.resolve() / 'push_guard.sh'),
+                                '1', 'head:refs/heads/lane', '--force'], env=env, capture_output=True)
+            self.assertNotEqual(r.returncode, 0)
+            self.assertFalse(log.exists())
+            r = subprocess.run(['bash', '-c', command, 'test', str(TOOLS.resolve() / 'push_guard.sh'),
+                                '1', 'head:refs/heads/lane'], env=env, capture_output=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertEqual(log.read_text().strip(), 'push --no-follow-tags origin head:refs/heads/lane')
