@@ -3,7 +3,7 @@ import copy
 import hashlib
 import json
 from collections import Counter
-from build import HERE, ROOT, CORPUS, FIELDS, read, source, proposals, found
+from build import HERE, ROOT, CORPUS, FIELDS, read, source, proposals, found, at_base, BASE
 
 
 def verify(inputs, frames, holds):
@@ -34,6 +34,47 @@ def verify(inputs, frames, holds):
     assert inputs == proposals(frame, pages), 'selection mismatch'
 
 
+def boundary(inputs, evidence):
+    homes = source()[0]
+    values = {}
+    for r in inputs:
+        values.setdefault(r['org_id'], set()).add(r['value'])
+    evs = {r['evidence_id']: r for r in evidence}
+    cells, new_evs = 0, 0
+    shards = {}
+    for p in sorted((ROOT / 'data').glob('*.csv')):
+        if p.name.endswith('_all.csv'):
+            continue
+        before, after = at_base(p), read(p)
+        if p.name.startswith('organizations_'):
+            expected = copy.deepcopy(before)
+            for r in expected:
+                if r['org_id'] in values:
+                    assert not r['markets_served']
+                    r['markets_served'] = ';'.join(sorted(values[r['org_id']]))
+                    shards[r['org_id']] = p.name
+                    cells += 1
+            assert after == expected, ('unrelated organization change', p)
+        elif p.name.startswith('evidence_organizations_'):
+            append = [r for r in evidence if homes[r['record_id']][0] == p.name.replace('evidence_organizations_', 'organizations_')]
+            assert not set(evs) & {r['evidence_id'] for r in before}, 'reused evidence ID'
+            assert after == sorted(before + append, key=lambda r: r['evidence_id']), ('evidence delta mismatch', p)
+            new_evs += len(append)
+        else:
+            assert before == after, ('out of scope data change', p)
+    assert cells == len(values) and new_evs == len(evidence), 'application yield'
+    assert read(HERE / 'holds.csv') == at_base(HERE / 'holds.csv'), 'holds changed'
+    app = json.loads((HERE / 'application.json').read_text())
+    counts = {}
+    for oid, tags in values.items():
+        c = counts.setdefault(shards[oid], dict(organization_cells=0, market_values=0, evidence_rows=0))
+        c['organization_cells'] += 1
+        c['market_values'] += len(tags)
+        c['evidence_rows'] += len(tags)
+    assert app == dict(base=BASE, cells=cells, evidence_rows=new_evs, by_shard=counts)
+    print('BOUNDARY PASS:', cells, 'market cells;', new_evs, 'new evidence rows; other data unchanged')
+
+
 def main():
     inputs, frames, holds = [read(HERE / f) for f in ('inputs.csv', 'frame.csv', 'holds.csv')]
     verify(inputs, frames, holds)
@@ -62,7 +103,7 @@ def main():
                     proposed_market_values=len(inputs), proposed_certification_values=0,
                     proposed_organizations=len({r['org_id'] for r in inputs}), held_field_cells=len(holds),
                     proposed_organization_tiers=dict(Counter(frame[oid][1]['verification_tier'] for oid in {r['org_id'] for r in inputs})),
-                    data_cells_applied=0, extra_fetches=0)
+                    data_cells_applied=len({r['org_id'] for r in inputs}), extra_fetches=0)
     assert json.loads((HERE / 'counts.json').read_text()) == expected
     evidence = read(HERE / 'evidence_packet.csv')
     assert len(evidence) == len(inputs) and len({r['evidence_id'] for r in evidence}) == len(inputs)
@@ -71,6 +112,7 @@ def main():
         assert ev['record_id'] == r['org_id'] and ev['source_ref'] == r['source_url']
         assert ev['claim_detail'] == f'markets_served {r["value"]}: "{r["quote"]}"'
         assert ev['tier_effect'] == r['tier_effect']
+    boundary(inputs, evidence)
     print('PASS:', json.dumps(expected))
 
 
