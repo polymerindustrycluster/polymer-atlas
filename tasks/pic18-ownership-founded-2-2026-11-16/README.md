@@ -4,9 +4,9 @@ Claim: atlas-w16-ownership, controller-assigned second OWN batch. Separate from 
 
 Frame: **209 organizations**, whose retained (`status=ok`) pages are **all pass 2**, with a blank ownership_type or year_founded at the git merge-base. The frame has **954 retained pages** and **411 blank organization fields**. It excludes every organization with any retained pass-1 page, regardless of later failures. This is a corpus-conditioned frame, not all PIC-18 organizations.
 
-Applied: **64 field fills across 56 organization rows**: **27 ownership_type** and **37 year_founded** values, with **64 evidence rows** within EVD-373058–373133 (12 withdrawn IDs retired). Existing organization tiers: **26 A, 29 B, 1 C**. **347 fields held**. No organization or site records created/deleted/moved/re-tiered. Organization sources, notes, last_verified and all other cells remain unchanged. The disposition table covers each of the 411 blank organization fields; applied and held are disjoint at that grain.
+Applied: **63 field fills across 55 organization rows**: **27 ownership_type** and **36 year_founded** values, with **63 evidence rows** within EVD-373058–373133 (13 withdrawn IDs retired). Existing organization tiers: **25 A, 29 B, 1 C**. **348 fields held**. No organization or site records created/deleted/moved/re-tiered. Organization sources, notes, last_verified and all other cells remain unchanged. The disposition table covers each of the 411 blank organization fields; applied and held are disjoint at that grain.
 
-Sources: the shared retained own-site corpus in controller storage `persist/pic18-corpus-2026-11-16/manifest.csv`. `proposals.json` holds small public witness quotes, URLs, route and hashes; full contact-bearing pages are not committed. **59 field witnesses use direct fetches; 5 use the reader route.** Reader receipts have retained text only (no HTML), and are checked against that text's hash; direct receipts check both raw HTML and text hashes. These routes are distinguished in the packet. A route failure is never absence evidence.
+Sources: the shared retained own-site corpus in controller storage `persist/pic18-corpus-2026-11-16/manifest.csv`. `proposals.json` holds small public witness quotes, URLs, route and hashes; full contact-bearing pages are not committed. **58 field witnesses use direct fetches; 5 use the reader route.** Reader receipts have retained text only (no HTML), and are checked against that text's hash; direct receipts check both raw HTML and text hashes. These routes are distinguished in the packet. A route failure is never absence evidence.
 
 Method: reuse batch 1's builder, evidence pattern and normalized contiguous ordered-word check, itself taken from `tasks/ownership-status-2-2026-11-05/rawcheck_tool.py`. No new dependencies or fetching tools. Explicit own-company statements only: private, family or employee control, or a founding/established/since date referring to the company. No demographic ownership, parent ownership inheritance, or parent/product/facility founding dates. `parent` evidence records ownership control, `existence` records founding identity, following earlier ownership evidence precedent; no parent link is authored. Evidence is append-only via scripts/shard_io.py. Selected years were scanned across all retained pages for competing dates; other-company, certification and staff-tenure dates were excluded.
 
@@ -14,7 +14,7 @@ Checks: `python3 tasks/pic18-ownership-founded-2-2026-11-16/check.py` independen
 
 ## Review correction
 
-Codex clerk refuted 12 founding-year inferences at dea97f4. Exactly those fills and their new evidence rows are withdrawn; `withdrawn.json` preserves reasons and permanently retired evidence IDs. The remaining 64 assignments and their evidence IDs are unchanged. Word presence does not prove founding semantics.
+Codex clerk refuted 12 founding-year inferences at dea97f4. Exactly those fills and their new evidence rows are withdrawn; `withdrawn.json` preserves reasons and permanently retired evidence IDs. A further review at 8aa8b3a withdrew Eagle Elastomer ORG-000321 year_founded=1983 and retired EVD-373089. The remaining 63 assignments and their evidence IDs are unchanged. All 36 retained batch-2 founding witnesses and all 28 batch-1 founding witnesses were reread in context: each explicitly states founded/established and refers to the held company. Batch 1 has no same-defect finding and remains unchanged. The builder now rejects year_founded quotes lacking founded/established, with a bare-since injected-defect check. Word presence does not prove founding semantics.
 
 ## Proposed follow-ups
 
@@ -158,7 +158,7 @@ Codex clerk refuted 12 founding-year inferences at dea97f4. Exactly those fills 
 | ORG-000318 E.L. Mustee & Sons, Inc. | ownership_type | applied | family_owned |
 | ORG-000318 E.L. Mustee & Sons, Inc. | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000321 Eagle Elastomer Inc. | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
-| ORG-000321 Eagle Elastomer Inc. | year_founded | applied | 1983 |
+| ORG-000321 Eagle Elastomer Inc. | year_founded | held | Since 1983, Eagle Elastomer, Inc. dates operating history; the cited witness is not an explicit founding or establishment statement. Settling fact: explicit same-company founding/establishment statement. Retired EVD-373089. |
 | ORG-000322 ECP Corp dba Polycase | ownership_type | held | Explicit current control statement about this company, distinguishing parent and historical ownership. |
 | ORG-000322 ECP Corp dba Polycase | year_founded | held | Explicit exact-company formation/founding year, resolving competing dates and predecessor/parent lineage. |
 | ORG-000327 Enterprise Plastics Inc. | ownership_type | applied | family_owned |

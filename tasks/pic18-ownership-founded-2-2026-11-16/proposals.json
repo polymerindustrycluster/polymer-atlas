@@ -299,19 +299,6 @@
     "evidence_id": "EVD-373088"
   },
   {
-    "org_id": "ORG-000321",
-    "field": "year_founded",
-    "value": "1983",
-    "quote": "Since 1983, Eagle Elastomer, Inc.",
-    "url": "https://eagleelastomer.com/",
-    "text_file": "ORG-000321/pass2-d27566b1ad8fe39a0e81e827ad7722bda6d3bc48b25ffc405970201fab33ff59.txt",
-    "text_sha256": "43083121c660bc76e7a05d2938eedfc7c574b24a63b559adf342c5d276d629ce",
-    "raw_file": "ORG-000321/pass2-d27566b1ad8fe39a0e81e827ad7722bda6d3bc48b25ffc405970201fab33ff59.html",
-    "raw_sha256": "33f5b29f29d016fd5ac736513eb08fe6ea139923a7cc8458ca1be6b892260f29",
-    "via": "direct",
-    "evidence_id": "EVD-373089"
-  },
-  {
     "org_id": "ORG-000327",
     "field": "ownership_type",
     "value": "family_owned",

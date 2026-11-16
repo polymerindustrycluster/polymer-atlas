@@ -34,6 +34,8 @@ def validate_packet(packet):
     for p in packet:
         assert p['field'] in ('ownership_type', 'year_founded')
         assert p['value'] in ('family_owned', 'private_company', 'employee_owned') if p['field'] == 'ownership_type' else re.fullmatch(r'(18|19|20)\d{2}', p['value'])
+        if p['field'] == 'year_founded':
+            assert re.search(r'\b(founded|established)\b', p['quote'], re.I), p
         # Reader-route receipts retain reader text only, with no HTML witness.
         for kind in ('text',) if p['via'] == 'reader' else ('text', 'raw'):
             data = (CORPUS / p[kind + '_file']).read_bytes()

@@ -46,21 +46,31 @@ for key, value in [('quote', 'fabricated sentence absent from the retained sourc
         raise AssertionError('mutation survived: '+key)
 print('PASS: frame',len(expected),'blank organization fields across 209 organizations; applied',len(packet),'fields across',len({p['org_id'] for p in packet}),'organizations;',dict(Counter(p['field'] for p in packet)),'; 3/3 injected defects rejected')
 
-assert len(packet) == 64 and len({p['org_id'] for p in packet}) == 56
-assert Counter(p['field'] for p in packet) == {'ownership_type': 27, 'year_founded': 37}
-assert Counter(p['via'] for p in packet) == {'direct': 59, 'reader': 5}
-assert len(frame) - len(packet) == 347
+assert len(packet) == 63 and len({p['org_id'] for p in packet}) == 55
+assert Counter(p['field'] for p in packet) == {'ownership_type': 27, 'year_founded': 36}
+assert Counter(p['via'] for p in packet) == {'direct': 58, 'reader': 5}
+assert len(frame) - len(packet) == 348
 withdrawn = json.loads((H/'withdrawn.json').read_text())
-assert len(withdrawn) == 12
+assert len(withdrawn) == 13
 assert len({p['evidence_id'] for p in packet + withdrawn}) == 76
 assert not {p['evidence_id'] for p in withdrawn} & evs.keys()
 assert all(current[p['org_id']]['year_founded'] == '' for p in withdrawn)
 report = (H/'README.md').read_text()
-assert report.count('| applied |') == 64 and report.count('| held |') == 347
-assert Counter(current[oid]['verification_tier'] for oid in {p['org_id'] for p in packet}) == {'A': 26, 'B': 29, 'C': 1}
+assert report.count('| applied |') == 63 and report.count('| held |') == 348
+assert Counter(current[oid]['verification_tier'] for oid in {p['org_id'] for p in packet}) == {'A': 25, 'B': 29, 'C': 1}
 try:
     build.validate_packet(packet + [withdrawn[0]])
 except AssertionError:
     pass
 else:
     raise AssertionError('withdrawn inference reintroduced')
+
+bad = copy.deepcopy(packet)
+founding = next(p for p in bad if p['field'] == 'year_founded')
+founding['quote'] = 'Since ' + founding['value']
+try:
+    build.validate_packet(bad)
+except AssertionError:
+    pass
+else:
+    raise AssertionError('bare since founding inference survived')
