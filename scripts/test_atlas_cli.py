@@ -266,6 +266,25 @@ class DedupeTests(FixtureCase):
         _, res = self.dd("--street", "676 Davis Rd NW")
         self.assertEqual(self.ids(res, 3), [])
 
+    def test_street_candidates_after_dates_units_and_other_addresses(self):
+        write(self.d, "sites_OH.csv", SITE_COLS, [
+            site("SITE-000043", "ORG-000001", "",
+                 notes="Commissioned 2020, 60 tpd; Tier II inventory lists 1200 E Waterloo Rd, Akron 44306."),
+            site("SITE-000122", "ORG-000001", "",
+                 notes="Site type provisional: suite address at 3439 W Brainard Rd per harvest."),
+            site("SITE-000123", "ORG-000001", "",
+                 notes="Plant at 42 North Elm Street, Akron; building entrance at 784 Oak Center Avenue SW."),
+        ])
+        for street, expected in (
+            ("1200 E Waterloo Rd", "SITE-000043"),
+            ("3439 W Brainard Rd", "SITE-000122"),
+            ("42 N Elm St", "SITE-000123"),
+            ("784 Oak Ctr Ave SW", "SITE-000123"),
+        ):
+            with self.subTest(street=street):
+                _, res = self.dd("--street", street)
+                self.assertEqual(self.ids(res, 3), [expected])
+
     def test_alias_in_legal_and_trade_names(self):
         write(self.d, "organizations_OH.csv", ORG_COLS, [org("ORG-000001", "Acme d/b/a Bar LLC", trade_names="Brand formerly Old Brand")])
         for name in ("Acme", "Bar", "Brand", "Old Brand"):

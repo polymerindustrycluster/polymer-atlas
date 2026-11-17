@@ -294,6 +294,20 @@ UNIT_RE = re.compile(r"\b(suite|ste|unit|apt|apartment|bldg|building|floor|fl|ro
 UNIT_ONLY_RE = re.compile(r"^\s*(?:(?:suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)\b|#)\s*[\w-]*\s*$")
 
 
+_DIRECTIONS = {k for k, v in SUFFIX.items() if v in {"n", "s", "e", "w", "ne", "nw", "se", "sw"}}
+_STREET_SUFFIXES = {k for k in SUFFIX if k not in _DIRECTIONS} | (set(SUFFIX.values()) - {SUFFIX[k] for k in _DIRECTIONS}) | {"way", "pike"}
+_DIRECTION_WORDS = _DIRECTIONS | {SUFFIX[k] for k in _DIRECTIONS}
+_NOTES_SUFFIX = "|".join(sorted(_STREET_SUFFIXES))
+# shortcut: notes candidates need a numbered street and recognized suffix, extend when other address forms are tracked.
+NOTES_STREET_RE = re.compile(
+    r"(?<![\w-])\d+[a-z]?\s+(?:[a-z][a-z'’-]*\.?|\d+(?:st|nd|rd|th))"
+    r"(?:\s+(?:[a-z][a-z'’-]*\.?|\d+(?:st|nd|rd|th))){0,7}?\s+"
+    rf"(?:{_NOTES_SUFFIX})\b(?:\s+(?:{_NOTES_SUFFIX})\b)*\.?"
+    rf"(?:\s+(?:{'|'.join(sorted(_DIRECTION_WORDS, key=lambda s: (-len(s), s)))})\b)?",
+    re.I,
+)
+
+
 def street_key(s):
     """Normalized street line for address-first dedupe (AGENTS §3 step 3); empty only when no street is present."""
     parts = (s or "").lower().split(",")
@@ -379,15 +393,18 @@ def dedupe(tables, domain=None, name=None, street=None, city=None, state=None, z
         q = street_key(street)
         sites = tables.get("sites", Table("sites")).rows
         for r in sites:
-            notes_key = " " + street_key(r.get("notes", "")) + " "
-            if not q or (street_key(r.get("street_address", "")) != q and f" {q} " not in notes_key):
+            if not q:
+                break
+            in_notes = street_key(r.get("street_address", "")) != q
+            if in_notes and not any(q == street_key(match[0])
+                                    for match in NOTES_STREET_RE.finditer(r.get("notes") or "")):
                 continue
             mism = []
             if city and r["city"] and squash(city) != squash(r["city"]): mism.append("city")
             if state and r["state"] and state.upper() != r["state"].upper(): mism.append("state")
             if zip_ and r["zip"] and zip_[:5] != r["zip"][:5]: mism.append("zip")
             op = by_id.get(r["org_id"], [{}])[0].get("legal_name", "(org not found)")
-            h = {**brief("sites", r), "operator": op, "match": f"street key {q!r}" + (f"; locality differs: {','.join(mism)}" if mism else "")}
+            h = {**brief("sites", r), "operator": op, "match": f"street key {q!r}" + (" in notes" if in_notes else "") + (f"; locality differs: {','.join(mism)}" if mism else "")}
             (s3["other_localities"] if mism else s3["hits"]).append(h)
     steps.append(s3)
 
