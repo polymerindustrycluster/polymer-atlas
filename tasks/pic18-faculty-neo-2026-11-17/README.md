@@ -38,12 +38,20 @@ non-bulletin names; their fetched profiles hold no polymer statement), Kent (the
 and the YSU/Cleveland State rows, which rest on catalog and department expertise lists. Recommendation for the owner: a bulletin line is institution-own roster-grade evidence (YSU catalog pages
 are accepted that way for PERSON-000071); if the owner accepts it for Gate B, Sen Gupta and Akkus can be added without further fetching.
 
-**Second sweep (Codex-23 on 9034669): REJECTs resting on a profile that states no research at all.** Peter Tandler (Walsh; profile is a 2021 teaching presentation only) flipped
-REJECT to STILL_UNCERTAIN: settling fact is a person-specific research statement on a Walsh page. Sweep of every remaining Gate B REJECT: the 9 hand-written ones (Jaroniec, Genna, Ao, Belovich, Gatica,
-Monty-Bromer, Ungarala, Yang) each quote a stated research/expertise line, and the 130+ generated CWRU/Kent ones were re-tested by looking for a substantive research text after the profile's research heading.
-Of those, Julie Renner, Bryan Schmidt and Anuj Sharma state research (prose or topic keywords) naming no polymer object, and Robert Warburton's profile only links his lab: his lab page
-(fetched, provenance in the manifest) states computational energy-storage/catalysis research, so his REJECT stays, now citing the lab page. No other flips: Gate A rejects (rank) unchanged.
-Net since 9034669: REJECT -1, STILL_UNCERTAIN +1; data delta unchanged (+3 people, +6 evidence).
+**Second sweep (Codex-23 on 9034669, corrected after 566cd4b).** Peter Tandler (Walsh; profile is a 2021 teaching presentation only) flipped REJECT to STILL_UNCERTAIN: settling fact is a
+person-specific research statement on a Walsh page. Net since 9034669: REJECT -1, STILL_UNCERTAIN +1; data delta unchanged (+3 people, +6 evidence). Gate A (rank) rejects are unchanged.
+
+All **106 Gate B REJECTs** (CWRU 75, Kent 8, YSU 17, CSU 6) by source type, and what was actually inspected:
+
+| Source type (verdict-note reason) | Count | What was inspected in the sweeps | Not re-inspected |
+|---|---|---|---|
+| CWRU engineering profile has a research statement, no polymer object | 61 | Mechanical test that the fetched profile has a research heading followed by substantive text (flagged 4 for hand reading: Renner, Schmidt, Sharma stated research; Warburton went to his lab page); keyword scan of the profile for polymer terms (hits were publication titles or department tags only); name-match against the CWRU engineering bulletins (35 of these 61 have a bulletin entry; none names a polymer object) | Not read one by one by a person beyond those flags; lab pages not followed; the 26 with no bulletin entry were checked by the profile scans only |
+| Kent AMLCI profile has a research statement, no polymer object | 7 | Same mechanical substantive-text test (all passed) and polymer keyword scan (none) | No lab pages; Kent catalog PDF returned 404, so no bulletin cross-check |
+| CWRU chemistry department roster interest list | 13 | Read in full by a person (roster of research-interest keywords) | Lab pages not followed |
+| YSU catalog research-interest list | 16 | Read in full by a person (two catalog listings) | Current YSU department pages and lab pages not checked |
+| Hand-written verdicts | 9 | Jaroniec (profile read), Genna (catalog line), Ao, Belovich, Gatica, Monty-Bromer, Ungarala, Yang (department expertise lines), Warburton (own lab page fetched) | Yang's and the other CSU rejects rest on the department page's one-line expertise only |
+
+<!-- sweep: cwru_profile=61 kent_profile=7 cwru_roster=13 ysu_catalog=16 hand=9 -->
 
 ## Owner-ruling questions (held, not self-ruled; recommendation in each)
 1. **John L. West (Kent).** AMLCI profile styles him "Trustees Research Professor" (held precedent: PERSON-000023 Lavrentovich is

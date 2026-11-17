@@ -98,6 +98,17 @@ def check_published_counts(vrows):
     pub = dict(kv.split("=") for kv in m.group(1).split()) if m else {}
     for k in ("VERIFIED", "REJECT", "STILL_UNCERTAIN", "DUPLICATE_OF"):
         if int(pub.get(k, -1)) != c[k]: f.append(f"README count {k}={pub.get(k)} != recomputed {c[k]}")
+    sw = re.search(r"sweep: (.*?) -->", open(os.path.join(HERE, "README.md")).read())
+    pub_sw = dict(kv.split("=") for kv in sw.group(1).split()) if sw else {}
+    def typ(r):
+        n = r["verdict_note"]
+        for k, p in (("cwru_profile", "Gate B fails: own profile has a research"), ("kent_profile", "Gate B fails: AMLCI profile has a research"),
+                     ("cwru_roster", "Gate B fails: department roster"), ("ysu_catalog", "Gate B fails: catalog listing")):
+            if n.startswith(p): return k
+        return "hand"
+    sc = Counter(typ(r) for r in vrows if r["verdict"] == "REJECT" and r["verdict_note"].startswith("Gate B"))
+    for k in ("cwru_profile", "kent_profile", "cwru_roster", "ysu_catalog", "hand"):
+        if int(pub_sw.get(k, -1)) != sc[k]: f.append(f"README sweep table {k}={pub_sw.get(k)} != recomputed {sc[k]}")
     return f
 
 def run(vrows=None, people=None, evid=None, base=None):
