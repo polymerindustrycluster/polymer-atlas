@@ -9,6 +9,8 @@ from shard_io import append_sorted
 CORPUS = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-corpus-2026-11-16')
 BASE = (T / 'base.txt').read_text().strip()
 WHO, DATE, CAP0, EVD0 = 'atlas-w16-cap2b', '2026-11-16', 1500, 388000
+# IDs withdrawn after review of 1516036 (VisionAir SITE-001569): retired, never reused or renumbered
+RETIRED_EVD, RETIRED_CAP = {388013}, {1503}
 HOLD_SITES_TAGGED_MENU = 'capability row only; tag held (owner ruling 2026-11-14)'
 
 def read(p):
@@ -44,6 +46,12 @@ def cap_term(term, typ):
     if term in values: return term
     return next((p[:-1] for p in ROLLUP if term.startswith(p) and p[:-1] in values), None)
 
+def id_stream(start, retired):
+    i = start
+    while True:
+        if i not in retired: yield i
+        i += 1
+
 def outputs(decisions, sl):
     """Pure function of base tree + decisions: (site rows, caps, evidence, verdicts)."""
     ids = {r['site_id'] for r in sl}
@@ -51,20 +59,21 @@ def outputs(decisions, sl):
              for r in base(str(p.relative_to(ROOT))) if r['site_id'] in ids}
     live = {(c['site_id'], c['capability_type'], c['term']) for c in base('data/site_capabilities.csv') if not c['withdrawn_date']}
     caps, ev, verdicts = [], [], []
+    evid, capid = id_stream(EVD0, RETIRED_EVD), id_stream(CAP0, RETIRED_CAP)
     for d in decisions:
         validate_decision(d)
         s = sites[d['site_id']]; typ = 'process' if d['field'] == 'processes' else 'material'
         tag = not (d['basis'] == 'menu' and s['verification_tier'] in ('A', 'B'))
         if tag:
             s[d['field']] = ';'.join(sorted(set(filter(None, s[d['field']].split(';'))) | {d['term']}))
-            ev.append(dict(evidence_id=f'EVD-{EVD0 + len(ev):06d}', record_table='sites', record_id=s['site_id'], claim_type='scope',
+            ev.append(dict(evidence_id=f'EVD-{next(evid):06d}', record_table='sites', record_id=s['site_id'], claim_type='scope',
                            claim_detail=f"{d['field']}={d['term']}; quote: {d['quote']}", source_class='own_site', source_ref=d['url'],
                            observed_date=DATE, tier_effect='supports_A' if d['basis'] == 'narrative' else 'supports_C', created_by=WHO,
                            notes=f"{d['basis']}; raw SHA256 {d['sha256']}; locality witness: {d['grain_quote']} ({d['grain_url']}); single active Atlas site."))
         ct = cap_term(d['term'], typ)
         if ct and (s['site_id'], typ, ct) not in live:
             live.add((s['site_id'], typ, ct))
-            caps.append(dict(capability_id=f'CAP-{CAP0 + len(caps):06d}', site_id=s['site_id'], org_id=s['org_id'], capability_type=typ, term=ct,
+            caps.append(dict(capability_id=f'CAP-{next(capid):06d}', site_id=s['site_id'], org_id=s['org_id'], capability_type=typ, term=ct,
                              provenance='company_disclosed', source_ref=d['url'], observed_date=DATE, withdrawn_date='', created_by=WHO,
                              notes=f"Quote: {d['quote']} Basis: {d['basis']}. Raw SHA256 {d['sha256']}." + ('' if tag else ' Section-3 tag held per owner ruling 2026-11-14; needs narrative plant evidence.')))
         verdicts.append(dict(site_id=d['site_id'], term=d['term'], verdict='VERIFIED', disposition='applied' if tag else HOLD_SITES_TAGGED_MENU, reason=f"{d['basis']} quote on own page", settling_fact='' if tag else 'Plant narrative sentence stating this term'))

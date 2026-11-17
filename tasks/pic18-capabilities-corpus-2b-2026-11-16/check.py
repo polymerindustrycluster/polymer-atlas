@@ -1,6 +1,6 @@
 """Recomputes every published count of lane CAP2B and proves the checks fail on injected defects.
 Run after build.py. Needs the shared corpus under persist/pic18-corpus-2026-11-16 (see build.CORPUS)."""
-import copy, csv, json, sys
+import copy, csv, json, re, sys
 from collections import Counter
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -36,10 +36,20 @@ def check_coverage(verdicts, sl, decisions):
     for v in verdicts:
         if v['verdict'] == 'STILL_UNCERTAIN' and not v['settling_fact']: fail(f"hold without settling fact {v['site_id']}")
 
+def check_street(d, site):
+    """A street-grained locality witness must carry the site record's house number (Codex-21: VisionAir cited another Akron address)."""
+    m = re.match(r'\d+', d['grain_quote'])
+    rec = re.match(r'\d+', site['street_address']) or re.search(r'Street: (\d+)', site['notes'])
+    if m and rec and m.group(0) != (rec.group(0) if rec.re.pattern.startswith('\\d') else rec.group(1)): fail(f"{d['site_id']}: witness street {m.group(0)} != record street")
+
 def check_rules(sites, ev, caps):
+    if any(int(e['evidence_id'][4:]) in B.RETIRED_EVD for e in ev) or any(int(c['capability_id'][4:]) in B.RETIRED_CAP for c in caps): fail('retired id reused')
     for e in ev:
         if e['record_table'] == 'sites' and e['tier_effect'] == 'supports_C' and sites[e['record_id']]['verification_tier'] in ('A', 'B'): fail(f"C-strength scope tag on tier A/B {e['record_id']} (V-25)")
     if any(not (388000 <= int(e['evidence_id'][4:]) <= 388999) for e in ev) or any(not (1500 <= int(c['capability_id'][4:]) <= 1799) for c in caps): fail('id outside reserved block')
+
+def base_site(sid):
+    return next(r for r in base('data/sites_OH.csv') if r['site_id'] == sid)
 
 def must_fail(label, fn):
     try: fn()
@@ -51,6 +61,7 @@ def main():
     fr = frame(); nfr, nrest = check_slice(sl, fr); print(f'frame {nfr} eligible sites; unadjudicated {nrest}; slice {len(sl)} (second half)')
     sites, caps, ev, applied = B.outputs(decisions, sl)  # validates every decision against the stored pages
     check_rules(sites, ev, caps)
+    for d in decisions: check_street(d, sites[d['site_id']])
     # data files: exactly base + expected rows, other cells untouched
     for fn, rows, key in (('site_capabilities.csv', caps, 'capability_id'), ('evidence_sites_OH.csv', ev, 'evidence_id')):
         now, was = {r[key]: r for r in read(ROOT / 'data' / fn)}, {r[key] for r in base('data/' + fn)}
@@ -86,6 +97,9 @@ def main():
     must_fail('false locality witness', lambda: B.validate_decision({**d0, 'grain_quote': '1 Nowhere Road, Mentor, Ohio'}))
     must_fail('site without verdict', lambda: check_coverage([v for v in verdicts if v['site_id'] != sl[0]['site_id']], sl, decisions))
     must_fail('C-strength tag on tier B', lambda: check_rules(sites, [{**ev[0], 'tier_effect': 'supports_C', 'record_id': 'SITE-001613'}], caps))
+    visionair = {'site_id': 'SITE-001569', 'grain_quote': '526 S. Main St. Suite 509, Akron, OH 44311'}
+    must_fail('witness street differs from site record (VisionAir)', lambda: check_street(visionair, base_site('SITE-001569')))
+    must_fail('retired id reused', lambda: check_rules(sites, [{**ev[0], 'evidence_id': 'EVD-388013'}], caps))
     must_fail('id outside block', lambda: check_rules(sites, ev, [{**caps[0], 'capability_id': 'CAP-009999'}]))
     must_fail('slice is not second half', lambda: check_slice(sl[1:], fr))
     print('ALL CHECKS PASSED')
