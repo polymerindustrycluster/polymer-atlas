@@ -485,3 +485,22 @@ Status snapshot and provenance: `tasks/campaign-hygiene-2026-11-06/README.md`. `
 - [x] `open` **Ohio streets remaining:** 1,559 of 1,883 active Ohio site rows have blank street_address at the pinned main baseline; pending fills are excluded. Resolve own-operator physical-address conflicts. The final 88 rows of the original 448-row A/B frame are already claimed in PR #211, not unassigned.
 - [ ] `claimed:grok 2026-11-12` **Ohio streets, own-site route, PIC-18 frame in 100-row batches (Summit first)** Branch `agent/grok/oh-street-address-2026-11-12-bNN`; packets `tasks/oh-street-address-2026-11-12-bNN/`. Reserved IDs: EVD-340000–349999.
 - [ ] `in-pr:https://github.com/polymerindustrycluster/polymer-atlas/pull/358` **Public site as a working tool for its first user (site audit 2026-11-16):** PIC-18 prospects page with shareable filters and "unknown" counts, "Download these rows (CSV)" on table pages, prospects.csv and a latest-release link, county A-C column and process/band tables, evidence rows on organization pages, PIC-18 default views. Branch `agent/claude-code/site-prospects`; scripts/build_site.py and the explorer builders only, no data/ edits.
+
+### Parked by the owner (not scheduled)
+
+- [ ] `parked 2026-11-17 (owner)` **Student opportunities: REUs, co-ops and internships.**
+  - **Owner question:** how many schools, programs and ecosystem entities, and how many companies, publish REUs, co-ops or internships? The aim is a student-facing view: PIC-18 first, then national. Research later; nothing is scheduled.
+  - **Starting facts (main cc4f955, 2026-11-17):**
+    - `programs.engagement_modes` already has `internships_coops`: 81 of 216 program rows carry it.
+    - There is no REU value.
+    - No organization or site column records a student program.
+  - **Owner and schema rulings needed before any research:**
+    1. Whether an REU value joins the `engagement_modes` vocabulary.
+    2. Whether organizations gain a field for a published internship, co-op or apprenticeship program, and with what evidence class.
+    3. What counts as a standing program. A single dated job posting is not one.
+  - **Likely sources:**
+    - NSF's public REU site list.
+    - The institution's own co-op and internship pages.
+    - Each company's own careers page.
+    - Job boards and university employer lists are leads only.
+  - **First user and non-use date:** to be named by the owner when this is promoted (portfolio rule 8).
