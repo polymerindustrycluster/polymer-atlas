@@ -16,7 +16,7 @@ ROOT = HERE.parents[1]
 CORPUS = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-corpus-2026-11-16')
 FIELDS = ('markets_served', 'certifications')
 BASE = '0c7bacc1840741fbf130e39c9bb11fd5c39abdc0'
-APPLICATION_BASE = '89d9e460e8bb334b73f1b9bfc130a97ed742957a'
+APPLICATION_BASE = '19bd1aa25b8834aa6eea95a63a09482ae6c42118'
 RETIRED_IDS = {'EVD-370040', 'EVD-370069'}
 sys.path.insert(0, str(ROOT / 'scripts'))
 from shard_io import append_sorted
