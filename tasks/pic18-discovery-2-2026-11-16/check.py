@@ -37,6 +37,8 @@ def check(verdicts, witnesses, data, prior, frame, readme):
             if not html.exists() or hashlib.sha256(html.read_bytes()).hexdigest() != w['sha256']: errs.append(f'{wid}: raw page missing or hash drift'); continue
             tw, qw = words(html.with_suffix('.txt').read_text()), words(w['quote'])
             if not any(tw[i:i + len(qw)] == qw for i in range(len(tw))): errs.append(f'{wid}: quote not on stored page')
+        if not v['url_provenance']: errs.append(f'rank {v["rank"]}: no url_provenance')
+        if v['witness_ids'] and v['url_provenance'].startswith('none'): errs.append(f'rank {v["rank"]}: witness on a URL with no provenance')
         if v['verdict'] == 'REJECT' and not v['witness_ids']: errs.append(f'rank {v["rank"]}: REJECT without a quoted deciding fact')
         for tid in filter(None, v['target_record'].split(';')):
             if tid not in data['organizations'] and tid not in data['sites']: errs.append(f'rank {v["rank"]}: target {tid} not in data/')
@@ -66,8 +68,9 @@ def main():
     def target(v, w, p): next(x for x in v if x['target_record'])['target_record'] = 'ORG-999999'
     def drop(v, w, p): v.pop()
     def flip(v, w, p): next(x for x in v if x['verdict'] == 'STILL_UNCERTAIN')['verdict'] = 'REJECT'
+    def guess(v, w, p): next(x for x in v if x['witness_ids'])['url_provenance'] = 'none: guessed'
     def sha(v, w, p): w[1]['sha256'] = '0' * 64
-    ok = all([inj('altered quote', quote), inj('nonexistent target', target), inj('dropped verdict row', drop), inj('flipped verdict (count drift)', flip), inj('hash drift', sha)])
+    ok = all([inj('altered quote', quote), inj('nonexistent target', target), inj('dropped verdict row', drop), inj('flipped verdict (count drift)', flip), inj('hash drift', sha), inj('witness on guessed URL', guess)])
     sys.exit(0 if ok and not errs else 1)
 
 if __name__ == '__main__':

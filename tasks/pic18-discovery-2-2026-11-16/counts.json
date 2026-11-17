@@ -2,8 +2,8 @@
  "applied": 0,
  "by_verdict": {
   "DUPLICATE_OF": 6,
-  "REJECT": 6,
-  "STILL_UNCERTAIN": 60
+  "REJECT": 1,
+  "STILL_UNCERTAIN": 65
  },
  "data_rows_added": 0,
  "held": 72,
