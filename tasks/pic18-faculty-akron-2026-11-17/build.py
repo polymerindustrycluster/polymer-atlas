@@ -20,7 +20,7 @@ def block_max(ids, prefix, lo, hi):
     return max(n) if n else lo - 1
 
 def rows_for(v, pid, eid0):
-    title = v["gate_a_quote"].removeprefix("Title: ")
+    title = v["role_as_published"]
     person = dict(person_id=pid, full_name=v["full_name"], institution_org_id=INST, program_org_id="", role=v["role"],
                   role_as_published=v["role_as_published"], research_specialties=v["research_specialties"],
                   public_profile_url=v["public_profile_url"], lab_url="", sources=v["public_profile_url"],
@@ -40,9 +40,13 @@ def main(dry=False):
     pn = block_max([r["person_id"] for r in people], "PERSON-", *PBLOCK) + 1
     en = block_max([r["evidence_id"] for r in evid], "EVD-", *EBLOCK) + 1
     newp, newe = [], []
+    # IDs 2300/2301 and EVD-393000..393003 were drafted for two people later put on hold (identifier-only witnesses) and never merged;
+    # Luettmer-Strathmann keeps the IDs she had in the first draft so the data delta stays a subset of it.
+    PINNED = {"Jutta Luettmer-Strathmann": (2302, 393004)}
     for v in sorted(verdicts, key=lambda r: r["full_name"]):
         if v["public_profile_url"] in have: continue
-        p, e = rows_for(v, f"PERSON-{pn:06d}", en); pn += 1; en += len(e); newp.append(p); newe += e
+        a, c = PINNED.get(v["full_name"], (pn, en))
+        p, e = rows_for(v, f"PERSON-{a:06d}", c); pn = max(pn, a + 1); en = max(en, c + len(e)); newp.append(p); newe += e
     assert pn - 1 <= PBLOCK[1] and en - 1 <= EBLOCK[1]
     if not dry:
         if newp: append_sorted(ROOT / "data/people.csv", newp, "person_id"); append_sorted(ROOT / "data/evidence_people.csv", newe, "evidence_id")
@@ -50,6 +54,9 @@ def main(dry=False):
     fr = list(csv.DictReader(open(HERE / "frame.csv", newline="", encoding="utf-8")))
     counts = {"verdicts": dict(Counter(r["verdict"].split()[0] for r in allv)), "persons_examined": len(allv),
               "frame_rows_by_unit": dict(Counter(r["unit"] for r in fr)), "people_rows_added": len(newp) + len(have), "evidence_rows_added": len(newe) + 2 * len(have)}
+    from pagetext import P, redact  # committed manifest copy: same rows, UA network ids redacted
+    src = open(P / "manifest.csv", newline="", encoding="utf-8").read().replace("\r\n", "\n")
+    open(HERE / "manifest.csv", "w", newline="", encoding="utf-8").write(redact(src))
     json.dump(counts, open(HERE / "counts.json", "w"), indent=1, sort_keys=True)
     print(f"added {len(newp)} people, {len(newe)} evidence rows ({len(have)} already present)", counts)
 

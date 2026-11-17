@@ -15,5 +15,6 @@ for r in cands:
     sha, code, n = fetch(r["profile_url"], f"link on {r['unit']} listing page {r['listing_sha'][:8]}")
     out.append({"name": r["name"], "unit": r["unit"], "profile_url": r["profile_url"], "sha": sha or "", "http": code})
     print(r["name"], code, n, flush=True)
-with open("profiles.csv", "w", newline="") as f:
+from fetch import P
+with open(P + "/profiles.csv", "w", newline="") as f:  # real URLs: persist only, never committed
     w = csv.DictWriter(f, ["name", "unit", "profile_url", "sha", "http"]); w.writeheader(); w.writerows(out)

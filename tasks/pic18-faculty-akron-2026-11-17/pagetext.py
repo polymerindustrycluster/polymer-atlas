@@ -10,3 +10,7 @@ def squash(s):
     return " ".join(s.replace("’", "'").replace("“", '"').replace("”", '"').split())
 def quote_in(q, sha):
     return squash(q) in squash(text(sha))
+
+def redact(url):
+    """Committed files never carry the UA network id in profile URLs (?u=<id>); the persist manifest keeps the real URL."""
+    return re.sub(r"([?&]u=)[^&#\s,;]+", r"\1<id>", url)

@@ -2,6 +2,7 @@
 """Build frame.csv from the stored listing pages (sha-named in persist). Emails/phones are dropped at parse time."""
 import csv, html, re, sys, urllib.parse
 from pathlib import Path
+from pagetext import redact
 P = Path("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-faculty-akron-2026-11-17")
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -83,6 +84,7 @@ if __name__ == "__main__":
     rows = build()
     cols = ["unit", "name", "title", "dept", "profile_url", "listing_url", "listing_sha", "gate_a_listing", "held_ids", "held_at_akron"]
     with open(HERE / "frame.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, cols, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
+        w = csv.DictWriter(f, cols, extrasaction="ignore"); w.writeheader()
+        for r in rows: w.writerow({**r, "profile_url": redact(r["profile_url"])})
     from collections import Counter
     print(Counter(r["unit"] for r in rows)); print(Counter((r["unit"], r["gate_a_listing"]) for r in rows))
