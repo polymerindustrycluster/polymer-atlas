@@ -27,6 +27,7 @@ Usage:
 import argparse
 import importlib.util
 import csv
+import io
 import datetime
 import html
 import json
@@ -147,24 +148,25 @@ def nonempty(value):
 URL_RE = re.compile(r"https?://[^\s<>\"')\]]+")
 
 
-def linkify(text):
-    """Escape text and turn http(s) URLs into links. Nothing else becomes markup."""
-    text = "" if text is None else str(text)
-    out, pos = [], 0
-    for m in URL_RE.finditer(text):
-        url = m.group(0).rstrip(".,;:")
-        out.append(esc(text[pos:m.start()]))
-        out.append(f'<a href="{esc(url)}" rel="noopener nofollow">{esc(url)}</a>')
-        pos = m.start() + len(url)
-    out.append(esc(text[pos:]))
-    return "".join(out)
+# Free text from source strings and evidence rows (claim text, notes, citations) is never published: it can quote a scraped
+# page or name a person, and no pattern filter makes free text safe. Pages show structured fields and the source links only.
+def public_url(url):
+    """An http(s) link that is not an email address or a personal profile page."""
+    return bool(safe_href(url)) and "@" not in url and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
 
 
-# Source items that point at private/internal workflow material are not shown
-# on the public site (AGENTS.md section 5.1: the PIC CRM is never a cited
-# source; staging paths are workshop-area references). The repository CSVs
-# keep the full source text; the page says how many items were left out.
-INTERNAL_SOURCE_RE = re.compile(r"\bCRM\b|\(staging\b|\bstaging working/|\(working/[\w.-]+/", re.I)
+def source_urls(text):
+    """Distinct public URLs in a source string, in order: the only part of a citation the site shows."""
+    seen = []
+    for m in URL_RE.finditer(str(text or "")):
+        u = m.group(0).rstrip(".,;:")
+        if public_url(u) and u not in seen:
+            seen.append(u)
+    return seen
+
+
+def url_links(urls):
+    return " ".join(f'<a href="{esc(u)}" rel="noopener nofollow">{esc(u)}</a>' for u in urls)
 
 
 CRM_RE = re.compile(r"\bCRM\b")
@@ -181,16 +183,10 @@ def lede(text):
 
 
 def source_list(sources):
-    if not nonempty(sources):
-        return '<p class="muted">No source text recorded.</p>'
-    parts = [p.strip() for p in re.split(r";\s+", str(sources)) if p.strip()]
-    shown = [p for p in parts if not INTERNAL_SOURCE_RE.search(p)]
-    hidden = len(parts) - len(shown)
-    out = '<ul class="sources">' + "".join(f"<li>{linkify(p)}</li>" for p in shown) + "</ul>" if shown else ""
-    if hidden:
-        out += (f'<p class="small muted">{hidden} internal workflow reference{"s" if hidden != 1 else ""} '
-                "omitted from this view; the repository's CSV holds the full source text.</p>")
-    return out or '<p class="muted">No source text recorded.</p>'
+    urls = source_urls(sources)
+    if not urls:
+        return '<p class="muted">No source link recorded.</p>'
+    return '<ul class="sources">' + "".join(f"<li>{url_links([u])}</li>" for u in urls) + "</ul>"
 
 
 def safe_href(url):
@@ -275,6 +271,9 @@ class Atlas:
             if not (r.get("withdrawn_date") or "").strip():
                 self.engagement_by_person[r.get("person_id")].append(r)
         self.rels = rows_of(con, "relationships")
+        self.evidence = defaultdict(list)   # (record_table, record_id) -> evidence rows (SCHEMA 4.13)
+        for r in rows_of(con, "evidence"):
+            self.evidence[(r.get("record_table"), r.get("record_id"))].append(r)
         self.ref_titles = {r["code_value"]: r["code_title"] for r in rows_of(con, "ref_codes")
                            if r.get("code_system") == "NAICS" and r.get("code_value")}
         self.sites_by_org = defaultdict(list)
@@ -354,7 +353,7 @@ def git_info(repo_root):
 # --------------------------------------------------------------------------
 # page layout
 
-NAV = [("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
+NAV = [("prospects", "PIC-18 prospects", "prospects.html"), ("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
        ("shows", "Trade shows", "graph/events.html"), ("experts", "Programs & researchers", "experts.html"),
        ("search", "Search", "search.html"),
        ("counties", "Ohio counties", "counties/index.html"), ("map", "Street map", "map.html")]
@@ -421,6 +420,9 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 <p>Polymer Industry Atlas, built for the Polymer Industry Cluster (PIC), Greater Akron Chamber.
 Data license: <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
 Source and data: <a href="{esc(ctx.repo_url)}" rel="noopener">{esc(ctx.repo_url)}</a>.</p>
+<p class="downloads"><strong>Take the data with you:</strong>
+<a href="{root}prospects.csv">PIC-18 prospects (CSV, all rows)</a> ·
+<a href="{esc(ctx.repo_url)}/releases/latest" rel="noopener">Latest data release (GitHub)</a></p>
 <p class="muted">{ctx.asof()}</p>
 <p class="muted">Coordinates are reference data, never evidence. A missing figure is not a zero.
 Counts here are database rows, not industry totals.</p>
@@ -637,6 +639,33 @@ SORTABLE_JS = r"""(function () {
     if (/^-?\d+(\.\d+)?$/.test(num)) return { n: parseFloat(num), t: raw.toLowerCase() };
     return { n: null, t: raw.toLowerCase() };
   }
+  // "Download these rows (CSV)": exactly the rows and columns on screen. Filtered-out rows and total rows are left out.
+  function csvCell(c) {
+    var s = (c.getAttribute('data-csv') !== null ? c.getAttribute('data-csv') : c.textContent).replace(/\s+/g, ' ').trim();
+    if (/^[=+@]/.test(s) || /^-(?!\d)/.test(s)) s = "'" + s;   // spreadsheets would run a leading = + @ - as a formula
+    return /[",]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+  function csvButton(table) {
+    var cap = table.caption ? table.caption.textContent : document.title;
+    var p = document.createElement('p'); p.className = 'tdl';
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = 'Download these rows (CSV)';
+    b.addEventListener('click', function () {
+      var head = table.tHead.rows[table.tHead.rows.length - 1];
+      var lines = [Array.prototype.map.call(head.cells, csvCell).join(',')];
+      Array.prototype.forEach.call(table.tBodies[0].rows, function (r) {
+        if (r.hidden || r.classList.contains('total')) return;
+        lines.push(Array.prototype.map.call(r.cells, csvCell).join(','));
+      });
+      var name = cap.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) + '-' + new Date().toISOString().slice(0, 10) + '.csv';
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob(['\ufeff' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' }));
+      a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    });
+    p.appendChild(b);
+    var wrap = table.closest('.table-wrap') || table;
+    wrap.parentNode.insertBefore(p, wrap.nextSibling);
+  }
   function enhance(table, idx) {
     var head = table.tHead, body = table.tBodies[0];
     if (!head || !body || table.hasAttribute('data-nosort')) return;
@@ -665,7 +694,7 @@ SORTABLE_JS = r"""(function () {
         pinned.forEach(function (r) { body.appendChild(r); });
       });
     });
-    if (rows.length > 12) {
+    if (rows.length > 12 && !table.hasAttribute('data-nofilter')) {   // data-nofilter: the page filters its own rows
       var wrap = table.closest('.table-wrap') || table;
       var box = document.createElement('label'); box.className = 'tfilter';
       var inp = document.createElement('input'); inp.type = 'search'; inp.id = 'tfilter-' + idx;
@@ -682,6 +711,7 @@ SORTABLE_JS = r"""(function () {
         count.textContent = q ? shown + ' of ' + rows.length : '';
       });
     }
+    if (!table.hasAttribute('data-nocsv')) csvButton(table);
   }
   // Phone layout: every cell carries its column heading, so CSS can stack a row as a labelled card.
   function label(table) {
@@ -917,6 +947,19 @@ th[aria-sort=descending] button.sort::after{opacity:.9}
 .tfilter{display:flex;gap:8px;align-items:center;margin:.8em 0 -.4em;font-size:.9rem;color:var(--muted)}
 .tfilter input{padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%;min-height:40px}
 
+.tdl{margin:-.6em 0 1.2em}
+.downloads{margin:.4em 0}
+.facets{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:.6em 0}
+details.facet{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:6px 12px;margin:0}
+details.facet summary{font-weight:700;min-height:32px;display:flex;align-items:center;gap:4px}
+details.facet .sel{font-weight:400;color:var(--accent)}
+details.facet .opts{max-height:15em;overflow-y:auto;padding:4px 0}
+details.facet label.opt{display:flex;gap:6px;align-items:baseline;padding:2px 0}
+details.facet label.opt .t{flex:1}
+details.facet label.opt .n{color:var(--muted);font-variant-numeric:tabular-nums}
+details.facet label.opt.zero{opacity:.55}
+a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
+#ptable td{font-size:.9rem}
 .explore-links{display:flex;gap:8px;flex-wrap:wrap;margin:.2em 0 1em}
 .pill{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--accent);background:var(--panel);
   font:700 .88rem/1 var(--f-display);text-decoration:none;color:var(--accent);transition:color .15s,border-color .15s}
@@ -1038,6 +1081,7 @@ MAP_JS = r"""(function () {
     function apply(fit) {
       var rings = checked('ring'), tiers = checked('tier'), states = checked('state');
       var allStatus = document.getElementById('f-allstatus').checked;
+      var pic = document.getElementById('f-pic18'), picOnly = pic.checked, picCounties = pic.getAttribute('data-counties').split(',');
       var rs = {}, ts = {}, ss = {};
       rings.forEach(function (v) { rs[v] = 1; }); tiers.forEach(function (v) { ts[v] = 1; });
       states.forEach(function (v) { ss[v] = 1; });
@@ -1047,11 +1091,12 @@ MAP_JS = r"""(function () {
         if (!rs[r[C.ring] || 'x']) return;
         if (!ts[r[C.tier] || 'x']) return;
         if (!ss[r[C.st] || 'x']) return;
+        if (picOnly && !(r[C.st] === 'OH' && picCounties.indexOf(r[C.co]) >= 0)) return;
         if (!allStatus && r[C.status] !== 'active') return;
         group.addLayer(markers[i]); shown.push(markers[i]);
       });
       status.textContent = 'Showing ' + shown.length.toLocaleString() + ' of ' + rows.length.toLocaleString() +
-        ' site rows that have coordinates (filters applied: ring, tier, state' + (allStatus ? '' : ', operating status active only') + ').';
+        ' site rows that have coordinates (filters applied: ring, tier, state' + (picOnly ? ', PIC-18 counties only' : '') + (allStatus ? '' : ', operating status active only') + ').';
       if (fit && shown.length) {
         map.fitBounds(L.featureGroup(shown).getBounds().pad(0.05), {maxZoom: 11});
       }
@@ -1071,6 +1116,82 @@ MAP_JS = r"""(function () {
   }
 })();
 """
+
+PROSPECTS_JS = r"""(function () {
+  'use strict';
+  // Prospects filters. Rows are in the page (server-rendered); each carries its filter tokens in data-* attributes.
+  // Within one filter the choices are OR; across filters they are AND. "_" is the unknown option (a row with no tokens).
+  var form = document.getElementById('pfilters'), tbl = document.getElementById('ptable');
+  if (!form || !tbl) return;
+  var body = tbl.tBodies[0], q = document.getElementById('pq');
+  var status = document.getElementById('pstatus'), left = document.getElementById('pleft');
+  var F = ['co', 'ring', 'tier', 'band', 'proc', 'mat', 'mkt', 'own', 'mem'];
+  var PARAM = {co: 'county', ring: 'ring', tier: 'tier', band: 'employees', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership', mem: 'member'};
+  var NAME = {co: 'county', ring: 'ring', tier: 'site tier', band: 'employee band', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership', mem: 'member flag'};
+  var boxes = {};
+  F.forEach(function (f) { boxes[f] = Array.prototype.slice.call(form.querySelectorAll('input[name="' + f + '"]')); });
+  function toks(r, f) { var v = r.getAttribute('data-' + f); return v ? v.split(' ') : []; }
+  function chosen(f) { return boxes[f].filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
+  function pass(r, f, sel) {
+    if (!sel.length) return true;
+    var t = toks(r, f);
+    if (!t.length) return sel.indexOf('_') >= 0;
+    return sel.some(function (v) { return t.indexOf(v) >= 0; });
+  }
+  function fromUrl() {
+    var u = new URLSearchParams(location.search);
+    q.value = u.get('q') || '';
+    F.forEach(function (f) {
+      var want = (u.get(PARAM[f]) || '').split(',').filter(Boolean);
+      boxes[f].forEach(function (b) { b.checked = want.indexOf(b.value) >= 0; });
+    });
+  }
+  function toUrl() {
+    var u = new URLSearchParams();
+    if (q.value.trim()) u.set('q', q.value.trim());
+    F.forEach(function (f) { var c = chosen(f); if (c.length) u.set(PARAM[f], c.join(',')); });
+    var s = u.toString();
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+  }
+  function run() {
+    var sel = {}, term = q.value.trim().toLowerCase(), counts = {}, unk = {}, shown = 0;
+    F.forEach(function (f) { sel[f] = chosen(f); counts[f] = {}; unk[f] = 0; });
+    var rows = Array.prototype.slice.call(body.rows);
+    rows.forEach(function (r) {
+      var ok = {}, all = true;
+      F.forEach(function (f) { ok[f] = pass(r, f, sel[f]); if (!ok[f]) all = false; });
+      var okq = !term || r.cells[0].textContent.toLowerCase().indexOf(term) >= 0;
+      r.hidden = !(all && okq);
+      if (all && okq) shown++;
+      F.forEach(function (f) {   // counts for one filter: rows that pass every OTHER filter
+        if (!okq || !F.every(function (g) { return g === f || ok[g]; })) return;
+        var t = toks(r, f);
+        if (!t.length) t = ['_'];
+        t.forEach(function (v) { counts[f][v] = (counts[f][v] || 0) + 1; });
+      });
+    });
+    var notes = [];
+    F.forEach(function (f) {
+      boxes[f].forEach(function (b) {
+        var n = counts[f][b.value] || 0;
+        b.parentNode.querySelector('.n').textContent = n.toLocaleString();
+        b.parentNode.classList.toggle('zero', n === 0 && !b.checked);
+      });
+      var c = sel[f].length, u = counts[f]['_'] || 0;
+      boxes[f][0].closest('details').querySelector('.sel').textContent = c ? ' (' + c + ' chosen)' : '';
+      if (c && sel[f].indexOf('_') < 0 && u && f !== 'mem') notes.push(u.toLocaleString() + ' with unknown ' + NAME[f]);
+    });
+    status.textContent = 'Showing ' + shown.toLocaleString() + ' of ' + rows.length.toLocaleString() + ' organization rows.';
+    left.textContent = notes.length ? 'Left out because the field is unknown (within your other choices): ' + notes.join('; ') + '. Choose "Unknown" in that filter to see them.' : '';
+    toUrl();
+  }
+  var timer;
+  form.addEventListener('change', run);
+  q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
+  fromUrl(); run();
+})();
+"""
+
 
 SEARCH_JS = r"""(function () {
   'use strict';
@@ -1153,6 +1274,10 @@ skyline = importlib.util.module_from_spec(_sk_spec)
 _sk_spec.loader.exec_module(skyline)
 
 GLYPHS = {
+    "prospects": '<svg viewBox="0 0 240 84" aria-hidden="true"><g fill="none" stroke="var(--line)" stroke-width="1.4"><rect x="40" y="10" width="160" height="64" rx="6"/>'
+                 '<line x1="40" y1="28" x2="200" y2="28"/><line x1="40" y1="44" x2="200" y2="44"/><line x1="40" y1="60" x2="200" y2="60"/>'
+                 '<line x1="92" y1="10" x2="92" y2="74"/><line x1="150" y1="10" x2="150" y2="74"/></g><rect x="48" y="33" width="36" height="6" rx="3" fill="var(--accent)"/>'
+                 '<rect x="100" y="49" width="40" height="6" rx="3" fill="var(--r2)"/><rect x="158" y="33" width="30" height="6" rx="3" fill="var(--r1)"/></svg>',
     "graph": '<svg viewBox="0 0 240 84" aria-hidden="true"><g stroke="var(--line)" stroke-width="1.2">'
              '<line x1="40" y1="42" x2="96" y2="20"/><line x1="40" y1="42" x2="92" y2="66"/><line x1="96" y1="20" x2="150" y2="40"/>'
              '<line x1="92" y1="66" x2="150" y2="40"/><line x1="150" y1="40" x2="204" y2="22"/><line x1="150" y1="40" x2="200" y2="64"/>'
@@ -1181,6 +1306,243 @@ GLYPHS = {
 def active_ab(sites):
     return [s for s in sites if s.get("operating_status") == "active"
             and s.get("verification_tier") in ("A", "B", "C")]
+
+
+# --------------------------------------------------------------------------
+# PIC-18 prospects: one row per organization with an active tier A-C site row in a PIC-18 county
+
+UNKNOWN_VALUES = {"", "unknown"}       # blank and the literal vocabulary value both mean "nothing recorded"
+BAND_MINS = (50, 100, 250, 500, 1000)  # "N or more" shortcuts: a band whose lower bound is at least N
+PROSPECT_FACETS = [("co", "County"), ("ring", "Ring"), ("tier", "Site tier"), ("band", "Employees"),
+                   ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership"),
+                   ("mem", "Public member list")]
+MEMBER_YES, MEMBER_NO = "on the public member list", "not on the public member list"   # AGENTS.md section 5.1
+def known(values):
+    return sorted({v for v in values if v not in UNKNOWN_VALUES})
+
+
+def tok(value):
+    """Filter token: one space-free word, so rows can carry several in one data attribute."""
+    return re.sub(r"\s+", "_", str(value).strip())
+
+
+def band_floor(band):
+    m = re.match(r"\d+", band)
+    return int(m.group()) if m else None
+
+
+def pic18_active_sites(sites):
+    """The PIC-18 headline set: Ohio county in PIC-18, operating status active, verification tier A-C."""
+    return active_ab([s for s in sites if s.get("state") == "OH" and s.get("county") in PIC12])
+
+
+def evidence_view(a, table, rid):
+    """One record's evidence rows (SCHEMA 4.13)."""
+    return a.evidence.get((table, rid), [])
+
+
+def org_evidence_count(a, oid):
+    """Evidence rows the organization page shows: the organization's own plus those of all its site rows."""
+    table = "organizations" if oid in a.orgs else "ecosystem"
+    return (len(evidence_view(a, table, oid))
+            + sum(len(evidence_view(a, "sites", s["site_id"])) for s in a.sites_by_org.get(oid, [])))
+
+
+def prospect_rows(a):
+    """One dict per organization row with at least one PIC-18 active tier A-C site row.
+
+    Employee band: the band on its PIC-18 site rows, else the organization's Ohio band. Process, material and
+    market follow the same rule. Each of those fields is (tokens, basis); no tokens means unknown."""
+    by_org = defaultdict(list)
+    for s in pic18_active_sites(a.sites):
+        by_org[s["org_id"]].append(s)
+    rows = []
+    for oid, sites in by_org.items():
+        rec = a.orgs.get(oid) or a.eco.get(oid) or {}
+
+        def pick(site_field, org_field):
+            t = known(v for s in sites for v in vals(s.get(site_field)))
+            if t:
+                return t, "site"
+            t = known(vals(rec.get(org_field)))
+            return (t, "org record") if t else ([], "")
+        rows.append({
+            "id": oid, "name": rec.get("legal_name") or oid, "website": safe_href(rec.get("website")) or "",
+            "hq_city": rec.get("hq_city") or rec.get("city") or "", "hq_state": rec.get("hq_state") or rec.get("state") or "",
+            "counties": sorted({s["county"] for s in sites}), "n_sites": len(sites),
+            "rings": known(s["_ring"] for s in sites if s["_ring"]), "tiers": sorted({s["verification_tier"] for s in sites}),
+            "proc": pick("processes", "processes"), "mat": pick("materials", "materials"),
+            "mkt": pick("markets_served", "markets_served"), "band": pick("employee_band_site", "employee_band_ohio"),
+            "own": known(vals(rec.get("ownership_type"))), "member": rec.get("pic_member") == "true",
+            "evidence": org_evidence_count(a, oid), "status": rec.get("status") or "", "org_tier": rec.get("verification_tier") or "",
+        })
+    rows.sort(key=lambda r: (r["name"].lower(), r["id"]))
+    return rows
+
+
+def row_tokens(r, key):
+    """The filter tokens one row carries for one facet (none = unknown)."""
+    if key == "co":
+        return [tok(c) for c in r["counties"]]
+    if key == "ring":
+        return r["rings"]
+    if key == "tier":
+        return r["tiers"]
+    if key == "band":
+        bands = r["band"][0]
+        mins = sorted({n for b in bands for n in BAND_MINS if (band_floor(b) or 0) >= n})
+        return [tok(b) for b in bands] + [f"min{n}" for n in mins]
+    if key == "own":
+        return [tok(o) for o in r["own"]]
+    if key == "mem":
+        return ["yes" if r["member"] else "no"]
+    return [tok(t) for t in r[key][0]]
+
+
+def facet_options(rows, key):
+    """[(token, label, count over all rows)] in display order; the unknown option is added by the caller."""
+    counts = Counter(t for r in rows for t in row_tokens(r, key))
+    labels = {}
+    for r in rows:
+        if key in ("proc", "mat", "mkt"):
+            labels.update({tok(t): vocab(t) for t in r[key][0]})
+        elif key == "own":
+            labels.update({tok(t): vocab(t) for t in r["own"]})
+        elif key == "band":
+            labels.update({tok(b): b for b in r["band"][0]})
+    if key == "co":
+        order = sorted(counts)
+        labels = {c: c for c in order}
+    elif key == "ring":
+        order = sorted(counts)
+        labels = {x: f"Ring {x}: {RINGS.get(x, '')}" for x in order}
+    elif key == "tier":
+        order = sorted(counts)
+        labels = {x: f"Tier {x}: {TIERS[x][0]}" for x in order}
+    elif key == "mem":
+        order, labels = ["yes", "no"], {"yes": MEMBER_YES, "no": MEMBER_NO}
+    elif key == "band":
+        mins = [f"min{n}" for n in BAND_MINS]
+        exact = sorted((t for t in counts if not t.startswith("min")), key=lambda t: (band_floor(t) or 0, t))
+        order = mins + exact
+        labels.update({f"min{n}": f"{n} or more (band starts at {n}+)" for n in BAND_MINS})
+    else:
+        order = sorted(counts, key=lambda t: (-counts[t], labels[t]))
+    return [(t, labels[t], counts.get(t, 0)) for t in order]
+
+
+def facet_html(rows, key, heading, open_):
+    opts = facet_options(rows, key)
+    n_unknown = sum(1 for r in rows if not row_tokens(r, key))
+    if key != "mem":   # the member flag is yes/no by construction: a record without the flag is "not on the list"
+        opts.append(("_", "Unknown (nothing recorded)", n_unknown))
+    items = "".join(
+        f'<label class="opt"><input type="checkbox" name="{key}" value="{esc(t)}"> '
+        f'<span class="t">{esc(label)}</span> <span class="n">{n}</span></label>' for t, label, n in opts)
+    note = ('<p class="small muted">No unknowns here: an organization not flagged is shown as not on the public list.</p>'
+            if key == "mem" else "")
+    return (f'<details class="facet"{" open" if open_ else ""}><summary>{esc(heading)}<span class="sel"></span></summary>'
+            f'<div class="opts">{items}</div>{note}</details>')
+
+
+def prospect_cell(tokens, basis, always_basis=False):
+    if not tokens:
+        return '<td data-sort="—"><span class="muted">unknown</span></td>'
+    tag = f' <span class="muted small">({basis})</span>' if basis and (always_basis or basis == "org record") else ""
+    return f"<td>{esc(vocab(';'.join(tokens)))}{tag}</td>"
+
+
+def prospect_tr(r):
+    attrs = " ".join(f'data-{k}="{esc(" ".join(row_tokens(r, k)))}"' for k, _ in PROSPECT_FACETS)
+    org_rec = ", ".join(x for x in [str(r["status"]).replace("_", " ") if r["status"] else "status unknown",
+                                    f"tier {r['org_tier']}" if r["org_tier"] else ""] if x)
+    web = f'<a class="url" href="{esc(r["website"])}" rel="noopener nofollow">{esc(r["website"])}</a>' if r["website"] else \
+        '<span class="muted">unknown</span>'
+    plain = lambda toks: (f"<td>{esc(', '.join(toks))}</td>" if toks else prospect_cell([], ""))   # noqa: E731
+    return (f'<tr {attrs}><th scope="row"><a href="orgs/{esc(safe_id(r["id"]))}.html">{esc(r["name"])}</a></th>'
+            f'<td>{esc(", ".join(r["counties"]))}</td>{plain(r["rings"])}<td>{esc(", ".join(r["tiers"]))}</td>'
+            f'{prospect_cell(*r["proc"])}{prospect_cell(*r["mat"])}{prospect_cell(*r["mkt"])}'
+            f'{prospect_cell(*r["band"], always_basis=True)}{prospect_cell(r["own"], "")}'
+            f'<td>{MEMBER_YES if r["member"] else MEMBER_NO}</td>'
+            f'<td class="num">{r["n_sites"]}</td><td class="num"><a href="orgs/{esc(safe_id(r["id"]))}.html#evidence">{r["evidence"]}</a></td>'
+            f'<td>{esc(org_rec)}</td><td>{web}</td></tr>')
+
+
+def prospects_csv(rows, base_url):
+    """prospects.csv: the whole prospects table, one row per organization row; unknown is written out, never left blank."""
+    out = io.StringIO()
+    w = csv.writer(out, lineterminator="\r\n")
+    w.writerow(["org_id", "organization", "website", "hq_city", "hq_state", "pic18_counties", "pic18_site_rows", "rings",
+                "site_tiers", "processes", "processes_basis", "materials", "materials_basis", "markets", "markets_basis",
+                "employee_band", "employee_band_basis", "ownership", "public_member_list", "evidence_rows",
+                "org_record_status", "org_record_tier", "atlas_page"])
+
+    def safe(v):   # spreadsheets run a leading = + @ - as a formula
+        v = str(v)
+        return "'" + v if re.match(r"[=+@]|-(?!\d)", v) else v
+
+    def cell(tokens):   # readable vocabulary, as in the table
+        return "; ".join(t.replace("_", " ") for t in tokens) if tokens else "unknown"
+    for r in rows:
+        w.writerow([safe(x) for x in [
+            r["id"], r["name"], r["website"] or "unknown", r["hq_city"], r["hq_state"], "; ".join(r["counties"]),
+            r["n_sites"], cell(r["rings"]), "; ".join(r["tiers"]),
+            cell(r["proc"][0]), r["proc"][1] or "unknown", cell(r["mat"][0]), r["mat"][1] or "unknown",
+            cell(r["mkt"][0]), r["mkt"][1] or "unknown", cell(r["band"][0]), r["band"][1] or "unknown",
+            cell(r["own"]), MEMBER_YES if r["member"] else MEMBER_NO, r["evidence"],
+            r["status"] or "unknown", r["org_tier"] or "unknown", f"{base_url}orgs/{safe_id(r['id'])}.html"]])
+    return out.getvalue()
+
+
+PROSPECT_HEAD = ["Organization", "County", "Ring", "Site tier", "Process", "Material", "Market", "Employees", "Ownership",
+                 "Public member list", "PIC-18 site rows", "Evidence rows", "Organization record (status, tier)", "Website"]
+
+
+def build_prospects_page(ctx, rows):
+    n_sites = sum(r["n_sites"] for r in rows)
+    facets = "".join(facet_html(rows, k, h, k in ("co", "ring", "tier", "band", "mem")) for k, h in PROSPECT_FACETS)
+    num = ' class="num"'
+    head = "".join(f'<th scope="col"{num if h in ("PIC-18 site rows", "Evidence rows") else ""}>{esc(h)}</th>'
+                   for h in PROSPECT_HEAD)
+    caption = ("PIC-18 prospects: organization rows with at least one site row in the 18 PIC counties "
+               "(operating status active; verification tiers A-C)")
+    tbl = table_wrap(f'<table id="ptable" data-nofilter><caption>{esc(caption)}</caption><thead><tr>{head}</tr></thead>'
+                     f'<tbody>{"".join(prospect_tr(r) for r in rows)}</tbody></table>', "PIC-18 prospects")
+    body = f"""
+<h1>PIC-18 prospects</h1>
+<p class="lede">{fmt_int(len(rows))} organization rows with at least one site row in the 18 PIC counties (operating status active,
+verification tier A-C; {fmt_int(n_sites)} such site rows). Pick values to build a list, then download it. The address bar holds
+your filters, so you can send the link.</p>
+<div class="banner note"><p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter shows how many rows are
+unknown. "{MEMBER_NO}" is not the same as "not a member".</p>
+<details class="more"><summary>How to read this page</summary>
+<p>One row per organization row, even when it has several PIC-18 site rows; counts here are organization rows, not unique
+ultimate parents. County, ring and site tier list every value among the organization's PIC-18 site rows, and a filter matches a
+row when any of them matches. Within one filter the choices are "or"; across filters they are "and".</p>
+<p><strong>Employees</strong> is the band recorded on the organization's PIC-18 site rows, otherwise the organization's Ohio band,
+and each row says which (site or org record). Process, material and market follow the same rule and say so when they come from
+the organization's own row. Bands are bands, never headcounts. "N or more" means the band starts at N or higher.</p>
+<p>Every filter counts its unknown rows within your other choices. Picking a value in a filter drops that filter's unknown rows
+from the list; the line under the filters says how many, and the "Unknown" choice shows them.</p>
+<p><strong>Public member list.</strong> A row is marked "{MEMBER_YES}" or "{MEMBER_NO}". The second only means the organization is
+not on the public list; do not use it alone to decide whom to pitch.</p></details></div>
+<form id="pfilters" onsubmit="return false" role="search" aria-label="Filter the prospects">
+<p><label for="pq"><strong>Name contains</strong></label><br><input type="search" id="pq" autocomplete="off"></p>
+<div class="facets">{facets}</div>
+<p><a href="prospects.html">Clear all filters</a></p>
+</form>
+<p id="pstatus" role="status" aria-live="polite">Showing {fmt_int(len(rows))} of {fmt_int(len(rows))} organization rows.</p>
+<p id="pleft" class="small" aria-live="polite"></p>
+{tbl}
+<p class="small muted">The download button above saves the rows you see, with the columns shown. For the whole table with
+separate basis columns, take <a href="prospects.csv">prospects.csv</a> ({fmt_int(len(rows))} organization rows, unfiltered).
+Evidence rows count the claim-level evidence on the organization's page (its own and its site rows').
+Website is the organization's recorded website. No contact people are published.</p>
+<noscript><p>Filtering needs JavaScript; all {fmt_int(len(rows))} rows are listed above and prospects.csv has the same rows.</p></noscript>
+"""
+    return page(ctx, "PIC-18 prospects", body, "", "prospects",
+                "Build a list of PIC-18 polymer organizations by county, ring, tier, process, material, market, size and ownership.",
+                "", '<script src="prospects.js" defer></script>')
 
 
 def build_index(ctx):
@@ -1241,6 +1603,8 @@ def build_index(ctx):
                 f'<span class="go">Open &rarr;</span></a>')
 
     explore = "".join([
+        xcard("prospects.html", "prospects", "PIC-18 prospects",
+              "Build a list: filter the PIC-18 organizations by county, ring, tier, process, size and more, then download it as CSV."),
         xcard("graph/index.html", "graph", "Industry graph",
               "Companies, institutions and the processes and materials that connect them. Hover to trace a supply web."),
         xcard("graph/map.html", "geo", "Map + network",
@@ -1268,7 +1632,7 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 <div><b>{fmt_int(len(active_ab(oh)))}</b><small>in Ohio</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
-<div class="cta"><a class="btn primary" href="graph/map.html">Explore the map</a>
+<div class="cta"><a class="btn primary" href="prospects.html">PIC-18 prospects</a><a class="btn" href="graph/map.html">Explore the map</a>
 <a class="btn" href="graph/index.html">Industry graph</a><a class="btn" href="search.html">Search</a></div>
 </div>
 <div class="hero-legend"><span>Fewer sites</span><span class="ramp"></span><span>More</span><span>· hex ≈ 30 mi</span></div>
@@ -1360,6 +1724,8 @@ organization because the site row has no ring of its own.</div>
 <fieldset><legend>Ring</legend>{rings_cb}</fieldset>
 <fieldset><legend>Verification tier</legend>{tiers_cb}
 <label><input type="checkbox" id="f-allstatus"> Include closed, idled and unknown-status sites</label></fieldset>
+<fieldset><legend>Area</legend>
+<label><input type="checkbox" id="f-pic18" checked data-counties="{esc(",".join(PIC12))}"> Only the 18 PIC counties (Ohio)</label></fieldset>
 <fieldset><legend>State</legend>
 <div class="btn-row"><button type="button" id="st-all">All</button><button type="button" id="st-oh">Ohio only</button><button type="button" id="st-none">None</button></div>
 <div class="scroll">{states_cb}</div></fieldset>
@@ -1382,7 +1748,7 @@ organization because the site row has no ring of its own.</div>
 def sites_json(ctx):
     """Compact site data for the map (only rows with coordinates)."""
     a = ctx.atlas
-    cols = ["id", "lat", "lon", "name", "org", "city", "st", "ring", "inh", "tier", "status"]
+    cols = ["id", "lat", "lon", "name", "org", "city", "st", "ring", "inh", "tier", "status", "co"]
     rows, orgs = [], {}
     for s in a.sites:
         try:
@@ -1392,7 +1758,7 @@ def sites_json(ctx):
         rows.append([s["site_id"], round(lat, 5), round(lon, 5), s.get("site_name") or "",
                      s["org_id"], s.get("city") or "", s.get("state") or "",
                      s["_ring"] or "", 1 if s["_ring_inherited"] else 0,
-                     s.get("verification_tier") or "", s.get("operating_status") or ""])
+                     s.get("verification_tier") or "", s.get("operating_status") or "", s.get("county") or ""])
         orgs[s["org_id"]] = a.name_of(s["org_id"]) or ""
     return {"cols": cols, "orgs": orgs, "rows": rows}
 
@@ -1573,6 +1939,69 @@ def dl(pairs):
     return f'<dl class="fields">{items}</dl>' if items else ""
 
 
+EVIDENCE_CLASS = {"own_site": "Company's own site", "government_filing": "Government filing", "registry": "Registry record",
+                  "directory": "Directory listing", "press": "News or trade press",
+                  "platform_category": "Platform category (a lead, not proof)", "harvest_roster": "Roster list (a lead, not proof)"}
+EVIDENCE_CLAIM = {"existence": "Exists", "activity": "Does the work", "scope": "Polymer scope", "address": "Address",
+                  "parent": "Parent link", "liveness": "Operating", "code": "Code", "size_band": "Size band"}
+
+
+def evidence_strength(effect):
+    if effect == "contradicts":
+        return "Contradicts the record"
+    t = str(effect or "").replace("supports_", "")
+    return f"Supports tier {t} ({TIERS[t][0].lower()})" if t in TIERS else str(effect or "")
+
+
+def evidence_table(rows, caption, nocsv=False):
+    """Claim type, source class, strength, date and source links for each evidence row. Never the claim text, lane id or notes."""
+    order = list(EVIDENCE_CLAIM)
+    rows = sorted(sorted(rows, key=lambda r: r.get("observed_date") or "", reverse=True),
+                  key=lambda r: order.index(r["claim_type"]) if r.get("claim_type") in order else len(order))
+    body = "".join(
+        f'<tr><td>{esc(EVIDENCE_CLAIM.get(r.get("claim_type"), r.get("claim_type")))}</td>'
+        f'<td>{esc(EVIDENCE_CLASS.get(r.get("source_class"), r.get("source_class")))}</td>'
+        f'<td>{esc(evidence_strength(r.get("tier_effect")))}</td><td>{esc(r.get("observed_date"))}</td>'
+        f'<td>{url_links(source_urls(r.get("source_ref"))) or "&mdash;"}</td></tr>' for r in rows)
+    return table_wrap(
+        f'<table{" data-nocsv" if nocsv else ""}><caption>{esc(caption)}</caption><thead><tr><th scope="col">Claim</th>'
+        '<th scope="col">Source class</th><th scope="col">Strength</th><th scope="col">Observed</th><th scope="col">Source</th>'
+        f'</tr></thead><tbody>{body}</tbody></table>', caption)
+
+
+def evidence_section(a, table, rec, kind):
+    """The record's evidence rows; records with none yet fall back to the source links on the record."""
+    shown = evidence_view(a, table, rec["org_id"])
+    if not shown:
+        return (f'<h2 id="evidence">Sources</h2><p class="small muted">No claim-level evidence rows are recorded for this {kind} yet; '
+                f'the source links on the record are shown. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
+                f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>{source_list(rec.get("sources"))}')
+    n_sites = sum(len(evidence_view(a, "sites", x["site_id"])) for x in a.sites_by_org.get(rec["org_id"], []))
+    more = f"; {fmt_int(n_sites)} more on its site rows below" if n_sites else ""
+    return (f'<h2 id="evidence">Evidence ({fmt_int(len(shown))} rows for this {kind}{more})</h2>'
+            '<p class="small muted">Each row is one observation: the claim, the class of source, how strongly it supports the '
+            "record's tier, when it was observed, and where. The wording of each claim stays in the repository's data; "
+            "follow the source link to check it. Rows from a platform category or a roster list are leads, "
+            f'never proof of scope. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
+            f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>'
+            f'{evidence_table(shown, "Evidence for " + str(rec.get("legal_name") or rec["org_id"]))}')
+
+
+def member_field(rec):
+    if rec.get("pic_member") != "true":
+        return esc(MEMBER_NO)
+    href = safe_href(rec.get("membership_source_url"))
+    return f'<a href="{esc(href)}" rel="noopener nofollow">{MEMBER_YES}</a>' if href else esc(MEMBER_YES)
+
+
+def site_evidence(a, s):
+    shown = evidence_view(a, "sites", s["site_id"])
+    if not shown:
+        return f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details>'
+    return (f'<details class="srcs"><summary>Evidence for this site ({fmt_int(len(shown))} rows)</summary>'
+            f'{evidence_table(shown, "Evidence for " + str(s.get("site_name") or s["site_id"]), nocsv=True)}</details>')
+
+
 def site_article(s, a, open_=False):
     """One site as a collapsible row: a one-line summary (place, type, ring, status, tier) that opens to the full record."""
     addr = ", ".join(x for x in [s.get("street_address"), s.get("city")] if nonempty(x))
@@ -1607,7 +2036,7 @@ def site_article(s, a, open_=False):
             f'<summary><span class="s-name">{esc(s.get("site_name") or s["site_id"])}</span>'
             f'<span class="s-meta">{meta}</span><span class="s-badges">{badges}</span></summary>'
             f'<div class="s-body"><p class="muted small">{esc(s["site_id"])}</p>{fields}'
-            f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details></div></details>')
+            f'{site_evidence(a, s)}</div></details>')
 
 
 def program_table(programs, a, with_inst=False, root=""):
@@ -1696,13 +2125,6 @@ def build_org_page(ctx, o):
         if bits:
             naics += f' <span class="muted">({"; ".join(bits)})</span>'
     hq = ", ".join(x for x in [o.get("hq_city"), o.get("hq_state")] if nonempty(x))
-    member = ""
-    if o.get("pic_member") == "true":
-        member = "PIC member (public member list)"
-        if safe_href(o.get("membership_source_url")):
-            member = f'<a href="{esc(o["membership_source_url"])}" rel="noopener nofollow">{member}</a>'
-        else:
-            member = esc(member)
     rings = ring_badge(o.get("ring_primary")) if nonempty(o.get("ring_primary")) else ""
     if nonempty(o.get("ring_secondary")):
         rings += f' <span class="muted">secondary:</span> {ring_badge(o["ring_secondary"])}'
@@ -1729,7 +2151,7 @@ def build_org_page(ctx, o):
         ("Markets served", esc(vocab(o.get("markets_served")))),
         ("Certifications", esc(vocab(o.get("certifications")))),
         ("Ohio employee band", esc(o.get("employee_band_ohio"))),
-        ("PIC membership", member),
+        ("Public member list", member_field(o)),
         ("Verification tier", tier_badge(o.get("verification_tier"))),
         ("Last verified", esc(o.get("last_verified"))),
     ])
@@ -1744,9 +2166,7 @@ def build_org_page(ctx, o):
 {('<h2>Subsidiary and child organizations</h2>' + kids_html) if kids_html else ''}
 {equipment_block(a.equipment_by_host.get(o["org_id"], []))}
 {sites_html}
-<h2>Sources</h2>
-<p class="small muted">Organization-level sources. Last verified {esc(o.get("last_verified")) or "n/a"}; tier {esc(o.get("verification_tier")) or "n/a"}.</p>
-{source_list(o.get("sources"))}
+{evidence_section(a, "organizations", o, "organization")}
 """
     return page(ctx, o.get("legal_name") or oid, body, "../", "",
                 f"{o.get('legal_name') or oid}: Polymer Industry Atlas record.")
@@ -1783,13 +2203,6 @@ def build_eco_page(ctx, e):
     successor = a.merged_into.get(eid)
     loc = ", ".join(x for x in [e.get("city"), e.get("state")] if nonempty(x))
     county = f"{e['county']} County" if nonempty(e.get("county")) else ""
-    member = ""
-    if e.get("pic_member") == "true":
-        member = "PIC member (public member list)"
-        if safe_href(e.get("membership_source_url")):
-            member = f'<a href="{esc(e["membership_source_url"])}" rel="noopener nofollow">{member}</a>'
-        else:
-            member = esc(member)
     parent_inst = a.org_link(e["parent_institution_org_id"]) if nonempty(e.get("parent_institution_org_id")) else ""
     fields = dl([
         ("Record ID", esc(eid)), ("Status", status_badge(e.get("status"))),
@@ -1803,7 +2216,7 @@ def build_eco_page(ctx, e):
         ("Geography served", esc(vocab(e.get("geography_served")))),
         ("Industry partnership modes", esc(vocab(e.get("industry_partnership_modes")))),
         ("Technology areas", esc(vocab(e.get("technology_areas")))),
-        ("PIC membership", member),
+        ("Public member list", member_field(e)),
         ("Verification tier", tier_badge(e.get("verification_tier"))),
         ("Last verified", esc(e.get("last_verified"))),
     ])
@@ -1825,12 +2238,57 @@ def build_eco_page(ctx, e):
 {people_block(a.people_by_inst.get(eid, []), ctx)}
 {equipment_block(a.equipment_by_host.get(eid, []))}
 {sites_html}
-<h2>Sources</h2>
-<p class="small muted">Last verified {esc(e.get("last_verified")) or "n/a"}; tier {esc(e.get("verification_tier")) or "n/a"}.</p>
-{source_list(e.get("sources"))}
+{evidence_section(a, "ecosystem", e, "ecosystem record")}
 """
     return page(ctx, e.get("legal_name") or eid, body, "../", "",
                 f"{e.get('legal_name') or eid}: Polymer Industry Atlas ecosystem record.")
+
+
+def process_table(sites, county):
+    """Site rows by recorded process (a site row can list several, so rows do not sum to the total)."""
+    counts, n_unknown = Counter(), 0
+    for s in sites:
+        t = known(vals(s.get("processes")))
+        counts.update(t)
+        n_unknown += not t
+    rows = "".join(f'<tr><th scope="row">{esc(vocab(t))}</th><td class="num">{fmt_int(n)}</td></tr>'
+                   for t, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
+    rows += (f'<tr><th scope="row">Unknown (no process recorded on the site row)</th><td class="num" data-sort="{n_unknown}">'
+             f'{fmt_int(n_unknown)}</td></tr>'
+             f'<tr class="total"><th scope="row">All site rows (each can list several processes)</th>'
+             f'<td class="num">{fmt_int(len(sites))}</td></tr>')
+    return table_wrap(
+        f'<table><caption>{esc(county)} County site rows by process (Ohio; operating status active; tiers A-C)</caption>'
+        f'<thead><tr><th scope="col">Process</th><th scope="col" class="num">Site rows</th></tr></thead><tbody>{rows}</tbody></table>',
+        f"{county} County site rows by process")
+
+
+def band_table(sites, a, county):
+    """Site rows by employee band: the site's own band, else the parent organization's Ohio band, in separate columns."""
+    own, parent, n_unknown = Counter(), Counter(), 0
+    for s in sites:
+        b = s.get("employee_band_site") or ""
+        rec = a.orgs.get(s["org_id"]) or a.eco.get(s["org_id"]) or {}
+        pb = rec.get("employee_band_ohio") or ""
+        if b not in UNKNOWN_VALUES:
+            own[b] += 1
+        elif pb not in UNKNOWN_VALUES:
+            parent[pb] += 1
+        else:
+            n_unknown += 1
+    rows = "".join(
+        f'<tr><th scope="row">{esc(b)}</th><td class="num">{fmt_int(own[b])}</td><td class="num">{fmt_int(parent[b])}</td>'
+        f'<td class="num">{fmt_int(own[b] + parent[b])}</td></tr>'
+        for b in sorted(set(own) | set(parent), key=lambda b: (band_floor(b) or 0, b)))
+    rows += (f'<tr><th scope="row">Unknown (no site band and no parent band)</th><td class="num"></td><td class="num"></td>'
+             f'<td class="num" data-sort="{n_unknown}">{fmt_int(n_unknown)}</td></tr>'
+             f'<tr class="total"><th scope="row">All site rows</th><td class="num">{fmt_int(sum(own.values()))}</td>'
+             f'<td class="num">{fmt_int(sum(parent.values()))}</td><td class="num">{fmt_int(len(sites))}</td></tr>')
+    return table_wrap(
+        f'<table><caption>{esc(county)} County site rows by employee band (Ohio; operating status active; tiers A-C)</caption>'
+        '<thead><tr><th scope="col">Employee band</th><th scope="col" class="num">Site rows with this site band</th>'
+        '<th scope="col" class="num">No site band; parent\'s Ohio band</th><th scope="col" class="num">Site rows</th></tr></thead>'
+        f'<tbody>{rows}</tbody></table>', f"{county} County site rows by employee band")
 
 
 def build_county_page(ctx, county):
@@ -1838,6 +2296,7 @@ def build_county_page(ctx, county):
     sites = [s for s in a.sites if s.get("state") == "OH" and s.get("county") == county]
     active = [s for s in sites if s.get("operating_status") == "active"]
     not_active = len(sites) - len(active)
+    ac = active_ab(sites)   # the tier A-C basis of the headline counts
     org_ids = {s["org_id"] for s in active}
     ring_groups = defaultdict(list)
     for s in active:
@@ -1925,6 +2384,7 @@ that figure; it is not zero.</p>"""
 {("a PIC-18 county (" + JOBSOHIO_REGION[county] + " region)") if county in PIC12 else "outside the PIC-18 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
 <div class="cards">
 <div class="card"><div class="big">{fmt_int(len(active))}</div><div class="unit">Site rows</div><div class="filter">{esc(county)} County, Ohio; operating status active; all verification tiers</div></div>
+<div class="card"><div class="big">{fmt_int(len(ac))}</div><div class="unit">Site rows, tiers A-C</div><div class="filter">{esc(county)} County, Ohio; operating status active; verification tiers A-C (the basis of the headline counts)</div></div>
 <div class="card"><div class="big">{fmt_int(len(org_ids))}</div><div class="unit">Organization rows with an active site row here</div><div class="filter">distinct parent organizations of those site rows; all tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(eco))}</div><div class="unit">Ecosystem organization rows</div><div class="filter">located in the county; all statuses and tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(progs))}</div><div class="unit">Program rows</div><div class="filter">located in the county; status active; all tiers</div></div>
@@ -1937,6 +2397,12 @@ Tier U rows are candidates; they are included here because this page shows all t
 <h2>Establishments by NAICS (3-digit)</h2>
 {naics_tbl}
 <p class="small muted">The site's own NAICS code is used. NAICS values are not company facts by default; see each site's provenance on its organization page.</p>
+<h2>Establishments by process</h2>
+{process_table(ac, county) if ac else "<p>No active tier A-C site rows.</p>"}
+<p class="small muted">Process is what the site row records. Unknown means none is recorded, not that there is none.</p>
+<h2>Establishments by employee band</h2>
+{band_table(ac, a, county) if ac else "<p>No active tier A-C site rows.</p>"}
+<p class="small muted">Bands, not headcounts. Where a site row records no band, the parent organization's Ohio band is counted in its own column.</p>
 <h2>Benchmark: BLS QCEW</h2>
 {qcew_html}
 <h2>Sites</h2>
@@ -1976,16 +2442,25 @@ def build_counties_index(ctx):
     def row(c):
         sites = all_sites.get(c, [])
         n_act = sum(1 for s in sites if s.get("operating_status") == "active")
+        n_ac = len(active_ab(sites))
         label = f'<a href="{esc(slug(c))}.html">{esc(c)}</a>'
         q = ctx.qcew.get(c)
         qn = fmt_int(int(float(q["annual_avg_estabs"]))) if q and nonempty(q.get("annual_avg_estabs")) else "n/a"
         return (f'<tr><th scope="row">{label}</th><td>{("PIC-18 · " + JOBSOHIO_REGION[c]) if c in PIC12 else ""}</td>'
-                f'<td class="num">{fmt_int(n_act)}</td><td class="num">{fmt_int(len(sites))}</td>'
+                f'<td class="num"><strong>{fmt_int(n_ac)}</strong></td><td class="num">{fmt_int(n_act)}</td><td class="num">{fmt_int(len(sites))}</td>'
                 f'<td class="num">{fmt_int(eco_n.get(c, 0))}</td><td class="num">{fmt_int(prog_n.get(c, 0))}</td>'
                 f'<td class="num">{qn}</td></tr>')
     pic_rows = "".join(row(c) for c in PIC12)
+    tot = lambda f: sum(f(all_sites.get(c, [])) for c in PIC12)   # noqa: E731
+    pic_ac = tot(lambda ss: len(active_ab(ss)))
+    pic_rows += (f'<tr class="total"><th scope="row">PIC-18 total</th><td></td>'
+                 f'<td class="num"><strong>{fmt_int(pic_ac)}</strong></td>'
+                 f'<td class="num">{fmt_int(tot(lambda ss: sum(1 for s in ss if s.get("operating_status") == "active")))}</td>'
+                 f'<td class="num">{fmt_int(tot(len))}</td><td class="num">{fmt_int(sum(eco_n.get(c, 0) for c in PIC12))}</td>'
+                 f'<td class="num">{fmt_int(sum(prog_n.get(c, 0) for c in PIC12))}</td><td></td></tr>')
     other_rows = "".join(row(c) for c in names if c not in PIC12)
     head = ("<thead><tr><th scope=\"col\">County</th><th scope=\"col\">Group</th>"
+            "<th scope=\"col\" class=\"num\">Site rows, active, tiers A-C (headline basis)</th>"
             "<th scope=\"col\" class=\"num\">Site rows, active, all tiers</th>"
             "<th scope=\"col\" class=\"num\">Site rows, all statuses</th>"
             "<th scope=\"col\" class=\"num\">Ecosystem organization rows</th>"
@@ -1997,7 +2472,9 @@ def build_counties_index(ctx):
 Team NEO region (Ashland, Cuyahoga, Erie, Geauga, Huron, Lake, Lorain, Medina, Portage, Richland, Stark, Summit,
 Tuscarawas, Wayne) and the 4 of its Lake to River region (Ashtabula, Columbiana, Mahoning, Trumbull). The same
 one-pager exists for every other Ohio county where the Atlas holds at least one row.</p>
-<p>All counts are Atlas database rows by the unit named in the column heading. The QCEW column is a
+<p>The PIC-18 counties' "tiers A-C" column adds up to <strong>{fmt_int(pic_ac)}</strong> site rows: the PIC-18 headline on the
+home page (Ohio county in PIC-18; operating status active; verification tiers A-C). The "all tiers" column also counts tier U
+candidates. All counts are Atlas database rows by the unit named in the column heading. The QCEW column is a
 count benchmark from BLS, not matched coverage; "n/a" means the bundled benchmark file has no row for that
 county, which is not a zero. County is taken from each site's physical address.</p>
 <h2>PIC-18 counties</h2>
@@ -2037,6 +2514,7 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     write(out_dir / "style.css", CSS.strip() + "\n")
     write(out_dir / "map.js", MAP_JS)
     write(out_dir / "search.js", SEARCH_JS)
+    write(out_dir / "prospects.js", PROSPECTS_JS)
     write(out_dir / "sortable.js", SORTABLE_JS)
     shutil.copyfile(Path(__file__).resolve().parent / "assets" / "brand" / "pic-mark-color.svg", out_dir / "favicon.svg")
     og = Path(__file__).resolve().parent / "assets" / "og-image.jpg"
@@ -2079,6 +2557,10 @@ search for the company by name, or start from one of the views below.</p>
     write(out_dir / "experts.js", EXPERTS_JS)
     write(out_dir / "experts.html", build_experts_page(ctx, len(xj["people"]), len(xj["programs"])))
 
+    prospects = prospect_rows(atlas)
+    write(out_dir / "prospects.html", build_prospects_page(ctx, prospects))
+    with open(out_dir / "prospects.csv", "w", newline="", encoding="utf-8-sig") as f:   # BOM: Excel reads it as UTF-8
+        f.write(prospects_csv(prospects, SITE_URL))
     write(out_dir / "counties" / "index.html", build_counties_index(ctx))
     county_names = ohio_counties(atlas)
     for c in county_names:

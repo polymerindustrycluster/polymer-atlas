@@ -1,0 +1,150 @@
+"""Recompute every published count, reconcile yield against an independent count, prove the check fails on injected defects."""
+import copy
+import csv
+import hashlib
+import json
+import re
+import subprocess
+from urllib.parse import urlparse
+import witness_class
+from build import (HERE, ROOT, CORPUS, SNAPSHOT, BASE, FIRST_ID, read, source, proposals, found, at_main, counts_for, total_ids)
+
+# Wording each controlled tag needs in its own quote (refuted before: broader/different tag than the words).
+WORDS = {
+    'aerospace_defense': r'aerospace|aviation|defen[cs]e|military|aircraft|air frame|jet engine', 'automotive_unspecified': r'automotive|heavy trucking',
+    'automotive_aftermarket': r'after ?market', 'appliances': r'appliance', 'electronics_electrical': r'electronic|electrical',
+    'medical_healthcare_general': r'medical|healthcare', 'medical_device': r'medical device|medical equipment|fda-cleared device',
+    'pharmaceutical_biotech': r'pharmaceutical|biologics', 'construction_building_products': r'construction|building|window|concrete',
+    'infrastructure_civil': r'infrastructure', 'energy_oil_gas': r'oil|gas|petroleum', 'energy_renewables_battery': r'battery',
+    'marine': r'marine|boat', 'chemical_mining_metals_processing': r'chemical|mining', 'rail_transportation': r'rail',
+    'agriculture': r'agricult|farm', 'general_industrial': r'industrial|general industry', 'water_wastewater': r'water',
+    'food_processing_foodservice': r'food processing', 'packaging_food_beverage': r'food and protective packaging',
+    'packaging_industrial': r'bags for industrial use', 'plastics_rubber_processors': r'plastic|rubber', 'tire_rubber_goods': r'tire',
+    'telecom_datacom': r'telecom', 'rv_powersports_trailers': r'\brv\b', 'consumer_goods_housewares': r'housewares|household',
+    'toys_sporting_goods': r'toys|sporting|sports', 'footwear_apparel': r'apparel', 'industrial_machinery': r'industrial machinery',
+    'lawn_garden_recreation': r'lawn', 'dental': r'dentist|dental',
+}
+
+
+def independent_frame():
+    """Frame count by a separate route: ok pages in the pinned manifest x blank markets cells at BASE, minus prior lanes."""
+    ok = {r['org_id'] for r in csv.DictReader(open(SNAPSHOT)) if r['status'] == 'ok' and r['text_file']}
+    prior = {r['org_id'] for r in csv.DictReader(open(HERE / 'prior_lanes.csv'))}
+    n = 0
+    for f in subprocess.check_output(['git', 'ls-tree', '--name-only', BASE, 'data/'], cwd=ROOT, text=True).split():
+        if re.fullmatch(r'data/organizations_[A-Z]+\.csv', f):
+            for r in csv.DictReader(subprocess.check_output(['git', 'show', f'{BASE}:{f}'], cwd=ROOT, text=True).splitlines()):
+                n += r['org_id'] in ok and not r['markets_served'] and r['org_id'] not in prior
+    return n
+
+
+def domain(u):
+    return urlparse(u if '//' in u else '//' + u).netloc.lower().removeprefix('www.')
+
+
+def verify(inputs, frames, holds):
+    orgs, _, pages, frame, _ = source()
+    assert len(frames) == len(frame) == independent_frame() and {r['org_id'] for r in frames} == set(frame), 'frame yield vs independent count'
+    vocab = json.loads((ROOT / 'docs/schema/vocab.json').read_text())['vocabularies']['MARKETS']['values']
+    seen = set()
+    for r in inputs:
+        key = (r['org_id'], r['value'])
+        assert key not in seen, 'duplicate proposal'
+        seen.add(key)
+        assert r['org_id'] in frame and r['field'] == 'markets_served' and not frame[r['org_id']][1]['markets_served'], 'nonblank or outside frame'
+        assert r['value'] in vocab, 'off vocabulary'
+        assert re.search(WORDS[r['value']], r['quote'], re.I), ('tag wording absent from quote', r['value'])
+        p = next(p for p in pages if p['org_id'] == r['org_id'] and p['url'] == r['source_url'])
+        assert r['raw_sha256'] == p['sha256'] == hashlib.sha256((CORPUS / (p['raw_file'] or p['text_file'])).read_bytes()).hexdigest(), 'raw hash mismatch'
+        text = (CORPUS / p['text_file']).read_text()
+        assert hashlib.sha256(text.encode()).hexdigest() == r['text_sha256'], 'text hash mismatch'
+        assert found(text, r['quote']), 'quote absent'
+        # witness class: navigation chrome, article/blog source, parent or group domain (CONTRACT rule 5; reviews of #360)
+        if r['raw_file']:
+            assert not witness_class.nav_only((CORPUS / r['raw_file']).read_text(errors='replace'), r['quote']), 'nav menu witness'
+        assert not witness_class.article_url(r['source_url']), 'article source witness'
+        parent = orgs.get(frame[r['org_id']][1]['parent_org_id'])
+        assert not (parent and domain(parent[1]['website']) == domain(r['source_url'])), 'group domain witness'
+        assert r['tier_effect'] == ('supports_U' if frame[r['org_id']][1]['verification_tier'] == 'U' else 'supports_A')
+    applied = {r['org_id'] for r in inputs}
+    held = [r['org_id'] for r in holds]
+    assert len(held) == len(set(held)) and not applied & set(held) and applied | set(held) == set(frame), 'disposition coverage'
+    assert all(r['settling_fact'] and r['verdict'] == 'STILL_UNCERTAIN' for r in holds)
+    assert inputs == proposals(frame, pages), 'selection mismatch'
+
+
+def boundary(inputs, evidence):
+    homes = source()[0]
+    values = {}
+    for r in inputs:
+        values.setdefault(r['org_id'], set()).add(r['value'])
+    cells = new_evs = 0
+    for p in sorted((ROOT / 'data').glob('*.csv')):
+        if p.name.endswith('_all.csv'):
+            continue
+        before, after = at_main(p), read(p)
+        if p.name.startswith('organizations_'):
+            expected = copy.deepcopy(before)
+            for r in expected:
+                if r['org_id'] in values:
+                    assert not r['markets_served']
+                    r['markets_served'] = ';'.join(sorted(values[r['org_id']]))
+                    cells += 1
+            assert after == expected, ('unrelated organization change', p.name)
+        elif p.name.startswith('evidence_organizations_'):
+            append = [r for r in evidence if homes[r['record_id']][0] == p.name.replace('evidence_organizations_', 'organizations_')]
+            assert not {r['evidence_id'] for r in evidence} & {r['evidence_id'] for r in before}, 'reused evidence ID'
+            assert after == sorted(before + append, key=lambda r: r['evidence_id']), ('evidence delta mismatch', p.name)
+            new_evs += len(append)
+        else:
+            assert before == after, ('out of scope data change', p.name)
+    assert cells == len(values) and new_evs == len(evidence), 'application yield'
+    print('BOUNDARY PASS:', cells, 'market cells;', new_evs, 'new evidence rows; all other data unchanged')
+
+
+def main():
+    inputs, frames, holds = [read(HERE / f) for f in ('inputs.csv', 'frame.csv', 'holds.csv')]
+    verify(inputs, frames, holds)
+    plant = lambda org: dict(next(r for r in read(HERE / 'withdrawn.csv') if r['org_id'] == org), field='markets_served', verdict='VERIFIED', applied='applied')  # a retired witness replayed as a live proposal
+    for name, expect, mutate in [
+        ('fabricated quote', 'quote absent', lambda i, f, h: i[0].update(quote=i[0]['quote'] + ' fabricated violet elephant')),
+        ('off vocabulary', 'off vocabulary', lambda i, f, h: i[0].update(value='consumer_goods')),
+        ('broader tag than the words', 'tag wording', lambda i, f, h: i[0].update(value='consumer_goods_housewares')),
+        ('missing disposition', 'disposition coverage', lambda i, f, h: h.pop()),
+        ('raw hash tampering', 'raw hash mismatch', lambda i, f, h: i[0].update(raw_sha256='0' * 64)),
+        ('duplicate proposal', 'duplicate proposal', lambda i, f, h: i.append(i[0].copy())),
+        ('dropped frame row', 'frame yield', lambda i, f, h: f.pop()),
+        ('navigation menu witness (PolyMet)', 'nav menu witness', lambda i, f, h: i.append(plant('ORG-001868'))),
+        ('blog/article witness (Dalin)', 'article source witness', lambda i, f, h: i.append(plant('ORG-001763'))),
+        ('parent/group-domain witness (Sealed Air)', 'group domain witness', lambda i, f, h: i.append(plant('ORG-000237'))),
+    ]:
+        args = copy.deepcopy((inputs, frames, holds))
+        mutate(*args)
+        try:
+            verify(*args)
+        except AssertionError as e:
+            assert expect in str(e), ('refused for the wrong reason', name, str(e))
+            print('REFUSED:', name)
+        else:
+            raise AssertionError('silent pass: ' + name)
+    _, manifest, pages, frame, prior = source()
+    expected = counts_for(manifest, pages, frame, inputs, holds, prior)
+    assert json.loads((HERE / 'counts.json').read_text()) == expected, 'counts.json stale'
+    evidence = read(HERE / 'evidence_packet.csv')
+    assert len(evidence) == len(inputs) == expected['proposed_values']
+    retired = {r['evidence_id'] for r in read(HERE / 'withdrawn.csv')}
+    live = [r['evidence_id'] for r in inputs]
+    assert len(live) == len(set(live)) and not retired & set(live), 'retired evidence ID reused'
+    assert sorted(retired | set(live)) == [f'EVD-{FIRST_ID + i:06d}' for i in range(total_ids())], 'ID accounting (applied + retired must be the whole block, no renumbering)'
+    assert max(live) <= 'EVD-390999'
+    assert not retired & {r['evidence_id'] for p in (ROOT / 'data').glob('evidence_*.csv') for r in read(p)}, 'retired ID present in data'
+    for ev, r in zip(evidence, inputs):
+        assert ev['evidence_id'] == r['evidence_id']
+        assert ev['record_id'] == r['org_id'] and ev['source_ref'] == r['source_url'] and ev['tier_effect'] == r['tier_effect']
+        assert ev['claim_detail'] == f'markets_served {r["value"]}: "{r["quote"]}"'
+    boundary(inputs, evidence)
+    print('PASS:', json.dumps(expected))
+
+
+if __name__ == '__main__':
+    main()

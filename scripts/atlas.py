@@ -208,19 +208,25 @@ def name_key(s):
     return " ".join(kept or toks)
 
 
-# A name written inside parentheses after a marker: "(formerly X)", "(fka X)", "(f/k/a X)", "(previously X)", "(dba X)".
+# Marked aliases in parentheses: "(formerly X)", "(fka X)", "(f/k/a X)", "(previously X)", "(dba X)".
 # Other parentheticals ("(USA)", "(Ohio plant)") are not names and do not match.
-# shortcut: one name per parenthetical (no "X and Y" split), and the unparenthesized "X dba Y" / "formerly Y" forms are not read.
+
 FORMER_NAME_RE = re.compile(r"\(\s*(?:formerly|previously|f/k/a|fka|d/b/a|dba)\b[\s:.-]*(\w[^()]*?)\s*\)", re.I)
 
 
 def former_names(text):
-    return FORMER_NAME_RE.findall(text or "")
+    text = text or ""
+    names = FORMER_NAME_RE.findall(text)
+    bare = re.sub(r"\([^()]*\)", "", text)
+    match = re.search(r"\s+(?:dba|d/b/a|formerly)\s+(.+?)\s*$", bare, re.I)
+    if match:
+        names.extend([bare[:match.start()].strip(), match[1]])
+    return names
 
 
 def org_name_fields(r):
     """(field, value) for every name an organization row answers to: legal_name, each trade_names entry, then the names
-    written in parentheses inside either (field is "<source> parenthetical name"). Step 2 of dedupe-check searches these."""
+    marked aliases in either. Step 2 of dedupe-check searches these."""
     fields = [("legal_name", r["legal_name"])] + [("trade_names", t) for t in tokens_semicolon(r.get("trade_names"))]
     return fields + [(f"{fld} parenthetical name", x) for fld, val in fields for x in former_names(val)]
 
@@ -288,6 +294,21 @@ UNIT_RE = re.compile(r"\b(suite|ste|unit|apt|apartment|bldg|building|floor|fl|ro
 UNIT_ONLY_RE = re.compile(r"^\s*(?:(?:suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)\b|#)\s*[\w-]*\s*$")
 
 
+_DIRECTIONS = {k for k, v in SUFFIX.items() if v in {"n", "s", "e", "w", "ne", "nw", "se", "sw"}}
+_STREET_SUFFIXES = {k for k in SUFFIX if k not in _DIRECTIONS} | (set(SUFFIX.values()) - {SUFFIX[k] for k in _DIRECTIONS}) | {"way", "pike"}
+_DIRECTION_WORDS = _DIRECTIONS | {SUFFIX[k] for k in _DIRECTIONS}
+_NOTES_SUFFIX = "|".join(sorted(_STREET_SUFFIXES))
+_DOTTED_DIRECTION = r"[ns]\.[ew]\b\.?"
+# shortcut: notes candidates need a numbered street and recognized suffix, extend when other address forms are tracked.
+NOTES_STREET_RE = re.compile(
+    r"(?<![\w-])\d+[a-z]?\s+(?:[a-z][a-z'’-]*\.?|\d+(?:st|nd|rd|th))"
+    r"(?:\s+(?:[a-z][a-z'’-]*\.?|\d+(?:st|nd|rd|th))){0,7}?\s+"
+    rf"(?:{_NOTES_SUFFIX})\b(?:\s+(?:{_NOTES_SUFFIX})\b)*\.?"
+    rf"(?:\s+(?:{_DOTTED_DIRECTION}|(?:{'|'.join(sorted(_DIRECTION_WORDS, key=lambda s: (-len(s), s)))})\b))?",
+    re.I,
+)
+
+
 def street_key(s):
     """Normalized street line for address-first dedupe (AGENTS §3 step 3); empty only when no street is present."""
     parts = (s or "").lower().split(",")
@@ -300,6 +321,11 @@ def street_key(s):
     s = UNIT_RE.sub("", street)
     s = re.sub(r"\b(\d+)(st|nd|rd|th)\b", r"\1", s)
     return " ".join(SUFFIX.get(t, t) for t in squash(s).split())
+
+
+def notes_candidate_key(street):
+    street = re.sub(rf"\b{_DOTTED_DIRECTION}", lambda m: m[0].replace(".", ""), street, flags=re.I)
+    return street_key(street)
 
 
 # ---------------------------------------------------------------- dedupe-check
@@ -371,16 +397,26 @@ def dedupe(tables, domain=None, name=None, street=None, city=None, state=None, z
           "skipped": None if street else "no --street", "hits": [], "other_localities": []}
     if street:
         q = street_key(street)
+        candidate_key = notes_candidate_key(street)
         sites = tables.get("sites", Table("sites")).rows
         for r in sites:
-            if not q or street_key(r.get("street_address", "")) != q:
-                continue
+            if not q:
+                break
+            notes_match = ""
+            if street_key(r.get("street_address", "")) != q:
+                notes = r.get("notes") or ""
+                if any(candidate_key == notes_candidate_key(match[0]) for match in NOTES_STREET_RE.finditer(notes)):
+                    notes_match = " in notes"
+                elif f" {q} " in f" {street_key(notes)} ":
+                    notes_match = " in notes (text match)"
+                else:
+                    continue
             mism = []
             if city and r["city"] and squash(city) != squash(r["city"]): mism.append("city")
             if state and r["state"] and state.upper() != r["state"].upper(): mism.append("state")
             if zip_ and r["zip"] and zip_[:5] != r["zip"][:5]: mism.append("zip")
             op = by_id.get(r["org_id"], [{}])[0].get("legal_name", "(org not found)")
-            h = {**brief("sites", r), "operator": op, "match": f"street key {q!r}" + (f"; locality differs: {','.join(mism)}" if mism else "")}
+            h = {**brief("sites", r), "operator": op, "match": f"street key {q!r}" + notes_match + (f"; locality differs: {','.join(mism)}" if mism else "")}
             (s3["other_localities"] if mism else s3["hits"]).append(h)
     steps.append(s3)
 

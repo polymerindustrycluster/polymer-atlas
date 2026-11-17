@@ -1,0 +1,11 @@
+{
+  "tried_urls": 10,
+  "archived_urls": 10,
+  "links": 25,
+  "worked_evidence": 26,
+  "failures": {
+    "NO_PRESERVED_QUOTE": 1
+  },
+  "url_failures": {},
+  "pending_urls": 1490
+}

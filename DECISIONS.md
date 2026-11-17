@@ -31,3 +31,26 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   work Claude wrote). Packet-only and docs-only pull requests keep needing one family plus CI.
 - **Why:** Grok's usage balance ran out on 2026-11-14, and review capacity is the limit on how fast work lands.
 - **Decided by:** the repo owner, in session, 2026-11-16 (`tasks/owner-rulings-2026-11-16/README.md`).
+
+## 2026-11-16: the public site becomes a working tool (PIC-18 prospects, CSV, evidence on organization pages)
+
+- **Decision:** the site gains a PIC-18 prospects page (one row per organization row with at least one site row in a
+  PIC-18 county, operating status active, tier A-C), a "Download these rows (CSV)" button on table pages, a
+  `prospects.csv` built with the site, a latest-release link on every page, an "active, tier A-C" column on the county
+  index that sums to the PIC-18 headline, county tables by process and employee band, and the evidence rows on
+  organization pages in place of source strings. Graph, map + network and street map open on PIC-18.
+- **Why:** the site audit of 2026-11-16 (first user: John Swanson, non-use review 2026-12-14) answered 2 of 12 real
+  tasks, mostly because nothing could be filtered or taken away. Detail and the 12-task tally are in the PR.
+- **Rules fixed here:** (1) an unknown value (blank or the literal "unknown") is shown as unknown and counted per
+  filter, never read as zero or small; (2) employee band is the PIC-18 site band, else the organization's Ohio band,
+  and each row says which; process, material and market follow the same rule; (3) public membership is shown only as
+  "on the public member list" or "not on the public member list" (AGENTS.md section 5.1), and the page says the second is
+  not "not a member"; (4) organization pages show evidence only as structured fields (claim type, source class, strength,
+  observed date) and the source links found in the citation; the claim text, notes, lane ids and the prose of source
+  strings are never published, because free text cannot be made safe by a pattern filter (a Codex review found claim text
+  naming individuals, e.g. EVD-128276); (5) every page number is
+  recomputed from `data/` in `scripts/test_build_site.py`.
+- **Not decided here:** whether to publish a non-member list or keep a private membership overlay (audit finding 3) stays an
+  owner ruling.
+- **Decided by:** built to the controller's task from the audit; no owner ruling is claimed or needed for the wording
+  above, which restates AGENTS.md section 5.1.
