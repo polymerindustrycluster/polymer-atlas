@@ -8,9 +8,8 @@ sys.path.insert(0, str(HERE))
 from frame import build, norm
 from pagetext import text, quote_in
 TODAY = "2026-11-17"
-import csv as _c
 SHA = {}  # url -> sha (latest) from the persist manifest
-for r in _c.DictReader(open("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-faculty-akron-2026-11-17/manifest.csv")):
+for r in csv.DictReader(open("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-faculty-akron-2026-11-17/manifest.csv")):
     SHA[r["url"]] = r["sha256"]
 
 def clean(n):
@@ -36,7 +35,7 @@ man("Hossein Ravanbakhsh", "VERIFIED", "Assistant Professor; own profile states 
     rap="Assistant Professor", specs="biomedical_polymers",
     b_quote="His research has been focused on engineering hydrogel materials and smart polymers for tissue engineering and regenerative medicine applications.")
 man("Bi-min Zhang Newby", "VERIFIED", "Professor and Department Chair; own profile lists polymer thin films as research", role="professor",
-    rap="Professor and Department Chair", specs="polymer thin films;surface modification;antifouling and biofilm",
+    rap="Professor and Department Chair", specs="polymer thin films;surface modification;antifouling/biofilm",
     b_quote="Research Surface modification, antifouling/biofilm, polymer thin films, stimuli responsive bio-materials, biocorrosion")
 man("Jutta Luettmer-Strathmann", "VERIFIED", "Professor (Physics; listed as Chemistry joint faculty); own profile states polymer melt and blend research", role="professor",
     rap="Professor", specs="polymer_physics;polymer melts and blends",
@@ -104,7 +103,7 @@ def main():
         prof_sha = SHA.get(r["profile_url"], "")
         if r["held_at_akron"]:
             hid = [x.split("@")[0] for x in r["held_ids"].split(";") if x.endswith("@ORG-000501")][0]
-            o.update(verdict=f"DUPLICATE_OF {hid}", verdict_note="held at Akron; row not edited")
+            o.update(verdict=f"DUPLICATE_OF {hid}", verdict_note="held at Akron; row not edited" + ("; the SPSPE Emeritus page styles this person Emeritus (see README follow-up 1)" if "SPSPE-emeritus" in units[k] else ""))
         elif k in V:
             m = V[k]; o["verdict"] = m["verdict"]; o["verdict_note"] = m["note"]
             o["gate_a_url"] = r["profile_url"]; o["gate_a_sha"] = prof_sha; o["gate_a_quote"] = title_quote(prof_sha, r["title"]) or ""
@@ -118,7 +117,6 @@ def main():
                      gate_a_url=r["listing_url"], gate_a_sha=r["listing_sha"], gate_a_quote=title_quote(r["listing_sha"], r["title"]) if r["unit"] not in ("SPSPE-adjunct",) else "")
         else:
             o.update(verdict="STILL_UNCERTAIN", verdict_note="candidate not adjudicated (no verdict rule)")
-        if k in V and V[k]["verdict"] == "STILL_UNCERTAIN" and "Mallik" not in r["name"]: pass
         out.append(o)
     cols = list(out[0])
     with open(HERE / "verdicts.csv", "w", newline="", encoding="utf-8") as f:

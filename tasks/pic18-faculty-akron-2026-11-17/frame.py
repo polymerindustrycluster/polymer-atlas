@@ -53,9 +53,9 @@ def parse(unit, url, sha):
 
 def parse_pb(unit, url, sha):
     """adjunct / emeritus pages: <p><b>name</b><br />title<br />affiliation</p>"""
-    h = (P / sha).read_bytes().decode("utf-8", "replace")
+    h = re.sub(r"<!--.*?-->", "", (P / sha).read_bytes().decode("utf-8", "replace"), flags=re.S)  # commented-out entries are not published
     out = []
-    for m in re.finditer(r"<p><b>([^<]+)</b><br />(.*?)</p>", h, re.S):
+    for m in re.finditer(r"<p><(?:b|strong)>([^<]+)</(?:b|strong)><br />(.*?)</p>", h, re.S):
         parts = [html.unescape(x).strip() for x in re.split(r"<br\s*/?>", m.group(2))]
         out.append({"unit": unit, "name": html.unescape(m.group(1)).strip(), "title": parts[0], "dept": scrub(parts[1]) if len(parts) > 1 else "",
                     "profile_url": "", "listing_url": url, "listing_sha": sha})

@@ -6,14 +6,13 @@
   "Chemistry": 22,
   "ME": 63,
   "SPSPE": 18,
-  "SPSPE-adjunct": 12,
-  "SPSPE-emeritus": 16
+  "SPSPE-emeritus": 14
  },
  "people_rows_added": 3,
- "persons_examined": 156,
+ "persons_examined": 143,
  "verdicts": {
-  "DUPLICATE_OF": 22,
-  "REJECT": 127,
+  "DUPLICATE_OF": 23,
+  "REJECT": 113,
   "STILL_UNCERTAIN": 4,
   "VERIFIED": 3
  }

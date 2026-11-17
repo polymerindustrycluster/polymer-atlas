@@ -6,7 +6,7 @@ https://www.uakron.edu/polymer/about-us/our-people/adjunct,2026-11-17T17:38:18-0
 https://www.uakron.edu/polymer/about-us/our-people/emeritus,2026-11-17T17:38:19-05:00,076dfa1f5af87d20e5fe146b68a976354452954112917a999c1eedcb94fd525a,side-nav link on our-people page 6a0a7363
 https://www.uakron.edu/polymer/faculty,2026-11-17T17:38:20-05:00,3c8e297b24b2ec382dbc3953f75216d50e61d5a5e987237c63c1fc09712af1e6,side-nav link on our-people page 6a0a7363
 https://www.uakron.edu/chemistry/faculty-staff/index.dot,2026-11-17T17:38:46-05:00,61a0593364883d1d5f67aaf25a22cb75802c006596bba1ca80f0b0e8725fe7c4,held record: people.csv PERSON-001330 sources
-https://www.uakron.edu/engineering/about-us/people-directory/,2026-11-17T17:38:46-05:00,d9305b5a07af5bc6e3e4c7445f4c518025e574532d7856f95764ab8f7e944fc2,held record: people.csv PERSON-000046 sources (people-directory path prefix)
+https://www.uakron.edu/engineering/about-us/people-directory/,2026-11-17T17:38:46-05:00,d9305b5a07af5bc6e3e4c7445f4c518025e574532d7856f95764ab8f7e944fc2,"link '/engineering/about-us/people-directory' on College About page 7840c6ae, itself the 'About the College' link on held-record profile page 48770810 (PERSON-000046 URL)"
 https://www.uakron.edu/engineering/about-us/people-directory/engineering-faculty.dot,2026-11-17T17:39:04-05:00,9681ad6723a19d3d799a6a8b26b3421e2d8151dce7d1534fcd14c7bfe770abeb,link on engineering Our People page d9305b5a
 https://www.uakron.edu/engineering/bme/our-people/,2026-11-17T17:39:04-05:00,eadc2e0780336b99d1123e4e0dd1bf7af8772de9c5e6b7f0d6ffd8089550dd49,link on engineering Our People page d9305b5a
 https://www.uakron.edu/engineering/cbe/our-people/,2026-11-17T17:39:05-05:00,1c30700f1d6438b9a677de784ebf13e7c53b3b911ae2938dd98e968ad4527134,link on engineering Our People page d9305b5a
@@ -70,3 +70,8 @@ https://blogs.uakron.edu/irl/,2026-11-17T17:44:37-05:00,b9716a4fb58c01c597eafdcf
 https://seamlab.uakron.edu/,2026-11-17T17:44:37-05:00,80475e009db7350399447fcb7388c6fdb7b8ef8323a35e124b05149ade41275b,Website link on Yalin Dong profile page 8fe7c553
 https://blogs.uakron.edu/boika-research/,2026-11-17T17:44:38-05:00,1aa6d3aa61b1b0296253692724bbc045129edf79fd256e6caa53ab6caec5d200,Website link on Aliaksei Boika profile page 20e5c212
 https://blogs.uakron.edu/barkana-signals-lab/,2026-11-17T17:44:39-05:00,e6d0a2aa4a0060bbbcadcf5e5e385780f61e47844467cf63afb5aae020b5fe67,Website link on Buket Barkana profile page b70b0b3a
+https://www.uakron.edu/engineering/about-us/people-directory/profile.dot?u=fkhabaz,2026-11-17T17:51:55-05:00,4877081082e90749e193ad1b0bb9cdff244e1985baedb0936419444c5f631e34,held record: people.csv PERSON-000046 public_profile_url
+https://www.uakron.edu/engineering/about-us/,2026-11-17T17:52:01-05:00,7840c6ae2c70322eb2c39bb6287d5c6c702d74903bf51c5e1af41fed063ee18c,link 'About the College' on held-record profile page 48770810 (PERSON-000046 URL)
+https://www.uakron.edu/afmc/,2026-11-17T17:53:50-05:00,fa645038866174708e66bcbb72a73562cc697c7a88487e80183a5266ed614924,held record: programs.csv url / ecosystem polymer_program_url (ORG-000501)
+https://centire.org/,2026-11-17T17:53:50-05:00,c8bacf961f7e9060bddbb6ef691446943e4ea674e479f4ae0e56d3bf2f8ed0ae,held record: programs.csv url / ecosystem polymer_program_url (ORG-000501)
+https://bulletin.uakron.edu/graduate/colleges-programs/engineering/polymer-science-engineering/,2026-11-17T17:53:50-05:00,99c9ad90c360505ab660f500353c775aba34db424f1234dd14957e3fb1f8887b,held record: programs.csv url / ecosystem polymer_program_url (ORG-000501)
