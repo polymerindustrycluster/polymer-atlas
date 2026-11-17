@@ -77,6 +77,15 @@ su("WALSH", "Chemistry", "Neil Walsh", "Gate A met (Associate Professor of Chemi
 su("NASA", "Polymers (lab pages)", "Michael A. Meador", "NTRS record shows Glenn authorship of a polymer-research overview but is a report, not a Glenn staff or program page styling him research staff. Settling fact: a Glenn staff/program page styling him research staff with polymer research (and current employment)")
 su("NASA", "Polymers (lab pages)", "Tiffany S. Williams", "NTRS record is a presentation, not a Glenn page styling her research staff. Settling fact: a Glenn staff/program page styling her research staff with polymer research")
 
+# ---------- Re-screen 2026-11-17 (Codex-23 finding on PR #370): CWRU engineering bulletins as the check ----------
+BUL = "https://bulletin.case.edu/engineering/biomedical-engineering/"
+su("CWRU", "BME", "Anirban Sen Gupta", "Gate A met (Wallace R. Persons Professor, BME). Re-screen: his own profile and the CWRU pathology biography page state 'novel biomaterials' and drug-delivery research with no polymer object, but the CWRU BME bulletin lists 'novel polymeric biomaterials for tissue engineering scaffolds' (lead). Settling fact: his own profile or lab page stating polymer research",
+   gate_a_url="https://case.edu/engineering/about/faculty-and-staff-directory/anirban-sen-gupta", gate_a_quote="Wallace R. Persons Professor",
+   gate_b_url=BUL, gate_b_quote="novel polymeric biomaterials for tissue engineering scaffolds")
+su("CWRU", "MAE", "Ozan Akkus", "Gate A met (Kent H. Smith Professor, MAE). Re-screen: his profile and his Tissue Fabrication and Mechanobiology Lab page state no polymer object, but the CWRU BME bulletin lists 'ductile biocompatible polymer matrices are subjected to mineralization' (lead). Settling fact: his own profile or lab page stating polymer research",
+   gate_a_url="https://case.edu/engineering/about/faculty-and-staff-directory/ozan-akkus", gate_a_quote="Kent H. Smith Professor, Department of Mechanical and Aerospace Engineering",
+   gate_b_url=BUL, gate_b_quote="ductile biocompatible polymer matrices are subjected to mineralization")
+
 # ---------- CWRU engineering directory: anchor-keyed frame (professor-rank titles in MACRO/MSE/CBE/BME/MAE) ----------
 UNITS = [("Macromolecular", "MACRO"), ("Materials Science", "MSE"), ("Chemical", "CBE"), ("Biomedical", "BME"), ("Mechanical", "MAE")]
 STMT = re.compile(r"research interests|research information|expertise|my research|our research|his research|her research|research focus|research areas|research summary|research:", re.I)
