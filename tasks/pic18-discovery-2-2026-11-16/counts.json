@@ -1,0 +1,11 @@
+{
+ "applied": 0,
+ "by_verdict": {
+  "DUPLICATE_OF": 6,
+  "REJECT": 1,
+  "STILL_UNCERTAIN": 65
+ },
+ "data_rows_added": 0,
+ "held": 72,
+ "leads_adjudicated": 72
+}
