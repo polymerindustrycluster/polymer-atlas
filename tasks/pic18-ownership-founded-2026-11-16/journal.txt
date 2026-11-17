@@ -1,0 +1,2 @@
+Preimages reconstructed byte-for-byte from pre-pass HEAD be2e6084d430f1e6f9de0f66289b1d3c2570e255; stored in controller persist/pic18-ownership-founded/preimages.
+58 field fills / 54 organization rows; 58 appended evidence rows. Only ownership_type and year_founded organization cells changed.
