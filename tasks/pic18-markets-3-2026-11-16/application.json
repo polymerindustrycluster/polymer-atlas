@@ -1,15 +1,10 @@
 {
   "base": "d410968ab2967b9fedc4d7350204289375a3abc4",
   "by_shard": {
-    "organizations_MO.csv": {
-      "evidence_rows": 2,
-      "market_cells": 1,
-      "market_values": 2
-    },
     "organizations_OH.csv": {
-      "evidence_rows": 231,
-      "market_cells": 83,
-      "market_values": 231
+      "evidence_rows": 208,
+      "market_cells": 76,
+      "market_values": 208
     },
     "organizations_US.csv": {
       "evidence_rows": 5,
@@ -17,7 +12,7 @@
       "market_values": 5
     }
   },
-  "cells": 85,
-  "evidence_rows": 238,
-  "replayed_on": "89d9e460e8bb334b73f1b9bfc130a97ed742957a"
+  "cells": 77,
+  "evidence_rows": 213,
+  "replayed_on": "cc4f95584fba112c64d42cbe4b8ac381ea39ee3f"
 }

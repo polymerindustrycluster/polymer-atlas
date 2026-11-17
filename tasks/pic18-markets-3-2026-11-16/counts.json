@@ -7,22 +7,27 @@
     "U": 2
   },
   "held_by_class": {
-    "group_or_redirect_attribution": 9,
-    "menu_or_nav_only": 11,
+    "article_not_own_markets": 1,
+    "generic_product_explainer": 1,
+    "group_or_redirect_attribution": 10,
+    "menu_or_nav_only": 15,
     "no_market_text": 2,
     "no_vocab_market": 1,
     "not_adjudicated": 260,
     "off_vocabulary_or_ambiguous_market": 14,
-    "scope_attribution": 5
+    "scope_attribution": 5,
+    "tagline_or_header": 1
   },
-  "held_organizations": 302,
+  "held_organizations": 310,
   "manifest_organizations": 745,
   "prior_lane_organizations_excluded": 47,
   "proposed_organization_tiers": {
-    "A": 62,
-    "B": 23
+    "A": 56,
+    "B": 21
   },
-  "proposed_organizations": 85,
-  "proposed_values": 238,
-  "retained_organizations": 628
+  "proposed_organizations": 77,
+  "proposed_values": 213,
+  "retained_organizations": 628,
+  "withdrawn_organizations": 8,
+  "withdrawn_values": 25
 }

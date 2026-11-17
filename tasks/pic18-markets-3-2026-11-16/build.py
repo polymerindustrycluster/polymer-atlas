@@ -17,8 +17,9 @@ STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-at
 CORPUS = STORE / 'pic18-corpus-2026-11-16'
 SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
 BASE = 'd410968ab2967b9fedc4d7350204289375a3abc4'  # frozen frame
-MAIN = '89d9e460e8bb334b73f1b9bfc130a97ed742957a'  # main this packet is replayed onto (merge, cell-replay)
+MAIN = 'cc4f95584fba112c64d42cbe4b8ac381ea39ee3f'  # main this packet is replayed onto (merge, cell-replay)
 FIRST_ID = 389000
+DEFAULT_FACT = 'Exact-entity own-product or own-customer narrative naming a MARKETS vocabulary market; navigation, group or off-vocabulary labels do not settle it.'
 sys.path.insert(0, str(ROOT / 'scripts'))
 from shard_io import append_sorted
 
@@ -91,8 +92,15 @@ def proposals(frame, pages):
     assert len({(r['org_id'], r['value']) for r in result}) == len(result), 'duplicate proposal'
     assert len(result) <= 2000, 'outside assigned EVD block'
     for i, r in enumerate(result):
-        r['evidence_id'] = f'EVD-{FIRST_ID + i:06d}'
-    return result
+        r['evidence_id'] = f'EVD-{FIRST_ID + i:06d}'  # position in the full selection: withdrawn IDs stay retired, nothing renumbers
+    out = {(r['org_id'], r['value']): r['evidence_id'] for r in read(HERE / 'withdrawn.csv')}
+    assert all(next(x for x in result if (x['org_id'], x['value']) == k)['evidence_id'] == v for k, v in out.items()), 'withdrawn ID drift'
+    return [r for r in result if (r['org_id'], r['value']) not in out]
+
+
+def total_ids():
+    """Every evidence ID the selection ever assigned (applied + retired)."""
+    return sum(len(line.split('\t')[1].split(';')) for line in (HERE / 'selection.tsv').read_text().splitlines())
 
 
 def apply(inputs, evidence):
@@ -144,6 +152,7 @@ def apply(inputs, evidence):
 
 def holds_for(frame, inputs, own_pages):
     reviewed = {r['org_id']: r for r in read(HERE / 'reviewed_holds.csv')}
+    reviewed.update({r['org_id']: r for r in read(HERE / 'withdrawn.csv')})  # withdrawn after review: class, note and settling fact travel with the hold
     done = {r['org_id'] for r in inputs}
     holds = []
     for oid in frame:
@@ -153,7 +162,7 @@ def holds_for(frame, inputs, own_pages):
         holds.append(dict(org_id=oid, tier=frame[oid][1]['verification_tier'], field='markets_served', verdict='STILL_UNCERTAIN', applied='held',
                           hold_class=r['hold_class'] if r else 'not_adjudicated',
                           note=r['note'] if r else 'Not reached in the 35-minute budget (or no market sentence surfaced by the screening pass)',
-                          settling_fact='Exact-entity own-product or own-customer narrative naming a MARKETS vocabulary market; navigation, group or off-vocabulary labels do not settle it.',
+                          settling_fact=(r or {}).get('settling_fact') or DEFAULT_FACT,
                           retained_pages=len(own_pages[oid])))
     return holds
 
@@ -189,6 +198,7 @@ def counts_for(manifest, pages, frame, inputs, holds, prior):
                 frame_organizations=len(frame),
                 frame_tiers=dict(Counter(org['verification_tier'] for _, org in frame.values())),
                 proposed_organizations=len(ap), proposed_values=len(inputs),
+                withdrawn_values=len(read(HERE / 'withdrawn.csv')), withdrawn_organizations=len({r['org_id'] for r in read(HERE / 'withdrawn.csv')}),
                 proposed_organization_tiers=dict(Counter(frame[o][1]['verification_tier'] for o in ap)),
                 held_organizations=len(holds),
                 held_by_class=dict(Counter(h['hold_class'] for h in holds)))

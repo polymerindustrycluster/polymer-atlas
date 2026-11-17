@@ -5,8 +5,9 @@ import hashlib
 import json
 import re
 import subprocess
-from collections import Counter
-from build import (HERE, ROOT, CORPUS, SNAPSHOT, BASE, FIRST_ID, read, source, proposals, found, at_main, counts_for)
+from urllib.parse import urlparse
+import witness_class
+from build import (HERE, ROOT, CORPUS, SNAPSHOT, BASE, FIRST_ID, read, source, proposals, found, at_main, counts_for, total_ids)
 
 # Wording each controlled tag needs in its own quote (refuted before: broader/different tag than the words).
 WORDS = {
@@ -37,8 +38,12 @@ def independent_frame():
     return n
 
 
+def domain(u):
+    return urlparse(u if '//' in u else '//' + u).netloc.lower().removeprefix('www.')
+
+
 def verify(inputs, frames, holds):
-    _, _, pages, frame, _ = source()
+    orgs, _, pages, frame, _ = source()
     assert len(frames) == len(frame) == independent_frame() and {r['org_id'] for r in frames} == set(frame), 'frame yield vs independent count'
     vocab = json.loads((ROOT / 'docs/schema/vocab.json').read_text())['vocabularies']['MARKETS']['values']
     seen = set()
@@ -54,6 +59,12 @@ def verify(inputs, frames, holds):
         text = (CORPUS / p['text_file']).read_text()
         assert hashlib.sha256(text.encode()).hexdigest() == r['text_sha256'], 'text hash mismatch'
         assert found(text, r['quote']), 'quote absent'
+        # witness class: navigation chrome, article/blog source, parent or group domain (CONTRACT rule 5; reviews of #360)
+        if r['raw_file']:
+            assert not witness_class.nav_only((CORPUS / r['raw_file']).read_text(errors='replace'), r['quote']), 'nav menu witness'
+        assert not witness_class.article_url(r['source_url']), 'article source witness'
+        parent = orgs.get(frame[r['org_id']][1]['parent_org_id'])
+        assert not (parent and domain(parent[1]['website']) == domain(r['source_url'])), 'group domain witness'
         assert r['tier_effect'] == ('supports_U' if frame[r['org_id']][1]['verification_tier'] == 'U' else 'supports_A')
     applied = {r['org_id'] for r in inputs}
     held = [r['org_id'] for r in holds]
@@ -94,20 +105,25 @@ def boundary(inputs, evidence):
 def main():
     inputs, frames, holds = [read(HERE / f) for f in ('inputs.csv', 'frame.csv', 'holds.csv')]
     verify(inputs, frames, holds)
-    for name, mutate in [
-        ('fabricated quote', lambda i, f, h: i[0].update(quote='fabricated violet elephant market')),
-        ('off vocabulary', lambda i, f, h: i[0].update(value='consumer_goods')),
-        ('broader tag than the words', lambda i, f, h: i[0].update(value='consumer_goods_housewares')),
-        ('missing disposition', lambda i, f, h: h.pop()),
-        ('raw hash tampering', lambda i, f, h: i[0].update(raw_sha256='0' * 64)),
-        ('duplicate proposal', lambda i, f, h: i.append(i[0].copy())),
-        ('dropped frame row', lambda i, f, h: f.pop()),
+    plant = lambda org: dict(next(r for r in read(HERE / 'withdrawn.csv') if r['org_id'] == org), field='markets_served', verdict='VERIFIED', applied='applied')  # a retired witness replayed as a live proposal
+    for name, expect, mutate in [
+        ('fabricated quote', 'quote absent', lambda i, f, h: i[0].update(quote=i[0]['quote'] + ' fabricated violet elephant')),
+        ('off vocabulary', 'off vocabulary', lambda i, f, h: i[0].update(value='consumer_goods')),
+        ('broader tag than the words', 'tag wording', lambda i, f, h: i[0].update(value='consumer_goods_housewares')),
+        ('missing disposition', 'disposition coverage', lambda i, f, h: h.pop()),
+        ('raw hash tampering', 'raw hash mismatch', lambda i, f, h: i[0].update(raw_sha256='0' * 64)),
+        ('duplicate proposal', 'duplicate proposal', lambda i, f, h: i.append(i[0].copy())),
+        ('dropped frame row', 'frame yield', lambda i, f, h: f.pop()),
+        ('navigation menu witness (PolyMet)', 'nav menu witness', lambda i, f, h: i.append(plant('ORG-001868'))),
+        ('blog/article witness (Dalin)', 'article source witness', lambda i, f, h: i.append(plant('ORG-001763'))),
+        ('parent/group-domain witness (Sealed Air)', 'group domain witness', lambda i, f, h: i.append(plant('ORG-000237'))),
     ]:
         args = copy.deepcopy((inputs, frames, holds))
         mutate(*args)
         try:
             verify(*args)
-        except AssertionError:
+        except AssertionError as e:
+            assert expect in str(e), ('refused for the wrong reason', name, str(e))
             print('REFUSED:', name)
         else:
             raise AssertionError('silent pass: ' + name)
@@ -116,8 +132,14 @@ def main():
     assert json.loads((HERE / 'counts.json').read_text()) == expected, 'counts.json stale'
     evidence = read(HERE / 'evidence_packet.csv')
     assert len(evidence) == len(inputs) == expected['proposed_values']
-    for i, (ev, r) in enumerate(zip(evidence, inputs)):
-        assert ev['evidence_id'] == r['evidence_id'] == f'EVD-{FIRST_ID + i:06d}' and FIRST_ID + i <= 390999
+    retired = {r['evidence_id'] for r in read(HERE / 'withdrawn.csv')}
+    live = [r['evidence_id'] for r in inputs]
+    assert len(live) == len(set(live)) and not retired & set(live), 'retired evidence ID reused'
+    assert sorted(retired | set(live)) == [f'EVD-{FIRST_ID + i:06d}' for i in range(total_ids())], 'ID accounting (applied + retired must be the whole block, no renumbering)'
+    assert max(live) <= 'EVD-390999'
+    assert not retired & {r['evidence_id'] for p in (ROOT / 'data').glob('evidence_*.csv') for r in read(p)}, 'retired ID present in data'
+    for ev, r in zip(evidence, inputs):
+        assert ev['evidence_id'] == r['evidence_id']
         assert ev['record_id'] == r['org_id'] and ev['source_ref'] == r['source_url'] and ev['tier_effect'] == r['tier_effect']
         assert ev['claim_detail'] == f'markets_served {r["value"]}: "{r["quote"]}"'
     boundary(inputs, evidence)
