@@ -1,0 +1,46 @@
+site_id,terms,reason,settling_fact
+SITE-001479,,"Distributor of stand-up pouches (warehouse_distribution); the page covers pouch options, not a process run at this site",Own-page sentence stating a converting or printing process done at this site
+SITE-001487,materials,Processes already tagged; no stored page names a resin or material molded at this plant,Own-page sentence naming resins or materials the plant molds
+SITE-001513,,Stored pages are the parent group sustainability and corporate pages; nothing inferred from a parent,Own-site page for the Milan technical center stating a process or material
+SITE-001531,,Brand site for Pittsburgh Paints; paint/adhesive wording is brand-level and the Huron plant is not named,Page binding paint manufacture to the Huron plant
+SITE-001567,carbon_black,"Akron holds offices, sales and warehousing; the page puts production in Macon, Georgia",Page placing carbon-black handling or treating at the Akron site
+SITE-001589,elastomers_rubber,"Page says bougies are made of latex-free rubber, but no stored page names the Cleveland plant (only Cleveland Clinic mentions)",Stored page with the plant locality plus the material sentence
+SITE-001613,assembly_secondary_ops,"Page says ""assembly""; the term covers wider secondary operations, so it would be broader than the words",Page naming secondary operations done at the plant
+SITE-001623,die_cutting_converting;laminating,"Menu items under services (Die Cuts, Lamination, Conversion); tier B, and no capability-vocabulary term exists, so no tag and no capability row (owner ruling 2026-11-14)",Plant narrative sentence stating die cutting or lamination
+SITE-001623,polyethylene_pe;polyurethane_pu;elastomers_rubber,Product-stock list of a wholesale foam supplier; processing of these specific materials is not stated,Sentence stating the plant processes these materials
+SITE-001624,additive_manufacturing_polymer,Only news headlines mention 3D printing; no capability wording on a stored non-news page,Capability page stating polymer 3D printing at the Parma site
+SITE-001637,injection_molding,"Products page names in-house injection molding, but the company describes several locations; no allocation to Lexington",Page binding injection molding to the Lexington plant
+SITE-001664,assembly_secondary_ops,"ASSEMBLY heading is a capability list item; tier B, no capability term",Plant narrative sentence stating assembly operations
+SITE-001669,injection_molding;extrusion_unspecified;rubber_mixing_compounding,"Tagline ""rubber processing, injection molding and extrusion application technologies"" describes where the additive is used, not plant processes","Page stating the Niles plant molds, extrudes or compounds"
+SITE-001690,thermoplastic_elastomers_tpe_tpu;pvc,SBS-modified bitumen has no vocabulary term; PVC roof membranes are named in history but the plant making them is not stated,Page binding PVC membrane manufacture to Wadsworth
+SITE-001718,,Page says products come from several manufacturing sites; capability lists are not bound to Elyria,Page binding the extrusion/molding lists to the Elyria plant
+SITE-001719,polyethylene_pe,"Product list (""polyethylene tanks"") on a page that also shows a Canada office; not bound to Austinburg",Narrative sentence binding rotomolded polyethylene to the Austinburg plant
+SITE-001731,,Earlier lane hold stands: the What-we-work-with list is not bound to the plant rather than the separately disclosed headquarters or warehouse,Bind material handling to the held plant
+SITE-001744,,"Product names (molded and laminated bumpers, recycled-rubber mats) only; no process sentence",Narrative sentence naming the molding or laminating process
+SITE-001746,,Materials already tagged; no stored page states a plant process,Narrative sentence naming the molding process
+SITE-001785,processes,"Natural rubber latex stated, but no dipping or molding process sentence for the Norwalk plant",Sentence naming the latex process
+SITE-001846,elastomers_rubber,"Mold shop that builds rubber molds; rubber is its customers' material, not stated as the plant's own",Sentence stating the plant molds or compounds rubber
+SITE-001893,elastomers_rubber;silicones,Narrative on rubber/silicone removal from metal is metal reclamation (debonding has no process term); the address is labelled Headquarters and no plant allocation is stated,Page placing the debonding plant at the Akron address
+SITE-001922,,"Page lists four plants (Burton and Bowling Green in Ohio, Windsor ON, Laredo TX); recycling and resin wording not allocated to Burton",Page allocating recycling and resin types to the Burton plant
+SITE-001930,mold_tool_making;tooling_repair_maintenance;rotational_molding,"Services list only (menu); tier A so no section-3 tag at C strength and no capability term; rotational molding is a mold-maker nav item, not stated as the plant's process",Plant narrative sentence stating it builds or repairs molds
+SITE-001953,,"Stored page is the Jax Group page (Simcoe, Ontario origin); the Akron plant is not described",Page describing the Akron shop
+SITE-001992,injection_molding,"Narrative says a 100,000 sq ft facility has 32 molding machines, but no stored page names North Lima (contact page carries no address); polyethylene products and in-house tooling are list items on a tier B site",A stored page naming the North Lima plant
+SITE-002033,,Stored pages are the Paramelt global site; the Cleveland plant is not described,Page describing the Cleveland plant
+SITE-002041,,Stored pages are the parent garage-door company pages; nothing inferred from a parent,Wayne-Dalton Plastics page stating a process or material
+SITE-001755,,Equipment dealer (sales_office); molding wording describes customers,Page stating a process run at this site
+SITE-001767,,Equipment dealer (sales_office); molding wording describes the owner's past roles,Page stating a process run at this site
+SITE-001815,,Resin trader (hq_only); processing methods listed are customers',Page stating pulverizing or compounding at this site
+SITE-001862,,Distributor of engraving supplies; fabrication is a service-menu item,Page stating a process run at this site
+SITE-001858,,Distributor of vinyl films; slitting is a service-menu item,Page stating a process run at this site
+SITE-001980,rotational_molding,"Rotomolding consulting and machinery sales, not stated as this plant's process",Page stating rotomolding at the Kent site
+SITE-002115,,Domain-parking bot wall page stored; no content,Fetch of the real site
+SITE-002024,,Parked-domain page stored; no content,Fetch of the real site
+SITE-002069,,Stored home page has 12 characters (name only),Fetch of a content page
+SITE-001873,,Stored home page has 37 characters (name only),Fetch of a content page
+SITE-001834,pvc,"Page says ""vinyl accessories"", not PVC; mapping vinyl to pvc would be broader than the words",Page naming PVC or an owner ruling on vinyl
+SITE-001986,potting_encapsulation_casting,Casting of epoxy/quartz polymer concrete; whether that maps to potting_encapsulation_casting is a vocabulary ruling (recommend: do not map),Owner ruling on polymer-concrete casting
+SITE-001986,composites_unspecified,"Narrative says ""epoxy/quartz composites are precision-cast"", but materials already holds epoxy and this lane fills blank cells only (b02 rule); an additive write to a non-blank cell needs the integrator of record or an owner ruling",Owner/integrator ruling on additive writes to non-blank materials cells
+SITE-001623,plastics_machining_cnc,"Page says CNC milling ""on most of our materials"" (foams, rubbers, textiles, leather); it never says plastics, so the tag would be broader than the words",Page stating CNC machining of plastics
+SITE-001606,liquid_crystals,Liquid crystals appear in the navigation and a news item; no stored page names the Kent plant address (Kent State University only),Page with the Kent address plus a sentence on liquid-crystal manufacture
+SITE-001820,mold_tool_making,"Title says ""Tooling and Molds for the Investment Casting & Aerospace Industries"": wax dies for casting, hq_only site, no polymer-mold sentence",Sentence stating it builds molds for polymer molding
+SITE-001569,silicones,"Withdrawn after Codex-21 refutation of 1516036: the silicone-stent product page cites 526 S. Main St., Suite 509, Akron 44311, but the site record is 1800 Triplett Blvd, 44306; the claim is company-grain and nothing ties the product to the Triplett establishment","A stored page tying silicone stent manufacture to 1800 Triplett Blvd, Akron"

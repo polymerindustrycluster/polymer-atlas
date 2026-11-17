@@ -1,0 +1,58 @@
+{
+  "tried_urls": 1251,
+  "archived_urls": 716,
+  "links": 2188,
+  "snapshots": 711,
+  "worked_evidence": 3613,
+  "failures": {
+    "FETCH_FAILED_000": 735,
+    "FETCH_FAILED_200": 61,
+    "NO_PRESERVED_QUOTE": 342,
+    "QUOTE_ABSENT": 183,
+    "NO_EXACT_CAPTURE": 5,
+    "SPN_FETCH_FAILED_000": 62,
+    "SPN_FETCH_FAILED_520": 8,
+    "CDX_FETCH_FAILED_000": 16,
+    "NO_CAPTURE": 4,
+    "SPN_QUERY_HOLD": 4,
+    "REPLAY_REDIRECT_HOLD": 3,
+    "SPN_FETCH_FAILED_523": 1,
+    "FETCH_FAILED_404": 1
+  },
+  "url_failures": {
+    "FETCH_FAILED_000": 217,
+    "FETCH_FAILED_200": 20,
+    "NO_PRESERVED_QUOTE": 196,
+    "FETCH_FAILED_000;NO_PRESERVED_QUOTE": 18,
+    "NO_EXACT_CAPTURE": 2,
+    "QUOTE_ABSENT": 28,
+    "FETCH_FAILED_200;NO_PRESERVED_QUOTE": 2,
+    "SPN_FETCH_FAILED_000": 29,
+    "SPN_FETCH_FAILED_520": 4,
+    "CDX_FETCH_FAILED_000": 6,
+    "NO_CAPTURE": 3,
+    "SPN_QUERY_HOLD": 1,
+    "NO_PRESERVED_QUOTE;QUOTE_ABSENT": 4,
+    "NO_PRESERVED_QUOTE;REPLAY_REDIRECT_HOLD": 1,
+    "NO_PRESERVED_QUOTE;SPN_FETCH_FAILED_000": 1,
+    "SPN_FETCH_FAILED_523": 1,
+    "REPLAY_REDIRECT_HOLD": 1,
+    "FETCH_FAILED_404": 1
+  },
+  "url_route_outcomes": {
+    "FOUND": 838,
+    "SPN_FETCH_FAILED_000": 363,
+    "NO_EXACT_CAPTURE": 2,
+    "SPN_FETCH_FAILED_520": 12,
+    "CDX_FETCH_FAILED_000": 19,
+    "NO_CAPTURE": 4,
+    "SPN_QUERY_HOLD": 9,
+    "SPN_FETCH_FAILED_523": 4
+  },
+  "replay_http_outcomes": {
+    "200": 1321,
+    "000": 456,
+    "404": 1
+  },
+  "pending_urls": 249
+}

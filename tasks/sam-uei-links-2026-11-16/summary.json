@@ -1,0 +1,73 @@
+{
+  "known_answers": [
+    [
+      "ORG-000194",
+      "RQJGN2NZMNC4"
+    ],
+    [
+      "ORG-000317",
+      "VD1NLZGAJ2L4"
+    ],
+    [
+      "ORG-000402",
+      "GM5MMNB6DGB8"
+    ]
+  ],
+  "matching_org_uei_pairs": 595,
+  "matching_organizations": 557,
+  "appended_links": 472,
+  "held_pairs": 123,
+  "by_shard": {
+    "organizations_AL": 3,
+    "organizations_AR": 2,
+    "organizations_AZ": 1,
+    "organizations_CA": 23,
+    "organizations_CO": 4,
+    "organizations_CT": 6,
+    "organizations_DE": 1,
+    "organizations_FL": 5,
+    "organizations_GA": 6,
+    "organizations_IA": 6,
+    "organizations_ID": 3,
+    "organizations_IL": 13,
+    "organizations_IN": 15,
+    "organizations_INTL": 1,
+    "organizations_KS": 3,
+    "organizations_KY": 5,
+    "organizations_LA": 1,
+    "organizations_MA": 14,
+    "organizations_MD": 2,
+    "organizations_ME": 2,
+    "organizations_MI": 19,
+    "organizations_MN": 9,
+    "organizations_MO": 4,
+    "organizations_MS": 2,
+    "organizations_MT": 2,
+    "organizations_NC": 8,
+    "organizations_ND": 2,
+    "organizations_NE": 1,
+    "organizations_NH": 8,
+    "organizations_NJ": 10,
+    "organizations_NM": 1,
+    "organizations_NV": 4,
+    "organizations_NY": 17,
+    "organizations_OH": 100,
+    "organizations_OK": 3,
+    "organizations_OR": 8,
+    "organizations_PA": 56,
+    "organizations_RI": 5,
+    "organizations_SC": 7,
+    "organizations_SD": 2,
+    "organizations_TN": 5,
+    "organizations_TX": 9,
+    "organizations_US": 35,
+    "organizations_UT": 8,
+    "organizations_VA": 4,
+    "organizations_VT": 1,
+    "organizations_WA": 6,
+    "organizations_WI": 17,
+    "organizations_WV": 2,
+    "organizations_WY": 1
+  },
+  "baseline_sha256": "1c8f95b7a803f17233671b2379c5ec42ac19f4a0c93a744e904473bdd76e191f"
+}

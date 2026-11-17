@@ -1,0 +1,27 @@
+[
+  {
+    "source": "https://sam.gov/about/terms-of-use",
+    "http_status": 200,
+    "observed_at": "2026-11-16T18:58:43.980456+00:00",
+    "sha256": "595c4dca937cd3b3d6fa30b7a7741ec74c2eeaba522f66e838663614411e6230",
+    "bytes": 63262,
+    "cache_file": "terms.html",
+    "excerpts": [
+      "our system account follows these terms. If you want to share data publicly, only share data from public versions of APIs. The terms for sensitive data apply to sensitive data you submit and receive via API. Full Legal Language SAM.gov makes certain data available via APIs and extracts with URLs \u201chttp",
+      "n records created before April 4, 2022. Entity registration records with D&B data show that data source in APIs and extracts. You may use D&B Open Data with these limits: You must state in writing that D&B is the data source. You may not share D&B Open Data in bulk (that is, enough records that someone c",
+      "in writing that D&B is the data source. You may not share D&B Open Data in bulk (that is, enough records that someone could use them as an original data source or a substitute for getting data from D&B). You may use all D&B data with these limits: You may not",
+      "the source of such data (i.e., D&B) and shall not access, use or disseminate D&B Open Data in bulk (i.e., in amounts sufficient for use as an original source or as a substitute for the product and/or service being licensed hereunder). Except for data elements identified above a"
+    ]
+  },
+  {
+    "source": "https://open.gsa.gov/api/sam-entity-extracts-api/",
+    "http_status": 200,
+    "observed_at": "2026-11-16T18:58:44.358157+00:00",
+    "sha256": "16b8002cc45d0ca301efbcf348db1fa1982f4e4c5732469914ecfdb71c98fcec",
+    "bytes": 42115,
+    "cache_file": "api-docs.html",
+    "excerpts": [
+      "tches the date on the .dat file inside. These files contain all active entities and entities expired in the last 6 months. File Naming Convention: Monthly ASCII: SAM_PUBLIC_MONTHLY_V2_YYYYMMDD.ZIP SAM_FOUO_MONTHLY_V2_YYYYMMDD.ZIP SAM_SENSITIVE_MONTHLY_V3_YYYYMMDD.ZIP Monthly UTF-8: SAM_PUBLIC_UTF-8_MO"
+    ]
+  }
+]
