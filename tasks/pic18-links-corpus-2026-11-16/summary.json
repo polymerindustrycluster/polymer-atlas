@@ -1,0 +1,28 @@
+{
+  "input_organizations": 958,
+  "manifest_rows": 3604,
+  "proposal_cells": 2668,
+  "applied_cells": 234,
+  "applied_organizations": 176,
+  "counts": {
+    "linkedin_url": {
+      "yes": 25,
+      "held": 806
+    },
+    "newsroom_url": {
+      "yes": 162,
+      "held": 737
+    },
+    "newsroom_feed_url": {
+      "yes": 47,
+      "held": 891
+    }
+  },
+  "tiers": {
+    "B": 85,
+    "U": 1,
+    "A": 83,
+    "C": 7
+  },
+  "injected_defects_rejected": 3
+}

@@ -1,0 +1,327 @@
+site_id,site_name,org_id,below_B,activity,address,code,existence,liveness,parent,scope
+SITE-000279,Carlisle Polyurethane Systems — Berea,ORG-000262,0,A,A,A,A,A,A,A
+SITE-000346,Emerald Polymer Additives — Akron,ORG-000325,0,A,A,A,A,A,B,B
+SITE-000168,Euclid Chemical — Cleveland,ORG-001807,1,missing,B,B,B,B,B,B
+SITE-000171,PPG Industries — Cleveland,ORG-000088,1,missing,B,B,B,B,B,B
+SITE-000761,"Venture Packaging, Inc.",ORG-000665,3,missing,C,C,B,B,A,B
+SITE-000593,Rubbermaid — Mogadore,ORG-000555,4,missing,missing,missing,B,missing,A,B
+SITE-000813,Convertapax — Midvale,ORG-000751,4,missing,A,missing,B,missing,missing,A
+SITE-000971,"Premere Enterprises, Inc. — Bolivar",ORG-000902,4,missing,B,missing,B,missing,missing,A
+SITE-000024,Musson Rubber Co. — Akron,ORG-000025,5,missing,A,missing,missing,missing,missing,A
+SITE-000025,"Enterprise Rubber, Inc. — Akron",ORG-000026,5,missing,A,missing,missing,missing,missing,A
+SITE-000055,"Ultratech Polymers, Inc. — Cuyahoga Falls",ORG-000055,5,missing,A,missing,missing,missing,missing,A
+SITE-000063,Akron Gasket — Tallmadge,ORG-000063,5,missing,A,missing,missing,missing,missing,A
+SITE-000064,"Green Technologies of Ohio, LLC — Tallmadge",ORG-000064,5,missing,A,missing,missing,missing,missing,A
+SITE-000069,Design Molded Plastics — Macedonia,ORG-000069,5,missing,A,missing,missing,missing,missing,A
+SITE-000119,Molding Dynamics — Bedford,ORG-000120,5,missing,A,missing,missing,missing,missing,A
+SITE-000138,Permatex — Solon,ORG-000138,5,missing,A,missing,missing,missing,missing,A
+SITE-000187,Enduro Rubber Company — Ravenna,ORG-000180,5,missing,A,missing,missing,missing,missing,A
+SITE-000200,TMI — Youngstown,ORG-000193,5,missing,A,missing,missing,missing,missing,A
+SITE-000239,Allpass Corporation — Madison,ORG-000225,5,missing,A,missing,missing,missing,missing,A
+SITE-000240,Alttran — Hudson,ORG-000226,5,missing,A,missing,missing,missing,missing,A
+SITE-000275,"C.A. Litzler Co., Inc. — Cleveland",ORG-000258,5,missing,A,missing,missing,missing,missing,A
+SITE-000278,Carbon Polymers Company — Lodi,ORG-000261,5,missing,A,missing,missing,missing,missing,A
+SITE-000293,"Chemsultants International, Inc. — Mentor",ORG-000274,5,missing,A,missing,missing,missing,missing,A
+SITE-000298,Colonial Machine — Kent,ORG-000279,5,missing,A,missing,missing,missing,missing,A
+SITE-000329,Dreco — North Ridgeville,ORG-000310,5,missing,A,missing,missing,missing,missing,A
+SITE-000331,Duo-Corp — North Lima,ORG-000312,5,missing,A,missing,missing,missing,missing,A
+SITE-000354,Evans Industries — Canton,ORG-000333,5,missing,A,missing,missing,missing,missing,A
+SITE-000361,"Flambeau, Inc. — Middlefield",ORG-000340,5,missing,A,missing,missing,missing,missing,A
+SITE-000417,"J. J. White Products, Inc. — Cleveland",ORG-000389,5,missing,A,missing,missing,missing,missing,A
+SITE-000420,JACO Manufacturing Co.,ORG-000391,5,missing,A,missing,missing,missing,missing,A
+SITE-000428,"Joslyn Manufacturing Co., Inc. — Macedonia",ORG-000399,5,missing,A,missing,missing,missing,missing,A
+SITE-000436,Kephaco Corporation dba American Marble Industries Plant 1 — Canton,ORG-000407,5,missing,A,missing,missing,missing,missing,A
+SITE-000447,"Lewart Co., The — Cleveland",ORG-000418,5,missing,A,missing,missing,missing,missing,A
+SITE-000454,LT Molding Solutions — Hudson,ORG-000424,5,missing,A,missing,missing,missing,missing,A
+SITE-000464,McCann Plastics — North Canton,ORG-000433,5,missing,A,missing,missing,missing,missing,A
+SITE-000465,"MCI Technologies, Inc. — Mentor",ORG-000434,5,missing,A,missing,missing,missing,missing,A
+SITE-000489,National Polymer — Chagrin Falls,ORG-000457,5,missing,A,missing,missing,missing,missing,A
+SITE-000523,"Pacific Management Holdings, LLC d/b/a Pharmacy-Lite Packaging",ORG-000488,5,missing,A,missing,missing,missing,missing,A
+SITE-000527,Pilot Plastics — Peninsula,ORG-004564,5,missing,missing,missing,missing,missing,B,A
+SITE-000530,Plastic Platers — Brooklyn,ORG-000495,5,missing,A,missing,missing,missing,missing,A
+SITE-000531,Plastics R Unique — Wadsworth,ORG-000496,5,missing,A,missing,missing,missing,missing,A
+SITE-000542,Polymer 5 — Garrettsville,ORG-000508,5,missing,A,missing,missing,missing,missing,A
+SITE-000549,"Precision Foam Fabrication, Inc. — Youngstown",ORG-000515,5,missing,A,missing,missing,missing,missing,A
+SITE-000565,"Prospect Mold, Inc. — Cuyahoga Falls",ORG-000529,5,missing,A,missing,missing,missing,missing,A
+SITE-000566,Protectoplas Company — Streetsboro,ORG-000530,5,missing,A,missing,missing,missing,missing,A
+SITE-000573,Rainbow Printing — Uniontown,ORG-000537,5,missing,A,missing,missing,missing,missing,A
+SITE-000611,"Silco, Inc. — Mentor",ORG-000572,5,missing,A,missing,missing,missing,missing,A
+SITE-000615,Soft-lite — Streetsboro,ORG-000576,5,missing,A,missing,missing,missing,missing,A
+SITE-000619,Specialty Hose Corp. — North Canton,ORG-000580,5,missing,A,missing,missing,missing,missing,A
+SITE-000625,Spunfab Ltd — Cuyahoga Falls,ORG-000586,5,missing,A,missing,missing,missing,missing,A
+SITE-000651,Treemen Industries — Boardman,ORG-000611,5,missing,A,missing,missing,missing,missing,A
+SITE-000655,"Tri-Craft, Inc. — Middleburg Heights",ORG-000614,5,missing,A,missing,missing,missing,missing,A
+SITE-000658,Tymex Plastics — Cleveland,ORG-000617,5,missing,A,missing,missing,missing,missing,A
+SITE-000672,Wayne County Rubber — Wooster,ORG-000631,5,missing,A,missing,missing,missing,missing,A
+SITE-000673,West & Barker — Niles,ORG-000632,5,missing,A,missing,missing,missing,missing,A
+SITE-000854,Denney Plastics Machining — New Philadelphia,ORG-000790,5,missing,A,missing,missing,missing,missing,A
+SITE-000896,Extol of Ohio — Norwalk,ORG-000830,5,missing,A,missing,missing,missing,missing,A
+SITE-000898,Fabohio — Uhrichsville,ORG-000832,5,missing,A,missing,missing,missing,missing,A
+SITE-000936,Guardian Manufacturing Company — Willard,ORG-000868,5,missing,A,missing,missing,missing,missing,A
+SITE-000997,Kurz-Kasch Inc. — Newcomerstown,ORG-000927,5,missing,A,missing,missing,missing,missing,A
+SITE-001045,Mps Manufacturing Company — New Philadelphia,ORG-000968,5,missing,A,missing,missing,missing,missing,A
+SITE-001164,Rhetech Colors — Sandusky,ORG-001078,5,missing,A,missing,missing,missing,missing,A
+SITE-001207,"Snyder Manufacturing, Inc. — Dover",ORG-001116,5,missing,A,missing,missing,missing,missing,A
+SITE-001823,P3 Infrastructure Inc.,ORG-001747,5,missing,A,missing,missing,missing,missing,A
+SITE-001829,Foundation Industries Inc,ORG-001753,5,missing,A,missing,missing,missing,missing,A
+SITE-000012,"E & T Plastics Mfg. Co., Inc. — Akron",ORG-000013,6,missing,A,missing,missing,missing,missing,missing
+SITE-000026,The Hygenic Corp. — Akron,ORG-000027,6,missing,missing,missing,missing,missing,missing,A
+SITE-000027,The M. F. Murdock Co. — Akron,ORG-000028,6,missing,A,missing,missing,missing,missing,missing
+SITE-000029,"Akron Rubber Development Laboratory, Inc. — Barberton",ORG-000029,6,missing,A,missing,missing,missing,missing,missing
+SITE-000030,"Piedmont Plastics, Inc. — Akron",ORG-000030,6,missing,A,missing,missing,missing,missing,missing
+SITE-000031,Akron Porcelain & Plastics Co. — Akron,ORG-000031,6,missing,C,missing,missing,missing,missing,A
+SITE-000034,Akron Polymer Products — Akron,ORG-000034,6,missing,C,missing,missing,missing,missing,A
+SITE-000062,Chemionics — Tallmadge,ORG-000062,6,missing,missing,missing,missing,missing,missing,A
+SITE-000065,"Hudson Extrusions, Inc. — Hudson",ORG-000065,6,missing,missing,missing,missing,missing,missing,A
+SITE-000067,Taylor Made Pipe Plugs — Hudson,ORG-000067,6,missing,missing,missing,missing,missing,missing,A
+SITE-000104,Transcendia — Strongsville,ORG-000105,6,missing,missing,missing,missing,missing,missing,A
+SITE-000118,Mechanical Rubber — Strongsville,ORG-000119,6,missing,A,missing,missing,missing,missing,missing
+SITE-000128,Playground Plastics — Cleveland,ORG-000129,6,missing,A,missing,missing,missing,missing,missing
+SITE-000157,GrafTech International — Brooklyn Heights,ORG-000157,6,missing,A,missing,missing,missing,missing,missing
+SITE-000169,Vibrantz Technologies — Mayfield Heights,ORG-000007,6,missing,A,missing,missing,missing,missing,missing
+SITE-000176,Zatkoff Seals & Packings — Twinsburg,ORG-000169,6,missing,A,missing,missing,missing,missing,missing
+SITE-000181,Vertex — Mogadore,ORG-000174,6,missing,missing,missing,missing,missing,missing,A
+SITE-000184,Seal Master — Kent,ORG-000177,6,missing,missing,missing,missing,missing,missing,A
+SITE-000185,Elbex — Kent,ORG-000178,6,missing,missing,missing,missing,missing,missing,A
+SITE-000190,Die-Cut Products — Cleveland,ORG-000183,6,missing,missing,missing,missing,missing,missing,A
+SITE-000195,Universal Polymer & Rubber — Middlefield,ORG-000188,6,missing,C,missing,missing,missing,missing,A
+SITE-000197,Clark Rubber & Plastics — Mentor,ORG-000190,6,missing,missing,missing,missing,missing,missing,A
+SITE-000208,Ashtabula Rubber — Ashtabula,ORG-000201,6,missing,C,missing,missing,missing,missing,A
+SITE-000209,QBM Products — Avon Lake,ORG-000202,6,missing,A,missing,missing,missing,missing,missing
+SITE-000223,Addipel — Elyria,ORG-000210,6,missing,A,missing,missing,missing,missing,missing
+SITE-000229,Aetna Plastics Fabrication — Cleveland,ORG-000216,6,missing,A,missing,missing,missing,missing,missing
+SITE-000233,Akro-Plastics — Kent,ORG-000219,6,missing,C,missing,missing,missing,missing,A
+SITE-000237,"All Foam Products Co., Inc. — Middlefield",ORG-000223,6,missing,missing,missing,missing,missing,missing,A
+SITE-000238,"Alliance Equipment Company, Inc. — Alliance",ORG-000224,6,missing,C,missing,missing,missing,missing,A
+SITE-000244,American Wire & Cable — Olmsted Falls,ORG-000230,6,missing,C,missing,missing,missing,missing,A
+SITE-000248,Architectural Fiberglass — Cleveland,ORG-000234,6,missing,C,missing,missing,missing,missing,A
+SITE-000256,Baker Plastics — Youngstown,ORG-000240,6,missing,missing,missing,missing,missing,missing,A
+SITE-000262,Biothane Coated Webbing — North Ridgeville,ORG-000246,6,missing,A,missing,missing,missing,missing,missing
+SITE-000265,BMS Burns — Medina,ORG-000249,6,missing,missing,missing,missing,missing,missing,A
+SITE-000266,"Boardman Molded Products, Inc. — Youngstown",ORG-000250,6,missing,A,missing,missing,missing,missing,missing
+SITE-000267,Bole Machinery Inc. — Stow,ORG-000251,6,missing,A,missing,missing,missing,missing,missing
+SITE-000268,The Bonnot Company — Akron,ORG-000252,6,missing,A,missing,missing,missing,missing,missing
+SITE-000273,BVPV Styrenics — Painesville,ORG-000257,6,missing,missing,missing,missing,missing,missing,A
+SITE-000280,Carney Plastics Inc. — Youngstown,ORG-000263,6,missing,A,missing,missing,missing,missing,missing
+SITE-000288,Charter Next Generation - Massillon,ORG-000728,6,missing,missing,missing,missing,missing,missing,A
+SITE-000304,"Consolidated Plastics Co., Inc. — Stow",ORG-000285,6,missing,A,missing,missing,missing,missing,missing
+SITE-000330,Drummond Corp. — Middlefield,ORG-000311,6,missing,missing,missing,missing,missing,missing,A
+SITE-000339,E.l. Mustee & Sons — Brook Park,ORG-000318,6,missing,A,missing,missing,missing,missing,missing
+SITE-000351,"ESI-Extrusion Services, Inc. — Akron",ORG-000330,6,missing,A,missing,missing,missing,missing,missing
+SITE-000357,Extrudex — Painesville,ORG-000336,6,missing,C,missing,missing,missing,missing,A
+SITE-000363,Flavorseal — Avon,ORG-000341,6,missing,A,missing,missing,missing,missing,missing
+SITE-000373,Full Circle Technologies — Barberton,ORG-000349,6,missing,missing,missing,missing,missing,missing,A
+SITE-000375,"Gem City Plastic Machinery, Inc. — Brecksville",ORG-000351,6,missing,A,missing,missing,missing,missing,missing
+SITE-000376,General Color & Chemical — Minerva,ORG-000352,6,missing,missing,missing,missing,missing,missing,A
+SITE-000401,IMS Industrial Molding Supplies — Chagrin Falls,ORG-000376,6,missing,A,missing,missing,missing,missing,missing
+SITE-000405,Infinity Engineered Products — Fairlawn,ORG-000379,6,missing,A,missing,missing,missing,missing,missing
+SITE-000406,Ingalls Process Equipment Co. — Painesville,ORG-000380,6,missing,A,missing,missing,missing,missing,missing
+SITE-000425,JK Plastics — Middlefield,ORG-000396,6,missing,missing,missing,missing,missing,missing,A
+SITE-000432,Karman Rubber Company — Akron,ORG-000403,6,missing,C,missing,missing,missing,missing,A
+SITE-000435,Kent Pultrusion — Kent,ORG-000406,6,missing,A,missing,missing,missing,missing,missing
+SITE-000438,"Keyland Polymer UV Powder, LLC — Cleveland",ORG-000409,6,missing,A,missing,missing,missing,missing,missing
+SITE-000439,"Killian Latex, Inc. — Akron",ORG-000410,6,missing,C,missing,missing,missing,missing,A
+SITE-000443,Koroseal Interior Products — Medina,ORG-000414,6,missing,A,missing,missing,missing,missing,missing
+SITE-000450,Little Tikes — Hudson,ORG-000421,6,missing,A,missing,missing,missing,missing,missing
+SITE-000469,Mexichem Specialty Resins Inc. Avon lake — Avon Lake,ORG-000438,6,missing,missing,missing,missing,missing,missing,A
+SITE-000472,Mid-west Poly Pak — Doylestown,ORG-000441,6,missing,A,missing,missing,missing,missing,missing
+SITE-000485,Momentous Mold & Machine LLC — Cuyahoga Falls,ORG-000453,6,missing,A,missing,missing,missing,missing,missing
+SITE-000490,Neff-Perkins Company — Middlefield,ORG-000458,6,missing,A,missing,missing,missing,missing,missing
+SITE-000494,Next Dimension Components — Jefferson,ORG-000462,6,missing,C,missing,missing,missing,missing,A
+SITE-000505,Oldcastle Infrastructure (IPG - Middlefield),ORG-000473,6,missing,A,missing,missing,missing,missing,missing
+SITE-000506,ORBIS Corp. — Mentor,ORG-000474,6,missing,A,missing,missing,missing,missing,missing
+SITE-000518,Performance Elastomers — Ravenna,ORG-002534,6,missing,missing,missing,missing,missing,B,missing
+SITE-000519,Perry Fiberglass OH — Elyria,ORG-000485,6,missing,missing,missing,missing,missing,missing,A
+SITE-000521,PET Processors LLC — Painesville,ORG-000486,6,missing,C,missing,missing,missing,missing,A
+SITE-000537,Poly Source LLC. — Brunswick,ORG-000505,6,missing,A,missing,missing,missing,missing,missing
+SITE-000544,Polymer Machinery Company — Tallmadge,ORG-000510,6,missing,A,missing,missing,missing,missing,missing
+SITE-000547,Polystar Containment — Stow,ORG-000513,6,missing,C,missing,missing,missing,missing,A
+SITE-000555,Premier Equipment — Beachwood,ORG-000520,6,missing,A,missing,missing,missing,missing,missing
+SITE-000556,Premier Oem — Cuyahoga Falls,ORG-000521,6,missing,missing,missing,missing,missing,missing,A
+SITE-000558,Premix-Hadlock Composites - Geneva,ORG-000522,6,missing,A,missing,missing,missing,missing,missing
+SITE-000559,Pretium Packaging,ORG-000523,6,missing,A,missing,missing,missing,missing,missing
+SITE-000561,"Profile Plastics, Inc. — Canton",ORG-000525,6,missing,A,missing,missing,missing,missing,missing
+SITE-000567,Q-Lab Corporation — Westlake,ORG-000531,6,missing,A,missing,missing,missing,missing,missing
+SITE-000569,Qnity Cleveland Laird Plant — Cleveland,ORG-000533,6,missing,A,missing,missing,missing,missing,missing
+SITE-000584,Rhein Chemie — Chardon,ORG-000547,6,missing,A,missing,missing,missing,missing,missing
+SITE-000589,"Roechling Industrial Cleveland, L.P.",ORG-000551,6,missing,missing,missing,missing,missing,missing,A
+SITE-000590,Rogers Industrial Products — Akron,ORG-000552,6,missing,C,missing,missing,missing,missing,A
+SITE-000592,RP+M — Avon Lake,ORG-000554,6,missing,missing,missing,missing,missing,missing,A
+SITE-000594,Saco Aei Polymers — Aurora,ORG-000556,6,missing,missing,missing,missing,missing,missing,A
+SITE-000606,Seco Machine — North Canton,ORG-000567,6,missing,missing,missing,missing,missing,missing,A
+SITE-000612,Silicone Solutions — Cuyahoga Falls,ORG-000573,6,missing,missing,missing,missing,missing,missing,A
+SITE-000618,"Sparton Enterprises, Inc. — Barberton",ORG-000579,6,missing,A,missing,missing,missing,missing,missing
+SITE-000620,Speed North America — Wooster,ORG-000581,6,missing,A,missing,missing,missing,missing,missing
+SITE-000621,Spencer Industries Incorporated — Elyria,ORG-000582,6,missing,A,missing,missing,missing,missing,missing
+SITE-000626,"Squire, T. L. & Co., Inc. — Akron",ORG-000587,6,missing,A,missing,missing,missing,missing,missing
+SITE-000630,"Storopack, Inc. - Cleveland",ORG-001128,6,missing,A,missing,missing,missing,missing,missing
+SITE-000640,The Technology House — Streetsboro,ORG-000601,6,missing,missing,missing,missing,missing,missing,A
+SITE-000650,Tower Industries LTD — Massillon,ORG-000610,6,missing,missing,missing,missing,missing,missing,A
+SITE-000654,The Trexler Rubber Company Inc. — Ravenna,ORG-000613,6,missing,missing,missing,missing,missing,missing,A
+SITE-000657,Tribotech Composites — Valley View,ORG-000616,6,missing,C,missing,missing,missing,missing,A
+SITE-000664,Uniwall Mfg — Louisville,ORG-000623,6,missing,C,missing,missing,missing,missing,A
+SITE-000666,"Venture Plastics, Inc. — Newton Falls",ORG-000625,6,missing,A,missing,missing,missing,missing,missing
+SITE-000669,Wacker Chemical Corp. — North Canton,ORG-000628,6,missing,missing,missing,missing,missing,missing,A
+SITE-000681,"Yokohama TWS North America, Inc. — Akron",ORG-001336,6,missing,A,missing,missing,missing,missing,missing
+SITE-000764,Bob Sumerel Tire Co — Dover,ORG-000706,6,missing,A,missing,missing,missing,missing,missing
+SITE-000814,Cook Composites & Polymers Co. — Sandusky,ORG-000752,6,missing,A,missing,missing,missing,missing,missing
+SITE-000863,Dover Chemical Corp. — Dover,ORG-000798,6,missing,missing,missing,B,missing,missing,missing
+SITE-000889,Empire Plastics — Newcomerstown,ORG-000823,6,missing,missing,missing,missing,missing,missing,A
+SITE-000909,"Flex Technologies, Inc. — Midvale",ORG-000841,6,missing,A,missing,missing,missing,missing,missing
+SITE-000987,"Kar-Del Plastics, Inc. — Ashland",ORG-000917,6,missing,A,missing,missing,missing,missing,missing
+SITE-001025,Md Plastics Inc. — Columbiana,ORG-000951,6,missing,A,missing,missing,missing,missing,missing
+SITE-001078,Okamoto Sandusky Manufacturing — Sandusky,ORG-000999,6,missing,A,missing,missing,missing,missing,missing
+SITE-001131,"Primary Packaging, Inc. — Bolivar",ORG-001048,6,missing,missing,missing,missing,missing,missing,A
+SITE-001137,Provia Strasburg Facility — Strasburg,ORG-001053,6,missing,missing,missing,missing,missing,missing,A
+SITE-001150,"R & S Technologies, Inc. — Bellevue",ORG-001065,6,missing,missing,missing,missing,missing,missing,A
+SITE-001422,"Delco, LLC — Akron",ORG-001383,6,missing,A,missing,missing,missing,missing,missing
+SITE-001479,ABC Packaging Direct — Independence,ORG-001431,6,missing,A,missing,missing,missing,missing,missing
+SITE-001540,ChromaScape — Stow (Manufacturing Facility),ORG-001475,6,missing,missing,missing,missing,missing,missing,A
+SITE-001724,YOUNGSTOWN RUBBER PRODUCTS — Youngstown,ORG-001649,6,missing,missing,missing,missing,missing,missing,A
+SITE-001767,Mike Cindia Sales Inc — Wadsworth,ORG-001691,6,missing,A,missing,missing,missing,missing,missing
+SITE-001778,J T Adams Company,ORG-001702,6,missing,A,missing,missing,missing,missing,missing
+SITE-001816,Auto Technology Company,ORG-001740,6,missing,A,missing,missing,missing,missing,missing
+SITE-001825,"Standards Testing Laboratories, Inc.",ORG-001749,6,missing,A,missing,missing,missing,missing,missing
+SITE-001839,Spazzolplastica North America LLC,ORG-000098,6,missing,A,missing,missing,missing,missing,missing
+SITE-001913,Faull and Son,ORG-001922,6,missing,A,missing,missing,missing,missing,missing
+SITE-001921,GlueTread LLC,ORG-001927,6,missing,missing,missing,missing,missing,missing,A
+SITE-001925,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),ORG-001931,6,missing,C,missing,B,missing,missing,missing
+SITE-001950,Eihinger Machine Inc,ORG-001956,6,missing,A,missing,missing,missing,missing,missing
+SITE-002035,May Lin Silicone Products Inc.,ORG-002041,6,missing,missing,missing,missing,missing,missing,A
+SITE-002055,P & E Sales Ltd.,ORG-002056,6,missing,missing,missing,missing,missing,missing,A
+SITE-002081,DayGlo Avon site,ORG-000005,6,missing,A,missing,missing,missing,missing,missing
+SITE-004564,VMI Americas — Stow,ORG-004022,6,B,C,missing,missing,missing,missing,missing
+SITE-000011,Akron Polymer Systems — Akron,ORG-000012,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000013,"D & D Plastics, Inc. — Akron",ORG-000014,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000028,"Akron Rubber Development Laboratory, Inc. — Akron",ORG-000029,7,missing,C,missing,missing,missing,missing,missing
+SITE-000032,"Acme Pattern Works, Inc. — Akron",ORG-000032,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000036,Win Plastic Extrusions LLC — Akron,ORG-000036,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000040,Spectrum Plastics Corp. — Akron,ORG-000040,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000041,Next Generation Plastics — Akron,ORG-000041,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000042,"Multibase, Inc. — Akron",ORG-000042,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000054,"Americhem, Inc. — Cuyahoga Falls",ORG-000054,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000059,Laird Plastics — Stow,ORG-000059,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000066,"Custom Plastic Extrusions, Ltd. — Hudson",ORG-000066,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000068,"Plastic Process Equipment, Inc. — Macedonia",ORG-000068,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000073,Professional Plastics — Twinsburg,ORG-000073,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000080,Ace Plastics — Barberton,ORG-000080,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000090,"Rubber Division, American Chemical Society — Akron",ORG-000090,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000093,Greater Akron Chamber — Akron,ORG-000093,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000108,House of Plastics — Cleveland,ORG-000108,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000130,Tarkett North America — Solon,ORG-000131,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000131,Sherwin-Williams — Cleveland HQ,ORG-000132,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000132,Sherwin-Williams — Brecksville (Morikis Global Technology Center),ORG-000132,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000140,Cleveland Specialty Products — Cleveland,ORG-000140,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000142,Nordson — Westlake,ORG-000142,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000147,Chem-Materials — Westlake,ORG-000147,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000148,WV International — Strongsville,ORG-000148,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000152,Seglian Manufacturing Group — Oakwood Village,ORG-000152,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000153,Moen — North Olmsted,ORG-000153,7,missing,C,missing,missing,missing,missing,missing
+SITE-000154,Lincoln Electric — Euclid,ORG-000154,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000155,Eaton — Beachwood,ORG-000155,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000156,Swagelok — Solon,ORG-000156,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000164,Cleveland Clinic — Cleveland,ORG-000164,7,missing,C,missing,missing,missing,missing,missing
+SITE-000167,Tremco CPG — Beachwood,ORG-000006,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000170,Saint-Gobain Performance Plastics — Solon,ORG-000035,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000172,HEXPOL Compounding — Solon,ORG-000103,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000182,Harwood Rubber Products — Cuyahoga Falls,ORG-000175,7,missing,C,missing,missing,missing,missing,missing
+SITE-000188,SpringSeal — Streetsboro,ORG-000181,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000193,SKF USA — Highland Heights,ORG-000186,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000210,Synthomer — Akron,ORG-000050,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000211,HEXPOL Compounding — Mogadore,ORG-000103,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000214,Parker Hannifin — Wickliffe (Hose Products Division),ORG-000004,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000226,Advanced Drainage Systems (Wooster),ORG-000651,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000243,"American Molded Plastic, Inc. — Newton Falls",ORG-000229,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000252,Automated Packaging Systems-Sealed Air-Bedford — Bedford Heights,ORG-000237,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000255,The B.B. Bradley Company — Painesville,ORG-000239,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000292,ChemSpec — Canton,ORG-000273,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000297,"Cobra Plastics, Inc. — Macedonia",ORG-000278,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000303,Composites One LLC — Ashtabula,ORG-000745,7,missing,C,missing,missing,missing,missing,missing
+SITE-000308,"Corrosion Resistant Technologies, Inc. — Chagrin Falls",ORG-000289,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000309,Cosmo Corporation — Cleveland (Solon),ORG-000290,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000333,DuPont Valley View — Valley View,ORG-000313,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000358,"Facts, Inc. — Cuyahoga Falls",ORG-000337,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000360,Ferry Industries Inc. — Stow,ORG-000339,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000365,Flexsys America L.P. — Akron,ORG-000343,7,missing,C,missing,missing,missing,missing,missing
+SITE-000367,Fomo Products — Norton,ORG-000344,7,missing,C,missing,missing,missing,missing,missing
+SITE-000378,Gmr Technology — Ashtabula,ORG-000354,7,missing,C,missing,missing,missing,missing,missing
+SITE-000379,Godfrey & Wing — Aurora,ORG-000355,7,missing,C,missing,missing,missing,missing,missing
+SITE-000385,H.B. Chemical — Twinsburg,ORG-000360,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000387,"H-P Products, Inc. — Louisville",ORG-000362,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000393,HEXPOL Barberton — Barberton,ORG-000103,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000402,"Industrial Technologies, Inc. — Akron",ORG-000377,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000410,Intralox — Twinsburg,ORG-000384,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000412,Iten Industries Inc. (Plant 1),ORG-000386,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000414,Iten Industries Inc. (Plant 4),ORG-000386,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000448,LG Chem Ohio Petrochemical — Ravenna,ORG-000419,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000453,LMT Mercer Group — Hartville,ORG-000423,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000462,Masco (Mercury Plastics),ORG-000431,7,missing,C,missing,missing,missing,missing,missing
+SITE-000479,Mold Surface Textures LLC — Kent,ORG-000448,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000501,"Northeastern Plastics International, Inc — Canton",ORG-000469,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000514,"Palmer Holland, Inc — Westlake",ORG-000480,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000517,PENTAIR WATER PURIFICATION,ORG-000483,7,missing,C,missing,missing,missing,missing,missing
+SITE-000524,Philpott Rubber Extrusions — Mogadore,ORG-000490,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000532,Plastipak- Medina — Medina,ORG-001033,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000534,Plastore Inc. — Hudson,ORG-000499,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000562,"Profile Rubber Corp., Inc. — Wadsworth",ORG-000526,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000563,Progressive Foam Technologies — Beach City,ORG-000527,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000570,Quality Synthetic Rubber — Twinsburg,ORG-000534,7,missing,C,missing,missing,missing,missing,missing
+SITE-000576,Raven Concealment Systems — North Ridgeville,ORG-000540,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000577,RD Abbott Company — Barberton,ORG-000541,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000580,Foundation Wellness — Wadsworth,ORG-000544,7,missing,C,missing,missing,missing,missing,missing
+SITE-000628,The Step 2 Company — Streetsboro,ORG-000589,7,missing,C,missing,missing,missing,missing,missing
+SITE-000637,Team Wendy — Cleveland,ORG-000598,7,missing,C,missing,missing,missing,missing,missing
+SITE-000639,Technoform — Twinsburg,ORG-000600,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000653,Trelleborg Seals & Profiles Americas,ORG-000612,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000661,"Universal Plastics Group, Inc. — Middlefield",ORG-000620,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000670,Walton Plastics — Walton Hills,ORG-000629,7,missing,C,missing,missing,missing,missing,missing
+SITE-000679,Xaloy LLC — Austintown,ORG-000637,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000685,"Zeiger Industries, Inc. — Canton",ORG-000641,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000707,Alliance Innovations — Mansfield,ORG-000660,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000734,Ashland — Ashland,ORG-000683,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000981,"Johns Manville International, Inc. — Milan",ORG-000911,7,missing,missing,missing,missing,missing,missing,missing
+SITE-000983,JP Industrial Products — Lisbon,ORG-000913,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001029,Meteor Sealing Systems — Dover,ORG-000955,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001109,Plastics Family Holdings Inc (Paramont Machine Company),ORG-001027,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001282,Ventra Sandusky — Sandusky,ORG-001183,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001296,Wilbert Plastic Services — Bellevue,ORG-001197,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001375,Associated Materials (Alside) — West Salem,ORG-000236,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001391,Ohio Foam Corp. — Youngstown,ORG-000997,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001392,"Piedmont Plastics, Inc. — Youngstown",ORG-000030,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001397,Saint-Gobain Performance Plastics — Ravenna (Aerospace),ORG-000035,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001399,Tarkett North America — Middlefield,ORG-000131,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001430,KONG Company — North Canton Distribution,ORG-001391,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001542,Tahoma Rubber and Plastics — Barberton (24 W Huston St),ORG-000170,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001545,O2 RegenTech - Akron,ORG-001479,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001569,VisionAir Solutions — Akron,ORG-001505,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001572,ICHOR VASCULAR INC — Brecksville,ORG-001508,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001575,Beacon Biosignals — Cleveland,ORG-001511,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001609,Troy Innovative Instruments Co LLC — Middlefield,ORG-001544,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001624,"Myrava, LLC — Parma",ORG-001558,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001673,Pison Stream Solutions Inc — Brecksville,ORG-001601,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001676,A.R.E. Accessories — Mount Eaton,ORG-000207,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001720,Sealed Air Corporation — Streetsboro,ORG-000237,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001784,ECM Performance Materials Corp,ORG-001708,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001795,"Pyramid Plastics, Inc.",ORG-001719,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001797,"Truco, Inc.",ORG-001721,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001802,"Endura Plastics, Inc.",ORG-001726,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001818,Global Waste and Recycling LLC,ORG-001742,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001821,J.G. Sales Inc.,ORG-001745,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001824,"PKG, LLC",ORG-001748,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001868,Dal-Little Fabricating Inc,ORG-001794,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001911,"Lawrence Machine, Inc.",ORG-001920,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001912,Potter's Inc,ORG-001921,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001932,"Stemaco U.S.A., Inc.",ORG-001938,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001934,Synthetic Rubber Technologies,ORG-001940,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001938,"Tristan Rubber Molding, Inc.",ORG-001944,7,missing,missing,missing,missing,missing,missing,missing
+SITE-001944,Artisan Mold Co Inc,ORG-001950,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002024,Veretec Inc,ORG-002030,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002047,STUCK LLC,ORG-002053,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002050,S. Slesnick Company,ORG-001776,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002053,Associated Paper Stock Inc,ORG-002054,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002054,Neo Industries Inc,ORG-002055,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002056,Quality Fiberglass,ORG-002057,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002059,Canfield Plastics Inc,ORG-002060,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002063,Poly Tech Plastics,ORG-002064,7,missing,missing,missing,missing,missing,missing,missing
+SITE-002072,Vexor Technology Inc (TRI variant name: Reworld Medina LLC),ORG-002072,7,missing,missing,missing,missing,missing,missing,missing
+SITE-003983,G-3 Chickadee Akron R&D Facility,ORG-003545,7,missing,missing,missing,missing,missing,missing,missing

@@ -4,7 +4,7 @@ Lane CAP2A (`atlas-w16-cap2a`, Claude Sonnet 5.5), designated integrator for thi
 First user: PIC cluster reporting analyst (counts by process). Review date: 2026-12-16 (non-use is a finding if process counts are not being read).
 
 ## Slice
-PR #351 (`tasks/pic18-capabilities-corpus-2026-11-16`, still open) built a frame of 224 active tier A–C PIC-18 Ohio sites with one active Atlas site per organization and a blank process or material cell, and adjudicated 4 of them. The other 220 are listed in `pr351_unadjudicated_sites.txt` (from its `verdicts.csv` at head 19c0120). **This slice is the first 110 of those 220 by site_id** (`slice.csv`; SITE-000014 to SITE-001468). Unit: Ohio sites (establishments), active, PIC-18 counties, tier A 17 / B 22 / C 71. `check.py` recomputes the #351 frame criteria at the pinned base (`base.txt`, origin/main 4abc9eb) and asserts every slice site is still in it. The second half (110 sites, SITE-001479 onward) is not in this PR.
+PR #351 (`tasks/pic18-capabilities-corpus-2026-11-16`, merged by the time of this PR) built a frame of 224 active tier A–C PIC-18 Ohio sites with one active Atlas site per organization and a blank process or material cell, and adjudicated 4 of them. The other 220 are listed in `pr351_unadjudicated_sites.txt` (from its `verdicts.csv` at head 19c0120). **This slice is the first 110 of those 220 by site_id** (`slice.csv`; SITE-000014 to SITE-001468). Unit: Ohio sites (establishments), active, PIC-18 counties, tier A 17 / B 22 / C 71. `check.py` recomputes the #351 frame criteria at the pinned base (`base.txt`, origin/main 19bd1aa, after #351 and later merges; the build was first run on 4abc9eb and replayed on 19bd1aa with identical output) and asserts every slice site is still in it. The second half (110 sites, SITE-001479 onward) is not in this PR.
 
 ## Result (units named; `summary.json` is the source)
 | Unit | Count |
@@ -76,7 +76,7 @@ Holds an owner or a later fetch can settle:
 - Pages not in the stored corpus; failed or robots-blocked fetches count as availability, not absence.
 - Form 5500 and permit routes (no REJECT was issued, so the Form 5500 gate did not apply).
 - Org-level columns, tiers and notes are untouched (contract rule 13). The required two-family refute review is the controller's; this lane did not call other threads.
-- Overlap with #351 is none by site (its 4 adjudicated sites are outside the slice); both PRs append to the same three data files, so the second to merge needs a normal-merge replay of `build.py`.
+- Overlap with #351 is none by site (its 4 adjudicated sites are outside the slice). Other open lanes append to the same three data files; the second PR to merge needs a replay of `build.py` against the new main, not a hand merge.
 
 ## Proposed follow-ups (not in this PR)
 - Second half of the unadjudicated list (110 sites, SITE-001479 onward).

@@ -1,0 +1,41 @@
+[
+  {
+    "org_id": "ORG-000360",
+    "field": "ultimate_parent_name",
+    "value": "Ravago Holdings Inc.",
+    "quote": "HB Chemical is acquired by Ravago Holdings Inc. but maintains its operational control",
+    "url": "https://www.hbchemical.com/about/history/",
+    "manifest_index": 770,
+    "via": "direct",
+    "text_file": "ORG-000360/0858fa7db4c2b28d9fdd8787e0681081ed54ae331a2c86b73581e4a479829a1b.txt",
+    "text_sha256": "080dea1e4835c4a310f93fbc627355b6798bdcf4640a081d5f5b3540f33ded09",
+    "raw_file": "ORG-000360/0858fa7db4c2b28d9fdd8787e0681081ed54ae331a2c86b73581e4a479829a1b.html",
+    "raw_sha256": "cef0e16967bf0d8b9da824c237ff5879dac8248798cffdeb88f4827289835170"
+  },
+  {
+    "org_id": "ORG-000435",
+    "field": "ultimate_parent_name",
+    "value": "Medco Labs",
+    "quote": "MEDCO COATED PRODUCTS has been the manufacturing division of Medco Labs since 1989",
+    "url": "https://medcocoatedproducts.com/",
+    "manifest_index": 930,
+    "via": "direct",
+    "text_file": "ORG-000435/1d400d62f95dbac1a1efd7484b73aa5c8a02b4c3afd3a4a454e214ddf254b830.txt",
+    "text_sha256": "9f2871429d005703a2bc51d68f6c1e8fed36ba58affd0d22bb4c14c3c87c3ee9",
+    "raw_file": "ORG-000435/1d400d62f95dbac1a1efd7484b73aa5c8a02b4c3afd3a4a454e214ddf254b830.html",
+    "raw_sha256": "94056687c9d08f361d79d6141a73c0a3954be0cebca263a2343540b2838f71f1"
+  },
+  {
+    "org_id": "ORG-001859",
+    "field": "ultimate_parent_name",
+    "value": "ILPEA Industries, Inc",
+    "quote": "OEM/Miller-Division of ILPEA Industries, Inc",
+    "url": "https://www.ilpeaindustries.com/oem-miller-quality/",
+    "manifest_index": 2237,
+    "via": "direct",
+    "text_file": "ORG-001859/69c6cc3dd73208c1956980421dca218858a39cac836d881fe955837ab640e453.txt",
+    "text_sha256": "6fdbfdf7e9f098aaed1d586ec924d3669bcc12ad5fbfb5c707b0b6bde7732c06",
+    "raw_file": "ORG-001859/69c6cc3dd73208c1956980421dca218858a39cac836d881fe955837ab640e453.html",
+    "raw_sha256": "fac59c971f5b2aa8f0d900868dd45c12516f56548ef5a9dfae4d6353be02d4db"
+  }
+]

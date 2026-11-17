@@ -1,0 +1,4152 @@
+[
+  {
+    "org_id": "ORG-000005",
+    "legal_name": "Day-Glo Color Corp",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000005",
+    "legal_name": "Day-Glo Color Corp",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000006",
+    "legal_name": "RPM International Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000007",
+    "legal_name": "Vibrantz Technologies Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000007",
+    "legal_name": "Vibrantz Technologies Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000008",
+    "legal_name": "Struktol Company of America LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000008",
+    "legal_name": "Struktol Company of America LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000009",
+    "legal_name": "Myers Industries Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000009",
+    "legal_name": "Myers Industries Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000010",
+    "legal_name": "GEON Performance Solutions",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000010",
+    "legal_name": "GEON Performance Solutions",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000015",
+    "legal_name": "Diamond America Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000015",
+    "legal_name": "Diamond America Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000025",
+    "legal_name": "Musson Rubber Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000025",
+    "legal_name": "Musson Rubber Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000026",
+    "legal_name": "Enterprise Rubber, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000026",
+    "legal_name": "Enterprise Rubber, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000030",
+    "legal_name": "Piedmont Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000030",
+    "legal_name": "Piedmont Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000031",
+    "legal_name": "Akron Porcelain & Plastics Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000031",
+    "legal_name": "Akron Porcelain & Plastics Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000033",
+    "legal_name": "LyondellBasell",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000033",
+    "legal_name": "LyondellBasell",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000034",
+    "legal_name": "Akron Polymer Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000034",
+    "legal_name": "Akron Polymer Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000036",
+    "legal_name": "Win Plastic Extrusions LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000036",
+    "legal_name": "Win Plastic Extrusions LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000038",
+    "legal_name": "Pioneer Plastics Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000038",
+    "legal_name": "Pioneer Plastics Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000041",
+    "legal_name": "Next Generation Plastics",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000041",
+    "legal_name": "Next Generation Plastics",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000043",
+    "legal_name": "Alterra Energy",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000043",
+    "legal_name": "Alterra Energy",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000048",
+    "legal_name": "Akrochem Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000048",
+    "legal_name": "Akrochem Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000051",
+    "legal_name": "Continental ContiTech USA",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000051",
+    "legal_name": "Continental ContiTech USA",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000052",
+    "legal_name": "Harwick Standard Distribution Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000052",
+    "legal_name": "Harwick Standard Distribution Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000054",
+    "legal_name": "Americhem, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000054",
+    "legal_name": "Americhem, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000056",
+    "legal_name": "CF Extrusion Technologies",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000056",
+    "legal_name": "CF Extrusion Technologies",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000057",
+    "legal_name": "Smithers-Oasis Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000057",
+    "legal_name": "Smithers-Oasis Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000059",
+    "legal_name": "Laird Plastics",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000059",
+    "legal_name": "Laird Plastics",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000060",
+    "legal_name": "Esterle Mold & Machine Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000060",
+    "legal_name": "Esterle Mold & Machine Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000063",
+    "legal_name": "Akron Gasket",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000063",
+    "legal_name": "Akron Gasket",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000064",
+    "legal_name": "Green Technologies of Ohio, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000064",
+    "legal_name": "Green Technologies of Ohio, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000065",
+    "legal_name": "Hudson Extrusions, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000065",
+    "legal_name": "Hudson Extrusions, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000069",
+    "legal_name": "Design Molded Plastics",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000069",
+    "legal_name": "Design Molded Plastics",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000072",
+    "legal_name": "Cima Plastics Group",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000072",
+    "legal_name": "Cima Plastics Group",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000075",
+    "legal_name": "Industrial Mold & Machine",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000075",
+    "legal_name": "Industrial Mold & Machine",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000077",
+    "legal_name": "Mantaline Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000077",
+    "legal_name": "Mantaline Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000078",
+    "legal_name": "Giesecke+Devrient America",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000078",
+    "legal_name": "Giesecke+Devrient America",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000082",
+    "legal_name": "Merryweather Foam, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000082",
+    "legal_name": "Merryweather Foam, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000087",
+    "legal_name": "Rainbow Rubber Extrusions, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000087",
+    "legal_name": "Rainbow Rubber Extrusions, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000088",
+    "legal_name": "PPG Industries, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000088",
+    "legal_name": "PPG Industries, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000098",
+    "legal_name": "Spazzolplastica North America LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000098",
+    "legal_name": "Spazzolplastica North America LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000101",
+    "legal_name": "Polymerics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000101",
+    "legal_name": "Polymerics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000105",
+    "legal_name": "Transcendia Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000105",
+    "legal_name": "Transcendia Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000106",
+    "legal_name": "PharoPLAST",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000106",
+    "legal_name": "PharoPLAST",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000108",
+    "legal_name": "HP Manufacturing",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000108",
+    "legal_name": "HP Manufacturing",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000113",
+    "legal_name": "Custom Rubber Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000113",
+    "legal_name": "Custom Rubber Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000115",
+    "legal_name": "Cuyahoga Plastics",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000115",
+    "legal_name": "Cuyahoga Plastics",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000118",
+    "legal_name": "GSH Industries",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000118",
+    "legal_name": "GSH Industries",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000119",
+    "legal_name": "Mechanical Rubber Ohio LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000119",
+    "legal_name": "Mechanical Rubber Ohio LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000124",
+    "legal_name": "Prime Conduit Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000124",
+    "legal_name": "Prime Conduit Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000132",
+    "legal_name": "The Sherwin-Williams Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000133",
+    "legal_name": "Oatey Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000133",
+    "legal_name": "Oatey Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000135",
+    "legal_name": "Valtris Specialty Chemicals",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000135",
+    "legal_name": "Valtris Specialty Chemicals",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000138",
+    "legal_name": "Permatex",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000138",
+    "legal_name": "Permatex",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000140",
+    "legal_name": "Cleveland Specialty Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000140",
+    "legal_name": "Cleveland Specialty Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000145",
+    "legal_name": "Plastics Machinery Group",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000145",
+    "legal_name": "Plastics Machinery Group",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000148",
+    "legal_name": "WV International",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000148",
+    "legal_name": "WV International",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000152",
+    "legal_name": "Seglian Manufacturing Group",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000152",
+    "legal_name": "Seglian Manufacturing Group",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000169",
+    "legal_name": "Zatkoff Seals & Packings",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000169",
+    "legal_name": "Zatkoff Seals & Packings",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000174",
+    "legal_name": "Vertex, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000174",
+    "legal_name": "Vertex, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000176",
+    "legal_name": "Kent Elastomer Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000176",
+    "legal_name": "Kent Elastomer Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000177",
+    "legal_name": "Seal Master Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000177",
+    "legal_name": "Seal Master Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000178",
+    "legal_name": "Elbex Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000178",
+    "legal_name": "Elbex Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000179",
+    "legal_name": "Jet Rubber Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000179",
+    "legal_name": "Jet Rubber Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000180",
+    "legal_name": "Enduro Rubber Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000180",
+    "legal_name": "Enduro Rubber Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000183",
+    "legal_name": "Die-Cut Products Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000183",
+    "legal_name": "Die-Cut Products Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000185",
+    "legal_name": "anyseals, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000185",
+    "legal_name": "anyseals, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000186",
+    "legal_name": "SKF USA Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000186",
+    "legal_name": "SKF USA Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000188",
+    "legal_name": "Universal Polymer & Rubber",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000188",
+    "legal_name": "Universal Polymer & Rubber",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000189",
+    "legal_name": "GBSA Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000189",
+    "legal_name": "GBSA Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000194",
+    "legal_name": "Salem-Republic Rubber Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000194",
+    "legal_name": "Salem-Republic Rubber Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000195",
+    "legal_name": "Qualiform Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000195",
+    "legal_name": "Qualiform Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000196",
+    "legal_name": "Goldsmith & Eggleton",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000196",
+    "legal_name": "Goldsmith & Eggleton",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000197",
+    "legal_name": "Kenda American Technology Center",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000197",
+    "legal_name": "Kenda American Technology Center",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000199",
+    "legal_name": "Seaman Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000199",
+    "legal_name": "Seaman Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000202",
+    "legal_name": "Quality Belt Maintenance Ltd.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000202",
+    "legal_name": "Quality Belt Maintenance Ltd.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000208",
+    "legal_name": "A-ROO Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000208",
+    "legal_name": "A-ROO Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000210",
+    "legal_name": "Addipel",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000210",
+    "legal_name": "Addipel",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000211",
+    "legal_name": "Additive Engineering Solutions, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000211",
+    "legal_name": "Additive Engineering Solutions, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000216",
+    "legal_name": "Aetna Plastics Fabrication",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000216",
+    "legal_name": "Aetna Plastics Fabrication",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000223",
+    "legal_name": "All Foam Products Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000223",
+    "legal_name": "All Foam Products Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000224",
+    "legal_name": "Alliance Equipment Company, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000224",
+    "legal_name": "Alliance Equipment Company, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000226",
+    "legal_name": "ALTTRAN",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000226",
+    "legal_name": "ALTTRAN",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000227",
+    "legal_name": "American Foam Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000227",
+    "legal_name": "American Foam Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000231",
+    "legal_name": "Apollo Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000231",
+    "legal_name": "Apollo Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000233",
+    "legal_name": "Arc Rubber, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000233",
+    "legal_name": "Arc Rubber, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000234",
+    "legal_name": "Architectural Fiberglass, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000234",
+    "legal_name": "Architectural Fiberglass, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000236",
+    "legal_name": "Associated Materials, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000236",
+    "legal_name": "Associated Materials, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000237",
+    "legal_name": "Sealed Air - Automated Packaging Systems",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000237",
+    "legal_name": "Sealed Air - Automated Packaging Systems",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000238",
+    "legal_name": "Avery Dennison",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000240",
+    "legal_name": "Baker Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000240",
+    "legal_name": "Baker Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000246",
+    "legal_name": "BioThane Coated Webbing",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000246",
+    "legal_name": "BioThane Coated Webbing",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000248",
+    "legal_name": "Blair Rubber Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000248",
+    "legal_name": "Blair Rubber Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000251",
+    "legal_name": "Bole Machinery Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000251",
+    "legal_name": "Bole Machinery Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000252",
+    "legal_name": "The Bonnot Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000252",
+    "legal_name": "The Bonnot Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000258",
+    "legal_name": "C.A. Litzler Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000258",
+    "legal_name": "C.A. Litzler Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000261",
+    "legal_name": "Carbon Polymers Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000261",
+    "legal_name": "Carbon Polymers Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000262",
+    "legal_name": "Carlisle Polyurethane Systems",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000262",
+    "legal_name": "Carlisle Polyurethane Systems",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000267",
+    "legal_name": "CG Thermal, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000267",
+    "legal_name": "CG Thermal, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000268",
+    "legal_name": "Chapin Manufacturing, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000268",
+    "legal_name": "Chapin Manufacturing, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000273",
+    "legal_name": "ChemSpec, Ltd.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000273",
+    "legal_name": "ChemSpec, Ltd.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000289",
+    "legal_name": "Corrosion Resistant Technologies, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000289",
+    "legal_name": "Corrosion Resistant Technologies, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000293",
+    "legal_name": "Creative Millwork of Ohio, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000293",
+    "legal_name": "Creative Millwork of Ohio, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000299",
+    "legal_name": "DCA Construction Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000299",
+    "legal_name": "DCA Construction Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000308",
+    "legal_name": "Dott Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000308",
+    "legal_name": "Dott Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000310",
+    "legal_name": "Dreco",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000310",
+    "legal_name": "Dreco",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000312",
+    "legal_name": "Duo-Corp",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000312",
+    "legal_name": "Duo-Corp",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000313",
+    "legal_name": "DuPont \u2014 Valley View (Vespel) plant",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000313",
+    "legal_name": "DuPont \u2014 Valley View (Vespel) plant",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000315",
+    "legal_name": "Dura-Line",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000315",
+    "legal_name": "Dura-Line",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000316",
+    "legal_name": "Duracote Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000316",
+    "legal_name": "Duracote Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000317",
+    "legal_name": "Duramax Marine, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000317",
+    "legal_name": "Duramax Marine, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000325",
+    "legal_name": "Huntsman Advanced Materials Americas LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000325",
+    "legal_name": "Huntsman Advanced Materials Americas LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000330",
+    "legal_name": "ESI-Extrusion Services, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000330",
+    "legal_name": "ESI-Extrusion Services, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000333",
+    "legal_name": "Evans Industries",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000333",
+    "legal_name": "Evans Industries",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000336",
+    "legal_name": "Extrudex",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000336",
+    "legal_name": "Extrudex",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000339",
+    "legal_name": "Ferry Industries Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000339",
+    "legal_name": "Ferry Industries Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000340",
+    "legal_name": "Flambeau, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000340",
+    "legal_name": "Flambeau, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000341",
+    "legal_name": "Flavorseal, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000341",
+    "legal_name": "Flavorseal, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000343",
+    "legal_name": "Flexsys America L.P.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000343",
+    "legal_name": "Flexsys America L.P.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000344",
+    "legal_name": "Fomo Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000344",
+    "legal_name": "Fomo Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000360",
+    "legal_name": "H.B. Chemical",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000360",
+    "legal_name": "H.B. Chemical",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000361",
+    "legal_name": "H & B Machine & Tool Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000361",
+    "legal_name": "H & B Machine & Tool Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000362",
+    "legal_name": "H-P Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000362",
+    "legal_name": "H-P Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000365",
+    "legal_name": "Harrison Machine & Plastic Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000365",
+    "legal_name": "Harrison Machine & Plastic Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000373",
+    "legal_name": "IER Fujikura",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000373",
+    "legal_name": "IER Fujikura",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000376",
+    "legal_name": "IMS Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000376",
+    "legal_name": "IMS Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000378",
+    "legal_name": "Infinity Composites Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000378",
+    "legal_name": "Infinity Composites Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000379",
+    "legal_name": "Infinity Engineered Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000379",
+    "legal_name": "Infinity Engineered Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000380",
+    "legal_name": "Ingalls Process Equipment Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000380",
+    "legal_name": "Ingalls Process Equipment Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000384",
+    "legal_name": "Intralox, L.L.C.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000384",
+    "legal_name": "Intralox, L.L.C.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000391",
+    "legal_name": "JACO Manufacturing Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000391",
+    "legal_name": "JACO Manufacturing Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000397",
+    "legal_name": "Johnson Brothers Rubber Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000397",
+    "legal_name": "Johnson Brothers Rubber Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000399",
+    "legal_name": "Joslyn Manufacturing Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000399",
+    "legal_name": "Joslyn Manufacturing Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000400",
+    "legal_name": "JRM Chemical",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000400",
+    "legal_name": "JRM Chemical",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000403",
+    "legal_name": "Karman Rubber Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000403",
+    "legal_name": "Karman Rubber Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000406",
+    "legal_name": "Kent Pultrusion",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000406",
+    "legal_name": "Kent Pultrusion",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000407",
+    "legal_name": "American Marble Industries",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000407",
+    "legal_name": "American Marble Industries",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000409",
+    "legal_name": "Keyland Polymer UV Powder, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000409",
+    "legal_name": "Keyland Polymer UV Powder, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000410",
+    "legal_name": "Killian Latex, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000410",
+    "legal_name": "Killian Latex, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000412",
+    "legal_name": "Kobelco Stewart Bolling",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000412",
+    "legal_name": "Kobelco Stewart Bolling",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000414",
+    "legal_name": "Koroseal Interior Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000414",
+    "legal_name": "Koroseal Interior Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000416",
+    "legal_name": "GLI Pool Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000416",
+    "legal_name": "GLI Pool Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000421",
+    "legal_name": "The Little Tikes Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000421",
+    "legal_name": "The Little Tikes Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000423",
+    "legal_name": "LMT Mercer Group",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000423",
+    "legal_name": "LMT Mercer Group",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000428",
+    "legal_name": "The Malish Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000428",
+    "legal_name": "The Malish Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000430",
+    "legal_name": "Mar-Bal Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000430",
+    "legal_name": "Mar-Bal Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000431",
+    "legal_name": "Mercury Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000431",
+    "legal_name": "Mercury Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000433",
+    "legal_name": "McCann Plastics",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000433",
+    "legal_name": "McCann Plastics",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000434",
+    "legal_name": "MCI Technologies, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000434",
+    "legal_name": "MCI Technologies, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000435",
+    "legal_name": "Medco Coated Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000435",
+    "legal_name": "Medco Coated Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000438",
+    "legal_name": "Mexichem Specialty Resins Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000438",
+    "legal_name": "Mexichem Specialty Resins Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000441",
+    "legal_name": "Mid-west Poly Pak",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000441",
+    "legal_name": "Mid-west Poly Pak",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000442",
+    "legal_name": "Middlefield Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000442",
+    "legal_name": "Middlefield Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000449",
+    "legal_name": "Aptyx",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000449",
+    "legal_name": "Aptyx",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000453",
+    "legal_name": "Momentous Mold & Machine LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000453",
+    "legal_name": "Momentous Mold & Machine LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000454",
+    "legal_name": "Montville Plastics & Rubber, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000454",
+    "legal_name": "Montville Plastics & Rubber, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000456",
+    "legal_name": "NFM / Welding Engineers, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000456",
+    "legal_name": "NFM / Welding Engineers, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000457",
+    "legal_name": "National Polymer",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000457",
+    "legal_name": "National Polymer",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000458",
+    "legal_name": "Neff-Perkins Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000458",
+    "legal_name": "Neff-Perkins Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000462",
+    "legal_name": "Next Dimension Components (current trade name unresolved",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000462",
+    "legal_name": "Next Dimension Components (current trade name unresolved",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000468",
+    "legal_name": "North American Seal & Supply, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000468",
+    "legal_name": "North American Seal & Supply, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000469",
+    "legal_name": "Northeastern Plastics International, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000469",
+    "legal_name": "Northeastern Plastics International, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000474",
+    "legal_name": "ORBIS Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000474",
+    "legal_name": "ORBIS Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000480",
+    "legal_name": "Palmer Holland, Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000480",
+    "legal_name": "Palmer Holland, Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000483",
+    "legal_name": "Pentair",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000483",
+    "legal_name": "Pentair",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000486",
+    "legal_name": "PET Processors LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000486",
+    "legal_name": "PET Processors LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000487",
+    "legal_name": "The Plastic Forming Company, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000487",
+    "legal_name": "The Plastic Forming Company, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000495",
+    "legal_name": "MPC Plating, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000495",
+    "legal_name": "MPC Plating, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000499",
+    "legal_name": "Plastore, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000499",
+    "legal_name": "Plastore, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000500",
+    "legal_name": "Plastpro 2000 Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000500",
+    "legal_name": "Plastpro 2000 Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000506",
+    "legal_name": "Greenbridge",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000506",
+    "legal_name": "Greenbridge",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000511",
+    "legal_name": "Polymer Packaging, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000511",
+    "legal_name": "Polymer Packaging, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000512",
+    "legal_name": "PolyStamp, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000512",
+    "legal_name": "PolyStamp, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000513",
+    "legal_name": "Polystar Containment",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000513",
+    "legal_name": "Polystar Containment",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000515",
+    "legal_name": "Precision Foam Fabrication, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000515",
+    "legal_name": "Precision Foam Fabrication, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000520",
+    "legal_name": "Premier Equipment",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000520",
+    "legal_name": "Premier Equipment",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000522",
+    "legal_name": "Premix-Hadlock Composites, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000522",
+    "legal_name": "Premix-Hadlock Composites, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000523",
+    "legal_name": "Pretium Packaging",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000523",
+    "legal_name": "Pretium Packaging",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000525",
+    "legal_name": "Profile Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000525",
+    "legal_name": "Profile Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000526",
+    "legal_name": "Profile Rubber Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000526",
+    "legal_name": "Profile Rubber Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000527",
+    "legal_name": "Progressive Foam Technologies",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000527",
+    "legal_name": "Progressive Foam Technologies",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000528",
+    "legal_name": "Promerus",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000528",
+    "legal_name": "Promerus",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000529",
+    "legal_name": "Prospect Mold, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000529",
+    "legal_name": "Prospect Mold, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000530",
+    "legal_name": "Protectoplas Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000530",
+    "legal_name": "Protectoplas Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000531",
+    "legal_name": "Q-Lab Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000531",
+    "legal_name": "Q-Lab Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000534",
+    "legal_name": "Quality Synthetic Rubber",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000534",
+    "legal_name": "Quality Synthetic Rubber",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000537",
+    "legal_name": "Rainbow Printing",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000537",
+    "legal_name": "Rainbow Printing",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000538",
+    "legal_name": "Rapid Molding",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000538",
+    "legal_name": "Rapid Molding",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000540",
+    "legal_name": "Raven Concealment Systems",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000540",
+    "legal_name": "Raven Concealment Systems",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000541",
+    "legal_name": "R.D. Abbott Company, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000541",
+    "legal_name": "R.D. Abbott Company, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000544",
+    "legal_name": "Foundation Wellness",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000544",
+    "legal_name": "Foundation Wellness",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000550",
+    "legal_name": "R\u00f6chling Automotive USA LLP",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000550",
+    "legal_name": "R\u00f6chling Automotive USA LLP",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000551",
+    "legal_name": "Roechling Industrial Cleveland, LP",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000551",
+    "legal_name": "Roechling Industrial Cleveland, LP",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000552",
+    "legal_name": "Rogers Industrial Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000552",
+    "legal_name": "Rogers Industrial Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000553",
+    "legal_name": "Royal Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000553",
+    "legal_name": "Royal Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000554",
+    "legal_name": "RP+M",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000554",
+    "legal_name": "RP+M",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000555",
+    "legal_name": "Rubbermaid",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000555",
+    "legal_name": "Rubbermaid",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000562",
+    "legal_name": "Schneller LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000562",
+    "legal_name": "Schneller LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000567",
+    "legal_name": "Seco Machine",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000567",
+    "legal_name": "Seco Machine",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000569",
+    "legal_name": "Shin-Etsu Silicones of America, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000569",
+    "legal_name": "Shin-Etsu Silicones of America, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000576",
+    "legal_name": "Soft-Lite, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000576",
+    "legal_name": "Soft-Lite, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000579",
+    "legal_name": "Sparton Enterprises, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000579",
+    "legal_name": "Sparton Enterprises, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000580",
+    "legal_name": "Specialty Hose Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000580",
+    "legal_name": "Specialty Hose Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000581",
+    "legal_name": "Speed North America",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000581",
+    "legal_name": "Speed North America",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000582",
+    "legal_name": "Spencer Industries Incorporated",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000582",
+    "legal_name": "Spencer Industries Incorporated",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000584",
+    "legal_name": "Sprosty Bag Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000584",
+    "legal_name": "Sprosty Bag Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000586",
+    "legal_name": "Spunfab, Ltd.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000586",
+    "legal_name": "Spunfab, Ltd.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000587",
+    "legal_name": "Squire, T. L. & Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000587",
+    "legal_name": "Squire, T. L. & Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000598",
+    "legal_name": "Team Wendy",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000598",
+    "legal_name": "Team Wendy",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000600",
+    "legal_name": "Technoform",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000600",
+    "legal_name": "Technoform",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000601",
+    "legal_name": "The Technology House",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000601",
+    "legal_name": "The Technology House",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000606",
+    "legal_name": "Third Dimension Division",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000606",
+    "legal_name": "Third Dimension Division",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000607",
+    "legal_name": "Timco Rubber Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000607",
+    "legal_name": "Timco Rubber Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000608",
+    "legal_name": "Tomlinson Industries",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000608",
+    "legal_name": "Tomlinson Industries",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000610",
+    "legal_name": "Tower Industries, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000610",
+    "legal_name": "Tower Industries, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000611",
+    "legal_name": "Treemen Industries",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000611",
+    "legal_name": "Treemen Industries",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000612",
+    "legal_name": "Trelleborg Sealing Profiles U.S. Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000612",
+    "legal_name": "Trelleborg Sealing Profiles U.S. Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000613",
+    "legal_name": "The Trexler Rubber Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000613",
+    "legal_name": "The Trexler Rubber Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000614",
+    "legal_name": "Tri-Craft, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000614",
+    "legal_name": "Tri-Craft, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000616",
+    "legal_name": "Tribotech Composites",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000616",
+    "legal_name": "Tribotech Composites",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000620",
+    "legal_name": "Universal Plastics Group, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000620",
+    "legal_name": "Universal Plastics Group, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000623",
+    "legal_name": "Uniwall Mfg",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000623",
+    "legal_name": "Uniwall Mfg",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000625",
+    "legal_name": "Venture Plastics, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000625",
+    "legal_name": "Venture Plastics, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000626",
+    "legal_name": "Vinylume Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000626",
+    "legal_name": "Vinylume Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000628",
+    "legal_name": "Wacker Chemical Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000628",
+    "legal_name": "Wacker Chemical Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000629",
+    "legal_name": "Walton Plastics",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000629",
+    "legal_name": "Walton Plastics",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000631",
+    "legal_name": "Wooster Elastomers, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000631",
+    "legal_name": "Wooster Elastomers, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000632",
+    "legal_name": "West & Barker",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000632",
+    "legal_name": "West & Barker",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000637",
+    "legal_name": "Xaloy LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000637",
+    "legal_name": "Xaloy LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000638",
+    "legal_name": "Yokohama Industries Americas Ohio Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000638",
+    "legal_name": "Yokohama Industries Americas Ohio Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000641",
+    "legal_name": "Zeiger Industries, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000641",
+    "legal_name": "Zeiger Industries, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000660",
+    "legal_name": "Alliance Innovations LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000660",
+    "legal_name": "Alliance Innovations LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000683",
+    "legal_name": "Bostik, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000683",
+    "legal_name": "Bostik, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000684",
+    "legal_name": "ASK Chemicals LP",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000684",
+    "legal_name": "ASK Chemicals LP",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000697",
+    "legal_name": "Ball, Bounce and Sport, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000697",
+    "legal_name": "Ball, Bounce and Sport, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000698",
+    "legal_name": "BASF Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000698",
+    "legal_name": "BASF Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000706",
+    "legal_name": "Bob Sumerel Tire Co",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000706",
+    "legal_name": "Bob Sumerel Tire Co",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000728",
+    "legal_name": "Charter Next Generation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000728",
+    "legal_name": "Charter Next Generation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000735",
+    "legal_name": "LyondellBasell Advanced Polymers Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000735",
+    "legal_name": "LyondellBasell Advanced Polymers Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000751",
+    "legal_name": "Convertapax",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000751",
+    "legal_name": "Convertapax",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000752",
+    "legal_name": "Polynt Composites USA, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000752",
+    "legal_name": "Polynt Composites USA, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000790",
+    "legal_name": "Denney Plastics Machining",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000790",
+    "legal_name": "Denney Plastics Machining",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000798",
+    "legal_name": "Dover Chemical Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000798",
+    "legal_name": "Dover Chemical Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000830",
+    "legal_name": "Extol of Ohio, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000830",
+    "legal_name": "Extol of Ohio, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000832",
+    "legal_name": "FabOhio, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000832",
+    "legal_name": "FabOhio, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000868",
+    "legal_name": "Guardian Manufacturing Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000868",
+    "legal_name": "Guardian Manufacturing Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000870",
+    "legal_name": "H.B. Fuller Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000870",
+    "legal_name": "H.B. Fuller Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000902",
+    "legal_name": "Premere Enterprises, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000902",
+    "legal_name": "Premere Enterprises, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000909",
+    "legal_name": "Jerico Plastic Industries, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000909",
+    "legal_name": "Jerico Plastic Industries, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000911",
+    "legal_name": "Johns Manville",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000911",
+    "legal_name": "Johns Manville",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000913",
+    "legal_name": "JP Industrial Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000913",
+    "legal_name": "JP Industrial Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000917",
+    "legal_name": "Kar-Del Plastics Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000917",
+    "legal_name": "Kar-Del Plastics Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000951",
+    "legal_name": "Md Plastics Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000951",
+    "legal_name": "Md Plastics Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000955",
+    "legal_name": "Meteor Sealing Systems",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000955",
+    "legal_name": "Meteor Sealing Systems",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000968",
+    "legal_name": "MPS Manufacturing Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000968",
+    "legal_name": "MPS Manufacturing Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000997",
+    "legal_name": "Ohio Foam Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000997",
+    "legal_name": "Ohio Foam Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-000999",
+    "legal_name": "Okamoto Sandusky Manufacturing",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-000999",
+    "legal_name": "Okamoto Sandusky Manufacturing",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001007",
+    "legal_name": "Owens Corning",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001007",
+    "legal_name": "Owens Corning",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001033",
+    "legal_name": "Plastipak Packaging, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001033",
+    "legal_name": "Plastipak Packaging, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001042",
+    "legal_name": "Polynew",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001042",
+    "legal_name": "Polynew",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001053",
+    "legal_name": "ProVia LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001053",
+    "legal_name": "ProVia LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001065",
+    "legal_name": "R & S Technologies, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001065",
+    "legal_name": "R & S Technologies, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001116",
+    "legal_name": "Snyder Manufacturing, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001116",
+    "legal_name": "Snyder Manufacturing, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001147",
+    "legal_name": "CSP",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001147",
+    "legal_name": "CSP",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001183",
+    "legal_name": "Ventra (Flex-N-Gate)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001183",
+    "legal_name": "Ventra (Flex-N-Gate)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001335",
+    "legal_name": "Polychem Dispersions, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001335",
+    "legal_name": "Polychem Dispersions, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001379",
+    "legal_name": "Elyria Plastic Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001379",
+    "legal_name": "Elyria Plastic Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001380",
+    "legal_name": "Bauer Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001380",
+    "legal_name": "Bauer Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001382",
+    "legal_name": "SR Products",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001382",
+    "legal_name": "SR Products",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001383",
+    "legal_name": "Delco, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001383",
+    "legal_name": "Delco, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001384",
+    "legal_name": "Sterilite Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001384",
+    "legal_name": "Sterilite Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001385",
+    "legal_name": "Aexcel Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001385",
+    "legal_name": "Aexcel Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001386",
+    "legal_name": "Ergomat Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001386",
+    "legal_name": "Ergomat Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001388",
+    "legal_name": "Hy-Ko Products Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001388",
+    "legal_name": "Hy-Ko Products Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001389",
+    "legal_name": "IML Containers Ohio, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001389",
+    "legal_name": "IML Containers Ohio, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001391",
+    "legal_name": "KONG Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001391",
+    "legal_name": "KONG Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001395",
+    "legal_name": "CREO Greenhouse",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001395",
+    "legal_name": "CREO Greenhouse",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001396",
+    "legal_name": "Sure-foot Industries Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001396",
+    "legal_name": "Sure-foot Industries Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001397",
+    "legal_name": "PolyKinetix",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001397",
+    "legal_name": "PolyKinetix",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001398",
+    "legal_name": "Smithers Medical Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001398",
+    "legal_name": "Smithers Medical Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001404",
+    "legal_name": "Deflecto, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001404",
+    "legal_name": "Deflecto, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001409",
+    "legal_name": "American Bath Group",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001409",
+    "legal_name": "American Bath Group",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001423",
+    "legal_name": "ABC Technologies Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001423",
+    "legal_name": "ABC Technologies Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001438",
+    "legal_name": "Thogus Products Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001438",
+    "legal_name": "Thogus Products Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001447",
+    "legal_name": "Axalta Coating Systems USA LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001447",
+    "legal_name": "Axalta Coating Systems USA LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001454",
+    "legal_name": "IMCD US",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001454",
+    "legal_name": "IMCD US",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001459",
+    "legal_name": "RFD Beaufort Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001459",
+    "legal_name": "RFD Beaufort Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001462",
+    "legal_name": "Clevite Elastomers Technical Center (Tenneco)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001462",
+    "legal_name": "Clevite Elastomers Technical Center (Tenneco)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001465",
+    "legal_name": "Chalfant Sewing Fabricators Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001465",
+    "legal_name": "Chalfant Sewing Fabricators Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001466",
+    "legal_name": "Henkel Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001466",
+    "legal_name": "Henkel Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001470",
+    "legal_name": "The Pittsburgh Paint Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001470",
+    "legal_name": "The Pittsburgh Paint Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001472",
+    "legal_name": "ChemMasters Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001472",
+    "legal_name": "ChemMasters Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001475",
+    "legal_name": "ChromaScape, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001475",
+    "legal_name": "ChromaScape, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001477",
+    "legal_name": "Aurora Material Solutions",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001477",
+    "legal_name": "Aurora Material Solutions",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001490",
+    "legal_name": "Chardon Custom Polymers",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001490",
+    "legal_name": "Chardon Custom Polymers",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001501",
+    "legal_name": "Polymer Valley Chemicals Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001501",
+    "legal_name": "Polymer Valley Chemicals Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001506",
+    "legal_name": "ValenSil Technologies, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001506",
+    "legal_name": "ValenSil Technologies, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001507",
+    "legal_name": "HOYA VISION CARE - CLEVELAND",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001507",
+    "legal_name": "HOYA VISION CARE - CLEVELAND",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001508",
+    "legal_name": "ICHOR VASCULAR INC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001508",
+    "legal_name": "ICHOR VASCULAR INC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001514",
+    "legal_name": "Julius Zorn, Inc. (Juzo USA)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001514",
+    "legal_name": "Julius Zorn, Inc. (Juzo USA)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001515",
+    "legal_name": "S4 Medical Corp",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001515",
+    "legal_name": "S4 Medical Corp",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001523",
+    "legal_name": "Centerline Biomedical, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001523",
+    "legal_name": "Centerline Biomedical, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001525",
+    "legal_name": "SPR Therapeutics, Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001525",
+    "legal_name": "SPR Therapeutics, Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001538",
+    "legal_name": "Perma Laboratories LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001538",
+    "legal_name": "Perma Laboratories LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001541",
+    "legal_name": "AlphaMicron Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001541",
+    "legal_name": "AlphaMicron Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001548",
+    "legal_name": "Frantz Medical Development Ltd. (Frantz Medical Group)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001548",
+    "legal_name": "Frantz Medical Development Ltd. (Frantz Medical Group)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001549",
+    "legal_name": "STERIS Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001549",
+    "legal_name": "STERIS Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001550",
+    "legal_name": "United States Endoscopy Group, Inc. (STERIS Endoscopy)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001550",
+    "legal_name": "United States Endoscopy Group, Inc. (STERIS Endoscopy)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001555",
+    "legal_name": "Synapse Biomedical Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001555",
+    "legal_name": "Synapse Biomedical Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001557",
+    "legal_name": "MatPLUS, LTD",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001557",
+    "legal_name": "MatPLUS, LTD",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001570",
+    "legal_name": "GHSP",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001570",
+    "legal_name": "GHSP",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001573",
+    "legal_name": "Prentke Romich Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001573",
+    "legal_name": "Prentke Romich Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001577",
+    "legal_name": "Master Builders Solutions US LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001577",
+    "legal_name": "Master Builders Solutions US LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001578",
+    "legal_name": "Bright Idea Shops LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001578",
+    "legal_name": "Bright Idea Shops LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001580",
+    "legal_name": "Chemical Solvents Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001580",
+    "legal_name": "Chemical Solvents Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001583",
+    "legal_name": "Grand River Rubber & Plastics Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001583",
+    "legal_name": "Grand River Rubber & Plastics Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001585",
+    "legal_name": "High Tech Extrusions Ltd",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001585",
+    "legal_name": "High Tech Extrusions Ltd",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001588",
+    "legal_name": "The Kent Mold & Manufacturing Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001588",
+    "legal_name": "The Kent Mold & Manufacturing Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001589",
+    "legal_name": "The Ruscoe Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001589",
+    "legal_name": "The Ruscoe Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001590",
+    "legal_name": "Therm-O-Link Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001590",
+    "legal_name": "Therm-O-Link Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001591",
+    "legal_name": "Winsell Incorporated",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001591",
+    "legal_name": "Winsell Incorporated",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001592",
+    "legal_name": "Alpha Tool & Mold Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001592",
+    "legal_name": "Alpha Tool & Mold Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001595",
+    "legal_name": "Eleven 10 LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001595",
+    "legal_name": "Eleven 10 LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001596",
+    "legal_name": "Gateway Products Recycling Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001596",
+    "legal_name": "Gateway Products Recycling Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001598",
+    "legal_name": "J B Jewitt Co Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001598",
+    "legal_name": "J B Jewitt Co Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001603",
+    "legal_name": "Speedline Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001603",
+    "legal_name": "Speedline Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001607",
+    "legal_name": "Kinetico Incorporated",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001607",
+    "legal_name": "Kinetico Incorporated",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001609",
+    "legal_name": "Morgan Adhesives Company, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001609",
+    "legal_name": "Morgan Adhesives Company, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001622",
+    "legal_name": "ABSOLUTE POLYMERS INC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001622",
+    "legal_name": "ABSOLUTE POLYMERS INC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001630",
+    "legal_name": "AKRON BELTING & SUPPLY CO",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001630",
+    "legal_name": "AKRON BELTING & SUPPLY CO",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001636",
+    "legal_name": "ENGINEERED LAMINATES & COATINGS",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001636",
+    "legal_name": "ENGINEERED LAMINATES & COATINGS",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001639",
+    "legal_name": "PLASTIC ENTERPRISES",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001639",
+    "legal_name": "PLASTIC ENTERPRISES",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001642",
+    "legal_name": "MOTIVO DISPLAY SOLUTIONS",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001642",
+    "legal_name": "MOTIVO DISPLAY SOLUTIONS",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001643",
+    "legal_name": "OVERMOLD EXPRESS",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001643",
+    "legal_name": "OVERMOLD EXPRESS",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001644",
+    "legal_name": "RPM INDUSTRIES",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001644",
+    "legal_name": "RPM INDUSTRIES",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001647",
+    "legal_name": "V&A PROCESS",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001647",
+    "legal_name": "V&A PROCESS",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001648",
+    "legal_name": "WORTHINGTON PRODUCTS",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001648",
+    "legal_name": "WORTHINGTON PRODUCTS",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001653",
+    "legal_name": "Bruns Brush Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001653",
+    "legal_name": "Bruns Brush Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001656",
+    "legal_name": "ClearSonic Manufacturing Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001656",
+    "legal_name": "ClearSonic Manufacturing Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001657",
+    "legal_name": "Comdess Company Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001657",
+    "legal_name": "Comdess Company Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001665",
+    "legal_name": "Dischem International Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001665",
+    "legal_name": "Dischem International Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001666",
+    "legal_name": "Drossbach Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001666",
+    "legal_name": "Drossbach Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001667",
+    "legal_name": "Dudick Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001667",
+    "legal_name": "Dudick Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001670",
+    "legal_name": "Enpac LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001670",
+    "legal_name": "Enpac LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001679",
+    "legal_name": "Hollo Plastics Equipment Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001679",
+    "legal_name": "Hollo Plastics Equipment Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001681",
+    "legal_name": "Inter-Ion Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001681",
+    "legal_name": "Inter-Ion Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001702",
+    "legal_name": "J T Adams Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001702",
+    "legal_name": "J T Adams Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001717",
+    "legal_name": "FlexLink, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001717",
+    "legal_name": "FlexLink, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001725",
+    "legal_name": "Thorworks Industries Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001725",
+    "legal_name": "Thorworks Industries Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001728",
+    "legal_name": "Buckeye Medical Technologies LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001728",
+    "legal_name": "Buckeye Medical Technologies LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001739",
+    "legal_name": "API II, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001739",
+    "legal_name": "API II, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001740",
+    "legal_name": "Auto Technology Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001740",
+    "legal_name": "Auto Technology Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001742",
+    "legal_name": "Global Waste and Recycling LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001742",
+    "legal_name": "Global Waste and Recycling LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001744",
+    "legal_name": "Jet Di, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001744",
+    "legal_name": "Jet Di, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001745",
+    "legal_name": "J.G. Sales Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001745",
+    "legal_name": "J.G. Sales Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001747",
+    "legal_name": "P3 Infrastructure Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001747",
+    "legal_name": "P3 Infrastructure Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001748",
+    "legal_name": "PKG, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001748",
+    "legal_name": "PKG, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001749",
+    "legal_name": "Standards Testing Laboratories, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001749",
+    "legal_name": "Standards Testing Laboratories, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001753",
+    "legal_name": "Foundation Industries Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001753",
+    "legal_name": "Foundation Industries Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001755",
+    "legal_name": "Medina Recycling Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001755",
+    "legal_name": "Medina Recycling Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001757",
+    "legal_name": "ACO Polymer Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001757",
+    "legal_name": "ACO Polymer Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001758",
+    "legal_name": "Niles Building Products Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001758",
+    "legal_name": "Niles Building Products Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001760",
+    "legal_name": "Pioneer Manufacturing Company, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001760",
+    "legal_name": "Pioneer Manufacturing Company, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001768",
+    "legal_name": "Action Super Abrasive Products, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001768",
+    "legal_name": "Action Super Abrasive Products, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001769",
+    "legal_name": "Adherex Packaging",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001769",
+    "legal_name": "Adherex Packaging",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001774",
+    "legal_name": "Alcon Tool Co",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001774",
+    "legal_name": "Alcon Tool Co",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001776",
+    "legal_name": "S. Slesnick Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001776",
+    "legal_name": "S. Slesnick Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001777",
+    "legal_name": "American Consolidated Industries Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001777",
+    "legal_name": "American Consolidated Industries Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001781",
+    "legal_name": "Astro Manufacturing & Design Corp",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001781",
+    "legal_name": "Astro Manufacturing & Design Corp",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001783",
+    "legal_name": "Beacon Gasket & Seals Co",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001783",
+    "legal_name": "Beacon Gasket & Seals Co",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001784",
+    "legal_name": "BF Plastics Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001784",
+    "legal_name": "BF Plastics Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001787",
+    "legal_name": "Circle Mold & Machine Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001787",
+    "legal_name": "Circle Mold & Machine Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001791",
+    "legal_name": "Cosar Mold Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001791",
+    "legal_name": "Cosar Mold Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001806",
+    "legal_name": "ENPRESS LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001806",
+    "legal_name": "ENPRESS LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001807",
+    "legal_name": "The Euclid Chemical Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001807",
+    "legal_name": "The Euclid Chemical Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001810",
+    "legal_name": "Expert Gasket & Seal LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001810",
+    "legal_name": "Expert Gasket & Seal LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001826",
+    "legal_name": "Hapco Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001826",
+    "legal_name": "Hapco Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001855",
+    "legal_name": "NewKor Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001855",
+    "legal_name": "NewKor Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001856",
+    "legal_name": "Novation Solutions LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001856",
+    "legal_name": "Novation Solutions LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001859",
+    "legal_name": "OEM/Miller",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001859",
+    "legal_name": "OEM/Miller",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001868",
+    "legal_name": "PolyMet Recovery LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001868",
+    "legal_name": "PolyMet Recovery LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001869",
+    "legal_name": "Pro-Line Automation Systems Ltd.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001869",
+    "legal_name": "Pro-Line Automation Systems Ltd.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001879",
+    "legal_name": "Rainbow Master Mixing LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001879",
+    "legal_name": "Rainbow Master Mixing LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001883",
+    "legal_name": "Rezkem Chemicals",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001883",
+    "legal_name": "Rezkem Chemicals",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001892",
+    "legal_name": "Schibley Solvents and Chemicals Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001892",
+    "legal_name": "Schibley Solvents and Chemicals Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001905",
+    "legal_name": "Thermoprene Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001905",
+    "legal_name": "Thermoprene Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001908",
+    "legal_name": "Tremco CPG Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001908",
+    "legal_name": "Tremco CPG Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001916",
+    "legal_name": "Zero D Products Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001916",
+    "legal_name": "Zero D Products Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001922",
+    "legal_name": "Faull and Son",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001922",
+    "legal_name": "Faull and Son",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001927",
+    "legal_name": "GlueTread LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001927",
+    "legal_name": "GlueTread LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001928",
+    "legal_name": "Green Processing Company Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001928",
+    "legal_name": "Green Processing Company Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001930",
+    "legal_name": "Industrial Thermoset Plastics (IT Plastics)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001930",
+    "legal_name": "Industrial Thermoset Plastics (IT Plastics)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001936",
+    "legal_name": "Rotocast Technologies, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001936",
+    "legal_name": "Rotocast Technologies, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001937",
+    "legal_name": "Smetzer's Tire Center, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001937",
+    "legal_name": "Smetzer's Tire Center, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001947",
+    "legal_name": "AAM Mold and Machine LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001947",
+    "legal_name": "AAM Mold and Machine LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001949",
+    "legal_name": "Akron Steel Fabricators Co.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001949",
+    "legal_name": "Akron Steel Fabricators Co.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001957",
+    "legal_name": "Friess Equipment Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001957",
+    "legal_name": "Friess Equipment Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001958",
+    "legal_name": "ICS Laboratories Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001958",
+    "legal_name": "ICS Laboratories Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001959",
+    "legal_name": "Jax Mold and Machine Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001959",
+    "legal_name": "Jax Mold and Machine Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001978",
+    "legal_name": "Sprayworks Equipment Group, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001978",
+    "legal_name": "Sprayworks Equipment Group, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001986",
+    "legal_name": "Optimax Plastic LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001986",
+    "legal_name": "Optimax Plastic LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001992",
+    "legal_name": "Precision Polymer Casting LLC (dba Castinite)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001992",
+    "legal_name": "Precision Polymer Casting LLC (dba Castinite)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-001998",
+    "legal_name": "R A M Plastics Co Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-001998",
+    "legal_name": "R A M Plastics Co Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002007",
+    "legal_name": "S&A Industries Corporation",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002007",
+    "legal_name": "S&A Industries Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002014",
+    "legal_name": "Stroup & Son Ltd",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002014",
+    "legal_name": "Stroup & Son Ltd",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002018",
+    "legal_name": "Telar Corp.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002018",
+    "legal_name": "Telar Corp.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002034",
+    "legal_name": "Whip Guide Company",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002034",
+    "legal_name": "Whip Guide Company",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002038",
+    "legal_name": "Pinnacle Recycling, LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002038",
+    "legal_name": "Pinnacle Recycling, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002039",
+    "legal_name": "M. Argueso & Co., Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002039",
+    "legal_name": "M. Argueso & Co., Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002043",
+    "legal_name": "Mitsubishi Chemical America, Inc. (Bellevue Plant)",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002043",
+    "legal_name": "Mitsubishi Chemical America, Inc. (Bellevue Plant)",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002053",
+    "legal_name": "STUCK LLC",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002053",
+    "legal_name": "STUCK LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002056",
+    "legal_name": "P & E Sales Ltd.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002056",
+    "legal_name": "P & E Sales Ltd.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002067",
+    "legal_name": "Aropha Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002067",
+    "legal_name": "Aropha Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002069",
+    "legal_name": "Summit Glove, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002069",
+    "legal_name": "Summit Glove, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002135",
+    "legal_name": "Applied Specialties Inc",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002135",
+    "legal_name": "Applied Specialties Inc",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002136",
+    "legal_name": "Kongsberg Automotive",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002136",
+    "legal_name": "Kongsberg Automotive",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002153",
+    "legal_name": "Checkpoint Systems",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-002153",
+    "legal_name": "Checkpoint Systems",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-002922",
+    "legal_name": "Absolute Haitian Corporation",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-003030",
+    "legal_name": "Budenheim USA, Inc.",
+    "field": "ownership_type"
+  },
+  {
+    "org_id": "ORG-003030",
+    "legal_name": "Budenheim USA, Inc.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-003545",
+    "legal_name": "G-3 Chickadee Purchaser, LLC",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-003746",
+    "legal_name": "Goodyear Chemical",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-004022",
+    "legal_name": "VMI Holland B.V.",
+    "field": "year_founded"
+  },
+  {
+    "org_id": "ORG-004026",
+    "legal_name": "Anderson International Corp",
+    "field": "year_founded"
+  }
+]
