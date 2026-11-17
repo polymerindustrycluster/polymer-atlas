@@ -134,7 +134,7 @@ CWRU,ORG-000502,CBE,Jesse S. Wainright,,,,,,,,,,,,,REJECT,Gate B fails: own prof
 CWRU,ORG-000502,BME,Ethan Walker,,,,,,,,,,,,,REJECT,Gate B fails: own profile has a research statement/areas that name no polymer object (lab pages not checked),,2026-11-17
 CWRU,ORG-000502,BME,Xinning Wang,,,,,,,,,,,,,REJECT,Gate B fails: own profile has a research statement/areas that name no polymer object (lab pages not checked),,2026-11-17
 CWRU,ORG-000502,MAE,Edward Wang,,,,,,,,,,,,,REJECT,Gate B fails: own profile has a research statement/areas that name no polymer object (lab pages not checked),,2026-11-17
-CWRU,ORG-000502,CBE,Robert Warburton,,,,,,,,,,,,,REJECT,Gate B fails: own profile has a research statement/areas that name no polymer object (lab pages not checked),,2026-11-17
+CWRU,ORG-000502,CBE,Robert Warburton,,,,,,,,,,,,,REJECT,"Gate B fails: own lab page (sites.google.com/view/warburton-lab-cwru, linked from his profile) states computational materials research on interfaces for energy storage and catalysis, no polymer object",,2026-11-17
 CWRU,ORG-000502,MSE,Gerhard Welsch,,,,,,,,,,,,,REJECT,Gate B fails: own profile has a research statement/areas that name no polymer object (lab pages not checked),,2026-11-17
 CWRU,ORG-000502,MSE,Matthew Willard,,,,,,,,,,,,,REJECT,Gate B fails: own profile has a research statement/areas that name no polymer object (lab pages not checked),,2026-11-17
 CWRU,ORG-000502,BME,Matthew Williams,,,,,,,,,,,,,STILL_UNCERTAIN,Gate A met (professor rank on directory) but profile carries no research statement. Settling fact: a profile or lab page stating research,,2026-11-17
@@ -189,7 +189,7 @@ CSU,ORG-000158,Chemical and Biomedical Engineering,Hannah Cebull,,,,,,,,,,,,,REJ
 CSU,ORG-000158,Chemical and Biomedical Engineering,Richard Schoephoerster,,,,,,,,,,,,,STILL_UNCERTAIN,Gate B unsettled: no research statement on the department page,,2026-11-17
 CSU,ORG-000158,Chemical and Biomedical Engineering,Marvin E. Thrash,,,,,,,,,,,,,REJECT,"Gate A fails: Associate Professor of Practice, no polymer statement",,2026-11-17
 CSU,ORG-000158,Chemical and Biomedical Engineering,Lawrence T. Novak,,,,,,,,,,,,,REJECT,Gate A fails: adjunct faculty,,2026-11-17
-WALSH,ORG-001318,Chemistry,Peter Tandler,,,,,,,,,,,,,REJECT,Gate B fails: fetched profile (Associate Professor of Chemistry) states no polymer research,,2026-11-17
+WALSH,ORG-001318,Chemistry,Peter Tandler,,,,,,https://www.walsh.edu/directory/peter-tandler.html,ca0997a5b81b7c5e5dbaac198506812cda2ba6723e701515462b10f5037a39ca,Associate Professor of Chemistry,,,,,STILL_UNCERTAIN,Gate A met (Associate Professor of Chemistry). Fetched profile states no research (a teaching presentation only). Settling fact: a person-specific research statement on a Walsh page,,2026-11-17
 CWRU,ORG-000502,Chemistry,Matthew Bertin,,,,,,,,,,,,,REJECT,Gate B fails: department roster research-interest list names no polymer object (lab pages not checked),,2026-11-17
 CWRU,ORG-000502,Chemistry,Natalie Briggs,,,,,,,,,,,,,REJECT,Gate B fails: department roster research-interest list names no polymer object (lab pages not checked),,2026-11-17
 CWRU,ORG-000502,Chemistry,Clemens Burda,,,,,,,,,,,,,REJECT,Gate B fails: department roster research-interest list names no polymer object (lab pages not checked),,2026-11-17

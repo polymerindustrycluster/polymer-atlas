@@ -135,7 +135,8 @@ for n, why in [("Geyou Ao", "Gate B fails: expertise is nanomaterials liquid cry
                ("Lawrence T. Novak", "Gate A fails: adjunct faculty")]:
     add("CSU", "Chemical and Biomedical Engineering", n, "STILL_UNCERTAIN" if why.startswith("Gate B unsettled") else "REJECT", why)
 # ---------- Walsh ----------
-add("WALSH", "Chemistry", "Peter Tandler", "REJECT", "Gate B fails: fetched profile (Associate Professor of Chemistry) states no polymer research")
+add("WALSH", "Chemistry", "Peter Tandler", "STILL_UNCERTAIN", "Gate A met (Associate Professor of Chemistry). Fetched profile states no research (a teaching presentation only). Settling fact: a person-specific research statement on a Walsh page",
+    gate_a_url="https://www.walsh.edu/directory/peter-tandler.html", gate_a_quote="Associate Professor of Chemistry")
 # ---------- CWRU chemistry roster ----------
 for n in ["Matthew Bertin", "Natalie Briggs", "Clemens Burda", "Carlos E. Crespo-Hernandez", "Thomas Gray", "Irene Nga Wing Lee", "Fu-Sen Liang", "Divita Mathur",
           "Shane M. Parker", "Robert G. Salomon", "Daniel A. Scherson", "Gregory P. Tochtrop", "Yihang Wang"]:
@@ -156,6 +157,9 @@ for nm in ["Metin Karayilan", "Genevieve Sauve", "Anna C. Samia"]:
     h = heldp(nm); add("CWRU", "Chemistry", nm, "DUPLICATE_OF", "Already held at this institution; no row written", already_in_atlas=h["person_id"])
 h = heldp("Amy Heston"); add("WALSH", "Chemistry", "Amy Heston", "DUPLICATE_OF", "Already held at this institution; no row written", already_in_atlas=h["person_id"])
 
+for r in rows:  # lab page stated his research, so this REJECT rests on a stated statement, not on silence
+    if r["full_name"] == "Robert Warburton" and r["verdict"] == "REJECT":
+        r["verdict_note"] = "Gate B fails: own lab page (sites.google.com/view/warburton-lab-cwru, linked from his profile) states computational materials research on interfaces for energy storage and catalysis, no polymer object"
 # sanity: DUPLICATE ids must be real held people; every other candidate must not be held at same institution
 hp = {p["person_id"]: p for p in held}
 final = []
