@@ -38,7 +38,7 @@ Holds (organizations, by class; settling fact in `holds.csv` and `reviewed_holds
 
 ## Not checked
 
-Source presence does not prove semantic fit; selection.tsv is the reviewable judgment and is not family-reviewed yet. Organizations whose pages surfaced no market sentence were not read in full. Reader-route pages (104 in the corpus) were screened with the same text. No fetches were made beyond the shared corpus. Boundary check compares to base `d410968`; a later main will differ by other lanes' rows.
+Source presence does not prove semantic fit; selection.tsv is the reviewable judgment and is not family-reviewed yet. Organizations whose pages surfaced no market sentence were not read in full. Reader-route pages (104 in the corpus) were screened with the same text. No fetches were made beyond the shared corpus. The frame is frozen at base `d410968`. After main moved to `89d9e46` the packet was replayed onto it by cell-replay merge (data files taken from main, `build.py` re-applied; lane delta unchanged: 85 cell fills, 238 evidence appends), and the boundary check compares to `89d9e46`.
 
 ## Proposed follow-ups
 

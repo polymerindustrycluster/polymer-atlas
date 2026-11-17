@@ -16,7 +16,8 @@ ROOT = HERE.parents[1]
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist')
 CORPUS = STORE / 'pic18-corpus-2026-11-16'
 SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
-BASE = 'd410968ab2967b9fedc4d7350204289375a3abc4'
+BASE = 'd410968ab2967b9fedc4d7350204289375a3abc4'  # frozen frame
+MAIN = '89d9e460e8bb334b73f1b9bfc130a97ed742957a'  # main this packet is replayed onto (merge, cell-replay)
 FIRST_ID = 389000
 sys.path.insert(0, str(ROOT / 'scripts'))
 from shard_io import append_sorted
@@ -44,9 +45,17 @@ def found(text, quote):
 
 
 @cache
-def at_base(p):
-    text = subprocess.check_output(['git', 'show', f'{BASE}:{p.relative_to(ROOT)}'], cwd=ROOT, text=True)
+def at_commit(commit, p):
+    text = subprocess.check_output(['git', 'show', f'{commit}:{p.relative_to(ROOT)}'], cwd=ROOT, text=True)
     return list(csv.DictReader(io.StringIO(text)))
+
+
+def at_base(p):
+    return at_commit(BASE, p)
+
+
+def at_main(p):
+    return at_commit(MAIN, p)
 
 
 def source():
@@ -130,7 +139,7 @@ def apply(inputs, evidence):
         c['market_cells'] += 1
         c['market_values'] += len(tags)
         c['evidence_rows'] += len(tags)
-    (HERE / 'application.json').write_text(json.dumps(dict(base=BASE, cells=len(values), evidence_rows=len(evidence), by_shard=by_shard), indent=2, sort_keys=True) + '\n')
+    (HERE / 'application.json').write_text(json.dumps(dict(base=BASE, replayed_on=MAIN, cells=len(values), evidence_rows=len(evidence), by_shard=by_shard), indent=2, sort_keys=True) + '\n')
 
 
 def holds_for(frame, inputs, own_pages):

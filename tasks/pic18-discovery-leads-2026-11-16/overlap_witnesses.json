@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.allfoam.com/about/",
+    "file": "allfoam-about.html",
+    "sha256": "49304935c0f426fa4a2dc1ab951103cca5db92831d4860a40508501e18cbc360",
+    "quote": "An MVP Group Company"
+  },
+  {
+    "url": "https://www.allfoam.com/contact-us/",
+    "file": "allfoam-contact.html",
+    "sha256": "137102536700e0ac10e02a87033cca0d9f2b9632ddb3444c41086f651b119a94",
+    "quote": "15005 Enterprise Way"
+  }
+]

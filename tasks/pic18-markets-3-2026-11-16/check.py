@@ -6,7 +6,7 @@ import json
 import re
 import subprocess
 from collections import Counter
-from build import (HERE, ROOT, CORPUS, SNAPSHOT, BASE, FIRST_ID, read, source, proposals, found, at_base, counts_for)
+from build import (HERE, ROOT, CORPUS, SNAPSHOT, BASE, FIRST_ID, read, source, proposals, found, at_main, counts_for)
 
 # Wording each controlled tag needs in its own quote (refuted before: broader/different tag than the words).
 WORDS = {
@@ -71,7 +71,7 @@ def boundary(inputs, evidence):
     for p in sorted((ROOT / 'data').glob('*.csv')):
         if p.name.endswith('_all.csv'):
             continue
-        before, after = at_base(p), read(p)
+        before, after = at_main(p), read(p)
         if p.name.startswith('organizations_'):
             expected = copy.deepcopy(before)
             for r in expected:

@@ -1,0 +1,11 @@
+{
+  "integrator": "atlas-w16-quality",
+  "base": "ef32b5ba73a2fe7924a67ce3d53e9bc1758e72de",
+  "scope": [
+    "data/sites_OH.csv:verification_tier,last_verified,sources,notes",
+    "data/evidence_sites_OH.csv:EVD-379000\u2013380999"
+  ],
+  "promotions": 3,
+  "evidence": 18,
+  "holds": 77
+}

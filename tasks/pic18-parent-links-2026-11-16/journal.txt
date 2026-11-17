@@ -1,0 +1,4 @@
+Pre-pass HEAD: ef32b5ba73a2fe7924a67ce3d53e9bc1758e72de
+Preimages: /Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-parent-links/preimages
+Scope: proposals.json only; parent columns, append-only evidence, generated parent_of.
+Applied: 11 organization parent fields; EVD-384000..384010; generated REL-000480. Existing tiers: 5 A, 6 B. Steelastic and Chemionics excluded because parents already populated.

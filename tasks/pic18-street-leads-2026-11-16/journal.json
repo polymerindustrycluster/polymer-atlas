@@ -1,0 +1,40 @@
+{
+  "baseline": "ef32b5b",
+  "scope": [
+    "sites_OH.street_address",
+    "evidence_sites_OH append"
+  ],
+  "input_sites": 173,
+  "applied_sites": 23,
+  "held_sites": 150,
+  "evidence_ids": [
+    "EVD-385000",
+    "EVD-385001",
+    "EVD-385002",
+    "EVD-385003",
+    "EVD-385004",
+    "EVD-385005",
+    "EVD-385006",
+    "EVD-385007",
+    "EVD-385008",
+    "EVD-385009",
+    "EVD-385010",
+    "EVD-385011",
+    "EVD-385012",
+    "EVD-385013",
+    "EVD-385014",
+    "EVD-385015",
+    "EVD-385016",
+    "EVD-385017",
+    "EVD-385018",
+    "EVD-385019",
+    "EVD-385020",
+    "EVD-385021",
+    "EVD-385022"
+  ],
+  "tiers": {
+    "A": 9,
+    "C": 7,
+    "B": 7
+  }
+}
