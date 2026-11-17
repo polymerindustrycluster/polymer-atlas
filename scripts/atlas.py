@@ -298,12 +298,13 @@ _DIRECTIONS = {k for k, v in SUFFIX.items() if v in {"n", "s", "e", "w", "ne", "
 _STREET_SUFFIXES = {k for k in SUFFIX if k not in _DIRECTIONS} | (set(SUFFIX.values()) - {SUFFIX[k] for k in _DIRECTIONS}) | {"way", "pike"}
 _DIRECTION_WORDS = _DIRECTIONS | {SUFFIX[k] for k in _DIRECTIONS}
 _NOTES_SUFFIX = "|".join(sorted(_STREET_SUFFIXES))
+_DOTTED_DIRECTION = r"[ns]\.[ew]\b\.?"
 # shortcut: notes candidates need a numbered street and recognized suffix, extend when other address forms are tracked.
 NOTES_STREET_RE = re.compile(
     r"(?<![\w-])\d+[a-z]?\s+(?:[a-z][a-z'’-]*\.?|\d+(?:st|nd|rd|th))"
     r"(?:\s+(?:[a-z][a-z'’-]*\.?|\d+(?:st|nd|rd|th))){0,7}?\s+"
     rf"(?:{_NOTES_SUFFIX})\b(?:\s+(?:{_NOTES_SUFFIX})\b)*\.?"
-    rf"(?:\s+(?:{'|'.join(sorted(_DIRECTION_WORDS, key=lambda s: (-len(s), s)))})\b)?",
+    rf"(?:\s+(?:{_DOTTED_DIRECTION}|(?:{'|'.join(sorted(_DIRECTION_WORDS, key=lambda s: (-len(s), s)))})\b))?",
     re.I,
 )
 
@@ -320,6 +321,11 @@ def street_key(s):
     s = UNIT_RE.sub("", street)
     s = re.sub(r"\b(\d+)(st|nd|rd|th)\b", r"\1", s)
     return " ".join(SUFFIX.get(t, t) for t in squash(s).split())
+
+
+def notes_candidate_key(street):
+    street = re.sub(rf"\b{_DOTTED_DIRECTION}", lambda m: m[0].replace(".", ""), street, flags=re.I)
+    return street_key(street)
 
 
 # ---------------------------------------------------------------- dedupe-check
@@ -391,20 +397,26 @@ def dedupe(tables, domain=None, name=None, street=None, city=None, state=None, z
           "skipped": None if street else "no --street", "hits": [], "other_localities": []}
     if street:
         q = street_key(street)
+        candidate_key = notes_candidate_key(street)
         sites = tables.get("sites", Table("sites")).rows
         for r in sites:
             if not q:
                 break
-            in_notes = street_key(r.get("street_address", "")) != q
-            if in_notes and not any(q == street_key(match[0])
-                                    for match in NOTES_STREET_RE.finditer(r.get("notes") or "")):
-                continue
+            notes_match = ""
+            if street_key(r.get("street_address", "")) != q:
+                notes = r.get("notes") or ""
+                if any(candidate_key == notes_candidate_key(match[0]) for match in NOTES_STREET_RE.finditer(notes)):
+                    notes_match = " in notes"
+                elif f" {q} " in f" {street_key(notes)} ":
+                    notes_match = " in notes (text match)"
+                else:
+                    continue
             mism = []
             if city and r["city"] and squash(city) != squash(r["city"]): mism.append("city")
             if state and r["state"] and state.upper() != r["state"].upper(): mism.append("state")
             if zip_ and r["zip"] and zip_[:5] != r["zip"][:5]: mism.append("zip")
             op = by_id.get(r["org_id"], [{}])[0].get("legal_name", "(org not found)")
-            h = {**brief("sites", r), "operator": op, "match": f"street key {q!r}" + (" in notes" if in_notes else "") + (f"; locality differs: {','.join(mism)}" if mism else "")}
+            h = {**brief("sites", r), "operator": op, "match": f"street key {q!r}" + notes_match + (f"; locality differs: {','.join(mism)}" if mism else "")}
             (s3["other_localities"] if mism else s3["hits"]).append(h)
     steps.append(s3)
 

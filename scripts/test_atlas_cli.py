@@ -285,6 +285,30 @@ class DedupeTests(FixtureCase):
                 _, res = self.dd("--street", street)
                 self.assertEqual(self.ids(res, 3), [expected])
 
+    def test_street_candidates_preserve_existing_notes_matches(self):
+        write(self.d, "sites_OH.csv", SITE_COLS, [
+            site("SITE-001175", "ORG-000001", "", notes="Street (per Grok): 3500 State Route 39."),
+            site("SITE-000922", "ORG-000001", "", notes="Street (per Grok): 5060 County Road 120."),
+            site("SITE-000650", "ORG-000001", "", notes="Street: 2101 Ninth Street S.W.."),
+            site("SITE-001109", "ORG-000001", "", notes="Street: 963 Commercial Ave. S.E.."),
+            site("SITE-010001", "ORG-000001", "", notes="Street: 2320-22 Pullman Street."),
+            site("SITE-010002", "ORG-000001", "", notes="Street: 1715 US Highway South 29."),
+        ])
+        for street, expected in (
+            ("3500 State Route 39", "SITE-001175"),
+            ("5060 County Road 120", "SITE-000922"),
+            ("2101 Ninth Street S.W.", "SITE-000650"),
+            ("963 Commercial Ave. S.E.", "SITE-001109"),
+            ("2320-22 Pullman Street", "SITE-010001"),
+            ("1715 US Highway South 29", "SITE-010002"),
+            ("2101 Ninth St SW", "SITE-000650"),
+            ("963 Commercial Ave", "SITE-001109"),
+            ("963 Commercial Ave SW", None),
+        ):
+            with self.subTest(street=street):
+                _, res = self.dd("--street", street)
+                self.assertEqual(self.ids(res, 3), [expected] if expected else [])
+
     def test_alias_in_legal_and_trade_names(self):
         write(self.d, "organizations_OH.csv", ORG_COLS, [org("ORG-000001", "Acme d/b/a Bar LLC", trade_names="Brand formerly Old Brand")])
         for name in ("Acme", "Bar", "Brand", "Old Brand"):
