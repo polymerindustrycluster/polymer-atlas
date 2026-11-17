@@ -13,11 +13,11 @@ Claim: atlas-w16-mkt3, controller thr_9i2c6byhcz; designated integrator for this
 | Unit and filter | Count |
 |---|---:|
 | Organizations with a markets_served cell applied (blank before) | **77** (tier A 56, tier B 21) |
-| markets_served values applied (one controlled tag each) | **213** |
-| Evidence rows appended, all supports_A, from the block EVD-389000 to EVD-389237 (25 IDs retired, see below) | **213** |
+| markets_served values applied (one controlled tag each) | **212** |
+| Evidence rows appended, all supports_A, from the block EVD-389000 to EVD-389237 (26 IDs retired, see below) | **212** |
 | Organizations held in the frame (applied or held covers all 387 once) | **310** |
 
-Applied by shard: organizations_OH.csv 76 cells / 208 values; organizations_US.csv 1 / 5. Yield: 77 of 387 frame organizations (20%).
+Applied by shard: organizations_OH.csv 76 cells / 207 values; organizations_US.csv 1 / 5. Yield: 77 of 387 frame organizations (20%).
 
 Holds (organizations, by class; settling fact in `holds.csv` and `reviewed_holds.csv`): **not_adjudicated 260** (not reached, or no market sentence surfaced; not evidence of absence); read and held with a reason: group_or_redirect_attribution 9, menu_or_nav_only 11, off_vocabulary_or_ambiguous_market 14, scope_attribution 5, no_market_text 2, no_vocab_market 1. Every frame organization appears exactly once as applied or held. A held cell is unresolved work, never a negative finding.
 
@@ -31,7 +31,7 @@ Holds (organizations, by class; settling fact in `holds.csv` and `reviewed_holds
 
 ## Review repairs on #360 (Codex-20 and Gemini-h13 refutations of 4fbfe1e)
 
-Withdrawn and held: **25 values / 8 organizations**; their evidence IDs are retired (never reused or renumbered; `withdrawn.csv` carries the original quote, hashes and a settling fact). Listed in `withdrawn.csv`:
+Withdrawn and held: **26 values / 9 organizations** (IER Fujikura keeps its general_industrial value, so it is not a held organization); their evidence IDs are retired (never reused or renumbered; `withdrawn.csv` carries the original quote, hashes and a settling fact). Listed in `withdrawn.csv`:
 
 | Organization | IDs | Class | Why |
 |---|---|---|---|
@@ -43,6 +43,7 @@ Withdrawn and held: **25 values / 8 organizations**; their evidence IDs are reti
 | Inter-Ion ORG-001681 | 389225-389228 | menu_or_nav_only | "Industries We Serve" tab-label list (narrative sentences exist on stored markets pages; replace in a follow-up) |
 | Jet Di ORG-001744 | 389152 | tagline_or_header | Page-title tagline repeated in the header menu |
 | Enterprise Rubber ORG-000026 | 389101 | generic_product_explainer | What rubber bump stops are used for in general |
+| IER Fujikura ORG-000373 (medical_device only) | 389176 | group_or_redirect_attribution | The "Medical" heading links to a page the same HTML labels "Medical Products by Fujikura Composites" (the parent); settling fact: an IER-specific account of supplying medical-device customers (lead: the valve description on the stored industries page) |
 
 Integra ORG-000455, EVD-389004: quote extended through "customers in the wastewater treatment industry." (the stored sentence), re-verified in order against the stored page and hash. This is the only changed claim; every other row is unchanged or removed.
 
@@ -50,7 +51,7 @@ Sweep of all 238 rows (99 distinct witnesses): `witness_class.py` checks every H
 
 ## Named checks
 
-- `python3 tasks/pic18-markets-3-2026-11-16/check.py`: PASS. Reconciles the frame against an independent count (ok pages x blank cells at base minus prior lanes), every quote, hash, vocabulary tag and per-tag wording, coverage, evidence IDs in block, and the full-tree boundary against base (77 cell fills, 213 evidence appends, nothing else). Injected defects refused, each for its own reason: fabricated quote, off-vocabulary tag, broader tag than the words, missing disposition, tampered hash, duplicate proposal, dropped frame row, a navigation-menu witness, a blog/article witness, a parent/group-domain witness (10/10).
+- `python3 tasks/pic18-markets-3-2026-11-16/check.py`: PASS. Reconciles the frame against an independent count (ok pages x blank cells at base minus prior lanes), every quote, hash, vocabulary tag and per-tag wording, coverage, evidence IDs in block, and the full-tree boundary against base (77 cell fills, 212 evidence appends, nothing else). Injected defects refused, each for its own reason: fabricated quote, off-vocabulary tag, broader tag than the words, missing disposition, tampered hash, duplicate proposal, dropped frame row, a navigation-menu witness, a blog/article witness, a parent/group-domain witness (10/10).
 - `python3 tasks/pic18-markets-3-2026-11-16/build.py`: idempotent; replay leaves the data diff byte-identical.
 - `python3 scripts/validate.py`: PASS, 0 errors (41,929 evidence rows). `python3 scripts/check_row_loss.py --base origin/main`: OK. `python3 scripts/export_vocab.py --check`: current.
 - Not run: `unittest discover -s scripts` (no script touched).
