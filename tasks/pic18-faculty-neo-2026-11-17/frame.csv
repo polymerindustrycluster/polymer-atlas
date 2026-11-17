@@ -1,0 +1,25 @@
+institution,unit,frame_source_url,listed,examined,verified,note
+CSU,Chemical and Biomedical Engineering,https://engineering.csuohio.edu/chemical/people,n/a,13,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,BME,https://case.edu/engineering/about/faculty-and-staff-directory,49,49,2,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,CBE,https://case.edu/engineering/about/faculty-and-staff-directory,19,19,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,Chemistry,https://chemistry.case.edu/people/faculty/,n/a,20,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,MACRO,https://case.edu/engineering/about/faculty-and-staff-directory,14,14,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,MACRO (materials-branch page only),,n/a,1,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,MAE,https://case.edu/engineering/about/faculty-and-staff-directory,32,32,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,MSE,https://case.edu/engineering/about/faculty-and-staff-directory,21,21,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+KENT,AMLCI affiliated,https://www.kent.edu/amlci/faculty,n/a,30,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+KENT,AMLCI/Chemistry,https://www.kent.edu/amlci/faculty,n/a,2,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+KENT,AMLCI/Materials Science,https://www.kent.edu/amlci/faculty,n/a,1,1,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+NASA,Polymers (lab pages),https://ntrs.nasa.gov/citations/20070022363,n/a,2,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+WALSH,Chemistry,https://www.walsh.edu/directory/neil-walsh.html,n/a,3,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+YSU,Chemistry,https://catalog.ysu.edu/graduate/graduate-programs/master-science-chemistry/,n/a,3,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+YSU,Chemistry (MS),https://catalog.ysu.edu/graduate/graduate-programs/master-science-chemistry/,n/a,6,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+YSU,Materials Science and Engineering (PhD),https://catalog.ysu.edu/archives/2022-2023/graduate/graduate-programs/doctor-philosophy-materials-science-engineering/,n/a,10,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+YSU,Mechanical/Materials,https://catalog.ysu.edu/archives/2022-2023/graduate/graduate-programs/doctor-philosophy-materials-science-engineering/,n/a,1,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+YSU,catalog/chemistry,https://catalog.ysu.edu/graduate/graduate-programs/master-science-chemistry/,n/a,5,0,examined = verdict rows in this unit (includes held people shown as DUPLICATE_OF)
+CWRU,NOT ADJUDICATED: Engineering directory entries with professor titles outside MACRO/MSE/CBE/BME/MAE and CWRU Physics/Arts and Sciences units other than Chemistry,https://case.edu/engineering/about/faculty-and-staff-directory,not counted,0,0,"unresolved, not negative"
+KENT,"NOT ADJUDICATED: AMLCI affiliated faculty in Mathematical Sciences, Computer Science, Nursing, Public Health, Podiatric Medicine, Anthropology, Architecture, plus Physics members Maxim Dzero and Margarita Benitez (listed, not fetched); Kent chemistry/engineering/physics faculty outside AMLCI",https://www.kent.edu/amlci/faculty,not counted,0,0,"unresolved, not negative"
+YSU,"NOT ADJUDICATED: YSU chemistry, chemical, mechanical and civil faculty beyond the two catalog listings; Greg Dillon (current role unverified); current YSU department rosters",https://catalog.ysu.edu/graduate/graduate-programs/master-science-chemistry/,not counted,0,0,"unresolved, not negative"
+CSU,"NOT ADJUDICATED: Mechanical Engineering, Physics and Chemistry faculty (CSU physics participating-faculty page fetched, not adjudicated)",https://artsandsciences.csuohio.edu/physics/participating-faculty,not counted,0,0,"unresolved, not negative"
+WALSH,NOT ADJUDICATED: Walsh faculty other than the chemistry names above,https://www.walsh.edu/faculty.html,not counted,0,0,"unresolved, not negative"
+NASA,NOT ADJUDICATED: No Glenn staff directory was reachable from held URLs or search; Robert K. Goldberg is a lead (NTRS-named) not examined,,not counted,0,0,"unresolved, not negative"
