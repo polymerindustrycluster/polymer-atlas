@@ -1,5 +1,5 @@
 {
- "evidence_rows_added": 6,
+ "evidence_rows_added": 2,
  "frame_rows_by_unit": {
   "BME": 21,
   "CBCE": 17,
@@ -8,12 +8,12 @@
   "SPSPE": 18,
   "SPSPE-emeritus": 14
  },
- "people_rows_added": 3,
+ "people_rows_added": 1,
  "persons_examined": 143,
  "verdicts": {
   "DUPLICATE_OF": 23,
-  "REJECT": 113,
-  "STILL_UNCERTAIN": 4,
-  "VERIFIED": 3
+  "REJECT": 100,
+  "STILL_UNCERTAIN": 19,
+  "VERIFIED": 1
  }
 }

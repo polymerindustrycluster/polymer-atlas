@@ -11,9 +11,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(HERE))
-from pagetext import P, quote_in, text
+from pagetext import P, quote_in, text, redact
 from frame import build as build_frame
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+IDENT = re.compile(r"[?&]u=[A-Za-z0-9_.-]+")  # a UA network id in a URL; committed files carry u=<id> only
 PHONE = re.compile(r"(\(\d{3}\)\s*|\b\d{3}[-.])\d{3}[-.]\d{4}\b")
 ALLOWED_DATA = {"data/people.csv", "data/evidence_people.csv"}
 PBLOCK, EBLOCK = (2300, 2399), (393000, 393999)
@@ -44,7 +45,7 @@ def checks(w):
     f = []
     if not P.exists(): return [f"persist folder {P} missing: raw pages cannot be checked"]
     V, people, evid = w["verdicts"], w["people"], w["evid"]
-    man = {(m["url"], m["sha256"]) for m in w["manifest"]}
+    man = {(redact(m["url"]), m["sha256"]) for m in w["manifest"]}
     # 1. counts: verdicts from verdicts.csv; frame from the stored listing pages against the pages' own counts
     vc = Counter(r["verdict"].split()[0] for r in V)
     if dict(vc) != w["counts"]["verdicts"]: f.append(f"verdict counts drift {dict(vc)} vs {w['counts']['verdicts']}")
@@ -106,10 +107,13 @@ def checks(w):
     dirty = {c for c in w["changed"] if not c.startswith("tasks/pic18-faculty-akron-2026-11-17/")}
     if dirty - ALLOWED_DATA: f.append(f"files changed outside brief: {sorted(dirty - ALLOWED_DATA)}")
     # 5. privacy: every output, the persist manifest, this file, and the new data rows
-    blobs = dict(w["outputs"]); blobs["manifest(persist)"] = "\n".join(",".join(m.values()) for m in w["manifest"])
+    blobs = dict(w["outputs"])
     blobs["new people rows"] = "\n".join(",".join(p.values()) for p in new); blobs["new evidence rows"] = "\n".join(",".join(e.values()) for e in mine)
     for n, b in blobs.items():
         if EMAIL.search(b) or PHONE.search(b): f.append(f"email/phone pattern in {n}")
+        if IDENT.search(b): f.append(f"UA network identifier in a URL in {n}")
+    if w["outputs"].get("manifest.csv", "").replace("\r\n", "\n") != redact(open(P / "manifest.csv", newline="", encoding="utf-8").read().replace("\r\n", "\n")):
+        f.append("committed manifest.csv is not the redacted persist manifest")
     return f
 
 def selftest(w):
@@ -133,7 +137,8 @@ def selftest(w):
     try: inject("stored page tampered", lambda w2: ver(w2).update(gate_b_sha=fake), "does not match its name")
     finally: (P / fake).unlink()
     inject("edited held row", lambda w2: w2["people"][0].update(role_as_published=w2["people"][0]["role_as_published"] + " X"), "held people row")
-    inject("email in a data field", lambda w2: next(p for p in w2["people"] if p["person_id"] == "PERSON-002300").update(research_specialties="polymer thin films;" + mail), "email/phone pattern in new people rows")
+    inject("email in a data field", lambda w2: next(p for p in w2["people"] if p["person_id"] == "PERSON-002302").update(research_specialties="polymer thin films;" + mail), "email/phone pattern in new people rows")
+    inject("UA id URL in a new data row", lambda w2: next(p for p in w2["people"] if p["person_id"] == "PERSON-002302").update(public_profile_url="https://www.uakron.edu/chemistry/faculty-staff/detail.dot" + "?u" + "=jutta"), "UA network identifier in a URL in new people rows")
     inject("extra file changed", lambda w2: w2["changed"].add("data/organizations_OH.csv"), "files changed outside brief")
     return ok
 
