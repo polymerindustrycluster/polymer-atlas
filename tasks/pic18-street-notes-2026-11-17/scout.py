@@ -105,6 +105,7 @@ def prior_leads():
  d=defaultdict(list)
  for r in read(PRIOR):d[r['site_id']].append(r['street'])
  return d
+PLANT_TYPES={'manufacturing_plant'}
 MANUAL_HOLDS={'SITE-000514':('SITEWIDE_FOOTER_SUITE','Own-site address is an unlabeled site-wide footer with a suite on a distribution site; need a page that states this Westlake location as a warehouse/office of the operator.')}
 PL=prior_leads()
 def adjudicate(ctx,site):
@@ -130,6 +131,7 @@ def adjudicate(ctx,site):
  if not named:
   x=ws_[0];return hold('FRS_PROBABLE' if x['prob'] else 'NO_NAMED_SOURCE',(f'Notes mark FRS {x["key"]} only a PROBABLE match; need identity settled.' if x['prob'] else f'No source named on the record for this street; the stored {x["cls"]} witness {x["key"] or x["page"]} ({x["quote"][:80]}) matches via a task-folder binding and is a recommendation, not a record citation.'))
  w=named[0]
+ if w['cls']=='own_site' and site['site_type'] in PLANT_TYPES and re.search(r'(?i)\b(hq|headquarters|office|corporate)\b',w['before']):return hold('HQ_LABEL_ON_PLANT',f'Page labels {w["street"]} as HQ/office ({w["before"].strip()[-40:]!r}) on a plant-typed site; need a named witness tying plant operations to this street.')
  if w['cls']=='registry':return hold('REGISTRY_CEILING',f'Only an EPA FRS registry row ({w["key"]}) shows {w["street"]}: a registry address caps at supports_C (V-25 fails on a tier A/B site) and the stored extract has no raw/ record (V-23); need an own-site or filing address witness, or a dated live FRS fetch.')
  if sid in MANUAL_HOLDS:return hold(*MANUAL_HOLDS[sid])
  if LABEL.search(w['before']+' '+w['quote']):return hold('MAILING_OR_PARENT_LABEL','Witness text labels the address mailing/parent/corporate; need physical-address wording.')

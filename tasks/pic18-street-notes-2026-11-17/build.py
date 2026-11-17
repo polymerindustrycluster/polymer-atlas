@@ -16,9 +16,11 @@ def words(t):return re.findall(r'[a-z0-9]+',t.lower())
 def in_order(hay,needle):
  h,n=words(hay),words(needle);return bool(n) and any(h[i:i+len(n)]==n for i in range(len(h)-len(n)+1))
 def refuse(c,msg):assert c,msg
+def pins():
+ p={r['site_id']:r for r in read(TASK/'evidence_ids.csv')};return p
 def plan(verdicts=None):
  verdicts=verdicts if verdicts is not None else read(TASK/'verdicts.csv');frame={r['site_id']:r for r in read(TASK/'frame.csv')}
- sites={s['site_id']:s for s in read(DATA/'sites_OH.csv')};seen={};ev=[]
+ sites={s['site_id']:s for s in read(DATA/'sites_OH.csv')};seen={};ev=[];pn=pins();nxt=max(int(r['evidence_id'][4:]) for r in pn.values())+1
  for v in verdicts:
   refuse(v['site_id'] in frame,'not in frame')
   if v['verdict']!='VERIFIED':refuse(v['hold_class'] and v['settling_fact'],'hold without class/fact');continue
@@ -48,7 +50,9 @@ def plan(verdicts=None):
    refuse(q==f'{nm} | {r["street"]} | {r["city"]} | OH | {z}','quote is not the extract fields');refuse(not s['zip'] or s['zip'][:5]==z[:5],'zip differs')
    refuse(street==re.sub(r'[\s,]+'+re.escape(r['city'])+r'\.?$','',r['street'],flags=re.I),'street not the extract street')
    hist=' The filing witnesses its historical address, not current occupancy.';ref=v['source_ref'];key=v['source_key']
-  eid=f'EVD-{BASE_ID+len(ev):06d}';refuse(len(ev)<1000,'block exhausted')
+  pr=pn.get(sid)
+  if pr:refuse(pr['status']=='applied','withdrawn site must not be applied');eid=pr['evidence_id']
+  else:eid=f'EVD-{nxt:06d}';nxt+=1;refuse(int(eid[4:])<396000,'block exhausted')
   ev.append(dict(evidence_id=eid,record_table='sites',record_id=sid,claim_type='address',claim_detail=f"street_address {street}, {s['city']}, OH."+hist,source_class=v['source_class'],source_ref=ref,observed_date=TODAY,tier_effect=v['tier_effect'],created_by=CREATOR,notes=f"Quote (words in order{'; filing fields separated by |' if hist else ''}): {q}; source key {key or 'own page'}; SHA-256 {v['sha256']}; checked {TODAY}. Only street_address changed."))
  return verdicts,ev
 def run(apply=False,backup=True):
