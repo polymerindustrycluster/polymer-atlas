@@ -13,4 +13,5 @@ def quote_in(q, sha):
 
 def redact(url):
     """Committed files never carry the UA network id in profile URLs (?u=<id>); the persist manifest keeps the real URL."""
-    return re.sub(r"([?&]u=)[^&#\s,;]+", r"\1<id>", url)
+    url = re.sub(r"([?&]u=)[^&#\s,;]+", r"\1<id>", url)
+    return re.sub(r"/~[A-Za-z0-9_.-]+", "/~<acct>", url)  # personal-account home paths
