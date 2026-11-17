@@ -11,18 +11,18 @@
     "menu_or_nav_only": 11,
     "no_market_text": 2,
     "no_vocab_market": 1,
-    "not_adjudicated": 266,
+    "not_adjudicated": 260,
     "off_vocabulary_or_ambiguous_market": 14,
     "scope_attribution": 5
   },
-  "held_organizations": 308,
+  "held_organizations": 302,
   "manifest_organizations": 745,
   "prior_lane_organizations_excluded": 47,
   "proposed_organization_tiers": {
     "A": 62,
-    "B": 17
+    "B": 23
   },
-  "proposed_organizations": 79,
-  "proposed_values": 225,
+  "proposed_organizations": 85,
+  "proposed_values": 238,
   "retained_organizations": 628
 }

@@ -7,9 +7,9 @@
       "market_values": 2
     },
     "organizations_OH.csv": {
-      "evidence_rows": 218,
-      "market_cells": 77,
-      "market_values": 218
+      "evidence_rows": 231,
+      "market_cells": 83,
+      "market_values": 231
     },
     "organizations_US.csv": {
       "evidence_rows": 5,
@@ -17,6 +17,6 @@
       "market_values": 5
     }
   },
-  "cells": 79,
-  "evidence_rows": 225
+  "cells": 85,
+  "evidence_rows": 238
 }

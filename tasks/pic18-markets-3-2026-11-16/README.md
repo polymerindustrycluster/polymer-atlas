@@ -5,21 +5,21 @@ Claim: atlas-w16-mkt3, controller thr_9i2c6byhcz; designated integrator for this
 ## Frame, unit and filter
 
 - Frame: **387 organizations** with at least one retained 2026-11-16 corpus page (pinned manifest snapshot, 745 attempted / 628 with retained pages), `markets_served` blank at base `d410968`, and not already filled by the two earlier lanes (PR #344, 32 organizations; PR #349, 15 organizations; listed in `prior_lanes.csv`, 47 total). Tiers: **A 175, B 175, C 35, U 2**.
-- Order worked: tier A, then tier B, by Ohio employee band then org_id. A screening extractor surfaced market sentences from each organization's markets, industries, products, capabilities, home and about pages, and I read and decided each one that surfaced text. All 175 tier A and the first 103 of 175 tier B organizations (278 in all) were screened this way; the rest of tier B and tiers C and U were not reached.
+- Order worked: tier A, then tier B, by Ohio employee band then org_id. A screening extractor surfaced market sentences from each organization's markets, industries, products, capabilities, home and about pages, and I read and decided each one that surfaced text. All 175 tier A and the first 103 of 175 tier B organizations (278 in all) were screened with the full extractor; tier B rank 104 to 175 got only a stricter "industries / we serve" sentence filter, so organizations without such a sentence were not read. Tiers C and U were not reached.
 - Stopped at the 35-minute limit.
 
 ## Result (all counts recomputed by check.py)
 
 | Unit and filter | Count |
 |---|---:|
-| Organizations with a markets_served cell applied (blank before) | **79** (tier A 62, tier B 17) |
-| markets_served values applied (one controlled tag each) | **225** |
-| Evidence rows appended, EVD-389000 to EVD-389224 (all supports_A) | **225** |
-| Organizations held in the frame (applied or held covers all 387 once) | **308** |
+| Organizations with a markets_served cell applied (blank before) | **85** (tier A 62, tier B 23) |
+| markets_served values applied (one controlled tag each) | **238** |
+| Evidence rows appended, EVD-389000 to EVD-389237 (all supports_A) | **238** |
+| Organizations held in the frame (applied or held covers all 387 once) | **302** |
 
-Applied by shard: organizations_OH.csv 77 cells / 218 values; organizations_MO.csv 1 / 2; organizations_US.csv 1 / 5. Yield: 79 of 387 frame organizations (20%); 79 of the 278 organizations screened (28%).
+Applied by shard: organizations_OH.csv 83 cells / 231 values; organizations_MO.csv 1 / 2; organizations_US.csv 1 / 5. Yield: 85 of 387 frame organizations (22%).
 
-Holds (organizations, by class; settling fact in `holds.csv` and `reviewed_holds.csv`): **not_adjudicated 266** (not reached, or no market sentence surfaced; not evidence of absence); read and held with a reason: group_or_redirect_attribution 9, menu_or_nav_only 11, off_vocabulary_or_ambiguous_market 14, scope_attribution 5, no_market_text 2, no_vocab_market 1. Every frame organization appears exactly once as applied or held. A held cell is unresolved work, never a negative finding.
+Holds (organizations, by class; settling fact in `holds.csv` and `reviewed_holds.csv`): **not_adjudicated 260** (not reached, or no market sentence surfaced; not evidence of absence); read and held with a reason: group_or_redirect_attribution 9, menu_or_nav_only 11, off_vocabulary_or_ambiguous_market 14, scope_attribution 5, no_market_text 2, no_vocab_market 1. Every frame organization appears exactly once as applied or held. A held cell is unresolved work, never a negative finding.
 
 ## Rules followed
 
@@ -31,9 +31,9 @@ Holds (organizations, by class; settling fact in `holds.csv` and `reviewed_holds
 
 ## Named checks
 
-- `python3 tasks/pic18-markets-3-2026-11-16/check.py`: PASS. Reconciles the frame against an independent count (ok pages x blank cells at base minus prior lanes), every quote, hash, vocabulary tag and per-tag wording, coverage, evidence IDs in block, and the full-tree boundary against base (79 cell fills, 225 evidence appends, nothing else). Injected defects refused: fabricated quote, off-vocabulary tag, broader tag than the words, missing disposition, tampered hash, duplicate proposal, dropped frame row (7/7).
+- `python3 tasks/pic18-markets-3-2026-11-16/check.py`: PASS. Reconciles the frame against an independent count (ok pages x blank cells at base minus prior lanes), every quote, hash, vocabulary tag and per-tag wording, coverage, evidence IDs in block, and the full-tree boundary against base (85 cell fills, 238 evidence appends, nothing else). Injected defects refused: fabricated quote, off-vocabulary tag, broader tag than the words, missing disposition, tampered hash, duplicate proposal, dropped frame row (7/7).
 - `python3 tasks/pic18-markets-3-2026-11-16/build.py`: idempotent; replay leaves the data diff byte-identical.
-- `python3 scripts/validate.py`: PASS, 0 errors (41,916 evidence rows). `python3 scripts/check_row_loss.py --base origin/main`: OK. `python3 scripts/export_vocab.py --check`: current.
+- `python3 scripts/validate.py`: PASS, 0 errors (41,929 evidence rows). `python3 scripts/check_row_loss.py --base origin/main`: OK. `python3 scripts/export_vocab.py --check`: current.
 - Not run: `unittest discover -s scripts` (no script touched).
 
 ## Not checked
@@ -42,6 +42,6 @@ Source presence does not prove semantic fit; selection.tsv is the reviewable jud
 
 ## Proposed follow-ups
 
-- Continue the frame from tier B rank 104 onward, then tiers C and U (266 not_adjudicated organizations).
+- Read the 260 not_adjudicated organizations (tier B rank 104 onward in full, then tiers C and U).
 - Owner rulings under B-MARKETS-VOCAB for Alternative Energy, retail-security verticals, water-heater, recreation-surface and window-covering cases listed in `reviewed_holds.csv`.
 - Exact-entity checks for Rochling, Trelleborg, Huntsman, Survitec, LG Chem and ASC group pages before any market is copied to these rows.

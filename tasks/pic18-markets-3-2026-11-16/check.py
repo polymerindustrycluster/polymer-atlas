@@ -21,7 +21,7 @@ WORDS = {
     'packaging_industrial': r'bags for industrial use', 'plastics_rubber_processors': r'plastic|rubber', 'tire_rubber_goods': r'tire',
     'telecom_datacom': r'telecom', 'rv_powersports_trailers': r'\brv\b', 'consumer_goods_housewares': r'housewares|household',
     'toys_sporting_goods': r'toys|sporting|sports', 'footwear_apparel': r'apparel', 'industrial_machinery': r'industrial machinery',
-    'lawn_garden_recreation': r'lawn',
+    'lawn_garden_recreation': r'lawn', 'dental': r'dentist|dental',
 }
 
 
