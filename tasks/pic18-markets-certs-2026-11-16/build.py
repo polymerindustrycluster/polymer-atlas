@@ -16,6 +16,8 @@ ROOT = HERE.parents[1]
 CORPUS = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-corpus-2026-11-16')
 FIELDS = ('markets_served', 'certifications')
 BASE = '0c7bacc1840741fbf130e39c9bb11fd5c39abdc0'
+APPLICATION_BASE = '89d9e460e8bb334b73f1b9bfc130a97ed742957a'
+RETIRED_IDS = {'EVD-370040', 'EVD-370069'}
 sys.path.insert(0, str(ROOT / 'scripts'))
 from shard_io import append_sorted
 
@@ -41,8 +43,8 @@ def found(text, quote):
     return bool(norm(quote)) and norm(quote) in norm(text)
 
 
-def at_base(p):
-    text = subprocess.check_output(['git', 'show', f'{BASE}:{p.relative_to(ROOT)}'], cwd=ROOT, text=True)
+def at_base(p, base=BASE):
+    text = subprocess.check_output(['git', 'show', f'{base}:{p.relative_to(ROOT)}'], cwd=ROOT, text=True)
     return list(csv.DictReader(io.StringIO(text)))
 
 
@@ -53,6 +55,7 @@ def apply(inputs, evidence):
     evs = [(p, r) for p in (ROOT / 'data').glob('evidence_*.csv') for r in read(p)]
     have = {r['evidence_id']: (p, r) for p, r in evs}
     assert len(have) == len(evs), 'duplicate evidence IDs'
+    assert not RETIRED_IDS & have.keys(), 'retired evidence ID present'
     values, additions = defaultdict(set), defaultdict(list)
     for r in inputs:
         values[r['org_id']].add(r['value'])
@@ -73,7 +76,7 @@ def apply(inputs, evidence):
             assert old == ev, 'evidence payload mismatch'
         else:
             additions[target].append(ev)
-    backup = CORPUS.parent / 'pic18-markets-certs' / 'pre-application'
+    backup = CORPUS.parent / 'pic18-markets-certs' / ('pre-application-' + APPLICATION_BASE[:7])
     backup.mkdir(parents=True, exist_ok=True)
     for path in touched | set(additions):
         if not (backup / path.name).exists():
@@ -92,7 +95,7 @@ def apply(inputs, evidence):
         count['organization_cells'] += 1
         count['market_values'] += len(tags)
         count['evidence_rows'] += len(tags)
-    (HERE / 'application.json').write_text(json.dumps(dict(base=BASE, cells=len(values), evidence_rows=len(evidence), by_shard=by_shard), indent=2, sort_keys=True)+'\n')
+    (HERE / 'application.json').write_text(json.dumps(dict(base=APPLICATION_BASE, cells=len(values), evidence_rows=len(evidence), by_shard=by_shard), indent=2, sort_keys=True)+'\n')
 
 
 def source():
@@ -127,7 +130,7 @@ def proposals(frame, pages):
     assert len(result) <= 3000
     for i, r in enumerate(result):
         r['evidence_id'] = f'EVD-{370000+i:06d}'
-    return result
+    return [r for r in result if r['evidence_id'] not in RETIRED_IDS]
 
 
 def main():
@@ -150,6 +153,8 @@ def main():
             settling = ('Current certificate naming standard/edition, issuer or number, exact entity/site scope and unexpired validity.'
                         if field == 'certifications' else
                         'Exact-entity own-product narrative naming a MARKETS vocabulary market; category/menu labels alone do not establish A-strength scope.')
+            if (oid, field) == ('ORG-000391', 'markets_served'):
+                settling = 'An own-company source naming plastics processors as JACO customers (R2c).'
             holds.append(dict(org_id=oid, field=field, verdict='STILL_UNCERTAIN', applied='held',
                               hold_class='certificate_identity_currency_scope' if field == 'certifications' else 'scope_attribution_or_vocabulary',
                               settling_fact=settling, signal='mention_present' if signal else 'no_screening_term',

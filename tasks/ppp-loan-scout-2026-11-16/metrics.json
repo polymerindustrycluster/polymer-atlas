@@ -1,0 +1,42 @@
+{
+  "active_pic18_sites": 1046,
+  "indexed_loans": 1953,
+  "unmatched_polymer_loans": 342,
+  "unmatched_borrower_names": 296,
+  "matched_site_rows": 424,
+  "address": {
+    "denominator": 490,
+    "candidate_sites": 152,
+    "sample_sites": 20,
+    "yield_rate": 0.31020408163265306,
+    "wilson95": [
+      0.270856,
+      0.352505
+    ]
+  },
+  "jobs": {
+    "denominator": 827,
+    "candidate_sites": 346,
+    "sample_sites": 20,
+    "yield_rate": 0.4183796856106409,
+    "wilson95": [
+      0.385213,
+      0.452302
+    ]
+  },
+  "band_comparison_sites": 20,
+  "review": {
+    "address_contact_corroborated": 5,
+    "address_reviewed": 20,
+    "plant_confirmed": 0,
+    "jobs_reviewed": 20,
+    "site_jobs_confirmed": 0,
+    "band_within": 15,
+    "band_outside": 4,
+    "band_uncomparable": 1,
+    "address_contact_wilson95": [
+      0.111862,
+      0.468701
+    ]
+  }
+}

@@ -1,18 +1,18 @@
 {
   "blank_field_cells": 677,
-  "data_cells_applied": 32,
+  "data_cells_applied": 31,
   "extra_fetches": 0,
   "frame_organizations": 400,
   "frame_pages": 1850,
-  "held_field_cells": 645,
+  "held_field_cells": 646,
   "manifest_organizations": 745,
   "proposed_certification_values": 0,
-  "proposed_market_values": 70,
+  "proposed_market_values": 68,
   "proposed_organization_tiers": {
-    "A": 15,
+    "A": 14,
     "B": 13,
     "C": 4
   },
-  "proposed_organizations": 32,
+  "proposed_organizations": 31,
   "retained_organizations": 419
 }

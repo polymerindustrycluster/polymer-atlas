@@ -1,0 +1,12 @@
+{
+  "url": "https://api.sam.gov/data-services/v1/extracts?fileName=SAM_PUBLIC_MONTHLY_V2_20261101.ZIP",
+  "observed_at": "2026-11-16T19:41:07.969746+00:00",
+  "authenticated_requests": 2,
+  "state": "downloaded",
+  "redirect_host": "falextracts.s3.amazonaws.com",
+  "download_requests": 1,
+  "http_status": 200,
+  "content_type": "binary/octet-stream",
+  "sha256": "2db04ae10f237f048b28b6354884431c7b8d61d122b437647b29d23a6cdb5e4d",
+  "bytes": 148636178
+}

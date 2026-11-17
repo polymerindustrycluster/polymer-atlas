@@ -1,0 +1,75 @@
+{
+  "query": {
+    "domain": null,
+    "name": "Sumitomo Bakelite Co., Ltd.",
+    "street": null,
+    "city": null,
+    "state": null,
+    "zip": null
+  },
+  "stop_at_step": 4,
+  "steps": [
+    {
+      "step": 1,
+      "name": "website domain (organizations_*.csv + ecosystem.csv)",
+      "skipped": "no --domain",
+      "hits": []
+    },
+    {
+      "step": 2,
+      "name": "normalized name vs legal_name/trade_names",
+      "skipped": null,
+      "hits": []
+    },
+    {
+      "step": 3,
+      "name": "street address (sites_*.csv; one address = one site, owned by the operator)",
+      "skipped": "no --street",
+      "hits": [],
+      "other_localities": []
+    },
+    {
+      "step": 4,
+      "name": "trade_names/notes/legal_name substring + successor_org_id chain",
+      "skipped": null,
+      "hits": [
+        {
+          "id": "ORG-004081",
+          "name": "Sumitomo Bakelite North America, Inc.",
+          "city": "Manchester",
+          "state": "CT",
+          "status": "active",
+          "tier": "A",
+          "file": "organizations_CT.csv",
+          "match": "notes contains 'Sumitomo Bakelite Co., Ltd.'"
+        },
+        {
+          "id": "ORG-000528",
+          "name": "Promerus",
+          "city": "Akron",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "organizations_OH.csv",
+          "match": "notes contains 'Sumitomo Bakelite Co., Ltd.'"
+        },
+        {
+          "id": "ORG-000809",
+          "name": "Durez Corporation",
+          "city": "Kenton",
+          "state": "OH",
+          "status": "active",
+          "tier": "A",
+          "file": "organizations_OH.csv",
+          "match": "trade_names contains 'Sumitomo Bakelite Co., Ltd.'"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "name": "site_name (sites_*.csv; locality suffix removed)",
+      "skipped": null,
+      "hits": []
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "site_id": "SITE-001078",
+    "url": "https://okamotosandusky.com/about/",
+    "stored_text": "positive_witnesses/SITE-001078.txt",
+    "text_sha256": "5879a81321241ea4debdd76f3a34cd195d26373a86d71b84b139548efe627b2b",
+    "original_raw_sha256": "e6ca893187581bc32897f9e072d68cbdfdea9337f3c3400a4c537ebd42d18ac8",
+    "original_fetched_at": "2026-11-16T19:03:27.271975+00:00",
+    "refetch_raw_sha256": "05f3d1cfd656be65febd8b0e7d918bfb2d077d1c18f2f9025b40920e97283d45",
+    "refetched_at": "2026-11-16T19:36:04.377998+00:00",
+    "route": "direct",
+    "http_status": 200,
+    "transport": "scripts/site_corpus.py Corpus.fetch -> curl with AtlasSiteCorpus user agent",
+    "refetch_cache": "positive_refetch_2026-11-16",
+    "refetch_raw_file": "05f3d1cfd656be65febd8b0e7d918bfb2d077d1c18f2f9025b40920e97283d45.raw"
+  },
+  {
+    "site_id": "SITE-000337",
+    "url": "https://www.duracote.com/capabilities/",
+    "stored_text": "positive_witnesses/SITE-000337.txt",
+    "text_sha256": "92e5e7f06bfcf6b761af39f3c7abac1f9d0ecfbbe0fcf11a529f0cb4be944fe9",
+    "original_raw_sha256": "58b540425b10d9617a47a1372e9e71db9d8c78e5278596577b34f4c35e810700",
+    "original_fetched_at": "2026-11-16T19:03:28.551204+00:00",
+    "refetch_raw_sha256": "c3706ff19b97e09a8bd3ba5ea3db583e0ee5553ec6171879932054b31e4b5e12",
+    "refetched_at": "2026-11-16T19:36:03.622070+00:00",
+    "route": "direct",
+    "http_status": 200,
+    "transport": "scripts/site_corpus.py Corpus.fetch -> curl with AtlasSiteCorpus user agent",
+    "refetch_cache": "positive_refetch_2026-11-16",
+    "refetch_raw_file": "c3706ff19b97e09a8bd3ba5ea3db583e0ee5553ec6171879932054b31e4b5e12.raw"
+  }
+]

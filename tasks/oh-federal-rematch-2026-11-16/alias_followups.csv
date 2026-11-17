@@ -1,0 +1,603 @@
+site_id,kind,source_id,registrant,atlas_name,disposition,settling_fact
+SITE-000006,ITA,1272816,Chromaflo Technologies LLC (Vibrantz Technologies) | Vibrantz Technologies,Vibrantz (Chromaflo legacy) — Ashtabula,held,Existing band preserved; blank field required.
+SITE-000006,ECHO,110012253658,ASHLAND SPECIALTY CHEMICAL CO,Vibrantz (Chromaflo legacy) — Ashtabula,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000006,ECHO,110000591636,VIBRANTZ COLOR SOLUTIONS INC. (0204010285),Vibrantz (Chromaflo legacy) — Ashtabula,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000017,ECHO,110071369154,DUPLICATE PROFILE - DO NOT USE,Ace Rubber Products — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000022,ECHO,110043585260,SPINE MATRIX INC,Ravizza Packaging USA Corp. — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000025,ECHO,110004599596,ENTERPRISE RUBBER INC,"Enterprise Rubber, Inc. — Akron",applied,
+SITE-000027,ECHO,110004690308,CRAWFORD CO,The M. F. Murdock Co. — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000028,ECHO,110007719549,GENERAL TIRE AND RUBBER CO TECHNICAL CTR,"Akron Rubber Development Laboratory, Inc. — Akron",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000028,ECHO,110004720384,AKRON RUBBER DEVELOPMENT LABORATORY INC,"Akron Rubber Development Laboratory, Inc. — Akron",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000031,ECHO,110001625180,AKRON PORCELAIN & PLASTICS CO.,Akron Porcelain & Plastics Co. — Akron,applied,
+SITE-000034,OSHA,OSHAE-9e2f560ff7,"AKRON POLYMER PRODUCTS, INC.",Akron Polymer Products — Akron,held,Inspection corroboration only; no requested output field.
+SITE-000034,ECHO,110004711660,AKRON POLYMER PRODUCTS,Akron Polymer Products — Akron,applied,
+SITE-000038,ECHO,110006267887,PIONEER PLASTICS CORP.-PIONEER PLASTICS INC,Pioneer Plastics Corp. — Akron,applied,
+SITE-000039,ITA,82725,Landmark Plastic Corporation - Akron Ohio Location | Landmark Plastic Corp,Landmark Plastic Corp. — Akron,applied,
+SITE-000039,OSHA,OSHAE-aa8e86853d,LANDMARK PLASTIC CORPORATION,Landmark Plastic Corp. — Akron,held,Inspection corroboration only; no requested output field.
+SITE-000044,ITA,422710,"Akron Paint & Varnish, Inc. | Akron Paint & Varnish, Inc.",APV Engineered Coatings — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000044,ECHO,110000389231,AKRON PAINT AND VARNISH,APV Engineered Coatings — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000048,ITA,87258,Akrochem Corporation - Embassy | Akrochem Corporation,Akrochem Corp. — Akron,applied,
+SITE-000048,ECHO,110070832646,AKROCHEM CORPORATION,Akrochem Corp. — Akron,applied,
+SITE-000057,ECHO,110010739772,SMITHERS OASIS CO,Smithers-Oasis Co. — Cuyahoga Falls,applied,
+SITE-000063,ECHO,110007712751,COLTENE-WHALEDENT,Akron Gasket — Tallmadge,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000069,ITA,1523074,"8027335-Design Molded Plastics - Macedonia, OH | SIMOS Insourcing Solutions, LLC",Design Molded Plastics — Macedonia,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000069,ITA,1494523,Design Molded Products | Design Molded Products,Design Molded Plastics — Macedonia,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000072,OSHA,OSHAE-bba2d8aaff,"STEWART ACQUISITION, LLC",Cima Plastics Group — Twinsburg,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000072,ECHO,110057070814,P3 INFRASTRUCTURE INC,Cima Plastics Group — Twinsburg,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000074,ITA,1539471,MRP Solutions | MRP Solutions,MRP Solutions — Twinsburg,applied,
+SITE-000074,OSHA,OSHAE-49a0e2d446,"WEATHERCHEM, LLC",MRP Solutions — Twinsburg,held,Inspection corroboration only; no requested output field.
+SITE-000074,ECHO,110004615514,WEATHERCHEM CORP,MRP Solutions — Twinsburg,applied,
+SITE-000081,ECHO,110071894237,"NOVEX, INC","Novex, Inc. — Barberton",applied,
+SITE-000082,ITA,80356,Barberton Ohio Plant | Merryweather Foam Inc.,"Merryweather Foam, Inc. — Barberton",applied,
+SITE-000082,ECHO,110046262021,MERRYWEATHER FOAM INC,"Merryweather Foam, Inc. — Barberton",applied,
+SITE-000083,ECHO,110058931054,3960 WAREHOUSE LLC,"Michael Day Enterprises, LLC — Norton",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000083,ECHO,110001625411,ADJUSTA-POST LIGHTING COMPANY,"Michael Day Enterprises, LLC — Norton",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000086,ECHO,110000388517,RUBBER ASSOCIATES INC,"Rubber Associates, Inc. — Barberton",applied,
+SITE-000101,ITA,1470299,Polymerics Inc. Cuyahoga Falls | Polymerics Inc.,"Polymerics, Inc. — Cuyahoga Falls",applied,
+SITE-000101,OSHA,OSHAE-ce92c914af,POLYMERICS INC.,"Polymerics, Inc. — Cuyahoga Falls",held,Inspection corroboration only; no requested output field.
+SITE-000105,OSHA,OSHAE-7a9bcd218f,INNOVATIONS IN PLASTICS INC.,PharoPLAST — Cleveland,held,Inspection corroboration only; no requested output field.
+SITE-000107,ECHO,110002110910,CLEVELAND COCA-COLA BOTTLING CO INC,HP Manufacturing — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000114,OSHA,OSHAE-ab4ff6be9b,CUYAHOGA MOLDED PLASTICS CORPORATION,Cuyahoga Plastics — Euclid,held,Inspection corroboration only; no requested output field.
+SITE-000114,ECHO,110000766751,CUYAHOGA MOLDED PLASTICS CORPORATION (1318201452),Cuyahoga Plastics — Euclid,applied,
+SITE-000117,ECHO,110070049921,"GSH INDUSTRIES, INC.",GSH Industries — Strongsville,applied,
+SITE-000118,ITA,1273532,"Mechanical Rubber Ohio, LLC | Mechanical Rubber Ohio, LLC",Mechanical Rubber — Strongsville,applied,
+SITE-000118,ECHO,110046589857,DUROX CO,Mechanical Rubber — Strongsville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000119,OSHA,OSHAE-4d3e117c60,"MOLDING DYNAMICS, INC.",Molding Dynamics — Bedford,held,Inspection corroboration only; no requested output field.
+SITE-000129,ECHO,110004699737,STAINING SYSTEMS VALLEY VIEW,Peak Nano — Valley View,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000134,ITA,1355678,"FOAM SEAL, INC. | FOAM SEAL, INC.",Novagard Solutions — Cleveland,applied,
+SITE-000134,OSHA,OSHAE-7d7721c57f,"NOVAGARD SOLUTIONS, INC",Novagard Solutions — Cleveland,held,Inspection corroboration only; no requested output field.
+SITE-000134,ECHO,110040757204,NOVAGARD SOLUTIONS INC,Novagard Solutions — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000134,ECHO,110002110901,PRESTOLITE ELECTRIC INC LEECE-NEVILLE DIV,Novagard Solutions — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000138,ITA,1454209,Permatex - Solon | ITW,Permatex — Solon,held,"Need corrected/reliable ITA count: reliability=review, annual average=238."
+SITE-000138,ECHO,110072166762,LOCTITE DISTRIBUTION CENTER,Permatex — Solon,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000138,ECHO,110009430311,ITW PERMATEX INC,Permatex — Solon,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000149,ITA,1477395,"Indelco Plastics Corp - Euclid | FCG Acquisitions, Inc.",Indelco Plastics — Euclid,applied,
+SITE-000153,ECHO,110004733646,MOEN INCORPORATED,Moen — North Olmsted,applied,
+SITE-000164,ECHO,110013865291,CLEVELAND CLINIC FOUNDATION,Cleveland Clinic — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000164,ECHO,110063155482,CLEVELAND CLINIC,Cleveland Clinic — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000182,ECHO,110006269313,HARWOOD RUBBER PRODUCTS INC,Harwood Rubber Products — Cuyahoga Falls,applied,
+SITE-000186,ECHO,110009640638,JET RUBBER COMPANY,Jet Rubber Company — Rootstown,applied,
+SITE-000195,ECHO,110004707924,UNIVERSAL POLYMER & RUBBER,Universal Polymer & Rubber — Middlefield,applied,
+SITE-000198,OSHA,OSHAE-0d5fecdbc9,OHIO ELASTOMERS INC.,Ohio Elastomers — Perry,held,Inspection corroboration only; no requested output field.
+SITE-000201,ITA,751458,SALEM REPUBLIC RUBBER COMPANY,Salem-Republic Rubber — Sebring,applied,
+SITE-000201,OSHA,OSHAE-87cc616081,SALEM-REPUBLIC RUBBER COMPANY,Salem-Republic Rubber — Sebring,held,Inspection corroboration only; no requested output field.
+SITE-000201,ECHO,110006450535,SALEM REPUBLIC RUBBER CO,Salem-Republic Rubber — Sebring,applied,
+SITE-000206,ECHO,110000390942,SEAMAN CORPORATION (0285030351),Seaman Corporation — Wooster,applied,
+SITE-000208,OSHA,OSHAE-5b12901571,"ASC ENGINEERED SOLUTIONS, LLC",Ashtabula Rubber — Ashtabula,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000208,OSHA,OSHAE-1231bd67ab,ASHTABULA RUBBER CO.,Ashtabula Rubber — Ashtabula,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000208,ECHO,110000385093,ASHTABULA RUBBER CO INC,Ashtabula Rubber — Ashtabula,applied,
+SITE-000223,ECHO,110071956419,ADDIPEL,Addipel — Elyria,held,Registry identity already linked; no duplicate append.
+SITE-000228,ITA,1266139,"Advanced Polymer Coatings | Advanced Polymer Coatings, Ltd.",Advanced Polymer Coatings — Avon,held,Existing band preserved; blank field required.
+SITE-000228,ECHO,110004701378,"ADVANCED POLYMER COATINGS, INC.",Advanced Polymer Coatings — Avon,held,Registry identity already linked; no duplicate append.
+SITE-000233,ECHO,110015666992,AKRO-PLASTICS,Akro-Plastics — Kent,held,Registry identity already linked; no duplicate append.
+SITE-000238,ECHO,110000390229,"ALLIANCE EQUIPMENT COMPANY, INC. (1576011516)","Alliance Equipment Company, Inc. — Alliance",applied,
+SITE-000239,ITA,427380,Allpass Corporation | Allpass Corporation,Allpass Corporation — Madison,held,Existing band preserved; blank field required.
+SITE-000240,ITA,818456,"Alttran, Inc. | ALTTRAN, INC.",Alttran — Hudson,held,Existing band preserved; blank field required.
+SITE-000240,OSHA,OSHAE-ec97efc300,"ALTTRAN, INC.",Alttran — Hudson,held,Inspection corroboration only; no requested output field.
+SITE-000240,ECHO,110015833767,TRUFORM RUBBER PRODUCTS,Alttran — Hudson,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000244,ECHO,110002111063,AMERICAN WIRE & CABLE CO.,American Wire & Cable — Olmsted Falls,held,Registry identity already linked; no duplicate append.
+SITE-000246,ECHO,110070122366,APPLIED MEDICAL TECHNOLOGY INC,"Applied Medical Technology, Inc. — Brecksville",applied,
+SITE-000248,ECHO,110000701688,DANTO ENVIRONMENTAL CORP,Architectural Fiberglass — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000248,ECHO,110006519026,ARCHITECTURAL FIBERGLASS INC. (1318008262),Architectural Fiberglass — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000248,ECHO,110009425773,THERMAL TRON INC,Architectural Fiberglass — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000250,ITA,1433741,Central MFG | Associated Materials LLC,Associated Materials — Cuyahoga Falls,held,Need resolution of ITA versus inspection disagreement exceeding one employee band (R13).
+SITE-000250,OSHA,OSHAE-f8f9e14869,ASSOCIATED MATERIALS LLC,Associated Materials — Cuyahoga Falls,held,Inspection corroboration only; no requested output field.
+SITE-000250,ECHO,110033595125,PREMIUM GARAGE DOOR CO,Associated Materials — Cuyahoga Falls,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000258,ITA,942833,"Barentz North America, LLC. | Barentz North America, LLC.",Barentz — Avon,held,"Need corrected/reliable ITA count: reliability=review, annual average=103."
+SITE-000258,ECHO,110012554770,MAROON INCORPORATED,Barentz — Avon,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000262,ITA,82049,BioThane Coated Webbing Corporation HQ,Biothane Coated Webbing — North Ridgeville,held,Existing band preserved; blank field required.
+SITE-000262,ECHO,110004705089,ACTION TECHNOLOGY,Biothane Coated Webbing — North Ridgeville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000262,ECHO,110037614720,BIOTHANE COATED WEBBING,Biothane Coated Webbing — North Ridgeville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000263,OSHA,OSHAE-d04a5885be,"BLADE-TECH INDUSTRIES, INC.",Blade-tech Industries — Streetsboro,held,Inspection corroboration only; no requested output field.
+SITE-000264,ECHO,110070551335,BLAIR RUBBER COMPANY,Blair Rubber — Seville,held,Registry identity already linked; no duplicate append.
+SITE-000269,ECHO,110010700214,OMG AMERICAS,Borchers: A Milliken Brand — Westlake,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000271,ITA,101047,"Buckeye Packaging Co., Inc. | Buckeye Packaging Co., Inc.","Buckeye Packaging Co., Inc. — Alliance",held,Existing band preserved; blank field required.
+SITE-000276,ITA,1074486,CANTEX INC. | CANTEX INC.,CANTEX — Aurora,held,Existing band preserved; blank field required.
+SITE-000276,OSHA,OSHAE-b7f3e53322,CANTEX INC.,CANTEX — Aurora,held,Inspection corroboration only; no requested output field.
+SITE-000276,ECHO,110025332842,AURORA PLASTICS INC,CANTEX — Aurora,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000276,ECHO,110002111198,LAMSON & SESSIONS INC AURORA PLANT,CANTEX — Aurora,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000276,ECHO,110051454742,"CANTEX, INC.-CANTEX INC",CANTEX — Aurora,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000278,ITA,1524168,Carbon Polymers Company | Carbon Polymers Company,Carbon Polymers Company — Lodi,held,Existing band preserved; blank field required.
+SITE-000284,ITA,559949,"Current Lighting Ivanhoe Road Plant | Current Lighting Holdco., Inc.",Cermetech LLC — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000284,ECHO,110000386868,GENERAL ELECTRIC CONSUMER PRODS   LIGHTING,Cermetech LLC — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000287,ITA,1469311,Chardon Custom Polymers | Richards Manufacturing Co. Sales LLC,Chardon Rubber Company — Chardon,held,Need resolution of ITA versus inspection disagreement exceeding one employee band (R13).
+SITE-000287,OSHA,OSHAE-20d298b2ef,CHARDON CUSTOM POLYMERS LLC,Chardon Rubber Company — Chardon,held,Inspection corroboration only; no requested output field.
+SITE-000287,ECHO,110000617468,CHARDON CUSTOM POLYMERS,Chardon Rubber Company — Chardon,held,Need resolution of ITA versus inspection disagreement exceeding one employee band (R13).
+SITE-000289,ITA,1253623,"Chem Technologies, Ltd. | Chem Technologies, Ltd.",Chem Tech — Middlefield,held,Existing band preserved; blank field required.
+SITE-000289,ECHO,110006538853,CHEM TECHNOLOGIES LTD.,Chem Tech — Middlefield,held,Registry identity already linked; no duplicate append.
+SITE-000293,ECHO,110042148967,CHEMDEVELOPMENT PLANT 2,"Chemsultants International, Inc. — Mentor",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000298,ITA,106030,Colonial Machine Company | Colonial Machine Company,Colonial Machine — Kent,held,Existing band preserved; blank field required.
+SITE-000303,ECHO,110031434213,COMPOSITES ONE LLC,Composites One LLC — Ashtabula,held,Registry identity already linked; no duplicate append.
+SITE-000305,ECHO,110002452603,CONTAINER COMPLIANCE CORP,Container Compliance — Cleveland,applied,
+SITE-000307,ECHO,110004600183,PORTAGE NEWSPAPER SUPPLY CO,"Corporate Consulting Service Instruments, Inc. — Akron",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000310,ECHO,110004631122,CPC PACKAGING INC,CPC Bags — Elyria,applied,
+SITE-000316,ECHO,110004720268,DARTECH INC,"Dar-Tech, Inc. — Maple Heights",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000316,ECHO,110004659218,LUBRIZOL CORP,"Dar-Tech, Inc. — Maple Heights",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000316,ECHO,110009450691,QUADRA CHEMICALS INC,"Dar-Tech, Inc. — Maple Heights",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000318,OSHA,OSHAE-adf33a07a4,"DISKIN ENTERPRISES, LLC",Dca Construction Products — Garrettsville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000319,ITA,78151,"United Initiators, Inc (Elyria, Oh) | United Initiators, Inc",Degussa Initiators — Elyria,held,Existing band preserved; blank field required.
+SITE-000319,ECHO,110000385404,DEGUSSA INITIATORS INC,Degussa Initiators — Elyria,applied,
+SITE-000320,ECHO,110004696197,RVR INC,DEM Manufacturing LLC — Newbury,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000321,ECHO,110060258625,DERMAMED COATING CO - PLANT 2,"Dermamed Coatings, LLC — Kent",applied,
+SITE-000325,ITA,119745,Dinesol Plastics Inc-Niles | Dinesol Plastics Inc,Dinesol Plastics Inc — Niles,held,Existing band preserved; blank field required.
+SITE-000325,OSHA,OSHAE-a0bd00f736,DINESOL PLASTICS INC.,Dinesol Plastics Inc — Niles,held,Inspection corroboration only; no requested output field.
+SITE-000329,ITA,519774,Dreco Inc | Dreco Inc,Dreco — North Ridgeville,held,Existing band preserved; blank field required.
+SITE-000329,OSHA,OSHAE-a76be8f6e6,"DRECO, INC.",Dreco — North Ridgeville,held,Inspection corroboration only; no requested output field.
+SITE-000331,ITA,901597,Duo-Corp. | Duo-Corp.,Duo-Corp — North Lima,held,Existing band preserved; blank field required.
+SITE-000335,ITA,1087498,Dura-Line,Dura-Line — Elyria,held,Existing band preserved; blank field required.
+SITE-000335,ECHO,110004569468,DURA-LINE,Dura-Line — Elyria,applied,
+SITE-000337,ECHO,110000766644,DURACOTE CORP,DURACOTE IC DISC CORPORATION — Ravenna,applied,
+SITE-000338,ITA,1464507,Duramax Marine LLC,Duramax Marine — Hiram,held,Existing band preserved; blank field required.
+SITE-000338,ECHO,110051639535,DURAMAX MARINE LLC-DURAMAX MARINE LLC,Duramax Marine — Hiram,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000338,ECHO,110006234869,DURAMAX MARINE,Duramax Marine — Hiram,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000340,ECHO,110000388465,"E. L. STONE COMPANY, INC. (1677020039)","E.L. Stone Co., Inc. — Norton",applied,
+SITE-000343,ITA,1333912,ECP Corp DBA Polycase | ECP Corp DBA Polycase,ECP Corp DBA Polycase — Avon,held,Existing band preserved; blank field required.
+SITE-000343,OSHA,OSHAE-2d6150bd07,ECP CORPORATION,ECP Corp DBA Polycase — Avon,held,Inspection corroboration only; no requested output field.
+SITE-000345,ECHO,110004734654,BEARING MODIFICATION,Elite Machinery Systems — Strongsville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000348,ITA,646529,Enterprise Plastics | Enterprise Plastics,Enterprise Plastics — Kent,held,Existing band preserved; blank field required.
+SITE-000348,ECHO,110006281521,PARKER HANNIFIN CORP HOSE PRODUCTS DIV,Enterprise Plastics — Kent,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000357,ECHO,110032654660,EXTRUDEX LIMITED PARTNERSHIP,Extrudex — Painesville,applied,
+SITE-000361,ITA,1437152,Flambeau Middlefield | Flambeau,"Flambeau, Inc. — Middlefield",held,"Need corrected/reliable ITA count: reliability=review, annual average=99."
+SITE-000363,ITA,930413,"Flavorseal, LLC | Hartwood Partners until June 2025 / ShoreView July 2025 to current",Flavorseal — Avon,held,Existing band preserved; blank field required.
+SITE-000363,ECHO,110037438573,FLAVORSEAL LLC,Flavorseal — Avon,applied,
+SITE-000365,ECHO,110004620544,FLEXSYS AMERICA LP  *,Flexsys America L.P. — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000365,ECHO,110064589850,EASTMAN CHEMICAL CO.,Flexsys America L.P. — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000367,ITA,424750,ICP Norton | ICP Building Solutions Group,Fomo Products — Norton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000367,OSHA,OSHAE-bceb0a4519,ICP BUILDING SOLUTIONS LLC,Fomo Products — Norton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000367,ECHO,110000388429,"FOMO PRODUCTS, INC.",Fomo Products — Norton,held,Registry identity already linked; no duplicate append.
+SITE-000370,OSHA,OSHAE-adf33a07a4,"DISKIN ENTERPRISES, LLC",Four Seasons Industries — Garrettsville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000371,ITA,931448,Freeman Manufacturing & Supply Company Avon | Freeman Manufacturing & Supply Co.,Freeman Manufacturing & Supply Company — Avon,held,Existing band preserved; blank field required.
+SITE-000371,OSHA,OSHAE-eb2faa38d1,FREEMAN MANUFACTURING & SUPPLY CO.,Freeman Manufacturing & Supply Company — Avon,held,Inspection corroboration only; no requested output field.
+SITE-000371,ECHO,110000496927,FREEMAN MANUFACTURING & SUPPLY,Freeman Manufacturing & Supply Company — Avon,held,Registry identity already linked; no duplicate append.
+SITE-000378,ECHO,110031249682,GMR TECHNOLOGY INC (0204010490),Gmr Technology — Ashtabula,held,Registry identity already linked; no duplicate append.
+SITE-000379,ECHO,110037437850,GODFREY AND WING LLC,Godfrey & Wing — Aurora,applied,
+SITE-000396,ITA,1124711,Hub Plastics | Hub Plastics Geneva,Hub Plastics — Geneva,held,Existing band preserved; blank field required.
+SITE-000398,ECHO,110000386074,IER INDUSTRIES INC,IER INDUSTRIES INC — Macedonia,applied,
+SITE-000411,ITA,1138960,"Iten Defense | Iten Defense, LLC",Iten Defense — Ashtabula,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000411,ITA,1025163,Iten Industries Inc. (Plant 4) | Iten Industries Inc,Iten Defense — Ashtabula,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000411,ECHO,110004740950,ITEN INDUSTRIES INC PLANT 4,Iten Defense — Ashtabula,held,Registry identity already linked; no duplicate append.
+SITE-000418,ECHO,110006429034,K & B CARD CO,J & O Plastics Inc. — Rittman,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000420,ITA,565202,Jaco-CM | Jaco Manufacturing Co,JACO Manufacturing Co.,held,Existing band preserved; blank field required.
+SITE-000420,ECHO,110004590014,JACO MFG CO,JACO Manufacturing Co.,applied,
+SITE-000431,ECHO,110040833435,KAPCO (1667040151),KAPCO (Kent Adhesive Products Co.),applied,
+SITE-000432,OSHA,OSHAE-745314cd37,THE KARMAN RUBBER COMPANY,Karman Rubber Company — Akron,held,Inspection corroboration only; no requested output field.
+SITE-000432,ECHO,110002111660,KARMAN RUBBER CO,Karman Rubber Company — Akron,applied,
+SITE-000435,ECHO,110004703054,MIDWAY MOLD,Kent Pultrusion — Kent,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000439,ECHO,110009821336,"KILLIAN LATEX, INC.","Killian Latex, Inc. — Akron",held,Registry identity already linked; no duplicate append.
+SITE-000441,ITA,138396,"Kobelco Stewart Bolling, Inc.",Kobelco Stewart Bolling — Hudson,held,Existing band preserved; blank field required.
+SITE-000441,ECHO,110004667281,"KOBELCO STEWART BOLLING, INC. (1677000202)",Kobelco Stewart Bolling — Hudson,held,Registry identity already linked; no duplicate append.
+SITE-000445,ITA,853406,Youngstown - GLI | Latham Pool Products,Latham Pool Products (Youngstown - GLI),held,"Need corrected/reliable ITA count: reliability=review, annual average=244."
+SITE-000449,ECHO,110004731595,LINDEN INDUSTRIES INC EMB,Linden Polyurethane — Cuyahoga Falls,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000450,ITA,1403938,little tikes,Little Tikes — Hudson,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000450,ECHO,110002111349,LITTLE TIKES CO,Little Tikes — Hudson,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000454,ITA,1403938,little tikes,LT Molding Solutions — Hudson,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000454,ECHO,110002111349,LITTLE TIKES CO,LT Molding Solutions — Hudson,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000458,ECHO,110046246344,METAL SEAL PRECISION,"Malish Corp., Plastic Div. — Mentor",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000460,ECHO,110004732219,ANOCAST DIV OF ANORAD CORP,Mar-Bal Inc. — Chagrin Falls,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000461,ITA,983565,Ohio | Mar-Bal Inc.,Mar-Bal Inc. — Painesville,held,Existing band preserved; blank field required.
+SITE-000461,ECHO,110039204349,MAR-BAL INC. (0243112019),Mar-Bal Inc. — Painesville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000461,ECHO,110070244738,"MAR-BAL, INC",Mar-Bal Inc. — Painesville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000462,ECHO,110004597240,"MERCURY PLASTICS, LLC",Masco (Mercury Plastics),held,Registry identity already linked; no duplicate append.
+SITE-000464,ITA,47796,McCann Plastics LLC | McCann Plastics LLC,McCann Plastics — North Canton,held,Existing band preserved; blank field required.
+SITE-000464,ECHO,110009633218,"MCCANN PLASTICS, INC.",McCann Plastics — North Canton,held,Registry identity already linked; no duplicate append.
+SITE-000468,ECHO,110009489507,ROSEMAR INDUSTRIES INC OF OHIO,Metalcrete Industries — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000470,ITA,1476051,SAG  NA NM MT Stow | The Goodyear Tire & Rubber Company,Mickey Thompson Tire and Wheels — Stow,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000475,ECHO,110004700039,UDELSON EQUIPMENT,Midwest Industrial Products Corporation — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000477,ECHO,110004591139,AMERICAN GREETINGS CORP,"MMI Textiles, Inc. — Brooklyn",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000486,ITA,1092165,"Montville Plastics & Rubber, LLC | Montville Plastics and Rubber, LLC",Montville Plastics & Rubber — Parkman,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000486,ITA,1566749,Montville Plastics and Rubber | Montville Plastics and Rubber,Montville Plastics & Rubber — Parkman,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000486,OSHA,OSHAE-1239bbdaa5,"MONTVILLE PLASTICS & RUBBER, LLC",Montville Plastics & Rubber — Parkman,held,Inspection corroboration only; no requested output field.
+SITE-000487,OSHA,OSHAE-fe63bd168b,"MUM INDUSTRIES, INC.","MUM Industries, Inc. — Mentor",held,Inspection corroboration only; no requested output field.
+SITE-000490,ITA,314305,Neff-Perkins Co. | Neff-Perkins Co.,Neff-Perkins Company — Middlefield,held,Existing band preserved; blank field required.
+SITE-000490,OSHA,OSHAE-b29ade8e92,NEFF-PERKINS COMPANY,Neff-Perkins Company — Middlefield,held,Inspection corroboration only; no requested output field.
+SITE-000490,ECHO,110004690941,NEFF-PERKINS,Neff-Perkins Company — Middlefield,applied,
+SITE-000494,ECHO,110046273938,NEXT DIMENSION COMPONENTS,Next Dimension Components — Jefferson,held,Registry identity already linked; no duplicate append.
+SITE-000496,ITA,903701,"Nippon Paint Automotive Americas, Inc. - Cleveland | Nippon Paint Automotive Americas, Inc.",Nippon Paint Automotive Americas — Cleveland,held,Existing band preserved; blank field required.
+SITE-000496,OSHA,OSHAE-d7edfd5298,"NIPPON PAINT AUTOMOTIVE AMERICAS, INC.",Nippon Paint Automotive Americas — Cleveland,held,Inspection corroboration only; no requested output field.
+SITE-000496,ECHO,110024837186,PROTECH POWDER COATINGS,Nippon Paint Automotive Americas — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000498,ECHO,110004664578,NORTH AMERICAN COATING LABORATORIES,North American Coating Laboratories — Mentor,applied,
+SITE-000502,ECHO,110070526506,NOVA FILMS & FOILS INC,"Nova Films & Foils, Inc. — Bedford",applied,
+SITE-000503,ECHO,110001624332,SCHNEIDER LUMBER CO,Novis Works LLC — Canton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000503,ECHO,110063382904,NOVIS WORKS LLC,Novis Works LLC — Canton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000503,ECHO,110070550794,"MT SYSTEMS, INC",Novis Works LLC — Canton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000505,ITA,1183156,IPG - Middlefield | Oldcastle Infrastructure,Oldcastle Infrastructure (IPG - Middlefield),held,Existing band preserved; blank field required.
+SITE-000506,OSHA,OSHAE-9382333859,ORBIS CORPORATION,ORBIS Corp. — Mentor,held,Inspection corroboration only; no requested output field.
+SITE-000506,ECHO,110038273365,STP PRODUCTS MFG CO,ORBIS Corp. — Mentor,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000512,ECHO,110004663515,CLEVELAND PRINTING INK CORP,"Pace Converting Equipment Co., Inc. — Cleveland",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000521,OSHA,OSHAE-09b690792e,PET PROCESSORS LLC.,PET Processors LLC — Painesville,held,Inspection corroboration only; no requested output field.
+SITE-000521,ECHO,110040373798,JJI TECHNOLOGIES LLC,PET Processors LLC — Painesville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000521,ECHO,110000385930,"PET PROCESSORS, L.L.C. (0243000165)",PET Processors LLC — Painesville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000523,ITA,119793,Pharmacy-Lite Prescription Packaging - Ohio Plant | Pharmacy-Lite Packaging,"Pacific Management Holdings, LLC d/b/a Pharmacy-Lite Packaging",held,Existing band preserved; blank field required.
+SITE-000523,OSHA,OSHAE-4a307692e0,PACIFIC MANAGEMENT HOLDINGS,"Pacific Management Holdings, LLC d/b/a Pharmacy-Lite Packaging",held,Inspection corroboration only; no requested output field.
+SITE-000529,OSHA,OSHAE-0fc33600a1,PLASTIC EXTRUSION TECHNOLOGIES LIMITED,Plastic Extrusion Technologies — Middlefield,held,Inspection corroboration only; no requested output field.
+SITE-000530,ECHO,110000825803,PLASTIC PLATERS INC,Plastic Platers — Brooklyn,applied,
+SITE-000531,ITA,912681,PLASTICS R UNIQUE INC | PLASTICS R UNIQUE INC,Plastics R Unique — Wadsworth,held,Existing band preserved; blank field required.
+SITE-000538,ITA,1182550,"Greenbridge- Mentor, OH | Polychem LLC",Greenbridge — Mentor (HQ & manufacturing),held,Existing band preserved; blank field required.
+SITE-000538,OSHA,OSHAE-abec155479,POLYCHEM LLC,Greenbridge — Mentor (HQ & manufacturing),held,Inspection corroboration only; no requested output field.
+SITE-000539,OSHA,OSHAE-d207c5c267,POLYCHEM DISPERSIONS INC,"Polychem Dispersions, Inc. — Middlefield",held,Inspection corroboration only; no requested output field.
+SITE-000540,ITA,1182499,"Polychem LLC - Greenbridge - Plant - Cleveland, OH | Polychem LLC",Greenbridge Cleveland — Executive Offices & Manufacturing Facility,held,Existing band preserved; blank field required.
+SITE-000540,ECHO,110009425229,PARK OHIO PRODUCTS INC,Greenbridge Cleveland — Executive Offices & Manufacturing Facility,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000540,ECHO,110004627903,LAMSON & SESSIONS CO,Greenbridge Cleveland — Executive Offices & Manufacturing Facility,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000542,OSHA,OSHAE-4b4969ea8c,MEGA PLASTICS CO.,Polymer 5 — Garrettsville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000542,ECHO,110004632684,WILTON TOOL COMPANY,Polymer 5 — Garrettsville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000546,ECHO,110031000627,VEKA INNOVATIONS,"PolyStamp, LLC. — Youngstown",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000547,ECHO,110009634495,POLYSTAR INC,Polystar Containment — Stow,held,Registry identity already linked; no duplicate append.
+SITE-000549,ECHO,110004590568,HYNES INDUSTRIES INC,"Precision Foam Fabrication, Inc. — Youngstown",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000558,ITA,924674,Premix-Hadlock Composites - Geneva | Premix-Hadlock Composites,Premix-Hadlock Composites - Geneva,held,Existing band preserved; blank field required.
+SITE-000558,ECHO,110000385565,PREMIX-HADLOCK COMPOSITES LLC,Premix-Hadlock Composites - Geneva,held,Registry identity already linked; no duplicate append.
+SITE-000559,ITA,1441852,Cleveland Ohio- Pretium Packaging | Pretium Packaging,Pretium Packaging,held,Existing band preserved; blank field required.
+SITE-000561,OSHA,OSHAE-f3de740110,"PROFILE PLASTICS, INC.","Profile Plastics, Inc. — Canton",held,Inspection corroboration only; no requested output field.
+SITE-000564,ECHO,110004590327,PROMERUS LLC,Promerus — Akron,held,Registry identity already linked; no duplicate append.
+SITE-000565,ECHO,110004591834,AKROMOLD INC,"Prospect Mold, Inc. — Cuyahoga Falls",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000567,ECHO,110017776067,Q-PANEL LAB PRODUCTS,Q-Lab Corporation — Westlake,applied,
+SITE-000568,ECHO,110010701437,HARSHAW FILTROL PARTNERSHIP,Q Medical Devices — Pepper Pike,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000569,ITA,1503293,Qnity Cleveland Laird Plant | Qnity Electronics,Qnity Cleveland Laird Plant — Cleveland,held,Existing band preserved; blank field required.
+SITE-000569,ECHO,110041349181,LAIRD TECHNOLOGIES,Qnity Cleveland Laird Plant — Cleveland,applied,
+SITE-000570,ITA,1420332,"Med Inc. TWI | Medical Elastomer Development, Inc.",Quality Synthetic Rubber — Twinsburg,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000570,OSHA,OSHAE-abd73b219d,QUALITY SYNTHETIC RUBBER INC,Quality Synthetic Rubber — Twinsburg,held,Inspection corroboration only; no requested output field.
+SITE-000570,ECHO,110002110448,QUALITY SYNTHETIC RUBBER INC,Quality Synthetic Rubber — Twinsburg,applied,
+SITE-000573,ECHO,110004569155,RAINBOW PRINTING CO.,Rainbow Printing — Uniontown,applied,
+SITE-000575,ECHO,110066859590,RAUH POLYMERS,Rauh Polymers — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000575,ECHO,110016686157,ENGINEERED PLASTICS,Rauh Polymers — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000579,ITA,71448,REFCOTEC | Refractory Coating Technoligies Inc DBA REFCOTEC,Refcotec — Orrville,held,Existing band preserved; blank field required.
+SITE-000579,ECHO,110000390746,REFCOTEC INC,Refcotec — Orrville,held,Registry identity already linked; no duplicate append.
+SITE-000580,OSHA,OSHAE-114d15bbda,REMINGTON PRODUCTS COMPANY,Foundation Wellness — Wadsworth,held,Inspection corroboration only; no requested output field.
+SITE-000580,ECHO,110012175243,REMINGTON PRODUCTS COMPANY,Foundation Wellness — Wadsworth,held,Registry identity already linked; no duplicate append.
+SITE-000584,ITA,911918,LANXESS Corporation | Lanxess Corporation,Rhein Chemie — Chardon,held,Existing band preserved; blank field required.
+SITE-000584,ECHO,110000385324,RHEIN CHEMIE CORP,Rhein Chemie — Chardon,held,Registry identity already linked; no duplicate append.
+SITE-000586,ITA,1431746,Robin Industries Frededricksburg | Robin Industries,"Robin Industries, Inc. — Fredericksburg",held,Existing band preserved; blank field required.
+SITE-000586,ECHO,110007716622,ROBIN INDUSTRIES,"Robin Industries, Inc. — Fredericksburg",held,Registry identity already linked; no duplicate append.
+SITE-000587,ITA,1437508,"Robin Industries, Robin Development Center | Robin Industries","Robin Industries, Inc. — North Canton (HQ)",applied,
+SITE-000587,ECHO,110043694366,LYONDELLBASELL ADVANCED POLYMERS INC.,"Robin Industries, Inc. — North Canton (HQ)",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000590,ECHO,110004731112,"ROGERS INDUSTRIAL PRODUCTS, INC.",Rogers Industrial Products — Akron,held,Registry identity already linked; no duplicate append.
+SITE-000591,OSHA,OSHAE-678f4e9be5,"ROYAL PLASTICS, INC.","Royal Plastics, Inc. — Mentor",held,Inspection corroboration only; no requested output field.
+SITE-000591,ECHO,110004609512,ROYAL PLASTICS INC,"Royal Plastics, Inc. — Mentor",applied,
+SITE-000601,ITA,956890,"Schneller, LLC | Schneller, LLC",Schneller LLC — Kent,held,Existing band preserved; blank field required.
+SITE-000601,ECHO,110000840485,SCHNELLER LLC (1667040015),Schneller LLC — Kent,held,Registry identity already linked; no duplicate append.
+SITE-000608,ITA,407459,"Shin-Etsu Silicones of America, Inc. Damar | Shin-Etsu Silicones of America, Inc.","Shin-Etsu Silicones of America, Inc. — Akron",held,Existing band preserved; blank field required.
+SITE-000608,ECHO,110004577565,"SHIN-ETSU SILICONES OF AMERICA, INC.","Shin-Etsu Silicones of America, Inc. — Akron",held,Registry identity already linked; no duplicate append.
+SITE-000611,ITA,1079140,"Silco, Inc. | Silco, Inc.","Silco, Inc. — Mentor",applied,
+SITE-000614,ECHO,110009670365,TECHNICAL MACHINE PRODUCTS,Soberay & Sons Ltd — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000615,ITA,1457757,Windows & Doors - Streetsboro | Softlite Windows and Doors- Streetsboro,Soft-lite — Streetsboro,held,Existing band preserved; blank field required.
+SITE-000615,ECHO,110070516329,SOFT-LITE LLC,Soft-lite — Streetsboro,held,Registry identity already linked; no duplicate append.
+SITE-000619,OSHA,OSHAE-1e7b260210,SPECIALTY HOSE CORPORATION,Specialty Hose Corp. — North Canton,held,Inspection corroboration only; no requested output field.
+SITE-000621,ITA,1093384,Spencer Industries Incorporated - Elyria Location | Spencer Industries Incorporated,Spencer Industries Incorporated — Elyria,held,Existing band preserved; blank field required.
+SITE-000625,ITA,453569,"Corporate Manufacturing Facility | Keuchel Associates, Inc./Spunfab, Ltd.",Spunfab Ltd — Cuyahoga Falls,held,Existing band preserved; blank field required.
+SITE-000625,ECHO,110069328230,"SPUN FAB, LTD / KEUCHEL & ASSOCIATES, INC.",Spunfab Ltd — Cuyahoga Falls,held,Registry identity already linked; no duplicate append.
+SITE-000627,ITA,43953,"Steere | Steere Enterprises, Inc",Steere Enterprises — Tallmadge,held,"Need corrected/reliable ITA count: reliability=review, annual average=191."
+SITE-000627,OSHA,OSHAE-8f6203eb17,"STEERE ENTERPRISES, INC.",Steere Enterprises — Tallmadge,held,Inspection corroboration only; no requested output field.
+SITE-000627,ECHO,110000389099,STEERE ENTERPRISES INC,Steere Enterprises — Tallmadge,applied,
+SITE-000628,OSHA,OSHAE-cfadbf6f6d,"THE STEP2 COMPANY, LLC",The Step 2 Company — Streetsboro,held,Inspection corroboration only; no requested output field.
+SITE-000628,ECHO,110002111376,"THE STEP 2 COMPANY, LLC",The Step 2 Company — Streetsboro,applied,
+SITE-000630,ITA,1082165,"Storopack, Inc. - Cleveland | Storopack, Inc.","Storopack, Inc. - Cleveland",held,Existing band preserved; blank field required.
+SITE-000630,ECHO,110020689708,"STOROPACK, INC.","Storopack, Inc. - Cleveland",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000630,ECHO,110004624167,ARROW ALUMINUM CASTINGS COMPANY,"Storopack, Inc. - Cleveland",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000634,ECHO,110071381043,SYSTEM SEALS INC,System Seals — Brecksville,held,Registry identity already linked; no duplicate append.
+SITE-000637,ECHO,110043989020,TEAM WENDY LLC,Team Wendy — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000637,ECHO,110037143631,TEAM WENDY LLC,Team Wendy — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000646,ECHO,110022571536,"THIRD DIMENSION, INC.","THIRD DIMENSION, INC. — Geneva",held,Registry identity already linked; no duplicate append.
+SITE-000651,ITA,1247391,"Treemen Industries, Inc.",Treemen Industries — Boardman,held,Existing band preserved; blank field required.
+SITE-000651,ECHO,110012265627,TREEMEN INDUSTRIES INC,Treemen Industries — Boardman,held,Registry identity already linked; no duplicate append.
+SITE-000655,ITA,937006,Tri-Craft Incorporated | Tri-Craft Incorporated,"Tri-Craft, Inc. — Middleburg Heights",held,Existing band preserved; blank field required.
+SITE-000655,ECHO,110072291231,TRI-CRAFT INC,"Tri-Craft, Inc. — Middleburg Heights",applied,
+SITE-000657,ECHO,110046559434,"TRIBOTECH COMPOSITES, INC.",Tribotech Composites — Valley View,held,Registry identity already linked; no duplicate append.
+SITE-000658,ITA,257207,Tymex Plastics Inc | Tymex Plastics Inc,Tymex Plastics — Cleveland,held,Existing band preserved; blank field required.
+SITE-000658,OSHA,OSHAE-833866cdb0,TYMEX PLASTICS INC.,Tymex Plastics — Cleveland,held,Inspection corroboration only; no requested output field.
+SITE-000658,ECHO,110000386644,BLUE CORAL/SLICK 50,Tymex Plastics — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000664,ECHO,110001624582,UNIWALL MFG. CO. (1576111601),Uniwall Mfg — Louisville,held,Registry identity already linked; no duplicate append.
+SITE-000665,ECHO,110002111768,TAYLOR-WINFIELD CORP,Uway Extrusion LLC — Warren,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000670,OSHA,OSHAE-c4849eada4,"WALTON PLASTICS, INC.",Walton Plastics — Walton Hills,held,Inspection corroboration only; no requested output field.
+SITE-000670,ECHO,110070207909,WALTON PLASTICS INC,Walton Plastics — Walton Hills,held,Registry identity already linked; no duplicate append.
+SITE-000671,ECHO,110004589801,WATERLOX COATINGS CORPORATION,Waterlox Coatings Corporation — Cleveland,held,Registry identity already linked; no duplicate append.
+SITE-000672,OSHA,OSHAE-016da940e5,ELITE ELASTOMERS OF OHIO LLC,Wayne County Rubber — Wooster,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000672,ECHO,110071334141,WOOSTER ELASTOMERS LLC,Wayne County Rubber — Wooster,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000672,ECHO,110009619207,WAYNE COUNTY RUBBER INC.,Wayne County Rubber — Wooster,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000673,ITA,214124,"WEST & BARKER, INC. | WEST & BARKER, INC.",West & Barker — Niles,held,Existing band preserved; blank field required.
+SITE-000673,OSHA,OSHAE-5cde5c375d,"WEST & BARKER, INC",West & Barker — Niles,held,Inspection corroboration only; no requested output field.
+SITE-000676,ECHO,110000390988,THE WOOSTER BRUSH COMPANY,THE WOOSTER BRUSH COMPANY — Wooster,applied,
+SITE-000680,ITA,1326562,Yokohama Industries Americas Ohio | Yokohama Industries Americas,Yokohama Industries Americas Ohio,applied,
+SITE-000680,ECHO,110000385967,"YOKOHAMA INDUSTRIES AMERICAS OHIO, INC. (0243110176)",Yokohama Industries Americas Ohio,applied,
+SITE-000681,ITA,1059629,"Yokohama TWS - Akron, OH (TWS) | Yokohama TWS North America, INC","Yokohama TWS North America, Inc. — Akron",held,Need resolution of ITA versus inspection disagreement exceeding one employee band (R13).
+SITE-000681,OSHA,OSHAE-e8e7cdd3f9,"YOKOHAMA TWS NORTH AMERICA, INC.","Yokohama TWS North America, Inc. — Akron",held,Inspection corroboration only; no requested output field.
+SITE-000681,ECHO,110044954485,"YOKOHAMA TWS NORTH AMERICA, INC. (1677011244)","Yokohama TWS North America, Inc. — Akron",held,Need resolution of ITA versus inspection disagreement exceeding one employee band (R13).
+SITE-000683,OSHA,OSHAE-35cd9a369a,ZEHRCO-GIANCOLA COMPOSITES INC.,Zehrco-Giancola Composites — Ashtabula,held,Inspection corroboration only; no requested output field.
+SITE-000683,ECHO,110000385128,ZEHRCO-GIANCOLA COMPOSITES INC,Zehrco-Giancola Composites — Ashtabula,applied,
+SITE-000691,ITA,1562529,A Packaging Group | A Packaging Group,A Packaging Group — Defiance,held,Existing band preserved; blank field required.
+SITE-000698,ITA,1000461,New Miami | Advanced Drainage Systems,Advanced Drainage Systems (New Miami),held,Existing band preserved; blank field required.
+SITE-000698,OSHA,OSHAE-52500e7870,ADS ADVANCED DRAINAGE SYSTEMS INC.,Advanced Drainage Systems (New Miami),held,Inspection corroboration only; no requested output field.
+SITE-000698,ECHO,110004691218,ADVANCED DRAINAGE SYSTEMS- BUTLER-ADVANCED DRAINAGE SYSTEMS,Advanced Drainage Systems (New Miami),applied,
+SITE-000701,ITA,1424229,"Advanced Technology Products, Inc. | ATP",Advanced Technology Products — Milford Center,held,Existing band preserved; blank field required.
+SITE-000721,ITA,1089911,Americas Styrenics LLC - Marietta | Americas Styrenics LLC,Americas Styrenics — Marietta,held,Existing band preserved; blank field required.
+SITE-000721,ECHO,110008469754,AMERICAS STYRENICS LLC,Americas Styrenics — Marietta,held,Registry identity already linked; no duplicate append.
+SITE-000738,ITA,1445292,Automotive Supplier | Tigerpoly Mfg.,"Tigerpoly Manufacturing, Inc. - Grove City",held,Existing band preserved; blank field required.
+SITE-000738,OSHA,OSHAE-691fc76dc3,"TIGERPOLY MANUFACTURING, INC.","Tigerpoly Manufacturing, Inc. - Grove City",held,Inspection corroboration only; no requested output field.
+SITE-000738,ECHO,110006322844,TIGER POLY MFG INC,"Tigerpoly Manufacturing, Inc. - Grove City",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000753,ITA,1536167,Baerlocher USA,Baerlocher U.S.A. — Cincinnati,held,Existing band preserved; blank field required.
+SITE-000753,ECHO,110012705796,BAERLOCHER PRODUCTION USA,Baerlocher U.S.A. — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000764,ITA,1073861,Bob Sumerel Tire Co Inc Location 455 | Bob Sumerel Tire Co. Inc,Bob Sumerel Tire Co — Dover,held,Existing band preserved; blank field required.
+SITE-000769,ITA,78356,"Bryan Plastics Processing, LLC","Bryan Plastics Processing, LLC — Bryan",held,Existing band preserved; blank field required.
+SITE-000769,ECHO,110009490489,"BRYAN METAL SYSTEMS,LLC","Bryan Plastics Processing, LLC — Bryan",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000774,ITA,1517246,Building Composites LLC | Building Composites LLC,Building Composites — Moraine,held,Existing band preserved; blank field required.
+SITE-000774,ECHO,110072219898,BUILDING COMPOSITES LLC,Building Composites — Moraine,held,Registry identity already linked; no duplicate append.
+SITE-000775,ITA,433526,BWAY Corporation-Monroe | Mauser Packaging Solutions,BWAY Corporation-Monroe — Monroe,held,Existing band preserved; blank field required.
+SITE-000799,ITA,1092011,US COEXCELL INC | US COEXCELL INC,US Coexcell — Maumee,held,Existing band preserved; blank field required.
+SITE-000813,ECHO,110000591770,MACHINERY RECOVERY SERVICES INC CONVERT,Convertapax — Midvale,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000814,ITA,642387,Sandusky Facility | Polynt Composites USA,Cook Composites & Polymers Co. — Sandusky,held,Existing band preserved; blank field required.
+SITE-000814,ECHO,110000391781,"POLYNT COMPOSITES USA, INC (0322020129)",Cook Composites & Polymers Co. — Sandusky,held,Registry identity already linked; no duplicate append.
+SITE-000817,ITA,1206902,Bowling Green Seal | Cooper Standard,Cooper Standard (Bowling Green Seal),held,Existing band preserved; blank field required.
+SITE-000817,OSHA,OSHAE-a7e75eb840,COOPER-STANDARD AUTOMOTIVE INC.,Cooper Standard (Bowling Green Seal),held,Inspection corroboration only; no requested output field.
+SITE-000817,ECHO,110000744614,COOPER STANDARD,Cooper Standard (Bowling Green Seal),held,Registry identity already linked; no duplicate append.
+SITE-000823,ITA,1537477,"Corvac Composites | Corvac Composites, LLC",Corvac Composites — Greenfield,held,Existing band preserved; blank field required.
+SITE-000823,ECHO,110004685822,RR DONNELLEY - GREENFIELD DIV (0536010011),Corvac Composites — Greenfield,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000828,ITA,1520781,Engineered Profiles | Engineered Profiles (Columbus),Crane Plastics — Columbus,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000828,ITA,922903,"Engineered Profiles, LLC (Columbus) | Engineered Profiles",Crane Plastics — Columbus,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000828,OSHA,OSHAE-988356c3f8,"ENGINEERED PROFILES, LLC",Crane Plastics — Columbus,held,Inspection corroboration only; no requested output field.
+SITE-000828,ECHO,110000382318,CRANE PLASTICS,Crane Plastics — Columbus,held,Registry identity already linked; no duplicate append.
+SITE-000833,ITA,1177744,"Creative Liquid Coatings, Inc. Montpelier | Creative lIquid Coatings, Inc.","Creative Liquid Coatings, Inc. Montpelier",held,Existing band preserved; blank field required.
+SITE-000833,OSHA,OSHAE-0c33375198,"CK TECHNOLOGIES, LLC","Creative Liquid Coatings, Inc. Montpelier",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000833,OSHA,OSHAE-8c3667a290,"CREATIVE LIQUID COATINGS, INC.","Creative Liquid Coatings, Inc. Montpelier",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000833,ECHO,110031322708,"CREATIVE LIQUID COATINGS, INC.","Creative Liquid Coatings, Inc. Montpelier",held,Registry identity already linked; no duplicate append.
+SITE-000834,ITA,646213,"Creative Plastic Concepts | American Plastics, Inc.",Creative Plastic Concepts — Sycamore,held,Existing band preserved; blank field required.
+SITE-000838,ITA,1012472,Crown Plastics 116 | Crown Plastics,Crown Plastics — Harrison,held,Existing band preserved; blank field required.
+SITE-000838,ECHO,110004685788,CROWN PLASTICS CO,Crown Plastics — Harrison,applied,
+SITE-000842,ITA,1320802,"Curbell Plastics, Inc. Cincinnati | Curbell, Inc.","Curbell Plastics, Inc. Cincinnati",held,Existing band preserved; blank field required.
+SITE-000844,ITA,128078,"Custom Molded Products, LLC | Custom Molded Products, LLC","Custom Molded Products, LLC — Wilmington",held,Existing band preserved; blank field required.
+SITE-000844,ECHO,110000849930,IRWIN INDUSTRIAL TOOL COMPANY,"Custom Molded Products, LLC — Wilmington",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000849,ITA,550647,DuPont Specialty Products USA LLC | DDP Specialty Electronic Materials us 5 LLC,"DDP SPECIALTY ELECTRONIC MATERIALS US 5, LLC — West Alexandria",held,Existing band preserved; blank field required.
+SITE-000849,ECHO,110000394494,"DDP SPECIALTY ELECTRONIC MATERIALS US 5, LLC (0868090072)","DDP SPECIALTY ELECTRONIC MATERIALS US 5, LLC — West Alexandria",held,Registry identity already linked; no duplicate append.
+SITE-000850,ITA,177357,Deceuninck North America-Monroe | Deceuninck North America,Deceuninck North America — Monroe,held,Existing band preserved; blank field required.
+SITE-000864,ITA,1445201,Dover High Performance Plastics | Dover High Performance Plastics,Dover High Performance Plastics — Dover,held,Existing band preserved; blank field required.
+SITE-000864,ECHO,110004570811,DOVER HIGH PERFORMANCE PLASTICS,Dover High Performance Plastics — Dover,applied,
+SITE-000866,ITA,928317,Drainage Products Inc. | Drainage Products Inc,Haviland Drainage Products,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000866,ITA,928249,Haviland Drainage Products | Haviland Drainage Products,Haviland Drainage Products,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000871,ITA,1436616,"Qnity Circleville Site | EKC Advanced Electronics USA, LLC",DuPont — Circleville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000871,ECHO,110000381881,DUPONT SPECIALTY PRODUCTS - CIRCLEVILLE,DuPont — Circleville,held,Registry identity already linked; no duplicate append.
+SITE-000886,ECHO,110069998785,EMERALD FX PROPERTY,EMERALD FX PROPERTY — Norwalk,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000886,ECHO,110004695900,DELPHI CHASSIS SYS NORWALK ANN  *,EMERALD FX PROPERTY — Norwalk,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000887,ITA,77718,BASF Corporation,Emery Oleochemicals — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000887,ITA,976610,Emery Oleochemicals LLC | Emery Oleochemicals LLC,Emery Oleochemicals — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000887,OSHA,OSHAE-419c2d08ba,EMERY OLEOCHEMICALS LLC,Emery Oleochemicals — Cincinnati,held,Inspection corroboration only; no requested output field.
+SITE-000887,ECHO,110066942321,EMERY OLEOCHEMICALS,Emery Oleochemicals — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000887,ECHO,110070347269,NALCO COMPANY LLC AT EMERY OLEOCHEMICALS,Emery Oleochemicals — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000891,ITA,1073399,"Engineered Profiles, Ironton | Engineered Profiles","Engineered Profiles, Ironton",held,Existing band preserved; blank field required.
+SITE-000891,OSHA,OSHAE-5e2dd34494,ENGINEERED PROFILES,"Engineered Profiles, Ironton",held,Inspection corroboration only; no requested output field.
+SITE-000894,ECHO,110000382595,"EVANS ADHESIVE CORPORATION, LTD",Evans Adhesive Corporation — Columbus,held,Registry identity already linked; no duplicate append.
+SITE-000896,ECHO,110028008554,EXTOL OF OHIO,Extol of Ohio — Norwalk,held,Registry identity already linked; no duplicate append.
+SITE-000898,ITA,1258989,FabOhio Inc | FabOhio Inc,Fabohio — Uhrichsville,held,Existing band preserved; blank field required.
+SITE-000905,ITA,798050,Findlay Vinyl | Findlay Vinyl,Findlay Vinyl — Findlay,held,Existing band preserved; blank field required.
+SITE-000906,ITA,688362,First Choice Packaging | First Choice Packaging,First Choice Packaging — Fremont,held,"Need corrected/reliable ITA count: reliability=review, annual average=98."
+SITE-000906,OSHA,OSHAE-3f86078584,"FIRST CHOICE PACKAGING, INC.",First Choice Packaging — Fremont,held,Inspection corroboration only; no requested output field.
+SITE-000906,ECHO,110000383255,EVEREADY BATTERY CO INC,First Choice Packaging — Fremont,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000918,ITA,139731,"Franklin International, Inc. | Franklin International, Inc.",Franklin Adhesives & Polymers — Columbus,held,Existing band preserved; blank field required.
+SITE-000918,OSHA,OSHAE-a204c601f1,"FRANKLIN INTERNATIONAL, INC.",Franklin Adhesives & Polymers — Columbus,held,Inspection corroboration only; no requested output field.
+SITE-000918,ECHO,110072347437,FRANKLIN INTERNATIONAL INC,Franklin Adhesives & Polymers — Columbus,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000918,ECHO,110000382345,FRANKLIN INTERNATIONAL POLYMER PLANT,Franklin Adhesives & Polymers — Columbus,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000923,ITA,680009,Gilkey Window Company | Gilkey Window Company,"Gilkey Window Company, Inc. Cincinnati — Cincinnati",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000923,ITA,113938,"Gilkey Window Company, Inc. Cincinnati | Gilkey Window Company","Gilkey Window Company, Inc. Cincinnati — Cincinnati",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000923,ECHO,110004635093,HIGHLIFT EQUIPMENT CO,"Gilkey Window Company, Inc. Cincinnati — Cincinnati",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000930,ECHO,110035803468,FLXIBLE CORP,GOLF BALL REFURBISHERS — Loudonville,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000934,ITA,1240081,Greenfield Precision Plastics | Greenfield Precision Plastics,"Greenfield Precision Plastics, LLC — Greenfield",held,Existing band preserved; blank field required.
+SITE-000934,OSHA,OSHAE-de8cf2828f,GREENFIELD PRECISION PLASTICS LLC,"Greenfield Precision Plastics, LLC — Greenfield",held,Inspection corroboration only; no requested output field.
+SITE-000934,ECHO,110057372034,C-MOLD LLC.,"Greenfield Precision Plastics, LLC — Greenfield",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000945,ITA,342017,"ALTIVIA Petrochemicals, LLC - Haverhill Complex | ALTIVIA Petrochemicals, LLC",HAVERHILL CHEMICALS LLC — Haverhill,held,Existing band preserved; blank field required.
+SITE-000947,ECHO,110000382933,"HBD INDUSTRIES, INC. (0146010034)","HBD/Thermoid, Inc. — Bellefontaine",applied,
+SITE-000953,ITA,1456499,"Huhtamaki New Vienna Operations | Huhtamaki, Inc.",Huhtamaki New Vienna Operations — New Vienna,held,Existing band preserved; blank field required.
+SITE-000953,ECHO,110032746223,"HUHTAMAKI, INC.",Huhtamaki New Vienna Operations — New Vienna,held,Registry identity already linked; no duplicate append.
+SITE-000957,ITA,802415,ITW Tomco | ITW Thermal & Fluid Management,ILLINOIS TOOL WORKS — Bryan,held,Existing band preserved; blank field required.
+SITE-000957,ECHO,110045434259,ITW TOMCO (0386010099),ILLINOIS TOOL WORKS — Bryan,held,Registry identity already linked; no duplicate append.
+SITE-000960,ITA,1522576,"Industrial Recyclers, LLC | Industrial Recyclers, LLC",Industrial Recyclers — Sidney,held,Existing band preserved; blank field required.
+SITE-000960,ECHO,110004667628,STOLLE CORP WIEBE PLANT,Industrial Recyclers — Sidney,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000962,ITA,543013,INEOS Nitriles USA LLC Lima | INEOS Nitriles USA LLC,Ineos USA — Lima,held,Existing band preserved; blank field required.
+SITE-000962,ECHO,110000547052,INEOS NITRILES USA LLC,Ineos USA — Lima,applied,
+SITE-000966,ITA,1153430,Integris Composites | Integris Composites,Integris Composites — Hebron,held,Existing band preserved; blank field required.
+SITE-000966,ECHO,110032991083,TENCATE OHIO,Integris Composites — Hebron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000970,ITA,798562,Springfield | Intertape Polymer Group,Intertape Polymer Group (Springfield),held,Existing band preserved; blank field required.
+SITE-000970,OSHA,OSHAE-4fe16c4240,INTERTAPE POLYMER GROUP,Intertape Polymer Group (Springfield),held,Inspection corroboration only; no requested output field.
+SITE-000970,ECHO,110004625727,MATAI USA INC,Intertape Polymer Group (Springfield),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000970,ECHO,110071949120,INTERTAPE POLYMER GROUP,Intertape Polymer Group (Springfield),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000971,ECHO,110004617781,PREMERE ENTERPRISES INC,"Premere Enterprises, Inc. — Bolivar",applied,
+SITE-000972,ITA,1436074,IPL Dayton | IPL Schoeller,IPL Inc. — Urbana,held,Existing band preserved; blank field required.
+SITE-000972,ECHO,110071730024,IPL DAYTON INC.,IPL Inc. — Urbana,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000972,ECHO,110051447760,"IPL DAYTON, INC. WAREHOUSE-IPL DAYTON WAREHOUSE",IPL Inc. — Urbana,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000972,ECHO,110072137848,IPL SCHOELLER,IPL Inc. — Urbana,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000986,ITA,177346,"Kamco Industries, Inc. West Unity Plant | Kamco Industries, Inc.","Kamco Industries, Inc. West Unity",held,Existing band preserved; blank field required.
+SITE-000987,ECHO,110000391317,KAR-DEL PLASTICS INC,"Kar-Del Plastics, Inc. — Ashland",applied,
+SITE-000991,ITA,1268623,Klockner Pentaplast of America ( Greenville ) | Klockner Pentaplast of America,"Klockner Pentaplast of America, Inc. — Greenville",held,Existing band preserved; blank field required.
+SITE-000991,ECHO,110004573845,WITT PLASTICS INC,"Klockner Pentaplast of America, Inc. — Greenville",applied,
+SITE-000996,ITA,1121060,Krom International | Krom International,Krom International — Celina,held,Existing band preserved; blank field required.
+SITE-000996,ECHO,110000395563,QUALITEC METAL FINISHERS INC,Krom International — Celina,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000996,ECHO,110071442589,KROM INTERNATIONAL,Krom International — Celina,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-000997,ITA,1501561,"Kurz-Kasch, Inc | Kurz-Kasch, Inc",Kurz-Kasch Inc. — Newcomerstown,held,Existing band preserved; blank field required.
+SITE-000997,ECHO,110000384815,KURZ-KASCH INC,Kurz-Kasch Inc. — Newcomerstown,applied,
+SITE-001007,ITA,1095683,"LRBG CHEMICALS (USA) INC. | LRBG CHEMICALS USA, TOLEDO","LRBG Chemicals USA, Inc. — Toledo",held,Existing band preserved; blank field required.
+SITE-001007,ECHO,110000384003,LRBG CHEMICALS (USA) INC. (0448010370),"LRBG Chemicals USA, Inc. — Toledo",applied,
+SITE-001010,ITA,1419650,Magnum Magnetics Coropation,Magnum Magnetics Corporation - Devola,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001010,ITA,751394,Magnum Magnetics Corporation - Devola | Magnum Magnetics,Magnum Magnetics Corporation - Devola,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001019,ECHO,110000384842,MASON COLOR WORKS INC,Mason Color Works — East Liverpool,applied,
+SITE-001031,ITA,800197,"Michelman HQ | Michelman, Inc.",Michelman — Cincinnati,held,Existing band preserved; blank field required.
+SITE-001031,ECHO,110064365725,MICHELMAN INC,Michelman — Cincinnati,applied,
+SITE-001033,ITA,853283,Midwest Molding Inc. | Midwest Molding Inc.,"Midwest Molding, Inc. — Plain City",held,Existing band preserved; blank field required.
+SITE-001033,OSHA,OSHAE-608ce76b82,MIDWEST MOLDING INC,"Midwest Molding, Inc. — Plain City",held,Inspection corroboration only; no requested output field.
+SITE-001044,ITA,1072687,Moore Industries | Moor Industries,Moore Industries — Montpelier,held,Existing band preserved; blank field required.
+SITE-001044,OSHA,OSHAE-577162d952,"MOORE INDUSTRIES, INC.",Moore Industries — Montpelier,held,Inspection corroboration only; no requested output field.
+SITE-001044,ECHO,110004633567,MOORE INDUSTRIES,Moore Industries — Montpelier,applied,
+SITE-001049,ITA,1262195,MTNA - Marysville | MTNA - Marysville,MTNA - Marysville,held,"Need corrected/reliable ITA count: reliability=suspect, annual average=104."
+SITE-001053,ITA,809879,Nagase Chemtex America Corp. | Nagase Chemtex America Corp.,Nagase Chemtex America — Delaware,held,Existing band preserved; blank field required.
+SITE-001053,OSHA,OSHAE-ff4822236f,"ENGINEERED MATERIALS SYSTEMS, INC.",Nagase Chemtex America — Delaware,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001053,ECHO,110071434460,NAGASE CHEMTEX AMERICA,Nagase Chemtex America — Delaware,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001053,ECHO,110066962754,NAGASE CHEMTEX AMERICA LLC,Nagase Chemtex America — Delaware,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001061,ITA,1424150,"New Tech Plastics, LLC. | New Tech Plastics, LLC.","New Tech Plastics, Inc. — Covington",held,Existing band preserved; blank field required.
+SITE-001061,ECHO,110015640644,NEW TECH PLASTICS INC,"New Tech Plastics, Inc. — Covington",held,Registry identity already linked; no duplicate append.
+SITE-001065,ITA,823760,Nifco America Corporation | Nifco America Corp,Nifco America Corp. — Canal Winchester,held,Existing band preserved; blank field required.
+SITE-001070,ITA,511303,NOX US | NOX US,Nox US — Fostoria,held,Existing band preserved; blank field required.
+SITE-001070,OSHA,OSHAE-955c61ad00,"NOX US, LLC",Nox US — Fostoria,held,Inspection corroboration only; no requested output field.
+SITE-001083,ITA,113671,ORBIS Urbana | Orbis Corporation,ORBIS Urbana,held,"Need corrected/reliable ITA count: reliability=review, annual average=240."
+SITE-001083,OSHA,OSHAE-2aef86da28,ORBIS CORPORATION,ORBIS Urbana,held,Inspection corroboration only; no requested output field.
+SITE-001083,ECHO,110004638633,ORBIS,ORBIS Urbana,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001083,ECHO,110009430730,ELM STREET CORPORATION,ORBIS Urbana,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001098,ITA,1447942,Pinnacle Plastic Products | Pinnacle Plastic Products,Pinnacle Industrial Enterprises — Bowling Green,held,Existing band preserved; blank field required.
+SITE-001098,OSHA,OSHAE-ab8d76bd57,"PINNACLE INDUSTRIAL ENTERPRISES, INC.",Pinnacle Industrial Enterprises — Bowling Green,held,Inspection corroboration only; no requested output field.
+SITE-001098,ECHO,110046261905,PINNACLE PLASTIC PRODUCTS,Pinnacle Industrial Enterprises — Bowling Green,held,Registry identity already linked; no duplicate append.
+SITE-001104,ITA,572926,PLAS-TEC CORP | PLAS-TEC CORP,Plas-tec — Edon,held,Existing band preserved; blank field required.
+SITE-001104,OSHA,OSHAE-3f882eac78,PLAS-TEC CORP.,Plas-tec — Edon,held,Inspection corroboration only; no requested output field.
+SITE-001126,ITA,1274746,Polysource LLC dba Epsilyte | Polysource LLC dba Epsilyte,Polysource LLC dba Epsilyte — Piqua,held,Existing band preserved; blank field required.
+SITE-001126,ECHO,110024890199,"POLYSOURCE, INC.",Polysource LLC dba Epsilyte — Piqua,held,Registry identity already linked; no duplicate append.
+SITE-001130,ITA,1441851,Pretium Leipsic | Pretium Packaging,Pretium Leipsic — Leipsic,held,Existing band preserved; blank field required.
+SITE-001130,OSHA,OSHAE-8f02a4c1aa,"PRETIUM PACKAGING, LLC",Pretium Leipsic — Leipsic,held,Inspection corroboration only; no requested output field.
+SITE-001132,ITA,1428605,Profusion Industries | Profusion Industries,Profusion Industries — Marietta,held,Existing band preserved; blank field required.
+SITE-001132,OSHA,OSHAE-41c0389f57,"PROFUSION INDUSTRIES, LLC.",Profusion Industries — Marietta,held,Inspection corroboration only; no requested output field.
+SITE-001132,ECHO,110066961149,KOROSEAL INTERIOR PRODUCTS LLC,Profusion Industries — Marietta,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001135,ITA,1068599,Proto Plastics Inc. | Proto Plastics Inc.,"Proto Plastics, Inc. — Tipp City",held,Existing band preserved; blank field required.
+SITE-001135,ECHO,110063079680,1-800-RADIATOR,"Proto Plastics, Inc. — Tipp City",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001136,ITA,1070095,ProVia New Philadelphia Facility | ProVia LLC,ProVia New Philadelphia Facility,held,Existing band preserved; blank field required.
+SITE-001153,ITA,915251,Rage corporation | Rage Plastics,Rage Corp. — Hilliard,held,Existing band preserved; blank field required.
+SITE-001153,ECHO,110004659995,INDUSTRIAL ELECTRIC HEATING,Rage Corp. — Hilliard,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001163,OSHA,OSHAE-42e0969619,"REVERE PLASTICS SYSTEMS, LLC",Revere Plastics Systems — Clyde,held,Inspection corroboration only; no requested output field.
+SITE-001163,ECHO,110000383175,REVERE PLASTICS SYSTEMS (AKA TITAN PLASTICS GROUP),Revere Plastics Systems — Clyde,applied,
+SITE-001164,ITA,179476,RheTech Colors | RheTech Colors,Rhetech Colors — Sandusky,held,Existing band preserved; blank field required.
+SITE-001166,ITA,926876,Ridge Corporation (Zeus) | Ridge Corporation,Ridge Corporation — Pataskala,held,Existing band preserved; blank field required.
+SITE-001166,ECHO,110024258079,TOSOH SMD ETNA LLC,Ridge Corporation — Pataskala,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001169,ITA,327498,Rieke - New Albany | TriMas Corporation,Rieke — New Albany,held,Existing band preserved; blank field required.
+SITE-001181,ITA,421256,Johnson Plastics Plus | Rowmark,Rowmark — Findlay,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001181,ITA,350504,Rowmark | Rowmark,Rowmark — Findlay,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001182,ITA,1066637,Westlake Royal Building Products | Westlake Royal Building Products,Royal Building Products — Columbus,held,Existing band preserved; blank field required.
+SITE-001182,ECHO,110000823431,ROYAL BUILDING PRODUCTS INC,Royal Building Products — Columbus,held,Registry identity already linked; no duplicate append.
+SITE-001188,ITA,69057,Rudolph Bros. & Co. | Rudolph Bros. & Co.,Rudolph Bros. & Co. — Canal Winchester,held,Existing band preserved; blank field required.
+SITE-001192,ITA,676442,Savare Specialty Adhesives LLC | Savare Specialty Adhesives LLC,Savare Specialty Adhesives — Delaware,held,Existing band preserved; blank field required.
+SITE-001194,ITA,162494,"Schupan Aluminum & Plastic Sales Toledo | Schupan & Sons, Inc.",Schupan Aluminum & Plastic Sales — Toledo,held,Existing band preserved; blank field required.
+SITE-001196,ITA,1430356,Sealed Air-Liquibox | Sealed Air-Liquibox,Sealed Air — Ashland,held,Existing band preserved; blank field required.
+SITE-001199,ITA,735063,Sekisui Kasei USA Inc. | Sekisui Kasei,Sekisui Kasei USA Inc. — Kenton,held,Existing band preserved; blank field required.
+SITE-001205,ITA,106179,Sika Corporation Marion | Sika Corporation,Sika Corp. — Marion,held,Existing band preserved; blank field required.
+SITE-001205,ECHO,110000382844,SIKA CORP MARION OPERATIONS,Sika Corp. — Marion,held,Registry identity already linked; no duplicate append.
+SITE-001206,ITA,935690,Plastics | Silgan Plastics,Silgan Plastics — Ottawa,held,Existing band preserved; blank field required.
+SITE-001206,OSHA,OSHAE-c55a8cce5f,SILGAN PLASTICS CORP.,Silgan Plastics — Ottawa,held,Inspection corroboration only; no requested output field.
+SITE-001206,ECHO,110020121438,SILGAN PLASTICS CORP,Silgan Plastics — Ottawa,applied,
+SITE-001207,OSHA,OSHAE-6de5d69689,SNYDER MANUFACTURING INC,"Snyder Manufacturing, Inc. — Dover",held,Inspection corroboration only; no requested output field.
+SITE-001207,ECHO,110004628449,SNYDER MANUFACTURING INC,"Snyder Manufacturing, Inc. — Dover",held,Registry identity already linked; no duplicate append.
+SITE-001208,ITA,171106,"Franklin, OH - Flexible Pkg - E017 | Sonoco","Sonoco (Franklin, OH - Flexible Pkg - E017)",held,Existing band preserved; blank field required.
+SITE-001208,ECHO,110000392049,SONOCO PRODUCTS CO. (FLEXIBLE PACKAGING DIVISION) (1483040077),"Sonoco (Franklin, OH - Flexible Pkg - E017)",applied,
+SITE-001209,ITA,1528697,Southeastern Container - Bowling Green | SOUTHEASTERN CONTAINER,Southeastern Container — Bowling Green,held,Existing band preserved; blank field required.
+SITE-001216,ITA,1431183,Standridge Color | Standridge Color Corporation,Standridge Color — Defiance,held,Existing band preserved; blank field required.
+SITE-001216,ECHO,110025332691,STANDRIDGE COLOR CORP,Standridge Color — Defiance,applied,
+SITE-001220,ITA,204983,Corporate Office | Storopack Inc.,Storopack — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001220,ITA,1082027,"Storopack, Inc. - Cincinnati | Storopack, Inc.",Storopack — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001220,ITA,1082188,"Storopack, Inc. - Corporate | Storopack, Inc.",Storopack — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001221,ITA,205260,CDC - Film Plant | Storopack,"Storopack, Inc.- Cincinnati Distribution Center",held,Existing band preserved; blank field required.
+SITE-001221,OSHA,OSHAE-fab82b1727,"STOROPACK, INC","Storopack, Inc.- Cincinnati Distribution Center",held,Inspection corroboration only; no requested output field.
+SITE-001221,ECHO,110070049503,STOROPACK INC.,"Storopack, Inc.- Cincinnati Distribution Center",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001221,ECHO,110004642325,CITY HAUL INC,"Storopack, Inc.- Cincinnati Distribution Center",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001223,OSHA,OSHAE-1ba5d9e103,"STYLE CREST ENTERPRISES, INC.",Style Crest Enterprises — Fremont,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001223,OSHA,OSHAE-0e30313f05,"STYLE CREST, INC.",Style Crest Enterprises — Fremont,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001223,ECHO,110000383246,"STYLE CREST ENTERPRISES, INC. (0372030210)",Style Crest Enterprises — Fremont,held,Registry identity already linked; no duplicate append.
+SITE-001224,ITA,1472638,SumiRiko Inc. | SumiRiko Inc.,SumiRiko Inc. — Bluffton,held,Existing band preserved; blank field required.
+SITE-001224,OSHA,OSHAE-ecc0e23193,SUMIRIKO OHIO INC.,SumiRiko Inc. — Bluffton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001224,OSHA,OSHAE-53f62aad23,SUMITOMO RIKO COMPANY LTD,SumiRiko Inc. — Bluffton,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001224,ECHO,110013674755,"SUMIRIKO OHIO, INCORPORATED (0302000166)",SumiRiko Inc. — Bluffton,held,Registry identity already linked; no duplicate append.
+SITE-001227,ECHO,110002444230,SUPERB INDUSTRIES INC,SUPERB INDUSTRIES INC — Sugarcreek,applied,
+SITE-001236,ECHO,110000381532,TECH INTL,Tech Intl — Johnstown,held,Registry identity already linked; no duplicate append.
+SITE-001244,ITA,916324,Tetra Mold & Tool Inc. | Tetra Mold & Tool Inc.,"Tetra Mold & Tool, Inc. — New Carlisle",held,Existing band preserved; blank field required.
+SITE-001246,ITA,50628,"TH Plastics - Bowling Green | TH Plastics, Inc.",TH Plastics - Bowling Green,held,Existing band preserved; blank field required.
+SITE-001246,OSHA,OSHAE-5194b11791,"TH PLASTICS, INC.",TH Plastics - Bowling Green,held,Inspection corroboration only; no requested output field.
+SITE-001246,ECHO,110006539219,TH PLASTICS,TH Plastics - Bowling Green,held,Registry identity already linked; no duplicate append.
+SITE-001247,ITA,50623,"TH Plastics - Findlay Ohio | TH Plastics, Inc.",TH Plastics - Findlay Ohio,held,Existing band preserved; blank field required.
+SITE-001247,ECHO,110055529227,TH PLASTICS INC,TH Plastics - Findlay Ohio,applied,
+SITE-001249,ITA,1421553,TRC - Main | The Thaman Rubber Company,Thaman Rubber Co. — Cincinnati,held,Existing band preserved; blank field required.
+SITE-001249,OSHA,OSHAE-ec59e84d19,THE THAMAN RUBBER COMPANY,Thaman Rubber Co. — Cincinnati,held,Inspection corroboration only; no requested output field.
+SITE-001249,ECHO,110016752815,ARMOR METAL GROUP,Thaman Rubber Co. — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001249,ECHO,110002113301,CINCINNATI INDUSTRIAL MACHINERY,Thaman Rubber Co. — Cincinnati,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001252,ITA,913238,Titan Tire | Titan Tire,Titan Tire — Bryan,held,Existing band preserved; blank field required.
+SITE-001252,OSHA,OSHAE-c30fb00690,TITAN TIRE CORPORATION OF BRYAN,Titan Tire — Bryan,held,Inspection corroboration only; no requested output field.
+SITE-001252,ECHO,110000383460,CONTINENTAL TIRE NORTH AMERICA INC,Titan Tire — Bryan,held,Registry identity already linked; no duplicate append.
+SITE-001270,ITA,923814,"Uni-Grip, Inc. | Uni Grip",Uni-Grip Incorporated — Upper Sandusky,held,Existing band preserved; blank field required.
+SITE-001275,ITA,374433,United States Plastic Corporation | United States Plastic Corporation,United States Plastic — Lima,held,Existing band preserved; blank field required.
+SITE-001275,ECHO,110070541497,UNITED STATES PLASTICS,United States Plastic — Lima,applied,
+SITE-001281,ITA,1404744,"Findlay, OH - 06 | Ventek Solutions",Ventek Solutions — Findlay,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001281,ITA,1528140,"Findlay, OH - A612 | Sonoco",Ventek Solutions — Findlay,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001281,ECHO,110013813542,VENTEK SOLUTIONS LLC,Ventek Solutions — Findlay,held,Registry identity already linked; no duplicate append.
+SITE-001284,ITA,1526335,Versa Pak Ltd | Versa Pak Ltd,Versa Pak — Celina,held,Existing band preserved; blank field required.
+SITE-001284,OSHA,OSHAE-fb4a3b8578,"VERSA-PAK, LTD.",Versa Pak — Celina,held,Inspection corroboration only; no requested output field.
+SITE-001284,ECHO,110046250702,VERSAPAK LTD,Versa Pak — Celina,applied,
+SITE-001290,ITA,803858,Vinylmax OH | Vinylmax LLC,Vinylmax OH — Hamilton,held,Existing band preserved; blank field required.
+SITE-001292,ITA,1107487,Washington Penn - WAPA | Audia,"Washington Penn Plastic Co., Inc. — Wapakoneta",held,Existing band preserved; blank field required.
+SITE-001292,OSHA,OSHAE-c8788de9bd,"AMETEK, INC.","Washington Penn Plastic Co., Inc. — Wapakoneta",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001292,OSHA,OSHAE-ab7023bdef,WASHINGTON PENN WAPAKONETA PLANT,"Washington Penn Plastic Co., Inc. — Wapakoneta",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001292,ECHO,110001618367,AMETEK WESTCHESTER PLASTICS,"Washington Penn Plastic Co., Inc. — Wapakoneta",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001303,ITA,128332,"World Class Plastics, Inc. | World Class Plastics, Inc.","World Class Plastics, Inc. — Russells Point",held,Existing band preserved; blank field required.
+SITE-001304,ECHO,110000382194,YUSA CORPORATION (0124010098),Yamashita Rubber/YUSA Corp — Washington Court House,held,Registry identity already linked; no duplicate append.
+SITE-001308,ECHO,110004732219,ANOCAST DIV OF ANORAD CORP,AltraSet Composite Technologies — Chagrin Falls,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001311,OSHA,OSHAE-546a69073a,FINITE FIBER LLC,Finite Fiber — Akron,held,Inspection corroboration only; no requested output field.
+SITE-001315,ECHO,110004669056,NIPPON PAINT AMERICA CORP,Tederic USA — Middleburg Heights,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001315,ECHO,110009428119,P S W INC,Tederic USA — Middleburg Heights,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001390,ITA,1428700,Elyria Plastic Products | Elyria Plastic Products,Elyria Plastic Products — Elyria,held,Existing band preserved; blank field required.
+SITE-001390,ECHO,110004726752,ELYRIA PLASTICS PRODUCTS EPP INC,Elyria Plastic Products — Elyria,applied,
+SITE-001421,ECHO,110043694357,SR PRODUCTS,SR Products — Struthers,held,Registry identity already linked; no duplicate append.
+SITE-001422,ECHO,110009634217,DELCO CORPORATION-DELCO CORP,"Delco, LLC — Akron",applied,
+SITE-001424,ITA,43381,Aexcel Corporation | Aexcel Corporation,Aexcel Corp. — Mentor,held,Existing band preserved; blank field required.
+SITE-001424,ECHO,110009430213,NIPPON PAINT CORP  *,Aexcel Corp. — Mentor,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001424,ECHO,110000385752,AEXCEL CORPORATION (0243081231),Aexcel Corp. — Mentor,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001426,ECHO,110000616860,ETCHED METAL CO,Etched Metal — Solon,applied,
+SITE-001427,ITA,938770,Hy-Ko Products Company LLC | Midwest Fasteners,Hy-Ko Products Company — Northfield,held,Existing band preserved; blank field required.
+SITE-001429,ITA,1337877,Interpak Inc | Interpak Inc,"Interpak, Inc. — Mentor",held,Existing band preserved; blank field required.
+SITE-001429,OSHA,OSHAE-264c93aac6,INTERPAK INC,"Interpak, Inc. — Mentor",held,Inspection corroboration only; no requested output field.
+SITE-001439,ECHO,110004597115,SURE-FOOT INDUSTRIES CORPORATION,Sure-foot Industries — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001439,ECHO,110016756107,SURE-FOOT INDUSTRIES CORPORATION,Sure-foot Industries — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001479,ECHO,110004648926,COMPUGRAPHIC CORP,ABC Packaging Direct — Independence,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001506,ECHO,110004691138,WESTPORT AXLE CORP,Lamports Filter Media — Cleveland,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001511,ECHO,110009429813,"SPECTRUM DISPERSIONS, INC. (1667060140)",Spectrum Dispersions — Ravenna,held,Registry identity already linked; no duplicate append.
+SITE-001534,ITA,1075220,ChemMasters,ChemMasters — Madison,held,Existing band preserved; blank field required.
+SITE-001534,ECHO,110004636341,CHEMMASTERS,ChemMasters — Madison,held,Registry identity already linked; no duplicate append.
+SITE-001543,ITA,1440547,Aurora Material Solutions - OHUS01HQ | Aurora Material Solutions,Aurora Material Solutions - Streetsboro (HQ & Main Plant),held,Existing band preserved; blank field required.
+SITE-001543,OSHA,OSHAE-b50f534d2d,AURORA MATERIAL SOLUTIONS,Aurora Material Solutions - Streetsboro (HQ & Main Plant),held,Inspection corroboration only; no requested output field.
+SITE-001543,ECHO,110037143766,AURORA PLASTICS,Aurora Material Solutions - Streetsboro (HQ & Main Plant),held,Registry identity already linked; no duplicate append.
+SITE-001563,ECHO,110004718583,BUDZAR INDUSTRIES,Budzar Industries — Willoughby,applied,
+SITE-001573,ECHO,110004591139,AMERICAN GREETINGS CORP,"Health-Mor, Inc — Brooklyn",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001591,ECHO,110008117723,VISCUS BIOLOGICS LLC,"Viscus Biologics, LLC — Cleveland",applied,
+SITE-001599,ECHO,110000390372,ZIMMER OSP,"Zimmer Surgical, Inc. — Dover",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001655,ITA,1078068,Grand River Rubber & Plastics | Grand River Rubber & Plastics,Grand River Rubber & Plastics Company — Ashtabula,held,Existing band preserved; blank field required.
+SITE-001655,ECHO,110011595540,GRAND RIVER RUBBER & PLASTICS COMPANY,Grand River Rubber & Plastics Company — Ashtabula,held,Registry identity already linked; no duplicate append.
+SITE-001657,ITA,1006117,Hi Tech Extrusions | Hi Tech Extrusions,High Tech Extrusions Ltd — Chardon,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001663,ECHO,110046581873,FECHKO EXCAVATING,Winsell Incorporated — Medina,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001682,ECHO,110000388624,MORGAN ADHESIVES COMPANY (MACTAC) (1677110026),"Morgan Adhesives Company, LLC — Stow",applied,
+SITE-001695,OSHA,OSHAE-d8f4c9a32e,"ADVANCED CRYOGENIC ENTERPRISES, LLC",ADVANCED CRYOGENIC ENTERPRISES — Akron,held,Inspection corroboration only; no requested output field.
+SITE-001695,ECHO,110070690781,ADVANCES CRYOGENICS,ADVANCED CRYOGENIC ENTERPRISES — Akron,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001717,OSHA,OSHAE-f7013ea02d,INDUSTRIAL THERMOSET PLASTICS,OVERMOLD EXPRESS — Mentor,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001719,ECHO,110070890594,"RTS COMPANIES, INC. D/B/A CITRUSWIRX",RTS COMPANIES INC. — Austinburg,applied,
+SITE-001742,ECHO,110004610573,MYERS S D INC,Drossbach Inc — Stow,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001744,ECHO,110004590764,DURABLE MAT CO,Durable Corporation — Norwalk,applied,
+SITE-001748,ECHO,110004695508,MANTALINE CORP,Flash It LLC — Mantua,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001754,ECHO,110000391077,"HARRISON PAINTS & COATINGS, LLC",Harrison Paint Company — Canton,applied,
+SITE-001776,ITA,1093161,"Bedford Plant | Certon Technologies, Inc.","Certon Technologies, Inc.",held,Existing band preserved; blank field required.
+SITE-001783,ECHO,110004727671,ATFAB CO,Dyna Flex Inc,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001785,ECHO,110004669270,MAPLE CITY RUBBER CO,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),applied,
+SITE-001816,ECHO,110004696035,ATOTECH USA INC,Auto Technology Company,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001828,ITA,1430340,"Pexco, LLC - Cincinnati | Pexco",Performance Plastics Ltd. (now part of Pexco),held,Existing band preserved; blank field required.
+SITE-001833,ECHO,110004696295,ACO POLYMER,"ACO Polymer Products, Inc.",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001833,ECHO,110067160173,"ACO, INC (0243082019)","ACO Polymer Products, Inc.",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001838,ITA,1470484,Polymerics Inc. Kent | Polymerics Inc.,"Polymerics, Inc.",held,Existing band preserved; blank field required.
+SITE-001843,OSHA,OSHAE-3d3fcdfff6,THE PIONEEER MANUFACTURING CO,The Pioneer Manufacturing Company,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001843,ECHO,110013292356,BAYER CORPORATION,The Pioneer Manufacturing Company,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001852,ECHO,110000387144,STATE INDUSTRIAL PRODUCTS,Adherex Packaging (Adherex Group),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001859,ITA,1444402,Temprecision International | Smithers-Oasis Company,"American Testing Technologies, Inc.",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001860,ECHO,110004725888,ASTRO MANUFACTURING AND DESIGN,Astro Manufacturing & Design Corp,applied,
+SITE-001875,ECHO,110004641086,TRW INC APR DIV,Expert Gasket & Seal LLC,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001883,ECHO,110004589259,NORTHERN OHIO PAVING CO,Impact Sleeve (Sleeve Seal / ID Images),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001883,ECHO,110009425755,CELLOGLAS,Impact Sleeve (Sleeve Seal / ID Images),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001888,ECHO,110002110581,"NEWKOR, INC. (1318005362)",NewKor Inc.,applied,
+SITE-001889,ECHO,110072053370,RD ABBOTT,Novation Solutions LLC (NovationSi),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001891,ITA,1103377,ILPEA Industries - OEM/Miller Div. | Ilpea Industries,OEM/Miller (ILPEA Industries),held,Existing band preserved; blank field required.
+SITE-001891,OSHA,OSHAE-1f4b2894ea,ILPEA INDUSTRIES INC.,OEM/Miller (ILPEA Industries),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001891,OSHA,OSHAE-e0e6f58011,OEM / MILLER,OEM/Miller (ILPEA Industries),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001891,ECHO,110000388376,OEM/MILLER,OEM/Miller (ILPEA Industries),applied,
+SITE-001896,OSHA,OSHAE-d4c26747a1,"RAINBOW MASTERMIXING, LLC",Rainbow Master Mixing LLC,held,Inspection corroboration only; no requested output field.
+SITE-001913,ECHO,110037437280,FAULL AND SON (TECHSERVE LIQUIDS RECYCLING),Faull and Son,applied,
+SITE-001924,OSHA,OSHAE-f7013ea02d,INDUSTRIAL THERMOSET PLASTICS,Industrial Thermoset Plastics (IT Plastics),held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001925,ITA,1204957,Cooper Standard Industrial Specialty Group | Cooper Standard,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),held,"Need corrected/reliable ITA count: reliability=review, annual average=232."
+SITE-001925,OSHA,OSHAE-b4a11758e8,COOPER STANDARD,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),held,Inspection corroboration only; no requested output field.
+SITE-001930,ECHO,110004575763,AKRON PAINT,"Rotocast Technologies, Inc.",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-001935,ECHO,110004596143,THERM O PACKAGING SUPPLIERS,"Thermo Packaging Suppliers, Inc.",applied,
+SITE-001957,ECHO,110004576209,SGS TOOL CO SAW MANUFACTURING,M S B Machine,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-002001,ITA,939047,Akron Polymer Products | Akron Polymer Products,S&A Industries Corporation,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-002028,ECHO,110004619002,HYPERTOOL  *,Whip Guide Company,held,Need unique source facility and primary operator/name agreement at this street.
+SITE-002037,OSHA,OSHAE-5457be52d4,"MITSUBISHI CHEMICAL AMERICA, INC.","Mitsubishi Chemical America, Inc. (Bellevue Plant)",held,Need unique source facility and primary operator/name agreement at this street.
+SITE-002081,ITA,515609,DayGlo Color Avon Facility | Day-Glo Color Crop.,DayGlo Avon site,held,Existing band preserved; blank field required.
+SITE-002081,ECHO,110001129519,TECHMER PM,DayGlo Avon site,held,Need unique source facility and primary operator/name agreement at this street.
