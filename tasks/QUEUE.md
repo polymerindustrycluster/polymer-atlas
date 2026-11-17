@@ -528,7 +528,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `open` A Midvale `pvc` row could come from the "We specialize in PVC extrusion" line — source PR #365.
 - [ ] `open` Inter-Ion (ORG-001681): its stored markets pages carry narrative sentences that could replace the withdrawn tab-label `markets_served` values — source PR #360.
 - [ ] `open` **OWNER:** may held capability terms be appended to non-blank processes/materials cells? 10 terms on 7 sites (PR #365), plus SITE-001986 (PR #361).
-- [ ] `open` PR #362 (draft, open: PIC-18 discovery pass 2, 72 held leads, zero data rows) stays open until the lead names are stripped.
+- [ ] `open` PIC-18 discovery pass 2 (72 held leads, zero data rows): PR #362 was closed on 2026-11-17 after the lead names were stripped and replaced by open PR #367 (a fresh commit, so the names stay out of main history); the item stays open until #367 merges.
 
 ### Parked by the owner (not scheduled)
 
