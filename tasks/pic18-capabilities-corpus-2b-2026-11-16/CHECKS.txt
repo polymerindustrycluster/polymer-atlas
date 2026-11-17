@@ -1,0 +1,16 @@
+frame 223 eligible sites; unadjudicated 220; slice 110 (second half)
+counts OK: {'slice_sites': 110, 'term_decisions': 15, 'applied_sites': 10, 'tagged_sites': 9, 'tag_terms': 13, 'capability_rows': 4, 'evidence_rows': 13, 'held_only_sites': 36, 'nothing_found_sites': 64, 'verdict_rows': 133}
+  injected defect caught: false quote
+  injected defect caught: invalid vocabulary term
+  injected defect caught: false locality witness
+  injected defect caught: site without verdict
+  injected defect caught: C-strength tag on tier B
+  injected defect caught: witness street differs from site record (VisionAir)
+  injected defect caught: retired id reused
+  injected defect caught: id outside block
+  injected defect caught: slice is not second half
+ALL CHECKS PASSED
+5026 organizations, 7196 sites, 408 ecosystem rows, 6025 registry links, 61 member rows, 1513 people rows, 216 program rows, 71 event series, 42057 evidence rows, 361 relationship rows, 538 capability rows, 88 equipment rows, 0 engagement rows, 816 person-identifier links, 1296 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+OK — validation passed.
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base 89d9e460e8)
+docs/schema/vocab.json is current
