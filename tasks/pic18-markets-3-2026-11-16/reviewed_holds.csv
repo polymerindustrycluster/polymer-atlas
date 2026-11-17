@@ -1,0 +1,43 @@
+org_id,hold_class,note
+ORG-000201,group_or_redirect_attribution,Retained pages describe the ASC Engineered Solutions group and its brands; no statement for this entity's own products
+ORG-000101,no_market_text,Single retained page names no customer industry
+ORG-000327,no_market_text,Retained pages name no customer industry
+ORG-000247,no_vocab_market,Law-enforcement and military holster buyers are not a MARKETS term; owner ruling needed under B-MARKETS-VOCAB
+ORG-000174,scope_attribution,Page says expertise is not just in the construction industry; no own-customer statement naming a MARKETS term
+ORG-000480,menu_or_nav_only,Distributor markets page gives market names and product lines only; no own-product narrative per market
+ORG-000225,off_vocabulary_or_ambiguous_market,Water heater components: no exact MARKETS term; owner mapping needed
+ORG-000126,menu_or_nav_only,Industries named only in navigation; CPI/Cardinal pages redirect and need exact-entity attribution
+ORG-000407,off_vocabulary_or_ambiguous_market,Residential and commercial markets for bath and kitchen products: no exact MARKETS term
+ORG-000576,off_vocabulary_or_ambiguous_market,Window maker: page names ENERGY STAR windows but no construction or building market sentence
+ORG-000579,off_vocabulary_or_ambiguous_market,Running track and equestrian surfacing: recreation does not identify a MARKETS term (see B-MARKETS-VOCAB Forest City case)
+ORG-000550,group_or_redirect_attribution,Rochling group pages; automotive statement is group-wide not this entity's
+ORG-000551,group_or_redirect_attribution,Rochling group pages; statements are group-wide not this entity's
+ORG-000530,off_vocabulary_or_ambiguous_market,Chemical tank industry is equipment for processors; mapping to chemical_mining_metals_processing not settled
+ORG-000416,off_vocabulary_or_ambiguous_market,Pool liners: no exact MARKETS term
+ORG-000419,group_or_redirect_attribution,LG Chem group pages; no statement for this entity
+ORG-000409,group_or_redirect_attribution,Furniture-market statement belongs to a separate named site (DVUV Wood Powder Coating)
+ORG-000638,menu_or_nav_only,Markets named only in navigation
+ORG-000798,off_vocabulary_or_ambiguous_market,Applications-supported lists are for materials not end markets; mapping not settled
+ORG-000832,menu_or_nav_only,Application names appear as menu items only
+ORG-001585,scope_attribution,Industry list describes TPE materials generally; not a statement about this company's own customers
+ORG-001578,off_vocabulary_or_ambiguous_market,Outdoor furniture for commercial and residential parks: furniture_office does not state outdoor park furniture
+ORG-001634,off_vocabulary_or_ambiguous_market,Window covering industry: no exact MARKETS term
+ORG-002153,off_vocabulary_or_ambiguous_market,Retail-security market verticals (apparel/grocery/mass merchant); see B-MARKETS-VOCAB CIMA retail case
+ORG-001459,group_or_redirect_attribution,Survitec group statement; not this entity's
+ORG-000325,group_or_redirect_attribution,Huntsman group markets page; entity attribution not settled
+ORG-000612,group_or_redirect_attribution,Trelleborg group statement; not this entity's
+ORG-000515,menu_or_nav_only,Market list on home page has no heading or sentence
+ORG-000268,menu_or_nav_only,Navigation categories and generic product-use sentence
+ORG-000278,group_or_redirect_attribution,Silgan group market menu only
+ORG-000078,off_vocabulary_or_ambiguous_market,Security technology company; industries are not MARKETS terms for polymer products
+ORG-000454,menu_or_nav_only,Markets appear in navigation; market page text not adjudicated
+ORG-001393,menu_or_nav_only,Market links only
+ORG-000194,menu_or_nav_only,Product list for diverse markets; no sentence naming own customers
+ORG-000616,off_vocabulary_or_ambiguous_market,Typical applications are equipment uses; mapping not settled
+ORG-000185,menu_or_nav_only,Approvals listed as product features
+ORG-001826,scope_attribution,Historic sentence about past customers
+ORG-004026,off_vocabulary_or_ambiguous_market,Oilseed equipment markets are not in MARKETS
+ORG-001808,off_vocabulary_or_ambiguous_market,Wire harness industry is not a MARKETS term
+ORG-001647,scope_attribution,Generic material-use descriptions not statements about own customers
+ORG-000083,scope_attribution,Product grade quality label not a customer market
+ORG-000131,menu_or_nav_only,Segments listed as navigation; no narrative sentence

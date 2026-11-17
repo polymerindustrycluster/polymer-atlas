@@ -288,8 +288,8 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   <fieldset>
     <legend>Scope</legend>
     <div class="seg" role="radiogroup">
-      <input type="radio" name="scope" id="sc-p12" value="p12"><label for="sc-p12">PIC-18</label>
-      <input type="radio" name="scope" id="sc-oh" value="oh" checked><label for="sc-oh">Ohio</label>
+      <input type="radio" name="scope" id="sc-p12" value="p12" checked><label for="sc-p12">PIC-18</label>
+      <input type="radio" name="scope" id="sc-oh" value="oh"><label for="sc-oh">Ohio</label>
       <input type="radio" name="scope" id="sc-all" value="all"><label for="sc-all">All</label>
     </div>
   </fieldset>
@@ -349,7 +349,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
       dim: g("--dim"), label: g("--label"), accent: g("--accent"), muted: g("--muted"), panel: g("--panel"), line: g("--line") }; };
   let P = css();
 
-  const state = { scope: "oh", layers: { proc: 1, mat: 1, mkt: 0, prog: 1, own: 1, assoc: 1, event: 0 }, orph: true,
+  const state = { scope: "p12", layers: { proc: 1, mat: 1, mkt: 0, prog: 1, own: 1, assoc: 1, event: 0 }, orph: true,
     color: "ring", free: true, hovered: null, selected: null, neigh: new Set() };
   let G = null, renderer = null, fa2 = null, settleTimer = null, comm = {}, commColors = [];
 
@@ -625,12 +625,16 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
 """
 
 
+RELEASE_URL = "https://github.com/polymerindustrycluster/polymer-atlas/releases/latest"
+
+
 def home_link(href, tag="p", cls="hint", style=""):
     """Optional link back to the Atlas site (used when the explorers are published next to it)."""
     if not href:
         return ""
     st = f' style="{style}"' if style else ""
-    return f'<{tag} class="{cls}"{st}><a href="{html.escape(href)}">&larr; Polymer Industry Atlas</a></{tag}>'
+    return (f'<{tag} class="{cls}"{st}><a href="{html.escape(href)}">&larr; Polymer Industry Atlas</a> &middot; '
+            f'<a href="{RELEASE_URL}" rel="noopener">Latest data release</a></{tag}>')
 
 
 def org_base(home):

@@ -1,0 +1,401 @@
+org_id,legal_name,shard,tier,markets_blank,certifications_blank,retained_pages
+ORG-000005,Day-Glo Color Corp,organizations_OH.csv,B,0,1,6
+ORG-000006,RPM International Inc.,organizations_OH.csv,B,0,1,7
+ORG-000007,Vibrantz Technologies Inc.,organizations_TX.csv,B,0,1,8
+ORG-000008,Struktol Company of America LLC,organizations_OH.csv,B,0,1,8
+ORG-000009,Myers Industries Inc.,organizations_OH.csv,B,0,1,5
+ORG-000010,GEON Performance Solutions,organizations_OH.csv,B,0,1,8
+ORG-000015,Diamond America Corporation,organizations_OH.csv,B,1,1,6
+ORG-000025,Musson Rubber Co.,organizations_OH.csv,C,1,1,2
+ORG-000026,"Enterprise Rubber, Inc.",organizations_OH.csv,A,1,1,6
+ORG-000030,"Piedmont Plastics, Inc.",organizations_NC.csv,C,1,1,7
+ORG-000031,Akron Porcelain & Plastics Co.,organizations_OH.csv,A,0,1,7
+ORG-000033,LyondellBasell,organizations_US.csv,C,0,1,7
+ORG-000034,Akron Polymer Products,organizations_OH.csv,A,0,1,4
+ORG-000036,Win Plastic Extrusions LLC,organizations_OH.csv,U,1,1,3
+ORG-000038,Pioneer Plastics Corp.,organizations_OH.csv,B,1,1,2
+ORG-000041,Next Generation Plastics,organizations_OH.csv,A,1,1,5
+ORG-000043,Alterra Energy,organizations_OH.csv,B,1,1,3
+ORG-000048,Akrochem Corp.,organizations_OH.csv,C,1,1,7
+ORG-000051,Continental ContiTech USA,organizations_OH.csv,B,0,1,3
+ORG-000052,Harwick Standard Distribution Corp.,organizations_OH.csv,C,1,1,6
+ORG-000054,"Americhem, Inc.",organizations_OH.csv,A,0,1,7
+ORG-000056,CF Extrusion Technologies,organizations_OH.csv,A,1,1,1
+ORG-000057,Smithers-Oasis Co.,organizations_OH.csv,A,0,1,6
+ORG-000059,Laird Plastics,organizations_TX.csv,C,1,1,5
+ORG-000060,"Esterle Mold & Machine Co., Inc.",organizations_OH.csv,B,1,1,6
+ORG-000063,Akron Gasket,organizations_OH.csv,A,1,1,4
+ORG-000064,"Green Technologies of Ohio, LLC",organizations_OH.csv,A,1,1,6
+ORG-000065,"Hudson Extrusions, Inc.",organizations_OH.csv,C,1,1,4
+ORG-000069,Design Molded Plastics,organizations_OH.csv,B,0,1,7
+ORG-000072,Cima Plastics Group,organizations_OH.csv,A,0,1,5
+ORG-000075,Industrial Mold & Machine,organizations_OH.csv,B,1,1,6
+ORG-000078,Giesecke+Devrient America,organizations_US.csv,B,1,1,5
+ORG-000087,"Rainbow Rubber Extrusions, Inc.",organizations_OH.csv,A,1,1,5
+ORG-000088,"PPG Industries, Inc.",organizations_PA.csv,A,0,1,7
+ORG-000098,Spazzolplastica North America LLC,organizations_OH.csv,B,0,1,5
+ORG-000101,"Polymerics, Inc.",organizations_OH.csv,A,1,0,1
+ORG-000105,Transcendia Inc.,organizations_OH.csv,C,0,1,8
+ORG-000106,PharoPLAST,organizations_OH.csv,A,1,1,6
+ORG-000113,Custom Rubber Corporation,organizations_OH.csv,B,0,1,6
+ORG-000115,Cuyahoga Plastics,organizations_OH.csv,A,0,1,3
+ORG-000118,GSH Industries,organizations_OH.csv,A,1,1,5
+ORG-000119,Mechanical Rubber Ohio LLC,organizations_OH.csv,B,1,0,5
+ORG-000124,Prime Conduit Inc.,organizations_OH.csv,C,0,1,3
+ORG-000132,The Sherwin-Williams Company,organizations_OH.csv,A,0,1,1
+ORG-000133,Oatey Co.,organizations_OH.csv,A,0,1,5
+ORG-000135,Valtris Specialty Chemicals,organizations_OH.csv,B,0,1,7
+ORG-000138,Permatex,organizations_OH.csv,B,0,1,7
+ORG-000140,"Cleveland Specialty Products, Inc.",organizations_OH.csv,B,1,1,3
+ORG-000145,Plastics Machinery Group,organizations_OH.csv,A,1,1,6
+ORG-000148,WV International,organizations_OH.csv,C,1,1,5
+ORG-000152,Seglian Manufacturing Group,organizations_OH.csv,C,1,1,8
+ORG-000169,Zatkoff Seals & Packings,organizations_MI.csv,U,1,1,7
+ORG-000174,"Vertex, Inc.",organizations_OH.csv,A,1,1,2
+ORG-000176,Kent Elastomer Products,organizations_OH.csv,B,0,1,6
+ORG-000177,Seal Master Corp.,organizations_OH.csv,A,1,1,8
+ORG-000178,Elbex Corp.,organizations_OH.csv,A,1,1,8
+ORG-000179,Jet Rubber Company,organizations_OH.csv,B,1,1,3
+ORG-000180,Enduro Rubber Company,organizations_OH.csv,A,1,1,3
+ORG-000183,Die-Cut Products Co.,organizations_OH.csv,C,1,1,2
+ORG-000185,"anyseals, Inc.",organizations_OH.csv,B,1,1,6
+ORG-000186,SKF USA Inc.,organizations_US.csv,C,1,1,1
+ORG-000188,Universal Polymer & Rubber,organizations_OH.csv,A,0,1,5
+ORG-000189,GBSA Inc.,organizations_OH.csv,A,1,1,6
+ORG-000194,Salem-Republic Rubber Co.,organizations_OH.csv,B,1,1,8
+ORG-000195,Qualiform Inc.,organizations_OH.csv,B,1,1,7
+ORG-000196,Goldsmith & Eggleton,organizations_OH.csv,B,0,1,6
+ORG-000197,Kenda American Technology Center,organizations_US.csv,B,1,1,3
+ORG-000199,Seaman Corporation,organizations_OH.csv,B,0,1,8
+ORG-000202,Quality Belt Maintenance Ltd.,organizations_US.csv,C,0,1,6
+ORG-000208,A-ROO Company,organizations_OH.csv,B,0,1,3
+ORG-000210,Addipel,organizations_OH.csv,A,0,1,1
+ORG-000211,"Additive Engineering Solutions, LLC",organizations_OH.csv,A,1,1,7
+ORG-000216,Aetna Plastics Fabrication,organizations_OH.csv,B,1,1,7
+ORG-000223,"All Foam Products Co., Inc.",organizations_OH.csv,B,1,1,4
+ORG-000224,"Alliance Equipment Company, Inc.",organizations_OH.csv,B,1,1,6
+ORG-000226,ALTTRAN,organizations_OH.csv,A,1,1,4
+ORG-000227,American Foam Products,organizations_OH.csv,A,1,1,6
+ORG-000231,"Apollo Plastics, Inc.",organizations_OH.csv,A,1,1,2
+ORG-000233,"Arc Rubber, Inc.",organizations_OH.csv,B,1,1,4
+ORG-000234,"Architectural Fiberglass, Inc.",organizations_OH.csv,A,0,1,4
+ORG-000236,"Associated Materials, LLC",organizations_OH.csv,A,0,1,4
+ORG-000237,Sealed Air - Automated Packaging Systems,organizations_OH.csv,A,1,1,8
+ORG-000240,"Baker Plastics, Inc.",organizations_OH.csv,A,1,1,3
+ORG-000246,BioThane Coated Webbing,organizations_OH.csv,A,0,1,4
+ORG-000248,Blair Rubber Company,organizations_OH.csv,A,0,1,5
+ORG-000251,Bole Machinery Inc.,organizations_OH.csv,A,1,1,5
+ORG-000252,The Bonnot Company,organizations_OH.csv,A,1,1,8
+ORG-000258,"C.A. Litzler Co., Inc.",organizations_OH.csv,B,1,1,5
+ORG-000261,Carbon Polymers Company,organizations_OH.csv,A,1,1,4
+ORG-000262,Carlisle Polyurethane Systems,organizations_OH.csv,A,0,1,6
+ORG-000267,"CG Thermal, LLC",organizations_OH.csv,B,1,1,8
+ORG-000268,"Chapin Manufacturing, Inc.",organizations_OH.csv,B,1,1,3
+ORG-000273,"ChemSpec, Ltd.",organizations_OH.csv,C,1,1,1
+ORG-000289,"Corrosion Resistant Technologies, Inc.",organizations_OH.csv,B,1,1,3
+ORG-000293,"Creative Millwork of Ohio, Inc.",organizations_OH.csv,A,1,1,8
+ORG-000299,DCA Construction Products,organizations_OH.csv,A,1,1,3
+ORG-000308,Dott Products,organizations_OH.csv,B,1,1,8
+ORG-000310,Dreco,organizations_OH.csv,A,1,1,2
+ORG-000312,Duo-Corp,organizations_OH.csv,B,1,1,4
+ORG-000313,DuPont — Valley View (Vespel) plant,organizations_OH.csv,B,0,1,4
+ORG-000315,Dura-Line,organizations_OH.csv,A,0,1,6
+ORG-000325,Huntsman Advanced Materials Americas LLC,organizations_OH.csv,B,1,1,7
+ORG-000330,"ESI-Extrusion Services, Inc.",organizations_OH.csv,B,1,1,6
+ORG-000333,Evans Industries,organizations_OH.csv,B,1,1,5
+ORG-000336,Extrudex,organizations_OH.csv,B,1,1,4
+ORG-000339,Ferry Industries Inc.,organizations_OH.csv,B,1,1,6
+ORG-000341,"Flavorseal, LLC",organizations_OH.csv,B,0,1,5
+ORG-000343,Flexsys America L.P.,organizations_OH.csv,A,0,1,7
+ORG-000344,"Fomo Products, Inc.",organizations_OH.csv,B,0,1,8
+ORG-000360,H.B. Chemical,organizations_OH.csv,A,1,1,7
+ORG-000361,"H & B Machine & Tool Co., Inc.",organizations_OH.csv,A,1,1,3
+ORG-000362,"H-P Products, Inc.",organizations_OH.csv,B,1,1,3
+ORG-000365,Harrison Machine & Plastic Corp.,organizations_OH.csv,A,1,1,4
+ORG-000373,IER Fujikura,organizations_OH.csv,B,1,1,7
+ORG-000376,IMS Company,organizations_OH.csv,B,1,1,6
+ORG-000378,Infinity Composites Inc.,organizations_OH.csv,A,1,1,1
+ORG-000379,Infinity Engineered Products,organizations_OH.csv,B,0,1,5
+ORG-000380,Ingalls Process Equipment Co.,organizations_OH.csv,B,1,1,5
+ORG-000384,"Intralox, L.L.C.",organizations_OH.csv,B,0,1,6
+ORG-000391,JACO Manufacturing Co.,organizations_OH.csv,A,1,1,6
+ORG-000397,Johnson Brothers Rubber Co.,organizations_OH.csv,A,1,1,5
+ORG-000399,"Joslyn Manufacturing Co., Inc.",organizations_OH.csv,A,1,1,8
+ORG-000400,JRM Chemical,organizations_OH.csv,B,1,1,3
+ORG-000403,Karman Rubber Company,organizations_OH.csv,B,1,1,6
+ORG-000406,Kent Pultrusion,organizations_OH.csv,A,1,1,5
+ORG-000407,American Marble Industries,organizations_OH.csv,A,1,1,5
+ORG-000409,"Keyland Polymer UV Powder, LLC",organizations_OH.csv,A,1,1,1
+ORG-000410,"Killian Latex, Inc.",organizations_OH.csv,A,1,1,2
+ORG-000412,Kobelco Stewart Bolling,organizations_OH.csv,A,1,1,8
+ORG-000414,Koroseal Interior Products,organizations_OH.csv,A,0,1,4
+ORG-000416,GLI Pool Products,organizations_OH.csv,A,1,1,4
+ORG-000421,The Little Tikes Company,organizations_OH.csv,B,1,1,3
+ORG-000423,LMT Mercer Group,organizations_OH.csv,B,1,1,5
+ORG-000428,The Malish Corporation,organizations_OH.csv,A,1,1,5
+ORG-000431,"Mercury Plastics, Inc.",organizations_OH.csv,A,0,1,3
+ORG-000433,McCann Plastics,organizations_OH.csv,B,1,1,4
+ORG-000434,"MCI Technologies, Inc.",organizations_OH.csv,B,1,1,5
+ORG-000435,Medco Coated Products,organizations_OH.csv,A,1,1,6
+ORG-000438,Mexichem Specialty Resins Inc.,organizations_OH.csv,B,1,1,5
+ORG-000441,Mid-west Poly Pak,organizations_OH.csv,A,1,1,1
+ORG-000442,"Middlefield Plastics, Inc.",organizations_OH.csv,A,1,1,1
+ORG-000453,Momentous Mold & Machine LLC,organizations_OH.csv,B,1,1,4
+ORG-000454,"Montville Plastics & Rubber, LLC",organizations_OH.csv,B,1,1,7
+ORG-000456,"NFM / Welding Engineers, Inc.",organizations_OH.csv,B,1,1,4
+ORG-000457,National Polymer,organizations_OH.csv,A,1,1,5
+ORG-000458,Neff-Perkins Company,organizations_OH.csv,A,0,1,6
+ORG-000462,Next Dimension Components (current trade name unresolved,organizations_OH.csv,B,1,1,3
+ORG-000468,"North American Seal & Supply, Inc.",organizations_OH.csv,A,1,1,6
+ORG-000469,"Northeastern Plastics International, Inc.",organizations_OH.csv,B,1,1,1
+ORG-000474,ORBIS Corporation,organizations_OH.csv,B,0,1,7
+ORG-000480,"Palmer Holland, Inc",organizations_OH.csv,A,1,1,6
+ORG-000483,Pentair,organizations_OH.csv,A,0,1,6
+ORG-000486,PET Processors LLC,organizations_OH.csv,B,1,1,1
+ORG-000487,"The Plastic Forming Company, Inc.",organizations_OH.csv,B,0,1,5
+ORG-000495,"MPC Plating, Inc.",organizations_OH.csv,A,0,1,5
+ORG-000499,"Plastore, Inc.",organizations_OH.csv,A,1,1,1
+ORG-000500,Plastpro 2000 Inc.,organizations_OH.csv,A,0,1,7
+ORG-000506,Greenbridge,organizations_OH.csv,A,0,1,6
+ORG-000511,"Polymer Packaging, Inc.",organizations_OH.csv,A,0,1,7
+ORG-000512,"PolyStamp, LLC",organizations_OH.csv,A,1,1,4
+ORG-000513,Polystar Containment,organizations_OH.csv,A,0,1,5
+ORG-000515,"Precision Foam Fabrication, Inc.",organizations_OH.csv,B,1,1,4
+ORG-000520,Premier Equipment,organizations_OH.csv,B,1,1,3
+ORG-000523,Pretium Packaging,organizations_MO.csv,A,0,1,7
+ORG-000525,"Profile Plastics, Inc.",organizations_OH.csv,A,0,1,5
+ORG-000526,Profile Rubber Corp.,organizations_OH.csv,B,1,1,4
+ORG-000527,Progressive Foam Technologies,organizations_OH.csv,B,0,1,5
+ORG-000529,"Prospect Mold, Inc.",organizations_OH.csv,A,1,1,6
+ORG-000530,Protectoplas Company,organizations_OH.csv,A,1,1,3
+ORG-000531,Q-Lab Corporation,organizations_OH.csv,A,1,1,7
+ORG-000534,Quality Synthetic Rubber,organizations_OH.csv,A,0,1,7
+ORG-000537,Rainbow Printing,organizations_OH.csv,B,1,1,4
+ORG-000538,Rapid Molding,organizations_OH.csv,A,1,1,4
+ORG-000540,Raven Concealment Systems,organizations_OH.csv,B,1,1,5
+ORG-000541,"R.D. Abbott Company, Inc.",organizations_OH.csv,B,1,1,6
+ORG-000544,Foundation Wellness,organizations_OH.csv,B,0,1,8
+ORG-000550,Röchling Automotive USA LLP,organizations_OH.csv,A,1,1,8
+ORG-000551,"Roechling Industrial Cleveland, LP",organizations_OH.csv,A,1,1,8
+ORG-000552,Rogers Industrial Products,organizations_OH.csv,A,1,1,3
+ORG-000553,"Royal Plastics, Inc.",organizations_OH.csv,B,0,1,5
+ORG-000554,RP+M,organizations_OH.csv,B,1,1,4
+ORG-000555,Rubbermaid,organizations_OH.csv,B,0,1,4
+ORG-000562,Schneller LLC,organizations_OH.csv,A,0,1,5
+ORG-000567,Seco Machine,organizations_OH.csv,A,0,1,6
+ORG-000569,"Shin-Etsu Silicones of America, Inc.",organizations_OH.csv,A,0,1,5
+ORG-000576,"Soft-Lite, LLC",organizations_OH.csv,A,1,1,5
+ORG-000579,"Sparton Enterprises, Inc.",organizations_OH.csv,A,1,1,4
+ORG-000580,Specialty Hose Corp.,organizations_OH.csv,B,1,1,8
+ORG-000581,Speed North America,organizations_OH.csv,B,0,1,1
+ORG-000582,Spencer Industries Incorporated,organizations_OH.csv,A,0,1,3
+ORG-000584,"Sprosty Bag Co., Inc.",organizations_OH.csv,B,0,1,5
+ORG-000586,"Spunfab, Ltd.",organizations_OH.csv,B,1,1,4
+ORG-000587,"Squire, T. L. & Co., Inc.",organizations_OH.csv,A,1,1,4
+ORG-000598,Team Wendy,organizations_OH.csv,A,0,1,4
+ORG-000600,Technoform,organizations_OH.csv,B,0,1,7
+ORG-000606,Third Dimension Division,organizations_OH.csv,A,1,1,6
+ORG-000608,Tomlinson Industries,organizations_OH.csv,B,1,1,3
+ORG-000610,"Tower Industries, LLC",organizations_OH.csv,A,1,1,4
+ORG-000612,Trelleborg Sealing Profiles U.S. Inc.,organizations_OH.csv,B,1,0,3
+ORG-000613,The Trexler Rubber Company,organizations_OH.csv,B,1,1,4
+ORG-000614,"Tri-Craft, Inc.",organizations_OH.csv,B,1,1,3
+ORG-000616,Tribotech Composites,organizations_OH.csv,B,1,1,4
+ORG-000620,"Universal Plastics Group, Inc.",organizations_MA.csv,B,0,1,7
+ORG-000623,Uniwall Mfg,organizations_OH.csv,B,0,1,5
+ORG-000625,"Venture Plastics, Inc.",organizations_OH.csv,A,1,1,5
+ORG-000626,"Vinylume Products, Inc.",organizations_OH.csv,A,1,1,3
+ORG-000628,Wacker Chemical Corporation,organizations_OH.csv,B,0,1,4
+ORG-000629,Walton Plastics,organizations_OH.csv,B,1,1,2
+ORG-000631,"Wooster Elastomers, LLC",organizations_OH.csv,B,1,1,3
+ORG-000632,West & Barker,organizations_OH.csv,A,1,1,4
+ORG-000637,Xaloy LLC,organizations_OH.csv,A,1,1,1
+ORG-000638,Yokohama Industries Americas Ohio Inc.,organizations_OH.csv,A,1,1,8
+ORG-000641,"Zeiger Industries, Inc.",organizations_OH.csv,A,1,1,4
+ORG-000660,Alliance Innovations LLC,organizations_OH.csv,B,1,1,5
+ORG-000683,"Bostik, Inc.",organizations_WI.csv,B,0,1,7
+ORG-000684,ASK Chemicals LP,organizations_OH.csv,B,0,1,8
+ORG-000697,"Ball, Bounce and Sport, Inc.",organizations_OH.csv,A,0,1,5
+ORG-000698,BASF Corporation,organizations_NJ.csv,A,0,1,4
+ORG-000706,Bob Sumerel Tire Co,organizations_OH.csv,B,0,1,5
+ORG-000728,Charter Next Generation,organizations_OH.csv,A,0,1,7
+ORG-000735,LyondellBasell Advanced Polymers Inc.,organizations_OH.csv,B,0,1,7
+ORG-000751,Convertapax,organizations_OH.csv,B,0,1,5
+ORG-000752,"Polynt Composites USA, Inc.",organizations_OH.csv,B,1,1,4
+ORG-000798,Dover Chemical Corporation,organizations_OH.csv,A,1,1,6
+ORG-000830,"Extol of Ohio, Inc.",organizations_OH.csv,A,1,1,5
+ORG-000832,"FabOhio, Inc.",organizations_OH.csv,A,1,1,6
+ORG-000868,Guardian Manufacturing Company,organizations_OH.csv,A,0,1,5
+ORG-000870,H.B. Fuller Company,organizations_MN.csv,B,0,1,7
+ORG-000902,"Premere Enterprises, Inc.",organizations_OH.csv,B,1,1,3
+ORG-000909,"Jerico Plastic Industries, Inc.",organizations_OH.csv,A,0,1,8
+ORG-000911,Johns Manville,organizations_OH.csv,A,0,1,8
+ORG-000913,JP Industrial Products,organizations_OH.csv,B,1,1,5
+ORG-000917,Kar-Del Plastics Inc.,organizations_OH.csv,A,1,1,3
+ORG-000951,Md Plastics Inc.,organizations_OH.csv,A,1,1,4
+ORG-000955,Meteor Sealing Systems,organizations_OH.csv,B,0,1,1
+ORG-000968,MPS Manufacturing Company,organizations_OH.csv,A,1,1,2
+ORG-000997,Ohio Foam Corp.,organizations_OH.csv,B,0,1,4
+ORG-000999,Okamoto Sandusky Manufacturing,organizations_OH.csv,B,1,1,3
+ORG-001007,Owens Corning,organizations_OH.csv,B,0,1,6
+ORG-001033,"Plastipak Packaging, Inc.",organizations_OH.csv,B,0,1,4
+ORG-001042,Polynew,organizations_OH.csv,A,1,1,3
+ORG-001053,ProVia LLC,organizations_OH.csv,B,0,1,7
+ORG-001065,"R & S Technologies, Inc.",organizations_OH.csv,B,1,1,2
+ORG-001116,"Snyder Manufacturing, Inc.",organizations_OH.csv,A,0,1,4
+ORG-001147,CSP,organizations_OH.csv,B,0,1,6
+ORG-001183,Ventra (Flex-N-Gate),organizations_OH.csv,B,0,1,3
+ORG-001335,"Polychem Dispersions, Inc.",organizations_OH.csv,B,1,1,6
+ORG-001379,Elyria Plastic Products,organizations_OH.csv,A,1,1,6
+ORG-001380,Bauer Corporation,organizations_OH.csv,B,1,1,4
+ORG-001382,SR Products,organizations_OH.csv,B,0,1,2
+ORG-001383,"Delco, LLC",organizations_OH.csv,C,1,1,7
+ORG-001384,Sterilite Corporation,organizations_OH.csv,B,0,1,5
+ORG-001385,Aexcel Corp.,organizations_OH.csv,A,0,1,5
+ORG-001386,Ergomat Inc.,organizations_OH.csv,B,0,1,4
+ORG-001388,Hy-Ko Products Company,organizations_OH.csv,B,1,1,4
+ORG-001389,"IML Containers Ohio, Inc.",organizations_OH.csv,B,0,1,3
+ORG-001391,KONG Company,organizations_CO.csv,C,1,1,5
+ORG-001395,CREO Greenhouse,organizations_OH.csv,B,0,1,6
+ORG-001396,Sure-foot Industries Corporation,organizations_OH.csv,A,1,1,5
+ORG-001397,PolyKinetix,organizations_OH.csv,B,1,1,4
+ORG-001398,"Smithers Medical Products, Inc.",organizations_OH.csv,B,0,1,4
+ORG-001404,"Deflecto, LLC",organizations_IN.csv,B,1,1,4
+ORG-001409,American Bath Group,organizations_OH.csv,B,1,1,3
+ORG-001423,ABC Technologies Inc.,organizations_OH.csv,B,1,1,4
+ORG-001438,Thogus Products Company,organizations_OH.csv,A,1,1,5
+ORG-001447,Axalta Coating Systems USA LLC,organizations_OH.csv,B,1,1,3
+ORG-001454,IMCD US,organizations_OH.csv,B,1,1,1
+ORG-001459,RFD Beaufort Inc.,organizations_OH.csv,B,1,1,8
+ORG-001462,Clevite Elastomers Technical Center (Tenneco),organizations_OH.csv,B,1,1,6
+ORG-001465,Chalfant Sewing Fabricators Inc,organizations_OH.csv,B,1,1,3
+ORG-001466,Henkel Corporation,organizations_OH.csv,A,0,1,4
+ORG-001470,The Pittsburgh Paint Company,organizations_OH.csv,B,1,1,3
+ORG-001472,ChemMasters Inc.,organizations_OH.csv,B,0,1,5
+ORG-001475,"ChromaScape, Inc.",organizations_OH.csv,B,0,1,3
+ORG-001477,Aurora Material Solutions,organizations_OH.csv,A,0,1,7
+ORG-001490,Chardon Custom Polymers,organizations_OH.csv,A,0,1,1
+ORG-001501,Polymer Valley Chemicals Inc.,organizations_OH.csv,B,1,1,3
+ORG-001506,"ValenSil Technologies, LLC",organizations_OH.csv,A,1,1,4
+ORG-001507,HOYA VISION CARE - CLEVELAND,organizations_OH.csv,A,1,1,3
+ORG-001508,ICHOR VASCULAR INC,organizations_OH.csv,C,1,1,4
+ORG-001514,"Julius Zorn, Inc. (Juzo USA)",organizations_OH.csv,B,1,1,5
+ORG-001515,S4 Medical Corp,organizations_OH.csv,A,1,1,2
+ORG-001523,"Centerline Biomedical, Inc.",organizations_OH.csv,B,1,1,4
+ORG-001525,"SPR Therapeutics, Inc",organizations_OH.csv,A,1,1,5
+ORG-001538,Perma Laboratories LLC,organizations_OH.csv,B,1,1,5
+ORG-001541,AlphaMicron Inc.,organizations_OH.csv,A,1,1,3
+ORG-001548,Frantz Medical Development Ltd. (Frantz Medical Group),organizations_OH.csv,B,1,1,4
+ORG-001555,Synapse Biomedical Inc.,organizations_OH.csv,B,1,1,4
+ORG-001557,"MatPLUS, LTD",organizations_OH.csv,B,1,1,4
+ORG-001570,GHSP,organizations_OH.csv,B,1,1,7
+ORG-001573,Prentke Romich Company,organizations_OH.csv,B,1,1,4
+ORG-001577,Master Builders Solutions US LLC,organizations_OH.csv,B,0,1,3
+ORG-001578,Bright Idea Shops LLC,organizations_OH.csv,A,1,1,5
+ORG-001580,Chemical Solvents Inc,organizations_OH.csv,B,1,1,5
+ORG-001583,Grand River Rubber & Plastics Company,organizations_OH.csv,A,1,1,4
+ORG-001585,High Tech Extrusions Ltd,organizations_OH.csv,A,1,1,6
+ORG-001588,The Kent Mold & Manufacturing Company,organizations_OH.csv,A,1,1,1
+ORG-001590,Therm-O-Link Inc,organizations_OH.csv,A,1,1,2
+ORG-001591,Winsell Incorporated,organizations_OH.csv,B,1,1,3
+ORG-001592,Alpha Tool & Mold Inc,organizations_OH.csv,B,1,1,3
+ORG-001595,Eleven 10 LLC,organizations_OH.csv,B,1,1,4
+ORG-001596,Gateway Products Recycling Inc,organizations_OH.csv,A,1,1,6
+ORG-001598,J B Jewitt Co Inc,organizations_OH.csv,B,1,1,3
+ORG-001603,Speedline Corporation,organizations_OH.csv,B,1,1,3
+ORG-001607,Kinetico Incorporated,organizations_OH.csv,B,1,1,7
+ORG-001609,"Morgan Adhesives Company, LLC",organizations_OH.csv,A,1,0,7
+ORG-001622,ABSOLUTE POLYMERS INC,organizations_OH.csv,A,1,1,3
+ORG-001630,AKRON BELTING & SUPPLY CO,organizations_OH.csv,A,1,1,5
+ORG-001636,ENGINEERED LAMINATES & COATINGS,organizations_OH.csv,B,1,1,4
+ORG-001639,PLASTIC ENTERPRISES,organizations_OH.csv,A,1,1,1
+ORG-001642,MOTIVO DISPLAY SOLUTIONS,organizations_OH.csv,B,1,1,2
+ORG-001643,OVERMOLD EXPRESS,organizations_OH.csv,A,1,1,4
+ORG-001644,RPM INDUSTRIES,organizations_OH.csv,B,0,1,5
+ORG-001647,V&A PROCESS,organizations_OH.csv,A,1,1,5
+ORG-001648,WORTHINGTON PRODUCTS,organizations_OH.csv,B,0,1,2
+ORG-001653,Bruns Brush Inc,organizations_OH.csv,A,1,1,4
+ORG-001656,ClearSonic Manufacturing Inc,organizations_OH.csv,A,1,1,5
+ORG-001657,Comdess Company Inc,organizations_OH.csv,B,1,1,3
+ORG-001665,Dischem International Inc,organizations_OH.csv,A,1,1,2
+ORG-001666,Drossbach Inc,organizations_OH.csv,A,0,1,4
+ORG-001667,Dudick Inc,organizations_OH.csv,A,0,1,7
+ORG-001670,Enpac LLC,organizations_OH.csv,A,1,1,4
+ORG-001679,Hollo Plastics Equipment Inc,organizations_OH.csv,A,1,1,5
+ORG-001681,Inter-Ion Inc,organizations_OH.csv,B,1,1,7
+ORG-001702,J T Adams Company,organizations_OH.csv,C,1,1,3
+ORG-001717,"FlexLink, LLC",organizations_OH.csv,B,1,1,7
+ORG-001725,Thorworks Industries Inc,organizations_OH.csv,B,0,1,6
+ORG-001728,Buckeye Medical Technologies LLC,organizations_OH.csv,B,1,1,3
+ORG-001739,"API II, Inc.",organizations_OH.csv,A,1,1,2
+ORG-001740,Auto Technology Company,organizations_OH.csv,C,1,1,6
+ORG-001742,Global Waste and Recycling LLC,organizations_OH.csv,C,1,1,5
+ORG-001744,"Jet Di, Inc.",organizations_OH.csv,A,1,1,1
+ORG-001745,J.G. Sales Inc.,organizations_OH.csv,C,1,1,2
+ORG-001747,P3 Infrastructure Inc.,organizations_OH.csv,C,1,1,3
+ORG-001748,"PKG, LLC",organizations_OH.csv,A,0,1,4
+ORG-001749,"Standards Testing Laboratories, Inc.",organizations_OH.csv,C,1,1,3
+ORG-001753,Foundation Industries Inc,organizations_OH.csv,A,1,1,3
+ORG-001755,Medina Recycling Inc.,organizations_OH.csv,A,1,1,3
+ORG-001757,"ACO Polymer Products, Inc.",organizations_OH.csv,B,0,1,7
+ORG-001758,Niles Building Products Company,organizations_OH.csv,B,0,1,4
+ORG-001760,"Pioneer Manufacturing Company, Inc.",organizations_OH.csv,B,1,1,6
+ORG-001769,Adherex Packaging,organizations_OH.csv,A,0,1,8
+ORG-001774,Alcon Tool Co,organizations_OH.csv,A,1,1,6
+ORG-001776,S. Slesnick Company,organizations_OH.csv,B,1,1,5
+ORG-001777,American Consolidated Industries Inc,organizations_OH.csv,A,1,1,6
+ORG-001781,Astro Manufacturing & Design Corp,organizations_OH.csv,B,1,1,7
+ORG-001783,Beacon Gasket & Seals Co,organizations_OH.csv,A,1,1,5
+ORG-001784,BF Plastics Inc,organizations_OH.csv,A,1,1,5
+ORG-001787,Circle Mold & Machine Inc,organizations_OH.csv,B,1,1,3
+ORG-001791,Cosar Mold Inc,organizations_OH.csv,A,1,1,3
+ORG-001806,ENPRESS LLC,organizations_OH.csv,B,1,1,1
+ORG-001807,The Euclid Chemical Company,organizations_OH.csv,B,1,1,6
+ORG-001810,Expert Gasket & Seal LLC,organizations_OH.csv,A,1,1,6
+ORG-001826,Hapco Inc,organizations_OH.csv,A,1,1,6
+ORG-001855,NewKor Inc.,organizations_OH.csv,A,1,1,1
+ORG-001856,Novation Solutions LLC,organizations_OH.csv,A,1,1,2
+ORG-001859,OEM/Miller,organizations_OH.csv,A,1,1,8
+ORG-001868,PolyMet Recovery LLC,organizations_OH.csv,A,1,1,5
+ORG-001869,Pro-Line Automation Systems Ltd.,organizations_OH.csv,A,1,1,6
+ORG-001879,Rainbow Master Mixing LLC,organizations_OH.csv,A,1,1,4
+ORG-001883,Rezkem Chemicals,organizations_OH.csv,A,1,1,5
+ORG-001892,Schibley Solvents and Chemicals Inc.,organizations_OH.csv,A,1,1,4
+ORG-001905,Thermoprene Inc,organizations_OH.csv,A,1,1,3
+ORG-001908,Tremco CPG Inc.,organizations_OH.csv,B,1,1,4
+ORG-001916,Zero D Products Inc,organizations_OH.csv,A,1,1,4
+ORG-001922,Faull and Son,organizations_OH.csv,C,1,1,5
+ORG-001927,GlueTread LLC,organizations_OH.csv,C,1,1,5
+ORG-001928,Green Processing Company Inc,organizations_OH.csv,A,1,1,5
+ORG-001930,Industrial Thermoset Plastics (IT Plastics),organizations_OH.csv,A,1,1,4
+ORG-001936,"Rotocast Technologies, Inc.",organizations_OH.csv,A,1,1,2
+ORG-001937,"Smetzer's Tire Center, Inc.",organizations_OH.csv,A,1,1,3
+ORG-001947,AAM Mold and Machine LLC,organizations_OH.csv,B,1,1,3
+ORG-001949,Akron Steel Fabricators Co.,organizations_OH.csv,B,1,1,5
+ORG-001957,Friess Equipment Inc,organizations_OH.csv,A,1,1,2
+ORG-001958,ICS Laboratories Inc,organizations_OH.csv,B,1,1,6
+ORG-001959,Jax Mold and Machine Inc,organizations_OH.csv,B,1,1,2
+ORG-001978,"Sprayworks Equipment Group, LLC",organizations_OH.csv,A,1,1,8
+ORG-001986,Optimax Plastic LLC,organizations_OH.csv,B,1,1,4
+ORG-001992,Precision Polymer Casting LLC (dba Castinite),organizations_OH.csv,B,1,1,4
+ORG-001998,R A M Plastics Co Inc,organizations_OH.csv,B,0,1,7
+ORG-002007,S&A Industries Corporation,organizations_OH.csv,A,0,1,4
+ORG-002014,Stroup & Son Ltd,organizations_OH.csv,B,1,1,1
+ORG-002018,Telar Corp.,organizations_OH.csv,A,1,1,2
+ORG-002034,Whip Guide Company,organizations_OH.csv,A,1,1,1
+ORG-002038,"Pinnacle Recycling, LLC",organizations_OH.csv,B,1,1,6
+ORG-002039,"M. Argueso & Co., Inc.",organizations_OH.csv,A,0,1,8
+ORG-002043,"Mitsubishi Chemical America, Inc. (Bellevue Plant)",organizations_OH.csv,A,0,1,8
+ORG-002053,STUCK LLC,organizations_OH.csv,C,1,1,1
+ORG-002056,P & E Sales Ltd.,organizations_OH.csv,C,1,1,2
+ORG-002067,Aropha Inc.,organizations_OH.csv,B,1,1,5
+ORG-002069,"Summit Glove, Inc.",organizations_OH.csv,B,1,1,1
+ORG-002135,Applied Specialties Inc,organizations_OH.csv,B,0,1,1
+ORG-002136,Kongsberg Automotive,organizations_INTL.csv,B,1,1,6
+ORG-002153,Checkpoint Systems,organizations_OH.csv,A,1,1,6
+ORG-002922,Absolute Haitian Corporation,organizations_MA.csv,B,1,1,2
+ORG-003030,"Budenheim USA, Inc.",organizations_OH.csv,B,1,1,1
+ORG-003545,"G-3 Chickadee Purchaser, LLC",organizations_TX.csv,C,1,1,5
+ORG-003746,Goodyear Chemical,organizations_OH.csv,B,1,1,1
+ORG-004022,VMI Holland B.V.,organizations_INTL.csv,B,1,1,6
+ORG-004026,Anderson International Corp,organizations_OH.csv,A,1,1,7

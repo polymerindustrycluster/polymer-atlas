@@ -194,8 +194,8 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   <fieldset>
     <legend>Show</legend>
     <div class="toggles" id="rings"></div>
-    <label class="opt"><input type="checkbox" id="arcs" checked>Company networks (sites of one parent)</label>
-    <label class="opt"><input type="checkbox" id="p12only">Only PIC-18 sites</label>
+    <label class="opt"><input type="checkbox" id="arcs">Company networks (sites of one parent)</label>
+    <label class="opt"><input type="checkbox" id="p12only" checked>Only PIC-18 sites</label>
   </fieldset>
   <p class="hint" id="modeHint"></p>
   __HOME__<p class="foot" id="foot"></p>
@@ -252,7 +252,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   S.forEach((s) => { if (s.ok) for (const t of O[s.o].t) tagSites[t]++; });
   const labelCut = [...tagSites].filter((_, n) => !T[n].x).sort((a, b) => b - a)[30] || 0;
 
-  const state = { mode: "geo", t: 0, rings: { "1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "": 1 }, arcs: true, p12only: false,
+  const state = { mode: "geo", t: 0, rings: { "1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "": 1 }, arcs: false, p12only: true,
     hover: -1, org: -1, netReady: false };
   const color = (i) => P.ring[(O[S[i].o].r) || ""] || P.ring[""];
   const visible = (i) => S[i].ok && state.rings[O[S[i].o].r || ""] && (!state.p12only || S[i].p);
@@ -499,9 +499,16 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   $("foot").textContent = `Built from data/ at ${D.commit} · ${D.built} · site positions are interpolated from addresses (reference data, not evidence)`;
   $("m-net").disabled = true; $("m-net").textContent = "Arranging…";
   setMode("geo"); stats(); resize();
+  if (!location.hash) $("z-p12").onclick();   // open on PIC-18
   // deep links: graph/map.html#ORG-000001 opens zoomed to that organization's sites
   const ORG_IDX = new Map(O.map((o, k) => [o.id, k]));
-  const fromHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (ORG_IDX.has(id)) selectOrg(ORG_IDX.get(id)); };
+  const fromHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!ORG_IDX.has(id)) return;
+    const o = ORG_IDX.get(id);
+    if (state.p12only && !(sitesByOrg.get(o) || []).some((i) => S[i].p)) { state.p12only = false; $("p12only").checked = false; quad = null; stats(); }   // a deep link outside PIC-18 must still show
+    selectOrg(o);
+  };
   addEventListener("hashchange", fromHash);
   if (location.hash) setTimeout(fromHash, 60);
   (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(computeNetwork);
