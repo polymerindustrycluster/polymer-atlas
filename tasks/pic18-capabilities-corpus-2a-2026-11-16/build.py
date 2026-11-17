@@ -60,7 +60,9 @@ def outputs(decisions):
         validate_decision(d)
         s = sites[d['site_id']]; typ = 'process' if d['field'] == 'processes' else 'material'
         assert s['state'] == 'OH' and s['operating_status'] == 'active' and s['verification_tier'] in ('A', 'B', 'C')
-        tag = not (d['basis'] == 'menu' and s['verification_tier'] in ('A', 'B'))  # owner ruling 2026-11-14
+        tier_ok = not (d['basis'] == 'menu' and s['verification_tier'] in ('A', 'B'))  # owner ruling 2026-11-14
+        blank = not next(x for x in base('data/sites_OH.csv') if x['site_id'] == s['site_id'])[d['field']].strip()  # b02 fill-blank-only rule
+        tag = tier_ok and blank
         if tag:
             have = [v for v in s[d['field']].split(';') if v]
             if d['term'] not in have: s[d['field']] = ';'.join(have + [d['term']])
@@ -75,11 +77,14 @@ def outputs(decisions):
             caps.append(dict(capability_id=f'CAP-{CAP0 + len(caps):06d}', site_id=s['site_id'], org_id=s['org_id'], capability_type=typ, term=ct, provenance='company_disclosed',
                              source_ref=d['url'], observed_date='2026-11-16', withdrawn_date='', created_by=WHO,
                              notes=f"Quote: {d['quote']} Basis: {d['basis']}. Raw SHA256 {d['sha256']}. Locality witness: \"{d['grain_quote']}\"."
-                                   + ('' if tag else ' Section-3 tag held per owner ruling 2026-11-14 (C-strength on a tier A/B site).')))
+                                   + ('' if tag else ' Section-3 tag held per owner ruling 2026-11-14 (C-strength on a tier A/B site).' if not tier_ok else ' Section-3 tag held: the cell was not blank at base (fill-blank rule); recommend appending.')))
             cap_note = f'; capability {ct}'
         elif not tag and not ct: cap_note = '; no section 3.6 term, so no row'
-        verdicts.append(dict(site_id=s['site_id'], term=d['term'], verdict='VERIFIED', disposition=('applied' if tag else 'capability row only') + cap_note,
-                             settling_fact='' if tag or ct else 'A narrative sentence (supports_A) for this term, or a section 3.6 term (owner ruling 2026-11-14)'))
+        elif not tag: cap_note = f'; capability {ct} already live'
+        disp = 'applied' if tag else 'capability row only' if not tier_ok else 'tag held (cell not blank at base)'
+        verdicts.append(dict(site_id=s['site_id'], term=d['term'], verdict='VERIFIED', disposition=disp + cap_note,
+                             settling_fact='' if tag else 'A narrative sentence (supports_A) for this term, or a section 3.6 term (owner ruling 2026-11-14)' if not tier_ok
+                             else 'Controller call: append to a cell that holds non-section-3.1 values (recommended: append)' ))
     decided = {d['site_id'] for d in decisions}
     for sid in slice_ids():
         n = int(sid[5:])

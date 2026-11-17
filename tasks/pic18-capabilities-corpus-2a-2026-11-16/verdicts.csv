@@ -3,15 +3,15 @@ SITE-000198,mold_tool_making,VERIFIED,applied,
 SITE-000198,transfer_molding,VERIFIED,applied,
 SITE-000239,polyethylene_pe,VERIFIED,applied; capability polyethylene_pe,
 SITE-000239,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
-SITE-000243,injection_molding,VERIFIED,applied; capability injection_molding,
+SITE-000243,injection_molding,VERIFIED,tag held (cell not blank at base); capability injection_molding,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000243,thermoplastics,VERIFIED,applied; capability thermoplastics,
 SITE-000287,rubber_mixing_compounding,VERIFIED,applied; capability rubber_mixing_compounding,
 SITE-000287,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
 SITE-000402,silicones,VERIFIED,applied; capability silicones,
 SITE-000402,polyurethane_pu,VERIFIED,applied; capability polyurethane_pu,
 SITE-000438,epoxy,VERIFIED,applied; capability epoxy,
-SITE-000458,extrusion_profile,VERIFIED,applied; capability extrusion,
-SITE-000458,extrusion_pipe_tube,VERIFIED,applied,
+SITE-000458,extrusion_profile,VERIFIED,tag held (cell not blank at base); capability extrusion,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
+SITE-000458,extrusion_pipe_tube,VERIFIED,tag held (cell not blank at base); capability extrusion already live,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000458,thermoplastics,VERIFIED,applied; capability thermoplastics,
 SITE-000458,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
 SITE-000458,polyethylene_pe,VERIFIED,applied; capability polyethylene_pe,
@@ -28,11 +28,11 @@ SITE-000490,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
 SITE-000490,silicones,VERIFIED,applied; capability silicones,
 SITE-000490,thermoplastics,VERIFIED,applied; capability thermoplastics,
 SITE-000490,thermosets,VERIFIED,applied; capability thermosets,
-SITE-000562,compression_molding,VERIFIED,applied; capability compression_molding,
-SITE-000562,transfer_molding,VERIFIED,applied,
+SITE-000562,compression_molding,VERIFIED,tag held (cell not blank at base); capability compression_molding,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
+SITE-000562,transfer_molding,VERIFIED,"tag held (cell not blank at base); no section 3.6 term, so no row",Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000562,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
 SITE-000591,injection_molding,VERIFIED,applied; capability injection_molding,
-SITE-000618,recycling_unspecified,VERIFIED,applied,
+SITE-000618,recycling_unspecified,VERIFIED,"tag held (cell not blank at base); no section 3.6 term, so no row",Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000618,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
 SITE-000618,epdm,VERIFIED,applied,
 SITE-000618,sbr,VERIFIED,applied,
@@ -44,8 +44,8 @@ SITE-000651,acrylic_pmma,VERIFIED,applied,
 SITE-000651,asa,VERIFIED,applied,
 SITE-000651,nylon_pa,VERIFIED,applied; capability nylon_pa,
 SITE-000651,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
-SITE-000707,compression_molding,VERIFIED,applied; capability compression_molding,
-SITE-000707,thermoforming_unspecified,VERIFIED,applied; capability thermoforming,
+SITE-000707,compression_molding,VERIFIED,tag held (cell not blank at base); capability compression_molding,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
+SITE-000707,thermoforming_unspecified,VERIFIED,tag held (cell not blank at base); capability thermoforming,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000909,custom_compounding,VERIFIED,applied; capability compounding,
 SITE-000909,thermoplastics,VERIFIED,applied; capability thermoplastics,
 SITE-000909,pvc,VERIFIED,applied; capability pvc,
@@ -58,11 +58,10 @@ SITE-000987,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
 SITE-000987,composites_frp,VERIFIED,applied,
 SITE-000987,pvc,VERIFIED,applied; capability pvc,
 SITE-000987,thermoplastics,VERIFIED,applied; capability thermoplastics,
-SITE-001109,plastics_machining_cnc,VERIFIED,applied,
-SITE-001125,regrind_pelletizing,VERIFIED,applied,
-SITE-001125,thermoplastics,VERIFIED,applied; capability thermoplastics,
+SITE-001109,plastics_machining_cnc,VERIFIED,"tag held (cell not blank at base); no section 3.6 term, so no row",Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
+SITE-001125,regrind_pelletizing,VERIFIED,"tag held (cell not blank at base); no section 3.6 term, so no row",Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000546,recycling_unspecified,VERIFIED,applied,
-SITE-000667,extrusion_unspecified,VERIFIED,capability row only; capability extrusion,
+SITE-000667,extrusion_unspecified,VERIFIED,capability row only; capability extrusion,"A narrative sentence (supports_A) for this term, or a section 3.6 term (owner ruling 2026-11-14)"
 SITE-000014,,STILL_UNCERTAIN,held: off_vocabulary,"Owner vocabulary ruling on whether extrusion-die and custom-tooling manufacture (""forming dies, sheet dies, film dies and other custom tooling"") maps to mold_tool_making; no governed term fits the page words today"
 SITE-000027,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
 SITE-000043,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
@@ -117,7 +116,7 @@ SITE-000462,,STILL_UNCERTAIN,held: multi_location_unbound,"Home page describes "
 SITE-000465,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
 SITE-000479,,STILL_UNCERTAIN,held: nothing_found,A narrative sentence stating which polymer process the mold texturing serves; stored pages list tool-finishing steps only
 SITE-000485,,STILL_UNCERTAIN,held: off_vocabulary,"Page says the company ""builds tooling made with composite materials and 3D printing technology""; tooling made from composites has no governed term, and the site already carries tooling_mold_die"
-SITE-000487,,STILL_UNCERTAIN,held: site_type_hq_only,"Atlas site_type is hq_only; a page stating that CNC machining of polycarbonate enclosures is done at 8989 Tyler Blvd (the page says Integra ""offers"" it) or a site_type correction"
+SITE-000487,,STILL_UNCERTAIN,held: site_type_hq_only,"Page says Integra Enclosures ""offers"" CNC machining and drilling on polycarbonate enclosures and gives 8989 Tyler Blvd only as the company address; Atlas site_type is hq_only. A page stating machining is performed at that address, or a site_type correction"
 SITE-000488,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
 SITE-000500,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
 SITE-000514,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)

@@ -38,7 +38,7 @@ pr = H+'profilerubber.com/'; pg = H+'profilerubber.com/contact-us.html'; pgq = '
 add(562,'processes',['compression_molding','transfer_molding'],'menu',pr,'Services Compression Molding Transfer Molding Tooling Custom Moldings',pg,pgq)
 add(562,'materials',['elastomers_rubber'],'narrative',pr,'Profile Rubber Corporation has been supplying the world with high-quality custom molded rubber products.',pg,pgq)
 ro = H+'royalplastics.com/'
-add(591,'processes',['injection_molding'],'narrative',ro,'Since 1966, Royal Plastics, Inc of Mentor, Ohio, has become a leading full-service custom manufacturer of injection molded plastic parts.',ro,'Royal Plastics, Inc of Mentor, Ohio')
+add(591,'processes',['injection_molding'],'narrative',ro,'Since 1966, Royal Plastics, Inc of Mentor, Ohio, has become a leading full-service custom manufacturer of injection molded plastic parts.',ro+'about','RPI – Mentor, OH USA Custom Injection Molder and Contract Manufacturer')
 sp = H+'www.spartonenterprises.com/'; spg = '861 Norton Ave , Barberton, OH 44203'
 add(618,'processes',['recycling_unspecified'],'narrative',sp+'about','Sparton Enterprises started as a small rubber recycling operation and has grown into a fully integrated manufacturer of recycled rubber materials.',sp+'about',spg)
 add(618,'materials',['elastomers_rubber'],'narrative',sp+'products','We process millions of pounds of various types of rubber annually.',sp+'products',spg)
@@ -65,7 +65,6 @@ pm = H+'paramontmachinecompany.com/'
 add(1109,'processes',['plastics_machining_cnc'],'narrative',pm,'We are capable of holding tight tolerances and fine-machined surface finishes on plastic machined parts.',pm,'963 Commercial Ave. S.E. New Philadelphia, Ohio 44663')
 pn = H+'polynew.com/'
 add(1125,'processes',['regrind_pelletizing'],'narrative',pn,'Clean, quality regrind processed by Polynew can help you slash material costs and eliminate waste disposal problems.',pn+'about.htm','we moved to a larger facility in Baltic, Ohio')
-add(1125,'materials',['thermoplastics'],'narrative',pn,'thermoplastic material destined for regrind often gets confused with shop trash and floor sweep',pn+'about.htm','we moved to a larger facility in Baltic, Ohio')
 ps = H+'poly-stamp.com/about-us'
 add(546,'processes',['recycling_unspecified'],'narrative',ps,'The ingenuity of our unique formulations enables us to recycle all types of plastic.',ps,'427 Thacher Ln Youngstown, OH 44515')
 vv = H+'www.vinylume.com/'

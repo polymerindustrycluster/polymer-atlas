@@ -22,7 +22,7 @@ HOLDS.update({
     462: ('multi_location_unbound', 'Home page describes "one of North America\'s largest custom profile and tubing extrusion operations" for the company; no Middlefield address or plant statement is stored'),
     479: ('nothing_found', 'A narrative sentence stating which polymer process the mold texturing serves; stored pages list tool-finishing steps only'),
     485: ('off_vocabulary', 'Page says the company "builds tooling made with composite materials and 3D printing technology"; tooling made from composites has no governed term, and the site already carries tooling_mold_die'),
-    487: ('site_type_hq_only', 'Atlas site_type is hq_only; a page stating that CNC machining of polycarbonate enclosures is done at 8989 Tyler Blvd (the page says Integra "offers" it) or a site_type correction'),
+    487: ('site_type_hq_only', 'Page says Integra Enclosures "offers" CNC machining and drilling on polycarbonate enclosures and gives 8989 Tyler Blvd only as the company address; Atlas site_type is hq_only. A page stating machining is performed at that address, or a site_type correction'),
     535: ('menu_only_no_capability_term', 'Tier B site: the page names fiberglass doors as a product; composites_frp has no section 3.6 term, and a narrative sentence on how the Ashtabula plant makes them would settle it'),
     537: ('partner_processing', 'Page says "Our manufacturing partners are strategically located"; a page stating that Poly Source processes scrap at the Brunswick address'),
     563: ('plant_allocation', 'History page says "two locations" (Beach City 111,000 sq ft and Gnadenhutten 220,000 sq ft); a page stating which plant makes foam insulation (Gnadenhutten has no Atlas site: lead)'),
