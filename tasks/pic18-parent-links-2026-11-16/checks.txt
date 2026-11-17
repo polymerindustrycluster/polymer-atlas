@@ -1,0 +1,11 @@
+python3 tasks/pic18-parent-links-2026-11-16/check.py
+11 organization parent fills; 0 evidence rows appended; 0 generated edges appended
+PASS: frame 517 applied 11 held 506 tiers {'B': 6, 'A': 5} 3/3 injected defects rejected; idempotent
+
+python3 scripts/validate.py
+5026 organizations, 7196 sites, 408 ecosystem rows, 5448 registry links, 60 member rows, 1513 people rows, 216 program rows, 71 event series, 41586 evidence rows, 361 relationship rows, 526 capability rows, 88 equipment rows, 0 engagement rows, 816 person-identifier links, 1296 participation rows, 79 ref_codes, 39 code-map rows, 61 code assignments checked.
+OK — validation passed.
+python3 scripts/check_row_loss.py --base origin/main
+row-loss guard: OK — no keyed row removed from data/ since origin/main (merge-base ef32b5ba73)
+python3 scripts/export_vocab.py --check
+docs/schema/vocab.json is current

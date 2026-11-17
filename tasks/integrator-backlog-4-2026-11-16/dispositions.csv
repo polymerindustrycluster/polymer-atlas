@@ -1,0 +1,10 @@
+case,verdict,applied,held,settling_fact
+a,STILL_UNCERTAIN,Existing fold preserved; no new edit,Independent legal identity adjudication,Primary legal record explicitly linking Akron legal operator to Burton entity
+b,VERIFIED-applied,Address evidence on surviving SITE-001925; existing duplicate tombstone preserved,None,Historical operator certificate names LLC at 2228 Reiser; expiry is not closure evidence
+c-ppg,VERIFIED-applied,2025 10-K existence/address and Exhibit 21 group identity evidence; existing tier A retained,None,Exhibit 21 is subsidiaries OF PPG; no upstream parent asserted
+c-shw,VERIFIED-applied,2025 10-K existence/address and Exhibit 21.1 group identity evidence; existing tier A retained,None,Exhibit 21.1 is subsidiaries OF Sherwin-Williams; no upstream parent asserted
+d,VERIFIED-applied,Parent evidence appended; existing ORG-000430 linkage retained,None,Own narrative explicitly calls AltraSet materials division launched by Mar-Bal
+e,STILL_UNCERTAIN,Existence/scope evidence appended; existing website retained,Huron address,Current own-domain or government record naming Pittsburgh Paints operator at Huron street address
+f-k,STILL_UNCERTAIN,Own-site operating Polyiso material recorded via other_specified_in_notes on organization and site; source and verification date updated,Process,Plant-specific operating statement naming its manufacturing process; TPO extrusion draft permit not applied
+f-s,STILL_UNCERTAIN,Thomaston recycled_content_pcr_pir material filled; source and verification date updated,Process,Plant-specific statement naming molding or other manufacturing process at Thomaston
+f-n,STILL_UNCERTAIN,None; withdrawn unmerged epoxy fill and both evidence rows,Material and process,Plant-specific source with full dated observation or current narrative; held data sheet has only November 2020 date and C-strength specification bullets

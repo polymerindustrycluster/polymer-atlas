@@ -1,0 +1,22 @@
+# Public PIC membership re-sync — 2026-11-16
+
+Claim: atlas-w16-members, Lane MBR, controller thr_9i2c6byhcz; owner uses the Atlas for member prospecting. This full public-list snapshot is the usage check for this pass; no outreach or private source was used.
+
+Source: https://polymerindustrycluster.org/ fetched raw with curl on 2026-11-16. `public-list.html` is the complete raw witness, SHA256 c626c7a8c28d20df900c499b57edd2e712f30b372a1f321ce25b9fd0ba32efdc. No mailto/tel links occur in the witness. `members.before.csv` is the pre-pass backup.
+
+| Proposal | Applied/held | Result / settling fact |
+|---|---|---|
+| Refresh 60 existing member rows | Applied | snapshot_date=2026-11-16; schema has no last_verified field on members |
+| TeamNEO displayed name | Applied | Existing MBR-000060 retained; public title now includes the Northeast Ohio Region / JobsOhio tagline; linked teamneo.org agrees with held ecosystem record |
+| Custom Rubber Corp | Applied | Public Investing Partner links customrubbercorp.com, exact domain match ORG-000113. Added MBR-000061. Controller authorized exactly two ORG-000113 cells: pic_member=true and membership_source_url=https://polymerindustrycluster.org/. Both set; all other organization cells unchanged (check.py checks against pre-addition commit cb6d3d4). |
+
+Counts: 61 public listing entries (54 Investing Partners, 7 Cornerstone Partners); 60 match existing member rows; 1 additional listing matches held organization ORG-000113; 1 added member row; 0 existing members no longer listed; 0 new listings unmatched to a held record. Existing matches include 10 member_only rows, retained as-is: not all 61 listings are linked Atlas organizations. Output is 61 member rows: 36 organization, 15 ecosystem, 10 member_only. No new organizations or evidence IDs allocated; MBR-000061 allocated above the held maximum MBR-000060; §4.13 does not admit members as a record_table and has no membership claim class.
+
+Dedupe: atlas.py dedupe-check --name 'Custom Rubber Corp' --domain customrubbercorp.com stops at exact domain ORG-000113 (step 1); normalized name and site name also agree. No identity merge or organization create. No verification tiers exist in members.csv; organization tiers unchanged. No borderline inclusion decisions or inclusion_log edits.
+
+Checks: `python3 tasks/pic-members-resync-2026-11-16/build.py` is idempotent; `python3 tasks/pic-members-resync-2026-11-16/check.py` checks full output equality and independent HTMLParser listing count, and rejects injected dropped row, duplicate ID, and stale snapshot date. All 61 output rows are compared against the pre-pass backup replay, with the one deduped addition.
+
+Proposed follow-ups:
+- Schema has no lapsed-listing field; if a future roster omits a held member, hold for owner ruling rather than delete or invent a status.
+
+Not checked: existing member-to-organization identity links were retained, not re-researched; member_since and existing organization membership flags were not refreshed except the authorized Custom Rubber flag/source pair. A public listing establishes membership only, not current operations. Independent family reviews remain with the controller before merge.

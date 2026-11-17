@@ -24,6 +24,14 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   and the unit-test, SQLite-build and artifact steps never ran (fixed in #329).
 - **Decided by:** the repo owner, in session, 2026-11-14.
 
+## 2026-11-16: Gemini is the second review family; Claude Opus stands in on Codex-written PRs
+
+- **Decision:** every data change is still refuted by two AI families before merge: Codex always, plus Gemini.
+  When Gemini is unavailable, a Claude Opus reviewer may stand in for pull requests written by Codex (never for
+  work Claude wrote). Packet-only and docs-only pull requests keep needing one family plus CI.
+- **Why:** Grok's usage balance ran out on 2026-11-14, and review capacity is the limit on how fast work lands.
+- **Decided by:** the repo owner, in session, 2026-11-16 (`tasks/owner-rulings-2026-11-16/README.md`).
+
 ## 2026-11-16: the public site becomes a working tool (PIC-18 prospects, CSV, evidence on organization pages)
 
 - **Decision:** the site gains a PIC-18 prospects page (one row per organization row with at least one site row in a

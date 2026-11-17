@@ -1,0 +1,419 @@
+site_id,state,recorded_county,census_county,census_county_fips,pic18,disposition,settling_fact
+SITE-003726,AL,,Shelby County,01117,False,held,Site-specific physical-address or parcel adjudication
+SITE-004343,CA,Placer,Nevada County,06057,False,held,Site-specific physical-address or parcel adjudication
+SITE-014000,CA,,San Diego County,06073,False,held,Site-specific physical-address or parcel adjudication
+SITE-014001,CA,,Tulare County,06107,False,held,Site-specific physical-address or parcel adjudication
+SITE-014002,CA,,San Bernardino County,06071,False,held,Site-specific physical-address or parcel adjudication
+SITE-014004,CA,,Fresno County,06019,False,held,Site-specific physical-address or parcel adjudication
+SITE-014006,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014007,CA,,Kern County,06029,False,held,Site-specific physical-address or parcel adjudication
+SITE-014008,CA,,Madera County,06039,False,held,Site-specific physical-address or parcel adjudication
+SITE-014009,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014010,CA,,San Bernardino County,06071,False,held,Site-specific physical-address or parcel adjudication
+SITE-014011,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014014,CA,,Riverside County,06065,False,held,Site-specific physical-address or parcel adjudication
+SITE-014015,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014016,CA,,Stanislaus County,06099,False,held,Site-specific physical-address or parcel adjudication
+SITE-014017,CA,,Contra Costa County,06013,False,held,Site-specific physical-address or parcel adjudication
+SITE-014018,CA,,Alameda County,06001,False,held,Site-specific physical-address or parcel adjudication
+SITE-014019,CA,,Riverside County,06065,False,held,Site-specific physical-address or parcel adjudication
+SITE-014200,CA,,San Diego County,06073,False,held,Site-specific physical-address or parcel adjudication
+SITE-014201,CA,,San Joaquin County,06077,False,held,Site-specific physical-address or parcel adjudication
+SITE-014203,CA,,San Bernardino County,06071,False,held,Site-specific physical-address or parcel adjudication
+SITE-014205,CA,,Orange County,06059,False,held,Site-specific physical-address or parcel adjudication
+SITE-014206,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014209,CA,,Orange County,06059,False,held,Site-specific physical-address or parcel adjudication
+SITE-014211,CA,,Alameda County,06001,False,held,Site-specific physical-address or parcel adjudication
+SITE-014212,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014214,CA,,Orange County,06059,False,held,Site-specific physical-address or parcel adjudication
+SITE-014215,CA,,San Joaquin County,06077,False,held,Site-specific physical-address or parcel adjudication
+SITE-014216,CA,,San Bernardino County,06071,False,held,Site-specific physical-address or parcel adjudication
+SITE-014217,CA,,Orange County,06059,False,held,Site-specific physical-address or parcel adjudication
+SITE-014400,CA,,San Bernardino County,06071,False,held,Site-specific physical-address or parcel adjudication
+SITE-014401,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014402,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014403,CA,,San Diego County,06073,False,held,Site-specific physical-address or parcel adjudication
+SITE-014404,CA,,Riverside County,06065,False,held,Site-specific physical-address or parcel adjudication
+SITE-014405,CA,,San Diego County,06073,False,held,Site-specific physical-address or parcel adjudication
+SITE-014407,CA,,Butte County,06007,False,held,Site-specific physical-address or parcel adjudication
+SITE-014408,CA,,Merced County,06047,False,held,Site-specific physical-address or parcel adjudication
+SITE-014409,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-014410,CA,,Solano County,06095,False,held,Site-specific physical-address or parcel adjudication
+SITE-014411,CA,,San Bernardino County,06071,False,held,Site-specific physical-address or parcel adjudication
+SITE-014600,CA,,Orange County,06059,False,held,Site-specific physical-address or parcel adjudication
+SITE-014601,CA,,San Luis Obispo County,06079,False,held,Site-specific physical-address or parcel adjudication
+SITE-014604,CA,,San Joaquin County,06077,False,held,Site-specific physical-address or parcel adjudication
+SITE-014605,CA,,Madera County,06039,False,held,Site-specific physical-address or parcel adjudication
+SITE-014606,CA,,Sacramento County,06067,False,held,Site-specific physical-address or parcel adjudication
+SITE-014607,CA,,Los Angeles County,06037,False,held,Site-specific physical-address or parcel adjudication
+SITE-002914,CO,,Douglas County,08035,False,held,Site-specific physical-address or parcel adjudication
+SITE-003139,CO,Arapahoe,Douglas County,08035,False,held,Site-specific physical-address or parcel adjudication
+SITE-004338,CO,Arapahoe,Adams County,08001,False,held,Site-specific physical-address or parcel adjudication
+SITE-006151,CO,Denver,Adams County,08001,False,held,Site-specific physical-address or parcel adjudication
+SITE-006156,CO,Jefferson,Adams County,08001,False,held,Site-specific physical-address or parcel adjudication
+SITE-008192,DE,,New Castle County,10003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008193,DE,,New Castle County,10003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008194,DE,,New Castle County,10003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008196,DE,,New Castle County,10003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008197,DE,,New Castle County,10003,False,held,Site-specific physical-address or parcel adjudication
+SITE-004310,FL,Sarasota,Manatee County,12081,False,held,Site-specific physical-address or parcel adjudication
+SITE-016002,FL,,Sarasota County,12115,False,held,Site-specific physical-address or parcel adjudication
+SITE-016003,FL,,Hillsborough County,12057,False,held,Site-specific physical-address or parcel adjudication
+SITE-016004,FL,,Sumter County,12119,False,held,Site-specific physical-address or parcel adjudication
+SITE-016006,FL,,Miami-Dade County,12086,False,held,Site-specific physical-address or parcel adjudication
+SITE-016008,FL,,Polk County,12105,False,held,Site-specific physical-address or parcel adjudication
+SITE-016009,FL,,Polk County,12105,False,held,Site-specific physical-address or parcel adjudication
+SITE-016010,FL,,Duval County,12031,False,held,Site-specific physical-address or parcel adjudication
+SITE-016011,FL,,Palm Beach County,12099,False,held,Site-specific physical-address or parcel adjudication
+SITE-016013,FL,,Duval County,12031,False,held,Site-specific physical-address or parcel adjudication
+SITE-016015,FL,,Miami-Dade County,12086,False,held,Site-specific physical-address or parcel adjudication
+SITE-016016,FL,,Hillsborough County,12057,False,held,Site-specific physical-address or parcel adjudication
+SITE-016017,FL,,Polk County,12105,False,held,Site-specific physical-address or parcel adjudication
+SITE-016018,FL,,Orange County,12095,False,held,Site-specific physical-address or parcel adjudication
+SITE-003315,GA,,Clayton County,13063,False,held,Site-specific physical-address or parcel adjudication
+SITE-003396,GA,,Douglas County,13097,False,held,Site-specific physical-address or parcel adjudication
+SITE-003633,GA,,Gwinnett County,13135,False,held,Site-specific physical-address or parcel adjudication
+SITE-004121,GA,Fulton,Forsyth County,13117,False,held,Site-specific physical-address or parcel adjudication
+SITE-004281,GA,Gwinnett,Forsyth County,13117,False,held,Site-specific physical-address or parcel adjudication
+SITE-010762,GA,,Jackson County,13157,False,held,Site-specific physical-address or parcel adjudication
+SITE-010765,GA,,Bartow County,13015,False,held,Site-specific physical-address or parcel adjudication
+SITE-016100,GA,,Newton County,13217,False,held,Site-specific physical-address or parcel adjudication
+SITE-016101,GA,,DeKalb County,13089,False,held,Site-specific physical-address or parcel adjudication
+SITE-016102,GA,,Rockdale County,13247,False,held,Site-specific physical-address or parcel adjudication
+SITE-016103,GA,,Henry County,13151,False,held,Site-specific physical-address or parcel adjudication
+SITE-016106,GA,,Catoosa County,13047,False,held,Site-specific physical-address or parcel adjudication
+SITE-016113,GA,,Houston County,13153,False,held,Site-specific physical-address or parcel adjudication
+SITE-016114,GA,,Gwinnett County,13135,False,held,Site-specific physical-address or parcel adjudication
+SITE-016115,GA,,Clayton County,13063,False,held,Site-specific physical-address or parcel adjudication
+SITE-016116,GA,,Fulton County,13121,False,held,Site-specific physical-address or parcel adjudication
+SITE-004404,IA,,Dubuque County,19061,False,held,Site-specific physical-address or parcel adjudication
+SITE-006317,IA,O Brien,O'Brien County,19141,False,held,Site-specific physical-address or parcel adjudication
+SITE-008198,ID,,Jerome County,16053,False,held,Site-specific physical-address or parcel adjudication
+SITE-008199,ID,,Twin Falls County,16083,False,held,Site-specific physical-address or parcel adjudication
+SITE-008200,ID,,Canyon County,16027,False,held,Site-specific physical-address or parcel adjudication
+SITE-008201,ID,,Twin Falls County,16083,False,held,Site-specific physical-address or parcel adjudication
+SITE-008203,ID,,Kootenai County,16055,False,held,Site-specific physical-address or parcel adjudication
+SITE-008204,ID,,Bonneville County,16019,False,held,Site-specific physical-address or parcel adjudication
+SITE-008206,ID,,Canyon County,16027,False,held,Site-specific physical-address or parcel adjudication
+SITE-008207,ID,,Kootenai County,16055,False,held,Site-specific physical-address or parcel adjudication
+SITE-008208,ID,,Ada County,16001,False,held,Site-specific physical-address or parcel adjudication
+SITE-003454,IL,Kane,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-003498,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-004143,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-004206,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-004295,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-004539,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-008157,IL,,McHenry County,17111,False,held,Site-specific physical-address or parcel adjudication
+SITE-008160,IL,,Whiteside County,17195,False,held,Site-specific physical-address or parcel adjudication
+SITE-008161,IL,,Kane County,17089,False,held,Site-specific physical-address or parcel adjudication
+SITE-008163,IL,Du Page,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-019000,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019001,IL,,McDonough County,17109,False,held,Site-specific physical-address or parcel adjudication
+SITE-019004,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019006,IL,,Winnebago County,17201,False,held,Site-specific physical-address or parcel adjudication
+SITE-019007,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019009,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019010,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-019011,IL,,Morgan County,17137,False,held,Site-specific physical-address or parcel adjudication
+SITE-019014,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019015,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-019016,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-019017,IL,,DuPage County,17043,False,held,Site-specific physical-address or parcel adjudication
+SITE-019018,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019021,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-019022,IL,,Cook County,17031,False,held,Site-specific physical-address or parcel adjudication
+SITE-003003,IN,St Joseph,St. Joseph County,18141,False,held,Site-specific physical-address or parcel adjudication
+SITE-003636,IN,,Marion County,18097,False,held,Site-specific physical-address or parcel adjudication
+SITE-003929,IN,Parke,Vigo County,18167,False,held,Site-specific physical-address or parcel adjudication
+SITE-005162,IN,St Joseph,St. Joseph County,18141,False,held,Site-specific physical-address or parcel adjudication
+SITE-005830,IN,St Joseph,St. Joseph County,18141,False,held,Site-specific physical-address or parcel adjudication
+SITE-006418,IN,La Porte,LaPorte County,18091,False,held,Site-specific physical-address or parcel adjudication
+SITE-006424,IN,De Kalb,DeKalb County,18033,False,held,Site-specific physical-address or parcel adjudication
+SITE-016500,IN,,Allen County,18003,False,held,Site-specific physical-address or parcel adjudication
+SITE-016503,IN,,Elkhart County,18039,False,held,Site-specific physical-address or parcel adjudication
+SITE-016504,IN,,Vanderburgh County,18163,False,held,Site-specific physical-address or parcel adjudication
+SITE-016506,IN,,Monroe County,18105,False,held,Site-specific physical-address or parcel adjudication
+SITE-016510,IN,,Wayne County,18177,False,held,Site-specific physical-address or parcel adjudication
+SITE-016511,IN,,Delaware County,18035,False,held,Site-specific physical-address or parcel adjudication
+SITE-016512,IN,,Vanderburgh County,18163,False,held,Site-specific physical-address or parcel adjudication
+SITE-016515,IN,,Porter County,18127,False,held,Site-specific physical-address or parcel adjudication
+SITE-016516,IN,,Wayne County,18177,False,held,Site-specific physical-address or parcel adjudication
+SITE-016519,IN,,Marshall County,18099,False,held,Site-specific physical-address or parcel adjudication
+SITE-016520,IN,,Henry County,18065,False,held,Site-specific physical-address or parcel adjudication
+SITE-016521,IN,,Spencer County,18147,False,held,Site-specific physical-address or parcel adjudication
+SITE-016522,IN,,St. Joseph County,18141,False,held,Site-specific physical-address or parcel adjudication
+SITE-011762,KY,Boone,Kenton County,21117,False,held,Site-specific physical-address or parcel adjudication
+SITE-003360,LA,Ascension,Ascension Parish,22005,False,held,Site-specific physical-address or parcel adjudication
+SITE-003667,LA,Ascension,Ascension Parish,22005,False,held,Site-specific physical-address or parcel adjudication
+SITE-003739,LA,St. Landry,St. Landry Parish,22097,False,held,Site-specific physical-address or parcel adjudication
+SITE-003918,LA,Jefferson,Jefferson Parish,22051,False,held,Site-specific physical-address or parcel adjudication
+SITE-003992,LA,Ouachita,Ouachita Parish,22073,False,held,Site-specific physical-address or parcel adjudication
+SITE-012029,LA,,Plaquemines Parish,22075,False,held,Site-specific physical-address or parcel adjudication
+SITE-012031,LA,,Plaquemines Parish,22075,False,held,Site-specific physical-address or parcel adjudication
+SITE-012034,LA,,Lafayette Parish,22055,False,held,Site-specific physical-address or parcel adjudication
+SITE-012035,LA,,East Baton Rouge Parish,22033,False,held,Site-specific physical-address or parcel adjudication
+SITE-012511,LA,,Rapides Parish,22079,False,held,Site-specific physical-address or parcel adjudication
+SITE-005536,MD,Baltimore,Baltimore city,24510,False,held,Site-specific physical-address or parcel adjudication
+SITE-006123,MD,Baltimore,Baltimore city,24510,False,held,Site-specific physical-address or parcel adjudication
+SITE-003528,MI,Eaton,Clinton County,26037,False,held,Site-specific physical-address or parcel adjudication
+SITE-004134,MI,Ottawa,Allegan County,26005,False,held,Site-specific physical-address or parcel adjudication
+SITE-004784,MI,ST JOSEPH,St. Joseph County,26149,False,held,Site-specific physical-address or parcel adjudication
+SITE-010009,MI,Sanilac,Huron County,26063,False,held,Site-specific physical-address or parcel adjudication
+SITE-010010,MI,,Midland County,26111,False,held,Site-specific physical-address or parcel adjudication
+SITE-010021,MI,Ottawa,Allegan County,26005,False,held,Site-specific physical-address or parcel adjudication
+SITE-010082,MI,St Clair,St. Clair County,26147,False,held,Site-specific physical-address or parcel adjudication
+SITE-018000,MI,,Kalamazoo County,26077,False,held,Site-specific physical-address or parcel adjudication
+SITE-018002,MI,,Kent County,26081,False,held,Site-specific physical-address or parcel adjudication
+SITE-018003,MI,,Otsego County,26137,False,held,Site-specific physical-address or parcel adjudication
+SITE-018005,MI,,Oakland County,26125,False,held,Site-specific physical-address or parcel adjudication
+SITE-018006,MI,,Monroe County,26115,False,held,Site-specific physical-address or parcel adjudication
+SITE-018008,MI,,Gladwin County,26051,False,held,Site-specific physical-address or parcel adjudication
+SITE-018009,MI,,Kent County,26081,False,held,Site-specific physical-address or parcel adjudication
+SITE-018010,MI,,Kalamazoo County,26077,False,held,Site-specific physical-address or parcel adjudication
+SITE-018012,MI,,Hillsdale County,26059,False,held,Site-specific physical-address or parcel adjudication
+SITE-018014,MI,,Van Buren County,26159,False,held,Site-specific physical-address or parcel adjudication
+SITE-018015,MI,,Kent County,26081,False,held,Site-specific physical-address or parcel adjudication
+SITE-018016,MI,,Lapeer County,26087,False,held,Site-specific physical-address or parcel adjudication
+SITE-018017,MI,,Shiawassee County,26155,False,held,Site-specific physical-address or parcel adjudication
+SITE-018018,MI,,Macomb County,26099,False,held,Site-specific physical-address or parcel adjudication
+SITE-018019,MI,,St. Clair County,26147,False,held,Site-specific physical-address or parcel adjudication
+SITE-018023,MI,,Muskegon County,26121,False,held,Site-specific physical-address or parcel adjudication
+SITE-011003,MN,Todd,Wadena County,27159,False,held,Site-specific physical-address or parcel adjudication
+SITE-012619,MN,,Anoka County,27003,False,held,Site-specific physical-address or parcel adjudication
+SITE-012668,MN,,Mille Lacs County,27095,False,held,Site-specific physical-address or parcel adjudication
+SITE-012670,MN,,Hennepin County,27053,False,held,Site-specific physical-address or parcel adjudication
+SITE-012671,MN,,Blue Earth County,27013,False,held,Site-specific physical-address or parcel adjudication
+SITE-012682,MN,,Washington County,27163,False,held,Site-specific physical-address or parcel adjudication
+SITE-012700,MN,,Wright County,27171,False,held,Site-specific physical-address or parcel adjudication
+SITE-012706,MN,,Wright County,27171,False,held,Site-specific physical-address or parcel adjudication
+SITE-012714,MN,,Martin County,27091,False,held,Site-specific physical-address or parcel adjudication
+SITE-004028,MO,St. Louis,St. Louis city,29510,False,held,Site-specific physical-address or parcel adjudication
+SITE-004585,MO,ST LOUIS,St. Louis County,29189,False,held,Site-specific physical-address or parcel adjudication
+SITE-004618,MO,St Louis (City),St. Louis city,29510,False,held,Site-specific physical-address or parcel adjudication
+SITE-004685,MO,ST LOUIS,St. Louis County,29189,False,held,Site-specific physical-address or parcel adjudication
+SITE-004948,MO,St Charles,St. Charles County,29183,False,held,Site-specific physical-address or parcel adjudication
+SITE-005290,MO,St Louis (City),St. Louis city,29510,False,held,Site-specific physical-address or parcel adjudication
+SITE-005829,MO,St Louis,St. Louis County,29189,False,held,Site-specific physical-address or parcel adjudication
+SITE-005861,MO,St. Louis (city),St. Louis city,29510,False,held,Site-specific physical-address or parcel adjudication
+SITE-012001,MO,,St. Louis County,29189,False,held,Site-specific physical-address or parcel adjudication
+SITE-012004,MO,,Clay County,29047,False,held,Site-specific physical-address or parcel adjudication
+SITE-012007,MO,,Perry County,29157,False,held,Site-specific physical-address or parcel adjudication
+SITE-012009,MO,,St. Charles County,29183,False,held,Site-specific physical-address or parcel adjudication
+SITE-012010,MO,,St. Louis city,29510,False,held,Site-specific physical-address or parcel adjudication
+SITE-012012,MO,,Boone County,29019,False,held,Site-specific physical-address or parcel adjudication
+SITE-012107,MO,,Greene County,29077,False,held,Site-specific physical-address or parcel adjudication
+SITE-012127,MO,,Jasper County,29097,False,held,Site-specific physical-address or parcel adjudication
+SITE-011474,NC,,Randolph County,37151,False,held,Site-specific physical-address or parcel adjudication
+SITE-016301,NC,,Caldwell County,37027,False,held,Site-specific physical-address or parcel adjudication
+SITE-016303,NC,,Guilford County,37081,False,held,Site-specific physical-address or parcel adjudication
+SITE-016304,NC,,Iredell County,37097,False,held,Site-specific physical-address or parcel adjudication
+SITE-016305,NC,,Surry County,37171,False,held,Site-specific physical-address or parcel adjudication
+SITE-016306,NC,,Iredell County,37097,False,held,Site-specific physical-address or parcel adjudication
+SITE-016307,NC,,Cumberland County,37051,False,held,Site-specific physical-address or parcel adjudication
+SITE-016308,NC,,Iredell County,37097,False,held,Site-specific physical-address or parcel adjudication
+SITE-016309,NC,,Mecklenburg County,37119,False,held,Site-specific physical-address or parcel adjudication
+SITE-016311,NC,,Iredell County,37097,False,held,Site-specific physical-address or parcel adjudication
+SITE-016312,NC,,Mecklenburg County,37119,False,held,Site-specific physical-address or parcel adjudication
+SITE-016313,NC,,Rutherford County,37161,False,held,Site-specific physical-address or parcel adjudication
+SITE-008209,NH,,Coos County,33007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008210,NH,,Sullivan County,33019,False,held,Site-specific physical-address or parcel adjudication
+SITE-008211,NH,,Cheshire County,33005,False,held,Site-specific physical-address or parcel adjudication
+SITE-008212,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008213,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008214,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008215,NH,,Cheshire County,33005,False,held,Site-specific physical-address or parcel adjudication
+SITE-008216,NH,,Cheshire County,33005,False,held,Site-specific physical-address or parcel adjudication
+SITE-008218,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008222,NH,,Rockingham County,33015,False,held,Site-specific physical-address or parcel adjudication
+SITE-008223,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008225,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008226,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008227,NH,,Rockingham County,33015,False,held,Site-specific physical-address or parcel adjudication
+SITE-008228,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008229,NH,,Merrimack County,33013,False,held,Site-specific physical-address or parcel adjudication
+SITE-008230,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008232,NH,,Merrimack County,33013,False,held,Site-specific physical-address or parcel adjudication
+SITE-008233,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008234,NH,,Hillsborough County,33011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008236,NH,,Merrimack County,33013,False,held,Site-specific physical-address or parcel adjudication
+SITE-011307,NJ,,Middlesex County,34023,False,held,Site-specific physical-address or parcel adjudication
+SITE-011311,NJ,,Bergen County,34003,False,held,Site-specific physical-address or parcel adjudication
+SITE-012809,NJ,,Essex County,34013,False,held,Site-specific physical-address or parcel adjudication
+SITE-012862,NJ,,Somerset County,34035,False,held,Site-specific physical-address or parcel adjudication
+SITE-012881,NJ,,Union County,34039,False,held,Site-specific physical-address or parcel adjudication
+SITE-004723,NM,DONA ANA,Doña Ana County,35013,False,held,Site-specific physical-address or parcel adjudication
+SITE-006034,NM,Dona Ana,Doña Ana County,35013,False,held,Site-specific physical-address or parcel adjudication
+SITE-008237,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008238,NV,,Carson City,32510,False,held,Site-specific physical-address or parcel adjudication
+SITE-008239,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008240,NV,,Elko County,32007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008243,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008245,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008246,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008247,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008249,NV,,Carson City,32510,False,held,Site-specific physical-address or parcel adjudication
+SITE-008250,NV,,Carson City,32510,False,held,Site-specific physical-address or parcel adjudication
+SITE-008252,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008253,NV,,Douglas County,32005,False,held,Site-specific physical-address or parcel adjudication
+SITE-008254,NV,,Lyon County,32019,False,held,Site-specific physical-address or parcel adjudication
+SITE-008255,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008256,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008257,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008258,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008259,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008260,NV,,Lyon County,32019,False,held,Site-specific physical-address or parcel adjudication
+SITE-008262,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008263,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008265,NV,,Washoe County,32031,False,held,Site-specific physical-address or parcel adjudication
+SITE-008268,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008269,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008271,NV,,Nye County,32023,False,held,Site-specific physical-address or parcel adjudication
+SITE-008272,NV,,Clark County,32003,False,held,Site-specific physical-address or parcel adjudication
+SITE-016200,NY,,Erie County,36029,False,held,Site-specific physical-address or parcel adjudication
+SITE-016201,NY,,Rockland County,36087,False,held,Site-specific physical-address or parcel adjudication
+SITE-016202,NY,,Erie County,36029,False,held,Site-specific physical-address or parcel adjudication
+SITE-016203,NY,,Warren County,36113,False,held,Site-specific physical-address or parcel adjudication
+SITE-016204,NY,,Madison County,36053,False,held,Site-specific physical-address or parcel adjudication
+SITE-016205,NY,,Monroe County,36055,False,held,Site-specific physical-address or parcel adjudication
+SITE-016206,NY,,Wayne County,36117,False,held,Site-specific physical-address or parcel adjudication
+SITE-000727,OH,Hamilton,Butler County,39017,False,held,Site-specific physical-address or parcel adjudication
+SITE-002129,OH,Montgomery,Greene County,39057,False,held,Site-specific physical-address or parcel adjudication
+SITE-003951,OH,Hamilton,Butler County,39017,False,held,Site-specific physical-address or parcel adjudication
+SITE-004365,OH,Hamilton,Warren County,39165,False,held,Site-specific physical-address or parcel adjudication
+SITE-002346,PA,Montgomery,Bucks County,42017,False,held,Site-specific physical-address or parcel adjudication
+SITE-002354,PA,York,Adams County,42001,False,held,Site-specific physical-address or parcel adjudication
+SITE-002357,PA,Adams,York County,42133,False,held,Site-specific physical-address or parcel adjudication
+SITE-002394,PA,Montgomery,Bucks County,42017,False,held,Site-specific physical-address or parcel adjudication
+SITE-002474,PA,Perry,Juniata County,42067,False,held,Site-specific physical-address or parcel adjudication
+SITE-002539,PA,Armstrong,Westmoreland County,42129,False,held,Site-specific physical-address or parcel adjudication
+SITE-008273,RI,,Bristol County,44001,False,held,Site-specific physical-address or parcel adjudication
+SITE-008274,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008275,RI,,Washington County,44009,False,held,Site-specific physical-address or parcel adjudication
+SITE-008276,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008278,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008279,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008280,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008281,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008282,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008283,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008284,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008285,RI,,Kent County,44003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008286,RI,,Bristol County,44001,False,held,Site-specific physical-address or parcel adjudication
+SITE-008287,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008288,RI,,Providence County,44007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008289,RI,,Bristol County,44001,False,held,Site-specific physical-address or parcel adjudication
+SITE-008290,RI,,Kent County,44003,False,held,Site-specific physical-address or parcel adjudication
+SITE-012017,SC,,Sumter County,45085,False,held,Site-specific physical-address or parcel adjudication
+SITE-012019,SC,,York County,45091,False,held,Site-specific physical-address or parcel adjudication
+SITE-012022,SC,,York County,45091,False,held,Site-specific physical-address or parcel adjudication
+SITE-012026,SC,,Lexington County,45063,False,held,Site-specific physical-address or parcel adjudication
+SITE-012181,SC,,Greenville County,45045,False,held,Site-specific physical-address or parcel adjudication
+SITE-012198,SC,,York County,45091,False,held,Site-specific physical-address or parcel adjudication
+SITE-012199,SC,,Spartanburg County,45083,False,held,Site-specific physical-address or parcel adjudication
+SITE-012219,SC,,Laurens County,45059,False,held,Site-specific physical-address or parcel adjudication
+SITE-012226,SC,,Greenville County,45045,False,held,Site-specific physical-address or parcel adjudication
+SITE-003246,TN,,Knox County,47093,False,held,Site-specific physical-address or parcel adjudication
+SITE-003482,TN,,Davidson County,47037,False,held,Site-specific physical-address or parcel adjudication
+SITE-003284,TX,,Montgomery County,48339,False,held,Site-specific physical-address or parcel adjudication
+SITE-003397,TX,,Harris County,48201,False,held,Site-specific physical-address or parcel adjudication
+SITE-003655,TX,Harris,Chambers County,48071,False,held,Site-specific physical-address or parcel adjudication
+SITE-003721,TX,Tarrant,Denton County,48121,False,held,Site-specific physical-address or parcel adjudication
+SITE-004324,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-004333,TX,Harris,Chambers County,48071,False,held,Site-specific physical-address or parcel adjudication
+SITE-005532,TX,Palo Pinto,Parker County,48367,False,held,Site-specific physical-address or parcel adjudication
+SITE-010305,TX,Tarrant,Johnson County,48251,False,held,Site-specific physical-address or parcel adjudication
+SITE-010306,TX,,Rockwall County,48397,False,held,Site-specific physical-address or parcel adjudication
+SITE-010308,TX,,Harris County,48201,False,held,Site-specific physical-address or parcel adjudication
+SITE-010310,TX,,Bexar County,48029,False,held,Site-specific physical-address or parcel adjudication
+SITE-015001,TX,,Gregg County,48183,False,held,Site-specific physical-address or parcel adjudication
+SITE-015002,TX,,Fort Bend County,48157,False,held,Site-specific physical-address or parcel adjudication
+SITE-015003,TX,,Cameron County,48061,False,held,Site-specific physical-address or parcel adjudication
+SITE-015004,TX,,Comal County,48091,False,held,Site-specific physical-address or parcel adjudication
+SITE-015005,TX,,Waller County,48473,False,held,Site-specific physical-address or parcel adjudication
+SITE-015006,TX,,Tarrant County,48439,False,held,Site-specific physical-address or parcel adjudication
+SITE-015007,TX,,Ector County,48135,False,held,Site-specific physical-address or parcel adjudication
+SITE-015008,TX,,Tarrant County,48439,False,held,Site-specific physical-address or parcel adjudication
+SITE-015009,TX,,Hunt County,48231,False,held,Site-specific physical-address or parcel adjudication
+SITE-015011,TX,,Fort Bend County,48157,False,held,Site-specific physical-address or parcel adjudication
+SITE-015012,TX,,Tarrant County,48439,False,held,Site-specific physical-address or parcel adjudication
+SITE-015013,TX,,Harris County,48201,False,held,Site-specific physical-address or parcel adjudication
+SITE-015014,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015015,TX,,Wichita County,48485,False,held,Site-specific physical-address or parcel adjudication
+SITE-015016,TX,,Johnson County,48251,False,held,Site-specific physical-address or parcel adjudication
+SITE-015017,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015018,TX,,Tarrant County,48439,False,held,Site-specific physical-address or parcel adjudication
+SITE-015019,TX,,Harris County,48201,False,held,Site-specific physical-address or parcel adjudication
+SITE-015200,TX,,Harris County,48201,False,held,Site-specific physical-address or parcel adjudication
+SITE-015204,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015205,TX,,Tarrant County,48439,False,held,Site-specific physical-address or parcel adjudication
+SITE-015206,TX,,Travis County,48453,False,held,Site-specific physical-address or parcel adjudication
+SITE-015207,TX,,Bexar County,48029,False,held,Site-specific physical-address or parcel adjudication
+SITE-015209,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015210,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015211,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015214,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015216,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015400,TX,,Ellis County,48139,False,held,Site-specific physical-address or parcel adjudication
+SITE-015401,TX,,El Paso County,48141,False,held,Site-specific physical-address or parcel adjudication
+SITE-015402,TX,,Palo Pinto County,48363,False,held,Site-specific physical-address or parcel adjudication
+SITE-015404,TX,,Gregg County,48183,False,held,Site-specific physical-address or parcel adjudication
+SITE-015408,TX,,DeWitt County,48123,False,held,Site-specific physical-address or parcel adjudication
+SITE-015409,TX,,Montague County,48337,False,held,Site-specific physical-address or parcel adjudication
+SITE-015410,TX,,Harris County,48201,False,held,Site-specific physical-address or parcel adjudication
+SITE-015411,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015412,TX,,Milam County,48331,False,held,Site-specific physical-address or parcel adjudication
+SITE-015413,TX,,Cherokee County,48073,False,held,Site-specific physical-address or parcel adjudication
+SITE-015414,TX,,Rockwall County,48397,False,held,Site-specific physical-address or parcel adjudication
+SITE-015416,TX,,El Paso County,48141,False,held,Site-specific physical-address or parcel adjudication
+SITE-015418,TX,,Dallas County,48113,False,held,Site-specific physical-address or parcel adjudication
+SITE-015600,TX,,Waller County,48473,False,held,Site-specific physical-address or parcel adjudication
+SITE-015601,TX,,Collin County,48085,False,held,Site-specific physical-address or parcel adjudication
+SITE-015602,TX,,Fayette County,48149,False,held,Site-specific physical-address or parcel adjudication
+SITE-015603,TX,,Collin County,48085,False,held,Site-specific physical-address or parcel adjudication
+SITE-008293,UT,,Carbon County,49007,False,held,Site-specific physical-address or parcel adjudication
+SITE-008295,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008297,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008298,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008299,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008300,UT,,Davis County,49011,False,held,Site-specific physical-address or parcel adjudication
+SITE-008301,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008304,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008305,UT,,Weber County,49057,False,held,Site-specific physical-address or parcel adjudication
+SITE-008307,UT,,Box Elder County,49003,False,held,Site-specific physical-address or parcel adjudication
+SITE-008316,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008319,UT,,Iron County,49021,False,held,Site-specific physical-address or parcel adjudication
+SITE-008322,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008323,UT,,Iron County,49021,False,held,Site-specific physical-address or parcel adjudication
+SITE-008324,UT,,Wasatch County,49051,False,held,Site-specific physical-address or parcel adjudication
+SITE-008328,UT,,Tooele County,49045,False,held,Site-specific physical-address or parcel adjudication
+SITE-008331,UT,,Cache County,49005,False,held,Site-specific physical-address or parcel adjudication
+SITE-008332,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008333,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-008338,UT,,Salt Lake County,49035,False,held,Site-specific physical-address or parcel adjudication
+SITE-002862,VA,Danville (City),Danville city,51590,False,held,Site-specific physical-address or parcel adjudication
+SITE-003056,VA,Hopewell (City),Hopewell city,51670,False,held,Site-specific physical-address or parcel adjudication
+SITE-003339,VA,,Spotsylvania County,51177,False,held,Site-specific physical-address or parcel adjudication
+SITE-003431,VA,Chesapeake,Chesapeake city,51550,False,held,Site-specific physical-address or parcel adjudication
+SITE-003510,VA,,Warren County,51187,False,held,Site-specific physical-address or parcel adjudication
+SITE-003979,VA,,Danville city,51590,False,held,Site-specific physical-address or parcel adjudication
+SITE-004010,VA,Harrisonburg (independent city),Harrisonburg city,51660,False,held,Site-specific physical-address or parcel adjudication
+SITE-004148,VA,Richmond,Henrico County,51087,False,held,Site-specific physical-address or parcel adjudication
+SITE-004276,VA,Chesapeake (independent city),Chesapeake city,51550,False,held,Site-specific physical-address or parcel adjudication
+SITE-004513,VA,Waynesboro (independent city),Waynesboro city,51820,False,held,Site-specific physical-address or parcel adjudication
+SITE-004658,VA,LYNCHBURG (CITY),Lynchburg city,51680,False,held,Site-specific physical-address or parcel adjudication
+SITE-004817,VA,HOPEWELL (CITY),Hopewell city,51670,False,held,Site-specific physical-address or parcel adjudication
+SITE-005447,VA,Winchester (City),Winchester city,51840,False,held,Site-specific physical-address or parcel adjudication
+SITE-005608,VA,Suffolk (City),Suffolk city,51800,False,held,Site-specific physical-address or parcel adjudication
+SITE-011903,VA,Bedford,Lynchburg city,51680,False,held,Site-specific physical-address or parcel adjudication
+SITE-004168,WI,,Jefferson County,55055,False,held,Site-specific physical-address or parcel adjudication
+SITE-004770,WI,DODGE,Washington County,55131,False,held,Site-specific physical-address or parcel adjudication
+SITE-010167,WI,,Waukesha County,55133,False,held,Site-specific physical-address or parcel adjudication
+SITE-016400,WI,,Sheboygan County,55117,False,held,Site-specific physical-address or parcel adjudication
+SITE-016401,WI,,Winnebago County,55139,False,held,Site-specific physical-address or parcel adjudication
+SITE-016402,WI,,Milwaukee County,55079,False,held,Site-specific physical-address or parcel adjudication
+SITE-016403,WI,,Rock County,55105,False,held,Site-specific physical-address or parcel adjudication
+SITE-016405,WI,,Rock County,55105,False,held,Site-specific physical-address or parcel adjudication
+SITE-016406,WI,,Manitowoc County,55071,False,held,Site-specific physical-address or parcel adjudication
+SITE-016407,WI,,Sauk County,55111,False,held,Site-specific physical-address or parcel adjudication
+SITE-016409,WI,,Dane County,55025,False,held,Site-specific physical-address or parcel adjudication
+SITE-016410,WI,,Brown County,55009,False,held,Site-specific physical-address or parcel adjudication

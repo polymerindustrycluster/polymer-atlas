@@ -1,0 +1,13 @@
+{
+  "frame": 570,
+  "source_rows": {
+    "ITA": 918,
+    "OSHA": 492,
+    "ECHO": 64209
+  },
+  "proposals": 828,
+  "registry_links": 105,
+  "band_fills": 12,
+  "evidence": 103,
+  "baseline": "be2e6084d430f1e6f9de0f66289b1d3c2570e255"
+}

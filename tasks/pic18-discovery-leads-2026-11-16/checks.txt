@@ -1,0 +1,12 @@
+2026-11-16 refutation response — supersedes initial create checks
+python3 tasks/pic18-discovery-leads-2026-11-16/check.py
+PASS VERIFIED0 / DUPLICATE_OF8 / STILL_UNCERTAIN72; 80/80 input yield; missing verdict, duplicate rank and invented quote defects refused; zero data additions; exact overlap-source hashes/quotes; county; byte-identical replay; retired-create resurrection rejected
+python3 scripts/validate.py
+PASS zero errors (existing baseline warnings remain)
+python3 scripts/check_row_loss.py --base origin/main
+PASS no keyed row removed; base ef32b5ba73
+python3 scripts/export_vocab.py --check
+PASS current
+Git diff against merge-base: zero canonical data delta.
+Two additional primary fetches: All Foam about/contact; establishes MVP Group relationship and identical street, not distinct establishment.
+Shared script unit tests and independent re-review not run; controller owns review coordination.
