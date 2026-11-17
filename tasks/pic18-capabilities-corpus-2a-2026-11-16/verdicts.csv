@@ -21,13 +21,6 @@ SITE-000458,pvc,VERIFIED,applied; capability pvc,
 SITE-000458,polystyrene_ps_hips,VERIFIED,applied; capability polystyrene_ps_hips,
 SITE-000458,thermoplastic_elastomers_tpe_tpu,VERIFIED,applied; capability thermoplastic_elastomers_tpe_tpu,
 SITE-000458,polycarbonate_pc,VERIFIED,applied; capability polycarbonate_pc,
-SITE-000490,compression_molding,VERIFIED,applied; capability compression_molding,
-SITE-000490,transfer_molding,VERIFIED,applied,
-SITE-000490,injection_molding,VERIFIED,applied; capability injection_molding,
-SITE-000490,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
-SITE-000490,silicones,VERIFIED,applied; capability silicones,
-SITE-000490,thermoplastics,VERIFIED,applied; capability thermoplastics,
-SITE-000490,thermosets,VERIFIED,applied; capability thermosets,
 SITE-000562,compression_molding,VERIFIED,tag held (cell not blank at base); capability compression_molding,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000562,transfer_molding,VERIFIED,"tag held (cell not blank at base); no section 3.6 term, so no row",Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000562,elastomers_rubber,VERIFIED,applied; capability elastomers_rubber,
@@ -46,13 +39,8 @@ SITE-000651,nylon_pa,VERIFIED,applied; capability nylon_pa,
 SITE-000651,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
 SITE-000707,compression_molding,VERIFIED,tag held (cell not blank at base); capability compression_molding,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
 SITE-000707,thermoforming_unspecified,VERIFIED,tag held (cell not blank at base); capability thermoforming,Controller call: append to a cell that holds non-section-3.1 values (recommended: append)
-SITE-000909,custom_compounding,VERIFIED,applied; capability compounding,
-SITE-000909,thermoplastics,VERIFIED,applied; capability thermoplastics,
-SITE-000909,pvc,VERIFIED,applied; capability pvc,
 SITE-000909,extrusion_pipe_tube,VERIFIED,applied; capability extrusion,
 SITE-000909,extrusion_profile,VERIFIED,applied,
-SITE-000909,injection_molding,VERIFIED,applied; capability injection_molding,
-SITE-000909,plastics_fabrication_welding,VERIFIED,applied,
 SITE-000987,fabrication_unspecified,VERIFIED,applied,
 SITE-000987,polypropylene_pp,VERIFIED,applied; capability polypropylene_pp,
 SITE-000987,composites_frp,VERIFIED,applied,
@@ -118,6 +106,7 @@ SITE-000479,,STILL_UNCERTAIN,held: nothing_found,A narrative sentence stating wh
 SITE-000485,,STILL_UNCERTAIN,held: off_vocabulary,"Page says the company ""builds tooling made with composite materials and 3D printing technology""; tooling made from composites has no governed term, and the site already carries tooling_mold_die"
 SITE-000487,,STILL_UNCERTAIN,held: site_type_hq_only,"Page says Integra Enclosures ""offers"" CNC machining and drilling on polycarbonate enclosures and gives 8989 Tyler Blvd only as the company address; Atlas site_type is hq_only. A page stating machining is performed at that address, or a site_type correction"
 SITE-000488,,STILL_UNCERTAIN,held: equipment_or_supply_firm,"A page stating that this establishment runs a governed polymer process or material in its own plant (stored pages describe machinery, components or supplies)"
+SITE-000490,,STILL_UNCERTAIN,held: multi_location_unbound,"Withdrawn after review of 20ff680: the capabilities page is company-wide, the header labels Middlefield ""Headquarters"", and the contact page also lists NP Mexico Company (Matamoros); a stored page placing the molding at Middlefield"
 SITE-000500,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
 SITE-000514,,STILL_UNCERTAIN,held: distributor_or_dealer,A page stating that this establishment itself processes or manufactures a governed material or process (stored pages describe resale or distribution)
 SITE-000519,,STILL_UNCERTAIN,held: locality_not_witnessed,Stored pages carry a 321 area code and no Elyria address; a page binding FRP duct fabrication to the Elyria site
@@ -143,6 +132,7 @@ SITE-000764,,STILL_UNCERTAIN,held: locality_not_witnessed,"About page calls the 
 SITE-000863,,STILL_UNCERTAIN,held: not_processor,"Capabilities page lists ""Materials We Support"" (PE, PP, PVC, PET) for an additives producer; that names the polymers its products serve, not materials it processes"
 SITE-000879,,STILL_UNCERTAIN,held: nothing_found,"Injection molding is already tagged; no material term is named (pages say ""industrial polymer storage products"")"
 SITE-000898,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
+SITE-000909,,STILL_UNCERTAIN,held: term_hold,"Withdrawn after review of 20ff680: /about-us places PVC compounding at Baltic and injection molding and assembly at Mt. Eaton and Lafayette TN, so custom_compounding, injection_molding, plastics_fabrication_welding, pvc and the company-wide thermoplastics quote are not bound to Midvale; kept: extrusion (Midvale is ""Corporate Headquarters & Extrusion""). A page binding PVC at Midvale (the /products ""We specialize in PVC extrusion"" line) would support a new pvc row in a later PR; Baltic and Mt. Eaton have no Atlas site"
 SITE-000936,,STILL_UNCERTAIN,held: nothing_found,An own-page narrative sentence or capability list naming a governed process or material for this establishment; none is on the stored pages
 SITE-000983,,STILL_UNCERTAIN,held: multi_location_unbound,JP Industrial describes North American locations including North Carolina and gives no Lisbon address on stored pages; a page binding PVC reprocessing and grinding to the Lisbon plant
 SITE-000997,,STILL_UNCERTAIN,held: nothing_found,"All six stored pages carry the same 4,693-character text (a script-rendered shell); a fetch that renders the site content would settle it"

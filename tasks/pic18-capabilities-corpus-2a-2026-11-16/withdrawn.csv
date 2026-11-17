@@ -1,0 +1,13 @@
+site_id,field,term,quote
+SITE-000490,processes,compression_molding,"Whether it’s compression molding, transfer molding, or injection molding, we have the capabilities to select the most suitable process"
+SITE-000490,processes,transfer_molding,"Whether it’s compression molding, transfer molding, or injection molding, we have the capabilities to select the most suitable process"
+SITE-000490,processes,injection_molding,"Whether it’s compression molding, transfer molding, or injection molding, we have the capabilities to select the most suitable process"
+SITE-000490,materials,elastomers_rubber,"Our core competency lies in custom molding of rubber, silicone, and plastic"
+SITE-000490,materials,silicones,"Our core competency lies in custom molding of rubber, silicone, and plastic"
+SITE-000490,materials,thermoplastics,"From natural and synthetic rubbers to thermoplastics and thermosetting plastics, we have the knowledge"
+SITE-000490,materials,thermosets,"From natural and synthetic rubbers to thermoplastics and thermosetting plastics, we have the knowledge"
+SITE-000909,processes,custom_compounding,"From custom compounding to final assembly, Flex Technologies delivers fully integrated thermoplastic solutions"
+SITE-000909,materials,thermoplastics,"From custom compounding to final assembly, Flex Technologies delivers fully integrated thermoplastic solutions"
+SITE-000909,materials,pvc,"Polyflex, a division of Flex Technologies, is your U.S.-based source for precision PVC compounding."
+SITE-000909,processes,injection_molding,Injection Molded Components Our injection molded components are built to meet strict tolerances and withstand demanding environments.
+SITE-000909,processes,plastics_fabrication_welding,"We also offer expert thermoplastic tube forming, plastic welding services (USA), injection and shuttle molding, and extrusion to support fully integrated fluid assemblies"

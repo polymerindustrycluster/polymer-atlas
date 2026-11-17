@@ -70,6 +70,9 @@ add(546,'processes',['recycling_unspecified'],'narrative',ps,'The ingenuity of o
 vv = H+'www.vinylume.com/'
 add(667,'processes',['extrusion_unspecified'],'menu',vv,'Contact us about your vinyl extrusion projects.',vv,'3745 Hendricks Rd Youngstown,OH 44515')
 
+# Withdrawn after the Gemini review of 20ff680 (PR #365): the stored pages bind the term to another plant or leave the plant unbound.
+WITHDRAWN = {(909, t) for t in ('custom_compounding', 'injection_molding', 'plastics_fabrication_welding', 'pvc', 'thermoplastics')}  # about-us: compounding is Baltic, molding is Mt. Eaton/Lafayette
+WITHDRAWN |= {(490, e[2]) for e in E if e[0] == 490}  # Neff-Perkins: contact page also lists NP Mexico Company (Matamoros); nothing places molding at Middlefield
 def norm(t): return ' '.join(t.split())
 def page(url):
     rows = [r for r in MAN if r['url'] == url]
@@ -80,15 +83,18 @@ def raw_has(raw_path, quote):
     words = iter(re.findall(r'\w+', plain.lower()))
     return all(any(w == q for w in words) for q in re.findall(r'\w+', quote.lower()))
 def main():
-    out = []
+    out = []; withdrawn = []
     for n, field, term, basis, url, quote, gurl, gq in E:
         sid = 'SITE-%06d' % n; p = page(url); g = page(gurl)
         text = norm((CORPUS / p['text_file']).read_text()); gtext = norm((CORPUS / g['text_file']).read_text())
         assert norm(quote) in text, (sid, 'quote', quote); assert norm(gq) in gtext, (sid, 'grain', gq)
         assert len(quote.split()) <= 25, (sid, 'long quote')
+        if (n, term) in WITHDRAWN: withdrawn.append(dict(site_id=sid, field=field, term=term, quote=quote)); continue
         out.append(dict(site_id=sid, field=field, term=term, quote=quote, basis=basis, url=p['url'], raw_file=p['raw_file'], text_file=p['text_file'], sha256=p['sha256'],
                         grain_quote=gq, grain_url=g['url'], grain_text_file=g['text_file']))
     with (T / 'decisions.csv').open('w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=list(out[0]), lineterminator='\n'); w.writeheader(); w.writerows(out)
+    with (T / 'withdrawn.csv').open('w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=['site_id', 'field', 'term', 'quote'], lineterminator='\n'); w.writeheader(); w.writerows(withdrawn)
     print(len(out), 'term decisions;', len({d['site_id'] for d in out}), 'sites')
 if __name__ == '__main__': main()

@@ -13,7 +13,9 @@ from holds import HOLDS
 CORPUS = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-corpus-2026-11-16')
 BASE = (T / 'base.txt').read_text().strip()
 WHO = 'atlas-w16-cap2a'
-EVD0, CAP0 = 387000, 1200
+# IDs are pinned to the rows first published at 20ff680 (id_map.csv); a withdrawn row retires its ID, and no ID is ever renumbered or reused.
+ID = {(r['kind'], r['key']): r['id'] for r in csv.DictReader((T / 'id_map.csv').open())}
+PARTIAL = (591, 909)  # sites with applied terms and term-level holds
 VOCAB = json.loads((ROOT / 'docs/schema/vocab.json').read_text())['vocabularies']
 CAP_UMBRELLA = [('extrusion_', 'extrusion'), ('thermoforming_', 'thermoforming'), ('blow_molding_', 'blow_molding'), ('rubber_molding_', 'rubber_molding')]
 def read(p): return list(csv.DictReader(Path(p).open(newline='')))
@@ -66,7 +68,7 @@ def outputs(decisions):
         if tag:
             have = [v for v in s[d['field']].split(';') if v]
             if d['term'] not in have: s[d['field']] = ';'.join(have + [d['term']])
-            ev.append(dict(evidence_id=f'EVD-{EVD0 + len(ev):06d}', record_table='sites', record_id=s['site_id'], claim_type='scope',
+            ev.append(dict(evidence_id=ID['evidence', f"{s['site_id']}|{d['field']}|{d['term']}"], record_table='sites', record_id=s['site_id'], claim_type='scope',
                            claim_detail=f"{d['field']}={d['term']}; quote: {d['quote']}", source_class='own_site', source_ref=d['url'], observed_date='2026-11-16',
                            tier_effect='supports_C' if d['basis'] == 'menu' else 'supports_A', created_by=WHO,
                            notes=f"{d['basis']}; raw SHA256 {d['sha256']}; locality witness on {d['grain_url']}: \"{d['grain_quote']}\"; the organization has one active Atlas site; corpus fetched 2026-11-16."))
@@ -74,7 +76,7 @@ def outputs(decisions):
         cap_note = ''
         if ct and (s['site_id'], typ, ct) not in live:
             live.add((s['site_id'], typ, ct))
-            caps.append(dict(capability_id=f'CAP-{CAP0 + len(caps):06d}', site_id=s['site_id'], org_id=s['org_id'], capability_type=typ, term=ct, provenance='company_disclosed',
+            caps.append(dict(capability_id=ID['capability', f"{s['site_id']}|{typ}|{ct}"], site_id=s['site_id'], org_id=s['org_id'], capability_type=typ, term=ct, provenance='company_disclosed',
                              source_ref=d['url'], observed_date='2026-11-16', withdrawn_date='', created_by=WHO,
                              notes=f"Quote: {d['quote']} Basis: {d['basis']}. Raw SHA256 {d['sha256']}. Locality witness: \"{d['grain_quote']}\"."
                                    + ('' if tag else ' Section-3 tag held per owner ruling 2026-11-14 (C-strength on a tier A/B site).' if not tier_ok else ' Section-3 tag held: the cell was not blank at base (fill-blank rule); recommend appending.')))
@@ -88,18 +90,21 @@ def outputs(decisions):
     decided = {d['site_id'] for d in decisions}
     for sid in slice_ids():
         n = int(sid[5:])
-        if n in HOLDS and (sid not in decided or n == 591):
+        if n in HOLDS and (sid not in decided or n in PARTIAL):
             cls, fact = HOLDS[n]
             verdicts.append(dict(site_id=sid, term='', verdict='STILL_UNCERTAIN', disposition=f'held: {cls}', settling_fact=fact))
         else:
             assert sid in decided, ('no verdict for', sid)
     return sites, caps, ev, verdicts
+def retired_ids(caps, ev):
+    used = {r['capability_id'] for r in caps} | {r['evidence_id'] for r in ev}
+    return sorted(set(ID.values()) - used)
 def summary(decisions, sites, caps, ev, verdicts):
     orig = {r['site_id']: r for r in base('data/sites_OH.csv')}
     return dict(slice_sites=len(slice_ids()), term_decisions=len(decisions), sites_with_applied_terms=len({d['site_id'] for d in decisions}),
                 sites_tagged=len({r['record_id'] for r in ev}), capability_rows=len(caps), evidence_rows=len(ev),
                 changed_site_rows=sum(sites[k] != orig[k] for k in sites), held_sites=len({v['site_id'] for v in verdicts if v['verdict'] == 'STILL_UNCERTAIN'}),
-                verdict_rows=len(verdicts), slice_sites_not_in_frame_now=sorted(set(slice_ids()) - {s['site_id'] for s in frame_now()}))
+                verdict_rows=len(verdicts), retired_ids=len(retired_ids(caps, ev)), slice_sites_not_in_frame_now=sorted(set(slice_ids()) - {s['site_id'] for s in frame_now()}))
 def main():
     decisions = read(T / 'decisions.csv')
     sites, caps, ev, verdicts = outputs(decisions)
@@ -117,6 +122,7 @@ def main():
             if r[key] in have: assert r == have[r[key]], r[key]
         append_sorted(p, [r for r in rows if r[key] not in have], key)
     write(T / 'verdicts.csv', verdicts)
+    (T / 'retired_ids.txt').write_text('\n'.join(retired_ids(caps, ev)) + '\n')
     sm = summary(decisions, sites, caps, ev, verdicts)
     (T / 'summary.json').write_text(json.dumps(sm, indent=2) + '\n'); print(sm)
 if __name__ == '__main__': main()

@@ -10,6 +10,8 @@ for n in (47, 150, 567): HOLDS[n] = TEST
 for n in (363, 43, 75, 152, 153, 154, 156, 157, 286, 308, 312, 331, 338, 387, 450, 455, 465, 523, 534, 539, 936, 1078, 1436, 1440, 1449, 1468, 445, 403, 898):
     HOLDS[n] = NOTFOUND
 HOLDS.update({
+    490: ('multi_location_unbound', 'Withdrawn after review of 20ff680: the capabilities page is company-wide, the header labels Middlefield "Headquarters", and the contact page also lists NP Mexico Company (Matamoros); a stored page placing the molding at Middlefield'),
+    909: ('term_hold', 'Withdrawn after review of 20ff680: /about-us places PVC compounding at Baltic and injection molding and assembly at Mt. Eaton and Lafayette TN, so custom_compounding, injection_molding, plastics_fabrication_welding, pvc and the company-wide thermoplastics quote are not bound to Midvale; kept: extrusion (Midvale is "Corporate Headquarters & Extrusion"). A page binding PVC at Midvale (the /products "We specialize in PVC extrusion" line) would support a new pvc row in a later PR; Baltic and Mt. Eaton have no Atlas site'),
     14: ('off_vocabulary', 'Owner vocabulary ruling on whether extrusion-die and custom-tooling manufacture ("forming dies, sheet dies, film dies and other custom tooling") maps to mold_tool_making; no governed term fits the page words today'),
     59: ('multi_location_unbound', 'A page tying the fabrication list (thermoforming, plastic welding, CNC machining) to the Stow site rather than the national company (a Texas address is on the same pages)'),
     148: ('locality_not_witnessed', 'A page naming the location of the "ISO 9001:2015 certified compounding facility"; stored pages show no Strongsville address and say stock is held in four states'),
