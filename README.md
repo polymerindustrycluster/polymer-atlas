@@ -89,13 +89,13 @@ contact data, tombstone — never delete.
 
 ## Status
 
-**Inventory — 2026-11-14:** recomputed from the canonical CSVs at head
-`accc03bc4c7fe53024a03a19e29dc00e48176e51` (validator PASS, 0 errors).
+**Inventory — 2026-11-17:** recomputed from the canonical CSVs at head
+`0ab7916ad10087d99b1104ce18b30cd9d5f47b0e` (validator PASS, 0 errors).
 The canonical CSVs contain **5,026 organization rows, 7,196 site rows,
-408 ecosystem rows, 1,513 people rows and 216 program rows**, all statuses and
+408 ecosystem rows, 1,517 people rows and 216 program rows**, all statuses and
 all verification tiers, including candidates and tombstones. These are not
-counts of active companies or unique ultimate parents. There are also 5,448
-registry-link rows and 41,575 evidence rows. Headline cut (operating status
+counts of active companies or unique ultimate parents. There are also 6,025
+registry-link rows and 42,557 evidence rows. Headline cut (operating status
 active, tiers A–C): 6,482 site rows — 1,488 in Ohio, 881 in the PIC-18 counties.
 
 See the [public-count audit](docs/reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for
