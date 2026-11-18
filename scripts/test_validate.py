@@ -486,6 +486,30 @@ class ValidatorMutationTests(unittest.TestCase):
                            lambda r: r.update(pic_member="true"))
         self.assert_fails_with(f"{r['org_id']} pic_member=true without membership_source_url")
 
+    # -- V-62 [v1.13.4]: no personal-account identifier URL in a people row ------
+    def _people_row(self, **cols):
+        return self.edit_rows("people.csv", lambda r: r["person_id"] == "PERSON-000001", lambda r: r.update(cols))
+
+    def test_v62_profile_u_param_rejected(self):
+        self._people_row(public_profile_url="https://www.example.edu/people/profile.dot?" + "u=abc")  # split: the pre-push scan refuses literal ones
+        self.assert_fails_with("PERSON-000001 public_profile_url carries a personal-account identifier URL")
+
+    def test_v62_lab_tilde_rejected(self):
+        self._people_row(lab_url="https://www.example.edu/" + "~abc/lab.html")
+        self.assert_fails_with("PERSON-000001 lab_url carries a personal-account identifier URL")
+
+    def test_v62_schemeless_tilde_in_sources_rejected(self):
+        self._people_row(sources="host.example.edu/" + "~abc")
+        self.assert_fails_with("PERSON-000001 sources carries a personal-account identifier URL")
+
+    def test_v62_placeholder_and_non_people_table_pass(self):
+        self._people_row(public_profile_url="https://www.example.edu/people/profile.dot?u=<id>")
+        self.edit_rows("organizations_OH.csv", lambda r: True,
+                       lambda r: r.update(notes=(r["notes"] + " https://dam.example.com/widen?" + "u=abc").strip()))
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-62", out)
+        self.assertEqual(code, 0, out[-2000:])
+
 
 if __name__ == "__main__":
     unittest.main()
