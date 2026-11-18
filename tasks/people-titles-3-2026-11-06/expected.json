@@ -1252,10 +1252,10 @@
     "institution_org_id": "ORG-004734",
     "role": "assistant_professor",
     "role_as_published": "Andrew Peters is an assistant professor in Chemical Engineering at Louisiana Tech University\" (latech.edu group page)",
-    "sources": "www2.latech.edu/~<acct>/member-apeters.html",
+    "sources": "www2.latech.edu/~<acct>/member-<acct>.html",
     "last_verified": "2026-11-02",
     "verification_tier": "A",
-    "public_profile_url": "www2.latech.edu/~<acct>/member-apeters.html",
+    "public_profile_url": "www2.latech.edu/~<acct>/member-<acct>.html",
     "research_specialties": "",
     "program_org_id": ""
   },

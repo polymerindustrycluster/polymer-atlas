@@ -3,7 +3,7 @@ identical, frozen, and leak-free, the leak scan / derivation catch planted defec
 lock hashes, cross-tab, the 14 adjudications (each quote re-verified), final grades, per-stratum and weighted statistics, the report.
 Run from anywhere: python3 tasks/blind-audit-10-2026-11-14/check.py   (needs full git history: CI validate uses fetch-depth 0)
 """
-import copy, csv, hashlib, json, sys
+import copy, csv, hashlib, json, subprocess, sys
 from collections import Counter
 from pathlib import Path
 
@@ -97,8 +97,17 @@ def check_blind(sample):
     # blind row order must not follow ID order (ids track PR order)
     assert [r['record_id'] for r in rows] != sorted(r['record_id'] for r in rows)
     freeze = json.loads((H / 'freeze.json').read_text())['sha256']
+    # owner rulings 2026-11-18 items 1/1b ("scrub forward"): a file redacted by tasks/identifier-url-scrub-2026-11-18 is
+    # checked against its pin at the pre-scrub commit, and its tip against the redaction that manifest records
+    scrub = {r['path']: r for r in csv.DictReader((H.parent / 'identifier-url-scrub-2026-11-18' / 'manifest.csv').open())}
     for p, h in freeze.items():
-        assert sha(p) == h, f'{p} changed after freeze'
+        rel = f'tasks/{H.name}/{p}'
+        if rel in scrub:
+            pre = subprocess.run(['git', '-C', str(H), 'show', f'099497f:{rel}'], capture_output=True, check=True).stdout
+            assert hashlib.sha256(pre).hexdigest() == h == scrub[rel]['sha256_before'], f'{p} changed after freeze (pre-scrub bytes)'
+            assert sha(p) == scrub[rel]['sha256_after'], f'{p} differs from its recorded scrub'
+        else:
+            assert sha(p) == h, f'{p} changed after freeze'
     assert freeze['blind_a.csv'] == freeze['blind_b.csv']
     return rows
 
