@@ -1,0 +1,17 @@
+{
+  "dispositions": {
+    "applied": 3,
+    "held": 9,
+    "held_lead": 9,
+    "no_claim": 16
+  },
+  "evidence_rows": 3,
+  "fills": 3,
+  "fills_by_band": {
+    "10-49": 1,
+    "250-499": 1,
+    "50-99": 1
+  },
+  "frame": 37,
+  "ohio_only": 20
+}
