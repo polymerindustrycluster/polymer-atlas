@@ -209,6 +209,8 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 
 ## programs-db crosswalk + census-gap researcher wave (2026-11-03)
 
+- [ ] `in-pr:claude-code 2026-11-18` **National capability batch b01 (outside Ohio):** 100 single-site sites, 12 tags on 7 sites + 7 capability rows, every term judged SOUND by both codex and grok on the full final set; 4 review rounds, the gates alone did not converge. `tasks/capability-national-b01-2026-11-18/README.md`.
+
 - [ ] `in-pr:claude-code 2026-11-03` **programs-db crosswalk (integrator pass):**
   - 69 `ror_id` values were verified at api.ror.org and added. 10 are held. — `in-pr:claude-code 2026-11-03`: the 10 holds are resolved: 3 linked (Purdue Indianapolis, Edmonds, WSU Tech) and 7 held with the settling fact named (`tasks/ror-holds-2026-11-03/`).
   - Texas A&M `ORG-004656` was re-pointed from the A&M System Office (UNITID 228732, tamus.edu) to College Station (228723, www.tamu.edu), per IPEDS HD2024.
