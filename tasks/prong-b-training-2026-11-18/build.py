@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Non-degree plastics-processing training into data/programs.csv under SCHEMA v1.14.1 (owner ruling 2026-11-18: prong (b)
+"""Non-degree plastics-processing training into data/programs.csv under SCHEMA v1.15.1 (owner ruling 2026-11-18: prong (b)
 is met when a training program's own page states plastics processing). Applies packet.csv rows whose existence AND scope quotes both passed the raw check
 (rawcheck.csv: an independent Firecrawl/Jina re-fetch, word-sequence match). Each row gets an existence and a scope
 evidence row (own_site, supports_A). RJG Train the Trainer stays held (see README).
@@ -48,7 +48,7 @@ def main():
                    description_1line=r["description_1line"], url=r["url"], public_door_url=r["url"],
                    admissions_status="unknown", status="active", sources=r["url"], verification_tier="A",
                    last_verified=DATE, created_by=BY,
-                   notes=(f"Created {DATE} under SCHEMA v1.14.1 (owner ruling {DATE}: non-degree training whose own page states plastics "
+                   notes=(f"Created {DATE} under SCHEMA v1.15.1 (owner ruling {DATE}: non-degree training whose own page states plastics "
                           f"processing meets prong (b)). SCHEMA section 4.11 prong {r['prong']} on the provider's own page; "
                           f"existence and scope quotes raw-checked by independent re-fetch. admissions_status unknown: "
                           f"no dated intake was checked. engagement_modes basis (raw-checked): '{r['engagement_quote']}'. "

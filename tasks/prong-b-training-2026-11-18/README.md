@@ -1,7 +1,7 @@
-# Plastics-processing training under SCHEMA v1.14.1 (2026-11-18)
+# Plastics-processing training under SCHEMA v1.15.1 (2026-11-18)
 
 **Owner ruling 2026-11-18.** Asked whether a polymer-process training program qualifies when its name has no polymer
-word, the owner answered "Yes, if the page states plastics processing". SCHEMA §4.11 records the ruling as v1.14.1.
+word, the owner answered "Yes, if the page states plastics processing". SCHEMA §4.11 records the ruling as v1.15.1.
 
 **+3 program rows (PROG-000352 to 000354), +6 evidence rows (EVD-397110 to 397115).**
 
