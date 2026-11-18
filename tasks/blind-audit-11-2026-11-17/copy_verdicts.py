@@ -1,0 +1,79 @@
+"""Copy the two locked reviewer outputs into this folder (blind audit 11 phase 3).
+- verdicts_a.csv / verdicts_b.csv: LF-normalised copies (the repo CSV rule). On the 13 uei_links rows every free-text cell
+  (field, correct_value, source_url, quote, note) is blanked, because reviewer A's cells quote SAM names and addresses and
+  R-SAM (controller ruling 2026-11-17) bars them from the repo; blind_id, record_id and verdict are kept.
+- receipts_a.json / receipts_b.json: copies (url, status, time, body hash, short notes) with the URL blanked on any fetch whose
+  host is on the private R-SAM host list (private/audit11/rsam_redact_hosts.json): fetches only the UEI no-match explains.
+  Receipts of SAM API calls move whole to private/audit11/receipts_<x>_sam_private.json; the public copy keeps one summary
+  entry with their count, status counts and that file's sha256 (Codex-21 finding 1, controller 2026-11-17).
+- locks.json: the BOARD lock hash of each original and the hash of each committed copy. check.py re-applies the redaction to
+  the private originals when they are present and requires the committed bytes.
+Run once: python3 copy_verdicts.py"""
+import csv, hashlib, io, json, re
+from pathlib import Path
+from urllib.parse import urlsplit
+
+H = Path(__file__).resolve().parent
+PRIVATE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/private/audit11')
+LOCKED = {'a': '0f3b1c9eb78f4620c5deb24d3023476221975f23803b4443fc972f1f75644b02',  # BOARD lock lines, 2026-11-17
+          'b': '9058060d8486eae9396ed189a313552c32a984764f7f24f02fc3cde88361f0c7'}
+FIELDS = ['blind_id', 'record_id', 'verdict', 'field', 'correct_value', 'source_url', 'quote', 'note']
+FREE = ('field', 'correct_value', 'source_url', 'quote', 'note')
+sha = lambda b: hashlib.sha256(b).hexdigest()
+SAM_URL = re.compile(r'https?://(?:[\w-]+\.)*sam\.gov/', re.I)
+
+
+def redact(original: bytes) -> bytes:
+    uei = {r['blind_id'] for r in csv.DictReader((H / 'sample.csv').open(newline='')) if r['change_class'] == 'uei_links'}
+    rows = list(csv.DictReader(io.StringIO(original.decode('utf-8'), newline='')))
+    assert len(rows) == 120 and len({r['blind_id'] for r in rows} & uei) == 13
+    out = io.StringIO()
+    w = csv.DictWriter(out, fieldnames=FIELDS, lineterminator='\n')
+    w.writeheader()
+    for r in rows:
+        w.writerow({k: ('' if r['blind_id'] in uei and k in FREE else r[k]) for k in FIELDS})
+    return out.getvalue().encode('utf-8')
+
+
+def redact_receipts(original: bytes, k: str):
+    """(public bytes, private SAM-call receipts bytes or None)."""
+    hosts = set(json.loads((PRIVATE / 'rsam_redact_hosts.json').read_text())['hosts'])
+    host = lambda u: (urlsplit(u or '').hostname or '').removeprefix('www.')
+    rows, out, sam = json.loads(original), [], []
+    for r in rows:
+        if SAM_URL.search(r.get('url') or '') or SAM_URL.search(r.get('resolved_url') or ''):
+            if not sam:
+                out.append(None)  # the summary entry takes the place of the first SAM receipt
+            sam.append(r)
+            continue
+        if host(r['url']) in hosts or host(r.get('resolved_url')) in hosts:
+            r.update({x: '[redacted: R-SAM]' for x in ('url', 'resolved_url', 'note') if x in r})
+        out.append(r)
+    priv = (json.dumps(sam, indent=1, ensure_ascii=False) + '\n').encode('utf-8') if sam else None
+    if sam:
+        codes = {}
+        for r in sam:
+            codes[str(r['http_status'])] = codes.get(str(r['http_status']), 0) + 1
+        out[out.index(None)] = dict(r_sam_summary='SAM API call receipts held privately (R-SAM)', count=len(sam), http_status_counts=dict(sorted(codes.items())),
+                                    private_file=f'receipts_{k}_sam_private.json', private_sha256=sha(priv))
+    return (json.dumps(out, indent=1, ensure_ascii=False) + '\n').encode('utf-8'), priv
+
+
+def main():
+    locks = {}
+    for k in 'ab':
+        src = (PRIVATE / f'out_{k}/verdicts.csv').read_bytes()
+        assert sha(src) == LOCKED[k], f'{k}: original no longer matches its BOARD lock'
+        red = redact(src)
+        (H / f'verdicts_{k}.csv').write_bytes(red)
+        rec, priv = redact_receipts((PRIVATE / f'out_{k}/receipts.json').read_bytes(), k)
+        (H / f'receipts_{k}.json').write_bytes(rec)
+        if priv:
+            (PRIVATE / f'receipts_{k}_sam_private.json').write_bytes(priv)
+        locks[k] = dict(locked_sha256=LOCKED[k], committed_sha256=sha(red), receipts_original_sha256=sha((PRIVATE / f'out_{k}/receipts.json').read_bytes()), receipts_sha256=sha(rec))
+    (H / 'locks.json').write_text(json.dumps(locks, indent=1) + '\n')
+    print(json.dumps(locks, indent=1))
+
+
+if __name__ == '__main__':
+    main()

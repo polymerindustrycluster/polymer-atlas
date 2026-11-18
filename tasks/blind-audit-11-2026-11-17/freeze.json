@@ -1,0 +1,15 @@
+{
+ "blind_is_protocol_not_access_control": "frame.csv and sample.csv carry PR attribution; hand reviewers only their blind file and REVIEWER_INSTRUCTIONS.md",
+ "leak_scan_pattern": "#\\d+|\\bEVD-\\d+|\\bPR\\b|pull request|\\bpass[- ]?\\d*\\b|packet|(?-i:\\blanes?\\b|\\bLanes? [A-Z0-9]{2,}\\b)|\\bwave\\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\\bmuse\\b|\\bowner\\b|\\brulings?\\b|battery|council|refut|\\bminted\\b|staging|banked|\\bnotes?\\b|created_by|tier[ _]?effect|supports_[ABCU]",
+ "sha256": {
+  "REVIEWER_INSTRUCTIONS.md": "c243be405ce7bb143a4c48a1a35b25cb28a58679dbb021891161d8b742a80e4d",
+  "blind_a.csv": "a8c0115940650cdd5364181e4e10bb7dc90862e9328bbe6600ee8f07c651c950",
+  "blind_b.csv": "a8c0115940650cdd5364181e4e10bb7dc90862e9328bbe6600ee8f07c651c950",
+  "draw.json": "623c1f304c1115bf4c2a106be37d8ce3fb64050abcc01d065cf80a936e818c38",
+  "frame.csv": "42e142082ff1a96ffb22e56f20b7bd39c94fc87c71a8eefe69a2d24b3409cc20",
+  "frame.py": "c892c0a84cd6b1050149080097136328491b3f06b18c05f2c012bc659e0d72bf",
+  "frame_provenance.json": "d41f5dd53bd9bd7ce90c0c6114327665d0db246258d9659dbc175b75f56a589c",
+  "sample.csv": "e0151830055cf749deab3740e353fc0346fde316723bcab1fedccef757964307",
+  "sample.py": "0b58a5458af749cfe3008ff2f31138881156aa79806f7ea4c4c961dbf13e8ede"
+ }
+}

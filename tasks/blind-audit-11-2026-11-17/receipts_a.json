@@ -1,0 +1,3590 @@
+[
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://hubplastics.com/about-us/&from=20261011191729&to=20261011191729&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.hpmanufacturing.com/&from=20260901191706&to=20260901191706&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 82 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.hpmanufacturing.com/plastic-fabrication/&from=20261116222737&to=20261116222737&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 82 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.provia.com/why-provia/experience/&from=20260811155333&to=20260811155333&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 82 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116222737/https://www.hpmanufacturing.com/plastic-fabrication/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261011191729/https://hubplastics.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260901191706/https://www.hpmanufacturing.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260811155333/https://www.provia.com/why-provia/experience/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.principalplasticsinc.com/about-1&from=20261106135132&to=20261106135132&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://extolohio.com/quality/&from=20261106111003&to=20261106111003&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.mechanicalrubber.com/quality-certifications-compliance/&from=20261010080951&to=20261010080951&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.duramaxmarine.com/about-our-quality-products/&from=20261116223200&to=20261116223200&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261010080951/https://www.mechanicalrubber.com/quality-certifications-compliance/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106111003/https://extolohio.com/quality/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116223200/https://www.duramaxmarine.com/about-our-quality-products/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106135132/https://www.principalplasticsinc.com/about-1",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.polymerpkg.com/polymer-packaging-co-extruded-films/&from=20261116223449&to=20261116223449&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://drossbach.com/&from=20260612115717&to=20260612115717&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://snyderman.com/about/&from=20261116234640&to=20261116234640&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.plastipak.com/&from=20261026123010&to=20261026123010&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 80 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116234640/https://snyderman.com/about/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261026123010/https://www.plastipak.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:40Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116223449/https://www.polymerpkg.com/polymer-packaging-co-extruded-films/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260612115717/https://drossbach.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://sunartdecals.com/custom-vinyl-decals&from=20261116232545&to=20261116232545&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.ferriot.com/&from=20261116225026&to=20261116225026&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://enterpriseplastics.net/manufacturing/&from=20221205132813&to=20221205132813&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.continentalpaints.com/about&from=20261116224414&to=20261116224414&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20221205132813/https://enterpriseplastics.net/manufacturing/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116232545/https://sunartdecals.com/custom-vinyl-decals",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116224414/https://www.continentalpaints.com/about",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116225026/https://www.ferriot.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.americanwireandcable.com/about-us.html&from=20261106130111&to=20261106130111&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 60 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.impactsleeves.com/services/materials&from=20260613185041&to=20260613185041&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.forestcitytech.com/lightweighting/&from=20261116230734&to=20261116230734&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260613185041/https://www.impactsleeves.com/services/materials",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106130111/https://www.americanwireandcable.com/about-us.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116230734/https://www.forestcitytech.com/lightweighting/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.tremcocpg.com/&from=20260811143711&to=20260811143711&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://yokohamaiaohio.com/products/rubber-extruding&from=20260617064109&to=20260617064109&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.ferriot.com/&from=20261116225026&to=20261116225026&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260811143711/https://www.tremcocpg.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116225026/https://www.ferriot.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260617064109/https://yokohamaiaohio.com/products/rubber-extruding",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.drummondcorp.com/about-us&from=20260606022021&to=20260606022021&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.hudsonextrusions.com/&from=20260810222245&to=20260810222245&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.akzonobel.com/en/about-us/our-businesses&from=20260907095933&to=20260907095933&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://pfccases.com/about-pfc/&from=20260717104345&to=20260717104345&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260606022021/https://www.drummondcorp.com/about-us",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260907095933/https://www.akzonobel.com/en/about-us/our-businesses",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260717104345/https://pfccases.com/about-pfc/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260810222245/https://www.hudsonextrusions.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.integrityprocessingllc.com/&from=20261116235530&to=20261116235530&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://extolohio.com/about-us/&from=20261106111232&to=20261106111232&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://lairdplastics.com/locations/laird-corporate-headquarters/&from=20261116222146&to=20261116222146&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.duraline.com/&from=20261012051222&to=20261012051222&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116235530/https://www.integrityprocessingllc.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106111232/https://extolohio.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012051222/https://www.duraline.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116222146/https://lairdplastics.com/locations/laird-corporate-headquarters/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 80 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.plastipak.com/about-us/&from=20261026123010&to=20261026123010&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://datwyler.com/company/about-us/&from=20260618041611&to=20260618041611&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 81 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.pretiumpkg.com/&from=20261012042730&to=20261012042730&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 81 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://zehrco-giancola.com/&from=20260810041328&to=20260810041328&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261026123010/https://www.plastipak.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012042730/https://www.pretiumpkg.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260618041611/https://datwyler.com/company/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260810041328/https://zehrco-giancola.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:41Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.rauhpolymers.com/&from=20260711044714&to=20260711044714&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.geon.com/locations&from=20260922063205&to=20260922063205&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 79 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://jandoplastics.com/our-capabilities/&from=20260417195403&to=20260417195403&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.universalplastics.com/&from=20260722222006&to=20260722222006&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 78 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260711044714/https://www.rauhpolymers.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260722222006/https://www.universalplastics.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260417195403/https://jandoplastics.com/our-capabilities/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260922063205/https://www.geon.com/locations",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.fastforming.com/materials/&from=20260614231550&to=20260614231550&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.denneyplastics.com/&from=20260615014822&to=20260615014822&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.bridgestoneamericas.com/en/index&from=20261023030934&to=20261023030934&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://akronpolysys.com/company/&from=20231103233054&to=20231103233054&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261023030934/https://www.bridgestoneamericas.com/en/index",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260615014822/https://www.denneyplastics.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260614231550/https://www.fastforming.com/materials/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 78 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20231103233054/https://akronpolysys.com/company/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.schneller.com/&from=20261012050358&to=20261012050358&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://altraset.mar-bal.com/&from=20260809155935&to=20260809155935&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.akronporcelain.com/about-us/&from=20261106125619&to=20261106125619&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012050358/https://www.schneller.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260809155935/https://altraset.mar-bal.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 87 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 78 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.promerus.com/about-us&from=20261106135246&to=20261106135246&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.itenindustries.com/facilities-overview/&from=20260606132957&to=20260606132957&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.steere.com/processes-1&from=20251205021614&to=20251205021614&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.adherexpackaging.com/capabilities/&from=20250419220000&to=20250419220000&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20251205021614/https://www.steere.com/processes-1",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106135246/https://www.promerus.com/about-us",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260606132957/https://www.itenindustries.com/facilities-overview/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20250419220000/https://www.adherexpackaging.com/capabilities/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.geon.com/&from=20261012041836&to=20261012041836&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://karmanrubber.com/products/&from=20260513045044&to=20260513045044&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.itendefense.com/materials&from=20260511191039&to=20260511191039&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260513045044/https://karmanrubber.com/products/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 68 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012041836/https://www.geon.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260511191039/https://www.itendefense.com/materials",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.avient.com/&from=20261104022108&to=20261104022108&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.biothaneusa.com/services/rf-welding/&from=20260909140218&to=20260909140218&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=https://www.salem-republic.com/about-us/&from=20260811042756&to=20260811042756&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/cdx/search/cdx?url=http://clamshellusa.com/about/capabilities.html&from=20260720121748&to=20260720121748&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 78 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260909140218/https://www.biothaneusa.com/services/rf-welding/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20261104022108/https://www.avient.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260811042756/https://www.salem-republic.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://web.archive.org/web/20260720121748/http://clamshellusa.com/about/capabilities.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:42Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "connection failed: curl: (7) Failed to connect to web.archive.org port 443 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://hubplastics.com/about-us/&from=20261011191729&to=20261011191729&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:11Z",
+  "sha256": "c8fdc1076ae68af499bde5ff1c6949e264f3cff0bf3d553494f6f50f5bfc4327",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.hpmanufacturing.com/&from=20260901191706&to=20260901191706&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:11Z",
+  "sha256": "e3425b5fdb0e5dc6624345388dadf7893542463e2489eeb181808b757bd0ab1d",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.provia.com/why-provia/experience/&from=20260811155333&to=20260811155333&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:11Z",
+  "sha256": "04ee818f6c3938eefa3ee3eae460a1078634f9bc612a1eb440e2bb2169d346bd",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261011191729/https://hubplastics.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:12Z",
+  "sha256": "60cc15403081b8eb0e6b6eef86c934c3b683de85f26bf881ba9c140eb78865f3",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.hpmanufacturing.com/plastic-fabrication/&from=20261116222737&to=20261116222737&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:12Z",
+  "sha256": "4139977436f76a99eb2d470e885803e7d7818d7c9b39b6bf410f77d4f8849f2f",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260811155333/https://www.provia.com/why-provia/experience/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:12Z",
+  "sha256": "1923283485f12bece12243bb42f4221843e82d754e37f7aaa7511a9a79c16a4a",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260901191706/https://www.hpmanufacturing.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:12Z",
+  "sha256": "2954305004d58e199358d075ffb7975e3b7625788a254e0d19075ef914ae7567",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.duramaxmarine.com/about-our-quality-products/&from=20261116223200&to=20261116223200&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:13Z",
+  "sha256": "35bb42cd0f2fa288f66b8a12d9c703b97d00ee08689a0eddbacc8f31012ab8c5",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116223200/https://www.duramaxmarine.com/about-our-quality-products/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:13Z",
+  "sha256": "2caf96d262cf2a8f5dac7939948e7fdaac0d557d22b14ab928e3284174997d56",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.mechanicalrubber.com/quality-certifications-compliance/&from=20261010080951&to=20261010080951&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:13Z",
+  "sha256": "f1a10123655f1723c4ed5cb6d22b4500ed98ed0289c3df07b20acec25a43f1d8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116222737/https://www.hpmanufacturing.com/plastic-fabrication/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:14Z",
+  "sha256": "9a7537970b9ebfdaeed65e0339fbdfc73e585b46b6517d8991f8c506c67d3912",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://extolohio.com/quality/&from=20261106111003&to=20261106111003&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:14Z",
+  "sha256": "5a173d3a0c8cb74584c07f9018dc76a6dee6b559d2fd2243b23553e6e5bdce67",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261010080951/https://www.mechanicalrubber.com/quality-certifications-compliance/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:14Z",
+  "sha256": "6ee80aeb13e6d773e15094944cc5beb3bc39cc65017a15ef28c1500fcf015224",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106111003/https://extolohio.com/quality/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "8dce20fc1c2561e75060d2de1f061e9d4cd7933f814ef19ddee1b1b9a9ce0a2b",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.principalplasticsinc.com/about-1&from=20261106135132&to=20261106135132&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "83002cdda19e82a600eaed54bf5de16eb9fcf38a36898f23bb5be1f9f236574f",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.plastipak.com/&from=20261026123010&to=20261026123010&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "808168fd2607454b761c739dcddd2167d03a699477659a756eaa3c217026d146",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106135132/https://www.principalplasticsinc.com/about-1",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261026123010/https://www.plastipak.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 76 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://drossbach.com/&from=20260612115717&to=20260612115717&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://snyderman.com/about/&from=20261116234640&to=20261116234640&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260612115717/https://drossbach.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://sunartdecals.com/custom-vinyl-decals&from=20261116232545&to=20261116232545&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116234640/https://snyderman.com/about/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116232545/https://sunartdecals.com/custom-vinyl-decals",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 82 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://enterpriseplastics.net/manufacturing/&from=20221205132813&to=20221205132813&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 82 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.continentalpaints.com/about&from=20261116224414&to=20261116224414&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20221205132813/https://enterpriseplastics.net/manufacturing/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116224414/https://www.continentalpaints.com/about",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 105 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.ferriot.com/&from=20261116225026&to=20261116225026&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 105 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116225026/https://www.ferriot.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 79 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.forestcitytech.com/lightweighting/&from=20261116230734&to=20261116230734&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 80 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116230734/https://www.forestcitytech.com/lightweighting/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 98 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.impactsleeves.com/services/materials&from=20260613185041&to=20260613185041&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 99 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260613185041/https://www.impactsleeves.com/services/materials",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.americanwireandcable.com/about-us.html&from=20261106130111&to=20261106130111&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://yokohamaiaohio.com/products/rubber-extruding&from=20260617064109&to=20260617064109&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106130111/https://www.americanwireandcable.com/about-us.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260617064109/https://yokohamaiaohio.com/products/rubber-extruding",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.ferriot.com/&from=20261116225026&to=20261116225026&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116225026/https://www.ferriot.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 69 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.tremcocpg.com/&from=20260811143711&to=20260811143711&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260811143711/https://www.tremcocpg.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.drummondcorp.com/about-us&from=20260606022021&to=20260606022021&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260606022021/https://www.drummondcorp.com/about-us",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.akzonobel.com/en/about-us/our-businesses&from=20260907095933&to=20260907095933&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:16Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://pfccases.com/about-pfc/&from=20260717104345&to=20260717104345&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260907095933/https://www.akzonobel.com/en/about-us/our-businesses",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.hudsonextrusions.com/&from=20260810222245&to=20260810222245&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260717104345/https://pfccases.com/about-pfc/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260810222245/https://www.hudsonextrusions.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.integrityprocessingllc.com/&from=20261116235530&to=20261116235530&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116235530/https://www.integrityprocessingllc.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://extolohio.com/about-us/&from=20261106111232&to=20261106111232&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://lairdplastics.com/locations/laird-corporate-headquarters/&from=20261116222146&to=20261116222146&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106111232/https://extolohio.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116222146/https://lairdplastics.com/locations/laird-corporate-headquarters/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.duraline.com/&from=20261012051222&to=20261012051222&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.pretiumpkg.com/&from=20261012042730&to=20261012042730&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012051222/https://www.duraline.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012042730/https://www.pretiumpkg.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://datwyler.com/company/about-us/&from=20260618041611&to=20260618041611&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260618041611/https://datwyler.com/company/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 106 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.plastipak.com/about-us/&from=20261026123010&to=20261026123010&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 108 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://zehrco-giancola.com/&from=20260810041328&to=20260810041328&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261026123010/https://www.plastipak.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.polymerpkg.com/polymer-packaging-co-extruded-films/&from=20261116223449&to=20261116223449&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "dba8d09d0709b0c9c0a7f56e6492d9d29f34df38bb26714275f1aa35b6fc4fec",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.rauhpolymers.com/&from=20260711044714&to=20260711044714&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 68 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260810041328/https://zehrco-giancola.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116223449/https://www.polymerpkg.com/polymer-packaging-co-extruded-films/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:17Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260711044714/https://www.rauhpolymers.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 67 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.geon.com/locations&from=20260922063205&to=20260922063205&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.universalplastics.com/&from=20260722222006&to=20260722222006&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://jandoplastics.com/our-capabilities/&from=20260417195403&to=20260417195403&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260922063205/https://www.geon.com/locations",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260722222006/https://www.universalplastics.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260417195403/https://jandoplastics.com/our-capabilities/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.fastforming.com/materials/&from=20260614231550&to=20260614231550&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 78 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.bridgestoneamericas.com/en/index&from=20261023030934&to=20261023030934&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.denneyplastics.com/&from=20260615014822&to=20260615014822&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260614231550/https://www.fastforming.com/materials/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261023030934/https://www.bridgestoneamericas.com/en/index",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260615014822/https://www.denneyplastics.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://akronpolysys.com/company/&from=20231103233054&to=20231103233054&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://altraset.mar-bal.com/&from=20260809155935&to=20260809155935&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.schneller.com/&from=20261012050358&to=20261012050358&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20231103233054/https://akronpolysys.com/company/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260809155935/https://altraset.mar-bal.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012050358/https://www.schneller.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 87 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.akronporcelain.com/about-us/&from=20261106125619&to=20261106125619&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.itenindustries.com/facilities-overview/&from=20260606132957&to=20260606132957&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 82 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.promerus.com/about-us&from=20261106135246&to=20261106135246&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 61 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260606132957/https://www.itenindustries.com/facilities-overview/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 73 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.steere.com/processes-1&from=20251205021614&to=20251205021614&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106135246/https://www.promerus.com/about-us",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 63 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.adherexpackaging.com/capabilities/&from=20250419220000&to=20250419220000&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 65 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20251205021614/https://www.steere.com/processes-1",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 76 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://karmanrubber.com/products/&from=20260513045044&to=20260513045044&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20250419220000/https://www.adherexpackaging.com/capabilities/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 74 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.geon.com/&from=20261012041836&to=20261012041836&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260513045044/https://karmanrubber.com/products/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.itendefense.com/materials&from=20260511191039&to=20260511191039&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:18Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 75 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012041836/https://www.geon.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 62 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260511191039/https://www.itendefense.com/materials",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 76 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.avient.com/&from=20261104022108&to=20261104022108&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://clamshellusa.com/about/capabilities.html&from=20260720121748&to=20260720121748&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 71 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20261104022108/https://www.avient.com/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 77 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.salem-republic.com/about-us/&from=20260811042756&to=20260811042756&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 68 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260720121748/http://clamshellusa.com/about/capabilities.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 66 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.biothaneusa.com/services/rf-welding/&from=20260909140218&to=20260909140218&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 72 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260811042756/https://www.salem-republic.com/about-us/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 68 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260909140218/https://www.biothaneusa.com/services/rf-welding/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:19Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.principalplasticsinc.com/about-1&timestamp=20261106135132",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:37Z",
+  "sha256": "f95026e952616ecc1107c9c43391ca285a4f590ed2b4a8facc777e50f47dbac1"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106135132/https://www.principalplasticsinc.com/about-1",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:10:45Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 70 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=6060%20Parkland%20Blvd%2C%20Mayfield%20Heights%2C%20OH&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:19Z",
+  "sha256": "d26acae64e4d27cd1f4386a7e38257ebdb85ffcab4ad89578613eb450ac8d797"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1215%20Valley%20Belt%20Road%2C%20Brooklyn%20Heights%2C%20OH&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:20Z",
+  "sha256": "e90cfa6cea8af781d58e676ca2425d36ae222e35f973a404ca81f4abefa2041a"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1070%20Faultless%20Dr%2C%20Ashland%2C%20OH&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:21Z",
+  "sha256": "3cd1b07de4802abe0d3794e0600e16e426c106d16d0f92e855262da3f239fa80"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=950%20Stephenson%20Hwy%2C%20Troy%2C%20MI&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:22Z",
+  "sha256": "6f42a950ba603629aba8bd165293c36f558390ef08d3ec5e314baad27d714e62"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=800%20Pennsylvania%20Ave%2C%20Salem%2C%20OH&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:22Z",
+  "sha256": "428305ba6fb95b2be9b831cc6c8a6c4d5fd04b398a905222bfd9b63cabb7504f"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=59%20Daniel%20Webster%20Hwy%2C%20Merrimack%2C%20NH&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:23Z",
+  "sha256": "d2a07c0e3ff54c8648cab800f3e9330133b83bc5bc378aa1ad22bfb1cbeac112"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=105%20Canonchet%20Road%2C%20Hope%20Valley%2C%20RI&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:23Z",
+  "sha256": "b6e1f681af1e15b772c85e8868493904c084b535002d51ef8fd171b432a540a3"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=195%20S.%20Geneva%20Road%2C%20Lindon%2C%20UT&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:25Z",
+  "sha256": "a77cea6bab6c7b80427a8c3f43f21642a4b60057f0327b0dabafe5e11a01b6fc"
+ },
+ {
+  "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=351%20Country%20Club%20Dr%2C%20Bensenville%2C%20IL&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:25Z",
+  "sha256": "4959a582103b8c92c783727f24c8f5a2842fd46a18c88dcc03b20ac35363ef55"
+ },
+ {
+  "url": "https://www.elbex-us.com/contact-us",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:37Z",
+  "sha256": "ca9f09a3325ca332d13c4045a839c29193cd6e5ee88d7268943a3547ea88e48f"
+ },
+ {
+  "url": "https://www.progressivefoam.com/about-pft/contact-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:37Z",
+  "sha256": "41c41ab760bbe0349f6c4c3acaeac9b7537c98df208a57b57eebfbfe59a3ae80"
+ },
+ {
+  "url": "https://www.americancolors.com/history",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:37Z",
+  "sha256": "d740c077b77df021abfd7f4ffdf21a39f6a6e297d7130b7d3843fae6718523cb"
+ },
+ {
+  "url": "https://www.americancolors.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:11:38Z",
+  "sha256": "402a866dc537135b2797b0e4d9e730229ef42cb760517ef8d061d30d57e006ee"
+ },
+ {
+  "url": "https://www.macdivittrubber.com/about",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:09Z",
+  "sha256": "f5e5d8449ec2a05e985569b71a09ecf617edc70d5c36c8b4b466477e8725a962"
+ },
+ {
+  "url": "https://www.freemansupply.com/about",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:09Z",
+  "sha256": "122c28bbfcf3a2588609bcfbba6d5f1fa9511ac5ba2302270e9dd10623e58bd5"
+ },
+ {
+  "url": "https://www.americanfoamproducts.com/industries/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:14Z",
+  "sha256": "6a780ee44b4276b8515f34f232e990c73660eda8960d437d0232ce28f2346efa"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106135132/https://www.principalplasticsinc.com/about-1",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:12:15Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 88 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://mccannplastics.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:23Z",
+  "sha256": "5132c6c9071ca088104d9d65c68eb45690ff68f28db6343a5d6c706ec7d1810f"
+ },
+ {
+  "url": "https://www.hy-ko.com/about",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:23Z",
+  "sha256": "de22e0c1e86aa30389a1ac390a0ed75e9c9a5a7c4a7039bd0c1a9c23740342f2"
+ },
+ {
+  "url": "https://www.ergomat.com/en/About_Us",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:24Z",
+  "sha256": "edb84e76d0dbfa62e497f85d13130ad42dd0d9826a9680e9415795b7a4703154"
+ },
+ {
+  "url": "https://mccannplastics.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:31Z",
+  "sha256": "5132c6c9071ca088104d9d65c68eb45690ff68f28db6343a5d6c706ec7d1810f"
+ },
+ {
+  "url": "http://www.gbsa.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:53Z",
+  "sha256": "aab3de08c181c4a2348a65fa7b591a8226ea8929cdbcdb10fd50ca5bd22b6cea"
+ },
+ {
+  "url": "https://jandoplastics.com/our-history/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:53Z",
+  "sha256": "21734126bfd9d947f694e74082150b2c2dd0d4f4c53134c50dea6fb8a76d6683"
+ },
+ {
+  "url": "https://www.transcendia.com/history",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:12:53Z",
+  "sha256": "dc98e29b32b43177ff22ab4184f12e89646a315b573bef2fd2e86cdf105c2e1a"
+ },
+ {
+  "url": "https://malishplastics.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:10Z",
+  "sha256": "8a7063d371801ba0f236dafc295c4915ddcc80771580396b75b89c33aa57f383"
+ },
+ {
+  "url": "https://www.inter-ion.com/services/coating/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:10Z",
+  "sha256": "8b0f5a1cc5755ecf6ac49f2b53c86a110078068d3c46da85079a0da175955666"
+ },
+ {
+  "url": "https://www.flextechnologies.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:11Z",
+  "sha256": "92468c76b6a21163adb3d560f57aa303b2eda4607c0c2abc11edfd30fb5de98f"
+ },
+ {
+  "url": "https://www.flextechnologies.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:22Z",
+  "sha256": "92468c76b6a21163adb3d560f57aa303b2eda4607c0c2abc11edfd30fb5de98f"
+ },
+ {
+  "url": "https://malishplastics.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:24Z",
+  "sha256": "434e9fefe40b7787d36862c90e3a03b287d2e79b5a5516cf7d0694570ef1ef25"
+ },
+ {
+  "url": "https://www.flextechnologies.com/about-us",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:28Z",
+  "sha256": "0e9ae30dd3ea66cd7017f1329fe1efd1025ae19e9f18da5896f5c19101315a8f"
+ },
+ {
+  "url": "https://www.flextechnologies.com/capabilities",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:28Z",
+  "sha256": "63860c0550c2c56b4b43200c961ec7427d02dbdd9b9e90f02fb632c2b7bce13f"
+ },
+ {
+  "url": "https://malishplastics.com/contact/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:30Z",
+  "sha256": "c9b25bb580fe525fde0935e1e7a11729d753618f6d279ef536835c209cfd23d7"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106135132/https://www.principalplasticsinc.com/about-1",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:47Z",
+  "sha256": "c184aa3c751b3ba6d07637f3288039d3dd4dbc17d85a0ca11e39d508ab889158",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.plastipak.com/&timestamp=20261026123010",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:13:56Z",
+  "sha256": "5b04fc7df25c3ba0a164a25455f8a5b855bb9c7927c9940ce796cc6e60381c9d"
+ },
+ {
+  "url": "http://web.archive.org/web/20261026123010/https://www.plastipak.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:06Z",
+  "sha256": "4ed4124f51ded5a13f46cbdb981c5bfb54754579992d5346b53d96fb84a6b761",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.polymerpkg.com/polymer-packaging-co-extruded-films/&timestamp=20261116223449",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:15Z",
+  "sha256": "746027cd3e05536f6060a569ef75e2fc9bb78175808acdf2c6516a75f570c3a8"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116223449/https://www.polymerpkg.com/polymer-packaging-co-extruded-films/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:25Z",
+  "sha256": "376d0dd5404aafea4815b0ccab050f37c79d7ffd6e16d2cc8653c0dc6dd67cd4",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://drossbach.com/&timestamp=20260612115717",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:34Z",
+  "sha256": "41fa9a3d482ba0b0c4a4bb70198f8a6aa36435a5f60999500c1c224165c3c61d"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://drossbach.com/&from=20260612115717&to=20260612115717&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:43Z",
+  "sha256": "539d97112b3dd22f0d47726c022403b344f9bd698a30265be2f1a6d00e01f9a8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://alttran.com/rubber-mixing-capabilities/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:51Z",
+  "sha256": "d883260d1724d0e3bf60368160f9e12f473069876911a6a2f3dca55dedb6cfdc"
+ },
+ {
+  "url": "https://fabohio.com/about-us/history/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:51Z",
+  "sha256": "425e253d61d8fb0303fc796d3588ac81eca822276055c95532f7a91a5bf09bdd"
+ },
+ {
+  "url": "https://drecoinc.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:51Z",
+  "sha256": "22734eaab90218601e4665ad9ad983a7ab5c55dbb0f7d9bc61283ea6055da24e"
+ },
+ {
+  "url": "http://web.archive.org/web/20260612115717/https://drossbach.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:52Z",
+  "sha256": "0c00617cedbfc32b8d173ca61a86472fd5f8e0956f226c35fd6f2233c6cc7d05",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://snyderman.com/about/&timestamp=20261116234640",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:01Z",
+  "sha256": "dd28bc5afe0eb47c1ca0bdc2e234dee8d082936425c104a91ca9ee0a13711b5d"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://snyderman.com/about/&from=20261116234640&to=20261116234640&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:09Z",
+  "sha256": "4bcf3d0e7f17dfc45739e273352a182d73f27682dfe5aa0564f7281807f92f42",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116234640/https://snyderman.com/about/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:19Z",
+  "sha256": "b60cf747c2b3a009a6b52e01bae64c7ec7daa47c8d97a74cab908f224cee1945",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://sunartdecals.com/custom-vinyl-decals&timestamp=20261116232545",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:28Z",
+  "sha256": "8a77c58154d62bd7e183b84c3175089a91cdde812d68cf4cb42f5503a5ea49ce"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://sunartdecals.com/custom-vinyl-decals&from=20261116232545&to=20261116232545&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:37Z",
+  "sha256": "dc18e41066d72b95de6d428e35b77048430fe876aa9428b38adb9eb2be083f33",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116232545/https://sunartdecals.com/custom-vinyl-decals",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:45Z",
+  "sha256": "e735129f18907e0191b6c85421cdcb0f9354d4e0a3a4630ac9b83df66a889b72",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://enterpriseplastics.net/manufacturing/&timestamp=20221205132813",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:55Z",
+  "sha256": "2068e5a2c683573532abe61b40baf915008da0212f8897d8e24bc021f0f7af4c"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://enterpriseplastics.net/manufacturing/&from=20221205132813&to=20221205132813&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:04Z",
+  "sha256": "08d53e400a88ca67d0fd02bb9ec39a30b54c0f364b080d456a40ab870769b1f6",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://americansignproducts.com/news",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:05Z",
+  "sha256": "30146077f1966357ae7fac0cd8326ec3b7cbe5d9a9ddf2e7266c50f58ab85010"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:06Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "https://www.provia.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:06Z",
+  "sha256": "1e5ab8d11e8f6b346b72ab917f4e968383d6ffe399b0466646a674416381e39e"
+ },
+ {
+  "url": "https://cnginc.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:08Z",
+  "sha256": "f1b28cf18085f66572d118da244698d1f0d9087f407558cfa217ed7cab559f1e"
+ },
+ {
+  "url": "https://cnginc.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:08Z",
+  "sha256": "d3b35b2c634de9903d840a70238d158effa1989a5ae339abd02fef10937468fa"
+ },
+ {
+  "url": "https://www.rpplusm.com/blog",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:09Z",
+  "sha256": "315093e58fbdc38ce6be3f0a8bd941ff30e824e9565256e49449c1cee0a14c64"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/resources-2/news",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:12Z",
+  "sha256": "d1668a0bd1f7a3b810980700045314b6f54d130bf77e5620406c6f9a0a9748d4"
+ },
+ {
+  "url": "http://web.archive.org/web/20221205132813/https://enterpriseplastics.net/manufacturing/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:13Z",
+  "sha256": "d20f5f23bbafe88d124d1b1cf991b689debf0bd06d9bfaa1d96a8fa3c55617b3",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:14Z",
+  "sha256": "f8957e331107ff649cc0ce6ae05831006b380b9e4e259f1f2269b7d3303f4bf2"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.continentalpaints.com/about&timestamp=20261116224414",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:21Z",
+  "sha256": "a751d560641d5d164b0ce3aff2dd8910b4c4051ecdf21cca4a1fd3db5bbdfc1e"
+ },
+ {
+  "url": "https://www.provia.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:27Z",
+  "sha256": "1e5ab8d11e8f6b346b72ab917f4e968383d6ffe399b0466646a674416381e39e"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:27Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "https://cnginc.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:27Z",
+  "sha256": "d3b35b2c634de9903d840a70238d158effa1989a5ae339abd02fef10937468fa"
+ },
+ {
+  "url": "https://cnginc.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:27Z",
+  "sha256": "f1b28cf18085f66572d118da244698d1f0d9087f407558cfa217ed7cab559f1e"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:29Z",
+  "sha256": "9184c09c5afa3161a84af817c4c0bb4da0e408630e7ae1ca9ede93be73accc9d"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.continentalpaints.com/about&from=20261116224414&to=20261116224414&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:30Z",
+  "sha256": "ae56550cd10d03f73bc31d91c46e2e1a330fb5f0f63d634836208b2b336e4406",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/resources-2/news",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:32Z",
+  "sha256": "d1668a0bd1f7a3b810980700045314b6f54d130bf77e5620406c6f9a0a9748d4"
+ },
+ {
+  "url": "https://americansignproducts.com/news",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:35Z",
+  "sha256": "30146077f1966357ae7fac0cd8326ec3b7cbe5d9a9ddf2e7266c50f58ab85010"
+ },
+ {
+  "url": "https://www.rpplusm.com/blog",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:35Z",
+  "sha256": "9d5bdada59ae4b5f1fe5b82628e173a36b6100924d0196ed8956264f4185a3ee"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116224414/https://www.continentalpaints.com/about",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:40Z",
+  "sha256": "2070cffced4a0021a2741b56da3d0c06c6aade70b2c4013c73a3432742f57ef2",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:46Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.ferriot.com/&timestamp=20261116225026",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:49Z",
+  "sha256": "e03f3ff833e2522a0e81dd7eed9deabc79ea4a658a8f320cae2c561da5312fbb"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/resources-2/news",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:49Z",
+  "sha256": "d1668a0bd1f7a3b810980700045314b6f54d130bf77e5620406c6f9a0a9748d4"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:55Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.ferriot.com/&from=20261116225026&to=20261116225026&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:16:58Z",
+  "sha256": "d2209b68cc7dd43128b7a602217c6083899c25abf2e76a888e8d9851b4c74369",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:01Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "https://www.provia.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:08Z",
+  "sha256": "1e5ab8d11e8f6b346b72ab917f4e968383d6ffe399b0466646a674416381e39e"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116225026/https://www.ferriot.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:09Z",
+  "sha256": "c3a4f09f15a273bbe3680072ffd7ef3e6a5ba5461f7fdc5bd8f0be3becfed68c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:09Z",
+  "sha256": "3ca4a5909355cde3115ffd54f85abbe9cf7cc2476e548eb2c92e560ead59e457"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.forestcitytech.com/lightweighting/&timestamp=20261116230734",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:17Z",
+  "sha256": "6a0fe5f1ea798e94c8ccbe4e63fabea0c5fe1b774831e6374c6e374a6b7796c6"
+ },
+ {
+  "url": "https://www.provia.com/newsroom/feed/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:25Z",
+  "sha256": "a455878b58860dd2b7da10e119cc66c6ef496ad3c5cea4a58902448ed3231501"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:25Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.forestcitytech.com/lightweighting/&from=20261116230734&to=20261116230734&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:27Z",
+  "sha256": "c66421a1698fa5ba428509c6134f9b3f61016881bdd57d7e8313bb820f4d922b",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.synapsebiomedical.com/resources-2/news",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:28Z",
+  "sha256": "d1668a0bd1f7a3b810980700045314b6f54d130bf77e5620406c6f9a0a9748d4"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116230734/https://www.forestcitytech.com/lightweighting/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:37Z",
+  "sha256": "dec4cb1a637934035c895337b3f2d0d5aa7cd4efe90325990142dccb0b25d596",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://www.provia.com/newsroom",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:37Z",
+  "sha256": "2c1e2c54f13b86253e280b05e0b59c466eff74712f4850d33e8e8013ca57e053"
+ },
+ {
+  "url": "https://www.provia.com/article/feed/",
+  "http_status": 404,
+  "fetched_at": "2026-11-17T23:17:46Z",
+  "sha256": "fe70dc73db21d9cfb84d93c730b02b84c7632daec51095532c6bd0ae1ad93312"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.impactsleeves.com/services/materials&timestamp=20260613185041",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:46Z",
+  "sha256": "d0b4a0d895c77c2283c42044a0ffeb3e08e722870fbe5297162b7104396fc98a"
+ },
+ {
+  "url": "https://www.provia.com/feed/?post_type=article",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:47Z",
+  "sha256": "99df35627a0c634314b3dd17c8c046d13b1759316ffb543f5f0d181d1107ce9d"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.impactsleeves.com/services/materials&from=20260613185041&to=20260613185041&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:17:55Z",
+  "sha256": "c1063644e14e3987099c2313430997f8bb8acdc5e73b70d5d65c6fc1804ea9fd",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://polymerindustrycluster.org/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:00Z",
+  "sha256": "bac69d557c0bbf8aefbf6008900a050e0ccdcb64cd196fe35b5d14b6791b2e39"
+ },
+ {
+  "url": "http://web.archive.org/web/20260613185041/https://www.impactsleeves.com/services/materials",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:18:04Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://polymerindustrycluster.org/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:10Z",
+  "sha256": "809087f3ba6ded4f631a5e805eb380d302467ae6254a56d842f9ae3522406d2e"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=http://mespecialties.com/materials.html&timestamp=20260307093401",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:13Z",
+  "sha256": "54225df1b34968ebe53757101604935b00ebd7bc95df736ee5b810aaa9b3b4e7"
+ },
+ {
+  "url": "https://polymerindustrycluster.org/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:21Z",
+  "sha256": "855f1f0c3e14565f74cb7820267a182639587b6c60752aee53ce5c5553d23c4b"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:22Z",
+  "sha256": "cb705d03219a40f5fffd4848865aa985cb70b728a2ed647ba842650ab756e37c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://polymerindustrycluster.org/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:27Z",
+  "sha256": "5009c29707901a5c971b580a55bcd7d53386b7b14a8694a2ea04de9720dc35af"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:18:31Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.americanwireandcable.com/about-us.html&timestamp=20261106130111",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:40Z",
+  "sha256": "aea507a907a988a5c89069f759fbc278c466d4c919e19c10bfe5c38c0ac5f8fa"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.americanwireandcable.com/about-us.html&from=20261106130111&to=20261106130111&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:48Z",
+  "sha256": "478081657aec7e9e5eef09443823768ca6bbf2cb2206def89dae5219ebcbfa3c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106130111/https://www.americanwireandcable.com/about-us.html",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:18:58Z",
+  "sha256": "dd9f3a666bdeff4468fdee5c60cb056036f478f654ecce1f6996c9acd47765bc",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://yokohamaiaohio.com/products/rubber-extruding&timestamp=20260617064109",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:07Z",
+  "sha256": "660d46610a0b3887c9d8c66e00d6aa9f9c258c0646151a0dc5bc3362f02d4c01"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://yokohamaiaohio.com/products/rubber-extruding&from=20260617064109&to=20260617064109&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:17Z",
+  "sha256": "48522566ff71b61e237602c45119506c87cb948820e89e6de8b024cae554d2ea",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260617064109/https://yokohamaiaohio.com/products/rubber-extruding",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:26Z",
+  "sha256": "10b54a9b353d897eaff7561e630490e89b695f1b533edb948c109094aa44a731",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://affoa.org/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:27Z",
+  "sha256": "69b7b47fccb8cbbc6c8974929f7020c529128728a6635b5d62c69255bf353900"
+ },
+ {
+  "url": "https://affoa.org/about/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:28Z",
+  "sha256": "6fd7112e43d9df19986b10608a17e527f2391d7608b9d8258c2fa2576499410f"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.ferriot.com/&timestamp=20261116225026",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:34Z",
+  "sha256": "e03f3ff833e2522a0e81dd7eed9deabc79ea4a658a8f320cae2c561da5312fbb"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.ferriot.com/&from=20261116225026&to=20261116225026&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:44Z",
+  "sha256": "d2209b68cc7dd43128b7a602217c6083899c25abf2e76a888e8d9851b4c74369",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://data.epa.gov/efservice/frs.frs_facility_site/registry_id/equals/110004631122/JSON",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:47Z",
+  "sha256": "74e8654511750186d79a5537a80d68ab59fef38913ce48372a3a2bb8c785b19e"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116225026/https://www.ferriot.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:52Z",
+  "sha256": "c3a4f09f15a273bbe3680072ffd7ef3e6a5ba5461f7fdc5bd8f0be3becfed68c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://data.epa.gov/efservice/frs.frs_facility_site/registry_id/equals/110006267887/JSON",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:19:54Z",
+  "sha256": "98542bed82fcf881d2a18b8af9225c07b96bbc2161734724761b2b90bf4743ab"
+ },
+ {
+  "url": "https://data.epa.gov/efservice/frs.frs_facility_site/registry_id/equals/110000388465/JSON",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:00Z",
+  "sha256": "b104ef165d2519fc1102ddf8341aed2b71b4b53f0aa87423f0930684246d63bd"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.tremcocpg.com/&timestamp=20260811143711",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:01Z",
+  "sha256": "5912f5a7e58c4b4c85df909fc424243d93ad510b179039201a3115389270a389"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.tremcocpg.com/&from=20260811143711&to=20260811143711&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:10Z",
+  "sha256": "eed36a8d6f8917519606bb74576a96518e94c921aacc343728fd752b43e9f3a5",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://creativepackagingconcepts.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:14Z",
+  "sha256": "0aae8c3b0c6d70fc666d625303b496acbaff2f94181418470b63c8fd3971652a"
+ },
+ {
+  "url": "http://web.archive.org/web/20260811143711/https://www.tremcocpg.com/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:20:20Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://premix-hadlock.com/&timestamp=20261106113336",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:29Z",
+  "sha256": "9800f3edded813a2ac0ebf99d90d3254c1702327f888fcc412afd630fb640dfb"
+ },
+ {
+  "url": "https://www.midwestfastener.com/about/",
+  "http_status": 404,
+  "fetched_at": "2026-11-17T23:20:29Z",
+  "sha256": "dc1d54dab6ec8c00f70137927504e4f222c8395f10760b6beecfcfa94e08249f"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:37Z",
+  "sha256": "add580c603db485a372fc3a98788264effdde2a60133bbe558b37233932cc263",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:20:47Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.drummondcorp.com/about-us&timestamp=20260606022021",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:20:56Z",
+  "sha256": "1ead1fc9e3db0cb751d9a7e624fa59c7fa1406d924cd81db85990299ab74fa72"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=https://www.impactsleeves.com/services/materials&timestamp=20260613185041",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:21:03Z",
+  "sha256": "d0b4a0d895c77c2283c42044a0ffeb3e08e722870fbe5297162b7104396fc98a"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.impactsleeves.com/services/materials&from=20260613185041&to=20260613185041&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:21:19Z",
+  "sha256": "c1063644e14e3987099c2313430997f8bb8acdc5e73b70d5d65c6fc1804ea9fd",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260613185041/https://www.impactsleeves.com/services/materials",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:21:36Z",
+  "sha256": "d0996ee03644a41f853548774333124497d428abfbdb7bf1a0c871c6488d972d",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=http://mespecialties.com/materials.html&timestamp=20260307093401",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:21:52Z",
+  "sha256": "54225df1b34968ebe53757101604935b00ebd7bc95df736ee5b810aaa9b3b4e7"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:22:07Z",
+  "sha256": "cb705d03219a40f5fffd4848865aa985cb70b728a2ed647ba842650ab756e37c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:22:24Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:24:25Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:26:27Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:11Z",
+  "sha256": "cb705d03219a40f5fffd4848865aa985cb70b728a2ed647ba842650ab756e37c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.tremcocpg.com/&from=20260811143711&to=20260811143711&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:17Z",
+  "sha256": "eed36a8d6f8917519606bb74576a96518e94c921aacc343728fd752b43e9f3a5",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:24Z",
+  "sha256": "add580c603db485a372fc3a98788264effdde2a60133bbe558b37233932cc263",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.drummondcorp.com/about-us&from=20260606022021&to=20260606022021&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:30Z",
+  "sha256": "10b41c21433bd9294a36d2e4e61d1aac0ed70d61972848bc7bb33fb3e4f358e1",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.akzonobel.com/en/about-us/our-businesses&from=20260907095933&to=20260907095933&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:37Z",
+  "sha256": "5a0ec80adc1b95a276d5f24efa5206d18010fb0365679f44db1e71b7a3dad3d5",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://pfccases.com/about-pfc/&from=20260717104345&to=20260717104345&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:44Z",
+  "sha256": "bffe2774852b8de895bb380a773d374cabd1fdff266f361564949022832db6f0",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.hudsonextrusions.com/&from=20260810222245&to=20260810222245&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:50Z",
+  "sha256": "06880d406b81161cfb87a77d5f06aa4dcc96031b171d120c51cbeac9f2be4264",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.integrityprocessingllc.com/&from=20261116235530&to=20261116235530&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:28:55Z",
+  "sha256": "4f448f721c8e31d98a6452010d1463a78f000a82ddcb15ad257221b87480c156",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://extolohio.com/about-us/&from=20261106111232&to=20261106111232&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:01Z",
+  "sha256": "9bd24f69a85b352c3644baec284e456ec2c30cc674992b05ac7c67a5de69ea18",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://lairdplastics.com/locations/laird-corporate-headquarters/&from=20261116222146&to=20261116222146&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:06Z",
+  "sha256": "f27b22bab76bb4b85eafcf1688fffd62edd63c7e80e33e5ca17da25b09c5c851",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.duraline.com/&from=20261012051222&to=20261012051222&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:13Z",
+  "sha256": "059887c1d91a7f6f5b4a1529a99b742a72f6b6ae172343191b003c34e5b92e48",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.pretiumpkg.com/&from=20261012042730&to=20261012042730&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:19Z",
+  "sha256": "15923d11dbb90244115e50b75fcf6b0a04138f717744109b5f3c7b209fe71ec8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://datwyler.com/company/about-us/&from=20260618041611&to=20260618041611&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:24Z",
+  "sha256": "16f7c3610b59bdfe84ebb9effcd99e65c363bb68a188e90239eec1d43c589b00",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.plastipak.com/about-us/&from=20261026123010&to=20261026123010&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:30Z",
+  "sha256": "9a004abd67fc82cf899babe27d02e2f7c82c0f59d89179bf8c413bb787b3a7f3",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://zehrco-giancola.com/&from=20260810041328&to=20260810041328&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:42Z",
+  "sha256": "83f84ca4bb915efc3a4cb7d7dc93045fb899d4c361bd85f5c5b3c57596ea7360",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.rauhpolymers.com/&from=20260711044714&to=20260711044714&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:47Z",
+  "sha256": "9952001c88a369a351a69625227bbe968aca36c807e95fddc8dddf4cebae53c9",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.geon.com/locations&from=20260922063205&to=20260922063205&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:29:54Z",
+  "sha256": "8ba5ee26fd2b5f422049841aa90879d37d4aeb54dc7897e3b6b9ad288643626a",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.universalplastics.com/&from=20260722222006&to=20260722222006&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:30:01Z",
+  "sha256": "3f4d4cae9ce341e4ce0a95bbe482d2b2636c6c7f6bc6b33a3c3edbbba5a152c1",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://jandoplastics.com/our-capabilities/&from=20260417195403&to=20260417195403&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:30:06Z",
+  "sha256": "5bf52c463d9df9f0d2beee3a08e9d55a2f6e5455c49c3ef496619ffbdad3b134",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.fastforming.com/materials/&from=20260614231550&to=20260614231550&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:30:11Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 92 ms: Couldn't connect to server"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/",
+  "http_status": 405,
+  "fetched_at": "2026-11-17T23:30:58Z",
+  "sha256": "0a721532497036ff7d8b228dd8d4ef5e91777b0bd2b11f49f5b2ccddd55eb259"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.fastforming.com/materials/&from=20260614231550&to=20260614231550&output=json",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:31:12Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 163 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.fastforming.com/materials/&from=20260614231550&to=20260614231550&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:12Z",
+  "sha256": "96e8bc12704e15ab3f5bead2ff8e1b42cf5058a5403ac59728faebb7c3147d86",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.bridgestoneamericas.com/en/index&from=20261023030934&to=20261023030934&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:18Z",
+  "sha256": "4abe69d9ea293b70148d65aba624e70285f520ffc3e1925a7d806951ca4f48dc",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.denneyplastics.com/&from=20260615014822&to=20260615014822&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:23Z",
+  "sha256": "a42e2d5a22a84b715bd47ecdf707fa4b8f9fdbf33b8b5450fd5a2eee64d4cc58",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://akronpolysys.com/company/&from=20231103233054&to=20231103233054&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:29Z",
+  "sha256": "1f88fa0d13f6bcc8c61695a7b01ef04e168e27a2e367d612c3eeb0a5f669357b",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://altraset.mar-bal.com/&from=20260809155935&to=20260809155935&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:36Z",
+  "sha256": "228b6617646f828d90ca3655d5514d3e179905d420d47e1b344fb97c3c9b37af",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.schneller.com/&from=20261012050358&to=20261012050358&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:45Z",
+  "sha256": "827c7f84fd82b31d935a6203fb06ddfc4e96e7b497443df2018389aec9cd4e31",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://mespecialties.com/materials.html&from=20260307093401&to=20260307093401&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:00Z",
+  "sha256": "cb705d03219a40f5fffd4848865aa985cb70b728a2ed647ba842650ab756e37c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.akronporcelain.com/about-us/&from=20261106125619&to=20261106125619&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:06Z",
+  "sha256": "24208061ba3e792fe0d4796e2c0385f3688b26d2f5500719958fed291e6e5cb1",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.itenindustries.com/facilities-overview/&from=20260606132957&to=20260606132957&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:11Z",
+  "sha256": "36fcdd56e4efd942f9814401fee72f4d51d485ccd4cbe26dcd9c149485be44ce",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.promerus.com/about-us&from=20261106135246&to=20261106135246&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:17Z",
+  "sha256": "8722f347c0f92699d424b53d095054bdf985b538cf39527201f690fd1f2f8ab8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.steere.com/processes-1&from=20251205021614&to=20251205021614&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:22Z",
+  "sha256": "6844bf36b351041b45b87bb6329c2f1722ad3fb6f7c25e0c0816b519c8bcdda5",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.adherexpackaging.com/capabilities/&from=20250419220000&to=20250419220000&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:28Z",
+  "sha256": "33c8552ae06af278a8c6d5cdfae8bdcfb20b3add0ee824a71b191b1ce2ab7a03",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://karmanrubber.com/products/&from=20260513045044&to=20260513045044&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:34Z",
+  "sha256": "7277633bf359a5465d65a2e9bca7fcdc24a1c30bd0549fbe56661f760fc5899d",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.geon.com/&from=20261012041836&to=20261012041836&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:40Z",
+  "sha256": "c23c6b9e9a62b57dd34305dde50f7ad0631d5ee3efd84fc53e0b72e58d90e1b4",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.itendefense.com/materials&from=20260511191039&to=20260511191039&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:45Z",
+  "sha256": "5d7cd477341f9d444d523e5909fc5a7a285a4deceb909730b810b7084910bce2",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://premix-hadlock.com/&from=20261106113336&to=20261106113336&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:51Z",
+  "sha256": "add580c603db485a372fc3a98788264effdde2a60133bbe558b37233932cc263",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.avient.com/&from=20261104022108&to=20261104022108&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:33:57Z",
+  "sha256": "c55ad61896a4f51d67d681af68f05a95e13a99be18e921461b6519cd563ed455",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=http://clamshellusa.com/about/capabilities.html&from=20260720121748&to=20260720121748&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:34:02Z",
+  "sha256": "3139d8f8b83a57f04ee18da078767527bd9aa87020778198d8b7a9ec24e58e22",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.salem-republic.com/about-us/&from=20260811042756&to=20260811042756&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:34:10Z",
+  "sha256": "65aadc5c5359649d1b61c940a6c7e6082a57451d209b8d3e2b7c405afcc973a0",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=https://www.biothaneusa.com/services/rf-welding/&from=20260909140218&to=20260909140218&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:34:17Z",
+  "sha256": "645ff49baf2baed8e2da0b090894402e828661d7cdc7b9244be9468ce02ef72b",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:34:26Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host); connection failed: curl: (7) Failed to connect to web.archive.org port 80 after 64 ms: Couldn't connect to server"
+ },
+ {
+  "url": "http://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:37:27Z",
+  "sha256": "878852b4ac1c69c0b7662bae809c3a4414569a2a42a6639e92f29101e60693a8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260811143711/https://www.tremcocpg.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:37:58Z",
+  "sha256": "bc7ddbdfa7d22c6a06b59b8ade0e0ab829ccbad4b0f3a34854ba7601590fd70e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:38:29Z",
+  "sha256": "ea8f57963a0b6dabee75e939332d157f880abcc4219cf5ad36d292447282add7",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260606022021/https://www.drummondcorp.com/about-us",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:39:00Z",
+  "sha256": "c2028c92eca8465098281c929c2b2018f65209b91071dabc584aa1271f70cda5",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260907095933/https://www.akzonobel.com/en/about-us/our-businesses",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:39:31Z",
+  "sha256": "df88636a9164fd8609237082737f173bd3e331023cc44fcde309a7e0f54a850a",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260717104345/https://pfccases.com/about-pfc/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:40:02Z",
+  "sha256": "9523c4e93318b978a50d60799027c15b08d53bdd918cedd38effefe10eeaa3a0",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260810222245/https://www.hudsonextrusions.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:40:33Z",
+  "sha256": "4df1bb9521a9f1745f477403c8c6fc088baf8e4c72eed28caea71430cfa08094",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116235530/https://www.integrityprocessingllc.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:41:05Z",
+  "sha256": "69128a3ee2c7c27236b9f2d9d9ab3befd3f3a43a3d802b0b2aa5d89506c061a7",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106111232/https://extolohio.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:41:36Z",
+  "sha256": "1abab2cbba398ca59f7cc2ce6641192949aedb942f7120e4e50fcf4a6493301e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261116222146/https://lairdplastics.com/locations/laird-corporate-headquarters/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:42:07Z",
+  "sha256": "0ac34e8cd21dabf632a9359d31c9069267da55e2d97627ad4b4beb5245aa0fc8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012051222/https://www.duraline.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:42:38Z",
+  "sha256": "424d5f78a21c63e5902688a14a78deb596f38165f3a707f39080b4a64501d11f",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012042730/https://www.pretiumpkg.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:43:09Z",
+  "sha256": "3214ae72b3edc87eb4b124cfe4ce2d5d3c593426fc95c5bc126356c0975b707c",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260618041611/https://datwyler.com/company/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:43:42Z",
+  "sha256": "2020467d318525778bbc71795c2279d26be93012c5c59c1a82df65c4e01eec88",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261026123010/https://www.plastipak.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:44:13Z",
+  "sha256": "da072f17f9fcb0a6ffe204320251ece6ec379d4e4af8f6286161b98098a1b588",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260810041328/https://zehrco-giancola.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:44:46Z",
+  "sha256": "702c2de30a4342d4150978cb5b9300d11c67133f1d1f2c9b6b6e56b915ca8642",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260711044714/https://www.rauhpolymers.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:45:18Z",
+  "sha256": "3e1d76ee0d02319d02af252636751b136079670f5e1c7058dffe5e00242fb277",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260922063205/https://www.geon.com/locations",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:45:51Z",
+  "sha256": "ac3839af857218d34d224afd0636029f0236380960fd4c347b8c005a3ada9f9d",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260722222006/https://www.universalplastics.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:46:22Z",
+  "sha256": "5fffd29c200719d7aaae247838e392089278ebd99db11af3aaa219f96dda042b",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260417195403/https://jandoplastics.com/our-capabilities/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:46:54Z",
+  "sha256": "509f3a2b8397d6412afc07e4571a4b7d367230d9aaedc87cb164340ea11763a6",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260614231550/https://www.fastforming.com/materials/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:47:27Z",
+  "sha256": "a6e50b073266d810b43c37fecfe11714bd8fc19f67d8d605aba127a2d5fedb2d",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261023030934/https://www.bridgestoneamericas.com/en/index",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:47:59Z",
+  "sha256": "948c2ad4d607f0f2fed181a11098cbbb1449b53af2785b47cb38cc560dc0e144",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260615014822/https://www.denneyplastics.com/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:48:30Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260615014822/https://www.denneyplastics.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:51:33Z",
+  "sha256": "504f3e3887cef7f70c563bb6e025420173037206d8611798c788ceaa804b2868",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20231103233054/https://akronpolysys.com/company/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:52:04Z",
+  "sha256": "e28ff143a3b2fa2adbc36a280dae8b9b786970dcb6aaf41dffdc515e17596722",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260809155935/https://altraset.mar-bal.com/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:52:36Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260809155935/https://altraset.mar-bal.com/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:55:37Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260809155935/https://altraset.mar-bal.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:58:40Z",
+  "sha256": "8202fe5e96c6a2d61a0bcd8a3f7cc83236e42b4444f01a0de3f7f4ba3f7c9303",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261012050358/https://www.schneller.com/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:59:11Z",
+  "sha256": "a252bbf7c754607adf9c131ddae03487aebba53c758b1fa4499f4373ba3bde4e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:59:43Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
+  "http_status": 429,
+  "fetched_at": "2026-11-18T00:02:44Z",
+  "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-18T00:05:45Z",
+  "sha256": "ede5caece83edd1053dbbcbaaf2a80b2b933147fe80957ea4b4084eafcbeaf0f",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20260606132957/https://www.itenindustries.com/facilities-overview/",
+  "http_status": 200,
+  "fetched_at": "2026-11-18T00:06:16Z",
+  "sha256": "8fafbc18850feed309ebc7810ef1a32e2e571eac53c1e00660f16091f868c7c8",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20261106135246/https://www.promerus.com/about-us",
+  "http_status": 200,
+  "fetched_at": "2026-11-18T00:06:47Z",
+  "sha256": "359d8b2384c8903cff8829fb4f26b95286435678bfa2b748d8a5b01519390551",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "http://web.archive.org/web/20251205021614/https://www.steere.com/processes-1",
+  "http_status": 200,
+  "fetched_at": "2026-11-18T00:07:19Z",
+  "sha256": "454a7cf4d8a5be3fce9ee3ecd643469ca21386d37d61fbcd5b6a7c8f9b787369",
+  "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
+ },
+ {
+  "url": "[redacted: R-SAM]",
+  "http_status": 200,
+  "fetched_at": "2026-11-18T00:08:02Z",
+  "sha256": "74e539984eeba46b38fea97f3ca667bcee0cad522de2aa77c67a335ea2e52e13"
+ },
+ {
+  "url": "[redacted: R-SAM]",
+  "http_status": 404,
+  "fetched_at": "2026-11-18T00:08:05Z",
+  "sha256": "dc1c77f2a5f2ffc53fdf989e1b26730aae775e19d898d81e73a95dcfa7bc046b"
+ },
+ {
+  "url": "[redacted: R-SAM]",
+  "http_status": 0,
+  "fetched_at": "2026-11-18T00:08:05Z",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "[redacted: R-SAM]"
+ },
+ {
+  "url": "[redacted: R-SAM]",
+  "http_status": 200,
+  "fetched_at": "2026-11-18T00:08:23Z",
+  "sha256": "8f2ca993b79de205574f56c17b057bb3beb3d8a1de71b7e0ee1e8a00e308b5bf"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=TULNP88REWN7)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:14Z",
+  "sha256": "6d875e12098a54a9cde69b22d7bf824446a801477ddec75040ff6db8d70f8cc9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=NWH1Y5MBJEL8)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:16Z",
+  "sha256": "7908e6ab036a7da09c3fa775698f7b0862be4f6c6631cf4eaddd2126507d65f9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=L5V7LF4JS479)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:18Z",
+  "sha256": "af10adc6b56dd84a9d7fc3071b79f2ff4c848fd2206bc4d114424bf41879247f"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=SFELTQKMG398)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:18Z",
+  "sha256": "9f2ccaea02064f3d4fb6968aa47025952c75cb2a579e278b3dd05f3b7fde38bc"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=NWP3G7EZHVK7)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:19Z",
+  "sha256": "6d875e12098a54a9cde69b22d7bf824446a801477ddec75040ff6db8d70f8cc9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=PVSNAG8FTLD4)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:19Z",
+  "sha256": "6d875e12098a54a9cde69b22d7bf824446a801477ddec75040ff6db8d70f8cc9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=MDQKS1GZGTX5)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:20Z",
+  "sha256": "6d875e12098a54a9cde69b22d7bf824446a801477ddec75040ff6db8d70f8cc9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=LLJGZ61UA7F4)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:21Z",
+  "sha256": "fa4d29855a106e0132d70fce220d56222ce73b5032f3f971db43731fe3746327"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=H4GTTD7MMGK8)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:22Z",
+  "sha256": "cad4dd7ab24dc4fc0ba5453e74c77a7b44f664d367ec29b6889cb2bfc24c3e58"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=GUJEKLRTGGL6)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:23Z",
+  "sha256": "c9a85a06cd784c969354e1e685a01e08acd6bfc81e45115417c3c9f9eabf8620"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=R15YM6LMHN67)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:23Z",
+  "sha256": "6d875e12098a54a9cde69b22d7bf824446a801477ddec75040ff6db8d70f8cc9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=SJZCEMGNC9D1)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:24Z",
+  "sha256": "8c278073a27e78774291828bd4847c0d68ee967c5aa4fcd2892642684d56a2bf"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/autocomplete/recipient/ (POST search_text=N7M7NK7MKBY3)",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:24Z",
+  "sha256": "6d875e12098a54a9cde69b22d7bf824446a801477ddec75040ff6db8d70f8cc9"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/recipient/ (POST {\"keyword\": \"SJZCEMGNC9D1\", \"limit\": 5})",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:57Z",
+  "sha256": "35f98ab36a674c08079c8cdd231655499f004988a407945f9d18e25656a5fd21"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/recipient/69729cc8-60db-e3c4-6f3e-f5c599b416a3-C/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:31:58Z",
+  "sha256": "c4b492f8f75989617325ac5c10603429beb6d287dc1b963ebf81e6b2b7e79183"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/recipient/ (POST {\"keyword\": \"SFELTQKMG398\", \"limit\": 5})",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:27Z",
+  "sha256": "322a9d6027122772c1973833ddfdf69823b13ea61acfd79d5b7aaf2ccf9e3c1e"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/recipient/e24dfef7-b1a4-00da-7296-5f4dc86a7e1e-P/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:28Z",
+  "sha256": "51d2cd650b25f50f0b7aa85807be32bfb374da45ed734fe32f6787c6c382b66c"
+ },
+ {
+  "url": "https://api.usaspending.gov/api/v2/recipient/e24dfef7-b1a4-00da-7296-5f4dc86a7e1e-C/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:32:29Z",
+  "sha256": "f8bb57cafb48d2c033312cde099c97b09811ac7144f4d03a506b60b9d9c657c8"
+ },
+ {
+  "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:35Z",
+  "sha256": "3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c",
+  "note": "bulk file streamed to temp (deleted after audit); fetched_at = download completion"
+ },
+ {
+  "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_up_to_150k_9_240930.csv",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:46Z",
+  "sha256": "b5d091ac98ee177c1b749159dcbdc37716d8aa10f258dc316bb39b00c7c1d4f9",
+  "note": "bulk file streamed to temp (deleted after audit); fetched_at = download completion"
+ },
+ {
+  "url": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:15:07Z",
+  "sha256": "9ea2ee5d7265cddf753d22633af17d4aaba4ab81629341462a8c9912d19a99fc",
+  "note": "bulk file streamed to temp (deleted after audit); fetched_at = download completion"
+ },
+ {
+  "url": "https://web.archive.org/",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:46Z",
+  "sha256": null,
+  "note": "connectivity probe: port 443 refused (curl 7)"
+ },
+ {
+  "url": "https://example.com",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:09:46Z",
+  "sha256": null,
+  "note": "connectivity control probe; no body hash: probe printed status only (body discarded)"
+ },
+ {
+  "url": "https://web.archive.org/ (curl -4 / -6)",
+  "http_status": 0,
+  "fetched_at": "2026-11-17T23:09:52Z",
+  "sha256": null,
+  "note": "port 443 refused on IPv4 and IPv6"
+ },
+ {
+  "url": "http://web.archive.org/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:09:52Z",
+  "sha256": null,
+  "note": "http:// route works; no body hash: probe printed status only (body discarded)"
+ },
+ {
+  "url": "https://archive.org/wayback/available?url=hubplastics.com/about-us/&timestamp=20261011191729",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:09:59Z",
+  "sha256": null,
+  "note": "availability API; JSON printed, not hashed"
+ },
+ {
+  "url": "http://web.archive.org/web/20261011191729/https://hubplastics.com/about-us/",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:05Z",
+  "sha256": null,
+  "note": "replay probe; no body hash: probe printed status only (body discarded)"
+ },
+ {
+  "url": "http://web.archive.org/cdx/search/cdx?url=hubplastics.com/about-us/&from=20261011191729&to=20261011191729&output=json",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:10:05Z",
+  "sha256": null,
+  "note": "CDX probe; JSON printed, not hashed"
+ },
+ {
+  "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:13Z",
+  "sha256": null,
+  "note": "HEAD request (no body)"
+ },
+ {
+  "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_up_to_150k_9_240930.csv",
+  "http_status": 200,
+  "fetched_at": "2026-11-17T23:14:13Z",
+  "sha256": null,
+  "note": "HEAD request (no body)"
+ },
+ {
+  "url": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv",
+  "http_status": 403,
+  "fetched_at": "2026-11-17T23:14:50Z",
+  "sha256": null,
+  "note": "HEAD request with minimal UA refused; availability only"
+ },
+ {
+  "url": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv",
+  "http_status": 206,
+  "fetched_at": "2026-11-17T23:14:57Z",
+  "sha256": null,
+  "note": "Range 0-2000 header probe with browser headers; temp file deleted"
+ },
+ {
+  "url": "http://web.archive.org/web/20260811143711/https://www.tremcocpg.com/",
+  "http_status": 429,
+  "fetched_at": "2026-11-17T23:29:11Z",
+  "sha256": null,
+  "note": "replay rate-limit probe"
+ },
+ {
+  "url": "tavily_search: \"Midwest Fastener Corp ownership acquired private equity Hy-Ko\"",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:20:41Z",
+  "sha256": null,
+  "note": "Tavily search via MCP; lead only; no raw body available to this host"
+ },
+ {
+  "url": "tavily_extract batch (6 archive_refs: A11-032,043,045,046,048,049)",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:29:22Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP; first pass, superseded by the 23:37-23:38 pass"
+ },
+ {
+  "url": "https://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260811143711/https://www.tremcocpg.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260606022021/https://www.drummondcorp.com/about-us",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260907095933/https://www.akzonobel.com/en/about-us/our-businesses",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260717104345/https://pfccases.com/about-pfc/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260810222245/https://www.hudsonextrusions.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116235530/https://www.integrityprocessingllc.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106111232/https://extolohio.com/about-us/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261116222146/https://lairdplastics.com/locations/laird-corporate-headquarters/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012051222/https://www.duraline.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012042730/https://www.pretiumpkg.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260618041611/https://datwyler.com/company/about-us/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261026123010/https://www.plastipak.com/about-us/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260810041328/https://zehrco-giancola.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260711044714/https://www.rauhpolymers.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260922063205/https://www.geon.com/locations",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260722222006/https://www.universalplastics.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260417195403/https://jandoplastics.com/our-capabilities/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:34Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260614231550/https://www.fastforming.com/materials/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261023030934/https://www.bridgestoneamericas.com/en/index",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260615014822/https://www.denneyplastics.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20231103233054/https://akronpolysys.com/company/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260809155935/https://altraset.mar-bal.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012050358/https://www.schneller.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260307093401/http://mespecialties.com/materials.html",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260606132957/https://www.itenindustries.com/facilities-overview/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106135246/https://www.promerus.com/about-us",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20251205021614/https://www.steere.com/processes-1",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20250419220000/https://www.adherexpackaging.com/capabilities/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260513045044/https://karmanrubber.com/products/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:38:07Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261012041836/https://www.geon.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:49Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260511191039/https://www.itendefense.com/materials",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:49Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261106113336/https://premix-hadlock.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:29Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20261104022108/https://www.avient.com/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:49Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260720121748/http://clamshellusa.com/about/capabilities.html",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:49Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260811042756/https://www.salem-republic.com/about-us/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:49Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "https://web.archive.org/web/20260909140218/https://www.biothaneusa.com/services/rf-welding/",
+  "http_status": null,
+  "fetched_at": "2026-11-17T23:37:49Z",
+  "sha256": null,
+  "note": "Tavily extract via MCP (Tavily route): success, genuine page text returned; HTTP status and raw body are not exposed to this host, so no body hash"
+ },
+ {
+  "url": "file:///Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/private/audit11/sam_uei_raw.json",
+  "http_status": null,
+  "fetched_at": "2026-11-18T00:05:11Z",
+  "sha256": "7debb1194d275e7e59e8eded2ec2b3a72d695bbcbdcc2542314348161a54eb8f",
+  "note": "controller-provided stored SAM entity response, read in place; sha256 matches sam_uei_raw.sha256"
+ },
+ {
+  "url": "file:///Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/private/audit11/sam_uei_raw_page1.json",
+  "http_status": null,
+  "fetched_at": "2026-11-18T00:05:11Z",
+  "sha256": "a49df5c8b61a7f1cf66e1ee1e666fa0eccac1a55975f463630cd597e67f9e541",
+  "note": "controller-provided stored SAM entity response, read in place; sha256 matches sam_uei_raw.sha256"
+ }
+]

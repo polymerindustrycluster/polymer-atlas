@@ -1,0 +1,83 @@
+{
+ "allocation": {
+  "archive_links": 60,
+  "bands": 7,
+  "capabilities": 3,
+  "markets": 3,
+  "members": 3,
+  "navigation_links": 5,
+  "ownership_founding": 3,
+  "parents": 3,
+  "registry_federal_links": 3,
+  "rulings": 2,
+  "streets": 3,
+  "tier_changes": 3,
+  "uei_links": 13,
+  "zips": 9
+ },
+ "base": "be2e6084d430f1e6f9de0f66289b1d3c2570e255",
+ "blind_fields": [
+  "blind_id",
+  "change_class",
+  "table",
+  "record_id",
+  "record_label",
+  "change_kind",
+  "columns_under_audit",
+  "values_json",
+  "context_json",
+  "cited_sources",
+  "evidence_json"
+ ],
+ "blind_whitelist_withheld": [
+  "as_of",
+  "claim_detail",
+  "created_by",
+  "evidence_date",
+  "evidence_id",
+  "last_activity_evidence_date",
+  "last_verified",
+  "notes",
+  "observed_date",
+  "source_class",
+  "tier_effect"
+ ],
+ "census_below": 5,
+ "floor": 3,
+ "frame_sizes": {
+  "archive_links": 2188,
+  "bands": 260,
+  "capabilities": 76,
+  "markets": 124,
+  "members": 62,
+  "navigation_links": 176,
+  "ownership_founding": 109,
+  "parents": 11,
+  "registry_federal_links": 105,
+  "rulings": 2,
+  "streets": 23,
+  "tier_changes": 3,
+  "uei_links": 472,
+  "zips": 348
+ },
+ "head": "4182519137dd8d8483d244ae9a2247ed7c03f2f4",
+ "n": 120,
+ "no_public_url_records": 0,
+ "rng": "Python random.Random seeded by int(SHA256(seed|change_class)), rng.sample over (table, record_id) sorted ascending; blind row order = shuffle seeded by SHA256(seed|order)",
+ "sample_by_change_kind": {
+  "changed": 41,
+  "created": 79
+ },
+ "sample_by_table": {
+  "archive_links": 60,
+  "ecosystem": 1,
+  "members": 3,
+  "organizations": 17,
+  "programs": 1,
+  "registry_links": 16,
+  "site_capabilities": 3,
+  "sites": 19
+ },
+ "seed": "BLIND-AUDIT-11-2026-11-17-v1",
+ "sources_scrubbed_to_urls": 30
+}

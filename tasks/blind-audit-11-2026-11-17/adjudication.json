@@ -1,0 +1,797 @@
+{
+ "meta": {
+  "sam_files_sha256": {
+   "sam_uei_raw.json": "7debb1194d275e7e59e8eded2ec2b3a72d695bbcbdcc2542314348161a54eb8f",
+   "sam_uei_raw_page1.json": "a49df5c8b61a7f1cf66e1ee1e666fa0eccac1a55975f463630cd597e67f9e541"
+  },
+  "uei_private_note_sha256": "f69aef24fda3dc3f871059b92506d3eb8c807411e8aed03991aa959492d88eaa",
+  "uei_counts": {
+   "match": 12,
+   "no_match": 1
+  }
+ },
+ "decisions": [
+  {
+   "id": "A11-004",
+   "grade": "AGREE",
+   "fields": "snapshot_date",
+   "key_fact": "A Wayback capture of the public PIC member list made 2026-11-16 23:41 UTC lists \"Rubber Division\" under Investing Partners, so the list showed this member on the recorded snapshot_date (2026-11-16).",
+   "receipts": [
+    {
+     "url": "https://web.archive.org/web/20261116234145/https://polymerindustrycluster.org/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 211160,
+     "sha256": "d11b535fc90db8db6d7cf93abc1d3fcfc21f1c0073011796980a79e8d65f403c",
+     "fetched_at": "2026-11-18T00:24:22+00:00",
+     "note": "dated public witness for the 2026-11-16 list",
+     "quote": "Members Investing Partners Ace Laboratories ACESS ACS Local Section - Akron AES AMLCI ARDL Aropha Alterra Rubber Division Amware Aries Science and Technology LLC Avient BioVerde Bounce Innovation Hub Bridgestone",
+     "excerpt_words": "program will be matched by 10 4 million in local investment learn more about greater akron polymer innovation hub learn more about the innovation hubs members investing partners ace laboratories acess acs local section akron aes amlci ardl aropha alterra rubber division amware aries science and technology llc avient bioverde bounce innovation hub bridgestone case western reserve university chemstress custom rubber corp dirigo sea farm e beam services emerson thomson bennett llc ferriot finite fiber flexsys full circle technologies"
+    }
+   ],
+   "record_id": "MBR-000009",
+   "change_class": "members",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-058",
+   "grade": "AGREE",
+   "fields": "snapshot_date",
+   "key_fact": "A Wayback capture of the public PIC member list made 2026-11-16 23:41 UTC lists \"Avient\" under Investing Partners, so the list showed this member on the recorded snapshot_date (2026-11-16).",
+   "receipts": [
+    {
+     "url": "https://web.archive.org/web/20261116234145/https://polymerindustrycluster.org/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 211160,
+     "sha256": "d11b535fc90db8db6d7cf93abc1d3fcfc21f1c0073011796980a79e8d65f403c",
+     "fetched_at": "2026-11-18T00:24:22+00:00",
+     "note": "dated public witness for the 2026-11-16 list",
+     "quote": "Members Investing Partners Ace Laboratories ACESS ACS Local Section - Akron AES AMLCI ARDL Aropha Alterra Rubber Division Amware Aries Science and Technology LLC Avient BioVerde Bounce Innovation Hub Bridgestone",
+     "excerpt_words": "program will be matched by 10 4 million in local investment learn more about greater akron polymer innovation hub learn more about the innovation hubs members investing partners ace laboratories acess acs local section akron aes amlci ardl aropha alterra rubber division amware aries science and technology llc avient bioverde bounce innovation hub bridgestone case western reserve university chemstress custom rubber corp dirigo sea farm e beam services emerson thomson bennett llc ferriot finite fiber flexsys full circle technologies"
+    }
+   ],
+   "record_id": "MBR-000012",
+   "change_class": "members",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-072",
+   "grade": "AGREE",
+   "fields": "snapshot_date",
+   "key_fact": "A Wayback capture of the public PIC member list made 2026-11-16 23:41 UTC lists \"Bounce Innovation Hub\" under Investing Partners, so the list showed this member on the recorded snapshot_date (2026-11-16).",
+   "receipts": [
+    {
+     "url": "https://web.archive.org/web/20261116234145/https://polymerindustrycluster.org/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 211160,
+     "sha256": "d11b535fc90db8db6d7cf93abc1d3fcfc21f1c0073011796980a79e8d65f403c",
+     "fetched_at": "2026-11-18T00:24:22+00:00",
+     "note": "dated public witness for the 2026-11-16 list",
+     "quote": "Members Investing Partners Ace Laboratories ACESS ACS Local Section - Akron AES AMLCI ARDL Aropha Alterra Rubber Division Amware Aries Science and Technology LLC Avient BioVerde Bounce Innovation Hub Bridgestone",
+     "excerpt_words": "program will be matched by 10 4 million in local investment learn more about greater akron polymer innovation hub learn more about the innovation hubs members investing partners ace laboratories acess acs local section akron aes amlci ardl aropha alterra rubber division amware aries science and technology llc avient bioverde bounce innovation hub bridgestone case western reserve university chemstress custom rubber corp dirigo sea farm e beam services emerson thomson bennett llc ferriot finite fiber flexsys full circle technologies"
+    }
+   ],
+   "record_id": "MBR-000014",
+   "change_class": "members",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-005",
+   "grade": "AGREE",
+   "fields": "verification_tier",
+   "key_fact": "All seven site must-have claims carry evidence at supports_B or stronger, so §4.13 restates tier B. The OSHA ITA CY2025 row for establishment 818456 matches the existence, address, code and parent rows (ALTTRAN, INC., 5285 HUDSON DR., Hudson OH 44236, NAICS 326299, filed 2026-02-25); the own-site activity, scope and liveness quote is on the page.",
+   "receipts": [
+    {
+     "url": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 1073,
+     "sha256": "d0a1e539500b7d0c3ac966fb962cf2dbc1a8d68fe3bc41256f7b898a2339bcc0",
+     "fetched_at": "2026-11-18T00:19:15+00:00",
+     "note": "fresh full-file read; extract of the establishment row",
+     "file_sha256": "9ea2ee5d7265cddf753d22633af17d4aaba4ab81629341462a8c9912d19a99fc",
+     "file_bytes": 88383913,
+     "raw_re": "(?m)^\\d+,\"Alttran, Inc\\.\",818456,\\d*,\"ALTTRAN, INC\\.\",5285 HUDSON DR\\.,HUDSON,OH,44236,326299,[^\\n]*,2/25/2026,,2025"
+    },
+    {
+     "url": "https://alttran.com/rubber-mixing-capabilities/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 268579,
+     "sha256": "04155bfe28bef35c2b163f1fa0b0ade17c8249dd584b6de297bd164c0398249a",
+     "fetched_at": "2026-11-18T00:19:09+00:00",
+     "note": "own-site witness re-fetched; quote in order",
+     "quote": "We provide custom rubber mixing for manufacturers that need consistent compounds",
+     "excerpt_words": "alttran careers online application contact phone custom rubber mixing capabilities altadmin 2026 09 20t02 11 16 04 00 custom rubber mixing capabilities industrial rubber mixing we provide custom rubber mixing for manufacturers that need consistent compounds developed around their material processing and application requirements our capabilities include carbon black compounds white and colored compounds and formulations using a wide range of"
+    }
+   ],
+   "record_id": "SITE-000240",
+   "change_class": "tier_changes",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-076",
+   "grade": "AGREE",
+   "fields": "verification_tier",
+   "key_fact": "All seven site must-have claims carry evidence at supports_B or stronger, so §4.13 restates tier B. The OSHA ITA CY2025 row for establishment 1258989 matches the existence, address, code and parent rows (FabOhio Inc, 521 E 7th St, Uhrichsville OH 44683, NAICS 326111, filed 2026-01-29); the own-site quote is on the page.",
+   "receipts": [
+    {
+     "url": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 1073,
+     "sha256": "d0a1e539500b7d0c3ac966fb962cf2dbc1a8d68fe3bc41256f7b898a2339bcc0",
+     "fetched_at": "2026-11-18T00:19:15+00:00",
+     "note": "fresh full-file read; extract of the establishment row",
+     "file_sha256": "9ea2ee5d7265cddf753d22633af17d4aaba4ab81629341462a8c9912d19a99fc",
+     "file_bytes": 88383913,
+     "raw_re": "(?m)^\\d+,FabOhio Inc,1258989,\\d*,FabOhio Inc,521 E 7th St,Uhrichsville,OH,44683,326111,[^\\n]*,1/29/2026,,2025"
+    },
+    {
+     "url": "https://fabohio.com/about-us/history/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 84871,
+     "sha256": "425e253d61d8fb0303fc796d3588ac81eca822276055c95532f7a91a5bf09bdd",
+     "fetched_at": "2026-11-18T00:19:10+00:00",
+     "note": "own-site witness re-fetched; quote in order",
+     "quote": "FabOhio, Inc. opened for business in 1963 and continues to operate at the same facility in Uhrichsville, Ohio",
+     "excerpt_words": "contact us contact us menu home about fabohio inc our history our history solving containment challenges for nearly six decades 1963 fabohio opened for business fabohio inc opened for business in 1963 and continues to operate at the same facility in uhrichsville ohio the core business is the same as when we started engineering flexible synthetic films for use as barrier isolation and containment in many forms and"
+    }
+   ],
+   "record_id": "SITE-000898",
+   "change_class": "tier_changes",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-112",
+   "grade": "AGREE",
+   "fields": "verification_tier",
+   "key_fact": "All seven site must-have claims carry evidence at supports_B or stronger, so §4.13 restates tier B. The OSHA ITA CY2025 row for establishment 519774 matches the existence, address, code and parent rows (Dreco Inc, 7887 Root Road, North Ridgeville OH 44039, NAICS 326199, filed 2026-01-22); the own-site quote is on the page.",
+   "receipts": [
+    {
+     "url": "https://www.osha.gov/sites/default/largefiles/ITA_300A_Summary_Data_2025_through_08-31-2026.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 1073,
+     "sha256": "d0a1e539500b7d0c3ac966fb962cf2dbc1a8d68fe3bc41256f7b898a2339bcc0",
+     "fetched_at": "2026-11-18T00:19:15+00:00",
+     "note": "fresh full-file read; extract of the establishment row",
+     "file_sha256": "9ea2ee5d7265cddf753d22633af17d4aaba4ab81629341462a8c9912d19a99fc",
+     "file_bytes": 88383913,
+     "raw_re": "(?m)^\\d+,Dreco Inc,519774,\\d*,Dreco Inc,7887 Root Road,North Ridgeville,OH,44039,326199,[^\\n]*,1/22/2026,,2025"
+    },
+    {
+     "url": "https://drecoinc.com/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 177088,
+     "sha256": "22734eaab90218601e4665ad9ad983a7ab5c55dbb0f7d9bc61283ea6055da24e",
+     "fetched_at": "2026-11-18T00:19:10+00:00",
+     "note": "own-site witness re-fetched; quote in order",
+     "quote": "From initial prototype to full-scale production, we deliver uncompromising quality and technical expertise in thermoplastic manufacturing",
+     "excerpt_words": "dreco inc precision thermoplastic injection molding home home contact us precision thermoplastic injection molding solutions from initial prototype to full scale production we deliver uncompromising quality and technical expertise in thermoplastic manufacturing dreco inc specializes in high performance components designed to meet your most demanding specifications contact us explore capabilities why dreco inc at dreco inc we"
+    }
+   ],
+   "record_id": "SITE-000329",
+   "change_class": "tier_changes",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-047",
+   "grade": "FIELD_ERROR",
+   "fields": "newsroom_feed_url",
+   "current_value": "https://www.provia.com/feed/",
+   "correct_value": "https://www.provia.com/feed/?post_type=article",
+   "key_fact": "§4.4 requires a feed \"of the same newsroom\". The newsroom page lists only article-type items (/article/), while the recorded feed carries only blog posts (/blog/) and no /article/ item, so no feed item is a newsroom item. The newsroom's own article feed carries its items, including the 2026-11-05 Request Quote release.",
+   "receipts": [
+    {
+     "url": "https://www.provia.com/feed/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 14790,
+     "sha256": "1e5ab8d11e8f6b346b72ab917f4e968383d6ffe399b0466646a674416381e39e",
+     "fetched_at": "2026-11-18T00:19:19+00:00",
+     "note": "recorded feed: blog items only",
+     "raw_re": "<link>https://www\\.provia\\.com/blog/",
+     "raw_not_re": "provia\\.com/article/"
+    },
+    {
+     "url": "https://www.provia.com/newsroom",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 562308,
+     "sha256": "500e44538e837c567aa2be493ccf14d92ac96951e24d3b7a5563d5f10c994d4c",
+     "fetched_at": "2026-11-18T00:19:37+00:00",
+     "note": "newsroom item list: article type only",
+     "raw_re": "\"postType\":\"article\"",
+     "raw_not_re": "\"postType\":\"(?!article\")"
+    },
+    {
+     "url": "https://www.provia.com/feed/?post_type=article",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 16639,
+     "sha256": "99df35627a0c634314b3dd17c8c046d13b1759316ffb543f5f0d181d1107ce9d",
+     "fetched_at": "2026-11-18T00:19:37+00:00",
+     "note": "the newsroom's own feed",
+     "quote": "Request Quote Feature Streamlines Quoting Process for Doors and Windows https://www.provia.com/article/request-quote-feature/",
+     "excerpt_words": "metal roofing home exterior design solutions wed 04 nov 2026 19 14 29 0000 en us hourly 1 https wordpress org v 7 1 4 request quote feature streamlines quoting process for doors and windows https www provia com article request quote feature thu 05 nov 2026 13 00 10 0000 https www provia com post type article p 118146 provia has introduced request quote a feature on"
+    }
+   ],
+   "record_id": "ORG-001053",
+   "change_class": "navigation_links",
+   "reviewer_a": "FIELD_ERROR",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-073",
+   "grade": "AGREE",
+   "fields": "newsroom_url;newsroom_feed_url",
+   "key_fact": "The news page is the organization's own; the recorded feed is the site-wide feed, and one of its eight items (the 2023 PMA approval release) is linked from the news page. That meets the item-overlap test the earlier newsroom passes used for \"of the same newsroom\" (§4.4); the other seven items are forms and policies, a weak but not wrong navigation aid. The site's news-category feed is empty.",
+   "receipts": [
+    {
+     "url": "https://www.synapsebiomedical.com/feed/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 82048,
+     "sha256": "a3cc59981eacf354175fd52e67cf333414fc5a07a1efa4b6e9191fd9faea596e",
+     "fetched_at": "2026-11-18T00:20:06+00:00",
+     "note": "recorded feed",
+     "raw_re": "<link>https://www\\.synapsebiomedical\\.com/synapse-biomedical-wins-new-pma-approval/</link>"
+    },
+    {
+     "url": "https://www.synapsebiomedical.com/resources-2/news",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 164620,
+     "sha256": "d1668a0bd1f7a3b810980700045314b6f54d130bf77e5620406c6f9a0a9748d4",
+     "fetched_at": "2026-11-18T00:20:10+00:00",
+     "note": "news page links the same item",
+     "raw_re": "href=\"https://www\\.synapsebiomedical\\.com/synapse-biomedical-wins-new-pma-approval/\""
+    },
+    {
+     "url": "https://www.synapsebiomedical.com/category/news/feed/",
+     "via": "curl",
+     "http_status": 200,
+     "bytes": 1154,
+     "sha256": "f092f7c605bc3afa04d98be43bcafb96abc96a12a0bf06a897cd1d16a9db03a9",
+     "fetched_at": "2026-11-18T00:22:06+00:00",
+     "note": "the category feed exists but has no items",
+     "raw_re": "<title>News \\| Synapse Biomedical Inc\\.</title>",
+     "raw_not_re": "<item>"
+    }
+   ],
+   "record_id": "ORG-001555",
+   "change_class": "navigation_links",
+   "reviewer_a": "FIELD_ERROR",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-118",
+   "grade": "AGREE",
+   "fields": "polymer_program",
+   "key_fact": "The value is the owner's ruling R-AFFOA (2026-11-16): set polymer_program back to blank until an AFFOA page states a polymer program. Neither reviewer found such a page. That §4.6 lists polymer_program as a MUST boolean is a schema-text question for the owner, not an error in this record (AGENTS §2 rule 9).",
+   "receipts": [
+    {
+     "url": "git:4182519:tasks/owner-rulings-2026-11-16/README.md",
+     "via": "git",
+     "http_status": null,
+     "bytes": 2421,
+     "sha256": "aeedb466dae566ee3e0148d0638175db98317004a42c6e7cb7303cd3e487cfc6",
+     "fetched_at": null,
+     "note": "owner ruling of record",
+     "quote": "Ruled (a): clear the flag. Keep the record; set polymer_program back to blank until one of AFFOA's own pages states a polymer or fiber-polymer program",
+     "excerpt_words": "013503 states a polymer program the polymer program true flag was inferred because advanced fibers are polymer based the audit held it for the owner ruled a clear the flag keep the record set polymer program back to blank until one of affoa s own pages states a polymer or fiber polymer program b keep it as true by subject matter not chosen applied here org 013503 polymer program true blank 1 cell in data ecosystem csv builder"
+    }
+   ],
+   "record_id": "ORG-013503",
+   "change_class": "rulings",
+   "reviewer_a": "FIELD_ERROR",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-033",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-004334|UEI|TULNP88REWN7|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-040",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-003607|UEI|NWH1Y5MBJEL8|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-051",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-007805|UEI|L5V7LF4JS479|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-052",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-003984|UEI|SFELTQKMG398|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-071",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-004130|UEI|NWP3G7EZHVK7|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-081",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-006123|UEI|PVSNAG8FTLD4|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-083",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-004090|UEI|MDQKS1GZGTX5|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-094",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-001596|UEI|LLJGZ61UA7F4|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-101",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-003006|UEI|H4GTTD7MMGK8|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-103",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-001740|UEI|GUJEKLRTGGL6|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-109",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-003848|UEI|R15YM6LMHN67|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-114",
+   "grade": "AGREE",
+   "fields": "registry_id",
+   "key_fact": "Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.",
+   "receipts": [],
+   "record_id": "ORG-002368|UEI|N7M7NK7MKBY3|",
+   "change_class": "uei_links",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-113",
+   "grade": "CREATION_ERROR",
+   "fields": "registry_id",
+   "current_value": "UEI SJZCEMGNC9D1 linked to ORG-000889",
+   "correct_value": "retire UEI link SJZCEMGNC9D1 on ORG-000889",
+   "key_fact": "Retire UEI link SJZCEMGNC9D1 on ORG-000889; basis held privately under R-SAM (see follow-ups 1 and 2).",
+   "receipts": [],
+   "record_id": "ORG-000889|UEI|SJZCEMGNC9D1|",
+   "change_class": "uei_links",
+   "reviewer_a": "CREATION_ERROR",
+   "reviewer_b": "UNRESOLVED"
+  },
+  {
+   "id": "A11-006",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 4026,
+     "sha256": "dff8f9441f63601807d26d6ea739c7ec9197e6191407b08d6d158b34c0b68361",
+     "fetched_at": "2026-11-18T00:18:36+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c",
+     "file_bytes": 452077279,
+     "raw_re": "(?m)^8191017006,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "8191017006",
+     "DateApproved": "04/08/2020",
+     "BorrowerName": "THE SIMPLAY3 CO",
+     "BorrowerAddress": "9450 Rosemont Dr.",
+     "BorrowerCity": "STREETSBORO",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44241-4563",
+     "JobsReported": "41"
+    },
+    "band": "10-49",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376231",
+    "site_id": "SITE-002016",
+    "site_county": "Portage",
+    "held_sites": 1
+   },
+   "record_id": "SITE-002016",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-035",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_up_to_150k_9_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 3120,
+     "sha256": "00db8681ee82ab1f0f7a2789d1e6701694baf18f44c3f6397faef5c27a223f9c",
+     "fetched_at": "2026-11-18T00:19:35+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "b5d091ac98ee177c1b749159dcbdc37716d8aa10f258dc316bb39b00c7c1d4f9",
+     "file_bytes": 406277638,
+     "raw_re": "(?m)^2464008510,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "2464008510",
+     "DateApproved": "02/20/2021",
+     "BorrowerName": "PACE CONVERTING EQUIPMENT CO., LLC",
+     "BorrowerAddress": "8500 Lake Ave",
+     "BorrowerCity": "Cleveland",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44102-1912",
+     "JobsReported": "8"
+    },
+    "band": "1-9",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376098",
+    "site_id": "SITE-000512",
+    "site_county": "Cuyahoga",
+    "held_sites": 1
+   },
+   "record_id": "ORG-000478",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-067",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 4026,
+     "sha256": "dff8f9441f63601807d26d6ea739c7ec9197e6191407b08d6d158b34c0b68361",
+     "fetched_at": "2026-11-18T00:18:36+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c",
+     "file_bytes": 452077279,
+     "raw_re": "(?m)^6217178505,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "6217178505",
+     "DateApproved": "03/03/2021",
+     "BorrowerName": "THE SUPERIOR MOLD & DIE CO",
+     "BorrowerAddress": "449 N Main St",
+     "BorrowerCity": "Munroe Falls",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44262-1007",
+     "JobsReported": "16"
+    },
+    "band": "10-49",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376116",
+    "site_id": "SITE-000633",
+    "site_county": "Summit",
+    "held_sites": 1
+   },
+   "record_id": "SITE-000633",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-091",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 4026,
+     "sha256": "dff8f9441f63601807d26d6ea739c7ec9197e6191407b08d6d158b34c0b68361",
+     "fetched_at": "2026-11-18T00:18:36+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c",
+     "file_bytes": 452077279,
+     "raw_re": "(?m)^3091617205,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "3091617205",
+     "DateApproved": "04/16/2020",
+     "BorrowerName": "BEACON GASKET & SEALS COMPANY",
+     "BorrowerAddress": "1610 COUTANT AVE",
+     "BorrowerCity": "LAKEWOOD",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44107",
+     "JobsReported": "16"
+    },
+    "band": "10-49",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376208",
+    "site_id": "SITE-001861",
+    "site_county": "Cuyahoga",
+    "held_sites": 1
+   },
+   "record_id": "SITE-001861",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-098",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 4026,
+     "sha256": "dff8f9441f63601807d26d6ea739c7ec9197e6191407b08d6d158b34c0b68361",
+     "fetched_at": "2026-11-18T00:18:36+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c",
+     "file_bytes": 452077279,
+     "raw_re": "(?m)^6820187702,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "6820187702",
+     "DateApproved": "05/01/2020",
+     "BorrowerName": "CERTON TECHNOLOGIES, INC.",
+     "BorrowerAddress": "60 S PARK ST",
+     "BorrowerCity": "BEDFORD",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44146-3635",
+     "JobsReported": "45"
+    },
+    "band": "10-49",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376188",
+    "site_id": "SITE-001776",
+    "site_county": "Cuyahoga",
+    "held_sites": 1
+   },
+   "record_id": "ORG-001700",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-100",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 4026,
+     "sha256": "dff8f9441f63601807d26d6ea739c7ec9197e6191407b08d6d158b34c0b68361",
+     "fetched_at": "2026-11-18T00:18:36+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c",
+     "file_bytes": 452077279,
+     "raw_re": "(?m)^6102237002,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "6102237002",
+     "DateApproved": "04/06/2020",
+     "BorrowerName": "PREMERE ENTERPRISES",
+     "BorrowerAddress": "10882 Fort Laurens Rd NW",
+     "BorrowerCity": "BOLIVAR",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44612-8942",
+     "JobsReported": "35"
+    },
+    "band": "10-49",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376133",
+    "site_id": "SITE-000971",
+    "site_county": "Tuscarawas",
+    "held_sites": 1
+   },
+   "record_id": "SITE-000971",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  },
+  {
+   "id": "A11-107",
+   "grade": "AGREE",
+   "fields": "employee_band_ohio;employee_band_site",
+   "lead_check": true,
+   "key_fact": "Passes all five conditions of the owner's 2026-11-16 \"Strict matches\" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).",
+   "receipts": [
+    {
+     "url": "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_up_to_150k_9_240930.csv",
+     "via": "stream-extract",
+     "http_status": 200,
+     "bytes": 3120,
+     "sha256": "00db8681ee82ab1f0f7a2789d1e6701694baf18f44c3f6397faef5c27a223f9c",
+     "fetched_at": "2026-11-18T00:19:35+00:00",
+     "note": "fresh full-file read; extract of the loan row",
+     "file_sha256": "b5d091ac98ee177c1b749159dcbdc37716d8aa10f258dc316bb39b00c7c1d4f9",
+     "file_bytes": 406277638,
+     "raw_re": "(?m)^4057067109,"
+    }
+   ],
+   "band_check": {
+    "conditions": {
+     "filled_blank_cell": true,
+     "labelled_with_2020_or_2021_loan_date": true,
+     "single_site_ohio_only_active_in_pic18": true,
+     "borrower_name_street_city_match": true,
+     "band_equals_jobs_reported_band": true
+    },
+    "ppp_row": {
+     "LoanNumber": "4057067109",
+     "DateApproved": "04/12/2020",
+     "BorrowerName": "SPECIALTY HOSE CORPORATION",
+     "BorrowerAddress": "7800 Freedom Avenue NW",
+     "BorrowerCity": "NORTH CANTON",
+     "BorrowerState": "OH",
+     "BorrowerZip": "44720-6908",
+     "JobsReported": "10"
+    },
+    "band": "10-49",
+    "value_at_348_step_parent": "",
+    "evidence_id": "EVD-376112",
+    "site_id": "SITE-000619",
+    "site_county": "Stark",
+    "held_sites": 1
+   },
+   "record_id": "ORG-000580",
+   "change_class": "bands",
+   "reviewer_a": "AGREE",
+   "reviewer_b": "AGREE"
+  }
+ ]
+}
