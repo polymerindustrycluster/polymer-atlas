@@ -12,6 +12,12 @@ from site_corpus import Corpus, key
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-market-scale-2026-11-18')
 # (org, url, stored page that links to it)
 TARGETS = [
+    ('ORG-001958', 'http://www.icslabs.com/industriesserved/sporting-goods/', 'ORG-001958 stored home page href (Sporting Goods)'),
+    ('ORG-001958', 'http://www.icslabs.com/industriesserved/construction-industrial-manufacturing/', 'ORG-001958 stored home page href (Construction, Manufacturing and General Industry)'),
+    ('ORG-001958', 'http://www.icslabs.com/industriesserved/defense-tactical/', 'ORG-001958 stored home page href (Defense & Tactical)'),
+    ('ORG-001958', 'http://www.icslabs.com/industriesserved/emergency-response/', 'ORG-001958 stored home page href (Emergency Response)'),
+    ('ORG-001958', 'http://www.icslabs.com/industriesserved/recreation-leisure/', 'ORG-001958 stored home page href (Recreation & Leisure)'),
+    ('ORG-001657', 'https://comdess.com/index.php/content/application-areas', 'ORG-001657 stored locations page href (Application Areas)'),
 ]
 
 
