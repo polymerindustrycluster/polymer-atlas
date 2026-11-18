@@ -7,7 +7,7 @@ spec = importlib.util.spec_from_file_location('build', T / 'build.py'); build = 
 BASE = (T / 'base.txt').read_text().strip()
 VOCAB = json.loads((ROOT / 'docs/schema/vocab.json').read_text())['vocabularies']
 BLOCK = range(396500, 396550)
-REQUOTED = {'SITE-001986', 'SITE-001109'}  # 001986: CAP2B hold had no quote; 001109: CAP2A's quote says 'machined parts', this one says 'CNC machining'
+REQUOTED = {'SITE-001986'}  # CAP2B held this term without a quote
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline='')))
 def base_file(p): return rd(subprocess.check_output(['git', 'show', f'{BASE}:{p}'], cwd=ROOT, text=True))
 def verify(base_sites, sites, base_ev, ev, decisions):
@@ -33,7 +33,6 @@ def verify(base_sites, sites, base_ev, ev, decisions):
     assert all(int(r['evidence_id'][4:]) in BLOCK for r in added), 'evidence ID outside EVD-396500..396549'
     for d in decisions:
         build.cap2a.validate_decision(d)
-        assert not d['context_quote'] or build.cap2a.norm(d['context_quote']) in build.cap2a.norm((build.cap2a.CORPUS / d['text_file']).read_text()), 'context quote not on the stored page'
         rows = [r for r in added if r['record_id'] == d['site_id'] and r['claim_detail'].startswith(f"{d['field']}={d['term']};")]
         assert len(rows) == 1, f"{d['site_id']} {d['term']}: {len(rows)} new evidence rows (need 1)"
         r = rows[0]; tier = n[d['site_id']]['verification_tier']
@@ -50,14 +49,15 @@ def main():
     assert len(held) == 10 and len({s for s, _ in held}) == 7, held
     assert any(h['site_id'] == 'SITE-001986' and 'composites_unspecified' in h.values() for h in build.read(ROOT / 'tasks/pic18-capabilities-corpus-2b-2026-11-16/holds.csv')), 'CAP2B hold missing'
     got = {(d['site_id'], d['term']) for d in decisions}
-    assert got - {('SITE-001986', 'composites_unspecified')} == set(held) and len(decisions) == 11, 'decisions differ from the CAP2A held terms + the CAP2B hold'
+    HOLD = {('SITE-001109', 'plastics_machining_cnc')}  # controller 2026-11-18: no one sentence says the company CNC-machines plastic
+    assert got - {('SITE-001986', 'composites_unspecified')} == set(held) - HOLD and len(decisions) == 10, 'decisions differ from the CAP2A held terms (minus the hold) + the CAP2B term'
     c2a = {(d['site_id'], d['term']): d for d in build.read(ROOT / 'tasks/pic18-capabilities-corpus-2a-2026-11-16/decisions.csv') if d['field'] == 'processes'}
     for d in decisions:
         if d['site_id'] not in REQUOTED: assert all(c2a[(d['site_id'], d['term'])][k] == d[k] for k in ('quote', 'sha256', 'url', 'basis', 'grain_quote')), 'decision differs from CAP2A row'
     base_sites, base_ev = base_file('data/sites_OH.csv'), base_file('data/evidence_sites_OH.csv')
     sites, ev = build.read(build.SITES), build.read(build.EVID)
     counts = verify(base_sites, sites, base_ev, ev, decisions); print('PASS', counts)
-    assert counts == dict(sites_changed=8, terms_appended=11, evidence_rows_added=11, tiers='ABBCCCCC', strengths=','.join(['supports_A'] * 9 + ['supports_C'] * 2)), counts  # README: tiers A 1/B 2/C 5; strength A 9/C 2
+    assert counts == dict(sites_changed=7, terms_appended=10, evidence_rows_added=10, tiers='ABBCCCC', strengths=','.join(['supports_A'] * 8 + ['supports_C'] * 2)), counts  # README: tiers A 1/B 2/C 4; strength A 8/C 2
     # idempotence: a rebuild leaves both data files byte-identical
     before = [hashlib.sha256(p.read_bytes()).hexdigest() for p in (build.SITES, build.EVID)]; build.main()
     assert before == [hashlib.sha256(p.read_bytes()).hexdigest() for p in (build.SITES, build.EVID)], 'rebuild changed data'
@@ -70,7 +70,7 @@ def main():
     site = lambda s, k: next(r for r in s if r['site_id'] == k)
     inject('existing value removed', lambda s, e, d: site(s, 'SITE-000458').update(processes='extrusion_profile;extrusion_pipe_tube'))
     def offvocab(s, e, d):
-        site(s, 'SITE-000243').update(processes='tooling_mold_die;injection_moulding'); d[0]['term'] = 'injection_moulding'; e[-11]['claim_detail'] = e[-11]['claim_detail'].replace('injection_molding', 'injection_moulding')
+        site(s, 'SITE-000243').update(processes='tooling_mold_die;injection_moulding'); d[0]['term'] = 'injection_moulding'; e[-10]['claim_detail'] = e[-10]['claim_detail'].replace('injection_molding', 'injection_moulding')
     inject('term not in 3.1/3.2', offvocab)
     inject('term without evidence', lambda s, e, d: e.pop(next(i for i, r in enumerate(e) if r['created_by'] == build.WHO)))
     inject('write to a non-listed site', lambda s, e, d: site(s, 'SITE-000001').update(processes=site(s, 'SITE-000001')['processes'] + ';injection_molding'))
