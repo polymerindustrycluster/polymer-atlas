@@ -95,6 +95,7 @@ def builder_faults(base):
     else:
      calls=[]
      def flaky(a,b):
+      if str(b).endswith('.stage'):return keep[2](a,b)  # shard_io's own atomic staging
       calls.append(1)
       if len(calls)==2:raise OSError('interrupted between writes')
       return keep[2](a,b)

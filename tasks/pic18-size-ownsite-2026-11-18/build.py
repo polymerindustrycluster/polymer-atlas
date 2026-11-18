@@ -55,7 +55,7 @@ def apply(fills,evs,base):
  evidence rows), then replace evidence first and organizations last: a failure leaves no cell without its evidence."""
  existing={e['evidence_id']:e for p in (ROOT/'data').glob('evidence_organizations_*.csv') for e in read(p)}
  for e in evs:assert e['evidence_id'] not in existing or existing[e['evidence_id']]==e,'evidence ID collision'
- staged=[]  # (temp, target) in replace order
+ staged=[];temps=[]  # staged = (temp, target) in replace order; temps = every temp file created
  try:
   for sh in sorted({f['shard'] for f in fills}):
    mine={f['record_id']:f for f in fills if f['shard']==sh}
@@ -64,15 +64,15 @@ def apply(fills,evs,base):
    for r in rows:
     f=mine.get(r['org_id'])
     if f:assert r[FIELD] in ('',f['new']),'refuse a non-blank cell';r[FIELD]=f['new']
-   t_org=org.with_name(org.name+'.stage');write(t_org,rows,list(rows[0]))
+   t_org=org.with_name(org.name+'.stage');temps.append(t_org);write(t_org,rows,list(rows[0]))
    assert len(read(t_org))==git_base_count(base,f'data/{org.name}'),f'{org.name}: staged rows differ from the count at base'
-   t_ev=ev.with_name(ev.name+'.stage');t_ev.write_bytes(ev.read_bytes())
+   t_ev=ev.with_name(ev.name+'.stage');temps.append(t_ev);t_ev.write_bytes(ev.read_bytes())
    append_sorted(t_ev,[e for e in evs if e['record_id'] in mine and e['evidence_id'] not in existing],'evidence_id')
    assert len(read(t_ev))==git_base_count(base,f'data/{ev.name}')+sum(e['record_id'] in mine for e in evs),f'{ev.name}: staged rows differ from base + packet'
    staged+= [(t_ev,ev),(t_org,org)]
   for t,target in staged:os.replace(t,target)
  finally:
-  for t,_ in staged:
+  for t in temps:
    if t.exists():t.unlink()
 
 def main():
