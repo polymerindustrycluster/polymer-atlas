@@ -892,6 +892,19 @@ if events or participation:
     if part_fields != PART_FIELDS:
         errors.append("event_participation.csv: header does not match the v1.5 field set (V-17)")
 ALL_ORG_IDS = {r["org_id"] for r in orgs} | {r["org_id"] for r in eco}
+# V-63 [v1.14]: the IPEDS completions layer (SCHEMA §4.23) is generated from data/ipeds/raw_ipeds_national.json by
+# scripts/ipeds_build.py; every table must equal a fresh derivation (field sets, keys and foreign keys follow from it).
+import ipeds_build
+if (DATA / "ipeds" / "raw_ipeds_national.json").exists():
+    try:
+        for f in ipeds_build.mismatches(DATA):
+            errors.append(f"{f}: missing or differs from a fresh derivation of ipeds/raw_ipeds_national.json; the table is "
+                          f"generated, never hand-edited: rerun scripts/ipeds_build.py (V-63)")
+    except (SystemExit, Exception) as e:  # the derivation's own refusals, or a malformed raw file
+        errors.append(f"ipeds/raw_ipeds_national.json: {type(e).__name__}: {e} (V-63)")
+else:
+    errors.append("ipeds/raw_ipeds_national.json is missing; the §4.23 tables cannot be derived (V-63)")
+
 evt_ids = set()
 _slug_events = {}
 for i, r in enumerate(events, 2):

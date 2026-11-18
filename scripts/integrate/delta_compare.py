@@ -7,7 +7,8 @@ import subprocess
 import tarfile
 
 COMPOSITE = {'registry_links.csv': ('org_id', 'registry', 'registry_id', 'site_id'),
-             'people_identifiers.csv': ('person_id', 'identifier_type', 'identifier_id')}
+             'people_identifiers.csv': ('person_id', 'identifier_type', 'identifier_id'),
+             'ipeds_completions.csv': ('program_key', 'year')}
 
 
 def git(root, *args):

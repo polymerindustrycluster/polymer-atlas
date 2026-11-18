@@ -65,6 +65,9 @@ UNIT = {
     "equipment": "equipment rows",
     "people_engagement": "people-engagement rows",
     "people_identifiers": "person external-identifier rows (§4.21)",
+    "ipeds_institutions": "IPEDS institutions reporting under a polymer or materials CIP, 1991-2023 (§4.23)",
+    "ipeds_programs": "IPEDS programs: institution x CIP x award level ever observed (§4.23)",
+    "ipeds_completions": "IPEDS program-year completion counts, 1991-2023 (§4.23)",
 }
 
 # --- type inference -------------------------------------------------------
