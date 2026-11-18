@@ -2,7 +2,7 @@
 """Owner ruling 2026-11-18b item 2: apply SITE-000562 `rubber_molding_transfer` (held in PR #381) now that SCHEMA 3.1 (v1.16) has the term.
 
 Unions the term into the existing non-blank `processes` cell of data/sites_OH.csv (nothing removed, no other column touched) and mints
-one evidence row (EVD-396950) in data/evidence_sites_OH.csv. The site is tier C, so a services-menu line (supports_C) may union into `processes`;
+one evidence row in data/evidence_sites_OH.csv, its id allocated at apply time above the maximum across every data/evidence_*.csv shard and above EVD_FLOOR (never reused, never filling a gap; AGENTS.md 3). The site is tier C, so a services-menu line (supports_C) may union into `processes`;
 on a tier A/B site this would be a site_capabilities row only (owner ruling 2026-11-14) and the builder refuses. Quote and locality witness are
 validated against the stored page by the CAP2A helper (sha256, words in order, term in the vocabulary). Idempotent.
 """
