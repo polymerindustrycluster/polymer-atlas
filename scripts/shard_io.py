@@ -9,7 +9,7 @@ an id that is already present, because ids are never reused (AGENTS.md §3). Exi
 re-ordered among the new ones. A builder that appends at the end of a shared shard breaks V-36 whenever two waves
 write to it.
 """
-import csv, io
+import csv, io, os
 from pathlib import Path
 
 
@@ -25,7 +25,14 @@ def append_sorted(path, rows, id_col):
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=header, lineterminator="\n", extrasaction="ignore")
     w.writeheader(); w.writerows(sorted(old + list(rows), key=lambda r: r[id_col]))
-    path.write_bytes(buf.getvalue().encode("utf-8"))
+    # Atomic: stage in the same directory, flush and fsync, then replace. A write cut short leaves the original shard intact.
+    tmp = path.with_name(path.name + ".tmp")
+    try:
+        with open(tmp, "wb") as fh:
+            fh.write(buf.getvalue().encode("utf-8")); fh.flush(); os.fsync(fh.fileno())
+        os.replace(tmp, path)
+    finally:
+        if tmp.exists(): tmp.unlink()
 
 
 if __name__ == "__main__":  # self-check on a temp shard
