@@ -75,15 +75,17 @@ def render():
     L.append('')
     for k in st['corrections']:
         L.append(f"- **{k['blind_id']}**: {k['rationale']}")
-    L.append('\n**What the two errors point to (leads, not rates):**')
-    L.append(f"- **Newsroom feeds from #350.** #350 accepted a feed when the newsroom page declared it, and did not read the feed (its README: \"Feed contents are not fetched or asserted\"). "
-             f"The earlier newsroom passes required at least one feed item that the newsroom page also links. ProVia's feed fails that test. #350 filled `newsroom_feed_url` on {feeds_350} organizations; "
-             "re-running the item-overlap test on those would find any others.")
-    L.append('- **UEI links from #355.** A lead on how #355 reached the wrong link is held in the private note with the per-row detail (R-SAM).\n')
+    L.append('\n**Follow-ups (leads, not rates; controller decision 2026-11-17):**')
+    L.append("1. Re-verify the parent of SITE-002767 (currently under ORG-000889) against held record ORG-003917, from public sources. "
+             "The root cause predates the audit window (legacy record).")
+    L.append("2. #355's UEI matcher can accept a non-HQ held site as its witness. Re-check #355's links of that class and tighten the matcher.")
+    L.append(f"3. #350 accepted a newsroom feed when the newsroom page declared it, without reading the feed (its README: \"Feed contents are not fetched or asserted\"). "
+             f"The earlier newsroom passes required at least one feed item that the newsroom page also links; ProVia's feed fails that test. "
+             f"Re-run the item-overlap test on #350's {feeds_350} `newsroom_feed_url` fills.\n")
     L.append('## UEI rows (R-SAM: counts only)\n')
     L.append(f"The 13 sampled UEI links were checked against one batched SAM Entity API v3 response, stored outside the repo with its sha256 (`{meta['sam_files_sha256']['sam_uei_raw.json'][:12]}…` and "
              f"`{meta['sam_files_sha256']['sam_uei_raw_page1.json'][:12]}…`). All 13 UEIs were returned. "
-             f"**{uei['match']} match; {uei['no_match']} does not.** The test: an active registration with the same normalized name (AGENTS §3) and the same HQ city and state. Per-row detail, and one related Atlas lead, are in a private note "
+             f"**{uei['match']} match; {uei['no_match']} does not.** The test: an active registration with the same normalized name (AGENTS §3) and the same HQ city and state. Per-row detail is in a private note "
              f"(sha256 `{meta['uei_private_note_sha256'][:12]}…`). No SAM name or address appears in this report or the repo.\n")
     L.append(f"## The {len(disputed)} disputed rows: lead adjudication\n")
     L.append(f"Reviewer A (Claude Opus, blind) locked {', '.join(f'{v} {k}' for k, v in sorted(st['reviewer_a_counts'].items(), key=lambda kv: -kv[1]))}. "
@@ -108,7 +110,8 @@ def render():
              'The committed `verdicts_a.csv` and `verdicts_b.csv` are LF copies with every free-text cell blanked on the 13 UEI rows, because reviewer A\'s cells quote SAM names and addresses (R-SAM). '
              '`locks.json` pins both the lock hashes and the committed hashes; `check.py` re-applies the redaction to the private originals when they are present.')
     L.append(f"- **Reviewer B and the UEI rows.** B's last receipt is at {b_last} UTC, before the 00:00 UTC quota reset that the stored SAM response had to wait for. "
-             f"B's receipts log {len(sam_b)} SAM API calls ({sam_b_codes}), yet every B note on these rows says \"SAM record not available\". The cause is not established. Reviewer A read the stored response.")
+             f"B's receipts log {len(sam_b)} SAM API calls ({sam_b_codes}), yet every B note on these rows says \"SAM record not available\". The cause is not established. "
+             "The controller checked B's SAM receipts: no key appears in any URL. Adjudication used the lead's stored response (both pages, hash-verified), not B's calls; reviewer A also read the stored response.")
     L.append('- **Navigation wording.** The reviewer instructions described `navigation_links` as "this organization\'s own page or feed", looser than SCHEMA §4.4\'s "a feed of the same newsroom". '
              'That explains B\'s AGREE on ProVia. The lead graded against §4.4, using the item-overlap test the earlier newsroom passes used.')
     L.append('- **AFFOA rows are not blind.** The two `rulings` rows (blind label `program_status`) are AFFOA records that both reviewers had already graded in blind audit 10 (A10-003). '
@@ -122,7 +125,7 @@ def render():
     L.append('- **Synapse Biomedical (A11-073).** The recorded feed is the site-wide feed: seven of its eight items are forms and policies, and its newest item is from 2023. It passes the overlap test, but it is a weak monitoring source.')
     L.append('- **Premere Enterprises (A11-100).** The PPP borrower ZIP is 44612; the site records 44663. The ZIP was not changed in this window, so it was not audited.\n')
     L.append('## First user and non-use date\n')
-    L.append(f"The first user is the repo owner, who decides whether to apply the two corrections and act on the two leads. If neither correction is applied or explicitly declined by **{FIRST_USER_NONUSE_DATE}**, "
+    L.append(f"The first user is the repo owner, who decides whether to apply the two corrections and act on the three follow-ups. If neither correction is applied or explicitly declined by **{FIRST_USER_NONUSE_DATE}**, "
              '`DECISIONS.md` records that as non-use (portfolio rule 8).\n')
     L.append('## Frame and fixed draw\n')
     L.append(f"Data pin `{draw['head'][:12]}`; window start `{draw['base'][:12]}`. Seed `{draw['seed']}`; stratified by change class, census below {draw['census_below']} record changes, "

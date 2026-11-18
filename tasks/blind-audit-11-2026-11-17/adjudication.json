@@ -444,7 +444,7 @@
    "fields": "registry_id",
    "current_value": "UEI link on ORG-000889 (ITW Tomco)",
    "correct_value": "retire the link; any re-link is the integrator's call",
-   "key_fact": "No match: the stored SAM response's registration for this UEI is not ITW Tomco's. The per-row detail and two related leads are in the private note (R-SAM).",
+   "key_fact": "No match: the stored SAM response's registration for this UEI is not ITW Tomco's. The per-row detail is in the private note (R-SAM); see follow-ups 1 and 2.",
    "receipts": [],
    "sam_result": "no_match",
    "record_id": "ORG-000889|UEI|SJZCEMGNC9D1|",

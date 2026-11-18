@@ -100,7 +100,7 @@ DECISIONS = [
       for i in ('A11-033', 'A11-040', 'A11-051', 'A11-052', 'A11-071', 'A11-081', 'A11-083', 'A11-094', 'A11-101', 'A11-103', 'A11-109', 'A11-114')],
     dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', sam_expect='no_match', current_value='UEI link on ORG-000889 (ITW Tomco)',
          correct_value='retire the link; any re-link is the integrator\'s call',
-         key_fact='No match: the stored SAM response\'s registration for this UEI is not ITW Tomco\'s. The per-row detail and two related leads are in the private note (R-SAM).', receipts=[]),
+         key_fact='No match: the stored SAM response\'s registration for this UEI is not ITW Tomco\'s. The per-row detail is in the private note (R-SAM); see follow-ups 1 and 2.', receipts=[]),
     # --- bands (#348): both AGREE; controller-directed lead check against the "Strict matches" ruling ---
     *[dict(id=i, grade='AGREE', fields='employee_band_ohio;employee_band_site', lead_check=True, ppp_url=SBA + f,
            key_fact='Passes all five conditions of the owner\'s 2026-11-16 "Strict matches" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).',
