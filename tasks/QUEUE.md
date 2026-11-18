@@ -535,7 +535,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `claimed:claude-code 2026-11-18` Record the owner rulings of 2026-11-18 and the PPP ruling (SCHEMA v1.13.3) — `tasks/owner-rulings-2026-11-18/`.
 - [ ] `claimed:claude-code 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages (SCHEMA §4.4 `processes` row: "unless Parent claims it corporately").
 - [ ] `claimed:claude-code 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit`.
-- [ ] `open` People identifier URLs (owner items 1 and 1b): 18 `?u=` and 10 `/~` people rows, plus 8 evidence_people rows, remediated per `tasks/owner-rulings-2026-11-18/README.md`.
+- [ ] `open` People identifier URLs (owner items 1 and 1b): 18 `?u=` and 11 `/~` people rows, plus 8 evidence_people rows, remediated per `tasks/owner-rulings-2026-11-18/README.md`.
 - [ ] `open` Blind audit 11 corrections: A11-047 ProVia `newsroom_feed_url`; A11-113 retire UEI link SJZCEMGNC9D1 on ORG-000889.
 - [ ] `open` Re-verify Pedro Cortes (PERSON-001142): UTEP on record, Youngstown State in the 2022-23 catalog (owner item 5).
 - [ ] `open` Add Sen Gupta and Akkus from CWRU bulletin lines (roster-grade Gate B, owner item 3); add West when a current page states his research.
@@ -545,7 +545,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `open` Flex Technologies' own page names Mt. Eaton and Baltic, Ohio plants that the Atlas does not hold — source PR #365.
 - [ ] `open` A Midvale `pvc` row could come from the "We specialize in PVC extrusion" line — source PR #365.
 - [ ] `open` Inter-Ion (ORG-001681): its stored markets pages carry narrative sentences that could replace the withdrawn tab-label `markets_served` values — source PR #360.
-- [ ] `open` Append the 10 held terms on 7 sites (PR #365) and SITE-001986's verified term (PR #361) to their non-blank cells: the owner ruled yes on 2026-11-18 (item 8, union rule).
+- [ ] `open` Append the 10 held terms on 7 sites (PR #365) and SITE-001986's verified term (PR #361) to their non-blank cells: the CAP2A terms by controller decision (2026-11-17); SITE-001986 by owner ruling (2026-11-18, item 8, the same union rule).
 - [x] `done 2026-11-17` PIC-18 discovery pass 2 (72 held leads, zero data rows): PR #362 was closed after the lead names were stripped; #367 (a fresh commit) merged.
 
 ### Parked by the owner (not scheduled)

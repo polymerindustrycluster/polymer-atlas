@@ -9,18 +9,18 @@ changed here; each ruling is applied in its own pull request.
 University of Akron profile URLs of the form `?u=<network id>` carry a person's university account name. On main they
 appear in 18 `people.csv` rows and 4 `evidence_people.csv` rows (count at 099497f).
 
-- **Ruled:**
-  - Replace each such people URL with an identifier-free department or lab page where one exists. Otherwise blank the
-    URL and keep the source on the evidence row.
-  - Evidence rows stay (append-only, SCHEMA §4.13) and are marked superseded by a new row citing the identifier-free
-    page.
+- **Ruled:** replace each such people URL with an identifier-free department or lab page where one exists. Otherwise
+  blank the URL and keep the source on the evidence row.
+- **Evidence rows are never edited** (SCHEMA §4.13):
+  - where an identifier-free page is cited, a later evidence row cites it and answers the old row;
+  - where no such page exists, the old evidence row stays as the record's source.
 - **No exception for new rows:** a person whose only witness is a `?u=` URL stays held. This applies to the two
   identifier-URL holds of PR #371.
 
 ## 1b. Identifier URLs on people rows: `/~username` home directories
 
-The same class as item 1. A `/~username` path also carries a personal account name. On main: 10 `people.csv` rows and
-4 `evidence_people.csv` rows, on 9 university hosts (count at 099497f). A reviewer refuted one on PR #371.
+The same class as item 1. A `/~username` path also carries a personal account name. On main: 11 `people.csv` rows
+(one written without a scheme) on 10 university hosts, and 4 `evidence_people.csv` rows (count at 099497f). A reviewer refuted one on PR #371.
 
 - **Ruled:** treat `/~username` URLs exactly as item 1.
 
@@ -76,8 +76,8 @@ Two questions:
   1. Not mapped.
   2. Yes. A verified term may be appended to a non-blank cell (union with the existing values, nothing removed).
 
-  The second ruling settles the open QUEUE question on the 10 held terms on 7 sites from PR #365, and covers
-  SITE-001986.
+  The second ruling covers SITE-001986's materials cell. The same union operation for the 10 held terms on 7 sites
+  from PR #365 was a controller decision of 2026-11-17, consistent with this ruling.
 
 ## Recorded with these rulings: PPP historical employee bands (owner ruling 2026-11-16, "Strict matches")
 
