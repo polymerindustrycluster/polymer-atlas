@@ -1,0 +1,186 @@
+"""Replay the market-scale packet, batch 2 (idempotent): 95 frame orgs plus 5 re-screened batch 1 holds, ordered-word quote check, fill only a blank markets_served cell.
+Reused from the market canary (tasks/pic18-market-canary-2026-11-18/build.py) with the frame parameterised, tier-dependent tier_effect, and pinned evidence IDs."""
+import csv
+import hashlib
+import importlib.util
+import io
+import json
+import os
+import shutil
+import subprocess
+import sys
+from collections import Counter
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+REPO = ROOT  # the real checkout; ROOT is patched to a temp tree by check.py's builder tests, REPO is not
+MKT3 = ROOT / 'tasks/pic18-markets-3-2026-11-16'
+STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist')
+CORPUS, LIVE = STORE / 'pic18-corpus-2026-11-16', STORE / 'pic18-market-scale-2026-11-18'
+SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
+BASE = '0720cc06'  # merge-base this packet was built on; replaying after main changes these shards needs it updated
+FIRST_ID, LAST_ID = 396750, 396899
+BATCH, BATCH_SIZE = 2, 96
+import frame as F  # the pool is recomputed from git at F.FRAME_REF; the canary's 10 are removed
+FRAME_ALL = F.frame()
+assert len(FRAME_ALL) == F.EXPECTED, ('frame count changed', len(FRAME_ALL))
+RESCREEN = 'ORG-000075 ORG-000229 ORG-000322 ORG-000378 ORG-001065'.split()  # batch 1's list_item_only holds, re-screened under the MKT3 content-page-list precedent (controller ruling 2026-11-18)
+FRAME = FRAME_ALL[:BATCH_SIZE] if BATCH == 1 else FRAME_ALL[BATCH_SIZE:] + RESCREEN
+sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(MKT3))  # witness_class is reused from MKT3, not copied
+from shard_io import append_sorted
+import witness_class
+
+_spec = importlib.util.spec_from_file_location('mkt3_build', MKT3 / 'build.py')
+_mkt3 = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_mkt3)
+read, found = _mkt3.read, _mkt3.found  # MKT3's csv reader and ordered-word quote matcher
+shards = lambda: sorted(p for p in (ROOT / 'data').glob('organizations_*.csv') if p.stem != 'organizations_all')
+
+
+def write(name, rows):
+    with (HERE / name).open('w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
+        w.writeheader()
+        w.writerows(rows)
+
+
+def sha(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+
+def locate(oid, kind, url):
+    """The stored or live page for a quote: (raw path, text path, recorded raw sha256). Hash is checked by the caller."""
+    if kind == 'stored':
+        r = next(r for r in read(SNAPSHOT) if r['org_id'] == oid and r['url'] == url and r['status'] == 'ok' and r['text_file'])
+        return CORPUS / (r['raw_file'] or r['text_file']), CORPUS / r['text_file'], r['sha256']
+    assert kind == 'live', kind
+    r = next(r for r in read(HERE / 'fetches.csv') if r['org_id'] == oid and r['url'] == url and r['status'] == 'ok' and r['retained'] == 'yes')
+    return LIVE / r['raw_file'], LIVE / r['text_file'], r['sha256']
+
+
+def proposals(tiers):
+    """selection.tsv columns: org, tags (;), pinned evidence IDs (;, one per tag), source kind, url, quote. IDs are pinned so a withdrawal never renumbers later rows."""
+    vocab = json.loads((ROOT / 'docs/schema/vocab.json').read_text())['vocabularies']['MARKETS']['values']
+    out = []
+    for line in (HERE / 'selection.tsv').read_text().splitlines():
+        oid, tags, ids, kind, url, quote = line.split('\t')
+        assert oid in FRAME, ('outside frame', oid)
+        values, evs = tags.split(';'), ids.split(';')
+        assert len(values) == len(evs), ('one evidence ID per tag', oid)
+        raw, text, recorded = locate(oid, kind, url)
+        assert sha(raw) == recorded, ('raw hash mismatch', oid)
+        page = text.read_text()
+        assert found(page, quote), ('quote absent', oid)
+        for value, evid in zip(values, evs):
+            assert value in vocab, ('off vocabulary', value)
+            out.append(dict(org_id=oid, field='markets_served', value=value, verdict='VERIFIED', source_kind=kind, source_url=url, quote=quote,
+                            raw_sha256=recorded, text_sha256=sha(text),  # digest of the stored file's bytes, not of read_text() output
+                            raw_file=str(raw.relative_to(STORE)), text_file=str(text.relative_to(STORE)), evidence_id=evid,
+                            tier_effect='supports_U' if tiers[oid] == 'U' else 'supports_A'))  # narrative sentence on the company's own page; tier U banks supports_U (SCHEMA 4.13)
+    assert len({(r['org_id'], r['value']) for r in out}) == len(out), 'duplicate proposal'
+    ids = [r['evidence_id'] for r in out]
+    assert len(set(ids)) == len(ids) and out and all(f'EVD-{FIRST_ID:06d}' <= i <= f'EVD-{LAST_ID}' for i in ids), 'evidence IDs duplicated or outside the assigned block'
+    return out
+
+
+def apply(inputs, evidence):
+    """Stage every changed shard as a temp sibling, then os.replace each. Before replacing, each staged shard's row count must equal its row
+    count at BASE (git show BASE:data/<shard>) plus the rows this packet adds to it: organization shards +0 (cell fills only), evidence
+    shards + the packet's evidence rows for that shard. A truncated input shard therefore fails, whatever the current file holds. No market
+    cell is written if any allocated evidence ID is occupied by different content or a different home shard."""
+    rows = {p: read(p) for p in shards()}
+    orgs = {r['org_id']: (p, r) for p, rs in rows.items() for r in rs}
+    have = {r['evidence_id']: (p, r) for p in (ROOT / 'data').glob('evidence_*.csv') for r in read(p)}
+    values = {}
+    for r in inputs:
+        values.setdefault(r['org_id'], []).append(r['value'])
+    add = {}
+    for ev in evidence:
+        home = orgs[ev['record_id']][0]
+        target = home.with_name(home.name.replace('organizations_', 'evidence_organizations_'))
+        if ev['evidence_id'] in have:
+            path, old = have[ev['evidence_id']]
+            assert path == target and old == ev, ('evidence ID occupied by different content or shard', ev['evidence_id'])
+        else:
+            add.setdefault(target, []).append(ev)
+    touched = {}
+    for oid, tags in values.items():
+        path, row = orgs[oid]
+        expected = ';'.join(sorted(tags))
+        assert row['markets_served'] in ('', expected), ('target cell is not blank', oid)  # the only write is into a blank cell
+        if row['markets_served'] != expected:
+            row['markets_served'] = expected
+            touched[path] = rows[path]
+    backup = LIVE / 'pre-application'
+    backup.mkdir(parents=True, exist_ok=True)
+    for path in set(touched) | set(add):
+        if not (backup / path.name).exists():
+            shutil.copyfile(path, backup / path.name)
+    def base_count(path):
+        return len(list(csv.DictReader(io.StringIO(subprocess.check_output(['git', 'show', f'{BASE}:data/{path.name}'], cwd=REPO, text=True)))))
+    packet_rows = {}
+    for ev in evidence:
+        home = orgs[ev['record_id']][0]
+        shard = home.with_name(home.name.replace('organizations_', 'evidence_organizations_')).name
+        packet_rows[shard] = packet_rows.get(shard, 0) + 1
+    staged = {}
+    for path, rs in touched.items():
+        tmp = path.with_name(path.name + '.tmp')
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, fieldnames=list(rs[0]), lineterminator='\n')
+        w.writeheader()
+        w.writerows(rs)
+        tmp.write_bytes(buf.getvalue().encode('utf-8'))
+        assert len(read(tmp)) == base_count(path), ('organization row count differs from base', path.name)
+        staged[path] = tmp
+    for path, evs in add.items():
+        tmp = path.with_name(path.name + '.tmp')
+        shutil.copyfile(path, tmp)
+        append_sorted(tmp, evs, 'evidence_id')
+        assert len(read(tmp)) == base_count(path) + packet_rows[path.name], ('evidence row count differs from base + packet rows', path.name)
+        staged[path] = tmp
+    for path, tmp in staged.items():
+        os.replace(tmp, path)
+
+
+def verdict_rows(inputs):
+    applied = {}
+    for r in inputs:
+        applied.setdefault(r['org_id'], []).append(r['value'])
+    return [dict(v, values=';'.join(sorted(applied.get(v['org_id'], [])))) for v in read(HERE / 'verdicts.csv')]
+
+
+def counts_for(tiers, inputs, verdicts):
+    ap = {r['org_id'] for r in inputs}
+    return dict(batch=BATCH, frame_organizations=len(FRAME), frame_pool_at_ref=len(F.market_pool()), applied_organizations=len(ap), applied_values=len(inputs),
+                applied_by_source=dict(Counter(next(r['source_kind'] for r in inputs if r['org_id'] == o) for o in ap)),
+                held_organizations=sum(v['verdict'] == 'STILL_UNCERTAIN' for v in verdicts),
+                held_by_class=dict(Counter(v['hold_class'] for v in verdicts if v['verdict'] == 'STILL_UNCERTAIN')),
+                applied_tiers=dict(Counter(tiers[o] for o in ap)), frame_tiers=dict(Counter(tiers[o] for o in FRAME)),
+                read_basis=dict(Counter(v['read_basis'] for v in verdicts)),
+                live_fetches=len(read(HERE / 'fetches.csv')) if (HERE / 'fetches.csv').exists() else 0)
+
+
+def main():
+    orgs = {r['org_id']: (p, r) for p in shards() for r in read(p)}
+    tiers = {o: orgs[o][1]['verification_tier'] for o in FRAME}
+    inputs = proposals(tiers)
+    evidence = [dict(evidence_id=r['evidence_id'], record_table='organizations', record_id=r['org_id'], claim_type='activity',
+                     claim_detail=f'markets_served {r["value"]}: "{r["quote"]}"', source_class='own_site', source_ref=r['source_url'],
+                     observed_date='2026-11-18', tier_effect=r['tier_effect'], created_by='claude atlas-w18-mktscale',
+                     notes='Own-company source; field witness retained, SHA256 ' + r['raw_sha256']) for r in inputs]
+    if '--packet-only' not in sys.argv:  # packet-only builds the CSVs without touching data/ (used until the size lane's PR has merged)
+        apply(inputs, evidence)
+    verdicts = verdict_rows(inputs)
+    write('inputs.csv', inputs)
+    write('evidence_packet.csv', evidence)
+    write('verdicts.csv', verdicts)
+    counts = counts_for(tiers, inputs, verdicts)
+    (HERE / 'counts.json').write_text(json.dumps(counts, indent=2, sort_keys=True) + '\n')
+    print(json.dumps(counts))
+
+
+if __name__ == '__main__':
+    main()
