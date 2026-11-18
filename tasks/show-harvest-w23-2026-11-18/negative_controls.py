@@ -43,6 +43,12 @@ ok.append(run("hold names another org (Trelleborg -> ORG-003071)", dec([l if l !
 ok.append(run("unknown org_id", dec([l if l != trelleborg else l.replace("ORG-004243", "ORG-999999") for l in dec_lines])))
 ok.append(run("bad year", dec([l if l != trelleborg else l.replace(",2027,Trelleborg", ",27,Trelleborg") for l in dec_lines])))
 ok.append(run("bad role", dec([l if l != trelleborg else l.replace(",exhibitor,2027,Trelleborg", ",attendee,2027,Trelleborg") for l in dec_lines])))
+# agy, third round
+ok.append(run("show_key with a trailing space", dec([l if l != trelleborg else l.replace("exhibition:2027,", "exhibition:2027 ,", 1) for l in dec_lines])))
+ok.append(run("show_key without a year", dec([l if l != trelleborg else l.replace("exhibition:2027,", "exhibition,", 1) for l in dec_lines])))
+ok.append(run("non-ASCII year digits", dec([l if l != trelleborg else l.replace(",2027,Trelleborg", ",٢٠٢٧,Trelleborg") for l in dec_lines])))
+ok.append(run("decision naming an inactive org", dec([l if l != trelleborg else l.replace("ORG-004243", "ORG-002893") for l in dec_lines])))
+ok.append(run("same event, year and name under a second show_key", dec(dec_lines[:i] + [baystar_npe.replace("npe-the-plastics-show:2027", "npe-the-plastics-show:2028", 1)] + dec_lines[i:])))
 
 # row cases (check.py)
 rows = list(csv.DictReader(io.StringIO(orig[PK].decode("utf-8"))))
@@ -58,5 +64,8 @@ ok.append(plant("Blueshift with the phrase only", event_id="EVT-000035", edition
                 notes="Exhibitor name NOT adjudicated the same entity by cross-family review; remains held."))
 ok.append(plant("Baystar in the wrong year", event_id="EVT-000001", edition_year="2024", org_id="ORG-003071", sources=src("Baystar"),
                 notes="matched a trade name, adjudicated the same entity by cross-family review"))
+ok.append(plant("Baystar under a show the decision does not name", event_id="EVT-000001", edition_year="2027", org_id="ORG-003071",
+                sources=src("Baystar"), notes="matched a trade name, adjudicated the same entity by cross-family review; "
+                "list banked in staging (harvest-2026-11, npe-the-plastics-show:2028)."))
 print(f"{sum(ok)} of {len(ok)} negative controls fail check.py as required")
 sys.exit(0 if all(ok) else 1)

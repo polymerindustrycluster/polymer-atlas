@@ -80,8 +80,15 @@ from an evidence packet: the org record and a page excerpt for every row. Both r
   Fixed as one rule, not case by case: `decisions.py`, shared by `build.py` and `check.py`, refuses the whole file on
   any bad row (8 non-empty fields; hold/accept; role; 4-digit year; show_key's series = event_id; a held org; a unique
   key; a hold names the org whose legal name it is, an accept the org whose trade name it is), and every decision binds
-  only its organization. `negative_controls.py` runs all 16 reviewer counterexamples; each fails `check.py`. The data
-  is unchanged.
+  only its organization. The data is unchanged.
+- **Third confirmation (agy REFUTE; codex's run was stopped by the machine's low-memory guard):** show keys were not
+  validated (a trailing space or a missing year passed), the year accepted non-ASCII digits, `check.py` ignored the
+  show key and read inactive organizations. Fixed by the controller directly (same defect class three rounds
+  running): ASCII-only fields, no surrounding spaces, `show_key` of the form `<slug>:<year>`, uniqueness at show and
+  at event grain, active/unknown organizations in both scripts, and `check.py` reads each row's show key from its
+  notes. A hold binds the event whatever show listed the name; an accept binds only its exact show.
+  `negative_controls.py` now runs 22 reviewer counterexamples, and each fails `check.py`. The data is unchanged
+  (rebuilt rows byte-identical to the reviewed fix).
 - **Still held (6):** Blueshift and Cambium (codex: same, citing their legal pages; agy: unsure), Alpek Polyester,
   3A Composites Core Materials, Airtech Advanced Materials Group, Brighton Science (both unsure or split).
 - **Split, kept (2):** agy would also drop "Atomic Industries" and "Fiber Dynamics" for lack of profile text. Codex

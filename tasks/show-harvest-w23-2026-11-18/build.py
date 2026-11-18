@@ -124,6 +124,8 @@ def main():
     drops = {(r["show_key"], r["role"], r["name_sha256_16"]) for r in read(HERE / "controller_drops.csv")}
     by_key, orgs = org_index(data)
     review = decisions.load(HERE / "review_decisions.csv", events, orgs)
+    held = {(d["event_id"], d["role"], d["edition_year"], A.name_key(d["listed_name"]), d["org_id"])
+            for d in review.values() if d["decision"] == "hold"}
     part = read(data / "event_participation.csv")
     have = {(p["event_id"], p["org_id"], p["edition_year"], p["role"]) for p in part}
     nxt = max(int(p["participation_id"][4:]) for p in part) + 1
@@ -172,11 +174,11 @@ def main():
                      else skip.update(["ambiguous name key"]))
                     continue
                 org, kind = next(iter(hits.items()))
+                if (ev, role, yr, A.name_key(name), org) in held:  # a hold binds the event, whatever show listed it
+                    skip["held by the cross-family review (review_decisions.csv)"] += 1; continue
                 decision = review.get((key, role, yr, A.name_key(name)), {})
                 if decision.get("org_id") != org:
-                    decision = {}  # a decision binds only the organization it names
-                if decision.get("decision") == "hold":
-                    skip["held by the cross-family review (review_decisions.csv)"] += 1; continue
+                    decision = {}  # an accept binds only its exact show and the organization it names
                 if abroad and (not iso(c.get("country")) or iso(c["country"]) != iso(orgs[org]["hq_country"])):
                     skip["edition abroad, listed country missing or not the org's HQ country"] += 1; continue
                 accepted = decision["reason"] if kind == "trade" and decision.get("decision") == "accept" else None
