@@ -30,7 +30,9 @@ import yaml
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[1] / "scripts"))
 sys.path.insert(0, str(HERE.parent / "census-gap-people-2026-11-03"))
+sys.path.insert(0, str(HERE))
 import atlas as A  # noqa: E402
+import decisions  # noqa: E402
 from build_integration import append_rows, read  # noqa: E402
 
 BY = "claude-code show-harvest-w23-2026-11-18"
@@ -51,13 +53,9 @@ NOT_EVENT_LISTS = {
     "https://www.blowmoldingdivision.org/corporate-education-sponsors":
         "the SPE Blow Molding Division's 2025 scholarship sponsors, not sponsors of an ABC conference edition",
 }
-# cross-family review of PR #384 (codex + agy, 2026-11-18), keyed by show, role, edition year and listed name:
-# `hold` = a legal-name hit that does not pin one legal entity; `accept` = a trade-name hit both families judged the
-# same entity, valid only for the org_id it names. check.py reads the same file.
-REVIEW = {(r["show_key"], r["role"], r["edition_year"], r["listed_name"]): r
-          for r in csv.DictReader(open(HERE / "review_decisions.csv", encoding="utf-8", newline=""))}
-assert all(None not in r and None not in r.values() and r["decision"] in ("hold", "accept") for r in REVIEW.values()), \
-    "review_decisions.csv: a row is malformed (field count or decision)"
+# The cross-family review of PR #384 (codex + agy, 2026-11-18) lives in review_decisions.csv, loaded and validated by
+# decisions.py (shared with check.py): `hold` = a legal-name hit that does not pin one legal entity, `accept` = a
+# trade-name hit both families judged the same entity. Each applies only to its show, role, year, name AND org.
 REVIEW_NOTES = {
     ("sampe-conference-and-exhibition:2027", "exhibitor", "2027", "Fiber Dynamics"):
         ' Listed in a joint entry, "NIAR | Fiber Dynamics | FILL USA INC".',
@@ -125,6 +123,7 @@ def main():
     # names are stored hashed: a drop can be a person's name, and this repo is public (AGENTS section 6)
     drops = {(r["show_key"], r["role"], r["name_sha256_16"]) for r in read(HERE / "controller_drops.csv")}
     by_key, orgs = org_index(data)
+    review = decisions.load(HERE / "review_decisions.csv", events, orgs)
     part = read(data / "event_participation.csv")
     have = {(p["event_id"], p["org_id"], p["edition_year"], p["role"]) for p in part}
     nxt = max(int(p["participation_id"][4:]) for p in part) + 1
@@ -167,19 +166,20 @@ def main():
                     skip["labelled for a co-located show"] += 1; continue
                 if norm(name) not in raw:
                     skip["name not in the page's visible text (logo alt text or rebuilt)"] += 1; continue
-                decision = REVIEW.get((key, role, yr, name), {})
-                if decision.get("decision") == "hold":
-                    skip["held by the cross-family review (review_decisions.csv)"] += 1; continue
                 hits = by_key.get(A.name_key(name), {})
                 if len(hits) != 1:
                     (leads.append({"show_key": key, "role": role, "year": yr, "name": name}) if not hits
                      else skip.update(["ambiguous name key"]))
                     continue
                 org, kind = next(iter(hits.items()))
+                decision = review.get((key, role, yr, A.name_key(name)), {})
+                if decision.get("org_id") != org:
+                    decision = {}  # a decision binds only the organization it names
+                if decision.get("decision") == "hold":
+                    skip["held by the cross-family review (review_decisions.csv)"] += 1; continue
                 if abroad and (not iso(c.get("country")) or iso(c["country"]) != iso(orgs[org]["hq_country"])):
                     skip["edition abroad, listed country missing or not the org's HQ country"] += 1; continue
-                accepted = decision["reason"] if kind == "trade" and decision.get("decision") == "accept" \
-                    and decision["org_id"] == org else None
+                accepted = decision["reason"] if kind == "trade" and decision.get("decision") == "accept" else None
                 if kind == "trade" and not accepted:
                     holds.append({"show_key": key, "event_id": ev, "edition_year": yr, "role": role,
                                   "listed_name": name, "org_id": org, "legal_name": orgs[org]["legal_name"],

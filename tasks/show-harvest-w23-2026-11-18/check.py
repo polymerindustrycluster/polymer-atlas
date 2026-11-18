@@ -11,7 +11,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(HERE))
 import atlas as A  # noqa: E402
+import decisions  # noqa: E402
 
 BY = "claude-code show-harvest-w23-2026-11-18"
 read = lambda p: list(csv.DictReader(open(p, encoding="utf-8", newline="")))  # noqa: E731
@@ -20,16 +22,18 @@ table = [r for r in read(ROOT / "data" / "event_participation.csv") if r["create
 assert table == packet, f"table has {len(table)} rows of this pass, packet {len(packet)}; they must be identical"
 
 orgs = {o["org_id"]: o for f in (ROOT / "data").glob("organizations_*.csv") for o in read(f)}
-decisions = read(HERE / "review_decisions.csv")
-accepted = {(d["event_id"], d["role"], d["edition_year"], d["listed_name"], d["org_id"])
-            for d in decisions if d["decision"] == "accept"}
-held = {(d["event_id"], d["role"], d["edition_year"], d["listed_name"]) for d in decisions if d["decision"] == "hold"}
+events = {e["event_id"]: e for e in read(ROOT / "data" / "events.csv")}
+review = decisions.load(HERE / "review_decisions.csv", events, orgs).values()  # refuses any malformed row
+# keyed by event, role, year, normalized listed name and org, as build.py applies them
+accepted = {(d["event_id"], d["role"], d["edition_year"], A.name_key(d["listed_name"]), d["org_id"])
+            for d in review if d["decision"] == "accept"}
+held = {(d["event_id"], d["role"], d["edition_year"], A.name_key(d["listed_name"]), d["org_id"])
+        for d in review if d["decision"] == "hold"}
 bad = []
 for r in packet:
     listed, o = re.search(r'listed as "(.*)"\)$', r["sources"]).group(1), orgs[r["org_id"]]
-    k = (r["event_id"], r["role"], r["edition_year"], listed)
-    trades = {A.name_key(t) for t in (o.get("trade_names") or "").split(";") if t.strip()}
-    adjudicated = (k + (r["org_id"],) in accepted and A.name_key(listed) in trades
+    k = (r["event_id"], r["role"], r["edition_year"], A.name_key(listed), r["org_id"])
+    adjudicated = (k in accepted and A.name_key(listed) in decisions.trade_keys(o)
                    and "adjudicated the same entity by cross-family review" in r["notes"])
     if A.name_key(listed) != A.name_key(o["legal_name"]) and not adjudicated:
         bad.append((r["participation_id"], listed, o["legal_name"]))

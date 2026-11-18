@@ -74,6 +74,14 @@ from an evidence packet: the org record and a page excerpt for every row. Both r
   notes (a held Blueshift row with "NOT adjudicated …" in its notes passed). Both now read `review_decisions.csv`
   keyed by event (or show), role, year, name and org; that Blueshift row, a held row and an accepted name in the wrong
   year all fail `check.py`. The rebuilt rows are byte-identical to the reviewed fix.
+- **Second confirmation (agy and codex, both REFUTE):** the decision file itself was not validated. A malformed or
+  duplicate row could be overwritten by a later one, empty fields passed, `event_id` and `show_key` were never
+  cross-checked, holds ignored the organization, and `check.py` compared held names raw instead of normalized.
+  Fixed as one rule, not case by case: `decisions.py`, shared by `build.py` and `check.py`, refuses the whole file on
+  any bad row (8 non-empty fields; hold/accept; role; 4-digit year; show_key's series = event_id; a held org; a unique
+  key; a hold names the org whose legal name it is, an accept the org whose trade name it is), and every decision binds
+  only its organization. `negative_controls.py` runs all 16 reviewer counterexamples; each fails `check.py`. The data
+  is unchanged.
 - **Still held (6):** Blueshift and Cambium (codex: same, citing their legal pages; agy: unsure), Alpek Polyester,
   3A Composites Core Materials, Airtech Advanced Materials Group, Brighton Science (both unsure or split).
 - **Split, kept (2):** agy would also drop "Atomic Industries" and "Fiber Dynamics" for lack of profile text. Codex
