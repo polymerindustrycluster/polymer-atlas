@@ -14,10 +14,10 @@ def read(p): return list(csv.DictReader(Path(p).open(newline='')))
 def evidence_row(i, d):
     return dict(evidence_id=f'EVD-{EV0 + i}', record_table='sites', record_id=d['site_id'], claim_type='scope', claim_detail=f"{d['field']}={d['term']}; quote: {d['quote']}",
                 source_class='own_site', source_ref=d['url'], observed_date='2026-11-16', tier_effect='supports_C' if d['basis'] == 'menu' else 'supports_A', created_by=WHO,
-                notes=f"{d['basis']}; raw SHA256 {d['sha256']}; locality witness on {d['grain_url']}: \"{d['grain_quote']}\"; term appended to a non-blank cell as a union ({d['authority']}); page fetched 2026-11-16.")
+                notes=(f"Same-page sentence carrying the material scope: \"{d['context_quote']}\". " if d['context_quote'] else '') + f"{d['basis']}; raw SHA256 {d['sha256']}; locality witness on {d['grain_url']}: \"{d['grain_quote']}\"; term appended to a non-blank cell as a union ({d['authority']}); page fetched 2026-11-16.")
 def main():
     decisions = read(T / 'decisions.csv')
-    for d in decisions: cap2a.validate_decision(d)
+    for d in decisions: cap2a.validate_decision(d); assert not d['context_quote'] or cap2a.norm(d['context_quote']) in cap2a.norm((cap2a.CORPUS / d['text_file']).read_text()), 'context quote not on the page'
     sites = read(SITES); by = {s['site_id']: s for s in sites}
     ev = read(EVID); have = {r['evidence_id']: r for r in ev}
     new_ev = []

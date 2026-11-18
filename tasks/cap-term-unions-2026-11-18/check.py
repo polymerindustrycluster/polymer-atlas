@@ -33,6 +33,7 @@ def verify(base_sites, sites, base_ev, ev, decisions):
     assert all(int(r['evidence_id'][4:]) in BLOCK for r in added), 'evidence ID outside EVD-396500..396549'
     for d in decisions:
         build.cap2a.validate_decision(d)
+        assert not d['context_quote'] or build.cap2a.norm(d['context_quote']) in build.cap2a.norm((build.cap2a.CORPUS / d['text_file']).read_text()), 'context quote not on the stored page'
         rows = [r for r in added if r['record_id'] == d['site_id'] and r['claim_detail'].startswith(f"{d['field']}={d['term']};")]
         assert len(rows) == 1, f"{d['site_id']} {d['term']}: {len(rows)} new evidence rows (need 1)"
         r = rows[0]; tier = n[d['site_id']]['verification_tier']
@@ -40,7 +41,8 @@ def verify(base_sites, sites, base_ev, ev, decisions):
         assert r['tier_effect'] == ('supports_C' if d['basis'] == 'menu' else 'supports_A'), f"{d['site_id']} {d['term']}: tier_effect does not match basis"
         assert r['tier_effect'] == 'supports_A' or tier == 'C', 'V-25: C-strength evidence on a tier A/B site'
     assert len(added) == len(decisions), 'evidence rows without a decision'
-    return dict(sites_changed=len(changed), terms_appended=len(decisions), evidence_rows_added=len(added))
+    tiers = sorted(n[k]['verification_tier'] for k in changed); strengths = sorted(r['tier_effect'] for r in added)
+    return dict(sites_changed=len(changed), terms_appended=len(decisions), evidence_rows_added=len(added), tiers=''.join(tiers), strengths=','.join(strengths))
 def main():
     decisions = build.read(T / 'decisions.csv')
     # independent count of the input: CAP2A's own verdicts list the held-tag terms; CAP2B's holds list SITE-001986
@@ -55,7 +57,7 @@ def main():
     base_sites, base_ev = base_file('data/sites_OH.csv'), base_file('data/evidence_sites_OH.csv')
     sites, ev = build.read(build.SITES), build.read(build.EVID)
     counts = verify(base_sites, sites, base_ev, ev, decisions); print('PASS', counts)
-    assert counts == dict(sites_changed=8, terms_appended=11, evidence_rows_added=11), counts
+    assert counts == dict(sites_changed=8, terms_appended=11, evidence_rows_added=11, tiers='ABBCCCCC', strengths=','.join(['supports_A'] * 9 + ['supports_C'] * 2)), counts  # README: tiers A 1/B 2/C 5; strength A 9/C 2
     # idempotence: a rebuild leaves both data files byte-identical
     before = [hashlib.sha256(p.read_bytes()).hexdigest() for p in (build.SITES, build.EVID)]; build.main()
     assert before == [hashlib.sha256(p.read_bytes()).hexdigest() for p in (build.SITES, build.EVID)], 'rebuild changed data'
