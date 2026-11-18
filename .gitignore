@@ -2,3 +2,5 @@ build/
 *.db
 __pycache__/
 .DS_Store
+# NCES complete data files for scripts/ipeds_fetch_nces.py (re-downloadable, ~80 MB)
+.cache/
