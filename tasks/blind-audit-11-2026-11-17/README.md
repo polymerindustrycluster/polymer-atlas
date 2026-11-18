@@ -184,8 +184,13 @@ there (R-SAM). `receipts_a.json` and `receipts_b.json` are copies with the URL a
 a private R-SAM host list: fetches that only the UEI no-match explains. The lead's own receipts for those hosts sit in a
 private log, not in `adjudication_receipts.jsonl`. Reviewer B's 13 SAM API call receipts are held privately as well; the
 public `receipts_b.json` keeps one summary entry with their count, status counts and the private file's sha256.
-`adjudication.json` carries no record-level SAM result, only the stratum counts (12 match, 1 no-match); `check.py` fails
-on a SAM URL in any public file (except `sam_batch.py`'s endpoint constant) or on any record-level `sam_result`.
+`adjudication.json` carries no record-level SAM result, only the stratum counts (12 match, 1 no-match), and the lead's
+per-row SAM decisions sit in a private file (`sam_expect_private.json`), not in `adjudicate_build.py`. `check.py` fails on
+a SAM URL in any public file (except `sam_batch.py`'s endpoint constant), on any record-level `sam_result`, and on any
+pairing of a sampled UEI row's identifier (blind ID, record ID, its organization ID or UEI) with a match or no-match word:
+within one line, one JSON object, or one Python dict or comprehension. Planted copies of the old builder lines (whole, the
+comprehension alone, the single row alone), a paired JSON field, the old stratum sentence on a UEI row, and a paired report
+line were all caught.
 
 **Adjudication** (`adjudicate_build.py` → `adjudication.json`). The 22 rows the reviewers did not both grade AGREE, plus
 the 7 band rows both graded AGREE, which the controller asked the lead to check against the owner's PPP ruling:

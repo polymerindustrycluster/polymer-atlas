@@ -10,9 +10,11 @@ Band rows are re-derived condition by condition from git (blank at #348's step p
 single-site Ohio-only PIC-18 organization) and from the fresh SBA PPP extract (borrower name, street, city; JobsReported band).
 R-SAM (controller ruling 2026-11-17): no SAM name or address, and no per-row SAM match detail, enters a committed file. UEI rows
 are decided against the stored SAM response in private/audit11; the per-row facts go to a private note whose sha256 is pinned
-here, and the repo carries only each row's grade.
+here, and the repo carries only each row's grade. The lead's per-row SAM decisions are private too
+(private/audit11/sam_expect_private.json, Codex-21 on bc26e0f): read when present, required with --require-private, otherwise
+the cross-check prints NOT CHECKED.
 Output adjudication.json (committed, with a normalised word excerpt per quote so CI can re-check without the raw bodies).
-Run: python3 adjudicate_build.py"""
+Run: python3 adjudicate_build.py [--require-private]"""
 import csv, functools, hashlib, io, json, re, sys
 from collections import Counter
 from datetime import date
@@ -29,6 +31,7 @@ SAM_FILES = {'sam_uei_raw.json': '7debb1194d275e7e59e8eded2ec2b3a72d695bbcbdcc25
              'sam_uei_raw_page1.json': 'a49df5c8b61a7f1cf66e1ee1e666fa0eccac1a55975f463630cd597e67f9e541'}
 UEI_NOTE = PRIVATE / 'adjudication_uei_private.json'
 UEI_DETAIL = PRIVATE / 'adjudication_uei_detail.json'
+SAM_EXPECT = PRIVATE / 'sam_expect_private.json'  # the lead's per-row SAM decision for the 13 UEI rows (R-SAM)
 SBA = 'https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/'
 PPP_SHA = {SBA + 'public_150k_plus_240930.csv': '3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c',  # #348 source_manifest.json
            SBA + 'public_up_to_150k_9_240930.csv': 'b5d091ac98ee177c1b749159dcbdc37716d8aa10f258dc316bb39b00c7c1d4f9'}
@@ -96,10 +99,10 @@ DECISIONS = [
          key_fact='The value is the owner\'s ruling R-AFFOA (2026-11-16): set polymer_program back to blank until an AFFOA page states a polymer program. Neither reviewer found such a page. That §4.6 lists polymer_program as a MUST boolean is a schema-text question for the owner, not an error in this record (AGENTS §2 rule 9).',
          receipts=[R('git:4182519:tasks/owner-rulings-2026-11-16/README.md', "Ruled (a): clear the flag. Keep the record; set polymer_program back to blank until one of AFFOA's own pages states a polymer or fiber-polymer program", note='owner ruling of record')]),
     # --- UEI links (#355): decided against the stored SAM response; per-row facts are private (R-SAM) ---
-    *[dict(id=i, grade='AGREE', fields='registry_id', sam_expect='match',
-           key_fact='Decided against the stored SAM response; the per-row result is held privately under R-SAM. Stratum result: 12 match, 1 no-match.', receipts=[])
+    *[dict(id=i, grade='AGREE', fields='registry_id',
+           key_fact='Decided against the stored SAM response; the per-row basis is held privately under R-SAM. Stratum counts are in meta.uei_counts.', receipts=[])
       for i in ('A11-033', 'A11-040', 'A11-051', 'A11-052', 'A11-071', 'A11-081', 'A11-083', 'A11-094', 'A11-101', 'A11-103', 'A11-109', 'A11-114')],
-    dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', sam_expect='no_match', current_value='UEI SJZCEMGNC9D1 linked to ORG-000889',
+    dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', current_value='UEI SJZCEMGNC9D1 linked to ORG-000889',
          correct_value='retire UEI link SJZCEMGNC9D1 on ORG-000889',
          key_fact='Retire UEI link SJZCEMGNC9D1 on ORG-000889; basis held privately under R-SAM (see follow-ups 1 and 2).', receipts=[]),
     # --- bands (#348): both AGREE; controller-directed lead check against the "Strict matches" ruling ---
@@ -240,15 +243,19 @@ def sam_facts(orgs, sites, uei_rows, write=True):
     return verdict, text
 
 
-def build():
+def build(require_private=False):
     v = {f: {r['blind_id']: r for r in csv.DictReader((H / f'verdicts_{f}.csv').open(newline=''))} for f in 'ab'}
     sample = {r['blind_id']: r for r in csv.DictReader((H / 'sample.csv').open(newline=''))}
     disputed = {i for i in v['a'] if not (v['a'][i]['verdict'] == v['b'][i]['verdict'] == 'AGREE')}
     lead = {i for i, s in sample.items() if s['change_class'] == LEAD_CHECK_CLASS}
     assert not disputed & lead, 'a band row is disputed: adjudicate it as such, not as a lead check'
     orgs, sites, ev = head_tables()
-    uei = {d['id']: sample[d['id']]['record_id'] for d in DECISIONS if 'sam_expect' in d}
+    uei = {d['id']: sample[d['id']]['record_id'] for d in DECISIONS if sample[d['id']]['change_class'] == 'uei_links'}
     sam, _ = sam_facts(orgs, sites, uei)
+    if require_private or SAM_EXPECT.exists():
+        assert json.loads(SAM_EXPECT.read_text()) == sam, "the lead's private per-row SAM decisions differ from the stored SAM response"
+    else:
+        print('NOT CHECKED: per-row SAM decisions against the private record (sam_expect_private.json absent)')
     out = []
     for d in DECISIONS:
         a, b, s = v['a'][d['id']], v['b'][d['id']], sample[d['id']]
@@ -256,10 +263,10 @@ def build():
         assert d['grade'] in ('AGREE', 'FIELD_ERROR', 'CREATION_ERROR', 'UNRESOLVED') and d['key_fact'].strip()
         assert d['grade'] != 'UNRESOLVED' or d['settling_fact']
         assert d['grade'] not in ('FIELD_ERROR', 'CREATION_ERROR') or ('current_value' in d and 'correct_value' in d)
-        e = {k: x for k, x in d.items() if k not in ('ppp_url', 'sam_expect')}
-        if 'sam_expect' in d:
-            assert sam[d['id']] == d['sam_expect'] and (d['grade'] == 'AGREE') == (d['sam_expect'] == 'match'), f"{d['id']}: SAM facts disagree with the decision"
-            # no record-level SAM result in a public file (Codex-21 finding 2): only the stratum counts in meta
+        e = {k: x for k, x in d.items() if k != 'ppp_url'}
+        if d['id'] in uei:
+            assert (d['grade'] == 'AGREE') == (sam[d['id']] == 'match'), f"{d['id']}: SAM facts disagree with the grade"
+            # no record-level SAM result in a public file (Codex-21): only the stratum counts in meta
         if d.get('lead_check'):
             bf = band_facts(s, d['ppp_url'], orgs, sites, ev)
             assert (d['grade'] == 'AGREE') == all(bf['conditions'].values()), f"{d['id']}: band conditions {bf['conditions']} disagree with the grade"
@@ -274,5 +281,5 @@ def build():
 
 
 if __name__ == '__main__':
-    o = build()
+    o = build('--require-private' in sys.argv)
     print(Counter(e['grade'] for e in o), Counter(e['change_class'] for e in o), sum(len(e['receipts']) for e in o), 'receipts verified')

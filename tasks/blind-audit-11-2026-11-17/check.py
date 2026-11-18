@@ -9,7 +9,7 @@ Run from anywhere: python3 tasks/blind-audit-11-2026-11-17/check.py [--require-p
 Without the private files (raw page bodies, stored SAM response, reviewer originals) the parts that need them are listed as
 NOT CHECKED; --require-private turns any such gap into a failure.
 """
-import copy, csv, hashlib, json, re, sys, tempfile
+import ast, copy, csv, hashlib, json, re, sys, tempfile
 from urllib.parse import urlsplit
 from collections import Counter
 from pathlib import Path
@@ -239,11 +239,44 @@ def rsam_hits(texts, ents):
     return hits
 
 
+RESULT_WORD = re.compile(r'(?<![\w-])(?:no[ _-]?)?match(?![\w-])', re.I)  # a match/no-match result word; 'matcher', 'name_match' are not
+# The old adjudicate_build.py lines 99-104 (bc26e0f), result words as placeholders so this file pairs none: the planted leak.
+OLD_UEI_LINES = """    *[dict(id=i, grade='AGREE', fields='registry_id', sam_expect='{m}',
+           key_fact='Decided against the stored SAM response; the per-row basis is held privately under R-SAM.', receipts=[])
+      for i in ('A11-033', 'A11-040', 'A11-051', 'A11-052', 'A11-071', 'A11-081', 'A11-083', 'A11-094', 'A11-101', 'A11-103', 'A11-109', 'A11-114')],
+""", """    dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', sam_expect='{n}', current_value='UEI SJZCEMGNC9D1 linked to ORG-000889',
+         correct_value='retire UEI link SJZCEMGNC9D1 on ORG-000889',
+         key_fact='Retire UEI link SJZCEMGNC9D1 on ORG-000889; basis held privately under R-SAM (see follow-ups 1 and 2).', receipts=[]),
+"""
+
+
+def uei_id_re():
+    """The identifiers of the 13 sampled UEI rows: blind ID, record ID, and the record ID's organization ID and UEI."""
+    ids = set()
+    for r in read('sample.csv'):
+        if r['change_class'] == 'uei_links':
+            org_id, _, uei, _ = r['record_id'].split('|')
+            ids |= {r['blind_id'], r['record_id'], org_id, uei}
+    return re.compile('|'.join(re.escape(i) for i in sorted(ids, key=len, reverse=True)))
+
+
+def paired(strings, ids):
+    return any(ids.search(s) for s in strings) and any(RESULT_WORD.search(s) for s in strings)
+
+
 def public_leaks(texts):
     """Codex-21 gates: a SAM URL in any public file (the one exception is sam_batch.py's endpoint constant, the code that makes
-    the call), and any record-level sam_result in a public JSON, JSONL or CSV file."""
-    hits = []
+    the call); any record-level sam_result in a public JSON, JSONL or CSV file; and (Codex-21 on bc26e0f) any pairing of a sampled
+    UEI row's identifier with a match/no-match word: within one line of any file, one JSON object (its keys and scalar values),
+    or one dict literal, dict() call or comprehension in Python (its string constants)."""
+    hits, ids = [], uei_id_re()
     for name, t in texts.items():
+        hits += [(name, f'UEI result paired on line {n}') for n, line in enumerate(t.splitlines(), 1) if paired([line], ids)]
+        if name.endswith('.py'):
+            for node in ast.walk(ast.parse(t)):
+                if isinstance(node, (ast.Dict, ast.ListComp, ast.SetComp, ast.GeneratorExp, ast.DictComp)) or (isinstance(node, ast.Call) and getattr(node.func, 'id', '') == 'dict'):
+                    if paired([c.value for c in ast.walk(node) if isinstance(c, ast.Constant) and isinstance(c.value, str)], ids):
+                        hits.append((name, f'UEI result paired in the expression at line {node.lineno}'))
         for m in CV.SAM_URL.finditer(t):
             line = t[t.rfind('\n', 0, m.start()) + 1:t.find('\n', m.start())]
             if not (name == 'sam_batch.py' and line.startswith('URL = ')):
@@ -255,6 +288,7 @@ def public_leaks(texts):
                 x = stack.pop()
                 if isinstance(x, dict):
                     hits += [(name, 'sam_result')] if 'sam_result' in x else []
+                    hits += [(name, f"UEI result paired in object {x.get('id', '')}")] if paired([str(k) for k in x] + [str(v) for v in x.values() if not isinstance(v, (dict, list))], ids) else []
                     stack += list(x.values())
                 elif isinstance(x, list):
                     stack += x
@@ -320,10 +354,26 @@ def check_phase3(require_private):
                   dict(committed, **{'write_report.py': committed['write_report.py'] + '\n# https://sam' + '.gov/entity/X\n'}),
                   dict(committed, **{'adjudication.json': json.dumps(planted_adj)})):
         assert public_leaks(plant), 'public-leak gate missed a planted SAM URL or record-level sam_result'
+    # the old builder lines, whole and in parts (the comprehension pairs only through its ID tuple), and paired JSON and report text
+    marker = '    # --- UEI links (#355)'
+    comp, single = (s.format(m='match', n='no_match') for s in OLD_UEI_LINES)
+    assert committed['adjudicate_build.py'].count(marker) == 1
+    u = sorted(ueis)  # IDs taken from the sample, so this file pairs no ID with a result word
+    pair_adj, prose_adj = json.loads(committed['adjudication.json']), json.loads(committed['adjudication.json'])
+    next(e for e in pair_adj['decisions'] if e['id'] == u[0])['result'] = 'match'
+    next(e for e in prose_adj['decisions'] if e['id'] == u[1])['key_fact'] += ' Stratum result: 12 match, 1 no-match.'
+    for plant, where in [(dict(committed, **{'adjudicate_build.py': committed['adjudicate_build.py'].replace(marker, block + marker)}), 'adjudicate_build.py')
+                         for block in (comp + single, comp, single)] + [(dict(committed, **{'adjudication.json': json.dumps(j, indent=1)}), 'adjudication.json') for j in (pair_adj, prose_adj)] + [
+                         (dict(committed, report=committed['report'] + f'\n| {u[2]} | no-match |\n'), 'report')]:
+        assert any(n == where and 'UEI result paired' in w for n, w in public_leaks(plant)), f'public-leak gate missed a planted UEI result pairing in {where}'
     if all((CV.PRIVATE / n).exists() for n in AB.SAM_FILES):
         verdict, note = AB.sam_facts(orgs, sites, ueis, write=False)
         assert all((e['grade'] == 'AGREE') == (verdict[e['id']] == 'match') for e in adj if e['id'] in ueis), 'UEI grades differ from the stored SAM response'
         assert hashlib.sha256(note.encode()).hexdigest() == doc['meta']['uei_private_note_sha256'], 'private UEI note changed'
+        if AB.SAM_EXPECT.exists():
+            assert json.loads(AB.SAM_EXPECT.read_text()) == verdict, "the lead's private per-row SAM decisions differ from the stored SAM response"
+        else:
+            gaps.append("the lead's private per-row SAM decisions absent: not compared with the stored SAM response")
         ents = AB.sam_entities()
         assert not rsam_hits(committed, ents), f'R-SAM: SAM-only words in committed output: {rsam_hits(committed, ents)}'
         e113 = ents[ueis['A11-113'].split('|')[2]]['coreData']
