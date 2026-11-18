@@ -58,7 +58,7 @@ Classes: `no_market_claim` no customer industry or product market named; `group_
 ## Writes (rule 13) and outcome check
 
 - Only `markets_served` changes, on 22 organization rows, each blank at base: `data/organizations_OH.csv`, `data/organizations_NC.csv`, `data/organizations_TX.csv`. 39 evidence rows appended to the matching `evidence_organizations_*.csv`, IDs EVD-396600 to EVD-396637 of the block 396600-396749, pinned in `selection.tsv` and allocated with `scripts/shard_io.py` `append_sorted`. `check.py` compares every data file with base: nothing else changes.
-- Outcome: pending. `data/` is not written yet: the size lane (PR #383) must merge first (file order), then this branch merges origin/main, runs `build.py`, and records `mkt_unknown` at the merge-base and at HEAD here. Measured dry run of this packet on `e1df30e4` (applied in a temporary commit, `validate.py` 0 errors, full `check.py` PASS with the boundary check, then reset; not committed): `mkt_unknown` 379 to 357, a fall of 22 = the organizations applied; `proc_unknown` 331 and `band_unknown` 445 unchanged.
+- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `0720cc06`: `mkt_unknown=379`. At HEAD: `mkt_unknown=357`. **It fell by exactly 22, the number of organizations applied.** `proc_unknown` and `band_unknown` unchanged.
 
 ## Live fetches (rule 14)
 
