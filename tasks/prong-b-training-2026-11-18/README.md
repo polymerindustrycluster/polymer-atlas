@@ -23,5 +23,5 @@ blank and `admissions_status` is unknown.
 description says "injection molding" but never plastics or polymer, and RJG's site-wide navigation does not count under
 the ruling.
 
-**Already held:** Paulson ProMolder 1 was not in `programs.csv`. Paulson's only existing row is PROG-000302, Paulson
-University Online Training.
+**Duplicate check:** RJG had no program rows. Paulson's only existing row is PROG-000302, Paulson University Online
+Training, which is a different offering.
