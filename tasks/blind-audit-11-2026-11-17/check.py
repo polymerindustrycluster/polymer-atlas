@@ -240,19 +240,23 @@ def rsam_hits(texts, ents):
 
 
 RESULT_WORD = re.compile(r'(?<![\w-])(?:no[ _-]?)?match(?![\w-])', re.I)  # a match/no-match result word; 'matcher', 'name_match' are not
-# The old adjudicate_build.py lines 99-104 (bc26e0f), result words as placeholders so this file pairs none: the planted leak.
+# Test-only identifiers for the planted leaks: none is in the sample (check_phase3 asserts it), so no fixture names a real row.
+SYNTH_BLIND = [f'A11-{n}' for n in range(901, 914)]
+SYNTH_ORG, SYNTH_UEI = 'ORG-999901', 'ZZTESTUEI001'
+SYNTH_IDS = SYNTH_BLIND + [SYNTH_ORG, SYNTH_UEI, f'{SYNTH_ORG}|UEI|{SYNTH_UEI}|']
+# The shape of the old adjudicate_build.py lines 99-104 (bc26e0f) with synthetic IDs, result words as placeholders: the planted leak.
 OLD_UEI_LINES = """    *[dict(id=i, grade='AGREE', fields='registry_id', sam_expect='{m}',
            key_fact='Decided against the stored SAM response; the per-row basis is held privately under R-SAM.', receipts=[])
-      for i in ('A11-033', 'A11-040', 'A11-051', 'A11-052', 'A11-071', 'A11-081', 'A11-083', 'A11-094', 'A11-101', 'A11-103', 'A11-109', 'A11-114')],
-""", """    dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', sam_expect='{n}', current_value='UEI SJZCEMGNC9D1 linked to ORG-000889',
-         correct_value='retire UEI link SJZCEMGNC9D1 on ORG-000889',
-         key_fact='Retire UEI link SJZCEMGNC9D1 on ORG-000889; basis held privately under R-SAM (see follow-ups 1 and 2).', receipts=[]),
+      for i in ('A11-901', 'A11-902', 'A11-903', 'A11-904', 'A11-905', 'A11-906', 'A11-907', 'A11-908', 'A11-909', 'A11-910', 'A11-911', 'A11-912')],
+""", """    dict(id='A11-913', grade='CREATION_ERROR', fields='registry_id', sam_expect='{n}', current_value='UEI ZZTESTUEI001 linked to ORG-999901',
+         correct_value='retire UEI link ZZTESTUEI001 on ORG-999901', key_fact='Retire UEI link ZZTESTUEI001 on ORG-999901.', receipts=[]),
 """
 
 
-def uei_id_re():
-    """The identifiers of the 13 sampled UEI rows: blind ID, record ID, and the record ID's organization ID and UEI."""
-    ids = set()
+def uei_id_re(extra=()):
+    """The identifiers of the 13 sampled UEI rows: blind ID, record ID, and the record ID's organization ID and UEI; plus any
+    test-only identifiers passed in."""
+    ids = set(extra)
     for r in read('sample.csv'):
         if r['change_class'] == 'uei_links':
             org_id, _, uei, _ = r['record_id'].split('|')
@@ -264,12 +268,12 @@ def paired(strings, ids):
     return any(ids.search(s) for s in strings) and any(RESULT_WORD.search(s) for s in strings)
 
 
-def public_leaks(texts):
+def public_leaks(texts, extra_ids=()):
     """Codex-21 gates: a SAM URL in any public file (the one exception is sam_batch.py's endpoint constant, the code that makes
     the call); any record-level sam_result in a public JSON, JSONL or CSV file; and (Codex-21 on bc26e0f) any pairing of a sampled
     UEI row's identifier with a match/no-match word: within one line of any file, one JSON object (its keys and scalar values),
     or one dict literal, dict() call or comprehension in Python (its string constants)."""
-    hits, ids = [], uei_id_re()
+    hits, ids = [], uei_id_re(extra_ids)
     for name, t in texts.items():
         hits += [(name, f'UEI result paired on line {n}') for n, line in enumerate(t.splitlines(), 1) if paired([line], ids)]
         if name.endswith('.py'):
@@ -358,14 +362,16 @@ def check_phase3(require_private):
     marker = '    # --- UEI links (#355)'
     comp, single = (s.format(m='match', n='no_match') for s in OLD_UEI_LINES)
     assert committed['adjudicate_build.py'].count(marker) == 1
-    u = sorted(ueis)  # IDs taken from the sample, so this file pairs no ID with a result word
+    assert not set(SYNTH_IDS) & ({r['blind_id'] for r in sample} | {r['record_id'] for r in sample} | {x for r in sample for x in r['record_id'].split('|')}), 'a test-only ID is a real sampled ID'
     pair_adj, prose_adj = json.loads(committed['adjudication.json']), json.loads(committed['adjudication.json'])
-    next(e for e in pair_adj['decisions'] if e['id'] == u[0])['result'] = 'match'
-    next(e for e in prose_adj['decisions'] if e['id'] == u[1])['key_fact'] += ' Stratum result: 12 match, 1 no-match.'
+    pair_adj['decisions'].append({'id': SYNTH_BLIND[0], 'result': 'match'})
+    prose_adj['decisions'].append({'id': SYNTH_BLIND[1], 'key_fact': 'Stratum result: 12 match, 1 no-match.'})
     for plant, where in [(dict(committed, **{'adjudicate_build.py': committed['adjudicate_build.py'].replace(marker, block + marker)}), 'adjudicate_build.py')
                          for block in (comp + single, comp, single)] + [(dict(committed, **{'adjudication.json': json.dumps(j, indent=1)}), 'adjudication.json') for j in (pair_adj, prose_adj)] + [
-                         (dict(committed, report=committed['report'] + f'\n| {u[2]} | no-match |\n'), 'report')]:
-        assert any(n == where and 'UEI result paired' in w for n, w in public_leaks(plant)), f'public-leak gate missed a planted UEI result pairing in {where}'
+                         (dict(committed, report=committed['report'] + f'\n| {SYNTH_BLIND[2]} | no-match |\n'), 'report')]:
+        assert any(n == where and 'UEI result paired' in w for n, w in public_leaks(plant, SYNTH_IDS)), f'public-leak gate missed a planted UEI result pairing in {where}'
+        assert not public_leaks(plant), f'a planted fixture in {where} names a real UEI row'
+    assert not public_leaks({'check.py': committed['check.py']}, SYNTH_IDS), 'check.py itself pairs an identifier with a result word'
     if all((CV.PRIVATE / n).exists() for n in AB.SAM_FILES):
         verdict, note = AB.sam_facts(orgs, sites, ueis, write=False)
         assert all((e['grade'] == 'AGREE') == (verdict[e['id']] == 'match') for e in adj if e['id'] in ueis), 'UEI grades differ from the stored SAM response'
