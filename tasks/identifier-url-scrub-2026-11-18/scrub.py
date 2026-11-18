@@ -13,8 +13,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = Path(__file__).resolve().parent / "manifest.csv"
-# a URL token (scheme optional) that carries an account; the token runs to the next space, comma or double quote
-TOKEN = re.compile(r"(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?::\d+)?(?:/[^\s,\"]*?)?(?:[?&]u=|/~)[A-Za-z0-9][^\s,\"]*")
+# a URL token (scheme optional) that carries an account; it ends at whitespace, a comma, a quote, a bracket or a backtick,
+# so Markdown prose after `)` is never part of it
+TOKEN = re.compile(r"(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?::\d+)?(?:/[^\s,\"'()<>\[\]`]*?)?(?:[?&]u=|/~)[A-Za-z0-9][^\s,\"'()<>\[\]`]*")
 ACCOUNT = re.compile(r"([?&]u=|/~)([A-Za-z0-9][A-Za-z0-9._%-]*)")
 
 

@@ -36,9 +36,8 @@ main, the owner chose **scrub forward**: redact the tip, and do not rewrite hist
 - Independent check against `099497f`, over every manifest file:
   - the text outside URLs is identical;
   - each JSON file parses, and each CSV keeps its per-record field counts;
-  - no account value from a base URL appears in a URL of the tip, apart from one expected match. `/~<acct>` on one host
-    and the public lab hostname `qwang.engr.tamu.edu` in `people-titles-3-2026-11-06/expected.json` share a value. A lab
-    hostname is a public lab URL and is not an account form under the ruling.
+  - no account value from a base URL appears in a URL of the tip, apart from one expected match: a public lab hostname
+    elsewhere in the same historical file. A lab hostname is a public lab URL and is not an account form under the ruling.
 - `python3 tasks/blind-audit-10-2026-11-14/check.py` passes. With a planted byte change in both blind files, it fails with
   "differs from its recorded scrub".
 
