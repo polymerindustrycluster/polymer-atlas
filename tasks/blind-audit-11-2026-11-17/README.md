@@ -3,15 +3,17 @@
 The owner approved this audit on 2026-11-17. It asks whether the data PRs merged on 2026-11-16 and 2026-11-17 hold up.
 Unlike the PRs blind audit 10 sampled, every one of these passed a two-family refute gate before merge.
 
-The headline will be the design-weighted confirmed-error rate per stratum and overall, set beside blind audit 10's 4.6%.
-That comparison is not like-for-like: about 55% of this frame is archive links, a class A10 did not have (see "Caveats").
+**Result (phase 3):** 118 of 120 sampled record changes agree; 1 field error, 1 creation error, 0 unresolved. Design-weighted,
+the confirmed-error rate is 1.8% overall [0.5%, 6.4%] and 2.9% on the content strata [0.5%, 14.3%], the figure comparable
+with blind audit 10's 4.6%. A10's rate lies inside that interval, so the audit cannot rank the two. The report is
+[`docs/reviews/BLIND_AUDIT_11_2026-11-17.md`](../../docs/reviews/BLIND_AUDIT_11_2026-11-17.md); the two corrections are listed there and not applied.
 
 The machinery is blind audit 10's (`tasks/blind-audit-10-2026-11-14/`), copied and adapted rather than rebuilt.
 
 **Phases:**
-1. Frame, sample and blind inputs. This is the current commit, a draft PR with 0 data rows.
-2. Two blind reviewers, dispatched by the controller outside this branch.
-3. The lead's adjudication, statistics and report (`docs/reviews/BLIND_AUDIT_11_2026-11-17.md`).
+1. Frame, sample and blind inputs (commit `70ee86f`).
+2. Two blind reviewers, dispatched by the controller outside this branch: A = Claude Opus, B = Codex on GPT-6.2 Astra.
+3. The lead's adjudication, statistics and report. The PR changes 0 data rows.
 
 ## Frame
 
@@ -154,6 +156,8 @@ verdict grammar (AGREE / FIELD_ERROR / CREATION_ERROR / UNRESOLVED) and lock pro
   - HigherGov (404). #355's source is the SAM PUBLIC monthly extract,
   `SAM_PUBLIC_MONTHLY_V2_20261101.ZIP`, whose sha256 is in `tasks/sam-uei-links-2026-11-16/README.md`. Unless reviewers
   get a SAM API key or that file, expect UEI rows to come back UNRESOLVED.
+  - *Phase 3:* the controller had the lead make one batched API request after the daily quota reset; both reviewers were
+    told to use the stored response. Reviewer B had locked before it existed.
 
 ## Check
 
@@ -171,10 +175,42 @@ verdict grammar (AGREE / FIELD_ERROR / CREATION_ERROR / UNRESOLVED) and lock pro
 It was also run against injected failures: a wrong published count, a wrong known value, a wrong merge step, and a
 one-byte edit to `blind_b.csv`. All four were caught.
 
+## Phase 3: adjudication, statistics, report
+
+**Reviewer outputs.** `copy_verdicts.py` copied both locked files after checking them against their BOARD lock hashes
+(`locks.json`). The committed `verdicts_a.csv` and `verdicts_b.csv` are LF copies with every free-text cell (field,
+correct_value, source_url, quote, note) blanked on the 13 UEI rows, because reviewer A quoted SAM names and addresses
+there (R-SAM). `receipts_a.json` and `receipts_b.json` are byte copies.
+
+**Adjudication** (`adjudicate_build.py` → `adjudication.json`). The 22 rows the reviewers did not both grade AGREE, plus
+the 7 band rows both graded AGREE, which the controller asked the lead to check against the owner's PPP ruling:
+- Web receipts are fresh raw fetches (`adjudicate_fetch.py`, index in `adjudication_receipts.jsonl`, bodies in the
+  controller's persist dir). Each quote is re-checked as an ordered word sequence; `raw_re` and `raw_not_re` patterns
+  are checked on the raw bytes.
+- The SBA PPP and OSHA ITA files were read whole and hashed (`stream_extract.py`); only the matching rows were kept. Both
+  PPP files match #348's manifest hashes.
+- Each band row's five "Strict matches" conditions are recomputed from git (the value at #348's step parent, the HEAD
+  evidence row, the organization's held sites and PIC-18 county) and from the PPP row.
+- UEI rows are decided against one batched SAM Entity API v3 response (`sam_batch.py`; key sent only as a header, response
+  stored privately with its sha256). The match test: an active registration with the same AGENTS §3 normalized name and the
+  same HQ city and state. Per-row facts go to a private note whose sha256 is pinned in `adjudication.json`; the repo carries
+  only each row's grade.
+
+**Statistics** (`stats.py` → `final_grades.csv`, `statistics.json`): per-stratum Wilson intervals, the overall
+design-weighted rate and the content rate (without archive links, ZIPs and navigation links) at the Kish effective n.
+**Report** (`write_report.py`): rendered deterministically; `check.py` fails if the committed text differs.
+
+**Check, phase 3.** `check.py` also verifies the locks and the redaction rule, the cross-tab (98/18/1/3), adjudication
+coverage, every receipt, the band conditions, the UEI results, final grades, statistics, the report, and an R-SAM scan of
+every committed output for SAM-only names or street lines. Planted defects (an edited report, an unredacted UEI cell, a
+flipped grade, a wrong JobsReported, a truncated census) were all caught. Without the private files (raw bodies, the SAM
+response, the reviewer originals) the affected checks print `NOT CHECKED`; `--require-private` makes that a failure.
+
 ## Caveats
 
 - **Not like-for-like with A10.** A10's frame was people, programs, identifiers and events. This frame is 55% archive
-  links, 12% UEI links and 9% ZIPs, so its overall rate measures a different mix. The per-stratum rates are the comparable
-  figures, and they are imprecise at n = 3.
+  links, 12% UEI links and 9% ZIPs, so its overall rate measures a different mix. The content rate (controller ruling
+  2026-11-17: without archive links, ZIPs and navigation links) is the comparable figure. Per-stratum rates are imprecise
+  at n = 3.
 - **No claim covers records outside the frame.** `frame.csv` does not list everything the PRs touched: evidence-only
   changes and coordinates are out.

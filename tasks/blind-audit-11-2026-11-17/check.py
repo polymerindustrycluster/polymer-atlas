@@ -1,16 +1,26 @@
-"""Named check for blind audit 11, phase 1: frame reproduces from git and reconciles with every PR's published counts, one
-hand-verified known answer per stratum (value at BASE, at HEAD, and at the step that made it), the classifier and leak scan
-catch planted defects, the sample re-draws from the seed, and the blind inputs are identical, frozen and leak-free.
+"""Named check for blind audit 11.
+Phase 1: frame reproduces from git and reconciles with every PR's published counts, one hand-verified known answer per stratum
+(value at BASE, at HEAD, and at the step that made it), the classifier and leak scan catch planted defects, the sample re-draws
+from the seed, and the blind inputs are identical, frozen and leak-free.
+Phase 3: reviewer locks and the R-SAM redaction, cross-tab, adjudication coverage, every receipt, the band rule and UEI results
+recomputed, final grades, statistics and the report regenerated, an R-SAM scan of every committed output, planted defects.
 Adapted from tasks/blind-audit-10-2026-11-14/check.py.
-Run from anywhere: python3 tasks/blind-audit-11-2026-11-17/check.py   (needs full git history: CI validate uses fetch-depth 0)
+Run from anywhere: python3 tasks/blind-audit-11-2026-11-17/check.py [--require-private]   (needs full git history)
+Without the private files (raw page bodies, stored SAM response, reviewer originals) the parts that need them are listed as
+NOT CHECKED; --require-private turns any such gap into a failure.
 """
-import csv, hashlib, json, re, sys
+import copy, csv, hashlib, json, re, sys, tempfile
 from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import adjudicate_build as AB
+import adjudicate_fetch as AF
+import copy_verdicts as CV
 import frame as F
 import sample as S
+import stats as ST
+import write_report as WR
 
 H = F.H
 sha = lambda p: hashlib.sha256((H / p).read_bytes()).hexdigest()
@@ -178,6 +188,142 @@ def check_leak_scan_catches(rows):
     raise AssertionError('header check missed a planted pr column')
 
 
+def verify_receipts(adj, gaps):
+    """Each receipt: on the stored full body when present (hash, quote, absence, raw patterns); otherwise the quote on the committed
+    excerpt only, and every check that needs the body is listed as a gap."""
+    full = 0
+    for e in adj:
+        for r in e['receipts']:
+            assert r['http_status'] == 200 or r['via'] == 'git', f"receipt on a page that did not load: {r['url']}"
+            if r.get('quote'):
+                assert AF.quote_in_order(r['excerpt_words'], r['quote']), f"excerpt lacks quote: {r['url']}"
+            if r['via'] == 'git':
+                _, ref, path = r['url'].split(':', 2)
+                body = F.git('show', f'{ref}:{path}').encode()
+            elif (AF.RAW / f"{r['sha256']}.bin").exists():
+                body = (AF.RAW / f"{r['sha256']}.bin").read_bytes()
+            else:
+                if r.get('absent') or r.get('raw_re') or r.get('raw_not_re') or not r.get('quote'):
+                    gaps.append(f"{e['id']} {r['url']}: stored body absent, raw checks not re-run")
+                continue
+            assert hashlib.sha256(body).hexdigest() == r['sha256'] and len(body) == r['bytes'], f"stored body hash mismatch: {r['url']}"
+            text = AF.visible(body, r['url'])
+            assert not r.get('quote') or AF.quote_in_order(text, r['quote']), f"quote not on stored page: {r['url']}"
+            assert all(not re.search(re.escape(t), text, re.I) for t in r.get('absent', [])), f"absent term present: {r['url']}"
+            assert not r.get('raw_re') or re.search(r['raw_re'].encode(), body), f"raw pattern missing: {r['url']}"
+            assert not r.get('raw_not_re') or not re.search(r['raw_not_re'].encode(), body), f"forbidden raw pattern present: {r['url']}"
+            if r.get('file_sha256'):
+                assert r['url'] not in AB.PPP_SHA or AB.PPP_SHA[r['url']] == r['file_sha256'], f"PPP file is not #348's release: {r['url']}"
+            full += 1
+    return full
+
+
+def rsam_hits(texts, ents):
+    """SAM-only words in committed text: any SAM street line, or any SAM name that is not also an Atlas name of the linked organization."""
+    orgs = {k: r for k, (r, _) in F.load(F.HEAD, F.table_files(F.HEAD)['organizations'], 'organizations').items()}
+    words = {p: ' ' + ' '.join(AF.WORDS(t)) + ' ' for p, t in texts.items()}
+    hits = []
+    for rid in [r['record_id'] for r in read('sample.csv') if r['change_class'] == 'uei_links']:
+        org_id, _, uei, _ = rid.split('|')
+        e, o = ents[uei], orgs[org_id]
+        atlas = {AB.norm(o['legal_name'])} | {AB.norm(t) for t in o['trade_names'].split(';') if t.strip()}
+        bad = [' '.join(AF.WORDS(e['coreData']['physicalAddress']['addressLine1']))]
+        bad += [' '.join(AF.WORDS(e['entityRegistration'].get(k) or '')) for k in ('legalBusinessName', 'dbaName') if AB.norm(e['entityRegistration'].get(k)) not in atlas | {''}]
+        hits += [(p, b) for b in bad if b for p, w in words.items() if f' {b} ' in w]
+    return hits
+
+
+def check_phase3(require_private):
+    gaps = []
+    locks = json.loads((H / 'locks.json').read_text())
+    sample = read('sample.csv')
+    uei_ids = {r['blind_id'] for r in sample if r['change_class'] == 'uei_links'}
+    for k in 'ab':
+        assert locks[k]['locked_sha256'] == CV.LOCKED[k], f'{k}: lock hash in locks.json is not the BOARD lock'
+        assert sha(f'verdicts_{k}.csv') == locks[k]['committed_sha256'] and sha(f'receipts_{k}.json') == locks[k]['receipts_sha256'], f'{k}: committed copy changed'
+        rows = read(f'verdicts_{k}.csv')
+        assert all(not r[c] for r in rows if r['blind_id'] in uei_ids for c in CV.FREE), f'{k}: a UEI row keeps a free-text cell (R-SAM)'
+        orig = CV.PRIVATE / f'out_{k}/verdicts.csv'
+        if orig.exists():
+            assert hashlib.sha256(orig.read_bytes()).hexdigest() == CV.LOCKED[k] and CV.redact(orig.read_bytes()) == (H / f'verdicts_{k}.csv').read_bytes(), f'{k}: committed copy is not the redacted original'
+        else:
+            gaps.append(f'reviewer {k} original absent: lock hash and redaction not re-derived')
+    a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
+    assert len(a) == len(b) == 120 and a.keys() == b.keys() == {r['blind_id'] for r in sample}
+    assert Counter(a.values()) == {'AGREE': 116, 'FIELD_ERROR': 3, 'CREATION_ERROR': 1} and Counter(b.values()) == {'AGREE': 101, 'UNRESOLVED': 19}
+    assert Counter((a[i], b[i]) for i in a) == {('AGREE', 'AGREE'): 98, ('AGREE', 'UNRESOLVED'): 18, ('CREATION_ERROR', 'UNRESOLVED'): 1, ('FIELD_ERROR', 'AGREE'): 3}
+    doc = json.loads((H / 'adjudication.json').read_text())
+    adj = doc['decisions']
+    disputed = {i for i in a if not (a[i] == b[i] == 'AGREE')}
+    bands = {r['blind_id'] for r in sample if r['change_class'] == 'bands'}
+    assert [e['id'] for e in adj if not e.get('lead_check')] and {e['id'] for e in adj if not e.get('lead_check')} == disputed and len(disputed) == 22
+    assert {e['id'] for e in adj if e.get('lead_check')} == bands and len(bands) == 7 and len(adj) == 29, 'adjudication does not cover exactly the disputed rows and the band lead checks'
+    for e in adj:
+        assert e['grade'] in ST.GRADES and e['key_fact'] and (e['grade'] != 'UNRESOLVED' or e['settling_fact'])
+        assert e['grade'] not in ('FIELD_ERROR', 'CREATION_ERROR') or (e['current_value'] and e['correct_value'])
+        assert e['reviewer_a'] == a[e['id']] and e['reviewer_b'] == b[e['id']]
+    full = verify_receipts(adj, gaps)
+    # band rule: recomputed from git, and from the fresh SBA extract when it is present
+    orgs, sites, ev = AB.head_tables()
+    srow = {r['blind_id']: r for r in sample}
+    for e in adj:
+        if e.get('lead_check'):
+            url = e['receipts'][0]['url']
+            have = any((AF.RAW / f"{r['sha256']}.bin").exists() for r in AB.RECEIPTS if r['url'] == url)
+            got = AB.band_facts(srow[e['id']], url, orgs, sites, ev, None if have else e['band_check']['ppp_row'])
+            assert got == e['band_check'] and all(got['conditions'].values()) == (e['grade'] == 'AGREE'), f"{e['id']}: band check differs from recomputation"
+            if not have:
+                gaps.append(f"{e['id']}: SBA extract absent, PPP row taken from the committed copy")
+    # UEI results and the R-SAM scan need the stored SAM response
+    ueis = {e['id']: e['record_id'] for e in adj if 'sam_result' in e}
+    assert set(ueis) == uei_ids and doc['meta']['sam_files_sha256'] == AB.SAM_FILES
+    committed = {p: (H / p).read_text() for p in ('verdicts_a.csv', 'verdicts_b.csv', 'receipts_a.json', 'receipts_b.json', 'adjudication.json', 'statistics.json', 'final_grades.csv', 'README.md')}
+    committed['report'] = WR.OUT.read_text()
+    if all((CV.PRIVATE / n).exists() for n in AB.SAM_FILES):
+        verdict, note = AB.sam_facts(orgs, sites, ueis, write=False)
+        assert all(verdict[i] == e['sam_result'] and (e['grade'] == 'AGREE') == (verdict[i] == 'match') for e in adj if (i := e['id']) in ueis), 'UEI results differ from the stored SAM response'
+        assert hashlib.sha256(note.encode()).hexdigest() == doc['meta']['uei_private_note_sha256'], 'private UEI note changed'
+        ents = AB.sam_entities()
+        assert not rsam_hits(committed, ents), f'R-SAM: SAM-only words in committed output: {rsam_hits(committed, ents)}'
+        planted = dict(committed, report=committed['report'] + ents[ueis['A11-113'].split('|')[2]]['coreData']['physicalAddress']['addressLine1'])
+        assert rsam_hits(planted, ents), 'R-SAM scan missed a planted SAM street line'
+    else:
+        gaps.append('stored SAM response absent: UEI results, private-note hash and R-SAM scan not re-run')
+    # final grades, statistics, report
+    final = ST.final_grades()
+    assert read('final_grades.csv') == [{k: str(v) for k, v in r.items()} for r in final], 'final_grades.csv != recomputation'
+    res = ST.summarize(sample, final)
+    stored = json.loads((H / 'statistics.json').read_text())
+    for k, v in res.items():
+        assert json.loads(json.dumps(v)) == stored[k], f'statistics.json {k} != recomputation'
+    assert stored['final_counts'] == {'AGREE': 118, 'FIELD_ERROR': 1, 'CREATION_ERROR': 1, 'UNRESOLVED': 0} and stored['uei_rows'] == {'AGREE': 12, 'CREATION_ERROR': 1}
+    assert stored['corrections'] == ST.corrections(adj) and len(stored['corrections']) == 2
+    assert ST.wilson(0, 20) == [0, 0.161125] and ST.wilson(20, 20) == [0.838875, 1] and ST.wilson(10, 20) == [0.299298, 0.700702]
+    assert WR.render() == WR.OUT.read_text(), 'docs/reviews report differs from the regenerated text'
+    # planted defects: each must be rejected
+    for bad in (final[:-1], final + [final[0]]):
+        try:
+            ST.summarize(sample, bad)
+        except AssertionError:
+            continue
+        raise AssertionError('summarize accepted an incomplete or duplicated verdict census')
+    real = AF.RAW
+    AF.RAW = Path(tempfile.mkdtemp())
+    try:
+        g = []
+        verify_receipts(adj, g)
+        assert g, 'receipts with raw checks passed without any stored body'
+    finally:
+        AF.RAW = real
+    e0 = copy.deepcopy(next(e for e in adj if e['id'] == 'A11-098'))
+    e0['band_check']['ppp_row']['JobsReported'] = '60'
+    assert AB.band_facts(srow['A11-098'], e0['receipts'][0]['url'], orgs, sites, ev, e0['band_check']['ppp_row'])['conditions']['band_equals_jobs_reported_band'] is False, 'band check accepted a wrong JobsReported'
+    assert not AF.quote_in_order('nothing relevant', adj[0]['receipts'][0]['quote']), 'excerpt check accepted a quote that is not there'
+    if gaps and require_private:
+        raise AssertionError('NOT CHECKED with --require-private: ' + '; '.join(gaps))
+    return full, gaps, stored
+
+
 if __name__ == '__main__':
     frame, prov = check_frame()
     known_answers(frame)
@@ -187,3 +333,8 @@ if __name__ == '__main__':
     print(f"PASS blind-audit-11 phase 1: {len(frame)} frame record changes {prov['frame_by_class']}; published counts reconcile for {len(PUBLISHED)} "
           f"(PR, table, class) pairs + cells for #343/#347/#350; {len(KNOWN)} known answers ({len(F.CLASSES)} strata); sample {len(sample)} re-draws; "
           f"blind files identical, frozen, leak-free; planted defects caught")
+    full, gaps, st = check_phase3('--require-private' in sys.argv)
+    print(f"PASS blind-audit-11 phase 3: locks and R-SAM redaction, cross-tab 98/18/1/3, 29 adjudications (22 disputed + 7 band lead checks), "
+          f"{full} receipts re-verified on stored bodies, band rule and UEI results recomputed, final grades {st['final_counts']}, statistics and report regenerate identically, planted defects rejected")
+    for g in gaps:
+        print('NOT CHECKED:', g)
