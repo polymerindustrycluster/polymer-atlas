@@ -583,15 +583,15 @@ for _p in sorted(DATA.glob("*.csv")):
 for r in people:
     if "@" in (r.get("public_profile_url") or ""):
         debt("V-51", r["person_id"].strip(), f"{r['person_id'].strip()} public_profile_url contains an email-like string (AGENTS.md §6)")
-# V-62 [v1.13.4, owner rulings 2026-11-18 items 1 and 1b]: no personal-account identifier URL in a people row
-# (`?u=<network id>` or `/~<account>`), in public_profile_url, lab_url or sources. Errors on any row, no baseline;
+# V-62 [v1.13.4, widened v1.15 by owner rulings 2026-11-18b item 3]: no personal-account identifier URL in a people row
+# (`?u=<network id>`, `?unid=<id>`, `/~<account>` or researchdirectory.uc.edu/p/<shortname>), in public_profile_url, lab_url or sources. Errors on any row, no baseline;
 # evidence_people is out of scope (its old rows are append-only, SCHEMA 4.13). Each URL token is parsed with urlsplit,
 # not matched by regex (scripts/people_url.py): query parameter `u`, path segment `~`+alnum, fragment ignored.
 from people_url import has_account_identifier
 for r in people:
     for col in ("public_profile_url", "lab_url", "sources"):
         if has_account_identifier(r.get(col) or ""):
-            errors.append(f"{r['person_id'].strip()} {col} carries a personal-account identifier URL (?u= or /~; V-62, owner rulings 2026-11-18)")
+            errors.append(f"{r['person_id'].strip()} {col} carries a personal-account identifier URL (?u=, ?unid=, /~ or researchdirectory.uc.edu/p/; V-62, owner rulings 2026-11-18 and 2026-11-18b)")
 # V-60 [2026-11-09]: an evidence row never cites a licensed publication (AGENTS.md §5: leads only). Rows that did
 # before the rule are grandfathered; each is answered by a later public-source row (append-only, SCHEMA §4.13).
 LICENSED_SOURCE = re.compile(r"plasticsnews\.com|rubbernews\.com|dnb\.com|zoominfo\.com|data-axle\.com|dataaxle\.com", re.I)
@@ -822,9 +822,15 @@ for i, r in enumerate(eco, 2):
         warnings.append(f"ecosystem.csv:{i} {oid} claims a polymer program with no program rows — un-decomposed claim (V-16)")
 
 # V-11: people
+def _iso_ok(d):
+    try:
+        datetime.strptime(d, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
 PEOPLE_FIELDS = ["person_id", "full_name", "institution_org_id", "program_org_id", "role",
                  "role_as_published", "research_specialties", "public_profile_url", "lab_url", "sources",
-                 "verification_tier", "last_verified"]
+                 "verification_tier", "last_verified", "status", "status_date"]
 if people_fields != PEOPLE_FIELDS:
     errors.append(f"people.csv: header must be exactly the §4.9 field set, got {people_fields}")
 for col in people_fields:
@@ -856,6 +862,17 @@ for i, r in enumerate(people, 2):
         errors.append(f"people.csv:{i} {pid} bad verification_tier")
     if (r.get("verification_tier") or "").strip() in {"A", "B"} and not (r.get("last_verified") or "").strip():
         errors.append(f"people.csv:{i} {pid} tier A/B without last_verified")
+    # V-64 [v1.15, owner ruling 2026-11-18b item 6]: status is blank (not recorded) or active|deceased with an ISO status_date;
+    # status_date is the date the source states (a death date for `deceased`); deceased also needs an evidence_people row for the
+    # person observed on or after status_date (the source is read after the event). Blank never means active.
+    st, sd = (r.get("status") or "").strip(), (r.get("status_date") or "").strip()
+    if st or sd:
+        if st not in {"active", "deceased"}:
+            errors.append(f"people.csv:{i} {pid} status {st!r} not active|deceased (V-64)")
+        elif not re.fullmatch(r"\d{4}-\d{2}-\d{2}", sd) or not _iso_ok(sd):
+            errors.append(f"people.csv:{i} {pid} status {st} without a valid ISO status_date (V-64)")
+        elif st == "deceased" and not any(e["record_id"].strip() == pid and (e.get("observed_date") or "") and e["observed_date"].strip() >= sd for e in evidence if e.get("record_table") == "people"):
+            errors.append(f"people.csv:{i} {pid} deceased with no evidence_people row observed on or after status_date {sd} (V-64)")
 
 
 # V-17..V-21 [v1.5]: events layer (SCHEMA §4.12)

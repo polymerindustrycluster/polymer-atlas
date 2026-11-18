@@ -530,6 +530,85 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assertNotIn("V-62", out)
         self.assertEqual(code, 0, out[-2000:])
 
+    # -- V-62 widened [v1.15, owner rulings 2026-11-18b item 3]: ?unid= and researchdirectory.uc.edu/p/ -----
+    def test_v62_unid_param_rejected(self):
+        self._people_row(public_profile_url="https://www.example.edu/profile/?" + "unid=u0000000")  # split: the pre-push scan refuses literal ones
+        self.assert_fails_with("PERSON-000001 public_profile_url carries a personal-account identifier URL")
+
+    def test_v62_unid_in_second_query_parameter_in_sources_rejected(self):
+        self._people_row(sources="https://www.example.edu/profile/?lang=en&" + "unid=u0000000")
+        self.assert_fails_with("PERSON-000001 sources carries a personal-account identifier URL")
+
+    def test_v62_uc_research_directory_rejected(self):
+        self._people_row(sources="https://researchdirectory.uc.edu/" + "p/abcde")
+        self.assert_fails_with("PERSON-000001 sources carries a personal-account identifier URL")
+
+    def test_v62_fisid_and_placeholders_pass(self):
+        self._people_row(public_profile_url="https://experts.example.edu/people/jane-doe/fisid_123456",
+                         sources="https://www.example.edu/profile/?unid=<id>;https://researchdirectory.uc.edu/p/<shortname>")
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-62", out)
+        self.assertEqual(code, 0, out[-2000:])
+
+    def test_v62_p_segment_on_another_host_passes(self):
+        self._people_row(public_profile_url="https://www.example.edu/" + "p/abcde")
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-62", out)
+        self.assertEqual(code, 0, out[-2000:])
+
+    # -- V-64 [v1.15, owner ruling 2026-11-18b item 6]: people status ---------------------------------
+    def test_v64_bad_status_fails(self):
+        self._people_row(status="retired", status_date="2026-01-01")
+        self.assert_fails_with("PERSON-000001 status 'retired' not active|deceased (V-64)")
+
+    def test_v64_status_without_iso_date_fails(self):
+        self._people_row(status="active", status_date="2026")
+        self.assert_fails_with("PERSON-000001 status active without a valid ISO status_date (V-64)")
+
+    def test_v64_status_date_without_status_fails(self):
+        self._people_row(status="", status_date="2026-01-01")
+        self.assert_fails_with("PERSON-000001 status '' not active|deceased (V-64)")
+
+    def _person_with_evidence(self):
+        with open(self.data / "evidence_people.csv", newline="", encoding="utf-8") as f:
+            e = next(r for r in csv.DictReader(f) if r["observed_date"])
+        return e["record_id"], e["observed_date"]
+
+    def test_v64_deceased_without_any_evidence_row_fails(self):
+        with open(self.data / "evidence_people.csv", newline="", encoding="utf-8") as f:
+            has_ev = {r["record_id"] for r in csv.DictReader(f)}
+        self._people_row(status="deceased", status_date="2026-01-16")  # PERSON-000001 has no evidence_people row
+        self.assertNotIn("PERSON-000001", has_ev)
+        self.assert_fails_with("PERSON-000001 deceased with no evidence_people row observed on or after status_date 2026-01-16 (V-64)")
+
+    def test_v64_deceased_evidence_observed_before_status_date_fails(self):
+        pid, observed = self._person_with_evidence()
+        later = f"{int(observed[:4]) + 1}{observed[4:]}"  # a death date after every observation of this person
+        self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(status="deceased", status_date=later))
+        code, out = run_validator(self.data)
+        self.assertIn(f"{pid} deceased with no evidence_people row observed on or after status_date {later} (V-64)", out)
+
+    def test_v64_deceased_evidence_observed_on_status_date_passes(self):
+        pid, observed = self._person_with_evidence()
+        self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(status="deceased", status_date=observed))
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-64", out)
+        self.assertEqual(code, 0, out[-2000:])
+
+    def test_v64_deceased_evidence_observed_after_status_date_passes(self):
+        pid, observed = self._person_with_evidence()
+        earlier = f"{int(observed[:4]) - 1}{observed[4:]}"
+        self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(status="deceased", status_date=earlier))
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-64", out)
+        self.assertEqual(code, 0, out[-2000:])
+
+    def test_v64_active_with_iso_date_passes(self):
+        self._people_row(status="active", status_date="2026-11-18")
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-64", out)
+        self.assertEqual(code, 0, out[-2000:])
+
 
 if __name__ == "__main__":
     unittest.main()

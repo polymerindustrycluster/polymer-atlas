@@ -1,9 +1,12 @@
-"""Personal-account identifier test for people-row URL cells (SCHEMA v1.13.4, V-62). Shared by validate.py and the
+"""Personal-account identifier test for people-row URL cells (SCHEMA v1.13.4, widened at v1.15; V-62). Shared by validate.py and the
 people-identifier-urls task checker, so both read a URL the same way.
 
 Each whitespace/`;`/`,`/quote-separated token is parsed with urlsplit ("//" prefixed when there is no scheme). A token
-is an account URL when its host has a dot and either a query parameter named `u` has a value starting with a letter or
-digit (any position) or a path segment starts with `~` plus a letter or digit. The fragment is ignored.
+is an account URL when its host has a dot and one of: a query parameter named `u` or `unid` has a value starting with a
+letter or digit (any position); a path segment starts with `~` plus a letter or digit; on researchdirectory.uc.edu a path
+segment `p` is followed by a segment starting with a letter or digit (owner rulings 2026-11-18b item 3). The fragment is
+ignored. Placeholders (`unid=<id>`, `/p/<shortname>`) start with `<` and pass; `fisid_<id>` is a directory record number
+and is not matched.
 """
 import re
 from urllib.parse import parse_qsl, unquote, urlsplit
@@ -22,9 +25,12 @@ def url_has_account(token):
         return True
     if "." not in host:
         return False
-    if any(k == "u" and _ALNUM.match(v) for k, v in query):
+    if any(k in ("u", "unid") and _ALNUM.match(v) for k, v in query):
         return True
-    return any(seg.startswith("~") and _ALNUM.match(seg[1:2]) for seg in unquote(parts.path).split("/"))
+    segs = unquote(parts.path).split("/")
+    if host.lower().endswith("researchdirectory.uc.edu") and any(a == "p" and _ALNUM.match(b[:1]) for a, b in zip(segs, segs[1:])):
+        return True
+    return any(seg.startswith("~") and _ALNUM.match(seg[1:2]) for seg in segs)
 
 
 def has_account_identifier(cell):
