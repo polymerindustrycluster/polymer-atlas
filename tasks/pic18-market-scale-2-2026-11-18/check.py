@@ -20,12 +20,12 @@ from build import (HERE, ROOT, MKT3, CORPUS, LIVE, SNAPSHOT, BASE, FIRST_ID, LAS
 # medical_device covers implants, stents and thrombectomy systems by meaning (the canary's Theken precedent); plastics_rubber_processors covers
 # the rotomolding and molders' industries (rotational molding and injection molding are plastics processes).
 WORDS = {
-    'aerospace_defense': r'aerospace|aviation|defen[cs]e|military|aircraft', 'automotive_unspecified': r'automotive', 'automotive_aftermarket': r'after ?market',
-    'electronics_electrical': r'electronic|electrical', 'medical_healthcare_general': r'medical|health ?care', 'medical_device': r'medical device|implant|stent|thrombectomy',
+    'aerospace_defense': r'aerospace|aviation|defen[cs]e|military|aircraft|armed forces', 'automotive_unspecified': r'automotive', 'automotive_oem': r'\boem\b|tier ?[1i]\b|original equipment', 'automotive_aftermarket': r'after ?market',
+    'electronics_electrical': r'electronic|electrical', 'medical_healthcare_general': r'medical|health ?care|doctors', 'medical_device': r'medical device|implant|stent|thrombectomy|fda[- ]approved|physicians during procedures',
     'pharmaceutical_biotech': r'pharmaceutical', 'construction_building_products': r'construction|building', 'energy_oil_gas': r'oil and gas|petroleum',
-    'marine': r'marine|boat', 'chemical_mining_metals_processing': r'chemical|mining', 'rail_transportation': r'\brail\b', 'agriculture': r'agricult|farm',
+    'marine': r'marine|boat', 'chemical_mining_metals_processing': r'chemical|mining|metal ?forming|metal forging', 'water_wastewater': r'wastewater', 'industrial_machinery': r'manufacturing machinery|machine manufacturers|production equipment', 'rail_transportation': r'\brail\b', 'agriculture': r'agricult|farm',
     'general_industrial': r'industrial', 'food_processing_foodservice': r'food processing|food ?service|catering', 'plastics_rubber_processors': r'plastic|rubber|rotomold|molders',
-    'telecom_datacom': r'telecom', 'dental': r'dentist|dental', 'toys_sporting_goods': r'toys|sporting|sports', 'lawn_garden_recreation': r'\blawn\b', 'tire_rubber_goods': r'\btire', 'appliances': r'appliance', 'consumer_goods_housewares': r'housewares|household', 'energy_renewables_battery': r'batter(y|ies)', 'rv_powersports_trailers': r'\brv\b'
+    'telecom_datacom': r'telecom', 'dental': r'dentist|dental|denture', 'toys_sporting_goods': r'toys|sporting|sports', 'lawn_garden_recreation': r'\blawn\b', 'tire_rubber_goods': r'\btire', 'appliances': r'appliance', 'consumer_goods_housewares': r'housewares|household', 'energy_renewables_battery': r'batter(y|ies)', 'rv_powersports_trailers': r'\brv\b'
 }
 HOLD_CLASSES = {'no_market_claim', 'scope_owner_ruling', 'no_vocab_market', 'off_vocabulary_or_ambiguous_market', 'menu_or_nav_only', 'group_or_redirect_attribution', 'list_item_only'}
 READ_BASES = {'page_read', 'text_screened'}
@@ -57,6 +57,8 @@ def verify_frame(frame_all, frame):
     assert frame == (frame_all[:BATCH_SIZE] if BATCH == 1 else frame_all[BATCH_SIZE:] + RESCREEN) and not set(frame) & set(F.CANARY), 'batch slice'
     assert len(frame) == (BATCH_SIZE if BATCH == 1 else F.EXPECTED - BATCH_SIZE + len(RESCREEN)), 'batch size'
     assert set(RESCREEN) <= set(frame_all[:BATCH_SIZE]) and len(RESCREEN) == len(set(RESCREEN)) == 5, 'rescreen organizations must be batch 1 frame organizations'
+    prior = {r['org_id']: r for r in read(ROOT / 'tasks/pic18-market-scale-1-2026-11-18/verdicts.csv')}
+    assert set(RESCREEN) == {o for o, r in prior.items() if r['verdict'] == 'STILL_UNCERTAIN' and r['hold_class'] == 'list_item_only'}, 'rescreen set differs from batch 1 list_item_only holds'
 
 
 def verify(inputs, verdicts, frame_all=None, frame=None):
@@ -76,8 +78,12 @@ def verify(inputs, verdicts, frame_all=None, frame=None):
     retired = {r['evidence_id'] for r in read(HERE / 'withdrawn.csv')}
     assert not retired & {r['evidence_id'] for r in inputs}, 'retired evidence ID reused'
     assert all(f'EVD-{FIRST_ID:06d}' <= i <= f'EVD-{LAST_ID}' for i in retired), 'retired ID outside the block'
+    base_max = max(r['evidence_id'] for n in subprocess.check_output(['git', 'ls-tree', '--name-only', BASE, 'data/'], cwd=ROOT, text=True).split()
+                   if re.fullmatch(r'data/evidence_[A-Za-z_]+\.csv', n) for r in git_rows(n))
+    assert min((r['evidence_id'] for r in inputs), default='EVD-999999') > base_max, ('new evidence ID not above the merge-base maximum', base_max)
     seen = set()
     for r in inputs:
+        assert not (r['value'] == 'automotive_unspecified' and re.search(WORDS['automotive_oem'], r['quote'], re.I)), 'automotive_unspecified on OEM or Tier 1 wording'
         key = (r['org_id'], r['value'])
         assert key not in seen, 'duplicate proposal'
         seen.add(key)
@@ -217,6 +223,38 @@ def builder_tests(inputs, evidence):
             B.apply(inputs, evidence)  # replay is a no-op
             assert all(not (root / 'data' / n).with_name(n + '.tmp').exists() for n in names), 'temp sibling left behind'
             print('REFUSED: interrupted write leaves shards intact; retry and replay succeed')
+            reset()
+            B.apply(inputs, evidence)
+            final = snapshot()
+            by_org = {}
+            for e in evidence:
+                by_org.setdefault(e['record_id'], set()).add(e['evidence_id'])
+            real_replace = B.os.replace
+            for k in range(1, len(names) + 1):  # interrupt at every canonical replacement: no cell may be published without its evidence rows
+                reset()
+                calls = []
+
+                def cut_replace(src, dst, _k=k):
+                    calls.append(dst)
+                    if len(calls) == _k:
+                        raise OSError('interrupted between replacements')
+                    return real_replace(src, dst)
+                try:
+                    with patch.object(B.os, 'replace', cut_replace):
+                        B.apply(inputs, evidence)
+                except OSError:
+                    pass
+                else:
+                    raise AssertionError('silent pass: interruption at replacement %d' % k)
+                have = {r['evidence_id'] for n in names if n.startswith('evidence_') for r in read(root / 'data' / n)}
+                for n in names:
+                    if n.startswith('organizations_'):
+                        for r in read(root / 'data' / n):
+                            if r['org_id'] in by_org and r['markets_served']:
+                                assert by_org[r['org_id']] <= have, ('a market cell was published without its evidence rows', r['org_id'], k)
+                B.apply(inputs, evidence)  # retry
+                assert snapshot() == final, 'retry after an interruption did not reproduce the canonical shards'
+            print('REFUSED: interruption between canonical replacements (every position): no cell without its evidence rows; retry reproduces the shards')
             reset(preoccupy=evidence[0]['evidence_id'])
             before = snapshot()
             try:
@@ -269,6 +307,8 @@ def main():
         ('text digest of the wrong bytes', 'text hash mismatch', lambda i, v: i[0].update(text_sha256='f' * 64)),
         ('tampered verdict value', 'verdict values differ', lambda i, v: next(x for x in v if x['org_id'] == first).update(values='aerospace_defense;marine')),
         ('value on a hold', 'verdict values differ', lambda i, v: held(v).update(values='aerospace_defense')),
+        ('automotive_unspecified on OEM wording', 'automotive_unspecified on OEM', lambda i, v: next(x for x in i if re.search(WORDS['automotive_oem'], x['quote'], re.I)).update(value='automotive_unspecified')),
+        ('new evidence ID not above the merge-base maximum', 'not above the merge-base maximum', lambda i, v: i[0].update(evidence_id='EVD-000001')),
         ('read basis missing', 'read basis missing', lambda i, v: v[0].update(read_basis='')),
         ('wrong tier effect for the record tier', 'strength', lambda i, v: i[0].update(tier_effect='supports_C' if i[0]['tier_effect'] == 'supports_A' else 'supports_A')),
     ]
@@ -297,6 +337,17 @@ def main():
             print('REFUSED:', name)
         else:
             raise AssertionError('silent pass: ' + name)
+    sub = ['ORG-000036' if x == 'ORG-000229' else x for x in RESCREEN]
+    verdicts_sub = copy.deepcopy(verdicts)
+    next(r for r in verdicts_sub if r['org_id'] == 'ORG-000229')['org_id'] = 'ORG-000036'
+    with patch(__name__ + '.RESCREEN', sub):
+        try:
+            verify(inputs, verdicts_sub, frame=FRAME_ALL[96:] + sub)
+        except AssertionError as e:
+            assert 'rescreen set differs' in str(e), str(e)
+            print('REFUSED: re-screen substitution (a batch-1 hold of another class in place of a list_item_only hold)')
+        else:
+            raise AssertionError('silent pass: re-screen substitution')
     base = base_orgs()
     attribution = [  # records patched in memory: a parent on the source domain; a different record website; a carbon or do-not-promote note
         ('group domain witness', 'group domain witness', lambda b, o: b[o].update(parent_org_id='ORG-PARENT') or b.update({'ORG-PARENT': dict(b[o], website=b[o]['website'])})),

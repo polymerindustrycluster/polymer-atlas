@@ -1,15 +1,15 @@
 {
   "applied_by_source": {
     "live": 2,
-    "stored": 28
+    "stored": 33
   },
-  "applied_organizations": 30,
+  "applied_organizations": 35,
   "applied_tiers": {
-    "A": 8,
-    "B": 17,
+    "A": 9,
+    "B": 21,
     "C": 5
   },
-  "applied_values": 54,
+  "applied_values": 66,
   "batch": 2,
   "frame_organizations": 100,
   "frame_pool_at_ref": 197,
@@ -23,14 +23,14 @@
     "list_item_only": 7,
     "menu_or_nav_only": 2,
     "no_market_claim": 38,
-    "no_vocab_market": 4,
-    "off_vocabulary_or_ambiguous_market": 11,
+    "no_vocab_market": 3,
+    "off_vocabulary_or_ambiguous_market": 7,
     "scope_owner_ruling": 1
   },
-  "held_organizations": 70,
+  "held_organizations": 65,
   "live_fetches": 6,
   "read_basis": {
-    "page_read": 39,
-    "text_screened": 61
+    "page_read": 44,
+    "text_screened": 56
   }
 }

@@ -115,7 +115,7 @@ def apply(inputs, evidence):
         if row['markets_served'] != expected:
             row['markets_served'] = expected
             touched[path] = rows[path]
-    backup = LIVE / 'pre-application'
+    backup = LIVE / f'pre-application-batch{BATCH}'  # per batch: the backup is this batch's own base, never an older batch's
     backup.mkdir(parents=True, exist_ok=True)
     for path in set(touched) | set(add):
         if not (backup / path.name).exists():
@@ -143,8 +143,9 @@ def apply(inputs, evidence):
         append_sorted(tmp, evs, 'evidence_id')
         assert len(read(tmp)) == base_count(path) + packet_rows[path.name], ('evidence row count differs from base + packet rows', path.name)
         staged[path] = tmp
-    for path, tmp in staged.items():
-        os.replace(tmp, path)
+    # Publish the evidence shards first, then the organization shards: an interruption can leave evidence rows without a cell, never a cell without its rows.
+    for path in sorted(staged, key=lambda p: (not p.name.startswith('evidence_'), p.name)):
+        os.replace(staged[path], path)
 
 
 def verdict_rows(inputs):
