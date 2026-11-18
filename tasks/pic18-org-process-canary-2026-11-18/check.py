@@ -47,6 +47,19 @@ def load_sites(root_dir):
     return {r["site_id"]: r for f in sorted(Path(root_dir).glob("sites_*.csv")) for r in build.read(f)}
 
 
+def check_verdicts(verdicts, claims, holds):
+    """Every frame ID has exactly one verdict; VERIFIED iff it has claims; a held verdict matches holds.csv."""
+    ids = [v["org_id"] for v in verdicts]
+    assert sorted(ids) == sorted(build.ORGS), f"verdicts do not cover the frame exactly once: {sorted(set(build.ORGS) ^ set(ids)) or 'duplicate id'}"
+    hd = {h["org_id"]: h for h in holds}
+    assert sorted(hd) == sorted(build.ORGS), "holds.csv does not cover the frame exactly once"
+    for v in verdicts:
+        o = v["org_id"]; terms = ";".join(sorted(c["term"] for c in claims if c["org_id"] == o))
+        assert v["stratum"] == build.STRATUM[o] and v["terms"] == terms, f"{o}: stratum or terms disagree with the frame and claims"
+        if terms: assert v["verdict"] == "VERIFIED" and not v["hold_reason"] and not v["settling_fact"], f"{o}: claims but not a clean VERIFIED"
+        else: assert v["verdict"] == "STILL_UNCERTAIN" and v["hold_reason"] == hd[o]["reason"] and v["settling_fact"] == hd[o]["settling_fact"], f"{o}: held verdict does not match holds.csv"
+
+
 def check_evidence(ev_rows, claims):
     block = [r for r in ev_rows if r["evidence_id"].startswith("EVD-396")]
     assert all(build.EVD_LO <= int(r["evidence_id"][4:]) <= build.EVD_HI for r in block), "evidence id outside EVD-396000..396099"
@@ -76,6 +89,15 @@ def selftest(pages):
     fails("supports_C on tier B", lambda: validate_claims([{**ctrl, "strength": "supports_C"}], pages))
     fails("page hash mismatch", lambda: validate_claims([ctrl], [{**p, "sha_ok": False} for p in pages]))
     fails("org outside frame", lambda: validate_claims([{**ctrl, "org_id": "ORG-000001"}], pages, {"ORG-000001": "A"}))
+    hold_rows = build.read(HERE / "holds.csv"); ver = build.read(HERE / "verdicts.csv")
+    check_verdicts(ver, [], hold_rows)
+    fails("held verdict missing", lambda: check_verdicts(ver[:-1], [], hold_rows))
+    fails("verdict duplicated", lambda: check_verdicts(ver[:-1] + [ver[0]], [], hold_rows))
+    fails("held verdict differs from holds.csv", lambda: check_verdicts([{**ver[0], "settling_fact": "x"}] + ver[1:], [], hold_rows))
+    with tempfile.TemporaryDirectory() as d:  # image bodies are not pages
+        g = Path(d) / "a.txt"; g.write_bytes(b"GIF89a\x01\x00"); assert build.is_image(g)
+        g.write_bytes(b"\x89PNG\r\n\x1a\n"); assert build.is_image(g)
+        g.write_text("Our extrusion capabilities"); assert not build.is_image(g)
     with tempfile.TemporaryDirectory() as d:  # the writer, on a copy
         d = Path(d)
         for n in (build.ORG_SHARD, build.EVD_SHARD): shutil.copy(ROOT / "data" / n, d / n)
@@ -99,23 +121,25 @@ def main():
     base, base_o, base_s, _ = base_data()
     head_o = build.read(ROOT / "data" / build.ORG_SHARD)
     validate_claims(claims, pages)
+    check_verdicts(verdicts, claims, build.read(HERE / "holds.csv"))
     applied = check_diff(base_o, head_o, base_s, load_sites(ROOT / "data"))
     n_ev = check_evidence(build.read(ROOT / "data" / build.EVD_SHARD), claims)
     assert sorted(applied) == sorted({c["org_id"] for c in claims}), "applied orgs differ from claims"
     assert sorted(r["org_id"] for r in verdicts if r["verdict"] == "VERIFIED") == sorted(applied), "verdicts.csv disagrees with the data"
     # independent count of the input: readable text files on disk vs manifest rows that say ok
-    disk = sum(1 for o in build.ORGS for f in (build.CORPUS / o).glob("*.txt")) + sum(1 for p in pages if p["source"] == "live" and p["text_file"])
+    disk = sum(1 for o in build.ORGS for f in (build.CORPUS / o).glob("*.txt") if not build.is_image(f)) + sum(1 for p in pages if p["source"] == "live" and p["text_file"])
     manifest_ok = sum(1 for p in pages if p["text_file"])
     assert disk == manifest_ok, f"pages on disk {disk} != manifest ok pages {manifest_ok}"
     assert all(p["sha_ok"] for p in pages if p["status"] == "ok"), "a stored page fails its sha256"
-    assert not [p for p in pages if p["status"] == "ok" and not p["text_file"]], "an ok page has no text"
+    assert not [p for p in pages if p["status"] == "ok" and not p["text_file"] and not p["image"]], "an ok page has no text and is not an image"
+    assert all(not (p["image"] and p["text_file"]) for p in pages), "an image counted as a readable page"
     assert len(base_o) and sum(1 for r in head_o if r["org_id"] in build.ORGS and r["processes"] == "") == 10 - len(applied)
     allowed = {f"data/{build.ORG_SHARD}", f"data/{build.EVD_SHARD}"}
     touched = set(git("diff", "--name-only", base, "--", "data/").split()) | set(git("ls-files", "--others", "--exclude-standard", "data/").split())
     assert touched <= allowed, f"files outside the allowed shards changed: {sorted(touched - allowed)}"
     selftest(pages)
     have = {o for o in build.ORGS if any(p["org_id"] == o and p["text_file"] for p in pages)}
-    print(f"frame={len(build.ORGS)} orgs (H {len(build.FRAME['H'])}, N {len(build.FRAME['N'])}); manifest/live rows={len(pages)}; status-ok pages with text={manifest_ok}; "
+    print(f"frame={len(build.ORGS)} orgs (H {len(build.FRAME['H'])}, N {len(build.FRAME['N'])}); manifest/live rows={len(pages)}; readable text pages={manifest_ok}; "
           f"orgs with >=1 readable page={len(have)}; claims={len(claims)}; orgs applied={len(applied)} "
           f"(H {sum(build.STRATUM[o]=='H' for o in applied)}/5, N {sum(build.STRATUM[o]=='N' for o in applied)}/5); evidence rows={n_ev}; base={base[:7]}")
     out = lambda ref: subprocess.run(["python3", str(build.S.parent / "harness/pic18_unknown.py"), str(ROOT), ref], capture_output=True, text=True, check=True).stdout

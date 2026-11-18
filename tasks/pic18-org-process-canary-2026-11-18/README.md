@@ -9,7 +9,7 @@ Seed 20261118; 10 organizations drawn from 258 PIC-18 organizations with an unkn
 | Org | Name | Tier | Stratum | Readable pages | Verdict | Terms | Hold reason |
 |---|---|---|---|---|---|---|---|
 | ORG-000488 | Pharmacy-Lite Packaging | B | H | 9 (5 stored, 4 live) | STILL_UNCERTAIN | none | no_process_named |
-| ORG-001513 | Coltene/Whaledent Inc. | B | H | 4 stored (live /company/about/ and /science/: HTTP 403) | STILL_UNCERTAIN | none | no_process_named |
+| ORG-001513 | Coltene/Whaledent Inc. | B | H | 3 stored + 1 image (a GIF the fetcher stored as text; not a page) (live /company/about/ and /science/: HTTP 403) | STILL_UNCERTAIN | none | no_process_named |
 | ORG-001774 | Alcon Tool Co | A | H | 6 stored | STILL_UNCERTAIN | none | owner_vocab_ruling |
 | ORG-001986 | Optimax Plastic LLC | B | H | 5 (4 stored, 1 live) | STILL_UNCERTAIN | none | equipment_maker_not_process |
 | ORG-002047 | Wayne-Dalton Plastics | B | H | 1 real page + 2 bot-check walls (live retry: HTTP 403) | STILL_UNCERTAIN | none | fetch_blocked |
@@ -19,11 +19,11 @@ Seed 20261118; 10 organizations drawn from 258 PIC-18 organizations with an unkn
 | ORG-001497 | Budzar Industries LLC | B | N | 0 (robots-blocked) | STILL_UNCERTAIN | none | fetch_blocked |
 | ORG-001855 | NewKor Inc. | A | N | 1 stored (1,638 bytes) | STILL_UNCERTAIN | none | vocab_and_strength |
 
-`holds.csv` has what was read and the fact that would settle each case. `verdicts.csv` is the machine form. `pages.csv` lists every stored and live fetch row with its recomputed sha256 check.
+`holds.csv` has what was read and the fact that would settle each case: an own-page sentence stating that the company itself performs a specific §3.1 process, at the strength the tier allows, with access named separately as a prerequisite. `verdicts.csv` is the machine form. `pages.csv` lists every stored and live fetch row with its recomputed sha256 check.
 
 ## Yield
 - Stratum H: 0 of 5 organizations applied. Stratum N: 0 of 5 applied. Total 0 of 10.
-- Only 6 of the 10 organizations have any readable page; 4 of 5 in stratum N have none, so the stored-pages premise held for 6 of 10, not 10 of 10 (the frame counted organizations with manifest rows, and the manifest rows for those 4 are failed fetches). "Readable" includes ORG-002047's two bot-check walls only as status-ok; its one real page is counted.
+- Only 6 of the 10 organizations have any readable page; 4 of 5 in stratum N have none, so the stored-pages premise held for 6 of 10, not 10 of 10 (the frame counted organizations with manifest rows, and the manifest rows for those 4 are failed fetches). ORG-002047's two bot-check walls are counted as readable text only because their bodies are text; neither carries a claim. Its one real page is counted.
 
 ## Holds by reason (unit: organizations)
 - no_process_named: 2 (the pages say the company manufactures a product and never say how). ORG-000488: two linked PDFs unread.
@@ -43,7 +43,7 @@ Twelve live fetches on 2026-11-18, stored under `S/persist/pic18-org-process-can
 
 ## What the code does
 - `build.py` writes `pages.csv` and `verdicts.csv`, and would fill blank `processes` cells and append EVD-396000..396099 rows from `claims.csv` (header only, no claims). The writer ran only in `check.py`'s temp copy, where a fixture claim was applied, re-applied (byte-identical) and diffed.
-- `check.py` recomputes frame size, page counts against files on disk (28 status-ok pages with text, including 2 bot-check walls and 1 Coltene image), sha256 of every stored page, applied organizations against the base commit, also asserts that `git diff` against the merge-base touches only `organizations_OH.csv` and `evidence_organizations_OH.csv`, and then proves it fails on nine injected defects: term not in §3.1; quote not on the stored page; supports_C on tier B; page hash mismatch; organization outside the frame; write to a non-`processes` column; write to a non-blank cell; write to a site row; evidence id outside the block.
+- `check.py` recomputes frame size, page counts against files on disk (27 readable text pages, including 2 bot-check walls; image bodies such as the Coltene GIF are flagged `image` and excluded), sha256 of every stored page, applied organizations against the base commit, also asserts that `git diff` against the merge-base touches only `organizations_OH.csv` and `evidence_organizations_OH.csv`, and then proves it fails on twelve injected defects: term not in §3.1; quote not on the stored page; supports_C on tier B; page hash mismatch; organization outside the frame; write to a non-`processes` column; write to a non-blank cell; write to a site row; evidence id outside the block; a held verdict missing; a verdict duplicated; a held verdict that differs from `holds.csv`. It also requires exactly one verdict per frame ID, and that every held verdict matches `holds.csv`.
 - The fixture claim used for the positive control (Optimax, `rotational_molding`) is **not** a finding. I hold Optimax on the merits above.
 
 ## Not checked

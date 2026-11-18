@@ -21,6 +21,11 @@ sha = lambda b: hashlib.sha256(b).hexdigest()
 read = lambda p: list(csv.DictReader(open(p, newline="", encoding="utf-8")))
 
 
+def is_image(p):
+    """A 'text' file that is really an image (the fetcher stored a GIF/PNG body as text): unreadable, never a page."""
+    return Path(p).read_bytes()[:8].startswith((b"GIF87a", b"GIF89a", b"\x89PNG"))
+
+
 def stored_pages():
     """Every manifest row of the 10 orgs; sha_ok recomputes the stored file's hash (raw if kept, else the text copy)."""
     out = []
@@ -29,15 +34,16 @@ def stored_pages():
             for r in read(m):
                 f = CORPUS / o / Path(r["raw_file"] or r["text_file"] or "x").name if r["status"] == "ok" else None
                 txt = CORPUS / o / Path(r["text_file"]).name if r["text_file"] else None
+                img = bool(txt and txt.exists() and is_image(txt))
                 out.append(dict(org_id=o, source="stored", manifest=m.name, url=r["url"], status=r["status"], sha256=r["sha256"],
                                 sha_ok=bool(f and f.exists() and sha(f.read_bytes()) == r["sha256"]),
-                                text_file=str(txt) if txt and txt.exists() else "", observed_date=r["fetched_at"][:10]))
+                                text_file=str(txt) if txt and txt.exists() and not img else "", image=img, observed_date=r["fetched_at"][:10]))
     cache = LIVE / "cache"
     for r in json.load(open(LIVE / "live-fetches.json")):
         raw = cache / (r["sha256"] + ".raw"); txt = cache / r["text_file"]
         out.append(dict(org_id=r["org"], source="live", manifest="live-fetches.json", url=r["url"], status=r["status"], sha256=r["sha256"],
                         sha_ok=r["status"] == "ok" and raw.exists() and sha(raw.read_bytes()) == r["sha256"],
-                        text_file=str(txt) if r["status"] == "ok" and txt.exists() else "", observed_date=r["fetched_at"][:10]))
+                        text_file=str(txt) if r["status"] == "ok" and txt.exists() and not is_image(txt) else "", image=r["status"] == "ok" and txt.exists() and is_image(txt), observed_date=r["fetched_at"][:10]))
     return out
 
 
