@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
+**Version:** v1.14.1 — 2026-11-18 (§4.11 prong (b) extends to non-degree training whose own description states plastics or polymer processing — owner ruling 2026-11-18).
+Previous: v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
 Previous: v1.13.4 — 2026-11-18 (§1 P2b / V-62: no personal-account identifier URL (`?u=<network id>` or `/~<account>`) in a people row — owner rulings 2026-11-18 items 1 and 1b).
 Previous: v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
 Previous: v1.13.2 — 2026-11-16 (§4.5 permits blank ZIP fills from unique Exact Census batch matches as reference address normalization — owner ruling 2026-11-16).
@@ -1314,6 +1315,13 @@ verification field, never an inclusion criterion. Borderline calls are
 logged in the inclusion log (Appendix A) with the prong cited; institution-
 level seam cases (a polymer track inside a general degree) stay flagged as
 seams until the owner rules — a program row never settles a seam by landing.
+
+**Non-degree training [v1.14.1] (owner ruling 2026-11-18).** For a `training` or `course` row, prong (b) is also met
+when the program's own description states that it teaches plastics or polymer processing. Examples are "from the
+plastic's point of view" and "your knowledge of plastics processing". The statement must sit in the program's own
+description: a process word on site-wide navigation does not meet it, and neither does a process word with no
+polymer, plastics or rubber word, such as "injection molding" alone. Degree, certificate and center rows are
+unchanged.
 
 **The rollup.** An institution's ecosystem `polymer_program_name` is a
 generated rollup of its program rows in this table: the non-tombstoned
@@ -3132,4 +3140,5 @@ unchanged.
 
 - **v1.13.4 — 2026-11-18 (owner rulings 2026-11-18, items 1 and 1b: identifier URLs on people rows).** §1 gains P2b and the validator gains V-62 (an error on any people row whose `public_profile_url`, `lab_url` or `sources` carries a `?u=<network id>` or `/~<account>` URL; no baseline entries). Applied in the same PR to the 29 people rows that carried one (18 `?u=`, 11 `/~`): 23 rows cite an identifier-free page with new evidence rows (EVD-396100 to EVD-396125), 6 rows have the URL blanked, with any old evidence rows left as the record's source. Evidence rows are never edited (§4.13). `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows.
 - **v1.14 — 2026-11-18 (owner ruling 2026-11-18, "Into the Atlas").** §4.23 adds the IPEDS completions reference layer: `data/ipeds_institutions.csv` (343), `data/ipeds_programs.csv` (825) and `data/ipeds_completions.csv` (10,486 program-years, 1991-2023). `scripts/ipeds_build.py` generates them from `data/ipeds/raw_ipeds_national.json`, ported from polymer-programs-db build_db.py (a9d89b5) with every row equal. Validator V-63 enforces parity with the raw file. Reference data, never evidence. The hand-researched layers (credentials, global programs, society chapters, aliases, CIP-invisible programs) are phase-2 owner questions (`tasks/ipeds-layer-2026-11-18/README.md`). No existing data row is changed.
+- **v1.14.1 — 2026-11-18 (owner ruling 2026-11-18, "Yes, if the page states plastics processing").** §4.11 prong (b) also admits a `training` or `course` row whose own description states that it teaches plastics or polymer processing. Site-wide navigation and a bare process word do not qualify. Applied in `tasks/prong-b-training-2026-11-18/` (3 rows). No validator change: the inclusion rule is adjudicated, not machine-checked.
 
