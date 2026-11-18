@@ -54,3 +54,19 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   owner ruling.
 - **Decided by:** built to the controller's task from the audit; no owner ruling is claimed or needed for the wording
   above, which restates AGENTS.md section 5.1.
+
+## 2026-11-17: QUEUE.md stays the single tracker; private branch history stays off main
+
+- **Decision:** `tasks/QUEUE.md` remains the Atlas's only tracker (resynced in #368). When a pull request branch's
+  history has carried private or SAM-derived text, it lands by squash merge or a fresh replacement pull request, so
+  those commits never reach main (#362 replaced by #367; #372 squash-merged).
+- **Limit:** GitHub keeps each pull request's own refs (`refs/pull/N`), which only GitHub support can purge.
+- **Decided by:** the repo owner, in session, 2026-11-17 (tracker; strip names from #362); the squash practice is the
+  controller's, recorded here.
+
+## 2026-11-18: owner battery of 2026-11-17 ruled "all as recommended"
+
+- **Decision:** the eight held items plus item 1b (identifier URLs in people rows) are ruled as recommended. Detail is
+  in `tasks/owner-rulings-2026-11-18/README.md`. The PPP "Strict matches" ruling of 2026-11-16 is recorded as SCHEMA
+  v1.13.3 (§1 R13).
+- **Decided by:** the repo owner, in session, 2026-11-18, as multiple choice.
