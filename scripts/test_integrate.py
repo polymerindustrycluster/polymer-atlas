@@ -102,6 +102,26 @@ class IntegrationTests(unittest.TestCase):
         self.assertIn('2026-11-16,B,y', (self.r / 'data/inclusion_log.csv').read_text())
 
 
+class MergeModeTests(unittest.TestCase):
+    def test_unknown_merge_mode_is_refused_before_any_git_or_gh_call(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root, log = Path(temp), Path(temp) / 'calls.log'
+            for tool in ('git', 'gh'):
+                (root / tool).write_text(f'#!/bin/bash\necho {tool} "$*" >> "{log}"\n')
+                (root / tool).chmod(0o755)
+            for mode in ('rebase', ''):  # an explicitly empty mode must not fall back to merge
+                env = {**os.environ, 'PATH': f"{root}:{os.environ['PATH']}", 'MERGE_MODE': mode}
+                r = subprocess.run(['bash', str(TOOLS.resolve() / 'mergepr.sh'), '1', 'a' * 40, 'b' * 40],
+                                   env=env, capture_output=True, text=True)
+                self.assertEqual(r.returncode, 2, f'{mode!r}: {r.stderr}')
+                self.assertIn('MERGE_MODE must be merge or squash', r.stderr)
+                self.assertFalse(log.exists(), 'no git or gh call may happen before the mode is checked')
+
+    def test_both_modes_keep_the_approved_head_check(self):
+        text = (TOOLS / 'mergepr.sh').read_text()
+        self.assertIn('gh pr merge "$PR" --"$MODE" --match-head-commit "$WANT"', text)
+
+
 class PushGuardTests(unittest.TestCase):
     def test_reviewer_repro_refuses_main_without_pushing(self):
         result = subprocess.run([sys.executable, str(TOOLS.resolve() / 'repro_main_push.py')],
