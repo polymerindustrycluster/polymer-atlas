@@ -14,6 +14,7 @@ here, and the repo carries only each row's grade.
 Output adjudication.json (committed, with a normalised word excerpt per quote so CI can re-check without the raw bodies).
 Run: python3 adjudicate_build.py"""
 import csv, functools, hashlib, io, json, re, sys
+from collections import Counter
 from datetime import date
 import adjudicate_fetch as A
 import frame as F
@@ -96,11 +97,11 @@ DECISIONS = [
          receipts=[R('git:4182519:tasks/owner-rulings-2026-11-16/README.md', "Ruled (a): clear the flag. Keep the record; set polymer_program back to blank until one of AFFOA's own pages states a polymer or fiber-polymer program", note='owner ruling of record')]),
     # --- UEI links (#355): decided against the stored SAM response; per-row facts are private (R-SAM) ---
     *[dict(id=i, grade='AGREE', fields='registry_id', sam_expect='match',
-           key_fact='Match: the stored SAM response returns an active registration for this UEI whose name and location match this organization (per-row detail held privately under R-SAM).', receipts=[])
+           key_fact='Decided against the stored SAM response; the per-row result is held privately under R-SAM. Stratum result: 12 match, 1 no-match.', receipts=[])
       for i in ('A11-033', 'A11-040', 'A11-051', 'A11-052', 'A11-071', 'A11-081', 'A11-083', 'A11-094', 'A11-101', 'A11-103', 'A11-109', 'A11-114')],
-    dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', sam_expect='no_match', current_value='UEI link on ORG-000889 (ITW Tomco)',
-         correct_value='retire the link; any re-link is the integrator\'s call',
-         key_fact='No match: the stored SAM response\'s registration for this UEI is not ITW Tomco\'s. The per-row detail is in the private note (R-SAM); see follow-ups 1 and 2.', receipts=[]),
+    dict(id='A11-113', grade='CREATION_ERROR', fields='registry_id', sam_expect='no_match', current_value='UEI SJZCEMGNC9D1 linked to ORG-000889',
+         correct_value='retire UEI link SJZCEMGNC9D1 on ORG-000889',
+         key_fact='Retire UEI link SJZCEMGNC9D1 on ORG-000889; basis held privately under R-SAM (see follow-ups 1 and 2).', receipts=[]),
     # --- bands (#348): both AGREE; controller-directed lead check against the "Strict matches" ruling ---
     *[dict(id=i, grade='AGREE', fields='employee_band_ohio;employee_band_site', lead_check=True, ppp_url=SBA + f,
            key_fact='Passes all five conditions of the owner\'s 2026-11-16 "Strict matches" ruling (recomputed below from git and a fresh read of the SBA file #348 cites).',
@@ -229,8 +230,9 @@ def sam_facts(orgs, sites, uei_rows, write=True):
                  hq_city_state_match=(o['hq_city'].casefold(), o['hq_state']) == (pa['city'].casefold(), pa['stateOrProvinceCode']),
                  held_site_match=[s['site_id'] for s in held], entity_url=e['coreData']['entityInformation'].get('entityURL'))
         note[i] = f
+        f['result'] = 'match' if f['active'] and f['name_match'] and f['hq_city_state_match'] else 'no_match'
         # a match needs an active registration, a name match, and the organization's own HQ locality (a held site alone can be mis-parented)
-        verdict[i] = 'match' if f['active'] and f['name_match'] and f['hq_city_state_match'] else 'no_match'
+        verdict[i] = f['result']
     note.update(json.loads(UEI_DETAIL.read_text()))  # the lead's hand-written finding and leads for the no-match row (private, R-SAM)
     text = json.dumps(note, indent=1, sort_keys=True) + '\n'
     if write:
@@ -257,7 +259,7 @@ def build():
         e = {k: x for k, x in d.items() if k not in ('ppp_url', 'sam_expect')}
         if 'sam_expect' in d:
             assert sam[d['id']] == d['sam_expect'] and (d['grade'] == 'AGREE') == (d['sam_expect'] == 'match'), f"{d['id']}: SAM facts disagree with the decision"
-            e['sam_result'] = d['sam_expect']
+            # no record-level SAM result in a public file (Codex-21 finding 2): only the stratum counts in meta
         if d.get('lead_check'):
             bf = band_facts(s, d['ppp_url'], orgs, sites, ev)
             assert (d['grade'] == 'AGREE') == all(bf['conditions'].values()), f"{d['id']}: band conditions {bf['conditions']} disagree with the grade"
@@ -265,12 +267,12 @@ def build():
         out.append(dict(e, record_id=a['record_id'], change_class=s['change_class'], reviewer_a=a['verdict'], reviewer_b=b['verdict'], receipts=[verify(r) for r in d['receipts']]))
     ids = [e['id'] for e in out]
     assert len(ids) == len(set(ids)) and set(ids) == disputed | lead, f'adjudication must cover exactly the disputed and lead-check rows: missing {sorted((disputed | lead) - set(ids))}'
-    meta = dict(sam_files_sha256=SAM_FILES, uei_private_note_sha256=hashlib.sha256(UEI_NOTE.read_bytes()).hexdigest())
+    meta = dict(sam_files_sha256=SAM_FILES, uei_private_note_sha256=hashlib.sha256(UEI_NOTE.read_bytes()).hexdigest(),
+                uei_counts=dict(sorted(Counter(sam.values()).items())))
     (H / 'adjudication.json').write_text(json.dumps(dict(meta=meta, decisions=out), indent=1, ensure_ascii=False) + '\n')
     return out
 
 
 if __name__ == '__main__':
     o = build()
-    from collections import Counter
     print(Counter(e['grade'] for e in o), Counter(e['change_class'] for e in o), sum(len(e['receipts']) for e in o), 'receipts verified')

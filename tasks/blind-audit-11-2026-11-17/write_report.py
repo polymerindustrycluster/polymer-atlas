@@ -31,15 +31,15 @@ def render():
     c, ow, cw = st['final_counts'], st['overall_weighted'], st['content_weighted']
     small = [r['change_class'] for r in st['strata'] if r['readable'] == 'too small to read']
     feeds_350 = sum(1 for r in frame if r['prs'] == '350' and 'newsroom_feed_url' in r['changed_columns'].split(';'))
-    uei = Counter(e['sam_result'] for e in adj if 'sam_result' in e)
+    uei = meta['uei_counts']
     disputed = [e for e in adj if not e.get('lead_check')]
     lead = [e for e in adj if e.get('lead_check')]
     content_err = ', '.join(k['blind_id'] for k in st['corrections'] if k['change_class'] not in st['content_weighted']['excludes'])
     assert len(content_err.split(', ')) == 1, 'the single-row sentence assumes one content error'
     rb = json.loads((H / 'receipts_b.json').read_text())
-    sam_b = [r for r in rb if r['url'].startswith('https://api.sam.gov/')]
-    sam_b_codes = ', '.join(f'{n} HTTP {code}' for code, n in sorted(Counter(r['http_status'] for r in sam_b).items()))
-    b_last = max(r['fetched_at'] for r in rb)[:16].replace('T', ' ')
+    sam_b = next(r for r in rb if 'r_sam_summary' in r)  # B's SAM API receipts are held privately; the public copy keeps their count
+    sam_b_codes = ', '.join(f'{n} HTTP {code}' for code, n in sam_b['http_status_counts'].items())
+    b_last = max(r['fetched_at'] for r in rb if 'fetched_at' in r)[:16].replace('T', ' ')
     a10_inside = cw['confirmed_error_wilson95_at_effective_n'][0] <= A10_RATE <= cw['confirmed_error_wilson95_at_effective_n'][1]
     L = []
     L.append('# Blind audit 11: data PRs merged 2026-11-16 and 2026-11-17\n')
@@ -70,7 +70,7 @@ def render():
     L.append('## Corrections, not applied\n')
     L.append('| Sampled record | Field | Current value | Correct value | Basis |\n|---|---|---|---|---|')
     for k in st['corrections']:
-        src = '; '.join(f'<{s}>' for s in dict.fromkeys(k['sources'])) or 'stored SAM response (private, R-SAM)'
+        src = '; '.join(f'<{s}>' for s in dict.fromkeys(k['sources'])) or 'held privately under R-SAM'
         L.append(f"| {k['blind_id']}, {esc(k['record_id'])} ({blind[k['blind_id']]['record_label']}) | `{k['field']}` | {esc(k['current_value'])} | {esc(k['correct_value'])} | {src} |")
     L.append('')
     for k in st['corrections']:
@@ -110,7 +110,7 @@ def render():
              'The committed `verdicts_a.csv` and `verdicts_b.csv` are LF copies with every free-text cell blanked on the 13 UEI rows, because reviewer A\'s cells quote SAM names and addresses (R-SAM). '
              '`locks.json` pins both the lock hashes and the committed hashes; `check.py` re-applies the redaction to the private originals when they are present.')
     L.append(f"- **Reviewer B and the UEI rows.** B's last receipt is at {b_last} UTC, before the 00:00 UTC quota reset that the stored SAM response had to wait for. "
-             f"B's receipts log {len(sam_b)} SAM API calls ({sam_b_codes}), yet every B note on these rows says \"SAM record not available\". The cause is not established. "
+             f"B's receipts log {sam_b['count']} SAM API calls ({sam_b_codes}; the receipts themselves are held privately), yet every B note on these rows says \"SAM record not available\". The cause is not established. "
              "The controller checked B's SAM receipts: no key appears in any URL. Adjudication used the lead's stored response (both pages, hash-verified), not B's calls; reviewer A also read the stored response.")
     L.append('- **Navigation wording.** The reviewer instructions described `navigation_links` as "this organization\'s own page or feed", looser than SCHEMA §4.4\'s "a feed of the same newsroom". '
              'That explains B\'s AGREE on ProVia. The lead graded against §4.4, using the item-overlap test the earlier newsroom passes used.')

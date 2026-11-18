@@ -266,11 +266,14 @@
   "resolved_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=950+Stephenson+Hwy%2C+Troy%2C+MI&benchmark=Public_AR_Current&format=json"
  },
  {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=TULNP88REWN7",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:08.791692+00:00",
-  "sha256": "309ea3694fad11aac0bb6b46de4a0c64d1bf782bc24e8a9e326e5004dc47fb7b",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=TULNP88REWN7"
+  "r_sam_summary": "SAM API call receipts held privately (R-SAM)",
+  "count": 13,
+  "http_status_counts": {
+   "200": 12,
+   "429": 1
+  },
+  "private_file": "receipts_b_sam_private.json",
+  "private_sha256": "8747da23bd37feaa2ba511456f760f2a2c130d2429ac84a020b0766bb2f79fea"
  },
  {
   "url": "https://web.archive.org/web/20261116224414/https://www.continentalpaints.com/about",
@@ -362,27 +365,6 @@
   "fetched_at": "2026-11-17T23:08:09.509769+00:00",
   "sha256": "c35a4e5363318780e43a41d69e6053664be8744cede09009b4870c6d7bf5acd9",
   "resolved_url": "https://cnginc.com/newsroom"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=SFELTQKMG398",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:09.577731+00:00",
-  "sha256": "5ad2cf9ef225246d1910b83ea53902571d7efdc37a0654d12f9b1f055e17075e",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=SFELTQKMG398"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=L5V7LF4JS479",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:09.582957+00:00",
-  "sha256": "6f27d09e67831cdd6853c6dc1b684748033e1047391025217113ad9ccb6e7c6b",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=L5V7LF4JS479"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=NWH1Y5MBJEL8",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:09.584863+00:00",
-  "sha256": "a74d8c8287cf070d15a2d1a726f69dbcff792da8ce76e3823cbb39adddba87d6",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=NWH1Y5MBJEL8"
  },
  {
   "url": "https://web.archive.org/web/20261106111232/https://extolohio.com/about-us/",
@@ -525,13 +507,6 @@
   "resolved_url": "https://web.archive.org/web/20260614231550/https://www.fastforming.com/materials/"
  },
  {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=NWP3G7EZHVK7",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:10.059645+00:00",
-  "sha256": "88be25e6c78a10fa7a6b2d28df3e829f5f6cdd296a887096df57d8fe5671214b",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=NWP3G7EZHVK7"
- },
- {
   "url": "https://americansignproducts.com/news",
   "http_status": 200,
   "fetched_at": "2026-11-17T23:08:10.074040+00:00",
@@ -574,25 +549,11 @@
   "resolved_url": "https://web.archive.org/web/20261012050358/https://www.schneller.com/"
  },
  {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=PVSNAG8FTLD4",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:10.308618+00:00",
-  "sha256": "b9abcc3eb69be0807b0bc861aef6e922d3b6697810dedae7108760b3b40c2848",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=PVSNAG8FTLD4"
- },
- {
   "url": "https://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/",
   "http_status": null,
   "fetched_at": "2026-11-17T23:08:10.330656+00:00",
   "sha256": null,
   "resolved_url": "https://web.archive.org/web/20261106125619/https://www.akronporcelain.com/about-us/"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=MDQKS1GZGTX5",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:10.344242+00:00",
-  "sha256": "436913482098e124360654ab668c5daf321ef1458cc97abd41736b9afdd19c76",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=MDQKS1GZGTX5"
  },
  {
   "url": "https://fabohio.com/about-us/",
@@ -679,13 +640,6 @@
   "resolved_url": "https://jandoplastics.com/our-history/"
  },
  {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=LLJGZ61UA7F4",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:10.803464+00:00",
-  "sha256": "96827c7fd0974f399a3b38160350cc0be7a8b9dc5c8f256511ae1b680f4ccb79",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=LLJGZ61UA7F4"
- },
- {
   "url": "https://echo.epa.gov/detailed-facility-report?fid=110006264586",
   "http_status": 200,
   "fetched_at": "2026-11-17T23:08:10.870774+00:00",
@@ -719,20 +673,6 @@
   "fetched_at": "2026-11-17T23:08:10.952599+00:00",
   "sha256": null,
   "resolved_url": "https://web.archive.org/web/20250419220000/https://www.adherexpackaging.com/capabilities/"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=H4GTTD7MMGK8",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:11.046506+00:00",
-  "sha256": "96ad7128294e712c55b0d1c759089fced3500cb635d290cc55e80d7bdca937c4",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=H4GTTD7MMGK8"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=GUJEKLRTGGL6",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:11.105452+00:00",
-  "sha256": "030351e72110d8405c75f744242ff9e767593f4ff289cff92836a89e639bc7eb",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=GUJEKLRTGGL6"
  },
  {
   "url": "https://www.americancolors.com/",
@@ -784,13 +724,6 @@
   "resolved_url": "https://www.flextechnologies.com/"
  },
  {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=R15YM6LMHN67",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:11.425900+00:00",
-  "sha256": "280dc40108bbce809f0f80c71ef1d4c4973ec3703a50b7ed625ed2480fde9c0a",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=R15YM6LMHN67"
- },
- {
   "url": "https://affoa.org/",
   "http_status": 200,
   "fetched_at": "2026-11-17T23:08:11.446945+00:00",
@@ -819,13 +752,6 @@
   "resolved_url": "https://echodata.epa.gov/echo/dfr_rest_services.get_dfr?output=JSON&p_id=110000388465"
  },
  {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=SJZCEMGNC9D1",
-  "http_status": 200,
-  "fetched_at": "2026-11-17T23:08:11.546450+00:00",
-  "sha256": "4fe20d54f28e54e64cc6d6ffca300b1a1c9c398eef89d38315672a6365076aab",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=SJZCEMGNC9D1"
- },
- {
   "url": "https://web.archive.org/web/20260720121748/http://clamshellusa.com/about/capabilities.html",
   "http_status": null,
   "fetched_at": "2026-11-17T23:08:11.588243+00:00",
@@ -845,13 +771,6 @@
   "fetched_at": "2026-11-17T23:08:11.598687+00:00",
   "sha256": null,
   "resolved_url": "https://web.archive.org/web/20260811042756/https://www.salem-republic.com/about-us/"
- },
- {
-  "url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=N7M7NK7MKBY3",
-  "http_status": 429,
-  "fetched_at": "2026-11-17T23:08:11.601393+00:00",
-  "sha256": "d5dd39a88086c019de8ca33798fc0178b30fff990d0893a5952dc99a3d3ccf0d",
-  "resolved_url": "https://api.sam.gov/entity-information/v3/entities?ueiSAM=N7M7NK7MKBY3"
  },
  {
   "url": "https://web.archive.org/web/20260909140218/https://www.biothaneusa.com/services/rf-welding/",

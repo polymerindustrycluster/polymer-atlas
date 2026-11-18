@@ -182,7 +182,10 @@ one-byte edit to `blind_b.csv`. All four were caught.
 correct_value, source_url, quote, note) blanked on the 13 UEI rows, because reviewer A quoted SAM names and addresses
 there (R-SAM). `receipts_a.json` and `receipts_b.json` are copies with the URL and note blanked on fetches whose host is on
 a private R-SAM host list: fetches that only the UEI no-match explains. The lead's own receipts for those hosts sit in a
-private log, not in `adjudication_receipts.jsonl`.
+private log, not in `adjudication_receipts.jsonl`. Reviewer B's 13 SAM API call receipts are held privately as well; the
+public `receipts_b.json` keeps one summary entry with their count, status counts and the private file's sha256.
+`adjudication.json` carries no record-level SAM result, only the stratum counts (12 match, 1 no-match); `check.py` fails
+on a SAM URL in any public file (except `sam_batch.py`'s endpoint constant) or on any record-level `sam_result`.
 
 **Adjudication** (`adjudicate_build.py` → `adjudication.json`). The 22 rows the reviewers did not both grade AGREE, plus
 the 7 band rows both graded AGREE, which the controller asked the lead to check against the owner's PPP ruling:

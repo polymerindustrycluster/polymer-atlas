@@ -239,6 +239,30 @@ def rsam_hits(texts, ents):
     return hits
 
 
+def public_leaks(texts):
+    """Codex-21 gates: a SAM URL in any public file (the one exception is sam_batch.py's endpoint constant, the code that makes
+    the call), and any record-level sam_result in a public JSON, JSONL or CSV file."""
+    hits = []
+    for name, t in texts.items():
+        for m in CV.SAM_URL.finditer(t):
+            line = t[t.rfind('\n', 0, m.start()) + 1:t.find('\n', m.start())]
+            if not (name == 'sam_batch.py' and line.startswith('URL = ')):
+                hits.append((name, 'SAM URL'))
+        if name.endswith(('.json', '.jsonl')):
+            docs = [json.loads(l) for l in t.splitlines() if l.strip()] if name.endswith('.jsonl') else [json.loads(t)]
+            stack = list(docs)
+            while stack:
+                x = stack.pop()
+                if isinstance(x, dict):
+                    hits += [(name, 'sam_result')] if 'sam_result' in x else []
+                    stack += list(x.values())
+                elif isinstance(x, list):
+                    stack += x
+        elif name.endswith('.csv') and 'sam_result' in t.split('\n', 1)[0]:
+            hits.append((name, 'sam_result column'))
+    return hits
+
+
 def check_phase3(require_private):
     gaps = []
     locks = json.loads((H / 'locks.json').read_text())
@@ -252,7 +276,9 @@ def check_phase3(require_private):
         orig, orig_r = CV.PRIVATE / f'out_{k}/verdicts.csv', CV.PRIVATE / f'out_{k}/receipts.json'
         if orig.exists():
             assert hashlib.sha256(orig.read_bytes()).hexdigest() == CV.LOCKED[k] and CV.redact(orig.read_bytes()) == (H / f'verdicts_{k}.csv').read_bytes(), f'{k}: committed copy is not the redacted original'
-            assert hashlib.sha256(orig_r.read_bytes()).hexdigest() == locks[k]['receipts_original_sha256'] and CV.redact_receipts(orig_r.read_bytes()) == (H / f'receipts_{k}.json').read_bytes(), f'{k}: receipts copy is not the redacted original'
+            pub, priv = CV.redact_receipts(orig_r.read_bytes(), k)
+            assert hashlib.sha256(orig_r.read_bytes()).hexdigest() == locks[k]['receipts_original_sha256'] and pub == (H / f'receipts_{k}.json').read_bytes(), f'{k}: receipts copy is not the redacted original'
+            assert priv is None or (CV.PRIVATE / f'receipts_{k}_sam_private.json').read_bytes() == priv, f'{k}: private SAM receipts file differs'
         else:
             gaps.append(f'reviewer {k} original absent: lock hash and redaction not re-derived')
     a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
@@ -282,13 +308,21 @@ def check_phase3(require_private):
             if not have:
                 gaps.append(f"{e['id']}: SBA extract absent, PPP row taken from the committed copy")
     # UEI results and the R-SAM scan need the stored SAM response
-    ueis = {e['id']: e['record_id'] for e in adj if 'sam_result' in e}
-    assert set(ueis) == uei_ids and doc['meta']['sam_files_sha256'] == AB.SAM_FILES
+    ueis = {e['id']: e['record_id'] for e in adj if e['id'] in uei_ids}
+    assert len(ueis) == 13 and doc['meta']['sam_files_sha256'] == AB.SAM_FILES
+    assert doc['meta']['uei_counts'] == {'match': 12, 'no_match': 1} == {'match': sum(e['grade'] == 'AGREE' for e in adj if e['id'] in ueis), 'no_match': sum(e['grade'] != 'AGREE' for e in adj if e['id'] in ueis)}
     committed = {p.name: p.read_text() for p in sorted(H.iterdir()) if p.suffix in ('.py', '.csv', '.json', '.jsonl', '.md')}  # every text file in the folder
     committed['report'] = WR.OUT.read_text()
+    assert not public_leaks(committed), f'public leak: {public_leaks(committed)}'
+    planted_adj = json.loads(committed['adjudication.json'])
+    planted_adj['decisions'][0]['sam_result'] = 'match'
+    for plant in (dict(committed, report=committed['report'] + ' https://api.sam' + '.gov/entity-information/v3/entities?ueiSAM=X'),
+                  dict(committed, **{'write_report.py': committed['write_report.py'] + '\n# https://sam' + '.gov/entity/X\n'}),
+                  dict(committed, **{'adjudication.json': json.dumps(planted_adj)})):
+        assert public_leaks(plant), 'public-leak gate missed a planted SAM URL or record-level sam_result'
     if all((CV.PRIVATE / n).exists() for n in AB.SAM_FILES):
         verdict, note = AB.sam_facts(orgs, sites, ueis, write=False)
-        assert all(verdict[i] == e['sam_result'] and (e['grade'] == 'AGREE') == (verdict[i] == 'match') for e in adj if (i := e['id']) in ueis), 'UEI results differ from the stored SAM response'
+        assert all((e['grade'] == 'AGREE') == (verdict[e['id']] == 'match') for e in adj if e['id'] in ueis), 'UEI grades differ from the stored SAM response'
         assert hashlib.sha256(note.encode()).hexdigest() == doc['meta']['uei_private_note_sha256'], 'private UEI note changed'
         ents = AB.sam_entities()
         assert not rsam_hits(committed, ents), f'R-SAM: SAM-only words in committed output: {rsam_hits(committed, ents)}'
