@@ -36,7 +36,7 @@ def main():
     ids, evids = {p["program_id"] for p in progs}, {e["evidence_id"] for e in ev}
     new_p, new_e, n = [], [], 0
     for r in packet:
-        if raw.get(r["key"] + "|existence") != "yes" or raw.get(r["key"] + "|scope") != "yes":
+        if any(raw.get(f"{r['key']}|{c}") != "yes" for c in ("existence", "scope", "engagement")):
             print("not applied (raw check):", r["key"]); continue
         if (r["institution_org_id"], r["program_name"]) in have:
             continue
@@ -51,7 +51,8 @@ def main():
                    notes=(f"Created {DATE} from polymer-programs-db's US non-degree credentials layer (owner ruling {DATE}: "
                           f"'As programs.csv rows'). SCHEMA section 4.11 prong ({r['prong']}) on the provider's own page; "
                           f"existence and scope quotes raw-checked by independent re-fetch. admissions_status unknown: "
-                          f"no dated intake was checked. Location, engagement and specialty fields left blank, unverified."))
+                          f"no dated intake was checked. engagement_modes basis (raw-checked): '{r['engagement_quote']}'. "
+                          f"credential_types, location and specialty fields left blank, unverified."))
         if r["program_type"] == "apprenticeship":
             row["apprenticeship_registered"] = "true"
         row["engagement_modes"] = r["engagement_modes"]
