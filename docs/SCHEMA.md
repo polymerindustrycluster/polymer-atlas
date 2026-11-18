@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
+**Version:** v1.13.4 — 2026-11-18 (§1 P2b / V-62: no personal-account identifier URL (`?u=<network id>` or `/~<account>`) in a people row — owner rulings 2026-11-18 items 1 and 1b).
+Previous: v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
 Previous: v1.13.2 — 2026-11-16 (§4.5 permits blank ZIP fills from unique Exact Census batch matches as reference address normalization — owner ruling 2026-11-16).
 Previous: v1.13.1 — 2026-11-12 (§4.21 `identifier_type` enum gains `GOOGLE_SCHOLAR`, `WOS_RESEARCHER_ID`, `GITHUB` under strict per-type mint rules — owner rulings 2026-11-12; no rows minted by the revision itself).
 Previous: v1.13 — 2026-11-12 (academic-passes battery, owner rulings 2026-11-12: §3.1 gains `dyeing_finishing` and `fiber_formation` (S2); §3.5 gains `liquid_crystals` (S1); §4.11 `scale_band` conversion rule (S3); §4.13 `tier_effect` gains `supports_U` (S4); §4.21 ORCID name-match clarification for the given-names record shape (S5); §4.9 people field set gains `lab_url` (S6)).
@@ -328,6 +329,13 @@ the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
   dropped to the tier that public evidence supports. Validator V-50 enforces it,
   with existing rows grandfathered for the cleanup pass.
 - **P2. No email-like string in `people.public_profile_url`** (V-51).
+- **P2b. No personal-account identifier URL in a people row [v1.13.4, owner rulings 2026-11-18 items 1 and 1b].**
+  A `?u=<network id>` query or a `/~<account>` home-directory path carries a person's university account name. No
+  `public_profile_url`, `lab_url` or `sources` cell of a people row may contain one (validator V-62: an error on any
+  row, no baseline; decided by parsing each URL token: a query parameter `u` whose value starts with a letter or digit, or a path segment starting `~` plus a letter or digit; the fragment is ignored). Where an identifier-free
+  department or lab page states the same facts, the row cites it and a new evidence row answers the old one; otherwise
+  the URL is blanked and the old evidence row stays the record's source. `evidence_people` is out of scope: its old rows
+  are append-only (§4.13) and are never edited. A person whose only witness is an identifier URL stays held.
 - **P3. `sources` carries public citations only.** Workshop and staging paths
   (`working/…`, `(staging …)`) move to evidence rows or pass journals in a
   dedicated cleanup pass. The validator does not enforce this yet.
@@ -3080,4 +3088,6 @@ unchanged.
 - **v1.13.2 — 2026-11-16 (owner ruling in session, GEO-ZIP).** §4.5 permits a ZIP from a unique Census batch `Match, Exact` result to fill a blank site `zip` as reference address normalization, with the retained response as provenance and no separate evidence row. Existing ZIPs are never overwritten.
 
 - **v1.13.3 — 2026-11-18 (records the owner ruling of 2026-11-16, "Strict matches").** §1 R13 gains SBA PPP historical job counts as a fourth employee-band source: blank bands only, dated to the loan, single-site Ohio-only organizations with an exact borrower name, street and city match. The ruling was applied in PR #348 before this record. No data row is changed by this revision.
+
+- **v1.13.4 — 2026-11-18 (owner rulings 2026-11-18, items 1 and 1b: identifier URLs on people rows).** §1 gains P2b and the validator gains V-62 (an error on any people row whose `public_profile_url`, `lab_url` or `sources` carries a `?u=<network id>` or `/~<account>` URL; no baseline entries). Applied in the same PR to the 29 people rows that carried one (18 `?u=`, 11 `/~`): 23 rows cite an identifier-free page with new evidence rows (EVD-396100 to EVD-396125), 6 rows have the URL blanked, with any old evidence rows left as the record's source. Evidence rows are never edited (§4.13). `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows.
 
