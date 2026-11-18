@@ -8,7 +8,17 @@ from build_form5500_spine import band_of,BANDS
 from shard_io import append_sorted
 S=Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas')
 CORPUS=S/'persist/pic18-corpus-2026-11-16'
-FIELD='employee_band_ohio';FIRST_ID=396300;LAST_ID=396399;CREATED_BY='claude-code pic18-size-ownsite-2026-11-18'
+FIELD='employee_band_ohio';CREATED_BY='claude-code pic18-size-ownsite-2026-11-18'
+
+def base_max_evidence_id(base):
+ """Highest EVD number across every data/evidence_*.csv at `base` (SCHEMA: next-free at application; AGENTS 3: never fill a gap)."""
+ import subprocess,io
+ names=[n for n in subprocess.check_output(['git','ls-tree','--name-only',base,'data/'],cwd=GITROOT,text=True).split() if Path(n).name.startswith('evidence_') and n.endswith('.csv')]
+ return max(int(r['evidence_id'][4:]) for n in names for r in csv.DictReader(io.StringIO(subprocess.check_output(['git','show',f'{base}:{n}'],cwd=GITROOT,text=True))))
+
+def merge_base():
+ import subprocess
+ return subprocess.check_output(['git','merge-base','HEAD','origin/main'],cwd=GITROOT,text=True).strip()
 
 def read(p):return list(csv.DictReader(Path(p).open(newline='')))
 def write(p,rows,fields):
@@ -39,8 +49,9 @@ def count_kind(quote,n):
 
 def ohio_only(o,ss):return o['hq_state']=='OH' and bool(ss) and all(s['state']=='OH' for s in ss)
 
-def plan(verdicts=None,check_existing=True):
+def plan(verdicts=None,check_existing=True,base=None):
  orgs,shard,sites=load();verdicts=verdicts or read(D/'verdicts.csv');fills=[];evs=[];held=[]
+ first=base_max_evidence_id(base or merge_base())+1
  applied=sorted((v for v in verdicts if v['disposition']=='applied'),key=lambda v:v['org_id'])
  for k,v in enumerate(applied):
   oid=v['org_id'];o=orgs[oid]
@@ -48,15 +59,15 @@ def plan(verdicts=None,check_existing=True):
   new=band(int(v['stated_count']));assert new==v['band'],f'{oid} band {v["band"]} != band of {v["stated_count"]}'
   assert count_kind(v['quote'],int(v['stated_count'])),f'{oid}: no exact count or closed range'
   assert o[FIELD] in ('',new),f'{oid} already holds a different band {o[FIELD]!r}'
-  eid=FIRST_ID+k;assert eid<=LAST_ID
+  eid=first+k
   fills.append(dict(record_table='organizations',record_id=oid,field=FIELD,old='',new=new,stated_count=v['stated_count'],url=v['url'],evidence_id=f'EVD-{eid}',shard=shard[oid]))
   evs.append(dict(evidence_id=f'EVD-{eid}',record_table='organizations',record_id=oid,claim_type='size_band',
    claim_detail=f'{FIELD}={new}; own-site statement: "{v["quote"]}"; a company count for an Ohio-only organization (HQ and every held site in Ohio), band only, never allocated to a site',
    source_class='own_site',source_ref=v['url'],observed_date=v['observed_date'],tier_effect='supports_U' if o['verification_tier']=='U' else 'supports_B',created_by=CREATED_BY,
    notes=f'stored page sha256 {v["raw_sha256"]}; fetched {v["observed_date"]}; observed_date is the stored fetch date; page date: {v['page_date']}; blank-only fill of {FIELD}; no site row written'))
- have={e['evidence_id']:e for p in (ROOT/'data').glob('evidence_organizations_*.csv') for e in read(p)}
- for f,e in zip(fills,evs if check_existing else []):
-  if orgs[f['record_id']][FIELD]==f['new']:assert have.get(e['evidence_id'])==e,'cell already holds this band without this pass\'s evidence row: '+f['record_id']
+ mine={e['record_id'] for p in (ROOT/'data').glob('evidence_organizations_*.csv') for e in read(p) if e['created_by']==CREATED_BY}
+ for f in (fills if check_existing else []):
+  if orgs[f['record_id']][FIELD]==f['new']:assert f['record_id'] in mine,'cell already holds this band without this pass\'s evidence row: '+f['record_id']
  return fills,evs,verdicts
 
 def git_base_count(base,path):
@@ -79,8 +90,9 @@ def apply(fills,evs,base):
     if f:assert r[FIELD] in ('',f['new']),'refuse a non-blank cell';r[FIELD]=f['new']
    t_org=org.with_name(org.name+'.stage');temps.append(t_org);write(t_org,rows,list(rows[0]))
    assert len(read(t_org))==git_base_count(base,f'data/{org.name}'),f'{org.name}: staged rows differ from the count at base'
-   t_ev=ev.with_name(ev.name+'.stage');temps.append(t_ev);t_ev.write_bytes(ev.read_bytes())
-   append_sorted(t_ev,[e for e in evs if e['record_id'] in mine and e['evidence_id'] not in existing],'evidence_id')
+   t_ev=ev.with_name(ev.name+'.stage');temps.append(t_ev);keep=[e for e in read(ev) if not (e['created_by']==CREATED_BY and e['evidence_id'] not in {x['evidence_id'] for x in evs})]
+   write(t_ev,keep,list(read(ev)[0]))  # re-allocation: this pass's own rows under stale IDs are replaced; nothing else is touched
+   append_sorted(t_ev,[e for e in evs if e['record_id'] in mine and e['evidence_id'] not in {k['evidence_id'] for k in keep}],'evidence_id')
    assert len(read(t_ev))==git_base_count(base,f'data/{ev.name}')+sum(e['record_id'] in mine for e in evs),f'{ev.name}: staged rows differ from base + packet'
    staged+= [(t_ev,ev),(t_org,org)]
   for t,target in staged:os.replace(t,target)
@@ -90,12 +102,12 @@ def apply(fills,evs,base):
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');ap.add_argument('--base');a=ap.parse_args()
- fills,evs,verdicts=plan()
+ fills,evs,verdicts=plan(base=a.base)
  write(D/'fills.csv',fills,list(fills[0]));write(D/'evidence_rows.csv',evs,list(evs[0]))
  c=Counter(v['disposition'] for v in verdicts)
  (D/'counts.json').write_text(json.dumps(dict(frame=len(verdicts),ohio_only=sum(v['ohio_only']=='true' for v in verdicts),dispositions=dict(c),fills=len(fills),evidence_rows=len(evs),fills_by_band=dict(Counter(f['new'] for f in fills))),indent=2,sort_keys=True)+'\n')
  if a.apply:
   import subprocess
-  apply(fills,evs,a.base or subprocess.check_output(['git','merge-base','HEAD','origin/main'],cwd=GITROOT,text=True).strip())
+  apply(fills,evs,a.base or merge_base())
  print(open(D/'counts.json').read())
 if __name__=='__main__':main()

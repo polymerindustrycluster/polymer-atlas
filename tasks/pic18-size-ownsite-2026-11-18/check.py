@@ -11,6 +11,7 @@ def schema_band(n):return next(b for lo,hi,b in SCHEMA_BANDS if lo<=n<=hi)
 def norm(t):return re.sub(r'\s+',' ',t)
 def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True)
 def at(rev,path):return list(csv.DictReader(io.StringIO(git('show',f'{rev}:{path}'))))
+BASE_MAX=0  # set in main: highest EVD number across every data/evidence_*.csv at the merge-base
 MANIFEST=[r for r in read(CORPUS/'manifest.csv')]
 
 def check_packet(fills,evs,verdicts,frame,orgs,sites):
@@ -38,7 +39,7 @@ def check_packet(fills,evs,verdicts,frame,orgs,sites):
  applied={v['org_id']:v for v in verdicts if v['disposition']=='applied'}
  assert {f['record_id'] for f in fills}==set(applied) and len(fills)==len(applied),'fills differ from applied verdicts'
  ev={e['record_id']:e for e in evs};assert len(ev)==len(evs)==len(fills)
- ids=[e['evidence_id'] for e in evs];assert len(set(ids))==len(ids) and all(FIRST_ID<=int(i[4:])<=LAST_ID for i in ids),'evidence ID outside the block'
+ ids=[e['evidence_id'] for e in evs];assert len(set(ids))==len(ids) and all(int(i[4:])>BASE_MAX for i in ids),'evidence ID not above the merge-base maximum (AGENTS 3: allocate above the tree-wide max)'
  for f in fills:
   oid=f['record_id'];v=applied[oid];o=orgs[oid]
   assert f['record_table']=='organizations' and f['field']==FIELD,'write outside the organization band cell'
@@ -96,7 +97,7 @@ def count_probes(verdicts,frame,orgs,sites):
 def builder_faults(base):
  """Run the real apply() in a temp tree seeded from the base shards, with a truncated input and a failure between writes."""
  names=['organizations_OH.csv','sites_OH.csv','evidence_organizations_OH.csv'];keep=(B.ROOT,B.D,B.os.replace)
- for case in ('truncated input shard','failure between shard writes'):
+ for case in ('truncated input shard','failure between shard writes','stale evidence IDs re-allocated'):
   with tempfile.TemporaryDirectory() as t:
    B.ROOT=Path(t);B.D=B.ROOT/'packet';B.D.mkdir();(B.D/'verdicts.csv').write_bytes((D/'verdicts.csv').read_bytes());(B.ROOT/'data').mkdir()
    try:
@@ -104,7 +105,15 @@ def builder_faults(base):
     org=B.ROOT/'data'/'organizations_OH.csv';rows=read(org)
     if case=='truncated input shard':write(org,rows[:-1],list(rows[0]))
     before={n:(B.ROOT/'data'/n).read_bytes() for n in names};fills,evs,_=B.plan()
-    if case=='truncated input shard':
+    if case=='stale evidence IDs re-allocated':
+     stale=[dict(e,evidence_id=f'EVD-{BASE_MAX+500+i}') for i,e in enumerate(evs)];assert B.CREATED_BY==stale[0]['created_by']
+     for r in rows:
+      if r['org_id'] in {f['record_id'] for f in fills}:r[FIELD]=next(f['new'] for f in fills if f['record_id']==r['org_id'])
+     write(org,rows,list(rows[0]));ev_p=B.ROOT/'data'/'evidence_organizations_OH.csv';er=read(ev_p);write(ev_p,sorted(er+stale,key=lambda e:e['evidence_id']),list(er[0]))
+     B.apply(fills,evs,base);got=read(ev_p);ids={e['evidence_id'] for e in got}
+     assert {e['evidence_id'] for e in evs}<=ids and not {s['evidence_id'] for s in stale}&ids and len(got)==len(er)+len(evs),'stale IDs not replaced exactly'
+     print('stale-ID rows re-allocated by apply():',[e['evidence_id'] for e in evs])
+    elif case=='truncated input shard':
      try:B.apply(fills,evs,base)
      except AssertionError as ex:print('injected builder defect rejected:',case,'->',str(ex)[:60])
      else:raise AssertionError('silent pass: '+case)
@@ -130,6 +139,7 @@ def builder_faults(base):
 
 def main():
  base=sys.argv[1] if len(sys.argv)>1 else git('merge-base','HEAD','origin/main').strip()
+ global BASE_MAX;BASE_MAX=B.base_max_evidence_id(base)
  fills=read(D/'fills.csv');evs=read(D/'evidence_rows.csv');verdicts=read(D/'verdicts.csv');frame=read(D/'frame.csv');orgs,shard,sites=load()
  # yield against an independent count of the input: the controller's frame file, and the stored corpus
  fj=json.loads((S/'briefs/w1118b/frames.json').read_text())['size_screen']
@@ -151,20 +161,22 @@ def main():
  def wrong_band_both(F,E,V,O,SI):F[0]['new']=V[0]['band']='100-249'
  def non_ohio_only(F,E,V,O,SI):
   v=next(v for v in V if v['org_id']=='ORG-000030');v.update(disposition='applied',verdict='VERIFIED',stated_count='600',band='500-999')
-  F.append(dict(F[0],record_id='ORG-000030',new='500-999',old='',evidence_id='EVD-396399'));E.append(dict(E[0],record_id='ORG-000030',evidence_id='EVD-396399'))
+  F.append(dict(F[0],record_id='ORG-000030',new='500-999',old='',evidence_id=f'EVD-{BASE_MAX+99}'));E.append(dict(E[0],record_id='ORG-000030',evidence_id=f'EVD-{BASE_MAX+99}'))
 
  def sites_not_ohio(F,E,V,O,SI):SI[F[0]['record_id']][0]['state']='PA'
  def nonblank_cell(F,E,V,O,SI):O[F[0]['record_id']][FIELD]='1-9'
  def site_write(F,E,V,O,SI):F[0].update(record_table='sites',field='employee_band_site')
  def wrong_role(F,E,V,O,SI):
   v=next(v for v in V if v['org_id']=='ORG-000564');v.update(stated_count='2',band='1-9');F[0].update(new='1-9') if F[0]['record_id']=='ORG-000564' else None;next(f for f in F if f['record_id']=='ORG-000564').update(new='1-9')
+ def low_id(F,E,V,O,SI):
+  E[0]['evidence_id']=F[0]['evidence_id']=f'EVD-{BASE_MAX}'
  def quote_missing(F,E,V,O,SI):V[0]['quote']='We employ forty people in a building not on this page'
  def frame_no_verdict(F,E,V,O,SI):V.pop(5)
- for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
+ for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('evidence ID at or below the merge-base maximum (gap fill)',low_id),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
  builder_faults(base);count_probes(verdicts,frame,orgs,sites)
  if mode=='applied':
   snap={p:p.read_bytes() for p in (ROOT/'data').glob('*OH.csv')}
   subprocess.run([sys.executable,str(D/'build.py'),'--apply'],check=True,stdout=subprocess.DEVNULL)
   assert all(p.read_bytes()==b for p,b in snap.items()),'apply not idempotent'
- print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 12 injected defects rejected')
+ print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 13 injected defects rejected')
 if __name__=='__main__':main()
