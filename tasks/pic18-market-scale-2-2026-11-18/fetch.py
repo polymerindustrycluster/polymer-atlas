@@ -12,18 +12,6 @@ from site_corpus import Corpus, key
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-market-scale-2026-11-18')
 # (org, url, stored page that links to it)
 TARGETS = [
-    ('ORG-000150', 'https://www.nslanalytical.com/industries-served', 'ORG-000150 stored news page href (Industries)'),
-    ('ORG-000150', 'https://www.nslanalytical.com/industries-served/aerospace', 'ORG-000150 stored news page href (Commercial Aerospace)'),
-    ('ORG-000150', 'https://www.nslanalytical.com/industries-served/space-manufacturing', 'ORG-000150 stored news page href (Space Manufacturing)'),
-    ('ORG-000150', 'https://www.nslanalytical.com/industries-served/defense-manufacturing', 'ORG-000150 stored news page href (Defense Manufacturing)'),
-    ('ORG-000150', 'https://www.nslanalytical.com/industries-served/mining', 'ORG-000150 fetched page industries-served (Mining) href'),
-    ('ORG-000150', 'https://www.nslanalytical.com/industries-served/battery-materials', 'ORG-000150 fetched page industries-served (EV Battery Materials) href'),
-    ('ORG-000117', 'https://noramcobag.com/healthcare/', 'ORG-000117 stored markets page href (Healthcare)'),
-    ('ORG-000117', 'https://noramcobag.com/food-and-hospitality/', 'ORG-000117 stored markets page href (Food and Hospitality)'),
-    ('ORG-001330', 'https://finitefiber.com/applications/', 'ORG-001330 stored locations page href (Applications)'),
-    ('ORG-001330', 'https://finitefiber.com/applications/fiber-reinforced-rubber/', 'ORG-001330 stored capabilities page href'),
-    ('ORG-001330', 'https://finitefiber.com/applications/fiber-reinforced-concrete/', 'ORG-001330 stored home page href'),
-    ('ORG-000081', 'https://novexinc.com/applications/', 'ORG-000081 stored locations page href (Applications)'),
 ]
 
 

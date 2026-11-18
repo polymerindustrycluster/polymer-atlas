@@ -1,14 +1,14 @@
 {
   "applied_by_source": {
-    "stored": 25
+    "stored": 28
   },
-  "applied_organizations": 25,
+  "applied_organizations": 28,
   "applied_tiers": {
-    "A": 7,
-    "B": 13,
+    "A": 8,
+    "B": 15,
     "C": 5
   },
-  "applied_values": 45,
+  "applied_values": 47,
   "batch": 2,
   "frame_organizations": 100,
   "frame_pool_at_ref": 197,
@@ -20,16 +20,16 @@
   "held_by_class": {
     "group_or_redirect_attribution": 7,
     "list_item_only": 7,
-    "menu_or_nav_only": 4,
-    "no_market_claim": 41,
+    "menu_or_nav_only": 3,
+    "no_market_claim": 39,
     "no_vocab_market": 4,
     "off_vocabulary_or_ambiguous_market": 11,
     "scope_owner_ruling": 1
   },
-  "held_organizations": 75,
+  "held_organizations": 72,
   "live_fetches": 0,
   "read_basis": {
-    "page_read": 32,
-    "text_screened": 68
+    "page_read": 37,
+    "text_screened": 63
   }
 }
