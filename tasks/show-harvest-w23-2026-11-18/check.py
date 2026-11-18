@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Check this pass without the staging harvest: the appended rows are in the table unchanged, every row's listed name
-is its organization's LEGAL name, or a trade name that the notes record as adjudicated by the cross-family review
-(build.py TRADE_ACCEPT), and no row cites a list the README excludes.
+is its organization's LEGAL name, or a trade name accepted for that exact event, role, year, name and org in
+review_decisions.csv (with the notes saying so), no row is one review_decisions.csv holds, and no row cites a list
+the README excludes.
     python3 tasks/show-harvest-w23-2026-11-18/check.py
 """
 import csv, re, sys
@@ -19,13 +20,21 @@ table = [r for r in read(ROOT / "data" / "event_participation.csv") if r["create
 assert table == packet, f"table has {len(table)} rows of this pass, packet {len(packet)}; they must be identical"
 
 orgs = {o["org_id"]: o for f in (ROOT / "data").glob("organizations_*.csv") for o in read(f)}
+decisions = read(HERE / "review_decisions.csv")
+accepted = {(d["event_id"], d["role"], d["edition_year"], d["listed_name"], d["org_id"])
+            for d in decisions if d["decision"] == "accept"}
+held = {(d["event_id"], d["role"], d["edition_year"], d["listed_name"]) for d in decisions if d["decision"] == "hold"}
 bad = []
 for r in packet:
     listed, o = re.search(r'listed as "(.*)"\)$', r["sources"]).group(1), orgs[r["org_id"]]
+    k = (r["event_id"], r["role"], r["edition_year"], listed)
     trades = {A.name_key(t) for t in (o.get("trade_names") or "").split(";") if t.strip()}
-    adjudicated = "adjudicated the same entity by cross-family review" in r["notes"] and A.name_key(listed) in trades
+    adjudicated = (k + (r["org_id"],) in accepted and A.name_key(listed) in trades
+                   and "adjudicated the same entity by cross-family review" in r["notes"])
     if A.name_key(listed) != A.name_key(o["legal_name"]) and not adjudicated:
         bad.append((r["participation_id"], listed, o["legal_name"]))
+    if k in held:
+        bad.append((r["participation_id"], "held by review_decisions.csv", listed))
     if re.search(r"supporters|media[-_ ]?partners?|cooperating[-_ ]?media|corporate-education-sponsors",
                  r["evidence_source_url"], re.I):
         bad.append((r["participation_id"], "excluded list", r["evidence_source_url"]))

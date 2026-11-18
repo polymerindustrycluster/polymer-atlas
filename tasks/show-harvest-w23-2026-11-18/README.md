@@ -50,7 +50,7 @@ of that PR's 2026-11-09 review built in:
 | Not a list for this event (SPE Blow Molding Division 2025 scholarship sponsors, not ABC sponsors) | 10 |
 | Edition abroad, listed country missing or not the org's HQ country | 74 |
 | Trade-name hit, held (`trade_name_holds.csv`) | 6 |
-| Legal-name hit held by the cross-family review (`REVIEW_HOLDS` in build.py) | 5 |
+| Legal-name hit held by the cross-family review (`review_decisions.csv`, `hold`) | 5 |
 | Already held | 59 |
 
 **Attendees.** SPE International Polyolefins 2026 publishes a delegate workbook (first name, last name, title,
@@ -65,9 +65,15 @@ from an evidence packet: the org record and a page excerpt for every row. Both r
 
 - **Held, both families (5):** "Trelleborg" and "iNOEX" at PP XXIII (bare group or brand names; NPE's "iNOEX, LLC"
   stays), "Aaron Industries, Inc." at NPE (the company calls itself a Corporation), "ACS Group" at NPE (a family of
-  brands), "Hultec" at PP XXIII (a brand over four companies). Recorded in `REVIEW_HOLDS`.
+  brands), "Hultec" at PP XXIII (a brand over four companies). Recorded as `hold` in `review_decisions.csv`.
 - **Added, both families SAME (2):** "Baystar" at NPE and at PP XXIII → Bayport Polymers LLC (the brand's privacy
-  policy names the LLC; NPE's profile gives Pasadena TX). Recorded in `TRADE_ACCEPT`; the notes say so.
+  policy names the LLC; NPE's profile gives Pasadena TX). Recorded as `accept` in `review_decisions.csv`, valid
+  only for that event, year, listed name and organization; the notes say so.
+- **Fix confirmation (codex, deep):** the data delta was exactly the five holds and two adds. It refuted the first
+  enforcement: the overrides were not keyed by edition year or organization, and `check.py` trusted a phrase in the
+  notes (a held Blueshift row with "NOT adjudicated …" in its notes passed). Both now read `review_decisions.csv`
+  keyed by event (or show), role, year, name and org; that Blueshift row, a held row and an accepted name in the wrong
+  year all fail `check.py`. The rebuilt rows are byte-identical to the reviewed fix.
 - **Still held (6):** Blueshift and Cambium (codex: same, citing their legal pages; agy: unsure), Alpek Polyester,
   3A Composites Core Materials, Airtech Advanced Materials Group, Brighton Science (both unsure or split).
 - **Split, kept (2):** agy would also drop "Atomic Industries" and "Fiber Dynamics" for lack of profile text. Codex
