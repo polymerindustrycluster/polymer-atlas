@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
+EXPECTED_DEFECTS = 20   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -23,7 +24,7 @@ def audit(props, sites, orgs, text=B.doc_text):
         s, d, t = p["site_id"], p["docid"], p["term"]; tx = text(d); st = sites[s]; org = orgs[st["org_id"]]; h = B.cb.header(tx)
         if not B.cb.in_order(p["quote"], tx): v.append(("QUOTE", f"{s}/{d}: quote not in the stored permit, in order: {p['quote'][:50]}"))
         if t and t not in B.PROCESSES: v.append(("TERM", f"{s}: {t} is not a §3.1 term"))
-        if t and B.ANCILLARY.search(p["quote"]): v.append(("ANCILLARY", f"{s}: ancillary unit text mapped to {t}"))
+        if t and B.is_ancillary(tx, p["quote"], B.position(tx, p["quote"])): v.append(("ANCILLARY", f"{s}: ancillary unit text mapped to {t}"))
         exp, guard = B.expiry(tx)
         if not guard: v.append(("EXPIRY_GUARD", f"{s}/{d}: an expiration is printed but not parsed"))
         if p["route"] in WRITE:
@@ -79,14 +80,45 @@ def audit_ids(new_ids, floor, what):
     return [("ID", f"{what}: ids {low} are not above the maximum {floor} at the base")] if low else []
 
 def names_in_docs():
-    """Person names printed in the cover-letter blocks of the stored permits, found at run time. Never written to a file."""
-    bad = re.compile(r"Inc|LLC|Co\b|Corp|Ohio|Division|Agency|Protection|Environmental|Governor|Director|Street|Road|Drive|Avenue|Facility|Permit|Page|Final|Dear|Plant|Company|Products|Polymer", re.I)
+    """Person names printed anywhere in the stored permits (cover-letter blocks, signatures), found at run time. Never written to a file or printed."""
+    bad = re.compile(r"Inc|LLC|Co\b|Corp|Ohio|Division|Agency|Protection|Environmental|Governor|Director|Street|Road|Drive|Avenue|Facility|Permit|Page|Final|Dear|Plant|Company|Products|Polymer|"
+                     r"Commission|Appeals|Review|Section|Chief|Office|District|Air|Pollution|Control|Quality|Management|Treasurer|Attorney|General|Enforcement|Fee|Date|Type|Unit|Emissions|Terms|Conditions|Table|Rule|Title|Part", re.I)
     out = set()
     for p in glob.glob(str(B.LANE / "docs/*.txt")):
-        for l in Path(p).read_text().split("\n")[:45]:
-            c = re.split(r"\s{2,}", l.strip())[0]
+        for l in Path(p).read_text().split("\n"):
+            c = re.split(r"\s{2,}", l.strip())[0].rstrip(",")
             if re.fullmatch(r"[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][A-Za-z'-]+", c) and not bad.search(c): out.add(c)
     return out
+
+def signatories():
+    """The first non-empty line after each 'Sincerely' in the stored permits: the signatory the privacy scan must know."""
+    out = set()
+    for p in glob.glob(str(B.LANE / "docs/*.txt")):
+        L = Path(p).read_text().split("\n")
+        for i, l in enumerate(L):
+            if re.match(r"\s*Sincerely", l):
+                nxt = [re.split(r"\s{2,}", x.strip())[0].rstrip(",") for x in L[i + 1:i + 8] if x.strip()]
+                out |= {x for x in nxt[:2] if re.fullmatch(r"[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][A-Za-z'-]+", x)}
+    return out
+
+def audit_complete(sites_now, ev_now, cap_now, props):
+    """The applied state must equal the plan whatever a file's diff against the base looks like: every planned cell, and exactly the planned new rows."""
+    v = []; cells = {r["site_id"]: set(r["processes"].split(";")) for r in sites_now}
+    for p in props:
+        if p["route"] == "processes" and p["term"] not in cells.get(p["site_id"], set()): v.append(("COMPLETE", f"{p['site_id']}: planned term {p['term']} is not in the processes cell"))
+    n_ev = sum(p["route"] == "processes" for p in props); n_cp = sum(p["route"] == "capability" for p in props)
+    mine_ev = [r for r in ev_now if r["created_by"] == B.WHO]; mine_cp = [r for r in cap_now if r["created_by"] == B.WHO]
+    if len(mine_ev) != n_ev or len(mine_cp) != n_cp: v.append(("COMPLETE", f"{len(mine_ev)}/{n_ev} evidence rows and {len(mine_cp)}/{n_cp} capability rows applied"))
+    return v
+
+def audit_manifest(hashes, text, scr):
+    """Printed Facility ID, derived from the hashed text, equals the manifest's and one of the site's ECHO-linked IDs."""
+    v = []; link = {r["site_id"]: {x[-10:] for x in re.split(r"[;\s]+", r["echo_air_ids"]) if x} for r in scr}
+    for d, h in hashes.items():
+        fid = B.header(text(d))["facility_id"]
+        if h["facility_id"] != fid: v.append(("MANIFEST", f"{d}: manifest Facility ID differs from the printed one"))
+        if fid not in link.get(h["site_id"], set()): v.append(("MANIFEST", f"{d}: printed Facility ID is not one linked to {h['site_id']}"))
+    return v
 
 def audit_privacy(files, names):
     v = []
@@ -102,6 +134,31 @@ def data_diff(base):
     files = [f for f in B.git("diff", "--name-only", base, "--", "data/").split("\n") if f]
     b = {f: rd(B.git("show", f"{base}:{f}")) for f in files if B.git("ls-tree", base, f).strip()}
     return b, {f: B.read_csv(ROOT / f) for f in files}
+
+def probe_interrupted_replay(props, hashes):
+    """Codex's replay probe: a cut during apply must leave every live shard intact, and a retry must reproduce the applied state exactly."""
+    import tempfile
+    from unittest.mock import patch
+    names = ("sites_OH.csv", "evidence_sites_OH.csv", "site_capabilities.csv")
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp); data = root / "data"; data.mkdir()
+        for p in (ROOT / "data").glob("evidence_*.csv"):
+            if p.name not in names: (data / p.name).symlink_to(p)
+        before = {}
+        for n in names: before[n] = (ROOT / "data" / n).read_bytes(); (data / n).write_bytes(before[n])
+        real, calls = B.os.replace, []
+        def cut(a, b):
+            calls.append(a)
+            if len(calls) == 2: raise OSError("cut during replay")
+            return real(a, b)
+        try:
+            with patch.object(B.os, "replace", cut): B.apply({"props": props}, hashes, root=root)
+        except OSError: pass
+        else: raise AssertionError("the cut never fired")
+        assert (data / names[1]).read_bytes() == before[names[1]] and (data / names[2]).read_bytes() == before[names[2]], "a live shard changed during an interrupted replay"
+        assert not list(data.glob("*.stage")), "a stage file was left behind"
+        B.apply({"props": props}, hashes, root=root)
+        assert all((data / n).read_bytes() == before[n] for n in names), "the retry did not reproduce the applied state"
 
 def main():
     hashes = json.load(open(HERE / "doc_hashes.json")); J = {}
@@ -119,6 +176,7 @@ def main():
     rec = [r["site_id"] for r in B.cb.screen_rows() if r["status"] == "retrievable_permit"]   # the canary's own screen, rebuilt from its caches and the printed Facility IDs
     assert sorted(rec) == model["frame"] and len(rec) == B.N_FRAME == B.metrics(model)["frame_sites"], "frame yield differs from the independent recount"
     assert not audit(props, sites, orgs), audit(props, sites, orgs)
+    assert not audit_manifest(hashes, B.doc_text, inp["scr"]), audit_manifest(hashes, B.doc_text, inp["scr"])
     base = base_ref(); bf, nf = data_diff(base)
     ev_files = [f for f in B.git("ls-tree", "-r", "--name-only", base, "data/").split("\n") if re.match(r"data/evidence_.*\.csv", f)]
     ev_base_max = max(int(r["evidence_id"][4:]) for f in ev_files for r in rd(B.git("show", f"{base}:{f}")))
@@ -130,9 +188,13 @@ def main():
     assert not audit_written(nf, props, sites, hashes), "written rows differ from the plan"
     assert not audit_ids(mine_ev, others_ev, "evidence") and not audit_ids(mine_cp, cap_base_max, "capability")
     n_ev = sum(p["route"] == "processes" for p in props); n_cp = sum(p["route"] == "capability" for p in props)
-    assert len(mine_ev) in (0, n_ev) and len(mine_cp) in (0, n_cp), f"partial apply: {len(mine_ev)}/{n_ev} evidence rows, {len(mine_cp)}/{n_cp} capability rows"
-    names = names_in_docs(); assert names, "no person names found in the stored permits: the privacy injection cannot run"
-    assert not audit_privacy(task_files(), names), audit_privacy(task_files(), names)
+    sites_cur, ev_cur, cap_cur = (B.read_csv(ROOT / f) for f in ("data/sites_OH.csv", "data/evidence_sites_OH.csv", "data/site_capabilities.csv"))
+    assert not audit_complete(sites_cur, ev_cur, cap_cur, props), audit_complete(sites_cur, ev_cur, cap_cur, props)
+    names = names_in_docs(); sig = signatories(); assert names and sig and sig <= names, "the privacy scan must know every signatory printed in the stored permits"
+    assert not audit_privacy(task_files(), names), f"{len(audit_privacy(task_files(), names))} privacy findings"
+    probe_interrupted_replay(props, hashes)
+    pos = copy.deepcopy([p for p in props if p["site_id"] == "SITE-000346"]); pos[0]["quote"] += ", blowdown tanks"
+    assert not [g for g in audit(pos, sites, orgs) if g[0] == "ANCILLARY"], "a polymerization witness is rejected for one keyword in its equipment list"
     # ------------------------------------------------------------------------------------------------------------ injected defects
     def one(rule, mut, kind="props"):
         P = copy.deepcopy(props); S2, O2 = copy.deepcopy(sites), orgs
@@ -141,6 +203,8 @@ def main():
         elif kind == "frame": got = audit_frame(mut(copy.deepcopy(inp["scr"])))
         elif kind == "data": got = audit_data(*mut(copy.deepcopy(bf), copy.deepcopy(nf)), props)
         elif kind == "written": got = audit_written(mut(copy.deepcopy(nf)), props, sites, hashes)
+        elif kind == "complete": got = audit_complete(*mut(), props)
+        elif kind == "manifest": got = audit_manifest(mut(copy.deepcopy(hashes)), B.doc_text, inp["scr"])
         elif kind == "ids": got = audit_ids(*mut())
         elif kind == "privacy": got = audit_privacy(mut(), names)
         assert any(g[0] == rule for g in got), f"injected defect {rule} was NOT caught: {got[:3]}"
@@ -169,13 +233,22 @@ def main():
         b = {"data/evidence_sites_OH.csv": rd(B.git("show", f"{base}:data/evidence_sites_OH.csv"))}; n = {"data/evidence_sites_OH.csv": copy.deepcopy(b["data/evidence_sites_OH.csv"])}; n["data/evidence_sites_OH.csv"][3]["notes"] = "edited"; return b, n
     def flip_tier(n):
         i = next(i for i, r in enumerate(n["data/evidence_sites_OH.csv"]) if r["created_by"] == B.WHO and r["record_id"] == "SITE-000238"); n["data/evidence_sites_OH.csv"][i]["tier_effect"] = "supports_A"; return n
-    done += [one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(route="processes", strength="supports_C")),
+    def restore_base():
+        return (rd(B.git("show", f"{base}:data/sites_OH.csv")), ev_cur, rd(B.git("show", f"{base}:data/site_capabilities.csv")))
+    def fake_note(n):
+        i = next(i for i, r in enumerate(n["data/evidence_sites_OH.csv"]) if r["created_by"] == B.WHO and r["record_id"] == "SITE-000346")
+        n["data/evidence_sites_OH.csv"][i]["notes"] = re.sub(r"Facility ID \d{10}", "Facility ID 0000000000", n["data/evidence_sites_OH.csv"][i]["notes"]); return n
+    def fake_manifest(h): h["4325660"]["facility_id"] = "0000000000"; return h
+    done += [one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_note, "written"), one("MANIFEST", fake_manifest, "manifest"),
+             one("PRIVACY", lambda: {"README.md": "signed by " + sorted(sig)[0]}, "privacy"),
+             one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(route="processes", strength="supports_C")),
              one("WRITTEN", flip_tier, "written"), one("CELLS", cell_defect, "data"), one("ROWS", row_defect, "data"),
              one("ID", lambda: ([ev_base_max], ev_base_max, "evidence"), "ids"),
              one("PRIVACY", lambda: {"README.md": "contact " + sorted(names)[0] + " about the permit"}, "privacy"),
              one("PRIVACY", lambda: {"README.md": "write to someone" + chr(64) + "example.com"}, "privacy"),
              one("FRAME", lambda scr: [dict(r, status="no_air_record") if r["site_id"] == "SITE-000590" else r for r in scr], "frame")]
-    print(f"ok: frame {B.N_FRAME} (independent count agrees); strict-bound {B.metrics(model)['strict_bound_sites']}, near-bound {B.metrics(model)['near_bound_sites']}; "
-          f"{n_ev} evidence rows, {n_cp} capability rows planned, {len(mine_ev)}/{len(mine_cp)} applied; {len([d for d in done if d])} injected defects all caught")
+    assert len([d for d in done if d]) == EXPECTED_DEFECTS, f"{len(done)} injected defects run, EXPECTED_DEFECTS says {EXPECTED_DEFECTS}"
+    print(f"names {len(names)}, signatories {len(sig)}; ok: frame {B.N_FRAME} (independent count agrees); strict-bound {B.metrics(model)['strict_bound_sites']}, near-bound {B.metrics(model)['near_bound_sites']}; "
+          f"{n_ev} evidence rows, {n_cp} capability rows planned, {len(mine_ev)}/{len(mine_cp)} applied and equal to the plan; {len([d for d in done if d])} injected defects all caught")
 
 if __name__ == "__main__": main()

@@ -53,7 +53,7 @@
      "note": "K001-K005 table rows; owner ruling 2026-11-18b item 2 added composites_spray_up for this wording"
     }
    ],
-   "note": ""
+   "note": "coating_applying is not carried alongside composites_spray_up: K001-K005 describe ONE unit, a 'Polyester gelcoat and FRP spray up booth'; its text names no coating line, coater, dip station or saturation line (the lane predicate), and \u00a73.1 defines coating_applying only by contrast with coating_formulation (see README)"
   },
   "SITE-000264": {
    "verdict": "STILL_UNCERTAIN",
@@ -161,17 +161,17 @@
    "note": ""
   },
   "SITE-000630": {
-   "verdict": "STILL_UNCERTAIN",
-   "hold_reason": "permit_description_only",
+   "verdict": "VERIFIED",
+   "hold_reason": null,
    "quotes": [
     {
      "doc": "1583652",
-     "quote": "PTIO renewal for emissions unit P001 which is a polystyrene expander line for the expansion of polystyrene (EPS) pellets",
+     "quote": "Polystyrene Expander Line, consisting of six expanders",
      "terms": [
       "foam_production_unspecified"
      ],
      "grade": "list",
-     "note": "the unit text says 'Polystyrene Expander Line, consisting of six expanders' with no foam word; only the permit description states the expansion of EPS pellets"
+     "note": "P001 expander line (unit heading and equipment description); expansion of polystyrene gives the foam type unstated, so the _unspecified term; supports_C"
     }
    ],
    "note": ""
@@ -186,8 +186,8 @@
      "terms": [
       "laminating"
      ],
-     "grade": "narrative",
-     "note": "P001 Laminator; a statement of the operation"
+     "grade": "list",
+     "note": "P001 Laminator: a label followed by an equipment list, so supports_C (the canary graded the same text A)"
     }
    ],
    "note": ""
@@ -215,24 +215,17 @@
    "note": ""
   },
   "SITE-000997": {
-   "verdict": "STILL_UNCERTAIN",
-   "hold_reason": "permit_description_only",
+   "verdict": "VERIFIED",
+   "hold_reason": null,
    "quotes": [
     {
      "doc": "3056606",
-     "quote": "Renewal PTIO for two miscellaneous metal parts coating lines at an electromagnetic coil manufacturing plant",
+     "quote": "Epoxy dip station consisting of a vent hood over a dip pan and flash off rack, followed by an oven",
      "terms": [
       "coating_applying"
      ],
      "grade": "list",
-     "note": "permit description only: the word \"coating\" appears in the permit description, not in the unit description"
-    },
-    {
-     "doc": "3056606",
-     "quote": "Epoxy dip station consisting of a vent hood over a dip pan and flash off rack, followed by an oven",
-     "terms": [],
-     "grade": "list",
-     "note": "R001/R002 table rows: a dip coating station, but the unit text never says coating, so it carries no \u00a73.1 term"
+     "note": "R001/R002 table rows: a dip coating station (dip pan, flash-off rack, oven), a coating line by the lane predicate (dip station); supports_C"
     }
    ],
    "note": ""
@@ -274,7 +267,7 @@
    "verdict": "STILL_UNCERTAIN",
    "hold_reason": "not_bound",
    "quotes": [],
-   "note": "the issuance block prints 'Sharon Twp., OH', the cover letter prints 'Sharon Center'; the strict bind compares the issuance block (the header parser read the PO box line as the municipality); either way the printed municipality is not the Atlas 'Sharon Center'"
+   "note": "the permit's issuance block prints a PO box on its own address line and then 'Sharon Twp., OH'; the cover letter prints 'Sharon Center'. The facility municipality printed in the issuance block is 'Sharon Twp.', not the Atlas 'Sharon Center', so the hold stands"
   },
   "SITE-001513": {
    "verdict": "STILL_UNCERTAIN",

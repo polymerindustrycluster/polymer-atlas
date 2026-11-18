@@ -8,7 +8,7 @@ Writes only inside this folder, except --apply, which (a) unions a term into `pr
 Ids are allocated at apply time above the maximum of every other row in the tree; this lane's own rows are re-allocated the same way after a merge.
 Strength, route, bind, expiry and witness position are computed here from the stored permits and the Atlas rows; verdicts.json asserts none of them.
 """
-import csv, glob, importlib.util, io, json, re, shutil, subprocess, sys
+import csv, glob, importlib.util, json, os, re, shutil, subprocess, sys
 from collections import Counter
 from pathlib import Path
 HERE = Path(__file__).resolve().parent; ROOT = HERE.parents[1]; sys.path.insert(0, str(ROOT / "scripts"))
@@ -43,16 +43,31 @@ def write_csv(path, rows, fields=None):
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n", extrasaction="ignore"); w.writeheader(); w.writerows(rows)
 
+def read_rows_text(text):
+    import io
+    return list(csv.DictReader(io.StringIO(text, newline="")))
+
 def atlas():
     sites = {r["site_id"]: r for p in sorted(glob.glob(str(ROOT / "data/sites_*.csv"))) for r in read_csv(p)}
     orgs = {r["org_id"]: r for p in sorted(glob.glob(str(ROOT / "data/organizations_*.csv"))) for r in read_csv(p)}
     return sites, orgs
 
+def header(text):
+    """The canary's header(), with the facility municipality read from the issuance block's own `City, OH` line (a PO box line may sit between street and city)."""
+    h = cb.header(text); L = text.split("\n")
+    for i, l in enumerate(L):
+        if l.strip().endswith("to:") and ("issuance" in l or (i and "issuance" in L[i - 1])):
+            for x in [y.strip() for y in L[i + 1:i + 8] if y.strip()][1:5]:
+                m = re.match(r"(.+?),\s*OH\b", x)
+                if m: h["holder_city"] = m.group(1).strip(); break
+            break
+    return h
+
 def doc_text(d): return (LANE / "docs" / f"{d}.txt").read_text()
 
 def expiry(text):
     """(ISO date | '', guard_ok). A permit-to-install prints no expiration; a regex miss on a printed one is guard_ok False."""
-    e = cb.mdy(cb.header(text)["expiration_date"])
+    e = cb.mdy(header(text)["expiration_date"])
     return e, bool(e) or not re.search(r"Expiration(?:\s+Date)?:?\s*\d", text)
 
 def position(text, quote):
@@ -77,6 +92,20 @@ def position(text, quote):
             break
     return found
 
+def first_line(text, quote):
+    toks = [(m.group(), text.count("\n", 0, m.start())) for m in re.finditer(r"[a-z0-9]+", text.lower())]
+    q = cb.words(quote); n = len(q); w = [t for t, _ in toks]; lines = text.split("\n")
+    return next((toks[i][1] for i in range(len(w) - n + 1) if w[i:i + n] == q and "....." not in lines[toks[i][1]]), None)
+
+def is_ancillary(text, quote, pos):
+    """Ancillary by the unit, not by one word in a mixed equipment list: the unit's heading title and the quote's own head clause (the whole quote if it is a heading)."""
+    head = quote if pos == "unit_heading" else re.split(r"[,:.]|\s-\s|\bconsisting\b|\bincluding\b", quote)[0]
+    ln = first_line(text, quote); title = ""; L = text.split("\n")
+    for k in range(ln if ln is not None else 0, max(-1, (ln or 0) - 15), -1):
+        m = re.match(r"\s*\d+\.\s+[A-Z]\d{3},?\s*(.*)", L[k])
+        if m: title = m.group(1); break
+    return bool(ANCILLARY.search(head) or ANCILLARY.search(title))
+
 def bind_near(h, st, org, fid):
     """Strict canary bind first; if it fails only on street/city, retry with the NEAR format variants. Returns (strict_reasons, near_rule or '')."""
     r = cb.bind_registered([h], fid, st, org)
@@ -98,7 +127,7 @@ def compute(inp):
         if s not in V or r["status"] != "retrievable_permit": continue
         st = sites[s]; org = orgs[st["org_id"]]; tier = st["verification_tier"]; v = V[s]
         allowed = {x[-10:] for x in re.split(r"[;\s]+", r["echo_air_ids"]) if x}
-        docs = r["final_permit_docids"].split(";"); hdr = {d: cb.header(inp["text"](d)) for d in docs}
+        docs = r["final_permit_docids"].split(";"); hdr = {d: header(inp["text"](d)) for d in docs}
         fids = {h["facility_id"] for h in hdr.values()}
         if len(fids) != 1 or not fids <= allowed: viol.append(f"{s}: printed Facility IDs {sorted(fids)} not one of the ECHO-linked {sorted(allowed)}")
         fid = sorted(fids)[0]
@@ -120,7 +149,7 @@ def compute(inp):
             terms = q["terms"] or [""]
             for t in terms:
                 if t and t not in PROCESSES: viol.append(f"{s}: term {t} is not in SCHEMA §3.1")
-                if t and ANCILLARY.search(q["quote"]): viol.append(f"{s}: ancillary unit text mapped to {t}")
+                if t and is_ancillary(text, q["quote"], pos): viol.append(f"{s}: ancillary unit text mapped to {t}")
                 if not t: route, why = "no_term", "ancillary or no §3.1 term"
                 elif reasons: route, why = "hold", "not_bound" if not near_d else "near_bound"
                 elif not unit_level: route, why = "hold", "permit_description_only"
@@ -160,7 +189,7 @@ def stage():
                 src = CAN / "docs" / f"{d}.{ext}"; dst = LANE / "docs" / f"{d}.{ext}"
                 assert sha(src) == J[d][key], f"{d}.{ext}: sha256 differs from the fetch journal"
                 if not dst.exists() or sha(dst) != J[d][key]: shutil.copy2(src, dst)
-            h = cb.header((LANE / "docs" / f"{d}.txt").read_text())
+            h = header((LANE / "docs" / f"{d}.txt").read_text())
             out[d] = dict(site_id=r["site_id"], url=URL + d, pdf_sha256=J[d]["pdf_sha256"], text_sha256=J[d]["text_sha256"], bytes=J[d]["bytes"], fetched_utc=J[d]["fetched_utc"],
                           permit_number=h["permit_number"], facility_id=h["facility_id"], issue_date=cb.mdy(h["issue_date"]), expiration_date=cb.mdy(h["expiration_date"]))
     json.dump(out, open(HERE / "doc_hashes.json", "w"), indent=1, sort_keys=True)
@@ -181,7 +210,7 @@ def evidence_rows(props, hashes, sites, first_id):
         h = hashes[p["docid"]]
         note = (f"government_filing: Ohio EPA air permit {p['permit_number']}, issued {p['issue_date']}, expiry {p['expiry']}"
                 + (f"; past its printed expiry on {AS_OF}, capped at supports_C" if p["expired"] == "Y" else "")
-                + f"; Facility ID {h['facility_id']}; printed Facility ID, holder, street and city equal the Atlas site row; witness: {p['position'].replace('_', ' ')} "
+                + f"; Facility ID {header(doc_text(p['docid']))['facility_id']}; printed Facility ID, holder, street and city equal the Atlas site row; witness: {p['position'].replace('_', ' ')} "
                   f"({'a sentence stating the operation' if p['strength'] == 'supports_A' else 'a label, heading, table row or equipment list: a list item'}); "
                   f"PDF sha256 {h['pdf_sha256']}; retrieved 2026-11-18 (Ohio EPA eDocument search by the printed Facility ID), stored text re-read; term unioned into processes "
                   "(owner ruling 2026-11-18b item 1, B-PERMIT option b); a permit is a statement as of its issue date, not a status finding.")
@@ -201,28 +230,51 @@ def capability_rows(props, hashes, sites, first_id):
                                 f"§3.1 term {p['term']} -> §3.6 `{p['capability_term']}`. Printed Facility ID, holder, street and city equal the Atlas site row. PDF sha256 {h['pdf_sha256']}; retrieved 2026-11-18."))); i += 1
     return rows
 
-def apply(model, hashes):
-    from shard_io import append_sorted
-    SH, EV, CP = ROOT / "data/sites_OH.csv", ROOT / "data/evidence_sites_OH.csv", ROOT / "data/site_capabilities.csv"
-    ev_all = [Path(p) for p in glob.glob(str(ROOT / "data/evidence_*.csv"))]
-    # re-allocation: drop this lane's own rows, then append again above the maximum of every other row (idempotent; ids never fill a gap)
-    for path, col in ((EV, "evidence_id"), (CP, "capability_id")):
-        rows = read_csv(path); fields = list(rows[0]); keep = [r for r in rows if r["created_by"] != WHO]
-        if len(keep) != len(rows): write_csv(path, keep, fields)
-    sites_now = {r["site_id"]: r for r in read_csv(SH)}
+def stage_replace(live, rows, fields, key=None, new=()):
+    """Write the complete new content of a live shard next to it, verify it, then replace atomically. A cut at any point leaves the live file intact."""
+    live = Path(live); stage = live.with_name(live.name + ".stage")
+    try:
+        write_csv(stage, rows, fields)
+        if key and new:
+            from shard_io import append_sorted
+            append_sorted(stage, list(new), key)
+        got = read_csv(stage)
+        assert len(got) == len(rows) + len(new), f"{live.name}: staged {len(got)} rows, expected {len(rows) + len(new)}"
+        if key: ids = [r[key] for r in got]; assert ids == sorted(ids) and len(set(ids)) == len(ids), f"{live.name}: staged ids not unique and ascending"
+        with open(stage, "rb") as f: os.fsync(f.fileno())
+        os.replace(stage, live)
+    finally:
+        stage.unlink(missing_ok=True)
+
+def apply(model, hashes, root=ROOT, base=None):
+    """Plan every write in memory, verify it against the live files (and the merge-base rows when given), then replace each shard atomically."""
+    SH, EV, CP = root / "data/sites_OH.csv", root / "data/evidence_sites_OH.csv", root / "data/site_capabilities.csv"
+    ev_all = [Path(p) for p in glob.glob(str(root / "data/evidence_*.csv"))]
+    cur = {p: read_csv(p) for p in (SH, EV, CP)}; fields = {p: list(cur[p][0]) for p in cur}
+    sites_now = {r["site_id"]: r for r in cur[SH]}
+    keep = {p: [r for r in cur[p] if r["created_by"] != WHO] for p in (EV, CP)}   # re-allocation: this lane's own rows go, then return above every other id
     ev = evidence_rows(model["props"], hashes, sites_now, max_id("EVD-", ev_all, "evidence_id") + 1)
     cp = capability_rows(model["props"], hashes, sites_now, max_id("CAP-", [CP], "capability_id") + 1)
-    if ev: append_sorted(EV, ev, "evidence_id")
-    if cp: append_sorted(CP, cp, "capability_id")
     unions = {}
     for p in model["props"]:
         if p["route"] == "processes": unions.setdefault(p["site_id"], []).append(p["term"])
-    rows = read_csv(SH); fields = list(rows[0])
-    for r in rows:
+    new_sites = []
+    for r in cur[SH]:
+        r = dict(r)
         if r["site_id"] in unions:
-            cur = [x for x in r["processes"].split(";") if x]
-            r["processes"] = ";".join(cur + [t for t in dict.fromkeys(unions[r["site_id"]]) if t not in cur])
-    write_csv(SH, rows, fields)
+            have = [x for x in r["processes"].split(";") if x]
+            r["processes"] = ";".join(have + [t for t in dict.fromkeys(unions[r["site_id"]]) if t not in have])
+        new_sites.append(r)
+    if base:   # every merge-base row survives unchanged (sites: but for the planned processes cell)
+        for p, key in ((SH, "site_id"), (EV, "evidence_id"), (CP, "capability_id")):
+            after = {r[key]: r for r in (new_sites if p == SH else keep[p] + (ev if p == EV else cp))}
+            for r in base[p]:
+                assert r[key] in after, f"{p.name}: base row {r[key]} would be lost"
+                if p != SH: assert after[r[key]] == r, f"{p.name}: base row {r[key]} would change"
+                else: assert {c: v for c, v in after[r[key]].items() if c != "processes"} == {c: v for c, v in r.items() if c != "processes"}, f"{p.name}: base row {r[key]} would change outside processes"
+    stage_replace(SH, new_sites, fields[SH])
+    stage_replace(EV, keep[EV], fields[EV], "evidence_id", ev)
+    stage_replace(CP, keep[CP], fields[CP], "capability_id", cp)
     return len(ev), len(cp), len(unions)
 
 # ----------------------------------------------------------------------------------------------------------------------------- outputs
@@ -247,6 +299,7 @@ def settle(r):
     return SETTLE.get(r["hold_reason"], "")
 
 def readme(model, m):
+    EXPECTED_DEFECTS = int(re.search(r"EXPECTED_DEFECTS = (\d+)", (HERE / "check.py").read_text()).group(1))
     P = {}
     for p in model["props"]: P.setdefault(p["site_id"], []).append(p)
     def writes(s):
@@ -313,31 +366,45 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 
 ## Judgment calls the owner may want to review
 
-1. **Canary flips.** Under the ruling, SITE-000664 (`laminating`) and SITE-000248 (now `composites_spray_up`, not `coating_applying`) stand; SITE-000997 (dip stations) and SITE-000814 (paint manufacture) are now held, because the only words that name the process are in the permit description, not the unit description; SITE-000601 and SITE-001530 are not written (tier A, no capability term; tier B, already held as a capability from TRI); SITE-000535, SITE-000140 and SITE-001833 stay unbound. SITE-000248's `coating_applying` is not carried: the spray-up unit is the process.
-2. **Permit descriptions.** If the owner rules that a `Permit Description` line counts at `supports_C`, the permit_description_only holds become writes (3 sites; see the per-site table). Not applied.
+1. **Canary flips.** Under the ruling, SITE-000664 (`laminating`), SITE-000997 (dip stations) and SITE-000248 (`composites_spray_up`) stand; SITE-000814 (paint manufacture) is held because only the permit description names the process; SITE-000601 and SITE-001530 are not written (tier A, no capability term; tier B, already held as a capability from TRI); SITE-000535, SITE-000140 and SITE-001833 stay unbound.
+2. **Permit descriptions.** If the owner rules that a `Permit Description` line counts at `supports_C`, SITE-000814 becomes a write (the only `permit_description_only` hold). Not applied.
 3. **`coating_applying` has no capability term** (§3.6: applying is a trade service, not seeded), so it can never land on a tier A/B site from a `supports_C` witness.
-4. **SITE-000238 is written although both its permits are past their printed expiry** (P0105759 and P0127661, both expiring 2024-04-08; no later permit in the portal listing). The owner ruling governs: owner ruling 2026-11-18b item 1 says "A permit past its printed expiry caps at `supports_C`", the owner's choice being "Yes, expiry caps". The controller confirmed that the brief's settling-fact list, which named "expired with no current permit" as a hold reason, was wrong to include it. Both terms (`composites_spray_up`, `composites_hand_layup`) are written at `supports_C` on the tier C site (1 of 5 sites, 2 of 6 terms).
+4. **SITE-000238 is written although both its permits are past their printed expiry** (P0105759 and P0127661, both expiring 2024-04-08; no later permit in the portal listing). The owner ruling governs: owner ruling 2026-11-18b item 1 says "A permit past its printed expiry caps at `supports_C`", the owner's choice being "Yes, expiry caps". The controller confirmed that the brief's settling-fact list, which named "expired with no current permit" as a hold reason, was wrong to include it. Both terms (`composites_spray_up`, `composites_hand_layup`) are written at `supports_C` on the tier C site (1 of 7 sites, 2 of 8 terms).
+5. **No row is `supports_A`.** SITE-000664's laminating text is a label followed by an equipment list ("Continuous fiberglass laminating operation including, but not limited to: propeller mixer, saturating pans, ..."), so it is `supports_C` under the same rule as SITE-000448's "Extrusion process including ..." and SITE-000346's label (the canary graded it A; the lane's own strength rule governs).
 
-5. **The one `supports_A` row** (SITE-000664, `laminating`) follows the canary's grading of the same sentence (CQ-13); the same shape elsewhere (SITE-000448's "Extrusion process including cooling, pelletizing, and screening", SITE-000346's label) is graded `supports_C`, because the sentence names an operation and a product rather than a label plus equipment.
+## Review round 1 (Codex REFUTE, 10 findings; Gemini APPROVE)
+
+| # | Finding | Answer |
+|---|---|---|
+| 1 | An interrupted replay could truncate a live shard | **Fixed.** `apply` plans every write in memory, stages each complete shard beside the live file (through `shard_io.append_sorted`), verifies row count, ascending unique ids and that every merge-base row survives unchanged (sites: but for the planned `processes` cell), then replaces atomically. `check.py` runs the interrupted-replay probe (a cut after the first replace, then a retry that must reproduce the applied state byte for byte). |
+| 2 | The checker passed with the cells and capability row absent | **Fixed.** `check.py` now requires the applied state to equal the plan whatever a file's diff against the base is (every planned `processes` term present; exactly the planned evidence and capability rows) and injects a restore of `sites_OH.csv` and `site_capabilities.csv` to the base. |
+| 3 | SITE-000630 and SITE-000997 have unit-level witnesses | **Fixed, applied at `supports_C`.** Re-read against the ruling: SITE-000630 P001 "Polystyrene Expander Line, consisting of six expanders" (unit heading and equipment description; expansion of polystyrene, foam type unstated, so `foam_production_unspecified`); SITE-000997 R001/R002 "Epoxy dip station consisting of a vent hood over a dip pan and flash off rack, followed by an oven" (a dip station is a coating line by the lane predicate, not a finishing booth). Both are bound, not ancillary, on tier C sites. |
+| 4 | SITE-000248 `coating_applying` dropped | **Rebutted.** §3.1 defines `coating_applying` only as "*(contrast: `coating_formulation` = makes it)*", and §3.6 says "applying is a trade service, not a disclosed plant capability at this grain". K001-K005 are one unit type, "Polyester gelcoat and FRP (fiberglass reinforced plastic parts) spray up booth": gel coat is the first sprayed layer of the molded part inside the spray-up booth, and the words name no coating line, coater, dip station or saturation line (the lane's predicate). A second term would double-count one unit and, by the same reading, would also apply to the gelcoat booths at SITE-000238 and finishing booths such as SITE-000590's, which the ruling calls ancillary. `composites_spray_up` is the term the words support; `coating_applying` would be a different operation than the unit states. |
+| 5 | EVD for SITE-000664 laminating overstates strength | **Fixed.** Regraded to `supports_C`; the term is kept. |
+| 6 | SITE-001510 prints a PO box as the municipality | **Fixed.** The issuance block is parsed for its own `City, OH` line: printed municipality `Sharon Twp.`; the reason and note are corrected; the hold stands. |
+| 7 | A false printed Facility ID in a note and manifest passed | **Fixed.** Evidence notes take the Facility ID from the hashed source text, never the manifest; `check.py` compares the manifest ID with the printed ID and with the site's ECHO-linked ID, and injects the synthetic-ID probe (manifest, and note). |
+| 8 | Ancillary test rejected a polymerizer witness with "blowdown tanks" | **Fixed.** A unit is ancillary by its own heading title and the head clause of the quote (the whole quote if it is a heading), not by a keyword anywhere in an equipment list. `check.py` asserts the extended SITE-000346 quote is not flagged. |
+| 9 | The privacy scan read only 45 lines | **Fixed.** Names are read from the whole stored text; the scan asserts every signatory printed after "Sincerely" is known; counts only are printed. |
+| 10 | README said 14 injections, the checker ran 16 | **Fixed.** The README reads `EXPECTED_DEFECTS` from `check.py`, and `check.py` fails if the number run differs. |
 
 ## Self-refute (contract rule 15)
 
-- self-refute: Grain — {len(model['props'])} proposals checked, 3 changed: SITE-000630, SITE-000814 and SITE-000997 rested on the permit's own summary line (a facility- or permit-level description), not a unit description, and are held. Every cited document is bound on its own printed Facility ID, holder, street and city (`check.py` rule BIND); a 2022 permit for SITE-000448 that prints a different (mailing) street is not cited, and its "ABS Compound Plant" line is not used; the 16 sites that do not bind carry no write.
+- self-refute: Grain — {len(model['props'])} proposals checked, 1 changed: SITE-000814 rests on the permit's own summary line (a facility- or permit-level description) and is held. Every cited document is bound on its own printed Facility ID, holder, street and city (`check.py` rule BIND); a 2022 permit for SITE-000448 that prints a different (mailing) street is not cited, and its "ABS Compound Plant" line is not used; the 16 sites that do not bind carry no write.
 - self-refute: Founding — 0 rows checked, 0 changed (no founding claim).
-- self-refute: Strength — {len(model['props'])} proposals checked, 5 changed in drafting (`supports_A` -> `supports_C`): the unit equipment lists and one-line labels (Blair Rubber, Plymouth Foam, Mitsubishi, Huntsman, LG Chem) are list items. Only SITE-000664's laminating sentence is `supports_A`. Five of six process writes are `supports_C`.
-- self-refute: Truncated quote — {len(model['props'])} proposals checked, 1 changed: SITE-000997's dip-station row never says "coating", so the term moved to the permit-description quote (held). `check.py` confirms each quote is in its stored permit, in order.
+- self-refute: Strength — {len(model['props'])} proposals checked, 6 changed (`supports_A` -> `supports_C`): the unit equipment lists and one-line labels (Blair Rubber, Plymouth Foam, Mitsubishi, Huntsman, LG Chem, and after Codex round 1 Uniwall) are list items. All {m['process_terms_written']} process writes are `supports_C`.
+- self-refute: Truncated quote — {len(model['props'])} proposals checked, 1 changed in drafting (SITE-000346's quote now ends at "polymerizers", before its equipment list). `check.py` confirms each quote is in its stored permit, in order.
 - self-refute: Attribution — {len(model['props'])} proposals checked, 0 changed: every quote is from the holder's own permit; none is from a parent, customer, equipment maker or explainer page.
 
 ## Reproduction and checks
 
-- `python3 tasks/pic18-permit-lane-2026-11-18/build.py` stages and hash-checks the stored permits, recomputes everything and writes `sites.csv`, `proposals.csv`, `metrics.json`, `doc_hashes.json` and this README. `--apply` writes the planned rows to `data/`; ids are allocated above the maximum of every other row at apply time and re-allocated the same way after each merge of origin/main.
-- Named check: `python3 tasks/pic18-permit-lane-2026-11-18/check.py`. It recomputes the frame (and recounts it from the canary's caches), every bind, expiry (and fails on a printed expiry it cannot parse), witness position, strength and route; compares the published files with the recomputed ones; audits the data diff against the merge-base (only a planned `processes` union on a planned OH site row, and new evidence or capability rows by this lane; ids above the base maximum); scans every task file for emails, phones and the names printed in the stored permits; then runs 14 injected defects and fails unless each is caught: a quote not in its document; a reordered quote; a term not in §3.1; ancillary text mapped to a process; an unbound site written (two ways); a `supports_C` term in `processes` on a tier A/B site; an expired permit at `supports_A`; a changed cell other than `processes`; a changed existing row; an evidence id not above the base maximum; a person's name; an email; a changed frame count.
+- `python3 tasks/pic18-permit-lane-2026-11-18/build.py` stages and hash-checks the stored permits, recomputes everything and writes `sites.csv`, `proposals.csv`, `metrics.json`, `doc_hashes.json` and this README. `--apply` plans the writes in memory, stages and verifies each shard and replaces it atomically; ids are allocated above the maximum of every other row at apply time and re-allocated the same way after each merge of origin/main.
+- Named check: `python3 tasks/pic18-permit-lane-2026-11-18/check.py`. It recomputes the frame (and recounts it from the canary's caches), every bind, expiry (and fails on a printed expiry it cannot parse), witness position, strength and route; derives each Facility ID from the hashed text; compares the published files with the recomputed ones; requires the applied state to equal the plan; audits the data diff against the merge-base (only a planned `processes` union on a planned OH site row, and new evidence or capability rows by this lane; ids above the base maximum); rebuilds the written rows from the proposals and requires equality; scans every task file for emails, phones and the names printed anywhere in the stored permits; runs the interrupted-replay probe; then runs {EXPECTED_DEFECTS} injected defects and fails unless each is caught: a quote not in its document; a reordered quote; a term not in §3.1; ancillary text mapped to a process; an unbound site written (two ways); a `supports_C` term in `processes` on a tier A/B site; an expired permit at `supports_A`; a permit-description proposal routed to `processes`; a changed `tier_effect` on a written row; a falsified Facility ID in a written note; a falsified manifest Facility ID; a restore of `sites_OH.csv` and `site_capabilities.csv` to the base; a changed cell other than `processes`; a changed existing row; an evidence id not above the base maximum; a person's name; a signatory's name; an email; a changed frame count.
 
 ## Proposed follow-ups (not in this PR): owner questions, with a recommendation
 
 - **Do USPS-standard abbreviations (`Pkwy`, `Rte`) and a `Twp.` suffix bind?** Recommend yes, as a dated revision, when the printed Facility ID, holder, street number and street name all agree. Evidence: SITE-000264, SITE-001137 and SITE-002113 each match on Facility ID, holder and street number; the Facility ID alone is unique to one establishment. Only SITE-000264 would gain a (capability) write; the other two stay held on the term. Not applied.
-- **Does a permit's `Permit Description` count as an emissions-unit description?** Recommend yes at `supports_C` only (never `supports_A`, and a tier A/B site would get a capability row only): it is the regulator's own statement of what the permitted unit does, bound by the same Facility ID. Evidence: SITE-000630 ("expansion of polystyrene (EPS) pellets"), SITE-000814 ("paint and coatings manufacturing facility"), SITE-000997 ("coating lines") each name the process only there. Against: it is a summary, and canary finding 5 rejected the same for SITE-000814. Not applied.
-- **Capability terms for `_unspecified` terms and `coating_applying`.** Recommend mapping `compounding_unspecified` to `compounding` and `extrusion_unspecified` to `extrusion` (their §3.6 parents), and leaving `coating_applying` and `foam_molding_bead` unmapped (§3.6 keeps applying out on purpose). Evidence: SITE-000601 (tier A, `compounding_unspecified` on a unit group heading) would gain a capability row; `coating_applying` has three held sites (SITE-000601, SITE-001888, SITE-000997).
+- **Does a permit's `Permit Description` count as an emissions-unit description?** Recommend yes at `supports_C` only (never `supports_A`, and a tier A/B site would get a capability row only): it is the regulator's own statement of what the permitted unit does, bound by the same Facility ID. Evidence: SITE-000814 ("paint and coatings manufacturing facility"). Against: it is a summary, and canary finding 5 rejected the same for this site. Not applied.
+- **Capability terms for `_unspecified` terms and `coating_applying`.** Recommend mapping `compounding_unspecified` to `compounding` and `extrusion_unspecified` to `extrusion` (their §3.6 parents), and leaving `coating_applying` and `foam_molding_bead` unmapped (§3.6 keeps applying out on purpose). Evidence: SITE-000601 (tier A, `compounding_unspecified` on a unit group heading) would gain a capability row; `coating_applying` has two held sites (SITE-000601, SITE-001888).
 - **The 16 not-bound sites:** 8 have a blank Atlas street; filling it from a primary source would let a later pass bind them.
 
 Not checked: permits beyond the newest six documents per site; local-agency permits; whether any plant still runs the permitted equipment; OCR accuracy beyond the quoted words. A permit is a statement as of its issue date and never a status finding.
@@ -349,7 +416,10 @@ def main():
     m = metrics(model); json.dump(m, open(HERE / "metrics.json", "w"), indent=1)
     if not model["viol"]: (HERE / "README.md").write_text(readme(model, m))
     if model["viol"]: print("VIOLATIONS:\n" + "\n".join(model["viol"])); sys.exit(1)
-    if "--apply" in sys.argv: print("applied (evidence, capability, site rows):", apply(model, hashes))
+    if "--apply" in sys.argv:
+        bs = git("merge-base", "HEAD", "origin/main").strip()
+        base = {ROOT / f: read_rows_text(git("show", f"{bs}:{f}")) for f in ("data/sites_OH.csv", "data/evidence_sites_OH.csv", "data/site_capabilities.csv")}
+        print("applied (evidence, capability, site rows):", apply(model, hashes, base=base))
     print(json.dumps(m, indent=1))
 
 if __name__ == "__main__": main()
