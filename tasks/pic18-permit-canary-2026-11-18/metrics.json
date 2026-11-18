@@ -1,0 +1,57 @@
+{
+ "pool_sites": 58,
+ "unknown_process_orgs": 331,
+ "air_record_sites": 41,
+ "retrievable_permit_sites": 33,
+ "status_counts": {
+  "no_air_record": 17,
+  "air_record_no_document_found": 6,
+  "retrievable_permit": 33,
+  "air_record_no_final_permit_in_newest_6": 2
+ },
+ "canary_draw": [
+  "SITE-000814",
+  "SITE-001530",
+  "SITE-000248",
+  "SITE-000238",
+  "SITE-001833",
+  "SITE-000140",
+  "SITE-000535",
+  "SITE-000664",
+  "SITE-000601",
+  "SITE-000997"
+ ],
+ "canary_n": 10,
+ "bound": 10,
+ "specific_hit": 8,
+ "specific_wilson95": [
+  0.4902,
+  0.9433
+ ],
+ "specific_hit_narrative_strength": 6,
+ "specific_narrative_wilson95": [
+  0.3127,
+  0.8318
+ ],
+ "any_term_hit": 9,
+ "any_term_wilson95": [
+  0.5958,
+  0.9821
+ ],
+ "retrievable_wilson95_of_58": [
+  0.4412,
+  0.6882
+ ],
+ "projected_specific_sites_of_58": 26.4,
+ "projected_specific_range": [
+  16.2,
+  31.1
+ ],
+ "projected_share_of_331_pct": 8.0,
+ "projected_share_range_pct": [
+  4.9,
+  9.4
+ ],
+ "hard_ceiling_sites": 58,
+ "hard_ceiling_share_of_331_pct": 17.5
+}
