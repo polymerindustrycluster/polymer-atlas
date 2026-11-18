@@ -29,6 +29,7 @@
   "permit_description_only": 1
  },
  "proposal_holds_by_reason": {
+  "owner_ruling_pending": 1,
   "near_bound": 1,
   "no_capability_destination": 4,
   "permit_description_only": 2

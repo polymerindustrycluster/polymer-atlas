@@ -51,9 +51,19 @@
      ],
      "grade": "list",
      "note": "K001-K005 table rows; owner ruling 2026-11-18b item 2 added composites_spray_up for this wording"
+    },
+    {
+     "doc": "2321443",
+     "quote": "Polyester gelcoat and FRP (fiberglass reinforced plastic parts) spray up booth.",
+     "terms": [
+      "coating_applying"
+     ],
+     "grade": "list",
+     "hold": "owner_ruling_pending",
+     "note": "whether gel-coat application in open molding is \u00a73.1 coating_applying is a vocabulary question (AGENTS.md \u00a72 rule 9): held pending an owner ruling; composites_spray_up alone is written"
     }
    ],
-   "note": "coating_applying is not carried alongside composites_spray_up: K001-K005 describe ONE unit, a 'Polyester gelcoat and FRP spray up booth'; its text names no coating line, coater, dip station or saturation line (the lane predicate), and \u00a73.1 defines coating_applying only by contrast with coating_formulation (see README)"
+   "note": "coating_applying is held pending an owner ruling (README, 'Open owner question'); composites_spray_up alone is written"
   },
   "SITE-000264": {
    "verdict": "STILL_UNCERTAIN",

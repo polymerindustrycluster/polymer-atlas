@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
-EXPECTED_DEFECTS = 20   # README reads this number
+EXPECTED_DEFECTS = 21   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -33,6 +33,7 @@ def audit(props, sites, orgs, text=B.doc_text):
             if st["verification_tier"] in ("A", "B") and p["route"] == "processes" and p["strength"] == "supports_C": v.append(("TIER_C", f"{s}: supports_C term written to processes on a tier {st['verification_tier']} site"))
             if p["route"] == "capability" and (p["strength"] != "supports_C" or B.CAP_MAP.get(t) != p["capability_term"] or p["capability_term"] not in B.CAP_PROCESS): v.append(("CAP", f"{s}: capability row not a supports_C §3.6 mapping"))
             if t not in B.CAP_MAP and p["route"] == "capability": v.append(("CAP", f"{s}: {t} has no §3.6 mapping"))
+        if p["hold_reason"] == "owner_ruling_pending" and p["route"] != "hold": v.append(("OWNER_HOLD", f"{s}: a proposal held for an owner ruling is routed to a write"))
         if exp and exp < B.AS_OF and p["strength"] not in ("", "supports_C"): v.append(("EXPIRED", f"{s}/{d}: permit past its printed expiry {exp} proposed at {p['strength']}"))
         if p["strength"] == "supports_A" and (B.position(tx, p["quote"]) != "unit_paragraph" or p["grade"] != "narrative"): v.append(("STRENGTH", f"{s}: supports_A without a narrative unit paragraph"))
     return v
@@ -79,26 +80,40 @@ def audit_ids(new_ids, floor, what):
     low = [i for i in new_ids if i <= floor]
     return [("ID", f"{what}: ids {low} are not above the maximum {floor} at the base")] if low else []
 
-def names_in_docs():
-    """Person names printed anywhere in the stored permits (cover-letter blocks, signatures), found at run time. Never written to a file or printed."""
-    bad = re.compile(r"Inc|LLC|Co\b|Corp|Ohio|Division|Agency|Protection|Environmental|Governor|Director|Street|Road|Drive|Avenue|Facility|Permit|Page|Final|Dear|Plant|Company|Products|Polymer|"
+BAD = re.compile(r"Inc|LLC|Co\b|Corp|Ohio|Division|Agency|Protection|Environmental|Governor|Director|Street|Road|Drive|Avenue|Facility|Permit|Page|Final|Dear|Plant|Company|Products|Polymer|"
                      r"Commission|Appeals|Review|Section|Chief|Office|District|Air|Pollution|Control|Quality|Management|Treasurer|Attorney|General|Enforcement|Fee|Date|Type|Unit|Emissions|Terms|Conditions|Table|Rule|Title|Part", re.I)
-    out = set()
+NAME = r"[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][A-Za-z'-]+"
+def name_of(line):
+    """The person name a line carries, if it is a name optionally followed by a comma and credentials ('Name, P.E.'), else ''."""
+    seg = re.split(r"\s{2,}", line.strip())[0].rstrip(",")
+    seg = re.sub(r",\s*[A-Za-z][A-Za-z.]*(?:,\s*[A-Za-z][A-Za-z.]*)*$", "", seg)
+    return seg if re.fullmatch(NAME, seg) else ""
+
+def company_corpus():
+    """Lower-cased legal and trade names of the Ohio organizations: a two-word company name ("Plymouth Foam") is not a person."""
+    sites, orgs = B.atlas(); oh = {s["org_id"] for s in sites.values() if s["state"] == "OH"}
+    return " | ".join((o["legal_name"] + ";" + o["trade_names"]).lower() for o in orgs.values() if o["org_id"] in oh)
+
+def names_in_docs():
+    """Person names printed anywhere in the stored permits (cover-letter blocks, signatures with credentials), found at run time. Never written to a file or printed."""
+    out = set(); corpus = company_corpus()
     for p in glob.glob(str(B.LANE / "docs/*.txt")):
         for l in Path(p).read_text().split("\n"):
-            c = re.split(r"\s{2,}", l.strip())[0].rstrip(",")
-            if re.fullmatch(r"[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][A-Za-z'-]+", c) and not bad.search(c): out.add(c)
+            n = name_of(l)
+            if n and not BAD.search(n) and n.lower() not in corpus: out.add(n)
     return out
 
+TITLE = re.compile(r"\b(Chief|Manager|Supervisor|Engineer|Coordinator|Administrator|Specialist|Inspector)\b")
 def signatories():
-    """The first non-empty line after each 'Sincerely' in the stored permits: the signatory the privacy scan must know."""
-    out = set()
+    """People printed as signatories: the name lines after 'Sincerely', and the name line directly above a title line. Found at run time, never printed."""
+    out = set(); corpus = company_corpus()
     for p in glob.glob(str(B.LANE / "docs/*.txt")):
         L = Path(p).read_text().split("\n")
         for i, l in enumerate(L):
-            if re.match(r"\s*Sincerely", l):
-                nxt = [re.split(r"\s{2,}", x.strip())[0].rstrip(",") for x in L[i + 1:i + 8] if x.strip()]
-                out |= {x for x in nxt[:2] if re.fullmatch(r"[A-Z][a-z]+(?: [A-Z]\.?)? [A-Z][A-Za-z'-]+", x)}
+            if re.match(r"\s*Sincerely", l): out |= {n for n in (name_of(x) for x in L[i + 1:i + 14] if x.strip()) if n and not BAD.search(n) and n.lower() not in corpus}
+            elif TITLE.search(l) and i:
+                prev = next((L[k] for k in range(i - 1, max(0, i - 3), -1) if L[k].strip()), "")
+                if name_of(prev) and not BAD.search(name_of(prev)) and name_of(prev).lower() not in corpus and len(l.strip()) < 80: out.add(name_of(prev))
     return out
 
 def audit_complete(sites_now, ev_now, cap_now, props):
@@ -135,30 +150,55 @@ def data_diff(base):
     b = {f: rd(B.git("show", f"{base}:{f}")) for f in files if B.git("ls-tree", base, f).strip()}
     return b, {f: B.read_csv(ROOT / f) for f in files}
 
-def probe_interrupted_replay(props, hashes):
-    """Codex's replay probe: a cut during apply must leave every live shard intact, and a retry must reproduce the applied state exactly."""
+def lane_state_ok(data, props, names):
+    """Invariant after any cut: no planned cell is published without every one of this lane's evidence rows."""
+    cells = {r["site_id"]: set(r["processes"].split(";")) for r in B.read_csv(data / names[0])}
+    published = any(p["term"] in cells.get(p["site_id"], set()) for p in props if p["route"] == "processes")
+    ev = sum(r["created_by"] == B.WHO for r in B.read_csv(data / names[1]))
+    return (not published) or ev == sum(p["route"] == "processes" for p in props)
+
+def probe_interrupted_replay(props, hashes, base_ref_):
+    """Codex's replay probe, from a clean merge-base copy and from the applied copy, cut at every replace: live shards stay whole, no cell is published without its rows, a retry reproduces the applied state.
+    Also the base probe: an unrelated site's blanked cell is refused."""
     import tempfile
     from unittest.mock import patch
     names = ("sites_OH.csv", "evidence_sites_OH.csv", "site_capabilities.csv")
-    with tempfile.TemporaryDirectory() as tmp:
+    tip = {n: (ROOT / "data" / n).read_bytes() for n in names}; old = {n: B.git("show", f"{base_ref_}:data/{n}").encode() for n in names}
+    for start, src in (("base", old), ("applied", tip)):
+        for cut_at in (1, 2, 3):
+            with tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp); data = root / "data"; data.mkdir()
+                for p in (ROOT / "data").glob("evidence_*.csv"):
+                    if p.name not in names: (data / p.name).symlink_to(p)
+                for n in names: (data / n).write_bytes(src[n])
+                br = {data / n: rd(old[n].decode()) for n in names}
+                real, calls = B.os.replace, []
+                def cut(a, b):
+                    if str(b).endswith(".stage"): return real(a, b)   # shard_io's own staging replace is not a publish
+                    calls.append(a)
+                    if len(calls) == cut_at: raise OSError("cut during replay")
+                    return real(a, b)
+                try:
+                    with patch.object(B.os, "replace", cut): B.apply({"props": props}, hashes, root=root, base=br)
+                except OSError: pass
+                else: raise AssertionError("the cut never fired")
+                assert not list(data.glob("*.stage")), "a stage file was left behind"
+                assert lane_state_ok(data, props, names), f"{start}/cut {cut_at}: a planned cell was published without its evidence rows"
+                if start == "applied": assert all((data / n).read_bytes() == tip[n] or n == names[0] for n in names[1:]), "a live shard changed during an interrupted replay"
+                B.apply({"props": props}, hashes, root=root, base=br)
+                assert all((data / n).read_bytes() == tip[n] for n in names), f"{start}/cut {cut_at}: the retry did not reproduce the applied state"
+    with tempfile.TemporaryDirectory() as tmp:   # base probe: blank an unrelated site's processes cell in the live copy
         root = Path(tmp); data = root / "data"; data.mkdir()
         for p in (ROOT / "data").glob("evidence_*.csv"):
             if p.name not in names: (data / p.name).symlink_to(p)
-        before = {}
-        for n in names: before[n] = (ROOT / "data" / n).read_bytes(); (data / n).write_bytes(before[n])
-        real, calls = B.os.replace, []
-        def cut(a, b):
-            calls.append(a)
-            if len(calls) == 2: raise OSError("cut during replay")
-            return real(a, b)
-        try:
-            with patch.object(B.os, "replace", cut): B.apply({"props": props}, hashes, root=root)
-        except OSError: pass
-        else: raise AssertionError("the cut never fired")
-        assert (data / names[1]).read_bytes() == before[names[1]] and (data / names[2]).read_bytes() == before[names[2]], "a live shard changed during an interrupted replay"
-        assert not list(data.glob("*.stage")), "a stage file was left behind"
-        B.apply({"props": props}, hashes, root=root)
-        assert all((data / n).read_bytes() == before[n] for n in names), "the retry did not reproduce the applied state"
+        for n in names: (data / n).write_bytes(old[n])
+        br = {data / n: rd(old[n].decode()) for n in names}
+        plan = {p["site_id"] for p in props if p["route"] == "processes"}; rows = B.read_csv(data / names[0])
+        next(r for r in rows if r["processes"] and r["site_id"] not in plan)["processes"] = ""
+        B.write_csv(data / names[0], rows)
+        try: B.apply({"props": props}, hashes, root=root, base=br)
+        except AssertionError: pass
+        else: raise AssertionError("an unrelated site's blanked processes cell was published")
 
 def main():
     hashes = json.load(open(HERE / "doc_hashes.json")); J = {}
@@ -192,7 +232,9 @@ def main():
     assert not audit_complete(sites_cur, ev_cur, cap_cur, props), audit_complete(sites_cur, ev_cur, cap_cur, props)
     names = names_in_docs(); sig = signatories(); assert names and sig and sig <= names, "the privacy scan must know every signatory printed in the stored permits"
     assert not audit_privacy(task_files(), names), f"{len(audit_privacy(task_files(), names))} privacy findings"
-    probe_interrupted_replay(props, hashes)
+    L = B.doc_text("1015038").split("\n"); i = next(i for i, l in enumerate(L) if "Assistant Chief" in l); who = name_of(L[i - 1])
+    assert who and who in names and who in sig and len(audit_privacy({"README.md": who}, names)) >= 1, "the privacy gate misses the signatory printed with credentials"
+    probe_interrupted_replay(props, hashes, base)
     pos = copy.deepcopy([p for p in props if p["site_id"] == "SITE-000346"]); pos[0]["quote"] += ", blowdown tanks"
     assert not [g for g in audit(pos, sites, orgs) if g[0] == "ANCILLARY"], "a polymerization witness is rejected for one keyword in its equipment list"
     # ------------------------------------------------------------------------------------------------------------ injected defects
@@ -239,7 +281,8 @@ def main():
         i = next(i for i, r in enumerate(n["data/evidence_sites_OH.csv"]) if r["created_by"] == B.WHO and r["record_id"] == "SITE-000346")
         n["data/evidence_sites_OH.csv"][i]["notes"] = re.sub(r"Facility ID \d{10}", "Facility ID 0000000000", n["data/evidence_sites_OH.csv"][i]["notes"]); return n
     def fake_manifest(h): h["4325660"]["facility_id"] = "0000000000"; return h
-    done += [one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_note, "written"), one("MANIFEST", fake_manifest, "manifest"),
+    done += [one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
+             one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_note, "written"), one("MANIFEST", fake_manifest, "manifest"),
              one("PRIVACY", lambda: {"README.md": "signed by " + sorted(sig)[0]}, "privacy"),
              one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(route="processes", strength="supports_C")),
              one("WRITTEN", flip_tier, "written"), one("CELLS", cell_defect, "data"), one("ROWS", row_defect, "data"),

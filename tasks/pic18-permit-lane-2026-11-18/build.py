@@ -151,6 +151,7 @@ def compute(inp):
                 if t and t not in PROCESSES: viol.append(f"{s}: term {t} is not in SCHEMA §3.1")
                 if t and is_ancillary(text, q["quote"], pos): viol.append(f"{s}: ancillary unit text mapped to {t}")
                 if not t: route, why = "no_term", "ancillary or no §3.1 term"
+                elif q.get("hold"): route, why = "hold", q["hold"]
                 elif reasons: route, why = "hold", "not_bound" if not near_d else "near_bound"
                 elif not unit_level: route, why = "hold", "permit_description_only"
                 elif tier == "C" or ceiling in ("supports_A", "supports_B"): route, why = "processes", ""
@@ -230,8 +231,8 @@ def capability_rows(props, hashes, sites, first_id):
                                 f"§3.1 term {p['term']} -> §3.6 `{p['capability_term']}`. Printed Facility ID, holder, street and city equal the Atlas site row. PDF sha256 {h['pdf_sha256']}; retrieved 2026-11-18."))); i += 1
     return rows
 
-def stage_replace(live, rows, fields, key=None, new=()):
-    """Write the complete new content of a live shard next to it, verify it, then replace atomically. A cut at any point leaves the live file intact."""
+def stage_shard(live, rows, fields, key=None, new=()):
+    """Write the complete new content of a live shard next to it and verify it. Returns the stage path; the live file is untouched."""
     live = Path(live); stage = live.with_name(live.name + ".stage")
     try:
         write_csv(stage, rows, fields)
@@ -242,9 +243,9 @@ def stage_replace(live, rows, fields, key=None, new=()):
         assert len(got) == len(rows) + len(new), f"{live.name}: staged {len(got)} rows, expected {len(rows) + len(new)}"
         if key: ids = [r[key] for r in got]; assert ids == sorted(ids) and len(set(ids)) == len(ids), f"{live.name}: staged ids not unique and ascending"
         with open(stage, "rb") as f: os.fsync(f.fileno())
-        os.replace(stage, live)
-    finally:
-        stage.unlink(missing_ok=True)
+    except BaseException:
+        stage.unlink(missing_ok=True); raise
+    return stage
 
 def apply(model, hashes, root=ROOT, base=None):
     """Plan every write in memory, verify it against the live files (and the merge-base rows when given), then replace each shard atomically."""
@@ -265,16 +266,23 @@ def apply(model, hashes, root=ROOT, base=None):
             have = [x for x in r["processes"].split(";") if x]
             r["processes"] = ";".join(have + [t for t in dict.fromkeys(unions[r["site_id"]]) if t not in have])
         new_sites.append(r)
-    if base:   # every merge-base row survives unchanged (sites: but for the planned processes cell)
+    if base:   # every merge-base row survives; a site row may differ from its base row only by that site's own planned union
         for p, key in ((SH, "site_id"), (EV, "evidence_id"), (CP, "capability_id")):
             after = {r[key]: r for r in (new_sites if p == SH else keep[p] + (ev if p == EV else cp))}
             for r in base[p]:
                 assert r[key] in after, f"{p.name}: base row {r[key]} would be lost"
-                if p != SH: assert after[r[key]] == r, f"{p.name}: base row {r[key]} would change"
-                else: assert {c: v for c, v in after[r[key]].items() if c != "processes"} == {c: v for c, v in r.items() if c != "processes"}, f"{p.name}: base row {r[key]} would change outside processes"
-    stage_replace(SH, new_sites, fields[SH])
-    stage_replace(EV, keep[EV], fields[EV], "evidence_id", ev)
-    stage_replace(CP, keep[CP], fields[CP], "capability_id", cp)
+                want = dict(r)
+                if p == SH and r["site_id"] in unions:
+                    have = [x for x in r["processes"].split(";") if x]; want["processes"] = ";".join(have + [t for t in dict.fromkeys(unions[r["site_id"]]) if t not in have])
+                assert after[r[key]] == want, f"{p.name}: row {r[key]} differs from its base row by more than its planned change"
+    stages = {}
+    try:
+        stages[EV] = stage_shard(EV, keep[EV], fields[EV], "evidence_id", ev)
+        stages[CP] = stage_shard(CP, keep[CP], fields[CP], "capability_id", cp)
+        stages[SH] = stage_shard(SH, new_sites, fields[SH])
+        for live in (EV, CP, SH): os.replace(stages[live], live); stages.pop(live)   # evidence first: no cell is ever published without its rows
+    finally:
+        for s in stages.values(): s.unlink(missing_ok=True)
     return len(ev), len(cp), len(unions)
 
 # ----------------------------------------------------------------------------------------------------------------------------- outputs
@@ -379,13 +387,34 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 | 1 | An interrupted replay could truncate a live shard | **Fixed.** `apply` plans every write in memory, stages each complete shard beside the live file (through `shard_io.append_sorted`), verifies row count, ascending unique ids and that every merge-base row survives unchanged (sites: but for the planned `processes` cell), then replaces atomically. `check.py` runs the interrupted-replay probe (a cut after the first replace, then a retry that must reproduce the applied state byte for byte). |
 | 2 | The checker passed with the cells and capability row absent | **Fixed.** `check.py` now requires the applied state to equal the plan whatever a file's diff against the base is (every planned `processes` term present; exactly the planned evidence and capability rows) and injects a restore of `sites_OH.csv` and `site_capabilities.csv` to the base. |
 | 3 | SITE-000630 and SITE-000997 have unit-level witnesses | **Fixed, applied at `supports_C`.** Re-read against the ruling: SITE-000630 P001 "Polystyrene Expander Line, consisting of six expanders" (unit heading and equipment description; expansion of polystyrene, foam type unstated, so `foam_production_unspecified`); SITE-000997 R001/R002 "Epoxy dip station consisting of a vent hood over a dip pan and flash off rack, followed by an oven" (a dip station is a coating line by the lane predicate, not a finishing booth). Both are bound, not ancillary, on tier C sites. |
-| 4 | SITE-000248 `coating_applying` dropped | **Rebutted.** §3.1 defines `coating_applying` only as "*(contrast: `coating_formulation` = makes it)*", and §3.6 says "applying is a trade service, not a disclosed plant capability at this grain". K001-K005 are one unit type, "Polyester gelcoat and FRP (fiberglass reinforced plastic parts) spray up booth": gel coat is the first sprayed layer of the molded part inside the spray-up booth, and the words name no coating line, coater, dip station or saturation line (the lane's predicate). A second term would double-count one unit and, by the same reading, would also apply to the gelcoat booths at SITE-000238 and finishing booths such as SITE-000590's, which the ruling calls ancillary. `composites_spray_up` is the term the words support; `coating_applying` would be a different operation than the unit states. |
+| 4 | SITE-000248 `coating_applying` dropped | **Rebutted in round 1; referred to the owner in round 3** (see round 2, finding 4, and "Open owner question"). |
 | 5 | EVD for SITE-000664 laminating overstates strength | **Fixed.** Regraded to `supports_C`; the term is kept. |
 | 6 | SITE-001510 prints a PO box as the municipality | **Fixed.** The issuance block is parsed for its own `City, OH` line: printed municipality `Sharon Twp.`; the reason and note are corrected; the hold stands. |
 | 7 | A false printed Facility ID in a note and manifest passed | **Fixed.** Evidence notes take the Facility ID from the hashed source text, never the manifest; `check.py` compares the manifest ID with the printed ID and with the site's ECHO-linked ID, and injects the synthetic-ID probe (manifest, and note). |
 | 8 | Ancillary test rejected a polymerizer witness with "blowdown tanks" | **Fixed.** A unit is ancillary by its own heading title and the head clause of the quote (the whole quote if it is a heading), not by a keyword anywhere in an equipment list. `check.py` asserts the extended SITE-000346 quote is not flagged. |
 | 9 | The privacy scan read only 45 lines | **Fixed.** Names are read from the whole stored text; the scan asserts every signatory printed after "Sincerely" is known; counts only are printed. |
 | 10 | README said 14 injections, the checker ran 16 | **Fixed.** The README reads `EXPECTED_DEFECTS` from `check.py`, and `check.py` fails if the number run differs. |
+
+## Review round 2 (Codex REFUTE, 4 findings; Gemini APPROVE)
+
+| # | Finding | Answer |
+|---|---|---|
+| 1 | A first apply cut after staging published cells without their evidence rows | **Fixed.** All three shards are staged and verified first, then replaced evidence, then capability, then sites, so no cell is published without its rows. `check.py` cuts the apply at each of the three replaces, from a clean merge-base copy and from the applied copy, asserts the invariant after every cut and that a retry reproduces the applied state byte for byte. (Reversing the order makes this probe fail; checked.) |
+| 2 | The base check exempted the whole `processes` column | **Fixed.** Each site row is compared with its base row plus only that site's own planned union; every other site row must be identical. `check.py` runs Codex's probe (an unrelated site's cell blanked) and requires a refusal. (Removing the comparison makes the probe fail; checked.) |
+| 3 | The privacy gate missed a signatory printed as a name, a comma and credentials | **Fixed.** Names are read with trailing credentials stripped, signatories are the name lines after "Sincerely" and the line above a title line, company-name phrases are excluded, and `check.py` asserts the named signatory in document 1015038 is known and that injecting it is caught. Only counts and booleans are printed. |
+| 4 | SITE-000248 `coating_applying` | **Held pending an owner ruling** (controller decision, AGENTS.md §2 rule 9: whether gel-coat application in open molding is §3.1 `coating_applying` is a vocabulary question). Nothing new is written; `composites_spray_up` alone stands. The held proposal is in `proposals.csv` with hold reason `owner_ruling_pending`, and `check.py` rejects any route of it to a write. |
+
+## Open owner question: SITE-000248 `coating_applying`
+
+**Question:** is the gel-coat application in K001-K005 §3.1 `coating_applying`, in addition to `composites_spray_up`? (Held; not written.)
+
+**Unit wording** (permit P0133197, 2321443, K001-K005 table rows, identical): "Polyester gelcoat and FRP (fiberglass reinforced plastic parts) spray up booth." The same permit's other unit text names the open-molding resin/gel coat spray gun operation.
+
+**Reading for exclusion** (Gemini, and this lane in round 1): the five booths are one unit type; gel coat is the first sprayed layer of the molded part inside the spray-up booth, and the unit text names no coating line, coater, dip station or saturation line. §3.1 defines `coating_applying` only by contrast with `coating_formulation` ("*(contrast: `coating_formulation` = makes it)*"), and §3.6 says applying is "a trade service, not a disclosed plant capability at this grain".
+
+**Reading for inclusion** (Codex): the K001-K005 rows name both polyester gelcoat and FRP spray-up; the permit calls the unit an open-molding resin/gel coating application; `processes` takes several values and §3.1 does not require a separate physical line per term; the §3.6 passage explains only why `coating_applying` is absent from the capability vocabulary; canary CQ-05 scored the row for coating before the spray-up term existed.
+
+**Recommendation:** rule that integral gel-coat application inside an open-molding spray-up unit is part of `composites_spray_up` and not a separate `coating_applying`, so the term stays reserved for coating lines and finishing; this keeps `coating_applying` consistent across SITE-000238's gelcoat booths and SITE-000590's paint booth. If the owner rules the other way, the packet already carries the row: SITE-000248 `coating_applying` at `supports_C` (table row K001-K005, bound, tier C) and, by the same reading, SITE-000238's gelcoat booths would need re-scoring.
 
 ## Self-refute (contract rule 15)
 
@@ -405,6 +434,7 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 - **Do USPS-standard abbreviations (`Pkwy`, `Rte`) and a `Twp.` suffix bind?** Recommend yes, as a dated revision, when the printed Facility ID, holder, street number and street name all agree. Evidence: SITE-000264, SITE-001137 and SITE-002113 each match on Facility ID, holder and street number; the Facility ID alone is unique to one establishment. Only SITE-000264 would gain a (capability) write; the other two stay held on the term. Not applied.
 - **Does a permit's `Permit Description` count as an emissions-unit description?** Recommend yes at `supports_C` only (never `supports_A`, and a tier A/B site would get a capability row only): it is the regulator's own statement of what the permitted unit does, bound by the same Facility ID. Evidence: SITE-000814 ("paint and coatings manufacturing facility"). Against: it is a summary, and canary finding 5 rejected the same for this site. Not applied.
 - **Capability terms for `_unspecified` terms and `coating_applying`.** Recommend mapping `compounding_unspecified` to `compounding` and `extrusion_unspecified` to `extrusion` (their §3.6 parents), and leaving `coating_applying` and `foam_molding_bead` unmapped (§3.6 keeps applying out on purpose). Evidence: SITE-000601 (tier A, `compounding_unspecified` on a unit group heading) would gain a capability row; `coating_applying` has two held sites (SITE-000601, SITE-001888).
+- **SITE-000248 `coating_applying`** (see "Open owner question" above).
 - **The 16 not-bound sites:** 8 have a blank Atlas street; filling it from a primary source would let a later pass bind them.
 
 Not checked: permits beyond the newest six documents per site; local-agency permits; whether any plant still runs the permitted equipment; OCR accuracy beyond the quoted words. A permit is a statement as of its issue date and never a status finding.
