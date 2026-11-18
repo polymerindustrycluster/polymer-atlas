@@ -1,0 +1,17 @@
+key,raw,route,source_url
+umass-lowell-seminars|existence,yes,jina_reader,https://gps.uml.edu/professional-training/plastics/
+umass-lowell-seminars|scope,yes,jina_reader,https://gps.uml.edu/professional-training/plastics/
+ferris-plastics-institute|existence,yes,jina_reader,https://www.ferris.edu/administration/academicaffairs/extendedinternational/cpd/plastics-institute.htm
+ferris-plastics-institute|scope,yes,jina_reader,https://www.ferris.edu/administration/academicaffairs/extendedinternational/cpd/plastics-institute.htm
+rubber-division-self-paced|existence,yes,jina_reader,https://www.rubber.org/self-paced-training/
+rubber-division-self-paced|scope,yes,jina_reader,https://www.rubber.org/self-paced-training/
+wctc-injection-mold-setup|existence,yes,jina_reader,https://www.wctc.edu/WCTC/Academics/Program-List/Injection-Mold-Setup-Plastic
+wctc-injection-mold-setup|scope,yes,jina_reader,https://www.wctc.edu/WCTC/Academics/Program-List/Injection-Mold-Setup-Plastic
+uwm-plastics-technology|existence,yes,jina_reader,https://uwm.edu/sce/certificates/plastics-technology-certificate/
+uwm-plastics-technology|scope,yes,jina_reader,https://uwm.edu/sce/certificates/plastics-technology-certificate/
+paulson-university|existence,yes,jina_reader,https://paulsontraining.com/paulsonuniversity-online-training/
+paulson-university|scope,yes,jina_reader,https://paulsontraining.com/paulsonuniversity-online-training/
+paulson-promolder-1|existence,yes,jina_reader,https://www.paulsonplasticsacademy.com/promolder-1/
+paulson-promolder-1|scope,yes,jina_reader,https://www.paulsonplasticsacademy.com/promolder-1/
+ferris-plastics-institute|engagement,yes,jina_reader,https://www.ferris.edu/administration/academicaffairs/extendedinternational/cpd/plastics-institute.htm
+rubber-division-self-paced|engagement,yes,jina_reader,https://www.rubber.org/self-paced-training/

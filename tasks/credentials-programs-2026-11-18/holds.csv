@@ -1,0 +1,28 @@
+n,provider,credential,disposition,reason,settling_fact
+1,University of Akron,Akron Polymer Training Services,already held,PROG-000008,
+2,Penn State Behrend,Plastics Training Academy,already held,PROG-000164,
+11,North Central State College,Plastics Technician Training,already held,PROG-000002,
+12,Grand Rapids Community College,Plastics-Polymer Engineering Technology Certificate,already held,PROG-000004,
+13,Macomb Community College,Plastic Process Technician,already held,PROG-000342,
+18,University of Wisconsin-Madison,Capstone Certificate: Polymer Processing & Manufacturing,already held,PROG-000087,
+28,U.S. Dept. of Labor,Registered Apprenticeship occupation (SOC 51-4072.00),REJECT,"an occupation classification, not a program offered by an institution",
+29,MSSC,Certified Production Technician 4.0,REJECT,"a general manufacturing credential; not polymer, plastics, rubber, composites or coatings by name (SCHEMA 4.11 prong a)",
+4,Plastics Institute of America,Custom on-site industrial training modules,STILL_UNCERTAIN,the provider has no Atlas record,"an organization record for the Plastics Institute of America (dedupe check, evidence) before the program row"
+10,AIChE,AIChE Academy polymer-processing courses,STILL_UNCERTAIN,the provider has no Atlas record,an organization record for AIChE before the program row
+14,Ivy Tech Community College,PLAS courses (Indiana College Core technical certificates),STILL_UNCERTAIN,the provider has no Atlas record,an institution record for Ivy Tech before the program row
+16,Northwood Technical College,Injection Mold Set-Up (Plastic) Apprentice,STILL_UNCERTAIN,the provider has no Atlas record,an institution record for Northwood Technical College before the program row
+7,Society of Plastics Engineers,Global Standards for Plastic Certification,STILL_UNCERTAIN,"the only source is a Paulson press release, not SPE's own page; ORG-002101 is itself an 'SPE training and certification' record (possible seam)",SPE's own page for the certification and a ruling on whether ORG-002101 already represents it
+9,Adhesion Society,Adhesion Science & Technology Short Course,STILL_UNCERTAIN,"the only source is a trade-magazine article; 'adhesion' is not one of the by-name words",the society's own course page stating a polymer scope
+8,SAMPE,SAMPE Conference Tutorials,STILL_UNCERTAIN,"conference tutorials are event-grain sessions, not a standing program",an owner ruling on whether recurring conference tutorials are program rows
+21,Routsis Training,Injection Molding Professional Certification,STILL_UNCERTAIN,the cited page returns HTTP 404 (availability),the current page for the certification
+22,"RJG, Inc.",Master Molder I,STILL_UNCERTAIN,"injection-molding training described 'from the plastic's point of view', but not polymer by name; prong (b) names tracks, not process subjects",an owner ruling on whether polymer-process training qualifies without a polymer word in its name
+23,"RJG, Inc.",Master Molder II,STILL_UNCERTAIN,same as Master Molder I,same as Master Molder I
+24,"RJG, Inc.",Train the Trainer Qualification,STILL_UNCERTAIN,a trainer qualification; not polymer by name,same as Master Molder I
+25,Beaumont Technologies,Plastics Technology & Engineering (PTE) Certificate,STILL_UNCERTAIN,"beaumontinc.com bot-walls automated fetches (Firecrawl and Jina, 2026-11-18); provider is held as ORG-002735 Beaumont Advanced Processing (name to confirm)",the page read in a real browser
+26,Beaumont Technologies,Molders' Series,STILL_UNCERTAIN,same as the PTE Certificate,same as the PTE Certificate
+27,Beaumont Technologies,Development Courses and Autodesk Moldflow Training,STILL_UNCERTAIN,same as the PTE Certificate,same as the PTE Certificate
+3,UMass Lowell,Plastics Engineering Seminars,already held,PROG-000300,
+15,Waukesha County Technical College,Injection Mold Set-Up (Plastic) Apprenticeship,already held,PROG-000161,
+17,University of Wisconsin-Milwaukee,Plastics Technology Certificate,already held,PROG-000303,
+19,Paulson Training Programs,PaulsonUniversity online plastics training library,already held,PROG-000302 (Paulson University Online Training; codex refute 2026-11-18),
+20,Paulson Training Programs / Pennsylvania College of Technology,ProMolder 1 / ProMolder Certification,STILL_UNCERTAIN,"a molding seminar whose page names plastics processing but no polymer track; prong (b) not met (codex refute 2026-11-18)",same owner question as RJG Master Molder
