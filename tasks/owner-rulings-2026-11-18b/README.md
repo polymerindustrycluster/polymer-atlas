@@ -39,13 +39,15 @@ and 13 `evidence_people.csv` rows for the same 6 people; `experts.colorado.edu/.
 - **Ruled:** treat `?unid=` and `researchdirectory.uc.edu/p/<shortname>` exactly as rulings 1 and 1b of
   2026-11-18 (`tasks/owner-rulings-2026-11-18/README.md`). Validator V-62 is widened to both.
 - **Evidence rows are never edited.** The rulings 1 and 1b procedure applies.
-- **Ruled:** `fisid_<id>` is a directory record number, not an account name, and is accepted.
+- **Ruled:** `fisid_<id>` is accepted; V-62 is not widened to it. What the institution uses the number for is not
+  established.
 
 ## 4. Company-wide headcounts (PR #383)
 
 - **Ruled:** a company-wide or worldwide count on an organization's own page never sets `employee_band_ohio`, which
-  is the Ohio band (SCHEMA field table; every R13 source is establishment-grain). The 12 company-wide or global
-  statements in PR #383 stay held leads. No `employee_band_global` column is added now.
+  is the Ohio band (SCHEMA field table). The 12 held leads in PR #383 stay held: 11 company-wide or worldwide
+  statements, and ORG-004022's count, which is for its Dutch headquarters (the page gives a separate worldwide group
+  count). No `employee_band_global` column is added now.
 
 ## 5. Graphite electrode producers (ORG-000157, GrafTech)
 
