@@ -1,5 +1,6 @@
 """check.py: recomputes the A11-113 removal against the pinned base; fails on injected defects. python3 tasks/a11-113-2026-11-18/check.py"""
-import copy, csv, importlib.util, io, json, re, subprocess
+import copy, csv, importlib.util, io, itertools, json, re, subprocess, tempfile
+from unittest.mock import patch
 from pathlib import Path
 T = Path(__file__).resolve().parent
 ROOT = T.parents[1]
@@ -12,6 +13,7 @@ def verify(base_rows, rows, removals, adj):
     assert len(want) == 1, f'adjudication has {len(want)} CREATION_ERROR uei_links items, expected 1'
     gone = sorted(set(bk) - set(nk))
     assert gone == want, f'removed link keys {gone} != the A11-113 key'
+    assert len(nk) == len(bk) - 1, f'row count {len(nk)} != base {len(bk)} minus 1'
     assert [k for k in bk if k in set(nk)] == nk, 'rows added or reordered'
     assert all(r == next(b for b in base_rows if build.link_key(b) == build.link_key(r)) for r in rows), 'a kept row changed'
     assert [(r['table'], r['key']) for r in removals] == [('registry_links', k) for k in gone], 'REMOVALS.csv does not list exactly the removed link'
@@ -39,6 +41,29 @@ def main():
     inject('second link removed (non-UEI)', lambda r, m: r.pop(0))
     inject('removed link left in place', lambda r, m: r.append(next(b for b in base_rows if build.link_key(b) == adj_key(adj))))
     inject('kept row altered', lambda r, m: r[0].update(match_basis='edited'))
-    print('check.py: PASS (5 injected defects caught)')
+    inject('truncated file (100 rows)', lambda r, m: r.__delitem__(slice(100, None)))
+    # Codex's cut-short-write reproduction (PR #382 review), on a temp copy of the base: a write that dies after 100 rows must leave the target intact, and a retry must give base minus 1
+    with tempfile.TemporaryDirectory() as tmp:
+        d = Path(tmp); f = d / 'registry_links.csv'; f.write_bytes(subprocess.check_output(['git', 'show', f'{BASE}:data/registry_links.csv'], cwd=ROOT))
+        with patch.object(build, 'T', d), patch.object(build, 'LINKS', f):
+            real = build.write_atomic
+            def cut(path, header, rows, _real=real):
+                def dying(): yield from itertools.islice(rows, 100); raise OSError('injected interrupted write')
+                return _real(path, header, dying())
+            try:
+                with patch.object(build, 'write_atomic', cut): build.main()
+                raise SystemExit('FAIL: cut-short write did not raise')
+            except OSError: pass
+            assert len(list(csv.DictReader(f.open(newline='')))) == 6025 and not list(d.glob('*.tmp')), 'cut-short write damaged the target or left a temp file'
+            build.main(); n = len(list(csv.DictReader(f.open(newline=''))))
+            assert n == 6024, f'retry left {n} links, expected 6024'
+        with tempfile.TemporaryDirectory() as tmp:  # a target already truncated by some other writer: the builder must refuse, not report success
+            d = Path(tmp); f = d / 'registry_links.csv'; lines = subprocess.check_output(['git', 'show', f'{BASE}:data/registry_links.csv'], cwd=ROOT, text=True).splitlines(True)
+            f.write_text(''.join(lines[:101]))
+            with patch.object(build, 'T', d), patch.object(build, 'LINKS', f):
+                try: build.main(); raise SystemExit('FAIL: builder accepted a truncated target')
+                except AssertionError as x: print('  caught truncated target on retry ->', str(x)[:70])
+        print('  caught cut-short write (target intact, no temp file, retry gives 6024)')
+    print('check.py: PASS (6 injected defects caught, plus the cut-short-write reproduction and a truncated-target retry)')
 def adj_key(adj): return next(x for x in adj if x['id'] == 'A11-113')['record_id']
 if __name__ == '__main__': main()
