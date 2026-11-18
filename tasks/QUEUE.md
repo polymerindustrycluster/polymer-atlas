@@ -543,25 +543,28 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 ### Wave W18 (2026-11-18)
 
 - [x] `done 2026-11-18` Record the owner rulings of 2026-11-18 and the PPP ruling (SCHEMA v1.13.3) — `tasks/owner-rulings-2026-11-18/` (PR #375).
-- [ ] `claimed:claude-code 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages (SCHEMA §4.4 `processes` row: "unless Parent claims it corporately").
+- [x] `done 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages. Applied 0 of 10; draft packet, 0 data rows (PR #377, 352c6fc0).
 - [x] `done 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit` (PR #376).
-- [ ] `claimed:claude-code 2026-11-18` (PR #379, in review) People identifier URLs (owner items 1 and 1b): 18 `?u=` and 11 `/~` people rows, plus 8 evidence_people rows, remediated per `tasks/owner-rulings-2026-11-18/README.md`.
-- [ ] `claimed:claude-code 2026-11-18` Blind audit 11 correction A11-113 (retire the UEI link on ORG-000889), lane atlas-w18-backlog.
-- [ ] `open` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`); waits until the market and size lanes release `organizations_OH.csv`.
+- [x] `done 2026-11-18` People identifier URLs (owner items 1 and 1b): 29 people rows replaced or blanked, validator V-62, SCHEMA v1.13.4 (PR #379, 9c94fc65).
+- [x] `done 2026-11-18` Blind audit 11 correction A11-113: the UEI registry link on ORG-000889 retired, 1 row (PR #382, 4d2aa3ac).
+- [ ] `open` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`). The market and size lanes released `organizations_OH.csv` on 2026-11-18 (#383, #396 merged).
 - [ ] `open` Re-verify Pedro Cortes (PERSON-001142): UTEP on record, Youngstown State in the 2022-23 catalog (owner item 5).
 - [ ] `open` Add Sen Gupta and Akkus from CWRU bulletin lines (roster-grade Gate B, owner item 3); add West when a current page states his research.
 - [x] `done 2026-11-18` Scrub account URLs from historical task files (owner items 1/1b, scrub forward): 109 URLs plus 9 in-URL repeats in 44 files (PR #378).
-- [ ] `claimed:claude-code 2026-11-18` PIC-18 market canary: 10 organizations from the 201 that MKT3 left not_adjudicated with readable pages; scale to the rest at 3 or more of 10 — `tasks/pic18-market-canary-2026-11-18/`.
-- [ ] `claimed:claude-code 2026-11-18` Own-site Ohio size bands: 37 screened organizations, 20 eligible (Ohio-only); organization `employee_band_ohio` only, applied after the market canary merges — `tasks/pic18-size-ownsite-2026-11-18/`.
-- [ ] `claimed:claude-code 2026-11-18` Ohio EPA air-permit process scout (packet only): screen 58 FRS-linked, process-unknown PIC-18 sites for air permits, then a 10-site canary — `tasks/pic18-permit-canary-2026-11-18/`.
-- [ ] `claimed:claude-code 2026-11-18` Capability term unions: the 10 held terms on 7 sites from #365 and SITE-001986's term from #361 (owner item 8) — `tasks/cap-term-unions-2026-11-18/`.
+- [x] `done 2026-11-18` PIC-18 market canary: 4 of 10 filled (PR #385, e1df30e4); scaled to the other 191 in two batches: batch 1, 25 of 96 organizations, 45 values (PR #390, dd07afc9); batch 2, 35 of 100 organizations (95 plus 5 re-screens), 66 values (PR #396, 495a0018). PIC-18 organization rows with market unknown: 383 -> 319 of 794.
+- [x] `done 2026-11-18` Own-site Ohio size bands: 2 organizations filled (`employee_band_ohio`); 12 headcount leads held under owner ruling 2026-11-18b item 4 (11 company-wide or worldwide counts, 1 for a Dutch headquarters). PIC-18 organization rows with size unknown: 445 -> 443 (PR #383, c1dafc8d).
+- [x] `done 2026-11-18` Ohio EPA air-permit process scout (packet only): 33 of 58 sites retrievable; canary bound 7 of 10, specific hits 6 of 10; 0 data rows (PR #387, c9c5f616).
+- [ ] `claimed:claude-code 2026-11-18` Ohio EPA air-permit lane (owner ruling 2026-11-18b item 1, B-PERMIT option b): the 33 retrievable sites, the 10 canary sites re-scored plus the 23 not drawn — `tasks/pic18-permit-lane-2026-11-18/`.
+- [x] `done 2026-11-18` Capability term unions: 7 terms on 6 sites applied, 4 held (SITE-000707 ×2, SITE-001109, and SITE-000562's transfer term) (PR #381, 15f2b154). SITE-000562's `rubber_molding_transfer` was applied by PR #397.
+- [x] `done 2026-11-18` Record the owner rulings of 2026-11-18, second battery (W18): 7 items, 0 data rows — `tasks/owner-rulings-2026-11-18b/` (PR #392, 163f6c25).
+- [x] `done 2026-11-18` People rulings (2026-11-18b items 3 and 6): 9 identifier rows (7 replaced, 2 removed), V-62 widened to `?unid=` and the UC `/p/` form, people `status` and `status_date` added (0 rows set), SCHEMA v1.15 (PR #393, f35fb750).
+- [x] `done 2026-11-18` Process terms (2026-11-18b item 2): `rubber_molding_transfer` and `composites_spray_up`, SCHEMA v1.16; SITE-000562 gains `rubber_molding_transfer` (PR #397, c8ce2d4a).
 
 ### Follow-ups surfaced in W18 (not commitments)
 
-- [ ] `open` **Owner battery candidates:**
-  - **PERSON-000359:** the department lists the person "In Memoriam". `people.csv` has no status column, so how a deceased person's record is handled needs a ruling.
-  - **V-62 scope:** other account-style profile IDs (a Utah `unid`, a UC `/p/<id>`, a CU `fisid`) are outside items 1/1b.
-  - **Vocabulary:** whether tool refurbishment maps to a §3.1 term, from the PR #377 canary; the lane recommends no.
+- [x] `done 2026-11-18` The owner battery candidates listed here (PERSON-000359 status, V-62 scope, tool refurbishment) were ruled on 2026-11-18 (`tasks/owner-rulings-2026-11-18b/`, items 6, 3 and 7).
+- [ ] `open` **PERSON-000359:** set `deceased` once a dated public source of the death is fetched (owner ruling 2026-11-18b item 6). PR #393 found none.
+- [ ] `open` **GrafTech (ORG-000157):** record the out-of-scope note in its existing "Do not promote" form, and drop the record from the PIC-18 outcome frames (owner ruling 2026-11-18b item 5).
 - [ ] `open` **PERSON-001037:** the row's role disagrees with its department page (assistant vs associate). Re-verify the role. Source: PR #379.
 - [ ] `open` **widen.net links:** 2 organization rows and 2 site rows in `data/` cite widen.net PDF links whose `u` value is unnecessary (the same PDF bytes without it). Drop the value; the evidence rows stay as they are. Source: PR #378.
 - [ ] `open` **Free-text process values:** 30 off-vocabulary values (V-55 debt) appear as entries in the public process filter on the prospects page. Source: live re-grade, 2026-11-18.
@@ -571,7 +574,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `open` Flex Technologies' own page names Mt. Eaton and Baltic, Ohio plants that the Atlas does not hold — source PR #365.
 - [ ] `open` A Midvale `pvc` row could come from the "We specialize in PVC extrusion" line — source PR #365.
 - [ ] `open` Inter-Ion (ORG-001681): its stored markets pages carry narrative sentences that could replace the withdrawn tab-label `markets_served` values — source PR #360.
-- [ ] `open` Append the 10 held terms on 7 sites (PR #365) and SITE-001986's verified term (PR #361) to their non-blank cells: the CAP2A terms by controller decision (2026-11-17); SITE-001986 by owner ruling (2026-11-18, item 8, the same union rule).
+- [x] `done 2026-11-18` Append the held CAP2A terms (PR #365) and SITE-001986's term (PR #361): done by PR #381, see the W18 line.
 - [x] `done 2026-11-17` PIC-18 discovery pass 2 (72 held leads, zero data rows): PR #362 was closed after the lead names were stripped; #367 (a fresh commit) merged.
 
 ### Parked by the owner (not scheduled)
