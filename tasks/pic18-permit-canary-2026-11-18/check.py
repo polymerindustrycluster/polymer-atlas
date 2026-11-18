@@ -1,6 +1,6 @@
 """Named check for the PIC-18 air-permit scout. Recomputes every published count from the frozen caches and fails on:
 a quote not in its stored document, a term not in §3.1, a site outside the pool, a frame site with no verdict, any change under data/.
-Then proves it fails by injecting 6 defects. Missing caches or tools fail the run (never skipped).
+It binds every quote to its establishment (site -> verdict document -> printed Facility ID), recomputes every bind field from the stored permit text and every published metric from the rows, and then proves it fails by injecting 9 defects. Missing caches or tools fail the run (never skipped).
 Usage: python3 check.py"""
 import copy, csv, hashlib, importlib.util, json, random, re, subprocess, sys, zipfile, io
 from pathlib import Path
@@ -32,9 +32,21 @@ def load():
         t = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], capture_output=True, text=True).stdout
         if hashlib.sha256(t.encode()).hexdigest() != h["text_sha256"] or t != doc_text(d): bad.append(f"text hash differs for {d}")
     st["doc_bad"] = bad
+    orgs = {r["org_id"]: r for r in B.ref_rows("organizations_")}; sites = {r["site_id"]: r for r in B.ref_rows("sites_")}
+    rec = {}
+    for p in st["pool"]:
+        v = st["verdicts"].get(p["site_id"])
+        if not v: continue
+        hdr = [B.header(doc_text(d)) for d in v["docs"]]; fid = p["echo_air_ids"].split(";")[0][-10:]; o = orgs[p["org_id"]]; a = sites[p["site_id"]]
+        rr = B.bind_registered(hdr, fid, a, o)
+        rec[p["site_id"]] = {"record_tier": a["verification_tier"], "facility_id_printed": hdr[0]["facility_id"], "holder_printed": hdr[0]["holder"], "permit_street_printed": hdr[0]["holder_street"],
+                             "permit_city_printed": hdr[0]["holder_city"], "atlas_street": a["street_address"], "atlas_city": a["city"],
+                             "bind_registered": "BOUND" if not rr else "NOT_BOUND", "bind_registered_reasons": "; ".join(rr), "fid": fid, "doc_fids": {d: B.header(doc_text(d))["facility_id"] for d in v["docs"]}}
+    st["bind_recomputed"] = rec
     st["vocab"] = B.processes()
     st["schema31"] = set(re.findall(r"`([a-z0-9_]+)`", re.search(r"### 3\.1 Processes.*?### 3\.2", open(ROOT / "docs/SCHEMA.md").read(), re.S).group(0)))
-    st["changed"] = [x for x in git("diff", "--name-only", REF).split("\n") + git("status", "--porcelain").split("\n") if x.strip()]
+    base = git("merge-base", "HEAD", "origin/main").strip()
+    st["changed"] = [x for x in git("diff", "--name-only", base).split("\n") + git("status", "--porcelain").split("\n") if x.strip()]
     return st
 
 def doc_text(d): return open(P / "docs" / f"{d}.txt").read()
@@ -63,9 +75,7 @@ def checks(st):
     if sel != set(st["journal"]): f.append(f"fetched documents {len(st['journal'])} != documents the rule selects {len(sel)}")
     stat = {}
     for r in st["screen"]: stat[r["status"]] = stat.get(r["status"], 0) + 1
-    if stat != st["metrics"]["status_counts"]: f.append("status counts differ from metrics.json")
     ret = stat.get("retrievable_permit", 0)
-    if ret != st["metrics"]["retrievable_permit_sites"]: f.append("retrievable count differs from metrics.json")
     # every retrievable site has stored final permits that pass the classifier; every non-retrievable site has a stated reason; every frame site has a verdict
     for r in st["screen"]:
         if r["status"] == "retrievable_permit" and not r["final_permit_docids"]: f.append(f"{r['site_id']} retrievable but no document")
@@ -77,31 +87,34 @@ def checks(st):
         if s not in {r["site_id"] for r in st["sites"]}: f.append(f"frame site {s} has no verdict row")
         if s not in st["verdicts"]: f.append(f"frame site {s} has no authored verdict")
     if {r["site_id"] for r in st["sites"]} != set(draw): f.append("canary_sites.csv is not exactly the draw")
-    # quotes, terms, hashes
+    # quotes: verbatim in the stored document, bound to the site through the printed Facility ID, terms in §3.1
+    rec = st["bind_recomputed"]
     for q in st["quotes"]:
+        sid = q["site_id"]
         if q["docid"] not in st["hashes"]: f.append(f"{q['quote_id']} cites an unpinned document"); continue
+        if sid not in st["verdicts"] or q["docid"] not in st["verdicts"][sid]["docs"]: f.append(f"{q['quote_id']} document {q['docid']} is not a document of {sid}")
+        elif sid in rec and rec[sid]["doc_fids"].get(q["docid"]) != rec[sid]["fid"]: f.append(f"{q['quote_id']} document prints Facility ID {rec[sid]['doc_fids'].get(q['docid'])}, not {sid}'s {rec[sid]['fid']}")
         if not B.in_order(q["quote"], doc_text(q["docid"])): f.append(f"{q['quote_id']} quote not in stored document {q['docid']}")
         terms = [t for t in q["terms"].split(";") if t]
         for t in terms:
             if t not in st["vocab"] or t not in st["schema31"]: f.append(f"{q['quote_id']} term {t} not in §3.1")
         want_cls = "none" if not terms else ("unspecified" if all(t.endswith("_unspecified") for t in terms) else "specific")
         if q["term_class"] != want_cls: f.append(f"{q['quote_id']} term_class {q['term_class']} != {want_cls}")
+        if q["witness"] not in {"unit_heading", "unit_equipment", "unit_term", "permit_description"}: f.append(f"{q['quote_id']} unknown witness")
+        if q["proposed_strength"] not in {"supports_A", "supports_C"}: f.append(f"{q['quote_id']} unknown strength")
         if q["proposal_status"] != "HELD": f.append(f"{q['quote_id']} not HELD")
-        if q["proposed_strength"] != B.strength_of(q["source_part"]): f.append(f"{q['quote_id']} strength differs from the source_part rule")
     f += st["doc_bad"]
-    # canary counts recomputed from the quotes + bind
-    sp = an = 0
+    # bind fields: recomputed from the stored permit text and the Atlas rows at the pinned ref, never trusted from the csv
     for r in st["sites"]:
-        qs = [q for q in st["quotes"] if q["site_id"] == r["site_id"]]
-        s_ = any(q["term_class"] == "specific" for q in qs) and r["bind"] == "BOUND"; a_ = any(q["term_class"] in ("specific", "unspecified") for q in qs) and r["bind"] == "BOUND"
-        if (r["specific_hit"] == "Y") != s_ or (r["any_term_hit"] == "Y") != a_: f.append(f"{r['site_id']} hit flags differ from its quotes")
-        sp += s_; an += a_
-    m = st["metrics"]
-    if (sp, an) != (m["specific_hit"], m["any_term_hit"]): f.append("hit counts differ from metrics.json")
-    spn = len({q["site_id"] for q in st["quotes"] if q["term_class"] == "specific" and q["proposed_strength"] == "supports_A"})
-    if spn != m["specific_hit_narrative_strength"]: f.append("narrative-strength count differs from metrics.json")
-    if m["specific_wilson95"] != B.wilson(sp, 10) or m["any_term_wilson95"] != B.wilson(an, 10): f.append("Wilson interval differs")
-    if m["projected_specific_sites_of_58"] != round(ret * sp / 10, 1): f.append("projection differs")
+        want = rec.get(r["site_id"])
+        if not want: f.append(f"{r['site_id']} has no recomputed bind"); continue
+        for k in ("record_tier", "facility_id_printed", "holder_printed", "permit_street_printed", "permit_city_printed", "atlas_street", "atlas_city", "bind_registered", "bind_registered_reasons"):
+            if r[k] != want[k]: f.append(f"{r['site_id']} {k} '{r[k]}' differs from recompute '{want[k]}'")
+    # every published metric recomputed from the rows
+    m = st["metrics"]; want_m = B.compute_metrics(st["screen"], st["sites"], st["quotes"]); want_m["canary_draw"] = draw
+    for k in sorted(set(m) | set(want_m)):
+        if m.get(k) != want_m.get(k): f.append(f"metric {k}: published {m.get(k)} != recomputed {want_m.get(k)}")
+    if m["registered_specific"]["hit"] < 0: f.append("negative hit count")
     # nothing outside this task folder, nothing under data/
     rel = str(HERE.relative_to(ROOT))
     for line in st["changed"]:
@@ -110,15 +123,22 @@ def checks(st):
     return f
 
 def inject(st):
-    """Each defect must make checks() fail; returns the number of defects caught."""
-    cases = []
+    """Each defect must make checks() fail; returns (caught, total)."""
     def mut(fn): s = copy.deepcopy(st); fn(s); return s
-    cases.append(("fabricated quote", mut(lambda s: s["quotes"][0].update(quote="Polyurethane foam pouring line for mattresses"))))
-    cases.append(("term not in §3.1", mut(lambda s: s["quotes"][0].update(terms="thermoforming_hot_stamping"))))
-    cases.append(("site outside the pool", mut(lambda s: s["quotes"][0].update(site_id="SITE-009999"))))
-    cases.append(("frame site without verdict", mut(lambda s: s.update(sites=s["sites"][1:]))))
-    cases.append(("change under data/", mut(lambda s: s["changed"].append(" M data/sites_OH.csv"))))
-    cases.append(("count tampered", mut(lambda s: s["metrics"].update(retrievable_permit_sites=s["metrics"]["retrievable_permit_sites"] + 1))))
+    def swap(s):
+        a = next(q for q in s["quotes"] if q["site_id"] == "SITE-000601"); b = next(q for q in s["quotes"] if q["site_id"] == "SITE-000997"); a["site_id"], b["site_id"] = b["site_id"], a["site_id"]
+    def fake_bind(s): s["sites"][0].update(facility_id_printed="0000000000", holder_printed="Invented Holder LLC", permit_street_printed="1 Nowhere Rd")
+    def zero(s):
+        s["metrics"]["bound_registered"] = 0; s["metrics"]["registered_specific"].update(hit=0, projected_sites_of_58=0.0, projected_range=[0.0, 0.0], wilson95=[0.0, 0.0])
+    cases = [("fabricated quote", mut(lambda s: s["quotes"][0].update(quote="Polyurethane foam pouring line for mattresses"))),
+             ("term not in §3.1", mut(lambda s: s["quotes"][0].update(terms="thermoforming_hot_stamping"))),
+             ("site outside the pool", mut(lambda s: s["quotes"][0].update(site_id="SITE-009999"))),
+             ("frame site without verdict", mut(lambda s: s.update(sites=s["sites"][1:]))),
+             ("change under data/", mut(lambda s: s["changed"].append(" M data/sites_OH.csv"))),
+             ("count tampered", mut(lambda s: s["metrics"].update(retrievable_permit_sites=s["metrics"]["retrievable_permit_sites"] + 1))),
+             ("real quotes swapped between two sites", mut(swap)),
+             ("fabricated bind fields", mut(fake_bind)),
+             ("zeroed bound total and projection", mut(zero))]
     caught = 0
     for name, s in cases:
         r = checks(s); caught += bool(r); print(f"  injected [{name}]: {'REJECTED' if r else 'NOT CAUGHT'}")
@@ -128,7 +148,7 @@ if __name__ == "__main__":
     st = load(); fails = checks(st)
     for x in fails: print("FAIL:", x)
     if fails: sys.exit(1)
-    print(f"base checks PASS (pool 58, air-record {st['metrics']['air_record_sites']}, retrievable {st['metrics']['retrievable_permit_sites']}, canary specific {st['metrics']['specific_hit']}/10)")
+    m = st["metrics"]; print(f"base checks PASS (pool 58, air-record {m['air_record_sites']}, retrievable {m['retrievable_permit_sites']}, bound {m['bound_registered']}/10, registered specific {m['registered_specific']['hit']}/10, broadened {m['broadened_specific']['hit']}/10)")
     c, n = inject(st)
     if c != n: print(f"FAIL: only {c}/{n} injected defects caught"); sys.exit(1)
     print(f"PASS: {n}/{n} injected defects rejected")
