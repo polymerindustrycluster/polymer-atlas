@@ -115,11 +115,6 @@ def apply(inputs, evidence):
         if row['markets_served'] != expected:
             row['markets_served'] = expected
             touched[path] = rows[path]
-    backup = LIVE / f'pre-application-batch{BATCH}'  # per batch: the backup is this batch's own base, never an older batch's
-    backup.mkdir(parents=True, exist_ok=True)
-    for path in set(touched) | set(add):
-        if not (backup / path.name).exists():
-            shutil.copyfile(path, backup / path.name)
     def base_count(path):
         return len(list(csv.DictReader(io.StringIO(subprocess.check_output(['git', 'show', f'{BASE}:data/{path.name}'], cwd=REPO, text=True)))))
     packet_rows = {}
@@ -143,6 +138,12 @@ def apply(inputs, evidence):
         append_sorted(tmp, evs, 'evidence_id')
         assert len(read(tmp)) == base_count(path) + packet_rows[path.name], ('evidence row count differs from base + packet rows', path.name)
         staged[path] = tmp
+    # Backup only now, after every input check has passed (a refused apply must never leave a truncated backup that a retry would keep).
+    backup = LIVE / f'pre-application-batch{BATCH}'  # per batch: the backup is this batch's own base, never an older batch's
+    backup.mkdir(parents=True, exist_ok=True)
+    for path in set(touched) | set(add):
+        if not (backup / path.name).exists():
+            shutil.copyfile(path, backup / path.name)
     # Publish the evidence shards first, then the organization shards: an interruption can leave evidence rows without a cell, never a cell without its rows.
     for path in sorted(staged, key=lambda p: (not p.name.startswith('evidence_'), p.name)):
         os.replace(staged[path], path)
@@ -167,25 +168,25 @@ def counts_for(tiers, inputs, verdicts):
 
 
 def renumber(old_first, new_first):
-    """The only way pinned evidence IDs change (never sed): a fixed offset over every ID in selection.tsv. Refuses an ID below the old block start, and the number
-    renumbered must equal the number matched; no ID of the old block may remain."""
+    """The only way pinned evidence IDs change (never sed): a fixed offset over every ID in selection.tsv. Idempotent by refusal: a source ID already inside the
+    allocated block (FIRST_ID..LAST_ID) means a replay and is refused; every new ID must fall inside the block; the number renumbered must equal the number matched.
+    The file is written only after every check passes."""
     path = HERE / 'selection.tsv'
     lines = [l.split('\t') for l in path.read_text().splitlines()]
-    matched = done = 0
+    src = [int(i[4:]) for l in lines for i in l[2].split(';')]
+    assert not any(FIRST_ID <= n <= LAST_ID for n in src), 'a source ID is already inside the allocated block (already converted)'
+    assert all(n >= old_first for n in src), 'a source ID is below the old block start'
+    new = [n - old_first + new_first for n in src]
+    assert all(FIRST_ID <= n <= LAST_ID for n in new), 'a new ID falls outside the allocated block'
+    it = iter(new)
+    done = 0
     for l in lines:
-        new = []
-        for i in l[2].split(';'):
-            n = int(i[4:])
-            assert n >= old_first, ('ID below the old block', i)
-            matched += 1
-            new.append(f'EVD-{n - old_first + new_first:06d}')
-            done += 1
-        l[2] = ';'.join(new)
-    assert matched == done, 'renumbered differs from matched'
-    old_ids = {f'EVD-{n:06d}' for n in range(old_first, old_first + matched + 200)}
-    assert not old_ids & {i for l in lines for i in l[2].split(';')} or old_first == new_first, 'an old ID remains'
+        ids = l[2].split(';')
+        l[2] = ';'.join(f'EVD-{next(it):06d}' for _ in ids)
+        done += len(ids)
+    assert done == len(src), 'renumbered differs from matched'
     path.write_text('\n'.join('\t'.join(l) for l in lines) + '\n')
-    print(f'renumbered {done} of {matched} matched IDs: EVD-{old_first:06d}.. to EVD-{new_first:06d}..')
+    print(f'renumbered {done} of {len(src)} matched IDs: EVD-{old_first:06d}.. to EVD-{new_first:06d}..')
 
 
 def main():

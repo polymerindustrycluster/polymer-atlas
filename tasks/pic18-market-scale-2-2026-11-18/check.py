@@ -1,5 +1,7 @@
 """Recompute every published count, reconcile the frame against independent inputs, prove the check fails on injected defects."""
 import copy
+import inspect
+import shutil
 import csv
 import json
 import re
@@ -230,30 +232,53 @@ def builder_tests(inputs, evidence):
             for e in evidence:
                 by_org.setdefault(e['record_id'], set()).add(e['evidence_id'])
             real_replace = B.os.replace
-            for k in range(1, len(names) + 1):  # interrupt at every canonical replacement: no cell may be published without its evidence rows
-                reset()
-                calls = []
+            canonical = {root / 'data' / n for n in names}
 
-                def cut_replace(src, dst, _k=k):
-                    calls.append(dst)
-                    if len(calls) == _k:
-                        raise OSError('interrupted between replacements')
-                    return real_replace(src, dst)
-                try:
-                    with patch.object(B.os, 'replace', cut_replace):
-                        B.apply(inputs, evidence)
-                except OSError:
-                    pass
-                else:
-                    raise AssertionError('silent pass: interruption at replacement %d' % k)
-                have = {r['evidence_id'] for n in names if n.startswith('evidence_') for r in read(root / 'data' / n)}
-                for n in names:
-                    if n.startswith('organizations_'):
-                        for r in read(root / 'data' / n):
-                            if r['org_id'] in by_org and r['markets_served']:
-                                assert by_org[r['org_id']] <= have, ('a market cell was published without its evidence rows', r['org_id'], k)
-                B.apply(inputs, evidence)  # retry
-                assert snapshot() == final, 'retry after an interruption did not reproduce the canonical shards'
+            def unbacked_after_interruptions():
+                """Interrupt at every canonical destination write (staging replacements inside append_sorted are not counted) and list any market cell published without its rows."""
+                leaks = []
+                for k in range(1, len(names) + 1):
+                    reset()
+                    seen = []
+
+                    def cut_replace(src, dst, _k=k):
+                        if Path(dst) in canonical:
+                            seen.append(dst)
+                            if len(seen) == _k:
+                                raise OSError('interrupted between canonical replacements')
+                        return real_replace(src, dst)
+                    try:
+                        with patch.object(B.os, 'replace', cut_replace):
+                            B.apply(inputs, evidence)
+                    except OSError:
+                        pass
+                    else:
+                        raise AssertionError('silent pass: interruption at canonical write %d' % k)
+                    have = {r['evidence_id'] for n in names if n.startswith('evidence_') for r in read(root / 'data' / n)}
+                    for n in names:
+                        if n.startswith('organizations_'):
+                            for r in read(root / 'data' / n):
+                                if r['org_id'] in by_org and r['markets_served'] and not by_org[r['org_id']] <= have:
+                                    leaks.append((k, r['org_id']))
+                    B.apply(inputs, evidence)  # retry
+                    assert snapshot() == final, 'retry after an interruption did not reproduce the canonical shards'
+                return leaks
+            assert not unbacked_after_interruptions(), 'a market cell was published without its evidence rows'
+            # injection (Codex round 2): an unsafe order, one organization shard written before its own evidence shard, must be detected
+            src = inspect.getsource(B.apply)
+            old_key = "key=lambda p: (not p.name.startswith('evidence_'), p.name)"
+            assert src.count(old_key) == 1, 'write-order line not found'
+            eo, oo = sorted(n for n in names if n.startswith('evidence_')), sorted(n for n in names if n.startswith('organizations_'))
+            assert len(eo) >= 2, 'the unsafe-order injection needs two shards'
+            unsafe = [eo[0], oo[-1]] + eo[1:] + oo[:-1]
+            original_apply = B.apply
+            try:
+                exec(src.replace(old_key, 'key=lambda p: ' + repr(unsafe) + '.index(p.name)'), B.__dict__)
+                leaks = unbacked_after_interruptions()
+            finally:
+                B.apply = original_apply
+            assert leaks, 'silent pass: the unsafe write order was not detected'
+            print('REFUSED: unsafe write order (an organization shard before its own evidence shard) is detected by the canonical-write interruption test')
             print('REFUSED: interruption between canonical replacements (every position): no cell without its evidence rows; retry reproduces the shards')
             reset(preoccupy=evidence[0]['evidence_id'])
             before = snapshot()
@@ -265,6 +290,13 @@ def builder_tests(inputs, evidence):
                 raise AssertionError('silent pass: occupied evidence ID')
             assert snapshot() == before, 'a market cell was written despite an occupied ID'
             print('REFUSED: occupied evidence ID (no market cell written)')
+            shutil.rmtree(root / 'backup', ignore_errors=True)
+            backups = root / 'backup' / f'pre-application-batch{B.BATCH}'
+
+            def backups_are_base():
+                for n in names:
+                    if (backups / n).exists():
+                        assert (backups / n).read_bytes() == subprocess.check_output(['git', 'show', f'{BASE}:data/{n}'], cwd=ROOT), ('a backup differs from the merge-base bytes', n)
             for n in ('organizations_OH.csv', 'evidence_organizations_OH.csv'):  # truncated input shard: one row removed
                 reset()
                 p = root / 'data' / n
@@ -278,6 +310,12 @@ def builder_tests(inputs, evidence):
                 else:
                     raise AssertionError('silent pass: truncated ' + n)
                 assert snapshot() == before, 'a shard changed despite a truncated input'
+                backups_are_base()  # a refused apply must not leave a truncated backup
+                reset()
+                B.apply(inputs, evidence)  # restore the input and retry
+                backups_are_base()
+                assert all((backups / m).exists() for m in names if (root / 'data' / m).read_bytes() != subprocess.check_output(['git', 'show', f'{BASE}:data/{m}'], cwd=ROOT)), 'a changed shard has no backup'
+                shutil.rmtree(backups, ignore_errors=True)
             print('REFUSED: truncated input shard (organization and evidence), nothing replaced')
     with tempfile.TemporaryDirectory() as td:  # scrub: purge then a lookup must refetch, not raise
         c = fetch.Corpus(td)
@@ -287,6 +325,32 @@ def builder_tests(inputs, evidence):
         assert fetch.scrub(c, r, url), 'scrub missed a personal address'
         assert c.cached(url) is None and not any(row['url'] == url for row in csv.DictReader((Path(td) / 'index.csv').open())), 'scrub left a record behind'
         print('REFUSED: scrub leaves no per-URL record or index row')
+
+
+def renumber_replay_test():
+    """A renumber replay must change nothing: the second run is refused (its source IDs are already inside the allocated block) and the file is untouched."""
+    old_first = 396750
+    original = (HERE / 'selection.tsv').read_text()
+    lines = [l.split('\t') for l in original.splitlines()]
+    for l in lines:
+        l[2] = ';'.join(f'EVD-{int(i[4:]) - FIRST_ID + old_first:06d}' for i in l[2].split(';'))
+    with tempfile.TemporaryDirectory() as td, patch.object(B, 'HERE', Path(td)):
+        p = Path(td) / 'selection.tsv'
+        p.write_text('\n'.join('\t'.join(l) for l in lines) + '\n')
+        import contextlib
+        import io as _io
+        with contextlib.redirect_stdout(_io.StringIO()):
+            B.renumber(old_first, FIRST_ID)
+        assert p.read_text() == original, 'renumber did not reproduce the allocated IDs'
+        try:
+            with contextlib.redirect_stdout(_io.StringIO()):
+                B.renumber(old_first, FIRST_ID)
+        except AssertionError as e:
+            assert 'already converted' in str(e), str(e)
+        else:
+            raise AssertionError('silent pass: renumber replay')
+        assert p.read_text() == original, 'a refused renumber replay changed the file'
+    print('REFUSED: renumber replay (source IDs already inside the allocated block); the selection is unchanged')
 
 
 def main():
@@ -367,6 +431,7 @@ def main():
             else:
                 raise AssertionError('silent pass: ' + name)
     builder_tests(inputs, read(HERE / 'evidence_packet.csv'))
+    renumber_replay_test()
     if packet_only:
         cells = {r['org_id']: r['markets_served'] for p in shards() for r in read(p)}
         assert not any(cells[o] for o in {r['org_id'] for r in inputs}), 'packet-only mode but a frame cell is already written: run check.py without --packet-only'
