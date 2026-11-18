@@ -1,0 +1,8 @@
+decision,show_key,event_id,role,edition_year,listed_name,org_id,reason
+hold,ppxxiii-plastic-pipes-conference-and-exhibition:2027,EVT-000069,exhibitor,2027,Trelleborg,ORG-004243,bare group name; Atlas holds more than one Trelleborg entity and the page does not say which exhibited
+hold,ppxxiii-plastic-pipes-conference-and-exhibition:2027,EVT-000069,exhibitor,2027,iNOEX,ORG-003238,"bare brand; iNOEX GmbH (Germany) and iNOEX LLC (Lancaster PA) both exist, and the page does not say which"
+hold,npe-the-plastics-show:2027,EVT-000001,exhibitor,2027,"Aaron Industries, Inc.",ORG-004008,"listed as Inc.; the company calls itself Aaron Industries Corporation, so the suffix may name another entity"
+hold,npe-the-plastics-show:2027,EVT-000001,exhibitor,2027,ACS Group,ORG-002944,a family of equipment brands; the group label does not identify the legal entity
+hold,ppxxiii-plastic-pipes-conference-and-exhibition:2027,EVT-000069,exhibitor,2027,Hultec,ORG-002974,a brand over four owned companies; the bare label does not identify the entity behind the booth
+accept,npe-the-plastics-show:2027,EVT-000001,exhibitor,2027,Baystar,ORG-003071,"Baystar is Bayport Polymers LLC's brand (the brand's privacy policy names Bayport Polymers LLC; the NPE profile places it in Pasadena TX, the record's HQ)"
+accept,ppxxiii-plastic-pipes-conference-and-exhibition:2027,EVT-000069,exhibitor,2027,Baystar,ORG-003071,Baystar is Bayport Polymers LLC's brand (the brand's privacy policy names Bayport Polymers LLC)

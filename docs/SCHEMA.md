@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
+**Version:** v1.15.1 — 2026-11-18 (§4.11 prong (b) extends to `training` rows whose own description says they teach plastics or polymer processing — owner ruling 2026-11-18).
+Previous: v1.15 — 2026-11-18 (§4.9 people `status` (`active` | `deceased`) and `status_date`, validator V-64; §1 P2b / V-62 widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>` — owner rulings 2026-11-18b items 3 and 6, `tasks/owner-rulings-2026-11-18b/README.md`).
+Previous: v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
 Previous: v1.13.4 — 2026-11-18 (§1 P2b / V-62: no personal-account identifier URL (`?u=<network id>` or `/~<account>`) in a people row — owner rulings 2026-11-18 items 1 and 1b).
 Previous: v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
 Previous: v1.13.2 — 2026-11-16 (§4.5 permits blank ZIP fills from unique Exact Census batch matches as reference address normalization — owner ruling 2026-11-16).
@@ -330,8 +332,13 @@ the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
   dropped to the tier that public evidence supports. Validator V-50 enforces it,
   with existing rows grandfathered for the cleanup pass.
 - **P2. No email-like string in `people.public_profile_url`** (V-51).
-- **P2b. No personal-account identifier URL in a people row [v1.13.4, owner rulings 2026-11-18 items 1 and 1b].**
-  A `?u=<network id>` query or a `/~<account>` home-directory path carries a person's university account name. No
+- **P2b. No personal-account identifier URL in a people row [v1.13.4, owner rulings 2026-11-18 items 1 and 1b; widened v1.15, owner ruling 2026-11-18b item 3].**
+  A `?u=<network id>` query or a `/~<account>` home-directory path carries a person's university account name. So does
+  a `?unid=<id>` query, and so does `researchdirectory.uc.edu/p/<shortname>` **[v1.15]** (the rule parses the URL: the query
+  parameter key is exactly `unid`; for the research directory the host is exactly `researchdirectory.uc.edu`, case-insensitive
+  with one trailing root dot ignored, and the path is `/p/<value>`; a sibling host or a nested path does not match). The
+  identifier `fisid_<id>` (e.g. `experts.colorado.edu/...fisid_<id>`) is accepted; what the institution uses the number for is not
+  established (owner rulings 2026-11-18b item 3). No
   `public_profile_url`, `lab_url` or `sources` cell of a people row may contain one (validator V-62: an error on any
   row, no baseline; decided by parsing each URL token: a query parameter `u` whose value starts with a letter or digit, or a path segment starting `~` plus a letter or digit; the fragment is ignored). Where an identifier-free
   department or lab page states the same facts, the row cites it and a new evidence row answers the old one; otherwise
@@ -1216,6 +1223,16 @@ in every rank.
 | `lab_url` | URL, nullable | The person's research-group / lab website, where one is published on an institutional domain **[v1.13, owner ruling 2026-11-12 S6]** — captured because lab sites carry the group-level research detail (themes, facilities, openings) that directory pages omit |
 | `sources[]` | public citations only | **MUST**, ≥1 per record, every field traceable to a public university/program/lab page |
 | `verification_tier` / `last_verified` | §4.1 | Shortest refresh leash in the layer; a vanished/changed profile downgrades the record to U |
+| `status` **[v1.15]** | `active` \| `deceased`, nullable | **Blank means not recorded, never "active".** Set only from dated evidence (AGENTS.md §3). Added last in the CSV; every row at v1.15 is blank |
+| `status_date` **[v1.15]** | ISO date, nullable | The date of the status event as the source states it (for `deceased`, the date of death), full ISO date, never a year or month alone; same meaning as `status_date` on organizations and events. Blank exactly when `status` is blank |
+
+**People status [v1.15] (owner ruling 2026-11-18b item 6; validator V-64).** `status` and `status_date` are both blank,
+or `status` is `active` or `deceased` and `status_date` is a valid ISO date. `deceased` also requires at least one
+`evidence_people` row for the person, whose `claim_type` is `liveness`, whose `tier_effect` is a `supports_*` value (never `contradicts`), whose `claim_detail` starts `status=deceased`, and whose
+`observed_date` is **on or after** `status_date` (a death is observed after it happens); an appointment or other row never
+satisfies it. The row names the public source (a university or department notice, or an obituary from a
+named outlet). `active` with a date needs no evidence-date check. A source that prints no full date (only a month or year),
+or a search-result summary that was never fetched, cannot set the row: it stays blank. No existing row is populated by v1.15.
 
 **Evidence and identifiers [v1.10] (owner ruling 2026-11-04).** From
 v1.10 people records are a §4.13 evidence class: a lane that creates
@@ -1314,6 +1331,16 @@ verification field, never an inclusion criterion. Borderline calls are
 logged in the inclusion log (Appendix A) with the prong cited; institution-
 level seam cases (a polymer track inside a general degree) stay flagged as
 seams until the owner rules — a program row never settles a seam by landing.
+
+**Non-degree training [v1.15.1] (owner ruling 2026-11-18).** The owner was asked whether a polymer-process training
+program qualifies when its name has no polymer word. The option chosen was "Yes, if the page states plastics processing",
+described as extending prong (b) "to non-degree training whose own description says plastics or polymer processing".
+So a `training` row meets prong (b) when the program's own description says it teaches the processing of plastics or
+polymers. The test is the meaning, not a literal phrase. Examples: "the manipulation of key processing variables from
+the plastic's point of view"; "focusing on what the plastic experiences in the cavity" (in process-development course
+highlights); "test your knowledge of plastics processing". The statement must sit in the program's own description.
+Site-wide navigation does not count, and neither does a process word with no plastics or polymer word, such as
+"injection molding" alone. Degree, certificate, center and course rows are unchanged.
 
 **The rollup.** An institution's ecosystem `polymer_program_name` is a
 generated rollup of its program rows in this table: the non-tombstoned
@@ -3132,4 +3159,6 @@ unchanged.
 
 - **v1.13.4 — 2026-11-18 (owner rulings 2026-11-18, items 1 and 1b: identifier URLs on people rows).** §1 gains P2b and the validator gains V-62 (an error on any people row whose `public_profile_url`, `lab_url` or `sources` carries a `?u=<network id>` or `/~<account>` URL; no baseline entries). Applied in the same PR to the 29 people rows that carried one (18 `?u=`, 11 `/~`): 23 rows cite an identifier-free page with new evidence rows (EVD-396100 to EVD-396125), 6 rows have the URL blanked, with any old evidence rows left as the record's source. Evidence rows are never edited (§4.13). `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows.
 - **v1.14 — 2026-11-18 (owner ruling 2026-11-18, "Into the Atlas").** §4.23 adds the IPEDS completions reference layer: `data/ipeds_institutions.csv` (343), `data/ipeds_programs.csv` (825) and `data/ipeds_completions.csv` (10,486 program-years, 1991-2023). `scripts/ipeds_build.py` generates them from `data/ipeds/raw_ipeds_national.json`, ported from polymer-programs-db build_db.py (a9d89b5) with every row equal. Validator V-63 enforces parity with the raw file. Reference data, never evidence. The hand-researched layers (credentials, global programs, society chapters, aliases, CIP-invisible programs) are phase-2 owner questions (`tasks/ipeds-layer-2026-11-18/README.md`). No existing data row is changed.
+- **v1.15 — 2026-11-18 (owner rulings 2026-11-18b, items 3 and 6; `tasks/owner-rulings-2026-11-18b/README.md`).** (1) §1 P2b / V-62 is widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>`; `fisid_<id>` is accepted. Applied in the same PR (`tasks/people-rulings-2026-11-18b/`): of the 9 `people.csv` rows the widened rule catches (3 `?unid=`, 6 UC `/p/`), 7 cite an identifier-free page with new evidence rows (EVD-396900 to EVD-396906) and 2 drop the identifier URL with no new evidence; the 13 `evidence_people` rows citing the UC form are never edited. `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows. (2) §4.9 gains `status` and `status_date` (appended last in `people.csv`; validator V-64: `deceased` needs an ISO `status_date` and an affirmative (`supports_*`) `evidence_people` `liveness` row whose `claim_detail` starts `status=deceased`, observed on or after `status_date`); every existing row is blank. PERSON-000359 stays blank: no fetched page prints a dated death.
+- **v1.15.1 — 2026-11-18 (owner ruling 2026-11-18, "Yes, if the page states plastics processing").** §4.11 prong (b) also admits a `training` row whose own description says it teaches plastics or polymer processing (the meaning of the chosen option, not a literal phrase). Site-wide navigation and a bare process word do not qualify. Applied in `tasks/prong-b-training-2026-11-18/` (3 rows). No validator change: the inclusion rule is adjudicated, not machine-checked.
 

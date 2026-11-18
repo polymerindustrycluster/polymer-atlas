@@ -1,9 +1,13 @@
-"""Personal-account identifier test for people-row URL cells (SCHEMA v1.13.4, V-62). Shared by validate.py and the
+"""Personal-account identifier test for people-row URL cells (SCHEMA v1.13.4, widened at v1.15; V-62). Shared by validate.py and the
 people-identifier-urls task checker, so both read a URL the same way.
 
 Each whitespace/`;`/`,`/quote-separated token is parsed with urlsplit ("//" prefixed when there is no scheme). A token
-is an account URL when its host has a dot and either a query parameter named `u` has a value starting with a letter or
-digit (any position) or a path segment starts with `~` plus a letter or digit. The fragment is ignored.
+is an account URL when its host has a dot and one of: a query parameter named `u` or `unid` has a value starting with a
+letter or digit (any position); a path segment starts with `~` plus a letter or digit; or the host is exactly
+researchdirectory.uc.edu (case-insensitive, one trailing root dot ignored) and the path is `/p/<value>` with the value
+starting with a letter or digit (owner rulings 2026-11-18b item 3). The query key must be exactly `unid`. The fragment is
+ignored. Placeholders (`unid=<id>`, `/p/<shortname>`) start with `<` and pass; `fisid_<id>` is accepted (owner rulings
+2026-11-18b item 3; what the institution uses the number for is not established) and is not matched.
 """
 import re
 from urllib.parse import parse_qsl, unquote, urlsplit
@@ -22,9 +26,12 @@ def url_has_account(token):
         return True
     if "." not in host:
         return False
-    if any(k == "u" and _ALNUM.match(v) for k, v in query):
+    if any(k in ("u", "unid") and _ALNUM.match(v) for k, v in query):
         return True
-    return any(seg.startswith("~") and _ALNUM.match(seg[1:2]) for seg in unquote(parts.path).split("/"))
+    segs = unquote(parts.path).split("/")
+    if host.lower().rstrip(".") == "researchdirectory.uc.edu" and len(segs) >= 3 and segs[0] == "" and segs[1] == "p" and _ALNUM.match(segs[2][:1]):
+        return True
+    return any(seg.startswith("~") and _ALNUM.match(seg[1:2]) for seg in segs)
 
 
 def has_account_identifier(cell):
