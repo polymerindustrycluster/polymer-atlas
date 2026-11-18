@@ -8,7 +8,7 @@
     "A": 1,
     "B": 3
   },
-  "applied_values": 5,
+  "applied_values": 4,
   "frame_organizations": 10,
   "held_by_class": {
     "group_or_redirect_attribution": 1,
@@ -21,8 +21,9 @@
   "held_organizations": 6,
   "live_fetches": 13,
   "mkt3_reach": {
-    "cannot_tell": 6,
+    "cannot_tell": 3,
     "not_reached": 1,
-    "screened_in_full": 3
+    "screened_in_full": 5,
+    "stricter_filter_only": 1
   }
 }
