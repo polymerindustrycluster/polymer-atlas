@@ -56,7 +56,7 @@ Batch-1 review rules carried over: no `furniture_office` from a bare "furniture"
 
 Term notes. Each tag needs its own wording in its quote (`WORDS` in `check.py`). `medical_device` is by the page's own words ("medical device", "implants", "medical devices"). `dental` for Anatotemp's "restorative dentists" and 3D Dental's "dental industry". Industrial Mold & Machine's list ("Serving Many Markets" bullets) is applied under the content-page-list ruling for the seven terms its words name (Medical, Household Appliance, Industrial, Toys, Automotive, Electronics/Electrical, Housewares); "Packaging", "Beverage", "Transportation" and "Consumer Products" are not tagged (no single section 3.3 term matches). CPC's "Industries Served" list yields automotive and lawn and garden only.
 
-Live-sourced: ICS Laboratories' Sporting Goods page ("tests a variety of sporting goods, including ...") and Comdess' Application Areas page, a content-page list (Industrial, Agriculture, Food Service, Medical, Marine, Military) applied under the same ruling; ICS' Defense & Tactical page was not tagged (the sentence names the Armed Forces but not the words defense or military), nor were Recreation & Leisure or Emergency Response (no matching term).
+Live-sourced: ICS Laboratories' Sporting Goods page ("tests a variety of sporting goods, including ...") and Comdess' Application Areas page, a content-page list (Industrial, Agriculture, Food Service, Medical, Marine, Military) applied under the same ruling; ICS' Defense & Tactical page ("United States Armed Forces") yields `aerospace_defense` and its Emergency Response page ("frontline medical staff") yields `medical_healthcare_general` after Codex round 2; Recreation & Leisure has no matching term.
 
 ## Review rounds on #396 (12 findings: Gemini 1, Codex 11; each fixed or rebutted)
 
@@ -110,7 +110,7 @@ The other four stay held: their text is a product list or a product-link list, n
 ## Writes (rule 13) and outcome check
 
 - Only `markets_served` changes, on 35 organization rows, each blank at base: `data/organizations_OH.csv` and `data/organizations_TX.csv`. 66 evidence rows appended to the matching `evidence_organizations_*.csv`, IDs EVD-397300 to EVD-397368 of the block 397300-397449 (controller re-allocation 2026-11-18; main's maximum is EVD-397103 and open PRs use up to 397200) (66 IDs in use; 3 retired: EVD-397310, EVD-397320, EVD-397331; `withdrawn.csv`), pinned in `selection.tsv` and allocated with `scripts/shard_io.py` `append_sorted`. `check.py` compares every data file with base: nothing else changes.
-- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `dd07afc9`: `mkt_unknown=354`. At HEAD: `mkt_unknown=324`. **It fell by exactly 30, the number of organizations applied.** `proc_unknown` (331) and `band_unknown` (445) unchanged.
+- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `01414bce`: `mkt_unknown=354`. At HEAD: `mkt_unknown=319`. **It fell by exactly 35, the number of organizations applied.** `proc_unknown` (331) and `band_unknown` (445) unchanged.
 
 ## Self-refute (rule 15)
 
