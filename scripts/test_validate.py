@@ -9,6 +9,7 @@ silently letting bad rows through.
 Run from the repo root:  python3 -m unittest scripts/test_validate.py
 """
 import csv
+import io
 import json
 import os
 import shutil
@@ -250,13 +251,20 @@ class ValidatorMutationTests(unittest.TestCase):
         self.edit_rows("events.csv", lambda r: True, lambda r: r.update(pic_events_slug="test-same;test-same"))
         self.assert_fails_with("pic_events_slug 'test-same' repeated in one cell (V-61)")
 
-    def test_v61_truncated_row_rejected(self):  # codex post-merge review 2026-11-18: a dropped last column passed
+    def test_v61_row_width_must_match_header(self):  # post-merge reviews 2026-11-18: short and wide rows passed
         path = self.data / "events.csv"
-        lines = path.read_text(encoding="utf-8").split("\n")
-        mapped = next(i for i, ln in enumerate(lines[1:], 1) if ln and not ln.endswith(","))
-        lines[mapped] = lines[mapped].rsplit(",", 1)[0]  # slugs hold no commas, so this drops only the last field
-        path.write_bytes("\n".join(lines).encode("utf-8"))  # bytes: write_text would emit CRLF on Windows (V-56)
-        self.assert_fails_with("has fewer fields than the header (pic_events_slug missing) (V-61)")
+        pristine = path.read_bytes()
+        for label, change, needle in (("short by 1", lambda r: r.pop(), "has fewer fields than the header (V-61)"),
+                                      ("short by 2", lambda r: (r.pop(), r.pop()), "has fewer fields than the header (V-61)"),
+                                      ("wide by 1", lambda r: r.append(""), "has more fields than the header (V-61)")):
+            with self.subTest(label):
+                rows = list(csv.reader(io.StringIO(pristine.decode("utf-8"), newline="")))
+                change(rows[1])
+                buf = io.StringIO()
+                csv.writer(buf, lineterminator="\n").writerows(rows)
+                path.write_bytes(buf.getvalue().encode("utf-8"))  # bytes: write_text would emit CRLF on Windows (V-56)
+                self.assert_fails_with(needle)
+        path.write_bytes(pristine)
 
     def test_v19_attendee_accepted(self):
         self.edit_rows("event_participation.csv", lambda r: True,

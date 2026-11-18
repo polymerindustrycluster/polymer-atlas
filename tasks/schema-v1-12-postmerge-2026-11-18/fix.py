@@ -22,6 +22,8 @@ for path, row_start, old, new in EDITS:
     i = b.index(row_start) + 1
     j = b.index(b"\n", i) + 1
     row = b[i - 1:j]
+    if row.count(new) == 1 and row.count(old) == 0:
+        print("already applied", path.relative_to(ROOT)); continue
     assert row.count(old) == 1, (path, row[-200:])
     path.write_bytes(b[:i - 1] + row.replace(old, new) + b[j:])
     print("edited", path.relative_to(ROOT))
