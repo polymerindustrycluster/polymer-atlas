@@ -2,12 +2,14 @@
 - verdicts_a.csv / verdicts_b.csv: LF-normalised copies (the repo CSV rule). On the 13 uei_links rows every free-text cell
   (field, correct_value, source_url, quote, note) is blanked, because reviewer A's cells quote SAM names and addresses and
   R-SAM (controller ruling 2026-11-17) bars them from the repo; blind_id, record_id and verdict are kept.
-- receipts_a.json / receipts_b.json: byte copies (url, status, time, body hash and short notes; no SAM content).
-- locks.json: the BOARD lock hash of each original and the hash of each committed copy. check.py re-applies redact() to the
-  private originals when they are present and requires the committed bytes.
+- receipts_a.json / receipts_b.json: copies (url, status, time, body hash, short notes) with the URL blanked on any fetch whose
+  host is on the private R-SAM host list (private/audit11/rsam_redact_hosts.json): fetches only the UEI no-match explains.
+- locks.json: the BOARD lock hash of each original and the hash of each committed copy. check.py re-applies the redaction to
+  the private originals when they are present and requires the committed bytes.
 Run once: python3 copy_verdicts.py"""
-import csv, hashlib, io, json, shutil
+import csv, hashlib, io, json
 from pathlib import Path
+from urllib.parse import urlsplit
 
 H = Path(__file__).resolve().parent
 PRIVATE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/private/audit11')
@@ -30,6 +32,16 @@ def redact(original: bytes) -> bytes:
     return out.getvalue().encode('utf-8')
 
 
+def redact_receipts(original: bytes) -> bytes:
+    hosts = set(json.loads((PRIVATE / 'rsam_redact_hosts.json').read_text())['hosts'])
+    host = lambda u: (urlsplit(u or '').hostname or '').removeprefix('www.')
+    rows = json.loads(original)
+    for r in rows:
+        if host(r['url']) in hosts or host(r.get('resolved_url')) in hosts:
+            r.update({k: '[redacted: R-SAM]' for k in ('url', 'resolved_url', 'note') if k in r})
+    return (json.dumps(rows, indent=1, ensure_ascii=False) + '\n').encode('utf-8')
+
+
 def main():
     locks = {}
     for k in 'ab':
@@ -37,8 +49,9 @@ def main():
         assert sha(src) == LOCKED[k], f'{k}: original no longer matches its BOARD lock'
         red = redact(src)
         (H / f'verdicts_{k}.csv').write_bytes(red)
-        shutil.copyfile(PRIVATE / f'out_{k}/receipts.json', H / f'receipts_{k}.json')
-        locks[k] = dict(locked_sha256=LOCKED[k], committed_sha256=sha(red), receipts_sha256=sha((H / f'receipts_{k}.json').read_bytes()))
+        rec = redact_receipts((PRIVATE / f'out_{k}/receipts.json').read_bytes())
+        (H / f'receipts_{k}.json').write_bytes(rec)
+        locks[k] = dict(locked_sha256=LOCKED[k], committed_sha256=sha(red), receipts_original_sha256=sha((PRIVATE / f'out_{k}/receipts.json').read_bytes()), receipts_sha256=sha(rec))
     (H / 'locks.json').write_text(json.dumps(locks, indent=1) + '\n')
     print(json.dumps(locks, indent=1))
 

@@ -27,6 +27,7 @@ RECEIPTS = [json.loads(l) for l in (H / 'adjudication_receipts.jsonl').read_text
 SAM_FILES = {'sam_uei_raw.json': '7debb1194d275e7e59e8eded2ec2b3a72d695bbcbdcc2542314348161a54eb8f',
              'sam_uei_raw_page1.json': 'a49df5c8b61a7f1cf66e1ee1e666fa0eccac1a55975f463630cd597e67f9e541'}
 UEI_NOTE = PRIVATE / 'adjudication_uei_private.json'
+UEI_DETAIL = PRIVATE / 'adjudication_uei_detail.json'
 SBA = 'https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/'
 PPP_SHA = {SBA + 'public_150k_plus_240930.csv': '3760a581dc3fd7ca12d09996aa360d749e075bcac517e5a6f7e92ae447a1cb8c',  # #348 source_manifest.json
            SBA + 'public_up_to_150k_9_240930.csv': 'b5d091ac98ee177c1b749159dcbdc37716d8aa10f258dc316bb39b00c7c1d4f9'}
@@ -230,13 +231,7 @@ def sam_facts(orgs, sites, uei_rows, write=True):
         note[i] = f
         # a match needs an active registration, a name match, and the organization's own HQ locality (a held site alone can be mis-parented)
         verdict[i] = 'match' if f['active'] and f['name_match'] and f['hq_city_state_match'] else 'no_match'
-    note['A11-113_detail'] = dict(
-        finding='The registration is at the street of SITE-002767, which sits under ORG-000889 ITW Tomco (since integration pass 13, 2026-10-30); '
-                'its entityURL is itwperformancepolymers.com, and ITW Performance Polymers\' own locations page lists that street as its North America plant.',
-        lead='SITE-002767 (ITW Philadelphia Resins) appears mis-parented: likely ORG-003917 ITW Performance Polymers & Fluids. Outside the frame; not graded.',
-        matcher_lead='#355 accepted any held site\'s street, city and state as the location witness. A UEI matched only through a non-HQ site inherits any '
-                     'mis-parenting of that site, as here. Re-checking the links whose only witness is a non-HQ site, or requiring the HQ locality, would find or prevent others.',
-        receipt='https://itwperformancepolymers.com/locations (adjudication_receipts.jsonl, sha256 8f2ca993b79de205574f56c17b057bb3beb3d8a1de71b7e0ee1e8a00e308b5bf)')
+    note.update(json.loads(UEI_DETAIL.read_text()))  # the lead's hand-written finding and leads for the no-match row (private, R-SAM)
     text = json.dumps(note, indent=1, sort_keys=True) + '\n'
     if write:
         UEI_NOTE.write_text(text)

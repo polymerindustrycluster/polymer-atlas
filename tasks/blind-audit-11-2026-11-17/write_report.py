@@ -34,6 +34,12 @@ def render():
     uei = Counter(e['sam_result'] for e in adj if 'sam_result' in e)
     disputed = [e for e in adj if not e.get('lead_check')]
     lead = [e for e in adj if e.get('lead_check')]
+    content_err = ', '.join(k['blind_id'] for k in st['corrections'] if k['change_class'] not in st['content_weighted']['excludes'])
+    assert len(content_err.split(', ')) == 1, 'the single-row sentence assumes one content error'
+    rb = json.loads((H / 'receipts_b.json').read_text())
+    sam_b = [r for r in rb if r['url'].startswith('https://api.sam.gov/')]
+    sam_b_codes = ', '.join(f'{n} HTTP {code}' for code, n in sorted(Counter(r['http_status'] for r in sam_b).items()))
+    b_last = max(r['fetched_at'] for r in rb)[:16].replace('T', ' ')
     a10_inside = cw['confirmed_error_wilson95_at_effective_n'][0] <= A10_RATE <= cw['confirmed_error_wilson95_at_effective_n'][1]
     L = []
     L.append('# Blind audit 11: data PRs merged 2026-11-16 and 2026-11-17\n')
@@ -51,9 +57,10 @@ def render():
              f"n {cw['kish_effective_n']:.1f}. It leaves out archive links, ZIP fills and navigation links, which A10's frame did not have "
              f"({cw['frame_record_changes']:,} record changes, {cw['sampled']} sampled). "
              + (f"A10's {pct(A10_RATE)} lies inside this interval, so **this audit cannot say these PRs are better or worse than A10's.**" if a10_inside
-                else f"A10's {pct(A10_RATE)} lies outside this interval."))
+                else f"A10's {pct(A10_RATE)} lies outside this interval.")
+             + f" The rate rests on a single row: {content_err} is the only confirmed error in the content strata; without it the point estimate would be 0.0%.")
     L.append(f"3. **Per stratum**, in the table below. **Too small to read** (fewer than 12 sampled, so even zero errors leaves an upper bound above 25%): "
-             + ', '.join(f'`{s}`' for s in small) + '. Their zeros are not evidence of a low error rate. The two census strata (`tier_changes`, `rulings`) are exact counts.\n')
+             + ', '.join(f'`{s}`' for s in small) + '. Their rates cannot be read, whether zero or not. The two census strata (`tier_changes`, `rulings`) are exact counts.\n')
     L.append('| Stratum (change class) | Frame N | Sampled | Agree | Field error | Creation error | Unresolved | Confirmed error, 95% Wilson | Readable |\n|---|---:|---:|---:|---:|---:|---:|---|---|')
     for r in st['strata']:
         L.append(f"| `{r['change_class']}` | {r['population']:,} | {r['sampled']} | {r['AGREE']} | {r['FIELD_ERROR']} | {r['CREATION_ERROR']} | {r['UNRESOLVED']} | "
@@ -100,8 +107,8 @@ def render():
     L.append(f"- **Locks.** Reviewer outputs matched the BOARD lock lines: A `{locks['a']['locked_sha256'][:8]}…{locks['a']['locked_sha256'][-4:]}`, B `{locks['b']['locked_sha256'][:8]}…{locks['b']['locked_sha256'][-4:]}`. "
              'The committed `verdicts_a.csv` and `verdicts_b.csv` are LF copies with every free-text cell blanked on the 13 UEI rows, because reviewer A\'s cells quote SAM names and addresses (R-SAM). '
              '`locks.json` pins both the lock hashes and the committed hashes; `check.py` re-applies the redaction to the private originals when they are present.')
-    L.append('- **Reviewer B and the UEI rows.** B\'s verdict file was written at 18:15 EST on 2026-11-17 (file time), before the stored SAM response was written at 19:03 EST. '
-             'B\'s receipts log 13 SAM API calls at 23:08 UTC (12 HTTP 200, 1 HTTP 429), yet every B note on these rows says "SAM record not available". The cause is not established. Reviewer A read the stored response.')
+    L.append(f"- **Reviewer B and the UEI rows.** B's last receipt is at {b_last} UTC, before the 00:00 UTC quota reset that the stored SAM response had to wait for. "
+             f"B's receipts log {len(sam_b)} SAM API calls ({sam_b_codes}), yet every B note on these rows says \"SAM record not available\". The cause is not established. Reviewer A read the stored response.")
     L.append('- **Navigation wording.** The reviewer instructions described `navigation_links` as "this organization\'s own page or feed", looser than SCHEMA §4.4\'s "a feed of the same newsroom". '
              'That explains B\'s AGREE on ProVia. The lead graded against §4.4, using the item-overlap test the earlier newsroom passes used.')
     L.append('- **AFFOA rows are not blind.** The two `rulings` rows (blind label `program_status`) are AFFOA records that both reviewers had already graded in blind audit 10 (A10-003). '

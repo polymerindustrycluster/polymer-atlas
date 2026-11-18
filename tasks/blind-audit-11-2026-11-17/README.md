@@ -180,7 +180,9 @@ one-byte edit to `blind_b.csv`. All four were caught.
 **Reviewer outputs.** `copy_verdicts.py` copied both locked files after checking them against their BOARD lock hashes
 (`locks.json`). The committed `verdicts_a.csv` and `verdicts_b.csv` are LF copies with every free-text cell (field,
 correct_value, source_url, quote, note) blanked on the 13 UEI rows, because reviewer A quoted SAM names and addresses
-there (R-SAM). `receipts_a.json` and `receipts_b.json` are byte copies.
+there (R-SAM). `receipts_a.json` and `receipts_b.json` are copies with the URL and note blanked on fetches whose host is on
+a private R-SAM host list: fetches that only the UEI no-match explains. The lead's own receipts for those hosts sit in a
+private log, not in `adjudication_receipts.jsonl`.
 
 **Adjudication** (`adjudicate_build.py` → `adjudication.json`). The 22 rows the reviewers did not both grade AGREE, plus
 the 7 band rows both graded AGREE, which the controller asked the lead to check against the owner's PPP ruling:

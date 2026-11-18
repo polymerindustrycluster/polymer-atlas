@@ -10,6 +10,7 @@ Without the private files (raw page bodies, stored SAM response, reviewer origin
 NOT CHECKED; --require-private turns any such gap into a failure.
 """
 import copy, csv, hashlib, json, re, sys, tempfile
+from urllib.parse import urlsplit
 from collections import Counter
 from pathlib import Path
 
@@ -219,16 +220,21 @@ def verify_receipts(adj, gaps):
 
 
 def rsam_hits(texts, ents):
-    """SAM-only words in committed text: any SAM street line, or any SAM name that is not also an Atlas name of the linked organization."""
+    """SAM-only words in committed text: any SAM street line; any SAM name that is not also an Atlas name of the linked organization;
+    any SAM entity URL host that is not the organization's Atlas website host; any host on the private R-SAM host list."""
     orgs = {k: r for k, (r, _) in F.load(F.HEAD, F.table_files(F.HEAD)['organizations'], 'organizations').items()}
     words = {p: ' ' + ' '.join(AF.WORDS(t)) + ' ' for p, t in texts.items()}
-    hits = []
+    host = lambda u: (urlsplit(u if '://' in (u or '') else 'https://' + (u or '')).hostname or '').removeprefix('www.')
+    private_hosts = json.loads((CV.PRIVATE / 'rsam_redact_hosts.json').read_text())['hosts']
+    hits = [(p, h) for h in private_hosts for p, w in words.items() if f" {' '.join(AF.WORDS(h))} " in w]
     for rid in [r['record_id'] for r in read('sample.csv') if r['change_class'] == 'uei_links']:
         org_id, _, uei, _ = rid.split('|')
         e, o = ents[uei], orgs[org_id]
         atlas = {AB.norm(o['legal_name'])} | {AB.norm(t) for t in o['trade_names'].split(';') if t.strip()}
         bad = [' '.join(AF.WORDS(e['coreData']['physicalAddress']['addressLine1']))]
         bad += [' '.join(AF.WORDS(e['entityRegistration'].get(k) or '')) for k in ('legalBusinessName', 'dbaName') if AB.norm(e['entityRegistration'].get(k)) not in atlas | {''}]
+        eu = host(e['coreData']['entityInformation'].get('entityURL'))
+        bad += [' '.join(AF.WORDS(eu))] if eu and eu != host(o['website']) else []
         hits += [(p, b) for b in bad if b for p, w in words.items() if f' {b} ' in w]
     return hits
 
@@ -243,9 +249,10 @@ def check_phase3(require_private):
         assert sha(f'verdicts_{k}.csv') == locks[k]['committed_sha256'] and sha(f'receipts_{k}.json') == locks[k]['receipts_sha256'], f'{k}: committed copy changed'
         rows = read(f'verdicts_{k}.csv')
         assert all(not r[c] for r in rows if r['blind_id'] in uei_ids for c in CV.FREE), f'{k}: a UEI row keeps a free-text cell (R-SAM)'
-        orig = CV.PRIVATE / f'out_{k}/verdicts.csv'
+        orig, orig_r = CV.PRIVATE / f'out_{k}/verdicts.csv', CV.PRIVATE / f'out_{k}/receipts.json'
         if orig.exists():
             assert hashlib.sha256(orig.read_bytes()).hexdigest() == CV.LOCKED[k] and CV.redact(orig.read_bytes()) == (H / f'verdicts_{k}.csv').read_bytes(), f'{k}: committed copy is not the redacted original'
+            assert hashlib.sha256(orig_r.read_bytes()).hexdigest() == locks[k]['receipts_original_sha256'] and CV.redact_receipts(orig_r.read_bytes()) == (H / f'receipts_{k}.json').read_bytes(), f'{k}: receipts copy is not the redacted original'
         else:
             gaps.append(f'reviewer {k} original absent: lock hash and redaction not re-derived')
     a, b = ({r['blind_id']: r['verdict'] for r in read(f'verdicts_{k}.csv')} for k in 'ab')
@@ -277,7 +284,7 @@ def check_phase3(require_private):
     # UEI results and the R-SAM scan need the stored SAM response
     ueis = {e['id']: e['record_id'] for e in adj if 'sam_result' in e}
     assert set(ueis) == uei_ids and doc['meta']['sam_files_sha256'] == AB.SAM_FILES
-    committed = {p: (H / p).read_text() for p in ('verdicts_a.csv', 'verdicts_b.csv', 'receipts_a.json', 'receipts_b.json', 'adjudication.json', 'statistics.json', 'final_grades.csv', 'README.md')}
+    committed = {p.name: p.read_text() for p in sorted(H.iterdir()) if p.suffix in ('.py', '.csv', '.json', '.jsonl', '.md')}  # every text file in the folder
     committed['report'] = WR.OUT.read_text()
     if all((CV.PRIVATE / n).exists() for n in AB.SAM_FILES):
         verdict, note = AB.sam_facts(orgs, sites, ueis, write=False)
@@ -285,8 +292,9 @@ def check_phase3(require_private):
         assert hashlib.sha256(note.encode()).hexdigest() == doc['meta']['uei_private_note_sha256'], 'private UEI note changed'
         ents = AB.sam_entities()
         assert not rsam_hits(committed, ents), f'R-SAM: SAM-only words in committed output: {rsam_hits(committed, ents)}'
-        planted = dict(committed, report=committed['report'] + ents[ueis['A11-113'].split('|')[2]]['coreData']['physicalAddress']['addressLine1'])
-        assert rsam_hits(planted, ents), 'R-SAM scan missed a planted SAM street line'
+        e113 = ents[ueis['A11-113'].split('|')[2]]['coreData']
+        for plant in (e113['physicalAddress']['addressLine1'], e113['entityInformation']['entityURL']):
+            assert rsam_hits(dict(committed, report=committed['report'] + ' ' + plant), ents), 'R-SAM scan missed a planted SAM street line or entity URL'
     else:
         gaps.append('stored SAM response absent: UEI results, private-note hash and R-SAM scan not re-run')
     # final grades, statistics, report

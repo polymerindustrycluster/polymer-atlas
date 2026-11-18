@@ -3049,26 +3049,26 @@
   "note": "web.archive.org fetched over http:// (port 443 refused from this host)"
  },
  {
-  "url": "https://itwperformancepolymers.com/",
+  "url": "[redacted: R-SAM]",
   "http_status": 200,
   "fetched_at": "2026-11-18T00:08:02Z",
   "sha256": "74e539984eeba46b38fea97f3ca667bcee0cad522de2aa77c67a335ea2e52e13"
  },
  {
-  "url": "https://www.itwperformancepolymers.com/contact-us/",
+  "url": "[redacted: R-SAM]",
   "http_status": 404,
   "fetched_at": "2026-11-18T00:08:05Z",
   "sha256": "dc1c77f2a5f2ffc53fdf989e1b26730aae775e19d898d81e73a95dcfa7bc046b"
  },
  {
-  "url": "https://www.chockfast.com/",
+  "url": "[redacted: R-SAM]",
   "http_status": 0,
   "fetched_at": "2026-11-18T00:08:05Z",
   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "note": "connection failed: curl: (60) SSL: no alternative certificate subject name matches target host name 'www.chockfast.com'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the "
+  "note": "[redacted: R-SAM]"
  },
  {
-  "url": "https://itwperformancepolymers.com/locations",
+  "url": "[redacted: R-SAM]",
   "http_status": 200,
   "fetched_at": "2026-11-18T00:08:23Z",
   "sha256": "8f2ca993b79de205574f56c17b057bb3beb3d8a1de71b7e0ee1e8a00e308b5bf"
