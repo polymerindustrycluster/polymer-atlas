@@ -10,10 +10,12 @@ VOCAB = json.loads((ROOT / 'docs/schema/vocab.json').read_text())['vocabularies'
 BLOCK = range(396500, 396550)
 REQUOTED = {'SITE-001986'}  # CAP2B held this term without a quote
 # held by controller decisions (2026-11-18) and never written: 001109 no single sentence says CNC-machines-plastic; 000707 is a tool shop (molds for these processes);
-# 000562 compression_molding is the plastics term, the rubber molder gets rubber_molding_compression (SCHEMA 3.1/3.6)
-HOLD = {('SITE-001109', 'plastics_machining_cnc'), ('SITE-000707', 'compression_molding'), ('SITE-000707', 'thermoforming_unspecified'), ('SITE-000562', 'compression_molding')}
+# 000562 transfer_molding: a plastics-section term on a rubber molder, owner question (battery); 000562 compression_molding is the plastics term, the rubber molder gets rubber_molding_compression (SCHEMA 3.1/3.6)
+HOLD = {('SITE-000562', 'transfer_molding'), ('SITE-001109', 'plastics_machining_cnc'), ('SITE-000707', 'compression_molding'), ('SITE-000707', 'thermoforming_unspecified'), ('SITE-000562', 'compression_molding')}
 REMAP = {('SITE-000562', 'rubber_molding_compression'): 'compression_molding'}
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline='')))
+CORPUS_MANIFEST = build.cap2a.CORPUS / 'manifest.csv'
+def manifest_rows(): return {r['raw_file']: r for r in csv.DictReader(CORPUS_MANIFEST.open(newline=''))} | {r['text_file']: r for r in csv.DictReader(CORPUS_MANIFEST.open(newline=''))}
 def base_file(p): return rd(subprocess.check_output(['git', 'show', f'{BASE}:{p}'], cwd=ROOT, text=True))
 def verify(base_sites, sites, base_ev, ev, decisions):
     """Raises AssertionError on any violation; returns the counts."""
@@ -41,9 +43,14 @@ def verify(base_sites, sites, base_ev, ev, decisions):
     assert all(int(r['evidence_id'][4:]) in BLOCK for r in added), 'evidence ID outside EVD-396500..396549'
     for d in decisions:
         build.cap2a.validate_decision(d)
+        m = manifest_rows()  # the cited URL must be the manifest entry of the raw file whose bytes, hash and quote were checked
+        assert d['raw_file'] in m and m[d['raw_file']]['url'] == d['url'] and m[d['raw_file']]['sha256'] == d['sha256'] and m[d['raw_file']]['text_file'] == d['text_file'], f"{d['site_id']} {d['term']}: cited url/hash does not match the corpus manifest entry of {d['raw_file']}"
+        assert d['grain_text_file'] in m and m[d['grain_text_file']]['url'] == d['grain_url'], f"{d['site_id']}: locality-witness url does not match the manifest entry of {d['grain_text_file']}"
+        assert m[d['raw_file']]['org_id'] == n[d['site_id']]['org_id'] == m[d['grain_text_file']]['org_id'], f"{d['site_id']}: page belongs to another organization"
         rows = [r for r in added if r['record_id'] == d['site_id'] and r['claim_detail'].startswith(f"{d['field']}={d['term']};")]
         assert len(rows) == 1, f"{d['site_id']} {d['term']}: {len(rows)} new evidence rows (need 1)"
         r = rows[0]; tier = n[d['site_id']]['verification_tier']
+        assert r['source_ref'] == d['url'] and f"locality witness on {d['grain_url']}:" in r['notes'] and d['sha256'] in r['notes'], f"{d['site_id']} {d['term']}: evidence row cites a different page than its decision"
         assert d['quote'] in r['claim_detail'] and r['claim_type'] == 'scope' and r['record_table'] == 'sites' and r['source_class'] == 'own_site'
         assert r['tier_effect'] == ('supports_C' if d['basis'] == 'menu' else 'supports_A'), f"{d['site_id']} {d['term']}: tier_effect does not match basis"
         assert r['tier_effect'] == 'supports_A' or tier == 'C', 'V-25: C-strength evidence on a tier A/B site'
@@ -58,14 +65,14 @@ def main():
     assert any(h['site_id'] == 'SITE-001986' and 'composites_unspecified' in h.values() for h in build.read(ROOT / 'tasks/pic18-capabilities-corpus-2b-2026-11-16/holds.csv')), 'CAP2B hold missing'
     got = {(d['site_id'], d['term']) for d in decisions}
     got = {(d['site_id'], d['term']) for d in decisions}
-    assert {(k, REMAP.get((k, t), t)) for k, t in got} - {('SITE-001986', 'composites_unspecified')} == set(held) - (HOLD - {(k[0], v) for k, v in REMAP.items()}) and len(decisions) == 8, 'decisions differ from the CAP2A held terms (minus the holds, plus the remap) + the CAP2B term'
+    assert {(k, REMAP.get((k, t), t)) for k, t in got} - {('SITE-001986', 'composites_unspecified')} == set(held) - (HOLD - {(k[0], v) for k, v in REMAP.items()}) and len(decisions) == 7, 'decisions differ from the CAP2A held terms (minus the holds, plus the remap) + the CAP2B term'
     c2a = {(d['site_id'], d['term']): d for d in build.read(ROOT / 'tasks/pic18-capabilities-corpus-2a-2026-11-16/decisions.csv') if d['field'] == 'processes'}
     for d in decisions:
         if d['site_id'] not in REQUOTED: assert all(c2a[(d['site_id'], REMAP.get((d['site_id'], d['term']), d['term']))][k] == d[k] for k in ('quote', 'sha256', 'url', 'basis', 'grain_quote')), 'decision differs from CAP2A row'
     base_sites, base_ev = base_file('data/sites_OH.csv'), base_file('data/evidence_sites_OH.csv')
     sites, ev = build.read(build.SITES), build.read(build.EVID)
     counts = verify(base_sites, sites, base_ev, ev, decisions); print('PASS', counts)
-    assert counts == dict(sites_changed=6, terms_appended=8, evidence_rows_added=8, tiers='ABBCCC', strengths=','.join(['supports_A'] * 6 + ['supports_C'] * 2)), counts  # README: tiers A 1/B 2/C 3; strength A 6/C 2
+    assert counts == dict(sites_changed=6, terms_appended=7, evidence_rows_added=7, tiers='ABBCCC', strengths=','.join(['supports_A'] * 6 + ['supports_C'])), counts  # README: tiers A 1/B 2/C 3; strength A 6/C 1
     # idempotence: a rebuild leaves both data files byte-identical
     before = [hashlib.sha256(p.read_bytes()).hexdigest() for p in (build.SITES, build.EVID)]; build.main()
     assert before == [hashlib.sha256(p.read_bytes()).hexdigest() for p in (build.SITES, build.EVID)], 'rebuild changed data'
@@ -86,6 +93,11 @@ def main():
     inject('C-strength evidence on tier A', lambda s, e, d: next(r for r in e if r['record_id'] == 'SITE-001125' and r['created_by'] == build.WHO).update(tier_effect='supports_C'))
     inject('held term written (rubber molder gets the plastics compression_molding)', lambda s, e, d: site(s, 'SITE-000562').update(processes=site(s, 'SITE-000562')['processes'].replace('rubber_molding_compression', 'compression_molding')))
     inject('evidence row count off (an extra row)', lambda s, e, d: e.append(dict(e[-1], evidence_id='EVD-396549')))
+    def swapurl(s, e, d):  # codex-24 round 2: cite another stored page while the quote and digest belong to the home page
+        i = next(i for i, x in enumerate(d) if x['site_id'] == 'SITE-001986'); other = 'https://precisionpolymercasting.com/who-we-are/'
+        e[next(j for j, r in enumerate(e) if r['record_id'] == 'SITE-001986' and r['created_by'] == build.WHO)]['source_ref'] = other; d[i]['url'] = other
+    inject('cited URL is not the manifest entry of the checked page (source swap)', swapurl)
+    inject('cited page does not contain the quote', lambda s, e, d: d[0].update(raw_file=d[-1]['raw_file'], text_file=d[-1]['text_file'], sha256=d[-1]['sha256']))
     inject('sites row dropped', lambda s, e, d: s.pop())
     # cut-short write (the codex-24 reproduction for PR #382, applied here): a write dying after 100 rows must leave both targets intact with no temp file, and a retry must reproduce the committed bytes
     want = [build.SITES.read_bytes(), build.EVID.read_bytes()]
@@ -108,5 +120,5 @@ def main():
             try: build.main(); raise SystemExit('FAIL: builder accepted a truncated sites file')
             except AssertionError: pass
     print('  caught cut-short write (targets intact, no temp file, retry reproduces the committed bytes, truncated target refused)')
-    print('check.py: PASS (9 injected defects caught, plus the cut-short-write reproduction)')
+    print('check.py: PASS (11 injected defects caught, plus the cut-short-write reproduction)')
 if __name__ == '__main__': main()
