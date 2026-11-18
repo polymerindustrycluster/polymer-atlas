@@ -1,5 +1,6 @@
 """Recompute every published count, reconcile the frame against independent inputs, prove the check fails on injected defects."""
 import copy
+import hashlib
 import inspect
 import shutil
 import csv
@@ -291,12 +292,15 @@ def builder_tests(inputs, evidence):
             assert snapshot() == before, 'a market cell was written despite an occupied ID'
             print('REFUSED: occupied evidence ID (no market cell written)')
             shutil.rmtree(root / 'backup', ignore_errors=True)
-            backups = root / 'backup' / f'pre-application-batch{B.BATCH}'
+            backups = root / 'backup' / f'pre-application-batch{B.BATCH}-{B.BASE}'
+
+            def base_blob(n):
+                return subprocess.check_output(['git', 'show', f'{BASE}:data/{n}'], cwd=ROOT)
 
             def backups_are_base():
                 for n in names:
                     if (backups / n).exists():
-                        assert (backups / n).read_bytes() == subprocess.check_output(['git', 'show', f'{BASE}:data/{n}'], cwd=ROOT), ('a backup differs from the merge-base bytes', n)
+                        assert (backups / n).read_bytes() == base_blob(n), ('a backup differs from the merge-base bytes', n)
             for n in ('organizations_OH.csv', 'evidence_organizations_OH.csv'):  # truncated input shard: one row removed
                 reset()
                 p = root / 'data' / n
@@ -317,6 +321,22 @@ def builder_tests(inputs, evidence):
                 assert all((backups / m).exists() for m in names if (root / 'data' / m).read_bytes() != subprocess.check_output(['git', 'show', f'{BASE}:data/{m}'], cwd=ROOT)), 'a changed shard has no backup'
                 shutil.rmtree(backups, ignore_errors=True)
             print('REFUSED: truncated input shard (organization and evidence), nothing replaced')
+            # Codex round 3 probes: a stale-base backup and a 128-byte truncated backup are never trusted; they are rewritten from the merge-base blob
+            for label, corrupt in (('stale base', lambda n: subprocess.check_output(['git', 'show', f'e1df30e4:data/{n}'], cwd=ROOT)),
+                                   ('128-byte truncated backup', lambda n: base_blob(n)[:128])):
+                reset()
+                shutil.rmtree(backups, ignore_errors=True)
+                backups.mkdir(parents=True)
+                for n in names:
+                    (backups / n).write_bytes(corrupt(n))
+                B.apply(inputs, evidence)
+                backups_are_base()
+                sums = json.loads((backups / 'SHA256SUMS.json').read_text())
+                for n in sums:
+                    assert sums[n]['sha256'] == hashlib.sha256((backups / n).read_bytes()).hexdigest() == hashlib.sha256(base_blob(n)).hexdigest(), ('backup manifest', n)
+                    assert sums[n]['base'] == BASE
+                shutil.rmtree(backups, ignore_errors=True)
+                print('REFUSED: ' + label + ' backup is not trusted (rewritten from the merge-base blob, sha256 recorded)')
     with tempfile.TemporaryDirectory() as td:  # scrub: purge then a lookup must refetch, not raise
         c = fetch.Corpus(td)
         url = 'https://example.test/page'

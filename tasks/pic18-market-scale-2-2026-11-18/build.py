@@ -19,7 +19,7 @@ MKT3 = ROOT / 'tasks/pic18-markets-3-2026-11-16'
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist')
 CORPUS, LIVE = STORE / 'pic18-corpus-2026-11-16', STORE / 'pic18-market-scale-2026-11-18'
 SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
-BASE = 'c1dafc8d'  # merge-base this packet was built on; replaying after main changes these shards needs it updated
+BASE = 'c8ce2d4a'  # merge-base this packet was built on; replaying after main changes these shards needs it updated
 FIRST_ID, LAST_ID = 397300, 397449  # controller decision 2026-11-18: supersedes 396750-396899 (main's maximum is EVD-397103, open PRs use up to 397200)
 BATCH, BATCH_SIZE = 2, 96
 import frame as F  # the pool is recomputed from git at F.FRAME_REF; the canary's 10 are removed
@@ -138,12 +138,23 @@ def apply(inputs, evidence):
         append_sorted(tmp, evs, 'evidence_id')
         assert len(read(tmp)) == base_count(path) + packet_rows[path.name], ('evidence row count differs from base + packet rows', path.name)
         staged[path] = tmp
-    # Backup only now, after every input check has passed (a refused apply must never leave a truncated backup that a retry would keep).
-    backup = LIVE / f'pre-application-batch{BATCH}'  # per batch: the backup is this batch's own base, never an older batch's
+    # Backup only now, after every input check has passed. Each backup is written from `git show <merge-base>:<file>` into a directory named for the merge-base SHA
+    # (so a new merge-base never reuses an older base's files), recorded in SHA256SUMS.json against the git blob, verified before it is trusted, and rewritten on mismatch
+    # (a stale base or a truncated copy).
+    backup = LIVE / f'pre-application-batch{BATCH}-{BASE}'
     backup.mkdir(parents=True, exist_ok=True)
-    for path in set(touched) | set(add):
-        if not (backup / path.name).exists():
-            shutil.copyfile(path, backup / path.name)
+    sums = {}
+    for path in sorted(set(touched) | set(add), key=lambda p: p.name):
+        blob = subprocess.check_output(['git', 'show', f'{BASE}:data/{path.name}'], cwd=REPO)
+        want = hashlib.sha256(blob).hexdigest()
+        dst = backup / path.name
+        if not (dst.exists() and hashlib.sha256(dst.read_bytes()).hexdigest() == want):
+            tmp = dst.with_name(dst.name + '.tmp')
+            tmp.write_bytes(blob)
+            os.replace(tmp, dst)
+            assert hashlib.sha256(dst.read_bytes()).hexdigest() == want, ('backup does not match the git blob', path.name)
+        sums[path.name] = dict(sha256=want, git_blob=subprocess.check_output(['git', 'rev-parse', f'{BASE}:data/{path.name}'], cwd=REPO, text=True).strip(), base=BASE)
+    (backup / 'SHA256SUMS.json').write_text(json.dumps(sums, indent=2, sort_keys=True) + '\n')
     # Publish the evidence shards first, then the organization shards: an interruption can leave evidence rows without a cell, never a cell without its rows.
     for path in sorted(staged, key=lambda p: (not p.name.startswith('evidence_'), p.name)):
         os.replace(staged[path], path)
