@@ -122,11 +122,23 @@ def main():
     inject("rollup member swapped for a plastics subtype (rubber_molding_injection -> transfer_molding)", lambda n, dd: n.update(schema=n["schema"].replace("`rubber_molding_injection` |", "`transfer_molding` |", 1)))
     inject("site_capabilities row added", lambda n, dd: n["cap"].append(dict(n["cap"][0])))
     inject("quote supports compression molding only (no 'transfer')", lambda n, dd: (dd.update(quote="Compression Molding"), newev(n).update(claim_detail="processes=rubber_molding_transfer; quote: Compression Molding")))
-    def codex_probe(n, dd):  # a true sentence on the compression page: right site, genuine manifest entry, but not the approved witness
+    def pot_rind(pinned):
+        """The original defect (Codex round 2): a true sentence on the real compression page, a genuine manifest entry, and a complete, internally consistent
+        evidence row regenerated from the alternate decision. Returns prove()'s failures with the approved-witness pin on or off."""
         m = next(r for r in build.read(build.CORPUS_MANIFEST) if r["org_id"] == "ORG-000526" and r["url"] == "https://profilerubber.com/compression-molding.html" and r["raw_file"])
-        dd.update(url=m["url"], raw_file=m["raw_file"], text_file=m["text_file"], sha256=m["sha256"], quote="Unlike transfer molding, there is no pot-rind.")
-        newev(n).update(claim_detail="processes=rubber_molding_transfer; quote: Unlike transfer molding, there is no pot-rind.", source_ref=m["url"])
-    inject("a true sentence on the compression page that does not claim the service (Codex probe)", codex_probe)
+        dd = dict(d); dd.update(url=m["url"], raw_file=m["raw_file"], text_file=m["text_file"], sha256=m["sha256"], quote="Unlike transfer molding, there is no pot-rind.")
+        n, b = copy.deepcopy(N), copy.deepcopy(B)
+        row = newev(n); row.update(build.evidence_row(dd, row["evidence_id"]))
+        saved = build.WITNESS
+        if not pinned: build.WITNESS = {}
+        try: return prove(b, n, dd, man, page_text_of(dd), base_max_id)
+        finally: build.WITNESS = saved
+    pinned_fails, unpinned_fails = pot_rind(True), pot_rind(False)
+    only_pin = len(pinned_fails) == 1 and "approved witness" in pinned_fails[0]
+    print(f"inject pot-rind substitution (real compression-page text, complete consistent evidence row) with the pin: failures {len(pinned_fails)}, the approved-witness pin is the only one: {only_pin}")
+    print(f"same injection with the pin disabled: failures {len(unpinned_fails)} ({'NOT CAUGHT, so this injection tests the pin and nothing else' if not unpinned_fails else unpinned_fails})")
+    if not only_pin: fails.append(f"pot-rind injection is not caught by the approved-witness pin alone: {pinned_fails}")
+    if unpinned_fails: fails.append(f"pot-rind injection is caught without the pin (for another reason): {unpinned_fails}")
     inject("cited URL and locality URL swapped", lambda n, dd: (dd.update(url=d["grain_url"], grain_url=d["url"]), newev(n).update(source_ref=d["grain_url"])))
     inject("one unrelated site row dropped (truncated shard)", lambda n, dd: n["sites"].pop(next(i for i, r in enumerate(n["sites"]) if r["site_id"] != build.SITE)))
     inject("one evidence row duplicated", lambda n, dd: n["ev"].insert(1, dict(n["ev"][0])))
