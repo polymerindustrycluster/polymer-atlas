@@ -1,0 +1,101 @@
+site_id,org_id,state,city,street_address,verification_tier,site_name,website
+SITE-002141,ORG-002182,PA,Allentown,426 S Aubrey St.,A,International Polymers Corp.,https://www.ipcplastics.com
+SITE-002151,ORG-002189,PA,Allentown,4724 Springside Ct.,A,TRI City Marble LLC - MacUngie Facility,https://tricitymarble.com
+SITE-002170,ORG-002207,PA,Bedford,264 Reynoldsdale Rd.,A,Bedford Reinforced Plastics - Bedford Plt,https://bedfordreinforced.com
+SITE-002185,ORG-002221,PA,Bethlehem,2475 Brodhead Rd.,C,Crayola LLC - Bethlehem Plt,https://crayola.com/
+SITE-002198,ORG-002230,PA,"Bloomsburg, Town Of",925 Millville Rd.,A,Steve Shannon Tire,https://www.steveshannon.com/ShannonRETREADCO/
+SITE-002223,ORG-002254,PA,Charleroi,1002 Arentzen Blvd.,B,Valley Tire Co. - Charleroi,https://valleytireco.com/
+SITE-002225,ORG-002256,PA,Clearfield,1395 Industrial Park Rd.,B,Tmp Acuisitions New,https://www.tafcowalkins.com/
+SITE-002240,ORG-002271,PA,Cresson,626 Gallitzin Rd.,A,J Lok,https://www.jennmar.com/
+SITE-002252,ORG-002282,PA,Doylestown,98 Spring Lake Dr.,C,Powder Solutions Inc.,http://powdersolutions.com/
+SITE-002264,ORG-002293,PA,Easton,2906 William Penn Hwy. Suite 505,B,"Palmer Plastics, Inc.",palmerplastics.com
+SITE-002266,ORG-002295,PA,Easton,17 Mcfadden Rd.,A,Unicast Inc,unicastinc.com
+SITE-002268,ORG-002297,PA,Edgemont,3924 Miller Road,B,Plastrac Inc.,plastrac.com
+SITE-002285,ORG-002312,PA,Erie,2114 Loveland Ave.,B,"North Coast Plastics, Inc.",https://northcoastpoly.com/
+SITE-002286,ORG-002313,PA,Erie,1507 Wayne St.,B,"Omega Plastics, LLC",https://havpak.com/
+SITE-002293,ORG-002316,PA,Erie,8121 Hawthorne Dr.,A,Plastikos Medical LLC,plastikoserie.com
+SITE-002294,ORG-002317,PA,Erie,1655 W 20th St.,A,Polymer Molding,polymermolding.com
+SITE-002316,ORG-002338,PA,Fairview,7700 Birkmire Drive,A,"American Molding And Technologies, Inc.",americanmolding.us
+SITE-002321,ORG-002343,PA,Fallsington,295 Lower Morrisville Rd.,A,Garrett Liners Inc.,garrettliners.com
+SITE-002325,ORG-002347,PA,Fleetwood,901 Park Rd,C,Iris Ltd. Inc.,irisltd.com
+SITE-002331,ORG-002353,PA,Franklin,240 Two Mile Run Rd. North,A,Am Stabilizers Corporation,https://amstabilizers.com/
+SITE-002342,ORG-002364,PA,Glen Mills,1 La France Way,B,La France Corp.,lafrancecorp.com
+SITE-002343,ORG-002365,PA,Glen Rock,400 Seaks Run Rd.,A,Adhesives Research Inc.,https://adhesivesresearch.com
+SITE-002353,ORG-002375,PA,Hamburg,7 Hill Dr.,B,Kore Mart Limited,https://koremart.com/about-us
+SITE-002370,ORG-002390,PA,Hatfield,1600 Industry Rd.,B,Technetics Group - Hatfield,https://technetics.com/thank-you/contact-us-hatfield-pa/
+SITE-002383,ORG-002403,PA,Hollidaysburg,521 Tel Power Rd.,B,Penn Turf Inc.,https://pennturftire.com/
+SITE-002393,ORG-002413,PA,Huntingdon,10168 FRP Road,B,FRP Fabricators Inc.,https://frpfab.com
+SITE-002400,ORG-002420,PA,Ivyland,30 Council Rock Dr,A,Tubro Co. Inc.,https://tubro.com
+SITE-002402,ORG-002422,PA,Jeannette,1086 Boquet Rd.,B,L.P. Aero Plastics Inc.,https://lpaero.com/
+SITE-002414,ORG-002433,PA,King Of Prussia,420 Drew Ct.,A,Shingle Belting Inc. - Upper Merion Twp,https://shinglebelting.com/
+SITE-002453,ORG-002468,PA,Leesport,2670 Leiscz's Bridge Road Suite 400,B,Flex Membrane International Corp.,https://flexroofingsystems.com/
+SITE-002459,ORG-002473,PA,Lenni,West Lenni Rd.,B,Westlake Plastics Iwtp,https://www.westlakeplastics.com
+SITE-002467,ORG-002481,PA,Lewisberry,688 Yorktown Roadsuite E,A,"Culver Tool & Die, Inc.",culvertoolanddie.com/about
+SITE-002468,ORG-002482,PA,Lewisburg,340 Hoffa Mill Road,A,Lighthouse Man LLC,https://lighthouseman.com/
+SITE-002477,ORG-002490,PA,Macungie,5600 Lower Macungie Rd.,A,Smooth-On Inc.,smooth-on.com
+SITE-002499,ORG-002511,PA,Meadville,15850 Conneaut Lake Rd.,B,"Meadville New Products, Inc.",https://meadvillenewproducts.com
+SITE-002503,ORG-002515,PA,Meadville,21398 Blooming Valley Rd.,B,"Qtd Plastics, Inc.",qualitytoolanddie.com
+SITE-002506,ORG-002518,PA,Mechanicsburg,61 Texaco Rd.,A,"Universal Protective Packaging, Inc.",https://uppi.com/
+SITE-002514,ORG-002526,PA,Mohnton,5081 Sweitzer Rd,B,Concretevoids LLC,concretevoids.com
+SITE-002517,ORG-002529,PA,Montgomeryville,151 Commerce Dr.,B,United Ropeworks USA - Montgomeryville,https://www.phillystran.com
+SITE-002539,ORG-002551,PA,Murrysville,588 State Route 380,C,Tarp America Inc.,tarpamerica.net
+SITE-002540,ORG-002552,PA,Natrona Heights,3 Acee Dr.,B,Metplas Inc.,metplas.com
+SITE-002542,ORG-002554,PA,Nazareth,595 E Lawn Rd.,B,Nazareth Industrial Corporation,nazcorp.com
+SITE-002549,ORG-002561,PA,New Holland,100 Orlan Rd,B,"Key-Link Fencing & Railing, Inc.",keylinkonline.com
+SITE-002555,ORG-002567,PA,Newtown,401 Lafayette St.,A,"Pelmor Laboratories, Inc.",pelmor.com
+SITE-002566,ORG-002578,PA,Orwigsburg,580 Industrial Dr.,B,Clearly Clean Products LLC,https://clearlyclean.com/
+SITE-002568,ORG-002580,PA,Palmerton,1220 Little Gap Rd.,B,"Architectural Polymers, Inc.",https://apformliner.com
+SITE-002572,ORG-002584,PA,Philadelphia,6800 State Rd.,B,C-Lec Plastics Inc.,rexolite.com
+SITE-002586,ORG-002597,PA,Philadelphia,4749 Tolbut Street,A,"Src Elastomerics, Inc.",https://www.stockwell.com/doing-business-with-stockwell/
+SITE-002610,ORG-002620,PA,Pottstown,313 Circle Of Progress Dr. Ste. 200,A,"J & K Foam Fabricating, Inc.",https://jkfoamfab.com
+SITE-002617,ORG-002627,PA,Quakertown,2345 Milford Square Pike,B,Us Plastic Moldings,https://usplasticmoldings.com/
+SITE-002630,ORG-002640,PA,Reedsville,20 Setar Way,B,Alltrista Plastics LLC,https://alltrista.com/
+SITE-002646,ORG-002656,PA,Selinsgrove,Rte. 522,A,Kerrico Corp. - Penn,https://kerricocorp.com/about
+SITE-002659,ORG-002668,PA,Stockertown,100 Station Ave.,B,Polymer Products Co. Inc.,https://pmcpolymerproducts.com/
+SITE-002660,ORG-002669,PA,Tamaqua,87 Tide Rd.,B,Highwood USA LLC,https://www.highwood-usa.com/
+SITE-002683,ORG-002691,PA,Warren,618 4th Ave.,A,Whirley Industries Inc.,https://www.whirleydrinkworks.com/contact-us/
+SITE-002696,ORG-002703,PA,Wilkes-Barre,526-32 Main St.,A,General Foam Co.,https://generalfoam.us/about/
+SITE-002703,ORG-002710,PA,Wind Gap,112 Fairview Ave PO Box 127,B,"Brd Noise And Vibration Control, Inc.",https://www.hushcore.net/
+SITE-002714,ORG-002720,PA,York,1670 Toronita St.,C,Spx Cooling Technologies,https://spxcooling.com/
+SITE-002715,ORG-002721,PA,York,1128 Roosevelt Ave.,A,"Ug Plast, Inc.",https://usplast.com
+SITE-002716,ORG-002722,PA,York,2150 Monroe St.,B,W R Meadows Of Pennsylvania,https://www.wrmeadows.com/contact/
+SITE-002803,ORG-002728,PA,Irwin,8291 Pennsylvania Avenue,A,Comptec Inc - Irwin,https://comptecinc.com/
+SITE-002832,ORG-002755,PA,Trumbauersville,354 East Broad Street,A,Moldgenix LLC - Trumbauersville,https://moldgenix.com/
+SITE-002839,ORG-002762,PA,Irwin,540 Pacific Street,B,Penn Compression Moulding Inc - Irwin,https://penncompression.com/
+SITE-003240,ORG-002932,NY,Rye Brook,800 Westchester Ave,B,Mitsui Chemicals America HQ,https://us.mitsuichemicals.com/index.htm
+SITE-003716,ORG-003277,MA,North Andover,815 Chestnut St,B,Watts Water Technologies Headquarters,https://www.watts.com/
+SITE-004531,ORG-003992,GA,Atlanta,,C,J.M. Huber Corporation - Atlanta HQ,huber.com
+SITE-005278,ORG-004185,MI,Adrian,1415 E MICHIGAN ST,C,Anderson Development Company - Adrian,https://andersondevelopment.com/
+SITE-005283,ORG-004190,NJ,Parlin,250 CHEESEQUAKE RD,B,Industrial Summit Technology Corporation - Parlin,https://istusa.com/
+SITE-005299,ORG-004205,CA,Fontana,10880 POPLAR AVE,C,"Urethane Polymers International, Inc. - Fontana",https://urethanepolymers.com/
+SITE-005303,ORG-004209,UT,North Salt Lake,95 SOUTH RIVERBEND WAY,C,"PPC Flexible Packaging, LLC - North Salt Lake",https://ppcflex.com/
+SITE-006426,ORG-005117,IN,Greencastle,2200 SR 240 E,C,Chiyoda USA - Greencastle,https://www.chiyoda-usa.com
+SITE-008152,ORG-006102,IL,Elk Grove Village,701 Lee Street,C,Demgy Chicago (dba Met2Plastics),https://www.demgy.com
+SITE-008159,ORG-006109,IL,West Chicago,1100 N Harvester Rd,C,Central Ink Corporation - West Chicago,https://cicink.com
+SITE-008171,ORG-006121,IL,Richmond,11413 Burlington Road,C,D6 Inc. - Richmond Extrusion Facility (former Ex-Tech Plastics),https://www.d6inc.com
+SITE-008204,ORG-006143,ID,Idaho Falls,3834 Professional Way,B,Biologiq - Idaho Falls,https://biologiq.com/
+SITE-008227,ORG-006165,NH,Salem,7 Industrial Way Unit 1,B,"Appli-Tec, Inc. - Salem",https://appli-tec.com/
+SITE-008229,ORG-006167,NH,Bow,25 Dunklee Road,B,Plastech Machining And Fabrication - Bow,https://plastechfab.com/
+SITE-008255,ORG-006190,NV,Reno,4625 Aircenter Circle,B,Fallline Corporation - Reno,https://fallline.com/
+SITE-008260,ORG-006195,NV,Dayton,15 Airpark Vista Blvd,C,"Peterson Products, Inc. - Dayton",https://petersonproducts.com/
+SITE-008267,ORG-006202,NV,Mccarran,1335 Alexandria Ct,B,"Stealth Finishing, LLC - Mccarran",https://stealthfinishing.com/
+SITE-008270,ORG-006205,NV,North Las Vegas,1015 East Sharp Circle,B,Containur Pools Inc. - North Las Vegas,https://containurpools.com/
+SITE-008276,ORG-006211,RI,Lincoln,55 Industrial Circle,B,Symmetry Products - Lincoln,https://symmetryproducts.com/
+SITE-008277,ORG-006212,RI,Providence,8 Robin St,B,Sutherland Welles - Providence,https://sutherlandwelles.com/
+SITE-008295,ORG-006229,UT,Salt Lake City,1880 S 1045 W,B,Amsco - Salt Lake City,https://amscowindows.com/
+SITE-008300,ORG-006234,UT,Woods Cross,727 S. 950 W.,B,Valley Paint Mfg - Woods Cross,https://valleypaintutah.com/
+SITE-008310,ORG-006241,UT,West Valley City,2370 3600 W,B,Averra Packaging - West Valley City,https://averrapackaging.com/
+SITE-008324,ORG-006253,UT,Heber City,844 S 430 W,B,Miro Industries Inc. - Heber City,https://miroind.com/
+SITE-008334,ORG-006261,UT,Woods Cross,2292 S 1250 W Ste C,C,Magic Vac Inc. - Woods Cross,https://magicvacinc.com/
+SITE-010009,ORG-007009,MI,Ubly,4147 N. Ubly Road,C,Regency Plastics - Ubly,https://geminigroup.net
+SITE-010025,ORG-007025,MI,Escanaba,1911 4th Ave. N.,C,Andex Industries - Escanaba,https://www.andex.net
+SITE-010055,ORG-007052,MI,Mattawan,53150 N. Main St.,C,Western Diversified Plastics - Mattawan,https://westerndp.com/
+SITE-010175,ORG-007125,WI,Baldwin,680 Vandeberg Street,C,Vital Plastics - Baldwin,https://www.vitalplastics.com
+SITE-010314,ORG-007214,TX,Addison,15606 Wright Brothers Drive,C,Plastech Corp. - Addison,http://plastechcorp.com/
+SITE-011016,ORG-007716,MN,St. Paul,4119 White Bear Pkwy,C,Cortec World Headquarters (CHQ) - St. Paul,https://www.cortecvci.com/
+SITE-011606,ORG-008106,TN,Pulaski,200 Commerce Way,C,SaarGummi Tennessee Inc. - Pulaski,https://group.saargummi.com
+SITE-011908,ORG-008308,VA,Wakefield,317 WEST MAIN STREET,C,Indmar Coatings - Wakefield,https://www.indmarcoatings.com/
+SITE-012001,ORG-009001,MO,ST LOUIS,325 PAUL AVE,C,WATSON COATINGS INC - ST LOUIS,https://watsoncoatings.com/
+SITE-012006,ORG-009006,MO,St. James,2000 East James Boulevard,B,MANCHESTER PACKAGING COMPANY - St. James,https://manchesterpkg.com/
+SITE-012029,ORG-009029,LA,Belle Chasse,1610 Engineers Road,B,"CMP Coatings, Inc. - Belle Chasse",https://www.cmp.co.jp/en/company/group_western-countries/
+SITE-012031,ORG-009031,LA,Belle Chasse,503 Main Street,B,Sun Drilling Products Corp. - Belle Chasse,https://sunspecialtyproducts.com/about-us/
