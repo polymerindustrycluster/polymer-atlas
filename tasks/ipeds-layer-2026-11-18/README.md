@@ -54,6 +54,22 @@ All nine criteria hold.
 | 6 | V-63 skipped silently when the whole layer was absent | A missing raw file is a V-63 error |
 | 7 | "343 institutions conferred an award" | 343 reported; 310 conferred at least one award, and 33 reported only zeros |
 
+## Review fixes (grok, deep, on 7025e74: UNSOUND)
+
+| Finding | Disposition |
+|-|-|
+| Failures at the series frontier read as "end of series" and could shorten the raw file | Fixed: a pull that ends before the existing raw file is refused |
+| A directory backfill miss was still written | Fixed: the fetcher refuses to write while any institution lacks a directory entry |
+| The 60-page backstop returned a partial list | Fixed: it aborts |
+| V-63 caught only `SystemExit`, so a malformed raw file crashed the validator | Fixed: any derivation error is reported as a V-63 error |
+| `closed_after` is a served directory year, not a fall label | Documented in §4.23 as the served Urban directory year |
+| Codes 30 and 31 merge although both exist after 2020 | Kept by design: the merge keeps one program continuous across the 2020 re-coding, and the label names the merged codes (§4.23) |
+| A CRLF checkout would fail parity | Not reproduced: `.gitattributes` pins `*.csv text eol=lf` |
+| `export_release` unit text, the "27 of 35" wording and the changelog order | Fixed |
+
+Not tested: the frontier and backfill refusals run inside the networked `main()` of `ipeds_fetch.py`. The pagination
+abort and the orphan refusal are tested.
+
 ## Out of scope (phase 2, each an owner question)
 
 - **Hand-researched layers** in polymer-programs-db: US non-degree credentials (29), global programs (101), society

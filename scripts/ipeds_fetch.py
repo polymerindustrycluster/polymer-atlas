@@ -108,8 +108,7 @@ def paged(url):
         url = d.get("next")
         seen += 1
         if seen > 60:                      # a runaway-pagination backstop, never reached
-            print("    WARNING: pagination exceeded 60 pages, stopping")
-            break
+            raise SystemExit(f"refusing to write: {url} exceeded 60 pages; the raw file is unchanged")
     return out
 
 
@@ -233,6 +232,15 @@ def main():
         "directory": directory,
         "rows_per_year": per_year,
     }
+    still_missing = [u for u in insts if u not in directory]
+    if still_missing:  # grok, #388: the build refuses a program without a directory entry, so never write one
+        raise SystemExit(f"refusing to write: no directory entry for {len(still_missing)} institutions, "
+                         f"e.g. {still_missing[:5]}; the raw file is unchanged")
+    if os.path.exists(OUT):  # failures at the frontier read as "end of series": a pull must never shorten the record
+        old_end = json.load(open(OUT, encoding="utf-8"))["meta"]["years"][1]
+        if last < old_end:
+            raise SystemExit(f"refusing to write: this pull ends at {last}, the raw file at {old_end}; "
+                             f"the raw file is unchanged")
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
 

@@ -2395,6 +2395,8 @@ and never hand-edited.
 | `ipeds_programs.csv` | `program_key` = `<unitid>-<cip>-<award level>` | `program_key`, `unitid`, `cip`, `cip_title`, `cip_group` (polymer \| materials), `award_level`, `award`, `level`, `first_year`, `last_year`, `years_seen`, `total_awards`, `status` |
 | `ipeds_completions.csv` | (`program_key`, `year`) | `program_key`, `year`, `awards` |
 
+**Certificates.** One certificate level per canonical code keeps a program continuous across the 2020 re-coding: pre-2020 code 1 and post-2020 codes 30 and 31 merge as "under 1 year", codes 2, 3 and 32 as 1-2 years, and codes 5, 6 and 33 as 1-4 years. The `award` label names the merged codes. `closed_after` is the Urban directory year (as served) in which a no-longer-listed institution last appears.
+
 `status` is derived. It is `active` if the last year with completions is the final year of the series, `ended` if
 completions stopped two or more years earlier, and `unclear` for the year in between. **`ended` does not mean closed.**
 A program can lapse in IPEDS and still run, so a catalog check comes before any closure claim.
@@ -3118,6 +3120,6 @@ unchanged.
 
 - **v1.13.2 — 2026-11-16 (owner ruling in session, GEO-ZIP).** §4.5 permits a ZIP from a unique Census batch `Match, Exact` result to fill a blank site `zip` as reference address normalization, with the retained response as provenance and no separate evidence row. Existing ZIPs are never overwritten.
 
-- **v1.14 — 2026-11-18 (owner ruling 2026-11-18, "Into the Atlas").** §4.23 adds the IPEDS completions reference layer: `data/ipeds_institutions.csv` (343), `data/ipeds_programs.csv` (825) and `data/ipeds_completions.csv` (10,486 program-years, 1991-2023). `scripts/ipeds_build.py` generates them from `data/ipeds/raw_ipeds_national.json`, ported from polymer-programs-db build_db.py (a9d89b5) with every row equal. Validator V-63 enforces parity with the raw file. Reference data, never evidence. The hand-researched layers (credentials, global programs, society chapters, aliases, CIP-invisible programs) are phase-2 owner questions (`tasks/ipeds-layer-2026-11-18/README.md`). No existing data row is changed.
 - **v1.13.3 — 2026-11-18 (records the owner ruling of 2026-11-16, "Strict matches").** §1 R13 gains SBA PPP historical job counts as a fourth employee-band source: blank bands only, dated to the loan, single-site Ohio-only organizations with an exact borrower name, street and city match. The ruling was applied in PR #348 before this record. No data row is changed by this revision.
+- **v1.14 — 2026-11-18 (owner ruling 2026-11-18, "Into the Atlas").** §4.23 adds the IPEDS completions reference layer: `data/ipeds_institutions.csv` (343), `data/ipeds_programs.csv` (825) and `data/ipeds_completions.csv` (10,486 program-years, 1991-2023). `scripts/ipeds_build.py` generates them from `data/ipeds/raw_ipeds_national.json`, ported from polymer-programs-db build_db.py (a9d89b5) with every row equal. Validator V-63 enforces parity with the raw file. Reference data, never evidence. The hand-researched layers (credentials, global programs, society chapters, aliases, CIP-invisible programs) are phase-2 owner questions (`tasks/ipeds-layer-2026-11-18/README.md`). No existing data row is changed.
 

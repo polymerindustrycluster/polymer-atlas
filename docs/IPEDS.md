@@ -35,7 +35,8 @@ Completions under the three polymer codes (14.3201, 40.0507 and 15.0607), labell
 of the last seven years.
 
 **Institutions that sustained a polymer program:** 35. That is institutions with one program of at least 50
-completions whose first and last completion years are at least 10 apart. 27 of the 35 had completions in 2023.
+completions whose first and last completion years are at least 10 apart. 27 of the 35 had polymer completions (in any
+of their polymer programs) in 2023.
 `scripts/ipeds_build.py` prints this figure on every build. Quote it together with its rule.
 
 **Do not quote "148 institutions ever, 41 still active".** The two halves have different denominators: one is a union
