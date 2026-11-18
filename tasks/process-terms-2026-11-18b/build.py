@@ -5,7 +5,7 @@ Unions the term into the existing non-blank `processes` cell of data/sites_OH.cs
 evidence row to data/evidence_sites_OH.csv with scripts/shard_io.py append_sorted. The evidence id is allocated at apply time above the maximum across
 every data/evidence_*.csv shard and above EVD_FLOOR (never reused, never filling a gap; AGENTS.md 3). The site is tier C, so a services-menu line
 (supports_C) may union into `processes`; on tier A/B it would be a site_capabilities row only (owner ruling 2026-11-14) and the builder refuses.
-Refuses before any write unless: the quote carries the words of the term ("transfer"); the cited URL and the locality URL are the manifest entries (url, sha256,
+Refuses before any write unless: the decision equals the one approved witness (WITNESS: exact quote, URL, sha256, files); the quote carries the words of the term ("transfer"); the cited URL and the locality URL are the manifest entries (url, sha256,
 files, organization) of the stored pages whose bytes were checked; and both shards have exactly the row counts of the pinned base (base.txt), with unique ids.
 A replay (row and cell already present and equal to the plan) writes nothing.
 """
@@ -19,6 +19,15 @@ from shard_io import append_sorted
 spec = importlib.util.spec_from_file_location('cap2a_build', ROOT / 'tasks/pic18-capabilities-corpus-2a-2026-11-16/build.py')
 cap2a = importlib.util.module_from_spec(spec); spec.loader.exec_module(cap2a)
 WHO, SITE, TERM = 'claude-code atlas-w18-rulings', 'SITE-000562', 'rubber_molding_transfer'
+# The one approved witness (PR #381's held row; owner ruling 2026-11-18b item 2): the Services menu entry that names Transfer Molding, on the home page.
+# Any other quote or URL fails, even a true sentence on a real page of the same site ("Unlike transfer molding, ..." on the compression page).
+WITNESS = dict(url='https://profilerubber.com/', quote='Services Compression Molding Transfer Molding Tooling Custom Moldings',
+               raw_file='ORG-000526/918858377a0a07caec0ce159d7da70c7786dfe57521fb121fd59adea110f16cc.html',
+               text_file='ORG-000526/918858377a0a07caec0ce159d7da70c7786dfe57521fb121fd59adea110f16cc.txt',
+               sha256='0c2c59b5749a82beb03a0a6ad439824e1ff457bb21901ee214a15e956b7ed505',
+               grain_url='https://profilerubber.com/contact-us.html',
+               grain_quote='Shipping Address: Profile Rubber Corp., Inc. 350 State Street Building #7 Wadsworth, OH 44281',
+               grain_text_file='ORG-000526/332f20f67cb150e1ff68b209d12de3249937c70f8f2931b7e193117ac23c8ff9.txt')
 TERM_WORD = {TERM: 'transfer'}  # the quote must carry the words of the term it supports ("Compression Molding" must not pass)
 EVD_FLOOR = 397199  # controller 2026-11-18: above main's maximum and open PR #395's block; the id minted is the next above max(this, tree maximum)
 CORPUS_MANIFEST = cap2a.CORPUS / 'manifest.csv'
@@ -47,6 +56,7 @@ def manifest_by_file():
 def check_decision(d, org_id):
     """Quote, term words, vocabulary, stored-page bytes (CAP2A helper) and the manifest binding of both cited URLs; raises AssertionError."""
     assert (d['site_id'], d['field'], d['term'], d['basis']) == (SITE, 'processes', TERM, 'menu'), 'decision is not the planned one'
+    assert all(d[k] == v for k, v in WITNESS.items()), 'the decision is not the one approved witness (the Services menu entry naming Transfer Molding, with its exact quote, url, sha256 and files)'
     cap2a.validate_decision(d)
     assert TERM_WORD[d['term']] in d['quote'].lower(), f"the quote lacks the word {TERM_WORD[d['term']]!r} of {d['term']}"
     m = manifest_by_file()

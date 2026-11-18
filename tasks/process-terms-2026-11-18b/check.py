@@ -25,8 +25,14 @@ def schema_terms(schema):
     sec = schema[schema.index("### 3.1 Processes"):schema.index("### 3.2")]
     return set(re.findall(r"`([a-z0-9_]+)`", sec))
 def validator_processes(src):
-    blk = src[src.index("PROCESSES"):]; blk = blk[:blk.index("]")]
-    return set(re.findall(r'"([a-z0-9_]+)"', blk))
+    """The full PROCESSES set literal of validate.py, read with ast (a text scan stopped at a "]" inside a comment and read 69 of 85 terms)."""
+    import ast
+    for node in ast.parse(src).body:
+        if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "PROCESSES" for t in node.targets):
+            val = ast.literal_eval(node.value)
+            assert len(val) == len(set(val)) or isinstance(val, set), "duplicate terms in PROCESSES"
+            return set(val)
+    raise AssertionError("no PROCESSES assignment found in validate.py")
 def rollup_members(schema):
     line = next(l for l in schema.splitlines() if l.startswith("| `rubber_molding` | ROLLUP"))
     return re.findall(r"`([a-z0-9_]+)`", line.split("ROLLUP", 1)[1])
@@ -87,7 +93,7 @@ def main():
     raw_changed = subprocess.run(["git", "diff", "--numstat", base, "--", "data/sites_OH.csv"], cwd=ROOT, capture_output=True, text=True).stdout.split()[:2]
     changed = [r["site_id"] for r, b in zip(N["sites"], B["sites"]) if r != b]
     print(f"base {base[:9]}: new terms absent from the base vocabulary: {all(t not in B['vocab'] for t in NEW)}; {build.SITE} tier {next(r for r in B['sites'] if r['site_id'] == build.SITE)['verification_tier']}; "
-          f"sites_OH rows {len(B['sites'])}, evidence_sites_OH rows {len(B['ev'])}, evidence maximum across all shards EVD-{base_max_id}")
+          f"validate.py PROCESSES terms (ast) {len(validator_processes(B['vsrc']))} at the base, {len(validator_processes(N['vsrc']))} now; sites_OH rows {len(B['sites'])}, evidence_sites_OH rows {len(B['ev'])}, evidence maximum across all shards EVD-{base_max_id}")
     print(f"now: sites_OH rows {len(N['sites'])}, rows changed (csv) {len(changed)}, independent raw-line numstat added/removed {raw_changed}; evidence_sites_OH rows {len(N['ev'])} (added {len(N['ev']) - len(B['ev'])}); "
           f"site_capabilities rows {len(N['cap'])} (base {len(B['cap'])}); sites carrying composites_spray_up {sum('composites_spray_up' in r['processes'] for r in N['sites'])}; rollup members {rollup_members(N['schema'])}")
     fails = []
@@ -110,11 +116,17 @@ def main():
     inject("new evidence id fills a gap below the maximum", lambda n, dd: newev(n).update(evidence_id="EVD-396950"))
     inject("a base evidence row edited", lambda n, dd: next(x for x in n["ev"] if x["evidence_id"] == "EVD-396503").update(notes="edited"))
     inject("term missing from the vocabulary export", lambda n, dd: n.update(vocab=n["vocab"] - {"composites_spray_up"}))
+    inject("an existing term deleted from validate.py PROCESSES (rubber_molding_unspecified)", lambda n, dd: n.update(vsrc=n["vsrc"].replace('"rubber_molding_unspecified",', "", 1)))
     inject("term missing from validate.py PROCESSES", lambda n, dd: n.update(vsrc=n["vsrc"].replace('"rubber_molding_transfer", ', "", 1)))
     inject("rollup line not updated", lambda n, dd: n.update(schema=n["schema"].replace("+ `rubber_molding_transfer` **[v1.16]** + ", "+ ")))
     inject("rollup member swapped for a plastics subtype (rubber_molding_injection -> transfer_molding)", lambda n, dd: n.update(schema=n["schema"].replace("`rubber_molding_injection` |", "`transfer_molding` |", 1)))
     inject("site_capabilities row added", lambda n, dd: n["cap"].append(dict(n["cap"][0])))
     inject("quote supports compression molding only (no 'transfer')", lambda n, dd: (dd.update(quote="Compression Molding"), newev(n).update(claim_detail="processes=rubber_molding_transfer; quote: Compression Molding")))
+    def codex_probe(n, dd):  # a true sentence on the compression page: right site, genuine manifest entry, but not the approved witness
+        m = next(r for r in build.read(build.CORPUS_MANIFEST) if r["org_id"] == "ORG-000526" and r["url"] == "https://profilerubber.com/compression-molding.html" and r["raw_file"])
+        dd.update(url=m["url"], raw_file=m["raw_file"], text_file=m["text_file"], sha256=m["sha256"], quote="Unlike transfer molding, there is no pot-rind.")
+        newev(n).update(claim_detail="processes=rubber_molding_transfer; quote: Unlike transfer molding, there is no pot-rind.", source_ref=m["url"])
+    inject("a true sentence on the compression page that does not claim the service (Codex probe)", codex_probe)
     inject("cited URL and locality URL swapped", lambda n, dd: (dd.update(url=d["grain_url"], grain_url=d["url"]), newev(n).update(source_ref=d["grain_url"])))
     inject("one unrelated site row dropped (truncated shard)", lambda n, dd: n["sites"].pop(next(i for i, r in enumerate(n["sites"]) if r["site_id"] != build.SITE)))
     inject("one evidence row duplicated", lambda n, dd: n["ev"].insert(1, dict(n["ev"][0])))
@@ -152,6 +164,10 @@ def main():
         print(f"build.py {name}: refused={refused} inputs unchanged={untouched}: {'OK' if ok else 'NOT REFUSED'}")
         if not ok: fails.append(f"build.py did not refuse: {name}")
     refusal("with a quote that supports compression molding only", lambda data, dec: rewrite(dec, lambda rows: rows[0].update(quote="Compression Molding")))
+    def codex_build(data, dec):
+        m = next(r for r in build.read(build.CORPUS_MANIFEST) if r["org_id"] == "ORG-000526" and r["url"] == "https://profilerubber.com/compression-molding.html" and r["raw_file"])
+        rewrite(dec, lambda rows: rows[0].update(url=m["url"], raw_file=m["raw_file"], text_file=m["text_file"], sha256=m["sha256"], quote="Unlike transfer molding, there is no pot-rind."))
+    refusal("with a true sentence on the compression page that does not claim the service (Codex probe)", codex_build)
     refusal("with the cited and locality URLs swapped", lambda data, dec: rewrite(dec, lambda rows: rows[0].update(url=rows[0]["grain_url"], grain_url=rows[0]["url"])))
     refusal("on a base with one unrelated site row and one evidence row removed", lambda data, dec: (rewrite(data / "sites_OH.csv", lambda rows: rows.pop(next(i for i, r in enumerate(rows) if r["site_id"] != build.SITE))), rewrite(data / "evidence_sites_OH.csv", lambda rows: rows.pop(0))))
     refusal("on a base with one evidence row duplicated", lambda data, dec: rewrite(data / "evidence_sites_OH.csv", lambda rows: rows.insert(1, dict(rows[0]))))
