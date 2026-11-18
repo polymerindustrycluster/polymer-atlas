@@ -34,7 +34,15 @@ First user: the Atlas integrator, who decides at the next wave review whether th
 
 ### Outcome check (harness `pic18_unknown.py`, process-unknown organizations)
 
-_(run after the data apply)_
+`python3 pic18_unknown.py "$PWD" <ref>` (controller harness; unit: PIC-18 organization rows, 794 at both refs; filter: process unknown):
+
+| Ref | proc_unknown | share of 794 |
+|---|---|---|
+| merge-base 495a0018 (origin/main, PR #396 merged) | **331** | 41.7% |
+| HEAD of this branch | **326** | 41.1% |
+
+`proc_unknown` falls by **5**, exactly the **5** organizations whose first process lands in a `processes` cell (SITE-000238, SITE-000248, SITE-000346, SITE-000448, SITE-000664; each is the organization's only PIC-18 site). The capability row (SITE-002855, tier B) and the already-held capability (SITE-001530) do not move it: **1** site got only a capability row. `mkt_unknown` (319) and `band_unknown` (443) are unchanged.
+
 
 ## Per site
 
