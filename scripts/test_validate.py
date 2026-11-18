@@ -250,6 +250,14 @@ class ValidatorMutationTests(unittest.TestCase):
         self.edit_rows("events.csv", lambda r: True, lambda r: r.update(pic_events_slug="test-same;test-same"))
         self.assert_fails_with("pic_events_slug 'test-same' repeated in one cell (V-61)")
 
+    def test_v61_truncated_row_rejected(self):  # codex post-merge review 2026-11-18: a dropped last column passed
+        path = self.data / "events.csv"
+        lines = path.read_text(encoding="utf-8").split("\n")
+        mapped = next(i for i, ln in enumerate(lines[1:], 1) if ln and not ln.endswith(","))
+        lines[mapped] = lines[mapped].rsplit(",", 1)[0]  # slugs hold no commas, so this drops only the last field
+        path.write_bytes("\n".join(lines).encode("utf-8"))  # bytes: write_text would emit CRLF on Windows (V-56)
+        self.assert_fails_with("has fewer fields than the header (pic_events_slug missing) (V-61)")
+
     def test_v19_attendee_accepted(self):
         self.edit_rows("event_participation.csv", lambda r: True,
                        lambda r: r.update(role="attendee"))
