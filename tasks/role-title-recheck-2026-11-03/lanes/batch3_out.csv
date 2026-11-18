@@ -14,7 +14,7 @@ PERSON-000912,"Professor, Chemistry",https://scholars.uky.edu/en/persons/chad-ri
 PERSON-000915,,,CANNOT_CONFIRM,"Only title found is 'Assistant professor of chemistry' on UT Dallas news page; catalog PDF gave no entry; rank conflicts with record associate_professor"
 PERSON-000918,Assistant Professor; Chemical and Biological Engineering,https://drexel.edu/engineering/about/faculty-staff/L/lequieu-joshua/,CONFIRMED,"Title and department appear on separate lines on the Drexel page; record role assistant_professor matches"
 PERSON-000920,,,CANNOT_CONFIRM,"MSU directory shows Title field labels but no value on two fetches; one returned 'Professor', which conflicts with record associate_professor"
-PERSON-000925,Professor,https://people.sc.fsu.edu/~sshanbhag/,CONFIRMED,"Only the bare title 'Professor' is printed; body text says 'Professor in the Department of Scientific Computing'"
+PERSON-000925,Professor,https://people.sc.fsu.edu/~<acct>/,CONFIRMED,"Only the bare title 'Professor' is printed; body text says 'Professor in the Department of Scientific Computing'"
 PERSON-000931,,,CANNOT_CONFIRM,"Bucknell 2023-2024 catalog PDF gave no entry; Kalman symposium page returned HTTP 503 (rate-limited earlier)"
 PERSON-000933,E Ink Professor in Engineering; Department of Chemical and Biological Engineering,https://engineering.tufts.edu/research/named-professorships,CONFIRMED,"Named-chair line only; page does not print a rank word; record role professor not contradicted"
 PERSON-000935,Associate Professor of Materials Science and Engineering; Associate Professor of Biomedical Engineering,https://mse.engineering.arizona.edu/faculty-staff/faculty/minkyu-kim,CONFIRMED,"Two title lines joined; record role associate_professor matches"

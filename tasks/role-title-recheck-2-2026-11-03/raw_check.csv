@@ -29,7 +29,7 @@ PERSON-001002,https://boydston.chem.wisc.edu/team/,found
 PERSON-001018,https://science.arizona.edu/news/college-science-announces-2026-teaching-and-advising-awards,found
 PERSON-001028,https://engineering.rowan.edu/faculty_staff/listing/behrad-koohbor.html,found
 PERSON-001036,https://lingroup.uconn.edu/yao-lin/,not_found
-PERSON-001037,www2.latech.edu/~apeters/member-apeters.html,found
+PERSON-001037,www2.latech.edu/~<acct>/member-<acct>.html,found
 PERSON-001044,https://engineering.jhu.edu/chembe/faculty/paulette-clancy/,unfetchable
 PERSON-001048,http://fstarr.faculty.wesleyan.edu/bio/,found
 PERSON-001061,https://engineering.rowan.edu/faculty_staff/listing/joseph-stanzione.html,found
@@ -74,7 +74,7 @@ PERSON-001240,https://dsalas.camden.rutgers.edu/,found
 PERSON-001241,https://www.clarkson.edu/academics/schools-colleges/engineering/mechanical-aerospace/about/faculty?page=2,found
 PERSON-001244,https://cbe.utk.edu/people/ria-d-corder/,not_found
 PERSON-001245,https://engineering.wisc.edu/directory/profile/monica-ohnsorg/,unfetchable
-PERSON-000054,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=janas,found
+PERSON-000054,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=<id>,found
 PERSON-000195,https://www.mse.gatech.edu/people/jason-azoulay,found
 PERSON-000209,https://www.chbe.gatech.edu/directory/person/william-koros,found
 PERSON-000297,https://www.clemson.edu/cecas/departments/mse/people/faculty/foulger.html,found
@@ -83,7 +83,7 @@ PERSON-000847,http://profiles.stanford.edu/yan-xia,found
 PERSON-000884,https://faculty.rpi.edu/chulsung-bae,found
 PERSON-000912,https://scholars.uky.edu/en/persons/chad-risko,not_found
 PERSON-000918,https://drexel.edu/engineering/about/faculty-staff/L/lequieu-joshua/,found
-PERSON-000925,https://people.sc.fsu.edu/~sshanbhag/,found
+PERSON-000925,https://people.sc.fsu.edu/~<acct>/,found
 PERSON-000933,https://engineering.tufts.edu/people/faculty?title&field_department_tid=51&field_research_interests&department=All&category=All&page=5,found
 PERSON-000935,https://mse.engineering.arizona.edu/faculty-staff/faculty/minkyu-kim,found
 PERSON-000938,https://www.isu.edu/chem/faculty/staffdirectoryentries/,found

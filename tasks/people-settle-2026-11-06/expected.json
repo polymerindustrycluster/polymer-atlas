@@ -228,8 +228,8 @@
     "role": "professor",
     "role_as_published": "Professor",
     "research_specialties": "",
-    "public_profile_url": "https://people.sc.fsu.edu/~sshanbhag/",
-    "sources": "https://people.sc.fsu.edu/~sshanbhag/",
+    "public_profile_url": "https://people.sc.fsu.edu/~<acct>/",
+    "sources": "https://people.sc.fsu.edu/~<acct>/",
     "verification_tier": "A",
     "last_verified": "2026-11-02"
   },
@@ -293,8 +293,8 @@
     "role": "professor",
     "role_as_published": "BF Goodrich Professor",
     "research_specialties": "additive_manufacturing_polymer;elastomers_rubber;recycling_circularity",
-    "public_profile_url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=janas",
-    "sources": "https://www.uakron.edu/im/online-newsroom/news_details.dot?newsId=bbe01ea1-ecc4-45c0-88b5-0a23c9968ac7;https://www.uakron.edu/polymer/about-us/our-people;https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=janas",
+    "public_profile_url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=<id>",
+    "sources": "https://www.uakron.edu/im/online-newsroom/news_details.dot?newsId=bbe01ea1-ecc4-45c0-88b5-0a23c9968ac7;https://www.uakron.edu/polymer/about-us/our-people;https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=<id>",
     "verification_tier": "A",
     "last_verified": "2026-10-31"
   },

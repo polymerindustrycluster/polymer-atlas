@@ -6,7 +6,7 @@ PERSON-001241,Associate Professor,https://www.clarkson.edu/academics/schools-col
 PERSON-001242,,https://fda.fsu.edu/nfd/joshua-mysona,CANNOT_CONFIRM,"Neither cited page prints a title for him; eng.famu.fsu.edu/cbe/people/mysona (linked from the cited research page, not itself cited) would settle it."
 PERSON-001244,Assistant Professor,https://cbe.utk.edu/people/ria-d-corder/,CONFIRMED,
 PERSON-001245,Assistant Professor of Biomedical Engineering,https://engineering.wisc.edu/directory/profile/monica-ohnsorg/,CONFIRMED,Title is printed in the profile bio sentence; the page heading line carries no rank.
-PERSON-000054,BF Goodrich Professor,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=janas,CONFIRMED,
+PERSON-000054,BF Goodrich Professor,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=<id>,CONFIRMED,
 PERSON-000195,Associate Professor,https://www.mse.gatech.edu/people/jason-azoulay,CONFIRMED,
 PERSON-000209,"Professor, Roberto C. Goizueta Chair for Excellence in Chemical Engineering, and GRA Eminent Scholar in Membranes",https://www.chbe.gatech.edu/directory/person/william-koros,CONFIRMED,
 PERSON-000297,Greg-Graniteville Endowed Chair and Professor,https://www.clemson.edu/cecas/departments/mse/people/faculty/foulger.html,CONFIRMED,Title copied as printed; the page's own overview spells the chair Gregg-Graniteville.
@@ -15,7 +15,7 @@ PERSON-000847,Professor of Chemistry,http://profiles.stanford.edu/yan-xia,CONFIR
 PERSON-000884,"Ford Foundation Professor, Associate Director of Center for Future Energy Systems (CFES)",https://faculty.rpi.edu/chulsung-bae,CONFIRMED,
 PERSON-000912,"Professor, Chemistry",https://scholars.uky.edu/en/persons/chad-risko,CONFIRMED,
 PERSON-000918,Assistant Professor,https://drexel.edu/engineering/about/faculty-staff/L/lequieu-joshua/,CONFIRMED,
-PERSON-000925,Professor,https://people.sc.fsu.edu/~sshanbhag/,CONFIRMED,
+PERSON-000925,Professor,https://people.sc.fsu.edu/~<acct>/,CONFIRMED,
 PERSON-000933,"E Ink Professor of Engineering and Dean of Research; Professor, Chemical and Biological Engineering",https://engineering.tufts.edu/people/faculty?title&field_department_tid=51&field_research_interests&department=All&category=All&page=5,CONFIRMED,
 PERSON-000935,Associate Professor of Materials Science and Engineering; Associate Professor of Biomedical Engineering,https://mse.engineering.arizona.edu/faculty-staff/faculty/minkyu-kim,CONFIRMED,
 PERSON-000938,Associate Professor,https://www.isu.edu/chem/faculty/staffdirectoryentries/,CONFIRMED,

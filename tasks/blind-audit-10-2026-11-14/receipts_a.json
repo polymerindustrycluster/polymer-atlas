@@ -191,7 +191,7 @@
    "route": "curl"
   },
   {
-   "url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=ali4",
+   "url": "https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=<id>",
    "http_status": 200,
    "fetched_at": "2026-11-14T17:14:01Z",
    "sha256": "743cb1b7a53eeecaf50a92501f9fc2473ec3667971f423987988bd2c6f5d3639",
@@ -282,7 +282,7 @@
    "route": "curl"
   },
   {
-   "url": "https://www.uakron.edu:443/polymer/about-us/our-people/profile.dot?u=swang",
+   "url": "https://www.uakron.edu:443/polymer/about-us/our-people/profile.dot?u=<id>",
    "http_status": 200,
    "fetched_at": "2026-11-14T17:14:20Z",
    "sha256": "a880988ac76fea173773952ee9e1537dd761072ba46f768e24803c6dd1938f1b",

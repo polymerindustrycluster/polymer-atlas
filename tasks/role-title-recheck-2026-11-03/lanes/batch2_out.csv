@@ -35,7 +35,7 @@ person_id,new_role_as_published,title_url,status,rank_note
 "PERSON-000837","","https://nano.uakron.edu/group/","CANNOT_CONFIRM","group page lists Yu Zhu under 'Principal Investigator:' heading only; no title line printed"
 "PERSON-000844","","https://news.arizona.edu/news/faculty-elected-senior-member-national-academy-inventors","CANNOT_CONFIRM","both news pages give prose only ('a professor in the UA Department of Chemistry and Biochemistry'); no title line"
 "PERSON-000847","Full Professor of Chemistry","https://chemistry.stanford.edu/news/yan-xia-promoted-full-professor-chemistry","CONFIRMED","title from Stanford Chemistry news body (Jan 2026); profiles.stanford.edu returned HTTP 503 three times"
-"PERSON-000850","","https://www.chem.fsu.edu/~schlen/group.html","CANNOT_CONFIRM","group page prints no title for Schlenoff; FSU Arts and Sciences page does not mention him"
+"PERSON-000850","","https://www.chem.fsu.edu/~<acct>/group.html","CANNOT_CONFIRM","group page prints no title for Schlenoff; FSU Arts and Sciences page does not mention him"
 "PERSON-000853","","http://chemistry.jhu.edu/directory/rebekka-klausen/","CANNOT_CONFIRM","directory page returned HTTP 403; availability only"
 "PERSON-000854","Professor; Professor, Chemistry and Biochemistry","https://samueli.ucla.edu/people/timothy-deming/","CONFIRMED",""
 "PERSON-000861","","https://cas.nyu.edu/undergraduate-research/deans-undergraduate-research-fund/previousDURFfacultysponsors.html","CANNOT_CONFIRM","both NYU pages returned HTTP 405; availability only"
