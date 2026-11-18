@@ -1,0 +1,59 @@
+site_id,org_id,site_name,street_address,city,zip,county,frs_ids,echo_air_ids,echo_caa_permit_types
+SITE-000025,ORG-000026,"Enterprise Rubber, Inc. — Akron",1070 Evans Ave,Akron,44305,Summit,110004599596,,
+SITE-000038,ORG-000038,Pioneer Plastics Corp. — Akron,3330 Massillon Road,Akron,44312,Summit,110006267887,,
+SITE-000048,ORG-000048,Akrochem Corp. — Akron,3770 Embassy Parkway,Akron,44333,Summit,110070832646,OH0000001677011283,Minor Emissions
+SITE-000081,ORG-000081,"Novex, Inc. — Barberton",74 Robinson Ave,Barberton,44203,Summit,110071894237,OH0000001677020197,Minor Emissions
+SITE-000140,ORG-000140,Cleveland Specialty Products — Cleveland,,Cleveland,44102,Cuyahoga,110054879789,OH0000001318007657,80% Synthetic Minor Emissions
+SITE-000153,ORG-000153,Moen — North Olmsted,25300 AL MOEN DR,North Olmsted,44070,Cuyahoga,110004733646,,
+SITE-000182,ORG-000175,Harwood Rubber Products — Cuyahoga Falls,1365 ORLEN AVE,Cuyahoga Falls,44221,Summit,110006269313,OH0000001677050021,Minor Emissions
+SITE-000238,ORG-000224,"Alliance Equipment Company, Inc. — Alliance",1000 N. UNION AVE.,Alliance,44601,Stark,110000390229,OH0000001576011516,80% Synthetic Minor Emissions
+SITE-000248,ORG-000234,Architectural Fiberglass — Cleveland,8300 BESSEMER AVE,Cleveland,44127,Cuyahoga,110006519026,OH0000001318008262,Major Emissions
+SITE-000264,ORG-000248,Blair Rubber — Seville,5020 Enterprise Parkway,Seville,44273,Medina,110070551335,OH0000001652070030,Minor Emissions
+SITE-000346,ORG-000325,Emerald Polymer Additives — Akron,240 W Emerling Ave,Akron,44301,Summit,110000389213,OH0000001677010029,Major Emissions
+SITE-000363,ORG-000341,Flavorseal — Avon,35179 Avon Commerce Parkway,Avon,44011,Lorain,110037438573,,
+SITE-000448,ORG-000419,LG Chem Ohio Petrochemical — Ravenna,310 rayann parkway,Ravenna,,Portage,110071722285,OH0000001667060181,80% Synthetic Minor Emissions
+SITE-000469,ORG-000438,Mexichem Specialty Resins Inc. Avon lake — Avon Lake,33653 Walker Road,Avon Lake,,Lorain,110056332339;110042003257,OH0000000247030884,Minor Emissions
+SITE-000517,ORG-000483,PENTAIR WATER PURIFICATION,200 INDUSTRIAL PARKWAY,Chardon,44024,Geauga,110000385333,OH0000000228000101,Minor Emissions
+SITE-000535,ORG-000500,PLASTPRO INC — Ashtabula,,Ashtabula,44004,Ashtabula,110024257793,OH0000000204000441,Major Emissions
+SITE-000547,ORG-000513,Polystar Containment — Stow,1676 COMMERCE DRIVE,Stow,44224,Summit,110009634495,OH0000001677110102,Minor Emissions
+SITE-000569,ORG-000533,Qnity Cleveland Laird Plant — Cleveland,4707 Detroit Avenue,Cleveland,44102,Cuyahoga,110041349181,OH0000001318008667,Minor Emissions
+SITE-000570,ORG-000534,Quality Synthetic Rubber — Twinsburg,1700 HIGHLAND RD.,Twinsburg,44087,Summit,110002110448,OH0000001677130080,Minor Emissions
+SITE-000590,ORG-000552,Rogers Industrial Products — Akron,532 S MAIN ST,Akron,44311,Summit,110004731112,OH0000001677011342,Minor Emissions
+SITE-000601,ORG-000562,Schneller LLC — Kent,6019 Powdermill Road,Kent,44240,Portage,110000840485,OH0000001667040015,80% Synthetic Minor Emissions
+SITE-000615,ORG-000576,Soft-lite — Streetsboro,10250 Philipp Pkwy,Streetsboro,44241,Portage,110070516329,,
+SITE-000630,ORG-001128,"Storopack, Inc. - Cleveland",3135 Berea Road,Cleveland,44111,Cuyahoga,110020689708,OH0000001318008130,Minor Emissions
+SITE-000637,ORG-000598,Team Wendy — Cleveland,17000 SAINT CLAIR AVE BLDG 1,Cleveland,44110,Cuyahoga,110043989020;110037143631,,
+SITE-000664,ORG-000623,Uniwall Mfg — Louisville,1875 AIRPARK DRIVE,Louisville,44641,Stark,110001624582,OH0000001576111601,Synthetic Minor Emissions
+SITE-000676,ORG-000635,THE WOOSTER BRUSH COMPANY — Wooster,604 Madison Avenue,Wooster,44691,Wayne,110000390988,OH0000000285030027,Minor Emissions
+SITE-000814,ORG-000752,Cook Composites & Polymers Co. — Sandusky,1321 First Street,Sandusky,44870,Erie,110000391781,OH0000000322020129,Major Emissions
+SITE-000936,ORG-000868,Guardian Manufacturing Company — Willard,302 S. Conwell Ave,Willard,44890-9525,Huron,110000391861,OH0000000339030016,Major Emissions
+SITE-000997,ORG-000927,Kurz-Kasch Inc. — Newcomerstown,199 E. State Street,Newcomerstown,43832,Tuscarawas,110000384815,OH0000000679000129,Minor Emissions
+SITE-001137,ORG-001053,Provia Strasburg Facility — Strasburg,10190 State Route 21,Strasburg,44680,Tuscarawas,110070732957,OH0000000679005044,80% Synthetic Minor Emissions
+SITE-001394,ORG-000033,LyondellBasell — Fairport Harbor (Equistar),110 Third Street,Fairport Harbor,44077,Lake,110000385949,OH0000000243020004,Major Emissions
+SITE-001422,ORG-001383,"Delco, LLC — Akron",3300 Massillon Road,Akron,44312,Summit,110009634217,,
+SITE-001504,ORG-001453,Flow Polymers — Cleveland,,Cleveland,44108,Cuyahoga,110004625870,OH0000001318002448,Minor Emissions
+SITE-001510,ORG-001459,RFD Beaufort — Sharon Center,1420 Wolf Creek Trail,Sharon Center,44274,Medina,110004705515,OH0000001652080002,80% Synthetic Minor Emissions
+SITE-001513,ORG-001462,Clevite Elastomers Technical Center — Milan,,Milan,44846,Erie,110000391674,OH0000000322000048 OH0000000322002004,"80% Synthetic Minor Emissions, Major Emissions"
+SITE-001530,ORG-001908,Tremco CPG — Cleveland (E 175th St),4475 E 175Th St,Cleveland,44128,Cuyahoga,110000387554,OH0000001318002813,80% Synthetic Minor Emissions
+SITE-001563,ORG-001497,Budzar Industries — Willoughby,38241 Willoughby Parkway,Willoughby,44094,Lake,110004718583,,
+SITE-001591,ORG-001526,"Viscus Biologics, LLC — Cleveland","26309 Miles Rd, Suite 1",Cleveland,44128,Cuyahoga,110008117723,,
+SITE-001651,ORG-001580,Chemical Solvents Inc — Cleveland,3751 Jennings Road,Cleveland,44109,Cuyahoga,110000386804,OH0000001318005609,Major Emissions
+SITE-001703,ORG-001631,AKRON DISPERSIONS INC — Copley,3291 SAWMILL ROAD,Copley,,Summit,110000389543,,
+SITE-001743,ORG-001667,Dudick Inc — Streetsboro,,Streetsboro,,Portage,110070746654;110000388759,OH0000001667080084,Synthetic Minor Emissions
+SITE-001744,ORG-001668,Durable Corporation — Norwalk,75 N. Pleasant St,Norwalk,44857,Huron,110004590764,,
+SITE-001785,ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),55 Newton Street,Norwalk,44857,Huron,110004669270,,
+SITE-001792,ORG-001716,"Firestone Polymers, LLC",,Akron,,Summit,110000389525,OH0000001677010000,80% Synthetic Minor Emissions
+SITE-001833,ORG-001757,"ACO Polymer Products, Inc.",9470 Pinecone Dr,Mentor,44060,Lake,110067160173,OH0000000243082019,80% Synthetic Minor Emissions
+SITE-001837,ORG-000057,Smithers-Oasis Company (Smithers-Oasis North America),919 Marvin Street,Kent,44240,Portage,110000388731,OH0000001667040037,Major Emissions
+SITE-001854,ORG-001774,Alcon Tool Co,565 Lafollette St.,Akron,44311,Summit,110071139897,,
+SITE-001859,ORG-001780,"American Testing Technologies, Inc.","1350 Home Ave, Suite G-I",Akron,44310,Summit,110046246326,,
+SITE-001868,ORG-001794,Dal-Little Fabricating Inc,,Cleveland,,Cuyahoga,110020753451,OH0000001318008351,Minor Emissions
+SITE-001888,ORG-001855,NewKor Inc.,10410 Berea Road,Cleveland,44102,Cuyahoga,110002110581,OH0000001318005362,Synthetic Minor Emissions
+SITE-001910,ORG-001919,"Catalyst Systems, Inc.",,Gnadenhutten,44629,Tuscarawas,110000390390,,
+SITE-001913,ORG-001922,Faull and Son,515 Holford Ave,Niles,,Trumbull,110037437280,,
+SITE-001923,ORG-001929,Saint-Gobain HyComp LLC (Hycomp LLC),,Middleburg Heights,44130,Cuyahoga,110070490805;110006338052,OH0000001318347780,Minor Emissions
+SITE-002091,ORG-002135,Applied Specialties Inc,33555 Pin Oak Pkwy,Avon Lake,44012,Lorain,110000385182,,
+SITE-002113,ORG-002156,Creative Mold & Machine,10385 Kinsman Rd,Newbury,44065,Geauga,110004572828,OH0000000228000245,80% Synthetic Minor Emissions
+SITE-002114,ORG-002157,"Custom Pultrusions, Inc.",1331 S Chillicothe Rd,Aurora,44202,Portage,110000388385,OH0000001667020035,Major Emissions
+SITE-002124,ORG-002167,"PLYMOUTH FOAM, LLC",600 Enterprise Drive,Newcomerstown,,Tuscarawas,110072219808,OH0000000679005057,Major Emissions
+SITE-002855,ORG-002080,Mitsubishi Chemical Performance Polymers — Bellevue Plant,350 N Buckeye St,Bellevue,44811,Huron,110000391415,OH0000000339010104,Minor Emissions
