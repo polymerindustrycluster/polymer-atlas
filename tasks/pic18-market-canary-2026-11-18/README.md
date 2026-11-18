@@ -53,7 +53,7 @@ Holds (7 organizations, `STILL_UNCERTAIN`; settling facts in `verdicts.csv`; non
 ## Named checks
 
 - `python3 tasks/pic18-market-canary-2026-11-18/check.py`: PASS. Injected defects each refused for their own reason: term not in the vocabulary, quote not found in its stored page, tag broader than the words, raw hash tampering, duplicate proposal, frame ID with no verdict, frame ID with two verdicts, hold with a blank settling fact, write to a non-blank cell, write to another column (10/10).
-- `build.py`: idempotent (replay leaves the data diff byte-identical). `python3 scripts/validate.py`: 0 errors. `python3 scripts/check_row_loss.py --base origin/main`: OK. `python3 scripts/export_vocab.py --check`: current. `python3 -m unittest discover -s scripts -p 'test_*.py'`: see PR body (no script touched).
+- `build.py`: idempotent (replay leaves the data diff byte-identical). `python3 scripts/validate.py`: 0 errors. `python3 scripts/check_row_loss.py --base origin/main`: OK. `python3 scripts/export_vocab.py --check`: current. `python3 -m unittest discover -s scripts -p 'test_*.py'`: 324 tests OK (1 skipped); no script was touched.
 - Reuse: `witness_class.py` is imported from MKT3's folder, not copied; MKT3 committed no extractor, so the market sentences were found by reading the stored pages (a keyword sentence filter plus a full read of each page's content area).
 
 ## Not checked
