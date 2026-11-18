@@ -115,6 +115,11 @@ def bind_near(h, st, org, fid):
     ck = re.sub(r"\b(twp|township)\b", "", cb.city_key(h["holder_city"])).strip() == cb.city_key(st["city"])
     return r, ("format variant only (street abbreviation or Twp. suffix)" if sk and ck else "")
 
+HELD = "owner_ruling_pending"
+def held_pairs(props):
+    """(site, term) pairs held for an owner ruling by ANY proposal: the hold binds the pair, not the row that carries the flag."""
+    return {(p["site_id"], p["term"]) for p in props if p["hold_reason"] == HELD}
+
 def compute(inp):
     """Everything derived. Returns dict(frame, sites, props, viol). `viol` lists build-time inconsistencies between verdicts.json and the permits."""
     V = inp["V"]["sites"]; scr = inp["scr"]; sites, orgs = inp["sites"], inp["orgs"]; viol = []
@@ -172,6 +177,9 @@ def compute(inp):
                            printed_street=hdr[newest]["holder_street"], printed_city=hdr[newest]["holder_city"], strict_bind="BOUND" if site_bound else "NOT_BOUND",
                            strict_reasons="; ".join(strict), near_bound_rule=near, newest_permit=hdr[newest]["permit_number"], newest_issue=cb.mdy(hdr[newest]["issue_date"]),
                            newest_expiry=expiry(inp["text"](newest))[0] or "none printed", verdict=v["verdict"], hold_reason=v["hold_reason"] or "", note=v["note"]))
+    hp = held_pairs(P_rows)
+    for p in P_rows:   # enforce the hold on the (site, term) pair across every proposal, whichever quote supplies it
+        if (p["site_id"], p["term"]) in hp and p["route"] != "hold": p["route"], p["hold_reason"], p["capability_term"] = "hold", HELD, ""
     return dict(frame=frame, sites=S_rows, props=P_rows, viol=viol)
 
 def loaded():
@@ -249,6 +257,8 @@ def stage_shard(live, rows, fields, key=None, new=()):
 
 def apply(model, hashes, root=ROOT, base=None):
     """Plan every write in memory, verify it against the live files (and the merge-base rows when given), then replace each shard atomically."""
+    hp = held_pairs(model["props"])
+    assert not [p for p in model["props"] if (p["site_id"], p["term"]) in hp and p["route"] != "hold"], "a (site, term) pair held for an owner ruling is planned as a write"
     SH, EV, CP = root / "data/sites_OH.csv", root / "data/evidence_sites_OH.csv", root / "data/site_capabilities.csv"
     ev_all = [Path(p) for p in glob.glob(str(root / "data/evidence_*.csv"))]
     cur = {p: read_csv(p) for p in (SH, EV, CP)}; fields = {p: list(cur[p][0]) for p in cur}
@@ -403,6 +413,12 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 | 2 | The base check exempted the whole `processes` column | **Fixed.** Each site row is compared with its base row plus only that site's own planned union; every other site row must be identical. `check.py` runs Codex's probe (an unrelated site's cell blanked) and requires a refusal. (Removing the comparison makes the probe fail; checked.) |
 | 3 | The privacy gate missed a signatory printed as a name, a comma and credentials | **Fixed.** Names are read with trailing credentials stripped, signatories are the name lines after "Sincerely" and the line above a title line, company-name phrases are excluded, and `check.py` asserts the named signatory in document 1015038 is known and that injecting it is caught. Only counts and booleans are printed. |
 | 4 | SITE-000248 `coating_applying` | **Held pending an owner ruling** (controller decision, AGENTS.md §2 rule 9: whether gel-coat application in open molding is §3.1 `coating_applying` is a vocabulary question). Nothing new is written; `composites_spray_up` alone stands. The held proposal is in `proposals.csv` with hold reason `owner_ruling_pending`, and `check.py` rejects any route of it to a write. |
+
+## Review round 3 (Codex REFUTE, 1 finding)
+
+| # | Finding | Answer |
+|---|---|---|
+| 1 | The owner hold was checked row by row, so a second unflagged proposal for SITE-000248 `coating_applying` was written | **Fixed.** The hold binds the (site, term) pair: `build.compute` routes every proposal for a held pair to a hold, `build.apply` refuses a plan that writes one, and `check.py` rejects any proposal row, any applied processes cell and any evidence row for a held pair. Codex's duplicate-proposal probe runs at proposal level and at verdict level (the builder must hold the unflagged duplicate itself), plus a held term added to the applied cell. With the pair rule disabled (`CHECK_DISABLE_PAIR_RULE=1`) the injected defect is not caught and `check.py` fails, so the probe is live. `data/` is unchanged. |
 
 ## Open owner question: SITE-000248 `coating_applying`
 

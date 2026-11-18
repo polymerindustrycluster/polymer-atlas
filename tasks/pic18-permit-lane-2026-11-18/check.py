@@ -3,12 +3,13 @@
 Recomputes every published count from the stored permits, the Atlas rows and the canary screen; audits every proposal and every data change;
 then proves the audit fails on every injected defect. Missing caches fail the run (a skipped check is not a pass).
 """
-import copy, csv, glob, io, json, re, subprocess, sys
+import copy, csv, glob, io, json, os, re, subprocess, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
-EXPECTED_DEFECTS = 21   # README reads this number
+PAIR_RULE = not os.environ.get("CHECK_DISABLE_PAIR_RULE")   # the env var exists only to show the pair injections go green without the rule
+EXPECTED_DEFECTS = 23   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -33,9 +34,11 @@ def audit(props, sites, orgs, text=B.doc_text):
             if st["verification_tier"] in ("A", "B") and p["route"] == "processes" and p["strength"] == "supports_C": v.append(("TIER_C", f"{s}: supports_C term written to processes on a tier {st['verification_tier']} site"))
             if p["route"] == "capability" and (p["strength"] != "supports_C" or B.CAP_MAP.get(t) != p["capability_term"] or p["capability_term"] not in B.CAP_PROCESS): v.append(("CAP", f"{s}: capability row not a supports_C §3.6 mapping"))
             if t not in B.CAP_MAP and p["route"] == "capability": v.append(("CAP", f"{s}: {t} has no §3.6 mapping"))
-        if p["hold_reason"] == "owner_ruling_pending" and p["route"] != "hold": v.append(("OWNER_HOLD", f"{s}: a proposal held for an owner ruling is routed to a write"))
         if exp and exp < B.AS_OF and p["strength"] not in ("", "supports_C"): v.append(("EXPIRED", f"{s}/{d}: permit past its printed expiry {exp} proposed at {p['strength']}"))
         if p["strength"] == "supports_A" and (B.position(tx, p["quote"]) != "unit_paragraph" or p["grade"] != "narrative"): v.append(("STRENGTH", f"{s}: supports_A without a narrative unit paragraph"))
+    if PAIR_RULE:   # the hold binds the (site, term) pair across every proposal, not only the row that carries the flag
+        hp = B.held_pairs(props)
+        v += [("OWNER_HOLD", f"{p['site_id']}/{p['term']}: a pair held for an owner ruling has a proposal routed to a write") for p in props if (p["site_id"], p["term"]) in hp and p["route"] != "hold"]
     return v
 
 def audit_data(base_files, now_files, props):
@@ -124,6 +127,10 @@ def audit_complete(sites_now, ev_now, cap_now, props):
     n_ev = sum(p["route"] == "processes" for p in props); n_cp = sum(p["route"] == "capability" for p in props)
     mine_ev = [r for r in ev_now if r["created_by"] == B.WHO]; mine_cp = [r for r in cap_now if r["created_by"] == B.WHO]
     if len(mine_ev) != n_ev or len(mine_cp) != n_cp: v.append(("COMPLETE", f"{len(mine_ev)}/{n_ev} evidence rows and {len(mine_cp)}/{n_cp} capability rows applied"))
+    if PAIR_RULE:
+        hp = B.held_pairs(props)
+        v += [("OWNER_HOLD", f"{s}: held term {t} is in the processes cell") for (s, t) in hp if t in cells.get(s, set())]
+        v += [("OWNER_HOLD", f"{s}: an evidence row supports held term {t}") for (s, t) in hp for r in ev_now if r["record_id"] == s and r["claim_detail"].startswith(f"processes={t};")]
     return v
 
 def audit_manifest(hashes, text, scr):
@@ -281,7 +288,21 @@ def main():
         i = next(i for i, r in enumerate(n["data/evidence_sites_OH.csv"]) if r["created_by"] == B.WHO and r["record_id"] == "SITE-000346")
         n["data/evidence_sites_OH.csv"][i]["notes"] = re.sub(r"Facility ID \d{10}", "Facility ID 0000000000", n["data/evidence_sites_OH.csv"][i]["notes"]); return n
     def fake_manifest(h): h["4325660"]["facility_id"] = "0000000000"; return h
-    done += [one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
+    def duplicate_row(P, S2):   # Codex's probe at proposal level: a second, unflagged proposal for the held pair
+        h = copy.deepcopy(row(P, site_id="SITE-000248", term="coating_applying")); h.update(route="processes", hold_reason="", strength="supports_C"); P.append(h)
+    def duplicate_verdict():   # the same probe at verdict level: build.compute must hold the unflagged duplicate itself
+        inp2 = copy.deepcopy(inp); qs = inp2["V"]["sites"]["SITE-000248"]["quotes"]
+        qs.append({k: v for k, v in next(q for q in qs if q.get("hold")).items() if k != "hold"})
+        out = B.compute(inp2)["props"]
+        return [p for p in out if p["site_id"] == "SITE-000248" and p["term"] == "coating_applying" and p["route"] != "hold"]
+    def held_in_applied():
+        s = copy.deepcopy(sites_cur); next(r for r in s if r["site_id"] == "SITE-000248")["processes"] += ";coating_applying"; return s, ev_cur, cap_cur
+    assert not duplicate_verdict(), "build.compute wrote a duplicate of a held (site, term) pair"
+    from unittest.mock import patch
+    with patch.object(B, "held_pairs", lambda props: set()):   # the probe must be live: with the pair check off, the duplicate is written
+        assert duplicate_verdict(), "the verdict-level duplicate probe is inert: it is not written even with the pair check disabled"
+    done += [one("OWNER_HOLD", duplicate_row), one("OWNER_HOLD", held_in_applied, "complete"),
+             one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
              one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_note, "written"), one("MANIFEST", fake_manifest, "manifest"),
              one("PRIVACY", lambda: {"README.md": "signed by " + sorted(sig)[0]}, "privacy"),
              one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(route="processes", strength="supports_C")),
