@@ -332,11 +332,52 @@ def builder_tests(inputs, evidence):
                 B.apply(inputs, evidence)
                 backups_are_base()
                 sums = json.loads((backups / 'SHA256SUMS.json').read_text())
+                assert set(sums) == set(names), ('manifest key set is not the four packet shards', sorted(sums))
                 for n in sums:
                     assert sums[n]['sha256'] == hashlib.sha256((backups / n).read_bytes()).hexdigest() == hashlib.sha256(base_blob(n)).hexdigest(), ('backup manifest', n)
                     assert sums[n]['base'] == BASE
                 shutil.rmtree(backups, ignore_errors=True)
                 print('REFUSED: ' + label + ' backup is not trusted (rewritten from the merge-base blob, sha256 recorded)')
+            # Codex round 4 probes: every apply and retry verifies and records all four packet-shard backups, whether or not a shard still needs a data write
+            def manifest_is_exact():
+                sums = json.loads((backups / 'SHA256SUMS.json').read_text())
+                assert set(sums) == set(names), ('manifest key set is not the four packet shards', sorted(sums))
+                for n in names:
+                    want = hashlib.sha256(base_blob(n)).hexdigest()
+                    assert sums[n]['sha256'] == want == hashlib.sha256((backups / n).read_bytes()).hexdigest() and sums[n]['base'] == BASE, ('backup or manifest entry wrong', n)
+            reset()
+            shutil.rmtree(backups, ignore_errors=True)
+            B.apply(inputs, evidence)
+            manifest_is_exact()
+            B.apply(inputs, evidence)  # replay after success: nothing needs a data write, all four backups are still verified and recorded
+            manifest_is_exact()
+            (backups / 'organizations_OH.csv').write_bytes(base_blob('organizations_OH.csv')[:128])
+            B.apply(inputs, evidence)  # third apply with a 128-byte backup: rewritten from the blob
+            manifest_is_exact()
+            print('REFUSED: replay after success and a damaged backup on the third apply (all four backups verified and recorded each time)')
+            reset()
+            shutil.rmtree(backups, ignore_errors=True)
+            canonical_first = []
+            real_replace_b = B.os.replace
+
+            def cut_first_evidence(src, dst):
+                if Path(dst) in {root / 'data' / m for m in names}:
+                    canonical_first.append(dst)
+                    if len(canonical_first) == 2:  # after the first canonical evidence write, before the second
+                        raise OSError('interrupted after the first canonical evidence write')
+                return real_replace_b(src, dst)
+            try:
+                with patch.object(B.os, 'replace', cut_first_evidence):
+                    B.apply(inputs, evidence)
+            except OSError:
+                pass
+            else:
+                raise AssertionError('silent pass: interruption after the first canonical evidence write')
+            B.apply(inputs, evidence)  # retry
+            manifest_is_exact()
+            assert snapshot() == final, 'retry after the first canonical evidence write did not reproduce the shards'
+            print('REFUSED: retry after the first canonical evidence write (manifest holds all four shards; shards reproduced)')
+            shutil.rmtree(backups, ignore_errors=True)
     with tempfile.TemporaryDirectory() as td:  # scrub: purge then a lookup must refetch, not raise
         c = fetch.Corpus(td)
         url = 'https://example.test/page'

@@ -144,7 +144,11 @@ def apply(inputs, evidence):
     backup = LIVE / f'pre-application-batch{BATCH}-{BASE}'
     backup.mkdir(parents=True, exist_ok=True)
     sums = {}
-    for path in sorted(set(touched) | set(add), key=lambda p: p.name):
+    packet_shards = set()  # every shard the packet touches (organization and evidence), whether or not it still needs a data write: a replay or retry re-verifies all of them
+    for oid in values:
+        home = orgs[oid][0]
+        packet_shards |= {home, home.with_name(home.name.replace('organizations_', 'evidence_organizations_'))}
+    for path in sorted(packet_shards, key=lambda p: p.name):
         blob = subprocess.check_output(['git', 'show', f'{BASE}:data/{path.name}'], cwd=REPO)
         want = hashlib.sha256(blob).hexdigest()
         dst = backup / path.name
