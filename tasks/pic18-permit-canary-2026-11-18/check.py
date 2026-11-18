@@ -1,6 +1,6 @@
 """Named check for the PIC-18 air-permit scout. Recomputes every published count from the frozen caches and fails on:
 a quote not in its stored document, a term not in §3.1, a site outside the pool, a frame site with no verdict, any change under data/.
-It binds every quote to its establishment (site -> verdict document -> printed Facility ID), recomputes every bind field from the stored permit text and every published metric from the rows, and then proves it fails by injecting 9 defects. Missing caches or tools fail the run (never skipped).
+It binds every quote to its establishment (site -> verdict document -> printed Facility ID), recomputes every bind field from the stored permit text and every published metric from the rows, and then proves it fails by injecting 11 defects. Missing caches or tools fail the run (never skipped).
 Usage: python3 check.py"""
 import copy, csv, hashlib, importlib.util, json, random, re, subprocess, sys, zipfile, io
 from pathlib import Path
@@ -20,9 +20,11 @@ def load():
           "verdicts": json.load(open(HERE / "canary_verdicts.json"))["sites"], "hashes": json.load(open(HERE / "doc_hashes.json")),
           "frames": json.load(open(S / "briefs/w1118b/frames.json")), "hits": json.load(open(P / "ohio_epa_search_hits.json")),
           "journal": {d["docid"]: d for d in map(json.loads, open(P / "fetch_journal_v2.jsonl"))}}
-    want = {i for p in st["pool"] for i in p["frs_ids"].split(";") if i}; air = {}
+    want = {i for p in st["pool"] for i in p["frs_ids"].split(";") if i}; air = {}; echo_street = {}
     for r in csv.DictReader(io.TextIOWrapper(zipfile.ZipFile(B.ECHO_ZIP).open("ECHO_EXPORTER.csv"), encoding="utf-8", errors="replace", newline="")):
-        if r["REGISTRY_ID"] in want and r["AIR_FLAG"] == "Y": air[r["REGISTRY_ID"]] = r["AIR_IDS"]
+        if r["REGISTRY_ID"] in want:
+            echo_street[r["REGISTRY_ID"]] = r["FAC_STREET"]
+            if r["AIR_FLAG"] == "Y": air[r["REGISTRY_ID"]] = r["AIR_IDS"]
     st["echo_air"] = air
     st["screen_recompute"] = [{k: str(v) for k, v in r.items()} for r in B.screen_rows()]
     bad = []
@@ -39,9 +41,11 @@ def load():
         if not v: continue
         hdr = [B.header(doc_text(d)) for d in v["docs"]]; fid = p["echo_air_ids"].split(";")[0][-10:]; o = orgs[p["org_id"]]; a = sites[p["site_id"]]
         rr = B.bind_registered(hdr, fid, a, o)
+        es = next((echo_street[i] for i in p["frs_ids"].split(";") if i in echo_street), "")
+        rb = B.bind_broadened(hdr, fid, a, o, es)  # broadened bind recomputed from the matched FRS/ECHO row, never read from the csv
         rec[p["site_id"]] = {"record_tier": a["verification_tier"], "facility_id_printed": hdr[0]["facility_id"], "holder_printed": hdr[0]["holder"], "permit_street_printed": hdr[0]["holder_street"],
                              "permit_city_printed": hdr[0]["holder_city"], "atlas_street": a["street_address"], "atlas_city": a["city"],
-                             "bind_registered": "BOUND" if not rr else "NOT_BOUND", "bind_registered_reasons": "; ".join(rr), "fid": fid, "doc_fids": {d: B.header(doc_text(d))["facility_id"] for d in v["docs"]}}
+                             "bind_registered": "BOUND" if not rr else "NOT_BOUND", "bind_registered_reasons": "; ".join(rr), "bind_broadened": "BOUND" if not rb else "NOT_BOUND", "fid": fid, "doc_fids": {d: B.header(doc_text(d))["facility_id"] for d in v["docs"]}}
     st["bind_recomputed"] = rec
     st["vocab"] = B.processes()
     st["schema31"] = set(re.findall(r"`([a-z0-9_]+)`", re.search(r"### 3\.1 Processes.*?### 3\.2", open(ROOT / "docs/SCHEMA.md").read(), re.S).group(0)))
@@ -100,7 +104,15 @@ def checks(st):
             if t not in st["vocab"] or t not in st["schema31"]: f.append(f"{q['quote_id']} term {t} not in §3.1")
         want_cls = "none" if not terms else ("unspecified" if all(t.endswith("_unspecified") for t in terms) else "specific")
         if q["term_class"] != want_cls: f.append(f"{q['quote_id']} term_class {q['term_class']} != {want_cls}")
-        if q["witness"] not in {"unit_heading", "unit_equipment", "unit_term", "permit_description"}: f.append(f"{q['quote_id']} unknown witness")
+        auth = [x for x in st["verdicts"].get(sid, {}).get("quotes", []) if x["doc"] == q["docid"] and x["quote"] == q["quote"]]
+        if len(auth) != 1: f.append(f"{q['quote_id']} has no unique authored verdict quote")
+        else:
+            a_ = auth[0]
+            if a_["witness"] != B.witness_of(a_["source_part"]): f.append(f"{q['quote_id']} authored witness {a_['witness']} contradicts its source part '{a_['source_part']}'")
+            for ck, vk in (("witness", "witness"), ("source_part", "source_part"), ("proposed_strength", "strength"), ("term_class", "term_class"), ("map_note", "map_note")):
+                if q[ck] != a_[vk]: f.append(f"{q['quote_id']} {ck} '{q[ck]}' differs from the authored verdict '{a_[vk]}'")
+            if q["terms"] != ";".join(a_["terms"]): f.append(f"{q['quote_id']} terms differ from the authored verdict")
+        if q["witness"] != B.witness_of(q["source_part"]): f.append(f"{q['quote_id']} witness {q['witness']} contradicts its source part '{q['source_part']}'")
         if q["proposed_strength"] not in {"supports_A", "supports_C"}: f.append(f"{q['quote_id']} unknown strength")
         if q["proposal_status"] != "HELD": f.append(f"{q['quote_id']} not HELD")
     f += st["doc_bad"]
@@ -108,7 +120,7 @@ def checks(st):
     for r in st["sites"]:
         want = rec.get(r["site_id"])
         if not want: f.append(f"{r['site_id']} has no recomputed bind"); continue
-        for k in ("record_tier", "facility_id_printed", "holder_printed", "permit_street_printed", "permit_city_printed", "atlas_street", "atlas_city", "bind_registered", "bind_registered_reasons"):
+        for k in ("record_tier", "facility_id_printed", "holder_printed", "permit_street_printed", "permit_city_printed", "atlas_street", "atlas_city", "bind_registered", "bind_registered_reasons", "bind_broadened"):
             if r[k] != want[k]: f.append(f"{r['site_id']} {k} '{r[k]}' differs from recompute '{want[k]}'")
     # every published metric recomputed from the rows
     m = st["metrics"]; want_m = B.compute_metrics(st["screen"], st["sites"], st["quotes"]); want_m["canary_draw"] = draw
@@ -130,6 +142,8 @@ def inject(st):
     def fake_bind(s): s["sites"][0].update(facility_id_printed="0000000000", holder_printed="Invented Holder LLC", permit_street_printed="1 Nowhere Rd")
     def zero(s):
         s["metrics"]["bound_registered"] = 0; s["metrics"]["registered_specific"].update(hit=0, projected_sites_of_58=0.0, projected_range=[0.0, 0.0], wilson95=[0.0, 0.0])
+    def flip_witness(s): next(q for q in s["quotes"] if q["quote_id"] == "CQ-01").update(witness="unit_heading")
+    def flip_broad(s): next(r for r in s["sites"] if r["site_id"] == "SITE-000248").update(bind_broadened="NOT_BOUND")
     cases = [("fabricated quote", mut(lambda s: s["quotes"][0].update(quote="Polyurethane foam pouring line for mattresses"))),
              ("term not in §3.1", mut(lambda s: s["quotes"][0].update(terms="thermoforming_hot_stamping"))),
              ("site outside the pool", mut(lambda s: s["quotes"][0].update(site_id="SITE-009999"))),
@@ -138,7 +152,9 @@ def inject(st):
              ("count tampered", mut(lambda s: s["metrics"].update(retrievable_permit_sites=s["metrics"]["retrievable_permit_sites"] + 1))),
              ("real quotes swapped between two sites", mut(swap)),
              ("fabricated bind fields", mut(fake_bind)),
-             ("zeroed bound total and projection", mut(zero))]
+             ("zeroed bound total and projection", mut(zero)),
+             ("CQ-01 witness changed to unit_heading", mut(flip_witness)),
+             ("bind_broadened tampered in the csv", mut(flip_broad))]
     caught = 0
     for name, s in cases:
         r = checks(s); caught += bool(r); print(f"  injected [{name}]: {'REJECTED' if r else 'NOT CAUGHT'}")

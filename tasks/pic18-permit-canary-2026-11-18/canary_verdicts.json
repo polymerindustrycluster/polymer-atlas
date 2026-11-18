@@ -116,7 +116,7 @@
      ],
      "term_class": "specific",
      "witness": "unit_heading",
-     "source_part": "emissions-unit table row P003",
+     "source_part": "emissions-unit heading P003 (table row)",
      "strength": "supports_C",
      "map_note": "exact words"
     }

@@ -113,6 +113,15 @@ def mdy(x):
 
 STRICT_WITNESS = {"unit_heading", "unit_equipment"}  # registered rule (d0a43b46): "emissions-unit heading or equipment description"
 
+def witness_of(source_part):
+    """Witness class from the named source part: permit description / unit term / unit heading / unit equipment description (table row or paragraph)."""
+    sp = source_part.lower()
+    if sp.startswith("permit description"): return "permit_description"
+    if re.search(r"\bterm\b", sp): return "unit_term"
+    if "heading" in sp: return "unit_heading"
+    if re.search(r"table row|description", sp): return "unit_equipment"
+    raise ValueError("no witness class for source part: " + source_part)
+
 def ref_rows(prefix):
     """Atlas rows at the pinned ref, so later merges to main do not move the canary inputs."""
     out = []
@@ -175,6 +184,8 @@ def canary():
     draw = random.Random(SEED).sample(ids, 10)
     pl = {p["site_id"]: p for p in pool()}; V = json.load(open(HERE / "canary_verdicts.json"))["sites"]
     assert set(V) == set(draw), "verdict file does not cover the draw exactly"
+    for s_, v_ in V.items():
+        for q_ in v_["quotes"]: assert q_["witness"] == witness_of(q_["source_part"]), f"{s_}: witness {q_['witness']} contradicts source part {q_['source_part']}"
     hits = json.load(open(P / "ohio_epa_search_hits.json")); J = {}
     for l in open(P / "fetch_journal_v2.jsonl"): d = json.loads(l); J[d["docid"]] = d
     orgs = {r["org_id"]: r for r in ref_rows("organizations_")}; sites = {r["site_id"]: r for r in ref_rows("sites_")}
