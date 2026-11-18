@@ -864,7 +864,7 @@ for i, r in enumerate(people, 2):
         errors.append(f"people.csv:{i} {pid} tier A/B without last_verified")
     # V-64 [v1.15, owner ruling 2026-11-18b item 6]: status is blank (not recorded) or active|deceased with an ISO status_date;
     # status_date is the date the source states (a death date for `deceased`); deceased also needs an evidence_people liveness row for the
-    # person whose claim_detail states status=deceased, observed on or after status_date (the source is read after the event). Blank never means active.
+    # person (tier_effect supports_*, claim_detail starting status=deceased), observed on or after status_date (the source is read after the event). Blank never means active.
     st, sd = (r.get("status") or "").strip(), (r.get("status_date") or "").strip()
     if st or sd:
         if st not in {"active", "deceased"}:
@@ -872,8 +872,9 @@ for i, r in enumerate(people, 2):
         elif not re.fullmatch(r"\d{4}-\d{2}-\d{2}", sd) or not _iso_ok(sd):
             errors.append(f"people.csv:{i} {pid} status {st} without a valid ISO status_date (V-64)")
         elif st == "deceased" and not any(e["record_id"].strip() == pid and e.get("record_table") == "people" and e.get("claim_type") == "liveness"
-                                          and re.search(r"\bstatus=deceased\b", e.get("claim_detail") or "") and (e.get("observed_date") or "").strip() >= sd for e in evidence):
-            errors.append(f"people.csv:{i} {pid} {st} with no evidence_people liveness row stating status=deceased, observed on or after status_date {sd} (V-64)")
+                                          and e.get("tier_effect") in ("supports_A", "supports_B", "supports_C", "supports_U")
+                                          and re.match(r"\s*status=deceased\b", e.get("claim_detail") or "") and (e.get("observed_date") or "").strip() >= sd for e in evidence):
+            errors.append(f"people.csv:{i} {pid} {st} with no evidence_people affirmative (supports_*) liveness row whose claim_detail starts status=deceased, observed on or after status_date {sd} (V-64)")
 
 
 # V-17..V-21 [v1.5]: events layer (SCHEMA §4.12)

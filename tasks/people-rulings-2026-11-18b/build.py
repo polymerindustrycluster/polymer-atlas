@@ -84,7 +84,7 @@ def main(write=True):
     need_cols = [c for c in NEW_COLS if c not in fields]
     if not frame and not need_cols:
         print("nothing to do: no identifier URLs on people rows, status columns present"); return
-    if frame: guard(people, frame)
+    guard(people, frame)  # every path that reaches a write: all nine frame rows and the exact row count, even if none survive
     man = {}
     for n, (url, route, claims, caveat) in PLAN.items():  # fetch any page the manifest lacks (rule-14 route recorded)
         if url not in manifest_now(man): fetch.fetch(url, route); man.clear()

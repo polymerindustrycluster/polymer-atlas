@@ -622,22 +622,33 @@ class ValidatorMutationTests(unittest.TestCase):
 
     def test_v64_deceased_without_any_evidence_row_fails(self):
         self._people_row(status="deceased", status_date="2026-01-16")  # PERSON-000001 has no evidence_people row
-        self.assert_fails_with("PERSON-000001 deceased with no evidence_people liveness row stating status=deceased, observed on or after status_date 2026-01-16 (V-64)")
+        self.assert_fails_with("PERSON-000001 deceased with no affirmative (supports_*) liveness row whose claim_detail starts status=deceased, observed on or after status_date 2026-01-16 (V-64)")
 
     def test_v64_deceased_appointment_row_does_not_satisfy(self):
         pid, observed = self._person_with_evidence()  # an existence/scope row observed on a date on or after status_date
         self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(status="deceased", status_date="2000-01-01"))
-        self.assert_fails_with(f"{pid} deceased with no evidence_people liveness row stating status=deceased, observed on or after status_date 2000-01-01 (V-64)")
+        self.assert_fails_with(f"{pid} deceased with no affirmative (supports_*) liveness row whose claim_detail starts status=deceased, observed on or after status_date 2000-01-01 (V-64)")
 
     def test_v64_deceased_liveness_row_not_naming_deceased_fails(self):
         self._death_row("PERSON-000001", "2026-11-18", claim_detail="status=active")
         self._people_row(status="deceased", status_date="2026-01-16")
-        self.assert_fails_with("PERSON-000001 deceased with no evidence_people liveness row stating status=deceased")
+        self.assert_fails_with("PERSON-000001 deceased with no evidence_people affirmative (supports_*) liveness row whose claim_detail starts status=deceased")
+
+    def test_v64_deceased_only_contradicting_row_fails(self):
+        self._death_row("PERSON-000001", "2026-11-18", tier_effect="contradicts",
+                        claim_detail="status=deceased; the source contradicts this and confirms the person is active")
+        self._people_row(status="deceased", status_date="2026-01-16")
+        self.assert_fails_with("PERSON-000001 deceased with no evidence_people affirmative (supports_*) liveness row")
+
+    def test_v64_deceased_marker_not_at_the_start_fails(self):
+        self._death_row("PERSON-000001", "2026-11-18", claim_detail="The source contradicts status=deceased and confirms the person is active.")
+        self._people_row(status="deceased", status_date="2026-01-16")
+        self.assert_fails_with("PERSON-000001 deceased with no evidence_people affirmative (supports_*) liveness row")
 
     def test_v64_deceased_death_row_observed_before_status_date_fails(self):
         self._death_row("PERSON-000001", "2026-01-15")
         self._people_row(status="deceased", status_date="2026-01-16")
-        self.assert_fails_with("PERSON-000001 deceased with no evidence_people liveness row stating status=deceased, observed on or after status_date 2026-01-16 (V-64)")
+        self.assert_fails_with("PERSON-000001 deceased with no affirmative (supports_*) liveness row whose claim_detail starts status=deceased, observed on or after status_date 2026-01-16 (V-64)")
 
     def test_v64_deceased_death_row_observed_on_or_after_status_date_passes(self):
         for observed in ("2026-01-16", "2026-11-18"):

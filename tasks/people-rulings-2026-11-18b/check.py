@@ -177,7 +177,14 @@ def main():
         else: caught = False
         print(f"inject truncated base (PERSON-000941 absent): {'refused' if caught else 'NOT REFUSED'}")
         if not caught: fails.append("defect not caught: truncated base")
-    truncated_base()
+    def all_nine_removed():  # no frame row survives: the guard must still refuse (old-schema data would otherwise be rewritten)
+        cut = [r for r in base_people if r["person_id"] not in build.EXPECTED_FRAME]
+        try: build.guard(cut, [])
+        except SystemExit: caught = True
+        else: caught = False
+        print(f"inject truncated base (all nine frame rows absent): {'refused' if caught else 'NOT REFUSED'}")
+        if not caught: fails.append("defect not caught: all nine frame rows removed")
+    truncated_base(); all_nine_removed()
     inject("planned no-evidence row given an evidence row", lambda p, e, w: (e.append({**e[-1], "evidence_id": "EVD-396940", "record_id": "PERSON-002011"}), w.append({**w[-1], "evidence_id": "EVD-396940", "person_id": "PERSON-002011"})))
     if fails:
         print("FAIL"); [print(" -", f) for f in fails]; sys.exit(1)
