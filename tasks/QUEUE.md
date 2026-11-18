@@ -534,13 +534,29 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ### Wave W18 (2026-11-18)
 
-- [ ] `claimed:claude-code 2026-11-18` Record the owner rulings of 2026-11-18 and the PPP ruling (SCHEMA v1.13.3) — `tasks/owner-rulings-2026-11-18/`.
+- [x] `done 2026-11-18` Record the owner rulings of 2026-11-18 and the PPP ruling (SCHEMA v1.13.3) — `tasks/owner-rulings-2026-11-18/` (PR #375).
 - [ ] `claimed:claude-code 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages (SCHEMA §4.4 `processes` row: "unless Parent claims it corporately").
-- [ ] `claimed:claude-code 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit`.
-- [ ] `open` People identifier URLs (owner items 1 and 1b): 18 `?u=` and 11 `/~` people rows, plus 8 evidence_people rows, remediated per `tasks/owner-rulings-2026-11-18/README.md`.
-- [ ] `open` Blind audit 11 corrections: A11-047 ProVia `newsroom_feed_url`; A11-113 retire UEI link SJZCEMGNC9D1 on ORG-000889.
+- [x] `done 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit` (PR #376).
+- [ ] `claimed:claude-code 2026-11-18` (PR #379, in review) People identifier URLs (owner items 1 and 1b): 18 `?u=` and 11 `/~` people rows, plus 8 evidence_people rows, remediated per `tasks/owner-rulings-2026-11-18/README.md`.
+- [ ] `claimed:claude-code 2026-11-18` Blind audit 11 correction A11-113 (retire the UEI link on ORG-000889), lane atlas-w18-backlog.
+- [ ] `open` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`); waits until the market and size lanes release `organizations_OH.csv`.
 - [ ] `open` Re-verify Pedro Cortes (PERSON-001142): UTEP on record, Youngstown State in the 2022-23 catalog (owner item 5).
 - [ ] `open` Add Sen Gupta and Akkus from CWRU bulletin lines (roster-grade Gate B, owner item 3); add West when a current page states his research.
+- [x] `done 2026-11-18` Scrub account URLs from historical task files (owner items 1/1b, scrub forward): 109 URLs plus 9 in-URL repeats in 44 files (PR #378).
+- [ ] `claimed:claude-code 2026-11-18` PIC-18 market canary: 10 organizations from the 201 that MKT3 left not_adjudicated with readable pages; scale to the rest at 3 or more of 10 — `tasks/pic18-market-canary-2026-11-18/`.
+- [ ] `claimed:claude-code 2026-11-18` Own-site Ohio size bands: 37 screened organizations, 20 eligible (Ohio-only); organization `employee_band_ohio` only, applied after the market canary merges — `tasks/pic18-size-ownsite-2026-11-18/`.
+- [ ] `claimed:claude-code 2026-11-18` Ohio EPA air-permit process scout (packet only): screen 58 FRS-linked, process-unknown PIC-18 sites for air permits, then a 10-site canary — `tasks/pic18-permit-canary-2026-11-18/`.
+- [ ] `claimed:claude-code 2026-11-18` Capability term unions: the 10 held terms on 7 sites from #365 and SITE-001986's term from #361 (owner item 8) — `tasks/cap-term-unions-2026-11-18/`.
+
+### Follow-ups surfaced in W18 (not commitments)
+
+- [ ] `open` **Owner battery candidates:**
+  - **PERSON-000359:** the department lists the person "In Memoriam". `people.csv` has no status column, so how a deceased person's record is handled needs a ruling.
+  - **V-62 scope:** other account-style profile IDs (a Utah `unid`, a UC `/p/<id>`, a CU `fisid`) are outside items 1/1b.
+  - **Vocabulary:** whether tool refurbishment maps to a §3.1 term, from the PR #377 canary; the lane recommends no.
+- [ ] `open` **PERSON-001037:** the row's role disagrees with its department page (assistant vs associate). Re-verify the role. Source: PR #379.
+- [ ] `open` **widen.net links:** 2 organization rows and 2 site rows in `data/` cite widen.net PDF links whose `u` value is unnecessary (the same PDF bytes without it). Drop the value; the evidence rows stay as they are. Source: PR #378.
+- [ ] `open` **Free-text process values:** 30 off-vocabulary values (V-55 debt) appear as entries in the public process filter on the prospects page. Source: live re-grade, 2026-11-18.
 
 ### Follow-ups surfaced in W16 (not commitments)
 
