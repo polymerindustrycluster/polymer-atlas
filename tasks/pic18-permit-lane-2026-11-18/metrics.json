@@ -1,0 +1,38 @@
+{
+ "frame_sites": 33,
+ "strict_bound_sites": 14,
+ "near_bound_sites": 3,
+ "verified_sites": 7,
+ "still_uncertain_sites": 26,
+ "reject_sites": 0,
+ "sites_with_process_written": 5,
+ "process_sites": [
+  "SITE-000238",
+  "SITE-000248",
+  "SITE-000346",
+  "SITE-000448",
+  "SITE-000664"
+ ],
+ "process_terms_written": 6,
+ "capability_rows": 1,
+ "already_held_rows": 1,
+ "capability_only_sites": [
+  "SITE-002855"
+ ],
+ "held_sites_by_reason": {
+  "not_bound": 16,
+  "near_bound": 3,
+  "ancillary_only": 1,
+  "no_capability_destination": 3,
+  "permit_description_only": 3
+ },
+ "proposal_holds_by_reason": {
+  "near_bound": 1,
+  "no_capability_destination": 4,
+  "permit_description_only": 4
+ },
+ "strength_of_writes": {
+  "supports_C": 5,
+  "supports_A": 1
+ }
+}
